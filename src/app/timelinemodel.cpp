@@ -21,6 +21,7 @@
 #include <KPkPass/File>
 
 #include <QDebug>
+#include <QLocale>
 
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -58,6 +59,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return QVariant::fromValue(m_mgr->pass(m_passes.at(index.row())));
         case PassIdRole:
             return m_passes.at(index.row());
+        case SectionHeader:
+            return QLocale().toString(m_mgr->pass(m_passes.at(index.row()))->relevantDate().date(), QLocale::ShortFormat);
     }
     return {};
 }
@@ -67,6 +70,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     auto names = QAbstractListModel::roleNames();
     names.insert(PassRole, "pass");
     names.insert(PassIdRole, "passId");
+    names.insert(SectionHeader, "sectionHeader");
     return names;
 }
 

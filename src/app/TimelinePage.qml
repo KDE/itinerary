@@ -48,5 +48,18 @@ Kirigami.ScrollablePage {
                 passId: model.passId
             }
         }
+        section.property: "sectionHeader"
+        section.delegate: Rectangle {
+            color: Kirigami.Theme.backgroundColor
+            implicitHeight: headerItem.implicitHeight
+            implicitWidth: ListView.view.width
+            Kirigami.BasicListItem {
+                id: headerItem
+                label: section
+                icon: "view-calendar-day"
+            }
+        }
+        section.criteria: ViewSection.FullString
+        section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
     }
 }

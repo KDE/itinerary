@@ -28,7 +28,8 @@ class TimelineModel : public QAbstractListModel
 public:
     enum Role {
         PassRole = Qt::UserRole + 1,
-        PassIdRole
+        PassIdRole,
+        SectionHeader
     };
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel();
