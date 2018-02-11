@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BoardingPass.qml</file>
+        <file>TimelinePage.qml</file>
+    </qresource>
+</RCC>

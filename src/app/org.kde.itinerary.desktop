@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=KDE Itinerary
+GenericName=Itinerary management
+Exec=itinerary %f
+Icon=map-globe
+Type=Application
+Comment=Travel assistance application.
+Terminal=false
+MimeType=application/vnd.apple.pkpass;
+Categories=Qt;KDE;
