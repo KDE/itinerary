@@ -26,6 +26,7 @@
 
 #include <QByteArray>
 #include <QColor>
+#include <QDateTime>
 #include <QHash>
 #include <QJsonObject>
 #include <QObject>
@@ -54,6 +55,7 @@ class KPKPASS_EXPORT File : public QObject
     Q_PROPERTY(QColor foregroundColor READ foregroundColor CONSTANT)
     Q_PROPERTY(QColor labelColor READ labelColor CONSTANT)
     Q_PROPERTY(QString logoText READ logoText CONSTANT)
+    Q_PROPERTY(QDateTime relevantDate READ relevantDate CONSTANT)
 
     // needs to be QVariantList just for QML (Grantlee would also work with QVector<Field>
     Q_PROPERTY(QVariantList auxiliaryFields READ auxiliaryFieldsVariant CONSTANT)
@@ -82,6 +84,7 @@ public:
     QColor labelColor() const;
     QString logoText() const;
     QImage logo(unsigned int devicePixelRatio = 1) const;
+    QDateTime relevantDate() const;
 
     QVector<Field> auxiliaryFields() const;
     QVector<Field> backFields() const;

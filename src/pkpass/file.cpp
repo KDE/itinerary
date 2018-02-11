@@ -126,6 +126,11 @@ QImage File::logo(unsigned int devicePixelRatio) const
     return img;
 }
 
+QDateTime File::relevantDate() const
+{
+    return QDateTime::fromString(m_passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
+}
+
 QVector<Barcode> File::barcodes() const
 {
     QVector<Barcode> codes;

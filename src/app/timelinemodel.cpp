@@ -34,6 +34,9 @@ void TimelineModel::setPkPassManager(PkPassManager* mgr)
     beginResetModel();
     m_mgr = mgr;
     m_passes = mgr->passes();
+    std::sort(m_passes.begin(), m_passes.end(), [this](const QString &lhs, const QString &rhs) {
+        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+    });
     connect(mgr, &PkPassManager::passAdded, this, &TimelineModel::passAdded);
     endResetModel();
 }
@@ -69,7 +72,11 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 
 void TimelineModel::passAdded(const QString& passId)
 {
-    beginInsertRows({}, rowCount(), rowCount());
-    m_passes.push_back(passId);
+    auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
+        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+    });
+    auto index = std::distance(m_passes.begin(), it);
+    beginInsertRows({}, index, index);
+    m_passes.insert(it, passId);
     endInsertRows();
 }
