@@ -31,6 +31,9 @@
 #include <QGuiApplication>
 #include <QIcon>
 
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char **argv)
 {
     QCoreApplication::setApplicationName(QStringLiteral("kde-itinerary"));
