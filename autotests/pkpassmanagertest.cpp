@@ -49,11 +49,11 @@ private slots:
         QVERIFY(mgr.passes().isEmpty());
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
         QCOMPARE(addSpy.size(), 1);
-        QCOMPARE(addSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/1234"));
+        QCOMPARE(addSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
 
         auto passes = mgr.passes();
         QCOMPARE(passes.size(), 1);
-        QCOMPARE(passes.at(0), QLatin1String("pass.booking.kde.org/1234"));
+        QCOMPARE(passes.at(0), QLatin1String("pass.booking.kde.org/MTIzNA=="));
     }
 };
 
