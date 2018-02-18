@@ -27,6 +27,11 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
+#ifdef Q_OS_ANDROID
+#include <QtAndroid>
+#include <QAndroidJniObject>
+#endif
+
 #include <QCommandLineParser>
 #include <QGuiApplication>
 #include <QIcon>
@@ -68,6 +73,21 @@ int main(int argc, char **argv)
 
     for (const auto &file : parser.positionalArguments())
         passMgr.importPass(QUrl::fromLocalFile(file));
+
+#ifdef Q_OS_ANDROID
+    // handle opened files
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
+        if (intent.isValid()) {
+            const auto data = intent.callObjectMethod("getDataString", "()Ljava/lang/String;");
+            if (data.isValid()) {
+                // TODO handle content:// urls
+                passMgr.importPass(QUrl(data.toString()));
+            }
+        }
+    }
+#endif
 
     return app.exec();
 }
