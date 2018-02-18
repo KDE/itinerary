@@ -27,7 +27,7 @@ find_package(SharedMimeInfo 1.0 REQUIRED)
 
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
-    find_package(Qt5 REQUIRED COMPONENTS AndroidExtras)
+    find_package(Qt5 REQUIRED COMPONENTS AndroidExtras Svg)
     find_package(KF5 REQUIRED COMPONENTS Kirigami2 Prison)
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)

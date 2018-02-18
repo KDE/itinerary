@@ -23,6 +23,7 @@ if (ANDROID)
         KF5::Archive
         KF5::Kirigami2
         Qt5::AndroidExtras
+        Qt5::Svg
         KF5::Prison
     )
 
@@ -43,4 +44,6 @@ qml_lint(
 )
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+if (NOT ANDROID)
+    install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+endif()
