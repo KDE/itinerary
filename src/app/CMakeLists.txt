@@ -25,6 +25,13 @@ if (ANDROID)
         Qt5::AndroidExtras
         KF5::Prison
     )
+
+    kirigami_package_breeze_icons(ICONS
+        document-open
+        edit-delete
+        map-symbolic
+        view-calendar-day
+    )
 else ()
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
