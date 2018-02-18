@@ -18,11 +18,18 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_version.h)
 
+# build-time dependencies
 find_package(Qt5 REQUIRED COMPONENTS Test Quick)
 find_package(KF5 REQUIRED COMPONENTS Archive)
 find_package(QmlLint)
 set_package_properties(QmlLint PROPERTIES URL "https://qt.io" PURPOSE "Validate QML code.")
 find_package(SharedMimeInfo 1.0 REQUIRED)
+
+# runtime dependencies are build-time dependencies on Android
+if (ANDROID)
+    find_package(Qt5 REQUIRED COMPONENTS AndroidExtras)
+    find_package(KF5 REQUIRED COMPONENTS Kirigami2 Prison)
+endif()
 
 add_subdirectory(src)
 add_subdirectory(autotests)

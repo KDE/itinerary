@@ -16,7 +16,18 @@ target_link_libraries(itinerary-app PRIVATE
     itinerary
     Qt5::Quick
 )
-set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
+if (ANDROID)
+    # explicitly add runtime dependencies and transitive link dependencies,
+    # so androiddeployqt picks them up
+    target_link_libraries(itinerary-app PRIVATE
+        KF5::Archive
+        KF5::Kirigami2
+        Qt5::AndroidExtras
+        KF5::Prison
+    )
+else ()
+    set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
+endif()
 
 qml_lint(
     main.qml
