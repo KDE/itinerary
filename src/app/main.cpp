@@ -57,7 +57,7 @@ void handleViewIntent(PkPassManager *passMgr)
     const auto scheme = uri.callObjectMethod("getScheme", "()Ljava/lang/String;");
     if (scheme.toString() == QLatin1String("content")) {
         const auto tmpFile = activity.callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
-        passMgr->importPass(QUrl::fromLocalFile(tmpFile.toString()));
+        passMgr->importPassFromTempFile(tmpFile.toString());
     } else if (scheme.toString() == QLatin1String("file")) {
         const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
         passMgr->importPass(QUrl(uriStr.toString()));

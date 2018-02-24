@@ -37,12 +37,16 @@ public:
     KPkPass::File* pass(const QString &passId);
 
     Q_INVOKABLE void importPass(const QUrl &url);
+    void importPassFromTempFile(const QString &tmpFile);
     Q_INVOKABLE void removePass(const QString &passId);
 
 signals:
     void passAdded(const QString &passId);
 
 private:
+    enum ImportMode { Copy, Move };
+    void doImportPass(const QUrl &url, ImportMode mode);
+
     QHash<QString, KPkPass::File*> m_passes;
 };
 

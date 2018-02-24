@@ -16,6 +16,7 @@
 */
 
 #include "pkpassmanager.h"
+#include "logging.h"
 
 #include <KPkPass/File>
 
@@ -65,6 +66,17 @@ KPkPass::File* PkPassManager::pass(const QString& passId)
 
 void PkPassManager::importPass(const QUrl& url)
 {
+    doImportPass(url, Copy);
+}
+
+void PkPassManager::importPassFromTempFile(const QString& tmpFile)
+{
+    doImportPass(QUrl::fromLocalFile(tmpFile), Move);
+}
+
+void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode)
+{
+    qCDebug(Log) << url << mode;
     if (!url.isLocalFile())
         return; // TODO
 
@@ -85,7 +97,16 @@ void PkPassManager::importPass(const QUrl& url)
     // serialNumber() can contain percent-encoding or slashes,
     // ie stuff we don't want to have in file names
     const auto passId = QString::fromUtf8(file->serialNumber().toUtf8().toBase64(QByteArray::Base64UrlEncoding));
-    QFile::copy(url.toLocalFile(), dir.absoluteFilePath(passId + QLatin1String(".pkpass")));
+
+    switch (mode) {
+        case Move:
+            QFile::rename(url.toLocalFile(), dir.absoluteFilePath(passId + QLatin1String(".pkpass")));
+            break;
+        case Copy:
+            QFile::copy(url.toLocalFile(), dir.absoluteFilePath(passId + QLatin1String(".pkpass")));
+            break;
+    }
+
     emit passAdded(dir.dirName() + QLatin1Char('/') + passId);
 }
 
