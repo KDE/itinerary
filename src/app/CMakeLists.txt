@@ -1,7 +1,13 @@
-add_library(itinerary STATIC
+set(itinerary_srcs
     pkpassmanager.cpp
     timelinemodel.cpp
 )
+ecm_qt_declare_logging_category(itinerary_srcs
+    HEADER logging.h
+    IDENTIFIER Log
+    CATEGORY_NAME org.kde.itinerary
+)
+add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     KPkPass
 )

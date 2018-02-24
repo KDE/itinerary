@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find "$@" -name '*.h' -o -name '*.cpp' -o -name '*.qml' | grep -v /3rdparty/ | while read FILE; do
+find "$@" -name '*.h' -o -name '*.cpp' -o -name '*.qml' -o -name '*.java'| grep -v /3rdparty/ | while read FILE; do
     if grep -qiE "Copyright \(C\) [0-9, -]{4,} " "$FILE" ; then continue; fi
     thisfile=`basename $FILE`
     authorName=`git config user.name`

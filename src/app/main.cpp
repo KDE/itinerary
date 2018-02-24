@@ -16,6 +16,7 @@
 */
 
 #include "itinerary_version.h"
+#include "logging.h"
 
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
@@ -33,8 +34,42 @@
 #endif
 
 #include <QCommandLineParser>
+#include <QDebug>
 #include <QGuiApplication>
 #include <QIcon>
+
+void handleViewIntent(PkPassManager *passMgr)
+{
+#ifdef Q_OS_ANDROID
+    // handle opened files
+    const auto activity = QtAndroid::androidActivity();
+    if (!activity.isValid())
+        return;
+
+    const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
+    if (!intent.isValid())
+        return;
+
+    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
+    if (!uri.isValid())
+        return;
+
+    const auto scheme = uri.callObjectMethod("getScheme", "()Ljava/lang/String;");
+    if (scheme.toString() == QLatin1String("content")) {
+        const auto tmpFile = activity.callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
+        passMgr->importPass(QUrl::fromLocalFile(tmpFile.toString()));
+    } else if (scheme.toString() == QLatin1String("file")) {
+        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+        passMgr->importPass(QUrl(uriStr.toString()));
+    } else {
+        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+        qCWarning(Log) << "Unknown intent URI:" << uriStr.toString();
+    }
+#else
+    Q_UNUSED(passMgr);
+#endif
+}
+
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -73,21 +108,7 @@ int main(int argc, char **argv)
 
     for (const auto &file : parser.positionalArguments())
         passMgr.importPass(QUrl::fromLocalFile(file));
-
-#ifdef Q_OS_ANDROID
-    // handle opened files
-    const auto activity = QtAndroid::androidActivity();
-    if (activity.isValid()) {
-        const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
-        if (intent.isValid()) {
-            const auto data = intent.callObjectMethod("getDataString", "()Ljava/lang/String;");
-            if (data.isValid()) {
-                // TODO handle content:// urls
-                passMgr.importPass(QUrl(data.toString()));
-            }
-        }
-    }
-#endif
+    handleViewIntent(&passMgr);
 
     return app.exec();
 }
