@@ -44,6 +44,7 @@ class QString;
 namespace KPkPass {
 
 class Barcode;
+class PassPrivate;
 
 /** Base class for a pkpass file.
  *  @see https://developer.apple.com/library/content/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html
@@ -132,11 +133,7 @@ private:
     QVariantList secondaryFieldsVariant() const;
     QVariantList barcodesVariant() const;
 
-    std::unique_ptr<QIODevice> m_buffer;
-    std::unique_ptr<KZip> m_zip;
-    QJsonObject m_passObj;
-    QHash<QString, QString> m_messages;
-    QString m_passType;
+    std::unique_ptr<PassPrivate> d;
 };
 
 }

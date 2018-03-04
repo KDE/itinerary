@@ -36,28 +36,40 @@
 
 using namespace KPkPass;
 
+namespace KPkPass {
+class PassPrivate {
+public:
+    std::unique_ptr<QIODevice> buffer;
+    std::unique_ptr<KZip> zip;
+    QJsonObject passObj;
+    QHash<QString, QString> messages;
+    QString passType;
+};
+}
+
 Pass::Pass (const QString &passType, QObject *parent)
     : QObject(parent)
-    , m_passType(passType)
+    , d(new PassPrivate)
 {
+    d->passType = passType;
 }
 
 Pass::~Pass() = default;
 
 QJsonObject Pass::data() const
 {
-    return m_passObj;
+    return d->passObj;
 }
 
 QJsonObject Pass::passData() const
 {
-    return m_passObj.value(m_passType).toObject();
+    return d->passObj.value(d->passType).toObject();
 }
 
 QString Pass::message(const QString &key) const
 {
-    const auto it = m_messages.constFind(key);
-    if (it != m_messages.constEnd()) {
+    const auto it = d->messages.constFind(key);
+    if (it != d->messages.constEnd()) {
         return it.value();
     }
     return key;
@@ -65,12 +77,12 @@ QString Pass::message(const QString &key) const
 
 QString Pass::passTypeIdentifier() const
 {
-    return m_passObj.value(QLatin1String("passTypeIdentifier")).toString();
+    return d->passObj.value(QLatin1String("passTypeIdentifier")).toString();
 }
 
 QString Pass::serialNumber() const
 {
-    return m_passObj.value(QLatin1String("serialNumber")).toString();
+    return d->passObj.value(QLatin1String("serialNumber")).toString();
 }
 
 static const char* passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
@@ -100,17 +112,17 @@ static QColor parseColor(const QString &s)
 
 QColor Pass::backgroundColor() const
 {
-    return parseColor(m_passObj.value(QLatin1String("backgroundColor")).toString());
+    return parseColor(d->passObj.value(QLatin1String("backgroundColor")).toString());
 }
 
 QColor Pass::foregroundColor() const
 {
-    return parseColor(m_passObj.value(QLatin1String("foregroundColor")).toString());
+    return parseColor(d->passObj.value(QLatin1String("foregroundColor")).toString());
 }
 
 QColor Pass::labelColor() const
 {
-    const auto c = parseColor(m_passObj.value(QLatin1String("labelColor")).toString());
+    const auto c = parseColor(d->passObj.value(QLatin1String("labelColor")).toString());
     if (c.isValid()) {
         return c;
     }
@@ -119,19 +131,19 @@ QColor Pass::labelColor() const
 
 QString Pass::logoText() const
 {
-    return message(m_passObj.value(QLatin1String("logoText")).toString());
+    return message(d->passObj.value(QLatin1String("logoText")).toString());
 }
 
 QImage Pass::logo(unsigned int devicePixelRatio) const
 {
     const KArchiveFile *file = nullptr;
     for (; devicePixelRatio > 1; --devicePixelRatio) {
-        file = m_zip->directory()->file(QLatin1String("logo@") + QString::number(devicePixelRatio) + QLatin1String("x.png"));
+        file = d->zip->directory()->file(QLatin1String("logo@") + QString::number(devicePixelRatio) + QLatin1String("x.png"));
         if (file)
             break;
     }
     if (!file)
-        file = m_zip->directory()->file(QLatin1String("logo.png"));
+        file = d->zip->directory()->file(QLatin1String("logo.png"));
     if (!file)
         return {};
     std::unique_ptr<QIODevice> dev(file->createDevice());
@@ -142,7 +154,7 @@ QImage Pass::logo(unsigned int devicePixelRatio) const
 
 QDateTime Pass::relevantDate() const
 {
-    return QDateTime::fromString(m_passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
+    return QDateTime::fromString(d->passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
 }
 
 QVector<Barcode> Pass::barcodes() const
@@ -222,9 +234,9 @@ Pass *Pass::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
         pass = new Pass (QStringLiteral("generic"), parent);
     }
 
-    pass->m_buffer = std::move(device);
-    pass->m_zip = std::move(zip);
-    pass->m_passObj = passObj;
+    pass->d->buffer = std::move(device);
+    pass->d->zip = std::move(zip);
+    pass->d->passObj = passObj;
     pass->parse();
     return pass;
 }
@@ -296,7 +308,7 @@ static QString unquote(const QStringRef &str)
 
 bool Pass::parseMessages(const QString &lang)
 {
-    auto entry = m_zip->directory()->entry(lang);
+    auto entry = d->zip->directory()->entry(lang);
     if (!entry || !entry->isDirectory()) {
         return false;
     }
@@ -344,11 +356,11 @@ bool Pass::parseMessages(const QString &lang)
 
         const auto key = catalog.mid(keyBegin, keyEnd - keyBegin);
         const auto value = unquote(catalog.midRef(valueBegin, valueEnd - valueBegin));
-        m_messages.insert(key, value);
+        d->messages.insert(key, value);
         idx = valueEnd + 1; // there's at least the linebreak and/or a ';'
     }
 
-    return !m_messages.isEmpty();
+    return !d->messages.isEmpty();
 }
 
 QVector<Field> Pass::fields(const QLatin1String &fieldType) const
