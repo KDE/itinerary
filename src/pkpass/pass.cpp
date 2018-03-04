@@ -192,7 +192,16 @@ Pass *PassPrivate::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
         return nullptr;
     }
     std::unique_ptr<QIODevice> dev(file->createDevice());
-    const auto passObj = QJsonDocument::fromJson(dev->readAll()).object();
+    QJsonParseError error;
+    const auto passObj = QJsonDocument::fromJson(dev->readAll(), &error).object();
+    if (error.error != QJsonParseError::NoError) {
+        qCWarning(Log) << "Error parsing pass.json:" << error.errorString();
+        return nullptr;
+    }
+    if (passObj.value(QLatin1String("formatVersion")).toInt() > 1) {
+        qCWarning(Log) << "pass.json has unsupported format version!";
+        return nullptr;
+    }
 
     Pass *pass = nullptr;
     if (passObj.contains(QLatin1String("boardingPass"))) {
