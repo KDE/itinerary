@@ -16,7 +16,7 @@
 */
 
 #include "barcode.h"
-#include "file.h"
+#include "pass.h"
 
 #include <QJsonObject>
 
@@ -26,9 +26,9 @@ Barcode::Barcode()
 {
 }
 
-Barcode::Barcode(const QJsonObject &obj, const File *file)
+Barcode::Barcode(const QJsonObject &obj, const Pass *pass)
 {
-    m_altText = file->message(obj.value(QLatin1String("altText")).toString());
+    m_altText = pass->message(obj.value(QLatin1String("altText")).toString());
     const auto format = obj.value(QLatin1String("format")).toString();
     if (format == QLatin1String("PKBarcodeFormatQR"))
         m_format = QR;

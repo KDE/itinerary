@@ -18,7 +18,7 @@
 */
 
 #include "field.h"
-#include "file.h"
+#include "pass.h"
 
 #include <QJsonObject>
 
@@ -27,7 +27,7 @@ using namespace KPkPass;
 namespace KPkPass {
 class FieldPrivate {
 public:
-    const File *file = nullptr;
+    const Pass *pass = nullptr;
     QJsonObject obj;
 };
 }
@@ -42,37 +42,34 @@ Field::Field(Field&&) = default;
 Field::~Field() = default;
 Field& Field::operator=(const Field&) = default;
 
-Field::Field(const QJsonObject &obj, const File *file)
+Field::Field(const QJsonObject &obj, const Pass *pass)
     : d(new FieldPrivate)
 {
-    d->file = file;
+    d->pass = pass;
     d->obj = obj;
 }
 
 QString Field::key() const
 {
-    if (d->file) {
-        return d->obj.value(QLatin1String("key")).toString();
-    }
-    return {};
+    return d->obj.value(QLatin1String("key")).toString();
 }
 
 QString Field::label() const
 {
-    if (d->file) {
-        return d->file->message(d->obj.value(QLatin1String("label")).toString());
+    if (d->pass) {
+        return d->pass->message(d->obj.value(QLatin1String("label")).toString());
     }
     return {};
 }
 
 QVariant Field::value() const
 {
-    if (!d->file) {
+    if (!d->pass) {
         return {};
     }
-    auto v = d->file->message(d->obj.value(QLatin1String("attributedValue")).toString());
+    auto v = d->pass->message(d->obj.value(QLatin1String("attributedValue")).toString());
     if (v.isEmpty()) {
-        v = d->file->message(d->obj.value(QLatin1String("value")).toString());
+        v = d->pass->message(d->obj.value(QLatin1String("value")).toString());
     }
     // TODO number and date/time detection
     return v;
@@ -86,10 +83,10 @@ QString Field::valueDisplayString() const
 
 QString Field::changeMessage() const
 {
-    if (!d->file) {
+    if (!d->pass) {
         return {};
     }
-    auto msg = d->file->message(d->obj.value(QLatin1String("changeMessage")).toString());
+    auto msg = d->pass->message(d->obj.value(QLatin1String("changeMessage")).toString());
     msg = msg.replace(QLatin1String("%@"), valueDisplayString());
     return msg;
 }

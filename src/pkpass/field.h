@@ -31,10 +31,10 @@ class QJsonObject;
 
 namespace KPkPass {
 
-class File;
+class Pass;
 class FieldPrivate;
 
-/** Field element in a KPkPass::File.
+/** Field element in a KPkPass::Pass.
  * @see https://developer.apple.com/library/content/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/FieldDictionary.html
  */
 class KPKPASS_EXPORT Field
@@ -73,8 +73,8 @@ public:
 
     // TODO add textAlignment property
 private:
-    friend class File;
-    explicit Field(const QJsonObject &obj, const File *file);
+    friend class Pass;
+    explicit Field(const QJsonObject &obj, const Pass *pass);
 
     std::shared_ptr<FieldPrivate> d;
 };

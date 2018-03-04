@@ -22,7 +22,7 @@
 using namespace KPkPass;
 
 BoardingPass::BoardingPass(QObject *parent)
-    : File(QStringLiteral("boardingPass"), parent)
+    : Pass(QStringLiteral("boardingPass"), parent)
 {
 }
 

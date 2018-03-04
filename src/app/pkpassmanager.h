@@ -22,7 +22,7 @@
 #include <QObject>
 
 namespace KPkPass {
-class File;
+class Pass;
 }
 
 class PkPassManager : public QObject
@@ -34,7 +34,7 @@ public:
 
     QVector<QString> passes() const;
 
-    KPkPass::File* pass(const QString &passId);
+    KPkPass::Pass* pass(const QString &passId);
 
     Q_INVOKABLE void importPass(const QUrl &url);
     void importPassFromTempFile(const QString &tmpFile);
@@ -47,7 +47,7 @@ private:
     enum ImportMode { Copy, Move };
     void doImportPass(const QUrl &url, ImportMode mode);
 
-    QHash<QString, KPkPass::File*> m_passes;
+    QHash<QString, KPkPass::Pass*> m_passes;
 };
 
 #endif // PKPASSMANAGER_H

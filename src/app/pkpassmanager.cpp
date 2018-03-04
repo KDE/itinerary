@@ -18,7 +18,7 @@
 #include "pkpassmanager.h"
 #include "logging.h"
 
-#include <KPkPass/File>
+#include <KPkPass/Pass>
 
 #include <QDebug>
 #include <QDir>
@@ -51,14 +51,14 @@ QVector<QString> PkPassManager::passes() const
     return passIds;
 }
 
-KPkPass::File* PkPassManager::pass(const QString& passId)
+KPkPass::Pass* PkPassManager::pass(const QString& passId)
 {
     const auto it = m_passes.constFind(passId);
     if (it != m_passes.constEnd())
         return it.value();
 
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
-    auto file = KPkPass::File::fromFile(basePath + passId + QLatin1String(".pkpass"), this);
+    auto file = KPkPass::Pass::fromFile(basePath + passId + QLatin1String(".pkpass"), this);
     // TODO error handling
     m_passes.insert(passId, file);
     return file;
@@ -83,7 +83,7 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
-    std::unique_ptr<KPkPass::File> file(KPkPass::File::fromFile(url.toLocalFile()));
+    std::unique_ptr<KPkPass::Pass> file(KPkPass::Pass::fromFile(url.toLocalFile()));
     if (!file)
         return; // TODO error handling
     if (file->passTypeIdentifier().isEmpty() || file->serialNumber().isEmpty())

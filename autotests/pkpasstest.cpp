@@ -15,7 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <file.h>
+#include <pass.h>
 #include <boardingpass.h>
 
 #include <QLocale>
@@ -32,7 +32,7 @@ private slots:
 
     void testBoardingPass()
     {
-        std::unique_ptr<KPkPass::File> file(KPkPass::File::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
+        std::unique_ptr<KPkPass::Pass> file(KPkPass::Pass::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
         QVERIFY(file);
 
         QCOMPARE(file->logoText(), QLatin1String("Boarding Pass"));

@@ -17,8 +17,8 @@
    02110-1301, USA.
 */
 
-#ifndef KPKPASS_FILE_H
-#define KPKPASS_FILE_H
+#ifndef KPKPASS_PASS_H
+#define KPKPASS_PASS_H
 
 #include "kpkpass_export.h"
 #include "barcode.h"
@@ -45,8 +45,10 @@ namespace KPkPass {
 
 class Barcode;
 
-/** Base class for a pkpass file. */
-class KPKPASS_EXPORT File : public QObject
+/** Base class for a pkpass file.
+ *  @see https://developer.apple.com/library/content/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/TopLevel.html
+ */
+class KPKPASS_EXPORT Pass : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString passTypeIdentifier READ passTypeIdentifier CONSTANT)
@@ -67,7 +69,7 @@ class KPKPASS_EXPORT File : public QObject
     Q_PROPERTY(QVariantList barcodes READ barcodesVariant CONSTANT)
 
 public:
-    virtual ~File();
+    virtual ~Pass();
 
     /** Content of the pass.json file. */
     QJsonObject data() const;
@@ -96,15 +98,17 @@ public:
     QVector<Barcode> barcodes() const;
 
     /** Create a appropriate sub-class based on the pkpass file type. */
-    static File *fromData(const QByteArray &data, QObject *parent = nullptr);
+    static Pass *fromData(const QByteArray &data, QObject *parent = nullptr);
     /** Create a appropriate sub-class based on the pkpass file type. */
-    static File *fromFile(const QString &fileName, QObject *parent = nullptr);
+    static Pass *fromFile(const QString &fileName, QObject *parent = nullptr);
 
 protected:
-    explicit File(const QString &passType, QObject *parent = nullptr);
+    ///@cond internal
+    explicit Pass (const QString &passType, QObject *parent = nullptr);
+    ///@endcond
 
 private:
-    static File *fromData(std::unique_ptr<QIODevice> device, QObject *parent);
+    static Pass *fromData(std::unique_ptr<QIODevice> device, QObject *parent);
     void parse();
     bool parseMessages(const QString &lang);
 
@@ -125,4 +129,4 @@ private:
 
 }
 
-#endif // KPKPASS_FILE_H
+#endif // KPKPASS_PASS_H

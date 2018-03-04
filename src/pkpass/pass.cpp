@@ -17,7 +17,7 @@
    02110-1301, USA.
 */
 
-#include "file.h"
+#include "pass.h"
 #include "boardingpass.h"
 #include "logging.h"
 
@@ -36,25 +36,25 @@
 
 using namespace KPkPass;
 
-File::File(const QString &passType, QObject *parent)
+Pass::Pass (const QString &passType, QObject *parent)
     : QObject(parent)
     , m_passType(passType)
 {
 }
 
-File::~File() = default;
+Pass::~Pass() = default;
 
-QJsonObject File::data() const
+QJsonObject Pass::data() const
 {
     return m_passObj;
 }
 
-QJsonObject File::passData() const
+QJsonObject Pass::passData() const
 {
     return m_passObj.value(m_passType).toObject();
 }
 
-QString File::message(const QString &key) const
+QString Pass::message(const QString &key) const
 {
     const auto it = m_messages.constFind(key);
     if (it != m_messages.constEnd()) {
@@ -63,12 +63,12 @@ QString File::message(const QString &key) const
     return key;
 }
 
-QString File::passTypeIdentifier() const
+QString Pass::passTypeIdentifier() const
 {
     return m_passObj.value(QLatin1String("passTypeIdentifier")).toString();
 }
 
-QString File::serialNumber() const
+QString Pass::serialNumber() const
 {
     return m_passObj.value(QLatin1String("serialNumber")).toString();
 }
@@ -84,17 +84,17 @@ static QColor parseColor(const QString &s)
     return QColor(s);
 }
 
-QColor File::backgroundColor() const
+QColor Pass::backgroundColor() const
 {
     return parseColor(m_passObj.value(QLatin1String("backgroundColor")).toString());
 }
 
-QColor File::foregroundColor() const
+QColor Pass::foregroundColor() const
 {
     return parseColor(m_passObj.value(QLatin1String("foregroundColor")).toString());
 }
 
-QColor File::labelColor() const
+QColor Pass::labelColor() const
 {
     const auto c = parseColor(m_passObj.value(QLatin1String("labelColor")).toString());
     if (c.isValid()) {
@@ -103,12 +103,12 @@ QColor File::labelColor() const
     return foregroundColor();
 }
 
-QString File::logoText() const
+QString Pass::logoText() const
 {
     return message(m_passObj.value(QLatin1String("logoText")).toString());
 }
 
-QImage File::logo(unsigned int devicePixelRatio) const
+QImage Pass::logo(unsigned int devicePixelRatio) const
 {
     const KArchiveFile *file = nullptr;
     for (; devicePixelRatio > 1; --devicePixelRatio) {
@@ -126,12 +126,12 @@ QImage File::logo(unsigned int devicePixelRatio) const
     return img;
 }
 
-QDateTime File::relevantDate() const
+QDateTime Pass::relevantDate() const
 {
     return QDateTime::fromString(m_passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
 }
 
-QVector<Barcode> File::barcodes() const
+QVector<Barcode> Pass::barcodes() const
 {
     QVector<Barcode> codes;
 
@@ -151,32 +151,32 @@ QVector<Barcode> File::barcodes() const
     return codes;
 }
 
-QVector<Field> File::auxiliaryFields() const
+QVector<Field> Pass::auxiliaryFields() const
 {
     return fields(QLatin1String("auxiliaryFields"));
 }
 
-QVector<Field> File::backFields() const
+QVector<Field> Pass::backFields() const
 {
     return fields(QLatin1String("backFields"));
 }
 
-QVector<Field> File::headerFields() const
+QVector<Field> Pass::headerFields() const
 {
     return fields(QLatin1String("headerFields"));
 }
 
-QVector<Field> File::primaryFields() const
+QVector<Field> Pass::primaryFields() const
 {
     return fields(QLatin1String("primaryFields"));
 }
 
-QVector<Field> File::secondaryFields() const
+QVector<Field> Pass::secondaryFields() const
 {
     return fields(QLatin1String("secondaryFields"));
 }
 
-File *File::fromData(const QByteArray &data, QObject *parent)
+Pass *Pass::fromData(const QByteArray &data, QObject *parent)
 {
     std::unique_ptr<QBuffer> buffer(new QBuffer);
     buffer->setData(data);
@@ -184,7 +184,7 @@ File *File::fromData(const QByteArray &data, QObject *parent)
     return fromData(std::move(buffer), parent);
 }
 
-File *File::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
+Pass *Pass::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
 {
     std::unique_ptr<KZip> zip(new KZip(device.get()));
     if (!zip->open(QIODevice::ReadOnly)) {
@@ -199,13 +199,13 @@ File *File::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
     std::unique_ptr<QIODevice> dev(file->createDevice());
     const auto passObj = QJsonDocument::fromJson(dev->readAll()).object();
 
-    File *pass = nullptr;
+    Pass *pass = nullptr;
     if (passObj.contains(QLatin1String("boardingPass"))) {
         pass = new BoardingPass(parent);
     }
     // TODO: coupon, eventTicket, storeCard, generic
     else {
-        pass = new File(QStringLiteral("generic"), parent);
+        pass = new Pass (QStringLiteral("generic"), parent);
     }
 
     pass->m_buffer = std::move(device);
@@ -215,7 +215,7 @@ File *File::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
     return pass;
 }
 
-File *File::fromFile(const QString &fileName, QObject *parent)
+Pass *Pass::fromFile(const QString &fileName, QObject *parent)
 {
     std::unique_ptr<QFile> file(new QFile(fileName));
     if (file->open(QFile::ReadOnly)) {
@@ -225,7 +225,7 @@ File *File::fromFile(const QString &fileName, QObject *parent)
     return nullptr;
 }
 
-void File::parse()
+void Pass::parse()
 {
     // find the message catalog
     auto lang = QLocale().name();
@@ -280,7 +280,7 @@ static QString unquote(const QStringRef &str)
     return res;
 }
 
-bool File::parseMessages(const QString &lang)
+bool Pass::parseMessages(const QString &lang)
 {
     auto entry = m_zip->directory()->entry(lang);
     if (!entry || !entry->isDirectory()) {
@@ -337,7 +337,7 @@ bool File::parseMessages(const QString &lang)
     return !m_messages.isEmpty();
 }
 
-QVector<Field> File::fields(const QLatin1String &fieldType) const
+QVector<Field> Pass::fields(const QLatin1String &fieldType) const
 {
     const auto a = passData().value(fieldType).toArray();
     QVector<Field> f;
@@ -357,32 +357,32 @@ static QVariantList toVariantList(const QVector<T> &elems)
     return l;
 }
 
-QVariantList File::auxiliaryFieldsVariant() const
+QVariantList Pass::auxiliaryFieldsVariant() const
 {
     return toVariantList(auxiliaryFields());
 }
 
-QVariantList File::backFieldsVariant() const
+QVariantList Pass::backFieldsVariant() const
 {
     return toVariantList(backFields());
 }
 
-QVariantList File::headerFieldsVariant() const
+QVariantList Pass::headerFieldsVariant() const
 {
     return toVariantList(headerFields());
 }
 
-QVariantList File::primaryFieldsVariant() const
+QVariantList Pass::primaryFieldsVariant() const
 {
     return toVariantList(primaryFields());
 }
 
-QVariantList File::secondaryFieldsVariant() const
+QVariantList Pass::secondaryFieldsVariant() const
 {
     return toVariantList(secondaryFields());
 }
 
-QVariantList File::barcodesVariant() const
+QVariantList Pass::barcodesVariant() const
 {
     return toVariantList(barcodes());
 }

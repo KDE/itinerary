@@ -4,7 +4,7 @@ set(pkpass_srcs
     barcode.cpp
     boardingpass.cpp
     field.cpp
-    file.cpp
+    pass.cpp
 )
 ecm_qt_declare_logging_category(pkpass_srcs
     HEADER logging.h
@@ -31,7 +31,7 @@ ecm_generate_headers(KPkPass_HEADERS
         Barcode
         BoardingPass
         Field
-        File
+        Pass
     PREFIX KPkPass
     REQUIRED_HEADERS KPkPass_HEADERS
 )

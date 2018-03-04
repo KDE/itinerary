@@ -27,7 +27,7 @@ class QJsonObject;
 
 namespace KPkPass {
 
-class File;
+class Pass;
 
 /** A pass barcode element. */
 class KPKPASS_EXPORT Barcode
@@ -57,8 +57,8 @@ public:
     QString message() const;
 
 private:
-    friend class File;
-    explicit Barcode(const QJsonObject &obj, const File *file);
+    friend class Pass;
+    explicit Barcode(const QJsonObject &obj, const Pass *file);
 
     QString m_altText;
     QString m_message;

@@ -20,12 +20,12 @@
 #ifndef KPKPASS_BOARDINGPASS_H
 #define KPKPASS_BOARDINGPASS_H
 
-#include "file.h"
+#include "pass.h"
 
 namespace KPkPass {
 
 /** Boarding pass */
-class KPKPASS_EXPORT BoardingPass : public File
+class KPKPASS_EXPORT BoardingPass : public Pass
 {
     Q_GADGET
     Q_PROPERTY(TransitType transitType READ transitType)

@@ -18,7 +18,7 @@
 #include "timelinemodel.h"
 #include "pkpassmanager.h"
 
-#include <KPkPass/File>
+#include <KPkPass/Pass>
 
 #include <QDebug>
 #include <QLocale>
