@@ -32,6 +32,7 @@ class QJsonObject;
 namespace KPkPass {
 
 class Pass;
+class PassPrivate;
 class FieldPrivate;
 
 /** Field element in a KPkPass::Pass.
@@ -73,7 +74,7 @@ public:
 
     // TODO add textAlignment property
 private:
-    friend class Pass;
+    friend class PassPrivate;
     explicit Field(const QJsonObject &obj, const Pass *pass);
 
     std::shared_ptr<FieldPrivate> d;

@@ -18,6 +18,7 @@
 */
 
 #include "boardingpass.h"
+#include "pass_p.h"
 
 using namespace KPkPass;
 
@@ -28,7 +29,7 @@ BoardingPass::BoardingPass(QObject *parent)
 
 BoardingPass::TransitType BoardingPass::transitType() const
 {
-    const auto t = passData().value(QLatin1String("transitType")).toString();
+    const auto t = d->passData().value(QLatin1String("transitType")).toString();
     if (t == QLatin1String("PKTransitTypeAir")) {
         return Air;
     } else if (t == QLatin1String("PKTransitTypeBoat")) {

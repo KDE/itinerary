@@ -84,13 +84,6 @@ public:
     Q_ENUM(Type)
     Type type() const;
 
-    /** Content of the pass.json file. */
-    QJsonObject data() const;
-    /** The pass data structure of the pass.json file. */
-    QJsonObject passData() const;
-    /** Localized message for the given key. */
-    QString message(const QString &key) const;
-
     QString passTypeIdentifier() const;
     QString serialNumber() const;
 
@@ -117,15 +110,14 @@ public:
 
 protected:
     ///@cond internal
+    friend class Barcode;
+    friend class Field;
+    friend class PassPrivate;
     explicit Pass (const QString &passType, QObject *parent = nullptr);
+    std::unique_ptr<PassPrivate> d;
     ///@endcond
 
 private:
-    static Pass *fromData(std::unique_ptr<QIODevice> device, QObject *parent);
-    void parse();
-    bool parseMessages(const QString &lang);
-
-    QVector<Field> fields(const QLatin1String &fieldType) const;
     QVariantList auxiliaryFieldsVariant() const;
     QVariantList backFieldsVariant() const;
     QVariantList headerFieldsVariant() const;
@@ -133,7 +125,6 @@ private:
     QVariantList secondaryFieldsVariant() const;
     QVariantList barcodesVariant() const;
 
-    std::unique_ptr<PassPrivate> d;
 };
 
 }

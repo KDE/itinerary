@@ -19,6 +19,7 @@
 
 #include "field.h"
 #include "pass.h"
+#include "pass_p.h"
 
 #include <QJsonObject>
 
@@ -57,7 +58,7 @@ QString Field::key() const
 QString Field::label() const
 {
     if (d->pass) {
-        return d->pass->message(d->obj.value(QLatin1String("label")).toString());
+        return d->pass->d->message(d->obj.value(QLatin1String("label")).toString());
     }
     return {};
 }
@@ -67,9 +68,9 @@ QVariant Field::value() const
     if (!d->pass) {
         return {};
     }
-    auto v = d->pass->message(d->obj.value(QLatin1String("attributedValue")).toString());
+    auto v = d->pass->d->message(d->obj.value(QLatin1String("attributedValue")).toString());
     if (v.isEmpty()) {
-        v = d->pass->message(d->obj.value(QLatin1String("value")).toString());
+        v = d->pass->d->message(d->obj.value(QLatin1String("value")).toString());
     }
     // TODO number and date/time detection
     return v;
@@ -86,7 +87,7 @@ QString Field::changeMessage() const
     if (!d->pass) {
         return {};
     }
-    auto msg = d->pass->message(d->obj.value(QLatin1String("changeMessage")).toString());
+    auto msg = d->pass->d->message(d->obj.value(QLatin1String("changeMessage")).toString());
     msg = msg.replace(QLatin1String("%@"), valueDisplayString());
     return msg;
 }
