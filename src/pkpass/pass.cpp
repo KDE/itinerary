@@ -40,11 +40,6 @@ using namespace KPkPass;
 static const char * const passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
 static const auto passTypesCount = sizeof(passTypes) / sizeof(passTypes[0]);
 
-QJsonObject PassPrivate::data() const
-{
-    return passObj;
-}
-
 QJsonObject PassPrivate::passData() const
 {
     return passObj.value(QLatin1String(passTypes[passType])).toObject();
@@ -324,14 +319,14 @@ QVector<Barcode> Pass::barcodes() const
     QVector<Barcode> codes;
 
     // barcodes array
-    const auto a = d->data().value(QLatin1String("barcodes")).toArray();
+    const auto a = d->passObj.value(QLatin1String("barcodes")).toArray();
     codes.reserve(a.size());
     for (const auto &bc : a)
         codes.push_back(Barcode(bc.toObject(), this));
 
     // just a single barcode
     if (codes.isEmpty()) {
-        const auto bc = d->data().value(QLatin1String("barcode")).toObject();
+        const auto bc = d->passObj.value(QLatin1String("barcode")).toObject();
         if (!bc.isEmpty())
             codes.push_back(Barcode(bc, this));
     }

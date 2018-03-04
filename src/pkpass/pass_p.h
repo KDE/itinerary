@@ -29,8 +29,6 @@
 namespace KPkPass {
 class PassPrivate {
 public:
-    /** Content of the pass.json file. */
-    QJsonObject data() const;
     /** The pass data structure of the pass.json file. */
     QJsonObject passData() const;
     /** Localized message for the given key. */
