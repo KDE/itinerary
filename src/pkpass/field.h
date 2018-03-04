@@ -25,29 +25,58 @@
 #include <QMetaType>
 #include <QString>
 
+#include <memory>
+
 class QJsonObject;
 
 namespace KPkPass {
 
 class File;
+class FieldPrivate;
 
-/** Field element in a KPkPass::File. */
+/** Field element in a KPkPass::File.
+ * @see https://developer.apple.com/library/content/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/FieldDictionary.html
+ */
 class KPKPASS_EXPORT Field
 {
     Q_GADGET
+    Q_PROPERTY(QString key READ key CONSTANT)
     Q_PROPERTY(QString label READ label CONSTANT)
-    Q_PROPERTY(QString value READ value CONSTANT)
+    Q_PROPERTY(QVariant value READ value CONSTANT)
+    Q_PROPERTY(QString valueDisplayString READ valueDisplayString CONSTANT)
+    Q_PROPERTY(QString changeMessage READ changeMessage CONSTANT)
+
 public:
-    Field() = default;
-    explicit Field(const QJsonObject &obj, const File *file);
-    ~Field() = default;
+    Field();
+    Field(const Field&);
+    Field(Field&&);
+    ~Field();
+    Field& operator=(const Field&);
 
+    /** Field key, unique in the pass but not meant for display. */
+    QString key() const;
+    /** Localized label for display describing this field. */
     QString label() const;
-    QString value() const;
 
+    /** Value of this field.
+     *  This can either be a localized string (most common), a date/time value or a number.
+     *  Use this for data extraction, prefer valueDisplayString() for displaying data.
+     */
+    QVariant value() const;
+    /** Value of this field, as a localized string for display.
+     *  Use this rather than value() for display.
+     */
+    QString valueDisplayString() const;
+
+    /** The localized change message for this value. */
+    QString changeMessage() const;
+
+    // TODO add textAlignment property
 private:
-    QString m_label;
-    QString m_value;
+    friend class File;
+    explicit Field(const QJsonObject &obj, const File *file);
+
+    std::shared_ptr<FieldPrivate> d;
 };
 
 }

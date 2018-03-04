@@ -24,18 +24,72 @@
 
 using namespace KPkPass;
 
-Field::Field(const QJsonObject &obj, const File *file)
+namespace KPkPass {
+class FieldPrivate {
+public:
+    const File *file = nullptr;
+    QJsonObject obj;
+};
+}
+
+Field::Field()
+    : d(new FieldPrivate)
 {
-    m_label = file->message(obj.value(QLatin1String("label")).toString());
-    m_value = file->message(obj.value(QLatin1String("value")).toString());
+}
+
+Field::Field(const Field&) = default;
+Field::Field(Field&&) = default;
+Field::~Field() = default;
+Field& Field::operator=(const Field&) = default;
+
+Field::Field(const QJsonObject &obj, const File *file)
+    : d(new FieldPrivate)
+{
+    d->file = file;
+    d->obj = obj;
+}
+
+QString Field::key() const
+{
+    if (d->file) {
+        return d->obj.value(QLatin1String("key")).toString();
+    }
+    return {};
 }
 
 QString Field::label() const
 {
-    return m_label;
+    if (d->file) {
+        return d->file->message(d->obj.value(QLatin1String("label")).toString());
+    }
+    return {};
 }
 
-QString Field::value() const
+QVariant Field::value() const
 {
-    return m_value;
+    if (!d->file) {
+        return {};
+    }
+    auto v = d->file->message(d->obj.value(QLatin1String("attributedValue")).toString());
+    if (v.isEmpty()) {
+        v = d->file->message(d->obj.value(QLatin1String("value")).toString());
+    }
+    // TODO number and date/time detection
+    return v;
+}
+
+QString Field::valueDisplayString() const
+{
+    // TODO respect number and date/time formatting options
+    return value().toString();
+}
+
+QString Field::changeMessage() const
+{
+    if (!d->file) {
+        return {};
+    }
+    auto msg = d->file->message(d->obj.value(QLatin1String("changeMessage")).toString());
+    msg = msg.replace(QLatin1String("%@"), valueDisplayString());
+    return msg;
 }
