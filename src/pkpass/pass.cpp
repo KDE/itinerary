@@ -37,7 +37,7 @@
 
 using namespace KPkPass;
 
-static const char* passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
+static const char * const passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
 static const auto passTypesCount = sizeof(passTypes) / sizeof(passTypes[0]);
 
 QJsonObject PassPrivate::data() const
@@ -339,29 +339,51 @@ QVector<Barcode> Pass::barcodes() const
     return codes;
 }
 
+static const char * const fieldNames[] = {
+    "auxiliaryFields",
+    "backFields",
+    "headerFields",
+    "primaryFields",
+    "secondaryFields"
+};
+static const auto fieldNameCount = sizeof(fieldNames) / sizeof(fieldNames[0]);
+
 QVector<Field> Pass::auxiliaryFields() const
 {
-    return d->fields(QLatin1String("auxiliaryFields"), this);
+    return d->fields(QLatin1String(fieldNames[0]), this);
 }
 
 QVector<Field> Pass::backFields() const
 {
-    return d->fields(QLatin1String("backFields"), this);
+    return d->fields(QLatin1String(fieldNames[1]), this);
 }
 
 QVector<Field> Pass::headerFields() const
 {
-    return d->fields(QLatin1String("headerFields"), this);
+    return d->fields(QLatin1String(fieldNames[2]), this);
 }
 
 QVector<Field> Pass::primaryFields() const
 {
-    return d->fields(QLatin1String("primaryFields"), this);
+    return d->fields(QLatin1String(fieldNames[3]), this);
 }
 
 QVector<Field> Pass::secondaryFields() const
 {
-    return d->fields(QLatin1String("secondaryFields"), this);
+    return d->fields(QLatin1String(fieldNames[4]), this);
+}
+
+Field Pass::field(const QString& key) const
+{
+    for (unsigned int i = 0; i < fieldNameCount; ++i) {
+        const auto fs = d->fields(QLatin1String(fieldNames[i]), this);
+        for (const auto f : fs) {
+            if (f.key() == key) {
+                return f;
+            }
+        }
+    }
+    return {};
 }
 
 Pass *Pass::fromData(const QByteArray &data, QObject *parent)

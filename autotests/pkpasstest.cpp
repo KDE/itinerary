@@ -48,6 +48,10 @@ private slots:
         QCOMPARE(field.key(), QLatin1String("seat"));
         QCOMPARE(field.changeMessage(), QStringLiteral("Sitzplatznummer geändert in 10E"));
 
+        field = pass->field(QLatin1String("boarding"));
+        QCOMPARE(field.key(), QLatin1String("boarding"));
+        QCOMPARE(field.value(), QLatin1String("20:25"));
+
         auto boardingPass = dynamic_cast<KPkPass::BoardingPass*>(pass.get());
         QVERIFY(boardingPass);
         QCOMPARE(boardingPass->transitType(), KPkPass::BoardingPass::Air);

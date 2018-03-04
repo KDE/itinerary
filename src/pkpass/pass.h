@@ -97,6 +97,9 @@ public:
     QVector<Field> primaryFields() const;
     QVector<Field> secondaryFields() const;
 
+    /** Returns the field with key @p key. */
+    Field field(const QString &key) const;
+
     /** Returns all barcodes defined in the pass. */
     QVector<Barcode> barcodes() const;
 
