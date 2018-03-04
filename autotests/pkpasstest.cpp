@@ -32,12 +32,14 @@ private slots:
 
     void testBoardingPass()
     {
-        std::unique_ptr<KPkPass::Pass> file(KPkPass::Pass::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
-        QVERIFY(file);
+        std::unique_ptr<KPkPass::Pass> pass(KPkPass::Pass::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
+        QVERIFY(pass);
 
-        QCOMPARE(file->logoText(), QLatin1String("Boarding Pass"));
+        QCOMPARE(pass->type(), KPkPass::Pass::BoardingPass);
+        QCOMPARE(pass->logoText(), QLatin1String("Boarding Pass"));
+        QCOMPARE(pass->backgroundColor(), QColor(61, 174, 233));
 
-        auto headers = file->headerFields();
+        auto headers = pass->headerFields();
         QCOMPARE(headers.size(), 2);
         auto field = headers.at(0);
         QCOMPARE(field.label(), QLatin1String("Sitzplatz"));
@@ -46,11 +48,11 @@ private slots:
         QCOMPARE(field.key(), QLatin1String("seat"));
         QCOMPARE(field.changeMessage(), QStringLiteral("Sitzplatznummer geändert in 10E"));
 
-        auto boardingPass = dynamic_cast<KPkPass::BoardingPass*>(file.get());
+        auto boardingPass = dynamic_cast<KPkPass::BoardingPass*>(pass.get());
         QVERIFY(boardingPass);
         QCOMPARE(boardingPass->transitType(), KPkPass::BoardingPass::Air);
 
-        auto barcodes = file->barcodes();
+        auto barcodes = pass->barcodes();
         QCOMPARE(barcodes.size(), 1);
         auto bc = barcodes.at(0);
         QCOMPARE(bc.format(), KPkPass::Barcode::QR);

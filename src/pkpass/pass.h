@@ -53,6 +53,7 @@ class KPKPASS_EXPORT Pass : public QObject
     Q_OBJECT
     Q_PROPERTY(QString passTypeIdentifier READ passTypeIdentifier CONSTANT)
     Q_PROPERTY(QString serialNumber READ serialNumber CONSTANT)
+    Q_PROPERTY(Type type READ type CONSTANT)
     Q_PROPERTY(QColor backgroundColor READ backgroundColor CONSTANT)
     Q_PROPERTY(QColor foregroundColor READ foregroundColor CONSTANT)
     Q_PROPERTY(QColor labelColor READ labelColor CONSTANT)
@@ -70,6 +71,17 @@ class KPKPASS_EXPORT Pass : public QObject
 
 public:
     virtual ~Pass();
+
+    /** Type of the pass. */
+    enum Type {
+        BoardingPass,
+        Coupon,
+        EventTicket,
+        Generic,
+        StoreCard
+    };
+    Q_ENUM(Type)
+    Type type() const;
 
     /** Content of the pass.json file. */
     QJsonObject data() const;

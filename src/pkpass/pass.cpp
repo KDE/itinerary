@@ -73,6 +73,20 @@ QString Pass::serialNumber() const
     return m_passObj.value(QLatin1String("serialNumber")).toString();
 }
 
+static const char* passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
+static const auto passTypesCount = sizeof(passTypes) / sizeof(passTypes[0]);
+
+Pass::Type KPkPass::Pass::type() const
+{
+    for (unsigned int i = 0; i < passTypesCount; ++i) {
+        if (data().contains(QLatin1String(passTypes[i]))) {
+            return static_cast<Type>(i);
+        }
+    }
+    qCWarning(Log) << "pkpass file has no pass data structure!";
+    return Generic;
+}
+
 static QColor parseColor(const QString &s)
 {
     if (s.startsWith(QLatin1String("rgb("), Qt::CaseInsensitive)) {
@@ -201,7 +215,7 @@ Pass *Pass::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
 
     Pass *pass = nullptr;
     if (passObj.contains(QLatin1String("boardingPass"))) {
-        pass = new BoardingPass(parent);
+        pass = new KPkPass::BoardingPass(parent);
     }
     // TODO: coupon, eventTicket, storeCard, generic
     else {
