@@ -37,6 +37,9 @@
 
 using namespace KPkPass;
 
+static const char* passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
+static const auto passTypesCount = sizeof(passTypes) / sizeof(passTypes[0]);
+
 QJsonObject PassPrivate::data() const
 {
     return passObj;
@@ -44,7 +47,7 @@ QJsonObject PassPrivate::data() const
 
 QJsonObject PassPrivate::passData() const
 {
-    return passObj.value(passType).toObject();
+    return passObj.value(QLatin1String(passTypes[passType])).toObject();
 }
 
 QString PassPrivate::message(const QString &key) const
@@ -203,13 +206,27 @@ Pass *PassPrivate::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
         return nullptr;
     }
 
-    Pass *pass = nullptr;
-    if (passObj.contains(QLatin1String("boardingPass"))) {
-        pass = new KPkPass::BoardingPass(parent);
+    // determine pass type
+    int passTypeIdx = -1;
+    for (unsigned int i = 0; i < passTypesCount; ++i) {
+        if (passObj.contains(QLatin1String(passTypes[i]))) {
+            passTypeIdx = i;
+            break;
+        }
     }
-    // TODO: coupon, eventTicket, storeCard, generic
-    else {
-        pass = new Pass (QStringLiteral("generic"), parent);
+    if (passTypeIdx < 0) {
+        qCWarning(Log) << "pkpass file has no pass data structure!";
+        return nullptr;
+    }
+
+    Pass *pass = nullptr;
+    switch (passTypeIdx) {
+        case Pass::BoardingPass:
+            pass = new KPkPass::BoardingPass(parent);
+            break;
+        default:
+            pass = new Pass(static_cast<Pass::Type>(passTypeIdx), parent);
+            break;
     }
 
     pass->d->buffer = std::move(device);
@@ -220,7 +237,7 @@ Pass *PassPrivate::fromData(std::unique_ptr<QIODevice> device, QObject *parent)
 }
 
 
-Pass::Pass (const QString &passType, QObject *parent)
+Pass::Pass(Type passType, QObject *parent)
     : QObject(parent)
     , d(new PassPrivate)
 {
@@ -239,18 +256,9 @@ QString Pass::serialNumber() const
     return d->passObj.value(QLatin1String("serialNumber")).toString();
 }
 
-static const char* passTypes[] = { "boardingPass", "coupon", "eventTicket", "generic", "storeCard" };
-static const auto passTypesCount = sizeof(passTypes) / sizeof(passTypes[0]);
-
-Pass::Type KPkPass::Pass::type() const
+Pass::Type Pass::type() const
 {
-    for (unsigned int i = 0; i < passTypesCount; ++i) {
-        if (d->data().contains(QLatin1String(passTypes[i]))) {
-            return static_cast<Type>(i);
-        }
-    }
-    qCWarning(Log) << "pkpass file has no pass data structure!";
-    return Generic;
+    return d->passType;
 }
 
 static QColor parseColor(const QString &s)

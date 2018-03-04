@@ -47,7 +47,7 @@ public:
     std::unique_ptr<KZip> zip;
     QJsonObject passObj;
     QHash<QString, QString> messages;
-    QString passType;
+    Pass::Type passType;
 };
 }
 

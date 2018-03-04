@@ -24,11 +24,8 @@
 #include "barcode.h"
 #include "field.h"
 
-#include <QByteArray>
 #include <QColor>
 #include <QDateTime>
-#include <QHash>
-#include <QJsonObject>
 #include <QObject>
 #include <QVariant>
 #include <QVector>
@@ -36,8 +33,8 @@
 #include <memory>
 
 class KZip;
+class QByteArray;
 class QIODevice;
-class QJsonObject;
 class QLatin1String;
 class QString;
 
@@ -113,7 +110,7 @@ protected:
     friend class Barcode;
     friend class Field;
     friend class PassPrivate;
-    explicit Pass (const QString &passType, QObject *parent = nullptr);
+    explicit Pass (Type passType, QObject *parent = nullptr);
     std::unique_ptr<PassPrivate> d;
     ///@endcond
 

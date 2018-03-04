@@ -23,9 +23,11 @@
 using namespace KPkPass;
 
 BoardingPass::BoardingPass(QObject *parent)
-    : Pass(QStringLiteral("boardingPass"), parent)
+    : Pass(Pass::BoardingPass, parent)
 {
 }
+
+BoardingPass::~BoardingPass() = default;
 
 BoardingPass::TransitType BoardingPass::transitType() const
 {
