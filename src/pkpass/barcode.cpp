@@ -23,38 +23,53 @@
 
 using namespace KPkPass;
 
+namespace KPkPass {
+class BarcodePrivate
+{
+public:
+    const Pass *pass = nullptr;
+    QJsonObject obj;
+};
+}
+
 Barcode::Barcode()
+    : d(new BarcodePrivate)
 {
 }
 
 Barcode::Barcode(const QJsonObject &obj, const Pass *pass)
+    : d(new BarcodePrivate)
 {
-    m_altText = pass->d->message(obj.value(QLatin1String("altText")).toString());
-    const auto format = obj.value(QLatin1String("format")).toString();
-    if (format == QLatin1String("PKBarcodeFormatQR"))
-        m_format = QR;
-    else if (format == QLatin1String("PKBarcodeFormatPDF417"))
-        m_format = PDF417;
-    else if (format == QLatin1String("PKBarcodeFormatAztec"))
-        m_format = Aztec;
-    else if (format == QLatin1String("PKBarcodeFormatCode128"))
-        m_format = Code128;
-    m_message = obj.value(QLatin1String("message")).toString();
+    d->pass = pass;
+    d->obj = obj;
 }
 
 Barcode::~Barcode() = default;
 
 QString Barcode::alternativeText() const
 {
-    return m_altText;
+    if (d->pass) {
+        return d->pass->d->message(d->obj.value(QLatin1String("altText")).toString());
+    }
+    return {};
 }
 
 Barcode::Format KPkPass::Barcode::format() const
 {
-    return m_format;
+    const auto format = d->obj.value(QLatin1String("format")).toString();
+    if (format == QLatin1String("PKBarcodeFormatQR")) {
+        return QR;
+    } else if (format == QLatin1String("PKBarcodeFormatPDF417")) {
+        return PDF417;
+    } else if (format == QLatin1String("PKBarcodeFormatAztec")) {
+        return Aztec;
+    } else if (format == QLatin1String("PKBarcodeFormatCode128")) {
+        return Code128;
+    }
+    return Invalid;
 }
 
 QString Barcode::message() const
 {
-    return m_message;
+    return d->obj.value(QLatin1String("message")).toString();
 }

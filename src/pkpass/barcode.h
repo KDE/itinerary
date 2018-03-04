@@ -23,19 +23,25 @@
 #include <QMetaType>
 #include <QString>
 
+#include <memory>
+
 class QJsonObject;
 
 namespace KPkPass {
 
+class BarcodePrivate;
 class Pass;
 
-/** A pass barcode element. */
+/** A pass barcode element.
+ *  @see https://developer.apple.com/library/content/documentation/UserExperience/Reference/PassKit_Bundle/Chapters/LowerLevel.html
+ */
 class KPKPASS_EXPORT Barcode
 {
     Q_GADGET
     Q_PROPERTY(QString alternativeText READ alternativeText CONSTANT)
     Q_PROPERTY(Format format READ format CONSTANT)
     Q_PROPERTY(QString message READ message CONSTANT)
+
 public:
     enum Format {
         Invalid,
@@ -56,13 +62,11 @@ public:
     /** The message encoded in the barcode. */
     QString message() const;
 
+    // TODO add codec property
 private:
     friend class Pass;
     explicit Barcode(const QJsonObject &obj, const Pass *file);
-
-    QString m_altText;
-    QString m_message;
-    Format m_format = Invalid;
+    std::shared_ptr<BarcodePrivate> d;
 };
 
 }
