@@ -10,6 +10,7 @@ ecm_qt_declare_logging_category(itinerary_srcs
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     KPkPass
+    Qt5::Network
 )
 
 add_executable(itinerary-app

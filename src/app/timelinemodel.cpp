@@ -39,6 +39,7 @@ void TimelineModel::setPkPassManager(PkPassManager* mgr)
         return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
     });
     connect(mgr, &PkPassManager::passAdded, this, &TimelineModel::passAdded);
+    connect(mgr, &PkPassManager::passUpdated, this, &TimelineModel::passUpdated);
     endResetModel();
 }
 
@@ -74,7 +75,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     return names;
 }
 
-void TimelineModel::passAdded(const QString& passId)
+void TimelineModel::passAdded(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
         return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
@@ -83,4 +84,13 @@ void TimelineModel::passAdded(const QString& passId)
     beginInsertRows({}, index, index);
     m_passes.insert(it, passId);
     endInsertRows();
+}
+
+void TimelineModel::passUpdated(const QString &passId)
+{
+    auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
+        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+    });
+    auto row = std::distance(m_passes.begin(), it);
+    emit dataChanged(index(row, 0), index(row, 0));
 }

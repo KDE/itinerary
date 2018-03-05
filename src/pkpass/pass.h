@@ -58,6 +58,9 @@ class KPKPASS_EXPORT Pass : public QObject
     Q_PROPERTY(QString logoText READ logoText CONSTANT)
     Q_PROPERTY(QDateTime relevantDate READ relevantDate CONSTANT)
 
+    Q_PROPERTY(QString authenticationToken READ authenticationToken CONSTANT)
+    Q_PROPERTY(QString webServiceUrl READ webServiceUrl CONSTANT)
+
     // needs to be QVariantList just for QML (Grantlee would also work with QVector<Field>
     Q_PROPERTY(QVariantList auxiliaryFields READ auxiliaryFieldsVariant CONSTANT)
     Q_PROPERTY(QVariantList backFields READ backFieldsVariant CONSTANT)
@@ -90,6 +93,9 @@ public:
     QString logoText() const;
     QImage logo(unsigned int devicePixelRatio = 1) const;
     QDateTime relevantDate() const;
+
+    QString authenticationToken() const;
+    QString webServiceUrl() const;
 
     QVector<Field> auxiliaryFields() const;
     QVector<Field> backFields() const;

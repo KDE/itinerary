@@ -49,6 +49,13 @@ Kirigami.ApplicationWindow {
                 onTriggered: {
                     fileDialog.visible = true;
                 }
+            },
+            Kirigami.Action {
+                text: qsTr("Check for Updates")
+                iconName: "view-refresh"
+                onTriggered: {
+                    _pkpassManager.updatePasses();
+                }
             }
         ]
     }

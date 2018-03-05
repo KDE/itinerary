@@ -24,12 +24,16 @@
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 #include <QUrl>
 #include <QVector>
 
 PkPassManager::PkPassManager(QObject* parent)
     : QObject(parent)
+    , m_nam(new QNetworkAccessManager(this))
 {
 }
 
@@ -89,25 +93,37 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     if (file->passTypeIdentifier().isEmpty() || file->serialNumber().isEmpty())
         return; // TODO error handling
 
-    // TODO check for already existing version
     QDir dir(basePath);
     dir.mkdir(file->passTypeIdentifier());
     dir.cd(file->passTypeIdentifier());
 
     // serialNumber() can contain percent-encoding or slashes,
     // ie stuff we don't want to have in file names
-    const auto passId = QString::fromUtf8(file->serialNumber().toUtf8().toBase64(QByteArray::Base64UrlEncoding));
+    const auto serNum = QString::fromUtf8(file->serialNumber().toUtf8().toBase64(QByteArray::Base64UrlEncoding));
+    const QString passId = dir.dirName() + QLatin1Char('/') + serNum;
+
+    auto oldPass = pass(passId);
+    if (oldPass) {
+        QFile::remove(dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+        m_passes.remove(passId);
+    }
 
     switch (mode) {
         case Move:
-            QFile::rename(url.toLocalFile(), dir.absoluteFilePath(passId + QLatin1String(".pkpass")));
+            QFile::rename(url.toLocalFile(), dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
             break;
         case Copy:
-            QFile::copy(url.toLocalFile(), dir.absoluteFilePath(passId + QLatin1String(".pkpass")));
+            QFile::copy(url.toLocalFile(), dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
             break;
     }
 
-    emit passAdded(dir.dirName() + QLatin1Char('/') + passId);
+    if (oldPass) {
+        // TODO check for changes and generate change message
+        emit passUpdated(passId);
+        oldPass->deleteLater();
+    } else {
+        emit passAdded(passId);
+    }
 }
 
 void PkPassManager::removePass(const QString& passId)
@@ -115,4 +131,39 @@ void PkPassManager::removePass(const QString& passId)
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
     QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1String(".pkpass"));
     // TODO change signal
+}
+
+void PkPassManager::updatePass(const QString& passId)
+{
+    auto p = pass(passId);
+    if (!p || p->webServiceUrl().isEmpty() || p->authenticationToken().isEmpty())
+        return;
+    if (p->relevantDate() < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
+        return;
+
+    QUrl url(p->webServiceUrl());
+    url.setPath(url.path() + QLatin1String("/v1/passes/") + p->passTypeIdentifier() + QLatin1Char('/') + p->serialNumber());
+    qCDebug(Log) << "GET" << url;
+    QNetworkRequest req(url);
+    req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
+    req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+    auto reply = m_nam->get(req);
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        if (reply->error() != QNetworkReply::NoError) {
+            qCWarning(Log) << "Failed to download pass:" << reply->errorString();
+            return;
+        }
+
+        QTemporaryFile tmp;
+        tmp.open();
+        tmp.write(reply->readAll());
+        tmp.close();
+        importPassFromTempFile(tmp.fileName());
+    });
+}
+
+void PkPassManager::updatePasses()
+{
+    for (const auto &passId : passes())
+        updatePass(passId);
 }

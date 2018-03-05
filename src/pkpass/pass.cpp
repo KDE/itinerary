@@ -314,6 +314,16 @@ QDateTime Pass::relevantDate() const
     return QDateTime::fromString(d->passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
 }
 
+QString Pass::authenticationToken() const
+{
+    return d->passObj.value(QLatin1String("authenticationToken")).toString();
+}
+
+QString Pass::webServiceUrl() const
+{
+    return d->passObj.value(QLatin1String("webServiceURL")).toString();
+}
+
 QVector<Barcode> Pass::barcodes() const
 {
     QVector<Barcode> codes;

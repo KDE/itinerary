@@ -21,6 +21,8 @@
 #include <QHash>
 #include <QObject>
 
+class QNetworkAccessManager;
+
 namespace KPkPass {
 class Pass;
 }
@@ -40,14 +42,19 @@ public:
     void importPassFromTempFile(const QString &tmpFile);
     Q_INVOKABLE void removePass(const QString &passId);
 
+    void updatePass(const QString &passId);
+    Q_INVOKABLE void updatePasses();
+
 signals:
     void passAdded(const QString &passId);
+    void passUpdated(const QString &passId);
 
 private:
     enum ImportMode { Copy, Move };
     void doImportPass(const QUrl &url, ImportMode mode);
 
     QHash<QString, KPkPass::Pass*> m_passes;
+    QNetworkAccessManager *m_nam;
 };
 
 #endif // PKPASSMANAGER_H
