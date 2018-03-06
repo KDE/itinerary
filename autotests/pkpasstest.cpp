@@ -32,7 +32,7 @@ private slots:
 
     void testBoardingPass()
     {
-        std::unique_ptr<KPkPass::Pass> pass(KPkPass::Pass::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass.pkpass")));
+        std::unique_ptr<KPkPass::Pass> pass(KPkPass::Pass::fromFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QVERIFY(pass);
 
         QCOMPARE(pass->type(), KPkPass::Pass::BoardingPass);

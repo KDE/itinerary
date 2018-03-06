@@ -58,11 +58,16 @@ QVector<QString> PkPassManager::passes() const
 KPkPass::Pass* PkPassManager::pass(const QString& passId)
 {
     const auto it = m_passes.constFind(passId);
-    if (it != m_passes.constEnd())
+    if (it != m_passes.constEnd() && it.value()) {
         return it.value();
+    }
 
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
-    auto file = KPkPass::Pass::fromFile(basePath + passId + QLatin1String(".pkpass"), this);
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    if (!QFile::exists(passPath)) {
+        return nullptr;
+    }
+
+    auto file = KPkPass::Pass::fromFile(passPath, this);
     // TODO error handling
     m_passes.insert(passId, file);
     return file;
