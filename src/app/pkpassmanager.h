@@ -47,7 +47,7 @@ public:
 
 signals:
     void passAdded(const QString &passId);
-    void passUpdated(const QString &passId);
+    void passUpdated(const QString &passId, const QStringList &changes);
 
 private:
     enum ImportMode { Copy, Move };

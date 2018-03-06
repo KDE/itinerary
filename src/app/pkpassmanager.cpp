@@ -92,19 +92,19 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
-    std::unique_ptr<KPkPass::Pass> file(KPkPass::Pass::fromFile(url.toLocalFile()));
-    if (!file)
+    std::unique_ptr<KPkPass::Pass> newPass(KPkPass::Pass::fromFile(url.toLocalFile()));
+    if (!newPass)
         return; // TODO error handling
-    if (file->passTypeIdentifier().isEmpty() || file->serialNumber().isEmpty())
+    if (newPass->passTypeIdentifier().isEmpty() || newPass->serialNumber().isEmpty())
         return; // TODO error handling
 
     QDir dir(basePath);
-    dir.mkdir(file->passTypeIdentifier());
-    dir.cd(file->passTypeIdentifier());
+    dir.mkdir(newPass->passTypeIdentifier());
+    dir.cd(newPass->passTypeIdentifier());
 
     // serialNumber() can contain percent-encoding or slashes,
     // ie stuff we don't want to have in file names
-    const auto serNum = QString::fromUtf8(file->serialNumber().toUtf8().toBase64(QByteArray::Base64UrlEncoding));
+    const auto serNum = QString::fromUtf8(newPass->serialNumber().toUtf8().toBase64(QByteArray::Base64UrlEncoding));
     const QString passId = dir.dirName() + QLatin1Char('/') + serNum;
 
     auto oldPass = pass(passId);
@@ -123,8 +123,16 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     }
 
     if (oldPass) {
-        // TODO check for changes and generate change message
-        emit passUpdated(passId);
+        // check for changes and generate change message
+        QStringList changes;
+        for (const auto &f : newPass->fields()) {
+            const auto prevValue = oldPass->field(f.key()).value();
+            const auto curValue = f.value();
+            if (curValue != prevValue) {
+                changes.push_back(f.changeMessage());
+            }
+        }
+        emit passUpdated(passId, changes);
         oldPass->deleteLater();
     } else {
         emit passAdded(passId);

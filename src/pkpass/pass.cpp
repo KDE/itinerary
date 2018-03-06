@@ -391,6 +391,15 @@ Field Pass::field(const QString& key) const
     return {};
 }
 
+QVector<Field> Pass::fields() const
+{
+    QVector<Field> fs;
+    for (unsigned int i = 0; i < fieldNameCount; ++i) {
+        fs += d->fields(QLatin1String(fieldNames[i]), this);
+    }
+    return fs;
+}
+
 Pass *Pass::fromData(const QByteArray &data, QObject *parent)
 {
     std::unique_ptr<QBuffer> buffer(new QBuffer);

@@ -105,6 +105,8 @@ public:
 
     /** Returns the field with key @p key. */
     Field field(const QString &key) const;
+    /** Returns all fields found in this pass. */
+    QVector<Field> fields() const;
 
     /** Returns all barcodes defined in the pass. */
     QVector<Barcode> barcodes() const;
