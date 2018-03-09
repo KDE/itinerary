@@ -39,6 +39,7 @@ if (ANDROID)
         edit-delete
         map-symbolic
         view-calendar-day
+        view-refresh
     )
 else ()
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
