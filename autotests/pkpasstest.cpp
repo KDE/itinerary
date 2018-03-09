@@ -38,6 +38,8 @@ private slots:
         QCOMPARE(pass->type(), KPkPass::Pass::BoardingPass);
         QCOMPARE(pass->logoText(), QLatin1String("Boarding Pass"));
         QCOMPARE(pass->backgroundColor(), QColor(61, 174, 233));
+        QCOMPARE(pass->relevantDate(), QDateTime(QDate(2017, 9, 17), QTime(0, 4, 0), Qt::UTC));
+        QCOMPARE(pass->fields().size(), 12);
 
         auto headers = pass->headerFields();
         QCOMPARE(headers.size(), 2);

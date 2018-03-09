@@ -63,6 +63,8 @@ private slots:
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(mgr.passes().size(), 1);
         QCOMPARE(updateSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QCOMPARE(updateSpy.at(0).at(1).toStringList().size(), 1);
+        QCOMPARE(updateSpy.at(0).at(1).toStringList().at(0), QStringLiteral("Gate changed to G30."));
     }
 };
 
