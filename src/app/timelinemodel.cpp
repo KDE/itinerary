@@ -36,7 +36,7 @@ void TimelineModel::setPkPassManager(PkPassManager* mgr)
     m_mgr = mgr;
     m_passes = mgr->passes();
     std::sort(m_passes.begin(), m_passes.end(), [this](const QString &lhs, const QString &rhs) {
-        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
     });
     connect(mgr, &PkPassManager::passAdded, this, &TimelineModel::passAdded);
     connect(mgr, &PkPassManager::passUpdated, this, &TimelineModel::passUpdated);
@@ -61,7 +61,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case PassIdRole:
             return m_passes.at(index.row());
         case SectionHeader:
-            return QLocale().toString(m_mgr->pass(m_passes.at(index.row()))->relevantDate().date(), QLocale::ShortFormat);
+            return QLocale().toString(PkPassManager::relevantDate(m_mgr->pass(m_passes.at(index.row()))).date(), QLocale::ShortFormat);
     }
     return {};
 }
@@ -78,7 +78,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 void TimelineModel::passAdded(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
-        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
     });
     auto index = std::distance(m_passes.begin(), it);
     beginInsertRows({}, index, index);
@@ -89,7 +89,7 @@ void TimelineModel::passAdded(const QString &passId)
 void TimelineModel::passUpdated(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
-        return m_mgr->pass(lhs)->relevantDate() > m_mgr->pass(rhs)->relevantDate();
+        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
     });
     auto row = std::distance(m_passes.begin(), it);
     emit dataChanged(index(row, 0), index(row, 0));

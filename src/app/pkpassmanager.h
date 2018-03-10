@@ -45,6 +45,8 @@ public:
     void updatePass(const QString &passId);
     Q_INVOKABLE void updatePasses();
 
+    static QDateTime relevantDate(KPkPass::Pass *pass);
+
 signals:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId, const QStringList &changes);

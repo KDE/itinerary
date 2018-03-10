@@ -151,7 +151,7 @@ void PkPassManager::updatePass(const QString& passId)
     auto p = pass(passId);
     if (!p || p->webServiceUrl().isEmpty() || p->authenticationToken().isEmpty())
         return;
-    if (p->relevantDate() < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
+    if (relevantDate(p) < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
         return;
 
     QUrl url(p->webServiceUrl());
@@ -179,4 +179,12 @@ void PkPassManager::updatePasses()
 {
     for (const auto &passId : passes())
         updatePass(passId);
+}
+
+QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
+{
+    const auto dt = pass->relevantDate();
+    if (dt.isValid())
+        return dt;
+    return pass->expirationDate();
 }
