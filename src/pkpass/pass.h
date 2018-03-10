@@ -21,7 +21,6 @@
 #define KPKPASS_PASS_H
 
 #include "kpkpass_export.h"
-#include "barcode.h"
 #include "field.h"
 
 #include <QColor>
@@ -38,6 +37,7 @@ class QString;
 namespace KPkPass {
 
 class Barcode;
+class Location;
 class PassPrivate;
 
 /** Base class for a pkpass file.
@@ -100,7 +100,9 @@ public:
     bool isVoided() const;
 
     // relevance keys
-    // TODO locations, maxDistance
+    /** Locations associated with this pass. */
+    QVector<Location> locations() const;
+    // TODO maxDistance
     QDateTime relevantDate() const;
 
     // visual appearance keys
@@ -150,7 +152,6 @@ private:
     QVariantList primaryFieldsVariant() const;
     QVariantList secondaryFieldsVariant() const;
     QVariantList barcodesVariant() const;
-
 };
 
 }

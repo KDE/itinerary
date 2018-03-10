@@ -15,11 +15,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <pass.h>
+#include <barcode.h>
 #include <boardingpass.h>
+#include <location.h>
 
 #include <QLocale>
 #include <QtTest/qtest.h>
+
+#include <cmath>
 
 class PkPassTest : public QObject
 {
@@ -72,6 +75,14 @@ private slots:
         QVERIFY(!bc.message().isEmpty());
         QVERIFY(bc.alternativeText().isEmpty());
         QCOMPARE(bc.messageEncoding(), QLatin1String("iso-8859-1"));
+
+        const auto locs = pass->locations();
+        QCOMPARE(locs.size(), 1);
+        const auto loc = locs.at(0);
+        QVERIFY(std::isnan(loc.altitude()));
+        QCOMPARE((int)loc.latitude(), 47);
+        QCOMPARE((int)loc.longitude(), 8);
+        QCOMPARE(loc.relevantText(), QLatin1String("LX962 Boarding 20:25"));
     }
 };
 

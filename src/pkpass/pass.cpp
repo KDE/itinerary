@@ -19,7 +19,9 @@
 
 #include "pass.h"
 #include "pass_p.h"
+#include "barcode.h"
 #include "boardingpass.h"
+#include "location.h"
 #include "logging.h"
 
 #include <KZip>
@@ -274,6 +276,18 @@ QDateTime Pass::expirationDate() const
 bool Pass::isVoided() const
 {
     return d->passObj.value(QLatin1String("voided")).toString() == QLatin1String("true");
+}
+
+QVector<Location> Pass::locations() const
+{
+    QVector<Location> locs;
+    const auto a = d->passObj.value(QLatin1String("locations")).toArray();
+    locs.reserve(a.size());
+    for (const auto &loc : a) {
+        locs.push_back(Location(loc.toObject()));
+    }
+
+    return locs;
 }
 
 QDateTime Pass::relevantDate() const
