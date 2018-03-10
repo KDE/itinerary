@@ -70,6 +70,8 @@ private slots:
         auto bc = barcodes.at(0);
         QCOMPARE(bc.format(), KPkPass::Barcode::QR);
         QVERIFY(!bc.message().isEmpty());
+        QVERIFY(bc.alternativeText().isEmpty());
+        QCOMPARE(bc.messageEncoding(), QLatin1String("iso-8859-1"));
     }
 };
 

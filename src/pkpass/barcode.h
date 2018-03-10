@@ -41,6 +41,7 @@ class KPKPASS_EXPORT Barcode
     Q_PROPERTY(QString alternativeText READ alternativeText CONSTANT)
     Q_PROPERTY(Format format READ format CONSTANT)
     Q_PROPERTY(QString message READ message CONSTANT)
+    Q_PROPERTY(QString messageEncoding READ messageEncoding CONSTANT)
 
 public:
     enum Format {
@@ -61,8 +62,9 @@ public:
     Format format() const;
     /** The message encoded in the barcode. */
     QString message() const;
+    /** Encoding used for the message() content. */
+    QString messageEncoding() const;
 
-    // TODO add codec property
 private:
     friend class Pass;
     explicit Barcode(const QJsonObject &obj, const Pass *file);

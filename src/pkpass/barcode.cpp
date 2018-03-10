@@ -73,3 +73,8 @@ QString Barcode::message() const
 {
     return d->obj.value(QLatin1String("message")).toString();
 }
+
+QString Barcode::messageEncoding() const
+{
+    return d->obj.value(QLatin1String("messageEncoding")).toString();
+}
