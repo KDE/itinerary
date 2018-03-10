@@ -26,6 +26,9 @@
 
 #include <memory>
 
+class KZip;
+class QIODevice;
+
 namespace KPkPass {
 class PassPrivate {
 public:

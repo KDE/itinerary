@@ -32,10 +32,7 @@
 
 #include <memory>
 
-class KZip;
 class QByteArray;
-class QIODevice;
-class QLatin1String;
 class QString;
 
 namespace KPkPass {
