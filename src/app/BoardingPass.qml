@@ -146,8 +146,10 @@ Item {
                     Repeater {
                         model: pass.auxiliaryFields
                         delegate: QQC2.Label {
+                            Layout.fillWidth: true
                             color: pass.labelColor
                             text: modelData.label
+                            horizontalAlignment: modelData.textAlignment
                         }
                     }
                     Repeater {
@@ -156,6 +158,7 @@ Item {
                             Layout.fillWidth: true
                             color: pass.foregroundColor
                             text: modelData.value
+                            horizontalAlignment: modelData.textAlignment
                         }
                     }
                 }
@@ -173,13 +176,16 @@ Item {
                             Layout.fillWidth: true
                             color: pass.labelColor
                             text: modelData.label
+                            horizontalAlignment: modelData.textAlignment
                         }
                     }
                     Repeater {
                         model: pass.secondaryFields
                         delegate: QQC2.Label {
+                            Layout.fillWidth: true
                             color: pass.foregroundColor
                             text: modelData.value
+                            horizontalAlignment: modelData.textAlignment
                         }
                     }
                 }
