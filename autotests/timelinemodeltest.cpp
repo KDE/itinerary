@@ -50,6 +50,8 @@ private slots:
         QVERIFY(insertSpy.isValid());
         QSignalSpy updateSpy(&model, &TimelineModel::dataChanged);
         QVERIFY(updateSpy.isValid());
+        QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
+        QVERIFY(rmSpy.isValid());
 
         QCOMPARE(model.rowCount(), 0);
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
@@ -60,10 +62,15 @@ private slots:
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
+
+        clearPasses(&mgr);
+        QCOMPARE(insertSpy.size(), 1);
+        QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(model.rowCount(), 0);
     }
 };
 
 QTEST_GUILESS_MAIN(TimelineModelTest)
 
 #include "timelinemodeltest.moc"
-

@@ -43,6 +43,7 @@ public:
 private:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId);
+    void passRemoved(const QString &passId);
 
     PkPassManager *m_mgr = nullptr;
     QVector<QString> m_passes;

@@ -40,6 +40,7 @@ void TimelineModel::setPkPassManager(PkPassManager* mgr)
     });
     connect(mgr, &PkPassManager::passAdded, this, &TimelineModel::passAdded);
     connect(mgr, &PkPassManager::passUpdated, this, &TimelineModel::passUpdated);
+    connect(mgr, &PkPassManager::passRemoved, this, &TimelineModel::passRemoved);
     endResetModel();
 }
 
@@ -93,4 +94,15 @@ void TimelineModel::passUpdated(const QString &passId)
     });
     auto row = std::distance(m_passes.begin(), it);
     emit dataChanged(index(row, 0), index(row, 0));
+}
+
+void TimelineModel::passRemoved(const QString &passId)
+{
+    auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
+        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
+    });
+    auto index = std::distance(m_passes.begin(), it);
+    beginRemoveRows({}, index, index);
+    m_passes.erase(it);
+    endRemoveRows();
 }
