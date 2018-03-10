@@ -49,26 +49,34 @@ class PassPrivate;
 class KPKPASS_EXPORT Pass : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(Type type READ type CONSTANT)
+
+    Q_PROPERTY(QString description READ description CONSTANT)
+    Q_PROPERTY(QString organizationName READ organizationName CONSTANT)
     Q_PROPERTY(QString passTypeIdentifier READ passTypeIdentifier CONSTANT)
     Q_PROPERTY(QString serialNumber READ serialNumber CONSTANT)
-    Q_PROPERTY(Type type READ type CONSTANT)
+
+    Q_PROPERTY(QDateTime expirationDate READ expirationDate CONSTANT)
+    Q_PROPERTY(bool isVoided READ isVoided CONSTANT)
+
+    Q_PROPERTY(QDateTime relevantDate READ relevantDate CONSTANT)
+
     Q_PROPERTY(QColor backgroundColor READ backgroundColor CONSTANT)
     Q_PROPERTY(QColor foregroundColor READ foregroundColor CONSTANT)
+    Q_PROPERTY(QString groupingIdentifier READ groupingIdentifier CONSTANT)
     Q_PROPERTY(QColor labelColor READ labelColor CONSTANT)
     Q_PROPERTY(QString logoText READ logoText CONSTANT)
-    Q_PROPERTY(QDateTime relevantDate READ relevantDate CONSTANT)
 
     Q_PROPERTY(QString authenticationToken READ authenticationToken CONSTANT)
     Q_PROPERTY(QString webServiceUrl READ webServiceUrl CONSTANT)
 
     // needs to be QVariantList just for QML (Grantlee would also work with QVector<Field>
+    Q_PROPERTY(QVariantList barcodes READ barcodesVariant CONSTANT)
     Q_PROPERTY(QVariantList auxiliaryFields READ auxiliaryFieldsVariant CONSTANT)
     Q_PROPERTY(QVariantList backFields READ backFieldsVariant CONSTANT)
     Q_PROPERTY(QVariantList headerFields READ headerFieldsVariant CONSTANT)
     Q_PROPERTY(QVariantList primaryFields READ primaryFieldsVariant CONSTANT)
     Q_PROPERTY(QVariantList secondaryFields READ secondaryFieldsVariant CONSTANT)
-
-    Q_PROPERTY(QVariantList barcodes READ barcodesVariant CONSTANT)
 
 public:
     virtual ~Pass();
@@ -84,16 +92,32 @@ public:
     Q_ENUM(Type)
     Type type() const;
 
+    // standard keys
+    QString description() const;
+    QString organizationName() const;
     QString passTypeIdentifier() const;
     QString serialNumber() const;
 
-    QColor backgroundColor() const;
-    QColor foregroundColor() const;
-    QColor labelColor() const;
-    QString logoText() const;
-    QImage logo(unsigned int devicePixelRatio = 1) const;
+    // expiration keys
+    QDateTime expirationDate() const;
+    bool isVoided() const;
+
+    // relevance keys
+    // TODO locations, maxDistance
     QDateTime relevantDate() const;
 
+    // visual appearance keys
+    /** Returns all barcodes defined in the pass. */
+    QVector<Barcode> barcodes() const;
+    QColor backgroundColor() const;
+    QColor foregroundColor() const;
+    QString groupingIdentifier() const;
+    QColor labelColor() const;
+    QString logoText() const;
+
+    QImage logo(unsigned int devicePixelRatio = 1) const;
+
+    // web service keys
     QString authenticationToken() const;
     QString webServiceUrl() const;
 
@@ -107,9 +131,6 @@ public:
     Field field(const QString &key) const;
     /** Returns all fields found in this pass. */
     QVector<Field> fields() const;
-
-    /** Returns all barcodes defined in the pass. */
-    QVector<Barcode> barcodes() const;
 
     /** Create a appropriate sub-class based on the pkpass file type. */
     static Pass *fromData(const QByteArray &data, QObject *parent = nullptr);

@@ -36,11 +36,18 @@ private slots:
         QVERIFY(pass);
 
         QCOMPARE(pass->type(), KPkPass::Pass::BoardingPass);
+        QCOMPARE(pass->serialNumber(), QLatin1String("1234"));
+        QCOMPARE(pass->description(), QLatin1String("description"));
+        QCOMPARE(pass->organizationName(), QLatin1String("KDE"));
+
         QCOMPARE(pass->logoText(), QLatin1String("Boarding Pass"));
         QCOMPARE(pass->backgroundColor(), QColor(61, 174, 233));
         QCOMPARE(pass->relevantDate(), QDateTime(QDate(2017, 9, 17), QTime(0, 4, 0), Qt::UTC));
-        QCOMPARE(pass->fields().size(), 12);
+        QCOMPARE(pass->expirationDate(), QDateTime(QDate(2017, 9, 18), QTime(0, 0, 36), Qt::UTC));
+        QCOMPARE(pass->isVoided(), false);
+        QCOMPARE(pass->groupingIdentifier(), QLatin1String(""));
 
+        QCOMPARE(pass->fields().size(), 12);
         auto headers = pass->headerFields();
         QCOMPARE(headers.size(), 2);
         auto field = headers.at(0);

@@ -241,6 +241,21 @@ Pass::Pass(Type passType, QObject *parent)
 
 Pass::~Pass() = default;
 
+Pass::Type Pass::type() const
+{
+    return d->passType;
+}
+
+QString Pass::description() const
+{
+    return d->passObj.value(QLatin1String("description")).toString();
+}
+
+QString Pass::organizationName() const
+{
+    return d->passObj.value(QLatin1String("organizationName")).toString();
+}
+
 QString Pass::passTypeIdentifier() const
 {
     return d->passObj.value(QLatin1String("passTypeIdentifier")).toString();
@@ -251,9 +266,19 @@ QString Pass::serialNumber() const
     return d->passObj.value(QLatin1String("serialNumber")).toString();
 }
 
-Pass::Type Pass::type() const
+QDateTime Pass::expirationDate() const
 {
-    return d->passType;
+    return QDateTime::fromString(d->passObj.value(QLatin1String("expirationDate")).toString(), Qt::ISODate);
+}
+
+bool Pass::isVoided() const
+{
+    return d->passObj.value(QLatin1String("voided")).toString() == QLatin1String("true");
+}
+
+QDateTime Pass::relevantDate() const
+{
+    return QDateTime::fromString(d->passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
 }
 
 static QColor parseColor(const QString &s)
@@ -275,6 +300,11 @@ QColor Pass::backgroundColor() const
 QColor Pass::foregroundColor() const
 {
     return parseColor(d->passObj.value(QLatin1String("foregroundColor")).toString());
+}
+
+QString Pass::groupingIdentifier() const
+{
+    return d->passObj.value(QLatin1String("groupingIdentifier")).toString();
 }
 
 QColor Pass::labelColor() const
@@ -307,11 +337,6 @@ QImage Pass::logo(unsigned int devicePixelRatio) const
     auto img = QImage::fromData(dev->readAll());
     img.setDevicePixelRatio(devicePixelRatio);
     return img;
-}
-
-QDateTime Pass::relevantDate() const
-{
-    return QDateTime::fromString(d->passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);
 }
 
 QString Pass::authenticationToken() const
