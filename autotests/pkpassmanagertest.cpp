@@ -42,11 +42,14 @@ private slots:
     {
         PkPassManager mgr;
         clearPasses(&mgr);
+        QVERIFY(mgr.passes().isEmpty());
 
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QVERIFY(addSpy.isValid());
         QSignalSpy updateSpy(&mgr, &PkPassManager::passUpdated);
         QVERIFY(updateSpy.isValid());
+        QSignalSpy rmSpy(&mgr, &PkPassManager::passRemoved);
+        QVERIFY(rmSpy.isValid());
 
         QVERIFY(mgr.passes().isEmpty());
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
@@ -65,6 +68,13 @@ private slots:
         QCOMPARE(updateSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
         QCOMPARE(updateSpy.at(0).at(1).toStringList().size(), 1);
         QCOMPARE(updateSpy.at(0).at(1).toStringList().at(0), QStringLiteral("Gate changed to G30."));
+
+        clearPasses(&mgr);
+        QCOMPARE(addSpy.size(), 1);
+        QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(rmSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QVERIFY(mgr.passes().isEmpty());
     }
 };
 

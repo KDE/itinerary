@@ -50,6 +50,7 @@ public:
 signals:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId, const QStringList &changes);
+    void passRemoved(const QString &passId);
 
 private:
     enum ImportMode { Copy, Move };
