@@ -63,6 +63,7 @@ private slots:
         field = pass->field(QLatin1String("boarding"));
         QCOMPARE(field.key(), QLatin1String("boarding"));
         QCOMPARE(field.value(), QLatin1String("20:25"));
+        QCOMPARE(field.textAlignment(), Qt::AlignLeft);
 
         auto boardingPass = dynamic_cast<KPkPass::BoardingPass*>(pass.get());
         QVERIFY(boardingPass);

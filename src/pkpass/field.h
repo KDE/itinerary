@@ -46,6 +46,7 @@ class KPKPASS_EXPORT Field
     Q_PROPERTY(QVariant value READ value CONSTANT)
     Q_PROPERTY(QString valueDisplayString READ valueDisplayString CONSTANT)
     Q_PROPERTY(QString changeMessage READ changeMessage CONSTANT)
+    Q_PROPERTY(Qt::Alignment textAlignment READ textAlignment CONSTANT)
 
 public:
     Field();
@@ -72,7 +73,9 @@ public:
     /** The localized change message for this value. */
     QString changeMessage() const;
 
-    // TODO add textAlignment property
+    /** Text alignment. */
+    Qt::Alignment textAlignment() const;
+
 private:
     friend class PassPrivate;
     explicit Field(const QJsonObject &obj, const Pass *pass);

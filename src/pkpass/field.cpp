@@ -21,6 +21,7 @@
 #include "pass.h"
 #include "pass_p.h"
 
+#include <QGuiApplication>
 #include <QJsonObject>
 
 using namespace KPkPass;
@@ -90,4 +91,17 @@ QString Field::changeMessage() const
     auto msg = d->pass->d->message(d->obj.value(QLatin1String("changeMessage")).toString());
     msg = msg.replace(QLatin1String("%@"), valueDisplayString());
     return msg;
+}
+
+Qt::Alignment Field::textAlignment() const
+{
+    const auto alignStr = d->obj.value(QLatin1String("textAlignment")).toString();
+    if (alignStr == QLatin1String("PKTextAlignmentLeft")) {
+        return Qt::AlignLeft;
+    } else if (alignStr == QLatin1String("PKTextAlignmentCenter")) {
+        return Qt::AlignHCenter;
+    } else if (alignStr == QLatin1String("PKTextAlignmentRight")) {
+        return Qt::AlignRight;
+    }
+    return QGuiApplication::layoutDirection() == Qt::LeftToRight ? Qt::AlignLeft : Qt::AlignRight;
 }
