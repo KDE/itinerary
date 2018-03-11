@@ -115,6 +115,14 @@ public:
     QColor labelColor() const;
     QString logoText() const;
 
+    /** Returns an image asset of this pass.
+     *  @param baseName The name of the asset, without the file name extension.
+     *  @param devicePixelRatio The device pixel ration, for loading highdpi assets.
+     */
+    QImage image(const QString &baseName, unsigned int devicePixelRatio = 1) const;
+    /** Returns the pass icon. */
+    QImage icon(unsigned int devicePixelRatio = 1) const;
+    /** Returns the pass logo. */
     QImage logo(unsigned int devicePixelRatio = 1) const;
 
     // web service keys

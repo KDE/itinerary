@@ -85,6 +85,11 @@ private slots:
         QCOMPARE((int)loc.longitude(), 8);
         QCOMPARE(loc.relevantText(), QLatin1String("LX962 Boarding 20:25"));
         QCOMPARE(pass->maximumDistance(), 500);
+
+        auto img = pass->logo(3);
+        QVERIFY(!img.isNull());
+        img = pass->image(QLatin1String("I don't exist"));
+        QVERIFY(img.isNull());
     }
 };
 

@@ -38,13 +38,13 @@ QImage PkPassImageProvider::requestImage(const QString &id, QSize *size, const Q
     if (pos < 0)
         return {};
     const auto passId = id.left(pos);
-    if (id.endsWith(QLatin1String("/logo"))) {
-        auto pass = m_mgr->pass(passId);
-        if (!pass)
-            return {};
-        const auto img = pass->logo(qGuiApp->devicePixelRatio()); // TODO pass this via id from Item.window.devicePixelRatio
-        *size = img.size() / img.devicePixelRatio();
-        return img;
-    }
-    return {};
+    const auto assetName = id.mid(pos + 1);
+    auto pass = m_mgr->pass(passId);
+    if (!pass)
+        return {};
+    const auto img = pass->image(assetName, qGuiApp->devicePixelRatio()); // TODO pass this via id from Item.window.devicePixelRatio
+    if (img.isNull())
+        return {};
+    *size = img.size() / img.devicePixelRatio();
+    return img;
 }

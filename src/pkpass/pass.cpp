@@ -340,22 +340,32 @@ QString Pass::logoText() const
     return d->message(d->passObj.value(QLatin1String("logoText")).toString());
 }
 
-QImage Pass::logo(unsigned int devicePixelRatio) const
+QImage Pass::image(const QString& baseName, unsigned int devicePixelRatio) const
 {
     const KArchiveFile *file = nullptr;
     for (; devicePixelRatio > 1; --devicePixelRatio) {
-        file = d->zip->directory()->file(QLatin1String("logo@") + QString::number(devicePixelRatio) + QLatin1String("x.png"));
+        file = d->zip->directory()->file(baseName + QLatin1Char('@') + QString::number(devicePixelRatio) + QLatin1String("x.png"));
         if (file)
             break;
     }
     if (!file)
-        file = d->zip->directory()->file(QLatin1String("logo.png"));
+        file = d->zip->directory()->file(baseName + QLatin1String(".png"));
     if (!file)
         return {};
     std::unique_ptr<QIODevice> dev(file->createDevice());
     auto img = QImage::fromData(dev->readAll());
     img.setDevicePixelRatio(devicePixelRatio);
     return img;
+}
+
+QImage Pass::icon(unsigned int devicePixelRatio) const
+{
+    return image(QStringLiteral("icon"), devicePixelRatio);
+}
+
+QImage Pass::logo(unsigned int devicePixelRatio) const
+{
+    return image(QStringLiteral("logo"), devicePixelRatio);
 }
 
 QString Pass::authenticationToken() const
