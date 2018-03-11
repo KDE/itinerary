@@ -290,6 +290,11 @@ QVector<Location> Pass::locations() const
     return locs;
 }
 
+int Pass::maximumDistance() const
+{
+    return d->passObj.value(QLatin1String("maxDistance")).toInt(500);
+}
+
 QDateTime Pass::relevantDate() const
 {
     return QDateTime::fromString(d->passObj.value(QLatin1String("relevantDate")).toString(), Qt::ISODate);

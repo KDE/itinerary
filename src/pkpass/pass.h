@@ -102,7 +102,8 @@ public:
     // relevance keys
     /** Locations associated with this pass. */
     QVector<Location> locations() const;
-    // TODO maxDistance
+    /** Distance in meters to any of the pass locations before this pass becomes relevant. */
+    int maximumDistance() const;
     QDateTime relevantDate() const;
 
     // visual appearance keys

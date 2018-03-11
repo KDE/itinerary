@@ -84,6 +84,7 @@ private slots:
         QCOMPARE((int)loc.latitude(), 47);
         QCOMPARE((int)loc.longitude(), 8);
         QCOMPARE(loc.relevantText(), QLatin1String("LX962 Boarding 20:25"));
+        QCOMPARE(pass->maximumDistance(), 500);
     }
 };
 
