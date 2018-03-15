@@ -33,6 +33,7 @@
 
 class QByteArray;
 class QString;
+class QUrl;
 
 namespace KPkPass {
 
@@ -63,9 +64,6 @@ class KPKPASS_EXPORT Pass : public QObject
     Q_PROPERTY(QString groupingIdentifier READ groupingIdentifier CONSTANT)
     Q_PROPERTY(QColor labelColor READ labelColor CONSTANT)
     Q_PROPERTY(QString logoText READ logoText CONSTANT)
-
-    Q_PROPERTY(QString authenticationToken READ authenticationToken CONSTANT)
-    Q_PROPERTY(QString webServiceUrl READ webServiceUrl CONSTANT)
 
     // needs to be QVariantList just for QML (Grantlee would also work with QVector<Field>
     Q_PROPERTY(QVariantList barcodes READ barcodesVariant CONSTANT)
@@ -127,7 +125,11 @@ public:
 
     // web service keys
     QString authenticationToken() const;
-    QString webServiceUrl() const;
+    QUrl webServiceUrl() const;
+    /** Pass update URL.
+     * @see https://developer.apple.com/library/content/documentation/PassKit/Reference/PassKit_WebService/WebService.html
+     */
+    QUrl passUpdateUrl() const;
 
     QVector<Field> auxiliaryFields() const;
     QVector<Field> backFields() const;

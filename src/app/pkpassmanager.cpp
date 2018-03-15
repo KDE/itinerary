@@ -154,10 +154,7 @@ void PkPassManager::updatePass(const QString& passId)
     if (relevantDate(p) < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
         return;
 
-    QUrl url(p->webServiceUrl());
-    url.setPath(url.path() + QLatin1String("/v1/passes/") + p->passTypeIdentifier() + QLatin1Char('/') + p->serialNumber());
-    qCDebug(Log) << "GET" << url;
-    QNetworkRequest req(url);
+    QNetworkRequest req(p->passUpdateUrl());
     req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     auto reply = m_nam->get(req);

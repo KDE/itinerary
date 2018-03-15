@@ -36,6 +36,7 @@
 #include <QLocale>
 #include <QTextCodec>
 #include <QImage>
+#include <QUrl>
 
 using namespace KPkPass;
 
@@ -373,9 +374,19 @@ QString Pass::authenticationToken() const
     return d->passObj.value(QLatin1String("authenticationToken")).toString();
 }
 
-QString Pass::webServiceUrl() const
+QUrl Pass::webServiceUrl() const
 {
-    return d->passObj.value(QLatin1String("webServiceURL")).toString();
+    return QUrl(d->passObj.value(QLatin1String("webServiceURL")).toString());
+}
+
+QUrl Pass::passUpdateUrl() const
+{
+    QUrl url(webServiceUrl());
+    if (!url.isValid()) {
+        return {};
+    }
+    url.setPath(url.path() + QLatin1String("/v1/passes/") + passTypeIdentifier() + QLatin1Char('/') + serialNumber());
+    return url;
 }
 
 QVector<Barcode> Pass::barcodes() const
