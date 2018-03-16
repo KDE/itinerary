@@ -20,7 +20,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_ver
 
 # build-time dependencies
 find_package(Qt5 REQUIRED COMPONENTS Test Quick)
-find_package(KF5 REQUIRED COMPONENTS Archive)
+find_package(KPkPass REQUIRED)
 find_package(QmlLint)
 set_package_properties(QmlLint PROPERTIES URL "https://qt.io" PURPOSE "Validate QML code.")
 find_package(SharedMimeInfo 1.0 REQUIRED)
@@ -31,7 +31,8 @@ ecm_find_qmlmodule(org.kde.prison 1.0)
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
     find_package(Qt5 REQUIRED COMPONENTS AndroidExtras Svg)
-    find_package(KF5 REQUIRED COMPONENTS Kirigami2 Prison)
+    find_package(KF5 REQUIRED COMPONENTS Archive Kirigami2 Prison)
+    find_package(GammaRay)
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()
