@@ -20,6 +20,7 @@
 
 #include <KPkPass/Pass>
 
+#include <QDateTime>
 #include <QDebug>
 #include <QLocale>
 
