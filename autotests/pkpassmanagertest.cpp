@@ -42,7 +42,6 @@ private slots:
     {
         PkPassManager mgr;
         clearPasses(&mgr);
-        QVERIFY(mgr.passes().isEmpty());
 
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QVERIFY(addSpy.isValid());
@@ -51,30 +50,36 @@ private slots:
         QSignalSpy rmSpy(&mgr, &PkPassManager::passRemoved);
         QVERIFY(rmSpy.isValid());
 
+        const auto passId = QStringLiteral("pass.booking.kde.org/MTIzNA==");
         QVERIFY(mgr.passes().isEmpty());
+        QCOMPARE(mgr.pass(passId), nullptr);
+
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(addSpy.size(), 1);
-        QCOMPARE(addSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QCOMPARE(addSpy.at(0).at(0).toString(), passId);
         QVERIFY(updateSpy.isEmpty());
+        QVERIFY(mgr.pass(passId));
 
         auto passes = mgr.passes();
         QCOMPARE(passes.size(), 1);
-        QCOMPARE(passes.at(0), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QCOMPARE(passes.at(0), passId);
 
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(mgr.passes().size(), 1);
-        QCOMPARE(updateSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QCOMPARE(updateSpy.at(0).at(0).toString(), passId);
         QCOMPARE(updateSpy.at(0).at(1).toStringList().size(), 1);
         QCOMPARE(updateSpy.at(0).at(1).toStringList().at(0), QStringLiteral("Gate changed to G30."));
+        QVERIFY(mgr.pass(passId));
 
         clearPasses(&mgr);
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
-        QCOMPARE(rmSpy.at(0).at(0).toString(), QLatin1String("pass.booking.kde.org/MTIzNA=="));
+        QCOMPARE(rmSpy.at(0).at(0).toString(), passId);
         QVERIFY(mgr.passes().isEmpty());
+        QCOMPARE(mgr.pass(passId), nullptr);
     }
 };
 

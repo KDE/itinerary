@@ -144,6 +144,7 @@ void PkPassManager::removePass(const QString& passId)
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
     QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1String(".pkpass"));
     emit passRemoved(passId);
+    delete m_passes.take(passId);
 }
 
 void PkPassManager::updatePass(const QString& passId)
