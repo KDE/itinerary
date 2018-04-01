@@ -1,5 +1,6 @@
 set(itinerary_srcs
     pkpassmanager.cpp
+    reservationmanager.cpp
     timelinemodel.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
@@ -9,6 +10,7 @@ ecm_qt_declare_logging_category(itinerary_srcs
 )
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
+    KItinerary
     KPkPass
     Qt5::Network
 )
