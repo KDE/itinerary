@@ -41,8 +41,6 @@ signals:
     void reservationRemoved(const QString &id);
 
 private:
-    bool isSameReservation(const QVariant &lhs, const QVariant &rhs) const;
-
     mutable QHash<QString, QVariant> m_reservations;
 };
 

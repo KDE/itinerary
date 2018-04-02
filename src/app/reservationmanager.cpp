@@ -20,6 +20,7 @@
 
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/MergeUtil>
 #include <KItinerary/Reservation>
 
 #include <QDir>
@@ -109,7 +110,7 @@ void ReservationManager::importReservation(const QString& filename)
         // check if we know this one already, and update if that's the case
         for (const auto &oldResId : reservations()) {
             const auto oldRes = reservation(oldResId);
-            if (isSameReservation(oldRes, res)) {
+            if (MergeUtil::isSameReservation(oldRes, res)) {
                 res = JsonLdDocument::apply(oldRes, res);
                 resId = oldResId;
                 oldResFound = true;
@@ -144,37 +145,4 @@ void ReservationManager::removeReservation(const QString& id)
     QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
     m_reservations.remove(id);
     emit reservationRemoved(id);
-}
-
-bool ReservationManager::isSameReservation(const QVariant& lhs, const QVariant& rhs) const
-{
-    if (lhs.isNull() || rhs.isNull()) {
-        return false;
-    }
-    if (lhs.userType() != rhs.userType()) {
-        return false;
-    }
-
-    // flight: booking ref, flight number and departure day match
-    if (lhs.userType() == qMetaTypeId<FlightReservation>()) {
-        const auto lhsRes = lhs.value<FlightReservation>();
-        const auto rhsRes = rhs.value<FlightReservation>();
-        if (lhsRes.reservationNumber() != rhsRes.reservationNumber() || lhsRes.reservationNumber().isEmpty()) {
-            return false;
-        }
-        const auto lhsFlight = lhsRes.reservationFor().value<Flight>();
-        const auto rhsFlight = rhsRes.reservationFor().value<Flight>();
-        if (lhsFlight.flightNumber() != rhsFlight.flightNumber() || lhsFlight.flightNumber().isEmpty()) {
-            return false;
-        }
-
-        // TODO check departure day
-    }
-
-    // TODO train/bus: booking ref, train number and depature day match
-    // TODO hotel: booking ref, checkin day match
-
-    // TODO for all: underName either matches or is not set
-
-    return true;
 }
