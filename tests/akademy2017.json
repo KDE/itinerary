@@ -1,0 +1,286 @@
+[
+   {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "IB",
+                "name": "Iberia Express"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 40.472198486328125,
+                    "longitude": -3.5608301162719727
+                },
+                "iataCode": "MAD",
+                "name": "Madrid"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-20T15:35:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.55970001220703,
+                    "longitude": 13.287799835205078
+                },
+                "iataCode": "TXL",
+                "name": "Berlin"
+            },
+            "departureDay": "2017-07-20",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-20T12:25:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "flightNumber": "3677"
+        },
+        "reservationNumber": "YYY0008"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "IB",
+                "name": "Iberia Regional Air Nostrum"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 36.84389877319336,
+                    "longitude": -2.369999885559082
+                },
+                "iataCode": "LEI",
+                "name": "Almeria"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-20T19:00:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 40.472198486328125,
+                    "longitude": -3.5608301162719727
+                },
+                "iataCode": "MAD",
+                "name": "Madrid"
+            },
+            "departureDay": "2017-07-20",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-20T17:50:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "flightNumber": "8588"
+        },
+        "reservationNumber": "YYY0008"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "RentalCarReservation",
+        "reservationNumber": "546323",
+        "reservationStatus": "http://schema.org/Confirmed",
+        "underName": {
+            "@type": "Person",
+            "name": "Dr Konqi"
+        },
+        "reservationFor": {
+            "@type": "RentalCar",
+            "name": "Economy Class Car",
+            "model": "918 Spyder",
+            "brand": {
+                "@type": "Brand",
+                "name": "Porsch"
+            },
+            "rentalCompany": {
+                "@type": "Organization",
+                "name": "Hertz"
+            }
+        },
+        "pickupLocation": {
+            "@type": "Place",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.472198486328125,
+                "longitude": -3.5608301162719727
+            },
+            "name": "Hertz Almeria Airport"
+        },
+        "pickupTime": "20117-07-20T18:00:00+02:00",
+        "dropoffLocation": {
+            "@type": "Place",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.472198486328125,
+                "longitude": -3.5608301162719727
+            },
+            "name": "Hertz Almeria Airport"
+        },
+        "dropoffTime": "2017-07-28T07:00:00+02:00"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BusReservation",
+        "reservationFor": {
+            "@type": "BusTrip",
+            "arrivalStation": {
+                "@type": "BusStation",
+                "name": "71 - Plaza Nueva Andalucía"
+            },
+            "arrivalTime": "2017-07-20T19:15:00",
+            "busName": "",
+            "busNumber": "22",
+            "departureStation": {
+                "@type": "BusStation",
+                "name": "188 - Aeropuerto"
+            },
+            "departureTime": "2017-07-20T18:55:00"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "LodgingReservation",
+        "checkinDate": "2017-07-20T15:00:00+02:00",
+        "checkoutDate": "2017-07-28T10:00:00+02:00",
+        "reservationFor": {
+            "@type": "LodgingBusiness",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Spain",
+                "addressLocality": "Almería",
+                "postalCode": "04006",
+                "streetAddress": "C/ Fernán Caballero, 1"
+            },
+            "name": "CIVITAS Residence",
+            "url": "http://www.residenciacivitas.com/en/"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "reservationStatus": "http://schema.org/Confirmed",
+        "underName": {
+            "@type": "Person",
+            "name": "Dr Konqui"
+        },
+        "reservationFor": {
+            "@type": "Event",
+            "name": "Akademy 2017 Welcome Party",
+            "startDate": "2017-09-10T15:00:00+02:00",
+            "location": {
+                "@type": "Place",
+                "name": "Civitas",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "Spain",
+                    "addressLocality": "Almería",
+                    "postalCode": "04006",
+                    "streetAddress": "C/ Fernán Caballero, 1"
+                }
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "IB",
+                "name": "Iberia Regional Air Nostrum"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 40.472198486328125,
+                    "longitude": -3.5608301162719727
+                },
+                "iataCode": "MAD",
+                "name": "Madrid"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-28T08:25:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 36.84389877319336,
+                    "longitude": -2.369999885559082
+                },
+                "iataCode": "LEI",
+                "name": "Almeria"
+            },
+            "departureDay": "2017-07-28",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-28T07:15:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "flightNumber": "8603"
+        },
+        "reservationNumber": "YYY0008"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "IB"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.55970001220703,
+                    "longitude": 13.287799835205078
+                },
+                "iataCode": "TXL",
+                "name": "Berlin"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-28T15:00:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 40.472198486328125,
+                    "longitude": -3.5608301162719727
+                },
+                "iataCode": "MAD",
+                "name": "Madrid"
+            },
+            "departureDay": "2017-07-28",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-07-28T12:00:00+02:00",
+                "timezone": "Europe/Madrid"
+            },
+            "flightNumber": "3186"
+        },
+        "reservationNumber": "YYY0008"
+    }
+]

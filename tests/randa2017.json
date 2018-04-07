@@ -154,8 +154,8 @@
                 "name": "Zermatt"
             },
             "arrivalTime": "2017-09-13T14:20:00",
-            "busName": "Zermatt Taxi",
-            "busNumber": "",
+            "busName": "",
+            "busNumber": "Zermatt Taxi",
             "departureStation": {
                 "@type": "BusStation",
                 "name": "Randa"
