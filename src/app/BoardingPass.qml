@@ -49,14 +49,14 @@ Item {
 
                 Image {
                     Layout.rowSpan: 2
-                    source: "image://org.kde.pkpass/" + passId + "/logo"
+                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : null
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                 }
 
                 QQC2.Label {
                     Layout.rowSpan: 2
-                    Layout.fillWidth: true
-                    text: pass.logoText
+                    Layout.fillWidth: pass ? true : false
+                    text: pass ? pass.logoText : ""
                     color: pass.foregroundColor
                 }
 

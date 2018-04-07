@@ -19,10 +19,14 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ScrollablePage {
-    title: qsTr("Boarding Passes")
+    id: root
+    signal showBoardingPass(var pass, string passId)
+
+    title: qsTr("My Itinerary")
     // context drawer content
     actions {
         contextualActions: [
@@ -35,19 +39,43 @@ Kirigami.ScrollablePage {
     }
 
     // page content
+    Component {
+        id: flightDelegate
+        App.FlightDelegate {}
+    }
+    Component {
+        id: hotelDelegate
+        App.HotelDelegate {}
+    }
+
     ListView {
         model: _timelineModel
         spacing: 5
-        delegate: Item {
-            height: passElement.implicitHeight
-            width: passElement.implicitWidth
-            App.BoardingPass {
-                x: (parent.ListView.view.width - implicitWidth) / 2
-                id: passElement
-                pass: model.pass
-                passId: model.passId
+
+        delegate: Loader {
+            property var modelData: model
+
+            height: item.implicitHeight
+            width: ListView.view.width
+            sourceComponent: {
+                switch (modelData.type) {
+                    case TimelineModel.Flight: return flightDelegate;
+                    case TimelineModel.Hotel: return hotelDelegate;
+                    // TODO complete this
+                }
+            }
+
+            onLoaded: {
+                item.reservation = Qt.binding(function() { return modelData.reservation; });
+                item.passId = Qt.binding(function() { return modelData.passId; });
+                item.pass = Qt.binding(function() { return modelData.pass; });
+                item.showBoardingPass.connect(onShowBoardingPass);
+            }
+            function onShowBoardingPass(pass, passId) {
+                root.showBoardingPass(pass, passId)
             }
         }
+
         section.property: "sectionHeader"
         section.delegate: Rectangle {
             color: Kirigami.Theme.backgroundColor

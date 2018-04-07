@@ -1,0 +1,80 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "airplaneSeat": "15F",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "LX"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "ZRH",
+                "name": "Zürich"
+            },
+            "arrivalTime": "2017-09-10T08:15:00",
+            "boardingTime": "2017-09-10T06:15:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Berlin Tegel"
+            },
+            "departureGate": "A10",
+            "departureDay": "2017-09-10",
+            "departureTime": "2017-09-10T06:45:00",
+            "flightNumber": "963"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "LodgingReservation",
+        "checkinDate": "2017-09-10T15:00:00+02:00",
+        "checkoutDate": "2017-09-15T10:00:00+02:00",
+        "reservationFor": {
+            "@type": "LodgingBusiness",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Switzerland",
+                "addressLocality": "Randa",
+                "addressRegion": "Wallis",
+                "postalCode": "3928",
+                "streetAddress": "Haus Maria am Weg"
+            },
+            "name": "Haus Randa",
+            "url": "https://randa-meetings.ch/"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "airplaneSeat": "10E",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "LX"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Berlin Tegel"
+            },
+            "arrivalTime": "2017-09-15T22:15:00",
+            "boardingTime": "2017-09-15T20:25:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "ZRH",
+                "name": "Zürich"
+            },
+            "departureGate": "52",
+            "departureTerminal": "AB",
+            "departureDay": "2017-09-15",
+            "departureTime": "2017-09-15T20:50:00",
+            "flightNumber": "962"
+        },
+        "reservationNumber": "XXX007"
+    }
+]
