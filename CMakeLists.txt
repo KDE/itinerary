@@ -20,6 +20,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_ver
 
 # build-time dependencies
 find_package(Qt5 REQUIRED COMPONENTS Test Quick)
+find_package(KF5 REQUIRED COMPONENTS I18n)
 find_package(KPimPkPass REQUIRED)
 find_package(KPimItinerary REQUIRED)
 find_package(QmlLint)

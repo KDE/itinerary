@@ -27,6 +27,8 @@
 
 #include <KPkPass/Pass>
 
+#include <KLocalizedString>
+
 #include <QDateTime>
 #include <QDebug>
 #include <QLocale>
@@ -139,7 +141,14 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case PassIdRole:
             return passId(res);
         case SectionHeader:
-            return QLocale().toString(relevantDate(res), QLocale::ShortFormat);
+        {
+            const auto date = relevantDate(res);
+            if (date.isNull())
+                return {};
+            if (date == QDate::currentDate())
+                return i18n("Today");
+            return i18nc("weekday, date", "%1, %2", QLocale().dayName(date.dayOfWeek(), QLocale::LongFormat), QLocale().toString(date, QLocale::ShortFormat));
+        }
         case ReservationRole:
             return res;
         case ReservationTypeRole:

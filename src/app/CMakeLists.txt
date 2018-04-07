@@ -12,6 +12,7 @@ add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     KPim::Itinerary
     KPim::PkPass
+    KF5::I18n
     Qt5::Network
 )
 

@@ -18,6 +18,11 @@
             "boardingTime": "2017-09-10T06:15:00",
             "departureAirport": {
                 "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.55970001220703,
+                    "longitude": 13.287799835205078
+                },
                 "iataCode": "TXL",
                 "name": "Berlin Tegel"
             },
@@ -79,6 +84,23 @@
     },
     {
         "@context": "http://schema.org",
+        "@type": "TaxiReservation",
+        "partySize": 1,
+        "pickupLocation": {
+            "@type": "TrainStation",
+            "name": "Randa"
+        },
+        "pickupTime": "2017-09-10T14:55:00+02:00",
+        "reservationFor": {
+            "@type": "Taxi",
+            "provider": {
+                "@type": "Organization",
+                "name": "Randa Taxi"
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
         "@type": "LodgingReservation",
         "checkinDate": "2017-09-10T15:00:00+02:00",
         "checkoutDate": "2017-09-15T10:00:00+02:00",
@@ -94,6 +116,32 @@
             },
             "name": "Haus Randa",
             "url": "https://randa-meetings.ch/"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "reservationStatus": "http://schema.org/Confirmed",
+        "underName": {
+            "@type": "Person",
+            "name": "Dr Konqui"
+        },
+        "reservationFor": {
+            "@type": "Event",
+            "name": "KDE Randa Meeting 2017",
+            "startDate": "2017-09-10T15:00:00+02:00",
+            "location": {
+                "@type": "Place",
+                "name": "Haus Randa",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "Switzerland",
+                    "addressLocality": "Randa",
+                    "addressRegion": "Wallis",
+                    "postalCode": "3928",
+                    "streetAddress": "Haus Maria am Weg"
+                }
+            }
         }
     },
     {
@@ -117,6 +165,75 @@
     },
     {
         "@context": "http://schema.org",
+        "@type": "FoodEstablishmentReservation",
+        "reservationStatus": "http://schema.org/Confirmed",
+        "reservationFor": {
+            "@type": "FoodEstablishment",
+            "name": "Raclette",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Switzerland",
+                "addressLocality": "Randa",
+                "addressRegion": "Wallis",
+                "postalCode": "3928",
+                "streetAddress": "Haus Maria am Weg"
+            }
+        },
+        "partySize": 20,
+        "startTime": "2017-09-14T19:00:00+02:00",
+        "modifiedTime": "2017-09-14T22:00:00+02:00"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "3",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-15T15:46:00+02:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Randa"
+            },
+            "departureTime": "2017-09-15T14:54:00+02:00",
+            "trainCompany": {
+                "@type": "Organization",
+                "name": "SBB"
+            },
+            "trainName": "R",
+            "trainNumber": "250"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "2",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "arrivalTime": "2017-09-15T18:16:00+02:00",
+            "departurePlatform": "2",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "departureTime": "2017-09-15T15:57:00+02:00",
+            "trainCompany": {
+                "@type": "Organization",
+                "name": "SBB"
+            },
+            "trainName": "IC",
+            "trainNumber": "827"
+        }
+    },
+    {
+        "@context": "http://schema.org",
         "@type": "FlightReservation",
         "airplaneSeat": "10E",
         "reservationFor": {
@@ -127,6 +244,11 @@
             },
             "arrivalAirport": {
                 "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.55970001220703,
+                    "longitude": 13.287799835205078
+                },
                 "iataCode": "TXL",
                 "name": "Berlin Tegel"
             },
