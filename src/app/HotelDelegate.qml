@@ -41,7 +41,7 @@ App.TimelineDelegate {
                 anchors.right: parent.right
 
                 QQC2.Label {
-                    text: qsTr("⌂ %1")
+                    text: qsTr("🏨 %1")
                         .arg(reservation.reservationFor.name)
                     color: Kirigami.Theme.complementaryTextColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6

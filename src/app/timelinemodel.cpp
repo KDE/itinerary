@@ -19,9 +19,11 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/BusTrip>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Reservation>
+#include <KItinerary/TrainTrip>
 
 #include <KPkPass/Pass>
 
@@ -38,8 +40,10 @@ static QDate relevantDate(const QVariant &res)
         return res.value<FlightReservation>().reservationFor().value<Flight>().departureDay();
     } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
         return res.value<LodgingReservation>().checkinDate().date();
+    } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().date();
     }
-    // TODO: train, bus
+    // TODO: bus
 
     return {};
 }
@@ -51,8 +55,10 @@ static QDateTime relevantDateTime(const QVariant &res)
         if (flight.boardingTime().isValid())
             return flight.boardingTime();
         return flight.departureTime();
+    } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
     }
-    // TODO: train, bus
+    // TODO: bus
 
     return {};
 }
@@ -139,7 +145,10 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
                 return Flight;
             else if (res.userType() == qMetaTypeId<LodgingReservation>())
                 return Hotel;
-            // TODO
+            else if (res.userType() == qMetaTypeId<TrainReservation>())
+                return TrainTrip;
+            else if (res.userType() == qMetaTypeId<BusReservation>())
+                return BusTrip;
             return QVariant();
     }
     return {};

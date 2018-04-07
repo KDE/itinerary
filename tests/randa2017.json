@@ -30,6 +30,55 @@
     },
     {
         "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "7",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "departurePlatform": "3",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Zürich Flughafen"
+            },
+            "departureTime": "2017-09-10T11:40:00+02:00",
+            "trainCompany": {
+                "@type": "Organization",
+                "name": "SBB"
+            },
+            "trainName": "IC",
+            "trainNumber": "816"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Randa"
+            },
+            "arrivalTime": "2017-09-10T14:53:00+02:00",
+            "departurePlatform": "3",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Visp"
+            },
+            "departureTime": "2017-09-10T14:08:00+02:00",
+            "trainCompany": {
+                "@type": "Organization",
+                "name": "SBB"
+            },
+            "trainName": "R",
+            "trainNumber": "241"
+        }
+    },
+    {
+        "@context": "http://schema.org",
         "@type": "LodgingReservation",
         "checkinDate": "2017-09-10T15:00:00+02:00",
         "checkoutDate": "2017-09-15T10:00:00+02:00",
