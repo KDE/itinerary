@@ -26,6 +26,7 @@
 #include <KItinerary/MergeUtil>
 #include <KItinerary/Reservation>
 
+#include <QDate>
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
@@ -179,6 +180,7 @@ void ReservationManager::passAdded(const QString& passId)
         const auto res = JsonLdDocument::fromJson(data);
 
         ExtractorPostprocessor postproc;
+        postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
         postproc.process(res);
         importReservations(postproc.result());
     }
