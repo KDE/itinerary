@@ -104,6 +104,8 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
 
+    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
+
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
@@ -111,8 +113,12 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
     engine.load(QStringLiteral(":/main.qml"));
 
-    for (const auto &file : parser.positionalArguments())
-        passMgr.importPass(QUrl::fromLocalFile(file));
+    for (const auto &file : parser.positionalArguments()) {
+        if (file.endsWith(QLatin1String(".pkpass")))
+            passMgr.importPass(QUrl::fromLocalFile(file));
+        else
+            resMgr.importReservation(QUrl::fromLocalFile(file));
+    }
     handleViewIntent(&passMgr);
 
     return app.exec();

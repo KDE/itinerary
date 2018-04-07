@@ -30,8 +30,19 @@ public:
     enum Role {
         PassRole = Qt::UserRole + 1,
         PassIdRole,
-        SectionHeader
+        SectionHeader,
+        ReservationRole,
+        ReservationTypeRole
     };
+
+    enum ReservationType {
+        Flight,
+        TrainTrip,
+        BusTrip,
+        Hotel
+    };
+    Q_ENUM(ReservationType)
+
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel();
 
@@ -43,13 +54,13 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    void passAdded(const QString &passId);
-    void passUpdated(const QString &passId);
-    void passRemoved(const QString &passId);
+    void reservationAdded(const QString &resId);
+    void reservationUpdated(const QString &resId);
+    void reservationRemoved(const QString &resId);
 
     PkPassManager *m_passMgr = nullptr;
     ReservationManager *m_resMgr = nullptr;
-    QVector<QString> m_passes;
+    QVector<QString> m_reservationIds;
 };
 
 #endif // TIMELINEMODEL_H

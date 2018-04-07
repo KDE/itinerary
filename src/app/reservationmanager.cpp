@@ -163,8 +163,8 @@ void ReservationManager::removeReservation(const QString& id)
 {
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
-    m_reservations.remove(id);
     emit reservationRemoved(id);
+    m_reservations.remove(id);
 }
 
 void ReservationManager::passAdded(const QString& passId)

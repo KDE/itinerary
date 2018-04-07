@@ -16,6 +16,7 @@
 */
 
 #include <pkpassmanager.h>
+#include <reservationmanager.h>
 #include <timelinemodel.h>
 
 #include <QUrl>
@@ -33,6 +34,13 @@ private:
             mgr->removePass(id);
     }
 
+    void clearReservations(ReservationManager *mgr)
+    {
+        for (const auto id : mgr->reservations()) {
+            mgr->removeReservation(id);
+        }
+    }
+
 private slots:
     void initTestCase()
     {
@@ -43,8 +51,13 @@ private slots:
     {
         PkPassManager mgr;
         clearPasses(&mgr);
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+
+        resMgr.setPkPassManager(&mgr);
         TimelineModel model;
         model.setPkPassManager(&mgr);
+        model.setReservationManager(&resMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
         QVERIFY(insertSpy.isValid());
@@ -62,8 +75,9 @@ private slots:
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(model.rowCount(), 1);
 
-        clearPasses(&mgr);
+        clearReservations(&resMgr);
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
