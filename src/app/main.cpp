@@ -96,6 +96,7 @@ int main(int argc, char **argv)
 
     PkPassManager passMgr;
     ReservationManager resMgr;
+    resMgr.setPkPassManager(&passMgr);
     TimelineModel timelineModel;
     timelineModel.setPkPassManager(&passMgr);
     timelineModel.setReservationManager(&resMgr);

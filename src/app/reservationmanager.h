@@ -18,8 +18,12 @@
 #ifndef RESERVATIONMANAGER_H
 #define RESERVATIONMANAGER_H
 
+#include <KItinerary/ExtractorRepository>
+
 #include <QHash>
 #include <QObject>
+
+class PkPassManager;
 
 class QUrl;
 
@@ -30,6 +34,8 @@ class ReservationManager : public QObject
 public:
     ReservationManager(QObject *parent = nullptr);
     ~ReservationManager();
+
+    void setPkPassManager(PkPassManager *mgr);
 
     QVector<QString> reservations() const;
     QVariant reservation(const QString &id) const;
@@ -43,7 +49,15 @@ signals:
     void reservationRemoved(const QString &id);
 
 private:
+    void importReservations(const QVector<QVariant> &resData);
+
+    void passAdded(const QString &passId);
+    void passUpdated(const QString &passId);
+    void passRemoved(const QString &passId);
+
     mutable QHash<QString, QVariant> m_reservations;
+    PkPassManager *m_passMgr = nullptr;
+    KItinerary::ExtractorRepository m_extractorRepo;
 };
 
 #endif // RESERVATIONMANAGER_H

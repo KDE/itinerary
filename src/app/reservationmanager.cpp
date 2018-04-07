@@ -16,8 +16,11 @@
 */
 
 #include "reservationmanager.h"
+#include "pkpassmanager.h"
 #include "logging.h"
 
+#include <KItinerary/ExtractorEngine>
+#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
@@ -41,6 +44,14 @@ ReservationManager::ReservationManager(QObject* parent)
 }
 
 ReservationManager::~ReservationManager() = default;
+
+void ReservationManager::setPkPassManager(PkPassManager* mgr)
+{
+    m_passMgr = mgr;
+    connect(mgr, &PkPassManager::passAdded, this, &ReservationManager::passAdded);
+    connect(mgr, &PkPassManager::passUpdated, this, &ReservationManager::passUpdated);
+    connect(mgr, &PkPassManager::passRemoved, this, &ReservationManager::passRemoved);
+}
 
 QVector<QString> ReservationManager::reservations() const
 {
@@ -91,9 +102,6 @@ void ReservationManager::importReservation(const QUrl& filename)
     if (!filename.isLocalFile())
         return;
 
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
-    QDir::root().mkpath(basePath);
-
     QFile f(filename.toLocalFile());
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Unable to open file:" << f.errorString();
@@ -107,6 +115,14 @@ void ReservationManager::importReservation(const QUrl& filename)
     }
 
     const auto resData = JsonLdDocument::fromJson(doc.array());
+    importReservations(resData);
+}
+
+void ReservationManager::importReservations(const QVector<QVariant> &resData)
+{
+    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    QDir::root().mkpath(basePath);
+
     for (auto res : resData) {
         QString resId;
         bool oldResFound = false;
@@ -149,4 +165,32 @@ void ReservationManager::removeReservation(const QString& id)
     QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
     m_reservations.remove(id);
     emit reservationRemoved(id);
+}
+
+void ReservationManager::passAdded(const QString& passId)
+{
+    const auto pass = m_passMgr->pass(passId);
+    const auto extractors = m_extractorRepo.extractorsForPass(pass);
+    for (const auto &extractor : extractors) {
+        ExtractorEngine engine;
+        engine.setExtractor(extractor);
+        engine.setPass(pass);
+        const auto data = engine.extract();
+        const auto res = JsonLdDocument::fromJson(data);
+
+        ExtractorPostprocessor postproc;
+        postproc.process(res);
+        importReservations(postproc.result());
+    }
+}
+
+void ReservationManager::passUpdated(const QString& passId)
+{
+    passAdded(passId);
+}
+
+void ReservationManager::passRemoved(const QString& passId)
+{
+    Q_UNUSED(passId);
+    // TODO
 }

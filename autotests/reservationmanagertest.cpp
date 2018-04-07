@@ -16,6 +16,7 @@
 */
 
 #include <reservationmanager.h>
+#include <pkpassmanager.h>
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -30,6 +31,12 @@ private:
         for (const auto id : mgr->reservations()) {
             mgr->removeReservation(id);
         }
+    }
+
+    void clearPasses(PkPassManager *mgr)
+    {
+        for (const auto id : mgr->passes())
+            mgr->removePass(id);
     }
 
 private slots:
@@ -77,6 +84,32 @@ private slots:
         QCOMPARE(rmSpy.at(0).at(0).toString(), resId);
         QVERIFY(mgr.reservations().isEmpty());
         QVERIFY(mgr.reservation(resId).isNull());
+    }
+
+    void testPkPassChanges()
+    {
+        PkPassManager passMgr;
+        clearPasses(&passMgr);
+
+        ReservationManager mgr;
+        mgr.setPkPassManager(&passMgr);
+        clearReservations(&mgr);
+
+        QSignalSpy addSpy(&mgr, &ReservationManager::reservationAdded);
+        QVERIFY(addSpy.isValid());
+        QSignalSpy updateSpy(&mgr, &ReservationManager::reservationUpdated);
+        QVERIFY(updateSpy.isValid());
+
+        QVERIFY(mgr.reservations().isEmpty());
+        const auto passId = QStringLiteral("pass.booking.kde.org/MTIzNA==");
+
+        passMgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        QCOMPARE(addSpy.size(), 1);
+        QVERIFY(updateSpy.isEmpty());
+
+        passMgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        QCOMPARE(addSpy.size(), 1);
+        QCOMPARE(updateSpy.size(), 1);
     }
 };
 QTEST_GUILESS_MAIN(ReservationManagerTest)
