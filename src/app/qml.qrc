@@ -2,6 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>BoardingPass.qml</file>
+        <file>BusDelegate.qml</file>
         <file>FlightDelegate.qml</file>
         <file>HotelDelegate.qml</file>
         <file>TimelineDelegate.qml</file>

@@ -22,8 +22,5 @@ Item {
     property var pass
     property string passId
 
-    anchors.left: parent.left
-    anchors.right: parent.right
-
     signal showBoardingPass(var pass, string passId)
 }

@@ -98,6 +98,25 @@
     },
     {
         "@context": "http://schema.org",
+        "@type": "BusReservation",
+        "reservationFor": {
+            "@type": "BusTrip",
+            "arrivalStation": {
+                "@type": "BusStation",
+                "name": "Zermatt"
+            },
+            "arrivalTime": "2017-09-13T14:20:00",
+            "busName": "Zermatt Taxi",
+            "busNumber": "",
+            "departureStation": {
+                "@type": "BusStation",
+                "name": "Randa"
+            },
+            "departureTime": "2017-09-13T14:00:00"
+        }
+    },
+    {
+        "@context": "http://schema.org",
         "@type": "FlightReservation",
         "airplaneSeat": "10E",
         "reservationFor": {

@@ -26,8 +26,7 @@ App.TimelineDelegate {
 
     ColumnLayout {
         id: topLayout
-        anchors.left: parent.left
-        anchors.right: parent.right
+        width: root.width
 
         Rectangle {
             id: headerBackground

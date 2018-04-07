@@ -41,17 +41,15 @@ App.TimelineDelegate {
                 anchors.right: parent.right
 
                 QQC2.Label {
-                    text: qsTr("✈ %1 %2 %3 -> %4")
-                        .arg(reservation.reservationFor.airline.iataCode)
-                        .arg(reservation.reservationFor.flightNumber)
-                        .arg(reservation.reservationFor.departureAirport.iataCode)
-                        .arg(reservation.reservationFor.arrivalAirport.iataCode)
+                    text: qsTr("🚌 %1 %2")
+                        .arg(reservation.reservationFor.busName)
+                        .arg(reservation.reservationFor.busNumber)
                     color: Kirigami.Theme.complementaryTextColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
                     Layout.fillWidth: true
                 }
                 QQC2.Label {
-                    text: reservation.reservationFor.boardingTimeLocalized
+                    text: reservation.reservationFor.departureTimeLocalized
                     color: Kirigami.Theme.complementaryTextColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
                 }
@@ -59,32 +57,16 @@ App.TimelineDelegate {
         }
 
         QQC2.Label {
-            text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
-                .arg(reservation.reservationFor.departureTerminal)
-                .arg(reservation.reservationFor.departureGate)
-                .arg(reservation.airplaneSeat)
+            text: qsTr("From: %1")
+                .arg(reservation.reservationFor.departureStation.name)
             color: Kirigami.Theme.textColor
         }
         QQC2.Label {
-            text: qsTr("Departure from %1: %2")
-                .arg(reservation.reservationFor.departureAirport.name)
-                .arg(reservation.reservationFor.departureTimeLocalized)
+            text: qsTr("To: %1 ")
+                .arg(reservation.reservationFor.arrivalStation.name)
             color: Kirigami.Theme.textColor
         }
-        QQC2.Label {
-            text: qsTr("Arrival at %1: %2")
-                .arg(reservation.reservationFor.arrivalAirport.name)
-                .arg(reservation.reservationFor.arrivalTimeLocalized)
-            color: Kirigami.Theme.textColor
-        }
-
-        QQC2.Button {
-            Layout.alignment: Qt.AlignHCenter
-            text: qsTr("Boarding Pass")
-            onClicked: showBoardingPass(root.pass, root.passId)
-            visible: root.passId !== ""
-            icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
-        }
-
     }
 }
+
+

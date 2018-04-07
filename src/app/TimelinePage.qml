@@ -51,6 +51,10 @@ Kirigami.ScrollablePage {
         id: trainDelegate
         App.TrainDelegate {}
     }
+    Component {
+        id: busDelegate
+        App.BusDelegate {}
+    }
 
     ListView {
         model: _timelineModel
@@ -60,13 +64,14 @@ Kirigami.ScrollablePage {
             property var modelData: model
 
             height: item.implicitHeight
-            width: ListView.view.width
+            anchors.left: parent.left
+            anchors.right: parent.right
             sourceComponent: {
                 switch (modelData.type) {
                     case TimelineModel.Flight: return flightDelegate;
                     case TimelineModel.Hotel: return hotelDelegate;
                     case TimelineModel.TrainTrip: return trainDelegate;
-                    // TODO complete this
+                    case TimelineModel.BusTrip: return busDelegate;
                 }
             }
 
