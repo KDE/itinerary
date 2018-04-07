@@ -21,6 +21,7 @@
 #include <QAbstractListModel>
 
 class PkPassManager;
+class ReservationManager;
 
 class TimelineModel : public QAbstractListModel
 {
@@ -35,6 +36,7 @@ public:
     ~TimelineModel();
 
     void setPkPassManager(PkPassManager *mgr);
+    void setReservationManager(ReservationManager *mgr);
 
     QVariant data(const QModelIndex& index, int role) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -45,7 +47,8 @@ private:
     void passUpdated(const QString &passId);
     void passRemoved(const QString &passId);
 
-    PkPassManager *m_mgr = nullptr;
+    PkPassManager *m_passMgr = nullptr;
+    ReservationManager *m_resMgr = nullptr;
     QVector<QString> m_passes;
 };
 

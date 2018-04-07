@@ -34,10 +34,10 @@ TimelineModel::~TimelineModel() = default;
 void TimelineModel::setPkPassManager(PkPassManager* mgr)
 {
     beginResetModel();
-    m_mgr = mgr;
+    m_passMgr = mgr;
     m_passes = mgr->passes();
     std::sort(m_passes.begin(), m_passes.end(), [this](const QString &lhs, const QString &rhs) {
-        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
+        return PkPassManager::relevantDate(m_passMgr->pass(lhs)) > PkPassManager::relevantDate(m_passMgr->pass(rhs));
     });
     connect(mgr, &PkPassManager::passAdded, this, &TimelineModel::passAdded);
     connect(mgr, &PkPassManager::passUpdated, this, &TimelineModel::passUpdated);
@@ -45,25 +45,31 @@ void TimelineModel::setPkPassManager(PkPassManager* mgr)
     endResetModel();
 }
 
+void TimelineModel::setReservationManager(ReservationManager* mgr)
+{
+    // TODO move the above logic here
+    m_resMgr = mgr;
+}
+
 int TimelineModel::rowCount(const QModelIndex& parent) const
 {
-    if (parent.isValid() || !m_mgr)
+    if (parent.isValid() || !m_passMgr)
         return 0;
     return m_passes.size();
 }
 
 QVariant TimelineModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || !m_mgr)
+    if (!index.isValid() || !m_passMgr)
         return {};
 
     switch (role) {
         case PassRole:
-            return QVariant::fromValue(m_mgr->pass(m_passes.at(index.row())));
+            return QVariant::fromValue(m_passMgr->pass(m_passes.at(index.row())));
         case PassIdRole:
             return m_passes.at(index.row());
         case SectionHeader:
-            return QLocale().toString(PkPassManager::relevantDate(m_mgr->pass(m_passes.at(index.row()))).date(), QLocale::ShortFormat);
+            return QLocale().toString(PkPassManager::relevantDate(m_passMgr->pass(m_passes.at(index.row()))).date(), QLocale::ShortFormat);
     }
     return {};
 }
@@ -80,7 +86,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 void TimelineModel::passAdded(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
-        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
+        return PkPassManager::relevantDate(m_passMgr->pass(lhs)) > PkPassManager::relevantDate(m_passMgr->pass(rhs));
     });
     auto index = std::distance(m_passes.begin(), it);
     beginInsertRows({}, index, index);
@@ -91,7 +97,7 @@ void TimelineModel::passAdded(const QString &passId)
 void TimelineModel::passUpdated(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
-        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
+        return PkPassManager::relevantDate(m_passMgr->pass(lhs)) > PkPassManager::relevantDate(m_passMgr->pass(rhs));
     });
     auto row = std::distance(m_passes.begin(), it);
     emit dataChanged(index(row, 0), index(row, 0));
@@ -100,7 +106,7 @@ void TimelineModel::passUpdated(const QString &passId)
 void TimelineModel::passRemoved(const QString &passId)
 {
     auto it = std::lower_bound(m_passes.begin(), m_passes.end(), passId, [this](const QString &lhs, const QString &rhs) {
-        return PkPassManager::relevantDate(m_mgr->pass(lhs)) > PkPassManager::relevantDate(m_mgr->pass(rhs));
+        return PkPassManager::relevantDate(m_passMgr->pass(lhs)) > PkPassManager::relevantDate(m_passMgr->pass(rhs));
     });
     auto index = std::distance(m_passes.begin(), it);
     beginRemoveRows({}, index, index);

@@ -29,6 +29,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QStandardPaths>
+#include <QUrl>
 #include <QUuid>
 #include <QVector>
 
@@ -85,12 +86,15 @@ QVariant ReservationManager::reservation(const QString& id) const
     return resData.at(0);
 }
 
-void ReservationManager::importReservation(const QString& filename)
+void ReservationManager::importReservation(const QUrl& filename)
 {
+    if (!filename.isLocalFile())
+        return;
+
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QDir::root().mkpath(basePath);
 
-    QFile f(filename);
+    QFile f(filename.toLocalFile());
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Unable to open file:" << f.errorString();
         return;

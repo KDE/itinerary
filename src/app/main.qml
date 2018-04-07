@@ -30,12 +30,16 @@ Kirigami.ApplicationWindow {
     height: 720
 
     FileDialog {
+        property bool loadPass: false
         id: fileDialog
         title: qsTr("Please choose a file")
         folder: shortcuts.home
         onAccepted: {
             console.log(fileDialog.fileUrls);
-            _pkpassManager.importPass(fileDialog.fileUrl);
+            if (loadPass)
+                _pkpassManager.importPass(fileDialog.fileUrl);
+            else
+                _reservationManager.importReservation(fileDialog.fileUrl);
         }
     }
 
@@ -44,9 +48,18 @@ Kirigami.ApplicationWindow {
         titleIcon: "map-symbolic"
         actions: [
             Kirigami.Action {
+                text: qsTr("Import Reservation...")
+                iconName: "document-open"
+                onTriggered: {
+                    fileDialog.loadPass = false;
+                    fileDialog.visible = true;
+                }
+            },
+            Kirigami.Action {
                 text: qsTr("Import Pass...")
                 iconName: "document-open"
                 onTriggered: {
+                    fileDialog.loadPass = true;
                     fileDialog.visible = true;
                 }
             },

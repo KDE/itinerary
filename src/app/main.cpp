@@ -21,6 +21,7 @@
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
+#include "reservationmanager.h"
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
@@ -94,8 +95,10 @@ int main(int argc, char **argv)
     parser.process(app);
 
     PkPassManager passMgr;
+    ReservationManager resMgr;
     TimelineModel timelineModel;
     timelineModel.setPkPassManager(&passMgr);
+    timelineModel.setReservationManager(&resMgr);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
@@ -103,6 +106,7 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
+    engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
     engine.load(QStringLiteral(":/main.qml"));
 

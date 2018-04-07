@@ -21,6 +21,8 @@
 #include <QHash>
 #include <QObject>
 
+class QUrl;
+
 /** Manages JSON-LD reservation data. */
 class ReservationManager : public QObject
 {
@@ -32,7 +34,7 @@ public:
     QVector<QString> reservations() const;
     QVariant reservation(const QString &id) const;
 
-    void importReservation(const QString &filename);
+    Q_INVOKABLE void importReservation(const QUrl &filename);
     void removeReservation(const QString &id);
 
 signals:
