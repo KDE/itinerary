@@ -55,6 +55,19 @@ Kirigami.ScrollablePage {
         id: busDelegate
         App.BusDelegate {}
     }
+    Component {
+        id: todayDelegate
+        Item {
+            implicitHeight: visible ? label.implicitHeight : 0
+            QQC2.Label {
+                id: label
+                anchors.fill: parent
+                text: qsTr("Nothing on the itinerary for today.");
+                color: Kirigami.Theme.textColor
+                horizontalAlignment: Qt.AlignHCenter
+            }
+        }
+    }
 
     ListView {
         model: _timelineModel
@@ -72,14 +85,19 @@ Kirigami.ScrollablePage {
                     case TimelineModel.Hotel: return hotelDelegate;
                     case TimelineModel.TrainTrip: return trainDelegate;
                     case TimelineModel.BusTrip: return busDelegate;
+                    case TimelineModel.TodayMarker: return todayDelegate;
                 }
             }
 
             onLoaded: {
-                item.reservation = Qt.binding(function() { return modelData.reservation; });
-                item.passId = Qt.binding(function() { return modelData.passId; });
-                item.pass = Qt.binding(function() { return modelData.pass; });
-                item.showBoardingPass.connect(onShowBoardingPass);
+                if (modelData.type != TimelineModel.TodayMarker) {
+                    item.reservation = Qt.binding(function() { return modelData.reservation; });
+                    item.passId = Qt.binding(function() { return modelData.passId; });
+                    item.pass = Qt.binding(function() { return modelData.pass; });
+                    item.showBoardingPass.connect(onShowBoardingPass);
+                } else {
+                    item.visible = modelData.isTodayEmpty;
+                }
             }
             function onShowBoardingPass(pass, passId) {
                 root.showBoardingPass(pass, passId)

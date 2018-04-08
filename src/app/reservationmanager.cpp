@@ -70,6 +70,10 @@ QVector<QString> ReservationManager::reservations() const
 
 QVariant ReservationManager::reservation(const QString& id) const
 {
+    if (id.isEmpty()) {
+        return {};
+    }
+
     const auto it = m_reservations.constFind(id);
     if (it != m_reservations.constEnd()) {
         return it.value();

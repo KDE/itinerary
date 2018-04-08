@@ -66,22 +66,27 @@ private slots:
         QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
         QVERIFY(rmSpy.isValid());
 
-        QCOMPARE(model.rowCount(), 0);
+        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
+        QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
+        QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
         QVERIFY(updateSpy.isEmpty());
-        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
 
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
+        QCOMPARE(model.rowCount(), 2);
 
         clearReservations(&resMgr);
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
-        QCOMPARE(model.rowCount(), 0);
+        QCOMPARE(model.rowCount(), 1);
     }
 };
 

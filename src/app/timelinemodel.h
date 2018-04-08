@@ -32,16 +32,19 @@ public:
         PassIdRole,
         SectionHeader,
         ReservationRole,
-        ReservationTypeRole
+        ElementTypeRole,
+        TodayEmptyRole,
+        IsTodayRole
     };
 
-    enum ReservationType {
+    enum ElementType {
         Flight,
         TrainTrip,
         BusTrip,
-        Hotel
+        Hotel,
+        TodayMarker
     };
-    Q_ENUM(ReservationType)
+    Q_ENUM(ElementType)
 
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel();

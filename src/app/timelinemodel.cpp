@@ -38,7 +38,9 @@ using namespace KItinerary;
 // ### the below functions probably should move to KItinerary itself
 static QDate relevantDate(const QVariant &res)
 {
-    if (res.userType() == qMetaTypeId<FlightReservation>()) {
+    if (res.isNull()) {
+        return QDate::currentDate(); // today marker
+    } else if (res.userType() == qMetaTypeId<FlightReservation>()) {
         return res.value<FlightReservation>().reservationFor().value<Flight>().departureDay();
     } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
         return res.value<LodgingReservation>().checkinTime().date();
@@ -69,16 +71,8 @@ static QDateTime relevantDateTime(const QVariant &res)
 
 static bool isBeforeReservation(const QVariant &lhs, const QVariant &rhs)
 {
-    if (lhs.isNull() && rhs.isNull())
-        return false;
-
-    if (lhs.isNull())
-        return false;
-    if (rhs.isNull())
-        return true;
-
-    auto lhsDt = relevantDateTime(lhs);
-    auto rhsDt = relevantDateTime(rhs);
+    auto lhsDt = lhs.isNull() ? QDateTime(QDate::currentDate(), QTime(0, 0)) : relevantDateTime(lhs);
+    auto rhsDt = rhs.isNull() ? QDateTime(QDate::currentDate(), QTime(0, 0)) : relevantDateTime(rhs);
     if (!lhsDt.isValid())
         lhsDt = QDateTime(relevantDate(lhs), QTime(23, 59, 59));
     if (!rhsDt.isValid())
@@ -113,6 +107,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     beginResetModel();
     m_resMgr = mgr;
     m_reservationIds = mgr->reservations();
+    m_reservationIds.push_back({}); // today marker
     std::sort(m_reservationIds.begin(), m_reservationIds.end(), [this](const QString &lhs, const QString &rhs) {
         return isBeforeReservation(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
     });
@@ -151,8 +146,10 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         }
         case ReservationRole:
             return res;
-        case ReservationTypeRole:
-            if (res.userType() == qMetaTypeId<FlightReservation>())
+        case ElementTypeRole:
+            if (res.isNull())
+                return TodayMarker;
+            else if (res.userType() == qMetaTypeId<FlightReservation>())
                 return Flight;
             else if (res.userType() == qMetaTypeId<LodgingReservation>())
                 return Hotel;
@@ -160,7 +157,14 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
                 return TrainTrip;
             else if (res.userType() == qMetaTypeId<BusReservation>())
                 return BusTrip;
-            return QVariant();
+            return {};
+        case TodayEmptyRole:
+            if (res.isNull()) {
+                return index.row() == (m_reservationIds.size() - 1) || relevantDate(m_resMgr->reservation(m_reservationIds.at(index.row() + 1))) > QDate::currentDate();
+            }
+            return {};
+        case IsTodayRole:
+            return relevantDate(res) == QDate::currentDate();
     }
     return {};
 }
@@ -172,7 +176,9 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(PassIdRole, "passId");
     names.insert(SectionHeader, "sectionHeader");
     names.insert(ReservationRole, "reservation");
-    names.insert(ReservationTypeRole, "type");
+    names.insert(ElementTypeRole, "type");
+    names.insert(TodayEmptyRole, "isTodayEmpty");
+    names.insert(IsTodayRole, "isToday");
     return names;
 }
 
