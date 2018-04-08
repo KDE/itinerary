@@ -41,7 +41,7 @@ static QDate relevantDate(const QVariant &res)
     if (res.userType() == qMetaTypeId<FlightReservation>()) {
         return res.value<FlightReservation>().reservationFor().value<Flight>().departureDay();
     } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
-        return res.value<LodgingReservation>().checkinDate().date();
+        return res.value<LodgingReservation>().checkinTime().date();
     } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().date();
     } else if (res.userType() == qMetaTypeId<BusReservation>()) {

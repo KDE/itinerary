@@ -59,12 +59,12 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: qsTr("Check-in time: %1")
-                .arg(reservation.checkinDate)
+                .arg(reservation.checkinTime)
             color: Kirigami.Theme.textColor
         }
         QQC2.Label {
             text: qsTr("Check-out time: %1")
-                .arg(reservation.checkoutDate)
+                .arg(reservation.checkoutTime)
             color: Kirigami.Theme.textColor
         }
 
