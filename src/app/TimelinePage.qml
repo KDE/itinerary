@@ -31,9 +31,9 @@ Kirigami.ScrollablePage {
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: qsTr("Delete Pass")
-                iconName: "edit-delete"
-                onTriggered: print("TODO")
+                text: qsTr("Today")
+                iconName: "view-calendar"
+                onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
             }
         ]
     }
@@ -70,6 +70,7 @@ Kirigami.ScrollablePage {
     }
 
     ListView {
+        id: listView
         model: _timelineModel
         spacing: 5
 
@@ -118,4 +119,6 @@ Kirigami.ScrollablePage {
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
     }
+
+    Component.onCompleted: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
 }

@@ -26,6 +26,8 @@ class ReservationManager;
 class TimelineModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
+
 public:
     enum Role {
         PassRole = Qt::UserRole + 1,
@@ -55,6 +57,11 @@ public:
     QVariant data(const QModelIndex& index, int role) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     QHash<int, QByteArray> roleNames() const override;
+
+    int todayRow() const;
+
+signals:
+    void todayRowChanged();
 
 private:
     void reservationAdded(const QString &resId);

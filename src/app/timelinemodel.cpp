@@ -115,6 +115,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
     connect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
     endResetModel();
+    emit todayRowChanged();
 }
 
 int TimelineModel::rowCount(const QModelIndex& parent) const
@@ -182,6 +183,11 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     return names;
 }
 
+int TimelineModel::todayRow() const
+{
+    return m_reservationIds.indexOf({});
+}
+
 void TimelineModel::reservationAdded(const QString &resId)
 {
     auto it = std::lower_bound(m_reservationIds.begin(), m_reservationIds.end(), resId, [this](const QString &lhs, const QString &rhs) {
@@ -191,6 +197,7 @@ void TimelineModel::reservationAdded(const QString &resId)
     beginInsertRows({}, index, index);
     m_reservationIds.insert(it, resId);
     endInsertRows();
+    emit todayRowChanged();
 }
 
 void TimelineModel::reservationUpdated(const QString &resId)
@@ -211,4 +218,5 @@ void TimelineModel::reservationRemoved(const QString &resId)
     beginRemoveRows({}, index, index);
     m_reservationIds.remove(index);
     endRemoveRows();
+    emit todayRowChanged();
 }
