@@ -22,5 +22,7 @@ Item {
     property var pass
     property string passId
 
+    readonly property double headerFontScale: 1.25
+
     signal showBoardingPass(var pass, string passId)
 }

@@ -22,6 +22,7 @@ import org.kde.kirigami 2.0 as Kirigami
 import "." as App
 
 App.TimelineDelegate {
+    id: root
     implicitHeight: topLayout.implicitHeight
 
     ColumnLayout {
@@ -40,10 +41,9 @@ App.TimelineDelegate {
                 anchors.right: parent.right
 
                 QQC2.Label {
-                    text: qsTr("🏨 %1")
-                        .arg(reservation.reservationFor.name)
+                    text: qsTr("🏨 %1").arg(reservation.reservationFor.name)
                     color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                     Layout.fillWidth: true
                 }
             }

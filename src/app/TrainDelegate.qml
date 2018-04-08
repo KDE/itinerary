@@ -45,13 +45,13 @@ App.TimelineDelegate {
                         .arg(reservation.reservationFor.trainName)
                         .arg(reservation.reservationFor.trainNumber)
                     color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                     Layout.fillWidth: true
                 }
                 QQC2.Label {
                     text: reservation.reservationFor.departureTimeLocalized
                     color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 }
             }
         }

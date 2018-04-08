@@ -41,19 +41,19 @@ App.TimelineDelegate {
                 anchors.right: parent.right
 
                 QQC2.Label {
-                    text: qsTr("✈ %1 %2 %3 -> %4")
+                    text: qsTr("✈ %1 %2 %3 → %4")
                         .arg(reservation.reservationFor.airline.iataCode)
                         .arg(reservation.reservationFor.flightNumber)
                         .arg(reservation.reservationFor.departureAirport.iataCode)
                         .arg(reservation.reservationFor.arrivalAirport.iataCode)
                     color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                     Layout.fillWidth: true
                 }
                 QQC2.Label {
                     text: reservation.reservationFor.boardingTimeLocalized
                     color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 1.6
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 }
             }
         }
