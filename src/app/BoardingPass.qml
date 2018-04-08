@@ -49,7 +49,7 @@ Item {
 
                 Image {
                     Layout.rowSpan: 2
-                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : null
+                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                 }
 
@@ -188,6 +188,13 @@ Item {
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
+                }
+
+                // footer
+                Image {
+                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
+                    sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                    Layout.alignment: Qt.AlignCenter
                 }
 
                 // barcode
