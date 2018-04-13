@@ -56,6 +56,10 @@ Kirigami.ScrollablePage {
         App.BusDelegate {}
     }
     Component {
+        id: restaurantDelegate
+        App.RestaurantDelegate {}
+    }
+    Component {
         id: todayDelegate
         Item {
             implicitHeight: visible ? label.implicitHeight : 0
@@ -86,6 +90,7 @@ Kirigami.ScrollablePage {
                     case TimelineModel.Hotel: return hotelDelegate;
                     case TimelineModel.TrainTrip: return trainDelegate;
                     case TimelineModel.BusTrip: return busDelegate;
+                    case TimelineModel.Restaurant: return restaurantDelegate;
                     case TimelineModel.TodayMarker: return todayDelegate;
                 }
             }

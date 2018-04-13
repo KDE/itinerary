@@ -44,6 +44,7 @@ public:
         TrainTrip,
         BusTrip,
         Hotel,
+        Restaurant,
         TodayMarker
     };
     Q_ENUM(ElementType)

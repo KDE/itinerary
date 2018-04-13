@@ -22,6 +22,7 @@
 #include <KItinerary/BusTrip>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/Organization>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
@@ -48,6 +49,8 @@ static QDate relevantDate(const QVariant &res)
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().date();
     } else if (res.userType() == qMetaTypeId<BusReservation>()) {
         return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime().date();
+    } else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>()) {
+        return res.value<FoodEstablishmentReservation>().startTime().date();
     }
 
     return {};
@@ -64,6 +67,8 @@ static QDateTime relevantDateTime(const QVariant &res)
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
     } else if (res.userType() == qMetaTypeId<BusReservation>()) {
         return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
+    } else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>()) {
+        return res.value<FoodEstablishmentReservation>().startTime();
     }
 
     return {};
@@ -158,6 +163,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
                 return TrainTrip;
             else if (res.userType() == qMetaTypeId<BusReservation>())
                 return BusTrip;
+            else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>())
+                return Restaurant;
             return {};
         case TodayEmptyRole:
             if (res.isNull()) {
