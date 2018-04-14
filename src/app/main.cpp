@@ -18,6 +18,7 @@
 #include "itinerary_version.h"
 #include "logging.h"
 
+#include "applicationcontroller.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
@@ -101,6 +102,8 @@ int main(int argc, char **argv)
     timelineModel.setPkPassManager(&passMgr);
     timelineModel.setReservationManager(&resMgr);
 
+    ApplicationController appController;
+
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
 
@@ -111,6 +114,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
+    engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.load(QStringLiteral(":/main.qml"));
 
     for (const auto &file : parser.positionalArguments()) {

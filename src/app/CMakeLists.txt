@@ -18,6 +18,7 @@ target_link_libraries(itinerary PUBLIC
 
 add_executable(itinerary-app
     main.cpp
+    applicationcontroller.cpp
     pkpassimageprovider.cpp
     qml.qrc
 )

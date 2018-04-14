@@ -47,10 +47,9 @@ Item {
 
         QQC2.ToolButton {
             icon.name: "map-symbolic"
-            visible: place.geo.isValid
+            visible: place.geo.isValid || !place.address.isEmpty
             onClicked: {
-                // TODO
-                Qt.openUrlExternally("https://www.openstreetmap.org/#map=17/" + place.geo.latitude + "/" + place.geo.longitude);
+                _appController.showOnMap(place);
             }
         }
         QQC2.ToolButton {
