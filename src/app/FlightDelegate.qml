@@ -59,23 +59,36 @@ App.TimelineDelegate {
         }
 
         QQC2.Label {
+            text: qsTr("Departure from %1: %2")
+                .arg(reservation.reservationFor.departureAirport.name)
+                .arg(reservation.reservationFor.departureTimeLocalized)
+            color: Kirigami.Theme.textColor
+            wrapMode: Text.WordWrap
+            Layout.maximumWidth: root.width
+        }
+        App.PlaceDelegate {
+            place: reservation.reservationFor.departureAirport
+            Layout.fillWidth: true
+        }
+        QQC2.Label {
             text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
                 .arg(reservation.reservationFor.departureTerminal)
                 .arg(reservation.reservationFor.departureGate)
                 .arg(reservation.airplaneSeat)
             color: Kirigami.Theme.textColor
         }
-        QQC2.Label {
-            text: qsTr("Departure from %1: %2")
-                .arg(reservation.reservationFor.departureAirport.name)
-                .arg(reservation.reservationFor.departureTimeLocalized)
-            color: Kirigami.Theme.textColor
-        }
+
         QQC2.Label {
             text: qsTr("Arrival at %1: %2")
                 .arg(reservation.reservationFor.arrivalAirport.name)
                 .arg(reservation.reservationFor.arrivalTimeLocalized)
             color: Kirigami.Theme.textColor
+            wrapMode: Text.WordWrap
+            Layout.maximumWidth: root.width
+        }
+        App.PlaceDelegate {
+            place: reservation.reservationFor.arrivalAirport
+            Layout.fillWidth: true
         }
 
         QQC2.Button {

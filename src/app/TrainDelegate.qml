@@ -62,13 +62,21 @@ App.TimelineDelegate {
                 .arg(reservation.reservationFor.departurePlatform)
             color: Kirigami.Theme.textColor
         }
+        App.PlaceDelegate {
+            place: reservation.reservationFor.departureStation
+            Layout.fillWidth: true
+        }
+        // TODO reserved seat
         QQC2.Label {
             text: qsTr("Arrival at %1 on platform %2")
                 .arg(reservation.reservationFor.arrivalStation.name)
                 .arg(reservation.reservationFor.arrivalPlatform)
             color: Kirigami.Theme.textColor
         }
-        // TODO reserved seat
+        App.PlaceDelegate {
+            place: reservation.reservationFor.arrivalStation
+            Layout.fillWidth: true
+        }
     }
 }
 

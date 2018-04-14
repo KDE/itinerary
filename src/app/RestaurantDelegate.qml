@@ -54,13 +54,9 @@ App.TimelineDelegate {
             }
         }
 
-        QQC2.Label {
-            text: qsTr("Address:\n%1\n%2 %3\n%4 ")
-                .arg(reservation.reservationFor.address.streetAddress)
-                .arg(reservation.reservationFor.address.postalCode)
-                .arg(reservation.reservationFor.address.addressLocality)
-                .arg(reservation.reservationFor.address.addressCountry)
-            color: Kirigami.Theme.textColor
+        App.PlaceDelegate {
+            place: reservation.reservationFor
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: qsTr("Person: %1")

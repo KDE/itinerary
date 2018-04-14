@@ -61,11 +61,20 @@ App.TimelineDelegate {
                 .arg(reservation.reservationFor.departureStation.name)
             color: Kirigami.Theme.textColor
         }
+        App.PlaceDelegate {
+            place: reservation.reservationFor.departureStation
+            Layout.fillWidth: true
+        }
         QQC2.Label {
             text: qsTr("To: %1 ")
                 .arg(reservation.reservationFor.arrivalStation.name)
             color: Kirigami.Theme.textColor
         }
+        App.PlaceDelegate {
+            place: reservation.reservationFor.arrivalStation
+            Layout.fillWidth: true
+        }
+
     }
 }
 
