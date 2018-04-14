@@ -20,7 +20,10 @@
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
 
+#include <QDebug>
 #include <QDesktopServices>
+#include <QGeoPositionInfo>
+#include <QGeoPositionInfoSource>
 #include <QUrl>
 #include <QUrlQuery>
 
@@ -71,5 +74,55 @@ void ApplicationController::showOnMap(const QVariant &place)
         query.addQueryItem(QStringLiteral("query"), queryString);
         url.setQuery(query);
         QDesktopServices::openUrl(url);
+    }
+}
+
+void ApplicationController::navigateTo(const QVariant& place)
+{
+    if (place.isNull() || m_pendingNavigation) {
+        return;
+    }
+
+    // TODO Android implementation
+
+    if (!m_positionSource) {
+        m_positionSource = QGeoPositionInfoSource::createDefaultSource(this);
+        if (!m_positionSource) {
+            qWarning() << "no geo position info source available";
+            return;
+        }
+    }
+
+    if (m_positionSource->lastKnownPosition().isValid()) {
+        navigateTo(m_positionSource->lastKnownPosition(), place);
+    } else {
+        m_pendingNavigation = connect(m_positionSource, &QGeoPositionInfoSource::positionUpdated,
+                                      this, [this, place](const QGeoPositionInfo &pos) {
+            navigateTo(pos, place);
+        });
+        m_positionSource->requestUpdate();
+    }
+}
+
+void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVariant &to)
+{
+    disconnect(m_pendingNavigation);
+    if (!from.isValid()) {
+        return;
+    }
+
+    const auto geo = JsonLdDocument::readProperty(to, "geo").value<GeoCoordinates>();
+    if (geo.isValid()) {
+        QUrl url;
+        url.setScheme(QStringLiteral("https"));
+        url.setHost(QStringLiteral("www.openstreetmap.org"));
+        url.setPath(QStringLiteral("/directions"));
+        const QString fragment = QLatin1String("route=") + QString::number(from.coordinate().latitude())
+                                    + QLatin1Char(',') + QString::number(from.coordinate().longitude())
+                                    + QLatin1Char(',') + QString::number(geo.latitude())
+                                    + QLatin1Char(',') + QString::number(geo.longitude());
+        url.setFragment(fragment);
+        QDesktopServices::openUrl(url);
+        return;
     }
 }

@@ -48,14 +48,12 @@ Item {
         QQC2.ToolButton {
             icon.name: "map-symbolic"
             visible: place.geo.isValid || !place.address.isEmpty
-            onClicked: {
-                _appController.showOnMap(place);
-            }
+            onClicked: _appController.showOnMap(place)
         }
         QQC2.ToolButton {
             icon.name: "go-next-symbolic"
             visible: place.geo.isValid
-            onClicked: console.log("TODO: navigate to location")
+            onClicked: _appController.navigateTo(place)
         }
     }
 }

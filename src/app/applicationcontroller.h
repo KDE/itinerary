@@ -20,6 +20,9 @@
 
 #include <QObject>
 
+class QGeoPositionInfo;
+class QGeoPositionInfoSource;
+
 class ApplicationController : public QObject
 {
     Q_OBJECT
@@ -28,6 +31,13 @@ public:
     ~ApplicationController();
 
     Q_INVOKABLE void showOnMap(const QVariant &place);
+    Q_INVOKABLE void navigateTo(const QVariant &place);
+
+private:
+    void navigateTo(const QGeoPositionInfo &from, const QVariant &to);
+
+    QGeoPositionInfoSource *m_positionSource = nullptr;
+    QMetaObject::Connection m_pendingNavigation;
 };
 
 #endif // APPLICATIONCONTROLLER_H
