@@ -22,14 +22,15 @@
 
 #include <QDebug>
 #include <QDesktopServices>
-#include <QGeoPositionInfo>
-#include <QGeoPositionInfoSource>
 #include <QUrl>
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #include <QAndroidJniObject>
+#else
+#include <QGeoPositionInfo>
+#include <QGeoPositionInfoSource>
 #endif
 
 using namespace KItinerary;
@@ -104,7 +105,7 @@ void ApplicationController::showOnMap(const QVariant &place)
 
 void ApplicationController::navigateTo(const QVariant& place)
 {
-    if (place.isNull() || m_pendingNavigation) {
+    if (place.isNull()) {
         return;
     }
 
@@ -131,6 +132,9 @@ void ApplicationController::navigateTo(const QVariant& place)
     }
 
 #else
+    if (m_pendingNavigation) {
+        return;
+    }
 
     if (!m_positionSource) {
         m_positionSource = QGeoPositionInfoSource::createDefaultSource(this);
@@ -152,6 +156,7 @@ void ApplicationController::navigateTo(const QVariant& place)
 #endif
 }
 
+#ifndef Q_OS_ANDROID
 void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVariant &to)
 {
     disconnect(m_pendingNavigation);
@@ -174,3 +179,4 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
         return;
     }
 }
+#endif

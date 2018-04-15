@@ -26,7 +26,6 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     Qt5::Quick
-    Qt5::Location
 )
 if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,
@@ -48,6 +47,7 @@ if (ANDROID)
         view-refresh
     )
 else ()
+    target_link_libraries(itinerary-app PRIVATE Qt5::Location)
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
 

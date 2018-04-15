@@ -19,7 +19,7 @@ set(CMAKE_AUTORCC ON)
 ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_version.h)
 
 # build-time dependencies
-find_package(Qt5 REQUIRED COMPONENTS Test Quick Location)
+find_package(Qt5 REQUIRED COMPONENTS Test Quick)
 find_package(KF5 REQUIRED COMPONENTS I18n)
 find_package(KPimPkPass REQUIRED)
 find_package(KPimItinerary REQUIRED)
@@ -38,6 +38,8 @@ if (ANDROID)
     if (NOT DEFINED BREEZEICONS_DIR AND EXISTS ${CMAKE_SOURCE_DIR}/../breeze-icons)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()
+else()
+    find_package(Qt5 REQUIRED COMPONENTS Location)
 endif()
 
 add_subdirectory(src)

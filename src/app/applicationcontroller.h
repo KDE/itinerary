@@ -34,10 +34,12 @@ public:
     Q_INVOKABLE void navigateTo(const QVariant &place);
 
 private:
+#ifndef Q_OS_ANDROID
     void navigateTo(const QGeoPositionInfo &from, const QVariant &to);
 
     QGeoPositionInfoSource *m_positionSource = nullptr;
     QMetaObject::Connection m_pendingNavigation;
+#endif
 };
 
 #endif // APPLICATIONCONTROLLER_H
