@@ -31,6 +31,7 @@ public:
     ~ApplicationController();
 
     Q_INVOKABLE void showOnMap(const QVariant &place);
+    Q_INVOKABLE bool canNavigateTo(const QVariant &place);
     Q_INVOKABLE void navigateTo(const QVariant &place);
 
 private:

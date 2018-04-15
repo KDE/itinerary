@@ -103,6 +103,23 @@ void ApplicationController::showOnMap(const QVariant &place)
 #endif
 }
 
+bool ApplicationController::canNavigateTo(const QVariant& place)
+{
+    if (place.isNull()) {
+        return false;
+    }
+
+    if (JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>().isValid()) {
+        return true;
+    }
+
+#ifdef Q_OS_ANDROID
+    return !JsonLdDocument::readProperty(place, "address").value<PostalAddress>().isEmpty();
+#else
+    return false;
+#endif
+}
+
 void ApplicationController::navigateTo(const QVariant& place)
 {
     if (place.isNull()) {

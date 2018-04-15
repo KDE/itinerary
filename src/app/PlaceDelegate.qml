@@ -56,7 +56,7 @@ Item {
             onClicked: _appController.showOnMap(place)
         }
         QQC2.ToolButton {
-            visible: place.geo.isValid
+            visible: _appController.canNavigateTo(place)
             Kirigami.Icon {
                 anchors.centerIn: parent
                 width: Kirigami.Units.iconSizes.smallMedium
