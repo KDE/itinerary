@@ -27,6 +27,11 @@
 #include <QUrl>
 #include <QUrlQuery>
 
+#ifdef Q_OS_ANDROID
+#include <QtAndroid>
+#include <QAndroidJniObject>
+#endif
+
 using namespace KItinerary;
 
 ApplicationController::ApplicationController(QObject* parent)
@@ -42,9 +47,29 @@ void ApplicationController::showOnMap(const QVariant &place)
         return;
     }
 
-    // TODO Android implementation
-
     const auto geo = JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>();
+    const auto addr = JsonLdDocument::readProperty(place, "address").value<PostalAddress>();
+
+#ifdef Q_OS_ANDROID
+    QString intentUri;
+    if (geo.isValid()) {
+        intentUri = QLatin1String("geo:") + QString::number(geo.latitude())
+            + QLatin1Char(',') + QString::number(geo.longitude());
+    } else if (!addr.isEmpty()) {
+        intentUri = QLatin1String("geo:0,0?q=") + addr.streetAddress() + QLatin1String(", ")
+            + addr.postalCode() + QLatin1Char(' ')
+            + addr.addressLocality() + QLatin1String(", ")
+            + addr.addressCountry();
+    } else {
+        return;
+    }
+
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        activity.callMethod<void>("showOnMap", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
+    }
+
+#else
     if (geo.isValid()) {
         // zoom out further from airports, they are larger and you usually want to go further away from them
         const auto zoom = place.userType() == qMetaTypeId<Airport>() ? 12 : 17;
@@ -60,7 +85,6 @@ void ApplicationController::showOnMap(const QVariant &place)
         return;
     }
 
-    const auto addr = JsonLdDocument::readProperty(place, "address").value<PostalAddress>();
     if (!addr.isEmpty()) {
         QUrl url;
         url.setScheme(QStringLiteral("https"));
@@ -75,6 +99,7 @@ void ApplicationController::showOnMap(const QVariant &place)
         url.setQuery(query);
         QDesktopServices::openUrl(url);
     }
+#endif
 }
 
 void ApplicationController::navigateTo(const QVariant& place)

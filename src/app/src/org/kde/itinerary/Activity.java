@@ -20,6 +20,7 @@ package org.kde.itinerary;
 import org.qtproject.qt5.android.bindings.QtActivity;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
@@ -56,5 +57,13 @@ public class Activity extends QtActivity
         }
 
         return tempFile.toString();
+    }
+
+    public void showOnMap(String uri)
+    {
+        Uri mapIntentUri = Uri.parse(uri);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 }
