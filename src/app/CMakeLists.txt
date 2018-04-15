@@ -42,6 +42,7 @@ if (ANDROID)
     kirigami_package_breeze_icons(ICONS
         document-open
         edit-delete
+        go-next-symbolic
         map-symbolic
         view-calendar-day
         view-refresh

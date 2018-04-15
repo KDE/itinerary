@@ -46,13 +46,23 @@ Item {
         y: Math.max(0, label.implicitHeight - buttonLayout.implicitHeight)
 
         QQC2.ToolButton {
-            icon.name: "map-symbolic"
             visible: place.geo.isValid || !place.address.isEmpty
+            Kirigami.Icon {
+                anchors.centerIn: parent
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                source: "map-symbolic"
+            }
             onClicked: _appController.showOnMap(place)
         }
         QQC2.ToolButton {
-            icon.name: "go-next-symbolic"
             visible: place.geo.isValid
+            Kirigami.Icon {
+                anchors.centerIn: parent
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                source: "go-next-symbolic"
+            }
             onClicked: _appController.navigateTo(place)
         }
     }

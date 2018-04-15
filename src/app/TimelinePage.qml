@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
         contextualActions: [
             Kirigami.Action {
                 text: qsTr("Today")
-                iconName: "view-calendar"
+                iconName: "view-calendar-day"
                 onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
             }
         ]
