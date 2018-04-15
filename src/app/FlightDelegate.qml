@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
@@ -51,7 +52,9 @@ App.TimelineDelegate {
                     Layout.fillWidth: true
                 }
                 QQC2.Label {
-                    text: reservation.reservationFor.boardingTimeLocalized
+                    text: isNaN(reservation.reservationFor.boardingTime.getTime()) ?
+                        Localizer.formatTime(reservation.reservationFor, "departureTime") :
+                        Localizer.formatTime(reservation.reservationFor, "boardingTime")
                     color: Kirigami.Theme.complementaryTextColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 }
@@ -61,7 +64,7 @@ App.TimelineDelegate {
         QQC2.Label {
             text: qsTr("Departure from %1: %2")
                 .arg(reservation.reservationFor.departureAirport.name)
-                .arg(reservation.reservationFor.departureTimeLocalized)
+                .arg(Localizer.formatTime(reservation.reservationFor, "departureTime"))
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.maximumWidth: root.width
@@ -81,7 +84,7 @@ App.TimelineDelegate {
         QQC2.Label {
             text: qsTr("Arrival at %1: %2")
                 .arg(reservation.reservationFor.arrivalAirport.name)
-                .arg(reservation.reservationFor.arrivalTimeLocalized)
+                .arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.maximumWidth: root.width

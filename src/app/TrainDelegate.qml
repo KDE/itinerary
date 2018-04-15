@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
@@ -49,7 +50,7 @@ App.TimelineDelegate {
                     Layout.fillWidth: true
                 }
                 QQC2.Label {
-                    text: reservation.reservationFor.departureTimeLocalized
+                    text: Localizer.formatTime(reservation.reservationFor, "departureTime")
                     color: Kirigami.Theme.complementaryTextColor
                     font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 }
@@ -71,6 +72,11 @@ App.TimelineDelegate {
             text: qsTr("Arrival at %1 on platform %2")
                 .arg(reservation.reservationFor.arrivalStation.name)
                 .arg(reservation.reservationFor.arrivalPlatform)
+            color: Kirigami.Theme.textColor
+        }
+        QQC2.Label {
+            text: qsTr("Arrival time: %1")
+                .arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {

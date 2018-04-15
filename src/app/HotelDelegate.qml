@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
@@ -55,12 +56,12 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: qsTr("Check-in time: %1")
-                .arg(reservation.checkinTime)
+                .arg(Localizer.formatTime(reservation, "checkinTime"))
             color: Kirigami.Theme.textColor
         }
         QQC2.Label {
             text: qsTr("Check-out time: %1")
-                .arg(reservation.checkoutTime)
+                .arg(Localizer.formatDateTime(reservation, "checkoutTime"))
             color: Kirigami.Theme.textColor
         }
 
