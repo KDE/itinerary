@@ -59,11 +59,10 @@ public class Activity extends QtActivity
         return tempFile.toString();
     }
 
-    public void showOnMap(String uri)
+    public void launchViewIntentFromUri(String uri)
     {
         Uri mapIntentUri = Uri.parse(uri);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
 }

@@ -66,7 +66,7 @@ void ApplicationController::showOnMap(const QVariant &place)
 
     const auto activity = QtAndroid::androidActivity();
     if (activity.isValid()) {
-        activity.callMethod<void>("showOnMap", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
+        activity.callMethod<void>("launchViewIntentFromUri", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
     }
 
 #else
@@ -108,7 +108,29 @@ void ApplicationController::navigateTo(const QVariant& place)
         return;
     }
 
-    // TODO Android implementation
+#ifdef Q_OS_ANDROID
+    const auto geo = JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>();
+    const auto addr = JsonLdDocument::readProperty(place, "address").value<PostalAddress>();
+
+    QString intentUri;
+    if (geo.isValid()) {
+        intentUri = QLatin1String("google.navigation:q=") + QString::number(geo.latitude())
+            + QLatin1Char(',') + QString::number(geo.longitude());
+    } else if (!addr.isEmpty()) {
+        intentUri = QLatin1String("google.navigation:q=") + addr.streetAddress() + QLatin1String(", ")
+            + addr.postalCode() + QLatin1Char(' ')
+            + addr.addressLocality() + QLatin1String(", ")
+            + addr.addressCountry();
+    } else {
+        return;
+    }
+
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        activity.callMethod<void>("launchViewIntentFromUri", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
+    }
+
+#else
 
     if (!m_positionSource) {
         m_positionSource = QGeoPositionInfoSource::createDefaultSource(this);
@@ -127,6 +149,7 @@ void ApplicationController::navigateTo(const QVariant& place)
         });
         m_positionSource->requestUpdate();
     }
+#endif
 }
 
 void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVariant &to)
