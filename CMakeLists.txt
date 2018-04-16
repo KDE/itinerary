@@ -39,7 +39,7 @@ if (ANDROID)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()
 else()
-    find_package(Qt5 REQUIRED COMPONENTS Location)
+    find_package(Qt5 REQUIRED COMPONENTS Positioning)
 endif()
 
 add_subdirectory(src)

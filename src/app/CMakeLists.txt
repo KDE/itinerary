@@ -48,7 +48,7 @@ if (ANDROID)
         view-refresh
     )
 else ()
-    target_link_libraries(itinerary-app PRIVATE Qt5::Location)
+    target_link_libraries(itinerary-app PRIVATE Qt5::Positioning)
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
 
