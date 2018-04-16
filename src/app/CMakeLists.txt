@@ -55,7 +55,14 @@ endif()
 qml_lint(
     main.qml
     BoardingPass.qml
+    BusDelegate.qml
+    FlightDelegate.qml
+    HotelDelegate.qml
+    PlaceDelegate.qml
+    RestaurantDelegate.qml
+    TimelineDelegate.qml
     TimelinePage.qml
+    TrainDelegate.qml
 )
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
