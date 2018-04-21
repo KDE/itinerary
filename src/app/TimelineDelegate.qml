@@ -16,6 +16,11 @@
 */
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 2.1 as QQC2
+import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
+import "." as App
 
 Item {
     property var reservation
@@ -25,4 +30,16 @@ Item {
     readonly property double headerFontScale: 1.25
 
     signal showBoardingPass(var pass, string passId)
+
+    function showTicket()
+    {
+        applicationWindow().pageStack.push(ticketPageComponent);
+        applicationWindow().pageStack.currentItem.reservation = reservation;
+    }
+
+    Component {
+        id: ticketPageComponent
+        App.TicketPage {
+        }
+    }
 }

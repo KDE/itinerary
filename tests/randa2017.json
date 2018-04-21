@@ -56,6 +56,15 @@
             },
             "trainName": "IC",
             "trainNumber": "816"
+        },
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketToken": "aztecCode:i0CVXXX007123456789xxxx01/01/1970xxxxxxxxxxxxxxx24/090011223344556677889            DOE                 JOHN                  00000",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "62",
+                "seatSection": "17"
+            }
         }
     },
     {

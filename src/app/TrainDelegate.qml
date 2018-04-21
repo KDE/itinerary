@@ -83,6 +83,13 @@ App.TimelineDelegate {
             place: reservation.reservationFor.arrivalStation
             Layout.fillWidth: true
         }
+
+        QQC2.Button {
+            Layout.alignment: Qt.AlignHCenter
+            text: qsTr("🎫 Ticket")
+            onClicked: root.showTicket()
+            visible: root.reservation.reservedTicket != undefined && root.reservation.reservedTicket.ticketToken != ""
+        }
     }
 }
 

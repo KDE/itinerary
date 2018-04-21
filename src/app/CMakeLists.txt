@@ -60,6 +60,7 @@ qml_lint(
     HotelDelegate.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
+    TicketPage.qml
     TimelineDelegate.qml
     TimelinePage.qml
     TrainDelegate.qml
