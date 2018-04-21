@@ -45,4 +45,5 @@ endif()
 add_subdirectory(src)
 add_subdirectory(autotests)
 
+install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_CONFDIR})
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
