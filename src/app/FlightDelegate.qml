@@ -97,7 +97,7 @@ App.TimelineDelegate {
         QQC2.Button {
             Layout.alignment: Qt.AlignHCenter
             text: qsTr("Boarding Pass")
-            onClicked: showBoardingPass(root.pass, root.passId)
+            onClicked: showBoardingPass()
             visible: root.passId !== ""
             icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
         }

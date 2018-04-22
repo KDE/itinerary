@@ -24,7 +24,6 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    signal showBoardingPass(var pass, string passId)
 
     title: qsTr("My Itinerary")
     // context drawer content
@@ -100,13 +99,9 @@ Kirigami.ScrollablePage {
                     item.reservation = Qt.binding(function() { return modelData.reservation; });
                     item.passId = Qt.binding(function() { return modelData.passId; });
                     item.pass = Qt.binding(function() { return modelData.pass; });
-                    item.showBoardingPass.connect(onShowBoardingPass);
                 } else {
                     item.visible = modelData.isTodayEmpty;
                 }
-            }
-            function onShowBoardingPass(pass, passId) {
-                root.showBoardingPass(pass, passId)
             }
         }
 

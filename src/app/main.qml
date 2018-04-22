@@ -78,25 +78,6 @@ Kirigami.ApplicationWindow {
     pageStack.initialPage: mainPageComponent
     Component {
         id: mainPageComponent
-        App.TimelinePage {
-            onShowBoardingPass: {
-                pageStack.push(pkpassComponent);
-                pageStack.currentItem.passId = passId
-                pageStack.currentItem.pass = pass
-            }
-        }
-    }
-    Component {
-        id: pkpassComponent
-        Kirigami.Page {
-            property alias passId: pkpass.passId
-            property alias pass: pkpass.pass
-            App.BoardingPass {
-                x: (parent.width - implicitWidth) / 2
-                id: pkpass
-            }
-
-            onBackRequested: pageStack.pop()
-        }
+        App.TimelinePage {}
     }
 }

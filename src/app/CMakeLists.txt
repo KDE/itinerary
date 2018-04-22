@@ -58,6 +58,7 @@ qml_lint(
     BusDelegate.qml
     FlightDelegate.qml
     HotelDelegate.qml
+    PkPassPage.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
     TicketPage.qml

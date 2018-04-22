@@ -29,7 +29,12 @@ Item {
 
     readonly property double headerFontScale: 1.25
 
-    signal showBoardingPass(var pass, string passId)
+    function showBoardingPass()
+    {
+        applicationWindow().pageStack.push(pkpassComponent);
+        applicationWindow().pageStack.currentItem.passId = passId
+        applicationWindow().pageStack.currentItem.pass = pass
+    }
 
     function showTicket()
     {
@@ -38,8 +43,12 @@ Item {
     }
 
     Component {
+        id: pkpassComponent
+        App.PkPassPage {}
+    }
+
+    Component {
         id: ticketPageComponent
-        App.TicketPage {
-        }
+        App.TicketPage {}
     }
 }
