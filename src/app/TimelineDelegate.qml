@@ -23,6 +23,7 @@ import org.kde.itinerary 1.0
 import "." as App
 
 Item {
+    id: root
     property var reservation
     property var pass
     property string passId
@@ -32,23 +33,25 @@ Item {
     function showBoardingPass()
     {
         applicationWindow().pageStack.push(pkpassComponent);
-        applicationWindow().pageStack.currentItem.passId = passId
-        applicationWindow().pageStack.currentItem.pass = pass
     }
 
     function showTicket()
     {
         applicationWindow().pageStack.push(ticketPageComponent);
-        applicationWindow().pageStack.currentItem.reservation = reservation;
     }
 
     Component {
         id: pkpassComponent
-        App.PkPassPage {}
+        App.PkPassPage {
+            passId: root.passId
+            pass: root.pass
+        }
     }
 
     Component {
         id: ticketPageComponent
-        App.TicketPage {}
+        App.TicketPage {
+            reservation: root.reservation
+        }
     }
 }
