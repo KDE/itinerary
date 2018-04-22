@@ -79,6 +79,19 @@ App.TimelineDelegate {
             text: qsTr("Arrival: %1").arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
+
+        QQC2.Button {
+            Layout.alignment: Qt.AlignHCenter
+            text: root.passId !== "" ? qsTr("Boarding Pass") : qsTr("🎫 Ticket")
+            onClicked: {
+                if (root.passId !== "")
+                    showBoardingPass();
+                else
+                    showTicket();
+            }
+            visible: root.passId !== "" || (root.reservation.reservedTicket != undefined && root.reservation.reservedTicket.ticketToken != "")
+            icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
+        }
     }
 }
 
