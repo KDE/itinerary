@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -72,17 +72,13 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ListView {
+    Kirigami.CardsListView {
         id: listView
         model: _timelineModel
-        spacing: 5
 
         delegate: Loader {
             property var modelData: model
-
             height: item.implicitHeight
-            anchors.left: parent.left
-            anchors.right: parent.right
             sourceComponent: {
                 switch (modelData.type) {
                     case TimelineModel.Flight: return flightDelegate;
@@ -106,13 +102,13 @@ Kirigami.ScrollablePage {
         }
 
         section.property: "sectionHeader"
-        section.delegate: Rectangle {
-            color: Kirigami.Theme.backgroundColor
-            implicitHeight: headerItem.implicitHeight
+        section.delegate: Item {
+            implicitHeight: headerItem.implicitHeight + Kirigami.Units.largeSpacing*2
             implicitWidth: ListView.view.width
             Kirigami.BasicListItem {
                 id: headerItem
                 label: section
+                backgroundColor: Kirigami.Theme.backgroundColor
                 icon: "view-calendar-day"
             }
         }

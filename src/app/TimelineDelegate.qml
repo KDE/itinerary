@@ -18,11 +18,11 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
-Item {
+Kirigami.AbstractCard {
     id: root
     property var reservation
     property var pass

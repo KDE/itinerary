@@ -18,48 +18,51 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
     id: root
-    implicitHeight: topLayout.implicitHeight
 
-    ColumnLayout {
-        id: topLayout
-        width: root.width
+    header: Rectangle {
+        id: headerBackground
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing*2
+        anchors.leftMargin: -root.leftPadding
+        anchors.topMargin: -root.topPadding
+        anchors.rightMargin: -root.rightPadding
 
-        Rectangle {
-            id: headerBackground
-            Layout.fillWidth: true
-            color: Kirigami.Theme.complementaryBackgroundColor
-            implicitHeight: headerLayout.implicitHeight
+        RowLayout {
+            id: headerLayout
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.largeSpacing
 
-            RowLayout {
-                id: headerLayout
-                anchors.left: parent.left
-                anchors.right: parent.right
-
-                QQC2.Label {
-                    text: qsTr("✈ %1 %2 %3 → %4")
-                        .arg(reservation.reservationFor.airline.iataCode)
-                        .arg(reservation.reservationFor.flightNumber)
-                        .arg(reservation.reservationFor.departureAirport.iataCode)
-                        .arg(reservation.reservationFor.arrivalAirport.iataCode)
-                    color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-                    Layout.fillWidth: true
-                }
-                QQC2.Label {
-                    text: isNaN(reservation.reservationFor.boardingTime.getTime()) ?
-                        Localizer.formatTime(reservation.reservationFor, "departureTime") :
-                        Localizer.formatTime(reservation.reservationFor, "boardingTime")
-                    color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-                }
+            QQC2.Label {
+                text: qsTr("✈ %1 %2 %3 → %4")
+                    .arg(reservation.reservationFor.airline.iataCode)
+                    .arg(reservation.reservationFor.flightNumber)
+                    .arg(reservation.reservationFor.departureAirport.iataCode)
+                    .arg(reservation.reservationFor.arrivalAirport.iataCode)
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: isNaN(reservation.reservationFor.boardingTime.getTime()) ?
+                    Localizer.formatTime(reservation.reservationFor, "departureTime") :
+                    Localizer.formatTime(reservation.reservationFor, "boardingTime")
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
         }
+    }
+
+    contentItem: GridLayout {
+        id: topLayout
+        columns: 2
 
         QQC2.Label {
             text: qsTr("Departure from %1: %2")
@@ -73,12 +76,9 @@ App.TimelineDelegate {
             place: reservation.reservationFor.departureAirport
             Layout.fillWidth: true
         }
-        QQC2.Label {
-            text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
-                .arg(reservation.reservationFor.departureTerminal)
-                .arg(reservation.reservationFor.departureGate)
-                .arg(reservation.airplaneSeat)
-            color: Kirigami.Theme.textColor
+        Kirigami.Separator {
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
         }
 
         QQC2.Label {
@@ -89,12 +89,23 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             Layout.maximumWidth: root.width
         }
+
         App.PlaceDelegate {
             place: reservation.reservationFor.arrivalAirport
             Layout.fillWidth: true
         }
 
+        QQC2.Label {
+            Layout.columnSpan: 2
+            text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
+                .arg(reservation.reservationFor.departureTerminal)
+                .arg(reservation.reservationFor.departureGate)
+                .arg(reservation.airplaneSeat)
+            color: Kirigami.Theme.textColor
+        }
+
         QQC2.Button {
+            Layout.columnSpan: 2
             Layout.alignment: Qt.AlignHCenter
             text: root.passId !== "" ? qsTr("Boarding Pass") : qsTr("🎫 Ticket")
             onClicked: {

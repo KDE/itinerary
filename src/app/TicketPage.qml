@@ -25,6 +25,7 @@ import "." as App
 
 Kirigami.Page {
     id: root
+    title: qsTr("Ticket")
     property variant reservation
 
     ColumnLayout {
