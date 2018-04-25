@@ -78,8 +78,10 @@ Kirigami.ScrollablePage {
 
         delegate: Loader {
             property var modelData: model
-            height: item.implicitHeight
+            height: item ? item.implicitHeight : 0
             sourceComponent: {
+                if (!modelData)
+                    return;
                 switch (modelData.type) {
                     case TimelineModel.Flight: return flightDelegate;
                     case TimelineModel.Hotel: return hotelDelegate;

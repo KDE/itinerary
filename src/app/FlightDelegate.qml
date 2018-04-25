@@ -30,15 +30,13 @@ App.TimelineDelegate {
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing*2
+        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.leftMargin: -root.leftPadding
         anchors.topMargin: -root.topPadding
         anchors.rightMargin: -root.rightPadding
 
         RowLayout {
             id: headerLayout
-            anchors.left: parent.left
-            anchors.right: parent.right
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 

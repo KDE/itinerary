@@ -18,37 +18,38 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
     id: root
-    implicitHeight: topLayout.implicitHeight
 
-    ColumnLayout {
-        id: topLayout
-        width: root.width
+    header: Rectangle {
+        id: headerBackground
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+        anchors.leftMargin: -root.leftPadding
+        anchors.topMargin: -root.topPadding
+        anchors.rightMargin: -root.rightPadding
 
-        Rectangle {
-            id: headerBackground
-            Layout.fillWidth: true
-            color: Kirigami.Theme.complementaryBackgroundColor
-            implicitHeight: headerLayout.implicitHeight
+        RowLayout {
+            id: headerLayout
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.largeSpacing
 
-            RowLayout {
-                id: headerLayout
-                anchors.left: parent.left
-                anchors.right: parent.right
-
-                QQC2.Label {
-                    text: qsTr("🏨 %1").arg(reservation.reservationFor.name)
-                    color: Kirigami.Theme.complementaryTextColor
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-                    Layout.fillWidth: true
-                }
+            QQC2.Label {
+                text: qsTr("🏨 %1").arg(reservation.reservationFor.name)
+                font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+                Layout.fillWidth: true
             }
         }
+    }
+
+    contentItem: ColumnLayout {
+        id: topLayout
 
         App.PlaceDelegate {
             place: reservation.reservationFor
