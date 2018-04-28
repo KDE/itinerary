@@ -25,6 +25,8 @@
 #include "pkpassimageprovider.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/Ticket>
+
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
 
@@ -107,6 +109,8 @@ int main(int argc, char **argv)
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
+
+    qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
 
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterSingletonType<Localizer>("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine*) -> QObject*{

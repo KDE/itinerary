@@ -20,6 +20,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.prison 1.0 as Prison
+import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -49,23 +50,20 @@ Kirigami.Page {
                     Layout.margins: 4
                     barcodeType:
                     {
+                        console.log(reservation.reservedTicket.ticketTokenType, Ticket.AztecCode);
                         if (reservation == undefined || reservation.reservedTicket == undefined)
                             return Prison.Barcode.Null;
-                        if (reservation.reservedTicket.ticketToken.startsWith("qrCode:"))
-                            return Prison.Barcode.QRCode;
-                        return Prison.Barcode.Aztec;
+                        switch (reservation.reservedTicket.ticketTokenType) {
+                            case Ticket.QRCode: return Prison.Barcode.QRCode;
+                            case Ticket.AztecCode: return Prison.Barcode.Aztec;
+                        }
+                        return Prison.Barcode.Null;
                     }
                     content:
                     {
                         if (barcodeType == Prison.Barcode.Null || reservation == undefined || reservation.reservedTicket == undefined)
                             return "";
-                        switch (barcodeType) {
-                            case Prison.Barcode.QRCode:
-                                return reservation.reservedTicket.ticketToken.substr(7); // "qrCode:"
-                            case Prison.Barcode.Aztec:
-                                return reservation.reservedTicket.ticketToken.substr(10); // "aztecCode:"
-                        }
-                        return "";
+                        return reservation.reservedTicket.ticketTokenData;
                     }
                 }
             }
