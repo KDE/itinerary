@@ -42,11 +42,13 @@ App.TimelineDelegate {
 
             QQC2.Label {
                 text: qsTr("🍴 %1").arg(reservation.reservationFor.name)
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
             QQC2.Label {
                 text: Localizer.formatTime(reservation, "startTime")
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
         }

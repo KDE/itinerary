@@ -46,6 +46,7 @@ App.TimelineDelegate {
                     .arg(reservation.reservationFor.flightNumber)
                     .arg(reservation.reservationFor.departureAirport.iataCode)
                     .arg(reservation.reservationFor.arrivalAirport.iataCode)
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
@@ -53,6 +54,7 @@ App.TimelineDelegate {
                 text: isNaN(reservation.reservationFor.boardingTime.getTime()) ?
                     Localizer.formatTime(reservation.reservationFor, "departureTime") :
                     Localizer.formatTime(reservation.reservationFor, "boardingTime")
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
         }

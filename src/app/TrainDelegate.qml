@@ -44,11 +44,13 @@ App.TimelineDelegate {
                 text: qsTr("🚄 %1 %2")
                     .arg(reservation.reservationFor.trainName)
                     .arg(reservation.reservationFor.trainNumber)
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
             QQC2.Label {
                 text: Localizer.formatTime(reservation.reservationFor, "departureTime")
+                color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
         }
