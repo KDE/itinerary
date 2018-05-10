@@ -88,6 +88,55 @@ private slots:
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(model.rowCount(), 1);
     }
+
+    void testNestedElements()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+
+        TimelineModel model;
+        model.setReservationManager(&resMgr);
+
+        QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
+        QVERIFY(insertSpy.isValid());
+        QSignalSpy updateSpy(&model, &TimelineModel::dataChanged);
+        QVERIFY(updateSpy.isValid());
+        QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
+        QVERIFY(rmSpy.isValid());
+
+        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        QCOMPARE(insertSpy.size(), 2);
+        QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
+        QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
+        QCOMPARE(insertSpy.at(1).at(1).toInt(), 1);
+        QCOMPARE(insertSpy.at(1).at(2).toInt(), 1);
+        QVERIFY(updateSpy.isEmpty());
+        QCOMPARE(model.rowCount(), 3);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Hotel);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementRangeRole), TimelineModel::RangeBegin);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Hotel);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementRangeRole), TimelineModel::RangeEnd);
+
+        // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
+        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
+        QCOMPARE(insertSpy.size(), 3);
+        QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
+        QCOMPARE(insertSpy.at(2).at(1).toInt(), 1);
+        QCOMPARE(insertSpy.at(2).at(2).toInt(), 1);
+        QCOMPARE(rmSpy.at(0).at(1), 1);
+        QCOMPARE(model.rowCount(), 3);
+
+        // delete a split element
+        const auto resId = model.data(model.index(0, 0), TimelineModel::ReservationIdRole).toString();
+        resMgr.removeReservation(resId);
+        QCOMPARE(rmSpy.size(), 3);
+        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+    }
 };
 
 QTEST_GUILESS_MAIN(TimelineModelTest)

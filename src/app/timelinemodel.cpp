@@ -36,6 +36,11 @@
 
 using namespace KItinerary;
 
+static bool needsSplitting(const QVariant &res)
+{
+    return res.userType() == qMetaTypeId<LodgingReservation>();
+}
+
 static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
 {
     if (res.isNull()) { // today marker
@@ -94,7 +99,13 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     beginResetModel();
     m_resMgr = mgr;
     for (const auto &resId : mgr->reservations()) {
-        m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), SelfContained), SelfContained});
+        const auto res = m_resMgr->reservation(resId);
+        if (needsSplitting(res)) {
+            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), RangeBegin), RangeBegin});
+            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), RangeEnd), RangeEnd});
+        } else {
+            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), SelfContained), SelfContained});
+        }
     }
     m_elements.push_back(Element{{}, relevantDateTime({}, SelfContained), SelfContained}); // today marker
     std::sort(m_elements.begin(), m_elements.end(), [this](const Element &lhs, const Element &rhs) {
@@ -136,6 +147,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         }
         case ReservationRole:
             return res;
+        case ReservationIdRole:
+            return elem.id;
         case ElementTypeRole:
             if (res.isNull())
                 return TodayMarker;
@@ -184,23 +197,57 @@ int TimelineModel::todayRow() const
 
 void TimelineModel::reservationAdded(const QString &resId)
 {
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
-        return lhs.dt < relevantDateTime(m_resMgr->reservation(rhs), SelfContained);
+    const auto res = m_resMgr->reservation(resId);
+    if (needsSplitting(res)) {
+        insertElement(Element{resId, relevantDateTime(res, RangeBegin), RangeBegin});
+        insertElement(Element{resId, relevantDateTime(res, RangeEnd), RangeEnd});
+    } else {
+        insertElement(Element{resId, relevantDateTime(res, SelfContained), SelfContained});
+    }
+
+    emit todayRowChanged();
+}
+
+void TimelineModel::insertElement(Element &&elem)
+{
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem.dt, [](const Element &lhs, const QDateTime &rhs) {
+        return lhs.dt < rhs;
     });
     auto index = std::distance(m_elements.begin(), it);
     beginInsertRows({}, index, index);
-    m_elements.insert(it, Element{resId, relevantDateTime(m_resMgr->reservation(resId), SelfContained), SelfContained});
+    m_elements.insert(it, std::move(elem));
     endInsertRows();
-    emit todayRowChanged();
 }
 
 void TimelineModel::reservationUpdated(const QString &resId)
 {
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
-        return lhs.dt < relevantDateTime(m_resMgr->reservation(rhs), SelfContained);
-    });
-    auto row = std::distance(m_elements.begin(), it);
-    emit dataChanged(index(row, 0), index(row, 0));
+    const auto res = m_resMgr->reservation(resId);
+    if (needsSplitting(res)) {
+        updateElement(resId, res, RangeBegin);
+        updateElement(resId, res, RangeEnd);
+    } else {
+        updateElement(resId, res, SelfContained);
+    }
+}
+
+void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineModel::RangeType rangeType)
+{
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const Element &e) { return e.id == resId && e.rangeType == rangeType; });
+    if (it == m_elements.end()) {
+        return;
+    }
+    const auto row = std::distance(m_elements.begin(), it);
+    const auto newDt = relevantDateTime(res, rangeType);
+
+    if ((*it).dt != newDt) {
+        // element moved
+        beginRemoveRows({}, row, row);
+        m_elements.erase(it);
+        endRemoveRows();
+        insertElement(Element{resId, newDt, rangeType});
+    } else {
+        emit dataChanged(index(row, 0), index(row, 0));
+    }
 }
 
 void TimelineModel::reservationRemoved(const QString &resId)
@@ -209,9 +256,14 @@ void TimelineModel::reservationRemoved(const QString &resId)
     if (it == m_elements.end()) {
         return;
     }
+    const auto isSplit = (*it).rangeType == RangeBegin;
     const auto row = std::distance(m_elements.begin(), it);
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
     endRemoveRows();
     emit todayRowChanged();
+
+    if (isSplit) {
+        reservationRemoved(resId);
+    }
 }

@@ -35,6 +35,7 @@ public:
         PassIdRole,
         SectionHeader,
         ReservationRole,
+        ReservationIdRole,
         ElementTypeRole,
         TodayEmptyRole,
         IsTodayRole,
@@ -75,18 +76,20 @@ signals:
     void todayRowChanged();
 
 private:
-    void reservationAdded(const QString &resId);
-    void reservationUpdated(const QString &resId);
-    void reservationRemoved(const QString &resId);
-
-    PkPassManager *m_passMgr = nullptr;
-    ReservationManager *m_resMgr = nullptr;
-
     struct Element {
         QString id; // reservation id
         QDateTime dt; // relevant date/time
         RangeType rangeType;
     };
+
+    void reservationAdded(const QString &resId);
+    void insertElement(Element &&elem);
+    void reservationUpdated(const QString &resId);
+    void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
+    void reservationRemoved(const QString &resId);
+
+    PkPassManager *m_passMgr = nullptr;
+    ReservationManager *m_resMgr = nullptr;
     std::vector<Element> m_elements;
 };
 

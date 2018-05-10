@@ -1,0 +1,22 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "LodgingReservation",
+        "checkinDate": "2017-09-10T15:00:00+02:00",
+        "checkoutDate": "2017-09-16T10:00:00+02:00",
+        "reservationFor": {
+            "@type": "LodgingBusiness",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "Switzerland",
+                "addressLocality": "Randa",
+                "addressRegion": "Wallis",
+                "postalCode": "3928",
+                "streetAddress": "Haus Maria am Weg"
+            },
+            "name": "Haus Randa",
+            "url": "https://randa-meetings.ch/"
+        }
+    }
+]
+
