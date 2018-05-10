@@ -36,39 +36,33 @@
 
 using namespace KItinerary;
 
-// ### the below functions probably should move to KItinerary itself
-static QDate relevantDate(const QVariant &res)
+static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
 {
-    if (res.isNull()) {
-        return QDate::currentDate(); // today marker
+    if (res.isNull()) { // today marker
+        return QDateTime(QDate::currentDate(), QTime(0, 0));
     } else if (res.userType() == qMetaTypeId<FlightReservation>()) {
-        return res.value<FlightReservation>().reservationFor().value<Flight>().departureDay();
-    } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
-        return res.value<LodgingReservation>().checkinTime().date();
-    } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().date();
-    } else if (res.userType() == qMetaTypeId<BusReservation>()) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime().date();
-    } else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>()) {
-        return res.value<FoodEstablishmentReservation>().startTime().date();
-    }
-
-    return {};
-}
-
-static QDateTime relevantDateTime(const QVariant &res)
-{
-    if (res.userType() == qMetaTypeId<FlightReservation>()) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
-        if (flight.boardingTime().isValid())
+        if (flight.boardingTime().isValid()) {
             return flight.boardingTime();
-        return flight.departureTime();
+        }
+        if (flight.departureTime().isValid()) {
+            return flight.departureTime();
+        }
+        return QDateTime(flight.departureDay(), QTime(23, 59, 59));
     } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
     } else if (res.userType() == qMetaTypeId<BusReservation>()) {
         return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
     } else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>()) {
         return res.value<FoodEstablishmentReservation>().startTime();
+    } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
+        const auto hotel = res.value<LodgingReservation>();
+        // hotel checkin/checkout is always considered the first/last thing of the day
+        if (range == TimelineModel::RangeEnd) {
+            return QDateTime(hotel.checkoutTime().date(), QTime(0, 0, 0));
+        } else {
+            return QDateTime(hotel.checkinTime().date(), QTime(23, 59, 59));
+        }
     }
 
     return {};
@@ -76,13 +70,8 @@ static QDateTime relevantDateTime(const QVariant &res)
 
 static bool isBeforeReservation(const QVariant &lhs, const QVariant &rhs)
 {
-    auto lhsDt = lhs.isNull() ? QDateTime(QDate::currentDate(), QTime(0, 0)) : relevantDateTime(lhs);
-    auto rhsDt = rhs.isNull() ? QDateTime(QDate::currentDate(), QTime(0, 0)) : relevantDateTime(rhs);
-    if (!lhsDt.isValid())
-        lhsDt = QDateTime(relevantDate(lhs), QTime(23, 59, 59));
-    if (!rhsDt.isValid())
-        rhsDt = QDateTime(relevantDate(rhs), QTime(23, 59, 59));
-
+    const auto lhsDt = relevantDateTime(lhs, TimelineModel::SelfContained);
+    const auto rhsDt = relevantDateTime(rhs, TimelineModel::SelfContained);
     return lhsDt < rhsDt;
 }
 
@@ -112,7 +101,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     beginResetModel();
     m_resMgr = mgr;
     for (const auto &resId : mgr->reservations()) {
-        m_elements.push_back(Element{resId, SelfContained});
+        m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), SelfContained), SelfContained});
     }
     m_elements.push_back(Element{}); // today marker
     std::sort(m_elements.begin(), m_elements.end(), [this](const Element &lhs, const Element &rhs) {
@@ -145,7 +134,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return passId(res);
         case SectionHeader:
         {
-            const auto date = relevantDate(res);
+            const auto date = relevantDateTime(res, SelfContained).date();
             if (date.isNull())
                 return {};
             if (date == QDate::currentDate())
@@ -170,11 +159,11 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return {};
         case TodayEmptyRole:
             if (res.isNull()) {
-                return index.row() == (int)(m_elements.size() - 1) || relevantDate(m_resMgr->reservation(m_elements.at(index.row() + 1).id)) > QDate::currentDate();
+                return index.row() == (int)(m_elements.size() - 1) || relevantDateTime(m_resMgr->reservation(m_elements.at(index.row() + 1).id), SelfContained).date() > QDate::currentDate();
             }
             return {};
         case IsTodayRole:
-            return relevantDate(res) == QDate::currentDate();
+            return relevantDateTime(res, SelfContained).date() == QDate::currentDate();
     }
     return {};
 }
@@ -205,7 +194,7 @@ void TimelineModel::reservationAdded(const QString &resId)
     });
     auto index = std::distance(m_elements.begin(), it);
     beginInsertRows({}, index, index);
-    m_elements.insert(it, Element{resId, SelfContained});
+    m_elements.insert(it, Element{resId, relevantDateTime(m_resMgr->reservation(resId), SelfContained), SelfContained});
     endInsertRows();
     emit todayRowChanged();
 }

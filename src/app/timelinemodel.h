@@ -83,6 +83,7 @@ private:
 
     struct Element {
         QString id; // reservation id
+        QDateTime dt; // relevant date/time
         RangeType rangeType;
     };
     std::vector<Element> m_elements;
