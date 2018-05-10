@@ -41,7 +41,9 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: qsTr("🏨 %1").arg(reservation.reservationFor.name)
+                text: root.rangeType == TimelineModel.RangeEnd ?
+                    qsTr("🏨 Check-out %1").arg(reservation.reservationFor.name) :
+                    qsTr("🏨 %1").arg(reservation.reservationFor.name)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -60,10 +62,12 @@ App.TimelineDelegate {
             text: qsTr("Check-in time: %1")
                 .arg(Localizer.formatTime(reservation, "checkinTime"))
             color: Kirigami.Theme.textColor
+            visible: root.rangeType == TimelineModel.RangeBegin
         }
         QQC2.Label {
-            text: qsTr("Check-out time: %1")
-                .arg(Localizer.formatDateTime(reservation, "checkoutTime"))
+            text: root.rangeType == TimelineModel.RangeBegin ?
+                qsTr("Check-out time: %1").arg(Localizer.formatDateTime(reservation, "checkoutTime")) :
+                qsTr("Check-out time: %1").arg(Localizer.formatTime(reservation, "checkoutTime"))
             color: Kirigami.Theme.textColor
         }
 

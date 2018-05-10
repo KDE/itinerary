@@ -40,23 +40,48 @@ Kirigami.ScrollablePage {
     // page content
     Component {
         id: flightDelegate
-        App.FlightDelegate {}
+        App.FlightDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
     }
     Component {
         id: hotelDelegate
-        App.HotelDelegate {}
+        App.HotelDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
     }
     Component {
         id: trainDelegate
-        App.TrainDelegate {}
+        App.TrainDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
     }
     Component {
         id: busDelegate
-        App.BusDelegate {}
+        App.BusDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
     }
     Component {
         id: restaurantDelegate
-        App.RestaurantDelegate {}
+        App.RestaurantDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
     }
     Component {
         id: todayDelegate
@@ -93,11 +118,7 @@ Kirigami.ScrollablePage {
             }
 
             onLoaded: {
-                if (modelData.type != TimelineModel.TodayMarker) {
-                    item.reservation = Qt.binding(function() { return modelData.reservation; });
-                    item.passId = Qt.binding(function() { return modelData.passId; });
-                    item.pass = Qt.binding(function() { return modelData.pass; });
-                } else {
+                if (modelData.type == TimelineModel.TodayMarker) {
                     item.visible = modelData.isTodayEmpty;
                 }
             }

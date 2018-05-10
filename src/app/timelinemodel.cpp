@@ -183,9 +183,11 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(PassIdRole, "passId");
     names.insert(SectionHeader, "sectionHeader");
     names.insert(ReservationRole, "reservation");
+    names.insert(ReservationIdRole, "reservationId");
     names.insert(ElementTypeRole, "type");
     names.insert(TodayEmptyRole, "isTodayEmpty");
     names.insert(IsTodayRole, "isToday");
+    names.insert(ElementRangeRole, "rangeType");
     return names;
 }
 
