@@ -87,6 +87,7 @@ Kirigami.ScrollablePage {
         id: todayDelegate
         Item {
             implicitHeight: visible ? label.implicitHeight : 0
+            visible: modelData.isTodayEmpty
             QQC2.Label {
                 id: label
                 anchors.fill: parent
@@ -114,12 +115,6 @@ Kirigami.ScrollablePage {
                     case TimelineModel.BusTrip: return busDelegate;
                     case TimelineModel.Restaurant: return restaurantDelegate;
                     case TimelineModel.TodayMarker: return todayDelegate;
-                }
-            }
-
-            onLoaded: {
-                if (modelData.type == TimelineModel.TodayMarker) {
-                    item.visible = modelData.isTodayEmpty;
                 }
             }
         }
