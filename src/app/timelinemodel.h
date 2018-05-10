@@ -37,7 +37,8 @@ public:
         ReservationRole,
         ElementTypeRole,
         TodayEmptyRole,
-        IsTodayRole
+        IsTodayRole,
+        ElementRangeRole
     };
 
     enum ElementType {

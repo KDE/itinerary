@@ -68,13 +68,6 @@ static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType 
     return {};
 }
 
-static bool isBeforeReservation(const QVariant &lhs, const QVariant &rhs)
-{
-    const auto lhsDt = relevantDateTime(lhs, TimelineModel::SelfContained);
-    const auto rhsDt = relevantDateTime(rhs, TimelineModel::SelfContained);
-    return lhsDt < rhsDt;
-}
-
 static QString passId(const QVariant &res)
 {
     const auto passTypeId = JsonLdDocument::readProperty(res, "pkpassPassTypeIdentifier").toString();
@@ -103,9 +96,9 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     for (const auto &resId : mgr->reservations()) {
         m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), SelfContained), SelfContained});
     }
-    m_elements.push_back(Element{}); // today marker
+    m_elements.push_back(Element{{}, relevantDateTime({}, SelfContained), SelfContained}); // today marker
     std::sort(m_elements.begin(), m_elements.end(), [this](const Element &lhs, const Element &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs.id));
+        return lhs.dt < rhs.dt;
     });
     connect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
     connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
@@ -126,7 +119,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     if (!index.isValid() || !m_resMgr)
         return {};
 
-    const auto res = m_resMgr->reservation(m_elements.at(index.row()).id);
+    const auto &elem = m_elements.at(index.row());
+    const auto res = m_resMgr->reservation(elem.id);
     switch (role) {
         case PassRole:
             return QVariant::fromValue(m_passMgr->pass(passId(res)));
@@ -134,12 +128,11 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return passId(res);
         case SectionHeader:
         {
-            const auto date = relevantDateTime(res, SelfContained).date();
-            if (date.isNull())
+            if (elem.dt.isNull())
                 return {};
-            if (date == QDate::currentDate())
+            if (elem.dt.date() == QDate::currentDate())
                 return i18n("Today");
-            return i18nc("weekday, date", "%1, %2", QLocale().dayName(date.dayOfWeek(), QLocale::LongFormat), QLocale().toString(date, QLocale::ShortFormat));
+            return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
         }
         case ReservationRole:
             return res;
@@ -159,11 +152,13 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return {};
         case TodayEmptyRole:
             if (res.isNull()) {
-                return index.row() == (int)(m_elements.size() - 1) || relevantDateTime(m_resMgr->reservation(m_elements.at(index.row() + 1).id), SelfContained).date() > QDate::currentDate();
+                return index.row() == (int)(m_elements.size() - 1) || m_elements.at(index.row() + 1).dt.date() > QDate::currentDate();
             }
             return {};
         case IsTodayRole:
-            return relevantDateTime(res, SelfContained).date() == QDate::currentDate();
+            return elem.dt.date() == QDate::currentDate();
+        case ElementRangeRole:
+            return elem.rangeType;
     }
     return {};
 }
@@ -190,7 +185,7 @@ int TimelineModel::todayRow() const
 void TimelineModel::reservationAdded(const QString &resId)
 {
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs));
+        return lhs.dt < relevantDateTime(m_resMgr->reservation(rhs), SelfContained);
     });
     auto index = std::distance(m_elements.begin(), it);
     beginInsertRows({}, index, index);
@@ -202,7 +197,7 @@ void TimelineModel::reservationAdded(const QString &resId)
 void TimelineModel::reservationUpdated(const QString &resId)
 {
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs));
+        return lhs.dt < relevantDateTime(m_resMgr->reservation(rhs), SelfContained);
     });
     auto row = std::distance(m_elements.begin(), it);
     emit dataChanged(index(row, 0), index(row, 0));
