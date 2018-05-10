@@ -19,6 +19,7 @@
 #define TIMELINEMODEL_H
 
 #include <QAbstractListModel>
+#include <QDateTime>
 
 class PkPassManager;
 class ReservationManager;
@@ -49,6 +50,14 @@ public:
     };
     Q_ENUM(ElementType)
 
+    // indicates whether an element is self-contained or the beginning/end of a longer timespan/range
+    enum RangeType {
+        SelfContained,
+        RangeBegin,
+        RangeEnd
+    };
+    Q_ENUM(RangeType)
+
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel();
 
@@ -71,7 +80,12 @@ private:
 
     PkPassManager *m_passMgr = nullptr;
     ReservationManager *m_resMgr = nullptr;
-    QVector<QString> m_reservationIds;
+
+    struct Element {
+        QString id; // reservation id
+        RangeType rangeType;
+    };
+    std::vector<Element> m_elements;
 };
 
 #endif // TIMELINEMODEL_H

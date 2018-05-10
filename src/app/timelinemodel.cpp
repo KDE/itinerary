@@ -111,10 +111,12 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
 {
     beginResetModel();
     m_resMgr = mgr;
-    m_reservationIds = mgr->reservations();
-    m_reservationIds.push_back({}); // today marker
-    std::sort(m_reservationIds.begin(), m_reservationIds.end(), [this](const QString &lhs, const QString &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    for (const auto &resId : mgr->reservations()) {
+        m_elements.push_back(Element{resId, SelfContained});
+    }
+    m_elements.push_back(Element{}); // today marker
+    std::sort(m_elements.begin(), m_elements.end(), [this](const Element &lhs, const Element &rhs) {
+        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs.id));
     });
     connect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
     connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
@@ -127,7 +129,7 @@ int TimelineModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid() || !m_resMgr)
         return 0;
-    return m_reservationIds.size();
+    return m_elements.size();
 }
 
 QVariant TimelineModel::data(const QModelIndex& index, int role) const
@@ -135,7 +137,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     if (!index.isValid() || !m_resMgr)
         return {};
 
-    const auto res = m_resMgr->reservation(m_reservationIds.at(index.row()));
+    const auto res = m_resMgr->reservation(m_elements.at(index.row()).id);
     switch (role) {
         case PassRole:
             return QVariant::fromValue(m_passMgr->pass(passId(res)));
@@ -168,7 +170,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return {};
         case TodayEmptyRole:
             if (res.isNull()) {
-                return index.row() == (m_reservationIds.size() - 1) || relevantDate(m_resMgr->reservation(m_reservationIds.at(index.row() + 1))) > QDate::currentDate();
+                return index.row() == (int)(m_elements.size() - 1) || relevantDate(m_resMgr->reservation(m_elements.at(index.row() + 1).id)) > QDate::currentDate();
             }
             return {};
         case IsTodayRole:
@@ -192,38 +194,40 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 
 int TimelineModel::todayRow() const
 {
-    return m_reservationIds.indexOf({});
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const Element &e) { return e.id.isEmpty(); });
+    return std::distance(m_elements.begin(), it);
 }
 
 void TimelineModel::reservationAdded(const QString &resId)
 {
-    auto it = std::lower_bound(m_reservationIds.begin(), m_reservationIds.end(), resId, [this](const QString &lhs, const QString &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
+        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs));
     });
-    auto index = std::distance(m_reservationIds.begin(), it);
+    auto index = std::distance(m_elements.begin(), it);
     beginInsertRows({}, index, index);
-    m_reservationIds.insert(it, resId);
+    m_elements.insert(it, Element{resId, SelfContained});
     endInsertRows();
     emit todayRowChanged();
 }
 
 void TimelineModel::reservationUpdated(const QString &resId)
 {
-    auto it = std::lower_bound(m_reservationIds.begin(), m_reservationIds.end(), resId, [this](const QString &lhs, const QString &rhs) {
-        return isBeforeReservation(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), resId, [this](const Element &lhs, const QString &rhs) {
+        return isBeforeReservation(m_resMgr->reservation(lhs.id), m_resMgr->reservation(rhs));
     });
-    auto row = std::distance(m_reservationIds.begin(), it);
+    auto row = std::distance(m_elements.begin(), it);
     emit dataChanged(index(row, 0), index(row, 0));
 }
 
 void TimelineModel::reservationRemoved(const QString &resId)
 {
-    const auto index = m_reservationIds.indexOf(resId);
-    if (index < 0) {
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const Element &e) { return e.id == resId; });
+    if (it == m_elements.end()) {
         return;
     }
-    beginRemoveRows({}, index, index);
-    m_reservationIds.remove(index);
+    const auto row = std::distance(m_elements.begin(), it);
+    beginRemoveRows({}, row, row);
+    m_elements.erase(it);
     endRemoveRows();
     emit todayRowChanged();
 }
