@@ -11,11 +11,24 @@
             },
             "arrivalAirport": {
                 "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 47.464698791503906,
+                    "longitude": 8.549169540405273
+                },
                 "iataCode": "ZRH",
                 "name": "Zürich"
             },
-            "arrivalTime": "2017-09-10T08:15:00",
-            "boardingTime": "2017-09-10T06:15:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T08:15:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
+            "boardingTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T06:15:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
             "departureAirport": {
                 "@type": "Airport",
                 "geo": {
@@ -26,9 +39,13 @@
                 "iataCode": "TXL",
                 "name": "Berlin Tegel"
             },
-            "departureGate": "A10",
             "departureDay": "2017-09-10",
-            "departureTime": "2017-09-10T06:45:00",
+            "departureGate": "A10",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T06:45:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
             "flightNumber": "963"
         },
         "reservationNumber": "XXX007"
@@ -41,15 +58,35 @@
             "arrivalPlatform": "7",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.29399871826172,
+                    "longitude": 7.881460189819336
+                },
+                "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
-            "arrivalTime": "2017-09-10T14:02:00+02:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T14:02:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "departurePlatform": "3",
             "departureStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 47.45029830932617,
+                    "longitude": 8.562219619750977
+                },
+                "identifier": "ibnr:8503016",
                 "name": "Zürich Flughafen"
             },
-            "departureTime": "2017-09-10T11:40:00+02:00",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T11:40:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "trainCompany": {
                 "@type": "Organization",
                 "name": "SBB"
@@ -74,12 +111,24 @@
             "@type": "TrainTrip",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.09989929199219,
+                    "longitude": 7.781469821929932
+                },
+                "identifier": "ibnr:8501687",
                 "name": "Randa"
             },
             "arrivalTime": "2017-09-10T14:53:00+02:00",
             "departurePlatform": "3",
             "departureStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.29399871826172,
+                    "longitude": 7.881460189819336
+                },
+                "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
             "departureTime": "2017-09-10T14:08:00+02:00",
@@ -111,8 +160,8 @@
     {
         "@context": "http://schema.org",
         "@type": "LodgingReservation",
-        "checkinDate": "2017-09-10T15:00:00+02:00",
-        "checkoutDate": "2017-09-15T10:00:00+02:00",
+        "checkinTime": "2017-09-10T15:00:00+02:00",
+        "checkoutTime": "2017-09-15T10:00:00+02:00",
         "reservationFor": {
             "@type": "LodgingBusiness",
             "address": {
@@ -200,14 +249,30 @@
             "arrivalPlatform": "3",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.29399871826172,
+                    "longitude": 7.881460189819336
+                },
+                "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
             "arrivalTime": "2017-09-15T15:46:00+02:00",
             "departureStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.09989929199219,
+                    "longitude": 7.781469821929932
+                },
+                "identifier": "ibnr:8501687",
                 "name": "Randa"
             },
-            "departureTime": "2017-09-15T14:54:00+02:00",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T14:54:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "trainCompany": {
                 "@type": "Organization",
                 "name": "SBB"
@@ -224,15 +289,35 @@
             "arrivalPlatform": "2",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 47.45029830932617,
+                    "longitude": 8.562219619750977
+                },
+                "identifier": "ibnr:8503016",
                 "name": "Zürich Flughafen"
             },
-            "arrivalTime": "2017-09-15T18:16:00+02:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T18:16:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "departurePlatform": "2",
             "departureStation": {
                 "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.29399871826172,
+                    "longitude": 7.881460189819336
+                },
+                "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
-            "departureTime": "2017-09-15T15:57:00+02:00",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T15:57:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "trainCompany": {
                 "@type": "Organization",
                 "name": "SBB"
@@ -261,17 +346,34 @@
                 "iataCode": "TXL",
                 "name": "Berlin Tegel"
             },
-            "arrivalTime": "2017-09-15T22:15:00",
-            "boardingTime": "2017-09-15T20:25:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T22:15:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "boardingTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T20:25:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "departureAirport": {
                 "@type": "Airport",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 47.464698791503906,
+                    "longitude": 8.549169540405273
+                },
                 "iataCode": "ZRH",
                 "name": "Zürich"
             },
+            "departureDay": "2017-09-15",
             "departureGate": "52",
             "departureTerminal": "AB",
-            "departureDay": "2017-09-15",
-            "departureTime": "2017-09-15T20:50:00",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T20:50:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "flightNumber": "962"
         },
         "reservationNumber": "XXX007"
