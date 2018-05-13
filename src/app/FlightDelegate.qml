@@ -118,6 +118,8 @@ App.TimelineDelegate {
         id: detailsComponent
         App.FlightPage {
             reservation: root.reservation
+            passId: root.passId
+            pass: root.pass
         }
     }
 

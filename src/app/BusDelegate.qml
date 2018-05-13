@@ -84,20 +84,14 @@ App.TimelineDelegate {
             text: qsTr("Arrival: %1").arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
-
-        QQC2.Button {
-            Layout.alignment: Qt.AlignHCenter
-            text: qsTr("Boarding Pass")
-            onClicked: showBoardingPass();
-            visible: root.passId !== ""
-            icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
-        }
     }
 
     Component {
         id: detailsComponent
         App.BusPage {
             reservation: root.reservation
+            passId: root.passId
+            pass: root.pass
         }
     }
 
