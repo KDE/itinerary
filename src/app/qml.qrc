@@ -11,8 +11,10 @@
         <file>PlaceDelegate.qml</file>
         <file>RestaurantDelegate.qml</file>
         <file>TicketPage.qml</file>
+        <file>TicketTokenDelegate.qml</file>
         <file>TimelineDelegate.qml</file>
         <file>TimelinePage.qml</file>
         <file>TrainDelegate.qml</file>
+        <file>TrainPage.qml</file>
     </qresource>
 </RCC>

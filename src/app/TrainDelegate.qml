@@ -92,16 +92,20 @@ App.TimelineDelegate {
 
         QQC2.Button {
             Layout.alignment: Qt.AlignHCenter
-            text: root.passId !== "" ? qsTr("Boarding Pass") : qsTr("🎫 Ticket")
-            onClicked: {
-                if (root.passId !== "")
-                    showBoardingPass();
-                else
-                    showTicket();
-            }
-            visible: root.passId !== "" || (root.reservation.reservedTicket != undefined && root.reservation.reservedTicket.ticketToken != "")
+            text: qsTr("Boarding Pass")
+            onClicked: showBoardingPass();
+            visible: root.passId !== ""
             icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
         }
     }
+
+    Component {
+        id: detailsComponent
+        App.TrainPage {
+            reservation: root.reservation
+        }
+    }
+
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
 }
 
