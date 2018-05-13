@@ -56,15 +56,20 @@ qml_lint(
     main.qml
     BoardingPass.qml
     BusDelegate.qml
+    DetailsPage.qml
     FlightDelegate.qml
+    FlightPage.qml
     HotelDelegate.qml
+    HotelPage.qml
     PkPassPage.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
     TicketPage.qml
+    TicketTokenDelegate.qml
     TimelineDelegate.qml
     TimelinePage.qml
     TrainDelegate.qml
+    TrainPage.qml
 )
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
