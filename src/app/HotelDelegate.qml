@@ -72,4 +72,13 @@ App.TimelineDelegate {
         }
 
     }
+
+    Component {
+        id: detailsComponent
+        App.HotelPage {
+            reservation: root.reservation
+        }
+    }
+
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
 }

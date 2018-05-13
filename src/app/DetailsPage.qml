@@ -15,46 +15,17 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-import QtQuick 2.0
+import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.AbstractCard {
+Kirigami.Page {
     id: root
-    property var reservation
-    property var pass
-    property string passId
-    property var rangeType
+    property variant reservation
 
-    readonly property double headerFontScale: 1.25
-
-    showClickFeedback: true
-
-    function showBoardingPass()
-    {
-        applicationWindow().pageStack.push(pkpassComponent);
-    }
-
-    function showTicket()
-    {
-        applicationWindow().pageStack.push(ticketPageComponent);
-    }
-
-    Component {
-        id: pkpassComponent
-        App.PkPassPage {
-            passId: root.passId
-            pass: root.pass
-        }
-    }
-
-    Component {
-        id: ticketPageComponent
-        App.TicketPage {
-            reservation: root.reservation
-        }
-    }
+    onBackRequested: pageStack.pop()
 }
