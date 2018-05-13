@@ -61,16 +61,14 @@ App.TimelineDelegate {
             place: reservation.reservationFor
             Layout.fillWidth: true
         }
-        QQC2.Label {
-            text: qsTr("Person: %1")
-                .arg(reservation.partySize)
-            color: Kirigami.Theme.textColor
-        }
-        QQC2.Label {
-            text: qsTr("End: %1")
-                .arg(Localizer.formatTime(reservation, "endTime"))
-            color: Kirigami.Theme.textColor
+    }
+
+    Component {
+        id: detailsComponent
+        App.RestaurantPage {
+            reservation: root.reservation
         }
     }
-}
 
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
+}

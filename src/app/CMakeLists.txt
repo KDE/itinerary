@@ -65,6 +65,7 @@ qml_lint(
     PkPassPage.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
+    RestaurantPage.qml
     TicketTokenDelegate.qml
     TimelineDelegate.qml
     TimelinePage.qml
