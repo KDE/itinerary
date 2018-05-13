@@ -23,7 +23,7 @@ import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
     property variant reservation
 

@@ -29,8 +29,7 @@ App.DetailsPage {
 
     GridLayout {
         id: grid
-        anchors.left: parent.left
-        anchors.right: parent.right
+        width: root.width
         columns: 2
 
         QQC2.Label {
