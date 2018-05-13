@@ -56,6 +56,7 @@ qml_lint(
     main.qml
     BoardingPass.qml
     BusDelegate.qml
+    BusPage.qml
     DetailsPage.qml
     FlightDelegate.qml
     FlightPage.qml
@@ -64,7 +65,6 @@ qml_lint(
     PkPassPage.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
-    TicketPage.qml
     TicketTokenDelegate.qml
     TimelineDelegate.qml
     TimelinePage.qml

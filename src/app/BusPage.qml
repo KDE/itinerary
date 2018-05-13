@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: qsTr("Train Ticket")
+    title: qsTr("Bus Ticket")
 
     GridLayout {
         id: grid
@@ -35,7 +35,7 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: reservation.reservationFor.trainName + " " + reservation.reservationFor.trainNumber
+            text: reservation.reservationFor.busName + " " + reservation.reservationFor.busNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
@@ -68,12 +68,6 @@ App.DetailsPage {
             Layout.fillWidth: true
             place: reservation.reservationFor.departureStation
         }
-        QQC2.Label {
-            text: qsTr("Departure platform:")
-        }
-        QQC2.Label {
-            text: reservation.reservationFor.departurePlatform
-        }
 
         Kirigami.Separator {
             Layout.columnSpan: 2
@@ -102,12 +96,6 @@ App.DetailsPage {
             Layout.fillWidth: true
             place: reservation.reservationFor.arrivalStation
         }
-        QQC2.Label {
-            text: qsTr("Arrival platform:")
-        }
-        QQC2.Label {
-            text: reservation.reservationFor.arrivalPlatform
-        }
 
         Kirigami.Separator {
             Layout.columnSpan: 2
@@ -120,12 +108,6 @@ App.DetailsPage {
             Layout.fillWidth: true
             text: qsTr("Seat")
             horizontalAlignment: Qt.AlignHCenter
-        }
-        QQC2.Label {
-            text: qsTr("Coach:")
-        }
-        QQC2.Label {
-            text: reservation.reservedTicket.ticketedSeat.seatSection
         }
         QQC2.Label {
             text: qsTr("Seat:")
@@ -160,3 +142,4 @@ App.DetailsPage {
         }
     }
 }
+

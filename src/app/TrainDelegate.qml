@@ -108,4 +108,3 @@ App.TimelineDelegate {
 
     onClicked: applicationWindow().pageStack.push(detailsComponent);
 }
-

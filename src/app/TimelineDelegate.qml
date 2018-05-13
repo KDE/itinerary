@@ -38,23 +38,11 @@ Kirigami.AbstractCard {
         applicationWindow().pageStack.push(pkpassComponent);
     }
 
-    function showTicket()
-    {
-        applicationWindow().pageStack.push(ticketPageComponent);
-    }
-
     Component {
         id: pkpassComponent
         App.PkPassPage {
             passId: root.passId
             pass: root.pass
-        }
-    }
-
-    Component {
-        id: ticketPageComponent
-        App.TicketPage {
-            reservation: root.reservation
         }
     }
 }
