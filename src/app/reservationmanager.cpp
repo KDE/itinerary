@@ -24,7 +24,6 @@
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
-#include <KItinerary/Reservation>
 
 #include <QDate>
 #include <QDir>
@@ -36,6 +35,7 @@
 #include <QUrl>
 #include <QUuid>
 #include <QVector>
+
 
 using namespace KItinerary;
 
@@ -162,6 +162,23 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
             emit reservationAdded(resId);
         }
     }
+}
+
+void ReservationManager::addReservation(const QVariant &res)
+{
+    QString resId = QUuid::createUuid().toString();
+    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    QDir::root().mkpath(basePath);
+    const QString path = basePath + resId + QLatin1String(".jsonld");
+    QFile f(path);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << "Unable to create file:" << f.errorString();
+        return;
+    }
+    f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
+    m_reservations.insert(resId, res);
+    emit reservationAdded(resId);
+
 }
 
 void ReservationManager::removeReservation(const QString& id)

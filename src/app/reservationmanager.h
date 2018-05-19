@@ -22,6 +22,7 @@
 
 #include <QHash>
 #include <QObject>
+#include <QVariant>
 
 class PkPassManager;
 
@@ -41,6 +42,7 @@ public:
     QVariant reservation(const QString &id) const;
 
     Q_INVOKABLE void importReservation(const QUrl &filename);
+    Q_INVOKABLE void addReservation(const QVariant &res);
     void removeReservation(const QString &id);
 
 signals:
