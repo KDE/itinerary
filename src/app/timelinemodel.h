@@ -43,12 +43,14 @@ public:
     };
 
     enum ElementType {
+        Undefined,
         Flight,
         TrainTrip,
         BusTrip,
         Hotel,
         Restaurant,
-        TodayMarker
+        TodayMarker,
+        CountryInfo
     };
     Q_ENUM(ElementType)
 
@@ -79,6 +81,7 @@ private:
     struct Element {
         QString id; // reservation id
         QDateTime dt; // relevant date/time
+        ElementType elementType;
         RangeType rangeType;
     };
 

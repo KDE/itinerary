@@ -43,9 +43,7 @@ static bool needsSplitting(const QVariant &res)
 
 static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
 {
-    if (res.isNull()) { // today marker
-        return QDateTime(QDate::currentDate(), QTime(0, 0));
-    } else if (res.userType() == qMetaTypeId<FlightReservation>()) {
+    if (res.userType() == qMetaTypeId<FlightReservation>()) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
         if (flight.boardingTime().isValid()) {
             return flight.boardingTime();
@@ -82,6 +80,16 @@ static QString passId(const QVariant &res)
     return passTypeId + QLatin1Char('/') + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
 }
 
+static TimelineModel::ElementType elementType(const QVariant &res)
+{
+    if (JsonLd::isA<FlightReservation>(res)) { return TimelineModel::Flight; }
+    if (JsonLd::isA<LodgingReservation>(res)) { return TimelineModel::Hotel; }
+    if (JsonLd::isA<TrainReservation>(res)) { return TimelineModel::TrainTrip; }
+    if (JsonLd::isA<BusReservation>(res)) { return TimelineModel::BusTrip; }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineModel::Restaurant; }
+    return {};
+}
+
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -101,14 +109,14 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     for (const auto &resId : mgr->reservations()) {
         const auto res = m_resMgr->reservation(resId);
         if (needsSplitting(res)) {
-            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), RangeBegin), RangeBegin});
-            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), RangeEnd), RangeEnd});
+            m_elements.push_back(Element{resId, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
+            m_elements.push_back(Element{resId, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
         } else {
-            m_elements.push_back(Element{resId, relevantDateTime(mgr->reservation(resId), SelfContained), SelfContained});
+            m_elements.push_back(Element{resId, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
         }
     }
-    m_elements.push_back(Element{{}, relevantDateTime({}, SelfContained), SelfContained}); // today marker
-    std::sort(m_elements.begin(), m_elements.end(), [this](const Element &lhs, const Element &rhs) {
+    m_elements.push_back(Element{{}, QDateTime(QDate::currentDate(), QTime(0, 0)), TodayMarker, SelfContained});
+    std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
         return lhs.dt < rhs.dt;
     });
     connect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
@@ -150,21 +158,9 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case ReservationIdRole:
             return elem.id;
         case ElementTypeRole:
-            if (res.isNull())
-                return TodayMarker;
-            else if (res.userType() == qMetaTypeId<FlightReservation>())
-                return Flight;
-            else if (res.userType() == qMetaTypeId<LodgingReservation>())
-                return Hotel;
-            else if (res.userType() == qMetaTypeId<TrainReservation>())
-                return TrainTrip;
-            else if (res.userType() == qMetaTypeId<BusReservation>())
-                return BusTrip;
-            else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>())
-                return Restaurant;
-            return {};
+            return elem.elementType;
         case TodayEmptyRole:
-            if (res.isNull()) {
+            if (elem.elementType == TodayMarker) {
                 return index.row() == (int)(m_elements.size() - 1) || m_elements.at(index.row() + 1).dt.date() > QDate::currentDate();
             }
             return {};
@@ -201,10 +197,10 @@ void TimelineModel::reservationAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
-        insertElement(Element{resId, relevantDateTime(res, RangeBegin), RangeBegin});
-        insertElement(Element{resId, relevantDateTime(res, RangeEnd), RangeEnd});
+        insertElement(Element{resId, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
+        insertElement(Element{resId, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
     } else {
-        insertElement(Element{resId, relevantDateTime(res, SelfContained), SelfContained});
+        insertElement(Element{resId, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
     }
 
     emit todayRowChanged();
@@ -246,7 +242,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
         beginRemoveRows({}, row, row);
         m_elements.erase(it);
         endRemoveRows();
-        insertElement(Element{resId, newDt, rangeType});
+        insertElement(Element{resId, newDt, elementType(res), rangeType});
     } else {
         emit dataChanged(index(row, 0), index(row, 0));
     }
