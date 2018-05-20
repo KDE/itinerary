@@ -28,9 +28,14 @@ class CountryInformation
 {
     Q_GADGET
     Q_PROPERTY(QString isoCode READ isoCode)
+
     Q_PROPERTY(KItinerary::KnowledgeDb::DrivingSide drivingSide READ drivingSide)
     /** This indicates that the driving side information changed and needs to be displayed. */
     Q_PROPERTY(bool drivingSideDiffers READ drivingSideDiffers)
+
+    Q_PROPERTY(QString powerPlugTypes READ powerPlugTypes)
+    Q_PROPERTY(bool powerPlugTypesDiffer READ powerPlugTypesDiffer)
+
 public:
     CountryInformation();
     ~CountryInformation();
@@ -43,12 +48,18 @@ public:
     KItinerary::KnowledgeDb::DrivingSide drivingSide() const;
     bool drivingSideDiffers() const;
 
+    QString powerPlugTypes() const;
+    bool powerPlugTypesDiffer() const;
+
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
+    void setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs);
 
     QString m_isoCode;
+    KItinerary::KnowledgeDb::PowerPlugTypes m_powerPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::DrivingSide m_drivingSide = KItinerary::KnowledgeDb::DrivingSide::Unknown;
     bool m_drivingSideDiffers = false;
+    bool m_powerPlugTypesDiffer = false;
 };
 
 Q_DECLARE_METATYPE(CountryInformation)

@@ -94,6 +94,7 @@ private:
     void reservationRemoved(const QString &resId);
 
     void updateInformationElements();
+    std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
 
     PkPassManager *m_passMgr = nullptr;
     ReservationManager *m_resMgr = nullptr;

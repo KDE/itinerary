@@ -59,6 +59,12 @@ Kirigami.AbstractCard {
             color: Kirigami.Theme.negativeTextColor
             visible: countryInfo.drivingSideDiffers
         }
+
+        QQC2.Label {
+            text: qsTr("Incompatible power plugs: %1").arg(countryInfo.powerPlugTypes)
+            color: Kirigami.Theme.negativeTextColor
+            visible: countryInfo.powerPlugTypesDiffer
+        }
     }
 }
 

@@ -318,15 +318,17 @@ void TimelineModel::updateInformationElements()
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
         switch ((*it).elementType) {
             case TodayMarker:
+                it = erasePreviousCountyInfo(it);
                 continue;
             case CountryInfo:
                 previousCountry = (*it).content.value<CountryInformation>();
+                it = erasePreviousCountyInfo(it); // purge multiple consecutive country info elements
                 continue;
             default:
                 break;
         }
 
-        auto newCountry = previousCountry;
+        auto newCountry = homeCountry;
         newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).id)));
         if (newCountry == previousCountry) {
             continue;
@@ -334,16 +336,8 @@ void TimelineModel::updateInformationElements()
         if (newCountry == homeCountry) {
             assert(it != m_elements.begin()); // previousCountry == homeCountry in this case
             // purge outdated country info element
-            auto it2 = it;
-            --it2;
-            if ((*it2).elementType == CountryInfo) {
-                auto row = std::distance(m_elements.begin(), it2);
-                beginRemoveRows({}, row, row);
-                it = m_elements.erase(it2);
-                endRemoveRows();
-                previousCountry = newCountry;
-            }
-
+            it = erasePreviousCountyInfo(it);
+            previousCountry = newCountry;
             continue;
         }
 
@@ -355,4 +349,17 @@ void TimelineModel::updateInformationElements()
 
         previousCountry = newCountry;
     }
+}
+
+std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCountyInfo(std::vector<Element>::iterator it)
+{
+    auto it2 = it;
+    --it2;
+    if ((*it2).elementType == CountryInfo) {
+        auto row = std::distance(m_elements.begin(), it2);
+        beginRemoveRows({}, row, row);
+        it = m_elements.erase(it2);
+        endRemoveRows();
+    }
+    return it;
 }
