@@ -58,6 +58,10 @@
             "arrivalPlatform": "7",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.29399871826172,
@@ -74,6 +78,10 @@
             "departurePlatform": "3",
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 47.45029830932617,
@@ -111,6 +119,10 @@
             "@type": "TrainTrip",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.09989929199219,
@@ -119,10 +131,18 @@
                 "identifier": "ibnr:8501687",
                 "name": "Randa"
             },
-            "arrivalTime": "2017-09-10T14:53:00+02:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T14:53:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "departurePlatform": "3",
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.29399871826172,
@@ -131,7 +151,11 @@
                 "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
-            "departureTime": "2017-09-10T14:08:00+02:00",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T14:08:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "trainCompany": {
                 "@type": "Organization",
                 "name": "SBB"
@@ -166,7 +190,7 @@
             "@type": "LodgingBusiness",
             "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "Switzerland",
+                "addressCountry": "CH",
                 "addressLocality": "Randa",
                 "addressRegion": "Wallis",
                 "postalCode": "3928",
@@ -224,22 +248,22 @@
     {
         "@context": "http://schema.org",
         "@type": "FoodEstablishmentReservation",
+        "endTime": "2017-09-14T22:00:00+02:00",
+        "partySize": 20,
         "reservationStatus": "http://schema.org/Confirmed",
         "reservationFor": {
             "@type": "FoodEstablishment",
-            "name": "Raclette",
             "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "Switzerland",
+                "addressCountry": "CH",
                 "addressLocality": "Randa",
                 "addressRegion": "Wallis",
                 "postalCode": "3928",
                 "streetAddress": "Haus Maria am Weg"
-            }
+            },
+            "name": "Raclette"
         },
-        "partySize": 20,
-        "startTime": "2017-09-14T19:00:00+02:00",
-        "endTime": "2017-09-14T22:00:00+02:00"
+        "startTime": "2017-09-14T19:00:00+02:00"
     },
     {
         "@context": "http://schema.org",
@@ -249,6 +273,10 @@
             "arrivalPlatform": "3",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.29399871826172,
@@ -257,9 +285,17 @@
                 "identifier": "ibnr:8501605",
                 "name": "Visp"
             },
-            "arrivalTime": "2017-09-15T15:46:00+02:00",
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T15:46:00+02:00",
+                "timezone": "Europe/Zurich"
+            },
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.09989929199219,
@@ -289,6 +325,10 @@
             "arrivalPlatform": "2",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 47.45029830932617,
@@ -305,6 +345,10 @@
             "departurePlatform": "2",
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 46.29399871826172,
