@@ -15,6 +15,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <countryinformation.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 #include <timelinemodel.h>
@@ -136,6 +137,36 @@ private slots:
         QCOMPARE(rmSpy.size(), 3);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+    }
+
+    void testCountryInfos()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+
+        TimelineModel model;
+        model.setReservationManager(&resMgr);
+
+        QCOMPARE(model.rowCount(), 1);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+
+        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        QCOMPARE(model.rowCount(), 4); //  GB country info, 2 flights, today marker
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
+        auto countryInfo = model.index(0, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
+        qDebug() << (int)countryInfo.drivingSide() << countryInfo.drivingSideDiffers();
+        QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
+        QCOMPARE(countryInfo.drivingSideDiffers(), true);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+
+        // remove the GB flight, should also remove the GB country info
+        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdRole).toString();
+        resMgr.removeReservation(resId);
+        QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
     }
 };
 

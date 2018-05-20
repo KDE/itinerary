@@ -39,7 +39,8 @@ public:
         ElementTypeRole,
         TodayEmptyRole,
         IsTodayRole,
-        ElementRangeRole
+        ElementRangeRole,
+        CountryInformationRole
     };
 
     enum ElementType {
@@ -80,6 +81,7 @@ signals:
 private:
     struct Element {
         QString id; // reservation id
+        QVariant content; // non-reservation content
         QDateTime dt; // relevant date/time
         ElementType elementType;
         RangeType rangeType;
@@ -90,6 +92,8 @@ private:
     void reservationUpdated(const QString &resId);
     void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
     void reservationRemoved(const QString &resId);
+
+    void updateInformationElements();
 
     PkPassManager *m_passMgr = nullptr;
     ReservationManager *m_resMgr = nullptr;

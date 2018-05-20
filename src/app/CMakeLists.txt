@@ -1,4 +1,5 @@
 set(itinerary_srcs
+    countryinformation.cpp
     pkpassmanager.cpp
     reservationmanager.cpp
     timelinemodel.cpp
@@ -57,6 +58,7 @@ qml_lint(
     BoardingPass.qml
     BusDelegate.qml
     BusPage.qml
+    CountryInfoDelegate.qml
     DetailsPage.qml
     FlightDelegate.qml
     FlightPage.qml

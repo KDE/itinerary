@@ -97,6 +97,12 @@ Kirigami.ScrollablePage {
             }
         }
     }
+    Component {
+        id: countryInfoDelegate
+        App.CountryInfoDelegate {
+            countryInfo: modelData.countryInformation
+        }
+    }
 
     Kirigami.CardsListView {
         id: listView
@@ -115,6 +121,7 @@ Kirigami.ScrollablePage {
                     case TimelineModel.BusTrip: return busDelegate;
                     case TimelineModel.Restaurant: return restaurantDelegate;
                     case TimelineModel.TodayMarker: return todayDelegate;
+                    case TimelineModel.CountryInfo: return countryInfoDelegate;
                 }
             }
         }

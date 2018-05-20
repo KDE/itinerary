@@ -16,10 +16,12 @@
 */
 
 #include "timelinemodel.h"
+#include "countryinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
 #include <KItinerary/BusTrip>
+#include <KItinerary/CountryDb>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Organization>
@@ -33,6 +35,8 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QLocale>
+
+#include <cassert>
 
 using namespace KItinerary;
 
@@ -75,8 +79,9 @@ static QString passId(const QVariant &res)
 {
     const auto passTypeId = JsonLdDocument::readProperty(res, "pkpassPassTypeIdentifier").toString();
     const auto serialNum = JsonLdDocument::readProperty(res, "pkpassSerialNumber").toString();
-    if (passTypeId.isEmpty() || serialNum.isEmpty())
+    if (passTypeId.isEmpty() || serialNum.isEmpty()) {
         return {};
+    }
     return passTypeId + QLatin1Char('/') + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
 }
 
@@ -87,6 +92,26 @@ static TimelineModel::ElementType elementType(const QVariant &res)
     if (JsonLd::isA<TrainReservation>(res)) { return TimelineModel::TrainTrip; }
     if (JsonLd::isA<BusReservation>(res)) { return TimelineModel::BusTrip; }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineModel::Restaurant; }
+    return {};
+}
+
+static QString destinationCountry(const QVariant &res)
+{
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return res.value<FlightReservation>().reservationFor().value<Flight>().arrivalAirport().address().addressCountry();
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressCountry();
+    }
+    if (JsonLd::isA<LodgingReservation>(res)) {
+        return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().address().addressCountry();
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalStation().address().addressCountry();
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().address().addressCountry();
+    }
     return {};
 }
 
@@ -109,13 +134,13 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     for (const auto &resId : mgr->reservations()) {
         const auto res = m_resMgr->reservation(resId);
         if (needsSplitting(res)) {
-            m_elements.push_back(Element{resId, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
-            m_elements.push_back(Element{resId, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
+            m_elements.push_back(Element{resId, {}, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
+            m_elements.push_back(Element{resId, {}, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
         } else {
-            m_elements.push_back(Element{resId, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
+            m_elements.push_back(Element{resId, {}, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
         }
     }
-    m_elements.push_back(Element{{}, QDateTime(QDate::currentDate(), QTime(0, 0)), TodayMarker, SelfContained});
+    m_elements.push_back(Element{{}, {}, QDateTime(QDate::currentDate(), QTime(0, 0)), TodayMarker, SelfContained});
     std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
         return lhs.dt < rhs.dt;
     });
@@ -123,20 +148,24 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
     connect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
     endResetModel();
+
+    updateInformationElements();
     emit todayRowChanged();
 }
 
 int TimelineModel::rowCount(const QModelIndex& parent) const
 {
-    if (parent.isValid() || !m_resMgr)
+    if (parent.isValid() || !m_resMgr) {
         return 0;
+    }
     return m_elements.size();
 }
 
 QVariant TimelineModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || !m_resMgr)
+    if (!index.isValid() || !m_resMgr) {
         return {};
+    }
 
     const auto &elem = m_elements.at(index.row());
     const auto res = m_resMgr->reservation(elem.id);
@@ -147,10 +176,12 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return passId(res);
         case SectionHeader:
         {
-            if (elem.dt.isNull())
+            if (elem.dt.isNull()) {
                 return {};
-            if (elem.dt.date() == QDate::currentDate())
+            }
+            if (elem.dt.date() == QDate::currentDate()) {
                 return i18n("Today");
+            }
             return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
         }
         case ReservationRole:
@@ -168,6 +199,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return elem.dt.date() == QDate::currentDate();
         case ElementRangeRole:
             return elem.rangeType;
+        case CountryInformationRole:
+            return elem.content;
     }
     return {};
 }
@@ -184,12 +217,13 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(TodayEmptyRole, "isTodayEmpty");
     names.insert(IsTodayRole, "isToday");
     names.insert(ElementRangeRole, "rangeType");
+    names.insert(CountryInformationRole, "countryInformation");
     return names;
 }
 
 int TimelineModel::todayRow() const
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const Element &e) { return e.id.isEmpty(); });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const Element &e) { return e.elementType == TodayMarker; });
     return std::distance(m_elements.begin(), it);
 }
 
@@ -197,12 +231,13 @@ void TimelineModel::reservationAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
-        insertElement(Element{resId, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
-        insertElement(Element{resId, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
+        insertElement(Element{resId, {}, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
+        insertElement(Element{resId, {}, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
     } else {
-        insertElement(Element{resId, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
+        insertElement(Element{resId, {}, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
     }
 
+    updateInformationElements();
     emit todayRowChanged();
 }
 
@@ -226,6 +261,8 @@ void TimelineModel::reservationUpdated(const QString &resId)
     } else {
         updateElement(resId, res, SelfContained);
     }
+
+    updateInformationElements();
 }
 
 void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineModel::RangeType rangeType)
@@ -242,7 +279,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
         beginRemoveRows({}, row, row);
         m_elements.erase(it);
         endRemoveRows();
-        insertElement(Element{resId, newDt, elementType(res), rangeType});
+        insertElement(Element{resId, {}, newDt, elementType(res), rangeType});
     } else {
         emit dataChanged(index(row, 0), index(row, 0));
     }
@@ -263,5 +300,59 @@ void TimelineModel::reservationRemoved(const QString &resId)
 
     if (isSplit) {
         reservationRemoved(resId);
+    }
+
+    updateInformationElements();
+}
+
+void TimelineModel::updateInformationElements()
+{
+    // the country information is shown before transitioning into a country that
+    // differs in one or more properties from the home country and we where that
+    // differences is introduced by the transition
+
+    CountryInformation homeCountry;
+    homeCountry.setIsoCode(QLatin1String("DE")); // TODO configurable home country
+
+    auto previousCountry = homeCountry;
+    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+        switch ((*it).elementType) {
+            case TodayMarker:
+                continue;
+            case CountryInfo:
+                previousCountry = (*it).content.value<CountryInformation>();
+                continue;
+            default:
+                break;
+        }
+
+        auto newCountry = previousCountry;
+        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).id)));
+        if (newCountry == previousCountry) {
+            continue;
+        }
+        if (newCountry == homeCountry) {
+            assert(it != m_elements.begin()); // previousCountry == homeCountry in this case
+            // purge outdated country info element
+            auto it2 = it;
+            --it2;
+            if ((*it2).elementType == CountryInfo) {
+                auto row = std::distance(m_elements.begin(), it2);
+                beginRemoveRows({}, row, row);
+                it = m_elements.erase(it2);
+                endRemoveRows();
+                previousCountry = newCountry;
+            }
+
+            continue;
+        }
+
+        // add new country info element
+        auto row = std::distance(m_elements.begin(), it);
+        beginInsertRows({}, row, row);
+        it = m_elements.insert(it, Element{{}, QVariant::fromValue(newCountry), (*it).dt, CountryInfo, SelfContained});
+        endInsertRows();
+
+        previousCountry = newCountry;
     }
 }
