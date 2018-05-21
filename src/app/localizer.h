@@ -34,6 +34,7 @@ public:
     ~Localizer();
 
     Q_INVOKABLE QString countryName(const QString &isoCode) const;
+    Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;
 };

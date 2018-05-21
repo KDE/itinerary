@@ -18,6 +18,7 @@
 #include "localizer.h"
 
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/Place>
 
 #include <KContacts/Address>
 
@@ -37,6 +38,23 @@ Localizer::~Localizer() = default;
 QString Localizer::countryName(const QString& isoCode) const
 {
     return KContacts::Address::ISOtoCountry(isoCode);
+}
+
+QString Localizer::formatAddress(const QVariant &obj) const
+{
+    if (!JsonLd::isA<PostalAddress>(obj)) {
+        return {};
+    }
+    const auto a = obj.value<PostalAddress>();
+
+    KContacts::Address address;
+    address.setStreet(a.streetAddress());
+    address.setPostalCode(a.postalCode());
+    address.setLocality(a.addressLocality());
+    address.setRegion(a.addressRegion());
+    address.setCountry(KContacts::Address::ISOtoCountry(a.addressCountry()));
+
+    return address.formattedAddress();
 }
 
 static bool needsTimeZone(const QDateTime &dt)

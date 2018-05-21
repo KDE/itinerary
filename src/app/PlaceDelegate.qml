@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 Item {
@@ -31,12 +32,7 @@ Item {
     QQC2.Label {
         id: label
         visible: !place.address.isEmpty
-        // TODO KContact-based locale-dependent address formatting
-        text: qsTr("%1\n%2 %3\n%4 ")
-            .arg(place.address.streetAddress)
-            .arg(place.address.postalCode)
-            .arg(place.address.addressLocality)
-            .arg(place.address.addressCountry)
+        text: Localizer.formatAddress(place.address)
         color: Kirigami.Theme.textColor
     }
 
