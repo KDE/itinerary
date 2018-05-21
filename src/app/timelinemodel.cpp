@@ -26,6 +26,7 @@
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
+#include <KItinerary/SortUtil>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Visit>
 
@@ -48,36 +49,11 @@ static bool needsSplitting(const QVariant &res)
 
 static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
 {
-    if (JsonLd::isA<FlightReservation>(res)) {
-        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
-        if (flight.boardingTime().isValid()) {
-            return flight.boardingTime();
-        }
-        if (flight.departureTime().isValid()) {
-            return flight.departureTime();
-        }
-        return QDateTime(flight.departureDay(), QTime(23, 59, 59));
+    if (range == TimelineModel::RangeBegin || range == TimelineModel::SelfContained) {
+        return SortUtil::startDateTime(res);
     }
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
-    }
-    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-        return res.value<FoodEstablishmentReservation>().startTime();
-    }
-    if (JsonLd::isA<LodgingReservation>(res)) {
-        const auto hotel = res.value<LodgingReservation>();
-        // hotel checkin/checkout is always considered the first/last thing of the day
-        if (range == TimelineModel::RangeEnd) {
-            return QDateTime(hotel.checkoutTime().date(), QTime(0, 0, 0));
-        } else {
-            return QDateTime(hotel.checkinTime().date(), QTime(23, 59, 59));
-        }
-    }
-    if (JsonLd::isA<TouristAttractionVisit>(res)) {
-        return res.value<TouristAttractionVisit>().arrivalTime();
+    if (range == TimelineModel::RangeEnd) {
+        return SortUtil::endtDateTime(res);
     }
 
     return {};
