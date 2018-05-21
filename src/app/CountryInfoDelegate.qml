@@ -61,9 +61,19 @@ Kirigami.AbstractCard {
         }
 
         QQC2.Label {
-            text: qsTr("Incompatible power plugs: %1").arg(countryInfo.powerPlugTypes)
+            text: qsTr("No compatible power sockets: %1").arg(countryInfo.powerSocketTypes)
             color: Kirigami.Theme.negativeTextColor
-            visible: countryInfo.powerPlugTypesDiffer
+            visible: countryInfo.powerPlugCompatibility == CountryInformation.Incompatible
+        }
+        QQC2.Label {
+            text: qsTr("Some incompatible power sockets: %1").arg(countryInfo.powerSocketTypes)
+            color: Kirigami.Theme.negativeTextColor
+            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocket != ""
+        }
+        QQC2.Label {
+            text: qsTr("Some incompatible power plugs: %1").arg(countryInfo.powerPlugTypes)
+            color: Kirigami.Theme.negativeTextColor
+            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerPlugTypes != ""
         }
     }
 }

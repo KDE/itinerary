@@ -32,7 +32,8 @@ CountryInformation::~CountryInformation() = default;
 bool CountryInformation::operator==(const CountryInformation& other) const
 {
     const auto dsEqual = m_drivingSide == other.m_drivingSide || m_drivingSide == KnowledgeDb::DrivingSide::Unknown || other.m_drivingSide == KnowledgeDb::DrivingSide::Unknown;
-    const auto ppEqual = (m_powerPlugs & other.m_powerPlugs) || m_powerPlugs == KnowledgeDb::Unknown || other.m_powerPlugs == KnowledgeDb::Unknown;
+    const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets)
+                        || m_powerPlugs == KnowledgeDb::Unknown || other.m_powerPlugs == KnowledgeDb::Unknown;
 
     return dsEqual && ppEqual;
 }
@@ -76,6 +77,16 @@ void CountryInformation::setDrivingSide(KnowledgeDb::DrivingSide drivingSide)
     m_drivingSide = drivingSide;
 }
 
+bool CountryInformation::drivingSideDiffers() const
+{
+    return m_drivingSideDiffers;
+}
+
+CountryInformation::PowerPlugCompatibility CountryInformation::powerPlugCompatibility() const
+{
+    return m_powerPlugCompat;
+}
+
 struct plugTypeName {
     KnowledgeDb::PowerPlugType type;
     const char *name;
@@ -98,37 +109,42 @@ static const plug_name_table[] = {
     { KnowledgeDb::TypeN, I18N_NOOP("Type N") },
 };
 
-QString CountryInformation::powerPlugTypes() const
+static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
 {
     QStringList l;
     for (const auto &elem : plug_name_table) {
-        if (m_powerPlugs & elem.type) {
+        if (type & elem.type) {
             l.push_back(i18n(elem.name));
         }
     }
     return l.join(QLatin1String(", "));
 }
 
+QString CountryInformation::powerPlugTypes() const
+{
+    return plugTypesToString(m_incompatPlugs);
+}
+
+QString CountryInformation::powerSocketTypes() const
+{
+    return plugTypesToString(m_incompatSockets);
+}
+
 void CountryInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs)
 {
-    // TODO deal with partial incompatibilities and compatibilities between plug types
     if (m_powerPlugs == powerPlugs || powerPlugs == KnowledgeDb::Unknown) {
         return;
     }
 
+    m_incompatPlugs = KnowledgeDb::incompatiblePowerPlugs(m_powerPlugs, powerPlugs);
+    m_incompatSockets = KnowledgeDb::incompatiblePowerSockets(m_powerPlugs, powerPlugs);
+
     if ((m_powerPlugs & powerPlugs) == 0) {
-        m_powerPlugTypesDiffer = true;
+        m_powerPlugCompat = Incompatible;
+    } else if (m_incompatPlugs != KnowledgeDb::Unknown || m_incompatSockets != KnowledgeDb::Unknown) {
+        m_powerPlugCompat = PartiallyCompatible;
     }
 
     m_powerPlugs = powerPlugs;
 }
 
-bool CountryInformation::drivingSideDiffers() const
-{
-    return m_drivingSideDiffers;
-}
-
-bool CountryInformation::powerPlugTypesDiffer() const
-{
-    return m_powerPlugTypesDiffer;
-}

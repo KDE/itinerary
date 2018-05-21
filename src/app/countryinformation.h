@@ -33,12 +33,22 @@ class CountryInformation
     /** This indicates that the driving side information changed and needs to be displayed. */
     Q_PROPERTY(bool drivingSideDiffers READ drivingSideDiffers)
 
+    Q_PROPERTY(PowerPlugCompatibility powerPlugCompatibility READ powerPlugCompatibility)
+    /** Plugs from the home country that will not fit. */
     Q_PROPERTY(QString powerPlugTypes READ powerPlugTypes)
-    Q_PROPERTY(bool powerPlugTypesDiffer READ powerPlugTypesDiffer)
+    /** Sockets in the destination country that are incompatible with (some of) my plugs. */
+    Q_PROPERTY(QString powerSocketTypes READ powerSocketTypes)
 
 public:
     CountryInformation();
     ~CountryInformation();
+
+    enum PowerPlugCompatibility {
+        FullyCompatible,
+        PartiallyCompatible,
+        Incompatible
+    };
+    Q_ENUM(PowerPlugCompatibility)
 
     bool operator==(const CountryInformation &other) const;
 
@@ -48,8 +58,9 @@ public:
     KItinerary::KnowledgeDb::DrivingSide drivingSide() const;
     bool drivingSideDiffers() const;
 
+    PowerPlugCompatibility powerPlugCompatibility() const;
     QString powerPlugTypes() const;
-    bool powerPlugTypesDiffer() const;
+    QString powerSocketTypes() const;
 
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
@@ -57,9 +68,11 @@ private:
 
     QString m_isoCode;
     KItinerary::KnowledgeDb::PowerPlugTypes m_powerPlugs = KItinerary::KnowledgeDb::Unknown;
+    KItinerary::KnowledgeDb::PowerPlugTypes m_incompatPlugs = KItinerary::KnowledgeDb::Unknown;
+    KItinerary::KnowledgeDb::PowerPlugTypes m_incompatSockets = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::DrivingSide m_drivingSide = KItinerary::KnowledgeDb::DrivingSide::Unknown;
     bool m_drivingSideDiffers = false;
-    bool m_powerPlugTypesDiffer = false;
+    PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
 };
 
 Q_DECLARE_METATYPE(CountryInformation)

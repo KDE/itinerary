@@ -157,14 +157,14 @@ private slots:
         auto countryInfo = model.index(0, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
         QCOMPARE(countryInfo.drivingSideDiffers(), true);
-        QCOMPARE(countryInfo.powerPlugTypesDiffer(), true);
+        QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
 
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
         countryInfo = model.index(2, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
-        QCOMPARE(countryInfo.powerPlugTypesDiffer(), true);
+        QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 

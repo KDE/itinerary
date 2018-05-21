@@ -19,6 +19,7 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
+#include "countryinformation.h"
 #include "localizer.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
@@ -115,6 +116,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
 
+    qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterSingletonType<Localizer>("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Localizer;
