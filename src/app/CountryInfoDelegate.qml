@@ -43,7 +43,7 @@ Kirigami.AbstractCard {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: qsTr("⚠ Entering %1").arg(countryInfo.isoCode) // TODO human readable country name
+                text: qsTr("⚠ Entering %1").arg(Localizer.countryName(countryInfo.isoCode))
                 color: Kirigami.Theme.negativeTextColor
             }
         }

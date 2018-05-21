@@ -28,6 +28,7 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     Qt5::Quick
+    KF5::Contacts
 )
 if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,

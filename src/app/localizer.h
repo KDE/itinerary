@@ -33,6 +33,7 @@ public:
     explicit Localizer(QObject *parent = nullptr);
     ~Localizer();
 
+    Q_INVOKABLE QString countryName(const QString &isoCode) const;
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;
 };

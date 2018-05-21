@@ -19,6 +19,8 @@
 
 #include <KItinerary/JsonLdDocument>
 
+#include <KContacts/Address>
+
 #include <QDateTime>
 #include <QLocale>
 #include <QTimeZone>
@@ -31,6 +33,11 @@ Localizer::Localizer(QObject *parent)
 }
 
 Localizer::~Localizer() = default;
+
+QString Localizer::countryName(const QString& isoCode) const
+{
+    return KContacts::Address::ISOtoCountry(isoCode);
+}
 
 static bool needsTimeZone(const QDateTime &dt)
 {
