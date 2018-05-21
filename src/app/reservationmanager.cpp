@@ -139,7 +139,7 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
         // check if we know this one already, and update if that's the case
         for (const auto &oldResId : reservations()) {
             const auto oldRes = reservation(oldResId);
-            if (MergeUtil::isSameReservation(oldRes, res)) {
+            if (MergeUtil::isSame(oldRes, res)) {
                 res = JsonLdDocument::apply(oldRes, res);
                 resId = oldResId;
                 oldResFound = true;
