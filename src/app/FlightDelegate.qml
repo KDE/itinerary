@@ -60,9 +60,8 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: GridLayout {
+    contentItem: ColumnLayout {
         id: topLayout
-        columns: 2
 
         QQC2.Label {
             text: qsTr("Departure from %1: %2")
@@ -76,8 +75,15 @@ App.TimelineDelegate {
             place: reservation.reservationFor.departureAirport
             Layout.fillWidth: true
         }
+        QQC2.Label {
+            text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
+                .arg(reservation.reservationFor.departureTerminal)
+                .arg(reservation.reservationFor.departureGate)
+                .arg(reservation.airplaneSeat)
+            color: Kirigami.Theme.textColor
+        }
+
         Kirigami.Separator {
-            Layout.columnSpan: 2
             Layout.fillWidth: true
         }
 
@@ -89,23 +95,12 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             Layout.maximumWidth: root.width
         }
-
         App.PlaceDelegate {
             place: reservation.reservationFor.arrivalAirport
             Layout.fillWidth: true
         }
 
-        QQC2.Label {
-            Layout.columnSpan: 2
-            text: qsTr("Terminal: %1  Gate: %2  Seat: %3")
-                .arg(reservation.reservationFor.departureTerminal)
-                .arg(reservation.reservationFor.departureGate)
-                .arg(reservation.airplaneSeat)
-            color: Kirigami.Theme.textColor
-        }
-
         QQC2.Button {
-            Layout.columnSpan: 2
             Layout.alignment: Qt.AlignHCenter
             text: qsTr("Boarding Pass")
             onClicked: showBoardingPass();
