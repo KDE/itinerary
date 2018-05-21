@@ -52,6 +52,8 @@ void CountryInformation::setIsoCode(const QString& isoCode)
 
     const auto id = KnowledgeDb::CountryId{isoCode};
     if (!id.isValid()) {
+        setDrivingSide(KnowledgeDb::DrivingSide::Unknown);
+        setPowerPlugTypes(KnowledgeDb::Unknown);
         return;
     }
     const auto countryRecord = KnowledgeDb::countryForId(id);
@@ -66,7 +68,7 @@ KnowledgeDb::DrivingSide CountryInformation::drivingSide() const
 
 void CountryInformation::setDrivingSide(KnowledgeDb::DrivingSide drivingSide)
 {
-    if (m_drivingSide == drivingSide || drivingSide == KnowledgeDb::DrivingSide::Unknown) {
+    if (m_drivingSide == drivingSide) {
         return;
     }
 
@@ -132,17 +134,19 @@ QString CountryInformation::powerSocketTypes() const
 
 void CountryInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs)
 {
-    if (m_powerPlugs == powerPlugs || powerPlugs == KnowledgeDb::Unknown) {
+    if (m_powerPlugs == powerPlugs) {
         return;
     }
 
-    m_incompatPlugs = KnowledgeDb::incompatiblePowerPlugs(m_powerPlugs, powerPlugs);
-    m_incompatSockets = KnowledgeDb::incompatiblePowerSockets(m_powerPlugs, powerPlugs);
+    if (powerPlugs != KnowledgeDb::Unknown && m_powerPlugs != KnowledgeDb::Unknown) {
+        m_incompatPlugs = KnowledgeDb::incompatiblePowerPlugs(m_powerPlugs, powerPlugs);
+        m_incompatSockets = KnowledgeDb::incompatiblePowerSockets(m_powerPlugs, powerPlugs);
 
-    if ((m_powerPlugs & powerPlugs) == 0) {
-        m_powerPlugCompat = Incompatible;
-    } else if (m_incompatPlugs != KnowledgeDb::Unknown || m_incompatSockets != KnowledgeDb::Unknown) {
-        m_powerPlugCompat = PartiallyCompatible;
+        if ((m_powerPlugs & powerPlugs) == 0) {
+            m_powerPlugCompat = Incompatible;
+        } else if (m_incompatPlugs != KnowledgeDb::Unknown || m_incompatSockets != KnowledgeDb::Unknown) {
+            m_powerPlugCompat = PartiallyCompatible;
+        }
     }
 
     m_powerPlugs = powerPlugs;
