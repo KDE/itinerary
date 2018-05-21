@@ -27,6 +27,7 @@
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
+#include <KItinerary/Visit>
 
 #include <KPkPass/Pass>
 
@@ -47,7 +48,7 @@ static bool needsSplitting(const QVariant &res)
 
 static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
 {
-    if (res.userType() == qMetaTypeId<FlightReservation>()) {
+    if (JsonLd::isA<FlightReservation>(res)) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
         if (flight.boardingTime().isValid()) {
             return flight.boardingTime();
@@ -56,13 +57,17 @@ static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType 
             return flight.departureTime();
         }
         return QDateTime(flight.departureDay(), QTime(23, 59, 59));
-    } else if (res.userType() == qMetaTypeId<TrainReservation>()) {
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
-    } else if (res.userType() == qMetaTypeId<BusReservation>()) {
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
         return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
-    } else if (res.userType() == qMetaTypeId<FoodEstablishmentReservation>()) {
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().startTime();
-    } else if (res.userType() == qMetaTypeId<LodgingReservation>()) {
+    }
+    if (JsonLd::isA<LodgingReservation>(res)) {
         const auto hotel = res.value<LodgingReservation>();
         // hotel checkin/checkout is always considered the first/last thing of the day
         if (range == TimelineModel::RangeEnd) {
@@ -70,6 +75,9 @@ static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType 
         } else {
             return QDateTime(hotel.checkinTime().date(), QTime(23, 59, 59));
         }
+    }
+    if (JsonLd::isA<TouristAttractionVisit>(res)) {
+        return res.value<TouristAttractionVisit>().arrivalTime();
     }
 
     return {};
@@ -92,6 +100,7 @@ static TimelineModel::ElementType elementType(const QVariant &res)
     if (JsonLd::isA<TrainReservation>(res)) { return TimelineModel::TrainTrip; }
     if (JsonLd::isA<BusReservation>(res)) { return TimelineModel::BusTrip; }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineModel::Restaurant; }
+    if (JsonLd::isA<TouristAttractionVisit>(res)) { return TimelineModel::TouristAttraction; }
     return {};
 }
 
@@ -111,6 +120,9 @@ static QString destinationCountry(const QVariant &res)
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().address().addressCountry();
+    }
+    if (JsonLd::isA<TouristAttractionVisit>(res)) {
+        return res.value<TouristAttractionVisit>().touristAttraction().address().addressCountry();
     }
     return {};
 }

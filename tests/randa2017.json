@@ -247,6 +247,26 @@
     },
     {
         "@context": "http://schema.org",
+        "@type": "TouristAttractionVisit",
+        "arrivalTime": "2017-09-13T14:30:00",
+        "departureTime": "2017-09-13T15:30:00",
+        "touristAttraction": {
+            "@type": "TouristAttraction",
+            "name": "Matterhorn",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CH",
+                "addressLocality": "Zermatt"
+            },
+            "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.01505,
+                    "longitude": 7.74224
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
         "@type": "FoodEstablishmentReservation",
         "endTime": "2017-09-14T22:00:00+02:00",
         "partySize": 20,

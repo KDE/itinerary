@@ -84,6 +84,15 @@ Kirigami.ScrollablePage {
         }
     }
     Component {
+        id: touristAttractionDelegate
+        App.TouristAttractionDelegate {
+            reservation: modelData.reservation
+            passId: modelData.passId
+            pass: modelData.pass
+            rangeType: modelData.rangeType
+        }
+    }
+    Component {
         id: todayDelegate
         Item {
             implicitHeight: visible ? label.implicitHeight : 0
@@ -120,6 +129,7 @@ Kirigami.ScrollablePage {
                     case TimelineModel.TrainTrip: return trainDelegate;
                     case TimelineModel.BusTrip: return busDelegate;
                     case TimelineModel.Restaurant: return restaurantDelegate;
+                    case TimelineModel.TouristAttraction: return touristAttractionDelegate;
                     case TimelineModel.TodayMarker: return todayDelegate;
                     case TimelineModel.CountryInfo: return countryInfoDelegate;
                 }

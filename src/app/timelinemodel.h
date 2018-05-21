@@ -50,6 +50,7 @@ public:
         BusTrip,
         Hotel,
         Restaurant,
+        TouristAttraction,
         TodayMarker,
         CountryInfo
     };

@@ -72,6 +72,7 @@ qml_lint(
     TicketTokenDelegate.qml
     TimelineDelegate.qml
     TimelinePage.qml
+    TouristAttractionDelegate.qml
     TrainDelegate.qml
     TrainPage.qml
 )
