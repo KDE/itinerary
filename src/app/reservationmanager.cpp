@@ -125,10 +125,14 @@ void ReservationManager::importReservation(const QUrl& filename)
 
 void ReservationManager::importReservations(const QVector<QVariant> &resData)
 {
+    ExtractorPostprocessor postproc;
+    postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+    postproc.process(resData);
+
     const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QDir::root().mkpath(basePath);
 
-    for (auto res : resData) {
+    for (auto res : postproc.result()) {
         QString resId;
         bool oldResFound = false;
 
@@ -199,11 +203,7 @@ void ReservationManager::passAdded(const QString& passId)
         engine.setPass(pass);
         const auto data = engine.extract();
         const auto res = JsonLdDocument::fromJson(data);
-
-        ExtractorPostprocessor postproc;
-        postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-        postproc.process(res);
-        importReservations(postproc.result());
+        importReservations(res);
     }
 }
 
