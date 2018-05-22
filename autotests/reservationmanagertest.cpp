@@ -21,6 +21,8 @@
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <KItinerary/Place>
+#include <KItinerary/Visit>
 
 class ReservationManagerTest : public QObject
 {
@@ -84,6 +86,21 @@ private slots:
         QCOMPARE(rmSpy.at(0).at(0).toString(), resId);
         QVERIFY(mgr.reservations().isEmpty());
         QVERIFY(mgr.reservation(resId).isNull());
+
+        clearReservations(&mgr);
+        auto attraction = KItinerary::TouristAttraction();
+        attraction.setName(QStringLiteral("Sky Tree"));
+        auto visit = KItinerary::TouristAttractionVisit();
+        visit.setTouristAttraction(attraction);
+
+        mgr.addReservation(QVariant::fromValue(visit));
+        auto addedResId = mgr.reservations().at(0);
+
+        QCOMPARE(addSpy.size(), 2);
+        QVERIFY(!mgr.reservations().isEmpty());
+        QCOMPARE(mgr.reservations().size(), 1);
+        QCOMPARE(addSpy.at(1).at(0).toString(), addedResId);
+        QVERIFY(mgr.reservation(addedResId).isValid());
     }
 
     void testPkPassChanges()
