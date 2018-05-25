@@ -106,6 +106,8 @@ App.TimelineDelegate {
             onClicked: showBoardingPass();
             visible: root.passId !== ""
             icon.source: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
+            // this prevents a tinting/masking effect turning the icon monochrome with the breeze style
+            icon.color: "transparent"
         }
     }
 
