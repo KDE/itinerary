@@ -21,7 +21,6 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 
-class PkPassManager;
 class ReservationManager;
 
 class TimelineModel : public QAbstractListModel
@@ -31,8 +30,7 @@ class TimelineModel : public QAbstractListModel
 
 public:
     enum Role {
-        PassRole = Qt::UserRole + 1,
-        PassIdRole,
+        PassIdRole = Qt::UserRole + 1,
         SectionHeader,
         ReservationRole,
         ReservationIdRole,
@@ -67,7 +65,6 @@ public:
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel();
 
-    void setPkPassManager(PkPassManager *mgr);
     void setReservationManager(ReservationManager *mgr);
 
     QVariant data(const QModelIndex& index, int role) const override;
@@ -97,7 +94,6 @@ private:
     void updateInformationElements();
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
 
-    PkPassManager *m_passMgr = nullptr;
     ReservationManager *m_resMgr = nullptr;
     std::vector<Element> m_elements;
 };

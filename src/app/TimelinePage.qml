@@ -43,7 +43,6 @@ Kirigami.ScrollablePage {
         App.FlightDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }
@@ -52,7 +51,6 @@ Kirigami.ScrollablePage {
         App.HotelDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }
@@ -61,7 +59,6 @@ Kirigami.ScrollablePage {
         App.TrainDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }
@@ -70,7 +67,6 @@ Kirigami.ScrollablePage {
         App.BusDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }
@@ -79,7 +75,6 @@ Kirigami.ScrollablePage {
         App.RestaurantDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }
@@ -88,7 +83,6 @@ Kirigami.ScrollablePage {
         App.TouristAttractionDelegate {
             reservation: modelData.reservation
             passId: modelData.passId
-            pass: modelData.pass
             rangeType: modelData.rangeType
         }
     }

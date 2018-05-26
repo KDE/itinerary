@@ -37,6 +37,7 @@ public:
     QVector<QString> passes() const;
 
     KPkPass::Pass* pass(const QString &passId);
+    Q_INVOKABLE QObject* passObject(const QString &passId);
 
     Q_INVOKABLE void importPass(const QUrl &url);
     void importPassFromTempFile(const QString &tmpFile);

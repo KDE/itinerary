@@ -57,7 +57,6 @@ private slots:
 
         resMgr.setPkPassManager(&mgr);
         TimelineModel model;
-        model.setPkPassManager(&mgr);
         model.setReservationManager(&resMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);

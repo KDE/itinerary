@@ -25,7 +25,6 @@ import "." as App
 Kirigami.AbstractCard {
     id: root
     property var reservation
-    property var pass
     property string passId
     property var rangeType
 
@@ -42,7 +41,7 @@ Kirigami.AbstractCard {
         id: pkpassComponent
         App.PkPassPage {
             passId: root.passId
-            pass: root.pass
+            pass: _pkpassManager.passObject(root.passId)
         }
     }
 }

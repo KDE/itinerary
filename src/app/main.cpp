@@ -104,7 +104,6 @@ int main(int argc, char **argv)
     ReservationManager resMgr;
     resMgr.setPkPassManager(&passMgr);
     TimelineModel timelineModel;
-    timelineModel.setPkPassManager(&passMgr);
     timelineModel.setReservationManager(&resMgr);
 
     ApplicationController appController;

@@ -73,6 +73,11 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
     return file;
 }
 
+QObject* PkPassManager::passObject(const QString& passId)
+{
+    return pass(passId);
+}
+
 void PkPassManager::importPass(const QUrl& url)
 {
     doImportPass(url, Copy);

@@ -110,11 +110,6 @@ TimelineModel::TimelineModel(QObject *parent)
 
 TimelineModel::~TimelineModel() = default;
 
-void TimelineModel::setPkPassManager(PkPassManager* mgr)
-{
-    m_passMgr = mgr;
-}
-
 void TimelineModel::setReservationManager(ReservationManager* mgr)
 {
     beginResetModel();
@@ -158,8 +153,6 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     const auto &elem = m_elements.at(index.row());
     const auto res = m_resMgr->reservation(elem.id);
     switch (role) {
-        case PassRole:
-            return QVariant::fromValue(m_passMgr->pass(passId(res)));
         case PassIdRole:
             return passId(res);
         case SectionHeader:
@@ -196,7 +189,6 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 QHash<int, QByteArray> TimelineModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
-    names.insert(PassRole, "pass");
     names.insert(PassIdRole, "passId");
     names.insert(SectionHeader, "sectionHeader");
     names.insert(ReservationRole, "reservation");
