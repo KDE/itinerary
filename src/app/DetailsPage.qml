@@ -28,21 +28,13 @@ Kirigami.ScrollablePage {
     property variant reservation
     property string passId
 
-    Component {
-        id: pkpassComponent
-        App.PkPassPage {
-            passId: root.passId
-            pass: _pkpassManager.passObject(root.passId)
-        }
-    }
-
     actions {
         contextualActions: [
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
                 text: qsTr("Boarding Pass")
                 visible: root.passId !== ""
-                onTriggered: applicationWindow().pageStack.push(pkpassComponent);
+                onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
             }
         ]
     }

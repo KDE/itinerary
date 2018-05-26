@@ -76,8 +76,15 @@ Kirigami.ApplicationWindow {
         id: contextDrawer
     }
     pageStack.initialPage: mainPageComponent
+
     Component {
         id: mainPageComponent
         App.TimelinePage {}
+    }
+    Component {
+        id: pkpassComponent
+        App.PkPassPage {
+            pass: _pkpassManager.passObject(passId)
+        }
     }
 }

@@ -31,17 +31,4 @@ Kirigami.AbstractCard {
     readonly property double headerFontScale: 1.25
 
     showClickFeedback: true
-
-    function showBoardingPass()
-    {
-        applicationWindow().pageStack.push(pkpassComponent);
-    }
-
-    Component {
-        id: pkpassComponent
-        App.PkPassPage {
-            passId: root.passId
-            pass: _pkpassManager.passObject(root.passId)
-        }
-    }
 }
