@@ -29,15 +29,33 @@ Kirigami.ScrollablePage {
     property variant reservation
     property string passId
 
+    Kirigami.OverlaySheet {
+        id: deleteWarningSheet
+
+        QQC2.Label {
+            text: qsTr("Do you really want to delete this event?")
+            wrapMode: Text.WordWrap
+        }
+
+        footer: RowLayout {
+            QQC2.Button {
+                Layout.alignment: Qt.AlignHCenter
+                text: qsTr("Delete")
+                icon.name: "edit-delete"
+                onClicked: {
+                    _reservationManager.removeReservation(root.resId)
+                    applicationWindow().pageStack.pop()
+                }
+            }
+        }
+    }
+
     actions {
         contextualActions: [
             Kirigami.Action {
                 iconName: "edit-delete"
                 text: qsTr("Delete")
-                onTriggered: {
-                    _reservationManager.removeReservation(root.resId)
-                    applicationWindow().pageStack.pop()
-                }
+                onTriggered: deleteWarningSheet.sheetOpen = true
             },
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
