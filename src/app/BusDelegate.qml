@@ -89,6 +89,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.BusPage {
+            resId: root.resId
             reservation: root.reservation
             passId: root.passId
         }

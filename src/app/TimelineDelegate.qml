@@ -24,6 +24,7 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
+    property string resId
     property var reservation
     property string passId
     property var rangeType

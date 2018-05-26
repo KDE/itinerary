@@ -25,11 +25,20 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
+    property string resId
     property variant reservation
     property string passId
 
     actions {
         contextualActions: [
+            Kirigami.Action {
+                iconName: "edit-delete"
+                text: qsTr("Delete")
+                onTriggered: {
+                    _reservationManager.removeReservation(root.resId)
+                    applicationWindow().pageStack.pop()
+                }
+            },
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
                 text: qsTr("Boarding Pass")

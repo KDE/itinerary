@@ -76,6 +76,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.HotelPage {
+            resId: root.resId
             reservation: root.reservation
         }
     }
