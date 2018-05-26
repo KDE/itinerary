@@ -44,7 +44,7 @@ Kirigami.AbstractCard {
 
             QQC2.Label {
                 text: qsTr("⚠ Entering %1").arg(Localizer.countryName(countryInfo.isoCode))
-                color: Kirigami.Theme.negativeTextColor
+                color: Kirigami.Theme.neutralTextColor
             }
         }
     }
@@ -67,12 +67,12 @@ Kirigami.AbstractCard {
         }
         QQC2.Label {
             text: qsTr("Some incompatible power sockets: %1").arg(countryInfo.powerSocketTypes)
-            color: Kirigami.Theme.negativeTextColor
+            color: Kirigami.Theme.neutralTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocket != ""
         }
         QQC2.Label {
             text: qsTr("Some incompatible power plugs: %1").arg(countryInfo.powerPlugTypes)
-            color: Kirigami.Theme.negativeTextColor
+            color: Kirigami.Theme.neutralTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerPlugTypes != ""
         }
     }
