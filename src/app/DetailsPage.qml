@@ -27,13 +27,12 @@ Kirigami.ScrollablePage {
     id: root
     property variant reservation
     property string passId
-    property variant pass
 
     Component {
         id: pkpassComponent
         App.PkPassPage {
             passId: root.passId
-            pass: root.pass
+            pass: _pkpassManager.passObject(root.passId)
         }
     }
 
