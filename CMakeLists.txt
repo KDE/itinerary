@@ -27,6 +27,8 @@ find_package(KPimItinerary CONFIG REQUIRED)
 find_package(QmlLint)
 set_package_properties(QmlLint PROPERTIES URL "https://qt.io" PURPOSE "Validate QML code.")
 find_package(SharedMimeInfo 1.0 REQUIRED)
+find_package(ZLIB REQUIRED)
+set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather forecast data.")
 
 include(ECMQMLModules)
 ecm_find_qmlmodule(org.kde.prison 1.0)
