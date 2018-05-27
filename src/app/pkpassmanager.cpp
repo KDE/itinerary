@@ -41,7 +41,7 @@ PkPassManager::~PkPassManager() = default;
 
 QVector<QString> PkPassManager::passes() const
 {
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
     QVector<QString> passIds;
@@ -94,7 +94,7 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     if (!url.isLocalFile())
         return; // TODO
 
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
     std::unique_ptr<KPkPass::Pass> newPass(KPkPass::Pass::fromFile(url.toLocalFile()));
@@ -146,7 +146,7 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
 
 void PkPassManager::removePass(const QString& passId)
 {
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
     QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1String(".pkpass"));
     emit passRemoved(passId);
     delete m_passes.take(passId);

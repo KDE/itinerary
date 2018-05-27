@@ -56,7 +56,7 @@ void ReservationManager::setPkPassManager(PkPassManager* mgr)
 
 QVector<QString> ReservationManager::reservations() const
 {
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations");
     QDir::root().mkpath(basePath);
 
     QVector<QString> resIds;
@@ -129,7 +129,7 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
     postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     postproc.process(resData);
 
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QDir::root().mkpath(basePath);
 
     for (auto res : postproc.result()) {
@@ -171,7 +171,7 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
 void ReservationManager::addReservation(const QVariant &res)
 {
     QString resId = QUuid::createUuid().toString();
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QDir::root().mkpath(basePath);
     const QString path = basePath + resId + QLatin1String(".jsonld");
     QFile f(path);
@@ -187,7 +187,7 @@ void ReservationManager::addReservation(const QVariant &res)
 
 void ReservationManager::removeReservation(const QString& id)
 {
-    const auto basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
     QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
     emit reservationRemoved(id);
     m_reservations.remove(id);

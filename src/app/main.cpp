@@ -97,7 +97,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addPositionalArgument("pass", QStringLiteral("PkPass file to import."));
+    parser.addPositionalArgument(QStringLiteral("pass"), QStringLiteral("PkPass file to import."));
     parser.process(app);
 
     PkPassManager passMgr;
