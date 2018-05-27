@@ -333,6 +333,10 @@ void TimelineModel::updateInformationElements()
 
 std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCountyInfo(std::vector<Element>::iterator it)
 {
+    if (it == m_elements.begin()) {
+        return it;
+    }
+
     auto it2 = it;
     --it2;
     if ((*it2).elementType == CountryInfo) {
