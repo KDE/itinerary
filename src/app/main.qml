@@ -69,6 +69,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: {
                     _pkpassManager.updatePasses();
                 }
+            },
+            Kirigami.Action {
+                text: qsTr("Settings...")
+                iconName: "settings-configure"
+                onTriggered: pageStack.push(settingsComponent)
             }
         ]
     }
@@ -86,5 +91,9 @@ Kirigami.ApplicationWindow {
         App.PkPassPage {
             pass: _pkpassManager.passObject(passId)
         }
+    }
+    Component {
+        id: settingsComponent
+        App.SettingsPage {}
     }
 }

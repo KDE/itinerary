@@ -47,6 +47,7 @@ if (ANDROID)
         edit-delete
         go-next-symbolic
         map-symbolic
+        settings-configure
         view-calendar-day
         view-refresh
     )
@@ -70,6 +71,7 @@ qml_lint(
     PlaceDelegate.qml
     RestaurantDelegate.qml
     RestaurantPage.qml
+    SettingsPage.qml
     TicketTokenDelegate.qml
     TimelineDelegate.qml
     TimelinePage.qml
