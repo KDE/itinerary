@@ -31,16 +31,16 @@ struct WeatherTile
 
     inline constexpr WeatherTile() = default;
     inline constexpr WeatherTile(float latitude, float longitude)
-        : x(uint16_t(std::round(latitude * WeatherTile::Size)))
-        , y(uint16_t(std::round(longitude * WeatherTile::Size)))
+        : x(uint16_t(::round(latitude * WeatherTile::Size)))
+        , y(uint16_t(::round(longitude * WeatherTile::Size)))
     {}
 
-    inline constexpr bool operator<(WeatherTile other)
+    inline bool operator<(WeatherTile other) const
     {
         return std::tie(x, y) < std::tie(other.x, other.y);
     }
 
-    inline constexpr bool operator==(WeatherTile other)
+    inline constexpr bool operator==(WeatherTile other) const
     {
         return x == other.x && y == other.y;
     }
