@@ -187,11 +187,11 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
         url.setScheme(QStringLiteral("https"));
         url.setHost(QStringLiteral("www.openstreetmap.org"));
         url.setPath(QStringLiteral("/directions"));
-        const QString fragment = QLatin1String("route=") + QString::number(from.coordinate().latitude())
-                                    + QLatin1Char(',') + QString::number(from.coordinate().longitude())
-                                    + QLatin1Char(',') + QString::number(geo.latitude())
-                                    + QLatin1Char(',') + QString::number(geo.longitude());
-        url.setFragment(fragment);
+        QUrlQuery query;
+        query.addQueryItem(QLatin1String("route"),
+            QString::number(from.coordinate().latitude()) + QLatin1Char(',') + QString::number(from.coordinate().longitude())
+            + QLatin1Char(';') + QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
+        url.setQuery(query);
         QDesktopServices::openUrl(url);
         return;
     }
