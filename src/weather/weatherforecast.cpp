@@ -75,7 +75,28 @@ void WeatherForecast::setSymbolType(WeatherForecast::SymbolType type)
 
 QString WeatherForecast::symbolIconName() const
 {
-    return {}; // TODO map to breeze icons and determine day/night version
+    // TODO night icon handling
+    switch (symbolType()) {
+        case Unknown: return {};
+        case Clear: return QStringLiteral("weather-clear");
+        case LightClouds: return QStringLiteral("weather-few-clouds");
+        case PartlyCloudy: return QStringLiteral("weather-clouds");
+        case RainShowers: return QStringLiteral("weather-showers-day");
+        case LightRainShowers: return QStringLiteral("weather-showers-scattered-day");
+        case LightSnowShowers: return QStringLiteral("weather-snow-scattered-day");
+        case ThunderStormShowers: return QStringLiteral("weather-storm-day");
+        // ^ have day and night variants
+        // v only universal variants
+        case Clouds: return QStringLiteral("weather-many-clouds");
+        case Fog: return QStringLiteral("weather-fog");
+        case Rain: return QStringLiteral("weather-showers");
+        case LightRain: return QStringLiteral("weather-showers-scattered");
+        case Hail: return QStringLiteral("weather-hail");
+        case Snow: return QStringLiteral("weather-snow");
+        case LightSnow: return QStringLiteral("weather-snow-scattered");
+        case ThunderStorm: return QStringLiteral("weather-storm");
+    }
+    return {};
 }
 
 void WeatherForecast::merge(WeatherForecast &other)

@@ -31,6 +31,10 @@ class WeatherForecastPrivate;
 class WeatherForecast
 {
     Q_GADGET
+    Q_PROPERTY(bool valid READ isValid CONSTANT)
+    Q_PROPERTY(float temperature READ temperature CONSTANT)
+    Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
+
 public:
     /** Weather symbol, aligned with the Breeze icon theme, not the data source symbols. */
     enum SymbolType : uint8_t {

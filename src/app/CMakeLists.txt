@@ -51,6 +51,29 @@ if (ANDROID)
         settings-configure
         view-calendar-day
         view-refresh
+
+        weather-clear
+        weather-clear-night
+        weather-few-clouds
+        weather-few-clouds-night
+        weather-clouds
+        weather-clouds-night
+        weather-showers-day
+        weather-showers-night
+        weather-showers-scattered-day
+        weather-showers-scattered-night
+        weather-snow-scattered-day
+        weather-snow-scattered-night
+        weather-storm-day
+        weather-storm-night
+        weather-many-clouds
+        weather-fog
+        weather-showers
+        weather-showers-scattered
+        weather-hail
+        weather-snow
+        weather-snow-scattered
+        weather-storm
     )
 else ()
     target_link_libraries(itinerary-app PRIVATE Qt5::Positioning)
