@@ -290,49 +290,53 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
 }
 
 // Icon mapping: https://api.met.no/weatherapi/weathericon/1.1/documentation
-static const WeatherForecast::SymbolType symbol_map[] = {
-    WeatherForecast::Unknown, // 0
-    WeatherForecast::Clear, // 1 Sun
-    WeatherForecast::LightClouds, // 2 LightCloud
-    WeatherForecast::PartlyCloudy, // 3 PartlyCloud
-    WeatherForecast::Clouds, // 4 Cloud
-    WeatherForecast::LightRainShowers, // 5 LightRainSun
-    WeatherForecast::LightRainShowers, // 6 LightRainThunderSun
-    WeatherForecast::Hail, // 7 SleetSun
-    WeatherForecast::LightSnowShowers, // 8 SnowSun
-    WeatherForecast::LightRain, // 9 LightRain
-    WeatherForecast::Rain, // 10 Rain
-    WeatherForecast::ThunderStorm, // 11 RainThunder
-    WeatherForecast::Hail, // 12 Sleet
-    WeatherForecast::Snow, // 13 Snow
-    WeatherForecast::Snow, // 14 SnowThunder
-    WeatherForecast::Fog, // 15 Fog
-    WeatherForecast::Hail, // 20 SleetSunThunder
-    WeatherForecast::Unknown, // 21 SnowSunThunder
-    WeatherForecast::LightRain, // 22 LightRainThunder
-    WeatherForecast::Hail, // 23 SleetThunder
-    WeatherForecast::ThunderStormShowers, // 24 DrizzleThunderSun
-    WeatherForecast::ThunderStormShowers, // 25 RainThunderSun
-    WeatherForecast::ThunderStormShowers, // 26 LightSleetThunderSun
-    WeatherForecast::Hail, // 27 HeavySleetThunderSun
-    WeatherForecast::LightSnowShowers, // 28 LightSnowThunderSun
-    WeatherForecast::Snow, // 29 HeavySnowThunderSun
-    WeatherForecast::ThunderStorm, // 30 DrizzleThunder
-    WeatherForecast::Hail, // 31 LightSleetThunder
-    WeatherForecast::Hail, // 32 HeavySleetThunder
-    WeatherForecast::Snow, // 33 LightSnowThunder
-    WeatherForecast::Snow, // 34 HeavySnowThunder
-    WeatherForecast::LightRainShowers, // 40 DrizzleSun
-    WeatherForecast::RainShowers, // 41 RainSun
-    WeatherForecast::Hail, // 42 LightSleetSun
-    WeatherForecast::Hail, // 43 HeavySleetSun
-    WeatherForecast::LightSnowShowers, // 44 LightSnowSun
-    WeatherForecast::Snow, // 45 HeavysnowSun
-    WeatherForecast::LightRain, // 46 Drizzle
-    WeatherForecast::Hail, // 47 LightSleet
-    WeatherForecast::Hail, // 48 HeavySleet
-    WeatherForecast::LightSnow, // 49 LightSnow
-    WeatherForecast::Snow// 50 HeavySnow
+struct symbol_map_t {
+    uint8_t id;
+    WeatherForecast::SymbolType type;
+};
+
+static const symbol_map_t symbol_map[] = {
+    {  1, WeatherForecast::Clear }, // 1 Sun
+    {  2, WeatherForecast::LightClouds }, // 2 LightCloud
+    {  3, WeatherForecast::PartlyCloudy }, // 3 PartlyCloud
+    {  4, WeatherForecast::Clouds }, // 4 Cloud
+    {  5, WeatherForecast::LightRainShowers }, // 5 LightRainSun
+    {  6, WeatherForecast::LightRainShowers }, // 6 LightRainThunderSun
+    {  7, WeatherForecast::Hail }, // 7 SleetSun
+    {  8, WeatherForecast::LightSnowShowers }, // 8 SnowSun
+    {  9, WeatherForecast::LightRain }, // 9 LightRain
+    { 10, WeatherForecast::Rain }, // 10 Rain
+    { 11, WeatherForecast::ThunderStorm }, // 11 RainThunder
+    { 12, WeatherForecast::Hail }, // 12 Sleet
+    { 13, WeatherForecast::Snow }, // 13 Snow
+    { 14, WeatherForecast::Snow }, // 14 SnowThunder
+    { 15, WeatherForecast::Fog }, // 15 Fog
+    { 20, WeatherForecast::Hail }, // 20 SleetSunThunder
+    { 21, WeatherForecast::Unknown }, // 21 SnowSunThunder
+    { 22, WeatherForecast::LightRain }, // 22 LightRainThunder
+    { 23, WeatherForecast::Hail }, // 23 SleetThunder
+    { 24, WeatherForecast::ThunderStormShowers }, // 24 DrizzleThunderSun
+    { 25, WeatherForecast::ThunderStormShowers }, // 25 RainThunderSun
+    { 26, WeatherForecast::ThunderStormShowers }, // 26 LightSleetThunderSun
+    { 27, WeatherForecast::Hail }, // 27 HeavySleetThunderSun
+    { 28, WeatherForecast::LightSnowShowers }, // 28 LightSnowThunderSun
+    { 29, WeatherForecast::Snow }, // 29 HeavySnowThunderSun
+    { 30, WeatherForecast::ThunderStorm }, // 30 DrizzleThunder
+    { 31, WeatherForecast::Hail }, // 31 LightSleetThunder
+    { 32, WeatherForecast::Hail }, // 32 HeavySleetThunder
+    { 33, WeatherForecast::Snow }, // 33 LightSnowThunder
+    { 34, WeatherForecast::Snow }, // 34 HeavySnowThunder
+    { 40, WeatherForecast::LightRainShowers }, // 40 DrizzleSun
+    { 41, WeatherForecast::RainShowers }, // 41 RainSun
+    { 42, WeatherForecast::Hail }, // 42 LightSleetSun
+    { 43, WeatherForecast::Hail }, // 43 HeavySleetSun
+    { 44, WeatherForecast::LightSnowShowers }, // 44 LightSnowSun
+    { 45, WeatherForecast::Snow }, // 45 HeavysnowSun
+    { 46, WeatherForecast::LightRain }, // 46 Drizzle
+    { 47, WeatherForecast::Hail }, // 47 LightSleet
+    { 48, WeatherForecast::Hail }, // 48 HeavySleet
+    { 49, WeatherForecast::LightSnow }, // 49 LightSnow
+    { 50, WeatherForecast::Snow } // 50 HeavySnow
 };
 
 WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &reader) const
@@ -354,8 +358,11 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
                     if (symId > 100) {
                         symId -= 100; // map polar night symbols
                     }
-                    if (symId <= 50) {
-                        fc.setSymbolType(symbol_map[symId]);
+                    const auto it = std::lower_bound(std::begin(symbol_map), std::end(symbol_map), symId, [](symbol_map_t lhs, uint8_t rhs) {
+                        return lhs.id < rhs;
+                    });
+                    if (it != std::end(symbol_map) && (*it).id == symId) {
+                        fc.setSymbolType((*it).type);
                     }
                 }
                 break;
