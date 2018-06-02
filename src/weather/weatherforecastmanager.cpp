@@ -89,6 +89,11 @@ QVariant WeatherForecastManager::forecast(float latitude, float longitude, const
 
 void WeatherForecastManager::fetchTile(WeatherTile tile)
 {
+    QFileInfo fi(cachePath(tile) + QLatin1String("forecast.xml"));
+    if (fi.exists() && fi.lastModified().toUTC().addSecs(3600 * 2) >= QDateTime::currentDateTimeUtc()) { // cache is already new enough
+        return;
+    }
+
     m_pendingTiles.push_back(tile);
     fetchNext();
 }

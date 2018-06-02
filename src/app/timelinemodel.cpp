@@ -382,7 +382,7 @@ void TimelineModel::insertWeatherElements()
         }
 
         // TODO determine correct location, merge full time range
-//         m_weatherMgr->monitorLocation(52, 13.5);
+        m_weatherMgr->monitorLocation(52, 13.5);
         const auto fc = m_weatherMgr->forecast(52, 13.5, QDateTime(date, QTime(12, 0)));
         if (!fc.isValid()) {
             date = date.addDays(1);
