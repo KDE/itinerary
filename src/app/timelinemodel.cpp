@@ -381,20 +381,21 @@ void TimelineModel::insertWeatherElements()
             continue;
         }
 
-        // TODO determine correct location, merge full time range
-        m_weatherMgr->monitorLocation(52, 13.5);
-        const auto fc = m_weatherMgr->forecast(52, 13.5, QDateTime(date, QTime(12, 0)));
-        if (!fc.isValid()) {
-            date = date.addDays(1);
-            ++it;
-            continue;
+        const auto geo = geoCoordinate(it);
+        if (geo.isValid()) {
+            m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
+            const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(12, 0)));
+            if (fc.isValid()) {
+                const auto row = std::distance(m_elements.begin(), it);
+                beginInsertRows({}, row, row);
+                it = m_elements.insert(it, Element{{}, fc, QDateTime(date, QTime()), WeatherForecast, SelfContained});
+                endInsertRows();
+                date = date.addDays(1);
+                continue;
+            }
         }
-
-        const auto row = std::distance(m_elements.begin(), it);
-        beginInsertRows({}, row, row);
-        it = m_elements.insert(it, Element{{}, fc, QDateTime(date, QTime()), WeatherForecast, SelfContained});
-        endInsertRows();
         date = date.addDays(1);
+        ++it;
     }
 }
 
@@ -410,4 +411,50 @@ void TimelineModel::updateWeatherElements()
     }
 
     insertWeatherElements();
+}
+
+GeoCoordinates TimelineModel::geoCoordinate(std::vector<Element>::iterator it) const
+{
+    if (it == m_elements.begin()) {
+        return {};
+    }
+    --it;
+
+    do {
+        if ((*it).id.isEmpty()) {
+            --it;
+            continue;
+        }
+
+        const auto res = m_resMgr->reservation((*it).id);
+        // things that change location
+        if (JsonLd::isA<FlightReservation>(res)) {
+            return res.value<FlightReservation>().reservationFor().value<KItinerary::Flight>().arrivalAirport().geo();
+        }
+        if (JsonLd::isA<TrainReservation>(res)) {
+            return res.value<TrainReservation>().reservationFor().value<KItinerary::TrainTrip>().arrivalStation().geo();
+        }
+        if (JsonLd::isA<BusReservation>(res)) {
+            return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalStation().geo();
+        }
+
+        // things that don't change location
+        GeoCoordinates geo;
+        if (JsonLd::isA<LodgingReservation>(res)) {
+            geo = res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().geo();
+        }
+        if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+            geo = res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().geo();
+        }
+        if (JsonLd::isA<TouristAttractionVisit>(res)) {
+            geo = res.value<TouristAttractionVisit>().touristAttraction().geo();
+        }
+        if (geo.isValid()) {
+            return geo;
+        }
+
+        --it;
+    } while (it != m_elements.begin());
+
+    return {};
 }

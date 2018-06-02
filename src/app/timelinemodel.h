@@ -24,6 +24,10 @@
 class ReservationManager;
 class WeatherForecastManager;
 
+namespace KItinerary {
+class GeoCoordinates;
+}
+
 class TimelineModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -99,6 +103,8 @@ private:
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
     void insertWeatherElements();
     void updateWeatherElements();
+    KItinerary::GeoCoordinates geoCoordinate(std::vector<Element>::iterator it) const;
+
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
