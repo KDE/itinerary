@@ -19,10 +19,13 @@
 
 #include <QDateTime>
 
+#include <limits>
+
 class WeatherForecastPrivate : public QSharedData {
 public:
     QDateTime m_dt;
-    float m_temp = -300;
+    float m_minTemp = std::numeric_limits<float>::max();
+    float m_maxTemp = std::numeric_limits<float>::min();
     WeatherForecast::SymbolType m_symbol = WeatherForecast::Unknown;
 };
 
@@ -51,15 +54,26 @@ void WeatherForecast::setDateTime(const QDateTime &dt)
     d->m_dt = dt;
 }
 
-float WeatherForecast::temperature() const
+float WeatherForecast::minimumTemperature() const
 {
-    return d->m_temp;
+    return d->m_minTemp;
 }
 
-void WeatherForecast::setTemperature(float t)
+void WeatherForecast::setMinimumTemperature(float t)
 {
     d.detach();
-    d->m_temp = t;
+    d->m_minTemp = t;
+}
+
+float WeatherForecast::maximumTemperature() const
+{
+    return d->m_maxTemp;
+}
+
+void WeatherForecast::setMaximumTemperature(float t)
+{
+    d.detach();
+    d->m_maxTemp = t;
 }
 
 WeatherForecast::SymbolType WeatherForecast::symbolType() const
@@ -102,9 +116,9 @@ QString WeatherForecast::symbolIconName() const
 void WeatherForecast::merge(WeatherForecast &other)
 {
     d.detach();
-    if (d->m_temp < -273.15) {
-        d->m_temp = other.temperature();
-    }
+    d->m_minTemp = std::min(other.minimumTemperature(), d->m_minTemp);
+    d->m_maxTemp = std::max(other.maximumTemperature(), d->m_maxTemp);
+
     if (d->m_symbol == Unknown) {
         d->m_symbol = other.symbolType();
     }

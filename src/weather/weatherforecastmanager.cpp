@@ -342,7 +342,13 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
         switch (reader.tokenType()) {
             case QXmlStreamReader::StartElement:
                 if (reader.name() == QLatin1String("temperature")) {
-                    fc.setTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
+                    const auto t = reader.attributes().value(QLatin1String("value")).toFloat();
+                    fc.setMinimumTemperature(t);
+                    fc.setMaximumTemperature(t);
+                } else if (reader.name() == QLatin1String("minTemperature")) {
+                    fc.setMinimumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
+                } else if (reader.name() == QLatin1String("maxTemperature")) {
+                    fc.setMaximumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
                 } else if (reader.name() == QLatin1String("symbol")) {
                     auto symId = reader.attributes().value(QLatin1String("number")).toInt();
                     if (symId > 100) {

@@ -57,13 +57,16 @@ private slots:
         QVERIFY(updateSpy.wait());
 
         fc = mgr.forecast(46.1, 7.78, now).value<WeatherForecast>();
-        qDebug() << fc.dateTime() << fc.temperature() << fc.symbolType() << fc.symbolIconName();
+        qDebug() << fc.dateTime() << fc.minimumTemperature() << fc.maximumTemperature() << fc.symbolType() << fc.symbolIconName();
         QVERIFY(fc.isValid());
         QVERIFY(fc.dateTime().isValid());
         QVERIFY(fc.dateTime() <= now);
         QVERIFY(fc.symbolType() != WeatherForecast::Unknown);
-        QVERIFY(fc.temperature() > -50);
-        QVERIFY(fc.temperature() < 50);
+        QVERIFY(fc.minimumTemperature() > -50);
+        QVERIFY(fc.minimumTemperature() < 50);
+        QVERIFY(fc.maximumTemperature() > -50);
+        QVERIFY(fc.maximumTemperature() < 50);
+        QVERIFY(fc.maximumTemperature() >= fc.minimumTemperature());
     }
 };
 

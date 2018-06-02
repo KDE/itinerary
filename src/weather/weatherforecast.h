@@ -32,7 +32,8 @@ class WeatherForecast
 {
     Q_GADGET
     Q_PROPERTY(bool valid READ isValid CONSTANT)
-    Q_PROPERTY(float temperature READ temperature CONSTANT)
+    Q_PROPERTY(float minimumTemperature READ minimumTemperature CONSTANT)
+    Q_PROPERTY(float maximumTemperature READ maximumTemperature CONSTANT)
     Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
 
 public:
@@ -71,9 +72,10 @@ public:
     QDateTime dateTime() const;
     void setDateTime(const QDateTime &dt);
 
-    // TODO is this enough or do we need min/max ranges?
-    float temperature() const;
-    void setTemperature(float t);
+    float minimumTemperature() const;
+    void setMinimumTemperature(float t);
+    float maximumTemperature() const;
+    void setMaximumTemperature(float t);
 
     SymbolType symbolType() const;
     void setSymbolType(SymbolType type);

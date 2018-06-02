@@ -51,7 +51,9 @@ Kirigami.AbstractCard {
     contentItem: ColumnLayout {
         Layout.fillWidth: true
         QQC2.Label {
-            text: qsTr("Temperature: %1 °C").arg(weatherForecast.temperature)
+            text: qsTr("Temperature: %1 °C / %2 °C")
+                .arg(weatherForecast.minimumTemperature)
+                .arg(weatherForecast.maximumTemperature)
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
         }
