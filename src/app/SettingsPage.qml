@@ -42,6 +42,8 @@ Kirigami.ScrollablePage {
         }
         QQC2.Switch {
             id: weatherSwitch
+            checked: _settings.weatherForecastEnabled
+            onToggled: _settings.weatherForecastEnabled = checked
         }
         QQC2.Label {
             Layout.columnSpan: 2

@@ -38,6 +38,9 @@ public:
     explicit WeatherForecastManager(QObject *parent = nullptr);
     ~WeatherForecastManager();
 
+    /** Kill switch for network operations. */
+    void setAllowNetworkAccess(bool enabled);
+
     /** Monitor the specified location for weather forecasts. */
     void monitorLocation(float latitude, float longitude);
     // TODO unmonitor location(s)?
@@ -65,6 +68,7 @@ private:
 
     QNetworkAccessManager *m_nam = nullptr;
     QNetworkReply *m_pendingReply = nullptr;
+    bool m_allowNetwork = false;
 };
 
 #endif // WEATHERFORECASTMANAGER_H

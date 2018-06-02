@@ -25,6 +25,9 @@
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
 #include "reservationmanager.h"
+#include "settings.h"
+
+#include <weatherforecastmanager.h>
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/Ticket>
@@ -107,6 +110,11 @@ int main(int argc, char **argv)
     timelineModel.setReservationManager(&resMgr);
 
     ApplicationController appController;
+    Settings settings;
+
+    WeatherForecastManager weatherForecastMgr;
+    weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
+    QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
@@ -127,6 +135,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
     engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
+    engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.load(QStringLiteral(":/main.qml"));
 
     for (const auto &file : parser.positionalArguments()) {

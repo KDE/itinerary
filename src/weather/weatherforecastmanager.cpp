@@ -45,6 +45,12 @@ WeatherForecastManager::WeatherForecastManager(QObject *parent)
 
 WeatherForecastManager::~WeatherForecastManager() = default;
 
+void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
+{
+    m_allowNetwork = enabled;
+    fetchNext();
+}
+
 void WeatherForecastManager::monitorLocation(float latitude, float longitude)
 {
     WeatherTile t{latitude, longitude};
@@ -89,7 +95,7 @@ void WeatherForecastManager::fetchTile(WeatherTile tile)
 
 void WeatherForecastManager::fetchNext()
 {
-    if (m_pendingReply || m_pendingTiles.empty()) {
+    if (!m_allowNetwork || m_pendingReply || m_pendingTiles.empty()) {
         return;
     }
 

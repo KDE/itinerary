@@ -45,6 +45,7 @@ private slots:
     void testForecastRetrieval()
     {
         WeatherForecastManager mgr;
+        mgr.setAllowNetworkAccess(true);
         const auto now = QDateTime::currentDateTimeUtc().addSecs(1800);
         auto fc = mgr.forecast(46.1, 7.78, now).value<WeatherForecast>();
         QVERIFY(!fc.isValid());
