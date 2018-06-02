@@ -54,7 +54,7 @@ void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 void WeatherForecastManager::monitorLocation(float latitude, float longitude)
 {
     WeatherTile t{latitude, longitude};
-    qDebug() << latitude << longitude << t.x << t.y;
+    qDebug() << latitude << longitude << t.lat << t.lon;
 
     auto it = std::lower_bound(m_monitoredTiles.begin(), m_monitoredTiles.end(), t);
     if (it != m_monitoredTiles.end() && (*it) == t) {
@@ -111,8 +111,8 @@ void WeatherForecastManager::fetchNext()
     url.setHost(QStringLiteral("api.met.no"));
     url.setPath(QStringLiteral("/weatherapi/locationforecast/1.9/"));
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("lat"), QString::number(tile.x / WeatherTile::Size));
-    query.addQueryItem(QStringLiteral("lon"), QString::number(tile.y / WeatherTile::Size));
+    query.addQueryItem(QStringLiteral("lat"), QString::number(tile.lat / WeatherTile::Size));
+    query.addQueryItem(QStringLiteral("lon"), QString::number(tile.lon / WeatherTile::Size));
     url.setQuery(query);
 
     qDebug() << url;
@@ -153,8 +153,8 @@ QString WeatherForecastManager::cachePath(WeatherTile tile) const
 {
     const auto path = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)
         + QLatin1String("/weather/")
-        + QString::number(tile.x) + QLatin1Char('/')
-        + QString::number(tile.y) + QLatin1Char('/'));
+        + QString::number(tile.lat) + QLatin1Char('/')
+        + QString::number(tile.lon) + QLatin1Char('/'));
     QDir().mkpath(path);
     return path;
 }
@@ -162,7 +162,7 @@ QString WeatherForecastManager::cachePath(WeatherTile tile) const
 void WeatherForecastManager::writeToCacheFile(QNetworkReply* reply) const
 {
     const auto tile = reply->request().attribute(QNetworkRequest::User).value<WeatherTile>();
-    qDebug() << tile.x << tile.y;
+    qDebug() << tile.lat << tile.lon;
     qDebug() << reply->rawHeaderPairs();
     QFile f(cachePath(tile) + QLatin1String("forecast.xml"));
     if (!f.open(QFile::WriteOnly)) {

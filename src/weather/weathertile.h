@@ -30,23 +30,23 @@ struct WeatherTile
     static const constexpr auto Size = 10.0;
 
     inline constexpr WeatherTile() = default;
-    inline constexpr WeatherTile(float latitude, float longitude)
-        : x(uint16_t(::round(latitude * WeatherTile::Size)))
-        , y(uint16_t(::round(longitude * WeatherTile::Size)))
+    inline WeatherTile(float latitude, float longitude)
+        : lat(uint16_t(::round(latitude * WeatherTile::Size)))
+        , lon(uint16_t(::round(longitude * WeatherTile::Size)))
     {}
 
     inline bool operator<(WeatherTile other) const
     {
-        return std::tie(x, y) < std::tie(other.x, other.y);
+        return std::tie(lat, lon) < std::tie(other.lat, other.lon);
     }
 
     inline constexpr bool operator==(WeatherTile other) const
     {
-        return x == other.x && y == other.y;
+        return lat == other.lat && lon == other.lon;
     }
 
-    uint16_t x = 0;
-    uint16_t y = 0;
+    uint16_t lat = 0;
+    uint16_t lon = 0;
 };
 
 Q_DECLARE_METATYPE(WeatherTile)
