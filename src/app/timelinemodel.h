@@ -22,6 +22,7 @@
 #include <QDateTime>
 
 class ReservationManager;
+class WeatherForecastManager;
 
 class TimelineModel : public QAbstractListModel
 {
@@ -38,7 +39,8 @@ public:
         TodayEmptyRole,
         IsTodayRole,
         ElementRangeRole,
-        CountryInformationRole
+        CountryInformationRole,
+        WeatherForecastRole
     };
 
     enum ElementType {
@@ -67,6 +69,7 @@ public:
     ~TimelineModel();
 
     void setReservationManager(ReservationManager *mgr);
+    void setWeatherForecastManager(WeatherForecastManager *mgr);
 
     QVariant data(const QModelIndex& index, int role) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -94,8 +97,11 @@ private:
 
     void updateInformationElements();
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
+    void insertWeatherElements();
+    void updateWeatherElements();
 
     ReservationManager *m_resMgr = nullptr;
+    WeatherForecastManager *m_weatherMgr = nullptr;
     std::vector<Element> m_elements;
 };
 

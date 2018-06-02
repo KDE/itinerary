@@ -11,6 +11,7 @@ ecm_qt_declare_logging_category(itinerary_srcs
 )
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
+    itinerary-weather
     KPim::Itinerary
     KPim::PkPass
     KF5::I18n
@@ -28,7 +29,6 @@ add_executable(itinerary-app
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    itinerary-weather
     Qt5::Quick
     KF5::Contacts
 )

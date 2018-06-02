@@ -20,6 +20,8 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <weatherforecastmanager.h>
+
 #include <KItinerary/BusTrip>
 #include <KItinerary/CountryDb>
 #include <KItinerary/Flight>
@@ -136,6 +138,13 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     emit todayRowChanged();
 }
 
+void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
+{
+    m_weatherMgr = mgr;
+    insertWeatherElements();
+    connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
+}
+
 int TimelineModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid() || !m_resMgr) {
@@ -181,6 +190,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case ElementRangeRole:
             return elem.rangeType;
         case CountryInformationRole:
+        case WeatherForecastRole:
             return elem.content;
     }
     return {};
@@ -198,6 +208,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(IsTodayRole, "isToday");
     names.insert(ElementRangeRole, "rangeType");
     names.insert(CountryInformationRole, "countryInformation");
+    names.insert(WeatherForecastRole, "weatherForecast");
     return names;
 }
 
@@ -298,6 +309,7 @@ void TimelineModel::updateInformationElements()
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
         switch ((*it).elementType) {
             case TodayMarker:
+            case WeatherForecast:
                 it = erasePreviousCountyInfo(it);
                 continue;
             case CountryInfo:
@@ -329,6 +341,8 @@ void TimelineModel::updateInformationElements()
 
         previousCountry = newCountry;
     }
+
+    insertWeatherElements();
 }
 
 std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCountyInfo(std::vector<Element>::iterator it)
@@ -340,10 +354,60 @@ std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCounty
     auto it2 = it;
     --it2;
     if ((*it2).elementType == CountryInfo) {
-        auto row = std::distance(m_elements.begin(), it2);
+        const auto row = std::distance(m_elements.begin(), it2);
         beginRemoveRows({}, row, row);
         it = m_elements.erase(it2);
         endRemoveRows();
     }
     return it;
+}
+
+void TimelineModel::insertWeatherElements()
+{
+    if (!m_weatherMgr) {
+        return;
+    }
+
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const Element &e) { return e.elementType == TodayMarker; });
+    auto date = QDate::currentDate();
+    for (; it != m_elements.end() && date < QDate::currentDate().addDays(9);) {
+        if ((*it).dt.date() < date || (*it).elementType == TodayMarker) {
+            ++it;
+            continue;
+        }
+        if (date == (*it).dt.date() && (*it).elementType == WeatherForecast) { // weather element already present
+            date = date.addDays(1);
+            ++it;
+            continue;
+        }
+
+        // TODO determine correct location, merge full time range
+//         m_weatherMgr->monitorLocation(52, 13.5);
+        const auto fc = m_weatherMgr->forecast(52, 13.5, QDateTime(date, QTime(12, 0)));
+        if (!fc.isValid()) {
+            date = date.addDays(1);
+            ++it;
+            continue;
+        }
+
+        const auto row = std::distance(m_elements.begin(), it);
+        beginInsertRows({}, row, row);
+        it = m_elements.insert(it, Element{{}, fc, QDateTime(date, QTime()), WeatherForecast, SelfContained});
+        endInsertRows();
+        date = date.addDays(1);
+    }
+}
+
+void TimelineModel::updateWeatherElements()
+{
+    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+        if ((*it).elementType == WeatherForecast) {
+            // TODO see above
+            (*it).content = m_weatherMgr->forecast(52, 13.5, QDateTime((*it).dt.date(), QTime(12, 0)));
+            const auto idx = index(std::distance(m_elements.begin(), it), 0);
+            emit dataChanged(idx, idx);
+        }
+    }
+
+    insertWeatherElements();
 }

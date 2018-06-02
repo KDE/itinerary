@@ -115,6 +115,7 @@ int main(int argc, char **argv)
     WeatherForecastManager weatherForecastMgr;
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
+    timelineModel.setWeatherForecastManager(&weatherForecastMgr);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
