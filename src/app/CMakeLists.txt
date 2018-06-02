@@ -102,6 +102,7 @@ qml_lint(
     TouristAttractionDelegate.qml
     TrainDelegate.qml
     TrainPage.qml
+    WeatherForecastDelegate.qml
 )
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})

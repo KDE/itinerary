@@ -50,7 +50,8 @@ public:
         Restaurant,
         TouristAttraction,
         TodayMarker,
-        CountryInfo
+        CountryInfo,
+        WeatherForecast
     };
     Q_ENUM(ElementType)
 
