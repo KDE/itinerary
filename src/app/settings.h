@@ -32,10 +32,14 @@ public:
     bool weatherForecastEnabled() const;
     void setWeatherForecastEnabled(bool enabled);
 
+    QString homeCountryIsoCode() const;
+
 signals:
     void weatherForecastEnabledChanged(bool enabled);
+    void homeCountryIsoCodeChanged(const QString &isoCode);
 
 private:
+    QString m_homeCountry;
     bool m_weatherEnabled = false;
 };
 

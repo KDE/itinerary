@@ -146,6 +146,12 @@ void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
     connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
 }
 
+void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
+{
+    m_homeCountry = isoCode;
+    updateInformationElements();
+}
+
 int TimelineModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid() || !m_resMgr) {
@@ -304,7 +310,7 @@ void TimelineModel::updateInformationElements()
     // differences is introduced by the transition
 
     CountryInformation homeCountry;
-    homeCountry.setIsoCode(QLatin1String("DE")); // TODO configurable home country
+    homeCountry.setIsoCode(m_homeCountry);
 
     auto previousCountry = homeCountry;
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {

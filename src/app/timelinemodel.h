@@ -74,6 +74,7 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);
+    void setHomeCountryIsoCode(const QString &isoCode);
 
     QVariant data(const QModelIndex& index, int role) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -109,6 +110,7 @@ private:
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     std::vector<Element> m_elements;
+    QString m_homeCountry;
 };
 
 #endif // TIMELINEMODEL_H

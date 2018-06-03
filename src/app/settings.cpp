@@ -25,6 +25,8 @@ Settings::Settings(QObject *parent)
     QSettings s;
     s.beginGroup(QLatin1String("Settings"));
     m_weatherEnabled = s.value(QLatin1String("WeatherForecastEnabled"), false).toBool();
+    // TODO configurable home country
+    m_homeCountry = s.value(QLatin1String("HomeCountry"), QStringLiteral("DE")).toString();
 }
 
 Settings::~Settings() = default;
@@ -46,4 +48,9 @@ void Settings::setWeatherForecastEnabled(bool enabled)
     s.setValue(QLatin1String("WeatherForecastEnabled"), enabled);
 
     emit weatherForecastEnabledChanged(enabled);
+}
+
+QString Settings::homeCountryIsoCode() const
+{
+    return m_homeCountry;
 }

@@ -103,19 +103,22 @@ int main(int argc, char **argv)
     parser.addPositionalArgument(QStringLiteral("pass"), QStringLiteral("PkPass file to import."));
     parser.process(app);
 
+    Settings settings;
+    ApplicationController appController;
     PkPassManager passMgr;
     ReservationManager resMgr;
     resMgr.setPkPassManager(&passMgr);
-    TimelineModel timelineModel;
-    timelineModel.setReservationManager(&resMgr);
 
-    ApplicationController appController;
-    Settings settings;
+    TimelineModel timelineModel;
+    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
+    timelineModel.setReservationManager(&resMgr);
+    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
 
     WeatherForecastManager weatherForecastMgr;
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
     timelineModel.setWeatherForecastManager(&weatherForecastMgr);
+
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
