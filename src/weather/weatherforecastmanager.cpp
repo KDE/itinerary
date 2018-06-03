@@ -67,22 +67,20 @@ void WeatherForecastManager::monitorLocation(float latitude, float longitude)
 
 QVariant WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime& dt) const
 {
-    WeatherTile t{latitude, longitude};
-    QFile f(cachePath(t) + QLatin1String("forecast.xml"));
-    if (f.exists() && f.open(QFile::ReadOnly)) {
-        QXmlStreamReader reader(&f);
-        auto forecasts = parseForecast(reader);
-        mergeForecasts(forecasts);
-        auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
-            return lhs.dateTime() < rhs;
-        });
-        if (it != forecasts.begin()) {
-            --it;
-        }
-        if (it != forecasts.end()) {
-            return QVariant::fromValue(*it);
-        }
+    WeatherTile tile{latitude, longitude};
+    if (!loadForecastData(tile)) {
+        return {};
+    }
 
+    const auto &forecasts = m_forecastData[tile];
+    auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
+        return lhs.dateTime() < rhs;
+    });
+    if (it != forecasts.begin()) {
+        --it;
+    }
+    if (it != forecasts.end()) {
+        return QVariant::fromValue(*it);
     }
     return {};
 }
@@ -214,6 +212,31 @@ void WeatherForecastManager::writeToCacheFile(QNetworkReply* reply) const
     } else {
         f.write(reply->readAll());
     }
+
+    m_forecastData.erase(tile);
+}
+
+bool WeatherForecastManager::loadForecastData(WeatherTile tile) const
+{
+    const auto it = m_forecastData.find(tile);
+    if (it != m_forecastData.end()) {
+        return true;
+    }
+
+    QFile f(cachePath(tile) + QLatin1String("forecast.xml"));
+    if (!f.exists() || !f.open(QFile::ReadOnly)) {
+        return false;
+    }
+
+    QXmlStreamReader reader(&f);
+    auto forecasts = parseForecast(reader);
+    mergeForecasts(forecasts);
+    if (forecasts.empty()) {
+        return false;
+    }
+
+    m_forecastData.insert(it, {tile, std::move(forecasts)});
+    return true;
 }
 
 void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& forecasts) const

@@ -22,6 +22,7 @@
 
 #include <cmath>
 #include <cstdint>
+#include <functional>
 
 /** Weather forecast data tile coordinates */
 struct WeatherTile
@@ -50,6 +51,17 @@ struct WeatherTile
 };
 
 Q_DECLARE_METATYPE(WeatherTile)
+
+namespace std
+{
+    template<> struct hash<WeatherTile>
+    {
+        inline std::size_t operator()(const WeatherTile &t) const noexcept
+        {
+            return std::hash<uint32_t>{}(t.lat << 16 | t.lon);
+        }
+    };
+}
 
 #endif // WEATHERTILE_H
 

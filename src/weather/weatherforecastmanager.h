@@ -18,13 +18,15 @@
 #ifndef WEATHERFORECASTMANAGER_H
 #define WEATHERFORECASTMANAGER_H
 
+#include "weathertile.h"
+
 #include <QObject>
 
 #include <deque>
+#include <unordered_map>
 #include <vector>
 
 class WeatherForecast;
-struct WeatherTile;
 
 class QNetworkAccessManager;
 class QNetworkReply;
@@ -43,7 +45,6 @@ public:
 
     /** Monitor the specified location for weather forecasts. */
     void monitorLocation(float latitude, float longitude);
-    // TODO unmonitor location(s)?
 
     /** Get the forecast for the given time and location. */
     Q_INVOKABLE QVariant forecast(float latitude, float longitude, const QDateTime &dt) const;
@@ -59,12 +60,14 @@ private:
     QString cachePath(WeatherTile tile) const;
     void writeToCacheFile(QNetworkReply *reply) const;
 
+    bool loadForecastData(WeatherTile tile) const;
     void mergeForecasts(std::vector<WeatherForecast> &forecasts) const;
     std::vector<WeatherForecast> parseForecast(QXmlStreamReader &reader) const;
     WeatherForecast parseForecastElement(QXmlStreamReader &reader) const;
 
     std::vector<WeatherTile> m_monitoredTiles;
     std::deque<WeatherTile> m_pendingTiles;
+    mutable std::unordered_map<WeatherTile, std::vector<WeatherForecast>> m_forecastData;
 
     QNetworkAccessManager *m_nam = nullptr;
     QNetworkReply *m_pendingReply = nullptr;
