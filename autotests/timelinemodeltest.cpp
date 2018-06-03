@@ -95,6 +95,7 @@ private slots:
         clearReservations(&resMgr);
 
         TimelineModel model;
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
@@ -146,6 +147,7 @@ private slots:
         clearReservations(&resMgr);
 
         TimelineModel model;
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
 
         QCOMPARE(model.rowCount(), 1);

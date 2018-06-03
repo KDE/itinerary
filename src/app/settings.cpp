@@ -17,6 +17,10 @@
 
 #include "settings.h"
 
+#include <KContacts/Address>
+
+#include <QDebug>
+#include <QLocale>
 #include <QSettings>
 
 Settings::Settings(QObject *parent)
@@ -25,8 +29,9 @@ Settings::Settings(QObject *parent)
     QSettings s;
     s.beginGroup(QLatin1String("Settings"));
     m_weatherEnabled = s.value(QLatin1String("WeatherForecastEnabled"), false).toBool();
-    // TODO configurable home country
-    m_homeCountry = s.value(QLatin1String("HomeCountry"), QStringLiteral("DE")).toString();
+
+    const auto currentCountry = KContacts::Address::countryToISO(QLocale::countryToString(QLocale().country())).toUpper();
+    m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
 }
 
 Settings::~Settings() = default;
