@@ -364,6 +364,8 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
                     if (it != std::end(symbol_map) && (*it).id == symId) {
                         fc.setSymbolType((*it).type);
                     }
+                } else if (reader.name() == QLatin1String("precipitation")) {
+                    fc.setPrecipitation(reader.attributes().value(QLatin1String("value")).toFloat());
                 }
                 break;
             case QXmlStreamReader::EndElement:

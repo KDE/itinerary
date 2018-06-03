@@ -26,6 +26,7 @@ public:
     QDateTime m_dt;
     float m_minTemp = std::numeric_limits<float>::max();
     float m_maxTemp = std::numeric_limits<float>::min();
+    float m_precipitation = 0.0f;
     WeatherForecast::SymbolType m_symbol = WeatherForecast::Unknown;
 };
 
@@ -113,11 +114,23 @@ QString WeatherForecast::symbolIconName() const
     return {};
 }
 
-void WeatherForecast::merge(WeatherForecast &other)
+float WeatherForecast::precipitation() const
+{
+    return d->m_precipitation;
+}
+
+void WeatherForecast::setPrecipitation(float precipitation)
+{
+    d.detach();
+    d->m_precipitation = std::max(precipitation, 0.0f);
+}
+
+void WeatherForecast::merge(const WeatherForecast &other)
 {
     d.detach();
     d->m_minTemp = std::min(other.minimumTemperature(), d->m_minTemp);
     d->m_maxTemp = std::max(other.maximumTemperature(), d->m_maxTemp);
+    d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
 
     if (d->m_symbol == Unknown) {
         d->m_symbol = other.symbolType();

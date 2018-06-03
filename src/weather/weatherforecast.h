@@ -34,6 +34,7 @@ class WeatherForecast
     Q_PROPERTY(bool valid READ isValid CONSTANT)
     Q_PROPERTY(float minimumTemperature READ minimumTemperature CONSTANT)
     Q_PROPERTY(float maximumTemperature READ maximumTemperature CONSTANT)
+    Q_PROPERTY(float precipitation READ precipitation CONSTANT)
     Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
 
 public:
@@ -72,19 +73,23 @@ public:
     QDateTime dateTime() const;
     void setDateTime(const QDateTime &dt);
 
+    /** Temperature range. */
     float minimumTemperature() const;
     void setMinimumTemperature(float t);
     float maximumTemperature() const;
     void setMaximumTemperature(float t);
 
+    /** Precipitation in mm/m². */
+    float precipitation() const;
+    void setPrecipitation(float precipitation);
+
+    /** Weather symbol. */
     SymbolType symbolType() const;
     void setSymbolType(SymbolType type);
     QString symbolIconName() const;
 
-    // TODO precipitation probability
-
     /** Merge with @p other. */
-    void merge(WeatherForecast &other);
+    void merge(const WeatherForecast &other);
 
 private:
     QExplicitlySharedDataPointer<WeatherForecastPrivate> d;

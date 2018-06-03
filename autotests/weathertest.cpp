@@ -67,6 +67,7 @@ private slots:
         QVERIFY(fc.maximumTemperature() > -50);
         QVERIFY(fc.maximumTemperature() < 50);
         QVERIFY(fc.maximumTemperature() >= fc.minimumTemperature());
+        QVERIFY(fc.precipitation() >= 0.0f);
     }
 };
 
