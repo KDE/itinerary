@@ -28,6 +28,9 @@ public:
     explicit CountryModel(QObject *parent = nullptr);
     ~CountryModel();
 
+    Q_INVOKABLE int isoCodeToIndex(const QString &isoCode) const;
+    Q_INVOKABLE QString isoCodeFromIndex(int index) const;
+
     int rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role) const override;
 };

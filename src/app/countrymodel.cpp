@@ -30,6 +30,23 @@ CountryModel::CountryModel(QObject *parent)
 
 CountryModel::~CountryModel() = default;
 
+int CountryModel::isoCodeToIndex(const QString &isoCode) const
+{
+    const auto id = KnowledgeDb::CountryId{isoCode};
+    const auto it = std::lower_bound(KnowledgeDb::countriesBegin(), KnowledgeDb::countriesEnd(), id, [](const KnowledgeDb::Country &lhs, KnowledgeDb::CountryId rhs) {
+        return lhs.id < rhs;
+    });
+    if (it == KnowledgeDb::countriesEnd() || (*it).id != id) {
+        return -1;
+    }
+    return std::distance(KnowledgeDb::countriesBegin(), it);
+}
+
+QString CountryModel::isoCodeFromIndex(int index) const
+{
+    return (KnowledgeDb::countriesBegin() + index)->id.toString();
+}
+
 int CountryModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid()) {

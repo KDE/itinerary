@@ -25,6 +25,7 @@ class Settings : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
+    Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
@@ -33,6 +34,7 @@ public:
     void setWeatherForecastEnabled(bool enabled);
 
     QString homeCountryIsoCode() const;
+    void setHomeCountryIsoCode(const QString &isoCode);
 
 signals:
     void weatherForecastEnabledChanged(bool enabled);

@@ -54,3 +54,17 @@ QString Settings::homeCountryIsoCode() const
 {
     return m_homeCountry;
 }
+
+void Settings::setHomeCountryIsoCode(const QString& isoCode)
+{
+    if (m_homeCountry == isoCode) {
+        return;
+    }
+
+    m_homeCountry = isoCode;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("HomeCountry"), isoCode);
+
+    emit homeCountryIsoCodeChanged(isoCode);
+}

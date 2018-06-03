@@ -40,6 +40,8 @@ Kirigami.ScrollablePage {
         QQC2.ComboBox {
             model: countryModel
             textRole: "display"
+            currentIndex: countryModel.isoCodeToIndex(_settings.homeCountryIsoCode)
+            onActivated: _settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
         }
 
         QQC2.Label {
