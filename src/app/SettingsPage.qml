@@ -26,6 +26,10 @@ Kirigami.ScrollablePage {
     id: root
     title: qsTr("Settings")
 
+    CountryModel {
+        id: countryModel
+    }
+
     GridLayout {
         columns: 2
         width: root.width
@@ -34,7 +38,8 @@ Kirigami.ScrollablePage {
             text: qsTr("Home Country")
         }
         QQC2.ComboBox {
-            model: [ "TODO", "TODO" ]
+            model: countryModel
+            textRole: "display"
         }
 
         QQC2.Label {

@@ -20,6 +20,7 @@
 
 #include "applicationcontroller.h"
 #include "countryinformation.h"
+#include "countrymodel.h"
 #include "localizer.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
@@ -132,6 +133,7 @@ int main(int argc, char **argv)
     qmlRegisterSingletonType<Localizer>("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Localizer;
     });
+    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));

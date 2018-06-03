@@ -21,6 +21,7 @@ target_link_libraries(itinerary PUBLIC
 add_executable(itinerary-app
     main.cpp
     applicationcontroller.cpp
+    countrymodel.cpp
     localizer.cpp
     pkpassimageprovider.cpp
     settings.cpp
