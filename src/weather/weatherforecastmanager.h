@@ -47,7 +47,9 @@ public:
     void monitorLocation(float latitude, float longitude);
 
     /** Get the forecast for the given time and location. */
-    Q_INVOKABLE QVariant forecast(float latitude, float longitude, const QDateTime &dt) const;
+    WeatherForecast forecast(float latitude, float longitude, const QDateTime &dt) const;
+    /** Get the forecast for the give time range and location. */
+    WeatherForecast forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const;
 
 signals:
     /** Updated when new forecast data has been retrieved. */

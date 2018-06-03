@@ -47,7 +47,7 @@ private slots:
         WeatherForecastManager mgr;
         mgr.setAllowNetworkAccess(true);
         const auto now = QDateTime::currentDateTimeUtc().addSecs(1800);
-        auto fc = mgr.forecast(46.1, 7.78, now).value<WeatherForecast>();
+        auto fc = mgr.forecast(46.1, 7.78, now);
         QVERIFY(!fc.isValid());
 
         QSignalSpy updateSpy(&mgr, &WeatherForecastManager::forecastUpdated);
@@ -56,7 +56,7 @@ private slots:
         mgr.monitorLocation(46.1, 7.78);
         QVERIFY(updateSpy.wait());
 
-        fc = mgr.forecast(46.1, 7.78, now).value<WeatherForecast>();
+        fc = mgr.forecast(46.1, 7.78, now);
         qDebug() << fc.dateTime() << fc.minimumTemperature() << fc.maximumTemperature() << fc.symbolType() << fc.symbolIconName();
         QVERIFY(fc.isValid());
         QVERIFY(fc.dateTime().isValid());

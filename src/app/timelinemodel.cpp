@@ -20,6 +20,7 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <weatherforecast.h>
 #include <weatherforecastmanager.h>
 
 #include <KItinerary/BusTrip>
@@ -384,11 +385,11 @@ void TimelineModel::insertWeatherElements()
         const auto geo = geoCoordinate(it);
         if (geo.isValid()) {
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-            const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(12, 0)));
+            const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
             if (fc.isValid()) {
                 const auto row = std::distance(m_elements.begin(), it);
                 beginInsertRows({}, row, row);
-                it = m_elements.insert(it, Element{{}, fc, QDateTime(date, QTime()), WeatherForecast, SelfContained});
+                it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
                 endInsertRows();
                 date = date.addDays(1);
                 continue;
@@ -404,7 +405,7 @@ void TimelineModel::updateWeatherElements()
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
         if ((*it).elementType == WeatherForecast) {
             // TODO see above
-            (*it).content = m_weatherMgr->forecast(52, 13.5, QDateTime((*it).dt.date(), QTime(12, 0)));
+            (*it).content = QVariant::fromValue(m_weatherMgr->forecast(52, 13.5, QDateTime((*it).dt.date(), QTime(0, 0)), QDateTime((*it).dt.date(), QTime(23, 59))));
             const auto idx = index(std::distance(m_elements.begin(), it), 0);
             emit dataChanged(idx, idx);
         }

@@ -32,6 +32,11 @@
 
 #include <cmath>
 
+static void alignToHour(QDateTime &dt)
+{
+    dt.setTime(QTime(dt.time().hour(), 0, 0, 0));
+}
+
 /*
  * ATTENTION!
  * Before touching anything in here, especially regarding the network operations
@@ -65,24 +70,42 @@ void WeatherForecastManager::monitorLocation(float latitude, float longitude)
     fetchTile(t);
 }
 
-QVariant WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime& dt) const
+WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime &dt) const
 {
+    return forecast(latitude, longitude, dt, dt.addSecs(3600));
+}
+
+WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const
+{
+    auto beginDt = std::max(begin, QDateTime::currentDateTimeUtc());
+    alignToHour(beginDt);
+    auto endDt = std::max(end, QDateTime::currentDateTimeUtc());
+    alignToHour(endDt);
+    if (!beginDt.isValid() || !endDt.isValid() || beginDt > endDt) {
+        return {};
+    }
+
     WeatherTile tile{latitude, longitude};
     if (!loadForecastData(tile)) {
         return {};
     }
 
     const auto &forecasts = m_forecastData[tile];
-    auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
+    const auto beginIt = std::lower_bound(forecasts.begin(), forecasts.end(), beginDt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
         return lhs.dateTime() < rhs;
     });
-    if (it != forecasts.begin()) {
-        --it;
+    if (beginIt == forecasts.end()) {
+        return {};
     }
-    if (it != forecasts.end()) {
-        return QVariant::fromValue(*it);
+    const auto endIt = std::lower_bound(forecasts.begin(), forecasts.end(), endDt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
+        return lhs.dateTime() < rhs;
+    });
+
+    WeatherForecast fc(*beginIt);
+    for (auto it = beginIt; it != endIt; ++it) {
+        fc.merge(*it);
     }
-    return {};
+    return fc;
 }
 
 void WeatherForecastManager::fetchTile(WeatherTile tile)
@@ -261,11 +284,6 @@ void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& foreca
         it = mergeIt;
     }
     forecasts.erase(storeIt, forecasts.end());
-}
-
-static void alignToHour(QDateTime &dt)
-{
-    dt.setTime(QTime(dt.time().hour(), 0, 0, 0));
 }
 
 std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamReader &reader) const
