@@ -21,6 +21,7 @@
 #include "weathertile.h"
 
 #include <QObject>
+#include <QTimer>
 
 #include <deque>
 #include <unordered_map>
@@ -75,12 +76,17 @@ private:
     std::vector<WeatherForecast> parseForecast(QXmlStreamReader &reader) const;
     WeatherForecast parseForecastElement(QXmlStreamReader &reader) const;
 
+    void scheduleUpdate();
+    void updateAll();
+    void purgeCache();
+
     std::vector<WeatherTile> m_monitoredTiles;
     std::deque<WeatherTile> m_pendingTiles;
     mutable std::unordered_map<WeatherTile, std::vector<WeatherForecast>> m_forecastData;
 
     QNetworkAccessManager *m_nam = nullptr;
     QNetworkReply *m_pendingReply = nullptr;
+    QTimer m_updateTimer;
     bool m_allowNetwork = false;
     bool m_testMode = false;
 };

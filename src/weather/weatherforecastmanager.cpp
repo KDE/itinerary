@@ -21,6 +21,7 @@
 
 #include <QCoreApplication>
 #include <QDir>
+#include <QDirIterator>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStandardPaths>
@@ -46,6 +47,8 @@ static void alignToHour(QDateTime &dt)
 WeatherForecastManager::WeatherForecastManager(QObject *parent)
     : QObject(parent)
 {
+    connect(&m_updateTimer, &QTimer::timeout, this, &WeatherForecastManager::updateAll);
+    m_updateTimer.setSingleShot(true);
 }
 
 WeatherForecastManager::~WeatherForecastManager() = default;
@@ -53,6 +56,11 @@ WeatherForecastManager::~WeatherForecastManager() = default;
 void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 {
     m_allowNetwork = enabled;
+    if (enabled) {
+        scheduleUpdate();
+    } else {
+        m_updateTimer.stop();
+    }
     fetchNext();
 }
 
@@ -441,6 +449,45 @@ QDateTime WeatherForecastManager::maximumForecastTime() const
 void WeatherForecastManager::setTestModeEnabled(bool testMode)
 {
     m_testMode = testMode;
+}
+
+void WeatherForecastManager::scheduleUpdate()
+{
+    if (m_updateTimer.isActive()) {
+        return;
+    }
+
+    // see §Updates on https://api.met.no/conditions_service.html
+    m_updateTimer.setInterval(std::chrono::hours(2) + std::chrono::minutes(QTime::currentTime().msec() % 30));
+    qDebug() << "Next weather update:" << m_updateTimer.interval();
+    m_updateTimer.start();
+}
+
+void WeatherForecastManager::updateAll()
+{
+    for (const auto tile : m_monitoredTiles) {
+        fetchTile(tile);
+    }
+    purgeCache();
+    scheduleUpdate();
+}
+
+void WeatherForecastManager::purgeCache()
+{
+    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/weather/"));
+    const auto cutoffDate = QDateTime::currentDateTimeUtc().addDays(-9);
+
+    QDirIterator it(basePath, QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Writable, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        it.next();
+        if (it.fileInfo().isFile() && it.fileInfo().lastModified() < cutoffDate) {
+            qDebug() << "Purging old weather data:" << it.filePath();
+            QFile::remove(it.filePath());
+        } else if (it.fileInfo().isDir() && QDir(it.filePath()).isEmpty()) {
+            qDebug() << "Purging old weather cache folder:" << it.filePath();
+            QDir().rmdir(it.filePath());
+        }
+    }
 }
 
 #include "moc_weatherforecastmanager.cpp"
