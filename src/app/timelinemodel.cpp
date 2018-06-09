@@ -148,9 +148,9 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     // for auto tests only
     if (Q_UNLIKELY(!mgr)) {
         beginResetModel();
-        disconnect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
-        disconnect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
-        disconnect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
+        disconnect(m_resMgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
+        disconnect(m_resMgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
+        disconnect(m_resMgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
         m_resMgr = mgr;
         m_elements.clear();
         endResetModel();
@@ -441,6 +441,7 @@ void TimelineModel::updateWeatherElements()
     }
 
     auto date = QDateTime::currentDateTime();
+    date.setTime(QTime(date.time().hour() + 1, 0));
     while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime()) {
 
         if ((*it).dt < date || (*it).elementType == TodayMarker) {
@@ -455,8 +456,20 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
+        // determine the length of the forecast range (at most until the end of the day)
         auto endTime = date;
         endTime.setTime(QTime(23, 59, 59));
+        for (auto it2 = it; it2 != m_elements.end(); ++it2) {
+            if ((*it2).dt >= endTime) {
+                break;
+            }
+            const auto res = m_resMgr->reservation((*it2).id);
+            const auto newGeo = geoCoordinate(res);
+            if (isLocationChange(res)) {
+                endTime = std::min(endTime, relevantDateTime(res, RangeEnd));
+                break;
+            }
+        }
 
         ::WeatherForecast fc;
         if (geo.isValid()) {
@@ -477,7 +490,7 @@ void TimelineModel::updateWeatherElements()
             it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), date, WeatherForecast, SelfContained});
             endInsertRows();
         }
-        //  case 3: we have no forecast data, but a matching weather element: remove
+        // case 3: we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == WeatherForecast && (*it).dt == date) {
             const auto row = std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
