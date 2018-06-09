@@ -433,6 +433,11 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
     return fc;
 }
 
+QDateTime WeatherForecastManager::maximumForecastTime() const
+{
+    return QDateTime(QDate::currentDate().addDays(9), QTime(0, 0));
+}
+
 void WeatherForecastManager::setTestModeEnabled(bool testMode)
 {
     m_testMode = testMode;

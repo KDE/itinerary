@@ -440,10 +440,10 @@ void TimelineModel::updateWeatherElements()
         ++it;
     }
 
-    auto date = QDate::currentDate();
-    for (; it != m_elements.end() && date < QDate::currentDate().addDays(9);) {
+    auto date = QDateTime::currentDateTime();
+    while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime()) {
 
-        if ((*it).dt.date() < date || (*it).elementType == TodayMarker) {
+        if ((*it).dt < date || (*it).elementType == TodayMarker) {
             // track where we are
             const auto res = m_resMgr->reservation((*it).id);
             const auto newGeo = geoCoordinate(res);
@@ -455,14 +455,17 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
+        auto endTime = date;
+        endTime.setTime(QTime(23, 59, 59));
+
         ::WeatherForecast fc;
         if (geo.isValid()) {
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-            fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
+            fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         }
 
         // case 1: we have forecast data, and a matching weather element: update
-        if (fc.isValid() && (*it).dt.date() == date && (*it).elementType == WeatherForecast) {
+        if (fc.isValid() && (*it).dt == date && (*it).elementType == WeatherForecast) {
             (*it).content = QVariant::fromValue(fc);
             const auto idx = index(std::distance(m_elements.begin(), it), 0);
             emit dataChanged(idx, idx);
@@ -471,33 +474,36 @@ void TimelineModel::updateWeatherElements()
         else if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
+            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), date, WeatherForecast, SelfContained});
             endInsertRows();
         }
         //  case 3: we have no forecast data, but a matching weather element: remove
-        else if ((*it).elementType == WeatherForecast && (*it).dt.date() == date) {
+        else if ((*it).elementType == WeatherForecast && (*it).dt == date) {
             const auto row = std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
             it = m_elements.erase(it);
             endRemoveRows();
         }
 
-        date = date.addDays(1);
+        date = endTime.addSecs(1);
         ++it;
     }
 
     // append weather elements beyond the end of the list if necessary
-    while (date < QDate::currentDate().addDays(9) && geo.isValid()) {
+    while (date < m_weatherMgr->maximumForecastTime() && geo.isValid()) {
+        auto endTime = date;
+        endTime.setTime(QTime(23, 59, 59));
+
         m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-        const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
+        const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
+            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), date, WeatherForecast, SelfContained});
             ++it;
             endInsertRows();
         }
-        date = date.addDays(1);
+        date = endTime.addSecs(1);
     }
 
     qDebug() << "weather recomputation done";

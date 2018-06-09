@@ -51,6 +51,9 @@ public:
     /** Get the forecast for the give time range and location. */
     WeatherForecast forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const;
 
+    /** Time until when we have forecast data. */
+    QDateTime maximumForecastTime() const;
+
     /** Enable unit test mode.
      *  In this mode static forecast data is provided for all locations.
      */
