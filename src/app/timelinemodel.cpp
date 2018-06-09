@@ -106,6 +106,36 @@ static QString destinationCountry(const QVariant &res)
     return {};
 }
 
+static GeoCoordinates geoCoordinate(const QVariant &res)
+{
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return res.value<FlightReservation>().reservationFor().value<KItinerary::Flight>().arrivalAirport().geo();
+    }
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return res.value<TrainReservation>().reservationFor().value<KItinerary::TrainTrip>().arrivalStation().geo();
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalStation().geo();
+    }
+
+    if (JsonLd::isA<LodgingReservation>(res)) {
+        return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().geo();
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().geo();
+    }
+    if (JsonLd::isA<TouristAttractionVisit>(res)) {
+        return res.value<TouristAttractionVisit>().touristAttraction().geo();
+    }
+
+    return {};
+}
+
+static bool isLocationChange(const QVariant &res)
+{
+    return JsonLd::isA<FlightReservation>(res) || JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res);
+}
+
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -371,11 +401,33 @@ std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCounty
 
 void TimelineModel::insertWeatherElements()
 {
-    if (!m_weatherMgr) {
+    if (!m_weatherMgr || m_elements.empty()) {
         return;
     }
 
-    auto it = std::find_if(m_elements.begin(), m_elements.end(), [](const Element &e) { return e.elementType == TodayMarker; });
+    qDebug() << "recomputing weather elements";
+    GeoCoordinates geo;
+
+    // look through the past, clean up weather elements there and figure out where we are
+    auto it = m_elements.begin();
+    for (; it != m_elements.end() && (*it).dt < QDateTime::currentDateTimeUtc();) {
+        if ((*it).elementType == WeatherForecast) {
+            const auto row = std::distance(m_elements.begin(), it);
+            beginRemoveRows({}, row, row);
+            it = m_elements.erase(it);
+            endRemoveRows();
+            continue;
+        }
+
+        const auto res = m_resMgr->reservation((*it).id);
+        const auto newGeo = geoCoordinate(res);
+        if (isLocationChange(res) || newGeo.isValid()) {
+            geo = newGeo;
+        }
+
+        ++it;
+    }
+
     auto date = QDate::currentDate();
     for (; it != m_elements.end() && date < QDate::currentDate().addDays(9);) {
         if ((*it).dt.date() < date || (*it).elementType == TodayMarker) {
@@ -388,7 +440,12 @@ void TimelineModel::insertWeatherElements()
             continue;
         }
 
-        const auto geo = geoCoordinate(it);
+        const auto res = m_resMgr->reservation((*it).id);
+        const auto newGeo = geoCoordinate(res);
+        if (isLocationChange(res) || newGeo.isValid()) {
+            geo = newGeo;
+        }
+
         if (geo.isValid()) {
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
             const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
@@ -397,13 +454,27 @@ void TimelineModel::insertWeatherElements()
                 beginInsertRows({}, row, row);
                 it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
                 endInsertRows();
-                date = date.addDays(1);
-                continue;
             }
         }
         date = date.addDays(1);
         ++it;
     }
+
+    // append weather elements beyond the end of the list if necessary
+    while (date < QDate::currentDate().addDays(9) && geo.isValid()) {
+        m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
+        const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
+        if (fc.isValid()) {
+            const auto row = std::distance(m_elements.begin(), it);
+            beginInsertRows({}, row, row);
+            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
+            ++it;
+            endInsertRows();
+        }
+        date = date.addDays(1);
+    }
+
+    qDebug() << "weather recomputation done";
 }
 
 void TimelineModel::updateWeatherElements()
@@ -418,50 +489,4 @@ void TimelineModel::updateWeatherElements()
     }
 
     insertWeatherElements();
-}
-
-GeoCoordinates TimelineModel::geoCoordinate(std::vector<Element>::iterator it) const
-{
-    if (it == m_elements.begin()) {
-        return {};
-    }
-    --it;
-
-    do {
-        if ((*it).id.isEmpty()) {
-            --it;
-            continue;
-        }
-
-        const auto res = m_resMgr->reservation((*it).id);
-        // things that change location
-        if (JsonLd::isA<FlightReservation>(res)) {
-            return res.value<FlightReservation>().reservationFor().value<KItinerary::Flight>().arrivalAirport().geo();
-        }
-        if (JsonLd::isA<TrainReservation>(res)) {
-            return res.value<TrainReservation>().reservationFor().value<KItinerary::TrainTrip>().arrivalStation().geo();
-        }
-        if (JsonLd::isA<BusReservation>(res)) {
-            return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalStation().geo();
-        }
-
-        // things that don't change location
-        GeoCoordinates geo;
-        if (JsonLd::isA<LodgingReservation>(res)) {
-            geo = res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().geo();
-        }
-        if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-            geo = res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().geo();
-        }
-        if (JsonLd::isA<TouristAttractionVisit>(res)) {
-            geo = res.value<TouristAttractionVisit>().touristAttraction().geo();
-        }
-        if (geo.isValid()) {
-            return geo;
-        }
-
-        --it;
-    } while (it != m_elements.begin());
-
-    return {};
 }

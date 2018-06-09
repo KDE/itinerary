@@ -51,6 +51,11 @@ public:
     /** Get the forecast for the give time range and location. */
     WeatherForecast forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const;
 
+    /** Enable unit test mode.
+     *  In this mode static forecast data is provided for all locations.
+     */
+    void setTestModeEnabled(bool testMode);
+
 signals:
     /** Updated when new forecast data has been retrieved. */
     void forecastUpdated();
@@ -74,6 +79,7 @@ private:
     QNetworkAccessManager *m_nam = nullptr;
     QNetworkReply *m_pendingReply = nullptr;
     bool m_allowNetwork = false;
+    bool m_testMode = false;
 };
 
 #endif // WEATHERFORECASTMANAGER_H

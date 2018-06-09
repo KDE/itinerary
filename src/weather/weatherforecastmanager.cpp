@@ -85,6 +85,16 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
         return {};
     }
 
+    if (Q_UNLIKELY(m_testMode)) {
+        WeatherForecast fc;
+        fc.setDateTime(beginDt);
+        fc.setMinimumTemperature(23.0f);
+        fc.setMaximumTemperature(23.0f);
+        fc.setPrecipitation(0.0f);
+        fc.setSymbolType(WeatherForecast::LightClouds);
+        return fc;
+    }
+
     WeatherTile tile{latitude, longitude};
     if (!loadForecastData(tile)) {
         return {};
@@ -421,6 +431,11 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
     }
 
     return fc;
+}
+
+void WeatherForecastManager::setTestModeEnabled(bool testMode)
+{
+    m_testMode = testMode;
 }
 
 #include "moc_weatherforecastmanager.cpp"

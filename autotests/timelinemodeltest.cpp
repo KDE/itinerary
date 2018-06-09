@@ -20,6 +20,13 @@
 #include <reservationmanager.h>
 #include <timelinemodel.h>
 
+#include <weatherforecast.h>
+#include <weatherforecastmanager.h>
+
+#include <KItinerary/Flight>
+#include <KItinerary/Place>
+#include <KItinerary/Reservation>
+
 #include <QUrl>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -184,6 +191,46 @@ private slots:
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+    }
+
+    void testWeatherElements()
+    {
+        using namespace KItinerary;
+
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        WeatherForecastManager weatherMgr;
+        weatherMgr.setTestModeEnabled(true);
+
+        TimelineModel model;
+        model.setReservationManager(&resMgr);
+        model.setWeatherForecastManager(&weatherMgr);
+        QCOMPARE(model.rowCount(), 1); // no weather data, as we don't know where we are
+
+        // Add an element that will result in a defined location
+        GeoCoordinates geo;
+        geo.setLatitude(52.0f);
+        geo.setLongitude(13.0f);
+        Airport a;
+        a.setGeo(geo);
+        Flight f;
+        f.setArrivalAirport(a);
+        f.setDepartureTime(QDateTime(QDate(2018, 1, 1), QTime(0, 0)));
+        FlightReservation res;
+        res.setReservationFor(f);
+        resMgr.addReservation(res);
+
+        QCOMPARE(model.rowCount(), 11); // 1x flight, 1x today, 9x weather
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.dateTime().date(), QDate::currentDate());
+        QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.dateTime().date(), QDate::currentDate().addDays(8));
     }
 };
 
