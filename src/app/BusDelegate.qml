@@ -41,9 +41,7 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: qsTr("🚌 %1 %2")
-                    .arg(reservation.reservationFor.busName)
-                    .arg(reservation.reservationFor.busNumber)
+                text: i18n("🚌 %1", reservation.reservationFor.busName + " " + reservation.reservationFor.busNumber)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -60,8 +58,7 @@ App.TimelineDelegate {
         id: topLayout
 
         QQC2.Label {
-            text: qsTr("From: %1")
-                .arg(reservation.reservationFor.departureStation.name)
+            text: i18n("From: %1", reservation.reservationFor.departureStation.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
@@ -72,8 +69,7 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: qsTr("To: %1")
-                .arg(reservation.reservationFor.arrivalStation.name)
+            text: i18n("To: %1", reservation.reservationFor.arrivalStation.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
@@ -81,7 +77,7 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: qsTr("Arrival: %1").arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
+            text: i18n("Arrival: %1", Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
     }

@@ -36,6 +36,9 @@
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
 
+#include <KLocalizedContext>
+#include <KLocalizedString>
+
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
@@ -92,7 +95,7 @@ int main(int argc, char **argv)
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
 
-    QGuiApplication::setApplicationDisplayName(QStringLiteral("KDE Itinerary")); // TODO i18n
+    QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     QGuiApplication app(argc, argv);
@@ -101,7 +104,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addVersionOption();
-    parser.addPositionalArgument(QStringLiteral("pass"), QStringLiteral("PkPass file to import."));
+    parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
 
     Settings settings;
@@ -137,6 +140,7 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);

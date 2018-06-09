@@ -25,12 +25,12 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
 
-    title: qsTr("My Itinerary")
+    title: i18n("My Itinerary")
     // context drawer content
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: qsTr("Today")
+                text: i18n("Today")
                 iconName: "view-calendar-day"
                 onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
             }
@@ -100,7 +100,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 id: label
                 anchors.fill: parent
-                text: qsTr("Nothing on the itinerary for today.");
+                text: i18n("Nothing on the itinerary for today.");
                 color: Kirigami.Theme.textColor
                 horizontalAlignment: Qt.AlignHCenter
             }

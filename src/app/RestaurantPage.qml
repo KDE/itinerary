@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: qsTr("Restaurant Reservation")
+    title: i18n("Restaurant Reservation")
 
     GridLayout {
         id: grid
@@ -48,45 +48,45 @@ App.DetailsPage {
 
         // TODO make these interactive
         QQC2.Label {
-            text: qsTr("Telephone:")
+            text: i18n("Telephone:")
         }
         QQC2.Label {
             text: reservation.reservationFor.telephone
         }
         QQC2.Label {
-            text: qsTr("Email:")
+            text: i18n("Email:")
         }
         QQC2.Label {
             text: reservation.reservationFor.email
         }
 
         QQC2.Label {
-            text: qsTr("Start time:")
+            text: i18n("Start time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation, "startTime")
         }
         QQC2.Label {
-            text: qsTr("End time:")
+            text: i18n("End time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation, "endTime")
         }
         QQC2.Label {
-            text: qsTr("Party size:")
+            text: i18n("Party size:")
         }
         QQC2.Label {
             text: reservation.partySize
         }
 
         QQC2.Label {
-            text: qsTr("Booking reference:")
+            text: i18n("Booking reference:")
         }
         QQC2.Label {
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: qsTr("Under name:")
+            text: i18n("Under name:")
         }
         QQC2.Label {
             text: reservation.underName.name

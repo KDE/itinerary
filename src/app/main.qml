@@ -23,7 +23,7 @@ import org.kde.kirigami 2.0 as Kirigami
 import "." as App
 
 Kirigami.ApplicationWindow {
-    title: qsTr("KDE Itinerary")
+    title: i18n("KDE Itinerary")
     header: Kirigami.ApplicationHeader {}
 
     width: 480
@@ -32,7 +32,7 @@ Kirigami.ApplicationWindow {
     FileDialog {
         property bool loadPass: false
         id: fileDialog
-        title: qsTr("Please choose a file")
+        title: i18n("Please choose a file")
         folder: shortcuts.home
         onAccepted: {
             console.log(fileDialog.fileUrls);
@@ -44,11 +44,11 @@ Kirigami.ApplicationWindow {
     }
 
     globalDrawer: Kirigami.GlobalDrawer {
-        title: qsTr("KDE Itinerary")
+        title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
         actions: [
             Kirigami.Action {
-                text: qsTr("Import Reservation...")
+                text: i18n("Import Reservation...")
                 iconName: "document-open"
                 onTriggered: {
                     fileDialog.loadPass = false;
@@ -56,7 +56,7 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
-                text: qsTr("Import Pass...")
+                text: i18n("Import Pass...")
                 iconName: "document-open"
                 onTriggered: {
                     fileDialog.loadPass = true;
@@ -64,14 +64,14 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
-                text: qsTr("Check for Updates")
+                text: i18n("Check for Updates")
                 iconName: "view-refresh"
                 onTriggered: {
                     _pkpassManager.updatePasses();
                 }
             },
             Kirigami.Action {
-                text: qsTr("Settings...")
+                text: i18n("Settings...")
                 iconName: "settings-configure"
                 onTriggered: pageStack.push(settingsComponent)
             }

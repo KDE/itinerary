@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: qsTr("Bus Ticket")
+    title: i18n("Bus Ticket")
 
     GridLayout {
         id: grid
@@ -50,11 +50,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Departure")
+            text: i18n("Departure")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Departure time:")
+            text: i18n("Departure time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
@@ -78,11 +78,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Arrival")
+            text: i18n("Arrival")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Arrival time:")
+            text: i18n("Arrival time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
@@ -106,11 +106,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Seat")
+            text: i18n("Seat")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Seat:")
+            text: i18n("Seat:")
         }
         QQC2.Label {
             text: reservation.reservedTicket.ticketedSeat.seatNumber
@@ -125,17 +125,17 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Booking")
+            text: i18n("Booking")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Booking reference:")
+            text: i18n("Booking reference:")
         }
         QQC2.Label {
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: qsTr("Under name:")
+            text: i18n("Under name:")
         }
         QQC2.Label {
             text: reservation.underName.name

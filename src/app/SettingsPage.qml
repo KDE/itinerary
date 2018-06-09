@@ -24,7 +24,7 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    title: qsTr("Settings")
+    title: i18n("Settings")
 
     CountryModel {
         id: countryModel
@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         width: root.width
 
         QQC2.Label {
-            text: qsTr("Home Country")
+            text: i18n("Home Country")
         }
         QQC2.ComboBox {
             model: countryModel
@@ -45,7 +45,7 @@ Kirigami.ScrollablePage {
         }
 
         QQC2.Label {
-            text: qsTr("Weather Forecast")
+            text: i18n("Weather Forecast")
         }
         QQC2.Switch {
             id: weatherSwitch
@@ -55,14 +55,14 @@ Kirigami.ScrollablePage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Showing weather forecasts will query online services.")
+            text: i18n("Showing weather forecasts will query online services.")
             visible: !weatherSwitch.checked
         }
         // ATTENTION do not remove this note, see https://api.met.no/license_data.html
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
+            text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
             visible: weatherSwitch.checked
             wrapMode: Text.WordWrap
             onLinkActivated: Qt.openUrlExternally(link)

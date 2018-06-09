@@ -33,14 +33,14 @@ Kirigami.ScrollablePage {
         id: deleteWarningSheet
 
         QQC2.Label {
-            text: qsTr("Do you really want to delete this event?")
+            text: i18n("Do you really want to delete this event?")
             wrapMode: Text.WordWrap
         }
 
         footer: RowLayout {
             QQC2.Button {
                 Layout.alignment: Qt.AlignHCenter
-                text: qsTr("Delete")
+                text: i18n("Delete")
                 icon.name: "edit-delete"
                 onClicked: {
                     _reservationManager.removeReservation(root.resId)
@@ -54,12 +54,12 @@ Kirigami.ScrollablePage {
         contextualActions: [
             Kirigami.Action {
                 iconName: "edit-delete"
-                text: qsTr("Delete")
+                text: i18n("Delete")
                 onTriggered: deleteWarningSheet.sheetOpen = true
             },
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
-                text: qsTr("Boarding Pass")
+                text: i18n("Boarding Pass")
                 visible: root.passId !== ""
                 onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
             }

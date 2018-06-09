@@ -43,7 +43,7 @@ Kirigami.AbstractCard {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: qsTr("⚠ Entering %1").arg(Localizer.countryName(countryInfo.isoCode))
+                text: i18n("⚠ Entering %1", Localizer.countryName(countryInfo.isoCode))
                 color: Kirigami.Theme.neutralTextColor
             }
         }
@@ -54,24 +54,24 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             text: countryInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
-                qsTr("People are driving on the right side.") :
-                qsTr("People are driving on the wrong side.")
+                i18n("People are driving on the right side.") :
+                i18n("People are driving on the wrong side.")
             color: Kirigami.Theme.negativeTextColor
             visible: countryInfo.drivingSideDiffers
         }
 
         QQC2.Label {
-            text: qsTr("No compatible power sockets: %1").arg(countryInfo.powerSocketTypes)
+            text: i18n("No compatible power sockets: %1", countryInfo.powerSocketTypes)
             color: Kirigami.Theme.negativeTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.Incompatible
         }
         QQC2.Label {
-            text: qsTr("Some incompatible power sockets: %1").arg(countryInfo.powerSocketTypes)
+            text: i18n("Some incompatible power sockets: %1", countryInfo.powerSocketTypes)
             color: Kirigami.Theme.neutralTextColor
-            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocket != ""
+            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocketTypes != ""
         }
         QQC2.Label {
-            text: qsTr("Some incompatible power plugs: %1").arg(countryInfo.powerPlugTypes)
+            text: i18n("Some incompatible power plugs: %1", countryInfo.powerPlugTypes)
             color: Kirigami.Theme.neutralTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerPlugTypes != ""
         }

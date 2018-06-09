@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: qsTr("Flight")
+    title: i18n("Flight")
 
     GridLayout {
         id: grid
@@ -48,25 +48,25 @@ App.DetailsPage {
 
         // flight details
         QQC2.Label {
-            text: qsTr("Boarding time:")
+            text: i18n("Boarding time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "boardingTime")
         }
         QQC2.Label {
-            text: qsTr("Boarding group:")
+            text: i18n("Boarding group:")
         }
         QQC2.Label {
             text: reservation.boardingGroup
         }
         QQC2.Label {
-            text: qsTr("Seat:")
+            text: i18n("Seat:")
         }
         QQC2.Label {
             text: reservation.airplaneSeat
         }
         QQC2.Label {
-            text: qsTr("Airline:")
+            text: i18n("Airline:")
         }
         QQC2.Label {
             text: reservation.reservationFor.airline.name
@@ -81,11 +81,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Departure")
+            text: i18n("Departure")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Departure time:")
+            text: i18n("Departure time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
@@ -100,13 +100,13 @@ App.DetailsPage {
             place: reservation.reservationFor.departureAirport
         }
         QQC2.Label {
-            text: qsTr("Departure terminal:")
+            text: i18n("Departure terminal:")
         }
         QQC2.Label {
             text: reservation.reservationFor.departureTerminal
         }
         QQC2.Label {
-            text: qsTr("Departure gate:")
+            text: i18n("Departure gate:")
         }
         QQC2.Label {
             text: reservation.reservationFor.departureGate
@@ -121,11 +121,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Arrival")
+            text: i18n("Arrival")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Arrival time:")
+            text: i18n("Arrival time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
@@ -149,17 +149,17 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Booking")
+            text: i18n("Booking")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Booking reference:")
+            text: i18n("Booking reference:")
         }
         QQC2.Label {
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: qsTr("Under name:")
+            text: i18n("Under name:")
         }
         QQC2.Label {
             text: reservation.underName.name

@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: qsTr("Train Ticket")
+    title: i18n("Train Ticket")
 
     GridLayout {
         id: grid
@@ -50,11 +50,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Departure")
+            text: i18n("Departure")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Departure time:")
+            text: i18n("Departure time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
@@ -69,7 +69,7 @@ App.DetailsPage {
             place: reservation.reservationFor.departureStation
         }
         QQC2.Label {
-            text: qsTr("Departure platform:")
+            text: i18n("Departure platform:")
         }
         QQC2.Label {
             text: reservation.reservationFor.departurePlatform
@@ -84,11 +84,11 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Arrival")
+            text: i18n("Arrival")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Arrival time:")
+            text: i18n("Arrival time:")
         }
         QQC2.Label {
             text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
@@ -103,7 +103,7 @@ App.DetailsPage {
             place: reservation.reservationFor.arrivalStation
         }
         QQC2.Label {
-            text: qsTr("Arrival platform:")
+            text: i18n("Arrival platform:")
         }
         QQC2.Label {
             text: reservation.reservationFor.arrivalPlatform
@@ -118,17 +118,17 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Seat")
+            text: i18n("Seat")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Coach:")
+            text: i18n("Coach:")
         }
         QQC2.Label {
             text: reservation.reservedTicket.ticketedSeat.seatSection
         }
         QQC2.Label {
-            text: qsTr("Seat:")
+            text: i18n("Seat:")
         }
         QQC2.Label {
             text: reservation.reservedTicket.ticketedSeat.seatNumber
@@ -143,17 +143,17 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: qsTr("Booking")
+            text: i18n("Booking")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: qsTr("Booking reference:")
+            text: i18n("Booking reference:")
         }
         QQC2.Label {
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: qsTr("Under name:")
+            text: i18n("Under name:")
         }
         QQC2.Label {
             text: reservation.underName.name

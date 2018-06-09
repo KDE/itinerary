@@ -41,9 +41,7 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: qsTr("🚄 %1 %2")
-                    .arg(reservation.reservationFor.trainName)
-                    .arg(reservation.reservationFor.trainNumber)
+                text: i18n("🚄 %1", reservation.reservationFor.trainName + " " + reservation.reservationFor.trainNumber)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -60,9 +58,9 @@ App.TimelineDelegate {
         id: topLayout
 
         QQC2.Label {
-            text: qsTr("Departure from %1 on platform %2")
-                .arg(reservation.reservationFor.departureStation.name)
-                .arg(reservation.reservationFor.departurePlatform)
+            text: i18n("Departure from %1 on platform %2",
+                reservation.reservationFor.departureStation.name,
+                reservation.reservationFor.departurePlatform ? reservation.reservationFor.departurePlatform : "-")
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
@@ -75,14 +73,13 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: qsTr("Arrival at %1 on platform %2")
-                .arg(reservation.reservationFor.arrivalStation.name)
-                .arg(reservation.reservationFor.arrivalPlatform)
+            text: i18n("Arrival at %1 on platform %2",
+                reservation.reservationFor.arrivalStation.name,
+                reservation.reservationFor.arrivalPlatform ? reservation.reservationFor.arrivalPlatform : "-")
             color: Kirigami.Theme.textColor
         }
         QQC2.Label {
-            text: qsTr("Arrival time: %1")
-                .arg(Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
+            text: i18n("Arrival time: %1", Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {

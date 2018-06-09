@@ -22,7 +22,7 @@ import "." as App
 Kirigami.Page {
     property alias passId: pkpass.passId
     property alias pass: pkpass.pass
-    title: qsTr("Boarding Pass")
+    title: i18n("Boarding Pass")
     App.BoardingPass {
         x: (parent.width - implicitWidth) / 2
         id: pkpass
