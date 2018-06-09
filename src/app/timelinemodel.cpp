@@ -145,6 +145,18 @@ TimelineModel::~TimelineModel() = default;
 
 void TimelineModel::setReservationManager(ReservationManager* mgr)
 {
+    // for auto tests only
+    if (Q_UNLIKELY(!mgr)) {
+        beginResetModel();
+        disconnect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
+        disconnect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
+        disconnect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
+        m_resMgr = mgr;
+        m_elements.clear();
+        endResetModel();
+        return;
+    }
+
     beginResetModel();
     m_resMgr = mgr;
     for (const auto &resId : mgr->reservations()) {
@@ -172,7 +184,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
 void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
 {
     m_weatherMgr = mgr;
-    insertWeatherElements();
+    updateWeatherElements();
     connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
 }
 
@@ -379,7 +391,7 @@ void TimelineModel::updateInformationElements()
         previousCountry = newCountry;
     }
 
-    insertWeatherElements();
+    updateWeatherElements();
 }
 
 std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCountyInfo(std::vector<Element>::iterator it)
@@ -399,7 +411,7 @@ std::vector<TimelineModel::Element>::iterator TimelineModel::erasePreviousCounty
     return it;
 }
 
-void TimelineModel::insertWeatherElements()
+void TimelineModel::updateWeatherElements()
 {
     if (!m_weatherMgr || m_elements.empty()) {
         return;
@@ -430,32 +442,46 @@ void TimelineModel::insertWeatherElements()
 
     auto date = QDate::currentDate();
     for (; it != m_elements.end() && date < QDate::currentDate().addDays(9);) {
+
         if ((*it).dt.date() < date || (*it).elementType == TodayMarker) {
-            ++it;
-            continue;
-        }
-        if (date == (*it).dt.date() && (*it).elementType == WeatherForecast) { // weather element already present
-            date = date.addDays(1);
+            // track where we are
+            const auto res = m_resMgr->reservation((*it).id);
+            const auto newGeo = geoCoordinate(res);
+            if (isLocationChange(res) || newGeo.isValid()) {
+                geo = newGeo;
+            }
+
             ++it;
             continue;
         }
 
-        const auto res = m_resMgr->reservation((*it).id);
-        const auto newGeo = geoCoordinate(res);
-        if (isLocationChange(res) || newGeo.isValid()) {
-            geo = newGeo;
-        }
-
+        ::WeatherForecast fc;
         if (geo.isValid()) {
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
-            const auto fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
-            if (fc.isValid()) {
-                const auto row = std::distance(m_elements.begin(), it);
-                beginInsertRows({}, row, row);
-                it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
-                endInsertRows();
-            }
+            fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), QDateTime(date, QTime(0, 0)), QDateTime(date, QTime(23, 59)));
         }
+
+        // case 1: we have forecast data, and a matching weather element: update
+        if (fc.isValid() && (*it).dt.date() == date && (*it).elementType == WeatherForecast) {
+            (*it).content = QVariant::fromValue(fc);
+            const auto idx = index(std::distance(m_elements.begin(), it), 0);
+            emit dataChanged(idx, idx);
+        }
+        // case 2: we have forecast data, but no matching weather element: insert
+        else if (fc.isValid()) {
+            const auto row = std::distance(m_elements.begin(), it);
+            beginInsertRows({}, row, row);
+            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), QDateTime(date, QTime()), WeatherForecast, SelfContained});
+            endInsertRows();
+        }
+        //  case 3: we have no forecast data, but a matching weather element: remove
+        else if ((*it).elementType == WeatherForecast && (*it).dt.date() == date) {
+            const auto row = std::distance(m_elements.begin(), it);
+            beginRemoveRows({}, row, row);
+            it = m_elements.erase(it);
+            endRemoveRows();
+        }
+
         date = date.addDays(1);
         ++it;
     }
@@ -475,18 +501,4 @@ void TimelineModel::insertWeatherElements()
     }
 
     qDebug() << "weather recomputation done";
-}
-
-void TimelineModel::updateWeatherElements()
-{
-    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-        if ((*it).elementType == WeatherForecast) {
-            // TODO see above
-            (*it).content = QVariant::fromValue(m_weatherMgr->forecast(52, 13.5, QDateTime((*it).dt.date(), QTime(0, 0)), QDateTime((*it).dt.date(), QTime(23, 59))));
-            const auto idx = index(std::distance(m_elements.begin(), it), 0);
-            emit dataChanged(idx, idx);
-        }
-    }
-
-    insertWeatherElements();
 }

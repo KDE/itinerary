@@ -88,9 +88,9 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     if (Q_UNLIKELY(m_testMode)) {
         WeatherForecast fc;
         fc.setDateTime(beginDt);
-        fc.setMinimumTemperature(23.0f);
-        fc.setMaximumTemperature(23.0f);
-        fc.setPrecipitation(0.0f);
+        fc.setMinimumTemperature(std::min(latitude, longitude));
+        fc.setMaximumTemperature(std::max(latitude, longitude));
+        fc.setPrecipitation(23.0f);
         fc.setSymbolType(WeatherForecast::LightClouds);
         return fc;
     }

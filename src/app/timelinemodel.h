@@ -102,7 +102,6 @@ private:
 
     void updateInformationElements();
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
-    void insertWeatherElements();
     void updateWeatherElements();
 
     ReservationManager *m_resMgr = nullptr;

@@ -227,10 +227,111 @@ private slots:
         auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), QDate::currentDate());
+        QCOMPARE(fc.minimumTemperature(), 13.0f);
+        QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
         fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), QDate::currentDate().addDays(8));
+
+        // Add a flight one day from now changing location mid-day
+        geo.setLatitude(46.0f);
+        geo.setLongitude(8.0f);
+        a.setGeo(geo);
+        f.setArrivalAirport(a);
+        f.setDepartureTime(QDateTime(QDate::currentDate().addDays(1), QTime(12, 0)));
+        res.setReservationFor(f);
+        resMgr.addReservation(res);
+
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 13); // 2x flight, 1x today, 10x weather
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.dateTime().date(), QDate::currentDate());
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 13.0f);
+        QCOMPARE(fc.maximumTemperature(), 52.0f);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(0, 0)));
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        fc = model.index(5, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 8.0f);
+        QCOMPARE(fc.maximumTemperature(), 46.0f);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(12, 0)));
+        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        fc = model.index(6, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QCOMPARE(fc.minimumTemperature(), 8.0f);
+        QCOMPARE(fc.maximumTemperature(), 46.0f);
+        QVERIFY(fc.isValid());
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(2), QTime(0, 0)));
+
+        // check we get update signals for all weather elements
+        QSignalSpy spy(&model, &TimelineModel::dataChanged);
+        QVERIFY(spy.isValid());
+        emit weatherMgr.forecastUpdated();
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(spy.size(), 10);
+
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 13.0f);
+        QCOMPARE(fc.maximumTemperature(), 52.0f);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(0, 0)));
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 8.0f);
+        QCOMPARE(fc.maximumTemperature(), 46.0f);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
+
+        // add a location change far in the future, this must not change anything
+        geo.setLatitude(60.0f);
+        geo.setLongitude(11.0f);
+        a.setGeo(geo);
+        f.setArrivalAirport(a);
+        f.setDepartureTime(QDateTime(QDate::currentDate().addYears(1), QTime(6, 0)));
+        res.setReservationFor(f);
+        resMgr.addReservation(res);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 14);
+
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 13.0f);
+        QCOMPARE(fc.maximumTemperature(), 52.0f);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(0, 0)));
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 8.0f);
+        QCOMPARE(fc.maximumTemperature(), 46.0f);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
+
+        // result is the same when data hasn't been added incrementally
+        model.setReservationManager(nullptr);
+        model.setReservationManager(&resMgr);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 14);
+
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 13.0f);
+        QCOMPARE(fc.maximumTemperature(), 52.0f);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(0, 0)));
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        QVERIFY(fc.isValid());
+        QCOMPARE(fc.minimumTemperature(), 8.0f);
+        QCOMPARE(fc.maximumTemperature(), 46.0f);
+        QEXPECT_FAIL("", "weather for location changes not implemented yet", Continue);
+        QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
     }
 };
 
