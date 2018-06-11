@@ -52,6 +52,7 @@ private:
 private slots:
     void initTestCase()
     {
+        qputenv("TZ", "UTC");
         QStandardPaths::setTestModeEnabled(true);
     }
 
