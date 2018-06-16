@@ -50,12 +50,13 @@ function(qml_lint)
 
   foreach(_file ${ARGN})
     get_filename_component(_file_abs ${_file} ABSOLUTE)
+    string(REPLACE "/" "__" _target_name ${_file})
     add_custom_command(
-      OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${_file}.qmllint
+      OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${_target_name}.qmllint
       COMMAND ${QMLLINT_EXECUTABLE} ${_file_abs}
-      COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/${_file}.qmllint
+      COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/${_target_name}.qmllint
       MAIN_DEPENDENCY ${_file_abs}
     )
-    add_custom_target(${_file}_qmllint ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_file}.qmllint)
+    add_custom_target(${_target_name}_qmllint ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_target_name}.qmllint)
   endforeach()
 endfunction()
