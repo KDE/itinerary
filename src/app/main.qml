@@ -17,7 +17,6 @@
 
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
-import QtQuick.Dialogs 1.0
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
 import "." as App
@@ -29,18 +28,8 @@ Kirigami.ApplicationWindow {
     width: 480
     height: 720
 
-    FileDialog {
-        property bool loadPass: false
-        id: fileDialog
-        title: i18n("Please choose a file")
-        folder: shortcuts.home
-        onAccepted: {
-            console.log(fileDialog.fileUrls);
-            if (loadPass)
-                _pkpassManager.importPass(fileDialog.fileUrl);
-            else
-                _reservationManager.importReservation(fileDialog.fileUrl);
-        }
+    App.ImportDialog {
+        id: importDialog
     }
 
     globalDrawer: Kirigami.GlobalDrawer {
@@ -50,18 +39,12 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import Reservation...")
                 iconName: "document-open"
-                onTriggered: {
-                    fileDialog.loadPass = false;
-                    fileDialog.visible = true;
-                }
+                onTriggered: importDialog.importReservation()
             },
             Kirigami.Action {
                 text: i18n("Import Pass...")
                 iconName: "document-open"
-                onTriggered: {
-                    fileDialog.loadPass = true;
-                    fileDialog.visible = true;
-                }
+                onTriggered: importDialog.importPass()
             },
             Kirigami.Action {
                 text: i18n("Check for Updates")

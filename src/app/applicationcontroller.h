@@ -20,6 +20,13 @@
 
 #include <QObject>
 
+#ifdef Q_OS_ANDROID
+#include <QAndroidActivityResultReceiver>
+#endif
+
+class PkPassManager;
+class ReservationManager;
+
 class QGeoPositionInfo;
 class QGeoPositionInfoSource;
 
@@ -30,16 +37,37 @@ public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController();
 
+    void setReservationManager(ReservationManager *resMgr);
+    void setPkPassManager(PkPassManager *pkPassMgr);
+
     Q_INVOKABLE void showOnMap(const QVariant &place);
     Q_INVOKABLE bool canNavigateTo(const QVariant &place);
     Q_INVOKABLE void navigateTo(const QVariant &place);
 
+    Q_INVOKABLE void importFile();
+#ifdef Q_OS_ANDROID
+    void importFromIntent(const QAndroidJniObject &intent);
+#endif
+
 private:
+    ReservationManager *m_resMgr = nullptr;
+    PkPassManager *m_pkPassMgr = nullptr;
+
 #ifndef Q_OS_ANDROID
     void navigateTo(const QGeoPositionInfo &from, const QVariant &to);
 
     QGeoPositionInfoSource *m_positionSource = nullptr;
     QMetaObject::Connection m_pendingNavigation;
+#else
+    class ActivityResultReceiver : public QAndroidActivityResultReceiver {
+    public:
+        explicit inline ActivityResultReceiver(ApplicationController *controller)
+            : m_controller(controller) {}
+        void handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent) override;
+    private:
+        ApplicationController *m_controller;
+    };
+    ActivityResultReceiver m_activityResultReceiver;
 #endif
 };
 

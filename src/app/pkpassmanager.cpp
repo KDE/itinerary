@@ -83,9 +83,9 @@ void PkPassManager::importPass(const QUrl& url)
     doImportPass(url, Copy);
 }
 
-void PkPassManager::importPassFromTempFile(const QString& tmpFile)
+void PkPassManager::importPassFromTempFile(const QUrl& tmpFile)
 {
-    doImportPass(QUrl::fromLocalFile(tmpFile), Move);
+    doImportPass(tmpFile, Move);
 }
 
 void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode)
@@ -174,7 +174,7 @@ void PkPassManager::updatePass(const QString& passId)
         tmp.open();
         tmp.write(reply->readAll());
         tmp.close();
-        importPassFromTempFile(tmp.fileName());
+        importPassFromTempFile(QUrl::fromLocalFile(tmp.fileName()));
     });
 }
 

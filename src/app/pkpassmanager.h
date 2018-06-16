@@ -40,7 +40,7 @@ public:
     Q_INVOKABLE QObject* passObject(const QString &passId);
 
     Q_INVOKABLE void importPass(const QUrl &url);
-    void importPassFromTempFile(const QString &tmpFile);
+    void importPassFromTempFile(const QUrl &tmpFile);
     Q_INVOKABLE void removePass(const QString &passId);
 
     void updatePass(const QString &passId);

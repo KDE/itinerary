@@ -92,6 +92,7 @@ qml_lint(
     FlightPage.qml
     HotelDelegate.qml
     HotelPage.qml
+    ImportDialog.qml
     PkPassPage.qml
     PlaceDelegate.qml
     RestaurantDelegate.qml
@@ -104,6 +105,8 @@ qml_lint(
     TrainDelegate.qml
     TrainPage.qml
     WeatherForecastDelegate.qml
+
+    +android/ImportDialog.qml
 )
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})

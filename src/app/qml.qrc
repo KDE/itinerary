@@ -10,6 +10,7 @@
         <file>FlightPage.qml</file>
         <file>HotelDelegate.qml</file>
         <file>HotelPage.qml</file>
+        <file>ImportDialog.qml</file>
         <file>PkPassPage.qml</file>
         <file>PlaceDelegate.qml</file>
         <file>RestaurantDelegate.qml</file>
@@ -22,5 +23,7 @@
         <file>TrainDelegate.qml</file>
         <file>TrainPage.qml</file>
         <file>WeatherForecastDelegate.qml</file>
+
+        <file>+android/ImportDialog.qml</file>
     </qresource>
 </RCC>

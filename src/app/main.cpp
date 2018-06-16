@@ -52,7 +52,7 @@
 #include <QGuiApplication>
 #include <QIcon>
 
-void handleViewIntent(PkPassManager *passMgr)
+void handleViewIntent(ApplicationController *appController)
 {
 #ifdef Q_OS_ANDROID
     // handle opened files
@@ -61,26 +61,9 @@ void handleViewIntent(PkPassManager *passMgr)
         return;
 
     const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
-    if (!intent.isValid())
-        return;
-
-    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-    if (!uri.isValid())
-        return;
-
-    const auto scheme = uri.callObjectMethod("getScheme", "()Ljava/lang/String;");
-    if (scheme.toString() == QLatin1String("content")) {
-        const auto tmpFile = activity.callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
-        passMgr->importPassFromTempFile(tmpFile.toString());
-    } else if (scheme.toString() == QLatin1String("file")) {
-        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        passMgr->importPass(QUrl(uriStr.toString()));
-    } else {
-        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        qCWarning(Log) << "Unknown intent URI:" << uriStr.toString();
-    }
+    appController->importFromIntent(intent);
 #else
-    Q_UNUSED(passMgr);
+    Q_UNUSED(appController);
 #endif
 }
 
@@ -108,10 +91,12 @@ int main(int argc, char **argv)
     parser.process(app);
 
     Settings settings;
-    ApplicationController appController;
     PkPassManager passMgr;
     ReservationManager resMgr;
     resMgr.setPkPassManager(&passMgr);
+    ApplicationController appController;
+    appController.setReservationManager(&resMgr);
+    appController.setPkPassManager(&passMgr);
 
     TimelineModel timelineModel;
     timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
@@ -154,7 +139,7 @@ int main(int argc, char **argv)
         else
             resMgr.importReservation(QUrl::fromLocalFile(file));
     }
-    handleViewIntent(&passMgr);
+    handleViewIntent(&appController);
 
     return app.exec();
 }

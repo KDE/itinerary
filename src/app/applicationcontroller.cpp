@@ -16,6 +16,9 @@
 */
 
 #include "applicationcontroller.h"
+#include "logging.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
@@ -37,10 +40,23 @@ using namespace KItinerary;
 
 ApplicationController::ApplicationController(QObject* parent)
     : QObject(parent)
+#ifdef Q_OS_ANDROID
+    , m_activityResultReceiver(this)
+#endif
 {
 }
 
 ApplicationController::~ApplicationController() = default;
+
+void ApplicationController::setReservationManager(ReservationManager* resMgr)
+{
+    m_resMgr = resMgr;
+}
+
+void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
+{
+    m_pkPassMgr = pkPassMgr;
+}
 
 void ApplicationController::showOnMap(const QVariant &place)
 {
@@ -176,6 +192,7 @@ void ApplicationController::navigateTo(const QVariant& place)
 #ifndef Q_OS_ANDROID
 void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVariant &to)
 {
+    qDebug() << from.coordinate() << from.isValid();
     disconnect(m_pendingNavigation);
     if (!from.isValid()) {
         return;
@@ -197,3 +214,64 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
     }
 }
 #endif
+
+#ifdef Q_OS_ANDROID
+static bool isPkPassFile(const QUrl &url)
+{
+    // ### is this enough, or do we need to check the file magic?
+    return url.fileName().endsWith(QLatin1String(".pkpass"));
+}
+
+void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
+{
+    if (!intent.isValid()) {
+        return;
+    }
+
+    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
+    if (!uri.isValid()) {
+        return;
+    }
+
+    const auto scheme = uri.callObjectMethod("getScheme", "()Ljava/lang/String;");
+    qCDebug(Log) << uri.callObjectMethod("toString", "()Ljava/lang/String;").toString();
+    if (scheme.toString() == QLatin1String("content")) {
+        const auto tmpFile = QtAndroid::androidActivity().callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
+        const auto tmpUrl = QUrl::fromLocalFile(tmpFile.toString());
+        if (isPkPassFile(tmpUrl)) {
+            m_pkPassMgr->importPassFromTempFile(tmpUrl);
+        } else {
+            m_resMgr->importReservation(tmpUrl);
+        }
+    } else if (scheme.toString() == QLatin1String("file")) {
+        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+        const auto url = QUrl(uriStr.toString());
+        if (isPkPassFile(url)) {
+            m_pkPassMgr->importPass(url);
+        } else {
+            m_resMgr->importReservation(url);
+        }
+    } else {
+        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+        qCWarning(Log) << "Unknown intent URI:" << uriStr.toString();
+    }
+}
+
+void ApplicationController::ActivityResultReceiver::handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent)
+{
+    qCDebug(Log) << receiverRequestCode << resultCode;
+    m_controller->importFromIntent(intent);
+}
+#endif
+
+void ApplicationController::importFile()
+{
+#ifdef Q_OS_ANDROID
+    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");
+    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
+    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
+    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
+    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
+    QtAndroid::startActivity(intent, 0, &m_activityResultReceiver);
+#endif
+}
