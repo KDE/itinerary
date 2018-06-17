@@ -42,6 +42,7 @@ if (ANDROID)
         Qt5::AndroidExtras
         Qt5::Svg
         KF5::Prison
+        OpenSSL::SSL
     )
 
     kirigami_package_breeze_icons(ICONS
