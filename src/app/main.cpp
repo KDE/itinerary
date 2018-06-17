@@ -36,6 +36,10 @@
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
 
+#ifndef Q_OS_ANDROID
+#include <KDBusService>
+#endif
+
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -51,8 +55,10 @@
 
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QDir>
 #include <QGuiApplication>
 #include <QIcon>
+#include <QWindow>
 
 void handleViewIntent(ApplicationController *appController)
 {
@@ -96,6 +102,10 @@ int main(int argc, char **argv)
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
 
+#ifndef Q_OS_ANDROID
+    KDBusService service(KDBusService::Unique);
+#endif
+
     Settings settings;
     PkPassManager passMgr;
     ReservationManager resMgr;
@@ -103,6 +113,24 @@ int main(int argc, char **argv)
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
+#ifndef Q_OS_ANDROID
+    QObject::connect(&service, &KDBusService::activateRequested, [&parser, &passMgr, &resMgr](const QStringList &args, const QString &workingDir) {
+        qCDebug(Log) << "remote activation" << args << workingDir;
+        if (!args.isEmpty()) {
+            QDir::setCurrent(workingDir);
+            parser.parse(args);
+            for (const auto &file : parser.positionalArguments()) {
+                if (file.endsWith(QLatin1String(".pkpass")))
+                    passMgr.importPass(QUrl::fromLocalFile(file));
+                else
+                    resMgr.importReservation(QUrl::fromLocalFile(file));
+            }
+        }
+        if (!QGuiApplication::allWindows().isEmpty()) {
+            QGuiApplication::allWindows().at(0)->requestActivate();
+        }
+    });
+#endif
 
     TimelineModel timelineModel;
     timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());

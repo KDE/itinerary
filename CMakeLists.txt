@@ -44,6 +44,7 @@ if (ANDROID)
     find_package(OpenSSL REQUIRED)
 else()
     find_package(Qt5 REQUIRED COMPONENTS Widgets Positioning)
+    find_package(KF5 REQUIRED COMPONENTS DBusAddons)
 endif()
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
