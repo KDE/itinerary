@@ -48,6 +48,7 @@ public:
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);
 #endif
+    void importLocalFile(const QUrl &url);
 
 private:
     ReservationManager *m_resMgr = nullptr;

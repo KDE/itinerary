@@ -215,13 +215,13 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
 }
 #endif
 
-#ifdef Q_OS_ANDROID
 static bool isPkPassFile(const QUrl &url)
 {
     // ### is this enough, or do we need to check the file magic?
     return url.fileName().endsWith(QLatin1String(".pkpass"));
 }
 
+#ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
 {
     if (!intent.isValid()) {
@@ -245,12 +245,7 @@ void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
         }
     } else if (scheme.toString() == QLatin1String("file")) {
         const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        const auto url = QUrl(uriStr.toString());
-        if (isPkPassFile(url)) {
-            m_pkPassMgr->importPass(url);
-        } else {
-            m_resMgr->importReservation(url);
-        }
+        importLocalFile(QUrl(uriStr.toString()));
     } else {
         const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
         qCWarning(Log) << "Unknown intent URI:" << uriStr.toString();
@@ -274,4 +269,13 @@ void ApplicationController::importFile()
     intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
     QtAndroid::startActivity(intent, 0, &m_activityResultReceiver);
 #endif
+}
+
+void ApplicationController::importLocalFile(const QUrl &url)
+{
+    if (isPkPassFile(url)) {
+        m_pkPassMgr->importPass(url);
+    } else {
+        m_resMgr->importReservation(url);
+    }
 }

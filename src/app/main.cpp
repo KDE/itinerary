@@ -114,16 +114,13 @@ int main(int argc, char **argv)
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
 #ifndef Q_OS_ANDROID
-    QObject::connect(&service, &KDBusService::activateRequested, [&parser, &passMgr, &resMgr](const QStringList &args, const QString &workingDir) {
+    QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
             for (const auto &file : parser.positionalArguments()) {
-                if (file.endsWith(QLatin1String(".pkpass")))
-                    passMgr.importPass(QUrl::fromLocalFile(file));
-                else
-                    resMgr.importReservation(QUrl::fromLocalFile(file));
+                appController.importLocalFile(QUrl::fromLocalFile(file));
             }
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
@@ -168,10 +165,7 @@ int main(int argc, char **argv)
     engine.load(QStringLiteral(":/main.qml"));
 
     for (const auto &file : parser.positionalArguments()) {
-        if (file.endsWith(QLatin1String(".pkpass")))
-            passMgr.importPass(QUrl::fromLocalFile(file));
-        else
-            resMgr.importReservation(QUrl::fromLocalFile(file));
+        appController.importLocalFile(QUrl::fromLocalFile(file));
     }
     handleViewIntent(&appController);
 
