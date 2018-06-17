@@ -16,7 +16,7 @@
 */
 
 import QtQuick 2.0
-import QtQuick.Dialogs 1.0
+import Qt.labs.platform 1.0 as Platform
 
 Item {
     function importReservation()
@@ -31,11 +31,12 @@ Item {
         fileDialog.visible = true;
     }
 
-    FileDialog {
+    Platform.FileDialog {
         property bool loadPass: false
         id: fileDialog
-        title: i18n("Please choose a file")
-        folder: shortcuts.home
+        title: loadPass ? i18n("Import PkPass File") : i18n("Import Itinerary File")
+        nameFilters: loadPass ? [i18n("PkPass files (*.pkpass)")] : [i18n("JSON files (*.json)")]
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         onAccepted: {
             console.log(fileDialog.fileUrls);
             if (loadPass)

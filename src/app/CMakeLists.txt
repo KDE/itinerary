@@ -78,7 +78,7 @@ if (ANDROID)
         weather-storm
     )
 else ()
-    target_link_libraries(itinerary-app PRIVATE Qt5::Positioning)
+    target_link_libraries(itinerary-app PRIVATE Qt5::Positioning Qt5::Widgets)
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
 

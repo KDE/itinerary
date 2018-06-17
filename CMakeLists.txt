@@ -32,6 +32,7 @@ set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather 
 
 include(ECMQMLModules)
 ecm_find_qmlmodule(org.kde.prison 1.0)
+ecm_find_qmlmodule(Qt.labs.platform 1.0)
 
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
@@ -42,7 +43,7 @@ if (ANDROID)
     endif()
     find_package(OpenSSL REQUIRED)
 else()
-    find_package(Qt5 REQUIRED COMPONENTS Positioning)
+    find_package(Qt5 REQUIRED COMPONENTS Widgets Positioning)
 endif()
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)

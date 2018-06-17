@@ -45,6 +45,8 @@
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #include <QAndroidJniObject>
+#else
+#include <QApplication>
 #endif
 
 #include <QCommandLineParser>
@@ -81,7 +83,11 @@ int main(int argc, char **argv)
     QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+#ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+#else
+    QApplication app(argc, argv); // for native file dialogs
+#endif
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("map-globe")));
 
     QCommandLineParser parser;
