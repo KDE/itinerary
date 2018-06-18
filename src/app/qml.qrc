@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
+        <file>qtquickcontrols2.conf</file>
+
         <file>main.qml</file>
         <file>BoardingPass.qml</file>
         <file>BusDelegate.qml</file>
