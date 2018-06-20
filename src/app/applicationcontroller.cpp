@@ -279,3 +279,13 @@ void ApplicationController::importLocalFile(const QUrl &url)
         m_resMgr->importReservation(url);
     }
 }
+
+void ApplicationController::checkCalendar()
+{
+#ifdef Q_OS_ANDROID
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        activity.callMethod<void>("checkCalendar");
+    }
+#endif
+}

@@ -47,6 +47,12 @@ Kirigami.ApplicationWindow {
                 onTriggered: importDialog.importPass()
             },
             Kirigami.Action {
+                text: i18n("Check Calendar")
+                iconName: "view-calendar-day"
+                onTriggered: _appController.checkCalendar()
+                visible: Qt.platform.os == "android"
+            },
+            Kirigami.Action {
                 text: i18n("Check for Updates")
                 iconName: "view-refresh"
                 onTriggered: {

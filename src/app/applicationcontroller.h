@@ -50,6 +50,8 @@ public:
 #endif
     void importLocalFile(const QUrl &url);
 
+    Q_INVOKABLE void checkCalendar();
+
 private:
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
