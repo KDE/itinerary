@@ -20,11 +20,11 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_ver
 
 # build-time dependencies
 find_package(Qt5 REQUIRED COMPONENTS Test Quick)
+find_package(Qt5 OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF5 REQUIRED COMPONENTS I18n)
 find_package(KF5Contacts CONFIG REQUIRED)
 find_package(KPimPkPass CONFIG REQUIRED)
 find_package(KPimItinerary CONFIG REQUIRED)
-find_package(QmlLint)
 set_package_properties(QmlLint PROPERTIES URL "https://qt.io" PURPOSE "Validate QML code.")
 find_package(SharedMimeInfo 1.0 REQUIRED)
 find_package(ZLIB REQUIRED)

@@ -18,6 +18,12 @@ target_link_libraries(itinerary PUBLIC
     Qt5::Network
 )
 
+if (Qt5QuickCompiler_FOUND)
+    qtquick_compiler_add_resources(qml_srcs qml.qrc)
+else ()
+    set(qml_srcs qml.qrc)
+endif()
+
 add_executable(itinerary-app
     main.cpp
     applicationcontroller.cpp
@@ -25,7 +31,7 @@ add_executable(itinerary-app
     localizer.cpp
     pkpassimageprovider.cpp
     settings.cpp
-    qml.qrc
+    ${qml_srcs}
 )
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
@@ -85,34 +91,6 @@ else ()
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
-
-qml_lint(
-    main.qml
-    BoardingPass.qml
-    BusDelegate.qml
-    BusPage.qml
-    CountryInfoDelegate.qml
-    DetailsPage.qml
-    FlightDelegate.qml
-    FlightPage.qml
-    HotelDelegate.qml
-    HotelPage.qml
-    ImportDialog.qml
-    PkPassPage.qml
-    PlaceDelegate.qml
-    RestaurantDelegate.qml
-    RestaurantPage.qml
-    SettingsPage.qml
-    TicketTokenDelegate.qml
-    TimelineDelegate.qml
-    TimelinePage.qml
-    TouristAttractionDelegate.qml
-    TrainDelegate.qml
-    TrainPage.qml
-    WeatherForecastDelegate.qml
-
-    +android/ImportDialog.qml
-)
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
 if (NOT ANDROID)

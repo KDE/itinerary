@@ -162,7 +162,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
     engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
-    engine.load(QStringLiteral(":/main.qml"));
+    engine.load(QStringLiteral("qrc:/main.qml"));
 
     for (const auto &file : parser.positionalArguments()) {
         appController.importLocalFile(QUrl::fromLocalFile(file));
