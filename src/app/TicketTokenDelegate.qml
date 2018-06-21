@@ -24,26 +24,30 @@ import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Rectangle {
+Item {
     id: root
     property var ticket
-
-    implicitHeight: barcodeLayout.implicitHeight
-    implicitWidth: barcodeLayout.implicitWidth
-    color: "white"
     Layout.alignment: Qt.AlignCenter
+    Layout.fillWidth: true
+    implicitHeight: childrenRect.height
 
-    ColumnLayout {
-        id: barcodeLayout
-        anchors.fill: parent
+    Rectangle {
+        id: background
+        anchors.centerIn: root
+        anchors.top: root.top
+        anchors.bottom: root.bottom
+        color: "white"
+        implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth)
+        // ### we asume aspect ratio 1:1 here, which is correct for QR and Aztec only
+        implicitHeight: visible ? implicitWidth : 0
+        visible: barcode.implicitHeight > 0
 
         Prison.Barcode {
             id: barcode
-            Layout.alignment: Qt.AlignCenter
-            Layout.margins: 4
+            anchors.fill: background
+            anchors.margins: 4
             barcodeType:
             {
-                console.log(root.ticket.ticketTokenType, Ticket.AztecCode);
                 if (ticket == undefined)
                     return Prison.Barcode.Null;
                 switch (ticket.ticketTokenType) {
@@ -61,4 +65,3 @@ Rectangle {
         }
     }
 }
-
