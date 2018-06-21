@@ -210,6 +210,8 @@ Item {
                         Prison.Barcode {
                             Layout.alignment: Qt.AlignCenter
                             Layout.margins: 4
+                            Layout.preferredWidth: Math.max(implicitWidth, 0.8 * bodyBackground.width)
+                            Layout.preferredHeight: Layout.preferredWidth
                             barcodeType: pass.barcodes[0].format == KPkPass.Barcode.QR ? Prison.Barcode.QRCode : Prison.Barcode.Aztec
                             content: pass.barcodes[0].message
                         }
