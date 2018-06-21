@@ -49,10 +49,15 @@ public:
     void importFromIntent(const QAndroidJniObject &intent);
 #endif
     void importLocalFile(const QUrl &url);
+    void importData(const QByteArray &data);
 
     Q_INVOKABLE void checkCalendar();
 
+    static ApplicationController* instance();
+
 private:
+    static ApplicationController *s_instance;
+
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
 

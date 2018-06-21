@@ -71,6 +71,8 @@ public class Activity extends QtActivity
         startActivity(mapIntent);
     }
 
+    public native void importReservation(String data);
+
     /** Check the calendar for with JSON-LD data.
      *  This assumes the custom property serialization format used by DavDroid.
      */
@@ -105,8 +107,7 @@ public class Activity extends QtActivity
                     ObjectInputStream ois = new ObjectInputStream(bis);
                     Object prop = ois.readObject();
                     if (prop instanceof XProperty) {
-                        // TODO send this back to the C++ side
-                        Log.i(TAG, ((XProperty)prop).getValue());
+                        importReservation(((XProperty)prop).getValue());
                     }
                 } catch (Exception e) {
                     Log.i(TAG, e.toString());

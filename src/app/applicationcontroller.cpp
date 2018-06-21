@@ -38,15 +38,59 @@
 
 using namespace KItinerary;
 
+#ifdef Q_OS_ANDROID
+static void importReservation(JNIEnv *env, jobject that, jstring data)
+{
+    Q_UNUSED(that);
+    ApplicationController::instance()->importData(env->GetStringUTFChars(data, 0));
+}
+
+static const JNINativeMethod methods[] = {
+    {"importReservation", "(Ljava/lang/String;)V", (void*)importReservation}
+};
+
+Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
+{
+    static bool initialized = false;
+    if (initialized)
+        return JNI_VERSION_1_6;
+    initialized = true;
+
+    JNIEnv *env = nullptr;
+    if (vm->GetEnv((void**)&env, JNI_VERSION_1_4) != JNI_OK) {
+        qCWarning(Log) << "Failed to get JNI environment.";
+        return -1;
+    }
+    jclass cls = env->FindClass("org/kde/itinerary/Activity");
+    if (env->RegisterNatives(cls, methods, sizeof(methods) / sizeof(JNINativeMethod)) < 0) {
+        qCWarning(Log) << "Failed to register native functions.";
+        return -1;
+    }
+
+    return JNI_VERSION_1_4;
+}
+#endif
+
+ApplicationController* ApplicationController::s_instance = nullptr;
+
 ApplicationController::ApplicationController(QObject* parent)
     : QObject(parent)
 #ifdef Q_OS_ANDROID
     , m_activityResultReceiver(this)
 #endif
 {
+    s_instance = this;
 }
 
-ApplicationController::~ApplicationController() = default;
+ApplicationController::~ApplicationController()
+{
+    s_instance = nullptr;
+}
+
+ApplicationController* ApplicationController::instance()
+{
+    return s_instance;
+}
 
 void ApplicationController::setReservationManager(ReservationManager* resMgr)
 {
@@ -278,6 +322,11 @@ void ApplicationController::importLocalFile(const QUrl &url)
     } else {
         m_resMgr->importReservation(url);
     }
+}
+
+void ApplicationController::importData(const QByteArray &data)
+{
+    m_resMgr->importReservation(data);
 }
 
 void ApplicationController::checkCalendar()

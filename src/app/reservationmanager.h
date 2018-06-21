@@ -45,6 +45,8 @@ public:
     Q_INVOKABLE void addReservation(const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
+    void importReservation(const QByteArray &data);
+
 signals:
     void reservationAdded(const QString &id);
     void reservationUpdated(const QString &id);

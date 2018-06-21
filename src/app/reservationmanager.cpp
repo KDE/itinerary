@@ -113,7 +113,12 @@ void ReservationManager::importReservation(const QUrl& filename)
         return;
     }
 
-    const auto doc = QJsonDocument::fromJson(f.readAll());
+    importReservation(f.readAll());
+}
+
+void ReservationManager::importReservation(const QByteArray& data)
+{
+    const auto doc = QJsonDocument::fromJson(data);
     if (!doc.isArray()) {
         qCWarning(Log) << "Invalid JSON format.";
         return;
