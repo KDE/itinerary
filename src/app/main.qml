@@ -64,6 +64,12 @@ Kirigami.ApplicationWindow {
                 text: i18n("Settings...")
                 iconName: "settings-configure"
                 onTriggered: pageStack.push(settingsComponent)
+            },
+            Kirigami.Action {
+                id: aboutAction
+                text: i18n("About")
+                iconName: "help-about"
+                onTriggered: pageStack.push(aboutComponent)
             }
         ]
     }
@@ -90,6 +96,17 @@ Kirigami.ApplicationWindow {
                 target: settingsAction
                 property: "enabled"
                 value: !settingsPage.isCurrentPage
+            }
+        }
+    }
+    Component {
+        id: aboutComponent
+        App.AboutPage {
+            id: aboutPage
+            Binding {
+                target: aboutAction
+                property: "enabled"
+                value: !aboutPage.isCurrentPage
             }
         }
     }

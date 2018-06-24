@@ -55,6 +55,7 @@ if (ANDROID)
         document-open
         edit-delete
         go-next-symbolic
+        help-about
         map-symbolic
         settings-configure
         view-calendar-day

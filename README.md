@@ -55,6 +55,6 @@ end options
 You will also need OpenSSL in a version matching what your Qt was built againt, which unfortunately
 is a bit more cumbersome to build, see https://wiki.openssl.org/index.php/Android.
 
-### Building for all platforms
+### Building for all other platforms
 
 Works too of course, just the usual cmake/make/make install.
