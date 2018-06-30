@@ -52,7 +52,9 @@ if (ANDROID)
     )
 
     kirigami_package_breeze_icons(ICONS
+        document-edit
         document-open
+        document-save
         edit-delete
         go-next-symbolic
         help-about
