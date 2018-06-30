@@ -43,6 +43,7 @@ public:
 
     Q_INVOKABLE void importReservation(const QUrl &filename);
     Q_INVOKABLE void addReservation(const QVariant &res);
+    Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
     void importReservation(const QByteArray &data);

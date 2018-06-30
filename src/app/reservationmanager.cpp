@@ -187,7 +187,21 @@ void ReservationManager::addReservation(const QVariant &res)
     f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
     m_reservations.insert(resId, res);
     emit reservationAdded(resId);
+}
 
+void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
+{
+    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    QDir::root().mkpath(basePath);
+    const QString path = basePath + resId + QLatin1String(".jsonld");
+    QFile f(path);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << "Unable to open file:" << f.errorString();
+        return;
+    }
+    f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
+    m_reservations.insert(resId, res);
+    emit reservationUpdated(resId);
 }
 
 void ReservationManager::removeReservation(const QString& id)

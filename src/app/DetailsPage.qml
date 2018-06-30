@@ -28,6 +28,7 @@ Kirigami.ScrollablePage {
     property string resId
     property variant reservation
     property string passId
+    property variant editor
 
     Kirigami.OverlaySheet {
         id: deleteWarningSheet
@@ -53,15 +54,21 @@ Kirigami.ScrollablePage {
     actions {
         contextualActions: [
             Kirigami.Action {
+                iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
+                text: i18n("Show Boarding Pass")
+                visible: root.passId !== ""
+                onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
+            },
+            Kirigami.Action {
+                iconName: "document-edit"
+                text: i18n("Edit")
+                visible: root.editor != undefined
+                onTriggered: applicationWindow().pageStack.push(editor);
+            },
+            Kirigami.Action {
                 iconName: "edit-delete"
                 text: i18n("Delete")
                 onTriggered: deleteWarningSheet.sheetOpen = true
-            },
-            Kirigami.Action {
-                iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
-                text: i18n("Boarding Pass")
-                visible: root.passId !== ""
-                onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
             }
         ]
     }

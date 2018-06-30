@@ -26,6 +26,12 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Flight")
+    editor: Component {
+        App.FlightEditor {
+            reservation: root.reservation
+            resId: root.resId
+        }
+    }
 
     GridLayout {
         id: grid
