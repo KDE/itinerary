@@ -52,10 +52,13 @@ if (ANDROID)
     )
 
     kirigami_package_breeze_icons(ICONS
+        checkmark
+        dialog-cancel
         document-edit
         document-open
         document-save
         edit-delete
+        edit-download
         go-next-symbolic
         help-about
         map-symbolic
