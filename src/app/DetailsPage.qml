@@ -87,7 +87,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
                 text: i18n("Show Boarding Pass")
-                visible: root.passId !== ""
+                visible: _pkpassManager.hasPass(root.passId)
                 onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
             },
             Kirigami.Action {

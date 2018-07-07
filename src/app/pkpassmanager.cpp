@@ -58,6 +58,16 @@ QVector<QString> PkPassManager::passes() const
     return passIds;
 }
 
+bool PkPassManager::hasPass(const QString &passId) const
+{
+    if (m_passes.contains(passId)) {
+        return true;
+    }
+
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    return QFile::exists(passPath);
+}
+
 KPkPass::Pass* PkPassManager::pass(const QString& passId)
 {
     const auto it = m_passes.constFind(passId);

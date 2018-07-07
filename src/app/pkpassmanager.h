@@ -37,6 +37,7 @@ public:
     QVector<QString> passes() const;
 
     KPkPass::Pass* pass(const QString &passId);
+    Q_INVOKABLE bool hasPass(const QString &passId) const;
     Q_INVOKABLE QObject* passObject(const QString &passId);
     Q_INVOKABLE QString passId(const QVariant &reservation) const;
 
