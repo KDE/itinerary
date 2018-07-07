@@ -26,7 +26,6 @@ Kirigami.AbstractCard {
     id: root
     property string resId
     property var reservation
-    property string passId
     property var rangeType
 
     readonly property double headerFontScale: 1.25

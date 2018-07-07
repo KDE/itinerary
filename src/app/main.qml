@@ -83,12 +83,6 @@ Kirigami.ApplicationWindow {
         App.TimelinePage {}
     }
     Component {
-        id: pkpassComponent
-        App.PkPassPage {
-            pass: _pkpassManager.passObject(passId)
-        }
-    }
-    Component {
         id: settingsComponent
         App.SettingsPage {
             id: settingsPage

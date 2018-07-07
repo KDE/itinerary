@@ -18,6 +18,7 @@
 #include "pkpassmanager.h"
 #include "logging.h"
 
+#include <KItinerary/Reservation>
 #include <KPkPass/Pass>
 
 #include <QDebug>
@@ -30,6 +31,8 @@
 #include <QTemporaryFile>
 #include <QUrl>
 #include <QVector>
+
+using namespace KItinerary;
 
 PkPassManager::PkPassManager(QObject* parent)
     : QObject(parent)
@@ -76,6 +79,20 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
 QObject* PkPassManager::passObject(const QString& passId)
 {
     return pass(passId);
+}
+
+QString PkPassManager::passId(const QVariant &reservation) const
+{
+    if (!JsonLd::canConvert<Reservation>(reservation)) {
+        return {};
+    }
+    const auto res = JsonLd::convert<Reservation>(reservation);
+    const auto passTypeId = res.pkpassPassTypeIdentifier();
+    const auto serialNum = res.pkpassSerialNumber();
+    if (passTypeId.isEmpty() || serialNum.isEmpty()) {
+        return {};
+    }
+    return passTypeId + QLatin1Char('/') + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
 }
 
 void PkPassManager::importPass(const QUrl& url)

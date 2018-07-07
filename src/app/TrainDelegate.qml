@@ -93,7 +93,6 @@ App.TimelineDelegate {
         App.TrainPage {
             resId: root.resId
             reservation: root.reservation
-            passId: root.passId
         }
     }
 

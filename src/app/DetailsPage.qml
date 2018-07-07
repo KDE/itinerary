@@ -27,8 +27,8 @@ Kirigami.ScrollablePage {
     id: root
     property string resId
     property variant reservation
-    property string passId
     property variant editor
+    property string passId: _pkpassManager.passId(reservation)
 
     Kirigami.OverlaySheet {
         id: deleteWarningSheet
@@ -48,6 +48,13 @@ Kirigami.ScrollablePage {
                     applicationWindow().pageStack.pop()
                 }
             }
+        }
+    }
+
+    Component {
+        id: pkpassComponent
+        App.PkPassPage {
+            pass: _pkpassManager.passObject(passId)
         }
     }
 

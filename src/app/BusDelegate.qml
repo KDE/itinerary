@@ -87,7 +87,6 @@ App.TimelineDelegate {
         App.BusPage {
             resId: root.resId
             reservation: root.reservation
-            passId: root.passId
         }
     }
 

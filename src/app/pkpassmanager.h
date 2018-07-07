@@ -38,6 +38,7 @@ public:
 
     KPkPass::Pass* pass(const QString &passId);
     Q_INVOKABLE QObject* passObject(const QString &passId);
+    Q_INVOKABLE QString passId(const QVariant &reservation) const;
 
     Q_INVOKABLE void importPass(const QUrl &url);
     void importPassFromTempFile(const QUrl &tmpFile);

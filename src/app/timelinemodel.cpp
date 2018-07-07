@@ -62,16 +62,6 @@ static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType 
     return {};
 }
 
-static QString passId(const QVariant &res)
-{
-    const auto passTypeId = JsonLdDocument::readProperty(res, "pkpassPassTypeIdentifier").toString();
-    const auto serialNum = JsonLdDocument::readProperty(res, "pkpassSerialNumber").toString();
-    if (passTypeId.isEmpty() || serialNum.isEmpty()) {
-        return {};
-    }
-    return passTypeId + QLatin1Char('/') + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
-}
-
 static TimelineModel::ElementType elementType(const QVariant &res)
 {
     if (JsonLd::isA<FlightReservation>(res)) { return TimelineModel::Flight; }
@@ -211,8 +201,6 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     const auto &elem = m_elements.at(index.row());
     const auto res = m_resMgr->reservation(elem.id);
     switch (role) {
-        case PassIdRole:
-            return passId(res);
         case SectionHeader:
         {
             if (elem.dt.isNull()) {
@@ -248,7 +236,6 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 QHash<int, QByteArray> TimelineModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
-    names.insert(PassIdRole, "passId");
     names.insert(SectionHeader, "sectionHeader");
     names.insert(ReservationRole, "reservation");
     names.insert(ReservationIdRole, "reservationId");
