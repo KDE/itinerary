@@ -76,7 +76,7 @@ App.TimelineDelegate {
                 Localizer.formatTime(reservation.reservationFor, "departureTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
-            Layout.maximumWidth: root.width
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservation.reservationFor.departureAirport
@@ -100,7 +100,7 @@ App.TimelineDelegate {
                 Localizer.formatDateTime(reservation.reservationFor, "arrivalTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
-            Layout.maximumWidth: root.width
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservation.reservationFor.arrivalAirport

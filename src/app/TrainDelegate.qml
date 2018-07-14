@@ -62,6 +62,8 @@ App.TimelineDelegate {
                 reservation.reservationFor.departureStation.name,
                 reservation.reservationFor.departurePlatform ? reservation.reservationFor.departurePlatform : "-")
             color: Kirigami.Theme.textColor
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservation.reservationFor.departureStation
@@ -77,10 +79,14 @@ App.TimelineDelegate {
                 reservation.reservationFor.arrivalStation.name,
                 reservation.reservationFor.arrivalPlatform ? reservation.reservationFor.arrivalPlatform : "-")
             color: Kirigami.Theme.textColor
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: i18n("Arrival time: %1", Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservation.reservationFor.arrivalStation
