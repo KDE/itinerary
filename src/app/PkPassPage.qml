@@ -19,13 +19,19 @@ import QtQuick 2.5
 import org.kde.kirigami 2.0 as Kirigami
 import "." as App
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     property alias passId: pkpass.passId
     property alias pass: pkpass.pass
     title: i18n("Boarding Pass")
-    App.BoardingPass {
-        x: (parent.width - implicitWidth) / 2
-        id: pkpass
+    Item {
+        id: contentItem
+        width: parent.width
+        implicitHeight: pkpass.implicitHeight
+
+        App.BoardingPass {
+            x: (parent.width - implicitWidth) / 2
+            id: pkpass
+        }
     }
 
     onBackRequested: pageStack.pop()
