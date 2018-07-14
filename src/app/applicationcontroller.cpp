@@ -25,6 +25,7 @@
 
 #include <QDebug>
 #include <QDesktopServices>
+#include <QFile>
 #include <QUrl>
 #include <QUrlQuery>
 
@@ -261,7 +262,16 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
 
 static bool isPkPassFile(const QUrl &url)
 {
-    // ### is this enough, or do we need to check the file magic?
+    if (url.isLocalFile()) {
+        QFile f(url.toLocalFile());
+        if (f.open(QFile::ReadOnly)) {
+            char buffer[4];
+            if (f.read(buffer, sizeof(buffer)) != sizeof(buffer)) {
+                return false;
+            }
+            return buffer[0] == 'P' && buffer[1] == 'K' && buffer[2] == 0x03 && buffer[3] == 0x04;
+        }
+    }
     return url.fileName().endsWith(QLatin1String(".pkpass"));
 }
 
