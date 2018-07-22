@@ -31,6 +31,7 @@ add_executable(itinerary-app
     localizer.cpp
     pkpassimageprovider.cpp
     settings.cpp
+    util.cpp
     ${qml_srcs}
 )
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})

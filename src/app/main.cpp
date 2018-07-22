@@ -27,6 +27,7 @@
 #include "pkpassimageprovider.h"
 #include "reservationmanager.h"
 #include "settings.h"
+#include "util.h"
 
 #include <weatherforecastmanager.h>
 
@@ -148,11 +149,14 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
 
     qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
-    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
+    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
     qmlRegisterSingletonType<Localizer>("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Localizer;
     });
-    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
+    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
+    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
+        return new Util;
+    });
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
