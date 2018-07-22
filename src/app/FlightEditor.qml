@@ -29,9 +29,15 @@ App.EditorPage {
 
     function save(resId, reservation) {
         var flight = reservation.reservationFor;
-        flight.departureTerminal = departureTerminal.text
+        if (boardingTime.isModified)
+            flight = Util.setDateTimePreserveTimezone(flight, "boardingTime", boardingTime.value);
         flight.departureGate = departureGate.text
+        flight.departureTerminal = departureTerminal.text
+        if (departureTime.isModified)
+            flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
+
         var newRes = reservation;
+        newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
         _reservationManager.updateReservation(resId, newRes);
     }
@@ -49,12 +55,43 @@ App.EditorPage {
             font.bold: true
         }
 
+        // flight details
+        QQC2.Label {
+            text: i18n("Boarding time:")
+        }
+        App.DateTimeEdit {
+            id: boardingTime
+            obj: reservation.reservationFor
+            propertyName: "boardingTime"
+        }
+        QQC2.Label {
+            text: i18n("Seat:")
+        }
+        QQC2.TextField {
+            id: seat
+            text: reservation.airplaneSeat
+        }
+
+        Kirigami.Separator {
+            Layout.columnSpan: 2
+            Layout.fillWidth: true
+        }
+
+
         // departure data
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
             text: i18n("Departure")
             horizontalAlignment: Qt.AlignHCenter
+        }
+        QQC2.Label {
+            text: i18n("Departure time:")
+        }
+        App.DateTimeEdit {
+            id: departureTime
+            obj: reservation.reservationFor
+            propertyName: "departureTime"
         }
         QQC2.Label {
             text: i18n("Departure terminal:")
