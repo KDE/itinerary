@@ -458,14 +458,15 @@ void TimelineModel::updateWeatherElements()
         // determine the length of the forecast range (at most until the end of the day)
         auto endTime = date;
         endTime.setTime(QTime(23, 59, 59));
+        GeoCoordinates newGeo = geo;
         for (auto it2 = it; it2 != m_elements.end(); ++it2) {
             if ((*it2).dt >= endTime) {
                 break;
             }
             const auto res = m_resMgr->reservation((*it2).id);
-            const auto newGeo = geoCoordinate(res);
             if (isLocationChange(res)) {
                 endTime = std::min(endTime, relevantDateTime(res, RangeEnd));
+                newGeo = geoCoordinate(res);
                 break;
             }
         }
@@ -475,6 +476,7 @@ void TimelineModel::updateWeatherElements()
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
             fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         }
+        geo = newGeo;
 
         // case 1: we have forecast data, and a matching weather element: update
         if (fc.isValid() && (*it).dt == date && (*it).elementType == WeatherForecast) {
