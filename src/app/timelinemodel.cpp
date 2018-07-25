@@ -458,6 +458,7 @@ void TimelineModel::updateWeatherElements()
         // determine the length of the forecast range (at most until the end of the day)
         auto endTime = date;
         endTime.setTime(QTime(23, 59, 59));
+        auto nextStartTime = endTime;
         GeoCoordinates newGeo = geo;
         for (auto it2 = it; it2 != m_elements.end(); ++it2) {
             if ((*it2).dt >= endTime) {
@@ -465,7 +466,9 @@ void TimelineModel::updateWeatherElements()
             }
             const auto res = m_resMgr->reservation((*it2).id);
             if (isLocationChange(res)) {
-                endTime = std::min(endTime, relevantDateTime(res, RangeEnd));
+                // exclude the actual travel time from forecast ranges
+                endTime = std::min(endTime, relevantDateTime(res, RangeBegin));
+                nextStartTime = std::max(endTime, relevantDateTime(res, RangeEnd));
                 newGeo = geoCoordinate(res);
                 break;
             }
@@ -499,7 +502,7 @@ void TimelineModel::updateWeatherElements()
             endRemoveRows();
         }
 
-        date = endTime.addSecs(1);
+        date = nextStartTime.addSecs(1);
         ++it;
     }
 
