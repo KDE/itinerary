@@ -432,6 +432,18 @@ void TimelineModel::updateWeatherElements()
     while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime()) {
 
         if ((*it).dt < date || (*it).elementType == TodayMarker) {
+            // clean up outdated weather elements (happens when merging previously split ranges)
+            if ((*it).elementType == WeatherForecast) {
+                const auto row = std::distance(m_elements.begin(), it);
+                beginRemoveRows({}, row, row);
+                it = m_elements.erase(it);
+                endRemoveRows();
+                if (it == m_elements.end()) {
+                    break;
+                }
+                continue;
+            }
+
             // track where we are
             const auto res = m_resMgr->reservation((*it).id);
             const auto newGeo = geoCoordinate(res);

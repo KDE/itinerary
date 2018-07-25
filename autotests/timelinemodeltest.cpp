@@ -325,6 +325,13 @@ private slots:
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
         QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
+
+        // clean up
+        auto resId = model.index(13, 0).data(TimelineModel::ReservationIdRole).toString();
+        resMgr.removeReservation(resId);
+        resId = model.index(4, 0).data(TimelineModel::ReservationIdRole).toString();
+        resMgr.removeReservation(resId);
+        QCOMPARE(model.rowCount(), 11);
     }
 };
 
