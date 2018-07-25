@@ -333,7 +333,7 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
                 }
                 auto fc = parseForecastElement(reader);
                 for (int i = 0; i < from.secsTo(to); i += 3600) {
-                    fc.setDateTime(from.addSecs(i * 3600));
+                    fc.setDateTime(from.addSecs(i));
                     result.push_back(fc);
                 }
                 continue;
