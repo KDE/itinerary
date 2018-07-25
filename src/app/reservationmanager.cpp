@@ -98,8 +98,17 @@ QVariant ReservationManager::reservation(const QString& id) const
         return {};
     }
 
-    m_reservations.insert(id, resData.at(0));
-    return resData.at(0);
+    // re-run post-processing to benefit from newer augmentations
+    ExtractorPostprocessor postproc;
+    postproc.process(resData);
+    if (postproc.result().size() != 1) {
+        qCWarning(Log) << "Post-processing discarded the reservation:" << resPath;
+        return {};
+    }
+
+    const auto res = postproc.result().at(0);
+    m_reservations.insert(id, res);
+    return res;
 }
 
 void ReservationManager::importReservation(const QUrl& filename)
