@@ -91,6 +91,10 @@ public:
     /** Merge with @p other. */
     void merge(const WeatherForecast &other);
 
+    // internal for weighting different forecast elements
+    int range() const;
+    void setRange(int hours);
+
 private:
     QExplicitlySharedDataPointer<WeatherForecastPrivate> d;
 };

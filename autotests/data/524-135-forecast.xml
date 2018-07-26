@@ -1,0 +1,3293 @@
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://api.met.no/weatherapi/locationforecast/1.9/schema" created="2118-07-25T13:42:23Z">
+   <meta>
+      <model name="EC.GEO.0125" termin="2118-07-25T00:00:00Z" runended="2118-07-25T07:35:13Z" nextrun="2118-07-25T20:00:00Z" from="2118-07-25T14:00:00Z" to="2118-08-04T00:00:00Z" />
+      </meta>
+   <product class="pointData">
+      <time datatype="forecast" from="2118-07-25T14:00:00Z" to="2118-07-25T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.9"/>
+            <windDirection id="dd" deg="23.6" name="NE"/>
+            <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"/>
+            <humidity value="40.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.3"/>
+            <cloudiness id="NN" percent="14.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="10.9"/>
+            <mediumClouds id="MEDIUM" percent="7.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T13:00:00Z" to="2118-07-25T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T12:00:00Z" to="2118-07-25T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T11:00:00Z" to="2118-07-25T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T08:00:00Z" to="2118-07-25T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.2"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T15:00:00Z" to="2118-07-25T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.9"/>
+            <windDirection id="dd" deg="23.9" name="NE"/>
+            <windSpeed id="ff" mps="3.7" beaufort="3" name="Lett bris"/>
+            <humidity value="39.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.1"/>
+            <cloudiness id="NN" percent="23.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="20.3"/>
+            <mediumClouds id="MEDIUM" percent="7.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T14:00:00Z" to="2118-07-25T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T13:00:00Z" to="2118-07-25T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T12:00:00Z" to="2118-07-25T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T09:00:00Z" to="2118-07-25T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.6"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T16:00:00Z" to="2118-07-25T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.5"/>
+            <windDirection id="dd" deg="28.7" name="NE"/>
+            <windSpeed id="ff" mps="4.1" beaufort="3" name="Lett bris"/>
+            <humidity value="40.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.0"/>
+            <cloudiness id="NN" percent="9.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="9.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T15:00:00Z" to="2118-07-25T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T14:00:00Z" to="2118-07-25T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T13:00:00Z" to="2118-07-25T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T10:00:00Z" to="2118-07-25T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="28.4"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T17:00:00Z" to="2118-07-25T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.9"/>
+            <windDirection id="dd" deg="37.5" name="NE"/>
+            <windSpeed id="ff" mps="4.0" beaufort="3" name="Lett bris"/>
+            <humidity value="41.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.3"/>
+            <cloudiness id="NN" percent="5.5"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="5.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T16:00:00Z" to="2118-07-25T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T15:00:00Z" to="2118-07-25T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T14:00:00Z" to="2118-07-25T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T11:00:00Z" to="2118-07-25T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="28.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T18:00:00Z" to="2118-07-25T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.8"/>
+            <windDirection id="dd" deg="48.4" name="NE"/>
+            <windSpeed id="ff" mps="3.2" beaufort="2" name="Svak vind"/>
+            <humidity value="45.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.7"/>
+            <cloudiness id="NN" percent="3.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T17:00:00Z" to="2118-07-25T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T16:00:00Z" to="2118-07-25T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T15:00:00Z" to="2118-07-25T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T12:00:00Z" to="2118-07-25T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.8"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T19:00:00Z" to="2118-07-25T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="25.7"/>
+            <windDirection id="dd" deg="52.7" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="53.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.1"/>
+            <cloudiness id="NN" percent="1.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T18:00:00Z" to="2118-07-25T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T17:00:00Z" to="2118-07-25T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T16:00:00Z" to="2118-07-25T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T13:00:00Z" to="2118-07-25T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="25.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T20:00:00Z" to="2118-07-25T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="24.2"/>
+            <windDirection id="dd" deg="59.5" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="60.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.6"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T19:00:00Z" to="2118-07-25T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T18:00:00Z" to="2118-07-25T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T17:00:00Z" to="2118-07-25T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T14:00:00Z" to="2118-07-25T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="24.2"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T21:00:00Z" to="2118-07-25T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.1"/>
+            <windDirection id="dd" deg="46.8" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="66.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.7"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T20:00:00Z" to="2118-07-25T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T19:00:00Z" to="2118-07-25T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T18:00:00Z" to="2118-07-25T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T15:00:00Z" to="2118-07-25T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.1"/>
+<maxTemperature id="TTT" unit="celsius" value="29.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T22:00:00Z" to="2118-07-25T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.1"/>
+            <windDirection id="dd" deg="42.4" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="71.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.1"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T21:00:00Z" to="2118-07-25T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T20:00:00Z" to="2118-07-25T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T19:00:00Z" to="2118-07-25T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T16:00:00Z" to="2118-07-25T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.1"/>
+<maxTemperature id="TTT" unit="celsius" value="29.5"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T23:00:00Z" to="2118-07-25T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.9"/>
+            <windDirection id="dd" deg="38.9" name="NE"/>
+            <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"/>
+            <humidity value="78.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.0"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T22:00:00Z" to="2118-07-25T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T21:00:00Z" to="2118-07-25T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T20:00:00Z" to="2118-07-25T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T17:00:00Z" to="2118-07-25T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.9"/>
+<maxTemperature id="TTT" unit="celsius" value="28.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T00:00:00Z" to="2118-07-26T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.9"/>
+            <windDirection id="dd" deg="30.2" name="NE"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="84.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.0"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T23:00:00Z" to="2118-07-26T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T22:00:00Z" to="2118-07-26T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T21:00:00Z" to="2118-07-26T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T18:00:00Z" to="2118-07-26T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.9"/>
+<maxTemperature id="TTT" unit="celsius" value="27.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T01:00:00Z" to="2118-07-26T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.0"/>
+            <windDirection id="dd" deg="21.1" name="N"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="88.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.1"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T00:00:00Z" to="2118-07-26T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T23:00:00Z" to="2118-07-26T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T22:00:00Z" to="2118-07-26T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T19:00:00Z" to="2118-07-26T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.0"/>
+<maxTemperature id="TTT" unit="celsius" value="25.7"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T02:00:00Z" to="2118-07-26T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="18.3"/>
+            <windDirection id="dd" deg="19.3" name="N"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="91.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.0"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T01:00:00Z" to="2118-07-26T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T00:00:00Z" to="2118-07-26T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T23:00:00Z" to="2118-07-26T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T20:00:00Z" to="2118-07-26T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="18.3"/>
+<maxTemperature id="TTT" unit="celsius" value="24.2"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T03:00:00Z" to="2118-07-26T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="17.7"/>
+            <windDirection id="dd" deg="26.6" name="NE"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="93.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.1"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T02:00:00Z" to="2118-07-26T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T01:00:00Z" to="2118-07-26T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T00:00:00Z" to="2118-07-26T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T21:00:00Z" to="2118-07-26T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="23.1"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T04:00:00Z" to="2118-07-26T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="17.8"/>
+            <windDirection id="dd" deg="34.5" name="NE"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="93.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.4"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T03:00:00Z" to="2118-07-26T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T02:00:00Z" to="2118-07-26T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T01:00:00Z" to="2118-07-26T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T22:00:00Z" to="2118-07-26T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="22.1"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T05:00:00Z" to="2118-07-26T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.4"/>
+            <windDirection id="dd" deg="40.6" name="NE"/>
+            <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"/>
+            <humidity value="86.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.8"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T04:00:00Z" to="2118-07-26T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T03:00:00Z" to="2118-07-26T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T02:00:00Z" to="2118-07-26T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-25T23:00:00Z" to="2118-07-26T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="20.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T06:00:00Z" to="2118-07-26T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.6"/>
+            <windDirection id="dd" deg="48.2" name="NE"/>
+            <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"/>
+            <humidity value="76.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.1"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T05:00:00Z" to="2118-07-26T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T04:00:00Z" to="2118-07-26T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T03:00:00Z" to="2118-07-26T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T00:00:00Z" to="2118-07-26T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="21.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T07:00:00Z" to="2118-07-26T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.9"/>
+            <windDirection id="dd" deg="60.3" name="NE"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="68.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.3"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T06:00:00Z" to="2118-07-26T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T05:00:00Z" to="2118-07-26T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T04:00:00Z" to="2118-07-26T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T01:00:00Z" to="2118-07-26T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="23.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T08:00:00Z" to="2118-07-26T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="25.9"/>
+            <windDirection id="dd" deg="71.2" name="E"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="58.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.2"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T07:00:00Z" to="2118-07-26T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T06:00:00Z" to="2118-07-26T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T05:00:00Z" to="2118-07-26T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T02:00:00Z" to="2118-07-26T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="25.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T09:00:00Z" to="2118-07-26T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.3"/>
+            <windDirection id="dd" deg="69.7" name="E"/>
+            <windSpeed id="ff" mps="2.6" beaufort="2" name="Svak vind"/>
+            <humidity value="50.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.2"/>
+            <cloudiness id="NN" percent="7.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.8"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T08:00:00Z" to="2118-07-26T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T07:00:00Z" to="2118-07-26T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T06:00:00Z" to="2118-07-26T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T03:00:00Z" to="2118-07-26T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.7"/>
+<maxTemperature id="TTT" unit="celsius" value="27.3"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T10:00:00Z" to="2118-07-26T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.5"/>
+            <windDirection id="dd" deg="59.8" name="NE"/>
+            <windSpeed id="ff" mps="2.8" beaufort="2" name="Svak vind"/>
+            <humidity value="43.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.1"/>
+            <cloudiness id="NN" percent="3.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="3.9"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T09:00:00Z" to="2118-07-26T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T08:00:00Z" to="2118-07-26T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T07:00:00Z" to="2118-07-26T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T04:00:00Z" to="2118-07-26T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="17.8"/>
+<maxTemperature id="TTT" unit="celsius" value="28.5"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T11:00:00Z" to="2118-07-26T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.6"/>
+            <windDirection id="dd" deg="51.3" name="NE"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <humidity value="37.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.7"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="13.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T10:00:00Z" to="2118-07-26T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T09:00:00Z" to="2118-07-26T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T08:00:00Z" to="2118-07-26T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T05:00:00Z" to="2118-07-26T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.4"/>
+<maxTemperature id="TTT" unit="celsius" value="29.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T12:00:00Z" to="2118-07-26T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.3"/>
+            <windDirection id="dd" deg="48.3" name="NE"/>
+            <windSpeed id="ff" mps="3.4" beaufort="3" name="Lett bris"/>
+            <humidity value="33.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.3"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="12.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T11:00:00Z" to="2118-07-26T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T10:00:00Z" to="2118-07-26T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T09:00:00Z" to="2118-07-26T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T06:00:00Z" to="2118-07-26T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.6"/>
+<maxTemperature id="TTT" unit="celsius" value="30.3"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T13:00:00Z" to="2118-07-26T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.7"/>
+            <windDirection id="dd" deg="45.2" name="NE"/>
+            <windSpeed id="ff" mps="3.8" beaufort="3" name="Lett bris"/>
+            <humidity value="31.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.9"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="12.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T12:00:00Z" to="2118-07-26T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T11:00:00Z" to="2118-07-26T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T10:00:00Z" to="2118-07-26T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T07:00:00Z" to="2118-07-26T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.9"/>
+<maxTemperature id="TTT" unit="celsius" value="30.7"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T14:00:00Z" to="2118-07-26T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.8"/>
+            <windDirection id="dd" deg="42.8" name="NE"/>
+            <windSpeed id="ff" mps="4.2" beaufort="3" name="Lett bris"/>
+            <humidity value="30.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.6"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="11.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T13:00:00Z" to="2118-07-26T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T12:00:00Z" to="2118-07-26T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T11:00:00Z" to="2118-07-26T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T08:00:00Z" to="2118-07-26T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="25.9"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T15:00:00Z" to="2118-07-26T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.6"/>
+            <windDirection id="dd" deg="40.8" name="NE"/>
+            <windSpeed id="ff" mps="4.6" beaufort="3" name="Lett bris"/>
+            <humidity value="32.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.3"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="12.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T14:00:00Z" to="2118-07-26T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T13:00:00Z" to="2118-07-26T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T12:00:00Z" to="2118-07-26T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T09:00:00Z" to="2118-07-26T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.3"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T16:00:00Z" to="2118-07-26T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.0"/>
+            <windDirection id="dd" deg="43.5" name="NE"/>
+            <windSpeed id="ff" mps="4.8" beaufort="3" name="Lett bris"/>
+            <humidity value="34.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.2"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="12.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T15:00:00Z" to="2118-07-26T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T14:00:00Z" to="2118-07-26T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T13:00:00Z" to="2118-07-26T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T10:00:00Z" to="2118-07-26T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="28.5"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T17:00:00Z" to="2118-07-26T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.2"/>
+            <windDirection id="dd" deg="44.9" name="NE"/>
+            <windSpeed id="ff" mps="4.7" beaufort="3" name="Lett bris"/>
+            <humidity value="38.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.3"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="13.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T16:00:00Z" to="2118-07-26T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T15:00:00Z" to="2118-07-26T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T14:00:00Z" to="2118-07-26T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T11:00:00Z" to="2118-07-26T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="29.2"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T18:00:00Z" to="2118-07-26T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.0"/>
+            <windDirection id="dd" deg="47.5" name="NE"/>
+            <windSpeed id="ff" mps="3.9" beaufort="3" name="Lett bris"/>
+            <humidity value="43.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.5"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T17:00:00Z" to="2118-07-26T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T16:00:00Z" to="2118-07-26T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T15:00:00Z" to="2118-07-26T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T12:00:00Z" to="2118-07-26T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="28.0"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T19:00:00Z" to="2118-07-26T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.1"/>
+            <windDirection id="dd" deg="45.5" name="NE"/>
+            <windSpeed id="ff" mps="3.2" beaufort="2" name="Svak vind"/>
+            <humidity value="51.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.0"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T18:00:00Z" to="2118-07-26T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T17:00:00Z" to="2118-07-26T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T16:00:00Z" to="2118-07-26T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T13:00:00Z" to="2118-07-26T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.1"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T20:00:00Z" to="2118-07-26T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="24.6"/>
+            <windDirection id="dd" deg="36.4" name="NE"/>
+            <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"/>
+            <humidity value="62.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.5"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T19:00:00Z" to="2118-07-26T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T18:00:00Z" to="2118-07-26T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T17:00:00Z" to="2118-07-26T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T14:00:00Z" to="2118-07-26T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="24.6"/>
+<maxTemperature id="TTT" unit="celsius" value="30.8"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T21:00:00Z" to="2118-07-26T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.4"/>
+            <windDirection id="dd" deg="38.6" name="NE"/>
+            <windSpeed id="ff" mps="3.4" beaufort="3" name="Lett bris"/>
+            <humidity value="71.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.7"/>
+            <cloudiness id="NN" percent="0.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T20:00:00Z" to="2118-07-26T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T19:00:00Z" to="2118-07-26T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T18:00:00Z" to="2118-07-26T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T15:00:00Z" to="2118-07-26T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.4"/>
+<maxTemperature id="TTT" unit="celsius" value="30.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T22:00:00Z" to="2118-07-26T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.5"/>
+            <windDirection id="dd" deg="47.0" name="NE"/>
+            <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"/>
+            <humidity value="75.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.8"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T21:00:00Z" to="2118-07-26T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T20:00:00Z" to="2118-07-26T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T19:00:00Z" to="2118-07-26T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T16:00:00Z" to="2118-07-26T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.5"/>
+<maxTemperature id="TTT" unit="celsius" value="30.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T23:00:00Z" to="2118-07-26T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.7"/>
+            <windDirection id="dd" deg="53.6" name="NE"/>
+            <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"/>
+            <humidity value="75.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.7"/>
+            <cloudiness id="NN" percent="1.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T22:00:00Z" to="2118-07-26T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T21:00:00Z" to="2118-07-26T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T20:00:00Z" to="2118-07-26T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T17:00:00Z" to="2118-07-26T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.2"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T00:00:00Z" to="2118-07-27T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.0"/>
+            <windDirection id="dd" deg="55.7" name="NE"/>
+            <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"/>
+            <humidity value="76.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.6"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T23:00:00Z" to="2118-07-27T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T22:00:00Z" to="2118-07-27T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T21:00:00Z" to="2118-07-27T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T18:00:00Z" to="2118-07-27T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.0"/>
+<maxTemperature id="TTT" unit="celsius" value="28.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T01:00:00Z" to="2118-07-27T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.3"/>
+            <windDirection id="dd" deg="51.1" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="78.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.4"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T00:00:00Z" to="2118-07-27T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T23:00:00Z" to="2118-07-27T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T22:00:00Z" to="2118-07-27T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T19:00:00Z" to="2118-07-27T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.3"/>
+<maxTemperature id="TTT" unit="celsius" value="26.1"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T02:00:00Z" to="2118-07-27T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.7"/>
+            <windDirection id="dd" deg="52.3" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="81.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.2"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T01:00:00Z" to="2118-07-27T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T00:00:00Z" to="2118-07-27T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T23:00:00Z" to="2118-07-27T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T20:00:00Z" to="2118-07-27T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.7"/>
+<maxTemperature id="TTT" unit="celsius" value="24.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T03:00:00Z" to="2118-07-27T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.3"/>
+            <windDirection id="dd" deg="52.2" name="NE"/>
+            <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"/>
+            <humidity value="84.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.1"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T02:00:00Z" to="2118-07-27T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T01:00:00Z" to="2118-07-27T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T00:00:00Z" to="2118-07-27T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T21:00:00Z" to="2118-07-27T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="23.4"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T04:00:00Z" to="2118-07-27T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="19.4"/>
+            <windDirection id="dd" deg="52.8" name="NE"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="85.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.3"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T03:00:00Z" to="2118-07-27T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T02:00:00Z" to="2118-07-27T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T01:00:00Z" to="2118-07-27T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T22:00:00Z" to="2118-07-27T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="22.5"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T05:00:00Z" to="2118-07-27T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.9"/>
+            <windDirection id="dd" deg="59.4" name="NE"/>
+            <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"/>
+            <humidity value="80.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.6"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T04:00:00Z" to="2118-07-27T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T03:00:00Z" to="2118-07-27T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T02:00:00Z" to="2118-07-27T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-26T23:00:00Z" to="2118-07-27T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="21.7"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T06:00:00Z" to="2118-07-27T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.7"/>
+            <windDirection id="dd" deg="65.5" name="NE"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="73.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.7"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T05:00:00Z" to="2118-07-27T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T04:00:00Z" to="2118-07-27T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T03:00:00Z" to="2118-07-27T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T00:00:00Z" to="2118-07-27T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="22.7"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T07:00:00Z" to="2118-07-27T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="24.6"/>
+            <windDirection id="dd" deg="66.9" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="66.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.7"/>
+            <cloudiness id="NN" percent="1.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T06:00:00Z" to="2118-07-27T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T05:00:00Z" to="2118-07-27T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T04:00:00Z" to="2118-07-27T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T01:00:00Z" to="2118-07-27T07:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="24.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T08:00:00Z" to="2118-07-27T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.4"/>
+            <windDirection id="dd" deg="69.1" name="E"/>
+            <windSpeed id="ff" mps="2.6" beaufort="2" name="Svak vind"/>
+            <humidity value="58.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.5"/>
+            <cloudiness id="NN" percent="18.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="10.2"/>
+            <mediumClouds id="MEDIUM" percent="16.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T07:00:00Z" to="2118-07-27T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T06:00:00Z" to="2118-07-27T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T05:00:00Z" to="2118-07-27T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T02:00:00Z" to="2118-07-27T08:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="26.4"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T09:00:00Z" to="2118-07-27T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.6"/>
+            <windDirection id="dd" deg="71.0" name="E"/>
+            <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"/>
+            <humidity value="51.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.2"/>
+            <cloudiness id="NN" percent="25.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="17.2"/>
+            <mediumClouds id="MEDIUM" percent="21.9"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T08:00:00Z" to="2118-07-27T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T07:00:00Z" to="2118-07-27T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T06:00:00Z" to="2118-07-27T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T03:00:00Z" to="2118-07-27T09:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.3"/>
+<maxTemperature id="TTT" unit="celsius" value="27.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T10:00:00Z" to="2118-07-27T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.4"/>
+            <windDirection id="dd" deg="70.6" name="E"/>
+            <windSpeed id="ff" mps="3.4" beaufort="3" name="Lett bris"/>
+            <humidity value="48.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.8"/>
+            <cloudiness id="NN" percent="21.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="16.4"/>
+            <mediumClouds id="MEDIUM" percent="16.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T09:00:00Z" to="2118-07-27T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T08:00:00Z" to="2118-07-27T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T07:00:00Z" to="2118-07-27T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T04:00:00Z" to="2118-07-27T10:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="19.4"/>
+<maxTemperature id="TTT" unit="celsius" value="28.4"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T11:00:00Z" to="2118-07-27T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.4"/>
+            <windDirection id="dd" deg="65.8" name="NE"/>
+            <windSpeed id="ff" mps="3.5" beaufort="3" name="Lett bris"/>
+            <humidity value="44.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.2"/>
+            <cloudiness id="NN" percent="23.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="20.3"/>
+            <mediumClouds id="MEDIUM" percent="10.9"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T10:00:00Z" to="2118-07-27T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T09:00:00Z" to="2118-07-27T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T08:00:00Z" to="2118-07-27T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T05:00:00Z" to="2118-07-27T11:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.4"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T12:00:00Z" to="2118-07-27T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.8"/>
+            <windDirection id="dd" deg="68.6" name="E"/>
+            <windSpeed id="ff" mps="3.9" beaufort="3" name="Lett bris"/>
+            <humidity value="43.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.6"/>
+            <cloudiness id="NN" percent="32.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="12.5"/>
+            <mediumClouds id="MEDIUM" percent="29.7"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T11:00:00Z" to="2118-07-27T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T10:00:00Z" to="2118-07-27T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T09:00:00Z" to="2118-07-27T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T06:00:00Z" to="2118-07-27T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T13:00:00Z" to="2118-07-27T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.7"/>
+            <windDirection id="dd" deg="66.0" name="NE"/>
+            <windSpeed id="ff" mps="3.8" beaufort="3" name="Lett bris"/>
+            <humidity value="48.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.2"/>
+            <cloudiness id="NN" percent="43.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="30.5"/>
+            <mediumClouds id="MEDIUM" percent="32.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T12:00:00Z" to="2118-07-27T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.1"/>
+<symbol id="DrizzleSun" number="40"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T11:00:00Z" to="2118-07-27T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T10:00:00Z" to="2118-07-27T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T07:00:00Z" to="2118-07-27T13:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="24.6"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T14:00:00Z" to="2118-07-27T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.6"/>
+            <windDirection id="dd" deg="63.5" name="NE"/>
+            <windSpeed id="ff" mps="4.4" beaufort="3" name="Lett bris"/>
+            <humidity value="49.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.9"/>
+            <cloudiness id="NN" percent="35.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="10.9"/>
+            <mediumClouds id="MEDIUM" percent="32.8"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T13:00:00Z" to="2118-07-27T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T12:00:00Z" to="2118-07-27T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.2"/>
+<symbol id="DrizzleSun" number="40"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T11:00:00Z" to="2118-07-27T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T08:00:00Z" to="2118-07-27T14:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.4"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T15:00:00Z" to="2118-07-27T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.9"/>
+            <windDirection id="dd" deg="54.5" name="NE"/>
+            <windSpeed id="ff" mps="4.9" beaufort="3" name="Lett bris"/>
+            <humidity value="56.9" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.8"/>
+            <cloudiness id="NN" percent="41.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="15.6"/>
+            <mediumClouds id="MEDIUM" percent="26.6"/>
+            <highClouds id="HIGH" percent="21.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T14:00:00Z" to="2118-07-27T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.1"/>
+<symbol id="DrizzleSun" number="40"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T13:00:00Z" to="2118-07-27T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.2"/>
+<symbol id="DrizzleSun" number="40"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T12:00:00Z" to="2118-07-27T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.3"/>
+<symbol id="DrizzleSun" number="40"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T09:00:00Z" to="2118-07-27T15:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.6"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T16:00:00Z" to="2118-07-27T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.3"/>
+            <windDirection id="dd" deg="76.0" name="E"/>
+            <windSpeed id="ff" mps="3.8" beaufort="3" name="Lett bris"/>
+            <humidity value="52.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.4"/>
+            <cloudiness id="NN" percent="78.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="6.2"/>
+            <mediumClouds id="MEDIUM" percent="18.8"/>
+            <highClouds id="HIGH" percent="74.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T15:00:00Z" to="2118-07-27T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T14:00:00Z" to="2118-07-27T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T13:00:00Z" to="2118-07-27T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T10:00:00Z" to="2118-07-27T16:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T17:00:00Z" to="2118-07-27T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.9"/>
+            <windDirection id="dd" deg="84.4" name="E"/>
+            <windSpeed id="ff" mps="3.9" beaufort="3" name="Lett bris"/>
+            <humidity value="52.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.3"/>
+            <cloudiness id="NN" percent="97.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="6.2"/>
+            <mediumClouds id="MEDIUM" percent="18.8"/>
+            <highClouds id="HIGH" percent="97.7"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T16:00:00Z" to="2118-07-27T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T15:00:00Z" to="2118-07-27T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T14:00:00Z" to="2118-07-27T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T11:00:00Z" to="2118-07-27T17:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T18:00:00Z" to="2118-07-27T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.8"/>
+            <windDirection id="dd" deg="75.5" name="E"/>
+            <windSpeed id="ff" mps="3.5" beaufort="3" name="Lett bris"/>
+            <humidity value="58.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.5"/>
+            <cloudiness id="NN" percent="91.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="18.0"/>
+            <mediumClouds id="MEDIUM" percent="21.9"/>
+            <highClouds id="HIGH" percent="88.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T17:00:00Z" to="2118-07-27T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T16:00:00Z" to="2118-07-27T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T15:00:00Z" to="2118-07-27T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T12:00:00Z" to="2118-07-27T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.8"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T19:00:00Z" to="2118-07-27T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="25.7"/>
+            <windDirection id="dd" deg="78.7" name="E"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <humidity value="63.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.8"/>
+            <cloudiness id="NN" percent="90.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="10.2"/>
+            <mediumClouds id="MEDIUM" percent="19.5"/>
+            <highClouds id="HIGH" percent="88.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T18:00:00Z" to="2118-07-27T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T17:00:00Z" to="2118-07-27T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T16:00:00Z" to="2118-07-27T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T13:00:00Z" to="2118-07-27T19:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="25.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.7"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T20:00:00Z" to="2118-07-27T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="24.9"/>
+            <windDirection id="dd" deg="88.5" name="E"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <humidity value="67.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1014.0"/>
+            <cloudiness id="NN" percent="94.5"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.0"/>
+            <mediumClouds id="MEDIUM" percent="18.0"/>
+            <highClouds id="HIGH" percent="93.8"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T19:00:00Z" to="2118-07-27T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T18:00:00Z" to="2118-07-27T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T17:00:00Z" to="2118-07-27T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T14:00:00Z" to="2118-07-27T20:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="24.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.6"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T21:00:00Z" to="2118-07-27T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.9"/>
+            <windDirection id="dd" deg="88.4" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="71.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.8"/>
+            <cloudiness id="NN" percent="89.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="5.5"/>
+            <mediumClouds id="MEDIUM" percent="10.9"/>
+            <highClouds id="HIGH" percent="87.5"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T20:00:00Z" to="2118-07-27T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T19:00:00Z" to="2118-07-27T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T18:00:00Z" to="2118-07-27T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T15:00:00Z" to="2118-07-27T21:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.9"/>
+<maxTemperature id="TTT" unit="celsius" value="28.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T22:00:00Z" to="2118-07-27T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.3"/>
+            <windDirection id="dd" deg="88.7" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="75.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.7"/>
+            <cloudiness id="NN" percent="70.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="4.7"/>
+            <mediumClouds id="MEDIUM" percent="9.4"/>
+            <highClouds id="HIGH" percent="66.4"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T21:00:00Z" to="2118-07-27T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T20:00:00Z" to="2118-07-27T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T19:00:00Z" to="2118-07-27T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T16:00:00Z" to="2118-07-27T22:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.3"/>
+<maxTemperature id="TTT" unit="celsius" value="28.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T23:00:00Z" to="2118-07-27T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.6"/>
+            <windDirection id="dd" deg="83.7" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="78.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.6"/>
+            <cloudiness id="NN" percent="60.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="3.1"/>
+            <mediumClouds id="MEDIUM" percent="8.6"/>
+            <highClouds id="HIGH" percent="56.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T22:00:00Z" to="2118-07-27T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T21:00:00Z" to="2118-07-27T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T20:00:00Z" to="2118-07-27T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T17:00:00Z" to="2118-07-27T23:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.6"/>
+<maxTemperature id="TTT" unit="celsius" value="27.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T00:00:00Z" to="2118-07-28T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.9"/>
+            <windDirection id="dd" deg="80.0" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="82.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1013.1"/>
+            <cloudiness id="NN" percent="18.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="1.6"/>
+            <mediumClouds id="MEDIUM" percent="7.0"/>
+            <highClouds id="HIGH" percent="10.9"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T23:00:00Z" to="2118-07-28T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T22:00:00Z" to="2118-07-28T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T21:00:00Z" to="2118-07-28T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T18:00:00Z" to="2118-07-28T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.9"/>
+<maxTemperature id="TTT" unit="celsius" value="26.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T01:00:00Z" to="2118-07-28T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.4"/>
+            <windDirection id="dd" deg="78.1" name="E"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="86.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1012.5"/>
+            <cloudiness id="NN" percent="7.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="6.2"/>
+            <highClouds id="HIGH" percent="0.8"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T00:00:00Z" to="2118-07-28T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T23:00:00Z" to="2118-07-28T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T22:00:00Z" to="2118-07-28T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T19:00:00Z" to="2118-07-28T01:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.4"/>
+<maxTemperature id="TTT" unit="celsius" value="25.7"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T02:00:00Z" to="2118-07-28T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.9"/>
+            <windDirection id="dd" deg="78.5" name="E"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="89.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1012.0"/>
+            <cloudiness id="NN" percent="4.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="4.7"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T01:00:00Z" to="2118-07-28T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T00:00:00Z" to="2118-07-28T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T23:00:00Z" to="2118-07-28T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T20:00:00Z" to="2118-07-28T02:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.9"/>
+<maxTemperature id="TTT" unit="celsius" value="24.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T03:00:00Z" to="2118-07-28T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.5"/>
+            <windDirection id="dd" deg="82.3" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="91.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1011.8"/>
+            <cloudiness id="NN" percent="4.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="1.6"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T02:00:00Z" to="2118-07-28T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T01:00:00Z" to="2118-07-28T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T00:00:00Z" to="2118-07-28T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T21:00:00Z" to="2118-07-28T03:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.5"/>
+<maxTemperature id="TTT" unit="celsius" value="23.9"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T04:00:00Z" to="2118-07-28T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.5"/>
+            <windDirection id="dd" deg="81.8" name="E"/>
+            <windSpeed id="ff" mps="2.6" beaufort="2" name="Svak vind"/>
+            <humidity value="91.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1011.8"/>
+            <cloudiness id="NN" percent="3.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T03:00:00Z" to="2118-07-28T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T02:00:00Z" to="2118-07-28T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T01:00:00Z" to="2118-07-28T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T22:00:00Z" to="2118-07-28T04:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.5"/>
+<maxTemperature id="TTT" unit="celsius" value="23.3"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T05:00:00Z" to="2118-07-28T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.8"/>
+            <windDirection id="dd" deg="91.8" name="E"/>
+            <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"/>
+            <humidity value="84.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1011.8"/>
+            <cloudiness id="NN" percent="10.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="7.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T04:00:00Z" to="2118-07-28T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T03:00:00Z" to="2118-07-28T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T02:00:00Z" to="2118-07-28T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-27T23:00:00Z" to="2118-07-28T05:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.5"/>
+<maxTemperature id="TTT" unit="celsius" value="22.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T06:00:00Z" to="2118-07-28T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.5"/>
+            <windDirection id="dd" deg="104.9" name="E"/>
+            <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"/>
+            <humidity value="78.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1011.7"/>
+            <cloudiness id="NN" percent="35.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="32.8"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T05:00:00Z" to="2118-07-28T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T04:00:00Z" to="2118-07-28T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T03:00:00Z" to="2118-07-28T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T00:00:00Z" to="2118-07-28T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.5"/>
+<maxTemperature id="TTT" unit="celsius" value="23.5"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T12:00:00Z" to="2118-07-28T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="30.1"/>
+            <windDirection id="dd" deg="130.3" name="SE"/>
+            <windSpeed id="ff" mps="3.4" beaufort="3" name="Lett bris"/>
+            <humidity value="46.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1009.9"/>
+            <cloudiness id="NN" percent="16.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="5.5"/>
+            <mediumClouds id="MEDIUM" percent="16.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T06:00:00Z" to="2118-07-28T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.5"/>
+<maxTemperature id="TTT" unit="celsius" value="30.1"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T18:00:00Z" to="2118-07-28T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.8"/>
+            <windDirection id="dd" deg="110.7" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="45.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1009.2"/>
+            <cloudiness id="NN" percent="18.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="16.4"/>
+            <highClouds id="HIGH" percent="3.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T12:00:00Z" to="2118-07-28T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="29.8"/>
+<maxTemperature id="TTT" unit="celsius" value="31.7"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T00:00:00Z" to="2118-07-29T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="24.0"/>
+            <windDirection id="dd" deg="337.2" name="NW"/>
+            <windSpeed id="ff" mps="1.5" beaufort="1" name="Flau vind"/>
+            <humidity value="67.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1011.6"/>
+            <cloudiness id="NN" percent="20.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="20.3"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-28T18:00:00Z" to="2118-07-29T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T06:00:00Z" to="2118-07-29T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.8"/>
+            <windDirection id="dd" deg="328.6" name="NW"/>
+            <windSpeed id="ff" mps="4.9" beaufort="3" name="Lett bris"/>
+            <humidity value="79.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.8"/>
+            <cloudiness id="NN" percent="97.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="96.1"/>
+            <mediumClouds id="MEDIUM" percent="38.3"/>
+            <highClouds id="HIGH" percent="17.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T00:00:00Z" to="2118-07-29T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.0"/>
+<maxTemperature id="TTT" unit="celsius" value="24.0"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T12:00:00Z" to="2118-07-29T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.6"/>
+            <windDirection id="dd" deg="337.6" name="N"/>
+            <windSpeed id="ff" mps="3.9" beaufort="3" name="Lett bris"/>
+            <humidity value="52.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.5"/>
+            <cloudiness id="NN" percent="95.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="94.5"/>
+            <mediumClouds id="MEDIUM" percent="18.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T06:00:00Z" to="2118-07-29T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.5"/>
+<minTemperature id="TTT" unit="celsius" value="22.7"/>
+<maxTemperature id="TTT" unit="celsius" value="28.6"/>
+<symbol id="Drizzle" number="46"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T18:00:00Z" to="2118-07-29T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.6"/>
+            <windDirection id="dd" deg="46.6" name="NE"/>
+            <windSpeed id="ff" mps="3.6" beaufort="3" name="Lett bris"/>
+            <humidity value="62.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.2"/>
+            <cloudiness id="NN" percent="39.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="15.6"/>
+            <mediumClouds id="MEDIUM" percent="38.3"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T12:00:00Z" to="2118-07-29T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.6"/>
+<maxTemperature id="TTT" unit="celsius" value="29.3"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T00:00:00Z" to="2118-07-30T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.6"/>
+            <windDirection id="dd" deg="37.6" name="NE"/>
+            <windSpeed id="ff" mps="2.2" beaufort="2" name="Svak vind"/>
+            <humidity value="87.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.1"/>
+            <cloudiness id="NN" percent="5.5"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="5.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-29T18:00:00Z" to="2118-07-30T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.6"/>
+<maxTemperature id="TTT" unit="celsius" value="26.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T06:00:00Z" to="2118-07-30T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.2"/>
+            <windDirection id="dd" deg="37.8" name="NE"/>
+            <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"/>
+            <humidity value="80.5" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.6"/>
+            <cloudiness id="NN" percent="60.9"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="59.4"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="19.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T00:00:00Z" to="2118-07-30T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.1"/>
+<maxTemperature id="TTT" unit="celsius" value="23.2"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T12:00:00Z" to="2118-07-30T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="28.0"/>
+            <windDirection id="dd" deg="60.6" name="NE"/>
+            <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"/>
+            <humidity value="61.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.4"/>
+            <cloudiness id="NN" percent="64.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="50.0"/>
+            <mediumClouds id="MEDIUM" percent="30.5"/>
+            <highClouds id="HIGH" percent="22.7"/>
+            <dewpointTemperature id="TD" unit="celsius" value="20.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T06:00:00Z" to="2118-07-30T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="1.4"/>
+<minTemperature id="TTT" unit="celsius" value="23.2"/>
+<maxTemperature id="TTT" unit="celsius" value="28.8"/>
+<symbol id="LightRainSun" number="5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T18:00:00Z" to="2118-07-30T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.3"/>
+            <windDirection id="dd" deg="37.3" name="NE"/>
+            <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"/>
+            <humidity value="74.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.1"/>
+            <cloudiness id="NN" percent="54.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="1.6"/>
+            <mediumClouds id="MEDIUM" percent="4.7"/>
+            <highClouds id="HIGH" percent="52.3"/>
+            <dewpointTemperature id="TD" unit="celsius" value="21.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T12:00:00Z" to="2118-07-30T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="1.1"/>
+<minTemperature id="TTT" unit="celsius" value="26.3"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="LightRainSun" number="5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T00:00:00Z" to="2118-07-31T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.5"/>
+            <windDirection id="dd" deg="36.5" name="NE"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="95.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.8"/>
+            <cloudiness id="NN" percent="62.5"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.0"/>
+            <mediumClouds id="MEDIUM" percent="3.1"/>
+            <highClouds id="HIGH" percent="58.6"/>
+            <dewpointTemperature id="TD" unit="celsius" value="22.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-30T18:00:00Z" to="2118-07-31T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.5"/>
+<maxTemperature id="TTT" unit="celsius" value="26.3"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T06:00:00Z" to="2118-07-31T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.9"/>
+            <windDirection id="dd" deg="74.4" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="87.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.9"/>
+            <cloudiness id="NN" percent="97.7"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.8"/>
+            <mediumClouds id="MEDIUM" percent="1.6"/>
+            <highClouds id="HIGH" percent="96.9"/>
+            <dewpointTemperature id="TD" unit="celsius" value="21.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T00:00:00Z" to="2118-07-31T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.8"/>
+<maxTemperature id="TTT" unit="celsius" value="22.9"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T12:00:00Z" to="2118-07-31T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.6"/>
+            <windDirection id="dd" deg="73.2" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="64.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.5"/>
+            <cloudiness id="NN" percent="98.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="14.1"/>
+            <mediumClouds id="MEDIUM" percent="8.6"/>
+            <highClouds id="HIGH" percent="97.7"/>
+            <dewpointTemperature id="TD" unit="celsius" value="20.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T06:00:00Z" to="2118-07-31T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="4.2"/>
+<minTemperature id="TTT" unit="celsius" value="22.9"/>
+<maxTemperature id="TTT" unit="celsius" value="27.6"/>
+<symbol id="LightRain" number="9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T18:00:00Z" to="2118-07-31T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="26.8"/>
+            <windDirection id="dd" deg="10.3" name="N"/>
+            <windSpeed id="ff" mps="2.6" beaufort="2" name="Svak vind"/>
+            <humidity value="70.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1015.9"/>
+            <cloudiness id="NN" percent="99.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="13.3"/>
+            <highClouds id="HIGH" percent="99.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="21.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T12:00:00Z" to="2118-07-31T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="26.8"/>
+<maxTemperature id="TTT" unit="celsius" value="28.3"/>
+<symbol id="Cloud" number="4"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T00:00:00Z" to="2118-08-01T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.5"/>
+            <windDirection id="dd" deg="99.1" name="E"/>
+            <windSpeed id="ff" mps="2.8" beaufort="2" name="Svak vind"/>
+            <humidity value="70.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.0"/>
+            <cloudiness id="NN" percent="43.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="2.3"/>
+            <mediumClouds id="MEDIUM" percent="5.5"/>
+            <highClouds id="HIGH" percent="40.6"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-07-31T18:00:00Z" to="2118-08-01T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.5"/>
+<maxTemperature id="TTT" unit="celsius" value="26.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T06:00:00Z" to="2118-08-01T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="23.7"/>
+            <windDirection id="dd" deg="111.7" name="E"/>
+            <windSpeed id="ff" mps="2.8" beaufort="2" name="Svak vind"/>
+            <humidity value="70.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.0"/>
+            <cloudiness id="NN" percent="26.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="26.6"/>
+            <dewpointTemperature id="TD" unit="celsius" value="18.2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T00:00:00Z" to="2118-08-01T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.7"/>
+<maxTemperature id="TTT" unit="celsius" value="23.7"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T12:00:00Z" to="2118-08-01T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.5"/>
+            <windDirection id="dd" deg="91.8" name="E"/>
+            <windSpeed id="ff" mps="3.8" beaufort="3" name="Lett bris"/>
+            <humidity value="43.7" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.3"/>
+            <cloudiness id="NN" percent="24.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="1.6"/>
+            <mediumClouds id="MEDIUM" percent="23.4"/>
+            <highClouds id="HIGH" percent="0.8"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T06:00:00Z" to="2118-08-01T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="23.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.6"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T18:00:00Z" to="2118-08-01T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.6"/>
+            <windDirection id="dd" deg="127.8" name="SE"/>
+            <windSpeed id="ff" mps="1.2" beaufort="1" name="Flau vind"/>
+            <humidity value="53.2" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1016.8"/>
+            <cloudiness id="NN" percent="77.3"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="14.1"/>
+            <mediumClouds id="MEDIUM" percent="20.3"/>
+            <highClouds id="HIGH" percent="71.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="17.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T12:00:00Z" to="2118-08-01T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.6"/>
+<maxTemperature id="TTT" unit="celsius" value="30.0"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T00:00:00Z" to="2118-08-02T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.5"/>
+            <windDirection id="dd" deg="94.7" name="E"/>
+            <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"/>
+            <humidity value="61.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.0"/>
+            <cloudiness id="NN" percent="24.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="4.7"/>
+            <mediumClouds id="MEDIUM" percent="5.5"/>
+            <highClouds id="HIGH" percent="21.9"/>
+            <dewpointTemperature id="TD" unit="celsius" value="13.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-01T18:00:00Z" to="2118-08-02T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.5"/>
+<maxTemperature id="TTT" unit="celsius" value="27.6"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T06:00:00Z" to="2118-08-02T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="21.7"/>
+            <windDirection id="dd" deg="87.6" name="E"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="60.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1019.1"/>
+            <cloudiness id="NN" percent="0.8"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="0.0"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.0"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T00:00:00Z" to="2118-08-02T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="18.9"/>
+<maxTemperature id="TTT" unit="celsius" value="21.7"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T12:00:00Z" to="2118-08-02T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.3"/>
+            <windDirection id="dd" deg="65.5" name="NE"/>
+            <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"/>
+            <humidity value="33.6" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.7"/>
+            <cloudiness id="NN" percent="78.1"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="2.3"/>
+            <highClouds id="HIGH" percent="78.1"/>
+            <dewpointTemperature id="TD" unit="celsius" value="11.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T06:00:00Z" to="2118-08-02T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="21.7"/>
+<maxTemperature id="TTT" unit="celsius" value="29.3"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T18:00:00Z" to="2118-08-02T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.6"/>
+            <windDirection id="dd" deg="33.0" name="NE"/>
+            <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"/>
+            <humidity value="39.0" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.9"/>
+            <cloudiness id="NN" percent="67.2"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="38.3"/>
+            <highClouds id="HIGH" percent="50.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="12.5"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T12:00:00Z" to="2118-08-02T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.6"/>
+<maxTemperature id="TTT" unit="celsius" value="30.3"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T00:00:00Z" to="2118-08-03T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="20.5"/>
+            <windDirection id="dd" deg="74.9" name="E"/>
+            <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"/>
+            <humidity value="73.3" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1019.2"/>
+            <cloudiness id="NN" percent="7.0"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="0.8"/>
+            <highClouds id="HIGH" percent="6.2"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.7"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-02T18:00:00Z" to="2118-08-03T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="20.5"/>
+<maxTemperature id="TTT" unit="celsius" value="27.6"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T06:00:00Z" to="2118-08-03T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.9"/>
+            <windDirection id="dd" deg="87.5" name="E"/>
+            <windSpeed id="ff" mps="0.6" beaufort="1" name="Flau vind"/>
+            <humidity value="66.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1019.6"/>
+            <cloudiness id="NN" percent="9.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="7.8"/>
+            <mediumClouds id="MEDIUM" percent="5.5"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="16.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T00:00:00Z" to="2118-08-03T06:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="18.1"/>
+<maxTemperature id="TTT" unit="celsius" value="22.9"/>
+<symbol id="Sun" number="1"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T12:00:00Z" to="2118-08-03T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="29.8"/>
+            <windDirection id="dd" deg="34.0" name="NE"/>
+            <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"/>
+            <humidity value="36.8" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1018.4"/>
+            <cloudiness id="NN" percent="59.4"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="59.4"/>
+            <highClouds id="HIGH" percent="0.0"/>
+            <dewpointTemperature id="TD" unit="celsius" value="13.6"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T06:00:00Z" to="2118-08-03T12:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.9"/>
+<maxTemperature id="TTT" unit="celsius" value="29.8"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T18:00:00Z" to="2118-08-03T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="27.5"/>
+            <windDirection id="dd" deg="63.4" name="NE"/>
+            <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"/>
+            <humidity value="45.4" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.2"/>
+            <cloudiness id="NN" percent="26.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.0"/>
+            <mediumClouds id="MEDIUM" percent="17.2"/>
+            <highClouds id="HIGH" percent="12.5"/>
+            <dewpointTemperature id="TD" unit="celsius" value="14.8"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T12:00:00Z" to="2118-08-03T18:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="27.5"/>
+<maxTemperature id="TTT" unit="celsius" value="30.2"/>
+<symbol id="LightCloud" number="2"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-04T00:00:00Z" to="2118-08-04T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <temperature id="TTT" unit="celsius" value="22.1"/>
+            <windDirection id="dd" deg="345.5" name="N"/>
+            <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"/>
+            <humidity value="67.1" unit="percent"/>
+            <pressure id="pr" unit="hPa" value="1017.9"/>
+            <cloudiness id="NN" percent="58.6"/>
+            <fog id="FOG" percent="0.0"/>
+            <lowClouds id="LOW" percent="0.8"/>
+            <mediumClouds id="MEDIUM" percent="40.6"/>
+            <highClouds id="HIGH" percent="32.8"/>
+            <dewpointTemperature id="TD" unit="celsius" value="15.9"/>
+         </location>
+      </time>
+      <time datatype="forecast" from="2118-08-03T18:00:00Z" to="2118-08-04T00:00:00Z">
+         <location altitude="42" latitude="52.4000" longitude="13.5000">
+            <precipitation unit="mm" value="0.0"/>
+<minTemperature id="TTT" unit="celsius" value="22.1"/>
+<maxTemperature id="TTT" unit="celsius" value="27.5"/>
+<symbol id="PartlyCloud" number="3"/>
+         </location>
+      </time>
+   </product>
+</weatherdata> 

@@ -23,9 +23,11 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
+#include <QFile>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
+#include <QXmlStreamReader>
 
 class WeatherTest : public QObject
 {
@@ -40,6 +42,33 @@ private slots:
         QDir d(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/weather"));
         d.removeRecursively();
         QVERIFY(!d.exists());
+    }
+
+    void testParseForecastData()
+    {
+        // NOTE: the data file is transformed 100 years into the future to avoid the parser cutting of outdated data
+        QFile f(QLatin1String(SOURCE_DIR "/data/524-135-forecast.xml"));
+        QVERIFY(f.open(QFile::ReadOnly));
+        WeatherForecastManager mgr;
+        QXmlStreamReader reader(&f);
+        auto forecasts = mgr.parseForecast(reader);
+        QCOMPARE(forecasts.size(), 1034);
+
+        mgr.mergeForecasts(forecasts);
+        QCOMPARE(forecasts.size(), 233);
+
+        for (unsigned int i = 0; i < (forecasts.size() - 1); ++i) {
+            QVERIFY(forecasts[i].dateTime() < forecasts[i+1].dateTime());
+        }
+
+        QDateTime dt(QDate(2118, 7, 26), QTime(6,0), Qt::UTC);
+        auto it = std::lower_bound(forecasts.begin(), forecasts.end(), dt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
+            return lhs.dateTime() < rhs;
+        });
+        QCOMPARE((*it).minimumTemperature(), 21.6f);
+        QCOMPARE((*it).maximumTemperature(), 21.6f);
+        QCOMPARE((*it).precipitation(), 0.0f);
+        QCOMPARE((*it).symbolType(), WeatherForecast::Clear);
     }
 
     void testForecastRetrieval()

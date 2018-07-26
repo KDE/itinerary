@@ -65,6 +65,8 @@ signals:
     void forecastUpdated();
 
 private:
+    friend class WeatherTest;
+
     void fetchTile(WeatherTile tile);
     void fetchNext();
     void tileDownloaded();

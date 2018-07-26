@@ -92,6 +92,7 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     if (!beginDt.isValid() || !endDt.isValid() || beginDt > endDt) {
         return {};
     }
+    const auto range = beginDt.secsTo(endDt) / 3600;
 
     if (Q_UNLIKELY(m_testMode)) {
         WeatherForecast fc;
@@ -120,6 +121,7 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     });
 
     WeatherForecast fc(*beginIt);
+    fc.setRange(range);
     for (auto it = beginIt; it != endIt; ++it) {
         fc.merge(*it);
     }
@@ -283,6 +285,8 @@ bool WeatherForecastManager::loadForecastData(WeatherTile tile) const
 void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& forecasts) const
 {
     std::stable_sort(forecasts.begin(), forecasts.end(), [](const WeatherForecast &lhs, const WeatherForecast &rhs) {
+        if (lhs.dateTime() == rhs.dateTime())
+            return lhs.range() < rhs.range();
         return lhs.dateTime() < rhs.dateTime();
     });
 
@@ -295,6 +299,7 @@ void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& foreca
             if ((*it).dateTime() == (*mergeIt).dateTime()) {
                 (*storeIt).merge(*mergeIt);
             } else {
+                (*mergeIt).setRange(1);
                 break;
             }
         }
@@ -302,6 +307,8 @@ void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& foreca
         it = mergeIt;
     }
     forecasts.erase(storeIt, forecasts.end());
+    for (auto fc : forecasts)
+        qDebug() << fc.dateTime() << fc.minimumTemperature() << fc.maximumTemperature() << fc.symbolIconName();
 }
 
 std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamReader &reader) const
@@ -324,6 +331,7 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
                 alignToHour(from);
                 auto to = QDateTime::fromString(reader.attributes().value(QLatin1String("to")).toString(), Qt::ISODate);
                 alignToHour(to);
+                const auto range = from.secsTo(to) / 3600;
                 if (to == from) {
                     to = to.addSecs(3600);
                 }
@@ -334,6 +342,7 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
                 auto fc = parseForecastElement(reader);
                 for (int i = 0; i < from.secsTo(to); i += 3600) {
                     fc.setDateTime(from.addSecs(i));
+                    fc.setRange(range);
                     result.push_back(fc);
                 }
                 continue;

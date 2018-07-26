@@ -18,6 +18,7 @@
 #include "weatherforecast.h"
 
 #include <QDateTime>
+#include <QDebug>
 
 #include <limits>
 
@@ -28,6 +29,7 @@ public:
     float m_maxTemp = std::numeric_limits<float>::min();
     float m_precipitation = 0.0f;
     WeatherForecast::SymbolType m_symbol = WeatherForecast::Unknown;
+    int m_range = 0;
 };
 
 WeatherForecast::WeatherForecast()
@@ -128,11 +130,26 @@ void WeatherForecast::setPrecipitation(float precipitation)
 void WeatherForecast::merge(const WeatherForecast &other)
 {
     d.detach();
-    d->m_minTemp = std::min(other.minimumTemperature(), d->m_minTemp);
-    d->m_maxTemp = std::max(other.maximumTemperature(), d->m_maxTemp);
+    if (d->m_minTemp == std::numeric_limits<float>::max() || other.range() <= d->m_range) {
+        d->m_minTemp = std::min(other.minimumTemperature(), d->m_minTemp);
+    }
+    if (d->m_maxTemp == std::numeric_limits<float>::min() || other.range() <= d->m_range) {
+        d->m_maxTemp = std::max(other.maximumTemperature(), d->m_maxTemp);
+    }
     d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
 
     if (d->m_symbol == Unknown) {
         d->m_symbol = other.symbolType();
     }
+}
+
+int WeatherForecast::range() const
+{
+    return d->m_range;
+}
+
+void WeatherForecast::setRange(int hours)
+{
+    d.detach();
+    d->m_range = hours;
 }
