@@ -332,6 +332,95 @@ private slots:
         resId = model.index(4, 0).data(TimelineModel::ReservationIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 11);
+
+        // test case: two conesequtive location changes, the first one to an unknown location
+        // result: the weather element before the first location change ends with the start of that
+        // result 2: we get a second weather element the same day after the second location change
+        // TODO
+    }
+
+    void testMultiTraveller()
+    {
+        using namespace KItinerary;
+
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        TimelineModel model;
+        model.setReservationManager(&resMgr);
+        QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
+
+        QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
+        QVERIFY(insertSpy.isValid());
+        QSignalSpy updateSpy(&model, &TimelineModel::dataChanged);
+        QVERIFY(updateSpy.isValid());
+        QSignalSpy rmSpy(&model, &TimelineModel::rowsRemoved);
+        QVERIFY(rmSpy.isValid());
+
+        // full import at runtime
+        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(insertSpy.count(), 2);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(updateSpy.count(), 2);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+
+        // already existing data
+        model.setReservationManager(nullptr);
+        model.setReservationManager(&resMgr);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+
+        // update splits element
+        updateSpy.clear();
+        insertSpy.clear();
+        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdRole).toString();
+        QVERIFY(!resId.isEmpty());
+        auto res = resMgr.reservation(resId).value<FlightReservation>();
+        auto flight = res.reservationFor().value<Flight>();
+        flight.setDepartureTime(flight.departureTime().addDays(1));
+        res.setReservationFor(flight);
+        resMgr.updateReservation(resId, res);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 4);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(updateSpy.count(), 1);
+        QCOMPARE(insertSpy.count(), 1);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(rmSpy.count(), 0);
+
+        // update merges two elements
+        updateSpy.clear();
+        insertSpy.clear();
+        rmSpy.clear();
+        flight.setDepartureTime(flight.departureTime().addDays(-1));
+        res.setReservationFor(flight);
+        resMgr.updateReservation(resId, res);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(model.rowCount(), 3);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(updateSpy.count(), 1);
+        QCOMPARE(rmSpy.count(), 1);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(insertSpy.count(), 0);
+
+        // removal of merged items
+        updateSpy.clear();
+        rmSpy.clear();
+        clearReservations(&resMgr);
+        QCOMPARE(model.rowCount(), 1);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(rmSpy.count(), 2);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(updateSpy.count(), 2);
     }
 };
 

@@ -1,0 +1,131 @@
+[
+  {
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "reservationNumber": "RXJ34P",
+    "reservationStatus": "http://schema.org/Confirmed",
+    "underName": {
+      "@type": "Person",
+      "name": "John Green"
+    },
+    "reservationFor": {
+      "@type": "Flight",
+      "flightNumber": "201",
+      "airline": {
+        "@type": "Airline",
+        "name": "United",
+        "iataCode": "UA"
+      },
+      "departureAirport": {
+        "@type": "Airport",
+        "name": "John F. Kennedy International Airport",
+        "iataCode": "JFK"
+      },
+      "departureTime": "2017-03-04T11:00:00-05:00",
+      "arrivalAirport": {
+        "@type": "Airport",
+        "name": "O'Hare International Airport",
+        "iataCode": "ORD"
+      },
+      "arrivalTime": "2017-03-05T13:25:00-06:00"
+    },
+    "checkinUrl": "http://united.com/onlinecheckin.html"
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "reservationNumber": "RXJ34P",
+    "reservationStatus": "http://schema.org/Confirmed",
+    "underName": {
+      "@type": "Person",
+      "name": "John Green"
+    },
+    "reservationFor": {
+      "@type": "Flight",
+      "flightNumber": "1050",
+      "airline": {
+        "@type": "Airline",
+        "name": "United",
+        "iataCode": "UA"
+      },
+      "departureAirport": {
+        "@type": "Airport",
+        "name": "O'Hare International Airport",
+        "iataCode": "ORD"
+      },
+      "departureTime": "2017-03-05T14:55:00-06:00",
+      "arrivalAirport": {
+        "@type": "Airport",
+        "name": "San Francisco Airport",
+        "iataCode": "SFO"
+      },
+      "arrivalTime": "2017-03-05T15:15:00-08:00"
+    },
+    "checkinUrl": "http://united.com/onlinecheckin.html"
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "reservationNumber": "RXJ34P",
+    "reservationStatus": "http://schema.org/Confirmed",
+    "underName": {
+      "@type": "Person",
+      "name": "Eva Green"
+    },
+    "reservationFor": {
+      "@type": "Flight",
+      "flightNumber": "201",
+      "airline": {
+        "@type": "Airline",
+        "name": "United",
+        "iataCode": "UA"
+      },
+      "departureAirport": {
+        "@type": "Airport",
+        "name": "John F. Kennedy International Airport",
+        "iataCode": "JFK"
+      },
+      "departureTime": "2017-03-04T11:00:00-05:00",
+      "arrivalAirport": {
+        "@type": "Airport",
+        "name": "O'Hare International Airport",
+        "iataCode": "ORD"
+      },
+      "arrivalTime": "2017-03-05T13:25:00-06:00"
+    },
+    "checkinUrl": "http://united.com/onlinecheckin.html"
+  },
+  {
+    "@context": "http://schema.org",
+    "@type": "FlightReservation",
+    "reservationNumber": "RXJ34P",
+    "reservationStatus": "http://schema.org/Confirmed",
+    "underName": {
+      "@type": "Person",
+      "name": "Eva Green"
+    },
+    "reservationFor": {
+      "@type": "Flight",
+      "flightNumber": "1050",
+      "airline": {
+        "@type": "Airline",
+        "name": "United",
+        "iataCode": "UA"
+      },
+      "departureAirport": {
+        "@type": "Airport",
+        "name": "O'Hare International Airport",
+        "iataCode": "ORD"
+      },
+      "departureTime": "2017-03-05T14:55:00-06:00",
+      "arrivalAirport": {
+        "@type": "Airport",
+        "name": "San Francisco Airport",
+        "iataCode": "SFO"
+      },
+      "arrivalTime": "2017-03-05T15:15:00-08:00"
+    },
+    "checkinUrl": "http://united.com/onlinecheckin.html"
+  }
+]
+
