@@ -89,7 +89,7 @@ private:
         explicit Element(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
         explicit Element(const QString &resId, const QVariant &res, RangeType rt);
 
-        QString id; // reservation id
+        QStringList ids; // reservation ids (multiple entries in case of mult-traveller merging), QStringList as we need QML compatibility...
         QVariant content; // non-reservation content
         QDateTime dt; // relevant date/time
         ElementType elementType;

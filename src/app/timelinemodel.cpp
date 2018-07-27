@@ -135,11 +135,11 @@ TimelineModel::Element::Element(TimelineModel::ElementType type, const QDateTime
 }
 
 TimelineModel::Element::Element(const QString& resId, const QVariant& res, RangeType rt)
-    : id(resId)
-    , dt(relevantDateTime(res, rt))
+    : dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
 {
+    ids.push_back(resId);
 }
 
 TimelineModel::TimelineModel(QObject *parent)
@@ -215,7 +215,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     }
 
     const auto &elem = m_elements.at(index.row());
-    const auto res = m_resMgr->reservation(elem.id);
+    const auto res = m_resMgr->reservation(elem.ids.value(0));
     switch (role) {
         case SectionHeader:
         {
@@ -230,7 +230,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case ReservationRole:
             return res;
         case ReservationIdRole:
-            return elem.id;
+            return elem.ids.value(0);
         case ElementTypeRole:
             return elem.elementType;
         case TodayEmptyRole:
@@ -310,7 +310,7 @@ void TimelineModel::reservationUpdated(const QString &resId)
 
 void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineModel::RangeType rangeType)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const Element &e) { return e.id == resId && e.rangeType == rangeType; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const Element &e) { return e.ids.contains(resId) && e.rangeType == rangeType; });
     if (it == m_elements.end()) {
         return;
     }
@@ -330,7 +330,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
 
 void TimelineModel::reservationRemoved(const QString &resId)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const Element &e) { return e.id == resId; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const Element &e) { return e.ids.contains(resId); });
     if (it == m_elements.end()) {
         return;
     }
@@ -373,7 +373,7 @@ void TimelineModel::updateInformationElements()
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).id)));
+        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).ids.value(0))));
         if (newCountry == previousCountry) {
             continue;
         }
@@ -434,7 +434,7 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
-        const auto res = m_resMgr->reservation((*it).id);
+        const auto res = m_resMgr->reservation((*it).ids.value(0));
         const auto newGeo = geoCoordinate(res);
         if (isLocationChange(res) || newGeo.isValid()) {
             geo = newGeo;
@@ -461,7 +461,7 @@ void TimelineModel::updateWeatherElements()
             }
 
             // track where we are
-            const auto res = m_resMgr->reservation((*it).id);
+            const auto res = m_resMgr->reservation((*it).ids.value(0));
             const auto newGeo = geoCoordinate(res);
             if (isLocationChange(res) || newGeo.isValid()) {
                 geo = newGeo;
@@ -480,7 +480,7 @@ void TimelineModel::updateWeatherElements()
             if ((*it2).dt >= endTime) {
                 break;
             }
-            const auto res = m_resMgr->reservation((*it2).id);
+            const auto res = m_resMgr->reservation((*it2).ids.value(0));
             if (isLocationChange(res)) {
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, relevantDateTime(res, RangeBegin));
