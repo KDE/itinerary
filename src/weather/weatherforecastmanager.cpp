@@ -307,8 +307,6 @@ void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& foreca
         it = mergeIt;
     }
     forecasts.erase(storeIt, forecasts.end());
-    for (auto fc : forecasts)
-        qDebug() << fc.dateTime() << fc.minimumTemperature() << fc.maximumTemperature() << fc.symbolIconName();
 }
 
 std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamReader &reader) const
