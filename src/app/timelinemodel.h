@@ -86,11 +86,14 @@ signals:
 
 private:
     struct Element {
+        explicit Element(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
+        explicit Element(const QString &resId, const QVariant &res, RangeType rt);
+
         QString id; // reservation id
         QVariant content; // non-reservation content
         QDateTime dt; // relevant date/time
         ElementType elementType;
-        RangeType rangeType;
+        RangeType rangeType = SelfContained;
     };
 
     void reservationAdded(const QString &resId);

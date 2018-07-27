@@ -126,6 +126,22 @@ static bool isLocationChange(const QVariant &res)
     return JsonLd::isA<FlightReservation>(res) || JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res);
 }
 
+
+TimelineModel::Element::Element(TimelineModel::ElementType type, const QDateTime &dateTime, const QVariant &data)
+    : content(data)
+    , dt(dateTime)
+    , elementType(type)
+{
+}
+
+TimelineModel::Element::Element(const QString& resId, const QVariant& res, RangeType rt)
+    : id(resId)
+    , dt(relevantDateTime(res, rt))
+    , elementType(::elementType(res))
+    , rangeType(rt)
+{
+}
+
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -152,13 +168,13 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     for (const auto &resId : mgr->reservations()) {
         const auto res = m_resMgr->reservation(resId);
         if (needsSplitting(res)) {
-            m_elements.push_back(Element{resId, {}, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
-            m_elements.push_back(Element{resId, {}, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
+            m_elements.push_back(Element{resId, res, RangeBegin});
+            m_elements.push_back(Element{resId, res, RangeEnd});
         } else {
-            m_elements.push_back(Element{resId, {}, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
+            m_elements.push_back(Element{resId, res, SelfContained});
         }
     }
-    m_elements.push_back(Element{{}, {}, QDateTime(QDate::currentDate(), QTime(0, 0)), TodayMarker, SelfContained});
+    m_elements.push_back(Element{TodayMarker, QDateTime(QDate::currentDate(), QTime(0, 0))});
     std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
         return lhs.dt < rhs.dt;
     });
@@ -258,10 +274,10 @@ void TimelineModel::reservationAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
-        insertElement(Element{resId, {}, relevantDateTime(res, RangeBegin), elementType(res), RangeBegin});
-        insertElement(Element{resId, {}, relevantDateTime(res, RangeEnd), elementType(res), RangeEnd});
+        insertElement(Element{resId, res, RangeBegin});
+        insertElement(Element{resId, res, RangeEnd});
     } else {
-        insertElement(Element{resId, {}, relevantDateTime(res, SelfContained), elementType(res), SelfContained});
+        insertElement(Element{resId, res, SelfContained});
     }
 
     updateInformationElements();
@@ -306,7 +322,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
         beginRemoveRows({}, row, row);
         m_elements.erase(it);
         endRemoveRows();
-        insertElement(Element{resId, {}, newDt, elementType(res), rangeType});
+        insertElement(Element{resId, res, rangeType});
     } else {
         emit dataChanged(index(row, 0), index(row, 0));
     }
@@ -372,7 +388,7 @@ void TimelineModel::updateInformationElements()
         // add new country info element
         auto row = std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
-        it = m_elements.insert(it, Element{{}, QVariant::fromValue(newCountry), (*it).dt, CountryInfo, SelfContained});
+        it = m_elements.insert(it, Element{CountryInfo, (*it).dt, QVariant::fromValue(newCountry)});
         endInsertRows();
 
         previousCountry = newCountry;
@@ -491,7 +507,7 @@ void TimelineModel::updateWeatherElements()
         else if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), date, WeatherForecast, SelfContained});
+            it = m_elements.insert(it, Element{WeatherForecast, date, QVariant::fromValue(fc)});
             endInsertRows();
         }
         // case 3: we have no forecast data, but a matching weather element: remove
@@ -516,7 +532,7 @@ void TimelineModel::updateWeatherElements()
         if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, Element{{}, QVariant::fromValue(fc), date, WeatherForecast, SelfContained});
+            it = m_elements.insert(it, Element{WeatherForecast, date, QVariant::fromValue(fc)});
             ++it;
             endInsertRows();
         }
