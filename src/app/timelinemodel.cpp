@@ -325,8 +325,24 @@ void TimelineModel::insertElement(Element &&elem)
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem.dt, [](const Element &lhs, const QDateTime &rhs) {
         return lhs.dt < rhs;
     });
-    auto index = std::distance(m_elements.begin(), it);
-    beginInsertRows({}, index, index);
+    const auto row = std::distance(m_elements.begin(), it);
+
+    // check if we can merge with an existing element
+    if (it != m_elements.end() && (*it).dt == elem.dt && elem.ids.size() == 1 && (*it).elementType == elem.elementType && (*it).rangeType == elem.rangeType && !(*it).ids.isEmpty()) {
+        const auto prevRes = m_resMgr->reservation((*it).ids.at(0));
+        const auto curRes = m_resMgr->reservation(elem.ids.at(0));
+        if (prevRes.userType() == curRes.userType() && !prevRes.isNull() && !curRes.isNull() && JsonLd::canConvert<Reservation>(prevRes)) {
+            const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
+            const auto curTrip = JsonLd::convert<Reservation>(curRes).reservationFor();
+            if (MergeUtil::isSame(prevTrip, curTrip)) {
+                (*it).ids.push_back(elem.ids.at(0));
+                emit dataChanged(index(row, 0), index(row, 0));
+                return;
+            }
+        }
+    }
+
+    beginInsertRows({}, row, row);
     m_elements.insert(it, std::move(elem));
     endInsertRows();
 }

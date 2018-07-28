@@ -358,15 +358,11 @@ private slots:
 
         // full import at runtime
         resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(insertSpy.count(), 2);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 2);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // already existing data
