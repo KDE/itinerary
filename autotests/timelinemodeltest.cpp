@@ -372,11 +372,9 @@ private slots:
         // already existing data
         model.setReservationManager(nullptr);
         model.setReservationManager(&resMgr);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // update splits element
@@ -404,7 +402,6 @@ private slots:
         flight.setDepartureTime(flight.departureTime().addDays(-1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.rowCount(), 3);
         QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 1);
@@ -417,7 +414,6 @@ private slots:
         rmSpy.clear();
         clearReservations(&resMgr);
         QCOMPARE(model.rowCount(), 1);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(rmSpy.count(), 2);
         QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 2);

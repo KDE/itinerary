@@ -27,6 +27,7 @@
 #include <KItinerary/CountryDb>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/MergeUtil>
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
@@ -178,6 +179,41 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
         return lhs.dt < rhs.dt;
     });
+
+    // merge multi-traveler elements
+    QDateTime prevDt;
+    for (auto it = m_elements.begin(); it != m_elements.end();) {
+        if ((*it).dt != prevDt || !prevDt.isValid()) {
+            prevDt = (*it).dt;
+            ++it;
+            continue;
+        }
+        prevDt = (*it).dt;
+        auto prevIt = it - 1;
+
+        if ((*prevIt).rangeType != (*it).rangeType || (*prevIt).elementType != (*it).elementType || (*prevIt).ids.isEmpty() || (*it).ids.isEmpty()) {
+            ++it;
+            continue;
+        }
+
+        const auto prevRes = m_resMgr->reservation((*prevIt).ids.at(0));
+        const auto curRes = m_resMgr->reservation((*it).ids.at(0));
+        if (prevRes.isNull() || curRes.isNull() || prevRes.userType() != curRes.userType() || !JsonLd::canConvert<Reservation>(prevRes)) {
+            ++it;
+            continue;
+        }
+
+        const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
+        const auto curTrip = JsonLd::convert<Reservation>(curRes).reservationFor();
+        if (MergeUtil::isSame(prevTrip, curTrip)) {
+            Q_ASSERT((*it).ids.size() == 1);
+            (*prevIt).ids.push_back((*it).ids.at(0));
+            it = m_elements.erase(it);
+        } else {
+            ++it;
+        }
+    }
+
     connect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
     connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
     connect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
