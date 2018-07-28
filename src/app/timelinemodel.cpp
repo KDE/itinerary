@@ -372,10 +372,17 @@ void TimelineModel::reservationRemoved(const QString &resId)
     }
     const auto isSplit = (*it).rangeType == RangeBegin;
     const auto row = std::distance(m_elements.begin(), it);
-    beginRemoveRows({}, row, row);
-    m_elements.erase(it);
-    endRemoveRows();
-    emit todayRowChanged();
+    const auto isMulti = (*it).ids.size() > 1;
+
+    if (isMulti) {
+        (*it).ids.removeAll(resId);
+        emit dataChanged(index(row, 0), index(row, 0));
+    } else {
+        beginRemoveRows({}, row, row);
+        m_elements.erase(it);
+        endRemoveRows();
+        emit todayRowChanged();
+    }
 
     if (isSplit) {
         reservationRemoved(resId);
