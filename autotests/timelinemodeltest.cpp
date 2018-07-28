@@ -383,12 +383,9 @@ private slots:
         flight.setDepartureTime(flight.departureTime().addDays(1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(model.rowCount(), 4);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 1);
         QCOMPARE(insertSpy.count(), 1);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(rmSpy.count(), 0);
 
         // update merges two elements
@@ -399,10 +396,8 @@ private slots:
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
         QCOMPARE(model.rowCount(), 3);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 1);
         QCOMPARE(rmSpy.count(), 1);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(insertSpy.count(), 0);
 
         // removal of merged items
@@ -411,7 +406,6 @@ private slots:
         clearReservations(&resMgr);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(rmSpy.count(), 2);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(updateSpy.count(), 2);
     }
 };

@@ -368,12 +368,18 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
     }
     const auto row = std::distance(m_elements.begin(), it);
     const auto newDt = relevantDateTime(res, rangeType);
+    const auto isMulti = (*it).ids.size() > 1;
 
     if ((*it).dt != newDt) {
         // element moved
-        beginRemoveRows({}, row, row);
-        m_elements.erase(it);
-        endRemoveRows();
+        if (isMulti) {
+            (*it).ids.removeAll(resId);
+            emit dataChanged(index(row, 0), index(row, 0));
+        } else {
+            beginRemoveRows({}, row, row);
+            m_elements.erase(it);
+            endRemoveRows();
+        }
         insertElement(Element{resId, res, rangeType});
     } else {
         emit dataChanged(index(row, 0), index(row, 0));
