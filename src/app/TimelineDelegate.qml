@@ -26,7 +26,9 @@ Kirigami.AbstractCard {
     id: root
     /** One ore more ids of the reservations shown in this element. */
     property var resIds
-    /** @deprecated */
+    /** A random reservation object, in case there's more than one.
+     *  Use this only for accessing properties that will be the same for all travlers.
+     */
     readonly property var reservation: _reservationManager.reservation(root.resIds[0]);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor

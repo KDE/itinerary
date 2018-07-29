@@ -33,6 +33,18 @@ App.TimelineDelegate {
         return airport.iataCode;
     }
 
+    function seatString() {
+        var s = new Array();
+        for (var i = 0; i < root.resIds.length; ++i) {
+            var res = _reservationManager.reservation(root.resIds[i]);
+            if (res.airplaneSeat)
+                s.push(res.airplaneSeat);
+        }
+        if (s.length === 0)
+            return "-";
+        return s.join(", ");
+    }
+
     header: Rectangle {
         id: headerBackground
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
@@ -85,8 +97,7 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
                 reservationFor.departureTerminal ? reservationFor.departureTerminal : "-",
-                reservationFor.departureGate ? reservationFor.departureGate : "-",
-                reservation.airplaneSeat ? reservation.airplaneSeat : "-")
+                reservationFor.departureGate ? reservationFor.departureGate : "-", seatString())
             color: Kirigami.Theme.textColor
         }
 
