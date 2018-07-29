@@ -24,6 +24,7 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
+    readonly property var touristAttraction: _reservationManager.reservation(root.resIds[0]).touristAttraction
 
     header: Rectangle {
         id: headerBackground
@@ -41,7 +42,7 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: i18n("🎢 %1", reservation.touristAttraction.name)
+                text: i18n("🎢 %1", touristAttraction.name)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -58,7 +59,7 @@ App.TimelineDelegate {
         id: topLayout
 
         App.PlaceDelegate {
-            place: reservation.touristAttraction
+            place: touristAttraction
             Layout.fillWidth: true
         }
     }
