@@ -31,6 +31,7 @@ add_executable(itinerary-app
     localizer.cpp
     pkpassimageprovider.cpp
     settings.cpp
+    tickettokenmodel.cpp
     util.cpp
     ${qml_srcs}
 )

@@ -24,45 +24,64 @@ import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Item {
+ColumnLayout {
     id: root
     property var resIds
-    /** @deprecated */
-    readonly property var ticket: _reservationManager.reservation(resIds[0]).reservedTicket
-    Layout.alignment: Qt.AlignCenter
+
+    readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket
     Layout.fillWidth: true
-    implicitHeight: childrenRect.height
 
-    Rectangle {
-        id: background
-        anchors.centerIn: root
-        anchors.top: root.top
-        anchors.bottom: root.bottom
-        color: "white"
-        implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth)
-        // ### we asume aspect ratio 1:1 here, which is correct for QR and Aztec only
-        implicitHeight: visible ? implicitWidth : 0
-        visible: barcode.implicitHeight > 0
+    TicketTokenModel {
+        id: ticketModel
+        reservationManager: _reservationManager
+        reservationIds: resIds
+    }
 
-        Prison.Barcode {
-            id: barcode
-            anchors.fill: background
-            anchors.margins: 4
-            barcodeType:
-            {
-                if (ticket == undefined)
+    QQC2.ComboBox {
+        id: travelerBox
+        Layout.alignment: Qt.AlignCenter
+        model: ticketModel
+        textRole: "display"
+        visible: ticketModel.rowCount > 1
+    }
+
+    Item {
+        id: barcodeContainer
+        Layout.alignment: Qt.AlignCenter
+        Layout.fillWidth: true
+        implicitHeight: childrenRect.height
+
+        Rectangle {
+            id: background
+            anchors.centerIn: barcodeContainer
+            anchors.top: barcodeContainer.top
+            anchors.bottom: barcodeContainer.bottom
+            color: "white"
+            implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth)
+            // ### we asume aspect ratio 1:1 here, which is correct for QR and Aztec only
+            implicitHeight: visible ? implicitWidth : 0
+            visible: barcode.implicitHeight > 0
+
+            Prison.Barcode {
+                id: barcode
+                anchors.fill: background
+                anchors.margins: 4
+                barcodeType:
+                {
+                    if (currentTicket == undefined)
+                        return Prison.Barcode.Null;
+                    switch (currentTicket.ticketTokenType) {
+                        case Ticket.QRCode: return Prison.Barcode.QRCode;
+                        case Ticket.AztecCode: return Prison.Barcode.Aztec;
+                    }
                     return Prison.Barcode.Null;
-                switch (ticket.ticketTokenType) {
-                    case Ticket.QRCode: return Prison.Barcode.QRCode;
-                    case Ticket.AztecCode: return Prison.Barcode.Aztec;
                 }
-                return Prison.Barcode.Null;
-            }
-            content:
-            {
-                if (barcodeType == Prison.Barcode.Null || ticket == undefined)
-                    return "";
-                return ticket.ticketTokenData;
+                content:
+                {
+                    if (barcodeType == Prison.Barcode.Null || currentTicket == undefined)
+                        return "";
+                    return currentTicket.ticketTokenData;
+                }
             }
         }
     }

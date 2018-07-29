@@ -27,6 +27,7 @@
 #include "pkpassimageprovider.h"
 #include "reservationmanager.h"
 #include "settings.h"
+#include "tickettokenmodel.h"
 #include "util.h"
 
 #include <weatherforecastmanager.h>
@@ -153,6 +154,7 @@ int main(int argc, char **argv)
     qmlRegisterSingletonType<Localizer>("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Localizer;
     });
+    qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
