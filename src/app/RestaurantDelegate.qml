@@ -41,7 +41,7 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: i18n("🍴 %1", reservation.reservationFor.name)
+                text: i18n("🍴 %1", reservationFor.name)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -58,7 +58,7 @@ App.TimelineDelegate {
         id: topLayout
 
         App.PlaceDelegate {
-            place: reservation.reservationFor
+            place: reservationFor
             Layout.fillWidth: true
         }
     }

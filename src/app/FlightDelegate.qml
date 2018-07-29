@@ -50,17 +50,17 @@ App.TimelineDelegate {
 
             QQC2.Label {
                 text: i18n("✈ %1 %2 → %3",
-                    reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber,
-                    reservation.reservationFor.departureAirport.iataCode,
-                    reservation.reservationFor.arrivalAirport.iataCode)
+                    reservationFor.airline.iataCode + " " + reservationFor.flightNumber,
+                    reservationFor.departureAirport.iataCode,
+                    reservationFor.arrivalAirport.iataCode)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: isNaN(reservation.reservationFor.boardingTime.getTime()) ?
-                    Localizer.formatTime(reservation.reservationFor, "departureTime") :
-                    Localizer.formatTime(reservation.reservationFor, "boardingTime")
+                text: isNaN(reservationFor.boardingTime.getTime()) ?
+                    Localizer.formatTime(reservationFor, "departureTime") :
+                    Localizer.formatTime(reservationFor, "boardingTime")
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
@@ -72,20 +72,20 @@ App.TimelineDelegate {
 
         QQC2.Label {
             text: i18n("Departure from %1: %2",
-                airportDisplayString(reservation.reservationFor.departureAirport),
-                Localizer.formatTime(reservation.reservationFor, "departureTime") + " ")
+                airportDisplayString(reservationFor.departureAirport),
+                Localizer.formatTime(reservationFor, "departureTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.departureAirport
+            place: reservationFor.departureAirport
             Layout.fillWidth: true
         }
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
-                reservation.reservationFor.departureTerminal ? reservation.reservationFor.departureTerminal : "-",
-                reservation.reservationFor.departureGate ? reservation.reservationFor.departureGate : "-",
+                reservationFor.departureTerminal ? reservationFor.departureTerminal : "-",
+                reservationFor.departureGate ? reservationFor.departureGate : "-",
                 reservation.airplaneSeat ? reservation.airplaneSeat : "-")
             color: Kirigami.Theme.textColor
         }
@@ -96,14 +96,14 @@ App.TimelineDelegate {
 
         QQC2.Label {
             text: i18n("Arrival at %1: %2",
-                airportDisplayString(reservation.reservationFor.arrivalAirport),
-                Localizer.formatDateTime(reservation.reservationFor, "arrivalTime") + " ")
+                airportDisplayString(reservationFor.arrivalAirport),
+                Localizer.formatDateTime(reservationFor, "arrivalTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.arrivalAirport
+            place: reservationFor.arrivalAirport
             Layout.fillWidth: true
         }
     }

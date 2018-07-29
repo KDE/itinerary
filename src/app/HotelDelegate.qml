@@ -42,8 +42,8 @@ App.TimelineDelegate {
 
             QQC2.Label {
                 text: root.rangeType == TimelineModel.RangeEnd ?
-                    i18n("🏨 Check-out %1", reservation.reservationFor.name) :
-                    i18n("🏨 %1", reservation.reservationFor.name)
+                    i18n("🏨 Check-out %1", reservationFor.name) :
+                    i18n("🏨 %1", reservationFor.name)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
@@ -55,7 +55,7 @@ App.TimelineDelegate {
         id: topLayout
 
         App.PlaceDelegate {
-            place: reservation.reservationFor
+            place: reservationFor
             Layout.fillWidth: true
         }
         QQC2.Label {

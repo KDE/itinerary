@@ -41,13 +41,13 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: i18n("🚄 %1", reservation.reservationFor.trainName + " " + reservation.reservationFor.trainNumber)
+                text: i18n("🚄 %1", reservationFor.trainName + " " + reservationFor.trainNumber)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: Localizer.formatTime(reservation.reservationFor, "departureTime")
+                text: Localizer.formatTime(reservationFor, "departureTime")
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
@@ -59,14 +59,14 @@ App.TimelineDelegate {
 
         QQC2.Label {
             text: i18n("Departure from %1 on platform %2",
-                reservation.reservationFor.departureStation.name,
-                reservation.reservationFor.departurePlatform ? reservation.reservationFor.departurePlatform : "-")
+                reservationFor.departureStation.name,
+                reservationFor.departurePlatform ? reservationFor.departurePlatform : "-")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.departureStation
+            place: reservationFor.departureStation
             Layout.fillWidth: true
         }
         // TODO reserved seat
@@ -76,20 +76,20 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: i18n("Arrival at %1 on platform %2",
-                reservation.reservationFor.arrivalStation.name,
-                reservation.reservationFor.arrivalPlatform ? reservation.reservationFor.arrivalPlatform : "-")
+                reservationFor.arrivalStation.name,
+                reservationFor.arrivalPlatform ? reservationFor.arrivalPlatform : "-")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: i18n("Arrival time: %1", Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
+            text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.arrivalStation
+            place: reservationFor.arrivalStation
             Layout.fillWidth: true
         }
     }

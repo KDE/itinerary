@@ -41,13 +41,13 @@ App.TimelineDelegate {
             anchors.margins: Kirigami.Units.largeSpacing
 
             QQC2.Label {
-                text: i18n("🚌 %1", reservation.reservationFor.busName + " " + reservation.reservationFor.busNumber)
+                text: i18n("🚌 %1", reservationFor.busName + " " + reservationFor.busNumber)
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true
             }
             QQC2.Label {
-                text: Localizer.formatTime(reservation.reservationFor, "departureTime")
+                text: Localizer.formatTime(reservationFor, "departureTime")
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             }
@@ -58,26 +58,26 @@ App.TimelineDelegate {
         id: topLayout
 
         QQC2.Label {
-            text: i18n("From: %1", reservation.reservationFor.departureStation.name)
+            text: i18n("From: %1", reservationFor.departureStation.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.departureStation
+            place: reservationFor.departureStation
             Layout.fillWidth: true
         }
         Kirigami.Separator {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: i18n("To: %1", reservation.reservationFor.arrivalStation.name)
+            text: i18n("To: %1", reservationFor.arrivalStation.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
-            place: reservation.reservationFor.arrivalStation
+            place: reservationFor.arrivalStation
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: i18n("Arrival: %1", Localizer.formatDateTime(reservation.reservationFor, "arrivalTime"))
+            text: i18n("Arrival: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
             color: Kirigami.Theme.textColor
         }
     }
