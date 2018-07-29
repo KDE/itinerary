@@ -35,7 +35,7 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: reservation.reservationFor.busName + " " + reservation.reservationFor.busNumber
+            text: reservationFor.busName + " " + reservationFor.busNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
@@ -57,16 +57,16 @@ App.DetailsPage {
             text: i18n("Departure time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
+            text: Localizer.formatDateTime(reservationFor, "departureTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departureStation.name
+            text: reservationFor.departureStation.name
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.departureStation
+            place: reservationFor.departureStation
         }
 
         Kirigami.Separator {
@@ -85,16 +85,16 @@ App.DetailsPage {
             text: i18n("Arrival time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
+            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.arrivalStation.name
+            text: reservationFor.arrivalStation.name
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.arrivalStation
+            place: reservationFor.arrivalStation
         }
 
         Kirigami.Separator {

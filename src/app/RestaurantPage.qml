@@ -41,7 +41,7 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: reservation.reservationFor.name
+            text: reservationFor.name
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
@@ -49,7 +49,7 @@ App.DetailsPage {
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor
+            place: reservationFor
         }
 
         // TODO make these interactive
@@ -57,13 +57,13 @@ App.DetailsPage {
             text: i18n("Telephone:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.telephone
+            text: reservationFor.telephone
         }
         QQC2.Label {
             text: i18n("Email:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.email
+            text: reservationFor.email
         }
 
         QQC2.Label {

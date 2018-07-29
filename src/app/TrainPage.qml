@@ -35,7 +35,7 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: reservation.reservationFor.trainName + " " + reservation.reservationFor.trainNumber
+            text: reservationFor.trainName + " " + reservationFor.trainNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
@@ -57,22 +57,22 @@ App.DetailsPage {
             text: i18n("Departure time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
+            text: Localizer.formatDateTime(reservationFor, "departureTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departureStation.name
+            text: reservationFor.departureStation.name
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.departureStation
+            place: reservationFor.departureStation
         }
         QQC2.Label {
             text: i18n("Departure platform:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departurePlatform
+            text: reservationFor.departurePlatform
         }
 
         Kirigami.Separator {
@@ -91,22 +91,22 @@ App.DetailsPage {
             text: i18n("Arrival time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
+            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.arrivalStation.name
+            text: reservationFor.arrivalStation.name
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.arrivalStation
+            place: reservationFor.arrivalStation
         }
         QQC2.Label {
             text: i18n("Arrival platform:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.arrivalPlatform
+            text: reservationFor.arrivalPlatform
         }
 
         Kirigami.Separator {

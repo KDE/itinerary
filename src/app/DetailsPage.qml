@@ -26,8 +26,9 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     property string resId
-    property variant reservation
-    property variant editor
+    property var reservation
+    readonly property var reservationFor: reservation.reservationFor
+    property var editor
     property string passId: _pkpassManager.passId(reservation)
 
     Kirigami.OverlaySheet {

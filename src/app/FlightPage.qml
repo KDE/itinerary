@@ -41,7 +41,7 @@ App.DetailsPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber
+            text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
@@ -57,7 +57,7 @@ App.DetailsPage {
             text: i18n("Boarding time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "boardingTime")
+            text: Localizer.formatDateTime(reservationFor, "boardingTime")
         }
         QQC2.Label {
             text: i18n("Boarding group:")
@@ -75,7 +75,7 @@ App.DetailsPage {
             text: i18n("Airline:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.airline.name
+            text: reservationFor.airline.name
         }
 
         Kirigami.Separator {
@@ -94,28 +94,28 @@ App.DetailsPage {
             text: i18n("Departure time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "departureTime")
+            text: Localizer.formatDateTime(reservationFor, "departureTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departureAirport.name + " (" + reservation.reservationFor.departureAirport.iataCode + ")"
+            text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.departureAirport
+            place: reservationFor.departureAirport
         }
         QQC2.Label {
             text: i18n("Departure terminal:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departureTerminal
+            text: reservationFor.departureTerminal
         }
         QQC2.Label {
             text: i18n("Departure gate:")
         }
         QQC2.Label {
-            text: reservation.reservationFor.departureGate
+            text: reservationFor.departureGate
         }
 
         Kirigami.Separator {
@@ -134,16 +134,16 @@ App.DetailsPage {
             text: i18n("Arrival time:")
         }
         QQC2.Label {
-            text: Localizer.formatDateTime(reservation.reservationFor, "arrivalTime")
+            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
         }
         QQC2.Label {
-            text: reservation.reservationFor.arrivalAirport.name + " (" + reservation.reservationFor.arrivalAirport.iataCode + ")"
+            text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
             Layout.columnSpan: 2
         }
         App.PlaceDelegate {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            place: reservation.reservationFor.arrivalAirport
+            place: reservationFor.arrivalAirport
         }
 
         Kirigami.Separator {

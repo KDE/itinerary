@@ -27,7 +27,7 @@ Kirigami.AbstractCard {
     property string resId
     property var reservation
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
-    property var reservationFor: reservation.reservationFor
+    readonly property var reservationFor: reservation.reservationFor
     property var rangeType
 
     readonly property double headerFontScale: 1.25
