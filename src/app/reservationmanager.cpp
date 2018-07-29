@@ -221,6 +221,12 @@ void ReservationManager::removeReservation(const QString& id)
     m_reservations.remove(id);
 }
 
+void ReservationManager::removeReservations(const QStringList& ids)
+{
+    for (const auto &id : ids)
+        removeReservation(id);
+}
+
 void ReservationManager::passAdded(const QString& passId)
 {
     const auto pass = m_passMgr->pass(passId);

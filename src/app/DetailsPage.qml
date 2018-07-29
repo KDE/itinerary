@@ -49,8 +49,8 @@ Kirigami.ScrollablePage {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onClicked: {
-                    _reservationManager.removeReservation(root.resId)
-                    applicationWindow().pageStack.pop()
+                    _reservationManager.removeReservations(root.resIds);
+                    applicationWindow().pageStack.pop();
                 }
             }
         }
