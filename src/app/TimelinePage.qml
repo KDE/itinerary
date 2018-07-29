@@ -42,7 +42,6 @@ Kirigami.ScrollablePage {
         id: flightDelegate
         App.FlightDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }
@@ -50,7 +49,6 @@ Kirigami.ScrollablePage {
         id: hotelDelegate
         App.HotelDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }
@@ -58,7 +56,6 @@ Kirigami.ScrollablePage {
         id: trainDelegate
         App.TrainDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }
@@ -66,7 +63,6 @@ Kirigami.ScrollablePage {
         id: busDelegate
         App.BusDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }
@@ -74,7 +70,6 @@ Kirigami.ScrollablePage {
         id: restaurantDelegate
         App.RestaurantDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }
@@ -82,7 +77,6 @@ Kirigami.ScrollablePage {
         id: touristAttractionDelegate
         App.TouristAttractionDelegate {
             resId: modelData.reservationId
-            reservation: modelData.reservation
             rangeType: modelData.rangeType
         }
     }

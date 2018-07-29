@@ -25,7 +25,7 @@ import "." as App
 Kirigami.AbstractCard {
     id: root
     property string resId
-    property var reservation
+    readonly property var reservation: _reservationManager.reservation(root.resId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType

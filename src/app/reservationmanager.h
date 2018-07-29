@@ -39,7 +39,7 @@ public:
     void setPkPassManager(PkPassManager *mgr);
 
     QVector<QString> reservations() const;
-    QVariant reservation(const QString &id) const;
+    Q_INVOKABLE QVariant reservation(const QString &id) const;
 
     Q_INVOKABLE void importReservation(const QUrl &filename);
     Q_INVOKABLE void addReservation(const QVariant &res);
