@@ -111,8 +111,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.FlightPage {
-            resId: root.resId
-            reservation: root.reservation
+            resIds: root.resIds
         }
     }
 
