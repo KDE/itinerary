@@ -26,7 +26,9 @@ import "." as App
 
 Item {
     id: root
-    property var ticket
+    property var resIds
+    /** @deprecated */
+    readonly property var ticket: _reservationManager.reservation(resIds[0]).reservedTicket
     Layout.alignment: Qt.AlignCenter
     Layout.fillWidth: true
     implicitHeight: childrenRect.height

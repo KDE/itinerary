@@ -62,6 +62,7 @@ Kirigami.ScrollablePage {
         }
     }
 
+    // TODO this needs multi-traveler support!
     Instantiator {
         model: reservation.potentialAction
         delegate: Component {

@@ -48,7 +48,7 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             Layout.columnSpan: 2
-            ticket: reservation.reservedTicket
+            resIds: root.resIds
         }
 
         // flight details
