@@ -25,8 +25,10 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    property string resId
-    property variant reservation
+    property var resIds
+    readonly property string resId: resIds[0]
+    readonly property var reservation: _reservationManager.reservation(root.resId);
+
     property alias dateTimeEditSheet: _dateTimeEditSheet
 
     actions {

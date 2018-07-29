@@ -28,8 +28,7 @@ App.DetailsPage {
     title: i18n("Flight")
     editor: Component {
         App.FlightEditor {
-            reservation: root.reservation
-            resId: root.resId
+            resIds: root.resIds
         }
     }
 

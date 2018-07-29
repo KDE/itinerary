@@ -28,8 +28,7 @@ App.DetailsPage {
     title: i18n("Restaurant Reservation")
     editor: Component {
         App.RestaurantEditor {
-            reservation: root.reservation
-            resId: root.resId
+            resIds: root.resIds
         }
     }
 
