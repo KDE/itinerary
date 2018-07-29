@@ -263,8 +263,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             }
             return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
         }
-        case ReservationIdRole:
-            return elem.ids.value(0);
+        case ReservationIdsRole:
+            return elem.ids;
         case ElementTypeRole:
             return elem.elementType;
         case TodayEmptyRole:
@@ -287,7 +287,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
     names.insert(SectionHeader, "sectionHeader");
-    names.insert(ReservationIdRole, "reservationId");
+    names.insert(ReservationIdsRole, "reservationIds");
     names.insert(ElementTypeRole, "type");
     names.insert(TodayEmptyRole, "isTodayEmpty");
     names.insert(IsTodayRole, "isToday");

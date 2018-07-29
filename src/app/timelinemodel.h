@@ -36,7 +36,7 @@ class TimelineModel : public QAbstractListModel
 public:
     enum Role {
         SectionHeader = Qt::UserRole + 1,
-        ReservationIdRole,
+        ReservationIdsRole,
         ElementTypeRole,
         TodayEmptyRole,
         IsTodayRole,

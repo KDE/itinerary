@@ -41,42 +41,42 @@ Kirigami.ScrollablePage {
     Component {
         id: flightDelegate
         App.FlightDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: hotelDelegate
         App.HotelDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: trainDelegate
         App.TrainDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: busDelegate
         App.BusDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: restaurantDelegate
         App.RestaurantDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: touristAttractionDelegate
         App.TouristAttractionDelegate {
-            resId: modelData.reservationId
+            resIds: modelData.reservationIds
             rangeType: modelData.rangeType
         }
     }

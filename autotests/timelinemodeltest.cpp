@@ -141,7 +141,7 @@ private slots:
         QCOMPARE(model.rowCount(), 4);
 
         // delete a split element
-        const auto resId = model.data(model.index(1, 0), TimelineModel::ReservationIdRole).toString();
+        const auto resId = model.data(model.index(1, 0), TimelineModel::ReservationIdsRole).toStringList().value(0);
         QVERIFY(!resId.isEmpty());
         resMgr.removeReservation(resId);
         QCOMPARE(rmSpy.size(), 4);
@@ -180,7 +180,7 @@ private slots:
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
-        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdRole).toString();
+        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 3);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
@@ -188,7 +188,7 @@ private slots:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // remove the US flight should also remove the US country info
-        resId = model.index(1, 0).data(TimelineModel::ReservationIdRole).toString();
+        resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
@@ -327,9 +327,9 @@ private slots:
         QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
 
         // clean up
-        auto resId = model.index(13, 0).data(TimelineModel::ReservationIdRole).toString();
+        auto resId = model.index(13, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
         resMgr.removeReservation(resId);
-        resId = model.index(4, 0).data(TimelineModel::ReservationIdRole).toString();
+        resId = model.index(4, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 11);
 
@@ -364,6 +364,8 @@ private slots:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
 
         // already existing data
         model.setReservationManager(nullptr);
@@ -372,11 +374,13 @@ private slots:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
 
         // update splits element
         updateSpy.clear();
         insertSpy.clear();
-        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdRole).toString();
+        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
         QVERIFY(!resId.isEmpty());
         auto res = resMgr.reservation(resId).value<FlightReservation>();
         auto flight = res.reservationFor().value<Flight>();
