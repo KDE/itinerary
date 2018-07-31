@@ -90,7 +90,7 @@ private slots:
         QVERIFY(fc.isValid());
         QVERIFY(fc.dateTime().isValid());
         QVERIFY(fc.dateTime() <= now);
-        QVERIFY(fc.symbolType() != WeatherForecast::Unknown);
+        QVERIFY(fc.symbolType() != WeatherForecast::None);
         QVERIFY(fc.minimumTemperature() > -50);
         QVERIFY(fc.minimumTemperature() < 50);
         QVERIFY(fc.maximumTemperature() > -50);

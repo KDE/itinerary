@@ -28,7 +28,7 @@ public:
     float m_minTemp = std::numeric_limits<float>::max();
     float m_maxTemp = std::numeric_limits<float>::min();
     float m_precipitation = 0.0f;
-    WeatherForecast::SymbolType m_symbol = WeatherForecast::Unknown;
+    WeatherForecast::SymbolType m_symbol = WeatherForecast::None;
     int m_range = 0;
 };
 
@@ -90,28 +90,42 @@ void WeatherForecast::setSymbolType(WeatherForecast::SymbolType type)
     d->m_symbol = type;
 }
 
+// breeze icon mapping
+struct icon_map_t {
+    WeatherForecast::SymbolType mask;
+    const char *dayIcon;
+    const char *nightIcon;
+};
+
+static const icon_map_t icon_map[] = {
+    { WeatherForecast::Snow, "weather-snow", "weather-snow" },
+    { WeatherForecast::LightSnow | WeatherForecast::Clear, "weather-snow-scattered-day", "weather-snow-scattered-night" },
+    { WeatherForecast::LightSnow, "weather-snow-scattered", "weather-snow-scattered" },
+
+    { WeatherForecast::Hail, "weather-hail", "weather-hail" },
+
+    { WeatherForecast::Clear | WeatherForecast::ThunderStorm, "weather-storm-day", "weather-storm-night" },
+    { WeatherForecast::ThunderStorm, "weather-storm", "weather-storm" },
+
+    { WeatherForecast::Clear | WeatherForecast::Rain, "weather-showers-day", "weather-showers-night" },
+    { WeatherForecast::Rain, "weather-showers", "weather-showers" },
+    { WeatherForecast::Clear | WeatherForecast::LightRain, "weather-showers-scattered-day", "weather-showers-scattered-night" },
+    { WeatherForecast::LightRain, "weather-showers-scattered", "weather-showers-scattered" },
+
+    { WeatherForecast::Clear | WeatherForecast::Clouds, "weather-clouds", "weather-clouds-night" },
+    { WeatherForecast::Clouds, "weather-many-clouds", "weather-many-clouds" },
+    { WeatherForecast::Fog, "weather-fog", "weather-fog" },
+    { WeatherForecast::LightClouds, "weather-few-clouds", "weather-few-clouds-night" },
+    { WeatherForecast::Clear, "weather-clear", "weather-clear-night" }
+};
+
 QString WeatherForecast::symbolIconName() const
 {
     // TODO night icon handling
-    switch (symbolType()) {
-        case Unknown: return {};
-        case Clear: return QStringLiteral("weather-clear");
-        case LightClouds: return QStringLiteral("weather-few-clouds");
-        case PartlyCloudy: return QStringLiteral("weather-clouds");
-        case RainShowers: return QStringLiteral("weather-showers-day");
-        case LightRainShowers: return QStringLiteral("weather-showers-scattered-day");
-        case LightSnowShowers: return QStringLiteral("weather-snow-scattered-day");
-        case ThunderStormShowers: return QStringLiteral("weather-storm-day");
-        // ^ have day and night variants
-        // v only universal variants
-        case Clouds: return QStringLiteral("weather-many-clouds");
-        case Fog: return QStringLiteral("weather-fog");
-        case Rain: return QStringLiteral("weather-showers");
-        case LightRain: return QStringLiteral("weather-showers-scattered");
-        case Hail: return QStringLiteral("weather-hail");
-        case Snow: return QStringLiteral("weather-snow");
-        case LightSnow: return QStringLiteral("weather-snow-scattered");
-        case ThunderStorm: return QStringLiteral("weather-storm");
+    for (const auto &icon : icon_map) {
+        if ((icon.mask & symbolType()) == icon.mask) {
+            return QLatin1String(icon.dayIcon);
+        }
     }
     return {};
 }
@@ -138,8 +152,8 @@ void WeatherForecast::merge(const WeatherForecast &other)
     }
     d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
 
-    if (d->m_symbol == Unknown) {
-        d->m_symbol = other.symbolType();
+    if (d->m_symbol == None || other.range() <= d->m_range) {
+        d->m_symbol |= other.symbolType();
     }
 }
 

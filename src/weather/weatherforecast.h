@@ -38,29 +38,24 @@ class WeatherForecast
     Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
 
 public:
-    /** Weather symbol, aligned with the Breeze icon theme, not the data source symbols. */
-    enum SymbolType : uint8_t {
-        Unknown,
-
-        Clear,
-        LightClouds,
-        PartlyCloudy,
-        RainShowers,
-        LightRainShowers,
-        LightSnowShowers,
-        ThunderStormShowers,
-        // ^ have day and night variants
-        // v only universal variants
-        Clouds,
-        Fog,
-        Rain,
-        LightRain,
-        Hail,
-        Snow,
-        LightSnow,
-        ThunderStorm
+    enum SymbolFlag : uint16_t {
+        None = 0,
+        Clear = 1,
+        LightClouds = 2,
+        Clouds = 4,
+        LightRain = 8,
+        Rain = 16,
+        LightSnow = 32,
+        Snow = 64,
+        Hail = 128,
+        ThunderStorm = 256,
+        Fog = 512,
     };
-    Q_ENUM(SymbolType)
+    /** Weather symbol.
+     *  Represented as flags so we can easily merge this for longer time periods.
+     */
+    Q_DECLARE_FLAGS(SymbolType, SymbolFlag)
+    Q_FLAG(SymbolType)
 
     WeatherForecast();
     WeatherForecast(const WeatherForecast&);
@@ -100,5 +95,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(WeatherForecast)
+Q_DECLARE_OPERATORS_FOR_FLAGS(WeatherForecast::SymbolType)
 
 #endif // WEATHERFORECAST_H
