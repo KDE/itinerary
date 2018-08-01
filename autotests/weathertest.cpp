@@ -16,6 +16,7 @@
 */
 
 #include "itinerary_version.h"
+#include "config-weather.h"
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -51,7 +52,7 @@ private slots:
         QVERIFY(f.open(QFile::ReadOnly));
         WeatherForecastManager mgr;
         QXmlStreamReader reader(&f);
-        auto forecasts = mgr.parseForecast(reader);
+        auto forecasts = mgr.parseForecast(reader, {52.4, 13.5});
         QCOMPARE(forecasts.size(), 1034);
 
         mgr.mergeForecasts(forecasts);
@@ -69,6 +70,30 @@ private slots:
         QCOMPARE((*it).maximumTemperature(), 21.6f);
         QCOMPARE((*it).precipitation(), 0.0f);
         QCOMPARE((*it).symbolType(), WeatherForecast::Clear);
+    }
+
+    void testWeatherSymbol()
+    {
+#ifdef HAVE_KHOLIDAYS
+        WeatherForecast fc;
+        fc.setDateTime({QDate(2018, 8, 1), QTime(2, 0), Qt::UTC}); // CEST is UTC +2
+        fc.setTile({52.4, 13.5});
+        fc.setRange(1);
+        fc.setSymbolType(WeatherForecast::Clear);
+        QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-clear-night"));
+        fc.setRange(2);
+        QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-clear"));
+        fc.setRange(19);
+        fc.setSymbolType(WeatherForecast::Clear | WeatherForecast::LightClouds);
+        QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
+        fc.setDateTime({QDate(2018, 8, 1), QTime(21, 0), Qt::UTC});
+        fc.setRange(1);
+        QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds-night"));
+
+        fc.setDateTime({QDate(2018, 8, 1), QTime(22, 0), Qt::UTC});
+        fc.setRange(24);
+        QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
+#endif
     }
 
     void testForecastRetrieval()

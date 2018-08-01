@@ -15,7 +15,13 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "config-weather.h"
 #include "weatherforecast.h"
+#include "weathertile.h"
+
+#ifdef HAVE_KHOLIDAYS
+#include <KHolidays/SunRiseSet>
+#endif
 
 #include <QDateTime>
 #include <QDebug>
@@ -25,6 +31,7 @@
 class WeatherForecastPrivate : public QSharedData {
 public:
     QDateTime m_dt;
+    WeatherTile m_tile;
     float m_minTemp = std::numeric_limits<float>::max();
     float m_maxTemp = std::numeric_limits<float>::min();
     float m_precipitation = 0.0f;
@@ -121,10 +128,19 @@ static const icon_map_t icon_map[] = {
 
 QString WeatherForecast::symbolIconName() const
 {
-    // TODO night icon handling
+#ifdef HAVE_KHOLIDAYS
+    const auto endDt = d->m_dt.addSecs(d->m_range * 3600);
+    const auto sunrise = QDateTime(d->m_dt.date(), KHolidays::SunRiseSet::utcSunrise(d->m_dt.date(), d->m_tile.latitude(), d->m_tile.longitude()), Qt::UTC);
+    const auto sunset = QDateTime(d->m_dt.date(), KHolidays::SunRiseSet::utcSunset(d->m_dt.date(), d->m_tile.latitude(), d->m_tile.longitude()), Qt::UTC);
+    // check overlap for two days, otherwise we might miss one on a day boundary
+    const auto isDay = (sunrise < endDt && sunset > d->m_dt) || (sunrise.addDays(1) < endDt && sunset.addDays(1) > d->m_dt);
+#else
+    const auto isDay = true;
+#endif
+
     for (const auto &icon : icon_map) {
         if ((icon.mask & symbolType()) == icon.mask) {
-            return QLatin1String(icon.dayIcon);
+            return QLatin1String(isDay ? icon.dayIcon : icon.nightIcon);
         }
     }
     return {};
@@ -166,4 +182,15 @@ void WeatherForecast::setRange(int hours)
 {
     d.detach();
     d->m_range = hours;
+}
+
+WeatherTile WeatherForecast::tile() const
+{
+    return d->m_tile;
+}
+
+void WeatherForecast::setTile(WeatherTile tile)
+{
+    d.detach();
+    d->m_tile = tile;
 }

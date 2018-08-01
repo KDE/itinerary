@@ -75,7 +75,7 @@ private:
 
     bool loadForecastData(WeatherTile tile) const;
     void mergeForecasts(std::vector<WeatherForecast> &forecasts) const;
-    std::vector<WeatherForecast> parseForecast(QXmlStreamReader &reader) const;
+    std::vector<WeatherForecast> parseForecast(QXmlStreamReader &reader, WeatherTile tile) const;
     WeatherForecast parseForecastElement(QXmlStreamReader &reader) const;
 
     void scheduleUpdate();

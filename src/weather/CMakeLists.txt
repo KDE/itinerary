@@ -1,3 +1,8 @@
+if (TARGET KF5::Holidays)
+    set(HAVE_KHOLIDAYS TRUE)
+endif()
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-weather.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-weather.h)
+
 set(weather_srcs
     weatherforecast.cpp
     weatherforecastmanager.cpp
@@ -11,3 +16,6 @@ target_link_libraries(itinerary-weather
         Qt5::Network
         ${ZLIB_LIBRARIES}
 )
+if (TARGET KF5::Holidays)
+    target_link_libraries(itinerary-weather PRIVATE KF5::Holidays)
+endif()

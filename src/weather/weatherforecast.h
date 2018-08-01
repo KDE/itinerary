@@ -26,6 +26,7 @@
 class QDateTime;
 
 class WeatherForecastPrivate;
+class WeatherTile;
 
 /** Weather forecast data */
 class WeatherForecast
@@ -89,6 +90,9 @@ public:
     // internal for weighting different forecast elements
     int range() const;
     void setRange(int hours);
+    // internal for computing the day/night icons
+    WeatherTile tile() const;
+    void setTile(WeatherTile tile);
 
 private:
     QExplicitlySharedDataPointer<WeatherForecastPrivate> d;

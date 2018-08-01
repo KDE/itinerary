@@ -22,6 +22,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_ver
 find_package(Qt5 REQUIRED COMPONENTS Test Quick)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF5 REQUIRED COMPONENTS I18n)
+# TODO this waits for D14537
+#find_package(KF5 QUIET OPTIONAL_COMPONENTS Holidays)
 find_package(KF5Contacts CONFIG REQUIRED)
 find_package(KPimPkPass CONFIG REQUIRED)
 find_package(KPimItinerary CONFIG REQUIRED)

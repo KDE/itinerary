@@ -97,6 +97,7 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     if (Q_UNLIKELY(m_testMode)) {
         WeatherForecast fc;
         fc.setDateTime(beginDt);
+        fc.setTile({latitude, longitude});
         fc.setMinimumTemperature(std::min(latitude, longitude));
         fc.setMaximumTemperature(std::max(latitude, longitude));
         fc.setPrecipitation(23.0f);
@@ -157,8 +158,8 @@ void WeatherForecastManager::fetchNext()
     url.setHost(QStringLiteral("api.met.no"));
     url.setPath(QStringLiteral("/weatherapi/locationforecast/1.9/"));
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("lat"), QString::number(tile.lat / WeatherTile::Size));
-    query.addQueryItem(QStringLiteral("lon"), QString::number(tile.lon / WeatherTile::Size));
+    query.addQueryItem(QStringLiteral("lat"), QString::number(tile.latitude()));
+    query.addQueryItem(QStringLiteral("lon"), QString::number(tile.longitude()));
     url.setQuery(query);
 
     qDebug() << url;
@@ -272,7 +273,7 @@ bool WeatherForecastManager::loadForecastData(WeatherTile tile) const
     }
 
     QXmlStreamReader reader(&f);
-    auto forecasts = parseForecast(reader);
+    auto forecasts = parseForecast(reader, tile);
     mergeForecasts(forecasts);
     if (forecasts.empty()) {
         return false;
@@ -309,7 +310,7 @@ void WeatherForecastManager::mergeForecasts(std::vector<WeatherForecast>& foreca
     forecasts.erase(storeIt, forecasts.end());
 }
 
-std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamReader &reader) const
+std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamReader &reader, WeatherTile tile) const
 {
     std::vector<WeatherForecast> result;
 
@@ -339,6 +340,7 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
                 }
                 auto fc = parseForecastElement(reader);
                 for (int i = 0; i < from.secsTo(to); i += 3600) {
+                    fc.setTile(tile);
                     fc.setDateTime(from.addSecs(i));
                     fc.setRange(range);
                     result.push_back(fc);

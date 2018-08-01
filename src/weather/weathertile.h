@@ -46,6 +46,16 @@ struct WeatherTile
         return lat == other.lat && lon == other.lon;
     }
 
+    inline constexpr float latitude() const
+    {
+        return lat / Size;
+    }
+
+    inline constexpr float longitude() const
+    {
+        return lon / Size;
+    }
+
     uint16_t lat = 0;
     uint16_t lon = 0;
 };
