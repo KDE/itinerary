@@ -25,6 +25,7 @@
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CountryDb>
+#include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
@@ -71,6 +72,7 @@ static TimelineModel::ElementType elementType(const QVariant &res)
     if (JsonLd::isA<BusReservation>(res)) { return TimelineModel::BusTrip; }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineModel::Restaurant; }
     if (JsonLd::isA<TouristAttractionVisit>(res)) { return TimelineModel::TouristAttraction; }
+    if (JsonLd::isA<EventReservation>(res)) { return TimelineModel::Event; }
     return {};
 }
 
@@ -93,6 +95,9 @@ static QString destinationCountry(const QVariant &res)
     }
     if (JsonLd::isA<TouristAttractionVisit>(res)) {
         return res.value<TouristAttractionVisit>().touristAttraction().address().addressCountry();
+    }
+    if (JsonLd::isA<EventReservation>(res)) {
+        return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().address().addressCountry();
     }
     return {};
 }

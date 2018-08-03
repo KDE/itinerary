@@ -53,6 +53,7 @@ public:
         Hotel,
         Restaurant,
         TouristAttraction,
+        Event,
         TodayMarker,
         CountryInfo,
         WeatherForecast
