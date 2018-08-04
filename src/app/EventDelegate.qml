@@ -43,6 +43,7 @@ App.TimelineDelegate {
             QQC2.Label {
                 text: i18n("📅 %1", reservationFor.name)
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+                color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
             }
             QQC2.Label {
