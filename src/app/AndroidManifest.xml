@@ -20,6 +20,11 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="content" android:host="*" android:pathPattern=".*\\.pkpass" android:mimeType="application/octet-stream"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.json" android:mimeType="application/json"/>
+            </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="itinerary-app"/>
             <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
