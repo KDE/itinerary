@@ -63,4 +63,13 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
     }
+
+    Component {
+        id: detailsComponent
+        App.TouristAttractionPage {
+            resIds: root.resIds
+        }
+    }
+
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
 }

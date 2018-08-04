@@ -28,6 +28,7 @@ Item {
     property var place
 
     implicitHeight: (!place.address.isEmpty || place.geo.isValid) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
+    implicitWidth: label.width + buttonLayout.width
 
     QQC2.Label {
         id: label

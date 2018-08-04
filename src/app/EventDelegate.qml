@@ -66,5 +66,13 @@ App.TimelineDelegate {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
         }
     }
-}
 
+    Component {
+        id: detailsComponent
+        App.EventPage {
+            resIds: root.resIds
+        }
+    }
+
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
+}
