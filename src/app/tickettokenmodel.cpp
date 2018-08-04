@@ -72,7 +72,7 @@ void TicketTokenModel::setReservationIds(const QStringList& resIds)
 
 QVariant TicketTokenModel::reservationAt(int row) const
 {
-    if (!m_resMgr)
+    if (!m_resMgr || row >= m_resIds.size())
         return {};
     return m_resMgr->reservation(m_resIds.at(row));
 }
@@ -86,7 +86,7 @@ int TicketTokenModel::rowCount(const QModelIndex& parent) const
 
 QVariant TicketTokenModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || !m_resMgr)
+    if (!index.isValid() || !m_resMgr || index.row() >= m_resIds.size())
         return {};
 
     const auto res = m_resMgr->reservation(m_resIds.at(index.row()));
