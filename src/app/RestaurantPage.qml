@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -32,68 +32,49 @@ App.DetailsPage {
         }
     }
 
-    GridLayout {
-        id: grid
+    Kirigami.FormLayout {
         width: root.width
-        columns: 2
 
         QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
+            Kirigami.FormData.isSection: true
             text: reservationFor.name
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
 
         App.PlaceDelegate {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
+            Kirigami.FormData.label: i18n("Location:")
             place: reservationFor
         }
 
-        // TODO make these interactive
         QQC2.Label {
-            text: i18n("Telephone:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Telephone:")
             text: reservationFor.telephone
         }
         QQC2.Label {
-            text: i18n("Email:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Email:")
             text: reservationFor.email
         }
 
         QQC2.Label {
-            text: i18n("Start time:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Start time:")
             text: Localizer.formatDateTime(reservation, "startTime")
         }
         QQC2.Label {
-            text: i18n("End time:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("End time:")
             text: Localizer.formatDateTime(reservation, "endTime")
         }
         QQC2.Label {
-            text: i18n("Party size:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Party size:")
             text: reservation.partySize
         }
 
         QQC2.Label {
-            text: i18n("Booking reference:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Booking reference:")
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: i18n("Under name:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Under name:")
             text: reservation.underName.name
         }
     }
