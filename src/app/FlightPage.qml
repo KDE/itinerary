@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -32,14 +32,11 @@ App.DetailsPage {
         }
     }
 
-    GridLayout {
-        id: grid
+    Kirigami.FormLayout {
         width: root.width
-        columns: 2
 
         QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
+            Kirigami.FormData.isSection: true
             text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
@@ -47,126 +44,88 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection: true
             resIds: root.resIds
         }
 
         // flight details
-        QQC2.Label {
-            text: i18n("Boarding time:")
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Flight")
         }
         QQC2.Label {
+            Kirigami.FormData.label: i18n("Boarding:")
             text: Localizer.formatDateTime(reservationFor, "boardingTime")
         }
         QQC2.Label {
-            text: i18n("Boarding group:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Boarding group:")
             text: reservation.boardingGroup
         }
         QQC2.Label {
-            text: i18n("Seat:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Seat:")
             text: reservation.airplaneSeat
         }
         QQC2.Label {
-            text: i18n("Airline:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Airline:")
             text: reservationFor.airline.name
         }
 
-        Kirigami.Separator {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-        }
 
         // departure data
-        QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-            text: i18n("Departure")
-            horizontalAlignment: Qt.AlignHCenter
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Departure")
         }
         QQC2.Label {
-            text: i18n("Departure time:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Time:")
             text: Localizer.formatDateTime(reservationFor, "departureTime")
         }
         QQC2.Label {
+            Kirigami.FormData.label: i18n("Airport:")
             text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
-            Layout.columnSpan: 2
         }
         App.PlaceDelegate {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
             place: reservationFor.departureAirport
         }
         QQC2.Label {
-            text: i18n("Departure terminal:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Terminal:")
             text: reservationFor.departureTerminal
         }
         QQC2.Label {
-            text: i18n("Departure gate:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Gate:")
             text: reservationFor.departureGate
         }
 
-        Kirigami.Separator {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-        }
 
         // arrival data
-        QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-            text: i18n("Arrival")
-            horizontalAlignment: Qt.AlignHCenter
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Arrival")
         }
         QQC2.Label {
-            text: i18n("Arrival time:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Time:")
             text: Localizer.formatDateTime(reservationFor, "arrivalTime")
         }
         QQC2.Label {
+            Kirigami.FormData.label: i18n("Airport:")
             text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
-            Layout.columnSpan: 2
         }
         App.PlaceDelegate {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
             place: reservationFor.arrivalAirport
         }
 
-        Kirigami.Separator {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-        }
 
         // booking details
-        QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-            text: i18n("Booking")
-            horizontalAlignment: Qt.AlignHCenter
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Booking")
         }
         QQC2.Label {
-            text: i18n("Booking reference:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Reference:")
             text: reservation.reservationNumber
         }
         QQC2.Label {
-            text: i18n("Under name:")
-        }
-        QQC2.Label {
+            Kirigami.FormData.label: i18n("Under name:")
             text: reservation.underName.name
         }
     }
