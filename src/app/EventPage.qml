@@ -28,8 +28,8 @@ App.DetailsPage {
     title: i18n("Event")
 
     Kirigami.FormLayout {
-        id: layout
         width: root.width
+        Component.onCompleted: Util.fixFormLayoutTouchTransparency(this)
 
         QQC2.Label {
             Kirigami.FormData.isSection: true
