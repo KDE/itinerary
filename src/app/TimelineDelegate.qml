@@ -34,7 +34,41 @@ Kirigami.AbstractCard {
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType
 
+    property Item headerItem
+    property string headerIconSource
+
     readonly property double headerFontScale: 1.25
 
     showClickFeedback: true
+
+    header: Rectangle {
+        id: headerBackground
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+        anchors.leftMargin: -root.leftPadding
+        anchors.topMargin: -root.topPadding
+        anchors.rightMargin: -root.rightPadding
+
+        RowLayout {
+            id: headerLayout
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.largeSpacing
+
+            Kirigami.Icon {
+                source: headerIconSource
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                color: Kirigami.Theme.textColor
+                isMask: true
+            }
+        }
+    }
+
+    onHeaderItemChanged: {
+        if (headerItem) {
+            headerItem.parent = headerLayout
+        }
+    }
 }

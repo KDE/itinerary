@@ -25,40 +25,18 @@ import "." as App
 App.TimelineDelegate {
     id: root
 
-    header: Rectangle {
-        id: headerBackground
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-        Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.rightMargin: -root.rightPadding
-
-        RowLayout {
-            id: headerLayout
-            anchors.fill: parent
-            anchors.margins: Kirigami.Units.largeSpacing
-
-            Kirigami.Icon {
-                source: "qrc:///images/bus.svg"
-                width: Kirigami.Units.iconSizes.smallMedium
-                height: width
-                color: Kirigami.Theme.textColor
-                isMask: true
-            }
-
-            QQC2.Label {
-                text: reservationFor.busName + " " + reservationFor.busNumber
-                color: Kirigami.Theme.textColor
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-                Layout.fillWidth: true
-            }
-            QQC2.Label {
-                text: Localizer.formatTime(reservationFor, "departureTime")
-                color: Kirigami.Theme.textColor
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-            }
+    headerIconSource: "qrc:///images/bus.svg"
+    headerItem: RowLayout {
+        QQC2.Label {
+            text: reservationFor.busName + " " + reservationFor.busNumber
+            color: Kirigami.Theme.textColor
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+            Layout.fillWidth: true
+        }
+        QQC2.Label {
+            text: Localizer.formatTime(reservationFor, "departureTime")
+            color: Kirigami.Theme.textColor
+            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
     }
 
