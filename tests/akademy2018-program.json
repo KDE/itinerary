@@ -1,0 +1,160 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FoodEstablishmentReservation",
+        "endTime": "2018-08-10T22:00:00+02:00",
+        "partySize": 100,
+        "reservationFor": {
+            "@type": "FoodEstablishment",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "AT",
+                "addressLocality": "Wien",
+                "postalCode": "1040",
+                "streetAddress": "Neues EI, 6th floor\nTU Wien\nGusshaustraße 27-29"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.19633,
+                "longitude": 16.36997
+            },
+            "name": "Kontaktraum"
+        },
+        "startTime": "2018-08-10T18:00:00+02:00"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "reservationFor": {
+            "@type": "Event",
+            "name": "KDE Akademy 2018 Day 1",
+            "startDate": "2018-08-11T09:30:00+02:00",
+            "endDate": "2018-08-11T19:00:00+02:00",
+            "location": {
+                "@type": "Place",
+                "name": "TU Wien - Neues EI",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "AT",
+                    "addressLocality": "Wien",
+                    "postalCode": "1040",
+                    "streetAddress": "Gusshaustraße 27-29"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 48.19633,
+                    "longitude": 16.36997
+                }
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "reservationFor": {
+            "@type": "Event",
+            "name": "KDE Akademy 2018 Day 2",
+            "startDate": "2018-08-12T09:30:00+02:00",
+            "endDate": "2018-08-12T19:00:00+02:00",
+            "location": {
+                "@type": "Place",
+                "name": "TU Wien - Neues EI",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "AT",
+                    "addressLocality": "Wien",
+                    "postalCode": "1040",
+                    "streetAddress": "Gusshaustraße 27-29"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 48.19633,
+                    "longitude": 16.36997
+                }
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FoodEstablishmentReservation",
+        "endTime": "2018-08-13T01:00:00+02:00",
+        "partySize": 150,
+        "reservationFor": {
+            "@type": "FoodEstablishment",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "AT",
+                "addressLocality": "Wien",
+                "postalCode": "1040",
+                "streetAddress": "Thaliastraße"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.20748,
+                "longitude": 16.33759
+            },
+            "name": "Cafe Derwisch - Partycellar"
+        },
+        "startTime": "2018-08-13T20:00:00+02:00"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TouristAttractionVisit",
+        "arrivalTime": "2018-08-15T14:00:00+02:00",
+        "departureTime": "2018-08-15T18:00:00+02:00",
+        "touristAttraction": {
+            "@type": "TouristAttraction",
+            "name": "Kahlenberg",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "AT"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.2761,
+                "longitude": 16.33385
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TouristAttractionVisit",
+        "arrivalTime": "2018-08-15T19:00:00+02:00",
+        "departureTime": "2018-08-15T22:00:00+02:00",
+        "touristAttraction": {
+            "@type": "TouristAttraction",
+            "name": "Prater",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Wien",
+                "addressCountry": "AT"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.21531,
+                "longitude": 16.40023
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FoodEstablishmentReservation",
+        "endTime": "2018-08-17T18:00:00+02:00",
+        "partySize": 50,
+        "reservationFor": {
+            "@type": "FoodEstablishment",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Wien",
+                "addressCountry": "AT"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 48.21625,
+                "longitude": 16.43215
+            },
+            "name": "BBC place #8"
+        },
+        "startTime": "2018-08-17T23:00:00+02:00"
+    }
+]
