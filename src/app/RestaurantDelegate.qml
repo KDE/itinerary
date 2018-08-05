@@ -40,8 +40,16 @@ App.TimelineDelegate {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 
+            Kirigami.Icon {
+                source: "qrc:///images/foodestablishment.svg"
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                color: Kirigami.Theme.textColor
+                isMask: true
+            }
+
             QQC2.Label {
-                text: i18n("🍴 %1", reservationFor.name)
+                text: reservationFor.name
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true

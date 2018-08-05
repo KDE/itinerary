@@ -40,10 +40,17 @@ App.TimelineDelegate {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 
+            Kirigami.Icon {
+                source: "go-home"
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                color: Kirigami.Theme.textColor
+                isMask: true
+            }
+
             QQC2.Label {
                 text: root.rangeType == TimelineModel.RangeEnd ?
-                    i18n("🏨 Check-out %1", reservationFor.name) :
-                    i18n("🏨 %1", reservationFor.name)
+                    i18n("Check-out %1", reservationFor.name) : reservationFor.name
                 color: Kirigami.Theme.textColor
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
                 Layout.fillWidth: true

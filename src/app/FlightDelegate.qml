@@ -60,8 +60,16 @@ App.TimelineDelegate {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 
+            Kirigami.Icon {
+                source: "qrc:///images/flight.svg"
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
+                color: Kirigami.Theme.textColor
+                isMask: true
+            }
+
             QQC2.Label {
-                text: i18n("✈ %1 %2 → %3",
+                text: i18n("%1 %2 → %3",
                     reservationFor.airline.iataCode + " " + reservationFor.flightNumber,
                     reservationFor.departureAirport.iataCode,
                     reservationFor.arrivalAirport.iataCode)

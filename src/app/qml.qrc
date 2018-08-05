@@ -38,5 +38,10 @@
         <file>WeatherForecastDelegate.qml</file>
 
         <file>+android/ImportDialog.qml</file>
+
+        <file>images/bus.svg</file>
+        <file>images/flight.svg</file>
+        <file>images/foodestablishment.svg</file>
+        <file>images/train.svg</file>
     </qresource>
 </RCC>

@@ -61,9 +61,11 @@ if (ANDROID)
         document-save
         edit-delete
         edit-download
+        go-home
         go-next-symbolic
         help-about
         map-symbolic
+        meeting-attending
         settings-configure
         view-calendar-day
         view-refresh
