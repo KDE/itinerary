@@ -29,6 +29,7 @@
 #include "settings.h"
 #include "tickettokenmodel.h"
 #include "util.h"
+#include "weatherforecastmodel.h"
 
 #include <weatherforecastmanager.h>
 
@@ -159,6 +160,7 @@ int main(int argc, char **argv)
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
     });
+    qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
@@ -168,6 +170,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
     engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
+    engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     for (const auto &file : parser.positionalArguments()) {

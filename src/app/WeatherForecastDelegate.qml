@@ -27,6 +27,7 @@ Kirigami.AbstractCard {
     property var weatherForecast
     visible: weatherForecast.valid
     headerOrientation: Qt.Horizontal
+    showClickFeedback: true
 
     header: Rectangle {
         id: headerBackground
@@ -61,4 +62,13 @@ Kirigami.AbstractCard {
             Layout.fillWidth: true
         }
     }
+
+    Component {
+        id: detailsComponent
+        App.WeatherForecastPage {
+            weatherForecast: root.weatherForecast
+        }
+    }
+
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
 }

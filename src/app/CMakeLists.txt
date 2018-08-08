@@ -33,6 +33,7 @@ add_executable(itinerary-app
     settings.cpp
     tickettokenmodel.cpp
     util.cpp
+    weatherforecastmodel.cpp
     ${qml_srcs}
 )
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
