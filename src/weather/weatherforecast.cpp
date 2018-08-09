@@ -33,8 +33,8 @@ public:
     QDateTime m_dt;
     WeatherTile m_tile;
     float m_minTemp = std::numeric_limits<float>::max();
-    float m_maxTemp = std::numeric_limits<float>::min();
-    float m_precipitation = 0.0f;
+    float m_maxTemp = std::numeric_limits<float>::lowest();
+    float m_precipitation = std::numeric_limits<float>::lowest();
     WeatherForecast::SymbolType m_symbol = WeatherForecast::None;
     int m_range = 0;
 };
@@ -148,13 +148,13 @@ QString WeatherForecast::symbolIconName() const
 
 float WeatherForecast::precipitation() const
 {
-    return d->m_precipitation;
+    return std::max(d->m_precipitation, 0.0f);
 }
 
 void WeatherForecast::setPrecipitation(float precipitation)
 {
     d.detach();
-    d->m_precipitation = std::max(precipitation, 0.0f);
+    d->m_precipitation = precipitation;
 }
 
 void WeatherForecast::merge(const WeatherForecast &other)
@@ -166,7 +166,9 @@ void WeatherForecast::merge(const WeatherForecast &other)
     if (d->m_maxTemp == std::numeric_limits<float>::min() || other.range() <= d->m_range) {
         d->m_maxTemp = std::max(other.maximumTemperature(), d->m_maxTemp);
     }
-    d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
+    if (d->m_precipitation < 0.0f || other.range() <= d->m_range) {
+        d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
+    }
 
     if (d->m_symbol == None || other.range() <= d->m_range) {
         d->m_symbol |= other.symbolType();
