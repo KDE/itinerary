@@ -18,6 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import org.kde.kirigami 2.4 as Kirigami
 import org.kde.pkpass 1.0 as KPkPass
 import org.kde.prison 1.0 as Prison
 
@@ -113,12 +114,15 @@ Item {
                         font.pointSize: 1.5 * primaryLabel.font.pointSize
                     }
 
-                    QQC2.Label {
+                    Kirigami.Icon {
                         Layout.rowSpan: 2
                         Layout.alignment: Qt.AlignBottom
-                        text: "✈" // TODO: check transit type
+                        // TODO: check transit type and use appropriate icons
+                        source: "qrc:///images/flight.svg"
+                        width: Kirigami.Units.iconSizes.smallMedium
+                        height: width
                         color: pass.labelColor
-                        font.pointSize: primaryValue.font.pointSize
+                        isMask: true
                     }
 
                     QQC2.Label {
