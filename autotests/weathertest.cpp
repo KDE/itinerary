@@ -114,7 +114,7 @@ private slots:
         qDebug() << fc.dateTime() << fc.minimumTemperature() << fc.maximumTemperature() << fc.symbolType() << fc.symbolIconName();
         QVERIFY(fc.isValid());
         QVERIFY(fc.dateTime().isValid());
-        QVERIFY(fc.dateTime() <= now);
+        QVERIFY(fc.dateTime() <= now.addSecs(1800));
         QVERIFY(fc.symbolType() != WeatherForecast::None);
         QVERIFY(fc.minimumTemperature() > -50);
         QVERIFY(fc.minimumTemperature() < 50);
