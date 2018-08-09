@@ -38,6 +38,16 @@ static void alignToHour(QDateTime &dt)
     dt.setTime(QTime(dt.time().hour(), 0, 0, 0));
 }
 
+static void roundToHour(QDateTime &dt)
+{
+    if (dt.time().minute() >= 30) {
+        alignToHour(dt);
+        dt = dt.addSecs(3600);
+    } else {
+        alignToHour(dt);
+    }
+}
+
 /*
  * ATTENTION!
  * Before touching anything in here, especially regarding the network operations
@@ -86,11 +96,14 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
 WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const
 {
     auto beginDt = std::max(begin, QDateTime::currentDateTimeUtc());
-    alignToHour(beginDt);
+    roundToHour(beginDt);
     auto endDt = std::max(end, QDateTime::currentDateTimeUtc());
-    alignToHour(endDt);
+    roundToHour(endDt);
     if (!beginDt.isValid() || !endDt.isValid() || beginDt > endDt) {
         return {};
+    }
+    if (beginDt == endDt) {
+        endDt = endDt.addSecs(3600);
     }
     const auto range = beginDt.secsTo(endDt) / 3600;
 
