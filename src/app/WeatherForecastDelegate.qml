@@ -27,7 +27,7 @@ Kirigami.AbstractCard {
     property var weatherForecast
     visible: weatherForecast.valid
     headerOrientation: Qt.Horizontal
-    showClickFeedback: true
+    showClickFeedback: weatherForecast.range > 1
 
     header: Rectangle {
         id: headerBackground
@@ -70,5 +70,5 @@ Kirigami.AbstractCard {
         }
     }
 
-    onClicked: applicationWindow().pageStack.push(detailsComponent);
+    onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(detailsComponent); }
 }

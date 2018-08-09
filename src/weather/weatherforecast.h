@@ -37,6 +37,7 @@ class WeatherForecast
     Q_PROPERTY(float maximumTemperature READ maximumTemperature CONSTANT)
     Q_PROPERTY(float precipitation READ precipitation CONSTANT)
     Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
+    Q_PROPERTY(int range READ range CONSTANT)
 
 public:
     enum SymbolFlag : uint16_t {
