@@ -62,6 +62,7 @@ if (ANDROID)
         document-save
         edit-delete
         edit-download
+        edit-paste
         go-home
         go-next-symbolic
         help-about

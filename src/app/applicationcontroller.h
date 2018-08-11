@@ -33,6 +33,7 @@ class QGeoPositionInfoSource;
 class ApplicationController : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(bool hasClipboardContent READ hasClipboardContent NOTIFY clipboardContentChanged)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController();
@@ -54,6 +55,11 @@ public:
     Q_INVOKABLE void checkCalendar();
 
     static ApplicationController* instance();
+
+    bool hasClipboardContent() const;
+
+signals:
+    void clipboardContentChanged();
 
 private:
     static ApplicationController *s_instance;

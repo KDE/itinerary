@@ -23,9 +23,12 @@
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
 
+#include <QClipboard>
 #include <QDebug>
 #include <QDesktopServices>
 #include <QFile>
+#include <QGuiApplication>
+#include <QMimeData>
 #include <QUrl>
 #include <QUrlQuery>
 
@@ -81,6 +84,8 @@ ApplicationController::ApplicationController(QObject* parent)
 #endif
 {
     s_instance = this;
+
+    connect(QGuiApplication::clipboard(), &QClipboard::dataChanged, this, &ApplicationController::clipboardContentChanged);
 }
 
 ApplicationController::~ApplicationController()
@@ -347,4 +352,9 @@ void ApplicationController::checkCalendar()
         activity.callMethod<void>("checkCalendar");
     }
 #endif
+}
+
+bool ApplicationController::hasClipboardContent() const
+{
+    return QGuiApplication::clipboard()->mimeData()->hasText();
 }

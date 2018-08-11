@@ -48,6 +48,12 @@ Kirigami.ApplicationWindow {
                 onTriggered: importDialog.importPass()
             },
             Kirigami.Action {
+                text: i18n("Paste")
+                iconName: "edit-paste"
+                onTriggered: _reservationManager.importFromClipboard()
+                enabled: _appController.hasClipboardContent
+            },
+            Kirigami.Action {
                 text: i18n("Check Calendar")
                 iconName: "view-calendar-day"
                 onTriggered: _appController.checkCalendar()
