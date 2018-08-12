@@ -23,9 +23,17 @@
 
 using namespace KItinerary;
 
+static QString countryName(const KnowledgeDb::Country *country)
+{
+    return KContacts::Address::ISOtoCountry(country->id.toString());
+}
+
 CountryModel::CountryModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    m_countries.resize(std::distance(KnowledgeDb::countriesBegin(), KnowledgeDb::countriesEnd()));
+    std::transform(KnowledgeDb::countriesBegin(), KnowledgeDb::countriesEnd(), m_countries.begin(), [](const KnowledgeDb::Country& country) { return &country; });
+    std::sort(m_countries.begin(), m_countries.end(), [](const KnowledgeDb::Country *lhs, const KnowledgeDb::Country *rhs) { return countryName(lhs) < countryName(rhs); });
 }
 
 CountryModel::~CountryModel() = default;
@@ -33,18 +41,18 @@ CountryModel::~CountryModel() = default;
 int CountryModel::isoCodeToIndex(const QString &isoCode) const
 {
     const auto id = KnowledgeDb::CountryId{isoCode};
-    const auto it = std::lower_bound(KnowledgeDb::countriesBegin(), KnowledgeDb::countriesEnd(), id, [](const KnowledgeDb::Country &lhs, KnowledgeDb::CountryId rhs) {
-        return lhs.id < rhs;
+    const auto it = std::find_if(m_countries.constBegin(), m_countries.constEnd(), [id](const KnowledgeDb::Country *country) {
+        return country->id == id;
     });
-    if (it == KnowledgeDb::countriesEnd() || (*it).id != id) {
+    if (it == m_countries.constEnd()) {
         return -1;
     }
-    return std::distance(KnowledgeDb::countriesBegin(), it);
+    return std::distance(m_countries.constBegin(), it);
 }
 
 QString CountryModel::isoCodeFromIndex(int index) const
 {
-    return (KnowledgeDb::countriesBegin() + index)->id.toString();
+    return m_countries.at(index)->id.toString();
 }
 
 int CountryModel::rowCount(const QModelIndex& parent) const
@@ -53,7 +61,7 @@ int CountryModel::rowCount(const QModelIndex& parent) const
         return 0;
     }
 
-    return std::distance(KnowledgeDb::countriesBegin(), KnowledgeDb::countriesEnd());
+    return m_countries.count();
 }
 
 QVariant CountryModel::data(const QModelIndex& index, int role) const
@@ -62,12 +70,12 @@ QVariant CountryModel::data(const QModelIndex& index, int role) const
         return {};
     }
 
-    const auto it = KnowledgeDb::countriesBegin() + index.row();
+    const auto* country = m_countries.at(index.row());
     switch (role) {
         case Qt::DisplayRole:
-            return KContacts::Address::ISOtoCountry((*it).id.toString());
+            return countryName(country);
         case Qt::EditRole:
-            return (*it).id.toString();
+            return country->id.toString();
     }
 
     return {};

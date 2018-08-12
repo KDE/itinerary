@@ -19,6 +19,11 @@
 #define COUNTRYMODEL_H
 
 #include <QAbstractListModel>
+namespace KItinerary {
+namespace KnowledgeDb {
+    class Country;
+}
+}
 
 /** Country model for selecting the home country. */
 class CountryModel : public QAbstractListModel
@@ -33,6 +38,9 @@ public:
 
     int rowCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role) const override;
+
+private:
+    QVector<const KItinerary::KnowledgeDb::Country *> m_countries;
 };
 
 #endif // COUNTRYMODEL_H
