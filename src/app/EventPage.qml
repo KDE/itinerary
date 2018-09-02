@@ -38,6 +38,11 @@ App.DetailsPage {
             font.bold: true
         }
 
+        App.TicketTokenDelegate {
+            Kirigami.FormData.isSection: true
+            resIds: root.resIds
+        }
+
         QQC2.Label {
             Kirigami.FormData.label: i18n("Location:")
             text: reservationFor.location.name
