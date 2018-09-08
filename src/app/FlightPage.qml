@@ -121,13 +121,13 @@ App.DetailsPage {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Booking")
         }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Reference:")
-            text: reservation.reservationNumber
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Under name:")
-            text: reservation.underName.name
+        Repeater {
+            model: resIds.length * 2
+            delegate: QQC2.Label {
+                property var res: _reservationManager.reservation(resIds[Math.floor(index/2)]);
+                Kirigami.FormData.label: index % 2 == 0 ? i18n("Under name:") : i18n("Reference:")
+                text: index % 2 == 0 ? res.underName.name : res.reservationNumber
+            }
         }
     }
 }
