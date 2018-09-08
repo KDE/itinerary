@@ -90,14 +90,17 @@ App.DetailsPage {
         Kirigami.Separator {
             Kirigami.FormData.label: i18n("Seat")
             Kirigami.FormData.isSection: true
+            visible: reservation.reservedTicket.ticketedSeat.seatNumber != "" || reservation.reservedTicket.ticketedSeat.seatSection != ""
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Coach:")
             text: reservation.reservedTicket.ticketedSeat.seatSection
+            visible: reservation.reservedTicket.ticketedSeat.seatSection != ""
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Seat:")
             text: reservation.reservedTicket.ticketedSeat.seatNumber
+            visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
         }
 
         // booking details
