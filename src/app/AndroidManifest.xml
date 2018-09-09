@@ -17,13 +17,15 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.pkpass" android:mimeType="application/octet-stream"/>
+                <data android:scheme="content" android:host="*" android:mimeType="application/vnd.apple.pkpass"/>
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.json" android:mimeType="application/json"/>
+                <data android:scheme="content" android:host="*" android:mimeType="application/json"/>
             </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="itinerary-app"/>
