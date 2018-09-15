@@ -73,6 +73,7 @@ ColumnLayout {
                     switch (currentTicket.ticketTokenType) {
                         case Ticket.QRCode: return Prison.Barcode.QRCode;
                         case Ticket.AztecCode: return Prison.Barcode.Aztec;
+                        case Ticket.Code128: return Prison.Barcode.Code128;
                     }
                     return Prison.Barcode.Null;
                 }
