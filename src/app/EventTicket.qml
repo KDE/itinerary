@@ -51,6 +51,12 @@ Item {
                 fillMode: Image.PreserveAspectFit
                 x: -(implicitWidth - bodyBackground.width) / 2
                 y: 0
+                visible: false
+            }
+            Effects.FastBlur {
+                anchors.fill: backgroundImage
+                source: backgroundImage
+                radius: 32
             }
 
             ColumnLayout {
