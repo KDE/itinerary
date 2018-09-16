@@ -45,6 +45,14 @@ Item {
             implicitHeight: bodyLayout.implicitHeight + 2 * bodyLayout.anchors.margins
             implicitWidth: bodyLayout.implicitWidth + 2 * bodyLayout.anchors.margins
 
+            Image {
+                id: backgroundImage
+                source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
+                fillMode: Image.PreserveAspectFit
+                x: -(implicitWidth - bodyBackground.width) / 2
+                y: 0
+            }
+
             ColumnLayout {
                 id: bodyLayout
                 anchors.fill: parent
@@ -206,6 +214,14 @@ Item {
                         }
                     }
                 }
+
+                // footer
+                Image {
+                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
+                    sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                    Layout.alignment: Qt.AlignCenter
+                }
+
                 // TODO back fields
             }
         }
