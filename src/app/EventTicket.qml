@@ -24,9 +24,10 @@ import org.kde.pkpass 1.0 as KPkPass
 import org.kde.prison 1.0 as Prison
 
 Item {
+    id: root
     property var pass: null
     property string passId
-    implicitHeight: frontLayout.implicitHeight
+    //implicitHeight: frontLayout.implicitHeight
     implicitWidth: Math.max(frontLayout.implicitWidth, 332)
 
     ColumnLayout {
@@ -34,6 +35,8 @@ Item {
         spacing: 0
         anchors.fill: parent
         visible: false
+        // HACK to break binding loop on implicitHeight
+        onImplicitHeightChanged: root.implicitHeight = implicitHeight
 
         Rectangle {
             id: bodyBackground
@@ -57,6 +60,10 @@ Item {
 
                     Image {
                         Layout.rowSpan: 2
+                        Layout.maximumHeight: 60
+                        Layout.maximumWidth: 150
+                        Layout.preferredWidth: paintedWidth
+                        fillMode: Image.PreserveAspectFit
                         source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
                         sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                     }
