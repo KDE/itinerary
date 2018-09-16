@@ -22,6 +22,8 @@
 #include <KPkPass/Barcode>
 #include <KPkPass/Pass>
 
+#include <KLocalizedContext>
+
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
@@ -56,6 +58,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
 
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextProperty(QStringLiteral("_passId"), passId);
     engine.rootContext()->setContextProperty(QStringLiteral("_pass"), passMgr.pass(passId));
