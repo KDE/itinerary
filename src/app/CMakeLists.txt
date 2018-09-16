@@ -1,6 +1,7 @@
 set(itinerary_srcs
     countryinformation.cpp
     pkpassmanager.cpp
+    pkpassimageprovider.cpp
     reservationmanager.cpp
     timelinemodel.cpp
 )
@@ -16,6 +17,7 @@ target_link_libraries(itinerary PUBLIC
     KPim::PkPass
     KF5::I18n
     Qt5::Network
+    Qt5::Quick
 )
 
 if (Qt5QuickCompiler_FOUND)
@@ -29,7 +31,6 @@ add_executable(itinerary-app
     applicationcontroller.cpp
     countrymodel.cpp
     localizer.cpp
-    pkpassimageprovider.cpp
     settings.cpp
     tickettokenmodel.cpp
     util.cpp
@@ -39,7 +40,6 @@ add_executable(itinerary-app
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    Qt5::Quick
     KF5::Contacts
 )
 if (ANDROID)

@@ -56,6 +56,7 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
 
 add_subdirectory(src)
 add_subdirectory(autotests)
+add_subdirectory(tests)
 
 install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_CONFDIR})
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

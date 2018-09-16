@@ -1,0 +1,2 @@
+add_executable(pkpassviewer pkpassviewer.cpp pkpassviewer.qrc)
+target_link_libraries(pkpassviewer itinerary)

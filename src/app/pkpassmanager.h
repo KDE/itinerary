@@ -41,7 +41,8 @@ public:
     Q_INVOKABLE QObject* passObject(const QString &passId);
     Q_INVOKABLE QString passId(const QVariant &reservation) const;
 
-    Q_INVOKABLE void importPass(const QUrl &url);
+    /** Import pass from @p url, returns the pass id if successful. */
+    Q_INVOKABLE QString importPass(const QUrl &url);
     void importPassFromTempFile(const QUrl &tmpFile);
     Q_INVOKABLE void removePass(const QString &passId);
 
@@ -57,7 +58,7 @@ signals:
 
 private:
     enum ImportMode { Copy, Move };
-    void doImportPass(const QUrl &url, ImportMode mode);
+    QString doImportPass(const QUrl &url, ImportMode mode);
 
     QHash<QString, KPkPass::Pass*> m_passes;
     QNetworkAccessManager *m_nam;

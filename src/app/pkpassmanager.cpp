@@ -105,9 +105,9 @@ QString PkPassManager::passId(const QVariant &reservation) const
     return passTypeId + QLatin1Char('/') + QString::fromUtf8(serialNum.toUtf8().toBase64(QByteArray::Base64UrlEncoding));
 }
 
-void PkPassManager::importPass(const QUrl& url)
+QString PkPassManager::importPass(const QUrl& url)
 {
-    doImportPass(url, Copy);
+    return doImportPass(url, Copy);
 }
 
 void PkPassManager::importPassFromTempFile(const QUrl& tmpFile)
@@ -115,20 +115,20 @@ void PkPassManager::importPassFromTempFile(const QUrl& tmpFile)
     doImportPass(tmpFile, Move);
 }
 
-void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode)
+QString PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode)
 {
     qCDebug(Log) << url << mode;
     if (!url.isLocalFile())
-        return; // TODO
+        return {}; // TODO
 
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
     std::unique_ptr<KPkPass::Pass> newPass(KPkPass::Pass::fromFile(url.toLocalFile()));
     if (!newPass)
-        return; // TODO error handling
+        return {}; // TODO error handling
     if (newPass->passTypeIdentifier().isEmpty() || newPass->serialNumber().isEmpty())
-        return; // TODO error handling
+        return {}; // TODO error handling
 
     QDir dir(basePath);
     dir.mkdir(newPass->passTypeIdentifier());
@@ -169,6 +169,8 @@ void PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode
     } else {
         emit passAdded(passId);
     }
+
+    return passId;
 }
 
 void PkPassManager::removePass(const QString& passId)

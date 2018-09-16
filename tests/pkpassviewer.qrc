@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pkpassviewer.qml</file>
+        <file alias="BoardingPass.qml">../src/app/BoardingPass.qml</file>
+        <file alias="EventTicket.qml">../src/app/EventTicket.qml</file>
+        <file alias="PkPassPage.qml">../src/app/PkPassPage.qml</file>
+        <file alias="images/flight.svg">../src/app/images/flight.svg</file>
+    </qresource>
+</RCC>
