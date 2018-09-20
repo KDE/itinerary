@@ -54,6 +54,7 @@ public:
         Restaurant,
         TouristAttraction,
         Event,
+        CarRental,
         TodayMarker,
         CountryInfo,
         WeatherForecast

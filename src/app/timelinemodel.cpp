@@ -49,7 +49,8 @@ using namespace KItinerary;
 
 static bool needsSplitting(const QVariant &res)
 {
-    return res.userType() == qMetaTypeId<LodgingReservation>();
+    return JsonLd::isA<LodgingReservation>(res)
+        || JsonLd::isA<RentalCarReservation>(res);
 }
 
 static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType range)
@@ -73,6 +74,7 @@ static TimelineModel::ElementType elementType(const QVariant &res)
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineModel::Restaurant; }
     if (JsonLd::isA<TouristAttractionVisit>(res)) { return TimelineModel::TouristAttraction; }
     if (JsonLd::isA<EventReservation>(res)) { return TimelineModel::Event; }
+    if (JsonLd::isA<RentalCarReservation>(res)) { return TimelineModel::CarRental; }
     return {};
 }
 
@@ -99,6 +101,9 @@ static QString destinationCountry(const QVariant &res)
     if (JsonLd::isA<EventReservation>(res)) {
         return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().address().addressCountry();
     }
+    if (JsonLd::isA<RentalCarReservation>(res)) {
+        return res.value<RentalCarReservation>().dropoffLocation().address().addressCountry();
+    }
     return {};
 }
 
@@ -122,6 +127,9 @@ static GeoCoordinates geoCoordinate(const QVariant &res)
     }
     if (JsonLd::isA<TouristAttractionVisit>(res)) {
         return res.value<TouristAttractionVisit>().touristAttraction().geo();
+    }
+    if (JsonLd::isA<RentalCarReservation>(res)) {
+        return res.value<RentalCarReservation>().dropoffLocation().geo();
     }
 
     return {};
