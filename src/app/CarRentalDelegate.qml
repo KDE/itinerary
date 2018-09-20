@@ -25,7 +25,7 @@ import "." as App
 App.TimelineDelegate {
     id: root
 
-    headerIconSource: "meeting-attending"
+    headerIconSource: "qrc:///images/car.svg"
     headerItem: RowLayout {
         QQC2.Label {
             text: root.rangeType == TimelineModel.RangeEnd ?
