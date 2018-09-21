@@ -52,7 +52,9 @@ Kirigami.AbstractCard {
     contentItem: ColumnLayout {
         Layout.fillWidth: true
         QQC2.Label {
-            text: i18n("Temperature: %1 °C / %2 °C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
+            text: weatherForecast.minimumTemperature == weatherForecast.maximumTemperature ?
+                i18n("Temperature: %1°C", weatherForecast.maximumTemperature) :
+                i18n("Temperature: %1°C / %2°C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
         }
