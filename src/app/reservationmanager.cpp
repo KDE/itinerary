@@ -246,10 +246,7 @@ void ReservationManager::removeReservations(const QStringList& ids)
 void ReservationManager::passAdded(const QString& passId)
 {
     const auto pass = m_passMgr->pass(passId);
-    auto extractors = m_extractorRepo.extractorsForPass(pass);
-
     ExtractorEngine engine;
-    engine.setExtractors(std::move(extractors));
     engine.setPass(pass);
     const auto data = engine.extract();
     const auto res = JsonLdDocument::fromJson(data);

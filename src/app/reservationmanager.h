@@ -18,8 +18,6 @@
 #ifndef RESERVATIONMANAGER_H
 #define RESERVATIONMANAGER_H
 
-#include <KItinerary/ExtractorRepository>
-
 #include <QHash>
 #include <QObject>
 #include <QVariant>
@@ -64,7 +62,6 @@ private:
 
     mutable QHash<QString, QVariant> m_reservations;
     PkPassManager *m_passMgr = nullptr;
-    KItinerary::ExtractorRepository m_extractorRepo;
 };
 
 #endif // RESERVATIONMANAGER_H
