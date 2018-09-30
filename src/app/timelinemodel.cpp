@@ -90,7 +90,7 @@ static QString destinationCountry(const QVariant &res)
         return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().address().addressCountry();
     }
     if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalStation().address().addressCountry();
+        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalBusStop().address().addressCountry();
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().address().addressCountry();
@@ -116,7 +116,7 @@ static GeoCoordinates geoCoordinate(const QVariant &res)
         return res.value<TrainReservation>().reservationFor().value<KItinerary::TrainTrip>().arrivalStation().geo();
     }
     if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalStation().geo();
+        return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalBusStop().geo();
     }
 
     if (JsonLd::isA<LodgingReservation>(res)) {

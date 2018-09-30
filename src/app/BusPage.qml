@@ -55,10 +55,10 @@ App.DetailsPage {
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.departureStation.name
+            text: reservationFor.departureBusStop.name
         }
         App.PlaceDelegate {
-            place: reservationFor.departureStation
+            place: reservationFor.departureBusStop
         }
 
         // arrival data
@@ -72,10 +72,10 @@ App.DetailsPage {
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.arrivalStation.name
+            text: reservationFor.arrivalBusStop.name
         }
         App.PlaceDelegate {
-            place: reservationFor.arrivalStation
+            place: reservationFor.arrivalBusStop
         }
 
         // seat reservation

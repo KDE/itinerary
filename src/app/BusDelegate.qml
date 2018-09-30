@@ -44,22 +44,22 @@ App.TimelineDelegate {
         id: topLayout
 
         QQC2.Label {
-            text: i18n("From: %1", reservationFor.departureStation.name)
+            text: i18n("From: %1", reservationFor.departureBusStop.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
-            place: reservationFor.departureStation
+            place: reservationFor.departureBusStop
             Layout.fillWidth: true
         }
         Kirigami.Separator {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: i18n("To: %1", reservationFor.arrivalStation.name)
+            text: i18n("To: %1", reservationFor.arrivalBusStop.name)
             color: Kirigami.Theme.textColor
         }
         App.PlaceDelegate {
-            place: reservationFor.arrivalStation
+            place: reservationFor.arrivalBusStop
             Layout.fillWidth: true
         }
         QQC2.Label {
