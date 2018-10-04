@@ -6,5 +6,5 @@ Icon=map-globe
 Type=Application
 Comment=Travel assistance application.
 Terminal=false
-MimeType=application/vnd.apple.pkpass;
+MimeType=application/vnd.apple.pkpass;application/ld+json;
 Categories=Qt;KDE;
