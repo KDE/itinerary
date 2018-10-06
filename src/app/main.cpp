@@ -79,6 +79,16 @@ void handleViewIntent(ApplicationController *appController)
 #endif
 }
 
+void handlePositionalArguments(ApplicationController *appController, const QStringList &args)
+{
+    for (const auto &file : args) {
+        const auto localUrl = QUrl::fromLocalFile(file);
+        if (QFile::exists(localUrl.toLocalFile()))
+            appController->importFromUrl(localUrl);
+        else
+            appController->importFromUrl(QUrl::fromUserInput(file));
+    }
+}
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -123,9 +133,7 @@ int main(int argc, char **argv)
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
-            for (const auto &file : parser.positionalArguments()) {
-                appController.importLocalFile(QUrl::fromLocalFile(file));
-            }
+            handlePositionalArguments(&appController, parser.positionalArguments());
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
             QGuiApplication::allWindows().at(0)->requestActivate();
@@ -175,9 +183,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
-    for (const auto &file : parser.positionalArguments()) {
-        appController.importLocalFile(QUrl::fromLocalFile(file));
-    }
+    handlePositionalArguments(&appController, parser.positionalArguments());
     handleViewIntent(&appController);
 
     return app.exec();

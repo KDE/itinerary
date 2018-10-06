@@ -29,6 +29,7 @@ class ReservationManager;
 
 class QGeoPositionInfo;
 class QGeoPositionInfoSource;
+class QNetworkAccessManager;
 
 class ApplicationController : public QObject
 {
@@ -49,10 +50,10 @@ public:
     // data import
     Q_INVOKABLE void showImportFileDialog();
     Q_INVOKABLE void importFromClipboard();
+    Q_INVOKABLE void importFromUrl(const QUrl &url);
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);
 #endif
-    void importLocalFile(const QUrl &url);
     void importData(const QByteArray &data);
 
     Q_INVOKABLE void checkCalendar();
@@ -65,10 +66,13 @@ signals:
     void clipboardContentChanged();
 
 private:
+    void importLocalFile(const QUrl &url);
+
     static ApplicationController *s_instance;
 
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
+    QNetworkAccessManager *m_nam = nullptr;
 
 #ifndef Q_OS_ANDROID
     void navigateTo(const QGeoPositionInfo &from, const QVariant &to);

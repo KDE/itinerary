@@ -31,6 +31,9 @@
 #include <QFile>
 #include <QGuiApplication>
 #include <QMimeData>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
 #include <QUrl>
 #include <QUrlQuery>
 
@@ -337,7 +340,7 @@ void ApplicationController::importFromClipboard()
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
         const auto urls = QGuiApplication::clipboard()->mimeData()->urls();
         for (const auto url : urls)
-            importLocalFile(url);
+            importFromUrl(url);
     }
 
     if (QGuiApplication::clipboard()->mimeData()->hasText()) {
@@ -352,8 +355,40 @@ void ApplicationController::importFromClipboard()
     }
 }
 
+void ApplicationController::importFromUrl(const QUrl &url)
+{
+    qCDebug(Log) << url;
+
+    if (url.isLocalFile()) {
+        importLocalFile(url);
+        return;
+    }
+
+    if (url.scheme().startsWith(QLatin1String("http"))) {
+        if (!m_nam ) {
+            m_nam = new QNetworkAccessManager(this);
+        }
+        auto reqUrl(url);
+        reqUrl.setScheme(QLatin1String("https"));
+        QNetworkRequest req(reqUrl);
+        req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+        auto reply = m_nam->get(req);
+        connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() != QNetworkReply::NoError) {
+                qCDebug(Log) << reply->url() << reply->errorString();
+                return;
+            }
+            importData(reply->readAll());
+        });
+        return;
+    }
+
+    qCDebug(Log) << "Unhandled URL type:" << url;
+}
+
 void ApplicationController::importLocalFile(const QUrl &url)
 {
+    qCDebug(Log) << url;
     if (isPkPassFile(url)) {
         m_pkPassMgr->importPass(url);
     } else {
@@ -363,6 +398,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
 
 void ApplicationController::importData(const QByteArray &data)
 {
+    qCDebug(Log);
     m_resMgr->importReservation(data);
 }
 
