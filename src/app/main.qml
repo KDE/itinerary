@@ -38,14 +38,9 @@ Kirigami.ApplicationWindow {
         titleIcon: "map-symbolic"
         actions: [
             Kirigami.Action {
-                text: i18n("Import Reservation...")
+                text: i18n("Import...")
                 iconName: "document-open"
                 onTriggered: importDialog.importReservation()
-            },
-            Kirigami.Action {
-                text: i18n("Import Pass...")
-                iconName: "document-open"
-                onTriggered: importDialog.importPass()
             },
             Kirigami.Action {
                 text: i18n("Paste")

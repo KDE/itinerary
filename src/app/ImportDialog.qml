@@ -21,28 +21,16 @@ import Qt.labs.platform 1.0 as Platform
 Item {
     function importReservation()
     {
-        fileDialog.loadPass = false;
-        fileDialog.visible = true;
-    }
-
-    function importPass()
-    {
-        fileDialog.loadPass = true;
         fileDialog.visible = true;
     }
 
     Platform.FileDialog {
-        property bool loadPass: false
         id: fileDialog
-        title: loadPass ? i18n("Import PkPass File") : i18n("Import Itinerary File")
-        nameFilters: loadPass ? [i18n("PkPass files (*.pkpass)")] : [i18n("JSON files (*.json)")]
+        title: i18n("Import Reservation")
+        nameFilters: [i18n("PkPass files (*.pkpass)"), i18n("JSON files (*.json)"), i18n("PDF files (*.pdf)")]
         folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         onAccepted: {
-            console.log(fileDialog.fileUrls);
-            if (loadPass)
-                _pkpassManager.importPass(fileDialog.fileUrl);
-            else
-                _reservationManager.importReservation(fileDialog.fileUrl);
+            _appController.importFromUrl(fileDialog.file);
         }
     }
 }
