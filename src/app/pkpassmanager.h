@@ -41,8 +41,8 @@ public:
     Q_INVOKABLE QObject* passObject(const QString &passId);
     Q_INVOKABLE QString passId(const QVariant &reservation) const;
 
-    /** Import pass from @p url, returns the pass id if successful. */
-    Q_INVOKABLE QString importPass(const QUrl &url);
+    /** Import pass from a local @p url, returns the pass id if successful. */
+    QString importPass(const QUrl &url);
     void importPassFromTempFile(const QUrl &tmpFile);
     Q_INVOKABLE void removePass(const QString &passId);
 

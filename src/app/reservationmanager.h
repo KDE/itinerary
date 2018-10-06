@@ -39,12 +39,12 @@ public:
     QVector<QString> reservations() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
-    Q_INVOKABLE void importReservation(const QUrl &filename);
     Q_INVOKABLE void addReservation(const QVariant &res);
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
     Q_INVOKABLE void removeReservations(const QStringList &ids);
 
+    void importReservation(const QUrl &filename);
     void importReservation(const QByteArray &data);
 
 signals:

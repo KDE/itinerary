@@ -119,7 +119,7 @@ QString PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode m
 {
     qCDebug(Log) << url << mode;
     if (!url.isLocalFile())
-        return {}; // TODO
+        return {};
 
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
