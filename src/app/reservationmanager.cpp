@@ -22,16 +22,13 @@
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Flight>
-#include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
 
-#include <QClipboard>
 #include <QDate>
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
-#include <QGuiApplication>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QStandardPaths>
@@ -183,18 +180,6 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
         } else {
             emit reservationAdded(resId);
         }
-    }
-}
-
-void ReservationManager::importFromClipboard()
-{
-    const auto content = QGuiApplication::clipboard()->text();
-    // TODO support other types of barcodes and possibly json/pkpass files too?
-
-    const auto data = IataBcbpParser::parse(content, QDate::currentDate());
-    if (!data.isEmpty()) {
-        for (const auto  &res : data)
-            addReservation(res);
     }
 }
 

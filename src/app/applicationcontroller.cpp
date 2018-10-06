@@ -20,6 +20,7 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
 
@@ -330,6 +331,26 @@ void ApplicationController::showImportFileDialog()
 #endif
 }
 
+void ApplicationController::importFromClipboard()
+{
+    if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
+        const auto urls = QGuiApplication::clipboard()->mimeData()->urls();
+        for (const auto url : urls)
+            importLocalFile(url);
+    }
+
+    if (QGuiApplication::clipboard()->mimeData()->hasText()) {
+        const auto content = QGuiApplication::clipboard()->text();
+        const auto data = IataBcbpParser::parse(content, QDate::currentDate());
+        if (!data.isEmpty()) {
+            for (const auto  &res : data)
+                m_resMgr->addReservation(res);
+        }
+
+        return;
+    }
+}
+
 void ApplicationController::importLocalFile(const QUrl &url)
 {
     if (isPkPassFile(url)) {
@@ -356,5 +377,5 @@ void ApplicationController::checkCalendar()
 
 bool ApplicationController::hasClipboardContent() const
 {
-    return QGuiApplication::clipboard()->mimeData()->hasText();
+    return QGuiApplication::clipboard()->mimeData()->hasText() || QGuiApplication::clipboard()->mimeData()->hasUrls();
 }

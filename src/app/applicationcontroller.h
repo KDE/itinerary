@@ -48,6 +48,7 @@ public:
 
     // data import
     Q_INVOKABLE void showImportFileDialog();
+    Q_INVOKABLE void importFromClipboard();
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);
 #endif

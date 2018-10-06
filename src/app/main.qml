@@ -50,7 +50,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Paste")
                 iconName: "edit-paste"
-                onTriggered: _reservationManager.importFromClipboard()
+                onTriggered: _appController.importFromClipboard()
                 enabled: _appController.hasClipboardContent
             },
             Kirigami.Action {
