@@ -20,6 +20,7 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
@@ -342,10 +343,10 @@ void ApplicationController::importFromClipboard()
     if (QGuiApplication::clipboard()->mimeData()->hasText()) {
         const auto content = QGuiApplication::clipboard()->text();
         const auto data = IataBcbpParser::parse(content, QDate::currentDate());
-        if (!data.isEmpty()) {
-            for (const auto  &res : data)
-                m_resMgr->addReservation(res);
-        }
+        ExtractorPostprocessor postproc;
+        postproc.process(data);
+        for (const auto  &res : postproc.result())
+            m_resMgr->addReservation(res);
 
         return;
     }
