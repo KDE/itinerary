@@ -32,8 +32,8 @@ struct WeatherTile
 
     inline constexpr WeatherTile() = default;
     inline WeatherTile(float latitude, float longitude)
-        : lat(uint16_t(::round(latitude * WeatherTile::Size)))
-        , lon(uint16_t(::round(longitude * WeatherTile::Size)))
+        : lat(int16_t(::round(latitude * WeatherTile::Size)))
+        , lon(int16_t(::round(longitude * WeatherTile::Size)))
     {}
 
     inline bool operator<(WeatherTile other) const
@@ -56,8 +56,8 @@ struct WeatherTile
         return lon / Size;
     }
 
-    uint16_t lat = 0;
-    uint16_t lon = 0;
+    int16_t lat = 0;
+    int16_t lon = 0;
 };
 
 Q_DECLARE_METATYPE(WeatherTile)
