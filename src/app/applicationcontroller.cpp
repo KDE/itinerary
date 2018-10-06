@@ -318,7 +318,7 @@ void ApplicationController::ActivityResultReceiver::handleActivityResult(int rec
 }
 #endif
 
-void ApplicationController::importFile()
+void ApplicationController::showImportFileDialog()
 {
 #ifdef Q_OS_ANDROID
     const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");

@@ -20,11 +20,11 @@ import QtQml 2.0
 QtObject {
     function importPass()
     {
-        _appController.importFile();
+        _appController.showImportFileDialog();
     }
 
     function importReservation()
     {
-        _appController.importFile();
+        _appController.showImportFileDialog();
     }
 }

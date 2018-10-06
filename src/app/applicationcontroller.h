@@ -41,11 +41,13 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
 
+    // navigation
     Q_INVOKABLE void showOnMap(const QVariant &place);
     Q_INVOKABLE bool canNavigateTo(const QVariant &place);
     Q_INVOKABLE void navigateTo(const QVariant &place);
 
-    Q_INVOKABLE void importFile();
+    // data import
+    Q_INVOKABLE void showImportFileDialog();
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);
 #endif
