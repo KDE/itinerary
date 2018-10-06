@@ -29,6 +29,7 @@ endif()
 add_executable(itinerary-app
     main.cpp
     applicationcontroller.cpp
+    contenttypeprober.cpp
     countrymodel.cpp
     localizer.cpp
     settings.cpp

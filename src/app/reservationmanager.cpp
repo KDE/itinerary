@@ -111,20 +111,6 @@ QVariant ReservationManager::reservation(const QString& id) const
     return res;
 }
 
-void ReservationManager::importReservation(const QUrl& filename)
-{
-    if (!filename.isLocalFile())
-        return;
-
-    QFile f(filename.toLocalFile());
-    if (!f.open(QFile::ReadOnly)) {
-        qCWarning(Log) << "Unable to open file:" << f.errorString();
-        return;
-    }
-
-    importReservation(f.readAll());
-}
-
 void ReservationManager::importReservation(const QByteArray& data)
 {
     QJsonParseError error;

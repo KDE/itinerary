@@ -44,7 +44,6 @@ public:
     Q_INVOKABLE void removeReservation(const QString &id);
     Q_INVOKABLE void removeReservations(const QStringList &ids);
 
-    void importReservation(const QUrl &filename);
     void importReservation(const QByteArray &data);
 
 signals:

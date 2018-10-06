@@ -16,6 +16,7 @@
 */
 
 #include "applicationcontroller.h"
+#include "contenttypeprober.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
@@ -270,21 +271,6 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
 }
 #endif
 
-static bool isPkPassFile(const QUrl &url)
-{
-    if (url.isLocalFile()) {
-        QFile f(url.toLocalFile());
-        if (f.open(QFile::ReadOnly)) {
-            char buffer[4];
-            if (f.read(buffer, sizeof(buffer)) != sizeof(buffer)) {
-                return false;
-            }
-            return buffer[0] == 'P' && buffer[1] == 'K' && buffer[2] == 0x03 && buffer[3] == 0x04;
-        }
-    }
-    return url.fileName().endsWith(QLatin1String(".pkpass"));
-}
-
 #ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
 {
@@ -382,20 +368,54 @@ void ApplicationController::importFromUrl(const QUrl &url)
 void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
 {
     qCDebug(Log) << url;
-    if (isPkPassFile(url)) {
-        if (isTempFile)
-            m_pkPassMgr->importPassFromTempFile(url);
-        else
-            m_pkPassMgr->importPass(url);
-    } else {
-        m_resMgr->importReservation(url);
+    if (url.isEmpty() || !url.isLocalFile())
+        return;
+
+    QFile f(url.toLocalFile());
+    if (!f.open(QFile::ReadOnly)) {
+        qCWarning(Log) << "Failed to open" << url << f.errorString();
+        return;
+    }
+
+    const auto head = f.peek(4);
+    const auto type = ContentTypeProber::probe(head, url);
+    switch (type) {
+        case ContentTypeProber::Unknown:
+            qCWarning(Log) << "Unknown content type:" << url;
+            break;
+        case ContentTypeProber::PkPass:
+            if (isTempFile)
+                m_pkPassMgr->importPassFromTempFile(url);
+            else
+                m_pkPassMgr->importPass(url);
+            break;
+        case ContentTypeProber::JsonLd:
+            m_resMgr->importReservation(f.readAll());
+            break;
+        case ContentTypeProber::PDF:
+            // TODO
+            break;
     }
 }
 
 void ApplicationController::importData(const QByteArray &data)
 {
     qCDebug(Log);
-    m_resMgr->importReservation(data);
+    const auto type = ContentTypeProber::probe(data);
+    switch (type) {
+        case ContentTypeProber::Unknown:
+            qCWarning(Log) << "Unknown content type for received data.";
+            break;
+        case ContentTypeProber::PkPass:
+            // TODO
+            break;
+        case ContentTypeProber::JsonLd:
+            m_resMgr->importReservation(data);
+            break;
+        case ContentTypeProber::PDF:
+            // TODO
+            break;
+    }
 }
 
 void ApplicationController::checkCalendar()

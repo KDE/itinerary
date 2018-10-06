@@ -49,6 +49,13 @@ private:
         }
     }
 
+    QByteArray readFile(const QString &fn)
+    {
+        QFile f(fn);
+        f.open(QFile::ReadOnly);
+        return f.readAll();
+    }
+
 private slots:
     void initTestCase()
     {
@@ -115,7 +122,7 @@ private slots:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
-        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -130,7 +137,7 @@ private slots:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineModel::RangeEnd);
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
-        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
         QCOMPARE(insertSpy.size(), 4);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
@@ -161,7 +168,7 @@ private slots:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
-        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
@@ -357,7 +364,7 @@ private slots:
         QVERIFY(rmSpy.isValid());
 
         // full import at runtime
-        resMgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
         QCOMPARE(insertSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);

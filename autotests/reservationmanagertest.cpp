@@ -41,6 +41,13 @@ private:
             mgr->removePass(id);
     }
 
+    QByteArray readFile(const QString &fn)
+    {
+        QFile f(fn);
+        f.open(QFile::ReadOnly);
+        return f.readAll();
+    }
+
 private slots:
     void initTestCase()
     {
@@ -60,7 +67,7 @@ private slots:
         QVERIFY(rmSpy.isValid());
 
         QVERIFY(mgr.reservations().isEmpty());
-        mgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
 
         auto res = mgr.reservations();
         QCOMPARE(res.size(), 1);
@@ -72,7 +79,7 @@ private slots:
         QVERIFY(updateSpy.isEmpty());
         QVERIFY(!mgr.reservation(resId).isNull());
 
-        mgr.importReservation(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v2.json")));
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v2.json")));
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(mgr.reservations().size(), 1);
