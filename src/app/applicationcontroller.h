@@ -66,7 +66,7 @@ signals:
     void clipboardContentChanged();
 
 private:
-    void importLocalFile(const QUrl &url);
+    void importLocalFile(const QUrl &url, bool isTempFile);
 
     static ApplicationController *s_instance;
 

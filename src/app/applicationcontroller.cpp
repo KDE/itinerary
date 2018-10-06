@@ -302,18 +302,11 @@ void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
     if (scheme.toString() == QLatin1String("content")) {
         const auto tmpFile = QtAndroid::androidActivity().callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
         const auto tmpUrl = QUrl::fromLocalFile(tmpFile.toString());
-        if (isPkPassFile(tmpUrl)) {
-            m_pkPassMgr->importPassFromTempFile(tmpUrl);
-        } else {
-            m_resMgr->importReservation(tmpUrl);
-        }
-    } else if (scheme.toString() == QLatin1String("file")) {
-        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        importLocalFile(QUrl(uriStr.toString()));
-    } else {
-        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        qCWarning(Log) << "Unknown intent URI:" << uriStr.toString();
+        importLocalFile(tmpUrl, true);
+        return;
     }
+    const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+    importFromUrl(QUrl(uriStr.toString()));
 }
 
 void ApplicationController::ActivityResultReceiver::handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent)
@@ -360,7 +353,7 @@ void ApplicationController::importFromUrl(const QUrl &url)
     qCDebug(Log) << url;
 
     if (url.isLocalFile()) {
-        importLocalFile(url);
+        importLocalFile(url, false);
         return;
     }
 
@@ -386,11 +379,14 @@ void ApplicationController::importFromUrl(const QUrl &url)
     qCDebug(Log) << "Unhandled URL type:" << url;
 }
 
-void ApplicationController::importLocalFile(const QUrl &url)
+void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
 {
     qCDebug(Log) << url;
     if (isPkPassFile(url)) {
-        m_pkPassMgr->importPass(url);
+        if (isTempFile)
+            m_pkPassMgr->importPassFromTempFile(url);
+        else
+            m_pkPassMgr->importPass(url);
     } else {
         m_resMgr->importReservation(url);
     }
