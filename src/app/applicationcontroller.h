@@ -67,6 +67,7 @@ signals:
 
 private:
     void importLocalFile(const QUrl &url, bool isTempFile);
+    void importPdf(const QByteArray &data);
 
     static ApplicationController *s_instance;
 

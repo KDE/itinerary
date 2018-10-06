@@ -21,9 +21,11 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/PdfDocument>
 #include <KItinerary/Place>
 
 #include <QClipboard>
@@ -31,6 +33,7 @@
 #include <QDesktopServices>
 #include <QFile>
 #include <QGuiApplication>
+#include <QJsonArray>
 #include <QMimeData>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
@@ -45,6 +48,8 @@
 #include <QGeoPositionInfo>
 #include <QGeoPositionInfoSource>
 #endif
+
+#include <memory>
 
 using namespace KItinerary;
 
@@ -326,6 +331,7 @@ void ApplicationController::importFromClipboard()
         const auto content = QGuiApplication::clipboard()->text();
         const auto data = IataBcbpParser::parse(content, QDate::currentDate());
         ExtractorPostprocessor postproc;
+        postproc.setContextDate(QDateTime::currentDateTime());
         postproc.process(data);
         for (const auto  &res : postproc.result())
             m_resMgr->addReservation(res);
@@ -337,7 +343,6 @@ void ApplicationController::importFromClipboard()
 void ApplicationController::importFromUrl(const QUrl &url)
 {
     qCDebug(Log) << url;
-
     if (url.isLocalFile()) {
         importLocalFile(url, false);
         return;
@@ -393,7 +398,8 @@ void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
             m_resMgr->importReservation(f.readAll());
             break;
         case ContentTypeProber::PDF:
-            // TODO
+            if (f.size() <= 4000000)
+                importPdf(f.readAll());
             break;
     }
 }
@@ -413,8 +419,26 @@ void ApplicationController::importData(const QByteArray &data)
             m_resMgr->importReservation(data);
             break;
         case ContentTypeProber::PDF:
-            // TODO
+            importPdf(data);
             break;
+    }
+}
+
+void ApplicationController::importPdf(const QByteArray &data)
+{
+    auto doc = std::unique_ptr<PdfDocument>(PdfDocument::fromData(data));
+    if (!doc)
+        return;
+
+    ExtractorEngine engine;
+    engine.setContextDate(QDateTime::currentDateTime());
+    engine.setPdfDocument(doc.get());
+    ExtractorPostprocessor postproc;
+    postproc.setContextDate(QDateTime::currentDateTime());
+    postproc.process(JsonLdDocument::fromJson(engine.extract()));
+    const auto res = postproc.result();
+    for (const auto &r : res) {
+        m_resMgr->addReservation(r);
     }
 }
 
