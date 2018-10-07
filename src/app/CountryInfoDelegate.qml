@@ -42,9 +42,17 @@ Kirigami.AbstractCard {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 
-            QQC2.Label {
-                text: i18n("⚠ Entering %1", Localizer.countryName(countryInfo.isoCode))
+            Kirigami.Icon {
+                source: "documentinfo"
+                width: Kirigami.Units.iconSizes.smallMedium
+                height: width
                 color: Kirigami.Theme.neutralTextColor
+                isMask: true
+            }
+            QQC2.Label {
+                text: i18n("Entering %1", Localizer.countryName(countryInfo.isoCode))
+                color: Kirigami.Theme.neutralTextColor
+                Layout.fillWidth: true
             }
         }
     }

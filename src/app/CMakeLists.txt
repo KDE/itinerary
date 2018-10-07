@@ -61,6 +61,7 @@ if (ANDROID)
         document-edit
         document-open
         document-save
+        documentinfo
         edit-delete
         edit-download
         edit-paste
