@@ -77,6 +77,9 @@ private slots:
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(passSpy.size(), 1);
+        appController.importData("M1DOE/JOHN            EXXX007 TXLBRUSN 2592 110Y");
+        QCOMPARE(resSpy.size(), 2);
+        QCOMPARE(passSpy.size(), 1);
         // TODO PDF
     }
 

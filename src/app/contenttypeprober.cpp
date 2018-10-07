@@ -30,6 +30,8 @@ ContentTypeProber::Type ContentTypeProber::probe(const QByteArray &head, const Q
             return PDF;
         if (head[0] == '[' || head[0] == '{')
             return JsonLd;
+        if (head[0] == 'M' && head[1] >= '1' && head[1] <= '9')
+            return IataBcbp;
     }
 
     // guess from file extension

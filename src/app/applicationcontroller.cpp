@@ -325,18 +325,12 @@ void ApplicationController::importFromClipboard()
         const auto urls = QGuiApplication::clipboard()->mimeData()->urls();
         for (const auto url : urls)
             importFromUrl(url);
+        return;
     }
 
     if (QGuiApplication::clipboard()->mimeData()->hasText()) {
-        const auto content = QGuiApplication::clipboard()->text();
-        const auto data = IataBcbpParser::parse(content, QDate::currentDate());
-        ExtractorPostprocessor postproc;
-        postproc.setContextDate(QDateTime::currentDateTime());
-        postproc.process(data);
-        for (const auto  &res : postproc.result())
-            m_resMgr->addReservation(res);
-
-        return;
+        const auto content = QGuiApplication::clipboard()->mimeData()->data(QLatin1String("text/plain"));
+        importData(content);
     }
 }
 
@@ -401,6 +395,9 @@ void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
             if (f.size() <= 4000000)
                 importPdf(f.readAll());
             break;
+        case ContentTypeProber::IataBcbp:
+            importIataBcbp(f.readAll());
+            break;
     }
 }
 
@@ -421,6 +418,9 @@ void ApplicationController::importData(const QByteArray &data)
         case ContentTypeProber::PDF:
             importPdf(data);
             break;
+        case ContentTypeProber::IataBcbp:
+            importIataBcbp(data);
+            break;
     }
 }
 
@@ -440,6 +440,16 @@ void ApplicationController::importPdf(const QByteArray &data)
     for (const auto &r : res) {
         m_resMgr->addReservation(r);
     }
+}
+
+void ApplicationController::importIataBcbp(const QByteArray &data)
+{
+    const auto content = IataBcbpParser::parse(QString::fromUtf8(data), QDate::currentDate());
+    ExtractorPostprocessor postproc;
+    postproc.setContextDate(QDateTime::currentDateTime());
+    postproc.process(content);
+    for (const auto  &res : postproc.result())
+        m_resMgr->addReservation(res);
 }
 
 void ApplicationController::checkCalendar()

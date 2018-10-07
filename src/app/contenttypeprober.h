@@ -29,7 +29,8 @@ namespace ContentTypeProber
         Unknown,
         PkPass,
         PDF,
-        JsonLd
+        JsonLd,
+        IataBcbp
     };
 
     Type probe(const QByteArray &head, const QUrl &url = {});
