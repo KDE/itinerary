@@ -27,6 +27,24 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="content" android:host="*" android:mimeType="application/json"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content" android:host="*" android:mimeType="application/pdf"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http" android:host="*" android:pathPattern=".*\\.pkpass"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="https" android:host="*" android:pathPattern=".*\\.pkpass"/>
+            </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="itinerary-app"/>
             <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
