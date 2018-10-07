@@ -107,28 +107,43 @@ QString PkPassManager::passId(const QVariant &reservation) const
 
 QString PkPassManager::importPass(const QUrl& url)
 {
-    return doImportPass(url, Copy);
+    return doImportPass(url, {}, Copy);
 }
 
 void PkPassManager::importPassFromTempFile(const QUrl& tmpFile)
 {
-    doImportPass(tmpFile, Move);
+    doImportPass(tmpFile, {}, Move);
 }
 
-QString PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode mode)
+void PkPassManager::importPassFromData(const QByteArray &data)
+{
+    doImportPass({}, data, Data);
+}
+
+QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkPassManager::ImportMode mode)
 {
     qCDebug(Log) << url << mode;
-    if (!url.isLocalFile())
+    if (!url.isEmpty() && !url.isLocalFile())
         return {};
 
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
     QDir::root().mkpath(basePath);
 
-    std::unique_ptr<KPkPass::Pass> newPass(KPkPass::Pass::fromFile(url.toLocalFile()));
-    if (!newPass)
-        return {}; // TODO error handling
-    if (newPass->passTypeIdentifier().isEmpty() || newPass->serialNumber().isEmpty())
-        return {}; // TODO error handling
+    std::unique_ptr<KPkPass::Pass> newPass;
+    if (!url.isEmpty()) {
+        newPass.reset(KPkPass::Pass::fromFile(url.toLocalFile()));
+    } else {
+        newPass.reset(KPkPass::Pass::fromData(data));
+    }
+
+    if (!newPass) {
+        qCDebug(Log) << "Failed to load pkpass file" << url;
+        return {};
+    }
+    if (newPass->passTypeIdentifier().isEmpty() || newPass->serialNumber().isEmpty()) {
+        qCDebug(Log) << "PkPass file has no type identifier or serial number" << url;
+        return {};
+    }
 
     QDir dir(basePath);
     dir.mkdir(newPass->passTypeIdentifier());
@@ -152,6 +167,15 @@ QString PkPassManager::doImportPass(const QUrl& url, PkPassManager::ImportMode m
         case Copy:
             QFile::copy(url.toLocalFile(), dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
             break;
+        case Data:
+        {
+            QFile f(dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            if (!f.open(QFile::WriteOnly)) {
+                qCWarning(Log) << "Failed to open file" << f.fileName() << f.errorString();
+                break;
+            }
+            f.write(data);
+        }
     }
 
     if (oldPass) {

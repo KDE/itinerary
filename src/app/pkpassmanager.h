@@ -44,6 +44,7 @@ public:
     /** Import pass from a local @p url, returns the pass id if successful. */
     QString importPass(const QUrl &url);
     void importPassFromTempFile(const QUrl &tmpFile);
+    void importPassFromData(const QByteArray &data);
     Q_INVOKABLE void removePass(const QString &passId);
 
     void updatePass(const QString &passId);
@@ -57,8 +58,8 @@ signals:
     void passRemoved(const QString &passId);
 
 private:
-    enum ImportMode { Copy, Move };
-    QString doImportPass(const QUrl &url, ImportMode mode);
+    enum ImportMode { Copy, Move, Data };
+    QString doImportPass(const QUrl &url, const QByteArray &data, ImportMode mode);
 
     QHash<QString, KPkPass::Pass*> m_passes;
     QNetworkAccessManager *m_nam;

@@ -413,7 +413,7 @@ void ApplicationController::importData(const QByteArray &data)
             qCWarning(Log) << "Unknown content type for received data.";
             break;
         case ContentTypeProber::PkPass:
-            // TODO
+            m_pkPassMgr->importPassFromData(data);
             break;
         case ContentTypeProber::JsonLd:
             m_resMgr->importReservation(data);

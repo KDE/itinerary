@@ -1,4 +1,6 @@
 set(itinerary_srcs
+    applicationcontroller.cpp
+    contenttypeprober.cpp
     countryinformation.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
@@ -28,8 +30,6 @@ endif()
 
 add_executable(itinerary-app
     main.cpp
-    applicationcontroller.cpp
-    contenttypeprober.cpp
     countrymodel.cpp
     localizer.cpp
     settings.cpp
@@ -46,10 +46,10 @@ target_link_libraries(itinerary-app PRIVATE
 if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
+    target_link_libraries(itinerary PUBLIC Qt5::AndroidExtras)
     target_link_libraries(itinerary-app PRIVATE
         KF5::Archive
         KF5::Kirigami2
-        Qt5::AndroidExtras
         Qt5::Svg
         KF5::Prison
         OpenSSL::SSL
@@ -97,9 +97,9 @@ if (ANDROID)
         weather-storm
     )
 else ()
+    target_link_libraries(itinerary PRIVATE Qt5::Positioning)
     target_link_libraries(itinerary-app PRIVATE
         KF5::DBusAddons
-        Qt5::Positioning
         Qt5::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
