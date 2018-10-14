@@ -306,6 +306,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             QVector<QVariant> v;
             for (const auto &resId : elem.ids)
                 v.push_back(m_resMgr->reservation(resId));
+            std::sort(v.begin(), v.end(), SortUtil::isBefore);
             return QVariant::fromValue(v);
         }
     }
@@ -507,7 +508,7 @@ void TimelineModel::updateInformationElements()
         // add new country info element
         auto row = std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
-        it = m_elements.insert(it, Element{CountryInfo, (*it).dt, QVariant::fromValue(newCountry)});
+        it = m_elements.insert(it, Element{CountryInfo, (*it).dt.addSecs(-1), QVariant::fromValue(newCountry)});
         endInsertRows();
 
         previousCountry = newCountry;

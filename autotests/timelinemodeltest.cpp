@@ -29,6 +29,7 @@
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
 
+#include <QDirIterator>
 #include <QUrl>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -456,6 +457,41 @@ private slots:
         ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r3.model"));
         vp3.setRoleFilter({TimelineModel::ReservationIdsRole});
         QVERIFY(vp3.verify(&model));
+    }
+
+    void testContent_data()
+    {
+        QTest::addColumn<QString>("baseName");
+
+        QDirIterator it(QLatin1String(SOURCE_DIR "/data/timeline/"), {QLatin1String("*.json")});
+        while (it.hasNext()) {
+            it.next();
+            const auto baseName = it.fileInfo().baseName();
+            QTest::newRow(baseName.toUtf8().constData()) << baseName;
+        }
+    }
+
+    void testContent()
+    {
+        QFETCH(QString, baseName);
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+
+        TimelineModel model;
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
+        model.setCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
+        model.setReservationManager(&resMgr);
+
+        // check state is correct for data imported at the start
+        ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
+        vp.setRoleFilter({TimelineModel::ReservationIdsRole});
+        QVERIFY(vp.verify(&model));
+
+        // retry with loading during runtime
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        QVERIFY(vp.verify(&model));
     }
 };
 

@@ -95,7 +95,7 @@ bool ModelVerificationPoint::verify(QAbstractItemModel *model) const
     // reference data
     QFile file(m_refFile);
     if (!file.open(QFile::ReadOnly)) {
-        qWarning() << file.errorString();
+        qWarning() << file.fileName() << file.errorString();
         return false;
     }
     const auto doc = QJsonDocument::fromJson(file.readAll());
