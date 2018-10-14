@@ -82,6 +82,9 @@ public:
 
     int todayRow() const;
 
+    // for unit testing
+    void setCurrentDateTime(const QDateTime &dt);
+
 signals:
     void todayRowChanged();
 
@@ -107,10 +110,14 @@ private:
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
     void updateWeatherElements();
 
+    QDateTime now() const;
+    QDate today() const;
+
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     std::vector<Element> m_elements;
     QString m_homeCountry;
+    QDateTime m_unitTestTime;
 };
 
 #endif // TIMELINEMODEL_H

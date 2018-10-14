@@ -95,6 +95,19 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
 
 WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const
 {
+    if (Q_UNLIKELY(m_testMode)) {
+        WeatherForecast fc;
+        auto beginDt = begin;
+        roundToHour(beginDt);
+        fc.setDateTime(beginDt);
+        fc.setTile({latitude, longitude});
+        fc.setMinimumTemperature(std::min(latitude, longitude));
+        fc.setMaximumTemperature(std::max(latitude, longitude));
+        fc.setPrecipitation(23.0f);
+        fc.setSymbolType(WeatherForecast::LightClouds);
+        return fc;
+    }
+
     auto beginDt = std::max(begin, QDateTime::currentDateTimeUtc());
     roundToHour(beginDt);
     auto endDt = std::max(end, QDateTime::currentDateTimeUtc());
@@ -106,17 +119,6 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
         endDt = endDt.addSecs(3600);
     }
     const auto range = beginDt.secsTo(endDt) / 3600;
-
-    if (Q_UNLIKELY(m_testMode)) {
-        WeatherForecast fc;
-        fc.setDateTime(beginDt);
-        fc.setTile({latitude, longitude});
-        fc.setMinimumTemperature(std::min(latitude, longitude));
-        fc.setMaximumTemperature(std::max(latitude, longitude));
-        fc.setPrecipitation(23.0f);
-        fc.setSymbolType(WeatherForecast::LightClouds);
-        return fc;
-    }
 
     WeatherTile tile{latitude, longitude};
     if (!loadForecastData(tile)) {
@@ -463,9 +465,9 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
     return fc;
 }
 
-QDateTime WeatherForecastManager::maximumForecastTime() const
+QDateTime WeatherForecastManager::maximumForecastTime(const QDate &today) const
 {
-    return QDateTime(QDate::currentDate().addDays(9), QTime(0, 0));
+    return QDateTime(today.addDays(9), QTime(0, 0));
 }
 
 void WeatherForecastManager::setTestModeEnabled(bool testMode)

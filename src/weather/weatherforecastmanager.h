@@ -53,7 +53,7 @@ public:
     WeatherForecast forecast(float latitude, float longitude, const QDateTime &begin, const QDateTime &end) const;
 
     /** Time until when we have forecast data. */
-    QDateTime maximumForecastTime() const;
+    QDateTime maximumForecastTime(const QDate &today) const;
 
     /** Enable unit test mode.
      *  In this mode static forecast data is provided for all locations.

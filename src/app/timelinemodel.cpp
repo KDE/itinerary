@@ -188,7 +188,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
             m_elements.push_back(Element{resId, res, SelfContained});
         }
     }
-    m_elements.push_back(Element{TodayMarker, QDateTime(QDate::currentDate(), QTime(0, 0))});
+    m_elements.push_back(Element{TodayMarker, QDateTime(today(), QTime(0, 0))});
     std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
         return lhs.dt < rhs.dt;
     });
@@ -271,7 +271,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             if (elem.dt.isNull()) {
                 return {};
             }
-            if (elem.dt.date() == QDate::currentDate()) {
+            if (elem.dt.date() == today()) {
                 return i18n("Today");
             }
             return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
@@ -282,16 +282,21 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return elem.elementType;
         case TodayEmptyRole:
             if (elem.elementType == TodayMarker) {
-                return index.row() == (int)(m_elements.size() - 1) || m_elements.at(index.row() + 1).dt.date() > QDate::currentDate();
+                return index.row() == (int)(m_elements.size() - 1) || m_elements.at(index.row() + 1).dt.date() > today();
             }
             return {};
         case IsTodayRole:
-            return elem.dt.date() == QDate::currentDate();
+            return elem.dt.date() == today();
         case ElementRangeRole:
             return elem.rangeType;
         case CountryInformationRole:
+            if (elem.elementType == CountryInfo)
+                return elem.content;
+            break;
         case WeatherForecastRole:
-            return elem.content;
+            if (elem.elementType == WeatherForecast)
+                return elem.content;
+            break;
     }
     return {};
 }
@@ -500,7 +505,7 @@ void TimelineModel::updateWeatherElements()
 
     // look through the past, clean up weather elements there and figure out where we are
     auto it = m_elements.begin();
-    for (; it != m_elements.end() && (*it).dt < QDateTime::currentDateTimeUtc();) {
+    for (; it != m_elements.end() && (*it).dt < now();) {
         if ((*it).elementType == WeatherForecast) {
             const auto row = std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
@@ -518,9 +523,9 @@ void TimelineModel::updateWeatherElements()
         ++it;
     }
 
-    auto date = QDateTime::currentDateTime();
+    auto date = now();
     date.setTime(QTime(date.time().hour() + 1, 0));
-    while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime()) {
+    while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime(today())) {
 
         if ((*it).dt < date || (*it).elementType == TodayMarker) {
             // clean up outdated weather elements (happens when merging previously split ranges)
@@ -598,7 +603,7 @@ void TimelineModel::updateWeatherElements()
     }
 
     // append weather elements beyond the end of the list if necessary
-    while (date < m_weatherMgr->maximumForecastTime() && geo.isValid()) {
+    while (date < m_weatherMgr->maximumForecastTime(today()) && geo.isValid()) {
         auto endTime = date;
         endTime.setTime(QTime(23, 59, 59));
 
@@ -615,4 +620,25 @@ void TimelineModel::updateWeatherElements()
     }
 
     qDebug() << "weather recomputation done";
+}
+
+QDateTime TimelineModel::now() const
+{
+    if (Q_UNLIKELY(m_unitTestTime.isValid())) {
+        return m_unitTestTime;
+    }
+    return QDateTime::currentDateTime();
+}
+
+QDate TimelineModel::today() const
+{
+    if (Q_UNLIKELY(m_unitTestTime.isValid())) {
+        return m_unitTestTime.date();
+    }
+    return QDate::currentDate();
+}
+
+void TimelineModel::setCurrentDateTime(const QDateTime &dt)
+{
+    m_unitTestTime = dt;
 }
