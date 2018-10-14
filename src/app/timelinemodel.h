@@ -42,7 +42,8 @@ public:
         IsTodayRole,
         ElementRangeRole,
         CountryInformationRole,
-        WeatherForecastRole
+        WeatherForecastRole,
+        ReservationsRole, // for unit testing
     };
 
     enum ElementType {

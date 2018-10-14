@@ -297,6 +297,13 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             if (elem.elementType == WeatherForecast)
                 return elem.content;
             break;
+        case ReservationsRole:
+        {
+            QVector<QVariant> v;
+            for (const auto &resId : elem.ids)
+                v.push_back(m_resMgr->reservation(resId));
+            return QVariant::fromValue(v);
+        }
     }
     return {};
 }
@@ -312,6 +319,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(ElementRangeRole, "rangeType");
     names.insert(CountryInformationRole, "countryInformation");
     names.insert(WeatherForecastRole, "weatherForecast");
+    names.insert(ReservationsRole, "reservations");
     return names;
 }
 
