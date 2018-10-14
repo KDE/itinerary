@@ -159,6 +159,10 @@ TimelineModel::Element::Element(const QString& resId, const QVariant& res, Range
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    connect(&m_dayUpdateTimer, &QTimer::timeout, this, &TimelineModel::dayChanged);
+    m_dayUpdateTimer.setSingleShot(true);
+    m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
+    m_dayUpdateTimer.start();
 }
 
 TimelineModel::~TimelineModel() = default;
@@ -436,6 +440,33 @@ void TimelineModel::reservationRemoved(const QString &resId)
     updateInformationElements();
 }
 
+void TimelineModel::dayChanged()
+{
+    updateTodayMarker();
+    updateWeatherElements();
+
+    m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
+    m_dayUpdateTimer.start();
+}
+
+void TimelineModel::updateTodayMarker()
+{
+    const auto it = std::lower_bound(m_elements.begin(), m_elements.end(), today(), [](const auto &lhs, const auto &rhs) {
+        return lhs.dt.date() < rhs;
+    });
+    const auto newRow = std::distance(m_elements.begin(), it);
+    const auto oldRow = todayRow();
+    Q_ASSERT(oldRow < newRow);
+
+    beginInsertRows({}, newRow, newRow);
+    m_elements.insert(it, Element{TodayMarker, QDateTime(today(), QTime(0, 0))});
+    endInsertRows();
+
+    beginRemoveRows({}, oldRow, oldRow);
+    m_elements.erase(m_elements.begin() + oldRow);
+    endRemoveRows();
+}
+
 void TimelineModel::updateInformationElements()
 {
     // the country information is shown before transitioning into a country that
@@ -648,5 +679,9 @@ QDate TimelineModel::today() const
 
 void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 {
+    const auto dayDiffers = today() != dt.date();
     m_unitTestTime = dt;
+    if (dayDiffers && !m_elements.empty()) {
+        dayChanged();
+    }
 }

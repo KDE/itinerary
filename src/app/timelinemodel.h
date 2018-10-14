@@ -20,6 +20,7 @@
 
 #include <QAbstractListModel>
 #include <QDateTime>
+#include <QTimer>
 
 class ReservationManager;
 class WeatherForecastManager;
@@ -107,6 +108,8 @@ private:
     void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
     void reservationRemoved(const QString &resId);
 
+    void dayChanged();
+    void updateTodayMarker();
     void updateInformationElements();
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
     void updateWeatherElements();
@@ -119,6 +122,7 @@ private:
     std::vector<Element> m_elements;
     QString m_homeCountry;
     QDateTime m_unitTestTime;
+    QTimer m_dayUpdateTimer;
 };
 
 #endif // TIMELINEMODEL_H
