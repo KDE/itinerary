@@ -15,6 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "modelverificationpoint.h"
+
 #include <countryinformation.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
@@ -418,6 +420,42 @@ private slots:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(rmSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
+    }
+
+    void testDayChange()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        WeatherForecastManager weatherMgr;
+        weatherMgr.setTestModeEnabled(true);
+
+        TimelineModel model;
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
+        model.setCurrentDateTime(QDateTime({2196, 10, 14}, {12, 34}));
+        model.setReservationManager(&resMgr);
+        model.setWeatherForecastManager(&weatherMgr);
+
+        ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r0.model"));
+        vp0.setRoleFilter({TimelineModel::ReservationIdsRole});
+        QVERIFY(vp0.verify(&model));
+
+        // changing the day should move the today marker
+        model.setCurrentDateTime(QDateTime({2196, 10, 15}, {0, 15}));
+        ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r1.model"));
+        vp1.setRoleFilter({TimelineModel::ReservationIdsRole});
+        QVERIFY(vp1.verify(&model));
+
+        // load something to define the current location, so we get weather
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r2.model"));
+        vp2.setRoleFilter({TimelineModel::ReservationIdsRole});
+        QVERIFY(vp2.verify(&model));
+
+        // changing the day should move the today marker and weather one day forward
+        model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
+        ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r3.model"));
+        vp3.setRoleFilter({TimelineModel::ReservationIdsRole});
+        QVERIFY(vp3.verify(&model));
     }
 };
 
