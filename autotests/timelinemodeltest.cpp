@@ -29,6 +29,9 @@
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+#include <QAbstractItemModelTester>
+#endif
 #include <QDirIterator>
 #include <QUrl>
 #include <QtTest/qtest.h>
@@ -75,6 +78,9 @@ private slots:
 
         resMgr.setPkPassManager(&mgr);
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setReservationManager(&resMgr);
 
         QSignalSpy insertSpy(&model, &TimelineModel::rowsInserted);
@@ -113,6 +119,9 @@ private slots:
         clearReservations(&resMgr);
 
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
 
@@ -165,6 +174,9 @@ private slots:
         clearReservations(&resMgr);
 
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
 
@@ -214,6 +226,9 @@ private slots:
         weatherMgr.setTestModeEnabled(true);
 
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setReservationManager(&resMgr);
         model.setWeatherForecastManager(&weatherMgr);
         QCOMPARE(model.rowCount(), 1); // no weather data, as we don't know where we are
@@ -356,6 +371,9 @@ private slots:
         ReservationManager resMgr;
         clearReservations(&resMgr);
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setReservationManager(&resMgr);
         QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
 
@@ -431,6 +449,9 @@ private slots:
         weatherMgr.setTestModeEnabled(true);
 
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({2196, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
@@ -479,6 +500,9 @@ private slots:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
 
         TimelineModel model;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&model);
+#endif
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
