@@ -6,6 +6,8 @@ set(itinerary_srcs
     pkpassimageprovider.cpp
     reservationmanager.cpp
     timelinemodel.cpp
+    tripgroup.cpp
+    tripgroupmanager.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
     HEADER logging.h
