@@ -234,7 +234,11 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
                 return elem.type == res.userType();
             });
             if (r == m_resNumSearch.end()) {
-                m_resNumSearch.push_back({beginRes.userType(), resNum});
+                // mode of transport changed: we consider this still part of the trip if connectivity
+                // search thinks this is part of the same trip too
+                if (!connectedSearchDone) {
+                    m_resNumSearch.push_back({beginRes.userType(), resNum});
+                }
             } else {
                 if (!resNum.isEmpty() && (*r).resNum == resNum) {
                     resNumIt = it;
