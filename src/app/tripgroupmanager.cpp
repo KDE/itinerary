@@ -25,6 +25,8 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
+#include <KLocalizedString>
+
 #include <QDateTime>
 #include <QDebug>
 #include <QDirIterator>
@@ -270,7 +272,6 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     qDebug() << "creating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
     const auto tgId = QUuid::createUuid().toString();
     TripGroup g(this);
-    // TODO determine name
     QVector<QString> elems;
     elems.reserve(std::distance(beginIt, it));
     std::copy(beginIt, it, std::back_inserter(elems));
@@ -278,7 +279,39 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     for (auto it2 = beginIt; it2 != it; ++it2) {
         m_reservationToGroupMap.insert(*it2, tgId);
     }
+    g.setName(guessName(g));
     m_tripGroups.insert(tgId, g);
     g.store(basePath() + tgId + QLatin1String(".json"));
     emit tripGroupAdded(tgId);
+}
+
+QString TripGroupManager::guessName(const TripGroup& g) const
+{
+    // part 1: the destination of the trip
+    // two cases: round-trips and one-way trips
+    QString dest;
+    const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
+    const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(g.elements().constLast()));
+    if (LocationUtil::isSameLocation(beginLoc, endLoc, LocationUtil::CityLevel)) {
+        const auto middleIdx = g.elements().size() / 2;
+        const auto middleLoc = m_resMgr->reservation(g.elements().at(middleIdx));
+        // TODO support non-location changes too
+        dest = LocationUtil::name(LocationUtil::arrivalLocation(middleLoc));
+    } else {
+        // TODO we want the city (or country, if differing from start) here, if available
+        dest = LocationUtil::name(endLoc);
+    }
+
+    // part 2: the time range of the trip
+    // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
+    const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(g.elements().at(0)));
+    const auto endDt = SortUtil::endtDateTime(m_resMgr->reservation(g.elements().constLast()));
+    Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
+    if (beginDt.date().year() == endDt.date().year()) {
+        if (beginDt.date().month() == endDt.date().month()) {
+            return i18n("%1 (%2 %3)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().year());
+        }
+        return i18n("%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().monthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().year());
+    }
+    return i18n("%1 (%3/%4)", dest, beginDt.date().year(), endDt.date().year());
 }

@@ -44,6 +44,7 @@ private:
 private slots:
     void initTestCase()
     {
+        qputenv("LC_ALL", "en_US.utf-8");
         QStandardPaths::setTestModeEnabled(true);
     }
 
@@ -65,6 +66,7 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.name(), QStringLiteral("San Francisco Airport (March 2017)"));
         }
 
         TripGroupManager::clear();
@@ -78,6 +80,7 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.name(), QStringLiteral("Zermatt (September 2017)"));
         }
 
         TripGroupManager::clear();
@@ -91,6 +94,7 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.name(), QStringLiteral("Peretola (January 2000)"));
         }
 
         TripGroupManager::clear();
