@@ -28,6 +28,7 @@
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/LocationUtil>
 #include <KItinerary/MergeUtil>
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
@@ -80,17 +81,8 @@ static TimelineModel::ElementType elementType(const QVariant &res)
 
 static QString destinationCountry(const QVariant &res)
 {
-    if (JsonLd::isA<FlightReservation>(res)) {
-        return res.value<FlightReservation>().reservationFor().value<Flight>().arrivalAirport().address().addressCountry();
-    }
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressCountry();
-    }
     if (JsonLd::isA<LodgingReservation>(res)) {
         return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().address().addressCountry();
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalBusStop().address().addressCountry();
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().address().addressCountry();
@@ -101,24 +93,11 @@ static QString destinationCountry(const QVariant &res)
     if (JsonLd::isA<EventReservation>(res)) {
         return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().address().addressCountry();
     }
-    if (JsonLd::isA<RentalCarReservation>(res)) {
-        return res.value<RentalCarReservation>().dropoffLocation().address().addressCountry();
-    }
-    return {};
+    return LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
 }
 
 static GeoCoordinates geoCoordinate(const QVariant &res)
 {
-    if (JsonLd::isA<FlightReservation>(res)) {
-        return res.value<FlightReservation>().reservationFor().value<KItinerary::Flight>().arrivalAirport().geo();
-    }
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return res.value<TrainReservation>().reservationFor().value<KItinerary::TrainTrip>().arrivalStation().geo();
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<KItinerary::BusTrip>().arrivalBusStop().geo();
-    }
-
     if (JsonLd::isA<LodgingReservation>(res)) {
         return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().geo();
     }
@@ -128,16 +107,11 @@ static GeoCoordinates geoCoordinate(const QVariant &res)
     if (JsonLd::isA<TouristAttractionVisit>(res)) {
         return res.value<TouristAttractionVisit>().touristAttraction().geo();
     }
-    if (JsonLd::isA<RentalCarReservation>(res)) {
-        return res.value<RentalCarReservation>().dropoffLocation().geo();
+    if (JsonLd::isA<EventReservation>(res)) {
+        return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().geo();
     }
 
-    return {};
-}
-
-static bool isLocationChange(const QVariant &res)
-{
-    return JsonLd::isA<FlightReservation>(res) || JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res);
+    return LocationUtil::geo(LocationUtil::arrivalLocation(res));
 }
 
 
@@ -556,7 +530,7 @@ void TimelineModel::updateWeatherElements()
 
         const auto res = m_resMgr->reservation((*it).ids.value(0));
         const auto newGeo = geoCoordinate(res);
-        if (isLocationChange(res) || newGeo.isValid()) {
+        if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
             geo = newGeo;
         }
 
@@ -583,7 +557,7 @@ void TimelineModel::updateWeatherElements()
             // track where we are
             const auto res = m_resMgr->reservation((*it).ids.value(0));
             const auto newGeo = geoCoordinate(res);
-            if (isLocationChange(res) || newGeo.isValid()) {
+            if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
                 geo = newGeo;
             }
 
@@ -601,7 +575,7 @@ void TimelineModel::updateWeatherElements()
                 break;
             }
             const auto res = m_resMgr->reservation((*it2).ids.value(0));
-            if (isLocationChange(res)) {
+            if (LocationUtil::isLocationChange(res)) {
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, relevantDateTime(res, RangeBegin));
                 nextStartTime = std::max(endTime, relevantDateTime(res, RangeEnd));
