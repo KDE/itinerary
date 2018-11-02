@@ -158,7 +158,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     bool connectedSearchDone = false;
 
     // scan by location change
-    for (auto it = beginIt + 1; it != m_reservations.end() && (!resNumSearchDone || !connectedSearchDone); ++it) {
+    for (auto it = beginIt + 1; it != m_reservations.end(); ++it) {
         if (m_reservationToGroupMap.contains(*it)) {
             break; // TODO do we need to check if we can merge with this?
         }
@@ -178,8 +178,19 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
         const auto curTrip = JsonLd::convert<Reservation>(res).reservationFor();
         if (MergeUtil::isSame(prevTrip, curTrip)) {
-            // TODO: if the result iterators are on it -1 we should advanced them here
+            // if the result iterators are on it -1 we should advanced them here too
+            if (connectedIt == it - 1) {
+                ++connectedIt;
+            }
+            if (resNumIt == it - 1) {
+                ++resNumIt;
+            }
             continue;
+        }
+
+        // all search strategies think they are done
+        if (resNumSearchDone && connectedSearchDone) {
+            break;
         }
 
         // search depth reached

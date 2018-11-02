@@ -57,7 +57,6 @@ private slots:
         ReservationManager resMgr;
         clearReservations(&resMgr);
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -65,10 +64,10 @@ private slots:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-            QEXPECT_FAIL("", "still broken", Continue);
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
         }
 
+        TripGroupManager::clear();
         clearReservations(&resMgr);
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         {
@@ -81,6 +80,7 @@ private slots:
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
         }
 
+        TripGroupManager::clear();
         clearReservations(&resMgr);
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         {
@@ -90,8 +90,21 @@ private slots:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-            QEXPECT_FAIL("", "still broken", Continue);
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
+        }
+
+        TripGroupManager::clear();
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        {
+            TripGroupManager mgr;
+            QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+            QVERIFY(addSpy.isValid());
+            mgr.setReservationManager (&resMgr);
+            QCOMPARE(addSpy.size(), 3);
+            QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 4);
+            QCOMPARE(mgr.tripGroup(addSpy.at(1).at(0).toString()).elements().size(), 4);
+            QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 12);
         }
     }
 
