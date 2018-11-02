@@ -143,9 +143,14 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     const auto beginRes = m_resMgr->reservation(*beginIt);
     const auto beginDeparture = LocationUtil::departureLocation(beginRes);
     const auto beginDt = SortUtil::startDateTime(beginRes);
+
+    m_resNumSearch.clear();
+    if (JsonLd::canConvert<Reservation>(beginRes)) {
+        m_resNumSearch.push_back({beginRes.userType(), JsonLd::convert<Reservation>(beginRes).reservationNumber()});
+    }
+
     qDebug() << "starting scan at" << LocationUtil::name(beginDeparture);
     auto res = beginRes;
-
     auto resNumIt = m_reservations.cend(); // result of the search using reservation ids
     auto connectedIt = m_reservations.cend(); // result of the search using trip connectivity
 
@@ -212,8 +217,21 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
             }
         }
 
-        if (!resNumSearchDone) {
-            // TODO
+        if (!resNumSearchDone &&  JsonLd::canConvert<Reservation>(res)) {
+            const auto resNum = JsonLd::convert<Reservation>(res).reservationNumber();
+            const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [res](const auto &elem) {
+                return elem.type == res.userType();
+            });
+            if (r == m_resNumSearch.end()) {
+                m_resNumSearch.push_back({beginRes.userType(), resNum});
+            } else {
+                if (!resNum.isEmpty() && (*r).resNum == resNum) {
+                    resNumIt = it;
+                } else {
+                    qDebug() << "aborting reservation number search due to mismatch";
+                    resNumSearchDone = true;
+                }
+            }
         }
     }
 

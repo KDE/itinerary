@@ -16,6 +16,7 @@
 */
 
 #include <reservationmanager.h>
+#include <tripgroup.h>
 #include <tripgroupmanager.h>
 
 #include <QtTest/qtest.h>
@@ -62,7 +63,9 @@ private slots:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager(&resMgr);
-            QCOMPARE(addSpy.size(), 0);
+            QCOMPARE(addSpy.size(), 1);
+            auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+//             QCOMPARE(g.elements().size(), 2);
         }
 
         clearReservations(&resMgr);
@@ -72,8 +75,9 @@ private slots:
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager(&resMgr);
-            QEXPECT_FAIL("", "not working yet", Continue);
             QCOMPARE(addSpy.size(), 1);
+            auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+//             QCOMPARE(g.elements().size(), 12);
         }
     }
 

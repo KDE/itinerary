@@ -62,6 +62,12 @@ private:
     QHash<QString, QString> m_reservationToGroupMap;
 
     std::vector<QString> m_reservations;
+
+    struct ReservationNumberSearch {
+        int type;
+        QString resNum;
+    };
+    std::vector<ReservationNumberSearch> m_resNumSearch;
 };
 
 #endif // TRIPGROUPMANAGER_H
