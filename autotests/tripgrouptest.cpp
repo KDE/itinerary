@@ -65,7 +65,8 @@ private slots:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-//             QCOMPARE(g.elements().size(), 2);
+            QEXPECT_FAIL("", "still broken", Continue);
+            QCOMPARE(g.elements().size(), resMgr.reservations().size());
         }
 
         clearReservations(&resMgr);
@@ -77,7 +78,20 @@ private slots:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-//             QCOMPARE(g.elements().size(), 12);
+            QCOMPARE(g.elements().size(), resMgr.reservations().size());
+        }
+
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        {
+            TripGroupManager mgr;
+            QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+            QVERIFY(addSpy.isValid());
+            mgr.setReservationManager(&resMgr);
+            QCOMPARE(addSpy.size(), 1);
+            auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+            QEXPECT_FAIL("", "still broken", Continue);
+            QCOMPARE(g.elements().size(), resMgr.reservations().size());
         }
     }
 

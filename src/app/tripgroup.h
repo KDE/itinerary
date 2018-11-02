@@ -38,7 +38,7 @@ public:
     void setName(const QString &name);
 
     QVector<QString> elements() const;
-    // TODO setters
+    void setElements(const QVector<QString> &elems);
 
     bool load(const QString &path);
     void store(const QString &path) const;

@@ -48,6 +48,11 @@ QVector<QString> TripGroup::elements() const
     return m_elements;
 }
 
+void TripGroup::setElements(const QVector<QString> &elems)
+{
+    m_elements = elems;
+}
+
 bool TripGroup::load(const QString &path)
 {
     QFile f(path);

@@ -249,16 +249,21 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     if (it == m_reservations.end() || std::distance(beginIt, it) < 2) {
         return;
     }
+    ++it; // so this marks the end
 
     // create a trip for [beginIt, it)
     qDebug() << "creating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
     const auto tgId = QUuid::createUuid().toString();
     TripGroup g(this);
     // TODO determine name
+    QVector<QString> elems;
+    elems.reserve(std::distance(beginIt, it));
+    std::copy(beginIt, it, std::back_inserter(elems));
+    g.setElements(elems);
     for (auto it2 = beginIt; it2 != it; ++it2) {
-        // TODO add *it2 to g
         m_reservationToGroupMap.insert(*it2, tgId);
     }
     m_tripGroups.insert(tgId, g);
+    g.store(basePath() + tgId + QLatin1String(".json"));
     emit tripGroupAdded(tgId);
 }
