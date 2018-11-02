@@ -33,6 +33,11 @@
 
 using namespace KItinerary;
 
+enum {
+    MaximumTripDuration = 20, // in days
+    MaximumTripElements = 20
+};
+
 TripGroupManager::TripGroupManager(QObject* parent) :
     QObject(parent)
 {
@@ -137,15 +142,20 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
 {
     const auto beginRes = m_resMgr->reservation(*beginIt);
     const auto beginDeparture = LocationUtil::departureLocation(beginRes);
+    const auto beginDt = SortUtil::startDateTime(beginRes);
     qDebug() << "starting scan at" << LocationUtil::name(beginDeparture);
     auto res = beginRes;
-    auto it = beginIt;
-    ++it;
+
+    auto resNumIt = m_reservations.cend(); // result of the search using reservation ids
+    auto connectedIt = m_reservations.cend(); // result of the search using trip connectivity
+
+    bool resNumSearchDone = false;
+    bool connectedSearchDone = false;
 
     // scan by location change
-    for (; it != m_reservations.end(); ++it) {
+    for (auto it = beginIt + 1; it != m_reservations.end() && (!resNumSearchDone || !connectedSearchDone); ++it) {
         if (m_reservationToGroupMap.contains(*it)) {
-            break;
+            break; // TODO do we need to check if we can merge with this?
         }
 
         const auto prevRes = res;
@@ -163,35 +173,62 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
         const auto curTrip = JsonLd::convert<Reservation>(res).reservationFor();
         if (MergeUtil::isSame(prevTrip, curTrip)) {
+            // TODO: if the result iterators are on it -1 we should advanced them here
             continue;
         }
 
-        // not an adjacent location change? -> not a trip group (return)
-        const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
-        const auto curDeparture = LocationUtil::departureLocation(res);
-        qDebug() << "  changing from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
-        if (!LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel)) {
-            qDebug() << "aborting search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
-            return;
-        }
-
-        // same location as beginIt? -> we reached the end of the trip (break)
-        const auto curArrival = LocationUtil::arrivalLocation(res);
-        qDebug() << prevRes << res << "  current transition goes to" << LocationUtil::name(curArrival);
-        if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
+        // search depth reached
+        // ### we probably don't want to count multi-traveler elements for this!
+        if (std::distance(beginIt, it) > MaximumTripElements) {
+            qDebug() << "aborting search, maximum search depth reached";
             break;
         }
+
+        // maximum trip duration exceeded?
+        const auto endDt = SortUtil::endtDateTime(res);
+        if (beginDt.daysTo(endDt) > MaximumTripDuration) {
+            qDebug() << "aborting search, maximum trip duration reached";
+            break;
+        }
+
+        if (!connectedSearchDone) {
+            // not an adjacent location change? -> not a trip group
+            const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
+            const auto curDeparture = LocationUtil::departureLocation(res);
+            qDebug() << "  changing from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
+            if (!LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel)) {
+                qDebug() << "aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
+                connectedIt = m_reservations.end();
+                connectedSearchDone = true;
+            } else {
+                connectedIt = it;
+            }
+
+            // same location as beginIt? -> we reached the end of the trip (break)
+            const auto curArrival = LocationUtil::arrivalLocation(res);
+            qDebug() << prevRes << res << "  current transition goes to" << LocationUtil::name(curArrival);
+            if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
+                connectedSearchDone = true;
+            }
+        }
+
+        if (!resNumSearchDone) {
+            // TODO
+        }
+    }
+
+    // determine which search strategy found the larger result
+    auto it = m_reservations.cend();
+    if (!connectedSearchDone) {
+        connectedIt = m_reservations.end();
+    }
+    if (connectedIt != m_reservations.end() && resNumIt != m_reservations.end()) {
+        it = std::max(connectedIt, resNumIt);
+    } else {
+        it = connectedIt == m_reservations.end() ? resNumIt : connectedIt;
     }
 
     if (it == m_reservations.end() || std::distance(beginIt, it) < 2) {
-        return;
-    }
-
-    // trip length is plausible?
-    const auto beginDt = SortUtil::startDateTime(beginRes);
-    const auto endDt = SortUtil::endtDateTime(res);
-    if (beginDt.daysTo(endDt) > 20) {
-        qDebug() << "aborting search, trip group too long";
         return;
     }
 
