@@ -66,7 +66,6 @@ bool TripGroupProxyModel::filterAcceptsRow(int source_row, const QModelIndex &so
             continue;
         }
         const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();
-        qDebug() << groupId << m_collapsed.contains(groupId) << m_collapsed;
         return !m_collapsed.contains(groupId);
     }
 
@@ -81,7 +80,6 @@ int TripGroupProxyModel::todayRow()
 
 void TripGroupProxyModel::collapse(const QString &groupId)
 {
-    qDebug() << groupId;
     m_collapsed.insert(groupId);
     invalidateFilter();
 
@@ -93,7 +91,6 @@ void TripGroupProxyModel::collapse(const QString &groupId)
 
 void TripGroupProxyModel::expand(const QString &groupId)
 {
-    qDebug() << groupId;
     m_collapsed.remove(groupId);
     invalidateFilter();
 
