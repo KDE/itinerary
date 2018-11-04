@@ -64,12 +64,22 @@ int TripGroupProxyModel::todayRow()
 
 void TripGroupProxyModel::collapse(const QString &groupId)
 {
-    // TODO change signals
+    const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
+    Q_ASSERT(startSrcIdx.isValid());
+    // TODO removal change signals
     m_collapsed.insert(groupId);
+
+    const auto startIdx = mapFromSource(startSrcIdx);
+    emit dataChanged(startIdx, startIdx); // collapse/expand state changed
 }
 
 void TripGroupProxyModel::expand(const QString &groupId)
 {
-    // TODO change signals
+    const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
+    Q_ASSERT(startSrcIdx.isValid());
+    // TODO insertion change signals
     m_collapsed.remove(groupId);
+
+    const auto startIdx = mapFromSource(startSrcIdx);
+    emit dataChanged(startIdx, startIdx); // collapse/expand state changed
 }
