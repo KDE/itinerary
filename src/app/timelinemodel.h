@@ -24,6 +24,7 @@
 
 class ReservationManager;
 class WeatherForecastManager;
+class TripGroupManager;
 
 namespace KItinerary {
 class GeoCoordinates;
@@ -76,6 +77,7 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);
+    void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
 
     QVariant data(const QModelIndex& index, int role) const override;
@@ -108,6 +110,10 @@ private:
     void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
     void reservationRemoved(const QString &resId);
 
+    void tripGroupAdded(const QString &groupId);
+    void tripGroupChanged(const QString &groupId);
+    void tripGroupRemoved(const QString &groupId);
+
     void dayChanged();
     void updateTodayMarker();
     void updateInformationElements();
@@ -119,6 +125,7 @@ private:
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
+    TripGroupManager *m_tripGroupManager = nullptr;
     std::vector<Element> m_elements;
     QString m_homeCountry;
     QDateTime m_unitTestTime;

@@ -35,6 +35,7 @@ public:
 
     void setReservationManager(ReservationManager *resMgr);
 
+    QVector<QString> tripGroups() const;
     TripGroup tripGroup(const QString &id) const;
     TripGroup tripGroupForReservation(const QString &resId) const;
 
@@ -45,6 +46,7 @@ signals:
 
 private:
     friend class TripGroupTest;
+    friend class TimelineModelTest;
 
     static QString basePath();
     void load();

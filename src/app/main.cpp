@@ -28,6 +28,7 @@
 #include "reservationmanager.h"
 #include "settings.h"
 #include "tickettokenmodel.h"
+#include "tripgroupmanager.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
 
@@ -124,6 +125,8 @@ int main(int argc, char **argv)
     PkPassManager passMgr;
     ReservationManager resMgr;
     resMgr.setPkPassManager(&passMgr);
+    TripGroupManager tripGroupMgr;
+    tripGroupMgr.setReservationManager(&resMgr);
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
@@ -150,6 +153,7 @@ int main(int argc, char **argv)
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
     timelineModel.setWeatherForecastManager(&weatherForecastMgr);
+    timelineModel.setTripGroupManager(&tripGroupMgr);
 
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});

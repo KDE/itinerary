@@ -21,6 +21,7 @@
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 #include <timelinemodel.h>
+#include <tripgroupmanager.h>
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -67,6 +68,11 @@ private slots:
     {
         qputenv("TZ", "UTC");
         QStandardPaths::setTestModeEnabled(true);
+    }
+
+    void init()
+    {
+        TripGroupManager::clear();
     }
 
     void testModel()
@@ -498,6 +504,8 @@ private slots:
         ReservationManager resMgr;
         clearReservations(&resMgr);
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        TripGroupManager groupMgr;
+        groupMgr.setReservationManager(&resMgr);
 
         TimelineModel model;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
@@ -506,6 +514,7 @@ private slots:
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
+        model.setTripGroupManager(&groupMgr);
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));

@@ -67,6 +67,14 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
     scanAll();
 }
 
+QVector<QString> TripGroupManager::tripGroups() const
+{
+    QVector<QString> groups;
+    groups.reserve(m_tripGroups.size());
+    std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(groups));
+    return groups;
+}
+
 TripGroup TripGroupManager::tripGroup(const QString &id) const
 {
     return m_tripGroups.value(id);

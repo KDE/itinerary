@@ -19,6 +19,8 @@
 #include "countryinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -200,6 +202,17 @@ void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
     m_weatherMgr = mgr;
     updateWeatherElements();
     connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
+}
+
+void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
+{
+    m_tripGroupManager = mgr;
+    connect(mgr, &TripGroupManager::tripGroupAdded, this, &TimelineModel::tripGroupAdded);
+    connect(mgr, &TripGroupManager::tripGroupChanged, this, &TimelineModel::tripGroupChanged);
+    connect(mgr, &TripGroupManager::tripGroupRemoved, this, &TimelineModel::tripGroupRemoved);
+    for (const auto &group : mgr->tripGroups()) {
+        tripGroupAdded(group);
+    }
 }
 
 void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
@@ -640,4 +653,21 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
     if (dayDiffers && !m_elements.empty()) {
         dayChanged();
     }
+}
+
+void TimelineModel::tripGroupAdded(const QString& groupId)
+{
+    // TODO
+}
+
+void TimelineModel::tripGroupChanged(const QString& groupId)
+{
+    // ### this can be done better probably
+    tripGroupRemoved(groupId);
+    tripGroupAdded(groupId);
+}
+
+void TimelineModel::tripGroupRemoved(const QString& groupId)
+{
+    // TODO
 }
