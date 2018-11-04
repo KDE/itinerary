@@ -108,7 +108,11 @@ void TripGroupManager::clear()
 
 void TripGroupManager::reservationAdded(const QString &resId)
 {
-    // TODO
+    auto it = std::lower_bound(m_reservations.begin(), m_reservations.end(), resId, [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
+    });
+    m_reservations.insert(it, resId);
+    scanAll();
 }
 
 void TripGroupManager::reservationChanged(const QString &resId)
@@ -126,9 +130,18 @@ void TripGroupManager::reservationRemoved(const QString &resId)
 void TripGroupManager::scanAll()
 {
     qCDebug(Log);
+    QString prevGroup;
     for (auto it = m_reservations.begin(); it != m_reservations.end(); ++it) {
-        if (m_reservationToGroupMap.contains(*it)) { // already in a group
+        auto groupIt = m_reservationToGroupMap.constFind(*it);
+        if (groupIt != m_reservationToGroupMap.constEnd() && groupIt.value() == prevGroup) {
+            // in the middle of an existing group
             continue;
+        }
+
+        if (groupIt == m_reservationToGroupMap.constEnd()) {
+            prevGroup.clear();
+        } else {
+            prevGroup = groupIt.value();
         }
 
         // not a location change? -> continue
@@ -145,6 +158,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     const auto beginRes = m_resMgr->reservation(*beginIt);
     const auto beginDeparture = LocationUtil::departureLocation(beginRes);
     const auto beginDt = SortUtil::startDateTime(beginRes);
+    const auto groupId = m_reservationToGroupMap.value(*beginIt);
 
     m_resNumSearch.clear();
     if (JsonLd::canConvert<Reservation>(beginRes)) {
@@ -161,10 +175,6 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
 
     // scan by location change
     for (auto it = beginIt + 1; it != m_reservations.end(); ++it) {
-        if (m_reservationToGroupMap.contains(*it)) {
-            break; // TODO do we need to check if we can merge with this?
-        }
-
         const auto prevRes = res;
         const auto curRes = m_resMgr->reservation(*it);
 
@@ -266,23 +276,42 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     if (it == m_reservations.end() || std::distance(beginIt, it) < 2) {
         return;
     }
+
+    // if we are looking at an existing group, did that expand?
+    if (!groupId.isEmpty() && m_reservationToGroupMap.value(*it) == groupId) {
+        return;
+    }
+
     ++it; // so this marks the end
 
     // create a trip for [beginIt, it)
-    qDebug() << "creating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
-    const auto tgId = QUuid::createUuid().toString();
-    TripGroup g(this);
     QVector<QString> elems;
     elems.reserve(std::distance(beginIt, it));
     std::copy(beginIt, it, std::back_inserter(elems));
-    g.setElements(elems);
-    for (auto it2 = beginIt; it2 != it; ++it2) {
-        m_reservationToGroupMap.insert(*it2, tgId);
+
+    if (groupId.isEmpty()) {
+        qDebug() << "creating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
+        const auto tgId = QUuid::createUuid().toString();
+        TripGroup g(this);
+        g.setElements(elems);
+        for (auto it2 = beginIt; it2 != it; ++it2) {
+            m_reservationToGroupMap.insert(*it2, tgId);
+        }
+        g.setName(guessName(g));
+        m_tripGroups.insert(tgId, g);
+        g.store(basePath() + tgId + QLatin1String(".json"));
+        emit tripGroupAdded(tgId);
+    } else {
+        qDebug() << "updating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
+        auto &g = m_tripGroups[groupId];
+        g.setElements(elems);
+        for (auto it2 = beginIt; it2 != it; ++it2) {
+            m_reservationToGroupMap.insert(*it2, groupId);
+        }
+        g.setName(guessName(g));
+        g.store(basePath() + groupId + QLatin1String(".json"));
+        emit tripGroupChanged(groupId);
     }
-    g.setName(guessName(g));
-    m_tripGroups.insert(tgId, g);
-    g.store(basePath() + tgId + QLatin1String(".json"));
-    emit tripGroupAdded(tgId);
 }
 
 QString TripGroupManager::guessName(const TripGroup& g) const

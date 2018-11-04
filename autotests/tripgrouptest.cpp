@@ -112,6 +112,30 @@ private slots:
         }
     }
 
+    void testChanges()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+
+        QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+        QSignalSpy changeSpy(&mgr, &TripGroupManager::tripGroupChanged);
+        QSignalSpy rmSpy(&mgr, &TripGroupManager::tripGroupRemoved);
+
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        QCOMPARE(addSpy.size(), 1);
+        auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+        QCOMPARE(g.elements().size(), resMgr.reservations().size());
+        QCOMPARE(changeSpy.size(), 1);
+
+        changeSpy.clear();
+        clearReservations(&resMgr);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(rmSpy.size(), 1);
+        QEXPECT_FAIL("", "not implemented yet", Continue);
+        QCOMPARE(changeSpy.size(), 1);
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 
