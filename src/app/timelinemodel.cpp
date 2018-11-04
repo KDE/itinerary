@@ -275,6 +275,10 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             std::sort(v.begin(), v.end(), SortUtil::isBefore);
             return QVariant::fromValue(v);
         }
+        case TripGroupRole:
+            if (elem.elementType == TripGroup)
+                return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content.toString()));
+            break;
     }
     return {};
 }
@@ -291,6 +295,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(CountryInformationRole, "countryInformation");
     names.insert(WeatherForecastRole, "weatherForecast");
     names.insert(ReservationsRole, "reservations");
+    names.insert(TripGroupRole, "tripGroup");
     return names;
 }
 
@@ -661,7 +666,16 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 
 void TimelineModel::tripGroupAdded(const QString& groupId)
 {
-    // TODO
+    qDebug() << groupId;
+    const auto g = m_tripGroupManager->tripGroup(groupId);
+
+    Element beginElem{TimelineModel::TripGroup, g.beginDateTime(), groupId};
+    beginElem.rangeType = RangeBegin;
+    insertElement(std::move(beginElem));
+
+    Element endElem{TimelineModel::TripGroup, g.endDateTime(), groupId};
+    endElem.rangeType = RangeEnd;
+    insertElement(std::move(endElem));
 }
 
 void TimelineModel::tripGroupChanged(const QString& groupId)
@@ -673,5 +687,16 @@ void TimelineModel::tripGroupChanged(const QString& groupId)
 
 void TimelineModel::tripGroupRemoved(const QString& groupId)
 {
-    // TODO
+    qDebug() << groupId;
+    for (auto it = m_elements.begin(); it != m_elements.end();) {
+        if ((*it).elementType != TripGroup || (*it).content.toString() != groupId) {
+            ++it;
+            continue;
+        }
+
+        const auto row = std::distance(m_elements.begin(), it);
+        beginRemoveRows({}, row, row);
+        it = m_elements.erase(it);
+        endRemoveRows();
+    }
 }

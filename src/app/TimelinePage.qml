@@ -120,6 +120,13 @@ Kirigami.ScrollablePage {
             weatherForecast: modelData.weatherForecast
         }
     }
+    Component {
+        id: tripGrooupDelegate
+        App.TripGroupDelegate {
+            tripGroup: modelData.tripGroup
+            rangeType: modelData.rangeType
+        }
+    }
 
     Kirigami.CardsListView {
         id: listView
@@ -143,6 +150,7 @@ Kirigami.ScrollablePage {
                     case TimelineModel.TodayMarker: return todayDelegate;
                     case TimelineModel.CountryInfo: return countryInfoDelegate;
                     case TimelineModel.WeatherForecast: return weatherForecastDelegate;
+                    case TimelineModel.TripGroup: return tripGrooupDelegate;
                 }
             }
         }

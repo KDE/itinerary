@@ -8,6 +8,17 @@
     },
     {
         "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Peretola (January 2000)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -263,5 +274,16 @@
         ],
         "sectionHeader": "Saturday, 1 Jan 2000",
         "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Peretola (January 2000)"
+        },
+        "type": 2
     }
 ]

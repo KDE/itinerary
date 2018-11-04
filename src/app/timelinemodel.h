@@ -46,6 +46,7 @@ public:
         CountryInformationRole,
         WeatherForecastRole,
         ReservationsRole, // for unit testing
+        TripGroupRole
     };
 
     // Note: the order in here defines the priority of element if they occur at the same time
