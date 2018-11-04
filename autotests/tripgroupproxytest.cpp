@@ -63,9 +63,9 @@ private slots:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
 
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
@@ -90,7 +90,6 @@ private slots:
         proxy.collapse(groupMgr.tripGroups().at(0));
         ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r1.model"));
         vp1.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QVERIFY(vp1.verify(&proxy));
     }
 };

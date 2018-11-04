@@ -18,14 +18,14 @@
 #include "tripgroupproxymodel.h"
 #include "timelinemodel.h"
 
+#include <QDebug>
+
 TripGroupProxyModel::TripGroupProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
 }
 
-TripGroupProxyModel::~TripGroupProxyModel()
-{
-}
+TripGroupProxyModel::~TripGroupProxyModel() = default;
 
 void TripGroupProxyModel::setSourceModel(QAbstractItemModel *sourceModel)
 {
@@ -53,6 +53,23 @@ QVariant TripGroupProxyModel::data(const QModelIndex &index, int role) const
 
 bool TripGroupProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
+    // ### we can probably do this more efficiently!
+    for (int i = source_row; i < m_sourceModel->rowCount(); ++i) {
+        const auto srcIdx = m_sourceModel->index(i, 0);
+        const auto elementType = srcIdx.data(TimelineModel::ElementTypeRole).toInt();
+        const auto rangeType = srcIdx.data(TimelineModel::ElementRangeRole).toInt();
+        if (elementType == TimelineModel::TripGroup && rangeType == TimelineModel::RangeBegin) {
+            // either this is our group's start, or a group after us
+            return true;
+        }
+        if (elementType != TimelineModel::TripGroup) {
+            continue;
+        }
+        const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();
+        qDebug() << groupId << m_collapsed.contains(groupId) << m_collapsed;
+        return !m_collapsed.contains(groupId);
+    }
+
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
@@ -64,22 +81,24 @@ int TripGroupProxyModel::todayRow()
 
 void TripGroupProxyModel::collapse(const QString &groupId)
 {
+    qDebug() << groupId;
+    m_collapsed.insert(groupId);
+    invalidateFilter();
+
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
     Q_ASSERT(startSrcIdx.isValid());
-    // TODO removal change signals
-    m_collapsed.insert(groupId);
-
     const auto startIdx = mapFromSource(startSrcIdx);
     emit dataChanged(startIdx, startIdx); // collapse/expand state changed
 }
 
 void TripGroupProxyModel::expand(const QString &groupId)
 {
+    qDebug() << groupId;
+    m_collapsed.remove(groupId);
+    invalidateFilter();
+
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
     Q_ASSERT(startSrcIdx.isValid());
-    // TODO insertion change signals
-    m_collapsed.remove(groupId);
-
     const auto startIdx = mapFromSource(startSrcIdx);
     emit dataChanged(startIdx, startIdx); // collapse/expand state changed
 }
