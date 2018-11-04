@@ -29,6 +29,7 @@
 #include "settings.h"
 #include "tickettokenmodel.h"
 #include "tripgroupmanager.h"
+#include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
 
@@ -155,6 +156,8 @@ int main(int argc, char **argv)
     timelineModel.setWeatherForecastManager(&weatherForecastMgr);
     timelineModel.setTripGroupManager(&tripGroupMgr);
 
+    TripGroupProxyModel tripGroupProxy;
+    tripGroupProxy.setSourceModel(&timelineModel);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
@@ -181,7 +184,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
-    engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &timelineModel);
+    engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
     engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);

@@ -1,0 +1,1235 @@
+[
+    {
+        "isToday": true,
+        "isTodayEmpty": true,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 1
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Peretola (January 2000)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LH",
+                        "name": "Lufthansa"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 48.35390090942383,
+                            "longitude": 11.786100387573242
+                        },
+                        "iataCode": "MUC",
+                        "name": "Franz Josef Strauss"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T14:10:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Tegel"
+                    },
+                    "departureDay": "2000-01-01",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T13:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "2037"
+                },
+                "reservationNumber": "XXX007",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Traveler One"
+                }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LH",
+                        "name": "Lufthansa"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 48.35390090942383,
+                            "longitude": 11.786100387573242
+                        },
+                        "iataCode": "MUC",
+                        "name": "Franz Josef Strauss"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T14:10:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Tegel"
+                    },
+                    "departureDay": "2000-01-01",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T13:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "2037"
+                },
+                "reservationNumber": "XXX007",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Traveler Two"
+                }
+            }
+        ],
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "type": 5
+    },
+    {
+        "countryInformation": {
+            "@context": "http://schema.org",
+            "@type": "CountryInformation",
+            "drivingSideDiffers": false,
+            "isoCode": "IT",
+            "powerPlugCompatibility": 1,
+            "powerSocketTypes": "Type L"
+        },
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LH",
+                        "name": "Lufthansa"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "IT"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 43.808799743652344,
+                            "longitude": 11.202899932861328
+                        },
+                        "iataCode": "FLR",
+                        "name": "Peretola"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T16:20:00+01:00",
+                        "timezone": "Europe/Rome"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 48.35390090942383,
+                            "longitude": 11.786100387573242
+                        },
+                        "iataCode": "MUC",
+                        "name": "Franz Josef Strauss"
+                    },
+                    "departureDay": "2000-01-01",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T15:05:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "9440"
+                },
+                "reservationNumber": "XXX007",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Traveler One"
+                }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LH",
+                        "name": "Lufthansa"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "IT"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 43.808799743652344,
+                            "longitude": 11.202899932861328
+                        },
+                        "iataCode": "FLR",
+                        "name": "Peretola"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T16:20:00+01:00",
+                        "timezone": "Europe/Rome"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 48.35390090942383,
+                            "longitude": 11.786100387573242
+                        },
+                        "iataCode": "MUC",
+                        "name": "Franz Josef Strauss"
+                    },
+                    "departureDay": "2000-01-01",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2000-01-01T15:05:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "9440"
+                },
+                "reservationNumber": "XXX007",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Traveler Two"
+                }
+            }
+        ],
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Peretola (January 2000)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "Saturday, 4 Mar 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "San Francisco Airport (March 2017)"
+        },
+        "type": 2
+    },
+    {
+        "countryInformation": {
+            "@context": "http://schema.org",
+            "@type": "CountryInformation",
+            "drivingSideDiffers": false,
+            "isoCode": "US",
+            "powerPlugCompatibility": 2,
+            "powerPlugTypes": "Europlug, Schuko",
+            "powerSocketTypes": "Type A, Type B"
+        },
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 4 Mar 2017",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T13:25:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 40.63970184326172,
+                            "longitude": -73.77890014648438
+                        },
+                        "iataCode": "JFK",
+                        "name": "John F. Kennedy International Airport"
+                    },
+                    "departureDay": "2017-03-04",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-04T11:00:00-05:00",
+                        "timezone": "America/New_York"
+                    },
+                    "flightNumber": "201"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T13:25:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 40.63970184326172,
+                            "longitude": -73.77890014648438
+                        },
+                        "iataCode": "JFK",
+                        "name": "John F. Kennedy International Airport"
+                    },
+                    "departureDay": "2017-03-04",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-04T11:00:00-05:00",
+                        "timezone": "America/New_York"
+                    },
+                    "flightNumber": "201"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "John Green"
+                }
+            }
+        ],
+        "sectionHeader": "Saturday, 4 Mar 2017",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.618900299072266,
+                            "longitude": -122.375
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T15:15:00-08:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "departureDay": "2017-03-05",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T14:55:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "flightNumber": "1050"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.618900299072266,
+                            "longitude": -122.375
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T15:15:00-08:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "departureDay": "2017-03-05",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T14:55:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "flightNumber": "1050"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "John Green"
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 5 Mar 2017",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "Sunday, 5 Mar 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "San Francisco Airport (March 2017)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Randa (September 2017)"
+        },
+        "type": 2
+    },
+    {
+        "countryInformation": {
+            "@context": "http://schema.org",
+            "@type": "CountryInformation",
+            "drivingSideDiffers": false,
+            "isoCode": "CH",
+            "powerPlugCompatibility": 1,
+            "powerPlugTypes": "Schuko",
+            "powerSocketTypes": "Type J"
+        },
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "airplaneSeat": "15F",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LX"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 47.464698791503906,
+                            "longitude": 8.549169540405273
+                        },
+                        "iataCode": "ZRH",
+                        "name": "Zürich"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T08:15:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "boardingTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T06:15:00+02:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Berlin Tegel"
+                    },
+                    "departureDay": "2017-09-10",
+                    "departureGate": "A10",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T06:45:00+02:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "963"
+                },
+                "reservationNumber": "XXX007"
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TrainReservation",
+                "reservationFor": {
+                    "@type": "TrainTrip",
+                    "arrivalPlatform": "7",
+                    "arrivalStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.29399871826172,
+                            "longitude": 7.881460189819336
+                        },
+                        "identifier": "ibnr:8501605",
+                        "name": "Visp"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T14:02:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "departurePlatform": "3",
+                    "departureStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 47.45029830932617,
+                            "longitude": 8.562219619750977
+                        },
+                        "identifier": "ibnr:8503016",
+                        "name": "Zürich Flughafen"
+                    },
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T11:40:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "SBB"
+                    },
+                    "trainName": "IC",
+                    "trainNumber": "816"
+                },
+                "reservedTicket": {
+                    "@type": "Ticket",
+                    "ticketToken": "aztecCode:i0CVXXX007123456789xxxx01/01/1970xxxxxxxxxxxxxxx24/090011223344556677889            DOE                 JOHN                  00000",
+                    "ticketedSeat": {
+                        "@type": "Seat",
+                        "seatNumber": "62",
+                        "seatSection": "17"
+                    }
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TrainReservation",
+                "reservationFor": {
+                    "@type": "TrainTrip",
+                    "arrivalStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.09989929199219,
+                            "longitude": 7.781469821929932
+                        },
+                        "identifier": "ibnr:8501687",
+                        "name": "Randa"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T14:53:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "departurePlatform": "3",
+                    "departureStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.29399871826172,
+                            "longitude": 7.881460189819336
+                        },
+                        "identifier": "ibnr:8501605",
+                        "name": "Visp"
+                    },
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T14:08:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "SBB"
+                    },
+                    "trainName": "R",
+                    "trainNumber": "241"
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TaxiReservation",
+                "pickupTime": "2017-09-10T14:55:00+02:00"
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 0
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "EventReservation",
+                "reservationFor": {
+                    "@type": "Event",
+                    "location": {
+                        "@type": "Place",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH",
+                            "addressLocality": "Randa",
+                            "addressRegion": "Wallis",
+                            "postalCode": "3928",
+                            "streetAddress": "Haus Maria am Weg"
+                        },
+                        "name": "Haus Randa"
+                    },
+                    "name": "KDE Randa Meeting 2017",
+                    "startDate": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-10T15:00:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    }
+                },
+                "underName": {
+                    "@type": "Person",
+                    "name": "Dr Konqui"
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 11
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-10T15:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "checkoutTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-15T10:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "CH",
+                        "addressLocality": "Randa",
+                        "addressRegion": "Wallis",
+                        "postalCode": "3928",
+                        "streetAddress": "Haus Maria am Weg"
+                    },
+                    "name": "Haus Randa",
+                    "url": "https://randa-meetings.ch/"
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "type": 12
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "BusReservation",
+                "reservationFor": {
+                    "@type": "BusTrip",
+                    "arrivalBusStop": {
+                        "@type": "BusStation",
+                        "name": "Zermatt"
+                    },
+                    "arrivalTime": "2017-09-13T14:20:00",
+                    "busName": "",
+                    "busNumber": "Zermatt Taxi",
+                    "departureBusStop": {
+                        "@type": "BusStation",
+                        "name": "Randa"
+                    },
+                    "departureTime": "2017-09-13T14:00:00"
+                }
+            }
+        ],
+        "sectionHeader": "Wednesday, 13 Sep 2017",
+        "type": 8
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TouristAttractionVisit",
+                "arrivalTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-13T14:30:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "departureTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-13T15:30:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "touristAttraction": {
+                    "@type": "TouristAttraction",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "CH",
+                        "addressLocality": "Zermatt"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 46.01504898071289,
+                        "longitude": 7.742239952087402
+                    },
+                    "name": "Matterhorn"
+                }
+            }
+        ],
+        "sectionHeader": "Wednesday, 13 Sep 2017",
+        "type": 10
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FoodEstablishmentReservation",
+                "endTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-14T22:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "partySize": 20,
+                "reservationFor": {
+                    "@type": "FoodEstablishment",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "CH",
+                        "addressLocality": "Randa",
+                        "addressRegion": "Wallis",
+                        "postalCode": "3928",
+                        "streetAddress": "Haus Maria am Weg"
+                    },
+                    "name": "Raclette"
+                },
+                "startTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-14T19:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                }
+            }
+        ],
+        "sectionHeader": "Thursday, 14 Sep 2017",
+        "type": 9
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-10T15:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "checkoutTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-15T10:00:00+02:00",
+                    "timezone": "Europe/Zurich"
+                },
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "CH",
+                        "addressLocality": "Randa",
+                        "addressRegion": "Wallis",
+                        "postalCode": "3928",
+                        "streetAddress": "Haus Maria am Weg"
+                    },
+                    "name": "Haus Randa",
+                    "url": "https://randa-meetings.ch/"
+                }
+            }
+        ],
+        "sectionHeader": "Friday, 15 Sep 2017",
+        "type": 12
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TrainReservation",
+                "reservationFor": {
+                    "@type": "TrainTrip",
+                    "arrivalPlatform": "3",
+                    "arrivalStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.29399871826172,
+                            "longitude": 7.881460189819336
+                        },
+                        "identifier": "ibnr:8501605",
+                        "name": "Visp"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T15:46:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "departureStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.09989929199219,
+                            "longitude": 7.781469821929932
+                        },
+                        "identifier": "ibnr:8501687",
+                        "name": "Randa"
+                    },
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T14:54:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "SBB"
+                    },
+                    "trainName": "R",
+                    "trainNumber": "250"
+                }
+            }
+        ],
+        "sectionHeader": "Friday, 15 Sep 2017",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TrainReservation",
+                "reservationFor": {
+                    "@type": "TrainTrip",
+                    "arrivalPlatform": "2",
+                    "arrivalStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 47.45029830932617,
+                            "longitude": 8.562219619750977
+                        },
+                        "identifier": "ibnr:8503016",
+                        "name": "Zürich Flughafen"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T18:16:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "departurePlatform": "2",
+                    "departureStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.29399871826172,
+                            "longitude": 7.881460189819336
+                        },
+                        "identifier": "ibnr:8501605",
+                        "name": "Visp"
+                    },
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T15:57:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "provider": {
+                        "@type": "Organization",
+                        "name": "SBB"
+                    },
+                    "trainName": "IC",
+                    "trainNumber": "827"
+                }
+            }
+        ],
+        "sectionHeader": "Friday, 15 Sep 2017",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "airplaneSeat": "10E",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "LX"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Berlin Tegel"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T22:15:00+02:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "boardingTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T20:25:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 47.464698791503906,
+                            "longitude": 8.549169540405273
+                        },
+                        "iataCode": "ZRH",
+                        "name": "Zürich"
+                    },
+                    "departureDay": "2017-09-15",
+                    "departureGate": "52",
+                    "departureTerminal": "AB",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-15T20:50:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
+                    "flightNumber": "962"
+                },
+                "reservationNumber": "XXX007"
+            }
+        ],
+        "sectionHeader": "Friday, 15 Sep 2017",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "Friday, 15 Sep 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Randa (September 2017)"
+        },
+        "type": 2
+    }
+]

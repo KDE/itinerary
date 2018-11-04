@@ -124,6 +124,7 @@ Kirigami.ScrollablePage {
         id: tripGrooupDelegate
         App.TripGroupDelegate {
             tripGroup: modelData.tripGroup
+            tripGroupId: modelData.tripGroupId
             rangeType: modelData.rangeType
         }
     }

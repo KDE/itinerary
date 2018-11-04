@@ -46,6 +46,7 @@ public:
         CountryInformationRole,
         WeatherForecastRole,
         ReservationsRole, // for unit testing
+        TripGroupIdRole,
         TripGroupRole
     };
 

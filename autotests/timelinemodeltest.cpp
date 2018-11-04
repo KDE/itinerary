@@ -518,7 +518,7 @@ private slots:
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
-        vp.setRoleFilter({TimelineModel::ReservationIdsRole});
+        vp.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime

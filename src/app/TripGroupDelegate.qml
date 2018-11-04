@@ -24,6 +24,7 @@ import "." as App
 
 Kirigami.AbstractCard {
     property var tripGroup;
+    property var tripGroupId;
     property var rangeType;
 
     id: root
@@ -46,7 +47,7 @@ Kirigami.AbstractCard {
 
             Kirigami.Icon {
                 source: switch (rangeType) {
-                    case TimelineModel.SingleElement: return "go-next-symbolic";
+                    case TimelineModel.SelfContained: return "go-next-symbolic";
                     case TimelineModel.RangeBegin: return "go-down-symbolic";
                     case TimelineModel.RangeEnd: return "go-up-symbolic";
                 }
@@ -65,5 +66,10 @@ Kirigami.AbstractCard {
 
     // TODO contentItem
 
-    onClicked: console.log("toggle collapse/expand");
+    onClicked: {
+        if (rangeType == TimelineModel.SelfContained)
+            _timelineModel.expand(tripGroupId);
+        else
+            _timelineModel.collapse(tripGroupId);
+    }
 }

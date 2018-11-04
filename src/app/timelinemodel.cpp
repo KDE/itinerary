@@ -275,6 +275,11 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             std::sort(v.begin(), v.end(), SortUtil::isBefore);
             return QVariant::fromValue(v);
         }
+        case TripGroupIdRole:
+            if (elem.elementType == TripGroup) {
+                return elem.content;
+            }
+            break;
         case TripGroupRole:
             if (elem.elementType == TripGroup)
                 return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content.toString()));
@@ -295,6 +300,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(CountryInformationRole, "countryInformation");
     names.insert(WeatherForecastRole, "weatherForecast");
     names.insert(ReservationsRole, "reservations");
+    names.insert(TripGroupIdRole, "tripGroupId");
     names.insert(TripGroupRole, "tripGroup");
     return names;
 }

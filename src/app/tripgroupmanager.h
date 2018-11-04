@@ -39,6 +39,8 @@ public:
     TripGroup tripGroup(const QString &id) const;
     TripGroup tripGroupForReservation(const QString &resId) const;
 
+    static void clear(); // for testing only!
+
 signals:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);
@@ -46,12 +48,9 @@ signals:
 
 private:
     friend class TripGroup;
-    friend class TripGroupTest;
-    friend class TimelineModelTest;
 
     static QString basePath();
     void load();
-    static void clear(); // for testing only!
 
     void reservationAdded(const QString &resId);
     void reservationChanged(const QString &resId);
