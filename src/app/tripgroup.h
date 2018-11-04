@@ -18,11 +18,13 @@
 #ifndef TRIPGROUP_H
 #define TRIPGROUP_H
 
+#include <QMetaType>
 #include <QString>
 #include <QVector>
-#include <qobjectdefs.h>
 
 class TripGroupManager;
+
+class QDateTime;
 
 /** Trip group object. */
 class TripGroup
@@ -40,6 +42,9 @@ public:
     QVector<QString> elements() const;
     void setElements(const QVector<QString> &elems);
 
+    QDateTime beginDateTime() const;
+    QDateTime endDateTime() const;
+
     bool load(const QString &path);
     void store(const QString &path) const;
 
@@ -48,5 +53,7 @@ private:
     QString m_name;
     QVector<QString> m_elements;
 };
+
+Q_DECLARE_METATYPE(TripGroup)
 
 #endif // TRIPGROUP_H

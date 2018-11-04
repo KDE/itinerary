@@ -17,7 +17,12 @@
 
 #include "tripgroup.h"
 #include "logging.h"
+#include "reservationmanager.h"
+#include "tripgroupmanager.h"
 
+#include <KItinerary/SortUtil>
+
+#include <QDateTime>
 #include <QDebug>
 #include <QFile>
 #include <QJsonArray>
@@ -88,4 +93,16 @@ void TripGroup::store(const QString &path) const
     std::copy(m_elements.begin(), m_elements.end(), std::back_inserter(elems));
     obj.insert(QLatin1String("elements"), elems);
     f.write(QJsonDocument(obj).toJson());
+}
+
+QDateTime TripGroup::beginDateTime() const
+{
+    const auto res = m_mgr->m_resMgr->reservation(m_elements.at(0));
+    return KItinerary::SortUtil::startDateTime(res);
+}
+
+QDateTime TripGroup::endDateTime() const
+{
+    const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
+    return KItinerary::SortUtil::endtDateTime(res);
 }

@@ -45,6 +45,7 @@ signals:
     void tripGroupRemoved(const QString &id);
 
 private:
+    friend class TripGroup;
     friend class TripGroupTest;
     friend class TimelineModelTest;
 
