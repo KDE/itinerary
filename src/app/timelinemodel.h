@@ -48,19 +48,21 @@ public:
         ReservationsRole, // for unit testing
     };
 
+    // Note: the order in here defines the priority of element if they occur at the same time
     enum ElementType {
         Undefined,
+        TodayMarker,
+        TripGroup,
+        WeatherForecast,
+        CountryInfo,
         Flight,
         TrainTrip,
+        CarRental,
         BusTrip,
-        Hotel,
         Restaurant,
         TouristAttraction,
         Event,
-        CarRental,
-        TodayMarker,
-        CountryInfo,
-        WeatherForecast
+        Hotel
     };
     Q_ENUM(ElementType)
 
@@ -103,6 +105,8 @@ private:
         ElementType elementType;
         RangeType rangeType = SelfContained;
     };
+
+    static bool elementLessThan(const Element &lhs, const Element &rhs);
 
     void reservationAdded(const QString &resId);
     void insertElement(Element &&elem);

@@ -4,7 +4,7 @@
         "isTodayEmpty": true,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 9
+        "type": 1
     },
     {
         "isToday": false,
@@ -126,7 +126,7 @@
             }
         ],
         "sectionHeader": "Saturday, 1 Jan 2000",
-        "type": 1
+        "type": 5
     },
     {
         "countryInformation": {
@@ -140,7 +140,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 1 Jan 2000",
-        "type": 10
+        "type": 4
     },
     {
         "isToday": false,
@@ -262,6 +262,6 @@
             }
         ],
         "sectionHeader": "Saturday, 1 Jan 2000",
-        "type": 1
+        "type": 5
     }
 ]

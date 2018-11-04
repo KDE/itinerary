@@ -150,9 +150,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
         }
     }
     m_elements.push_back(Element{TodayMarker, QDateTime(today(), QTime(0, 0))});
-    std::sort(m_elements.begin(), m_elements.end(), [](const Element &lhs, const Element &rhs) {
-        return lhs.dt < rhs.dt;
-    });
+    std::sort(m_elements.begin(), m_elements.end(), elementLessThan);
 
     // merge multi-traveler elements
     QDateTime prevDt;
@@ -302,6 +300,14 @@ int TimelineModel::todayRow() const
     return std::distance(m_elements.begin(), it);
 }
 
+bool TimelineModel::elementLessThan(const TimelineModel::Element &lhs, const TimelineModel::Element &rhs)
+{
+    if (lhs.dt == rhs.dt) {
+        return lhs.elementType < rhs.elementType;
+    }
+    return lhs.dt < rhs.dt;
+}
+
 void TimelineModel::reservationAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
@@ -318,9 +324,7 @@ void TimelineModel::reservationAdded(const QString &resId)
 
 void TimelineModel::insertElement(Element &&elem)
 {
-    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem.dt, [](const Element &lhs, const QDateTime &rhs) {
-        return lhs.dt < rhs;
-    });
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem, elementLessThan);
     const auto row = std::distance(m_elements.begin(), it);
 
     // check if we can merge with an existing element
@@ -476,7 +480,7 @@ void TimelineModel::updateInformationElements()
         // add new country info element
         auto row = std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
-        it = m_elements.insert(it, Element{CountryInfo, (*it).dt.addSecs(-1), QVariant::fromValue(newCountry)});
+        it = m_elements.insert(it, Element{CountryInfo, (*it).dt, QVariant::fromValue(newCountry)});
         endInsertRows();
 
         previousCountry = newCountry;

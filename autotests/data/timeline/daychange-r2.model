@@ -12,7 +12,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 4 Jan 2017",
-        "type": 10
+        "type": 4
     },
     {
         "isToday": false,
@@ -73,7 +73,7 @@
             }
         ],
         "sectionHeader": "Wednesday, 4 Jan 2017",
-        "type": 1
+        "type": 5
     },
     {
         "countryInformation": {
@@ -88,7 +88,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 4 Jan 2017",
-        "type": 10
+        "type": 4
     },
     {
         "isToday": false,
@@ -149,20 +149,20 @@
             }
         ],
         "sectionHeader": "Wednesday, 4 Jan 2017",
-        "type": 1
+        "type": 5
     },
     {
         "isToday": true,
         "isTodayEmpty": false,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 9
+        "type": 1
     },
     {
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -178,7 +178,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 16 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -194,7 +194,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Monday, 17 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -210,7 +210,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 18 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -226,7 +226,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 19 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -242,7 +242,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 20 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -258,7 +258,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Friday, 21 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -274,7 +274,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 22 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -290,7 +290,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 23 Oct 2196",
-        "type": 11,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
