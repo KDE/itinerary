@@ -352,6 +352,15 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     }
 }
 
+static QString destinationName(const QVariant &loc)
+{
+    const auto addr = LocationUtil::address(loc);
+    if (!addr.addressLocality().isEmpty()) {
+        return addr.addressLocality();
+    }
+    return LocationUtil::name(loc);
+}
+
 QString TripGroupManager::guessName(const TripGroup& g) const
 {
     // part 1: the destination of the trip
@@ -360,13 +369,16 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
     const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(g.elements().constLast()));
     if (LocationUtil::isSameLocation(beginLoc, endLoc, LocationUtil::CityLevel)) {
-        const auto middleIdx = g.elements().size() / 2;
-        const auto middleLoc = m_resMgr->reservation(g.elements().at(middleIdx));
-        // TODO support non-location changes too
-        dest = LocationUtil::name(LocationUtil::arrivalLocation(middleLoc));
+        const auto middleIdx = (g.elements().size() - 1 + (g.elements().size() % 2)) / 2;
+        const auto middleRes = m_resMgr->reservation(g.elements().at(middleIdx));
+        if (LocationUtil::isLocationChange(middleRes)) {
+            dest = destinationName(LocationUtil::arrivalLocation(middleRes));
+        } else {
+            dest = destinationName(LocationUtil::location(middleRes));
+        }
     } else {
         // TODO we want the city (or country, if differing from start) here, if available
-        dest = LocationUtil::name(endLoc);
+        dest = destinationName(endLoc);
     }
 
     // part 2: the time range of the trip

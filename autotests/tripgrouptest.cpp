@@ -66,7 +66,6 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
-            QCOMPARE(g.name(), QStringLiteral("San Francisco Airport (March 2017)"));
         }
 
         TripGroupManager::clear();
@@ -80,7 +79,6 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
-            QCOMPARE(g.name(), QStringLiteral("Zermatt (September 2017)"));
         }
 
         TripGroupManager::clear();
@@ -94,7 +92,6 @@ private slots:
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
             QCOMPARE(g.elements().size(), resMgr.reservations().size());
-            QCOMPARE(g.name(), QStringLiteral("Peretola (January 2000)"));
         }
 
         TripGroupManager::clear();
@@ -133,6 +130,36 @@ private slots:
         clearReservations(&resMgr);
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(changeSpy.size(), 2);
+    }
+
+    void testGroupName_data()
+    {
+        QTest::addColumn<QString>("fileName");
+        QTest::addColumn<QString>("expectedName");
+
+        QTest::newRow("SFO one way") << QStringLiteral(SOURCE_DIR "/data/google-multi-passenger-flight.json") << QStringLiteral("San Francisco Airport (March 2017)");
+        QTest::newRow("FLR one way multi traveller") << QStringLiteral(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json") << QStringLiteral("Peretola (January 2000)");
+        QTest::newRow("Randa") << QStringLiteral(SOURCE_DIR "/../tests/randa2017.json") << QStringLiteral("Randa (September 2017)");
+        QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json") << QStringLiteral("Almeria (July 2017)");
+        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/deutschebahn_two-leg-return.txt.json") << QStringLiteral("Somewhere(Specific) (November 2027)");
+    }
+
+    void testGroupName()
+    {
+        QFETCH(QString, fileName);
+        QFETCH(QString, expectedName);
+
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(fileName));
+        TripGroupManager mgr;
+        QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+        mgr.setReservationManager(&resMgr);
+        QCOMPARE(addSpy.size(), 1);
+        auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+        QCOMPARE(g.elements().size(), resMgr.reservations().size());
+        QEXPECT_FAIL("Almeria", "picks random bus stop for location name", Continue);
+        QCOMPARE(g.name(), expectedName);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)

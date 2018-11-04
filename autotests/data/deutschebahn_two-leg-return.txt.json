@@ -1,0 +1,102 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "6 D-G",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Köln Hbf"
+            },
+            "arrivalTime": "2027-11-03T12:09:00",
+            "departurePlatform": "4A-D",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Berlin Hbf (tief)"
+            },
+            "departureTime": "2027-11-03T07:49:00",
+            "trainNumber": "ICE 954"
+        },
+        "reservationNumber": "XXX007",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "61",
+                "seatSection": "34"
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "3",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Somewhere(Specific)"
+            },
+            "arrivalTime": "2027-11-03T12:45:00",
+            "departurePlatform": "10 A-B",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Köln Hbf"
+            },
+            "departureTime": "2027-11-03T12:17:00",
+            "trainNumber": "S0"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "14",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Düsseldorf Hbf"
+            },
+            "arrivalTime": "2027-11-04T14:28:00",
+            "departurePlatform": "3",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Somewhere(Specific)"
+            },
+            "departureTime": "2027-11-04T14:06:00",
+            "trainNumber": "S0"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Berlin Hbf (tief)"
+            },
+            "arrivalTime": "2027-11-04T19:27:00",
+            "departurePlatform": "19",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Düsseldorf Hbf"
+            },
+            "departureTime": "2027-11-04T14:52:00",
+            "trainNumber": "ICE 641"
+        },
+        "reservationNumber": "XXX007",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "85",
+                "seatSection": "22"
+            }
+        }
+    }
+]
