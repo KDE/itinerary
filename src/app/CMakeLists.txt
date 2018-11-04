@@ -67,8 +67,10 @@ if (ANDROID)
         edit-delete
         edit-download
         edit-paste
+        go-down-symbolic
         go-home
         go-next-symbolic
+        go-up-symbolic
         help-about
         map-symbolic
         meeting-attending

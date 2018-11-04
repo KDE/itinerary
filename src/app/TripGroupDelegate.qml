@@ -23,9 +23,11 @@ import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.AbstractCard {
-    id: root
     property var tripGroup;
     property var rangeType;
+
+    id: root
+    showClickFeedback: true
 
    header: Rectangle {
         id: headerBackground
@@ -43,7 +45,11 @@ Kirigami.AbstractCard {
             anchors.margins: Kirigami.Units.largeSpacing
 
             Kirigami.Icon {
-                source: "documentinfo"
+                source: switch (rangeType) {
+                    case TimelineModel.SingleElement: return "go-next-symbolic";
+                    case TimelineModel.RangeBegin: return "go-down-symbolic";
+                    case TimelineModel.RangeEnd: return "go-up-symbolic";
+                }
                 width: Kirigami.Units.iconSizes.smallMedium
                 height: width
                 color: Kirigami.Theme.textColor
@@ -58,4 +64,6 @@ Kirigami.AbstractCard {
     }
 
     // TODO contentItem
+
+    onClicked: console.log("toggle collapse/expand");
 }
