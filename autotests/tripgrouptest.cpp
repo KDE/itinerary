@@ -131,10 +131,8 @@ private slots:
 
         changeSpy.clear();
         clearReservations(&resMgr);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
         QCOMPARE(rmSpy.size(), 1);
-        QEXPECT_FAIL("", "not implemented yet", Continue);
-        QCOMPARE(changeSpy.size(), 1);
+        QCOMPARE(changeSpy.size(), 2);
     }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)

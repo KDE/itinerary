@@ -37,7 +37,8 @@ using namespace KItinerary;
 
 enum {
     MaximumTripDuration = 20, // in days
-    MaximumTripElements = 20
+    MaximumTripElements = 20,
+    MinimumTripElements = 2,
 };
 
 TripGroupManager::TripGroupManager(QObject* parent) :
@@ -112,6 +113,7 @@ void TripGroupManager::reservationAdded(const QString &resId)
         return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
     });
     m_reservations.insert(it, resId);
+    // ### we can optimize this by only scanning it +/- MaximumTripElements
     scanAll();
 }
 
@@ -124,7 +126,35 @@ void TripGroupManager::reservationChanged(const QString &resId)
 
 void TripGroupManager::reservationRemoved(const QString &resId)
 {
-    // TODO
+    // check if resId is part of a group
+    const auto mapIt = m_reservationToGroupMap.constFind(resId);
+    if (mapIt != m_reservationToGroupMap.constEnd()) {
+        const auto groupIt = m_tripGroups.find(mapIt.value());
+        Q_ASSERT(groupIt != m_tripGroups.end());
+
+        auto elems = groupIt.value().elements();
+        elems.removeAll(resId);
+        if (elems.size() < MinimumTripElements) { // group deleted
+            qDebug() << "removing trip group due to getting too small";
+            const auto groupId = groupIt.key();
+            for (const auto &elem : groupIt.value().elements()) {
+                m_reservationToGroupMap.remove(elem);
+            }
+            m_tripGroups.erase(groupIt);
+            emit tripGroupRemoved(groupId);
+        } else { // group changed
+            qDebug() << "removing element from trip group" << resId << elems;
+            groupIt.value().setElements(elems);
+            m_reservationToGroupMap.erase(mapIt);
+            emit tripGroupChanged(groupIt.key());
+        }
+    }
+
+    // remove the reservation
+    const auto resIt = std::find(m_reservations.begin(), m_reservations.end(), resId);
+    if (resIt != m_reservations.end()) {
+        m_reservations.erase(resIt);
+    }
 }
 
 void TripGroupManager::scanAll()
@@ -273,7 +303,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         it = connectedIt == m_reservations.end() ? resNumIt : connectedIt;
     }
 
-    if (it == m_reservations.end() || std::distance(beginIt, it) < 2) {
+    if (it == m_reservations.end() || std::distance(beginIt, it) < MinimumTripElements) {
         return;
     }
 
