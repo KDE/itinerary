@@ -1,0 +1,42 @@
+[
+    {
+        "isToday": true,
+        "isTodayEmpty": true,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 1
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Peretola (January 2000)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 4 Mar 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "San Francisco Airport (March 2017)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "name": "Randa (September 2017)"
+        },
+        "type": 2
+    }
+]

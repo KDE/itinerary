@@ -68,8 +68,10 @@ private slots:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TripGroupManager groupMgr;
+        QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
         groupMgr.setReservationManager(&resMgr);
         QCOMPARE(groupMgr.tripGroups().size(), 3);
+        QCOMPARE(addSpy.size(), 3);
 
         TimelineModel model;
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
@@ -87,10 +89,27 @@ private slots:
         vp0.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp0.verify(&proxy));
 
-        proxy.collapse(groupMgr.tripGroups().at(0));
+        proxy.collapse(addSpy.at(0).at(0).toString());
         ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r1.model"));
         vp1.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp1.verify(&proxy));
+
+        proxy.collapse(addSpy.at(1).at(0).toString());
+        ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r2.model"));
+        vp2.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        QVERIFY(vp2.verify(&proxy));
+
+        proxy.collapse(addSpy.at(2).at(0).toString());
+        ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r3.model"));
+        vp3.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        QVERIFY(vp3.verify(&proxy));
+
+        proxy.expand(addSpy.at(2).at(0).toString());
+        QVERIFY(vp2.verify(&proxy));
+        proxy.expand(addSpy.at(1).at(0).toString());
+        QVERIFY(vp1.verify(&proxy));
+        proxy.expand(addSpy.at(0).at(0).toString());
+        QVERIFY(vp0.verify(&proxy));
     }
 };
 QTEST_GUILESS_MAIN(TripGroupProxyTest)
