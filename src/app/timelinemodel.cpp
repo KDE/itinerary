@@ -81,37 +81,18 @@ static TimelineModel::ElementType elementType(const QVariant &res)
 
 static QString destinationCountry(const QVariant &res)
 {
-    if (JsonLd::isA<LodgingReservation>(res)) {
-        return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().address().addressCountry();
+    if (LocationUtil::isLocationChange(res)) {
+        return LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
     }
-    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-        return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().address().addressCountry();
-    }
-    if (JsonLd::isA<TouristAttractionVisit>(res)) {
-        return res.value<TouristAttractionVisit>().touristAttraction().address().addressCountry();
-    }
-    if (JsonLd::isA<EventReservation>(res)) {
-        return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().address().addressCountry();
-    }
-    return LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
+    return LocationUtil::address(LocationUtil::location(res)).addressCountry();
 }
 
 static GeoCoordinates geoCoordinate(const QVariant &res)
 {
-    if (JsonLd::isA<LodgingReservation>(res)) {
-        return res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().geo();
+    if (LocationUtil::isLocationChange(res)) {
+        return LocationUtil::geo(LocationUtil::arrivalLocation(res));
     }
-    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-        return res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().geo();
-    }
-    if (JsonLd::isA<TouristAttractionVisit>(res)) {
-        return res.value<TouristAttractionVisit>().touristAttraction().geo();
-    }
-    if (JsonLd::isA<EventReservation>(res)) {
-        return res.value<EventReservation>().reservationFor().value<Event>().location().value<Place>().geo();
-    }
-
-    return LocationUtil::geo(LocationUtil::arrivalLocation(res));
+    return LocationUtil::geo(LocationUtil::location(res));
 }
 
 
@@ -538,7 +519,7 @@ void TimelineModel::updateWeatherElements()
     }
 
     auto date = now();
-    date.setTime(QTime(date.time().hour() + 1, 0));
+    date.setTime(QTime(date.time().hour() + 1, 0)); // ### this looks suspicious for 23:xx?
     while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime(today())) {
 
         if ((*it).dt < date || (*it).elementType == TodayMarker) {
