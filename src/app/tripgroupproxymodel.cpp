@@ -19,10 +19,18 @@
 #include "timelinemodel.h"
 
 #include <QDebug>
+#include <QSettings>
 
 TripGroupProxyModel::TripGroupProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
+    QSettings settings;
+    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    for (const auto &key : settings.childKeys()) {
+        if (settings.value(key).toBool()) {
+            m_collapsed.insert(key);
+        }
+    }
 }
 
 TripGroupProxyModel::~TripGroupProxyModel() = default;
@@ -87,6 +95,10 @@ void TripGroupProxyModel::collapse(const QString &groupId)
     Q_ASSERT(startSrcIdx.isValid());
     const auto startIdx = mapFromSource(startSrcIdx);
     emit dataChanged(startIdx, startIdx); // collapse/expand state changed
+
+    QSettings settings;
+    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    settings.setValue(groupId, true);
 }
 
 void TripGroupProxyModel::expand(const QString &groupId)
@@ -98,4 +110,8 @@ void TripGroupProxyModel::expand(const QString &groupId)
     Q_ASSERT(startSrcIdx.isValid());
     const auto startIdx = mapFromSource(startSrcIdx);
     emit dataChanged(startIdx, startIdx); // collapse/expand state changed
+
+    QSettings settings;
+    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    settings.setValue(groupId, true);
 }
