@@ -311,7 +311,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         it = connectedIt == m_reservations.end() ? resNumIt : connectedIt;
     }
 
-    if (it == m_reservations.end() || std::distance(beginIt, it) < MinimumTripElements) {
+    if (it == m_reservations.end() || std::distance(beginIt, it) < MinimumTripElements - 1) {
         return;
     }
 
