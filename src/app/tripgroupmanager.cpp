@@ -98,7 +98,7 @@ void TripGroupManager::load()
     for (QDirIterator it(base, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
         it.next();
         TripGroup g(this);
-        if (g.load(it.fileName())) {
+        if (g.load(it.filePath())) {
             const auto tgId = it.fileInfo().baseName();
             m_tripGroups.insert(tgId, g);
             for (const auto &resId : g.elements()) {
