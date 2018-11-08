@@ -51,6 +51,7 @@ private:
 
     static QString basePath();
     void load();
+    void removeTripGroup(const QString &groupId);
 
     void reservationAdded(const QString &resId);
     void reservationChanged(const QString &resId);

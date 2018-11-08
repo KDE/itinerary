@@ -108,6 +108,19 @@ void TripGroupManager::load()
     }
 }
 
+void TripGroupManager::removeTripGroup(const QString &groupId)
+{
+    const auto groupIt = m_tripGroups.constFind(groupId);
+    for (const auto &elem : groupIt.value().elements()) {
+        m_reservationToGroupMap.remove(elem);
+    }
+    m_tripGroups.erase(groupIt);
+    if (!QFile::remove(basePath() + groupId + QLatin1String(".json"))) {
+        qCWarning(Log) << "Failed to delete trip group file!" << groupId;
+    }
+    emit tripGroupRemoved(groupId);
+}
+
 void TripGroupManager::clear()
 {
     qCDebug(Log) << "deleting" << basePath();
@@ -144,12 +157,7 @@ void TripGroupManager::reservationRemoved(const QString &resId)
         elems.removeAll(resId);
         if (elems.size() < MinimumTripElements) { // group deleted
             qDebug() << "removing trip group due to getting too small";
-            const auto groupId = groupIt.key();
-            for (const auto &elem : groupIt.value().elements()) {
-                m_reservationToGroupMap.remove(elem);
-            }
-            m_tripGroups.erase(groupIt);
-            emit tripGroupRemoved(groupId);
+            removeTripGroup(groupIt.key());
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
