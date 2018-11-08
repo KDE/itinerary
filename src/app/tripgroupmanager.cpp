@@ -102,6 +102,14 @@ void TripGroupManager::load()
             const auto tgId = it.fileInfo().baseName();
             m_tripGroups.insert(tgId, g);
             for (const auto &resId : g.elements()) {
+                const auto groupIt = m_reservationToGroupMap.constFind(resId);
+                if (groupIt != m_reservationToGroupMap.constEnd()) {
+                    qCWarning(Log) << "Overlapping trip groups found - removing" << g.name();
+                    const auto groupId = groupIt.value(); // copy before we modify what groupIt points to
+                    removeTripGroup(groupId);
+                    removeTripGroup(tgId);
+                    break;
+                }
                 m_reservationToGroupMap.insert(resId, tgId);
             }
         }
