@@ -113,5 +113,5 @@ void TripGroupProxyModel::expand(const QString &groupId)
 
     QSettings settings;
     settings.beginGroup(QLatin1String("TripGroupProxyState"));
-    settings.setValue(groupId, true);
+    settings.setValue(groupId, false);
 }
