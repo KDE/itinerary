@@ -31,6 +31,8 @@ class TripGroup
 {
     Q_GADGET
     Q_PROPERTY(QString name READ name)
+    Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
+    Q_PROPERTY(QDateTime endDateTime READ endDateTime)
 public:
     TripGroup();
     TripGroup(TripGroupManager *mgr);

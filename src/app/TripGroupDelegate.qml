@@ -29,8 +29,9 @@ Kirigami.AbstractCard {
 
     id: root
     showClickFeedback: true
+    topPadding: rangeType == TimelineModel.RangeEnd ? 0 : Kirigami.Units.largeSpacing
 
-   header: Rectangle {
+    header: Rectangle {
         id: headerBackground
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
@@ -39,6 +40,7 @@ Kirigami.AbstractCard {
         anchors.leftMargin: -root.leftPadding
         anchors.topMargin: -root.topPadding
         anchors.rightMargin: -root.rightPadding
+        anchors.bottomMargin: root.rangeType == TimelineModel.RangeEnd ? -root.bottomPadding : 0
 
         RowLayout {
             id: headerLayout
@@ -64,7 +66,21 @@ Kirigami.AbstractCard {
         }
     }
 
-    // TODO contentItem
+    contentItem: RowLayout {
+        id: contentLayout
+        visible: root.rangeType != TimelineModel.RangeEnd
+
+        QQC2.Label {
+            text: i18np("Date: %2 (one day)", "Date: %2 (%1 days)",
+                       Math.ceil((root.tripGroup.endDateTime.getTime() - root.tripGroup.beginDateTime.getTime()) / (1000 * 3600 * 24)),
+                       Localizer.formatDateTime(root.tripGroup, "beginDateTime"))
+        }
+
+        Component.onCompleted: {
+            // hide content entirely in the header-only end elements
+            parent.visible = contentLayout.visible
+        }
+    }
 
     onClicked: {
         if (rangeType == TimelineModel.SelfContained)
