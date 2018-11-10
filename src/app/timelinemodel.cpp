@@ -239,7 +239,6 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     }
 
     const auto &elem = m_elements.at(index.row());
-    const auto res = m_resMgr->reservation(elem.ids.value(0));
     switch (role) {
         case SectionHeader:
         {
@@ -275,6 +274,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         case ReservationsRole:
         {
             QVector<QVariant> v;
+            v.reserve(elem.ids.size());
             for (const auto &resId : elem.ids)
                 v.push_back(m_resMgr->reservation(resId));
             std::sort(v.begin(), v.end(), SortUtil::isBefore);

@@ -323,7 +323,7 @@ void ApplicationController::importFromClipboard()
 {
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
         const auto urls = QGuiApplication::clipboard()->mimeData()->urls();
-        for (const auto url : urls)
+        for (const auto &url : urls)
             importFromUrl(url);
         return;
     }

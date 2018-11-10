@@ -21,7 +21,7 @@
 #include <QAbstractListModel>
 namespace KItinerary {
 namespace KnowledgeDb {
-    class Country;
+    struct Country;
 }
 }
 

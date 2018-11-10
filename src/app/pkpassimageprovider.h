@@ -30,6 +30,8 @@ public:
     QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 
 private:
+    Q_DISABLE_COPY(PkPassImageProvider)
+
     PkPassManager *m_mgr;
 };
 

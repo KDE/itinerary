@@ -26,7 +26,7 @@
 class QDateTime;
 
 class WeatherForecastPrivate;
-class WeatherTile;
+struct WeatherTile;
 
 /** Weather forecast data */
 class WeatherForecast

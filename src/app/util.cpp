@@ -34,7 +34,7 @@ Util::~Util() = default;
 
 QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& propertyName) const
 {
-    auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).value<QDateTime>();
+    auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
         return {};
     }
@@ -46,7 +46,7 @@ QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& proper
 QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& propertyName, QDateTime value) const
 {
     QVariant o(obj);
-    const auto oldDt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).value<QDateTime>();
+    const auto oldDt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (oldDt.isValid()) {
         value.setTimeZone(oldDt.timeZone());
     }

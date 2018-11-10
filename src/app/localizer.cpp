@@ -69,7 +69,7 @@ static bool needsTimeZone(const QDateTime &dt)
 
 QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) const
 {
-    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).value<QDateTime>();
+    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
         return {};
     }
@@ -83,7 +83,7 @@ QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) 
 
 QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyName) const
 {
-    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).value<QDateTime>();
+    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
         return {};
     }
