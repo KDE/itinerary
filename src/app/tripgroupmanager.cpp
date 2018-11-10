@@ -22,6 +22,7 @@
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/MergeUtil>
+#include <KItinerary/Organization>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
@@ -377,24 +378,48 @@ static QString destinationName(const QVariant &loc)
     return LocationUtil::name(loc);
 }
 
+QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
+{
+    // we assume that lodging indicates the actual destination, not a stopover location
+    QStringList dests;
+    for (const auto &resId : g.elements()) {
+        const auto res = m_resMgr->reservation(resId);
+        if (!JsonLd::isA<LodgingReservation>(res)) {
+            continue;
+        }
+
+        const auto lodging = res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>();
+        if (!lodging.address().addressLocality().isEmpty() && !dests.contains(lodging.address().addressLocality())) {
+            dests.push_back(lodging.address().addressLocality());
+            continue;
+        }
+
+        // TODO consider the country if that differs from where we started from
+    }
+
+    return dests.join(QLatin1String(" - "));
+}
+
 QString TripGroupManager::guessName(const TripGroup& g) const
 {
     // part 1: the destination of the trip
-    // two cases: round-trips and one-way trips
-    QString dest;
-    const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
-    const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(g.elements().constLast()));
-    if (LocationUtil::isSameLocation(beginLoc, endLoc, LocationUtil::CityLevel)) {
-        const auto middleIdx = (g.elements().size() - 1 + (g.elements().size() % 2)) / 2;
-        const auto middleRes = m_resMgr->reservation(g.elements().at(middleIdx));
-        if (LocationUtil::isLocationChange(middleRes)) {
-            dest = destinationName(LocationUtil::arrivalLocation(middleRes));
+    QString dest = guessDestinationFromLodging(g);
+    if (dest.isEmpty()) {
+        // two fallback cases: round-trips and one-way trips
+        const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
+        const auto endLoc = LocationUtil::arrivalLocation(m_resMgr->reservation(g.elements().constLast()));
+        if (LocationUtil::isSameLocation(beginLoc, endLoc, LocationUtil::CityLevel)) {
+            const auto middleIdx = (g.elements().size() - 1 + (g.elements().size() % 2)) / 2;
+            const auto middleRes = m_resMgr->reservation(g.elements().at(middleIdx));
+            if (LocationUtil::isLocationChange(middleRes)) {
+                dest = destinationName(LocationUtil::arrivalLocation(middleRes));
+            } else {
+                dest = destinationName(LocationUtil::location(middleRes));
+            }
         } else {
-            dest = destinationName(LocationUtil::location(middleRes));
+            // TODO we want the city (or country, if differing from start) here, if available
+            dest = destinationName(endLoc);
         }
-    } else {
-        // TODO we want the city (or country, if differing from start) here, if available
-        dest = destinationName(endLoc);
     }
 
     // part 2: the time range of the trip

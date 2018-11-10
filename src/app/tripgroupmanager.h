@@ -60,6 +60,7 @@ private:
     void scanAll();
     void scanOne(const std::vector<QString>::const_iterator &beginIt);
     QString guessName(const TripGroup &g) const;
+    QString guessDestinationFromLodging(const TripGroup &g) const;
 
     ReservationManager *m_resMgr = nullptr;
     QHash<QString, TripGroup> m_tripGroups;
