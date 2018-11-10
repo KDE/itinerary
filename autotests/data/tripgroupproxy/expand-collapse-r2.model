@@ -13,6 +13,16 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2000-01-01T13:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2000-01-01T16:20:00+01:00",
+                "timezone": "Europe/Rome"
+            },
             "name": "Peretola (January 2000)"
         },
         "type": 2
@@ -24,6 +34,16 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-03-04T11:00:00-05:00",
+                "timezone": "America/New_York"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-03-05T15:15:00-08:00",
+                "timezone": "America/Los_Angeles"
+            },
             "name": "San Francisco Airport (March 2017)"
         },
         "type": 2
@@ -35,6 +55,16 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T06:45:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T22:15:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
             "name": "Randa (September 2017)"
         },
         "type": 2
@@ -665,6 +695,16 @@
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T06:45:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T22:15:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
             "name": "Randa (September 2017)"
         },
         "type": 2
