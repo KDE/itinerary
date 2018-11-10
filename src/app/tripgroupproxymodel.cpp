@@ -17,6 +17,8 @@
 
 #include "tripgroupproxymodel.h"
 #include "timelinemodel.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 
 #include <QDebug>
 #include <QSettings>
@@ -27,9 +29,7 @@ TripGroupProxyModel::TripGroupProxyModel(QObject *parent)
     QSettings settings;
     settings.beginGroup(QLatin1String("TripGroupProxyState"));
     for (const auto &key : settings.childKeys()) {
-        if (settings.value(key).toBool()) {
-            m_collapsed.insert(key);
-        }
+        m_collapsed[key] = settings.value(key).toBool();
     }
 }
 
@@ -51,7 +51,7 @@ QVariant TripGroupProxyModel::data(const QModelIndex &index, int role) const
         const auto rangeType = srcIdx.data(TimelineModel::ElementRangeRole).toInt();
         if (elementType == TimelineModel::TripGroup && rangeType == TimelineModel::RangeBegin) {
             const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();
-            if (m_collapsed.contains(groupId)) {
+            if (isCollapsed(groupId)) {
                 return TimelineModel::SelfContained;
             }
         }
@@ -74,7 +74,7 @@ bool TripGroupProxyModel::filterAcceptsRow(int source_row, const QModelIndex &so
             continue;
         }
         const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();
-        return !m_collapsed.contains(groupId);
+        return !isCollapsed(groupId);
     }
 
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
@@ -88,7 +88,7 @@ int TripGroupProxyModel::todayRow()
 
 void TripGroupProxyModel::collapse(const QString &groupId)
 {
-    m_collapsed.insert(groupId);
+    m_collapsed[groupId] = true;
     invalidateFilter();
 
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
@@ -103,7 +103,7 @@ void TripGroupProxyModel::collapse(const QString &groupId)
 
 void TripGroupProxyModel::expand(const QString &groupId)
 {
-    m_collapsed.remove(groupId);
+    m_collapsed[groupId] = false;
     invalidateFilter();
 
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
@@ -114,4 +114,16 @@ void TripGroupProxyModel::expand(const QString &groupId)
     QSettings settings;
     settings.beginGroup(QLatin1String("TripGroupProxyState"));
     settings.setValue(groupId, false);
+}
+
+bool TripGroupProxyModel::isCollapsed(const QString &groupId) const
+{
+    const auto it = m_collapsed.constFind(groupId);
+    if (it != m_collapsed.constEnd()) {
+        return it.value();
+    }
+
+    // by default collapse past trips
+    const auto g = m_sourceModel->tripGroupManager()->tripGroup(groupId);
+    return g.endDateTime() < QDateTime::currentDateTime();
 }

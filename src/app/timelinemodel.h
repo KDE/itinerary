@@ -81,6 +81,7 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);
+    TripGroupManager* tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
 

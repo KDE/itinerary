@@ -202,6 +202,11 @@ void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
     connect(m_weatherMgr, &WeatherForecastManager::forecastUpdated, this, &TimelineModel::updateWeatherElements);
 }
 
+TripGroupManager* TimelineModel::tripGroupManager() const
+{
+    return m_tripGroupManager;
+}
+
 void TimelineModel::setTripGroupManager(TripGroupManager *mgr)
 {
     m_tripGroupManager = mgr;

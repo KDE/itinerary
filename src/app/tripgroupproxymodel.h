@@ -46,8 +46,10 @@ signals:
     void todayRowChanged();
 
 private:
+    bool isCollapsed(const QString &groupId) const;
+
     TimelineModel *m_sourceModel = nullptr;
-    QSet<QString> m_collapsed;
+    QHash<QString, bool> m_collapsed;
 };
 
 #endif // TRIPGROUPPROXYMODEL_H

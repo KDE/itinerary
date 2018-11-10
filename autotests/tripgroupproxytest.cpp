@@ -84,6 +84,9 @@ private slots:
         QAbstractItemModelTester tester(&proxy);
 #endif
         proxy.setSourceModel(&model);
+        proxy.expand(addSpy.at(0).at(0).toString());
+        proxy.expand(addSpy.at(1).at(0).toString());
+        proxy.expand(addSpy.at(2).at(0).toString());
 
         ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r0.model"));
         vp0.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
