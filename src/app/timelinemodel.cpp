@@ -677,7 +677,6 @@ void TimelineModel::setCurrentDateTime(const QDateTime &dt)
 
 void TimelineModel::tripGroupAdded(const QString& groupId)
 {
-    qDebug() << groupId;
     const auto g = m_tripGroupManager->tripGroup(groupId);
 
     Element beginElem{TimelineModel::TripGroup, g.beginDateTime(), groupId};
@@ -698,7 +697,6 @@ void TimelineModel::tripGroupChanged(const QString& groupId)
 
 void TimelineModel::tripGroupRemoved(const QString& groupId)
 {
-    qDebug() << groupId;
     for (auto it = m_elements.begin(); it != m_elements.end();) {
         if ((*it).elementType != TripGroup || (*it).content.toString() != groupId) {
             ++it;
