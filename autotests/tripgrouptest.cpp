@@ -141,7 +141,9 @@ private slots:
         QTest::newRow("FLR one way multi traveller") << QStringLiteral(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json") << QStringLiteral("Peretola (January 2000)");
         QTest::newRow("Randa") << QStringLiteral(SOURCE_DIR "/../tests/randa2017.json") << QStringLiteral("Randa (September 2017)");
         QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json") << QStringLiteral("Almería (July 2017)");
-        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/deutschebahn_two-leg-return.txt.json") << QStringLiteral("Somewhere(Specific) (November 2027)");
+        QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json") << QStringLiteral("Somewhere(Specific) (November 2027)");
+        QTest::newRow("Symmetric, 2 elements") << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json") << QStringLiteral("Oslo Airport (June 2018)");
+        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json") << QStringLiteral("Nürnberg - Somewhere (March 2018)");
     }
 
     void testGroupName()
@@ -155,6 +157,7 @@ private slots:
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
+        QEXPECT_FAIL("Triangular, different PNR", "doesn't work yet", Abort);
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.reservations().size());

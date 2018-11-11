@@ -1,0 +1,111 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "8",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8000284",
+                "name": "Nürnberg Hbf"
+            },
+            "arrivalTime": "2018-02-26T14:58:00+01:00",
+            "departurePlatform": "1",
+            "departureStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8011160",
+                "name": "Berlin Hbf (tief)"
+            },
+            "departureTime": "2018-02-26T12:05:00+01:00",
+            "trainNumber": "ICE 1005"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "11",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Köln Messe/Deutz Gl.11-12"
+            },
+            "arrivalTime": "2018-03-02T11:14:00",
+            "departurePlatform": "7",
+            "departureStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8000284",
+                "name": "Nürnberg Hbf"
+            },
+            "departureTime": "2018-03-02T08:00:00+01:00",
+            "trainNumber": "ICE 728"
+        },
+        "reservationNumber": "YYY008"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8003540",
+                "name": "Somewhere"
+            },
+            "arrivalTime": "2018-03-02T12:05:00+01:00",
+            "departurePlatform": "9",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Köln Messe/Deutz Gl. 9-10"
+            },
+            "departureTime": "2018-03-02T11:40:00",
+            "trainNumber": "S0"
+        },
+        "reservationNumber": "YYY008"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "14",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "Düsseldorf Hbf"
+            },
+            "arrivalTime": "2018-03-04T15:28:00",
+            "departureStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8003540",
+                "name": "Somewhere"
+            },
+            "departureTime": "2018-03-04T15:06:00+01:00",
+            "trainNumber": "S0"
+        },
+        "reservationNumber": "ZZZ009"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "8D-G",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8011102",
+                "name": "Berlin Gesundbrunnen"
+            },
+            "arrivalTime": "2018-03-04T20:22:00+01:00",
+            "departurePlatform": "19",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Düsseldorf Hbf"
+            },
+            "departureTime": "2018-03-04T15:52:00",
+            "trainNumber": "ICE 943"
+        },
+        "reservationNumber": "ZZZ009"
+    }
+]
