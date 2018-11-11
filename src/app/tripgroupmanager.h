@@ -59,6 +59,7 @@ private:
 
     void scanAll();
     void scanOne(const std::vector<QString>::const_iterator &beginIt);
+    void checkConsistency();
     QString guessName(const TripGroup &g) const;
     QString guessDestinationFromLodging(const TripGroup &g) const;
 

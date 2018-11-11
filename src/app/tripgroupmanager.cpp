@@ -65,6 +65,7 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
         return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
     });
 
+    checkConsistency();
     scanAll();
 }
 
@@ -368,6 +369,22 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         g.setName(guessName(g));
         g.store(basePath() + groupId + QLatin1String(".json"));
         emit tripGroupChanged(groupId);
+    }
+}
+
+void TripGroupManager::checkConsistency()
+{
+    // look for dangling reservation references
+    std::vector<QString> toRemove;
+    for (auto it = m_reservationToGroupMap.constBegin(); it != m_reservationToGroupMap.constEnd(); ++it) {
+        if (!m_resMgr->hasReservation(it.key())) {
+            toRemove.push_back(it.value());
+        }
+    }
+
+    for (const auto &groupId : toRemove) {
+        qCWarning(Log) << "Removing group" << m_tripGroups.value(groupId).name() << "with dangling reservation references";
+        removeTripGroup(groupId);
     }
 }
 
