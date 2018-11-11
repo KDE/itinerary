@@ -36,6 +36,7 @@ public:
 
     void setPkPassManager(PkPassManager *mgr);
 
+    bool hasReservation(const QString &id) const;
     QVector<QString> reservations() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
