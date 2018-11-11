@@ -161,17 +161,19 @@ void TripGroupManager::reservationRemoved(const QString &resId)
     if (mapIt != m_reservationToGroupMap.constEnd()) {
         const auto groupIt = m_tripGroups.find(mapIt.value());
         Q_ASSERT(groupIt != m_tripGroups.end());
+        const auto groupId = groupIt.key(); // copy as the iterator might become invalid below
 
         auto elems = groupIt.value().elements();
         elems.removeAll(resId);
         if (elems.size() < MinimumTripElements) { // group deleted
             qDebug() << "removing trip group due to getting too small";
-            removeTripGroup(groupIt.key());
+            removeTripGroup(groupId);
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
+            groupIt.value().store(mapIt.value());
             m_reservationToGroupMap.erase(mapIt);
-            emit tripGroupChanged(groupIt.key());
+            emit tripGroupChanged(groupId);
         }
     }
 
