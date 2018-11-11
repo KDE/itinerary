@@ -76,7 +76,7 @@ bool TripGroup::load(const QString &path)
         m_elements.push_back(v.toString());
     }
 
-    return true;
+    return elems.size() >= 2;
 }
 
 void TripGroup::store(const QString &path) const
