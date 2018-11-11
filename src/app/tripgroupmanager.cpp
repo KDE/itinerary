@@ -172,7 +172,7 @@ void TripGroupManager::reservationRemoved(const QString &resId)
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
-            groupIt.value().store(mapIt.value());
+            groupIt.value().store(basePath() + mapIt.value() + QLatin1String(".json"));
             m_reservationToGroupMap.erase(mapIt);
             emit tripGroupChanged(groupId);
         }
@@ -208,6 +208,7 @@ void TripGroupManager::scanAll()
         }
 
         scanOne(it);
+        prevGroup = m_reservationToGroupMap.value(*it);
     }
 }
 
@@ -266,24 +267,26 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         // search depth reached
         // ### we probably don't want to count multi-traveler elements for this!
         if (std::distance(beginIt, it) > MaximumTripElements) {
-            qDebug() << "aborting search, maximum search depth reached";
+            qDebug() << "  aborting search, maximum search depth reached";
             break;
         }
 
         // maximum trip duration exceeded?
         const auto endDt = SortUtil::endtDateTime(res);
         if (beginDt.daysTo(endDt) > MaximumTripDuration) {
-            qDebug() << "aborting search, maximum trip duration reached";
+            qDebug() << "  aborting search, maximum trip duration reached";
             break;
         }
 
+        // check for connected transitions (ie. previsous arrival == current departure)
+        const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
+        const auto curDeparture = LocationUtil::departureLocation(res);
+        const auto connectedTransition = LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel);
+        qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(LocationUtil::arrivalLocation(res));
+
         if (!connectedSearchDone) {
-            // not an adjacent location change? -> not a trip group
-            const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
-            const auto curDeparture = LocationUtil::departureLocation(res);
-            qDebug() << "  changing from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
-            if (!LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel)) {
-                qDebug() << "aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
+            if (!connectedTransition) {
+                qDebug() << "  aborting connectivity search, not an adjacent transition from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(curDeparture);
                 connectedIt = m_reservations.end();
                 connectedSearchDone = true;
             } else {
@@ -292,29 +295,30 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
 
             // same location as beginIt? -> we reached the end of the trip (break)
             const auto curArrival = LocationUtil::arrivalLocation(res);
-            qDebug() << prevRes << res << "  current transition goes to" << LocationUtil::name(curArrival);
             if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
+                qDebug() << "  aborting connectivity search, arrived at the start again";
                 connectedSearchDone = true;
             }
         }
 
         if (!resNumSearchDone &&  JsonLd::canConvert<Reservation>(res)) {
             const auto resNum = JsonLd::convert<Reservation>(res).reservationNumber();
-            const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [res](const auto &elem) {
-                return elem.type == res.userType();
-            });
-            if (r == m_resNumSearch.end()) {
-                // mode of transport changed: we consider this still part of the trip if connectivity
-                // search thinks this is part of the same trip too
-                if (!connectedSearchDone) {
-                    m_resNumSearch.push_back({beginRes.userType(), resNum});
-                }
-            } else {
-                if (!resNum.isEmpty() && (*r).resNum == resNum) {
-                    resNumIt = it;
+            if (!resNum.isEmpty()) {
+                const auto r = std::find_if(m_resNumSearch.begin(), m_resNumSearch.end(), [res, resNum](const auto &elem) {
+                    return elem.type == res.userType() && elem.resNum == resNum;
+                });
+                if (r == m_resNumSearch.end()) {
+                    // mode of transport or reservation changed: we consider this still part of the trip if connectivity
+                    // search thinks this is part of the same trip too, and we are not at home again yet
+                    if (connectedTransition && !LocationUtil::isSameLocation(prevArrival, beginDeparture, LocationUtil::CityLevel)) {
+                        qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(res)) << "as part of trip despite unknown reservation number";
+                        m_resNumSearch.push_back({beginRes.userType(), resNum});
+                    } else {
+                        qDebug() << "  aborting reservation number search due to mismatch";
+                        resNumSearchDone = true;
+                    }
                 } else {
-                    qDebug() << "aborting reservation number search due to mismatch";
-                    resNumSearchDone = true;
+                    resNumIt = it;
                 }
             }
         }
@@ -332,11 +336,13 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     }
 
     if (it == m_reservations.end() || std::distance(beginIt, it) < MinimumTripElements - 1) {
+        qDebug() << "nothing found";
         return;
     }
 
     // if we are looking at an existing group, did that expand?
     if (!groupId.isEmpty() && m_reservationToGroupMap.value(*it) == groupId) {
+        qDebug() << "existing group unchanged" << m_tripGroups.value(groupId).name();
         return;
     }
 
@@ -348,7 +354,6 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     std::copy(beginIt, it, std::back_inserter(elems));
 
     if (groupId.isEmpty()) {
-        qDebug() << "creating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
         const auto tgId = QUuid::createUuid().toString();
         TripGroup g(this);
         g.setElements(elems);
@@ -356,17 +361,18 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
             m_reservationToGroupMap.insert(*it2, tgId);
         }
         g.setName(guessName(g));
+        qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
         g.store(basePath() + tgId + QLatin1String(".json"));
         emit tripGroupAdded(tgId);
     } else {
-        qDebug() << "updating trip group" << LocationUtil::name(beginDeparture) << LocationUtil::name(LocationUtil::arrivalLocation(res));
         auto &g = m_tripGroups[groupId];
         g.setElements(elems);
         for (auto it2 = beginIt; it2 != it; ++it2) {
             m_reservationToGroupMap.insert(*it2, groupId);
         }
         g.setName(guessName(g));
+        qDebug() << "updating trip group" << g.name();
         g.store(basePath() + groupId + QLatin1String(".json"));
         emit tripGroupChanged(groupId);
     }
