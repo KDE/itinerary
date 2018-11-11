@@ -374,17 +374,39 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
 
 void TripGroupManager::checkConsistency()
 {
+    std::vector<QString> tgIds;
+    tgIds.reserve(m_tripGroups.size());
+
     // look for dangling reservation references
-    std::vector<QString> toRemove;
     for (auto it = m_reservationToGroupMap.constBegin(); it != m_reservationToGroupMap.constEnd(); ++it) {
         if (!m_resMgr->hasReservation(it.key())) {
-            toRemove.push_back(it.value());
+            tgIds.push_back(it.value());
         }
     }
 
-    for (const auto &groupId : toRemove) {
+    for (const auto &groupId : tgIds) {
         qCWarning(Log) << "Removing group" << m_tripGroups.value(groupId).name() << "with dangling reservation references";
         removeTripGroup(groupId);
+    }
+    tgIds.clear();
+
+    // look for nested groups
+    std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(tgIds));
+    std::sort(tgIds.begin(), tgIds.end(), [this](const auto &lhs, const auto &rhs) {
+        return m_tripGroups.value(lhs).beginDateTime() < m_tripGroups.value(rhs).beginDateTime();
+    });
+    for (auto it = tgIds.begin();;) {
+        it = std::adjacent_find(it, tgIds.end(), [this](const auto &lhs, const auto &rhs) {
+            return m_tripGroups.value(lhs).endDateTime() > m_tripGroups.value(rhs).beginDateTime();
+        });
+        if (it == tgIds.end()) {
+            break;
+        }
+        // remove both nested groups
+        qCWarning(Log) << "Removing group" << m_tripGroups.value(*it).name() << "due to overlapping with following group";
+        it = tgIds.erase(it);
+        qCWarning(Log) << "Removing group" << m_tripGroups.value(*it).name() << "due to overlapping with previous group";
+        it = tgIds.erase(it);
     }
 }
 
