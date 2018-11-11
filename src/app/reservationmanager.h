@@ -52,6 +52,7 @@ signals:
     void reservationRemoved(const QString &id);
 
 private:
+    static QString basePath();
     void importReservations(const QVector<QVariant> &resData);
 
     void passAdded(const QString &passId);

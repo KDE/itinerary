@@ -56,11 +56,11 @@ void ReservationManager::setPkPassManager(PkPassManager* mgr)
 
 QVector<QString> ReservationManager::reservations() const
 {
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations");
-    QDir::root().mkpath(basePath);
+    const auto base = basePath();
+    QDir::root().mkpath(base);
 
     QVector<QString> resIds;
-    for (QDirIterator it(basePath, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
+    for (QDirIterator it(base, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
         it.next();
         resIds.push_back(it.fileInfo().baseName());
     }
@@ -79,7 +79,7 @@ QVariant ReservationManager::reservation(const QString& id) const
         return it.value();
     }
 
-    const QString resPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/") + id + QLatin1String(".jsonld");
+    const QString resPath = basePath() + id + QLatin1String(".jsonld");
     QFile f(resPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath << f.errorString();
@@ -109,6 +109,11 @@ QVariant ReservationManager::reservation(const QString& id) const
     const auto res = postproc.result().at(0);
     m_reservations.insert(id, res);
     return res;
+}
+
+QString ReservationManager::basePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/reservations/");
 }
 
 void ReservationManager::importReservation(const QByteArray& data)
