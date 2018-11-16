@@ -27,10 +27,12 @@ App.TimelineDelegate {
 
     function airportDisplayString(airport)
     {
-        if (airport.name) {
-            return airport.name;
-        }
-        return airport.iataCode;
+        return airport.name ? airport.name : airport.iataCode;
+    }
+
+    function airportDisplayCode(airport)
+    {
+        return airport.iataCode ? airport.iataCode : airport.name;
     }
 
     function seatString() {
@@ -50,8 +52,8 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("%1 %2 → %3",
                 reservationFor.airline.iataCode + " " + reservationFor.flightNumber,
-                reservationFor.departureAirport.iataCode,
-                reservationFor.arrivalAirport.iataCode)
+                airportDisplayCode(reservationFor.departureAirport),
+                airportDisplayCode(reservationFor.arrivalAirport))
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
