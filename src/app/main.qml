@@ -23,7 +23,6 @@ import "." as App
 
 Kirigami.ApplicationWindow {
     title: i18n("KDE Itinerary")
-    header: Kirigami.ApplicationHeader {}
     reachableModeEnabled: false
 
     width: 480
