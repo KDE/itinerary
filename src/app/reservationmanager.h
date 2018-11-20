@@ -46,6 +46,7 @@ public:
     Q_INVOKABLE void removeReservations(const QStringList &ids);
 
     void importReservation(const QByteArray &data);
+    void importReservations(const QVector<QVariant> &resData);
 
 signals:
     void reservationAdded(const QString &id);
@@ -54,7 +55,6 @@ signals:
 
 private:
     static QString basePath();
-    void importReservations(const QVector<QVariant> &resData);
 
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId);

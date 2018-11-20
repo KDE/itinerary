@@ -22,7 +22,6 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/ExtractorEngine>
-#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/PdfDocument>
@@ -433,23 +432,13 @@ void ApplicationController::importPdf(const QByteArray &data)
     ExtractorEngine engine;
     engine.setContextDate(QDateTime::currentDateTime());
     engine.setPdfDocument(doc.get());
-    ExtractorPostprocessor postproc;
-    postproc.setContextDate(QDateTime::currentDateTime());
-    postproc.process(JsonLdDocument::fromJson(engine.extract()));
-    const auto res = postproc.result();
-    for (const auto &r : res) {
-        m_resMgr->addReservation(r);
-    }
+    m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
 
 void ApplicationController::importIataBcbp(const QByteArray &data)
 {
     const auto content = IataBcbpParser::parse(QString::fromUtf8(data), QDate::currentDate());
-    ExtractorPostprocessor postproc;
-    postproc.setContextDate(QDateTime::currentDateTime());
-    postproc.process(content);
-    for (const auto  &res : postproc.result())
-        m_resMgr->addReservation(res);
+    m_resMgr->importReservations(content);
 }
 
 void ApplicationController::checkCalendar()
