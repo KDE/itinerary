@@ -212,7 +212,7 @@ void TripGroupManager::scanAll()
     }
 }
 
-void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &beginIt)
+void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 {
     const auto beginRes = m_resMgr->reservation(*beginIt);
     const auto beginDeparture = LocationUtil::departureLocation(beginRes);
@@ -334,8 +334,31 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
         it = connectedIt == m_reservations.end() ? resNumIt : connectedIt;
     }
 
-    if (it == m_reservations.end() || std::distance(beginIt, it) < MinimumTripElements - 1) {
+    if (it == m_reservations.end()) {
         qDebug() << "nothing found";
+        return;
+    }
+
+    // remove leading loop appendices (trailing ones will be cut by the loop check above already)
+    const auto endRes = m_resMgr->reservation(*it);
+    const auto endArrival = LocationUtil::arrivalLocation(endRes);
+    for (auto it2 = beginIt; it2 != it; ++it2) {
+        const auto res = m_resMgr->reservation(*it2);
+        if (!LocationUtil::isLocationChange(res)) {
+            continue;
+        }
+        const auto curDeparture = LocationUtil::departureLocation(res);
+        if (LocationUtil::isSameLocation(endArrival, curDeparture, LocationUtil::CityLevel)) {
+            if (beginIt != it2) {
+                qDebug() << "  removing leading appendix, starting at" << LocationUtil::name(curDeparture);
+            }
+            beginIt = it2;
+            break;
+        }
+    }
+
+    if (std::distance(beginIt, it) < MinimumTripElements - 1) {
+        qDebug() << "trip too short";
         return;
     }
 

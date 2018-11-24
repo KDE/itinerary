@@ -162,6 +162,20 @@ private slots:
         QCOMPARE(g.elements().size(), resMgr.reservations().size());
         QCOMPARE(g.name(), expectedName);
     }
+
+    void testLeadingAppendixRemoval()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QStringLiteral(SOURCE_DIR "/data/tripgroup/leading-appendix.json")));
+        TripGroupManager mgr;
+        QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+        mgr.setReservationManager(&resMgr);
+        QCOMPARE(addSpy.size(), 1);
+        auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
+        QCOMPARE(g.elements().size(), resMgr.reservations().size() - 1);
+        QCOMPARE(g.name(), QStringLiteral("Oslo Airport (June 2000)"));
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 
