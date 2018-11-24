@@ -217,7 +217,6 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     const auto beginRes = m_resMgr->reservation(*beginIt);
     const auto beginDeparture = LocationUtil::departureLocation(beginRes);
     const auto beginDt = SortUtil::startDateTime(beginRes);
-    const auto groupId = m_reservationToGroupMap.value(*beginIt);
 
     m_resNumSearch.clear();
     if (JsonLd::canConvert<Reservation>(beginRes)) {
@@ -341,6 +340,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
     }
 
     // if we are looking at an existing group, did that expand?
+    const auto groupId = m_reservationToGroupMap.value(*beginIt);
     if (!groupId.isEmpty() && m_reservationToGroupMap.value(*it) == groupId) {
         qDebug() << "existing group unchanged" << m_tripGroups.value(groupId).name();
         return;
