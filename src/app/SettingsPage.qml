@@ -55,6 +55,7 @@ Kirigami.ScrollablePage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
+            wrapMode: Text.WordWrap
             text: i18n("Showing weather forecasts will query online services.")
             visible: !weatherSwitch.checked
         }
