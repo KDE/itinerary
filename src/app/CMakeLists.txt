@@ -9,12 +9,15 @@ set(itinerary_srcs
     tripgroup.cpp
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
+    brightnessmanager.cpp
+    solidbrightnessbackend.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
     HEADER logging.h
     IDENTIFIER Log
     CATEGORY_NAME org.kde.itinerary
 )
+qt5_add_dbus_interface(itinerary_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
@@ -23,6 +26,7 @@ target_link_libraries(itinerary PUBLIC
     KF5::I18n
     Qt5::Network
     Qt5::Quick
+    Qt5::DBus
 )
 
 if (Qt5QuickCompiler_FOUND)
@@ -103,7 +107,7 @@ if (ANDROID)
         weather-storm
     )
 else ()
-    target_link_libraries(itinerary PRIVATE Qt5::Positioning)
+    target_link_libraries(itinerary PRIVATE Qt5::Positioning Qt5::DBus)
     target_link_libraries(itinerary-app PRIVATE
         KF5::DBusAddons
         Qt5::Widgets

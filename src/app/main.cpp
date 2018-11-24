@@ -32,6 +32,7 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
+#include "brightnessmanager.h"
 
 #include <weatherforecastmanager.h>
 
@@ -131,6 +132,7 @@ int main(int argc, char **argv)
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
+    BrightnessManager brightnessManager;
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
@@ -188,6 +190,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
+    engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());

@@ -30,6 +30,11 @@ Rectangle {
     radius: 6
     Layout.alignment: Qt.AlignCenter
 
+    MouseArea {
+        anchors.fill: parent
+        onDoubleClicked: _brightnessManager.maxBrightness();
+    }
+
     ColumnLayout {
         id: barcodeLayout
         anchors.fill: parent

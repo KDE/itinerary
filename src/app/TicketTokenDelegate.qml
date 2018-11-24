@@ -62,6 +62,11 @@ ColumnLayout {
             implicitHeight: visible ? implicitWidth : 0
             visible: barcode.implicitHeight > 0
 
+            MouseArea {
+                anchors.fill: parent
+                onDoubleClicked: _brightnessManager.maxBrightness();
+            }
+
             Prison.Barcode {
                 id: barcode
                 anchors.fill: background
