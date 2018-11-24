@@ -9,15 +9,12 @@ set(itinerary_srcs
     tripgroup.cpp
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
-    brightnessmanager.cpp
-    solidbrightnessbackend.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
     HEADER logging.h
     IDENTIFIER Log
     CATEGORY_NAME org.kde.itinerary
 )
-qt5_add_dbus_interface(itinerary_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
@@ -26,7 +23,6 @@ target_link_libraries(itinerary PUBLIC
     KF5::I18n
     Qt5::Network
     Qt5::Quick
-    Qt5::DBus
 )
 
 if (Qt5QuickCompiler_FOUND)
@@ -35,7 +31,7 @@ else ()
     set(qml_srcs qml.qrc)
 endif()
 
-add_executable(itinerary-app
+set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
     localizer.cpp
@@ -44,7 +40,14 @@ add_executable(itinerary-app
     util.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
+    brightnessmanager.cpp
 )
+if (NOT ANDROID)
+    list(APPEND itinerary_app_srcs solidbrightnessbackend.cpp)
+    qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
+endif()
+
+add_executable(itinerary-app ${itinerary_app_srcs})
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
