@@ -312,7 +312,7 @@ void TripGroupManager::scanOne(const std::vector<QString>::const_iterator &begin
                     // search thinks this is part of the same trip too, and we are not at home again yet
                     if (connectedTransition && !LocationUtil::isSameLocation(prevArrival, beginDeparture, LocationUtil::CityLevel)) {
                         qDebug() << "  considering transition to" << LocationUtil::name(LocationUtil::arrivalLocation(res)) << "as part of trip despite unknown reservation number";
-                        m_resNumSearch.push_back({beginRes.userType(), resNum});
+                        m_resNumSearch.push_back({res.userType(), resNum});
                     } else {
                         qDebug() << "  aborting reservation number search due to mismatch";
                         resNumSearchDone = true;
