@@ -362,21 +362,20 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         return;
     }
 
-    // if we are looking at an existing group, did that expand?
-    const auto groupId = m_reservationToGroupMap.value(*beginIt);
-    if (!groupId.isEmpty() && m_reservationToGroupMap.value(*it) == groupId) {
-        qDebug() << "existing group unchanged" << m_tripGroups.value(groupId).name();
-        return;
-    }
-
-    ++it; // so this marks the end
-
     // create a trip for [beginIt, it)
+    ++it; // so this marks the end
     QVector<QString> elems;
     elems.reserve(std::distance(beginIt, it));
     std::copy(beginIt, it, std::back_inserter(elems));
 
-    if (groupId.isEmpty()) {
+    // if we are looking at an existing group, did that expand?
+    const auto groupIt = m_tripGroups.find(m_reservationToGroupMap.value(*beginIt));
+    if (groupIt != m_tripGroups.end() && groupIt.value().elements() == elems) {
+        qDebug() << "existing group unchanged" << groupIt.value().name();
+        return;
+    }
+
+    if (groupIt == m_tripGroups.end()) {
         const auto tgId = QUuid::createUuid().toString();
         TripGroup g(this);
         g.setElements(elems);
@@ -389,15 +388,18 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         g.store(basePath() + tgId + QLatin1String(".json"));
         emit tripGroupAdded(tgId);
     } else {
-        auto &g = m_tripGroups[groupId];
+        auto &g = groupIt.value();
+        for (const auto &elem : g.elements()) { // remove old element mappings, some of them might no longer be valid
+            m_reservationToGroupMap.remove(elem);
+        }
         g.setElements(elems);
         for (auto it2 = beginIt; it2 != it; ++it2) {
-            m_reservationToGroupMap.insert(*it2, groupId);
+            m_reservationToGroupMap.insert(*it2, groupIt.key());
         }
         g.setName(guessName(g));
         qDebug() << "updating trip group" << g.name();
-        g.store(basePath() + groupId + QLatin1String(".json"));
-        emit tripGroupChanged(groupId);
+        g.store(basePath() + groupIt.key() + QLatin1String(".json"));
+        emit tripGroupChanged(groupIt.key());
     }
 }
 
