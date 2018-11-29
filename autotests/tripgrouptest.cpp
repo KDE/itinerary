@@ -29,7 +29,7 @@ class TripGroupTest : public QObject
 private:
     void clearReservations(ReservationManager *mgr)
     {
-        for (const auto id : mgr->reservations()) {
+        for (const auto &id : mgr->reservations()) {
             mgr->removeReservation(id);
         }
     }

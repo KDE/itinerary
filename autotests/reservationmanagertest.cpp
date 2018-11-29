@@ -30,15 +30,16 @@ class ReservationManagerTest : public QObject
 private:
     void clearReservations(ReservationManager *mgr)
     {
-        for (const auto id : mgr->reservations()) {
+        for (const auto &id : mgr->reservations()) {
             mgr->removeReservation(id);
         }
     }
 
     void clearPasses(PkPassManager *mgr)
     {
-        for (const auto id : mgr->passes())
+        for (const auto &id : mgr->passes()) {
             mgr->removePass(id);
+        }
     }
 
     QByteArray readFile(const QString &fn)
@@ -71,7 +72,7 @@ private slots:
 
         auto res = mgr.reservations();
         QCOMPARE(res.size(), 1);
-        const auto resId = res.at(0);
+        const auto &resId = res.at(0);
         QVERIFY(!resId.isEmpty());
 
         QCOMPARE(addSpy.size(), 1);

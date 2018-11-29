@@ -30,13 +30,14 @@ class AppControllerTest : public QObject
 private:
     void clearPasses(PkPassManager *mgr)
     {
-        for (const auto id : mgr->passes())
+        for (const auto &id : mgr->passes()) {
             mgr->removePass(id);
+        }
     }
 
     void clearReservations(ReservationManager *mgr)
     {
-        for (const auto id : mgr->reservations()) {
+        for (const auto &id : mgr->reservations()) {
             mgr->removeReservation(id);
         }
     }
