@@ -1,0 +1,112 @@
+/*
+    Copyright (C) 2018 Volker Krause <vkrause@kde.org>
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Library General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or (at your
+    option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
+    License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#include "journey.h"
+#include "datatypes_p.h"
+
+using namespace KPublicTransport;
+
+namespace KPublicTransport {
+
+class JourneySectionPrivate : public QSharedData
+{
+public:
+    QDateTime departureTime;
+    QDateTime arrivalTime;
+    Location from;
+    Location to;
+    Route route;
+};
+
+class JourneyPrivate : public QSharedData
+{
+public:
+    std::vector<JourneySection> sections;
+};
+
+}
+
+KPUBLICTRANSPORT_MAKE_GADGET(JourneySection)
+
+QDateTime JourneySection::departureTime() const
+{
+    return d->departureTime;
+}
+
+void JourneySection::setDepartureTime(const QDateTime &dt)
+{
+    d.detach();
+    d->departureTime = dt;
+}
+
+QDateTime JourneySection::arrivalTime() const
+{
+    return d->arrivalTime;
+}
+
+void JourneySection::setArrivalTime(const QDateTime &dt)
+{
+    d.detach();
+    d->arrivalTime = dt;
+}
+
+Location JourneySection::from() const
+{
+    return d->from;
+}
+
+void JourneySection::setFrom(const Location &from)
+{
+    d.detach();
+    d->from = from;
+}
+
+Location JourneySection::to() const
+{
+    return d->to;
+}
+
+void JourneySection::setTo(const Location &to)
+{
+    d.detach();
+    d->to = to;
+}
+
+Route JourneySection::route() const
+{
+    return d->route;
+}
+
+void JourneySection::setRoute(const Route &route)
+{
+    d.detach();
+    d->route = route;
+}
+
+
+KPUBLICTRANSPORT_MAKE_GADGET(Journey)
+
+const std::vector<JourneySection>& Journey::sections() const
+{
+    return d->sections;
+}
+
+void Journey::setSections(std::vector<JourneySection> &&sections)
+{
+    d.detach();
+    d->sections = std::move(sections);
+}
