@@ -20,7 +20,7 @@
 
 #include <vector>
 
-class QNetworkReply;
+class QByteArray;
 
 namespace KPublicTransport {
 
@@ -29,7 +29,7 @@ class Journey;
 /** Navitia REST response parser. */
 namespace NavitiaParser
 {
-    std::vector<Journey> parseJourneys(QNetworkReply *reply);
+    std::vector<Journey> parseJourneys(const QByteArray &data);
 }
 
 }

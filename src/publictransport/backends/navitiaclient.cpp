@@ -39,6 +39,8 @@ QNetworkReply* NavitiaClient::findJourney(const Location &from, const Location &
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("from"), QString::number(from.latitude()) + QLatin1Char(';') + QString::number(from.longitude()));
     query.addQueryItem(QStringLiteral("to"), QString::number(to.latitude()) + QLatin1Char(';') + QString::number(to.longitude()));
+    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true")); // ### seems to have no effect?
+    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0")); // ### also has no effect?
     // TODO: disable reply parts we don't care about
     url.setQuery(query);
 
@@ -46,5 +48,6 @@ QNetworkReply* NavitiaClient::findJourney(const Location &from, const Location &
     req.setRawHeader("Authorization", "48ed1733-d3f0-445a-9210-9fb36e20a8a3"); // ### this is the test key
     // TODO: support compression
 
+    qDebug() << "GET:" << url;
     return nam->get(req);
 }

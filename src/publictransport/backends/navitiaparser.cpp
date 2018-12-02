@@ -23,9 +23,20 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QNetworkReply>
 
 using namespace KPublicTransport;
+
+static Location parseLocation(const QJsonObject &obj)
+{
+    Location loc;
+    // TODO parse more fields
+
+    const auto embObj = obj.value(obj.value(QLatin1String("embedded_type")).toString()).toObject();
+    const auto coord = embObj.value(QLatin1String("coord")).toObject();
+    loc.setCoordinate(coord.value(QLatin1String("lat")).toString().toDouble(), coord.value(QLatin1String("lon")).toString().toDouble());
+
+    return loc;
+}
 
 static JourneySection parseJourneySection(const QJsonObject &obj)
 {
@@ -43,7 +54,8 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     section.setRoute(route);
     section.setDepartureTime(QDateTime::fromString(obj.value(QLatin1String("departure_date_time")).toString(), QStringLiteral("yyyyMMddTHHmmss")));
     section.setArrivalTime(QDateTime::fromString(obj.value(QLatin1String("arrival_date_time")).toString(), QStringLiteral("yyyyMMddTHHmmss")));
-    // TODO parse locations
+    section.setFrom(parseLocation(obj.value(QLatin1String("from")).toObject()));
+    section.setTo(parseLocation(obj.value(QLatin1String("to")).toObject()));
     return section;
 }
 
@@ -61,9 +73,9 @@ static Journey parseJourney(const QJsonObject &obj)
     return journey;
 }
 
-std::vector<Journey> NavitiaParser::parseJourneys(QNetworkReply *reply)
+std::vector<Journey> NavitiaParser::parseJourneys(const QByteArray &data)
 {
-    const auto topObj = QJsonDocument::fromJson(reply->readAll()).object();
+    const auto topObj = QJsonDocument::fromJson(data).object();
     const auto journeys = topObj.value(QLatin1String("journeys")).toArray();
 
     std::vector<Journey> res;

@@ -44,7 +44,7 @@ int main(int argc, char **argv)
             app.exit();
         } else {
             qDebug() << "Success!";
-            auto res = NavitiaParser::parseJourneys(reply);
+            auto res = NavitiaParser::parseJourneys(reply->readAll());
 
             for (const auto &journey : res) {
                 qDebug() << journey.sections().size();
