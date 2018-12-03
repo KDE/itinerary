@@ -16,20 +16,39 @@
 */
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/NavitiaClient>
 #include <KPublicTransport/NavitiaParser>
 
-#include <QCoreApplication>
+#include <QQmlApplicationEngine>
+#include <QQmlContext>
+
 #include <QDateTime>
+#include <QDebug>
+#include <QGuiApplication>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QUrl>
+
 
 using namespace KPublicTransport;
 
 int main(int argc, char **argv)
 {
-    QCoreApplication app(argc, argv);
+    QCoreApplication::setApplicationName(QStringLiteral("journeyquery"));
+    QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
+    QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
+    QGuiApplication app(argc, argv);
+
+    qmlRegisterUncreatableType<KPublicTransport::Line>("org.kde.kpublictransport", 1, 0, "Line", {});
+    qmlRegisterUncreatableType<KPublicTransport::JourneySection>("org.kde.kpublictransport", 1, 0, "JourneySection", {});
+
+    QQmlApplicationEngine engine;
+    engine.load(QStringLiteral("qrc:/journeyquery.qml"));
 
     QNetworkAccessManager nam;
 
@@ -38,13 +57,17 @@ int main(int argc, char **argv)
     Location to;
     to.setCoordinate(2.37708, 48.84388);
     auto reply = NavitiaClient::findJourney(from, to, QDateTime::currentDateTime(), &nam);
-    QObject::connect(reply, &QNetworkReply::finished, [reply, &app]{
+    QObject::connect(reply, &QNetworkReply::finished, [reply, &app, &engine]{
         if (reply->error() != QNetworkReply::NoError) {
             qDebug() << reply->errorString();
             app.exit();
         } else {
             qDebug() << "Success!";
             auto res = NavitiaParser::parseJourneys(reply->readAll());
+            QVariantList l;
+            l.reserve(res.size());
+            std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
+            engine.rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
 
             for (const auto &journey : res) {
                 qDebug() << journey.sections().size();
@@ -54,9 +77,8 @@ int main(int argc, char **argv)
                     qDebug() << " To" << section.to().name() << section.arrivalTime();
                 }
             }
-            app.exit();
         }
     });
 
-    return QCoreApplication::exec();
+    return app.exec();
 }

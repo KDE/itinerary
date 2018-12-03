@@ -18,6 +18,8 @@
 #include "journey.h"
 #include "datatypes_p.h"
 
+#include <QVariant>
+
 using namespace KPublicTransport;
 
 namespace KPublicTransport {
@@ -121,6 +123,14 @@ void Journey::setSections(std::vector<JourneySection> &&sections)
 {
     d.detach();
     d->sections = std::move(sections);
+}
+
+QVariantList Journey::sectionsVariant() const
+{
+    QVariantList l;
+    l.reserve(d->sections.size());
+    std::transform(d->sections.begin(), d->sections.end(), std::back_inserter(l), [](const auto &sec) { return QVariant::fromValue(sec); });
+    return l;
 }
 
 #include "moc_journey.cpp"

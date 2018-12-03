@@ -45,7 +45,7 @@ class JourneySection
     /** Arrival location of this segment. */
     Q_PROPERTY(KPublicTransport::Location to READ to WRITE setTo)
     /** Route to take on this segment. */
-    Q_PROPERTY(Route route READ route WRITE setRoute)
+    Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
 
     // TODO: planned vs. expected times?
 
@@ -79,11 +79,15 @@ class JourneyPrivate;
 class Journey
 {
     KPUBLICTRANSPORT_GADGET(Journey)
+    Q_PROPERTY(QVariantList sections READ sectionsVariant)
 public:
     /** The journey sections. */
     const std::vector<JourneySection>& sections() const;
     /** Sets the journey sections. */
     void setSections(std::vector<JourneySection> &&sections);
+
+private:
+    QVariantList sectionsVariant() const;
 };
 
 }
