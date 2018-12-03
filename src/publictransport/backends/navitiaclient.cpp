@@ -46,7 +46,6 @@ QNetworkReply* NavitiaClient::findJourney(const Location &from, const Location &
 
     QNetworkRequest req(url);
     req.setRawHeader("Authorization", "48ed1733-d3f0-445a-9210-9fb36e20a8a3"); // ### this is the test key
-    // TODO: support compression
 
     qDebug() << "GET:" << url;
     return nam->get(req);
