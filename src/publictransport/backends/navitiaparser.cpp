@@ -19,6 +19,7 @@
 
 #include <KPublicTransport/Journey>
 
+#include <QColor>
 #include <QDebug>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -29,6 +30,7 @@ using namespace KPublicTransport;
 static Location parseLocation(const QJsonObject &obj)
 {
     Location loc;
+    loc.setName(obj.value(QLatin1String("name")).toString());
     // TODO parse more fields
 
     const auto embObj = obj.value(obj.value(QLatin1String("embedded_type")).toString()).toObject();
@@ -44,7 +46,8 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
 
     Line line;
     line.setName(displayInfo.value(QLatin1String("label")).toString());
-    // TODO parse colors
+    line.setColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("color")).toString()));
+    line.setTextColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("text_color")).toString()));
 
     Route route;
     route.setDirection(displayInfo.value(QLatin1String("direction")).toString());
@@ -56,6 +59,18 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     section.setArrivalTime(QDateTime::fromString(obj.value(QLatin1String("arrival_date_time")).toString(), QStringLiteral("yyyyMMddTHHmmss")));
     section.setFrom(parseLocation(obj.value(QLatin1String("from")).toObject()));
     section.setTo(parseLocation(obj.value(QLatin1String("to")).toObject()));
+
+    const auto typeStr = obj.value(QLatin1String("type")).toString();
+    if (typeStr == QLatin1String("public_transport")) {
+        section.setMode(JourneySection::PublicTransport);
+    } else if (typeStr == QLatin1String("transfer")) {
+        section.setMode(JourneySection::Transfer);
+    } else if (typeStr == QLatin1String("street_network")) {
+        section.setMode(JourneySection::Walking);
+    } else if (typeStr == QLatin1String("waiting")) {
+        section.setMode(JourneySection::Waiting);
+    }
+
     return section;
 }
 

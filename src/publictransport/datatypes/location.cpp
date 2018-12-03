@@ -28,6 +28,7 @@ namespace KPublicTransport {
 class LocationPrivate : public QSharedData
 {
 public:
+    QString name;
     float latitude = NAN;
     float longitude = NAN;
 };
@@ -35,6 +36,17 @@ public:
 }
 
 KPUBLICTRANSPORT_MAKE_GADGET(Location)
+
+QString Location::name() const
+{
+    return d->name;
+}
+
+void Location::setName(const QString &name)
+{
+    d.detach();
+    d->name = name;
+}
 
 float Location::latitude() const
 {
@@ -52,3 +64,5 @@ void Location::setCoordinate(float latitude, float longitude)
     d->latitude = latitude;
     d->longitude = longitude;
 }
+
+#include "moc_location.cpp"

@@ -34,6 +34,8 @@ class JourneySectionPrivate;
 class JourneySection
 {
     KPUBLICTRANSPORT_GADGET(JourneySection)
+    /** Mode of transport for this section. */
+    Q_PROPERTY(Mode mode READ mode WRITE setMode)
     /** Departue time for this segment. */
     Q_PROPERTY(QDateTime departureTime READ departureTime WRITE setDepartureTime)
     /** Arrival time for this segment. */
@@ -48,6 +50,17 @@ class JourneySection
     // TODO: planned vs. expected times?
 
 public:
+    /** Mode of transport. */
+    enum Mode {
+        Invalid,
+        PublicTransport,
+        Transfer,
+        Walking,
+        Waiting
+    };
+    Q_ENUM(Mode)
+    Mode mode() const;
+    void setMode(Mode mode);
     QDateTime departureTime() const;
     void setDepartureTime(const QDateTime &dt);
     QDateTime arrivalTime() const;

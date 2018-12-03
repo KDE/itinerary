@@ -28,10 +28,15 @@ class LocationPrivate;
 class Location
 {
     KPUBLICTRANSPORT_GADGET(Location)
+    /** Human-readable name of the location. */
+    Q_PROPERTY(QString name READ name WRITE setName)
 
-    // TODO: type, coords, id, address, name
+    // TODO: type, coords, id, address
 
 public:
+    QString name() const;
+    void setName(const QString &name);
+
     float latitude() const;
     float longitude() const;
     void setCoordinate(float latitude, float longitude);

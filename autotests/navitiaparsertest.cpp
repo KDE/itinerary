@@ -47,17 +47,35 @@ private slots:
             const auto journey = res[0];
             QCOMPARE(journey.sections().size(), 6);
 
-            auto sec = journey.sections()[1];
+            auto sec = journey.sections()[0];
+            QCOMPARE(sec.mode(), KPublicTransport::JourneySection::Walking);
+
+            sec = journey.sections()[1];
+            QCOMPARE(sec.mode(), KPublicTransport::JourneySection::PublicTransport);
             QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 06}));
             QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 41}));
+            QCOMPARE(sec.from().name(), QStringLiteral("Aéroport CDG 2 TGV (Le Mesnil-Amelot)"));
             QCOMPARE(sec.from().latitude(), 49.0047f);
+            QCOMPARE(sec.to().name(), QStringLiteral("Châtelet les Halles (Paris)"));
             QCOMPARE(sec.to().longitude(), 2.34701f);
             QCOMPARE(sec.route().line().name(), QStringLiteral("B"));
+            QCOMPARE(sec.route().line().color(), QColor(123, 163, 220));
+            QCOMPARE(sec.route().line().textColor(), QColor(255, 255, 255));
+
+            sec = journey.sections()[2];
+            QCOMPARE(sec.mode(), KPublicTransport::JourneySection::Transfer);
+
+            sec = journey.sections()[3];
+            QCOMPARE(sec.mode(), KPublicTransport::JourneySection::Waiting);
 
             sec = journey.sections()[4];
             QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 49}));
             QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 51}));
             QCOMPARE(sec.route().line().name(), QStringLiteral("A"));
+            QCOMPARE(sec.route().line().color(), QColor(QStringLiteral("#D1302F")));
+            QCOMPARE(sec.route().line().textColor(), QColor(255, 255, 255));
+            QCOMPARE(sec.from().name(), QStringLiteral("Châtelet les Halles (Paris)"));
+            QCOMPARE(sec.to().name(), QStringLiteral("Gare de Lyon RER A (Paris)"));
         }
 
         {

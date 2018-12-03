@@ -25,6 +25,7 @@ namespace KPublicTransport {
 class JourneySectionPrivate : public QSharedData
 {
 public:
+    JourneySection::Mode mode = JourneySection::Invalid;
     QDateTime departureTime;
     QDateTime arrivalTime;
     Location from;
@@ -41,6 +42,17 @@ public:
 }
 
 KPUBLICTRANSPORT_MAKE_GADGET(JourneySection)
+
+JourneySection::Mode JourneySection::mode() const
+{
+    return d->mode;
+}
+
+void JourneySection::setMode(JourneySection::Mode mode)
+{
+    d.detach();
+    d->mode = mode;
+}
 
 QDateTime JourneySection::departureTime() const
 {
@@ -110,3 +122,5 @@ void Journey::setSections(std::vector<JourneySection> &&sections)
     d.detach();
     d->sections = std::move(sections);
 }
+
+#include "moc_journey.cpp"

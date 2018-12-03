@@ -97,3 +97,5 @@ void Route::setDirection(const QString &direction)
     d.detach();
     d->direction = direction;
 }
+
+#include "moc_line.cpp"
