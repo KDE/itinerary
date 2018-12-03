@@ -34,6 +34,13 @@ class Line
     Q_PROPERTY(QColor color READ color WRITE setColor)
     /** Text color to use on top of the line color. */
     Q_PROPERTY(QColor textColor READ textColor WRITE setTextColor)
+    /** Type of transport. */
+    Q_PROPERTY(Mode mode READ mode WRITE setMode)
+    /** Human readable representation of the type of transport.
+     *  This is not necessarily a simple 1:1 mapping from mode, but can contain
+     *  e.g. a product name.
+     */
+    Q_PROPERTY(QString modeString READ modeString WRITE setModeString)
 
 public:
     QString name() const;
@@ -42,6 +49,31 @@ public:
     void setColor(const QColor &color);
     QColor textColor() const;
     void setTextColor(const QColor &textColor);
+
+    enum Mode { // ### direct copy from Navitia, we maybe can reduce that a bit
+        Unknown,
+        Air,
+        Boat,
+        Bus,
+        BusRapidTransit,
+        Coach,
+        Ferry,
+        Funicular,
+        LocalTrain,
+        LongDistanceTrain,
+        Metro,
+        RailShuttle,
+        RapidTransit,
+        Shuttle,
+        Taxi,
+        Train,
+        Tramway,
+    };
+    Q_ENUM(Mode)
+    Mode mode() const;
+    void setMode(Mode mode);
+    QString modeString() const;
+    void setModeString(const QString &modeString);
 };
 
 class RoutePrivate;

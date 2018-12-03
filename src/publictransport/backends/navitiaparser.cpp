@@ -18,6 +18,7 @@
 #include "navitiaparser.h"
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/Line>
 
 #include <QColor>
 #include <QDebug>
@@ -26,6 +27,43 @@
 #include <QJsonObject>
 
 using namespace KPublicTransport;
+
+struct {
+    const char *name;
+    Line::Mode mode;
+} static const navitia_phyiscal_modes[] = {
+    { "Air", Line::Air },
+    { "Boat", Line::Boat },
+    { "Bus", Line::Bus },
+    { "BusRapidTransit", Line::RapidTransit },
+    { "Coach", Line::Coach },
+    { "Ferry", Line::Ferry },
+    { "Funicular", Line::Funicular },
+    { "LocalTrain", Line::LocalTrain },
+    { "LongDistanceTrain", Line::LongDistanceTrain },
+    { "Metro", Line::Metro },
+    { "RailShuttle", Line::RailShuttle },
+    { "RapidTransit", Line::RapidTransit },
+    { "Shuttle", Line::Shuttle },
+    { "Taxi", Line::Taxi },
+    { "Train", Line::Train },
+    { "Tramway", Line::Tramway }
+};
+
+static Line::Mode parsePhysicalMode(const QString &mode)
+{
+    const auto modeStr = mode.toLatin1();
+    if (!modeStr.startsWith("physical_mode:")) {
+        return Line::Unknown;
+    }
+    for (auto it = std::begin(navitia_phyiscal_modes); it != std::end(navitia_phyiscal_modes); ++it) {
+        if (strcmp(modeStr.constData() + 14, it->name) == 0) {
+            return it->mode;
+        }
+    }
+
+    return Line::Unknown;
+}
 
 static Location parseLocation(const QJsonObject &obj)
 {
@@ -48,6 +86,16 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     line.setName(displayInfo.value(QLatin1String("label")).toString());
     line.setColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("color")).toString()));
     line.setTextColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("text_color")).toString()));
+    line.setModeString(displayInfo.value(QLatin1String("commercial_mode")).toString());
+    const auto links = obj.value(QLatin1String("links")).toArray();
+    for (const auto &v : links) {
+        const auto link = v.toObject();
+        if (link.value(QLatin1String("type")).toString() != QLatin1String("physical_mode")) {
+            continue;
+        }
+        line.setMode(parsePhysicalMode(link.value(QLatin1String("id")).toString()));
+        break;
+    }
 
     Route route;
     route.setDirection(displayInfo.value(QLatin1String("direction")).toString());

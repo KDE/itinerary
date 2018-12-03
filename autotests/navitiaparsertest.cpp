@@ -16,6 +16,7 @@
 */
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/Line>
 #include <KPublicTransport/NavitiaParser>
 
 #include <QFile>
@@ -59,6 +60,8 @@ private slots:
             QCOMPARE(sec.to().name(), QStringLiteral("Châtelet les Halles (Paris)"));
             QCOMPARE(sec.to().longitude(), 2.34701f);
             QCOMPARE(sec.route().line().name(), QStringLiteral("B"));
+            QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::RapidTransit);
+            QCOMPARE(sec.route().line().modeString(), QStringLiteral("RER"));
             QCOMPARE(sec.route().line().color(), QColor(123, 163, 220));
             QCOMPARE(sec.route().line().textColor(), QColor(255, 255, 255));
 
@@ -84,6 +87,7 @@ private slots:
 
             auto sec = journey.sections()[1];
             QCOMPARE(sec.route().line().name(), QStringLiteral("B"));
+            QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::RapidTransit);
             sec = journey.sections()[4];
             QCOMPARE(sec.route().line().name(), QStringLiteral("65"));
         }
@@ -96,6 +100,8 @@ private slots:
             QCOMPARE(sec.route().line().name(), QStringLiteral("B"));
             sec = journey.sections()[4];
             QCOMPARE(sec.route().line().name(), QStringLiteral("91"));
+            QCOMPARE(sec.route().line().modeString(), QStringLiteral("Bus"));
+            QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::Bus);
         }
 
         {
@@ -104,6 +110,8 @@ private slots:
 
             auto sec = journey.sections()[1];
             QCOMPARE(sec.route().line().name(), QStringLiteral("DIRECT 4"));
+            QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::Bus);
+            QCOMPARE(sec.route().line().modeString(), QStringLiteral("Bus"));
         }
     }
 };

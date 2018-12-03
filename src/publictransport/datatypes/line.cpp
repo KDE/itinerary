@@ -25,6 +25,8 @@ using namespace KPublicTransport;
 namespace KPublicTransport {
 class LinePrivate : public QSharedData {
 public:
+    Line::Mode mode;
+    QString modeString;
     QString name;
     QColor color;
     QColor textColor;
@@ -71,6 +73,28 @@ void Line::setTextColor(const QColor &textColor)
 {
     d.detach();
     d->textColor = textColor;
+}
+
+Line::Mode Line::mode() const
+{
+    return d->mode;
+}
+
+void Line::setMode(Line::Mode mode)
+{
+    d.detach();
+    d->mode = mode;
+}
+
+QString Line::modeString() const
+{
+    return d->modeString;
+}
+
+void Line::setModeString(const QString &modeString)
+{
+    d.detach();
+    d->modeString = modeString;
 }
 
 

@@ -49,7 +49,9 @@ int main(int argc, char **argv)
             for (const auto &journey : res) {
                 qDebug() << journey.sections().size();
                 for (const auto &section : journey.sections()) {
-                    qDebug() << section.departureTime() << section.arrivalTime() << section.route().line().name() << section.route().direction();
+                    qDebug() << " From" << section.from().name() << section.departureTime();
+                    qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
+                    qDebug() << " To" << section.to().name() << section.arrivalTime();
                 }
             }
             app.exit();
