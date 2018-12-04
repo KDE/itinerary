@@ -40,6 +40,8 @@ class JourneySection
     Q_PROPERTY(QDateTime departureTime READ departureTime WRITE setDepartureTime)
     /** Arrival time for this segment. */
     Q_PROPERTY(QDateTime arrivalTime READ arrivalTime WRITE setArrivalTime)
+    /** Duration of the section in seconds. */
+    Q_PROPERTY(int duration READ duration STORED false)
     /** Departure location of this segment. */
     Q_PROPERTY(KPublicTransport::Location from READ from WRITE setFrom)
     /** Arrival location of this segment. */
@@ -65,6 +67,7 @@ public:
     void setDepartureTime(const QDateTime &dt);
     QDateTime arrivalTime() const;
     void setArrivalTime(const QDateTime &dt);
+    int duration() const;
     Location from() const;
     void setFrom(const Location &from);
     Location to() const;
@@ -79,13 +82,23 @@ class JourneyPrivate;
 class Journey
 {
     KPUBLICTRANSPORT_GADGET(Journey)
+    /** Journey sections for consumption by QML. */
     Q_PROPERTY(QVariantList sections READ sectionsVariant)
+    /** Departure time of the journey. */
+    Q_PROPERTY(QDateTime departureTime READ departureTime STORED false)
+    /** Arrival time of the journey. */
+    Q_PROPERTY(QDateTime arrivalTime READ arrivalTime STORED false)
+    /** Duration of the entire journey in seconds. */
+    Q_PROPERTY(int duration READ duration STORED false)
 public:
     /** The journey sections. */
     const std::vector<JourneySection>& sections() const;
     /** Sets the journey sections. */
     void setSections(std::vector<JourneySection> &&sections);
 
+    QDateTime departureTime() const;
+    QDateTime arrivalTime() const;
+    int duration() const;
 private:
     QVariantList sectionsVariant() const;
 };

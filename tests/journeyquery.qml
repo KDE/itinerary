@@ -30,6 +30,15 @@ Kirigami.ApplicationWindow {
 
     pageStack.initialPage: journyQueryPage
 
+    function displayDuration(dur)
+    {
+        if (dur < 60)
+            return "<1min";
+        if (dur < 3600)
+            return Math.floor(dur/60) + "min";
+        return Math.floor(dur/3600) + ":" + Math.floor((dur % 3600)/60)
+    }
+
     Component {
         id: journyQueryPage
         Kirigami.Page {
@@ -56,13 +65,13 @@ Kirigami.ApplicationWindow {
                                 text: {
                                     switch (modelData.mode) {
                                     case JourneySection.PublicTransport:
-                                        return modelData.route.line.modeString + " " + modelData.route.line.name;
+                                        return modelData.route.line.modeString + " " + modelData.route.line.name + " " + displayDuration(modelData.duration);
                                     case JourneySection.Walking:
-                                        return "Walk";
+                                        return "Walk " + displayDuration(modelData.duration)
                                     case JourneySection.Transfer:
-                                        return "Transfer";
+                                        return "Transfer " + displayDuration(modelData.duration)
                                     case JourneySection.Waiting:
-                                        return "Wait";
+                                        return "Wait " + displayDuration(modelData.duration)
                                     return "???";
                                 }}
                             }

@@ -78,6 +78,11 @@ void JourneySection::setArrivalTime(const QDateTime &dt)
     d->arrivalTime = dt;
 }
 
+int JourneySection::duration() const
+{
+    return d->departureTime.secsTo(d->arrivalTime);
+}
+
 Location JourneySection::from() const
 {
     return d->from;
@@ -131,6 +136,27 @@ QVariantList Journey::sectionsVariant() const
     l.reserve(d->sections.size());
     std::transform(d->sections.begin(), d->sections.end(), std::back_inserter(l), [](const auto &sec) { return QVariant::fromValue(sec); });
     return l;
+}
+
+QDateTime KPublicTransport::Journey::departureTime() const
+{
+    if (!d->sections.empty()) {
+        return d->sections.front().departureTime();
+    }
+    return {};
+}
+
+QDateTime Journey::arrivalTime() const
+{
+    if (!d->sections.empty()) {
+        return d->sections.back().arrivalTime();
+    }
+    return {};
+}
+
+int Journey::duration() const
+{
+    return departureTime().secsTo(arrivalTime());
 }
 
 #include "moc_journey.cpp"
