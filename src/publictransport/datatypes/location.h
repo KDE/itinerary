@@ -20,6 +20,8 @@
 
 #include "datatypes.h"
 
+class QTimeZone;
+
 namespace KPublicTransport {
 
 class LocationPrivate;
@@ -40,6 +42,10 @@ public:
     float latitude() const;
     float longitude() const;
     void setCoordinate(float latitude, float longitude);
+
+    /** The timezone this location is in, if known. */
+    QTimeZone timeZone() const;
+    void setTimeZone(const QTimeZone &tz);
 };
 
 }

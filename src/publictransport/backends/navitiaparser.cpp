@@ -25,8 +25,18 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QTimeZone>
 
 using namespace KPublicTransport;
+
+static QDateTime parseDateTime(const QJsonValue &v, const QTimeZone &tz)
+{
+    auto dt = QDateTime::fromString(v.toString(), QStringLiteral("yyyyMMddTHHmmss"));
+    if (tz.isValid()) {
+        dt.setTimeZone(tz);
+    }
+    return dt;
+}
 
 struct {
     const char *name;
@@ -75,6 +85,14 @@ static Location parseLocation(const QJsonObject &obj)
     const auto coord = embObj.value(QLatin1String("coord")).toObject();
     loc.setCoordinate(coord.value(QLatin1String("lat")).toString().toDouble(), coord.value(QLatin1String("lon")).toString().toDouble());
 
+    auto tz = embObj.value(QLatin1String("timezone")).toString();
+    if (tz.isEmpty()) {
+        tz = embObj.value(QLatin1String("stop_area")).toObject().value(QLatin1String("timezone")).toString();
+    }
+    if (!tz.isEmpty()) {
+        loc.setTimeZone(QTimeZone(tz.toUtf8()));
+    }
+
     return loc;
 }
 
@@ -102,11 +120,11 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     route.setLine(line);
 
     JourneySection section;
-    section.setRoute(route);
-    section.setDepartureTime(QDateTime::fromString(obj.value(QLatin1String("departure_date_time")).toString(), QStringLiteral("yyyyMMddTHHmmss")));
-    section.setArrivalTime(QDateTime::fromString(obj.value(QLatin1String("arrival_date_time")).toString(), QStringLiteral("yyyyMMddTHHmmss")));
     section.setFrom(parseLocation(obj.value(QLatin1String("from")).toObject()));
     section.setTo(parseLocation(obj.value(QLatin1String("to")).toObject()));
+    section.setRoute(route);
+    section.setDepartureTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
+    section.setArrivalTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
 
     const auto typeStr = obj.value(QLatin1String("type")).toString();
     if (typeStr == QLatin1String("public_transport")) {

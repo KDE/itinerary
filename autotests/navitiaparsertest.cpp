@@ -21,6 +21,7 @@
 
 #include <QFile>
 #include <QTest>
+#include <QTimeZone>
 
 class NavitiaParserTest : public QObject
 {
@@ -48,21 +49,31 @@ private slots:
             const auto journey = res[0];
             QCOMPARE(journey.sections().size(), 6);
             QCOMPARE(journey.departureTime(), QDateTime({2018, 12, 2}, {22, 4, 51}));
+            QEXPECT_FAIL("", "tz propagation not implemented yet", Continue);
+            QCOMPARE(journey.departureTime().timeZone().id(), "Europe/Paris");
             QCOMPARE(journey.arrivalTime(), QDateTime({2018, 12, 2}, {23, 0, 15}));
+            QEXPECT_FAIL("", "tz propagation not implemented yet", Continue);
+            QCOMPARE(journey.arrivalTime().timeZone().id(), "Europe/Paris");
             QCOMPARE(journey.duration(), 3324);
 
             auto sec = journey.sections()[0];
             QCOMPARE(sec.mode(), KPublicTransport::JourneySection::Walking);
+            QEXPECT_FAIL("", "tz propagation not implemented yet", Continue);
+            QCOMPARE(sec.from().timeZone().id(), "Europe/Paris");
 
             sec = journey.sections()[1];
             QCOMPARE(sec.mode(), KPublicTransport::JourneySection::PublicTransport);
-            QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 6}));
-            QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 41}));
+            QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 6}, QTimeZone("Europe/Paris")));
+            QCOMPARE(sec.departureTime().timeZone().id(), "Europe/Paris");
+            QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 41}, QTimeZone("Europe/Paris")));
+            QCOMPARE(sec.arrivalTime().timeZone().id(), "Europe/Paris");
             QCOMPARE(sec.duration(), 2100);
             QCOMPARE(sec.from().name(), QStringLiteral("Aéroport CDG 2 TGV (Le Mesnil-Amelot)"));
             QCOMPARE(sec.from().latitude(), 49.0047f);
+            QCOMPARE(sec.from().timeZone().id(), "Europe/Paris");
             QCOMPARE(sec.to().name(), QStringLiteral("Châtelet les Halles (Paris)"));
             QCOMPARE(sec.to().longitude(), 2.34701f);
+            QCOMPARE(sec.to().timeZone().id(), "Europe/Paris");
             QCOMPARE(sec.route().line().name(), QStringLiteral("B"));
             QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::RapidTransit);
             QCOMPARE(sec.route().line().modeString(), QStringLiteral("RER"));
@@ -76,8 +87,8 @@ private slots:
             QCOMPARE(sec.mode(), KPublicTransport::JourneySection::Waiting);
 
             sec = journey.sections()[4];
-            QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 49}));
-            QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 51}));
+            QCOMPARE(sec.departureTime(), QDateTime({2018, 12, 2}, {22, 49}, QTimeZone("Europe/Paris")));
+            QCOMPARE(sec.arrivalTime(), QDateTime({2018, 12, 2}, {22, 51}, QTimeZone("Europe/Paris")));
             QCOMPARE(sec.duration(), 120);
             QCOMPARE(sec.route().line().name(), QStringLiteral("A"));
             QCOMPARE(sec.route().line().color(), QColor(QStringLiteral("#D1302F")));

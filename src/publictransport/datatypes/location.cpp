@@ -19,6 +19,8 @@
 
 #include "datatypes_p.h"
 
+#include <QTimeZone>
+
 #include <cmath>
 
 using namespace KPublicTransport;
@@ -31,6 +33,7 @@ public:
     QString name;
     float latitude = NAN;
     float longitude = NAN;
+    QTimeZone timeZone;
 };
 
 }
@@ -63,6 +66,17 @@ void Location::setCoordinate(float latitude, float longitude)
     d.detach();
     d->latitude = latitude;
     d->longitude = longitude;
+}
+
+QTimeZone Location::timeZone() const
+{
+    return d->timeZone;
+}
+
+void Location::setTimeZone(const QTimeZone &tz)
+{
+    d.detach();
+    d->timeZone = tz;
 }
 
 #include "moc_location.cpp"
