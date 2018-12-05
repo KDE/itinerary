@@ -16,10 +16,11 @@
 */
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/JourneyReply>
+#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
-#include <KPublicTransport/NavitiaClient>
-#include <KPublicTransport/NavitiaParser>
+#include <KPublicTransport/Manager>
 
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -28,7 +29,6 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QNetworkAccessManager>
-#include <QNetworkReply>
 #include <QUrl>
 
 
@@ -51,31 +51,27 @@ int main(int argc, char **argv)
     engine.load(QStringLiteral("qrc:/journeyquery.qml"));
 
     QNetworkAccessManager nam;
+    Manager ptMgr;
+    ptMgr.setNetworkAccessManager(&nam);
 
     Location from;
     from.setCoordinate(2.57110, 49.00406);
     Location to;
     to.setCoordinate(2.37708, 48.84388);
-    auto reply = NavitiaClient::findJourney(from, to, QDateTime::currentDateTime(), &nam);
-    QObject::connect(reply, &QNetworkReply::finished, [reply, &app, &engine]{
-        if (reply->error() != QNetworkReply::NoError) {
-            qDebug() << reply->errorString();
-            app.exit();
-        } else {
-            qDebug() << "Success!";
-            auto res = NavitiaParser::parseJourneys(reply->readAll());
-            QVariantList l;
-            l.reserve(res.size());
-            std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
-            engine.rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
+    auto reply = ptMgr.findJourney({from, to});
+    QObject::connect(reply, &JourneyReply::finished, [reply, &app, &engine]{
+        const auto res = reply->journeys();
+        QVariantList l;
+        l.reserve(res.size());
+        std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
+        engine.rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
 
-            for (const auto &journey : res) {
-                qDebug() << journey.sections().size();
-                for (const auto &section : journey.sections()) {
-                    qDebug() << " From" << section.from().name() << section.departureTime();
-                    qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
-                    qDebug() << " To" << section.to().name() << section.arrivalTime();
-                }
+        for (const auto &journey : res) {
+            qDebug() << journey.sections().size();
+            for (const auto &section : journey.sections()) {
+                qDebug() << " From" << section.from().name() << section.departureTime();
+                qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
+                qDebug() << " To" << section.to().name() << section.arrivalTime();
             }
         }
     });

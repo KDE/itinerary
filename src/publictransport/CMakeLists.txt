@@ -1,4 +1,8 @@
 set(kpublictransport_srcs
+    manager.cpp
+    journeyreply.cpp
+    journeyrequest.cpp
+
     backends/navitiaclient.cpp
     backends/navitiaparser.cpp
 
@@ -18,12 +22,15 @@ target_link_libraries(KPublicTransport
         Qt5::Network
 )
 
-# ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
-#     HEADER_NAMES
-#     PREFIX KPublicTransport
-#     REQUIRED_HEADERS KPublicTransport_HEADERS
-# )
-# ### for testing only
+ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
+    HEADER_NAMES
+        JourneyReply
+        JourneyRequest
+        Manager
+    PREFIX KPublicTransport
+    REQUIRED_HEADERS KPublicTransport_HEADERS
+)
+# # ### for testing only
 ecm_generate_headers(KPublicTransport_Backends_FORWARDING_HEADERS
     HEADER_NAMES
         NavitiaClient
