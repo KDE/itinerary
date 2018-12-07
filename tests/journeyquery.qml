@@ -130,11 +130,13 @@ Kirigami.ApplicationWindow {
                 }
                 QQC2.ComboBox {
                     id: journeySelector
+                    Layout.fillWidth: true
                     model: _journeys
                 }
 
                 ListView {
                     Layout.fillHeight: true
+                    Layout.fillWidth: true
                     model: _journeys[journeySelector.currentIndex].sections
                     delegate: Item {
                         implicitHeight: delegateLayout.implicitHeight
@@ -170,6 +172,11 @@ Kirigami.ApplicationWindow {
                             width: 4
                             color: modelData.route.line.color
                         }
+                    }
+
+                    QQC2.BusyIndicator {
+                        anchors.centerIn: parent
+                        running: _queryMgr.loading
                     }
                 }
 

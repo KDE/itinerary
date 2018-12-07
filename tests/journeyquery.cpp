@@ -37,6 +37,7 @@ using namespace KPublicTransport;
 class QueryManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged)
 public:
     QueryManager()
     {
@@ -45,10 +46,15 @@ public:
 
     Q_INVOKABLE void findJourney(double fromLat, double fromLon, double toLat, double toLon)
     {
+        engine->rootContext()->setContextProperty(QStringLiteral("_journeys"), QVariantList());
+        m_loading = true;
+        emit loadingChanged();
+
         Location from;
         from.setCoordinate(fromLat, fromLon);
         Location to;
         to.setCoordinate(toLat, toLon);
+
         auto reply = ptMgr.findJourney({from, to});
         QObject::connect(reply, &JourneyReply::finished, [reply, this]{
             const auto res = reply->journeys();
@@ -56,6 +62,8 @@ public:
             l.reserve(res.size());
             std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
             engine->rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
+            m_loading = false;
+            emit loadingChanged();
 
             for (const auto &journey : res) {
                 qDebug() << journey.sections().size();
@@ -68,10 +76,17 @@ public:
         });
     }
 
+    bool loading() const { return m_loading; }
+
     QQmlEngine *engine = nullptr;
+
+signals:
+    void loadingChanged();
+
 private:
     QNetworkAccessManager nam;
     Manager ptMgr;
+    bool m_loading = false;
 };
 
 int main(int argc, char **argv)
@@ -89,9 +104,9 @@ int main(int argc, char **argv)
 
     QueryManager mgr;
     QQmlApplicationEngine engine;
+    mgr.engine = &engine;
     engine.rootContext()->setContextProperty(QStringLiteral("_queryMgr"), &mgr);
     engine.load(QStringLiteral("qrc:/journeyquery.qml"));
-    mgr.engine = &engine;
     return app.exec();
 }
 
