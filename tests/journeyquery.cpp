@@ -34,6 +34,46 @@
 
 using namespace KPublicTransport;
 
+class QueryManager : public QObject
+{
+    Q_OBJECT
+public:
+    QueryManager()
+    {
+        ptMgr.setNetworkAccessManager(&nam);
+    }
+
+    Q_INVOKABLE void findJourney(double fromLat, double fromLon, double toLat, double toLon)
+    {
+        Location from;
+        from.setCoordinate(fromLat, fromLon);
+        Location to;
+        to.setCoordinate(toLat, toLon);
+        auto reply = ptMgr.findJourney({from, to});
+        QObject::connect(reply, &JourneyReply::finished, [reply, this]{
+            const auto res = reply->journeys();
+            QVariantList l;
+            l.reserve(res.size());
+            std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
+            engine->rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
+
+            for (const auto &journey : res) {
+                qDebug() << journey.sections().size();
+                for (const auto &section : journey.sections()) {
+                    qDebug() << " From" << section.from().name() << section.departureTime();
+                    qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
+                    qDebug() << " To" << section.to().name() << section.arrivalTime();
+                }
+            }
+        });
+    }
+
+    QQmlEngine *engine = nullptr;
+private:
+    QNetworkAccessManager nam;
+    Manager ptMgr;
+};
+
 int main(int argc, char **argv)
 {
     QCoreApplication::setApplicationName(QStringLiteral("journeyquery"));
@@ -47,34 +87,12 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPublicTransport::Line>("org.kde.kpublictransport", 1, 0, "Line", {});
     qmlRegisterUncreatableType<KPublicTransport::JourneySection>("org.kde.kpublictransport", 1, 0, "JourneySection", {});
 
+    QueryManager mgr;
     QQmlApplicationEngine engine;
+    engine.rootContext()->setContextProperty(QStringLiteral("_queryMgr"), &mgr);
     engine.load(QStringLiteral("qrc:/journeyquery.qml"));
-
-    QNetworkAccessManager nam;
-    Manager ptMgr;
-    ptMgr.setNetworkAccessManager(&nam);
-
-    Location from;
-    from.setCoordinate(2.57110, 49.00406);
-    Location to;
-    to.setCoordinate(2.37708, 48.84388);
-    auto reply = ptMgr.findJourney({from, to});
-    QObject::connect(reply, &JourneyReply::finished, [reply, &app, &engine]{
-        const auto res = reply->journeys();
-        QVariantList l;
-        l.reserve(res.size());
-        std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
-        engine.rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
-
-        for (const auto &journey : res) {
-            qDebug() << journey.sections().size();
-            for (const auto &section : journey.sections()) {
-                qDebug() << " From" << section.from().name() << section.departureTime();
-                qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
-                qDebug() << " To" << section.to().name() << section.arrivalTime();
-            }
-        }
-    });
-
+    mgr.engine = &engine;
     return app.exec();
 }
+
+#include "journeyquery.moc"

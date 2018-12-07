@@ -30,6 +30,80 @@ Kirigami.ApplicationWindow {
 
     pageStack.initialPage: journyQueryPage
 
+    ListModel {
+        id: exampleModel
+        ListElement {
+            name: "CDG -> Gare de Lyon"
+            fromLat: 2.57110
+            fromLon: 49.00406
+            toLat: 2.37708
+            toLon: 48.84388
+        }
+        ListElement {
+            name: "ZRH -> Randa"
+            fromLat: 8.56275
+            fromLon: 47.45050
+            toLat: 7.78315
+            toLon:  46.09901
+        }
+        ListElement {
+            name: "Gare de Midi -> Fosdem"
+            fromLat: 4.33620
+            fromLon: 50.83588
+            toLat: 4.38116
+            toLon: 50.81360
+        }
+        ListElement {
+            name: "VIE -> Akademy 2018 Accomodation"
+            fromLat: 16.56312
+            fromLon: 48.12083
+            toLat: 16.37859
+            toLon: 48.18282
+        }
+        ListElement {
+            name: "Akademy 2018 BBQ -> Accomodation"
+            fromLat: 16.43191
+            fromLon: 48.21612
+            toLat: 16.37859
+            toLon: 48.18282
+        }
+        ListElement {
+            name: "LEI -> Akademy 2017 Accomodation"
+            fromLat: -2.37251
+            fromLon: 36.84774
+            toLat: -2.44788
+            toLon: 36.83731
+        }
+        ListElement {
+            name: "Akademy 2017 Venue -> Accomodation"
+            fromLat: -2.40377
+            fromLon: 36.82784
+            toLat: -2.44788
+            toLon: 36.83731
+        }
+        ListElement {
+            name: "TXL -> Akademy 2016"
+            fromLat: 13.29281
+            fromLon: 52.55420
+            toLat: 13.41644
+            toLon: 52.52068
+        }
+        ListElement {
+            name: "SXF -> Akademy 2016"
+            fromLat: 13.51870
+            fromLon: 52.38841
+            toLat: 13.41644
+            toLon: 52.52068
+        }
+        ListElement {
+            name: "Brno central station -> Akademy 2014 venue"
+            fromLat: 16.61287
+            fromLon: 49.19069
+            toLat: 16.57564
+            toLon: 49.22462
+        }
+    }
+
     function displayDuration(dur)
     {
         if (dur < 60)
@@ -44,6 +118,16 @@ Kirigami.ApplicationWindow {
         Kirigami.Page {
             ColumnLayout {
                 anchors.fill: parent
+                QQC2.ComboBox {
+                    id: exampleSelector
+                    Layout.fillWidth: true
+                    model: exampleModel
+                    textRole: "name"
+                    onCurrentIndexChanged: {
+                        var obj = exampleModel.get(currentIndex);
+                        _queryMgr.findJourney(obj.fromLat, obj.fromLon, obj.toLat, obj.toLon);
+                    }
+                }
                 QQC2.ComboBox {
                     id: journeySelector
                     model: _journeys
