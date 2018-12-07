@@ -19,6 +19,7 @@
 
 #include <KPublicTransport/Location>
 
+#include <QDateTime>
 #include <QSharedData>
 
 using namespace KPublicTransport;
@@ -28,6 +29,8 @@ class JourneyRequestPrivate : public QSharedData {
 public:
     Location from;
     Location to;
+    QDateTime dateTime;
+    JourneyRequest::DateTimeMode dateTimeMode = JourneyRequest::Departure;
 };
 }
 
@@ -56,4 +59,28 @@ Location JourneyRequest::from() const
 Location JourneyRequest::to() const
 {
     return d->to;
+}
+
+QDateTime JourneyRequest::dateTime() const
+{
+    return d->dateTime;
+}
+
+JourneyRequest::DateTimeMode JourneyRequest::dateTimeMode() const
+{
+    return d->dateTimeMode;
+}
+
+void JourneyRequest::setDeparutreTime(const QDateTime &dt)
+{
+    d.detach();
+    d->dateTime = dt;
+    d->dateTimeMode = Departure;
+}
+
+void JourneyRequest::setArrivalTime(const QDateTime &dt)
+{
+    d.detach();
+    d->dateTime = dt;
+    d->dateTimeMode = Arrival;
 }

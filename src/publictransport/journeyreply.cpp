@@ -39,7 +39,7 @@ public:
 JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam)
     : d(new JourneyReplyPrivate)
 {
-    auto reply = NavitiaClient::findJourney(req.from(), req.to(), QDateTime::currentDateTime(), nam);
+    auto reply = NavitiaClient::findJourney(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
         if (reply->error() != QNetworkReply::NoError) {
             qDebug() << reply->errorString();

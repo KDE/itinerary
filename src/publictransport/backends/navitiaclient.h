@@ -24,14 +24,13 @@ class QNetworkReply;
 
 namespace KPublicTransport {
 
-class Location;
+class JourneyRequest;
 
 /** Navitia REST client methods. */
 namespace NavitiaClient
 {
 
-// TODO: allow to select if @p dt refers to departure or arrival
-QNetworkReply* findJourney(const Location &from, const Location &to, const QDateTime &dt, QNetworkAccessManager *nam);
+QNetworkReply* findJourney(const JourneyRequest &req, QNetworkAccessManager *nam);
 
 }
 

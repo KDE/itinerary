@@ -17,6 +17,7 @@
 
 #include "navitiaclient.h"
 
+#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 
 #include <QDateTime>
@@ -29,7 +30,7 @@
 
 using namespace KPublicTransport;
 
-QNetworkReply* NavitiaClient::findJourney(const Location &from, const Location &to, const QDateTime &startTime, QNetworkAccessManager *nam)
+QNetworkReply* NavitiaClient::findJourney(const JourneyRequest &req, QNetworkAccessManager *nam)
 {
     QUrl url;
     url.setScheme(QStringLiteral("https"));
@@ -37,16 +38,21 @@ QNetworkReply* NavitiaClient::findJourney(const Location &from, const Location &
     url.setPath(QStringLiteral("/v1/journeys"));
 
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("from"), QString::number(from.latitude()) + QLatin1Char(';') + QString::number(from.longitude()));
-    query.addQueryItem(QStringLiteral("to"), QString::number(to.latitude()) + QLatin1Char(';') + QString::number(to.longitude()));
+    query.addQueryItem(QStringLiteral("from"), QString::number(req.from().latitude()) + QLatin1Char(';') + QString::number(req.from().longitude()));
+    query.addQueryItem(QStringLiteral("to"), QString::number(req.to().latitude()) + QLatin1Char(';') + QString::number(req.to().longitude()));
+    if (req.dateTime().isValid()) {
+        query.addQueryItem(QStringLiteral("datetime"), req.dateTime().toString(QStringLiteral("yyyyMMddThhmmss")));
+        query.addQueryItem(QStringLiteral("datetime_represents"), req.dateTimeMode() == JourneyRequest::Arrival ? QStringLiteral("arrival") : QStringLiteral("departure"));
+    }
+
+    // TODO: disable reply parts we don't care about
     query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true")); // ### seems to have no effect?
     query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0")); // ### also has no effect?
-    // TODO: disable reply parts we don't care about
     url.setQuery(query);
 
-    QNetworkRequest req(url);
-    req.setRawHeader("Authorization", "48ed1733-d3f0-445a-9210-9fb36e20a8a3"); // ### this is the test key
+    QNetworkRequest netReq(url);
+    netReq.setRawHeader("Authorization", "48ed1733-d3f0-445a-9210-9fb36e20a8a3"); // ### this is the test key
 
     qDebug() << "GET:" << url;
-    return nam->get(req);
+    return nam->get(netReq);
 }

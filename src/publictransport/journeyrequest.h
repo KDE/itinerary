@@ -20,6 +20,8 @@
 
 #include <QSharedDataPointer>
 
+class QDateTime;
+
 namespace KPublicTransport {
 
 class JourneyRequestPrivate;
@@ -39,7 +41,15 @@ public:
     Location from() const;
     Location to() const;
 
-    // TODO departure/arrival time settings
+    /** Date/time at which the journey should start/end. */
+    QDateTime dateTime() const;
+    enum DateTimeMode {
+        Arrival, ///< dateTime() represents the desired arriva time.
+        Departure ///< dateTime() represents the desired departure time.
+    };
+    DateTimeMode dateTimeMode() const;
+    void setDeparutreTime(const QDateTime &dt);
+    void setArrivalTime(const QDateTime &dt);
 
 private:
     QExplicitlySharedDataPointer<JourneyRequestPrivate> d;
