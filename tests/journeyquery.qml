@@ -178,6 +178,14 @@ Kirigami.ApplicationWindow {
                         anchors.centerIn: parent
                         running: _queryMgr.loading
                     }
+
+                    QQC2.Label {
+                        anchors.centerIn: parent
+                        width: parent.width
+                        text: _queryMgr.errorMessage
+                        color: Kirigami.Theme.negativeTextColor
+                        wrapMode: Text.Wrap
+                    }
                 }
 
             }

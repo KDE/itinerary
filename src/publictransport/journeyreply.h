@@ -41,7 +41,18 @@ public:
     /** Returns the found journeys. */
     std::vector<Journey> journeys() const;
 
-    // TODO error messages
+    /** Error types. */
+    enum Error {
+        NoError, ///< Nothing went wrong.
+        NetworkError, ///< Error during network operations.
+        NotFoundError, ///< The requested journey could not be found.
+        UnknownError ///< Anything else.
+    };
+    /** Error code. */
+    Error error() const;
+    /** Textual error message. */
+    QString errorString() const;
+
 Q_SIGNALS:
     /** Emitted whenever the journey search has been completed. */
     void finished();

@@ -21,6 +21,7 @@
 #include <vector>
 
 class QByteArray;
+class QString;
 
 namespace KPublicTransport {
 
@@ -30,6 +31,8 @@ class Journey;
 namespace NavitiaParser
 {
     std::vector<Journey> parseJourneys(const QByteArray &data);
+
+    QString parseErrorMessage(const QByteArray &data);
 }
 
 }

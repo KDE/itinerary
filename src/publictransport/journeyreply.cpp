@@ -17,6 +17,7 @@
 
 #include "journeyreply.h"
 #include "journeyrequest.h"
+#include "logging.h"
 
 #include "backends/navitiaclient.h"
 #include "backends/navitiaparser.h"
@@ -33,6 +34,8 @@ namespace KPublicTransport {
 class JourneyReplyPrivate {
 public:
     std::vector<Journey> journeys;
+    QString errorMsg;
+    JourneyReply::Error error = JourneyReply::NoError;
 };
 }
 
@@ -41,11 +44,18 @@ JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam
 {
     auto reply = NavitiaClient::findJourney(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
-        if (reply->error() != QNetworkReply::NoError) {
-            qDebug() << reply->errorString();
-            // TODO
-        } else {
-            d->journeys = NavitiaParser::parseJourneys(reply->readAll());
+        switch (reply->error()) {
+            case QNetworkReply::NoError:
+                d->journeys = NavitiaParser::parseJourneys(reply->readAll());
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                d->error = NotFoundError;
+                d->errorMsg = NavitiaParser::parseErrorMessage(reply->readAll());
+                break;
+            default:
+                d->error = NetworkError;
+                d->errorMsg = reply->errorString();
+                qCDebug(Log) << reply->error() << reply->errorString();
         }
 
         emit finished();
@@ -59,4 +69,14 @@ std::vector<Journey> JourneyReply::journeys() const
 {
     // TODO avoid the copy here
     return d->journeys;
+}
+
+JourneyReply::Error JourneyReply::error() const
+{
+    return d->error;
+}
+
+QString JourneyReply::errorString() const
+{
+    return d->errorMsg;
 }

@@ -168,3 +168,12 @@ std::vector<Journey> NavitiaParser::parseJourneys(const QByteArray &data)
 
     return res;
 }
+
+QString NavitiaParser::parseErrorMessage(const QByteArray &data)
+{
+    const auto topObj = QJsonDocument::fromJson(data).object();
+    const auto errorObj = topObj.value(QLatin1String("error")).toObject();
+
+    // id field contains error enum, might also be useful
+    return errorObj.value(QLatin1String("message")).toString();
+}
