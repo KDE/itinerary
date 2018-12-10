@@ -27,7 +27,7 @@ namespace KPublicTransport {
 class JourneyRequestPrivate;
 class Location;
 
-/** Descripes a journey search. */
+/** Describes a journey search. */
 class JourneyRequest
 {
 public:

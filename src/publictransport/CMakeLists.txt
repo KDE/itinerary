@@ -1,11 +1,14 @@
 set(kpublictransport_srcs
-    manager.cpp
+    departurereply.cpp
+    departurerequest.cpp
     journeyreply.cpp
     journeyrequest.cpp
+    manager.cpp
 
     backends/navitiaclient.cpp
     backends/navitiaparser.cpp
 
+    datatypes/departure.cpp
     datatypes/journey.cpp
     datatypes/line.cpp
     datatypes/location.cpp
@@ -24,6 +27,8 @@ target_link_libraries(KPublicTransport
 
 ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
     HEADER_NAMES
+        DepartureReply
+        DepartureRequest
         JourneyReply
         JourneyRequest
         Manager
@@ -42,6 +47,7 @@ ecm_generate_headers(KPublicTransport_Backends_FORWARDING_HEADERS
 ecm_generate_headers(KPublicTransport_Datatypes_FORWARDING_HEADERS
     HEADER_NAMES
         Datatypes
+        Departure
         Journey
         Line
         Location
