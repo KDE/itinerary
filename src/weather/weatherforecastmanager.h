@@ -33,7 +33,7 @@ class QNetworkAccessManager;
 class QNetworkReply;
 class QXmlStreamReader;
 
-/** Access to weather forecast data based on geo coorinates. */
+/** Access to weather forecast data based on geo coordinates. */
 class WeatherForecastManager : public QObject
 {
     Q_OBJECT

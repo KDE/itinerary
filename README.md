@@ -52,7 +52,7 @@ options itinerary
     make-options create-apk-itinerary-app
 end options
 ```
-You will also need OpenSSL in a version matching what your Qt was built againt, which unfortunately
+You will also need OpenSSL in a version matching what your Qt was built against, which unfortunately
 is a bit more cumbersome to build, see https://wiki.openssl.org/index.php/Android.
 
 ### Building for all other platforms
