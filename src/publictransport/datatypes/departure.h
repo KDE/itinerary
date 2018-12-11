@@ -55,7 +55,7 @@ public:
     Route route() const;
     void setRoute(const Route &route);
     Location stopPoint() const;
-    void setStopPoint(Location &stopPoint);
+    void setStopPoint(const Location &stopPoint);
 };
 
 }

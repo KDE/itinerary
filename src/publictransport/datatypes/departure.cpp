@@ -72,7 +72,7 @@ Location Departure::stopPoint() const
     return d->stopPoint;
 }
 
-void Departure::setStopPoint(Location &stopPoint)
+void Departure::setStopPoint(const Location &stopPoint)
 {
     d.detach();
     d->stopPoint = stopPoint;

@@ -1,0 +1,3075 @@
+{
+  "pagination": {
+    "start_page": 0,
+    "items_on_page": 10,
+    "items_per_page": 10,
+    "total_result": 10
+  },
+  "links": [
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/stop_points/{stop_point.id}",
+      "type": "stop_point",
+      "rel": "stop_points",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/commercial_modes/{commercial_modes.id}",
+      "type": "commercial_modes",
+      "rel": "commercial_modes",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/stop_areas/{stop_area.id}",
+      "type": "stop_area",
+      "rel": "stop_areas",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/physical_modes/{physical_modes.id}",
+      "type": "physical_modes",
+      "rel": "physical_modes",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/routes/{route.id}",
+      "type": "route",
+      "rel": "routes",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/commercial_modes/{commercial_mode.id}",
+      "type": "commercial_mode",
+      "rel": "commercial_modes",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/vehicle_journeys/{vehicle_journey.id}",
+      "type": "vehicle_journey",
+      "rel": "vehicle_journeys",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/lines/{line.id}",
+      "type": "line",
+      "rel": "lines",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/physical_modes/{physical_mode.id}",
+      "type": "physical_mode",
+      "rel": "physical_modes",
+      "templated": true
+    },
+    {
+      "href": "https://api.navitia.io/v1/coverage/2.375981;48.844776/networks/{network.id}",
+      "type": "network",
+      "rel": "networks",
+      "templated": true
+    }
+  ],
+  "disruptions": [],
+  "notes": [],
+  "feed_publishers": [
+    {
+      "url": "https://www.openstreetmap.org/copyright",
+      "id": "osm",
+      "license": "ODbL",
+      "name": "openstreetmap"
+    },
+    {
+      "url": "http://www.vianavigo.com",
+      "id": "OIF",
+      "license": "ODbL",
+      "name": "Île de France Mobilités"
+    }
+  ],
+  "departures": [
+    {
+      "display_informations": {
+        "direction": "Porte de la Chapelle (Paris)",
+        "code": "65",
+        "network": "RATP",
+        "links": [],
+        "color": "008b5a",
+        "name": "Gare de Lyon - Mairie d'Aubervilliers",
+        "physical_mode": "Bus",
+        "headsign": "PORTE DE LA CHAPELLE",
+        "label": "65",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "FFFFFF",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:36281:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "36281"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3764979"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3764979"
+          }
+        ],
+        "name": "Gare de Lyon - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.845742",
+          "lon": "2.373727"
+        },
+        "label": "Gare de Lyon - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3764979",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF59513"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:59513"
+              }
+            ],
+            "name": "Porte de la Chapelle",
+            "links": [],
+            "coord": {
+              "lat": "48.898104",
+              "lon": "2.358937"
+            },
+            "label": "Porte de la Chapelle (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:59513"
+          },
+          "quality": 0,
+          "name": "Porte de la Chapelle (Paris)",
+          "id": "stop_area:OIF:SA:59513"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100065:65"
+          },
+          {
+            "type": "source",
+            "value": "100100065:65"
+          }
+        ],
+        "name": "Gare de Lyon - Porte de la Chapelle",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "forward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "65",
+          "name": "Gare de Lyon - Mairie d'Aubervilliers",
+          "links": [],
+          "color": "008b5a",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01101:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01101"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100065:65OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100065:65"
+            }
+          ],
+          "closing_time": "010100",
+          "opening_time": "054000",
+          "id": "line:OIF:100100065:65OIF442"
+        },
+        "id": "route:OIF:100100065:65"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100065:65OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:97994222-1_115865-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100065:65"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T171700",
+        "additional_informations": [],
+        "departure_date_time": "20181210T171700",
+        "base_arrival_date_time": "20181210T171700",
+        "base_departure_date_time": "20181210T171700",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Champ de Mars (Paris)",
+        "code": "87",
+        "network": "RATP",
+        "links": [],
+        "color": "652c90",
+        "name": "Champ de Mars - Bastille - Porte de Reuilly",
+        "physical_mode": "Bus",
+        "headsign": "CHAMP DE MARS",
+        "label": "87",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "FFFFFF",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:36281:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "36281"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3764979"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3764979"
+          }
+        ],
+        "name": "Gare de Lyon - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.845742",
+          "lon": "2.373727"
+        },
+        "label": "Gare de Lyon - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3764979",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8739305"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8739305"
+              }
+            ],
+            "name": "Champ de Mars Tour Eiffel",
+            "links": [],
+            "coord": {
+              "lat": "48.857298",
+              "lon": "2.29327"
+            },
+            "label": "Champ de Mars Tour Eiffel (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8739305"
+          },
+          "quality": 0,
+          "name": "Champ de Mars Tour Eiffel (Paris)",
+          "id": "stop_area:OIF:SA:8739305"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100087:87_R"
+          },
+          {
+            "type": "source",
+            "value": "100100087:87"
+          }
+        ],
+        "name": "Porte de Reuilly - Champ de Mars",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "backward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "87",
+          "name": "Champ de Mars - Bastille - Porte de Reuilly",
+          "links": [],
+          "color": "652c90",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01119:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01119"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100087:87OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100087:87"
+            }
+          ],
+          "closing_time": "004400",
+          "opening_time": "062000",
+          "id": "line:OIF:100100087:87OIF442"
+        },
+        "id": "route:OIF:100100087:87_R"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100087:87OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:98803171-1_142929-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100087:87_R"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T171700",
+        "additional_informations": [],
+        "departure_date_time": "20181210T171700",
+        "base_arrival_date_time": "20181210T171700",
+        "base_departure_date_time": "20181210T171700",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Gare Saint-Lazare (Paris)",
+        "code": "20",
+        "network": "RATP",
+        "links": [],
+        "color": "DE8B53",
+        "name": "Gare St-Lazare - Gare de Lyon",
+        "physical_mode": "Bus",
+        "headsign": "GARE SAINT-LAZARE",
+        "label": "20",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "000000",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:36281:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "36281"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3764979"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3764979"
+          }
+        ],
+        "name": "Gare de Lyon - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.845742",
+          "lon": "2.373727"
+        },
+        "label": "Gare de Lyon - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3764979",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8738400"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8738400"
+              }
+            ],
+            "name": "Gare Saint-Lazare",
+            "links": [],
+            "coord": {
+              "lat": "48.875681",
+              "lon": "2.324353"
+            },
+            "label": "Gare Saint-Lazare (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8738400"
+          },
+          "quality": 0,
+          "name": "Gare Saint-Lazare (Paris)",
+          "id": "stop_area:OIF:SA:8738400"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100020:20_R"
+          },
+          {
+            "type": "source",
+            "value": "100100020:20"
+          }
+        ],
+        "name": "Gare de Lyon - Gare Saint-Lazare",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "backward",
+        "line": {
+          "code": "20",
+          "name": "Gare St-Lazare - Gare de Lyon",
+          "links": [],
+          "color": "DE8B53",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "codifligne",
+              "value": "C01072"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100020:20OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100020:20"
+            }
+          ],
+          "closing_time": "010300",
+          "opening_time": "060000",
+          "id": "line:OIF:100100020:20OIF442"
+        },
+        "id": "route:OIF:100100020:20_R"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100020:20OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99014737-1_237601-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100020:20_R"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T171900",
+        "additional_informations": [],
+        "departure_date_time": "20181210T171900",
+        "base_arrival_date_time": "20181210T171900",
+        "base_departure_date_time": "20181210T171900",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Gare de Villiers le Bel Gonesse Arnouville (Arnouville)",
+        "code": "D",
+        "network": "RER",
+        "links": [],
+        "color": "5E9620",
+        "name": "D",
+        "physical_mode": "Train de banlieue / RER",
+        "headsign": "VUPA",
+        "label": "D",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "FFFFFF",
+        "commercial_mode": "RER",
+        "description": ""
+      },
+      "stop_point": {
+        "comment": "Accessible par rampe. Réservation avant la veille au 0970 824 142 (lundi au vendredi de 7h à 20h)",
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:41396:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "41396"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF8768603:800:D"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:8768603:800:D"
+          }
+        ],
+        "name": "Gare de Lyon RER D",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "coord": {
+          "lat": "48.843773",
+          "lon": "2.373916"
+        },
+        "label": "Gare de Lyon RER D (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:rapidtransit",
+            "name": "RER"
+          }
+        ],
+        "comments": [
+          {
+            "type": "standard",
+            "value": "Accessible par rampe. Réservation avant la veille au 0970 824 142 (lundi au vendredi de 7h à 20h)"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:8768603:800:D",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8727624"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8727624"
+              }
+            ],
+            "name": "Gare de Goussainville",
+            "links": [],
+            "coord": {
+              "lat": "49.023569",
+              "lon": "2.462444"
+            },
+            "label": "Gare de Goussainville (Goussainville)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8727624"
+          },
+          "quality": 0,
+          "name": "Gare de Goussainville (Goussainville)",
+          "id": "stop_area:OIF:SA:8727624"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF800:D_R"
+          },
+          {
+            "type": "source",
+            "value": "800:D"
+          }
+        ],
+        "name": "Gare de Corbeil Essonnes - Gare de Goussainville",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "backward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "D",
+          "name": "D",
+          "links": [],
+          "color": "5E9620",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01728:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01728"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01852"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF800:D:BusOIF741"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF800:DOIF741"
+            },
+            {
+              "type": "source",
+              "value": "800:D:Bus"
+            },
+            {
+              "type": "source",
+              "value": "800:D"
+            }
+          ],
+          "closing_time": "015400",
+          "opening_time": "040300",
+          "id": "line:OIF:800:DOIF741"
+        },
+        "id": "route:OIF:800:D_R"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:800:DOIF741"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99197843-1_12092-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:800:D_R"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:rapidtransit"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:RapidTransit"
+        },
+        {
+          "type": "network",
+          "id": "network:RER"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T171700",
+        "additional_informations": [],
+        "departure_date_time": "20181210T171900",
+        "base_arrival_date_time": "20181210T171700",
+        "base_departure_date_time": "20181210T171900",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Porte de Montempoivre (Paris)",
+        "code": "29",
+        "network": "RATP",
+        "links": [],
+        "color": "87d3df",
+        "name": "Gare St-Lazare - Porte de Montempoivre",
+        "physical_mode": "Bus",
+        "headsign": "PORTE DE MONTEMPOIVRE",
+        "label": "29",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "000000",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:29440:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "29440"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3747838"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3747838"
+          }
+        ],
+        "name": "Daumesnil - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.846037",
+          "lon": "2.377771"
+        },
+        "label": "Daumesnil - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3747838",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF59:3747838"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:59:3747838"
+            }
+          ],
+          "name": "Daumesnil / Diderot",
+          "links": [],
+          "coord": {
+            "lat": "48.846208",
+            "lon": "2.377336"
+          },
+          "label": "Daumesnil / Diderot (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:59:3747838"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF59:3747865"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:59:3747865"
+              }
+            ],
+            "name": "Porte de Montempoivre",
+            "links": [],
+            "coord": {
+              "lat": "48.841032",
+              "lon": "2.412039"
+            },
+            "label": "Porte de Montempoivre (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:59:3747865"
+          },
+          "quality": 0,
+          "name": "Porte de Montempoivre (Paris)",
+          "id": "stop_area:OIF:SA:59:3747865"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100029:29"
+          },
+          {
+            "type": "source",
+            "value": "100100029:29"
+          }
+        ],
+        "name": "Gare Saint-Lazare - Porte de Montempoivre",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "forward",
+        "line": {
+          "code": "29",
+          "name": "Gare St-Lazare - Porte de Montempoivre",
+          "links": [],
+          "color": "87d3df",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "codifligne",
+              "value": "C01079"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100029:29OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100029:29"
+            }
+          ],
+          "closing_time": "233600",
+          "opening_time": "053800",
+          "id": "line:OIF:100100029:29OIF442"
+        },
+        "id": "route:OIF:100100029:29"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100029:29OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:98172790-1_288564-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100029:29"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T172000",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172000",
+        "base_arrival_date_time": "20181210T172000",
+        "base_departure_date_time": "20181210T172000",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Gare de Laroche Migennes (Migennes)",
+        "code": "TER",
+        "network": "TER",
+        "links": [],
+        "color": "000000",
+        "name": "TER",
+        "physical_mode": "Train de banlieue / RER",
+        "headsign": "91017",
+        "label": "TER",
+        "equipments": [],
+        "text_color": "FFFFFF",
+        "commercial_mode": "RER",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:41396:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "41396"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF8768600:800:TER"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:8768600:800:TER"
+          }
+        ],
+        "name": "Gare de Lyon",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "coord": {
+          "lat": "48.844266",
+          "lon": "2.373755"
+        },
+        "label": "Gare de Lyon (Paris)",
+        "equipments": [],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:rapidtransit",
+            "name": "RER"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:8768600:800:TER",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8727100"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8727100"
+              }
+            ],
+            "name": "Gare du Nord",
+            "links": [],
+            "coord": {
+              "lat": "48.880591",
+              "lon": "2.356478"
+            },
+            "label": "Gare du Nord (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8727100"
+          },
+          "quality": 0,
+          "name": "Gare du Nord (Paris)",
+          "id": "stop_area:OIF:SA:8727100"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF800:TER"
+          },
+          {
+            "type": "source",
+            "value": "800:TER"
+          }
+        ],
+        "name": "Gare du Nord Grandes Lignes - Gare du Nord Grandes Lignes",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "forward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "TER",
+          "name": "TER",
+          "links": [],
+          "color": "000000",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01745:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01746:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01747:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01748:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01856:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01857:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01860:"
+            },
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01863:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01744"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01745"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01746"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01747"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01748"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01854"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01855"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01856"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01857"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01858"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01859"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01860"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01861"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01862"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01863"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01864"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF800:TEROIF743"
+            },
+            {
+              "type": "source",
+              "value": "800:TER"
+            }
+          ],
+          "closing_time": "012100",
+          "opening_time": "040400",
+          "id": "line:OIF:800:TEROIF743"
+        },
+        "id": "route:OIF:800:TER"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:800:TEROIF743"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99205419-1_6376-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:800:TER"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:rapidtransit"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:RapidTransit"
+        },
+        {
+          "type": "network",
+          "id": "network:TER"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T172100",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172100",
+        "base_arrival_date_time": "20181210T172100",
+        "base_departure_date_time": "20181210T172100",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Porte de Bagnolet - Louis Ganne (Paris)",
+        "code": "57",
+        "network": "RATP",
+        "links": [],
+        "color": "9c983a",
+        "name": "Porte de Bagnolet Louis Ganne - Laplace",
+        "physical_mode": "Bus",
+        "headsign": "PORTE DE BAGNOLET - LOUIS",
+        "label": "57",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "000000",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:24798:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "24798"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3926297"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3926297"
+          }
+        ],
+        "name": "Daumesnil - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.846136",
+          "lon": "2.376886"
+        },
+        "label": "Daumesnil - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3926297",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF59:3747838"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:59:3747838"
+            }
+          ],
+          "name": "Daumesnil / Diderot",
+          "links": [],
+          "coord": {
+            "lat": "48.846208",
+            "lon": "2.377336"
+          },
+          "label": "Daumesnil / Diderot (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:59:3747838"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF59435"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:59435"
+              }
+            ],
+            "name": "Porte de Bagnolet",
+            "links": [],
+            "coord": {
+              "lat": "48.864137",
+              "lon": "2.409245"
+            },
+            "label": "Porte de Bagnolet (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:59435"
+          },
+          "quality": 0,
+          "name": "Porte de Bagnolet (Paris)",
+          "id": "stop_area:OIF:SA:59435"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100057:57_R"
+          },
+          {
+            "type": "source",
+            "value": "100100057:57"
+          }
+        ],
+        "name": "Laplace RER. - Porte de Bagnolet - Louis Ganne",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "backward",
+        "line": {
+          "code": "57",
+          "name": "Porte de Bagnolet Louis Ganne - Laplace",
+          "links": [],
+          "color": "9c983a",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "codifligne",
+              "value": "C01094"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100057:57OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100057:57"
+            }
+          ],
+          "closing_time": "011200",
+          "opening_time": "054000",
+          "id": "line:OIF:100100057:57OIF442"
+        },
+        "id": "route:OIF:100100057:57_R"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100057:57OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99123316-1_128244-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100057:57_R"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T172100",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172100",
+        "base_arrival_date_time": "20181210T172100",
+        "base_departure_date_time": "20181210T172100",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Gare de Melun (Melun)",
+        "code": "D",
+        "network": "RER",
+        "links": [],
+        "color": "5E9620",
+        "name": "D",
+        "physical_mode": "Train de banlieue / RER",
+        "headsign": "ZACO",
+        "label": "D",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "FFFFFF",
+        "commercial_mode": "RER",
+        "description": ""
+      },
+      "stop_point": {
+        "comment": "Accessible par rampe. Réservation avant la veille au 0970 824 142 (lundi au vendredi de 7h à 20h)",
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:41396:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "41396"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF8768603:800:D"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:8768603:800:D"
+          }
+        ],
+        "name": "Gare de Lyon RER D",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "coord": {
+          "lat": "48.843773",
+          "lon": "2.373916"
+        },
+        "label": "Gare de Lyon RER D (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:rapidtransit",
+            "name": "RER"
+          }
+        ],
+        "comments": [
+          {
+            "type": "standard",
+            "value": "Accessible par rampe. Réservation avant la veille au 0970 824 142 (lundi au vendredi de 7h à 20h)"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:8768603:800:D",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8768100"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8768100"
+              }
+            ],
+            "name": "Gare de Corbeil Essonnes",
+            "links": [],
+            "coord": {
+              "lat": "48.613763",
+              "lon": "2.473025"
+            },
+            "label": "Gare de Corbeil Essonnes (Corbeil-Essonnes)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8768100"
+          },
+          "quality": 0,
+          "name": "Gare de Corbeil Essonnes (Corbeil-Essonnes)",
+          "id": "stop_area:OIF:SA:8768100"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF800:D"
+          },
+          {
+            "type": "source",
+            "value": "800:D"
+          }
+        ],
+        "name": "Gare de Goussainville - Gare de Corbeil Essonnes",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:RapidTransit",
+            "name": "Train de banlieue / RER"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "forward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "D",
+          "name": "D",
+          "links": [],
+          "color": "5E9620",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01728:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01728"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01852"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF800:D:BusOIF741"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF800:DOIF741"
+            },
+            {
+              "type": "source",
+              "value": "800:D:Bus"
+            },
+            {
+              "type": "source",
+              "value": "800:D"
+            }
+          ],
+          "closing_time": "015400",
+          "opening_time": "040300",
+          "id": "line:OIF:800:DOIF741"
+        },
+        "id": "route:OIF:800:D"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:800:DOIF741"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99195105-1_12470-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:800:D"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:rapidtransit"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:RapidTransit"
+        },
+        {
+          "type": "network",
+          "id": "network:RER"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T171900",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172100",
+        "base_arrival_date_time": "20181210T171900",
+        "base_departure_date_time": "20181210T172100",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Bastille (Paris)",
+        "code": "91",
+        "network": "RATP",
+        "links": [],
+        "color": "dfb03a",
+        "name": "Montparnasse 2 Gare TGV - Bastille",
+        "physical_mode": "Bus",
+        "headsign": "BASTILLE",
+        "label": "91",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "000000",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:36281:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "36281"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3764979"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3764979"
+          }
+        ],
+        "name": "Gare de Lyon - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.845742",
+          "lon": "2.373727"
+        },
+        "label": "Gare de Lyon - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3764979",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF59238"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:59238"
+              }
+            ],
+            "name": "Bastille",
+            "links": [],
+            "coord": {
+              "lat": "48.85313",
+              "lon": "2.369237"
+            },
+            "label": "Bastille (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:59238"
+          },
+          "quality": 0,
+          "name": "Bastille (Paris)",
+          "id": "stop_area:OIF:SA:59238"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100091:91"
+          },
+          {
+            "type": "source",
+            "value": "100100091:91"
+          }
+        ],
+        "name": "Montparnasse 2 - Gare TGV - Bastille",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "forward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "91",
+          "name": "Montparnasse 2 Gare TGV - Bastille",
+          "links": [],
+          "color": "dfb03a",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "000000",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01122:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01122"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100091:91OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100091:91"
+            }
+          ],
+          "closing_time": "011000",
+          "opening_time": "054000",
+          "id": "line:OIF:100100091:91OIF442"
+        },
+        "id": "route:OIF:100100091:91"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100091:91OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:99050978-1_131914-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100091:91"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T172100",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172100",
+        "base_arrival_date_time": "20181210T172100",
+        "base_departure_date_time": "20181210T172100",
+        "data_freshness": "base_schedule"
+      }
+    },
+    {
+      "display_informations": {
+        "direction": "Bastille (Paris)",
+        "code": "87",
+        "network": "RATP",
+        "links": [],
+        "color": "652c90",
+        "name": "Champ de Mars - Bastille - Porte de Reuilly",
+        "physical_mode": "Bus",
+        "headsign": "BASTILLE",
+        "label": "87",
+        "equipments": [
+          "has_wheelchair_accessibility"
+        ],
+        "text_color": "FFFFFF",
+        "commercial_mode": "Bus",
+        "description": ""
+      },
+      "stop_point": {
+        "codes": [
+          {
+            "type": "SIRI_STIF",
+            "value": "STIF:StopPoint:Q:36281:"
+          },
+          {
+            "type": "ZDEr_ID_REF_A",
+            "value": "36281"
+          },
+          {
+            "type": "external_code",
+            "value": "OIF59:3764979"
+          },
+          {
+            "type": "source",
+            "value": "StopPoint:59:3764979"
+          }
+        ],
+        "name": "Gare de Lyon - Diderot",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "coord": {
+          "lat": "48.845742",
+          "lon": "2.373727"
+        },
+        "label": "Gare de Lyon - Diderot (Paris)",
+        "equipments": [
+          "has_wheelchair_boarding"
+        ],
+        "commercial_modes": [
+          {
+            "id": "commercial_mode:bus",
+            "name": "Bus"
+          }
+        ],
+        "administrative_regions": [
+          {
+            "insee": "75056",
+            "name": "Paris",
+            "level": 8,
+            "coord": {
+              "lat": "48.85661",
+              "lon": "2.351499"
+            },
+            "label": "Paris (75000-75116)",
+            "id": "admin:fr:75056",
+            "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+          },
+          {
+            "insee": "75112",
+            "name": "Paris 12e Arrondissement",
+            "level": 9,
+            "coord": {
+              "lat": "48.839615",
+              "lon": "2.395751"
+            },
+            "label": "Paris 12e Arrondissement (75012)",
+            "id": "admin:fr:75112",
+            "zip_code": "75012"
+          },
+          {
+            "insee": "7511248",
+            "name": "Quartier des Quinze-Vingts",
+            "level": 10,
+            "coord": {
+              "lat": "48.846915",
+              "lon": "2.374399"
+            },
+            "label": "Quartier des Quinze-Vingts (75012)",
+            "id": "admin:fr:7511248",
+            "zip_code": "75012"
+          }
+        ],
+        "fare_zone": {
+          "name": "1"
+        },
+        "id": "stop_point:OIF:SP:59:3764979",
+        "stop_area": {
+          "codes": [
+            {
+              "type": "external_code",
+              "value": "OIF8768600"
+            },
+            {
+              "type": "source",
+              "value": "StopArea:8768600"
+            }
+          ],
+          "name": "Gare de Lyon",
+          "links": [],
+          "coord": {
+            "lat": "48.844793",
+            "lon": "2.372968"
+          },
+          "label": "Gare de Lyon (Paris)",
+          "administrative_regions": [
+            {
+              "insee": "75056",
+              "name": "Paris",
+              "level": 8,
+              "coord": {
+                "lat": "48.85661",
+                "lon": "2.351499"
+              },
+              "label": "Paris (75000-75116)",
+              "id": "admin:fr:75056",
+              "zip_code": "75000;75001;75002;75003;75004;75005;75006;75007;75008;75009;75010;75011;75012;75013;75014;75015;75016;75017;75018;75019;75020;75116"
+            },
+            {
+              "insee": "75112",
+              "name": "Paris 12e Arrondissement",
+              "level": 9,
+              "coord": {
+                "lat": "48.839615",
+                "lon": "2.395751"
+              },
+              "label": "Paris 12e Arrondissement (75012)",
+              "id": "admin:fr:75112",
+              "zip_code": "75012"
+            },
+            {
+              "insee": "7511248",
+              "name": "Quartier des Quinze-Vingts",
+              "level": 10,
+              "coord": {
+                "lat": "48.846915",
+                "lon": "2.374399"
+              },
+              "label": "Quartier des Quinze-Vingts (75012)",
+              "id": "admin:fr:7511248",
+              "zip_code": "75012"
+            }
+          ],
+          "timezone": "Europe/Paris",
+          "id": "stop_area:OIF:SA:8768600"
+        }
+      },
+      "route": {
+        "direction": {
+          "embedded_type": "stop_area",
+          "stop_area": {
+            "codes": [
+              {
+                "type": "external_code",
+                "value": "OIF8739305"
+              },
+              {
+                "type": "source",
+                "value": "StopArea:8739305"
+              }
+            ],
+            "name": "Champ de Mars Tour Eiffel",
+            "links": [],
+            "coord": {
+              "lat": "48.857298",
+              "lon": "2.29327"
+            },
+            "label": "Champ de Mars Tour Eiffel (Paris)",
+            "timezone": "Europe/Paris",
+            "id": "stop_area:OIF:SA:8739305"
+          },
+          "quality": 0,
+          "name": "Champ de Mars Tour Eiffel (Paris)",
+          "id": "stop_area:OIF:SA:8739305"
+        },
+        "codes": [
+          {
+            "type": "external_code",
+            "value": "OIF100100087:87_R"
+          },
+          {
+            "type": "source",
+            "value": "100100087:87"
+          }
+        ],
+        "name": "Porte de Reuilly - Champ de Mars",
+        "links": [],
+        "physical_modes": [
+          {
+            "id": "physical_mode:Bus",
+            "name": "Bus"
+          }
+        ],
+        "is_frequence": "False",
+        "geojson": {
+          "type": "MultiLineString",
+          "coordinates": []
+        },
+        "direction_type": "backward",
+        "line": {
+          "properties": [
+            {
+              "name": "realtime_system",
+              "value": "SIRI_STIF"
+            }
+          ],
+          "code": "87",
+          "name": "Champ de Mars - Bastille - Porte de Reuilly",
+          "links": [],
+          "color": "652c90",
+          "geojson": {
+            "type": "MultiLineString",
+            "coordinates": []
+          },
+          "text_color": "FFFFFF",
+          "codes": [
+            {
+              "type": "SIRI_STIF",
+              "value": "STIF:Line::C01119:"
+            },
+            {
+              "type": "codifligne",
+              "value": "C01119"
+            },
+            {
+              "type": "external_code",
+              "value": "OIF100100087:87OIF442"
+            },
+            {
+              "type": "source",
+              "value": "100100087:87"
+            }
+          ],
+          "closing_time": "004400",
+          "opening_time": "062000",
+          "id": "line:OIF:100100087:87OIF442"
+        },
+        "id": "route:OIF:100100087:87_R"
+      },
+      "links": [
+        {
+          "type": "line",
+          "id": "line:OIF:100100087:87OIF442"
+        },
+        {
+          "type": "vehicle_journey",
+          "id": "vehicle_journey:OIF:98803091-1_142773-1"
+        },
+        {
+          "type": "route",
+          "id": "route:OIF:100100087:87_R"
+        },
+        {
+          "type": "commercial_mode",
+          "id": "commercial_mode:bus"
+        },
+        {
+          "type": "physical_mode",
+          "id": "physical_mode:Bus"
+        },
+        {
+          "type": "network",
+          "id": "network:RTP"
+        }
+      ],
+      "stop_date_time": {
+        "links": [],
+        "arrival_date_time": "20181210T172200",
+        "additional_informations": [],
+        "departure_date_time": "20181210T172200",
+        "base_arrival_date_time": "20181210T172200",
+        "base_departure_date_time": "20181210T172200",
+        "data_freshness": "base_schedule"
+      }
+    }
+  ],
+  "context": {
+    "timezone": "Europe/Paris",
+    "current_datetime": "20181211T193357"
+  },
+  "exceptions": []
+}

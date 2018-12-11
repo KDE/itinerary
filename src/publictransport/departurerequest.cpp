@@ -43,7 +43,7 @@ DepartureRequest::DepartureRequest(const Location &stop)
     d->stop = stop;
 }
 
-DepartureRequest::DepartureRequest(DepartureRequest&&) = default;
+DepartureRequest::DepartureRequest(DepartureRequest&&) noexcept = default;
 DepartureRequest::DepartureRequest(const DepartureRequest&) = default;
 DepartureRequest::~DepartureRequest() = default;
 DepartureRequest& DepartureRequest::operator=(const DepartureRequest&) = default;
@@ -55,6 +55,9 @@ Location DepartureRequest::stop() const
 
 QDateTime DepartureRequest::dateTime() const
 {
+    if (!d->dateTime.isValid()) {
+        d->dateTime = QDateTime::currentDateTime();
+    }
     return d->dateTime;
 }
 

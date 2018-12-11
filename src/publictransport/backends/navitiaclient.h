@@ -24,6 +24,7 @@ class QNetworkReply;
 
 namespace KPublicTransport {
 
+class DepartureRequest;
 class JourneyRequest;
 
 /** Navitia REST client methods. */
@@ -31,6 +32,7 @@ namespace NavitiaClient
 {
 
 QNetworkReply* findJourney(const JourneyRequest &req, QNetworkAccessManager *nam);
+QNetworkReply* queryDeparture(const DepartureRequest &req, QNetworkAccessManager *nam);
 
 }
 

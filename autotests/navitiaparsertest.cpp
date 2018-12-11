@@ -15,6 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#include <KPublicTransport/Departure>
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/NavitiaParser>
@@ -128,6 +129,33 @@ private slots:
             QCOMPARE(sec.route().line().name(), QStringLiteral("DIRECT 4"));
             QCOMPARE(sec.route().line().mode(), KPublicTransport::Line::Bus);
             QCOMPARE(sec.route().line().modeString(), QStringLiteral("Bus"));
+        }
+    }
+
+    void testParseDepartures()
+    {
+        const auto res = KPublicTransport::NavitiaParser::parseDepartures(readFile(SOURCE_DIR "/data/navitia/departure-response.json"));
+        QCOMPARE(res.size(), 10);
+
+        {
+            const auto departure = res[0];
+            QCOMPARE(departure.scheduledTime(), QDateTime({2018, 12, 10}, {17, 17}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.stopPoint().name(), QStringLiteral("Gare de Lyon - Diderot (Paris)"));
+            QCOMPARE(departure.route().direction(), QStringLiteral("Porte de la Chapelle (Paris)"));
+            QCOMPARE(departure.route().line().mode(), KPublicTransport::Line::Bus);
+            QCOMPARE(departure.route().line().name(), QStringLiteral("65"));
+            QCOMPARE(departure.route().line().color(), QColor(0x00, 0x8b, 0x5a));
+        }
+
+        {
+            const auto departure = res[3];
+            QCOMPARE(departure.scheduledTime(), QDateTime({2018, 12, 10}, {17, 19}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.stopPoint().name(), QStringLiteral("Gare de Lyon RER D (Paris)"));
+            QCOMPARE(departure.route().direction(), QStringLiteral("Gare de Villiers le Bel Gonesse Arnouville (Arnouville)"));
+            QCOMPARE(departure.route().line().mode(), KPublicTransport::Line::RapidTransit);
+            QCOMPARE(departure.route().line().modeString(), QStringLiteral("RER"));
+            QCOMPARE(departure.route().line().name(), QStringLiteral("D"));
+            QCOMPARE(departure.route().line().color(), QColor(0x5E, 0x96, 0x20));
         }
     }
 };

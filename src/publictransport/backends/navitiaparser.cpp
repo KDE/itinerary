@@ -17,6 +17,7 @@
 
 #include "navitiaparser.h"
 
+#include <KPublicTransport/Departure>
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 
@@ -78,21 +79,27 @@ static Line::Mode parsePhysicalMode(const QString &mode)
 static Location parseLocation(const QJsonObject &obj)
 {
     Location loc;
-    loc.setName(obj.value(QLatin1String("name")).toString());
+    loc.setName(obj.value(QLatin1String("label")).toString());
     // TODO parse more fields
 
-    const auto embObj = obj.value(obj.value(QLatin1String("embedded_type")).toString()).toObject();
-    const auto coord = embObj.value(QLatin1String("coord")).toObject();
+    const auto coord = obj.value(QLatin1String("coord")).toObject();
     loc.setCoordinate(coord.value(QLatin1String("lat")).toString().toDouble(), coord.value(QLatin1String("lon")).toString().toDouble());
 
-    auto tz = embObj.value(QLatin1String("timezone")).toString();
+    auto tz = obj.value(QLatin1String("timezone")).toString();
     if (tz.isEmpty()) {
-        tz = embObj.value(QLatin1String("stop_area")).toObject().value(QLatin1String("timezone")).toString();
+        tz = obj.value(QLatin1String("stop_area")).toObject().value(QLatin1String("timezone")).toString();
     }
     if (!tz.isEmpty()) {
         loc.setTimeZone(QTimeZone(tz.toUtf8()));
     }
 
+    return loc;
+}
+
+static Location parseWrappedLocation(const QJsonObject &obj)
+{
+    auto loc = parseLocation(obj.value(obj.value(QLatin1String("embedded_type")).toString()).toObject());
+    loc.setName(obj.value(QLatin1String("name")).toString());
     return loc;
 }
 
@@ -120,8 +127,8 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     route.setLine(line);
 
     JourneySection section;
-    section.setFrom(parseLocation(obj.value(QLatin1String("from")).toObject()));
-    section.setTo(parseLocation(obj.value(QLatin1String("to")).toObject()));
+    section.setFrom(parseWrappedLocation(obj.value(QLatin1String("from")).toObject()));
+    section.setTo(parseWrappedLocation(obj.value(QLatin1String("to")).toObject()));
     section.setRoute(route);
     section.setDepartureTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
     section.setArrivalTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
@@ -164,6 +171,56 @@ std::vector<Journey> NavitiaParser::parseJourneys(const QByteArray &data)
 
     for (const auto &v : journeys) {
         res.push_back(parseJourney(v.toObject()));
+    }
+
+    return res;
+}
+
+static Departure parseDeparture(const QJsonObject &obj)
+{
+    // TODO remove code duplication with journey parsing
+    const auto displayInfo = obj.value(QLatin1String("display_informations")).toObject();
+
+    Line line;
+    line.setName(displayInfo.value(QLatin1String("label")).toString());
+    line.setColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("color")).toString()));
+    line.setTextColor(QColor(QLatin1Char('#') + displayInfo.value(QLatin1String("text_color")).toString()));
+    line.setModeString(displayInfo.value(QLatin1String("commercial_mode")).toString());
+    const auto links = obj.value(QLatin1String("links")).toArray();
+    for (const auto &v : links) {
+        const auto link = v.toObject();
+        if (link.value(QLatin1String("type")).toString() != QLatin1String("physical_mode")) {
+            continue;
+        }
+        line.setMode(parsePhysicalMode(link.value(QLatin1String("id")).toString()));
+        break;
+    }
+
+    Route route;
+    route.setDirection(displayInfo.value(QLatin1String("direction")).toString());
+    route.setLine(line);
+
+    Departure departure;
+    departure.setRoute(route);
+
+    const auto dtObj = obj.value(QLatin1String("stop_date_time")).toObject();
+    departure.setStopPoint(parseLocation(obj.value(QLatin1String("stop_point")).toObject()));
+    departure.setScheduledTime(parseDateTime(dtObj.value(QLatin1String("base_departure_date_time")), departure.stopPoint().timeZone()));
+    // TODO actual departure time
+
+    return departure;
+}
+
+std::vector<Departure> NavitiaParser::parseDepartures(const QByteArray &data)
+{
+    const auto topObj = QJsonDocument::fromJson(data).object();
+    const auto departures = topObj.value(QLatin1String("departures")).toArray();
+
+    std::vector<Departure> res;
+    res.reserve(departures.size());
+
+    for (const auto &v : departures) {
+        res.push_back(parseDeparture(v.toObject()));
     }
 
     return res;

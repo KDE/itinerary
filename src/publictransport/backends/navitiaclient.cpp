@@ -17,6 +17,7 @@
 
 #include "navitiaclient.h"
 
+#include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 
@@ -48,6 +49,32 @@ QNetworkReply* NavitiaClient::findJourney(const JourneyRequest &req, QNetworkAcc
     // TODO: disable reply parts we don't care about
     query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true")); // ### seems to have no effect?
     query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0")); // ### also has no effect?
+    url.setQuery(query);
+
+    QNetworkRequest netReq(url);
+    netReq.setRawHeader("Authorization", "48ed1733-d3f0-445a-9210-9fb36e20a8a3"); // ### this is the test key
+
+    qDebug() << "GET:" << url;
+    return nam->get(netReq);
+}
+
+QNetworkReply* NavitiaClient::queryDeparture(const DepartureRequest &req, QNetworkAccessManager *nam)
+{
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(QStringLiteral("api.navitia.io"));
+    url.setPath(
+        QStringLiteral("/v1/coverage/") + QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) +
+        QStringLiteral("/coord/") + QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) +
+        QStringLiteral("/departures")
+    );
+
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("from_datetime"), req.dateTime().toString(QStringLiteral("yyyyMMddThhmmss")));
+
+    // TODO: disable reply parts we don't care about
+    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true"));
+    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0"));
     url.setQuery(query);
 
     QNetworkRequest netReq(url);

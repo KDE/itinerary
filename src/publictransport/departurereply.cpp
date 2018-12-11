@@ -41,7 +41,25 @@ public:
 DepartureReply::DepartureReply(const DepartureRequest &req, QNetworkAccessManager *nam)
     : d(new DepartureReplyPrivate)
 {
-    // TODO
+    auto reply = NavitiaClient::queryDeparture(req, nam);
+    connect(reply, &QNetworkReply::finished, [reply, this] {
+        switch (reply->error()) {
+            case QNetworkReply::NoError:
+                d->departures = NavitiaParser::parseDepartures(reply->readAll());
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                d->error = NotFoundError;
+                d->errorMsg = NavitiaParser::parseErrorMessage(reply->readAll());
+                break;
+            default:
+                d->error = NetworkError;
+                d->errorMsg = reply->errorString();
+                qCDebug(Log) << reply->error() << reply->errorString();
+        }
+
+        emit finished();
+        deleteLater();
+    });
 }
 
 DepartureReply::~DepartureReply() = default;
