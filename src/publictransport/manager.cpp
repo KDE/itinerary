@@ -16,6 +16,7 @@
 */
 
 #include "manager.h"
+#include "departurereply.h"
 #include "journeyreply.h"
 
 #include <QNetworkAccessManager>
@@ -57,4 +58,9 @@ void Manager::setNetworkAccessManager(QNetworkAccessManager *nam)
 JourneyReply* Manager::findJourney(const JourneyRequest &req) const
 {
     return new JourneyReply(req, d->nam());
+}
+
+DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
+{
+    return new DepartureReply(req, d->nam());
 }

@@ -24,6 +24,8 @@ class QNetworkAccessManager;
 
 namespace KPublicTransport {
 
+class DepartureReply;
+class DepartureRequest;
 class JourneyReply;
 class JourneyRequest;
 class ManagerPrivate;
@@ -44,6 +46,9 @@ public:
 
     /** Query a journey. */
     JourneyReply* findJourney(const JourneyRequest &req) const;
+
+    /** Query departures from a specific station. */
+    DepartureReply* queryDeparture(const DepartureRequest &req) const;
 
 private:
     std::unique_ptr<ManagerPrivate> d;
