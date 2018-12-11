@@ -45,7 +45,7 @@ struct {
     { "Air", Line::Air },
     { "Boat", Line::Boat },
     { "Bus", Line::Bus },
-    { "BusRapidTransit", Line::RapidTransit },
+    { "BusRapidTransit", Line::BusRapidTransit },
     { "Coach", Line::Coach },
     { "Ferry", Line::Ferry },
     { "Funicular", Line::Funicular },
