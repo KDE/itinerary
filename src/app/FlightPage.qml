@@ -57,18 +57,25 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Boarding:")
             text: Localizer.formatDateTime(reservationFor, "boardingTime")
+            visible: reservationFor.boardingTime > 0
+
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Boarding group:")
             text: reservation.boardingGroup
+            visible: reservation.boardingGroup.length > 0
+
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Seat:")
             text: reservation.airplaneSeat
+            visible: reservation.airplaneSeat.length > 0
+
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Airline:")
             text: reservationFor.airline.name
+            visible: reservationFor.airline.name.length > 0
         }
 
 
@@ -80,10 +87,12 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Time:")
             text: Localizer.formatDateTime(reservationFor, "departureTime")
+            visible: reservationFor.departureTime > 0
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Airport:")
             text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
+            visible: reservationFor.departureAirport.name.length > 0
         }
         App.PlaceDelegate {
             place: reservationFor.departureAirport
@@ -91,10 +100,12 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Terminal:")
             text: reservationFor.departureTerminal
+            visible: reservationFor.departureTerminal.length > 0
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Gate:")
             text: reservationFor.departureGate
+            visible: reservationFor.departureGate.length > 0
         }
 
 
@@ -106,10 +117,12 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Time:")
             text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            visible: reservationFor.arrivalTime > 0
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Airport:")
             text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
+            visible: reservationFor.arrivalAirport.name.length > 0
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalAirport
