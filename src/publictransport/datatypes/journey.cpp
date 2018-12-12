@@ -124,6 +124,11 @@ const std::vector<JourneySection>& Journey::sections() const
     return d->sections;
 }
 
+std::vector<JourneySection>&& Journey::takeSections()
+{
+    return std::move(d->sections);
+}
+
 void Journey::setSections(std::vector<JourneySection> &&sections)
 {
     d.detach();

@@ -27,16 +27,48 @@
 
 #include <QDateTime>
 #include <QNetworkReply>
+#include <QTimeZone>
 
 using namespace KPublicTransport;
 
 namespace KPublicTransport {
 class JourneyReplyPrivate {
 public:
+    void postProcessJourneys();
+
     std::vector<Journey> journeys;
     QString errorMsg;
     JourneyReply::Error error = JourneyReply::NoError;
 };
+}
+
+void JourneyReplyPrivate::postProcessJourneys()
+{
+    // try to fill gaps in timezone data
+    for (auto &journey : journeys) {
+        auto sections = journey.takeSections();
+        for (auto &section : sections) {
+            if (section.mode() == JourneySection::Walking) {
+                if (!section.from().timeZone().isValid() && section.to().timeZone().isValid()) {
+                    auto from = section.from();
+                    from.setTimeZone(section.to().timeZone());
+                    section.setFrom(from);
+                    auto dt = section.departureTime();
+                    dt.setTimeZone(from.timeZone());
+                    section.setDepartureTime(dt);
+                }
+                if (section.from().timeZone().isValid() && !section.to().timeZone().isValid()) {
+                    auto to = section.to();
+                    to.setTimeZone(section.from().timeZone());
+                    section.setTo(to);
+                    auto dt = section.arrivalTime();
+                    dt.setTimeZone(to.timeZone());
+                    section.setArrivalTime(dt);
+                }
+            }
+        }
+        journey.setSections(std::move(sections));
+    }
 }
 
 JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam)
@@ -47,6 +79,7 @@ JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam
         switch (reply->error()) {
             case QNetworkReply::NoError:
                 d->journeys = NavitiaParser::parseJourneys(reply->readAll());
+                d->postProcessJourneys();
                 break;
             case QNetworkReply::ContentNotFoundError:
                 d->error = NotFoundError;

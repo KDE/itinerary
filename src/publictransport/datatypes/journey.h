@@ -93,6 +93,8 @@ class Journey
 public:
     /** The journey sections. */
     const std::vector<JourneySection>& sections() const;
+    /** Moves the journey sections out of this object. */
+    std::vector<JourneySection>&& takeSections();
     /** Sets the journey sections. */
     void setSections(std::vector<JourneySection> &&sections);
 
