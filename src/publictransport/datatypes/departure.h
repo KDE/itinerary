@@ -39,7 +39,7 @@ class Departure
      */
     Q_PROPERTY(QDateTime actualTime READ actualTime WRITE setActualTime)
     /** @c true if this has real-time data. */
-    Q_PROPERTY(bool isRealTime READ isRealTime STORED false)
+    Q_PROPERTY(bool hasRealTime READ hasRealTime STORED false)
 
     /** The departing route. */
     Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
@@ -52,6 +52,9 @@ public:
     void setScheduledTime(const QDateTime &scheduledTime);
     QDateTime actualTime() const;
     void setActualTime(const QDateTime &actualTime);
+
+    bool hasRealTime() const;
+
     Route route() const;
     void setRoute(const Route &route);
     Location stopPoint() const;

@@ -56,6 +56,11 @@ void Departure::setActualTime(const QDateTime &actualTime)
     d->actualTime = actualTime;
 }
 
+bool Departure::hasRealTime() const
+{
+    return d->actualTime.isValid();
+}
+
 Route Departure::route() const
 {
     return d->route;
@@ -77,3 +82,5 @@ void Departure::setStopPoint(const Location &stopPoint)
     d.detach();
     d->stopPoint = stopPoint;
 }
+
+#include "moc_departure.cpp"
