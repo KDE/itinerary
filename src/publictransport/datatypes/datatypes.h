@@ -25,10 +25,10 @@
     Q_GADGET \
 public: \
     Class(); \
-    Class(Class&&); \
+    Class(Class&&) noexcept; \
     Class(const Class&); \
     ~Class(); \
-    Class& operator=(Class&&); \
+    Class& operator=(Class&&) noexcept; \
     Class& operator=(const Class&); \
 private: \
     QExplicitlySharedDataPointer<Class ## Private> d;
