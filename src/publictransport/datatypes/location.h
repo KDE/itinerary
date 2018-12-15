@@ -46,6 +46,10 @@ public:
     /** The timezone this location is in, if known. */
     QTimeZone timeZone() const;
     void setTimeZone(const QTimeZone &tz);
+
+    /** Location identifiers. */
+    QString identifier(const QString &identifierType) const;
+    void setIdentifier(const QString &identifierType, const QString &id);
 };
 
 }

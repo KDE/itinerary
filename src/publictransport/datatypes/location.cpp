@@ -19,6 +19,7 @@
 
 #include "datatypes_p.h"
 
+#include <QHash>
 #include <QTimeZone>
 
 #include <cmath>
@@ -34,6 +35,7 @@ public:
     float latitude = NAN;
     float longitude = NAN;
     QTimeZone timeZone;
+    QHash<QString, QString> ids;
 };
 
 }
@@ -77,6 +79,17 @@ void Location::setTimeZone(const QTimeZone &tz)
 {
     d.detach();
     d->timeZone = tz;
+}
+
+QString Location::identifier(const QString &identifierType) const
+{
+    return d->ids.value(identifierType);
+}
+
+void Location::setIdentifier(const QString &identifierType, const QString &id)
+{
+    d.detach();
+    d->ids.insert(identifierType, id);
 }
 
 #include "moc_location.cpp"
