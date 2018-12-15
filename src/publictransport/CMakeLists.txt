@@ -8,6 +8,7 @@ set(kpublictransport_srcs
 
     backends/abstractbackend.cpp
     backends/hafasmgatebackend.cpp
+    backends/hafasmgateparser.cpp
     backends/navitiabackend.cpp
     backends/navitiaparser.cpp
 

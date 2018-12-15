@@ -16,7 +16,10 @@
 */
 
 #include "hafasmgatebackend.h"
+#include "hafasmgateparser.h"
+#include "logging.h"
 
+#include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
@@ -110,10 +113,18 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     auto netReply = nam->post(netReq, QJsonDocument(top).toJson());
     qDebug().noquote() << QJsonDocument(top).toJson();
     QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply]() {
-        qDebug() << netReply->errorString();
         qDebug() << netReply->request().url();
-        qDebug() << netReply->readAll();
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+                addResult(reply, HafasMgateParser::parseDepartures(netReply->readAll()));
+                break;
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
     });
 
-    return false;
+    return true;
 }
