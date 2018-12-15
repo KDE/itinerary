@@ -4,6 +4,7 @@ set(kpublictransport_srcs
     journeyreply.cpp
     journeyrequest.cpp
     manager.cpp
+    reply.cpp
 
     backends/navitiaclient.cpp
     backends/navitiaparser.cpp
@@ -32,6 +33,7 @@ ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
         JourneyReply
         JourneyRequest
         Manager
+        Reply
     PREFIX KPublicTransport
     REQUIRED_HEADERS KPublicTransport_HEADERS
 )

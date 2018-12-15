@@ -16,6 +16,7 @@
 */
 
 #include "journeyreply.h"
+#include "reply_p.h"
 #include "journeyrequest.h"
 #include "logging.h"
 
@@ -32,13 +33,11 @@
 using namespace KPublicTransport;
 
 namespace KPublicTransport {
-class JourneyReplyPrivate {
+class JourneyReplyPrivate : public ReplyPrivate {
 public:
     void postProcessJourneys();
 
     std::vector<Journey> journeys;
-    QString errorMsg;
-    JourneyReply::Error error = JourneyReply::NoError;
 };
 }
 
@@ -72,10 +71,11 @@ void JourneyReplyPrivate::postProcessJourneys()
 }
 
 JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam)
-    : d(new JourneyReplyPrivate)
+    : Reply(new JourneyReplyPrivate)
 {
     auto reply = NavitiaClient::findJourney(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
+        Q_D(JourneyReply);
         switch (reply->error()) {
             case QNetworkReply::NoError:
                 d->journeys = NavitiaParser::parseJourneys(reply->readAll());
@@ -100,16 +100,7 @@ JourneyReply::~JourneyReply() = default;
 
 std::vector<Journey> JourneyReply::journeys() const
 {
+    Q_D(const JourneyReply);
     // TODO avoid the copy here
     return d->journeys;
-}
-
-JourneyReply::Error JourneyReply::error() const
-{
-    return d->error;
-}
-
-QString JourneyReply::errorString() const
-{
-    return d->errorMsg;
 }

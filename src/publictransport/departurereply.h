@@ -18,9 +18,8 @@
 #ifndef KPUBLICTRANSPORT_DEPARTUREREPLY_H
 #define KPUBLICTRANSPORT_DEPARTUREREPLY_H
 
-#include <QObject>
+#include "reply.h"
 
-#include <memory>
 #include <vector>
 
 class QNetworkAccessManager;
@@ -32,7 +31,7 @@ class DepartureRequest;
 class DepartureReplyPrivate;
 
 /** Departure query reply. */
-class DepartureReply : public QObject
+class DepartureReply : public Reply
 {
     Q_OBJECT
 public:
@@ -41,26 +40,10 @@ public:
     /** Returns the found departure information. */
     std::vector<Departure> departures() const;
 
-    /** Error types. */
-    enum Error {
-        NoError, ///< Nothing went wrong.
-        NetworkError, ///< Error during network operations.
-        NotFoundError, ///< The requested journey could not be found.
-        UnknownError ///< Anything else.
-    };
-    /** Error code. */
-    Error error() const;
-    /** Textual error message. */
-    QString errorString() const;
-
-Q_SIGNALS:
-    /** Emitted whenever the journey search has been completed. */
-    void finished();
-
 private:
     friend class Manager;
     explicit DepartureReply(const DepartureRequest &req, QNetworkAccessManager *nam);
-    std::unique_ptr<DepartureReplyPrivate> d;
+    Q_DECLARE_PRIVATE(DepartureReply)
 };
 
 }

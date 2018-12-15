@@ -16,6 +16,7 @@
 */
 
 #include "departurereply.h"
+#include "reply_p.h"
 #include "departurerequest.h"
 #include "logging.h"
 
@@ -30,19 +31,18 @@
 using namespace KPublicTransport;
 
 namespace KPublicTransport {
-class DepartureReplyPrivate {
+class DepartureReplyPrivate : public ReplyPrivate {
 public:
     std::vector<Departure> departures;
-    QString errorMsg;
-    DepartureReply::Error error = DepartureReply::NoError;
 };
 }
 
 DepartureReply::DepartureReply(const DepartureRequest &req, QNetworkAccessManager *nam)
-    : d(new DepartureReplyPrivate)
+    : Reply(new DepartureReplyPrivate)
 {
     auto reply = NavitiaClient::queryDeparture(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
+        Q_D(DepartureReply);
         switch (reply->error()) {
             case QNetworkReply::NoError:
                 d->departures = NavitiaParser::parseDepartures(reply->readAll());
@@ -66,15 +66,6 @@ DepartureReply::~DepartureReply() = default;
 
 std::vector<Departure> DepartureReply::departures() const
 {
+    Q_D(const DepartureReply);
     return d->departures; // TODO this copies
-}
-
-DepartureReply::Error DepartureReply::error() const
-{
-    return d->error;
-}
-
-QString DepartureReply::errorString() const
-{
-    return d->errorMsg;
 }

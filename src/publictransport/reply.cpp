@@ -15,37 +15,24 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef KPUBLICTRANSPORT_JOURNEYREPLY_H
-#define KPUBLICTRANSPORT_JOURNEYREPLY_H
-
 #include "reply.h"
+#include "reply_p.h"
 
-#include <vector>
+using namespace KPublicTransport;
 
-class QNetworkAccessManager;
-
-namespace KPublicTransport {
-
-class Journey;
-class JourneyReplyPrivate;
-class JourneyRequest;
-
-/** Journey query response. */
-class JourneyReply : public Reply
+Reply::Reply(ReplyPrivate *dd)
+    : d_ptr(dd)
 {
-    Q_OBJECT
-public:
-    ~JourneyReply();
-
-    /** Returns the found journeys. */
-    std::vector<Journey> journeys() const;
-
-private:
-    friend class Manager;
-    explicit JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam);
-    Q_DECLARE_PRIVATE(JourneyReply)
-};
-
 }
 
-#endif // KPUBLICTRANSPORT_JOURNEYREPLY_H
+Reply::~Reply() = default;
+
+Reply::Error Reply::error() const
+{
+    return d_ptr->error;
+}
+
+QString Reply::errorString() const
+{
+    return d_ptr->errorMsg;
+}

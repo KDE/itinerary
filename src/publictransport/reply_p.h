@@ -15,37 +15,25 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef KPUBLICTRANSPORT_JOURNEYREPLY_H
-#define KPUBLICTRANSPORT_JOURNEYREPLY_H
+#ifndef KPUBLICTRANSPORT_REPLY_P_H
+#define KPUBLICTRANSPORT_REPLY_P_H
 
 #include "reply.h"
 
-#include <vector>
-
-class QNetworkAccessManager;
+#include <QString>
 
 namespace KPublicTransport {
 
-class Journey;
-class JourneyReplyPrivate;
-class JourneyRequest;
-
-/** Journey query response. */
-class JourneyReply : public Reply
+class ReplyPrivate
 {
-    Q_OBJECT
 public:
-    ~JourneyReply();
+    virtual ~ReplyPrivate() = default;
 
-    /** Returns the found journeys. */
-    std::vector<Journey> journeys() const;
-
-private:
-    friend class Manager;
-    explicit JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam);
-    Q_DECLARE_PRIVATE(JourneyReply)
+    QString errorMsg;
+    Reply::Error error = Reply::NoError;
 };
 
 }
 
-#endif // KPUBLICTRANSPORT_JOURNEYREPLY_H
+#endif // KPUBLICTRANSPORT_REPLY_P_H
+
