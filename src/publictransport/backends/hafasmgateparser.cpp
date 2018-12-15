@@ -94,7 +94,7 @@ static std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj)
 
         Route route;
         route.setDirection(jnyObj.value(QLatin1String("dirTxt")).toString());
-        const auto lineIdx = stbStop.value(QLatin1String("prodX")).toInt();
+        const auto lineIdx = jnyObj.value(QLatin1String("prodX")).toInt();
         if ((unsigned int)lineIdx < lines.size()) {
             route.setLine(lines[lineIdx]);
         }
