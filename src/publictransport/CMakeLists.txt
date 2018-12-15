@@ -8,7 +8,6 @@ set(kpublictransport_srcs
 
     backends/abstractbackend.cpp
     backends/navitiabackend.cpp
-    backends/navitiaclient.cpp
     backends/navitiaparser.cpp
 
     datatypes/departure.cpp
@@ -44,7 +43,6 @@ ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
 # # ### for testing only
 ecm_generate_headers(KPublicTransport_Backends_FORWARDING_HEADERS
     HEADER_NAMES
-        NavitiaClient
         NavitiaParser
     PREFIX KPublicTransport
     REQUIRED_HEADERS KPublicTransport_Backends_HEADERS

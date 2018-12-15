@@ -20,14 +20,10 @@
 #include "journeyrequest.h"
 #include "logging.h"
 
-#include "backends/navitiaclient.h"
-#include "backends/navitiaparser.h"
-
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Location>
 
 #include <QDateTime>
-#include <QNetworkReply>
 #include <QTimeZone>
 
 using namespace KPublicTransport;
@@ -51,6 +47,11 @@ void JourneyReplyPrivate::finalizeResult()
 
     error = Reply::NoError;
     errorMsg.clear();
+
+    postProcessJourneys();
+    std::sort(journeys.begin(), journeys.end(), [](const auto &lhs, const auto &rhs) {
+        return lhs.departureTime() < rhs.departureTime();
+    });
 }
 
 void JourneyReplyPrivate::postProcessJourneys()
@@ -82,32 +83,11 @@ void JourneyReplyPrivate::postProcessJourneys()
     }
 }
 
-JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam)
+JourneyReply::JourneyReply(const JourneyRequest &req)
     : Reply(new JourneyReplyPrivate)
 {
     Q_D(JourneyReply);
     d->request = req;
-    auto reply = NavitiaClient::findJourney(req, nam);
-    connect(reply, &QNetworkReply::finished, [reply, this] {
-        Q_D(JourneyReply);
-        switch (reply->error()) {
-            case QNetworkReply::NoError:
-                d->journeys = NavitiaParser::parseJourneys(reply->readAll());
-                d->postProcessJourneys();
-                break;
-            case QNetworkReply::ContentNotFoundError:
-                d->error = NotFoundError;
-                d->errorMsg = NavitiaParser::parseErrorMessage(reply->readAll());
-                break;
-            default:
-                d->error = NetworkError;
-                d->errorMsg = reply->errorString();
-                qCDebug(Log) << reply->error() << reply->errorString();
-        }
-
-        emit finished();
-        deleteLater();
-    });
 }
 
 JourneyReply::~JourneyReply() = default;
@@ -123,4 +103,17 @@ std::vector<Journey> JourneyReply::journeys() const
     Q_D(const JourneyReply);
     // TODO avoid the copy here
     return d->journeys;
+}
+
+void JourneyReply::addResult(std::vector<Journey> &&res)
+{
+    Q_D(JourneyReply);
+    if (d->journeys.empty()) {
+        d->journeys = std::move(res);
+    } else {
+        d->journeys.insert(d->journeys.end(), res.begin(), res.end());
+    }
+
+    d->pendingOps--;
+    d->emitFinishedIfDone(this);
 }

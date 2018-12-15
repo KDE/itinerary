@@ -22,8 +22,6 @@
 
 #include <vector>
 
-class QNetworkAccessManager;
-
 namespace KPublicTransport {
 
 class Journey;
@@ -45,7 +43,11 @@ public:
 
 private:
     friend class Manager;
-    explicit JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam);
+    explicit JourneyReply(const JourneyRequest &req);
+
+    friend class AbstractBackend;
+    void addResult(std::vector<Journey> &&res);
+
     Q_DECLARE_PRIVATE(JourneyReply)
 };
 

@@ -45,7 +45,7 @@ public:
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
     /** Query a journey. */
-    JourneyReply* findJourney(const JourneyRequest &req) const;
+    JourneyReply* queryJourney(const JourneyRequest &req) const;
 
     /** Query departures from a specific station. */
     DepartureReply* queryDeparture(const DepartureRequest &req) const;

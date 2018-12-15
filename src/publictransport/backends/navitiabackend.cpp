@@ -22,6 +22,9 @@
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
 #include <KPublicTransport/DepartureRequest>
+#include <KPublicTransport/Journey>
+#include <KPublicTransport/JourneyReply>
+#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 
 #include <QNetworkAccessManager>
@@ -36,6 +39,48 @@ NavitiaBackend::NavitiaBackend() = default;
 
 bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
+    const auto req = reply->request();
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(m_endpoint);
+    url.setPath(QStringLiteral("/v1") +
+        (m_coverage.isEmpty() ? QString() : (QStringLiteral("/coverage/") + m_coverage)) +
+        QStringLiteral("/journeys"));
+
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("from"), QString::number(req.from().latitude()) + QLatin1Char(';') + QString::number(req.from().longitude()));
+    query.addQueryItem(QStringLiteral("to"), QString::number(req.to().latitude()) + QLatin1Char(';') + QString::number(req.to().longitude()));
+    if (req.dateTime().isValid()) {
+        query.addQueryItem(QStringLiteral("datetime"), req.dateTime().toString(QStringLiteral("yyyyMMddThhmmss")));
+        query.addQueryItem(QStringLiteral("datetime_represents"), req.dateTimeMode() == JourneyRequest::Arrival ? QStringLiteral("arrival") : QStringLiteral("departure"));
+    }
+
+    // TODO: disable reply parts we don't care about
+    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true")); // ### seems to have no effect?
+    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0")); // ### also has no effect?
+    url.setQuery(query);
+
+    QNetworkRequest netReq(url);
+    netReq.setRawHeader("Authorization", m_auth.toUtf8());
+
+    qCDebug(Log) << "GET:" << url;
+    auto netReply = nam->get(netReq);
+    QObject::connect(netReply, &QNetworkReply::finished, [reply, netReply] {
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+                addResult(reply, NavitiaParser::parseJourneys(netReply->readAll()));
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                addError(reply, Reply::NotFoundError, NavitiaParser::parseErrorMessage(netReply->readAll()));
+                break;
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
+    });
+
     return true;
 }
 

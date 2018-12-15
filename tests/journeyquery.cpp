@@ -58,7 +58,7 @@ public:
         Location to;
         to.setCoordinate(toLat, toLon);
 
-        auto reply = ptMgr.findJourney({from, to});
+        auto reply = ptMgr.queryJourney({from, to});
         QObject::connect(reply, &JourneyReply::finished, [reply, this]{
             m_loading = false;
             emit loadingChanged();

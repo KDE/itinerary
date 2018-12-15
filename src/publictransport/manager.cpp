@@ -118,9 +118,17 @@ void Manager::setNetworkAccessManager(QNetworkAccessManager *nam)
     d->m_nam = nam;
 }
 
-JourneyReply* Manager::findJourney(const JourneyRequest &req) const
+JourneyReply* Manager::queryJourney(const JourneyRequest &req) const
 {
-    return new JourneyReply(req, d->nam());
+    auto reply = new JourneyReply(req);
+    int pendingOps = 0;
+    for (const auto &backend : d->m_backends) {
+        if (backend->queryJourney(reply, d->nam())) {
+            ++pendingOps;
+        }
+    }
+    reply->setPendingOps(pendingOps);
+    return reply;
 }
 
 DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
