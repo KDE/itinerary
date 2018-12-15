@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/org.kde.pim/kpublictransport/networks">
+        <file>bvg.json</file>
+        <file>deutschebahn.json</file>
         <file>navitia.json</file>
+        <file>sncb.json</file>
         <file>sncf.json</file>
     </qresource>
 </RCC>
-

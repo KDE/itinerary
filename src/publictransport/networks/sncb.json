@@ -1,0 +1,10 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "http://www.belgianrail.be/jp/sncb-nmbs-routeplanner/mgate.exe",
+        "aid": "sncb-mobi",
+        "clientId": "SNCB",
+        "clientType": "AND",
+        "version": "1.14"
+    }
+}

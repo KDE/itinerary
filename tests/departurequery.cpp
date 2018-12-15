@@ -43,7 +43,7 @@ public:
         ptMgr.setNetworkAccessManager(&nam);
     }
 
-    Q_INVOKABLE void queryDeparture(double fromLat, double fromLon)
+    Q_INVOKABLE void queryDeparture(double fromLat, double fromLon, const QString &id)
     {
         engine->rootContext()->setContextProperty(QStringLiteral("_departures"), QVariantList());
         m_loading = true;
@@ -53,6 +53,7 @@ public:
 
         Location from;
         from.setCoordinate(fromLat, fromLon);
+        from.setIdentifier(QLatin1String("hafasId"), id); // ### temporary, until we have other look-up methods
 
         auto reply = ptMgr.queryDeparture(DepartureRequest(from));
         QObject::connect(reply, &DepartureReply::finished, [reply, this]{

@@ -1,0 +1,10 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "https://reiseauskunft.bahn.de/bin/mgate.exe",
+        "aid": "n91dB8Z77MLdoR0K",
+        "clientId": "DB",
+        "clientType": "AND",
+        "version": "1.14"
+    }
+}

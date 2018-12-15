@@ -20,6 +20,7 @@
 #include "journeyreply.h"
 #include "logging.h"
 
+#include "backends/hafasmgatebackend.h"
 #include "backends/navitiabackend.h"
 
 #include <QDirIterator>
@@ -88,6 +89,8 @@ std::unique_ptr<AbstractBackend> ManagerPrivate::loadNetwork(const QJsonObject &
     const auto type = obj.value(QLatin1String("type")).toString();
     if (type == QLatin1String("navitia")) {
         return loadNetwork<NavitiaBackend>(obj);
+    } else if (type == QLatin1String("hafas_mgate")) {
+        return loadNetwork<HafasMgateBackend>(obj);
     }
 
     qCWarning(Log) << "Unknown backend type:" << type;

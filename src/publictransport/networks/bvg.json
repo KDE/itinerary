@@ -1,0 +1,10 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "https://bvg-apps.hafas.de/bin/mgate.exe",
+        "aid": "1Rxs112shyHLatUX4fofnmdxK",
+        "clientId": "BVG",
+        "clientType": "AND",
+        "version": "1.14"
+    }
+}
