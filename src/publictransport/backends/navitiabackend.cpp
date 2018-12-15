@@ -40,6 +40,10 @@ NavitiaBackend::NavitiaBackend() = default;
 bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
     const auto req = reply->request();
+    if (!req.from().hasCoordinate() || !req.to().hasCoordinate()) {
+        return false;
+    }
+
     QUrl url;
     url.setScheme(QStringLiteral("https"));
     url.setHost(m_endpoint);
@@ -87,6 +91,10 @@ bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *na
 bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     const auto req = reply->request();
+    if (!req.stop().hasCoordinate()) {
+        return false;
+    }
+
     QUrl url;
     url.setScheme(QStringLiteral("https"));
     url.setHost(m_endpoint);

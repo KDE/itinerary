@@ -65,10 +65,18 @@ void ManagerPrivate::loadNetworks()
             continue;
         }
 
-        const auto doc = QJsonDocument::fromJson(f.readAll());
+        QJsonParseError error;
+        const auto doc = QJsonDocument::fromJson(f.readAll(), &error);
+        if (error.error != QJsonParseError::NoError) {
+            qCWarning(Log) << "Failed to parse public transport network configuration:" << error.errorString() << it.fileName();
+            continue;
+        }
+
         auto net = loadNetwork(doc.object());
         if (net) {
             m_backends.push_back(std::move(net));
+        } else {
+            qCWarning(Log) << "Failed to load public transport network configuration config:" << it.fileName();
         }
     }
 
@@ -82,6 +90,7 @@ std::unique_ptr<AbstractBackend> ManagerPrivate::loadNetwork(const QJsonObject &
         return loadNetwork<NavitiaBackend>(obj);
     }
 
+    qCWarning(Log) << "Unknown backend type:" << type;
     return {};
 }
 

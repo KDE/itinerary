@@ -70,6 +70,11 @@ void Location::setCoordinate(float latitude, float longitude)
     d->longitude = longitude;
 }
 
+bool Location::hasCoordinate() const
+{
+    return !std::isnan(d->latitude) && !std::isnan(d->longitude);
+}
+
 QTimeZone Location::timeZone() const
 {
     return d->timeZone;

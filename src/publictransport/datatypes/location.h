@@ -42,6 +42,7 @@ public:
     float latitude() const;
     float longitude() const;
     void setCoordinate(float latitude, float longitude);
+    bool hasCoordinate() const;
 
     /** The timezone this location is in, if known. */
     QTimeZone timeZone() const;
