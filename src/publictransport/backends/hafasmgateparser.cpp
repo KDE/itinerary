@@ -20,6 +20,7 @@
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/Line>
 
+#include <QColor>
 #include <QDateTime>
 #include <QDebug>
 #include <QJsonArray>
@@ -27,6 +28,31 @@
 #include <QJsonObject>
 
 using namespace KPublicTransport;
+
+struct Ico {
+    QColor bg;
+    QColor fg;
+};
+
+static std::vector<Ico> parseIcos(const QJsonArray &icoL)
+{
+    std::vector<Ico> icos;
+    icos.reserve(icoL.size());
+    for (const auto &icoV : icoL) {
+        const auto icoObj = icoV.toObject();
+        Ico ico;
+        const auto fg = icoObj.value(QLatin1String("fg")).toObject();
+        if (!fg.isEmpty()) {
+            ico.fg = QColor(fg.value(QLatin1String("r")).toInt(), fg.value(QLatin1String("g")).toInt(), fg.value(QLatin1String("b")).toInt());
+        }
+        const auto bg = icoObj.value(QLatin1String("bg")).toObject();
+        if (!bg.isEmpty()) {
+            ico.bg = QColor(bg.value(QLatin1String("r")).toInt(), bg.value(QLatin1String("g")).toInt(), bg.value(QLatin1String("b")).toInt());
+        }
+        icos.push_back(ico);
+    }
+    return icos;
+}
 
 static std::vector<Location> parseLocations(const QJsonArray &locL)
 {
@@ -56,7 +82,7 @@ static struct {
     { 1024, Line::Tramway }
 };
 
-static std::vector<Line> parseLines(const QJsonArray &prodL)
+static std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos)
 {
     std::vector<Line> lines;
     lines.reserve(prodL.size());
@@ -72,6 +98,13 @@ static std::vector<Line> parseLines(const QJsonArray &prodL)
                 break;
             }
         }
+
+        const auto icoIdx = prodObj.value(QLatin1String("icoX")).toInt();
+        if ((unsigned int)icoIdx < icos.size()) {
+            line.setColor(icos[icoIdx].bg);
+            line.setTextColor(icos[icoIdx].fg);
+        }
+
         lines.push_back(line);
     }
 
@@ -81,8 +114,9 @@ static std::vector<Line> parseLines(const QJsonArray &prodL)
 static std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj)
 {
     const auto commonObj = obj.value(QLatin1String("common")).toObject();
+    const auto icos = parseIcos(commonObj.value(QLatin1String("icoL")).toArray());
     const auto locs = parseLocations(commonObj.value(QLatin1String("locL")).toArray());
-    const auto lines = parseLines(commonObj.value(QLatin1String("prodL")).toArray());
+    const auto lines = parseLines(commonObj.value(QLatin1String("prodL")).toArray(), icos);
 
     std::vector<Departure> res;
     const auto jnyL = obj.value(QLatin1String("jnyL")).toArray();
