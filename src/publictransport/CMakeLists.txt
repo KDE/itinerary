@@ -6,6 +6,8 @@ set(kpublictransport_srcs
     manager.cpp
     reply.cpp
 
+    backends/abstractbackend.cpp
+    backends/navitiabackend.cpp
     backends/navitiaclient.cpp
     backends/navitiaparser.cpp
 
@@ -13,6 +15,8 @@ set(kpublictransport_srcs
     datatypes/journey.cpp
     datatypes/line.cpp
     datatypes/location.cpp
+
+    networks/networks.qrc
 )
 ecm_qt_declare_logging_category(kpublictransport_srcs HEADER logging.h IDENTIFIER KPublicTransport::Log CATEGORY_NAME org.kde.kpublictransport)
 

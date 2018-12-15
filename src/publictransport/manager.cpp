@@ -18,17 +18,32 @@
 #include "manager.h"
 #include "departurereply.h"
 #include "journeyreply.h"
+#include "logging.h"
 
+#include "backends/navitiabackend.h"
+
+#include <QDirIterator>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QMetaProperty>
 #include <QNetworkAccessManager>
 
 using namespace KPublicTransport;
+
+static inline void initResources() {
+    Q_INIT_RESOURCE(networks);
+}
 
 namespace KPublicTransport {
 class ManagerPrivate {
 public:
     QNetworkAccessManager* nam();
+    void loadNetworks();
+    std::unique_ptr<AbstractBackend> loadNetwork(const QJsonObject &obj);
+    template <typename T> std::unique_ptr<AbstractBackend> loadNetwork(const QJsonObject &obj);
 
     QNetworkAccessManager *m_nam = nullptr;
+    std::vector<std::unique_ptr<AbstractBackend>> m_backends;
 };
 }
 
@@ -40,10 +55,58 @@ QNetworkAccessManager* ManagerPrivate::nam()
     return m_nam;
 }
 
+void ManagerPrivate::loadNetworks()
+{
+    QDirIterator it(QStringLiteral(":/org.kde.pim/kpublictransport/networks"));
+    while (it.hasNext()) {
+        QFile f(it.next());
+        if (!f.open(QFile::ReadOnly)) {
+            qCWarning(Log) << "Failed to open public transport network configuration:" << f.errorString();
+            continue;
+        }
+
+        const auto doc = QJsonDocument::fromJson(f.readAll());
+        auto net = loadNetwork(doc.object());
+        if (net) {
+            m_backends.push_back(std::move(net));
+        }
+    }
+
+    qCDebug(Log) << m_backends.size() << "public transport network configurations loaded";
+}
+
+std::unique_ptr<AbstractBackend> ManagerPrivate::loadNetwork(const QJsonObject &obj)
+{
+    const auto type = obj.value(QLatin1String("type")).toString();
+    if (type == QLatin1String("navitia")) {
+        return loadNetwork<NavitiaBackend>(obj);
+    }
+
+    return {};
+}
+
+static void applyBackendOptions(void *backend, const QMetaObject *mo, const QJsonObject &obj)
+{
+    const auto opts = obj.value(QLatin1String("options")).toObject();
+    for (auto it = opts.begin(); it != opts.end(); ++it) {
+        const auto idx = mo->indexOfProperty(it.key().toUtf8());
+        const auto mp = mo->property(idx);
+        mp.writeOnGadget(backend, it.value().toVariant());
+    }
+}
+
+template<typename T> std::unique_ptr<AbstractBackend> ManagerPrivate::loadNetwork(const QJsonObject &obj)
+{
+    std::unique_ptr<AbstractBackend> backend(new T);
+    applyBackendOptions(backend.get(), &T::staticMetaObject, obj);
+    return backend;
+}
 
 Manager::Manager() :
     d(new ManagerPrivate)
 {
+    initResources();
+    d->loadNetworks();
 }
 
 Manager::Manager(Manager&&) noexcept = default;

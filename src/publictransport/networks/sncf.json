@@ -1,0 +1,8 @@
+{
+    "type": "navitia",
+    "options": {
+        "endpoint": "api.sncf.com",
+        "coverage": "sncf",
+        "authorization": "f0f7fc73-c7f6-4f1d-8ae0-fd1e7bd20271"
+    }
+}

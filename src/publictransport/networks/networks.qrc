@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/org.kde.pim/kpublictransport/networks">
+        <file>navitia.json</file>
+        <file>sncf.json</file>
+    </qresource>
+</RCC>
+
