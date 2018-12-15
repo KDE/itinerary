@@ -57,3 +57,5 @@ ecm_generate_headers(KPublicTransport_Datatypes_FORWARDING_HEADERS
     REQUIRED_HEADERS KPublicTransport_Datatypes_HEADERS
     RELATIVE datatypes
 )
+
+install(FILES org_kde_kpublictransport.categories DESTINATION ${KDE_INSTALL_CONFDIR})
