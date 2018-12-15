@@ -28,9 +28,13 @@ class ReplyPrivate
 {
 public:
     virtual ~ReplyPrivate() = default;
+    virtual void finalizeResult() = 0;
+
+    void emitFinishedIfDone(Reply *q);
 
     QString errorMsg;
     Reply::Error error = Reply::NoError;
+    int pendingOps = -1;
 };
 
 }

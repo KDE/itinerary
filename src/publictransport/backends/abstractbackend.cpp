@@ -22,14 +22,14 @@ using namespace KPublicTransport;
 AbstractBackend::AbstractBackend() = default;
 AbstractBackend::~AbstractBackend() = default;
 
-bool AbstractBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam)
+bool AbstractBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     Q_UNUSED(reply);
     Q_UNUSED(nam);
     return false;
 }
 
-bool AbstractBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam)
+bool AbstractBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
     Q_UNUSED(reply);
     Q_UNUSED(nam);

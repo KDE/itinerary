@@ -26,6 +26,8 @@ template <typename T> static inline typename std::unique_ptr<T>::pointer qGetPtr
 
 namespace KPublicTransport {
 
+class AbstractBackend;
+class Manager;
 class ReplyPrivate;
 
 /** Query response base class. */
@@ -55,6 +57,12 @@ Q_SIGNALS:
 protected:
     explicit Reply(ReplyPrivate *dd);
     std::unique_ptr<ReplyPrivate> d_ptr;
+
+    friend class AbstractBackend;
+    void addError(Error error, const QString &errorMsg);
+
+    friend class Manager;
+    void setPendingOps(int ops);
 };
 
 }

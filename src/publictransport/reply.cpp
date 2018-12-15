@@ -20,6 +20,14 @@
 
 using namespace KPublicTransport;
 
+void ReplyPrivate::emitFinishedIfDone(Reply *q)
+{
+    if (pendingOps <= 0) {
+        finalizeResult();
+        emit q->finished();
+    }
+}
+
 Reply::Reply(ReplyPrivate *dd)
     : d_ptr(dd)
 {
@@ -35,4 +43,22 @@ Reply::Error Reply::error() const
 QString Reply::errorString() const
 {
     return d_ptr->errorMsg;
+}
+
+void Reply::addError(Reply::Error error, const QString &errorMsg)
+{
+    d_ptr->error = error;
+    d_ptr->errorMsg = errorMsg;
+    d_ptr->pendingOps--;
+    d_ptr->emitFinishedIfDone(this);
+}
+
+void Reply::setPendingOps(int ops)
+{
+    Q_ASSERT(d_ptr->pendingOps == -1);
+    Q_ASSERT(ops >= 0);
+    d_ptr->pendingOps = ops;
+    if (ops == 0) {
+        QMetaObject::invokeMethod(this, &Reply::finished, Qt::QueuedConnection);
+    }
 }

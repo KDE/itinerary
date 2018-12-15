@@ -35,8 +35,8 @@ class NavitiaBackend : public AbstractBackend
 public:
     NavitiaBackend();
 
-    bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) override;
-    bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) override;
+    bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const override;
+    bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const override;
 
 private:
     QString m_endpoint;

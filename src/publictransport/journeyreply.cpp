@@ -35,11 +35,22 @@ using namespace KPublicTransport;
 namespace KPublicTransport {
 class JourneyReplyPrivate : public ReplyPrivate {
 public:
+    void finalizeResult() override;
     void postProcessJourneys();
 
     JourneyRequest request;
     std::vector<Journey> journeys;
 };
+}
+
+void JourneyReplyPrivate::finalizeResult()
+{
+    if (journeys.empty()) {
+        return;
+    }
+
+    error = Reply::NoError;
+    errorMsg.clear();
 }
 
 void JourneyReplyPrivate::postProcessJourneys()

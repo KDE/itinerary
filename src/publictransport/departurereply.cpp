@@ -20,11 +20,7 @@
 #include "departurerequest.h"
 #include "logging.h"
 
-#include "backends/navitiaclient.h"
-#include "backends/navitiaparser.h"
-
 #include <KPublicTransport/Departure>
-#include <KPublicTransport/Location>
 
 #include <QNetworkReply>
 
@@ -33,36 +29,31 @@ using namespace KPublicTransport;
 namespace KPublicTransport {
 class DepartureReplyPrivate : public ReplyPrivate {
 public:
+    void finalizeResult() override;
+
     DepartureRequest request;
     std::vector<Departure> departures;
 };
 }
 
-DepartureReply::DepartureReply(const DepartureRequest &req, QNetworkAccessManager *nam)
+void DepartureReplyPrivate::finalizeResult()
+{
+    if (departures.empty()) {
+        return;
+    }
+    error = Reply::NoError;
+    errorMsg.clear();
+
+    std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
+        return lhs.scheduledTime() < rhs.scheduledTime();
+    });
+}
+
+DepartureReply::DepartureReply(const DepartureRequest &req)
     : Reply(new DepartureReplyPrivate)
 {
     Q_D(DepartureReply);
     d->request = req;
-    auto reply = NavitiaClient::queryDeparture(req, nam);
-    connect(reply, &QNetworkReply::finished, [reply, this] {
-        Q_D(DepartureReply);
-        switch (reply->error()) {
-            case QNetworkReply::NoError:
-                d->departures = NavitiaParser::parseDepartures(reply->readAll());
-                break;
-            case QNetworkReply::ContentNotFoundError:
-                d->error = NotFoundError;
-                d->errorMsg = NavitiaParser::parseErrorMessage(reply->readAll());
-                break;
-            default:
-                d->error = NetworkError;
-                d->errorMsg = reply->errorString();
-                qCDebug(Log) << reply->error() << reply->errorString();
-        }
-
-        emit finished();
-        deleteLater();
-    });
 }
 
 DepartureReply::~DepartureReply() = default;
@@ -77,4 +68,17 @@ std::vector<Departure> DepartureReply::departures() const
 {
     Q_D(const DepartureReply);
     return d->departures; // TODO this copies
+}
+
+void DepartureReply::addResult(std::vector<Departure> &&res)
+{
+    Q_D(DepartureReply);
+    if (d->departures.empty()) {
+        d->departures = std::move(res);
+    } else {
+        d->departures.insert(d->departures.end(), res.begin(), res.end());
+    }
+
+    d->pendingOps--;
+    d->emitFinishedIfDone(this);
 }

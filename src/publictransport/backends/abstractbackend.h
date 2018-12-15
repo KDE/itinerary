@@ -18,7 +18,7 @@
 #ifndef KPUBLICTRANSPORT_ABSTRACTBACKEND_H
 #define KPUBLICTRANSPORT_ABSTRACTBACKEND_H
 
-#include <qobjectdefs.h>
+#include "reply.h"
 
 class QNetworkAccessManager;
 
@@ -38,12 +38,24 @@ public:
     /** Perform a journey query.
      *  @return @c true if performing an async operation, @c false otherwise.
      */
-    virtual bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam);
+    virtual bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const;
 
     /** Perform a departure query.
      *  @return @c true if performing an async operation, @c false otherwise.
      */
-    virtual bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam);
+    virtual bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const;
+
+protected:
+    /** Helper function to call non-public Reply API. */
+    template <typename T, typename ...Args> inline static void addResult(T *reply, Args&&... args)
+    {
+        reply->addResult(std::forward<Args>(args)...);
+    }
+
+    inline static void addError(Reply *reply, Reply::Error error, const QString &errorMsg)
+    {
+        reply->addError(error, errorMsg);
+    }
 
 private:
     Q_DISABLE_COPY(AbstractBackend)

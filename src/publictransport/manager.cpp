@@ -125,5 +125,13 @@ JourneyReply* Manager::findJourney(const JourneyRequest &req) const
 
 DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
 {
-    return new DepartureReply(req, d->nam());
+    auto reply = new DepartureReply(req);
+    int pendingOps = 0;
+    for (const auto &backend : d->m_backends) {
+        if (backend->queryDeparture(reply, d->nam())) {
+            ++pendingOps;
+        }
+    }
+    reply->setPendingOps(pendingOps);
+    return reply;
 }
