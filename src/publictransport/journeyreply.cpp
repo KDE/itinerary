@@ -37,6 +37,7 @@ class JourneyReplyPrivate : public ReplyPrivate {
 public:
     void postProcessJourneys();
 
+    JourneyRequest request;
     std::vector<Journey> journeys;
 };
 }
@@ -73,6 +74,8 @@ void JourneyReplyPrivate::postProcessJourneys()
 JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam)
     : Reply(new JourneyReplyPrivate)
 {
+    Q_D(JourneyReply);
+    d->request = req;
     auto reply = NavitiaClient::findJourney(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
         Q_D(JourneyReply);
@@ -97,6 +100,12 @@ JourneyReply::JourneyReply(const JourneyRequest &req, QNetworkAccessManager *nam
 }
 
 JourneyReply::~JourneyReply() = default;
+
+JourneyRequest JourneyReply::request() const
+{
+    Q_D(const JourneyReply);
+    return d->request;
+}
 
 std::vector<Journey> JourneyReply::journeys() const
 {

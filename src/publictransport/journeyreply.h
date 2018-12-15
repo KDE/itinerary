@@ -37,6 +37,9 @@ class JourneyReply : public Reply
 public:
     ~JourneyReply();
 
+    /** The request this is the reply for. */
+    JourneyRequest request() const;
+
     /** Returns the found journeys. */
     std::vector<Journey> journeys() const;
 

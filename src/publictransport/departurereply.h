@@ -37,6 +37,9 @@ class DepartureReply : public Reply
 public:
     ~DepartureReply();
 
+    /** The request this is the reply for. */
+    DepartureRequest request() const;
+
     /** Returns the found departure information. */
     std::vector<Departure> departures() const;
 

@@ -33,6 +33,7 @@ using namespace KPublicTransport;
 namespace KPublicTransport {
 class DepartureReplyPrivate : public ReplyPrivate {
 public:
+    DepartureRequest request;
     std::vector<Departure> departures;
 };
 }
@@ -40,6 +41,8 @@ public:
 DepartureReply::DepartureReply(const DepartureRequest &req, QNetworkAccessManager *nam)
     : Reply(new DepartureReplyPrivate)
 {
+    Q_D(DepartureReply);
+    d->request = req;
     auto reply = NavitiaClient::queryDeparture(req, nam);
     connect(reply, &QNetworkReply::finished, [reply, this] {
         Q_D(DepartureReply);
@@ -63,6 +66,12 @@ DepartureReply::DepartureReply(const DepartureRequest &req, QNetworkAccessManage
 }
 
 DepartureReply::~DepartureReply() = default;
+
+DepartureRequest DepartureReply::request() const
+{
+    Q_D(const DepartureReply);
+    return d->request;
+}
 
 std::vector<Departure> DepartureReply::departures() const
 {
