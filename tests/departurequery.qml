@@ -96,13 +96,21 @@ Kirigami.ApplicationWindow {
                 ColumnLayout {
                     Layout.fillWidth: true
                     QQC2.Label {
+                        text: modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
+                    }
+                    RowLayout {
+                        QQC2.Label {
+                            text: "Departure: " + modelData.scheduledTime.toTimeString()
+                        }
+                        QQC2.Label {
+                            property int diff: (modelData.actualTime.getTime() - modelData.scheduledTime.getTime()) / 60000
+                            text: (diff >= 0 ? "+" : "") + diff
+                            color: diff > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.actualTime.getTime() > 0
+                        }
+                    }
+                    QQC2.Label {
                         text: "From: " + modelData.stopPoint.name
-                    }
-                    QQC2.Label {
-                        text: "Line: " + modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
-                    }
-                    QQC2.Label {
-                        text: "Time: " + modelData.scheduledTime
                     }
                 }
             }
