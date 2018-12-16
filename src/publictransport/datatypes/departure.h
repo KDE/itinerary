@@ -32,14 +32,22 @@ class DeparturePrivate;
 class Departure
 {
     KPUBLICTRANSPORT_GADGET(Departure)
+
     /** Planned departure time. */
     Q_PROPERTY(QDateTime scheduledTime READ scheduledTime WRITE setScheduledTime)
     /** Actual departure time, if available.
      *  Set to invalid to indicate real-time data is not available.
      */
-    Q_PROPERTY(QDateTime actualTime READ actualTime WRITE setActualTime)
+    Q_PROPERTY(QDateTime expectedTime READ expectedTime WRITE setExpectedTime)
     /** @c true if this has real-time data. */
-    Q_PROPERTY(bool hasRealTime READ hasRealTime STORED false)
+    Q_PROPERTY(bool hasExpectedTime READ hasExpectedTime STORED false)
+
+    /** Planned departure platform. */
+    Q_PROPERTY(QString scheduledPlatform READ scheduledPlatform WRITE setScheduledPlatform)
+    /** Actual departure platform, in case real-time information are available. */
+    Q_PROPERTY(QString expectedPlatform READ expectedPlatform WRITE setExpectedPlatform)
+    /** @c true if real-time platform information are available. */
+    Q_PROPERTY(bool hasExpectedPlatform READ hasExpectedPlatform STORED false)
 
     /** The departing route. */
     Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
@@ -50,10 +58,15 @@ class Departure
 public:
     QDateTime scheduledTime() const;
     void setScheduledTime(const QDateTime &scheduledTime);
-    QDateTime actualTime() const;
-    void setActualTime(const QDateTime &actualTime);
+    QDateTime expectedTime() const;
+    void setExpectedTime(const QDateTime &expectedTime);
+    bool hasExpectedTime() const;
 
-    bool hasRealTime() const;
+    QString scheduledPlatform() const;
+    void setScheduledPlatform(const QString &platform);
+    QString expectedPlatform() const;
+    void setExpectedPlatform(const QString &platform);
+    bool hasExpectedPlatform() const;
 
     Route route() const;
     void setRoute(const Route &route);

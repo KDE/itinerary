@@ -26,7 +26,9 @@ namespace KPublicTransport {
 class DeparturePrivate : public QSharedData {
 public:
     QDateTime scheduledTime;
-    QDateTime actualTime;
+    QDateTime expectedTime;
+    QString scheduledPlatform;
+    QString expectedPlatform;
     Route route;
     Location stopPoint;
 };
@@ -45,20 +47,47 @@ void Departure::setScheduledTime(const QDateTime &scheduledTime)
     d->scheduledTime = scheduledTime;
 }
 
-QDateTime Departure::actualTime() const
+QDateTime Departure::expectedTime() const
 {
-    return d->actualTime;
+    return d->expectedTime;
 }
 
-void Departure::setActualTime(const QDateTime &actualTime)
+void Departure::setExpectedTime(const QDateTime &expectedTime)
 {
     d.detach();
-    d->actualTime = actualTime;
+    d->expectedTime = expectedTime;
 }
 
-bool Departure::hasRealTime() const
+bool Departure::hasExpectedTime() const
 {
-    return d->actualTime.isValid();
+    return d->expectedTime.isValid();
+}
+
+QString Departure::scheduledPlatform() const
+{
+    return d->scheduledPlatform;
+}
+
+void Departure::setScheduledPlatform(const QString &platform)
+{
+    d.detach();
+    d->scheduledPlatform = platform;
+}
+
+QString Departure::expectedPlatform() const
+{
+    return d->expectedPlatform;
+}
+
+void Departure::setExpectedPlatform(const QString &platform)
+{
+    d.detach();
+    d->expectedPlatform = platform;
+}
+
+bool Departure::hasExpectedPlatform() const
+{
+    return !d->expectedPlatform.isEmpty();
 }
 
 Route Departure::route() const

@@ -132,10 +132,11 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
         dep.setScheduledTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
         const auto dTimeR = stbStop.value(QLatin1String("dTimeR")).toString();
         if (!dTimeR.isEmpty()) {
-            dep.setActualTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
+            dep.setExpectedTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
         }
 
-        // TODO platform
+        dep.setScheduledPlatform(stbStop.value(QLatin1String("dPlatfS")).toString());
+        dep.setExpectedPlatform(stbStop.value(QLatin1String("dPlatfR")).toString());
 
         const auto locIdx = stbStop.value(QLatin1String("locX")).toInt();
         if ((unsigned int)locIdx < locs.size()) {

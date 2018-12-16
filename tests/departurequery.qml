@@ -103,14 +103,27 @@ Kirigami.ApplicationWindow {
                             text: "Departure: " + modelData.scheduledTime.toTimeString()
                         }
                         QQC2.Label {
-                            property int diff: (modelData.actualTime.getTime() - modelData.scheduledTime.getTime()) / 60000
+                            property int diff: (modelData.expectedTime.getTime() - modelData.scheduledTime.getTime()) / 60000
                             text: (diff >= 0 ? "+" : "") + diff
                             color: diff > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.actualTime.getTime() > 0
+                            visible: modelData.hasExpectedTime
                         }
                     }
-                    QQC2.Label {
-                        text: "From: " + modelData.stopPoint.name
+                    RowLayout {
+                        QQC2.Label {
+                            text: "From: " + modelData.stopPoint.name
+                        }
+                        QQC2.Label {
+                            visible: modelData.scheduledPlatform != ""
+                            text: "Platform: " + modelData.scheduledPlatform + (platformChange.visible ? " -> " : "")
+                            color: (!platformChange.visible && modelData.hasExpectedPlatform) ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
+                        }
+                        QQC2.Label {
+                            id: platformChange
+                            text: modelData.expectedPlatform
+                            visible: modelData.hasExpectedPlatform && modelData.scheduledPlatform != modelData.expectedPlatform
+                            color: Kirigami.Theme.negativeTextColor
+                        }
                     }
                 }
             }
