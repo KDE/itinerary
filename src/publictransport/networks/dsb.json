@@ -5,6 +5,19 @@
         "aid": "irkmpm9mdznstenr-android",
         "clientId": "DK",
         "clientType": "AND",
-        "version": "1.14"
+        "version": "1.14",
+        "lineModeMap": {
+            "1": "LongDistanceTrain",
+            "2": "LongDistanceTrain",
+            "4": "LocalTrain",
+            "8": "LocalTrain",
+            "16": "RapidTransit",
+            "32": "Bus",
+            "64": "Bus",
+            "128": "Bus",
+            "256": "Ferry",
+            "512": "Metro",
+            "1024": "Tramway"
+        }
     }
 }
