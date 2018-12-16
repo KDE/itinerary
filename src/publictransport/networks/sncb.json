@@ -7,6 +7,7 @@
         "clientType": "AND",
         "version": "1.14",
         "lineModeMap": {
+            "1": "LongDistanceTrain",
             "4": "LongDistanceTrain",
             "64": "RapidTransit",
             "256": "Metro",
