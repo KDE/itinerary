@@ -20,12 +20,15 @@
 
 #include "reply.h"
 
+#include <QPolygonF>
+
 class QNetworkAccessManager;
 
 namespace KPublicTransport {
 
 class DepartureReply;
 class JourneyReply;
+class Location;
 
 /** Abstract base class for transport provider backends. */
 class AbstractBackend
@@ -34,6 +37,16 @@ class AbstractBackend
 public:
     AbstractBackend();
     virtual ~AbstractBackend();
+
+    /** Identifer for this backend.
+     *  Use e.g. for distinguishing backend-specific cache locations etc.
+     */
+    QString backendId() const;
+    void setBackendId(const QString &id);
+
+    /** Checks if this location has been filtered by the network configuration. */
+    bool isLocationExcluded(const Location &loc) const;
+    void setGeoFilter(const QPolygonF &poly);
 
     /** Perform a journey query.
      *  @return @c true if performing an async operation, @c false otherwise.
@@ -59,6 +72,8 @@ protected:
 
 private:
     Q_DISABLE_COPY(AbstractBackend)
+    QString m_backendId;
+    QPolygonF m_geoFilter;
 };
 
 }

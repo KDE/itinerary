@@ -145,7 +145,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 
     auto netReply = nam->post(netReq, content);
     qDebug() << netReq.url();
-    qDebug().noquote() << QJsonDocument(top).toJson();
+//     qDebug().noquote() << QJsonDocument(top).toJson();
     QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
         qDebug() << netReply->request().url();
         switch (netReply->error()) {

@@ -17,10 +17,38 @@
 
 #include "abstractbackend.h"
 
+#include <KPublicTransport/Location>
+
+#include <QDebug>
+#include <QPolygonF>
+
 using namespace KPublicTransport;
 
 AbstractBackend::AbstractBackend() = default;
 AbstractBackend::~AbstractBackend() = default;
+
+QString AbstractBackend::backendId() const
+{
+    return m_backendId;
+}
+
+void AbstractBackend::setBackendId(const QString& id)
+{
+    m_backendId = id;
+}
+
+bool AbstractBackend::isLocationExcluded(const Location &loc) const
+{
+    if (loc.hasCoordinate() && !m_geoFilter.isEmpty()) {
+        return !m_geoFilter.containsPoint({loc.latitude(), loc.longitude()}, Qt::WindingFill);
+    }
+    return false;
+}
+
+void AbstractBackend::setGeoFilter(const QPolygonF &poly)
+{
+    m_geoFilter = poly;
+}
 
 bool AbstractBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {

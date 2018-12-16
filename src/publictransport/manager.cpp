@@ -17,13 +17,18 @@
 
 #include "manager.h"
 #include "departurereply.h"
+#include "departurerequest.h"
 #include "journeyreply.h"
+#include "journeyrequest.h"
 #include "logging.h"
+
+#include <KPublicTransport/Location>
 
 #include "backends/hafasmgatebackend.h"
 #include "backends/navitiabackend.h"
 
 #include <QDirIterator>
+#include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMetaProperty>
@@ -75,6 +80,7 @@ void ManagerPrivate::loadNetworks()
 
         auto net = loadNetwork(doc.object());
         if (net) {
+            net->setBackendId(it.fileInfo().baseName());
             m_backends.push_back(std::move(net));
         } else {
             qCWarning(Log) << "Failed to load public transport network configuration config:" << it.fileName();
@@ -97,7 +103,7 @@ std::unique_ptr<AbstractBackend> ManagerPrivate::loadNetwork(const QJsonObject &
     return {};
 }
 
-static void applyBackendOptions(void *backend, const QMetaObject *mo, const QJsonObject &obj)
+static void applyBackendOptions(AbstractBackend *backend, const QMetaObject *mo, const QJsonObject &obj)
 {
     const auto opts = obj.value(QLatin1String("options")).toObject();
     for (auto it = opts.begin(); it != opts.end(); ++it) {
@@ -108,6 +114,18 @@ static void applyBackendOptions(void *backend, const QMetaObject *mo, const QJso
         } else {
             mp.writeOnGadget(backend, it.value().toVariant());
         }
+    }
+
+    const auto filter = obj.value(QLatin1String("filter")).toObject();
+    const auto geoFilter = filter.value(QLatin1String("geo")).toArray();
+    if (!geoFilter.isEmpty()) {
+        QPolygonF poly;
+        poly.reserve(geoFilter.size());
+        for (const auto &coordV : geoFilter) {
+            const auto coordA = coordV.toArray();
+            poly.push_back({coordA[0].toDouble(), coordA[1].toDouble()});
+        }
+        backend->setGeoFilter(poly);
     }
 }
 
@@ -139,6 +157,10 @@ JourneyReply* Manager::queryJourney(const JourneyRequest &req) const
     auto reply = new JourneyReply(req);
     int pendingOps = 0;
     for (const auto &backend : d->m_backends) {
+        if (backend->isLocationExcluded(req.from()) && backend->isLocationExcluded(req.to())) {
+            qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
+            continue;
+        }
         if (backend->queryJourney(reply, d->nam())) {
             ++pendingOps;
         }
@@ -152,6 +174,10 @@ DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
     auto reply = new DepartureReply(req);
     int pendingOps = 0;
     for (const auto &backend : d->m_backends) {
+        if (backend->isLocationExcluded(req.stop())) {
+            qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
+            continue;
+        }
         if (backend->queryDeparture(reply, d->nam())) {
             ++pendingOps;
         }
