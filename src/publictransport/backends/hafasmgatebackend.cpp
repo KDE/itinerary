@@ -24,6 +24,7 @@
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
 
+#include <QCryptographicHash>
 #include <QDateTime>
 #include <QDebug>
 #include <QJsonArray>
@@ -32,6 +33,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QUrlQuery>
 
 using namespace KPublicTransport;
 
@@ -108,9 +110,30 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     }
     top.insert(QLatin1String("ver"), m_version);
 
-    auto netReq = QNetworkRequest(QUrl(m_endpoint));
+    const auto content = QJsonDocument(top).toJson();
+    QUrl url(m_endpoint);
+    if (!m_micMacSalt.isEmpty()) {
+        QUrlQuery query;
+
+        QCryptographicHash md5(QCryptographicHash::Md5);
+        md5.addData(content);
+        const auto mic = md5.result().toHex();
+        query.addQueryItem(QLatin1String("mic"), QString::fromLatin1(mic));
+
+        md5.reset();
+        // yes, mic is added as hex-encoded string, and the salt is added as raw bytes
+        md5.addData(mic);
+        md5.addData(m_micMacSalt);
+        query.addQueryItem(QLatin1String("mac"), QString::fromLatin1(md5.result().toHex()));
+
+        url.setQuery(query);
+    }
+
+    auto netReq = QNetworkRequest(url);
     netReq.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    auto netReply = nam->post(netReq, QJsonDocument(top).toJson());
+
+    auto netReply = nam->post(netReq, content);
+    qDebug() << netReq.url();
     qDebug().noquote() << QJsonDocument(top).toJson();
     QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply]() {
         qDebug() << netReply->request().url();
@@ -127,4 +150,9 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     });
 
     return true;
+}
+
+void HafasMgateBackend::setMicMacSalt(const QString &salt)
+{
+    m_micMacSalt = QByteArray::fromHex(salt.toUtf8());
 }

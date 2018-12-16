@@ -1,0 +1,11 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "https://fahrinfo.vbb.de/bin/mgate.exe",
+        "aid": "hafas-vbb-apps",
+        "clientId": "VBB",
+        "clientType": "AND",
+        "version": "1.14",
+        "micMacSalt": "5243544a4d3266467846667878516649"
+    }
+}
