@@ -6,6 +6,15 @@
         "clientId": "VBB",
         "clientType": "AND",
         "version": "1.14",
-        "micMacSalt": "5243544a4d3266467846667878516649"
+        "micMacSalt": "5243544a4d3266467846667878516649",
+        "lineModeMap": {
+            "1": "RapidTransit",
+            "2": "Metro",
+            "4": "Tramway",
+            "8": "Bus",
+            "16": "Ferry",
+            "32": "LongDistanceTrain",
+            "64": "LocalTrain"
+        }
     }
 }

@@ -5,6 +5,18 @@
         "aid": "OWDL4fE4ixNiPBBm",
         "clientId": "OEBB",
         "clientType": "AND",
-        "version": "1.14"
+        "version": "1.14",
+        "lineModeMap": {
+            "1": "LongDistanceTrain",
+            "2": "LongDistanceTrain",
+            "4": "LongDistanceTrain",
+            "8": "Train",
+            "16": "LocalTrain",
+            "32": "RapidTransit",
+            "64": "Bus",
+            "128": "Ferry",
+            "256": "Metro",
+            "512": "Tramway"
+        }
     }
 }

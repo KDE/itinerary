@@ -103,7 +103,11 @@ static void applyBackendOptions(void *backend, const QMetaObject *mo, const QJso
     for (auto it = opts.begin(); it != opts.end(); ++it) {
         const auto idx = mo->indexOfProperty(it.key().toUtf8());
         const auto mp = mo->property(idx);
-        mp.writeOnGadget(backend, it.value().toVariant());
+        if (it.value().isObject()) {
+            mp.writeOnGadget(backend, it.value().toObject());
+        } else {
+            mp.writeOnGadget(backend, it.value().toVariant());
+        }
     }
 }
 

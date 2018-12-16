@@ -18,7 +18,12 @@
 #ifndef KPUBLICTRANSPORT_HAFASMGATEPARSER_H
 #define KPUBLICTRANSPORT_HAFASMGATEPARSER_H
 
+#include <KPublicTransport/Line>
+
+#include <unordered_map>
 #include <vector>
+
+#include <QColor>
 
 class QByteArray;
 
@@ -26,11 +31,28 @@ namespace KPublicTransport {
 
 class Departure;
 
+struct Ico {
+    QColor bg;
+    QColor fg;
+};
+
 /** Hafas response parser. */
-namespace HafasMgateParser
+class HafasMgateParser
 {
-    std::vector<Departure> parseDepartures(const QByteArray &data);
-}
+public:
+    HafasMgateParser();
+    ~HafasMgateParser();
+    void setLineModeMap(std::unordered_map<int, Line::Mode> &&modeMap);
+
+    std::vector<Departure> parseDepartures(const QByteArray &data) const;
+
+private:
+    Q_DISABLE_COPY(HafasMgateParser)
+    std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj) const;
+    std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos) const;
+
+    std::unordered_map<int, Line::Mode> m_lineModeMap;
+};
 
 }
 

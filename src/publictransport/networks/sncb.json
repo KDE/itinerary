@@ -5,6 +5,13 @@
         "aid": "sncb-mobi",
         "clientId": "SNCB",
         "clientType": "AND",
-        "version": "1.14"
+        "version": "1.14",
+        "lineModeMap": {
+            "4": "LongDistanceTrain",
+            "64": "RapidTransit",
+            "256": "Metro",
+            "512": "Bus",
+            "1024": "Tramway"
+        }
     }
 }

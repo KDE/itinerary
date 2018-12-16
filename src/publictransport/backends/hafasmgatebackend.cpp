@@ -30,6 +30,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QMetaEnum>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
@@ -135,11 +136,11 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     auto netReply = nam->post(netReq, content);
     qDebug() << netReq.url();
     qDebug().noquote() << QJsonDocument(top).toJson();
-    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply]() {
+    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
         qDebug() << netReply->request().url();
         switch (netReply->error()) {
             case QNetworkReply::NoError:
-                addResult(reply, HafasMgateParser::parseDepartures(netReply->readAll()));
+                addResult(reply, m_parser.parseDepartures(netReply->readAll()));
                 break;
             default:
                 addError(reply, Reply::NetworkError, netReply->errorString());
@@ -155,4 +156,17 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 void HafasMgateBackend::setMicMacSalt(const QString &salt)
 {
     m_micMacSalt = QByteArray::fromHex(salt.toUtf8());
+}
+
+void HafasMgateBackend::setLineModeMap(const QJsonObject& obj)
+{
+    const auto idx = Line::staticMetaObject.indexOfEnumerator("Mode");
+    Q_ASSERT(idx >= 0);
+    const auto me = Line::staticMetaObject.enumerator(idx);
+
+    std::unordered_map<int, Line::Mode> modeMap;
+    for (auto it = obj.begin(); it != obj.end(); ++it) {
+        modeMap[it.key().toInt()] = static_cast<Line::Mode>(me.keyToValue(it.value().toString().toUtf8()));
+    }
+    m_parser.setLineModeMap(std::move(modeMap));
 }

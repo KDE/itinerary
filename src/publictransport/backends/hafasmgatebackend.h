@@ -19,8 +19,11 @@
 #define KPUBLICTRANSPORT_HAFASMGATEBACKEND_H
 
 #include "abstractbackend.h"
+#include "hafasmgateparser.h"
 
 #include <QString>
+
+class QJsonObject;
 
 namespace KPublicTransport {
 
@@ -35,6 +38,7 @@ class HafasMgateBackend : public AbstractBackend
     Q_PROPERTY(QString version MEMBER m_version)
     /** Salt for request mic/mac parameters, hex-encoded. */
     Q_PROPERTY(QString micMacSalt WRITE setMicMacSalt)
+    Q_PROPERTY(QJsonObject lineModeMap WRITE setLineModeMap)
 public:
     HafasMgateBackend();
     bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const override;
@@ -42,6 +46,9 @@ public:
 
 private:
     void setMicMacSalt(const QString &salt);
+    void setLineModeMap(const QJsonObject &obj);
+
+    HafasMgateParser m_parser;
 
     QString m_endpoint;
     QString m_aid;

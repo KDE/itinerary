@@ -30,10 +30,13 @@
 
 using namespace KPublicTransport;
 
-struct Ico {
-    QColor bg;
-    QColor fg;
-};
+HafasMgateParser::HafasMgateParser() = default;
+HafasMgateParser::~HafasMgateParser() = default;
+
+void HafasMgateParser::setLineModeMap(std::unordered_map<int, Line::Mode> &&modeMap)
+{
+    m_lineModeMap = std::move(modeMap);
+}
 
 static std::vector<Ico> parseIcos(const QJsonArray &icoL)
 {
@@ -71,19 +74,7 @@ static std::vector<Location> parseLocations(const QJsonArray &locL)
     return locs;
 }
 
-// ### mapping based on SNCB, is that the same everywhere? if not, this needs to move to the network config
-static struct {
-    int productCode;
-    Line::Mode mode;
-} const line_type_map[] {
-    { 4, Line::Train },
-    { 64, Line::RapidTransit },
-    { 256, Line::Metro },
-    { 512, Line::Bus },
-    { 1024, Line::Tramway }
-};
-
-static std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos)
+std::vector<Line> HafasMgateParser::parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos) const
 {
     std::vector<Line> lines;
     lines.reserve(prodL.size());
@@ -93,13 +84,10 @@ static std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<I
         line.setName(prodObj.value(QLatin1String("name")).toString());
 
         const auto prodCode = prodObj.value(QLatin1String("cls")).toInt();
-        for (auto it = std::begin(line_type_map); it != std::end(line_type_map); ++it) {
-            if ((*it).productCode == prodCode) {
-                line.setMode((*it).mode);
-                break;
-            }
-        }
-        if (line.mode() == Line::Unknown) {
+        const auto lineModeIt = m_lineModeMap.find(prodCode);
+        if (lineModeIt != m_lineModeMap.end()) {
+            line.setMode((*lineModeIt).second);
+        } else {
             qCDebug(Log) << "Encountered unknown line type:" << prodCode << line.name();
         }
 
@@ -115,7 +103,7 @@ static std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<I
     return lines;
 }
 
-static std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj)
+std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonObject &obj) const
 {
     const auto commonObj = obj.value(QLatin1String("common")).toObject();
     const auto icos = parseIcos(commonObj.value(QLatin1String("icoL")).toArray());
@@ -160,9 +148,10 @@ static std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj)
     return res;
 }
 
-std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data)
+std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data) const
 {
     const auto topObj = QJsonDocument::fromJson(data).object();
+//     qDebug().noquote() << QJsonDocument(topObj).toJson();
     const auto svcResL = topObj.value(QLatin1String("svcResL")).toArray();
 
     for (const auto &v : svcResL) {
