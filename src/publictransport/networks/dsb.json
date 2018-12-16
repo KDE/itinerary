@@ -1,0 +1,10 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "http://mobilapps.rejseplanen.dk/bin/iphone.exe",
+        "aid": "irkmpm9mdznstenr-android",
+        "clientId": "DK",
+        "clientType": "AND",
+        "version": "1.14"
+    }
+}

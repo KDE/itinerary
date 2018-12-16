@@ -2,7 +2,9 @@
     <qresource prefix="/org.kde.pim/kpublictransport/networks">
         <file>bvg.json</file>
         <file>db.json</file>
+        <file>dsb.json</file>
         <file>navitia.json</file>
+        <file>oebb.json</file>
         <file>sncb.json</file>
         <file>sncf.json</file>
         <file>vbb.json</file>

@@ -1,0 +1,10 @@
+{
+    "type": "hafas_mgate",
+    "options": {
+        "endpoint": "http://fahrplan.oebb.at/bin/mgate.exe",
+        "aid": "OWDL4fE4ixNiPBBm",
+        "clientId": "OEBB",
+        "clientType": "AND",
+        "version": "1.14"
+    }
+}
