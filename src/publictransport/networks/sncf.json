@@ -4,5 +4,8 @@
         "endpoint": "api.sncf.com",
         "coverage": "sncf",
         "authorization": "f0f7fc73-c7f6-4f1d-8ae0-fd1e7bd20271"
+    },
+    "filter": {
+        "geo": [ [ -5.619, 48.66 ], [ 2.46, 51.369 ], [ 8.732, 49.0 ], [ 10.1, 41.06 ], [ -2.31, 42.81 ] ]
     }
 }
