@@ -16,6 +16,7 @@
 */
 
 #include "hafasmgateparser.h"
+#include "logging.h"
 
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/Line>
@@ -97,6 +98,9 @@ static std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<I
                 line.setMode((*it).mode);
                 break;
             }
+        }
+        if (line.mode() == Line::Unknown) {
+            qCDebug(Log) << "Encountered unknown line type:" << prodCode << line.name();
         }
 
         const auto icoIdx = prodObj.value(QLatin1String("icoX")).toInt();
