@@ -5,6 +5,20 @@
         "aid": "n91dB8Z77MLdoR0K",
         "clientId": "DB",
         "clientType": "AND",
-        "version": "1.14"
+        "clientVersion": "16040000",
+        "clientName": "DB Navigator",
+        "version": "1.14",
+        "checksumSalt": "6264493855566A34304B356676787766",
+        "lineModeMap": {
+            "1": "LongDistanceTrain",
+            "2": "LongDistanceTrain",
+            "4": "LocalTrain",
+            "8": "LocalTrain",
+            "16": "RapidTransit",
+            "32": "Bus",
+            "64": "Ferry",
+            "128": "Metro",
+            "256": "Tramway"
+        }
     }
 }

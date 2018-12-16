@@ -35,9 +35,13 @@ class HafasMgateBackend : public AbstractBackend
     Q_PROPERTY(QString aid MEMBER m_aid)
     Q_PROPERTY(QString clientId MEMBER m_clientId)
     Q_PROPERTY(QString clientType MEMBER m_clientType)
+    Q_PROPERTY(QString clientVersion MEMBER m_clientVersion)
+    Q_PROPERTY(QString clientName MEMBER m_clientName)
     Q_PROPERTY(QString version MEMBER m_version)
     /** Salt for request mic/mac parameters, hex-encoded. */
     Q_PROPERTY(QString micMacSalt WRITE setMicMacSalt)
+    /** Salt for the request checksum parameter, hex-encoded. */
+    Q_PROPERTY(QString checksumSalt WRITE setChecksumSalt)
     Q_PROPERTY(QJsonObject lineModeMap WRITE setLineModeMap)
 public:
     HafasMgateBackend();
@@ -46,6 +50,7 @@ public:
 
 private:
     void setMicMacSalt(const QString &salt);
+    void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);
 
     HafasMgateParser m_parser;
@@ -54,8 +59,11 @@ private:
     QString m_aid;
     QString m_clientId;
     QString m_clientType;
+    QString m_clientVersion;
+    QString m_clientName;
     QString m_version;
     QByteArray m_micMacSalt;
+    QByteArray m_checksumSalt;
 };
 
 }

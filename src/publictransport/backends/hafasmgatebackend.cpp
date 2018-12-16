@@ -64,6 +64,12 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         QJsonObject client;
         client.insert(QLatin1String("id"), m_clientId);
         client.insert(QLatin1String("type"), m_clientType);
+        if (!m_clientVersion.isEmpty()) {
+            client.insert(QLatin1String("v"), m_clientVersion);
+        }
+        if (!m_clientName.isEmpty()) {
+            client.insert(QLatin1String("name"), m_clientName);
+        }
         top.insert(QLatin1String("client"), client);
     }
     top.insert(QLatin1String("formatted"), false);
@@ -113,9 +119,8 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 
     const auto content = QJsonDocument(top).toJson();
     QUrl url(m_endpoint);
+    QUrlQuery query;
     if (!m_micMacSalt.isEmpty()) {
-        QUrlQuery query;
-
         QCryptographicHash md5(QCryptographicHash::Md5);
         md5.addData(content);
         const auto mic = md5.result().toHex();
@@ -126,9 +131,14 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         md5.addData(mic);
         md5.addData(m_micMacSalt);
         query.addQueryItem(QLatin1String("mac"), QString::fromLatin1(md5.result().toHex()));
-
-        url.setQuery(query);
     }
+    if (!m_checksumSalt.isEmpty()) {
+        QCryptographicHash md5(QCryptographicHash::Md5);
+        md5.addData(content);
+        md5.addData(m_checksumSalt);
+        query.addQueryItem(QLatin1String("checksum"), QString::fromLatin1(md5.result().toHex()));
+    }
+    url.setQuery(query);
 
     auto netReq = QNetworkRequest(url);
     netReq.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
@@ -156,6 +166,11 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 void HafasMgateBackend::setMicMacSalt(const QString &salt)
 {
     m_micMacSalt = QByteArray::fromHex(salt.toUtf8());
+}
+
+void HafasMgateBackend::setChecksumSalt(const QString &salt)
+{
+    m_checksumSalt = QByteArray::fromHex(salt.toUtf8());
 }
 
 void HafasMgateBackend::setLineModeMap(const QJsonObject& obj)
