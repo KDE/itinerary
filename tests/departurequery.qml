@@ -53,6 +53,63 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
+        id: departureDelegate
+        Item {
+            implicitHeight: delegateLayout.implicitHeight
+            implicitWidth: delegateLayout.implicitWidth
+
+            RowLayout {
+                id: delegateLayout
+
+                Rectangle {
+                    id: colorBar
+                    width: Kirigami.Units.largeSpacing
+                    color: modelData.route.line.color
+                    Layout.fillHeight: true
+                }
+
+                QQC2.Label {
+                    text: {
+                        switch (modelData.route.line.mode) {
+                            case Line.Air: return "✈️";
+                            case Line.Boat: return "🛥️";
+                            case Line.Bus: return "🚍";
+                            case Line.BusRapidTransit: return "🚌";
+                            case Line.Coach: return "🚌";
+                            case Line.Ferry: return "⛴️";
+                            case Line.Funicular: return "🚞";
+                            case Line.LocalTrain: return "🚆";
+                            case Line.LongDistanceTrain: return "🚄";
+                            case Line.Metro: return "🚇";
+                            case Line.RailShuttle: return "🚅";
+                            case Line.RapidTransit: return "🚊";
+                            case Line.Shuttle: return "🚐";
+                            case Line.Taxi: return "🚕";
+                            case Line.Train: return "🚆";
+                            case Line.Tramway: return "🚈";
+                            default: return "?";
+                        }
+                    }
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                }
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    QQC2.Label {
+                        text: "From: " + modelData.stopPoint.name
+                    }
+                    QQC2.Label {
+                        text: "Line: " + modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
+                    }
+                    QQC2.Label {
+                        text: "Time: " + modelData.scheduledTime
+                    }
+                }
+            }
+        }
+    }
+
+    Component {
         id: departureQueryPage
         Kirigami.Page {
             ColumnLayout {
@@ -72,30 +129,9 @@ Kirigami.ApplicationWindow {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     model: _departures
+                    clip: true
                     spacing: Kirigami.Units.smallSpacing
-                    delegate: Item {
-                        implicitHeight: delegateLayout.implicitHeight
-                        implicitWidth: delegateLayout.implicitWidth
-                        ColumnLayout {
-                            id: delegateLayout
-                            QQC2.Label {
-                                text: "From: " + modelData.stopPoint.name
-                            }
-                            QQC2.Label {
-                                text: "Line: " + modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
-                            }
-                            QQC2.Label {
-                                text: "Time: " + modelData.scheduledTime
-                            }
-                        }
-                        Rectangle {
-                            anchors.left: parent.left
-                            anchors.leftMargin: -8
-                            height: parent.height
-                            width: 4
-                            color: modelData.route.line.color
-                        }
-                    }
+                    delegate: departureDelegate
 
                     QQC2.BusyIndicator {
                         anchors.centerIn: parent
