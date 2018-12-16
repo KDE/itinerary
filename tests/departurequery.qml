@@ -71,18 +71,19 @@ Kirigami.ApplicationWindow {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     model: _departures
+                    spacing: Kirigami.Units.smallSpacing
                     delegate: Item {
                         implicitHeight: delegateLayout.implicitHeight
                         implicitWidth: delegateLayout.implicitWidth
                         ColumnLayout {
                             id: delegateLayout
-                            Text {
+                            QQC2.Label {
                                 text: "From: " + modelData.stopPoint.name
                             }
-                            Text {
+                            QQC2.Label {
                                 text: "Line: " + modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
                             }
-                            Text {
+                            QQC2.Label {
                                 text: "Time: " + modelData.scheduledTime
                             }
                         }

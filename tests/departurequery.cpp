@@ -24,9 +24,9 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
+#include <QApplication>
 #include <QDateTime>
 #include <QDebug>
-#include <QGuiApplication>
 #include <QNetworkAccessManager>
 #include <QUrl>
 
@@ -101,7 +101,7 @@ int main(int argc, char **argv)
 
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     qmlRegisterUncreatableType<KPublicTransport::Line>("org.kde.kpublictransport", 1, 0, "Line", {});
 

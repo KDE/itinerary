@@ -143,11 +143,11 @@ Kirigami.ApplicationWindow {
                         implicitWidth: delegateLayout.implicitWidth
                         ColumnLayout {
                             id: delegateLayout
-                            Text {
+                            QQC2.Label {
                                 text: "From: " + modelData.from.name
                                 visible: index == 0
                             }
-                            Text {
+                            QQC2.Label {
                                 text: {
                                     switch (modelData.mode) {
                                     case JourneySection.PublicTransport:
@@ -161,7 +161,7 @@ Kirigami.ApplicationWindow {
                                     return "???";
                                 }}
                             }
-                            Text {
+                            QQC2.Label {
                                 text: "To: " + modelData.to.name
                             }
                         }
