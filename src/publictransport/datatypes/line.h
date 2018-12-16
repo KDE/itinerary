@@ -74,6 +74,14 @@ public:
     void setMode(Mode mode);
     QString modeString() const;
     void setModeString(const QString &modeString);
+
+    /** Checks if to instances refer to the same line (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const Line &lhs, const Line &rhs);
+
+    /** Merge two Line instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static Line merge(const Line &lhs, const Line &rhs);
 };
 
 class RoutePrivate;
@@ -92,6 +100,14 @@ public:
     void setLine(const Line &line);
     QString direction() const;
     void setDirection(const QString &direction);
+
+    /** Checks if to instances refer to the same route (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const Route &lhs, const Route &rhs);
+
+    /** Merge two Route instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static Route merge(const Route &lhs, const Route &rhs);
 };
 
 }

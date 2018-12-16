@@ -112,4 +112,30 @@ void Departure::setStopPoint(const Location &stopPoint)
     d->stopPoint = stopPoint;
 }
 
+bool Departure::isSame(const Departure &lhs, const Departure &rhs)
+{
+    if (lhs.scheduledTime() != rhs.scheduledTime()) {
+        return false;
+    }
+
+    return Route::isSame(lhs.route(), rhs.route());
+}
+
+Departure Departure::merge(const Departure &lhs, const Departure &rhs)
+{
+    auto dep = lhs;
+    if (!dep.hasExpectedTime() && rhs.hasExpectedTime()) {
+        dep.setExpectedTime(rhs.expectedTime());
+    }
+    if (dep.scheduledPlatform().isEmpty() && !rhs.scheduledPlatform().isEmpty()) {
+        dep.setScheduledPlatform(rhs.scheduledPlatform());
+    }
+    if (!dep.hasExpectedPlatform() && rhs.hasExpectedPlatform()) {
+        dep.setExpectedPlatform(rhs.expectedPlatform());
+    }
+
+    dep.setRoute(Route::merge(lhs.route(), rhs.route()));
+    return dep;
+}
+
 #include "moc_departure.cpp"

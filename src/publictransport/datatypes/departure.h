@@ -72,6 +72,14 @@ public:
     void setRoute(const Route &route);
     Location stopPoint() const;
     void setStopPoint(const Location &stopPoint);
+
+    /** Checks if to instances refer to the same departure (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const Departure &lhs, const Departure &rhs);
+
+    /** Merge two departure instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static Departure merge(const Departure &lhs, const Departure &rhs);
 };
 
 }

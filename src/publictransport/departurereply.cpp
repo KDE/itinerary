@@ -47,6 +47,21 @@ void DepartureReplyPrivate::finalizeResult()
     std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
         return lhs.scheduledTime() < rhs.scheduledTime();
     });
+
+    for (auto it = departures.begin(); it != departures.end(); ++it) {
+        for (auto mergeIt = it + 1; mergeIt != departures.end();) {
+            if ((*it).scheduledTime() != (*mergeIt).scheduledTime()) {
+                break;
+            }
+
+            if (Departure::isSame(*it, *mergeIt)) {
+                *it = Departure::merge(*it, *mergeIt);
+                mergeIt = departures.erase(mergeIt);
+            } else {
+                ++mergeIt;
+            }
+        }
+    }
 }
 
 DepartureReply::DepartureReply(const DepartureRequest &req)

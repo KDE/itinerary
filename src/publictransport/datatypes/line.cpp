@@ -19,6 +19,7 @@
 #include "datatypes_p.h"
 
 #include <QColor>
+#include <QDebug>
 
 using namespace KPublicTransport;
 
@@ -38,6 +39,28 @@ public:
     QString direction;
 };
 
+}
+
+static bool isSameLocationName(const QString &lhs, const QString &rhs)
+{
+    if (lhs.size() == rhs.size()) {
+        return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
+    }
+    if (lhs.size() < rhs.size()) {
+        return rhs.startsWith(lhs, Qt::CaseInsensitive);
+    }
+    return lhs.startsWith(rhs, Qt::CaseInsensitive);
+}
+
+static bool isSameLineName(const QString &lhs, const QString &rhs)
+{
+    if (lhs.size() == rhs.size()) {
+        return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
+    }
+    if (lhs.size() < rhs.size()) {
+        return rhs.endsWith(QLatin1Char(' ') + lhs, Qt::CaseInsensitive);
+    }
+    return lhs.endsWith(QLatin1Char(' ') + rhs, Qt::CaseInsensitive);
 }
 
 KPUBLICTRANSPORT_MAKE_GADGET(Line)
@@ -97,6 +120,22 @@ void Line::setModeString(const QString &modeString)
     d->modeString = modeString;
 }
 
+bool Line::isSame(const Line &lhs, const Line &rhs)
+{
+    return isSameLineName(lhs.name(), rhs.name()) && lhs.mode() == rhs.mode();
+}
+
+Line Line::merge(const Line &lhs, const Line &rhs)
+{
+    Line l(lhs);
+    if (!l.color().isValid() && rhs.color().isValid()) {
+        l.setColor(rhs.color());
+    }
+    if (!l.textColor().isValid() && rhs.textColor().isValid()) {
+        l.setTextColor(rhs.textColor());
+    }
+    return l;
+}
 
 KPUBLICTRANSPORT_MAKE_GADGET(Route)
 
@@ -120,6 +159,19 @@ void Route::setDirection(const QString &direction)
 {
     d.detach();
     d->direction = direction;
+}
+
+bool Route::isSame(const Route &lhs, const Route &rhs)
+{
+    return isSameLocationName(lhs.direction(), rhs.direction()) &&
+        Line::isSame(lhs.line(), rhs.line());
+}
+
+Route Route::merge(const Route &lhs, const Route &rhs)
+{
+    Route r(lhs);
+    r.setLine(Line::merge(lhs.line(), rhs.line()));
+    return r;
 }
 
 #include "moc_line.cpp"
