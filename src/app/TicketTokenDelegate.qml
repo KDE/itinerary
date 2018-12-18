@@ -58,7 +58,7 @@ ColumnLayout {
             anchors.bottom: barcodeContainer.bottom
             color: "white"
             implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth + barcode.anchors.margins * 2)
-            // ### we asume aspect ratio 1:1 here, which is correct for QR and Aztec only
+            // ### we assume aspect ratio 1:1 here, which is correct for QR and Aztec only
             implicitHeight: visible ? implicitWidth : 0
             visible: barcode.implicitHeight > 0
 
