@@ -19,13 +19,13 @@
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" name="public_transport_coverage" source="/k/kde5/src/itinerary/src/publictransport/coverage/public_transport_coverage.geojson|layername=public_transport_coverage" id="public_transport_coverage_08534f9a_2533_4a57_be66_fe99bfd3eb0a">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" name="public_transport_coverage" source="public_transport_coverage.geojson|layername=public_transport_coverage" id="public_transport_coverage_08534f9a_2533_4a57_be66_fe99bfd3eb0a">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" name="ne_10m_admin_1_states_provinces" source="../../../../natural-earth-vector/natural-earth-vector-4.1.0/10m_cultural/ne_10m_admin_1_states_provinces.shp" id="ne_10m_admin_1_states_provinces_9613e253_e4e8_4490_adff_50865fee9e30">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Unchecked" name="ne_10m_admin_1_states_provinces" source="10m_cultural/ne_10m_admin_1_states_provinces.shp" id="ne_10m_admin_1_states_provinces_9613e253_e4e8_4490_adff_50865fee9e30">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" name="ne_10m_admin_0_map_subunits" source="../../../../natural-earth-vector/natural-earth-vector-4.1.0/10m_cultural/ne_10m_admin_0_map_subunits.shp" id="ne_10m_admin_0_map_subunits_2b08d38d_61e1_4742_9820_3aae7e836c60">
+    <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" name="ne_10m_admin_0_map_subunits" source="10m_cultural/ne_10m_admin_0_map_subunits.shp" id="ne_10m_admin_0_map_subunits_2b08d38d_61e1_4742_9820_3aae7e836c60">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
@@ -94,7 +94,7 @@
         <ymax>83.63410065300007545</ymax>
       </extent>
       <id>ne_10m_admin_0_map_subunits_2b08d38d_61e1_4742_9820_3aae7e836c60</id>
-      <datasource>../../../../natural-earth-vector/natural-earth-vector-4.1.0/10m_cultural/ne_10m_admin_0_map_subunits.shp</datasource>
+      <datasource>10m_cultural/ne_10m_admin_0_map_subunits.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1264,7 +1264,7 @@
         <ymax>83.63410065300007545</ymax>
       </extent>
       <id>ne_10m_admin_1_states_provinces_9613e253_e4e8_4490_adff_50865fee9e30</id>
-      <datasource>../../../../natural-earth-vector/natural-earth-vector-4.1.0/10m_cultural/ne_10m_admin_1_states_provinces.shp</datasource>
+      <datasource>10m_cultural/ne_10m_admin_1_states_provinces.shp</datasource>
       <keywordList>
         <value></value>
       </keywordList>
