@@ -206,7 +206,9 @@ static Departure parseDeparture(const QJsonObject &obj)
     const auto dtObj = obj.value(QLatin1String("stop_date_time")).toObject();
     departure.setStopPoint(parseLocation(obj.value(QLatin1String("stop_point")).toObject()));
     departure.setScheduledTime(parseDateTime(dtObj.value(QLatin1String("base_departure_date_time")), departure.stopPoint().timeZone()));
-    // TODO actual departure time
+    if (dtObj.value(QLatin1String("data_freshness")).toString() != QLatin1String("base_schedule")) {
+        departure.setExpectedTime(parseDateTime(dtObj.value(QLatin1String("departure_date_time")), departure.stopPoint().timeZone()));
+    }
 
     return departure;
 }
