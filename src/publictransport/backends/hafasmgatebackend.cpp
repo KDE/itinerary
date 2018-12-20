@@ -58,6 +58,58 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         return false;
     }
 
+    QJsonObject stationBoard;
+    {
+        QJsonObject cfg;
+        cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
+
+        QJsonObject req;
+        req.insert(QLatin1String("date"), request.dateTime().toString(QLatin1String("yyyyMMdd")));
+        req.insert(QLatin1String("maxJny"), 12);
+        req.insert(QLatin1String("stbFltrEquiv"), true);
+
+        QJsonObject stbLoc;
+        stbLoc.insert(QLatin1String("extId"), id);
+        stbLoc.insert(QLatin1String("state"), QLatin1String("F"));
+        stbLoc.insert(QLatin1String("type"), QLatin1String("S"));
+
+        req.insert(QLatin1String("stbLoc"), stbLoc);
+        req.insert(QLatin1String("time"), request.dateTime().toString(QLatin1String("hhmmss")));
+        req.insert(QLatin1String("type"), QLatin1String("DEP"));
+
+        stationBoard.insert(QLatin1String("cfg"), cfg);
+        stationBoard.insert(QLatin1String("meth"), QLatin1String("StationBoard"));
+        stationBoard.insert(QLatin1String("req"), req);
+    }
+
+    auto netReply = postRequest(stationBoard, nam);
+    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
+        qDebug() << netReply->request().url();
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                auto result = m_parser.parseDepartures(netReply->readAll());
+                if (m_parser.error() != Reply::NoError) {
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                    qCDebug(Log) << m_parser.error() << m_parser.errorMessage();
+                } else {
+                    addResult(reply, std::move(result));
+                }
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
+    });
+
+    return true;
+}
+
+QNetworkReply* HafasMgateBackend::postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const
+{
     QJsonObject top;
     {
         QJsonObject auth;
@@ -80,7 +132,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     top.insert(QLatin1String("formatted"), false);
     top.insert(QLatin1String("lang"), QLatin1String("eng"));
     {
-        QJsonArray svcReq;
+        QJsonArray svcReqs;
         {
             QJsonObject req;
             req.insert(QLatin1String("getServerDateTime"), true);
@@ -90,39 +142,14 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
             serverInfo.insert(QLatin1String("meth"), QLatin1String("ServerInfo"));
             serverInfo.insert(QLatin1String("req"), req);
 
-            svcReq.push_back(serverInfo);
+            svcReqs.push_back(serverInfo);
         }
-
-        {
-            QJsonObject cfg;
-            cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
-
-            QJsonObject req;
-            req.insert(QLatin1String("date"), request.dateTime().toString(QLatin1String("yyyyMMdd")));
-            req.insert(QLatin1String("maxJny"), 12);
-            req.insert(QLatin1String("stbFltrEquiv"), true);
-
-            QJsonObject stbLoc;
-            stbLoc.insert(QLatin1String("extId"), id);
-            stbLoc.insert(QLatin1String("state"), QLatin1String("F"));
-            stbLoc.insert(QLatin1String("type"), QLatin1String("S"));
-
-            req.insert(QLatin1String("stbLoc"), stbLoc);
-            req.insert(QLatin1String("time"), request.dateTime().toString(QLatin1String("hhmmss")));
-            req.insert(QLatin1String("type"), QLatin1String("DEP"));
-
-            QJsonObject stationBoard;
-            stationBoard.insert(QLatin1String("cfg"), cfg);
-            stationBoard.insert(QLatin1String("meth"), QLatin1String("StationBoard"));
-            stationBoard.insert(QLatin1String("req"), req);
-            svcReq.push_back(stationBoard);
-        }
-
-        top.insert(QLatin1String("svcReqL"), svcReq);
+        svcReqs.push_back(svcReq);
+        top.insert(QLatin1String("svcReqL"), svcReqs);
     }
     top.insert(QLatin1String("ver"), m_version);
 
-    const auto content = QJsonDocument(top).toJson();
+    const auto content = QJsonDocument(top).toJson(QJsonDocument::Compact);
     QUrl url(m_endpoint);
     QUrlQuery query;
     if (!m_micMacSalt.isEmpty()) {
@@ -147,33 +174,8 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 
     auto netReq = QNetworkRequest(url);
     netReq.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-
-    auto netReply = nam->post(netReq, content);
-    qDebug() << netReq.url();
-//     qDebug().noquote() << QJsonDocument(top).toJson();
-    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
-        qDebug() << netReply->request().url();
-        switch (netReply->error()) {
-            case QNetworkReply::NoError:
-            {
-                auto result = m_parser.parseDepartures(netReply->readAll());
-                if (m_parser.error() != Reply::NoError) {
-                    addError(reply, m_parser.error(), m_parser.errorMessage());
-                    qCDebug(Log) << m_parser.error() << m_parser.errorMessage();
-                } else {
-                    addResult(reply, std::move(result));
-                }
-                break;
-            }
-            default:
-                addError(reply, Reply::NetworkError, netReply->errorString());
-                qCDebug(Log) << netReply->error() << netReply->errorString();
-                break;
-        }
-        netReply->deleteLater();
-    });
-
-    return true;
+    qCDebug(Log) << netReq.url();
+    return nam->post(netReq, content);
 }
 
 void HafasMgateBackend::setMicMacSalt(const QString &salt)

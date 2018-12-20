@@ -24,6 +24,7 @@
 #include <QString>
 
 class QJsonObject;
+class QNetworkReply;
 
 namespace KPublicTransport {
 
@@ -52,6 +53,7 @@ public:
     bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const override;
 
 private:
+    QNetworkReply* postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const;
     void setMicMacSalt(const QString &salt);
     void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);
