@@ -136,6 +136,12 @@ Kirigami.ApplicationWindow {
         Kirigami.Page {
             ColumnLayout {
                 anchors.fill: parent
+
+                QQC2.CheckBox {
+                    text: "Allow insecure backends"
+                    onToggled: _queryMgr.setAllowInsecure(checked)
+                }
+
                 QQC2.ComboBox {
                     id: exampleSelector
                     Layout.fillWidth: true

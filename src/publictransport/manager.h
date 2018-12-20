@@ -44,6 +44,11 @@ public:
      */
     void setNetworkAccessManager(QNetworkAccessManager *nam);
 
+    /** Allow usage of insecure backends, that is services not using
+     *  transport encryption.
+     */
+    void setAllowInsecureBackends(bool insecure);
+
     /** Query a journey. */
     JourneyReply* queryJourney(const JourneyRequest &req) const;
 

@@ -50,6 +50,7 @@ public:
 
     QNetworkAccessManager *m_nam = nullptr;
     std::vector<std::unique_ptr<AbstractBackend>> m_backends;
+    bool m_allowInsecure = false;
 };
 }
 
@@ -152,6 +153,11 @@ void Manager::setNetworkAccessManager(QNetworkAccessManager *nam)
     d->m_nam = nam;
 }
 
+void Manager::setAllowInsecureBackends(bool insecure)
+{
+    d->m_allowInsecure = insecure;
+}
+
 JourneyReply* Manager::queryJourney(const JourneyRequest &req) const
 {
     auto reply = new JourneyReply(req);
@@ -159,6 +165,10 @@ JourneyReply* Manager::queryJourney(const JourneyRequest &req) const
     for (const auto &backend : d->m_backends) {
         if (backend->isLocationExcluded(req.from()) && backend->isLocationExcluded(req.to())) {
             qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
+            continue;
+        }
+        if (!backend->isSecure() && !d->m_allowInsecure) {
+            qCDebug(Log) << "Skipping insecure backend:" << backend->backendId();
             continue;
         }
         if (backend->queryJourney(reply, d->nam())) {
@@ -176,6 +186,10 @@ DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
     for (const auto &backend : d->m_backends) {
         if (backend->isLocationExcluded(req.stop())) {
             qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
+            continue;
+        }
+        if (!backend->isSecure() && !d->m_allowInsecure) {
+            qCDebug(Log) << "Skipping insecure backend:" << backend->backendId();
             continue;
         }
         if (backend->queryDeparture(reply, d->nam())) {

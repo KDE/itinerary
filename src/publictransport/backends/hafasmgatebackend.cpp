@@ -40,6 +40,11 @@ using namespace KPublicTransport;
 
 HafasMgateBackend::HafasMgateBackend() = default;
 
+bool HafasMgateBackend::isSecure() const
+{
+    return m_endpoint.startsWith(QLatin1String("https"));
+}
+
 bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
     return false;

@@ -48,6 +48,9 @@ public:
     bool isLocationExcluded(const Location &loc) const;
     void setGeoFilter(const QPolygonF &poly);
 
+    /** Returns @c true if this backend uses transport encryption. */
+    virtual bool isSecure() const;
+
     /** Perform a journey query.
      *  @return @c true if performing an async operation, @c false otherwise.
      */

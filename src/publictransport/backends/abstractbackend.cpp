@@ -50,6 +50,11 @@ void AbstractBackend::setGeoFilter(const QPolygonF &poly)
     m_geoFilter = poly;
 }
 
+bool AbstractBackend::isSecure() const
+{
+    return false;
+}
+
 bool AbstractBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     Q_UNUSED(reply);

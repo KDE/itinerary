@@ -47,6 +47,7 @@ class HafasMgateBackend : public AbstractBackend
     Q_PROPERTY(QString locationIdentifierType MEMBER m_locationIdentifierType)
 public:
     HafasMgateBackend();
+    bool isSecure() const override;
     bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const override;
     bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const override;
 

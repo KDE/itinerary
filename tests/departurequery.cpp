@@ -77,6 +77,11 @@ public:
         });
     }
 
+    Q_INVOKABLE void setAllowInsecure(bool insecure)
+    {
+        ptMgr.setAllowInsecureBackends(insecure);
+    }
+
     bool loading() const { return m_loading; }
     QString errorMessage() const { return m_errorMsg; }
 

@@ -37,6 +37,11 @@ using namespace KPublicTransport;
 
 NavitiaBackend::NavitiaBackend() = default;
 
+bool NavitiaBackend::isSecure() const
+{
+    return true; // https is hardcoded below
+}
+
 bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
     const auto req = reply->request();
