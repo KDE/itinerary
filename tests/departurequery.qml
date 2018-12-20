@@ -32,13 +32,13 @@ Kirigami.ApplicationWindow {
 
     ListModel {
         id: exampleModel
-        ListElement { name: "CDG"; lat: 2.57110; lon: 49.00406; hafasId: "8700147" } // IBNR for DB: 8704997
-        ListElement { name: "Paris Gare de Lyon"; lat: 2.37708; lon: 48.84388; hafasId: "8768600" }
-        ListElement { name: "ZRH"; lat: 8.56275; lon: 47.45050; hafasId: "8503016" }
-        ListElement { name: "Randa"; lat: 7.78315; lon:  46.09901; hafasId: "8501687" }
-        ListElement { name: "Brussels Gare de Midi"; lat: 4.33620; lon: 50.83588; hafasId: "8814001" }
+        ListElement { name: "CDG"; lat: 2.57110; lon: 49.00406; locId: "8700147"; idType: "uic" } // IBNR for DB: 8704997
+        ListElement { name: "Paris Gare de Lyon"; lat: 2.37385; lon: 48.84467; locId: "8768600"; idType: "uic" }
+        ListElement { name: "ZRH"; lat: 8.56275; lon: 47.45050; locId:"8503016"; idType: "ibnr" }
+        ListElement { name: "Randa"; lat: 7.78315; lon:  46.09901; locId:"8501687"; idType: "ibnr" }
+        ListElement { name: "Brussels Gare de Midi"; lat: 4.33620; lon: 50.83588; locId:"8814001"; idType: "uic" }
         ListElement { name: "Fosdem"; lat: 4.38116; lon: 50.81360 }
-        ListElement { name: "VIE"; lat: 16.56312; lon: 48.12083; hafasId: "008100353" }
+        ListElement { name: "VIE"; lat: 16.56312; lon: 48.12083; locId:"008100353"; idType: "ibnr" }
         ListElement { name: "Akademy 2018 Accomodation"; lat: 16.37859; lon: 48.18282 }
         ListElement { name: "Akademy 2018 BBQ"; lat: 16.43191; lon: 48.21612 }
         ListElement { name: "LEI"; lat: -2.37251; lon: 36.84774; }
@@ -46,11 +46,11 @@ Kirigami.ApplicationWindow {
         ListElement { name: "Akademy 2017 Venue"; lat: -2.40377; lon: 36.82784 }
         ListElement { name: "TXL"; lat: 13.29281; lon: 52.55420; }
         ListElement { name: "Akademy 2016 Venue"; lat: 13.41644; lon: 52.52068 }
-        ListElement { name: "SXF"; lat: 13.51870; lon: 52.38841; hafasId: "900260005" }
+        ListElement { name: "SXF"; lat: 13.51870; lon: 52.38841; locId:"900260005"; idType: "vbb" }
         ListElement { name: "Brno central station"; lat: 16.61287; lon: 49.19069 }
         ListElement { name: "Akademy 2014 venue"; lat: 16.57564; lon: 49.22462 }
-        ListElement { name: "Copenhagen Central"; lat: 12.56489; lon: 55.67238; hafasId: "8600626" }
-        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 50.106944; lon: 8.6625; hafasId: "8000105" }
+        ListElement { name: "Copenhagen Central"; lat: 12.56489; lon: 55.67238; locId:"8600626"; idType: "uic" }
+        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 50.106944; lon: 8.6625; locId:"8000105"; idType: "ibnr" }
     }
 
     Component {
@@ -143,7 +143,7 @@ Kirigami.ApplicationWindow {
                     textRole: "name"
                     onCurrentIndexChanged: {
                         var obj = exampleModel.get(currentIndex);
-                        _queryMgr.queryDeparture(obj.lat, obj.lon, obj.hafasId);
+                        _queryMgr.queryDeparture(obj.lat, obj.lon, obj.locId, obj.idType);
                     }
                 }
 

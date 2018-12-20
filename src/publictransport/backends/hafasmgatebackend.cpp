@@ -48,7 +48,7 @@ bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager 
 bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     const auto request = reply->request();
-    const auto id = request.stop().identifier(QLatin1String("hafasId")); // ### temporary, until we have proper name lookup
+    const auto id = request.stop().identifier(m_locationIdentifierType.isEmpty() ? backendId() : m_locationIdentifierType);
     if (id.isEmpty()) {
         return false;
     }

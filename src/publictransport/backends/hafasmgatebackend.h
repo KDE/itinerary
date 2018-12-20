@@ -43,6 +43,8 @@ class HafasMgateBackend : public AbstractBackend
     /** Salt for the request checksum parameter, hex-encoded. */
     Q_PROPERTY(QString checksumSalt WRITE setChecksumSalt)
     Q_PROPERTY(QJsonObject lineModeMap WRITE setLineModeMap)
+    /** Identifier type used for stations. Default is backendId(). */
+    Q_PROPERTY(QString locationIdentifierType MEMBER m_locationIdentifierType)
 public:
     HafasMgateBackend();
     bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const override;
@@ -64,6 +66,7 @@ private:
     QString m_version;
     QByteArray m_micMacSalt;
     QByteArray m_checksumSalt;
+    QString m_locationIdentifierType;
 };
 
 }

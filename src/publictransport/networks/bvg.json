@@ -14,7 +14,8 @@
             "16": "Ferry",
             "32": "LongDistanceTrain",
             "64": "LocalTrain"
-        }
+        },
+        "locationIdentifierType": "vbb"
     },
     "filter": {
         "geo": [ [ 11.05, 53.255 ], [ 14.45, 53.658 ], [ 14.908, 51.4295 ], [ 13.149, 51.25 ] ]
