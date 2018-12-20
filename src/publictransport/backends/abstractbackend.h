@@ -29,6 +29,7 @@ namespace KPublicTransport {
 class DepartureReply;
 class JourneyReply;
 class Location;
+class LocationReply;
 
 /** Abstract base class for transport provider backends. */
 class AbstractBackend
@@ -60,6 +61,11 @@ public:
      *  @return @c true if performing an async operation, @c false otherwise.
      */
     virtual bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const;
+
+    /** Perform a location query.
+     *  @return @c true if performing an async operation, @c false otherwise.
+     */
+    virtual bool queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const;
 
 protected:
     /** Helper function to call non-public Reply API. */

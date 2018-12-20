@@ -20,6 +20,8 @@
 #include "departurerequest.h"
 #include "journeyreply.h"
 #include "journeyrequest.h"
+#include "locationreply.h"
+#include "locationrequest.h"
 #include "logging.h"
 
 #include <KPublicTransport/Location>
@@ -193,6 +195,20 @@ DepartureReply* Manager::queryDeparture(const DepartureRequest &req) const
             continue;
         }
         if (backend->queryDeparture(reply, d->nam())) {
+            ++pendingOps;
+        }
+    }
+    reply->setPendingOps(pendingOps);
+    return reply;
+}
+
+LocationReply* Manager::queryLocation(const LocationRequest &req) const
+{
+    auto reply = new LocationReply(req);
+    int pendingOps = 0;
+    for (const auto &backend : d->m_backends) {
+        // TODO skip backends for coordinate-based query based on geo area filter
+        if (backend->queryLocation(reply, d->nam())) {
             ++pendingOps;
         }
     }

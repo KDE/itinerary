@@ -3,6 +3,8 @@ set(kpublictransport_srcs
     departurerequest.cpp
     journeyreply.cpp
     journeyrequest.cpp
+    locationreply.cpp
+    locationrequest.cpp
     manager.cpp
     reply.cpp
 
@@ -37,6 +39,8 @@ ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
         DepartureRequest
         JourneyReply
         JourneyRequest
+        LocationReply
+        LocationRequest
         Manager
         Reply
     PREFIX KPublicTransport

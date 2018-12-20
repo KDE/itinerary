@@ -28,6 +28,8 @@ class DepartureReply;
 class DepartureRequest;
 class JourneyReply;
 class JourneyRequest;
+class LocationReply;
+class LocationRequest;
 class ManagerPrivate;
 
 /** Entry point for starting public transport queries. */
@@ -54,6 +56,9 @@ public:
 
     /** Query departures from a specific station. */
     DepartureReply* queryDeparture(const DepartureRequest &req) const;
+
+    /** Query location information based on coordinates or (parts of) the name. */
+    LocationReply* queryLocation(const LocationRequest &req) const;
 
 private:
     std::unique_ptr<ManagerPrivate> d;
