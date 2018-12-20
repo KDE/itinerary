@@ -149,6 +149,20 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
     return res;
 }
 
+bool HafasMgateParser::parseError(const QJsonObject& obj) const
+{
+    if (obj.value(QLatin1String("err")).toString() != QLatin1String("OK")) {
+        m_error = Reply::NotFoundError;
+        m_errorMsg = obj.value(QLatin1String("errTxt")).toString();
+        return false;
+    }
+
+    m_error = Reply::NoError;
+    m_errorMsg.clear();
+    return true;
+}
+
+
 std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data) const
 {
     const auto topObj = QJsonDocument::fromJson(data).object();
@@ -158,9 +172,22 @@ std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data)
     for (const auto &v : svcResL) {
         const auto obj = v.toObject();
         if (obj.value(QLatin1String("meth")).toString() == QLatin1String("StationBoard")) {
-            return parseStationBoardResponse(obj.value(QLatin1String("res")).toObject());
+            if (parseError(obj)) {
+                return parseStationBoardResponse(obj.value(QLatin1String("res")).toObject());
+            }
+            return {};
         }
     }
 
     return {};
+}
+
+Reply::Error HafasMgateParser::error() const
+{
+    return m_error;
+}
+
+QString HafasMgateParser::errorMessage() const
+{
+    return m_errorMsg;
 }

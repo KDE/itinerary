@@ -45,6 +45,7 @@ ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
 # # ### for testing only
 ecm_generate_headers(KPublicTransport_Backends_FORWARDING_HEADERS
     HEADER_NAMES
+        HafasMgateParser
         NavitiaParser
     PREFIX KPublicTransport
     REQUIRED_HEADERS KPublicTransport_Backends_HEADERS

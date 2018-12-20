@@ -150,8 +150,16 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         qDebug() << netReply->request().url();
         switch (netReply->error()) {
             case QNetworkReply::NoError:
-                addResult(reply, m_parser.parseDepartures(netReply->readAll()));
+            {
+                auto result = m_parser.parseDepartures(netReply->readAll());
+                if (m_parser.error() != Reply::NoError) {
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                    qCDebug(Log) << m_parser.error() << m_parser.errorMessage();
+                } else {
+                    addResult(reply, std::move(result));
+                }
                 break;
+            }
             default:
                 addError(reply, Reply::NetworkError, netReply->errorString());
                 qCDebug(Log) << netReply->error() << netReply->errorString();

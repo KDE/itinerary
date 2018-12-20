@@ -19,6 +19,7 @@
 #define KPUBLICTRANSPORT_HAFASMGATEPARSER_H
 
 #include <KPublicTransport/Line>
+#include <KPublicTransport/Reply>
 
 #include <unordered_map>
 #include <vector>
@@ -46,12 +47,18 @@ public:
 
     std::vector<Departure> parseDepartures(const QByteArray &data) const;
 
+    Reply::Error error() const;
+    QString errorMessage() const;
+
 private:
     Q_DISABLE_COPY(HafasMgateParser)
     std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj) const;
     std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos) const;
+    bool parseError(const QJsonObject &obj) const;
 
     std::unordered_map<int, Line::Mode> m_lineModeMap;
+    mutable QString m_errorMsg;
+    mutable Reply::Error m_error = Reply::NoError;
 };
 
 }

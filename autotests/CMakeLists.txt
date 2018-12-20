@@ -11,4 +11,5 @@ ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt5::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
 
 ecm_add_test(navitiaparsertest.cpp LINK_LIBRARIES Qt5::Test KPublicTransport)
+ecm_add_test(hafasparsertest.cpp LINK_LIBRARIES Qt5::Test KPublicTransport)
 ecm_add_test(publictransportmanagertest.cpp LINK_LIBRARIES Qt5::Test KPublicTransport)

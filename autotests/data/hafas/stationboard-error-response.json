@@ -1,0 +1,29 @@
+{
+    "cInfo": {
+        "code": "OK",
+        "msg": "",
+        "url": ""
+    },
+    "id": "xxx",
+    "lang": "eng",
+    "svcResL": [
+        {
+            "err": "OK",
+            "meth": "ServerInfo",
+            "res": {
+                "enc": "ISO-8859-1",
+                "planrtTS": "1545272140",
+                "sD": "20181219",
+                "sT": "231651"
+            }
+        },
+        {
+            "err": "LOCATION",
+            "errTxt": "HCI Service: location missing or invalid",
+            "meth": "StationBoard",
+            "res": {
+            }
+        }
+    ],
+    "ver": "1.14"
+}
