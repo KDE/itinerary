@@ -115,32 +115,49 @@ bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManage
     const auto req = reply->request();
     QJsonObject methodObj;
     if (req.hasCoordinate()) {
+        QJsonObject cfg;
+        cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
 
-        {
-            QJsonObject cfg;
-            cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
+        QJsonObject coord;
+        coord.insert(QLatin1String("x"), (int)(req.latitude() * 1000000));
+        coord.insert(QLatin1String("y"), (int)(req.longitude() * 1000000));
+        QJsonObject ring;
+        ring.insert(QLatin1String("cCrd"), coord);
+        ring.insert(QLatin1String("maxDist"), 20000); // not sure which unit...
 
-            QJsonObject coord;
-            coord.insert(QLatin1String("x"), (int)(req.latitude() * 1000000));
-            coord.insert(QLatin1String("y"), (int)(req.longitude() * 1000000));
-            QJsonObject ring;
-            ring.insert(QLatin1String("cCrd"), coord);
-            ring.insert(QLatin1String("maxDist"), 20000); // not sure which unit...
+        QJsonObject reqObj;
+        reqObj.insert(QLatin1String("ring"), ring);
+        // ### make this configurable in LocationRequest
+        reqObj.insert(QLatin1String("getStops"), true);
+        reqObj.insert(QLatin1String("getPOIs"), false);
+        reqObj.insert(QLatin1String("maxLoc"), 12);
 
-            QJsonObject reqObj;
-            // ### make this configurable in LocationRequest
-            reqObj.insert(QLatin1String("ring"), ring);
-            reqObj.insert(QLatin1String("getStops"), true);
-            reqObj.insert(QLatin1String("getPOIs"), false);
-            reqObj.insert(QLatin1String("maxLoc"), 12);
+        methodObj.insert(QLatin1String("cfg"), cfg);
+        methodObj.insert(QLatin1String("meth"), QLatin1String("LocGeoPos"));
+        methodObj.insert(QLatin1String("req"), reqObj);
 
-            methodObj.insert(QLatin1String("cfg"), cfg);
-            methodObj.insert(QLatin1String("meth"), QLatin1String("LocGeoPos"));
-            methodObj.insert(QLatin1String("req"), reqObj);
-        }
+    } else if (!req.name().isEmpty()) {
+        QJsonObject cfg;
+        cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
+
+        QJsonObject loc;
+        loc.insert(QLatin1String("name"), req.name()); // + '?' for auto completion search?
+        loc.insert(QLatin1String("type"), QLatin1String("S")); // station: S, address: A, POI: P
+
+        QJsonObject input;
+        input.insert(QLatin1String("field"), QLatin1String("S"));
+        input.insert(QLatin1String("loc"), loc);
+        // ### make this configurable in LocationRequest
+        input.insert(QLatin1String("maxLoc"), 12);
+
+        QJsonObject reqObj;
+        reqObj.insert(QLatin1String("input"), input);
+
+        methodObj.insert(QLatin1String("cfg"), cfg);
+        methodObj.insert(QLatin1String("meth"), QLatin1String("LocMatch"));
+        methodObj.insert(QLatin1String("req"), reqObj);
 
     } else {
-        //  TODO search by name
         return false;
     }
 
