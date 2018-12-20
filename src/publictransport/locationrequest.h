@@ -38,6 +38,8 @@ public:
     double longitude() const;
     /** Search by geo coordinate. */
     void setCoordinate(double lat, double lon);
+    /** Returns true if a valid geo coordinate has been set. */
+    bool hasCoordinate() const;
 
     QString name() const;
     /** Search by name or name fragment. */

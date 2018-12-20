@@ -23,6 +23,8 @@
 #include <KPublicTransport/DepartureReply>
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
+#include <KPublicTransport/LocationReply>
+#include <KPublicTransport/LocationRequest>
 
 #include <QCryptographicHash>
 #include <QDateTime>
@@ -108,6 +110,62 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     return true;
 }
 
+bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
+{
+    const auto req = reply->request();
+    QJsonObject methodObj;
+    if (req.hasCoordinate()) {
+
+        {
+            QJsonObject cfg;
+            cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
+
+            QJsonObject coord;
+            coord.insert(QLatin1String("x"), (int)(req.latitude() * 1000000));
+            coord.insert(QLatin1String("y"), (int)(req.longitude() * 1000000));
+            QJsonObject ring;
+            ring.insert(QLatin1String("cCrd"), coord);
+            ring.insert(QLatin1String("maxDist"), 20000); // not sure which unit...
+
+            QJsonObject reqObj;
+            // ### make this configurable in LocationRequest
+            reqObj.insert(QLatin1String("ring"), ring);
+            reqObj.insert(QLatin1String("getStops"), true);
+            reqObj.insert(QLatin1String("getPOIs"), false);
+            reqObj.insert(QLatin1String("maxLoc"), 12);
+
+            methodObj.insert(QLatin1String("cfg"), cfg);
+            methodObj.insert(QLatin1String("meth"), QLatin1String("LocGeoPos"));
+            methodObj.insert(QLatin1String("req"), reqObj);
+        }
+
+    } else {
+        //  TODO search by name
+        return false;
+    }
+
+    auto netReply = postRequest(methodObj, nam);
+    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
+        qDebug() << netReply->request().url();
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                // TODO parse result
+                qDebug().noquote() << "TODO" << QJsonDocument::fromJson(netReply->readAll()).toJson();
+                addError(reply, Reply::NotFoundError, {});
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
+    });
+
+    return true;
+}
+
 QNetworkReply* HafasMgateBackend::postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const
 {
     QJsonObject top;
@@ -175,6 +233,7 @@ QNetworkReply* HafasMgateBackend::postRequest(const QJsonObject &svcReq, QNetwor
     auto netReq = QNetworkRequest(url);
     netReq.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
     qCDebug(Log) << netReq.url();
+    //qCDebug(Log).noquote() << QJsonDocument(top).toJson();
     return nam->post(netReq, content);
 }
 

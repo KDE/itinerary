@@ -59,6 +59,11 @@ void LocationRequest::setCoordinate(double lat, double lon)
     d->lon = lon;
 }
 
+bool LocationRequest::hasCoordinate() const
+{
+    return !std::isnan(d->lat) && !std::isnan(d->lon);
+}
+
 QString LocationRequest::name() const
 {
     return d->name;

@@ -51,6 +51,7 @@ public:
     bool isSecure() const override;
     bool queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const override;
     bool queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const override;
+    bool queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const override;
 
 private:
     QNetworkReply* postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const;
