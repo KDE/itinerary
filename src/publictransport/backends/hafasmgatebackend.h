@@ -28,6 +28,8 @@ class QNetworkReply;
 
 namespace KPublicTransport {
 
+class LocationRequest;
+
 /** Backend for the Hafas mgate.exe interface. */
 class HafasMgateBackend : public AbstractBackend
 {
@@ -55,6 +57,7 @@ public:
 
 private:
     QNetworkReply* postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const;
+    QNetworkReply* postLocationQuery(const LocationRequest &req, QNetworkAccessManager *nam) const;
     void setMicMacSalt(const QString &salt);
     void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);
