@@ -65,7 +65,7 @@ Kirigami.ApplicationWindow {
                     text: modelData.name
                 }
                 QQC2.Label {
-                    text: modelData.latitude + " " + modelDate.longitude
+                    text: modelData.latitude + " " + modelData.longitude
                 }
 
             }

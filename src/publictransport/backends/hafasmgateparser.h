@@ -31,6 +31,7 @@ class QByteArray;
 namespace KPublicTransport {
 
 class Departure;
+class Location;
 
 struct Ico {
     QColor bg;
@@ -46,6 +47,7 @@ public:
     void setLineModeMap(std::unordered_map<int, Line::Mode> &&modeMap);
 
     std::vector<Departure> parseDepartures(const QByteArray &data) const;
+    std::vector<Location> parseLocations(const QByteArray &data) const;
 
     Reply::Error error() const;
     QString errorMessage() const;

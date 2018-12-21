@@ -167,9 +167,12 @@ bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManage
         switch (netReply->error()) {
             case QNetworkReply::NoError:
             {
-                // TODO parse result
-                qDebug().noquote() << "TODO" << QJsonDocument::fromJson(netReply->readAll()).toJson();
-                addError(reply, Reply::NotFoundError, {});
+                auto res = m_parser.parseLocations(netReply->readAll());
+                if (m_parser.error() == Reply::NoError) {
+                    addResult(reply, std::move(res));
+                } else {
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                }
                 break;
             }
             default:

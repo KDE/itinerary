@@ -33,7 +33,10 @@ class Location
     /** Human-readable name of the location. */
     Q_PROPERTY(QString name READ name WRITE setName)
 
-    // TODO: type, coords, id, address
+    Q_PROPERTY(float latitude READ latitude)
+    Q_PROPERTY(float longitude READ longitude)
+
+    // TODO: type, id, address
 
 public:
     QString name() const;

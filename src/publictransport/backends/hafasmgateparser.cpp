@@ -107,7 +107,7 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
 {
     const auto commonObj = obj.value(QLatin1String("common")).toObject();
     const auto icos = parseIcos(commonObj.value(QLatin1String("icoL")).toArray());
-    const auto locs = parseLocations(commonObj.value(QLatin1String("locL")).toArray());
+    const auto locs = ::parseLocations(commonObj.value(QLatin1String("locL")).toArray());
     const auto lines = parseLines(commonObj.value(QLatin1String("prodL")).toArray(), icos);
 
     std::vector<Departure> res;
@@ -174,6 +174,33 @@ std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data)
         if (obj.value(QLatin1String("meth")).toString() == QLatin1String("StationBoard")) {
             if (parseError(obj)) {
                 return parseStationBoardResponse(obj.value(QLatin1String("res")).toObject());
+            }
+            return {};
+        }
+    }
+
+    return {};
+}
+
+std::vector<Location> HafasMgateParser::parseLocations(const QByteArray &data) const
+{
+    const auto topObj = QJsonDocument::fromJson(data).object();
+    const auto svcResL = topObj.value(QLatin1String("svcResL")).toArray();
+
+    for (const auto &v : svcResL) {
+        const auto obj = v.toObject();
+        const auto meth = obj.value(QLatin1String("meth")).toString();
+        if (meth == QLatin1String("LocMatch") || meth == QLatin1String("LocGeoPos")) {
+            if (parseError(obj)) {
+                const auto resObj = obj.value(QLatin1String("res")).toObject();
+                if (resObj.contains(QLatin1String("locL"))) {
+                    return ::parseLocations(resObj.value(QLatin1String("locL")).toArray());
+                }
+                if (resObj.contains(QLatin1String("match"))) {
+                    return ::parseLocations(resObj.value(QLatin1String("match")).toObject().value(QLatin1String("locL")).toArray());
+                }
+                qCDebug(Log).noquote() << "Failed to parse location query response:" << QJsonDocument(obj).toJson();
+                return {};
             }
             return {};
         }
