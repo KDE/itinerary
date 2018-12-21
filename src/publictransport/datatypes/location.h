@@ -21,6 +21,7 @@
 #include "datatypes.h"
 
 class QTimeZone;
+template <typename K, typename T> class QHash;
 
 namespace KPublicTransport {
 
@@ -54,6 +55,15 @@ public:
     /** Location identifiers. */
     QString identifier(const QString &identifierType) const;
     void setIdentifier(const QString &identifierType, const QString &id);
+    QHash<QString, QString> identifiers() const;
+
+    /** Checks if to instances refer to the same location (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const Location &lhs, const Location &rhs);
+
+    /** Merge two departure instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static Location merge(const Location &lhs, const Location &rhs);
 };
 
 }

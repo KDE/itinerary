@@ -36,6 +36,17 @@ public:
 
 void LocationReplyPrivate::finalizeResult()
 {
+    // merge all duplicates, as there is no natural order for name searches this is done in O(n²) for now
+    for (auto it = locations.begin(); it != locations.end(); ++it) {
+        for (auto mergeIt = it + 1; mergeIt != locations.end();) {
+            if (Location::isSame(*it, *mergeIt)) {
+                *it = Location::merge(*it, *mergeIt);
+                mergeIt = locations.erase(mergeIt);
+            } else {
+                ++mergeIt;
+            }
+        }
+    }
 }
 
 LocationReply::LocationReply(const LocationRequest &req)

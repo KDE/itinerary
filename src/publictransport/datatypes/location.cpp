@@ -97,4 +97,36 @@ void Location::setIdentifier(const QString &identifierType, const QString &id)
     d->ids.insert(identifierType, id);
 }
 
+QHash<QString, QString> Location::identifiers() const
+{
+    return d->ids;
+}
+
+bool Location::isSame(const Location &lhs, const Location &rhs)
+{
+    // ids
+    // TODO
+
+    // name
+    if (lhs.name().compare(rhs.name(), Qt::CaseInsensitive) == 0) {
+        return true;
+    }
+
+    // coordinates
+    if (qFuzzyCompare(lhs.latitude(), rhs.latitude()) && qFuzzyCompare(lhs.longitude(), rhs.longitude())) {
+        return true;
+    }
+
+    return false;
+}
+
+Location Location::merge(const Location &lhs, const Location &rhs)
+{
+    Location l(lhs);
+
+    // TODO merge identifiers
+
+    return lhs;
+}
+
 #include "moc_location.cpp"
