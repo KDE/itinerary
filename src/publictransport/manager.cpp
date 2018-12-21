@@ -211,6 +211,10 @@ LocationReply* Manager::queryLocation(const LocationRequest &req) const
             qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
             continue;
         }
+        if (!backend->isSecure() && !d->m_allowInsecure) {
+            qCDebug(Log) << "Skipping insecure backend:" << backend->backendId();
+            continue;
+        }
         if (backend->queryLocation(reply, d->nam())) {
             ++pendingOps;
         }
