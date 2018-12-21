@@ -62,6 +62,14 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     }
     m_parser.setLocationIdentifierType(locationIdentifierType());
 
+    queryDeparture(reply, id, nam);
+    return true;
+}
+
+void HafasMgateBackend::queryDeparture(DepartureReply *reply, const QString &locationId, QNetworkAccessManager *nam) const
+{
+    const auto request = reply->request();
+
     QJsonObject stationBoard;
     {
         QJsonObject cfg;
@@ -73,7 +81,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         req.insert(QLatin1String("stbFltrEquiv"), true);
 
         QJsonObject stbLoc;
-        stbLoc.insert(QLatin1String("extId"), id);
+        stbLoc.insert(QLatin1String("extId"), locationId);
         stbLoc.insert(QLatin1String("state"), QLatin1String("F"));
         stbLoc.insert(QLatin1String("type"), QLatin1String("S"));
 
@@ -108,8 +116,6 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
         }
         netReply->deleteLater();
     });
-
-    return true;
 }
 
 bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
