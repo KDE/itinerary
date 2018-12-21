@@ -104,9 +104,8 @@ Kirigami.ApplicationWindow {
                             text: "Departure: " + modelData.scheduledTime.toTimeString()
                         }
                         QQC2.Label {
-                            property int diff: (modelData.expectedTime.getTime() - modelData.scheduledTime.getTime()) / 60000
-                            text: (diff >= 0 ? "+" : "") + diff
-                            color: diff > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            text: (modelData.delay >= 0 ? "+" : "") + modelData.delay
+                            color: modelData.delay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                             visible: modelData.hasExpectedTime
                         }
                     }

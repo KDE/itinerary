@@ -55,12 +55,16 @@ class Departure
     /** The stop point of this departure. */
     Q_PROPERTY(KPublicTransport::Location stopPoint READ stopPoint WRITE setStopPoint)
 
+    /** Difference to schedule in minutes. */
+    Q_PROPERTY(int delay READ delay)
+
 public:
     QDateTime scheduledTime() const;
     void setScheduledTime(const QDateTime &scheduledTime);
     QDateTime expectedTime() const;
     void setExpectedTime(const QDateTime &expectedTime);
     bool hasExpectedTime() const;
+    int delay() const;
 
     QString scheduledPlatform() const;
     void setScheduledPlatform(const QString &platform);

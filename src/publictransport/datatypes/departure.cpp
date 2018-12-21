@@ -63,6 +63,14 @@ bool Departure::hasExpectedTime() const
     return d->expectedTime.isValid();
 }
 
+int Departure::delay() const
+{
+    if (hasExpectedTime()) {
+        return d->scheduledTime.secsTo(d->expectedTime) / 60;
+    }
+    return 0;
+}
+
 QString Departure::scheduledPlatform() const
 {
     return d->scheduledPlatform;
