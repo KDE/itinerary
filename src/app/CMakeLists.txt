@@ -41,6 +41,7 @@ set(itinerary_app_srcs
     weatherforecastmodel.cpp
     ${qml_srcs}
     brightnessmanager.cpp
+    livedatamanager.cpp
 )
 if (NOT ANDROID)
     list(APPEND itinerary_app_srcs solidbrightnessbackend.cpp)
@@ -52,6 +53,7 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     KF5::Contacts
+    KPublicTransport
 )
 if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,

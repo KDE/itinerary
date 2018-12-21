@@ -171,7 +171,7 @@ bool HafasMgateParser::parseError(const QJsonObject& obj) const
 std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data) const
 {
     const auto topObj = QJsonDocument::fromJson(data).object();
-    qDebug().noquote() << QJsonDocument(topObj).toJson();
+    //qDebug().noquote() << QJsonDocument(topObj).toJson();
     const auto svcResL = topObj.value(QLatin1String("svcResL")).toArray();
 
     for (const auto &v : svcResL) {

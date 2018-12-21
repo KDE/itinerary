@@ -19,8 +19,10 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
+#include "brightnessmanager.h"
 #include "countryinformation.h"
 #include "countrymodel.h"
+#include "livedatamanager.h"
 #include "localizer.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
@@ -32,7 +34,6 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
-#include "brightnessmanager.h"
 
 #include <weatherforecastmanager.h>
 
@@ -133,6 +134,11 @@ int main(int argc, char **argv)
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
     BrightnessManager brightnessManager;
+
+    LiveDataManager liveDataMgr;
+    liveDataMgr.setPkPassManager(&passMgr);
+    liveDataMgr.setReservationManager(&resMgr);
+
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
@@ -191,6 +197,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
+    engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());

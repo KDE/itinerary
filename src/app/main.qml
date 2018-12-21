@@ -57,7 +57,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Check for Updates")
                 iconName: "view-refresh"
                 onTriggered: {
-                    _pkpassManager.updatePasses();
+                    _liveDataManager.checkForUpdates();
                 }
             },
             Kirigami.Action {
