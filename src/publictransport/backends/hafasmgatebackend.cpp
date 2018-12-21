@@ -55,14 +55,50 @@ bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager 
 
 bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
+    m_parser.setLocationIdentifierType(locationIdentifierType());
     const auto request = reply->request();
+
     const auto id = request.stop().identifier(locationIdentifierType());
-    if (id.isEmpty()) {
+    if (!id.isEmpty()) {
+        queryDeparture(reply, id, nam);
+        return true;
+    }
+
+    // missing the station id
+    LocationRequest locReq;
+    locReq.setCoordinate(request.stop().latitude(), request.stop().longitude());
+    locReq.setName(request.stop().name());
+    // TODO set max result = 1
+    const auto locReply = postLocationQuery(locReq, nam);
+    if (!locReply) {
         return false;
     }
-    m_parser.setLocationIdentifierType(locationIdentifierType());
+    QObject::connect(locReply, &QNetworkReply::finished, [this, reply, locReply, nam]() {
+        qDebug() << locReply->request().url();
+        switch (locReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                auto res = m_parser.parseLocations(locReply->readAll());
+                if (m_parser.error() == Reply::NoError && !res.empty()) {
+                    const auto id = res[0].identifier(locationIdentifierType());
+                    if (!id.isEmpty()) {
+                        queryDeparture(reply, id, nam);
+                    } else {
+                        addError(reply, Reply::NotFoundError, QLatin1String("Location query found no results."));
+                    }
+                } else {
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                }
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, locReply->errorString());
+                qCDebug(Log) << locReply->error() << locReply->errorString();
+                break;
+        }
+        locReply->deleteLater();
+    });
 
-    queryDeparture(reply, id, nam);
     return true;
 }
 
