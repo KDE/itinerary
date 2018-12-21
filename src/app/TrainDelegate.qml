@@ -24,6 +24,7 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
+    property var departure: _liveDataManager.departure(resIds[0])
 
     headerIconSource: "qrc:///images/train.svg"
     headerItem: RowLayout {
@@ -37,6 +38,11 @@ App.TimelineDelegate {
             text: Localizer.formatTime(reservationFor, "departureTime")
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+        }
+        QQC2.Label {
+            text: (departure.delay >= 0 ? "+" : "") + departure.delay
+            color: (departure.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: departure.hasExpectedTime
         }
     }
 

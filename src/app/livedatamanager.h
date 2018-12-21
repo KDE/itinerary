@@ -18,6 +18,7 @@
 #ifndef LIVEDATAMANAGER_H
 #define LIVEDATAMANAGER_H
 
+#include <QHash>
 #include <QObject>
 
 #include <memory>
@@ -28,6 +29,7 @@ class TrainTrip;
 }
 
 namespace KPublicTransport {
+class Departure;
 class Manager;
 }
 
@@ -45,9 +47,14 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
 
+    Q_INVOKABLE QVariant departure(const QString &resId);
+
 public slots:
     /** Checks all applicable elements for updates. */
     void checkForUpdates();
+
+signals:
+    void departureUpdated(const QString &resId);
 
 private:
     void checkTrainTrip(const KItinerary::TrainTrip &trip, const QString &resId);
@@ -56,6 +63,7 @@ private:
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;
     std::vector<QString> m_reservations;
+    QHash <QString, KPublicTransport::Departure> m_departures;
 };
 
 #endif // LIVEDATAMANAGER_H

@@ -72,6 +72,10 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
     m_pkPassMgr = pkPassMgr;
 }
 
+QVariant LiveDataManager::departure(const QString &resId)
+{
+    return QVariant::fromValue(m_departures.value(resId));
+}
 
 void LiveDataManager::checkForUpdates()
 {
@@ -136,7 +140,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
     req.setDateTime(trip.departureTime());
 
     auto reply = m_ptMgr->queryDeparture(req);
-    connect(reply, &Reply::finished, this, [this, trip, reply]() {
+    connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
         reply->deleteLater();
         if (reply->error() != Reply::NoError) {
             qCDebug(Log) << reply->error() << reply->errorString();
@@ -149,7 +153,11 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
                 continue;
             }
             qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedTime();
+            m_departures.insert(resId, dep);
+            emit departureUpdated(resId);
             break;
         }
     });
 }
+
+#include "moc_livedatamanager.cpp"
