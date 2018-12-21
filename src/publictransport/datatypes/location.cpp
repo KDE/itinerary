@@ -105,7 +105,11 @@ QHash<QString, QString> Location::identifiers() const
 bool Location::isSame(const Location &lhs, const Location &rhs)
 {
     // ids
-    // TODO
+    for (auto it = lhs.identifiers().constBegin(); it != lhs.identifiers().constEnd(); ++it) {
+        if (rhs.identifier(it.key()) == it.value() && !it.value().isEmpty()) {
+            return true;
+        }
+    }
 
     // name
     if (lhs.name().compare(rhs.name(), Qt::CaseInsensitive) == 0) {
@@ -124,7 +128,12 @@ Location Location::merge(const Location &lhs, const Location &rhs)
 {
     Location l(lhs);
 
-    // TODO merge identifiers
+    // merge identifiers
+    for (auto it = rhs.identifiers().constBegin(); it != rhs.identifiers().constEnd(); ++it) {
+        if (lhs.identifier(it.key()).isEmpty()) {
+            l.setIdentifier(it.key(), it.value());
+        }
+    }
 
     return lhs;
 }
