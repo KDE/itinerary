@@ -47,6 +47,8 @@ public:
 
     /** Checks if this location has been filtered by the network configuration. */
     bool isLocationExcluded(const Location &loc) const;
+    /** Same as the above but just checking one specific geo coordinate. */
+    bool isCoordinateExcluded(float lat, float lon) const;
     void setGeoFilter(const QPolygonF &poly);
 
     /** Returns @c true if this backend uses transport encryption. */

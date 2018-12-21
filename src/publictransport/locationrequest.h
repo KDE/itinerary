@@ -34,10 +34,10 @@ public:
     ~LocationRequest();
     LocationRequest& operator=(const LocationRequest&);
 
-    double latitude() const;
-    double longitude() const;
+    float latitude() const;
+    float longitude() const;
     /** Search by geo coordinate. */
-    void setCoordinate(double lat, double lon);
+    void setCoordinate(float lat, float lon);
     /** Returns true if a valid geo coordinate has been set. */
     bool hasCoordinate() const;
 

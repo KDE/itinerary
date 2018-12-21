@@ -27,8 +27,8 @@ namespace KPublicTransport {
 class LocationRequestPrivate : public QSharedData {
 public:
     QString name;
-    double lat = NAN;
-    double lon = NAN;
+    float lat = NAN;
+    float lon = NAN;
 };
 }
 
@@ -42,17 +42,17 @@ LocationRequest::LocationRequest(const LocationRequest&) = default;
 LocationRequest::~LocationRequest() = default;
 LocationRequest& LocationRequest::operator=(const LocationRequest&) = default;
 
-double LocationRequest::latitude() const
+float LocationRequest::latitude() const
 {
     return d->lat;
 }
 
-double LocationRequest::longitude() const
+float LocationRequest::longitude() const
 {
     return d->lon;
 }
 
-void LocationRequest::setCoordinate(double lat, double lon)
+void LocationRequest::setCoordinate(float lat, float lon)
 {
     d.detach();
     d->lat = lat;

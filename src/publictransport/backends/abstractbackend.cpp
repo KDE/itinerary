@@ -45,6 +45,11 @@ bool AbstractBackend::isLocationExcluded(const Location &loc) const
     return false;
 }
 
+bool AbstractBackend::isCoordinateExcluded(float lat, float lon) const
+{
+    return !m_geoFilter.isEmpty() && !m_geoFilter.containsPoint({lat, lon}, Qt::WindingFill);
+}
+
 void AbstractBackend::setGeoFilter(const QPolygonF &poly)
 {
     m_geoFilter = poly;

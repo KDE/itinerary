@@ -207,7 +207,10 @@ LocationReply* Manager::queryLocation(const LocationRequest &req) const
     auto reply = new LocationReply(req);
     int pendingOps = 0;
     for (const auto &backend : d->m_backends) {
-        // TODO skip backends for coordinate-based query based on geo area filter
+        if (req.hasCoordinate() && backend->isCoordinateExcluded(req.latitude(), req.longitude())) {
+            qCDebug(Log) << "Skiping backend based on location filter:" << backend->backendId();
+            continue;
+        }
         if (backend->queryLocation(reply, d->nam())) {
             ++pendingOps;
         }
