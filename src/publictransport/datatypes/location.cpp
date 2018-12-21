@@ -138,4 +138,17 @@ Location Location::merge(const Location &lhs, const Location &rhs)
     return lhs;
 }
 
+// see https://en.wikipedia.org/wiki/Haversine_formula
+int Location::distance(float lat1, float lon1, float lat2, float lon2)
+{
+    const auto degToRad = M_PI / 180.0;
+    const auto earthRadius = 6371000.0; // in meters
+
+    const auto d_lat = (lat1 - lat2) * degToRad;
+    const auto d_lon = (lon1 - lon2) * degToRad;
+
+    const auto a = pow(sin(d_lat / 2.0), 2) + cos(lat1 * degToRad) * cos(lat2 * degToRad) * pow(sin(d_lon / 2.0), 2);
+    return 2.0 * earthRadius * atan2(sqrt(a), sqrt(1.0 - a));
+}
+
 #include "moc_location.cpp"

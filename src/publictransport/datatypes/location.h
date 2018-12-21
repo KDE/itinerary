@@ -64,6 +64,9 @@ public:
      *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
      */
     static Location merge(const Location &lhs, const Location &rhs);
+
+    /** Compute the distance between two geo coordinates, in meters. */
+    static int distance(float lat1, float lon1, float lat2, float lon2);
 };
 
 }

@@ -47,6 +47,17 @@ void LocationReplyPrivate::finalizeResult()
             }
         }
     }
+
+    // when searching by geo coordinate, sort by distance
+    if (request.hasCoordinate()) {
+        std::sort(locations.begin(), locations.end(), [this](const auto &lhs, const auto &rhs) {
+            return Location::distance(request.latitude(), request.longitude(), lhs.latitude(), lhs.longitude())
+                 < Location::distance(request.latitude(), request.longitude(), rhs.latitude(), rhs.longitude());
+        });
+    } else {
+        // for name based search, sort by Levenshtein distance
+        // TODO
+    }
 }
 
 LocationReply::LocationReply(const LocationRequest &req)
