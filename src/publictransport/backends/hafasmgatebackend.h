@@ -58,6 +58,7 @@ private:
     void setMicMacSalt(const QString &salt);
     void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);
+    QString locationIdentifierType() const;
 
     mutable HafasMgateParser m_parser;
 

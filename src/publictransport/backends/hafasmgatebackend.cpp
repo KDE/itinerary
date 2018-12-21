@@ -49,18 +49,18 @@ bool HafasMgateBackend::isSecure() const
 
 bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
-    m_parser.setLocationIdentifierType(m_locationIdentifierType);
+    m_parser.setLocationIdentifierType(locationIdentifierType());
     return false;
 }
 
 bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     const auto request = reply->request();
-    const auto id = request.stop().identifier(m_locationIdentifierType.isEmpty() ? backendId() : m_locationIdentifierType);
+    const auto id = request.stop().identifier(locationIdentifierType());
     if (id.isEmpty()) {
         return false;
     }
-    m_parser.setLocationIdentifierType(m_locationIdentifierType);
+    m_parser.setLocationIdentifierType(locationIdentifierType());
 
     QJsonObject stationBoard;
     {
@@ -114,7 +114,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 
 bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
 {
-    m_parser.setLocationIdentifierType(m_locationIdentifierType);
+    m_parser.setLocationIdentifierType(locationIdentifierType());
 
     const auto req = reply->request();
     QJsonObject methodObj;
@@ -282,4 +282,9 @@ void HafasMgateBackend::setLineModeMap(const QJsonObject& obj)
         modeMap[it.key().toInt()] = static_cast<Line::Mode>(me.keyToValue(it.value().toString().toUtf8()));
     }
     m_parser.setLineModeMap(std::move(modeMap));
+}
+
+QString HafasMgateBackend::locationIdentifierType() const
+{
+    return m_locationIdentifierType.isEmpty() ? backendId() : m_locationIdentifierType;
 }
