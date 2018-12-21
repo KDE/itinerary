@@ -45,6 +45,7 @@ public:
     HafasMgateParser();
     ~HafasMgateParser();
     void setLineModeMap(std::unordered_map<int, Line::Mode> &&modeMap);
+    void setLocationIdentifierType(const QString &idType);
 
     std::vector<Departure> parseDepartures(const QByteArray &data) const;
     std::vector<Location> parseLocations(const QByteArray &data) const;
@@ -56,9 +57,11 @@ private:
     Q_DISABLE_COPY(HafasMgateParser)
     std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj) const;
     std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos) const;
+    std::vector<Location> parseLocations(const QJsonArray &locL) const;
     bool parseError(const QJsonObject &obj) const;
 
     std::unordered_map<int, Line::Mode> m_lineModeMap;
+    QString m_locIdType;
     mutable QString m_errorMsg;
     mutable Reply::Error m_error = Reply::NoError;
 };

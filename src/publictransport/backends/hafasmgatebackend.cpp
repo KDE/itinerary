@@ -49,6 +49,7 @@ bool HafasMgateBackend::isSecure() const
 
 bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
+    m_parser.setLocationIdentifierType(m_locationIdentifierType);
     return false;
 }
 
@@ -59,6 +60,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     if (id.isEmpty()) {
         return false;
     }
+    m_parser.setLocationIdentifierType(m_locationIdentifierType);
 
     QJsonObject stationBoard;
     {
@@ -112,6 +114,8 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
 
 bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
 {
+    m_parser.setLocationIdentifierType(m_locationIdentifierType);
+
     const auto req = reply->request();
     QJsonObject methodObj;
     if (req.hasCoordinate()) {

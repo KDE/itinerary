@@ -49,7 +49,7 @@ Kirigami.ApplicationWindow {
         ListElement { name: "Brno central station"; lat: 16.61287; lon: 49.19069 }
         ListElement { name: "Akademy 2014 venue"; lat: 16.57564; lon: 49.22462 }
         ListElement { name: "Copenhagen Central"; lat: 12.56489; lon: 55.67238; }
-        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 50.106944; lon: 8.6625; }
+        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 8.6625; lon: 50.106944; }
     }
 
     Component {

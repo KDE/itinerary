@@ -38,6 +38,11 @@ void HafasMgateParser::setLineModeMap(std::unordered_map<int, Line::Mode> &&mode
     m_lineModeMap = std::move(modeMap);
 }
 
+void HafasMgateParser::setLocationIdentifierType(const QString &idType)
+{
+    m_locIdType = idType;
+}
+
 static std::vector<Ico> parseIcos(const QJsonArray &icoL)
 {
     std::vector<Ico> icos;
@@ -58,7 +63,7 @@ static std::vector<Ico> parseIcos(const QJsonArray &icoL)
     return icos;
 }
 
-static std::vector<Location> parseLocations(const QJsonArray &locL)
+std::vector<Location> HafasMgateParser::parseLocations(const QJsonArray &locL) const
 {
     std::vector<Location> locs;
     locs.reserve(locL.size());
@@ -66,7 +71,7 @@ static std::vector<Location> parseLocations(const QJsonArray &locL)
         const auto locObj = locV.toObject();
         Location loc;
         loc.setName(locObj.value(QLatin1String("name")).toString());
-        // TODO extId
+        loc.setIdentifier(m_locIdType, locObj.value(QLatin1String("extId")).toString());
         const auto coordObj = locObj.value(QLatin1String("crd")).toObject();
         loc.setCoordinate(coordObj.value(QLatin1String("x")).toDouble() / 1000000.0, coordObj.value(QLatin1String("y")).toDouble() / 1000000.0);
         locs.push_back(loc);
@@ -107,7 +112,7 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
 {
     const auto commonObj = obj.value(QLatin1String("common")).toObject();
     const auto icos = parseIcos(commonObj.value(QLatin1String("icoL")).toArray());
-    const auto locs = ::parseLocations(commonObj.value(QLatin1String("locL")).toArray());
+    const auto locs = parseLocations(commonObj.value(QLatin1String("locL")).toArray());
     const auto lines = parseLines(commonObj.value(QLatin1String("prodL")).toArray(), icos);
 
     std::vector<Departure> res;
@@ -166,7 +171,7 @@ bool HafasMgateParser::parseError(const QJsonObject& obj) const
 std::vector<Departure> HafasMgateParser::parseDepartures(const QByteArray &data) const
 {
     const auto topObj = QJsonDocument::fromJson(data).object();
-//     qDebug().noquote() << QJsonDocument(topObj).toJson();
+    qDebug().noquote() << QJsonDocument(topObj).toJson();
     const auto svcResL = topObj.value(QLatin1String("svcResL")).toArray();
 
     for (const auto &v : svcResL) {
@@ -194,10 +199,10 @@ std::vector<Location> HafasMgateParser::parseLocations(const QByteArray &data) c
             if (parseError(obj)) {
                 const auto resObj = obj.value(QLatin1String("res")).toObject();
                 if (resObj.contains(QLatin1String("locL"))) {
-                    return ::parseLocations(resObj.value(QLatin1String("locL")).toArray());
+                    return parseLocations(resObj.value(QLatin1String("locL")).toArray());
                 }
                 if (resObj.contains(QLatin1String("match"))) {
-                    return ::parseLocations(resObj.value(QLatin1String("match")).toObject().value(QLatin1String("locL")).toArray());
+                    return parseLocations(resObj.value(QLatin1String("match")).toObject().value(QLatin1String("locL")).toArray());
                 }
                 qCDebug(Log).noquote() << "Failed to parse location query response:" << QJsonDocument(obj).toJson();
                 return {};

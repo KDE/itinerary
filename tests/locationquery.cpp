@@ -68,7 +68,7 @@ public:
                 engine->rootContext()->setContextProperty(QStringLiteral("_locations"), l);
 
                 for (const auto &loc : res) {
-                    qDebug() << loc.name() << loc.latitude() << loc.longitude() << loc.identifier(QLatin1String("ibnr"));
+                    qDebug() << loc.name() << loc.latitude() << loc.longitude() << loc.identifiers();
                 }
             } else {
                 m_errorMsg = reply->errorString();

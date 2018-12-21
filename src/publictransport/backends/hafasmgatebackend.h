@@ -59,7 +59,7 @@ private:
     void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);
 
-    HafasMgateParser m_parser;
+    mutable HafasMgateParser m_parser;
 
     QString m_endpoint;
     QString m_aid;
