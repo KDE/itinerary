@@ -134,14 +134,25 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
         dep.setRoute(route);
 
         const auto dateStr = jnyObj.value(QLatin1String("date")).toString();
-        dep.setScheduledTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+        dep.setScheduledDepartureTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
         const auto dTimeR = stbStop.value(QLatin1String("dTimeR")).toString();
         if (!dTimeR.isEmpty()) {
-            dep.setExpectedTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
+            dep.setExpectedDepartureTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
+        }
+        dep.setScheduledArrivalTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+        const auto aTimeR = stbStop.value(QLatin1String("aTimeR")).toString();
+        if (!aTimeR.isEmpty()) {
+            dep.setExpectedArrivalTime(QDateTime::fromString(dateStr + aTimeR, QLatin1String("yyyyMMddhhmmss")));
         }
 
         dep.setScheduledPlatform(stbStop.value(QLatin1String("dPlatfS")).toString());
         dep.setExpectedPlatform(stbStop.value(QLatin1String("dPlatfR")).toString());
+        if (dep.scheduledPlatform().isEmpty()) {
+            dep.setScheduledPlatform(stbStop.value(QLatin1String("aPlatfS")).toString());
+        }
+        if (dep.expectedPlatform().isEmpty()) {
+            dep.setExpectedPlatform(stbStop.value(QLatin1String("aPlatfR")).toString());
+        }
 
         const auto locIdx = stbStop.value(QLatin1String("locX")).toInt();
         if ((unsigned int)locIdx < locs.size()) {

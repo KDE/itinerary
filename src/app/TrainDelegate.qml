@@ -40,9 +40,9 @@ App.TimelineDelegate {
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
         QQC2.Label {
-            text: (departure.delay >= 0 ? "+" : "") + departure.delay
-            color: (departure.delay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: departure.hasExpectedTime
+            text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
+            color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: departure.hasExpectedDepartureTime
         }
     }
 

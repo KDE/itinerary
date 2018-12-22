@@ -71,7 +71,7 @@ public:
                 engine->rootContext()->setContextProperty(QStringLiteral("_departures"), l);
 
                 for (const auto &departure : res) {
-                    qDebug() << departure.stopPoint().name() << departure.route().line().name() << departure.route().direction() << departure.scheduledTime();
+                    qDebug() << departure.stopPoint().name() << departure.route().line().name() << departure.route().direction() << departure.scheduledDepartureTime();
                 }
             } else {
                 m_errorMsg = reply->errorString();

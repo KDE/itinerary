@@ -148,11 +148,11 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
         }
 
         for (const auto &dep : reply->departures()) {
-            qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledTime() << "for" << trip.trainNumber();
-            if (dep.scheduledTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
+            qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
+            if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
                 continue;
             }
-            qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedTime();
+            qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
             m_departures.insert(resId, dep);
             emit departureUpdated(resId);
             break;

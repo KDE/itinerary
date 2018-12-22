@@ -25,8 +25,10 @@ using namespace KPublicTransport;
 namespace KPublicTransport {
 class DeparturePrivate : public QSharedData {
 public:
-    QDateTime scheduledTime;
-    QDateTime expectedTime;
+    QDateTime scheduledArrivalTime;
+    QDateTime expectedArrivalTime;
+    QDateTime scheduledDepartureTime;
+    QDateTime expectedDepartureTime;
     QString scheduledPlatform;
     QString expectedPlatform;
     Route route;
@@ -36,37 +38,72 @@ public:
 
 KPUBLICTRANSPORT_MAKE_GADGET(Departure)
 
-QDateTime Departure::scheduledTime() const
+QDateTime Departure::scheduledArrivalTime() const
 {
-    return d->scheduledTime;
+    return d->scheduledArrivalTime;
 }
 
-void Departure::setScheduledTime(const QDateTime &scheduledTime)
+void Departure::setScheduledArrivalTime(const QDateTime &scheduledTime)
 {
     d.detach();
-    d->scheduledTime = scheduledTime;
+    d->scheduledArrivalTime = scheduledTime;
 }
 
-QDateTime Departure::expectedTime() const
+QDateTime Departure::expectedArrivalTime() const
 {
-    return d->expectedTime;
+    return d->expectedArrivalTime;
 }
 
-void Departure::setExpectedTime(const QDateTime &expectedTime)
+void Departure::setExpectedArrivalTime(const QDateTime &expectedTime)
 {
     d.detach();
-    d->expectedTime = expectedTime;
+    d->expectedArrivalTime = expectedTime;
 }
 
-bool Departure::hasExpectedTime() const
+bool Departure::hasExpectedArrivalTime() const
 {
-    return d->expectedTime.isValid();
+    return d->expectedArrivalTime.isValid();
 }
 
-int Departure::delay() const
+int Departure::arrivalDelay() const
 {
-    if (hasExpectedTime()) {
-        return d->scheduledTime.secsTo(d->expectedTime) / 60;
+    if (hasExpectedArrivalTime()) {
+        return d->scheduledArrivalTime.secsTo(d->expectedArrivalTime) / 60;
+    }
+    return 0;
+}
+
+QDateTime Departure::scheduledDepartureTime() const
+{
+    return d->scheduledDepartureTime;
+}
+
+void Departure::setScheduledDepartureTime(const QDateTime &scheduledTime)
+{
+    d.detach();
+    d->scheduledDepartureTime = scheduledTime;
+}
+
+QDateTime Departure::expectedDepartureTime() const
+{
+    return d->expectedDepartureTime;
+}
+
+void Departure::setExpectedDepartureTime(const QDateTime &expectedTime)
+{
+    d.detach();
+    d->expectedDepartureTime = expectedTime;
+}
+
+bool Departure::hasExpectedDepartureTime() const
+{
+    return d->expectedDepartureTime.isValid();
+}
+
+int Departure::departureDelay() const
+{
+    if (hasExpectedDepartureTime()) {
+        return d->scheduledDepartureTime.secsTo(d->expectedDepartureTime) / 60;
     }
     return 0;
 }
@@ -122,7 +159,8 @@ void Departure::setStopPoint(const Location &stopPoint)
 
 bool Departure::isSame(const Departure &lhs, const Departure &rhs)
 {
-    if (lhs.scheduledTime() != rhs.scheduledTime()) {
+    if ((lhs.scheduledDepartureTime().isValid() && lhs.scheduledDepartureTime() != rhs.scheduledDepartureTime()) ||
+        (lhs.scheduledArrivalTime().isValid() && lhs.scheduledArrivalTime() != rhs.scheduledArrivalTime())) {
         return false;
     }
 
@@ -132,8 +170,17 @@ bool Departure::isSame(const Departure &lhs, const Departure &rhs)
 Departure Departure::merge(const Departure &lhs, const Departure &rhs)
 {
     auto dep = lhs;
-    if (!dep.hasExpectedTime() && rhs.hasExpectedTime()) {
-        dep.setExpectedTime(rhs.expectedTime());
+    if (!dep.scheduledDepartureTime().isValid() && rhs.scheduledDepartureTime().isValid()) {
+        dep.setScheduledDepartureTime(rhs.scheduledDepartureTime());
+    }
+    if (!dep.hasExpectedDepartureTime() && rhs.hasExpectedDepartureTime()) {
+        dep.setExpectedDepartureTime(rhs.expectedDepartureTime());
+    }
+    if (!dep.scheduledArrivalTime().isValid() && rhs.scheduledArrivalTime().isValid()) {
+        dep.setScheduledArrivalTime(rhs.scheduledArrivalTime());
+    }
+    if (!dep.hasExpectedArrivalTime() && rhs.hasExpectedArrivalTime()) {
+        dep.setExpectedArrivalTime(rhs.expectedArrivalTime());
     }
     if (dep.scheduledPlatform().isEmpty() && !rhs.scheduledPlatform().isEmpty()) {
         dep.setScheduledPlatform(rhs.scheduledPlatform());

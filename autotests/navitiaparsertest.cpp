@@ -139,8 +139,10 @@ private slots:
 
         {
             const auto departure = res[0];
-            QCOMPARE(departure.scheduledTime(), QDateTime({2018, 12, 10}, {17, 17}, QTimeZone("Europe/Paris")));
-            QCOMPARE(departure.hasExpectedTime(), false);
+            QCOMPARE(departure.scheduledDepartureTime(), QDateTime({2018, 12, 10}, {17, 17}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.hasExpectedDepartureTime(), false);
+            QCOMPARE(departure.scheduledArrivalTime(), QDateTime({2018, 12, 10}, {17, 17}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.hasExpectedArrivalTime(), false);
             QCOMPARE(departure.stopPoint().name(), QStringLiteral("Gare de Lyon - Diderot (Paris)"));
             QCOMPARE(departure.route().direction(), QStringLiteral("Porte de la Chapelle (Paris)"));
             QCOMPARE(departure.route().line().mode(), KPublicTransport::Line::Bus);
@@ -150,9 +152,9 @@ private slots:
 
         {
             const auto departure = res[3];
-            QCOMPARE(departure.scheduledTime(), QDateTime({2018, 12, 10}, {17, 19}, QTimeZone("Europe/Paris")));
-            QCOMPARE(departure.hasExpectedTime(), true);
-            QCOMPARE(departure.expectedTime(), QDateTime({2018, 12, 10}, {17, 21}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.scheduledDepartureTime(), QDateTime({2018, 12, 10}, {17, 19}, QTimeZone("Europe/Paris")));
+            QCOMPARE(departure.hasExpectedDepartureTime(), true);
+            QCOMPARE(departure.expectedDepartureTime(), QDateTime({2018, 12, 10}, {17, 21}, QTimeZone("Europe/Paris")));
             QCOMPARE(departure.stopPoint().name(), QStringLiteral("Gare de Lyon RER D (Paris)"));
             QCOMPARE(departure.route().direction(), QStringLiteral("Gare de Villiers le Bel Gonesse Arnouville (Arnouville)"));
             QCOMPARE(departure.route().line().mode(), KPublicTransport::Line::RapidTransit);

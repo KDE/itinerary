@@ -101,12 +101,20 @@ Kirigami.ApplicationWindow {
                     }
                     RowLayout {
                         QQC2.Label {
-                            text: "Departure: " + modelData.scheduledTime.toTimeString()
+                            text: "Arrival: " + modelData.scheduledArrivalTime.toTimeString()
                         }
                         QQC2.Label {
-                            text: (modelData.delay >= 0 ? "+" : "") + modelData.delay
-                            color: modelData.delay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.hasExpectedTime
+                            text: (modelData.arrivalDelay >= 0 ? "+" : "") + modelData.arrivalDelay
+                            color: modelData.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedArrivalTime
+                        }
+                        QQC2.Label {
+                            text: "Departure: " + modelData.scheduledDepartureTime.toTimeString()
+                        }
+                        QQC2.Label {
+                            text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
+                            color: modelData.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedDepartureTime
                         }
                     }
                     RowLayout {

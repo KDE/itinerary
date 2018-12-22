@@ -28,19 +28,32 @@ namespace KPublicTransport {
 
 class DeparturePrivate;
 
-/** Information about a departure of a vehicle at a stop area. */
+/** Information about an arrival and/or departure of a vehicle at a stop area. */
 class Departure
 {
     KPUBLICTRANSPORT_GADGET(Departure)
 
+    /** Planned arrival time. */
+    Q_PROPERTY(QDateTime scheduledArrivalTime READ scheduledArrivalTime WRITE setScheduledArrivalTime)
+    /** Actual arrival time, if available.
+     *  Set to invalid to indicate real-time data is not available.
+     */
+    Q_PROPERTY(QDateTime expectedArrivalTime READ expectedArrivalTime WRITE setExpectedArrivalTime)
+    /** @c true if this has real-time data. */
+    Q_PROPERTY(bool hasExpectedArrivalTime READ hasExpectedArrivalTime STORED false)
+    /** Difference to schedule in minutes. */
+    Q_PROPERTY(int arrivalDelay READ arrivalDelay)
+
     /** Planned departure time. */
-    Q_PROPERTY(QDateTime scheduledTime READ scheduledTime WRITE setScheduledTime)
+    Q_PROPERTY(QDateTime scheduledDepartureTime READ scheduledDepartureTime WRITE setScheduledDepartureTime)
     /** Actual departure time, if available.
      *  Set to invalid to indicate real-time data is not available.
      */
-    Q_PROPERTY(QDateTime expectedTime READ expectedTime WRITE setExpectedTime)
+    Q_PROPERTY(QDateTime expectedDepartureTime READ expectedDepartureTime WRITE setExpectedDepartureTime)
     /** @c true if this has real-time data. */
-    Q_PROPERTY(bool hasExpectedTime READ hasExpectedTime STORED false)
+    Q_PROPERTY(bool hasExpectedDepartureTime READ hasExpectedDepartureTime STORED false)
+    /** Difference to schedule in minutes. */
+    Q_PROPERTY(int departureDelay READ departureDelay)
 
     /** Planned departure platform. */
     Q_PROPERTY(QString scheduledPlatform READ scheduledPlatform WRITE setScheduledPlatform)
@@ -55,16 +68,20 @@ class Departure
     /** The stop point of this departure. */
     Q_PROPERTY(KPublicTransport::Location stopPoint READ stopPoint WRITE setStopPoint)
 
-    /** Difference to schedule in minutes. */
-    Q_PROPERTY(int delay READ delay)
-
 public:
-    QDateTime scheduledTime() const;
-    void setScheduledTime(const QDateTime &scheduledTime);
-    QDateTime expectedTime() const;
-    void setExpectedTime(const QDateTime &expectedTime);
-    bool hasExpectedTime() const;
-    int delay() const;
+    QDateTime scheduledArrivalTime() const;
+    void setScheduledArrivalTime(const QDateTime &scheduledTime);
+    QDateTime expectedArrivalTime() const;
+    void setExpectedArrivalTime(const QDateTime &expectedTime);
+    bool hasExpectedArrivalTime() const;
+    int arrivalDelay() const;
+
+    QDateTime scheduledDepartureTime() const;
+    void setScheduledDepartureTime(const QDateTime &scheduledTime);
+    QDateTime expectedDepartureTime() const;
+    void setExpectedDepartureTime(const QDateTime &expectedTime);
+    bool hasExpectedDepartureTime() const;
+    int departureDelay() const;
 
     QString scheduledPlatform() const;
     void setScheduledPlatform(const QString &platform);

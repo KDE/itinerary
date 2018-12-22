@@ -44,14 +44,26 @@ void DepartureReplyPrivate::finalizeResult()
     error = Reply::NoError;
     errorMsg.clear();
 
-    std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
-        return lhs.scheduledTime() < rhs.scheduledTime();
-    });
+    if (request.mode() == DepartureRequest::QueryDeparture) {
+        std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
+            return lhs.scheduledDepartureTime() < rhs.scheduledDepartureTime();
+        });
+    } else {
+        std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
+            return lhs.scheduledArrivalTime() < rhs.scheduledArrivalTime();
+        });
+    }
 
     for (auto it = departures.begin(); it != departures.end(); ++it) {
         for (auto mergeIt = it + 1; mergeIt != departures.end();) {
-            if ((*it).scheduledTime() != (*mergeIt).scheduledTime()) {
-                break;
+            if (request.mode() == DepartureRequest::QueryDeparture) {
+                if ((*it).scheduledDepartureTime() != (*mergeIt).scheduledDepartureTime()) {
+                    break;
+                }
+            } else {
+                if ((*it).scheduledArrivalTime() != (*mergeIt).scheduledArrivalTime()) {
+                    break;
+                }
             }
 
             if (Departure::isSame(*it, *mergeIt)) {
