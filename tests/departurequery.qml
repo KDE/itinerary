@@ -137,6 +137,11 @@ Kirigami.ApplicationWindow {
                 anchors.fill: parent
 
                 QQC2.CheckBox {
+                    id: arrivalBox
+                    text: checked ? "Arrival" : "Departure"
+                }
+
+                QQC2.CheckBox {
                     text: "Allow insecure backends"
                     onToggled: _queryMgr.setAllowInsecure(checked)
                 }
@@ -148,7 +153,7 @@ Kirigami.ApplicationWindow {
                     textRole: "name"
                     onCurrentIndexChanged: {
                         var obj = exampleModel.get(currentIndex);
-                        _queryMgr.queryDeparture(obj.lat, obj.lon, obj.locId, obj.idType);
+                        _queryMgr.queryDeparture(obj.lat, obj.lon, obj.locId, obj.idType, arrivalBox.checked);
                     }
                 }
 

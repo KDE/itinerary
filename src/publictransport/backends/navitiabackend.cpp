@@ -107,7 +107,7 @@ bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager
         QStringLiteral("/v1/coverage/") +
         (m_coverage.isEmpty() ? QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) : m_coverage) +
         QStringLiteral("/coord/") + QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) +
-        QStringLiteral("/departures")
+        (req.mode() == DepartureRequest::QueryDeparture ? QStringLiteral("/departures") : QStringLiteral("/arrivals"))
     );
 
     QUrlQuery query;

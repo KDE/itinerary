@@ -123,7 +123,7 @@ void HafasMgateBackend::queryDeparture(DepartureReply *reply, const QString &loc
 
         req.insert(QLatin1String("stbLoc"), stbLoc);
         req.insert(QLatin1String("time"), request.dateTime().toString(QLatin1String("hhmmss")));
-        req.insert(QLatin1String("type"), QLatin1String("DEP"));
+        req.insert(QLatin1String("type"), request.mode() == DepartureRequest::QueryDeparture ? QLatin1String("DEP") : QLatin1String("ARR"));
 
         stationBoard.insert(QLatin1String("cfg"), cfg);
         stationBoard.insert(QLatin1String("meth"), QLatin1String("StationBoard"));

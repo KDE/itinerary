@@ -29,6 +29,7 @@ class DepartureRequestPrivate : public QSharedData {
 public:
     Location stop;
     QDateTime dateTime;
+    DepartureRequest::Mode mode = DepartureRequest::QueryDeparture;
 };
 }
 
@@ -65,4 +66,15 @@ void DepartureRequest::setDateTime(const QDateTime &dt)
 {
     d.detach();
     d->dateTime = dt;
+}
+
+DepartureRequest::Mode DepartureRequest::mode() const
+{
+    return d->mode;
+}
+
+void DepartureRequest::setMode(DepartureRequest::Mode mode)
+{
+    d.detach();
+    d->mode = mode;
 }

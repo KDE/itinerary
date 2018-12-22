@@ -45,6 +45,14 @@ public:
     QDateTime dateTime() const;
     void setDateTime(const QDateTime &dt);
 
+    /** Query departures or arrivals? */
+    enum Mode {
+        QueryArrival,
+        QueryDeparture
+    };
+    Mode mode() const;
+    void setMode(Mode mode);
+
 private:
     QExplicitlySharedDataPointer<DepartureRequestPrivate> d;
 };
