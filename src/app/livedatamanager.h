@@ -47,6 +47,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
 
+    Q_INVOKABLE QVariant arrival(const QString &resId);
     Q_INVOKABLE QVariant departure(const QString &resId);
 
 public slots:
@@ -54,6 +55,7 @@ public slots:
     void checkForUpdates();
 
 signals:
+    void arrivalUpdated(const QString &resId);
     void departureUpdated(const QString &resId);
 
 private:
@@ -63,6 +65,7 @@ private:
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;
     std::vector<QString> m_reservations;
+    QHash <QString, KPublicTransport::Departure> m_arrivals;
     QHash <QString, KPublicTransport::Departure> m_departures;
 };
 

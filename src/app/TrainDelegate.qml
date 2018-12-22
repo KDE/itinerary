@@ -24,6 +24,7 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
+    property var arrival: _liveDataManager.arrival(resIds[0])
     property var departure: _liveDataManager.departure(resIds[0])
 
     headerIconSource: "qrc:///images/train.svg"
@@ -74,11 +75,18 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
         }
-        QQC2.Label {
-            text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
-            color: Kirigami.Theme.textColor
-            wrapMode: Text.WordWrap
+        RowLayout {
             Layout.fillWidth: true
+            QQC2.Label {
+                text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
+                color: Kirigami.Theme.textColor
+                wrapMode: Text.WordWrap
+            }
+            QQC2.Label {
+                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: departure.hasExpectedArrivalTime
+            }
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalStation

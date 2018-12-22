@@ -72,6 +72,11 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
     m_pkPassMgr = pkPassMgr;
 }
 
+QVariant LiveDataManager::arrival(const QString &resId)
+{
+    return QVariant::fromValue(m_arrivals.value(resId));
+}
+
 QVariant LiveDataManager::departure(const QString &resId)
 {
     return QVariant::fromValue(m_departures.value(resId));
@@ -118,6 +123,21 @@ static bool isSameLine(const QString &lineName, const QString &trainName, const 
     return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
 }
 
+static KPublicTransport::Location locationFromStation(const TrainStation &station)
+{
+    using namespace KPublicTransport;
+    Location loc;
+    loc.setName(station.name());
+    loc.setCoordinate(station.geo().latitude(), station.geo().longitude());
+    if (!station.identifier().isEmpty()) {
+        const auto idSplit = station.identifier().split(QLatin1Char(':'));
+        if (idSplit.size() == 2) {
+            loc.setIdentifier(idSplit.at(0), idSplit.at(1));
+        }
+    }
+    return loc;
+}
+
 void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId)
 {
     qCDebug(Log) << trip.trainName() << trip.trainNumber() << trip.departureTime();
@@ -127,18 +147,8 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
 
     using namespace KPublicTransport;
 
-    Location from;
-    from.setName(trip.departureStation().name());
-    from.setCoordinate(trip.departureStation().geo().latitude(), trip.departureStation().geo().longitude());
-    if (!trip.departureStation().identifier().isEmpty()) {
-        const auto idSplit = trip.departureStation().identifier().split(QLatin1Char(':'));
-        if (idSplit.size() == 2) {
-            from.setIdentifier(idSplit.at(0), idSplit.at(1));
-        }
-    }
-    DepartureRequest req(from);
+    DepartureRequest req(locationFromStation(trip.departureStation()));
     req.setDateTime(trip.departureTime());
-
     auto reply = m_ptMgr->queryDeparture(req);
     connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
         reply->deleteLater();
@@ -158,6 +168,30 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
             break;
         }
     });
+
+    req = DepartureRequest(locationFromStation(trip.arrivalStation()));
+    req.setMode(DepartureRequest::QueryArrival);
+    req.setDateTime(trip.arrivalTime());
+    reply = m_ptMgr->queryDeparture(req);
+    connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
+        reply->deleteLater();
+        if (reply->error() != Reply::NoError) {
+            qCDebug(Log) << reply->error() << reply->errorString();
+            return;
+        }
+
+        for (const auto &arr : reply->departures()) {
+            qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
+            if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line().name(), trip.trainName(), trip.trainNumber())) {
+                continue;
+            }
+            qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
+            m_arrivals.insert(resId, arr);
+            emit arrivalUpdated(resId);
+            break;
+        }
+    });
+
 }
 
 #include "moc_livedatamanager.cpp"
