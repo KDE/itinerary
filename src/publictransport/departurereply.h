@@ -29,7 +29,7 @@ class Departure;
 class DepartureRequest;
 class DepartureReplyPrivate;
 
-/** Departure query reply. */
+/** Departure or arrival query reply. */
 class DepartureReply : public Reply
 {
     Q_OBJECT
@@ -39,8 +39,10 @@ public:
     /** The request this is the reply for. */
     DepartureRequest request() const;
 
-    /** Returns the found departure information. */
-    std::vector<Departure> departures() const;
+    /** Returns the found arrival or departure information. */
+    const std::vector<Departure>& result() const;
+    /** Returns the found arrival or departure information for moving elsewhere. */
+    std::vector<Departure>&& takeResult();
 
 private:
     friend class Manager;

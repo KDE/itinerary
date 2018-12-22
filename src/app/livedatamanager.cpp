@@ -157,7 +157,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
             return;
         }
 
-        for (const auto &dep : reply->departures()) {
+        for (const auto &dep : reply->result()) {
             qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
             if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
                 continue;
@@ -180,7 +180,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
             return;
         }
 
-        for (const auto &arr : reply->departures()) {
+        for (const auto &arr : reply->result()) {
             qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
             if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line().name(), trip.trainName(), trip.trainNumber())) {
                 continue;

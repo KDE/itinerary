@@ -64,7 +64,7 @@ public:
             emit loadingChanged();
 
             if (reply->error() == DepartureReply::NoError) {
-                const auto res = reply->departures();
+                const auto res = reply->takeResult();
                 QVariantList l;
                 l.reserve(res.size());
                 std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });

@@ -32,30 +32,30 @@ public:
     void finalizeResult() override;
 
     DepartureRequest request;
-    std::vector<Departure> departures;
+    std::vector<Departure> result;
 };
 }
 
 void DepartureReplyPrivate::finalizeResult()
 {
-    if (departures.empty()) {
+    if (result.empty()) {
         return;
     }
     error = Reply::NoError;
     errorMsg.clear();
 
     if (request.mode() == DepartureRequest::QueryDeparture) {
-        std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
+        std::sort(result.begin(), result.end(), [](const auto &lhs, const auto &rhs) {
             return lhs.scheduledDepartureTime() < rhs.scheduledDepartureTime();
         });
     } else {
-        std::sort(departures.begin(), departures.end(), [](const auto &lhs, const auto &rhs) {
+        std::sort(result.begin(), result.end(), [](const auto &lhs, const auto &rhs) {
             return lhs.scheduledArrivalTime() < rhs.scheduledArrivalTime();
         });
     }
 
-    for (auto it = departures.begin(); it != departures.end(); ++it) {
-        for (auto mergeIt = it + 1; mergeIt != departures.end();) {
+    for (auto it = result.begin(); it != result.end(); ++it) {
+        for (auto mergeIt = it + 1; mergeIt != result.end();) {
             if (request.mode() == DepartureRequest::QueryDeparture) {
                 if ((*it).scheduledDepartureTime() != (*mergeIt).scheduledDepartureTime()) {
                     break;
@@ -68,7 +68,7 @@ void DepartureReplyPrivate::finalizeResult()
 
             if (Departure::isSame(*it, *mergeIt)) {
                 *it = Departure::merge(*it, *mergeIt);
-                mergeIt = departures.erase(mergeIt);
+                mergeIt = result.erase(mergeIt);
             } else {
                 ++mergeIt;
             }
@@ -91,19 +91,25 @@ DepartureRequest DepartureReply::request() const
     return d->request;
 }
 
-std::vector<Departure> DepartureReply::departures() const
+const std::vector<Departure>& DepartureReply::result() const
 {
     Q_D(const DepartureReply);
-    return d->departures; // TODO this copies
+    return d->result;
+}
+
+std::vector<Departure>&& DepartureReply::takeResult()
+{
+    Q_D(DepartureReply);
+    return std::move(d->result);
 }
 
 void DepartureReply::addResult(std::vector<Departure> &&res)
 {
     Q_D(DepartureReply);
-    if (d->departures.empty()) {
-        d->departures = std::move(res);
+    if (d->result.empty()) {
+        d->result = std::move(res);
     } else {
-        d->departures.insert(d->departures.end(), res.begin(), res.end());
+        d->result.insert(d->result.end(), res.begin(), res.end());
     }
 
     d->pendingOps--;
