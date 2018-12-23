@@ -13,7 +13,16 @@ Itinerary and boarding pass management application.
 
 ## Contributing
 
-### Building for Android
+### Building for Android, using Docker
+
+An existing docker image exists with everything set up for compilation to Android: kdeorg/android-sdk.
+The following command will compile itinerary with all its dependencies and output an apk to our /tmp directory:
+
+```
+docker run -ti --rm -v /tmp:/output kdeorg/android-sdk /opt/helpers/build-generic
+```
+
+### Building for Android, by hand
 
 ```
 cmake -DQTANDROID_EXPORTED_TARGET=itinerary-app -DANDROID_APK_DIR=<source dir>/src/app  
