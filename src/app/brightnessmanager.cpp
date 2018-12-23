@@ -19,14 +19,14 @@
 
 #include <QDebug>
 
-#ifdef Q_OS_LINUX
+#if defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
 #include "solidbrightnessbackend.h"
 #endif
 
 BrightnessManager::BrightnessManager(QObject *parent)
     : QObject(parent)
 {
-#ifdef Q_OS_LINUX
+#if defined(Q_OS_LINUX) && !defined(Q_OS_ANDROID)
     m_backend = new SolidBrightnessBackend(this);
 #endif
 }
