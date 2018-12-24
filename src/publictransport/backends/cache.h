@@ -54,6 +54,9 @@ namespace Cache
     void addNegativeLocationCacheEntry(const QString &backendId, const QString &cacheKey);
     /** Perform cache lookuip for location results. */
     CacheEntry<Location> lookupLocation(const QString &backendId, const QString &cacheKey);
+
+    /** Expire old cache entries. */
+    void expire();
 }
 
 }

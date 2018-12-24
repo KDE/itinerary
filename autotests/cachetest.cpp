@@ -66,6 +66,8 @@ private slots:
         QCOMPARE(entry.data[0].identifiers().size(), 1);
         QCOMPARE(entry.data[0].identifier(QLatin1String("uic")), QLatin1String("85xxxxx"));
         QCOMPARE(entry.data[0].timeZone().isValid(), false);
+
+        Cache::expire();
     }
 
     void testLocationCacheKey()

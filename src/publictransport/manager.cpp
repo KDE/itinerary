@@ -145,6 +145,8 @@ Manager::Manager() :
 {
     initResources();
     d->loadNetworks();
+
+    Cache::expire();
 }
 
 Manager::Manager(Manager&&) noexcept = default;

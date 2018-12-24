@@ -16,11 +16,14 @@
 */
 
 #include "cache.h"
+#include "logging.h"
 
 #include <KPublicTransport/Location>
 
+#include <QDateTime>
 #include <QDebug>
 #include <QDir>
+#include <QDirIterator>
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -29,11 +32,14 @@
 
 using namespace KPublicTransport;
 
+static QString cacheBasePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QLatin1String("/org.kde.kpublictransport/backends/");
+}
+
 static QString cachePath(const QString &backendId, const QString &contentType)
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
-        QLatin1String("/org.kde.kpublictransport/") + backendId + QLatin1Char('/') +
-        contentType + QLatin1Char('/');
+    return cacheBasePath() + backendId + QLatin1Char('/') + contentType + QLatin1Char('/');
 }
 
 void Cache::addLocationCacheEntry(const QString &backendId, const QString &cacheKey, const std::vector<Location> &data)
@@ -73,4 +79,31 @@ CacheEntry<Location> Cache::lookupLocation(const QString &backendId, const QStri
     entry.type = CacheHitType::Positive;
     entry.data = Location::fromJson(QJsonDocument::fromJson(f.readAll()).array());
     return entry;
+}
+
+static void expireRecursive(const QString &path)
+{
+    const auto now = QDateTime::currentDateTime();
+    QDirIterator it(path, QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
+    while (it.hasNext()) {
+        it.next();
+
+        if (it.fileInfo().isDir()) {
+            expireRecursive(it.filePath());
+            if (QDir(it.filePath()).isEmpty()) {
+                qCDebug(Log) << "removing empty cache directory" << it.fileName();
+                QDir(path).rmdir(it.filePath());
+            }
+        }
+
+        if (it.fileInfo().lastModified().addDays(30) < now) {
+            qCDebug(Log) << "removing expired cache entry" << it.fileName();
+            QDir(path).remove(it.filePath());
+        }
+    }
+}
+
+void Cache::expire()
+{
+    expireRecursive(cacheBasePath());
 }
