@@ -176,7 +176,7 @@ QJsonArray Location::toJson(const std::vector<Location> &locs)
 {
     QJsonArray a;
     //a.reserve(locs.size());
-    std::transform(locs.begin(), locs.end(), std::back_inserter(a), qOverload<const Location&>(&Location::toJson));
+    std::transform(locs.begin(), locs.end(), std::back_inserter(a), QOverload<const Location&>::of(&Location::toJson));
     return a;
 }
 

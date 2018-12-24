@@ -56,17 +56,20 @@ void Cache::addNegativeLocationCacheEntry(const QString &backendId, const QStrin
 
 CacheEntry<Location> Cache::lookupLocation(const QString &backendId, const QString &cacheKey)
 {
+    CacheEntry<Location> entry;
+
     const auto dir = cachePath(backendId, QStringLiteral("location"));
     QFile f (dir + cacheKey + QLatin1String(".json"));
     if (!f.open(QFile::ReadOnly)) {
-        return {{}, CacheHitType::Miss };
+        entry.type = CacheHitType::Miss;
+        return entry;
     }
 
     if (f.size() == 0) {
-        return {{}, CacheHitType::Negative };
+        entry.type = CacheHitType::Negative;
+        return entry;
     }
 
-    CacheEntry<Location> entry;
     entry.type = CacheHitType::Positive;
     entry.data = Location::fromJson(QJsonDocument::fromJson(f.readAll()).array());
     return entry;
