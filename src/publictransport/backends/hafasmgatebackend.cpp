@@ -70,6 +70,23 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     locReq.setCoordinate(request.stop().latitude(), request.stop().longitude());
     locReq.setName(request.stop().name());
     // TODO set max result = 1
+
+    // check if this location query is cached already
+    const auto cacheEntry = Cache::lookupLocation(backendId(), locReq.cacheKey());
+    switch (cacheEntry.type) {
+        case CacheHitType::Negative:
+            addError(reply, Reply::NotFoundError, {});
+            return false;
+        case CacheHitType::Positive:
+            if (cacheEntry.data.size() >= 1) {
+                queryDeparture(reply, cacheEntry.data[0].identifier(locationIdentifierType()), nam);
+                return true;
+            }
+            break;
+        case CacheHitType::Miss:
+            break;
+    }
+
     const auto locReply = postLocationQuery(locReq, nam);
     if (!locReply) {
         return false;

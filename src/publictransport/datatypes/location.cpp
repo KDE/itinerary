@@ -159,6 +159,15 @@ QJsonObject Location::toJson(const Location &loc)
     obj.insert(QLatin1String("name"), loc.name());
     obj.insert(QLatin1String("latitude"), loc.latitude());
     obj.insert(QLatin1String("longitude"), loc.longitude());
+    if (loc.timeZone().isValid()) {
+        obj.insert(QLatin1String("timezone"), QString::fromUtf8(loc.timeZone().id()));
+    }
+
+    QJsonObject ids;
+    for (auto it = loc.d->ids.begin(); it != loc.d->ids.end(); ++it) {
+        ids.insert(it.key(), it.value());
+    }
+    obj.insert(QLatin1String("identifier"), ids);
 
     return obj;
 }
@@ -176,6 +185,16 @@ static Location fromJsonObject(const QJsonObject &obj)
     Location loc;
     loc.setName(obj.value(QLatin1String("name")).toString());
     loc.setCoordinate(obj.value(QLatin1String("latitude")).toDouble(), obj.value(QLatin1String("longitude")).toDouble());
+    const auto tz = obj.value(QLatin1String("timezone")).toString();
+    if (!tz.isEmpty()) {
+        loc.setTimeZone(QTimeZone(tz.toUtf8()));
+    }
+
+    const auto ids = obj.value(QLatin1String("identifier")).toObject();
+    for (auto it = ids.begin(); it != ids.end(); ++it) {
+        loc.setIdentifier(it.key(), it.value().toString());
+    }
+
     return loc;
 }
 

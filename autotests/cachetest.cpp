@@ -54,6 +54,7 @@ private slots:
         Location loc;
         loc.setName(QLatin1String("Randa"));
         loc.setCoordinate(7.6, 46.1);
+        loc.setIdentifier(QLatin1String("uic"), QLatin1String("85xxxxx"));
 
         Cache::addLocationCacheEntry(QLatin1String("unittest"), req.cacheKey(), {loc});
         entry = Cache::lookupLocation(QLatin1String("unittest"), req.cacheKey());
@@ -62,6 +63,9 @@ private slots:
         QCOMPARE(entry.data[0].name(), loc.name());
         QCOMPARE(entry.data[0].latitude(), 7.6f);
         QCOMPARE(entry.data[0].longitude(), 46.1f);
+        QCOMPARE(entry.data[0].identifiers().size(), 1);
+        QCOMPARE(entry.data[0].identifier(QLatin1String("uic")), QLatin1String("85xxxxx"));
+        QCOMPARE(entry.data[0].timeZone().isValid(), false);
     }
 };
 
