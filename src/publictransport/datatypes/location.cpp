@@ -20,6 +20,8 @@
 #include "datatypes_p.h"
 
 #include <QHash>
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QTimeZone>
 
 #include <cmath>
@@ -149,6 +151,45 @@ int Location::distance(float lat1, float lon1, float lat2, float lon2)
 
     const auto a = pow(sin(d_lat / 2.0), 2) + cos(lat1 * degToRad) * cos(lat2 * degToRad) * pow(sin(d_lon / 2.0), 2);
     return 2.0 * earthRadius * atan2(sqrt(a), sqrt(1.0 - a));
+}
+
+QJsonObject Location::toJson(const Location &loc)
+{
+    QJsonObject obj;
+    obj.insert(QLatin1String("name"), loc.name());
+    obj.insert(QLatin1String("latitude"), loc.latitude());
+    obj.insert(QLatin1String("longitude"), loc.longitude());
+
+    return obj;
+}
+
+QJsonArray Location::toJson(const std::vector<Location> &locs)
+{
+    QJsonArray a;
+    //a.reserve(locs.size());
+    std::transform(locs.begin(), locs.end(), std::back_inserter(a), qOverload<const Location&>(&Location::toJson));
+    return a;
+}
+
+static Location fromJsonObject(const QJsonObject &obj)
+{
+    Location loc;
+    loc.setName(obj.value(QLatin1String("name")).toString());
+    loc.setCoordinate(obj.value(QLatin1String("latitude")).toDouble(), obj.value(QLatin1String("longitude")).toDouble());
+    return loc;
+}
+
+std::vector<Location> Location::fromJson(const QJsonValue &v)
+{
+    std::vector<Location> res;
+    if (v.isArray()) {
+        const auto a = v.toArray();
+        res.reserve(a.size());
+        std::transform(a.begin(), a.end(), std::back_inserter(res), [](const auto &v) { return fromJsonObject(v.toObject()); });
+    } else if (v.isObject()) {
+        res.push_back(fromJsonObject(v.toObject()));
+    }
+    return res;
 }
 
 #include "moc_location.cpp"

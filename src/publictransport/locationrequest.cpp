@@ -73,3 +73,17 @@ void LocationRequest::setName(const QString &name)
 {
     d->name = name;
 }
+
+QString LocationRequest::cacheKey() const
+{
+    QString normalizedName;
+    normalizedName.reserve(d->name.size());
+    for (const auto c : qAsConst(d->name)) {
+        if (c.isLetter() || c.isDigit()) {
+            normalizedName.push_back(c);
+        }
+    }
+
+    return QString::number((int)(latitude() * 1000000)) + QLatin1Char('x') + QString::number((int)(longitude() * 1000000))
+        + QLatin1Char('_') + normalizedName;
+}

@@ -46,6 +46,9 @@ public:
     void setName(const QString &name);
     // TODO select full name or name fragment mode for auto-completion
 
+    // unique string representation used for caching results
+    QString cacheKey() const;
+
 private:
     QExplicitlySharedDataPointer<LocationRequestPrivate> d;
 };

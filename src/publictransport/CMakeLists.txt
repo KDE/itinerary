@@ -9,6 +9,7 @@ set(kpublictransport_srcs
     reply.cpp
 
     backends/abstractbackend.cpp
+    backends/cache.cpp
     backends/hafasmgatebackend.cpp
     backends/hafasmgateparser.cpp
     backends/navitiabackend.cpp
@@ -49,6 +50,7 @@ ecm_generate_headers(KPublicTransport_FORWARDING_HEADERS
 # # ### for testing only
 ecm_generate_headers(KPublicTransport_Backends_FORWARDING_HEADERS
     HEADER_NAMES
+        Cache
         HafasMgateParser
         NavitiaParser
     PREFIX KPublicTransport

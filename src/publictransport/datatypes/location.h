@@ -20,6 +20,9 @@
 
 #include "datatypes.h"
 
+class QJsonArray;
+class QJsonObject;
+class QJsonValue;
 class QTimeZone;
 template <typename K, typename T> class QHash;
 
@@ -67,6 +70,14 @@ public:
 
     /** Compute the distance between two geo coordinates, in meters. */
     static int distance(float lat1, float lon1, float lat2, float lon2);
+
+    /** Serializes one Location object to JSON. */
+    static QJsonObject toJson(const Location &loc);
+    /** Serializes an array of Location objects to JSON. */
+    static QJsonArray toJson(const std::vector<Location> &locs);
+    /** Dezerializes one or more Location objects from JSON. */
+    static std::vector<Location> fromJson(const QJsonValue &v);
+
 };
 
 }
