@@ -18,6 +18,7 @@
 #include "location.h"
 
 #include "datatypes_p.h"
+#include "json.h"
 
 #include <QHash>
 #include <QJsonArray>
@@ -60,9 +61,21 @@ float Location::latitude() const
     return d->latitude;
 }
 
+void Location::setLatitude(float latitude)
+{
+    d.detach();
+    d->latitude = latitude;
+}
+
 float Location::longitude() const
 {
     return d->longitude;
+}
+
+void Location::setLongitude(float longitude)
+{
+    d.detach();
+    d->longitude = longitude;
 }
 
 void Location::setCoordinate(float latitude, float longitude)
@@ -155,10 +168,7 @@ int Location::distance(float lat1, float lon1, float lat2, float lon2)
 
 QJsonObject Location::toJson(const Location &loc)
 {
-    QJsonObject obj;
-    obj.insert(QLatin1String("name"), loc.name());
-    obj.insert(QLatin1String("latitude"), loc.latitude());
-    obj.insert(QLatin1String("longitude"), loc.longitude());
+    auto obj = Json::toJson(loc);
     if (loc.timeZone().isValid()) {
         obj.insert(QLatin1String("timezone"), QString::fromUtf8(loc.timeZone().id()));
     }
@@ -182,9 +192,7 @@ QJsonArray Location::toJson(const std::vector<Location> &locs)
 
 static Location fromJsonObject(const QJsonObject &obj)
 {
-    Location loc;
-    loc.setName(obj.value(QLatin1String("name")).toString());
-    loc.setCoordinate(obj.value(QLatin1String("latitude")).toDouble(), obj.value(QLatin1String("longitude")).toDouble());
+    auto loc = Json::fromJson<Location>(obj);
     const auto tz = obj.value(QLatin1String("timezone")).toString();
     if (!tz.isEmpty()) {
         loc.setTimeZone(QTimeZone(tz.toUtf8()));

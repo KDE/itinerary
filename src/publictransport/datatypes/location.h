@@ -37,8 +37,8 @@ class Location
     /** Human-readable name of the location. */
     Q_PROPERTY(QString name READ name WRITE setName)
 
-    Q_PROPERTY(float latitude READ latitude)
-    Q_PROPERTY(float longitude READ longitude)
+    Q_PROPERTY(float latitude READ latitude WRITE setLatitude)
+    Q_PROPERTY(float longitude READ longitude WRITE setLongitude)
 
     // TODO: type, id, address
 
@@ -47,7 +47,9 @@ public:
     void setName(const QString &name);
 
     float latitude() const;
+    void setLatitude(float latitude);
     float longitude() const;
+    void setLongitude(float longitude);
     void setCoordinate(float latitude, float longitude);
     bool hasCoordinate() const;
 
