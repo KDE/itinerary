@@ -67,6 +67,20 @@ private slots:
         QCOMPARE(entry.data[0].identifier(QLatin1String("uic")), QLatin1String("85xxxxx"));
         QCOMPARE(entry.data[0].timeZone().isValid(), false);
     }
+
+    void testLocationCacheKey()
+    {
+        {
+            LocationRequest req;
+            req.setCoordinate(-52.5, -13.5);
+            QCOMPARE(req.cacheKey(), QLatin1String("-52500000x-13500000_"));
+        }
+        {
+            LocationRequest req;
+            req.setName(QLatin1String("Randa"));
+            QCOMPARE(req.cacheKey(), QLatin1String("nanxnan_randa"));
+        }
+    }
 };
 
 QTEST_GUILESS_MAIN(CacheTest)
