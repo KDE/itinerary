@@ -26,6 +26,7 @@
 
 #include <KPublicTransport/Location>
 
+#include "backends/cache.h"
 #include "backends/hafasmgatebackend.h"
 #include "backends/navitiabackend.h"
 
@@ -215,8 +216,22 @@ LocationReply* Manager::queryLocation(const LocationRequest &req) const
             qCDebug(Log) << "Skipping insecure backend:" << backend->backendId();
             continue;
         }
-        if (backend->queryLocation(reply, d->nam())) {
-            ++pendingOps;
+
+        auto cache = Cache::lookupLocation(backend->backendId(), req.cacheKey());
+        switch (cache.type) {
+            case CacheHitType::Negative:
+                qCDebug(Log) << "Negative cache hit for backend" << backend->backendId();
+                break;
+            case CacheHitType::Positive:
+                qCDebug(Log) << "Positive cache hit for backend" << backend->backendId();
+                reply->addResult(std::move(cache.data));
+                break;
+            case CacheHitType::Miss:
+                qCDebug(Log) << "Cache miss for backend" << backend->backendId();
+                if (backend->queryLocation(reply, d->nam())) {
+                    ++pendingOps;
+                }
+                break;
         }
     }
     reply->setPendingOps(pendingOps);

@@ -18,6 +18,7 @@
 #include "hafasmgatebackend.h"
 #include "hafasmgateparser.h"
 #include "logging.h"
+#include "cache.h"
 
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
@@ -73,13 +74,14 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
     if (!locReply) {
         return false;
     }
-    QObject::connect(locReply, &QNetworkReply::finished, [this, reply, locReply, nam]() {
+    QObject::connect(locReply, &QNetworkReply::finished, [this, reply, locReply, locReq, nam]() {
         qDebug() << locReply->request().url();
         switch (locReply->error()) {
             case QNetworkReply::NoError:
             {
                 auto res = m_parser.parseLocations(locReply->readAll());
                 if (m_parser.error() == Reply::NoError && !res.empty()) {
+                    Cache::addLocationCacheEntry(backendId(), locReq.cacheKey(), res);
                     const auto id = res[0].identifier(locationIdentifierType());
                     if (!id.isEmpty()) {
                         queryDeparture(reply, id, nam);
@@ -87,6 +89,7 @@ bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessMana
                         addError(reply, Reply::NotFoundError, QLatin1String("Location query found no results."));
                     }
                 } else {
+                    Cache::addNegativeLocationCacheEntry(backendId(), locReq.cacheKey());
                     addError(reply, m_parser.error(), m_parser.errorMessage());
                 }
                 break;
@@ -171,8 +174,10 @@ bool HafasMgateBackend::queryLocation(LocationReply *reply, QNetworkAccessManage
             {
                 auto res = m_parser.parseLocations(netReply->readAll());
                 if (m_parser.error() == Reply::NoError) {
+                    Cache::addLocationCacheEntry(backendId(), reply->request().cacheKey(), res);
                     addResult(reply, std::move(res));
                 } else {
+                    Cache::addNegativeLocationCacheEntry(backendId(), reply->request().cacheKey());
                     addError(reply, m_parser.error(), m_parser.errorMessage());
                 }
                 break;

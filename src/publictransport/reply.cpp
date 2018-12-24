@@ -55,7 +55,7 @@ void Reply::addError(Reply::Error error, const QString &errorMsg)
 
 void Reply::setPendingOps(int ops)
 {
-    Q_ASSERT(d_ptr->pendingOps == -1);
+    Q_ASSERT(d_ptr->pendingOps <= -1);
     Q_ASSERT(ops >= 0);
     d_ptr->pendingOps = ops;
     if (ops == 0) {
