@@ -77,8 +77,10 @@ public:
     static QJsonObject toJson(const Location &loc);
     /** Serializes an array of Location objects to JSON. */
     static QJsonArray toJson(const std::vector<Location> &locs);
-    /** Dezerializes one or more Location objects from JSON. */
-    static std::vector<Location> fromJson(const QJsonValue &v);
+    /** Deserialize a Location object from JSON. */
+    static Location fromJson(const QJsonObject &obj);
+    /** Dezerializes an array Location objects from JSON. */
+    static std::vector<Location> fromJson(const QJsonArray &a);
 
 };
 

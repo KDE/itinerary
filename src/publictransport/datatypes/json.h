@@ -18,7 +18,10 @@
 #ifndef KPUBLICTRANSPORT_JSON_H
 #define KPUBLICTRANSPORT_JSON_H
 
+#include <QJsonArray>
 #include <QJsonObject>
+
+#include <vector>
 
 class QMetaObject;
 
@@ -35,6 +38,15 @@ namespace Json
         return toJson(&T::staticMetaObject, &elem);
     }
 
+    /** Serialize an array of elements. */
+    template <typename T> inline QJsonArray toJson(const std::vector<T> &elems)
+    {
+        QJsonArray a;
+        //a.reserve(elems.size());
+        std::transform(elems.begin(), elems.end(), std::back_inserter(a), QOverload<const T&>::of(&T::toJson));
+        return a;
+    }
+
     void fromJson(const QMetaObject *mo, const QJsonObject &obj, void *elem);
 
     /** Deserialize via QMetaObject. */
@@ -43,6 +55,15 @@ namespace Json
         T elem;
         fromJson(&T::staticMetaObject, obj, &elem);
         return elem;
+    }
+
+    /** Deserialize an array of elements. */
+    template <typename T> inline std::vector<T> fromJson(const QJsonArray &a)
+    {
+        std::vector<T> res;
+        res.reserve(a.size());
+        std::transform(a.begin(), a.end(), std::back_inserter(res), [](const auto &v) { return T::fromJson(v.toObject()); });
+        return res;
     }
 }
 

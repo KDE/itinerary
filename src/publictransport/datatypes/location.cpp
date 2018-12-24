@@ -184,13 +184,10 @@ QJsonObject Location::toJson(const Location &loc)
 
 QJsonArray Location::toJson(const std::vector<Location> &locs)
 {
-    QJsonArray a;
-    //a.reserve(locs.size());
-    std::transform(locs.begin(), locs.end(), std::back_inserter(a), QOverload<const Location&>::of(&Location::toJson));
-    return a;
+    return Json::toJson(locs);
 }
 
-static Location fromJsonObject(const QJsonObject &obj)
+Location Location::fromJson(const QJsonObject &obj)
 {
     auto loc = Json::fromJson<Location>(obj);
     const auto tz = obj.value(QLatin1String("timezone")).toString();
@@ -206,17 +203,9 @@ static Location fromJsonObject(const QJsonObject &obj)
     return loc;
 }
 
-std::vector<Location> Location::fromJson(const QJsonValue &v)
+std::vector<Location> Location::fromJson(const QJsonArray &a)
 {
-    std::vector<Location> res;
-    if (v.isArray()) {
-        const auto a = v.toArray();
-        res.reserve(a.size());
-        std::transform(a.begin(), a.end(), std::back_inserter(res), [](const auto &v) { return fromJsonObject(v.toObject()); });
-    } else if (v.isObject()) {
-        res.push_back(fromJsonObject(v.toObject()));
-    }
-    return res;
+    return Json::fromJson<Location>(a);
 }
 
 #include "moc_location.cpp"
