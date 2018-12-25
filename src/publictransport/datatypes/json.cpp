@@ -17,6 +17,7 @@
 
 #include "json.h"
 
+#include <QColor>
 #include <QMetaObject>
 #include <QMetaProperty>
 #include <QVariant>
@@ -27,12 +28,20 @@ static QJsonValue variantToJson(const QVariant &v)
 {
     switch (v.userType()) {
         case QMetaType::QString:
-            return v.toString();
+        {
+            const auto s = v.toString();
+            return s.isNull() ? QJsonValue() : v.toString();
+        }
         case QMetaType::Double:
         case QMetaType::Float:
             return v.toDouble();
         case QMetaType::Int:
             return v.toInt();
+    }
+
+    if (v.userType() == qMetaTypeId<QColor>()) {
+        const auto c = v.value<QColor>();
+        return c.isValid() ? v.value<QColor>().name() : QJsonValue();;
     }
 
     return {};
@@ -67,6 +76,10 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
             return v.toDouble();
         case QMetaType::Int:
             return v.toInt();
+    }
+
+    if (mt == qMetaTypeId<QColor>()) {
+        return QColor(v.toString());
     }
 
     return {};

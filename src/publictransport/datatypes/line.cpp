@@ -17,6 +17,7 @@
 
 #include "line.h"
 #include "datatypes_p.h"
+#include "json.h"
 
 #include <QColor>
 #include <QDebug>
@@ -137,6 +138,19 @@ Line Line::merge(const Line &lhs, const Line &rhs)
     return l;
 }
 
+QJsonObject Line::toJson(const Line &l)
+{
+    auto obj = Json::toJson(l);
+    return obj;
+}
+
+Line Line::fromJson(const QJsonObject &obj)
+{
+    auto l = Json::fromJson<Line>(obj);
+    return l;
+}
+
+
 KPUBLICTRANSPORT_MAKE_GADGET(Route)
 
 Line Route::line() const
@@ -173,5 +187,20 @@ Route Route::merge(const Route &lhs, const Route &rhs)
     r.setLine(Line::merge(lhs.line(), rhs.line()));
     return r;
 }
+
+QJsonObject Route::toJson(const Route &r)
+{
+    auto obj = Json::toJson(r);
+    obj.insert(QLatin1String("line"), Line::toJson(r.line()));
+    return obj;
+}
+
+Route Route::fromJson(const QJsonObject &obj)
+{
+    auto r = Json::fromJson<Route>(obj);
+    r.setLine(Line::fromJson(obj.value(QLatin1String("line")).toObject()));
+    return r;
+}
+
 
 #include "moc_line.cpp"

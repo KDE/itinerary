@@ -82,6 +82,11 @@ public:
      *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
      */
     static Line merge(const Line &lhs, const Line &rhs);
+
+    /** Serializes one object to JSON. */
+    static QJsonObject toJson(const Line &l);
+    /** Deserialize an object from JSON. */
+    static Line fromJson(const QJsonObject &obj);
 };
 
 class RoutePrivate;
@@ -108,6 +113,11 @@ public:
      *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
      */
     static Route merge(const Route &lhs, const Route &rhs);
+
+    /** Serializes one object to JSON. */
+    static QJsonObject toJson(const Route &r);
+    /** Deserialize an object from JSON. */
+    static Route fromJson(const QJsonObject &obj);
 };
 
 }
