@@ -85,7 +85,7 @@ App.TimelineDelegate {
             QQC2.Label {
                 text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                 color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: departure.hasExpectedArrivalTime
+                visible: arrival.hasExpectedArrivalTime
             }
         }
         App.PlaceDelegate {
