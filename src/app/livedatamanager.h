@@ -61,6 +61,10 @@ signals:
 private:
     void checkTrainTrip(const KItinerary::TrainTrip &trip, const QString &resId);
 
+    void storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const;
+    void loadPublicTransportData();
+    void loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure>& data) const;
+
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;

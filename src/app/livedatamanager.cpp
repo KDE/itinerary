@@ -33,6 +33,12 @@
 #include <KPublicTransport/Manager>
 
 #include <QDateTime>
+#include <QDir>
+#include <QDirIterator>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QStandardPaths>
 #include <QVector>
 
 using namespace KItinerary;
@@ -65,6 +71,8 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
     std::sort(m_reservations.begin(), m_reservations.end(), [this](const auto &lhs, const auto &rhs) {
         return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
     });
+
+    loadPublicTransportData();
 }
 
 void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
@@ -164,6 +172,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
             }
             qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
             m_departures.insert(resId, dep);
+            storePublicTransportData(resId, dep, QStringLiteral("departure"));
             emit departureUpdated(resId);
             break;
         }
@@ -187,11 +196,52 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
             }
             qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
             m_arrivals.insert(resId, arr);
+            storePublicTransportData(resId, arr, QStringLiteral("arrival"));
             emit arrivalUpdated(resId);
             break;
         }
     });
 
+}
+
+void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure> &data) const
+{
+    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/"));
+    QDirIterator it(basePath + prefix, QDir::Files | QDir::NoSymLinks);
+    while (it.hasNext()) {
+        it.next();
+        const auto resId = it.fileInfo().baseName();
+        if (std::find(m_reservations.begin(), m_reservations.end(), resId) == m_reservations.end()) {
+            QDir(it.path()).remove(it.fileName());
+        } else {
+            QFile f(it.filePath());
+            if (!f.open(QFile::ReadOnly)) {
+                qCWarning(Log) << "Failed to load public transport file" << f.fileName() << f.errorString();
+                continue;
+            }
+            data.insert(resId, KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()));
+        }
+    }
+}
+
+void LiveDataManager::loadPublicTransportData()
+{
+    loadPublicTransportData(QStringLiteral("arrival"), m_arrivals);
+    loadPublicTransportData(QStringLiteral("departure"), m_departures);
+}
+
+void LiveDataManager::storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const
+{
+    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/")
+        + type + QLatin1Char('/'));
+    QDir().mkpath(basePath);
+
+    QFile file(basePath + resId + QLatin1String(".json"));
+    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
+        qCWarning(Log) << "Failed to open public transport cache file:" << file.fileName() << file.errorString();
+        return;
+    }
+    file.write(QJsonDocument(KPublicTransport::Departure::toJson(dep)).toJson());
 }
 
 #include "moc_livedatamanager.cpp"
