@@ -18,8 +18,10 @@
 #include "json.h"
 
 #include <QColor>
+#include <QDateTime>
 #include <QMetaObject>
 #include <QMetaProperty>
+#include <QTimeZone>
 #include <QVariant>
 
 using namespace KPublicTransport;
@@ -37,6 +39,20 @@ static QJsonValue variantToJson(const QVariant &v)
             return v.toDouble();
         case QMetaType::Int:
             return v.toInt();
+        case QVariant::DateTime:
+        {
+            const auto dt = v.toDateTime();
+            if (!dt.isValid()) {
+                return {};
+            }
+            if (dt.timeSpec() == Qt::TimeZone) {
+                QJsonObject dtObj;
+                dtObj.insert(QLatin1String("value"), dt.toString(Qt::ISODate));
+                dtObj.insert(QLatin1String("timezone"), QString::fromUtf8(dt.timeZone().id()));
+                return dtObj;
+            }
+            return v.toDateTime().toString(Qt::ISODate);
+        }
     }
 
     if (v.userType() == qMetaTypeId<QColor>()) {
@@ -76,6 +92,16 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
             return v.toDouble();
         case QMetaType::Int:
             return v.toInt();
+        case QVariant::DateTime:
+        {
+            if (v.isObject()) {
+                const auto dtObj = v.toObject();
+                auto dt = QDateTime::fromString(dtObj.value(QLatin1String("value")).toString(), Qt::ISODate);
+                dt.setTimeZone(QTimeZone(dtObj.value(QLatin1String("timezone")).toString().toUtf8()));
+                return dt;
+            }
+            return QDateTime::fromString(v.toString(), Qt::ISODate);
+        }
     }
 
     if (mt == qMetaTypeId<QColor>()) {
