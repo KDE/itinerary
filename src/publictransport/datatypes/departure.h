@@ -42,7 +42,7 @@ class Departure
     /** @c true if this has real-time data. */
     Q_PROPERTY(bool hasExpectedArrivalTime READ hasExpectedArrivalTime STORED false)
     /** Difference to schedule in minutes. */
-    Q_PROPERTY(int arrivalDelay READ arrivalDelay)
+    Q_PROPERTY(int arrivalDelay READ arrivalDelay STORED false)
 
     /** Planned departure time. */
     Q_PROPERTY(QDateTime scheduledDepartureTime READ scheduledDepartureTime WRITE setScheduledDepartureTime)
@@ -53,7 +53,7 @@ class Departure
     /** @c true if this has real-time data. */
     Q_PROPERTY(bool hasExpectedDepartureTime READ hasExpectedDepartureTime STORED false)
     /** Difference to schedule in minutes. */
-    Q_PROPERTY(int departureDelay READ departureDelay)
+    Q_PROPERTY(int departureDelay READ departureDelay STORED false)
 
     /** Planned departure platform. */
     Q_PROPERTY(QString scheduledPlatform READ scheduledPlatform WRITE setScheduledPlatform)
@@ -101,6 +101,11 @@ public:
      *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
      */
     static Departure merge(const Departure &lhs, const Departure &rhs);
+
+    /** Serializes one object to JSON. */
+    static QJsonObject toJson(const Departure &dep);
+    /** Deserialize an object from JSON. */
+    static Departure fromJson(const QJsonObject &obj);
 };
 
 }
