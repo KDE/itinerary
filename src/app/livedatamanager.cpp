@@ -15,6 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#include "config-itinerary.h"
+
 #include "livedatamanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
@@ -31,6 +33,12 @@
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
+
+#ifdef HAVE_NOTIFICATIONS
+#include <KNotifications/KNotification>
+#endif
+
+#include <KLocalizedString>
 
 #include <QDateTime>
 #include <QDir>
@@ -171,9 +179,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
                 continue;
             }
             qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
-            m_departures.insert(resId, dep);
-            storePublicTransportData(resId, dep, QStringLiteral("departure"));
-            emit departureUpdated(resId);
+            updateArrivalData(dep, resId);
             break;
         }
     });
@@ -195,13 +201,67 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
                 continue;
             }
             qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
-            m_arrivals.insert(resId, arr);
-            storePublicTransportData(resId, arr, QStringLiteral("arrival"));
-            emit arrivalUpdated(resId);
+            updateArrivalData(arr, resId);
             break;
         }
     });
+}
 
+void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
+{
+    const auto oldArr = m_departures.value(resId);
+    m_departures.insert(resId, arr);
+    storePublicTransportData(resId, arr, QStringLiteral("arrival"));
+
+    // check if something changed
+    if (oldArr.arrivalDelay() == arr.arrivalDelay() && oldArr.expectedPlatform() == arr.expectedPlatform()) {
+        return;
+    }
+
+#ifdef HAVE_NOTIFICATIONS
+    // check if something worth notifying changed
+    // ### we could do that even more clever by skipping distant future changes
+    if (std::abs(oldArr.arrivalDelay() - arr.arrivalDelay()) > 2) {
+        KNotification::event(KNotification::Notification,
+            i18n("Delayed arrival on %1", arr.route().line().name()),
+            i18n("New arrival time is: %1", QLocale().toString(arr.expectedArrivalTime().time())),
+            QLatin1String("clock"));
+    }
+#endif
+
+    emit departureUpdated(resId);
+}
+
+void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
+{
+    const auto oldDep = m_departures.value(resId);
+    m_departures.insert(resId, dep);
+    storePublicTransportData(resId, dep, QStringLiteral("departure"));
+
+    // check if something changed
+    if (oldDep.departureDelay() == dep.departureDelay() && oldDep.expectedPlatform() == dep.expectedPlatform()) {
+        return;
+    }
+
+#ifdef HAVE_NOTIFICATIONS
+    // check if something worth notifying changed
+    // ### we could do that even more clever by skipping distant future changes
+    if (std::abs(oldDep.departureDelay() - dep.departureDelay()) > 2) {
+        KNotification::event(KNotification::Notification,
+            i18n("Delayed departure on %1", dep.route().line().name()),
+            i18n("New departure time is: %1", QLocale().toString(dep.expectedDepartureTime().time())),
+            QLatin1String("clock"));
+    }
+
+    if (oldDep.expectedPlatform() != dep.expectedPlatform() && dep.scheduledPlatform() != dep.expectedPlatform()) {
+        KNotification::event(KNotification::Notification,
+            i18n("Platform change on %1", dep.route().line().name()),
+            i18n("New departure platform is: %1", dep.expectedPlatform()),
+            QLatin1String("clock"));
+    }
+#endif
+
+    emit departureUpdated(resId);
 }
 
 void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure> &data) const

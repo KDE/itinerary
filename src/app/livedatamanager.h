@@ -61,6 +61,9 @@ signals:
 private:
     void checkTrainTrip(const KItinerary::TrainTrip &trip, const QString &resId);
 
+    void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
+    void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
+
     void storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const;
     void loadPublicTransportData();
     void loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure>& data) const;

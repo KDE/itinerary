@@ -1,3 +1,8 @@
+if (TARGET KF5::Notifications)
+    SET(HAVE_NOTIFICATIONS TRUE)
+endif()
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
+
 set(itinerary_srcs
     applicationcontroller.cpp
     contenttypeprober.cpp
@@ -55,6 +60,9 @@ target_link_libraries(itinerary-app PRIVATE
     KF5::Contacts
     KPublicTransport
 )
+if (TARGET KF5::Notifications)
+    target_link_libraries(itinerary-app PRIVATE KF5::Notifications)
+endif()
 if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
