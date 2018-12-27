@@ -69,9 +69,18 @@ App.DetailsPage {
         App.PlaceDelegate {
             place: reservationFor.departureStation
         }
-        QQC2.Label {
+        RowLayout {
             Kirigami.FormData.label: i18n("Platform:")
-            text: reservationFor.departurePlatform
+            QQC2.Label {
+                text: departure.hasExpectedPlatform ? departure.expectedPlatform : reservationFor.departurePlatform
+                color: departure.platformChanged ? Kirigami.Theme.negativeTextColor :
+                    departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
+                    Kirigami.Theme.textColor;
+            }
+            QQC2.Label {
+                text: i18n("(was: %1)", reservationFor.departurePlatform)
+                visible: departure.platformChanged && reservationFor.departurePlatform != ""
+            }
         }
 
         // arrival data
@@ -97,9 +106,18 @@ App.DetailsPage {
         App.PlaceDelegate {
             place: reservationFor.arrivalStation
         }
-        QQC2.Label {
+        RowLayout {
             Kirigami.FormData.label: i18n("Platform:")
-            text: reservationFor.arrivalPlatform
+            QQC2.Label {
+                text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
+                color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
+                    arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
+                    Kirigami.Theme.textColor;
+            }
+            QQC2.Label {
+                text: i18n("(was: %1)", reservationFor.arrivalPlatform)
+                visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
+            }
         }
 
         // seat reservation
