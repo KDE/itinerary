@@ -91,6 +91,11 @@ public:
 
     int todayRow() const;
 
+    /** Emit dataChanged() for the row containing @p resId.
+     *  This is used to trigger UI updates e.g. from the LiveDataManager.
+     */
+    void dataChangedForReservation(const QString &resId);
+
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
 
