@@ -53,6 +53,7 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("Departure from %1 on platform %2",
                 reservationFor.departureStation.name,
+                departure.hasExpectedPlatform ? departure.expectedPlatform :
                 reservationFor.departurePlatform ? reservationFor.departurePlatform : "-")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
@@ -70,6 +71,7 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("Arrival at %1 on platform %2",
                 reservationFor.arrivalStation.name,
+                arrival.hasExpectedPlatform ? arrival.expectedPlatform :
                 reservationFor.arrivalPlatform ? reservationFor.arrivalPlatform : "-")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
