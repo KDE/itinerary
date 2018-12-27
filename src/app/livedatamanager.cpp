@@ -28,7 +28,6 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/TrainTrip>
 
-#include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
@@ -40,7 +39,6 @@
 
 #include <KLocalizedString>
 
-#include <QDateTime>
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
@@ -87,12 +85,12 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
 
 QVariant LiveDataManager::arrival(const QString &resId)
 {
-    return QVariant::fromValue(m_arrivals.value(resId));
+    return QVariant::fromValue(m_arrivals.value(resId).change);
 }
 
 QVariant LiveDataManager::departure(const QString &resId)
 {
-    return QVariant::fromValue(m_departures.value(resId));
+    return QVariant::fromValue(m_departures.value(resId).change);
 }
 
 void LiveDataManager::checkForUpdates()
@@ -206,8 +204,8 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
 
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
 {
-    const auto oldArr = m_departures.value(resId);
-    m_departures.insert(resId, arr);
+    const auto oldArr = m_departures.value(resId).change;
+    m_departures.insert(resId, {arr, QDateTime::currentDateTimeUtc()});
     storePublicTransportData(resId, arr, QStringLiteral("arrival"));
 
     // check if something changed
@@ -231,8 +229,8 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
 
 void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
 {
-    const auto oldDep = m_departures.value(resId);
-    m_departures.insert(resId, dep);
+    const auto oldDep = m_departures.value(resId).change;
+    m_departures.insert(resId, {dep, QDateTime::currentDateTimeUtc()});
     storePublicTransportData(resId, dep, QStringLiteral("departure"));
 
     // check if something changed
@@ -261,7 +259,7 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     emit departureUpdated(resId);
 }
 
-void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure> &data) const
+void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange> &data) const
 {
     const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/"));
     QDirIterator it(basePath + prefix, QDir::Files | QDir::NoSymLinks);
@@ -276,7 +274,7 @@ void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QStri
                 qCWarning(Log) << "Failed to load public transport file" << f.fileName() << f.errorString();
                 continue;
             }
-            data.insert(resId, KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()));
+            data.insert(resId, {KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()), f.fileTime(QFile::FileModificationTime)});
         }
     }
 }

@@ -18,6 +18,9 @@
 #ifndef LIVEDATAMANAGER_H
 #define LIVEDATAMANAGER_H
 
+#include <KPublicTransport/Departure>
+
+#include <QDateTime>
 #include <QHash>
 #include <QObject>
 
@@ -70,16 +73,21 @@ private:
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
 
+    struct TrainChange {
+        KPublicTransport::Departure change;
+        QDateTime timestamp;
+    };
+
     void storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const;
     void loadPublicTransportData();
-    void loadPublicTransportData(const QString &prefix, QHash<QString, KPublicTransport::Departure>& data) const;
+    void loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange>& data) const;
 
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;
     std::vector<QString> m_reservations;
-    QHash <QString, KPublicTransport::Departure> m_arrivals;
-    QHash <QString, KPublicTransport::Departure> m_departures;
+    QHash <QString, TrainChange> m_arrivals;
+    QHash <QString, TrainChange> m_departures;
 };
 
 #endif // LIVEDATAMANAGER_H
