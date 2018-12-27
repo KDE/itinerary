@@ -23,6 +23,7 @@
 #include <QDateTime>
 #include <QHash>
 #include <QObject>
+#include <QTimer>
 
 #include <memory>
 #include <vector>
@@ -85,12 +86,18 @@ private:
     void loadPublicTransportData();
     void loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange>& data) const;
 
+    void poll();
+    int nextPollTime() const;
+    int nextPollTimeForReservation(const QString &resId) const;
+
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;
     std::vector<QString> m_reservations;
     QHash <QString, TrainChange> m_arrivals;
     QHash <QString, TrainChange> m_departures;
+
+    QTimer m_pollTimer;
 };
 
 #endif // LIVEDATAMANAGER_H

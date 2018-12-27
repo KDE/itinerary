@@ -54,6 +54,9 @@ LiveDataManager::LiveDataManager(QObject *parent)
 
 {
     m_ptMgr.reset(new KPublicTransport::Manager);
+
+    m_pollTimer.setSingleShot(true);
+    connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
 }
 
 LiveDataManager::~LiveDataManager() = default;
@@ -78,6 +81,7 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
     });
 
     loadPublicTransportData();
+    m_pollTimer.setInterval(nextPollTime());
 }
 
 void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
@@ -87,7 +91,12 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
 
 void LiveDataManager::setPollingEnabled(bool pollingEnabled)
 {
-    // TODO
+    if (pollingEnabled) {
+        m_pollTimer.setInterval(nextPollTime());
+        m_pollTimer.start();
+    } else {
+        m_pollTimer.stop();
+    }
 }
 
 void LiveDataManager::setAllowInsecureServices(bool allowInsecure)
@@ -344,6 +353,59 @@ void LiveDataManager::reservationRemoved(const QString &resId)
     if (it != m_reservations.end()) {
         m_reservations.erase(it);
     }
+}
+
+void LiveDataManager::poll()
+{
+    qCDebug(Log);
+    // TODO
+}
+
+int LiveDataManager::nextPollTime() const
+{
+    int t = std::numeric_limits<int>::max();
+    for (const auto &resId : m_reservations) {
+        t = std::min(t, nextPollTimeForReservation(resId));
+    }
+    qCDebug(Log) << "next auto-update in" << (t/1000) << "secs";
+    return t;
+}
+
+struct {
+    int distance; // secs
+    int pollInterval; // secs
+} static const pollIntervalTable[] = {
+    { 3600, 5*60 }, // for <1h we poll every 5 minutes
+    { 4 * 3600, 15 * 60 }, // for <4h we poll every 15 minutes
+    { 24 * 3600, 3600 }, // for <1d we poll once per hour
+    { 4 * 24 * 3600, 24 * 3600 }, // for <4d we poll once per day
+};
+
+int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
+{
+    const auto res = m_resMgr->reservation(resId);
+
+    const auto now = QDateTime::currentDateTime();
+    auto dist = now.secsTo(SortUtil::startDateTime(res));
+    if (dist < 0) {
+        dist = now.secsTo(SortUtil::endtDateTime(res));
+    }
+    if (dist < 0) {
+        return std::numeric_limits<int>::max();
+    }
+
+    // TODO consider delayed but still pending departures/arrivals too
+
+    const auto it = std::lower_bound(std::begin(pollIntervalTable), std::end(pollIntervalTable), dist, [](const auto &lhs, const auto rhs) {
+        return lhs.distance < rhs;
+    });
+    if (it == std::end(pollIntervalTable)) {
+        return std::numeric_limits<int>::max();
+    }
+
+    // TODO check last poll time for this reservation, and skip stuff that isn't outdated yet
+
+    return it->pollInterval * 1000; // we need msecs
 }
 
 #include "moc_livedatamanager.cpp"
