@@ -59,6 +59,12 @@ signals:
     void departureUpdated(const QString &resId);
 
 private:
+    bool isRelevant(const QString &resId) const;
+
+    void reservationAdded(const QString &resId);
+    void reservationChanged(const QString &resId);
+    void reservationRemoved(const QString &resId);
+
     void checkTrainTrip(const KItinerary::TrainTrip &trip, const QString &resId);
 
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);

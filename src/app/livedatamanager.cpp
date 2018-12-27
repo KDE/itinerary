@@ -61,18 +61,15 @@ LiveDataManager::~LiveDataManager() = default;
 void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
-    // TODO set up change monitoring
+    connect(resMgr, &ReservationManager::reservationAdded, this, &LiveDataManager::reservationAdded);
+    connect(resMgr, &ReservationManager::reservationUpdated, this, &LiveDataManager::reservationChanged);
+    connect(resMgr, &ReservationManager::reservationRemoved, this, &LiveDataManager::reservationRemoved);
 
     const auto resIds = resMgr->reservations();
     for (const auto &resId : resIds) {
-        const auto res = resMgr->reservation(resId);
-        if (!LocationUtil::isLocationChange(res)) { // we only care about transit reservations
+        if (!isRelevant(resId)) {
             continue;
         }
-        if (SortUtil::endtDateTime(res) < QDateTime::currentDateTime().addDays(-1)) {
-            continue; // we don't care about past events
-        }
-
         m_reservations.push_back(resId);
     }
 
@@ -302,6 +299,45 @@ void LiveDataManager::storePublicTransportData(const QString &resId, const KPubl
         return;
     }
     file.write(QJsonDocument(KPublicTransport::Departure::toJson(dep)).toJson());
+}
+
+bool LiveDataManager::isRelevant(const QString &resId) const
+{
+    const auto res = m_resMgr->reservation(resId);
+    if (!LocationUtil::isLocationChange(res)) { // we only care about transit reservations
+        return false;
+    }
+    if (SortUtil::endtDateTime(res) < QDateTime::currentDateTime().addDays(-1)) {
+        return false; // we don't care about past events
+    }
+
+    // we can only handle train trips and reservations with pkpass files so far
+    if (!JsonLd::canConvert<Reservation>(res)) {
+        return false;
+    }
+    return JsonLd::isA<TrainReservation>(res) || !JsonLd::convert<Reservation>(res).pkpassSerialNumber().isEmpty();
+}
+
+void LiveDataManager::reservationAdded(const QString &resId)
+{
+    if (!isRelevant(resId)) {
+        return;
+    }
+
+    // TODO
+}
+
+void LiveDataManager::reservationChanged(const QString &resId)
+{
+    // TODO
+}
+
+void LiveDataManager::reservationRemoved(const QString &resId)
+{
+    const auto it = std::find(m_reservations.begin(), m_reservations.end(), resId);
+    if (it != m_reservations.end()) {
+        m_reservations.erase(it);
+    }
 }
 
 #include "moc_livedatamanager.cpp"
