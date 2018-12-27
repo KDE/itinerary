@@ -9,6 +9,7 @@ Itinerary and boarding pass management application.
 - On Android: via the system calendar, if you use DavDroid to sync to a calendar that has
   events with reservation data created by KMail.
 - Manually importing Apple Wallet pass or JSON-LD files.
+- By sending data created by KMail to your phone via KDE Connect
 
 
 ## Contributing
