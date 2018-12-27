@@ -26,6 +26,8 @@ class Settings : public QObject
     Q_OBJECT
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
     Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
+    Q_PROPERTY(bool queryLiveData READ queryLiveData WRITE setQueryLiveData NOTIFY queryLiveDataChanged)
+    Q_PROPERTY(bool allowInsecureServices READ allowInsecureServices WRITE setAllowInsecureServices NOTIFY allowInsecureServicesChanged)
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
@@ -36,13 +38,22 @@ public:
     QString homeCountryIsoCode() const;
     void setHomeCountryIsoCode(const QString &isoCode);
 
+    bool queryLiveData() const;
+    void setQueryLiveData(bool queryLiveData);
+    bool allowInsecureServices() const;
+    void setAllowInsecureServices(bool allowInsecure);
+
 signals:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
+    void queryLiveDataChanged();
+    void allowInsecureServicesChanged();
 
 private:
     QString m_homeCountry;
     bool m_weatherEnabled = false;
+    bool m_queryLiveData = false;
+    bool m_allowInsecureServices = false;
 };
 
 #endif // SETTINGS_H

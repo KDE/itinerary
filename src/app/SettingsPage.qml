@@ -33,12 +33,46 @@ Kirigami.ScrollablePage {
     Kirigami.FormLayout {
         width: root.width
 
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Home")
+        }
+
         QQC2.ComboBox {
             Kirigami.FormData.label: i18n("Home Country")
             model: countryModel
             textRole: "display"
             currentIndex: countryModel.isoCodeToIndex(_settings.homeCountryIsoCode)
             onActivated: _settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
+        }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Online Services")
+        }
+
+        QQC2.Switch {
+            Kirigami.FormData.label: i18n("Query Traffic Data")
+            checked: _settings.queryLiveData
+            onToggled: _settings.queryLiveData = checked
+        }
+        QQC2.Label {
+            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            text: i18n("When enabled, this will query transport provider online services for changes such as delays or gate and platform changes.")
+        }
+        QQC2.Switch {
+            Kirigami.FormData.label: i18n("Use insecure services")
+            checked: _settings.allowInsecureServices
+            onToggled: _settings.allowInsecureServices = checked
+        }
+        QQC2.Label {
+            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            text: i18n("Enabling this will also use online services that do not offer transport encryption. This is not recommended, but might be unavoidable when relying on live data from certain providers.")
+            color: Kirigami.Theme.negativeTextColor
         }
 
         QQC2.Switch {

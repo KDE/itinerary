@@ -32,6 +32,9 @@ Settings::Settings(QObject *parent)
 
     const auto currentCountry = KContacts::Address::countryToISO(QLocale::countryToString(QLocale().country())).toUpper();
     m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
+
+    m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
+    m_allowInsecureServices = s.value(QLatin1String("AllowInsecureServices"), false).toBool();
 }
 
 Settings::~Settings() = default;
@@ -72,4 +75,43 @@ void Settings::setHomeCountryIsoCode(const QString& isoCode)
     s.setValue(QLatin1String("HomeCountry"), isoCode);
 
     emit homeCountryIsoCodeChanged(isoCode);
+}
+
+bool Settings::queryLiveData() const
+{
+    return m_queryLiveData;
+}
+
+void Settings::setQueryLiveData(bool queryLiveData)
+{
+    if (m_queryLiveData == queryLiveData) {
+        return;
+    }
+
+    m_queryLiveData = queryLiveData;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
+
+    emit queryLiveDataChanged();
+}
+
+
+bool Settings::allowInsecureServices() const
+{
+    return m_allowInsecureServices;
+}
+
+void Settings::setAllowInsecureServices(bool allowInsecure)
+{
+   if (m_allowInsecureServices == allowInsecure) {
+        return;
+    }
+
+    m_allowInsecureServices = allowInsecure;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("AllowInsecureServices"), allowInsecure);
+
+    emit allowInsecureServicesChanged();
 }
