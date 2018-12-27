@@ -48,7 +48,9 @@ set(itinerary_app_srcs
     brightnessmanager.cpp
     livedatamanager.cpp
 )
-if (NOT ANDROID)
+if (ANDROID)
+    list(APPEND itinerary_app_srcs androidbrightnessbackend.cpp)
+else()
     list(APPEND itinerary_app_srcs solidbrightnessbackend.cpp)
     qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
 endif()

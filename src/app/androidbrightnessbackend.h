@@ -15,31 +15,22 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#ifndef ANDROIDBRIGHTNESSBACKEND_H
+#define ANDROIDBRIGHTNESSBACKEND_H
+
+#include <QObject>
 #include "brightnessmanager.h"
 
-#include <QDebug>
 
-#if defined(Q_OS_ANDROID)
-#include "androidbrightnessbackend.h"
-#elif defined(Q_OS_LINUX)
-#include "solidbrightnessbackend.h"
-#endif
-
-BrightnessManager::BrightnessManager(QObject *parent)
-    : QObject(parent)
+class AndroidBrightnessBackend : public BrightnessBackend
 {
-#if defined(Q_OS_ANDROID)
-    m_backend = new AndroidBrightnessBackend(this);
-#elif defined(Q_OS_LINUX)
-    m_backend = new SolidBrightnessBackend(this);
-#endif
-}
 
-BrightnessManager::~BrightnessManager() = default;
+public:
+    explicit AndroidBrightnessBackend(QObject *parent = nullptr);
+    virtual ~AndroidBrightnessBackend();
 
-void BrightnessManager::maxBrightness()
-{
-    if (m_backend) {
-        m_backend->maxBrightness();
-    }
-}
+    virtual void maxBrightness();
+
+};
+
+#endif //  ANDROIDBRIGHTNESSBACKEND_H

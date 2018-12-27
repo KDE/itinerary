@@ -27,6 +27,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.util.Log;
+import android.view.WindowManager;
 
 import java.io.*;
 import java.util.*;
@@ -115,5 +116,16 @@ public class Activity extends QtActivity
                 }
             }
         }
+    }
+
+    public void maxBrightness() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                WindowManager.LayoutParams layout = getWindow().getAttributes();
+                layout.screenBrightness = 1F;
+                getWindow().setAttributes(layout);
+            }
+        });
     }
 }

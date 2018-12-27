@@ -15,31 +15,25 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "brightnessmanager.h"
+#include "androidbrightnessbackend.h"
 
 #include <QDebug>
+#include <QtAndroid>
+#include <QAndroidJniObject>
 
-#if defined(Q_OS_ANDROID)
-#include "androidbrightnessbackend.h"
-#elif defined(Q_OS_LINUX)
-#include "solidbrightnessbackend.h"
-#endif
-
-BrightnessManager::BrightnessManager(QObject *parent)
-    : QObject(parent)
+AndroidBrightnessBackend::AndroidBrightnessBackend(QObject *parent)
+    : BrightnessBackend(parent)
 {
-#if defined(Q_OS_ANDROID)
-    m_backend = new AndroidBrightnessBackend(this);
-#elif defined(Q_OS_LINUX)
-    m_backend = new SolidBrightnessBackend(this);
-#endif
 }
 
-BrightnessManager::~BrightnessManager() = default;
-
-void BrightnessManager::maxBrightness()
+AndroidBrightnessBackend::~AndroidBrightnessBackend()
 {
-    if (m_backend) {
-        m_backend->maxBrightness();
+}
+
+void AndroidBrightnessBackend::maxBrightness()
+{
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        activity.callMethod<void>("maxBrightness");
     }
 }
