@@ -20,7 +20,7 @@ An existing docker image exists with everything set up for compilation to Androi
 The following command will compile itinerary with all its dependencies and output an apk to our /tmp directory:
 
 ```
-docker run -ti --rm -v /tmp:/output kdeorg/android-sdk /opt/helpers/build-generic
+docker run -ti --rm -v /tmp:/output kdeorg/android-sdk /opt/helpers/build-generic itinerary
 ```
 
 ### Building for Android, by hand
