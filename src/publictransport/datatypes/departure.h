@@ -61,6 +61,8 @@ class Departure
     Q_PROPERTY(QString expectedPlatform READ expectedPlatform WRITE setExpectedPlatform)
     /** @c true if real-time platform information are available. */
     Q_PROPERTY(bool hasExpectedPlatform READ hasExpectedPlatform STORED false)
+    /** @c true if we have real-time platform information and the platform changed. */
+    Q_PROPERTY(bool platformChanged READ platformChanged STORED false)
 
     /** The departing route. */
     Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
@@ -88,6 +90,7 @@ public:
     QString expectedPlatform() const;
     void setExpectedPlatform(const QString &platform);
     bool hasExpectedPlatform() const;
+    bool platformChanged() const;
 
     Route route() const;
     void setRoute(const Route &route);

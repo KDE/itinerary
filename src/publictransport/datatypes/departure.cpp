@@ -136,6 +136,11 @@ bool Departure::hasExpectedPlatform() const
     return !d->expectedPlatform.isEmpty();
 }
 
+bool Departure::platformChanged() const
+{
+    return hasExpectedPlatform() && d->expectedPlatform != d->scheduledPlatform;
+}
+
 Route Departure::route() const
 {
     return d->route;
