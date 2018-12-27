@@ -30,30 +30,25 @@ Kirigami.ScrollablePage {
         id: countryModel
     }
 
-    GridLayout {
-        columns: 2
+    Kirigami.FormLayout {
         width: root.width
 
-        QQC2.Label {
-            text: i18n("Home Country")
-        }
         QQC2.ComboBox {
+            Kirigami.FormData.label: i18n("Home Country")
             model: countryModel
             textRole: "display"
             currentIndex: countryModel.isoCodeToIndex(_settings.homeCountryIsoCode)
             onActivated: _settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
         }
 
-        QQC2.Label {
-            text: i18n("Weather Forecast")
-        }
         QQC2.Switch {
             id: weatherSwitch
+            Kirigami.FormData.label: i18n("Weather Forecast")
             checked: _settings.weatherForecastEnabled
             onToggled: _settings.weatherForecastEnabled = checked
         }
         QQC2.Label {
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection: true
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
             text: i18n("Showing weather forecasts will query online services.")
@@ -61,7 +56,7 @@ Kirigami.ScrollablePage {
         }
         // ATTENTION do not remove this note, see https://api.met.no/license_data.html
         QQC2.Label {
-            Layout.columnSpan: 2
+            Kirigami.FormData.isSection:true
             Layout.fillWidth: true
             text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
             visible: weatherSwitch.checked
