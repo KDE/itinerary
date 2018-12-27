@@ -46,8 +46,8 @@ public:
 signals:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
-    void queryLiveDataChanged();
-    void allowInsecureServicesChanged();
+    void queryLiveDataChanged(bool enabled);
+    void allowInsecureServicesChanged(bool allowed);
 
 private:
     QString m_homeCountry;

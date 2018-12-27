@@ -138,6 +138,10 @@ int main(int argc, char **argv)
     LiveDataManager liveDataMgr;
     liveDataMgr.setPkPassManager(&passMgr);
     liveDataMgr.setReservationManager(&resMgr);
+    liveDataMgr.setPollingEnabled(settings.queryLiveData());
+    liveDataMgr.setAllowInsecureServices(settings.allowInsecureServices());
+    QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
+    QObject::connect(&settings, &Settings::allowInsecureServicesChanged, &liveDataMgr, &LiveDataManager::setAllowInsecureServices);
 
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {

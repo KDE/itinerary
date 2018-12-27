@@ -93,7 +93,7 @@ void Settings::setQueryLiveData(bool queryLiveData)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
 
-    emit queryLiveDataChanged();
+    emit queryLiveDataChanged(queryLiveData);
 }
 
 
@@ -113,5 +113,5 @@ void Settings::setAllowInsecureServices(bool allowInsecure)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("AllowInsecureServices"), allowInsecure);
 
-    emit allowInsecureServicesChanged();
+    emit allowInsecureServicesChanged(allowInsecure);
 }

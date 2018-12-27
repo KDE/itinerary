@@ -50,6 +50,9 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
 
+    void setPollingEnabled(bool pollingEnabled);
+    void setAllowInsecureServices(bool allowInsecure);
+
     Q_INVOKABLE QVariant arrival(const QString &resId);
     Q_INVOKABLE QVariant departure(const QString &resId);
 

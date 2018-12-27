@@ -51,7 +51,9 @@ using namespace KItinerary;
 
 LiveDataManager::LiveDataManager(QObject *parent)
     : QObject(parent)
+
 {
+    m_ptMgr.reset(new KPublicTransport::Manager);
 }
 
 LiveDataManager::~LiveDataManager() = default;
@@ -81,6 +83,16 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
+}
+
+void LiveDataManager::setPollingEnabled(bool pollingEnabled)
+{
+    // TODO
+}
+
+void LiveDataManager::setAllowInsecureServices(bool allowInsecure)
+{
+    m_ptMgr->setAllowInsecureBackends(allowInsecure);
 }
 
 QVariant LiveDataManager::arrival(const QString &resId)
@@ -152,10 +164,6 @@ static KPublicTransport::Location locationFromStation(const TrainStation &statio
 void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId)
 {
     qCDebug(Log) << trip.trainName() << trip.trainNumber() << trip.departureTime();
-    if (!m_ptMgr) {
-        m_ptMgr.reset(new KPublicTransport::Manager);
-    }
-
     using namespace KPublicTransport;
 
     DepartureRequest req(locationFromStation(trip.departureStation()));
