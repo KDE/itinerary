@@ -26,6 +26,8 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Train Ticket")
+    property var arrival: _liveDataManager.arrival(resIds[0])
+    property var departure: _liveDataManager.departure(resIds[0])
 
     Kirigami.FormLayout {
         width: root.width
@@ -49,9 +51,16 @@ App.DetailsPage {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Departure")
         }
-        QQC2.Label {
+        RowLayout {
             Kirigami.FormData.label: i18n("Time:")
-            text: Localizer.formatDateTime(reservationFor, "departureTime")
+            QQC2.Label {
+                text: Localizer.formatDateTime(reservationFor, "departureTime")
+            }
+            QQC2.Label {
+                text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
+                color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: departure.hasExpectedDepartureTime
+            }
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Station:")
@@ -70,9 +79,16 @@ App.DetailsPage {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Arrival")
         }
-        QQC2.Label {
+        RowLayout {
             Kirigami.FormData.label: i18n("Arrival time:")
-            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            QQC2.Label {
+                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            }
+            QQC2.Label {
+                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: arrival.hasExpectedArrivalTime
+            }
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Station:")
