@@ -358,7 +358,18 @@ void LiveDataManager::reservationRemoved(const QString &resId)
 void LiveDataManager::poll()
 {
     qCDebug(Log);
-    // TODO
+    for (const auto &resId : m_reservations) {
+        if (nextPollTimeForReservation(resId) > 60 * 1000) {
+            continue;
+        }
+        const auto res = m_resMgr->reservation(resId);
+        if (JsonLd::isA<TrainReservation>(res)) {
+            checkTrainTrip(res.value<TrainReservation>().reservationFor().value<TrainTrip>(), resId);
+        }
+    }
+
+    m_pollTimer.setInterval(std::max(nextPollTime(), 60 * 1000)); // we pool everything that happens within a minute here
+    m_pollTimer.start();
 }
 
 int LiveDataManager::nextPollTime() const
@@ -403,9 +414,14 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
         return std::numeric_limits<int>::max();
     }
 
-    // TODO check last poll time for this reservation, and skip stuff that isn't outdated yet
+    // check last poll time for this reservation
+    const auto lastArrivalPoll = m_arrivals.value(resId).timestamp;
+    const auto lastDeparturePoll = m_departures.value(resId).timestamp;
+    const auto lastPoll = (!lastArrivalPoll.isValid() && !lastDeparturePoll.isValid())
+        ? (24 * 3600) // no poll yet == long time ago
+        : std::max<int>(lastArrivalPoll.secsTo(now), lastDeparturePoll.secsTo(now));
 
-    return it->pollInterval * 1000; // we need msecs
+    return std::max((it->pollInterval - lastPoll) * 1000, 0); // we need msecs
 }
 
 #include "moc_livedatamanager.cpp"
