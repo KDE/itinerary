@@ -191,7 +191,7 @@ void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId
                 continue;
             }
             qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
-            updateArrivalData(dep, resId);
+            updateDepartureData(dep, resId);
             break;
         }
     });
