@@ -196,6 +196,7 @@ Departure Departure::merge(const Departure &lhs, const Departure &rhs)
     }
 
     dep.setRoute(Route::merge(lhs.route(), rhs.route()));
+    dep.setStopPoint(Location::merge(lhs.stopPoint(), rhs.stopPoint()));
     return dep;
 }
 
