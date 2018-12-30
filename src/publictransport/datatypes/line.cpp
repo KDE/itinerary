@@ -123,7 +123,7 @@ void Line::setModeString(const QString &modeString)
 
 bool Line::isSame(const Line &lhs, const Line &rhs)
 {
-    return isSameLineName(lhs.name(), rhs.name()) && lhs.mode() == rhs.mode();
+    return isSameLineName(lhs.name(), rhs.name()) && (lhs.mode() == rhs.mode() || lhs.mode() == Unknown || rhs.mode() == Unknown);
 }
 
 Line Line::merge(const Line &lhs, const Line &rhs)
@@ -134,6 +134,9 @@ Line Line::merge(const Line &lhs, const Line &rhs)
     }
     if (!l.textColor().isValid() && rhs.textColor().isValid()) {
         l.setTextColor(rhs.textColor());
+    }
+    if (l.mode() == Unknown) {
+        l.setMode(rhs.mode());
     }
     return l;
 }
