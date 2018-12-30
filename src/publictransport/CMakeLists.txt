@@ -12,6 +12,8 @@ set(kpublictransport_srcs
     backends/cache.cpp
     backends/hafasmgatebackend.cpp
     backends/hafasmgateparser.cpp
+    backends/hafasquerybackend.cpp
+    backends/hafasqueryparser.cpp
     backends/navitiabackend.cpp
     backends/navitiaparser.cpp
 

@@ -51,6 +51,7 @@ Kirigami.ApplicationWindow {
         ListElement { name: "Akademy 2014 venue"; lat: 16.57564; lon: 49.22462 }
         ListElement { name: "Copenhagen Central"; lat: 12.56489; lon: 55.67238; locId:"8600626"; idType: "uic" }
         ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 8.6625; lon: 50.106944; locId:"8000105"; idType: "ibnr" }
+        ListElement { name: "Schiphol Airport"; lat: 4.7611; lon: 52.309; locId: "8400561"; idType: "ibnr" }
     }
 
     Component {

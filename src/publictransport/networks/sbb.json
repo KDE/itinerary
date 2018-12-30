@@ -1,0 +1,9 @@
+{
+    "type": "hafas_query",
+    "options": {
+        "endpoint": "http://fahrplan.sbb.ch/bin/"
+    },
+    "filter": {
+        "geo": [ [ 5.865, 45.912 ], [ 10.432, 45.704 ], [ 10.532, 47.851 ], [ 6.381, 47.773 ] ]
+    }
+}
