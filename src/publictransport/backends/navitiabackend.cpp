@@ -18,6 +18,7 @@
 #include "navitiabackend.h"
 #include "logging.h"
 #include "navitiaparser.h"
+#include "cache.h"
 
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
@@ -175,19 +176,24 @@ bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *
 
     qCDebug(Log) << "GET:" << url;
     auto netReply = nam->get(netReq);
-    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply] {
+    QObject::connect(netReply, &QNetworkReply::finished, [this, netReply, reply] {
         qDebug() << netReply->request().url() << netReply->errorString();
-        // TODO cache handling
         switch (netReply->error()) {
             case QNetworkReply::NoError:
+            {
+                std::vector<Location> res;
                 if (reply->request().hasCoordinate()) {
-                    addResult(reply, NavitiaParser::parsePlacesNearby(netReply->readAll()));
+                    res = NavitiaParser::parsePlacesNearby(netReply->readAll());
                 } else {
-                    addResult(reply, NavitiaParser::parsePlaces(netReply->readAll()));
+                    res = NavitiaParser::parsePlaces(netReply->readAll());
                 }
+                Cache::addLocationCacheEntry(backendId(), reply->request().cacheKey(), res);
+                addResult(reply, std::move(res));
                 break;
+            }
             case QNetworkReply::ContentNotFoundError:
                 addError(reply, Reply::NotFoundError, NavitiaParser::parseErrorMessage(netReply->readAll()));
+                Cache::addNegativeLocationCacheEntry(backendId(), reply->request().cacheKey());
                 break;
             default:
                 addError(reply, Reply::NetworkError, netReply->errorString());
