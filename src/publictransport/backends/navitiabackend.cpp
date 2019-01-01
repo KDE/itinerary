@@ -162,8 +162,10 @@ bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *
             QStringLiteral("/places_nearby")
         );
         // TODO distance
+    } else if (!req.name().isEmpty()) {
+        url.setPath(QStringLiteral("/v1/places"));
+        query.addQueryItem(QStringLiteral("q"), req.name());
     } else {
-        // TODO
         return false;
     }
 
@@ -181,7 +183,7 @@ bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *
                 if (reply->request().hasCoordinate()) {
                     addResult(reply, NavitiaParser::parsePlacesNearby(netReply->readAll()));
                 } else {
-                    // TODO
+                    addResult(reply, NavitiaParser::parsePlaces(netReply->readAll()));
                 }
                 break;
             case QNetworkReply::ContentNotFoundError:

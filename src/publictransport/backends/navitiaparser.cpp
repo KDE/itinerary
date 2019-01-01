@@ -232,9 +232,23 @@ std::vector<Departure> NavitiaParser::parseDepartures(const QByteArray &data)
 
 std::vector<Location> NavitiaParser::parsePlacesNearby(const QByteArray &data)
 {
-    qDebug().noquote() << data;
     const auto topObj = QJsonDocument::fromJson(data).object();
     const auto placesNearby = topObj.value(QLatin1String("places_nearby")).toArray();
+
+    std::vector<Location> res;
+    res.reserve(placesNearby.size());
+
+    for (const auto &v : placesNearby) {
+        res.push_back(parseWrappedLocation(v.toObject()));
+    }
+
+    return res;
+}
+
+std::vector<Location> NavitiaParser::parsePlaces(const QByteArray &data)
+{
+    const auto topObj = QJsonDocument::fromJson(data).object();
+    const auto placesNearby = topObj.value(QLatin1String("places")).toArray();
 
     std::vector<Location> res;
     res.reserve(placesNearby.size());
