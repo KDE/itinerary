@@ -30,7 +30,12 @@ App.TimelineDelegate {
     headerIconSource: "qrc:///images/train.svg"
     headerItem: RowLayout {
         QQC2.Label {
-            text: reservationFor.trainName + " " + reservationFor.trainNumber
+            text: {
+                if (reservationFor.trainName || reservationFor.trainNumber) {
+                    return reservationFor.trainName + " " + reservationFor.trainNumber
+                }
+                return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
+            }
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
