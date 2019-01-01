@@ -27,12 +27,14 @@ namespace KPublicTransport {
 
 class Departure;
 class Journey;
+class Location;
 
 /** Navitia REST response parser. */
 namespace NavitiaParser
 {
     std::vector<Journey> parseJourneys(const QByteArray &data);
     std::vector<Departure> parseDepartures(const QByteArray &data);
+    std::vector<Location> parsePlacesNearby(const QByteArray &data);
 
     QString parseErrorMessage(const QByteArray &data);
 }

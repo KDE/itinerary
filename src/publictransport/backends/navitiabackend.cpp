@@ -26,6 +26,8 @@
 #include <KPublicTransport/JourneyReply>
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
+#include <KPublicTransport/LocationReply>
+#include <KPublicTransport/LocationRequest>
 
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
@@ -125,6 +127,62 @@ bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager
         switch (netReply->error()) {
             case QNetworkReply::NoError:
                 addResult(reply, NavitiaParser::parseDepartures(netReply->readAll()));
+                break;
+            case QNetworkReply::ContentNotFoundError:
+                addError(reply, Reply::NotFoundError, NavitiaParser::parseErrorMessage(netReply->readAll()));
+                break;
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
+    });
+
+    return true;
+}
+
+bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
+{
+    const auto req = reply->request();
+
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(m_endpoint);
+
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true"));
+    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0"));
+    query.addQueryItem(QStringLiteral("type[]"), QStringLiteral("stop_area"));
+    // TODO count
+
+    if (req.hasCoordinate()) {
+        url.setPath(
+            QStringLiteral("/v1/coord/") + QString::number(req.latitude()) + QLatin1Char(';') + QString::number(req.longitude()) +
+            QStringLiteral("/places_nearby")
+        );
+        // TODO distance
+    } else {
+        // TODO
+        return false;
+    }
+
+    url.setQuery(query);
+    QNetworkRequest netReq(url);
+    netReq.setRawHeader("Authorization", m_auth.toUtf8());
+
+    qCDebug(Log) << "GET:" << url;
+    auto netReply = nam->get(netReq);
+    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply] {
+        qDebug() << netReply->request().url() << netReply->errorString();
+        // TODO cache handling
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+                if (reply->request().hasCoordinate()) {
+                    addResult(reply, NavitiaParser::parsePlacesNearby(netReply->readAll()));
+                } else {
+                    // TODO
+                }
                 break;
             case QNetworkReply::ContentNotFoundError:
                 addError(reply, Reply::NotFoundError, NavitiaParser::parseErrorMessage(netReply->readAll()));
