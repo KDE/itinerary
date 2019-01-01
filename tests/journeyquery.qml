@@ -34,73 +34,73 @@ Kirigami.ApplicationWindow {
         id: exampleModel
         ListElement {
             name: "CDG -> Gare de Lyon"
-            fromLat: 2.57110
-            fromLon: 49.00406
-            toLat: 2.37708
-            toLon: 48.84388
+            fromLon: 2.57110
+            fromLat: 49.00406
+            toLon: 2.37708
+            toLat: 48.84388
         }
         ListElement {
             name: "ZRH -> Randa"
-            fromLat: 8.56275
-            fromLon: 47.45050
-            toLat: 7.78315
-            toLon:  46.09901
+            fromLon: 8.56275
+            fromLat: 47.45050
+            toLon: 7.78315
+            toLat:  46.09901
         }
         ListElement {
             name: "Gare de Midi -> Fosdem"
-            fromLat: 4.33620
-            fromLon: 50.83588
-            toLat: 4.38116
-            toLon: 50.81360
+            fromLon: 4.33620
+            fromLat: 50.83588
+            toLon: 4.38116
+            toLat: 50.81360
         }
         ListElement {
             name: "VIE -> Akademy 2018 Accomodation"
-            fromLat: 16.56312
-            fromLon: 48.12083
-            toLat: 16.37859
-            toLon: 48.18282
+            fromLon: 16.56312
+            fromLat: 48.12083
+            toLon: 16.37859
+            toLat: 48.18282
         }
         ListElement {
             name: "Akademy 2018 BBQ -> Accomodation"
-            fromLat: 16.43191
-            fromLon: 48.21612
-            toLat: 16.37859
-            toLon: 48.18282
+            fromLon: 16.43191
+            fromLat: 48.21612
+            toLon: 16.37859
+            toLat: 48.18282
         }
         ListElement {
             name: "LEI -> Akademy 2017 Accomodation"
-            fromLat: -2.37251
-            fromLon: 36.84774
-            toLat: -2.44788
-            toLon: 36.83731
+            fromLon: -2.37251
+            fromLat: 36.84774
+            toLon: -2.44788
+            toLat: 36.83731
         }
         ListElement {
             name: "Akademy 2017 Venue -> Accomodation"
-            fromLat: -2.40377
-            fromLon: 36.82784
-            toLat: -2.44788
-            toLon: 36.83731
+            fromLon: -2.40377
+            fromLat: 36.82784
+            toLon: -2.44788
+            toLat: 36.83731
         }
         ListElement {
             name: "TXL -> Akademy 2016"
-            fromLat: 13.29281
-            fromLon: 52.55420
-            toLat: 13.41644
-            toLon: 52.52068
+            fromLon: 13.29281
+            fromLat: 52.55420
+            toLon: 13.41644
+            toLat: 52.52068
         }
         ListElement {
             name: "SXF -> Akademy 2016"
-            fromLat: 13.51870
-            fromLon: 52.38841
-            toLat: 13.41644
-            toLon: 52.52068
+            fromLon: 13.51870
+            fromLat: 52.38841
+            toLon: 13.41644
+            toLat: 52.52068
         }
         ListElement {
             name: "Brno central station -> Akademy 2014 venue"
-            fromLat: 16.61287
-            fromLon: 49.19069
-            toLat: 16.57564
-            toLon: 49.22462
+            fromLon: 16.61287
+            fromLat: 49.19069
+            toLon: 16.57564
+            toLat: 49.22462
         }
     }
 
