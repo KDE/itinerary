@@ -60,8 +60,8 @@ bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *na
         QStringLiteral("/journeys"));
 
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("from"), QString::number(req.from().latitude()) + QLatin1Char(';') + QString::number(req.from().longitude()));
-    query.addQueryItem(QStringLiteral("to"), QString::number(req.to().latitude()) + QLatin1Char(';') + QString::number(req.to().longitude()));
+    query.addQueryItem(QStringLiteral("from"), QString::number(req.from().longitude()) + QLatin1Char(';') + QString::number(req.from().latitude()));
+    query.addQueryItem(QStringLiteral("to"), QString::number(req.to().longitude()) + QLatin1Char(';') + QString::number(req.to().latitude()));
     if (req.dateTime().isValid()) {
         query.addQueryItem(QStringLiteral("datetime"), req.dateTime().toString(QStringLiteral("yyyyMMddThhmmss")));
         query.addQueryItem(QStringLiteral("datetime_represents"), req.dateTimeMode() == JourneyRequest::Arrival ? QStringLiteral("arrival") : QStringLiteral("departure"));
@@ -108,8 +108,8 @@ bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager
     url.setHost(m_endpoint);
     url.setPath(
         QStringLiteral("/v1/coverage/") +
-        (m_coverage.isEmpty() ? QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) : m_coverage) +
-        QStringLiteral("/coord/") + QString::number(req.stop().latitude()) + QLatin1Char(';') + QString::number(req.stop().longitude()) +
+        (m_coverage.isEmpty() ? QString::number(req.stop().longitude()) + QLatin1Char(';') + QString::number(req.stop().latitude()) : m_coverage) +
+        QStringLiteral("/coord/") + QString::number(req.stop().longitude()) + QLatin1Char(';') + QString::number(req.stop().latitude()) +
         (req.mode() == DepartureRequest::QueryDeparture ? QStringLiteral("/departures") : QStringLiteral("/arrivals"))
     );
 
@@ -159,7 +159,7 @@ bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *
 
     if (req.hasCoordinate()) {
         url.setPath(
-            QStringLiteral("/v1/coord/") + QString::number(req.latitude()) + QLatin1Char(';') + QString::number(req.longitude()) +
+            QStringLiteral("/v1/coord/") + QString::number(req.longitude()) + QLatin1Char(';') + QString::number(req.latitude()) +
             QStringLiteral("/places_nearby")
         );
         // TODO distance

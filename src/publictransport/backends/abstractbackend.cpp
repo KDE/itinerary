@@ -40,14 +40,14 @@ void AbstractBackend::setBackendId(const QString& id)
 bool AbstractBackend::isLocationExcluded(const Location &loc) const
 {
     if (loc.hasCoordinate() && !m_geoFilter.isEmpty()) {
-        return !m_geoFilter.containsPoint({loc.latitude(), loc.longitude()}, Qt::WindingFill);
+        return !m_geoFilter.containsPoint({loc.longitude(), loc.latitude()}, Qt::WindingFill);
     }
     return false;
 }
 
 bool AbstractBackend::isCoordinateExcluded(float lat, float lon) const
 {
-    return !m_geoFilter.isEmpty() && !m_geoFilter.containsPoint({lat, lon}, Qt::WindingFill);
+    return !m_geoFilter.isEmpty() && !m_geoFilter.containsPoint({lon, lat}, Qt::WindingFill);
 }
 
 void AbstractBackend::setGeoFilter(const QPolygonF &poly)

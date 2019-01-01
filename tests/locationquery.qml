@@ -31,25 +31,25 @@ Kirigami.ApplicationWindow {
 
     ListModel {
         id: exampleModel
-        ListElement { name: "Charles de Gaulles"; lat: 2.57110; lon: 49.00406; }
-        ListElement { name: "Paris Gare de Lyon"; lat: 2.37385; lon: 48.84467; }
-        ListElement { name: "Zürich Flughafen"; lat: 8.56275; lon: 47.45050; }
-        ListElement { name: "Randa"; lat: 7.78315; lon:  46.09901; }
-        ListElement { name: "Brussels Gare de Midi"; lat: 4.33620; lon: 50.83588; }
-        ListElement { name: "ULB"; lat: 4.38116; lon: 50.81360 }
-        ListElement { name: "Wien Flughafen"; lat: 16.56312; lon: 48.12083; }
-        ListElement { name: "Akademy 2018 Accomodation"; lat: 16.37859; lon: 48.18282 }
-        ListElement { name: "Akademy 2018 BBQ"; lat: 16.43191; lon: 48.21612 }
-        ListElement { name: "LEI"; lat: -2.37251; lon: 36.84774; }
-        ListElement { name: "Akademy 2017 Accomodation"; lat: -2.44788; lon: 36.83731 }
-        ListElement { name: "Akademy 2017 Venue"; lat: -2.40377; lon: 36.82784 }
-        ListElement { name: "TXL"; lat: 13.29281; lon: 52.55420; }
-        ListElement { name: "Alexanderplatz"; lat: 13.41644; lon: 52.52068 }
-        ListElement { name: "SXF"; lat: 13.51870; lon: 52.38841; }
-        ListElement { name: "Brno central station"; lat: 16.61287; lon: 49.19069 }
-        ListElement { name: "Akademy 2014 venue"; lat: 16.57564; lon: 49.22462 }
-        ListElement { name: "Copenhagen Central"; lat: 12.56489; lon: 55.67238; }
-        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lat: 8.6625; lon: 50.106944; }
+        ListElement { name: "Charles de Gaulles"; lon: 2.57110; lat: 49.00406; }
+        ListElement { name: "Paris Gare de Lyon"; lon: 2.37385; lat: 48.84467; }
+        ListElement { name: "Zürich Flughafen"; lon: 8.56275; lat: 47.45050; }
+        ListElement { name: "Randa"; lon: 7.78315; lat:  46.09901; }
+        ListElement { name: "Brussels Gare de Midi"; lon: 4.33620; lat: 50.83588; }
+        ListElement { name: "ULB"; lon: 4.38116; lat: 50.81360 }
+        ListElement { name: "Wien Flughafen"; lon: 16.56312; lat: 48.12083; }
+        ListElement { name: "Akademy 2018 Accomodation"; lon: 16.37859; lat: 48.18282 }
+        ListElement { name: "Akademy 2018 BBQ"; lon: 16.43191; lat: 48.21612 }
+        ListElement { name: "LEI"; lon: -2.37251; lat: 36.84774; }
+        ListElement { name: "Akademy 2017 Accomodation"; lon: -2.44788; lat: 36.83731 }
+        ListElement { name: "Akademy 2017 Venue"; lon: -2.40377; lat: 36.82784 }
+        ListElement { name: "TXL"; lon: 13.29281; lat: 52.55420; }
+        ListElement { name: "Alexanderplatz"; lon: 13.41644; lat: 52.52068 }
+        ListElement { name: "SXF"; lon: 13.51870; lat: 52.38841; }
+        ListElement { name: "Brno central station"; lon: 16.61287; lat: 49.19069 }
+        ListElement { name: "Akademy 2014 venue"; lon: 16.57564; lat: 49.22462 }
+        ListElement { name: "Copenhagen Central"; lon: 12.56489; lat: 55.67238; }
+        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lon: 8.6625; lat: 50.106944; }
     }
 
     Component {

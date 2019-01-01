@@ -289,8 +289,8 @@ QNetworkReply* HafasMgateBackend::postLocationQuery(const LocationRequest &req, 
         cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
 
         QJsonObject coord;
-        coord.insert(QLatin1String("x"), (int)(req.latitude() * 1000000));
-        coord.insert(QLatin1String("y"), (int)(req.longitude() * 1000000));
+        coord.insert(QLatin1String("x"), (int)(req.longitude() * 1000000));
+        coord.insert(QLatin1String("y"), (int)(req.latitude() * 1000000));
         QJsonObject ring;
         ring.insert(QLatin1String("cCrd"), coord);
         ring.insert(QLatin1String("maxDist"), 20000); // not sure which unit...
