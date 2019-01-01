@@ -42,7 +42,7 @@
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
-#include <KPkPass/Pass>
+#include <KPkPass/BoardingPass>
 
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
@@ -176,6 +176,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
+    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
 
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});

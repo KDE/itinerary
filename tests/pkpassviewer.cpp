@@ -20,7 +20,7 @@
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
-#include <KPkPass/Pass>
+#include <KPkPass/BoardingPass>
 
 #include <KLocalizedContext>
 
@@ -56,6 +56,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
+    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

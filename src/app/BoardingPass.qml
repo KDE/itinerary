@@ -124,8 +124,13 @@ Item {
                     Kirigami.Icon {
                         Layout.rowSpan: 2
                         Layout.alignment: Qt.AlignBottom
-                        // TODO: check transit type and use appropriate icons
-                        source: "qrc:///images/flight.svg"
+                        source: {
+                            switch (pass.transitType) {
+                                case KPkPass.BoardingPass.Air: return "qrc:///images/flight.svg"
+                                case KPkPass.BoardingPass.Train: return "qrc:///images/train.svg"
+                            }
+                            return "go-next";
+                        }
                         width: Kirigami.Units.iconSizes.smallMedium
                         height: width
                         color: pass.labelColor
