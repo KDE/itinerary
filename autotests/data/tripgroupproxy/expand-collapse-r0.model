@@ -763,6 +763,7 @@
                         "@value": "2017-09-10T14:02:00+02:00",
                         "timezone": "Europe/Zurich"
                     },
+                    "departureDay": "2017-09-10",
                     "departurePlatform": "3",
                     "departureStation": {
                         "@type": "TrainStation",
@@ -832,6 +833,7 @@
                         "@value": "2017-09-10T14:53:00+02:00",
                         "timezone": "Europe/Zurich"
                     },
+                    "departureDay": "2017-09-10",
                     "departurePlatform": "3",
                     "departureStation": {
                         "@type": "TrainStation",
@@ -1111,6 +1113,7 @@
                         "@value": "2017-09-15T15:46:00+02:00",
                         "timezone": "Europe/Zurich"
                     },
+                    "departureDay": "2017-09-15",
                     "departureStation": {
                         "@type": "TrainStation",
                         "address": {
@@ -1171,6 +1174,7 @@
                         "@value": "2017-09-15T18:16:00+02:00",
                         "timezone": "Europe/Zurich"
                     },
+                    "departureDay": "2017-09-15",
                     "departurePlatform": "2",
                     "departureStation": {
                         "@type": "TrainStation",
