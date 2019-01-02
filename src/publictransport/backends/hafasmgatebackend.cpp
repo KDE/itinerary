@@ -23,6 +23,9 @@
 #include <KPublicTransport/Departure>
 #include <KPublicTransport/DepartureReply>
 #include <KPublicTransport/DepartureRequest>
+#include <KPublicTransport/Journey>
+#include <KPublicTransport/JourneyReply>
+#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/LocationReply>
 #include <KPublicTransport/LocationRequest>
@@ -51,7 +54,203 @@ bool HafasMgateBackend::isSecure() const
 bool HafasMgateBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *nam) const
 {
     m_parser.setLocationIdentifierType(locationIdentifierType());
-    return false;
+    const auto request = reply->request();
+
+    const auto fromId = request.from().identifier(locationIdentifierType());
+    if (!fromId.isEmpty()) {
+        return queryJourney(reply, fromId, nam);
+    }
+
+    LocationRequest locReq;
+    locReq.setCoordinate(request.from().latitude(), request.from().longitude());
+    locReq.setName(request.from().name());
+    // TODO set max result = 1
+
+    // check if this location query is cached already
+    const auto cacheEntry = Cache::lookupLocation(backendId(), locReq.cacheKey());
+    switch (cacheEntry.type) {
+        case CacheHitType::Negative:
+            addError(reply, Reply::NotFoundError, {});
+            return false;
+        case CacheHitType::Positive:
+            if (cacheEntry.data.size() >= 1) {
+                return queryJourney(reply, cacheEntry.data[0].identifier(locationIdentifierType()), nam);
+            }
+            break;
+        case CacheHitType::Miss:
+            break;
+    }
+
+    // query from location
+    const auto locReply = postLocationQuery(locReq, nam);
+    if (!locReply) {
+        return false;
+    }
+    QObject::connect(locReply, &QNetworkReply::finished, [this, reply, locReply, locReq, nam]() {
+        switch (locReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                auto res = m_parser.parseLocations(locReply->readAll());
+                if (m_parser.error() == Reply::NoError && !res.empty()) {
+                    Cache::addLocationCacheEntry(backendId(), locReq.cacheKey(), res);
+                    const auto id = res[0].identifier(locationIdentifierType());
+                    if (!id.isEmpty()) {
+                        queryJourney(reply, id, nam);
+                    } else {
+                        addError(reply, Reply::NotFoundError, QLatin1String("Location query found no result for departure."));
+                    }
+                } else {
+                    Cache::addNegativeLocationCacheEntry(backendId(), locReq.cacheKey());
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                }
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, locReply->errorString());
+                qCDebug(Log) << locReply->error() << locReply->errorString();
+                break;
+        }
+        locReply->deleteLater();
+    });
+
+    return true;
+}
+
+bool HafasMgateBackend::queryJourney(JourneyReply *reply, const QString &fromId, QNetworkAccessManager *nam) const
+{
+    const auto request = reply->request();
+
+    const auto toId = request.to().identifier(locationIdentifierType());
+    if (!toId.isEmpty()) {
+        return queryJourney(reply, fromId, toId, nam);
+    }
+
+    LocationRequest locReq;
+    locReq.setCoordinate(request.to().latitude(), request.to().longitude());
+    locReq.setName(request.to().name());
+    // TODO set max result = 1
+
+    // check if this location query is cached already
+    const auto cacheEntry = Cache::lookupLocation(backendId(), locReq.cacheKey());
+    switch (cacheEntry.type) {
+        case CacheHitType::Negative:
+            addError(reply, Reply::NotFoundError, {});
+            return false;
+        case CacheHitType::Positive:
+            if (cacheEntry.data.size() >= 1) {
+                return queryJourney(reply, fromId, cacheEntry.data[0].identifier(locationIdentifierType()), nam);
+            }
+            break;
+        case CacheHitType::Miss:
+            break;
+    }
+
+    // query to location
+    const auto locReply = postLocationQuery(locReq, nam);
+    if (!locReply) {
+        addError(reply, Reply::NotFoundError, {});
+        return false;
+    }
+    QObject::connect(locReply, &QNetworkReply::finished, [this, fromId, reply, locReply, locReq, nam]() {
+        switch (locReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                auto res = m_parser.parseLocations(locReply->readAll());
+                if (m_parser.error() == Reply::NoError && !res.empty()) {
+                    Cache::addLocationCacheEntry(backendId(), locReq.cacheKey(), res);
+                    const auto id = res[0].identifier(locationIdentifierType());
+                    if (!id.isEmpty()) {
+                        queryJourney(reply, fromId, id, nam);
+                    } else {
+                        addError(reply, Reply::NotFoundError, QLatin1String("Location query found no result for arrival."));
+                    }
+                } else {
+                    Cache::addNegativeLocationCacheEntry(backendId(), locReq.cacheKey());
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                }
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, locReply->errorString());
+                qCDebug(Log) << locReply->error() << locReply->errorString();
+                break;
+        }
+        locReply->deleteLater();
+    });
+
+    return true;
+}
+
+bool HafasMgateBackend::queryJourney(JourneyReply *reply, const QString &fromId, const QString &toId, QNetworkAccessManager *nam) const
+{
+    qCDebug(Log) << backendId() << fromId << toId;
+    const auto request = reply->request();
+
+    QJsonObject tripSearch;
+    {
+        QJsonObject cfg;
+        cfg.insert(QLatin1String("polyEnc"), QLatin1String("GPA"));
+
+        QJsonArray arrLocL;
+        QJsonObject arrLoc;
+        arrLoc.insert(QLatin1String("extId"), toId);
+        arrLoc.insert(QLatin1String("type"), QLatin1String("S")); // 'S' == station
+        arrLocL.push_back(arrLoc);
+
+        QJsonArray depLocL;
+        QJsonObject depLoc;
+        depLoc.insert(QLatin1String("extId"), fromId);
+        depLoc.insert(QLatin1String("type"), QLatin1String("S"));
+        depLocL.push_back(depLoc);
+
+        QJsonArray jnyFltrL;
+        QJsonObject jnyFltr;
+        jnyFltr.insert(QLatin1String("mode"), QLatin1String("BIT"));
+        jnyFltr.insert(QLatin1String("type"), QLatin1String("PROD"));
+        jnyFltr.insert(QLatin1String("value"), QLatin1String("1111111001"));
+        jnyFltrL.push_back(jnyFltr);
+
+        QJsonObject req;
+        req.insert(QLatin1String("arrLocL"), arrLocL);
+        req.insert(QLatin1String("depLocL"), depLocL);
+        req.insert(QLatin1String("extChgTime"), -1);
+        req.insert(QLatin1String("getEco"), false);
+        req.insert(QLatin1String("getIST"), false);
+        req.insert(QLatin1String("getPasslist"), true); // ???
+        req.insert(QLatin1String("getPolyline"), false);
+        req.insert(QLatin1String("jnyFltrL"), jnyFltrL);
+
+        req.insert(QLatin1String("outDate"), request.dateTime().date().toString(QLatin1String("yyyyMMdd")));
+        req.insert(QLatin1String("outTime"), request.dateTime().time().toString(QLatin1String("hhmmss")));
+        req.insert(QLatin1String("outFrwd"), true);
+
+        tripSearch.insert(QLatin1String("cfg"), cfg);
+        tripSearch.insert(QLatin1String("meth"), QLatin1String("TripSearch"));
+        tripSearch.insert(QLatin1String("req"), req);
+    }
+
+    auto netReply = postRequest(tripSearch, nam);
+    QObject::connect(netReply, &QNetworkReply::finished, [netReply, reply, this]() {
+        switch (netReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                auto res = m_parser.parseJourneys(netReply->readAll());
+                if (m_parser.error() == Reply::NoError) {
+                    addResult(reply, std::move(res));
+                } else {
+                    addError(reply, m_parser.error(), m_parser.errorMessage());
+                }
+                break;
+            }
+            default:
+                addError(reply, Reply::NetworkError, netReply->errorString());
+                qCDebug(Log) << netReply->error() << netReply->errorString();
+                break;
+        }
+        netReply->deleteLater();
+    });
+
+    return true;
 }
 
 bool HafasMgateBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const

@@ -19,6 +19,7 @@
 #include "logging.h"
 
 #include <KPublicTransport/Departure>
+#include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 
 #include <QColor>
@@ -223,6 +224,92 @@ std::vector<Location> HafasMgateParser::parseLocations(const QByteArray &data) c
     }
 
     return {};
+}
+
+std::vector<Journey> HafasMgateParser::parseJourneys(const QByteArray &data) const
+{
+    const auto topObj = QJsonDocument::fromJson(data).object();
+//     qDebug().noquote() << QJsonDocument(topObj).toJson();
+    const auto svcResL = topObj.value(QLatin1String("svcResL")).toArray();
+
+    for (const auto &v : svcResL) {
+        const auto obj = v.toObject();
+        if (obj.value(QLatin1String("meth")).toString() == QLatin1String("TripSearch")) {
+            if (parseError(obj)) {
+                return parseTripSearch(obj.value(QLatin1String("res")).toObject());
+            }
+            return {};
+        }
+    }
+
+    return {};
+}
+
+std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) const
+{
+    const auto commonObj = obj.value(QLatin1String("common")).toObject();
+    const auto icos = parseIcos(commonObj.value(QLatin1String("icoL")).toArray());
+    const auto locs = parseLocations(commonObj.value(QLatin1String("locL")).toArray());
+    const auto lines = parseLines(commonObj.value(QLatin1String("prodL")).toArray(), icos);
+
+    std::vector<Journey> res;
+    const auto outConL = obj.value(QLatin1String("outConL")).toArray();
+    res.reserve(outConL.size());
+
+    for (const auto &outConV: outConL) {
+        const auto outCon = outConV.toObject();
+
+        const auto dateStr = outCon.value(QLatin1String("date")).toString();
+
+        const auto secL = outCon.value(QLatin1String("secL")).toArray();
+        std::vector<JourneySection> sections;
+        sections.reserve(secL.size());
+
+
+        for (const auto &secV : secL) {
+            const auto secObj = secV.toObject();
+            JourneySection section;
+
+            // TODO add real-time data
+            const auto dep = secObj.value(QLatin1String("dep")).toObject();
+            section.setDepartureTime(QDateTime::fromString(dateStr + dep.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            auto locIdx = dep.value(QLatin1String("locX")).toInt();
+            if ((unsigned int)locIdx < locs.size()) {
+                section.setFrom(locs[locIdx]);
+            }
+
+            const auto arr = secObj.value(QLatin1String("arr")).toObject();
+            section.setArrivalTime(QDateTime::fromString(dateStr + arr.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            locIdx = arr.value(QLatin1String("locX")).toInt();
+            if ((unsigned int)locIdx < locs.size()) {
+                section.setTo(locs[locIdx]);
+            }
+
+            const auto typeStr = secObj.value(QLatin1String("type")).toString();
+            if (typeStr == QLatin1String("JNY")) {
+                section.setMode(JourneySection::PublicTransport);
+
+                const auto jnyObj = secObj.value(QLatin1String("jny")).toObject();
+                Route route;
+                route.setDirection(jnyObj.value(QLatin1String("dirTxt")).toString());
+                const auto lineIdx = jnyObj.value(QLatin1String("prodX")).toInt();
+                if ((unsigned int)lineIdx < lines.size()) {
+                    route.setLine(lines[lineIdx]);
+                }
+                section.setRoute(route);
+            } else if (typeStr == QLatin1String("WALK")) {
+                section.setMode(JourneySection::Walking);
+            }
+
+            sections.push_back(section);
+        }
+
+        Journey journey;
+        journey.setSections(std::move(sections));
+        res.push_back(journey);
+    }
+
+    return res;
 }
 
 Reply::Error HafasMgateParser::error() const

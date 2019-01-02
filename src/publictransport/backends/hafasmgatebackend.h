@@ -59,6 +59,8 @@ private:
     QNetworkReply* postRequest(const QJsonObject &svcReq, QNetworkAccessManager *nam) const;
     QNetworkReply* postLocationQuery(const LocationRequest &req, QNetworkAccessManager *nam) const;
     void queryDeparture(DepartureReply *reply, const QString &locationId, QNetworkAccessManager *nam) const;
+    bool queryJourney(JourneyReply *reply, const QString &fromId, QNetworkAccessManager *nam) const;
+    bool queryJourney(JourneyReply *reply, const QString &fromId, const QString &toId, QNetworkAccessManager *nam) const;
     void setMicMacSalt(const QString &salt);
     void setChecksumSalt(const QString &salt);
     void setLineModeMap(const QJsonObject &obj);

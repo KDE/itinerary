@@ -31,6 +31,7 @@ class QByteArray;
 namespace KPublicTransport {
 
 class Departure;
+class Journey;
 class Location;
 
 struct Ico {
@@ -49,6 +50,7 @@ public:
 
     std::vector<Departure> parseDepartures(const QByteArray &data) const;
     std::vector<Location> parseLocations(const QByteArray &data) const;
+    std::vector<Journey> parseJourneys(const QByteArray &data) const;
 
     Reply::Error error() const;
     QString errorMessage() const;
@@ -58,6 +60,7 @@ private:
     std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj) const;
     std::vector<Line> parseLines(const QJsonArray &prodL, const std::vector<Ico> &icos) const;
     std::vector<Location> parseLocations(const QJsonArray &locL) const;
+    std::vector<Journey> parseTripSearch(const QJsonObject &obj) const;
     bool parseError(const QJsonObject &obj) const;
 
     std::unordered_map<int, Line::Mode> m_lineModeMap;
