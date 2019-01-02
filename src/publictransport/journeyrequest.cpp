@@ -63,6 +63,9 @@ Location JourneyRequest::to() const
 
 QDateTime JourneyRequest::dateTime() const
 {
+    if (!d->dateTime.isValid()) {
+        d->dateTime = QDateTime::currentDateTime();
+    }
     return d->dateTime;
 }
 
