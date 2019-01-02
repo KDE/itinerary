@@ -114,6 +114,95 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
+        id: journeyDelegate
+        Item {
+            implicitHeight: topLayout.implicitHeight
+            implicitWidth: topLayout.implicitWidth
+
+            RowLayout {
+                id: topLayout
+
+                Rectangle {
+                    id: colorBar
+                    width: Kirigami.Units.largeSpacing
+                    color: modelData.route.line.color
+                    Layout.fillHeight: true
+                }
+
+                QQC2.Label {
+                    text: {
+                        switch (modelData.mode) {
+                            case JourneySection.PublicTransport:
+                            {
+                                switch (modelData.route.line.mode) {
+                                    case Line.Air: return "✈️";
+                                    case Line.Boat: return "🛥️";
+                                    case Line.Bus: return "🚍";
+                                    case Line.BusRapidTransit: return "🚌";
+                                    case Line.Coach: return "🚌";
+                                    case Line.Ferry: return "⛴️";
+                                    case Line.Funicular: return "🚞";
+                                    case Line.LocalTrain: return "🚆";
+                                    case Line.LongDistanceTrain: return "🚄";
+                                    case Line.Metro: return "🚇";
+                                    case Line.RailShuttle: return "🚅";
+                                    case Line.RapidTransit: return "🚊";
+                                    case Line.Shuttle: return "🚐";
+                                    case Line.Taxi: return "🚕";
+                                    case Line.Train: return "🚆";
+                                    case Line.Tramway: return "🚈";
+                                    default: return "?";
+                                }
+                                break;
+                            }
+                            case JourneySection.Walking: return "🚶";
+                            case JourneySection.Waiting: return "⌛";
+                            case JourneySection.Transfer: return "⇄";
+                            default: return "?";
+                        }
+                    }
+                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                }
+
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    QQC2.Label {
+                        text: "From: " + modelData.from.name
+                    }
+                    // TODO platform
+                    QQC2.Label {
+                        text: "Departure: " + modelData.departureTime.toTimeString()
+                    }
+                    // TODO departure delay
+                    QQC2.Label {
+                        text: {
+                            switch (modelData.mode) {
+                            case JourneySection.PublicTransport:
+                                return modelData.route.line.modeString + " " + modelData.route.line.name + " " + displayDuration(modelData.duration);
+                            case JourneySection.Walking:
+                                return "Walk " + displayDuration(modelData.duration)
+                            case JourneySection.Transfer:
+                                return "Transfer " + displayDuration(modelData.duration)
+                            case JourneySection.Waiting:
+                                return "Wait " + displayDuration(modelData.duration)
+                            return "???";
+                        }}
+                    }
+
+                    QQC2.Label {
+                        text: "To: " + modelData.to.name
+                    }
+                    // TODO platform
+                    QQC2.Label {
+                        text: "Arrival: " + modelData.arrivalTime.toTimeString()
+                    }
+                    // TODO arrival delay
+                }
+            }
+        }
+    }
+
+    Component {
         id: journyQueryPage
         Kirigami.Page {
             ColumnLayout {
@@ -138,41 +227,9 @@ Kirigami.ApplicationWindow {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     model: _journeys[journeySelector.currentIndex].sections
-                    delegate: Item {
-                        implicitHeight: delegateLayout.implicitHeight
-                        implicitWidth: delegateLayout.implicitWidth
-                        ColumnLayout {
-                            id: delegateLayout
-                            QQC2.Label {
-                                text: "From: " + modelData.from.name
-                                visible: index == 0
-                            }
-                            QQC2.Label {
-                                text: {
-                                    switch (modelData.mode) {
-                                    case JourneySection.PublicTransport:
-                                        return modelData.route.line.modeString + " " + modelData.route.line.name + " " + displayDuration(modelData.duration);
-                                    case JourneySection.Walking:
-                                        return "Walk " + displayDuration(modelData.duration)
-                                    case JourneySection.Transfer:
-                                        return "Transfer " + displayDuration(modelData.duration)
-                                    case JourneySection.Waiting:
-                                        return "Wait " + displayDuration(modelData.duration)
-                                    return "???";
-                                }}
-                            }
-                            QQC2.Label {
-                                text: "To: " + modelData.to.name
-                            }
-                        }
-                        Rectangle {
-                            anchors.left: parent.left
-                            anchors.leftMargin: -8
-                            height: parent.height
-                            width: 4
-                            color: modelData.route.line.color
-                        }
-                    }
+                    spacing: Kirigami.Units.smallSpacing
+                    clip: true
+                    delegate: journeyDelegate
 
                     QQC2.BusyIndicator {
                         anchors.centerIn: parent
