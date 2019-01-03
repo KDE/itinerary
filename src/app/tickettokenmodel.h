@@ -36,7 +36,7 @@ public:
     };
 
     explicit TicketTokenModel(QObject *parent = nullptr);
-    ~TicketTokenModel();
+    ~TicketTokenModel() override;
 
     QObject* reservationManager() const;
     void setReservationManager(QObject *mgr);

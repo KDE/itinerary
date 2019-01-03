@@ -30,7 +30,7 @@ class TripGroupProxyModel : public QSortFilterProxyModel
     Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
 public:
     explicit TripGroupProxyModel(QObject *parent = nullptr);
-    ~TripGroupProxyModel();
+    ~TripGroupProxyModel() override;
 
     void setSourceModel(QAbstractItemModel *sourceModel) override;
     QVariant data(const QModelIndex & index, int role) const override;

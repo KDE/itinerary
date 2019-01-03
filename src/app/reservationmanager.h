@@ -31,7 +31,7 @@ class ReservationManager : public QObject
 {
     Q_OBJECT
 public:
-    ReservationManager(QObject *parent = nullptr);
+    explicit ReservationManager(QObject *parent = nullptr);
     ~ReservationManager();
 
     void setPkPassManager(PkPassManager *mgr);

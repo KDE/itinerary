@@ -77,7 +77,7 @@ public:
     Q_ENUM(RangeType)
 
     explicit TimelineModel(QObject *parent = nullptr);
-    ~TimelineModel();
+    ~TimelineModel() override;
 
     void setReservationManager(ReservationManager *mgr);
     void setWeatherForecastManager(WeatherForecastManager *mgr);

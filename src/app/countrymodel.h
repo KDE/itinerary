@@ -31,7 +31,7 @@ class CountryModel : public QAbstractListModel
     Q_OBJECT
 public:
     explicit CountryModel(QObject *parent = nullptr);
-    ~CountryModel();
+    ~CountryModel() override;
 
     Q_INVOKABLE int isoCodeToIndex(const QString &isoCode) const;
     Q_INVOKABLE QString isoCodeFromIndex(int index) const;

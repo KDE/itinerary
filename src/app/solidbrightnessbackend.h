@@ -28,7 +28,7 @@ class SolidBrightnessBackend : public BrightnessBackend
 
 public:
     explicit SolidBrightnessBackend(QObject *parent = nullptr);
-    virtual ~SolidBrightnessBackend();
+    ~SolidBrightnessBackend() override;
 
     void maxBrightness() override;
 
