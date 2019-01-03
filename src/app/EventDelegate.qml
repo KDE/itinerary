@@ -51,6 +51,9 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
+            text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
+        }
+        QQC2.Label {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
         }
     }
