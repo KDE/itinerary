@@ -50,7 +50,7 @@ void JourneyReplyPrivate::finalizeResult()
 
     postProcessJourneys();
     std::sort(journeys.begin(), journeys.end(), [](const auto &lhs, const auto &rhs) {
-        return lhs.departureTime() < rhs.departureTime();
+        return lhs.scheduledDepartureTime() < rhs.scheduledDepartureTime();
     });
 }
 
@@ -65,17 +65,17 @@ void JourneyReplyPrivate::postProcessJourneys()
                     auto from = section.from();
                     from.setTimeZone(section.to().timeZone());
                     section.setFrom(from);
-                    auto dt = section.departureTime();
+                    auto dt = section.scheduledDepartureTime();
                     dt.setTimeZone(from.timeZone());
-                    section.setDepartureTime(dt);
+                    section.setScheduledDepartureTime(dt);
                 }
                 if (section.from().timeZone().isValid() && !section.to().timeZone().isValid()) {
                     auto to = section.to();
                     to.setTimeZone(section.from().timeZone());
                     section.setTo(to);
-                    auto dt = section.arrivalTime();
+                    auto dt = section.scheduledArrivalTime();
                     dt.setTimeZone(to.timeZone());
-                    section.setArrivalTime(dt);
+                    section.setScheduledArrivalTime(dt);
                 }
             }
         }

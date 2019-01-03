@@ -36,12 +36,32 @@ class JourneySection
     KPUBLICTRANSPORT_GADGET(JourneySection)
     /** Mode of transport for this section. */
     Q_PROPERTY(Mode mode READ mode WRITE setMode)
-    /** Departue time for this segment. */
-    Q_PROPERTY(QDateTime departureTime READ departureTime WRITE setDepartureTime)
-    /** Arrival time for this segment. */
-    Q_PROPERTY(QDateTime arrivalTime READ arrivalTime WRITE setArrivalTime)
+
+    /** Planned departure time. */
+    Q_PROPERTY(QDateTime scheduledDepartureTime READ scheduledDepartureTime WRITE setScheduledDepartureTime)
+    /** Actual departure time, if available.
+     *  Set to invalid to indicate real-time data is not available.
+     */
+    Q_PROPERTY(QDateTime expectedDepartureTime READ expectedDepartureTime WRITE setExpectedDepartureTime)
+    /** @c true if this has real-time data. */
+    Q_PROPERTY(bool hasExpectedDepartureTime READ hasExpectedDepartureTime STORED false)
+    /** Difference to schedule in minutes. */
+    Q_PROPERTY(int departureDelay READ departureDelay STORED false)
+
+    /** Planned arrival time. */
+    Q_PROPERTY(QDateTime scheduledArrivalTime READ scheduledArrivalTime WRITE setScheduledArrivalTime)
+    /** Actual arrival time, if available.
+     *  Set to invalid to indicate real-time data is not available.
+     */
+    Q_PROPERTY(QDateTime expectedArrivalTime READ expectedArrivalTime WRITE setExpectedArrivalTime)
+    /** @c true if this has real-time data. */
+    Q_PROPERTY(bool hasExpectedArrivalTime READ hasExpectedArrivalTime STORED false)
+    /** Difference to schedule in minutes. */
+    Q_PROPERTY(int arrivalDelay READ arrivalDelay STORED false)
+
     /** Duration of the section in seconds. */
     Q_PROPERTY(int duration READ duration STORED false)
+
     /** Departure location of this segment. */
     Q_PROPERTY(KPublicTransport::Location from READ from WRITE setFrom)
     /** Arrival location of this segment. */
@@ -49,7 +69,7 @@ class JourneySection
     /** Route to take on this segment. */
     Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
 
-    // TODO: planned vs. expected times?
+    // TODO: platforms
 
 public:
     /** Mode of transport. */
@@ -63,11 +83,23 @@ public:
     Q_ENUM(Mode)
     Mode mode() const;
     void setMode(Mode mode);
-    QDateTime departureTime() const;
-    void setDepartureTime(const QDateTime &dt);
-    QDateTime arrivalTime() const;
-    void setArrivalTime(const QDateTime &dt);
+
+    QDateTime scheduledDepartureTime() const;
+    void setScheduledDepartureTime(const QDateTime &dt);
+    QDateTime expectedDepartureTime() const;
+    void setExpectedDepartureTime(const QDateTime &dt);
+    bool hasExpectedDepartureTime() const;
+    int departureDelay() const;
+
+    QDateTime scheduledArrivalTime() const;
+    void setScheduledArrivalTime(const QDateTime &dt);
+    QDateTime expectedArrivalTime() const;
+    void setExpectedArrivalTime(const QDateTime &dt);
+    bool hasExpectedArrivalTime() const;
+    int arrivalDelay() const;
+
     int duration() const;
+
     Location from() const;
     void setFrom(const Location &from);
     Location to() const;
@@ -84,10 +116,10 @@ class Journey
     KPUBLICTRANSPORT_GADGET(Journey)
     /** Journey sections for consumption by QML. */
     Q_PROPERTY(QVariantList sections READ sectionsVariant)
-    /** Departure time of the journey. */
-    Q_PROPERTY(QDateTime departureTime READ departureTime STORED false)
-    /** Arrival time of the journey. */
-    Q_PROPERTY(QDateTime arrivalTime READ arrivalTime STORED false)
+    /** Departure time of the journey, according to schedule. */
+    Q_PROPERTY(QDateTime scheduledDepartureTime READ scheduledDepartureTime STORED false)
+    /** Arrival time of the journey, according to schedule. */
+    Q_PROPERTY(QDateTime scheduledArrivalTime READ scheduledArrivalTime STORED false)
     /** Duration of the entire journey in seconds. */
     Q_PROPERTY(int duration READ duration STORED false)
 public:
@@ -98,8 +130,8 @@ public:
     /** Sets the journey sections. */
     void setSections(std::vector<JourneySection> &&sections);
 
-    QDateTime departureTime() const;
-    QDateTime arrivalTime() const;
+    QDateTime scheduledDepartureTime() const;
+    QDateTime scheduledArrivalTime() const;
     int duration() const;
 private:
     QVariantList sectionsVariant() const;

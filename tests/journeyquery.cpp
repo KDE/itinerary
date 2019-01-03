@@ -73,9 +73,9 @@ public:
                 for (const auto &journey : res) {
                     qDebug() << journey.sections().size();
                     for (const auto &section : journey.sections()) {
-                        qDebug() << " From" << section.from().name() << section.departureTime();
+                        qDebug() << " From" << section.from().name() << section.scheduledDepartureTime();
                         qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
-                        qDebug() << " To" << section.to().name() << section.arrivalTime();
+                        qDebug() << " To" << section.to().name() << section.scheduledArrivalTime();
                     }
                 }
             } else {

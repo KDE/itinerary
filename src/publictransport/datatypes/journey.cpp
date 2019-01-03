@@ -28,8 +28,10 @@ class JourneySectionPrivate : public QSharedData
 {
 public:
     JourneySection::Mode mode = JourneySection::Invalid;
-    QDateTime departureTime;
-    QDateTime arrivalTime;
+    QDateTime scheduledDepartureTime;
+    QDateTime expectedDepartureTime;
+    QDateTime scheduledArrivalTime;
+    QDateTime expectedArrivalTime;
     Location from;
     Location to;
     Route route;
@@ -56,31 +58,79 @@ void JourneySection::setMode(JourneySection::Mode mode)
     d->mode = mode;
 }
 
-QDateTime JourneySection::departureTime() const
+QDateTime JourneySection::scheduledDepartureTime() const
 {
-    return d->departureTime;
+    return d->scheduledDepartureTime;
 }
 
-void JourneySection::setDepartureTime(const QDateTime &dt)
+void JourneySection::setScheduledDepartureTime(const QDateTime &dt)
 {
     d.detach();
-    d->departureTime = dt;
+    d->scheduledDepartureTime = dt;
 }
 
-QDateTime JourneySection::arrivalTime() const
+QDateTime JourneySection::expectedDepartureTime() const
 {
-    return d->arrivalTime;
+    return d->expectedDepartureTime;
 }
 
-void JourneySection::setArrivalTime(const QDateTime &dt)
+void JourneySection::setExpectedDepartureTime(const QDateTime &dt)
 {
     d.detach();
-    d->arrivalTime = dt;
+    d->expectedDepartureTime = dt;
+}
+
+bool JourneySection::hasExpectedDepartureTime() const
+{
+    return d->expectedDepartureTime.isValid();
+}
+
+int JourneySection::departureDelay() const
+{
+    if (hasExpectedDepartureTime()) {
+        return d->scheduledDepartureTime.secsTo(d->expectedDepartureTime) / 60;
+    }
+    return 0;
+}
+
+QDateTime JourneySection::scheduledArrivalTime() const
+{
+    return d->scheduledArrivalTime;
+}
+
+void JourneySection::setScheduledArrivalTime(const QDateTime &dt)
+{
+    d.detach();
+    d->scheduledArrivalTime = dt;
+}
+
+QDateTime JourneySection::expectedArrivalTime() const
+{
+    return d->expectedArrivalTime;
+}
+
+void JourneySection::setExpectedArrivalTime(const QDateTime &dt)
+{
+    d.detach();
+    d->expectedArrivalTime = dt;
+}
+
+bool JourneySection::hasExpectedArrivalTime() const
+{
+    return d->expectedArrivalTime.isValid();
+}
+
+int JourneySection::arrivalDelay() const
+{
+    if (hasExpectedArrivalTime()) {
+        return d->scheduledArrivalTime.secsTo(d->expectedArrivalTime) / 60;
+    }
+    return 0;
 }
 
 int JourneySection::duration() const
 {
-    return d->departureTime.secsTo(d->arrivalTime);
+    return d->scheduledDepartureTime.secsTo(d->scheduledArrivalTime);
 }
 
 Location JourneySection::from() const
@@ -143,25 +193,25 @@ QVariantList Journey::sectionsVariant() const
     return l;
 }
 
-QDateTime KPublicTransport::Journey::departureTime() const
+QDateTime Journey::scheduledDepartureTime() const
 {
     if (!d->sections.empty()) {
-        return d->sections.front().departureTime();
+        return d->sections.front().scheduledDepartureTime();
     }
     return {};
 }
 
-QDateTime Journey::arrivalTime() const
+QDateTime Journey::scheduledArrivalTime() const
 {
     if (!d->sections.empty()) {
-        return d->sections.back().arrivalTime();
+        return d->sections.back().scheduledArrivalTime();
     }
     return {};
 }
 
 int Journey::duration() const
 {
-    return departureTime().secsTo(arrivalTime());
+    return scheduledDepartureTime().secsTo(scheduledArrivalTime());
 }
 
 #include "moc_journey.cpp"

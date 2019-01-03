@@ -270,16 +270,23 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
             const auto secObj = secV.toObject();
             JourneySection section;
 
-            // TODO add real-time data
             const auto dep = secObj.value(QLatin1String("dep")).toObject();
-            section.setDepartureTime(QDateTime::fromString(dateStr + dep.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            section.setScheduledDepartureTime(QDateTime::fromString(dateStr + dep.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            const auto dTimeR = dep.value(QLatin1String("dTimeR")).toString();
+            if (!dTimeR.isEmpty()) {
+                section.setExpectedDepartureTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
+            }
             auto locIdx = dep.value(QLatin1String("locX")).toInt();
             if ((unsigned int)locIdx < locs.size()) {
                 section.setFrom(locs[locIdx]);
             }
 
             const auto arr = secObj.value(QLatin1String("arr")).toObject();
-            section.setArrivalTime(QDateTime::fromString(dateStr + arr.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            section.setScheduledArrivalTime(QDateTime::fromString(dateStr + arr.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
+            const auto aTimeR = dep.value(QLatin1String("aTimeR")).toString();
+            if (!aTimeR.isEmpty()) {
+                section.setExpectedArrivalTime(QDateTime::fromString(dateStr + aTimeR, QLatin1String("yyyyMMddhhmmss")));
+            }
             locIdx = arr.value(QLatin1String("locX")).toInt();
             if ((unsigned int)locIdx < locs.size()) {
                 section.setTo(locs[locIdx]);

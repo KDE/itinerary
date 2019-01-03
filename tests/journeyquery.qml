@@ -170,10 +170,16 @@ Kirigami.ApplicationWindow {
                         text: "From: " + modelData.from.name
                     }
                     // TODO platform
-                    QQC2.Label {
-                        text: "Departure: " + modelData.departureTime.toTimeString()
+                    RowLayout {
+                        QQC2.Label {
+                            text: "Departure: " + modelData.scheduledDepartureTime.toTimeString()
+                        }
+                        QQC2.Label {
+                            text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
+                            color: modelData.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedDepartureTime
+                        }
                     }
-                    // TODO departure delay
                     QQC2.Label {
                         text: {
                             switch (modelData.mode) {
@@ -193,10 +199,16 @@ Kirigami.ApplicationWindow {
                         text: "To: " + modelData.to.name
                     }
                     // TODO platform
-                    QQC2.Label {
-                        text: "Arrival: " + modelData.arrivalTime.toTimeString()
+                    RowLayout {
+                        QQC2.Label {
+                            text: "Arrival: " + modelData.scheduledArrivalTime.toTimeString()
+                        }
+                        QQC2.Label {
+                            text: (modelData.arrivalDelay >= 0 ? "+" : "") + modelData.arrivalDelay
+                            color: modelData.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedArrivalTime
+                        }
                     }
-                    // TODO arrival delay
                 }
             }
         }
