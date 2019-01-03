@@ -43,7 +43,7 @@ public:
     bool allowInsecureServices() const;
     void setAllowInsecureServices(bool allowInsecure);
 
-signals:
+Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
     void queryLiveDataChanged(bool enabled);

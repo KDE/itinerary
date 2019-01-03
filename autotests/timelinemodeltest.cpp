@@ -64,7 +64,7 @@ private:
         return f.readAll();
     }
 
-private slots:
+private Q_SLOTS:
     void initTestCase()
     {
         qputenv("TZ", "UTC");

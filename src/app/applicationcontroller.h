@@ -62,7 +62,7 @@ public:
 
     bool hasClipboardContent() const;
 
-signals:
+Q_SIGNALS:
     void clipboardContentChanged();
 
 private:

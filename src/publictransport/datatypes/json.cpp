@@ -114,7 +114,7 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
 void Json::fromJson(const QMetaObject *mo, const QJsonObject &obj, void *elem)
 {
     for (auto it = obj.begin(); it != obj.end(); ++it) {
-        const auto idx = mo->indexOfProperty(it.key().toUtf8());
+        const auto idx = mo->indexOfProperty(it.key().toUtf8().constData());
         if (idx < 0) {
             continue;
         }

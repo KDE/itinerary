@@ -33,7 +33,7 @@ private:
         }
     }
 
-private slots:
+private Q_SLOTS:
     void initTestCase()
     {
         QStandardPaths::setTestModeEnabled(true);

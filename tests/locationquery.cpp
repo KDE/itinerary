@@ -87,7 +87,7 @@ public:
 
     QQmlEngine *engine = nullptr;
 
-signals:
+Q_SIGNALS:
     void loadingChanged();
     void errorMessageChanged();
 

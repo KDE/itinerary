@@ -52,7 +52,7 @@ public:
 
     static QDateTime relevantDate(KPkPass::Pass *pass);
 
-signals:
+Q_SIGNALS:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId, const QStringList &changes);
     void passRemoved(const QString &passId);

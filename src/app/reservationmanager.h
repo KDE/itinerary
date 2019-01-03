@@ -48,7 +48,7 @@ public:
     void importReservation(const QByteArray &data);
     void importReservations(const QVector<QVariant> &resData);
 
-signals:
+Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationUpdated(const QString &id);
     void reservationRemoved(const QString &id);

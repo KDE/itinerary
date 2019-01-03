@@ -551,7 +551,7 @@ void HafasMgateBackend::setLineModeMap(const QJsonObject& obj)
 
     std::unordered_map<int, Line::Mode> modeMap;
     for (auto it = obj.begin(); it != obj.end(); ++it) {
-        modeMap[it.key().toInt()] = static_cast<Line::Mode>(me.keyToValue(it.value().toString().toUtf8()));
+        modeMap[it.key().toInt()] = static_cast<Line::Mode>(me.keyToValue(it.value().toString().toUtf8().constData()));
     }
     m_parser.setLineModeMap(std::move(modeMap));
 }

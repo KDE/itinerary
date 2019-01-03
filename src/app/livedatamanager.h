@@ -57,11 +57,11 @@ public:
     Q_INVOKABLE QVariant arrival(const QString &resId);
     Q_INVOKABLE QVariant departure(const QString &resId);
 
-public slots:
+public Q_SLOTS:
     /** Checks all applicable elements for updates. */
     void checkForUpdates();
 
-signals:
+Q_SIGNALS:
     void arrivalUpdated(const QString &resId);
     void departureUpdated(const QString &resId);
 

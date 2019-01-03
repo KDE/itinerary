@@ -30,7 +30,7 @@ public:
     explicit SolidBrightnessBackend(QObject *parent = nullptr);
     virtual ~SolidBrightnessBackend();
 
-    virtual void maxBrightness();
+    void maxBrightness() override;
 
 private:
     OrgKdeSolidPowerManagementActionsBrightnessControlInterface *m_iface;

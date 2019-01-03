@@ -42,7 +42,7 @@ public:
     // "override" from TimelineModel
     int todayRow();
 
-signals:
+Q_SIGNALS:
     void todayRowChanged();
 
 private:

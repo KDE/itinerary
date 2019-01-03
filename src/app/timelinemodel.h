@@ -99,7 +99,7 @@ public:
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
 
-signals:
+Q_SIGNALS:
     void todayRowChanged();
 
 private:

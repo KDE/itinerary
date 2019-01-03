@@ -41,7 +41,7 @@ public:
 
     static void clear(); // for testing only!
 
-signals:
+Q_SIGNALS:
     void tripGroupAdded(const QString &id);
     void tripGroupChanged(const QString &id);
     void tripGroupRemoved(const QString &id);

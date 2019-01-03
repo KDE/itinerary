@@ -60,7 +60,7 @@ public:
      */
     void setTestModeEnabled(bool testMode);
 
-signals:
+Q_SIGNALS:
     /** Updated when new forecast data has been retrieved. */
     void forecastUpdated();
 
