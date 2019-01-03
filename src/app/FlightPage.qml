@@ -127,7 +127,11 @@ App.DetailsPage {
         App.PlaceDelegate {
             place: reservationFor.arrivalAirport
         }
-
+        QQC2.Label {
+            Kirigami.FormData.label: i18n("Terminal:")
+            text: reservationFor.arrivalTerminal
+            visible: reservationFor.arrivalTerminal.length > 0
+        }
 
         // booking details
         Kirigami.Separator {
