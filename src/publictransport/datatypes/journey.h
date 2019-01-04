@@ -69,7 +69,23 @@ class JourneySection
     /** Route to take on this segment. */
     Q_PROPERTY(KPublicTransport::Route route READ route WRITE setRoute)
 
-    // TODO: platforms
+    /** Planned departure platform. */
+    Q_PROPERTY(QString scheduledDeparturePlatform READ scheduledDeparturePlatform WRITE setScheduledDeparturePlatform)
+    /** Actual departure platform, in case real-time information are available. */
+    Q_PROPERTY(QString expectedDeparturePlatform READ expectedDeparturePlatform WRITE setExpectedDeparturePlatform)
+    /** @c true if real-time platform information are available. */
+    Q_PROPERTY(bool hasExpectedDeparturePlatform READ hasExpectedDeparturePlatform STORED false)
+    /** @c true if we have real-time platform information and the platform changed. */
+    Q_PROPERTY(bool departurePlatformChanged READ departurePlatformChanged STORED false)
+
+    /** Planned arrival platform. */
+    Q_PROPERTY(QString scheduledArrivalPlatform READ scheduledArrivalPlatform WRITE setScheduledArrivalPlatform)
+    /** Actual arrival platform, in case real-time information are available. */
+    Q_PROPERTY(QString expectedArrivalPlatform READ expectedArrivalPlatform WRITE setExpectedArrivalPlatform)
+    /** @c true if real-time platform information are available. */
+    Q_PROPERTY(bool hasExpectedArrivalPlatform READ hasExpectedArrivalPlatform STORED false)
+    /** @c true if we have real-time platform information and the platform changed. */
+    Q_PROPERTY(bool arrivalPlatformChanged READ arrivalPlatformChanged STORED false)
 
 public:
     /** Mode of transport. */
@@ -106,6 +122,20 @@ public:
     void setTo(const Location &to);
     Route route() const;
     void setRoute(const Route &route);
+
+    QString scheduledDeparturePlatform() const;
+    void setScheduledDeparturePlatform(const QString &platform);
+    QString expectedDeparturePlatform() const;
+    void setExpectedDeparturePlatform(const QString &platform);
+    bool hasExpectedDeparturePlatform() const;
+    bool departurePlatformChanged() const;
+
+    QString scheduledArrivalPlatform() const;
+    void setScheduledArrivalPlatform(const QString &platform);
+    QString expectedArrivalPlatform() const;
+    void setExpectedArrivalPlatform(const QString &platform);
+    bool hasExpectedArrivalPlatform() const;
+    bool arrivalPlatformChanged() const;
 };
 
 class JourneyPrivate;

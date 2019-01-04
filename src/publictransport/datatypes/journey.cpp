@@ -35,6 +35,10 @@ public:
     Location from;
     Location to;
     Route route;
+    QString scheduledDeparturePlatform;
+    QString expectedDeparturePlatform;
+    QString scheduledArrivalPlatform;
+    QString expectedArrivalPlatform;
 };
 
 class JourneyPrivate : public QSharedData
@@ -164,6 +168,70 @@ void JourneySection::setRoute(const Route &route)
 {
     d.detach();
     d->route = route;
+}
+
+QString JourneySection::scheduledDeparturePlatform() const
+{
+    return d->scheduledDeparturePlatform;
+}
+
+void JourneySection::setScheduledDeparturePlatform(const QString &platform)
+{
+    d.detach();
+    d->scheduledDeparturePlatform = platform;
+}
+
+QString JourneySection::expectedDeparturePlatform() const
+{
+    return d->expectedDeparturePlatform;
+}
+
+void JourneySection::setExpectedDeparturePlatform(const QString &platform)
+{
+    d.detach();
+    d->expectedDeparturePlatform = platform;
+}
+
+bool JourneySection::hasExpectedDeparturePlatform() const
+{
+    return !d->expectedDeparturePlatform.isEmpty();
+}
+
+bool JourneySection::departurePlatformChanged() const
+{
+    return hasExpectedDeparturePlatform() && d->expectedDeparturePlatform != d->scheduledDeparturePlatform;
+}
+
+QString JourneySection::scheduledArrivalPlatform() const
+{
+    return d->scheduledArrivalPlatform;
+}
+
+void JourneySection::setScheduledArrivalPlatform(const QString &platform)
+{
+    d.detach();
+    d->scheduledArrivalPlatform = platform;
+}
+
+QString JourneySection::expectedArrivalPlatform() const
+{
+    return d->expectedArrivalPlatform;
+}
+
+void JourneySection::setExpectedArrivalPlatform(const QString &platform)
+{
+    d.detach();
+    d->expectedArrivalPlatform = platform;
+}
+
+bool JourneySection::hasExpectedArrivalPlatform() const
+{
+    return !d->expectedArrivalPlatform.isEmpty();
+}
+
+bool JourneySection::arrivalPlatformChanged() const
+{
+    return hasExpectedArrivalPlatform() && d->scheduledArrivalPlatform != d->expectedArrivalPlatform;
 }
 
 

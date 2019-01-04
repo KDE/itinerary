@@ -166,10 +166,16 @@ Kirigami.ApplicationWindow {
 
                 ColumnLayout {
                     Layout.fillWidth: true
-                    QQC2.Label {
-                        text: "From: " + modelData.from.name
+                    RowLayout {
+                        QQC2.Label {
+                            text: "From: " + modelData.from.name + " Platform: " + modelData.scheduledDeparturePlatform
+                        }
+                        QQC2.Label {
+                            text: modelData.expectedDeparturePlatform
+                            color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedDeparturePlatform
+                        }
                     }
-                    // TODO platform
                     RowLayout {
                         QQC2.Label {
                             text: "Departure: " + modelData.scheduledDepartureTime.toTimeString()
@@ -194,11 +200,16 @@ Kirigami.ApplicationWindow {
                             return "???";
                         }}
                     }
-
-                    QQC2.Label {
-                        text: "To: " + modelData.to.name
+                    RowLayout {
+                        QQC2.Label {
+                            text: "To: " + modelData.to.name + " Platform: " + modelData.scheduledArrivalPlatform
+                        }
+                        QQC2.Label {
+                            text: modelData.expectedArrivalPlatform
+                            color: modelData.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: modelData.hasExpectedArrivalPlatform
+                        }
                     }
-                    // TODO platform
                     RowLayout {
                         QQC2.Label {
                             text: "Arrival: " + modelData.scheduledArrivalTime.toTimeString()

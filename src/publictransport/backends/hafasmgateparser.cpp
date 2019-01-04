@@ -280,6 +280,8 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
             if ((unsigned int)locIdx < locs.size()) {
                 section.setFrom(locs[locIdx]);
             }
+            section.setScheduledDeparturePlatform(dep.value(QLatin1String("dPlatfS")).toString());
+            section.setExpectedDeparturePlatform(dep.value(QLatin1String("dPlatfR")).toString());
 
             const auto arr = secObj.value(QLatin1String("arr")).toObject();
             section.setScheduledArrivalTime(QDateTime::fromString(dateStr + arr.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
@@ -291,6 +293,8 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
             if ((unsigned int)locIdx < locs.size()) {
                 section.setTo(locs[locIdx]);
             }
+            section.setScheduledArrivalPlatform(dep.value(QLatin1String("aPlatfS")).toString());
+            section.setExpectedArrivalPlatform(dep.value(QLatin1String("aPlatfR")).toString());
 
             const auto typeStr = secObj.value(QLatin1String("type")).toString();
             if (typeStr == QLatin1String("JNY")) {
