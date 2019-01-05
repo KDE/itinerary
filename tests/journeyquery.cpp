@@ -28,6 +28,7 @@
 #include <QApplication>
 #include <QDateTime>
 #include <QDebug>
+#include <QLocale>
 #include <QNetworkAccessManager>
 #include <QUrl>
 
@@ -70,14 +71,13 @@ public:
                 std::transform(res.begin(), res.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
                 engine->rootContext()->setContextProperty(QStringLiteral("_journeys"), l);
 
+                QStringList journeyTitles;
                 for (const auto &journey : res) {
-                    qDebug() << journey.sections().size();
-                    for (const auto &section : journey.sections()) {
-                        qDebug() << " From" << section.from().name() << section.scheduledDepartureTime();
-                        qDebug() << " Mode" << section.mode() << section.route().line().name() << section.route().direction() << section.route().line().modeString();
-                        qDebug() << " To" << section.to().name() << section.scheduledArrivalTime();
-                    }
+                    const QString t = QLocale().toString(journey.scheduledDepartureTime(), QLocale::ShortFormat) + QLatin1String(" (") +
+                        QString::number(journey.duration()/60) + QLatin1String("min) - ") + QString::number(journey.numberOfChanges()) + QLatin1String(" change(s)");
+                    journeyTitles.push_back(t);
                 }
+                engine->rootContext()->setContextProperty(QStringLiteral("_journeyTitles"), journeyTitles);
             } else {
                 m_errorMsg = reply->errorString();
                 emit errorMessageChanged();

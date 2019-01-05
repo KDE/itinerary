@@ -152,6 +152,9 @@ class Journey
     Q_PROPERTY(QDateTime scheduledArrivalTime READ scheduledArrivalTime STORED false)
     /** Duration of the entire journey in seconds. */
     Q_PROPERTY(int duration READ duration STORED false)
+    /** Number of changes on this journey. */
+    Q_PROPERTY(int numberOfChanges READ numberOfChanges STORED false)
+
 public:
     /** The journey sections. */
     const std::vector<JourneySection>& sections() const;
@@ -163,6 +166,7 @@ public:
     QDateTime scheduledDepartureTime() const;
     QDateTime scheduledArrivalTime() const;
     int duration() const;
+    int numberOfChanges() const;
 private:
     QVariantList sectionsVariant() const;
 };

@@ -282,4 +282,9 @@ int Journey::duration() const
     return scheduledDepartureTime().secsTo(scheduledArrivalTime());
 }
 
+int Journey::numberOfChanges() const
+{
+    return std::count_if(d->sections.begin(), d->sections.end(), [](const auto &section) { return section.mode() == JourneySection::PublicTransport; });
+}
+
 #include "moc_journey.cpp"

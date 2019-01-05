@@ -243,7 +243,7 @@ Kirigami.ApplicationWindow {
                 QQC2.ComboBox {
                     id: journeySelector
                     Layout.fillWidth: true
-                    model: _journeys
+                    model: _journeyTitles
                 }
 
                 ListView {
