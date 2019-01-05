@@ -59,8 +59,16 @@ static void importReservation(JNIEnv *env, jobject that, jstring data)
     ApplicationController::instance()->importData(env->GetStringUTFChars(data, 0));
 }
 
+static void importFromIntent(JNIEnv *env, jobject that, jobject data)
+{
+    Q_UNUSED(that);
+    Q_UNUSED(env)
+    ApplicationController::instance()->importFromIntent(data);
+}
+
 static const JNINativeMethod methods[] = {
-    {"importReservation", "(Ljava/lang/String;)V", (void*)importReservation}
+    {"importReservation", "(Ljava/lang/String;)V", (void*)importReservation},
+    {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent}
 };
 
 Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)

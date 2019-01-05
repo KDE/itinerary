@@ -73,6 +73,7 @@ public class Activity extends QtActivity
     }
 
     public native void importReservation(String data);
+    public native void importFromIntent(Intent data);
 
     /** Check the calendar for with JSON-LD data.
      *  This assumes the custom property serialization format used by DavDroid.
@@ -127,5 +128,11 @@ public class Activity extends QtActivity
                 getWindow().setAttributes(layout);
             }
         });
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        importFromIntent(intent);
     }
 }
