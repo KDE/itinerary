@@ -34,29 +34,37 @@ Kirigami.ApplicationWindow {
         id: exampleModel
         ListElement {
             name: "CDG -> Gare de Lyon"
+            fromName: "Paris Charles de Gaulle"
             fromLon: 2.57110
             fromLat: 49.00406
+            toName: "Paris Gare de Lyon"
             toLon: 2.37708
             toLat: 48.84388
         }
         ListElement {
             name: "ZRH -> Randa"
+            fromName: "Zürich Flughafen"
             fromLon: 8.56275
             fromLat: 47.45050
+            toName: "Randa"
             toLon: 7.78315
             toLat:  46.09901
         }
         ListElement {
             name: "Gare de Midi -> Fosdem"
+            fromName: "Brussels Gare du Midi"
             fromLon: 4.33620
             fromLat: 50.83588
+            toName: "ULB"
             toLon: 4.38116
             toLat: 50.81360
         }
         ListElement {
             name: "VIE -> Akademy 2018 Accomodation"
+            fromName: "Wien Flughafen"
             fromLon: 16.56312
             fromLat: 48.12083
+            toName: "Wien Hauptbahnhof"
             toLon: 16.37859
             toLat: 48.18282
         }
@@ -83,15 +91,19 @@ Kirigami.ApplicationWindow {
         }
         ListElement {
             name: "TXL -> Akademy 2016"
+            fromName: "Berlin Flughafen Tegel"
             fromLon: 13.29281
             fromLat: 52.55420
+            toName: "Berlin Alexanderplatz"
             toLon: 13.41644
             toLat: 52.52068
         }
         ListElement {
             name: "SXF -> Akademy 2016"
+            fromName: "Berlin Flughafen Schönefeld"
             fromLon: 13.51870
             fromLat: 52.38841
+            toName: "Berlin Alexanderplatz"
             toLon: 13.41644
             toLat: 52.52068
         }
@@ -241,9 +253,63 @@ Kirigami.ApplicationWindow {
                     textRole: "name"
                     onCurrentIndexChanged: {
                         var obj = exampleModel.get(currentIndex);
-                        _queryMgr.findJourney(obj.fromLat, obj.fromLon, obj.toLat, obj.toLon);
+                        fromName.text = obj.fromName
+                        fromLon.text = obj.fromLon
+                        fromLat.text = obj.fromLat
+                        toName.text = obj.toName
+                        toLon.text = obj.toLon
+                        toLat.text = obj.toLat
                     }
                 }
+
+                RowLayout {
+                    QQC2.TextField {
+                        id: fromName
+                    }
+                    QQC2.TextField {
+                        id: fromLon
+                    }
+                    QQC2.TextField {
+                        id: fromLat
+                    }
+                }
+                RowLayout {
+                    QQC2.TextField {
+                        id: toName
+                    }
+                    QQC2.TextField {
+                        id: toLon
+                    }
+                    QQC2.TextField {
+                        id: toLat
+                    }
+                }
+                RowLayout {
+                    QQC2.Button {
+                        text: "Query"
+                        onClicked: _queryMgr.findJourney(fromName.text, fromLat.text, fromLon.text, toName.text, toLat.text, toLon.text);
+                    }
+                    QQC2.Button {
+                        text: "Query Name"
+                        onClicked: _queryMgr.findJourney(fromName.text, NaN, NaN, toName.text, NaN, NaN);
+                    }
+                    QQC2.Button {
+                        text: "Query Coord"
+                        onClicked: _queryMgr.findJourney("", fromLat.text, fromLon.text, "", toLat.text, toLon.text);
+                    }
+                    QQC2.Button {
+                        text: "Clear"
+                        onClicked: {
+                            fromName.text = "";
+                            fromLon.text = "";
+                            fromLat.text = "";
+                            toName.text = "";
+                            toLon.text = "";
+                            toLat.text = "";
+                        }
+                    }
+                }
+
                 QQC2.ComboBox {
                     id: journeySelector
                     Layout.fillWidth: true
