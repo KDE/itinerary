@@ -298,6 +298,8 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
                 section.setRoute(route);
             } else if (typeStr == QLatin1String("WALK")) {
                 section.setMode(JourneySection::Walking);
+            } else if (typeStr == QLatin1String("TRSF")) {
+                section.setMode(JourneySection::Transfer);
             }
 
             sections.push_back(section);
