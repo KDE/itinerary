@@ -131,8 +131,8 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     section.setTo(parseWrappedLocation(obj.value(QLatin1String("to")).toObject()));
     section.setRoute(route);
     // TODO realtime data
-    section.setScheduledArrivalTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
-    section.setScheduledDepartureTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
+    section.setScheduledDepartureTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
+    section.setScheduledArrivalTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
 
     const auto typeStr = obj.value(QLatin1String("type")).toString();
     if (typeStr == QLatin1String("public_transport")) {
