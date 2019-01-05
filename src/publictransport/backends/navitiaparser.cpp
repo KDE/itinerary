@@ -139,7 +139,7 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
         section.setMode(JourneySection::PublicTransport);
     } else if (typeStr == QLatin1String("transfer")) {
         section.setMode(JourneySection::Transfer);
-    } else if (typeStr == QLatin1String("street_network")) {
+    } else if (typeStr == QLatin1String("street_network") || typeStr == QLatin1String("walking") || typeStr == QLatin1String("crow_fly")) {
         section.setMode(JourneySection::Walking);
     } else if (typeStr == QLatin1String("waiting")) {
         section.setMode(JourneySection::Waiting);
