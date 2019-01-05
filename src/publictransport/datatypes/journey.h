@@ -136,6 +136,14 @@ public:
     void setExpectedArrivalPlatform(const QString &platform);
     bool hasExpectedArrivalPlatform() const;
     bool arrivalPlatformChanged() const;
+
+    /** Checks if two instances refer to the same journey section (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const JourneySection &lhs, const JourneySection &rhs);
+
+    /** Merge two instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static JourneySection merge(const JourneySection &lhs, const JourneySection &rhs);
 };
 
 class JourneyPrivate;
@@ -167,6 +175,15 @@ public:
     QDateTime scheduledArrivalTime() const;
     int duration() const;
     int numberOfChanges() const;
+
+    /** Checks if two instances refer to the same journey (which does not necessarily mean they are exactly equal). */
+    static bool isSame(const Journey &lhs, const Journey &rhs);
+
+    /** Merge two instances.
+     *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.
+     */
+    static Journey merge(const Journey &lhs, const Journey &rhs);
+
 private:
     QVariantList sectionsVariant() const;
 };

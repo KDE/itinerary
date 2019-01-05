@@ -234,6 +234,39 @@ bool JourneySection::arrivalPlatformChanged() const
     return hasExpectedArrivalPlatform() && d->scheduledArrivalPlatform != d->expectedArrivalPlatform;
 }
 
+bool JourneySection::isSame(const JourneySection &lhs, const JourneySection &rhs)
+{
+    return lhs.d->mode == rhs.d->mode
+        && lhs.d->scheduledDepartureTime == rhs.d->scheduledDepartureTime
+        && lhs.d->scheduledArrivalTime == rhs.d->scheduledArrivalTime
+        && Location::isSame(lhs.d->from, rhs.d->from)
+        && Location::isSame(lhs.d->to, rhs.d->to)
+        && Route::isSame(lhs.d->route, rhs.d->route);
+        // ### platforms relevant?
+}
+
+JourneySection JourneySection::merge(const JourneySection &lhs, const JourneySection &rhs)
+{
+    auto res = lhs;
+    if (!res.expectedDepartureTime().isValid()) {
+        res.setExpectedDepartureTime(rhs.expectedDepartureTime());
+    }
+    if (res.expectedDeparturePlatform().isEmpty()) {
+        res.setExpectedDeparturePlatform(rhs.expectedDeparturePlatform());
+    }
+    if (!res.expectedArrivalTime().isValid()) {
+        res.setExpectedArrivalTime(rhs.expectedArrivalTime());
+    }
+    if (res.expectedArrivalPlatform().isEmpty()) {
+        res.setExpectedArrivalPlatform(rhs.expectedArrivalPlatform());
+    }
+    res.setFrom(Location::merge(lhs.from(), rhs.from()));
+    res.setTo(Location::merge(lhs.to(), rhs.to()));
+    res.setRoute(Route::merge(lhs.route(), rhs.route()));
+
+    return res;
+}
+
 
 KPUBLICTRANSPORT_MAKE_GADGET(Journey)
 
@@ -285,6 +318,32 @@ int Journey::duration() const
 int Journey::numberOfChanges() const
 {
     return std::count_if(d->sections.begin(), d->sections.end(), [](const auto &section) { return section.mode() == JourneySection::PublicTransport; });
+}
+
+bool Journey::isSame(const Journey &lhs, const Journey &rhs)
+{
+    // ### we can make this more clever by ignoring transit elements for example
+    // doing that will need changes below too!
+    if (lhs.sections().size() != rhs.sections().size()) {
+        return false;
+    }
+    return std::equal(lhs.sections().begin(), lhs.sections().end(), rhs.sections().begin(), [](const auto &lhs, const auto &rhs) {
+        return JourneySection::isSame(lhs, rhs);
+    });
+}
+
+Journey Journey::merge(const Journey &lhs, const Journey &rhs)
+{
+    // ### see above
+    std::vector<JourneySection> sections;
+    sections.reserve(lhs.sections().size());
+    for (auto lit = lhs.sections().begin(), rit = rhs.sections().begin(); lit != lhs.sections().end(); ++lit, ++rit) {
+        sections.push_back(JourneySection::merge(*lit, *rit));
+    }
+
+    Journey res;
+    res.setSections(std::move(sections));
+    return res;
 }
 
 #include "moc_journey.cpp"

@@ -81,6 +81,25 @@ void JourneyReplyPrivate::postProcessJourneys()
         }
         journey.setSections(std::move(sections));
     }
+
+    // sort and merge results
+    std::sort(journeys.begin(), journeys.end(), [](const auto &lhs, const auto &rhs) {
+        return lhs.scheduledDepartureTime() < rhs.scheduledDepartureTime();
+    });
+    for (auto it = journeys.begin(); it != journeys.end(); ++it) {
+        for (auto mergeIt = it + 1; mergeIt != journeys.end();) {
+            if ((*it).scheduledDepartureTime() != (*mergeIt).scheduledDepartureTime()) {
+                break;
+            }
+
+            if (Journey::isSame(*it, *mergeIt)) {
+                *it = Journey::merge(*it, *mergeIt);
+                mergeIt = journeys.erase(mergeIt);
+            } else {
+                ++mergeIt;
+            }
+        }
+    }
 }
 
 JourneyReply::JourneyReply(const JourneyRequest &req)
