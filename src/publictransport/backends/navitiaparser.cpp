@@ -130,9 +130,13 @@ static JourneySection parseJourneySection(const QJsonObject &obj)
     section.setFrom(parseWrappedLocation(obj.value(QLatin1String("from")).toObject()));
     section.setTo(parseWrappedLocation(obj.value(QLatin1String("to")).toObject()));
     section.setRoute(route);
-    // TODO realtime data
-    section.setScheduledDepartureTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
-    section.setScheduledArrivalTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
+
+    section.setScheduledDepartureTime(parseDateTime(obj.value(QLatin1String("base_departure_date_time")), section.from().timeZone()));
+    section.setScheduledArrivalTime(parseDateTime(obj.value(QLatin1String("base_arrival_date_time")), section.to().timeZone()));
+    if (obj.value(QLatin1String("data_freshness")).toString() != QLatin1String("base_schedule")) {
+        section.setScheduledArrivalTime(parseDateTime(obj.value(QLatin1String("arrival_date_time")), section.to().timeZone()));
+        section.setScheduledDepartureTime(parseDateTime(obj.value(QLatin1String("departure_date_time")), section.from().timeZone()));
+    }
 
     const auto typeStr = obj.value(QLatin1String("type")).toString();
     if (typeStr == QLatin1String("public_transport")) {
