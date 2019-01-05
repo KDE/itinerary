@@ -22,6 +22,8 @@
 #include <QTest>
 #include <QTimeZone>
 
+#define s(x) QStringLiteral(x)
+
 using namespace KPublicTransport;
 
 class HafasParserTest : public QObject
@@ -48,6 +50,25 @@ private Q_SLOTS:
         QVERIFY(res.empty());
         QCOMPARE(p.error(), Reply::NotFoundError);
         QVERIFY(!p.errorMessage().isEmpty());
+    }
+
+    void parseDateTime_data()
+    {
+        QTest::addColumn<QString>("date");
+        QTest::addColumn<QString>("time");
+        QTest::addColumn<QDateTime>("dt");
+
+        QTest::newRow("empty") << QString() << QString() << QDateTime();
+        QTest::newRow("same day") << s("20190105") << s("142100") << QDateTime({2019, 1, 5}, {14, 21});
+        QTest::newRow("next day") << s("20190105") << s("01142100") << QDateTime({2019, 1, 6}, {14, 21});
+    }
+
+    void parseDateTime()
+    {
+        QFETCH(QString, date);
+        QFETCH(QString, time);
+        QFETCH(QDateTime, dt);
+        QCOMPARE(HafasMgateParser::parseDateTime(date, time), dt);
     }
 };
 

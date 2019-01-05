@@ -55,6 +55,8 @@ public:
     Reply::Error error() const;
     QString errorMessage() const;
 
+    static QDateTime parseDateTime(const QString &date, const QString &time);
+
 private:
     Q_DISABLE_COPY(HafasMgateParser)
     std::vector<Departure> parseStationBoardResponse(const QJsonObject &obj) const;

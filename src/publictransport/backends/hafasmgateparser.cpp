@@ -135,16 +135,10 @@ std::vector<Departure> HafasMgateParser::parseStationBoardResponse(const QJsonOb
         dep.setRoute(route);
 
         const auto dateStr = jnyObj.value(QLatin1String("date")).toString();
-        dep.setScheduledDepartureTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
-        const auto dTimeR = stbStop.value(QLatin1String("dTimeR")).toString();
-        if (!dTimeR.isEmpty()) {
-            dep.setExpectedDepartureTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
-        }
-        dep.setScheduledArrivalTime(QDateTime::fromString(dateStr + stbStop.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
-        const auto aTimeR = stbStop.value(QLatin1String("aTimeR")).toString();
-        if (!aTimeR.isEmpty()) {
-            dep.setExpectedArrivalTime(QDateTime::fromString(dateStr + aTimeR, QLatin1String("yyyyMMddhhmmss")));
-        }
+        dep.setScheduledDepartureTime(parseDateTime(dateStr, stbStop.value(QLatin1String("dTimeS")).toString()));
+        dep.setExpectedDepartureTime(parseDateTime(dateStr, stbStop.value(QLatin1String("dTimeR")).toString()));
+        dep.setScheduledArrivalTime(parseDateTime(dateStr, stbStop.value(QLatin1String("aTimeS")).toString()));
+        dep.setExpectedArrivalTime(parseDateTime(dateStr, stbStop.value(QLatin1String("aTimeR")).toString()));
 
         dep.setScheduledPlatform(stbStop.value(QLatin1String("dPlatfS")).toString());
         dep.setExpectedPlatform(stbStop.value(QLatin1String("dPlatfR")).toString());
@@ -271,11 +265,8 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
             JourneySection section;
 
             const auto dep = secObj.value(QLatin1String("dep")).toObject();
-            section.setScheduledDepartureTime(QDateTime::fromString(dateStr + dep.value(QLatin1String("dTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
-            const auto dTimeR = dep.value(QLatin1String("dTimeR")).toString();
-            if (!dTimeR.isEmpty()) {
-                section.setExpectedDepartureTime(QDateTime::fromString(dateStr + dTimeR, QLatin1String("yyyyMMddhhmmss")));
-            }
+            section.setScheduledDepartureTime(parseDateTime(dateStr, dep.value(QLatin1String("dTimeS")).toString()));
+            section.setExpectedDepartureTime(parseDateTime(dateStr, dep.value(QLatin1String("dTimeR")).toString()));
             auto locIdx = dep.value(QLatin1String("locX")).toInt();
             if ((unsigned int)locIdx < locs.size()) {
                 section.setFrom(locs[locIdx]);
@@ -284,11 +275,8 @@ std::vector<Journey> HafasMgateParser::parseTripSearch(const QJsonObject &obj) c
             section.setExpectedDeparturePlatform(dep.value(QLatin1String("dPlatfR")).toString());
 
             const auto arr = secObj.value(QLatin1String("arr")).toObject();
-            section.setScheduledArrivalTime(QDateTime::fromString(dateStr + arr.value(QLatin1String("aTimeS")).toString(), QLatin1String("yyyyMMddhhmmss")));
-            const auto aTimeR = dep.value(QLatin1String("aTimeR")).toString();
-            if (!aTimeR.isEmpty()) {
-                section.setExpectedArrivalTime(QDateTime::fromString(dateStr + aTimeR, QLatin1String("yyyyMMddhhmmss")));
-            }
+            section.setScheduledArrivalTime(parseDateTime(dateStr, arr.value(QLatin1String("aTimeS")).toString()));
+            section.setExpectedArrivalTime(parseDateTime(dateStr, arr.value(QLatin1String("aTimeR")).toString()));
             locIdx = arr.value(QLatin1String("locX")).toInt();
             if ((unsigned int)locIdx < locs.size()) {
                 section.setTo(locs[locIdx]);
@@ -331,4 +319,19 @@ Reply::Error HafasMgateParser::error() const
 QString HafasMgateParser::errorMessage() const
 {
     return m_errorMsg;
+}
+
+QDateTime HafasMgateParser::parseDateTime(const QString &date, const QString &time)
+{
+    if (date.isEmpty() || time.isEmpty()) {
+        return {};
+    }
+
+    int dayOffset = 0;
+    if (time.size() > 6) {
+        dayOffset = time.leftRef(time.size() - 6).toInt();
+    }
+
+    const auto dt = QDateTime::fromString(date + time.rightRef(6), QLatin1String("yyyyMMddhhmmss"));
+    return dt.addDays(dayOffset);
 }
