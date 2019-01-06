@@ -18,7 +18,8 @@
             "32": "Bus",
             "64": "Ferry",
             "128": "Metro",
-            "256": "Tramway"
+            "256": "Tramway",
+            "512": "Taxi"
         },
         "locationIdentifierType": "ibnr"
     }
