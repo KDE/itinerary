@@ -32,26 +32,26 @@ Kirigami.ApplicationWindow {
 
     ListModel {
         id: exampleModel
-        ListElement { name: "CDG"; lon: 2.57110; lat: 49.00406; locId: "8700147"; idType: "uic" } // IBNR for DB: 8704997
-        ListElement { name: "Paris Gare de Lyon"; lon: 2.37385; lat: 48.84467; locId: "8768600"; idType: "uic" }
-        ListElement { name: "ZRH"; lon: 8.56275; lat: 47.45050; locId:"8503016"; idType: "ibnr" }
-        ListElement { name: "Randa"; lon: 7.78315; lat:  46.09901; locId:"8501687"; idType: "ibnr" }
-        ListElement { name: "Brussels Gare de Midi"; lon: 4.33620; lat: 50.83588; locId:"8814001"; idType: "uic" }
-        ListElement { name: "Fosdem"; lon: 4.38116; lat: 50.81360 }
-        ListElement { name: "VIE"; lon: 16.56312; lat: 48.12083; locId:"008100353"; idType: "ibnr" }
-        ListElement { name: "Akademy 2018 Accomodation"; lon: 16.37859; lat: 48.18282 }
+        ListElement { name: "Paris Charles de Gaulle"; lon: 2.57110; lat: 49.00406 }
+        ListElement { name: "Paris Gare de Lyon"; lon: 2.37385; lat: 48.84467 }
+        ListElement { name: "Zürich Flughafen"; lon: 8.56275; lat: 47.45050 }
+        ListElement { name: "Randa"; lon: 7.78315; lat:  46.09901 }
+        ListElement { name: "Brussels Gare de Midi"; lon: 4.33620; lat: 50.83588 }
+        ListElement { name: "ULB"; lon: 4.38116; lat: 50.81360 }
+        ListElement { name: "Wien Flughafen"; lon: 16.56312; lat: 48.12083 }
+        ListElement { name: "Wien Hauptbahnhof"; lon: 16.37859; lat: 48.18282 }
         ListElement { name: "Akademy 2018 BBQ"; lon: 16.43191; lat: 48.21612 }
         ListElement { name: "LEI"; lon: -2.37251; lat: 36.84774; }
         ListElement { name: "Akademy 2017 Accomodation"; lon: -2.44788; lat: 36.83731 }
         ListElement { name: "Akademy 2017 Venue"; lon: -2.40377; lat: 36.82784 }
-        ListElement { name: "TXL"; lon: 13.29281; lat: 52.55420; }
-        ListElement { name: "Akademy 2016 Venue"; lon: 13.41644; lat: 52.52068 }
-        ListElement { name: "SXF"; lon: 13.51870; lat: 52.38841; locId:"900260005"; idType: "vbb" }
+        ListElement { name: "Berlin Flughafen Tegel"; lon: 13.29281; lat: 52.55420; }
+        ListElement { name: "Berlin Alexanderplatz"; lon: 13.41644; lat: 52.52068 }
+        ListElement { name: "Berlin Flughafen Schönefeld"; lon: 13.51870; lat: 52.38841 }
         ListElement { name: "Brno central station"; lon: 16.61287; lat: 49.19069 }
         ListElement { name: "Akademy 2014 venue"; lon: 16.57564; lat: 49.22462 }
-        ListElement { name: "Copenhagen Central"; lon: 12.56489; lat: 55.67238; locId:"8600626"; idType: "uic" }
-        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lon: 8.6625; lat: 50.106944; locId:"8000105"; idType: "ibnr" }
-        ListElement { name: "Schiphol Airport"; lon: 4.7611; lat: 52.309; locId: "8400561"; idType: "ibnr" }
+        ListElement { name: "Copenhagen Central"; lon: 12.56489; lat: 55.67238 }
+        ListElement { name: "Frankfurt (Main) Hauptbahnhof"; lon: 8.6625; lat: 50.106944 }
+        ListElement { name: "Schiphol Airport"; lon: 4.7611; lat: 52.309 }
     }
 
     Component {
@@ -162,7 +162,36 @@ Kirigami.ApplicationWindow {
                     textRole: "name"
                     onCurrentIndexChanged: {
                         var obj = exampleModel.get(currentIndex);
-                        _queryMgr.queryDeparture(obj.lat, obj.lon, obj.locId, obj.idType, arrivalBox.checked);
+                        nameQuery.text = obj.name
+                        lonQuery.text = obj.lon
+                        latQuery.text = obj.lat
+                    }
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    QQC2.TextField {
+                        Layout.fillWidth: true
+                        id: nameQuery
+                    }
+                    QQC2.Button {
+                        text: "Query"
+                        onClicked: _queryMgr.queryDeparture(nameQuery.text, NaN, NaN, arrivalBox.checked);
+                    }
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    QQC2.TextField {
+                        id: lonQuery
+                    }
+                    QQC2.TextField {
+                        id: latQuery
+                    }
+                    QQC2.Button {
+                        text: "Query"
+                        onClicked: _queryMgr.queryDeparture("", latQuery.text, lonQuery.text, arrivalBox.checked);
+
                     }
                 }
 

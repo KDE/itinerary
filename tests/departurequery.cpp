@@ -43,7 +43,7 @@ public:
         ptMgr.setNetworkAccessManager(&nam);
     }
 
-    Q_INVOKABLE void queryDeparture(double fromLat, double fromLon, const QString &id, const QString &idType, bool queryArrival)
+    Q_INVOKABLE void queryDeparture(const QString &name, double fromLat, double fromLon, bool queryArrival)
     {
         engine->rootContext()->setContextProperty(QStringLiteral("_departures"), QVariantList());
         m_loading = true;
@@ -53,7 +53,7 @@ public:
 
         Location from;
         from.setCoordinate(fromLat, fromLon);
-        from.setIdentifier(idType, id);
+        from.setName(name);
 
         DepartureRequest depReq(from);
         depReq.setMode(queryArrival ? DepartureRequest::QueryArrival : DepartureRequest::QueryDeparture);
