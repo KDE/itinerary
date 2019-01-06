@@ -22,7 +22,11 @@
 
 #include <QString>
 
+class QNetworkReply;
+
 namespace KPublicTransport {
+
+class LocationRequest;
 
 /** Backend for Navitia-based providers. */
 class NavitiaBackend : public AbstractBackend
@@ -41,6 +45,9 @@ public:
     bool queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const override;
 
 private:
+    void queryDeparture(DepartureReply *reply, const Location &loc, QNetworkAccessManager *nam) const;
+    QNetworkReply* postLocationQuery(const LocationRequest &req, QNetworkAccessManager *nam) const;
+
     QString m_endpoint;
     QString m_coverage;
     QString m_auth;

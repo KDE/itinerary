@@ -99,17 +99,75 @@ bool NavitiaBackend::queryJourney(JourneyReply *reply, QNetworkAccessManager *na
 bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager *nam) const
 {
     const auto req = reply->request();
-    if (!req.stop().hasCoordinate()) {
+    if (req.stop().hasCoordinate()) {
+        queryDeparture(reply, req.stop(), nam);
+        return true;
+    }
+
+    // missing location information to query directly
+    LocationRequest locReq;
+    locReq.setName(req.stop().name());
+    // TODO set max result = 1
+
+    // check if this location query is cached already
+    const auto cacheEntry = Cache::lookupLocation(backendId(), locReq.cacheKey());
+    switch (cacheEntry.type) {
+        case CacheHitType::Negative:
+            addError(reply, Reply::NotFoundError, {});
+            return false;
+        case CacheHitType::Positive:
+            if (cacheEntry.data.size() >= 1) {
+                queryDeparture(reply, cacheEntry.data[0], nam);
+                return true;
+            }
+            break;
+        case CacheHitType::Miss:
+            break;
+    }
+
+   const auto locReply = postLocationQuery(locReq, nam);
+    if (!locReply) {
         return false;
     }
+    QObject::connect(locReply, &QNetworkReply::finished, [this, reply, locReply, locReq, nam]() {
+        qDebug() << locReply->request().url();
+        switch (locReply->error()) {
+            case QNetworkReply::NoError:
+            {
+                const auto res = NavitiaParser::parsePlaces(locReply->readAll());
+                Cache::addLocationCacheEntry(backendId(), locReq.cacheKey(), res);
+                if (!res.empty()) {
+                    queryDeparture(reply, res[0], nam);
+                } else {
+                    addError(reply, Reply::NotFoundError, QLatin1String("Location query found no results."));
+                }
+                break;
+            }
+            case QNetworkReply::ContentNotFoundError:
+                addError(reply, Reply::NotFoundError, NavitiaParser::parseErrorMessage(locReply->readAll()));
+                Cache::addNegativeLocationCacheEntry(backendId(), locReq.cacheKey());
+                break;
+            default:
+                addError(reply, Reply::NetworkError, locReply->errorString());
+                break;
+        }
+        locReply->deleteLater();
+    });
+
+    return true;
+}
+
+void NavitiaBackend::queryDeparture(DepartureReply *reply, const Location &loc, QNetworkAccessManager *nam) const
+{
+    const auto req = reply->request();
 
     QUrl url;
     url.setScheme(QStringLiteral("https"));
     url.setHost(m_endpoint);
     url.setPath(
         QStringLiteral("/v1/coverage/") +
-        (m_coverage.isEmpty() ? QString::number(req.stop().longitude()) + QLatin1Char(';') + QString::number(req.stop().latitude()) : m_coverage) +
-        QStringLiteral("/coord/") + QString::number(req.stop().longitude()) + QLatin1Char(';') + QString::number(req.stop().latitude()) +
+        (m_coverage.isEmpty() ? QString::number(loc.longitude()) + QLatin1Char(';') + QString::number(loc.latitude()) : m_coverage) +
+        QStringLiteral("/coord/") + QString::number(loc.longitude()) + QLatin1Char(';') + QString::number(loc.latitude()) +
         (req.mode() == DepartureRequest::QueryDeparture ? QStringLiteral("/departures") : QStringLiteral("/arrivals"))
     );
 
@@ -139,43 +197,16 @@ bool NavitiaBackend::queryDeparture(DepartureReply *reply, QNetworkAccessManager
         }
         netReply->deleteLater();
     });
-
-    return true;
 }
 
 bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *nam) const
 {
     const auto req = reply->request();
-
-    QUrl url;
-    url.setScheme(QStringLiteral("https"));
-    url.setHost(m_endpoint);
-
-    QUrlQuery query;
-    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true"));
-    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0"));
-    query.addQueryItem(QStringLiteral("type[]"), QStringLiteral("stop_area"));
-    // TODO count
-
-    if (req.hasCoordinate()) {
-        url.setPath(
-            QStringLiteral("/v1/coord/") + QString::number(req.longitude()) + QLatin1Char(';') + QString::number(req.latitude()) +
-            QStringLiteral("/places_nearby")
-        );
-        // TODO distance
-    } else if (!req.name().isEmpty()) {
-        url.setPath(QStringLiteral("/v1/places"));
-        query.addQueryItem(QStringLiteral("q"), req.name());
-    } else {
+    auto netReply = postLocationQuery(req, nam);
+    if (!netReply) {
         return false;
     }
 
-    url.setQuery(query);
-    QNetworkRequest netReq(url);
-    netReq.setRawHeader("Authorization", m_auth.toUtf8());
-
-    qCDebug(Log) << "GET:" << url;
-    auto netReply = nam->get(netReq);
     QObject::connect(netReply, &QNetworkReply::finished, [this, netReply, reply] {
         qDebug() << netReply->request().url() << netReply->errorString();
         switch (netReply->error()) {
@@ -204,4 +235,37 @@ bool NavitiaBackend::queryLocation(LocationReply *reply, QNetworkAccessManager *
     });
 
     return true;
+}
+
+QNetworkReply* NavitiaBackend::postLocationQuery(const LocationRequest &req, QNetworkAccessManager *nam) const
+{
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(m_endpoint);
+
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("disable_geojson"), QStringLiteral("true"));
+    query.addQueryItem(QStringLiteral("depth"), QStringLiteral("0"));
+    query.addQueryItem(QStringLiteral("type[]"), QStringLiteral("stop_area"));
+    // TODO count
+
+    if (req.hasCoordinate()) {
+        url.setPath(
+            QStringLiteral("/v1/coord/") + QString::number(req.longitude()) + QLatin1Char(';') + QString::number(req.latitude()) +
+            QStringLiteral("/places_nearby")
+        );
+        // TODO distance
+    } else if (!req.name().isEmpty()) {
+        url.setPath(QStringLiteral("/v1/places"));
+        query.addQueryItem(QStringLiteral("q"), req.name());
+    } else {
+        return nullptr;
+    }
+
+    url.setQuery(query);
+    QNetworkRequest netReq(url);
+    netReq.setRawHeader("Authorization", m_auth.toUtf8());
+
+    qCDebug(Log) << "GET:" << url;
+    return nam->get(netReq);
 }
