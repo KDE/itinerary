@@ -144,12 +144,8 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
     postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     postproc.process(resData);
 
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
-    QDir::root().mkpath(basePath);
-
     for (auto res : postproc.result()) {
         QString resId;
-        bool oldResFound = false;
 
         // check if we know this one already, and update if that's the case
         for (const auto &oldResId : reservations()) {
@@ -157,28 +153,14 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
             if (MergeUtil::isSame(oldRes, res)) {
                 res = JsonLdDocument::apply(oldRes, res);
                 resId = oldResId;
-                oldResFound = true;
                 break;
             }
         }
 
         if (resId.isEmpty()) {
-            resId = QUuid::createUuid().toString();
-        }
-
-        const QString path = basePath + resId + QLatin1String(".jsonld");
-        QFile f(path);
-        if (!f.open(QFile::WriteOnly)) {
-            qCWarning(Log) << "Unable to create file:" << f.errorString();
-            continue;
-        }
-        f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
-        m_reservations.insert(resId, res);
-
-        if (oldResFound) {
-            emit reservationUpdated(resId);
+            addReservation(res);
         } else {
-            emit reservationAdded(resId);
+            updateReservation(resId, res);
         }
     }
 }
