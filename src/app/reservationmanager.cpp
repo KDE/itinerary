@@ -60,12 +60,12 @@ bool ReservationManager::hasReservation(const QString &id) const
         return true;
     }
 
-    return QFile::exists(basePath() + id + QLatin1String(".jsonld"));
+    return QFile::exists(reservationsBasePath() + id + QLatin1String(".jsonld"));
 }
 
 QVector<QString> ReservationManager::reservations() const
 {
-    const auto base = basePath();
+    const auto base = reservationsBasePath();
     QDir::root().mkpath(base);
 
     QVector<QString> resIds;
@@ -88,7 +88,7 @@ QVariant ReservationManager::reservation(const QString& id) const
         return it.value();
     }
 
-    const QString resPath = basePath() + id + QLatin1String(".jsonld");
+    const QString resPath = reservationsBasePath() + id + QLatin1String(".jsonld");
     QFile f(resPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath << f.errorString();
@@ -120,7 +120,7 @@ QVariant ReservationManager::reservation(const QString& id) const
     return res;
 }
 
-QString ReservationManager::basePath()
+QString ReservationManager::reservationsBasePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/reservations/");
 }
@@ -186,7 +186,7 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
 void ReservationManager::addReservation(const QVariant &res)
 {
     QString resId = QUuid::createUuid().toString();
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    const QString basePath = reservationsBasePath();
     QDir::root().mkpath(basePath);
     const QString path = basePath + resId + QLatin1String(".jsonld");
     QFile f(path);
@@ -201,7 +201,7 @@ void ReservationManager::addReservation(const QVariant &res)
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
 {
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/reservations/");
+    const QString basePath = reservationsBasePath();
     QDir::root().mkpath(basePath);
     const QString path = basePath + resId + QLatin1String(".jsonld");
     QFile f(path);

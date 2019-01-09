@@ -54,7 +54,7 @@ Q_SIGNALS:
     void reservationRemoved(const QString &id);
 
 private:
-    static QString basePath();
+    static QString reservationsBasePath();
 
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId);
