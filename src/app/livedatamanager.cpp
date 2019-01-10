@@ -225,7 +225,27 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
     m_departures.insert(resId, {arr, QDateTime::currentDateTimeUtc()});
     storePublicTransportData(resId, arr, QStringLiteral("arrival"));
 
-    // check if something changed
+    // check if we can update static information in the reservation with what we received
+    const auto res = m_resMgr->reservation(resId);
+    if (JsonLd::isA<TrainReservation>(res)) {
+        auto newRes = res.value<TrainReservation>();
+        auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        auto station = trip.arrivalStation();
+        if (!station.geo().isValid() && arr.stopPoint().hasCoordinate()) {
+            station.setGeo(GeoCoordinates{arr.stopPoint().latitude(), arr.stopPoint().longitude()});
+            trip.setArrivalStation(station);
+        }
+        if (trip.arrivalPlatform().isEmpty() && !arr.scheduledPlatform().isEmpty()) {
+            trip.setArrivalPlatform(arr.scheduledPlatform());
+        }
+        newRes.setReservationFor(trip);
+
+        if (res.value<TrainReservation>() != newRes) {
+            m_resMgr->updateReservation(resId, newRes);
+        }
+    }
+
+    // check if something changed relevant for notifications
     if (oldArr.arrivalDelay() == arr.arrivalDelay() && oldArr.expectedPlatform() == arr.expectedPlatform()) {
         return;
     }
@@ -250,7 +270,27 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     m_departures.insert(resId, {dep, QDateTime::currentDateTimeUtc()});
     storePublicTransportData(resId, dep, QStringLiteral("departure"));
 
-    // check if something changed
+    // check if we can update static information in the reservation with what we received
+    const auto res = m_resMgr->reservation(resId);
+    if (JsonLd::isA<TrainReservation>(res)) {
+        auto newRes = res.value<TrainReservation>();
+        auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        auto station = trip.departureStation();
+        if (!station.geo().isValid() && dep.stopPoint().hasCoordinate()) {
+            station.setGeo(GeoCoordinates{dep.stopPoint().latitude(), dep.stopPoint().longitude()});
+            trip.setDeparatureStation(station);
+        }
+        if (trip.departurePlatform().isEmpty() && !dep.scheduledPlatform().isEmpty()) {
+            trip.setDeparturePlatform(dep.scheduledPlatform());
+        }
+        newRes.setReservationFor(trip);
+
+        if (res.value<TrainReservation>() != newRes) {
+            m_resMgr->updateReservation(resId, newRes);
+        }
+    }
+
+    // check if something changed relevant for notification
     if (oldDep.departureDelay() == dep.departureDelay() && oldDep.expectedPlatform() == dep.expectedPlatform()) {
         return;
     }
