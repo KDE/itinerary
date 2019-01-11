@@ -55,6 +55,7 @@ Q_SIGNALS:
 
 private:
     static QString reservationsBasePath();
+    void storeReservation(const QString &resId, const QVariant &res) const;
 
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId);

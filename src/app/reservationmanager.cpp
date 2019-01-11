@@ -167,21 +167,18 @@ void ReservationManager::importReservations(const QVector<QVariant> &resData)
 
 void ReservationManager::addReservation(const QVariant &res)
 {
-    QString resId = QUuid::createUuid().toString();
-    const QString basePath = reservationsBasePath();
-    QDir::root().mkpath(basePath);
-    const QString path = basePath + resId + QLatin1String(".jsonld");
-    QFile f(path);
-    if (!f.open(QFile::WriteOnly)) {
-        qCWarning(Log) << "Unable to create file:" << f.errorString();
-        return;
-    }
-    f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
-    m_reservations.insert(resId, res);
+    const QString resId = QUuid::createUuid().toString();
+    storeReservation(resId, res);
     emit reservationAdded(resId);
 }
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
+{
+    storeReservation(resId, res);
+    emit reservationUpdated(resId);
+}
+
+void ReservationManager::storeReservation(const QString &resId, const QVariant &res) const
 {
     const QString basePath = reservationsBasePath();
     QDir::root().mkpath(basePath);
@@ -193,7 +190,6 @@ void ReservationManager::updateReservation(const QString &resId, const QVariant 
     }
     f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
     m_reservations.insert(resId, res);
-    emit reservationUpdated(resId);
 }
 
 void ReservationManager::removeReservation(const QString& id)
