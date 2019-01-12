@@ -417,7 +417,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &res)
 
     // still in the same batch?
     if (!oldBatchId.isEmpty() && oldBatchId == newBatchId) {
-        emit batchChanged(oldBatchId);
+        emit batchContentChanged(oldBatchId);
         // no need to store here, as batching didn't actually change
         return;
     }

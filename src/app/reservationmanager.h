@@ -69,7 +69,14 @@ Q_SIGNALS:
     void reservationRemoved(const QString &id);
 
     void batchAdded(const QString &batchId);
+    /** This is emitted when elements are added or removed from the batch,
+     *  but its content otherwise stays untouched.
+     */
     void batchChanged(const QString &batchId);
+    /** This is emitted when the batch content changed, but the batching
+     *  as such remains the same.
+     */
+    void batchContentChanged(const QString &batchId);
     /** This is emitted when the reservation with @p oldBatchId was removed and
      *  it has been used to identify a non-empty batch.
      */

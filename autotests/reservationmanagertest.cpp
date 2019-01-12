@@ -183,6 +183,7 @@ private Q_SLOTS:
 
         QSignalSpy batchAddSpy(&mgr, &ReservationManager::batchAdded);
         QSignalSpy batchChangeSpy(&mgr, &ReservationManager::batchChanged);
+        QSignalSpy batchContentSpy(&mgr, &ReservationManager::batchContentChanged);
         QSignalSpy batchRenameSpy(&mgr, &ReservationManager::batchRenamed);
         QSignalSpy batchRemovedSpy(&mgr, &ReservationManager::batchRemoved);
 
@@ -208,20 +209,22 @@ private Q_SLOTS:
         batchChangeSpy.clear();
         mgr.updateReservation(secId, res);
         QCOMPARE(batchAddSpy.size(), 0);
-        QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchChangeSpy.size(), 0);
+        QCOMPARE(batchContentSpy.size(), 1);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 0);
-        QCOMPARE(batchChangeSpy.at(0).at(0), batchId);
+        QCOMPARE(batchContentSpy.at(0).at(0), batchId);
 
         // de-batching by update, moving to new batch
         flight.setDepartureTime(flight.departureTime().addYears(1));
         res.setReservationFor(flight);
 
         batchAddSpy.clear();
-        batchChangeSpy.clear();
+        batchContentSpy.clear();
         mgr.updateReservation(secId, res);
         QCOMPARE(batchAddSpy.size(), 1);
         QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchContentSpy.size(), 0);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 0);
         QCOMPARE(batchAddSpy.at(0).at(0), secId);
@@ -236,6 +239,7 @@ private Q_SLOTS:
         mgr.updateReservation(secId, res);
         QCOMPARE(batchAddSpy.size(), 0);
         QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchContentSpy.size(), 0);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 1);
         QCOMPARE(batchChangeSpy.at(0).at(0), batchId);
@@ -255,19 +259,21 @@ private Q_SLOTS:
         batchRemovedSpy.clear();
         mgr.updateReservation(batchId, res2);
         QCOMPARE(batchAddSpy.size(), 0);
-        QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchChangeSpy.size(), 0);
+        QCOMPARE(batchContentSpy.size(), 1);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 0);
-        QCOMPARE(batchChangeSpy.at(0).at(0), batchId);
+        QCOMPARE(batchContentSpy.at(0).at(0), batchId);
 
         // de-batch by changing the primary one renames the batch
         flight2.setDepartureTime(flight2.departureTime().addYears(1));
         res2.setReservationFor(flight2);
 
-        batchChangeSpy.clear();
+        batchContentSpy.clear();
         mgr.updateReservation(batchId, res2);
         QCOMPARE(batchAddSpy.size(), 1);
         QCOMPARE(batchChangeSpy.size(), 0);
+        QCOMPARE(batchContentSpy.size(), 0);
         QCOMPARE(batchRenameSpy.size(), 1);
         QCOMPARE(batchRemovedSpy.size(), 0);
         QCOMPARE(batchAddSpy.at(0).at(0), batchId);
@@ -289,6 +295,7 @@ private Q_SLOTS:
         mgr.updateReservation(batchId, res2);
         QCOMPARE(batchAddSpy.size(), 0);
         QCOMPARE(batchChangeSpy.size(), 1);
+        QCOMPARE(batchContentSpy.size(), 0);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 1);
         QCOMPARE(batchChangeSpy.at(0).at(0), secId);
@@ -320,6 +327,7 @@ private Q_SLOTS:
         mgr.removeBatch(batchId);
         QCOMPARE(batchAddSpy.size(), 0);
         QCOMPARE(batchChangeSpy.size(), 0);
+        QCOMPARE(batchContentSpy.size(), 0);
         QCOMPARE(batchRenameSpy.size(), 0);
         QCOMPARE(batchRemovedSpy.size(), 1);
         QCOMPARE(batchRemovedSpy.at(0).at(0), batchId);
