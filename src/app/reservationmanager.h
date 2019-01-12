@@ -26,7 +26,18 @@ class PkPassManager;
 
 class QUrl;
 
-/** Manages JSON-LD reservation data. */
+/** Manages JSON-LD reservation data.
+ *  This is done on two levels:
+ *  - the raw individual reservation elements (one per traveler and per trip)
+ *  - reservation batches for multi-traveler trips
+ *  Most consumers probably want to work with the multi-traveler batches rather
+ *  than the raw elements.
+ *  Batches are identified by a reservation id of a random element in that batch,
+ *  that means you can directly retrieve reservation data using the batch id too.
+ *
+ *  Identifiers are QStrings, which is super ugly, but needed for direct consumption
+ *  by QML.
+ */
 class ReservationManager : public QObject
 {
     Q_OBJECT
@@ -48,20 +59,46 @@ public:
     void importReservation(const QByteArray &data);
     void importReservations(const QVector<QVariant> &resData);
 
+    const std::vector<QString>& batches() const;
+    QString batchForReservation(const QString &resId) const;
+    Q_INVOKABLE QStringList reservationsForBatch(const QString &batchId) const;
+    Q_INVOKABLE void removeBatch(const QString &batchId);
 Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationUpdated(const QString &id);
     void reservationRemoved(const QString &id);
 
+    void batchAdded(const QString &batchId);
+    void batchChanged(const QString &batchId);
+    /** This is emitted when the reservation with @p oldBatchId was removed and
+     *  it has been used to identify a non-empty batch.
+     */
+    void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
+    void batchRemoved(const QString &batchId);
+
 private:
     static QString reservationsBasePath();
+    static QString batchesBasePath();
     void storeReservation(const QString &resId, const QVariant &res) const;
 
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId);
     void passRemoved(const QString &passId);
 
+    void loadBatches();
+    void initialBatchCreate();
+    void storeBatch(const QString &batchId) const;
+    void storeRemoveBatch(const QString &batchId) const;
+
+    void updateBatch(const QString &resId, const QVariant &res);
+    void removeFromBatch(const QString &resId, const QString &batchId);
+
     mutable QHash<QString, QVariant> m_reservations;
+
+    std::vector<QString> m_batches;
+    QHash<QString, QStringList> m_batchToResMap; // ### QStringList for direct consumption by QML
+    QHash<QString, QString> m_resToBatchMap;
+
     PkPassManager *m_passMgr = nullptr;
 };
 
