@@ -230,8 +230,8 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
 {
-    const auto oldArr = m_departures.value(resId).change;
-    m_departures.insert(resId, {arr, QDateTime::currentDateTimeUtc()});
+    const auto oldArr = m_arrivals.value(resId).change;
+    m_arrivals.insert(resId, {arr, QDateTime::currentDateTimeUtc()});
     storePublicTransportData(resId, arr, QStringLiteral("arrival"));
 
     // check if we can update static information in the reservation with what we received
