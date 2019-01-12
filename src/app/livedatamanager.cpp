@@ -129,7 +129,7 @@ void LiveDataManager::checkForUpdates()
         }
 
         if (JsonLd::isA<TrainReservation>(res)) {
-            checkTrainTrip(res.value<TrainReservation>().reservationFor().value<TrainTrip>(), *it);
+            checkTrainTrip(res, *it);
         }
 
         // TODO check for pkpass updates
@@ -170,53 +170,60 @@ static KPublicTransport::Location locationFromStation(const TrainStation &statio
     return loc;
 }
 
-void LiveDataManager::checkTrainTrip(const TrainTrip& trip, const QString& resId)
+void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 {
+    Q_ASSERT(JsonLd::isA<TrainReservation>(res));
+    const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+
     qCDebug(Log) << trip.trainName() << trip.trainNumber() << trip.departureTime();
     using namespace KPublicTransport;
 
-    DepartureRequest req(locationFromStation(trip.departureStation()));
-    req.setDateTime(trip.departureTime());
-    auto reply = m_ptMgr->queryDeparture(req);
-    connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
-        reply->deleteLater();
-        if (reply->error() != Reply::NoError) {
-            qCDebug(Log) << reply->error() << reply->errorString();
-            return;
-        }
-
-        for (const auto &dep : reply->result()) {
-            qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
-            if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
-                continue;
+    if (!hasDeparted(resId, res)) {
+        DepartureRequest req(locationFromStation(trip.departureStation()));
+        req.setDateTime(trip.departureTime());
+        auto reply = m_ptMgr->queryDeparture(req);
+        connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
+            reply->deleteLater();
+            if (reply->error() != Reply::NoError) {
+                qCDebug(Log) << reply->error() << reply->errorString();
+                return;
             }
-            qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
-            updateDepartureData(dep, resId);
-            break;
-        }
-    });
 
-    req = DepartureRequest(locationFromStation(trip.arrivalStation()));
-    req.setMode(DepartureRequest::QueryArrival);
-    req.setDateTime(trip.arrivalTime());
-    reply = m_ptMgr->queryDeparture(req);
-    connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
-        reply->deleteLater();
-        if (reply->error() != Reply::NoError) {
-            qCDebug(Log) << reply->error() << reply->errorString();
-            return;
-        }
-
-        for (const auto &arr : reply->result()) {
-            qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
-            if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line().name(), trip.trainName(), trip.trainNumber())) {
-                continue;
+            for (const auto &dep : reply->result()) {
+                qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
+                if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
+                    continue;
+                }
+                qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
+                updateDepartureData(dep, resId);
+                break;
             }
-            qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
-            updateArrivalData(arr, resId);
-            break;
-        }
-    });
+        });
+    }
+
+    if (!hasArrived(resId, res)) {
+        DepartureRequest req(locationFromStation(trip.arrivalStation()));
+        req.setMode(DepartureRequest::QueryArrival);
+        req.setDateTime(trip.arrivalTime());
+        auto reply = m_ptMgr->queryDeparture(req);
+        connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
+            reply->deleteLater();
+            if (reply->error() != Reply::NoError) {
+                qCDebug(Log) << reply->error() << reply->errorString();
+                return;
+            }
+
+            for (const auto &arr : reply->result()) {
+                qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
+                if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line().name(), trip.trainName(), trip.trainNumber())) {
+                    continue;
+                }
+                qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
+                updateArrivalData(arr, resId);
+                break;
+            }
+        });
+    }
 }
 
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
@@ -316,6 +323,34 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     emit departureUpdated(resId);
 }
 
+bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) const
+{
+    const auto now = QDateTime::currentDateTime();
+
+    if (JsonLd::isA<TrainTrip>(res)) {
+        const auto &dep = m_departures.value(resId).change;
+        if (dep.hasExpectedDepartureTime()) {
+            return dep.expectedDepartureTime() < now;
+        }
+    }
+
+    return SortUtil::startDateTime(res) < now;
+}
+
+bool LiveDataManager::hasArrived(const QString &resId, const QVariant &res) const
+{
+    const auto now = QDateTime::currentDateTime();
+
+    if (JsonLd::isA<TrainTrip>(res)) {
+        const auto &arr = m_arrivals.value(resId).change;
+        if (arr.hasExpectedArrivalTime()) {
+            return arr.expectedArrivalTime() < now;
+        }
+    }
+
+    return SortUtil::endtDateTime(res) < now;
+}
+
 void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange> &data) const
 {
     const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/"));
@@ -404,7 +439,7 @@ void LiveDataManager::poll()
         }
         const auto res = m_resMgr->reservation(resId);
         if (JsonLd::isA<TrainReservation>(res)) {
-            checkTrainTrip(res.value<TrainReservation>().reservationFor().value<TrainTrip>(), resId);
+            checkTrainTrip(res, resId);
         }
     }
 

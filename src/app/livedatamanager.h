@@ -72,10 +72,15 @@ private:
     void reservationChanged(const QString &resId);
     void reservationRemoved(const QString &resId);
 
-    void checkTrainTrip(const KItinerary::TrainTrip &trip, const QString &resId);
+    void checkTrainTrip(const QVariant &res, const QString &resId);
 
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
+
+    /** Check if the trip @p res has departed, based on the best knowledge we have. */
+    bool hasDeparted(const QString &resId, const QVariant &res) const;
+    /** Check if the trip @p res has arrived, based on the best knowledge we have. */
+    bool hasArrived(const QString &resId, const QVariant &res) const;
 
     struct TrainChange {
         KPublicTransport::Departure change;
