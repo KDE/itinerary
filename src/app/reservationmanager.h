@@ -47,7 +47,6 @@ public:
 
     void setPkPassManager(PkPassManager *mgr);
 
-    bool hasReservation(const QString &id) const;
     QVector<QString> reservations() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
@@ -60,6 +59,7 @@ public:
     void importReservations(const QVector<QVariant> &resData);
 
     const std::vector<QString>& batches() const;
+    bool hasBatch(const QString &batchId) const;
     QString batchForReservation(const QString &resId) const;
     Q_INVOKABLE QStringList reservationsForBatch(const QString &batchId) const;
     Q_INVOKABLE void removeBatch(const QString &batchId);

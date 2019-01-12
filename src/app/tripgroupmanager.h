@@ -25,7 +25,9 @@ class ReservationManager;
 class TripGroup;
 class TripGroupTest;
 
-/** Trip group computation and persistence. */
+/** Trip group computation and persistence.
+ *  This operates on multi-traveller batches as provided by ReservationManager.
+ */
 class TripGroupManager : public QObject
 {
     Q_OBJECT
@@ -53,9 +55,10 @@ private:
     void load();
     void removeTripGroup(const QString &groupId);
 
-    void reservationAdded(const QString &resId);
-    void reservationChanged(const QString &resId);
-    void reservationRemoved(const QString &resId);
+    void batchAdded(const QString &resId);
+    void batchContentChanged(const QString &resId);
+    void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
+    void batchRemoved(const QString &resId);
 
     void scanAll();
     void scanOne(std::vector<QString>::const_iterator beginIt);

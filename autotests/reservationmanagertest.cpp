@@ -248,6 +248,8 @@ private Q_SLOTS:
         QCOMPARE(mgr.reservationsForBatch(batchId).size(), 2);
         QCOMPARE(mgr.batchForReservation(batchId), batchId);
         QCOMPARE(mgr.batchForReservation(secId), batchId);
+        QCOMPARE(mgr.hasBatch(batchId), true);
+        QCOMPARE(mgr.hasBatch(secId), false);
 
         // changing primary does update batch
         auto res2 = mgr.reservation(batchId).value<FlightReservation>();

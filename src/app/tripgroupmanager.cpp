@@ -21,7 +21,6 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/LocationUtil>
-#include <KItinerary/MergeUtil>
 #include <KItinerary/Organization>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
@@ -53,11 +52,12 @@ TripGroupManager::~TripGroupManager() = default;
 void TripGroupManager::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
-    connect(m_resMgr, &ReservationManager::reservationAdded, this, &TripGroupManager::reservationAdded);
-    connect(m_resMgr, &ReservationManager::reservationUpdated, this, &TripGroupManager::reservationChanged);
-    connect(m_resMgr, &ReservationManager::reservationRemoved, this, &TripGroupManager::reservationRemoved);
+    connect(m_resMgr, &ReservationManager::batchAdded, this, &TripGroupManager::batchAdded);
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TripGroupManager::batchContentChanged);
+    connect(m_resMgr, &ReservationManager::batchRemoved, this, &TripGroupManager::batchRemoved);
+    connect(m_resMgr, &ReservationManager::batchRenamed, this, &TripGroupManager::batchRenamed);
 
-    const auto allReservations = m_resMgr->reservations();
+    const auto allReservations = m_resMgr->batches();
     m_reservations.clear();
     m_reservations.reserve(allReservations.size());
     std::copy(allReservations.begin(), allReservations.end(), std::back_inserter(m_reservations));
@@ -121,6 +121,10 @@ void TripGroupManager::load()
 void TripGroupManager::removeTripGroup(const QString &groupId)
 {
     const auto groupIt = m_tripGroups.constFind(groupId);
+    if (groupIt == m_tripGroups.constEnd()) {
+        return;
+    }
+
     for (const auto &elem : groupIt.value().elements()) {
         m_reservationToGroupMap.remove(elem);
     }
@@ -138,7 +142,7 @@ void TripGroupManager::clear()
     d.removeRecursively();
 }
 
-void TripGroupManager::reservationAdded(const QString &resId)
+void TripGroupManager::batchAdded(const QString &resId)
 {
     auto it = std::lower_bound(m_reservations.begin(), m_reservations.end(), resId, [this](const auto &lhs, const auto &rhs) {
         return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
@@ -148,14 +152,21 @@ void TripGroupManager::reservationAdded(const QString &resId)
     scanAll();
 }
 
-void TripGroupManager::reservationChanged(const QString &resId)
+void TripGroupManager::batchContentChanged(const QString &resId)
 {
     // ### we can probably make this more efficient
-    reservationRemoved(resId);
-    reservationAdded(resId);
+    batchRemoved(resId);
+    batchAdded(resId);
 }
 
-void TripGroupManager::reservationRemoved(const QString &resId)
+void TripGroupManager::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
+{
+    // ### this can be done more efficiently
+    batchRemoved(oldBatchId);
+    batchAdded(newBatchId);
+}
+
+void TripGroupManager::batchRemoved(const QString &resId)
 {
     // check if resId is part of a group
     const auto mapIt = m_reservationToGroupMap.constFind(resId);
@@ -241,22 +252,6 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             continue;
         }
         res = curRes;
-
-        // is this a multi-traveler element? -> continue searching
-        Q_ASSERT(JsonLd::canConvert<Reservation>(prevRes));
-        Q_ASSERT(JsonLd::canConvert<Reservation>(res));
-        const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
-        const auto curTrip = JsonLd::convert<Reservation>(res).reservationFor();
-        if (MergeUtil::isSame(prevTrip, curTrip)) {
-            // if the result iterators are on it -1 we should advanced them here too
-            if (connectedIt == it - 1) {
-                ++connectedIt;
-            }
-            if (resNumIt == it - 1) {
-                ++resNumIt;
-            }
-            continue;
-        }
 
         // all search strategies think they are done
         if (resNumSearchDone && connectedSearchDone) {
@@ -410,7 +405,7 @@ void TripGroupManager::checkConsistency()
 
     // look for dangling reservation references
     for (auto it = m_reservationToGroupMap.constBegin(); it != m_reservationToGroupMap.constEnd(); ++it) {
-        if (!m_resMgr->hasReservation(it.key())) {
+        if (!m_resMgr->hasBatch(it.key())) {
             tgIds.push_back(it.value());
         }
     }

@@ -29,9 +29,11 @@ class TripGroupTest : public QObject
 private:
     void clearReservations(ReservationManager *mgr)
     {
-        for (const auto &id : mgr->reservations()) {
-            mgr->removeReservation(id);
+        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
+        for (const auto &id : batches) {
+            mgr->removeBatch(id);
         }
+        QCOMPARE(mgr->batches().size(), 0);
     }
 
     QByteArray readFile(const QString &fn)
@@ -65,7 +67,7 @@ private Q_SLOTS:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-            QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.elements().size(), resMgr.batches().size());
         }
 
         TripGroupManager::clear();
@@ -78,7 +80,7 @@ private Q_SLOTS:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-            QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.elements().size(), resMgr.batches().size());
         }
 
         TripGroupManager::clear();
@@ -91,7 +93,7 @@ private Q_SLOTS:
             mgr.setReservationManager(&resMgr);
             QCOMPARE(addSpy.size(), 1);
             auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-            QCOMPARE(g.elements().size(), resMgr.reservations().size());
+            QCOMPARE(g.elements().size(), resMgr.batches().size());
         }
 
         TripGroupManager::clear();
@@ -103,8 +105,8 @@ private Q_SLOTS:
             QVERIFY(addSpy.isValid());
             mgr.setReservationManager (&resMgr);
             QCOMPARE(addSpy.size(), 3);
-            QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 4);
-            QCOMPARE(mgr.tripGroup(addSpy.at(1).at(0).toString()).elements().size(), 4);
+            QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 2);
+            QCOMPARE(mgr.tripGroup(addSpy.at(1).at(0).toString()).elements().size(), 2);
             QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 12);
         }
     }
@@ -123,13 +125,13 @@ private Q_SLOTS:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-        QCOMPARE(g.elements().size(), resMgr.reservations().size());
-        QCOMPARE(changeSpy.size(), 1);
+        QCOMPARE(g.elements().size(), resMgr.batches().size());
+        QCOMPARE(changeSpy.size(), 0);
 
         changeSpy.clear();
         clearReservations(&resMgr);
         QCOMPARE(rmSpy.size(), 1);
-        QCOMPARE(changeSpy.size(), 2);
+        QCOMPARE(changeSpy.size(), 0);
     }
 
     void testGroupName_data()
@@ -159,7 +161,7 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-        QCOMPARE(g.elements().size(), resMgr.reservations().size());
+        QCOMPARE(g.elements().size(), resMgr.batches().size());
         QCOMPARE(g.name(), expectedName);
     }
 
@@ -173,7 +175,7 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
-        QCOMPARE(g.elements().size(), resMgr.reservations().size() - 1);
+        QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
         QCOMPARE(g.name(), QStringLiteral("Oslo Airport (June 2000)"));
     }
 };

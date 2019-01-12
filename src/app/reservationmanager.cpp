@@ -68,13 +68,9 @@ void ReservationManager::setPkPassManager(PkPassManager* mgr)
     connect(mgr, &PkPassManager::passRemoved, this, &ReservationManager::passRemoved);
 }
 
-bool ReservationManager::hasReservation(const QString &id) const
+bool ReservationManager::hasBatch(const QString &batchId) const
 {
-    if (m_reservations.contains(id)) {
-        return true;
-    }
-
-    return QFile::exists(reservationsBasePath() + id + QLatin1String(".jsonld"));
+    return m_batchToResMap.contains(batchId);
 }
 
 QVector<QString> ReservationManager::reservations() const
