@@ -492,11 +492,17 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
     // check last poll time for this reservation
     const auto lastArrivalPoll = m_arrivals.value(resId).timestamp;
     const auto lastDeparturePoll = m_departures.value(resId).timestamp;
-    const auto lastPoll = (!lastArrivalPoll.isValid() && !lastDeparturePoll.isValid())
+    auto lastRelevantPoll = lastArrivalPoll;
+    // ignore departure if we have already departed
+    if (!hasDeparted(resId, res) && lastDeparturePoll.isValid()) {
+        if (!lastArrivalPoll.isValid() || lastArrivalPoll > lastDeparturePoll) {
+            lastRelevantPoll = lastDeparturePoll;
+        }
+    }
+    const int lastPollDist = !lastRelevantPoll.isValid()
         ? (24 * 3600) // no poll yet == long time ago
-        : std::max<int>(lastArrivalPoll.secsTo(now), lastDeparturePoll.secsTo(now));
-
-    return std::max((it->pollInterval - lastPoll) * 1000, 0); // we need msecs
+        : lastRelevantPoll.secsTo(now);
+    return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs
 }
 
 #include "moc_livedatamanager.cpp"
