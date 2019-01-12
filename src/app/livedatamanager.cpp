@@ -64,11 +64,13 @@ LiveDataManager::~LiveDataManager() = default;
 void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 {
     m_resMgr = resMgr;
-    connect(resMgr, &ReservationManager::reservationAdded, this, &LiveDataManager::reservationAdded);
-    connect(resMgr, &ReservationManager::reservationUpdated, this, &LiveDataManager::reservationChanged);
-    connect(resMgr, &ReservationManager::reservationRemoved, this, &LiveDataManager::reservationRemoved);
+    connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded);
+    connect(resMgr, &ReservationManager::batchChanged, this, &LiveDataManager::batchChanged);
+    connect(resMgr, &ReservationManager::batchContentChanged, this, &LiveDataManager::batchChanged);
+    connect(resMgr, &ReservationManager::batchRenamed, this, &LiveDataManager::batchRenamed);
+    connect(resMgr, &ReservationManager::batchRemoved, this, &LiveDataManager::batchRemoved);
 
-    const auto resIds = resMgr->reservations();
+    const auto resIds = resMgr->batches();
     for (const auto &resId : resIds) {
         if (!isRelevant(resId)) {
             continue;
@@ -132,7 +134,7 @@ void LiveDataManager::checkForUpdates()
             checkTrainTrip(res, *it);
         }
 
-        // TODO check for pkpass updates
+        // TODO check for pkpass updates, for each element in this batch
 
         ++it;
     }
@@ -408,7 +410,7 @@ bool LiveDataManager::isRelevant(const QString &resId) const
     return JsonLd::isA<TrainReservation>(res) || !JsonLd::convert<Reservation>(res).pkpassSerialNumber().isEmpty();
 }
 
-void LiveDataManager::reservationAdded(const QString &resId)
+void LiveDataManager::batchAdded(const QString &resId)
 {
     if (!isRelevant(resId)) {
         return;
@@ -417,12 +419,20 @@ void LiveDataManager::reservationAdded(const QString &resId)
     // TODO
 }
 
-void LiveDataManager::reservationChanged(const QString &resId)
+void LiveDataManager::batchChanged(const QString &resId)
 {
     // TODO
 }
 
-void LiveDataManager::reservationRemoved(const QString &resId)
+void LiveDataManager::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
+{
+    // ### we can do this more efficiently
+    batchRemoved(oldBatchId);
+    batchAdded(newBatchId);
+}
+
+
+void LiveDataManager::batchRemoved(const QString &resId)
 {
     const auto it = std::find(m_reservations.begin(), m_reservations.end(), resId);
     if (it != m_reservations.end()) {

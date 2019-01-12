@@ -68,9 +68,10 @@ Q_SIGNALS:
 private:
     bool isRelevant(const QString &resId) const;
 
-    void reservationAdded(const QString &resId);
-    void reservationChanged(const QString &resId);
-    void reservationRemoved(const QString &resId);
+    void batchAdded(const QString &resId);
+    void batchChanged(const QString &resId);
+    void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
+    void batchRemoved(const QString &resId);
 
     void checkTrainTrip(const QVariant &res, const QString &resId);
 
