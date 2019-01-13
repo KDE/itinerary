@@ -215,7 +215,7 @@ void ReservationManager::updateReservation(const QString &resId, const QVariant 
     const auto oldRes = reservation(resId);
 
     storeReservation(resId, res);
-    emit reservationUpdated(resId);
+    emit reservationChanged(resId);
 
     updateBatch(resId, res, oldRes);
 }

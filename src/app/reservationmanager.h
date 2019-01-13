@@ -63,7 +63,7 @@ public:
     Q_INVOKABLE void removeBatch(const QString &batchId);
 Q_SIGNALS:
     void reservationAdded(const QString &id);
-    void reservationUpdated(const QString &id);
+    void reservationChanged(const QString &id);
     void reservationRemoved(const QString &id);
 
     void batchAdded(const QString &batchId);

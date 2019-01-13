@@ -69,7 +69,7 @@ private Q_SLOTS:
 
         QSignalSpy addSpy(&mgr, &ReservationManager::reservationAdded);
         QVERIFY(addSpy.isValid());
-        QSignalSpy updateSpy(&mgr, &ReservationManager::reservationUpdated);
+        QSignalSpy updateSpy(&mgr, &ReservationManager::reservationChanged);
         QVERIFY(updateSpy.isValid());
         QSignalSpy rmSpy(&mgr, &ReservationManager::reservationRemoved);
         QVERIFY(rmSpy.isValid());
@@ -128,7 +128,7 @@ private Q_SLOTS:
 
         QSignalSpy addSpy(&mgr, &ReservationManager::reservationAdded);
         QVERIFY(addSpy.isValid());
-        QSignalSpy updateSpy(&mgr, &ReservationManager::reservationUpdated);
+        QSignalSpy updateSpy(&mgr, &ReservationManager::reservationChanged);
         QVERIFY(updateSpy.isValid());
 
         QVERIFY(mgr.batches().empty());
