@@ -93,6 +93,8 @@ private:
     void loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange>& data) const;
 
     void poll();
+    /// @p force will bypass the check if the data is still up to date
+    void pollForUpdates(bool force);
     int nextPollTime() const;
     int nextPollTimeForReservation(const QString &resId) const;
 

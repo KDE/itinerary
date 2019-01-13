@@ -48,7 +48,6 @@ public:
     Q_INVOKABLE void removePass(const QString &passId);
 
     void updatePass(const QString &passId);
-    Q_INVOKABLE void updatePasses();
 
     static QDateTime relevantDate(KPkPass::Pass *pass);
 

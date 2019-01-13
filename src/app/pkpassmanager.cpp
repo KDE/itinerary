@@ -231,12 +231,6 @@ void PkPassManager::updatePass(const QString& passId)
     });
 }
 
-void PkPassManager::updatePasses()
-{
-    for (const auto &passId : passes())
-        updatePass(passId);
-}
-
 QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
 {
     const auto dt = pass->relevantDate();

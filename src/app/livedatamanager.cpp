@@ -118,26 +118,7 @@ QVariant LiveDataManager::departure(const QString &resId)
 
 void LiveDataManager::checkForUpdates()
 {
-    qCDebug(Log) << m_reservations.size();
-    m_pkPassMgr->updatePasses(); // TODO do this as part of the below loop
-
-    for (auto it = m_reservations.begin(); it != m_reservations.end();) {
-        const auto res = m_resMgr->reservation(*it);
-
-        // clean up old stuff (TODO: do this a bit more precisely)
-        if (SortUtil::endtDateTime(res) < QDateTime::currentDateTime().addDays(-1)) {
-            it = m_reservations.erase(it);
-            continue;
-        }
-
-        if (JsonLd::isA<TrainReservation>(res)) {
-            checkTrainTrip(res, *it);
-        }
-
-        // TODO check for pkpass updates, for each element in this batch
-
-        ++it;
-    }
+    pollForUpdates(true);
 }
 
 static QString stripSpecial(const QString &str)
@@ -443,18 +424,48 @@ void LiveDataManager::batchRemoved(const QString &resId)
 void LiveDataManager::poll()
 {
     qCDebug(Log);
-    for (const auto &resId : m_reservations) {
-        if (nextPollTimeForReservation(resId) > 60 * 1000) {
-            continue;
-        }
-        const auto res = m_resMgr->reservation(resId);
-        if (JsonLd::isA<TrainReservation>(res)) {
-            checkTrainTrip(res, resId);
-        }
-    }
+    pollForUpdates(false);
 
     m_pollTimer.setInterval(std::max(nextPollTime(), 60 * 1000)); // we pool everything that happens within a minute here
     m_pollTimer.start();
+}
+
+void LiveDataManager::pollForUpdates(bool force)
+{
+    for (auto it = m_reservations.begin(); it != m_reservations.end();) {
+        const auto batchId = *it;
+        const auto res = m_resMgr->reservation(*it);
+
+        // clean up obsolete stuff
+        if (hasArrived(*it, res)) {
+            it = m_reservations.erase(it);
+            continue;
+        }
+        ++it;
+
+        if (!force && nextPollTimeForReservation(batchId) > 60 * 1000) {
+            // data is still "fresh" according to the poll policy
+            continue;
+        }
+
+        if (JsonLd::isA<TrainReservation>(res)) {
+            checkTrainTrip(res, batchId);
+        }
+
+        // TODO we need poll time computation for pkpass files first before removing this!
+        if (!force)
+            continue;
+
+        // check for pkpass updates, for each element in this batch
+        const auto resIds = m_resMgr->reservationsForBatch(batchId);
+        for (const auto &resId : resIds) {
+            const auto res = m_resMgr->reservation(resId);
+            const auto passId = m_pkPassMgr->passId(res);
+            if (!passId.isEmpty()) {
+                m_pkPassMgr->updatePass(passId);
+            }
+        }
+    }
 }
 
 int LiveDataManager::nextPollTime() const
