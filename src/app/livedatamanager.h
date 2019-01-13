@@ -78,6 +78,10 @@ private:
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
 
+    /** Best known departure time. */
+    QDateTime departureTime(const QString &resId, const QVariant &res) const;
+    /** Best known arrival time. */
+    QDateTime arrivalTime(const QString &resId, const QVariant &res) const;
     /** Check if the trip @p res has departed, based on the best knowledge we have. */
     bool hasDeparted(const QString &resId, const QVariant &res) const;
     /** Check if the trip @p res has arrived, based on the best knowledge we have. */

@@ -231,6 +231,13 @@ void PkPassManager::updatePass(const QString& passId)
     });
 }
 
+QDateTime PkPassManager::updateTime(const QString &passId) const
+{
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    QFileInfo fi(passPath);
+    return fi.lastModified();
+}
+
 QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
 {
     const auto dt = pass->relevantDate();
