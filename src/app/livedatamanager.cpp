@@ -306,7 +306,7 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
 
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainTrip>(res)) {
+    if (JsonLd::isA<TrainReservation>(res)) {
         const auto &dep = m_departures.value(resId).change;
         if (dep.hasExpectedDepartureTime()) {
             return dep.expectedDepartureTime();
@@ -318,7 +318,7 @@ QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &r
 
 QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainTrip>(res)) {
+    if (JsonLd::isA<TrainReservation>(res)) {
         const auto &arr = m_arrivals.value(resId).change;
         if (arr.hasExpectedArrivalTime()) {
             return arr.expectedArrivalTime();
