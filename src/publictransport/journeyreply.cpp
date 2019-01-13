@@ -117,11 +117,16 @@ JourneyRequest JourneyReply::request() const
     return d->request;
 }
 
-std::vector<Journey> JourneyReply::journeys() const
+const std::vector<Journey>& JourneyReply::result() const
 {
     Q_D(const JourneyReply);
-    // TODO avoid the copy here
     return d->journeys;
+}
+
+std::vector<Journey>&& JourneyReply::takeResult()
+{
+    Q_D(JourneyReply);
+    return std::move(d->journeys);
 }
 
 void JourneyReply::addResult(std::vector<Journey> &&res)

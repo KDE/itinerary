@@ -38,8 +38,10 @@ public:
     /** The request this is the reply for. */
     JourneyRequest request() const;
 
-    /** Returns the found journeys. */
-    std::vector<Journey> journeys() const;
+    /** Returns the retrieved journeys. */
+    const std::vector<Journey>& result() const;
+    /** Returns the retrieved journeys for moving elsewhere. */
+    std::vector<Journey>&& takeResult();
 
 private:
     friend class Manager;
