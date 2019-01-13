@@ -26,9 +26,10 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Flight")
+    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
     editor: Component {
         App.FlightEditor {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 
@@ -46,7 +47,7 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             Kirigami.FormData.isSection: true
-            resIds: root.resIds
+            resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
         // flight details

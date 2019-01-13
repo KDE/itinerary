@@ -26,8 +26,8 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Train Ticket")
-    property var arrival: _liveDataManager.arrival(resIds[0])
-    property var departure: _liveDataManager.departure(resIds[0])
+    property var arrival: _liveDataManager.arrival(batchId)
+    property var departure: _liveDataManager.departure(batchId)
 
     Kirigami.FormLayout {
         width: root.width
@@ -43,7 +43,7 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             Kirigami.FormData.isSection: true
-            resIds: root.resIds
+            resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
         // departure data

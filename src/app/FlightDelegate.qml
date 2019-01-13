@@ -110,7 +110,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.FlightPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

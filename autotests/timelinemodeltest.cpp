@@ -169,7 +169,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 4);
 
         // delete a split element
-        const auto resId = model.data(model.index(1, 0), TimelineModel::ReservationIdsRole).toStringList().value(0);
+        const auto resId = model.data(model.index(1, 0), TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
         resMgr.removeReservation(resId);
         QCOMPARE(rmSpy.size(), 4);
@@ -211,7 +211,7 @@ private Q_SLOTS:
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
-        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
+        auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 3);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
@@ -219,7 +219,7 @@ private Q_SLOTS:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
 
         // remove the US flight should also remove the US country info
-        resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
+        resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
@@ -361,9 +361,9 @@ private Q_SLOTS:
         QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(5), QTime(0, 0)));
 
         // clean up
-        auto resId = model.index(13, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
+        auto resId = model.index(13, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
-        resId = model.index(4, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
+        resId = model.index(4, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 11);
 
@@ -401,8 +401,8 @@ private Q_SLOTS:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
         model.setReservationManager(nullptr);
@@ -411,13 +411,13 @@ private Q_SLOTS:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
+        QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // update splits element
         updateSpy.clear();
         insertSpy.clear();
-        auto resId = model.index(1, 0).data(TimelineModel::ReservationIdsRole).toStringList().value(0);
+        auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
         auto res = resMgr.reservation(resId).value<FlightReservation>();
         auto flight = res.reservationFor().value<Flight>();
@@ -467,25 +467,25 @@ private Q_SLOTS:
         model.setWeatherForecastManager(&weatherMgr);
 
         ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r0.model"));
-        vp0.setRoleFilter({TimelineModel::ReservationIdsRole});
+        vp0.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp0.verify(&model));
 
         // changing the day should move the today marker
         model.setCurrentDateTime(QDateTime({2196, 10, 15}, {0, 15}));
         ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r1.model"));
-        vp1.setRoleFilter({TimelineModel::ReservationIdsRole});
+        vp1.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp1.verify(&model));
 
         // load something to define the current location, so we get weather
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r2.model"));
-        vp2.setRoleFilter({TimelineModel::ReservationIdsRole});
+        vp2.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp2.verify(&model));
 
         // changing the day should move the today marker and weather one day forward
         model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
         ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r3.model"));
-        vp3.setRoleFilter({TimelineModel::ReservationIdsRole});
+        vp3.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp3.verify(&model));
     }
 
@@ -521,7 +521,7 @@ private Q_SLOTS:
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
-        vp.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        vp.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime

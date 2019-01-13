@@ -40,7 +40,7 @@ App.DetailsPage {
 
         App.TicketTokenDelegate {
             Kirigami.FormData.isSection: true
-            resIds: root.resIds
+            resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
         QQC2.Label {

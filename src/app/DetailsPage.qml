@@ -25,10 +25,10 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    /** One ore more ids of the reservations shown in this element. */
-    property var resIds
+    /** The reservation batch identifier (@see ReservationManager). */
+    property var batchId
     /** @deprecated */
-    readonly property var reservation: _reservationManager.reservation(root.resIds[0]);
+    readonly property var reservation: _reservationManager.reservation(batchId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var editor
@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onClicked: {
-                    _reservationManager.removeReservations(root.resIds);
+                    _reservationManager.removeBatch(root.batchId);
                     applicationWindow().pageStack.pop();
                 }
             }

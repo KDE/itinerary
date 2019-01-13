@@ -28,7 +28,7 @@ App.DetailsPage {
     title: i18n("Restaurant Reservation")
     editor: Component {
         App.RestaurantEditor {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

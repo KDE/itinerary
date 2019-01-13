@@ -71,7 +71,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.BusPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

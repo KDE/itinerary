@@ -52,7 +52,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.RestaurantPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

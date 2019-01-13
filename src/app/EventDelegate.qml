@@ -61,7 +61,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.EventPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

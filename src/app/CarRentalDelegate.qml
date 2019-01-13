@@ -71,7 +71,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.CarRentalPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

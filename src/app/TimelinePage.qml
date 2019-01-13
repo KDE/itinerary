@@ -41,56 +41,56 @@ Kirigami.ScrollablePage {
     Component {
         id: flightDelegate
         App.FlightDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: hotelDelegate
         App.HotelDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: trainDelegate
         App.TrainDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: busDelegate
         App.BusDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: restaurantDelegate
         App.RestaurantDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: touristAttractionDelegate
         App.TouristAttractionDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: eventDelegate
         App.EventDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }
     Component {
         id: carRentalDelegate
         App.CarRentalDelegate {
-            resIds: modelData.reservationIds
+            batchId: modelData.batchId
             rangeType: modelData.rangeType
         }
     }

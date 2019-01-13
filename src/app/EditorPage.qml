@@ -25,9 +25,9 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    property var resIds
-    readonly property string resId: resIds[0]
-    readonly property var reservation: _reservationManager.reservation(root.resId);
+    property var batchId
+    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
+    readonly property var reservation: _reservationManager.reservation(root.batchId);
 
     property alias dateTimeEditSheet: _dateTimeEditSheet
 
@@ -35,7 +35,7 @@ Kirigami.ScrollablePage {
         main: Kirigami.Action {
             iconName: "document-save"
             onTriggered: {
-                root.save(resId, reservation);
+                root.save(batchId, reservation);
                 pageStack.pop();
             }
         }

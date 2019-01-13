@@ -58,7 +58,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.HotelPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

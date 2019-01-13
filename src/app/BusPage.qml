@@ -41,7 +41,7 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             Kirigami.FormData.isSection: true
-            resIds: root.resIds
+            resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
         // departure data

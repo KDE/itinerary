@@ -24,12 +24,14 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    /** One ore more ids of the reservations shown in this element. */
-    property var resIds
+    /** Reservation batch identifier (@see _reservationManager). */
+    property var batchId
+    /** All reservations that are part of this patch. */
+    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
     /** A random reservation object, in case there's more than one.
      *  Use this only for accessing properties that will be the same for all travlers.
      */
-    readonly property var reservation: _reservationManager.reservation(root.resIds[0]);
+    readonly property var reservation: _reservationManager.reservation(root.batchId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType

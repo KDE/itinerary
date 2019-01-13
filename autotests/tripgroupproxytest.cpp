@@ -91,22 +91,22 @@ private Q_SLOTS:
         proxy.expand(addSpy.at(2).at(0).toString());
 
         ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r0.model"));
-        vp0.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp0.verify(&proxy));
 
         proxy.collapse(addSpy.at(0).at(0).toString());
         ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r1.model"));
-        vp1.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        vp1.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp1.verify(&proxy));
 
         proxy.collapse(addSpy.at(1).at(0).toString());
         ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r2.model"));
-        vp2.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp2.verify(&proxy));
 
         proxy.collapse(addSpy.at(2).at(0).toString());
         ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/expand-collapse-r3.model"));
-        vp3.setRoleFilter({TimelineModel::ReservationIdsRole, TimelineModel::TripGroupIdRole});
+        vp3.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp3.verify(&proxy));
 
         proxy.expand(addSpy.at(2).at(0).toString());

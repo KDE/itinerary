@@ -245,12 +245,6 @@ void ReservationManager::removeReservation(const QString& id)
     m_reservations.remove(id);
 }
 
-void ReservationManager::removeReservations(const QStringList& ids)
-{
-    for (const auto &id : ids)
-        removeReservation(id);
-}
-
 const std::vector<QString>& ReservationManager::batches() const
 {
     return m_batches;

@@ -24,7 +24,7 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
-    readonly property var touristAttraction: _reservationManager.reservation(root.resIds[0]).touristAttraction
+    readonly property var touristAttraction: _reservationManager.reservation(root.batchId).touristAttraction
 
     headerIconSource: "meeting-attending" // TODO better icon, e.g. something like 🎢?
     headerItem: RowLayout {
@@ -53,7 +53,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.TouristAttractionPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 

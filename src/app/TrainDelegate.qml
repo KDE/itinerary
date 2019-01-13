@@ -24,8 +24,8 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
-    property var arrival: _liveDataManager.arrival(resIds[0])
-    property var departure: _liveDataManager.departure(resIds[0])
+    property var arrival: _liveDataManager.arrival(batchId)
+    property var departure: _liveDataManager.departure(batchId)
 
     headerIconSource: "qrc:///images/train.svg"
     headerItem: RowLayout {
@@ -104,7 +104,7 @@ App.TimelineDelegate {
     Component {
         id: detailsComponent
         App.TrainPage {
-            resIds: root.resIds
+            batchId: root.batchId
         }
     }
 
