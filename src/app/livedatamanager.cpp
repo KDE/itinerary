@@ -78,10 +78,6 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
         m_reservations.push_back(resId);
     }
 
-    std::sort(m_reservations.begin(), m_reservations.end(), [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::isBefore(m_resMgr->reservation(lhs), m_resMgr->reservation(rhs));
-    });
-
     loadPublicTransportData();
     m_pollTimer.setInterval(nextPollTime());
 }
@@ -377,18 +373,18 @@ void LiveDataManager::storePublicTransportData(const QString &resId, const KPubl
 bool LiveDataManager::isRelevant(const QString &resId) const
 {
     const auto res = m_resMgr->reservation(resId);
-    if (!LocationUtil::isLocationChange(res)) { // we only care about transit reservations
+    // we only care about transit reservations
+    if (!JsonLd::canConvert<Reservation>(res) || !LocationUtil::isLocationChange(res)) {
         return false;
     }
-    if (SortUtil::endtDateTime(res) < QDateTime::currentDateTime().addDays(-1)) {
-        return false; // we don't care about past events
+    // we don't care about past events
+    if (hasArrived(resId, res)) {
+        return false;
     }
 
-    // we can only handle train trips and reservations with pkpass files so far
-    if (!JsonLd::canConvert<Reservation>(res)) {
-        return false;
-    }
-    return JsonLd::isA<TrainReservation>(res) || !JsonLd::convert<Reservation>(res).pkpassSerialNumber().isEmpty();
+    // TODO: we could discard non-train trips without a pkpass in their batch here?
+
+    return true;
 }
 
 void LiveDataManager::batchAdded(const QString &resId)
@@ -397,21 +393,31 @@ void LiveDataManager::batchAdded(const QString &resId)
         return;
     }
 
-    // TODO
+    m_reservations.push_back(resId);
+    m_pollTimer.setInterval(nextPollTime());
 }
 
 void LiveDataManager::batchChanged(const QString &resId)
 {
-    // TODO
+    const auto it = std::find(m_reservations.begin(), m_reservations.end(), resId);
+    const auto relevant = isRelevant(resId);
+
+    if (it == m_reservations.end() && relevant) {
+        m_reservations.push_back(resId);
+    } else {
+        m_reservations.erase(it);
+    }
+
+    m_pollTimer.setInterval(nextPollTime());
 }
 
 void LiveDataManager::batchRenamed(const QString &oldBatchId, const QString &newBatchId)
 {
-    // ### we can do this more efficiently
-    batchRemoved(oldBatchId);
-    batchAdded(newBatchId);
+    const auto it = std::find(m_reservations.begin(), m_reservations.end(), oldBatchId);
+    if (it != m_reservations.end()) {
+        *it = newBatchId;
+    }
 }
-
 
 void LiveDataManager::batchRemoved(const QString &resId)
 {
