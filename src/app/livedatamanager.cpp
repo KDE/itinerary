@@ -85,6 +85,7 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
+    connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &LiveDataManager::pkPassUpdated);
 }
 
 void LiveDataManager::setPollingEnabled(bool pollingEnabled)
@@ -553,6 +554,18 @@ QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const Q
     }
 
     return dt;
+}
+
+void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)
+{
+    Q_UNUSED(passId);
+    // ### to provide more context, we need to have a passId -> batchId map here eventually
+
+#ifdef HAVE_NOTIFICATIONS
+    KNotification::event(KNotification::Notification, i18n("Itinerary change"), changes.join(QLatin1Char('\n')), QLatin1String("clock"));
+#else
+    Q_UNUSED(changes);
+#endif
 }
 
 #include "moc_livedatamanager.cpp"
