@@ -73,20 +73,6 @@ bool ReservationManager::hasBatch(const QString &batchId) const
     return m_batchToResMap.contains(batchId);
 }
 
-QVector<QString> ReservationManager::reservations() const
-{
-    const auto base = reservationsBasePath();
-    QDir::root().mkpath(base);
-
-    QVector<QString> resIds;
-    for (QDirIterator it(base, QDir::NoDotAndDotDot | QDir::Files); it.hasNext();) {
-        it.next();
-        resIds.push_back(it.fileInfo().baseName());
-    }
-
-    return resIds;
-}
-
 QVariant ReservationManager::reservation(const QString& id) const
 {
     if (id.isEmpty()) {
