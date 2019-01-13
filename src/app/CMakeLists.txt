@@ -47,6 +47,7 @@ set(itinerary_app_srcs
     ${qml_srcs}
     brightnessmanager.cpp
     livedatamanager.cpp
+    journeyquerycontroller.cpp
 )
 if (ANDROID)
     list(APPEND itinerary_app_srcs androidbrightnessbackend.cpp)

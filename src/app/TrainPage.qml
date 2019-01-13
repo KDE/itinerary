@@ -29,6 +29,28 @@ App.DetailsPage {
     property var arrival: _liveDataManager.arrival(batchId)
     property var departure: _liveDataManager.departure(batchId)
 
+    Component {
+        id: alternativePage
+        App.TrainJourneyQueryPage {
+            batchId: root.batchId
+        }
+    }
+
+    Component {
+        id: alternativeAction
+        Kirigami.Action {
+            text: i18n("Alternatives")
+            iconName: "clock"
+            onTriggered: {
+                applicationWindow().pageStack.push(alternativePage);
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        actions.contextualActions.push(alternativeAction.createObject(root));
+    }
+
     Kirigami.FormLayout {
         width: root.width
         Component.onCompleted: Util.fixFormLayoutTouchTransparency(this)

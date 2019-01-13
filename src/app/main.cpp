@@ -22,6 +22,7 @@
 #include "brightnessmanager.h"
 #include "countryinformation.h"
 #include "countrymodel.h"
+#include "journeyquerycontroller.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "pkpassmanager.h"
@@ -39,6 +40,9 @@
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/Ticket>
+
+#include <KPublicTransport/Journey>
+#include <KPublicTransport/Line>
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
@@ -143,6 +147,9 @@ int main(int argc, char **argv)
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
     QObject::connect(&settings, &Settings::allowInsecureServicesChanged, &liveDataMgr, &LiveDataManager::setAllowInsecureServices);
 
+    JourneyQueryController journeyQueryController;
+    journeyQueryController.setReservationManager(&resMgr);
+
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
@@ -178,6 +185,9 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
 
+    qmlRegisterUncreatableType<KPublicTransport::Line>("org.kde.kpublictransport", 1, 0, "Line", {});
+    qmlRegisterUncreatableType<KPublicTransport::JourneySection>("org.kde.kpublictransport", 1, 0, "JourneySection", {});
+
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
@@ -205,6 +215,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
+    engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryController"), &journeyQueryController);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());
