@@ -57,6 +57,8 @@ LiveDataManager::LiveDataManager(QObject *parent)
 
     m_pollTimer.setSingleShot(true);
     connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
+
+    loadPublicTransportData();
 }
 
 LiveDataManager::~LiveDataManager() = default;
@@ -78,7 +80,6 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
         m_reservations.push_back(resId);
     }
 
-    loadPublicTransportData();
     m_pollTimer.setInterval(nextPollTime());
 }
 
@@ -344,16 +345,13 @@ void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QStri
     while (it.hasNext()) {
         it.next();
         const auto resId = it.fileInfo().baseName();
-        if (std::find(m_reservations.begin(), m_reservations.end(), resId) == m_reservations.end()) {
-            QDir(it.path()).remove(it.fileName());
-        } else {
-            QFile f(it.filePath());
-            if (!f.open(QFile::ReadOnly)) {
-                qCWarning(Log) << "Failed to load public transport file" << f.fileName() << f.errorString();
-                continue;
-            }
-            data.insert(resId, {KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()), f.fileTime(QFile::FileModificationTime)});
+
+        QFile f(it.filePath());
+        if (!f.open(QFile::ReadOnly)) {
+            qCWarning(Log) << "Failed to load public transport file" << f.fileName() << f.errorString();
+            continue;
         }
+        data.insert(resId, {KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()), f.fileTime(QFile::FileModificationTime)});
     }
 }
 
