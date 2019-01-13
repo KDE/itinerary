@@ -464,10 +464,6 @@ void LiveDataManager::pollForUpdates(bool force)
             checkTrainTrip(res, batchId);
         }
 
-        // TODO we need poll time computation for pkpass files first before removing this!
-        if (!force)
-            continue;
-
         // check for pkpass updates, for each element in this batch
         const auto resIds = m_resMgr->reservationsForBatch(batchId);
         for (const auto &resId : resIds) {
@@ -522,7 +518,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
 
     // check last poll time for this reservation
     const auto lastArrivalPoll = m_arrivals.value(resId).timestamp;
-    const auto lastDeparturePoll = m_departures.value(resId).timestamp;
+    const auto lastDeparturePoll = lastDeparturePollTime(resId, res);
     auto lastRelevantPoll = lastArrivalPoll;
     // ignore departure if we have already departed
     if (!hasDeparted(resId, res) && lastDeparturePoll.isValid()) {
@@ -534,6 +530,29 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
         ? (24 * 3600) // no poll yet == long time ago
         : lastRelevantPoll.secsTo(now);
     return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs
+}
+
+QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const QVariant &res) const
+{
+    auto dt = m_departures.value(batchId).timestamp;
+    if (dt.isValid()) {
+        return dt;
+    }
+
+    // check for pkpass updates
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto passId = m_pkPassMgr->passId(res);
+        if (!passId.isEmpty()) {
+            dt = m_pkPassMgr->updateTime(passId);
+        }
+        if (dt.isValid()) {
+            return dt;
+        }
+    }
+
+    return dt;
 }
 
 #include "moc_livedatamanager.cpp"

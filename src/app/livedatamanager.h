@@ -102,6 +102,9 @@ private:
     int nextPollTime() const;
     int nextPollTimeForReservation(const QString &resId) const;
 
+    /** Last time we queried any kind of departure information for this reservation batch. */
+    QDateTime lastDeparturePollTime(const QString &batchId, const QVariant &res) const;
+
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;
     std::unique_ptr<KPublicTransport::Manager> m_ptMgr;

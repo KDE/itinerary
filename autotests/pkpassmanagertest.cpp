@@ -43,7 +43,7 @@ private Q_SLOTS:
     {
         PkPassManager mgr;
         clearPasses(&mgr);
-        const auto now = QDateTime::currentDateTime();
+        const auto now = QDateTime::currentDateTime().addSecs(-1);
 
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QVERIFY(addSpy.isValid());
