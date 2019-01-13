@@ -302,32 +302,38 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     emit departureUpdated(resId);
 }
 
-bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) const
+QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
-    const auto now = QDateTime::currentDateTime();
-
     if (JsonLd::isA<TrainTrip>(res)) {
         const auto &dep = m_departures.value(resId).change;
         if (dep.hasExpectedDepartureTime()) {
-            return dep.expectedDepartureTime() < now;
+            return dep.expectedDepartureTime();
         }
     }
 
-    return SortUtil::startDateTime(res) < now;
+    return SortUtil::startDateTime(res);
+}
+
+QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res) const
+{
+    if (JsonLd::isA<TrainTrip>(res)) {
+        const auto &arr = m_arrivals.value(resId).change;
+        if (arr.hasExpectedArrivalTime()) {
+            return arr.expectedArrivalTime();
+        }
+    }
+
+    return SortUtil::endtDateTime(res);
+}
+
+bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) const
+{
+    return departureTime(resId, res) < QDateTime::currentDateTime();
 }
 
 bool LiveDataManager::hasArrived(const QString &resId, const QVariant &res) const
 {
-    const auto now = QDateTime::currentDateTime();
-
-    if (JsonLd::isA<TrainTrip>(res)) {
-        const auto &arr = m_arrivals.value(resId).change;
-        if (arr.hasExpectedArrivalTime()) {
-            return arr.expectedArrivalTime() < now;
-        }
-    }
-
-    return SortUtil::endtDateTime(res) < now;
+    return arrivalTime(resId, res) < QDateTime::currentDateTime();
 }
 
 void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange> &data) const
@@ -499,15 +505,13 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
     const auto res = m_resMgr->reservation(resId);
 
     const auto now = QDateTime::currentDateTime();
-    auto dist = now.secsTo(SortUtil::startDateTime(res));
+    auto dist = now.secsTo(departureTime(resId, res));
     if (dist < 0) {
-        dist = now.secsTo(SortUtil::endtDateTime(res));
+        dist = now.secsTo(arrivalTime(resId, res));
     }
     if (dist < 0) {
         return std::numeric_limits<int>::max();
     }
-
-    // TODO consider delayed but still pending departures/arrivals too
 
     const auto it = std::lower_bound(std::begin(pollIntervalTable), std::end(pollIntervalTable), dist, [](const auto &lhs, const auto rhs) {
         return lhs.distance < rhs;
