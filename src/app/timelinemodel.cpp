@@ -106,11 +106,11 @@ TimelineModel::Element::Element(TimelineModel::ElementType type, const QDateTime
 }
 
 TimelineModel::Element::Element(const QString& resId, const QVariant& res, RangeType rt)
-    : dt(relevantDateTime(res, rt))
+    : batchId(resId)
+    , dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
 {
-    ids.push_back(resId);
 }
 
 TimelineModel::TimelineModel(QObject *parent)
@@ -129,9 +129,11 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     // for auto tests only
     if (Q_UNLIKELY(!mgr)) {
         beginResetModel();
-        disconnect(m_resMgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
-        disconnect(m_resMgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
-        disconnect(m_resMgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
+        disconnect(m_resMgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
+        disconnect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
+        disconnect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
+        disconnect(m_resMgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
+        disconnect(m_resMgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
         m_resMgr = mgr;
         m_elements.clear();
         endResetModel();
@@ -140,7 +142,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
 
     beginResetModel();
     m_resMgr = mgr;
-    for (const auto &resId : mgr->reservations()) {
+    for (const auto &resId : mgr->batches()) {
         const auto res = m_resMgr->reservation(resId);
         if (needsSplitting(res)) {
             m_elements.push_back(Element{resId, res, RangeBegin});
@@ -152,43 +154,11 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     m_elements.push_back(Element{TodayMarker, QDateTime(today(), QTime(0, 0))});
     std::sort(m_elements.begin(), m_elements.end(), elementLessThan);
 
-    // merge multi-traveler elements
-    QDateTime prevDt;
-    for (auto it = m_elements.begin(); it != m_elements.end();) {
-        if ((*it).dt != prevDt || !prevDt.isValid()) {
-            prevDt = (*it).dt;
-            ++it;
-            continue;
-        }
-        prevDt = (*it).dt;
-        auto prevIt = it - 1;
-
-        if ((*prevIt).rangeType != (*it).rangeType || (*prevIt).elementType != (*it).elementType || (*prevIt).ids.isEmpty() || (*it).ids.isEmpty()) {
-            ++it;
-            continue;
-        }
-
-        const auto prevRes = m_resMgr->reservation((*prevIt).ids.at(0));
-        const auto curRes = m_resMgr->reservation((*it).ids.at(0));
-        if (prevRes.isNull() || curRes.isNull() || prevRes.userType() != curRes.userType() || !JsonLd::canConvert<Reservation>(prevRes)) {
-            ++it;
-            continue;
-        }
-
-        const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
-        const auto curTrip = JsonLd::convert<Reservation>(curRes).reservationFor();
-        if (MergeUtil::isSame(prevTrip, curTrip)) {
-            Q_ASSERT((*it).ids.size() == 1);
-            (*prevIt).ids.push_back((*it).ids.at(0));
-            it = m_elements.erase(it);
-        } else {
-            ++it;
-        }
-    }
-
-    connect(mgr, &ReservationManager::reservationAdded, this, &TimelineModel::reservationAdded);
-    connect(mgr, &ReservationManager::reservationUpdated, this, &TimelineModel::reservationUpdated);
-    connect(mgr, &ReservationManager::reservationRemoved, this, &TimelineModel::reservationRemoved);
+    connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
+    connect(mgr, &ReservationManager::batchChanged, this, &TimelineModel::batchChanged);
+    connect(mgr, &ReservationManager::batchContentChanged, this, &TimelineModel::batchChanged);
+    connect(mgr, &ReservationManager::batchRenamed, this, &TimelineModel::batchRenamed);
+    connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
     endResetModel();
 
     updateInformationElements();
@@ -251,7 +221,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
         }
         case ReservationIdsRole:
-            return elem.ids;
+            return m_resMgr->reservationsForBatch(elem.batchId);
         case ElementTypeRole:
             return elem.elementType;
         case TodayEmptyRole:
@@ -273,10 +243,12 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             break;
         case ReservationsRole:
         {
+            const auto resIds = m_resMgr->reservationsForBatch(elem.batchId);
             QVector<QVariant> v;
-            v.reserve(elem.ids.size());
-            for (const auto &resId : elem.ids)
+            v.reserve(resIds.size());
+            for (const auto &resId : resIds) {
                 v.push_back(m_resMgr->reservation(resId));
+            }
             std::sort(v.begin(), v.end(), SortUtil::isBefore);
             return QVariant::fromValue(v);
         }
@@ -324,7 +296,7 @@ bool TimelineModel::elementLessThan(const TimelineModel::Element &lhs, const Tim
     return lhs.dt < rhs.dt;
 }
 
-void TimelineModel::reservationAdded(const QString &resId)
+void TimelineModel::batchAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
@@ -343,27 +315,12 @@ void TimelineModel::insertElement(Element &&elem)
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem, elementLessThan);
     const auto row = std::distance(m_elements.begin(), it);
 
-    // check if we can merge with an existing element
-    if (it != m_elements.end() && (*it).dt == elem.dt && elem.ids.size() == 1 && (*it).elementType == elem.elementType && (*it).rangeType == elem.rangeType && !(*it).ids.isEmpty()) {
-        const auto prevRes = m_resMgr->reservation((*it).ids.at(0));
-        const auto curRes = m_resMgr->reservation(elem.ids.at(0));
-        if (prevRes.userType() == curRes.userType() && !prevRes.isNull() && !curRes.isNull() && JsonLd::canConvert<Reservation>(prevRes)) {
-            const auto prevTrip = JsonLd::convert<Reservation>(prevRes).reservationFor();
-            const auto curTrip = JsonLd::convert<Reservation>(curRes).reservationFor();
-            if (MergeUtil::isSame(prevTrip, curTrip)) {
-                (*it).ids.push_back(elem.ids.at(0));
-                emit dataChanged(index(row, 0), index(row, 0));
-                return;
-            }
-        }
-    }
-
     beginInsertRows({}, row, row);
     m_elements.insert(it, std::move(elem));
     endInsertRows();
 }
 
-void TimelineModel::reservationUpdated(const QString &resId)
+void TimelineModel::batchChanged(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
@@ -376,54 +333,59 @@ void TimelineModel::reservationUpdated(const QString &resId)
     updateInformationElements();
 }
 
+void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
+{
+    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+        if ((*it).batchId != oldBatchId) {
+            continue;
+        }
+
+        (*it).batchId = newBatchId;
+        const auto idx = index(std::distance(m_elements.begin(), it), 0);
+        emit dataChanged(idx, idx);
+
+        if ((*it).rangeType == SelfContained || (*it).rangeType == RangeEnd) {
+            break;
+        }
+    }
+}
+
 void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineModel::RangeType rangeType)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const Element &e) { return e.ids.contains(resId) && e.rangeType == rangeType; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const Element &e) { return e.batchId == resId && e.rangeType == rangeType; });
     if (it == m_elements.end()) {
         return;
     }
     const auto row = std::distance(m_elements.begin(), it);
     const auto newDt = relevantDateTime(res, rangeType);
-    const auto isMulti = (*it).ids.size() > 1;
 
     if ((*it).dt != newDt) {
         // element moved
-        if (isMulti) {
-            (*it).ids.removeAll(resId);
-            emit dataChanged(index(row, 0), index(row, 0));
-        } else {
-            beginRemoveRows({}, row, row);
-            m_elements.erase(it);
-            endRemoveRows();
-        }
+        beginRemoveRows({}, row, row);
+        m_elements.erase(it);
+        endRemoveRows();
         insertElement(Element{resId, res, rangeType});
     } else {
         emit dataChanged(index(row, 0), index(row, 0));
     }
 }
 
-void TimelineModel::reservationRemoved(const QString &resId)
+void TimelineModel::batchRemoved(const QString &resId)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const Element &e) { return e.ids.contains(resId); });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const Element &e) { return e.batchId == resId; });
     if (it == m_elements.end()) {
         return;
     }
     const auto isSplit = (*it).rangeType == RangeBegin;
     const auto row = std::distance(m_elements.begin(), it);
-    const auto isMulti = (*it).ids.size() > 1;
 
-    if (isMulti) {
-        (*it).ids.removeAll(resId);
-        emit dataChanged(index(row, 0), index(row, 0));
-    } else {
-        beginRemoveRows({}, row, row);
-        m_elements.erase(it);
-        endRemoveRows();
-        emit todayRowChanged();
-    }
+    beginRemoveRows({}, row, row);
+    m_elements.erase(it);
+    endRemoveRows();
+    emit todayRowChanged();
 
     if (isSplit) {
-        reservationRemoved(resId);
+        batchRemoved(resId);
     }
 
     updateInformationElements();
@@ -481,7 +443,7 @@ void TimelineModel::updateInformationElements()
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).ids.value(0))));
+        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).batchId)));
         if (newCountry == previousCountry) {
             continue;
         }
@@ -542,7 +504,7 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
-        const auto res = m_resMgr->reservation((*it).ids.value(0));
+        const auto res = m_resMgr->reservation((*it).batchId);
         const auto newGeo = geoCoordinate(res);
         if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
             geo = newGeo;
@@ -569,7 +531,7 @@ void TimelineModel::updateWeatherElements()
             }
 
             // track where we are
-            const auto res = m_resMgr->reservation((*it).ids.value(0));
+            const auto res = m_resMgr->reservation((*it).batchId);
             const auto newGeo = geoCoordinate(res);
             if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
                 geo = newGeo;
@@ -588,7 +550,7 @@ void TimelineModel::updateWeatherElements()
             if ((*it2).dt >= endTime) {
                 break;
             }
-            const auto res = m_resMgr->reservation((*it2).ids.value(0));
+            const auto res = m_resMgr->reservation((*it2).batchId);
             if (LocationUtil::isLocationChange(res)) {
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, relevantDateTime(res, RangeBegin));
@@ -712,5 +674,5 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
 
 void TimelineModel::dataChangedForReservation(const QString &resId)
 {
-    reservationUpdated(resId); // ### this could be done a bit more efficient, as we know this isn't called for time changes
+    batchChanged(resId); // ### this could be done a bit more efficient, as we know this isn't called for time changes
 }

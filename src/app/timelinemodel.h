@@ -107,7 +107,7 @@ private:
         explicit Element(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
         explicit Element(const QString &resId, const QVariant &res, RangeType rt);
 
-        QStringList ids; // reservation ids (multiple entries in case of mult-traveller merging), QStringList as we need QML compatibility...
+        QString batchId; // reservation batch id
         QVariant content; // non-reservation content
         QDateTime dt; // relevant date/time
         ElementType elementType;
@@ -116,11 +116,12 @@ private:
 
     static bool elementLessThan(const Element &lhs, const Element &rhs);
 
-    void reservationAdded(const QString &resId);
+    void batchAdded(const QString &resId);
     void insertElement(Element &&elem);
-    void reservationUpdated(const QString &resId);
+    void batchChanged(const QString &resId);
     void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
-    void reservationRemoved(const QString &resId);
+    void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
+    void batchRemoved(const QString &resId);
 
     void tripGroupAdded(const QString &groupId);
     void tripGroupChanged(const QString &groupId);

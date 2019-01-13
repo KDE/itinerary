@@ -226,10 +226,12 @@ void ReservationManager::addReservation(const QVariant &res)
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
 {
+    const auto oldRes = reservation(resId);
+
     storeReservation(resId, res);
     emit reservationUpdated(resId);
 
-    updateBatch(resId, res);
+    updateBatch(resId, res, oldRes);
 }
 
 void ReservationManager::storeReservation(const QString &resId, const QVariant &res) const
@@ -387,25 +389,25 @@ void ReservationManager::initialBatchCreate()
         it.next();
         const auto resId = it.fileInfo().baseName();
         const auto res = reservation(resId);
-        updateBatch(resId, res);
+        updateBatch(resId, res, res);
     }
 }
 
-void ReservationManager::updateBatch(const QString &resId, const QVariant &res)
+void ReservationManager::updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes)
 {
     const auto oldBatchId = batchForReservation(resId);
     QString newBatchId;
 
     // find the destination batch
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), res, [this](const auto &lhs, const auto &rhs) {
+    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), newRes, [this](const auto &lhs, const auto &rhs) {
         return SortUtil::startDateTime(reservation(lhs)) < SortUtil::startDateTime(rhs);
     });
     for (auto it = beginIt; it != m_batches.end(); ++it) {
-        const auto otherRes = reservation(*it);
-        if (SortUtil::startDateTime(otherRes) != SortUtil::startDateTime(res)) {
+        const auto otherRes = (resId == (*it)) ? oldRes : reservation(*it);
+        if (SortUtil::startDateTime(otherRes) != SortUtil::startDateTime(newRes)) {
             break; // no hit
         }
-        if (isSameTrip(res, otherRes)) {
+        if (isSameTrip(newRes, otherRes)) {
             newBatchId = *it;
             break;
         }
@@ -426,10 +428,10 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &res)
     if (newBatchId.isEmpty()) {
         // we are starting a new batch
         // re-run search for insertion point, could be invalid due to the above deletions
-        const auto it = std::lower_bound(m_batches.begin(), m_batches.end(), res, [this](const auto &lhs, const auto &rhs) {
+        const auto it = std::lower_bound(m_batches.begin(), m_batches.end(), newRes, [this](const auto &lhs, const auto &rhs) {
             return SortUtil::startDateTime(reservation(lhs)) < SortUtil::startDateTime(rhs);
         });
-        m_batches.insert(it, resId);
+        m_batches.insert(it, QString(resId));
         m_batchToResMap.insert(resId, {resId});
         m_resToBatchMap.insert(resId, resId);
         emit batchAdded(resId);

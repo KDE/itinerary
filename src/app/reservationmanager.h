@@ -97,7 +97,7 @@ private:
     void storeBatch(const QString &batchId) const;
     void storeRemoveBatch(const QString &batchId) const;
 
-    void updateBatch(const QString &resId, const QVariant &res);
+    void updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes);
     void removeFromBatch(const QString &resId, const QString &batchId);
 
     mutable QHash<QString, QVariant> m_reservations;
