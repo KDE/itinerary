@@ -173,7 +173,18 @@ Kirigami.ScrollablePage {
         clip: true
         delegate: journeyDelegate
         model: _journeyQueryController.journeys
-    }
 
-    // TODO loading state, error message display
+        QQC2.BusyIndicator {
+            anchors.centerIn: parent
+            running: _journeyQueryController.loading
+        }
+
+        QQC2.Label {
+            anchors.centerIn: parent
+            width: parent.width
+            text: _journeyQueryController.errorMessage
+            color: Kirigami.Theme.negativeTextColor
+            wrapMode: Text.Wrap
+        }
+    }
 }
