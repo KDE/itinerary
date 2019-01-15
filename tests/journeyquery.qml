@@ -137,7 +137,7 @@ Kirigami.ApplicationWindow {
                 Rectangle {
                     id: colorBar
                     width: Kirigami.Units.largeSpacing
-                    color: modelData.route.line.color
+                    color: modelData.route.line.hasColor ? modelData.route.line.color : "transparent"
                     Layout.fillHeight: true
                 }
 

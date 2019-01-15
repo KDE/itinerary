@@ -32,8 +32,12 @@ class Line
     Q_PROPERTY(QString name READ name WRITE setName)
     /** Color of the line. */
     Q_PROPERTY(QColor color READ color WRITE setColor)
+    /** @c true if a line color is set. */
+    Q_PROPERTY(bool hasColor READ hasColor STORED false)
     /** Text color to use on top of the line color. */
     Q_PROPERTY(QColor textColor READ textColor WRITE setTextColor)
+    /** @c true if a text color is set. */
+    Q_PROPERTY(bool hasTextColor READ hasTextColor STORED false)
     /** Type of transport. */
     Q_PROPERTY(Mode mode READ mode WRITE setMode)
     /** Human readable representation of the type of transport.
@@ -47,8 +51,10 @@ public:
     void setName(const QString &name);
     QColor color() const;
     void setColor(const QColor &color);
+    bool hasColor() const;
     QColor textColor() const;
     void setTextColor(const QColor &textColor);
+    bool hasTextColor() const;
 
     enum Mode { // ### direct copy from Navitia, we maybe can reduce that a bit
         Unknown,

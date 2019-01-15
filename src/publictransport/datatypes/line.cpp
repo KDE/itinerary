@@ -88,6 +88,11 @@ void Line::setColor(const QColor &color)
     d->color = color;
 }
 
+bool Line::hasColor() const
+{
+    return d->color.isValid();
+}
+
 QColor Line::textColor() const
 {
     return d->textColor;
@@ -97,6 +102,11 @@ void Line::setTextColor(const QColor &textColor)
 {
     d.detach();
     d->textColor = textColor;
+}
+
+bool Line::hasTextColor() const
+{
+    return d->textColor.isValid();
 }
 
 Line::Mode Line::mode() const
