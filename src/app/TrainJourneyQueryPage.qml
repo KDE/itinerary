@@ -20,6 +20,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.kpublictransport 1.0
+import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ScrollablePage {
@@ -52,7 +53,7 @@ Kirigami.ScrollablePage {
                 Rectangle {
                     id: colorBar
                     width: Kirigami.Units.largeSpacing
-                    color: modelData.route.line.color
+                    color: modelData.route.line.hasColor ? modelData.route.line.color : "transparent"
                     Layout.fillHeight: true
                 }
 
@@ -155,20 +156,58 @@ Kirigami.ScrollablePage {
     Component {
         id: journeyDelegate
         Kirigami.Card {
+            id: top
             property var journey: modelData
-            header: Text { text: journey.scheduledDepartureTime } // TODO proper header
-            // TODO collapse sections by default, only expand current element
-            contentItem: ListView {
-                delegate: sectionDelegate
-                model: journey.sections
-                implicitHeight: contentHeight
-                spacing: Kirigami.Units.smallSpacing
+
+            header: Rectangle {
+                id: headerBackground
+                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                Kirigami.Theme.inherit: false
+                color: Kirigami.Theme.backgroundColor
+                implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+                anchors.leftMargin: -root.leftPadding
+                anchors.topMargin: -root.topPadding
+                anchors.rightMargin: -root.rightPadding
+
+                RowLayout {
+                    id: headerLayout
+                    anchors.fill: parent
+                    anchors.margins: Kirigami.Units.largeSpacing
+
+                    QQC2.Label {
+                        text: Localizer.formatTime(journey, "scheduledDepartureTime")
+                        Layout.fillWidth: true
+                    }
+
+                    QQC2.Label {
+                        text: displayDuration(journey.duration)
+                    }
+                }
             }
+
+            contentItem: ColumnLayout {
+                ListView {
+                    delegate: sectionDelegate
+                    model: journeyView.currentIndex == index ? journey.sections : 0
+                    implicitHeight: contentHeight
+                    spacing: Kirigami.Units.smallSpacing
+                    boundsBehavior: Flickable.StopAtBounds
+                }
+                QQC2.Label {
+                    text: i18np("One change", "%1 changes", journey.numberOfChanges)
+                    visible: journeyView.currentIndex != index
+                }
+            }
+
             // TODO add actions to update to this alternative
+            onClicked: {
+                journeyView.currentIndex = index;
+            }
         }
     }
 
     Kirigami.CardsListView {
+        id: journeyView
         anchors.fill: parent
         clip: true
         delegate: journeyDelegate
