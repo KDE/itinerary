@@ -26,13 +26,10 @@ class QVariant;
  *  Works around JS losing timezone information, ie. we need
  *  to do this without passing the date/time values through JS.
  */
-class Localizer : public QObject
+class Localizer
 {
-    Q_OBJECT
+    Q_GADGET
 public:
-    explicit Localizer(QObject *parent = nullptr);
-    ~Localizer();
-
     Q_INVOKABLE QString countryName(const QString &isoCode) const;
     Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;

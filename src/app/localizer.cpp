@@ -21,19 +21,13 @@
 #include <KItinerary/Place>
 
 #include <KContacts/Address>
+#include <KFormat>
 
 #include <QDateTime>
 #include <QLocale>
 #include <QTimeZone>
 
 using namespace KItinerary;
-
-Localizer::Localizer(QObject *parent)
-    : QObject(parent)
-{
-}
-
-Localizer::~Localizer() = default;
 
 QString Localizer::countryName(const QString& isoCode) const
 {
