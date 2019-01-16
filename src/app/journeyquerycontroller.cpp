@@ -18,6 +18,7 @@
 #include "journeyquerycontroller.h"
 #include "logging.h"
 #include "reservationmanager.h"
+#include "publictransport.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
@@ -62,21 +63,6 @@ QVariantList JourneyQueryController::journeys() const
     return l;
 }
 
-static KPublicTransport::Location locationFromStation(const TrainStation &station) // TODO share with livedatamanager!!
-{
-    using namespace KPublicTransport;
-    Location loc;
-    loc.setName(station.name());
-    loc.setCoordinate(station.geo().latitude(), station.geo().longitude());
-    if (!station.identifier().isEmpty()) {
-        const auto idSplit = station.identifier().split(QLatin1Char(':'));
-        if (idSplit.size() == 2) {
-            loc.setIdentifier(idSplit.at(0), idSplit.at(1));
-        }
-    }
-    return loc;
-}
-
 void JourneyQueryController::queryJourney(const QString &batchId)
 {
     qDebug() << batchId;
@@ -93,8 +79,8 @@ void JourneyQueryController::queryJourney(const QString &batchId)
     m_isLoading = true;
     emit loadingChanged();
 
-    const auto from = locationFromStation(trip.departureStation());
-    const auto to = locationFromStation(trip.arrivalStation());
+    const auto from = PublicTransport::locationFromStation(trip.departureStation());
+    const auto to = PublicTransport::locationFromStation(trip.arrivalStation());
     // TODO consider scheduled time, if in the future
     auto reply = m_ptMgr->queryJourney({from, to});
     QObject::connect(reply, &KPublicTransport::JourneyReply::finished, [reply, this]{

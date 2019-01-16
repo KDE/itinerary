@@ -48,6 +48,7 @@ set(itinerary_app_srcs
     brightnessmanager.cpp
     livedatamanager.cpp
     journeyquerycontroller.cpp
+    publictransport.cpp
 )
 if (ANDROID)
     list(APPEND itinerary_app_srcs androidbrightnessbackend.cpp)
@@ -81,6 +82,7 @@ if (ANDROID)
 
     kirigami_package_breeze_icons(ICONS
         checkmark
+        clock
         dialog-cancel
         document-edit
         document-open

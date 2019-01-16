@@ -21,6 +21,7 @@
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "publictransport.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
@@ -136,21 +137,6 @@ static bool isSameLine(const QString &lineName, const QString &trainName, const 
     return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
 }
 
-static KPublicTransport::Location locationFromStation(const TrainStation &station)
-{
-    using namespace KPublicTransport;
-    Location loc;
-    loc.setName(station.name());
-    loc.setCoordinate(station.geo().latitude(), station.geo().longitude());
-    if (!station.identifier().isEmpty()) {
-        const auto idSplit = station.identifier().split(QLatin1Char(':'));
-        if (idSplit.size() == 2) {
-            loc.setIdentifier(idSplit.at(0), idSplit.at(1));
-        }
-    }
-    return loc;
-}
-
 void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 {
     Q_ASSERT(JsonLd::isA<TrainReservation>(res));
@@ -160,7 +146,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
     using namespace KPublicTransport;
 
     if (!hasDeparted(resId, res)) {
-        DepartureRequest req(locationFromStation(trip.departureStation()));
+        DepartureRequest req(PublicTransport::locationFromStation(trip.departureStation()));
         req.setDateTime(trip.departureTime());
         auto reply = m_ptMgr->queryDeparture(req);
         connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
@@ -183,7 +169,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
     }
 
     if (!hasArrived(resId, res)) {
-        DepartureRequest req(locationFromStation(trip.arrivalStation()));
+        DepartureRequest req(PublicTransport::locationFromStation(trip.arrivalStation()));
         req.setMode(DepartureRequest::QueryArrival);
         req.setDateTime(trip.arrivalTime());
         auto reply = m_ptMgr->queryDeparture(req);
