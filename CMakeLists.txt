@@ -22,7 +22,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_ver
 # build-time dependencies
 find_package(Qt5 5.10 REQUIRED COMPONENTS Test Quick)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
-find_package(KF5 REQUIRED COMPONENTS I18n)
+find_package(KF5 REQUIRED COMPONENTS I18n CoreAddons)
 find_package(KF5Holidays 5.49.0 CONFIG QUIET)
 find_package(KF5Notifications 5.49.0 CONFIG QUIET)
 find_package(KF5Contacts CONFIG REQUIRED)

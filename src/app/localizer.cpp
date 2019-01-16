@@ -94,3 +94,8 @@ QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyNa
     }
     return s;
 }
+
+QString Localizer::formatDuration(int seconds) const
+{
+    return KFormat().formatDuration(seconds * 1000, KFormat::HideSeconds);
+}

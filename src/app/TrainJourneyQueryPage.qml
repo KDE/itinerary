@@ -31,16 +31,6 @@ Kirigami.ScrollablePage {
 
     Component.onCompleted: _journeyQueryController.queryJourney(batchId);
 
-    // TODO localize and move to C++
-    function displayDuration(dur)
-    {
-        if (dur < 60)
-            return "<1min";
-        if (dur < 3600)
-            return Math.floor(dur/60) + "min";
-        return Math.floor(dur/3600) + ":" + Math.floor((dur % 3600)/60)
-    }
-
     Component {
         id: sectionDelegate
         Item {
@@ -118,13 +108,13 @@ Kirigami.ScrollablePage {
                         text: {
                             switch (modelData.mode) {
                             case JourneySection.PublicTransport:
-                                return modelData.route.line.modeString + " " + modelData.route.line.name + " " + displayDuration(modelData.duration);
+                                return modelData.route.line.modeString + " " + modelData.route.line.name + " " + Localizer.formatDuration(modelData.duration);
                             case JourneySection.Walking:
-                                return "Walk " + displayDuration(modelData.duration)
+                                return "Walk " + Localizer.formatDuration(modelData.duration)
                             case JourneySection.Transfer:
-                                return "Transfer " + displayDuration(modelData.duration)
+                                return "Transfer " + Localizer.formatDuration(modelData.duration)
                             case JourneySection.Waiting:
-                                return "Wait " + displayDuration(modelData.duration)
+                                return "Wait " + Localizer.formatDuration(modelData.duration)
                             return "???";
                         }}
                     }
@@ -180,7 +170,7 @@ Kirigami.ScrollablePage {
                     }
 
                     QQC2.Label {
-                        text: displayDuration(journey.duration)
+                        text: Localizer.formatDuration(journey.duration)
                     }
                 }
             }

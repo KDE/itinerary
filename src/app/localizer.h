@@ -37,6 +37,7 @@ public:
     Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;
+    Q_INVOKABLE QString formatDuration(int seconds) const;
 };
 
 #endif // LOCALIZER_H
