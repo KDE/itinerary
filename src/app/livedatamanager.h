@@ -25,7 +25,6 @@
 #include <QObject>
 #include <QTimer>
 
-#include <memory>
 #include <vector>
 
 namespace KItinerary {
@@ -50,9 +49,9 @@ public:
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
+    void setPublicTransportManager(KPublicTransport::Manager *mgr);
 
     void setPollingEnabled(bool pollingEnabled);
-    void setAllowInsecureServices(bool allowInsecure);
 
     Q_INVOKABLE QVariant arrival(const QString &resId);
     Q_INVOKABLE QVariant departure(const QString &resId);
@@ -110,7 +109,7 @@ private:
 
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;
-    std::unique_ptr<KPublicTransport::Manager> m_ptMgr;
+    KPublicTransport::Manager *m_ptMgr;
     std::vector<QString> m_reservations;
     QHash <QString, TrainChange> m_arrivals;
     QHash <QString, TrainChange> m_departures;

@@ -21,7 +21,6 @@
 #include <QObject>
 #include <QString>
 
-#include <memory>
 #include <vector>
 
 namespace KPublicTransport {
@@ -44,6 +43,7 @@ public:
     ~JourneyQueryController();
 
     void setReservationManager(ReservationManager *mgr);
+    void setPublicTransportManager(KPublicTransport::Manager *mgr);
 
     Q_INVOKABLE void queryJourney(const QString &batchId);
 
@@ -58,7 +58,7 @@ Q_SIGNALS:
 
 private:
     ReservationManager *m_resMgr;
-    std::unique_ptr<KPublicTransport::Manager> m_ptMgr; // TODO share with LiveDataManager!
+    KPublicTransport::Manager *m_ptMgr;
     bool m_isLoading = false;
     QString m_errorMsg;
     std::vector<KPublicTransport::Journey> m_journeys;

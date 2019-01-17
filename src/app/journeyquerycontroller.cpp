@@ -35,7 +35,6 @@ using namespace KItinerary;
 JourneyQueryController::JourneyQueryController(QObject *parent)
     : QObject(parent)
 {
-    m_ptMgr.reset(new KPublicTransport::Manager);
 }
 
 JourneyQueryController::~JourneyQueryController() = default;
@@ -43,6 +42,11 @@ JourneyQueryController::~JourneyQueryController() = default;
 void JourneyQueryController::setReservationManager(ReservationManager *mgr)
 {
     m_resMgr = mgr;
+}
+
+void JourneyQueryController::setPublicTransportManager(KPublicTransport::Manager *mgr)
+{
+    m_ptMgr = mgr;
 }
 
 bool JourneyQueryController::isLoading() const

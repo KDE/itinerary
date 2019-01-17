@@ -54,8 +54,6 @@ LiveDataManager::LiveDataManager(QObject *parent)
     : QObject(parent)
 
 {
-    m_ptMgr.reset(new KPublicTransport::Manager);
-
     m_pollTimer.setSingleShot(true);
     connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
 
@@ -90,6 +88,11 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
     connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &LiveDataManager::pkPassUpdated);
 }
 
+void LiveDataManager::setPublicTransportManager(KPublicTransport::Manager *mgr)
+{
+    m_ptMgr = mgr;
+}
+
 void LiveDataManager::setPollingEnabled(bool pollingEnabled)
 {
     if (pollingEnabled) {
@@ -98,11 +101,6 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
     } else {
         m_pollTimer.stop();
     }
-}
-
-void LiveDataManager::setAllowInsecureServices(bool allowInsecure)
-{
-    m_ptMgr->setAllowInsecureBackends(allowInsecure);
 }
 
 QVariant LiveDataManager::arrival(const QString &resId)

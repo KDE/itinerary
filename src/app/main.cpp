@@ -43,6 +43,7 @@
 
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
+#include <KPublicTransport/Manager>
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
@@ -139,16 +140,20 @@ int main(int argc, char **argv)
     appController.setPkPassManager(&passMgr);
     BrightnessManager brightnessManager;
 
+    KPublicTransport::Manager ptMgr;
+    ptMgr.setAllowInsecureBackends(settings.allowInsecureServices());
+    QObject::connect(&settings, &Settings::allowInsecureServicesChanged, [&ptMgr](bool insec) { ptMgr.setAllowInsecureBackends(insec); });
+
     LiveDataManager liveDataMgr;
+    liveDataMgr.setPublicTransportManager(&ptMgr);
     liveDataMgr.setPkPassManager(&passMgr);
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
-    liveDataMgr.setAllowInsecureServices(settings.allowInsecureServices());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
-    QObject::connect(&settings, &Settings::allowInsecureServicesChanged, &liveDataMgr, &LiveDataManager::setAllowInsecureServices);
 
     JourneyQueryController journeyQueryController;
     journeyQueryController.setReservationManager(&resMgr);
+    journeyQueryController.setPublicTransportManager(&ptMgr);
 
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
