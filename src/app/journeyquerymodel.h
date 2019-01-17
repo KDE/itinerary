@@ -15,10 +15,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef JOURNEYQUERYCONTROLLER_H
-#define JOURNEYQUERYCONTROLLER_H
+#ifndef JOURNEYQUERYMODEL_H
+#define JOURNEYQUERYMODEL_H
 
-#include <QObject>
+#include <QAbstractListModel>
 #include <QString>
 
 #include <vector>
@@ -31,16 +31,19 @@ class Manager;
 class ReservationManager;
 
 /** Alternative train connection query handling. */
-class JourneyQueryController : public QObject
+class JourneyQueryModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(bool loading READ isLoading NOTIFY loadingChanged)
     Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY errorMessageChanged)
-    Q_PROPERTY(QVariantList journeys READ journeys NOTIFY journeysChanged)
+
+    enum Role {
+        JourneyRole = Qt::UserRole
+    };
 
 public:
-    explicit JourneyQueryController(QObject *parent = nullptr);
-    ~JourneyQueryController();
+    explicit JourneyQueryModel(QObject *parent = nullptr);
+    ~JourneyQueryModel();
 
     void setReservationManager(ReservationManager *mgr);
     void setPublicTransportManager(KPublicTransport::Manager *mgr);
@@ -49,12 +52,14 @@ public:
 
     bool isLoading() const;
     QString errorMessage() const;
-    QVariantList journeys() const;
+
+    int rowCount(const QModelIndex &parent) const override;
+    QVariant data(const QModelIndex &index, int role) const override;
+    QHash<int, QByteArray> roleNames() const override;
 
 Q_SIGNALS:
     void loadingChanged();
     void errorMessageChanged();
-    void journeysChanged();
 
 private:
     ReservationManager *m_resMgr;
@@ -65,4 +70,4 @@ private:
 
 };
 
-#endif // JOURNEYQUERYCONTROLLER_H
+#endif // JOURNEYQUERYMODEL_H

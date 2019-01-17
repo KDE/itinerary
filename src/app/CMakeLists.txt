@@ -47,7 +47,7 @@ set(itinerary_app_srcs
     ${qml_srcs}
     brightnessmanager.cpp
     livedatamanager.cpp
-    journeyquerycontroller.cpp
+    journeyquerymodel.cpp
     publictransport.cpp
 )
 if (ANDROID)

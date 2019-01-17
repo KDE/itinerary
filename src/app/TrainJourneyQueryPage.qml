@@ -29,7 +29,7 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Alternative Connections")
 
-    Component.onCompleted: _journeyQueryController.queryJourney(batchId);
+    Component.onCompleted: _journeyQueryModel.queryJourney(batchId);
 
     Component {
         id: sectionDelegate
@@ -147,7 +147,7 @@ Kirigami.ScrollablePage {
         id: journeyDelegate
         Kirigami.Card {
             id: top
-            property var journey: modelData
+            property var journey: model.journey
 
             header: Rectangle {
                 id: headerBackground
@@ -201,17 +201,17 @@ Kirigami.ScrollablePage {
         anchors.fill: parent
         clip: true
         delegate: journeyDelegate
-        model: _journeyQueryController.journeys
+        model: _journeyQueryModel
 
         QQC2.BusyIndicator {
             anchors.centerIn: parent
-            running: _journeyQueryController.loading
+            running: _journeyQueryModel.loading
         }
 
         QQC2.Label {
             anchors.centerIn: parent
             width: parent.width
-            text: _journeyQueryController.errorMessage
+            text: _journeyQueryModel.errorMessage
             color: Kirigami.Theme.negativeTextColor
             wrapMode: Text.Wrap
         }

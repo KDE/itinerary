@@ -22,7 +22,7 @@
 #include "brightnessmanager.h"
 #include "countryinformation.h"
 #include "countrymodel.h"
-#include "journeyquerycontroller.h"
+#include "journeyquerymodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "pkpassmanager.h"
@@ -151,9 +151,9 @@ int main(int argc, char **argv)
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
 
-    JourneyQueryController journeyQueryController;
-    journeyQueryController.setReservationManager(&resMgr);
-    journeyQueryController.setPublicTransportManager(&ptMgr);
+    JourneyQueryModel journeyQueryModel;
+    journeyQueryModel.setReservationManager(&resMgr);
+    journeyQueryModel.setPublicTransportManager(&ptMgr);
 
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
@@ -220,7 +220,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
-    engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryController"), &journeyQueryController);
+    engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryModel"), &journeyQueryModel);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());

@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "journeyquerycontroller.h"
+#include "journeyquerymodel.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
@@ -32,44 +32,38 @@
 
 using namespace KItinerary;
 
-JourneyQueryController::JourneyQueryController(QObject *parent)
-    : QObject(parent)
+JourneyQueryModel::JourneyQueryModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
 }
 
-JourneyQueryController::~JourneyQueryController() = default;
+JourneyQueryModel::~JourneyQueryModel() = default;
 
-void JourneyQueryController::setReservationManager(ReservationManager *mgr)
+void JourneyQueryModel::setReservationManager(ReservationManager *mgr)
 {
     m_resMgr = mgr;
 }
 
-void JourneyQueryController::setPublicTransportManager(KPublicTransport::Manager *mgr)
+void JourneyQueryModel::setPublicTransportManager(KPublicTransport::Manager *mgr)
 {
     m_ptMgr = mgr;
 }
 
-bool JourneyQueryController::isLoading() const
+bool JourneyQueryModel::isLoading() const
 {
     return m_isLoading;
 }
 
-QString JourneyQueryController::errorMessage() const
+QString JourneyQueryModel::errorMessage() const
 {
     return m_errorMsg;
 }
 
-QVariantList JourneyQueryController::journeys() const
+void JourneyQueryModel::queryJourney(const QString &batchId)
 {
-    QVariantList l;
-    l.reserve(m_journeys.size());
-    std::transform(m_journeys.begin(), m_journeys.end(), std::back_inserter(l), [](const auto &journey) { return QVariant::fromValue(journey); });
-    return l;
-}
-
-void JourneyQueryController::queryJourney(const QString &batchId)
-{
-    qDebug() << batchId;
+    beginResetModel();
+    m_journeys.clear();
+    endResetModel();
 
     const auto res = m_resMgr->reservation(batchId);
     if (!JsonLd::isA<TrainReservation>(res)) {
@@ -91,11 +85,36 @@ void JourneyQueryController::queryJourney(const QString &batchId)
         m_isLoading = false;
         emit loadingChanged();
         if (reply->error() == KPublicTransport::JourneyReply::NoError) {
+            beginResetModel();
             m_journeys = reply->takeResult();
-            emit journeysChanged();
+            endResetModel();
         } else {
             m_errorMsg = reply->errorString();
             emit errorMessageChanged();
         }
     });
+}
+
+int JourneyQueryModel::rowCount(const QModelIndex &parent) const
+{
+    if (parent.isValid()) {
+        return 0;
+    }
+    return m_journeys.size();
+}
+
+QVariant JourneyQueryModel::data(const QModelIndex &index, int role) const
+{
+    switch (role) {
+        case JourneyRole:
+            return QVariant::fromValue(m_journeys[index.row()]);
+    }
+    return {};
+}
+
+QHash<int, QByteArray> JourneyQueryModel::roleNames() const
+{
+    auto r = QAbstractListModel::roleNames();
+    r.insert(JourneyRole, "journey");
+    return r;
 }
