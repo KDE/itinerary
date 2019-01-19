@@ -42,7 +42,9 @@ ColumnLayout {
         Layout.alignment: Qt.AlignCenter
         model: ticketModel
         textRole: "display"
-        visible: ticketModel.rowCount > 1
+
+        // ugly, but rowCount does not trigger binding changes
+        Component.onCompleted: visible = ticketModel.rowCount() >= 1 && root.resIds.length > 1
     }
 
     Item {
