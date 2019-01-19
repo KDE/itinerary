@@ -543,11 +543,11 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
     Q_UNUSED(passId);
     // ### to provide more context, we need to have a passId -> batchId map here eventually
 
+    if (!changes.isEmpty()) {
 #ifdef HAVE_NOTIFICATIONS
-    KNotification::event(KNotification::Notification, i18n("Itinerary change"), changes.join(QLatin1Char('\n')), QLatin1String("clock"));
-#else
-    Q_UNUSED(changes);
+        KNotification::event(KNotification::Notification, i18n("Itinerary change"), changes.join(QLatin1Char('\n')), QLatin1String("clock"));
 #endif
+    }
 }
 
 #include "moc_livedatamanager.cpp"
