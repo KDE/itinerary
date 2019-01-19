@@ -393,7 +393,7 @@ void LiveDataManager::batchChanged(const QString &resId)
 
     if (it == m_reservations.end() && relevant) {
         m_reservations.push_back(resId);
-    } else {
+    } else if (it != m_reservations.end() && !relevant) {
         m_reservations.erase(it);
     }
 
