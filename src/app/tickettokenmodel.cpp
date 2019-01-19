@@ -60,21 +60,30 @@ void TicketTokenModel::setReservationIds(const QStringList& resIds)
 
     beginResetModel();
     for (const auto &resId : resIds) {
-        const auto res = m_resMgr->reservation(resId);
-        if (!JsonLd::canConvert<Reservation>(res))
+        const auto v = m_resMgr->reservation(resId);
+        if (!JsonLd::canConvert<Reservation>(v))
             continue;
-        const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-        if (!ticket.ticketToken().isEmpty())
+        const auto res = JsonLd::convert<Reservation>(v);
+        const auto ticket = res.reservedTicket().value<Ticket>();
+        if (!ticket.ticketToken().isEmpty() || !res.pkpassPassTypeIdentifier().isEmpty()) {
             m_resIds.push_back(resId);
+        }
     }
     endResetModel();
 }
 
 QVariant TicketTokenModel::reservationAt(int row) const
 {
-    if (!m_resMgr || row >= m_resIds.size())
+    if (!m_resMgr || row >= m_resIds.size() || row < 0)
         return {};
     return m_resMgr->reservation(m_resIds.at(row));
+}
+
+QString TicketTokenModel::reservationIdAt(int row) const
+{
+    if (!m_resMgr || row >= m_resIds.size() || row < 0)
+        return {};
+    return m_resIds.at(row);
 }
 
 int TicketTokenModel::rowCount(const QModelIndex& parent) const

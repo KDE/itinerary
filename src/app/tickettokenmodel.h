@@ -44,6 +44,7 @@ public:
     void setReservationIds(const QStringList &resIds);
 
     Q_INVOKABLE QVariant reservationAt(int row) const;
+    Q_INVOKABLE QString reservationIdAt(int row) const;
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;

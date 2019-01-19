@@ -28,6 +28,7 @@ ColumnLayout {
     id: root
     property var resIds
 
+    readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket
     Layout.fillWidth: true
 

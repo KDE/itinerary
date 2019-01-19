@@ -48,6 +48,7 @@ App.DetailsPage {
         App.TicketTokenDelegate {
             Kirigami.FormData.isSection: true
             resIds: _reservationManager.reservationsForBatch(root.batchId)
+            onCurrentReservationIdChanged: root.currentReservationId = currentReservationId
         }
 
         // flight details
