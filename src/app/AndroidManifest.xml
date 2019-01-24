@@ -79,10 +79,9 @@
         </activity>
     </application>
 
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="16"/>
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="28"/>
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
     <!-- %%INSERT_PERMISSIONS -->
 

@@ -53,6 +53,9 @@
 using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
+
+#define PERMISSION_CALENDAR QStringLiteral("android.permission.READ_CALENDAR")
+
 static void importReservation(JNIEnv *env, jobject that, jstring data)
 {
     Q_UNUSED(that);
@@ -452,9 +455,18 @@ void ApplicationController::importIataBcbp(const QByteArray &data)
 void ApplicationController::checkCalendar()
 {
 #ifdef Q_OS_ANDROID
-    const auto activity = QtAndroid::androidActivity();
-    if (activity.isValid()) {
-        activity.callMethod<void>("checkCalendar");
+
+    if (QtAndroid::checkPermission(PERMISSION_CALENDAR) == QtAndroid::PermissionResult::Granted) {
+        const auto activity = QtAndroid::androidActivity();
+        if (activity.isValid()) {
+            activity.callMethod<void>("checkCalendar");
+        }
+    } else {
+        QtAndroid::requestPermissions({PERMISSION_CALENDAR}, [this] (const QtAndroid::PermissionResultMap &result){
+            if (result[PERMISSION_CALENDAR] == QtAndroid::PermissionResult::Granted) {
+                checkCalendar();
+            }
+        });
     }
 #endif
 }
