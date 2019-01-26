@@ -298,14 +298,6 @@ void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
         return;
     }
 
-    const auto scheme = uri.callObjectMethod("getScheme", "()Ljava/lang/String;");
-    qCDebug(Log) << uri.callObjectMethod("toString", "()Ljava/lang/String;").toString();
-    if (scheme.toString() == QLatin1String("content")) {
-        const auto tmpFile = QtAndroid::androidActivity().callObjectMethod("receiveContent", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
-        const auto tmpUrl = QUrl::fromLocalFile(tmpFile.toString());
-        importLocalFile(tmpUrl, true);
-        return;
-    }
     const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
     importFromUrl(QUrl(uriStr.toString()));
 }
@@ -347,8 +339,8 @@ void ApplicationController::importFromClipboard()
 void ApplicationController::importFromUrl(const QUrl &url)
 {
     qCDebug(Log) << url;
-    if (url.isLocalFile()) {
-        importLocalFile(url, false);
+    if (url.isLocalFile() || url.scheme() == QLatin1String("content")) {
+        importLocalFile(url);
         return;
     }
 
@@ -374,15 +366,16 @@ void ApplicationController::importFromUrl(const QUrl &url)
     qCDebug(Log) << "Unhandled URL type:" << url;
 }
 
-void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
+void ApplicationController::importLocalFile(const QUrl &url)
 {
     qCDebug(Log) << url;
-    if (url.isEmpty() || !url.isLocalFile())
+    if (url.isEmpty()) {
         return;
+    }
 
-    QFile f(url.toLocalFile());
+    QFile f(url.isLocalFile() ? url.toLocalFile() : url.toString());
     if (!f.open(QFile::ReadOnly)) {
-        qCWarning(Log) << "Failed to open" << url << f.errorString();
+        qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
         return;
     }
 
@@ -393,10 +386,7 @@ void ApplicationController::importLocalFile(const QUrl &url, bool isTempFile)
             qCWarning(Log) << "Unknown content type:" << url;
             break;
         case ContentTypeProber::PkPass:
-            if (isTempFile)
-                m_pkPassMgr->importPassFromTempFile(url);
-            else
-                m_pkPassMgr->importPass(url);
+            m_pkPassMgr->importPass(url);
             break;
         case ContentTypeProber::JsonLd:
             m_resMgr->importReservation(f.readAll());

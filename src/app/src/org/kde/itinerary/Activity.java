@@ -37,34 +37,6 @@ public class Activity extends QtActivity
 {
     private static final String TAG = "org.kde.itinerary";
 
-    public String receiveContent(Uri uri)
-    {
-        ContentResolver resolver = getContentResolver();
-        File tempFile = new File(getCacheDir(), "content"); // TODO use random name
-
-        try {
-            InputStream is = resolver.openInputStream(uri);
-
-            tempFile.createNewFile();
-            FileOutputStream os = new FileOutputStream(tempFile);
-
-            while (true) {
-                byte[] buffer = new byte[4096];
-                int size = is.read(buffer, 0, 4096);
-                if (size < 0) {
-                    break;
-                }
-                os.write(buffer, 0, size);
-            }
-            os.close();
-        } catch (Exception e) {
-            Log.e(TAG, e.toString());
-            return "";
-        }
-
-        return tempFile.toString();
-    }
-
     public void launchViewIntentFromUri(String uri)
     {
         Uri mapIntentUri = Uri.parse(uri);

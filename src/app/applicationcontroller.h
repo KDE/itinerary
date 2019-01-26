@@ -66,7 +66,7 @@ Q_SIGNALS:
     void clipboardContentChanged();
 
 private:
-    void importLocalFile(const QUrl &url, bool isTempFile);
+    void importLocalFile(const QUrl &url);
     void importPdf(const QByteArray &data);
     void importIataBcbp(const QByteArray &data);
 
