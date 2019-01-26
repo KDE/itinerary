@@ -51,7 +51,10 @@ set(itinerary_app_srcs
     publictransport.cpp
 )
 if (ANDROID)
-    list(APPEND itinerary_app_srcs androidbrightnessbackend.cpp)
+    list(APPEND itinerary_app_srcs
+        androidbrightnessbackend.cpp
+        androidcontentfileengine.cpp
+    )
 else()
     list(APPEND itinerary_app_srcs solidbrightnessbackend.cpp)
     qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
@@ -69,6 +72,7 @@ if (TARGET KF5::Notifications)
     target_link_libraries(itinerary-app PRIVATE KF5::Notifications)
 endif()
 if (ANDROID)
+    target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
     target_link_libraries(itinerary PUBLIC Qt5::AndroidExtras)
