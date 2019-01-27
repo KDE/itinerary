@@ -6,6 +6,7 @@
   <name>KDE Itinerary</name>
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
+  <name xml:lang="nl">KDE Itinerary</name>
   <name xml:lang="pl">KDE Itinerary</name>
   <name xml:lang="pt">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
@@ -14,6 +15,7 @@
   <summary>Digital travel assistant</summary>
   <summary xml:lang="ca">Assistent de viatges digital</summary>
   <summary xml:lang="ca-valencia">Assistent de viatges digital</summary>
+  <summary xml:lang="nl">Digitale reisassistent</summary>
   <summary xml:lang="pl">Cyfrowy pomocnik podróży</summary>
   <summary xml:lang="pt">Assistente de viagens digital</summary>
   <summary xml:lang="sv">Digitalt resehjälpprogram</summary>
@@ -25,6 +27,7 @@
     </p>
     <p xml:lang="ca">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
     <p xml:lang="ca-valencia">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
+    <p xml:lang="nl">Toepassing voor beheer van route en boardingpass </p>
     <p xml:lang="pl">Aplikacja do zarządzania planami podróży i kartami pokładowymi</p>
     <p xml:lang="pt">Aplicação de gestão de itinerários e cartões de embarque.</p>
     <p xml:lang="sv">Program för hantering av resplan och boardingkort.</p>
@@ -34,6 +37,7 @@
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
+    <p xml:lang="nl">Mogelijkheden:</p>
     <p xml:lang="pl">Możliwości:</p>
     <p xml:lang="pt">Funcionalidades:</p>
     <p xml:lang="sv">Funktioner:</p>
@@ -43,6 +47,7 @@
       <li>Unified travel itinerary.</li>
       <li xml:lang="ca">Itinerari de viatge unificat.</li>
       <li xml:lang="ca-valencia">Itinerari de viatge unificat.</li>
+      <li xml:lang="nl">Geünificeerde reisroute.</li>
       <li xml:lang="pl">Ujednolicony plan podróży.</li>
       <li xml:lang="pt">Itinerário de viagem unificado.</li>
       <li xml:lang="sv">Enhetlig resplan.</li>
@@ -51,6 +56,7 @@
       <li>Boarding pass management.</li>
       <li xml:lang="ca">Gestió dels bitllets d'embarcament.</li>
       <li xml:lang="ca-valencia">Gestió dels bitllets d'embarcament.</li>
+      <li xml:lang="nl">Beheer van boardingpass</li>
       <li xml:lang="pl">Zarządzanie kartami pokładowymi.</li>
       <li xml:lang="pt">Gestão de cartões de embarque.</li>
       <li xml:lang="sv">Hantering av boardingkort.</li>
@@ -59,6 +65,7 @@
       <li>Weather forecast.</li>
       <li xml:lang="ca">Previsió meteorològica.</li>
       <li xml:lang="ca-valencia">Previsió meteorològica.</li>
+      <li xml:lang="nl">Weersvoorspelling.</li>
       <li xml:lang="pl">Prognoza pogody.</li>
       <li xml:lang="pt">Previsões meteorológicas.</li>
       <li xml:lang="sv">Väderprognos.</li>
