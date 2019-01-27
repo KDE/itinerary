@@ -1,0 +1,486 @@
+[
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "XY"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Tegel"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "1995-10-17T18:35:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 50.03329849243164,
+                            "longitude": 8.570560455322266
+                        },
+                        "iataCode": "FRA"
+                    },
+                    "departureDay": "1995-10-17",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "1995-10-17T17:35:00+02:00",
+                        "timezone": "Europe/Helsinki"
+                    },
+                    "flightNumber": "1234"
+                },
+                "reservationNumber": "XXX006"
+            }
+        ],
+        "sectionHeader": "Tuesday, 17 Oct 1995",
+        "type": 5
+    },
+    {
+        "isToday": true,
+        "isTodayEmpty": false,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 1
+    },
+    {
+        "isToday": true,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Tuesday, 15 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-16T17:50:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-17T18:35:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "name": "Some Hotel in Finland (October 1996)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "AY",
+                        "name": "Finnair"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "FI"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 60.31719970703125,
+                            "longitude": 24.963300704956055
+                        },
+                        "iataCode": "HEL",
+                        "name": "Helsinki-Vantaa"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-16T20:45:00+03:00",
+                        "timezone": "Europe/Helsinki"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Tegel"
+                    },
+                    "departureDay": "1996-10-16",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-16T17:50:00+02:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "flightNumber": "1438"
+                },
+                "reservationNumber": "XXX007"
+            }
+        ],
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 60.31719970703125,
+            "minimumTemperature": 24.963300704956055,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": {
+                    "@type": "QDateTime",
+                    "@value": "1996-10-16T15:00:00+03:00",
+                    "timezone": "Europe/Helsinki"
+                },
+                "checkoutTime": {
+                    "@type": "QDateTime",
+                    "@value": "1996-10-17T12:00:00+03:00",
+                    "timezone": "Europe/Helsinki"
+                },
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "FI"
+                    },
+                    "name": "Some Hotel in Finland"
+                },
+                "reservationNumber": "YYY008"
+            }
+        ],
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "type": 12
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 60.31719970703125,
+            "minimumTemperature": 24.963300704956055,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "LodgingReservation",
+                "checkinTime": {
+                    "@type": "QDateTime",
+                    "@value": "1996-10-16T15:00:00+03:00",
+                    "timezone": "Europe/Helsinki"
+                },
+                "checkoutTime": {
+                    "@type": "QDateTime",
+                    "@value": "1996-10-17T12:00:00+03:00",
+                    "timezone": "Europe/Helsinki"
+                },
+                "reservationFor": {
+                    "@type": "LodgingBusiness",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "FI"
+                    },
+                    "name": "Some Hotel in Finland"
+                },
+                "reservationNumber": "YYY008"
+            }
+        ],
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "type": 12
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "AY",
+                        "name": "Finnair"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.55970001220703,
+                            "longitude": 13.287799835205078
+                        },
+                        "iataCode": "TXL",
+                        "name": "Tegel"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-17T18:35:00+02:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "FI"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 60.31719970703125,
+                            "longitude": 24.963300704956055
+                        },
+                        "iataCode": "HEL",
+                        "name": "Helsinki-Vantaa"
+                    },
+                    "departureDay": "1996-10-17",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-17T17:35:00+03:00",
+                        "timezone": "Europe/Helsinki"
+                    },
+                    "flightNumber": "1435"
+                },
+                "reservationNumber": "XXX007"
+            }
+        ],
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "type": 5
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-16T17:50:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-17T18:35:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "name": "Some Hotel in Finland (October 1996)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Friday, 18 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 19 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 20 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Monday, 21 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Tuesday, 22 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Wednesday, 23 Oct 1996",
+        "type": 3,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 52.55970001220703,
+            "minimumTemperature": 13.287799835205078,
+            "precipitation": 23,
+            "range": 0,
+            "symbolIconName": "weather-few-clouds-night",
+            "valid": true
+        }
+    }
+]

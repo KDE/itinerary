@@ -509,6 +509,8 @@ private Q_SLOTS:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
+        WeatherForecastManager weatherMgr;
+        weatherMgr.setTestModeEnabled(true);
 
         TimelineModel model;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
@@ -518,6 +520,7 @@ private Q_SLOTS:
         model.setCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         model.setReservationManager(&resMgr);
         model.setTripGroupManager(&groupMgr);
+        model.setWeatherForecastManager(&weatherMgr);
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
