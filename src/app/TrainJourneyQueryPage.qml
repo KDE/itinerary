@@ -166,11 +166,13 @@ Kirigami.ScrollablePage {
 
                     QQC2.Label {
                         text: Localizer.formatTime(journey, "scheduledDepartureTime")
+                        color: Kirigami.Theme.textColor
                         Layout.fillWidth: true
                     }
 
                     QQC2.Label {
                         text: Localizer.formatDuration(journey.duration)
+                        color: Kirigami.Theme.textColor
                     }
                 }
             }
