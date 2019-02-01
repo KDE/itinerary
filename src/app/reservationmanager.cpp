@@ -168,7 +168,7 @@ void ReservationManager::addReservation(const QVariant &res)
         }
         if (MergeUtil::isSame(res, otherRes)) {
             // this is actually an update of otherRes!
-            const auto newRes = JsonLdDocument::apply(otherRes, res);
+            const auto newRes = MergeUtil::merge(otherRes, res);
             updateReservation(*it, newRes);
             return;
         }
@@ -179,7 +179,7 @@ void ReservationManager::addReservation(const QVariant &res)
                 const auto batchedRes = reservation(batchedId);
                 if (MergeUtil::isSame(res, batchedRes)) {
                     // this is actually an update of a batched reservation
-                    const auto newRes = JsonLdDocument::apply(otherRes, res);
+                    const auto newRes = MergeUtil::merge(otherRes, res);
                     updateReservation(batchedId, newRes);
                     return;
                 }
