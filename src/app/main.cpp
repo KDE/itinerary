@@ -105,7 +105,7 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char **argv)
 {
-    QCoreApplication::setApplicationName(QStringLiteral("kde-itinerary"));
+    QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
