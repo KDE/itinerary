@@ -33,13 +33,8 @@ Kirigami.ScrollablePage {
 
     Component {
         id: sectionDelegate
-        Item {
-            implicitHeight: topLayout.implicitHeight
-            implicitWidth: topLayout.implicitWidth
-
+        Kirigami.AbstractListItem {
             RowLayout {
-                id: topLayout
-
                 Rectangle {
                     id: colorBar
                     width: Kirigami.Units.largeSpacing
@@ -182,7 +177,7 @@ Kirigami.ScrollablePage {
                     delegate: sectionDelegate
                     model: journeyView.currentIndex == index ? journey.sections : 0
                     implicitHeight: contentHeight
-                    spacing: Kirigami.Units.smallSpacing
+                    Layout.fillWidth: true
                     boundsBehavior: Flickable.StopAtBounds
                 }
                 QQC2.Label {
@@ -195,6 +190,15 @@ Kirigami.ScrollablePage {
             onClicked: {
                 journeyView.currentIndex = index;
             }
+
+            actions: [
+                Kirigami.Action {
+                    text: i18n("Save")
+                    iconName: "document-save"
+                    onTriggered: console.log("TODO");
+                    visible: journeyView.currentIndex == index
+                }
+            ]
         }
     }
 
