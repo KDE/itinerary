@@ -82,12 +82,15 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
-                            text: "From: " + modelData.from.name + " Platform: " + modelData.scheduledDeparturePlatform
+                            text: "From: " + modelData.from.name
+                            Layout.fillWidth: true
                         }
                         QQC2.Label {
-                            text: modelData.expectedDeparturePlatform
-                            color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.hasExpectedDeparturePlatform
+                            text: modelData.hasExpectedDeparturePlatform ? modelData.expectedDeparturePlatform : modelData.scheduledDeparturePlatform
+                            color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor
+                                : modelData.hasExpectedDeparturePlatform ? Kirigami.Theme.positiveTextColor
+                                : Kirigami.Theme.textColor
+                            visible: modelData.scheduledDeparturePlatform !== ""
                         }
                     }
                     RowLayout {
@@ -119,12 +122,15 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
-                            text: "To: " + modelData.to.name + " Platform: " + modelData.scheduledArrivalPlatform
+                            text: "To: " + modelData.to.name
+                            Layout.fillWidth: true
                         }
                         QQC2.Label {
-                            text: modelData.expectedArrivalPlatform
-                            color: modelData.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.hasExpectedArrivalPlatform
+                            text: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
+                            color: modelData.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor
+                                : modelData.hasExpectedArrivalPlatform ? Kirigami.Theme.positiveTextColor
+                                : Kirigami.Theme.textColor
+                            visible: modelData.scheduledArrivalPlatform !== ""
                         }
                     }
                     RowLayout {
