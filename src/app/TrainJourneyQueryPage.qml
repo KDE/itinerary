@@ -80,6 +80,7 @@ Kirigami.ScrollablePage {
                 ColumnLayout {
                     Layout.fillWidth: true
                     RowLayout {
+                        visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
                             text: "From: " + modelData.from.name + " Platform: " + modelData.scheduledDeparturePlatform
                         }
@@ -90,6 +91,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                     RowLayout {
+                        visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
                             text: "Departure: " + modelData.scheduledDepartureTime.toTimeString()
                         }
@@ -100,6 +102,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                     QQC2.Label {
+                        Layout.fillWidth: true
                         text: {
                             switch (modelData.mode) {
                             case JourneySection.PublicTransport:
@@ -114,6 +117,7 @@ Kirigami.ScrollablePage {
                         }}
                     }
                     RowLayout {
+                        visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
                             text: "To: " + modelData.to.name + " Platform: " + modelData.scheduledArrivalPlatform
                         }
@@ -124,6 +128,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                     RowLayout {
+                        visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
                             text: "Arrival: " + modelData.scheduledArrivalTime.toTimeString()
                         }
