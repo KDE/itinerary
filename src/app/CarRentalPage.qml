@@ -29,7 +29,6 @@ App.DetailsPage {
 
     Kirigami.FormLayout {
         width: root.width
-        Component.onCompleted: Util.fixFormLayoutTouchTransparency(this)
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

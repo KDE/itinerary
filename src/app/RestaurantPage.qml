@@ -34,7 +34,6 @@ App.DetailsPage {
 
     Kirigami.FormLayout {
         width: root.width
-        Component.onCompleted: Util.fixFormLayoutTouchTransparency(this)
 
         QQC2.Label {
             Kirigami.FormData.isSection: true

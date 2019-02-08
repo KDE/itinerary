@@ -36,9 +36,6 @@ public:
     Q_INVOKABLE QDateTime dateTimeStripTimezone(const QVariant &obj, const QString &propertyName) const;
     /** Set a QDateTime property preserving the timezone of the current value. */
     Q_INVOKABLE QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value) const;
-
-    /** HACK make Kirigami.FormLayout transparent for touch events so we can scroll. */
-    Q_INVOKABLE void fixFormLayoutTouchTransparency(QObject *obj) const;
 };
 
 #endif // UTIL_H

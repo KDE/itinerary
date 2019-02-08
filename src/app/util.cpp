@@ -21,7 +21,6 @@
 
 #include <QDateTime>
 #include <QTimeZone>
-#include <QQuickItem>
 
 using namespace KItinerary;
 
@@ -52,15 +51,6 @@ QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& p
     }
     JsonLdDocument::writeProperty(o, propertyName.toUtf8().constData(), value);
     return o;
-}
-
-void Util::fixFormLayoutTouchTransparency(QObject *obj) const
-{
-    // HACK: this seems very wrong, but it actually makes touch screen scrolling work...
-    QQuickItem *item = qobject_cast<QQuickItem*>(obj);
-    if (item) {
-        item->setAcceptedMouseButtons(Qt::AllButtons);
-    }
 }
 
 #include "moc_util.cpp"
