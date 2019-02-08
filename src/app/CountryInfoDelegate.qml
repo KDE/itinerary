@@ -61,27 +61,35 @@ Kirigami.AbstractCard {
         id: topLayout
 
         QQC2.Label {
+            Layout.fillWidth: true
             text: countryInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
                 i18n("People are driving on the right side.") :
                 i18n("People are driving on the wrong side.")
             color: Kirigami.Theme.negativeTextColor
             visible: countryInfo.drivingSideDiffers
+            wrapMode: Text.WordWrap
         }
 
         QQC2.Label {
+            Layout.fillWidth: true
             text: i18n("No compatible power sockets: %1", countryInfo.powerSocketTypes)
             color: Kirigami.Theme.negativeTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.Incompatible
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
+            Layout.fillWidth: true
             text: i18n("Some incompatible power sockets: %1", countryInfo.powerSocketTypes)
             color: Kirigami.Theme.neutralTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocketTypes != ""
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
+            Layout.fillWidth: true
             text: i18n("Some incompatible power plugs: %1", countryInfo.powerPlugTypes)
             color: Kirigami.Theme.neutralTextColor
             visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerPlugTypes != ""
+            wrapMode: Text.WordWrap
         }
     }
 }
