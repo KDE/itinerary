@@ -97,7 +97,7 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
-                            text: "Departure: " + modelData.scheduledDepartureTime.toTimeString()
+                            text: i18n("Departure: %1", Localizer.formatTime(modelData, "scheduledDepartureTime"))
                         }
                         QQC2.Label {
                             text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
@@ -138,7 +138,7 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         visible: modelData.mode != JourneySection.Waiting
                         QQC2.Label {
-                            text: "Arrival: " + modelData.scheduledArrivalTime.toTimeString()
+                            text: i18n("Arrival: %1", Localizer.formatTime(modelData, "scheduledArrivalTime"))
                         }
                         QQC2.Label {
                             text: (modelData.arrivalDelay >= 0 ? "+" : "") + modelData.arrivalDelay
