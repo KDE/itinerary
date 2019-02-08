@@ -23,11 +23,23 @@
 class BrightnessBackend : public QObject
 {
 public:
-    explicit BrightnessBackend(QObject *parent = nullptr) : QObject(parent) {}
+    explicit BrightnessBackend(QObject *parent = nullptr) : QObject(parent)
+    , m_maximized()
+    , m_previousValue()
+    {}
     virtual ~BrightnessBackend() = default;
 
 public:
-    virtual void maxBrightness() = 0;
+    virtual void toggleBrightness();
+
+protected:
+    virtual void setBrightness(float brightness) = 0;
+    virtual float brightness() const = 0;
+    virtual float maxBrightness() const = 0;
+
+private:
+    bool m_maximized;
+    int m_previousValue;
 };
 
 class BrightnessManager : public QObject
@@ -39,7 +51,7 @@ public:
     ~BrightnessManager();
 
 public Q_SLOTS:
-    void maxBrightness();
+    void toggleBrightness();
 
 private:
     BrightnessBackend *m_backend;

@@ -37,9 +37,22 @@ BrightnessManager::BrightnessManager(QObject *parent)
 
 BrightnessManager::~BrightnessManager() = default;
 
-void BrightnessManager::maxBrightness()
+void BrightnessManager::toggleBrightness()
 {
-    if (m_backend) {
-        m_backend->maxBrightness();
+    if (!m_backend)
+        return;
+
+    m_backend->toggleBrightness();
+}
+
+
+void BrightnessBackend::toggleBrightness()
+{
+    if (m_maximized) {
+        setBrightness(m_previousValue);
+    } else {
+        m_previousValue = brightness();
+        setBrightness(maxBrightness());
     }
+    m_maximized = !m_maximized;
 }

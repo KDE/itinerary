@@ -34,7 +34,17 @@ SolidBrightnessBackend::~SolidBrightnessBackend()
 {
 }
 
-void SolidBrightnessBackend::maxBrightness()
+float SolidBrightnessBackend::brightness() const
 {
-    m_iface->setBrightnessSilent(m_iface->brightnessMax());
+    return m_iface->brightness();
+}
+
+void SolidBrightnessBackend::setBrightness(float brightness)
+{
+    m_iface->setBrightnessSilent(brightness);
+}
+
+float SolidBrightnessBackend::maxBrightness() const
+{
+    return m_iface->brightnessMax();
 }

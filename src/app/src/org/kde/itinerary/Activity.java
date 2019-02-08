@@ -91,15 +91,19 @@ public class Activity extends QtActivity
         }
     }
 
-    public void maxBrightness() {
+    public void setBrightness(final float brightness) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 WindowManager.LayoutParams layout = getWindow().getAttributes();
-                layout.screenBrightness = 1F;
+                layout.screenBrightness = brightness;
                 getWindow().setAttributes(layout);
             }
         });
+    }
+
+    public float getBrightness() {
+        return getWindow().getAttributes().screenBrightness;
     }
 
     @Override

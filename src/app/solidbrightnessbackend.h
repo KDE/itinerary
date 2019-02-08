@@ -30,7 +30,9 @@ public:
     explicit SolidBrightnessBackend(QObject *parent = nullptr);
     ~SolidBrightnessBackend() override;
 
-    void maxBrightness() override;
+    void setBrightness(float brightness) override;
+    float brightness() const override;
+    float maxBrightness() const override;
 
 private:
     OrgKdeSolidPowerManagementActionsBrightnessControlInterface *m_iface;

@@ -30,10 +30,23 @@ AndroidBrightnessBackend::~AndroidBrightnessBackend()
 {
 }
 
-void AndroidBrightnessBackend::maxBrightness()
+float AndroidBrightnessBackend::brightness() const
+{
+
+    float brightness = QtAndroid::androidActivity().callMethod<jfloat>("getBrightness", "()F");
+
+    return brightness;
+}
+
+void AndroidBrightnessBackend::setBrightness(float brightness)
 {
     const auto activity = QtAndroid::androidActivity();
     if (activity.isValid()) {
-        activity.callMethod<void>("maxBrightness");
+        activity.callMethod<void>("setBrightness", "(F)V", brightness);
     }
+}
+
+float AndroidBrightnessBackend::maxBrightness() const
+{
+    return 1;
 }

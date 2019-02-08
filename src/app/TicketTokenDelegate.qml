@@ -68,7 +68,7 @@ ColumnLayout {
 
             MouseArea {
                 anchors.fill: parent
-                onDoubleClicked: _brightnessManager.maxBrightness();
+                onDoubleClicked: _brightnessManager.toggleBrightness();
             }
 
             Prison.Barcode {

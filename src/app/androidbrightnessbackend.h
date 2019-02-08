@@ -29,8 +29,9 @@ public:
     explicit AndroidBrightnessBackend(QObject *parent = nullptr);
     virtual ~AndroidBrightnessBackend();
 
-    virtual void maxBrightness();
-
+    void setBrightness(float brightness) override;
+    float brightness() const override;
+    float maxBrightness() const override;
 };
 
 #endif //  ANDROIDBRIGHTNESSBACKEND_H
