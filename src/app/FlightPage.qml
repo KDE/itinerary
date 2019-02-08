@@ -33,11 +33,11 @@ App.DetailsPage {
         }
     }
 
-    Kirigami.FormLayout {
-        width: root.width
+    ColumnLayout {
+        width: parent.width
 
         QQC2.Label {
-            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
             text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
@@ -45,106 +45,109 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
-            Kirigami.FormData.isSection: true
             resIds: _reservationManager.reservationsForBatch(root.batchId)
             onCurrentReservationIdChanged: root.currentReservationId = currentReservationId
         }
 
-        // flight details
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Flight")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Boarding:")
-            text: Localizer.formatDateTime(reservationFor, "boardingTime")
-            visible: reservationFor.boardingTime > 0
+        Kirigami.FormLayout {
+            Layout.fillWidth: true
 
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Boarding group:")
-            text: reservation.boardingGroup
-            visible: reservation.boardingGroup.length > 0
+            // flight details
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Flight")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Boarding:")
+                text: Localizer.formatDateTime(reservationFor, "boardingTime")
+                visible: reservationFor.boardingTime > 0
 
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Seat:")
-            text: reservation.airplaneSeat
-            visible: reservation.airplaneSeat.length > 0
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Boarding group:")
+                text: reservation.boardingGroup
+                visible: reservation.boardingGroup.length > 0
 
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Airline:")
-            text: reservationFor.airline.name
-            visible: reservationFor.airline.name.length > 0
-        }
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Seat:")
+                text: reservation.airplaneSeat
+                visible: reservation.airplaneSeat.length > 0
 
-
-        // departure data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Departure")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Time:")
-            text: Localizer.formatDateTime(reservationFor, "departureTime")
-            visible: reservationFor.departureTime > 0
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Airport:")
-            text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
-            visible: reservationFor.departureAirport.name.length > 0
-        }
-        App.PlaceDelegate {
-            place: reservationFor.departureAirport
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Terminal:")
-            text: reservationFor.departureTerminal
-            visible: reservationFor.departureTerminal.length > 0
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Gate:")
-            text: reservationFor.departureGate
-            visible: reservationFor.departureGate.length > 0
-        }
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Airline:")
+                text: reservationFor.airline.name
+                visible: reservationFor.airline.name.length > 0
+            }
 
 
-        // arrival data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Arrival")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Time:")
-            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
-            visible: reservationFor.arrivalTime > 0
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Airport:")
-            text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
-            visible: reservationFor.arrivalAirport.name.length > 0
-        }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalAirport
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Terminal:")
-            text: reservationFor.arrivalTerminal
-            visible: reservationFor.arrivalTerminal.length > 0
-        }
+            // departure data
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Departure")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Time:")
+                text: Localizer.formatDateTime(reservationFor, "departureTime")
+                visible: reservationFor.departureTime > 0
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Airport:")
+                text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
+                visible: reservationFor.departureAirport.name.length > 0
+            }
+            App.PlaceDelegate {
+                place: reservationFor.departureAirport
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Terminal:")
+                text: reservationFor.departureTerminal
+                visible: reservationFor.departureTerminal.length > 0
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Gate:")
+                text: reservationFor.departureGate
+                visible: reservationFor.departureGate.length > 0
+            }
 
-        // booking details
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Booking")
-        }
-        Repeater {
-            model: resIds.length * 2
-            delegate: QQC2.Label {
-                property var res: _reservationManager.reservation(resIds[Math.floor(index/2)]);
-                Kirigami.FormData.label: index % 2 == 0 ? i18n("Under name:") : i18n("Reference:")
-                text: index % 2 == 0 ? res.underName.name : res.reservationNumber
+
+            // arrival data
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Arrival")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Time:")
+                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                visible: reservationFor.arrivalTime > 0
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Airport:")
+                text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
+                visible: reservationFor.arrivalAirport.name.length > 0
+            }
+            App.PlaceDelegate {
+                place: reservationFor.arrivalAirport
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Terminal:")
+                text: reservationFor.arrivalTerminal
+                visible: reservationFor.arrivalTerminal.length > 0
+            }
+
+            // booking details
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Booking")
+            }
+            Repeater {
+                model: resIds.length * 2
+                delegate: QQC2.Label {
+                    property var res: _reservationManager.reservation(resIds[Math.floor(index/2)]);
+                    Kirigami.FormData.label: index % 2 == 0 ? i18n("Under name:") : i18n("Reference:")
+                    text: index % 2 == 0 ? res.underName.name : res.reservationNumber
+                }
             }
         }
     }

@@ -27,41 +27,45 @@ App.DetailsPage {
     id: root
     title: i18n("Event")
 
-    Kirigami.FormLayout {
-        width: root.width
+    ColumnLayout {
+        width: parent.width
 
         QQC2.Label {
-            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
             text: reservationFor.name
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
         }
 
         App.TicketTokenDelegate {
-            Kirigami.FormData.isSection: true
             resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Location:")
-            text: reservationFor.location.name
-        }
+        Kirigami.FormLayout {
+            Layout.fillWidth: true
 
-        App.PlaceDelegate {
-            place: reservationFor.location
-        }
 
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Entrance:")
-            text: Localizer.formatDateTime(reservationFor, "doorTime")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Start Time:")
-            text: Localizer.formatDateTime(reservationFor, "startDate")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("End Time:")
-            text: Localizer.formatDateTime(reservationFor, "endDate")
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Location:")
+                text: reservationFor.location.name
+            }
+
+            App.PlaceDelegate {
+                place: reservationFor.location
+            }
+
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Entrance:")
+                text: Localizer.formatDateTime(reservationFor, "doorTime")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Start Time:")
+                text: Localizer.formatDateTime(reservationFor, "startDate")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("End Time:")
+                text: Localizer.formatDateTime(reservationFor, "endDate")
+            }
         }
     }
 }

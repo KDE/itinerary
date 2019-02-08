@@ -51,11 +51,11 @@ App.DetailsPage {
         actions.contextualActions.push(alternativeAction.createObject(root));
     }
 
-    Kirigami.FormLayout {
-        width: root.width
+    ColumnLayout {
+        width: parent.width
 
         QQC2.Label {
-            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
             text: reservationFor.trainName + " " + reservationFor.trainNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
@@ -63,113 +63,116 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
-            Kirigami.FormData.isSection: true
             resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
-        // departure data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Departure")
-        }
-        RowLayout {
-            Kirigami.FormData.label: i18n("Time:")
-            QQC2.Label {
-                text: Localizer.formatDateTime(reservationFor, "departureTime")
-            }
-            QQC2.Label {
-                text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-                color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: departure.hasExpectedDepartureTime
-            }
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.departureStation.name
-        }
-        App.PlaceDelegate {
-            place: reservationFor.departureStation
-        }
-        RowLayout {
-            Kirigami.FormData.label: i18n("Platform:")
-            QQC2.Label {
-                text: departure.hasExpectedPlatform ? departure.expectedPlatform : reservationFor.departurePlatform
-                color: departure.platformChanged ? Kirigami.Theme.negativeTextColor :
-                    departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                    Kirigami.Theme.textColor;
-            }
-            QQC2.Label {
-                text: i18n("(was: %1)", reservationFor.departurePlatform)
-                visible: departure.platformChanged && reservationFor.departurePlatform != ""
-            }
-        }
+        Kirigami.FormLayout {
+            Layout.fillWidth: true
 
-        // arrival data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Arrival")
-        }
-        RowLayout {
-            Kirigami.FormData.label: i18n("Arrival time:")
-            QQC2.Label {
-                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            // departure data
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Departure")
+            }
+            RowLayout {
+                Kirigami.FormData.label: i18n("Time:")
+                QQC2.Label {
+                    text: Localizer.formatDateTime(reservationFor, "departureTime")
+                }
+                QQC2.Label {
+                    text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
+                    color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                    visible: departure.hasExpectedDepartureTime
+                }
             }
             QQC2.Label {
-                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: arrival.hasExpectedArrivalTime
+                Kirigami.FormData.label: i18n("Station:")
+                text: reservationFor.departureStation.name
             }
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.arrivalStation.name
-        }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalStation
-        }
-        RowLayout {
-            Kirigami.FormData.label: i18n("Platform:")
-            QQC2.Label {
-                text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
-                color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
-                    arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                    Kirigami.Theme.textColor;
+            App.PlaceDelegate {
+                place: reservationFor.departureStation
             }
-            QQC2.Label {
-                text: i18n("(was: %1)", reservationFor.arrivalPlatform)
-                visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
+            RowLayout {
+                Kirigami.FormData.label: i18n("Platform:")
+                QQC2.Label {
+                    text: departure.hasExpectedPlatform ? departure.expectedPlatform : reservationFor.departurePlatform
+                    color: departure.platformChanged ? Kirigami.Theme.negativeTextColor :
+                        departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
+                        Kirigami.Theme.textColor;
+                }
+                QQC2.Label {
+                    text: i18n("(was: %1)", reservationFor.departurePlatform)
+                    visible: departure.platformChanged && reservationFor.departurePlatform != ""
+                }
             }
-        }
 
-        // seat reservation
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Seat")
-            Kirigami.FormData.isSection: true
-            visible: reservation.reservedTicket.ticketedSeat.seatNumber != "" || reservation.reservedTicket.ticketedSeat.seatSection != ""
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Coach:")
-            text: reservation.reservedTicket.ticketedSeat.seatSection
-            visible: reservation.reservedTicket.ticketedSeat.seatSection != ""
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Seat:")
-            text: reservation.reservedTicket.ticketedSeat.seatNumber
-            visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
-        }
+            // arrival data
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Arrival")
+            }
+            RowLayout {
+                Kirigami.FormData.label: i18n("Arrival time:")
+                QQC2.Label {
+                    text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                }
+                QQC2.Label {
+                    text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                    color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                    visible: arrival.hasExpectedArrivalTime
+                }
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Station:")
+                text: reservationFor.arrivalStation.name
+            }
+            App.PlaceDelegate {
+                place: reservationFor.arrivalStation
+            }
+            RowLayout {
+                Kirigami.FormData.label: i18n("Platform:")
+                QQC2.Label {
+                    text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
+                    color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
+                        arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
+                        Kirigami.Theme.textColor;
+                }
+                QQC2.Label {
+                    text: i18n("(was: %1)", reservationFor.arrivalPlatform)
+                    visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
+                }
+            }
 
-        // booking details
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Booking")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Reference:")
-            text: reservation.reservationNumber
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Under name:")
-            text: reservation.underName.name
+            // seat reservation
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18n("Seat")
+                Kirigami.FormData.isSection: true
+                visible: reservation.reservedTicket.ticketedSeat.seatNumber != "" || reservation.reservedTicket.ticketedSeat.seatSection != ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Coach:")
+                text: reservation.reservedTicket.ticketedSeat.seatSection
+                visible: reservation.reservedTicket.ticketedSeat.seatSection != ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Seat:")
+                text: reservation.reservedTicket.ticketedSeat.seatNumber
+                visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
+            }
+
+            // booking details
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18n("Booking")
+                Kirigami.FormData.isSection: true
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Reference:")
+                text: reservation.reservationNumber
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Under name:")
+                text: reservation.underName.name
+            }
         }
     }
 }

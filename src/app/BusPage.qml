@@ -27,11 +27,11 @@ App.DetailsPage {
     id: root
     title: i18n("Bus Ticket")
 
-    Kirigami.FormLayout {
-        width: root.width
+    ColumnLayout {
+        width: parent.width
 
         QQC2.Label {
-            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
             text: reservationFor.busName + " " + reservationFor.busNumber
             horizontalAlignment: Qt.AlignHCenter
             font.bold: true
@@ -39,66 +39,69 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
-            Kirigami.FormData.isSection: true
             resIds: _reservationManager.reservationsForBatch(root.batchId)
         }
 
-        // departure data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Departure")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Time:")
-            text: Localizer.formatDateTime(reservationFor, "departureTime")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.departureBusStop.name
-        }
-        App.PlaceDelegate {
-            place: reservationFor.departureBusStop
-        }
+        Kirigami.FormLayout {
+            Layout.fillWidth: true
 
-        // arrival data
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Arrival")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Time:")
-            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.arrivalBusStop.name
-        }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalBusStop
-        }
+            // departure data
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Departure")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Time:")
+                text: Localizer.formatDateTime(reservationFor, "departureTime")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Station:")
+                text: reservationFor.departureBusStop.name
+            }
+            App.PlaceDelegate {
+                place: reservationFor.departureBusStop
+            }
 
-        // seat reservation
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Seat")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Seat:")
-            text: reservation.reservedTicket.ticketedSeat.seatNumber
-        }
+            // arrival data
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18n("Arrival")
+                Kirigami.FormData.isSection: true
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Time:")
+                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Station:")
+                text: reservationFor.arrivalBusStop.name
+            }
+            App.PlaceDelegate {
+                place: reservationFor.arrivalBusStop
+            }
 
-        // booking details
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Booking")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Reference:")
-            text: reservation.reservationNumber
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Under name:")
-            text: reservation.underName.name
+            // seat reservation
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18n("Seat")
+                Kirigami.FormData.isSection: true
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Seat:")
+                text: reservation.reservedTicket.ticketedSeat.seatNumber
+            }
+
+            // booking details
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18n("Booking")
+                Kirigami.FormData.isSection: true
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Reference:")
+                text: reservation.reservationNumber
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Under name:")
+                text: reservation.underName.name
+            }
         }
     }
 }
