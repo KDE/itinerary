@@ -39,6 +39,7 @@ Kirigami.Page {
         model: forecastModel
         delegate: Kirigami.BasicListItem {
             icon: model.weatherForecast.symbolIconName
+            iconColor: "transparent"
             label: {
                 var fc = model.weatherForecast;
                 if (fc.maximumTemperature == fc.minimumTemperature) {
