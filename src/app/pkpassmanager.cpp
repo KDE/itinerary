@@ -123,15 +123,17 @@ void PkPassManager::importPassFromData(const QByteArray &data)
 QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkPassManager::ImportMode mode)
 {
     qCDebug(Log) << url << mode;
-    if (!url.isEmpty() && !url.isLocalFile())
+    if (url.isEmpty() && data.isEmpty()) {
         return {};
+    }
 
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
+    const auto fileName = url.isLocalFile() ? url.toLocalFile() : url.toString();
     QDir::root().mkpath(basePath);
 
     std::unique_ptr<KPkPass::Pass> newPass;
     if (!url.isEmpty()) {
-        newPass.reset(KPkPass::Pass::fromFile(url.toLocalFile()));
+        newPass.reset(KPkPass::Pass::fromFile(fileName));
     } else {
         newPass.reset(KPkPass::Pass::fromData(data));
     }
@@ -162,10 +164,10 @@ QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkP
 
     switch (mode) {
         case Move:
-            QFile::rename(url.toLocalFile(), dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            QFile::rename(fileName, dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
             break;
         case Copy:
-            QFile::copy(url.toLocalFile(), dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            QFile::copy(fileName, dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
             break;
         case Data:
         {
