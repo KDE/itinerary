@@ -18,6 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import QtQuick.Window 2.10
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.prison 1.0 as Prison
 import org.kde.kitinerary 1.0
@@ -61,9 +62,9 @@ ColumnLayout {
             anchors.top: barcodeContainer.top
             anchors.bottom: barcodeContainer.bottom
             color: "white"
+            property bool is1dCode: currentTicket.ticketTokenType == Ticket.Code128
             implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth + barcode.anchors.margins * 2)
-            // ### we assume aspect ratio 1:1 here, which is correct for QR and Aztec only
-            implicitHeight: visible ? implicitWidth : 0
+            implicitHeight: visible ? is1dCode ? Screen.pixelDensity * 25 : implicitWidth : 0
             visible: barcode.implicitHeight > 0
 
             MouseArea {
