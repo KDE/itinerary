@@ -62,9 +62,19 @@ ColumnLayout {
             anchors.top: barcodeContainer.top
             anchors.bottom: barcodeContainer.bottom
             color: "white"
+            // aim at 50x50mm for 2d codes, and 25mm height for 1d codes, if we have the space for it
             property bool is1dCode: currentTicket.ticketTokenType == Ticket.Code128
-            implicitWidth: Math.max(root.width * 0.8, barcode.implicitWidth + barcode.anchors.margins * 2)
-            implicitHeight: visible ? is1dCode ? Screen.pixelDensity * 25 : implicitWidth : 0
+            // if this gets too wide, we need to rotate by 90°
+            property bool showVertical: is1dCode && barcodeTargetWidth > root.width
+
+            // unrotated barcode sizes
+            property int barcodeTargetWidth: Math.max(
+                (is1dCode ? 2 * barcode.implicitWidth : barcode.implicitWidth) + 2 * barcode.anchors.margins,
+                Screen.pixelDensity * 50)
+            property int barcodeTargetHeight: is1dCode ? Screen.pixelDensity * 25 : barcodeTargetWidth
+
+            implicitWidth: (showVertical ? barcodeTargetHeight : barcodeTargetWidth) + 2 * Kirigami.Units.smallSpacing
+            implicitHeight: visible ? (showVertical ? barcodeTargetWidth : barcodeTargetHeight) + 2 * Kirigami.Units.smallSpacing : 0
             visible: barcode.implicitHeight > 0
 
             MouseArea {
@@ -74,8 +84,10 @@ ColumnLayout {
 
             Prison.Barcode {
                 id: barcode
-                anchors.fill: background
-                anchors.margins: 4
+                anchors.centerIn: background
+                width: background.barcodeTargetWidth
+                height: background.barcodeTargetHeight
+                rotation: background.showVertical ? 90 : 0
                 barcodeType:
                 {
                     if (currentTicket == undefined)
