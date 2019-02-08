@@ -84,6 +84,7 @@ Kirigami.ScrollablePage {
                         QQC2.Label {
                             text: "From: " + modelData.from.name
                             Layout.fillWidth: true
+                            elide: Text.ElideRight
                         }
                         QQC2.Label {
                             text: modelData.hasExpectedDeparturePlatform ? modelData.expectedDeparturePlatform : modelData.scheduledDeparturePlatform
@@ -124,6 +125,7 @@ Kirigami.ScrollablePage {
                         QQC2.Label {
                             text: "To: " + modelData.to.name
                             Layout.fillWidth: true
+                            elide: Text.ElideRight
                         }
                         QQC2.Label {
                             text: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
