@@ -106,6 +106,14 @@ public class Activity extends QtActivity
         return getWindow().getAttributes().screenBrightness;
     }
 
+    public void setLockInhibitionOn() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    public void setLockInhibitionOff() {
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);

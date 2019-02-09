@@ -35,6 +35,7 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
+#include "lockmanager.h"
 
 #include <weatherforecastmanager.h>
 
@@ -141,6 +142,7 @@ int main(int argc, char **argv)
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
     BrightnessManager brightnessManager;
+    LockManager lockManager;
 
     KPublicTransport::Manager ptMgr;
     ptMgr.setAllowInsecureBackends(settings.allowInsecureServices());
@@ -221,6 +223,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
+    engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryModel"), &journeyQueryModel);
     engine.load(QStringLiteral("qrc:/main.qml"));

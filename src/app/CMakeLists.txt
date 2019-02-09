@@ -46,6 +46,7 @@ set(itinerary_app_srcs
     weatherforecastmodel.cpp
     ${qml_srcs}
     brightnessmanager.cpp
+    lockmanager.cpp
     livedatamanager.cpp
     journeyquerymodel.cpp
     publictransport.cpp
@@ -54,9 +55,13 @@ if (ANDROID)
     list(APPEND itinerary_app_srcs
         androidbrightnessbackend.cpp
         androidcontentfileengine.cpp
+        androidlockbackend.cpp
     )
 else()
-    list(APPEND itinerary_app_srcs solidbrightnessbackend.cpp)
+    list(APPEND itinerary_app_srcs
+        solidbrightnessbackend.cpp
+        solidlockbackend.cpp
+    )
     qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
 endif()
 
