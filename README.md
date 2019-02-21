@@ -7,7 +7,8 @@ Itinerary and boarding pass management application.
 ### Are there pre-built packages available?
 
 Yes, but so far only nightly development builds, no stable releases yet.
-- Flatpak (for Plasma Mobile/Linux): KDE's Flatpak repository - `flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kdeapps.flatpakrepo`
+
+- Flatpak (for Plasma Mobile/Linux): KDE's Flatpak repository (`flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kdeapps.flatpakrepo`)
 - Android: KDE's nightly build F-Droid repository (https://cdn.kde.org/android/fdroid/repo/?fingerprint=B3EBE10AFA6C5C400379B34473E843D686C61AE6AD33F423C98AF903F056523F) or directly on Binary Factory (https://binary-factory.kde.org/view/Android/job/Itinerary_android/).
 
 ### Where do I get data from?
@@ -39,6 +40,7 @@ make create-apk-itinerary-app
 ```
 
 Additional CMake options:
+
 - BREEZEICONS_DIR: breeze icons source dir (by default assumed next to this folder)
 
 If you are using kdesrc-build, the following configuration snippet can be useful to obtain
