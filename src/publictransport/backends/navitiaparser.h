@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_NAVITIAPARSER_H
 #define KPUBLICTRANSPORT_NAVITIAPARSER_H
 
+#include "kpublictransport_export.h"
+
 #include <vector>
 
 class QByteArray;
@@ -29,11 +31,13 @@ class Departure;
 class Journey;
 class Location;
 
-/** Navitia REST response parser. */
+/** Navitia REST response parser.
+ *  @internal exported for unit tests only
+ */
 namespace NavitiaParser
 {
-    std::vector<Journey> parseJourneys(const QByteArray &data);
-    std::vector<Departure> parseDepartures(const QByteArray &data);
+    KPUBLICTRANSPORT_EXPORT std::vector<Journey> parseJourneys(const QByteArray &data);
+    KPUBLICTRANSPORT_EXPORT std::vector<Departure> parseDepartures(const QByteArray &data);
     std::vector<Location> parsePlacesNearby(const QByteArray &data);
     std::vector<Location> parsePlaces(const QByteArray &data);
 

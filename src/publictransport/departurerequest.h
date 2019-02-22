@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_DEPARTUREREQUEST_H
 #define KPUBLICTRANSPORT_DEPARTUREREQUEST_H
 
+#include "kpublictransport_export.h"
+
 #include <QSharedDataPointer>
 
 class QDateTime;
@@ -28,7 +30,7 @@ class DepartureRequestPrivate;
 class Location;
 
 /** Describes a departure search. */
-class DepartureRequest
+class KPUBLICTRANSPORT_EXPORT DepartureRequest
 {
 public:
     DepartureRequest();

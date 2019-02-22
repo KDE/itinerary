@@ -28,6 +28,7 @@ set(kpublictransport_srcs
 ecm_qt_declare_logging_category(kpublictransport_srcs HEADER logging.h IDENTIFIER KPublicTransport::Log CATEGORY_NAME org.kde.kpublictransport)
 
 add_library(KPublicTransport STATIC ${kpublictransport_srcs})
+generate_export_header(KPublicTransport BASE_NAME KPublicTransport)
 
 target_include_directories(KPublicTransport PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>")
 target_link_libraries(KPublicTransport

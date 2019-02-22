@@ -30,7 +30,7 @@ class LocationRequest;
 class LocationReplyPrivate;
 
 /** Location query reply. */
-class LocationReply : public Reply
+class KPUBLICTRANSPORT_EXPORT LocationReply : public Reply
 {
     Q_OBJECT
 public:

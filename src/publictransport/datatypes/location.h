@@ -31,7 +31,7 @@ namespace KPublicTransport {
 class LocationPrivate;
 
 /** A location. */
-class Location
+class KPUBLICTRANSPORT_EXPORT Location
 {
     KPUBLICTRANSPORT_GADGET(Location)
     /** Human-readable name of the location. */

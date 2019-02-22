@@ -31,7 +31,7 @@ namespace KPublicTransport {
 class JourneySectionPrivate;
 
 /** A segment of a journey plan. */
-class JourneySection
+class KPUBLICTRANSPORT_EXPORT JourneySection
 {
     KPUBLICTRANSPORT_GADGET(JourneySection)
     /** Mode of transport for this section. */
@@ -149,7 +149,7 @@ public:
 class JourneyPrivate;
 
 /** A journey plan. */
-class Journey
+class KPUBLICTRANSPORT_EXPORT Journey
 {
     KPUBLICTRANSPORT_GADGET(Journey)
     /** Journey sections for consumption by QML. */

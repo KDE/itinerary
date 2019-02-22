@@ -25,7 +25,7 @@ namespace KPublicTransport {
 class LinePrivate;
 
 /** A public transport line. */
-class Line
+class KPUBLICTRANSPORT_EXPORT Line
 {
     KPUBLICTRANSPORT_GADGET(Line)
     /** Name of the line. */
@@ -98,7 +98,7 @@ public:
 class RoutePrivate;
 
 /** A route of a public transport line. */
-class Route
+class KPUBLICTRANSPORT_EXPORT Route
 {
     KPUBLICTRANSPORT_GADGET(Route)
     /** Line this route belongs to. */

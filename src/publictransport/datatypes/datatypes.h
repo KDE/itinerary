@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_DATATYPES_H
 #define KPUBLICTRANSPORT_DATATYPES_H
 
+#include "kpublictransport_export.h"
+
 #include <QMetaType>
 #include <QSharedDataPointer>
 

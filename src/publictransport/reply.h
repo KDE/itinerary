@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_REPLY_H
 #define KPUBLICTRANSPORT_REPLY_H
 
+#include "kpublictransport_export.h"
+
 #include <QObject>
 
 #include <memory>
@@ -31,7 +33,7 @@ class Manager;
 class ReplyPrivate;
 
 /** Query response base class. */
-class Reply : public QObject
+class KPUBLICTRANSPORT_EXPORT Reply : public QObject
 {
     Q_OBJECT
 public:

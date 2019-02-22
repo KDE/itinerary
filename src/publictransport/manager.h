@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_MANAGER_H
 #define KPUBLICTRANSPORT_MANAGER_H
 
+#include "kpublictransport_export.h"
+
 #include <memory>
 
 class QNetworkAccessManager;
@@ -33,7 +35,7 @@ class LocationRequest;
 class ManagerPrivate;
 
 /** Entry point for starting public transport queries. */
-class Manager
+class KPUBLICTRANSPORT_EXPORT Manager
 {
 public:
     Manager();

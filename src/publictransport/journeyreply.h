@@ -29,7 +29,7 @@ class JourneyReplyPrivate;
 class JourneyRequest;
 
 /** Journey query response. */
-class JourneyReply : public Reply
+class KPUBLICTRANSPORT_EXPORT JourneyReply : public Reply
 {
     Q_OBJECT
 public:

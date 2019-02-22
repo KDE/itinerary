@@ -30,7 +30,7 @@ class DepartureRequest;
 class DepartureReplyPrivate;
 
 /** Departure or arrival query reply. */
-class DepartureReply : public Reply
+class KPUBLICTRANSPORT_EXPORT DepartureReply : public Reply
 {
     Q_OBJECT
 public:

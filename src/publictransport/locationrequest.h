@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_LOCATIONREQUEST_H
 #define KPUBLICTRANSPORT_LOCATIONREQUEST_H
 
+#include "kpublictransport_export.h"
+
 #include <QSharedDataPointer>
 
 namespace KPublicTransport {
@@ -25,7 +27,7 @@ namespace KPublicTransport {
 class LocationRequestPrivate;
 
 /** Describes a location search. */
-class LocationRequest
+class KPUBLICTRANSPORT_EXPORT LocationRequest
 {
 public:
     LocationRequest();

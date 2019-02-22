@@ -29,7 +29,7 @@ namespace KPublicTransport {
 class DeparturePrivate;
 
 /** Information about an arrival and/or departure of a vehicle at a stop area. */
-class Departure
+class KPUBLICTRANSPORT_EXPORT Departure
 {
     KPUBLICTRANSPORT_GADGET(Departure)
 

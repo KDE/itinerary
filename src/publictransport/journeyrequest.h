@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_JOURNEYREQUEST_H
 #define KPUBLICTRANSPORT_JOURNEYREQUEST_H
 
+#include "kpublictransport_export.h"
+
 #include <QSharedDataPointer>
 
 class QDateTime;
@@ -28,7 +30,7 @@ class JourneyRequestPrivate;
 class Location;
 
 /** Describes a journey search. */
-class JourneyRequest
+class KPUBLICTRANSPORT_EXPORT JourneyRequest
 {
 public:
     JourneyRequest();

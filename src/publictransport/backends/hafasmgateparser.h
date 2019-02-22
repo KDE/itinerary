@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_HAFASMGATEPARSER_H
 #define KPUBLICTRANSPORT_HAFASMGATEPARSER_H
 
+#include "kpublictransport_export.h"
+
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Reply>
 
@@ -39,8 +41,10 @@ struct Ico {
     QColor fg;
 };
 
-/** Hafas response parser. */
-class HafasMgateParser
+/** Hafas response parser.
+ *  @internal exported for unit tests only
+ */
+class KPUBLICTRANSPORT_EXPORT HafasMgateParser
 {
 public:
     HafasMgateParser();

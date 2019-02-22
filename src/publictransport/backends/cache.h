@@ -18,6 +18,8 @@
 #ifndef KPUBLICTRANSPORT_CACHE_H
 #define KPUBLICTRANSPORT_CACHE_H
 
+#include "kpublictransport_export.h"
+
 #include <vector>
 
 class QString;
@@ -45,18 +47,20 @@ template <typename T> struct CacheEntry
     CacheHitType type = CacheHitType::Miss;
 };
 
-/** Query result caching functions. */
+/** Query result caching functions.
+ *  @internal exported for unit tests only
+ */
 namespace Cache
 {
     /** Add data to the cache. */
-    void addLocationCacheEntry(const QString &backendId, const QString &cacheKey, const std::vector<Location> &data);
+    KPUBLICTRANSPORT_EXPORT void addLocationCacheEntry(const QString &backendId, const QString &cacheKey, const std::vector<Location> &data);
     /** Add negative cache entry for location queries, ie. remember a result could not be found. */
-    void addNegativeLocationCacheEntry(const QString &backendId, const QString &cacheKey);
+    KPUBLICTRANSPORT_EXPORT void addNegativeLocationCacheEntry(const QString &backendId, const QString &cacheKey);
     /** Perform cache lookuip for location results. */
-    CacheEntry<Location> lookupLocation(const QString &backendId, const QString &cacheKey);
+    KPUBLICTRANSPORT_EXPORT CacheEntry<Location> lookupLocation(const QString &backendId, const QString &cacheKey);
 
     /** Expire old cache entries. */
-    void expire();
+    void KPUBLICTRANSPORT_EXPORT expire();
 }
 
 }
