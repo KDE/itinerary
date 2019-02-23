@@ -34,117 +34,123 @@ Kirigami.ScrollablePage {
     Component {
         id: sectionDelegate
         Kirigami.AbstractListItem {
-            RowLayout {
-                Rectangle {
-                    id: colorBar
-                    width: Kirigami.Units.largeSpacing
-                    color: modelData.route.line.hasColor ? modelData.route.line.color : "transparent"
-                    Layout.fillHeight: true
-                }
+            GridLayout {
+                columns: 2
 
-                QQC2.Label {
-                    text: {
-                        switch (modelData.mode) {
-                            case JourneySection.PublicTransport:
-                            {
-                                switch (modelData.route.line.mode) {
-                                    case Line.Air: return "✈️";
-                                    case Line.Boat: return "🛥️";
-                                    case Line.Bus: return "🚍";
-                                    case Line.BusRapidTransit: return "🚌";
-                                    case Line.Coach: return "🚌";
-                                    case Line.Ferry: return "⛴️";
-                                    case Line.Funicular: return "🚞";
-                                    case Line.LocalTrain: return "🚆";
-                                    case Line.LongDistanceTrain: return "🚄";
-                                    case Line.Metro: return "🚇";
-                                    case Line.RailShuttle: return "🚅";
-                                    case Line.RapidTransit: return "🚊";
-                                    case Line.Shuttle: return "🚐";
-                                    case Line.Taxi: return "🚕";
-                                    case Line.Train: return "🚆";
-                                    case Line.Tramway: return "🚈";
-                                    default: return "?";
-                                }
-                                break;
-                            }
-                            case JourneySection.Walking: return "🚶";
-                            case JourneySection.Waiting: return "⌛";
-                            case JourneySection.Transfer: return "⇄";
-                            default: return "?";
-                        }
-                    }
-                    font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
-                }
-
-                ColumnLayout {
-                    Layout.fillWidth: true
-                    RowLayout {
-                        visible: modelData.mode != JourneySection.Waiting
-                        QQC2.Label {
-                            text: "From: " + modelData.from.name
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                        }
-                        QQC2.Label {
-                            text: modelData.hasExpectedDeparturePlatform ? modelData.expectedDeparturePlatform : modelData.scheduledDeparturePlatform
-                            color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor
-                                : modelData.hasExpectedDeparturePlatform ? Kirigami.Theme.positiveTextColor
-                                : Kirigami.Theme.textColor
-                            visible: modelData.scheduledDeparturePlatform !== ""
-                        }
-                    }
-                    RowLayout {
-                        visible: modelData.mode != JourneySection.Waiting
-                        QQC2.Label {
-                            text: i18n("Departure: %1", Localizer.formatTime(modelData, "scheduledDepartureTime"))
-                        }
-                        QQC2.Label {
-                            text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
-                            color: modelData.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.hasExpectedDepartureTime
-                        }
+                // top row: departure time, departure location, departure platform
+                RowLayout {
+                    visible: modelData.mode != JourneySection.Waiting
+                    QQC2.Label {
+                        text: Localizer.formatTime(modelData, "scheduledDepartureTime")
                     }
                     QQC2.Label {
+                        text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
+                        color: modelData.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: modelData.hasExpectedDepartureTime
+                    }
+                }
+                RowLayout {
+                    visible: modelData.mode != JourneySection.Waiting
+                    QQC2.Label {
+                        text: modelData.from.name
                         Layout.fillWidth: true
+                        elide: Text.ElideRight
+                    }
+                    QQC2.Label {
+                        text: modelData.hasExpectedDeparturePlatform ? modelData.expectedDeparturePlatform : modelData.scheduledDeparturePlatform
+                        color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor
+                            : modelData.hasExpectedDeparturePlatform ? Kirigami.Theme.positiveTextColor
+                            : Kirigami.Theme.textColor
+                        visible: modelData.scheduledDeparturePlatform !== ""
+                    }
+                }
+
+                // middle row: mode symbol, transport mode, duration
+                Rectangle {
+                    color: modelData.route.line.hasColor ? modelData.route.line.color : "transparent"
+                    implicitHeight: modeIcon.implicitHeight
+                    implicitWidth: modeIcon.implicitWidth
+                    Layout.alignment: Qt.AlignHCenter
+
+                    QQC2.Label {
+                        id: modeIcon
+                        anchors.centerIn: parent
                         text: {
                             switch (modelData.mode) {
-                            case JourneySection.PublicTransport:
-                                return modelData.route.line.modeString + " " + modelData.route.line.name + " " + Localizer.formatDuration(modelData.duration);
-                            case JourneySection.Walking:
-                                return "Walk " + Localizer.formatDuration(modelData.duration)
-                            case JourneySection.Transfer:
-                                return "Transfer " + Localizer.formatDuration(modelData.duration)
-                            case JourneySection.Waiting:
-                                return "Wait " + Localizer.formatDuration(modelData.duration)
-                            return "???";
-                        }}
+                                case JourneySection.PublicTransport:
+                                {
+                                    switch (modelData.route.line.mode) {
+                                        case Line.Air: return "✈️";
+                                        case Line.Boat: return "🛥️";
+                                        case Line.Bus: return "🚍";
+                                        case Line.BusRapidTransit: return "🚌";
+                                        case Line.Coach: return "🚌";
+                                        case Line.Ferry: return "⛴️";
+                                        case Line.Funicular: return "🚞";
+                                        case Line.LocalTrain: return "🚆";
+                                        case Line.LongDistanceTrain: return "🚄";
+                                        case Line.Metro: return "🚇";
+                                        case Line.RailShuttle: return "🚅";
+                                        case Line.RapidTransit: return "🚊";
+                                        case Line.Shuttle: return "🚐";
+                                        case Line.Taxi: return "🚕";
+                                        case Line.Train: return "🚆";
+                                        case Line.Tramway: return "🚈";
+                                        default: return "?";
+                                    }
+                                    break;
+                                }
+                                case JourneySection.Walking: return "🚶";
+                                case JourneySection.Waiting: return "⌛";
+                                case JourneySection.Transfer: return "⇄";
+                                default: return "?";
+                            }
+                        }
+                        color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
+                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
                     }
-                    RowLayout {
-                        visible: modelData.mode != JourneySection.Waiting
-                        QQC2.Label {
-                            text: "To: " + modelData.to.name
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                        }
-                        QQC2.Label {
-                            text: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
-                            color: modelData.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor
-                                : modelData.hasExpectedArrivalPlatform ? Kirigami.Theme.positiveTextColor
-                                : Kirigami.Theme.textColor
-                            visible: modelData.scheduledArrivalPlatform !== ""
-                        }
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: {
+                        switch (modelData.mode) {
+                        case JourneySection.PublicTransport:
+                            return modelData.route.line.modeString + " " + modelData.route.line.name + " (" + Localizer.formatDuration(modelData.duration) + ")";
+                        case JourneySection.Walking:
+                            return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration))
+                        case JourneySection.Transfer:
+                            return i18n("Transfer (%1)", Localizer.formatDuration(modelData.duration))
+                        case JourneySection.Waiting:
+                            return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
+                        return "???";
+                    }}
+                }
+
+                // last row: arrival information
+                RowLayout {
+                    visible: modelData.mode != JourneySection.Waiting
+                    QQC2.Label {
+                        text: Localizer.formatTime(modelData, "scheduledArrivalTime")
                     }
-                    RowLayout {
-                        visible: modelData.mode != JourneySection.Waiting
-                        QQC2.Label {
-                            text: i18n("Arrival: %1", Localizer.formatTime(modelData, "scheduledArrivalTime"))
-                        }
-                        QQC2.Label {
-                            text: (modelData.arrivalDelay >= 0 ? "+" : "") + modelData.arrivalDelay
-                            color: modelData.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                            visible: modelData.hasExpectedArrivalTime
-                        }
+                    QQC2.Label {
+                        text: (modelData.arrivalDelay >= 0 ? "+" : "") + modelData.arrivalDelay
+                        color: modelData.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: modelData.hasExpectedArrivalTime
+                    }
+                }
+                RowLayout {
+                    visible: modelData.mode != JourneySection.Waiting
+                    QQC2.Label {
+                        text: modelData.to.name
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
+                    }
+                    QQC2.Label {
+                        text: modelData.hasExpectedArrivalPlatform ? modelData.expectedArrivalPlatform : modelData.scheduledArrivalPlatform
+                        color: modelData.arrivalPlatformChanged ? Kirigami.Theme.negativeTextColor
+                            : modelData.hasExpectedArrivalPlatform ? Kirigami.Theme.positiveTextColor
+                            : Kirigami.Theme.textColor
+                        visible: modelData.scheduledArrivalPlatform !== ""
                     }
                 }
             }
