@@ -64,6 +64,8 @@ public:
 
     /** Checks if to instances refer to the same location (which does not necessarily mean they are exactly equal). */
     static bool isSame(const Location &lhs, const Location &rhs);
+    /** Checks if two location names refer to the same location. */
+    static bool isSameName(const QString &lhs, const QString &rhs);
 
     /** Merge two departure instances.
      *  This assumes isSame(lhs, rhs) and tries to preserve the most detailed information.

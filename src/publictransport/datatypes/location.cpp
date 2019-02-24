@@ -174,9 +174,7 @@ bool Location::isSame(const Location &lhs, const Location &rhs)
     }
 
     // name
-    const auto lhsNameFragments = splitAndNormalizeName(lhs.name());
-    const auto rhsNameFragments = splitAndNormalizeName(rhs.name());
-    if (lhsNameFragments == rhsNameFragments) {
+    if (isSameName(lhs.name(), rhs.name())) {
         return true;
     }
 
@@ -186,6 +184,13 @@ bool Location::isSame(const Location &lhs, const Location &rhs)
     }
 
     return false;
+}
+
+bool Location::isSameName(const QString &lhs, const QString &rhs)
+{
+    const auto lhsNameFragments = splitAndNormalizeName(lhs);
+    const auto rhsNameFragments = splitAndNormalizeName(rhs);
+    return lhsNameFragments == rhsNameFragments;
 }
 
 Location Location::merge(const Location &lhs, const Location &rhs)

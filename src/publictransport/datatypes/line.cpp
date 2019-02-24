@@ -16,6 +16,7 @@
 */
 
 #include "line.h"
+#include "location.h"
 #include "datatypes_p.h"
 #include "json.h"
 
@@ -40,17 +41,6 @@ public:
     QString direction;
 };
 
-}
-
-static bool isSameLocationName(const QString &lhs, const QString &rhs)
-{
-    if (lhs.size() == rhs.size()) {
-        return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
-    }
-    if (lhs.size() < rhs.size()) {
-        return rhs.startsWith(lhs, Qt::CaseInsensitive);
-    }
-    return lhs.startsWith(rhs, Qt::CaseInsensitive);
 }
 
 static bool isSameLineName(const QString &lhs, const QString &rhs)
@@ -190,7 +180,7 @@ void Route::setDirection(const QString &direction)
 
 bool Route::isSame(const Route &lhs, const Route &rhs)
 {
-    return isSameLocationName(lhs.direction(), rhs.direction()) &&
+    return Location::isSameName(lhs.direction(), rhs.direction()) &&
         Line::isSame(lhs.line(), rhs.line());
 }
 
@@ -214,6 +204,5 @@ Route Route::fromJson(const QJsonObject &obj)
     r.setLine(Line::fromJson(obj.value(QLatin1String("line")).toObject()));
     return r;
 }
-
 
 #include "moc_line.cpp"
