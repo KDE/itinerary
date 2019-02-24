@@ -20,9 +20,11 @@
 #include "datatypes_p.h"
 #include "json.h"
 
+#include <QDebug>
 #include <QHash>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QRegularExpression>
 #include <QTimeZone>
 
 #include <cmath>
@@ -117,6 +119,51 @@ QHash<QString, QString> Location::identifiers() const
     return d->ids;
 }
 
+// keep this sorted by key
+struct {
+    const char *key;
+    const char *value;
+} static const name_normalization_map[] = {
+    { "bahnhof", nullptr },
+    { "bhf", nullptr },
+    { "centraal", "central" },
+    { "cs", "central" },
+    { "de", nullptr },
+    { "flughafen", "airport" },
+    { "gare", nullptr },
+    { "hbf", "hauptbahnhof" },
+    { "rer", nullptr },
+    { "s", nullptr },
+    { "st", "saint" },
+    { "u", nullptr }
+};
+
+static QStringList splitAndNormalizeName(const QString &name)
+{
+    static const QRegularExpression splitRegExp(QStringLiteral(R"([, \(\)-/\.\[\]])"));
+    auto l = name.split(splitRegExp, QString::SkipEmptyParts);
+
+    for (auto it = l.begin(); it != l.end();) {
+        *it = (*it).toCaseFolded();
+        const auto b = (*it).toUtf8();
+        const auto entry = std::lower_bound(std::begin(name_normalization_map), std::end(name_normalization_map), b.constData(), [](const auto &lhs, const auto rhs) {
+            return strcmp(lhs.key, rhs) < 0;
+        });
+        if (entry != std::end(name_normalization_map) && strcmp((*entry).key, b.constData()) == 0) {
+            if (!(*entry).value) {
+                it = l.erase(it);
+                continue;
+            }
+            *it = QString::fromUtf8((*entry).value);
+        }
+        ++it;
+    }
+
+    l.removeDuplicates();
+    std::sort(l.begin(), l.end());
+    return l;
+}
+
 bool Location::isSame(const Location &lhs, const Location &rhs)
 {
     // ids
@@ -127,7 +174,9 @@ bool Location::isSame(const Location &lhs, const Location &rhs)
     }
 
     // name
-    if (lhs.name().compare(rhs.name(), Qt::CaseInsensitive) == 0) {
+    const auto lhsNameFragments = splitAndNormalizeName(lhs.name());
+    const auto rhsNameFragments = splitAndNormalizeName(rhs.name());
+    if (lhsNameFragments == rhsNameFragments) {
         return true;
     }
 
