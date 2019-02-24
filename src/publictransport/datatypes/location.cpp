@@ -131,8 +131,8 @@ bool Location::isSame(const Location &lhs, const Location &rhs)
         return true;
     }
 
-    // coordinates
-    if (qFuzzyCompare(lhs.latitude(), rhs.latitude()) && qFuzzyCompare(lhs.longitude(), rhs.longitude())) {
+    // coordinates: anything less than 10m apart is assumed to be the same
+    if (lhs.hasCoordinate() && rhs.hasCoordinate() && distance(lhs.latitude(), lhs.longitude(), rhs.latitude(), rhs.longitude()) < 10) {
         return true;
     }
 
