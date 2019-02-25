@@ -25,8 +25,8 @@ Kirigami.ApplicationWindow {
     title: "Departure Query"
     reachableModeEnabled: false
 
-    width: 480
-    height: 720
+    width: 540
+    height: 800
 
     pageStack.initialPage: departureQueryPage
 
@@ -56,10 +56,7 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: departureDelegate
-        Item {
-            implicitHeight: delegateLayout.implicitHeight
-            implicitWidth: delegateLayout.implicitWidth
-
+        Kirigami.AbstractListItem {
             RowLayout {
                 id: delegateLayout
 
@@ -98,6 +95,7 @@ Kirigami.ApplicationWindow {
                 ColumnLayout {
                     Layout.fillWidth: true
                     QQC2.Label {
+                        Layout.fillWidth: true
                         text: modelData.route.line.modeString + " " + modelData.route.line.name + " to " + modelData.route.direction
                     }
                     RowLayout {
@@ -200,7 +198,6 @@ Kirigami.ApplicationWindow {
                     Layout.fillWidth: true
                     model: _departures
                     clip: true
-                    spacing: Kirigami.Units.smallSpacing
                     delegate: departureDelegate
 
                     QQC2.BusyIndicator {

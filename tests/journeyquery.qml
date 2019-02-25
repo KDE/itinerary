@@ -24,9 +24,8 @@ import org.kde.kpublictransport 1.0
 Kirigami.ApplicationWindow {
     title: "Journey Query"
     reachableModeEnabled: false
-
-    width: 480
-    height: 720
+    width: 640
+    height: 800
 
     pageStack.initialPage: journyQueryPage
 
@@ -109,8 +108,10 @@ Kirigami.ApplicationWindow {
         }
         ListElement {
             name: "Brno central station -> Akademy 2014 venue"
+            fromName: "Brno central station"
             fromLon: 16.61287
             fromLat: 49.19069
+            toName: ""
             toLon: 16.57564
             toLat: 49.22462
         }
@@ -127,10 +128,7 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: journeyDelegate
-        Item {
-            implicitHeight: topLayout.implicitHeight
-            implicitWidth: topLayout.implicitWidth
-
+        Kirigami.AbstractListItem {
             RowLayout {
                 id: topLayout
 
@@ -199,6 +197,7 @@ Kirigami.ApplicationWindow {
                         }
                     }
                     QQC2.Label {
+                        Layout.fillWidth: true
                         text: {
                             switch (modelData.mode) {
                             case JourneySection.PublicTransport:
@@ -320,7 +319,6 @@ Kirigami.ApplicationWindow {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     model: _journeys[journeySelector.currentIndex].sections
-                    spacing: Kirigami.Units.smallSpacing
                     clip: true
                     delegate: journeyDelegate
 
