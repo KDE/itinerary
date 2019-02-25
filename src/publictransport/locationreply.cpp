@@ -55,8 +55,14 @@ void LocationReplyPrivate::finalizeResult()
                  < Location::distance(request.latitude(), request.longitude(), rhs.latitude(), rhs.longitude());
         });
     } else {
-        // for name based search, sort by Levenshtein distance
-        // TODO
+        // for name based search, sort by Levenshtein distance or similar metric
+        // TODO so far this only sorts for matching or not matching
+        std::stable_sort(locations.begin(), locations.end(), [this](const auto &lhs, const auto &rhs) {
+            if (Location::isSameName(request.name(), lhs.name()) && !Location::isSameName(request.name(), rhs.name())) {
+                return true;
+            }
+            return false;
+        });
     }
 }
 
