@@ -36,6 +36,9 @@ public:
     Q_INVOKABLE QDateTime dateTimeStripTimezone(const QVariant &obj, const QString &propertyName) const;
     /** Set a QDateTime property preserving the timezone of the current value. */
     Q_INVOKABLE QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value) const;
+
+    /** Convert links, email address and phone numbers in the given text to HTML links. */
+    Q_INVOKABLE QString textToHtml(const QString &text) const;
 };
 
 #endif // UTIL_H

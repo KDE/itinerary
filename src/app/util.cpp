@@ -19,6 +19,9 @@
 
 #include <KItinerary/JsonLdDocument>
 
+#include <kcoreaddons_version.h>
+#include <KTextToHTML>
+
 #include <QDateTime>
 #include <QTimeZone>
 
@@ -51,6 +54,15 @@ QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& p
     }
     JsonLdDocument::writeProperty(o, propertyName.toUtf8().constData(), value);
     return o;
+}
+
+QString Util::textToHtml(const QString& text) const
+{
+#if KCOREADDONS_VERSION_MINOR >= 56
+    return KTextToHTML::convertToHtml(text, KTextToHTML::ConvertPhoneNumbers | KTextToHTML::PreserveSpaces);
+#else
+    return text;
+#endif
 }
 
 #include "moc_util.cpp"
