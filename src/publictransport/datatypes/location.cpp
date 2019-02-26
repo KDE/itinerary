@@ -164,6 +164,53 @@ static QStringList splitAndNormalizeName(const QString &name)
     return l;
 }
 
+static void stripDiacritics(QString &s)
+{
+    // if the character has a canonical decomposition use that and skip the combining diacritic markers following it
+    // see https://en.wikipedia.org/wiki/Unicode_equivalence
+    // see https://en.wikipedia.org/wiki/Combining_character
+    for (auto &c : s) {
+        if (c.decompositionTag() == QChar::Canonical) {
+            c = c.decomposition().at(0);
+        }
+    }
+}
+
+// keep this ordered (see https://en.wikipedia.org/wiki/List_of_Unicode_characters)
+struct {
+    ushort key;
+    const char* replacement;
+} static const transliteration_map[] = {
+    { u'ä', "ae" },
+    { u'ö', "oe" },
+    { u'ø', "oe" },
+    { u'ü', "ue" }
+};
+
+static QString applyTransliterations(const QString &s)
+{
+    QString res;
+    res.reserve(s.size());
+
+    for (const auto c : s) {
+        const auto it = std::lower_bound(std::begin(transliteration_map), std::end(transliteration_map), c, [](const auto &lhs, const auto rhs) {
+            return QChar(lhs.key) < rhs;
+        });
+        if (it != std::end(transliteration_map) && QChar((*it).key) == c) {
+            res += QString::fromUtf8((*it).replacement);
+            continue;
+        }
+
+        if (c.decompositionTag() == QChar::Canonical) { // see above
+            res += c.decomposition().at(0);
+        } else {
+            res += c;
+        }
+    }
+
+    return res;
+}
+
 bool Location::isSame(const Location &lhs, const Location &rhs)
 {
     // ids
@@ -190,7 +237,21 @@ bool Location::isSameName(const QString &lhs, const QString &rhs)
 {
     const auto lhsNameFragments = splitAndNormalizeName(lhs);
     const auto rhsNameFragments = splitAndNormalizeName(rhs);
-    return lhsNameFragments == rhsNameFragments;
+
+    // first try with stripping diacritics
+    auto lhsNormalized = lhsNameFragments;
+    std::for_each(lhsNormalized.begin(), lhsNormalized.end(), stripDiacritics);
+    auto rhsNormalized = rhsNameFragments;
+    std::for_each(rhsNormalized.begin(), rhsNormalized.end(), stripDiacritics);
+
+    if (lhsNormalized == rhsNormalized) {
+        return true;
+    }
+
+    // if that didn't help, try to apply alternative transliterations of diacritics
+    std::transform(lhsNameFragments.begin(), lhsNameFragments.end(), lhsNormalized.begin(), applyTransliterations);
+    std::transform(rhsNameFragments.begin(), rhsNameFragments.end(), rhsNormalized.begin(), applyTransliterations);
+    return lhsNormalized == rhsNormalized;
 }
 
 Location Location::merge(const Location &lhs, const Location &rhs)
