@@ -367,7 +367,7 @@ private Q_SLOTS:
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 11);
 
-        // test case: two conesequtive location changes, the first one to an unknown location
+        // test case: two consecutive location changes, the first one to an unknown location
         // result: the weather element before the first location change ends with the start of that
         // result 2: we get a second weather element the same day after the second location change
         // TODO

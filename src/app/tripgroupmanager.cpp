@@ -272,7 +272,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             break;
         }
 
-        // check for connected transitions (ie. previsous arrival == current departure)
+        // check for connected transitions (ie. previous arrival == current departure)
         const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
         const auto curDeparture = LocationUtil::departureLocation(res);
         const auto connectedTransition = LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel);

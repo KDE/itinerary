@@ -29,7 +29,7 @@ Kirigami.AbstractCard {
     /** All reservations that are part of this patch. */
     property var resIds: _reservationManager.reservationsForBatch(root.batchId)
     /** A random reservation object, in case there's more than one.
-     *  Use this only for accessing properties that will be the same for all travlers.
+     *  Use this only for accessing properties that will be the same for all travelers.
      */
     readonly property var reservation: _reservationManager.reservation(root.batchId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */

@@ -185,7 +185,7 @@ void ReservationManager::addReservation(const QVariant &res)
                 }
             }
 
-            // truely new, and added to an existing batch
+            // truly new, and added to an existing batch
             const QString resId = QUuid::createUuid().toString();
             storeReservation(resId, res);
             emit reservationAdded(resId);
@@ -198,7 +198,7 @@ void ReservationManager::addReservation(const QVariant &res)
         }
     }
 
-    // truely new, and starting a new batch
+    // truly new, and starting a new batch
     const QString resId = QUuid::createUuid().toString();
     storeReservation(resId, res);
     emit reservationAdded(resId);
