@@ -5,7 +5,6 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT
 
 set(itinerary_srcs
     applicationcontroller.cpp
-    contenttypeprober.cpp
     countryinformation.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp

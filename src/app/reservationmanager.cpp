@@ -126,17 +126,12 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/batches/");
 }
 
-void ReservationManager::importReservation(const QByteArray& data)
+void ReservationManager::importReservation(const QByteArray& data, const QString &fileName)
 {
-    QJsonParseError error;
-    const auto doc = QJsonDocument::fromJson(data, &error);
-    if (!doc.isArray()) {
-        qCWarning(Log) << "Invalid JSON format." << error.errorString() << error.offset;
-        return;
-    }
-
-    const auto resData = JsonLdDocument::fromJson(doc.array());
-    importReservations(resData);
+    ExtractorEngine engine;
+    engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+    engine.setData(data, fileName);
+    importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
 
 void ReservationManager::importReservations(const QVector<QVariant> &resData)

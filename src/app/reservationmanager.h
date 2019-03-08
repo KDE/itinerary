@@ -53,7 +53,7 @@ public:
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
-    void importReservation(const QByteArray &data);
+    void importReservation(const QByteArray &data, const QString &fileName = {});
     void importReservations(const QVector<QVariant> &resData);
 
     const std::vector<QString>& batches() const;

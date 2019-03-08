@@ -16,15 +16,11 @@
 */
 
 #include "applicationcontroller.h"
-#include "contenttypeprober.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
-#include <KItinerary/ExtractorEngine>
-#include <KItinerary/IataBcbpParser>
 #include <KItinerary/JsonLdDocument>
-#include <KItinerary/PdfDocument>
 #include <KItinerary/Place>
 
 #include <QClipboard>
@@ -378,68 +374,29 @@ void ApplicationController::importLocalFile(const QUrl &url)
         qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
         return;
     }
+    if (f.size() > 4000000) {
+        qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
+        return;
+    }
 
-    const auto head = f.peek(4);
-    const auto type = ContentTypeProber::probe(head, url);
-    switch (type) {
-        case ContentTypeProber::Unknown:
-            qCWarning(Log) << "Unknown content type:" << url;
-            break;
-        case ContentTypeProber::PkPass:
-            m_pkPassMgr->importPass(url);
-            break;
-        case ContentTypeProber::JsonLd:
-            m_resMgr->importReservation(f.readAll());
-            break;
-        case ContentTypeProber::PDF:
-            if (f.size() <= 4000000)
-                importPdf(f.readAll());
-            break;
-        case ContentTypeProber::IataBcbp:
-            importIataBcbp(f.readAll());
-            break;
+    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive)) {
+        m_pkPassMgr->importPass(url);
+    } else {
+        m_resMgr->importReservation(f.readAll(), f.fileName());
     }
 }
 
 void ApplicationController::importData(const QByteArray &data)
 {
     qCDebug(Log);
-    const auto type = ContentTypeProber::probe(data);
-    switch (type) {
-        case ContentTypeProber::Unknown:
-            qCWarning(Log) << "Unknown content type for received data.";
-            break;
-        case ContentTypeProber::PkPass:
-            m_pkPassMgr->importPassFromData(data);
-            break;
-        case ContentTypeProber::JsonLd:
-            m_resMgr->importReservation(data);
-            break;
-        case ContentTypeProber::PDF:
-            importPdf(data);
-            break;
-        case ContentTypeProber::IataBcbp:
-            importIataBcbp(data);
-            break;
-    }
-}
-
-void ApplicationController::importPdf(const QByteArray &data)
-{
-    auto doc = std::unique_ptr<PdfDocument>(PdfDocument::fromData(data));
-    if (!doc)
+    if (data.size() < 4) {
         return;
-
-    ExtractorEngine engine;
-    engine.setContextDate(QDateTime::currentDateTime());
-    engine.setPdfDocument(doc.get());
-    m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
-}
-
-void ApplicationController::importIataBcbp(const QByteArray &data)
-{
-    const auto content = IataBcbpParser::parse(QString::fromUtf8(data), QDate::currentDate());
-    m_resMgr->importReservations(content);
+    }
+    if (strncmp(data.constData(), "PK\x03\x04", 4) == 0) {
+        m_pkPassMgr->importPassFromData(data);
+    } else {
+        m_resMgr->importReservation(data);
+    }
 }
 
 void ApplicationController::checkCalendar()

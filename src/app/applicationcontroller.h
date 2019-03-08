@@ -67,8 +67,6 @@ Q_SIGNALS:
 
 private:
     void importLocalFile(const QUrl &url);
-    void importPdf(const QByteArray &data);
-    void importIataBcbp(const QByteArray &data);
 
     static ApplicationController *s_instance;
 
