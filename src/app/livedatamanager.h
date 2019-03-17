@@ -76,6 +76,8 @@ private:
 
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
+    void removeArrivalData(const QString &resId);
+    void removeDepartureData(const QString &resId);
 
     /** Best known departure time. */
     QDateTime departureTime(const QString &resId, const QVariant &res) const;
@@ -92,6 +94,7 @@ private:
     };
 
     void storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const;
+    void removePublicTransportData(const QString &resId, const QString &type) const;
     void loadPublicTransportData();
     void loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange>& data) const;
 

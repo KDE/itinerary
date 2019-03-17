@@ -308,6 +308,28 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     emit departureUpdated(resId);
 }
 
+void LiveDataManager::removeArrivalData(const QString &resId)
+{
+    auto arrIt = m_arrivals.find(resId);
+    if (arrIt == m_arrivals.end()) {
+        return;
+    }
+    m_arrivals.erase(arrIt);
+    removePublicTransportData(resId, QStringLiteral("arrival"));
+    emit arrivalUpdated(resId);
+}
+
+void LiveDataManager::removeDepartureData(const QString &resId)
+{
+    auto depIt = m_departures.find(resId);
+    if (depIt == m_departures.end()) {
+        return;
+    }
+    m_departures.erase(depIt);
+    removePublicTransportData(resId, QStringLiteral("departure"));
+    emit departureUpdated(resId);
+}
+
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
@@ -379,6 +401,13 @@ void LiveDataManager::storePublicTransportData(const QString &resId, const KPubl
     file.write(QJsonDocument(KPublicTransport::Departure::toJson(dep)).toJson());
 }
 
+void LiveDataManager::removePublicTransportData(const QString &resId, const QString &type) const
+{
+    const auto path = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/")
+        + type + QLatin1Char('/') + resId + QLatin1String(".json"));
+    QFile::remove(path);
+}
+
 bool LiveDataManager::isRelevant(const QString &resId) const
 {
     const auto res = m_resMgr->reservation(resId);
@@ -417,6 +446,17 @@ void LiveDataManager::batchChanged(const QString &resId)
         m_reservations.erase(it);
     }
 
+    // check if existing updates still apply, and remove them otherwise!
+    const auto res = m_resMgr->reservation(resId);
+    const auto depIt = m_departures.constFind(resId);
+    if (depIt != m_departures.constEnd() && !isDepartureForReservation(res, depIt.value().change)) {
+        removeDepartureData(resId);
+    }
+    const auto arrIt = m_arrivals.constFind(resId);
+    if (arrIt != m_arrivals.constEnd() && !isArrivalForReservation(res, arrIt.value().change)) {
+        removeArrivalData(resId);
+    }
+
     m_pollTimer.setInterval(nextPollTime());
 }
 
@@ -434,6 +474,9 @@ void LiveDataManager::batchRemoved(const QString &resId)
     if (it != m_reservations.end()) {
         m_reservations.erase(it);
     }
+
+    removeArrivalData(resId);
+    removeDepartureData(resId);
 }
 
 void LiveDataManager::poll()
