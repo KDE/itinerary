@@ -35,3 +35,12 @@ KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary
     }
     return loc;
 }
+
+KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::BusStation &busStop)
+{
+    using namespace KPublicTransport;
+    Location loc;
+    loc.setName(busStop.name());
+    loc.setCoordinate(busStop.geo().latitude(), busStop.geo().longitude());
+    return loc;
+}

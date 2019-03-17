@@ -19,6 +19,7 @@
 #define PUBLICTRANSPORT_H
 
 namespace KItinerary {
+class BusStation;
 class TrainStation;
 }
 
@@ -31,6 +32,8 @@ namespace PublicTransport
 {
     /** Obtain a KPublicTransport location object from a KItinerary train station. */
     KPublicTransport::Location locationFromStation(const KItinerary::TrainStation &station);
+    /** Obtain a KPublicTransport location object from a KItinerary bus station. */
+    KPublicTransport::Location locationFromStation(const KItinerary::BusStation &busStop);
 }
 
 #endif // PUBLICTRANSPORT_H

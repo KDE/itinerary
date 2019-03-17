@@ -27,6 +27,28 @@ App.DetailsPage {
     id: root
     title: i18n("Bus Ticket")
 
+    Component {
+        id: alternativePage
+        App.JourneyQueryPage {
+            batchId: root.batchId
+        }
+    }
+
+    Component {
+        id: alternativeAction
+        Kirigami.Action {
+            text: i18n("Alternatives")
+            iconName: "clock"
+            onTriggered: {
+                applicationWindow().pageStack.push(alternativePage);
+            }
+        }
+    }
+
+    Component.onCompleted: {
+        actions.contextualActions.push(alternativeAction.createObject(root));
+    }
+
     ColumnLayout {
         width: parent.width
 

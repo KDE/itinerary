@@ -20,6 +20,7 @@
 #include "reservationmanager.h"
 #include "publictransport.h"
 
+#include <KItinerary/BusTrip>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
@@ -67,19 +68,24 @@ void JourneyQueryModel::queryJourney(const QString &batchId)
     endResetModel();
 
     const auto res = m_resMgr->reservation(batchId);
-    if (!JsonLd::isA<TrainReservation>(res)) {
+    KPublicTransport::Location from, to;
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        from = PublicTransport::locationFromStation(trip.departureStation());
+        to = PublicTransport::locationFromStation(trip.arrivalStation());
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        from = PublicTransport::locationFromStation(trip.departureBusStop());
+        to = PublicTransport::locationFromStation(trip.arrivalBusStop());
+    } else {
         return;
     }
-
-    const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
 
     m_errorMsg.clear();
     emit errorMessageChanged();
     m_isLoading = true;
     emit loadingChanged();
 
-    const auto from = PublicTransport::locationFromStation(trip.departureStation());
-    const auto to = PublicTransport::locationFromStation(trip.arrivalStation());
     // TODO consider scheduled time, if in the future
     auto reply = m_ptMgr->queryJourney({from, to});
     QObject::connect(reply, &KPublicTransport::JourneyReply::finished, this, [reply, this]{
@@ -117,6 +123,7 @@ static QVariant applyJourneySection(const QVariant &res, const KPublicTransport:
         return applyJourneySection(res.value<TrainReservation>(), section);
     }
 
+    qWarning() << "NOT IMPLEMENTED YET!!";
     return res;
 }
 
