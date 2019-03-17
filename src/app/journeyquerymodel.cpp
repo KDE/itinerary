@@ -92,6 +92,7 @@ void JourneyQueryModel::queryJourney(const QString &batchId)
             m_errorMsg = reply->errorString();
             emit errorMessageChanged();
         }
+        reply->deleteLater();
     });
 }
 
