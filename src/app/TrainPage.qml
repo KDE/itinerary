@@ -31,7 +31,7 @@ App.DetailsPage {
 
     Component {
         id: alternativePage
-        App.TrainJourneyQueryPage {
+        App.JourneyQueryPage {
             batchId: root.batchId
         }
     }
