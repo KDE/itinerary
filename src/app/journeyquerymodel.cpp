@@ -27,6 +27,7 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyReply>
 #include <KPublicTransport/JourneyRequest>
+#include <KPublicTransport/Line>
 
 #include <QDebug>
 
@@ -94,6 +95,60 @@ void JourneyQueryModel::queryJourney(const QString &batchId)
         }
         reply->deleteLater();
     });
+}
+
+static TrainReservation applyJourneySection(TrainReservation res, const KPublicTransport::JourneySection &section)
+{
+    auto trip = res.reservationFor().value<TrainTrip>();
+    trip.setDepartureTime(section.scheduledDepartureTime());
+    trip.setArrivalTime(section.scheduledArrivalTime());
+    trip.setTrainNumber(section.route().line().name());
+    trip.setTrainName(section.route().line().modeString());
+    // TODO update to/from locations
+    res.setReservationFor(trip);
+    return res;
+}
+
+static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section)
+{
+    // TODO this assumes that both sides are about the same mode of transport (train/bus)
+    // this should be ensured below eventually
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return applyJourneySection(res.value<TrainReservation>(), section);
+    }
+
+    return res;
+}
+
+void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
+{
+    qDebug() << batchId << journeyIndex;
+    if (batchId.isEmpty() || journeyIndex < 0 || journeyIndex >= (int)m_journeys.size()) {
+        return;
+    }
+
+    const auto journey = m_journeys.at(journeyIndex);
+    std::vector<KPublicTransport::JourneySection> sections;
+    std::copy_if(journey.sections().begin(), journey.sections().end(), std::back_inserter(sections), [](const auto &section) {
+        return section.mode() == KPublicTransport::JourneySection::PublicTransport;
+    });
+    if (sections.empty()) {
+        return;
+    }
+
+    // TODO deal with sections.size() != 1
+    if (sections.size() != 1) {
+        qWarning() << "NOT IMPLEMENTED YET!!";
+        return;
+    }
+
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        auto res = m_resMgr->reservation(resId);
+        res = applyJourneySection(res, sections[0]);
+        m_resMgr->updateReservation(resId, res);
+//         m_resMgr->addReservation(res);
+    }
 }
 
 int JourneyQueryModel::rowCount(const QModelIndex &parent) const

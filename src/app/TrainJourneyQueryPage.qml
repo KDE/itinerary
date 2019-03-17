@@ -214,7 +214,10 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     text: i18n("Save")
                     iconName: "document-save"
-                    onTriggered: console.log("TODO");
+                    onTriggered: {
+                        _journeyQueryModel.saveJourney(batchId, index);
+                        applicationWindow().pageStack.pop();
+                    }
                     visible: journeyView.currentIndex == index
                 }
             ]

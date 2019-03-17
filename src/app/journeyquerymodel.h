@@ -49,6 +49,7 @@ public:
     void setPublicTransportManager(KPublicTransport::Manager *mgr);
 
     Q_INVOKABLE void queryJourney(const QString &batchId);
+    Q_INVOKABLE void saveJourney(const QString &batchId, int journeyIndex);
 
     bool isLoading() const;
     QString errorMessage() const;
