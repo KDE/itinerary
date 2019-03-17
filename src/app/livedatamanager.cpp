@@ -128,11 +128,12 @@ static QString stripSpecial(const QString &str)
     return res;
 }
 
-static bool isSameLine(const QString &lineName, const QString &trainName, const QString &trainNumber)
+static bool isSameLine(const KPublicTransport::Line &lhs, const QString &trainName, const QString &trainNumber)
 {
-    const auto lhs = stripSpecial(lineName);
-    const auto rhs = stripSpecial(trainName + trainNumber);
-    return lhs.compare(rhs, Qt::CaseInsensitive) == 0;
+    KPublicTransport::Line rhs;
+    rhs.setModeString(trainName);
+    rhs.setName(trainNumber);
+    return KPublicTransport::Line::isSame(lhs, rhs);
 }
 
 void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
@@ -156,7 +157,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 
             for (const auto &dep : reply->result()) {
                 qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
-                if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line().name(), trip.trainName(), trip.trainNumber())) {
+                if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber())) {
                     continue;
                 }
                 qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
@@ -180,7 +181,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 
             for (const auto &arr : reply->result()) {
                 qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
-                if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line().name(), trip.trainName(), trip.trainNumber())) {
+                if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line(), trip.trainName(), trip.trainNumber())) {
                     continue;
                 }
                 qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
