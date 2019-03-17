@@ -23,6 +23,7 @@
 #include "reservationmanager.h"
 #include "publictransport.h"
 
+#include <KItinerary/BusTrip>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
@@ -126,6 +127,34 @@ static bool isSameLine(const KPublicTransport::Line &lhs, const QString &trainNa
     return KPublicTransport::Line::isSame(lhs, rhs);
 }
 
+static bool isDepartureForReservation(const QVariant &res, const KPublicTransport::Departure &dep)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        return dep.scheduledDepartureTime() == trip.departureTime() && isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber());
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        return dep.scheduledDepartureTime() == trip.departureTime() && isSameLine(dep.route().line(), trip.busName(), trip.busNumber());
+    }
+
+    return false;
+}
+
+static bool isArrivalForReservation(const QVariant &res, const KPublicTransport::Departure &dep)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        return dep.scheduledArrivalTime() == trip.arrivalTime() && isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber());
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        return dep.scheduledArrivalTime() == trip.arrivalTime() && isSameLine(dep.route().line(), trip.busName(), trip.busNumber());
+    }
+
+    return false;
+}
+
 void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 {
     Q_ASSERT(JsonLd::isA<TrainReservation>(res));
@@ -138,7 +167,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
         DepartureRequest req(PublicTransport::locationFromStation(trip.departureStation()));
         req.setDateTime(trip.departureTime());
         auto reply = m_ptMgr->queryDeparture(req);
-        connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
+        connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
             reply->deleteLater();
             if (reply->error() != Reply::NoError) {
                 qCDebug(Log) << reply->error() << reply->errorString();
@@ -146,8 +175,8 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
             }
 
             for (const auto &dep : reply->result()) {
-                qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime() << "for" << trip.trainNumber();
-                if (dep.scheduledDepartureTime() != trip.departureTime() || !isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber())) {
+                qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime();
+                if (!isDepartureForReservation(res, dep)) {
                     continue;
                 }
                 qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
@@ -162,7 +191,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
         req.setMode(DepartureRequest::QueryArrival);
         req.setDateTime(trip.arrivalTime());
         auto reply = m_ptMgr->queryDeparture(req);
-        connect(reply, &Reply::finished, this, [this, trip, resId, reply]() {
+        connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
             reply->deleteLater();
             if (reply->error() != Reply::NoError) {
                 qCDebug(Log) << reply->error() << reply->errorString();
@@ -170,8 +199,8 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
             }
 
             for (const auto &arr : reply->result()) {
-                qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime() << "for" << trip.trainNumber();
-                if (arr.scheduledArrivalTime() != trip.arrivalTime() || !isSameLine(arr.route().line(), trip.trainName(), trip.trainNumber())) {
+                qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime();
+                if (!isArrivalForReservation(res, arr)) {
                     continue;
                 }
                 qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
