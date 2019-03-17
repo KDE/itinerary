@@ -81,7 +81,7 @@ void JourneyQueryModel::queryJourney(const QString &batchId)
     const auto to = PublicTransport::locationFromStation(trip.arrivalStation());
     // TODO consider scheduled time, if in the future
     auto reply = m_ptMgr->queryJourney({from, to});
-    QObject::connect(reply, &KPublicTransport::JourneyReply::finished, [reply, this]{
+    QObject::connect(reply, &KPublicTransport::JourneyReply::finished, this, [reply, this]{
         m_isLoading = false;
         emit loadingChanged();
         if (reply->error() == KPublicTransport::JourneyReply::NoError) {
