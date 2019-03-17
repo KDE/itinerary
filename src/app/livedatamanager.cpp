@@ -118,16 +118,6 @@ void LiveDataManager::checkForUpdates()
     pollForUpdates(true);
 }
 
-static QString stripSpecial(const QString &str)
-{
-    QString res;
-    res.reserve(str.size());
-    std::copy_if(str.begin(), str.end(), std::back_inserter(res), [](const auto c) {
-        return c.isLetter() || c.isDigit();
-    });
-    return res;
-}
-
 static bool isSameLine(const KPublicTransport::Line &lhs, const QString &trainName, const QString &trainNumber)
 {
     KPublicTransport::Line rhs;
