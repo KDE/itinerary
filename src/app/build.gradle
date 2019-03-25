@@ -18,8 +18,8 @@ repositories {
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    compile 'org.mnode.ical4j:ical4j:2.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation 'org.mnode.ical4j:ical4j:2.2.0'
 }
 
 android {
