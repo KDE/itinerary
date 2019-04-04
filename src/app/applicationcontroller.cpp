@@ -379,7 +379,8 @@ void ApplicationController::importLocalFile(const QUrl &url)
         return;
     }
 
-    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive)) {
+    const auto head = f.peek(4);
+    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive) || strncmp(head.constData(), "PK\x03\x04", 4) == 0) {
         m_pkPassMgr->importPass(url);
     } else {
         m_resMgr->importReservation(f.readAll(), f.fileName());
