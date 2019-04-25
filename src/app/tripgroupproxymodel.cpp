@@ -40,6 +40,7 @@ void TripGroupProxyModel::setSourceModel(QAbstractItemModel *sourceModel)
     m_sourceModel = qobject_cast<TimelineModel*>(sourceModel);
     Q_ASSERT(m_sourceModel);
     connect(m_sourceModel, &TimelineModel::todayRowChanged, this, &TripGroupProxyModel::todayRowChanged);
+    connect(m_sourceModel, &TimelineModel::todayRowChanged, this, &TripGroupProxyModel::invalidateFilter);
     QSortFilterProxyModel::setSourceModel(m_sourceModel);
 }
 
@@ -118,12 +119,16 @@ void TripGroupProxyModel::expand(const QString &groupId)
 
 bool TripGroupProxyModel::isCollapsed(const QString &groupId) const
 {
+    const auto g = m_sourceModel->tripGroupManager()->tripGroup(groupId);
+    if (g.beginDateTime() <= m_sourceModel->now() && m_sourceModel->now() <= g.endDateTime()) {
+        return false; // the current trip must always be expanded
+    }
+
     const auto it = m_collapsed.constFind(groupId);
     if (it != m_collapsed.constEnd()) {
         return it.value();
     }
 
     // by default collapse past trips
-    const auto g = m_sourceModel->tripGroupManager()->tripGroup(groupId);
-    return g.endDateTime() < QDateTime::currentDateTime();
+    return g.endDateTime() < m_sourceModel->now();
 }

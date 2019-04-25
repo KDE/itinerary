@@ -98,6 +98,8 @@ public:
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
+    QDateTime now() const;
+    QDate today() const;
 
 Q_SIGNALS:
     void todayRowChanged();
@@ -132,9 +134,6 @@ private:
     void updateInformationElements();
     std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
     void updateWeatherElements();
-
-    QDateTime now() const;
-    QDate today() const;
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;

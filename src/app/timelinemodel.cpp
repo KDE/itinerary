@@ -416,6 +416,7 @@ void TimelineModel::updateTodayMarker()
     beginRemoveRows({}, oldRow, oldRow);
     m_elements.erase(m_elements.begin() + oldRow);
     endRemoveRows();
+    emit todayRowChanged();
 }
 
 void TimelineModel::updateInformationElements()

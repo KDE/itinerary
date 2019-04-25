@@ -116,6 +116,52 @@ private Q_SLOTS:
         proxy.expand(addSpy.at(0).at(0).toString());
         QVERIFY(vp0.verify(&proxy));
     }
+
+    void testCurrentGroup()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+
+        TripGroupManager groupMgr;
+        QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
+        groupMgr.setReservationManager(&resMgr);
+        QCOMPARE(groupMgr.tripGroups().size(), 1);
+        QCOMPARE(addSpy.size(), 1);
+
+        TimelineModel model;
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
+        model.setCurrentDateTime(QDateTime({2017, 9, 9}, {12, 34}));
+        model.setReservationManager(&resMgr);
+        model.setTripGroupManager(&groupMgr);
+
+        TripGroupProxyModel proxy;
+#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
+        QAbstractItemModelTester tester(&proxy);
+#endif
+        proxy.setSourceModel(&model);
+
+        // future event, should be expanded
+        ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/current-r0.model"));
+        vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        QVERIFY(vp0.verify(&proxy));
+
+        // current event, must be expanded and not collapsable
+        model.setCurrentDateTime(QDateTime({2017, 9, 14}, {12, 34}));
+        ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/current-r1.model"));
+        vp1.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        QVERIFY(vp1.verify(&proxy));
+        proxy.collapse(addSpy.at(0).at(0).toString());
+        QVERIFY(vp1.verify(&proxy));
+
+        // past event, should be collapsed
+        model.setCurrentDateTime(QDateTime({2018, 9, 9}, {12, 34}));
+        ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/current-r2.model"));
+        vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        QCOMPARE(proxy.rowCount(), 2);
+        QVERIFY(vp2.verify(&proxy));
+    }
+
 };
 QTEST_GUILESS_MAIN(TripGroupProxyTest)
 

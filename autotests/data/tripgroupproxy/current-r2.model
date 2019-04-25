@@ -1,0 +1,30 @@
+[
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 10 Sep 2017",
+        "tripGroup": {
+            "@context": "http://schema.org",
+            "@type": "TripGroup",
+            "beginDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-10T06:45:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "endDateTime": {
+                "@type": "QDateTime",
+                "@value": "2017-09-15T22:15:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "name": "Randa (September 2017)"
+        },
+        "type": 2
+    },
+    {
+        "isToday": true,
+        "isTodayEmpty": true,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 1
+    }
+]
