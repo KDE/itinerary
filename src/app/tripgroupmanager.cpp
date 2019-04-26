@@ -33,6 +33,8 @@
 #include <QStandardPaths>
 #include <QUuid>
 
+#include <set>
+
 using namespace KItinerary;
 
 enum {
@@ -126,7 +128,11 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
     }
 
     for (const auto &elem : groupIt.value().elements()) {
-        m_reservationToGroupMap.remove(elem);
+        const auto it = m_reservationToGroupMap.find(elem);
+        // check if this still points to the removed group (might not be the case if an overlapping group was added meanwhile)
+        if (it != m_reservationToGroupMap.end() && it.value() == groupId) {
+            m_reservationToGroupMap.erase(it);
+        }
     }
     m_tripGroups.erase(groupIt);
     if (!QFile::remove(basePath() + groupId + QLatin1String(".json"))) {
@@ -370,11 +376,17 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         return;
     }
 
+    std::set<QString> pendingGroupRemovals;
     if (groupIt == m_tripGroups.end()) {
         const auto tgId = QUuid::createUuid().toString();
         TripGroup g(this);
         g.setElements(elems);
         for (auto it2 = beginIt; it2 != it; ++it2) {
+            // remove overlapping/nested groups, delay this until the end though, as that will invalidate our iterators
+            const auto previousGroupId = m_reservationToGroupMap.value(*it2);
+            if (!previousGroupId.isEmpty() && previousGroupId != tgId) {
+                pendingGroupRemovals.insert(previousGroupId);
+            }
             m_reservationToGroupMap.insert(*it2, tgId);
         }
         g.setName(guessName(g));
@@ -395,6 +407,10 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         qDebug() << "updating trip group" << g.name();
         g.store(basePath() + groupIt.key() + QLatin1String(".json"));
         emit tripGroupChanged(groupIt.key());
+    }
+
+    for (const auto &tgId : pendingGroupRemovals) {
+        removeTripGroup(tgId);
     }
 }
 

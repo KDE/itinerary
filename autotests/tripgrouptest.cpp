@@ -111,6 +111,22 @@ private Q_SLOTS:
         }
     }
 
+    void testDynamicGrouping()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        TripGroupManager::clear();
+        TripGroupManager mgr;
+        mgr.setReservationManager(&resMgr);
+
+        // after adding the third element this will find a loop between the two inner legs and remove the first leg as a leading appendix
+        // the fourth leg however should be fixing that and result in a single 4 leg group
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/tripgroup/symmetric-two-leg-return-flight.json")));
+        QCOMPARE(mgr.tripGroups().size(), 1);
+        auto g = mgr.tripGroup(mgr.tripGroups().at(0));
+        QCOMPARE(g.elements().size(), resMgr.batches().size());
+    }
+
     void testChanges()
     {
         ReservationManager resMgr;

@@ -1,0 +1,130 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "SN"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "BRU"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-05T08:15:00+02:00",
+                "timezone": "Europe/Brussels"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL"
+            },
+            "departureDay": "2019-04-05",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-05T06:55:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "flightNumber": "2592"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "SN"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "TLS"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-05T11:15:00+02:00",
+                "timezone": "Europe/Paris"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "BRU"
+            },
+            "departureDay": "2019-04-05",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-05T09:35:00+02:00",
+                "timezone": "Europe/Brussels"
+            },
+            "flightNumber": "3667"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "SN"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "BRU"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-07T20:05:00+02:00",
+                "timezone": "Europe/Brussels"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "TLS"
+            },
+            "departureDay": "2019-04-07",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-07T18:20:00+02:00",
+                "timezone": "Europe/Paris"
+            },
+            "flightNumber": "3670"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "SN"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL"
+            },
+            "arrivalTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-07T22:10:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "BRU"
+            },
+            "departureDay": "2019-04-07",
+            "departureTime": {
+                "@type": "QDateTime",
+                "@value": "2019-04-07T20:50:00+02:00",
+                "timezone": "Europe/Brussels"
+            },
+            "flightNumber": "2591"
+        },
+        "reservationNumber": "XXX007"
+    }
+]
