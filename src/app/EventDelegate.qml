@@ -28,13 +28,15 @@ App.TimelineDelegate {
     headerIconSource: "meeting-attending"
     headerItem: RowLayout {
         QQC2.Label {
-            text: reservationFor.name
+            text: root.rangeType == TimelineModel.RangeEnd ?
+                i18n("End: %1", reservationFor.name) : reservationFor.name
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: Localizer.formatTime(reservationFor, "startDate")
+            text: root.rangeType == TimelineModel.RangeEnd ?
+                Localizer.formatTime(reservationFor, "endDate") : Localizer.formatTime(reservationFor, "startDate")
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
         }

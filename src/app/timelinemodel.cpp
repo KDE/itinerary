@@ -52,6 +52,12 @@ using namespace KItinerary;
 
 static bool needsSplitting(const QVariant &res)
 {
+    // multi-day event?
+    if (JsonLd::isA<EventReservation>(res)) {
+        const auto ev = res.value<EventReservation>().reservationFor().value<Event>();
+        return ev.startDate().date() != ev.endDate().date() && ev.endDate().isValid();
+    }
+
     return JsonLd::isA<LodgingReservation>(res)
         || JsonLd::isA<RentalCarReservation>(res);
 }
