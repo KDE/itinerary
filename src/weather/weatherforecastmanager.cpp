@@ -108,9 +108,14 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
         return fc;
     }
 
-    auto beginDt = std::max(begin, QDateTime::currentDateTimeUtc());
+    const auto now = QDateTime::currentDateTimeUtc();
+    if (end < now) {
+        return {};
+    }
+
+    auto beginDt = std::max(begin, now);
     roundToHour(beginDt);
-    auto endDt = std::max(end, QDateTime::currentDateTimeUtc());
+    auto endDt = std::max(end, now);
     roundToHour(endDt);
     if (!beginDt.isValid() || !endDt.isValid() || beginDt > endDt) {
         return {};

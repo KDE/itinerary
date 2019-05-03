@@ -27,6 +27,8 @@ Kirigami.AbstractCard {
     property var tripGroupId;
     property var rangeType;
 
+    property var weatherForecast: _tripGroupInfoProvider.weatherForecast(tripGroup)
+
     id: root
     showClickFeedback: true
     topPadding: rangeType == TimelineModel.RangeEnd ? 0 : Kirigami.Units.largeSpacing
@@ -66,7 +68,7 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: RowLayout {
+    contentItem: ColumnLayout {
         id: contentLayout
         visible: root.rangeType != TimelineModel.RangeEnd
 
@@ -74,6 +76,39 @@ Kirigami.AbstractCard {
             text: i18np("Date: %2 (one day)", "Date: %2 (%1 days)",
                        Math.ceil((root.tripGroup.endDateTime.getTime() - root.tripGroup.beginDateTime.getTime()) / (1000 * 3600 * 24)),
                        Localizer.formatDateTime(root.tripGroup, "beginDateTime"))
+        }
+
+        RowLayout {
+            visible: weatherForecast.valid
+
+            Kirigami.Icon {
+                source: weatherForecast.symbolIconName
+                width: Kirigami.Units.iconSizes.small
+                height: width
+            }
+
+            QQC2.Label {
+                text: i18n("%1°C / %2°C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
+            }
+        }
+
+        Repeater {
+            model: _tripGroupInfoProvider.countryInformation(tripGroup, _settings.homeCountryIsoCode)
+
+            QQC2.Label {
+                text: {
+                    if (modelData.powerPlugCompatibility == CountryInformation.PartiallyCompatible) {
+                        if (modelData.powerPlugTypes == "")
+                            return i18n("%1: some incompatible power sockets (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
+                        else
+                            return i18n("%1: some incompatible power plugs (%2)", Localizer.countryName(modelData.isoCode), modelData.powerPlugTypes);
+                    } else {
+                        return i18n("%1: no compatible power plugs (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
+                    }
+                }
+                color: modelData.powerPlugCompatibility == CountryInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
+                wrapMode: Text.WordWrap
+            }
         }
 
         Component.onCompleted: {

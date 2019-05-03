@@ -31,6 +31,7 @@
 #include "reservationmanager.h"
 #include "settings.h"
 #include "tickettokenmodel.h"
+#include "tripgroupinfoprovider.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
 #include "util.h"
@@ -189,6 +190,10 @@ int main(int argc, char **argv)
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
 
+    TripGroupInfoProvider tripGroupInfoProvider;
+    tripGroupInfoProvider.setReservationManager(&resMgr);
+    tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
+
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
@@ -226,6 +231,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryModel"), &journeyQueryModel);
+    engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());

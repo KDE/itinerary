@@ -11,6 +11,7 @@ set(itinerary_srcs
     reservationmanager.cpp
     timelinemodel.cpp
     tripgroup.cpp
+    tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
 )
