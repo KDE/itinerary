@@ -107,6 +107,7 @@ if (ANDROID)
         help-about
         map-symbolic
         meeting-attending
+        question
         settings-configure
         view-calendar-day
         view-refresh

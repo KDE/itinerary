@@ -68,46 +68,48 @@ Kirigami.ScrollablePage {
                 // middle row: mode symbol, transport mode, duration
                 Rectangle {
                     color: modelData.route.line.hasColor ? modelData.route.line.color : "transparent"
-                    implicitHeight: modeIcon.implicitHeight
-                    implicitWidth: modeIcon.implicitWidth
+                    implicitHeight: modeIcon.height
+                    implicitWidth: modeIcon.width
                     Layout.alignment: Qt.AlignHCenter
 
-                    QQC2.Label {
+                    Kirigami.Icon {
                         id: modeIcon
                         anchors.centerIn: parent
-                        text: {
+                        source: {
                             switch (modelData.mode) {
                                 case JourneySection.PublicTransport:
                                 {
                                     switch (modelData.route.line.mode) {
-                                        case Line.Air: return "✈️";
-                                        case Line.Boat: return "🛥️";
-                                        case Line.Bus: return "🚍";
-                                        case Line.BusRapidTransit: return "🚌";
-                                        case Line.Coach: return "🚌";
-                                        case Line.Ferry: return "⛴️";
-                                        case Line.Funicular: return "🚞";
-                                        case Line.LocalTrain: return "🚆";
-                                        case Line.LongDistanceTrain: return "🚄";
-                                        case Line.Metro: return "🚇";
-                                        case Line.RailShuttle: return "🚅";
-                                        case Line.RapidTransit: return "🚊";
-                                        case Line.Shuttle: return "🚐";
-                                        case Line.Taxi: return "🚕";
-                                        case Line.Train: return "🚆";
-                                        case Line.Tramway: return "🚈";
-                                        default: return "?";
+                                        case Line.Air: return "qrc:///images/flight.svg";
+                                        case Line.Boat: return "qrc:///images/ferry.svg";
+                                        case Line.Bus: return "qrc:///images/bus.svg";
+                                        case Line.BusRapidTransit: return "qrc:///images/coach.svg";
+                                        case Line.Coach: return "qrc:///images/coach.svg";
+                                        case Line.Ferry: return "qrc:///images/ferry.svg";
+                                        case Line.Funicular: return "qrc:///images/Funicular.svg";
+                                        case Line.LocalTrain: return "qrc:///images/train.svg";
+                                        case Line.LongDistanceTrain: return "qrc:///images/longdistancetrain.svg";
+                                        case Line.Metro: return "qrc:///images/subway.svg";
+                                        case Line.RailShuttle: return "qrc:///images/rapidtransit.svg";
+                                        case Line.RapidTransit: return "qrc:///images/rapidtransit.svg";
+                                        case Line.Shuttle: return "qrc:///images/shuttle.svg";
+                                        case Line.Taxi: return "qrc:///images/taxi.svg";
+                                        case Line.Train: return "qrc:///images/train.svg";
+                                        case Line.Tramway: return "qrc:///images/tramway.svg";
+                                        default: return "question";
                                     }
                                     break;
                                 }
-                                case JourneySection.Walking: return "🚶";
-                                case JourneySection.Waiting: return "⌛";
-                                case JourneySection.Transfer: return "⇄";
-                                default: return "?";
+                                case JourneySection.Walking: return "qrc:///images/walk.svg";
+                                case JourneySection.Waiting: return "qrc:///images/wait.svg";
+                                case JourneySection.Transfer: return "qrc:///images/transfer.svg";
+                                default: return "question";
                             }
                         }
                         color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
-                        font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                        width: Kirigami.Units.iconSizes.medium
+                        height: width
+                        isMask: true
                     }
                 }
                 QQC2.Label {
