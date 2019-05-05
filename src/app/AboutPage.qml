@@ -54,6 +54,13 @@ Kirigami.Page {
             url: "https://www.openssl.org/"
         }
         ListElement {
+            name: "ZXing C++"
+            copyright: "© 2016 ZXing Authors, © 2016 Nu-book Inc."
+            licenseId: "Apache-2.0"
+            licenseName: "Apache License 2.0"
+            url: "https://github.com/nu-book/zxing-cpp"
+        }
+        ListElement {
             name: "iCal4j"
             copyright: "© 2012, Ben Fortuna"
             platform: "android"
