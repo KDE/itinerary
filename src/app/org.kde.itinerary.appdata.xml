@@ -110,15 +110,16 @@
       <li xml:lang="x-test">xxWeather forecast.xx</li>
     </ul>
   </description>
-  <!--<screenshots> TODO
+  <screenshots>
     <screenshot type="default">
-      <image>https://www.kde.org/images/screenshots/kde-itinerary.png</image>
+      <caption>Timeline view.</caption>
+      <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png</image>
     </screenshot>
-  </screenshots>-->
+  </screenshots>
   <url type="homepage">https://pim.kde.org/</url>
-  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=kde-itinerary</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KDE+Itinerary</url>
   <project_group>KDE</project_group>
   <provides>
-    <binary>kde-itinerary</binary>
+    <binary>itinerary</binary>
   </provides>
 </component>
