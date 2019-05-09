@@ -21,15 +21,20 @@
 #include <QObject>
 #include "lockmanager.h"
 
+class OrgFreedesktopScreenSaverInterface;
+
 class SolidLockBackend : public LockBackend
 {
 
 public:
     explicit SolidLockBackend(QObject *parent = nullptr);
-    ~SolidLockBackend() override;
 
     void setInhibitionOff() override;
     void setInhibitionOn() override;
+
+private:
+    OrgFreedesktopScreenSaverInterface* m_iface;
+    int m_cookie;
 };
 
 #endif //  SOLIDLOCKBACKEND_H

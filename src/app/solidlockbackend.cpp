@@ -17,25 +17,26 @@
 
 #include "solidlockbackend.h"
 
+#include "screensaverdbusinterface.h"
+
+#include <KLocalizedString>
+
 #include <QDBusConnection>
-#include <QDebug>
 
 SolidLockBackend::SolidLockBackend(QObject *parent)
     : LockBackend(parent)
+    , m_cookie(0)
 {
-}
-
-SolidLockBackend::~SolidLockBackend()
-{
+    m_iface = new OrgFreedesktopScreenSaverInterface(QStringLiteral("org.freedesktop.ScreenSaver"), QStringLiteral("/org/freedesktop/ScreenSaver"), QDBusConnection::sessionBus(), this);
 }
 
 void SolidLockBackend::setInhibitionOff()
 {
-    qDebug() << "Off";
+    m_iface->UnInhibit(m_cookie);
 }
 
 void SolidLockBackend::setInhibitionOn()
 {
-    qDebug() << "ON";
+    m_cookie = m_iface->Inhibit(QStringLiteral("org.kde.itinerary"), i18n("In barcode scanning mode"));
 }
 

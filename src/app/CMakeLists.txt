@@ -63,6 +63,7 @@ else()
         solidlockbackend.cpp
     )
     qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
+    qt5_add_dbus_interface(itinerary_app_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
 endif()
 
 add_executable(itinerary-app ${itinerary_app_srcs})
