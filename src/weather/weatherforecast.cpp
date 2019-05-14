@@ -30,6 +30,8 @@
 
 class WeatherForecastPrivate : public QSharedData {
 public:
+    bool useDayTimeIcon() const;
+
     QDateTime m_dt;
     WeatherTile m_tile;
     float m_minTemp = std::numeric_limits<float>::max();
@@ -126,21 +128,28 @@ static const icon_map_t icon_map[] = {
     { WeatherForecast::Clear, "weather-clear", "weather-clear-night" }
 };
 
-QString WeatherForecast::symbolIconName() const
+bool WeatherForecastPrivate::useDayTimeIcon() const
 {
 #ifdef HAVE_KHOLIDAYS
-    const auto endDt = d->m_dt.addSecs(d->m_range * 3600);
-    const auto sunrise = QDateTime(d->m_dt.date(), KHolidays::SunRiseSet::utcSunrise(d->m_dt.date(), d->m_tile.latitude(), d->m_tile.longitude()), Qt::UTC);
-    const auto sunset = QDateTime(d->m_dt.date(), KHolidays::SunRiseSet::utcSunset(d->m_dt.date(), d->m_tile.latitude(), d->m_tile.longitude()), Qt::UTC);
-    // check overlap for two days, otherwise we might miss one on a day boundary
-    const auto isDay = (sunrise < endDt && sunset > d->m_dt) || (sunrise.addDays(1) < endDt && sunset.addDays(1) > d->m_dt);
-#else
-    const auto isDay = true;
-#endif
+    if (m_range >= 24) {
+        return true;
+    }
 
+    const auto endDt = m_dt.addSecs(m_range * 3600);
+    const auto sunrise = QDateTime(m_dt.date(), KHolidays::SunRiseSet::utcSunrise(m_dt.date(), m_tile.latitude(), m_tile.longitude()), Qt::UTC);
+    const auto sunset = QDateTime(m_dt.date(), KHolidays::SunRiseSet::utcSunset(m_dt.date(), m_tile.latitude(), m_tile.longitude()), Qt::UTC);
+    // check overlap for two days, otherwise we might miss one on a day boundary
+    return (sunrise < endDt && sunset > m_dt) || (sunrise.addDays(1) < endDt && sunset.addDays(1) > m_dt);
+#else
+    return true;
+#endif
+}
+
+QString WeatherForecast::symbolIconName() const
+{
     for (const auto &icon : icon_map) {
         if ((icon.mask & symbolType()) == icon.mask) {
-            return QLatin1String(isDay ? icon.dayIcon : icon.nightIcon);
+            return QLatin1String(d->useDayTimeIcon() ? icon.dayIcon : icon.nightIcon);
         }
     }
     return {};
