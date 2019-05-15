@@ -18,6 +18,8 @@
 #ifndef PUBLICTRANSPORT_H
 #define PUBLICTRANSPORT_H
 
+#include <qobjectdefs.h>
+
 namespace KItinerary {
 class BusStation;
 class TrainStation;
@@ -35,5 +37,16 @@ namespace PublicTransport
     /** Obtain a KPublicTransport location object from a KItinerary bus station. */
     KPublicTransport::Location locationFromStation(const KItinerary::BusStation &busStop);
 }
+
+/** Utility functions for interfacing with KPublicTransport from QML. */
+class PublicTransportUtil
+{
+    Q_GADGET
+public:
+    /** Convert a KPublicTransport::Line::Mode enum value to an icon source or name
+     *  for usage in Kirigami.Icon.
+     */
+    Q_INVOKABLE QString lineModeIcon(int lineMode);
+};
 
 #endif // PUBLICTRANSPORT_H

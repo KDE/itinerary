@@ -19,6 +19,7 @@
 
 #include <KItinerary/Place>
 
+#include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
 
 KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::TrainStation& station)
@@ -43,4 +44,41 @@ KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary
     loc.setName(busStop.name());
     loc.setCoordinate(busStop.geo().latitude(), busStop.geo().longitude());
     return loc;
+}
+
+QString PublicTransportUtil::lineModeIcon(int lineMode)
+{
+    using namespace KPublicTransport;
+    switch (lineMode) {
+        case Line::Air:
+            return QStringLiteral("qrc:///images/flight.svg");
+        case Line::Boat:
+        case Line::Ferry:
+            return QStringLiteral("qrc:///images/ferry.svg");
+        case Line::Bus:
+            return QStringLiteral("qrc:///images/bus.svg");
+        case Line::BusRapidTransit:
+        case Line::Coach:
+            return QStringLiteral("qrc:///images/coach.svg");
+        case Line::Funicular:
+            return QStringLiteral("qrc:///images/Funicular.svg");
+        case Line::LocalTrain:
+        case Line::Train:
+            return QStringLiteral("qrc:///images/train.svg");
+        case Line::LongDistanceTrain:
+            return QStringLiteral("qrc:///images/longdistancetrain.svg");
+        case Line::Metro:
+            return QStringLiteral("qrc:///images/subway.svg");
+        case Line::RailShuttle:
+        case Line::RapidTransit:
+            return QStringLiteral("qrc:///images/rapidtransit.svg");
+        case Line::Shuttle:
+            return QStringLiteral("qrc:///images/shuttle.svg");
+        case Line::Taxi:
+            return QStringLiteral("qrc:///images/taxi.svg");
+        case Line::Tramway:
+            return QStringLiteral("qrc:///images/tramway.svg");
+    }
+
+    return QStringLiteral("question");
 }

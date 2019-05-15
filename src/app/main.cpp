@@ -25,9 +25,11 @@
 #include "journeyquerymodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
+#include "lockmanager.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
+#include "publictransport.h"
 #include "reservationmanager.h"
 #include "settings.h"
 #include "tickettokenmodel.h"
@@ -36,7 +38,6 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
-#include "lockmanager.h"
 
 #include <weatherforecastmanager.h>
 
@@ -217,6 +218,9 @@ int main(int argc, char **argv)
         return new Util;
     });
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(PublicTransportUtil());
+    });
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));

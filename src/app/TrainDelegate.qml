@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -27,7 +28,7 @@ App.TimelineDelegate {
     property var arrival: _liveDataManager.arrival(batchId)
     property var departure: _liveDataManager.departure(batchId)
 
-    headerIconSource: "qrc:///images/train.svg"
+    headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
     headerItem: RowLayout {
         QQC2.Label {
             text: {

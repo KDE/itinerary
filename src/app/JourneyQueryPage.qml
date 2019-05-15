@@ -78,28 +78,7 @@ Kirigami.ScrollablePage {
                         source: {
                             switch (modelData.mode) {
                                 case JourneySection.PublicTransport:
-                                {
-                                    switch (modelData.route.line.mode) {
-                                        case Line.Air: return "qrc:///images/flight.svg";
-                                        case Line.Boat: return "qrc:///images/ferry.svg";
-                                        case Line.Bus: return "qrc:///images/bus.svg";
-                                        case Line.BusRapidTransit: return "qrc:///images/coach.svg";
-                                        case Line.Coach: return "qrc:///images/coach.svg";
-                                        case Line.Ferry: return "qrc:///images/ferry.svg";
-                                        case Line.Funicular: return "qrc:///images/Funicular.svg";
-                                        case Line.LocalTrain: return "qrc:///images/train.svg";
-                                        case Line.LongDistanceTrain: return "qrc:///images/longdistancetrain.svg";
-                                        case Line.Metro: return "qrc:///images/subway.svg";
-                                        case Line.RailShuttle: return "qrc:///images/rapidtransit.svg";
-                                        case Line.RapidTransit: return "qrc:///images/rapidtransit.svg";
-                                        case Line.Shuttle: return "qrc:///images/shuttle.svg";
-                                        case Line.Taxi: return "qrc:///images/taxi.svg";
-                                        case Line.Train: return "qrc:///images/train.svg";
-                                        case Line.Tramway: return "qrc:///images/tramway.svg";
-                                        default: return "question";
-                                    }
-                                    break;
-                                }
+                                    return PublicTransport.lineModeIcon(modelData.route.line.mode);
                                 case JourneySection.Walking: return "qrc:///images/walk.svg";
                                 case JourneySection.Waiting: return "qrc:///images/wait.svg";
                                 case JourneySection.Transfer: return "qrc:///images/transfer.svg";
