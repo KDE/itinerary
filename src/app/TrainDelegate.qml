@@ -89,6 +89,7 @@ App.TimelineDelegate {
                 text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
                 color: Kirigami.Theme.textColor
                 wrapMode: Text.WordWrap
+                visible: reservationFor.arrivalTime.length > 0
             }
             QQC2.Label {
                 text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
