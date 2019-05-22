@@ -9,6 +9,7 @@ set(itinerary_srcs
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     reservationmanager.cpp
+    timelinedelegatecontroller.cpp
     timelinemodel.cpp
     tripgroup.cpp
     tripgroupinfoprovider.cpp

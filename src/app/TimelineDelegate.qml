@@ -25,7 +25,7 @@ import "." as App
 Kirigami.AbstractCard {
     id: root
     /** Reservation batch identifier (@see _reservationManager). */
-    property var batchId
+    property alias batchId: controller.batchId
     /** All reservations that are part of this patch. */
     property var resIds: _reservationManager.reservationsForBatch(root.batchId)
     /** A random reservation object, in case there's more than one.
@@ -43,9 +43,14 @@ Kirigami.AbstractCard {
 
     showClickFeedback: true
 
+    TimelineDelegateController {
+        id: controller
+        reservationManager: _reservationManager
+    }
+
     header: Rectangle {
         id: headerBackground
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
@@ -65,6 +70,16 @@ Kirigami.AbstractCard {
                 color: Kirigami.Theme.textColor
                 isMask: true
             }
+        }
+
+        Rectangle {
+            id: progressBar
+            visible: controller.isCurrent
+            anchors.bottom: headerBackground.bottom
+            anchors.left: headerBackground.left
+            height: Kirigami.Units.smallSpacing
+            width: controller.progress * headerBackground.width
+            color: Kirigami.Theme.visitedLinkColor
         }
     }
 

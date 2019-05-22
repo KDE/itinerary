@@ -37,6 +37,7 @@
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
 #include "util.h"
+#include "timelinedelegatecontroller.h"
 #include "weatherforecastmodel.h"
 
 #include <weatherforecastmanager.h>
@@ -214,6 +215,7 @@ int main(int argc, char **argv)
     });
     qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
+    qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
     });
