@@ -6,8 +6,10 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT
 set(itinerary_srcs
     applicationcontroller.cpp
     countryinformation.cpp
+    livedatamanager.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
+    publictransport.cpp
     reservationmanager.cpp
     timelinedelegatecontroller.cpp
     timelinemodel.cpp
@@ -24,12 +26,16 @@ ecm_qt_declare_logging_category(itinerary_srcs
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
+    KPublicTransport
     KPim::Itinerary
     KPim::PkPass
     KF5::I18n
     Qt5::Network
     Qt5::Quick
 )
+if (TARGET KF5::Notifications)
+    target_link_libraries(itinerary PUBLIC KF5::Notifications)
+endif()
 
 if (Qt5QuickCompiler_FOUND)
     qtquick_compiler_add_resources(qml_srcs qml.qrc)
@@ -48,9 +54,7 @@ set(itinerary_app_srcs
     ${qml_srcs}
     brightnessmanager.cpp
     lockmanager.cpp
-    livedatamanager.cpp
     journeyquerymodel.cpp
-    publictransport.cpp
 )
 if (ANDROID)
     list(APPEND itinerary_app_srcs
@@ -73,11 +77,7 @@ target_link_libraries(itinerary-app PRIVATE
     itinerary
     KF5::Contacts
     KF5::CoreAddons
-    KPublicTransport
 )
-if (TARGET KF5::Notifications)
-    target_link_libraries(itinerary-app PRIVATE KF5::Notifications)
-endif()
 if (ANDROID)
     target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
     # explicitly add runtime dependencies and transitive link dependencies,

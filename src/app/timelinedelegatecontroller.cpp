@@ -17,10 +17,16 @@
 
 #include "timelinedelegatecontroller.h"
 
+#include "livedatamanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/SortUtil>
+#include <KItinerary/Reservation>
+#include <KItinerary/TrainTrip>
+
+#include <KPublicTransport/Departure>
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -53,14 +59,35 @@ QObject* TimelineDelegateController::reservationManager() const
 
 void TimelineDelegateController::setReservationManager(QObject *resMgr)
 {
-    if (m_resMgr == resMgr)
+    if (m_resMgr == resMgr) {
         return;
+    }
 
     m_resMgr = qobject_cast<ReservationManager*>(resMgr);
     emit setupChanged();
 
     connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::checkForUpdate);
     connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::checkForUpdate);
+
+    checkForUpdate(m_batchId);
+}
+
+QObject* TimelineDelegateController::liveDataManager() const
+{
+    return m_liveDataMgr;
+}
+
+void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
+{
+    if (m_liveDataMgr == liveDataMgr) {
+        return;
+    }
+
+    m_liveDataMgr = qobject_cast<LiveDataManager*>(liveDataMgr);
+    emit setupChanged();
+
+    connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, &TimelineDelegateController::checkForUpdate);
+    connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, &TimelineDelegateController::checkForUpdate);
 
     checkForUpdate(m_batchId);
 }
@@ -125,9 +152,8 @@ float TimelineDelegateController::progress() const
     }
 
     const auto res = m_resMgr->reservation(m_batchId);
-    // TODO this needs to consider live data
-    const auto startTime = SortUtil::startDateTime(res);
-    const auto endTime = SortUtil::endtDateTime(res);
+    const auto startTime = liveStartDateTime(res);
+    const auto endTime = liveEndDateTime(res);
 
     const auto tripLength = startTime.secsTo(endTime);
     if (tripLength <= 0) {
@@ -150,9 +176,8 @@ void TimelineDelegateController::checkForUpdate(const QString& batchId)
 
     const auto res = m_resMgr->reservation(batchId);
     const auto now = QDateTime::currentDateTime();
-    // TODO this needs to consider live data and boarding times
-    const auto startTime = SortUtil::startDateTime(res);
-    const auto endTime = SortUtil::endtDateTime(res);
+    const auto startTime = relevantStartDateTime(res);
+    const auto endTime = liveEndDateTime(res);
 
     setCurrent(startTime < now && now < endTime, res);
 
@@ -161,6 +186,43 @@ void TimelineDelegateController::checkForUpdate(const QString& batchId)
     } else if (now < endTime) {
         scheduleNextUpdate(std::chrono::seconds(now.secsTo(endTime) + 1));
     }
+}
+
+QDateTime TimelineDelegateController::relevantStartDateTime(const QVariant &res) const
+{
+    auto startTime = SortUtil::startDateTime(res);
+    if (JsonLd::isA<FlightReservation>(res)) {
+        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
+        if (flight.boardingTime().isValid()) {
+            startTime = flight.boardingTime();
+        }
+    } else if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+        startTime = startTime.addSecs(-5 * 60);
+    }
+
+    return startTime;
+}
+
+QDateTime TimelineDelegateController::liveStartDateTime(const QVariant& res) const
+{
+    if (m_liveDataMgr) {
+        const auto dep = m_liveDataMgr->departure(m_batchId).value<KPublicTransport::Departure>();
+        if (dep.expectedDepartureTime().isValid()) {
+            return dep.expectedDepartureTime();
+        }
+    }
+    return SortUtil::startDateTime(res);
+}
+
+QDateTime TimelineDelegateController::liveEndDateTime(const QVariant& res) const
+{
+    if (m_liveDataMgr) {
+        const auto arr = m_liveDataMgr->arrival(m_batchId).value<KPublicTransport::Departure>();
+        if (arr.expectedArrivalTime().isValid()) {
+            return arr.expectedArrivalTime();
+        }
+    }
+    return SortUtil::endtDateTime(res);
 }
 
 void TimelineDelegateController::scheduleNextUpdate(std::chrono::milliseconds ms)

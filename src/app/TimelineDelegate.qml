@@ -46,6 +46,7 @@ Kirigami.AbstractCard {
     TimelineDelegateController {
         id: controller
         reservationManager: _reservationManager
+        liveDataManager: _liveDataManager
     }
 
     header: Rectangle {
