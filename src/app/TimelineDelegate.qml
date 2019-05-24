@@ -48,6 +48,8 @@ Kirigami.AbstractCard {
         reservationManager: _reservationManager
         liveDataManager: _liveDataManager
     }
+    property alias arrival: controller.arrival
+    property alias departure: controller.departure
 
     header: Rectangle {
         id: headerBackground

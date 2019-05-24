@@ -65,6 +65,8 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
 
     m_resMgr = qobject_cast<ReservationManager*>(resMgr);
     emit setupChanged();
+    emit departureChanged();
+    emit arrivalChanged();
 
     connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::checkForUpdate);
     connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::checkForUpdate);
@@ -85,9 +87,21 @@ void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
 
     m_liveDataMgr = qobject_cast<LiveDataManager*>(liveDataMgr);
     emit setupChanged();
+    emit departureChanged();
+    emit arrivalChanged();
 
     connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, &TimelineDelegateController::checkForUpdate);
     connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, &TimelineDelegateController::checkForUpdate);
+    connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, [this](const auto &batchId) {
+        if (batchId == m_batchId) {
+            emit arrivalChanged();
+        }
+    });
+    connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, [this](const auto &batchId) {
+        if (batchId == m_batchId) {
+            emit departureChanged();
+        }
+    });
 
     checkForUpdate(m_batchId);
 }
@@ -104,6 +118,8 @@ void TimelineDelegateController::setBatchId(const QString &batchId)
 
     m_batchId = batchId;
     emit contentChanged();
+    emit departureChanged();
+    emit arrivalChanged();
     checkForUpdate(batchId);
 }
 
@@ -162,6 +178,22 @@ float TimelineDelegateController::progress() const
     const auto progress = startTime.secsTo(QDateTime::currentDateTime());
 
     return std::min(std::max(0.0f, (float)progress / (float)tripLength), 1.0f);
+}
+
+KPublicTransport::Departure TimelineDelegateController::arrival() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->arrival(m_batchId).value<KPublicTransport::Departure>();
+}
+
+KPublicTransport::Departure TimelineDelegateController::departure() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->departure(m_batchId).value<KPublicTransport::Departure>();
 }
 
 void TimelineDelegateController::checkForUpdate(const QString& batchId)

@@ -18,6 +18,8 @@
 #ifndef TIMELINEDELEGATECONTROLLER_H
 #define TIMELINEDELEGATECONTROLLER_H
 
+#include <KPublicTransport/Departure>
+
 #include <QObject>
 #include <QVariant>
 
@@ -40,6 +42,9 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
     Q_PROPERTY(float progress READ progress NOTIFY progressChanged)
 
+    Q_PROPERTY(KPublicTransport::Departure arrival READ arrival NOTIFY arrivalChanged)
+    Q_PROPERTY(KPublicTransport::Departure departure READ departure NOTIFY departureChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -55,11 +60,16 @@ public:
     bool isCurrent() const;
     float progress() const;
 
+    KPublicTransport::Departure arrival() const;
+    KPublicTransport::Departure departure() const;
+
 Q_SIGNALS:
     void setupChanged();
     void contentChanged();
     void currentChanged();
     void progressChanged();
+    void arrivalChanged();
+    void departureChanged();
 
 private:
     void setCurrent(bool current, const QVariant &res = {});

@@ -25,9 +25,6 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
-    property var arrival: _liveDataManager.arrival(batchId)
-    property var departure: _liveDataManager.departure(batchId)
-
     headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
     headerItem: RowLayout {
         QQC2.Label {

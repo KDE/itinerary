@@ -237,6 +237,8 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
         }
     }
 
+    emit arrivalUpdated(resId);
+
     // check if something changed relevant for notifications
     if (oldArr.arrivalDelay() == arr.arrivalDelay() && oldArr.expectedPlatform() == arr.expectedPlatform()) {
         return;
@@ -252,8 +254,6 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
             QLatin1String("clock"));
     }
 #endif
-
-    emit departureUpdated(resId);
 }
 
 void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
@@ -282,6 +282,8 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
         }
     }
 
+    emit departureUpdated(resId);
+
     // check if something changed relevant for notification
     if (oldDep.departureDelay() == dep.departureDelay() && oldDep.expectedPlatform() == dep.expectedPlatform()) {
         return;
@@ -304,8 +306,6 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
             QLatin1String("clock"));
     }
 #endif
-
-    emit departureUpdated(resId);
 }
 
 void LiveDataManager::removeArrivalData(const QString &resId)
