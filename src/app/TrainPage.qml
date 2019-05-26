@@ -26,8 +26,6 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Train Ticket")
-    property var arrival: _liveDataManager.arrival(batchId)
-    property var departure: _liveDataManager.departure(batchId)
 
     Component {
         id: alternativePage

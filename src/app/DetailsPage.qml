@@ -26,7 +26,7 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     /** The reservation batch identifier (@see ReservationManager). */
-    property var batchId
+    property alias batchId: controller.batchId
     /** Currently selected reservation of the batch. */
     property var currentReservationId: batchId
     /** @deprecated */
@@ -35,6 +35,14 @@ Kirigami.ScrollablePage {
     readonly property var reservationFor: reservation.reservationFor
     property var editor
     readonly property string passId: _pkpassManager.passId(reservation)
+
+    TimelineDelegateController {
+        id: controller
+        reservationManager: _reservationManager
+        liveDataManager: _liveDataManager
+    }
+    property alias arrival: controller.arrival
+    property alias departure: controller.departure
 
     Kirigami.OverlaySheet {
         id: deleteWarningSheet
