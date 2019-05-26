@@ -678,8 +678,3 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
         endRemoveRows();
     }
 }
-
-void TimelineModel::dataChangedForReservation(const QString &resId)
-{
-    batchChanged(resId); // ### this could be done a bit more efficient, as we know this isn't called for time changes
-}

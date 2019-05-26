@@ -180,8 +180,6 @@ int main(int argc, char **argv)
     timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
     timelineModel.setReservationManager(&resMgr);
     QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
-    QObject::connect(&liveDataMgr, &LiveDataManager::arrivalUpdated, &timelineModel, &TimelineModel::dataChangedForReservation);
-    QObject::connect(&liveDataMgr, &LiveDataManager::departureUpdated, &timelineModel, &TimelineModel::dataChangedForReservation);
 
     WeatherForecastManager weatherForecastMgr;
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
