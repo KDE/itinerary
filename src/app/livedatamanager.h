@@ -53,8 +53,8 @@ public:
 
     void setPollingEnabled(bool pollingEnabled);
 
-    Q_INVOKABLE QVariant arrival(const QString &resId);
-    Q_INVOKABLE QVariant departure(const QString &resId);
+    KPublicTransport::Departure arrival(const QString &resId);
+    KPublicTransport::Departure departure(const QString &resId);
 
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */

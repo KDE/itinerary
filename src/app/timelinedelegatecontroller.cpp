@@ -185,7 +185,7 @@ KPublicTransport::Departure TimelineDelegateController::arrival() const
     if (!m_liveDataMgr || m_batchId.isEmpty()) {
         return {};
     }
-    return m_liveDataMgr->arrival(m_batchId).value<KPublicTransport::Departure>();
+    return m_liveDataMgr->arrival(m_batchId);
 }
 
 KPublicTransport::Departure TimelineDelegateController::departure() const
@@ -193,7 +193,7 @@ KPublicTransport::Departure TimelineDelegateController::departure() const
     if (!m_liveDataMgr || m_batchId.isEmpty()) {
         return {};
     }
-    return m_liveDataMgr->departure(m_batchId).value<KPublicTransport::Departure>();
+    return m_liveDataMgr->departure(m_batchId);
 }
 
 void TimelineDelegateController::checkForUpdate(const QString& batchId)
@@ -238,7 +238,7 @@ QDateTime TimelineDelegateController::relevantStartDateTime(const QVariant &res)
 QDateTime TimelineDelegateController::liveStartDateTime(const QVariant& res) const
 {
     if (m_liveDataMgr) {
-        const auto dep = m_liveDataMgr->departure(m_batchId).value<KPublicTransport::Departure>();
+        const auto dep = m_liveDataMgr->departure(m_batchId);
         if (dep.expectedDepartureTime().isValid()) {
             return dep.expectedDepartureTime();
         }
@@ -249,7 +249,7 @@ QDateTime TimelineDelegateController::liveStartDateTime(const QVariant& res) con
 QDateTime TimelineDelegateController::liveEndDateTime(const QVariant& res) const
 {
     if (m_liveDataMgr) {
-        const auto arr = m_liveDataMgr->arrival(m_batchId).value<KPublicTransport::Departure>();
+        const auto arr = m_liveDataMgr->arrival(m_batchId);
         if (arr.expectedArrivalTime().isValid()) {
             return arr.expectedArrivalTime();
         }

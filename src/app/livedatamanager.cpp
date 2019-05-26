@@ -104,14 +104,14 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
     }
 }
 
-QVariant LiveDataManager::arrival(const QString &resId)
+KPublicTransport::Departure LiveDataManager::arrival(const QString &resId)
 {
-    return QVariant::fromValue(m_arrivals.value(resId).change);
+    return m_arrivals.value(resId).change;
 }
 
-QVariant LiveDataManager::departure(const QString &resId)
+KPublicTransport::Departure LiveDataManager::departure(const QString &resId)
 {
-    return QVariant::fromValue(m_departures.value(resId).change);
+    return m_departures.value(resId).change;
 }
 
 void LiveDataManager::checkForUpdates()
