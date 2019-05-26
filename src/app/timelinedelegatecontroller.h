@@ -80,6 +80,8 @@ private:
     QDateTime liveStartDateTime(const QVariant &res) const;
     QDateTime liveEndDateTime(const QVariant &res) const;
 
+    void batchChanged(const QString &batchId);
+
     ReservationManager *m_resMgr = nullptr; // ### should this be static?
     LiveDataManager *m_liveDataMgr = nullptr;
     QString m_batchId;

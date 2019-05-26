@@ -68,8 +68,8 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
     emit departureChanged();
     emit arrivalChanged();
 
-    connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::checkForUpdate);
-    connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::checkForUpdate);
+    connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::batchChanged);
+    connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::batchChanged);
 
     checkForUpdate(m_batchId);
 }
@@ -263,4 +263,15 @@ void TimelineDelegateController::scheduleNextUpdate(std::chrono::milliseconds ms
         return;
     }
     s_currentTimer->start(ms);
+}
+
+void TimelineDelegateController::batchChanged(const QString& batchId)
+{
+    if (batchId != m_batchId || m_batchId.isEmpty()) {
+        return;
+    }
+    checkForUpdate(batchId);
+    emit contentChanged();
+    emit arrivalChanged();
+    emit departureChanged();
 }
