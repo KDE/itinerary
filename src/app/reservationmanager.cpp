@@ -92,12 +92,12 @@ QVariant ReservationManager::reservation(const QString& id) const
     }
 
     const auto doc = QJsonDocument::fromJson(f.readAll());
-    if (!doc.isArray() && doc.array().size() != 1) {
+    if (!(doc.isArray() && doc.array().size() == 1) && !doc.isObject()) {
         qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resPath;
         return {};
     }
 
-    const auto resData = JsonLdDocument::fromJson(doc.array());
+    const auto resData = JsonLdDocument::fromJson(doc.isArray() ? doc.array() : QJsonArray({doc.object()}));
     if (resData.size() != 1) {
         qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resPath;
         return {};
@@ -225,7 +225,7 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
         qCWarning(Log) << "Unable to open file:" << f.errorString();
         return;
     }
-    f.write(QJsonDocument(JsonLdDocument::toJson({res})).toJson());
+    f.write(QJsonDocument(JsonLdDocument::toJson(res)).toJson());
     m_reservations.insert(resId, res);
 }
 
