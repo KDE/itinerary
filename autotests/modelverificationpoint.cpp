@@ -63,7 +63,7 @@ static QJsonValue variantToJson(const QVariant &v)
     }
 
     if (QMetaType::metaObjectForType(v.userType())) {
-        return KItinerary::JsonLdDocument::toJson({v}).at(0);
+        return KItinerary::JsonLdDocument::toJson(v);
     } else if (v.userType() == qMetaTypeId<QVector<QVariant>>()) {
         return KItinerary::JsonLdDocument::toJson(v.value<QVector<QVariant>>());
     }
