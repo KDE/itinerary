@@ -145,7 +145,9 @@ App.DetailsPage {
             Kirigami.Separator {
                 Kirigami.FormData.label: i18n("Seat")
                 Kirigami.FormData.isSection: true
-                visible: reservation.reservedTicket.ticketedSeat.seatNumber != "" || reservation.reservedTicket.ticketedSeat.seatSection != ""
+                visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
+                      || reservation.reservedTicket.ticketedSeat.seatSection != ""
+                      || reservation.reservedTicket.ticketedSeat.seatingType != ""
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Coach:")
@@ -156,6 +158,11 @@ App.DetailsPage {
                 Kirigami.FormData.label: i18n("Seat:")
                 text: reservation.reservedTicket.ticketedSeat.seatNumber
                 visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Class:")
+                text: reservation.reservedTicket.ticketedSeat.seatingType
+                visible: reservation.reservedTicket.ticketedSeat.seatingType != ""
             }
 
             // booking details
