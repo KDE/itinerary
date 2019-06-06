@@ -50,6 +50,7 @@ Kirigami.AbstractCard {
     }
     property alias arrival: controller.arrival
     property alias departure: controller.departure
+    property alias previousLocation: controller.previousLocation
 
     header: Rectangle {
         id: headerBackground

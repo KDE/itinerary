@@ -64,8 +64,10 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.departureStation
+            currentLocation: root.previousLocation
             Layout.fillWidth: true
         }
+
         // TODO reserved seat
 
         Kirigami.Separator {
@@ -96,6 +98,7 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalStation
+            offerNavigation: false
             Layout.fillWidth: true
         }
     }
