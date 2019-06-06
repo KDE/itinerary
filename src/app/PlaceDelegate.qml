@@ -22,10 +22,18 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
+/** Display of a location and navitaion actions. */
 Item {
     id: root
 
+    /** The place to display and to navigate to. */
     property var place
+    /** Disable navigation actions (makes sense for destinations). */
+    property bool offerNavigation: true
+    /** The start location for navigation.
+     *  If unspecified, the current location is used.
+     */
+    property var currentLocation
 
     implicitHeight: (!place.address.isEmpty || place.geo.isValid) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
     implicitWidth: label.width + buttonLayout.width
@@ -53,14 +61,17 @@ Item {
             onClicked: _appController.showOnMap(place)
         }
         QQC2.ToolButton {
-            visible: _appController.canNavigateTo(place)
+            visible: offerNavigation && _appController.canNavigateTo(place)
             Kirigami.Icon {
                 anchors.centerIn: parent
                 width: Kirigami.Units.iconSizes.smallMedium
                 height: width
                 source: "go-next-symbolic"
             }
-            onClicked: _appController.navigateTo(place)
+            onClicked: {
+                console.log(currentLocation);
+                (currentLocation == undefined || currentLocation == null) ? _appController.navigateTo(place) : _appController.navigateTo(currentLocation, place);
+            }
         }
     }
 }
