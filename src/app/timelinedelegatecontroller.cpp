@@ -65,6 +65,7 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
 
     m_resMgr = qobject_cast<ReservationManager*>(resMgr);
     emit setupChanged();
+    emit contentChanged();
     emit departureChanged();
     emit arrivalChanged();
 
