@@ -21,6 +21,7 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 
 #include <QClipboard>
@@ -265,7 +266,7 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
         return;
     }
 
-    const auto geo = JsonLdDocument::readProperty(to, "geo").value<GeoCoordinates>();
+    const auto geo = LocationUtil::geo(to);
     if (geo.isValid()) {
         QUrl url;
         url.setScheme(QStringLiteral("https"));
@@ -281,6 +282,37 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
     }
 }
 #endif
+
+void ApplicationController::navigateTo(const QVariant& from, const QVariant& to)
+{
+#ifdef Q_OS_ANDROID
+    // TODO Android can't do this by default, but we can do osmand API calls directly
+    Q_UNUSED(from);
+    navigateTo(to);
+#else
+    const auto fromGeo = LocationUtil::geo(from);
+    if (!fromGeo.isValid()) {
+        navigateTo(to);
+        return;
+    }
+
+    const auto toGeo = LocationUtil::geo(to);
+    if (!toGeo.isValid()) {
+        return;
+    }
+
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(QStringLiteral("www.openstreetmap.org"));
+    url.setPath(QStringLiteral("/directions"));
+    QUrlQuery query;
+    query.addQueryItem(QLatin1String("route"),
+        QString::number(fromGeo.latitude()) + QLatin1Char(',') + QString::number(fromGeo.longitude())
+        + QLatin1Char(';') + QString::number(toGeo.latitude()) + QLatin1Char(',') + QString::number(toGeo.longitude()));
+    url.setQuery(query);
+    QDesktopServices::openUrl(url);
+#endif
+}
 
 #ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
