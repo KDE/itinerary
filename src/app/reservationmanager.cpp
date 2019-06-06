@@ -455,3 +455,13 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         storeBatch(batchId);
     }
 }
+
+QString ReservationManager::previousBatch(const QString &batchId) const
+{
+    // ### this can be optimized by relying on m_batches being sorted by start date
+    const auto it = std::find(m_batches.begin(), m_batches.end(), batchId);
+    if (it == m_batches.end() || it == m_batches.begin()) {
+        return {};
+    }
+    return *(it - 1);
+}

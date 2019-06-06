@@ -42,6 +42,11 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
     Q_PROPERTY(float progress READ progress NOTIFY progressChanged)
 
+    /** The location we are in before this element begins.
+     *  This is only relevant for future elements, past elements, or elements without a non-current predecessor return nothing here.
+     */
+    Q_PROPERTY(QVariant previousLocation READ previousLocation NOTIFY contentChanged) // TODO technically we need to update this too when a new reservation was inserted before this
+
     Q_PROPERTY(KPublicTransport::Departure arrival READ arrival NOTIFY arrivalChanged)
     Q_PROPERTY(KPublicTransport::Departure departure READ departure NOTIFY departureChanged)
 
@@ -59,6 +64,8 @@ public:
 
     bool isCurrent() const;
     float progress() const;
+
+    QVariant previousLocation() const;
 
     KPublicTransport::Departure arrival() const;
     KPublicTransport::Departure departure() const;

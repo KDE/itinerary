@@ -61,6 +61,10 @@ public:
     QString batchForReservation(const QString &resId) const;
     Q_INVOKABLE QStringList reservationsForBatch(const QString &batchId) const;
     Q_INVOKABLE void removeBatch(const QString &batchId);
+
+    /** Returns the batch happening prior to @p batchId, if any. */
+    QString previousBatch(const QString &batchId) const;
+
 Q_SIGNALS:
     void reservationAdded(const QString &id);
     void reservationChanged(const QString &id);

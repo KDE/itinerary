@@ -276,3 +276,28 @@ void TimelineDelegateController::batchChanged(const QString& batchId)
     emit arrivalChanged();
     emit departureChanged();
 }
+
+QVariant TimelineDelegateController::previousLocation() const
+{
+    if (m_batchId.isEmpty() || !m_resMgr) {
+        return {};
+    }
+
+    const auto prevBatch = m_resMgr->previousBatch(m_batchId);
+    if (prevBatch.isEmpty()) {
+        return {};
+    }
+
+    const auto res = m_resMgr->reservation(prevBatch);
+    const auto endTime = SortUtil::endtDateTime(res);
+    if (endTime < QDateTime::currentDateTime()) { // TODO take live data into account (also for notification!)
+        // past event, we can use GPS rather than predict our location from the itinerary
+        return {};
+    }
+
+    if (LocationUtil::isLocationChange(res)) {
+        return LocationUtil::arrivalLocation(res);
+    } else {
+        return LocationUtil::location(res);
+    }
+}
