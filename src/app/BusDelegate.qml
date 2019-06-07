@@ -19,16 +19,21 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
 App.TimelineDelegate {
     id: root
-
-    headerIconSource: "qrc:///images/bus.svg"
+    headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/bus.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
     headerItem: RowLayout {
         QQC2.Label {
-            text: reservationFor.busName + " " + reservationFor.busNumber
+            text: {
+                if (reservationFor.busName || reservationFor.busNumber ) {
+                    return reservationFor.busName + " " + reservationFor.busNumber
+                }
+                return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
+            }
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
@@ -38,6 +43,11 @@ App.TimelineDelegate {
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
+        QQC2.Label {
+            text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
+            color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: departure.hasExpectedDepartureTime
+        }
     }
 
     contentItem: ColumnLayout {
@@ -46,9 +56,11 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("From: %1", reservationFor.departureBusStop.name)
             color: Kirigami.Theme.textColor
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservationFor.departureBusStop
+            currentLocation: root.previousLocation
             Layout.fillWidth: true
         }
         Kirigami.Separator {
@@ -57,14 +69,26 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("To: %1", reservationFor.arrivalBusStop.name)
             color: Kirigami.Theme.textColor
+            Layout.fillWidth: true
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalBusStop
+            offerNavigation: false
             Layout.fillWidth: true
         }
-        QQC2.Label {
-            text: i18n("Arrival: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
-            color: Kirigami.Theme.textColor
+        RowLayout {
+            Layout.fillWidth: true
+            QQC2.Label {
+                text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
+                color: Kirigami.Theme.textColor
+                wrapMode: Text.WordWrap
+                visible: reservationFor.arrivalTime > 0
+            }
+            QQC2.Label {
+                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: arrival.hasExpectedArrivalTime
+            }
         }
     }
 
