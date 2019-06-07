@@ -35,8 +35,13 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: root.rangeType == TimelineModel.RangeEnd ?
-                Localizer.formatTime(reservationFor, "endDate") : Localizer.formatTime(reservationFor, "startDate")
+            text: {
+                if (root.rangeType == TimelineModel.RangeEnd)
+                    return Localizer.formatTime(reservationFor, "endDate");
+                if (reservationFor.doorTime > 0)
+                    return Localizer.formatTime(reservationFor, "doorTime");
+                return Localizer.formatTime(reservationFor, "startDate");
+            }
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
         }
@@ -50,13 +55,16 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.location
+            currentLocation: root.previousLocation
             Layout.fillWidth: true
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
+            visible: root.rangeType != TimelineModel.RangeEnd && reservationFor.doorTime > 0
         }
         QQC2.Label {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
+            visible: root.rangeType != TimelineModel.RangeEnd
         }
     }
 
