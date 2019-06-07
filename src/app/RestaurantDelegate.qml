@@ -45,6 +45,7 @@ App.TimelineDelegate {
 
         App.PlaceDelegate {
             place: reservationFor
+            currentLocation: root.previousLocation
             Layout.fillWidth: true
         }
     }

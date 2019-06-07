@@ -46,6 +46,7 @@ App.TimelineDelegate {
 
         App.PlaceDelegate {
             place: touristAttraction
+            currentLocation: root.previousLocation
             Layout.fillWidth: true
         }
     }
