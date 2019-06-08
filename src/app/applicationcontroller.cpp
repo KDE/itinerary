@@ -90,6 +90,16 @@ Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
 
     return JNI_VERSION_1_4;
 }
+
+static bool startActivity(const QString &intentUri)
+{
+    qCDebug(Log) << intentUri;
+    const auto activity = QtAndroid::androidActivity();
+    if (activity.isValid()) {
+        return activity.callMethod<jboolean>("launchViewIntentFromUri", "(Ljava/lang/String;)Z", QAndroidJniObject::fromString(intentUri).object());
+    }
+    return false;
+}
 #endif
 
 ApplicationController* ApplicationController::s_instance = nullptr;
@@ -148,10 +158,7 @@ void ApplicationController::showOnMap(const QVariant &place)
         return;
     }
 
-    const auto activity = QtAndroid::androidActivity();
-    if (activity.isValid()) {
-        activity.callMethod<void>("launchViewIntentFromUri", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
-    }
+    startActivity(intentUri);
 
 #else
     if (geo.isValid()) {
@@ -226,10 +233,7 @@ void ApplicationController::navigateTo(const QVariant& place)
         return;
     }
 
-    const auto activity = QtAndroid::androidActivity();
-    if (activity.isValid()) {
-        activity.callMethod<void>("launchViewIntentFromUri", "(Ljava/lang/String;)V", QAndroidJniObject::fromString(intentUri).object());
-    }
+    startActivity(intentUri);
 
 #else
     if (m_pendingNavigation) {
@@ -284,22 +288,30 @@ void ApplicationController::navigateTo(const QGeoPositionInfo &from, const QVari
 
 void ApplicationController::navigateTo(const QVariant& from, const QVariant& to)
 {
-#ifdef Q_OS_ANDROID
-    // TODO Android can't do this by default, but we can do osmand API calls directly
-    Q_UNUSED(from);
-    navigateTo(to);
-#else
     const auto fromGeo = LocationUtil::geo(from);
-    if (!fromGeo.isValid()) {
+    const auto toGeo = LocationUtil::geo(to);
+    if (!fromGeo.isValid() || !toGeo.isValid()) {
         navigateTo(to);
         return;
     }
 
-    const auto toGeo = LocationUtil::geo(to);
-    if (!toGeo.isValid()) {
-        return;
+#ifdef Q_OS_ANDROID
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("start_lat"), QString::number(fromGeo.latitude()));
+    query.addQueryItem(QStringLiteral("start_lon"), QString::number(fromGeo.longitude()));
+    query.addQueryItem(QStringLiteral("dest_lat"), QString::number(toGeo.latitude()));
+    query.addQueryItem(QStringLiteral("dest_lon"), QString::number(toGeo.longitude()));
+    query.addQueryItem(QStringLiteral("start_name"), LocationUtil::name(from));
+    query.addQueryItem(QStringLiteral("dest_name"), LocationUtil::name(to));
+    QUrl url;
+    url.setScheme(QStringLiteral("osmand.api"));
+    url.setHost(QStringLiteral("navigate"));
+    url.setQuery(query);
+    if (!startActivity(url.toString())) {
+        navigateTo(to);
     }
 
+#else
     QUrl url;
     url.setScheme(QStringLiteral("https"));
     url.setHost(QStringLiteral("www.openstreetmap.org"));

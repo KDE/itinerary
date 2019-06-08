@@ -21,6 +21,7 @@ import org.qtproject.qt5.android.bindings.QtActivity;
 
 import net.fortuna.ical4j.model.property.XProperty;
 
+import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -37,11 +38,16 @@ public class Activity extends QtActivity
 {
     private static final String TAG = "org.kde.itinerary";
 
-    public void launchViewIntentFromUri(String uri)
+    public boolean launchViewIntentFromUri(String uri)
     {
         Uri mapIntentUri = Uri.parse(uri);
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapIntentUri);
-        startActivity(mapIntent);
+        try {
+            startActivity(mapIntent);
+        } catch (ActivityNotFoundException e) {
+            return false;
+        }
+        return true;
     }
 
     public native void importReservation(String data);
