@@ -20,7 +20,6 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
-#include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 
@@ -56,7 +55,7 @@ using namespace KItinerary;
 static void importReservation(JNIEnv *env, jobject that, jstring data)
 {
     Q_UNUSED(that);
-    ApplicationController::instance()->importData(env->GetStringUTFChars(data, 0));
+    ApplicationController::instance()->importData(env->GetStringUTFChars(data, nullptr));
 }
 
 static void importFromIntent(JNIEnv *env, jobject that, jobject data)
@@ -132,8 +131,8 @@ void ApplicationController::showOnMap(const QVariant &place)
         return;
     }
 
-    const auto geo = JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>();
-    const auto addr = JsonLdDocument::readProperty(place, "address").value<PostalAddress>();
+    const auto geo = LocationUtil::geo(place);
+    const auto addr = LocationUtil::address(place);
 
 #ifdef Q_OS_ANDROID
     QString intentUri;
@@ -193,12 +192,12 @@ bool ApplicationController::canNavigateTo(const QVariant& place)
         return false;
     }
 
-    if (JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>().isValid()) {
+    if (LocationUtil::geo(place).isValid()) {
         return true;
     }
 
 #ifdef Q_OS_ANDROID
-    return !JsonLdDocument::readProperty(place, "address").value<PostalAddress>().isEmpty();
+    return !LocationUtil::address(place).isEmpty();
 #else
     return false;
 #endif
@@ -211,8 +210,8 @@ void ApplicationController::navigateTo(const QVariant& place)
     }
 
 #ifdef Q_OS_ANDROID
-    const auto geo = JsonLdDocument::readProperty(place, "geo").value<GeoCoordinates>();
-    const auto addr = JsonLdDocument::readProperty(place, "address").value<PostalAddress>();
+    const auto geo = LocationUtil::geo(place);;
+    const auto addr = LocationUtil::address(place);
 
     QString intentUri;
     if (geo.isValid()) {
