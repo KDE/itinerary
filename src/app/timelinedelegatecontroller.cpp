@@ -68,9 +68,13 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
     emit contentChanged();
     emit departureChanged();
     emit arrivalChanged();
+    emit previousLocationChanged();
 
     connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::batchChanged);
     connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::batchChanged);
+    // ### could be done more efficiently
+    connect(m_resMgr, &ReservationManager::batchAdded, this, &TimelineDelegateController::previousLocationChanged);
+    connect(m_resMgr, &ReservationManager::batchRemoved, this, &TimelineDelegateController::previousLocationChanged);
 
     checkForUpdate(m_batchId);
 }
@@ -121,6 +125,7 @@ void TimelineDelegateController::setBatchId(const QString &batchId)
     emit contentChanged();
     emit departureChanged();
     emit arrivalChanged();
+    emit previousLocationChanged();
     checkForUpdate(batchId);
 }
 
@@ -275,6 +280,7 @@ void TimelineDelegateController::batchChanged(const QString& batchId)
     emit contentChanged();
     emit arrivalChanged();
     emit departureChanged();
+    emit previousLocationChanged();
 }
 
 QVariant TimelineDelegateController::previousLocation() const

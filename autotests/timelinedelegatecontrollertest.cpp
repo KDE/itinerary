@@ -64,7 +64,7 @@ private Q_SLOTS:
         QCOMPARE(controller.progress(), 0.0f);
     }
 
-    void testController()
+    void testProgress()
     {
         ReservationManager mgr;
         clearReservations(&mgr);
@@ -95,6 +95,49 @@ private Q_SLOTS:
         QCOMPARE(controller.isCurrent(), true);
         QCOMPARE(controller.progress(), 0.5f);
         QCOMPARE(currentSpy.size(), 1);
+    }
+
+    void testPreviousLocation()
+    {
+        ReservationManager mgr;
+        clearReservations(&mgr);
+
+        TimelineDelegateController controller;
+        controller.setReservationManager(&mgr);
+
+        {
+            TrainTrip trip;
+            trip.setTrainNumber(QStringLiteral("TGV 1235"));
+            trip.setDepartureTime(QDateTime::currentDateTime().addDays(2));
+            TrainReservation res;
+            res.setReservationNumber(QStringLiteral("XXX007"));
+            res.setReservationFor(trip);
+            mgr.addReservation(res);
+        }
+
+        QCOMPARE(mgr.batches().size(), 1);
+        const auto batchId = mgr.batches().at(0);
+
+        controller.setBatchId(batchId);
+        QCOMPARE(controller.previousLocation(), QVariant());
+
+        TrainStation arrStation;
+        arrStation.setName(QStringLiteral("My Station"));
+        TrainTrip prevTrip;
+        prevTrip.setTrainNumber(QStringLiteral("ICE 1234"));
+        prevTrip.setDepartureTime(QDateTime::currentDateTime().addDays(1));
+        prevTrip.setArrivalTime(QDateTime::currentDateTime().addDays(1));
+        prevTrip.setArrivalStation(arrStation);
+        TrainReservation prevRes;
+        prevRes.setReservationNumber(QStringLiteral("XXX007"));
+        prevRes.setReservationFor(prevTrip);
+
+        QSignalSpy changeSpy(&controller, &TimelineDelegateController::previousLocationChanged);
+        mgr.addReservation(prevRes);
+
+        QCOMPARE(changeSpy.size(), 1);
+        QVERIFY(!controller.previousLocation().isNull());
+        QCOMPARE(controller.previousLocation().value<TrainStation>().name(), QLatin1String("My Station"));
     }
 };
 
