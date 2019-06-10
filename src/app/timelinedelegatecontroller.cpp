@@ -295,8 +295,15 @@ QVariant TimelineDelegateController::previousLocation() const
     }
 
     const auto res = m_resMgr->reservation(prevBatch);
-    const auto endTime = SortUtil::endtDateTime(res);
-    if (endTime < QDateTime::currentDateTime()) { // TODO take live data into account (also for notification!)
+    auto endTime = SortUtil::endtDateTime(res);
+    if (m_liveDataMgr) {
+        const auto arr = m_liveDataMgr->arrival(prevBatch);
+        if (arr.hasExpectedArrivalTime()) {
+            endTime = arr.expectedArrivalTime();
+        }
+    }
+
+    if (endTime < QDateTime::currentDateTime()) {
         // past event, we can use GPS rather than predict our location from the itinerary
         return {};
     }
