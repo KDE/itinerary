@@ -27,7 +27,7 @@ Item {
     Platform.FileDialog {
         id: fileDialog
         title: i18n("Import Reservation")
-        nameFilters: [i18n("PkPass files (*.pkpass)"), i18n("JSON files (*.json)"), i18n("PDF files (*.pdf)")]
+        nameFilters: [i18n("PkPass files (*.pkpass)"), i18n("JSON files (*.json)"), i18n("PDF files (*.pdf)"), i18n("All Files (*.*)")]
         folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         onAccepted: {
             _appController.importFromUrl(fileDialog.file);
