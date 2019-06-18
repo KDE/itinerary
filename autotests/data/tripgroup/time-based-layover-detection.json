@@ -1,0 +1,97 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "identifier": "ibnr:8000281",
+                "name": "Frankfurt(M) Flughafen Fernbf"
+            },
+            "arrivalTime": "2019-06-18T08:22:00",
+            "departureDay": "2019-06-18",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "Sömewhere Hbf"
+            },
+            "departureTime": "2019-06-18T04:55:00+02:00",
+            "trainNumber": "ICE 123"
+        },
+        "reservationNumber": "12345"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "FR",
+                "name": "Ryanair"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "VLC",
+                "name": "Valencia"
+            },
+            "arrivalTime": "2019-06-18T13:10:00+02:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "FRA",
+                "name": "FRA"
+            },
+            "departureDay": "2019-06-18",
+            "departureTime": "2019-06-18T10:50:00+02:00",
+            "flightNumber": "2424"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "FR",
+                "name": "Ryanair"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "FRA",
+                "name": "FRA"
+            },
+            "arrivalTime": "2019-06-26T22:00:00+02:00",
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "VLC",
+                "name": "Valencia"
+            },
+            "departureDay": "2019-06-26",
+            "departureTime": "2019-06-26T19:40:00+02:00",
+            "flightNumber": "2425"
+        },
+        "reservationNumber": "XXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "SOEMEWHERE HBF"
+            },
+            "arrivalTime": "2019-06-27T03:34:00",
+            "departureDay": "2019-06-26",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "FRA FLUG FERNBF"
+            },
+            "departureTime": "2019-06-26T23:54:00",
+            "trainNumber": "NJ 987"
+        },
+        "reservationNumber": "987654"
+    }
+]
