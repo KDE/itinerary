@@ -110,14 +110,13 @@ private Q_SLOTS:
             QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 12);
         }
 
+        clearReservations(&resMgr);
         TripGroupManager::clear();
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
         {
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
-            QEXPECT_FAIL("", "not implemented yet", Continue);
             QCOMPARE(mgr.tripGroups().size(), 1);
-            QEXPECT_FAIL("", "not implemented yet", Continue);
             QCOMPARE(mgr.tripGroup(mgr.tripGroups().at(0)).elements().size(), 4);
         }
     }

@@ -41,6 +41,7 @@ enum {
     MaximumTripDuration = 20, // in days
     MaximumTripElements = 20,
     MinimumTripElements = 2,
+    MaximumLayoverTime = 4*60*60, // in seconds
 };
 
 TripGroupManager::TripGroupManager(QObject* parent) :
@@ -229,6 +230,19 @@ void TripGroupManager::scanAll()
     }
 }
 
+static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes)
+{
+    const auto from = LocationUtil::arrivalLocation(fromRes);
+    const auto to = LocationUtil::departureLocation(toRes);
+    if (LocationUtil::isSameLocation(from, to, LocationUtil::CityLevel)) {
+        return true;
+    }
+
+    const auto dep = SortUtil::endtDateTime(fromRes);
+    const auto arr = SortUtil::startDateTime(toRes);
+    return dep.date() == arr.date() && dep.secsTo(arr) < MaximumLayoverTime;
+}
+
 void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 {
     const auto beginRes = m_resMgr->reservation(*beginIt);
@@ -281,7 +295,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         // check for connected transitions (ie. previous arrival == current departure)
         const auto prevArrival = LocationUtil::arrivalLocation(prevRes);
         const auto curDeparture = LocationUtil::departureLocation(res);
-        const auto connectedTransition = LocationUtil::isSameLocation(prevArrival, curDeparture, LocationUtil::CityLevel);
+        const auto connectedTransition = isConnectedTransition(prevRes, res);
         qDebug() << "  current transition goes from" << LocationUtil::name(prevArrival) << "to" << LocationUtil::name(LocationUtil::arrivalLocation(res));
 
         if (!connectedSearchDone) {
@@ -296,7 +310,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
             // same location as beginIt? -> we reached the end of the trip (break)
             const auto curArrival = LocationUtil::arrivalLocation(res);
             if (LocationUtil::isSameLocation(beginDeparture, curArrival, LocationUtil::CityLevel)) {
-                qDebug() << "  aborting connectivity search, arrived at the start again";
+                qDebug() << "  aborting connectivity search, arrived at the start again" << LocationUtil::name(curArrival);
                 connectedSearchDone = true;
             }
         }
