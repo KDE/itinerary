@@ -27,42 +27,41 @@ Item {
     id: root
     property var pass: null
     property string passId
-    //implicitHeight: frontLayout.implicitHeight
-    implicitWidth: Math.max(frontLayout.implicitWidth, 332)
+    implicitHeight: bodyBackground.implicitHeight
+    implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
 
-    ColumnLayout {
-        id: frontLayout
-        spacing: 0
-        anchors.fill: parent
-        visible: false
-        // HACK to break binding loop on implicitHeight
-        onImplicitHeightChanged: root.implicitHeight = implicitHeight
+    Rectangle {
+        id: bodyBackground
+        color: pass.backgroundColor
+        //implicitHeight: topLayout.implicitHeight + 2 * topLayout.anchors.margins
+        width: parent.width
+        visible: false // shown via opacity mask shader effect below
 
-        Rectangle {
-            id: bodyBackground
-            color: pass.backgroundColor
-            Layout.fillWidth: true
-            implicitHeight: bodyLayout.implicitHeight + 2 * bodyLayout.anchors.margins
-            implicitWidth: bodyLayout.implicitWidth + 2 * bodyLayout.anchors.margins
+        Image {
+            id: backgroundImage
+            source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
+            fillMode: Image.PreserveAspectFit
+            x: -(implicitWidth - bodyBackground.width) / 2
+            y: 0
+            visible: false
+        }
+        Effects.FastBlur {
+            anchors.fill: backgroundImage
+            source: backgroundImage
+            radius: 32
+        }
 
-            Image {
-                id: backgroundImage
-                source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
-                fillMode: Image.PreserveAspectFit
-                x: -(implicitWidth - bodyBackground.width) / 2
-                y: 0
-                visible: false
-            }
-            Effects.FastBlur {
-                anchors.fill: backgroundImage
-                source: backgroundImage
-                radius: 32
-            }
+        ColumnLayout {
+            id: topLayout
+            spacing: 10
+            anchors.fill: parent
+            anchors.margins: 10
+            // HACK to break binding loop on implicitHeight
+            onImplicitHeightChanged: bodyBackground.implicitHeight = implicitHeight + 2 * topLayout.anchors.margins
+
 
             ColumnLayout {
                 id: bodyLayout
-                anchors.fill: parent
-                anchors.margins: 10
                 spacing: 10
 
                 // header
@@ -192,25 +191,45 @@ Item {
                         }
                     }
                 }
+            }
 
-                // barcode
-                App.PkPassBarcode { pass: root.pass }
+            // barcode
+            App.PkPassBarcode { pass: root.pass }
 
-                // footer
-                Image {
-                    source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
-                    sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
-                    Layout.alignment: Qt.AlignCenter
+            // footer
+            Image {
+                source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
+                sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                Layout.alignment: Qt.AlignCenter
+            }
+
+            // back fields
+            Kirigami.Separator {
+                Layout.fillWidth: true
+            }
+            Repeater {
+                model: pass.backFields
+                ColumnLayout {
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        color: pass.labelColor
+                        text: modelData.label
+                        wrapMode: Text.WordWrap
+                    }
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        color: pass.foregroundColor
+                        text: modelData.value
+                        wrapMode: Text.WordWrap
+                    }
                 }
-
-                // TODO back fields
             }
         }
     }
 
     Item {
         id: mask
-        anchors.fill: frontLayout
+        anchors.fill: bodyBackground
         Rectangle {
             width: parent.width / 4
             height: width
@@ -223,8 +242,8 @@ Item {
     }
 
     Effects.OpacityMask {
-        anchors.fill: frontLayout
-        source: frontLayout
+        anchors.fill: bodyBackground
+        source: bodyBackground
         maskSource: mask
         invert: true
     }
