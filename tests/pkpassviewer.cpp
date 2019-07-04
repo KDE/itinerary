@@ -17,6 +17,7 @@
 
 #include "pkpassmanager.h"
 #include "pkpassimageprovider.h"
+#include "util.h"
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
@@ -57,6 +58,9 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
+    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
+        return new Util;
+    });
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

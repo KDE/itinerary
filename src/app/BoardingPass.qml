@@ -20,6 +20,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.pkpass 1.0 as KPkPass
+import org.kde.itinerary 1.0
 import "." as App
 
 Item {
@@ -220,10 +221,9 @@ Item {
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: modelData.value
+                        text: Util.textToHtml(modelData.value)
                         wrapMode: Text.WordWrap
-                        // TODO properly handle rich text content, handle links, and deal with linebreaks in rich text content
-                        //textFormat: Text.RichText
+                        onLinkActivated: Qt.openUrlExternally(link)
                     }
                 }
             }

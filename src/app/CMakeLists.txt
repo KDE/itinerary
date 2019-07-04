@@ -17,6 +17,7 @@ set(itinerary_srcs
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
+    util.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
     HEADER logging.h
@@ -30,6 +31,7 @@ target_link_libraries(itinerary PUBLIC
     KPim::Itinerary
     KPim::PkPass
     KF5::I18n
+    KF5::CoreAddons
     Qt5::Network
     Qt5::Quick
 )
@@ -49,7 +51,6 @@ set(itinerary_app_srcs
     localizer.cpp
     settings.cpp
     tickettokenmodel.cpp
-    util.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
     brightnessmanager.cpp
@@ -76,7 +77,6 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     KF5::Contacts
-    KF5::CoreAddons
 )
 if (ANDROID)
     target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
