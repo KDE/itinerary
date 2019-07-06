@@ -51,6 +51,7 @@ public class Activity extends QtActivity
     }
 
     public native void importReservation(String data);
+    public native void importDavDroidJson(String data);
     public native void importFromIntent(Intent data);
 
     /** Check the calendar for with JSON-LD data.
@@ -79,19 +80,28 @@ public class Activity extends QtActivity
             String propSelection = "(event_id == " + cursor.getInt(2) + ")";
             Cursor propCursor = getContentResolver().query(CalendarContract.ExtendedProperties.CONTENT_URI, propColumns, propSelection, null, null);
             while (propCursor.moveToNext()) {
-                if (propCursor.getString(0) == null || !propCursor.getString(0).equals("unknown-property") || propCursor.getString(1) == null) {
+                String propName = propCursor.getString(0);
+                String propValue = propCursor.getString(1);
+                if (propName == null || propValue == null) {
                     continue;
                 }
-                ByteArrayInputStream bis = new ByteArrayInputStream(android.util.Base64.decode(propCursor.getString(1), android.util.Base64.NO_WRAP));
-                try  {
-                    ObjectInputStream ois = new ObjectInputStream(bis);
-                    Object prop = ois.readObject();
-                    if (prop instanceof XProperty) {
-                        importReservation(((XProperty)prop).getValue());
+
+                if (propName.equals("unknown-property.v2")) {
+                    importDavDroidJson(propValue);
+
+                // legacy, replaced by the above in Feb 2019, removing this eventually will allow us to remove the ical4j dependency
+                } else if (propName.equals("unknown-property")) {
+                    ByteArrayInputStream bis = new ByteArrayInputStream(android.util.Base64.decode(propValue, android.util.Base64.NO_WRAP));
+                    try  {
+                        ObjectInputStream ois = new ObjectInputStream(bis);
+                        Object prop = ois.readObject();
+                        if (prop instanceof XProperty) {
+                            importReservation(((XProperty)prop).getValue());
+                        }
+                    } catch (Exception e) {
+                        Log.i(TAG, e.toString());
+                        continue;
                     }
-                } catch (Exception e) {
-                    Log.i(TAG, e.toString());
-                    continue;
                 }
             }
         }

@@ -29,6 +29,7 @@
 #include <QFile>
 #include <QGuiApplication>
 #include <QJsonArray>
+#include <QJsonDocument>
 #include <QMimeData>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
@@ -55,7 +56,24 @@ using namespace KItinerary;
 static void importReservation(JNIEnv *env, jobject that, jstring data)
 {
     Q_UNUSED(that);
-    ApplicationController::instance()->importData(env->GetStringUTFChars(data, nullptr));
+    const char *str = env->GetStringUTFChars(data, nullptr);
+    ApplicationController::instance()->importData(str);
+    env->ReleaseStringUTFChars(data, str);
+}
+
+static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
+{
+    Q_UNUSED(that);
+    const char *str = env->GetStringUTFChars(data, nullptr);
+    const auto doc = QJsonDocument::fromJson(str);
+    env->ReleaseStringUTFChars(data, str);
+
+    const auto array = doc.array();
+    if (array.size() < 2 || array.at(0).toString() != QLatin1String("X-KDE-KITINERARY-RESERVATION")) {
+        return;
+    }
+
+    ApplicationController::instance()->importData(array.at(1).toString().toUtf8());
 }
 
 static void importFromIntent(JNIEnv *env, jobject that, jobject data)
@@ -67,7 +85,8 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 
 static const JNINativeMethod methods[] = {
     {"importReservation", "(Ljava/lang/String;)V", (void*)importReservation},
-    {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent}
+    {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
+    {"importDavDroidJson", "(Ljava/lang/String;)V", (void*)importDavDroidJson}
 };
 
 Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
