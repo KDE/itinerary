@@ -18,57 +18,25 @@
 #ifndef JOURNEYQUERYMODEL_H
 #define JOURNEYQUERYMODEL_H
 
-#include <QAbstractListModel>
-#include <QString>
-
-#include <vector>
-
-namespace KPublicTransport {
-class Journey;
-class Manager;
-}
+#include <KPublicTransport/JourneyQueryModel>
 
 class ReservationManager;
 
 /** Alternative train connection query handling. */
-class JourneyQueryModel : public QAbstractListModel
+class JourneyQueryModel : public KPublicTransport::JourneyQueryModel
 {
     Q_OBJECT
-    Q_PROPERTY(bool loading READ isLoading NOTIFY loadingChanged)
-    Q_PROPERTY(QString errorMessage READ errorMessage NOTIFY errorMessageChanged)
-
-    enum Role {
-        JourneyRole = Qt::UserRole
-    };
-
 public:
     explicit JourneyQueryModel(QObject *parent = nullptr);
     ~JourneyQueryModel();
 
     void setReservationManager(ReservationManager *mgr);
-    void setPublicTransportManager(KPublicTransport::Manager *mgr);
 
     Q_INVOKABLE void queryJourney(const QString &batchId);
     Q_INVOKABLE void saveJourney(const QString &batchId, int journeyIndex);
 
-    bool isLoading() const;
-    QString errorMessage() const;
-
-    int rowCount(const QModelIndex &parent) const override;
-    QVariant data(const QModelIndex &index, int role) const override;
-    QHash<int, QByteArray> roleNames() const override;
-
-Q_SIGNALS:
-    void loadingChanged();
-    void errorMessageChanged();
-
 private:
     ReservationManager *m_resMgr;
-    KPublicTransport::Manager *m_ptMgr;
-    bool m_isLoading = false;
-    QString m_errorMsg;
-    std::vector<KPublicTransport::Journey> m_journeys;
-
 };
 
 #endif // JOURNEYQUERYMODEL_H

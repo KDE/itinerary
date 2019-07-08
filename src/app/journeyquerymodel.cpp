@@ -35,7 +35,7 @@
 using namespace KItinerary;
 
 JourneyQueryModel::JourneyQueryModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : KPublicTransport::JourneyQueryModel(parent)
 {
 }
 
@@ -46,27 +46,8 @@ void JourneyQueryModel::setReservationManager(ReservationManager *mgr)
     m_resMgr = mgr;
 }
 
-void JourneyQueryModel::setPublicTransportManager(KPublicTransport::Manager *mgr)
-{
-    m_ptMgr = mgr;
-}
-
-bool JourneyQueryModel::isLoading() const
-{
-    return m_isLoading;
-}
-
-QString JourneyQueryModel::errorMessage() const
-{
-    return m_errorMsg;
-}
-
 void JourneyQueryModel::queryJourney(const QString &batchId)
 {
-    beginResetModel();
-    m_journeys.clear();
-    endResetModel();
-
     const auto res = m_resMgr->reservation(batchId);
     KPublicTransport::Location from, to;
     if (JsonLd::isA<TrainReservation>(res)) {
@@ -81,26 +62,8 @@ void JourneyQueryModel::queryJourney(const QString &batchId)
         return;
     }
 
-    m_errorMsg.clear();
-    emit errorMessageChanged();
-    m_isLoading = true;
-    emit loadingChanged();
-
     // TODO consider scheduled time, if in the future
-    auto reply = m_ptMgr->queryJourney({from, to});
-    QObject::connect(reply, &KPublicTransport::JourneyReply::finished, this, [reply, this]{
-        m_isLoading = false;
-        emit loadingChanged();
-        if (reply->error() == KPublicTransport::JourneyReply::NoError) {
-            beginResetModel();
-            m_journeys = reply->takeResult();
-            endResetModel();
-        } else {
-            m_errorMsg = reply->errorString();
-            emit errorMessageChanged();
-        }
-        reply->deleteLater();
-    });
+    setJourneyRequest({from, to});
 }
 
 static TrainReservation applyJourneySection(TrainReservation res, const KPublicTransport::JourneySection &section)
@@ -130,11 +93,11 @@ static QVariant applyJourneySection(const QVariant &res, const KPublicTransport:
 void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
 {
     qDebug() << batchId << journeyIndex;
-    if (batchId.isEmpty() || journeyIndex < 0 || journeyIndex >= (int)m_journeys.size()) {
+    if (batchId.isEmpty() || journeyIndex < 0 || journeyIndex >= (int)journeys().size()) {
         return;
     }
 
-    const auto journey = m_journeys.at(journeyIndex);
+    const auto journey = journeys().at(journeyIndex);
     std::vector<KPublicTransport::JourneySection> sections;
     std::copy_if(journey.sections().begin(), journey.sections().end(), std::back_inserter(sections), [](const auto &section) {
         return section.mode() == KPublicTransport::JourneySection::PublicTransport;
@@ -156,28 +119,4 @@ void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
         m_resMgr->updateReservation(resId, res);
 //         m_resMgr->addReservation(res);
     }
-}
-
-int JourneyQueryModel::rowCount(const QModelIndex &parent) const
-{
-    if (parent.isValid()) {
-        return 0;
-    }
-    return m_journeys.size();
-}
-
-QVariant JourneyQueryModel::data(const QModelIndex &index, int role) const
-{
-    switch (role) {
-        case JourneyRole:
-            return QVariant::fromValue(m_journeys[index.row()]);
-    }
-    return {};
-}
-
-QHash<int, QByteArray> JourneyQueryModel::roleNames() const
-{
-    auto r = QAbstractListModel::roleNames();
-    r.insert(JourneyRole, "journey");
-    return r;
 }

@@ -160,7 +160,7 @@ int main(int argc, char **argv)
 
     JourneyQueryModel journeyQueryModel;
     journeyQueryModel.setReservationManager(&resMgr);
-    journeyQueryModel.setPublicTransportManager(&ptMgr);
+    journeyQueryModel.setManager(&ptMgr);
 
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {

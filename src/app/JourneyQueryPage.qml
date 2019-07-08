@@ -212,6 +212,20 @@ Kirigami.ScrollablePage {
         delegate: journeyDelegate
         model: _journeyQueryModel
 
+        header: QQC2.ToolButton {
+            icon.name: "go-up-symbolic"
+            visible: _journeyQueryModel.canQueryPrevious
+            onClicked: _journeyQueryModel.queryPrevious()
+            width: journeyView.width
+        }
+
+        footer: QQC2.ToolButton {
+            icon.name: "go-down-symbolic"
+            visible: _journeyQueryModel.canQueryNext
+            onClicked: _journeyQueryModel.queryNext()
+            width: journeyView.width
+        }
+
         QQC2.BusyIndicator {
             anchors.centerIn: parent
             running: _journeyQueryModel.loading
