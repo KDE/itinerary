@@ -216,14 +216,16 @@ Kirigami.ScrollablePage {
             icon.name: "go-up-symbolic"
             visible: _journeyQueryModel.canQueryPrevious
             onClicked: _journeyQueryModel.queryPrevious()
-            width: journeyView.width
+            x: Kirigami.Units.largeSpacing * 2
+            width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
         footer: QQC2.ToolButton {
             icon.name: "go-down-symbolic"
             visible: _journeyQueryModel.canQueryNext
             onClicked: _journeyQueryModel.queryNext()
-            width: journeyView.width
+            x: Kirigami.Units.largeSpacing * 2
+            width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
         QQC2.BusyIndicator {
