@@ -45,8 +45,6 @@
 #include <KItinerary/CountryDb>
 #include <KItinerary/Ticket>
 
-#include <KPublicTransport/Journey>
-#include <KPublicTransport/Line>
 #include <KPublicTransport/Manager>
 
 #include <KPkPass/Field>
@@ -198,9 +196,6 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
-
-    qmlRegisterUncreatableType<KPublicTransport::Line>("org.kde.kpublictransport", 1, 0, "Line", {});
-    qmlRegisterUncreatableType<KPublicTransport::JourneySection>("org.kde.kpublictransport", 1, 0, "JourneySection", {});
 
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
