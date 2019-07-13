@@ -220,12 +220,24 @@ Kirigami.ScrollablePage {
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
-        footer: QQC2.ToolButton {
-            icon.name: "go-down-symbolic"
-            visible: _journeyQueryModel.canQueryNext
-            onClicked: _journeyQueryModel.queryNext()
+        footer: ColumnLayout {
             x: Kirigami.Units.largeSpacing * 2
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
+            QQC2.ToolButton {
+                Layout.fillWidth: true
+                icon.name: "go-down-symbolic"
+                visible: _journeyQueryModel.canQueryNext
+                onClicked: _journeyQueryModel.queryNext()
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("Data providers: %1", _journeyQueryModel.attributionSummary)
+                visible: _journeyQueryModel.attributionSummary.length > 0
+                wrapMode: Text.Wrap
+                font.pointSize: Kirigami.Units.pointSize * 0.8
+                font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
         }
 
         QQC2.BusyIndicator {

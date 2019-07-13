@@ -24,13 +24,14 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/Attribution>
 #include <KPublicTransport/Manager>
 #include <KPublicTransport/Journey>
-#include <KPublicTransport/JourneyReply>
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Line>
 
 #include <QDebug>
+#include <QUrl>
 
 using namespace KItinerary;
 
@@ -119,4 +120,14 @@ void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
         m_resMgr->updateReservation(resId, res);
 //         m_resMgr->addReservation(res);
     }
+}
+
+QString JourneyQueryModel::attributionSummary() const
+{
+    QStringList l;
+    l.reserve(attributions().size());
+    for (const auto &attr : attributions()) {
+         l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
+    }
+    return l.join(QLatin1String(", "));
 }
