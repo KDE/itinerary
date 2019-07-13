@@ -111,21 +111,25 @@ Kirigami.Page {
                 height: visible ? implicitHeight : 0
                 width: ListView.view.width
                 QQC2.Label {
+                    Layout.fillWidth: true
                     text: model.name
                     font.weight: Font.Bold
                     wrapMode: Text.WordWrap
                 }
                 QQC2.Label {
+                    Layout.fillWidth: true
                     text: i18n("Copyright: %1", model.copyright)
                     visible: model.copyright != undefined
                     wrapMode: Text.WordWrap
                 }
                 QQC2.Label {
+                    Layout.fillWidth: true
                     text: i18n("Homepage: <a href=\"%1\">%1</a>", model.url)
                     visible: model.url != undefined
                     onLinkActivated: Qt.openUrlExternally(link)
                 }
                 QQC2.Label {
+                    Layout.fillWidth: true
                     text: i18n("License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>", model.licenseId, model.licenseName)
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
