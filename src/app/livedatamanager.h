@@ -43,6 +43,7 @@ class ReservationManager;
 class LiveDataManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QObject* publicTransportManager READ publicTransportManager CONSTANT)
 public:
     explicit LiveDataManager(QObject *parent = nullptr);
     ~LiveDataManager();
@@ -109,6 +110,9 @@ private:
 
     /** Notifications handling for pkpass updates. */
     void pkPassUpdated(const QString &passId, const QStringList &changes);
+
+    /** QML API */
+    QObject* publicTransportManager() const;
 
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;

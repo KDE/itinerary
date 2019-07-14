@@ -613,4 +613,9 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
     }
 }
 
+QObject* LiveDataManager::publicTransportManager() const
+{
+    return m_ptMgr;
+}
+
 #include "moc_livedatamanager.cpp"

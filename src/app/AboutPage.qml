@@ -16,7 +16,7 @@
 */
 
 import QtQuick 2.10
-import QtQuick.Layouts 1.1
+import QtQuick.Layouts 1.11
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
 import "." as App
@@ -85,31 +85,14 @@ Kirigami.Page {
         }
     }
 
-    ColumnLayout {
-        width: parent.width
-        height: parent.height
-
-        QQC2.Label {
-            Layout.fillWidth: true
-            text: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
-            wrapMode: Text.WordWrap
-        }
-
-        Kirigami.Separator { Layout.fillWidth: true }
-
-        ListView {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Layout.preferredHeight: contentHeight
-
-            boundsMovement: Flickable.StopAtBounds
-            clip: true
-            model: licenseModel
-            spacing: Kirigami.Units.largeSpacing
-            delegate: ColumnLayout {
-                visible: !model.platform || model.platform == Qt.platform.os
-                height: visible ? implicitHeight : 0
-                width: ListView.view.width
+    Component {
+        id: licenseDelegate
+        Kirigami.AbstractListItem {
+            visible: !model.platform || model.platform == Qt.platform.os
+            height: visible ? implicitHeight : 0
+            width: ListView.view.width
+            ColumnLayout {
+                id: layout
                 QQC2.Label {
                     Layout.fillWidth: true
                     text: model.name
@@ -134,6 +117,92 @@ Kirigami.Page {
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
                 }
+            }
+        }
+    }
+
+    Component {
+        id: transportDataDelegate
+        Kirigami.AbstractListItem {
+            width: ListView.view.width
+            ColumnLayout {
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    text: "<a href=\"" + modelData.url + "\">" + modelData.name + "</a>"
+                    onLinkActivated: Qt.openUrlExternally(link)
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: i18n("License: <a href=\"%2\">%1</a>", modelData.license, modelData.licenseUrl)
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    visible: modelData.hasLicense
+                    wrapMode: Text.WordWrap
+                }
+            }
+        }
+    }
+
+    header: QQC2.TabBar {
+        id: tabBar
+        QQC2.TabButton { text: i18n("Application") }
+        QQC2.TabButton { text: i18n("Transport Data") }
+    }
+
+    StackLayout {
+        id: tabLayout
+        anchors.fill: parent
+        currentIndex: tabBar.currentIndex
+
+        ColumnLayout {
+            id: appPage
+            width: parent.width
+            height: parent.height
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
+                wrapMode: Text.WordWrap
+            }
+
+            Kirigami.Separator { Layout.fillWidth: true }
+
+            ListView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.preferredHeight: contentHeight
+
+                boundsMovement: Flickable.StopAtBounds
+                clip: true
+                model: licenseModel
+                spacing: 0
+                delegate: licenseDelegate
+            }
+        }
+
+        ColumnLayout {
+            id: transportDataPage
+            width: parent.width
+            height: parent.height
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("KDE Itinerary uses public transport data from the following sources.")
+                wrapMode: Text.WordWrap
+            }
+
+            Kirigami.Separator { Layout.fillWidth: true }
+
+            ListView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.preferredHeight: contentHeight
+
+                boundsMovement: Flickable.StopAtBounds
+                clip: true
+                model: _liveDataManager.publicTransportManager.attributions
+                spacing: 0
+                delegate: transportDataDelegate
             }
         }
     }
