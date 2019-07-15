@@ -82,3 +82,33 @@ QString PublicTransportUtil::lineModeIcon(int lineMode)
 
     return QStringLiteral("question");
 }
+
+KItinerary::TrainStation PublicTransport::mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc)
+{
+    if (!station.geo().isValid() && loc.hasCoordinate()) {
+        station.setGeo(KItinerary::GeoCoordinates{loc.latitude(), loc.longitude()});
+    }
+
+    auto addr = station.address();
+    if (addr.streetAddress().isEmpty() && !loc.streetAddress().isEmpty()) {
+        addr.setStreetAddress(loc.locality());
+    }
+    if (addr.postalCode().isEmpty() && !loc.postalCode().isEmpty()) {
+        addr.setPostalCode(loc.locality());
+    }
+    if (addr.addressLocality().isEmpty() && !loc.locality().isEmpty()) {
+        addr.setAddressLocality(loc.locality());
+    }
+    if (addr.addressRegion().isEmpty() && !loc.region().isEmpty()) {
+        addr.setAddressRegion(loc.locality());
+    }
+    if (addr.addressCountry().isEmpty() && !loc.country().isEmpty()) {
+        addr.setAddressCountry(loc.locality());
+    }
+    station.setAddress(addr);
+
+    // TODO ibnr/uic station ids
+    // for this to take full effect we might need a pass through the KItinerary post-processor
+
+    return station;
+}

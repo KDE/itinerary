@@ -36,6 +36,9 @@ namespace PublicTransport
     KPublicTransport::Location locationFromStation(const KItinerary::TrainStation &station);
     /** Obtain a KPublicTransport location object from a KItinerary bus station. */
     KPublicTransport::Location locationFromStation(const KItinerary::BusStation &busStop);
+
+    /** Merge information from @p location into the given train station. */
+    KItinerary::TrainStation mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc);
 }
 
 /** Utility functions for interfacing with KPublicTransport from QML. */

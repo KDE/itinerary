@@ -222,11 +222,7 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
     if (JsonLd::isA<TrainReservation>(res)) {
         auto newRes = res.value<TrainReservation>();
         auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        auto station = trip.arrivalStation();
-        if (!station.geo().isValid() && arr.stopPoint().hasCoordinate()) {
-            station.setGeo(GeoCoordinates{arr.stopPoint().latitude(), arr.stopPoint().longitude()});
-            trip.setArrivalStation(station);
-        }
+        trip.setArrivalStation(PublicTransport::mergeStation(trip.arrivalStation(), arr.stopPoint()));
         if (trip.arrivalPlatform().isEmpty() && !arr.scheduledPlatform().isEmpty()) {
             trip.setArrivalPlatform(arr.scheduledPlatform());
         }
@@ -267,11 +263,7 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     if (JsonLd::isA<TrainReservation>(res)) {
         auto newRes = res.value<TrainReservation>();
         auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        auto station = trip.departureStation();
-        if (!station.geo().isValid() && dep.stopPoint().hasCoordinate()) {
-            station.setGeo(GeoCoordinates{dep.stopPoint().latitude(), dep.stopPoint().longitude()});
-            trip.setDeparatureStation(station);
-        }
+        trip.setDeparatureStation(PublicTransport::mergeStation(trip.departureStation(), dep.stopPoint()));
         if (trip.departurePlatform().isEmpty() && !dep.scheduledPlatform().isEmpty()) {
             trip.setDeparturePlatform(dep.scheduledPlatform());
         }
