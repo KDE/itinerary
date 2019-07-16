@@ -17,10 +17,14 @@
 
 #include "publictransport.h"
 
+#include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 
+#include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
+
+#include <QDateTime>
 
 KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::TrainStation& station)
 {
@@ -112,3 +116,19 @@ KItinerary::TrainStation PublicTransport::mergeStation(KItinerary::TrainStation 
 
     return station;
 }
+
+QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place) const
+{
+    KPublicTransport::DepartureRequest req;
+    req.setDateTime(QDateTime::currentDateTime()); // TODO this needs to be max(arrival time, now)
+
+    KPublicTransport::Location loc;
+    loc.setName(KItinerary::LocationUtil::name(place));
+    const auto geo = KItinerary::LocationUtil::geo(place);
+    loc.setCoordinate(geo.latitude(), geo.longitude());
+    req.setStop(loc);
+
+    return QVariant::fromValue(req);
+}
+
+#include "moc_publictransport.cpp"

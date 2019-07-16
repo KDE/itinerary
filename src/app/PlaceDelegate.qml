@@ -38,6 +38,13 @@ Item {
     implicitHeight: (!place.address.isEmpty || place.geo.isValid) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
     implicitWidth: label.width + buttonLayout.width
 
+    Component {
+        id: departuresPage
+        App.DepartureQueryPage {
+            stop: place
+        }
+    }
+
     QQC2.Label {
         id: label
         visible: !place.address.isEmpty
@@ -61,6 +68,13 @@ Item {
             onClicked: {
                 console.log(currentLocation);
                 (currentLocation == undefined || currentLocation == null) ? _appController.navigateTo(place) : _appController.navigateTo(currentLocation, place);
+            }
+        }
+        QQC2.ToolButton {
+            visible: place.geo.isValid && !offerNavigation
+            icon.name: "view-calendar"
+            onClicked: {
+                applicationWindow().pageStack.push(departuresPage);
             }
         }
     }

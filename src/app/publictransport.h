@@ -20,6 +20,8 @@
 
 #include <qobjectdefs.h>
 
+class QVariant;
+
 namespace KItinerary {
 class BusStation;
 class TrainStation;
@@ -50,6 +52,9 @@ public:
      *  for usage in Kirigami.Icon.
      */
     Q_INVOKABLE QString lineModeIcon(int lineMode);
+
+    /** Create a KPublicTransport::DepartureRequest for the given KItinerary place. */
+    Q_INVOKABLE QVariant departureRequestForPlace(const QVariant &place) const;
 };
 
 #endif // PUBLICTRANSPORT_H
