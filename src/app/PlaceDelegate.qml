@@ -52,22 +52,12 @@ Item {
 
         QQC2.ToolButton {
             visible: place.geo.isValid || !place.address.isEmpty
-            Kirigami.Icon {
-                anchors.centerIn: parent
-                width: Kirigami.Units.iconSizes.smallMedium
-                height: width
-                source: "map-symbolic"
-            }
+            icon.name: "map-symbolic"
             onClicked: _appController.showOnMap(place)
         }
         QQC2.ToolButton {
             visible: offerNavigation && _appController.canNavigateTo(place)
-            Kirigami.Icon {
-                anchors.centerIn: parent
-                width: Kirigami.Units.iconSizes.smallMedium
-                height: width
-                source: "go-next-symbolic"
-            }
+            icon.name: "go-next-symbolic"
             onClicked: {
                 console.log(currentLocation);
                 (currentLocation == undefined || currentLocation == null) ? _appController.navigateTo(place) : _appController.navigateTo(currentLocation, place);
