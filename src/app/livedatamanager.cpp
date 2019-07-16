@@ -605,7 +605,7 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
     }
 }
 
-QObject* LiveDataManager::publicTransportManager() const
+KPublicTransport::Manager* LiveDataManager::publicTransportManager() const
 {
     return m_ptMgr;
 }
