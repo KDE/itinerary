@@ -314,3 +314,38 @@ QVariant TimelineDelegateController::previousLocation() const
         return LocationUtil::location(res);
     }
 }
+
+QDateTime TimelineDelegateController::effectiveEndTime() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+
+    const auto arr = arrival();
+    if (arr.hasExpectedArrivalTime()) {
+        return arr.expectedArrivalTime();
+    }
+    return SortUtil::endtDateTime(m_resMgr->reservation(m_batchId));
+}
+
+bool TimelineDelegateController::isLocationChange() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return false;
+    }
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    return LocationUtil::isLocationChange(res);
+}
+
+bool TimelineDelegateController::isPublicTransport() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return false;
+    }
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    return LocationUtil::isLocationChange(res) && !JsonLd::isA<RentalCarReservation>(res);
+}
+
+#include "moc_timelinedelegatecontroller.cpp"

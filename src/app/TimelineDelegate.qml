@@ -25,7 +25,7 @@ import "." as App
 Kirigami.AbstractCard {
     id: root
     /** Reservation batch identifier (@see _reservationManager). */
-    property alias batchId: controller.batchId
+    property alias batchId: _controller.batchId
     /** All reservations that are part of this patch. */
     property var resIds: _reservationManager.reservationsForBatch(root.batchId)
     /** A random reservation object, in case there's more than one.
@@ -43,14 +43,13 @@ Kirigami.AbstractCard {
 
     showClickFeedback: true
 
-    TimelineDelegateController {
-        id: controller
+    readonly property QtObject controller: TimelineDelegateController {
+        id: _controller
         reservationManager: _reservationManager
         liveDataManager: _liveDataManager
     }
-    property alias arrival: controller.arrival
-    property alias departure: controller.departure
-    property alias previousLocation: controller.previousLocation
+    property alias arrival: _controller.arrival
+    property alias departure: _controller.departure
 
     header: Rectangle {
         id: headerBackground

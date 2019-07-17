@@ -64,8 +64,9 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.departureStation
-            currentLocation: root.previousLocation
+            isRangeBegin: true
             Layout.fillWidth: true
+            controller: root.controller
         }
 
         // TODO reserved seat
@@ -98,8 +99,9 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalStation
-            offerNavigation: false
+            isRangeEnd: true
             Layout.fillWidth: true
+            controller: root.controller
         }
     }
 

@@ -52,7 +52,7 @@ public:
     Q_INVOKABLE QString lineModeIcon(int lineMode);
 
     /** Create a KPublicTransport::DepartureRequest for the given KItinerary place. */
-    Q_INVOKABLE QVariant departureRequestForPlace(const QVariant &place) const;
+    Q_INVOKABLE QVariant departureRequestForPlace(const QVariant &place, const QDateTime &dt) const;
 
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;

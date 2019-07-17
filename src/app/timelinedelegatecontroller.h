@@ -50,6 +50,18 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(KPublicTransport::Departure arrival READ arrival NOTIFY arrivalChanged)
     Q_PROPERTY(KPublicTransport::Departure departure READ departure NOTIFY departureChanged)
 
+    /** Effective end time, ie. our best knowledge of arriving at the destination (for transit elements), or
+     *  ending of the associated event for non-transit elements.
+     */
+    Q_PROPERTY(QDateTime effectiveEndTime READ effectiveEndTime NOTIFY arrivalChanged)
+
+    /** Returns whether this is a location changing element. */
+    Q_PROPERTY(bool isLocationChange READ isLocationChange NOTIFY contentChanged)
+    /** Returns whether the current element is a public transport transit element.
+     *  That is, a location change where you don't have to navigate to the destination yourself.
+     */
+    Q_PROPERTY(bool isPublicTransport READ isPublicTransport NOTIFY contentChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -69,6 +81,11 @@ public:
 
     KPublicTransport::Departure arrival() const;
     KPublicTransport::Departure departure() const;
+
+    QDateTime effectiveEndTime() const;
+
+    bool isLocationChange() const;
+    bool isPublicTransport() const;
 
 Q_SIGNALS:
     void setupChanged();

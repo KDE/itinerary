@@ -60,7 +60,8 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.departureBusStop
-            currentLocation: root.previousLocation
+            controller: root.controller
+            isRangeBegin: true
             Layout.fillWidth: true
         }
         Kirigami.Separator {
@@ -73,7 +74,8 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalBusStop
-            offerNavigation: false
+            controller: root.controller
+            isRangeEnd: true
             Layout.fillWidth: true
         }
         RowLayout {

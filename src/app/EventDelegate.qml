@@ -55,7 +55,9 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.location
-            currentLocation: root.previousLocation
+            controller: root.controller
+            isRangeBegin: root.rangeType == TimelineModel.RangeBegin
+            isRangeEnd: root.rangeType == TimelineModel.RangeEnd
             Layout.fillWidth: true
         }
         QQC2.Label {

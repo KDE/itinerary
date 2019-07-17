@@ -99,6 +99,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.departureAirport
+                controller: root.controller
+                isRangeBegin: true
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Terminal:")
@@ -129,6 +131,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.arrivalAirport
+                controller: root.controller
+                isRangeEnd: true
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Terminal:")

@@ -26,14 +26,17 @@ import "." as App
 Item {
     id: root
 
+    /** The timeline delegate controller for the element for which this delegate represents a place. */
+    property var controller: null
     /** The place to display and to navigate to. */
     property var place
-    /** Disable navigation actions (makes sense for destinations). */
-    property bool offerNavigation: true
-    /** The start location for navigation.
-     *  If unspecified, the current location is used.
-     */
-    property var currentLocation
+
+    /** Indicates that this is the begin (and only the begin) of an element (e.g. departure location of a transit element). */
+    property bool isRangeBegin: false
+    /** Indicates that this is the end (and only the end) of an element (e.g. arrival location of a transit element). */
+    property bool isRangeEnd: false
+    /** Indicates that this represents the full range of the element (only valid for non-transit elements). */
+    readonly property bool isFullRange: !isRangeBegin && !isRangeEnd
 
     implicitHeight: (!place.address.isEmpty || place.geo.isValid) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
     implicitWidth: label.width + buttonLayout.width
@@ -42,6 +45,7 @@ Item {
         id: departuresPage
         App.DepartureQueryPage {
             stop: place
+            dateTime: controller.effectiveEndTime
         }
     }
 
@@ -62,16 +66,24 @@ Item {
             icon.name: "map-symbolic"
             onClicked: _appController.showOnMap(place)
         }
+
+        // navigate to is offered if:
+        // - for departures (begins) of any transit element, unless it's a layover from a previous transit element TODO
+        // - for begins of any non-transit element
+        // - for the end/arrival of non-public transport transit elements (e.g. car rental drop-offs)
         QQC2.ToolButton {
-            visible: offerNavigation && _appController.canNavigateTo(place)
+            visible: _appController.canNavigateTo(place) && (!isRangeEnd || (controller.isLocationChange && !controller.isPublicTransport))
             icon.name: "go-next-symbolic"
             onClicked: {
-                console.log(currentLocation);
-                (currentLocation == undefined || currentLocation == null) ? _appController.navigateTo(place) : _appController.navigateTo(currentLocation, place);
+                controller.previousLocation ? _appController.navigateTo(controller.previousLocation, place) : _appController.navigateTo(place);
             }
         }
+
+        // public transport connections are offered:
+        // - at all arrival locations, unless it's a layover to a subsequent transit element TODO
+        // -  when leaving non-transit events
         QQC2.ToolButton {
-            visible: place.geo.isValid && !offerNavigation
+            visible: place.geo.isValid && !isRangeBegin
             icon.name: "view-calendar"
             onClicked: {
                 applicationWindow().pageStack.push(departuresPage);

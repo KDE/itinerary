@@ -25,6 +25,7 @@ import "." as App
 
 Kirigami.ScrollablePage {
     property var stop
+    property var dateTime
 
     id: root
     title: i18n("Departures")
@@ -32,7 +33,7 @@ Kirigami.ScrollablePage {
     DepartureQueryModel {
         id: departureModel
         manager: _liveDataManager.publicTransportManager
-        request: PublicTransport.departureRequestForPlace(stop)
+        request: PublicTransport.departureRequestForPlace(stop, dateTime)
     }
 
     Component {

@@ -45,6 +45,7 @@ App.DetailsPage {
         App.PlaceDelegate {
             Kirigami.FormData.label: i18n("Location:")
             place: reservationFor
+            controller: root.controller
         }
 
         QQC2.Label {

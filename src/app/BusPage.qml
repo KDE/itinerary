@@ -82,6 +82,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.departureBusStop
+                controller: root.controller
+                isRangeBegin: true
             }
 
             // arrival data
@@ -99,6 +101,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.arrivalBusStop
+                controller: root.controller
+                isRangeEnd: true
             }
 
             // seat reservation

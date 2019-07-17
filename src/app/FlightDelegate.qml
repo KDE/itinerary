@@ -80,7 +80,8 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.departureAirport
-            currentLocation: root.previousLocation
+            controller: root.controller
+            isRangeBegin: true
             Layout.fillWidth: true
         }
         QQC2.Label {
@@ -104,7 +105,8 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalAirport
-            offerNavigation: false
+            controller: root.controller
+            isRangeEnd: true
             Layout.fillWidth: true
         }
     }

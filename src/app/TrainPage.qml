@@ -89,6 +89,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.departureStation
+                controller: root.controller
+                isRangeBegin: true
             }
             RowLayout {
                 Kirigami.FormData.label: i18n("Platform:")
@@ -126,6 +128,8 @@ App.DetailsPage {
             }
             App.PlaceDelegate {
                 place: reservationFor.arrivalStation
+                controller: root.controller
+                isRangeEnd: true
             }
             RowLayout {
                 Kirigami.FormData.label: i18n("Platform:")

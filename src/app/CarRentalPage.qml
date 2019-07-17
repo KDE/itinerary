@@ -44,6 +44,8 @@ App.DetailsPage {
         }
         App.PlaceDelegate {
             place: reservation.pickupLocation
+            controller: root.controller
+            isRangeBegin: true
         }
 
         Kirigami.Separator {
@@ -60,6 +62,8 @@ App.DetailsPage {
         }
         App.PlaceDelegate {
             place: reservation.dropoffLocation
+            controller: root.controller
+            isRangeEnd: true
         }
 
         Kirigami.Separator {

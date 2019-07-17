@@ -53,15 +53,24 @@ private Q_SLOTS:
         TimelineDelegateController controller;
         QCOMPARE(controller.isCurrent(), false);
         QCOMPARE(controller.progress(), 0.0f);
+        QCOMPARE(controller.effectiveEndTime(), QDateTime());
+        QCOMPARE(controller.isLocationChange(), false);
+        QCOMPARE(controller.isPublicTransport(), false);
 
         controller.setBatchId(QStringLiteral("foo"));
         QCOMPARE(controller.isCurrent(), false);
         QCOMPARE(controller.progress(), 0.0f);
+        QCOMPARE(controller.effectiveEndTime(), QDateTime());
+        QCOMPARE(controller.isLocationChange(), false);
+        QCOMPARE(controller.isPublicTransport(), false);
 
         ReservationManager mgr;
         controller.setReservationManager(&mgr);
         QCOMPARE(controller.isCurrent(), false);
         QCOMPARE(controller.progress(), 0.0f);
+        QCOMPARE(controller.effectiveEndTime(), QDateTime());
+        QCOMPARE(controller.isLocationChange(), false);
+        QCOMPARE(controller.isPublicTransport(), false);
     }
 
     void testProgress()
@@ -87,6 +96,8 @@ private Q_SLOTS:
         controller.setBatchId(batchId);
         QCOMPARE(controller.isCurrent(), false);
         QCOMPARE(controller.progress(), 0.0f);
+        QCOMPARE(controller.isLocationChange(), true);
+        QCOMPARE(controller.isPublicTransport(), true);
 
         trip.setArrivalTime(QDateTime::currentDateTime().addDays(1));
         res.setReservationFor(trip);
@@ -94,6 +105,7 @@ private Q_SLOTS:
 
         QCOMPARE(controller.isCurrent(), true);
         QCOMPARE(controller.progress(), 0.5f);
+        QCOMPARE(controller.effectiveEndTime(), trip.arrivalTime());
         QCOMPARE(currentSpy.size(), 1);
     }
 

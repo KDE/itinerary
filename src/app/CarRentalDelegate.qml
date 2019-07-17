@@ -53,7 +53,8 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservation.pickupLocation
-            currentLocation: root.previousLocation
+            controller: root.controller
+            isRangeBegin: true
             Layout.fillWidth: true
             visible: root.rangeType != TimelineModel.RangeEnd
         }
@@ -67,8 +68,10 @@ App.TimelineDelegate {
         }
         App.PlaceDelegate {
             place: reservation.dropoffLocation
+            isRangeEnd: true
             Layout.fillWidth: true
             visible: root.rangeType != TimelineModel.RangeBegin
+            controller: root.controller
         }
     }
 

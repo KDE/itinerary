@@ -52,6 +52,7 @@ App.DetailsPage {
 
             App.PlaceDelegate {
                 place: reservationFor.location
+                controller: root.controller
             }
 
             QQC2.Label {

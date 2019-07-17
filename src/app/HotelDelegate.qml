@@ -39,8 +39,10 @@ App.TimelineDelegate {
 
         App.PlaceDelegate {
             place: reservationFor
-            currentLocation: root.previousLocation
+            controller: root.controller
             Layout.fillWidth: true
+            isRangeBegin: root.rangeType == TimelineModel.RangeBegin
+            isRangeEnd: root.rangeType == TimelineModel.RangeEnd
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))

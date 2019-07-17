@@ -20,6 +20,7 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 
+#include <KPublicTransport/Attribution>
 #include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
@@ -118,10 +119,10 @@ KItinerary::TrainStation PublicTransport::mergeStation(KItinerary::TrainStation 
     return station;
 }
 
-QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place) const
+QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
 {
     KPublicTransport::DepartureRequest req;
-    req.setDateTime(QDateTime::currentDateTime()); // TODO this needs to be max(arrival time, now)
+    req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
 
     KPublicTransport::Location loc;
     loc.setName(KItinerary::LocationUtil::name(place));
