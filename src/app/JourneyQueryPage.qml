@@ -232,7 +232,7 @@ Kirigami.ScrollablePage {
             QQC2.Label {
                 Layout.fillWidth: true
                 text: i18n("Data providers: %1", PublicTransport.attributionSummary(_journeyQueryModel.attributions))
-                visible: _journeyQueryModel.attributionSummary.length > 0
+                visible: _journeyQueryModel.attributions.length > 0
                 wrapMode: Text.Wrap
                 font.pointSize: Kirigami.Units.pointSize * 0.8
                 font.italic: true
