@@ -18,9 +18,7 @@
 #ifndef PUBLICTRANSPORT_H
 #define PUBLICTRANSPORT_H
 
-#include <qobjectdefs.h>
-
-class QVariant;
+#include <QVariant>
 
 namespace KItinerary {
 class BusStation;
@@ -55,6 +53,9 @@ public:
 
     /** Create a KPublicTransport::DepartureRequest for the given KItinerary place. */
     Q_INVOKABLE QVariant departureRequestForPlace(const QVariant &place) const;
+
+    /** Produces a short summary of the given attribution information. */
+    Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;
 };
 
 #endif // PUBLICTRANSPORT_H

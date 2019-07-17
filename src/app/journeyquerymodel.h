@@ -26,7 +26,6 @@ class ReservationManager;
 class JourneyQueryModel : public KPublicTransport::JourneyQueryModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString attributionSummary READ attributionSummary NOTIFY attributionsChanged)
 public:
     explicit JourneyQueryModel(QObject *parent = nullptr);
     ~JourneyQueryModel();
@@ -35,8 +34,6 @@ public:
 
     Q_INVOKABLE void queryJourney(const QString &batchId);
     Q_INVOKABLE void saveJourney(const QString &batchId, int journeyIndex);
-
-    QString attributionSummary() const;
 
 private:
     ReservationManager *m_resMgr;

@@ -121,13 +121,3 @@ void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
 //         m_resMgr->addReservation(res);
     }
 }
-
-QString JourneyQueryModel::attributionSummary() const
-{
-    QStringList l;
-    l.reserve(attributions().size());
-    for (const auto &attr : attributions()) {
-         l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
-    }
-    return l.join(QLatin1String(", "));
-}

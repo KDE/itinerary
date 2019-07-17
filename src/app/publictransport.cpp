@@ -25,6 +25,7 @@
 #include <KPublicTransport/Location>
 
 #include <QDateTime>
+#include <QUrl>
 
 KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::TrainStation& station)
 {
@@ -129,6 +130,17 @@ QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place) co
     req.setStop(loc);
 
     return QVariant::fromValue(req);
+}
+
+QString PublicTransportUtil::attributionSummary(const QVariantList& attributions) const
+{
+    QStringList l;
+    l.reserve(attributions.size());
+    for (const auto &v : attributions) {
+        const auto attr = v.value<KPublicTransport::Attribution>();
+        l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
+    }
+    return l.join(QLatin1String(", "));
 }
 
 #include "moc_publictransport.cpp"
