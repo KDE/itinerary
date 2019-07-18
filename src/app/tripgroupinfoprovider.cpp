@@ -59,7 +59,7 @@ WeatherForecast TripGroupInfoProvider::weatherForecast(const TripGroup &group) c
         }
         if (startRes.isValid()) {
             const auto geo = LocationUtil::geo(LocationUtil::arrivalLocation(startRes));
-            const auto startDt = SortUtil::endtDateTime(startRes);
+            const auto startDt = SortUtil::endDateTime(startRes);
             const auto endDt = SortUtil::startDateTime(res);
             if (geo.isValid() && startDt.isValid() && endDt.isValid()) {
                 const auto newFc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), startDt, endDt);

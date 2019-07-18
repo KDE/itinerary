@@ -343,7 +343,7 @@ QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res
         }
     }
 
-    return SortUtil::endtDateTime(res);
+    return SortUtil::endDateTime(res);
 }
 
 bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) const

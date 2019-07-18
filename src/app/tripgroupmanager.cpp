@@ -238,7 +238,7 @@ static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes
         return true;
     }
 
-    const auto dep = SortUtil::endtDateTime(fromRes);
+    const auto dep = SortUtil::endDateTime(fromRes);
     const auto arr = SortUtil::startDateTime(toRes);
     return dep.date() == arr.date() && dep.secsTo(arr) < MaximumLayoverTime;
 }
@@ -286,7 +286,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
 
         // maximum trip duration exceeded?
-        const auto endDt = SortUtil::endtDateTime(res);
+        const auto endDt = SortUtil::endDateTime(res);
         if (beginDt.daysTo(endDt) > MaximumTripDuration) {
             qDebug() << "  aborting search, maximum trip duration reached";
             break;
@@ -522,7 +522,7 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     // part 2: the time range of the trip
     // three cases: within 1 month, crossing a month boundary in one year, crossing a year boundary
     const auto beginDt = SortUtil::startDateTime(m_resMgr->reservation(g.elements().at(0)));
-    const auto endDt = SortUtil::endtDateTime(m_resMgr->reservation(g.elements().constLast()));
+    const auto endDt = SortUtil::endDateTime(m_resMgr->reservation(g.elements().constLast()));
     Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {

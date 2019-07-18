@@ -104,5 +104,5 @@ QDateTime TripGroup::beginDateTime() const
 QDateTime TripGroup::endDateTime() const
 {
     const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
-    return KItinerary::SortUtil::endtDateTime(res);
+    return KItinerary::SortUtil::endDateTime(res);
 }

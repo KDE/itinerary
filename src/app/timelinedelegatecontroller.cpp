@@ -260,7 +260,7 @@ QDateTime TimelineDelegateController::liveEndDateTime(const QVariant& res) const
             return arr.expectedArrivalTime();
         }
     }
-    return SortUtil::endtDateTime(res);
+    return SortUtil::endDateTime(res);
 }
 
 void TimelineDelegateController::scheduleNextUpdate(std::chrono::milliseconds ms)
@@ -295,7 +295,7 @@ QVariant TimelineDelegateController::previousLocation() const
     }
 
     const auto res = m_resMgr->reservation(prevBatch);
-    auto endTime = SortUtil::endtDateTime(res);
+    auto endTime = SortUtil::endDateTime(res);
     if (m_liveDataMgr) {
         const auto arr = m_liveDataMgr->arrival(prevBatch);
         if (arr.hasExpectedArrivalTime()) {
@@ -325,7 +325,7 @@ QDateTime TimelineDelegateController::effectiveEndTime() const
     if (arr.hasExpectedArrivalTime()) {
         return arr.expectedArrivalTime();
     }
-    return SortUtil::endtDateTime(m_resMgr->reservation(m_batchId));
+    return SortUtil::endDateTime(m_resMgr->reservation(m_batchId));
 }
 
 bool TimelineDelegateController::isLocationChange() const

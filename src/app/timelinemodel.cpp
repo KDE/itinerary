@@ -68,7 +68,7 @@ static QDateTime relevantDateTime(const QVariant &res, TimelineModel::RangeType 
         return SortUtil::startDateTime(res);
     }
     if (range == TimelineModel::RangeEnd) {
-        return SortUtil::endtDateTime(res);
+        return SortUtil::endDateTime(res);
     }
 
     return {};
