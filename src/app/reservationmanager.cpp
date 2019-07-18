@@ -150,6 +150,7 @@ void ReservationManager::addReservation(const QVariant &res)
 {
     // look for matching reservations, or matching batches
     // we need to do that within a +/-24h range, so we find unbound elements too
+    // TODO in case this updates the time for an unbound element we need to re-sort, otherwise the prev/next logic fails!
     const auto rangeBegin = SortUtil::startDateTime(res).addDays(-1);
     const auto rangeEnd = rangeBegin.addDays(2);
 
@@ -198,7 +199,11 @@ void ReservationManager::addReservation(const QVariant &res)
     storeReservation(resId, res);
     emit reservationAdded(resId);
 
-    m_batches.insert(beginIt, resId);
+    // search for the precise insertion place, beginIt is only the begin of our initial search range
+    const auto insertIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(res), [this](const auto &lhs, const auto &rhs) {
+        return SortUtil::startDateTime(reservation(lhs)) < rhs;
+    });
+    m_batches.insert(insertIt, resId);
     m_batchToResMap.insert(resId, {resId});
     m_resToBatchMap.insert(resId, resId);
     emit batchAdded(resId);
