@@ -64,6 +64,8 @@ public:
 
     /** Returns the batch happening prior to @p batchId, if any. */
     QString previousBatch(const QString &batchId) const;
+    /** Returns the batch happening after @p batchId, if any. */
+    QString nextBatch(const QString &batchId) const;
 
 Q_SIGNALS:
     void reservationAdded(const QString &id);

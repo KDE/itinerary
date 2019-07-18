@@ -21,6 +21,8 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/JourneyRequest>
+
 #include <QUrl>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -41,6 +43,13 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
+    QByteArray readFile(const QString &fn)
+    {
+        QFile f(fn);
+        f.open(QFile::ReadOnly);
+        return f.readAll();
+    }
+
 private Q_SLOTS:
     void initTestCase()
     {
@@ -56,6 +65,7 @@ private Q_SLOTS:
         QCOMPARE(controller.effectiveEndTime(), QDateTime());
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
+        QVERIFY(controller.journeyRequest().isEmpty());
 
         controller.setBatchId(QStringLiteral("foo"));
         QCOMPARE(controller.isCurrent(), false);
@@ -150,6 +160,33 @@ private Q_SLOTS:
         QCOMPARE(changeSpy.size(), 1);
         QVERIFY(!controller.previousLocation().isNull());
         QCOMPARE(controller.previousLocation().value<TrainStation>().name(), QLatin1String("My Station"));
+    }
+
+    void testJourneyRequest()
+    {
+        ReservationManager mgr;
+        clearReservations(&mgr);
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+
+        TimelineDelegateController controller;
+        controller.setReservationManager(&mgr);
+        controller.setBatchId(mgr.batches().at(0)); // flight
+        QVERIFY(controller.journeyRequest().isEmpty());
+
+        controller.setBatchId(mgr.batches().at(1)); // first train segment
+        QCOMPARE(controller.isLocationChange(), true);
+        QCOMPARE(controller.isPublicTransport(), true);
+
+        auto jnyReq = controller.journeyRequest();
+        QCOMPARE(jnyReq.isEmpty(), false);
+        QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
+        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+
+        controller.setBatchId(mgr.batches().at(2)); // second train segment
+        jnyReq = controller.journeyRequest();
+        QCOMPARE(jnyReq.isEmpty(), false);
+        QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
+        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
     }
 };
 

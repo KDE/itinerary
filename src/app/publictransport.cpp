@@ -28,27 +28,23 @@
 #include <QDateTime>
 #include <QUrl>
 
-KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::TrainStation& station)
+KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place)
 {
-    using namespace KPublicTransport;
-    Location loc;
-    loc.setName(station.name());
-    loc.setCoordinate(station.geo().latitude(), station.geo().longitude());
-    if (!station.identifier().isEmpty()) {
-        const auto idSplit = station.identifier().split(QLatin1Char(':'));
-        if (idSplit.size() == 2) {
-            loc.setIdentifier(idSplit.at(0), idSplit.at(1));
+    KPublicTransport::Location loc;
+    loc.setName(KItinerary::LocationUtil::name(place));
+    const auto geo = KItinerary::LocationUtil::geo(place);
+    loc.setCoordinate(geo.latitude(), geo.longitude());
+
+    if (KItinerary::JsonLd::canConvert<KItinerary::Place>(place)) {
+        const auto p = KItinerary::JsonLd::convert<KItinerary::Place>(place);
+        if (!p.identifier().isEmpty()) {
+            const auto idSplit = p.identifier().split(QLatin1Char(':'));
+            if (idSplit.size() == 2) {
+                loc.setIdentifier(idSplit.at(0), idSplit.at(1));
+            }
         }
     }
-    return loc;
-}
 
-KPublicTransport::Location PublicTransport::locationFromStation(const KItinerary::BusStation &busStop)
-{
-    using namespace KPublicTransport;
-    Location loc;
-    loc.setName(busStop.name());
-    loc.setCoordinate(busStop.geo().latitude(), busStop.geo().longitude());
     return loc;
 }
 
@@ -123,13 +119,7 @@ QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, co
 {
     KPublicTransport::DepartureRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
-
-    KPublicTransport::Location loc;
-    loc.setName(KItinerary::LocationUtil::name(place));
-    const auto geo = KItinerary::LocationUtil::geo(place);
-    loc.setCoordinate(geo.latitude(), geo.longitude());
-    req.setStop(loc);
-
+    req.setStop(PublicTransport::locationFromPlace(place));
     return QVariant::fromValue(req);
 }
 

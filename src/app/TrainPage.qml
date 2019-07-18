@@ -30,7 +30,7 @@ App.DetailsPage {
     Component {
         id: alternativePage
         App.JourneyQueryPage {
-            batchId: root.batchId
+            controller: root.controller
         }
     }
 

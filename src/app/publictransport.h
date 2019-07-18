@@ -32,10 +32,8 @@ class Location;
 /** Utilities to interface with KPublicTransport. */
 namespace PublicTransport
 {
-    /** Obtain a KPublicTransport location object from a KItinerary train station. */
-    KPublicTransport::Location locationFromStation(const KItinerary::TrainStation &station);
-    /** Obtain a KPublicTransport location object from a KItinerary bus station. */
-    KPublicTransport::Location locationFromStation(const KItinerary::BusStation &busStop);
+    /** Obtain a KPublicTransport location object from a KItinerary place. */
+    KPublicTransport::Location locationFromPlace(const QVariant &place);
 
     /** Merge information from @p location into the given train station. */
     KItinerary::TrainStation mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc);

@@ -24,12 +24,12 @@ import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ScrollablePage {
-    property var batchId;
+    property QtObject controller;
 
     id: root
     title: i18n("Alternative Connections")
 
-    Component.onCompleted: _journeyQueryModel.queryJourney(batchId);
+    Component.onCompleted: _journeyQueryModel.request = controller.journeyRequest
 
     Component {
         id: sectionDelegate
@@ -196,7 +196,7 @@ Kirigami.ScrollablePage {
                     text: i18n("Save")
                     iconName: "document-save"
                     onTriggered: {
-                        _journeyQueryModel.saveJourney(batchId, index);
+                        _journeyQueryModel.saveJourney(controller.batchId, index);
                         applicationWindow().pageStack.pop();
                     }
                     visible: journeyView.currentIndex == index

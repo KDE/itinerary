@@ -19,6 +19,7 @@
 #define TIMELINEDELEGATECONTROLLER_H
 
 #include <KPublicTransport/Departure>
+#include <KPublicTransport/JourneyRequest>
 
 #include <QObject>
 #include <QVariant>
@@ -62,6 +63,11 @@ class TimelineDelegateController : public QObject
      */
     Q_PROPERTY(bool isPublicTransport READ isPublicTransport NOTIFY contentChanged)
 
+    /** A KPublicTransport::JourneyRequest for the current journey.
+     *  This includes the current element as well as any immediately connected following elements.
+     */
+    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequest READ journeyRequest NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -86,6 +92,8 @@ public:
 
     bool isLocationChange() const;
     bool isPublicTransport() const;
+
+    KPublicTransport::JourneyRequest journeyRequest() const;
 
 Q_SIGNALS:
     void setupChanged();

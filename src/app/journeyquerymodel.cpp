@@ -24,10 +24,7 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
-#include <KPublicTransport/Attribution>
-#include <KPublicTransport/Manager>
 #include <KPublicTransport/Journey>
-#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Line>
 
 #include <QDebug>
@@ -45,26 +42,6 @@ JourneyQueryModel::~JourneyQueryModel() = default;
 void JourneyQueryModel::setReservationManager(ReservationManager *mgr)
 {
     m_resMgr = mgr;
-}
-
-void JourneyQueryModel::queryJourney(const QString &batchId)
-{
-    const auto res = m_resMgr->reservation(batchId);
-    KPublicTransport::Location from, to;
-    if (JsonLd::isA<TrainReservation>(res)) {
-        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        from = PublicTransport::locationFromStation(trip.departureStation());
-        to = PublicTransport::locationFromStation(trip.arrivalStation());
-    } else if (JsonLd::isA<BusReservation>(res)) {
-        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
-        from = PublicTransport::locationFromStation(trip.departureBusStop());
-        to = PublicTransport::locationFromStation(trip.arrivalBusStop());
-    } else {
-        return;
-    }
-
-    // TODO consider scheduled time, if in the future
-    setJourneyRequest({from, to});
 }
 
 static TrainReservation applyJourneySection(TrainReservation res, const KPublicTransport::JourneySection &section)

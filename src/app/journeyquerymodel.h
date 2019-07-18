@@ -32,7 +32,6 @@ public:
 
     void setReservationManager(ReservationManager *mgr);
 
-    Q_INVOKABLE void queryJourney(const QString &batchId);
     Q_INVOKABLE void saveJourney(const QString &batchId, int journeyIndex);
 
 private:

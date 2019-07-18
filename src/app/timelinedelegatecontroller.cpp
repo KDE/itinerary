@@ -19,14 +19,13 @@
 
 #include "livedatamanager.h"
 #include "reservationmanager.h"
+#include "publictransport.h"
 
 #include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/SortUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
-
-#include <KPublicTransport/Departure>
 
 #include <QCoreApplication>
 #include <QDateTime>
@@ -346,6 +345,58 @@ bool TimelineDelegateController::isPublicTransport() const
 
     const auto res = m_resMgr->reservation(m_batchId);
     return LocationUtil::isLocationChange(res) && !JsonLd::isA<RentalCarReservation>(res);
+}
+
+static bool isJourneyCandidate(const QVariant &res)
+{
+    // TODO do we really need to contrain this to trains/busses? a long distance train can be a suitable alternative for a missed short distance flight for example
+    return LocationUtil::isLocationChange(res) && (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res));
+}
+
+static bool isLayover(const QVariant &res1, const QVariant &res2)
+{
+    const auto arrDt = SortUtil::endDateTime(res1);
+    const auto depDt = SortUtil::startDateTime(res2);
+    const auto layoverTime = arrDt.secsTo(depDt);
+    if (layoverTime < 0 || layoverTime > 30 * 60) {
+        return false;
+    }
+
+    return LocationUtil::isSameLocation(LocationUtil::arrivalLocation(res1), LocationUtil::departureLocation(res2));
+}
+
+KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    if (!isJourneyCandidate(res)) {
+        return {};
+    }
+
+    KPublicTransport::JourneyRequest req;
+    req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
+    req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res)));
+    // TODO consider scheduled time, if in the future?
+
+    // find full journey by looking at subsequent elements
+    auto prevRes = res;
+    auto prevBatchId = m_batchId;
+    while (true) {
+        auto endBatchId = m_resMgr->nextBatch(prevBatchId);
+        auto endRes = m_resMgr->reservation(endBatchId);
+        if (!isJourneyCandidate(endRes) || !isLayover(prevRes, endRes)) {
+            break;
+        }
+
+        req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes)));
+        prevRes = endRes;
+        prevBatchId = endBatchId;
+    }
+
+    return req;
 }
 
 #include "moc_timelinedelegatecontroller.cpp"
