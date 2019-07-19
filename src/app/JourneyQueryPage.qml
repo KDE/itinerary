@@ -29,7 +29,11 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Alternative Connections")
 
-    Component.onCompleted: _journeyQueryModel.request = controller.journeyRequest
+    JourneyQueryModel {
+        id: journeyModel
+        manager: _liveDataManager.publicTransportManager
+        request: controller.journeyRequest
+    }
 
     Component {
         id: sectionDelegate
@@ -209,12 +213,12 @@ Kirigami.ScrollablePage {
         anchors.fill: parent
         clip: true
         delegate: journeyDelegate
-        model: _journeyQueryModel
+        model: journeyModel
 
         header: QQC2.ToolButton {
             icon.name: "go-up-symbolic"
-            visible: _journeyQueryModel.canQueryPrevious
-            onClicked: _journeyQueryModel.queryPrevious()
+            visible: journeyModel.canQueryPrevious
+            onClicked: journeyModel.queryPrevious()
             x: Kirigami.Units.largeSpacing * 2
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
@@ -225,13 +229,13 @@ Kirigami.ScrollablePage {
             QQC2.ToolButton {
                 Layout.fillWidth: true
                 icon.name: "go-down-symbolic"
-                visible: _journeyQueryModel.canQueryNext
-                onClicked: _journeyQueryModel.queryNext()
+                visible: journeyModel.canQueryNext
+                onClicked: journeyModel.queryNext()
             }
             QQC2.Label {
                 Layout.fillWidth: true
-                text: i18n("Data providers: %1", PublicTransport.attributionSummary(_journeyQueryModel.attributions))
-                visible: _journeyQueryModel.attributions.length > 0
+                text: i18n("Data providers: %1", PublicTransport.attributionSummary(journeyModel.attributions))
+                visible: journeyModel.attributions.length > 0
                 wrapMode: Text.Wrap
                 font.pointSize: Kirigami.Units.pointSize * 0.8
                 font.italic: true
@@ -241,13 +245,13 @@ Kirigami.ScrollablePage {
 
         QQC2.BusyIndicator {
             anchors.centerIn: parent
-            running: _journeyQueryModel.loading
+            running: journeyModel.loading
         }
 
         QQC2.Label {
             anchors.centerIn: parent
             width: parent.width
-            text: _journeyQueryModel.errorMessage
+            text: journeyModel.errorMessage
             color: Kirigami.Theme.negativeTextColor
             wrapMode: Text.Wrap
         }

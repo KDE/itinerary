@@ -22,7 +22,6 @@
 #include "brightnessmanager.h"
 #include "countryinformation.h"
 #include "countrymodel.h"
-#include "journeyquerymodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "lockmanager.h"
@@ -156,10 +155,6 @@ int main(int argc, char **argv)
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
 
-    JourneyQueryModel journeyQueryModel;
-    journeyQueryModel.setReservationManager(&resMgr);
-    journeyQueryModel.setManager(&ptMgr);
-
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
@@ -229,7 +224,6 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
-    engine.rootContext()->setContextProperty(QStringLiteral("_journeyQueryModel"), &journeyQueryModel);
     engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 
