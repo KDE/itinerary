@@ -84,7 +84,7 @@ Item {
         // -  when leaving non-transit events
         QQC2.ToolButton {
             visible: place.geo.isValid && !isRangeBegin
-            icon.name: "view-calendar"
+            icon.name: "view-calendar-day"
             onClicked: {
                 applicationWindow().pageStack.push(departuresPage);
             }
