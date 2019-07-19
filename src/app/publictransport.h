@@ -26,6 +26,7 @@ class TrainStation;
 }
 
 namespace KPublicTransport {
+class JourneySection;
 class Location;
 }
 
@@ -35,8 +36,23 @@ namespace PublicTransport
     /** Obtain a KPublicTransport location object from a KItinerary place. */
     KPublicTransport::Location locationFromPlace(const QVariant &place);
 
-    /** Merge information from @p location into the given train station. */
+    /** Merge information from @p location into the given train station.
+     *  This assumes both sides refer to the same station, and @p loc merely provides additional information.
+     *  In case of conflict @p station has precedence.
+     */
     KItinerary::TrainStation mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc);
+
+    /** Applies information from @p location to the given station.
+     *  Unlike above, this does not assume both sides refer to the same location, and @p location has precedence.
+     *  Data from @p station is only considered if both sides refer to the same location.
+     */
+    KItinerary::TrainStation applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
+
+    /** Update a reservation with a KPublictTransport::JourneySection.
+     *  The journey section overwrites all corresponding properties of the reservation.
+     *  This assumes that both sides are of a matching type (e.g. both referring to a train trip).
+     */
+    QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
 }
 
 /** Utility functions for interfacing with KPublicTransport from QML. */

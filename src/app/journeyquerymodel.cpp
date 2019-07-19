@@ -44,30 +44,6 @@ void JourneyQueryModel::setReservationManager(ReservationManager *mgr)
     m_resMgr = mgr;
 }
 
-static TrainReservation applyJourneySection(TrainReservation res, const KPublicTransport::JourneySection &section)
-{
-    auto trip = res.reservationFor().value<TrainTrip>();
-    trip.setDepartureTime(section.scheduledDepartureTime());
-    trip.setArrivalTime(section.scheduledArrivalTime());
-    trip.setTrainNumber(section.route().line().name());
-    trip.setTrainName(section.route().line().modeString());
-    // TODO update to/from locations
-    res.setReservationFor(trip);
-    return res;
-}
-
-static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section)
-{
-    // TODO this assumes that both sides are about the same mode of transport (train/bus)
-    // this should be ensured below eventually
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return applyJourneySection(res.value<TrainReservation>(), section);
-    }
-
-    qWarning() << "NOT IMPLEMENTED YET!!";
-    return res;
-}
-
 void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
 {
     qDebug() << batchId << journeyIndex;
@@ -93,7 +69,7 @@ void JourneyQueryModel::saveJourney(const QString& batchId, int journeyIndex)
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
     for (const auto &resId : resIds) {
         auto res = m_resMgr->reservation(resId);
-        res = applyJourneySection(res, sections[0]);
+        res = PublicTransport::applyJourneySection(res, sections[0]);
         m_resMgr->updateReservation(resId, res);
 //         m_resMgr->addReservation(res);
     }

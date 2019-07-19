@@ -18,14 +18,19 @@
 #include "publictransport.h"
 
 #include <KItinerary/LocationUtil>
+#include <KItinerary/MergeUtil>
 #include <KItinerary/Place>
+#include <KItinerary/Reservation>
+#include <KItinerary/TrainTrip>
 
 #include <KPublicTransport/Attribution>
 #include <KPublicTransport/DepartureRequest>
+#include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
 
 #include <QDateTime>
+#include <QDebug>
 #include <QUrl>
 
 KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place)
@@ -113,6 +118,53 @@ KItinerary::TrainStation PublicTransport::mergeStation(KItinerary::TrainStation 
     // for this to take full effect we might need a pass through the KItinerary post-processor
 
     return station;
+}
+
+KItinerary::TrainStation PublicTransport::applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc)
+{
+    using namespace KItinerary;
+
+    TrainStation newStation;
+    newStation.setName(loc.name());
+    // TODO address properties
+    if (loc.hasCoordinate()) {
+        newStation.setGeo({loc.latitude(), loc.longitude()});
+    }
+    // TODO identifiers
+    if (LocationUtil::isSameLocation(station, newStation)) {
+        return MergeUtil::merge(station, newStation).value<TrainStation>();
+    }
+
+    return newStation;
+}
+
+static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReservation res, const KPublicTransport::JourneySection &section)
+{
+    auto trip = res.reservationFor().value<KItinerary::TrainTrip>();
+    trip.setDepartureTime(section.scheduledDepartureTime());
+    trip.setArrivalTime(section.scheduledArrivalTime());
+    trip.setTrainNumber(section.route().line().name());
+    trip.setTrainName(section.route().line().modeString());
+    trip.setDeparturePlatform(section.scheduledDeparturePlatform());
+    trip.setArrivalPlatform(section.scheduledArrivalPlatform());
+
+    trip.setDepartureStation(PublicTransport::applyStation(trip.departureStation(), section.from()));
+    trip.setArrivalStation(PublicTransport::applyStation(trip.arrivalStation(), section.to()));
+
+    res.setReservationFor(trip);
+    return res;
+}
+
+QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section)
+{
+    using namespace KItinerary;
+
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return ::applyJourneySection(res.value<TrainReservation>(), section);
+    }
+
+    qWarning() << res.typeName() << "NOT IMPLEMENTED YET!";
+    return res;
 }
 
 QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
