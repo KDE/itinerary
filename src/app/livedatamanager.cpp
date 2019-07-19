@@ -263,7 +263,7 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
     if (JsonLd::isA<TrainReservation>(res)) {
         auto newRes = res.value<TrainReservation>();
         auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        trip.setDeparatureStation(PublicTransport::mergeStation(trip.departureStation(), dep.stopPoint()));
+        trip.setDepartureStation(PublicTransport::mergeStation(trip.departureStation(), dep.stopPoint()));
         if (trip.departurePlatform().isEmpty() && !dep.scheduledPlatform().isEmpty()) {
             trip.setDeparturePlatform(dep.scheduledPlatform());
         }
