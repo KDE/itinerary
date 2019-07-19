@@ -27,6 +27,8 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/Journey>
+
 #include <QCoreApplication>
 #include <QDateTime>
 #include <QDebug>
@@ -397,6 +399,39 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     }
 
     return req;
+}
+
+void TimelineDelegateController::applyJourney(const QVariant &journey)
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return;
+    }
+
+    const auto jny = journey.value<KPublicTransport::Journey>();
+    std::vector<KPublicTransport::JourneySection> sections;
+    std::copy_if(jny.sections().begin(), jny.sections().end(), std::back_inserter(sections), [](const auto &section) {
+        return section.mode() == KPublicTransport::JourneySection::PublicTransport;
+    });
+    if (sections.empty()) {
+        return;
+    }
+
+    // TODO find all batches we are replying here (same logic as in journeyRequest)
+    // TODO align sections with affected batches, by type, and insert/remove/update accordingly
+
+    // TODO deal with sections.size() != 1
+    if (sections.size() != 1) {
+        qWarning() << "NOT IMPLEMENTED YET!!";
+        return;
+    }
+
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
+    for (const auto &resId : resIds) {
+        auto res = m_resMgr->reservation(resId);
+        res = PublicTransport::applyJourneySection(res, sections[0]);
+        m_resMgr->updateReservation(resId, res);
+//         m_resMgr->addReservation(res);
+    }
 }
 
 #include "moc_timelinedelegatecontroller.cpp"

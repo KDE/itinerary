@@ -186,7 +186,6 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            // TODO add actions to update to this alternative
             onClicked: {
                 journeyView.currentIndex = index;
             }
@@ -196,7 +195,7 @@ Kirigami.ScrollablePage {
                     text: i18n("Save")
                     iconName: "document-save"
                     onTriggered: {
-                        _journeyQueryModel.saveJourney(controller.batchId, index);
+                        controller.applyJourney(journey);
                         applicationWindow().pageStack.pop();
                     }
                     visible: journeyView.currentIndex == index

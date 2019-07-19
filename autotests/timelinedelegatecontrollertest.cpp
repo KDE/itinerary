@@ -21,8 +21,11 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QUrl>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -187,6 +190,46 @@ private Q_SLOTS:
         QCOMPARE(jnyReq.isEmpty(), false);
         QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
         QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+    }
+
+    void testApplyJourney()
+    {
+        ReservationManager mgr;
+        clearReservations(&mgr);
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+
+        TimelineDelegateController controller;
+        controller.setReservationManager(&mgr);
+        controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the return train trip
+        QCOMPARE(controller.isPublicTransport(), true);
+        const auto batchCount = mgr.batches().size();
+
+        QSignalSpy addSpy(&mgr, &ReservationManager::batchAdded);
+        QSignalSpy updateSpy(&mgr, &ReservationManager::batchChanged);
+        QSignalSpy rmSpy(&mgr, &ReservationManager::batchRemoved);
+
+        // apply alternative with 3 segments to test segment insertion
+        const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
+        controller.applyJourney(QVariant::fromValue(jny3));
+        QEXPECT_FAIL("", "todo", Continue);
+        QCOMPARE(mgr.batches().size(), batchCount + 1);
+        QEXPECT_FAIL("", "todo", Continue);
+        QCOMPARE(addSpy.size(), 1);
+        QEXPECT_FAIL("", "todo", Continue);
+        QCOMPARE(updateSpy.size(), 2);
+        QCOMPARE(rmSpy.size(), 0);
+
+        // apply alternative with 2 segments to test segment removal
+        addSpy.clear();
+        updateSpy.clear();
+        const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
+        controller.applyJourney(QVariant::fromValue(jny2));
+        QCOMPARE(mgr.batches().size(), batchCount);
+        QCOMPARE(addSpy.size(), 0);
+        QEXPECT_FAIL("", "todo", Continue);
+        QCOMPARE(updateSpy.size(), 2);
+        QEXPECT_FAIL("", "todo", Continue);
+        QCOMPARE(rmSpy.size(), 1);
     }
 };
 

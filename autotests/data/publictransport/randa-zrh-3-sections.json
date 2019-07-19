@@ -1,0 +1,94 @@
+{
+    "sections": [
+        {
+            "expectedArrivalTime": "2019-07-19T20:22:00",
+            "expectedDepartureTime": "2019-07-19T19:30:00",
+            "from": {
+                "identifier": {
+                    "ibnr": "8501687"
+                },
+                "latitude": 46.099334716796875,
+                "longitude": 7.781926155090332,
+                "name": "Randa"
+            },
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Brig Bahnhofplatz",
+                "line": {
+                    "mode": "LocalTrain",
+                    "name": "R 268"
+                }
+            },
+            "scheduledArrivalTime": "2019-07-19T20:22:00",
+            "scheduledDepartureTime": "2019-07-19T19:30:00",
+            "to": {
+                "identifier": {
+                    "ibnr": "8501605"
+                },
+                "latitude": 46.29402542114258,
+                "longitude": 7.881444931030273,
+                "name": "Visp"
+            }
+        },
+        {
+            "expectedArrivalTime": "2019-07-19T21:24:00",
+            "expectedDepartureTime": "2019-07-19T20:29:00",
+            "from": {
+                "identifier": {
+                    "ibnr": "8501605"
+                },
+                "latitude": 46.29402542114258,
+                "longitude": 7.881444931030273,
+                "name": "Visp"
+            },
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Basel SBB",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "EC 56"
+                }
+            },
+            "scheduledArrivalTime": "2019-07-19T21:24:00",
+            "scheduledDeparturePlatform": "4",
+            "scheduledDepartureTime": "2019-07-19T20:28:00",
+            "to": {
+                "identifier": {
+                    "ibnr": "8507000"
+                },
+                "latitude": 46.948814392089844,
+                "longitude": 7.439122200012207,
+                "name": "Bern"
+            }
+        },
+        {
+            "from": {
+                "identifier": {
+                    "ibnr": "8507000"
+                },
+                "latitude": 46.948814392089844,
+                "longitude": 7.439122200012207,
+                "name": "Bern"
+            },
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Romanshorn",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "IC 837"
+                }
+            },
+            "scheduledArrivalTime": "2019-07-19T23:14:00",
+            "scheduledDeparturePlatform": "5",
+            "scheduledDepartureTime": "2019-07-19T22:02:00",
+            "to": {
+                "identifier": {
+                    "ibnr": "8503016"
+                },
+                "latitude": 47.45037841796875,
+                "longitude": 8.5623779296875,
+                "name": "Zürich Flughafen"
+            }
+        }
+    ]
+}

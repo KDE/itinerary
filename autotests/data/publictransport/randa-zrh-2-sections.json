@@ -1,0 +1,167 @@
+{
+    "sections": [
+        {
+            "from": {
+                "latitude": 46.0989990234375,
+                "locality": "Randa",
+                "longitude": 7.7831501960754395,
+                "name": "",
+                "timezone": "Europe/Berlin"
+            },
+            "mode": "Walking",
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T18:54:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T18:51:15+02:00"
+            },
+            "to": {
+                "latitude": 46.09993362426758,
+                "locality": "Randa",
+                "longitude": 7.781467914581299,
+                "name": "Randa (Randa)",
+                "timezone": "Europe/Berlin"
+            }
+        },
+        {
+            "expectedArrivalTime": "2019-07-19T19:46:00",
+            "expectedDepartureTime": "2019-07-19T18:54:00",
+            "from": {
+                "identifier": {
+                    "ibnr": "8501687"
+                },
+                "latitude": 46.099632263183594,
+                "locality": "Randa",
+                "longitude": 7.7816972732543945,
+                "name": "Randa (Randa)",
+                "timezone": "Europe/Berlin"
+            },
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Brig Bahnhofplatz (Brig-Glis)",
+                "line": {
+                    "mode": "LocalTrain",
+                    "modeString": "Train",
+                    "name": "R 266"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T19:46:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T18:54:00+02:00"
+            },
+            "to": {
+                "identifier": {
+                    "ibnr": "8501605"
+                },
+                "latitude": 46.294212341308594,
+                "locality": "Visp",
+                "longitude": 7.8814520835876465,
+                "name": "Visp (Visp)",
+                "timezone": "Europe/Berlin"
+            }
+        },
+        {
+            "from": {
+                "latitude": 46.29439926147461,
+                "locality": "Visp",
+                "longitude": 7.8814592361450195,
+                "name": "Visp (Visp)",
+                "timezone": "Europe/Berlin"
+            },
+            "mode": "Transfer",
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T19:50:00+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T19:46:00+02:00"
+            },
+            "to": {
+                "latitude": 46.294151306152344,
+                "locality": "Visp",
+                "longitude": 7.8814592361450195,
+                "name": "Visp (Visp)",
+                "timezone": "Europe/Berlin"
+            }
+        },
+        {
+            "mode": "Waiting",
+            "scheduledArrivalTime": "2019-07-19T19:57:00",
+            "scheduledDepartureTime": "2019-07-19T19:50:00"
+        },
+        {
+            "expectedArrivalTime": "2019-07-19T22:14:00",
+            "expectedDepartureTime": "2019-07-19T19:57:00",
+            "from": {
+                "identifier": {
+                    "ibnr": "8501605"
+                },
+                "latitude": 46.294090270996094,
+                "locality": "Visp",
+                "longitude": 7.8814520835876465,
+                "name": "Visp (Visp)",
+                "timezone": "Europe/Berlin"
+            },
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Romanshorn (Romanshorn)",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "modeString": "Train",
+                    "name": "IC 835"
+                }
+            },
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T22:14:00+02:00"
+            },
+            "scheduledDeparturePlatform": "4",
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T19:57:00+02:00"
+            },
+            "to": {
+                "identifier": {
+                    "ibnr": "8503016"
+                },
+                "latitude": 47.450439453125,
+                "locality": "Kloten",
+                "longitude": 8.562379837036133,
+                "name": "Zürich Flughafen (Kloten)",
+                "timezone": "Europe/Berlin"
+            }
+        },
+        {
+            "from": {
+                "latitude": 47.45050048828125,
+                "locality": "Kloten",
+                "longitude": 8.562381744384766,
+                "name": "Zürich Flughafen (Kloten)",
+                "timezone": "Europe/Berlin"
+            },
+            "mode": "Walking",
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T22:21:42+02:00"
+            },
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2019-07-19T22:14:00+02:00"
+            },
+            "to": {
+                "latitude": 47.45050048828125,
+                "locality": "Kloten",
+                "longitude": 8.562749862670898,
+                "name": "Vorfahrt Abflug (Kloten)",
+                "timezone": "Europe/Berlin"
+            }
+        }
+    ]
+}

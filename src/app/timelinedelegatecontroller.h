@@ -94,6 +94,7 @@ public:
     bool isPublicTransport() const;
 
     KPublicTransport::JourneyRequest journeyRequest() const;
+    Q_INVOKABLE void applyJourney(const QVariant &journey);
 
 Q_SIGNALS:
     void setupChanged();
