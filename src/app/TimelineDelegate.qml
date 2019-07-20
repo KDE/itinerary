@@ -55,7 +55,7 @@ Kirigami.AbstractCard {
         id: headerBackground
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
+        color: controller.connectionWarning ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.backgroundColor
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.leftMargin: -root.leftPadding
         anchors.topMargin: -root.topPadding

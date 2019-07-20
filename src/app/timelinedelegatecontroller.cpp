@@ -50,6 +50,8 @@ TimelineDelegateController::TimelineDelegateController(QObject *parent)
         s_currentTimer->setTimerType(Qt::VeryCoarseTimer);
     }
     connect(s_currentTimer, &QTimer::timeout, this, [this]() { checkForUpdate(m_batchId); });
+
+    connect(this, &TimelineDelegateController::contentChanged, this, &TimelineDelegateController::connectionWarningChanged);
 }
 
 TimelineDelegateController::~TimelineDelegateController() = default;
@@ -464,6 +466,30 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
     for (; it != oldBatches.end(); ++it) {
         m_resMgr->removeBatch(*it);
     }
+}
+
+bool TimelineDelegateController::connectionWarning() const
+{
+    if (!m_resMgr || m_batchId.isEmpty() || !m_liveDataMgr) {
+        return false;
+    }
+
+    const auto curRes = m_resMgr->reservation(m_batchId);
+    if (!LocationUtil::isLocationChange(curRes)) {
+        return false;
+    }
+
+    const auto prevResId = m_resMgr->previousBatch(m_batchId);
+    const auto prevRes = m_resMgr->reservation(prevResId);
+    if (!LocationUtil::isLocationChange(prevRes)) {
+        return false;
+    }
+
+    const auto prevArr = m_liveDataMgr->arrival(prevResId);
+    const auto prevArrDt = std::max(SortUtil::endDateTime(prevRes), prevArr.expectedArrivalTime());
+
+    const auto curDepDt = std::max(SortUtil::startDateTime(curRes), departure().expectedDepartureTime());
+    return curDepDt < prevArrDt;
 }
 
 #include "moc_timelinedelegatecontroller.cpp"

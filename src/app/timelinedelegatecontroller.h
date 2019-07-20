@@ -68,6 +68,9 @@ class TimelineDelegateController : public QObject
      */
     Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequest READ journeyRequest NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
 
+    /** Inbound connection is unlikely to work. */
+    Q_PROPERTY(bool connectionWarning READ connectionWarning NOTIFY connectionWarningChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -96,6 +99,8 @@ public:
     KPublicTransport::JourneyRequest journeyRequest() const;
     Q_INVOKABLE void applyJourney(const QVariant &journey);
 
+    bool connectionWarning() const;
+
 Q_SIGNALS:
     void setupChanged();
     void contentChanged();
@@ -104,6 +109,7 @@ Q_SIGNALS:
     void arrivalChanged();
     void departureChanged();
     void previousLocationChanged();
+    void connectionWarningChanged();
 
 private:
     void setCurrent(bool current, const QVariant &res = {});
