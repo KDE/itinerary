@@ -19,6 +19,7 @@
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
+#include <KItinerary/Ticket>
 
 #include <KPublicTransport/Journey>
 
@@ -55,8 +56,16 @@ private Q_SLOTS:
         trip.setTrainName(QStringLiteral("R"));
         trip.setTrainNumber(QStringLiteral("241"));
 
+        Seat seat;
+        seat.setSeatNumber(QStringLiteral("42"));
+        seat.setSeatingType(QStringLiteral("2nd Class"));
+        Ticket ticket;
+        ticket.setTicketToken(QStringLiteral("qr:TICKETTOKEN"));
+        ticket.setTicketedSeat(seat);
+
         TrainReservation res;
         res.setReservationFor(trip);
+        res.setReservedTicket(ticket);
 
         KPublicTransport::Location from, to;
         from.setName(QStringLiteral("Visp"));
@@ -97,6 +106,12 @@ private Q_SLOTS:
         const auto newArr = newTrip.arrivalStation();
         QCOMPARE(newArr.name(), section.to().name());
         QVERIFY(!newArr.geo().isValid());
+
+        // ticket token is preserved, but seat reservation is cleared
+        const auto newTicket = newRes.reservedTicket().value<Ticket>();
+        QCOMPARE(newTicket.ticketToken(), ticket.ticketToken());
+        QCOMPARE(newTicket.ticketedSeat().seatNumber(), QString());
+        QCOMPARE(newTicket.ticketedSeat().seatingType(), seat.seatingType()); // class is preserved
     }
 };
 

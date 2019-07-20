@@ -21,6 +21,7 @@
 #include <KItinerary/BusTrip>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
+#include <KItinerary/Ticket>
 
 #include <KPublicTransport/Attribution>
 #include <KPublicTransport/DepartureRequest>
@@ -127,9 +128,21 @@ KItinerary::TrainStation PublicTransport::mergeStation(const KItinerary::TrainSt
     return MergeUtil::merge(placeFromLocation<TrainStation>(loc), station).value<TrainStation>();
 }
 
+static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
+{
+    auto seat = ticket.ticketedSeat();
+    seat.setSeatNumber(QString());
+    seat.setSeatRow(QString());
+    seat.setSeatSection(QString());
+    ticket.setTicketedSeat(seat);
+    return ticket;
+}
+
 static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReservation res, const KPublicTransport::JourneySection &section)
 {
-    auto trip = res.reservationFor().value<KItinerary::TrainTrip>();
+    using namespace KItinerary;
+
+    auto trip = res.reservationFor().value<TrainTrip>();
     trip.setDepartureTime(section.scheduledDepartureTime());
     trip.setArrivalTime(section.scheduledArrivalTime());
     trip.setTrainNumber(section.route().line().name());
@@ -141,12 +154,15 @@ static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReserva
     trip.setArrivalStation(PublicTransport::updateToLocation(trip.arrivalStation(), section.to()));
 
     res.setReservationFor(trip);
+    res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
     return res;
 }
 
 static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation res, const KPublicTransport::JourneySection &section)
 {
-    auto trip = res.reservationFor().value<KItinerary::BusTrip>();
+    using namespace KItinerary;
+
+    auto trip = res.reservationFor().value<BusTrip>();
     trip.setDepartureTime(section.scheduledDepartureTime());
     trip.setArrivalTime(section.scheduledArrivalTime());
     trip.setBusNumber(section.route().line().name());
@@ -158,6 +174,7 @@ static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation
     trip.setArrivalBusStop(PublicTransport::updateToLocation(trip.arrivalBusStop(), section.to()));
 
     res.setReservationFor(trip);
+    res.setReservedTicket(clearSeat(res.reservedTicket().value<Ticket>()));
     return res;
 }
 
