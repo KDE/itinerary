@@ -16,6 +16,7 @@
 */
 
 #include "publictransport.h"
+#include "logging.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/MergeUtil>
@@ -166,6 +167,41 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     qWarning() << res.typeName() << "NOT IMPLEMENTED YET!";
     return res;
 }
+
+bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section)
+{
+    using namespace KPublicTransport;
+
+    if (KItinerary::JsonLd::isA<KItinerary::TrainReservation>(res)) {
+        switch (section.route().line().mode()) {
+            case Line::Train:
+            case Line::Funicular:
+            case Line::LocalTrain:
+            case Line::LongDistanceTrain:
+            case Line::Metro:
+            case Line::RailShuttle:
+            case Line::RapidTransit:
+            case Line::Tramway:
+                return true;
+            default:
+                return false;
+        }
+    } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(res)) {
+        switch (section.route().line().mode()) {
+            case Line::Bus:
+            case Line::BusRapidTransit:
+            case Line::Coach:
+                return true;
+            default:
+                return false;
+        }
+    } else if (res.isValid()) {
+        qCWarning(Log) << "unexpected reservation type!?" << res;
+    }
+
+    return false;
+}
+
 
 QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
 {

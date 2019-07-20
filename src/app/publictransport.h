@@ -51,8 +51,12 @@ namespace PublicTransport
     /** Update a reservation with a KPublictTransport::JourneySection.
      *  The journey section overwrites all corresponding properties of the reservation.
      *  This assumes that both sides are of a matching type (e.g. both referring to a train trip).
+     *  @see isSameMode()
      */
     QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
+
+    /** Checks if the given reservation and journey section have a compatible mode of transportation. */
+    bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
 }
 
 /** Utility functions for interfacing with KPublicTransport from QML. */
