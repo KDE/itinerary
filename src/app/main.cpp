@@ -209,7 +209,7 @@ int main(int argc, char **argv)
     });
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(PublicTransportUtil());
+        return engine->toScriptValue(PublicTransport());
     });
 
     QQmlApplicationEngine engine;

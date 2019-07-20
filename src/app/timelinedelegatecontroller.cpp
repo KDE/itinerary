@@ -435,7 +435,7 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
             prevBatchId = endBatchId;
         }
     }
-    qCWarning(Log) << "Affected batches:" << oldBatches;
+    qCDebug(Log) << "Affected batches:" << oldBatches;
 
     // align sections with affected batches, by type, and insert/update accordingly
     auto it = oldBatches.begin();
@@ -457,7 +457,6 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
         } else {
             // TODO insert the right type of new elements
             const auto res = PublicTransport::applyJourneySection(TrainReservation(), section).value<TrainReservation>();
-            qDebug() << res << res.reservationFor().value<TrainTrip>().departureTime() << section.scheduledDepartureTime() <<res.reservationFor();
             m_resMgr->addReservation(res);
         }
     }

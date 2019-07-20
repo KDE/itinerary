@@ -20,50 +20,49 @@
 
 #include <QVariant>
 
-namespace KItinerary {
-class BusStation;
-class TrainStation;
-}
+#include <KItinerary/Place>
+
+#include <KPublicTransport/Location>
 
 namespace KPublicTransport {
 class JourneySection;
-class Location;
 }
 
 /** Utilities to interface with KPublicTransport. */
-namespace PublicTransport
+class PublicTransport
 {
+    Q_GADGET
+
+public:
     /** Obtain a KPublicTransport location object from a KItinerary place. */
-    KPublicTransport::Location locationFromPlace(const QVariant &place);
+    static KPublicTransport::Location locationFromPlace(const QVariant &place);
+
+    /** Create a KItinerary place type from the given KPublicTransport::Location. */
+    template <typename T>
+    static T placeFromLocation(const KPublicTransport::Location &loc);
 
     /** Merge information from @p location into the given train station.
      *  This assumes both sides refer to the same station, and @p loc merely provides additional information.
      *  In case of conflict @p station has precedence.
      */
-    KItinerary::TrainStation mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc);
+    static KItinerary::TrainStation mergeStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
 
     /** Applies information from @p location to the given station.
      *  Unlike above, this does not assume both sides refer to the same location, and @p location has precedence.
      *  Data from @p station is only considered if both sides refer to the same location.
      */
-    KItinerary::TrainStation applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
+    static KItinerary::TrainStation applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
 
     /** Update a reservation with a KPublictTransport::JourneySection.
      *  The journey section overwrites all corresponding properties of the reservation.
      *  This assumes that both sides are of a matching type (e.g. both referring to a train trip).
      *  @see isSameMode()
      */
-    QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
+    static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
 
     /** Checks if the given reservation and journey section have a compatible mode of transportation. */
-    bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
-}
+    static bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
 
-/** Utility functions for interfacing with KPublicTransport from QML. */
-class PublicTransportUtil
-{
-    Q_GADGET
-public:
     /** Convert a KPublicTransport::Line::Mode enum value to an icon source or name
      *  for usage in Kirigami.Icon.
      */
@@ -74,6 +73,25 @@ public:
 
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;
+
+private:
+    // for use by the template code
+    static QString idenfitierFromLocation(const KPublicTransport::Location &loc);
+    static KItinerary::PostalAddress addressFromLocation(const KPublicTransport::Location &loc);
 };
+
+
+template <typename T>
+inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &loc)
+{
+    T place;
+    place.setName(loc.name());
+    if (loc.hasCoordinate()) {
+        place.setGeo(KItinerary::GeoCoordinates{loc.latitude(), loc.longitude()});
+    }
+    place.setIdentifier(idenfitierFromLocation(loc));
+    place.setAddress(addressFromLocation(loc));
+    return place;
+}
 
 #endif // PUBLICTRANSPORT_H

@@ -54,7 +54,7 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     return loc;
 }
 
-QString PublicTransportUtil::lineModeIcon(int lineMode)
+QString PublicTransport::lineModeIcon(int lineMode)
 {
     using namespace KPublicTransport;
     switch (lineMode) {
@@ -91,47 +91,17 @@ QString PublicTransportUtil::lineModeIcon(int lineMode)
     return QStringLiteral("question");
 }
 
-KItinerary::TrainStation PublicTransport::mergeStation(KItinerary::TrainStation station, const KPublicTransport::Location &loc)
+KItinerary::TrainStation PublicTransport::mergeStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc)
 {
-    if (!station.geo().isValid() && loc.hasCoordinate()) {
-        station.setGeo(KItinerary::GeoCoordinates{loc.latitude(), loc.longitude()});
-    }
-
-    auto addr = station.address();
-    if (addr.streetAddress().isEmpty() && !loc.streetAddress().isEmpty()) {
-        addr.setStreetAddress(loc.locality());
-    }
-    if (addr.postalCode().isEmpty() && !loc.postalCode().isEmpty()) {
-        addr.setPostalCode(loc.locality());
-    }
-    if (addr.addressLocality().isEmpty() && !loc.locality().isEmpty()) {
-        addr.setAddressLocality(loc.locality());
-    }
-    if (addr.addressRegion().isEmpty() && !loc.region().isEmpty()) {
-        addr.setAddressRegion(loc.locality());
-    }
-    if (addr.addressCountry().isEmpty() && !loc.country().isEmpty()) {
-        addr.setAddressCountry(loc.locality());
-    }
-    station.setAddress(addr);
-
-    // TODO ibnr/uic station ids
-    // for this to take full effect we might need a pass through the KItinerary post-processor
-
-    return station;
+    using namespace KItinerary;
+    return MergeUtil::merge(placeFromLocation<TrainStation>(loc), station).value<TrainStation>();
 }
 
 KItinerary::TrainStation PublicTransport::applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc)
 {
     using namespace KItinerary;
 
-    TrainStation newStation;
-    newStation.setName(loc.name());
-    // TODO address properties
-    if (loc.hasCoordinate()) {
-        newStation.setGeo({loc.latitude(), loc.longitude()});
-    }
-    // TODO identifiers
+    auto newStation = placeFromLocation<TrainStation>(loc);
     if (LocationUtil::isSameLocation(station, newStation)) {
         return MergeUtil::merge(station, newStation).value<TrainStation>();
     }
@@ -203,7 +173,7 @@ bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::Jo
 }
 
 
-QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
+QVariant PublicTransport::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
 {
     KPublicTransport::DepartureRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
@@ -211,7 +181,7 @@ QVariant PublicTransportUtil::departureRequestForPlace(const QVariant &place, co
     return QVariant::fromValue(req);
 }
 
-QString PublicTransportUtil::attributionSummary(const QVariantList& attributions) const
+QString PublicTransport::attributionSummary(const QVariantList& attributions) const
 {
     QStringList l;
     l.reserve(attributions.size());
@@ -220,6 +190,30 @@ QString PublicTransportUtil::attributionSummary(const QVariantList& attributions
         l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
     }
     return l.join(QLatin1String(", "));
+}
+
+QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
+{
+    auto id = loc.identifier(QLatin1String("ibnr"));
+    if (!id.isEmpty()) {
+        return QLatin1String("ibnr:") + id;
+    }
+    id = loc.identifier(QLatin1String("uic"));
+    if (!id.isEmpty()) {
+        return QLatin1String("uic:") + id;
+    }
+    return {};
+}
+
+KItinerary::PostalAddress PublicTransport::addressFromLocation(const KPublicTransport::Location &loc)
+{
+    KItinerary::PostalAddress addr;
+    addr.setStreetAddress(loc.streetAddress());
+    addr.setPostalCode(loc.postalCode());
+    addr.setAddressLocality(loc.locality());
+    addr.setAddressRegion(loc.region());
+    addr.setAddressCountry(loc.country());
+    return addr;
 }
 
 #include "moc_publictransport.cpp"
