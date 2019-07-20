@@ -198,13 +198,31 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     text: i18n("Save")
                     iconName: "document-save"
-                    onTriggered: {
-                        controller.applyJourney(journey);
-                        applicationWindow().pageStack.pop();
-                    }
+                    onTriggered: replaceWarningSheet.sheetOpen = true
                     visible: journeyView.currentIndex == index
                 }
             ]
+        }
+    }
+
+    Kirigami.OverlaySheet {
+        id: replaceWarningSheet
+
+        QQC2.Label {
+            text: i18n("Do you really want to replace your existing reservation with the newly selected journey?")
+            wrapMode: Text.WordWrap
+        }
+
+        footer: RowLayout {
+            QQC2.Button {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Replace")
+                icon.name: "edit-save"
+                onClicked: {
+                    controller.applyJourney(journey);
+                    applicationWindow().pageStack.pop();
+                }
+            }
         }
     }
 
