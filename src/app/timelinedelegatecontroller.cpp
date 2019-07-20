@@ -18,6 +18,7 @@
 #include "timelinedelegatecontroller.h"
 
 #include "livedatamanager.h"
+#include "logging.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
 
@@ -360,7 +361,7 @@ static bool isLayover(const QVariant &res1, const QVariant &res2)
     const auto arrDt = SortUtil::endDateTime(res1);
     const auto depDt = SortUtil::startDateTime(res2);
     const auto layoverTime = arrDt.secsTo(depDt);
-    if (layoverTime < 0 || layoverTime > 30 * 60) {
+    if (layoverTime < 0 || layoverTime > 60 * 60) {
         return false;
     }
 
@@ -416,21 +417,54 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
         return;
     }
 
-    // TODO find all batches we are replying here (same logic as in journeyRequest)
-    // TODO align sections with affected batches, by type, and insert/remove/update accordingly
+    // find all batches we are replying here (same logic as in journeyRequest)
+    std::vector<QString> oldBatches({m_batchId});
+    {
+        auto prevRes = m_resMgr->reservation(m_batchId);
+        auto prevBatchId = m_batchId;
+        while (true) {
+            auto endBatchId = m_resMgr->nextBatch(prevBatchId);
+            auto endRes = m_resMgr->reservation(endBatchId);
+            qDebug() << endRes << isJourneyCandidate(endRes) << isLayover(prevRes, endRes);
+            if (!isJourneyCandidate(endRes) || !isLayover(prevRes, endRes)) {
+                break;
+            }
 
-    // TODO deal with sections.size() != 1
-    if (sections.size() != 1) {
-        qWarning() << "NOT IMPLEMENTED YET!!";
-        return;
+            oldBatches.push_back(endBatchId);
+            prevRes = endRes;
+            prevBatchId = endBatchId;
+        }
+    }
+    qCWarning(Log) << "Affected batches:" << oldBatches;
+
+    // align sections with affected batches, by type, and insert/update accordingly
+    auto it = oldBatches.begin();
+    for (const auto &section : sections) {
+        QVariant oldRes;
+        if (it != oldBatches.end()) {
+            oldRes = m_resMgr->reservation(*it);
+        }
+
+        // same type -> update the existing one
+        if (PublicTransport::isSameMode(oldRes, section)) {
+            const auto resIds = m_resMgr->reservationsForBatch(*it);
+            for (const auto &resId : resIds) {
+                auto res = m_resMgr->reservation(resId);
+                res = PublicTransport::applyJourneySection(res, section);
+                m_resMgr->updateReservation(resId, res);
+            }
+            ++it;
+        } else {
+            // TODO insert the right type of new elements
+            const auto res = PublicTransport::applyJourneySection(TrainReservation(), section).value<TrainReservation>();
+            qDebug() << res << res.reservationFor().value<TrainTrip>().departureTime() << section.scheduledDepartureTime() <<res.reservationFor();
+            m_resMgr->addReservation(res);
+        }
     }
 
-    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
-    for (const auto &resId : resIds) {
-        auto res = m_resMgr->reservation(resId);
-        res = PublicTransport::applyJourneySection(res, sections[0]);
-        m_resMgr->updateReservation(resId, res);
-//         m_resMgr->addReservation(res);
+    // remove left over reservations
+    for (; it != oldBatches.end(); ++it) {
+        m_resMgr->removeBatch(*it);
     }
 }
 

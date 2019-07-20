@@ -211,25 +211,22 @@ private Q_SLOTS:
         // apply alternative with 3 segments to test segment insertion
         const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny3));
-        QEXPECT_FAIL("", "todo", Continue);
         QCOMPARE(mgr.batches().size(), batchCount + 1);
-        QEXPECT_FAIL("", "todo", Continue);
-        QCOMPARE(addSpy.size(), 1);
-        QEXPECT_FAIL("", "todo", Continue);
-        QCOMPARE(updateSpy.size(), 2);
-        QCOMPARE(rmSpy.size(), 0);
+        QCOMPARE(addSpy.size(), 3);
+        QCOMPARE(updateSpy.size(), 0); // as we move beyond other elements, we get add/remove rather than updated here
+        QCOMPARE(rmSpy.size(), 2);
 
         // apply alternative with 2 segments to test segment removal
+        controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the new 3 segment train trip
         addSpy.clear();
         updateSpy.clear();
+        rmSpy.clear();
         const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny2));
         QCOMPARE(mgr.batches().size(), batchCount);
-        QCOMPARE(addSpy.size(), 0);
-        QEXPECT_FAIL("", "todo", Continue);
-        QCOMPARE(updateSpy.size(), 2);
-        QEXPECT_FAIL("", "todo", Continue);
-        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(addSpy.size(), 2);
+        QCOMPARE(updateSpy.size(), 0);
+        QCOMPARE(rmSpy.size(), 3);
     }
 };
 
