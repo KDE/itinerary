@@ -20,6 +20,8 @@
 
 #include <QVariant>
 
+#include <KItinerary/LocationUtil>
+#include <KItinerary/MergeUtil>
 #include <KItinerary/Place>
 
 #include <KPublicTransport/Location>
@@ -47,11 +49,15 @@ public:
      */
     static KItinerary::TrainStation mergeStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
 
-    /** Applies information from @p location to the given station.
+    /** Applies information from @p location to the given KItinerary place.
      *  Unlike above, this does not assume both sides refer to the same location, and @p location has precedence.
      *  Data from @p station is only considered if both sides refer to the same location.
      */
-    static KItinerary::TrainStation applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
+    template <typename T>
+    static T updateToLocation(const T &place, const KPublicTransport::Location &loc);
+
+    /** Creates a reservation from the given journey section. */
+    static QVariant reservationFromJourneySection(const KPublicTransport::JourneySection &section);
 
     /** Update a reservation with a KPublictTransport::JourneySection.
      *  The journey section overwrites all corresponding properties of the reservation.
@@ -92,6 +98,19 @@ inline T PublicTransport::placeFromLocation(const KPublicTransport::Location &lo
     place.setIdentifier(idenfitierFromLocation(loc));
     place.setAddress(addressFromLocation(loc));
     return place;
+}
+
+template <typename T>
+inline T PublicTransport::updateToLocation(const T &place, const KPublicTransport::Location &loc)
+{
+    using namespace KItinerary;
+
+    auto newPlace = placeFromLocation<T>(loc);
+    if (LocationUtil::isSameLocation(place, newPlace)) {
+        return MergeUtil::merge(place, newPlace).template value<T>();
+    }
+
+    return newPlace;
 }
 
 #endif // PUBLICTRANSPORT_H

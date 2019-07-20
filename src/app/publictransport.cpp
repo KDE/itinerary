@@ -18,9 +18,7 @@
 #include "publictransport.h"
 #include "logging.h"
 
-#include <KItinerary/LocationUtil>
-#include <KItinerary/MergeUtil>
-#include <KItinerary/Place>
+#include <KItinerary/BusTrip>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
@@ -33,6 +31,38 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QUrl>
+
+static bool isTrainMode(KPublicTransport::Line::Mode mode)
+{
+    using namespace KPublicTransport;
+    switch (mode) {
+        case Line::Train:
+        case Line::Funicular:
+        case Line::LocalTrain:
+        case Line::LongDistanceTrain:
+        case Line::Metro:
+        case Line::RailShuttle:
+        case Line::RapidTransit:
+        case Line::Tramway:
+            return true;
+        default:
+            return false;
+    }
+}
+
+static bool isBusMode(KPublicTransport::Line::Mode mode)
+{
+    using namespace KPublicTransport;
+    switch (mode) {
+        case Line::Bus:
+        case Line::BusRapidTransit:
+        case Line::Coach:
+            return true;
+        default:
+            return false;
+    }
+}
+
 
 KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place)
 {
@@ -97,18 +127,6 @@ KItinerary::TrainStation PublicTransport::mergeStation(const KItinerary::TrainSt
     return MergeUtil::merge(placeFromLocation<TrainStation>(loc), station).value<TrainStation>();
 }
 
-KItinerary::TrainStation PublicTransport::applyStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc)
-{
-    using namespace KItinerary;
-
-    auto newStation = placeFromLocation<TrainStation>(loc);
-    if (LocationUtil::isSameLocation(station, newStation)) {
-        return MergeUtil::merge(station, newStation).value<TrainStation>();
-    }
-
-    return newStation;
-}
-
 static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReservation res, const KPublicTransport::JourneySection &section)
 {
     auto trip = res.reservationFor().value<KItinerary::TrainTrip>();
@@ -119,11 +137,42 @@ static KItinerary::TrainReservation applyJourneySection(KItinerary::TrainReserva
     trip.setDeparturePlatform(section.scheduledDeparturePlatform());
     trip.setArrivalPlatform(section.scheduledArrivalPlatform());
 
-    trip.setDepartureStation(PublicTransport::applyStation(trip.departureStation(), section.from()));
-    trip.setArrivalStation(PublicTransport::applyStation(trip.arrivalStation(), section.to()));
+    trip.setDepartureStation(PublicTransport::updateToLocation(trip.departureStation(), section.from()));
+    trip.setArrivalStation(PublicTransport::updateToLocation(trip.arrivalStation(), section.to()));
 
     res.setReservationFor(trip);
     return res;
+}
+
+static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation res, const KPublicTransport::JourneySection &section)
+{
+    auto trip = res.reservationFor().value<KItinerary::BusTrip>();
+    trip.setDepartureTime(section.scheduledDepartureTime());
+    trip.setArrivalTime(section.scheduledArrivalTime());
+    trip.setBusNumber(section.route().line().name());
+    trip.setBusName(section.route().line().modeString());
+    trip.setDeparturePlatform(section.scheduledDeparturePlatform());
+    trip.setArrivalPlatform(section.scheduledArrivalPlatform());
+
+    trip.setDepartureBusStop(PublicTransport::updateToLocation(trip.departureBusStop(), section.from()));
+    trip.setArrivalBusStop(PublicTransport::updateToLocation(trip.arrivalBusStop(), section.to()));
+
+    res.setReservationFor(trip);
+    return res;
+}
+
+QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::JourneySection &section)
+{
+    using namespace KItinerary;
+    if (isTrainMode(section.route().line().mode())) {
+        return ::applyJourneySection(TrainReservation(), section);
+    }
+    if (isBusMode(section.route().line().mode())) {
+        return ::applyJourneySection(BusReservation(), section);
+    }
+
+    qCWarning(Log) << "Unsupported section type:" << section.route().line().mode();
+    return {};
 }
 
 QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section)
@@ -133,8 +182,11 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     if (JsonLd::isA<TrainReservation>(res)) {
         return ::applyJourneySection(res.value<TrainReservation>(), section);
     }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return ::applyJourneySection(res.value<BusReservation>(), section);
+    }
 
-    qWarning() << res.typeName() << "NOT IMPLEMENTED YET!";
+    qCWarning(Log) << res.typeName() << "Unsupported section type!";
     return res;
 }
 
@@ -143,35 +195,15 @@ bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::Jo
     using namespace KPublicTransport;
 
     if (KItinerary::JsonLd::isA<KItinerary::TrainReservation>(res)) {
-        switch (section.route().line().mode()) {
-            case Line::Train:
-            case Line::Funicular:
-            case Line::LocalTrain:
-            case Line::LongDistanceTrain:
-            case Line::Metro:
-            case Line::RailShuttle:
-            case Line::RapidTransit:
-            case Line::Tramway:
-                return true;
-            default:
-                return false;
-        }
+        return isTrainMode(section.route().line().mode());
     } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(res)) {
-        switch (section.route().line().mode()) {
-            case Line::Bus:
-            case Line::BusRapidTransit:
-            case Line::Coach:
-                return true;
-            default:
-                return false;
-        }
+        return isBusMode(section.route().line().mode());
     } else if (res.isValid()) {
         qCWarning(Log) << "unexpected reservation type!?" << res;
     }
 
     return false;
 }
-
 
 QVariant PublicTransport::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
 {

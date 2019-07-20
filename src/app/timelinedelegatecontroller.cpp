@@ -455,8 +455,7 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
             }
             ++it;
         } else {
-            // TODO insert the right type of new elements
-            const auto res = PublicTransport::applyJourneySection(TrainReservation(), section).value<TrainReservation>();
+            const auto res = PublicTransport::reservationFromJourneySection(section);
             m_resMgr->addReservation(res);
         }
     }
