@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(itinerary VERSION 0.0.1)
 
-find_package(ECM 5.38 REQUIRED NO_MODULE)
+find_package(ECM 5.59 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
 
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
@@ -63,5 +63,5 @@ add_subdirectory(src)
 add_subdirectory(autotests)
 add_subdirectory(tests)
 
-install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_CONFDIR})
+install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
