@@ -98,6 +98,11 @@ private Q_SLOTS:
 
     void testForecastRetrieval()
     {
+        if (qEnvironmentVariableIsEmpty("ITINERARY_NO_SKIP_NETWORK_TESTS")) {
+            QSKIP("Skipping network tests by default, activsate with ITINERARY_NO_SKIP_NETWORK_TESTS=1");
+            return;
+        }
+
         WeatherForecastManager mgr;
         mgr.setAllowNetworkAccess(true);
         const auto now = QDateTime::currentDateTimeUtc().addSecs(1800);
