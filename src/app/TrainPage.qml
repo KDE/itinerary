@@ -26,6 +26,11 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Train Ticket")
+    editor: Component {
+        App.TrainEditor {
+            batchId: root.batchId
+        }
+    }
 
     Component {
         id: alternativePage
