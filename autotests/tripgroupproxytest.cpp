@@ -53,6 +53,7 @@ private Q_SLOTS:
     void initTestCase()
     {
         qputenv("LC_ALL", "en_US.utf-8");
+        qputenv("TZ", "UTC");
         QStandardPaths::setTestModeEnabled(true);
     }
 

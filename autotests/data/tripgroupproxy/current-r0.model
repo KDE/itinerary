@@ -337,16 +337,32 @@
                     "@type": "BusTrip",
                     "arrivalBusStop": {
                         "@type": "BusStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
                         "name": "Zermatt"
                     },
-                    "arrivalTime": "2017-09-13T14:20:00",
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-13T14:20:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    },
                     "busName": "",
                     "busNumber": "Zermatt Taxi",
                     "departureBusStop": {
                         "@type": "BusStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "CH"
+                        },
                         "name": "Randa"
                     },
-                    "departureTime": "2017-09-13T14:00:00"
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-09-13T14:00:00+02:00",
+                        "timezone": "Europe/Zurich"
+                    }
                 }
             }
         ],
