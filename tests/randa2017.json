@@ -233,6 +233,10 @@
             "@type": "BusTrip",
             "arrivalStation": {
                 "@type": "BusStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "name": "Zermatt"
             },
             "arrivalTime": "2017-09-13T14:20:00",
@@ -240,6 +244,10 @@
             "busNumber": "Zermatt Taxi",
             "departureStation": {
                 "@type": "BusStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "CH"
+                },
                 "name": "Randa"
             },
             "departureTime": "2017-09-13T14:00:00"
