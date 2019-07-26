@@ -27,8 +27,6 @@
 class PkPassManager;
 class ReservationManager;
 
-class QGeoPositionInfo;
-class QGeoPositionInfoSource;
 class QNetworkAccessManager;
 
 class ApplicationController : public QObject
@@ -41,12 +39,6 @@ public:
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
-
-    // navigation
-    Q_INVOKABLE void showOnMap(const QVariant &place);
-    Q_INVOKABLE bool canNavigateTo(const QVariant &place);
-    Q_INVOKABLE void navigateTo(const QVariant &place);
-    Q_INVOKABLE void navigateTo(const QVariant &from, const QVariant &to);
 
     // data import
     Q_INVOKABLE void showImportFileDialog();
@@ -75,12 +67,7 @@ private:
     PkPassManager *m_pkPassMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 
-#ifndef Q_OS_ANDROID
-    void navigateTo(const QGeoPositionInfo &from, const QVariant &to);
-
-    QGeoPositionInfoSource *m_positionSource = nullptr;
-    QMetaObject::Connection m_pendingNavigation;
-#else
+#ifdef Q_OS_ANDROID
     class ActivityResultReceiver : public QAndroidActivityResultReceiver {
     public:
         explicit inline ActivityResultReceiver(ApplicationController *controller)

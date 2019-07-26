@@ -25,6 +25,7 @@
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "lockmanager.h"
+#include "navigationcontroller.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
@@ -210,6 +211,9 @@ int main(int argc, char **argv)
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(PublicTransport());
+    });
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(NavigationController());
     });
 
     QQmlApplicationEngine engine;

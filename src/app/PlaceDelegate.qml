@@ -64,7 +64,7 @@ Item {
         QQC2.ToolButton {
             visible: place.geo.isValid || !place.address.isEmpty
             icon.name: "map-symbolic"
-            onClicked: _appController.showOnMap(place)
+            onClicked: NavigationController.showOnMap(place)
         }
 
         // navigate to is offered if:
@@ -72,10 +72,10 @@ Item {
         // - for begins of any non-transit element
         // - for the end/arrival of non-public transport transit elements (e.g. car rental drop-offs)
         QQC2.ToolButton {
-            visible: _appController.canNavigateTo(place) && (!isRangeEnd || (controller.isLocationChange && !controller.isPublicTransport))
+            visible: NavigationController.canNavigateTo(place) && (!isRangeEnd || (controller.isLocationChange && !controller.isPublicTransport))
             icon.name: "go-next-symbolic"
             onClicked: {
-                controller.previousLocation ? _appController.navigateTo(controller.previousLocation, place) : _appController.navigateTo(place);
+                controller.previousLocation ? NavigationController.navigateTo(controller.previousLocation, place) : NavigationController.navigateTo(place);
             }
         }
 

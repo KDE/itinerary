@@ -7,6 +7,7 @@ set(itinerary_srcs
     applicationcontroller.cpp
     countryinformation.cpp
     livedatamanager.cpp
+    navigationcontroller.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     publictransport.cpp
