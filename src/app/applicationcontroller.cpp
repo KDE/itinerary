@@ -24,6 +24,7 @@
 
 #include <KLocalizedString>
 
+#include <QBuffer>
 #include <QClipboard>
 #include <QDebug>
 #include <QFile>
@@ -256,8 +257,14 @@ void ApplicationController::importLocalFile(const QUrl &url)
     }
 
     const auto head = f.peek(4);
-    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive) || strncmp(head.constData(), "PK\x03\x04", 4) == 0) {
+    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive)) {
         m_pkPassMgr->importPass(url);
+    } else if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive)) {
+        importBundle(url);
+    } else if (strncmp(head.constData(), "PK\x03\x04", 4) == 0) {
+        if (m_pkPassMgr->importPass(url).isEmpty()) {
+            importBundle(url);
+        }
     } else {
         m_resMgr->importReservation(f.readAll(), f.fileName());
     }
@@ -270,7 +277,9 @@ void ApplicationController::importData(const QByteArray &data)
         return;
     }
     if (strncmp(data.constData(), "PK\x03\x04", 4) == 0) {
-        m_pkPassMgr->importPassFromData(data);
+        if (m_pkPassMgr->importPassFromData(data).isEmpty()) {
+            importBundle(data);
+        }
     } else {
         m_resMgr->importReservation(data);
     }
@@ -362,4 +371,44 @@ void ApplicationController::exportToFile(const QString &filePath)
 
     // TODO export documents
     // TODO export settings
+}
+
+void ApplicationController::importBundle(const QUrl &url)
+{
+    KItinerary::File f(url.isLocalFile() ? url.toLocalFile() : url.toString());
+    if (!f.open(File::Read)) {
+        // TODO show error in the ui
+        qCWarning(Log) << "Failed to open bundle file:" << url << f.errorString();
+        return;
+    }
+
+    importBundle(&f);
+}
+
+void ApplicationController::importBundle(const QByteArray &data)
+{
+    QBuffer buffer;
+    buffer.setData(data);
+    buffer.open(QBuffer::ReadOnly);
+    KItinerary::File f(&buffer);
+    if (!f.open(File::Read)) {
+        // TODO show error in the ui
+        qCWarning(Log) << "Failed to open bundle data:" << f.errorString();
+        return;
+    }
+
+    importBundle(&f);
+}
+
+void ApplicationController::importBundle(KItinerary::File *file)
+{
+    const auto resIds = file->reservations();
+    for (const auto &resId : resIds) {
+        m_resMgr->addReservation(file->reservation(resId));
+    }
+
+    const auto passIds = file->passes();
+    for (const auto &passId : passIds) {
+        m_pkPassMgr->importPassFromData(file->passData(passId));
+    }
 }

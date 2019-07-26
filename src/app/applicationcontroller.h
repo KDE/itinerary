@@ -27,6 +27,10 @@
 class PkPassManager;
 class ReservationManager;
 
+namespace KItinerary {
+class File;
+}
+
 class QNetworkAccessManager;
 
 class ApplicationController : public QObject
@@ -52,6 +56,9 @@ public:
 
     bool hasClipboardContent() const;
 
+    void importBundle(const QUrl &url);
+    void importBundle(const QByteArray &data);
+
     // data export
     Q_INVOKABLE void exportData();
     void exportToFile(const QString &filePath);
@@ -66,6 +73,7 @@ Q_SIGNALS:
 
 private:
     void importLocalFile(const QUrl &url);
+    void importBundle(KItinerary::File *file);
 
     static ApplicationController *s_instance;
 

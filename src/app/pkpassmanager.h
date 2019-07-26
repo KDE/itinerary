@@ -43,7 +43,7 @@ public:
 
     /** Import pass from a local @p url, returns the pass id if successful. */
     QString importPass(const QUrl &url);
-    void importPassFromData(const QByteArray &data);
+    QString importPassFromData(const QByteArray &data);
     Q_INVOKABLE void removePass(const QString &passId);
 
     void updatePass(const QString &passId);

@@ -115,9 +115,9 @@ void PkPassManager::importPassFromTempFile(const QUrl& tmpFile)
     doImportPass(tmpFile, {}, Move);
 }
 
-void PkPassManager::importPassFromData(const QByteArray &data)
+QString PkPassManager::importPassFromData(const QByteArray &data)
 {
-    doImportPass({}, data, Data);
+    return doImportPass({}, data, Data);
 }
 
 QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkPassManager::ImportMode mode)

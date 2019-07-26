@@ -128,6 +128,8 @@ private Q_SLOTS:
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(passMgr.passes().size(), 1);
 
         QTemporaryFile tmp;
         QVERIFY(tmp.open());
@@ -138,6 +140,26 @@ private Q_SLOTS:
         QVERIFY(f.open(KItinerary::File::Read));
         QCOMPARE(f.reservations().size(), 1);
         QCOMPARE(f.passes().size(), 1);
+
+        clearPasses(&passMgr);
+        clearReservations(&resMgr);
+        QCOMPARE(resMgr.batches().size(), 0);
+        QCOMPARE(passMgr.passes().size(), 0);
+
+        appController.importFromUrl(QUrl::fromLocalFile(tmp.fileName()));
+        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(passMgr.passes().size(), 1);
+
+        clearPasses(&passMgr);
+        clearReservations(&resMgr);
+        QCOMPARE(resMgr.batches().size(), 0);
+        QCOMPARE(passMgr.passes().size(), 0);
+
+        QFile bundle(tmp.fileName());
+        QVERIFY(bundle.open(QFile::ReadOnly));
+        appController.importData(bundle.readAll());
+        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(passMgr.passes().size(), 1);
     }
 };
 
