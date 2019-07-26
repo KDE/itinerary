@@ -20,6 +20,8 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KLocalizedString>
+
 #include <QClipboard>
 #include <QDebug>
 #include <QFile>
@@ -30,12 +32,15 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QStandardPaths>
 #include <QUrl>
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #include <QAndroidJniObject>
+#else
+#include <QFileDialog>
 #endif
 
 #include <memory>
@@ -167,6 +172,13 @@ void ApplicationController::showImportFileDialog()
     intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
     intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
     QtAndroid::startActivity(intent, 0, &m_activityResultReceiver);
+#else
+    const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
+        QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
+        i18n("All Files (*.*);;PkPass files (*.pkpass);;PDF files (*.pdf);;KDE Ititnerary files (*.itinerary)"));
+    if (url.isValid()) {
+        importFromUrl(url);
+    }
 #endif
 }
 

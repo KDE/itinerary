@@ -23,7 +23,6 @@
         <file>FlightPage.qml</file>
         <file>HotelDelegate.qml</file>
         <file>HotelPage.qml</file>
-        <file>ImportDialog.qml</file>
         <file>JourneyQueryPage.qml</file>
         <file>PkPassBarcode.qml</file>
         <file>PkPassPage.qml</file>
@@ -45,8 +44,6 @@
         <file>TripGroupDelegate.qml</file>
         <file>WeatherForecastDelegate.qml</file>
         <file>WeatherForecastPage.qml</file>
-
-        <file>+android/ImportDialog.qml</file>
 
         <file>images/bus.svg</file>
         <file>images/cablecar.svg</file>

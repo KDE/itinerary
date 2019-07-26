@@ -28,10 +28,6 @@ Kirigami.ApplicationWindow {
     width: 480
     height: 720
 
-    App.ImportDialog {
-        id: importDialog
-    }
-
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
@@ -39,7 +35,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import...")
                 iconName: "document-open"
-                onTriggered: importDialog.importReservation()
+                onTriggered: _appController.showImportFileDialog();
             },
             Kirigami.Action {
                 text: i18n("Paste")
