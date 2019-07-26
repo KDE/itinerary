@@ -47,6 +47,22 @@
 
 #ifdef Q_OS_ANDROID
 
+// ### obsolete with Qt 5.13
+class ActivityResultReceiver : public QAndroidActivityResultReceiver
+{
+public:
+    explicit inline ActivityResultReceiver(const std::function<void (int, int, const QAndroidJniObject&)> &callback)
+        : m_callback(callback)
+    {}
+    inline void handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent) override
+    {
+        m_callback(receiverRequestCode, resultCode, intent);
+        delete this;
+    }
+private:
+    std::function<void(int, int, const QAndroidJniObject&)> m_callback;
+};
+
 #define PERMISSION_CALENDAR QStringLiteral("android.permission.READ_CALENDAR")
 
 static void importReservation(JNIEnv *env, jobject that, jstring data)
@@ -111,9 +127,6 @@ ApplicationController* ApplicationController::s_instance = nullptr;
 
 ApplicationController::ApplicationController(QObject* parent)
     : QObject(parent)
-#ifdef Q_OS_ANDROID
-    , m_activityResultReceiver(this)
-#endif
 {
     s_instance = this;
 
@@ -155,12 +168,6 @@ void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
     const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
     importFromUrl(QUrl(uriStr.toString()));
 }
-
-void ApplicationController::ActivityResultReceiver::handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent)
-{
-    qCDebug(Log) << receiverRequestCode << resultCode;
-    m_controller->importFromIntent(intent);
-}
 #endif
 
 void ApplicationController::showImportFileDialog()
@@ -171,7 +178,7 @@ void ApplicationController::showImportFileDialog()
     const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
     intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
     intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
-    QtAndroid::startActivity(intent, 0, &m_activityResultReceiver);
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) { importFromIntent(intent); }));
 #else
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
@@ -288,3 +295,27 @@ bool ApplicationController::hasClipboardContent() const
 {
     return QGuiApplication::clipboard()->mimeData()->hasText() || QGuiApplication::clipboard()->mimeData()->hasUrls();
 }
+
+void ApplicationController::exportData()
+{
+    qCDebug(Log);
+#ifdef Q_OS_ANDROID
+    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_CREATE_DOCUMENT");
+    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
+    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
+    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
+    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) { exportToIntent(intent); }));
+#else
+    const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
+        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
+        i18n("KDE Ititnerary files (*.itinerary)"));
+#endif
+}
+
+#ifdef Q_OS_ANDROID
+void ApplicationController::exportToIntent(const QAndroidJniObject &intent)
+{
+    // TODO
+}
+#endif

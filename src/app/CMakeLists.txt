@@ -102,6 +102,7 @@ if (ANDROID)
         edit-delete
         edit-download
         edit-paste
+        export-symbolic
         go-down-symbolic
         go-home
         go-next-symbolic

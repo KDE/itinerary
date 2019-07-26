@@ -44,9 +44,6 @@ public:
     Q_INVOKABLE void showImportFileDialog();
     Q_INVOKABLE void importFromClipboard();
     Q_INVOKABLE void importFromUrl(const QUrl &url);
-#ifdef Q_OS_ANDROID
-    void importFromIntent(const QAndroidJniObject &intent);
-#endif
     void importData(const QByteArray &data);
 
     Q_INVOKABLE void checkCalendar();
@@ -55,6 +52,14 @@ public:
 
     bool hasClipboardContent() const;
 
+    // data export
+    Q_INVOKABLE void exportData();
+
+    // for internal use
+#ifdef Q_OS_ANDROID
+    void importFromIntent(const QAndroidJniObject &intent);
+    void exportToIntent(const QAndroidJniObject &intent);
+#endif
 Q_SIGNALS:
     void clipboardContentChanged();
 
@@ -66,18 +71,6 @@ private:
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
-
-#ifdef Q_OS_ANDROID
-    class ActivityResultReceiver : public QAndroidActivityResultReceiver {
-    public:
-        explicit inline ActivityResultReceiver(ApplicationController *controller)
-            : m_controller(controller) {}
-        void handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent) override;
-    private:
-        ApplicationController *m_controller;
-    };
-    ActivityResultReceiver m_activityResultReceiver;
-#endif
 };
 
 #endif // APPLICATIONCONTROLLER_H

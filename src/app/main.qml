@@ -63,6 +63,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.push(settingsComponent)
             },
             Kirigami.Action {
+                text: i18n("Export...")
+                iconName: "export-symbolic"
+                onTriggered: _appController.exportData();
+            },
+            Kirigami.Action {
                 id: aboutAction
                 text: i18n("About")
                 iconName: "help-about"
