@@ -52,6 +52,9 @@ public:
 
     static QDateTime relevantDate(KPkPass::Pass *pass);
 
+    /** Raw pass file data, used for exporting. */
+    QByteArray rawData(const QString &passId) const;
+
 Q_SIGNALS:
     void passAdded(const QString &passId);
     void passUpdated(const QString &passId, const QStringList &changes);

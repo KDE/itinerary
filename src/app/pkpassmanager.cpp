@@ -247,3 +247,14 @@ QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
         return dt;
     return pass->expirationDate();
 }
+
+QByteArray PkPassManager::rawData(const QString &passId) const
+{
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    QFile f(passPath);
+    if (!f.open(QFile::ReadOnly)) {
+        qCWarning(Log) << "Failed to open pass file for pass" << passId;
+        return {};
+    }
+    return f.readAll();
+}

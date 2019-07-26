@@ -54,6 +54,7 @@ public:
 
     // data export
     Q_INVOKABLE void exportData();
+    void exportToFile(const QString &filePath);
 
     // for internal use
 #ifdef Q_OS_ANDROID

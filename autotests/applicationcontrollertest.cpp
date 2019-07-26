@@ -19,10 +19,13 @@
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 
+#include <KItinerary/File>
+
 #include <QUrl>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 
 class AppControllerTest : public QObject
 {
@@ -109,6 +112,32 @@ private Q_SLOTS:
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(passSpy.size(), 1);
         // TODO PDF
+    }
+
+    void testExportFile()
+    {
+        PkPassManager passMgr;
+        clearPasses(&passMgr);
+
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+
+        ApplicationController appController;
+        appController.setPkPassManager(&passMgr);
+        appController.setReservationManager(&resMgr);
+
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+
+        QTemporaryFile tmp;
+        QVERIFY(tmp.open());
+        tmp.close();
+        appController.exportToFile(tmp.fileName());
+
+        KItinerary::File f(tmp.fileName());
+        QVERIFY(f.open(KItinerary::File::Read));
+        QCOMPARE(f.reservations().size(), 1);
+        QCOMPARE(f.passes().size(), 1);
     }
 };
 

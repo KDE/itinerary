@@ -20,6 +20,8 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/File>
+
 #include <KLocalizedString>
 
 #include <QClipboard>
@@ -44,6 +46,8 @@
 #endif
 
 #include <memory>
+
+using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
 
@@ -310,12 +314,52 @@ void ApplicationController::exportData()
     const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
         i18n("KDE Ititnerary files (*.itinerary)"));
+    exportToFile(filePath);
 #endif
 }
 
 #ifdef Q_OS_ANDROID
 void ApplicationController::exportToIntent(const QAndroidJniObject &intent)
 {
-    // TODO
+    if (!intent.isValid()) {
+        return;
+    }
+
+    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
+    if (!uri.isValid()) {
+        return;
+    }
+
+    const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+    exportToFile(uriStr.toString());
 }
 #endif
+
+void ApplicationController::exportToFile(const QString &filePath)
+{
+    qCDebug(Log) << filePath;
+
+    File f(filePath);
+    if (!f.open(File::Write)) {
+        qCWarning(Log) << f.errorString();
+        // TODO show error in UI
+        return;
+    }
+
+    // export reservation data
+    for (const auto &batchId : m_resMgr->batches()) {
+        const auto resIds = m_resMgr->reservationsForBatch(batchId);
+        for (const auto &resId : resIds) {
+            f.addReservation(resId, m_resMgr->reservation(resId));
+        }
+    }
+
+    // export passes
+    const auto passIds = m_pkPassMgr->passes();
+    for (const auto &passId : passIds) {
+        f.addPass(passId, m_pkPassMgr->rawData(passId));
+    }
+
+    // TODO export documents
+    // TODO export settings
+}
