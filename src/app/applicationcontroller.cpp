@@ -187,7 +187,7 @@ void ApplicationController::showImportFileDialog()
 #else
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
-        i18n("All Files (*.*);;PkPass files (*.pkpass);;PDF files (*.pdf);;KDE Ititnerary files (*.itinerary)"));
+        i18n("All Files (*.*);;PkPass files (*.pkpass);;PDF files (*.pdf);;KDE Itinerary files (*.itinerary)"));
     if (url.isValid()) {
         importFromUrl(url);
     }
@@ -322,7 +322,7 @@ void ApplicationController::exportData()
 #else
     const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-        i18n("KDE Ititnerary files (*.itinerary)"));
+        i18n("KDE Itinerary files (*.itinerary)"));
     exportToFile(filePath);
 #endif
 }

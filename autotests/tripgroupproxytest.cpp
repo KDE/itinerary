@@ -147,7 +147,7 @@ private Q_SLOTS:
         vp0.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         QVERIFY(vp0.verify(&proxy));
 
-        // current event, must be expanded and not collapsable
+        // current event, must be expanded and not collapsible
         model.setCurrentDateTime(QDateTime({2017, 9, 14}, {12, 34}));
         ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/tripgroupproxy/current-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});

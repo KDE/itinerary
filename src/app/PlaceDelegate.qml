@@ -22,7 +22,7 @@ import org.kde.kirigami 2.0 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
-/** Display of a location and navitaion actions. */
+/** Display of a location and navigation actions. */
 Item {
     id: root
 

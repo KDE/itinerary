@@ -358,7 +358,7 @@ bool TimelineDelegateController::isPublicTransport() const
 
 static bool isJourneyCandidate(const QVariant &res)
 {
-    // TODO do we really need to contrain this to trains/busses? a long distance train can be a suitable alternative for a missed short distance flight for example
+    // TODO do we really need to constrain this to trains/buses? a long distance train can be a suitable alternative for a missed short distance flight for example
     return LocationUtil::isLocationChange(res) && (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res));
 }
 
