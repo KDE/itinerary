@@ -21,7 +21,9 @@
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 
+#include <KItinerary/CreativeWork>
 #include <KItinerary/File>
+#include <KItinerary/JsonLdDocument>
 
 #include <KLocalizedString>
 
@@ -37,6 +39,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QStandardPaths>
+#include <QUuid>
 #include <QUrl>
 #include <QUrlQuery>
 
@@ -433,4 +436,28 @@ void ApplicationController::importBundle(KItinerary::File *file)
     for (const auto &docId : docIds) {
         m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
     }
+}
+
+void ApplicationController::addDocument(const QString &batchId)
+{
+    // TODO Android support
+#ifndef Q_OS_ANDROID
+    const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Add Document"),
+        QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
+        i18n("All Files (*.*)"));
+    if (url.isValid()) {
+        const auto docId = QUuid::createUuid().toString();
+        auto res = m_resMgr->reservation(batchId);
+        auto docList = JsonLdDocument::readProperty(res, "subjectOf").toList();
+        docList.push_back(docId);
+        JsonLdDocument::writeProperty(res, "subjectOf", docList);
+
+        DigitalDocument docInfo;
+        docInfo.setName(url.fileName());
+        docInfo.setEncodingFormat(QStringLiteral("application/pdf")); // TODO
+
+        m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
+        m_resMgr->updateReservation(batchId, res); // TODO attach to all elements in the batch?
+    }
+#endif
 }

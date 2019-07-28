@@ -65,6 +65,9 @@ public:
     Q_INVOKABLE void exportData();
     void exportToFile(const QString &filePath);
 
+    // document attaching
+    Q_INVOKABLE void addDocument(const QString &batchId);
+
     // for internal use
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);

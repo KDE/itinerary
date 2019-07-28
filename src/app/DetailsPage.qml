@@ -72,6 +72,12 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Component {
+        id: docsComponent
+        App.DocumentsPage {
+        }
+    }
+
     // TODO this needs multi-traveler support!
     Instantiator {
         model: reservation.potentialAction
@@ -104,6 +110,11 @@ Kirigami.ScrollablePage {
                 text: i18n("Show Boarding Pass")
                 visible: _pkpassManager.hasPass(root.passId)
                 onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
+            },
+            Kirigami.Action {
+                iconName: "folder-documents-symbolic"
+                text: i18n("Documents")
+                onTriggered: applicationWindow().pageStack.push(docsComponent, {"controller": root.controller });
             },
             Kirigami.Action {
                 iconName: "document-edit"
