@@ -23,6 +23,7 @@
 #include "countryinformation.h"
 #include "countrymodel.h"
 #include "documentmanager.h"
+#include "documentsmodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "lockmanager.h"
@@ -202,6 +203,7 @@ int main(int argc, char **argv)
 
     qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
     qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
+    qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Localizer());
     });

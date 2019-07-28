@@ -50,6 +50,7 @@ endif()
 set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
+    documentsmodel.cpp
     localizer.cpp
     settings.cpp
     tickettokenmodel.cpp
