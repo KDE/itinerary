@@ -9,6 +9,7 @@ ecm_add_test(tripgroupproxytest.cpp modelverificationpoint.cpp TEST_NAME tripgro
 ecm_add_test(tripgroupinfoprovidertest.cpp TEST_NAME tripgroupinfoprovidertest LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(publictransporttest.cpp TEST_NAME publictransporttest LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(timelinedelegatecontrollertest.cpp TEST_NAME timelinedelegatecontrollertest LINK_LIBRARIES Qt5::Test itinerary)
+ecm_add_test(documentmanagertest.cpp TEST_NAME documentmanagertest LINK_LIBRARIES Qt5::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt5::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})

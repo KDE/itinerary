@@ -6,6 +6,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT
 set(itinerary_srcs
     applicationcontroller.cpp
     countryinformation.cpp
+    documentmanager.cpp
     livedatamanager.cpp
     navigationcontroller.cpp
     pkpassmanager.cpp
