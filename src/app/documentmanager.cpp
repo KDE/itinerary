@@ -63,6 +63,11 @@ QVector<QString> DocumentManager::documents() const
     return docs;
 }
 
+bool DocumentManager::hasDocument(const QString& id) const
+{
+    return QDir(basePath() + id).exists();
+}
+
 QVariant DocumentManager::documentInfo(const QString &id) const
 {
     const QString filePath = basePath() + id + QLatin1String("/meta.json");

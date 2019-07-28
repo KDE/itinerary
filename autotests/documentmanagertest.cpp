@@ -87,6 +87,9 @@ private Q_SLOTS:
         QCOMPARE(mgr.documents().size(), 2);
         QVERIFY(mgr.documents().contains(QLatin1String("docId2")));
 
+        QVERIFY(mgr.hasDocument(QStringLiteral("docId2")));
+        QVERIFY(!mgr.hasDocument(QStringLiteral("docId3")));
+
         mgr.removeDocument(QLatin1String("docId1"));
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(rmSpy.size(), 1);

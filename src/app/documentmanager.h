@@ -31,6 +31,8 @@ public:
 
     /** Lists all documents in storage. */
     QVector<QString> documents() const;
+    /** Returns @c true if a document with the given id is present. */
+    bool hasDocument(const QString &id) const;
 
     /** Returns the document meta data. */
     QVariant documentInfo(const QString &id) const;
