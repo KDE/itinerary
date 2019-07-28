@@ -24,6 +24,7 @@
 #include <QAndroidActivityResultReceiver>
 #endif
 
+class DocumentManager;
 class PkPassManager;
 class ReservationManager;
 
@@ -43,6 +44,7 @@ public:
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
+    void setDocumentManager(DocumentManager *docMgr);
 
     // data import
     Q_INVOKABLE void showImportFileDialog();
@@ -79,6 +81,7 @@ private:
 
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
+    DocumentManager *m_docMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 };
 

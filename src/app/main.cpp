@@ -22,6 +22,7 @@
 #include "brightnessmanager.h"
 #include "countryinformation.h"
 #include "countrymodel.h"
+#include "documentmanager.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "lockmanager.h"
@@ -136,12 +137,14 @@ int main(int argc, char **argv)
     Settings settings;
     PkPassManager passMgr;
     ReservationManager resMgr;
+    DocumentManager docMgr;
     resMgr.setPkPassManager(&passMgr);
     TripGroupManager tripGroupMgr;
     tripGroupMgr.setReservationManager(&resMgr);
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
+    appController.setDocumentManager(&docMgr);
     BrightnessManager brightnessManager;
     LockManager lockManager;
 
@@ -214,6 +217,10 @@ int main(int argc, char **argv)
     });
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(NavigationController());
+    });
+    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "DocumentManager", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
+        engine->setObjectOwnership(DocumentManager::instance(), QQmlEngine::CppOwnership);
+        return DocumentManager::instance();
     });
 
     QQmlApplicationEngine engine;

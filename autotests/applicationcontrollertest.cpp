@@ -18,6 +18,7 @@
 #include <applicationcontroller.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
+#include <documentmanager.h>
 
 #include <KItinerary/File>
 
@@ -45,6 +46,13 @@ private:
             mgr->removeBatch(id);
         }
         QCOMPARE(mgr->batches().size(), 0);
+    }
+
+    void clearDocuments(DocumentManager *mgr)
+    {
+        for (const auto &id : mgr->documents()) {
+            mgr->removeDocument(id);
+        }
     }
 
     QByteArray readFile(const QString &fn)
@@ -122,9 +130,13 @@ private Q_SLOTS:
         ReservationManager resMgr;
         clearReservations(&resMgr);
 
+        DocumentManager docMgr;
+        clearDocuments(&docMgr);
+
         ApplicationController appController;
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
+        appController.setDocumentManager(&docMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
@@ -143,6 +155,7 @@ private Q_SLOTS:
 
         clearPasses(&passMgr);
         clearReservations(&resMgr);
+        clearDocuments(&docMgr);
         QCOMPARE(resMgr.batches().size(), 0);
         QCOMPARE(passMgr.passes().size(), 0);
 

@@ -16,6 +16,7 @@
 */
 
 #include "applicationcontroller.h"
+#include "documentmanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
@@ -156,6 +157,11 @@ void ApplicationController::setReservationManager(ReservationManager* resMgr)
 void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
+}
+
+void ApplicationController::setDocumentManager(DocumentManager* docMgr)
+{
+    m_docMgr = docMgr;
 }
 
 #ifdef Q_OS_ANDROID
@@ -369,7 +375,18 @@ void ApplicationController::exportToFile(const QString &filePath)
         f.addPass(passId, m_pkPassMgr->rawData(passId));
     }
 
-    // TODO export documents
+    // export documents
+    const auto docIds = m_docMgr->documents();
+    for (const auto &docId : docIds) {
+        const auto fileName = m_docMgr->documentFilePath(docId);
+        QFile file(fileName);
+        if (!file.open(QFile::ReadOnly)) {
+            qCWarning(Log) << "failed to open" << fileName << "for exporting" << file.errorString();
+            continue;
+        }
+        f.addDocument(docId, m_docMgr->documentInfo(docId), file.readAll());
+    }
+
     // TODO export settings
 }
 
@@ -410,5 +427,10 @@ void ApplicationController::importBundle(KItinerary::File *file)
     const auto passIds = file->passes();
     for (const auto &passId : passIds) {
         m_pkPassMgr->importPassFromData(file->passData(passId));
+    }
+
+    const auto docIds = file->documents();
+    for (const auto &docId : docIds) {
+        m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
     }
 }
