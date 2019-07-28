@@ -28,6 +28,9 @@ public:
     explicit DocumentManager(QObject *parent = nullptr);
     ~DocumentManager();
 
+    /** Lists all documents in storage. */
+    QVector<QString> documents() const;
+
     /** Returns the document meta data. */
     QVariant documentInfo(const QString &id) const;
     /** Returns a file path for opening the document. */

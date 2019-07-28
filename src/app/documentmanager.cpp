@@ -24,6 +24,7 @@
 
 #include <QDebug>
 #include <QDir>
+#include <QDirIterator>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
@@ -37,6 +38,19 @@ DocumentManager::DocumentManager(QObject* parent)
 }
 
 DocumentManager::~DocumentManager() = default;
+
+QVector<QString> DocumentManager::documents() const
+{
+    QVector<QString> docs;
+
+    QDirIterator it(basePath(), QDir::Dirs | QDir::NoDotAndDotDot, QDirIterator::NoIteratorFlags);
+    while (it.hasNext()) {
+        it.next();
+        docs.push_back(it.fileName());
+    }
+
+    return docs;
+}
 
 QVariant DocumentManager::documentInfo(const QString &id) const
 {

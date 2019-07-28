@@ -48,10 +48,12 @@ private Q_SLOTS:
     void testAddRemove()
     {
         DocumentManager mgr;
-        mgr.removeDocument(QLatin1String("docId1")); // clean up previous test runs, if necessary
-        mgr.removeDocument(QLatin1String("docId2"));
+        for (const auto &id : mgr.documents()) {
+            mgr.removeDocument(id); // clean up previous test runs, if necessary
+        }
         QSignalSpy addSpy(&mgr, &DocumentManager::documentAdded);
         QSignalSpy rmSpy(&mgr, &DocumentManager::documentRemoved);
+        QCOMPARE(mgr.documents().size(), 0);
 
         DigitalDocument docInfo;
         docInfo.setName(QStringLiteral("../boarding*pass.pdf"));
@@ -61,6 +63,8 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(addSpy.at(0).at(0).toString(), QLatin1String("docId1"));
         QCOMPARE(rmSpy.size(), 0);
+        QCOMPARE(mgr.documents().size(), 1);
+        QVERIFY(mgr.documents().contains(QLatin1String("docId1")));
 
         docInfo = mgr.documentInfo(QStringLiteral("docId1")).value<DigitalDocument>();
         QCOMPARE(docInfo.name(), QLatin1String("boarding_pass.pdf"));
@@ -80,18 +84,23 @@ private Q_SLOTS:
         QVERIFY(docFilePath != docFilePath2);
         QVERIFY(QFile::exists(docFilePath2));
         QCOMPARE(readFile(docFilePath2), QByteArray("%PDF123456"));
+        QCOMPARE(mgr.documents().size(), 2);
+        QVERIFY(mgr.documents().contains(QLatin1String("docId2")));
 
         mgr.removeDocument(QLatin1String("docId1"));
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(rmSpy.at(0).at(0).toString(), QLatin1String("docId1"));
         QVERIFY(!QFile::exists(docFilePath));
+        QCOMPARE(mgr.documents().size(), 1);
+        QVERIFY(mgr.documents().contains(QLatin1String("docId2")));
 
         mgr.removeDocument(QLatin1String("docId2"));
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(rmSpy.at(1).at(0).toString(), QLatin1String("docId2"));
         QVERIFY(!QFile::exists(docFilePath2));
+        QCOMPARE(mgr.documents().size(), 0);
     }
 };
 
