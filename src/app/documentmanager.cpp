@@ -111,6 +111,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
         return;
     }
     dataFile.write(data);
+    dataFile.close();
 
     QFile metaFile(path + QLatin1String("meta.json"));
     if (!metaFile.open(QFile::WriteOnly)) {
@@ -119,6 +120,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
         return;
     }
     metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
+    metaFile.close();
     emit documentAdded(id);
 }
 
@@ -153,6 +155,7 @@ void DocumentManager::addDocument(const QString& id, const QVariant& info, const
         return;
     }
     metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
+    metaFile.close();
     emit documentAdded(id);
 }
 
