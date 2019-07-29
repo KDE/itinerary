@@ -63,6 +63,4 @@ Kirigami.ScrollablePage {
             }
         }
     }
-
-    onBackRequested: pageStack.pop()
 }

@@ -98,6 +98,4 @@ Kirigami.ScrollablePage {
             onLinkActivated: Qt.openUrlExternally(link)
         }
     }
-
-    onBackRequested: pageStack.pop()
 }

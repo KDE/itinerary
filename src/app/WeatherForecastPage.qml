@@ -54,6 +54,4 @@ Kirigami.Page {
             }
         }
     }
-
-    onBackRequested: pageStack.pop()
 }
