@@ -126,6 +126,7 @@ void TimelineDelegateController::setBatchId(const QString &batchId)
         return;
 
     m_batchId = batchId;
+    emit batchIdChanged();
     emit contentChanged();
     emit departureChanged();
     emit arrivalChanged();

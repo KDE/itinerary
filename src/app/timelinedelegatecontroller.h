@@ -38,7 +38,7 @@ class TimelineDelegateController : public QObject
     Q_OBJECT
     Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(QObject* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
-    Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY contentChanged)
+    Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
     Q_PROPERTY(float progress READ progress NOTIFY progressChanged)
@@ -103,6 +103,7 @@ public:
 
 Q_SIGNALS:
     void setupChanged();
+    void batchIdChanged();
     void contentChanged();
     void currentChanged();
     void progressChanged();
