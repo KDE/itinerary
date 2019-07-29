@@ -34,6 +34,7 @@ class DocumentsModel : public QAbstractListModel
     Q_PROPERTY(QString batchId MEMBER m_batchId NOTIFY setupChanged)
     Q_PROPERTY(DocumentManager* documentManager MEMBER m_docMgr WRITE setDocumentManager NOTIFY setupChanged)
     Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr NOTIFY setupChanged)
+    Q_PROPERTY(bool empty READ isEmpty NOTIFY emptyChanged)
 
 public:
     explicit DocumentsModel(QObject *parent = nullptr);
@@ -53,8 +54,10 @@ public:
 
 Q_SIGNALS:
     void setupChanged();
+    void emptyChanged();
 
 private:
+    bool isEmpty() const;
     void reload();
 
     QString m_batchId;

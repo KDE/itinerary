@@ -132,6 +132,12 @@ void DocumentsModel::reload()
     std::sort(m_docIds.begin(), m_docIds.end());
     m_docIds.erase(std::unique(m_docIds.begin(), m_docIds.end()), m_docIds.end());
     endResetModel();
+    emit emptyChanged();
+}
+
+bool DocumentsModel::isEmpty() const
+{
+    return m_docIds.empty();
 }
 
 #include "moc_documentsmodel.cpp"

@@ -77,7 +77,11 @@ Kirigami.ScrollablePage {
     ListView {
         delegate: documentDelegate
         model: docsModel
-    }
 
-    onBackRequested: pageStack.pop()
+        QQC2.Label {
+            text: i18n("No documents attached to this reservation.")
+            anchors.centerIn: parent
+            visible: docsModel.empty
+        }
+    }
 }
