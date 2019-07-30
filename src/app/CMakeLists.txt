@@ -105,6 +105,7 @@ if (ANDROID)
         edit-download
         edit-paste
         export-symbolic
+        folder-documents-symbolic
         go-down-symbolic
         go-home
         go-next-symbolic
