@@ -461,3 +461,14 @@ void ApplicationController::addDocument(const QString &batchId)
     }
 #endif
 }
+
+void ApplicationController::removeDocument(const QString &batchId, const QString &docId)
+{
+    auto res = m_resMgr->reservation(batchId);
+    auto docList = JsonLdDocument::readProperty(res, "subjectOf").toList();
+    docList.removeAll(docId);
+    JsonLdDocument::writeProperty(res, "subjectOf", docList);
+
+    m_resMgr->updateReservation(batchId, res); // TODO update all reservations in the batch
+    m_docMgr->removeDocument(docId);
+}

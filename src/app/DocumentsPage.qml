@@ -57,10 +57,34 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "edit-delete"
                     text: i18n("Delete Document")
-                    // TODO safety question
-                    onTriggered: DocumentManager.removeDocument(model.id);
+                    onTriggered: {
+                        deleteWarningSheet.docId = model.id;
+                        deleteWarningSheet.sheetOpen = true;
+                    }
                 }
             ]
+        }
+    }
+
+    Kirigami.OverlaySheet {
+        id: deleteWarningSheet
+        property string docId
+
+        QQC2.Label {
+            text: i18n("Do you really want to delete this document?")
+            wrapMode: Text.WordWrap
+        }
+
+        footer: RowLayout {
+            QQC2.Button {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Delete")
+                icon.name: "edit-delete"
+                onClicked: {
+                    _appController.removeDocument(controller.batchId, deleteWarningSheet.docId);
+                    deleteWarningSheet.sheetOpen = false;
+                }
+            }
         }
     }
 

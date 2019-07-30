@@ -67,6 +67,7 @@ public:
 
     // document attaching
     Q_INVOKABLE void addDocument(const QString &batchId);
+    Q_INVOKABLE void removeDocument(const QString &batchId, const QString &docId);
 
     // for internal use
 #ifdef Q_OS_ANDROID
