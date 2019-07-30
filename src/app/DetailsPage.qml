@@ -113,7 +113,7 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 iconName: "folder-documents-symbolic"
-                text: i18n("Documents")
+                text: i18n("Documents (%1)", root.reservation.subjectOf.length)
                 onTriggered: applicationWindow().pageStack.push(docsComponent, {"controller": root.controller });
             },
             Kirigami.Action {
