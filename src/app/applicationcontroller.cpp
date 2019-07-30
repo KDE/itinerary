@@ -35,6 +35,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QMimeData>
+#include <QMimeDatabase>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -454,7 +455,9 @@ void ApplicationController::addDocument(const QString &batchId)
 
         DigitalDocument docInfo;
         docInfo.setName(url.fileName());
-        docInfo.setEncodingFormat(QStringLiteral("application/pdf")); // TODO
+
+        QMimeDatabase db;
+        docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
 
         m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
         m_resMgr->updateReservation(batchId, res); // TODO attach to all elements in the batch?
