@@ -106,6 +106,22 @@ void DocumentsModel::setDocumentManager(DocumentManager *mgr)
     emit setupChanged();
 }
 
+void DocumentsModel::setReservationManager(ReservationManager* mgr)
+{
+    if (m_resMgr == mgr) {
+        return;
+    }
+    m_resMgr = mgr;
+
+    connect(mgr, &ReservationManager::batchContentChanged, this, [this](const QString &batchId) {
+        if (batchId == m_batchId) {
+            reload();
+        }
+    });
+
+    emit setupChanged();
+}
+
 void DocumentsModel::reload()
 {
     if (!m_docMgr || !m_resMgr || m_batchId.isEmpty()) {

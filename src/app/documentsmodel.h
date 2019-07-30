@@ -33,7 +33,7 @@ class DocumentsModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(QString batchId MEMBER m_batchId NOTIFY setupChanged)
     Q_PROPERTY(DocumentManager* documentManager MEMBER m_docMgr WRITE setDocumentManager NOTIFY setupChanged)
-    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr NOTIFY setupChanged)
+    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr  WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(bool empty READ isEmpty NOTIFY emptyChanged)
 
 public:
@@ -51,6 +51,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     void setDocumentManager(DocumentManager *mgr);
+    void setReservationManager(ReservationManager *mgr);
 
 Q_SIGNALS:
     void setupChanged();
