@@ -126,27 +126,31 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/batches/");
 }
 
-void ReservationManager::importReservation(const QByteArray& data, const QString &fileName)
+QVector<QString> ReservationManager::importReservation(const QByteArray& data, const QString &fileName)
 {
     ExtractorEngine engine;
     engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     engine.setData(data, fileName);
-    importReservations(JsonLdDocument::fromJson(engine.extract()));
+    return importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
 
-void ReservationManager::importReservations(const QVector<QVariant> &resData)
+QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
 {
     ExtractorPostprocessor postproc;
     postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     postproc.process(resData);
 
     const auto data = postproc.result();
+    QVector<QString> ids;
+    ids.reserve(data.size());
     for (const auto &res : data) {
-        addReservation(res);
+        ids.push_back(addReservation(res));
     }
+
+    return ids;
 }
 
-void ReservationManager::addReservation(const QVariant &res)
+QString ReservationManager::addReservation(const QVariant &res)
 {
     // look for matching reservations, or matching batches
     // we need to do that within a +/-24h range, so we find unbound elements too
@@ -166,7 +170,7 @@ void ReservationManager::addReservation(const QVariant &res)
             // this is actually an update of otherRes!
             const auto newRes = MergeUtil::merge(otherRes, res);
             updateReservation(*it, newRes);
-            return;
+            return *it;
         }
         if (isSameTrip(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
@@ -177,7 +181,7 @@ void ReservationManager::addReservation(const QVariant &res)
                     // this is actually an update of a batched reservation
                     const auto newRes = MergeUtil::merge(otherRes, res);
                     updateReservation(batchedId, newRes);
-                    return;
+                    return batchedId;
                 }
             }
 
@@ -190,7 +194,7 @@ void ReservationManager::addReservation(const QVariant &res)
             m_resToBatchMap.insert(resId, *it);
             emit batchChanged(*it);
             storeBatch(*it);
-            return;
+            return resId;
         }
     }
 
@@ -208,6 +212,7 @@ void ReservationManager::addReservation(const QVariant &res)
     m_resToBatchMap.insert(resId, resId);
     emit batchAdded(resId);
     storeBatch(resId);
+    return resId;
 }
 
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)

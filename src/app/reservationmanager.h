@@ -49,12 +49,19 @@ public:
 
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
-    Q_INVOKABLE void addReservation(const QVariant &res);
+    /** Adds @p res if it's new, or merges it with an existing reservation or reservation batch.
+     *  @returns The id of the new or existed merged reservation.
+     */
+    Q_INVOKABLE QString addReservation(const QVariant &res);
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
-    void importReservation(const QByteArray &data, const QString &fileName = {});
-    void importReservations(const QVector<QVariant> &resData);
+    /** Attempts to extract reservation information from @p data.
+     *  @returns A list of reservation ids for the extracted elements. Those can be reservation
+     *  ids that previously existed, in case the extracted elements could be merged.
+     */
+    QVector<QString> importReservation(const QByteArray &data, const QString &fileName = {});
+    QVector<QString> importReservations(const QVector<QVariant> &resData);
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

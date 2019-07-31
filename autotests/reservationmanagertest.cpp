@@ -108,8 +108,8 @@ private Q_SLOTS:
         auto visit = KItinerary::TouristAttractionVisit();
         visit.setTouristAttraction(attraction);
 
-        mgr.addReservation(QVariant::fromValue(visit));
-        auto addedResId = mgr.batches()[0];
+        const auto addedResId = mgr.addReservation(QVariant::fromValue(visit));
+        QCOMPARE(addedResId, mgr.batches().at(0));
 
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(mgr.batches().size(), 1);
