@@ -9,6 +9,7 @@
   <name xml:lang="es">KDE Itinerary</name>
   <name xml:lang="fr">KDE Itinerary</name>
   <name xml:lang="gl">KDE Itinerary</name>
+  <name xml:lang="id">KDE Itinerary</name>
   <name xml:lang="it">KDE Itinerary</name>
   <name xml:lang="ko">KDE 여행 정보</name>
   <name xml:lang="nl">KDE Itinerary</name>
@@ -24,6 +25,7 @@
   <summary xml:lang="es">Asistente digital para viajes</summary>
   <summary xml:lang="fr">Assistance de voyage numérique</summary>
   <summary xml:lang="gl">Asistente de viaxes dixital</summary>
+  <summary xml:lang="id">Asisten travel digital</summary>
   <summary xml:lang="it">Assistente digitale per i viaggi</summary>
   <summary xml:lang="ko">디지털 여행 도우미</summary>
   <summary xml:lang="nl">Digitale reisassistent</summary>
@@ -42,6 +44,7 @@
     <p xml:lang="es">Aplicación de gestión de itinerarios y de tarjetas de embarque.</p>
     <p xml:lang="fr">Application de gestion des itinéraires et des cartes d'embarquement.</p>
     <p xml:lang="gl">Aplicativo de xestión de itinerarios e pases de embarque.</p>
+    <p xml:lang="id">Aplikasi pengelolaan rencana perjalanan dan boarding pass.</p>
     <p xml:lang="it">Applicazione di gestione degli itinerari e delle carte d'imbarco.</p>
     <p xml:lang="ko">여행 정보와 탑승권 관리 프로그램입니다.</p>
     <p xml:lang="nl">Toepassing voor beheer van route en boardingpass </p>
@@ -58,6 +61,7 @@
     <p xml:lang="es">Funcionalidades:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
+    <p xml:lang="id">Fitur:</p>
     <p xml:lang="it">Funzionalità:</p>
     <p xml:lang="ko">기능:</p>
     <p xml:lang="nl">Mogelijkheden:</p>
@@ -75,6 +79,7 @@
       <li xml:lang="es">Itinerario de viaje unificado.</li>
       <li xml:lang="fr">Itinéraire de voyage unifié.</li>
       <li xml:lang="gl">Itinerario de viaxe unificado.</li>
+      <li xml:lang="id">Rencana perjalanan travel terpadu.</li>
       <li xml:lang="it">Itinerario di viaggio unificato.</li>
       <li xml:lang="ko">통합된 여행 정보 제공.</li>
       <li xml:lang="nl">Geünificeerde reisroute.</li>
@@ -90,6 +95,7 @@
       <li xml:lang="es">Gestión de tarjetas de embarque.</li>
       <li xml:lang="fr">Gestion des cartes d'embarquement.</li>
       <li xml:lang="gl">Xestión de pases de embarque.</li>
+      <li xml:lang="id">Pengelolaan boarding pass.</li>
       <li xml:lang="it">Gestione delle carte d'imbarco.</li>
       <li xml:lang="ko">탑승권 관리.</li>
       <li xml:lang="nl">Beheer van boardingpass</li>
@@ -106,6 +112,7 @@
       <li xml:lang="es">Previsión meteorológica.</li>
       <li xml:lang="fr">Prévisions météorologiques.</li>
       <li xml:lang="gl">Prognóstico meteorolóxico.</li>
+      <li xml:lang="id">Prakiraan cuaca.</li>
       <li xml:lang="it">Previsioni meteo.</li>
       <li xml:lang="ko">일기 예보.</li>
       <li xml:lang="nl">Weersvoorspelling.</li>
@@ -124,6 +131,7 @@
       <caption xml:lang="ca-valencia">Vista de la línia de temps.</caption>
       <caption xml:lang="es">Visor cronológico.</caption>
       <caption xml:lang="gl">Vista da liña de tempo.</caption>
+      <caption xml:lang="id">Tampilan linimasa.</caption>
       <caption xml:lang="it">Vista della linea temporale.</caption>
       <caption xml:lang="ko">타임라인 보기.</caption>
       <caption xml:lang="nl">Tijdlijnweergave</caption>
