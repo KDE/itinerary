@@ -276,7 +276,32 @@ void ApplicationController::importLocalFile(const QUrl &url)
             importBundle(url);
         }
     } else {
-        m_resMgr->importReservation(f.readAll(), f.fileName());
+        const auto data = f.readAll();
+        const auto resIds = m_resMgr->importReservation(data, f.fileName());
+        if (resIds.empty()) {
+            return;
+        }
+
+        // check if there is a document we want to attach here
+        QMimeDatabase db;
+        const auto mt = db.mimeTypeForFileNameAndData(f.fileName(), data);
+        if (mt.name() != QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
+            return;
+        }
+
+        DigitalDocument docInfo;
+        docInfo.setName(f.fileName());
+        docInfo.setEncodingFormat(mt.name());
+        const auto docId = QUuid::createUuid().toString();
+        m_docMgr->addDocument(docId, docInfo, data);
+
+        for (const auto &resId : resIds) {
+            auto res = m_resMgr->reservation(resId);
+            auto docs = JsonLdDocument::readProperty(res, "subjectOf").toList();
+            docs.push_back(docId);
+            JsonLdDocument::writeProperty(res, "subjectOf", docs);
+            m_resMgr->updateReservation(resId, res);
+        }
     }
 }
 
