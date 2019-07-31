@@ -48,8 +48,16 @@ Kirigami.ScrollablePage {
                         text: Localizer.formatTime(departure, "scheduledDepartureTime")
                     }
                     QQC2.Label {
-                        text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-                        color: departure.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        text: {
+                            if (departure.disruption == Disruption.NoService)
+                                return i18n("Cancelled");
+                            return (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay;
+                        }
+                        color: {
+                            if (departure.departureDelay > 1 || departure.disruption == Disruption.NoService)
+                                return Kirigami.Theme.negativeTextColor;
+                            return Kirigami.Theme.positiveTextColor;
+                        }
                         visible: departure.hasExpectedDepartureTime
                     }
                 }
@@ -102,6 +110,15 @@ Kirigami.ScrollablePage {
                         Layout.fillWidth: true
                         elide: Text.ElideRight
                     }
+                }
+
+                // optional bottom row: notes if present
+                QQC2.Label {
+                    Layout.columnSpan: 2
+                    text: departure.note
+                    wrapMode: Text.Wrap
+                    visible: departure.note
+                    font.italic: true
                 }
             }
         }
