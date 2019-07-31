@@ -22,6 +22,7 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/CreativeWork>
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
@@ -292,15 +293,14 @@ void ApplicationController::importLocalFile(const QUrl &url)
         DigitalDocument docInfo;
         docInfo.setName(f.fileName());
         docInfo.setEncodingFormat(mt.name());
-        const auto docId = QUuid::createUuid().toString();
+        const auto docId = DocumentUtil::idForContent(data);
         m_docMgr->addDocument(docId, docInfo, data);
 
         for (const auto &resId : resIds) {
             auto res = m_resMgr->reservation(resId);
-            auto docs = JsonLdDocument::readProperty(res, "subjectOf").toList();
-            docs.push_back(docId);
-            JsonLdDocument::writeProperty(res, "subjectOf", docs);
-            m_resMgr->updateReservation(resId, res);
+            if (DocumentUtil::addDocumentId(res, docId)) {
+                m_resMgr->updateReservation(resId, res);
+            }
         }
     }
 }
@@ -474,9 +474,7 @@ void ApplicationController::addDocument(const QString &batchId)
     if (url.isValid()) {
         const auto docId = QUuid::createUuid().toString();
         auto res = m_resMgr->reservation(batchId);
-        auto docList = JsonLdDocument::readProperty(res, "subjectOf").toList();
-        docList.push_back(docId);
-        JsonLdDocument::writeProperty(res, "subjectOf", docList);
+        DocumentUtil::addDocumentId(res, docId);
 
         DigitalDocument docInfo;
         docInfo.setName(url.fileName());
@@ -485,18 +483,23 @@ void ApplicationController::addDocument(const QString &batchId)
         docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
 
         m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
-        m_resMgr->updateReservation(batchId, res); // TODO attach to all elements in the batch?
+
+        const auto resIds = m_resMgr->reservationsForBatch(batchId);
+        for (const auto &resId : resIds) {
+            m_resMgr->updateReservation(resId, res);
+        }
     }
 #endif
 }
 
 void ApplicationController::removeDocument(const QString &batchId, const QString &docId)
 {
-    auto res = m_resMgr->reservation(batchId);
-    auto docList = JsonLdDocument::readProperty(res, "subjectOf").toList();
-    docList.removeAll(docId);
-    JsonLdDocument::writeProperty(res, "subjectOf", docList);
-
-    m_resMgr->updateReservation(batchId, res); // TODO update all reservations in the batch
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        auto res = m_resMgr->reservation(batchId);
+        if (DocumentUtil::removeDocumentId(res, docId)) {
+            m_resMgr->updateReservation(resId, res);
+        }
+    }
     m_docMgr->removeDocument(docId);
 }

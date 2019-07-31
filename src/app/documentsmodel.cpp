@@ -20,6 +20,7 @@
 #include "reservationmanager.h"
 
 #include <KItinerary/CreativeWork>
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Reservation>
 
@@ -133,10 +134,7 @@ void DocumentsModel::reload()
     const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
     for (const auto &resId : resIds) {
         const auto res = m_resMgr->reservation(resId);
-        if (!JsonLd::canConvert<Reservation>(res)) {
-            continue;
-        }
-        const auto docIds = JsonLd::convert<Reservation>(res).subjectOf();
+        const auto docIds = DocumentUtil::documentIds(res);
         for (const auto &docId : docIds) {
             const auto id = docId.toString();
             if (!id.isEmpty() && m_docMgr->hasDocument(id)) {
