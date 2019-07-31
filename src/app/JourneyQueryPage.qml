@@ -48,9 +48,17 @@ Kirigami.ScrollablePage {
                         text: Localizer.formatTime(modelData, "scheduledDepartureTime")
                     }
                     QQC2.Label {
-                        text: (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay
-                        color: modelData.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                        visible: modelData.hasExpectedDepartureTime
+                        text: {
+                            if (modelData.disruption == Disruption.NoService)
+                                return i18n("Cancelled");
+                            return (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay;
+                        }
+                        color: {
+                            if (modelData.departureDelay > 1 || modelData.disruption == Disruption.NoService)
+                                return Kirigami.Theme.negativeTextColor;
+                            return Kirigami.Theme.positiveTextColor;
+                        }
+                        visible: modelData.hasExpectedDepartureTime || modelData.disruption == Disruption.NoService
                     }
                 }
                 RowLayout {
@@ -137,6 +145,15 @@ Kirigami.ScrollablePage {
                             : Kirigami.Theme.textColor
                         visible: modelData.scheduledArrivalPlatform !== ""
                     }
+                }
+
+                // optional bottom row: notes
+                QQC2.Label {
+                    Layout.columnSpan: 2
+                    text: modelData.note
+                    wrapMode: Text.Wrap
+                    visible: modelData.note
+                    font.italic: true
                 }
             }
         }
