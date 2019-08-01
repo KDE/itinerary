@@ -169,7 +169,7 @@ Kirigami.ScrollablePage {
                 id: headerBackground
                 Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                 Kirigami.Theme.inherit: false
-                color: Kirigami.Theme.backgroundColor
+                color: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
                 implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
                 anchors.leftMargin: -root.leftPadding
                 anchors.topMargin: -root.topPadding
