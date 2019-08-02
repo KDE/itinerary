@@ -115,9 +115,10 @@ Kirigami.ScrollablePage {
                 // optional bottom row: notes if present
                 QQC2.Label {
                     Layout.columnSpan: 2
-                    text: departure.note
+                    text: departure.notes.join("<br/>")
+                    textFormat: Text.RichText
                     wrapMode: Text.Wrap
-                    visible: departure.note
+                    visible: departure.notes.length > 0
                     font.italic: true
                 }
             }
