@@ -202,9 +202,33 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     boundsBehavior: Flickable.StopAtBounds
                 }
-                QQC2.Label {
-                    text: i18np("One change", "%1 changes", journey.numberOfChanges)
+                RowLayout {
                     visible: journeyView.currentIndex != index
+                    Layout.fillWidth: true
+                    Repeater {
+                        model: journey.sections
+                        delegate: Kirigami.Icon {
+                            source: {
+                                switch (modelData.mode) {
+                                    case JourneySection.PublicTransport:
+                                        return PublicTransport.lineModeIcon(modelData.route.line.mode);
+                                    case JourneySection.Walking: return "qrc:///images/walk.svg";
+                                    case JourneySection.Waiting: return "qrc:///images/wait.svg";
+                                    case JourneySection.Transfer: return "qrc:///images/transfer.svg";
+                                        default: return "question";
+                                }
+                            }
+                            width: Kirigami.Units.iconSizes.small
+                            height: width
+                            isMask: true
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                        }
+                    }
+                    QQC2.Label {
+                        text: i18np("One change", "%1 changes", journey.numberOfChanges)
+                        visible: journeyView.currentIndex != index
+                    }
                 }
             }
 
