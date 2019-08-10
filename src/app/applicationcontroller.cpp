@@ -68,7 +68,9 @@ public:
     inline void handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent) override
     {
         m_callback(receiverRequestCode, resultCode, intent);
-        delete this;
+        // ### we leak memory here, but deleting will hang the app
+        // but since this is gone with Qt 5.13 anyway we can ignore that for now
+        //delete this;
     }
 private:
     std::function<void(int, int, const QAndroidJniObject&)> m_callback;
