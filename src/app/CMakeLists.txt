@@ -94,6 +94,7 @@ if (ANDROID)
     )
 
     kirigami_package_breeze_icons(ICONS
+        application-pdf
         checkmark
         clock
         dialog-cancel
@@ -111,6 +112,7 @@ if (ANDROID)
         go-next-symbolic
         go-up-symbolic
         help-about
+        list-add
         map-symbolic
         meeting-attending
         question
