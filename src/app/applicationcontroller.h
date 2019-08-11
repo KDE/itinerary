@@ -80,6 +80,7 @@ Q_SIGNALS:
 private:
     void importLocalFile(const QUrl &url);
     void importBundle(KItinerary::File *file);
+    void addDocument(const QString &batchId, const QUrl &url);
 
     static ApplicationController *s_instance;
 

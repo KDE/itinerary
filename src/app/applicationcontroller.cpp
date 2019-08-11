@@ -474,24 +474,46 @@ void ApplicationController::addDocument(const QString &batchId)
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
         i18n("All Files (*.*)"));
     if (url.isValid()) {
-        const auto docId = QUuid::createUuid().toString();
-        auto res = m_resMgr->reservation(batchId);
-        DocumentUtil::addDocumentId(res, docId);
-
-        DigitalDocument docInfo;
-        docInfo.setName(url.fileName());
-
-        QMimeDatabase db;
-        docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
-
-        m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
-
-        const auto resIds = m_resMgr->reservationsForBatch(batchId);
-        for (const auto &resId : resIds) {
-            m_resMgr->updateReservation(resId, res);
-        }
+        addDocument(batchId, url);
     }
+#else
+    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");
+    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
+    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
+    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
+    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this, batchId](int, int, const QAndroidJniObject &intent) {
+        if (!intent.isValid()) {
+            return;
+        }
+        const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
+        if (!uri.isValid()) {
+            return;
+        }
+        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
+        addDocument(batchId, QUrl(uriStr.toString()));
+    }));
 #endif
+}
+
+void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
+{
+    const auto docId = QUuid::createUuid().toString();
+    auto res = m_resMgr->reservation(batchId);
+    DocumentUtil::addDocumentId(res, docId);
+
+    DigitalDocument docInfo;
+    docInfo.setName(url.fileName());
+
+    QMimeDatabase db;
+    docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
+
+    m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
+
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        m_resMgr->updateReservation(resId, res);
+    }
 }
 
 void ApplicationController::removeDocument(const QString &batchId, const QString &docId)
