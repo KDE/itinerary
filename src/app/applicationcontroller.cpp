@@ -47,6 +47,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/contentresolver.h>
+#include <kandroidextras/uri.h>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -181,12 +182,7 @@ void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
     }
 
     const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-    if (!uri.isValid()) {
-        return;
-    }
-
-    const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-    importFromUrl(QUrl(uriStr.toString()));
+    importFromUrl(KAndroidExtras::Uri::toUrl(uri));
 }
 #endif
 
@@ -489,11 +485,7 @@ void ApplicationController::addDocument(const QString &batchId)
             return;
         }
         const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-        if (!uri.isValid()) {
-            return;
-        }
-        const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-        addDocument(batchId, QUrl(uriStr.toString()));
+        addDocument(batchId, KAndroidExtras::Uri::toUrl(uri));
     }));
 #endif
 }

@@ -16,6 +16,7 @@
 */
 
 #include "contentresolver.h"
+#include "uri.h"
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -33,7 +34,7 @@ QAndroidJniObject ContentResolver::get()
 QString ContentResolver::mimeType(const QUrl &url)
 {
     auto cs = ContentResolver::get();
-    auto uri = QAndroidJniObject::callStaticObjectMethod("android/net/Uri", "parse", "(Ljava/lang/String;)Landroid/net/Uri;", QAndroidJniObject::fromString(url.toString()).object<jstring>());
+    const auto uri = Uri::fromUrl(url);
     auto mt = cs.callObjectMethod("getType", "(Landroid/net/Uri;)Ljava/lang/String;", uri.object<jobject>());
     return mt.toString();
 }
@@ -41,7 +42,7 @@ QString ContentResolver::mimeType(const QUrl &url)
 QString ContentResolver::fileName(const QUrl &url)
 {
     auto cs = ContentResolver::get();
-    auto uri = QAndroidJniObject::callStaticObjectMethod("android/net/Uri", "parse", "(Ljava/lang/String;)Landroid/net/Uri;", QAndroidJniObject::fromString(url.toString()).object<jstring>());
+    const auto uri = Uri::fromUrl(url);
 
     // query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
     auto cursor = cs.callObjectMethod("query", "(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;", uri.object<jobject>(), 0, 0, 0, 0);
