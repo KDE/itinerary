@@ -46,6 +46,8 @@
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
+#include <kandroidextras/contentresolver.h>
+
 #include <QtAndroid>
 #include <QAndroidJniObject>
 #else
@@ -503,10 +505,14 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
     DocumentUtil::addDocumentId(res, docId);
 
     DigitalDocument docInfo;
-    docInfo.setName(url.fileName());
-
+#ifdef Q_OS_ANDROID
+    docInfo.setEncodingFormat(KAndroidExtras::ContentResolver::mimeType(url));
+    docInfo.setName(KAndroidExtras::ContentResolver::fileName(url));
+#else
     QMimeDatabase db;
     docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
+    docInfo.setName(url.fileName());
+#endif
 
     m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
 

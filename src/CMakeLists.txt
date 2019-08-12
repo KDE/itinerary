@@ -1,4 +1,7 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"kde-itinerary\")
 
 add_subdirectory(weather)
+if (ANDROID)
+    add_subdirectory(kandroidextras)
+endif()
 add_subdirectory(app)
