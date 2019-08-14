@@ -107,9 +107,11 @@ static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
 
 static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 {
-    Q_UNUSED(that);
+    Q_UNUSED(that)
     Q_UNUSED(env)
-    ApplicationController::instance()->importFromIntent(data);
+
+    KAndroidExtras::Intent intent(data);
+    ApplicationController::instance()->importFromUrl(intent.getData());
 }
 
 static const JNINativeMethod methods[] = {
@@ -175,14 +177,6 @@ void ApplicationController::setDocumentManager(DocumentManager* docMgr)
     m_docMgr = docMgr;
 }
 
-#ifdef Q_OS_ANDROID
-void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
-{
-    KAndroidExtras::Intent i(intent);
-    importFromUrl(i.getData());
-}
-#endif
-
 void ApplicationController::showImportFileDialog()
 {
 #ifdef Q_OS_ANDROID
@@ -191,7 +185,9 @@ void ApplicationController::showImportFileDialog()
     intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
     intent.addCategory(Intent::CATEGORY_OPENABLE());
     intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) { importFromIntent(intent); }));
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) {
+        importFromUrl(KAndroidExtras::Intent(intent).getData());
+    }));
 #else
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),

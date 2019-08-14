@@ -64,6 +64,9 @@
 #include <QQmlContext>
 
 #ifdef Q_OS_ANDROID
+#include <kandroidextras/activity.h>
+#include <kandroidextras/intent.h>
+
 #include "androidcontentfileengine.h"
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -82,12 +85,8 @@ void handleViewIntent(ApplicationController *appController)
 {
 #ifdef Q_OS_ANDROID
     // handle opened files
-    const auto activity = QtAndroid::androidActivity();
-    if (!activity.isValid())
-        return;
-
-    const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
-    appController->importFromIntent(intent);
+    using namespace KAndroidExtras;
+    appController->importFromUrl(Activity::getIntent().getData());
 #else
     Q_UNUSED(appController);
 #endif
