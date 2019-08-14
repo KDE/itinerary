@@ -72,7 +72,6 @@ public:
     // for internal use
 #ifdef Q_OS_ANDROID
     void importFromIntent(const QAndroidJniObject &intent);
-    void exportToIntent(const QAndroidJniObject &intent);
 #endif
 Q_SIGNALS:
     void clipboardContentChanged();

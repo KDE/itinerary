@@ -47,6 +47,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/contentresolver.h>
+#include <kandroidextras/intent.h>
 #include <kandroidextras/uri.h>
 
 #include <QtAndroid>
@@ -177,23 +178,19 @@ void ApplicationController::setDocumentManager(DocumentManager* docMgr)
 #ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const QAndroidJniObject &intent)
 {
-    if (!intent.isValid()) {
-        return;
-    }
-
-    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-    importFromUrl(KAndroidExtras::Uri::toUrl(uri));
+    KAndroidExtras::Intent i(intent);
+    importFromUrl(i.getData());
 }
 #endif
 
 void ApplicationController::showImportFileDialog()
 {
 #ifdef Q_OS_ANDROID
-    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");
-    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
-    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
-    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
-    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
+    using namespace KAndroidExtras;
+    Intent intent;
+    intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
+    intent.addCategory(Intent::CATEGORY_OPENABLE());
+    intent.setType(QStringLiteral("*/*"));
     QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) { importFromIntent(intent); }));
 #else
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
@@ -348,12 +345,15 @@ void ApplicationController::exportData()
 {
     qCDebug(Log);
 #ifdef Q_OS_ANDROID
-    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_CREATE_DOCUMENT");
-    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
-    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
-    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
-    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) { exportToIntent(intent); }));
+    using namespace KAndroidExtras;
+    Intent intent;
+    intent.setAction(Intent::ACTION_CREATE_DOCUMENT());
+    intent.addCategory(Intent::CATEGORY_OPENABLE());
+    intent.setType(QStringLiteral("*/*"));
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &jniIntent) {
+        Intent intent(jniIntent);
+        exportToFile(intent.getData().toString());
+    }));
 #else
     const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
@@ -362,26 +362,12 @@ void ApplicationController::exportData()
 #endif
 }
 
-#ifdef Q_OS_ANDROID
-void ApplicationController::exportToIntent(const QAndroidJniObject &intent)
-{
-    if (!intent.isValid()) {
-        return;
-    }
-
-    const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-    if (!uri.isValid()) {
-        return;
-    }
-
-    const auto uriStr = uri.callObjectMethod("toString", "()Ljava/lang/String;");
-    exportToFile(uriStr.toString());
-}
-#endif
-
 void ApplicationController::exportToFile(const QString &filePath)
 {
     qCDebug(Log) << filePath;
+    if (filePath.isEmpty()) {
+        return;
+    }
 
     File f(filePath);
     if (!f.open(File::Write)) {
@@ -471,27 +457,26 @@ void ApplicationController::addDocument(const QString &batchId)
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Add Document"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
         i18n("All Files (*.*)"));
-    if (url.isValid()) {
-        addDocument(batchId, url);
-    }
+    addDocument(batchId, url);
 #else
-    const auto ACTION_OPEN_DOCUMENT = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");
-    QAndroidJniObject intent("android/content/Intent", "(Ljava/lang/String;)V", ACTION_OPEN_DOCUMENT.object());
-    const auto CATEGORY_OPENABLE = QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
-    intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", CATEGORY_OPENABLE.object());
-    intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(QStringLiteral("*/*")).object());
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this, batchId](int, int, const QAndroidJniObject &intent) {
-        if (!intent.isValid()) {
-            return;
-        }
-        const auto uri = intent.callObjectMethod("getData", "()Landroid/net/Uri;");
-        addDocument(batchId, KAndroidExtras::Uri::toUrl(uri));
+    using namespace KAndroidExtras;
+    Intent intent;
+    intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
+    intent.addCategory(Intent::CATEGORY_OPENABLE());
+    intent.setType(QStringLiteral("*/*"));
+    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this, batchId](int, int, const QAndroidJniObject &jniIntent) {
+        Intent intent(jniIntent);
+        addDocument(batchId, intent.getData());
     }));
 #endif
 }
 
 void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
 {
+    if (!url.isValid()) {
+        return;
+    }
+
     const auto docId = QUuid::createUuid().toString();
     auto res = m_resMgr->reservation(batchId);
     DocumentUtil::addDocumentId(res, docId);
