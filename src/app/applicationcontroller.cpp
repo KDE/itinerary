@@ -62,24 +62,6 @@ using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
 
-// ### obsolete with Qt 5.13
-class ActivityResultReceiver : public QAndroidActivityResultReceiver
-{
-public:
-    explicit inline ActivityResultReceiver(const std::function<void (int, int, const QAndroidJniObject&)> &callback)
-        : m_callback(callback)
-    {}
-    inline void handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &intent) override
-    {
-        m_callback(receiverRequestCode, resultCode, intent);
-        // ### we leak memory here, but deleting will hang the app
-        // but since this is gone with Qt 5.13 anyway we can ignore that for now
-        //delete this;
-    }
-private:
-    std::function<void(int, int, const QAndroidJniObject&)> m_callback;
-};
-
 #define PERMISSION_CALENDAR QStringLiteral("android.permission.READ_CALENDAR")
 
 static void importReservation(JNIEnv *env, jobject that, jstring data)
@@ -185,9 +167,9 @@ void ApplicationController::showImportFileDialog()
     intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
     intent.addCategory(Intent::CATEGORY_OPENABLE());
     intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &intent) {
+    QtAndroid::startActivity(intent, 0, [this](int, int, const QAndroidJniObject &intent) {
         importFromUrl(KAndroidExtras::Intent(intent).getData());
-    }));
+    });
 #else
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
@@ -346,10 +328,10 @@ void ApplicationController::exportData()
     intent.setAction(Intent::ACTION_CREATE_DOCUMENT());
     intent.addCategory(Intent::CATEGORY_OPENABLE());
     intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this](int, int, const QAndroidJniObject &jniIntent) {
+    QtAndroid::startActivity(intent, 0, [this](int, int, const QAndroidJniObject &jniIntent) {
         Intent intent(jniIntent);
         exportToFile(intent.getData().toString());
-    }));
+    });
 #else
     const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
         QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
@@ -460,10 +442,10 @@ void ApplicationController::addDocument(const QString &batchId)
     intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
     intent.addCategory(Intent::CATEGORY_OPENABLE());
     intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, new ActivityResultReceiver([this, batchId](int, int, const QAndroidJniObject &jniIntent) {
+    QtAndroid::startActivity(intent, 0, [this, batchId](int, int, const QAndroidJniObject &jniIntent) {
         Intent intent(jniIntent);
         addDocument(batchId, intent.getData());
-    }));
+    });
 #endif
 }
 
