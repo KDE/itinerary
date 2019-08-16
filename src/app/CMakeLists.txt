@@ -62,7 +62,6 @@ set(itinerary_app_srcs
 if (ANDROID)
     list(APPEND itinerary_app_srcs
         androidbrightnessbackend.cpp
-        androidcontentfileengine.cpp
         androidlockbackend.cpp
     )
 else()

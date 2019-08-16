@@ -19,15 +19,20 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 ecm_setup_version(PROJECT VARIABLE_PREFIX ITINERARY VERSION_HEADER itinerary_version.h)
 
+set(QT_MIN_VERSION 5.11)
+if (ANDROID)
+    set(QT_MIN_VERSION 5.13) # for content: support and lambda activity result receiver support
+endif()
+
 # build-time dependencies
-find_package(Qt5 5.10 REQUIRED COMPONENTS Test Quick)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF5 REQUIRED COMPONENTS I18n CoreAddons)
 find_package(KF5Holidays 5.49.0 CONFIG QUIET)
 find_package(KF5Notifications 5.49.0 CONFIG QUIET)
 find_package(KF5Contacts CONFIG REQUIRED)
 find_package(KPimPkPass CONFIG REQUIRED)
-find_package(KPimItinerary 5.9.40 CONFIG REQUIRED)
+find_package(KPimItinerary 5.12.0 CONFIG REQUIRED)
 find_package(KPublicTransport CONFIG REQUIRED)
 find_package(SharedMimeInfo 1.0 REQUIRED)
 find_package(ZLIB REQUIRED)

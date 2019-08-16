@@ -67,7 +67,6 @@
 #include <kandroidextras/activity.h>
 #include <kandroidextras/intent.h>
 
-#include "androidcontentfileengine.h"
 #include <QtAndroid>
 #include <QAndroidJniObject>
 #else
@@ -117,7 +116,6 @@ int main(int argc, char **argv)
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #ifdef Q_OS_ANDROID
-    AndroidContentFileEngineHandler fsEngineHandler;
     QGuiApplication app(argc, argv);
 #else
     QApplication app(argc, argv); // for native file dialogs
