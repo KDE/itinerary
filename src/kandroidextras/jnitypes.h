@@ -18,6 +18,8 @@
 #ifndef KANDROIDEXTRAS_JNITYPES_H
 #define KANDROIDEXTRAS_JNITYPES_H
 
+namespace KAndroidExtras {
+
 // determine how many elements are in __VA_ARGS__
 #define PP_NARG(...) PP_NARG_(__VA_ARGS__, PP_RSEQ_N())
 #define PP_NARG_(...) PP_ARG_N(__VA_ARGS__)
@@ -51,8 +53,19 @@
 
 
 // type declarations
+JNI_TYPE(android, content, ContentResolver)
 JNI_TYPE(android, content, Intent)
+JNI_TYPE(android, database, Cursor)
 JNI_TYPE(android, net, Uri)
+JNI_TYPE(android, provider, OpenableColumns)
 JNI_TYPE(java, lang, String)
+
+namespace Jni
+{
+    /** Returns the JNI type name of the given template arugment. */
+    template <typename T> inline const char* typeName() { return T::jniName(); }
+}
+
+}
 
 #endif // KANDROIDEXTRAS_JNITYPES_H
