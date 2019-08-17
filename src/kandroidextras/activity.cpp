@@ -17,6 +17,8 @@
 
 #include "activity.h"
 #include "intent.h"
+#include "jnisignature.h"
+#include "jnitypes.h"
 
 #include <QtAndroid>
 
@@ -28,6 +30,6 @@ Intent Activity::getIntent()
     if (!activity.isValid())
         return {};
 
-    const auto intent = activity.callObjectMethod("getIntent", "()Landroid/content/Intent;");
+    const auto intent = activity.callObjectMethod("getIntent", Jni::signature<android::content::Intent()>());
     return Intent(intent);
 }

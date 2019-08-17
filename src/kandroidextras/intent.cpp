@@ -17,6 +17,8 @@
 
 #include "intent.h"
 #include "uri.h"
+#include "jnitypes.h"
+#include "jnisignature.h"
 
 #include <QAndroidJniObject>
 #include <QUrl>
@@ -25,7 +27,7 @@ using namespace KAndroidExtras;
 
 Intent::Intent()
 {
-    m_intent = QAndroidJniObject("android/content/Intent");
+    m_intent = QAndroidJniObject(Jni::typeName<android::content::Intent>());
 }
 
 Intent::Intent(const QAndroidJniObject &intent)
@@ -37,7 +39,7 @@ Intent::~Intent() = default;
 
 void Intent::addCategory(const QAndroidJniObject &category)
 {
-    m_intent.callObjectMethod("addCategory", "(Ljava/lang/String;)Landroid/content/Intent;", category.object());
+    m_intent.callObjectMethod("addCategory", Jni::signature<android::content::Intent(java::lang::String)>(), category.object());
 }
 
 QUrl Intent::getData() const
@@ -45,18 +47,24 @@ QUrl Intent::getData() const
     if (!m_intent.isValid()) {
         return {};
     }
-    const auto uri = m_intent.callObjectMethod("getData", "()Landroid/net/Uri;");
+    const auto uri = m_intent.callObjectMethod("getData", Jni::signature<android::net::Uri()>());
     return Uri::toUrl(uri);
 }
 
 void Intent::setAction(const QAndroidJniObject &action)
 {
-    m_intent.callObjectMethod("setAction", "(Ljava/lang/String;)Landroid/content/Intent;", action.object());
+    m_intent.callObjectMethod("setAction", Jni::signature<android::content::Intent(java::lang::String)>(), action.object());
+}
+
+void Intent::setData(const QUrl& url)
+{
+    const auto uri = Uri::fromUrl(url);
+    m_intent.callObjectMethod("setData", Jni::signature<android::content::Intent(android::net::Uri)>(), uri.object());
 }
 
 void Intent::setType(const QString &type)
 {
-    m_intent.callObjectMethod("setType", "(Ljava/lang/String;)Landroid/content/Intent;", QAndroidJniObject::fromString(type).object());
+    m_intent.callObjectMethod("setType", Jni::signature<android::content::Intent(java::lang::String)>(), QAndroidJniObject::fromString(type).object());
 }
 
 Intent::operator QAndroidJniObject() const
@@ -66,20 +74,20 @@ Intent::operator QAndroidJniObject() const
 
 QAndroidJniObject Intent::ACTION_CREATE_DOCUMENT()
 {
-    return QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_CREATE_DOCUMENT");
+    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_CREATE_DOCUMENT");
 }
 
 QAndroidJniObject Intent::ACTION_OPEN_DOCUMENT()
 {
-    return QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_OPEN_DOCUMENT");
+    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_OPEN_DOCUMENT");
 }
 
 QAndroidJniObject Intent::ACTION_VIEW()
 {
-    return QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "ACTION_VIEW");
+    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_VIEW");
 }
 
 QAndroidJniObject Intent::CATEGORY_OPENABLE()
 {
-    return QAndroidJniObject::getStaticObjectField<jstring>("android/content/Intent", "CATEGORY_OPENABLE");
+    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "CATEGORY_OPENABLE");
 }

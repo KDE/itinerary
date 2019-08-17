@@ -16,6 +16,8 @@
 */
 
 #include "uri.h"
+#include "jnisignature.h"
+#include "jnitypes.h"
 
 #include <QAndroidJniObject>
 #include <QUrl>
@@ -24,7 +26,7 @@ using namespace KAndroidExtras;
 
 QAndroidJniObject Uri::fromUrl(const QUrl &url)
 {
-    return QAndroidJniObject::callStaticObjectMethod("android/net/Uri", "parse", "(Ljava/lang/String;)Landroid/net/Uri;",
+    return QAndroidJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(), "parse", Jni::signature<android::net::Uri(java::lang::String)>(),
         QAndroidJniObject::fromString(url.toString()).object<jstring>());
 }
 
@@ -33,5 +35,5 @@ QUrl Uri::toUrl(const QAndroidJniObject &uri)
     if (!uri.isValid()) {
         return QUrl();
     }
-    return QUrl(uri.callObjectMethod("toString", "()Ljava/lang/String;").toString());
+    return QUrl(uri.callObjectMethod("toString", Jni::signature<java::lang::String()>()).toString());
 }

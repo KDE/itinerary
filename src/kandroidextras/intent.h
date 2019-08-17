@@ -40,6 +40,8 @@ public:
     QUrl getData() const;
     /** Sets the action of the intent. */
     void setAction(const QAndroidJniObject &action);
+    /** Set the data URL of this intent. */
+    void setData(const QUrl &url);
     /** Set the mime type for this intent. */
     void setType(const QString &type);
 
