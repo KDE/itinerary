@@ -21,6 +21,7 @@
 #include "jnitypes.h"
 
 #include <QtAndroid>
+#include <QAndroidJniEnvironment>
 
 using namespace KAndroidExtras;
 
@@ -32,4 +33,15 @@ Intent Activity::getIntent()
 
     const auto intent = activity.callObjectMethod("getIntent", Jni::signature<android::content::Intent()>());
     return Intent(intent);
+}
+
+bool Activity::startActivity(const Intent &intent, int receiverRequestCode)
+{
+    QAndroidJniEnvironment jniEnv;
+    QtAndroid::startActivity(intent, receiverRequestCode);
+    if (jniEnv->ExceptionCheck()) {
+        jniEnv->ExceptionClear();
+        return false;
+    }
+    return true;
 }

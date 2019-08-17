@@ -28,6 +28,9 @@
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
+#include <kandroidextras/activity.h>
+#include <kandroidextras/intent.h>
+
 #include <QtAndroid>
 #include <QAndroidJniObject>
 #else
@@ -38,14 +41,14 @@
 using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
-static bool startActivity(const QString &intentUri)
+static bool startActivity(const QUrl &url)
 {
-    qCDebug(Log) << intentUri;
-    const auto activity = QtAndroid::androidActivity();
-    if (activity.isValid()) {
-        return activity.callMethod<jboolean>("launchViewIntentFromUri", "(Ljava/lang/String;)Z", QAndroidJniObject::fromString(intentUri).object());
-    }
-    return false;
+    using namespace KAndroidExtras;
+
+    Intent intent;
+    intent.setAction(Intent::ACTION_VIEW());
+    intent.setData(url);
+    return Activity::startActivity(intent, 0);
 }
 #endif
 
@@ -59,20 +62,22 @@ void NavigationController::showOnMap(const QVariant &place)
     const auto addr = LocationUtil::address(place);
 
 #ifdef Q_OS_ANDROID
-    QString intentUri;
+    QUrl url;
+    url.setScheme(QStringLiteral("geo"));
     if (geo.isValid()) {
-        intentUri = QLatin1String("geo:") + QString::number(geo.latitude())
-            + QLatin1Char(',') + QString::number(geo.longitude());
+        url.setPath(QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
     } else if (!addr.isEmpty()) {
-        intentUri = QLatin1String("geo:0,0?q=") + addr.streetAddress() + QLatin1String(", ")
+        url.setPath(QStringLiteral("0,0"));
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("q"), addr.streetAddress() + QLatin1String(", ")
             + addr.postalCode() + QLatin1Char(' ')
             + addr.addressLocality() + QLatin1String(", ")
-            + addr.addressCountry();
+            + addr.addressCountry());
+        url.setQuery(query);
     } else {
         return;
     }
-
-    startActivity(intentUri);
+    startActivity(url);
 
 #else
     if (geo.isValid()) {
@@ -134,20 +139,19 @@ void NavigationController::navigateTo(const QVariant& place)
     const auto geo = LocationUtil::geo(place);;
     const auto addr = LocationUtil::address(place);
 
-    QString intentUri;
+    QUrl url;
+    url.setScheme(QStringLiteral("google.navigation"));
     if (geo.isValid()) {
-        intentUri = QLatin1String("google.navigation:q=") + QString::number(geo.latitude())
-            + QLatin1Char(',') + QString::number(geo.longitude());
+        url.setPath(QLatin1String("q=") + QString::number(geo.latitude())+ QLatin1Char(',') + QString::number(geo.longitude()));
     } else if (!addr.isEmpty()) {
-        intentUri = QLatin1String("google.navigation:q=") + addr.streetAddress() + QLatin1String(", ")
+        url.setPath(QLatin1String("q=") + addr.streetAddress() + QLatin1String(", ")
             + addr.postalCode() + QLatin1Char(' ')
             + addr.addressLocality() + QLatin1String(", ")
-            + addr.addressCountry();
+            + addr.addressCountry());
     } else {
         return;
     }
-
-    startActivity(intentUri);
+    startActivity(url);
 
 #else
     if (m_pendingNavigation) {
@@ -220,7 +224,7 @@ void NavigationController::navigateTo(const QVariant& from, const QVariant& to)
     url.setScheme(QStringLiteral("osmand.api"));
     url.setHost(QStringLiteral("navigate"));
     url.setQuery(query);
-    if (!startActivity(url.toString())) {
+    if (!startActivity(url)) {
         navigateTo(to);
     }
 

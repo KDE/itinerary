@@ -38,18 +38,6 @@ public class Activity extends QtActivity
 {
     private static final String TAG = "org.kde.itinerary";
 
-    public boolean launchViewIntentFromUri(String uri)
-    {
-        Uri mapIntentUri = Uri.parse(uri);
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapIntentUri);
-        try {
-            startActivity(mapIntent);
-        } catch (ActivityNotFoundException e) {
-            return false;
-        }
-        return true;
-    }
-
     public native void importReservation(String data);
     public native void importDavDroidJson(String data);
     public native void importFromIntent(Intent data);

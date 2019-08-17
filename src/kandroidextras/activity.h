@@ -27,6 +27,9 @@ namespace Activity
 {
     /** Returns the Intent that started the activity. */
     Intent getIntent();
+
+    /** Same as QtAndroid::startActivity(), but with exception handling. */
+    bool startActivity(const Intent &intent, int receiverRequestCode); // TODO add callback arg
 }
 
 }
