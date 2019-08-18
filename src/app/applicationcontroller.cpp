@@ -31,6 +31,7 @@
 #include <QBuffer>
 #include <QClipboard>
 #include <QDebug>
+#include <QDesktopServices>
 #include <QFile>
 #include <QGuiApplication>
 #include <QJsonArray>
@@ -487,4 +488,9 @@ void ApplicationController::removeDocument(const QString &batchId, const QString
         }
     }
     m_docMgr->removeDocument(docId);
+}
+
+void ApplicationController::openDocument(const QUrl &url)
+{
+    QDesktopServices::openUrl(url);
 }

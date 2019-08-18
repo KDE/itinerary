@@ -52,7 +52,7 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     iconName: "document-open"
                     text: i18n("Open Document")
-                    onTriggered: Qt.openUrlExternally(model.filePath);
+                    onTriggered: ApplicationController.openDocument(model.filePath);
                 },
                 Kirigami.Action {
                     iconName: "edit-delete"

@@ -68,6 +68,7 @@ public:
     // document attaching
     Q_INVOKABLE void addDocument(const QString &batchId);
     Q_INVOKABLE void removeDocument(const QString &batchId, const QString &docId);
+    Q_INVOKABLE void openDocument(const QUrl &url);
 
 Q_SIGNALS:
     void clipboardContentChanged();
