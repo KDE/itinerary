@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ApplicationWindow {
@@ -35,18 +36,18 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import...")
                 iconName: "document-open"
-                onTriggered: _appController.showImportFileDialog();
+                onTriggered: ApplicationController.showImportFileDialog();
             },
             Kirigami.Action {
                 text: i18n("Paste")
                 iconName: "edit-paste"
-                onTriggered: _appController.importFromClipboard()
-                enabled: _appController.hasClipboardContent
+                onTriggered: ApplicationController.importFromClipboard()
+                enabled: ApplicationController.hasClipboardContent
             },
             Kirigami.Action {
                 text: i18n("Check Calendar")
                 iconName: "view-calendar-day"
-                onTriggered: _appController.checkCalendar()
+                onTriggered: ApplicationController.checkCalendar()
                 visible: Qt.platform.os == "android"
             },
             Kirigami.Action {
@@ -65,7 +66,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Export...")
                 iconName: "export-symbolic"
-                onTriggered: _appController.exportData();
+                onTriggered: ApplicationController.exportData();
             },
             Kirigami.Action {
                 id: aboutAction

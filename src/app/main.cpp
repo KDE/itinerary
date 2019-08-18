@@ -214,6 +214,10 @@ int main(int argc, char **argv)
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(PublicTransport());
     });
+    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "ApplicationController", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
+        engine->setObjectOwnership(ApplicationController::instance(), QQmlEngine::CppOwnership);
+        return ApplicationController::instance();
+    });
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(NavigationController());
     });
@@ -228,7 +232,6 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
-    engine.rootContext()->setContextProperty(QStringLiteral("_appController"), &appController);
     engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
     engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);

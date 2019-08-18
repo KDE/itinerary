@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onClicked: {
-                    _appController.removeDocument(controller.batchId, deleteWarningSheet.docId);
+                    ApplicationController.removeDocument(controller.batchId, deleteWarningSheet.docId);
                     deleteWarningSheet.sheetOpen = false;
                 }
             }
@@ -93,7 +93,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconName: "list-add"
                 text: i18n("Add Document...")
-                onTriggered: _appController.addDocument(controller.batchId)
+                onTriggered: ApplicationController.addDocument(controller.batchId)
             }
         ]
     }
