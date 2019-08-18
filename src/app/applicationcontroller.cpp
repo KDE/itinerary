@@ -47,9 +47,12 @@
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
+#include <kandroidextras/activity.h>
 #include <kandroidextras/contentresolver.h>
 #include <kandroidextras/intent.h>
 #include <kandroidextras/uri.h>
+#include <kandroidextras/jnisignature.h>
+#include <kandroidextras/jnitypes.h>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -492,5 +495,16 @@ void ApplicationController::removeDocument(const QString &batchId, const QString
 
 void ApplicationController::openDocument(const QUrl &url)
 {
+#ifdef Q_OS_ANDROID
+    using namespace KAndroidExtras;
+    auto activity = QtAndroid::androidActivity();
+    auto uri = activity.callObjectMethod("openDocument", Jni::signature<android::net::Uri(java::lang::String)>(), QAndroidJniObject::fromString(url.toLocalFile()).object());
+
+    Intent intent;
+    intent.setData(uri);
+    intent.setAction(Intent::ACTION_VIEW());
+    Activity::startActivity(intent, 0);
+#else
     QDesktopServices::openUrl(url);
+#endif
 }

@@ -59,6 +59,11 @@ void Intent::setAction(const QAndroidJniObject &action)
 void Intent::setData(const QUrl& url)
 {
     const auto uri = Uri::fromUrl(url);
+    setData(uri);
+}
+
+void Intent::setData(const QAndroidJniObject& uri)
+{
     m_intent.callObjectMethod("setData", Jni::signature<android::content::Intent(android::net::Uri)>(), uri.object());
 }
 

@@ -42,6 +42,7 @@ public:
     void setAction(const QAndroidJniObject &action);
     /** Set the data URL of this intent. */
     void setData(const QUrl &url);
+    void setData(const QAndroidJniObject &uri);
     /** Set the mime type for this intent. */
     void setType(const QString &type);
 

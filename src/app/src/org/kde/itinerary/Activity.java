@@ -21,6 +21,8 @@ import org.qtproject.qt5.android.bindings.QtActivity;
 
 import net.fortuna.ical4j.model.property.XProperty;
 
+import androidx.core.content.FileProvider;
+
 import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -119,5 +121,12 @@ public class Activity extends QtActivity
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         importFromIntent(intent);
+    }
+
+    public Uri openDocument(String filePath)
+    {
+        Log.i(TAG, filePath);
+        File file = new File(filePath);
+        return FileProvider.getUriForFile(this, "org.kde.itinerary.documentProvider", file);
     }
 }
