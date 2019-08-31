@@ -33,6 +33,14 @@
 
 using namespace KItinerary;
 
+static GeoCoordinates geoCoordinate(const QVariant &res)
+{
+    if (LocationUtil::isLocationChange(res)) {
+        return LocationUtil::geo(LocationUtil::arrivalLocation(res));
+    }
+    return LocationUtil::geo(LocationUtil::location(res));
+}
+
 TripGroupInfoProvider::TripGroupInfoProvider() = default;
 TripGroupInfoProvider::~TripGroupInfoProvider() = default;
 
@@ -52,14 +60,17 @@ WeatherForecast TripGroupInfoProvider::weatherForecast(const TripGroup &group) c
 
     const auto elems = group.elements();
     QVariant startRes;
+    QDateTime lastEndTime = group.beginDateTime();
+
     for (const auto &resId : elems) {
         const auto res = m_resMgr->reservation(resId);
-        if (!LocationUtil::isLocationChange(res)) {
+        const auto newGeo = geoCoordinate(res);
+        if (!newGeo.isValid()) {
             continue;
         }
         if (startRes.isValid()) {
-            const auto geo = LocationUtil::geo(LocationUtil::arrivalLocation(startRes));
-            const auto startDt = SortUtil::endDateTime(startRes);
+            const auto geo = geoCoordinate(startRes);
+            const auto startDt = LocationUtil::isLocationChange(startRes) ? SortUtil::endDateTime(startRes) : lastEndTime;
             const auto endDt = SortUtil::startDateTime(res);
             if (geo.isValid() && startDt.isValid() && endDt.isValid()) {
                 const auto newFc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), startDt, endDt);
@@ -69,6 +80,7 @@ WeatherForecast TripGroupInfoProvider::weatherForecast(const TripGroup &group) c
                 }
                 fc.merge(newFc);
             }
+            lastEndTime = endDt;
         }
         startRes = res;
     }

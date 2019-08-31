@@ -97,12 +97,18 @@ void TripGroup::store(const QString &path) const
 
 QDateTime TripGroup::beginDateTime() const
 {
+    if (m_elements.empty()) {
+        return {};
+    }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.at(0));
     return KItinerary::SortUtil::startDateTime(res);
 }
 
 QDateTime TripGroup::endDateTime() const
 {
+    if (m_elements.empty()) {
+        return {};
+    }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
     return KItinerary::SortUtil::endDateTime(res);
 }

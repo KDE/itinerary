@@ -73,7 +73,7 @@ private Q_SLOTS:
         QVERIFY(!provider.weatherForecast({}).isValid());
         const auto fc = provider.weatherForecast(mgr.tripGroup(mgr.tripGroups().at(0)));
         QVERIFY(fc.isValid());
-        QCOMPARE(fc.minimumTemperature(), 7.78147f);
+        QCOMPARE(fc.minimumTemperature(), 7.74224f);
         QCOMPARE(fc.maximumTemperature(), 47.4647f);
 
         const auto countries = provider.countryInformation(mgr.tripGroup(mgr.tripGroups().at(0)), QStringLiteral("DE"));
