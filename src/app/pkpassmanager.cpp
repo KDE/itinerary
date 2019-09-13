@@ -64,7 +64,7 @@ bool PkPassManager::hasPass(const QString &passId) const
         return true;
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
     return QFile::exists(passPath);
 }
 
@@ -75,7 +75,7 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
         return it.value();
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
     if (!QFile::exists(passPath)) {
         return nullptr;
     }
@@ -235,7 +235,7 @@ void PkPassManager::updatePass(const QString& passId)
 
 QDateTime PkPassManager::updateTime(const QString &passId) const
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
     QFileInfo fi(passPath);
     return fi.lastModified();
 }
@@ -250,7 +250,7 @@ QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
 
 QByteArray PkPassManager::rawData(const QString &passId) const
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
     QFile f(passPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open pass file for pass" << passId;
