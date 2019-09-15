@@ -99,6 +99,7 @@ ColumnLayout {
                         case Ticket.QRCode: return Prison.Barcode.QRCode;
                         case Ticket.AztecCode: return Prison.Barcode.Aztec;
                         case Ticket.Code128: return Prison.Barcode.Code128;
+                        case Ticket.DataMatrix: return Prison.Barcode.DataMatrix;
                     }
                     return Prison.Barcode.Null;
                 }
