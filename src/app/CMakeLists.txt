@@ -152,7 +152,5 @@ else ()
 endif()
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
-if (NOT ANDROID)
-    install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-endif()
+install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
