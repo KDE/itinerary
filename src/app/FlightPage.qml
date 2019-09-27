@@ -46,7 +46,11 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             resIds: _reservationManager.reservationsForBatch(root.batchId)
-            onCurrentReservationIdChanged: root.currentReservationId = currentReservationId
+            onCurrentReservationIdChanged: {
+                if (!currentReservationId)
+                    return;
+                root.currentReservationId = currentReservationId;
+            }
         }
 
         Kirigami.FormLayout {
