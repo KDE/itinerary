@@ -21,11 +21,13 @@
 
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
+#include <KItinerary/Event>
 #include <KItinerary/Flight>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
+#include <KItinerary/Visit>
 
 #include <QDate>
 #include <QDir>
@@ -144,6 +146,18 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
     QVector<QString> ids;
     ids.reserve(data.size());
     for (const auto &res : data) {
+        if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
+            EventReservation ev;
+            ev.setReservationFor(res);
+            ids.push_back(addReservation(ev));
+            continue;
+        }
+        // filter out non-Reservation objects we can't handle yet
+        // TODO show UI asking for time ranges for LodgingBusiness, FoodEstablishment, etc
+        if (!JsonLd::canConvert<Reservation>(res) && !JsonLd::isA<TouristAttractionVisit>(res)) {
+            continue;
+        }
+
         ids.push_back(addReservation(res));
     }
 
