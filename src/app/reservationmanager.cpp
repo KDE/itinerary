@@ -29,6 +29,8 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
 
+#include <KLocalizedString>
+
 #include <QDate>
 #include <QDir>
 #include <QDirIterator>
@@ -161,6 +163,7 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
         ids.push_back(addReservation(res));
     }
 
+    emit infoMessage(i18np("One reservation imported.", "%1 reservations imported.", ids.size()));
     return ids;
 }
 

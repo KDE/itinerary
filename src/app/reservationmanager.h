@@ -94,6 +94,9 @@ Q_SIGNALS:
     void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &batchId);
 
+    /** Human readable information message. */
+    void infoMessage(const QString &msg);
+
 private:
     static QString reservationsBasePath();
     static QString batchesBasePath();

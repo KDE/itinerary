@@ -97,6 +97,7 @@ if (ANDROID)
         checkmark
         clock
         dialog-cancel
+        dialog-close
         document-edit
         document-open
         document-save
