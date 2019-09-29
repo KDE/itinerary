@@ -63,6 +63,9 @@ add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_F
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 add_definitions(-DQT_USE_QSTRINGBUILDER)
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x060000)
+if (ANDROID)
+    set(CMAKE_MODULE_EXE_FLAGS "-Wl,--fatal-warnings -Wl,--no-undefined ${CMAKE_EXE_LINKER_FLAGS}")
+endif()
 
 add_subdirectory(src)
 add_subdirectory(autotests)
