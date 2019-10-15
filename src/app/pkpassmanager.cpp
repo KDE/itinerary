@@ -21,6 +21,7 @@
 #include <KItinerary/Reservation>
 #include <KPkPass/Pass>
 
+#include <QDateTime>
 #include <QDebug>
 #include <QDir>
 #include <QDirIterator>

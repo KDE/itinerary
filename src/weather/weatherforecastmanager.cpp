@@ -20,6 +20,8 @@
 #include "weathertile.h"
 
 #include <QCoreApplication>
+#include <QDateTime>
+#include <QDebug>
 #include <QDir>
 #include <QDirIterator>
 #include <QNetworkAccessManager>
