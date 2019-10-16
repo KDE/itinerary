@@ -47,7 +47,6 @@ public:
     void setDocumentManager(DocumentManager *docMgr);
 
     // data import
-    Q_INVOKABLE void showImportFileDialog();
     Q_INVOKABLE void importFromClipboard();
     Q_INVOKABLE void importFromUrl(const QUrl &url);
     void importData(const QByteArray &data);

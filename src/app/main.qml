@@ -18,6 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import Qt.labs.platform 1.1
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -29,6 +30,14 @@ Kirigami.ApplicationWindow {
     width: 480
     height: 720
 
+    FileDialog {
+        id: fileDialog
+        title: i18n("Import Reservation")
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("KDE Itinerary files (*.itinerary)")]
+        onAccepted: ApplicationController.importFromUrl(file)
+    }
+
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
@@ -36,7 +45,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import...")
                 iconName: "document-open"
-                onTriggered: ApplicationController.showImportFileDialog();
+                onTriggered: fileDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Paste")

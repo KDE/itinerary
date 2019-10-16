@@ -163,27 +163,6 @@ void ApplicationController::setDocumentManager(DocumentManager* docMgr)
     m_docMgr = docMgr;
 }
 
-void ApplicationController::showImportFileDialog()
-{
-#ifdef Q_OS_ANDROID
-    using namespace KAndroidExtras;
-    Intent intent;
-    intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
-    intent.addCategory(Intent::CATEGORY_OPENABLE());
-    intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, [this](int, int, const QAndroidJniObject &intent) {
-        importFromUrl(KAndroidExtras::Intent(intent).getData());
-    });
-#else
-    const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Import Reservation"),
-        QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
-        i18n("All Files (*.*);;PkPass files (*.pkpass);;PDF files (*.pdf);;KDE Itinerary files (*.itinerary)"));
-    if (url.isValid()) {
-        importFromUrl(url);
-    }
-#endif
-}
-
 void ApplicationController::importFromClipboard()
 {
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
@@ -201,6 +180,10 @@ void ApplicationController::importFromClipboard()
 
 void ApplicationController::importFromUrl(const QUrl &url)
 {
+    if (!url.isValid()) {
+        return;
+    }
+
     qCDebug(Log) << url;
     if (url.isLocalFile() || url.scheme() == QLatin1String("content")) {
         importLocalFile(url);
