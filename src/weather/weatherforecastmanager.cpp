@@ -443,6 +443,8 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
                     fc.setMinimumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
                 } else if (reader.name() == QLatin1String("maxTemperature")) {
                     fc.setMaximumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
+                } else if (reader.name() == QLatin1String("windSpeed")) {
+                    fc.setWindSpeed(reader.attributes().value(QLatin1String("mps")).toFloat());
                 } else if (reader.name() == QLatin1String("symbol")) {
                     auto symId = reader.attributes().value(QLatin1String("number")).toInt();
                     if (symId > 100) {

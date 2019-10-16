@@ -70,15 +70,16 @@ private Q_SLOTS:
         QCOMPARE((*it).maximumTemperature(), 21.6f);
         QCOMPARE((*it).precipitation(), 0.0f);
         QCOMPARE((*it).symbolType(), WeatherForecast::Clear);
+        QCOMPARE((*it).windSpeed(), 1.6f);
     }
 
     void testWeatherSymbol()
     {
-#ifdef HAVE_KHOLIDAYS
         WeatherForecast fc;
         fc.setDateTime({QDate(2018, 8, 1), QTime(2, 0), Qt::UTC}); // CEST is UTC +2
         fc.setTile({52.4, 13.5});
         fc.setRange(1);
+#ifdef HAVE_KHOLIDAYS
         fc.setSymbolType(WeatherForecast::Clear);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-clear-night"));
         fc.setRange(2);
@@ -94,6 +95,10 @@ private Q_SLOTS:
         fc.setRange(24);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
 #endif
+
+        QVERIFY(!(fc.symbolType() & WeatherForecast::Wind));
+        fc.setWindSpeed(20.0f);
+        QVERIFY(fc.symbolType() & WeatherForecast::Wind);
     }
 
     void testForecastRetrieval()
@@ -127,6 +132,7 @@ private Q_SLOTS:
         QVERIFY(fc.maximumTemperature() < 50);
         QVERIFY(fc.maximumTemperature() >= fc.minimumTemperature());
         QVERIFY(fc.precipitation() >= 0.0f);
+        QVERIFY(fc.windSpeed() >= 0.0f);
     }
 };
 

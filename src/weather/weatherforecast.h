@@ -52,6 +52,7 @@ public:
         Hail = 128,
         ThunderStorm = 256,
         Fog = 512,
+        Wind = 1024
     };
     /** Weather symbol.
      *  Represented as flags so we can easily merge this for longer time periods.
@@ -79,6 +80,10 @@ public:
     /** Precipitation in mm/m². */
     float precipitation() const;
     void setPrecipitation(float precipitation);
+
+    /** Wind speed in m/s. */
+    float windSpeed() const;
+    void setWindSpeed(float speed);
 
     /** Weather symbol. */
     SymbolType symbolType() const;

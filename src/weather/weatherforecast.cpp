@@ -37,6 +37,7 @@ public:
     float m_minTemp = std::numeric_limits<float>::max();
     float m_maxTemp = std::numeric_limits<float>::lowest();
     float m_precipitation = std::numeric_limits<float>::lowest();
+    float m_windSpeed = std::numeric_limits<float>::lowest();
     WeatherForecast::SymbolType m_symbol = WeatherForecast::None;
     int m_range = 0;
 };
@@ -90,7 +91,7 @@ void WeatherForecast::setMaximumTemperature(float t)
 
 WeatherForecast::SymbolType WeatherForecast::symbolType() const
 {
-    return d->m_symbol;
+    return d->m_symbol | (d->m_windSpeed > 10.8f ? WeatherForecast::Wind : WeatherForecast::None);
 }
 
 void WeatherForecast::setSymbolType(WeatherForecast::SymbolType type)
@@ -166,6 +167,17 @@ void WeatherForecast::setPrecipitation(float precipitation)
     d->m_precipitation = precipitation;
 }
 
+float WeatherForecast::windSpeed() const
+{
+    return std::max(d->m_windSpeed, 0.0f);
+}
+
+void WeatherForecast::setWindSpeed(float speed)
+{
+    d.detach();
+    d->m_windSpeed = speed;
+}
+
 void WeatherForecast::merge(const WeatherForecast &other)
 {
     d.detach();
@@ -177,6 +189,9 @@ void WeatherForecast::merge(const WeatherForecast &other)
     }
     if (d->m_precipitation < 0.0f || other.range() <= d->m_range) {
         d->m_precipitation = std::max(other.precipitation(), d->m_precipitation);
+    }
+    if (d->m_windSpeed < 0.0f || other.range() <= d->m_range) {
+        d->m_windSpeed = std::max(other.windSpeed(), d->m_windSpeed);
     }
 
     if (d->m_symbol == None || other.range() <= d->m_range) {
