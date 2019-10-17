@@ -121,11 +121,17 @@ if (ANDROID)
         view-refresh
 
         weather-clear
+#         weather-clear-wind
         weather-clear-night
+#         weather-clear-wind-night
         weather-few-clouds
+#         weather-few-clouds-wind
         weather-few-clouds-night
+#         weather-few-clouds-wind-night
         weather-clouds
+#         weather-clouds-wind
         weather-clouds-night
+#         weather-clouds-wind-night
         weather-showers-day
         weather-showers-night
         weather-showers-scattered-day
@@ -135,6 +141,7 @@ if (ANDROID)
         weather-storm-day
         weather-storm-night
         weather-many-clouds
+#         weather-many-clouds-wind
         weather-fog
         weather-showers
         weather-showers-scattered
