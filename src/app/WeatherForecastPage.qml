@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -33,25 +33,50 @@ Kirigami.Page {
         weatherForecastManager: _weatherForecastManager
     }
 
+    Component {
+        id: weatherForecastDelegate
+        Kirigami.AbstractListItem {
+            readonly property var fc: model.weatherForecast
+            Row {
+                spacing: Kirigami.Units.largeSpacing
+                Kirigami.Icon {
+                    source: fc.symbolIconName
+                    isMask: false
+                    width: Kirigami.Units.iconSizes.smallMedium
+                    height: width
+                }
+
+                QQC2.Label {
+                    text: model.localizedTime
+                }
+
+                QQC2.Label {
+                    text: {
+                        if (fc.maximumTemperature == fc.minimumTemperature) {
+                            return i18n("%1°C", fc.maximumTemperature);
+                        } else {
+                            return i18n("%1°C / %2°C", fc.minimumTemperature, fc.maximumTemperature);
+                        }
+                    }
+                }
+
+                QQC2.Label {
+                    visible: fc.precipitation > 0
+                    text: i18n("☂ %1 mm", fc.precipitation)
+                }
+
+                QQC2.Label {
+                    visible: fc.windSpeed > 3.5
+                    text: i18n("🌬️ %1 m/s", fc.windSpeed)
+                }
+            }
+        }
+    }
+
     ListView {
         anchors.fill: parent
         id: forecastList
         model: forecastModel
-        delegate: Kirigami.BasicListItem {
-            icon: model.weatherForecast.symbolIconName
-            iconColor: "transparent"
-            label: {
-                var fc = model.weatherForecast;
-                if (fc.maximumTemperature == fc.minimumTemperature) {
-                    if (fc.precipitation == 0)
-                        return i18n("%1 %2°C", model.localizedTime, fc.maximumTemperature);
-                    else
-                        return i18n("%1 %2°C ☂ %3mm", model.localizedTime, fc.maximumTemperature, fc.precipitation);
-                }
-                if (fc.precipitation == 0)
-                    return i18n("%1 %2°C / %3°C", model.localizedTime, fc.minimumTemperature, fc.maximumTemperature);
-                return i18n("%1 %2°C / %3°C ☂ %4 mm", model.localizedTime, model.weatherForecast.minimumTemperature, model.weatherForecast.maximumTemperature, model.weatherForecast.precipitation);
-            }
-        }
+        delegate: weatherForecastDelegate
     }
 }
