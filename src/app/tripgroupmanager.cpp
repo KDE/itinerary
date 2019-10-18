@@ -490,6 +490,10 @@ QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
             dests.push_back(lodging.address().addressLocality());
             continue;
         }
+        if (!lodging.name().isEmpty() && !dests.contains(lodging.name())) { // fall back to hotel name if we don't know the city
+            dests.push_back(lodging.name());
+            continue;
+        }
 
         // TODO consider the country if that differs from where we started from
     }
