@@ -171,7 +171,8 @@ private Q_SLOTS:
         QTest::newRow("Almeria") << QStringLiteral(SOURCE_DIR "/../tests/akademy2017.json") << QStringLiteral("Almería (July 2017)");
         QTest::newRow("Symmetric") << QStringLiteral(SOURCE_DIR "/data/tripgroup/deutschebahn_two-leg-return.txt.json") << QStringLiteral("Somewhere(Specific) (November 2027)");
         QTest::newRow("Symmetric, 2 elements") << QStringLiteral(SOURCE_DIR "/data/tripgroup/flight-direct-return.json") << QStringLiteral("Oslo Airport (June 2018)");
-        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json") << QStringLiteral("Somewhere (February/March 2018)");
+        QTest::newRow("Triangular, different PNR") << QStringLiteral(SOURCE_DIR "/data/tripgroup/train-triangular-different-pnr.json") << QStringLiteral("Nürnberg Hbf (February/March 2018)");
+        QTest::newRow("Imbalanced roundtrip") << QStringLiteral(SOURCE_DIR "/data/tripgroup/imbalanced-return-trip.json") << QStringLiteral("Milano Centrale (September 2019)");
     }
 
     void testGroupName()

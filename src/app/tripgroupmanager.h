@@ -65,6 +65,8 @@ private:
     void checkConsistency();
     QString guessName(const TripGroup &g) const;
     QString guessDestinationFromLodging(const TripGroup &g) const;
+    QString guessDestinationFromTransportTimeGap(const TripGroup &g) const;
+    bool isRoundTrip(const TripGroup &g) const;
 
     ReservationManager *m_resMgr = nullptr;
     QHash<QString, TripGroup> m_tripGroups;

@@ -501,10 +501,57 @@ QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
     return dests.join(QLatin1String(" - "));
 }
 
+bool TripGroupManager::isRoundTrip(const TripGroup& g) const
+{
+    const auto depId = g.elements().at(0);
+    const auto arrId = g.elements().constLast();
+    const auto dep = LocationUtil::departureLocation(m_resMgr->reservation(depId));
+    const auto arr = LocationUtil::arrivalLocation(m_resMgr->reservation(arrId));
+    return LocationUtil::isSameLocation(dep, arr, LocationUtil::CityLevel);
+}
+
+QString TripGroupManager::guessDestinationFromTransportTimeGap(const TripGroup &g) const
+{
+    // we must only do this for return trips
+    if (!isRoundTrip(g)) {
+        return {};
+    }
+
+    // we assume that the largest time interval between arrival and departure of two adjacent location changes is the destination
+    QDateTime beginDt;
+    QString destName;
+    qint64 maxLength = 0;
+
+    for (const auto &resId : g.elements()) {
+        const auto res = m_resMgr->reservation(resId);
+        if (!LocationUtil::isLocationChange(res)) {
+            continue;
+        }
+
+        if (!beginDt.isValid()) { // first transport element
+            beginDt = SortUtil::endDateTime(res);
+            continue;
+        }
+
+        const auto endDt = SortUtil::startDateTime(res);
+        const auto newLength = beginDt.secsTo(endDt);
+        if (newLength > maxLength) {
+            destName = LocationUtil::name(LocationUtil::departureLocation(res));
+            maxLength = newLength;
+        }
+        beginDt = endDt;
+    }
+
+    return destName;
+}
+
 QString TripGroupManager::guessName(const TripGroup& g) const
 {
     // part 1: the destination of the trip
     QString dest = guessDestinationFromLodging(g);
+    if (dest.isEmpty()) {
+        dest = guessDestinationFromTransportTimeGap(g);
+    }
     if (dest.isEmpty()) {
         // two fallback cases: round-trips and one-way trips
         const auto beginLoc = LocationUtil::departureLocation(m_resMgr->reservation(g.elements().at(0)));
