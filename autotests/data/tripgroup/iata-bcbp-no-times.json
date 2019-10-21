@@ -1,0 +1,50 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "EJU"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "MXP",
+                "name": "Milan Malpensa"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "TXL",
+                "name": "Berlin Tegel"
+            },
+            "departureDay": "2019-09-05",
+            "flightNumber": "5883"
+        },
+        "reservationNumber": "EXXX007"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "reservationFor": {
+            "@type": "Flight",
+            "airline": {
+                "@type": "Airline",
+                "iataCode": "EJU"
+            },
+            "arrivalAirport": {
+                "@type": "Airport",
+                "iataCode": "SXF",
+                "name": "Berlin Schoenefeld"
+            },
+            "departureAirport": {
+                "@type": "Airport",
+                "iataCode": "MXP",
+                "name": "Milan Malpensa"
+            },
+            "departureDay": "2019-09-13",
+            "flightNumber": "4672"
+        },
+        "reservationNumber": "EXXX007"
+    }
+]
