@@ -59,6 +59,7 @@ JNI_TYPE(android, database, Cursor)
 JNI_TYPE(android, net, Uri)
 JNI_TYPE(android, provider, OpenableColumns)
 JNI_TYPE(java, lang, String)
+JNI_TYPE(java, util, Locale)
 
 namespace Jni
 {

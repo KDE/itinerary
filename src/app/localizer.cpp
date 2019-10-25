@@ -27,6 +27,17 @@
 #include <QLocale>
 #include <QTimeZone>
 
+#ifdef Q_OS_ANDROID
+#include <kandroidextras/jnisignature.h>
+#include <kandroidextras/jnitypes.h>
+#include <kandroidextras/locale.h>
+
+#include <QtAndroid>
+#include <QAndroidJniObject>
+
+using namespace KAndroidExtras;
+#endif
+
 using namespace KItinerary;
 
 QString Localizer::countryName(const QString& isoCode) const
@@ -61,6 +72,26 @@ static bool needsTimeZone(const QDateTime &dt)
     return false;
 }
 
+static QString tzAbbreviation(const QDateTime &dt)
+{
+    const auto tz = dt.timeZone();
+
+#ifdef Q_OS_ANDROID
+    // the QTimeZone backend implementation on Android isn't as complete as the desktop ones, so we need to do this ourselves here
+    // eventually, this should be upstreamed to Qt
+    auto abbr = QAndroidJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone", "abbreviation",
+                    Jni::signature<java::lang::String(java::lang::String, long, java::util::Locale, bool)>(),
+                    QAndroidJniObject::fromString(QString::fromUtf8(tz.id())).object(), dt.toMSecsSinceEpoch(),
+                    KAndroidExtras::Locale::current().object(), tz.isDaylightTime(dt)).toString();
+
+    if (!abbr.isEmpty()) {
+        return abbr;
+    }
+#endif
+
+    return tz.abbreviation(dt);
+}
+
 QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) const
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
@@ -70,7 +101,7 @@ QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) 
 
     auto s = QLocale().toString(dt.time(), QLocale::ShortFormat);
     if (needsTimeZone(dt)) {
-        s += QLatin1Char(' ') + dt.timeZone().abbreviation(dt);
+        s += QLatin1Char(' ') + tzAbbreviation(dt);
     }
     return s;
 }
@@ -84,7 +115,7 @@ QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyNa
 
     auto s = QLocale().toString(dt, QLocale::ShortFormat);
     if (needsTimeZone(dt)) {
-        s += QLatin1Char(' ') + dt.timeZone().abbreviation(dt);
+        s += QLatin1Char(' ') + tzAbbreviation(dt);
     }
     return s;
 }

@@ -2,6 +2,7 @@ add_library(KAndroidExtras STATIC
     activity.cpp
     contentresolver.cpp
     intent.cpp
+    locale.cpp
     uri.cpp
 )
 target_include_directories(KAndroidExtras INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
