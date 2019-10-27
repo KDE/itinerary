@@ -39,7 +39,7 @@ Kirigami.AbstractCard {
     property Item headerItem
     property string headerIconSource
 
-    readonly property double headerFontScale: 1.25
+    readonly property double headerFontScale: 1.0
 
     showClickFeedback: true
 
@@ -68,7 +68,7 @@ Kirigami.AbstractCard {
 
             Kirigami.Icon {
                 source: headerIconSource
-                width: Kirigami.Units.iconSizes.smallMedium
+                width: Kirigami.Units.iconSizes.small
                 height: width
                 color: Kirigami.Theme.textColor
                 isMask: true

@@ -38,6 +38,7 @@ Kirigami.ScrollablePage {
     Component {
         id: sectionDelegate
         Kirigami.AbstractListItem {
+            highlighted: false
             GridLayout {
                 columns: 2
 
@@ -98,7 +99,7 @@ Kirigami.ScrollablePage {
                             }
                         }
                         color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
-                        width: Kirigami.Units.iconSizes.medium
+                        width: Kirigami.Units.iconSizes.smallMedium
                         height: width
                         isMask: true
                     }

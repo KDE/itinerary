@@ -39,6 +39,7 @@ Kirigami.ScrollablePage {
     Component {
         id: departureDelegate
         Kirigami.AbstractListItem {
+            highlighted: false
             GridLayout {
                 columns: 2
 
@@ -88,7 +89,7 @@ Kirigami.ScrollablePage {
                         anchors.centerIn: parent
                         source: PublicTransport.lineModeIcon(departure.route.line.mode);
                         color: departure.route.line.hasTextColor ? departure.route.line.textColor : Kirigami.Theme.textColor
-                        width: Kirigami.Units.iconSizes.medium
+                        width: Kirigami.Units.iconSizes.smallMedium
                         height: width
                         isMask: true
                     }

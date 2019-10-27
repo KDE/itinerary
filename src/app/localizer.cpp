@@ -59,7 +59,7 @@ QString Localizer::formatAddress(const QVariant &obj) const
     address.setRegion(a.addressRegion());
     address.setCountry(KContacts::Address::ISOtoCountry(a.addressCountry()));
 
-    return address.formattedAddress();
+    return address.formattedAddress().replace(QLatin1String("\n\n"), QLatin1String("\n"));
 }
 
 static bool needsTimeZone(const QDateTime &dt)

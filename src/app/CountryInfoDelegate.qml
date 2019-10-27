@@ -44,7 +44,7 @@ Kirigami.AbstractCard {
 
             Kirigami.Icon {
                 source: "documentinfo"
-                width: Kirigami.Units.iconSizes.smallMedium
+                width: Kirigami.Units.iconSizes.small
                 height: width
                 color: Kirigami.Theme.neutralTextColor
                 isMask: true

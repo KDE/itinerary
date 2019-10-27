@@ -37,12 +37,13 @@ Kirigami.Page {
         id: weatherForecastDelegate
         Kirigami.AbstractListItem {
             readonly property var fc: model.weatherForecast
+            highlighted: false
             Row {
                 spacing: Kirigami.Units.largeSpacing
                 Kirigami.Icon {
                     source: fc.symbolIconName
                     isMask: false
-                    width: Kirigami.Units.iconSizes.smallMedium
+                    width: Kirigami.Units.iconSizes.small
                     height: width
                 }
 
