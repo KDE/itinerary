@@ -71,8 +71,8 @@ Kirigami.ScrollablePage {
         }
         QQC2.Switch {
             Kirigami.FormData.label: i18n("Use insecure services")
-            checked: _settings.allowInsecureServices
-            onToggled: _settings.allowInsecureServices = checked
+            checked: _liveDataManager.publicTransportManager.allowInsecureBackends
+            onToggled: _liveDataManager.publicTransportManager.allowInsecureBackends = checked
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true

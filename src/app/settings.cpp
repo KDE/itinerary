@@ -34,7 +34,6 @@ Settings::Settings(QObject *parent)
     m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
 
     m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
-    m_allowInsecureServices = s.value(QLatin1String("AllowInsecureServices"), false).toBool();
 }
 
 Settings::~Settings() = default;
@@ -94,24 +93,4 @@ void Settings::setQueryLiveData(bool queryLiveData)
     s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
 
     emit queryLiveDataChanged(queryLiveData);
-}
-
-
-bool Settings::allowInsecureServices() const
-{
-    return m_allowInsecureServices;
-}
-
-void Settings::setAllowInsecureServices(bool allowInsecure)
-{
-   if (m_allowInsecureServices == allowInsecure) {
-        return;
-    }
-
-    m_allowInsecureServices = allowInsecure;
-    QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("AllowInsecureServices"), allowInsecure);
-
-    emit allowInsecureServicesChanged(allowInsecure);
 }

@@ -46,6 +46,7 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QSettings>
 #include <QStandardPaths>
 #include <QVector>
 
@@ -53,8 +54,21 @@ using namespace KItinerary;
 
 LiveDataManager::LiveDataManager(QObject *parent)
     : QObject(parent)
-
+    , m_ptMgr(new KPublicTransport::Manager(this))
 {
+    QSettings settings;
+    settings.beginGroup(QLatin1String("KPublicTransport"));
+    m_ptMgr->setAllowInsecureBackends(settings.value(QLatin1String("AllowInsecureBackends"), false).toBool());
+    m_ptMgr->setDisabledBackends(settings.value(QLatin1String("DisabledBackends"), QStringList()).toStringList());
+    m_ptMgr->setEnabledBackends(settings.value(QLatin1String("EnabledBackends"), QStringList()).toStringList());
+    connect(m_ptMgr, &KPublicTransport::Manager::configurationChanged, this, [this]() {
+        QSettings settings;
+        settings.beginGroup(QLatin1String("KPublicTransport"));
+        settings.setValue(QLatin1String("AllowInsecureBackends"), m_ptMgr->allowInsecureBackends());
+        settings.setValue(QLatin1String("DisabledBackends"), m_ptMgr->disabledBackends());
+        settings.setValue(QLatin1String("EnabledBackends"), m_ptMgr->enabledBackends());
+    });
+
     m_pollTimer.setSingleShot(true);
     connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
 
@@ -87,11 +101,6 @@ void LiveDataManager::setPkPassManager(PkPassManager *pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
     connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &LiveDataManager::pkPassUpdated);
-}
-
-void LiveDataManager::setPublicTransportManager(KPublicTransport::Manager *mgr)
-{
-    m_ptMgr = mgr;
 }
 
 void LiveDataManager::setPollingEnabled(bool pollingEnabled)

@@ -50,7 +50,6 @@ public:
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
-    void setPublicTransportManager(KPublicTransport::Manager *mgr);
 
     void setPollingEnabled(bool pollingEnabled);
 

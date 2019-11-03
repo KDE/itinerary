@@ -47,8 +47,6 @@
 #include <KItinerary/CountryDb>
 #include <KItinerary/Ticket>
 
-#include <KPublicTransport/Manager>
-
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
 #include <KPkPass/BoardingPass>
@@ -146,12 +144,7 @@ int main(int argc, char **argv)
     BrightnessManager brightnessManager;
     LockManager lockManager;
 
-    KPublicTransport::Manager ptMgr;
-    ptMgr.setAllowInsecureBackends(settings.allowInsecureServices());
-    QObject::connect(&settings, &Settings::allowInsecureServicesChanged, [&ptMgr](bool insec) { ptMgr.setAllowInsecureBackends(insec); });
-
     LiveDataManager liveDataMgr;
-    liveDataMgr.setPublicTransportManager(&ptMgr);
     liveDataMgr.setPkPassManager(&passMgr);
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
