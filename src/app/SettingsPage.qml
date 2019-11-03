@@ -26,6 +26,13 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Settings")
 
+    Component {
+        id: ptBackendPage
+        PublicTransportBackendPage {
+            publicTransportManager: _liveDataManager.publicTransportManager
+        }
+    }
+
     CountryModel {
         id: countryModel
     }
@@ -73,6 +80,12 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
             text: i18n("Enabling this will also use online services that do not offer transport encryption. This is not recommended, but might be unavoidable when relying on live data from certain providers.")
             color: Kirigami.Theme.negativeTextColor
+        }
+        QQC2.Button {
+            Kirigami.FormData.isSection: true
+            text: i18n("Public Transport Information Sources...")
+            icon.name: "settings-configure"
+            onClicked: applicationWindow().pageStack.push(ptBackendPage)
         }
 
         QQC2.Switch {

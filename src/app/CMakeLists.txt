@@ -94,6 +94,8 @@ if (ANDROID)
 
     kirigami_package_breeze_icons(ICONS
         application-pdf
+        channel-insecure-symbolic
+        channel-secure-symbolic
         checkmark
         clock
         dialog-cancel
