@@ -33,6 +33,14 @@ App.DetailsPage {
         }
     }
 
+    function airportDisplayString(airport) {
+        if (airport.name && airport.iataCode) {
+            return airport.name + " (" + airport.iataCode + ")";
+        } else {
+            return airport.name || airport.iataCode || "";
+        }
+    }
+
     ColumnLayout {
         width: parent.width
 
@@ -98,8 +106,8 @@ App.DetailsPage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Airport:")
-                text: reservationFor.departureAirport.name + " (" + reservationFor.departureAirport.iataCode + ")"
-                visible: reservationFor.departureAirport.name.length > 0
+                text: airportDisplayString(reservationFor.departureAirport)
+                visible: text.length > 0
             }
             App.PlaceDelegate {
                 place: reservationFor.departureAirport
@@ -130,8 +138,8 @@ App.DetailsPage {
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Airport:")
-                text: reservationFor.arrivalAirport.name + " (" + reservationFor.arrivalAirport.iataCode + ")"
-                visible: reservationFor.arrivalAirport.name.length > 0
+                text: airportDisplayString(reservationFor.arrivalAirport)
+                visible: text.length > 0
             }
             App.PlaceDelegate {
                 place: reservationFor.arrivalAirport
