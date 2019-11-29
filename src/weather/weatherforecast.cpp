@@ -122,14 +122,14 @@ static const icon_map_t icon_map[] = {
     { WeatherForecast::Clear | WeatherForecast::LightRain, "weather-showers-scattered-day", "weather-showers-scattered-night" },
     { WeatherForecast::LightRain, "weather-showers-scattered", "weather-showers-scattered" },
 
-//     { WeatherForecast::Clear | WeatherForecast::Clouds | WeatherForecast::Wind, "weather-clouds-wind", "weather-clouds-wind-night" },
+    { WeatherForecast::Clear | WeatherForecast::Clouds | WeatherForecast::Wind, "weather-clouds-wind", "weather-clouds-wind-night" },
     { WeatherForecast::Clear | WeatherForecast::Clouds, "weather-clouds", "weather-clouds-night" },
-//     { WeatherForecast::Clouds | WeatherForecast::Wind, "weather-many-clouds-wind", "weather-many-clouds-wind" },
+    { WeatherForecast::Clouds | WeatherForecast::Wind, "weather-many-clouds-wind", "weather-many-clouds-wind" },
     { WeatherForecast::Clouds, "weather-many-clouds", "weather-many-clouds" },
     { WeatherForecast::Fog, "weather-fog", "weather-fog" },
-//     { WeatherForecast::LightClouds | WeatherForecast::Wind, "weather-few-clouds-wind", "weather-few-clouds-wind-night" },
+    { WeatherForecast::LightClouds | WeatherForecast::Wind, "weather-few-clouds-wind", "weather-few-clouds-wind-night" },
     { WeatherForecast::LightClouds, "weather-few-clouds", "weather-few-clouds-night" },
-//     { WeatherForecast::Clear | WeatherForecast::Wind, "weather-clear-wind", "weather-clear-wind-night" },
+    { WeatherForecast::Clear | WeatherForecast::Wind, "weather-clear-wind", "weather-clear-wind-night" },
     { WeatherForecast::Clear, "weather-clear", "weather-clear-night" }
 };
 
