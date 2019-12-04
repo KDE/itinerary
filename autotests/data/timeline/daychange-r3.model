@@ -3,9 +3,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Left",
             "drivingSideDiffers": true,
             "isoCode": "GB",
-            "powerPlugCompatibility": 2,
+            "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type G"
         },
@@ -79,9 +80,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",
-            "powerPlugCompatibility": 2,
+            "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B"
         },

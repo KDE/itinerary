@@ -153,9 +153,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",
-            "powerPlugCompatibility": 1,
+            "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L"
         },
         "isToday": false,
@@ -331,9 +332,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",
-            "powerPlugCompatibility": 2,
+            "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B"
         },
@@ -656,9 +658,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "CH",
-            "powerPlugCompatibility": 1,
+            "powerPlugCompatibility": "PartiallyCompatible",
             "powerPlugTypes": "Schuko",
             "powerSocketTypes": "Type J"
         },

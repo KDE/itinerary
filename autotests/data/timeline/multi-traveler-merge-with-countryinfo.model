@@ -153,9 +153,10 @@
         "countryInformation": {
             "@context": "http://schema.org",
             "@type": "CountryInformation",
+            "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",
-            "powerPlugCompatibility": 1,
+            "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L"
         },
         "isToday": false,
