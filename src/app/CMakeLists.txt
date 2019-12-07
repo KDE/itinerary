@@ -13,6 +13,8 @@ set(itinerary_srcs
     pkpassimageprovider.cpp
     publictransport.cpp
     reservationmanager.cpp
+    statisticsmodel.cpp
+    statisticstimerangemodel.cpp
     timelinedelegatecontroller.cpp
     timelinemodel.cpp
     tripgroup.cpp
@@ -121,6 +123,7 @@ if (ANDROID)
         settings-configure
         view-calendar-day
         view-refresh
+        view-statistics
 
         weather-clear
         weather-clear-wind
@@ -143,7 +146,7 @@ if (ANDROID)
         weather-storm-day
         weather-storm-night
         weather-many-clouds
-#         weather-many-clouds-wind
+        weather-many-clouds-wind
         weather-fog
         weather-showers
         weather-showers-scattered

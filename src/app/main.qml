@@ -67,6 +67,11 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
+                text: i18n("Statistics")
+                iconName: "view-statistics"
+                onTriggered: pageStack.push(statisticsComponent)
+            },
+            Kirigami.Action {
                 id: settingsAction
                 text: i18n("Settings...")
                 iconName: "settings-configure"
@@ -130,5 +135,9 @@ Kirigami.ApplicationWindow {
                 value: !aboutPage.isCurrentPage
             }
         }
+    }
+    Component {
+        id: statisticsComponent
+        App.StatisticsPage {}
     }
 }

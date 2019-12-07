@@ -34,12 +34,14 @@
 #include "publictransport.h"
 #include "reservationmanager.h"
 #include "settings.h"
+#include "statisticsmodel.h"
+#include "statisticstimerangemodel.h"
 #include "tickettokenmodel.h"
+#include "timelinedelegatecontroller.h"
 #include "tripgroupinfoprovider.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
 #include "util.h"
-#include "timelinedelegatecontroller.h"
 #include "weatherforecastmodel.h"
 
 #include <weatherforecastmanager.h>
@@ -218,6 +220,9 @@ int main(int argc, char **argv)
         engine->setObjectOwnership(DocumentManager::instance(), QQmlEngine::CppOwnership);
         return DocumentManager::instance();
     });
+    qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
+    qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
+    qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
