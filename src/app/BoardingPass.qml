@@ -113,7 +113,7 @@ Item {
                             case KPkPass.BoardingPass.Air: return "qrc:///images/flight.svg"
                             case KPkPass.BoardingPass.Train: return "qrc:///images/train.svg"
                         }
-                        return "go-next";
+                        return "go-next-symbolic";
                     }
                     width: Kirigami.Units.iconSizes.smallMedium
                     height: width
