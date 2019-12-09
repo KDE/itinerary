@@ -75,6 +75,15 @@ void StatisticsModel::setTimeRange(const QDate &begin, const QDate &end)
     recompute();
 }
 
+static QString formatCo2(int amount)
+{
+    if (amount >= 10000) {
+        // no decimals for large values
+        return i18n("%1 kg", amount / 1000);
+    }
+    return ki18n("%1 kg").subs(amount / 1000.0, 0, 'g', 2).toString();
+}
+
 StatisticsItem StatisticsModel::totalCount() const
 {
     return StatisticsItem(i18n("Trips"), QString::number(m_statData[Total][TripCount]), trend(Total, TripCount));
@@ -92,7 +101,7 @@ StatisticsItem StatisticsModel::totalNights() const
 
 StatisticsItem StatisticsModel::totalCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), i18n("%1 kg", m_statData[Total][CO2] / 1000.0), trend(Total, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Total][CO2]), trend(Total, CO2));
 }
 
 StatisticsItem StatisticsModel::flightCount() const
@@ -107,7 +116,7 @@ StatisticsItem StatisticsModel::flightDistance() const
 
 StatisticsItem StatisticsModel::flightCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), i18n("%1 kg", m_statData[Flight][CO2] / 1000.0), trend(Flight, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Flight][CO2]), trend(Flight, CO2));
 }
 
 StatisticsItem StatisticsModel::trainCount() const
@@ -122,7 +131,7 @@ StatisticsItem StatisticsModel::trainDistance() const
 
 StatisticsItem StatisticsModel::trainCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), i18n("%1 kg", m_statData[Train][CO2] / 1000.0), trend(Train, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Train][CO2]), trend(Train, CO2));
 }
 
 StatisticsItem StatisticsModel::busCount() const
@@ -137,7 +146,7 @@ StatisticsItem StatisticsModel::busDistance() const
 
 StatisticsItem StatisticsModel::busCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), i18n("%1 kg", m_statData[Bus][CO2] / 1000.0), trend(Bus, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Bus][CO2]), trend(Bus, CO2));
 }
 
 StatisticsItem StatisticsModel::carCount() const
@@ -152,7 +161,7 @@ StatisticsItem StatisticsModel::carDistance() const
 
 StatisticsItem StatisticsModel::carCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), i18n("%1 kg", m_statData[Car][CO2] / 1000.0), trend(Car, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Car][CO2]), trend(Car, CO2));
 }
 
 StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVariant &res) const
