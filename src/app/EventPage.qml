@@ -58,6 +58,7 @@ App.DetailsPage {
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Entrance:")
                 text: Localizer.formatDateTime(reservationFor, "doorTime")
+                visible: reservationFor.doorTime > 0
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Start Time:")
@@ -66,6 +67,7 @@ App.DetailsPage {
             QQC2.Label {
                 Kirigami.FormData.label: i18n("End Time:")
                 text: Localizer.formatDateTime(reservationFor, "endDate")
+                visible: reservationFor.endDate > 0
             }
         }
     }
