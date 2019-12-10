@@ -59,14 +59,31 @@ void TicketTokenModel::setReservationIds(const QStringList& resIds)
     }
 
     beginResetModel();
+    m_personNames.clear();
+    m_personNames.reserve(m_resIds.size());
+    QHash<QString, int> m_personIdx;
+
     for (const auto &resId : resIds) {
         const auto v = m_resMgr->reservation(resId);
         if (!JsonLd::canConvert<Reservation>(v))
             continue;
         const auto res = JsonLd::convert<Reservation>(v);
         const auto ticket = res.reservedTicket().value<Ticket>();
-        if (!ticket.ticketToken().isEmpty() || !res.pkpassPassTypeIdentifier().isEmpty()) {
-            m_resIds.push_back(resId);
+        if (ticket.ticketToken().isEmpty() && res.pkpassPassTypeIdentifier().isEmpty()) {
+            continue;
+        }
+
+        m_resIds.push_back(resId);
+        const auto person = JsonLd::convert<Reservation>(res).underName().value<Person>();
+        if (!person.name().isEmpty()) {
+            m_personNames.push_back(person.name());
+        } else {
+            const auto idx = ++m_personIdx[res.reservedTicket().value<Ticket>().name()];
+            if (JsonLd::isA<EventReservation>(v)) {
+                m_personNames.push_back(i18n("Attendee %1", idx));
+            } else {
+                m_personNames.push_back(i18n("Traveler %1", idx));
+            }
         }
     }
     endResetModel();
@@ -102,18 +119,11 @@ QVariant TicketTokenModel::data(const QModelIndex& index, int role) const
     switch (role) {
         case Qt::DisplayRole:
         {
-            const auto person = JsonLd::convert<Reservation>(res).underName().value<Person>();
             const auto ticket = JsonLd::convert<Reservation>(res).reservedTicket().value<Ticket>();
-            if (!person.name().isEmpty()) {
-                if (!ticket.name().isEmpty()) {
-                    return i18n("%1 (%2)", person.name(), ticket.name());
-                }
-                return person.name();
-            }
             if (!ticket.name().isEmpty()) {
-                return i18n("Traveler %1 (%2)", QString::number(index.row() + 1), ticket.name());
+                return i18n("%1 (%2)", m_personNames.at(index.row()), ticket.name());
             }
-            return i18n("Traveler %1", index.row() + 1);
+            return m_personNames.at(index.row());
         }
         case ReservationRole:
             return res;

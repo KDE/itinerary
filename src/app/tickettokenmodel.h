@@ -54,6 +54,7 @@ private:
     ReservationManager *m_resMgr = nullptr;
     QStringList m_pendingResIds;
     QStringList m_resIds;
+    QStringList m_personNames;
 };
 
 #endif // TICKETTOKENMODEL_H
