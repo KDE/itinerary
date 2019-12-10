@@ -7,6 +7,7 @@
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
   <name xml:lang="es">KDE Itinerary</name>
+  <name xml:lang="et">KDE itineraar</name>
   <name xml:lang="fr">KDE Itinerary</name>
   <name xml:lang="gl">KDE Itinerary</name>
   <name xml:lang="id">KDE Itinerary</name>
@@ -24,6 +25,7 @@
   <summary xml:lang="ca">Assistent de viatges digital</summary>
   <summary xml:lang="ca-valencia">Assistent de viatges digital</summary>
   <summary xml:lang="es">Asistente digital para viajes</summary>
+  <summary xml:lang="et">Digitaalne reisimise abivahend</summary>
   <summary xml:lang="fr">Assistance de voyage numérique</summary>
   <summary xml:lang="gl">Asistente de viaxes dixital</summary>
   <summary xml:lang="id">Asisten travel digital</summary>
@@ -44,6 +46,7 @@
     <p xml:lang="ca">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
     <p xml:lang="ca-valencia">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
     <p xml:lang="es">Aplicación de gestión de itinerarios y de tarjetas de embarque.</p>
+    <p xml:lang="et">Reisikava ja piletite haldamise rakendus.</p>
     <p xml:lang="fr">Application de gestion des itinéraires et des cartes d'embarquement.</p>
     <p xml:lang="gl">Aplicación de xestión de itinerarios e pases de embarque.</p>
     <p xml:lang="id">Aplikasi pengelolaan rencana perjalanan dan boarding pass.</p>
@@ -62,6 +65,7 @@
     <p xml:lang="ca-valencia">Característiques:</p>
     <p xml:lang="cs">Vlastnosti:</p>
     <p xml:lang="es">Funcionalidades:</p>
+    <p xml:lang="et">Omadused:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
     <p xml:lang="id">Fitur:</p>
@@ -81,6 +85,7 @@
       <li xml:lang="ca">Itinerari de viatge unificat.</li>
       <li xml:lang="ca-valencia">Itinerari de viatge unificat.</li>
       <li xml:lang="es">Itinerario de viaje unificado.</li>
+      <li xml:lang="et">Ühtne reisikava.</li>
       <li xml:lang="fr">Itinéraire de voyage unifié.</li>
       <li xml:lang="gl">Itinerario de viaxe unificado.</li>
       <li xml:lang="id">Rencana perjalanan travel terpadu.</li>
@@ -98,6 +103,7 @@
       <li xml:lang="ca">Gestió dels bitllets d'embarcament.</li>
       <li xml:lang="ca-valencia">Gestió dels bitllets d'embarcament.</li>
       <li xml:lang="es">Gestión de tarjetas de embarque.</li>
+      <li xml:lang="et">Piletite haldus.</li>
       <li xml:lang="fr">Gestion des cartes d'embarquement.</li>
       <li xml:lang="gl">Xestión de pases de embarque.</li>
       <li xml:lang="id">Pengelolaan boarding pass.</li>
@@ -116,6 +122,7 @@
       <li xml:lang="ca-valencia">Previsió meteorològica.</li>
       <li xml:lang="cs">Předpověď počasí.</li>
       <li xml:lang="es">Previsión meteorológica.</li>
+      <li xml:lang="et">Ilmaennustus.</li>
       <li xml:lang="fr">Prévisions météorologiques.</li>
       <li xml:lang="gl">Prognóstico meteorolóxico.</li>
       <li xml:lang="id">Prakiraan cuaca.</li>
@@ -138,6 +145,7 @@
       <caption xml:lang="ca-valencia">Vista de la línia de temps.</caption>
       <caption xml:lang="cs">Pohled časové osy.</caption>
       <caption xml:lang="es">Visor cronológico.</caption>
+      <caption xml:lang="et">Ajatelje vaade.</caption>
       <caption xml:lang="fr">Vue chronologique.</caption>
       <caption xml:lang="gl">Vista da liña de tempo.</caption>
       <caption xml:lang="id">Tampilan linimasa.</caption>
