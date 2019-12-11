@@ -36,6 +36,8 @@ public:
 
     /** Add a category to the intent. */
     void addCategory(const QAndroidJniObject &category);
+    /** Add flags to this intent. */
+    void addFlags(jint flags);
     /** Returns the data of this intent. */
     QUrl getData() const;
     /** Sets the action of the intent. */
@@ -58,6 +60,9 @@ public:
 
     /** Category constant for openable content. */
     static QAndroidJniObject CATEGORY_OPENABLE();
+
+    /** Flag for granting read URI permissions on content providers. */
+    static jint FLAG_GRANT_READ_URI_PERMISSION();
 
 private:
     QAndroidJniObject m_intent;

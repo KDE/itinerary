@@ -42,6 +42,11 @@ void Intent::addCategory(const QAndroidJniObject &category)
     m_intent.callObjectMethod("addCategory", Jni::signature<android::content::Intent(java::lang::String)>(), category.object());
 }
 
+void Intent::addFlags(jint flags)
+{
+    m_intent.callObjectMethod("addFlags", Jni::signature<android::content::Intent(int)>(), flags);
+}
+
 QUrl Intent::getData() const
 {
     if (!m_intent.isValid()) {
@@ -95,4 +100,9 @@ QAndroidJniObject Intent::ACTION_VIEW()
 QAndroidJniObject Intent::CATEGORY_OPENABLE()
 {
     return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "CATEGORY_OPENABLE");
+}
+
+jint Intent::FLAG_GRANT_READ_URI_PERMISSION()
+{
+    return QAndroidJniObject::getStaticField<jint>(Jni::typeName<android::content::Intent>(), "FLAG_GRANT_READ_URI_PERMISSION");
 }

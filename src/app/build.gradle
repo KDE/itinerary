@@ -20,7 +20,7 @@ apply plugin: 'com.android.application'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'org.mnode.ical4j:ical4j:2.2.0'
-    implementation 'androidx.core:core:1.0.2'
+    implementation 'androidx.core:core:1.1.0'
 }
 
 android {

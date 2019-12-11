@@ -486,6 +486,7 @@ void ApplicationController::openDocument(const QUrl &url)
     Intent intent;
     intent.setData(uri);
     intent.setAction(Intent::ACTION_VIEW());
+    intent.addFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION());
     Activity::startActivity(intent, 0);
 #else
     QDesktopServices::openUrl(url);
