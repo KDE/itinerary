@@ -1,0 +1,272 @@
+/*
+    Copyright (C) 2019 Volker Krause <vkrause@kde.org>
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Library General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or (at your
+    option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library General Public
+    License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+#include "transfermanager.h"
+#include "logging.h"
+#include "reservationmanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
+
+#include <KItinerary/LocationUtil>
+#include <KItinerary/SortUtil>
+
+#include <QDir>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QStandardPaths>
+
+using namespace KItinerary;
+
+TransferManager::TransferManager(QObject *parent)
+    : QObject(parent)
+{
+}
+
+TransferManager::~TransferManager() = default;
+
+void TransferManager::setReservationManager(ReservationManager *resMgr)
+{
+    m_resMgr = resMgr;
+    connect(m_resMgr, &ReservationManager::batchAdded, this, qOverload<const QString&>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
+    connect(m_resMgr, &ReservationManager::batchRemoved, this, &TransferManager::reservationRemoved);
+}
+
+void TransferManager::setTripGroupManager(TripGroupManager* tgMgr)
+{
+    m_tgMgr = tgMgr;
+    connect(m_tgMgr, &TripGroupManager::tripGroupAdded, this, &TransferManager::tripGroupChanged);
+    connect(m_tgMgr, &TripGroupManager::tripGroupChanged, this, &TransferManager::tripGroupChanged);
+}
+
+Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment alignment) const
+{
+    const auto it = m_transfers[alignment].constFind(resId);
+    if (it != m_transfers[alignment].constEnd()) {
+        return it.value();
+    }
+
+    const auto t = readFromFile(resId, alignment);
+    m_transfers[alignment].insert(resId, t);
+    return t;
+}
+
+void TransferManager::checkReservation(const QString &resId)
+{
+    const auto res = m_resMgr->reservation(resId);
+
+    const auto now = currentDateTime();
+    if (SortUtil::endDateTime(res) < now) {
+        return;
+    }
+    checkReservation(resId, res, Transfer::After);
+    if (SortUtil::startDateTime(res) < now) {
+        return;
+    }
+    checkReservation(resId, res, Transfer::Before);
+}
+
+void TransferManager::checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment)
+{
+    auto t = transfer(resId, alignment);
+    if (t.state() == Transfer::Discarded) { // user already discarded this
+        return;
+    }
+
+    // in case this is new
+    t.setReservationId(resId);
+    t.setAlignment(alignment);
+
+    alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+}
+
+void TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer transfer)
+{
+    qDebug() << resId << res << transfer.state();
+    const auto isLocationChange = LocationUtil::isLocationChange(res);
+
+    // TODO pre-transfers should happen in the following cases:
+    // - res is a location change and we are currently at home (== first element in a trip group)
+    // - res is a location change and we are not at the departure location yet
+    // - res is an event and we are not at its location already
+
+    if (isLocationChange && isFirstInTripGroup(resId)) {
+        addOrUpdateTransfer(transfer);
+        return;
+    }
+
+    const auto prevResId = m_resMgr->previousBatch(resId);
+    if (prevResId.isEmpty()) {
+        removeTransfer(transfer);
+        return;
+    }
+    const auto prevRes = m_resMgr->reservation(prevResId);
+
+    // TODO
+
+    removeTransfer(transfer);
+}
+
+void TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer transfer)
+{
+    qDebug() << resId << res << transfer.state();
+    const auto isLocationChange = LocationUtil::isLocationChange(res);
+
+    // TODO post-transfer should happen in the following cases:
+    // - res is a location change and we are the last element in a trip group (ie. going home)
+    // - res is a location change and the following element is in a different location, or has a different departure location
+    // - res is an event and the following or enclosing element is a lodging element
+
+    if (isLocationChange && isLastInTripGroup(resId)) {
+        addOrUpdateTransfer(transfer);
+        return;
+    }
+
+    if (isLocationChange) {
+        const auto nextResId = m_resMgr->nextBatch(resId);
+        if (nextResId.isEmpty()) {
+            removeTransfer(transfer);
+            return;
+        }
+        const auto nextRes = m_resMgr->reservation(nextResId);
+        const auto curLoc = LocationUtil::arrivalLocation(res);
+        QVariant nextLoc;
+        if (LocationUtil::isLocationChange(nextRes)) {
+            nextLoc = LocationUtil::departureLocation(nextRes);
+        } else {
+            nextLoc = LocationUtil::location(nextRes);
+        }
+        if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
+            qDebug() << res << nextRes << LocationUtil::name(LocationUtil::arrivalLocation(res)) << LocationUtil::name(nextLoc);
+            addOrUpdateTransfer(transfer);
+            return;
+        }
+    }
+
+    // TODO
+
+    removeTransfer(transfer);
+}
+
+void TransferManager::reservationRemoved(const QString &resId)
+{
+    m_transfers[Transfer::Before].remove(resId);
+    m_transfers[Transfer::After].remove(resId);
+    removeFile(resId, Transfer::Before);
+    removeFile(resId, Transfer::After);
+    // TODO updates to adjacent transfers?
+    emit transferRemoved(resId, Transfer::Before);
+    emit transferRemoved(resId, Transfer::After);
+}
+
+void TransferManager::tripGroupChanged(const QString &tgId)
+{
+    const auto tg = m_tgMgr->tripGroup(tgId);
+    for (const auto &resId : tg.elements()) {
+        checkReservation(resId);
+    }
+}
+
+bool TransferManager::isFirstInTripGroup(const QString &resId) const
+{
+    const auto tgId = m_tgMgr->tripGroupForReservation(resId);
+    return tgId.elements().empty() ? false : tgId.elements().at(0) == resId;
+}
+
+bool TransferManager::isLastInTripGroup(const QString &resId) const
+{
+    const auto tgId = m_tgMgr->tripGroupForReservation(resId);
+    return tgId.elements().empty() ? false : tgId.elements().constLast() == resId;
+}
+
+void TransferManager::addOrUpdateTransfer(Transfer t)
+{
+    if (t.state() == Transfer::UndefinedState) { // newly added
+        t.setState(Transfer::Pending);
+        m_transfers[t.alignment()].insert(t.reservationId(), t);
+        writeToFile(t);
+        emit transferAdded(t);
+    } else { // update existing data
+        m_transfers[t.alignment()].insert(t.reservationId(), t);
+        writeToFile(t);
+        emit transferChanged(t);
+    }
+}
+
+void TransferManager::removeTransfer(const Transfer &t)
+{
+    if (t.state() == Transfer::UndefinedState) { // this was never added
+        return;
+    }
+    m_transfers[t.alignment()].remove(t.reservationId());
+    removeFile(t.reservationId(), t.alignment());
+    emit transferRemoved(t.reservationId(), t.alignment());
+}
+
+static QString transferBasePath()
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/transfers/");
+}
+
+Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment alignment) const
+{
+    const QString fileName = transferBasePath() + resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    QFile f(fileName);
+    if (!f.open(QFile::ReadOnly)) {
+        return {};
+    }
+    return Transfer::fromJson(QJsonDocument::fromJson(f.readAll()).object());
+}
+
+void TransferManager::writeToFile(const Transfer &transfer) const
+{
+    QDir().mkpath(transferBasePath());
+    const QString fileName = transferBasePath() + transfer.reservationId() + (transfer.alignment() == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    QFile f(fileName);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << "Failed to store transfer data" << f.fileName() << f.errorString();
+        return;
+    }
+    f.write(QJsonDocument(Transfer::toJson(transfer)).toJson());
+}
+
+void TransferManager::removeFile(const QString &resId, Transfer::Alignment alignment) const
+{
+    const QString fileName = transferBasePath() + resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    QFile::remove(fileName);
+}
+
+QDateTime TransferManager::currentDateTime() const
+{
+    if (Q_UNLIKELY(m_nowOverride.isValid())) {
+        return m_nowOverride;
+    }
+    return QDateTime::currentDateTime();
+}
+
+void TransferManager::overrideCurrentDateTime(const QDateTime &dt)
+{
+    m_nowOverride = dt;
+}
+
+void TransferManager::clear()
+{
+    QDir d(transferBasePath());
+    qCInfo(Log) << "deleting" << transferBasePath();
+    d.removeRecursively();
+}

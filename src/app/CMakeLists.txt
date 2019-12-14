@@ -21,6 +21,8 @@ set(itinerary_srcs
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
+    transfer.cpp
+    transfermanager.cpp
     util.cpp
 )
 ecm_qt_declare_logging_category(itinerary_srcs
