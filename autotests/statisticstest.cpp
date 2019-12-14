@@ -71,7 +71,7 @@ private Q_SLOTS:
         stats.setTimeRange({}, {});
         QVERIFY(!changeSpy.isEmpty());
         auto item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("12"));
+        QCOMPARE(item.m_value, QLatin1String("13"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("13"));
@@ -103,11 +103,15 @@ private Q_SLOTS:
         QCOMPARE(item.m_value, QLatin1String("4.5 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
 
+        item = stats.carCount();
+        QCOMPARE(item.m_value, QLatin1String("1"));
+        QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+
         changeSpy.clear();
         stats.setTimeRange({2017, 9, 1}, {2018, 1, 1});
         QVERIFY(!changeSpy.isEmpty());
         item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("7"));
+        QCOMPARE(item.m_value, QLatin1String("8"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("5"));

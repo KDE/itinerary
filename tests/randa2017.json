@@ -169,8 +169,17 @@
         "@type": "TaxiReservation",
         "partySize": 1,
         "pickupLocation": {
-            "@type": "TrainStation",
-            "name": "Randa"
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CH"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 46.09989929199219,
+                "longitude": 7.781469821929932
+            },
+            "name": "Randa Bahnhof"
         },
         "pickupTime": "2017-09-10T14:55:00+02:00",
         "reservationFor": {
@@ -237,6 +246,11 @@
                     "@type": "PostalAddress",
                     "addressCountry": "CH"
                 },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.02428,
+                    "longitude": 7.74866
+                },
                 "name": "Zermatt"
             },
             "arrivalTime": "2017-09-13T14:20:00",
@@ -267,9 +281,9 @@
                 "addressLocality": "Zermatt"
             },
             "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 46.01505,
-                    "longitude": 7.74224
+                "@type": "GeoCoordinates",
+                "latitude": 46.01505,
+                "longitude": 7.74224
             }
         }
     },

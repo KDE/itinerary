@@ -242,7 +242,24 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TaxiReservation",
-                "pickupTime": "2017-09-10T14:55:00+02:00"
+                "pickupLocation": {
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressCountry": "CH"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 46.09989929199219,
+                        "longitude": 7.781469821929932
+                    },
+                    "name": "Randa Bahnhof"
+                },
+                "pickupTime": {
+                    "@type": "QDateTime",
+                    "@value": "2017-09-10T14:55:00+02:00",
+                    "timezone": "Europe/Zurich"
+                }
             }
         ],
         "sectionHeader": "Sunday, 10 Sep 2017",
@@ -334,6 +351,11 @@
                         "address": {
                             "@type": "PostalAddress",
                             "addressCountry": "CH"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.0242805480957,
+                            "longitude": 7.748660087585449
                         },
                         "name": "Zermatt"
                     },
