@@ -37,6 +37,8 @@ Kirigami.ScrollablePage {
         var req = journeyModel.request;
         req.from = transfer.from;
         req.to = transfer.to;
+        req.dateTime = transfer.anchorTime; // TODO: add a reasonable time gap, take max(req.dateTime, now)
+        req.dateTimeMode = transfer.alignment == Transfer.Before ? JourneyRequest.Arrival : JourneyRequest.Departure;
         journeyModel.request = req;
     }
 
