@@ -68,7 +68,7 @@ private Q_SLOTS:
         QCOMPARE(controller.effectiveEndTime(), QDateTime());
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
-        QVERIFY(controller.journeyRequest().isEmpty());
+        QVERIFY(!controller.journeyRequest().isValid());
 
         controller.setBatchId(QStringLiteral("foo"));
         QCOMPARE(controller.isCurrent(), false);
@@ -174,20 +174,20 @@ private Q_SLOTS:
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
         controller.setBatchId(mgr.batches().at(0)); // flight
-        QVERIFY(controller.journeyRequest().isEmpty());
+        QVERIFY(!controller.journeyRequest().isValid());
 
         controller.setBatchId(mgr.batches().at(1)); // first train segment
         QCOMPARE(controller.isLocationChange(), true);
         QCOMPARE(controller.isPublicTransport(), true);
 
         auto jnyReq = controller.journeyRequest();
-        QCOMPARE(jnyReq.isEmpty(), false);
+        QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
         QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
 
         controller.setBatchId(mgr.batches().at(2)); // second train segment
         jnyReq = controller.journeyRequest();
-        QCOMPARE(jnyReq.isEmpty(), false);
+        QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
         QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
     }
