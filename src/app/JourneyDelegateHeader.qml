@@ -42,12 +42,18 @@ Rectangle {
         QQC2.Label {
             text: Localizer.formatTime(journey, "scheduledDepartureTime")
             color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
+        }
+        QQC2.Label {
+            text: (journey.departureDelay >= 0 ? "+" : "") + journey.departureDelay;
+            color: journey.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
+            visible: journey.hasExpectedDepartureTime && modelData.disruption != Disruption.NoService
         }
 
         QQC2.Label {
             text: Localizer.formatDuration(journey.duration)
             color: Kirigami.Theme.textColor
+            Layout.fillWidth: true
+            horizontalAlignment: Text.AlignRight
         }
     }
 }
