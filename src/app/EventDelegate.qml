@@ -28,7 +28,7 @@ App.TimelineDelegate {
     headerIconSource: "meeting-attending"
     headerItem: RowLayout {
         QQC2.Label {
-            text: root.rangeType == TimelineModel.RangeEnd ?
+            text: root.rangeType == TimelineElement.RangeEnd ?
                 i18n("End: %1", reservationFor.name) : reservationFor.name
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
@@ -36,7 +36,7 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: {
-                if (root.rangeType == TimelineModel.RangeEnd)
+                if (root.rangeType == TimelineElement.RangeEnd)
                     return Localizer.formatTime(reservationFor, "endDate");
                 if (reservationFor.doorTime > 0)
                     return Localizer.formatTime(reservationFor, "doorTime");
@@ -56,17 +56,17 @@ App.TimelineDelegate {
         App.PlaceDelegate {
             place: reservationFor.location
             controller: root.controller
-            isRangeBegin: root.rangeType == TimelineModel.RangeBegin
-            isRangeEnd: root.rangeType == TimelineModel.RangeEnd
+            isRangeBegin: root.rangeType == TimelineElement.RangeBegin
+            isRangeEnd: root.rangeType == TimelineElement.RangeEnd
             Layout.fillWidth: true
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
-            visible: root.rangeType != TimelineModel.RangeEnd && reservationFor.doorTime > 0
+            visible: root.rangeType != TimelineElement.RangeEnd && reservationFor.doorTime > 0
         }
         QQC2.Label {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
-            visible: root.rangeType != TimelineModel.RangeEnd
+            visible: root.rangeType != TimelineElement.RangeEnd
         }
     }
 

@@ -140,18 +140,18 @@ Kirigami.ScrollablePage {
                 if (!modelData)
                     return;
                 switch (modelData.type) {
-                    case TimelineModel.Flight: return flightDelegate;
-                    case TimelineModel.Hotel: return hotelDelegate;
-                    case TimelineModel.TrainTrip: return trainDelegate;
-                    case TimelineModel.BusTrip: return busDelegate;
-                    case TimelineModel.Restaurant: return restaurantDelegate;
-                    case TimelineModel.TouristAttraction: return touristAttractionDelegate;
-                    case TimelineModel.Event: return eventDelegate;
-                    case TimelineModel.CarRental: return carRentalDelegate;
-                    case TimelineModel.TodayMarker: return todayDelegate;
-                    case TimelineModel.CountryInfo: return countryInfoDelegate;
-                    case TimelineModel.WeatherForecast: return weatherForecastDelegate;
-                    case TimelineModel.TripGroup: return tripGrooupDelegate;
+                    case TimelineElement.Flight: return flightDelegate;
+                    case TimelineElement.Hotel: return hotelDelegate;
+                    case TimelineElement.TrainTrip: return trainDelegate;
+                    case TimelineElement.BusTrip: return busDelegate;
+                    case TimelineElement.Restaurant: return restaurantDelegate;
+                    case TimelineElement.TouristAttraction: return touristAttractionDelegate;
+                    case TimelineElement.Event: return eventDelegate;
+                    case TimelineElement.CarRental: return carRentalDelegate;
+                    case TimelineElement.TodayMarker: return todayDelegate;
+                    case TimelineElement.CountryInfo: return countryInfoDelegate;
+                    case TimelineElement.WeatherForecast: return weatherForecastDelegate;
+                    case TimelineElement.TripGroup: return tripGrooupDelegate;
                 }
             }
         }

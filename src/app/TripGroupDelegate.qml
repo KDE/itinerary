@@ -31,7 +31,7 @@ Kirigami.AbstractCard {
 
     id: root
     showClickFeedback: true
-    topPadding: rangeType == TimelineModel.RangeEnd ? 0 : Kirigami.Units.largeSpacing
+    topPadding: rangeType == TimelineElement.RangeEnd ? 0 : Kirigami.Units.largeSpacing
 
     header: Rectangle {
         id: headerBackground
@@ -42,7 +42,7 @@ Kirigami.AbstractCard {
         anchors.leftMargin: -root.leftPadding
         anchors.topMargin: -root.topPadding
         anchors.rightMargin: -root.rightPadding
-        anchors.bottomMargin: root.rangeType == TimelineModel.RangeEnd ? -root.bottomPadding : 0
+        anchors.bottomMargin: root.rangeType == TimelineElement.RangeEnd ? -root.bottomPadding : 0
 
         RowLayout {
             id: headerLayout
@@ -51,9 +51,9 @@ Kirigami.AbstractCard {
 
             Kirigami.Icon {
                 source: switch (rangeType) {
-                    case TimelineModel.SelfContained: return "go-next-symbolic";
-                    case TimelineModel.RangeBegin: return "go-down-symbolic";
-                    case TimelineModel.RangeEnd: return "go-up-symbolic";
+                    case TimelineElement.SelfContained: return "go-next-symbolic";
+                    case TimelineElement.RangeBegin: return "go-down-symbolic";
+                    case TimelineElement.RangeEnd: return "go-up-symbolic";
                 }
                 width: Kirigami.Units.iconSizes.small
                 height: width
@@ -61,7 +61,7 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
-                text: root.rangeType == TimelineModel.RangeEnd ? i18n("End: %1", tripGroup.name) : i18n("Trip: %1", tripGroup.name)
+                text: root.rangeType == TimelineElement.RangeEnd ? i18n("End: %1", tripGroup.name) : i18n("Trip: %1", tripGroup.name)
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
             }
@@ -70,7 +70,7 @@ Kirigami.AbstractCard {
 
     contentItem: ColumnLayout {
         id: contentLayout
-        visible: root.rangeType != TimelineModel.RangeEnd
+        visible: root.rangeType != TimelineElement.RangeEnd
 
         QQC2.Label {
             text: i18np("Date: %2 (one day)", "Date: %2 (%1 days)",
@@ -118,7 +118,7 @@ Kirigami.AbstractCard {
     }
 
     onClicked: {
-        if (rangeType == TimelineModel.SelfContained)
+        if (rangeType == TimelineElement.SelfContained)
             _timelineModel.expand(tripGroupId);
         else
             _timelineModel.collapse(tripGroupId);

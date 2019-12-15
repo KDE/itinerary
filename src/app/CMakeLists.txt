@@ -16,6 +16,7 @@ set(itinerary_srcs
     statisticsmodel.cpp
     statisticstimerangemodel.cpp
     timelinedelegatecontroller.cpp
+    timelineelement.cpp
     timelinemodel.cpp
     tripgroup.cpp
     tripgroupinfoprovider.cpp

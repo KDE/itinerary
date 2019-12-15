@@ -50,10 +50,10 @@ QVariant TripGroupProxyModel::data(const QModelIndex &index, int role) const
         const auto srcIdx = mapToSource(index);
         const auto elementType = srcIdx.data(TimelineModel::ElementTypeRole).toInt();
         const auto rangeType = srcIdx.data(TimelineModel::ElementRangeRole).toInt();
-        if (elementType == TimelineModel::TripGroup && rangeType == TimelineModel::RangeBegin) {
+        if (elementType == TimelineElement::TripGroup && rangeType == TimelineElement::RangeBegin) {
             const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();
             if (isCollapsed(groupId)) {
-                return TimelineModel::SelfContained;
+                return TimelineElement::SelfContained;
             }
         }
     }
@@ -67,11 +67,11 @@ bool TripGroupProxyModel::filterAcceptsRow(int source_row, const QModelIndex &so
         const auto srcIdx = m_sourceModel->index(i, 0);
         const auto elementType = srcIdx.data(TimelineModel::ElementTypeRole).toInt();
         const auto rangeType = srcIdx.data(TimelineModel::ElementRangeRole).toInt();
-        if (elementType == TimelineModel::TripGroup && rangeType == TimelineModel::RangeBegin) {
+        if (elementType == TimelineElement::TripGroup && rangeType == TimelineElement::RangeBegin) {
             // either this is our group's start, or a group after us
             return true;
         }
-        if (elementType != TimelineModel::TripGroup) {
+        if (elementType != TimelineElement::TripGroup) {
             continue;
         }
         const auto groupId = srcIdx.data(TimelineModel::TripGroupIdRole).toString();

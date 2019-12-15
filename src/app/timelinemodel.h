@@ -18,6 +18,8 @@
 #ifndef TIMELINEMODEL_H
 #define TIMELINEMODEL_H
 
+#include "timelineelement.h"
+
 #include <QAbstractListModel>
 #include <QDateTime>
 #include <QTimer>
@@ -50,32 +52,6 @@ public:
         TripGroupRole
     };
 
-    // Note: the order in here defines the priority of element if they occur at the same time
-    enum ElementType {
-        Undefined,
-        TodayMarker,
-        TripGroup,
-        WeatherForecast,
-        CountryInfo,
-        Flight,
-        TrainTrip,
-        CarRental,
-        BusTrip,
-        Restaurant,
-        TouristAttraction,
-        Event,
-        Hotel
-    };
-    Q_ENUM(ElementType)
-
-    // indicates whether an element is self-contained or the beginning/end of a longer timespan/range
-    enum RangeType {
-        SelfContained,
-        RangeBegin,
-        RangeEnd
-    };
-    Q_ENUM(RangeType)
-
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel() override;
 
@@ -100,23 +76,10 @@ Q_SIGNALS:
     void todayRowChanged();
 
 private:
-    struct Element {
-        explicit Element(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
-        explicit Element(const QString &resId, const QVariant &res, RangeType rt);
-
-        QString batchId; // reservation batch id
-        QVariant content; // non-reservation content
-        QDateTime dt; // relevant date/time
-        ElementType elementType;
-        RangeType rangeType = SelfContained;
-    };
-
-    static bool elementLessThan(const Element &lhs, const Element &rhs);
-
     void batchAdded(const QString &resId);
-    void insertElement(Element &&elem);
+    void insertElement(TimelineElement &&elem);
     void batchChanged(const QString &resId);
-    void updateElement(const QString &resId, const QVariant &res, RangeType rangeType);
+    void updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType);
     void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &resId);
 
@@ -127,13 +90,13 @@ private:
     void dayChanged();
     void updateTodayMarker();
     void updateInformationElements();
-    std::vector<Element>::iterator erasePreviousCountyInfo(std::vector<Element>::iterator it);
+    std::vector<TimelineElement>::iterator erasePreviousCountyInfo(std::vector<TimelineElement>::iterator it);
     void updateWeatherElements();
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     TripGroupManager *m_tripGroupManager = nullptr;
-    std::vector<Element> m_elements;
+    std::vector<TimelineElement> m_elements;
     QString m_homeCountry;
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;

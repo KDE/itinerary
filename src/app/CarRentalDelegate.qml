@@ -28,7 +28,7 @@ App.TimelineDelegate {
     headerIconSource: "qrc:///images/car.svg"
     headerItem: RowLayout {
         QQC2.Label {
-            text: root.rangeType == TimelineModel.RangeEnd ?
+            text: root.rangeType == TimelineElement.RangeEnd ?
                 i18n("Rental Car Drop-off") :
                 i18n("Rental Car Pick-up")
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
@@ -36,7 +36,7 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: root.rangeType ==  TimelineModel.RangeEnd ?
+            text: root.rangeType ==  TimelineElement.RangeEnd ?
                 Localizer.formatTime(reservation, "dropoffTime") :
                 Localizer.formatTime(reservation, "pickupTime")
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
@@ -49,28 +49,28 @@ App.TimelineDelegate {
 
         QQC2.Label {
             text: reservation.pickupLocation.name
-            visible: root.rangeType != TimelineModel.RangeEnd
+            visible: root.rangeType != TimelineElement.RangeEnd
         }
         App.PlaceDelegate {
             place: reservation.pickupLocation
             controller: root.controller
             isRangeBegin: true
             Layout.fillWidth: true
-            visible: root.rangeType != TimelineModel.RangeEnd
+            visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
             text: i18n("Drop-off: %1", Localizer.formatDateTime(reservation, "dropoffTime"))
-            visible: root.rangeType != TimelineModel.RangeEnd
+            visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
             text: reservation.dropoffLocation.name
-            visible: root.rangeType != TimelineModel.RangeBegin
+            visible: root.rangeType != TimelineElement.RangeBegin
         }
         App.PlaceDelegate {
             place: reservation.dropoffLocation
             isRangeEnd: true
             Layout.fillWidth: true
-            visible: root.rangeType != TimelineModel.RangeBegin
+            visible: root.rangeType != TimelineElement.RangeBegin
             controller: root.controller
         }
     }

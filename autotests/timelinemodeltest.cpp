@@ -100,14 +100,14 @@ private Q_SLOTS:
         QVERIFY(rmSpy.isValid());
 
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
         QVERIFY(updateSpy.isEmpty());
         QCOMPARE(model.rowCount(), 2);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
         mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
@@ -142,7 +142,7 @@ private Q_SLOTS:
         QVERIFY(rmSpy.isValid());
 
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
@@ -151,11 +151,11 @@ private Q_SLOTS:
         QCOMPARE(insertSpy.at(1).at(2).toInt(), 1);
         QVERIFY(updateSpy.isEmpty());
         QCOMPARE(model.rowCount(), 4);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Hotel);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementRangeRole), TimelineModel::RangeBegin);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Hotel);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineModel::RangeEnd);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Hotel);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeBegin);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Hotel);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeEnd);
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
@@ -174,7 +174,7 @@ private Q_SLOTS:
         resMgr.removeReservation(resId);
         QCOMPARE(rmSpy.size(), 4);
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
     }
 
     void testCountryInfos()
@@ -190,39 +190,39 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
 
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
         auto countryInfo = model.index(0, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
         QCOMPARE(countryInfo.drivingSideDiffers(), true);
         QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
         countryInfo = model.index(2, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
         QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
         auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 3);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::CountryInfo);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the US flight should also remove the US country info
         resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
     }
 
     void testWeatherElements()
@@ -256,15 +256,15 @@ private Q_SLOTS:
         resMgr.addReservation(res);
 
         QCOMPARE(model.rowCount(), 11); // 1x flight, 1x today, 9x weather
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), QDate::currentDate());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
-        QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), QDate::currentDate().addDays(8));
@@ -280,26 +280,26 @@ private Q_SLOTS:
         resMgr.addReservation(res);
 
         QCOMPARE(model.rowCount(), 13); // 2x flight, 1x today, 10x weather
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), QDate::currentDate());
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(0, 0)));
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         fc = model.index(5, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
         QCOMPARE(fc.dateTime(), QDateTime(QDate::currentDate().addDays(1), QTime(14, 0)));
-        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineModel::WeatherForecast);
+        QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
         fc = model.index(6, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
@@ -398,9 +398,9 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
         QCOMPARE(insertSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
@@ -408,9 +408,9 @@ private Q_SLOTS:
         model.setReservationManager(nullptr);
         model.setReservationManager(&resMgr);
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineModel::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineModel::TodayMarker);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 

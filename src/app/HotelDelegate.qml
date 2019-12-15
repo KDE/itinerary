@@ -27,7 +27,7 @@ App.TimelineDelegate {
 
     headerIconSource: "go-home"
     headerItem: QQC2.Label {
-        text: root.rangeType == TimelineModel.RangeEnd ?
+        text: root.rangeType == TimelineElement.RangeEnd ?
             i18n("Check-out %1", reservationFor.name) : reservationFor.name
         color: Kirigami.Theme.textColor
         font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
@@ -41,16 +41,16 @@ App.TimelineDelegate {
             place: reservationFor
             controller: root.controller
             Layout.fillWidth: true
-            isRangeBegin: root.rangeType == TimelineModel.RangeBegin
-            isRangeEnd: root.rangeType == TimelineModel.RangeEnd
+            isRangeBegin: root.rangeType == TimelineElement.RangeBegin
+            isRangeEnd: root.rangeType == TimelineElement.RangeEnd
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))
             color: Kirigami.Theme.textColor
-            visible: root.rangeType == TimelineModel.RangeBegin
+            visible: root.rangeType == TimelineElement.RangeBegin
         }
         QQC2.Label {
-            text: root.rangeType == TimelineModel.RangeBegin ?
+            text: root.rangeType == TimelineElement.RangeBegin ?
                 i18n("Check-out time: %1", Localizer.formatDateTime(reservation, "checkoutTime")) :
                 i18n("Check-out time: %1", Localizer.formatTime(reservation, "checkoutTime"))
             color: Kirigami.Theme.textColor
