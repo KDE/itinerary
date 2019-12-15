@@ -48,32 +48,8 @@ Kirigami.ScrollablePage {
             id: top
             property var journey: model.journey
 
-            header: Rectangle {
-                id: headerBackground
-                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-                Kirigami.Theme.inherit: false
-                color: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
-                implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-                anchors.leftMargin: -root.leftPadding
-                anchors.topMargin: -root.topPadding
-                anchors.rightMargin: -root.rightPadding
-
-                RowLayout {
-                    id: headerLayout
-                    anchors.fill: parent
-                    anchors.margins: Kirigami.Units.largeSpacing
-
-                    QQC2.Label {
-                        text: Localizer.formatTime(journey, "scheduledDepartureTime")
-                        color: Kirigami.Theme.textColor
-                        Layout.fillWidth: true
-                    }
-
-                    QQC2.Label {
-                        text: Localizer.formatDuration(journey.duration)
-                        color: Kirigami.Theme.textColor
-                    }
-                }
+            header: JourneyDelegateHeader {
+                journey: top.journey
             }
 
             contentItem: ColumnLayout {
@@ -85,6 +61,7 @@ Kirigami.ScrollablePage {
                     boundsBehavior: Flickable.StopAtBounds
                 }
                 App.JourneySummaryDelegate {
+                    journey: top.journey
                     visible: journeyView.currentIndex != index
                     Layout.fillWidth: true
                 }

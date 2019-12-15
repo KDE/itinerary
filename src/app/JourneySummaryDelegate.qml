@@ -24,6 +24,8 @@ import org.kde.itinerary 1.0
 import "." as App
 
 RowLayout {
+    property var journey
+
     Repeater {
         model: journey.sections
         delegate: Kirigami.Icon {
