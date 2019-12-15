@@ -23,6 +23,7 @@
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTimeZone>
 
 class TransferTest : public QObject
 {
@@ -76,6 +77,24 @@ private Q_SLOTS:
 //         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
 
         QCOMPARE(addSpy.size(), 3); // to/from home, and one inbetween
+
+        auto batchId = resMgr.batches().at(0);
+        auto transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.alignment(), Transfer::Before);
+        QCOMPARE(transfer.reservationId(), batchId);
+
+        transfer = mgr.transfer(batchId, Transfer::After);
+        QCOMPARE(transfer.state(), Transfer::UndefinedState);
+
+        // verify persistence
+        TransferManager mgr2;
+        transfer = mgr2.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.alignment(), Transfer::Before);
+        QCOMPARE(transfer.reservationId(), batchId);
     }
 };
 

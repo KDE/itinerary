@@ -98,6 +98,7 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
 void TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer transfer)
 {
     qDebug() << resId << res << transfer.state();
+    transfer.setAnchorTime(SortUtil::startDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
 
     // TODO pre-transfers should happen in the following cases:
@@ -125,6 +126,7 @@ void TransferManager::checkTransferBefore(const QString &resId, const QVariant &
 void TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer transfer)
 {
     qDebug() << resId << res << transfer.state();
+    transfer.setAnchorTime(SortUtil::endDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
 
     // TODO post-transfer should happen in the following cases:

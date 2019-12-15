@@ -17,6 +17,9 @@
 
 #include "transfer.h"
 
+#include <KItinerary/JsonLdDocument>
+
+#include <QDebug>
 #include <QJsonObject>
 
 class TransferPrivate : public QSharedData
@@ -26,6 +29,7 @@ public:
     Transfer::State m_state = Transfer::UndefinedState;
     KPublicTransport::Journey m_journey;
     QString m_resId;
+    QDateTime m_anchorTime;
 };
 
 Transfer::Transfer()
@@ -82,6 +86,17 @@ void Transfer::setReservationId(const QString &resId)
     d->m_resId = resId;
 }
 
+QDateTime Transfer::anchorTime() const
+{
+    return d->m_anchorTime;
+}
+
+void Transfer::setAnchorTime(const QDateTime& dt)
+{
+    d.detach();
+    d->m_anchorTime = dt;
+}
+
 QJsonObject Transfer::toJson(const Transfer &transfer)
 {
     QJsonObject obj;
@@ -89,6 +104,7 @@ QJsonObject Transfer::toJson(const Transfer &transfer)
     obj.insert(QStringLiteral("state"), transfer.state()); // TODO store the enum properly
     obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
     obj.insert(QStringLiteral("reservationId"), transfer.reservationId());
+    obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
     return obj;
 }
 
@@ -99,5 +115,6 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
     transfer.setState(static_cast<Transfer::State>(obj.value(QLatin1String("state")).toInt()));
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
     transfer.setReservationId(obj.value(QLatin1String("reservationId")).toString());
+    transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(obj.value(QLatin1String("anchorTime")).toObject()).toDateTime());
     return transfer;
 }

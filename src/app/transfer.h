@@ -35,6 +35,7 @@ class Transfer
     Q_PROPERTY(State state READ state WRITE setState)
     Q_PROPERTY(KPublicTransport::Journey journey READ journey WRITE setJourney)
     Q_PROPERTY(QString reservationId READ reservationId WRITE setReservationId)
+    Q_PROPERTY(QDateTime anchorTime READ anchorTime WRITE setAnchorTime)
 public:
     Transfer();
     Transfer(const Transfer&);
@@ -66,6 +67,10 @@ public:
 
     QString reservationId() const;
     void setReservationId(const QString &resId);
+
+    /** The time-wise fixed side of this transfer, ie. the start for Alignment::After and end for Alignment::Before. */
+    QDateTime anchorTime() const;
+    void setAnchorTime(const QDateTime &dt);
 
     static QJsonObject toJson(const Transfer &transfer);
     static Transfer fromJson(const QJsonObject &obj);
