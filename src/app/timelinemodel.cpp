@@ -227,6 +227,11 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             if (elem.elementType == TimelineElement::TripGroup)
                 return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content.toString()));
             break;
+        case TransferRole:
+            if (elem.elementType == TimelineElement::Transfer) {
+                return elem.content;
+            }
+            break;
     }
     return {};
 }
@@ -245,6 +250,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(ReservationsRole, "reservations");
     names.insert(TripGroupIdRole, "tripGroupId");
     names.insert(TripGroupRole, "tripGroup");
+    names.insert(TransferRole, "transfer");
     return names;
 }
 

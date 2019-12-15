@@ -16,6 +16,7 @@
 */
 
 #include "timelineelement.h"
+#include "transfer.h"
 
 #include <KItinerary/Event>
 #include <KItinerary/Reservation>
@@ -49,6 +50,14 @@ TimelineElement::TimelineElement(const QString& resId, const QVariant& res, Time
     , dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
+{
+}
+
+TimelineElement::TimelineElement(const ::Transfer &transfer)
+    : content(QVariant::fromValue(transfer))
+    , dt(transfer.anchorTime())
+    , elementType(Transfer)
+    , rangeType(SelfContained)
 {
 }
 

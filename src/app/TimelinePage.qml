@@ -128,6 +128,12 @@ Kirigami.ScrollablePage {
             rangeType: modelData.rangeType
         }
     }
+    Component {
+        id: transferDelegate
+        App.TransferDelegate {
+            transfer: modelData.transfer
+        }
+    }
 
     Kirigami.CardsListView {
         id: listView
@@ -152,6 +158,7 @@ Kirigami.ScrollablePage {
                     case TimelineElement.CountryInfo: return countryInfoDelegate;
                     case TimelineElement.WeatherForecast: return weatherForecastDelegate;
                     case TimelineElement.TripGroup: return tripGrooupDelegate;
+                    case TimelineElement.Transfer: return transferDelegate;
                 }
             }
         }

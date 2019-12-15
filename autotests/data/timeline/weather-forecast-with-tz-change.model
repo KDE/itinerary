@@ -56,7 +56,7 @@
             }
         ],
         "sectionHeader": "Tuesday, 17 Oct 1995",
-        "type": 5
+        "type": 6
     },
     {
         "isToday": true,
@@ -69,7 +69,7 @@
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -86,7 +86,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 15 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -103,7 +103,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 16 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -196,13 +196,13 @@
             }
         ],
         "sectionHeader": "Wednesday, 16 Oct 1996",
-        "type": 5
+        "type": 6
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 16 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -244,13 +244,13 @@
             }
         ],
         "sectionHeader": "Wednesday, 16 Oct 1996",
-        "type": 12
+        "type": 13
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 17 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -292,7 +292,7 @@
             }
         ],
         "sectionHeader": "Thursday, 17 Oct 1996",
-        "type": 12
+        "type": 13
     },
     {
         "isToday": false,
@@ -353,7 +353,7 @@
             }
         ],
         "sectionHeader": "Thursday, 17 Oct 1996",
-        "type": 5
+        "type": 6
     },
     {
         "isToday": false,
@@ -380,7 +380,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 17 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -397,7 +397,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Friday, 18 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -414,7 +414,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 19 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -431,7 +431,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 20 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -448,7 +448,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Monday, 21 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -465,7 +465,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 22 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -482,7 +482,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 23 Oct 1996",
-        "type": 3,
+        "type": 4,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",

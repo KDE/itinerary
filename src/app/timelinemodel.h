@@ -49,7 +49,8 @@ public:
         WeatherForecastRole,
         ReservationsRole, // for unit testing
         TripGroupIdRole,
-        TripGroupRole
+        TripGroupRole,
+        TransferRole,
     };
 
     explicit TimelineModel(QObject *parent = nullptr);

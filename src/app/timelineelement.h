@@ -22,6 +22,8 @@
 #include <QString>
 #include <QVariant>
 
+class Transfer;
+
 /** TimelineModel items. */
 class TimelineElement {
     Q_GADGET
@@ -32,6 +34,7 @@ public:
         Undefined,
         TodayMarker,
         TripGroup,
+        Transfer,
         WeatherForecast,
         CountryInfo,
         Flight,
@@ -55,6 +58,7 @@ public:
 
     explicit TimelineElement(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
     explicit TimelineElement(const QString &resId, const QVariant &res, RangeType rt);
+    explicit TimelineElement(const ::Transfer &transfer);
 
     /** Timeline order */
     bool operator<(const TimelineElement &other) const;
