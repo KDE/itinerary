@@ -35,8 +35,14 @@ App.TimelineDelegate {
             Layout.fillWidth: true
         }
         QQC2.Label {
-            text: "99:99" // TODO departure time, add delay label
+            text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
+            visible: transfer.state == Transfer.Valid
             color: Kirigami.Theme.textColor
+        }
+        QQC2.Label {
+            text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
+            color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+            visible: transfer.state == Transfer.Valid && transfer.journey.hasExpectedDepartureTime
         }
     }
 
@@ -44,13 +50,12 @@ App.TimelineDelegate {
         // TODO
     }
 
-    // TODO
-    /*Component {
+    Component {
         id: detailsComponent
         App.TransferPage {
             transfer: root.transfer
         }
     }
 
-    onClicked: applicationWindow().pageStack.push(detailsComponent);*/
+    onClicked: applicationWindow().pageStack.push(detailsComponent);
 }
