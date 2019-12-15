@@ -39,7 +39,12 @@ void ModelVerificationPoint::setRoleFilter(std::vector<int> &&filter)
     m_roleFilter = std::move(filter);
 }
 
-static QJsonValue variantToJson(const QVariant &v)
+void ModelVerificationPoint::setJsonPropertyFilter(std::vector<QString> &&filter)
+{
+    m_jsonPropertyFilter = std::move(filter);
+}
+
+QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
 {
     switch (v.type()) {
         case QVariant::String:
@@ -63,7 +68,11 @@ static QJsonValue variantToJson(const QVariant &v)
     }
 
     if (QMetaType::metaObjectForType(v.userType())) {
-        return KItinerary::JsonLdDocument::toJson(v);
+        auto obj = KItinerary::JsonLdDocument::toJson(v);
+        for (const auto &filter : m_jsonPropertyFilter) {
+            obj.remove(filter);
+        }
+        return obj;
     } else if (v.userType() == qMetaTypeId<QVector<QVariant>>()) {
         return KItinerary::JsonLdDocument::toJson(v.value<QVector<QVariant>>());
     }

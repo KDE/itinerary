@@ -30,6 +30,23 @@
     {
         "isToday": false,
         "rangeType": 0,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "Before",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "2000-01-01T13:00:00+01:00",
+                "timezone": "Europe/Berlin"
+            },
+            "state": "Pending"
+        },
+        "type": 3
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
         "reservations": [
             {
                 "@context": "http://schema.org",
@@ -285,6 +302,23 @@
         ],
         "sectionHeader": "Saturday, 1 Jan 2000",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 1 Jan 2000",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "After",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "2000-01-01T16:20:00+01:00",
+                "timezone": "Europe/Rome"
+            },
+            "state": "Pending"
+        },
+        "type": 3
     },
     {
         "isToday": false,

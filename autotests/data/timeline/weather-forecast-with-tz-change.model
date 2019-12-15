@@ -140,6 +140,23 @@
     {
         "isToday": false,
         "rangeType": 0,
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "Before",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-16T17:50:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "state": "Pending"
+        },
+        "type": 3
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
         "reservations": [
             {
                 "@context": "http://schema.org",
@@ -197,6 +214,23 @@
         ],
         "sectionHeader": "Wednesday, 16 Oct 1996",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Wednesday, 16 Oct 1996",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "After",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-16T20:45:00+03:00",
+                "timezone": "Europe/Helsinki"
+            },
+            "state": "Pending"
+        },
+        "type": 3
     },
     {
         "isToday": false,
@@ -354,6 +388,23 @@
         ],
         "sectionHeader": "Thursday, 17 Oct 1996",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "After",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-17T18:35:00+02:00",
+                "timezone": "Europe/Berlin"
+            },
+            "state": "Pending"
+        },
+        "type": 3
     },
     {
         "isToday": false,

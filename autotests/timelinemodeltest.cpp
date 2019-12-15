@@ -22,6 +22,7 @@
 #include <reservationmanager.h>
 #include <timelinemodel.h>
 #include <tripgroupmanager.h>
+#include <transfermanager.h>
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -511,6 +512,11 @@ private Q_SLOTS:
         groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
+        TransferManager::clear();
+        TransferManager transferMgr;
+        transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
+        transferMgr.setReservationManager(&resMgr);
+        transferMgr.setTripGroupManager(&groupMgr);
 
         TimelineModel model;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
@@ -521,10 +527,12 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setTripGroupManager(&groupMgr);
         model.setWeatherForecastManager(&weatherMgr);
+        model.setTransferManager(&transferMgr);
 
         // check state is correct for data imported at the start
         ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
         vp.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
+        vp.setJsonPropertyFilter({QStringLiteral("reservationId")});
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime
