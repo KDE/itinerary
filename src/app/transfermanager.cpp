@@ -28,9 +28,13 @@
 #include <QFile>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QSettings>
 #include <QStandardPaths>
 
 using namespace KItinerary;
+
+// bump this to trigger a full rescan for transfers
+enum { CurrentFullScanVerion = 1 };
 
 TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
@@ -45,6 +49,7 @@ void TransferManager::setReservationManager(ReservationManager *resMgr)
     connect(m_resMgr, &ReservationManager::batchAdded, this, qOverload<const QString&>(&TransferManager::checkReservation));
     connect(m_resMgr, &ReservationManager::batchChanged, this, qOverload<const QString&>(&TransferManager::checkReservation));
     connect(m_resMgr, &ReservationManager::batchRemoved, this, &TransferManager::reservationRemoved);
+    rescan();
 }
 
 void TransferManager::setTripGroupManager(TripGroupManager* tgMgr)
@@ -52,6 +57,7 @@ void TransferManager::setTripGroupManager(TripGroupManager* tgMgr)
     m_tgMgr = tgMgr;
     connect(m_tgMgr, &TripGroupManager::tripGroupAdded, this, &TransferManager::tripGroupChanged);
     connect(m_tgMgr, &TripGroupManager::tripGroupChanged, this, &TransferManager::tripGroupChanged);
+    rescan();
 }
 
 Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment alignment) const
@@ -64,6 +70,26 @@ Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment ali
     const auto t = readFromFile(resId, alignment);
     m_transfers[alignment].insert(resId, t);
     return t;
+}
+
+void TransferManager::rescan()
+{
+    if (!m_resMgr || !m_tgMgr) {
+        return;
+    }
+
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("TransferManager"));
+    const auto previousFullScanVersion = settings.value(QLatin1String("FullScan"), 0).toInt();
+    if (previousFullScanVersion >= CurrentFullScanVerion) {
+        return;
+    }
+
+    qCInfo(Log) << "Performing a full transfer search..." << previousFullScanVersion;
+    for (const auto &batchId : m_resMgr->batches()) {
+        checkReservation(batchId);
+    }
+    settings.setValue(QStringLiteral("FullScan"), CurrentFullScanVerion);
 }
 
 void TransferManager::checkReservation(const QString &resId)
@@ -271,4 +297,8 @@ void TransferManager::clear()
     QDir d(transferBasePath());
     qCInfo(Log) << "deleting" << transferBasePath();
     d.removeRecursively();
+
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("TransferManager"));
+    settings.remove(QStringLiteral("FullScan"));
 }

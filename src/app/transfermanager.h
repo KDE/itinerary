@@ -51,6 +51,8 @@ Q_SIGNALS:
     void transferRemoved(const QString &resId, Transfer::Alignment alignment);
 
 private:
+    void rescan();
+
     void checkReservation(const QString &resId);
     void checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment);
     void checkTransferBefore(const QString &resId, const QVariant &res, Transfer transfer);
