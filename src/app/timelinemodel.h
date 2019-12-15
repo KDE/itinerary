@@ -99,6 +99,7 @@ private:
     void updateInformationElements();
     std::vector<TimelineElement>::iterator erasePreviousCountyInfo(std::vector<TimelineElement>::iterator it);
     void updateWeatherElements();
+    void updateTransfersForBatch(const QString &batchId);
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;

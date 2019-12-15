@@ -170,14 +170,7 @@ void TimelineModel::setTransferManager(TransferManager *mgr)
 
     // load existing transfers into the model
     for (const auto &batchId : m_resMgr->batches()) {
-        auto transfer = mgr->transfer(batchId, Transfer::Before);
-        if (transfer.state() != Transfer::UndefinedState) {
-            transferChanged(transfer);
-        }
-        transfer = mgr->transfer(batchId, Transfer::After);
-        if (transfer.state() != Transfer::UndefinedState) {
-            transferChanged(transfer);
-        }
+        updateTransfersForBatch(batchId);
     }
 }
 
@@ -292,6 +285,7 @@ void TimelineModel::batchAdded(const QString &resId)
     }
 
     updateInformationElements();
+    updateTransfersForBatch(resId);
     emit todayRowChanged();
 }
 
@@ -598,6 +592,22 @@ void TimelineModel::updateWeatherElements()
     qDebug() << "weather recomputation done";
 }
 
+void TimelineModel::updateTransfersForBatch(const QString& batchId)
+{
+    if (!m_transferManager) {
+        return;
+    }
+
+    auto transfer = m_transferManager->transfer(batchId, Transfer::Before);
+    if (transfer.state() != Transfer::UndefinedState) {
+        transferChanged(transfer);
+    }
+    transfer = m_transferManager->transfer(batchId, Transfer::After);
+    if (transfer.state() != Transfer::UndefinedState) {
+        transferChanged(transfer);
+    }
+}
+
 QDateTime TimelineModel::now() const
 {
     if (Q_UNLIKELY(m_unitTestTime.isValid())) {
@@ -673,12 +683,14 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         return;
     }
 
+    auto insertIt = it;
     if (transfer.alignment() == Transfer::Before) {
         if (it != m_elements.begin()) {
             --it;
         }
     } else {
         ++it;
+        ++insertIt;
     }
 
     const auto row = std::distance(m_elements.begin(), it);
@@ -687,7 +699,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         emit dataChanged(index(row, 0), index(row, 0));
     } else {
         beginInsertRows({}, row, row);
-        m_elements.insert(it, TimelineElement(transfer));
+        m_elements.insert(insertIt, TimelineElement(transfer));
         endInsertRows();
         return;
     }
