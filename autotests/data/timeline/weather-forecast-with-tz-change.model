@@ -150,7 +150,13 @@
                 "@value": "1996-10-16T17:50:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "state": "Pending"
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "latitude": 52.55970001220703,
+                "longitude": 13.287799835205078,
+                "name": "Tegel"
+            }
         },
         "type": 3
     },
@@ -228,7 +234,17 @@
                 "@value": "1996-10-16T20:45:00+03:00",
                 "timezone": "Europe/Helsinki"
             },
-            "state": "Pending"
+            "from": {
+                "@type": "Location",
+                "latitude": 60.31719970703125,
+                "longitude": 24.963300704956055,
+                "name": "Helsinki-Vantaa"
+            },
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "name": "Some Hotel in Finland"
+            }
         },
         "type": 3
     },
@@ -401,6 +417,12 @@
                 "@type": "QDateTime",
                 "@value": "1996-10-17T18:35:00+02:00",
                 "timezone": "Europe/Berlin"
+            },
+            "from": {
+                "@type": "Location",
+                "latitude": 52.55970001220703,
+                "longitude": 13.287799835205078,
+                "name": "Tegel"
             },
             "state": "Pending"
         },

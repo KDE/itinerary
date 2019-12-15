@@ -19,6 +19,7 @@
 #define TRANSFER_H
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/Location>
 
 #include <QExplicitlySharedDataPointer>
 #include <QMetaType>
@@ -33,6 +34,8 @@ class Transfer
     Q_GADGET
     Q_PROPERTY(Alignment alignment READ alignment WRITE setAlignment)
     Q_PROPERTY(State state READ state WRITE setState)
+    Q_PROPERTY(KPublicTransport::Location from READ from WRITE setFrom)
+    Q_PROPERTY(KPublicTransport::Location to READ to WRITE setTo)
     Q_PROPERTY(KPublicTransport::Journey journey READ journey WRITE setJourney)
     Q_PROPERTY(QString reservationId READ reservationId WRITE setReservationId)
     Q_PROPERTY(QDateTime anchorTime READ anchorTime WRITE setAnchorTime)
@@ -61,6 +64,11 @@ public:
     Q_ENUM(State)
     State state() const;
     void setState(State state);
+
+    KPublicTransport::Location from() const;
+    void setFrom(const KPublicTransport::Location &from);
+    KPublicTransport::Location to() const;
+    void setTo(const KPublicTransport::Location &to);
 
     KPublicTransport::Journey journey() const;
     void setJourney(const KPublicTransport::Journey &journey);

@@ -17,6 +17,7 @@
 
 #include "transfermanager.h"
 #include "logging.h"
+#include "publictransport.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -126,6 +127,11 @@ void TransferManager::checkTransferBefore(const QString &resId, const QVariant &
     qDebug() << resId << res << transfer.state();
     transfer.setAnchorTime(SortUtil::startDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
+    if (isLocationChange) {
+        transfer.setTo(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
+    } else {
+        transfer.setTo(PublicTransport::locationFromPlace(LocationUtil::location(res)));
+    }
 
     // TODO pre-transfers should happen in the following cases:
     // - res is a location change and we are currently at home (== first element in a trip group)
@@ -154,6 +160,11 @@ void TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
     qDebug() << resId << res << transfer.state();
     transfer.setAnchorTime(SortUtil::endDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
+    if (isLocationChange) {
+        transfer.setFrom(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res)));
+    } else {
+        transfer.setFrom(PublicTransport::locationFromPlace(LocationUtil::location(res)));
+    }
 
     // TODO post-transfer should happen in the following cases:
     // - res is a location change and we are the last element in a trip group (ie. going home)
@@ -181,6 +192,7 @@ void TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
         }
         if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
             qDebug() << res << nextRes << LocationUtil::name(LocationUtil::arrivalLocation(res)) << LocationUtil::name(nextLoc);
+            transfer.setTo(PublicTransport::locationFromPlace(nextLoc));
             addOrUpdateTransfer(transfer);
             return;
         }

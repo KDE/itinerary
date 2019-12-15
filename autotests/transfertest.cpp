@@ -84,6 +84,9 @@ private Q_SLOTS:
         QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(!transfer.from().hasCoordinate());
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
 
         transfer = mgr.transfer(batchId, Transfer::After);
         QCOMPARE(transfer.state(), Transfer::UndefinedState);
@@ -95,6 +98,9 @@ private Q_SLOTS:
         QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(!transfer.from().hasCoordinate());
+        QVERIFY(transfer.to().hasCoordinate());
+        QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
     }
 };
 

@@ -40,7 +40,13 @@
                 "@value": "2000-01-01T13:00:00+01:00",
                 "timezone": "Europe/Berlin"
             },
-            "state": "Pending"
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "latitude": 52.55970001220703,
+                "longitude": 13.287799835205078,
+                "name": "Tegel"
+            }
         },
         "type": 3
     },
@@ -315,6 +321,12 @@
                 "@type": "QDateTime",
                 "@value": "2000-01-01T16:20:00+01:00",
                 "timezone": "Europe/Rome"
+            },
+            "from": {
+                "@type": "Location",
+                "latitude": 43.808799743652344,
+                "longitude": 11.202899932861328,
+                "name": "Peretola"
             },
             "state": "Pending"
         },
