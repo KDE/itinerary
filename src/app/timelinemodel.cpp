@@ -21,6 +21,7 @@
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
+#include "transfermanager.h"
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -158,6 +159,26 @@ void TimelineModel::setHomeCountryIsoCode(const QString &isoCode)
 {
     m_homeCountry = isoCode;
     updateInformationElements();
+}
+
+void TimelineModel::setTransferManager(TransferManager *mgr)
+{
+    m_transferManager = mgr;
+    connect(mgr, &TransferManager::transferAdded, this, &TimelineModel::transferChanged);
+    connect(mgr, &TransferManager::transferChanged, this, &TimelineModel::transferChanged);
+    connect(mgr, &TransferManager::transferRemoved, this, &TimelineModel::transferRemoved);
+
+    // load existing transfers into the model
+    for (const auto &batchId : m_resMgr->batches()) {
+        auto transfer = mgr->transfer(batchId, Transfer::Before);
+        if (transfer.state() != Transfer::UndefinedState) {
+            transferChanged(transfer);
+        }
+        transfer = mgr->transfer(batchId, Transfer::After);
+        if (transfer.state() != Transfer::UndefinedState) {
+            transferChanged(transfer);
+        }
+    }
 }
 
 int TimelineModel::rowCount(const QModelIndex& parent) const
@@ -635,4 +656,67 @@ void TimelineModel::tripGroupRemoved(const QString& groupId)
         it = m_elements.erase(it);
         endRemoveRows();
     }
+}
+
+void TimelineModel::transferChanged(const Transfer& transfer)
+{
+    if (transfer.state() == Transfer::UndefinedState) {
+        return;
+    }
+    if (transfer.state() == Transfer::Discarded) {
+        transferRemoved(transfer.reservationId(), transfer.alignment());
+        return;
+    }
+
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [transfer](const auto &e) { return e.batchId == transfer.reservationId(); });
+    if (it == m_elements.end()) {
+        return;
+    }
+
+    if (transfer.alignment() == Transfer::Before) {
+        if (it != m_elements.begin()) {
+            --it;
+        }
+    } else {
+        ++it;
+    }
+
+    const auto row = std::distance(m_elements.begin(), it);
+    if (it != m_elements.end() && (*it).elementType == TimelineElement::Transfer && (*it).content.value<Transfer>().reservationId() == transfer.reservationId()) {
+        (*it).content = QVariant::fromValue(transfer);
+        emit dataChanged(index(row, 0), index(row, 0));
+    } else {
+        beginInsertRows({}, row, row);
+        m_elements.insert(it, TimelineElement(transfer));
+        endInsertRows();
+        return;
+    }
+}
+
+void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
+{
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) { return e.batchId == resId; });
+    if (it == m_elements.end()) {
+        return;
+    }
+
+    if (alignment == Transfer::Before) {
+        if (it == m_elements.begin()) {
+            return;
+        }
+        --it;
+    } else { // Transfer::After
+        ++it;
+        if (it == m_elements.end()) {
+            return;
+        }
+    }
+
+    if ((*it).elementType != TimelineElement::Transfer || (*it).content.value<Transfer>().reservationId() != resId) {
+        return;
+    }
+    const auto row = std::distance(m_elements.begin(), it);
+    beginRemoveRows({}, row, row);
+    m_elements.erase(it);
+    endRemoveRows();
 }

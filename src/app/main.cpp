@@ -38,6 +38,7 @@
 #include "statisticstimerangemodel.h"
 #include "tickettokenmodel.h"
 #include "timelinedelegatecontroller.h"
+#include "transfermanager.h"
 #include "tripgroupinfoprovider.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
@@ -183,6 +184,11 @@ int main(int argc, char **argv)
     TripGroupInfoProvider tripGroupInfoProvider;
     tripGroupInfoProvider.setReservationManager(&resMgr);
     tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
+
+    TransferManager transferManager;
+    transferManager.setReservationManager(&resMgr);
+    transferManager.setTripGroupManager(&tripGroupMgr);
+    timelineModel.setTransferManager(&transferManager);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});

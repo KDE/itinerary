@@ -19,6 +19,7 @@
 #define TIMELINEMODEL_H
 
 #include "timelineelement.h"
+#include "transfer.h"
 
 #include <QAbstractListModel>
 #include <QDateTime>
@@ -27,6 +28,7 @@
 class ReservationManager;
 class WeatherForecastManager;
 class TripGroupManager;
+class TransferManager;
 
 namespace KItinerary {
 class GeoCoordinates;
@@ -61,6 +63,7 @@ public:
     TripGroupManager* tripGroupManager() const;
     void setTripGroupManager(TripGroupManager *mgr);
     void setHomeCountryIsoCode(const QString &isoCode);
+    void setTransferManager(TransferManager *mgr);
 
     QVariant data(const QModelIndex& index, int role) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -88,6 +91,9 @@ private:
     void tripGroupChanged(const QString &groupId);
     void tripGroupRemoved(const QString &groupId);
 
+    void transferChanged(const Transfer &transfer);
+    void transferRemoved(const QString &resId, Transfer::Alignment alignment);
+
     void dayChanged();
     void updateTodayMarker();
     void updateInformationElements();
@@ -97,6 +103,7 @@ private:
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     TripGroupManager *m_tripGroupManager = nullptr;
+    TransferManager *m_transferManager = nullptr;
     std::vector<TimelineElement> m_elements;
     QString m_homeCountry;
     QDateTime m_unitTestTime;
