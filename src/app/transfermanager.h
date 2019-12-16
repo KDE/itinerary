@@ -39,7 +39,10 @@ public:
     /** Returns the transfer for reservation @p resId with @p alignment. */
     Transfer transfer(const QString &resId, Transfer::Alignment alignment) const;
 
-    // TODO discard method
+    /** Applies the given @p journey to @p transfer. */
+    Q_INVOKABLE void setJourneyForTransfer(Transfer transfer, const KPublicTransport::Journey &journey);
+    /** Discard the given @p transfer. */
+    Q_INVOKABLE void discardTransfer(Transfer transfer);
 
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);

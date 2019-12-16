@@ -73,6 +73,24 @@ Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment ali
     return t;
 }
 
+void TransferManager::setJourneyForTransfer(Transfer transfer, const KPublicTransport::Journey &journey)
+{
+    transfer.setState(Transfer::Valid);
+    transfer.setJourney(journey);
+    m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
+    writeToFile(transfer);
+    emit transferChanged(transfer);
+}
+
+void TransferManager::discardTransfer(Transfer transfer)
+{
+    transfer.setState(Transfer::Discarded);
+    transfer.setJourney({});
+    m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
+    writeToFile(transfer);
+    emit transferRemoved(transfer.reservationId(), transfer.alignment());
+}
+
 void TransferManager::rescan()
 {
     if (!m_resMgr || !m_tgMgr) {

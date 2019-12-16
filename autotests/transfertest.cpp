@@ -101,6 +101,36 @@ private Q_SLOTS:
         QVERIFY(!transfer.from().hasCoordinate());
         QVERIFY(transfer.to().hasCoordinate());
         QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
+
+        // operations
+        addSpy.clear();
+        changeSpy.clear();
+        removeSpy.clear();
+
+        KPublicTransport::Journey jny;
+        KPublicTransport::JourneySection section;
+        section.setScheduledDepartureTime(QDateTime({2017, 9, 10}, {5, 30}));
+        section.setScheduledArrivalTime(QDateTime({2017, 9, 10}, {6, 0}));
+        jny.setSections({section});
+        mgr.setJourneyForTransfer(transfer, jny);
+        QCOMPARE(addSpy.size(), 0);
+        QCOMPARE(changeSpy.size(), 1);
+        QCOMPARE(removeSpy.size(), 0);
+
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Valid);
+        QCOMPARE(transfer.journey().sections().size(), 1);
+
+        addSpy.clear();
+        changeSpy.clear();
+        removeSpy.clear();
+
+        mgr.discardTransfer(transfer);
+        QCOMPARE(addSpy.size(), 0);
+        QCOMPARE(changeSpy.size(), 0);
+        QCOMPARE(removeSpy.size(), 1);
+        transfer = mgr.transfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Discarded);
     }
 };
 
