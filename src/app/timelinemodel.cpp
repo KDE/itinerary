@@ -693,7 +693,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         ++insertIt;
     }
 
-    const auto row = std::distance(m_elements.begin(), it);
+    const auto row = std::distance(m_elements.begin(), insertIt);
     if (it != m_elements.end() && (*it).elementType == TimelineElement::Transfer && (*it).content.value<Transfer>().reservationId() == transfer.reservationId()) {
         (*it).content = QVariant::fromValue(transfer);
         emit dataChanged(index(row, 0), index(row, 0));
