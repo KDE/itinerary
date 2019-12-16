@@ -25,12 +25,13 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
-    property var transfer;
+    property var transfer
+    property bool journeyDetailsExpanded: false
 
     headerIconSource: "qrc:///images/transfer.svg"
     headerItem: RowLayout {
         QQC2.Label {
-            text: "TODO TRANSFER"
+            text: i18n("%1 to %2", transfer.from.name, transfer.to.name)
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
         }
@@ -47,7 +48,23 @@ App.TimelineDelegate {
     }
 
     contentItem: ColumnLayout {
-        // TODO
+        ListView {
+            delegate: App.JourneySectionDelegate{}
+            model: (transfer.state == Transfer.Valid && journeyDetailsExpanded) ? transfer.journey.sections : 0
+            implicitHeight: contentHeight
+            Layout.fillWidth: true
+            boundsBehavior: Flickable.StopAtBounds
+        }
+        App.JourneySummaryDelegate {
+            journey: transfer.journey
+            visible: transfer.state == Transfer.Valid && !journeyDetailsExpanded
+            Layout.fillWidth: true
+        }
+        QQC2.Button {
+            text: i18n("Select...")
+            visible: transfer.state == Transfer.Valid && journeyDetailsExpanded
+            onClicked: applicationWindow().pageStack.push(detailsComponent);
+        }
     }
 
     Component {
@@ -57,5 +74,11 @@ App.TimelineDelegate {
         }
     }
 
-    onClicked: applicationWindow().pageStack.push(detailsComponent);
+    onClicked: {
+        if (transfer.state == Transfer.Valid) {
+            journeyDetailsExpanded = !journeyDetailsExpanded;
+        } else {
+            applicationWindow().pageStack.push(detailsComponent);
+        }
+    }
 }
