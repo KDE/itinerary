@@ -37,9 +37,12 @@ using namespace KItinerary;
 // bump this to trigger a full rescan for transfers
 enum { CurrentFullScanVerion = 1 };
 
+TransferManager* TransferManager::s_instance = nullptr;
+
 TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
 {
+    s_instance = this;
 }
 
 TransferManager::~TransferManager() = default;
@@ -307,6 +310,11 @@ void TransferManager::removeFile(const QString &resId, Transfer::Alignment align
 {
     const QString fileName = transferBasePath() + resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
     QFile::remove(fileName);
+}
+
+TransferManager* TransferManager::instance()
+{
+    return s_instance;
 }
 
 QDateTime TransferManager::currentDateTime() const

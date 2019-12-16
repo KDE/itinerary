@@ -33,6 +33,19 @@ Kirigami.ScrollablePage {
         manager: _liveDataManager.publicTransportManager
     }
 
+    actions {
+        contextualActions: [
+            Kirigami.Action {
+                text: i18n("Discard")
+                iconName: "edit-delete"
+                onTriggered: {
+                    TransferManager.discardTransfer(root.transfer);
+                    applicationWindow().pageStack.pop();
+                }
+            }
+        ]
+    }
+
     Component.onCompleted: {
         var req = journeyModel.request;
         req.from = transfer.from;
@@ -76,7 +89,10 @@ Kirigami.ScrollablePage {
                     text: i18n("Select")
                     iconName: "document-save"
                     visible: journeyView.currentIndex == index
-                    onTriggered: console.log("TODO")
+                    onTriggered: {
+                        TransferManager.setJourneyForTransfer(root.transfer, top.journey);
+                        applicationWindow().pageStack.pop();
+                    }
                 }
             ]
         }

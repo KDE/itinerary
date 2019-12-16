@@ -210,6 +210,10 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
     qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
+    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "TransferManager", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
+        engine->setObjectOwnership(TransferManager::instance(), QQmlEngine::CppOwnership);
+        return TransferManager::instance();
+    });
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
     });
