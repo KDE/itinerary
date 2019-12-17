@@ -48,6 +48,5 @@ RowLayout {
     }
     QQC2.Label {
         text: i18np("One change", "%1 changes", journey.numberOfChanges)
-        visible: journeyView.currentIndex != index
     }
 }
