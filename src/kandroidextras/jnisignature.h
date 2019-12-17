@@ -48,7 +48,7 @@ constexpr inline auto static_concat(const StaticString<String1...>&, const Stati
     return StaticString<String1..., String2...>();
 }
 
-/** Compile-time concapt for N StaticString. */
+/** Compile-time concept for N StaticString. */
 template <typename String1, typename String2, class... Strings>
 constexpr inline auto static_concat(const String1& str1, const String2& str2, const Strings&... strs)
 {

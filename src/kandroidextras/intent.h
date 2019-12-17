@@ -51,11 +51,11 @@ public:
     /** Implicit conversion to an QAndroidJniObject. */
     operator QAndroidJniObject() const;
 
-    /** Action contstant for create document intents. */
+    /** Action constant for create document intents. */
     static QAndroidJniObject ACTION_CREATE_DOCUMENT();
-    /** Action contstant for open document intents. */
+    /** Action constant for open document intents. */
     static QAndroidJniObject ACTION_OPEN_DOCUMENT();
-    /** Action contstant for viewing intents. */
+    /** Action constant for viewing intents. */
     static QAndroidJniObject ACTION_VIEW();
 
     /** Category constant for openable content. */

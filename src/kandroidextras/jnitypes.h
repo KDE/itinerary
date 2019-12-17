@@ -63,7 +63,7 @@ JNI_TYPE(java, util, Locale)
 
 namespace Jni
 {
-    /** Returns the JNI type name of the given template arugment. */
+    /** Returns the JNI type name of the given template argument. */
     template <typename T> inline const char* typeName() { return T::jniName(); }
 }
 

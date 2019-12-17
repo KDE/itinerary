@@ -26,7 +26,7 @@ class TripGroup;
 class TripGroupTest;
 
 /** Trip group computation and persistence.
- *  This operates on multi-traveller batches as provided by ReservationManager.
+ *  This operates on multi-traveler batches as provided by ReservationManager.
  */
 class TripGroupManager : public QObject
 {
