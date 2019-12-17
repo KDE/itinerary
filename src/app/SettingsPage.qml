@@ -18,6 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import QtPositioning 5.11
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -30,6 +31,18 @@ Kirigami.ScrollablePage {
         id: ptBackendPage
         PublicTransportBackendPage {
             publicTransportManager: _liveDataManager.publicTransportManager
+        }
+    }
+
+    Component {
+        id: locationPickerPage
+        LocationPicker {
+            title: i18n("Pick Home Location")
+            coordinate: QtPositioning.coordinate(TransferManager.homeLatitude, TransferManager.homeLongitude)
+            onCoordinateChanged: {
+                TransferManager.homeLatitude = coordinate.latitude;
+                TransferManager.homeLongitude = coordinate.longitude;
+            }
         }
     }
 
@@ -51,6 +64,13 @@ Kirigami.ScrollablePage {
             textRole: "display"
             currentIndex: countryModel.isoCodeToIndex(_settings.homeCountryIsoCode)
             onActivated: _settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
+        }
+
+        QQC2.Button {
+            Kirigami.FormData.isSection: true
+            text: i18n("Pick Home Location")
+            icon.name: "crosshairs"
+            onClicked: applicationWindow().pageStack.push(locationPickerPage);
         }
 
         Kirigami.Separator {

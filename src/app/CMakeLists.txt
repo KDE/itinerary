@@ -103,6 +103,7 @@ if (ANDROID)
         channel-secure-symbolic
         checkmark
         clock
+        crosshairs
         dialog-cancel
         dialog-close
         document-edit
