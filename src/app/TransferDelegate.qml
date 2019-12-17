@@ -65,6 +65,17 @@ App.TimelineDelegate {
             visible: transfer.state == Transfer.Valid && journeyDetailsExpanded
             onClicked: applicationWindow().pageStack.push(detailsComponent);
         }
+        RowLayout {
+            visible: transfer.state == Transfer.Pending
+            QQC2.Label {
+                text: i18n("Select...")
+                Layout.fillWidth: true
+            }
+            QQC2.ToolButton {
+                icon.name: "edit-delete"
+                onClicked: TransferManager.discardTransfer(transfer)
+            }
+        }
     }
 
     Component {
