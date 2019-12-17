@@ -581,5 +581,5 @@ QString TripGroupManager::guessName(const TripGroup& g) const
         }
         return i18n("%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().monthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
     }
-    return i18n("%1 (%3/%4)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
+    return i18n("%1 (%2/%3)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
 }
