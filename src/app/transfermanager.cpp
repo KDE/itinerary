@@ -25,6 +25,8 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/SortUtil>
 
+#include <KLocalizedString>
+
 #include <QDir>
 #include <QFile>
 #include <QJsonDocument>
@@ -43,6 +45,11 @@ TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
 {
     s_instance = this;
+
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("HomeLocation"));
+    m_homeLat = settings.value(QStringLiteral("Latitude"), NAN).toFloat();
+    m_homeLon = settings.value(QStringLiteral("Longitude"), NAN).toFloat();
 }
 
 TransferManager::~TransferManager() = default;
@@ -92,6 +99,56 @@ void TransferManager::discardTransfer(Transfer transfer)
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);
     emit transferRemoved(transfer.reservationId(), transfer.alignment());
+}
+
+float TransferManager::homeLatitude() const
+{
+    return m_homeLat;
+}
+
+void TransferManager::setHomeLatitude(float lat)
+{
+    if (m_homeLat == lat) {
+        return;
+    }
+    m_homeLat = lat;
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("HomeLocation"));
+    settings.setValue(QStringLiteral("Latitude"), m_homeLat);
+    emit homeLocationChanged();
+}
+
+float TransferManager::homeLongitude() const
+{
+    return m_homeLon;
+}
+
+void TransferManager::setHomeLongitude(float lon)
+{
+    if (m_homeLon == lon) {
+        return;
+    }
+    m_homeLon = lon;
+    QSettings settings;
+    settings.beginGroup(QStringLiteral("HomeLocation"));
+    settings.setValue(QStringLiteral("Longitude"), m_homeLon);
+    emit homeLocationChanged();
+}
+
+bool TransferManager::hasHomeLocation() const
+{
+    return !std::isnan(m_homeLat) && !std::isnan(m_homeLon);
+}
+
+KPublicTransport::Location TransferManager::homeLocation() const
+{
+    if (!hasHomeLocation()) {
+        return {};
+    }
+    KPublicTransport::Location l;
+    l.setName(i18n("Home"));
+    l.setCoordinate(m_homeLat, m_homeLon);
+    return l;
 }
 
 void TransferManager::rescan()
@@ -160,6 +217,7 @@ void TransferManager::checkTransferBefore(const QString &resId, const QVariant &
     // - res is an event and we are not at its location already
 
     if (isLocationChange && isFirstInTripGroup(resId)) {
+        transfer.setFrom(homeLocation());
         addOrUpdateTransfer(transfer);
         return;
     }
@@ -193,6 +251,7 @@ void TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
     // - res is an event and the following or enclosing element is a lodging element
 
     if (isLocationChange && isLastInTripGroup(resId)) {
+        transfer.setTo(homeLocation());
         addOrUpdateTransfer(transfer);
         return;
     }

@@ -23,6 +23,8 @@
 #include <QHash>
 #include <QObject>
 
+#include <cmath>
+
 class ReservationManager;
 class TripGroupManager;
 
@@ -30,6 +32,9 @@ class TripGroupManager;
 class TransferManager : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(float homeLatitude READ homeLatitude WRITE setHomeLatitude NOTIFY homeLocationChanged)
+    Q_PROPERTY(float homeLongitude READ homeLongitude WRITE setHomeLongitude NOTIFY homeLocationChanged)
+
 public:
     explicit TransferManager(QObject *parent = nullptr);
     ~TransferManager();
@@ -44,6 +49,14 @@ public:
     /** Discard the given @p transfer. */
     Q_INVOKABLE void discardTransfer(Transfer transfer);
 
+    // home coordinates, TODO might be better placed in a more generic location class, so we don't need to limit this to a single location
+    float homeLatitude() const;
+    void setHomeLatitude(float lat);
+    float homeLongitude() const;
+    void setHomeLongitude(float lon);
+    bool hasHomeLocation() const;
+    KPublicTransport::Location homeLocation() const;
+
     // for QML integration only
     static TransferManager* instance();
 
@@ -55,6 +68,8 @@ Q_SIGNALS:
     void transferAdded(const Transfer &transfer);
     void transferChanged(const Transfer &transfer);
     void transferRemoved(const QString &resId, Transfer::Alignment alignment);
+
+    void homeLocationChanged();
 
 private:
     void rescan();
@@ -82,6 +97,9 @@ private:
     TripGroupManager *m_tgMgr = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
+
+    float m_homeLat = NAN;
+    float m_homeLon = NAN;
 
     static TransferManager *s_instance;
 };
