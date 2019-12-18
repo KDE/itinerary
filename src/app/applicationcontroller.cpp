@@ -23,6 +23,7 @@
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
+#include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
@@ -491,4 +492,14 @@ void ApplicationController::openDocument(const QUrl &url)
 #else
     QDesktopServices::openUrl(url);
 #endif
+}
+
+QString ApplicationController::applicationVersion() const
+{
+    return QCoreApplication::applicationVersion();
+}
+
+QString ApplicationController::extractorCapabilities() const
+{
+    return ExtractorCapabilities::capabilitiesString();
 }

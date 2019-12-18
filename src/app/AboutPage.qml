@@ -19,6 +19,7 @@ import QtQuick 2.10
 import QtQuick.Layouts 1.11
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
+import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.Page {
@@ -91,6 +92,7 @@ Kirigami.Page {
             visible: !model.platform || model.platform == Qt.platform.os
             height: visible ? implicitHeight : 0
             width: ListView.view.width
+            highlighted: false
             ColumnLayout {
                 id: layout
                 QQC2.Label {
@@ -125,6 +127,7 @@ Kirigami.Page {
         id: transportDataDelegate
         Kirigami.AbstractListItem {
             width: ListView.view.width
+            highlighted: false
             ColumnLayout {
                 QQC2.Label {
                     Layout.fillWidth: true
@@ -147,6 +150,7 @@ Kirigami.Page {
         id: tabBar
         QQC2.TabButton { text: i18n("Application") }
         QQC2.TabButton { text: i18n("Transport Data") }
+        QQC2.TabButton { text: i18n("Version") }
     }
 
     StackLayout {
@@ -203,6 +207,30 @@ Kirigami.Page {
                 model: _liveDataManager.publicTransportManager.attributions
                 spacing: 0
                 delegate: transportDataDelegate
+            }
+        }
+
+        ColumnLayout {
+            id: versionPage
+            width: parent.width
+            height: parent.height
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("Application version: %1", ApplicationController.version)
+            }
+
+            Kirigami.Separator { Layout.fillWidth: true }
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("Extractor capabilities:")
+            }
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: ApplicationController.extractorCapabilities
+                font.family: "monospace"
             }
         }
     }

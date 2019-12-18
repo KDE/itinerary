@@ -38,6 +38,8 @@ class ApplicationController : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool hasClipboardContent READ hasClipboardContent NOTIFY clipboardContentChanged)
+    Q_PROPERTY(QString version READ applicationVersion CONSTANT)
+    Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController();
@@ -68,6 +70,10 @@ public:
     Q_INVOKABLE void addDocument(const QString &batchId);
     Q_INVOKABLE void removeDocument(const QString &batchId, const QString &docId);
     Q_INVOKABLE void openDocument(const QUrl &url);
+
+    // about information
+    QString applicationVersion() const;
+    QString extractorCapabilities() const;
 
 Q_SIGNALS:
     void clipboardContentChanged();
