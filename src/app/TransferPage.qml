@@ -33,6 +33,14 @@ Kirigami.ScrollablePage {
         manager: _liveDataManager.publicTransportManager
     }
 
+    SortFilterProxyModel {
+        id: sortedJourneyModel
+        sourceModel: journeyModel
+        sortRole: JourneyQueryModel.ScheduledDepartureTime
+        dynamicSortFilter: true
+        Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
+    }
+
     actions {
         contextualActions: [
             Kirigami.Action {
@@ -103,7 +111,7 @@ Kirigami.ScrollablePage {
         anchors.fill: parent
         clip: true
         delegate: journeyDelegate
-        model: journeyModel
+        model: sortedJourneyModel
 
         header: QQC2.ToolButton {
             icon.name: "go-up-symbolic"

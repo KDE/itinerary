@@ -236,6 +236,8 @@ int main(int argc, char **argv)
     qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
 
+    qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel");
+
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

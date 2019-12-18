@@ -22,6 +22,7 @@
 #include <kcoreaddons_version.h>
 #include <KTextToHTML>
 
+#include <QAbstractItemModel>
 #include <QDateTime>
 #include <QTimeZone>
 
@@ -63,6 +64,13 @@ QString Util::textToHtml(const QString& text) const
 #else
     return text;
 #endif
+}
+
+void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const
+{
+    if (auto qaim = qobject_cast<QAbstractItemModel*>(model)) {
+        qaim->sort(column, sortOrder);
+    }
 }
 
 #include "moc_util.cpp"

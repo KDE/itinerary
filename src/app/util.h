@@ -39,6 +39,9 @@ public:
 
     /** Convert links, email address and phone numbers in the given text to HTML links. */
     Q_INVOKABLE QString textToHtml(const QString &text) const;
+
+    /** Execute the non-exported sort() method on a QAbstractItemModel. */
+    Q_INVOKABLE void sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const;
 };
 
 #endif // UTIL_H
