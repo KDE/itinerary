@@ -23,27 +23,48 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-App.TimelineDelegate {
+Kirigami.AbstractCard {
     id: root
     property var transfer
     property bool journeyDetailsExpanded: false
 
-    headerIconSource: "qrc:///images/transfer.svg"
-    headerItem: RowLayout {
-        QQC2.Label {
-            text: i18n("%1 to %2", transfer.from.name, transfer.to.name)
-            color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
-        }
-        QQC2.Label {
-            text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
-            visible: transfer.state == Transfer.Selected
-            color: Kirigami.Theme.textColor
-        }
-        QQC2.Label {
-            text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
-            color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
+   header: Rectangle {
+        id: headerBackground
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+        anchors.leftMargin: -root.leftPadding
+        anchors.topMargin: -root.topPadding
+        anchors.rightMargin: -root.rightPadding
+
+        RowLayout {
+            id: headerLayout
+            anchors.fill: parent
+            anchors.margins: Kirigami.Units.largeSpacing
+
+            Kirigami.Icon {
+                source: "qrc:///images/transfer.svg"
+                width: Kirigami.Units.iconSizes.small
+                height: width
+                color: Kirigami.Theme.textColor
+                isMask: true
+            }
+            QQC2.Label {
+                text: i18n("%1 to %2", transfer.from.name, transfer.to.name)
+                color: Kirigami.Theme.textColor
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
+                visible: transfer.state == Transfer.Selected
+                color: Kirigami.Theme.textColor
+            }
+            QQC2.Label {
+                text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
+                color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
+            }
         }
     }
 
