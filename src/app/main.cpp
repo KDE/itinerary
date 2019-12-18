@@ -188,7 +188,7 @@ int main(int argc, char **argv)
     TransferManager transferManager;
     transferManager.setReservationManager(&resMgr);
     transferManager.setTripGroupManager(&tripGroupMgr);
-//     timelineModel.setTransferManager(&transferManager);
+    timelineModel.setTransferManager(&transferManager);
 
     qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
     qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
