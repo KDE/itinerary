@@ -160,7 +160,7 @@ if (ANDROID)
         weather-storm
     )
 else ()
-    target_link_libraries(itinerary PRIVATE Qt5::Positioning Qt5::DBus)
+    target_link_libraries(itinerary PRIVATE Qt5::Positioning Qt5::DBus Qt5::Widgets)
     target_link_libraries(itinerary-app PRIVATE
         KF5::DBusAddons
         Qt5::Widgets
