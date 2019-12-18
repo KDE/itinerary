@@ -66,6 +66,8 @@ private Q_SLOTS:
         TransferManager::clear();
         TransferManager mgr;
         mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
+        mgr.setHomeLatitude(52.51860f);
+        mgr.setHomeLongitude(13.37630f);
         mgr.setReservationManager(&resMgr);
         mgr.setTripGroupManager(&tgMgr);
         QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
@@ -84,7 +86,9 @@ private Q_SLOTS:
         QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(!transfer.from().hasCoordinate());
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().latitude(), 52.51860f);
+        QCOMPARE(transfer.from().longitude(), 13.37630f);
         QVERIFY(transfer.to().hasCoordinate());
         QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
 
@@ -98,7 +102,10 @@ private Q_SLOTS:
         QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
-        QVERIFY(!transfer.from().hasCoordinate());
+        QVERIFY(transfer.hasLocations());
+        QVERIFY(transfer.from().hasCoordinate());
+        QCOMPARE(transfer.from().latitude(), 52.51860f);
+        QCOMPARE(transfer.from().longitude(), 13.37630f);
         QVERIFY(transfer.to().hasCoordinate());
         QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
 

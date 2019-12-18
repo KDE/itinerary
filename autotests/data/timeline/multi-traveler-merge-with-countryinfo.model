@@ -40,6 +40,12 @@
                 "@value": "2000-01-01T13:00:00+01:00",
                 "timezone": "Europe/Berlin"
             },
+            "from": {
+                "@type": "Location",
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262,
+                "name": "Home"
+            },
             "state": "Pending",
             "to": {
                 "@type": "Location",
@@ -328,7 +334,13 @@
                 "longitude": 11.202899932861328,
                 "name": "Peretola"
             },
-            "state": "Pending"
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "latitude": 52.51860046386719,
+                "longitude": 13.376299858093262,
+                "name": "Home"
+            }
         },
         "type": 3
     },

@@ -515,6 +515,8 @@ private Q_SLOTS:
         TransferManager::clear();
         TransferManager transferMgr;
         transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
+        transferMgr.setHomeLatitude(52.51860f);
+        transferMgr.setHomeLongitude(13.37630f);
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&groupMgr);
 

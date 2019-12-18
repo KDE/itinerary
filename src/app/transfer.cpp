@@ -88,6 +88,11 @@ void Transfer::setTo(const KPublicTransport::Location &to)
     d->m_to = to;
 }
 
+bool Transfer::hasLocations() const
+{
+    return !d->m_from.isEmpty() && !d->m_to.isEmpty();
+}
+
 KPublicTransport::Journey Transfer::journey() const
 {
     return d->m_journey;

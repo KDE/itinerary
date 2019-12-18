@@ -317,6 +317,9 @@ bool TransferManager::isLastInTripGroup(const QString &resId) const
 void TransferManager::addOrUpdateTransfer(Transfer t)
 {
     if (t.state() == Transfer::UndefinedState) { // newly added
+        if (!t.hasLocations()) { // undefined home location
+            return;
+        }
         t.setState(Transfer::Pending);
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);

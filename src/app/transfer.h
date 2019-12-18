@@ -69,6 +69,7 @@ public:
     void setFrom(const KPublicTransport::Location &from);
     KPublicTransport::Location to() const;
     void setTo(const KPublicTransport::Location &to);
+    bool hasLocations() const;
 
     KPublicTransport::Journey journey() const;
     void setJourney(const KPublicTransport::Journey &journey);
