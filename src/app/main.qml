@@ -41,6 +41,7 @@ Kirigami.ApplicationWindow {
     globalDrawer: Kirigami.GlobalDrawer {
         title: i18n("KDE Itinerary")
         titleIcon: "map-symbolic"
+        isMenu: true
         actions: [
             Kirigami.Action {
                 text: i18n("Import...")
