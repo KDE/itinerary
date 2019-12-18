@@ -37,32 +37,32 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
-            visible: transfer.state == Transfer.Valid
+            visible: transfer.state == Transfer.Selected
             color: Kirigami.Theme.textColor
         }
         QQC2.Label {
             text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
             color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: transfer.state == Transfer.Valid && transfer.journey.hasExpectedDepartureTime
+            visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
         }
     }
 
     contentItem: ColumnLayout {
         ListView {
             delegate: App.JourneySectionDelegate{}
-            model: (transfer.state == Transfer.Valid && journeyDetailsExpanded) ? transfer.journey.sections : 0
+            model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
             implicitHeight: contentHeight
             Layout.fillWidth: true
             boundsBehavior: Flickable.StopAtBounds
         }
         App.JourneySummaryDelegate {
             journey: transfer.journey
-            visible: transfer.state == Transfer.Valid && !journeyDetailsExpanded
+            visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
             Layout.fillWidth: true
         }
         QQC2.Button {
             text: i18n("Select...")
-            visible: transfer.state == Transfer.Valid && journeyDetailsExpanded
+            visible: transfer.state == Transfer.Selected && journeyDetailsExpanded
             onClicked: applicationWindow().pageStack.push(detailsComponent);
         }
         RowLayout {
@@ -86,7 +86,7 @@ App.TimelineDelegate {
     }
 
     onClicked: {
-        if (transfer.state == Transfer.Valid) {
+        if (transfer.state == Transfer.Selected) {
             journeyDetailsExpanded = !journeyDetailsExpanded;
         } else {
             applicationWindow().pageStack.push(detailsComponent);

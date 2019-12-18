@@ -85,7 +85,7 @@ Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment ali
 
 void TransferManager::setJourneyForTransfer(Transfer transfer, const KPublicTransport::Journey &journey)
 {
-    transfer.setState(Transfer::Valid);
+    transfer.setState(Transfer::Selected);
     transfer.setJourney(journey);
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);

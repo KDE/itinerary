@@ -58,7 +58,7 @@ public:
     enum State {
         UndefinedState,
         Pending,
-        Valid,
+        Selected,
         Discarded
     };
     Q_ENUM(State)

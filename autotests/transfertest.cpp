@@ -118,7 +118,7 @@ private Q_SLOTS:
         QCOMPARE(removeSpy.size(), 0);
 
         transfer = mgr.transfer(batchId, Transfer::Before);
-        QCOMPARE(transfer.state(), Transfer::Valid);
+        QCOMPARE(transfer.state(), Transfer::Selected);
         QCOMPARE(transfer.journey().sections().size(), 1);
 
         addSpy.clear();
