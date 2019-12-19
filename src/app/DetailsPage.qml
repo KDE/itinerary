@@ -117,6 +117,18 @@ Kirigami.ScrollablePage {
                 onTriggered: applicationWindow().pageStack.push(docsComponent, {"controller": root.controller });
             },
             Kirigami.Action {
+                iconName: "qrc:///images/transfer.svg"
+                text: i18n("Add transfer before")
+                enabled: TransferManager.canAddTransfer(root.batchId, Transfer.Before)
+                onTriggered: TransferManager.addTransfer(root.batchId, Transfer.Before);
+            },
+            Kirigami.Action {
+                iconName: "qrc:///images/transfer.svg"
+                text: i18n("Add transfer after")
+                enabled: TransferManager.canAddTransfer(root.batchId, Transfer.After)
+                onTriggered: TransferManager.addTransfer(root.batchId, Transfer.After);
+            },
+            Kirigami.Action {
                 iconName: "document-edit"
                 text: i18n("Edit")
                 visible: root.editor != undefined

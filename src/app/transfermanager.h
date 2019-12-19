@@ -49,6 +49,13 @@ public:
     /** Discard the given @p transfer. */
     Q_INVOKABLE void discardTransfer(Transfer transfer);
 
+    /** Checks if a transfer can be added before/after the given reservation.
+     *  This is used to manual inserts, and might allow more inserts than the automatic code would perform.
+     */
+    Q_INVOKABLE bool canAddTransfer(const QString &resId, Transfer::Alignment alignment) const;
+    /** Explicitly add a transfer before/after the given reservation. */
+    Q_INVOKABLE void addTransfer(const QString &resId, Transfer::Alignment alignment);
+
     // home coordinates, TODO might be better placed in a more generic location class, so we don't need to limit this to a single location
     float homeLatitude() const;
     void setHomeLatitude(float lat);

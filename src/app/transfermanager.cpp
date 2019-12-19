@@ -102,6 +102,31 @@ void TransferManager::discardTransfer(Transfer transfer)
     emit transferRemoved(transfer.reservationId(), transfer.alignment());
 }
 
+bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment alignment) const
+{
+    auto t = transfer(resId, alignment);
+    if (t.state() == Transfer::Selected || t.state() == Transfer::Pending) {
+        return false; // already exists
+    }
+
+    return t.state() == Transfer::Discarded; // TODO this is a temporary shortcut, we actually want to allow this in more places
+}
+
+void TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
+{
+    const auto res = m_resMgr->reservation(resId);
+
+    auto t = transfer(resId, alignment);
+    // in case this is new
+    t.setReservationId(resId);
+    t.setAlignment(alignment);
+    // in case this was previously discarded
+    t.setState(Transfer::UndefinedState);
+    determineAnchorDeltaDefault(t, res);
+
+    alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+}
+
 float TransferManager::homeLatitude() const
 {
     return m_homeLat;
