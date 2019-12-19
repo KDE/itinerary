@@ -23,6 +23,7 @@
 #include "tripgroupmanager.h"
 
 #include <KItinerary/LocationUtil>
+#include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
 #include <KLocalizedString>
@@ -196,6 +197,7 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     // in case this is new
     t.setReservationId(resId);
     t.setAlignment(alignment);
+    determineAnchorDeltaDefault(t, res);
 
     alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
 }
@@ -312,6 +314,19 @@ bool TransferManager::isLastInTripGroup(const QString &resId) const
 {
     const auto tgId = m_tgMgr->tripGroupForReservation(resId);
     return tgId.elements().empty() ? false : tgId.elements().constLast() == resId;
+}
+
+void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const
+{
+    if (transfer.state() != Transfer::UndefinedState) {
+        return;
+    }
+
+    if (JsonLd::isA<FlightReservation>(res)) {
+        transfer.setAnchorTimeDelta(transfer.alignment() == Transfer::Before ? 60 * 60 : 30 * 60);
+    } else {
+        transfer.setAnchorTimeDelta(10 * 60);
+    }
 }
 
 void TransferManager::addOrUpdateTransfer(Transfer t)

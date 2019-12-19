@@ -32,6 +32,7 @@ public:
     KPublicTransport::Journey m_journey;
     QString m_resId;
     QDateTime m_anchorTime;
+    int m_anchorDelta = 0;
 };
 
 Transfer::Transfer()
@@ -102,6 +103,11 @@ void Transfer::setJourney(const KPublicTransport::Journey &journey)
 {
     d.detach();
     d->m_journey = journey;
+    if (d->m_alignment == Transfer::Before) {
+        d->m_anchorDelta = std::max(0ll, journey.scheduledArrivalTime().secsTo(d->m_anchorTime));
+    } else {
+        d->m_anchorDelta = std::max(0ll, d->m_anchorTime.secsTo(journey.scheduledDepartureTime()));
+    }
 }
 
 QString Transfer::reservationId() const
@@ -126,6 +132,24 @@ void Transfer::setAnchorTime(const QDateTime& dt)
     d->m_anchorTime = dt;
 }
 
+int Transfer::anchorTimeDelta() const
+{
+    return d->m_anchorDelta;
+}
+
+void Transfer::setAnchorTimeDelta(int delta)
+{
+    d.detach();
+    d->m_anchorDelta = delta;
+}
+
+QDateTime Transfer::journeyTime() const
+{
+    auto dt = anchorTime();
+    dt = dt.addSecs(alignment() == Transfer::Before ? -anchorTimeDelta() : anchorTimeDelta());
+    return std::max(dt, QDateTime::currentDateTime());
+}
+
 QJsonObject Transfer::toJson(const Transfer &transfer)
 {
     QJsonObject obj;
@@ -136,6 +160,7 @@ QJsonObject Transfer::toJson(const Transfer &transfer)
     obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
     obj.insert(QStringLiteral("reservationId"), transfer.reservationId());
     obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
+    obj.insert(QStringLiteral("anchorDelta"), transfer.anchorTimeDelta());
     return obj;
 }
 
@@ -149,5 +174,6 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
     transfer.setReservationId(obj.value(QLatin1String("reservationId")).toString());
     transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(obj.value(QLatin1String("anchorTime")).toObject()).toDateTime());
+    transfer.setAnchorTimeDelta(obj.value(QLatin1String("anchorDelta")).toInt());
     return transfer;
 }

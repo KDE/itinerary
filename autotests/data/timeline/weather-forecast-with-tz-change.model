@@ -150,6 +150,7 @@
                 "@value": "1996-10-16T17:50:00+02:00",
                 "timezone": "Europe/Berlin"
             },
+            "anchorTimeDelta": 3600,
             "from": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
@@ -240,6 +241,7 @@
                 "@value": "1996-10-16T20:45:00+03:00",
                 "timezone": "Europe/Helsinki"
             },
+            "anchorTimeDelta": 1800,
             "from": {
                 "@type": "Location",
                 "latitude": 60.31719970703125,
@@ -424,6 +426,7 @@
                 "@value": "1996-10-17T18:35:00+02:00",
                 "timezone": "Europe/Berlin"
             },
+            "anchorTimeDelta": 1800,
             "from": {
                 "@type": "Location",
                 "latitude": 52.55970001220703,

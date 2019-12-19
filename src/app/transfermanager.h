@@ -84,6 +84,8 @@ private:
     bool isFirstInTripGroup(const QString &resId) const;
     bool isLastInTripGroup(const QString &resId) const;
 
+    void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
+
     void addOrUpdateTransfer(Transfer t);
     void removeTransfer(const Transfer &t);
 

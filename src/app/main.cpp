@@ -209,6 +209,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
+    qRegisterMetaType<Transfer::Alignment>();
     qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
     qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "TransferManager", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
         engine->setObjectOwnership(TransferManager::instance(), QQmlEngine::CppOwnership);
