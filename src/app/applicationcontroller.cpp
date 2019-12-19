@@ -20,6 +20,7 @@
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include <itinerary_version_detailed.h>
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
@@ -496,7 +497,7 @@ void ApplicationController::openDocument(const QUrl &url)
 
 QString ApplicationController::applicationVersion() const
 {
-    return QCoreApplication::applicationVersion();
+    return QString::fromUtf8(ITINERARY_DETAILED_VERSION_STRING);
 }
 
 QString ApplicationController::extractorCapabilities() const

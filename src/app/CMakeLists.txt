@@ -2,6 +2,7 @@ if (TARGET KF5::Notifications)
     SET(HAVE_NOTIFICATIONS TRUE)
 endif()
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.in ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
 set(itinerary_srcs
     applicationcontroller.cpp
