@@ -39,6 +39,11 @@ RowLayout {
                         default: return "question";
                 }
             }
+            color: {
+                if (modelData.mode == JourneySection.Walking && modelData.duration > 20*60)
+                    return Kirigami.Theme.negativeTextColor
+                return Kirigami.Theme.textColor;
+            }
             width: Kirigami.Units.iconSizes.small
             height: width
             isMask: true

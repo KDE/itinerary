@@ -103,6 +103,11 @@ Kirigami.AbstractListItem {
                     return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
                 return "???";
             }}
+            color: {
+                if (modelData.mode == JourneySection.Walking && modelData.duration > 20*60)
+                    return Kirigami.Theme.negativeTextColor;
+                return Kirigami.Theme.textColor;
+            }
         }
 
         // last row: arrival information
