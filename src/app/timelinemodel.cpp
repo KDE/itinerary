@@ -466,7 +466,7 @@ std::vector<TimelineElement>::iterator TimelineModel::erasePreviousCountyInfo(st
 
 void TimelineModel::updateWeatherElements()
 {
-    if (!m_weatherMgr || m_elements.empty()) {
+    if (!m_weatherMgr || !m_weatherMgr->allowNetworkAccess() || m_elements.empty()) {
         return;
     }
 

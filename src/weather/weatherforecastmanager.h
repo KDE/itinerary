@@ -42,6 +42,7 @@ public:
     ~WeatherForecastManager();
 
     /** Kill switch for network operations. */
+    bool allowNetworkAccess() const;
     void setAllowNetworkAccess(bool enabled);
 
     /** Monitor the specified location for weather forecasts. */

@@ -57,6 +57,9 @@ void TripGroupInfoProvider::setWeatherForecastManager(WeatherForecastManager *mg
 WeatherForecast TripGroupInfoProvider::weatherForecast(const TripGroup &group) const
 {
     WeatherForecast fc;
+    if (!m_weatherMgr->allowNetworkAccess()) {
+        return fc;
+    }
 
     const auto elems = group.elements();
     QVariant startRes;

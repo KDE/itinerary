@@ -65,6 +65,11 @@ WeatherForecastManager::WeatherForecastManager(QObject *parent)
 
 WeatherForecastManager::~WeatherForecastManager() = default;
 
+bool WeatherForecastManager::allowNetworkAccess() const
+{
+    return m_allowNetwork || m_testMode;
+}
+
 void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 {
     m_allowNetwork = enabled;
