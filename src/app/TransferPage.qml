@@ -73,36 +73,33 @@ Kirigami.ScrollablePage {
                 journey: top.journey
             }
 
-            contentItem: ColumnLayout {
+            contentItem: Column {
+                spacing: Kirigami.Units.largeSpacing
                 ListView {
                     delegate: App.JourneySectionDelegate{}
                     model: journeyView.currentIndex == index ? journey.sections : 0
                     implicitHeight: contentHeight
-                    Layout.fillWidth: true
+                    width: parent.width
                     boundsBehavior: Flickable.StopAtBounds
                 }
                 App.JourneySummaryDelegate {
                     journey: top.journey
                     visible: journeyView.currentIndex != index
-                    Layout.fillWidth: true
+                }
+                QQC2.Button {
+                    text: i18n("Select")
+                    icon.name: "document-save"
+                    visible: journeyView.currentIndex == index
+                    onClicked: {
+                        TransferManager.setJourneyForTransfer(root.transfer, top.journey);
+                        applicationWindow().pageStack.pop();
+                    }
                 }
             }
 
             onClicked: {
                 journeyView.currentIndex = index;
             }
-
-            actions: [
-                Kirigami.Action {
-                    text: i18n("Select")
-                    iconName: "document-save"
-                    visible: journeyView.currentIndex == index
-                    onTriggered: {
-                        TransferManager.setJourneyForTransfer(root.transfer, top.journey);
-                        applicationWindow().pageStack.pop();
-                    }
-                }
-            ]
         }
     }
 
