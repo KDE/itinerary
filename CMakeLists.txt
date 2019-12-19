@@ -3,6 +3,9 @@ project(itinerary VERSION 0.0.1)
 
 find_package(ECM 5.59 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
+if (POLICY CMP0071)
+    cmake_policy(SET CMP0071 NEW)
+endif()
 
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
