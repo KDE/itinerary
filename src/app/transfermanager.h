@@ -79,7 +79,7 @@ Q_SIGNALS:
     void homeLocationChanged();
 
 private:
-    void rescan();
+    void rescan(bool force = false);
 
     void checkReservation(const QString &resId);
     void checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment);

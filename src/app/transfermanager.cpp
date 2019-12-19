@@ -51,6 +51,8 @@ TransferManager::TransferManager(QObject *parent)
     settings.beginGroup(QStringLiteral("HomeLocation"));
     m_homeLat = settings.value(QStringLiteral("Latitude"), NAN).toFloat();
     m_homeLon = settings.value(QStringLiteral("Longitude"), NAN).toFloat();
+
+    connect(this, &TransferManager::homeLocationChanged, this, [this]() { rescan(true); });
 }
 
 TransferManager::~TransferManager() = default;
@@ -177,7 +179,7 @@ KPublicTransport::Location TransferManager::homeLocation() const
     return l;
 }
 
-void TransferManager::rescan()
+void TransferManager::rescan(bool force)
 {
     if (!m_resMgr || !m_tgMgr) {
         return;
@@ -186,7 +188,7 @@ void TransferManager::rescan()
     QSettings settings;
     settings.beginGroup(QStringLiteral("TransferManager"));
     const auto previousFullScanVersion = settings.value(QLatin1String("FullScan"), 0).toInt();
-    if (previousFullScanVersion >= CurrentFullScanVerion) {
+    if (!force && previousFullScanVersion >= CurrentFullScanVerion) {
         return;
     }
 
