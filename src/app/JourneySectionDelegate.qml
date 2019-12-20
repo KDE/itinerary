@@ -96,7 +96,9 @@ Kirigami.AbstractListItem {
                 case JourneySection.PublicTransport:
                     return modelData.route.line.modeString + " " + modelData.route.line.name + " (" + Localizer.formatDuration(modelData.duration) + ")";
                 case JourneySection.Walking:
-                    return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration))
+                    if (modelData.distance == 0)
+                        return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration));
+                    return i18n("Walk %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
                 case JourneySection.Transfer:
                     return i18n("Transfer (%1)", Localizer.formatDuration(modelData.duration))
                 case JourneySection.Waiting:
@@ -104,7 +106,7 @@ Kirigami.AbstractListItem {
                 return "???";
             }}
             color: {
-                if (modelData.mode == JourneySection.Walking && modelData.duration > 20*60)
+                if (modelData.mode == JourneySection.Walking && (modelData.duration > 20*60 || modelData.distance > 1000))
                     return Kirigami.Theme.negativeTextColor;
                 return Kirigami.Theme.textColor;
             }

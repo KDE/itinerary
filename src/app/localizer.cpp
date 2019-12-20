@@ -22,6 +22,7 @@
 
 #include <KContacts/Address>
 #include <KFormat>
+#include <KLocalizedString>
 
 #include <QDateTime>
 #include <QLocale>
@@ -123,4 +124,15 @@ QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyNa
 QString Localizer::formatDuration(int seconds) const
 {
     return KFormat().formatDuration(seconds * 1000, KFormat::HideSeconds);
+}
+
+QString Localizer::formatDistance(int meter) const
+{
+    if (meter < 1000) {
+        return i18n("%1m", meter);
+    }
+    if (meter < 10000) {
+        return i18n("%1km", ((int)meter/100)/10.0);
+    }
+    return i18n("%1km", (int)qRound(meter/1000.0));
 }

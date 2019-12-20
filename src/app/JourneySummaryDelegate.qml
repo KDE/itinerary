@@ -40,7 +40,7 @@ RowLayout {
                 }
             }
             color: {
-                if (modelData.mode == JourneySection.Walking && modelData.duration > 20*60)
+                if (modelData.mode == JourneySection.Walking && (modelData.duration > 20*60 || modelData.distance > 1000))
                     return Kirigami.Theme.negativeTextColor
                 return Kirigami.Theme.textColor;
             }
