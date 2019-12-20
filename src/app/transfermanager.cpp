@@ -111,10 +111,15 @@ bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment a
         return false; // already exists
     }
 
-    return t.state() == Transfer::Discarded; // TODO this is a temporary shortcut, we actually want to allow this in more places
+    const auto res = m_resMgr->reservation(resId);
+    // in case it's new
+    t.setReservationId(resId);
+    t.setAlignment(alignment);
+
+    return alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
 }
 
-void TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
+Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
 {
     const auto res = m_resMgr->reservation(resId);
 
@@ -126,7 +131,12 @@ void TransferManager::addTransfer(const QString& resId, Transfer::Alignment alig
     t.setState(Transfer::UndefinedState);
     determineAnchorDeltaDefault(t, res);
 
-    alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+    if (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) {
+        addOrUpdateTransfer(t);
+        return t;
+    } else {
+        return {};
+    }
 }
 
 float TransferManager::homeLatitude() const
@@ -226,12 +236,15 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     t.setAlignment(alignment);
     determineAnchorDeltaDefault(t, res);
 
-    alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+    if (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) {
+        addOrUpdateTransfer(t);
+    } else {
+        removeTransfer(t);
+    }
 }
 
-void TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer transfer)
+bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    qDebug() << resId << res << transfer.state();
     transfer.setAnchorTime(SortUtil::startDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     if (isLocationChange) {
@@ -247,25 +260,22 @@ void TransferManager::checkTransferBefore(const QString &resId, const QVariant &
 
     if (isLocationChange && isFirstInTripGroup(resId)) {
         transfer.setFrom(homeLocation());
-        addOrUpdateTransfer(transfer);
-        return;
+        return true;
     }
 
     const auto prevResId = m_resMgr->previousBatch(resId);
     if (prevResId.isEmpty()) {
-        removeTransfer(transfer);
-        return;
+        return false;
     }
     const auto prevRes = m_resMgr->reservation(prevResId);
 
     // TODO
 
-    removeTransfer(transfer);
+    return false;
 }
 
-void TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer transfer)
+bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    qDebug() << resId << res << transfer.state();
     transfer.setAnchorTime(SortUtil::endDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     if (isLocationChange) {
@@ -281,15 +291,13 @@ void TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
 
     if (isLocationChange && isLastInTripGroup(resId)) {
         transfer.setTo(homeLocation());
-        addOrUpdateTransfer(transfer);
-        return;
+        return true;
     }
 
     if (isLocationChange) {
         const auto nextResId = m_resMgr->nextBatch(resId);
         if (nextResId.isEmpty()) {
-            removeTransfer(transfer);
-            return;
+            return false;
         }
         const auto nextRes = m_resMgr->reservation(nextResId);
         const auto curLoc = LocationUtil::arrivalLocation(res);
@@ -302,14 +310,13 @@ void TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
         if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
             qDebug() << res << nextRes << LocationUtil::name(LocationUtil::arrivalLocation(res)) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc));
-            addOrUpdateTransfer(transfer);
-            return;
+            return true;
         }
     }
 
     // TODO
 
-    removeTransfer(transfer);
+    return false;
 }
 
 void TransferManager::reservationRemoved(const QString &resId)
@@ -356,7 +363,7 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
     }
 }
 
-void TransferManager::addOrUpdateTransfer(Transfer t)
+void TransferManager::addOrUpdateTransfer(Transfer &t)
 {
     if (t.state() == Transfer::UndefinedState) { // newly added
         if (!t.hasLocations()) { // undefined home location

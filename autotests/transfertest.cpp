@@ -92,9 +92,11 @@ private Q_SLOTS:
         QCOMPARE(transfer.from().longitude(), 13.37630f);
         QVERIFY(transfer.to().hasCoordinate());
         QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
+        QVERIFY(!mgr.canAddTransfer(batchId, Transfer::Before));
 
         transfer = mgr.transfer(batchId, Transfer::After);
         QCOMPARE(transfer.state(), Transfer::UndefinedState);
+        QVERIFY(!mgr.canAddTransfer(batchId, Transfer::After));
 
         // verify persistence
         TransferManager mgr2;
@@ -141,6 +143,15 @@ private Q_SLOTS:
         QCOMPARE(removeSpy.size(), 1);
         transfer = mgr.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Discarded);
+        QVERIFY(mgr.canAddTransfer(batchId, Transfer::Before));
+
+        transfer = mgr.addTransfer(batchId, Transfer::Before);
+        QCOMPARE(transfer.state(), Transfer::Pending);
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.alignment(), Transfer::Before);
+        QCOMPARE(transfer.reservationId(), batchId);
+        QVERIFY(transfer.hasLocations());
+        QVERIFY(!mgr.canAddTransfer(batchId, Transfer::Before));
     }
 };
 

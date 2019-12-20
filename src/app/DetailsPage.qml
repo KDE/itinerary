@@ -78,6 +78,11 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Component {
+        id: transferPage
+        App.TransferPage {}
+    }
+
     // TODO this needs multi-traveler support!
     Instantiator {
         model: reservation.potentialAction
@@ -120,13 +125,19 @@ Kirigami.ScrollablePage {
                 iconName: "qrc:///images/transfer.svg"
                 text: i18n("Add transfer before")
                 enabled: TransferManager.canAddTransfer(root.batchId, Transfer.Before)
-                onTriggered: TransferManager.addTransfer(root.batchId, Transfer.Before);
+                onTriggered: {
+                    var t = TransferManager.addTransfer(root.batchId, Transfer.Before);
+                    applicationWindow().pageStack.push(transferPage, {"transfer": t });
+                }
             },
             Kirigami.Action {
                 iconName: "qrc:///images/transfer.svg"
                 text: i18n("Add transfer after")
                 enabled: TransferManager.canAddTransfer(root.batchId, Transfer.After)
-                onTriggered: TransferManager.addTransfer(root.batchId, Transfer.After);
+                onTriggered: {
+                    var t = TransferManager.addTransfer(root.batchId, Transfer.After);
+                    applicationWindow().pageStack.push(transferPage, {"transfer": t });
+                }
             },
             Kirigami.Action {
                 iconName: "document-edit"
