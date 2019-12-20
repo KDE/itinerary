@@ -263,11 +263,25 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
         return true;
     }
 
-    const auto prevResId = m_resMgr->previousBatch(resId);
-    if (prevResId.isEmpty()) {
-        return false;
+    if (isLocationChange) {
+        const auto prevResId = m_resMgr->previousBatch(resId); // TODO this fails for multiple nested range elements!
+        if (prevResId.isEmpty()) {
+            return false;
+        }
+        const auto prevRes = m_resMgr->reservation(prevResId);
+        const auto curLoc = LocationUtil::departureLocation(res);
+        QVariant prevLoc;
+        if (LocationUtil::isLocationChange(prevRes)) {
+            prevLoc = LocationUtil::arrivalLocation(prevRes);
+        } else {
+            prevLoc = LocationUtil::location(prevRes);
+        }
+        if (!curLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(curLoc, prevLoc, LocationUtil::WalkingDistance)) {
+            qDebug() << res << prevRes << LocationUtil::name(curLoc) << LocationUtil::name(prevLoc);
+            transfer.setTo(PublicTransport::locationFromPlace(prevLoc));
+            return true;
+        }
     }
-    const auto prevRes = m_resMgr->reservation(prevResId);
 
     // TODO
 
@@ -308,7 +322,7 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
             nextLoc = LocationUtil::location(nextRes);
         }
         if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
-            qDebug() << res << nextRes << LocationUtil::name(LocationUtil::arrivalLocation(res)) << LocationUtil::name(nextLoc);
+            qDebug() << res << nextRes << LocationUtil::name(curLoc) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc));
             return true;
         }
