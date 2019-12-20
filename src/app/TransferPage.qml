@@ -110,22 +110,36 @@ Kirigami.ScrollablePage {
         delegate: journeyDelegate
         model: sortedJourneyModel
 
-        header: QQC2.ToolButton {
-            icon.name: "go-up-symbolic"
-            visible: journeyModel.canQueryPrevious
-            onClicked: journeyModel.queryPrevious()
-            x: Kirigami.Units.largeSpacing * 2
+        header: ColumnLayout {
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
+
+            QQC2.Label {
+                text: i18n("Preceeding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.from.name);
+                visible: transfer.alignment == Transfer.After
+                Layout.fillWidth: true
+            }
+
+            QQC2.ToolButton {
+                icon.name: "go-up-symbolic"
+                visible: journeyModel.canQueryPrevious
+                onClicked: journeyModel.queryPrevious()
+                Layout.fillWidth: true
+            }
         }
 
         footer: ColumnLayout {
-            x: Kirigami.Units.largeSpacing * 2
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
+
             QQC2.ToolButton {
                 Layout.fillWidth: true
                 icon.name: "go-down-symbolic"
                 visible: journeyModel.canQueryNext
                 onClicked: journeyModel.queryNext()
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.to.name);
+                visible: transfer.alignment == Transfer.Before
             }
             QQC2.Label {
                 Layout.fillWidth: true
