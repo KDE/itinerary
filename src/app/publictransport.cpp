@@ -241,6 +241,21 @@ QString PublicTransport::attributionSummary(const QVariantList& attributions) co
     return l.join(QLatin1String(", "));
 }
 
+bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &section) const
+{
+    using namespace KPublicTransport;
+
+    switch (section.mode()) {
+        case JourneySection::Walking:
+        case JourneySection::Transfer:
+            return section.duration() > 20*60 || section.distance() > 1000;
+        case JourneySection::Waiting:
+            return section.duration() > 20*60;
+        default:
+            return false;
+    }
+}
+
 QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
 {
     auto id = loc.identifier(QLatin1String("ibnr"));

@@ -105,11 +105,7 @@ Kirigami.AbstractListItem {
                     return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
                 return "???";
             }}
-            color: {
-                if (modelData.mode == JourneySection.Walking && (modelData.duration > 20*60 || modelData.distance > 1000))
-                    return Kirigami.Theme.negativeTextColor;
-                return Kirigami.Theme.textColor;
-            }
+            color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
         }
 
         // last row: arrival information

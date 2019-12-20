@@ -80,6 +80,9 @@ public:
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;
 
+    /** Returns @c true when we want to highlight @p sections due to looking problematic. */
+    Q_INVOKABLE bool warnAboutSection(const KPublicTransport::JourneySection &section) const;
+
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);

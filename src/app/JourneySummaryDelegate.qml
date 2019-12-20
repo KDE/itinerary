@@ -39,11 +39,7 @@ RowLayout {
                         default: return "question";
                 }
             }
-            color: {
-                if (modelData.mode == JourneySection.Walking && (modelData.duration > 20*60 || modelData.distance > 1000))
-                    return Kirigami.Theme.negativeTextColor
-                return Kirigami.Theme.textColor;
-            }
+            color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
             width: Kirigami.Units.iconSizes.small
             height: width
             isMask: true
