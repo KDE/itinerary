@@ -114,7 +114,7 @@ Kirigami.ScrollablePage {
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
 
             QQC2.Label {
-                text: i18n("Preceeding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.from.name);
+                text: i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.from.name);
                 visible: transfer.alignment == Transfer.After
                 Layout.fillWidth: true
             }
