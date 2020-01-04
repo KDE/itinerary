@@ -19,6 +19,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kpublictransport 1.0 as KPublicTransport
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -40,6 +41,14 @@ App.DetailsPage {
     }
 
     Component {
+        id: vehicleLayoutPage
+        App.VehicleLayoutPage {
+            publicTransportManager: root.controller.liveDataManager.publicTransportManager
+            departure: root.departure
+        }
+    }
+
+    Component {
         id: alternativeAction
         Kirigami.Action {
             text: i18n("Alternatives")
@@ -49,9 +58,21 @@ App.DetailsPage {
             }
         }
     }
+    Component {
+        id: vehicleLayoutAction
+        Kirigami.Action {
+            text: i18n("Vehicle Layout")
+            iconName: "view-list-symbolic"
+            enabled: departure && departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain
+            onTriggered: {
+                applicationWindow().pageStack.push(vehicleLayoutPage);
+            }
+        }
+    }
 
     Component.onCompleted: {
         actions.contextualActions.push(alternativeAction.createObject(root));
+        actions.contextualActions.push(vehicleLayoutAction.createObject(root));
     }
 
     ColumnLayout {

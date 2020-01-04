@@ -127,6 +127,7 @@ if (ANDROID)
         question
         settings-configure
         view-calendar-day
+        view-list-symbolic
         view-refresh
         view-statistics
 
