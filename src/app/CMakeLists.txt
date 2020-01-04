@@ -120,7 +120,7 @@ if (ANDROID)
         go-home
         go-next-symbolic
         go-up-symbolic
-        help-about
+        help-about-symbolic
         list-add
         map-symbolic
         meeting-attending
