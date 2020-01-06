@@ -76,7 +76,8 @@ public class Activity extends QtActivity
                     continue;
                 }
 
-                if (propName.equals("unknown-property.v2")) {
+                Log.i(TAG, propName);
+                if (propName.equals("unknown-property.v2") || propName.contains("vnd.ical4android.unknown-property")) {
                     importDavDroidJson(propValue);
 
                 // legacy, replaced by the above in Feb 2019, removing this eventually will allow us to remove the ical4j dependency
