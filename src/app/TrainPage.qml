@@ -45,6 +45,7 @@ App.DetailsPage {
         App.VehicleLayoutPage {
             publicTransportManager: root.controller.liveDataManager.publicTransportManager
             departure: root.departure
+            selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
         }
     }
 

@@ -29,11 +29,17 @@ Kirigami.Page {
 
     property alias publicTransportManager: vehicleModel.manager
     property var departure
+    property string selectedVehicleSection
 
     onDepartureChanged: vehicleModel.request.departure = root.departure;
 
     KPublicTransport.VehicleLayoutQueryModel {
         id: vehicleModel
+    }
+
+    function colorMix(bg, fg, alpha)
+    {
+        return Qt.tint(bg, Qt.rgba(fg.r, fg.g, fg.b, alpha));
     }
 
     ColumnLayout {
@@ -104,10 +110,10 @@ Kirigami.Page {
                     height: section.platformPositionEnd * vehicleView.fullLength - y
                     width: vehicleView.sectionWidth
                     textColor: Kirigami.Theme.textColor
-                    firstClassBackground: Kirigami.Theme.positiveTextColor
-                    secondClassBackground: Kirigami.Theme.focusColor
-                    inaccessibleBackground: Kirigami.Theme.disabledTextColor
-                    restaurantBackground: Kirigami.Theme.neutralTextColor
+                    firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
+                    secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
+                    inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
+                    restaurantBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.neutralTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
 
                     QQC2.Label {
                         anchors.centerIn: parent
