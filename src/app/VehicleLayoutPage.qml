@@ -30,11 +30,26 @@ Kirigami.Page {
     property alias publicTransportManager: vehicleModel.manager
     property var departure
     property string selectedVehicleSection
+    property string seat
 
     onDepartureChanged: vehicleModel.request.departure = root.departure;
 
     KPublicTransport.VehicleLayoutQueryModel {
         id: vehicleModel
+
+        onContentChanged: {
+            var offset = 0;
+            if (selectedVehicleSection) {
+                offset = vehicleView.fullLength * vehicleModel.vehicle.platformPositionForSection(selectedVehicleSection);
+                offset -= vehicleView.height / 2; // place in center
+            } else {
+                offset = vehicleView.fullLength * vehicleModel.vehicle.platformPositionBegin;
+                offset -= Kirigami.Units.iconSizes.small + Kirigami.Units.largeSpacing; // direction indicator
+            }
+
+            offset = Math.max(offset, 0);
+            vehicleView.contentY = offset;
+        }
     }
 
     function colorMix(bg, fg, alpha)
@@ -49,7 +64,10 @@ Kirigami.Page {
             text: vehicleModel.departure.stopPoint.name + " - " + vehicleModel.departure.route.line.name + " - " + Localizer.formatDateTime(vehicleModel.departure, "scheduledDepartureTime")
         }
         QQC2.Label {
-            text: i18n("Platform: %1", vehicleModel.platform.name)
+            text: i18n("Platform: %1", (vehicleModel.platform.name ? vehicleModel.platform.name : "-"))
+        }
+        QQC2.Label {
+            text: i18n("Coach: %1 Seat: %2", (selectedVehicleSection ? selectedVehicleSection : "-"), (seat ? seat : "-"))
         }
 
         Flickable {
