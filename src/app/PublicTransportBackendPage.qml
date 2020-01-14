@@ -38,31 +38,44 @@ Kirigami.ScrollablePage {
             highlighted: false
             enabled: model.itemEnabled
 
-            GridLayout {
-                columns: 3
-                rows: 2
+            Item {
+                anchors.margins: Kirigami.Units.largeSpacing
+                implicitHeight: childrenRect.height
 
                 QQC2.Label {
+                    id: nameLabel
                     text: model.name
-                    Layout.fillWidth: true
+                    anchors.left: parent.left
+                    anchors.top: parent.top
+                    anchors.right: securityIcon.left
+                    anchors.rightMargin: Kirigami.Units.largeSpacing
+                    // try to retain trailing abbreviations when we have to elide
+                    elide: text.endsWith(")") ? Text.ElideMiddle : Text.ElideRight
                 }
                 Kirigami.Icon {
+                    id: securityIcon
                     source: model.isSecure ? "channel-secure-symbolic" : "channel-insecure-symbolic"
                     color: model.isSecure ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.negativeTextColor
                     width: height
                     height: Kirigami.Units.gridUnit
+                    anchors.top: parent.top
+                    anchors.right: toggle.left
                 }
                 QQC2.Switch {
                     id: toggle
                     checked: model.backendEnabled
-                    Layout.rowSpan: 2
                     onToggled: model.backendEnabled = checked;
+                    anchors.top: parent.top
+                    anchors.right: parent.right
                 }
                 QQC2.Label {
-                    Layout.columnSpan: 2
-                    Layout.fillWidth: true
+                    anchors.top: nameLabel.bottom
+                    anchors.left: parent.left
+                    anchors.right: toggle.left
+                    anchors.topMargin: Kirigami.Units.smallSpacing
                     text: model.description
                     font.italic: true
+                    wrapMode: Text.WordWrap
                 }
             }
 
