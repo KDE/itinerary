@@ -24,7 +24,7 @@
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
-#include <KItinerary/ExtractorCapabilities>
+// #include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
