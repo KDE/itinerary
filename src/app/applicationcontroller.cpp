@@ -502,5 +502,6 @@ QString ApplicationController::applicationVersion() const
 
 QString ApplicationController::extractorCapabilities() const
 {
-    return ExtractorCapabilities::capabilitiesString();
+//     return ExtractorCapabilities::capabilitiesString();
+    return QString();
 }

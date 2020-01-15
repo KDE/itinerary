@@ -276,7 +276,7 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
         } else {
             prevLoc = LocationUtil::location(prevRes);
         }
-        if (!curLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(curLoc, prevLoc, LocationUtil::WalkingDistance)) {
+        if (!curLoc.isNull() && !prevLoc.isNull() /*&& !LocationUtil::isSameLocation(curLoc, prevLoc, LocationUtil::WalkingDistance)*/) {
             qDebug() << res << prevRes << LocationUtil::name(curLoc) << LocationUtil::name(prevLoc);
             transfer.setTo(PublicTransport::locationFromPlace(prevLoc));
             return true;
@@ -321,7 +321,7 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
         } else {
             nextLoc = LocationUtil::location(nextRes);
         }
-        if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
+        if (!curLoc.isNull() && !nextLoc.isNull() /*&& !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)*/) {
             qDebug() << res << nextRes << LocationUtil::name(curLoc) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc));
             return true;
