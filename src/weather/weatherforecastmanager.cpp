@@ -107,6 +107,13 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
         auto beginDt = begin;
         roundToHour(beginDt);
         fc.setDateTime(beginDt);
+        auto endDt = end;
+        roundToHour(endDt);
+        if (beginDt == endDt) {
+            endDt = endDt.addSecs(3600);
+        }
+        const auto range = beginDt.secsTo(endDt) / 3600;
+        fc.setRange(range);
         fc.setTile({latitude, longitude});
         fc.setMinimumTemperature(std::min(latitude, longitude));
         fc.setMaximumTemperature(std::max(latitude, longitude));

@@ -76,7 +76,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 11,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -93,7 +93,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -110,7 +110,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 16,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -267,8 +267,8 @@
             "maximumTemperature": 60.31719970703125,
             "minimumTemperature": 24.963300704956055,
             "precipitation": 23,
-            "range": 0,
-            "symbolIconName": "weather-few-clouds",
+            "range": 3,
+            "symbolIconName": "weather-few-clouds-night",
             "valid": true,
             "windSpeed": 0
         }
@@ -315,7 +315,7 @@
             "maximumTemperature": 60.31719970703125,
             "minimumTemperature": 24.963300704956055,
             "precipitation": 23,
-            "range": 0,
+            "range": 18,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -475,8 +475,8 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
-            "symbolIconName": "weather-few-clouds",
+            "range": 5,
+            "symbolIconName": "weather-few-clouds-night",
             "valid": true,
             "windSpeed": 0
         }
@@ -492,7 +492,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -509,7 +509,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -526,7 +526,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -543,7 +543,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -560,7 +560,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
@@ -577,7 +577,7 @@
             "maximumTemperature": 52.55970001220703,
             "minimumTemperature": 13.287799835205078,
             "precipitation": 23,
-            "range": 0,
+            "range": 24,
             "symbolIconName": "weather-few-clouds",
             "valid": true,
             "windSpeed": 0
