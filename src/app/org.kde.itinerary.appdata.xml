@@ -169,6 +169,10 @@
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png</image>
     </screenshot>
   </screenshots>
+  <categories>
+      <category>Office</category>
+      <category>Utility</category>
+  </categories>
   <url type="homepage">https://community.kde.org/KDE_PIM/KDE_Itinerary</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=KDE+Itinerary</url>
   <project_group>KDE</project_group>
