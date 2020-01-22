@@ -172,6 +172,7 @@ Kirigami.ScrollablePage {
                 label: section
                 backgroundColor: Kirigami.Theme.backgroundColor
                 icon: "view-calendar-day"
+                x: - 2*Kirigami.Units.largeSpacing
             }
         }
         section.criteria: ViewSection.FullString
