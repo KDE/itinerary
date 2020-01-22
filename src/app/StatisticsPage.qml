@@ -25,15 +25,15 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     title: i18n("Statistics")
+    property alias reservationManager: model.reservationManager
 
     StatisticsModel {
         id: model
-        reservationManager: _reservationManager
     }
 
     StatisticsTimeRangeModel {
         id: timeRangeModel
-        reservationManager: _reservationManager
+        reservationManager: model.reservationManager
     }
 
     Kirigami.FormLayout {

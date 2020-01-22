@@ -139,6 +139,8 @@ Kirigami.ApplicationWindow {
     }
     Component {
         id: statisticsComponent
-        App.StatisticsPage {}
+        App.StatisticsPage {
+            reservationManager: _reservationManager
+        }
     }
 }

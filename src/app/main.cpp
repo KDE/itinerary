@@ -199,6 +199,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
 
+    qRegisterMetaType<ReservationManager*>();
     qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
     qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
