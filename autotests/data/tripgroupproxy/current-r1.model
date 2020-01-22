@@ -44,6 +44,7 @@
                 "@context": "http://schema.org",
                 "@type": "FlightReservation",
                 "airplaneSeat": "15F",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "Flight",
                     "airline": {
@@ -110,6 +111,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TrainReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "TrainTrip",
                     "arrivalPlatform": "7",
@@ -181,6 +183,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TrainReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "TrainTrip",
                     "arrivalStation": {
@@ -242,6 +245,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TaxiReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "pickupLocation": {
                     "@type": "Place",
                     "address": {
@@ -272,6 +276,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "EventReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "Event",
                     "location": {
@@ -319,6 +324,7 @@
                     "@value": "2017-09-15T10:00:00+02:00",
                     "timezone": "Europe/Zurich"
                 },
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "LodgingBusiness",
                     "address": {
@@ -344,6 +350,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "BusReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "BusTrip",
                     "arrivalBusStop": {
@@ -440,6 +447,7 @@
                     "@value": "2017-09-14T22:00:00+02:00",
                     "timezone": "Europe/Zurich"
                 },
+                "modifiedTime": "2020-01-22T00:00:00",
                 "partySize": 20,
                 "reservationFor": {
                     "@type": "FoodEstablishment",
@@ -480,6 +488,7 @@
                     "@value": "2017-09-15T10:00:00+02:00",
                     "timezone": "Europe/Zurich"
                 },
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "LodgingBusiness",
                     "address": {
@@ -505,6 +514,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TrainReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "TrainTrip",
                     "arrivalPlatform": "3",
@@ -566,6 +576,7 @@
             {
                 "@context": "http://schema.org",
                 "@type": "TrainReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "TrainTrip",
                     "arrivalPlatform": "2",
@@ -629,6 +640,7 @@
                 "@context": "http://schema.org",
                 "@type": "FlightReservation",
                 "airplaneSeat": "10E",
+                "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {
                     "@type": "Flight",
                     "airline": {
