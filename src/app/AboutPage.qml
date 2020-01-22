@@ -62,6 +62,20 @@ Kirigami.Page {
             url: "https://github.com/nu-book/zxing-cpp"
         }
         ListElement {
+            name: "Poppler"
+            licenseId: "GPL-2.0-or-later"
+            licenseName: "GNU General Public License v2 or later"
+            url: "https://poppler.freedesktop.org/"
+        }
+        ListElement {
+            name: "FreeType"
+            copyright: "Copyright (C) 2006-2020 by David Turner, Robert Wilhelm, and Werner Lemberg."
+            platform: "android"
+            licenseId: "FTL"
+            licenseName: "GNU General Public License v2 or Freetype Project License"
+            url: "https://www.freetype.org/"
+        }
+        ListElement {
             name: "iCal4j"
             copyright: "© 2012, Ben Fortuna"
             platform: "android"
@@ -90,34 +104,37 @@ Kirigami.Page {
         id: licenseDelegate
         Kirigami.AbstractListItem {
             visible: !model.platform || model.platform == Qt.platform.os
-            height: visible ? implicitHeight : 0
-            width: ListView.view.width
             highlighted: false
-            ColumnLayout {
+            Column {
                 id: layout
                 QQC2.Label {
-                    Layout.fillWidth: true
                     text: model.name
                     font.weight: Font.Bold
                     wrapMode: Text.WordWrap
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                 }
                 QQC2.Label {
-                    Layout.fillWidth: true
                     text: i18n("Copyright: %1", model.copyright)
                     visible: model.copyright != undefined
                     wrapMode: Text.WordWrap
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                 }
                 QQC2.Label {
-                    Layout.fillWidth: true
                     text: i18n("Homepage: <a href=\"%1\">%1</a>", model.url)
                     visible: model.url != undefined
                     onLinkActivated: Qt.openUrlExternally(link)
+                    wrapMode: Text.WordWrap
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                 }
                 QQC2.Label {
-                    Layout.fillWidth: true
                     text: i18n("License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>", model.licenseId, model.licenseName)
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
+                    anchors.left: parent.left
+                    anchors.right: parent.right
                 }
             }
         }
