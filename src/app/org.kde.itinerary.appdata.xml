@@ -2,7 +2,7 @@
 <component type="desktop">
   <id>org.kde.itinerary</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>LGPL-2.0+</project_license>
+  <project_license>LGPL-2.0-or-later</project_license>
   <name>KDE Itinerary</name>
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
@@ -42,9 +42,7 @@
   <summary xml:lang="uk">Цифровий помічник у подорожах</summary>
   <summary xml:lang="x-test">xxDigital travel assistantxx</summary>
   <description>
-    <p>
-    Itinerary and boarding pass management application.
-    </p>
+    <p>KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="ca">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
     <p xml:lang="ca-valencia">Aplicació per a la gestió d'itineraris i bitllets d'embarcament.</p>
     <p xml:lang="en-GB">Itinerary and boarding pass management application.</p>
@@ -85,7 +83,7 @@
     <p xml:lang="uk">Можливості:</p>
     <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
-      <li>Unified travel itinerary.</li>
+      <li>Timeline view of a unified travel itinerary with automatic trip grouping.</li>
       <li xml:lang="ca">Itinerari de viatge unificat.</li>
       <li xml:lang="ca-valencia">Itinerari de viatge unificat.</li>
       <li xml:lang="en-GB">Unified travel itinerary.</li>
@@ -123,7 +121,10 @@
       <li xml:lang="sv">Hantering av boardingkort.</li>
       <li xml:lang="uk">Керування посадковими квитками.</li>
       <li xml:lang="x-test">xxBoarding pass management.xx</li>
-      <li>Weather forecast.</li>
+      <li>Supports ticket management for multi-traveler and multi-ticket bookings.</li>
+      <li>Automatic booking data extraction from various input formats, performed locally on your device.</li>
+      <li>Real-time delay and platform change information for trains.</li>
+      <li>Weather forecast for destination along your trip.</li>
       <li xml:lang="ca">Previsió meteorològica.</li>
       <li xml:lang="ca-valencia">Previsió meteorològica.</li>
       <li xml:lang="cs">Předpověď počasí.</li>
@@ -143,7 +144,12 @@
       <li xml:lang="sv">Väderprognos.</li>
       <li xml:lang="uk">Прогноз погоди.</li>
       <li xml:lang="x-test">xxWeather forecast.xx</li>
+      <li>Full control over all online access.</li>
+      <li>Selection of alternative train connections on unbound tickets or on missed connections.</li>
+      <li>Local ground transportation navigation between elements of your itinerary.</li>
+      <li>Personal travel statistics to monitor environmental impact.</li>
     </ul>
+    <p>KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -167,6 +173,10 @@
       <caption xml:lang="uk">Перегляд розкладу.</caption>
       <caption xml:lang="x-test">xxTimeline view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Boading pass view.</caption>
+      <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-boardingpass.png</image>
     </screenshot>
   </screenshots>
   <categories>
