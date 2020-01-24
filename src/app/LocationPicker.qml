@@ -35,7 +35,7 @@ Kirigami.Page {
 
    actions.main: Kirigami.Action {
         icon.name: "crosshairs"
-        text: "Pick Location"
+        text: i18n("Pick Location")
         onTriggered: {
             coordinate = map.center;
             applicationWindow().pageStack.pop();
