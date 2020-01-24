@@ -2,6 +2,7 @@
   {
     "@context": "http://schema.org",
     "@type": "FlightReservation",
+    "modifiedTime": "2020-01-22T00:00:00",
     "reservationNumber": "RXJ34P",
     "reservationStatus": "http://schema.org/Confirmed",
     "underName": {
@@ -34,6 +35,7 @@
   {
     "@context": "http://schema.org",
     "@type": "FlightReservation",
+    "modifiedTime": "2020-01-22T00:00:00",
     "reservationNumber": "RXJ34P",
     "reservationStatus": "http://schema.org/Confirmed",
     "underName": {
@@ -66,6 +68,7 @@
   {
     "@context": "http://schema.org",
     "@type": "FlightReservation",
+    "modifiedTime": "2020-01-22T00:00:00",
     "reservationNumber": "RXJ34P",
     "reservationStatus": "http://schema.org/Confirmed",
     "underName": {
@@ -98,6 +101,7 @@
   {
     "@context": "http://schema.org",
     "@type": "FlightReservation",
+    "modifiedTime": "2020-01-22T00:00:00",
     "reservationNumber": "RXJ34P",
     "reservationStatus": "http://schema.org/Confirmed",
     "underName": {

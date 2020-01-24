@@ -2,6 +2,7 @@
    {
         "@context": "http://schema.org",
         "@type": "FlightReservation",
+        "modifiedTime": "2020-01-22T00:00:00",
         "reservationFor": {
             "@type": "Flight",
             "airline": {
@@ -36,6 +37,7 @@
     {
         "@context": "http://schema.org",
         "@type": "FlightReservation",
+        "modifiedTime": "2020-01-22T00:00:00",
         "reservationFor": {
             "@type": "Flight",
             "airline": {
@@ -81,6 +83,7 @@
             "@value": "1996-10-17T12:00:00+02:00",
             "timezone": "Europe/Helsinki"
         },
+        "modifiedTime": "2020-01-22T00:00:00",
         "reservationFor": {
             "@type": "LodgingBusiness",
             "address": {
@@ -94,6 +97,7 @@
     {
         "@context": "http://schema.org",
         "@type": "FlightReservation",
+        "modifiedTime": "2020-01-22T00:00:00",
         "reservationFor": {
             "@type": "Flight",
             "airline": {
