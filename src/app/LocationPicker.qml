@@ -28,6 +28,11 @@ Kirigami.Page {
     id: root
     property variant coordinate: QtPositioning.coordinate(0, 0)
 
+    topPadding: 0
+    bottomPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+
    actions.main: Kirigami.Action {
         icon.name: "crosshairs"
         text: "Pick Location"
