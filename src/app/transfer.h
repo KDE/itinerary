@@ -36,6 +36,8 @@ class Transfer
     Q_PROPERTY(State state READ state WRITE setState)
     Q_PROPERTY(KPublicTransport::Location from READ from WRITE setFrom)
     Q_PROPERTY(KPublicTransport::Location to READ to WRITE setTo)
+    Q_PROPERTY(QString fromName READ fromName WRITE setFromName)
+    Q_PROPERTY(QString toName READ toName WRITE setToName)
     Q_PROPERTY(KPublicTransport::Journey journey READ journey WRITE setJourney)
     Q_PROPERTY(QString reservationId READ reservationId WRITE setReservationId)
     Q_PROPERTY(QDateTime anchorTime READ anchorTime WRITE setAnchorTime)
@@ -71,7 +73,13 @@ public:
     void setFrom(const KPublicTransport::Location &from);
     KPublicTransport::Location to() const;
     void setTo(const KPublicTransport::Location &to);
+    /** From and to locations are sufficiently defined. */
     bool hasLocations() const;
+
+    QString fromName() const;
+    void setFromName(const QString &fromName);
+    QString toName() const;
+    void setToName(const QString &toName);
 
     KPublicTransport::Journey journey() const;
     void setJourney(const KPublicTransport::Journey &journey);

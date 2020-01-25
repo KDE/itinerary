@@ -44,16 +44,17 @@
             "from": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262,
-                "name": "Home"
+                "longitude": 13.376299858093262
             },
+            "fromName": "Home",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "latitude": 52.55970001220703,
                 "longitude": 13.287799835205078,
                 "name": "Tegel"
-            }
+            },
+            "toName": "Tegel"
         },
         "type": 3
     },
@@ -340,13 +341,14 @@
                 "longitude": 11.202899932861328,
                 "name": "Peretola"
             },
+            "fromName": "Peretola",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262,
-                "name": "Home"
-            }
+                "longitude": 13.376299858093262
+            },
+            "toName": "Home"
         },
         "type": 3
     },

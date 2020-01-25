@@ -88,6 +88,8 @@
             "@type": "LodgingBusiness",
             "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Some Street 42",
+                "addressLocality": "Helsinki",
                 "addressCountry": "FI"
             },
             "name": "Some Hotel in Finland"

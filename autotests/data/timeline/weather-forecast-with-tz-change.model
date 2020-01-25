@@ -134,7 +134,7 @@
                 "@value": "1996-10-17T18:35:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "name": "Some Hotel in Finland (October 1996)"
+            "name": "Helsinki (October 1996)"
         },
         "type": 2
     },
@@ -155,16 +155,17 @@
             "from": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262,
-                "name": "Home"
+                "longitude": 13.376299858093262
             },
+            "fromName": "Home",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "latitude": 52.55970001220703,
                 "longitude": 13.287799835205078,
                 "name": "Tegel"
-            }
+            },
+            "toName": "Tegel"
         },
         "type": 3
     },
@@ -250,12 +251,15 @@
                 "longitude": 24.963300704956055,
                 "name": "Helsinki-Vantaa"
             },
+            "fromName": "Helsinki-Vantaa",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "country": "FI",
-                "name": "Some Hotel in Finland"
-            }
+                "locality": "Helsinki",
+                "streetAddress": "Some Street 42"
+            },
+            "toName": "Some Hotel in Finland"
         },
         "type": 3
     },
@@ -298,7 +302,9 @@
                     "@type": "LodgingBusiness",
                     "address": {
                         "@type": "PostalAddress",
-                        "addressCountry": "FI"
+                        "addressCountry": "FI",
+                        "addressLocality": "Helsinki",
+                        "streetAddress": "Some Street 42"
                     },
                     "name": "Some Hotel in Finland"
                 },
@@ -347,7 +353,9 @@
                     "@type": "LodgingBusiness",
                     "address": {
                         "@type": "PostalAddress",
-                        "addressCountry": "FI"
+                        "addressCountry": "FI",
+                        "addressLocality": "Helsinki",
+                        "streetAddress": "Some Street 42"
                     },
                     "name": "Some Hotel in Finland"
                 },
@@ -356,6 +364,38 @@
         ],
         "sectionHeader": "Thursday, 17 Oct 1996",
         "type": 13
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Thursday, 17 Oct 1996",
+        "transfer": {
+            "@context": "http://schema.org",
+            "@type": "Transfer",
+            "alignment": "Before",
+            "anchorTime": {
+                "@type": "QDateTime",
+                "@value": "1996-10-17T17:35:00+03:00",
+                "timezone": "Europe/Helsinki"
+            },
+            "anchorTimeDelta": 3600,
+            "from": {
+                "@type": "Location",
+                "country": "FI",
+                "locality": "Helsinki",
+                "streetAddress": "Some Street 42"
+            },
+            "fromName": "Some Hotel in Finland",
+            "state": "Pending",
+            "to": {
+                "@type": "Location",
+                "latitude": 60.31719970703125,
+                "longitude": 24.963300704956055,
+                "name": "Helsinki-Vantaa"
+            },
+            "toName": "Helsinki-Vantaa"
+        },
+        "type": 3
     },
     {
         "isToday": false,
@@ -439,13 +479,14 @@
                 "longitude": 13.287799835205078,
                 "name": "Tegel"
             },
+            "fromName": "Tegel",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262,
-                "name": "Home"
-            }
+                "longitude": 13.376299858093262
+            },
+            "toName": "Home"
         },
         "type": 3
     },
@@ -466,7 +507,7 @@
                 "@value": "1996-10-17T18:35:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "name": "Some Hotel in Finland (October 1996)"
+            "name": "Helsinki (October 1996)"
         },
         "type": 2
     },

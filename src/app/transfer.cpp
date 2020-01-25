@@ -30,6 +30,8 @@ public:
     KPublicTransport::Location m_from;
     KPublicTransport::Location m_to;
     KPublicTransport::Journey m_journey;
+    QString m_fromName;
+    QString m_toName;
     QString m_resId;
     QDateTime m_anchorTime;
     int m_anchorDelta = 0;
@@ -87,6 +89,32 @@ void Transfer::setTo(const KPublicTransport::Location &to)
 {
     d.detach();
     d->m_to = to;
+}
+
+QString Transfer::fromName() const
+{
+    if (d->m_fromName.isEmpty())
+        return d->m_from.name();
+    return d->m_fromName;
+}
+
+void Transfer::setFromName(const QString &fromName)
+{
+    d.detach();
+    d->m_fromName = fromName;
+}
+
+QString Transfer::toName() const
+{
+    if (d->m_toName.isEmpty())
+        return d->m_to.name();
+    return d->m_toName;
+}
+
+void Transfer::setToName(const QString& toName)
+{
+    d.detach();
+    d->m_toName = toName;
 }
 
 bool Transfer::hasLocations() const
@@ -157,6 +185,8 @@ QJsonObject Transfer::toJson(const Transfer &transfer)
     obj.insert(QStringLiteral("state"), transfer.state()); // TODO store the enum properly
     obj.insert(QStringLiteral("from"), KPublicTransport::Location::toJson(transfer.from()));
     obj.insert(QStringLiteral("to"), KPublicTransport::Location::toJson(transfer.to()));
+    obj.insert(QStringLiteral("fromName"), transfer.fromName());
+    obj.insert(QStringLiteral("toName"), transfer.toName());
     obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
     obj.insert(QStringLiteral("reservationId"), transfer.reservationId());
     obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
@@ -171,6 +201,8 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
     transfer.setState(static_cast<Transfer::State>(obj.value(QLatin1String("state")).toInt()));
     transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1String("from")).toObject()));
     transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1String("to")).toObject()));
+    transfer.setFromName(obj.value(QLatin1String("fromName")).toString());
+    transfer.setToName(obj.value(QLatin1String("toName")).toString());
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
     transfer.setReservationId(obj.value(QLatin1String("reservationId")).toString());
     transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(obj.value(QLatin1String("anchorTime")).toObject()).toDateTime());

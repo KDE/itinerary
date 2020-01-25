@@ -931,6 +931,11 @@
                             "postalCode": "3928",
                             "streetAddress": "Haus Maria am Weg"
                         },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 46.099029541015625,
+                            "longitude": 7.783259868621826
+                        },
                         "name": "Haus Randa"
                     },
                     "name": "KDE Randa Meeting 2017",
@@ -976,6 +981,11 @@
                         "addressRegion": "Wallis",
                         "postalCode": "3928",
                         "streetAddress": "Haus Maria am Weg"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 46.099029541015625,
+                        "longitude": 7.783259868621826
                     },
                     "name": "Haus Randa",
                     "url": "https://randa-meetings.ch/"
@@ -1094,6 +1104,11 @@
                         "postalCode": "3928",
                         "streetAddress": "Haus Maria am Weg"
                     },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 46.099029541015625,
+                        "longitude": 7.783259868621826
+                    },
                     "name": "Raclette"
                 },
                 "startTime": {
@@ -1133,6 +1148,11 @@
                         "addressRegion": "Wallis",
                         "postalCode": "3928",
                         "streetAddress": "Haus Maria am Weg"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 46.099029541015625,
+                        "longitude": 7.783259868621826
                     },
                     "name": "Haus Randa",
                     "url": "https://randa-meetings.ch/"

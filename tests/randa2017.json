@@ -210,6 +210,11 @@
                 "postalCode": "3928",
                 "streetAddress": "Haus Maria am Weg"
             },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 46.09903,
+                "longitude": 7.78326
+            },
             "name": "Haus Randa",
             "url": "https://randa-meetings.ch/"
         }
@@ -237,6 +242,11 @@
                     "addressRegion": "Wallis",
                     "postalCode": "3928",
                     "streetAddress": "Haus Maria am Weg"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 46.09903,
+                    "longitude": 7.78326
                 }
             }
         }
@@ -310,6 +320,11 @@
                 "addressRegion": "Wallis",
                 "postalCode": "3928",
                 "streetAddress": "Haus Maria am Weg"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 46.09903,
+                "longitude": 7.78326
             },
             "name": "Raclette"
         },

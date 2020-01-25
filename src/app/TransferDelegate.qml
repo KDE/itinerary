@@ -51,7 +51,7 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
-                text: i18n("%1 to %2", transfer.from.name, transfer.to.name)
+                text: i18n("%1 to %2", transfer.fromName, transfer.toName)
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
             }

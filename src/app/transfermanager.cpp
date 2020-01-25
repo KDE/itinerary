@@ -184,7 +184,6 @@ KPublicTransport::Location TransferManager::homeLocation() const
         return {};
     }
     KPublicTransport::Location l;
-    l.setName(i18n("Home"));
     l.setCoordinate(m_homeLat, m_homeLon);
     return l;
 }
@@ -247,11 +246,14 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
 {
     transfer.setAnchorTime(SortUtil::startDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
+    QVariant toLoc;
     if (isLocationChange) {
-        transfer.setTo(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
+        toLoc = LocationUtil::departureLocation(res);
     } else {
-        transfer.setTo(PublicTransport::locationFromPlace(LocationUtil::location(res), res));
+        toLoc = LocationUtil::location(res);
     }
+    transfer.setTo(PublicTransport::locationFromPlace(toLoc, res));
+    transfer.setToName(LocationUtil::name(toLoc));
 
     // TODO pre-transfers should happen in the following cases:
     // - res is a location change and we are currently at home (== first element in a trip group)
@@ -260,6 +262,7 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
 
     if (isLocationChange && isFirstInTripGroup(resId)) {
         transfer.setFrom(homeLocation());
+        transfer.setFromName(i18n("Home"));
         return true;
     }
 
@@ -278,8 +281,10 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
         }
         if (!curLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(curLoc, prevLoc, LocationUtil::WalkingDistance)) {
             qDebug() << res << prevRes << LocationUtil::name(curLoc) << LocationUtil::name(prevLoc);
-            transfer.setTo(PublicTransport::locationFromPlace(prevLoc, prevRes));
+            transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
+            transfer.setFromName(LocationUtil::name(prevLoc));
             return true;
+
         }
     }
 
@@ -292,11 +297,14 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
 {
     transfer.setAnchorTime(SortUtil::endDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
+    QVariant fromLoc;
     if (isLocationChange) {
-        transfer.setFrom(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
+        fromLoc = LocationUtil::arrivalLocation(res);
     } else {
-        transfer.setFrom(PublicTransport::locationFromPlace(LocationUtil::location(res), res));
+        fromLoc = LocationUtil::location(res);
     }
+    transfer.setFrom(PublicTransport::locationFromPlace(fromLoc, res));
+    transfer.setFromName(LocationUtil::name(fromLoc));
 
     // TODO post-transfer should happen in the following cases:
     // - res is a location change and we are the last element in a trip group (ie. going home)
@@ -305,6 +313,7 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
 
     if (isLocationChange && isLastInTripGroup(resId)) {
         transfer.setTo(homeLocation());
+        transfer.setToName(i18n("Home"));
         return true;
     }
 
@@ -324,6 +333,7 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
         if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
             qDebug() << res << nextRes << LocationUtil::name(curLoc) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
+            transfer.setToName(LocationUtil::name(nextLoc));
             return true;
         }
     }
