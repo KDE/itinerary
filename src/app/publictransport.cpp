@@ -64,18 +64,6 @@ static bool isBusMode(KPublicTransport::Line::Mode mode)
     }
 }
 
-static QString addressToName(const KItinerary::PostalAddress &addr)
-{
-    if (addr.streetAddress().isEmpty()) {
-        return {};
-    }
-    auto s = addr.streetAddress();
-    if (!addr.addressLocality().isEmpty()) {
-        s += QLatin1String(", ") + addr.addressLocality();
-    }
-    return s;
-}
-
 KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place, const QVariant &reservation)
 {
     using namespace KItinerary;
@@ -86,15 +74,11 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
         loc.setName(KItinerary::LocationUtil::name(place));
     } else {
         const auto addr = KItinerary::LocationUtil::address(place);
-        loc.setName(addressToName(addr));
         loc.setStreetAddress(addr.streetAddress());
         loc.setPostalCode(addr.postalCode());
         loc.setLocality(addr.addressLocality());
         loc.setRegion(addr.addressRegion());
         loc.setCountry(addr.addressCountry());
-        if (loc.name().isEmpty()) {
-            loc.setName(KItinerary::LocationUtil::name(place));
-        }
     }
 
     const auto geo = KItinerary::LocationUtil::geo(place);
