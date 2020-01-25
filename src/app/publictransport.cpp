@@ -87,6 +87,11 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     } else {
         const auto addr = KItinerary::LocationUtil::address(place);
         loc.setName(addressToName(addr));
+        loc.setStreetAddress(addr.streetAddress());
+        loc.setPostalCode(addr.postalCode());
+        loc.setLocality(addr.addressLocality());
+        loc.setRegion(addr.addressRegion());
+        loc.setCountry(addr.addressCountry());
         if (loc.name().isEmpty()) {
             loc.setName(KItinerary::LocationUtil::name(place));
         }
