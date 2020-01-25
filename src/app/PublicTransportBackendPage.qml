@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.10 as Kirigami
 import org.kde.kpublictransport 1.0 as KPublicTransport
 import org.kde.itinerary 1.0
 
@@ -91,16 +91,8 @@ Kirigami.ScrollablePage {
         delegate: backendDelegate
 
         section.property: "primaryCountryCode"
-        section.delegate: Item {
-            implicitHeight: headerItem.implicitHeight
-            implicitWidth: ListView.view.width
-            Kirigami.BasicListItem {
-                id: headerItem
-                label: section == "" ? i18n("Global") : Localizer.countryFlag(section) + " " + Localizer.countryName(section)
-                backgroundColor: Kirigami.Theme.backgroundColor
-                reserveSpaceForIcon: false
-                highlighted: false
-            }
+        section.delegate: Kirigami.ListSectionHeader {
+            text: section == "" ? i18n("Global") : Localizer.countryFlag(section) + " " + Localizer.countryName(section)
         }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
