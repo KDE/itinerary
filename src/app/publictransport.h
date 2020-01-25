@@ -36,8 +36,12 @@ class PublicTransport
     Q_GADGET
 
 public:
-    /** Obtain a KPublicTransport location object from a KItinerary place. */
-    static KPublicTransport::Location locationFromPlace(const QVariant &place);
+    /** Obtain a KPublicTransport location object from a KItinerary place.
+     *  @param place The place to convert to a location
+     *  @param reservation The enclosing reservation object of this place.
+     *  This matters to decide how to interpret the name/address/etc of the place.
+     */
+    static KPublicTransport::Location locationFromPlace(const QVariant &place, const QVariant &reservation);
 
     /** Create a KItinerary place type from the given KPublicTransport::Location. */
     template <typename T>

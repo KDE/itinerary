@@ -173,7 +173,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
     using namespace KPublicTransport;
 
     if (!hasDeparted(resId, res)) {
-        DepartureRequest req(PublicTransport::locationFromPlace(trip.departureStation()));
+        DepartureRequest req(PublicTransport::locationFromPlace(trip.departureStation(), res));
         req.setDateTime(trip.departureTime());
         auto reply = m_ptMgr->queryDeparture(req);
         connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
@@ -196,7 +196,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
     }
 
     if (!hasArrived(resId, res)) {
-        DepartureRequest req(PublicTransport::locationFromPlace(trip.arrivalStation()));
+        DepartureRequest req(PublicTransport::locationFromPlace(trip.arrivalStation(), res));
         req.setMode(DepartureRequest::QueryArrival);
         req.setDateTime(trip.arrivalTime());
         auto reply = m_ptMgr->queryDeparture(req);

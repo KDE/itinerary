@@ -64,11 +64,34 @@ static bool isBusMode(KPublicTransport::Line::Mode mode)
     }
 }
 
-
-KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place)
+static QString addressToName(const KItinerary::PostalAddress &addr)
 {
+    if (addr.streetAddress().isEmpty()) {
+        return {};
+    }
+    auto s = addr.streetAddress();
+    if (!addr.addressLocality().isEmpty()) {
+        s += QLatin1String(", ") + addr.addressLocality();
+    }
+    return s;
+}
+
+KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& place, const QVariant &reservation)
+{
+    using namespace KItinerary;
+
     KPublicTransport::Location loc;
-    loc.setName(KItinerary::LocationUtil::name(place));
+
+    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
+        loc.setName(KItinerary::LocationUtil::name(place));
+    } else {
+        const auto addr = KItinerary::LocationUtil::address(place);
+        loc.setName(addressToName(addr));
+        if (loc.name().isEmpty()) {
+            loc.setName(KItinerary::LocationUtil::name(place));
+        }
+    }
+
     const auto geo = KItinerary::LocationUtil::geo(place);
     loc.setCoordinate(geo.latitude(), geo.longitude());
 
@@ -226,7 +249,7 @@ QVariant PublicTransport::departureRequestForPlace(const QVariant &place, const 
 {
     KPublicTransport::DepartureRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
-    req.setStop(PublicTransport::locationFromPlace(place));
+    req.setStop(PublicTransport::locationFromPlace(place, {}));
     return QVariant::fromValue(req);
 }
 

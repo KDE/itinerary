@@ -387,8 +387,8 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     }
 
     KPublicTransport::JourneyRequest req;
-    req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res)));
-    req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res)));
+    req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
+    req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
     // TODO consider scheduled time, if in the future?
 
     // find full journey by looking at subsequent elements
@@ -401,7 +401,7 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
             break;
         }
 
-        req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes)));
+        req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(endRes), endRes));
         prevRes = endRes;
         prevBatchId = endBatchId;
     }
