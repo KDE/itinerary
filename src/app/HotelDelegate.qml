@@ -31,6 +31,7 @@ App.TimelineDelegate {
             i18n("Check-out %1", reservationFor.name) : reservationFor.name
         color: Kirigami.Theme.textColor
         font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+        elide: Text.ElideRight
         Layout.fillWidth: true
     }
 

@@ -32,6 +32,7 @@ App.TimelineDelegate {
                 i18n("End: %1", reservationFor.name) : reservationFor.name
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
+            elide: Text.ElideRight
             Layout.fillWidth: true
         }
         QQC2.Label {

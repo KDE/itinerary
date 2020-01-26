@@ -56,6 +56,7 @@ App.TimelineDelegate {
                 airportDisplayCode(reservationFor.arrivalAirport))
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
+            elide: Text.ElideRight
             Layout.fillWidth: true
         }
         QQC2.Label {

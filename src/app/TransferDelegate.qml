@@ -54,6 +54,7 @@ Kirigami.AbstractCard {
                 text: i18n("%1 to %2", transfer.fromName, transfer.toName)
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
+                elide: Text.ElideRight
             }
             QQC2.Label {
                 text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
