@@ -189,7 +189,11 @@ QJsonObject Transfer::toJson(const Transfer &transfer)
     obj.insert(QStringLiteral("toName"), transfer.toName());
     obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
     obj.insert(QStringLiteral("reservationId"), transfer.reservationId());
-    obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
+    if (transfer.anchorTime().timeSpec() == Qt::TimeZone) {
+        obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
+    } else {
+        obj.insert(QStringLiteral("anchorTime"), transfer.anchorTime().toString(Qt::ISODate));
+    }
     obj.insert(QStringLiteral("anchorDelta"), transfer.anchorTimeDelta());
     return obj;
 }
@@ -205,7 +209,13 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
     transfer.setToName(obj.value(QLatin1String("toName")).toString());
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
     transfer.setReservationId(obj.value(QLatin1String("reservationId")).toString());
-    transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(obj.value(QLatin1String("anchorTime")).toObject()).toDateTime());
+
+    const auto dt = obj.value(QLatin1String("anchorTime"));
+    if (dt.isObject()) {
+        transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(dt.toObject()).toDateTime());
+    } else {
+        transfer.setAnchorTime(QDateTime::fromString(dt.toString(), Qt::ISODate));
+    }
     transfer.setAnchorTimeDelta(obj.value(QLatin1String("anchorDelta")).toInt());
     return transfer;
 }
