@@ -198,7 +198,12 @@
     </screenshot>
     <screenshot>
       <caption>Boarding pass view.</caption>
+      <caption xml:lang="ca">Vista de les targetes d'embarcament.</caption>
+      <caption xml:lang="et">Piletivaade.</caption>
+      <caption xml:lang="nl">Boardingpasweergave.</caption>
+      <caption xml:lang="pt">Visualização do cartão de embarque.</caption>
       <caption xml:lang="uk">Перегляд посадкових квитків.</caption>
+      <caption xml:lang="x-test">xxBoarding pass view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-boardingpass.png</image>
     </screenshot>
   </screenshots>
