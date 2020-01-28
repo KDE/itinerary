@@ -75,7 +75,10 @@ Kirigami.ScrollablePage {
                 Kirigami.Action {
                     text: i18n("Save")
                     iconName: "document-save"
-                    onTriggered: replaceWarningSheet.sheetOpen = true
+                    onTriggered: {
+                        replaceWarningSheet.journey = journey
+                        replaceWarningSheet.sheetOpen = true
+                    }
                     visible: journeyView.currentIndex == index
                 }
             ]
@@ -84,6 +87,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.OverlaySheet {
         id: replaceWarningSheet
+        property var journey
 
         QQC2.Label {
             text: i18n("Do you really want to replace your existing reservation with the newly selected journey?")
@@ -96,7 +100,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Replace")
                 icon.name: "edit-save"
                 onClicked: {
-                    controller.applyJourney(journey);
+                    controller.applyJourney(replaceWarningSheet.journey);
                     applicationWindow().pageStack.pop();
                 }
             }
