@@ -389,7 +389,8 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     KPublicTransport::JourneyRequest req;
     req.setFrom(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
     req.setTo(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
-    // TODO consider scheduled time, if in the future?
+    req.setDateTime(std::max(QDateTime::currentDateTime(), SortUtil::startDateTime(res)));
+    req.setDateTimeMode(KPublicTransport::JourneyRequest::Departure);
 
     // find full journey by looking at subsequent elements
     auto prevRes = res;
