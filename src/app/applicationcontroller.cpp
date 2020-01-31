@@ -369,6 +369,7 @@ void ApplicationController::exportToFile(const QString &filePath)
         f.addDocument(docId, m_docMgr->documentInfo(docId), file.readAll());
     }
 
+    // TODO export transfers, favorite locations
     // TODO export settings
 }
 
@@ -415,6 +416,8 @@ void ApplicationController::importBundle(KItinerary::File *file)
     for (const auto &docId : docIds) {
         m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
     }
+
+    // TODO import transfers, favorite locations
 }
 
 void ApplicationController::addDocument(const QString &batchId)

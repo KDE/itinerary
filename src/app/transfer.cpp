@@ -16,6 +16,7 @@
 */
 
 #include "transfer.h"
+#include "json.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -180,42 +181,18 @@ QDateTime Transfer::journeyTime() const
 
 QJsonObject Transfer::toJson(const Transfer &transfer)
 {
-    QJsonObject obj;
-    obj.insert(QStringLiteral("alignment"), transfer.alignment()); // TODO store the enum properly
-    obj.insert(QStringLiteral("state"), transfer.state()); // TODO store the enum properly
+    auto obj = Json::toJson(transfer);
     obj.insert(QStringLiteral("from"), KPublicTransport::Location::toJson(transfer.from()));
     obj.insert(QStringLiteral("to"), KPublicTransport::Location::toJson(transfer.to()));
-    obj.insert(QStringLiteral("fromName"), transfer.fromName());
-    obj.insert(QStringLiteral("toName"), transfer.toName());
     obj.insert(QStringLiteral("journey"), KPublicTransport::Journey::toJson(transfer.journey()));
-    obj.insert(QStringLiteral("reservationId"), transfer.reservationId());
-    if (transfer.anchorTime().timeSpec() == Qt::TimeZone) {
-        obj.insert(QStringLiteral("anchorTime"), KItinerary::JsonLdDocument::toJson(transfer.anchorTime()));
-    } else {
-        obj.insert(QStringLiteral("anchorTime"), transfer.anchorTime().toString(Qt::ISODate));
-    }
-    obj.insert(QStringLiteral("anchorDelta"), transfer.anchorTimeDelta());
     return obj;
 }
 
 Transfer Transfer::fromJson(const QJsonObject &obj)
 {
-    Transfer transfer;
-    transfer.setAlignment(static_cast<Transfer::Alignment>(obj.value(QLatin1String("alignment")).toInt()));
-    transfer.setState(static_cast<Transfer::State>(obj.value(QLatin1String("state")).toInt()));
+    auto transfer = Json::fromJson<Transfer>(obj);
     transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1String("from")).toObject()));
     transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1String("to")).toObject()));
-    transfer.setFromName(obj.value(QLatin1String("fromName")).toString());
-    transfer.setToName(obj.value(QLatin1String("toName")).toString());
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
-    transfer.setReservationId(obj.value(QLatin1String("reservationId")).toString());
-
-    const auto dt = obj.value(QLatin1String("anchorTime"));
-    if (dt.isObject()) {
-        transfer.setAnchorTime(KItinerary::JsonLdDocument::fromJson(dt.toObject()).toDateTime());
-    } else {
-        transfer.setAnchorTime(QDateTime::fromString(dt.toString(), Qt::ISODate));
-    }
-    transfer.setAnchorTimeDelta(obj.value(QLatin1String("anchorDelta")).toInt());
     return transfer;
 }
