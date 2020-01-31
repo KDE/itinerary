@@ -24,6 +24,7 @@
 #include "countrymodel.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
+#include "favoritelocationmodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "lockmanager.h"
@@ -216,6 +217,7 @@ int main(int argc, char **argv)
         engine->setObjectOwnership(TransferManager::instance(), QQmlEngine::CppOwnership);
         return TransferManager::instance();
     });
+    qmlRegisterType<FavoriteLocationModel>("org.kde.itinerary", 1, 0, "FavoriteLocationModel");
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
     });

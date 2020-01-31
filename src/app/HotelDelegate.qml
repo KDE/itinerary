@@ -25,7 +25,7 @@ import "." as App
 App.TimelineDelegate {
     id: root
 
-    headerIconSource: "go-home"
+    headerIconSource: "go-home-symbolic"
     headerItem: QQC2.Label {
         text: root.rangeType == TimelineElement.RangeEnd ?
             i18n("Check-out %1", reservationFor.name) : reservationFor.name

@@ -46,6 +46,11 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Component {
+        id: favoriteLocationPage
+        FavoriteLocationPage {}
+    }
+
     CountryModel {
         id: countryModel
     }
@@ -72,6 +77,13 @@ Kirigami.ScrollablePage {
             icon.name: "crosshairs"
             onClicked: applicationWindow().pageStack.push(locationPickerPage);
         }
+
+        /*QQC2.Button {
+            Kirigami.FormData.isSection: true
+            text: i18n("Favorite Locations")
+            icon.name: "go-home-symbolic"
+            onClicked: applicationWindow().pageStack.push(favoriteLocationPage);
+        }*/
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

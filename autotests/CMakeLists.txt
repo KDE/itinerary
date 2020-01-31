@@ -13,6 +13,7 @@ ecm_add_test(publictransporttest.cpp TEST_NAME publictransporttest LINK_LIBRARIE
 ecm_add_test(timelinedelegatecontrollertest.cpp TEST_NAME timelinedelegatecontrollertest LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(documentmanagertest.cpp TEST_NAME documentmanagertest LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(statisticstest.cpp LINK_LIBRARIES Qt5::Test itinerary)
+ecm_add_test(favoritelocationtest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(transfertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt5::Test itinerary-weather)

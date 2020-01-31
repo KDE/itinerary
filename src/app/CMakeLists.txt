@@ -8,6 +8,8 @@ set(itinerary_srcs
     applicationcontroller.cpp
     countryinformation.cpp
     documentmanager.cpp
+    favoritelocationmodel.cpp
+    json.cpp
     livedatamanager.cpp
     navigationcontroller.cpp
     pkpassmanager.cpp
@@ -114,10 +116,11 @@ if (ANDROID)
         edit-delete
         edit-download
         edit-paste
+        edit-rename
         export-symbolic
         folder-documents-symbolic
         go-down-symbolic
-        go-home
+        go-home-symbolic
         go-next-symbolic
         go-up-symbolic
         help-about-symbolic
