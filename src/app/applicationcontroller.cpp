@@ -17,6 +17,7 @@
 
 #include "applicationcontroller.h"
 #include "documentmanager.h"
+#include "favoritelocationmodel.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
@@ -385,7 +386,13 @@ void ApplicationController::exportToFile(const QString &filePath)
         }
     }
 
-    // TODO export favorite locations
+    // export favorite locations
+    FavoriteLocationModel favLocs;
+    if (favLocs.rowCount() > 0) {
+        f.addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
+                        QJsonDocument(FavoriteLocation::toJson(favLocs.favoriteLocations())).toJson());
+    }
+
     // TODO export settings
 }
 
@@ -433,7 +440,14 @@ void ApplicationController::importBundle(KItinerary::File *file)
         m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
     }
 
-    // TODO import transfers, favorite locations
+    // TODO import transfers
+
+    // favorite locations
+    auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
+    if (!favLocs.empty()) {
+        FavoriteLocationModel model;
+        model.setFavoriteLocations(std::move(favLocs));
+    }
 }
 
 void ApplicationController::addDocument(const QString &batchId)

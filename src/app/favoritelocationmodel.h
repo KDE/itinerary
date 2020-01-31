@@ -80,6 +80,13 @@ public:
     /** Removes location at index @row. */
     Q_INVOKABLE void removeLocation(int row);
 
+    /** All favorite locations. */
+    const std::vector<FavoriteLocation>& favoriteLocations() const;
+    /** Set favorite locations to @p locs.
+     *  Used for importing.
+     */
+    void setFavoriteLocations(std::vector<FavoriteLocation> &&locs);
+
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     bool setData(const QModelIndex & index, const QVariant & value, int role) override;

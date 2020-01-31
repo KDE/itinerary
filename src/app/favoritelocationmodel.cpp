@@ -173,6 +173,19 @@ void FavoriteLocationModel::removeLocation(int row)
     saveLocations();
 }
 
+const std::vector<FavoriteLocation>& FavoriteLocationModel::favoriteLocations() const
+{
+    return m_locations;
+}
+
+void FavoriteLocationModel::setFavoriteLocations(std::vector<FavoriteLocation> &&locs)
+{
+    beginResetModel();
+    m_locations = std::move(locs);
+    saveLocations();
+    endResetModel();
+}
+
 int FavoriteLocationModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
