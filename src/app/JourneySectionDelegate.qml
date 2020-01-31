@@ -94,7 +94,12 @@ Kirigami.AbstractListItem {
             text: {
                 switch (modelData.mode) {
                 case JourneySection.PublicTransport:
-                    return modelData.route.line.modeString + " " + modelData.route.line.name + " (" + Localizer.formatDuration(modelData.duration) + ")";
+                {
+                    var l = modelData.route.line.modeString + " " + modelData.route.line.name;
+                    if (modelData.route.direction)
+                        return i18n("%1 to %2 (%3)", l, modelData.route.direction, Localizer.formatDuration(modelData.duration));
+                    return i18n("%1 (%2)", l, Localizer.formatDuration(modelData.duration));
+                }
                 case JourneySection.Walking:
                     if (modelData.distance == 0)
                         return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration));
@@ -106,6 +111,7 @@ Kirigami.AbstractListItem {
                 return "???";
             }}
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            elide: Text.ElideMiddle
         }
 
         // last row: arrival information
