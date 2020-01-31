@@ -179,6 +179,16 @@ QDateTime Transfer::journeyTime() const
     return std::max(dt, QDateTime::currentDateTime());
 }
 
+QString Transfer::identifier() const
+{
+    return identifier(d->m_resId, d->m_alignment);
+}
+
+QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment)
+{
+    return resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE") : QLatin1String("-AFTER"));
+}
+
 QJsonObject Transfer::toJson(const Transfer &transfer)
 {
     auto obj = Json::toJson(transfer);

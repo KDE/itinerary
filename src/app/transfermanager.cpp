@@ -421,7 +421,7 @@ static QString transferBasePath()
 
 Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment alignment) const
 {
-    const QString fileName = transferBasePath() + resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1String(".json");
     QFile f(fileName);
     if (!f.open(QFile::ReadOnly)) {
         return {};
@@ -432,7 +432,7 @@ Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment
 void TransferManager::writeToFile(const Transfer &transfer) const
 {
     QDir().mkpath(transferBasePath());
-    const QString fileName = transferBasePath() + transfer.reservationId() + (transfer.alignment() == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    const QString fileName = transferBasePath() + transfer.identifier() + QLatin1String(".json");
     QFile f(fileName);
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << "Failed to store transfer data" << f.fileName() << f.errorString();
@@ -443,7 +443,7 @@ void TransferManager::writeToFile(const Transfer &transfer) const
 
 void TransferManager::removeFile(const QString &resId, Transfer::Alignment alignment) const
 {
-    const QString fileName = transferBasePath() + resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE.json") : QLatin1String("-AFTER.json"));
+    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1String(".json");
     QFile::remove(fileName);
 }
 

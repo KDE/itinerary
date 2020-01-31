@@ -19,6 +19,8 @@
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 #include <documentmanager.h>
+#include <transfermanager.h>
+#include <tripgroupmanager.h>
 
 #include <KItinerary/File>
 
@@ -132,6 +134,12 @@ private Q_SLOTS:
 
         DocumentManager docMgr;
         clearDocuments(&docMgr);
+
+        TripGroupManager tripGroupMgr;
+        tripGroupMgr.setReservationManager(&resMgr);
+        TransferManager transferMgr;
+        transferMgr.setReservationManager(&resMgr);
+        transferMgr.setTripGroupManager(&tripGroupMgr);
 
         ApplicationController appController;
         appController.setPkPassManager(&passMgr);

@@ -20,6 +20,7 @@
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 #include <itinerary_version_detailed.h>
 
 #include <KItinerary/CreativeWork>
@@ -38,6 +39,7 @@
 #include <QGuiApplication>
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QMimeData>
 #include <QMimeDatabase>
 #include <QNetworkAccessManager>
@@ -369,7 +371,21 @@ void ApplicationController::exportToFile(const QString &filePath)
         f.addDocument(docId, m_docMgr->documentInfo(docId), file.readAll());
     }
 
-    // TODO export transfers, favorite locations
+    // export transfer elements
+    auto transferMgr = TransferManager::instance();
+    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
+    for (const auto &batchId : m_resMgr->batches()) {
+        auto t = transferMgr->transfer(batchId, Transfer::Before);
+        if (t.state() != Transfer::UndefinedState) {
+            f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        }
+        t = transferMgr->transfer(batchId, Transfer::After);
+        if (t.state() != Transfer::UndefinedState) {
+            f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+        }
+    }
+
+    // TODO export favorite locations
     // TODO export settings
 }
 

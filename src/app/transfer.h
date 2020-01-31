@@ -98,6 +98,10 @@ public:
     /** Anchor time +/- anchor delta, ie. the time we actually want to arrive/depart. */
     QDateTime journeyTime() const;
 
+    /** Unique identifier usable naming the file to store this into. */
+    QString identifier() const;
+    static QString identifier(const QString &resId, Transfer::Alignment alignment);
+
     static QJsonObject toJson(const Transfer &transfer);
     static Transfer fromJson(const QJsonObject &obj);
 
