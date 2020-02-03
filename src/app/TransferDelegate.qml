@@ -90,7 +90,7 @@ Kirigami.AbstractCard {
         RowLayout {
             visible: transfer.state == Transfer.Pending
             QQC2.Label {
-                text: i18n("Select...")
+                text: i18n("Select transfer...")
                 Layout.fillWidth: true
             }
             QQC2.ToolButton {
