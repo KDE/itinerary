@@ -485,6 +485,11 @@ bool TimelineDelegateController::connectionWarning() const
         return false;
     }
 
+    // if the current item has canceled departure/arrival, warn as well
+    if (departure().disruptionEffect() == KPublicTransport::Disruption::NoService || arrival().disruptionEffect() == KPublicTransport::Disruption::NoService) {
+        return true;
+    }
+
     const auto prevResId = m_resMgr->previousBatch(m_batchId);
     const auto prevRes = m_resMgr->reservation(prevResId);
     if (!LocationUtil::isLocationChange(prevRes)) {
