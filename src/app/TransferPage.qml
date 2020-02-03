@@ -44,6 +44,16 @@ Kirigami.ScrollablePage {
     actions {
         contextualActions: [
             Kirigami.Action {
+                text: i18n("Depart Now")
+                iconName: "clock"
+                onTriggered: {
+                    var req = journeyModel.request;
+                    req.dateTime = new Date();
+                    req.dateTimeMode = JourneyRequest.Departure;
+                    journeyModel.request = req;
+                }
+            },
+            Kirigami.Action {
                 text: i18n("Discard")
                 iconName: "edit-delete"
                 onTriggered: {
