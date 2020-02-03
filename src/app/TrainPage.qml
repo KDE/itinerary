@@ -138,6 +138,14 @@ App.DetailsPage {
                     visible: departure.platformChanged && reservationFor.departurePlatform != ""
                 }
             }
+            QQC2.Label {
+                Kirigami.FormData.isSection: true
+                text: departure.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                visible: departure.notes.length > 0
+                font.italic: true
+            }
 
             // arrival data
             Kirigami.Separator {
@@ -176,6 +184,14 @@ App.DetailsPage {
                     text: i18n("(was: %1)", reservationFor.arrivalPlatform)
                     visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
                 }
+            }
+            QQC2.Label {
+                Kirigami.FormData.isSection: true
+                text: arrival.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                visible: arrival.notes.length > 0
+                font.italic: true
             }
 
             // seat reservation
