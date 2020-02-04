@@ -23,7 +23,7 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.ScrollablePage {
+Kirigami.Page {
     id: root
     property var transfer
     title: i18n("Select Transfer")
@@ -113,28 +113,53 @@ Kirigami.ScrollablePage {
         }
     }
 
+    /*FavoriteLocationModel {
+        id: favLocModel
+    }*/
+
+    ColumnLayout {
+        id: topLayout
+        anchors { top: parent.top; left: parent.left; right: parent.right }
+
+        QQC2.Label {
+            text: i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
+            visible: transfer.alignment == Transfer.After
+            Layout.fillWidth: true
+        }
+        QQC2.Label {
+            Layout.fillWidth: true
+            text: i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
+            visible: transfer.alignment == Transfer.Before
+        }
+
+        /*QQC2.ComboBox {
+            model: favLocModel
+            visible: transfer.floatingLocationType == Transfer.FavoriteLocation
+            textRole: "display"
+            Layout.fillWidth: true
+            // TODO update transfer and re-run journey query
+        }*/
+    }
+
     Kirigami.CardsListView {
         id: journeyView
-        anchors.fill: parent
+        anchors {
+            top: topLayout.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            leftMargin: -2*Kirigami.Units.largeSpacing
+            rightMargin: -2*Kirigami.Units.largeSpacing
+        }
         clip: true
         delegate: journeyDelegate
         model: sortedJourneyModel
 
-        header: ColumnLayout {
+        header: QQC2.ToolButton {
+            icon.name: "go-up-symbolic"
+            visible: journeyModel.canQueryPrevious
+            onClicked: journeyModel.queryPrevious()
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
-
-            QQC2.Label {
-                text: i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
-                visible: transfer.alignment == Transfer.After
-                Layout.fillWidth: true
-            }
-
-            QQC2.ToolButton {
-                icon.name: "go-up-symbolic"
-                visible: journeyModel.canQueryPrevious
-                onClicked: journeyModel.queryPrevious()
-                Layout.fillWidth: true
-            }
         }
 
         footer: ColumnLayout {
@@ -145,11 +170,6 @@ Kirigami.ScrollablePage {
                 icon.name: "go-down-symbolic"
                 visible: journeyModel.canQueryNext
                 onClicked: journeyModel.queryNext()
-            }
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
-                visible: transfer.alignment == Transfer.Before
             }
             QQC2.Label {
                 Layout.fillWidth: true
