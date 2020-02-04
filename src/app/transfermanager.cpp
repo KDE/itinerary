@@ -263,6 +263,7 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
     if (isLocationChange && isFirstInTripGroup(resId)) {
         transfer.setFrom(homeLocation());
         transfer.setFromName(i18n("Home"));
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         return true;
     }
 
@@ -314,6 +315,7 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
     if (isLocationChange && isLastInTripGroup(resId)) {
         transfer.setTo(homeLocation());
         transfer.setToName(i18n("Home"));
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         return true;
     }
 

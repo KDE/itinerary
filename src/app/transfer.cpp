@@ -36,6 +36,7 @@ public:
     QString m_resId;
     QDateTime m_anchorTime;
     int m_anchorDelta = 0;
+    Transfer::FloatingLocationType m_floatingLocationType = Transfer::Reservation;
 };
 
 Transfer::Transfer()
@@ -68,6 +69,17 @@ void Transfer::setState(Transfer::State state)
 {
     d.detach();
     d->m_state = state;
+}
+
+Transfer::FloatingLocationType Transfer::floatingLocationType() const
+{
+    return d->m_floatingLocationType;
+}
+
+void Transfer::setFloatingLocationType(Transfer::FloatingLocationType type)
+{
+    d.detach();
+    d->m_floatingLocationType = type;
 }
 
 KPublicTransport::Location Transfer::from() const

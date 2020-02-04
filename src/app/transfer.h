@@ -28,12 +28,17 @@ class TransferPrivate;
 
 class QJsonObject;
 
-/** Describes an actual or potential transfer between two reservation elements. */
+/** Describes an actual or potential transfer between two locations.
+ *  One of the locations is the "anchored" one, the other one the "floating" one.
+ *  The anchored side is defining the time, and follows an reservation element it is anchored to.
+ *  The floating side is either another reservation element, or a favorite location.
+ */
 class Transfer
 {
     Q_GADGET
     Q_PROPERTY(Alignment alignment READ alignment WRITE setAlignment)
     Q_PROPERTY(State state READ state WRITE setState)
+    Q_PROPERTY(FloatingLocationType floatingLocationType READ floatingLocationType WRITE setFloatingLocationType)
     Q_PROPERTY(KPublicTransport::Location from READ from WRITE setFrom)
     Q_PROPERTY(KPublicTransport::Location to READ to WRITE setTo)
     Q_PROPERTY(QString fromName READ fromName WRITE setFromName)
@@ -68,6 +73,15 @@ public:
     Q_ENUM(State)
     State state() const;
     void setState(State state);
+
+    /** Source of the floating side location. */
+    enum FloatingLocationType {
+        Reservation,
+        FavoriteLocation
+    };
+    Q_ENUM(FloatingLocationType)
+    FloatingLocationType floatingLocationType() const;
+    void setFloatingLocationType(FloatingLocationType type);
 
     KPublicTransport::Location from() const;
     void setFrom(const KPublicTransport::Location &from);

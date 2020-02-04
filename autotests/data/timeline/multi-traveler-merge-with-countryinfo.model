@@ -41,6 +41,7 @@
                 "timezone": "Europe/Berlin"
             },
             "anchorTimeDelta": 3600,
+            "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
@@ -335,6 +336,7 @@
                 "timezone": "Europe/Rome"
             },
             "anchorTimeDelta": 1800,
+            "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
                 "latitude": 43.808799743652344,
