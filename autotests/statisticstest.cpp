@@ -18,6 +18,7 @@
 #include <statisticsmodel.h>
 #include <statisticstimerangemodel.h>
 #include <reservationmanager.h>
+#include <tripgroupmanager.h>
 
 #include <QAbstractItemModelTester>
 #include <QUrl>
@@ -59,10 +60,14 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        TripGroupManager::clear();
+        TripGroupManager tgMgr;
+        tgMgr.setReservationManager(&resMgr);
 
         StatisticsModel stats;
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);
         stats.setReservationManager(&resMgr);
+        stats.setTripGroupManager(&tgMgr);
 
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
@@ -71,7 +76,7 @@ private Q_SLOTS:
         stats.setTimeRange({}, {});
         QVERIFY(!changeSpy.isEmpty());
         auto item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("13"));
+        QCOMPARE(item.m_value, QLatin1String("2"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("13"));
@@ -111,8 +116,8 @@ private Q_SLOTS:
         stats.setTimeRange({2017, 9, 1}, {2018, 1, 1});
         QVERIFY(!changeSpy.isEmpty());
         item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("8"));
-        QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
+        QCOMPARE(item.m_value, QLatin1String("1"));
+        QCOMPARE(item.m_trend, StatisticsItem::TrendUnchanged);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("5"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);

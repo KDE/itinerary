@@ -201,6 +201,7 @@ int main(int argc, char **argv)
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
 
     qRegisterMetaType<ReservationManager*>();
+    qRegisterMetaType<TripGroupManager*>();
     qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
     qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
@@ -254,6 +255,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
+    engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupManager"), &tripGroupMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 

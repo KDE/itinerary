@@ -17,6 +17,7 @@
 
 #include "statisticsmodel.h"
 #include "reservationmanager.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
@@ -64,6 +65,21 @@ void StatisticsModel::setReservationManager(ReservationManager *resMgr)
     emit setupChanged();
 }
 
+TripGroupManager* StatisticsModel::tripGroupManager() const
+{
+    return m_tripGroupMgr;
+}
+
+void StatisticsModel::setTripGroupManager(TripGroupManager* tripGroupMgr)
+{
+    if (m_tripGroupMgr == tripGroupMgr) {
+        return;
+    }
+    m_tripGroupMgr = tripGroupMgr;
+    connect(m_tripGroupMgr, &TripGroupManager::tripGroupAdded, this, &StatisticsModel::recompute);
+    emit setupChanged();
+}
+
 void StatisticsModel::setTimeRange(const QDate &begin, const QDate &end)
 {
     if (m_begin == begin && end == m_end) {
@@ -86,7 +102,7 @@ static QString formatCo2(int amount)
 
 StatisticsItem StatisticsModel::totalCount() const
 {
-    return StatisticsItem(i18n("Trips"), QString::number(m_statData[Total][TripCount]), trend(Total, TripCount));
+    return StatisticsItem(i18n("Trips"), QString::number(m_tripGroupCount), trend(m_tripGroupCount, m_prevTripGroupCount));
 }
 
 StatisticsItem StatisticsModel::totalDistance() const
@@ -121,7 +137,7 @@ StatisticsItem StatisticsModel::flightCO2() const
 
 StatisticsItem StatisticsModel::trainCount() const
 {
-    return StatisticsItem(i18n("Trips"), QString::number(m_statData[Train][TripCount]), trend(Train, TripCount));
+    return StatisticsItem(i18n("Train rides"), QString::number(m_statData[Train][TripCount]), trend(Train, TripCount));
 }
 
 StatisticsItem StatisticsModel::trainDistance() const
@@ -136,7 +152,7 @@ StatisticsItem StatisticsModel::trainCO2() const
 
 StatisticsItem StatisticsModel::busCount() const
 {
-    return StatisticsItem(i18n("Trips"), QString::number(m_statData[Bus][TripCount]), trend(Bus, TripCount));
+    return StatisticsItem(i18n("Bus rides"), QString::number(m_statData[Bus][TripCount]), trend(Bus, TripCount));
 }
 
 StatisticsItem StatisticsModel::busDistance() const
@@ -151,7 +167,7 @@ StatisticsItem StatisticsModel::busCO2() const
 
 StatisticsItem StatisticsModel::carCount() const
 {
-    return StatisticsItem(i18n("Trips"), QString::number(m_statData[Car][TripCount]), trend(Car, TripCount));
+    return StatisticsItem(i18n("Car rides"), QString::number(m_statData[Car][TripCount]), trend(Car, TripCount));
 }
 
 StatisticsItem StatisticsModel::carDistance() const
@@ -227,7 +243,7 @@ void StatisticsModel::recompute()
     m_hotelCount = 0;
     m_prevHotelCount = 0;
 
-    if (!m_resMgr) {
+    if (!m_resMgr || !m_tripGroupMgr) {
         return;
     }
 
@@ -235,6 +251,8 @@ void StatisticsModel::recompute()
     if (m_begin.isValid() && m_end.isValid()) {
         prevStart = m_begin.addDays(m_end.daysTo(m_begin));
     }
+
+    QSet<QString> tripGroups, prevTripGroups;
 
     const auto &batches = m_resMgr->batches();
     for (const auto &batchId : batches) {
@@ -262,7 +280,15 @@ void StatisticsModel::recompute()
                 m_hotelCount += hotel.checkinTime().daysTo(hotel.checkoutTime());
             }
         }
+
+        const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(batchId);
+        if (!tgId.isEmpty()) {
+            isPrev ? prevTripGroups.insert(tgId) : tripGroups.insert(tgId);
+        }
     }
+
+    m_tripGroupCount = tripGroups.size();
+    m_prevTripGroupCount = prevTripGroups.size();
 
     emit changed();
 }

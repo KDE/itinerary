@@ -22,6 +22,7 @@
 #include <QObject>
 
 class ReservationManager;
+class TripGroupManager;
 
 /** Statistics data item. */
 class StatisticsItem
@@ -77,6 +78,7 @@ class StatisticsModel : public QObject
     Q_PROPERTY(StatisticsItem carCO2 READ carCO2 NOTIFY changed)
 
     Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
+    Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
@@ -84,6 +86,8 @@ public:
 
     ReservationManager* reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
+    TripGroupManager* tripGroupManager() const;
+    void setTripGroupManager(TripGroupManager *tripGroupMgr);
 
     Q_INVOKABLE void setTimeRange(const QDate &begin, const QDate &end);
 
@@ -116,6 +120,7 @@ private:
     void recompute();
 
     ReservationManager *m_resMgr = nullptr;
+    TripGroupManager *m_tripGroupMgr = nullptr;
     QDate m_begin;
     QDate m_end;
 
@@ -133,6 +138,9 @@ private:
     int m_prevStatData[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT];
     int m_hotelCount = 0;
     int m_prevHotelCount = 0;
+    int m_tripGroupCount = 0;
+    int m_prevTripGroupCount = 0;
+
 };
 
 #endif // STATISTICSMODEL_H

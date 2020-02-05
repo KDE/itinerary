@@ -26,6 +26,7 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Statistics")
     property alias reservationManager: model.reservationManager
+    property alias tripGroupManager: model.tripGroupManager
 
     StatisticsModel {
         id: model
