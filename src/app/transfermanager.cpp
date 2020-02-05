@@ -17,6 +17,7 @@
 
 #include "transfermanager.h"
 #include "logging.h"
+#include "favoritelocationmodel.h"
 #include "publictransport.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
@@ -93,6 +94,32 @@ void TransferManager::setJourneyForTransfer(Transfer transfer, const KPublicTran
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);
     emit transferChanged(transfer);
+}
+
+Transfer TransferManager::setFavoriteLocationForTransfer(Transfer transfer, const FavoriteLocation& favoriteLocation)
+{
+    if (transfer.floatingLocationType() != Transfer::FavoriteLocation) {
+        qCWarning(Log) << "Attempting to changing transfer floating location of wrong type";
+        return transfer;
+    }
+
+    KPublicTransport::Location loc;
+    loc.setLatitude(favoriteLocation.latitude());
+    loc.setLongitude(favoriteLocation.longitude());
+
+    if (transfer.alignment() == Transfer::Before) {
+        transfer.setFrom(loc);
+        transfer.setFromName(favoriteLocation.name());
+    } else {
+        transfer.setTo(loc);
+        transfer.setToName(favoriteLocation.name());
+    }
+    transfer.setJourney({});
+    m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
+    writeToFile(transfer);
+    emit transferChanged(transfer);
+
+    return transfer;
 }
 
 void TransferManager::discardTransfer(Transfer transfer)

@@ -69,6 +69,7 @@ public:
     enum Role {
         LatitudeRole = Qt::UserRole,
         LongitudeRole,
+        FavoriteLocationRole,
     };
     Q_ENUM(Role)
 
@@ -97,5 +98,7 @@ private:
 
     std::vector<FavoriteLocation> m_locations;
 };
+
+Q_DECLARE_METATYPE(FavoriteLocation)
 
 #endif // FAVORITELOCATIONMODEL_H

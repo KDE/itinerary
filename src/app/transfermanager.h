@@ -25,6 +25,7 @@
 
 #include <cmath>
 
+class FavoriteLocation;
 class ReservationManager;
 class TripGroupManager;
 
@@ -46,6 +47,8 @@ public:
 
     /** Applies the given @p journey to @p transfer. */
     Q_INVOKABLE void setJourneyForTransfer(Transfer transfer, const KPublicTransport::Journey &journey);
+    /** Applies the given @p favoriteLocation to the floating end of @p transfer. */
+    Q_INVOKABLE Transfer setFavoriteLocationForTransfer(Transfer transfer, const FavoriteLocation &favoriteLocation);
     /** Discard the given @p transfer. */
     Q_INVOKABLE void discardTransfer(Transfer transfer);
 

@@ -64,13 +64,20 @@ Kirigami.Page {
         ]
     }
 
-    Component.onCompleted: {
+    function queryJourney() {
         var req = journeyModel.request;
         req.from = transfer.from;
         req.to = transfer.to;
         req.dateTime = transfer.journeyTime;
         req.dateTimeMode = transfer.alignment == Transfer.Before ? JourneyRequest.Arrival : JourneyRequest.Departure;
         journeyModel.request = req;
+    }
+
+    Component.onCompleted: {
+        if (transfer.floatingLocationType == Transfer.FavoriteLocation) {
+            //favLocCombo.currentIndex = favLocCombo.find(transfer.alignment == Transfer.Before ? transfer.fromName : transfer.toName);
+        }
+        queryJourney();
     }
 
     Component {
@@ -133,11 +140,17 @@ Kirigami.Page {
         }
 
         /*QQC2.ComboBox {
+            id: favLocCombo
             model: favLocModel
             visible: transfer.floatingLocationType == Transfer.FavoriteLocation
             textRole: "display"
             Layout.fillWidth: true
-            // TODO update transfer and re-run journey query
+            onActivated: {
+                var favLoc = delegateModel.items.get(currentIndex)
+                console.log(favLoc.model.favoriteLocation);
+                root.transfer = TransferManager.setFavoriteLocationForTransfer(root.transfer, favLoc.model.favoriteLocation);
+                queryJourney();
+            }
         }*/
     }
 

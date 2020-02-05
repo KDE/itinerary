@@ -39,6 +39,7 @@ public:
 
     QVector<QString> tripGroups() const;
     TripGroup tripGroup(const QString &id) const;
+    QString tripGroupIdForReservation(const QString &resId) const;
     TripGroup tripGroupForReservation(const QString &resId) const;
 
     static void clear(); // for testing only!

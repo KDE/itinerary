@@ -208,6 +208,8 @@ QVariant FavoriteLocationModel::data(const QModelIndex &index, int role) const
             return loc.latitude();
         case FavoriteLocationModel::LongitudeRole:
             return loc.longitude();
+        case FavoriteLocationModel::FavoriteLocationRole:
+            return QVariant::fromValue(loc);
     }
 
     return {};
@@ -215,7 +217,6 @@ QVariant FavoriteLocationModel::data(const QModelIndex &index, int role) const
 
 bool FavoriteLocationModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
-    qDebug() << index << value << role;
     if (!index.isValid()) {
         return false;
     }
@@ -247,6 +248,7 @@ QHash<int, QByteArray> FavoriteLocationModel::roleNames() const
     auto r = QAbstractListModel::roleNames();
     r.insert(FavoriteLocationModel::LatitudeRole, "latitude");
     r.insert(FavoriteLocationModel::LongitudeRole, "longitude");
+    r.insert(FavoriteLocationModel::FavoriteLocationRole, "favoriteLocation");
     return r;
 }
 

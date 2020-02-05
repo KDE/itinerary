@@ -85,6 +85,11 @@ TripGroup TripGroupManager::tripGroup(const QString &id) const
     return m_tripGroups.value(id);
 }
 
+QString TripGroupManager::tripGroupIdForReservation(const QString &resId) const
+{
+    return m_reservationToGroupMap.value(resId);
+}
+
 TripGroup TripGroupManager::tripGroupForReservation(const QString &resId) const
 {
     return tripGroup(m_reservationToGroupMap.value(resId));
