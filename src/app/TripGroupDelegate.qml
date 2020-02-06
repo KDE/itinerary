@@ -94,7 +94,7 @@ Kirigami.AbstractCard {
         }
 
         Repeater {
-            model: _tripGroupInfoProvider.countryInformation(tripGroup, _settings.homeCountryIsoCode)
+            model: _tripGroupInfoProvider.countryInformation(tripGroup, Settings.homeCountryIsoCode)
 
             QQC2.Label {
                 text: {

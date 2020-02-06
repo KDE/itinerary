@@ -41,13 +41,9 @@ using namespace KItinerary;
 // bump this to trigger a full rescan for transfers
 enum { CurrentFullScanVerion = 1 };
 
-TransferManager* TransferManager::s_instance = nullptr;
-
 TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
 {
-    s_instance = this;
-
     QSettings settings;
     settings.beginGroup(QStringLiteral("HomeLocation"));
     m_homeLat = settings.value(QStringLiteral("Latitude"), NAN).toFloat();
@@ -474,11 +470,6 @@ void TransferManager::removeFile(const QString &resId, Transfer::Alignment align
 {
     const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1String(".json");
     QFile::remove(fileName);
-}
-
-TransferManager* TransferManager::instance()
-{
-    return s_instance;
 }
 
 QDateTime TransferManager::currentDateTime() const

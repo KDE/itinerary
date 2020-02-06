@@ -34,7 +34,7 @@ Kirigami.ScrollablePage {
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var editor
-    readonly property string passId: _pkpassManager.passId(reservation)
+    readonly property string passId: PkPassManager.passId(reservation)
 
     readonly property QtObject controller: TimelineDelegateController {
         id: _controller
@@ -68,7 +68,7 @@ Kirigami.ScrollablePage {
     Component {
         id: pkpassComponent
         App.PkPassPage {
-            pass: _pkpassManager.passObject(passId)
+            pass: PkPassManager.passObject(passId)
         }
     }
 
@@ -113,7 +113,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
                 text: i18n("Show Boarding Pass")
-                visible: _pkpassManager.hasPass(root.passId)
+                visible: PkPassManager.hasPass(root.passId)
                 onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
             },
             Kirigami.Action {

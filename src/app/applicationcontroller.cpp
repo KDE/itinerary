@@ -168,6 +168,11 @@ void ApplicationController::setDocumentManager(DocumentManager* docMgr)
     m_docMgr = docMgr;
 }
 
+void ApplicationController::setTransferManager(TransferManager* transferMgr)
+{
+    m_transferMgr = transferMgr;
+}
+
 void ApplicationController::importFromClipboard()
 {
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
@@ -373,14 +378,13 @@ void ApplicationController::exportToFile(const QString &filePath)
     }
 
     // export transfer elements
-    auto transferMgr = TransferManager::instance();
     const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
     for (const auto &batchId : m_resMgr->batches()) {
-        auto t = transferMgr->transfer(batchId, Transfer::Before);
+        auto t = m_transferMgr->transfer(batchId, Transfer::Before);
         if (t.state() != Transfer::UndefinedState) {
             f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
         }
-        t = transferMgr->transfer(batchId, Transfer::After);
+        t = m_transferMgr->transfer(batchId, Transfer::After);
         if (t.state() != Transfer::UndefinedState) {
             f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
         }

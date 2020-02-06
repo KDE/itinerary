@@ -82,6 +82,88 @@
 #include <QIcon>
 #include <QWindow>
 
+void registerKPkPassTypes()
+{
+    qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
+    qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
+    qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
+    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
+}
+
+void registerKItineraryTypes()
+{
+    qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
+    qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
+    qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
+}
+
+void registerApplicationTypes()
+{
+    qRegisterMetaType<ReservationManager*>();
+    qRegisterMetaType<Transfer::Alignment>();
+    qRegisterMetaType<TripGroupManager*>();
+    qRegisterMetaType<WeatherForecast>();
+
+    qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
+    qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
+    qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
+    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
+    qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
+
+    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
+    qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
+    qmlRegisterType<FavoriteLocationModel>("org.kde.itinerary", 1, 0, "FavoriteLocationModel");
+    qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel"); // TODO use this from kitemmodels?
+    qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
+    qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
+    qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
+    qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
+    qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
+}
+
+// for registering QML singletons only
+static DocumentManager *s_documentManager = nullptr;
+static PkPassManager *s_pkPassManager = nullptr;
+static Settings *s_settings = nullptr;
+static TransferManager *s_tranferManager = nullptr;
+static TripGroupManager *s_tripGroupManager = nullptr;
+static WeatherForecastManager *s_weatherForecastManager = nullptr;
+
+#define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
+    qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
+        engine->setObjectOwnership(Instance, QQmlEngine::CppOwnership); \
+        return Instance; \
+    });
+
+void registerApplicationSingletons()
+{
+    REGISTER_SINGLETON_INSTANCE(ApplicationController, ApplicationController::instance())
+    REGISTER_SINGLETON_INSTANCE(DocumentManager, s_documentManager)
+    REGISTER_SINGLETON_INSTANCE(PkPassManager, s_pkPassManager)
+    REGISTER_SINGLETON_INSTANCE(Settings, s_settings)
+    REGISTER_SINGLETON_INSTANCE(TransferManager, s_tranferManager)
+    REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
+    REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
+
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(Localizer());
+    });
+
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(NavigationController());
+    });
+
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(PublicTransport());
+    });
+
+    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
+        return new Util;
+    });
+}
+
+#undef REGISTER_SINGLETON_INSTANCE
+
 void handleViewIntent(ApplicationController *appController)
 {
 #ifdef Q_OS_ANDROID
@@ -135,12 +217,21 @@ int main(int argc, char **argv)
 #endif
 
     Settings settings;
+    s_settings = &settings;
+
     PkPassManager passMgr;
+    s_pkPassManager = &passMgr;
+
     ReservationManager resMgr;
-    DocumentManager docMgr;
     resMgr.setPkPassManager(&passMgr);
+
+    DocumentManager docMgr;
+    s_documentManager = &docMgr;
+
     TripGroupManager tripGroupMgr;
     tripGroupMgr.setReservationManager(&resMgr);
+    s_tripGroupManager = &tripGroupMgr;
+
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&passMgr);
@@ -168,16 +259,17 @@ int main(int argc, char **argv)
     });
 #endif
 
-    TimelineModel timelineModel;
-    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
-    timelineModel.setReservationManager(&resMgr);
-    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
-
     WeatherForecastManager weatherForecastMgr;
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
     QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
+    s_weatherForecastManager = &weatherForecastMgr;
+
+    TimelineModel timelineModel;
+    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
+    timelineModel.setReservationManager(&resMgr);
     timelineModel.setWeatherForecastManager(&weatherForecastMgr);
     timelineModel.setTripGroupManager(&tripGroupMgr);
+    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
 
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
@@ -190,72 +282,22 @@ int main(int argc, char **argv)
     transferManager.setReservationManager(&resMgr);
     transferManager.setTripGroupManager(&tripGroupMgr);
     timelineModel.setTransferManager(&transferManager);
+    s_tranferManager = &transferManager;
 
-    qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
-    qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
-    qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
-    qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
-
-    qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
-    qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
-    qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
-
-    qRegisterMetaType<ReservationManager*>();
-    qRegisterMetaType<TripGroupManager*>();
-    qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
-    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
-    qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(Localizer());
-    });
-    qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
-    qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
-    qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
-    qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
-    qRegisterMetaType<Transfer::Alignment>();
-    qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
-    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "TransferManager", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
-        engine->setObjectOwnership(TransferManager::instance(), QQmlEngine::CppOwnership);
-        return TransferManager::instance();
-    });
-    qmlRegisterType<FavoriteLocationModel>("org.kde.itinerary", 1, 0, "FavoriteLocationModel");
-    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
-        return new Util;
-    });
-    qRegisterMetaType<WeatherForecast>();
-    qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(PublicTransport());
-    });
-    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "ApplicationController", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
-        engine->setObjectOwnership(ApplicationController::instance(), QQmlEngine::CppOwnership);
-        return ApplicationController::instance();
-    });
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(NavigationController());
-    });
-    qmlRegisterSingletonType<DocumentManager>("org.kde.itinerary", 1, 0, "DocumentManager", [](QQmlEngine *engine, QJSEngine*) -> QObject* {
-        engine->setObjectOwnership(DocumentManager::instance(), QQmlEngine::CppOwnership);
-        return DocumentManager::instance();
-    });
-    qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
-    qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
-    qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
-
-    qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel");
+    registerKPkPassTypes();
+    registerKItineraryTypes();
+    registerApplicationTypes();
+    registerApplicationSingletons();
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
-    engine.rootContext()->setContextProperty(QStringLiteral("_pkpassManager"), &passMgr);
+    // TODO get rid of those, e.g. by using singletons
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
-    engine.rootContext()->setContextProperty(QStringLiteral("_settings"), &settings);
-    engine.rootContext()->setContextProperty(QStringLiteral("_weatherForecastManager"), &weatherForecastMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
-    engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupManager"), &tripGroupMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 

@@ -67,9 +67,6 @@ public:
     bool hasHomeLocation() const;
     KPublicTransport::Location homeLocation() const;
 
-    // for QML integration only
-    static TransferManager* instance();
-
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);
     static void clear();
@@ -119,8 +116,6 @@ private:
 
     float m_homeLat = NAN;
     float m_homeLon = NAN;
-
-    static TransferManager *s_instance;
 };
 
 #endif // TRANSFERMANAGER_H

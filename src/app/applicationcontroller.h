@@ -27,6 +27,7 @@
 class DocumentManager;
 class PkPassManager;
 class ReservationManager;
+class TransferManager;
 
 namespace KItinerary {
 class File;
@@ -47,6 +48,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
     void setDocumentManager(DocumentManager *docMgr);
+    void setTransferManager(TransferManager *transferMgr);
 
     // data import
     Q_INVOKABLE void importFromClipboard();
@@ -88,6 +90,7 @@ private:
     ReservationManager *m_resMgr = nullptr;
     PkPassManager *m_pkPassMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
+    TransferManager *m_transferMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 };
 

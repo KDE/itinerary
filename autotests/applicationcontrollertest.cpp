@@ -145,6 +145,7 @@ private Q_SLOTS:
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
+        appController.setTransferManager(&transferMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));

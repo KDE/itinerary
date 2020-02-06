@@ -67,8 +67,8 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.label: i18n("Home Country")
             model: countryModel
             textRole: "display"
-            currentIndex: countryModel.isoCodeToIndex(_settings.homeCountryIsoCode)
-            onActivated: _settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
+            currentIndex: countryModel.isoCodeToIndex(Settings.homeCountryIsoCode)
+            onActivated: Settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
         }
 
         QQC2.Button {
@@ -92,8 +92,8 @@ Kirigami.ScrollablePage {
 
         QQC2.Switch {
             Kirigami.FormData.label: i18n("Query Traffic Data")
-            checked: _settings.queryLiveData
-            onToggled: _settings.queryLiveData = checked
+            checked: Settings.queryLiveData
+            onToggled: Settings.queryLiveData = checked
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -123,8 +123,8 @@ Kirigami.ScrollablePage {
         QQC2.Switch {
             id: weatherSwitch
             Kirigami.FormData.label: i18n("Weather Forecast")
-            checked: _settings.weatherForecastEnabled
-            onToggled: _settings.weatherForecastEnabled = checked
+            checked: Settings.weatherForecastEnabled
+            onToggled: Settings.weatherForecastEnabled = checked
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true

@@ -27,7 +27,6 @@ class DocumentManager : public QObject
 public:
     explicit DocumentManager(QObject *parent = nullptr);
     ~DocumentManager();
-    static DocumentManager* instance();
 
     /** Lists all documents in storage. */
     QVector<QString> documents() const;
@@ -52,8 +51,6 @@ Q_SIGNALS:
 
 private:
     QString basePath() const;
-
-    static DocumentManager *s_instance;
 };
 
 #endif // DOCUMENTMANAGER_H

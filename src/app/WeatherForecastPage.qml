@@ -30,7 +30,7 @@ Kirigami.Page {
 
     WeatherForecastModel {
         id: forecastModel
-        weatherForecastManager: _weatherForecastManager
+        weatherForecastManager: WeatherForecastManager
     }
 
     Component {

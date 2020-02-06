@@ -32,23 +32,12 @@
 
 using namespace KItinerary;
 
-DocumentManager* DocumentManager::s_instance = nullptr;
-
 DocumentManager::DocumentManager(QObject* parent)
     : QObject(parent)
 {
-    s_instance = this;
 }
 
-DocumentManager::~DocumentManager()
-{
-    s_instance = nullptr;
-}
-
-DocumentManager* DocumentManager::instance()
-{
-    return s_instance;
-}
+DocumentManager::~DocumentManager() = default;
 
 QVector<QString> DocumentManager::documents() const
 {
