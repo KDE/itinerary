@@ -53,6 +53,7 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
+            id: ticketDelegate
             resIds: _reservationManager.reservationsForBatch(root.batchId)
             onCurrentReservationIdChanged: {
                 if (!currentReservationId)
@@ -63,6 +64,13 @@ App.DetailsPage {
 
         Kirigami.FormLayout {
             Layout.fillWidth: true
+
+            // sequence number belongs to the selected barcode
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Sequence Number:")
+                text: _reservationManager.reservation(ticketDelegate.currentReservationId).passengerSequenceNumber
+                visible: text
+            }
 
             // flight details
             Kirigami.Separator {
