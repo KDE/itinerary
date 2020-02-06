@@ -71,6 +71,13 @@ void TransferManager::setTripGroupManager(TripGroupManager* tgMgr)
     rescan();
 }
 
+void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocModel)
+{
+    m_favLocModel = favLocModel;
+    connect(m_favLocModel, &FavoriteLocationModel::rowsInserted, this, [this]() { rescan(true); });
+    rescan();
+}
+
 Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment alignment) const
 {
     const auto it = m_transfers[alignment].constFind(resId);
@@ -201,19 +208,9 @@ bool TransferManager::hasHomeLocation() const
     return !std::isnan(m_homeLat) && !std::isnan(m_homeLon);
 }
 
-KPublicTransport::Location TransferManager::homeLocation() const
-{
-    if (!hasHomeLocation()) {
-        return {};
-    }
-    KPublicTransport::Location l;
-    l.setCoordinate(m_homeLat, m_homeLon);
-    return l;
-}
-
 void TransferManager::rescan(bool force)
 {
-    if (!m_resMgr || !m_tgMgr) {
+    if (!m_resMgr || !m_tgMgr) { // TODO || !m_favLocModel
         return;
     }
 
@@ -284,8 +281,9 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
     // - res is an event and we are not at its location already
 
     if (isLocationChange && isFirstInTripGroup(resId)) {
-        transfer.setFrom(homeLocation());
-        transfer.setFromName(i18n("Home"));
+        const auto f = pickFavorite(toLoc, resId, Transfer::Before);
+        transfer.setFrom(locationFromFavorite(f));
+        transfer.setFromName(f.name());
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         return true;
     }
@@ -336,7 +334,9 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
     // - res is an event and the following or enclosing element is a lodging element
 
     if (isLocationChange && isLastInTripGroup(resId)) {
-        transfer.setTo(homeLocation());
+        const auto f = pickFavorite(fromLoc, resId, Transfer::After);
+        transfer.setTo(locationFromFavorite(f));
+        transfer.setToName(f.name());
         transfer.setToName(i18n("Home"));
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         return true;
@@ -410,6 +410,35 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
     } else {
         transfer.setAnchorTimeDelta(10 * 60);
     }
+}
+
+KPublicTransport::Location TransferManager::locationFromFavorite(const FavoriteLocation &favLoc)
+{
+    KPublicTransport::Location loc;
+    loc.setLatitude(favLoc.latitude());
+    loc.setLongitude(favLoc.longitude());
+    return loc;
+}
+
+FavoriteLocation TransferManager::pickFavorite(const QVariant &anchoredLoc, const QString &resId, Transfer::Alignment alignment) const
+{
+    // TODO selection strategy:
+    // (1) pick the same favorite as was used before/after resId
+    // (2) pick the favorite closest to anchoredLoc - this can work very well if the favorites aren't close to each other
+    // (3) pick the first one
+
+    Q_UNUSED(anchoredLoc);
+    Q_UNUSED(resId);
+    Q_UNUSED(alignment);
+
+    if (!hasHomeLocation()) {
+        return {};
+    }
+    FavoriteLocation loc;
+    loc.setLatitude(homeLatitude());
+    loc.setLongitude(homeLongitude());
+    loc.setName(i18n("Home"));
+    return loc;
 }
 
 void TransferManager::addOrUpdateTransfer(Transfer &t)

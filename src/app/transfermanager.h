@@ -26,6 +26,7 @@
 #include <cmath>
 
 class FavoriteLocation;
+class FavoriteLocationModel;
 class ReservationManager;
 class TripGroupManager;
 
@@ -41,6 +42,7 @@ public:
     ~TransferManager();
     void setReservationManager(ReservationManager *resMgr);
     void setTripGroupManager(TripGroupManager *tgMgr);
+    void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
 
     /** Returns the transfer for reservation @p resId with @p alignment. */
     Transfer transfer(const QString &resId, Transfer::Alignment alignment) const;
@@ -65,7 +67,6 @@ public:
     float homeLongitude() const;
     void setHomeLongitude(float lon);
     bool hasHomeLocation() const;
-    KPublicTransport::Location homeLocation() const;
 
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);
@@ -100,6 +101,10 @@ private:
 
     void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
 
+    static KPublicTransport::Location locationFromFavorite(const FavoriteLocation &favLoc);
+    /** Pick the best favorite location for a given transfer. */
+    FavoriteLocation pickFavorite(const QVariant &anchoredLoc, const QString &resId, Transfer::Alignment alignment) const;
+
     void addOrUpdateTransfer(Transfer &t);
     void removeTransfer(const Transfer &t);
 
@@ -111,6 +116,7 @@ private:
 
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tgMgr = nullptr;
+    FavoriteLocationModel *m_favLocModel = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
 
