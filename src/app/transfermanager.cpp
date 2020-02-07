@@ -44,12 +44,6 @@ enum { CurrentFullScanVerion = 1 };
 TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
 {
-    QSettings settings;
-    settings.beginGroup(QStringLiteral("HomeLocation"));
-    m_homeLat = settings.value(QStringLiteral("Latitude"), NAN).toFloat();
-    m_homeLon = settings.value(QStringLiteral("Longitude"), NAN).toFloat();
-
-    connect(this, &TransferManager::homeLocationChanged, this, [this]() { rescan(true); });
 }
 
 TransferManager::~TransferManager() = default;
@@ -167,45 +161,6 @@ Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment 
     } else {
         return {};
     }
-}
-
-float TransferManager::homeLatitude() const
-{
-    return m_homeLat;
-}
-
-void TransferManager::setHomeLatitude(float lat)
-{
-    if (m_homeLat == lat) {
-        return;
-    }
-    m_homeLat = lat;
-    QSettings settings;
-    settings.beginGroup(QStringLiteral("HomeLocation"));
-    settings.setValue(QStringLiteral("Latitude"), m_homeLat);
-    emit homeLocationChanged();
-}
-
-float TransferManager::homeLongitude() const
-{
-    return m_homeLon;
-}
-
-void TransferManager::setHomeLongitude(float lon)
-{
-    if (m_homeLon == lon) {
-        return;
-    }
-    m_homeLon = lon;
-    QSettings settings;
-    settings.beginGroup(QStringLiteral("HomeLocation"));
-    settings.setValue(QStringLiteral("Longitude"), m_homeLon);
-    emit homeLocationChanged();
-}
-
-bool TransferManager::hasHomeLocation() const
-{
-    return !std::isnan(m_homeLat) && !std::isnan(m_homeLon);
 }
 
 void TransferManager::rescan(bool force)
@@ -431,14 +386,10 @@ FavoriteLocation TransferManager::pickFavorite(const QVariant &anchoredLoc, cons
     Q_UNUSED(resId);
     Q_UNUSED(alignment);
 
-    if (!hasHomeLocation()) {
+    if (m_favLocModel->rowCount() == 0) {
         return {};
     }
-    FavoriteLocation loc;
-    loc.setLatitude(homeLatitude());
-    loc.setLongitude(homeLongitude());
-    loc.setName(i18n("Home"));
-    return loc;
+    return m_favLocModel->favoriteLocations()[0];
 }
 
 void TransferManager::addOrUpdateTransfer(Transfer &t)

@@ -521,15 +521,13 @@ private Q_SLOTS:
         FavoriteLocation favLoc;
         favLoc.setLatitude(52.51860f);
         favLoc.setLongitude(13.37630f);
-        favLoc.setName(QStringLiteral("name"));
+        favLoc.setName(QStringLiteral("Home"));
         favLocModel.setFavoriteLocations({favLoc});
         QCOMPARE(favLocModel.rowCount(), 1);
 
         TransferManager::clear();
         TransferManager transferMgr;
         transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
-        transferMgr.setHomeLatitude(52.51860f);
-        transferMgr.setHomeLongitude(13.37630f);
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&groupMgr);
         transferMgr.setFavoriteLocationModel(&favLocModel);

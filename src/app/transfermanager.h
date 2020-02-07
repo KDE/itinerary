@@ -34,8 +34,6 @@ class TripGroupManager;
 class TransferManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(float homeLatitude READ homeLatitude WRITE setHomeLatitude NOTIFY homeLocationChanged)
-    Q_PROPERTY(float homeLongitude READ homeLongitude WRITE setHomeLongitude NOTIFY homeLocationChanged)
 
 public:
     explicit TransferManager(QObject *parent = nullptr);
@@ -60,13 +58,6 @@ public:
     Q_INVOKABLE bool canAddTransfer(const QString &resId, Transfer::Alignment alignment) const;
     /** Explicitly add a transfer before/after the given reservation. */
     Q_INVOKABLE Transfer addTransfer(const QString &resId, Transfer::Alignment alignment);
-
-    // home coordinates, TODO might be better placed in a more generic location class, so we don't need to limit this to a single location
-    float homeLatitude() const;
-    void setHomeLatitude(float lat);
-    float homeLongitude() const;
-    void setHomeLongitude(float lon);
-    bool hasHomeLocation() const;
 
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);
@@ -119,9 +110,6 @@ private:
     FavoriteLocationModel *m_favLocModel = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
-
-    float m_homeLat = NAN;
-    float m_homeLon = NAN;
 };
 
 #endif // TRANSFERMANAGER_H

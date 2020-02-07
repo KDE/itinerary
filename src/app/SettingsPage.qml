@@ -35,18 +35,6 @@ Kirigami.ScrollablePage {
     }
 
     Component {
-        id: locationPickerPage
-        LocationPicker {
-            title: i18n("Pick Home Location")
-            coordinate: QtPositioning.coordinate(TransferManager.homeLatitude, TransferManager.homeLongitude)
-            onCoordinateChanged: {
-                TransferManager.homeLatitude = coordinate.latitude;
-                TransferManager.homeLongitude = coordinate.longitude;
-            }
-        }
-    }
-
-    Component {
         id: favoriteLocationPage
         FavoriteLocationPage {}
     }
@@ -73,17 +61,10 @@ Kirigami.ScrollablePage {
 
         QQC2.Button {
             Kirigami.FormData.isSection: true
-            text: i18n("Pick Home Location")
-            icon.name: "crosshairs"
-            onClicked: applicationWindow().pageStack.push(locationPickerPage);
-        }
-
-        /*QQC2.Button {
-            Kirigami.FormData.isSection: true
             text: i18n("Favorite Locations")
             icon.name: "go-home-symbolic"
             onClicked: applicationWindow().pageStack.push(favoriteLocationPage);
-        }*/
+        }
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

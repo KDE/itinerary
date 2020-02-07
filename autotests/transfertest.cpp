@@ -79,8 +79,6 @@ private Q_SLOTS:
         TransferManager mgr;
         mgr.setFavoriteLocationModel(&favLocModel);
         mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
-        mgr.setHomeLatitude(52.51860f);
-        mgr.setHomeLongitude(13.37630f);
         mgr.setReservationManager(&resMgr);
         mgr.setTripGroupManager(&tgMgr);
         QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);

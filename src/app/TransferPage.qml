@@ -135,7 +135,7 @@ Kirigami.Page {
             visible: transfer.alignment == Transfer.Before
         }
 
-        /*QQC2.ComboBox {
+        QQC2.ComboBox {
             id: favLocCombo
             model: FavoriteLocationModel
             visible: transfer.floatingLocationType == Transfer.FavoriteLocation
@@ -147,7 +147,7 @@ Kirigami.Page {
                 root.transfer = TransferManager.setFavoriteLocationForTransfer(root.transfer, favLoc.model.favoriteLocation);
                 queryJourney();
             }
-        }*/
+        }
     }
 
     Kirigami.CardsListView {
