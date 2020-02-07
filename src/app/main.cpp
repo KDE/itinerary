@@ -204,7 +204,7 @@ int main(int argc, char **argv)
 #else
     QApplication app(argc, argv); // for native file dialogs
 #endif
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("map-globe")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("itinerary")));
 
     QCommandLineParser parser;
     parser.addHelpOption();
