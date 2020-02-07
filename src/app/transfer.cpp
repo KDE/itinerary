@@ -144,10 +144,12 @@ void Transfer::setJourney(const KPublicTransport::Journey &journey)
 {
     d.detach();
     d->m_journey = journey;
-    if (d->m_alignment == Transfer::Before) {
-        d->m_anchorDelta = std::max(0ll, journey.scheduledArrivalTime().secsTo(d->m_anchorTime));
-    } else {
-        d->m_anchorDelta = std::max(0ll, d->m_anchorTime.secsTo(journey.scheduledDepartureTime()));
+    if (journey.scheduledArrivalTime().isValid()) {
+        if (d->m_alignment == Transfer::Before) {
+            d->m_anchorDelta = std::max(0ll, journey.scheduledArrivalTime().secsTo(d->m_anchorTime));
+        } else {
+            d->m_anchorDelta = std::max(0ll, d->m_anchorTime.secsTo(journey.scheduledDepartureTime()));
+        }
     }
 }
 
