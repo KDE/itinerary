@@ -173,6 +173,11 @@ void ApplicationController::setTransferManager(TransferManager* transferMgr)
     m_transferMgr = transferMgr;
 }
 
+void ApplicationController::setFavoriteLocationModel(FavoriteLocationModel *favLocModel)
+{
+    m_favLocModel = favLocModel;
+}
+
 void ApplicationController::importFromClipboard()
 {
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
@@ -391,10 +396,9 @@ void ApplicationController::exportToFile(const QString &filePath)
     }
 
     // export favorite locations
-    FavoriteLocationModel favLocs;
-    if (favLocs.rowCount() > 0) {
+    if (m_favLocModel->rowCount() > 0) {
         f.addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
-                        QJsonDocument(FavoriteLocation::toJson(favLocs.favoriteLocations())).toJson());
+                        QJsonDocument(FavoriteLocation::toJson(m_favLocModel->favoriteLocations())).toJson());
     }
 
     // TODO export settings
@@ -449,8 +453,7 @@ void ApplicationController::importBundle(KItinerary::File *file)
     // favorite locations
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
     if (!favLocs.empty()) {
-        FavoriteLocationModel model;
-        model.setFavoriteLocations(std::move(favLocs));
+        m_favLocModel->setFavoriteLocations(std::move(favLocs));
     }
 }
 

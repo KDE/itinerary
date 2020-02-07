@@ -19,6 +19,7 @@
 #include <transfermanager.h>
 #include <reservationmanager.h>
 #include <tripgroupmanager.h>
+#include <favoritelocationmodel.h>
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -63,8 +64,20 @@ private Q_SLOTS:
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
 
+        FavoriteLocationModel favLocModel;
+        while (favLocModel.rowCount()) {
+            favLocModel.removeLocation(0);
+        }
+        FavoriteLocation favLoc;
+        favLoc.setLatitude(52.51860f);
+        favLoc.setLongitude(13.37630f);
+        favLoc.setName(QStringLiteral("name"));
+        favLocModel.setFavoriteLocations({favLoc});
+        QCOMPARE(favLocModel.rowCount(), 1);
+
         TransferManager::clear();
         TransferManager mgr;
+        mgr.setFavoriteLocationModel(&favLocModel);
         mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
         mgr.setHomeLatitude(52.51860f);
         mgr.setHomeLongitude(13.37630f);

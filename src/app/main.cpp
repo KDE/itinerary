@@ -112,7 +112,6 @@ void registerApplicationTypes()
 
     qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
-    qmlRegisterType<FavoriteLocationModel>("org.kde.itinerary", 1, 0, "FavoriteLocationModel");
     qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel"); // TODO use this from kitemmodels?
     qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
@@ -123,6 +122,7 @@ void registerApplicationTypes()
 
 // for registering QML singletons only
 static DocumentManager *s_documentManager = nullptr;
+static FavoriteLocationModel *s_favoriteLocationModel = nullptr;
 static PkPassManager *s_pkPassManager = nullptr;
 static Settings *s_settings = nullptr;
 static TransferManager *s_tranferManager = nullptr;
@@ -139,6 +139,7 @@ void registerApplicationSingletons()
 {
     REGISTER_SINGLETON_INSTANCE(ApplicationController, ApplicationController::instance())
     REGISTER_SINGLETON_INSTANCE(DocumentManager, s_documentManager)
+    REGISTER_SINGLETON_INSTANCE(FavoriteLocationModel, s_favoriteLocationModel)
     REGISTER_SINGLETON_INSTANCE(PkPassManager, s_pkPassManager)
     REGISTER_SINGLETON_INSTANCE(Settings, s_settings)
     REGISTER_SINGLETON_INSTANCE(TransferManager, s_tranferManager)
@@ -228,14 +229,13 @@ int main(int argc, char **argv)
     DocumentManager docMgr;
     s_documentManager = &docMgr;
 
+    FavoriteLocationModel favLocModel;
+    s_favoriteLocationModel = &favLocModel;
+
     TripGroupManager tripGroupMgr;
     tripGroupMgr.setReservationManager(&resMgr);
     s_tripGroupManager = &tripGroupMgr;
 
-    ApplicationController appController;
-    appController.setReservationManager(&resMgr);
-    appController.setPkPassManager(&passMgr);
-    appController.setDocumentManager(&docMgr);
     BrightnessManager brightnessManager;
     LockManager lockManager;
 
@@ -245,6 +245,37 @@ int main(int argc, char **argv)
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
 
+    WeatherForecastManager weatherForecastMgr;
+    weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
+    QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
+    s_weatherForecastManager = &weatherForecastMgr;
+
+    TransferManager transferManager;
+    transferManager.setReservationManager(&resMgr);
+    transferManager.setTripGroupManager(&tripGroupMgr);
+    transferManager.setFavoriteLocationModel(&favLocModel);
+    s_tranferManager = &transferManager;
+
+    TimelineModel timelineModel;
+    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
+    timelineModel.setReservationManager(&resMgr);
+    timelineModel.setWeatherForecastManager(&weatherForecastMgr);
+    timelineModel.setTransferManager(&transferManager);
+    timelineModel.setTripGroupManager(&tripGroupMgr);
+    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
+
+    TripGroupProxyModel tripGroupProxy;
+    tripGroupProxy.setSourceModel(&timelineModel);
+
+    TripGroupInfoProvider tripGroupInfoProvider;
+    tripGroupInfoProvider.setReservationManager(&resMgr);
+    tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
+
+    ApplicationController appController;
+    appController.setReservationManager(&resMgr);
+    appController.setPkPassManager(&passMgr);
+    appController.setDocumentManager(&docMgr);
+    appController.setFavoriteLocationModel(&favLocModel);
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
@@ -258,31 +289,6 @@ int main(int argc, char **argv)
         }
     });
 #endif
-
-    WeatherForecastManager weatherForecastMgr;
-    weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
-    QObject::connect(&settings, &Settings::weatherForecastEnabledChanged, &weatherForecastMgr, &WeatherForecastManager::setAllowNetworkAccess);
-    s_weatherForecastManager = &weatherForecastMgr;
-
-    TimelineModel timelineModel;
-    timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
-    timelineModel.setReservationManager(&resMgr);
-    timelineModel.setWeatherForecastManager(&weatherForecastMgr);
-    timelineModel.setTripGroupManager(&tripGroupMgr);
-    QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
-
-    TripGroupProxyModel tripGroupProxy;
-    tripGroupProxy.setSourceModel(&timelineModel);
-
-    TripGroupInfoProvider tripGroupInfoProvider;
-    tripGroupInfoProvider.setReservationManager(&resMgr);
-    tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
-
-    TransferManager transferManager;
-    transferManager.setReservationManager(&resMgr);
-    transferManager.setTripGroupManager(&tripGroupMgr);
-    timelineModel.setTransferManager(&transferManager);
-    s_tranferManager = &transferManager;
 
     registerKPkPassTypes();
     registerKItineraryTypes();

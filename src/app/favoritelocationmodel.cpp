@@ -139,7 +139,8 @@ FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
             saveLocations();
         }
         settings.endGroup();
-        settings.remove(QStringLiteral("HomeLocation"));
+        // TODO activate once we have fully switched over to this
+        //settings.remove(QStringLiteral("HomeLocation"));
     }
 }
 

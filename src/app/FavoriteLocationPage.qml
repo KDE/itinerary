@@ -33,10 +33,6 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
-    FavoriteLocationModel {
-        id: favLocModel
-    }
-
     QtLocation.Plugin {
         id: mapPlugin
         required.mapping: QtLocation.Plugin.AnyMappingFeatures
@@ -45,7 +41,7 @@ Kirigami.Page {
 
     Component.onCompleted: {
         if (combo.count == 0)
-            favLocModel.appendNewLocation();
+            FavoriteLocationModel.appendNewLocation();
 
     }
 
@@ -53,9 +49,9 @@ Kirigami.Page {
         icon.name: "crosshairs"
         text: i18n("Pick Location")
         onTriggered: {
-            var idx = favLocModel.index(combo.currentIndex, 0);
-            favLocModel.setData(idx, map.center.latitude, FavoriteLocationModel.LatitudeRole);
-            favLocModel.setData(idx, map.center.longitude, FavoriteLocationModel.LongitudeRole);
+            var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
+            FavoriteLocationModel.setData(idx, map.center.latitude, FavoriteLocationModel.LatitudeRole);
+            FavoriteLocationModel.setData(idx, map.center.longitude, FavoriteLocationModel.LongitudeRole);
         }
     }
     actions.contextualActions: [
@@ -63,7 +59,7 @@ Kirigami.Page {
             text: i18n("Add Favorite Location")
             icon.name: "list-add"
             onTriggered: {
-                favLocModel.appendNewLocation();
+                FavoriteLocationModel.appendNewLocation();
                 combo.currentIndex = combo.count - 1;
             }
         },
@@ -78,7 +74,7 @@ Kirigami.Page {
             enabled: combo.count > 1
             onTriggered: {
                 var prevIndex = combo.currentIndex;
-                favLocModel.removeLocation(combo.currentIndex);
+                FavoriteLocationModel.removeLocation(combo.currentIndex);
                 combo.currentIndex = Math.min(prevIndex, combo.count - 1);
             }
         }
@@ -102,8 +98,8 @@ Kirigami.Page {
                 text: i18n("Rename")
                 icon.name: "edit-rename"
                 onClicked: {
-                    var idx = favLocModel.index(combo.currentIndex, 0);
-                    favLocModel.setData(idx, nameEdit.text, Qt.DisplayRole);
+                    var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
+                    FavoriteLocationModel.setData(idx, nameEdit.text, Qt.DisplayRole);
                     renameSheet.sheetOpen = false;
                 }
             }
@@ -114,7 +110,7 @@ Kirigami.Page {
     QQC2.ComboBox {
         id: combo
         anchors { top: parent.top; left: parent.left; right: parent.right; margins: Kirigami.Units.largeSpacing }
-        model: favLocModel
+        model: FavoriteLocationModel
         textRole: "display"
         onCurrentIndexChanged: {
             var favLoc = delegateModel.items.get(currentIndex)

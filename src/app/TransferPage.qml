@@ -120,10 +120,6 @@ Kirigami.Page {
         }
     }
 
-    /*FavoriteLocationModel {
-        id: favLocModel
-    }*/
-
     ColumnLayout {
         id: topLayout
         anchors { top: parent.top; left: parent.left; right: parent.right }
@@ -141,7 +137,7 @@ Kirigami.Page {
 
         /*QQC2.ComboBox {
             id: favLocCombo
-            model: favLocModel
+            model: FavoriteLocationModel
             visible: transfer.floatingLocationType == Transfer.FavoriteLocation
             textRole: "display"
             Layout.fillWidth: true

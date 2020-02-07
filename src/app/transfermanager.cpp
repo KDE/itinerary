@@ -210,7 +210,7 @@ bool TransferManager::hasHomeLocation() const
 
 void TransferManager::rescan(bool force)
 {
-    if (!m_resMgr || !m_tgMgr) { // TODO || !m_favLocModel
+    if (!m_resMgr || !m_tgMgr || !m_favLocModel) {
         return;
     }
 

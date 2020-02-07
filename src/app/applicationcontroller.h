@@ -25,6 +25,7 @@
 #endif
 
 class DocumentManager;
+class FavoriteLocationModel;
 class PkPassManager;
 class ReservationManager;
 class TransferManager;
@@ -49,6 +50,7 @@ public:
     void setPkPassManager(PkPassManager *pkPassMgr);
     void setDocumentManager(DocumentManager *docMgr);
     void setTransferManager(TransferManager *transferMgr);
+    void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
 
     // data import
     Q_INVOKABLE void importFromClipboard();
@@ -91,6 +93,7 @@ private:
     PkPassManager *m_pkPassMgr = nullptr;
     DocumentManager *m_docMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;
+    FavoriteLocationModel *m_favLocModel = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 };
 

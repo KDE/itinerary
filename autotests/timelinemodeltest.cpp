@@ -18,6 +18,7 @@
 #include "modelverificationpoint.h"
 
 #include <countryinformation.h>
+#include <favoritelocationmodel.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 #include <timelinemodel.h>
@@ -512,6 +513,18 @@ private Q_SLOTS:
         groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
+
+        FavoriteLocationModel favLocModel;
+        while (favLocModel.rowCount()) {
+            favLocModel.removeLocation(0);
+        }
+        FavoriteLocation favLoc;
+        favLoc.setLatitude(52.51860f);
+        favLoc.setLongitude(13.37630f);
+        favLoc.setName(QStringLiteral("name"));
+        favLocModel.setFavoriteLocations({favLoc});
+        QCOMPARE(favLocModel.rowCount(), 1);
+
         TransferManager::clear();
         TransferManager transferMgr;
         transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
@@ -519,6 +532,7 @@ private Q_SLOTS:
         transferMgr.setHomeLongitude(13.37630f);
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&groupMgr);
+        transferMgr.setFavoriteLocationModel(&favLocModel);
 
         TimelineModel model;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
