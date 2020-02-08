@@ -181,7 +181,13 @@ Kirigami.ScrollablePage {
         // work around initial positioning not working correctly below, as at that point
         // listView.height has bogus values. No idea why, possibly delayed layouting in the ScrollablePage,
         // or a side-effect of the binding loop on delegate heights
-        onHeightChanged: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning)
+        property bool initialPositionDone: false
+        onHeightChanged: {
+            if (initialPositionDone)
+                return;
+            listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning)
+            initialPositionDone = true;
+        }
     }
 
     Component.onCompleted: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
