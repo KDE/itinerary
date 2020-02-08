@@ -87,6 +87,16 @@ TimelineModel::TimelineModel(QObject *parent)
     m_dayUpdateTimer.setSingleShot(true);
     m_dayUpdateTimer.setInterval((QTime::currentTime().secsTo({23, 59, 59}) + 1) * 1000);
     m_dayUpdateTimer.start();
+
+    // make sure we properly update the empty today marker
+    connect(this, &TimelineModel::todayRowChanged, this, [this]() {
+        const auto idx = index(todayRow(), 0);
+        if (m_todayEmpty == idx.data(TimelineModel::TodayEmptyRole).toBool()) {
+            return;
+        }
+        m_todayEmpty = !m_todayEmpty;
+        emit dataChanged(idx, idx);
+    });
 }
 
 TimelineModel::~TimelineModel() = default;
@@ -704,6 +714,8 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         endInsertRows();
         return;
     }
+
+    emit todayRowChanged();
 }
 
 void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
@@ -732,4 +744,6 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
     endRemoveRows();
+
+    emit todayRowChanged();
 }

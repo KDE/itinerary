@@ -109,6 +109,7 @@ private:
     QString m_homeCountry;
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;
+    bool m_todayEmpty = true;
 };
 
 #endif // TIMELINEMODEL_H
