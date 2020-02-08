@@ -68,6 +68,7 @@ Kirigami.ApplicationWindow {
                 }
             },
             Kirigami.Action {
+                id: statsAction
                 text: i18n("Statistics")
                 iconName: "view-statistics"
                 onTriggered: pageStack.push(statisticsComponent)
@@ -119,29 +120,23 @@ Kirigami.ApplicationWindow {
         id: settingsComponent
         App.SettingsPage {
             id: settingsPage
-            Binding {
-                target: settingsAction
-                property: "enabled"
-                value: !settingsPage.isCurrentPage
-            }
+            onIsCurrentPageChanged: settingsAction.enabled = !settingsPage.isCurrentPage
         }
     }
     Component {
         id: aboutComponent
         App.AboutPage {
             id: aboutPage
-            Binding {
-                target: aboutAction
-                property: "enabled"
-                value: !aboutPage.isCurrentPage
-            }
+            onIsCurrentPageChanged: aboutAction.enabled = !aboutPage.isCurrentPage
         }
     }
     Component {
         id: statisticsComponent
         App.StatisticsPage {
+            id: statsPage
             reservationManager: _reservationManager
             tripGroupManager: TripGroupManager
+            onIsCurrentPageChanged: statsAction.enabled = !statsPage.isCurrentPage
         }
     }
 }
