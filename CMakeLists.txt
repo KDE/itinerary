@@ -42,7 +42,7 @@ endif()
 
 set(KF5_MIN_VERSION 5.64)
 # build-time dependencies
-find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Location)
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Location QuickControls2)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts)
 find_package(KF5 ${KF5_MIN_VERSION} OPTIONAL_COMPONENTS Holidays Notifications)

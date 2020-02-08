@@ -62,6 +62,7 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
+#include <QQuickStyle>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
@@ -202,6 +203,7 @@ int main(int argc, char **argv)
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("Material"));
 #else
     QApplication app(argc, argv); // for native file dialogs
 #endif
