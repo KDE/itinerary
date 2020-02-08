@@ -73,6 +73,7 @@ bool WeatherForecastManager::allowNetworkAccess() const
 void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 {
     m_allowNetwork = enabled;
+    emit forecastUpdated();
     if (enabled) {
         scheduleUpdate();
     } else {
