@@ -5,6 +5,13 @@
             <solid android:color="#3daee9"/>
         </shape>
     </item>
+    <item android:width="64dp" android:height="64dp" android:right="4dp" android:bottom="4dp" android:gravity="bottom|right">
+        <bitmap
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/vendor_logo"/>
+    </item>
     <item android:width="256dp" android:height="256dp" android:gravity="center">
         <bitmap
             android:layout_width="fill_parent"
