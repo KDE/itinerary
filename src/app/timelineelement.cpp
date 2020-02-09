@@ -38,6 +38,8 @@ static TimelineElement::ElementType elementType(const QVariant &res)
     return {};
 }
 
+TimelineElement::TimelineElement() = default;
+
 TimelineElement::TimelineElement(TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
     : content(data)
     , dt(dateTime)
@@ -61,10 +63,19 @@ TimelineElement::TimelineElement(const ::Transfer &transfer)
 {
 }
 
+static bool operator<(TimelineElement::RangeType lhs, TimelineElement::RangeType rhs)
+{
+    static const int order_map[] = { 1, 0, 2 };
+    return order_map[lhs] < order_map[rhs];
+}
+
 bool TimelineElement::operator<(const TimelineElement &other) const
 {
     if (dt == other.dt) {
-        return elementType < other.elementType;
+        if (rangeType == other.rangeType) {
+            return elementType < other.elementType;
+        }
+        return rangeType < other.rangeType;
     }
     return dt < other.dt;
 }

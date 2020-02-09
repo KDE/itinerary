@@ -56,6 +56,7 @@ public:
     };
     Q_ENUM(RangeType)
 
+    explicit TimelineElement();
     explicit TimelineElement(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
     explicit TimelineElement(const QString &resId, const QVariant &res, RangeType rt);
     explicit TimelineElement(const ::Transfer &transfer);
@@ -69,8 +70,10 @@ public:
     QString batchId; // reservation batch id
     QVariant content; // non-reservation content
     QDateTime dt; // relevant date/time
-    ElementType elementType;
+    ElementType elementType = Undefined;
     RangeType rangeType = SelfContained;
 };
+
+Q_DECLARE_METATYPE(TimelineElement)
 
 #endif // TIMELINEELEMENT_H

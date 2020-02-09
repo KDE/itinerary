@@ -80,6 +80,28 @@ private Q_SLOTS:
         TripGroupManager::clear();
     }
 
+    void testElementCompare_data()
+    {
+        QTest::addColumn<TimelineElement>("lhs");
+        QTest::addColumn<TimelineElement>("rhs");
+
+        const auto dt = QDateTime::currentDateTimeUtc();
+
+        TimelineElement group(TimelineElement::TripGroup, dt);
+        group.rangeType = TimelineElement::RangeBegin;
+        QTest::newRow("transfer-group-begin") << group << TimelineElement(TimelineElement::Transfer, dt);
+        group.rangeType = TimelineElement::RangeEnd;
+        QTest::newRow("transfer-group-end") << TimelineElement(TimelineElement::Transfer, dt) << group;
+    }
+
+    void testElementCompare()
+    {
+        QFETCH(TimelineElement, lhs);
+        QFETCH(TimelineElement, rhs);
+        QCOMPARE(lhs < rhs, true);
+        QCOMPARE(rhs < lhs, false);
+    }
+
     void testModel()
     {
         PkPassManager mgr;
