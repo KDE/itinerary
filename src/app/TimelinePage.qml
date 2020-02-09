@@ -177,18 +177,17 @@ Kirigami.ScrollablePage {
         }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
-
-        // work around initial positioning not working correctly below, as at that point
-        // listView.height has bogus values. No idea why, possibly delayed layouting in the ScrollablePage,
-        // or a side-effect of the binding loop on delegate heights
-        property bool initialPositionDone: false
-        onHeightChanged: {
-            if (initialPositionDone)
-                return;
-            listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning)
-            initialPositionDone = true;
-        }
     }
 
-    Component.onCompleted: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
+    // work around initial positioning not working correctly below, as at that point
+    // listView.height has bogus values. No idea why, possibly delayed layouting in the ScrollablePage,
+    // or a side-effect of the binding loop on delegate heights
+    Timer {
+        id: positionTimer
+        interval: 0
+        repeat: false
+        onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
+    }
+
+    Component.onCompleted: positionTimer.start()
 }
