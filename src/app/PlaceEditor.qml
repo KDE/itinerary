@@ -28,6 +28,7 @@ Kirigami.FormLayout {
     id: root
     property variant place
     property alias name: name.text
+    property string nameLabel: i18n("Name:")
 
     property double latitude: place.geo.latitude;
     property double longitude: place.geo.longitude;
@@ -62,7 +63,7 @@ Kirigami.FormLayout {
 
     QQC2.TextField {
         id: name
-        Kirigami.FormData.label: i18n("Name:")
+        Kirigami.FormData.label: nameLabel
     }
 
     QQC2.TextField {

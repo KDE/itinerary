@@ -26,6 +26,11 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Event")
+    editor: Component {
+        App.EventEditor {
+            batchId: root.batchId
+        }
+    }
 
     ColumnLayout {
         width: parent.width
