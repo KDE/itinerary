@@ -42,6 +42,9 @@ public:
     void setTripGroupManager(TripGroupManager *tgMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
 
+    void setAutoAddTransfers(bool enabled);
+    void setAutoFillTransfers(bool enabled);
+
     /** Returns the transfer for reservation @p resId with @p alignment. */
     Transfer transfer(const QString &resId, Transfer::Alignment alignment) const;
 
@@ -115,6 +118,8 @@ private:
     FavoriteLocationModel *m_favLocModel = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
+    bool m_autoAddTransfers = true;
+    bool m_autoFillTransfers = false;
 };
 
 #endif // TRANSFERMANAGER_H

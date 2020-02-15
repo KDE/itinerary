@@ -72,6 +72,17 @@ void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocMode
     rescan();
 }
 
+void TransferManager::setAutoAddTransfers(bool enable)
+{
+    m_autoAddTransfers = enable;
+    rescan();
+}
+
+void TransferManager::setAutoFillTransfers(bool enable)
+{
+    m_autoFillTransfers = enable;
+}
+
 Transfer TransferManager::transfer(const QString &resId, Transfer::Alignment alignment) const
 {
     const auto it = m_transfers[alignment].constFind(resId);
@@ -165,7 +176,7 @@ Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment 
 
 void TransferManager::rescan(bool force)
 {
-    if (!m_resMgr || !m_tgMgr || !m_favLocModel) {
+    if (!m_resMgr || !m_tgMgr || !m_favLocModel || !m_autoAddTransfers) {
         return;
     }
 
@@ -185,6 +196,10 @@ void TransferManager::rescan(bool force)
 
 void TransferManager::checkReservation(const QString &resId)
 {
+    if (!m_autoAddTransfers) {
+        return;
+    }
+
     const auto res = m_resMgr->reservation(resId);
 
     const auto now = currentDateTime();
