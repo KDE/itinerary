@@ -34,6 +34,9 @@ Settings::Settings(QObject *parent)
     m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
 
     m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
+
+    m_autoAddTransfers = s.value(QLatin1String("AutoAddTransfers"), true).toBool();
+    m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
 }
 
 Settings::~Settings() = default;
@@ -83,6 +86,10 @@ bool Settings::queryLiveData() const
 
 void Settings::setQueryLiveData(bool queryLiveData)
 {
+    if (!queryLiveData) {
+        setAutoFillTransfers(false);
+    }
+
     if (m_queryLiveData == queryLiveData) {
         return;
     }
@@ -93,4 +100,46 @@ void Settings::setQueryLiveData(bool queryLiveData)
     s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
 
     emit queryLiveDataChanged(queryLiveData);
+}
+
+bool Settings::autoAddTransfers() const
+{
+    return m_autoAddTransfers;
+}
+
+void Settings::setAutoAddTransfers(bool autoAdd)
+{
+    if (!autoAdd) {
+        setAutoFillTransfers(false);
+    }
+
+    if (m_autoAddTransfers == autoAdd) {
+        return;
+    }
+
+    m_autoAddTransfers = autoAdd;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("AutoAddTransfers"), autoAdd);
+
+    emit autoAddTransfersChanged(autoAdd);
+}
+
+bool Settings::autoFillTransfers() const
+{
+    return m_autoFillTransfers && m_queryLiveData && m_autoAddTransfers;
+}
+
+void Settings::setAutoFillTransfers(bool autoFill)
+{
+    if (m_autoFillTransfers == autoFill) {
+        return;
+    }
+
+    m_autoFillTransfers = autoFill;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("AutoFillTransfers"), autoFill);
+
+    emit autoFillTransfersChanged(autoFill);
 }

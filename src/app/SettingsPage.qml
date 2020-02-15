@@ -46,6 +46,7 @@ Kirigami.ScrollablePage {
     Kirigami.FormLayout {
         width: root.width
 
+        // Home location
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Home")
@@ -66,6 +67,7 @@ Kirigami.ScrollablePage {
             onClicked: applicationWindow().pageStack.push(favoriteLocationPage);
         }
 
+        // Online services
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Online Services")
@@ -123,5 +125,31 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
             onLinkActivated: Qt.openUrlExternally(link)
         }
+
+        // Transfer assistant
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Transfer Assistant")
+        }
+
+        QQC2.Switch {
+            Kirigami.FormData.label: i18n("Automatically add transfers")
+            checked: Settings.autoAddTransfers
+            onToggled: Settings.autoAddTransfers = checked
+        }
+        QQC2.Switch {
+            Kirigami.FormData.label: i18n("Automatically fill transfers")
+            checked: Settings.autoFillTransfers
+            onToggled: Settings.autoFillTransfers = checked
+            enabled: Settings.autoAddTransfers && Settings.queryLiveData
+        }
+        QQC2.Label {
+            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            text: i18n("When enabled, this will query transport provider online services automatically for transfer information.")
+            enabled: Settings.autoAddTransfers && Settings.queryLiveData
+        }
+
     }
 }

@@ -27,6 +27,10 @@ class Settings : public QObject
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
     Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
     Q_PROPERTY(bool queryLiveData READ queryLiveData WRITE setQueryLiveData NOTIFY queryLiveDataChanged)
+
+    Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
+    Q_PROPERTY(bool autoFillTransfers READ autoFillTransfers WRITE setAutoFillTransfers NOTIFY autoFillTransfersChanged)
+
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
@@ -40,15 +44,24 @@ public:
     bool queryLiveData() const;
     void setQueryLiveData(bool queryLiveData);
 
+    bool autoAddTransfers() const;
+    void setAutoAddTransfers(bool autoAdd);
+    bool autoFillTransfers() const;
+    void setAutoFillTransfers(bool autoFill);
+
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
     void queryLiveDataChanged(bool enabled);
+    void autoAddTransfersChanged(bool autoAdd);
+    void autoFillTransfersChanged(bool autoFill);
 
 private:
     QString m_homeCountry;
     bool m_weatherEnabled = false;
     bool m_queryLiveData = false;
+    bool m_autoAddTransfers = true;
+    bool m_autoFillTransfers = false;
 };
 
 #endif // SETTINGS_H
