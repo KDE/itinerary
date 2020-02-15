@@ -452,6 +452,19 @@ void TransferManager::removeFile(const QString &resId, Transfer::Alignment align
     QFile::remove(fileName);
 }
 
+void TransferManager::importTransfer(const Transfer &transfer)
+{
+    if (transfer.state() == Transfer::UndefinedState) {
+        return;
+    }
+
+    const bool update = m_transfers[transfer.alignment()].contains(transfer.reservationId());
+    m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
+    writeToFile(transfer);
+
+    update ? emit transferChanged(transfer) : emit transferAdded(transfer);
+}
+
 QDateTime TransferManager::currentDateTime() const
 {
     if (Q_UNLIKELY(m_nowOverride.isValid())) {

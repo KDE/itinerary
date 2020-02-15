@@ -448,7 +448,14 @@ void ApplicationController::importBundle(KItinerary::File *file)
         m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
     }
 
-    // TODO import transfers
+    // import transfers
+    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
+    for (const auto &batchId : m_resMgr->batches()) {
+        auto t = Transfer::fromJson(QJsonDocument::fromJson(file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
+        m_transferMgr->importTransfer(t);
+        t = Transfer::fromJson(QJsonDocument::fromJson(file->customData(transferDomain, Transfer::identifier(batchId, Transfer::After))).object());
+        m_transferMgr->importTransfer(t);
+    }
 
     // favorite locations
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
@@ -459,7 +466,6 @@ void ApplicationController::importBundle(KItinerary::File *file)
 
 void ApplicationController::addDocument(const QString &batchId)
 {
-    // TODO Android support
 #ifndef Q_OS_ANDROID
     const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Add Document"),
         QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),

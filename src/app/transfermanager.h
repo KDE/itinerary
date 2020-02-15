@@ -59,6 +59,8 @@ public:
     /** Explicitly add a transfer before/after the given reservation. */
     Q_INVOKABLE Transfer addTransfer(const QString &resId, Transfer::Alignment alignment);
 
+    void importTransfer(const Transfer &transfer);
+
     // for unit tests only
     void overrideCurrentDateTime(const QDateTime &dt);
     static void clear();
