@@ -88,6 +88,7 @@
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
       <li xml:lang="x-test">xxTimeline view of a unified travel itinerary with automatic trip grouping.xx</li>
+      <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li>Boarding pass management.</li>
       <li xml:lang="ca">Gestió de les targetes d'embarcament.</li>
       <li xml:lang="ca-valencia">Gestió de les targetes d'embarcament.</li>
@@ -245,7 +246,11 @@
       <caption xml:lang="x-test">xxBoarding pass view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-boardingpass.png</image>
     </screenshot>
-  </screenshots>
+    <screenshot>
+      <caption>Train layout view highlighting the coach with a seat reservation.</caption>
+      <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-vehicle-layout.png</image>
+    </screenshot>
+</screenshots>
   <categories>
     <category>Office</category>
     <category>Utility</category>
