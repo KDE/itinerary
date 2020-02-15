@@ -26,6 +26,11 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Hotel Reservation")
+    editor: Component {
+        App.HotelEditor {
+            batchId: root.batchId
+        }
+    }
 
     Kirigami.FormLayout {
         width: root.width
