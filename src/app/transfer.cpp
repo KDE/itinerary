@@ -218,5 +218,10 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
     transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1String("from")).toObject()));
     transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1String("to")).toObject()));
     transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
+
+    if (transfer.state() == Searching) { // searching state cannot survive persisting
+        transfer.setState(Pending);
+    }
+
     return transfer;
 }

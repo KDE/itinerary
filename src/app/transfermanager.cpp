@@ -27,6 +27,10 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
+#include <KPublicTransport/Journey>
+#include <KPublicTransport/JourneyReply>
+#include <KPublicTransport/Manager>
+
 #include <KLocalizedString>
 
 #include <QDir>
@@ -70,6 +74,11 @@ void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocMode
     m_favLocModel = favLocModel;
     connect(m_favLocModel, &FavoriteLocationModel::rowsInserted, this, [this]() { rescan(true); });
     rescan();
+}
+
+void TransferManager::setPublicTransportManager(KPublicTransport::Manager *ptMgr)
+{
+    m_ptrMgr = ptMgr;
 }
 
 void TransferManager::setAutoAddTransfers(bool enable)
@@ -420,6 +429,7 @@ void TransferManager::addOrUpdateTransfer(Transfer &t)
             return;
         }
         t.setState(Transfer::Pending);
+        autoFillTransfer(t);
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
         emit transferAdded(t);
@@ -495,6 +505,50 @@ KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(cons
     req.setDateTime(transfer.journeyTime());
     req.setDateTimeMode(transfer.alignment() == Transfer::Before ? JourneyRequest::Arrival : JourneyRequest::Departure);
     return req;
+}
+
+static KPublicTransport::Journey pickJourney(const Transfer &t, const std::vector<KPublicTransport::Journey> &journeys)
+{
+    if (journeys.empty()) {
+        return {};
+    }
+    Q_UNUSED(t);
+    return journeys[0]; // TODO
+}
+
+void TransferManager::autoFillTransfer(Transfer &t)
+{
+    if (!m_autoFillTransfers || t.state() != Transfer::Pending || !t.hasLocations()) {
+        return;
+    }
+
+    t.setState(Transfer::Searching);
+
+    auto reply = m_ptrMgr->queryJourney(journeyRequestForTransfer(t));
+    const auto batchId = t.reservationId();
+    const auto alignment = t.alignment();
+    connect(reply, &KPublicTransport::JourneyReply::finished, this, [this, reply, batchId, alignment]() {
+        reply->deleteLater();
+        if (reply->error() != KPublicTransport::JourneyReply::NoError) {
+            qDebug() << reply->errorString();
+        }
+
+        auto t = transfer(batchId, alignment);
+        if (t.state() != Transfer::Searching) { // user override happened meanwhile
+            qDebug() << "ignoring journey reply, transfer state changed";
+            return;
+        }
+
+        const auto journeys = std::move(reply->takeResult());
+        const auto journey = pickJourney(t, journeys);
+        if (journey.scheduledArrivalTime().isValid()) {
+            t.setJourney(journey);
+            t.setState(Transfer::Selected);
+        } else {
+            t.setState(Transfer::Selected);
+        }
+        addOrUpdateTransfer(t);
+    });
 }
 
 QDateTime TransferManager::currentDateTime() const

@@ -48,6 +48,8 @@ public:
     explicit LiveDataManager(QObject *parent = nullptr);
     ~LiveDataManager();
 
+    KPublicTransport::Manager* publicTransportManager() const;
+
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
 
@@ -109,9 +111,6 @@ private:
 
     /** Notifications handling for pkpass updates. */
     void pkPassUpdated(const QString &passId, const QStringList &changes);
-
-    /** QML API */
-    KPublicTransport::Manager* publicTransportManager() const;
 
     ReservationManager *m_resMgr;
     PkPassManager *m_pkPassMgr;

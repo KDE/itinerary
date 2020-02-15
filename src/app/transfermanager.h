@@ -27,6 +27,10 @@
 
 #include <cmath>
 
+namespace KPublicTransport {
+class Manager;
+}
+
 class FavoriteLocation;
 class FavoriteLocationModel;
 class ReservationManager;
@@ -43,6 +47,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setTripGroupManager(TripGroupManager *tgMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
+    void setPublicTransportManager(KPublicTransport::Manager *ptMgr);
 
     void setAutoAddTransfers(bool enabled);
     void setAutoFillTransfers(bool enabled);
@@ -116,11 +121,14 @@ private:
     void writeToFile(const Transfer &transfer) const;
     void removeFile(const QString &resId, Transfer::Alignment alignment) const;
 
+    void autoFillTransfer(Transfer &t);
+
     QDateTime currentDateTime() const;
 
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tgMgr = nullptr;
     FavoriteLocationModel *m_favLocModel = nullptr;
+    KPublicTransport::Manager *m_ptrMgr = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
     bool m_autoAddTransfers = true;

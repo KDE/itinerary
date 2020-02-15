@@ -68,7 +68,8 @@ public:
         UndefinedState,
         Pending,
         Selected,
-        Discarded
+        Discarded,
+        Searching
     };
     Q_ENUM(State)
     State state() const;
