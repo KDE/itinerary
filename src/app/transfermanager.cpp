@@ -486,6 +486,17 @@ void TransferManager::importTransfer(const Transfer &transfer)
     update ? emit transferChanged(transfer) : emit transferAdded(transfer);
 }
 
+KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(const Transfer &transfer) const
+{
+    using namespace KPublicTransport;
+    JourneyRequest req;
+    req.setFrom(transfer.from());
+    req.setTo(transfer.to());
+    req.setDateTime(transfer.journeyTime());
+    req.setDateTimeMode(transfer.alignment() == Transfer::Before ? JourneyRequest::Arrival : JourneyRequest::Departure);
+    return req;
+}
+
 QDateTime TransferManager::currentDateTime() const
 {
     if (Q_UNLIKELY(m_nowOverride.isValid())) {

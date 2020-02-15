@@ -65,12 +65,7 @@ Kirigami.Page {
     }
 
     function queryJourney() {
-        var req = journeyModel.request;
-        req.from = transfer.from;
-        req.to = transfer.to;
-        req.dateTime = transfer.journeyTime;
-        req.dateTimeMode = transfer.alignment == Transfer.Before ? JourneyRequest.Arrival : JourneyRequest.Departure;
-        journeyModel.request = req;
+        journeyModel.request = TransferManager.journeyRequestForTransfer(transfer);
     }
 
     Component.onCompleted: {

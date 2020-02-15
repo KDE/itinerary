@@ -20,6 +20,8 @@
 
 #include "transfer.h"
 
+#include <KPublicTransport/JourneyRequest>
+
 #include <QHash>
 #include <QObject>
 
@@ -61,6 +63,9 @@ public:
     Q_INVOKABLE bool canAddTransfer(const QString &resId, Transfer::Alignment alignment) const;
     /** Explicitly add a transfer before/after the given reservation. */
     Q_INVOKABLE Transfer addTransfer(const QString &resId, Transfer::Alignment alignment);
+
+    /** Create a JourneyRequest for a given @p transfer. */
+    Q_INVOKABLE KPublicTransport::JourneyRequest journeyRequestForTransfer(const Transfer &transfer) const;
 
     void importTransfer(const Transfer &transfer);
 
