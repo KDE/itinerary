@@ -88,7 +88,11 @@ Kirigami.AbstractCard {
             onClicked: applicationWindow().pageStack.push(detailsComponent);
         }
         RowLayout {
-            visible: transfer.state == Transfer.Pending
+            visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
+            QQC2.BusyIndicator {
+                running: visible
+                visible: transfer.state == Transfer.Searching
+            }
             QQC2.Label {
                 text: i18n("Select transfer...")
                 Layout.fillWidth: true
