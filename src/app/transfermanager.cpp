@@ -140,7 +140,7 @@ bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment a
     t.setReservationId(resId);
     t.setAlignment(alignment);
 
-    return alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+    return (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) != ShouldRemove;
 }
 
 Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
@@ -155,7 +155,7 @@ Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment 
     t.setState(Transfer::UndefinedState);
     determineAnchorDeltaDefault(t, res);
 
-    if (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) {
+    if ((alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) != ShouldRemove) {
         addOrUpdateTransfer(t);
         return t;
     } else {
@@ -210,14 +210,20 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     t.setAlignment(alignment);
     determineAnchorDeltaDefault(t, res);
 
-    if (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) {
-        addOrUpdateTransfer(t);
-    } else {
-        removeTransfer(t);
+    const auto action = alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t);
+    switch (action) {
+        case ShouldAutoAdd:
+            addOrUpdateTransfer(t);
+            break;
+        case CanAddManually:
+            break;
+        case ShouldRemove:
+            removeTransfer(t);
+            break;
     }
 }
 
-bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
+TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
     transfer.setAnchorTime(SortUtil::startDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
@@ -240,13 +246,13 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
         transfer.setFrom(locationFromFavorite(f));
         transfer.setFromName(f.name());
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-        return true;
+        return ShouldAutoAdd;
     }
 
     if (isLocationChange) {
         const auto prevResId = m_resMgr->previousBatch(resId); // TODO this fails for multiple nested range elements!
         if (prevResId.isEmpty()) {
-            return false;
+            return ShouldRemove;
         }
         const auto prevRes = m_resMgr->reservation(prevResId);
         const auto curLoc = LocationUtil::departureLocation(res);
@@ -260,17 +266,17 @@ bool TransferManager::checkTransferBefore(const QString &resId, const QVariant &
             qDebug() << res << prevRes << LocationUtil::name(curLoc) << LocationUtil::name(prevLoc);
             transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
             transfer.setFromName(LocationUtil::name(prevLoc));
-            return true;
+            return ShouldAutoAdd;
 
         }
     }
 
     // TODO
 
-    return false;
+    return ShouldRemove;
 }
 
-bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
+TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
     transfer.setAnchorTime(SortUtil::endDateTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
@@ -294,13 +300,13 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
         transfer.setToName(f.name());
         transfer.setToName(i18n("Home"));
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-        return true;
+        return ShouldAutoAdd;
     }
 
     if (isLocationChange) {
         const auto nextResId = m_resMgr->nextBatch(resId);
         if (nextResId.isEmpty()) {
-            return false;
+            return ShouldRemove;
         }
         const auto nextRes = m_resMgr->reservation(nextResId);
         const auto curLoc = LocationUtil::arrivalLocation(res);
@@ -314,13 +320,13 @@ bool TransferManager::checkTransferAfter(const QString &resId, const QVariant &r
             qDebug() << res << nextRes << LocationUtil::name(curLoc) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
             transfer.setToName(LocationUtil::name(nextLoc));
-            return true;
+            return ShouldAutoAdd;
         }
     }
 
     // TODO
 
-    return false;
+    return ShouldRemove;
 }
 
 void TransferManager::reservationRemoved(const QString &resId)

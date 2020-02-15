@@ -78,13 +78,16 @@ private:
     void checkReservation(const QString &resId);
     void checkReservation(const QString &resId, const QVariant &res, Transfer::Alignment alignment);
 
+    enum CheckTransferResult {
+        ShouldAutoAdd, /// transfer should be added automatically
+        CanAddManually, /// transfer is possible, but should only be added manually
+        ShouldRemove /// invalid transfer, cannot be added or should be removed
+    };
     /**  Those two are used in both the automatical and manual code paths.
      *   @param transfer is filled with all required parameters, but not added yet
-     *   @return @c true means the transfer can be added or updated (call addOrUpdateTransfer),
-     *     @c false means the transfer should not be added/should be removed (call removeTransfer).
      */
-    bool checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const;
-    bool checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const;
+    CheckTransferResult checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const;
+    CheckTransferResult checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const;
 
     void reservationRemoved(const QString &resId);
     void tripGroupChanged(const QString &tgId);
