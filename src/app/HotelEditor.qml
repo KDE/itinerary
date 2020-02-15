@@ -29,7 +29,7 @@ App.EditorPage {
 
     function save(resId, reservation) {
         var hotel = address.save(reservation.reservationFor);
-        hotel.name = name.text;
+        hotel.name = address.name;
         hotel.telephone = phoneNumber.text;
         hotel.email = emailAddress.text;
         var newRes = reservation;
@@ -37,33 +37,34 @@ App.EditorPage {
         _reservationManager.updateReservation(resId, newRes);
     }
 
-    Kirigami.FormLayout {
+    ColumnLayout {
         width: root.width
 
-        QQC2.TextField {
-            id: name
-            Kirigami.FormData.label: i18n("Name:")
-            text: reservationFor.name
-        }
         App.PlaceEditor {
             id: address
+            twinFormLayouts: [address, bottomLayout]
             Kirigami.FormData.isSection: true
             place: reservation.reservationFor
+            name: reservation.reservationFor.name
         }
 
-        QQC2.TextField {
-            id: phoneNumber
-            Kirigami.FormData.label: i18n("Telephone:")
-            text: reservationFor.telephone
-        }
-        QQC2.TextField {
-            id: emailAddress
-            Kirigami.FormData.label: i18n("Email:")
-            text: reservationFor.email
-        }
+        Kirigami.FormLayout {
+            id: bottomLayout
+            twinFormLayouts: [address, bottomLayout]
+            QQC2.TextField {
+                id: phoneNumber
+                Kirigami.FormData.label: i18n("Telephone:")
+                text: reservationFor.telephone
+            }
+            QQC2.TextField {
+                id: emailAddress
+                Kirigami.FormData.label: i18n("Email:")
+                text: reservationFor.email
+            }
 
-        // TODO
-        // checkin time
-        // checkout time
+            // TODO
+            // checkin time
+            // checkout time
+        }
     }
 }

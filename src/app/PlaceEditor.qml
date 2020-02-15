@@ -18,14 +18,15 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-GridLayout {
+Kirigami.FormLayout {
     id: root
     property variant place
+    property alias name: name.text
 
     function save(place) {
         var addr = place.address;
@@ -39,52 +40,43 @@ GridLayout {
         return newPlace;
     }
 
-    GridLayout {
-        columns: 2
+    QQC2.TextField {
+        id: name
+        Kirigami.FormData.label: i18n("Name:")
+    }
 
-        QQC2.Label {
-            text: i18n("Street:")
-        }
-        QQC2.TextField {
-            id: streetAddress
-            text: place.address.streetAddress
-        }
+    QQC2.TextField {
+        id: streetAddress
+        Kirigami.FormData.label: i18n("Street:")
+        text: place.address.streetAddress
+    }
 
-        QQC2.Label {
-            text: i18n("Postal Code:")
-        }
-        QQC2.TextField {
-            id: postalCode
-            text: place.address.postalCode
-        }
+    QQC2.TextField {
+        id: postalCode
+        Kirigami.FormData.label: ("Postal Code:")
+        text: place.address.postalCode
+    }
 
-        QQC2.Label {
-            text: i18n("City:")
-        }
-        QQC2.TextField {
-            id: addressLocality
-            text: place.address.addressLocality
-        }
+    QQC2.TextField {
+        id: addressLocality
+        Kirigami.FormData.label: i18n("City:")
+        text: place.address.addressLocality
+    }
 
-        QQC2.Label {
-            text: i18n("Region:")
-        }
-        QQC2.TextField {
-            id: addressRegion
-            text: place.address.addressRegion
-        }
+    QQC2.TextField {
+        id: addressRegion
+        Kirigami.FormData.label: i18n("Region:")
+        text: place.address.addressRegion
+    }
 
-        QQC2.Label {
-            text: i18n("Country:")
-        }
-        CountryModel {
-            id: countryModel
-        }
-        QQC2.ComboBox {
-            id: addressCountry
-            model: countryModel
-            textRole: "display"
-            currentIndex: countryModel.isoCodeToIndex(place.address.addressCountry)
-        }
+    CountryModel {
+        id: countryModel
+    }
+    QQC2.ComboBox {
+        id: addressCountry
+        Kirigami.FormData.label: i18n("Country:")
+        model: countryModel
+        textRole: "display"
+        currentIndex: countryModel.isoCodeToIndex(place.address.addressCountry)
     }
 }

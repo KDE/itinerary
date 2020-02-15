@@ -18,7 +18,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -29,28 +29,20 @@ App.EditorPage {
 
     function save(resId, reservation) {
         var foodEstablishment = address.save(reservation.reservationFor)
+        foodEstablishment.name = address.name;
         var newRes = reservation;
         newRes.reservationFor = foodEstablishment;
         _reservationManager.updateReservation(resId, newRes);
     }
 
-    GridLayout {
-        id: grid
+    ColumnLayout {
         width: parent.width
-        columns: 2
-
-        QQC2.Label {
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-            text: reservation.reservationFor.name
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
-        }
 
         // location
         App.PlaceEditor {
             id: address
             place: reservation.reservationFor
+            name: reservation.reservationFor.name
         }
 
         // time
