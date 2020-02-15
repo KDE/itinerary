@@ -256,6 +256,10 @@ int main(int argc, char **argv)
     transferManager.setReservationManager(&resMgr);
     transferManager.setTripGroupManager(&tripGroupMgr);
     transferManager.setFavoriteLocationModel(&favLocModel);
+    transferManager.setAutoAddTransfers(settings.autoAddTransfers());
+    transferManager.setAutoFillTransfers(settings.autoFillTransfers());
+    QObject::connect(&settings, &Settings::autoAddTransfersChanged, &transferManager, &TransferManager::setAutoAddTransfers);
+    QObject::connect(&settings, &Settings::autoFillTransfersChanged, &transferManager, &TransferManager::setAutoFillTransfers);
     s_tranferManager = &transferManager;
 
     TimelineModel timelineModel;
