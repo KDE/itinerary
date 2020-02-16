@@ -264,13 +264,16 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // - res is a location change and we are currently at home (== first element in a trip group)
     // - res is a location change and we are not at the departure location yet
     // - res is an event and we are not at its location already
+    // ... and can happen in the following cases:
+    // - res is not in a trip group at all (that assumes we are at home)
 
-    if (isLocationChange && isFirstInTripGroup(resId)) {
+    const auto notInGroup = isNotInTripGroup(resId);
+    if ((isLocationChange && isFirstInTripGroup(resId)) || notInGroup) {
         const auto f = pickFavorite(toLoc, resId, Transfer::Before);
         transfer.setFrom(locationFromFavorite(f));
         transfer.setFromName(f.name());
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-        return ShouldAutoAdd;
+        return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
     if (isLocationChange) {
@@ -279,15 +282,15 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
             return ShouldRemove;
         }
         const auto prevRes = m_resMgr->reservation(prevResId);
-        const auto curLoc = LocationUtil::departureLocation(res);
+        // TODO this needs to consider transfers before nextResId
         QVariant prevLoc;
         if (LocationUtil::isLocationChange(prevRes)) {
             prevLoc = LocationUtil::arrivalLocation(prevRes);
         } else {
             prevLoc = LocationUtil::location(prevRes);
         }
-        if (!curLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(curLoc, prevLoc, LocationUtil::WalkingDistance)) {
-            qDebug() << res << prevRes << LocationUtil::name(curLoc) << LocationUtil::name(prevLoc);
+        if (!toLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::WalkingDistance)) {
+            qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc);
             transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
             transfer.setFromName(LocationUtil::name(prevLoc));
             return ShouldAutoAdd;
@@ -317,14 +320,17 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     // - res is a location change and we are the last element in a trip group (ie. going home)
     // - res is a location change and the following element is in a different location, or has a different departure location
     // - res is an event and the following or enclosing element is a lodging element
+    // ... and can happen in the following cases
+    // - res is not in a trip group at all (that assumes we are at home)
 
-    if (isLocationChange && isLastInTripGroup(resId)) {
+    const auto notInGroup = isNotInTripGroup(resId);
+    if ((isLocationChange && isLastInTripGroup(resId)) || notInGroup) {
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         transfer.setTo(locationFromFavorite(f));
         transfer.setToName(f.name());
         transfer.setToName(i18n("Home"));
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
-        return ShouldAutoAdd;
+        return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
     if (isLocationChange) {
@@ -332,16 +338,16 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         if (nextResId.isEmpty()) {
             return ShouldRemove;
         }
+        // TODO this needs to consider transfers after nextResId
         const auto nextRes = m_resMgr->reservation(nextResId);
-        const auto curLoc = LocationUtil::arrivalLocation(res);
         QVariant nextLoc;
         if (LocationUtil::isLocationChange(nextRes)) {
             nextLoc = LocationUtil::departureLocation(nextRes);
         } else {
             nextLoc = LocationUtil::location(nextRes);
         }
-        if (!curLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(curLoc, nextLoc, LocationUtil::WalkingDistance)) {
-            qDebug() << res << nextRes << LocationUtil::name(curLoc) << LocationUtil::name(nextLoc);
+        if (!fromLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::WalkingDistance)) {
+            qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc);
             transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
             transfer.setToName(LocationUtil::name(nextLoc));
             return ShouldAutoAdd;
@@ -382,6 +388,11 @@ bool TransferManager::isLastInTripGroup(const QString &resId) const
 {
     const auto tgId = m_tgMgr->tripGroupForReservation(resId);
     return tgId.elements().empty() ? false : tgId.elements().constLast() == resId;
+}
+
+bool TransferManager::isNotInTripGroup(const QString &resId) const
+{
+    return m_tgMgr->tripGroupIdForReservation(resId).isEmpty();
 }
 
 void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const

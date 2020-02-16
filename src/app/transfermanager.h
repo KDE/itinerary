@@ -107,6 +107,7 @@ private:
 
     bool isFirstInTripGroup(const QString &resId) const;
     bool isLastInTripGroup(const QString &resId) const;
+    bool isNotInTripGroup(const QString &resId) const;
 
     void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
 
