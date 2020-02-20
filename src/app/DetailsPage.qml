@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
     property var editor
     readonly property string passId: PkPassManager.passId(reservation)
 
-    readonly property QtObject controller: TimelineDelegateController {
+    property QtObject controller: TimelineDelegateController {
         id: _controller
         reservationManager: _reservationManager
         liveDataManager: _liveDataManager

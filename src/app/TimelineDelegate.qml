@@ -43,7 +43,7 @@ Kirigami.AbstractCard {
 
     showClickFeedback: true
 
-    readonly property QtObject controller: TimelineDelegateController {
+    property QtObject controller: TimelineDelegateController {
         id: _controller
         reservationManager: _reservationManager
         liveDataManager: _liveDataManager
