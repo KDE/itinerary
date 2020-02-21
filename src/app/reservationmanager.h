@@ -47,6 +47,7 @@ public:
 
     void setPkPassManager(PkPassManager *mgr);
 
+    Q_INVOKABLE bool isEmpty() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
     /** Adds @p res if it's new, or merges it with an existing reservation or reservation batch.

@@ -125,6 +125,7 @@ if (ANDROID)
         go-next-symbolic
         go-up-symbolic
         help-about-symbolic
+        help-contents
         list-add
         map-symbolic
         meeting-attending

@@ -85,6 +85,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: ApplicationController.exportData();
             },
             Kirigami.Action {
+                text: i18n("Help")
+                iconName: "help-contents"
+                onTriggered: pageStack.push(welcomeComponent)
+            },
+            Kirigami.Action {
                 id: aboutAction
                 text: i18n("About")
                 iconName: "help-about-symbolic"
@@ -109,6 +114,12 @@ Kirigami.ApplicationWindow {
                 infoMessage.text = msg;
                 infoMessage.visible = true;
             }
+        }
+    }
+
+    Component.onCompleted: {
+        if (_reservationManager.isEmpty()) {
+            pageStack.push(welcomeComponent);
         }
     }
 
@@ -138,5 +149,9 @@ Kirigami.ApplicationWindow {
             tripGroupManager: TripGroupManager
             onIsCurrentPageChanged: statsAction.enabled = !statsPage.isCurrentPage
         }
+    }
+    Component {
+        id: welcomeComponent
+        App.WelcomePage {}
     }
 }

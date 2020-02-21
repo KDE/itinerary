@@ -72,6 +72,11 @@ void ReservationManager::setPkPassManager(PkPassManager* mgr)
     connect(mgr, &PkPassManager::passRemoved, this, &ReservationManager::passRemoved);
 }
 
+bool ReservationManager::isEmpty() const
+{
+    return m_batchToResMap.empty();
+}
+
 bool ReservationManager::hasBatch(const QString &batchId) const
 {
     return m_batchToResMap.contains(batchId);
