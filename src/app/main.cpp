@@ -304,7 +304,9 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    auto l10nContext = new KLocalizedContext(&engine);
+    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+    engine.rootContext()->setContextObject(l10nContext);
     // TODO get rid of those, e.g. by using singletons
     engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
