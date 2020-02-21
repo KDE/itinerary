@@ -87,4 +87,5 @@ add_subdirectory(autotests)
 add_subdirectory(tests)
 
 install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+ki18n_install(po)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
