@@ -71,6 +71,12 @@ static QString destinationCountry(const QVariant &res)
     return LocationUtil::address(LocationUtil::location(res)).addressCountry();
 }
 
+static QTimeZone destinationTimeZone(const QVariant &res)
+{
+    const auto dt = SortUtil::endDateTime(res);
+    return dt.timeSpec() == Qt::TimeZone ? dt.timeZone() : QTimeZone();
+}
+
 static GeoCoordinates geoCoordinate(const QVariant &res)
 {
     if (LocationUtil::isLocationChange(res)) {
@@ -432,12 +438,16 @@ void TimelineModel::updateInformationElements()
                 break;
         }
 
+        const auto res = m_resMgr->reservation((*it).batchId);
+
         auto newCountry = homeCountry;
-        newCountry.setIsoCode(destinationCountry(m_resMgr->reservation((*it).batchId)));
+        newCountry.setIsoCode(destinationCountry(res));
+        newCountry.setTimeZone(previousCountry.timeZone());
+        newCountry.setTimeZone(destinationTimeZone(res));
         if (newCountry == previousCountry) {
             continue;
         }
-        if (newCountry == homeCountry) {
+        if (newCountry == homeCountry && !newCountry.hasRelevantTimeZoneChange(previousCountry)) {
             assert(it != m_elements.begin()); // previousCountry == homeCountry in this case
             // purge outdated country info element
             it = erasePreviousCountyInfo(it);

@@ -91,6 +91,14 @@ Kirigami.AbstractCard {
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
             wrapMode: Text.WordWrap
         }
+
+        QQC2.Label {
+            Layout.fillWidth: true
+            text: i18n("Timezone change: %1", locationInfo.timeZoneName)
+            color: Kirigami.Theme.neutralTextColor
+            visible: locationInfo.timeZoneDiffers
+            wrapMode: Text.WordWrap
+        }
     }
 }
 

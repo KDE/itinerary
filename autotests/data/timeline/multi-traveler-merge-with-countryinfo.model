@@ -192,7 +192,9 @@
             "drivingSideDiffers": false,
             "isoCode": "IT",
             "powerPlugCompatibility": "PartiallyCompatible",
-            "powerSocketTypes": "Type L"
+            "powerSocketTypes": "Type L",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Central European Standard Time"
         },
         "rangeType": 0,
         "sectionHeader": "Saturday, 1 Jan 2000",

@@ -22,6 +22,7 @@
 
 #include <QMetaType>
 #include <QString>
+#include <QTimeZone>
 
 /** Data for country information elements in the timeline model. */
 class LocationInformation
@@ -38,6 +39,9 @@ class LocationInformation
     Q_PROPERTY(QString powerPlugTypes READ powerPlugTypes)
     /** Sockets in the destination country that are incompatible with (some of) my plugs. */
     Q_PROPERTY(QString powerSocketTypes READ powerSocketTypes)
+
+    Q_PROPERTY(bool timeZoneDiffers READ timeZoneDiffers)
+    Q_PROPERTY(QString timeZoneName READ timeZoneName)
 
 public:
     LocationInformation();
@@ -62,17 +66,25 @@ public:
     QString powerPlugTypes() const;
     QString powerSocketTypes() const;
 
+    QTimeZone timeZone() const;
+    void setTimeZone(const QTimeZone &tz);
+    bool hasRelevantTimeZoneChange(const LocationInformation &other) const;
+    bool timeZoneDiffers() const;
+    QString timeZoneName() const;
+
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
     void setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs);
 
     QString m_isoCode;
+    QTimeZone m_timeZone;
     KItinerary::KnowledgeDb::PowerPlugTypes m_powerPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatSockets = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::DrivingSide m_drivingSide = KItinerary::KnowledgeDb::DrivingSide::Unknown;
     bool m_drivingSideDiffers = false;
     PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
+    bool m_timeZoneDiffers = false;
 };
 
 Q_DECLARE_METATYPE(LocationInformation)

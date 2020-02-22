@@ -9,7 +9,9 @@
             "isoCode": "GB",
             "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type G"
+            "powerSocketTypes": "Type G",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Greenwich Mean Time"
         },
         "rangeType": 0,
         "sectionHeader": "Wednesday, 4 Jan 2017",
@@ -87,7 +89,9 @@
             "isoCode": "US",
             "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type A, Type B"
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Pacific Standard Time"
         },
         "rangeType": 0,
         "sectionHeader": "Wednesday, 4 Jan 2017",

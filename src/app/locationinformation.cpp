@@ -23,10 +23,7 @@
 
 using namespace KItinerary;
 
-LocationInformation::LocationInformation()
-{
-}
-
+LocationInformation::LocationInformation() = default;
 LocationInformation::~LocationInformation() = default;
 
 bool LocationInformation::operator==(const LocationInformation& other) const
@@ -35,7 +32,7 @@ bool LocationInformation::operator==(const LocationInformation& other) const
     const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets)
                         || m_powerPlugs == KnowledgeDb::Unknown || other.m_powerPlugs == KnowledgeDb::Unknown;
 
-    return dsEqual && ppEqual;
+    return dsEqual && ppEqual && !hasRelevantTimeZoneChange(other);
 }
 
 QString LocationInformation::isoCode() const
@@ -150,4 +147,35 @@ void LocationInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTy
     }
 
     m_powerPlugs = powerPlugs;
+}
+
+QTimeZone LocationInformation::timeZone() const
+{
+    return m_timeZone;
+}
+
+void LocationInformation::setTimeZone(const QTimeZone &tz)
+{
+    // TODO use transition time
+    m_timeZoneDiffers = m_timeZone.isValid() && tz.isValid() && m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc()) != tz.offsetFromUtc(QDateTime::currentDateTimeUtc());
+    qDebug() << m_timeZoneDiffers << tz << m_timeZone;
+    m_timeZone = tz;
+}
+
+bool LocationInformation::hasRelevantTimeZoneChange(const LocationInformation &other) const
+{
+    // TODO this should uses the time we change the timezone, not now?
+    return m_timeZone.isValid() && other.m_timeZone.isValid()
+        && m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc()) != other.m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc());
+}
+
+bool LocationInformation::timeZoneDiffers() const
+{
+    return m_timeZoneDiffers && m_timeZone.isValid();
+}
+
+QString LocationInformation::timeZoneName() const
+{
+    // TODO use transition time
+    return m_timeZone.displayName(QTimeZone::GenericTime, QTimeZone::LongName);
 }

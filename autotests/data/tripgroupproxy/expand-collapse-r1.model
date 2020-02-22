@@ -58,7 +58,9 @@
             "isoCode": "US",
             "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type A, Type B"
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central Standard Time"
         },
         "rangeType": 0,
         "sectionHeader": "Saturday, 4 Mar 2017",
@@ -199,6 +201,24 @@
         ],
         "sectionHeader": "Saturday, 4 Mar 2017",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "US",
+            "powerPlugCompatibility": "Incompatible",
+            "powerPlugTypes": "Europlug, Schuko",
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Pacific Standard Time"
+        },
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 5 Mar 2017",
+        "type": 5
     },
     {
         "isToday": false,
@@ -388,7 +408,9 @@
             "isoCode": "CH",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerPlugTypes": "Schuko",
-            "powerSocketTypes": "Type J"
+            "powerSocketTypes": "Type J",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central European Standard Time"
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 10 Sep 2017",

@@ -30,7 +30,9 @@
             "isoCode": "CH",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerPlugTypes": "Schuko",
-            "powerSocketTypes": "Type J"
+            "powerSocketTypes": "Type J",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Central European Standard Time"
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 10 Sep 2017",
