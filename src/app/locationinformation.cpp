@@ -158,7 +158,6 @@ void LocationInformation::setTimeZone(const QTimeZone &tz)
 {
     // TODO use transition time
     m_timeZoneDiffers = m_timeZone.isValid() && tz.isValid() && m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc()) != tz.offsetFromUtc(QDateTime::currentDateTimeUtc());
-    qDebug() << m_timeZoneDiffers << tz << m_timeZone;
     m_timeZone = tz;
 }
 
