@@ -143,9 +143,7 @@ void TransferManager::discardTransfer(Transfer transfer)
 {
     transfer.setState(Transfer::Discarded);
     transfer.setJourney({});
-    m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
-    writeToFile(transfer);
-    emit transferRemoved(transfer.reservationId(), transfer.alignment());
+    addOrUpdateTransfer(transfer);
 }
 
 bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment alignment) const
@@ -444,6 +442,10 @@ void TransferManager::addOrUpdateTransfer(Transfer &t)
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
         emit transferAdded(t);
+    } else if (t.state() == Transfer::Discarded) {
+        m_transfers[t.alignment()].insert(t.reservationId(), t);
+        writeToFile(t);
+        emit transferRemoved(t.reservationId(), t.alignment());
     } else { // update existing data
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
@@ -540,23 +542,29 @@ void TransferManager::autoFillTransfer(Transfer &t)
     const auto alignment = t.alignment();
     connect(reply, &KPublicTransport::JourneyReply::finished, this, [this, reply, batchId, alignment]() {
         reply->deleteLater();
-        if (reply->error() != KPublicTransport::JourneyReply::NoError) {
-            qDebug() << reply->errorString();
-        }
-
         auto t = transfer(batchId, alignment);
         if (t.state() != Transfer::Searching) { // user override happened meanwhile
             qDebug() << "ignoring journey reply, transfer state changed";
             return;
         }
 
+        if (reply->error() != KPublicTransport::JourneyReply::NoError) {
+            qDebug() << reply->errorString();
+            t.setState(reply->error() == KPublicTransport::JourneyReply::NotFoundError ? Transfer::Discarded : Transfer::Pending);
+        }
+
         const auto journeys = std::move(reply->takeResult());
+        if (journeys.empty() && t.state() == Transfer::Searching) {
+            qDebug() << "no journeys found for transfer, discarding";
+            t.setState(Transfer::Discarded);
+        }
+
         const auto journey = pickJourney(t, journeys);
         if (journey.scheduledArrivalTime().isValid()) {
             t.setJourney(journey);
             t.setState(Transfer::Selected);
-        } else {
-            t.setState(Transfer::Selected);
+        } else if (t.state() == Transfer::Searching) {
+            t.setState(Transfer::Pending);
         }
         addOrUpdateTransfer(t);
     });
