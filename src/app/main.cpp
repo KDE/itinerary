@@ -200,7 +200,6 @@ int main(int argc, char **argv)
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
 
-    QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #ifdef Q_OS_ANDROID
@@ -209,6 +208,7 @@ int main(int argc, char **argv)
 #else
     QApplication app(argc, argv); // for native file dialogs
 #endif
+    QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("itinerary")));
 
     QCommandLineParser parser;
