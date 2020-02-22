@@ -47,7 +47,7 @@ Kirigami.ScrollablePage {
         }
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("KDE Itinerary has all features disabled by default that require online access, such as retrieving live traffice data or weather forecasts. You therefore might want to review these settings. While you are at it, you might want to configure your home location to enable the transfer assistant to automatically suggests ways to your next departure station or airport.")
+            text: i18n("KDE Itinerary has all features disabled by default that require online access, such as retrieving live traffic data or weather forecasts. You therefore might want to review these settings. While you are at it, you might want to configure your home location to enable the transfer assistant to automatically suggests ways to your next departure station or airport.")
             wrapMode: Text.WordWrap
         }
 
