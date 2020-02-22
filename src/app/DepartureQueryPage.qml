@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
 
     DepartureQueryModel {
         id: departureModel
-        manager: _liveDataManager.publicTransportManager
+        manager: LiveDataManager.publicTransportManager
         request: PublicTransport.departureRequestForPlace(stop, dateTime)
     }
 

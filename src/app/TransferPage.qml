@@ -30,7 +30,7 @@ Kirigami.Page {
 
     JourneyQueryModel {
         id: journeyModel
-        manager: _liveDataManager.publicTransportManager
+        manager: LiveDataManager.publicTransportManager
     }
 
     SortFilterProxyModel {

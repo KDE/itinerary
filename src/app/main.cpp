@@ -128,6 +128,7 @@ static PkPassManager *s_pkPassManager = nullptr;
 static Settings *s_settings = nullptr;
 static TransferManager *s_tranferManager = nullptr;
 static TripGroupManager *s_tripGroupManager = nullptr;
+static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
@@ -145,6 +146,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(Settings, s_settings)
     REGISTER_SINGLETON_INSTANCE(TransferManager, s_tranferManager)
     REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
+    REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
@@ -246,6 +248,7 @@ int main(int argc, char **argv)
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
+    s_liveDataMnager = &liveDataMgr;
 
     WeatherForecastManager weatherForecastMgr;
     weatherForecastMgr.setAllowNetworkAccess(settings.weatherForecastEnabled());
@@ -312,7 +315,6 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
-    engine.rootContext()->setContextProperty(QStringLiteral("_liveDataManager"), &liveDataMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 

@@ -221,7 +221,7 @@ Kirigami.Page {
 
                 boundsMovement: Flickable.StopAtBounds
                 clip: true
-                model: _liveDataManager.publicTransportManager.attributions
+                model: LiveDataManager.publicTransportManager.attributions
                 spacing: 0
                 delegate: transportDataDelegate
             }

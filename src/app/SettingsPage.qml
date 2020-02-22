@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
     Component {
         id: ptBackendPage
         PublicTransportBackendPage {
-            publicTransportManager: _liveDataManager.publicTransportManager
+            publicTransportManager: LiveDataManager.publicTransportManager
         }
     }
 
@@ -86,8 +86,8 @@ Kirigami.ScrollablePage {
         }
         QQC2.Switch {
             Kirigami.FormData.label: i18n("Use insecure services")
-            checked: _liveDataManager.publicTransportManager.allowInsecureBackends
-            onToggled: _liveDataManager.publicTransportManager.allowInsecureBackends = checked
+            checked: LiveDataManager.publicTransportManager.allowInsecureBackends
+            onToggled: LiveDataManager.publicTransportManager.allowInsecureBackends = checked
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true

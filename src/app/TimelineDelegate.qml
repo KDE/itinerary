@@ -46,7 +46,7 @@ Kirigami.AbstractCard {
     property QtObject controller: TimelineDelegateController {
         id: _controller
         reservationManager: _reservationManager
-        liveDataManager: _liveDataManager
+        liveDataManager: LiveDataManager
     }
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure

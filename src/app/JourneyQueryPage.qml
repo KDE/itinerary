@@ -31,7 +31,7 @@ Kirigami.ScrollablePage {
 
     JourneyQueryModel {
         id: journeyModel
-        manager: _liveDataManager.publicTransportManager
+        manager: LiveDataManager.publicTransportManager
         request: controller.journeyRequest
     }
 
