@@ -25,7 +25,7 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property var countryInfo;
+    property var locationInfo;
 
    header: Rectangle {
         id: headerBackground
@@ -50,7 +50,7 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
-                text: i18n("Entering %1", Localizer.countryName(countryInfo.isoCode))
+                text: i18n("Entering %1", Localizer.countryName(locationInfo.isoCode))
                 color: Kirigami.Theme.neutralTextColor
                 Layout.fillWidth: true
             }
@@ -62,33 +62,33 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             Layout.fillWidth: true
-            text: countryInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
+            text: locationInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
                 i18n("People are driving on the right side.") :
                 i18n("People are driving on the wrong side.")
             color: Kirigami.Theme.negativeTextColor
-            visible: countryInfo.drivingSideDiffers
+            visible: locationInfo.drivingSideDiffers
             wrapMode: Text.WordWrap
         }
 
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("No compatible power sockets: %1", countryInfo.powerSocketTypes)
+            text: i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes)
             color: Kirigami.Theme.negativeTextColor
-            visible: countryInfo.powerPlugCompatibility == CountryInformation.Incompatible
+            visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Some incompatible power sockets: %1", countryInfo.powerSocketTypes)
+            text: i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes)
             color: Kirigami.Theme.neutralTextColor
-            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerSocketTypes != ""
+            visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Some incompatible power plugs: %1", countryInfo.powerPlugTypes)
+            text: i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes)
             color: Kirigami.Theme.neutralTextColor
-            visible: countryInfo.powerPlugCompatibility == CountryInformation.PartiallyCompatible && countryInfo.powerPlugTypes != ""
+            visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
             wrapMode: Text.WordWrap
         }
     }

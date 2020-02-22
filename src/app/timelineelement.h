@@ -36,7 +36,7 @@ public:
         TripGroup,
         Transfer,
         WeatherForecast,
-        CountryInfo,
+        LocationInfo,
         Flight,
         TrainTrip,
         CarRental,

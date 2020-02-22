@@ -20,13 +20,13 @@
 
 #include "applicationcontroller.h"
 #include "brightnessmanager.h"
-#include "countryinformation.h"
 #include "countrymodel.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "favoritelocationmodel.h"
 #include "livedatamanager.h"
 #include "localizer.h"
+#include "locationinformation.h"
 #include "lockmanager.h"
 #include "navigationcontroller.h"
 #include "pkpassmanager.h"
@@ -105,7 +105,7 @@ void registerApplicationTypes()
     qRegisterMetaType<TripGroupManager*>();
     qRegisterMetaType<WeatherForecast>();
 
-    qmlRegisterUncreatableType<CountryInformation>("org.kde.itinerary", 1, 0, "CountryInformation", {});
+    qmlRegisterUncreatableType<LocationInformation>("org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
     qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});

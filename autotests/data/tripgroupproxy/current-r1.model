@@ -21,9 +21,10 @@
         "type": 2
     },
     {
-        "countryInformation": {
+        "isToday": false,
+        "locationInformation": {
             "@context": "http://schema.org",
-            "@type": "CountryInformation",
+            "@type": "LocationInformation",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "CH",
@@ -31,7 +32,6 @@
             "powerPlugTypes": "Schuko",
             "powerSocketTypes": "Type J"
         },
-        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 10 Sep 2017",
         "type": 5

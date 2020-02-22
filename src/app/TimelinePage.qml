@@ -109,9 +109,9 @@ Kirigami.ScrollablePage {
         }
     }
     Component {
-        id: countryInfoDelegate
-        App.CountryInfoDelegate {
-            countryInfo: modelData.countryInformation
+        id: locationInfoDelegate
+        App.LocationInfoDelegate {
+            locationInfo: modelData.locationInformation
         }
     }
     Component {
@@ -155,7 +155,7 @@ Kirigami.ScrollablePage {
                     case TimelineElement.Event: return eventDelegate;
                     case TimelineElement.CarRental: return carRentalDelegate;
                     case TimelineElement.TodayMarker: return todayDelegate;
-                    case TimelineElement.CountryInfo: return countryInfoDelegate;
+                    case TimelineElement.LocationInfo: return locationInfoDelegate;
                     case TimelineElement.WeatherForecast: return weatherForecastDelegate;
                     case TimelineElement.TripGroup: return tripGrooupDelegate;
                     case TimelineElement.Transfer: return transferDelegate;

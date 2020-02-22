@@ -94,11 +94,11 @@ Kirigami.AbstractCard {
         }
 
         Repeater {
-            model: _tripGroupInfoProvider.countryInformation(tripGroup, Settings.homeCountryIsoCode)
+            model: _tripGroupInfoProvider.locationInformation(tripGroup, Settings.homeCountryIsoCode)
 
             QQC2.Label {
                 text: {
-                    if (modelData.powerPlugCompatibility == CountryInformation.PartiallyCompatible) {
+                    if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
                         if (modelData.powerPlugTypes == "")
                             return i18n("%1: some incompatible power sockets (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
                         else
@@ -107,7 +107,7 @@ Kirigami.AbstractCard {
                         return i18n("%1: no compatible power plugs (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
                     }
                 }
-                color: modelData.powerPlugCompatibility == CountryInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
+                color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
                 wrapMode: Text.WordWrap
             }
         }

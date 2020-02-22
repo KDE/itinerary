@@ -16,7 +16,7 @@
 */
 
 #include "timelinemodel.h"
-#include "countryinformation.h"
+#include "locationinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
@@ -223,8 +223,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return elem.dt.date() == today();
         case ElementRangeRole:
             return elem.rangeType;
-        case CountryInformationRole:
-            if (elem.elementType == TimelineElement::CountryInfo)
+        case LocationInformationRole:
+            if (elem.elementType == TimelineElement::LocationInfo)
                 return elem.content;
             break;
         case WeatherForecastRole:
@@ -269,7 +269,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(TodayEmptyRole, "isTodayEmpty");
     names.insert(IsTodayRole, "isToday");
     names.insert(ElementRangeRole, "rangeType");
-    names.insert(CountryInformationRole, "countryInformation");
+    names.insert(LocationInformationRole, "locationInformation");
     names.insert(WeatherForecastRole, "weatherForecast");
     names.insert(ReservationsRole, "reservations");
     names.insert(TripGroupIdRole, "tripGroupId");
@@ -414,7 +414,7 @@ void TimelineModel::updateInformationElements()
     // differs in one or more properties from the home country and we where that
     // differences is introduced by the transition
 
-    CountryInformation homeCountry;
+    LocationInformation homeCountry;
     homeCountry.setIsoCode(m_homeCountry);
 
     auto previousCountry = homeCountry;
@@ -424,8 +424,8 @@ void TimelineModel::updateInformationElements()
             case TimelineElement::WeatherForecast:
                 it = erasePreviousCountyInfo(it);
                 continue;
-            case TimelineElement::CountryInfo:
-                previousCountry = (*it).content.value<CountryInformation>();
+            case TimelineElement::LocationInfo:
+                previousCountry = (*it).content.value<LocationInformation>();
                 it = erasePreviousCountyInfo(it); // purge multiple consecutive country info elements
                 continue;
             default:
@@ -448,7 +448,7 @@ void TimelineModel::updateInformationElements()
         // add new country info element
         auto row = std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
-        it = m_elements.insert(it, TimelineElement{TimelineElement::CountryInfo, (*it).dt, QVariant::fromValue(newCountry)});
+        it = m_elements.insert(it, TimelineElement{TimelineElement::LocationInfo, (*it).dt, QVariant::fromValue(newCountry)});
         endInsertRows();
 
         previousCountry = newCountry;
@@ -465,7 +465,7 @@ std::vector<TimelineElement>::iterator TimelineModel::erasePreviousCountyInfo(st
 
     auto it2 = it;
     --it2;
-    if ((*it2).elementType == TimelineElement::CountryInfo) {
+    if ((*it2).elementType == TimelineElement::LocationInfo) {
         const auto row = std::distance(m_elements.begin(), it2);
         beginRemoveRows({}, row, row);
         it = m_elements.erase(it2);

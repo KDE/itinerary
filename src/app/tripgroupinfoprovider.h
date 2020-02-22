@@ -37,7 +37,7 @@ public:
     void setWeatherForecastManager(WeatherForecastManager *mgr);
 
     Q_INVOKABLE WeatherForecast weatherForecast(const TripGroup &group) const;
-    Q_INVOKABLE QVariantList countryInformation(const TripGroup &group, const QString &homeCountryIsoCode) const;
+    Q_INVOKABLE QVariantList locationInformation(const TripGroup &group, const QString &homeCountryIsoCode) const;
 
 private:
     ReservationManager *m_resMgr = nullptr;

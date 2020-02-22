@@ -17,8 +17,8 @@
 
 #include "modelverificationpoint.h"
 
-#include <countryinformation.h>
 #include <favoritelocationmodel.h>
+#include <locationinformation.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 #include <timelinemodel.h>
@@ -175,7 +175,7 @@ private Q_SLOTS:
         QCOMPARE(insertSpy.at(1).at(2).toInt(), 1);
         QVERIFY(updateSpy.isEmpty());
         QCOMPARE(model.rowCount(), 4);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Hotel);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeBegin);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Hotel);
@@ -219,18 +219,18 @@ private Q_SLOTS:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
-        auto countryInfo = model.index(0, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        auto countryInfo = model.index(0, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
         QCOMPARE(countryInfo.drivingSideDiffers(), true);
-        QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
+        QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
-        countryInfo = model.index(2, 0).data(TimelineModel::CountryInformationRole).value<CountryInformation>();
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        countryInfo = model.index(2, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
-        QCOMPARE(countryInfo.powerPlugCompatibility(), CountryInformation::Incompatible);
+        QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
@@ -238,7 +238,7 @@ private Q_SLOTS:
         auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 3);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::CountryInfo);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 

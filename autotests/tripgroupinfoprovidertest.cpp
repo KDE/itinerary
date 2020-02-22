@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include <countryinformation.h>
+#include <locationinformation.h>
 #include <reservationmanager.h>
 #include <tripgroup.h>
 #include <tripgroupmanager.h>
@@ -76,11 +76,11 @@ private Q_SLOTS:
         QCOMPARE(fc.minimumTemperature(), 7.74224f);
         QCOMPARE(fc.maximumTemperature(), 47.4647f);
 
-        const auto countries = provider.countryInformation(mgr.tripGroup(mgr.tripGroups().at(0)), QStringLiteral("DE"));
+        const auto countries = provider.locationInformation(mgr.tripGroup(mgr.tripGroups().at(0)), QStringLiteral("DE"));
         QCOMPARE(countries.size(), 1);
-        const auto country = countries.at(0).value<CountryInformation>();
+        const auto country = countries.at(0).value<LocationInformation>();
         QCOMPARE(country.isoCode(), QStringLiteral("CH"));
-        QCOMPARE(country.powerPlugCompatibility(), CountryInformation::PartiallyCompatible);
+        QCOMPARE(country.powerPlugCompatibility(), LocationInformation::PartiallyCompatible);
     }
 
 };

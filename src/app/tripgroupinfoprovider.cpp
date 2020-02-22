@@ -17,7 +17,7 @@
 
 #include "tripgroupinfoprovider.h"
 
-#include "countryinformation.h"
+#include "locationinformation.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 
@@ -91,7 +91,7 @@ WeatherForecast TripGroupInfoProvider::weatherForecast(const TripGroup &group) c
     return fc;
 }
 
-QVariantList TripGroupInfoProvider::countryInformation(const TripGroup &group, const QString &homeCountryIsoCode) const
+QVariantList TripGroupInfoProvider::locationInformation(const TripGroup &group, const QString &homeCountryIsoCode) const
 {
     QVariantList l;
 
@@ -106,14 +106,14 @@ QVariantList TripGroupInfoProvider::countryInformation(const TripGroup &group, c
         if (destCountry.isEmpty() || destCountry == homeCountryIsoCode) {
             continue;
         }
-        if (std::any_of(l.constBegin(), l.constEnd(), [destCountry](const QVariant &v) { return v.value<CountryInformation>().isoCode() == destCountry; })) {
+        if (std::any_of(l.constBegin(), l.constEnd(), [destCountry](const QVariant &v) { return v.value<LocationInformation>().isoCode() == destCountry; })) {
             continue;
         }
 
-        CountryInformation info;
+        LocationInformation info;
         info.setIsoCode(homeCountryIsoCode);
         info.setIsoCode(destCountry);
-        if (info.powerPlugCompatibility() != CountryInformation::FullyCompatible) {
+        if (info.powerPlugCompatibility() != LocationInformation::FullyCompatible) {
             l.push_back(QVariant::fromValue(info));
         }
     }

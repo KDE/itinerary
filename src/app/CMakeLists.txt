@@ -6,11 +6,11 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.in ${CMA
 
 set(itinerary_srcs
     applicationcontroller.cpp
-    countryinformation.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
     json.cpp
     livedatamanager.cpp
+    locationinformation.cpp
     navigationcontroller.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp

@@ -15,7 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "countryinformation.h"
+#include "locationinformation.h"
 
 #include <KLocalizedString>
 
@@ -23,13 +23,13 @@
 
 using namespace KItinerary;
 
-CountryInformation::CountryInformation()
+LocationInformation::LocationInformation()
 {
 }
 
-CountryInformation::~CountryInformation() = default;
+LocationInformation::~LocationInformation() = default;
 
-bool CountryInformation::operator==(const CountryInformation& other) const
+bool LocationInformation::operator==(const LocationInformation& other) const
 {
     const auto dsEqual = m_drivingSide == other.m_drivingSide || m_drivingSide == KnowledgeDb::DrivingSide::Unknown || other.m_drivingSide == KnowledgeDb::DrivingSide::Unknown;
     const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets)
@@ -38,12 +38,12 @@ bool CountryInformation::operator==(const CountryInformation& other) const
     return dsEqual && ppEqual;
 }
 
-QString CountryInformation::isoCode() const
+QString LocationInformation::isoCode() const
 {
     return m_isoCode;
 }
 
-void CountryInformation::setIsoCode(const QString& isoCode)
+void LocationInformation::setIsoCode(const QString& isoCode)
 {
     if (m_isoCode == isoCode) {
         return;
@@ -61,12 +61,12 @@ void CountryInformation::setIsoCode(const QString& isoCode)
     setPowerPlugTypes(countryRecord.powerPlugTypes);
 }
 
-KnowledgeDb::DrivingSide CountryInformation::drivingSide() const
+KnowledgeDb::DrivingSide LocationInformation::drivingSide() const
 {
     return m_drivingSide;
 }
 
-void CountryInformation::setDrivingSide(KnowledgeDb::DrivingSide drivingSide)
+void LocationInformation::setDrivingSide(KnowledgeDb::DrivingSide drivingSide)
 {
     if (m_drivingSide == drivingSide) {
         return;
@@ -79,12 +79,12 @@ void CountryInformation::setDrivingSide(KnowledgeDb::DrivingSide drivingSide)
     m_drivingSide = drivingSide;
 }
 
-bool CountryInformation::drivingSideDiffers() const
+bool LocationInformation::drivingSideDiffers() const
 {
     return m_drivingSideDiffers;
 }
 
-CountryInformation::PowerPlugCompatibility CountryInformation::powerPlugCompatibility() const
+LocationInformation::PowerPlugCompatibility LocationInformation::powerPlugCompatibility() const
 {
     return m_powerPlugCompat;
 }
@@ -122,17 +122,17 @@ static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
     return l.join(QLatin1String(", "));
 }
 
-QString CountryInformation::powerPlugTypes() const
+QString LocationInformation::powerPlugTypes() const
 {
     return plugTypesToString(m_incompatPlugs);
 }
 
-QString CountryInformation::powerSocketTypes() const
+QString LocationInformation::powerSocketTypes() const
 {
     return plugTypesToString(m_incompatSockets);
 }
 
-void CountryInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs)
+void LocationInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs)
 {
     if (m_powerPlugs == powerPlugs) {
         return;
@@ -151,4 +151,3 @@ void CountryInformation::setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTyp
 
     m_powerPlugs = powerPlugs;
 }
-

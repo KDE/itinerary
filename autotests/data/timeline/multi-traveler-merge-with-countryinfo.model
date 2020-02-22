@@ -184,16 +184,16 @@
         "type": 6
     },
     {
-        "countryInformation": {
+        "isToday": false,
+        "locationInformation": {
             "@context": "http://schema.org",
-            "@type": "CountryInformation",
+            "@type": "LocationInformation",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L"
         },
-        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 1 Jan 2000",
         "type": 5

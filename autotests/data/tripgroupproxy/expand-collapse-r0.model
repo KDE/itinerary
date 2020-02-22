@@ -152,16 +152,16 @@
         "type": 6
     },
     {
-        "countryInformation": {
+        "isToday": false,
+        "locationInformation": {
             "@context": "http://schema.org",
-            "@type": "CountryInformation",
+            "@type": "LocationInformation",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L"
         },
-        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 1 Jan 2000",
         "type": 5
@@ -333,9 +333,10 @@
         "type": 2
     },
     {
-        "countryInformation": {
+        "isToday": false,
+        "locationInformation": {
             "@context": "http://schema.org",
-            "@type": "CountryInformation",
+            "@type": "LocationInformation",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",
@@ -343,7 +344,6 @@
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B"
         },
-        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 4 Mar 2017",
         "type": 5
@@ -663,9 +663,10 @@
         "type": 2
     },
     {
-        "countryInformation": {
+        "isToday": false,
+        "locationInformation": {
             "@context": "http://schema.org",
-            "@type": "CountryInformation",
+            "@type": "LocationInformation",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "CH",
@@ -673,7 +674,6 @@
             "powerPlugTypes": "Schuko",
             "powerSocketTypes": "Type J"
         },
-        "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 10 Sep 2017",
         "type": 5

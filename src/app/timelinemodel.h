@@ -47,7 +47,7 @@ public:
         TodayEmptyRole,
         IsTodayRole,
         ElementRangeRole,
-        CountryInformationRole,
+        LocationInformationRole,
         WeatherForecastRole,
         ReservationsRole, // for unit testing
         TripGroupIdRole,

@@ -15,8 +15,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef COUNTRYINFORMATION_H
-#define COUNTRYINFORMATION_H
+#ifndef LOCATIONINFORMATION_H
+#define LOCATIONINFORMATION_H
 
 #include <KItinerary/CountryDb>
 
@@ -24,7 +24,7 @@
 #include <QString>
 
 /** Data for country information elements in the timeline model. */
-class CountryInformation
+class LocationInformation
 {
     Q_GADGET
     Q_PROPERTY(QString isoCode READ isoCode)
@@ -40,8 +40,8 @@ class CountryInformation
     Q_PROPERTY(QString powerSocketTypes READ powerSocketTypes)
 
 public:
-    CountryInformation();
-    ~CountryInformation();
+    LocationInformation();
+    ~LocationInformation();
 
     enum PowerPlugCompatibility {
         FullyCompatible,
@@ -50,7 +50,7 @@ public:
     };
     Q_ENUM(PowerPlugCompatibility)
 
-    bool operator==(const CountryInformation &other) const;
+    bool operator==(const LocationInformation &other) const;
 
     QString isoCode() const;
     void setIsoCode(const QString &isoCode);
@@ -75,6 +75,6 @@ private:
     PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
 };
 
-Q_DECLARE_METATYPE(CountryInformation)
+Q_DECLARE_METATYPE(LocationInformation)
 
-#endif // COUNTRYINFORMATION_H
+#endif // LOCATIONINFORMATION_H
