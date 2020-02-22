@@ -35,8 +35,8 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             text: i18n("<p>There's a number of ways to import data into KDE Itinerary:<ul>
                 <li>Directly opening PDF tickets or Apple Wallet passes.</li>
-                <li>From the Android calendar, for entries made via the KMail, Nextcloud or Thunderbird itinerary plug-ins, and synced using DavDroid.</li>
-                <li>Via KDE Connect from the KMail itinerary plug-in.</li>
+                <li>From the Android calendar, for entries made via the KMail, Nextcloud or Thunderbird Itinerary plugins, and synced using DavDroid.</li>
+                <li>Via KDE Connect from the KMail Itinerary plugin.</li>
                 <li>By scanning boarding pass barcodes and pasting their content.</li>
                 </p>")
             wrapMode: Text.WordWrap
