@@ -52,11 +52,13 @@ App.DetailsPage {
             Kirigami.FormData.label: i18n("Telephone:")
             text: Util.textToHtml(reservationFor.telephone)
             onLinkActivated: Qt.openUrlExternally(link)
+            visible: reservationFor.telephone
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Email:")
             text: Util.textToHtml(reservationFor.email)
             onLinkActivated: Qt.openUrlExternally(link)
+            visible: reservationFor.email
         }
 
         QQC2.Label {
