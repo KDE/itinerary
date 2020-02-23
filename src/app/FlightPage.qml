@@ -105,7 +105,7 @@ App.DetailsPage {
             // departure data
             Kirigami.Separator {
                 Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Departure")
+                Kirigami.FormData.label: i18nc("flight departure", "Departure")
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Time:")
@@ -137,7 +137,7 @@ App.DetailsPage {
             // arrival data
             Kirigami.Separator {
                 Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Arrival")
+                Kirigami.FormData.label: i18nc("flight arrival", "Arrival")
             }
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Time:")

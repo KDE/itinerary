@@ -72,7 +72,7 @@ App.TimelineDelegate {
         id: topLayout
 
         QQC2.Label {
-            text: i18n("Departure from %1: %2",
+            text: i18nc("flight departure, %1 is airport, %2 is time", "Departure from %1: %2",
                 airportDisplayString(reservationFor.departureAirport),
                 Localizer.formatTime(reservationFor, "departureTime") + " ")
             color: Kirigami.Theme.textColor
@@ -97,7 +97,7 @@ App.TimelineDelegate {
         }
 
         QQC2.Label {
-            text: i18n("Arrival at %1: %2",
+            text: i18nc("flight arrival, %1 is airport, %2 is time", "Arrival at %1: %2",
                 airportDisplayString(reservationFor.arrivalAirport),
                 Localizer.formatDateTime(reservationFor, "arrivalTime") + " ")
             color: Kirigami.Theme.textColor
