@@ -286,6 +286,7 @@ int main(int argc, char **argv)
     appController.setPkPassManager(&passMgr);
     appController.setDocumentManager(&docMgr);
     appController.setFavoriteLocationModel(&favLocModel);
+    appController.setTransferManager(&transferManager);
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
