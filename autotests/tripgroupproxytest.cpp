@@ -29,6 +29,15 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+void initLocale()
+{
+    qputenv("LC_ALL", "en_US.utf-8");
+    qputenv("LANG", "en_US");
+    qputenv("TZ", "UTC");
+}
+
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+
 class TripGroupProxyTest : public QObject
 {
     Q_OBJECT
@@ -52,8 +61,6 @@ private:
 private Q_SLOTS:
     void initTestCase()
     {
-        qputenv("LC_ALL", "en_US.utf-8");
-        qputenv("TZ", "UTC");
         QStandardPaths::setTestModeEnabled(true);
     }
 
