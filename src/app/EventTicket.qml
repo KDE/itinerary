@@ -55,7 +55,7 @@ Item {
             id: topLayout
             spacing: 10
             anchors.fill: parent
-            anchors.margins: 10
+            anchors.margins: 6
             // HACK to break binding loop on implicitHeight
             onImplicitHeightChanged: bodyBackground.implicitHeight = implicitHeight + 2 * topLayout.anchors.margins
 
@@ -106,9 +106,11 @@ Item {
 
                 // strip image
                 Image {
+                    id: stripImage
                     source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/strip" : ""
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                     Layout.alignment: Qt.AlignCenter
+                    Layout.preferredWidth: Math.min(320, stripImage.implicitWidth); // 320 as per spec
                 }
 
                 // primary fields
