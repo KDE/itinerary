@@ -55,6 +55,8 @@ set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather 
 set_package_properties(KF5Solid PROPERTIES TYPE OPTIONAL TYPE RUNTIME PURPOSE "Used for controlling the screen brightness.")
 
 include(ECMQMLModules)
+ecm_find_qmlmodule(QtLocation 5.11)
+ecm_find_qmlmodule(QtPositioning 5.11)
 ecm_find_qmlmodule(org.kde.prison 1.0)
 if (NOT ANDROID)
     ecm_find_qmlmodule(Qt.labs.platform 1.0)
