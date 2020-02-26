@@ -65,7 +65,7 @@ QVariant DocumentManager::documentInfo(const QString &id) const
         qCWarning(Log) << "Failed to load document meta data" << filePath << f.errorString();
         return {};
     }
-    return JsonLdDocument::fromJson(QJsonDocument::fromJson(f.readAll()).object());
+    return JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(f.readAll()).object());
 }
 
 QString DocumentManager::documentFilePath(const QString &id) const
