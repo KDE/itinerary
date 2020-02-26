@@ -21,5 +21,6 @@
 #define CONFIG_ITINERARY_H
 
 #cmakedefine HAVE_NOTIFICATIONS
+#cmakedefine HAVE_KITINERARY_WITH_VERSION_HEADER
 
 #endif

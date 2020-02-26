@@ -15,6 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#include "config-itinerary.h"
 #include "documentmanager.h"
 #include "logging.h"
 
@@ -65,7 +66,11 @@ QVariant DocumentManager::documentInfo(const QString &id) const
         qCWarning(Log) << "Failed to load document meta data" << filePath << f.errorString();
         return {};
     }
+#ifdef HAVE_KITINERARY_WITH_VERSION_HEADER
     return JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(f.readAll()).object());
+#else
+    return JsonLdDocument::fromJson(QJsonDocument::fromJson(f.readAll()).object());
+#endif
 }
 
 QString DocumentManager::documentFilePath(const QString &id) const
