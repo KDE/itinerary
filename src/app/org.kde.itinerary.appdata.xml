@@ -92,6 +92,7 @@
       <li xml:lang="x-test">xxTimeline view of a unified travel itinerary with automatic trip grouping.xx</li>
       <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="ca">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
+      <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
       <li xml:lang="es">Permite el uso de reservas de trenes, autobuses y vuelos, así como de hoteles, restaurantes, eventos y alquiler de automóviles.</li>
       <li xml:lang="et">Rongide, busside ja lennukite ning hotellide, restoranide, sündmuste ja rendiautode broneeringud ja reserveeringud.</li>
       <li xml:lang="it">Supporta prenotazioni per treni, autobus e voli aerei così come alberghi, ristoranti, eventi e noleggi auto.</li>
@@ -271,6 +272,7 @@
     <screenshot>
       <caption>Train layout view highlighting the coach with a seat reservation.</caption>
       <caption xml:lang="ca">Vista de la disposició del tren amb ressaltat del vagó amb una reserva de seient.</caption>
+      <caption xml:lang="ca-valencia">Vista de la disposició del tren amb ressaltat del vagó amb una reserva de seient.</caption>
       <caption xml:lang="es">Vista del esquema del tren resaltando el coche con reserva de asiento.</caption>
       <caption xml:lang="et">Rongi struktuurivaade ühes vaguni ja reserveeritud istme esiletõstmisega.</caption>
       <caption xml:lang="it">Vista della disposizione del  treno che evidenzia la carrozza con la prenotazione di un posto.</caption>
@@ -285,6 +287,7 @@
     <screenshot>
       <caption>Travel statistics view.</caption>
       <caption xml:lang="ca">Vista de les estadístiques dels viatges.</caption>
+      <caption xml:lang="ca-valencia">Vista de les estadístiques dels viatges.</caption>
       <caption xml:lang="es">Vista de estadísticas de viajes.</caption>
       <caption xml:lang="et">Reisistatistika vaade.</caption>
       <caption xml:lang="nl">Weergave reisstatistieken</caption>
