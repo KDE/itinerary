@@ -30,7 +30,20 @@ Kirigami.Page {
     property alias publicTransportManager: vehicleModel.manager
     property var departure
     property string selectedVehicleSection
+    property string selectedClasses
     property string seat
+
+    readonly property var selectedClassTypes: {
+        var c = KPublicTransport.VehicleSection.UnknownClass;
+        if (selectedClasses.match(/1/)) {
+            c |= KPublicTransport.VehicleSection.FirstClass;
+        }
+        if (selectedClasses.match(/2/)) {
+            c |= KPublicTransport.VehicleSection.SecondClass;
+        }
+
+        return c;
+    }
 
     onDepartureChanged: vehicleModel.request.departure = root.departure;
 
@@ -123,15 +136,22 @@ Kirigami.Page {
                 Layout.fillWidth: true
                 model: vehicleModel
                 delegate: VehicleSectionItem {
+                    readonly property bool isSelected: {
+                        if (root.selectedVehicleSection == "") {
+                            return root.selectedClassTypes & section.classes;
+                        }
+                        return section.name == root.selectedVehicleSection;
+                    }
+
                     section: model.vehicleSection
                     y: section.platformPositionBegin * vehicleView.fullLength
                     height: section.platformPositionEnd * vehicleView.fullLength - y
                     width: vehicleView.sectionWidth
                     textColor: Kirigami.Theme.textColor
-                    firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
-                    secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
-                    inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
-                    restaurantBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.neutralTextColor, section.name == root.selectedVehicleSection ? 1 : 0.25)
+                    firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, isSelected ? 1 : 0.25)
+                    secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, isSelected ? 1 : 0.25)
+                    inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, isSelected ? 1 : 0.25)
+                    restaurantBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.neutralTextColor, isSelected ? 1 : 0.25)
 
                     QQC2.Label {
                         anchors.centerIn: parent

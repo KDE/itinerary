@@ -46,6 +46,7 @@ App.DetailsPage {
             publicTransportManager: root.controller.liveDataManager.publicTransportManager
             departure: root.departure
             selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
+            selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
             seat: root.reservation.reservedTicket.ticketedSeat.seatNumber
         }
     }
