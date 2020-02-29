@@ -318,23 +318,6 @@
     },
     {
         "isToday": false,
-        "rangeType": 0,
-        "sectionHeader": "Thursday, 10/17/96",
-        "type": 4,
-        "weatherForecast": {
-            "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 60.31719970703125,
-            "minimumTemperature": 24.963300704956055,
-            "precipitation": 23,
-            "range": 18,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
-        }
-    },
-    {
-        "isToday": false,
         "rangeType": 2,
         "reservations": [
             {
@@ -366,6 +349,23 @@
         ],
         "sectionHeader": "Thursday, 10/17/96",
         "type": 13
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "Thursday, 10/17/96",
+        "type": 4,
+        "weatherForecast": {
+            "@context": "http://schema.org",
+            "@type": "WeatherForecast",
+            "maximumTemperature": 60.31719970703125,
+            "minimumTemperature": 24.963300704956055,
+            "precipitation": 23,
+            "range": 18,
+            "symbolIconName": "weather-few-clouds",
+            "valid": true,
+            "windSpeed": 0
+        }
     },
     {
         "isToday": false,

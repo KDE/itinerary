@@ -72,12 +72,51 @@ static bool operator<(TimelineElement::RangeType lhs, TimelineElement::RangeType
 bool TimelineElement::operator<(const TimelineElement &other) const
 {
     if (dt == other.dt) {
-        if (rangeType == other.rangeType) {
-            return elementType < other.elementType;
+        bool typeOrder = elementType < other.elementType;
+        if (rangeType == RangeEnd || other.rangeType == RangeEnd) {
+            if (rangeType == RangeBegin || other.rangeType == RangeBegin) {
+                return rangeType < other.rangeType;
+            }
+            return !typeOrder;
         }
-        return rangeType < other.rangeType;
+        return typeOrder;
     }
     return dt < other.dt;
+}
+
+bool TimelineElement::operator==(const TimelineElement &other) const
+{
+    if (elementType != other.elementType || rangeType != other.rangeType || dt != other.dt || batchId != other.batchId) {
+        return false;
+    }
+
+    switch (elementType) {
+        case Transfer:
+        {
+            const auto lhsT = content.value<::Transfer>();
+            const auto rhsT = other.content.value<::Transfer>();
+            return lhsT.reservationId() == rhsT.reservationId() && lhsT.alignment() == rhsT.alignment();
+        }
+        default:
+            return true;
+    }
+}
+
+bool TimelineElement::isReservation() const
+{
+    switch (elementType) {
+        case Flight:
+        case TrainTrip:
+        case CarRental:
+        case BusTrip:
+        case Restaurant:
+        case TouristAttraction:
+        case Event:
+        case Hotel:
+            return true;
+        default:
+            return false;
+    }
 }
 
 QDateTime TimelineElement::relevantDateTime(const QVariant &res, TimelineElement::RangeType range)

@@ -100,6 +100,13 @@ private Q_SLOTS:
         QTest::newRow("transfer-group-begin") << group << TimelineElement(TimelineElement::Transfer, dt);
         group.rangeType = TimelineElement::RangeEnd;
         QTest::newRow("transfer-group-end") << TimelineElement(TimelineElement::Transfer, dt) << group;
+
+        TimelineElement locInfo(TimelineElement::LocationInfo, dt);
+        TimelineElement hotel(TimelineElement::Hotel, dt);
+        hotel.rangeType = TimelineElement::RangeBegin;
+        QTest::newRow("locinfo-before-hotel") << locInfo << hotel;
+        TimelineElement flight(TimelineElement::Flight, dt);
+        QTest::newRow("locinfo-before-flight") << locInfo << flight;
     }
 
     void testElementCompare()

@@ -315,6 +315,25 @@ void TimelineModel::insertElement(TimelineElement &&elem)
     endInsertRows();
 }
 
+std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem)
+{
+    while (it != m_elements.end() && (*it) < elem) {
+        ++it;
+    }
+
+    if (it != m_elements.end() && (*it) == elem) {
+        const auto row = std::distance(m_elements.begin(), it);
+        (*it) = std::move(elem);
+        emit dataChanged(index(row, 0), index(row, 0));
+    } else {
+        const auto row = std::distance(m_elements.begin(), it);
+        beginInsertRows({}, row, row);
+        it = m_elements.insert(it, std::move(elem));
+        endInsertRows();
+    }
+    return it;
+}
+
 void TimelineModel::batchChanged(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
@@ -456,10 +475,7 @@ void TimelineModel::updateInformationElements()
         }
 
         // add new country info element
-        auto row = std::distance(m_elements.begin(), it);
-        beginInsertRows({}, row, row);
-        it = m_elements.insert(it, TimelineElement{TimelineElement::LocationInfo, (*it).dt, QVariant::fromValue(newCountry)});
-        endInsertRows();
+        it = insertOrUpdate(it, TimelineElement{TimelineElement::LocationInfo, (*it).dt, QVariant::fromValue(newCountry)});
 
         previousCountry = newCountry;
     }
@@ -567,20 +583,11 @@ void TimelineModel::updateWeatherElements()
         }
         geo = newGeo;
 
-        // case 1: we have forecast data, and a matching weather element: update
-        if (fc.isValid() && (*it).dt == date && (*it).elementType == TimelineElement::WeatherForecast) {
-            (*it).content = QVariant::fromValue(fc);
-            const auto idx = index(std::distance(m_elements.begin(), it), 0);
-            emit dataChanged(idx, idx);
+        // updated or new data
+        if (fc.isValid()) {
+            it = insertOrUpdate(it, TimelineElement{TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
         }
-        // case 2: we have forecast data, but no matching weather element: insert
-        else if (fc.isValid()) {
-            const auto row = std::distance(m_elements.begin(), it);
-            beginInsertRows({}, row, row);
-            it = m_elements.insert(it, TimelineElement{TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
-            endInsertRows();
-        }
-        // case 3: we have no forecast data, but a matching weather element: remove
+        // we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
             const auto row = std::distance(m_elements.begin(), it);
             beginRemoveRows({}, row, row);
@@ -698,32 +705,19 @@ void TimelineModel::transferChanged(const Transfer& transfer)
         return;
     }
 
-    auto it = std::find_if(m_elements.begin(), m_elements.end(), [transfer](const auto &e) { return e.batchId == transfer.reservationId(); });
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [transfer](const auto &e) {
+        return e.isReservation() && e.batchId == transfer.reservationId();
+    });
     if (it == m_elements.end()) {
         return;
     }
 
-    auto insertIt = it;
     if (transfer.alignment() == Transfer::Before) {
         if (it != m_elements.begin()) {
             --it;
         }
-    } else {
-        ++it;
-        ++insertIt;
     }
-
-    if (it != m_elements.end() && (*it).elementType == TimelineElement::Transfer && (*it).content.value<Transfer>().reservationId() == transfer.reservationId()) {
-        const auto row = std::distance(m_elements.begin(), it);
-        (*it).content = QVariant::fromValue(transfer);
-        emit dataChanged(index(row, 0), index(row, 0));
-    } else {
-        const auto row = std::distance(m_elements.begin(), insertIt);
-        beginInsertRows({}, row, row);
-        m_elements.insert(insertIt, TimelineElement(transfer));
-        endInsertRows();
-        return;
-    }
+    insertOrUpdate(it, TimelineElement(transfer));
 
     emit todayRowChanged();
 }

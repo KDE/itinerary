@@ -61,8 +61,12 @@ public:
     explicit TimelineElement(const QString &resId, const QVariant &res, RangeType rt);
     explicit TimelineElement(const ::Transfer &transfer);
 
-    /** Timeline order */
+    /** Timeline order. This considers only position in the timeline, not content. */
     bool operator<(const TimelineElement &other) const;
+    bool operator==(const TimelineElement &other) const;
+
+    /** Element is holds a reservation type. */
+    bool isReservation() const;
 
     /** The time @p res is added to the timeline, for range type @p range. */
     static QDateTime relevantDateTime(const QVariant &res, TimelineElement::RangeType range);
