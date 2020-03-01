@@ -32,10 +32,10 @@ AndroidLockBackend::~AndroidLockBackend()
 
 void AndroidLockBackend::setInhibitionOff()
 {
-    QtAndroid::androidActivity().callMethod<void>("setLockInhibitionOff");
+    QAndroidJniObject::callStaticMethod<void>("org.kde.solid.Solid", "setLockInhibitionOff", "(Landroid/app/Activity;)V", QtAndroid::androidActivity().object());
 }
 
 void AndroidLockBackend::setInhibitionOn()
 {
-    QtAndroid::androidActivity().callMethod<void>("setLockInhibitionOn");
+    QAndroidJniObject::callStaticMethod<void>("org.kde.solid.Solid", "setLockInhibitionOn", "(Landroid/app/Activity;)V", QtAndroid::androidActivity().object());
 }

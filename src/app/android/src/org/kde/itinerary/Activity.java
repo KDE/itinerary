@@ -30,7 +30,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.CalendarContract;
 import android.util.Log;
-import android.view.WindowManager;
 
 import java.io.*;
 import java.util.*;
@@ -96,26 +95,6 @@ public class Activity extends QtActivity
                 }
             }
         }
-    }
-
-    public void setBrightness(final float brightness) {
-        runOnUiThread(() -> {
-            WindowManager.LayoutParams layout = getWindow().getAttributes();
-            layout.screenBrightness = brightness;
-            getWindow().setAttributes(layout);
-        });
-    }
-
-    public float getBrightness() {
-        return getWindow().getAttributes().screenBrightness;
-    }
-
-    public void setLockInhibitionOn() {
-        runOnUiThread(() -> getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON));
-    }
-
-    public void setLockInhibitionOff() {
-        runOnUiThread(() -> getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON));
     }
 
     @Override
