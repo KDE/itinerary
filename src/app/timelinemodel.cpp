@@ -755,27 +755,14 @@ void TimelineModel::transferChanged(const Transfer& transfer)
 
 void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
 {
-    auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) {
-        return e.isReservation() && e.batchId() == resId; });
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, alignment](const auto &e) {
+        return e.elementType == TimelineElement::Transfer && e.batchId() == resId
+            && e.content().template value<Transfer>().alignment() == alignment;
+    });
     if (it == m_elements.end()) {
         return;
     }
 
-    if (alignment == Transfer::Before) {
-        if (it == m_elements.begin()) {
-            return;
-        }
-        --it;
-    } else { // Transfer::After
-        ++it;
-        if (it == m_elements.end()) {
-            return;
-        }
-    }
-
-    if ((*it).elementType != TimelineElement::Transfer || (*it).content().value<Transfer>().reservationId() != resId) {
-        return;
-    }
     const auto row = std::distance(m_elements.begin(), it);
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
