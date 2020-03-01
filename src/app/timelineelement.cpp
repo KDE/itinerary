@@ -41,25 +41,25 @@ static TimelineElement::ElementType elementType(const QVariant &res)
 TimelineElement::TimelineElement() = default;
 
 TimelineElement::TimelineElement(TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
-    : content(data)
-    , dt(dateTime)
+    : dt(dateTime)
     , elementType(type)
+    , m_content(data)
 {
 }
 
 TimelineElement::TimelineElement(const QString& resId, const QVariant& res, TimelineElement::RangeType rt)
-    : batchId(resId)
-    , dt(relevantDateTime(res, rt))
+    : dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
+    , m_content(resId)
 {
 }
 
 TimelineElement::TimelineElement(const ::Transfer &transfer)
-    : content(QVariant::fromValue(transfer))
-    , dt(transfer.anchorTime())
+    : dt(transfer.anchorTime())
     , elementType(Transfer)
     , rangeType(SelfContained)
+    , m_content(QVariant::fromValue(transfer))
 {
 }
 
@@ -86,16 +86,16 @@ bool TimelineElement::operator<(const TimelineElement &other) const
 
 bool TimelineElement::operator==(const TimelineElement &other) const
 {
-    if (elementType != other.elementType || rangeType != other.rangeType || dt != other.dt || batchId != other.batchId) {
+    if (elementType != other.elementType || rangeType != other.rangeType || dt != other.dt || batchId() != other.batchId()) {
         return false;
     }
 
     switch (elementType) {
         case Transfer:
         {
-            const auto lhsT = content.value<::Transfer>();
-            const auto rhsT = other.content.value<::Transfer>();
-            return lhsT.reservationId() == rhsT.reservationId() && lhsT.alignment() == rhsT.alignment();
+            const auto lhsT = m_content.value<::Transfer>();
+            const auto rhsT = other.m_content.value<::Transfer>();
+            return lhsT.alignment() == rhsT.alignment();
         }
         default:
             return true;
@@ -117,6 +117,27 @@ bool TimelineElement::isReservation() const
         default:
             return false;
     }
+}
+
+QString TimelineElement::batchId() const
+{
+    if (isReservation()) {
+        return m_content.toString();
+    }
+    if (elementType == Transfer) {
+        return m_content.value<::Transfer>().reservationId();
+    }
+    return {};
+}
+
+QVariant TimelineElement::content() const
+{
+    return m_content;
+}
+
+void TimelineElement::setContent(const QVariant& content)
+{
+    m_content = content;
 }
 
 QDateTime TimelineElement::relevantDateTime(const QVariant &res, TimelineElement::RangeType range)

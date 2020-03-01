@@ -221,7 +221,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
         }
         case BatchIdRole:
-            return elem.batchId;
+            return elem.isReservation() ? elem.batchId() : QString();
         case ElementTypeRole:
             return elem.elementType;
         case TodayEmptyRole:
@@ -235,15 +235,18 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return elem.rangeType;
         case LocationInformationRole:
             if (elem.elementType == TimelineElement::LocationInfo)
-                return elem.content;
+                return elem.content();
             break;
         case WeatherForecastRole:
             if (elem.elementType == TimelineElement::WeatherForecast)
-                return elem.content;
+                return elem.content();
             break;
         case ReservationsRole:
         {
-            const auto resIds = m_resMgr->reservationsForBatch(elem.batchId);
+            if (!elem.isReservation()) {
+                return {};
+            }
+            const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
             QVector<QVariant> v;
             v.reserve(resIds.size());
             for (const auto &resId : resIds) {
@@ -254,16 +257,16 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
         }
         case TripGroupIdRole:
             if (elem.elementType == TimelineElement::TripGroup) {
-                return elem.content;
+                return elem.content();
             }
             break;
         case TripGroupRole:
             if (elem.elementType == TimelineElement::TripGroup)
-                return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content.toString()));
+                return QVariant::fromValue(m_tripGroupManager->tripGroup(elem.content().toString()));
             break;
         case TransferRole:
             if (elem.elementType == TimelineElement::Transfer) {
-                return elem.content;
+                return elem.content();
             }
             break;
     }
@@ -360,11 +363,11 @@ void TimelineModel::batchChanged(const QString &resId)
 void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBatchId)
 {
     for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-        if ((*it).batchId != oldBatchId) {
+        if (!(*it).isReservation() || (*it).batchId() != oldBatchId) {
             continue;
         }
 
-        (*it).batchId = newBatchId;
+        (*it).setContent(newBatchId);
         const auto idx = index(std::distance(m_elements.begin(), it), 0);
         emit dataChanged(idx, idx);
 
@@ -376,7 +379,9 @@ void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBa
 
 void TimelineModel::updateElement(const QString &resId, const QVariant &res, TimelineElement::RangeType rangeType)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const auto &e) { return e.batchId == resId && e.rangeType == rangeType; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId, rangeType](const auto &e) {
+        return e.isReservation() && e.batchId() == resId && e.rangeType == rangeType;
+    });
     if (it == m_elements.end()) {
         return;
     }
@@ -396,7 +401,9 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
 
 void TimelineModel::batchRemoved(const QString &resId)
 {
-    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) { return e.batchId == resId; });
+    const auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) {
+        return e.isReservation() && e.batchId() == resId;
+    });
     if (it == m_elements.end()) {
         return;
     }
@@ -460,14 +467,17 @@ void TimelineModel::updateInformationElements()
                 it = erasePreviousCountyInfo(it);
                 continue;
             case TimelineElement::LocationInfo:
-                previousCountry = (*it).content.value<LocationInformation>();
+                previousCountry = (*it).content().value<LocationInformation>();
                 it = erasePreviousCountyInfo(it); // purge multiple consecutive country info elements
                 continue;
             default:
                 break;
         }
 
-        const auto res = m_resMgr->reservation((*it).batchId);
+        if (!(*it).isReservation()) {
+            continue;
+        }
+        const auto res = m_resMgr->reservation((*it).batchId());
 
         auto newCountry = homeCountry;
         newCountry.setIsoCode(destinationCountry(res));
@@ -530,7 +540,11 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
-        const auto res = m_resMgr->reservation((*it).batchId);
+        if (!(*it).isReservation()) {
+            ++it;
+            continue;
+        }
+        const auto res = m_resMgr->reservation((*it).batchId());
         const auto newGeo = geoCoordinate(res);
         if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
             geo = newGeo;
@@ -557,7 +571,11 @@ void TimelineModel::updateWeatherElements()
             }
 
             // track where we are
-            const auto res = m_resMgr->reservation((*it).batchId);
+            if (!(*it).isReservation()) {
+                ++it;
+                continue;
+            }
+            const auto res = m_resMgr->reservation((*it).batchId());
             const auto newGeo = geoCoordinate(res);
             if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
                 geo = newGeo;
@@ -576,7 +594,10 @@ void TimelineModel::updateWeatherElements()
             if ((*it2).dt >= endTime) {
                 break;
             }
-            const auto res = m_resMgr->reservation((*it2).batchId);
+            if (!(*it2).isReservation()) {
+                continue;
+            }
+            const auto res = m_resMgr->reservation((*it2).batchId());
             if (LocationUtil::isLocationChange(res)) {
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, TimelineElement::relevantDateTime(res, TimelineElement::RangeBegin));
@@ -693,7 +714,7 @@ void TimelineModel::tripGroupChanged(const QString& groupId)
 void TimelineModel::tripGroupRemoved(const QString& groupId)
 {
     for (auto it = m_elements.begin(); it != m_elements.end();) {
-        if ((*it).elementType != TimelineElement::TripGroup || (*it).content.toString() != groupId) {
+        if ((*it).elementType != TimelineElement::TripGroup || (*it).content().toString() != groupId) {
             ++it;
             continue;
         }
@@ -716,7 +737,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
     }
 
     auto it = std::find_if(m_elements.begin(), m_elements.end(), [transfer](const auto &e) {
-        return e.isReservation() && e.batchId == transfer.reservationId();
+        return e.isReservation() && e.batchId() == transfer.reservationId();
     });
     if (it == m_elements.end()) {
         return;
@@ -734,7 +755,8 @@ void TimelineModel::transferChanged(const Transfer& transfer)
 
 void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
 {
-    auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) { return e.batchId == resId; });
+    auto it = std::find_if(m_elements.begin(), m_elements.end(), [resId](const auto &e) {
+        return e.isReservation() && e.batchId() == resId; });
     if (it == m_elements.end()) {
         return;
     }
@@ -751,7 +773,7 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
         }
     }
 
-    if ((*it).elementType != TimelineElement::Transfer || (*it).content.value<Transfer>().reservationId() != resId) {
+    if ((*it).elementType != TimelineElement::Transfer || (*it).content().value<Transfer>().reservationId() != resId) {
         return;
     }
     const auto row = std::distance(m_elements.begin(), it);

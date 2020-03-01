@@ -68,14 +68,23 @@ public:
     /** Element is holds a reservation type. */
     bool isReservation() const;
 
+    /** Batch id of the contained reservation or transfer. */
+    QString batchId() const;
+    /** Content data.
+     * @note For reservations this is also the batchId.
+     */
+    QVariant content() const;
+    void setContent(const QVariant &content);
+
     /** The time @p res is added to the timeline, for range type @p range. */
     static QDateTime relevantDateTime(const QVariant &res, TimelineElement::RangeType range);
 
-    QString batchId; // reservation batch id
-    QVariant content; // non-reservation content
     QDateTime dt; // relevant date/time
     ElementType elementType = Undefined;
     RangeType rangeType = SelfContained;
+
+private:
+    QVariant m_content;
 };
 
 Q_DECLARE_METATYPE(TimelineElement)
