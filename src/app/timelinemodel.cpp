@@ -461,8 +461,8 @@ void TimelineModel::updateInformationElements()
 
         auto newCountry = homeCountry;
         newCountry.setIsoCode(destinationCountry(res));
-        newCountry.setTimeZone(previousCountry.timeZone());
-        newCountry.setTimeZone(destinationTimeZone(res));
+        newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
+        newCountry.setTimeZone(destinationTimeZone(res), (*it).dt);
         if (newCountry == previousCountry) {
             continue;
         }

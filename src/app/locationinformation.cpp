@@ -154,18 +154,17 @@ QTimeZone LocationInformation::timeZone() const
     return m_timeZone;
 }
 
-void LocationInformation::setTimeZone(const QTimeZone &tz)
+void LocationInformation::setTimeZone(const QTimeZone &tz, const QDateTime &transitionTime)
 {
-    // TODO use transition time
-    m_timeZoneDiffers = m_timeZone.isValid() && tz.isValid() && m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc()) != tz.offsetFromUtc(QDateTime::currentDateTimeUtc());
+    m_timeZoneDiffers = m_timeZone.isValid() && tz.isValid() && m_timeZone.offsetFromUtc(transitionTime) != tz.offsetFromUtc(transitionTime);
     m_timeZone = tz;
+    m_transitionTime = transitionTime;
 }
 
 bool LocationInformation::hasRelevantTimeZoneChange(const LocationInformation &other) const
 {
-    // TODO this should uses the time we change the timezone, not now?
     return m_timeZone.isValid() && other.m_timeZone.isValid()
-        && m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc()) != other.m_timeZone.offsetFromUtc(QDateTime::currentDateTimeUtc());
+        && m_timeZone.offsetFromUtc(m_transitionTime) != other.m_timeZone.offsetFromUtc(m_transitionTime);
 }
 
 bool LocationInformation::timeZoneDiffers() const
@@ -175,6 +174,5 @@ bool LocationInformation::timeZoneDiffers() const
 
 QString LocationInformation::timeZoneName() const
 {
-    // TODO use transition time
-    return m_timeZone.displayName(QTimeZone::GenericTime, QTimeZone::LongName);
+    return m_timeZone.displayName(m_transitionTime, QTimeZone::LongName);
 }

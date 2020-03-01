@@ -67,7 +67,8 @@ public:
     QString powerSocketTypes() const;
 
     QTimeZone timeZone() const;
-    void setTimeZone(const QTimeZone &tz);
+    QDateTime transitionTime() const;
+    void setTimeZone(const QTimeZone &tz, const QDateTime &transitionTime);
     bool hasRelevantTimeZoneChange(const LocationInformation &other) const;
     bool timeZoneDiffers() const;
     QString timeZoneName() const;
@@ -78,6 +79,7 @@ private:
 
     QString m_isoCode;
     QTimeZone m_timeZone;
+    QDateTime m_transitionTime;
     KItinerary::KnowledgeDb::PowerPlugTypes m_powerPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatSockets = KItinerary::KnowledgeDb::Unknown;

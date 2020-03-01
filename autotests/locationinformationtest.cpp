@@ -28,15 +28,15 @@ private Q_SLOTS:
         LocationInformation lhs;
         LocationInformation rhs;
         QVERIFY(lhs == rhs);
-        lhs.setTimeZone(QTimeZone("Europe/Berlin"));
+        lhs.setTimeZone(QTimeZone("Europe/Berlin"), {{2020, 02, 29}, {0, 0}});
         QVERIFY(lhs == rhs);
         QVERIFY(rhs == lhs);
 
-        rhs.setTimeZone(QTimeZone("Europe/Vilnius"));
+        rhs.setTimeZone(QTimeZone("Europe/Vilnius"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(lhs == rhs, false);
         QCOMPARE(rhs == lhs, false);
 
-        rhs.setTimeZone(QTimeZone("Europe/Brussels"));
+        rhs.setTimeZone(QTimeZone("Europe/Brussels"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(lhs == rhs, true);
         QCOMPARE(rhs == lhs, true);
     }
@@ -44,9 +44,9 @@ private Q_SLOTS:
     void testTzDiff()
     {
         LocationInformation l;
-        l.setTimeZone(QTimeZone("Europe/Berlin"));
+        l.setTimeZone(QTimeZone("Europe/Berlin"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(l.timeZoneDiffers(), false);
-        l.setTimeZone(QTimeZone("Europe/Vilnius"));
+        l.setTimeZone(QTimeZone("Europe/Vilnius"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(l.timeZoneDiffers(), true);
         QVERIFY(!l.timeZoneName().isEmpty());
     }
