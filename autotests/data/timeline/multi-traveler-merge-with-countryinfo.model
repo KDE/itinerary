@@ -194,7 +194,8 @@
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L",
             "timeZoneDiffers": false,
-            "timeZoneName": "Central European Standard Time"
+            "timeZoneName": "Central European Standard Time",
+            "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
         "sectionHeader": "Saturday, 1/1/00",

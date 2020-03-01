@@ -162,7 +162,8 @@
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L",
             "timeZoneDiffers": false,
-            "timeZoneName": "Central European Standard Time"
+            "timeZoneName": "Central European Standard Time",
+            "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
         "sectionHeader": "Saturday, 1/1/00",
@@ -346,7 +347,8 @@
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B",
             "timeZoneDiffers": true,
-            "timeZoneName": "Central Standard Time"
+            "timeZoneName": "Central Standard Time",
+            "timeZoneOffsetDelta": -25200
         },
         "rangeType": 0,
         "sectionHeader": "Saturday, 3/4/17",
@@ -500,7 +502,8 @@
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B",
             "timeZoneDiffers": true,
-            "timeZoneName": "Pacific Standard Time"
+            "timeZoneName": "Pacific Standard Time",
+            "timeZoneOffsetDelta": -7200
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 3/5/17",
@@ -696,7 +699,8 @@
             "powerPlugTypes": "Schuko",
             "powerSocketTypes": "Type J",
             "timeZoneDiffers": true,
-            "timeZoneName": "Central European Summer Time"
+            "timeZoneName": "Central European Summer Time",
+            "timeZoneOffsetDelta": 32400
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 9/10/17",

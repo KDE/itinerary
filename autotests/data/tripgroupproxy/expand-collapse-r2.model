@@ -81,7 +81,8 @@
             "powerPlugTypes": "Schuko",
             "powerSocketTypes": "Type J",
             "timeZoneDiffers": true,
-            "timeZoneName": "Central European Summer Time"
+            "timeZoneName": "Central European Summer Time",
+            "timeZoneOffsetDelta": 32400
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 9/10/17",

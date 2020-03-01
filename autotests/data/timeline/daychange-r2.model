@@ -11,7 +11,8 @@
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type G",
             "timeZoneDiffers": false,
-            "timeZoneName": "Greenwich Mean Time"
+            "timeZoneName": "Greenwich Mean Time",
+            "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
         "sectionHeader": "Wednesday, 1/4/17",
@@ -91,7 +92,8 @@
             "powerPlugTypes": "Europlug, Schuko",
             "powerSocketTypes": "Type A, Type B",
             "timeZoneDiffers": true,
-            "timeZoneName": "Pacific Standard Time"
+            "timeZoneName": "Pacific Standard Time",
+            "timeZoneOffsetDelta": -28800
         },
         "rangeType": 0,
         "sectionHeader": "Wednesday, 1/4/17",
