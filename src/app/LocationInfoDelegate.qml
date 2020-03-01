@@ -94,7 +94,7 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Timezone change: %1", locationInfo.timeZoneName)
+            text: i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta))
             color: Kirigami.Theme.neutralTextColor
             visible: locationInfo.timeZoneDiffers
             wrapMode: Text.WordWrap

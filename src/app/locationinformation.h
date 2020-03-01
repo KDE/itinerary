@@ -42,6 +42,7 @@ class LocationInformation
 
     Q_PROPERTY(bool timeZoneDiffers READ timeZoneDiffers)
     Q_PROPERTY(QString timeZoneName READ timeZoneName)
+    Q_PROPERTY(int timeZoneOffsetDelta READ timeZoneOffsetDelta)
 
 public:
     LocationInformation();
@@ -72,6 +73,7 @@ public:
     bool hasRelevantTimeZoneChange(const LocationInformation &other) const;
     bool timeZoneDiffers() const;
     QString timeZoneName() const;
+    int timeZoneOffsetDelta() const;
 
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
@@ -86,7 +88,7 @@ private:
     KItinerary::KnowledgeDb::DrivingSide m_drivingSide = KItinerary::KnowledgeDb::DrivingSide::Unknown;
     bool m_drivingSideDiffers = false;
     PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
-    bool m_timeZoneDiffers = false;
+    int m_timeZoneOffsetDelta = 0;
 };
 
 Q_DECLARE_METATYPE(LocationInformation)

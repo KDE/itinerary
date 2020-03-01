@@ -154,9 +154,18 @@ QTimeZone LocationInformation::timeZone() const
     return m_timeZone;
 }
 
+QDateTime LocationInformation::transitionTime() const
+{
+    return m_transitionTime;
+}
+
 void LocationInformation::setTimeZone(const QTimeZone &tz, const QDateTime &transitionTime)
 {
-    m_timeZoneDiffers = m_timeZone.isValid() && tz.isValid() && m_timeZone.offsetFromUtc(transitionTime) != tz.offsetFromUtc(transitionTime);
+    if (m_timeZone.isValid() && tz.isValid()) {
+        m_timeZoneOffsetDelta = tz.offsetFromUtc(transitionTime) - m_timeZone.offsetFromUtc(transitionTime);
+    } else {
+        m_timeZoneOffsetDelta = 0;
+    }
     m_timeZone = tz;
     m_transitionTime = transitionTime;
 }
@@ -169,10 +178,15 @@ bool LocationInformation::hasRelevantTimeZoneChange(const LocationInformation &o
 
 bool LocationInformation::timeZoneDiffers() const
 {
-    return m_timeZoneDiffers && m_timeZone.isValid();
+    return m_timeZoneOffsetDelta != 0 && m_timeZone.isValid();
 }
 
 QString LocationInformation::timeZoneName() const
 {
     return m_timeZone.displayName(m_transitionTime, QTimeZone::LongName);
+}
+
+int LocationInformation::timeZoneOffsetDelta() const
+{
+    return m_timeZoneOffsetDelta;
 }

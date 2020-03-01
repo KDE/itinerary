@@ -46,8 +46,14 @@ private Q_SLOTS:
         LocationInformation l;
         l.setTimeZone(QTimeZone("Europe/Berlin"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(l.timeZoneDiffers(), false);
+        QCOMPARE(l.timeZoneOffsetDelta(), 0);
         l.setTimeZone(QTimeZone("Europe/Vilnius"), {{2020, 02, 29}, {0, 0}});
         QCOMPARE(l.timeZoneDiffers(), true);
+        QCOMPARE(l.timeZoneOffsetDelta(), 3600);
+        QVERIFY(!l.timeZoneName().isEmpty());
+        l.setTimeZone(QTimeZone("Europe/Berlin"), {{2020, 02, 29}, {0, 0}});
+        QCOMPARE(l.timeZoneDiffers(), true);
+        QCOMPARE(l.timeZoneOffsetDelta(), -3600);
         QVERIFY(!l.timeZoneName().isEmpty());
     }
 };
