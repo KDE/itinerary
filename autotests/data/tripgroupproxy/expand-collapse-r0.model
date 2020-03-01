@@ -914,37 +914,6 @@
         "reservations": [
             {
                 "@context": "http://schema.org",
-                "@type": "TaxiReservation",
-                "modifiedTime": "2020-01-22T00:00:00",
-                "pickupLocation": {
-                    "@type": "Place",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "addressCountry": "CH"
-                    },
-                    "geo": {
-                        "@type": "GeoCoordinates",
-                        "latitude": 46.09989929199219,
-                        "longitude": 7.781469821929932
-                    },
-                    "name": "Randa Bahnhof"
-                },
-                "pickupTime": {
-                    "@type": "QDateTime",
-                    "@value": "2017-09-10T14:55:00+02:00",
-                    "timezone": "Europe/Zurich"
-                }
-            }
-        ],
-        "sectionHeader": "Sunday, 9/10/17",
-        "type": 0
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "reservations": [
-            {
-                "@context": "http://schema.org",
                 "@type": "EventReservation",
                 "modifiedTime": "2020-01-22T00:00:00",
                 "reservationFor": {

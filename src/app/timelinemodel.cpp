@@ -127,11 +127,15 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     m_resMgr = mgr;
     for (const auto &resId : mgr->batches()) {
         const auto res = m_resMgr->reservation(resId);
+        auto elem = TimelineElement(resId, res, TimelineElement::SelfContained);
+        if (!elem.isReservation()) { // a type we can't handle
+            continue;
+        }
         if (needsSplitting(res)) {
             m_elements.push_back(TimelineElement{resId, res, TimelineElement::RangeBegin});
             m_elements.push_back(TimelineElement{resId, res, TimelineElement::RangeEnd});
         } else {
-            m_elements.push_back(TimelineElement{resId, res, TimelineElement::SelfContained});
+            m_elements.push_back(std::move(elem));
         }
     }
     m_elements.push_back(TimelineElement{TimelineElement::TodayMarker, QDateTime(today(), QTime(0, 0))});
@@ -307,6 +311,10 @@ void TimelineModel::batchAdded(const QString &resId)
 
 void TimelineModel::insertElement(TimelineElement &&elem)
 {
+    if (elem.elementType == TimelineElement::Undefined) {
+        return;
+    }
+
     auto it = std::lower_bound(m_elements.begin(), m_elements.end(), elem);
     const auto row = std::distance(m_elements.begin(), it);
 
@@ -317,6 +325,8 @@ void TimelineModel::insertElement(TimelineElement &&elem)
 
 std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector<TimelineElement>::iterator it, TimelineElement &&elem)
 {
+    assert(elem.elementType != TimelineElement::Undefined);
+
     while (it != m_elements.end() && (*it) < elem) {
         ++it;
     }
