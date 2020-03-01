@@ -107,6 +107,8 @@ private Q_SLOTS:
         QTest::newRow("locinfo-before-hotel") << locInfo << hotel;
         TimelineElement flight(TimelineElement::Flight, dt);
         QTest::newRow("locinfo-before-flight") << locInfo << flight;
+
+        QTest::newRow("location-info-before-transfer") << TimelineElement(TimelineElement::LocationInfo, dt) << TimelineElement(TimelineElement::Transfer, dt);
     }
 
     void testElementCompare()
@@ -198,9 +200,9 @@ private Q_SLOTS:
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
-        QCOMPARE(insertSpy.size(), 4);
+        QCOMPARE(insertSpy.size(), 5);
         QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 1);
         QCOMPARE(insertSpy.at(2).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(2).at(2).toInt(), 0);
@@ -211,7 +213,7 @@ private Q_SLOTS:
         const auto resId = model.data(model.index(1, 0), TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
         resMgr.removeReservation(resId);
-        QCOMPARE(rmSpy.size(), 4);
+        QCOMPARE(rmSpy.size(), 5);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
     }
@@ -234,31 +236,31 @@ private Q_SLOTS:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        auto countryInfo = model.index(0, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        auto countryInfo = model.index(1, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Left);
         QCOMPARE(countryInfo.drivingSideDiffers(), true);
         QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        countryInfo = model.index(2, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        countryInfo = model.index(3, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
         QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
-        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
-        auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
+        auto resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 3);
-        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the US flight should also remove the US country info
-        resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
+        resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);

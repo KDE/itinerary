@@ -153,24 +153,6 @@
     },
     {
         "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "drivingSide": "Right",
-            "drivingSideDiffers": false,
-            "isoCode": "IT",
-            "powerPlugCompatibility": "PartiallyCompatible",
-            "powerSocketTypes": "Type L",
-            "timeZoneDiffers": false,
-            "timeZoneName": "Central European Standard Time",
-            "timeZoneOffsetDelta": 0
-        },
-        "rangeType": 0,
-        "sectionHeader": "Saturday, 1/1/00",
-        "type": 5
-    },
-    {
-        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -295,6 +277,24 @@
     },
     {
         "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "IT",
+            "powerPlugCompatibility": "PartiallyCompatible",
+            "powerSocketTypes": "Type L",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Central European Standard Time",
+            "timeZoneOffsetDelta": 0
+        },
+        "rangeType": 0,
+        "sectionHeader": "Saturday, 1/1/00",
+        "type": 4
+    },
+    {
+        "isToday": false,
         "rangeType": 2,
         "sectionHeader": "Saturday, 1/1/00",
         "tripGroup": {
@@ -337,25 +337,6 @@
     },
     {
         "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "drivingSide": "Right",
-            "drivingSideDiffers": false,
-            "isoCode": "US",
-            "powerPlugCompatibility": "Incompatible",
-            "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type A, Type B",
-            "timeZoneDiffers": true,
-            "timeZoneName": "Central Standard Time",
-            "timeZoneOffsetDelta": -25200
-        },
-        "rangeType": 0,
-        "sectionHeader": "Saturday, 3/4/17",
-        "type": 5
-    },
-    {
-        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -488,6 +469,161 @@
             }
         ],
         "sectionHeader": "Saturday, 3/4/17",
+        "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "US",
+            "powerPlugCompatibility": "Incompatible",
+            "powerPlugTypes": "Europlug, Schuko",
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central Standard Time",
+            "timeZoneOffsetDelta": -25200
+        },
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 3/5/17",
+        "type": 4
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.618900299072266,
+                            "longitude": -122.375
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T15:15:00-08:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "departureDay": "2017-03-05",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T14:55:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "flightNumber": "1050"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            },
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "2020-01-22T00:00:00",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.618900299072266,
+                            "longitude": -122.375
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T15:15:00-08:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 41.978599548339844,
+                            "longitude": -87.90470123291016
+                        },
+                        "iataCode": "ORD",
+                        "name": "O'Hare International Airport"
+                    },
+                    "departureDay": "2017-03-05",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2017-03-05T14:55:00-06:00",
+                        "timezone": "America/Chicago"
+                    },
+                    "flightNumber": "1050"
+                },
+                "reservationNumber": "RXJ34P",
+                "underName": {
+                    "@type": "Person",
+                    "name": "John Green"
+                }
+            }
+        ],
+        "sectionHeader": "Sunday, 3/5/17",
         "type": 6
     },
     {
@@ -507,143 +643,7 @@
         },
         "rangeType": 0,
         "sectionHeader": "Sunday, 3/5/17",
-        "type": 5
-    },
-    {
-        "isToday": false,
-        "rangeType": 0,
-        "reservations": [
-            {
-                "@context": "http://schema.org",
-                "@type": "FlightReservation",
-                "modifiedTime": "2020-01-22T00:00:00",
-                "potentialAction": [
-                    {
-                        "@type": "CheckInAction",
-                        "target": "http://united.com/onlinecheckin.html"
-                    }
-                ],
-                "reservationFor": {
-                    "@type": "Flight",
-                    "airline": {
-                        "@type": "Airline",
-                        "iataCode": "UA",
-                        "name": "United"
-                    },
-                    "arrivalAirport": {
-                        "@type": "Airport",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "addressCountry": "US"
-                        },
-                        "geo": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 37.618900299072266,
-                            "longitude": -122.375
-                        },
-                        "iataCode": "SFO",
-                        "name": "San Francisco Airport"
-                    },
-                    "arrivalTime": {
-                        "@type": "QDateTime",
-                        "@value": "2017-03-05T15:15:00-08:00",
-                        "timezone": "America/Los_Angeles"
-                    },
-                    "departureAirport": {
-                        "@type": "Airport",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "addressCountry": "US"
-                        },
-                        "geo": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 41.978599548339844,
-                            "longitude": -87.90470123291016
-                        },
-                        "iataCode": "ORD",
-                        "name": "O'Hare International Airport"
-                    },
-                    "departureDay": "2017-03-05",
-                    "departureTime": {
-                        "@type": "QDateTime",
-                        "@value": "2017-03-05T14:55:00-06:00",
-                        "timezone": "America/Chicago"
-                    },
-                    "flightNumber": "1050"
-                },
-                "reservationNumber": "RXJ34P",
-                "underName": {
-                    "@type": "Person",
-                    "name": "Eva Green"
-                }
-            },
-            {
-                "@context": "http://schema.org",
-                "@type": "FlightReservation",
-                "modifiedTime": "2020-01-22T00:00:00",
-                "potentialAction": [
-                    {
-                        "@type": "CheckInAction",
-                        "target": "http://united.com/onlinecheckin.html"
-                    }
-                ],
-                "reservationFor": {
-                    "@type": "Flight",
-                    "airline": {
-                        "@type": "Airline",
-                        "iataCode": "UA",
-                        "name": "United"
-                    },
-                    "arrivalAirport": {
-                        "@type": "Airport",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "addressCountry": "US"
-                        },
-                        "geo": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 37.618900299072266,
-                            "longitude": -122.375
-                        },
-                        "iataCode": "SFO",
-                        "name": "San Francisco Airport"
-                    },
-                    "arrivalTime": {
-                        "@type": "QDateTime",
-                        "@value": "2017-03-05T15:15:00-08:00",
-                        "timezone": "America/Los_Angeles"
-                    },
-                    "departureAirport": {
-                        "@type": "Airport",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "addressCountry": "US"
-                        },
-                        "geo": {
-                            "@type": "GeoCoordinates",
-                            "latitude": 41.978599548339844,
-                            "longitude": -87.90470123291016
-                        },
-                        "iataCode": "ORD",
-                        "name": "O'Hare International Airport"
-                    },
-                    "departureDay": "2017-03-05",
-                    "departureTime": {
-                        "@type": "QDateTime",
-                        "@value": "2017-03-05T14:55:00-06:00",
-                        "timezone": "America/Chicago"
-                    },
-                    "flightNumber": "1050"
-                },
-                "reservationNumber": "RXJ34P",
-                "underName": {
-                    "@type": "Person",
-                    "name": "John Green"
-                }
-            }
-        ],
-        "sectionHeader": "Sunday, 3/5/17",
-        "type": 6
+        "type": 4
     },
     {
         "isToday": false,
@@ -686,25 +686,6 @@
             "name": "Randa (September 2017)"
         },
         "type": 2
-    },
-    {
-        "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "drivingSide": "Right",
-            "drivingSideDiffers": false,
-            "isoCode": "CH",
-            "powerPlugCompatibility": "PartiallyCompatible",
-            "powerPlugTypes": "Schuko",
-            "powerSocketTypes": "Type J",
-            "timeZoneDiffers": true,
-            "timeZoneName": "Central European Summer Time",
-            "timeZoneOffsetDelta": 32400
-        },
-        "rangeType": 0,
-        "sectionHeader": "Sunday, 9/10/17",
-        "type": 5
     },
     {
         "isToday": false,
@@ -773,6 +754,25 @@
         ],
         "sectionHeader": "Sunday, 9/10/17",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "CH",
+            "powerPlugCompatibility": "PartiallyCompatible",
+            "powerPlugTypes": "Schuko",
+            "powerSocketTypes": "Type J",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central European Summer Time",
+            "timeZoneOffsetDelta": 32400
+        },
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 9/10/17",
+        "type": 4
     },
     {
         "isToday": false,

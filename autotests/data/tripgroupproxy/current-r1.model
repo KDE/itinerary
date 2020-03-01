@@ -22,25 +22,6 @@
     },
     {
         "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "drivingSide": "Right",
-            "drivingSideDiffers": false,
-            "isoCode": "CH",
-            "powerPlugCompatibility": "PartiallyCompatible",
-            "powerPlugTypes": "Schuko",
-            "powerSocketTypes": "Type J",
-            "timeZoneDiffers": false,
-            "timeZoneName": "Central European Summer Time",
-            "timeZoneOffsetDelta": 0
-        },
-        "rangeType": 0,
-        "sectionHeader": "Sunday, 9/10/17",
-        "type": 5
-    },
-    {
-        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -106,6 +87,25 @@
         ],
         "sectionHeader": "Sunday, 9/10/17",
         "type": 6
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "CH",
+            "powerPlugCompatibility": "PartiallyCompatible",
+            "powerPlugTypes": "Schuko",
+            "powerSocketTypes": "Type J",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Central European Summer Time",
+            "timeZoneOffsetDelta": 0
+        },
+        "rangeType": 0,
+        "sectionHeader": "Sunday, 9/10/17",
+        "type": 4
     },
     {
         "isToday": false,

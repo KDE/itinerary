@@ -70,7 +70,7 @@
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -87,7 +87,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 10/15/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -104,7 +104,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 10/16/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -168,7 +168,7 @@
             },
             "toName": "Tegel"
         },
-        "type": 3
+        "type": 5
     },
     {
         "isToday": false,
@@ -263,13 +263,13 @@
             },
             "toName": "Some Hotel in Finland"
         },
-        "type": 3
+        "type": 5
     },
     {
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 10/16/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -354,7 +354,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 10/17/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -398,7 +398,7 @@
             },
             "toName": "Helsinki-Vantaa"
         },
-        "type": 3
+        "type": 5
     },
     {
         "isToday": false,
@@ -492,7 +492,7 @@
             },
             "toName": "Home"
         },
-        "type": 3
+        "type": 5
     },
     {
         "isToday": false,
@@ -519,7 +519,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 10/17/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -536,7 +536,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Friday, 10/18/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -553,7 +553,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 10/19/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -570,7 +570,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 10/20/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -587,7 +587,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Monday, 10/21/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -604,7 +604,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 10/22/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -621,7 +621,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 10/23/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",

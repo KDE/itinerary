@@ -1,25 +1,6 @@
 [
     {
         "isToday": false,
-        "locationInformation": {
-            "@context": "http://schema.org",
-            "@type": "LocationInformation",
-            "drivingSide": "Left",
-            "drivingSideDiffers": true,
-            "isoCode": "GB",
-            "powerPlugCompatibility": "Incompatible",
-            "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type G",
-            "timeZoneDiffers": false,
-            "timeZoneName": "Greenwich Mean Time",
-            "timeZoneOffsetDelta": 0
-        },
-        "rangeType": 0,
-        "sectionHeader": "Wednesday, 1/4/17",
-        "type": 5
-    },
-    {
-        "isToday": false,
         "rangeType": 0,
         "reservations": [
             {
@@ -85,19 +66,19 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
-            "drivingSide": "Right",
-            "drivingSideDiffers": false,
-            "isoCode": "US",
+            "drivingSide": "Left",
+            "drivingSideDiffers": true,
+            "isoCode": "GB",
             "powerPlugCompatibility": "Incompatible",
             "powerPlugTypes": "Europlug, Schuko",
-            "powerSocketTypes": "Type A, Type B",
-            "timeZoneDiffers": true,
-            "timeZoneName": "Pacific Standard Time",
-            "timeZoneOffsetDelta": -28800
+            "powerSocketTypes": "Type G",
+            "timeZoneDiffers": false,
+            "timeZoneName": "Greenwich Mean Time",
+            "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
         "sectionHeader": "Wednesday, 1/4/17",
-        "type": 5
+        "type": 4
     },
     {
         "isToday": false,
@@ -162,6 +143,25 @@
         "type": 6
     },
     {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "drivingSide": "Right",
+            "drivingSideDiffers": false,
+            "isoCode": "US",
+            "powerPlugCompatibility": "Incompatible",
+            "powerPlugTypes": "Europlug, Schuko",
+            "powerSocketTypes": "Type A, Type B",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Pacific Standard Time",
+            "timeZoneOffsetDelta": -28800
+        },
+        "rangeType": 0,
+        "sectionHeader": "Wednesday, 1/4/17",
+        "type": 4
+    },
+    {
         "isToday": true,
         "isTodayEmpty": false,
         "rangeType": 0,
@@ -172,7 +172,7 @@
         "isToday": true,
         "rangeType": 0,
         "sectionHeader": "Today",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -189,7 +189,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 10/16/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -206,7 +206,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Monday, 10/17/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -223,7 +223,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Tuesday, 10/18/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -240,7 +240,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Wednesday, 10/19/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -257,7 +257,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Thursday, 10/20/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -274,7 +274,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Friday, 10/21/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -291,7 +291,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Saturday, 10/22/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
@@ -308,7 +308,7 @@
         "isToday": false,
         "rangeType": 0,
         "sectionHeader": "Sunday, 10/23/96",
-        "type": 4,
+        "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",

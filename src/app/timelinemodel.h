@@ -98,7 +98,6 @@ private:
     void dayChanged();
     void updateTodayMarker();
     void updateInformationElements();
-    std::vector<TimelineElement>::iterator erasePreviousCountyInfo(std::vector<TimelineElement>::iterator it);
     void updateWeatherElements();
     void updateTransfersForBatch(const QString &batchId);
 

@@ -452,29 +452,28 @@ void TimelineModel::updateTodayMarker()
 
 void TimelineModel::updateInformationElements()
 {
-    // the country information is shown before transitioning into a country that
-    // differs in one or more properties from the home country and we where that
-    // differences is introduced by the transition
+    // the location information is shown after location changes or before stationary elements
+    // when transitioning into a location that:
+    // - differs in one or more properties from the home country, and the difference
+    // was introduced by this transtion
+    // - differs in timezone from the previous location, and that timezone has a different
+    // offset at the time of transition
 
     LocationInformation homeCountry;
     homeCountry.setIsoCode(m_homeCountry);
 
     auto previousCountry = homeCountry;
-    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-        switch ((*it).elementType) {
-            case TimelineElement::TodayMarker:
-            case TimelineElement::WeatherForecast:
-                it = erasePreviousCountyInfo(it);
-                continue;
-            case TimelineElement::LocationInfo:
-                previousCountry = (*it).content().value<LocationInformation>();
-                it = erasePreviousCountyInfo(it); // purge multiple consecutive country info elements
-                continue;
-            default:
-                break;
+    for (auto it = m_elements.begin(); it != m_elements.end();) {
+        if ((*it).elementType == TimelineElement::LocationInfo) { // this is one we didn't generate, otherwise it would be beyond that
+            const auto row = std::distance(m_elements.begin(), it);
+            beginRemoveRows({}, row, row);
+            it = m_elements.erase(it);
+            endRemoveRows();
+            continue;
         }
 
         if (!(*it).isReservation()) {
+            ++it;
             continue;
         }
         const auto res = m_resMgr->reservation((*it).batchId());
@@ -484,40 +483,20 @@ void TimelineModel::updateInformationElements()
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(destinationTimeZone(res), (*it).dt);
         if (newCountry == previousCountry) {
+            ++it;
             continue;
         }
-        if (newCountry == homeCountry && !newCountry.hasRelevantTimeZoneChange(previousCountry)) {
-            assert(it != m_elements.begin()); // previousCountry == homeCountry in this case
-            // purge outdated country info element
-            it = erasePreviousCountyInfo(it);
-            previousCountry = newCountry;
-            continue;
+        if (!(newCountry == homeCountry) || newCountry.hasRelevantTimeZoneChange(previousCountry)) {
+            // for location changes, we want this after the corresponding element
+            const auto dt =  LocationUtil::isLocationChange(res) ? SortUtil::endDateTime(res) : SortUtil::startDateTime(res);
+            it = insertOrUpdate(it, TimelineElement{TimelineElement::LocationInfo, dt, QVariant::fromValue(newCountry)});
         }
 
-        // add new country info element
-        it = insertOrUpdate(it, TimelineElement{TimelineElement::LocationInfo, (*it).dt, QVariant::fromValue(newCountry)});
-
+        ++it;
         previousCountry = newCountry;
     }
 
     updateWeatherElements();
-}
-
-std::vector<TimelineElement>::iterator TimelineModel::erasePreviousCountyInfo(std::vector<TimelineElement>::iterator it)
-{
-    if (it == m_elements.begin()) {
-        return it;
-    }
-
-    auto it2 = it;
-    --it2;
-    if ((*it2).elementType == TimelineElement::LocationInfo) {
-        const auto row = std::distance(m_elements.begin(), it2);
-        beginRemoveRows({}, row, row);
-        it = m_elements.erase(it2);
-        endRemoveRows();
-    }
-    return it;
 }
 
 void TimelineModel::updateWeatherElements()
