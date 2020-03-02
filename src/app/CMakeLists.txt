@@ -40,6 +40,7 @@ ecm_qt_declare_logging_category(itinerary_srcs
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
+    SolidExtras
     KPublicTransport
     KPim::Itinerary
     KPim::PkPass
@@ -67,22 +68,7 @@ set(itinerary_app_srcs
     tickettokenmodel.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
-    brightnessmanager.cpp
-    lockmanager.cpp
 )
-if (ANDROID)
-    list(APPEND itinerary_app_srcs
-        androidbrightnessbackend.cpp
-        androidlockbackend.cpp
-    )
-else()
-    list(APPEND itinerary_app_srcs
-        solidbrightnessbackend.cpp
-        solidlockbackend.cpp
-    )
-    qt5_add_dbus_interface(itinerary_app_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
-    qt5_add_dbus_interface(itinerary_app_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
-endif()
 
 add_executable(itinerary-app ${itinerary_app_srcs})
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
