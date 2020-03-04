@@ -30,7 +30,7 @@ public:
     explicit SolidLockBackend(QObject *parent = nullptr);
 
     void setInhibitionOff() override;
-    void setInhibitionOn() override;
+    void setInhibitionOn(const QString &explanation) override;
 
 private:
     OrgFreedesktopScreenSaverInterface* m_iface;

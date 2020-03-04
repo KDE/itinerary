@@ -19,8 +19,6 @@
 
 #include "screensaverdbusinterface.h"
 
-#include <KLocalizedString>
-
 #include <QDBusConnection>
 
 SolidLockBackend::SolidLockBackend(QObject *parent)
@@ -35,8 +33,8 @@ void SolidLockBackend::setInhibitionOff()
     m_iface->UnInhibit(m_cookie);
 }
 
-void SolidLockBackend::setInhibitionOn()
+void SolidLockBackend::setInhibitionOn(const QString &explanation)
 {
-    m_cookie = m_iface->Inhibit(QStringLiteral("org.kde.itinerary"), i18n("In barcode scanning mode"));
+    m_cookie = m_iface->Inhibit(QStringLiteral("org.kde.itinerary"), explanation);
 }
 

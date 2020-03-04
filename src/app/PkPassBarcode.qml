@@ -34,7 +34,7 @@ Rectangle {
         anchors.fill: parent
         onDoubleClicked: {
             _brightnessManager.toggleBrightness()
-            _lockManager.toggleInhibitScreenLock()
+            _lockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"))
         }
     }
 

@@ -26,7 +26,7 @@ public:
     explicit LockBackend(QObject *parent = nullptr) : QObject(parent)
     {}
     virtual ~LockBackend() = default;
-    virtual void setInhibitionOn() = 0;
+    virtual void setInhibitionOn(const QString &explanation) = 0;
     virtual void setInhibitionOff() = 0;
 };
 
@@ -39,7 +39,11 @@ public:
     ~LockManager();
 
 public Q_SLOTS:
-    void toggleInhibitScreenLock();
+    /** Toggle screen lock inhibition.
+     *  @param explanation A human-readable explanation on why the screen lock is inhibited.
+     *  (not used on all platforms).
+     */
+    void toggleInhibitScreenLock(const QString &explanation);
 private:
     LockBackend *m_backend;
     bool m_inhibit;

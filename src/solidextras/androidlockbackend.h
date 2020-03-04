@@ -30,7 +30,7 @@ public:
     virtual ~AndroidLockBackend();
 
     void setInhibitionOff() override;
-    void setInhibitionOn() override;
+    void setInhibitionOn(const QString &explanation) override;
 };
 
 #endif //  ANDROIDBRIGHTNESSBACKEND_H

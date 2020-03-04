@@ -23,6 +23,5 @@ target_link_libraries(SolidExtras PUBLIC Qt5::Core)
 if (ANDROID)
     target_link_libraries(SolidExtras PRIVATE Qt5::AndroidExtras)
 else()
-    # TODO i18n code needs to move to the user code
-    target_link_libraries(SolidExtras PRIVATE Qt5::DBus KF5::I18n)
+    target_link_libraries(SolidExtras PRIVATE Qt5::DBus)
 endif()

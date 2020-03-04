@@ -38,7 +38,7 @@ LockManager::LockManager(QObject *parent)
 
 LockManager::~LockManager() = default;
 
-void LockManager::toggleInhibitScreenLock()
+void LockManager::toggleInhibitScreenLock(const QString &explanation)
 {
     if (!m_backend)
         return;
@@ -46,7 +46,7 @@ void LockManager::toggleInhibitScreenLock()
     if (m_inhibit) {
         m_backend->setInhibitionOff();
     } else {
-        m_backend->setInhibitionOn();
+        m_backend->setInhibitionOn(explanation);
     }
     m_inhibit = !m_inhibit;
 }
