@@ -97,6 +97,17 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     return loc;
 }
 
+QString PublicTransport::lineIcon(const QVariant &line)
+{
+    using namespace KPublicTransport;
+    const auto l = line.value<Line>();
+    const auto logo = l.logo();
+    if (!logo.isEmpty()) {
+        return logo;
+    }
+    return lineModeIcon(l.mode());
+}
+
 QString PublicTransport::lineModeIcon(int lineMode)
 {
     using namespace KPublicTransport;
@@ -239,6 +250,7 @@ QVariant PublicTransport::departureRequestForPlace(const QVariant &place, const 
     KPublicTransport::DepartureRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
     req.setStop(PublicTransport::locationFromPlace(place, {}));
+    req.setDownloadAssets(true);
     return QVariant::fromValue(req);
 }
 

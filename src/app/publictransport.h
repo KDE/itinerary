@@ -73,6 +73,13 @@ public:
     /** Checks if the given reservation and journey section have a compatible mode of transportation. */
     static bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
 
+    /** Provide an icon source for usage in Kirigami.Icon that represents the line mode.
+     *  This can be an official line logo, and official product logo or a generic mode icon,
+     *  depending on what's available.
+     *  @note line/product logos are full-color, the generic ones are monochrome colorable Breeze icons.
+     */
+    Q_INVOKABLE QString lineIcon(const QVariant &line);
+
     /** Convert a KPublicTransport::Line::Mode enum value to an icon source or name
      *  for usage in Kirigami.Icon.
      */
