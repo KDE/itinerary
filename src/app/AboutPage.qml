@@ -48,6 +48,13 @@ Kirigami.Page {
             url: "https://www.wikidata.org/"
         }
         ListElement {
+            name: "OpenStreetMap"
+            copyright: "© OpenStreetMap contributors"
+            licenseId: "ODbL-1.0"
+            licenseName: "Open Data Commons Open Database License"
+            url: "https://www.openstreetmap.org/"
+        }
+        ListElement {
             name: "OpenSSL"
             copyright: "© 1998-2018 The OpenSSL Project"
             licenseId: "OpenSSL"
