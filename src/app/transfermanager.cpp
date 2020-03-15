@@ -517,6 +517,7 @@ KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(cons
     req.setTo(transfer.to());
     req.setDateTime(transfer.journeyTime());
     req.setDateTimeMode(transfer.alignment() == Transfer::Before ? JourneyRequest::Arrival : JourneyRequest::Departure);
+    req.setDownloadAssets(true);
     return req;
 }
 
