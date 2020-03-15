@@ -32,7 +32,7 @@ RowLayout {
             source: {
                 switch (modelData.mode) {
                     case JourneySection.PublicTransport:
-                        return PublicTransport.lineModeIcon(modelData.route.line.mode);
+                        return PublicTransport.lineIcon(modelData.route.line);
                     case JourneySection.Walking: return "qrc:///images/walk.svg";
                     case JourneySection.Waiting: return "qrc:///images/wait.svg";
                     case JourneySection.Transfer: return "qrc:///images/transfer.svg";
@@ -40,10 +40,10 @@ RowLayout {
                 }
             }
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-            width: Kirigami.Units.iconSizes.small
-            height: width
-            isMask: true
-            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            width: isMask ? height : implicitWidth
+            height: Kirigami.Units.iconSizes.small
+            isMask: modelData.mode != JourneySection.PublicTransport || !modelData.route.line.hasLogo
+            Layout.preferredWidth: width
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
         }
     }
