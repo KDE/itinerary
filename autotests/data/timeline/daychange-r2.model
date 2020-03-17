@@ -55,7 +55,8 @@
                     },
                     "flightNumber": "9668"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Wednesday, 1/4/17",
@@ -136,7 +137,8 @@
                     },
                     "flightNumber": "900"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Wednesday, 1/4/17",

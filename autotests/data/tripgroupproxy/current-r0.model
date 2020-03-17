@@ -89,7 +89,8 @@
                     },
                     "flightNumber": "963"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Sunday, 9/10/17",
@@ -172,6 +173,7 @@
                     "trainName": "IC",
                     "trainNumber": "816"
                 },
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "reservedTicket": {
                     "@type": "Ticket",
                     "ticketToken": "aztecCode:i0CVXXX007123456789xxxx01/01/1970xxxxxxxxxxxxxxx24/090011223344556677889            DOE                 JOHN                  00000",
@@ -242,7 +244,8 @@
                     },
                     "trainName": "R",
                     "trainNumber": "241"
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Sunday, 9/10/17",
@@ -282,6 +285,7 @@
                         "timezone": "Europe/Zurich"
                     }
                 },
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "underName": {
                     "@type": "Person",
                     "name": "Dr Konqui"
@@ -326,7 +330,8 @@
                     },
                     "name": "Haus Randa",
                     "url": "https://randa-meetings.ch/"
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Sunday, 9/10/17",
@@ -375,7 +380,8 @@
                         "@value": "2017-09-13T14:00:00+02:00",
                         "timezone": "Europe/Zurich"
                     }
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Wednesday, 9/13/17",
@@ -448,6 +454,7 @@
                     },
                     "name": "Raclette"
                 },
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "startTime": {
                     "@type": "QDateTime",
                     "@value": "2017-09-14T19:00:00+02:00",
@@ -493,7 +500,8 @@
                     },
                     "name": "Haus Randa",
                     "url": "https://randa-meetings.ch/"
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Friday, 9/15/17",
@@ -555,7 +563,8 @@
                     },
                     "trainName": "R",
                     "trainNumber": "250"
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Friday, 9/15/17",
@@ -618,7 +627,8 @@
                     },
                     "trainName": "IC",
                     "trainNumber": "827"
-                }
+                },
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Friday, 9/15/17",
@@ -687,7 +697,8 @@
                     },
                     "flightNumber": "962"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Friday, 9/15/17",

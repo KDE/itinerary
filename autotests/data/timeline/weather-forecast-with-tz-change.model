@@ -53,7 +53,8 @@
                     },
                     "flightNumber": "1234"
                 },
-                "reservationNumber": "XXX006"
+                "reservationNumber": "XXX006",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Tuesday, 10/17/95",
@@ -226,7 +227,8 @@
                     },
                     "flightNumber": "1438"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Wednesday, 10/16/96",
@@ -310,7 +312,8 @@
                     },
                     "name": "Some Hotel in Finland"
                 },
-                "reservationNumber": "YYY008"
+                "reservationNumber": "YYY008",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Wednesday, 10/16/96",
@@ -344,7 +347,8 @@
                     },
                     "name": "Some Hotel in Finland"
                 },
-                "reservationNumber": "YYY008"
+                "reservationNumber": "YYY008",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Thursday, 10/17/96",
@@ -456,7 +460,8 @@
                     },
                     "flightNumber": "1435"
                 },
-                "reservationNumber": "XXX007"
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
         "sectionHeader": "Thursday, 10/17/96",

@@ -116,6 +116,7 @@
                     "flightNumber": "2037"
                 },
                 "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "underName": {
                     "@type": "Person",
                     "name": "Traveler One"
@@ -174,6 +175,7 @@
                     "flightNumber": "2037"
                 },
                 "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "underName": {
                     "@type": "Person",
                     "name": "Traveler Two"
@@ -240,6 +242,7 @@
                     "flightNumber": "9440"
                 },
                 "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "underName": {
                     "@type": "Person",
                     "name": "Traveler One"
@@ -298,6 +301,7 @@
                     "flightNumber": "9440"
                 },
                 "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed",
                 "underName": {
                     "@type": "Person",
                     "name": "Traveler Two"
