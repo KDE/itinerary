@@ -71,6 +71,9 @@ class TimelineDelegateController : public QObject
     /** Inbound connection is unlikely to work. */
     Q_PROPERTY(bool connectionWarning READ connectionWarning NOTIFY connectionWarningChanged)
 
+    /** Reservation has been canceled (by user or provider, we usually don't know which). */
+    Q_PROPERTY(bool isCanceled READ isCanceled NOTIFY contentChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -100,6 +103,7 @@ public:
     Q_INVOKABLE void applyJourney(const QVariant &journey);
 
     bool connectionWarning() const;
+    bool isCanceled() const;
 
 Q_SIGNALS:
     void setupChanged();

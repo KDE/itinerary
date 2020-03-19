@@ -270,6 +270,11 @@ void StatisticsModel::recompute()
             isPrev = dt.date() < m_begin;
         }
 
+        // don't count canceled reservations
+        if (JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled) {
+            continue;
+        }
+
         if (LocationUtil::isLocationChange(res)) {
             computeStats(res, isPrev ? m_prevStatData : m_statData);
         } else if (JsonLd::isA<LodgingReservation>(res)) {

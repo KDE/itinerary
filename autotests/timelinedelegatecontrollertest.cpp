@@ -69,6 +69,7 @@ private Q_SLOTS:
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
         QVERIFY(!controller.journeyRequest().isValid());
+        QCOMPARE(controller.isCanceled(), false);
 
         controller.setBatchId(QStringLiteral("foo"));
         QCOMPARE(controller.isCurrent(), false);
@@ -76,6 +77,7 @@ private Q_SLOTS:
         QCOMPARE(controller.effectiveEndTime(), QDateTime());
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
+        QCOMPARE(controller.isCanceled(), false);
 
         ReservationManager mgr;
         controller.setReservationManager(&mgr);
@@ -84,6 +86,7 @@ private Q_SLOTS:
         QCOMPARE(controller.effectiveEndTime(), QDateTime());
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
+        QCOMPARE(controller.isCanceled(), false);
     }
 
     void testProgress()
@@ -111,6 +114,7 @@ private Q_SLOTS:
         QCOMPARE(controller.progress(), 0.0f);
         QCOMPARE(controller.isLocationChange(), true);
         QCOMPARE(controller.isPublicTransport(), true);
+        QCOMPARE(controller.isCanceled(), false);
 
         trip.setArrivalTime(QDateTime::currentDateTime().addDays(1));
         res.setReservationFor(trip);
@@ -227,6 +231,19 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(updateSpy.size(), 0);
         QCOMPARE(rmSpy.size(), 3);
+    }
+
+    void testCancel()
+    {
+        ReservationManager mgr;
+        clearReservations(&mgr);
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+
+        TimelineDelegateController controller;
+        controller.setReservationManager(&mgr);
+        controller.setBatchId(mgr.batches().at(0));
+        QCOMPARE(controller.isCanceled(), true);
+        QCOMPARE(controller.connectionWarning(), false);
     }
 };
 

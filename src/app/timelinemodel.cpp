@@ -85,6 +85,10 @@ static GeoCoordinates geoCoordinate(const QVariant &res)
     return LocationUtil::geo(LocationUtil::location(res));
 }
 
+static bool isCanceled(const QVariant &res)
+{
+    return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+}
 
 TimelineModel::TimelineModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -477,6 +481,10 @@ void TimelineModel::updateInformationElements()
             continue;
         }
         const auto res = m_resMgr->reservation((*it).batchId());
+        if (isCanceled(res)) {
+            ++it;
+            continue;
+        }
 
         auto newCountry = homeCountry;
         newCountry.setIsoCode(destinationCountry(res));
@@ -524,9 +532,11 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
         const auto res = m_resMgr->reservation((*it).batchId());
-        const auto newGeo = geoCoordinate(res);
-        if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
-            geo = newGeo;
+        if (!isCanceled(res)) {
+            const auto newGeo = geoCoordinate(res);
+            if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
+                geo = newGeo;
+            }
         }
 
         ++it;
@@ -555,9 +565,11 @@ void TimelineModel::updateWeatherElements()
                 continue;
             }
             const auto res = m_resMgr->reservation((*it).batchId());
-            const auto newGeo = geoCoordinate(res);
-            if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
-                geo = newGeo;
+            if (!isCanceled(res)) {
+                const auto newGeo = geoCoordinate(res);
+                if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
+                    geo = newGeo;
+                }
             }
 
             ++it;

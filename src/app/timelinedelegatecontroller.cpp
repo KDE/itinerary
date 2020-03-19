@@ -504,4 +504,17 @@ bool TimelineDelegateController::connectionWarning() const
     return curDepDt < prevArrDt;
 }
 
+bool TimelineDelegateController::isCanceled() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return false;
+    }
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    if (!JsonLd::canConvert<Reservation>(res)) {
+        return false;
+    }
+    return JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+}
+
 #include "moc_timelinedelegatecontroller.cpp"

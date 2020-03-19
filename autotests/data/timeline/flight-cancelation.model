@@ -1,0 +1,86 @@
+[
+    {
+        "isToday": true,
+        "isTodayEmpty": true,
+        "rangeType": 0,
+        "sectionHeader": "Today",
+        "type": 1
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "FlightReservation",
+                "modifiedTime": "1996-05-01T08:30:00-08:00",
+                "potentialAction": [
+                    {
+                        "@type": "CheckInAction",
+                        "target": "http://united.com/onlinecheckin.html"
+                    },
+                    {
+                        "@type": "UpdateAction",
+                        "target": "http://united.com/modifyreservation.html"
+                    }
+                ],
+                "reservationFor": {
+                    "@type": "Flight",
+                    "airline": {
+                        "@type": "Airline",
+                        "iataCode": "UA",
+                        "name": "United"
+                    },
+                    "arrivalAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 40.63970184326172,
+                            "longitude": -73.77890014648438
+                        },
+                        "iataCode": "JFK",
+                        "name": "John F. Kennedy International Airport"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-17T06:30:00-04:00",
+                        "timezone": "America/New_York"
+                    },
+                    "departureAirport": {
+                        "@type": "Airport",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "US"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 37.618900299072266,
+                            "longitude": -122.375
+                        },
+                        "iataCode": "SFO",
+                        "name": "San Francisco Airport"
+                    },
+                    "departureDay": "1996-10-16",
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "1996-10-16T20:15:00-07:00",
+                        "timezone": "America/Los_Angeles"
+                    },
+                    "flightNumber": "110"
+                },
+                "reservationNumber": "RXJ34P",
+                "reservationStatus": "http://schema.org/ReservationCancelled",
+                "underName": {
+                    "@type": "Person",
+                    "name": "Eva Green"
+                }
+            }
+        ],
+        "sectionHeader": "Wednesday, 10/16/96",
+        "type": 6
+    }
+]

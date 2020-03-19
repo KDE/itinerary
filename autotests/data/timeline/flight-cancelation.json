@@ -1,0 +1,35 @@
+[{
+  "internal-comment": "sample from https://developers.google.com/gmail/markup/reference/flight-reservation#cancel_a_flight",
+  "@context": "http://schema.org",
+  "@type": "FlightReservation",
+  "reservationNumber": "RXJ34P",
+  "reservationStatus": "http://schema.org/Cancelled",
+  "underName": {
+    "@type": "Person",
+    "name": "Eva Green"
+  },
+  "reservationFor": {
+    "@type": "Flight",
+    "flightNumber": "110",
+    "airline": {
+      "@type": "Airline",
+      "name": "United",
+      "iataCode": "UA"
+    },
+    "departureAirport": {
+      "@type": "Airport",
+      "name": "San Francisco Airport",
+      "iataCode": "SFO"
+    },
+    "departureTime": "1996-10-16T20:15:00-07:00",
+    "arrivalAirport": {
+      "@type": "Airport",
+      "name": "John F. Kennedy International Airport",
+      "iataCode": "JFK"
+    },
+    "arrivalTime": "1996-10-16T06:30:00-04:00"
+  },
+  "checkinUrl": "http://united.com/onlinecheckin.html",
+  "modifiedTime": "1996-05-01T08:30:00-08:00",
+  "modifyReservationUrl": "http://united.com/modifyreservation.html"
+}]
