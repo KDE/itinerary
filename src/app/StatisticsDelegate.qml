@@ -27,6 +27,7 @@ RowLayout {
     property var statItem
 
     Kirigami.FormData.label: root.statItem.label
+    Layout.fillWidth: true
 
     Kirigami.Icon {
         source: root.statItem.trend == StatisticsItem.TrendUp ? "go-up-symbolic" : root.statItem.trend == StatisticsItem.TrendDown ? "go-down-symbolic" : "go-next-symbolic"
@@ -37,6 +38,8 @@ RowLayout {
     }
 
     QQC2.Label {
+        Layout.fillWidth: true
         text: root.statItem.value
+        wrapMode: Text.Wrap
     }
 }

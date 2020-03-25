@@ -21,6 +21,8 @@
 #include <QDate>
 #include <QObject>
 
+#include <set>
+
 class ReservationManager;
 class TripGroupManager;
 
@@ -60,6 +62,7 @@ class StatisticsModel : public QObject
     Q_PROPERTY(StatisticsItem totalDistance READ totalDistance NOTIFY changed)
     Q_PROPERTY(StatisticsItem totalNights READ totalNights NOTIFY changed)
     Q_PROPERTY(StatisticsItem totalCO2 READ totalCO2 NOTIFY changed)
+    Q_PROPERTY(StatisticsItem visitedCountries READ visitedCountries NOTIFY changed)
 
     Q_PROPERTY(StatisticsItem flightCount READ flightCount NOTIFY changed)
     Q_PROPERTY(StatisticsItem flightDistance READ flightDistance NOTIFY changed)
@@ -95,6 +98,7 @@ public:
     StatisticsItem totalDistance() const;
     StatisticsItem totalNights() const;
     StatisticsItem totalCO2() const;
+    StatisticsItem visitedCountries() const;
 
     StatisticsItem flightCount() const;
     StatisticsItem flightDistance() const;
@@ -134,13 +138,14 @@ private:
     StatisticsItem::Trend trend(int current, int prev) const;
     StatisticsItem::Trend trend(AggregateType type, StatType stat) const;
 
+    std::set<QString> m_countries;
+
     int m_statData[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT];
     int m_prevStatData[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT];
     int m_hotelCount = 0;
     int m_prevHotelCount = 0;
     int m_tripGroupCount = 0;
     int m_prevTripGroupCount = 0;
-
 };
 
 #endif // STATISTICSMODEL_H

@@ -16,6 +16,8 @@
 */
 
 #include "statisticsmodel.h"
+#include "locationhelper.h"
+#include "localizer.h"
 #include "reservationmanager.h"
 #include "tripgroupmanager.h"
 
@@ -118,6 +120,16 @@ StatisticsItem StatisticsModel::totalNights() const
 StatisticsItem StatisticsModel::totalCO2() const
 {
     return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Total][CO2]), trend(Total, CO2));
+}
+
+StatisticsItem StatisticsModel::visitedCountries() const
+{
+    QStringList l;
+    l.reserve(m_countries.size());
+    std::transform(m_countries.begin(), m_countries.end(), std::back_inserter(l), [](const auto &iso) {
+        return Localizer().countryFlag(iso);
+    });
+    return StatisticsItem(i18n("Visited countries"), l.join(QLatin1Char(' ')), StatisticsItem::TrendUnknown);
 }
 
 StatisticsItem StatisticsModel::flightCount() const
@@ -242,6 +254,7 @@ void StatisticsModel::recompute()
     memset(m_prevStatData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
     m_hotelCount = 0;
     m_prevHotelCount = 0;
+    m_countries.clear();
 
     if (!m_resMgr || !m_tripGroupMgr) {
         return;
@@ -289,6 +302,13 @@ void StatisticsModel::recompute()
         const auto tgId = m_tripGroupMgr->tripGroupIdForReservation(batchId);
         if (!tgId.isEmpty()) {
             isPrev ? prevTripGroups.insert(tgId) : tripGroups.insert(tgId);
+        }
+
+        if (!isPrev) {
+            auto c = LocationHelper::departureCountry(res);
+            if (!c.isEmpty()) m_countries.insert(c);
+            c = LocationHelper::destinationCountry(res);
+            if (!c.isEmpty()) m_countries.insert(c);
         }
     }
 

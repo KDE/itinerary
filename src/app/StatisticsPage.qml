@@ -38,6 +38,7 @@ Kirigami.ScrollablePage {
     }
 
     Kirigami.FormLayout {
+        width: parent.width
 
         QQC2.ComboBox {
             Kirigami.FormData.isSection: true
@@ -57,6 +58,7 @@ Kirigami.ScrollablePage {
         StatisticsDelegate { statItem: model.totalDistance }
         StatisticsDelegate { statItem: model.totalNights }
         StatisticsDelegate { statItem: model.totalCO2 }
+        StatisticsDelegate { statItem: model.visitedCountries }
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

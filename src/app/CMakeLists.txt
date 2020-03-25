@@ -13,6 +13,8 @@ set(itinerary_srcs
     favoritelocationmodel.cpp
     json.cpp
     livedatamanager.cpp
+    localizer.cpp
+    locationhelper.cpp
     locationinformation.cpp
     navigationcontroller.cpp
     pkpassmanager.cpp
@@ -45,6 +47,7 @@ target_link_libraries(itinerary PUBLIC
     KPim::Itinerary
     KPim::PkPass
     KF5::I18n
+    KF5::Contacts
     KF5::CoreAddons
     Qt5::Network
     Qt5::Quick
@@ -63,7 +66,6 @@ set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
     documentsmodel.cpp
-    localizer.cpp
     settings.cpp
     tickettokenmodel.cpp
     weatherforecastmodel.cpp
@@ -74,7 +76,6 @@ add_executable(itinerary-app ${itinerary_app_srcs})
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    KF5::Contacts
     Qt5::QuickControls2
 )
 if (ANDROID)

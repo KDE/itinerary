@@ -16,6 +16,7 @@
 */
 
 #include "timelinemodel.h"
+#include "locationhelper.h"
 #include "locationinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
@@ -61,14 +62,6 @@ static bool needsSplitting(const QVariant &res)
 
     return JsonLd::isA<LodgingReservation>(res)
         || JsonLd::isA<RentalCarReservation>(res);
-}
-
-static QString destinationCountry(const QVariant &res)
-{
-    if (LocationUtil::isLocationChange(res)) {
-        return LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
-    }
-    return LocationUtil::address(LocationUtil::location(res)).addressCountry();
 }
 
 static QTimeZone destinationTimeZone(const QVariant &res)
@@ -487,7 +480,7 @@ void TimelineModel::updateInformationElements()
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode(destinationCountry(res));
+        newCountry.setIsoCode(LocationHelper::destinationCountry(res));
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(destinationTimeZone(res), (*it).dt);
         if (newCountry == previousCountry) {
