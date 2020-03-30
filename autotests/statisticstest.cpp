@@ -72,7 +72,7 @@ private Q_SLOTS:
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-cancelation.json"))); // canceled flight, should not change stats
+        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
 
         stats.setTimeRange({}, {});
         QVERIFY(!changeSpy.isEmpty());
