@@ -89,7 +89,7 @@ private Q_SLOTS:
 //         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
 //         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
 
-        QCOMPARE(addSpy.size(), 4); // to/from home, and one inbetween
+        QCOMPARE(addSpy.size() - removeSpy.size(), 4); // to/from home, and one inbetween
 
         auto batchId = resMgr.batches().at(0);
         auto transfer = mgr.transfer(batchId, Transfer::Before);

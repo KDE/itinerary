@@ -18,6 +18,8 @@
 #ifndef RESERVATIONMANAGER_H
 #define RESERVATIONMANAGER_H
 
+#include <KItinerary/ExtractorValidator>
+
 #include <QHash>
 #include <QObject>
 #include <QVariant>
@@ -115,7 +117,11 @@ private:
     void updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes);
     void removeFromBatch(const QString &resId, const QString &batchId);
 
+    QVector<QString> applyPartialUpdate(const QVariant &res);
+
     mutable QHash<QString, QVariant> m_reservations;
+
+    KItinerary::ExtractorValidator m_validator;
 
     std::vector<QString> m_batches;
     QHash<QString, QStringList> m_batchToResMap; // ### QStringList for direct consumption by QML

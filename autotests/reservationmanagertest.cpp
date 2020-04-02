@@ -338,6 +338,42 @@ private Q_SLOTS:
         QCOMPARE(mgr.reservationsForBatch(batchId).size(), 0);
         QCOMPARE(mgr.batchForReservation(batchId), QString());
     }
+
+    void testCancellation()
+    {
+        ReservationManager mgr;
+        clearReservations(&mgr);
+        QCOMPARE(mgr.batches().size(), 0);
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        QCOMPARE(mgr.batches().size(), 11);
+
+        auto res = mgr.reservation(mgr.batches().at(0));
+        QCOMPARE(JsonLd::convert<Reservation>(res).reservationStatus(), Reservation::ReservationConfirmed);
+        res = mgr.reservation(mgr.batches().at(10));
+        QVERIFY(JsonLd::canConvert<Reservation>(res));
+        QCOMPARE(JsonLd::convert<Reservation>(res).reservationStatus(), Reservation::ReservationConfirmed);
+
+        QSignalSpy batchAddSpy(&mgr, &ReservationManager::batchAdded);
+        QSignalSpy batchChangeSpy(&mgr, &ReservationManager::batchChanged);
+        QSignalSpy batchContentSpy(&mgr, &ReservationManager::batchContentChanged);
+        QSignalSpy batchRenameSpy(&mgr, &ReservationManager::batchRenamed);
+        QSignalSpy batchRemovedSpy(&mgr, &ReservationManager::batchRemoved);
+
+        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017-flight-cancellation.json")));
+        QCOMPARE(mgr.batches().size(), 11);
+        QCOMPARE(batchAddSpy.size(), 0);
+        QCOMPARE(batchChangeSpy.size(), 0);
+        QCOMPARE(batchContentSpy.size(), 2);
+        QCOMPARE(batchRenameSpy.size(), 0);
+        QCOMPARE(batchRemovedSpy.size(), 0);
+
+        res = mgr.reservation(mgr.batches().at(0));
+        QVERIFY(JsonLd::canConvert<Reservation>(res));
+        QCOMPARE(JsonLd::convert<Reservation>(res).reservationStatus(), Reservation::ReservationCancelled);
+        res = mgr.reservation(mgr.batches().at(10));
+        QVERIFY(JsonLd::canConvert<Reservation>(res));
+        QCOMPARE(JsonLd::convert<Reservation>(res).reservationStatus(), Reservation::ReservationCancelled);
+    }
 };
 
 QTEST_GUILESS_MAIN(ReservationManagerTest)

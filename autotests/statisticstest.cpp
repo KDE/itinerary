@@ -110,7 +110,7 @@ private Q_SLOTS:
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
 
         item = stats.carCount();
-        QCOMPARE(item.m_value, QLatin1String("1"));
+        QCOMPARE(item.m_value, QLatin1String("0"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
 
         changeSpy.clear();

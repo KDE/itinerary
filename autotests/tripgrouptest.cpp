@@ -107,7 +107,7 @@ private Q_SLOTS:
             QCOMPARE(addSpy.size(), 3);
             QCOMPARE(mgr.tripGroup(addSpy.at(0).at(0).toString()).elements().size(), 2);
             QCOMPARE(mgr.tripGroup(addSpy.at(1).at(0).toString()).elements().size(), 2);
-            QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 12);
+            QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 11);
         }
 
         clearReservations(&resMgr);

@@ -3,7 +3,7 @@
         "@context": "http://schema.org",
         "@type": "FlightReservation",
         "airplaneSeat": "15F",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "Flight",
             "airline": {
@@ -54,7 +54,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "TrainTrip",
             "arrivalPlatform": "7",
@@ -117,7 +117,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "TrainTrip",
             "arrivalStation": {
@@ -170,7 +170,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TaxiReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "partySize": 1,
         "pickupLocation": {
             "@type": "Place",
@@ -199,7 +199,7 @@
         "@type": "LodgingReservation",
         "checkinTime": "2017-09-10T15:00:00+02:00",
         "checkoutTime": "2017-09-15T10:00:00+02:00",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "LodgingBusiness",
             "address": {
@@ -222,7 +222,7 @@
     {
         "@context": "http://schema.org",
         "@type": "EventReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationStatus": "http://schema.org/Confirmed",
         "underName": {
             "@type": "Person",
@@ -254,7 +254,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BusReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "BusTrip",
             "arrivalStation": {
@@ -308,7 +308,7 @@
         "@context": "http://schema.org",
         "@type": "FoodEstablishmentReservation",
         "endTime": "2017-09-14T22:00:00+02:00",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "partySize": 20,
         "reservationStatus": "http://schema.org/Confirmed",
         "reservationFor": {
@@ -333,7 +333,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "TrainTrip",
             "arrivalPlatform": "3",
@@ -386,7 +386,7 @@
     {
         "@context": "http://schema.org",
         "@type": "TrainReservation",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "TrainTrip",
             "arrivalPlatform": "2",
@@ -441,7 +441,7 @@
         "@context": "http://schema.org",
         "@type": "FlightReservation",
         "airplaneSeat": "10E",
-        "modifiedTime": "2020-01-22T00:00:00",
+        "modifiedTime": "2017-06-22T00:00:00",
         "reservationFor": {
             "@type": "Flight",
             "airline": {

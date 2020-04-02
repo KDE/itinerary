@@ -1,0 +1,9 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "FlightReservation",
+        "modifiedTime": "2017-08-22T00:00:00",
+        "reservationNumber": "XXX007",
+        "reservationStatus": "ReservationCancelled"
+    }
+]
