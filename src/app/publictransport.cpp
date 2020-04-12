@@ -105,6 +105,10 @@ QString PublicTransport::lineIcon(const QVariant &line)
     if (!logo.isEmpty()) {
         return logo;
     }
+    const auto modeLogo = l.modeLogo();
+    if (!modeLogo.isEmpty()) {
+        return modeLogo;
+    }
     return lineModeIcon(l.mode());
 }
 

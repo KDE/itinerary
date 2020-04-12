@@ -65,7 +65,7 @@ Kirigami.AbstractListItem {
 
         // middle row: mode symbol, transport mode, duration
         Rectangle {
-            color: (modelData.route.line.hasColor && !modelData.route.line.hasLogo) ? modelData.route.line.color : "transparent"
+            color: (modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
             implicitWidth: modeIcon.width
             Layout.alignment: Qt.AlignHCenter
@@ -84,9 +84,9 @@ Kirigami.AbstractListItem {
                     }
                 }
                 color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
-                width: (modelData.mode == JourneySection.PublicTransport && modelData.route.line.hasLogo) ? implicitWidth : height
+                width: (modelData.mode == JourneySection.PublicTransport && modelData.route.line.hasLogo && modeDAta.route.line.hasModeLogo) ? implicitWidth : height
                 height: parent.height
-                isMask: modelData.mode != JourneySection.PublicTransport || !modelData.route.line.hasLogo
+                isMask: modelData.mode != JourneySection.PublicTransport || !modelData.route.line.hasLogo || !modelData.route.line.hasModeLogo
             }
         }
         QQC2.Label {

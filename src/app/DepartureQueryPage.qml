@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
 
                 // middle row: mode symbol, transport mode, duration
                 Rectangle {
-                    color: (departure.route.line.hasColor && !departure.route.line.hasLogo) ? departure.route.line.color : "transparent"
+                    color: (departure.route.line.hasColor && modeIcon.isMask) ? departure.route.line.color : "transparent"
                     implicitHeight: Kirigami.Units.iconSizes.smallMedium
                     implicitWidth: modeIcon.width
                     Layout.alignment: Qt.AlignHCenter
@@ -89,9 +89,9 @@ Kirigami.ScrollablePage {
                         anchors.centerIn: parent
                         source: PublicTransport.lineIcon(departure.route.line);
                         color: departure.route.line.hasTextColor ? departure.route.line.textColor : Kirigami.Theme.textColor
-                        width: departure.route.line.hasLogo ? implicitWidth : height
+                        width: (departure.route.line.hasLogo || departure.route.line.hasModeLogo) ? implicitWidth : height
                         height: parent.height
-                        isMask: !departure.route.line.hasLogo
+                        isMask: !departure.route.line.hasLogo && !departure.route.line.hasModeLogo
                     }
                 }
                 QQC2.Label {
