@@ -84,9 +84,9 @@ Kirigami.AbstractListItem {
                     }
                 }
                 color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
-                width: (modelData.mode == JourneySection.PublicTransport && modelData.route.line.hasLogo && modeDAta.route.line.hasModeLogo) ? implicitWidth : height
+                width: !isMask ? implicitWidth : height
                 height: parent.height
-                isMask: modelData.mode != JourneySection.PublicTransport || !modelData.route.line.hasLogo || !modelData.route.line.hasModeLogo
+                isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
             }
         }
         QQC2.Label {

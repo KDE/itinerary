@@ -42,7 +42,7 @@ RowLayout {
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
             width: isMask ? height : implicitWidth
             height: Kirigami.Units.iconSizes.small
-            isMask: modelData.mode != JourneySection.PublicTransport || !modelData.route.line.hasLogo || !modelData.route.line.hasModeLogo
+            isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
             Layout.preferredWidth: width
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
         }
