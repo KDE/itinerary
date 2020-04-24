@@ -21,8 +21,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55970001220703,
-                            "longitude": 13.287799835205078
+                            "latitude": 52.55390167236328,
+                            "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
                         "name": "Tegel"
@@ -40,8 +40,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 50.03329849243164,
-                            "longitude": 8.570560455322266
+                            "latitude": 50.051300048828125,
+                            "longitude": 8.571749687194824
                         },
                         "iataCode": "FRA"
                     },
@@ -75,8 +75,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 11,
             "symbolIconName": "weather-few-clouds",
@@ -92,8 +92,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -109,8 +109,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 16,
             "symbolIconName": "weather-few-clouds",
@@ -163,8 +163,8 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
-                "latitude": 52.55970001220703,
-                "longitude": 13.287799835205078,
+                "latitude": 52.55390167236328,
+                "longitude": 13.29319953918457,
                 "name": "Tegel"
             },
             "toName": "Tegel"
@@ -194,8 +194,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 60.31719970703125,
-                            "longitude": 24.963300704956055
+                            "latitude": 60.31639862060547,
+                            "longitude": 24.969100952148438
                         },
                         "iataCode": "HEL",
                         "name": "Helsinki-Vantaa"
@@ -213,8 +213,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55970001220703,
-                            "longitude": 13.287799835205078
+                            "latitude": 52.55390167236328,
+                            "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
                         "name": "Tegel"
@@ -251,8 +251,8 @@
             "floatingLocationType": "Reservation",
             "from": {
                 "@type": "Location",
-                "latitude": 60.31719970703125,
-                "longitude": 24.963300704956055,
+                "latitude": 60.31639862060547,
+                "longitude": 24.969100952148438,
                 "name": "Helsinki-Vantaa"
             },
             "fromName": "Helsinki-Vantaa",
@@ -275,8 +275,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 60.31719970703125,
-            "minimumTemperature": 24.963300704956055,
+            "maximumTemperature": 60.31639862060547,
+            "minimumTemperature": 24.969100952148438,
             "precipitation": 23,
             "range": 3,
             "symbolIconName": "weather-few-clouds-night",
@@ -362,8 +362,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 60.31719970703125,
-            "minimumTemperature": 24.963300704956055,
+            "maximumTemperature": 60.31639862060547,
+            "minimumTemperature": 24.969100952148438,
             "precipitation": 23,
             "range": 18,
             "symbolIconName": "weather-few-clouds",
@@ -396,8 +396,8 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
-                "latitude": 60.31719970703125,
-                "longitude": 24.963300704956055,
+                "latitude": 60.31639862060547,
+                "longitude": 24.969100952148438,
                 "name": "Helsinki-Vantaa"
             },
             "toName": "Helsinki-Vantaa"
@@ -427,8 +427,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55970001220703,
-                            "longitude": 13.287799835205078
+                            "latitude": 52.55390167236328,
+                            "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
                         "name": "Tegel"
@@ -446,8 +446,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 60.31719970703125,
-                            "longitude": 24.963300704956055
+                            "latitude": 60.31639862060547,
+                            "longitude": 24.969100952148438
                         },
                         "iataCode": "HEL",
                         "name": "Helsinki-Vantaa"
@@ -484,8 +484,8 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
-                "latitude": 52.55970001220703,
-                "longitude": 13.287799835205078,
+                "latitude": 52.55390167236328,
+                "longitude": 13.29319953918457,
                 "name": "Tegel"
             },
             "fromName": "Tegel",
@@ -528,8 +528,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 5,
             "symbolIconName": "weather-few-clouds-night",
@@ -545,8 +545,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -562,8 +562,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -579,8 +579,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -596,8 +596,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -613,8 +613,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
@@ -630,8 +630,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55970001220703,
-            "minimumTemperature": 13.287799835205078,
+            "maximumTemperature": 52.55390167236328,
+            "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
             "symbolIconName": "weather-few-clouds",
