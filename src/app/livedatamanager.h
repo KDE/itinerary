@@ -32,7 +32,6 @@ class TrainTrip;
 }
 
 namespace KPublicTransport {
-class Departure;
 class Manager;
 }
 
