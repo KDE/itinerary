@@ -24,10 +24,10 @@
 #include <KItinerary/Ticket>
 
 #include <KPublicTransport/Attribution>
-#include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
+#include <KPublicTransport/StopoverRequest>
 
 #include <QDateTime>
 #include <QDebug>
@@ -249,13 +249,13 @@ bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::Jo
     return false;
 }
 
-QVariant PublicTransport::departureRequestForPlace(const QVariant &place, const QDateTime &dt) const
+KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const
 {
-    KPublicTransport::DepartureRequest req;
+    KPublicTransport::StopoverRequest req;
     req.setDateTime(std::max(dt, QDateTime::currentDateTime()));
     req.setStop(PublicTransport::locationFromPlace(place, {}));
     req.setDownloadAssets(true);
-    return QVariant::fromValue(req);
+    return req;
 }
 
 QString PublicTransport::attributionSummary(const QVariantList& attributions) const

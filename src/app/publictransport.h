@@ -28,6 +28,7 @@
 
 namespace KPublicTransport {
 class JourneySection;
+class StopoverRequest;
 }
 
 /** Utilities to interface with KPublicTransport. */
@@ -85,8 +86,8 @@ public:
      */
     Q_INVOKABLE QString lineModeIcon(int lineMode);
 
-    /** Create a KPublicTransport::DepartureRequest for the given KItinerary place. */
-    Q_INVOKABLE QVariant departureRequestForPlace(const QVariant &place, const QDateTime &dt) const;
+    /** Create a KPublicTransport::StopoverRequest for the given KItinerary place. */
+    Q_INVOKABLE KPublicTransport::StopoverRequest stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const;
 
     /** Produces a short summary of the given attribution information. */
     Q_INVOKABLE QString attributionSummary(const QVariantList &attributions) const;

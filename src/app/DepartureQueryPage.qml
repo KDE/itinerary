@@ -30,10 +30,10 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Departures")
 
-    DepartureQueryModel {
+    StopoverQueryModel {
         id: departureModel
         manager: LiveDataManager.publicTransportManager
-        request: PublicTransport.departureRequestForPlace(stop, dateTime)
+        request: PublicTransport.stopoverRequestForPlace(stop, dateTime)
     }
 
     Component {
