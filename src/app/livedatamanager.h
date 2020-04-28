@@ -119,6 +119,11 @@ private:
     QHash <QString, TrainChange> m_departures;
 
     QTimer m_pollTimer;
+
+    // date/time overrides for unit testing
+    friend class LiveDataManagerTest;
+    QDateTime now() const;
+    QDateTime m_unitTestTime;
 };
 
 #endif // LIVEDATAMANAGER_H

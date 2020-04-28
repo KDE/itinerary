@@ -223,7 +223,7 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
 {
     const auto oldArr = m_arrivals.value(resId).change;
-    m_arrivals.insert(resId, {arr, QDateTime::currentDateTimeUtc()});
+    m_arrivals.insert(resId, {arr, now()});
     storePublicTransportData(resId, arr, QStringLiteral("arrival"));
 
     // check if we can update static information in the reservation with what we received
@@ -264,7 +264,7 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
 void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
 {
     const auto oldDep = m_departures.value(resId).change;
-    m_departures.insert(resId, {dep, QDateTime::currentDateTimeUtc()});
+    m_departures.insert(resId, {dep, now()});
     storePublicTransportData(resId, dep, QStringLiteral("departure"));
 
     // check if we can update static information in the reservation with what we received
@@ -357,12 +357,12 @@ QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res
 
 bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) const
 {
-    return departureTime(resId, res) < QDateTime::currentDateTime();
+    return departureTime(resId, res) < now();
 }
 
 bool LiveDataManager::hasArrived(const QString &resId, const QVariant &res) const
 {
-    return arrivalTime(resId, res) < QDateTime::currentDateTime();
+    return arrivalTime(resId, res) < now();
 }
 
 void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange> &data) const
@@ -547,7 +547,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
 {
     const auto res = m_resMgr->reservation(resId);
 
-    const auto now = QDateTime::currentDateTime();
+    const auto now = this->now();
     auto dist = now.secsTo(departureTime(resId, res));
     if (dist < 0) {
         dist = now.secsTo(arrivalTime(resId, res));
@@ -617,6 +617,14 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
 KPublicTransport::Manager* LiveDataManager::publicTransportManager() const
 {
     return m_ptMgr;
+}
+
+QDateTime LiveDataManager::now() const
+{
+    if (Q_UNLIKELY(m_unitTestTime.isValid())) {
+        return m_unitTestTime;
+    }
+    return QDateTime::currentDateTime();
 }
 
 #include "moc_livedatamanager.cpp"

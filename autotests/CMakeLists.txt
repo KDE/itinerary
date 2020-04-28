@@ -16,6 +16,7 @@ ecm_add_test(documentmanagertest.cpp TEST_NAME documentmanagertest LINK_LIBRARIE
 ecm_add_test(statisticstest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(favoritelocationtest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(transfertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
+ecm_add_test(livedatamanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt5::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
