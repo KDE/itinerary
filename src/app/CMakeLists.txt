@@ -11,6 +11,7 @@ set(itinerary_srcs
     applicationcontroller.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
+    importexport.cpp
     json.cpp
     livedatamanager.cpp
     localizer.cpp

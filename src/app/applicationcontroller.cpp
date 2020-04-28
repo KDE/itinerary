@@ -18,6 +18,7 @@
 #include "applicationcontroller.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "importexport.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
@@ -356,52 +357,14 @@ void ApplicationController::exportToFile(const QString &filePath)
         return;
     }
 
-    // export reservation data
-    for (const auto &batchId : m_resMgr->batches()) {
-        const auto resIds = m_resMgr->reservationsForBatch(batchId);
-        for (const auto &resId : resIds) {
-            f.addReservation(resId, m_resMgr->reservation(resId));
-        }
-    }
-
-    // export passes
-    const auto passIds = m_pkPassMgr->passes();
-    for (const auto &passId : passIds) {
-        f.addPass(passId, m_pkPassMgr->rawData(passId));
-    }
-
-    // export documents
-    const auto docIds = m_docMgr->documents();
-    for (const auto &docId : docIds) {
-        const auto fileName = m_docMgr->documentFilePath(docId);
-        QFile file(fileName);
-        if (!file.open(QFile::ReadOnly)) {
-            qCWarning(Log) << "failed to open" << fileName << "for exporting" << file.errorString();
-            continue;
-        }
-        f.addDocument(docId, m_docMgr->documentInfo(docId), file.readAll());
-    }
-
-    // export transfer elements
-    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
-    for (const auto &batchId : m_resMgr->batches()) {
-        auto t = m_transferMgr->transfer(batchId, Transfer::Before);
-        if (t.state() != Transfer::UndefinedState) {
-            f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
-        }
-        t = m_transferMgr->transfer(batchId, Transfer::After);
-        if (t.state() != Transfer::UndefinedState) {
-            f.addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
-        }
-    }
-
-    // export favorite locations
-    if (m_favLocModel->rowCount() > 0) {
-        f.addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
-                        QJsonDocument(FavoriteLocation::toJson(m_favLocModel->favoriteLocations())).toJson());
-    }
-
-    // TODO export settings
+    Exporter exporter(&f);
+    exporter.exportReservations(m_resMgr);
+    exporter.exportPasses(m_pkPassMgr);
+    exporter.exportDocuments(m_docMgr);
+    exporter.exportFavoriteLocations(m_favLocModel);
+    exporter.exportTransfers(m_resMgr, m_transferMgr);
+//     exporter.exportLiveData(...); // TODO
+    exporter.exportSettings();
 }
 
 void ApplicationController::importBundle(const QUrl &url)
@@ -433,29 +396,14 @@ void ApplicationController::importBundle(const QByteArray &data)
 
 void ApplicationController::importBundle(KItinerary::File *file)
 {
-    const auto resIds = file->reservations();
-    for (const auto &resId : resIds) {
-        m_resMgr->addReservation(file->reservation(resId));
-    }
-
-    const auto passIds = file->passes();
-    for (const auto &passId : passIds) {
-        m_pkPassMgr->importPassFromData(file->passData(passId));
-    }
-
-    const auto docIds = file->documents();
-    for (const auto &docId : docIds) {
-        m_docMgr->addDocument(docId, file->documentInfo(docId), file->documentData(docId));
-    }
-
-    // import transfers
-    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
-    for (const auto &batchId : m_resMgr->batches()) {
-        auto t = Transfer::fromJson(QJsonDocument::fromJson(file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
-        m_transferMgr->importTransfer(t);
-        t = Transfer::fromJson(QJsonDocument::fromJson(file->customData(transferDomain, Transfer::identifier(batchId, Transfer::After))).object());
-        m_transferMgr->importTransfer(t);
-    }
+    Importer importer(file);
+    importer.importReservations(m_resMgr);
+    importer.importPasses(m_pkPassMgr);
+    importer.importDocuments(m_docMgr);
+    importer.importFavoriteLocations(m_favLocModel);
+    importer.importTransfers(m_resMgr, m_transferMgr);
+//     importer.importLiveData(...); TODO
+    importer.importSettings();
 
     // favorite locations
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
