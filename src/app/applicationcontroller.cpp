@@ -363,7 +363,7 @@ void ApplicationController::exportToFile(const QString &filePath)
     exporter.exportDocuments(m_docMgr);
     exporter.exportFavoriteLocations(m_favLocModel);
     exporter.exportTransfers(m_resMgr, m_transferMgr);
-//     exporter.exportLiveData(...); // TODO
+    exporter.exportLiveData();
     exporter.exportSettings();
 }
 

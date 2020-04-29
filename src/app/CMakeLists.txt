@@ -13,6 +13,7 @@ set(itinerary_srcs
     favoritelocationmodel.cpp
     importexport.cpp
     json.cpp
+    livedata.cpp
     livedatamanager.cpp
     localizer.cpp
     locationhelper.cpp

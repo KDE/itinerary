@@ -15,6 +15,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
+#include <livedata.h>
 #include <livedatamanager.h>
 #include <reservationmanager.h>
 
@@ -24,6 +25,8 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTimeZone>
+
+#define s(x) QStringLiteral(x)
 
 class LiveDataManagerTest : public QObject
 {
@@ -52,10 +55,37 @@ private Q_SLOTS:
         QStandardPaths::setTestModeEnabled(true);
     }
 
+    void testPersistence()
+    {
+        LiveData::clearStorage();
+        QCOMPARE(LiveData::listAll(), std::vector<QString>());
+
+        {
+            LiveData ld;
+            ld.departure.setScheduledDepartureTime({{2017, 9, 10}, {11, 0}});
+            ld.departureTimestamp = {{ 2017, 1, 1} , {0, 0}};
+            ld.store(s("testId"), LiveData::Departure);
+        }
+
+        QCOMPARE(LiveData::listAll(), std::vector<QString>({ s("testId") }));
+
+        {
+            auto ld = LiveData::load(s("testId"));
+            QCOMPARE(ld.departure.scheduledDepartureTime(), QDateTime({2017, 9, 10}, {11, 0}));
+            QCOMPARE(ld.departureTimestamp, QDateTime({2017, 1, 1}, {0, 0}));
+            QVERIFY(!ld.arrivalTimestamp.isValid());
+            ld.departure = {};
+            ld.store(s("testId"), LiveData::AllTypes);
+        }
+
+        QCOMPARE(LiveData::listAll(), std::vector<QString>());
+    }
+
     void testLiveData()
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        LiveData::clearStorage();
 
         LiveDataManager ldm;
         ldm.setPollingEnabled(false); // we don't want to trigger network requests here

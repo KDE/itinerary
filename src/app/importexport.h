@@ -40,7 +40,7 @@ public:
     void exportDocuments(const DocumentManager *docMgr);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
     void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
-    void exportLiveData(const LiveDataManager *liveDataMgr);
+    void exportLiveData();
     void exportSettings();
 
 private:

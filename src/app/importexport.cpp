@@ -19,6 +19,7 @@
 
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "livedata.h"
 #include "livedatamanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
@@ -104,12 +105,22 @@ void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)
     }
 }
 
-void Exporter::exportLiveData(const LiveDataManager *liveDataMgr)
+void Exporter::exportLiveData()
 {
-    // TODO
-}
+    for (const auto &id : LiveData::listAll()) {
+        const auto ld = LiveData::load(id);
 
-#include <unistd.h>
+        QJsonObject obj;
+        obj.insert(QStringLiteral("departure"), KPublicTransport::Stopover::toJson(ld.departure));
+        obj.insert(QStringLiteral("departureTimestamp"), ld.departureTimestamp.toString(Qt::ISODate));
+        obj.insert(QStringLiteral("arrival"), KPublicTransport::Stopover::toJson(ld.arrival));
+        obj.insert(QStringLiteral("arrivalTimestamp"), ld.arrivalTimestamp.toString(Qt::ISODate));
+        obj.insert(QStringLiteral("journey"), KPublicTransport::JourneySection::toJson(ld.journey));
+        obj.insert(QStringLiteral("journeyTimestamp"), ld.journeyTimestamp.toString(Qt::ISODate));
+
+        m_file->addCustomData(QStringLiteral("org.kde.itinerary/live-data"), id, QJsonDocument(obj).toJson());
+    }
+}
 
 void Exporter::exportSettings()
 {
