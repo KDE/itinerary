@@ -54,8 +54,8 @@ public:
 
     void setPollingEnabled(bool pollingEnabled);
 
-    KPublicTransport::Departure arrival(const QString &resId);
-    KPublicTransport::Departure departure(const QString &resId);
+    KPublicTransport::Stopover arrival(const QString &resId);
+    KPublicTransport::Stopover departure(const QString &resId);
 
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */
@@ -73,7 +73,7 @@ private:
     void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &resId);
 
-    void checkTrainTrip(const QVariant &res, const QString &resId);
+    void checkReservation(const QVariant &res, const QString &resId);
 
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);

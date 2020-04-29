@@ -234,19 +234,26 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     return res;
 }
 
-bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section)
+bool PublicTransport::isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
 
     if (KItinerary::JsonLd::isA<KItinerary::TrainReservation>(res)) {
-        return isTrainMode(section.route().line().mode());
+        return isTrainMode(mode);
     } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(res)) {
-        return isBusMode(section.route().line().mode());
+        return isBusMode(mode);
+    } else if (KItinerary::JsonLd::isA<KItinerary::FlightReservation>(res)) {
+        return mode == Line::Air;
     } else if (res.isValid()) {
         qCWarning(Log) << "unexpected reservation type!?" << res;
     }
 
     return false;
+}
+
+bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section)
+{
+    return isSameMode(res, section.route().line().mode());
 }
 
 KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const

@@ -25,6 +25,7 @@
 #include <KItinerary/Place>
 
 #include <KPublicTransport/Location>
+#include <KPublicTransport/Line>
 
 namespace KPublicTransport {
 class JourneySection;
@@ -72,6 +73,7 @@ public:
     static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
 
     /** Checks if the given reservation and journey section have a compatible mode of transportation. */
+    static bool isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode);
     static bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
 
     /** Provide an icon source for usage in Kirigami.Icon that represents the line mode.

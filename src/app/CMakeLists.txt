@@ -22,6 +22,7 @@ set(itinerary_srcs
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     publictransport.cpp
+    reservationhelper.cpp
     reservationmanager.cpp
     statisticsmodel.cpp
     statisticstimerangemodel.cpp

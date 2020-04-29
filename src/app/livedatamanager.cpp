@@ -20,6 +20,7 @@
 #include "livedatamanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
 
@@ -30,10 +31,10 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/TrainTrip>
 
-#include <KPublicTransport/DepartureReply>
-#include <KPublicTransport/DepartureRequest>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
+#include <KPublicTransport/StopoverReply>
+#include <KPublicTransport/StopoverRequest>
 
 #ifdef HAVE_NOTIFICATIONS
 #include <KNotifications/KNotification>
@@ -113,12 +114,12 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
     }
 }
 
-KPublicTransport::Departure LiveDataManager::arrival(const QString &resId)
+KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId)
 {
     return m_arrivals.value(resId).change;
 }
 
-KPublicTransport::Departure LiveDataManager::departure(const QString &resId)
+KPublicTransport::Stopover LiveDataManager::departure(const QString &resId)
 {
     return m_departures.value(resId).change;
 }
@@ -136,46 +137,31 @@ static bool isSameLine(const KPublicTransport::Line &lhs, const QString &trainNa
     return KPublicTransport::Line::isSame(lhs, rhs);
 }
 
-static bool isDepartureForReservation(const QVariant &res, const KPublicTransport::Departure &dep)
+static bool isDepartureForReservation(const QVariant &res, const KPublicTransport::Stopover &dep)
 {
-    if (JsonLd::isA<TrainReservation>(res)) {
-        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        return dep.scheduledDepartureTime() == trip.departureTime() && isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber());
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
-        return dep.scheduledDepartureTime() == trip.departureTime() && isSameLine(dep.route().line(), trip.busName(), trip.busNumber());
-    }
-
-    return false;
+    const auto lineData = ReservationHelper::lineNameAndNumber(res);
+    return PublicTransport::isSameMode(res, dep.route().line().mode())
+        && SortUtil::startDateTime(res) == dep.scheduledDepartureTime()
+        && isSameLine(dep.route().line(), lineData.first, lineData.second);
 }
 
-static bool isArrivalForReservation(const QVariant &res, const KPublicTransport::Departure &dep)
+static bool isArrivalForReservation(const QVariant &res, const KPublicTransport::Stopover &arr)
 {
-    if (JsonLd::isA<TrainReservation>(res)) {
-        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        return dep.scheduledArrivalTime() == trip.arrivalTime() && isSameLine(dep.route().line(), trip.trainName(), trip.trainNumber());
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
-        return dep.scheduledArrivalTime() == trip.arrivalTime() && isSameLine(dep.route().line(), trip.busName(), trip.busNumber());
-    }
-
-    return false;
+    const auto lineData = ReservationHelper::lineNameAndNumber(res);
+    return PublicTransport::isSameMode(res, arr.route().line().mode())
+        && SortUtil::endDateTime(res) == arr.scheduledArrivalTime()
+        && isSameLine(arr.route().line(), lineData.first, lineData.second);
 }
 
-void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
+void LiveDataManager::checkReservation(const QVariant &res, const QString& resId)
 {
-    Q_ASSERT(JsonLd::isA<TrainReservation>(res));
-    const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-
-    qCDebug(Log) << trip.trainName() << trip.trainNumber() << trip.departureTime();
     using namespace KPublicTransport;
 
     if (!hasDeparted(resId, res)) {
-        DepartureRequest req(PublicTransport::locationFromPlace(trip.departureStation(), res));
-        req.setDateTime(trip.departureTime());
-        auto reply = m_ptMgr->queryDeparture(req);
+        StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
+        req.setMode(StopoverRequest::QueryDeparture);
+        req.setDateTime(SortUtil::startDateTime(res));
+        auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
             reply->deleteLater();
             if (reply->error() != Reply::NoError) {
@@ -196,10 +182,10 @@ void LiveDataManager::checkTrainTrip(const QVariant &res, const QString& resId)
     }
 
     if (!hasArrived(resId, res)) {
-        DepartureRequest req(PublicTransport::locationFromPlace(trip.arrivalStation(), res));
-        req.setMode(DepartureRequest::QueryArrival);
-        req.setDateTime(trip.arrivalTime());
-        auto reply = m_ptMgr->queryDeparture(req);
+        StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
+        req.setMode(StopoverRequest::QueryArrival);
+        req.setDateTime(SortUtil::endDateTime(res));
+        auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
             reply->deleteLater();
             if (reply->error() != Reply::NoError) {
@@ -508,7 +494,7 @@ void LiveDataManager::pollForUpdates(bool force)
         }
 
         if (JsonLd::isA<TrainReservation>(res)) {
-            checkTrainTrip(res, batchId);
+            checkReservation(res, batchId);
         }
 
         // check for pkpass updates, for each element in this batch
