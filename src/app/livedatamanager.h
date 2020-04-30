@@ -35,6 +35,7 @@ class TrainTrip;
 }
 
 namespace KPublicTransport {
+class JourneySection;
 class Manager;
 class StopoverReply;
 }
@@ -62,6 +63,11 @@ public:
 
     KPublicTransport::Stopover arrival(const QString &resId) const;
     KPublicTransport::Stopover departure(const QString &resId) const;
+
+    /** Sets journey data for a given reservation.
+     *  Used to retain live data from alternative journey selections for example.
+     */
+    void setJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
 
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */

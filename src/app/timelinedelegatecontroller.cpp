@@ -461,11 +461,13 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
                 auto res = m_resMgr->reservation(resId);
                 res = PublicTransport::applyJourneySection(res, section);
                 m_resMgr->updateReservation(resId, res);
+                m_liveDataMgr->setJourney(resId, section);
             }
             ++it;
         } else {
             const auto res = PublicTransport::reservationFromJourneySection(section);
-            m_resMgr->addReservation(res);
+            const auto resId = m_resMgr->addReservation(res);
+            m_liveDataMgr->setJourney(resId, section);
         }
     }
 

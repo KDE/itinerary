@@ -119,6 +119,21 @@ KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) cons
     return data(resId).departure;
 }
 
+void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
+{
+    auto &ld = data(resId);
+    ld.journey = journey;
+    ld.journeyTimestamp = now();
+    ld.departure = journey.departure();
+    ld.departureTimestamp = now();
+    ld.arrival = journey.arrival();
+    ld.arrivalTimestamp = now();
+    ld.store(resId, LiveData::AllTypes);
+
+    emit departureUpdated(resId);
+    emit arrivalUpdated(resId);
+}
+
 void LiveDataManager::checkForUpdates()
 {
     pollForUpdates(true);

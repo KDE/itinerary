@@ -16,6 +16,7 @@
 */
 
 #include <timelinedelegatecontroller.h>
+#include <livedatamanager.h>
 #include <reservationmanager.h>
 
 #include <KItinerary/Reservation>
@@ -200,10 +201,14 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         clearReservations(&mgr);
+        LiveData::clearStorage();
+        LiveDataManager ldm;
+        ldm.setReservationManager(&mgr);
         mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
+        controller.setLiveDataManager(&ldm);
         controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the return train trip
         QCOMPARE(controller.isPublicTransport(), true);
         const auto batchCount = mgr.batches().size();
@@ -219,6 +224,7 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 3);
         QCOMPARE(updateSpy.size(), 0); // as we move beyond other elements, we get add/remove rather than updated here
         QCOMPARE(rmSpy.size(), 2);
+        QCOMPARE(LiveData::listAll().size(), 3);
 
         // apply alternative with 2 segments to test segment removal
         controller.setBatchId(mgr.batches().at(mgr.batches().size() - 3)); // begin of the new 3 segment train trip
@@ -231,6 +237,7 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(updateSpy.size(), 0);
         QCOMPARE(rmSpy.size(), 3);
+        QCOMPARE(LiveData::listAll().size(), 2);
     }
 
     void testCancel()
