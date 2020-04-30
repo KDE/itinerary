@@ -54,8 +54,8 @@ public:
 
     void setPollingEnabled(bool pollingEnabled);
 
-    KPublicTransport::Stopover arrival(const QString &resId);
-    KPublicTransport::Stopover departure(const QString &resId);
+    KPublicTransport::Stopover arrival(const QString &resId) const;
+    KPublicTransport::Stopover departure(const QString &resId) const;
 
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */

@@ -110,12 +110,12 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
     }
 }
 
-KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId)
+KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
     return m_arrivals.value(resId).change;
 }
 
-KPublicTransport::Stopover LiveDataManager::departure(const QString &resId)
+KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) const
 {
     return m_departures.value(resId).change;
 }
@@ -312,7 +312,7 @@ void LiveDataManager::removeDepartureData(const QString &resId)
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
-        const auto &dep = m_departures.value(resId).change;
+        const auto &dep = departure(resId);
         if (dep.hasExpectedDepartureTime()) {
             return dep.expectedDepartureTime();
         }
@@ -324,7 +324,7 @@ QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &r
 QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
-        const auto &arr = m_arrivals.value(resId).change;
+        const auto &arr = arrival(resId);
         if (arr.hasExpectedArrivalTime()) {
             return arr.expectedArrivalTime();
         }
