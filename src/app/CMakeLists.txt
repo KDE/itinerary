@@ -1,10 +1,3 @@
-if (TARGET KF5::Notifications)
-    set(HAVE_NOTIFICATIONS TRUE)
-endif()
-if (${KPimItinerary_VERSION} VERSION_GREATER 5.13.40)
-    set(HAVE_KITINERARY_WITH_VERSION_HEADER TRUE)
-endif()
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.in ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
 set(itinerary_srcs
@@ -52,12 +45,10 @@ target_link_libraries(itinerary PUBLIC
     KF5::I18n
     KF5::Contacts
     KF5::CoreAddons
+    KF5::Notifications
     Qt5::Network
     Qt5::Quick
 )
-if (TARGET KF5::Notifications)
-    target_link_libraries(itinerary PUBLIC KF5::Notifications)
-endif()
 
 if (Qt5QuickCompiler_FOUND)
     qtquick_compiler_add_resources(qml_srcs qml.qrc)

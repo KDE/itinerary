@@ -15,8 +15,6 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-#include "config-itinerary.h"
-
 #include "livedatamanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
@@ -36,9 +34,7 @@
 #include <KPublicTransport/StopoverReply>
 #include <KPublicTransport/StopoverRequest>
 
-#ifdef HAVE_NOTIFICATIONS
 #include <KNotifications/KNotification>
-#endif
 
 #include <KLocalizedString>
 
@@ -235,7 +231,6 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
         return;
     }
 
-#ifdef HAVE_NOTIFICATIONS
     // check if something worth notifying changed
     // ### we could do that even more clever by skipping distant future changes
     if (std::abs(oldArr.arrivalDelay() - arr.arrivalDelay()) > 2) {
@@ -244,7 +239,6 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
             i18n("New arrival time is: %1", QLocale().toString(arr.expectedArrivalTime().time())),
             QLatin1String("clock"));
     }
-#endif
 }
 
 void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
@@ -276,7 +270,6 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
         return;
     }
 
-#ifdef HAVE_NOTIFICATIONS
     // check if something worth notifying changed
     // ### we could do that even more clever by skipping distant future changes
     if (std::abs(oldDep.departureDelay() - dep.departureDelay()) > 2) {
@@ -292,7 +285,6 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
             i18n("New departure platform is: %1", dep.expectedPlatform()),
             QLatin1String("clock"));
     }
-#endif
 }
 
 void LiveDataManager::removeArrivalData(const QString &resId)
@@ -594,9 +586,7 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
     // ### to provide more context, we need to have a passId -> batchId map here eventually
 
     if (!changes.isEmpty()) {
-#ifdef HAVE_NOTIFICATIONS
         KNotification::event(KNotification::Notification, i18n("Itinerary change"), changes.join(QLatin1Char('\n')), QLatin1String("clock"));
-#endif
     }
 }
 
