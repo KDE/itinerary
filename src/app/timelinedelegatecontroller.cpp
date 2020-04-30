@@ -191,7 +191,7 @@ float TimelineDelegateController::progress() const
     return std::min(std::max(0.0f, (float)progress / (float)tripLength), 1.0f);
 }
 
-KPublicTransport::Departure TimelineDelegateController::arrival() const
+KPublicTransport::Stopover TimelineDelegateController::arrival() const
 {
     if (!m_liveDataMgr || m_batchId.isEmpty()) {
         return {};
@@ -199,7 +199,7 @@ KPublicTransport::Departure TimelineDelegateController::arrival() const
     return m_liveDataMgr->arrival(m_batchId);
 }
 
-KPublicTransport::Departure TimelineDelegateController::departure() const
+KPublicTransport::Stopover TimelineDelegateController::departure() const
 {
     if (!m_liveDataMgr || m_batchId.isEmpty()) {
         return {};
