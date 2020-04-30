@@ -12,6 +12,7 @@ set(itinerary_srcs
     locationhelper.cpp
     locationinformation.cpp
     navigationcontroller.cpp
+    notificationhelper.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     publictransport.cpp
