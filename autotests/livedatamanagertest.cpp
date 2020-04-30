@@ -21,6 +21,8 @@
 
 #include <KPublicTransport/Manager>
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
@@ -90,7 +92,7 @@ private Q_SLOTS:
         LiveDataManager ldm;
         ldm.setPollingEnabled(false); // we don't want to trigger network requests here
         QVERIFY(ldm.publicTransportManager());
-        ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}); // that's in the middle of the first train leg
+        ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}, QTimeZone("Europe/Zurich")); // that's in the middle of the first train leg
         ldm.setReservationManager(&resMgr);
 
         resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
@@ -116,7 +118,23 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
         QCOMPARE(ldm.nextPollTime(), 0);
 
-        // TODO
+        const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
+        ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg1);
+        QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 15 * 60 * 1000); // 15 min in msecs
+
+        // verify this was persisted
+        {
+            LiveDataManager ldm2;
+            QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
+        }
+
+        // failed lookups are recorded to avoid a polling loop
+        ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Departure, trainLeg2);
+        ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg2);
+        QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
+        QEXPECT_FAIL("", "still broken", Continue);
+        QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
     }
 };
 

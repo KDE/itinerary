@@ -158,23 +158,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setMode(StopoverRequest::QueryDeparture);
         req.setDateTime(SortUtil::startDateTime(res));
         auto reply = m_ptMgr->queryStopover(req);
-        connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
-            reply->deleteLater();
-            if (reply->error() != Reply::NoError) {
-                qCDebug(Log) << reply->error() << reply->errorString();
-                return;
-            }
-
-            for (const auto &dep : reply->result()) {
-                qCDebug(Log) << "Got departure information:" << dep.route().line().name() << dep.scheduledDepartureTime();
-                if (!isDepartureForReservation(res, dep)) {
-                    continue;
-                }
-                qCDebug(Log) << "Found departure information:" << dep.route().line().name() << dep.expectedPlatform() << dep.expectedDepartureTime();
-                updateDepartureData(dep, resId);
-                break;
-            }
-        });
+        connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
     }
 
     if (!hasArrived(resId, res)) {
@@ -182,24 +166,38 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setMode(StopoverRequest::QueryArrival);
         req.setDateTime(SortUtil::endDateTime(res));
         auto reply = m_ptMgr->queryStopover(req);
-        connect(reply, &Reply::finished, this, [this, res, resId, reply]() {
-            reply->deleteLater();
-            if (reply->error() != Reply::NoError) {
-                qCDebug(Log) << reply->error() << reply->errorString();
-                return;
-            }
-
-            for (const auto &arr : reply->result()) {
-                qCDebug(Log) << "Got arrival information:" << arr.route().line().name() << arr.scheduledArrivalTime();
-                if (!isArrivalForReservation(res, arr)) {
-                    continue;
-                }
-                qCDebug(Log) << "Found arrival information:" << arr.route().line().name() << arr.expectedPlatform() << arr.expectedDepartureTime();
-                updateArrivalData(arr, resId);
-                break;
-            }
-        });
+        connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Arrival, resId); });
     }
+}
+
+void LiveDataManager::stopoverQueryFinished(KPublicTransport::StopoverReply* reply, LiveData::Type type, const QString& resId)
+{
+    reply->deleteLater();
+    if (reply->error() != KPublicTransport::Reply::NoError) {
+        qCDebug(Log) << reply->error() << reply->errorString();
+        return;
+    }
+    stopoverQueryFinished(reply->takeResult(), type, resId);
+}
+
+void LiveDataManager::stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString& resId)
+{
+    const auto res = m_resMgr->reservation(resId);
+    for (const auto &stop : result) {
+        qCDebug(Log) << "Got stopover information:" << stop.route().line().name() << stop.scheduledDepartureTime();
+        if (type == LiveData::Arrival ? isArrivalForReservation(res, stop) : isDepartureForReservation(res, stop)) {
+            qCDebug(Log) << "Found stopover information:" << stop.route().line().name() << stop.expectedPlatform() << stop.expectedDepartureTime();
+            updateStopoverData(stop, type, resId, res);
+            return;
+        }
+    }
+}
+
+void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
+{
+    // TODO update reservation with live data
+    // TODO emit update signals
+    type == LiveData::Arrival ? updateArrivalData(stop, resId) : updateDepartureData(stop, resId); // ### temporary
 }
 
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)

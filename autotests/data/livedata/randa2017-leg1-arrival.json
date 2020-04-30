@@ -1,0 +1,22 @@
+{
+    "disruptionEffect": "NormalService",
+    "expectedArrivalTime": "2017-09-10T14:04:00+02:00",
+    "expectedPlatform": "6",
+    "route": {
+        "line": {
+            "mode": "LongDistanceTrain",
+            "name": "IC 816"
+        }
+    },
+    "scheduledArrivalTime": "2017-09-10T14:02:00+02:00",
+    "scheduledPlatform": "7",
+    "stopPoint": {
+        "identifier": {
+            "ibnr": "8501605"
+        },
+        "latitude": 46.29399871826172,
+        "locality": "Visp",
+        "longitude": 7.881460189819336,
+        "name": "Visp"
+    }
+}

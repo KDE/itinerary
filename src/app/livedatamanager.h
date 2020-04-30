@@ -18,6 +18,8 @@
 #ifndef LIVEDATAMANAGER_H
 #define LIVEDATAMANAGER_H
 
+#include "livedata.h"
+
 #include <KPublicTransport/Departure>
 
 #include <QDateTime>
@@ -33,6 +35,7 @@ class TrainTrip;
 
 namespace KPublicTransport {
 class Manager;
+class StopoverReply;
 }
 
 class PkPassManager;
@@ -74,7 +77,10 @@ private:
     void batchRemoved(const QString &resId);
 
     void checkReservation(const QVariant &res, const QString &resId);
+    void stopoverQueryFinished(KPublicTransport::StopoverReply *reply, LiveData::Type type, const QString &resId);
+    void stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString &resId);
 
+    void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
     void removeArrivalData(const QString &resId);
