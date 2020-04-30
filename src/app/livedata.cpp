@@ -58,6 +58,28 @@ static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime 
     return QJsonDocument::fromJson(f.readAll()).object();
 }
 
+KPublicTransport::Stopover LiveData::stopover(LiveData::Type type) const
+{
+    assert(type == Arrival || type == Departure);
+    return type == Arrival ? arrival : departure;
+}
+
+void LiveData::setStopover(LiveData::Type type, const KPublicTransport::Stopover &stop)
+{
+    assert(type == Arrival || type == Departure);
+    type == Arrival ? arrival = stop : departure = stop;
+}
+
+void LiveData::setTimestamp(LiveData::Type type, const QDateTime &dt)
+{
+    switch (type) {
+        case LiveData::Departure: departureTimestamp = dt; break;
+        case LiveData::Arrival: arrivalTimestamp = dt; break;
+        case LiveData::Journey: journeyTimestamp = dt; break;
+        default: assert(false);
+    }
+}
+
 LiveData LiveData::load(const QString &resId)
 {
     LiveData ld;
@@ -105,6 +127,13 @@ void LiveData::store(const QString &resId, int types) const
     }
     if (types & Journey) {
         storeOne(resId, Journey, KPublicTransport::JourneySection::toJson(journey), journeyTimestamp);
+    }
+}
+
+void LiveData::remove(const QString& resId)
+{
+    for (auto type : { Departure, Arrival, Journey }) {
+        storeOne(resId, type, {}, {});
     }
 }
 

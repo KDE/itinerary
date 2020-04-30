@@ -17,6 +17,7 @@
 
 #include "livedatamanager.h"
 #include "logging.h"
+#include "notificationhelper.h"
 #include "pkpassmanager.h"
 #include "reservationhelper.h"
 #include "reservationmanager.h"
@@ -68,8 +69,6 @@ LiveDataManager::LiveDataManager(QObject *parent)
 
     m_pollTimer.setSingleShot(true);
     connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
-
-    loadPublicTransportData();
 }
 
 LiveDataManager::~LiveDataManager() = default;
@@ -112,12 +111,12 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
 
 KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
-    return m_arrivals.value(resId).change;
+    return data(resId).arrival;
 }
 
 KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) const
 {
-    return m_departures.value(resId).change;
+    return data(resId).departure;
 }
 
 void LiveDataManager::checkForUpdates()
@@ -191,21 +190,42 @@ void LiveDataManager::stopoverQueryFinished(std::vector<KPublicTransport::Stopov
             return;
         }
     }
+
+    // record this is a failed lookup so we don't try again
+    data(resId).setTimestamp(type, now());
 }
 
 void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
 {
+    auto &ld = data(resId);
+    const auto oldStop = ld.stopover(type);
+    ld.setStopover(type, stop);
+    ld.setTimestamp(type, now());
+    ld.store(resId);
+
     // TODO update reservation with live data
     // TODO emit update signals
     type == LiveData::Arrival ? updateArrivalData(stop, resId) : updateDepartureData(stop, resId); // ### temporary
+
+    // check if we need to notify
+    if (!NotificationHelper::shouldNotify(oldStop, stop, type)) {
+        return;
+    }
+
+    // check if we still have an active notification, if so, update that one
+    const auto it = m_notifications.constFind(resId);
+    if (it == m_notifications.cend()) {
+        auto n = KNotification::event(KNotification::Notification, NotificationHelper::title(ld), NotificationHelper::message(ld), QLatin1String("clock"));
+        m_notifications.insert(resId, n);
+    } else {
+        it.value()->setTitle(NotificationHelper::title(ld));
+        it.value()->setText(NotificationHelper::message(ld));
+        it.value()->update();
+    }
 }
 
 void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
 {
-    const auto oldArr = m_arrivals.value(resId).change;
-    m_arrivals.insert(resId, {arr, now()});
-    storePublicTransportData(resId, arr, QStringLiteral("arrival"));
-
     // check if we can update static information in the reservation with what we received
     const auto res = m_resMgr->reservation(resId);
     if (JsonLd::isA<TrainReservation>(res)) {
@@ -223,28 +243,10 @@ void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, 
     }
 
     emit arrivalUpdated(resId);
-
-    // check if something changed relevant for notifications
-    if (oldArr.arrivalDelay() == arr.arrivalDelay() && oldArr.expectedPlatform() == arr.expectedPlatform()) {
-        return;
-    }
-
-    // check if something worth notifying changed
-    // ### we could do that even more clever by skipping distant future changes
-    if (std::abs(oldArr.arrivalDelay() - arr.arrivalDelay()) > 2) {
-        KNotification::event(KNotification::Notification,
-            i18n("Delayed arrival on %1", arr.route().line().name()),
-            i18n("New arrival time is: %1", QLocale().toString(arr.expectedArrivalTime().time())),
-            QLatin1String("clock"));
-    }
 }
 
 void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
 {
-    const auto oldDep = m_departures.value(resId).change;
-    m_departures.insert(resId, {dep, now()});
-    storePublicTransportData(resId, dep, QStringLiteral("departure"));
-
     // check if we can update static information in the reservation with what we received
     const auto res = m_resMgr->reservation(resId);
     if (JsonLd::isA<TrainReservation>(res)) {
@@ -261,49 +263,6 @@ void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep
         }
     }
 
-    emit departureUpdated(resId);
-
-    // check if something changed relevant for notification
-    if (oldDep.departureDelay() == dep.departureDelay() && oldDep.expectedPlatform() == dep.expectedPlatform()) {
-        return;
-    }
-
-    // check if something worth notifying changed
-    // ### we could do that even more clever by skipping distant future changes
-    if (std::abs(oldDep.departureDelay() - dep.departureDelay()) > 2) {
-        KNotification::event(KNotification::Notification,
-            i18n("Delayed departure on %1", dep.route().line().name()),
-            i18n("New departure time is: %1", QLocale().toString(dep.expectedDepartureTime().time())),
-            QLatin1String("clock"));
-    }
-
-    if (oldDep.expectedPlatform() != dep.expectedPlatform() && dep.scheduledPlatform() != dep.expectedPlatform()) {
-        KNotification::event(KNotification::Notification,
-            i18n("Platform change on %1", dep.route().line().name()),
-            i18n("New departure platform is: %1", dep.expectedPlatform()),
-            QLatin1String("clock"));
-    }
-}
-
-void LiveDataManager::removeArrivalData(const QString &resId)
-{
-    auto arrIt = m_arrivals.find(resId);
-    if (arrIt == m_arrivals.end()) {
-        return;
-    }
-    m_arrivals.erase(arrIt);
-    removePublicTransportData(resId, QStringLiteral("arrival"));
-    emit arrivalUpdated(resId);
-}
-
-void LiveDataManager::removeDepartureData(const QString &resId)
-{
-    auto depIt = m_departures.find(resId);
-    if (depIt == m_departures.end()) {
-        return;
-    }
-    m_departures.erase(depIt);
-    removePublicTransportData(resId, QStringLiteral("departure"));
     emit departureUpdated(resId);
 }
 
@@ -341,48 +300,15 @@ bool LiveDataManager::hasArrived(const QString &resId, const QVariant &res) cons
     return arrivalTime(resId, res) < now();
 }
 
-void LiveDataManager::loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange> &data) const
+LiveData& LiveDataManager::data(const QString &resId) const
 {
-    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/"));
-    QDirIterator it(basePath + prefix, QDir::Files | QDir::NoSymLinks);
-    while (it.hasNext()) {
-        it.next();
-        const auto resId = it.fileInfo().baseName();
-
-        QFile f(it.filePath());
-        if (!f.open(QFile::ReadOnly)) {
-            qCWarning(Log) << "Failed to load public transport file" << f.fileName() << f.errorString();
-            continue;
-        }
-        data.insert(resId, {KPublicTransport::Departure::fromJson(QJsonDocument::fromJson(f.readAll()).object()), f.fileTime(QFile::FileModificationTime)});
+    auto it = m_data.find(resId);
+    if (it != m_data.end()) {
+        return it.value();
     }
-}
 
-void LiveDataManager::loadPublicTransportData()
-{
-    loadPublicTransportData(QStringLiteral("arrival"), m_arrivals);
-    loadPublicTransportData(QStringLiteral("departure"), m_departures);
-}
-
-void LiveDataManager::storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const
-{
-    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/")
-        + type + QLatin1Char('/'));
-    QDir().mkpath(basePath);
-
-    QFile file(basePath + resId + QLatin1String(".json"));
-    if (!file.open(QFile::WriteOnly | QFile::Truncate)) {
-        qCWarning(Log) << "Failed to open public transport cache file:" << file.fileName() << file.errorString();
-        return;
-    }
-    file.write(QJsonDocument(KPublicTransport::Departure::toJson(dep)).toJson());
-}
-
-void LiveDataManager::removePublicTransportData(const QString &resId, const QString &type) const
-{
-    const auto path = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/")
-        + type + QLatin1Char('/') + resId + QLatin1String(".json"));
-    QFile::remove(path);
+    it = m_data.insert(resId, LiveData::load(resId));
+    return it.value();
 }
 
 bool LiveDataManager::isRelevant(const QString &resId) const
@@ -425,13 +351,20 @@ void LiveDataManager::batchChanged(const QString &resId)
 
     // check if existing updates still apply, and remove them otherwise!
     const auto res = m_resMgr->reservation(resId);
-    const auto depIt = m_departures.constFind(resId);
-    if (depIt != m_departures.constEnd() && !isDepartureForReservation(res, depIt.value().change)) {
-        removeDepartureData(resId);
-    }
-    const auto arrIt = m_arrivals.constFind(resId);
-    if (arrIt != m_arrivals.constEnd() && !isArrivalForReservation(res, arrIt.value().change)) {
-        removeArrivalData(resId);
+    const auto dataIt = m_data.find(resId);
+    if (dataIt != m_data.end()) {
+        if (!isDepartureForReservation(res, (*dataIt).departure)) {
+            (*dataIt).departure = {};
+            (*dataIt).departureTimestamp = {};
+            (*dataIt).store(resId, LiveData::Departure);
+            emit departureUpdated(resId);
+        }
+        if (!isArrivalForReservation(res, (*dataIt).arrival)) {
+            (*dataIt).arrival = {};
+            (*dataIt).arrivalTimestamp = {};
+            (*dataIt).store(resId, LiveData::Arrival);
+            emit arrivalUpdated(resId);
+        }
     }
 
     m_pollTimer.setInterval(nextPollTime());
@@ -452,8 +385,9 @@ void LiveDataManager::batchRemoved(const QString &resId)
         m_reservations.erase(it);
     }
 
-    removeArrivalData(resId);
-    removeDepartureData(resId);
+    LiveData::remove(resId);
+    m_data.remove(resId);
+    // TODO remove active notification
 }
 
 void LiveDataManager::poll()
@@ -540,7 +474,8 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
     }
 
     // check last poll time for this reservation
-    const auto lastArrivalPoll = m_arrivals.value(resId).timestamp;
+    const auto &ld = data(resId);
+    const auto lastArrivalPoll = ld.arrivalTimestamp;
     const auto lastDeparturePoll = lastDeparturePollTime(resId, res);
     auto lastRelevantPoll = lastArrivalPoll;
     // ignore departure if we have already departed
@@ -557,7 +492,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
 
 QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const QVariant &res) const
 {
-    auto dt = m_departures.value(batchId).timestamp;
+    auto dt = data(batchId).departureTimestamp;
     if (dt.isValid()) {
         return dt;
     }

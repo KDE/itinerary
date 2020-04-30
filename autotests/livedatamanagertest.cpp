@@ -133,7 +133,6 @@ private Q_SLOTS:
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Departure, trainLeg2);
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg2);
         QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
-        QEXPECT_FAIL("", "still broken", Continue);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
     }
 };

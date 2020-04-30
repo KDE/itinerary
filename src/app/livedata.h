@@ -24,8 +24,6 @@
 #include <QDateTime>
 #include <QHash>
 
-class KNotification;
-
 /** Realttime information about a public transport reservation */
 class LiveData
 {
@@ -38,6 +36,10 @@ public:
         AllTypes = Departure | Arrival | Journey
     };
 
+    KPublicTransport::Stopover stopover(Type type) const;
+    void setStopover(Type type, const KPublicTransport::Stopover &stop);
+    void setTimestamp(Type type, const QDateTime &dt);
+
     KPublicTransport::Stopover departure;
     QDateTime departureTimestamp;
     KPublicTransport::Stopover arrival;
@@ -45,12 +47,12 @@ public:
     KPublicTransport::JourneySection journey;
     QDateTime journeyTimestamp;
 
-    KNotification *notification = nullptr;
-
     /** Load live data for reservation batch with id @resId. */
     static LiveData load(const QString &resId);
     /** Store this data for reservation batch @p resId. */
     void store(const QString &resId, int types = AllTypes) const;
+    /** Removes all stored data for a given id. */
+    static void remove(const QString &resId);
 
     /** List all reservations for which there are stored live data information.
      *  Used for exporting.

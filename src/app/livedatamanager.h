@@ -25,6 +25,7 @@
 #include <QDateTime>
 #include <QHash>
 #include <QObject>
+#include <QPointer>
 #include <QTimer>
 
 #include <vector>
@@ -37,6 +38,8 @@ namespace KPublicTransport {
 class Manager;
 class StopoverReply;
 }
+
+class KNotification;
 
 class PkPassManager;
 class ReservationManager;
@@ -83,8 +86,6 @@ private:
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
     void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
     void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
-    void removeArrivalData(const QString &resId);
-    void removeDepartureData(const QString &resId);
 
     /** Best known departure time. */
     QDateTime departureTime(const QString &resId, const QVariant &res) const;
@@ -95,15 +96,7 @@ private:
     /** Check if the trip @p res has arrived, based on the best knowledge we have. */
     bool hasArrived(const QString &resId, const QVariant &res) const;
 
-    struct TrainChange {
-        KPublicTransport::Departure change;
-        QDateTime timestamp;
-    };
-
-    void storePublicTransportData(const QString &resId, const KPublicTransport::Departure &dep, const QString &type) const;
-    void removePublicTransportData(const QString &resId, const QString &type) const;
-    void loadPublicTransportData();
-    void loadPublicTransportData(const QString &prefix, QHash<QString, TrainChange>& data) const;
+    LiveData& data(const QString &resId) const;
 
     void poll();
     /// @p force will bypass the check if the data is still up to date
@@ -121,8 +114,8 @@ private:
     PkPassManager *m_pkPassMgr;
     KPublicTransport::Manager *m_ptMgr;
     std::vector<QString> m_reservations;
-    QHash <QString, TrainChange> m_arrivals;
-    QHash <QString, TrainChange> m_departures;
+    mutable QHash <QString, LiveData> m_data;
+    QHash<QString, QPointer<KNotification>> m_notifications;
 
     QTimer m_pollTimer;
 
