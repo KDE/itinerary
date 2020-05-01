@@ -27,6 +27,8 @@ class QVariant;
 namespace ReservationHelper
 {
     std::pair<QString, QString> lineNameAndNumber(const QVariant &res);
+
+    bool equals(const QVariant &lhs, const QVariant &rhs);
 }
 
 #endif // RESERVATIONHELPER_H

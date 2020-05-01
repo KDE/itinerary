@@ -19,6 +19,9 @@
 #include <livedatamanager.h>
 #include <reservationmanager.h>
 
+#include <KItinerary/Reservation>
+#include <KItinerary/TrainTrip>
+
 #include <KPublicTransport/Manager>
 
 #include <QJsonDocument>
@@ -29,6 +32,8 @@
 #include <QTimeZone>
 
 #define s(x) QStringLiteral(x)
+
+using namespace KItinerary;
 
 class LiveDataManagerTest : public QObject
 {
@@ -87,9 +92,12 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        QSignalSpy resChangeSpy(&resMgr, &ReservationManager::batchContentChanged);
         LiveData::clearStorage();
 
         LiveDataManager ldm;
+        QSignalSpy arrivalUpdateSpy(&ldm, &LiveDataManager::arrivalUpdated);
+        QSignalSpy departureUpdateSpy(&ldm, &LiveDataManager::departureUpdated);
         ldm.setPollingEnabled(false); // we don't want to trigger network requests here
         QVERIFY(ldm.publicTransportManager());
         ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}, QTimeZone("Europe/Zurich")); // that's in the middle of the first train leg
@@ -117,11 +125,19 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 0); // no current data available, so we want to poll ASAP
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
         QCOMPARE(ldm.nextPollTime(), 0);
+        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
         const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg1);
+        QCOMPARE(arrivalUpdateSpy.size(), 1);
+        QCOMPARE(arrivalUpdateSpy.at(0).at(0).toString(), trainLeg1);
+        QCOMPARE(departureUpdateSpy.size(), 0);
         QCOMPARE(ldm.arrival(trainLeg1).arrivalDelay(), 2);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 15 * 60 * 1000); // 15 min in msecs
+        // reservation was updated with additional location data
+        QCOMPARE(resChangeSpy.size(), 1);
+        QCOMPARE(resChangeSpy.at(0).at(0).toString(), trainLeg1);
+        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QLatin1String("Visp"));
 
         // verify this was persisted
         {

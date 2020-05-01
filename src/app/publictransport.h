@@ -29,6 +29,7 @@
 
 namespace KPublicTransport {
 class JourneySection;
+class Stopover;
 class StopoverRequest;
 }
 
@@ -49,14 +50,8 @@ public:
     template <typename T>
     static T placeFromLocation(const KPublicTransport::Location &loc);
 
-    /** Merge information from @p location into the given train station.
-     *  This assumes both sides refer to the same station, and @p loc merely provides additional information.
-     *  In case of conflict @p station has precedence.
-     */
-    static KItinerary::TrainStation mergeStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc);
-
     /** Applies information from @p location to the given KItinerary place.
-     *  Unlike above, this does not assume both sides refer to the same location, and @p location has precedence.
+     *  Unlike mergeStation(), this does not assume both sides refer to the same location, and @p location has precedence.
      *  Data from @p station is only considered if both sides refer to the same location.
      */
     template <typename T>
@@ -71,6 +66,13 @@ public:
      *  @see isSameMode()
      */
     static QVariant applyJourneySection(const QVariant &res, const KPublicTransport::JourneySection &section);
+
+    /** Update a reservation from a KPublicTransport::Stopover.
+     *  This assumes the stopover matches the departure/arrival of the reservation, and in case
+     *  of conflict, the reservation is preferred.
+     */
+    static QVariant mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep);
+    static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr);
 
     /** Checks if the given reservation and journey section have a compatible mode of transportation. */
     static bool isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode);

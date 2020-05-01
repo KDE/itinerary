@@ -27,6 +27,7 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
+#include <KPublicTransport/Stopover>
 #include <KPublicTransport/StopoverRequest>
 
 #include <QDateTime>
@@ -149,12 +150,6 @@ QString PublicTransport::lineModeIcon(int lineMode)
     return QStringLiteral("question");
 }
 
-KItinerary::TrainStation PublicTransport::mergeStation(const KItinerary::TrainStation &station, const KPublicTransport::Location &loc)
-{
-    using namespace KItinerary;
-    return MergeUtil::merge(placeFromLocation<TrainStation>(loc), station).value<TrainStation>();
-}
-
 static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
 {
     auto seat = ticket.ticketedSeat();
@@ -232,6 +227,58 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
 
     qCWarning(Log) << res.typeName() << "Unsupported section type!";
     return res;
+}
+
+QVariant PublicTransport::mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep)
+{
+    using namespace KItinerary;
+
+    QVariant newRes;
+    if (isTrainMode(dep.route().line().mode())) {
+        TrainTrip trip;
+        trip.setDepartureStation(placeFromLocation<TrainStation>(dep.stopPoint()));
+        trip.setDepartureTime(dep.scheduledDepartureTime());
+        trip.setDeparturePlatform(dep.scheduledPlatform());
+        TrainReservation trainRes;
+        trainRes.setReservationFor(trip);
+        newRes = trainRes;
+    } else if (isBusMode(dep.route().line().mode())) {
+        BusTrip trip;
+        trip.setDepartureBusStop(placeFromLocation<BusStation>(dep.stopPoint()));
+        trip.setDepartureTime(dep.scheduledDepartureTime());
+        trip.setDeparturePlatform(dep.scheduledPlatform());
+        BusReservation busRes;
+        busRes.setReservationFor(trip);
+        newRes = busRes;
+    }
+
+    return MergeUtil::merge(newRes, res);
+}
+
+QVariant PublicTransport::mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr)
+{
+    using namespace KItinerary;
+
+    QVariant newRes;
+    if (isTrainMode(arr.route().line().mode())) {
+        TrainTrip trip;
+        trip.setArrivalStation(placeFromLocation<TrainStation>(arr.stopPoint()));
+        trip.setArrivalTime(arr.scheduledArrivalTime());
+        trip.setArrivalPlatform(arr.scheduledPlatform());
+        TrainReservation trainRes;
+        trainRes.setReservationFor(trip);
+        newRes = trainRes;
+    } else if (isBusMode(arr.route().line().mode())) {
+        BusTrip trip;
+        trip.setArrivalBusStop(placeFromLocation<BusStation>(arr.stopPoint()));
+        trip.setArrivalTime(arr.scheduledArrivalTime());
+        trip.setArrivalPlatform(arr.scheduledPlatform());
+        BusReservation busRes;
+        busRes.setReservationFor(trip);
+        newRes = busRes;
+    }
+
+    return MergeUtil::merge(newRes, res);
 }
 
 bool PublicTransport::isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode)

@@ -20,8 +20,6 @@
 
 #include "livedata.h"
 
-#include <KPublicTransport/Departure>
-
 #include <QDateTime>
 #include <QHash>
 #include <QObject>
@@ -95,8 +93,6 @@ private:
     void stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString &resId);
 
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
-    void updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId);
-    void updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId);
 
     /** Best known departure time. */
     QDateTime departureTime(const QString &resId, const QVariant &res) const;

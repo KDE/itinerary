@@ -41,3 +41,22 @@ std::pair<QString, QString> ReservationHelper::lineNameAndNumber(const QVariant 
 
     return {};
 }
+
+bool ReservationHelper::equals(const QVariant &lhs, const QVariant &rhs)
+{
+    if (lhs.userType() != rhs.userType()) {
+        return false;
+    }
+
+    if (JsonLd::isA<TrainReservation>(lhs)) {
+        return lhs.value<TrainReservation>() == rhs.value<TrainReservation>();
+    }
+    if (JsonLd::isA<BusReservation>(lhs)) {
+        return lhs.value<BusReservation>() == rhs.value<BusReservation>();
+    }
+    if (JsonLd::isA<FlightReservation>(lhs)) {
+        return lhs.value<FlightReservation>() == rhs.value<FlightReservation>();
+    }
+
+    return false;
+}

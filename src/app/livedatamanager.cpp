@@ -218,9 +218,14 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
     ld.setTimestamp(type, now());
     ld.store(resId);
 
-    // TODO update reservation with live data
-    // TODO emit update signals
-    type == LiveData::Arrival ? updateArrivalData(stop, resId) : updateDepartureData(stop, resId); // ### temporary
+    // update reservation with live data
+    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, stop) : PublicTransport::mergeDeparture(res, stop);
+    if (!ReservationHelper::equals(res, newRes)) {
+        m_resMgr->updateReservation(resId, newRes);
+    }
+
+    // emit update signals
+    emit type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
 
     // check if we need to notify
     if (!NotificationHelper::shouldNotify(oldStop, stop, type)) {
@@ -237,48 +242,6 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
         it.value()->setText(NotificationHelper::message(ld));
         it.value()->update();
     }
-}
-
-void LiveDataManager::updateArrivalData(const KPublicTransport::Departure &arr, const QString &resId)
-{
-    // check if we can update static information in the reservation with what we received
-    const auto res = m_resMgr->reservation(resId);
-    if (JsonLd::isA<TrainReservation>(res)) {
-        auto newRes = res.value<TrainReservation>();
-        auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        trip.setArrivalStation(PublicTransport::mergeStation(trip.arrivalStation(), arr.stopPoint()));
-        if (trip.arrivalPlatform().isEmpty() && !arr.scheduledPlatform().isEmpty()) {
-            trip.setArrivalPlatform(arr.scheduledPlatform());
-        }
-        newRes.setReservationFor(trip);
-
-        if (res.value<TrainReservation>() != newRes) {
-            m_resMgr->updateReservation(resId, newRes);
-        }
-    }
-
-    emit arrivalUpdated(resId);
-}
-
-void LiveDataManager::updateDepartureData(const KPublicTransport::Departure &dep, const QString &resId)
-{
-    // check if we can update static information in the reservation with what we received
-    const auto res = m_resMgr->reservation(resId);
-    if (JsonLd::isA<TrainReservation>(res)) {
-        auto newRes = res.value<TrainReservation>();
-        auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
-        trip.setDepartureStation(PublicTransport::mergeStation(trip.departureStation(), dep.stopPoint()));
-        if (trip.departurePlatform().isEmpty() && !dep.scheduledPlatform().isEmpty()) {
-            trip.setDeparturePlatform(dep.scheduledPlatform());
-        }
-        newRes.setReservationFor(trip);
-
-        if (res.value<TrainReservation>() != newRes) {
-            m_resMgr->updateReservation(resId, newRes);
-        }
-    }
-
-    emit departureUpdated(resId);
 }
 
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
@@ -376,13 +339,13 @@ void LiveDataManager::batchChanged(const QString &resId)
     const auto res = m_resMgr->reservation(resId);
     const auto dataIt = m_data.find(resId);
     if (dataIt != m_data.end()) {
-        if (!isDepartureForReservation(res, (*dataIt).departure)) {
+        if ((*dataIt).departureTimestamp.isValid() && !isDepartureForReservation(res, (*dataIt).departure)) {
             (*dataIt).departure = {};
             (*dataIt).departureTimestamp = {};
             (*dataIt).store(resId, LiveData::Departure);
             emit departureUpdated(resId);
         }
-        if (!isArrivalForReservation(res, (*dataIt).arrival)) {
+        if ((*dataIt).arrivalTimestamp.isValid() && !isArrivalForReservation(res, (*dataIt).arrival)) {
             (*dataIt).arrival = {};
             (*dataIt).arrivalTimestamp = {};
             (*dataIt).store(resId, LiveData::Arrival);
