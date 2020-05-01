@@ -326,6 +326,14 @@ LiveData& LiveDataManager::data(const QString &resId) const
     return it.value();
 }
 
+void LiveDataManager::importData(const QString& resId, LiveData &&data)
+{
+    // we don't need to store data, Importer already does that
+    m_data[resId] = std::move(data);
+    emit departureUpdated(resId);
+    emit arrivalUpdated(resId);
+}
+
 bool LiveDataManager::isRelevant(const QString &resId) const
 {
     const auto res = m_resMgr->reservation(resId);

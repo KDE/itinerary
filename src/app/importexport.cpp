@@ -192,7 +192,21 @@ void Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
 
 void Importer::importLiveData(LiveDataManager *liveDataMgr)
 {
-    // TODO
+    const auto ids = m_file->listCustomData(QStringLiteral("org.kde.itinerary/live-data"));
+    for (const auto &id : ids) {
+        const auto obj = QJsonDocument::fromJson(m_file->customData(QStringLiteral("org.kde.itinerary/live-data"), id)).object();
+
+        LiveData ld;
+        ld.departure = KPublicTransport::Stopover::fromJson(obj.value(QLatin1String("departure")).toObject());
+        ld.departureTimestamp = QDateTime::fromString(obj.value(QLatin1String("departureTimestamp")).toString(), Qt::ISODate);
+        ld.arrival = KPublicTransport::Stopover::fromJson(obj.value(QLatin1String("arrival")).toObject());
+        ld.arrivalTimestamp = QDateTime::fromString(obj.value(QLatin1String("arrivalTimestamp")).toString(), Qt::ISODate);
+        ld.journey = KPublicTransport::JourneySection::fromJson(obj.value(QLatin1String("journey")).toObject());
+        ld.journeyTimestamp = QDateTime::fromString(obj.value(QLatin1String("journeyTimestamp")).toString(), Qt::ISODate);
+
+        ld.store(id);
+        liveDataMgr->importData(id, std::move(ld));
+    }
 }
 
 void Importer::importSettings()

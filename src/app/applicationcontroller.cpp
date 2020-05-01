@@ -179,6 +179,11 @@ void ApplicationController::setFavoriteLocationModel(FavoriteLocationModel *favL
     m_favLocModel = favLocModel;
 }
 
+void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
+{
+    m_liveDataMgr = liveDataMgr;
+}
+
 void ApplicationController::importFromClipboard()
 {
     if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
@@ -402,7 +407,7 @@ void ApplicationController::importBundle(KItinerary::File *file)
     importer.importDocuments(m_docMgr);
     importer.importFavoriteLocations(m_favLocModel);
     importer.importTransfers(m_resMgr, m_transferMgr);
-//     importer.importLiveData(...); TODO
+    importer.importLiveData(m_liveDataMgr);
     importer.importSettings();
 
     // favorite locations

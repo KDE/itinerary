@@ -69,6 +69,11 @@ public:
      */
     void setJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
 
+    /** Import a single LiveData element.
+     *  Used by Importer.
+     */
+    void importData(const QString &resId, LiveData &&data);
+
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */
     void checkForUpdates();
