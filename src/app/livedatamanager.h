@@ -72,6 +72,9 @@ public:
      */
     void importData(const QString &resId, LiveData &&data);
 
+    /** Trigger disruption notification, only exposed for testing here. */
+    Q_INVOKABLE void showNotification(const QString &resId);
+
 public Q_SLOTS:
     /** Checks all applicable elements for updates. */
     void checkForUpdates();
@@ -93,6 +96,7 @@ private:
     void stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString &resId);
 
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
+    void showNotification(const QString &resId, const LiveData &ld);
 
     /** Best known departure time. */
     QDateTime departureTime(const QString &resId, const QVariant &res) const;

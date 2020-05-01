@@ -228,13 +228,16 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
     emit type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
 
     // check if we need to notify
-    if (!NotificationHelper::shouldNotify(oldStop, stop, type)) {
-        return;
+    if (NotificationHelper::shouldNotify(oldStop, stop, type)) {
+        showNotification(resId, ld);
     }
+}
 
+void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
+{
     // check if we still have an active notification, if so, update that one
     const auto it = m_notifications.constFind(resId);
-    if (it == m_notifications.cend()) {
+    if (it == m_notifications.cend() || !it.value()) {
         auto n = KNotification::event(KNotification::Notification, NotificationHelper::title(ld), NotificationHelper::message(ld), QLatin1String("clock"));
         m_notifications.insert(resId, n);
     } else {
@@ -242,6 +245,12 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
         it.value()->setText(NotificationHelper::message(ld));
         it.value()->update();
     }
+}
+
+void LiveDataManager::showNotification(const QString &resId)
+{
+    // this is only meant for testing!
+    showNotification(resId, data(resId));
 }
 
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const

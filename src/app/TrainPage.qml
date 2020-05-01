@@ -72,10 +72,19 @@ App.DetailsPage {
             }
         }
     }
+    Component {
+        id: notifyTestAction
+        Kirigami.Action {
+            text: "Test Notification"
+            iconName: "notifications"
+            onTriggered: LiveDataManager.showNotification(root.batchId)
+        }
+    }
 
     Component.onCompleted: {
         actions.contextualActions.push(alternativeAction.createObject(root));
         actions.contextualActions.push(vehicleLayoutAction.createObject(root));
+        //actions.contextualActions.push(notifyTestAction.createObject(root));
     }
 
     ColumnLayout {
