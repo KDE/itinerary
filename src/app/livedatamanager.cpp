@@ -386,7 +386,15 @@ void LiveDataManager::batchRemoved(const QString &resId)
 
     LiveData::remove(resId);
     m_data.remove(resId);
-    // TODO remove active notification
+
+    // remove still active notifications
+    const auto nIt = m_notifications.find(resId);
+    if (nIt != m_notifications.end()) {
+        if (nIt.value()) {
+            nIt.value()->close();
+        }
+        m_notifications.erase(nIt);
+    }
 }
 
 void LiveDataManager::poll()
