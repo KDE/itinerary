@@ -61,6 +61,7 @@ set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
     documentsmodel.cpp
+    notifyrc.qrc
     settings.cpp
     tickettokenmodel.cpp
     weatherforecastmodel.cpp
@@ -164,3 +165,6 @@ install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 ecm_install_icons(ICONS 48-apps-itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
+if (NOT ANDROID)
+    install(FILES itinerary.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+endif()

@@ -1,0 +1,10 @@
+[Global]
+IconName=itinerary
+Name=KDE Itinerary
+Comment=Travel assistance application.
+
+[Event/disruption]
+Name=Disruption
+Comment=A train, bus or flight service you have reserved has disruptions or schedule changes.
+Action=Popup
+Urgency=High

@@ -238,8 +238,12 @@ void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
     // check if we still have an active notification, if so, update that one
     const auto it = m_notifications.constFind(resId);
     if (it == m_notifications.cend() || !it.value()) {
-        auto n = KNotification::event(KNotification::Notification, NotificationHelper::title(ld), NotificationHelper::message(ld), QLatin1String("clock"));
+        auto n = new KNotification(QStringLiteral("disruption"));
+        n->setTitle(NotificationHelper::title(ld));
+        n->setText(NotificationHelper::message(ld));
+        n->setIconName(QLatin1String("clock"));
         m_notifications.insert(resId, n);
+        n->sendEvent();
     } else {
         it.value()->setTitle(NotificationHelper::title(ld));
         it.value()->setText(NotificationHelper::message(ld));
