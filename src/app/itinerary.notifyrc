@@ -1,7 +1,44 @@
 [Global]
 IconName=itinerary
 Name=KDE Itinerary
+Name[ca]=KDE Itinerary
+Name[ca@valencia]=KDE Itinerary
+Name[en_GB]=KDE Itinerary
+Name[es]=KDE Itinerary
+Name[et]=KDE itineraar
+Name[fr]=KDE Itinerary
+Name[gl]=KDE Itinerary
+Name[ia]=KDE Itinerary
+Name[it]=KDE Itinerary
+Name[ko]=KDE 여행 정보
+Name[nl]=KDE Itinerary
+Name[pl]=KDE Itinerary
+Name[pt]=KDE Itinerary
+Name[pt_BR]=KDE Itinerary
+Name[sk]=KDE Itinerár
+Name[sv]=KDE-resplan
+Name[uk]=KDE Itinerary
+Name[x-test]=xxKDE Itineraryxx
 Comment=Travel assistance application.
+Comment[ca]=Aplicació per a l'assistència en viatge.
+Comment[ca@valencia]=Aplicació per a l'assistència en viatge.
+Comment[cs]=Pomocník při cestování.
+Comment[en_GB]=Travel assistance application.
+Comment[es]=Aplicación de asistencia para viajes.
+Comment[et]=Reisimise abirakendus.
+Comment[fr]=Application d'aide à l'organisation de trajets et voyages.
+Comment[gl]=Aplicación de asistencia de viaxe.
+Comment[ia]=Application de assistentia de viages
+Comment[it]=Applicazione di assistenza dei viaggi.
+Comment[ko]=여행 도우미 프로그램입니다.
+Comment[nl]=Toepassing voor hulp bij reizen.
+Comment[pl]=Aplikacja pomagająca w podróży.
+Comment[pt]=Aplicação de assistência a viagens.
+Comment[pt_BR]=Aplicativo de assistência a viagens.
+Comment[sk]=Aplikácia na pomoc s cestovaním.
+Comment[sv]=Resehjälpprogram.
+Comment[uk]=Програма-помічник у подорожах.
+Comment[x-test]=xxTravel assistance application.xx
 
 [Event/disruption]
 Name=Disruption
