@@ -24,6 +24,13 @@ import org.kde.itinerary 1.0
 
 Kirigami.AbstractListItem {
     highlighted: false
+
+    onClicked: {
+        if (modelData.mode == JourneySection.PublicTransport) {
+            applicationWindow().pageStack.push(journeySectionPage, {"journeySection": modelData});
+        }
+    }
+
     GridLayout {
         columns: 2
 

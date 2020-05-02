@@ -154,4 +154,8 @@ Kirigami.ApplicationWindow {
         id: welcomeComponent
         App.WelcomePage {}
     }
+    Component {
+        id: journeySectionPage
+        App.JourneySectionPage {}
+    }
 }

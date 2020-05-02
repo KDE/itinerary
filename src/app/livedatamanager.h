@@ -61,6 +61,7 @@ public:
 
     KPublicTransport::Stopover arrival(const QString &resId) const;
     KPublicTransport::Stopover departure(const QString &resId) const;
+    KPublicTransport::JourneySection journey(const QString &resId) const;
 
     /** Sets journey data for a given reservation.
      *  Used to retain live data from alternative journey selections for example.
@@ -82,6 +83,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void arrivalUpdated(const QString &resId);
     void departureUpdated(const QString &resId);
+    void journeyUpdated(const QString &resId);
 
 private:
     bool isRelevant(const QString &resId) const;

@@ -73,6 +73,15 @@ App.DetailsPage {
         }
     }
     Component {
+        id: journeyDetailsAction
+        Kirigami.Action {
+            text: i18n("Journey Details")
+            iconName: "view-calendar-day"
+            onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
+            visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0
+        }
+    }
+    Component {
         id: notifyTestAction
         Kirigami.Action {
             text: "Test Notification"
@@ -83,6 +92,7 @@ App.DetailsPage {
 
     Component.onCompleted: {
         actions.contextualActions.push(alternativeAction.createObject(root));
+        actions.contextualActions.push(journeyDetailsAction.createObject(root));
         actions.contextualActions.push(vehicleLayoutAction.createObject(root));
         //actions.contextualActions.push(notifyTestAction.createObject(root));
     }

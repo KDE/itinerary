@@ -207,6 +207,14 @@ KPublicTransport::Stopover TimelineDelegateController::departure() const
     return m_liveDataMgr->departure(m_batchId);
 }
 
+KPublicTransport::JourneySection TimelineDelegateController::journey() const
+{
+    if (!m_liveDataMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+    return m_liveDataMgr->journey(m_batchId);
+}
+
 void TimelineDelegateController::checkForUpdate(const QString& batchId)
 {
     if (!m_resMgr || m_batchId.isEmpty()) {

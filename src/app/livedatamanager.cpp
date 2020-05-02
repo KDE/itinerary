@@ -119,6 +119,11 @@ KPublicTransport::Stopover LiveDataManager::departure(const QString &resId) cons
     return data(resId).departure;
 }
 
+KPublicTransport::JourneySection LiveDataManager::journey(const QString &resId) const
+{
+    return data(resId).journey;
+}
+
 void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
 {
     auto &ld = data(resId);
@@ -130,6 +135,7 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
+    emit journeyUpdated(resId);
     emit departureUpdated(resId);
     emit arrivalUpdated(resId);
 }
@@ -317,6 +323,7 @@ void LiveDataManager::importData(const QString& resId, LiveData &&data)
 {
     // we don't need to store data, Importer already does that
     m_data[resId] = std::move(data);
+    emit journeyUpdated(resId);
     emit departureUpdated(resId);
     emit arrivalUpdated(resId);
 }
@@ -375,6 +382,12 @@ void LiveDataManager::batchChanged(const QString &resId)
             (*dataIt).store(resId, LiveData::Arrival);
             emit arrivalUpdated(resId);
         }
+
+        // TODO check if the change made this necessary at all
+        (*dataIt).journey = {};
+        (*dataIt).journeyTimestamp = {};
+        (*dataIt).store(resId, LiveData::Journey);
+        emit journeyUpdated(resId);
     }
 
     m_pollTimer.setInterval(nextPollTime());

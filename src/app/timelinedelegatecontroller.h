@@ -19,6 +19,7 @@
 #define TIMELINEDELEGATECONTROLLER_H
 
 #include <KPublicTransport/Stopover>
+#include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
 
 #include <QObject>
@@ -50,6 +51,7 @@ class TimelineDelegateController : public QObject
 
     Q_PROPERTY(KPublicTransport::Stopover arrival READ arrival NOTIFY arrivalChanged)
     Q_PROPERTY(KPublicTransport::Stopover departure READ departure NOTIFY departureChanged)
+    Q_PROPERTY(KPublicTransport::JourneySection journey READ journey NOTIFY journeyChanged)
 
     /** Effective end time, ie. our best knowledge of arriving at the destination (for transit elements), or
      *  ending of the associated event for non-transit elements.
@@ -93,6 +95,7 @@ public:
 
     KPublicTransport::Stopover arrival() const;
     KPublicTransport::Stopover departure() const;
+    KPublicTransport::JourneySection journey() const;
 
     QDateTime effectiveEndTime() const;
 
@@ -113,6 +116,7 @@ Q_SIGNALS:
     void progressChanged();
     void arrivalChanged();
     void departureChanged();
+    void journeyChanged();
     void previousLocationChanged();
     void connectionWarningChanged();
 
