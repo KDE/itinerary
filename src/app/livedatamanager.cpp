@@ -257,6 +257,17 @@ void LiveDataManager::showNotification(const QString &resId)
     showNotification(resId, data(resId));
 }
 
+void LiveDataManager::cancelNotification(const QString &resId)
+{
+    const auto nIt = m_notifications.find(resId);
+    if (nIt != m_notifications.end()) {
+        if (nIt.value()) {
+            nIt.value()->close();
+        }
+        m_notifications.erase(nIt);
+    }
+}
+
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
@@ -384,17 +395,9 @@ void LiveDataManager::batchRemoved(const QString &resId)
         m_reservations.erase(it);
     }
 
+    cancelNotification(resId);
     LiveData::remove(resId);
     m_data.remove(resId);
-
-    // remove still active notifications
-    const auto nIt = m_notifications.find(resId);
-    if (nIt != m_notifications.end()) {
-        if (nIt.value()) {
-            nIt.value()->close();
-        }
-        m_notifications.erase(nIt);
-    }
 }
 
 void LiveDataManager::poll()
@@ -414,6 +417,7 @@ void LiveDataManager::pollForUpdates(bool force)
 
         // clean up obsolete stuff
         if (hasArrived(*it, res)) {
+            cancelNotification(*it);
             it = m_reservations.erase(it);
             continue;
         }
