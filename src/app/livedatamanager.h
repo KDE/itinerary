@@ -97,6 +97,7 @@ private:
 
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
     void showNotification(const QString &resId, const LiveData &ld);
+    void cancelNotification(const QString &resId);
 
     /** Best known departure time. */
     QDateTime departureTime(const QString &resId, const QVariant &res) const;
