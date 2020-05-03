@@ -1,6 +1,7 @@
 add_library(KAndroidExtras STATIC
     activity.cpp
     contentresolver.cpp
+    context.cpp
     intent.cpp
     locale.cpp
     uri.cpp
