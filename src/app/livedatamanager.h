@@ -58,6 +58,7 @@ public:
     void setPkPassManager(PkPassManager *pkPassMgr);
 
     void setPollingEnabled(bool pollingEnabled);
+    void setShowNotificationsOnLockScreen(bool enabled);
 
     KPublicTransport::Stopover arrival(const QString &resId) const;
     KPublicTransport::Stopover departure(const QString &resId) const;
@@ -99,6 +100,7 @@ private:
 
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
     void showNotification(const QString &resId, const LiveData &ld);
+    void fillNotification(KNotification *n, const LiveData &ld) const;
     void cancelNotification(const QString &resId);
 
     /** Best known departure time. */
@@ -130,6 +132,7 @@ private:
     std::vector<QString> m_reservations;
     mutable QHash <QString, LiveData> m_data;
     QHash<QString, QPointer<KNotification>> m_notifications;
+    bool m_showNotificationsOnLockScreen = false;
 
     QTimer m_pollTimer;
 

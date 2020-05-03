@@ -109,6 +109,11 @@ void LiveDataManager::setPollingEnabled(bool pollingEnabled)
     }
 }
 
+void LiveDataManager::setShowNotificationsOnLockScreen(bool enabled)
+{
+    m_showNotificationsOnLockScreen = enabled;
+}
+
 KPublicTransport::Stopover LiveDataManager::arrival(const QString &resId) const
 {
     return data(resId).arrival;
@@ -245,15 +250,22 @@ void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
     const auto it = m_notifications.constFind(resId);
     if (it == m_notifications.cend() || !it.value()) {
         auto n = new KNotification(QStringLiteral("disruption"));
-        n->setTitle(NotificationHelper::title(ld));
-        n->setText(NotificationHelper::message(ld));
-        n->setIconName(QLatin1String("clock"));
+        fillNotification(n, ld);
         m_notifications.insert(resId, n);
         n->sendEvent();
     } else {
-        it.value()->setTitle(NotificationHelper::title(ld));
-        it.value()->setText(NotificationHelper::message(ld));
+        fillNotification(it.value(), ld);
         it.value()->update();
+    }
+}
+
+void LiveDataManager::fillNotification(KNotification* n, const LiveData& ld) const
+{
+    n->setTitle(NotificationHelper::title(ld));
+    n->setText(NotificationHelper::message(ld));
+    n->setIconName(QLatin1String("clock"));
+    if (m_showNotificationsOnLockScreen) {
+        n->setHint(QStringLiteral("visibility"), QStringLiteral("public"));
     }
 }
 

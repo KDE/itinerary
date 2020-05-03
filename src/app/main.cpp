@@ -29,6 +29,7 @@
 #include "locationinformation.h"
 #include "lockmanager.h"
 #include "navigationcontroller.h"
+#include "notificationconfigcontroller.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
@@ -137,6 +138,11 @@ static WeatherForecastManager *s_weatherForecastManager = nullptr;
         return Instance; \
     });
 
+#define REGISTER_SINGLETON_GADGET(Class) \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
+        return engine->toScriptValue(Class()); \
+    });
+
 void registerApplicationSingletons()
 {
     REGISTER_SINGLETON_INSTANCE(ApplicationController, ApplicationController::instance())
@@ -149,17 +155,10 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
 
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(Localizer());
-    });
-
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "NavigationController", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(NavigationController());
-    });
-
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-        return engine->toScriptValue(PublicTransport());
-    });
+    REGISTER_SINGLETON_GADGET(Localizer)
+    REGISTER_SINGLETON_GADGET(NavigationController)
+    REGISTER_SINGLETON_GADGET(NotificationConfigController)
+    REGISTER_SINGLETON_GADGET(PublicTransport)
 
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
@@ -247,7 +246,9 @@ int main(int argc, char **argv)
     liveDataMgr.setPkPassManager(&passMgr);
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
+    liveDataMgr.setShowNotificationsOnLockScreen(settings.showNotificationOnLockScreen());
     QObject::connect(&settings, &Settings::queryLiveDataChanged, &liveDataMgr, &LiveDataManager::setPollingEnabled);
+    QObject::connect(&settings, &Settings::showNotificationOnLockScreenChanged, &liveDataMgr, &LiveDataManager::setShowNotificationsOnLockScreen);
     s_liveDataMnager = &liveDataMgr;
 
     WeatherForecastManager weatherForecastMgr;

@@ -151,5 +151,24 @@ Kirigami.ScrollablePage {
             enabled: Settings.autoAddTransfers && Settings.queryLiveData
         }
 
+        // Notifications
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Notifications")
+        }
+
+        QQC2.Button {
+            Kirigami.FormData.isSection: true
+            text: i18n("Configure Notifications...")
+            icon.name: "notifications"
+            onClicked: NotificationConfigController.configureNotifications()
+            enabled: NotificationConfigController.canConfigureNotification
+        }
+        QQC2.Switch {
+            Kirigami.FormData.label: i18n("Show notifications on lock screen")
+            checked: Settings.showNotificationOnLockScreen
+            onToggled: Settings.showNotificationOnLockScreen = checked
+            enabled: NotificationConfigController.canShowOnLockScreen
+        }
     }
 }

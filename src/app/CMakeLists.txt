@@ -61,6 +61,7 @@ set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
     documentsmodel.cpp
+    notificationconfigcontroller.cpp
     notifyrc.qrc
     settings.cpp
     tickettokenmodel.cpp
@@ -115,6 +116,7 @@ if (ANDROID)
         list-add
         map-symbolic
         meeting-attending
+        notifications
         question
         settings-configure
         view-calendar-day

@@ -37,6 +37,8 @@ Settings::Settings(QObject *parent)
 
     m_autoAddTransfers = s.value(QLatin1String("AutoAddTransfers"), true).toBool();
     m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
+
+    m_showNotificationOnLockScreen = s.value(QLatin1String("ShowNotificationOnLockScreen"), false).toBool();
 }
 
 Settings::~Settings() = default;
@@ -142,4 +144,23 @@ void Settings::setAutoFillTransfers(bool autoFill)
     s.setValue(QLatin1String("AutoFillTransfers"), autoFill);
 
     emit autoFillTransfersChanged(autoFill);
+}
+
+bool Settings::showNotificationOnLockScreen() const
+{
+    return m_showNotificationOnLockScreen;
+}
+
+void Settings::setShowNotificationOnLockScreen(bool enabled)
+{
+    if (m_showNotificationOnLockScreen == enabled) {
+        return;
+    }
+
+    m_showNotificationOnLockScreen = enabled;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
+
+    emit showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
 }

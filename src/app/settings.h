@@ -31,6 +31,8 @@ class Settings : public QObject
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
     Q_PROPERTY(bool autoFillTransfers READ autoFillTransfers WRITE setAutoFillTransfers NOTIFY autoFillTransfersChanged)
 
+    Q_PROPERTY(bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
+
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
@@ -49,12 +51,16 @@ public:
     bool autoFillTransfers() const;
     void setAutoFillTransfers(bool autoFill);
 
+    bool showNotificationOnLockScreen() const;
+    void setShowNotificationOnLockScreen(bool enabled);
+
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
     void queryLiveDataChanged(bool enabled);
     void autoAddTransfersChanged(bool autoAdd);
     void autoFillTransfersChanged(bool autoFill);
+    void showNotificationOnLockScreenChanged(bool enabled);
 
 private:
     QString m_homeCountry;
@@ -62,6 +68,7 @@ private:
     bool m_queryLiveData = false;
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
+    bool m_showNotificationOnLockScreen = false;
 };
 
 #endif // SETTINGS_H
