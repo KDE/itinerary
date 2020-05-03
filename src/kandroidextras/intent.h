@@ -26,7 +26,10 @@ class QUrl;
 
 namespace KAndroidExtras {
 
-/** Methods to interact with android.content.Intent objects, beyond what QAndroidIntent offers. */
+/** Methods to interact with android.content.Intent objects.
+ *  This does not only offer features beyond what QAndroidIntent, it also provides
+ *  a putExtra() implementation that actually interoperates with system services.
+ */
 class Intent : Jni::Wrapper<android::content::Intent>
 {
 public:
@@ -49,6 +52,13 @@ public:
     void setData(const QAndroidJniObject &uri);
     /** Set the mime type for this intent. */
     void setType(const QString &type);
+
+    /** Add extra intent data of type @tparam T. */
+    template <typename T>
+    inline void putExtra(const QAndroidJniObject &name, const QAndroidJniObject &value)
+    {
+        m_intent.callObjectMethod("putExtra", Jni::signature<android::content::Intent(java::lang::String, T)>(), name.object(), value.object());
+    }
 
     /** Implicit conversion to an QAndroidJniObject. */
     operator QAndroidJniObject() const;
