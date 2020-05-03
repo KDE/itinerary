@@ -18,6 +18,8 @@
 #ifndef KANDROIDEXTRAS_INTENT_H
 #define KANDROIDEXTRAS_INTENT_H
 
+#include "jniproperty.h"
+
 #include <QAndroidJniObject>
 
 class QUrl;
@@ -25,7 +27,7 @@ class QUrl;
 namespace KAndroidExtras {
 
 /** Methods to interact with android.content.Intent objects, beyond what QAndroidIntent offers. */
-class Intent
+class Intent : Jni::Wrapper<android::content::Intent>
 {
 public:
     /** Creates a new empty intent. */
@@ -52,17 +54,17 @@ public:
     operator QAndroidJniObject() const;
 
     /** Action constant for create document intents. */
-    static QAndroidJniObject ACTION_CREATE_DOCUMENT();
+    JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
     /** Action constant for open document intents. */
-    static QAndroidJniObject ACTION_OPEN_DOCUMENT();
+    JNI_CONSTANT(java::lang::String, ACTION_OPEN_DOCUMENT)
     /** Action constant for viewing intents. */
-    static QAndroidJniObject ACTION_VIEW();
+    JNI_CONSTANT(java::lang::String, ACTION_VIEW)
 
     /** Category constant for openable content. */
-    static QAndroidJniObject CATEGORY_OPENABLE();
+    JNI_CONSTANT(java::lang::String, CATEGORY_OPENABLE)
 
     /** Flag for granting read URI permissions on content providers. */
-    static jint FLAG_GRANT_READ_URI_PERMISSION();
+    JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
 
 private:
     QAndroidJniObject m_intent;

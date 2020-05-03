@@ -81,28 +81,3 @@ Intent::operator QAndroidJniObject() const
 {
     return m_intent;
 }
-
-QAndroidJniObject Intent::ACTION_CREATE_DOCUMENT()
-{
-    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_CREATE_DOCUMENT");
-}
-
-QAndroidJniObject Intent::ACTION_OPEN_DOCUMENT()
-{
-    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_OPEN_DOCUMENT");
-}
-
-QAndroidJniObject Intent::ACTION_VIEW()
-{
-    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "ACTION_VIEW");
-}
-
-QAndroidJniObject Intent::CATEGORY_OPENABLE()
-{
-    return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::content::Intent>(), "CATEGORY_OPENABLE");
-}
-
-jint Intent::FLAG_GRANT_READ_URI_PERMISSION()
-{
-    return QAndroidJniObject::getStaticField<jint>(Jni::typeName<android::content::Intent>(), "FLAG_GRANT_READ_URI_PERMISSION");
-}

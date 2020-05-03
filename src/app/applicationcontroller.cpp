@@ -333,8 +333,8 @@ void ApplicationController::exportData()
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     Intent intent;
-    intent.setAction(Intent::ACTION_CREATE_DOCUMENT());
-    intent.addCategory(Intent::CATEGORY_OPENABLE());
+    intent.setAction(Intent::ACTION_CREATE_DOCUMENT);
+    intent.addCategory(Intent::CATEGORY_OPENABLE);
     intent.setType(QStringLiteral("*/*"));
     QtAndroid::startActivity(intent, 0, [this](int, int, const QAndroidJniObject &jniIntent) {
         Intent intent(jniIntent);
@@ -427,8 +427,8 @@ void ApplicationController::addDocument(const QString &batchId)
 #else
     using namespace KAndroidExtras;
     Intent intent;
-    intent.setAction(Intent::ACTION_OPEN_DOCUMENT());
-    intent.addCategory(Intent::CATEGORY_OPENABLE());
+    intent.setAction(Intent::ACTION_OPEN_DOCUMENT);
+    intent.addCategory(Intent::CATEGORY_OPENABLE);
     intent.setType(QStringLiteral("*/*"));
     QtAndroid::startActivity(intent, 0, [this, batchId](int, int, const QAndroidJniObject &jniIntent) {
         Intent intent(jniIntent);
@@ -486,8 +486,8 @@ void ApplicationController::openDocument(const QUrl &url)
 
     Intent intent;
     intent.setData(uri);
-    intent.setAction(Intent::ACTION_VIEW());
-    intent.addFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION());
+    intent.setAction(Intent::ACTION_VIEW);
+    intent.addFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
     Activity::startActivity(intent, 0);
 #else
     QDesktopServices::openUrl(url);

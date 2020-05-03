@@ -46,7 +46,7 @@ static bool startActivity(const QUrl &url)
     using namespace KAndroidExtras;
 
     Intent intent;
-    intent.setAction(Intent::ACTION_VIEW());
+    intent.setAction(Intent::ACTION_VIEW);
     intent.setData(url);
     return Activity::startActivity(intent, 0);
 }
