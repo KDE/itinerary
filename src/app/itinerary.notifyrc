@@ -43,6 +43,8 @@ Comment[x-test]=xxTravel assistance application.xx
 [Event/disruption]
 Name=Disruption
 Name[ca]=Interrupció
+Name[ca@valencia]=Interrupció
+Name[es]=Alteración
 Name[et]=Häired
 Name[nl]=Storing
 Name[pt]=Disrupção
@@ -50,6 +52,8 @@ Name[uk]=Аварія
 Name[x-test]=xxDisruptionxx
 Comment=A train, bus or flight service you have reserved has disruptions or schedule changes.
 Comment[ca]=Un servei de tren, autobús o vol que heu reservat té interrupcions o canvis de planificació.
+Comment[ca@valencia]=Un servei de tren, autobús o vol que heu reservat té interrupcions o canvis de planificació.
+Comment[es]=Un servicio de tren, bus o vuelo que ha reservado sufre alteraciones o cambios de horario.
 Comment[et]=Reserveeritud rongi-, bussi- või lennuliinil on tekkinud häireid või ajakava muudatusi.
 Comment[nl]=Een trein, bus of vlucht die u hebt gereserveerd heeft een storing of wijziging in de dienstregeling.
 Comment[pt]=Um serviço de comboio, autocarros ou aéreo que tenha reservado teve uma interrupção do serviço ou mudanças de horários.
