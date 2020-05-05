@@ -23,7 +23,7 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
     property var transfer
     title: i18n("Select Transfer")
@@ -115,19 +115,22 @@ Kirigami.Page {
         }
     }
 
-    ColumnLayout {
+    header: ColumnLayout {
         id: topLayout
-        anchors { top: parent.top; left: parent.left; right: parent.right }
 
         QQC2.Label {
             text: i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
             visible: transfer.alignment == Transfer.After
             Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: 0
         }
         QQC2.Label {
             Layout.fillWidth: true
             text: i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
             visible: transfer.alignment == Transfer.Before
+            Layout.margins: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: 0
         }
 
         QQC2.ComboBox {
@@ -136,6 +139,8 @@ Kirigami.Page {
             visible: transfer.floatingLocationType == Transfer.FavoriteLocation
             textRole: "display"
             Layout.fillWidth: true
+            Layout.margins: Kirigami.Units.largeSpacing
+            Layout.bottomMargin: 0
             onActivated: {
                 var favLoc = delegateModel.items.get(currentIndex)
                 console.log(favLoc.model.favoriteLocation);
@@ -147,14 +152,6 @@ Kirigami.Page {
 
     Kirigami.CardsListView {
         id: journeyView
-        anchors {
-            top: topLayout.bottom
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            leftMargin: -2*Kirigami.Units.largeSpacing
-            rightMargin: -2*Kirigami.Units.largeSpacing
-        }
         clip: true
         delegate: journeyDelegate
         model: sortedJourneyModel
