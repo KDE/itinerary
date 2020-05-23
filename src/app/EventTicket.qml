@@ -21,6 +21,7 @@ import QtQuick.Controls 2.1 as QQC2
 import QtGraphicalEffects 1.0 as Effects
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.pkpass 1.0 as KPkPass
+import org.kde.itinerary 1.0
 import "." as App
 
 Item {
@@ -221,8 +222,9 @@ Item {
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: modelData.value
+                        text: Util.textToHtml(modelData.value)
                         wrapMode: Text.WordWrap
+                        onLinkActivated: Qt.openUrlExternally(link)
                     }
                 }
             }
