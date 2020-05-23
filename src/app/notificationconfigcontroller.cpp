@@ -39,7 +39,7 @@ bool NotificationConfigController::canConfigureNotification() const
 
 bool NotificationConfigController::canShowOnLockScreen() const
 {
-#if defined(Q_OS_ANDROID) && KNOTIFICATIONS_VERSION > QT_VERSION_CHECK(5, 70, 0) // TODO this needs unmerged patches still
+#if defined(Q_OS_ANDROID) && KNOTIFICATIONS_VERSION >= QT_VERSION_CHECK(5, 71, 0)
     return true;
 #else
     return false;

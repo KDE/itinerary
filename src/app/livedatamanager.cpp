@@ -265,7 +265,7 @@ void LiveDataManager::fillNotification(KNotification* n, const LiveData& ld) con
     n->setText(NotificationHelper::message(ld));
     n->setIconName(QLatin1String("clock"));
     if (m_showNotificationsOnLockScreen) {
-        n->setHint(QStringLiteral("visibility"), QStringLiteral("public"));
+        n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
     }
 }
 
