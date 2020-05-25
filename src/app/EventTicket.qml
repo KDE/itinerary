@@ -36,7 +36,6 @@ Item {
         color: pass.backgroundColor
         //implicitHeight: topLayout.implicitHeight + 2 * topLayout.anchors.margins
         width: parent.width
-        visible: false // shown via opacity mask shader effect below
 
         Image {
             id: backgroundImage
@@ -229,27 +228,16 @@ Item {
                 }
             }
         }
-    }
 
-    Item {
-        id: mask
-        anchors.fill: bodyBackground
         Rectangle {
+            id: notchMask
             width: parent.width / 4
             height: width
             radius: width / 2
-            color: "black"
+            color: Kirigami.Theme.backgroundColor
             x: parent.width/2 - radius
             y: -radius * 1.5
         }
-        visible: false
-    }
-
-    Effects.OpacityMask {
-        anchors.fill: bodyBackground
-        source: bodyBackground
-        maskSource: mask
-        invert: true
     }
 }
 
