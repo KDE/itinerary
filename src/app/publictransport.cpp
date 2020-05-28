@@ -145,6 +145,8 @@ QString PublicTransport::lineModeIcon(int lineMode)
             return QStringLiteral("qrc:///images/taxi.svg");
         case Line::Tramway:
             return QStringLiteral("qrc:///images/tramway.svg");
+        case Line::RideShare:
+            return QStringLiteral("qrc:///images/car.svg");
     }
 
     return QStringLiteral("question");
