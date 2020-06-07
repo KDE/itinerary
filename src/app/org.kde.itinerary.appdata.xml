@@ -6,6 +6,7 @@
   <name>KDE Itinerary</name>
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
+  <name xml:lang="cs">Itinerář KDE</name>
   <name xml:lang="en-GB">KDE Itinerary</name>
   <name xml:lang="es">KDE Itinerary</name>
   <name xml:lang="et">KDE itineraar</name>
@@ -26,6 +27,7 @@
   <summary>Digital travel assistant</summary>
   <summary xml:lang="ca">Assistent de viatges digital</summary>
   <summary xml:lang="ca-valencia">Assistent de viatges digital</summary>
+  <summary xml:lang="cs">Digitální asistent na cesty</summary>
   <summary xml:lang="en-GB">Digital travel assistant</summary>
   <summary xml:lang="es">Asistente digital para viajes</summary>
   <summary xml:lang="et">Digitaalne reisimise abivahend</summary>
@@ -46,6 +48,7 @@
     <p>KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="ca">El KDE Itinerary és un assistent digital de viatge amb la prioritat de protegir la vostra privadesa.</p>
     <p xml:lang="ca-valencia">El KDE Itinerary és un assistent digital de viatge amb la prioritat de protegir la vostra privadesa.</p>
+    <p xml:lang="cs">Itinerář KDE je digitální asistent na cestování jehož prioritou je ochrana vašeho soukromí.</p>
     <p xml:lang="en-GB">KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="es">KDE Itinerary es un asistente de viajes digital que tiene como prioridad proteger su privacidad.</p>
     <p xml:lang="et">KDE Itineraar on digitaalne reisiabiline, mis seab sihiks sinu privaatsuse kaitsmise.</p>
@@ -282,6 +285,7 @@
       <caption>Boarding pass view.</caption>
       <caption xml:lang="ca">Vista de les targetes d'embarcament.</caption>
       <caption xml:lang="ca-valencia">Vista de les targetes d'embarcament.</caption>
+      <caption xml:lang="cs">Pohled na nástupní doklad.</caption>
       <caption xml:lang="en-GB">Boarding pass view.</caption>
       <caption xml:lang="es">Vista de tarjetas de embarque.</caption>
       <caption xml:lang="et">Piletivaade.</caption>
@@ -316,6 +320,7 @@
       <caption>Travel statistics view.</caption>
       <caption xml:lang="ca">Vista de les estadístiques dels viatges.</caption>
       <caption xml:lang="ca-valencia">Vista de les estadístiques dels viatges.</caption>
+      <caption xml:lang="cs">Pohled na statistiky cestování.</caption>
       <caption xml:lang="en-GB">Travel statistics view.</caption>
       <caption xml:lang="es">Vista de estadísticas de viajes.</caption>
       <caption xml:lang="et">Reisistatistika vaade.</caption>
