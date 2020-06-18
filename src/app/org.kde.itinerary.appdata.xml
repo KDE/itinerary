@@ -25,6 +25,7 @@
   <name xml:lang="sl">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
   <name xml:lang="uk">KDE Itinerary</name>
+  <name xml:lang="x-test">xxKDE Itineraryxx</name>
   <summary>Digital travel assistant</summary>
   <summary xml:lang="ca">Assistent de viatges digital</summary>
   <summary xml:lang="ca-valencia">Assistent de viatges digital</summary>
@@ -45,6 +46,7 @@
   <summary xml:lang="sk">Digitálny cestovný asistent</summary>
   <summary xml:lang="sv">Digitalt resehjälpprogram</summary>
   <summary xml:lang="uk">Цифровий помічник у подорожах</summary>
+  <summary xml:lang="x-test">xxDigital travel assistantxx</summary>
   <description>
     <p>KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="ca">El KDE Itinerary és un assistent digital de viatge amb la prioritat de protegir la vostra privadesa.</p>
@@ -62,6 +64,7 @@
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
     <p xml:lang="sv">KDE-resplan är ett digitalt resehjälpprogram som prioriterar att skydda din integritet.</p>
     <p xml:lang="uk">KDE Itinerary — цифровий помічник у подорожах, акцент у якому зроблено на забезпеченні вашої конфіденційності.</p>
+    <p xml:lang="x-test">xxKDE Itinerary is a digital travel assistant with a priority on protecting your privacy.xx</p>
     <p>Features:</p>
     <p xml:lang="ca">Característiques:</p>
     <p xml:lang="ca-valencia">Característiques:</p>
@@ -85,6 +88,7 @@
     <p xml:lang="sl">Zmožnosti:</p>
     <p xml:lang="sv">Funktioner:</p>
     <p xml:lang="uk">Можливості:</p>
+    <p xml:lang="x-test">xxFeatures:xx</p>
     <ul>
       <li>Timeline view of a unified travel itinerary with automatic trip grouping.</li>
       <li xml:lang="ca">Vista de la línia de temps d'un itinerari unificat de viatges amb agrupació automàtica de viatge.</li>
@@ -101,6 +105,7 @@
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
+      <li xml:lang="x-test">xxTimeline view of a unified travel itinerary with automatic trip grouping.xx</li>
       <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="ca">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
       <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
@@ -116,6 +121,7 @@
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
       <li xml:lang="uk">Підтримка бронювання квитків на потяги, автобуси та літаки, а також бронювання номерів готелів, місць у ресторанах, участі у подіях та оренди автомобілів.</li>
+      <li xml:lang="x-test">xxSupports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.xx</li>
       <li>Boarding pass management.</li>
       <li xml:lang="ca">Gestió de les targetes d'embarcament.</li>
       <li xml:lang="ca-valencia">Gestió de les targetes d'embarcament.</li>
@@ -136,6 +142,7 @@
       <li xml:lang="sl">Upravljanje vstopnih kuponov.</li>
       <li xml:lang="sv">Hantering av boardingkort.</li>
       <li xml:lang="uk">Керування посадковими квитками.</li>
+      <li xml:lang="x-test">xxBoarding pass management.xx</li>
       <li>Supports ticket management for multi-traveler and multi-ticket bookings.</li>
       <li xml:lang="ca">Permet la gestió de bitllets per reserves multiviatger i multibitllet.</li>
       <li xml:lang="ca-valencia">Permet la gestió de bitllets per reserves multiviatger i multibitllet.</li>
@@ -151,6 +158,7 @@
       <li xml:lang="sl">Podpira upravljanje vozovnic za več potnikov in rezervacij za več vozovnic.</li>
       <li xml:lang="sv">Stöder biljetthantering för bokningar med flera resenärer och biljetter.</li>
       <li xml:lang="uk">Підтримка керування роботою з квитками для замовлень із пересадками та одночасного замовлення декількох квитків.</li>
+      <li xml:lang="x-test">xxSupports ticket management for multi-traveler and multi-ticket bookings.xx</li>
       <li>Automatic booking data extraction from various input formats, performed locally on your device.</li>
       <li xml:lang="ca">Extracció automàtica de dades de les reserves des de diversos formats d'entrada, efectuades localment en el vostre dispositiu.</li>
       <li xml:lang="ca-valencia">Extracció automàtica de dades de les reserves des de diversos formats d'entrada, efectuades localment en el vostre dispositiu.</li>
@@ -166,6 +174,7 @@
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
       <li xml:lang="uk">Автоматичне видобування даних із різноманітних вхідних форматів, яке відбувається безпосередньо на вашому пристрої.</li>
+      <li xml:lang="x-test">xxAutomatic booking data extraction from various input formats, performed locally on your device.xx</li>
       <li>Real-time delay and platform change information for trains.</li>
       <li xml:lang="ca">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
       <li xml:lang="ca-valencia">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
@@ -181,6 +190,7 @@
       <li xml:lang="sl">Informacije o zamudah v realnem času in o spremembah peronov za vlake.</li>
       <li xml:lang="sv">Information i realtid om fördröjningar och plattformsändringar för tåg.</li>
       <li xml:lang="uk">Інформування про затримки та зміни платформ для потягів.</li>
+      <li xml:lang="x-test">xxReal-time delay and platform change information for trains.xx</li>
       <li>Weather forecast for destination along your trip.</li>
       <li xml:lang="ca">Previsió meteorològica de la destinació durant el viatge.</li>
       <li xml:lang="ca-valencia">Previsió meteorològica de la destinació durant el viatge.</li>
@@ -196,6 +206,7 @@
       <li xml:lang="sl">Vremenska napoved za cilje ob vašem potovanju.</li>
       <li xml:lang="sv">Väderprognos för mål längs resan.</li>
       <li xml:lang="uk">Показ прогнозу погоди у кінцевій точці вашої подорожі.</li>
+      <li xml:lang="x-test">xxWeather forecast for destination along your trip.xx</li>
       <li>Full control over all online access.</li>
       <li xml:lang="ca">Control total sobre tots els accessos en línia.</li>
       <li xml:lang="ca-valencia">Control total sobre tots els accessos en línia.</li>
@@ -211,6 +222,7 @@
       <li xml:lang="sl">Popoln nadzor nad vsemi spletnimi dostopi.</li>
       <li xml:lang="sv">Fullständig kontroll över alla nätåtkomster.</li>
       <li xml:lang="uk">Повне керування усіма параметрами доступу до інтернету.</li>
+      <li xml:lang="x-test">xxFull control over all online access.xx</li>
       <li>Selection of alternative train connections on unbound tickets or on missed connections.</li>
       <li xml:lang="ca">Selecció de connexions alternatives de tren en bitllets independents o en connexions perdudes.</li>
       <li xml:lang="ca-valencia">Selecció de connexions alternatives de tren en bitllets independents o en connexions perdudes.</li>
@@ -226,6 +238,7 @@
       <li xml:lang="sl">Izbira alternativnih železniških povezav na nevezanih vozovnicah ali vozovnicah zamujenih povezav.</li>
       <li xml:lang="sv">Val av alternativa tågförbindelser på öppna biljetter eller vid missade anslutningar.</li>
       <li xml:lang="uk">Вибір альтернативних залізничних шляхів за умов наявності проїзного або неможливості з'єднання різних частин маршруту.</li>
+      <li xml:lang="x-test">xxSelection of alternative train connections on unbound tickets or on missed connections.xx</li>
       <li>Local ground transportation navigation between elements of your itinerary.</li>
       <li xml:lang="ca">Navegació de transport local terrestre entre elements de l'itinerari.</li>
       <li xml:lang="ca-valencia">Navegació de transport local terrestre entre elements de l'itinerari.</li>
@@ -241,6 +254,7 @@
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
       <li xml:lang="uk">Навігація на місцевості під час пересадок між фрагментами вашого маршруту.</li>
+      <li xml:lang="x-test">xxLocal ground transportation navigation between elements of your itinerary.xx</li>
       <li>Personal travel statistics to monitor environmental impact.</li>
       <li xml:lang="ca">Estadístiques de viatges personals per controlar l'impacte ambiental.</li>
       <li xml:lang="ca-valencia">Estadístiques de viatges personals per controlar l'impacte ambiental.</li>
@@ -256,6 +270,7 @@
       <li xml:lang="sl">Osebna statistika potovanj za spremljanje vplivov na okolje.</li>
       <li xml:lang="sv">Personlig resestatistik för att övervaka miljöpåverkan.</li>
       <li xml:lang="uk">Особиста статистика подорожей для стеження за впливом на навколишнє середовище.</li>
+      <li xml:lang="x-test">xxPersonal travel statistics to monitor environmental impact.xx</li>
     </ul>
     <p>KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.</p>
     <p xml:lang="ca">El KDE Itinerary funciona millor amb el connector d'extracció d'itineraris del KMail i el KDE Connect, o el Nextcloud Hub i el DavDroid.</p>
@@ -272,6 +287,7 @@
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
+    <p xml:lang="x-test">xxKDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.xx</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -295,6 +311,7 @@
       <caption xml:lang="sl">Pogled časovnice.</caption>
       <caption xml:lang="sv">Tidslinjevisning.</caption>
       <caption xml:lang="uk">Перегляд розкладу.</caption>
+      <caption xml:lang="x-test">xxTimeline view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png</image>
     </screenshot>
     <screenshot>
@@ -314,6 +331,7 @@
       <caption xml:lang="sl">Pogled vstopnega kupona.</caption>
       <caption xml:lang="sv">Visning av boardingkort.</caption>
       <caption xml:lang="uk">Перегляд посадкових квитків.</caption>
+      <caption xml:lang="x-test">xxBoarding pass view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-boardingpass.png</image>
     </screenshot>
     <screenshot>
@@ -332,6 +350,7 @@
       <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža.</caption>
       <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning.</caption>
       <caption xml:lang="uk">Панель місць у вагонах потягу із підсвічуванням заброньованих місць.</caption>
+      <caption xml:lang="x-test">xxTrain layout view highlighting the coach with a seat reservation.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-vehicle-layout.png</image>
     </screenshot>
     <screenshot>
@@ -351,6 +370,7 @@
       <caption xml:lang="sl">Pogled potovalne statistike.</caption>
       <caption xml:lang="sv">Visning av resestatistik.</caption>
       <caption xml:lang="uk">Панель статистики подорожей.</caption>
+      <caption xml:lang="x-test">xxTravel statistics view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-statistics.png</image>
     </screenshot>
   </screenshots>
