@@ -26,6 +26,7 @@
 
 #include <QDateTime>
 #include <QLocale>
+#include <QMetaProperty>
 #include <QTimeZone>
 
 #ifdef Q_OS_ANDROID
@@ -38,6 +39,8 @@
 
 using namespace KAndroidExtras;
 #endif
+
+#include <cstring>
 
 using namespace KItinerary;
 
@@ -61,19 +64,39 @@ QString Localizer::countryFlag(const QString& isoCode) const
     return flag;
 }
 
-QString Localizer::formatAddress(const QVariant &obj) const
+static QString readFromGadget(const QMetaObject *mo, const QVariant &gadget, const char *propName)
 {
-    if (!JsonLd::isA<PostalAddress>(obj)) {
+    const auto propIdx = mo->indexOfProperty(propName);
+    if (propIdx < 0) {
         return {};
     }
-    const auto a = obj.value<PostalAddress>();
+    const auto prop = mo->property(propIdx);
+    if (!prop.isValid()) {
+        return {};
+    }
+    return prop.readOnGadget(gadget.constData()).toString();
+}
 
+QString Localizer::formatAddress(const QVariant &obj) const
+{
     KContacts::Address address;
-    address.setStreet(a.streetAddress());
-    address.setPostalCode(a.postalCode());
-    address.setLocality(a.addressLocality());
-    address.setRegion(a.addressRegion());
-    address.setCountry(KContacts::Address::ISOtoCountry(a.addressCountry()));
+    if (JsonLd::isA<PostalAddress>(obj)) {
+        const auto a = obj.value<PostalAddress>();
+        address.setStreet(a.streetAddress());
+        address.setPostalCode(a.postalCode());
+        address.setLocality(a.addressLocality());
+        address.setRegion(a.addressRegion());
+        address.setCountry(KContacts::Address::ISOtoCountry(a.addressCountry()));
+    } else if (std::strcmp(obj.typeName(), "KOSMIndoorMap::OSMAddress") == 0) {
+        const auto mo = QMetaType::metaObjectForType(obj.userType());
+        address.setStreet(readFromGadget(mo, obj, "street") + QLatin1Char(' ') + readFromGadget(mo, obj, "houseNumber"));
+        address.setPostalCode(readFromGadget(mo, obj, "postalCode"));
+        address.setLocality(readFromGadget(mo, obj, "city"));
+        address.setRegion(readFromGadget(mo, obj, "state"));
+        address.setCountry(KContacts::Address::ISOtoCountry(readFromGadget(mo, obj, "country")));
+    } else {
+        return {};
+    }
 
     return address.formattedAddress().replace(QLatin1String("\n\n"), QLatin1String("\n"));
 }
