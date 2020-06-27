@@ -62,8 +62,14 @@ Item {
         y: Math.max(0, label.implicitHeight - buttonLayout.implicitHeight)
 
         QQC2.ToolButton {
-            visible: place.geo.isValid || !place.address.isEmpty
+            visible: place.geo.isValid
             icon.name: "map-symbolic"
+            onClicked: applicationWindow().pageStack.push(indoorMapPage, {coordinate: Qt.point(place.geo.longitude, place.geo.latitude), placeName: place.name})
+        }
+
+        QQC2.ToolButton {
+            visible: place.geo.isValid || !place.address.isEmpty
+            icon.name: "map-globe"
             onClicked: NavigationController.showOnMap(place)
         }
 

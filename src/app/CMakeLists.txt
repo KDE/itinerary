@@ -114,6 +114,7 @@ if (ANDROID)
         help-about-symbolic
         help-contents
         list-add
+        map-globe
         map-symbolic
         meeting-attending
         notifications

@@ -39,7 +39,7 @@ Item {
         id: layout
         width: parent.width
         height: parent.height
-        columns: 5
+        columns: 6
         rows: 2
         Item {
             id: lineSegment
@@ -139,6 +139,16 @@ Item {
             verticalAlignment: Qt.AlignVCenter
             text: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform
             color: stop.hasExpectedPlatform ? (stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
+        }
+
+        QQC2.ToolButton {
+            Layout.column: 5
+            Layout.row: 0
+            Layout.rowSpan: 2
+            Layout.alignment: Qt.AlignVCenter
+            visible: stop.stopPoint.hasCoordinate
+            icon.name: "map-symbolic"
+            onClicked: applicationWindow().pageStack.push(indoorMapPage, {coordinate: Qt.point(stop.stopPoint.longitude, stop.stopPoint.latitude), placeName: stop.stopPoint.name})
         }
     }
 }

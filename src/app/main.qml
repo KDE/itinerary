@@ -158,4 +158,8 @@ Kirigami.ApplicationWindow {
         id: journeySectionPage
         App.JourneySectionPage {}
     }
+    Component {
+        id: indoorMapPage
+        App.IndoorMapPage {}
+    }
 }

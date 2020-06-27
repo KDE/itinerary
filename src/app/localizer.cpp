@@ -98,7 +98,7 @@ QString Localizer::formatAddress(const QVariant &obj) const
         return {};
     }
 
-    return address.formattedAddress().replace(QLatin1String("\n\n"), QLatin1String("\n"));
+    return address.formattedAddress().replace(QLatin1String("\n\n"), QLatin1String("\n")).trimmed();
 }
 
 static bool needsTimeZone(const QDateTime &dt)
