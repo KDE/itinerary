@@ -21,6 +21,7 @@ import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
+import "." as App
 
 Kirigami.AbstractListItem {
     highlighted: false
@@ -96,29 +97,35 @@ Kirigami.AbstractListItem {
                 isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
             }
         }
-        QQC2.Label {
+        RowLayout {
             Layout.fillWidth: true
-            text: {
-                switch (modelData.mode) {
-                case JourneySection.PublicTransport:
-                {
-                    var l = modelData.route.line.modeString + " " + modelData.route.line.name;
-                    if (modelData.route.direction)
-                        return i18n("%1 to %2 (%3)", l, modelData.route.direction, Localizer.formatDuration(modelData.duration));
-                    return i18n("%1 (%2)", l, Localizer.formatDuration(modelData.duration));
-                }
-                case JourneySection.Walking:
-                    if (modelData.distance == 0)
-                        return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration));
-                    return i18n("Walk %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
-                case JourneySection.Transfer:
-                    return i18n("Transfer (%1)", Localizer.formatDuration(modelData.duration))
-                case JourneySection.Waiting:
-                    return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
-                return "???";
-            }}
-            color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-            elide: Text.ElideMiddle
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: {
+                    switch (modelData.mode) {
+                    case JourneySection.PublicTransport:
+                    {
+                        var l = modelData.route.line.modeString + " " + modelData.route.line.name;
+                        if (modelData.route.direction)
+                            return i18n("%1 to %2 (%3)", l, modelData.route.direction, Localizer.formatDuration(modelData.duration));
+                        return i18n("%1 (%2)", l, Localizer.formatDuration(modelData.duration));
+                    }
+                    case JourneySection.Walking:
+                        if (modelData.distance == 0)
+                            return i18n("Walk (%1)", Localizer.formatDuration(modelData.duration));
+                        return i18n("Walk %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
+                    case JourneySection.Transfer:
+                        return i18n("Transfer (%1)", Localizer.formatDuration(modelData.duration))
+                    case JourneySection.Waiting:
+                        return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
+                    return "???";
+                }}
+                color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                elide: Text.ElideMiddle
+            }
+            App.VehicleLoadIndicator {
+                loadInformation: modelData.loadInformation
+            }
         }
 
         // last row: arrival information
