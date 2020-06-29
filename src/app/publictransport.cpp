@@ -330,14 +330,18 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
     using namespace KPublicTransport;
 
     switch (section.mode()) {
+        case JourneySection::Invalid:
+            return false;
         case JourneySection::Walking:
         case JourneySection::Transfer:
             return section.duration() > 20*60 || section.distance() > 1000;
         case JourneySection::Waiting:
             return section.duration() > 20*60;
-        default:
-            return false;
+        case JourneySection::PublicTransport:
+            return std::any_of(section.loadInformation().begin(), section.loadInformation().end(), [](const auto &load) { return load.load() == Load::Full; });
     }
+
+    return false;
 }
 
 QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
