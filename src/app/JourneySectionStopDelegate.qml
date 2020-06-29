@@ -21,6 +21,7 @@ import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
+import "." as App
 
 Item {
     property var stop
@@ -39,7 +40,7 @@ Item {
         id: layout
         width: parent.width
         height: parent.height
-        columns: 6
+        columns: 7
         rows: 2
         Item {
             id: lineSegment
@@ -131,8 +132,16 @@ Item {
             visible: stop.hasExpectedDepartureTime
         }
 
-        QQC2.Label {
+        App.VehicleLoadIndicator {
             Layout.column: 4
+            Layout.row: 0
+            Layout.rowSpan: 2
+            Layout.alignment: Qt.AlignVCenter
+            loadInformation: stop.loadInformation
+        }
+
+        QQC2.Label {
+            Layout.column: 5
             Layout.row: 0
             Layout.rowSpan: 2
             Layout.fillHeight: true
@@ -142,7 +151,7 @@ Item {
         }
 
         QQC2.ToolButton {
-            Layout.column: 5
+            Layout.column: 6
             Layout.row: 0
             Layout.rowSpan: 2
             Layout.alignment: Qt.AlignVCenter
