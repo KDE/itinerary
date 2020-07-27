@@ -119,8 +119,15 @@ Kirigami.Page {
     Component {
         id: infoAddressDelegate
         QQC2.Label {
-            //(row.value.street + " " + row.value.houseNumber + "\n" + row.value.postalCode + " " + row.value.city + "\n" + row.value.country).trim()
             text: Localizer.formatAddress(row.value)
+        }
+    }
+
+    Component {
+        id: infoOpeningHoursDelegate
+        // TODO this is temporary until we have a proper parser and UI for this
+        QQC2.Label {
+            text: row.value.includes(";") ? row.keyLabel + ":\n  " + row.value.replace(/;\s*/g, "\n  ") : row.keyLabel + ": " + row.value
         }
     }
 
@@ -154,10 +161,13 @@ Kirigami.Page {
                     switch (row.type) {
                         case OSMElementInformationModel.Link:
                             return infoLinkDelegate;
-                        case OSMElementInformationModel.String:
-                            return infoStringDelegate;
                         case OSMElementInformationModel.PostalAddress:
                             return infoAddressDelegate;
+                        case OSMElementInformationModel.OpeningHoursType:
+                            return infoOpeningHoursDelegate;
+                        case OSMElementInformationModel.String:
+                        default:
+                            return infoStringDelegate;
                     }
                 }
             }
