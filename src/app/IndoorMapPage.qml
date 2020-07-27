@@ -50,13 +50,13 @@ Kirigami.Page {
             iconName: "go-down-symbolic"
             enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
-            visible: map.floorLevels.rowCount() > 1
+            visible: map.floorLevels.hasFloorLevels
         }
         right: Kirigami.Action {
             iconName: "go-up-symbolic"
             enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
-            visible: map.floorLevels.rowCount() > 1
+            visible: map.floorLevels.hasFloorLevels
         }
     }
     contextualActions: [
