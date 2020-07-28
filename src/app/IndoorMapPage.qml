@@ -134,8 +134,15 @@ Kirigami.Page {
     Kirigami.OverlaySheet {
         id: elementDetailsSheet
 
-        header: Kirigami.Heading {
-            text: infoModel.name
+        header: Column {
+            Kirigami.Heading {
+                text: infoModel.name
+            }
+            Kirigami.Heading {
+                text: infoModel.category
+                level: 4
+                visible: text != ""
+            }
         }
 
         ListView {
