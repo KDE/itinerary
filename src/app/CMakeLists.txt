@@ -47,6 +47,7 @@ target_link_libraries(itinerary PUBLIC
     KF5::Contacts
     KF5::CoreAddons
     KF5::Notifications
+    KF5::IdleTime
     Qt5::Network
     Qt5::Quick
 )

@@ -27,7 +27,6 @@
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "locationinformation.h"
-#include "lockmanager.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
 #include "pkpassmanager.h"
@@ -62,6 +61,7 @@
 
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KIdleInhibition>
 
 #include <QQuickStyle>
 #include <QQmlApplicationEngine>
@@ -197,6 +197,7 @@ int main(int argc, char **argv)
     QCoreApplication::setApplicationName(QStringLiteral("itinerary"));
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
+    QGuiApplication::setDesktopFileName(QStringLiteral("org.kde.itinerary"));
     QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
 
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -240,7 +241,7 @@ int main(int argc, char **argv)
     s_tripGroupManager = &tripGroupMgr;
 
     BrightnessManager brightnessManager;
-    LockManager lockManager;
+    KIdleInhibition lockManager;
 
     LiveDataManager liveDataMgr;
     liveDataMgr.setPkPassManager(&passMgr);
