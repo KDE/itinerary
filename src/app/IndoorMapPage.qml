@@ -24,6 +24,7 @@ import org.kde.kosmindoormap 1.0
 import org.kde.itinerary 1.0
 
 Kirigami.Page {
+    id: root
     title: {
         if (map.mapLoader.isLoading || map.hasError)
             return placeName;
@@ -35,6 +36,11 @@ Kirigami.Page {
     property point coordinate
     property string placeName
     property alias map: map
+
+    property string arrivalGateName
+    property string arrivalPlatformName
+    property string departureGateName
+    property string departurePlatformName
 
     topPadding: 0
     bottomPadding: 0
@@ -190,6 +196,15 @@ Kirigami.Page {
     PlatformModel {
         id: platformModel
         mapData: map.mapData
+
+        onPlatformIndexChanged: {
+            if (platformModel.departurePlatformRow >= 0) {
+                var idx = platformModel.index(platformModel.departurePlatformRow, 0);
+                map.view.floorLevel = platformModel.data(idx, PlatformModel.LevelRole)
+                map.view.centerOnGeoCoordinate(platformModel.data(idx, PlatformModel.CoordinateRole));
+                map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height/ 2.0));
+            }
+        }
     }
 
     Component {
@@ -198,7 +213,17 @@ Kirigami.Page {
             property var platform: model
             Row {
                 spacing: Kirigami.Units.smallSpacing
-                QQC2.Label { text: platform.display }
+                QQC2.Label {
+                    text: {
+                        if (platform.isDeparturePlatform && platform.isArrivalPlatform)
+                            return i18nc("train arrival/departure platform", "%1 (arrival + departure)", platform.display);
+                        if (platform.isDeparturePlatform)
+                            return i18nc("train departure platform", "%1 (departure)", platform.display);
+                        if (platform.isArrivalPlatform)
+                            return i18nc("train arrival platform", "%1 (arrival)", platform.display);
+                        return platform.display
+                    }
+                }
 
                 Repeater {
                     model: platform.lines
@@ -264,6 +289,15 @@ Kirigami.Page {
     GateModel {
         id: gateModel
         mapData: map.mapData
+
+        onGateIndexChanged: {
+            if (gateModel.departureGateRow >= 0) {
+                var idx = gateModel.index(gateModel.departureGateRow, 0);
+                map.view.floorLevel = gateModel.data(idx, GateModel.LevelRole)
+                map.view.centerOnGeoCoordinate(gateModel.data(idx, GateModel.CoordinateRole));
+                map.view.setZoomLevel(18, Qt.point(map.width / 2.0, map.height/ 2.0));
+            }
+        }
     }
 
     Kirigami.OverlaySheet {
@@ -277,7 +311,16 @@ Kirigami.Page {
             model: gateModel
 
             delegate: Kirigami.BasicListItem {
-                text: model.display
+                property var gate: model
+                text: {
+                    if (gate.isDepartureGate && gate.isArrivalGate)
+                        return i18nc("flight departure/arrival gate", "%1 (arrival + departure)", gate.display);
+                    if (gate.isDepartureGate)
+                        return i18nc("flight departure gate", "%1 (departure)", gate.display);
+                    if (gate.isArrivalGate)
+                        return i18nc("flight arrival gate", "%1 (arrival)", gate.display);
+                    return gate.display
+                }
                 highlighted: false
                 onClicked: {
                     map.view.floorLevel = model.level
@@ -314,4 +357,14 @@ Kirigami.Page {
     }
 
     onCoordinateChanged: map.mapLoader.loadForCoordinate(coordinate.y, coordinate.x);
+
+    Connections {
+        target: map.mapLoader
+        function onDone() {
+            platformModel.setArrivalPlatform(root.arrivalPlatformName, Platform.Rail);
+            platformModel.setDeparturePlatform(root.departurePlatformName, Platform.Rail);
+            gateModel.setArrivalGate(root.arrivalGateName);
+            gateModel.setDepartureGate(root.departureGateName);
+        }
+    }
 }

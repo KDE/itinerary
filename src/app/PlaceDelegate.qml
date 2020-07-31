@@ -64,7 +64,25 @@ Item {
         QQC2.ToolButton {
             visible: place.geo.isValid
             icon.name: "map-symbolic"
-            onClicked: applicationWindow().pageStack.push(indoorMapPage, {coordinate: Qt.point(place.geo.longitude, place.geo.latitude), placeName: place.name})
+            onClicked: {
+                var args = {coordinate: Qt.point(place.geo.longitude, place.geo.latitude), placeName: place.name};
+                var res = controller.reservationManager.reservation(controller.batchId);
+                if (isRangeBegin) {
+                    if (res.className == "TrainReservation")
+                        args.departurePlatformName = res.reservationFor.departurePlatform
+                    if (res.className == "FlightReservation")
+                        args.departureGateName = res.reservationFor.departureGate
+                }
+                if (isRangeEnd) {
+                    if (res.className == "TrainReservation")
+                        args.arrivalPlatformName = res.reservationFor.arrivalPlatform
+                    if (res.className == "FlightReservation")
+                        args.arrivalGateName = res.reservationFor.arrivalGate
+                }
+                console.log(JSON.stringify(args));
+                // TODO find the matching platforms/gates from the other half of the layover, if any
+                applicationWindow().pageStack.push(indoorMapPage, args);
+            }
         }
 
         QQC2.ToolButton {
