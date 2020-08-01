@@ -104,83 +104,9 @@ Kirigami.Page {
         }
     }
 
-    Component {
-        id: platformDelegate
-        Kirigami.AbstractListItem {
-            property var platform: model
-            Row {
-                spacing: Kirigami.Units.smallSpacing
-                QQC2.Label {
-                    text: {
-                        if (platform.isDeparturePlatform && platform.isArrivalPlatform)
-                            return i18nc("train arrival/departure platform", "%1 (arrival + departure)", platform.display);
-                        if (platform.isDeparturePlatform)
-                            return i18nc("train departure platform", "%1 (departure)", platform.display);
-                        if (platform.isArrivalPlatform)
-                            return i18nc("train arrival platform", "%1 (arrival)", platform.display);
-                        return platform.display
-                    }
-                }
-
-                Repeater {
-                    model: platform.lines
-                    delegate: Kirigami.Icon {
-                        height: Kirigami.Units.iconSizes.small
-                        width: implicitWidth
-                        visible: source != ""
-                        source: {
-                            switch (platform.mode) {
-                                case Platform.Rail:
-                                    return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Train, true).logo;
-                                case Platform.Tram:
-                                    return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Tramway, true).logo;
-                                case Platform.Subway:
-                                    return PublicTransport.LineMetaData.lookup(modelData, platform.coordinate.y, platform.coordinate.x, PublicTransport.Line.Metro, true).logo;
-                            }
-                            return "";
-                        }
-                    }
-                }
-            }
-            highlighted: false
-            onClicked: {
-                map.view.floorLevel = model.level
-                map.view.centerOnGeoCoordinate(model.coordinate);
-                map.view.setZoomLevel(19, Qt.point(map.width / 2.0, map.height/ 2.0));
-                platformSheet.sheetOpen = false
-            }
-        }
-    }
-
-    Kirigami.OverlaySheet {
+    IndoorMapPlatformSheet {
         id: platformSheet
-
-        header: Kirigami.Heading {
-            text: i18n("Find Platform")
-        }
-
-        ListView {
-            model: platformModel
-
-            section.property: "mode"
-            section.delegate: Kirigami.AbstractListItem {
-                Kirigami.Heading {
-                    x: Kirigami.Units.largeSpacing
-                    level: 4
-                    text: switch(parseInt(section)) {
-                        case Platform.Rail: return i18n("Railway");
-                        case Platform.Subway: return i18n("Subway");
-                        case Platform.Tram: return i18n("Tramway");
-                        case Platform.Bus: return i18n("Bus");
-                        default: return section;
-                    }
-                }
-                height: implicitHeight
-            }
-            section.criteria: ViewSection.FullString
-
-            delegate: platformDelegate
-        }
+        model: platformModel
     }
 
     GateModel {
