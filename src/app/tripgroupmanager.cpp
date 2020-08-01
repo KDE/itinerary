@@ -17,6 +17,7 @@
 
 #include "tripgroupmanager.h"
 #include "tripgroup.h"
+#include "constants.h"
 #include "logging.h"
 #include "reservationmanager.h"
 
@@ -41,7 +42,6 @@ enum {
     MaximumTripDuration = 20, // in days
     MaximumTripElements = 20,
     MinimumTripElements = 2,
-    MaximumLayoverTime = 4*60*60, // in seconds
 };
 
 TripGroupManager::TripGroupManager(QObject* parent) :
@@ -245,7 +245,7 @@ static bool isConnectedTransition(const QVariant &fromRes, const QVariant &toRes
 
     const auto dep = SortUtil::endDateTime(fromRes);
     const auto arr = SortUtil::startDateTime(toRes);
-    return dep.date() == arr.date() && dep.secsTo(arr) < MaximumLayoverTime;
+    return dep.date() == arr.date() && dep.secsTo(arr) < Constants::MaximumLayoverTime.count();
 }
 
 void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)

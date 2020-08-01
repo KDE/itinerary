@@ -17,6 +17,7 @@
 
 #include "timelinedelegatecontroller.h"
 
+#include "constants.h"
 #include "livedatamanager.h"
 #include "logging.h"
 #include "reservationmanager.h"
@@ -394,14 +395,18 @@ static bool isJourneyCandidate(const QVariant &res)
 
 static bool isLayover(const QVariant &res1, const QVariant &res2)
 {
-    const auto arrDt = SortUtil::endDateTime(res1);
-    const auto depDt = SortUtil::startDateTime(res2);
-    const auto layoverTime = arrDt.secsTo(depDt);
-    if (layoverTime < 0 || layoverTime > 60 * 60) {
+    if (!LocationUtil::isLocationChange(res1) || !LocationUtil::isLocationChange(res2)) {
         return false;
     }
 
-    return LocationUtil::isSameLocation(LocationUtil::arrivalLocation(res1), LocationUtil::departureLocation(res2));
+    const auto arrDt = SortUtil::endDateTime(res1);
+    const auto depDt = SortUtil::startDateTime(res2);
+    const auto layoverTime = arrDt.secsTo(depDt);
+    if (layoverTime < 0 || layoverTime > Constants::MaximumLayoverTime.count()) {
+        return false;
+    }
+
+    return LocationUtil::isSameLocation(LocationUtil::arrivalLocation(res1), LocationUtil::departureLocation(res2), LocationUtil::WalkingDistance);
 }
 
 KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() const
@@ -551,7 +556,7 @@ bool TimelineDelegateController::isCanceled() const
 QJSValue TimelineDelegateController::arrivalMapArguments() const
 {
     const auto engine = qjsEngine(this);
-    if (!engine || !m_resMgr || m_batchId.isEmpty()) {
+    if (!engine || !m_resMgr || m_batchId.isEmpty() || !m_transferMgr || !m_liveDataMgr) {
         return {};
     }
 
@@ -578,11 +583,23 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("departurePlatformName"), dep.hasExpectedDeparturePlatform() ? dep.expectedDeparturePlatform() : dep.scheduledDeparturePlatform());
+        return args;
     }
 
     // ... or layover
-    else {
-        // TODO
+    const auto nextResId = m_resMgr->nextBatch(m_batchId);
+    const auto nextRes = m_resMgr->reservation(nextResId);
+    if (!isLayover(res, nextRes)) {
+        return args;
+    }
+    const auto dep = m_liveDataMgr->departure(nextResId);
+    auto depPlatform = dep.hasExpectedPlatform() ? dep.expectedPlatform() : dep.scheduledPlatform();
+    if (depPlatform.isEmpty() && JsonLd::isA<TrainReservation>(nextRes)) {
+        depPlatform = nextRes.value<TrainReservation>().reservationFor().value<TrainTrip>().departurePlatform();
+    }
+    args.setProperty(QStringLiteral("departurePlatformName"), depPlatform);
+    if (JsonLd::isA<FlightReservation>(nextRes)) {
+        args.setProperty(QStringLiteral("departureGateName"), nextRes.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
     }
 
     return args;
@@ -591,7 +608,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
 QJSValue TimelineDelegateController::departureMapArguments() const
 {
     const auto engine = qjsEngine(this);
-    if (!engine || !m_resMgr || m_batchId.isEmpty() || !m_transferMgr) {
+    if (!engine || !m_resMgr || m_batchId.isEmpty() || !m_transferMgr || !m_liveDataMgr) {
         return {};
     }
 
@@ -620,12 +637,22 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("arrivalPlatformName"), arr.hasExpectedArrivalPlatform() ? arr.expectedArrivalPlatform() : arr.scheduledArrivalPlatform());
+        return args;
     }
 
     // ... or layover
-    else {
-        // TODO
+    const auto prevResId = m_resMgr->previousBatch(m_batchId);
+    const auto prevRes = m_resMgr->reservation(prevResId);
+    if (!isLayover(prevRes, res)) {
+        return args;
     }
+    const auto arr = m_liveDataMgr->arrival(prevResId);
+    auto arrPlatform = arr.hasExpectedPlatform() ? arr.expectedPlatform() : arr.scheduledPlatform();
+    if (arrPlatform.isEmpty() && JsonLd::isA<TrainReservation>(prevRes)) {
+        arrPlatform = prevRes.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalPlatform();
+    }
+    args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
+    // there is no arrival gate property (yet)
 
     return args;
 }
