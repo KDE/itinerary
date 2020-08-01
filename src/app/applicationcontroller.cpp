@@ -94,7 +94,11 @@ static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
         return;
     }
 
-    ApplicationController::instance()->importData(array.at(1).toString().toUtf8());
+    auto propValue = array.at(1).toString().toUtf8();
+    // work around ical/JSON mis-encoding with newer DAVx⁵ versions
+    propValue.replace("\\,", ",");
+
+    ApplicationController::instance()->importData(propValue);
 }
 
 static void importFromIntent(JNIEnv *env, jobject that, jobject data)
