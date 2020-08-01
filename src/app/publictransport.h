@@ -28,6 +28,7 @@
 #include <KPublicTransport/Line>
 
 namespace KPublicTransport {
+class Journey;
 class JourneySection;
 class Stopover;
 class StopoverRequest;
@@ -98,6 +99,11 @@ public:
 
     /** Returns @c true when we want to highlight @p sections due to looking problematic. */
     Q_INVOKABLE bool warnAboutSection(const KPublicTransport::JourneySection &section) const;
+
+    /** First public transport section of the given section. */
+    static KPublicTransport::JourneySection firstTransportSection(const KPublicTransport::Journey &journey);
+    /** Last public transport section of the given section. */
+    static KPublicTransport::JourneySection lastTransportSection(const KPublicTransport::Journey &journey);
 
 private:
     // for use by the template code

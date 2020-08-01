@@ -28,10 +28,12 @@
 #include <chrono>
 
 class QDateTime;
+class QJSValue;
 class QTimer;
 
 class LiveDataManager;
 class ReservationManager;
+class TransferManager;
 
 /** C++ side logic for timeline delegates. */
 class TimelineDelegateController : public QObject
@@ -39,6 +41,7 @@ class TimelineDelegateController : public QObject
     Q_OBJECT
     Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(QObject* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
+    Q_PROPERTY(QObject* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
@@ -84,6 +87,8 @@ public:
     void setReservationManager(QObject *resMgr);
     QObject* liveDataManager() const;
     void setLiveDataManager(QObject *liveDataMgr);
+    QObject* transferManager() const;
+    void setTransferManager(QObject *transferMgr);
 
     QString batchId() const;
     void setBatchId(const QString &batchId);
@@ -107,6 +112,11 @@ public:
 
     bool connectionWarning() const;
     bool isCanceled() const;
+
+    /** Map page arguments for the arrival side, if this is a location change element. */
+    Q_INVOKABLE QJSValue arrivalMapArguments() const;
+    /** Map page arguments for the departure side, if this is a location change element. */
+    Q_INVOKABLE QJSValue departureMapArguments() const;
 
 Q_SIGNALS:
     void setupChanged();
@@ -133,6 +143,7 @@ private:
 
     ReservationManager *m_resMgr = nullptr; // ### should this be static?
     LiveDataManager *m_liveDataMgr = nullptr;
+    TransferManager *m_transferMgr = nullptr;
     QString m_batchId;
     bool m_isCurrent = false;
 

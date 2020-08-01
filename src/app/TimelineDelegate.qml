@@ -47,6 +47,7 @@ Kirigami.AbstractCard {
         id: _controller
         reservationManager: _reservationManager
         liveDataManager: LiveDataManager
+        transferManager: TransferManager
     }
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure

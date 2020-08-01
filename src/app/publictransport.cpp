@@ -368,4 +368,26 @@ KItinerary::PostalAddress PublicTransport::addressFromLocation(const KPublicTran
     return addr;
 }
 
+KPublicTransport::JourneySection PublicTransport::firstTransportSection(const KPublicTransport::Journey &journey)
+{
+    for (const auto &section : journey.sections()) {
+        if (section.mode() == KPublicTransport::JourneySection::PublicTransport) {
+            return section;
+        }
+    }
+
+    return {};
+}
+
+KPublicTransport::JourneySection PublicTransport::lastTransportSection(const KPublicTransport::Journey &journey)
+{
+    for (auto it = journey.sections().rbegin(); it != journey.sections().rend(); ++it) {
+        if ((*it).mode() == KPublicTransport::JourneySection::PublicTransport) {
+            return (*it);
+        }
+    }
+
+    return {};
+}
+
 #include "moc_publictransport.cpp"
