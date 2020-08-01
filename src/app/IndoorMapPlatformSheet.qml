@@ -32,7 +32,7 @@ Kirigami.OverlaySheet {
                     QQC2.Label {
                         text: {
                             if (platform.isDeparturePlatform && platform.isArrivalPlatform)
-                                return i18nc("train arrival/departure platform", "%1 (arrival + departure)", platform.display);
+                                return i18nc("train arrival/departure platform", "%1 (arrival/departure)", platform.display);
                             if (platform.isDeparturePlatform)
                                 return i18nc("train departure platform", "%1 (departure)", platform.display);
                             if (platform.isArrivalPlatform)
