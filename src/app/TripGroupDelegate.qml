@@ -27,7 +27,7 @@ Kirigami.AbstractCard {
     property var tripGroupId;
     property var rangeType;
 
-    property var weatherForecast: _tripGroupInfoProvider.weatherForecast(tripGroup)
+    property var weatherForecast: TripGroupInfoProvider.weatherForecast(tripGroup)
 
     id: root
     showClickFeedback: true
@@ -94,7 +94,7 @@ Kirigami.AbstractCard {
         }
 
         Repeater {
-            model: _tripGroupInfoProvider.locationInformation(tripGroup, Settings.homeCountryIsoCode)
+            model: TripGroupInfoProvider.locationInformation(tripGroup, Settings.homeCountryIsoCode)
 
             QQC2.Label {
                 text: {

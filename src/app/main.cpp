@@ -131,6 +131,7 @@ static TransferManager *s_tranferManager = nullptr;
 static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
+static TripGroupInfoProvider s_tripGroupInfoProvider;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
@@ -138,7 +139,12 @@ static WeatherForecastManager *s_weatherForecastManager = nullptr;
         return Instance; \
     });
 
-#define REGISTER_SINGLETON_GADGET(Class) \
+#define REGISTER_SINGLETON_GADGET_INSTANCE(Class, Instance) \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QJSValue { \
+        return engine->toScriptValue(Instance); \
+    });
+
+#define REGISTER_SINGLETON_GADGET_FACTORY(Class) \
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
         return engine->toScriptValue(Class()); \
     });
@@ -155,10 +161,12 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
 
-    REGISTER_SINGLETON_GADGET(Localizer)
-    REGISTER_SINGLETON_GADGET(NavigationController)
-    REGISTER_SINGLETON_GADGET(NotificationConfigController)
-    REGISTER_SINGLETON_GADGET(PublicTransport)
+    REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
+
+    REGISTER_SINGLETON_GADGET_FACTORY(Localizer)
+    REGISTER_SINGLETON_GADGET_FACTORY(NavigationController)
+    REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
+    REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
 
     qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
         return new Util;
@@ -278,9 +286,8 @@ int main(int argc, char **argv)
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
 
-    TripGroupInfoProvider tripGroupInfoProvider;
-    tripGroupInfoProvider.setReservationManager(&resMgr);
-    tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
+    s_tripGroupInfoProvider.setReservationManager(&resMgr);
+    s_tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
 
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
@@ -318,7 +325,6 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
-    engine.rootContext()->setContextProperty(QStringLiteral("_tripGroupInfoProvider"), QVariant::fromValue(tripGroupInfoProvider));
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());
