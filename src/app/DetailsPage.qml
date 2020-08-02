@@ -40,6 +40,7 @@ Kirigami.ScrollablePage {
         id: _controller
         reservationManager: ReservationManager
         liveDataManager: LiveDataManager
+        transferManager: TransferManager
     }
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure
