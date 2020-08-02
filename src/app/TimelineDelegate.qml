@@ -24,14 +24,14 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    /** Reservation batch identifier (@see _reservationManager). */
+    /** Reservation batch identifier (@see ReservationManager). */
     property alias batchId: _controller.batchId
     /** All reservations that are part of this patch. */
-    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
+    property var resIds: ReservationManager.reservationsForBatch(root.batchId)
     /** A random reservation object, in case there's more than one.
      *  Use this only for accessing properties that will be the same for all travelers.
      */
-    readonly property var reservation: _reservationManager.reservation(root.batchId);
+    readonly property var reservation: ReservationManager.reservation(root.batchId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var rangeType
@@ -45,7 +45,7 @@ Kirigami.AbstractCard {
 
     property QtObject controller: TimelineDelegateController {
         id: _controller
-        reservationManager: _reservationManager
+        reservationManager: ReservationManager
         liveDataManager: LiveDataManager
         transferManager: TransferManager
     }

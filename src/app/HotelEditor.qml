@@ -34,7 +34,7 @@ App.EditorPage {
         hotel.email = emailAddress.text;
         var newRes = reservation;
         newRes.reservationFor = hotel;
-        _reservationManager.updateReservation(resId, newRes);
+        ReservationManager.updateReservation(resId, newRes);
     }
 
     ColumnLayout {

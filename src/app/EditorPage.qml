@@ -26,8 +26,8 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     property var batchId
-    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
-    readonly property var reservation: _reservationManager.reservation(root.batchId);
+    property var resIds: ReservationManager.reservationsForBatch(root.batchId)
+    readonly property var reservation: ReservationManager.reservation(root.batchId);
 
     property alias dateTimeEditSheet: _dateTimeEditSheet
 

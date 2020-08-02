@@ -44,7 +44,7 @@ App.DetailsPage {
         }
 
         App.TicketTokenDelegate {
-            resIds: _reservationManager.reservationsForBatch(root.batchId)
+            resIds: ReservationManager.reservationsForBatch(root.batchId)
         }
 
         Kirigami.FormLayout {

@@ -32,7 +32,7 @@ App.EditorPage {
         foodEstablishment.name = address.name;
         var newRes = reservation;
         newRes.reservationFor = foodEstablishment;
-        _reservationManager.updateReservation(resId, newRes);
+        ReservationManager.updateReservation(resId, newRes);
     }
 
     ColumnLayout {

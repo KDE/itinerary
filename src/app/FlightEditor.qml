@@ -39,7 +39,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
-        _reservationManager.updateReservation(resId, newRes);
+        ReservationManager.updateReservation(resId, newRes);
     }
 
     GridLayout {

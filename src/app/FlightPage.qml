@@ -26,7 +26,7 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Flight")
-    property var resIds: _reservationManager.reservationsForBatch(root.batchId)
+    property var resIds: ReservationManager.reservationsForBatch(root.batchId)
     editor: Component {
         App.FlightEditor {
             batchId: root.batchId
@@ -54,7 +54,7 @@ App.DetailsPage {
         // ticket barcode
         App.TicketTokenDelegate {
             id: ticketDelegate
-            resIds: _reservationManager.reservationsForBatch(root.batchId)
+            resIds: ReservationManager.reservationsForBatch(root.batchId)
             onCurrentReservationIdChanged: {
                 if (!currentReservationId)
                     return;
@@ -68,7 +68,7 @@ App.DetailsPage {
             // sequence number belongs to the selected barcode
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sequence Number:")
-                text: _reservationManager.reservation(ticketDelegate.currentReservationId).passengerSequenceNumber
+                text: ReservationManager.reservation(ticketDelegate.currentReservationId).passengerSequenceNumber
                 visible: text
             }
 
@@ -168,7 +168,7 @@ App.DetailsPage {
             Repeater {
                 model: resIds.length * 2
                 delegate: QQC2.Label {
-                    property var res: _reservationManager.reservation(resIds[Math.floor(index/2)]);
+                    property var res: ReservationManager.reservation(resIds[Math.floor(index/2)]);
                     Kirigami.FormData.label: index % 2 == 0 ? i18n("Under name:") : i18n("Reference:")
                     text: index % 2 == 0 ? res.underName.name : res.reservationNumber
                 }

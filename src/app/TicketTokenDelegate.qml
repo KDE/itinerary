@@ -35,7 +35,7 @@ ColumnLayout {
 
     TicketTokenModel {
         id: ticketModel
-        reservationManager: _reservationManager
+        reservationManager: ReservationManager
         reservationIds: resIds
     }
 

@@ -34,7 +34,7 @@ App.EditorPage {
         event.location = loc;
         var newRes = reservation;
         newRes.reservationFor = event;
-        _reservationManager.updateReservation(resId, newRes);
+        ReservationManager.updateReservation(resId, newRes);
     }
 
     ColumnLayout {

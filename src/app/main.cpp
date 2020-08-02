@@ -123,6 +123,7 @@ void registerApplicationTypes()
 }
 
 // for registering QML singletons only
+static ReservationManager *s_reservationManager = nullptr;
 static DocumentManager *s_documentManager = nullptr;
 static FavoriteLocationModel *s_favoriteLocationModel = nullptr;
 static PkPassManager *s_pkPassManager = nullptr;
@@ -152,6 +153,7 @@ static TripGroupInfoProvider s_tripGroupInfoProvider;
 void registerApplicationSingletons()
 {
     REGISTER_SINGLETON_INSTANCE(ApplicationController, ApplicationController::instance())
+    REGISTER_SINGLETON_INSTANCE(ReservationManager, s_reservationManager)
     REGISTER_SINGLETON_INSTANCE(DocumentManager, s_documentManager)
     REGISTER_SINGLETON_INSTANCE(FavoriteLocationModel, s_favoriteLocationModel)
     REGISTER_SINGLETON_INSTANCE(PkPassManager, s_pkPassManager)
@@ -236,6 +238,7 @@ int main(int argc, char **argv)
 
     ReservationManager resMgr;
     resMgr.setPkPassManager(&passMgr);
+    s_reservationManager = &resMgr;
 
     DocumentManager docMgr;
     s_documentManager = &docMgr;
@@ -321,7 +324,6 @@ int main(int argc, char **argv)
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);
     // TODO get rid of those, e.g. by using singletons
-    engine.rootContext()->setContextProperty(QStringLiteral("_reservationManager"), &resMgr);
     engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);

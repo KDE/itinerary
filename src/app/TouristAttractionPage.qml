@@ -25,7 +25,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    readonly property var touristAttraction: _reservationManager.reservation(root.batchId).touristAttraction
+    readonly property var touristAttraction: ReservationManager.reservation(root.batchId).touristAttraction
     title: i18n("Tourist Attraction")
 
     Kirigami.FormLayout {

@@ -38,7 +38,7 @@ App.TimelineDelegate {
     function seatString() {
         var s = new Array();
         for (var i = 0; i < root.resIds.length; ++i) {
-            var res = _reservationManager.reservation(root.resIds[i]);
+            var res = ReservationManager.reservation(root.resIds[i]);
             if (res.airplaneSeat)
                 s.push(res.airplaneSeat);
         }

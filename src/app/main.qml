@@ -109,7 +109,7 @@ Kirigami.ApplicationWindow {
         showCloseButton: true
 
         Connections {
-            target: _reservationManager
+            target: ReservationManager
             onInfoMessage: {
                 infoMessage.text = msg;
                 infoMessage.visible = true;
@@ -118,7 +118,7 @@ Kirigami.ApplicationWindow {
     }
 
     Component.onCompleted: {
-        if (_reservationManager.isEmpty()) {
+        if (ReservationManager.isEmpty()) {
             pageStack.push(welcomeComponent);
         }
     }
@@ -145,7 +145,7 @@ Kirigami.ApplicationWindow {
         id: statisticsComponent
         App.StatisticsPage {
             id: statsPage
-            reservationManager: _reservationManager
+            reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
             onIsCurrentPageChanged: statsAction.enabled = !statsPage.isCurrentPage
         }

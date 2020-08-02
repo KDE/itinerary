@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
     /** Currently selected reservation of the batch. */
     property var currentReservationId: batchId
     /** @deprecated */
-    readonly property var reservation: _reservationManager.reservation(currentReservationId);
+    readonly property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var editor
@@ -38,7 +38,7 @@ Kirigami.ScrollablePage {
 
     property QtObject controller: TimelineDelegateController {
         id: _controller
-        reservationManager: _reservationManager
+        reservationManager: ReservationManager
         liveDataManager: LiveDataManager
     }
     property alias arrival: _controller.arrival
@@ -58,7 +58,7 @@ Kirigami.ScrollablePage {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onClicked: {
-                    _reservationManager.removeBatch(root.batchId);
+                    ReservationManager.removeBatch(root.batchId);
                     applicationWindow().pageStack.pop();
                 }
             }

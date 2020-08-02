@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
 
     DocumentsModel {
         id: docsModel
-        reservationManager: _reservationManager
+        reservationManager: ReservationManager
         batchId: controller.batchId
         documentManager: DocumentManager
     }

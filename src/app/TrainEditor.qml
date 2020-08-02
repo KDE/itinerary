@@ -44,7 +44,7 @@ App.EditorPage {
         newRes.reservationFor = trip;
         newRes.reservedTicket = ticket;
 
-        _reservationManager.updateReservation(resId, newRes);
+        ReservationManager.updateReservation(resId, newRes);
     }
 
     Kirigami.FormLayout {

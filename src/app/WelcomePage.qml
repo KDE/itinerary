@@ -25,7 +25,7 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    title: _reservationManager.isEmpty() ? i18n("Welcome!") : i18n("Help")
+    title: ReservationManager.isEmpty() ? i18n("Welcome!") : i18n("Help")
 
     ColumnLayout {
         Kirigami.Heading {
@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
             text: i18n("Got it!")
             onClicked: applicationWindow().pageStack.pop();
             Layout.alignment: Qt.AlignRight
-            visible: _reservationManager.isEmpty()
+            visible: ReservationManager.isEmpty()
         }
     }
 }
