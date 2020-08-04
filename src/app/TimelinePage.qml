@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 text: i18n("Today")
                 iconName: "view-calendar-day"
-                onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
+                onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
             }
         ]
     }
@@ -137,7 +137,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.CardsListView {
         id: listView
-        model: _timelineModel
+        model: TripGroupProxyModel
 
         delegate: Loader {
             property var modelData: model
@@ -186,7 +186,7 @@ Kirigami.ScrollablePage {
         id: positionTimer
         interval: 0
         repeat: false
-        onTriggered: listView.positionViewAtIndex(_timelineModel.todayRow, ListView.Beginning);
+        onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
     }
 
     Component.onCompleted: positionTimer.start()

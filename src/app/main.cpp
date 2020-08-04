@@ -133,6 +133,7 @@ static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static TripGroupInfoProvider s_tripGroupInfoProvider;
+static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
@@ -162,6 +163,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
+    REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -288,6 +290,7 @@ int main(int argc, char **argv)
 
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
+    s_tripGroupProxyModel = &tripGroupProxy;
 
     s_tripGroupInfoProvider.setReservationManager(&resMgr);
     s_tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
@@ -324,7 +327,6 @@ int main(int argc, char **argv)
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);
     // TODO get rid of those, e.g. by using singletons
-    engine.rootContext()->setContextProperty(QStringLiteral("_timelineModel"), &tripGroupProxy);
     engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
     engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.load(QStringLiteral("qrc:/main.qml"));

@@ -120,8 +120,8 @@ Kirigami.AbstractCard {
 
     onClicked: {
         if (rangeType == TimelineElement.SelfContained)
-            _timelineModel.expand(tripGroupId);
+            TripGroupProxyModel.expand(tripGroupId);
         else
-            _timelineModel.collapse(tripGroupId);
+            TripGroupProxyModel.collapse(tripGroupId);
     }
 }
