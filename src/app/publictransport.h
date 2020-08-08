@@ -30,6 +30,7 @@
 namespace KPublicTransport {
 class Journey;
 class JourneySection;
+class RentalVehicle;
 class Stopover;
 class StopoverRequest;
 }
@@ -84,12 +85,15 @@ public:
      *  depending on what's available.
      *  @note line/product logos are full-color, the generic ones are monochrome colorable Breeze icons.
      */
-    Q_INVOKABLE QString lineIcon(const QVariant &line);
+    Q_INVOKABLE QString lineIcon(const QVariant &line) const;
 
     /** Convert a KPublicTransport::Line::Mode enum value to an icon source or name
      *  for usage in Kirigami.Icon.
      */
-    Q_INVOKABLE QString lineModeIcon(int lineMode);
+    Q_INVOKABLE QString lineModeIcon(int lineMode) const;
+
+    /** Provides an icon for a rental vehicle type. */
+    Q_INVOKABLE QString rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const;
 
     /** Create a KPublicTransport::StopoverRequest for the given KItinerary place. */
     Q_INVOKABLE KPublicTransport::StopoverRequest stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const;

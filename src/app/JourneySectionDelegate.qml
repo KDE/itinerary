@@ -88,6 +88,8 @@ Kirigami.AbstractListItem {
                         case JourneySection.Walking: return "qrc:///images/walk.svg";
                         case JourneySection.Waiting: return "qrc:///images/wait.svg";
                         case JourneySection.Transfer: return "qrc:///images/transfer.svg";
+                        case JourneySection.RentedVehicle:
+                            return PublicTransport.rentalVehicleIcon(modelData.rentalVehicle);
                         default: return "question";
                     }
                 }
@@ -118,6 +120,8 @@ Kirigami.AbstractListItem {
                         return i18n("Transfer (%1)", Localizer.formatDuration(modelData.duration))
                     case JourneySection.Waiting:
                         return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
+                    case JourneySection.RentedVehicle:
+                        return i18n("%1 (%2)", modelData.rentalVehicle.network, Localizer.formatDuration(modelData.duration));
                     return "???";
                 }}
                 color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor

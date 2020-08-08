@@ -36,7 +36,9 @@ RowLayout {
                     case JourneySection.Walking: return "qrc:///images/walk.svg";
                     case JourneySection.Waiting: return "qrc:///images/wait.svg";
                     case JourneySection.Transfer: return "qrc:///images/transfer.svg";
-                        default: return "question";
+                    case JourneySection.RentedVehicle:
+                        return PublicTransport.rentalVehicleIcon(modelData.rentalVehicle);
+                    default: return "question";
                 }
             }
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor

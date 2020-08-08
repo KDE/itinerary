@@ -27,6 +27,7 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
+#include <KPublicTransport/RentalVehicle>
 #include <KPublicTransport/Stopover>
 #include <KPublicTransport/StopoverRequest>
 
@@ -98,7 +99,7 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     return loc;
 }
 
-QString PublicTransport::lineIcon(const QVariant &line)
+QString PublicTransport::lineIcon(const QVariant &line) const
 {
     using namespace KPublicTransport;
     const auto l = line.value<Line>();
@@ -113,7 +114,7 @@ QString PublicTransport::lineIcon(const QVariant &line)
     return lineModeIcon(l.mode());
 }
 
-QString PublicTransport::lineModeIcon(int lineMode)
+QString PublicTransport::lineModeIcon(int lineMode) const
 {
     using namespace KPublicTransport;
     switch (lineMode) {
@@ -149,6 +150,22 @@ QString PublicTransport::lineModeIcon(int lineMode)
             return QStringLiteral("qrc:///images/car.svg");
     }
 
+    return QStringLiteral("question");
+}
+
+QString PublicTransport::rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const
+{
+    using namespace KPublicTransport;
+    switch (vehicle.type()) {
+        case RentalVehicle::Unknown:
+            return {};
+        case RentalVehicle::Bicycle:
+            return QStringLiteral("qrc:///images/bike.svg");
+        case RentalVehicle::ElectricScooter:
+            return QStringLiteral("question"); // TODO
+        case RentalVehicle::Car:
+            return QStringLiteral("qrc:///images/car.svg");
+    }
     return QStringLiteral("question");
 }
 
@@ -339,6 +356,16 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
             return section.duration() > 20*60;
         case JourneySection::PublicTransport:
             return std::any_of(section.loadInformation().begin(), section.loadInformation().end(), [](const auto &load) { return load.load() == Load::Full; });
+        case JourneySection::RentedVehicle:
+            switch (section.rentalVehicle().type()) {
+                case RentalVehicle::Unknown:
+                    return false;
+                case RentalVehicle::Bicycle:
+                    return section.duration() > 60*60 || section.distance() > 20000;
+                case RentalVehicle::ElectricScooter:
+                case RentalVehicle::Car:
+                    return false; // ???
+            }
     }
 
     return false;
