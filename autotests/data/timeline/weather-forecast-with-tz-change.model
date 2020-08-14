@@ -157,7 +157,17 @@
             "from": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "fromName": "Home",
             "state": "Pending",
@@ -165,7 +175,17 @@
                 "@type": "Location",
                 "latitude": 52.55390167236328,
                 "longitude": 13.29319953918457,
-                "name": "Tegel"
+                "name": "Tegel",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "toName": "Tegel"
         },
@@ -253,7 +273,17 @@
                 "@type": "Location",
                 "latitude": 60.31639862060547,
                 "longitude": 24.969100952148438,
-                "name": "Helsinki-Vantaa"
+                "name": "Helsinki-Vantaa",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "fromName": "Helsinki-Vantaa",
             "state": "Pending",
@@ -261,6 +291,16 @@
                 "@type": "Location",
                 "country": "FI",
                 "locality": "Helsinki",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                },
                 "streetAddress": "Some Street 42"
             },
             "toName": "Some Hotel in Finland"
@@ -390,6 +430,16 @@
                 "@type": "Location",
                 "country": "FI",
                 "locality": "Helsinki",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                },
                 "streetAddress": "Some Street 42"
             },
             "fromName": "Some Hotel in Finland",
@@ -398,7 +448,17 @@
                 "@type": "Location",
                 "latitude": 60.31639862060547,
                 "longitude": 24.969100952148438,
-                "name": "Helsinki-Vantaa"
+                "name": "Helsinki-Vantaa",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "toName": "Helsinki-Vantaa"
         },
@@ -486,14 +546,34 @@
                 "@type": "Location",
                 "latitude": 52.55390167236328,
                 "longitude": 13.29319953918457,
-                "name": "Tegel"
+                "name": "Tegel",
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "fromName": "Tegel",
             "state": "Pending",
             "to": {
                 "@type": "Location",
                 "latitude": 52.51860046386719,
-                "longitude": 13.376299858093262
+                "longitude": 13.376299858093262,
+                "rentalVehicleStation": {
+                    "@type": "RentalVehicleStation",
+                    "availableVehicles": -1,
+                    "capacity": -1,
+                    "isValid": false,
+                    "network": {
+                        "@type": "RentalVehicleNetwork",
+                        "isValid": false
+                    }
+                }
             },
             "toName": "Home"
         },
