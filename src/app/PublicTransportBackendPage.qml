@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
 
         section.property: "primaryCountryCode"
         section.delegate: Kirigami.ListSectionHeader {
-            text: section == "" ? i18n("Global") : Localizer.countryFlag(section) + " " + Localizer.countryName(section)
+            text: (section == "" || section == "UN") ? i18n("Global") : Localizer.countryFlag(section) + " " + Localizer.countryName(section)
         }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
