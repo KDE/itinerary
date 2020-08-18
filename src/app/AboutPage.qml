@@ -150,7 +150,7 @@ Kirigami.Page {
                 }
                 QQC2.Label {
                     Layout.fillWidth: true
-                    text: i18n("License: <a href=\"%2\">%1</a>", modelData.license, modelData.licenseUrl)
+                    text: i18n("License: <a href=\"%2\">%1</a>", (modelData.license != "" ? modelData.license : modelData.licenseUrl), modelData.licenseUrl)
                     onLinkActivated: Qt.openUrlExternally(link)
                     visible: modelData.hasLicense
                     wrapMode: Text.WordWrap
