@@ -165,9 +165,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "fromName": "Home",
             "state": "Pending",
@@ -183,9 +185,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "toName": "Tegel"
         },
@@ -281,9 +285,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "fromName": "Helsinki-Vantaa",
             "state": "Pending",
@@ -298,10 +304,12 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
                 },
-                "streetAddress": "Some Street 42"
+                "streetAddress": "Some Street 42",
+                "type": "Place"
             },
             "toName": "Some Hotel in Finland"
         },
@@ -437,10 +445,12 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
                 },
-                "streetAddress": "Some Street 42"
+                "streetAddress": "Some Street 42",
+                "type": "Place"
             },
             "fromName": "Some Hotel in Finland",
             "state": "Pending",
@@ -456,9 +466,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "toName": "Helsinki-Vantaa"
         },
@@ -554,9 +566,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "fromName": "Tegel",
             "state": "Pending",
@@ -571,9 +585,11 @@
                     "isValid": false,
                     "network": {
                         "@type": "RentalVehicleNetwork",
-                        "isValid": false
+                        "isValid": false,
+                        "vehicleTypes": "Unknown"
                     }
-                }
+                },
+                "type": "Place"
             },
             "toName": "Home"
         },
