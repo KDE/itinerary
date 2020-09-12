@@ -12,8 +12,6 @@ import net.fortuna.ical4j.model.property.XProperty;
 
 import androidx.core.content.FileProvider;
 
-import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -48,38 +46,39 @@ public class Activity extends QtActivity
         String eventSelection = "(( " + CalendarContract.Events.DTSTART + " >= " + startTime.getTimeInMillis()
             + " ) AND ( " + CalendarContract.Events.DTSTART + " <= " + endTime.getTimeInMillis() + " ))";
 
-        Cursor cursor = getContentResolver().query(CalendarContract.Events.CONTENT_URI, eventColumns, eventSelection, null, null);
-        while (cursor.moveToNext()) {
-            if (cursor.getString(0) == null || !cursor.getString(0).startsWith("KIT-")) {
-                continue;
-            }
-            Log.i(TAG, cursor.getString(1));
-
-            String propSelection = "(event_id == " + cursor.getInt(2) + ")";
-            Cursor propCursor = getContentResolver().query(CalendarContract.ExtendedProperties.CONTENT_URI, propColumns, propSelection, null, null);
-            while (propCursor.moveToNext()) {
-                String propName = propCursor.getString(0);
-                String propValue = propCursor.getString(1);
-                if (propName == null || propValue == null) {
+        try (Cursor cursor = getContentResolver().query(CalendarContract.Events.CONTENT_URI, eventColumns, eventSelection, null, null)) {
+            while (cursor.moveToNext()) {
+                if (cursor.getString(0) == null || !cursor.getString(0).startsWith("KIT-")) {
                     continue;
                 }
+                Log.i(TAG, cursor.getString(1));
 
-                Log.i(TAG, propName);
-                if (propName.equals("unknown-property.v2") || propName.contains("vnd.ical4android.unknown-property")) {
-                    importDavDroidJson(propValue);
-
-                // legacy, replaced by the above in Feb 2019, removing this eventually will allow us to remove the ical4j dependency
-                } else if (propName.equals("unknown-property")) {
-                    ByteArrayInputStream bis = new ByteArrayInputStream(android.util.Base64.decode(propValue, android.util.Base64.NO_WRAP));
-                    try  {
-                        ObjectInputStream ois = new ObjectInputStream(bis);
-                        Object prop = ois.readObject();
-                        if (prop instanceof XProperty) {
-                            importReservation(((XProperty)prop).getValue());
+                String propSelection = "(event_id == " + cursor.getInt(2) + ")";
+                try (Cursor propCursor = getContentResolver().query(CalendarContract.ExtendedProperties.CONTENT_URI, propColumns, propSelection, null, null)) {
+                    while (propCursor.moveToNext()) {
+                        String propName = propCursor.getString(0);
+                        String propValue = propCursor.getString(1);
+                        if (propName == null || propValue == null) {
+                            continue;
                         }
-                    } catch (Exception e) {
-                        Log.i(TAG, e.toString());
-                        continue;
+
+                        Log.i(TAG, propName);
+                        if (propName.equals("unknown-property.v2") || propName.contains("vnd.ical4android.unknown-property")) {
+                            importDavDroidJson(propValue);
+
+                            // legacy, replaced by the above in Feb 2019, removing this eventually will allow us to remove the ical4j dependency
+                        } else if (propName.equals("unknown-property")) {
+                            ByteArrayInputStream bis = new ByteArrayInputStream(android.util.Base64.decode(propValue, android.util.Base64.NO_WRAP));
+                            try {
+                                ObjectInputStream ois = new ObjectInputStream(bis);
+                                Object prop = ois.readObject();
+                                if (prop instanceof XProperty) {
+                                    importReservation(((XProperty) prop).getValue());
+                                }
+                            } catch (Exception e) {
+                                Log.i(TAG, e.toString());
+                            }
+                        }
                     }
                 }
             }

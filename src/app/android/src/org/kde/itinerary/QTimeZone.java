@@ -12,7 +12,6 @@ import android.os.Build;
 
 import java.lang.String;
 import java.util.Locale;
-import android.util.Log;
 
 public class QTimeZone
 {
