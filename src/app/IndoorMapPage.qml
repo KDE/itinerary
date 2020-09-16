@@ -120,6 +120,7 @@ Kirigami.Page {
     IndoorMap {
         id: map
         anchors.fill: parent
+        overlaySources: [ gateModel, platformModel ]
 
         IndoorMapScale {
             map: map
