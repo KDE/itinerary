@@ -117,6 +117,17 @@ Kirigami.Page {
         model: gateModel
     }
 
+    FloorLevelChangeModel {
+        id: floorLevelChangeModel
+        currentFloorLevel: map.view.floorLevel
+        floorLevelModel: map.floorLevels
+    }
+
+    IndoorMapElevatorSheet {
+        id: elevatorSheet
+        model: floorLevelChangeModel
+    }
+
     IndoorMap {
         id: map
         anchors.fill: parent
@@ -135,6 +146,16 @@ Kirigami.Page {
         }
 
         onElementPicked: {
+            floorLevelChangeModel.element = element;
+            if (floorLevelChangeModel.hasSingleLevelChange) {
+                showPassiveNotification(i18n("Switched to floor %1", floorLevelChangeModel.destinationLevelName), "short");
+                map.view.floorLevel = floorLevelChangeModel.destinationLevel;
+                return;
+            } else if (floorLevelChangeModel.hasMultipleLevelChanges) {
+                elevatorSheet.sheetOpen = true;
+                return;
+            }
+
             infoModel.element = element;
             if (infoModel.name != "" || infoModel.debug) {
                 elementDetailsSheet.sheetOpen = true;
