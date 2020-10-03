@@ -10,6 +10,7 @@
 #include "applicationcontroller.h"
 #include "brightnessmanager.h"
 #include "countrymodel.h"
+#include "developmentmodecontroller.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "favoritelocationmodel.h"
@@ -156,6 +157,7 @@ void registerApplicationSingletons()
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
+    REGISTER_SINGLETON_GADGET_FACTORY(DevelopmentModeController)
     REGISTER_SINGLETON_GADGET_FACTORY(Localizer)
     REGISTER_SINGLETON_GADGET_FACTORY(NavigationController)
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)

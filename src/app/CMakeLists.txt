@@ -60,6 +60,7 @@ endif()
 set(itinerary_app_srcs
     main.cpp
     countrymodel.cpp
+    developmentmodecontroller.cpp
     documentsmodel.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
