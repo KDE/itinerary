@@ -66,6 +66,24 @@ Kirigami.Page {
             text: i18n("Find Gate")
             onTriggered: gateSheet.sheetOpen = true
             visible: !gateModel.isEmpty
+        },
+        Kirigami.Action {
+            id: lightStyleAction
+            text: "Light Style"
+            onTriggered: map.styleSheet = "breeze-light"
+            visible: Settings.developmentMode
+        },
+        Kirigami.Action {
+            id: darkStyleAction
+            text: "Dark Style"
+            onTriggered: map.styleSheet = "breeze-dark"
+            visible: Settings.developmentMode
+        },
+        Kirigami.Action {
+            id: diagnosticStyleAction
+            text: "Diagnostic Style"
+            onTriggered: map.styleSheet = "diagnostic"
+            visible: Settings.developmentMode
         }
     ]
 
