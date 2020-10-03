@@ -71,7 +71,7 @@ Kirigami.Page {
 
     OSMElementInformationModel {
         id: infoModel
-        //debug: true
+        debug: Settings.developmentMode
     }
 
     IndoorMapInfoSheet {

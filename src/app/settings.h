@@ -22,6 +22,8 @@ class Settings : public QObject
 
     Q_PROPERTY(bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
 
+    Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)
+
 public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
@@ -43,6 +45,9 @@ public:
     bool showNotificationOnLockScreen() const;
     void setShowNotificationOnLockScreen(bool enabled);
 
+    bool developmentMode() const;
+    void setDevelopmentMode(bool enabled);
+
 Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
@@ -50,6 +55,7 @@ Q_SIGNALS:
     void autoAddTransfersChanged(bool autoAdd);
     void autoFillTransfersChanged(bool autoFill);
     void showNotificationOnLockScreenChanged(bool enabled);
+    void developmentModeChanged(bool enabled);
 
 private:
     QString m_homeCountry;
@@ -58,6 +64,7 @@ private:
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
     bool m_showNotificationOnLockScreen = false;
+    bool m_developmentMode = false;
 };
 
 #endif // SETTINGS_H

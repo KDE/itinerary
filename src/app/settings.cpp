@@ -28,6 +28,8 @@ Settings::Settings(QObject *parent)
     m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
 
     m_showNotificationOnLockScreen = s.value(QLatin1String("ShowNotificationOnLockScreen"), false).toBool();
+
+    m_developmentMode = s.value(QLatin1String("DevelopmentMode"), false).toBool();
 }
 
 Settings::~Settings() = default;
@@ -152,4 +154,22 @@ void Settings::setShowNotificationOnLockScreen(bool enabled)
     s.setValue(QLatin1String("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
 
     emit showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
+}
+
+bool Settings::developmentMode() const
+{
+    return m_developmentMode;
+}
+
+void Settings::setDevelopmentMode(bool enabled)
+{
+    if (m_developmentMode == enabled) {
+        return;
+    }
+
+    m_developmentMode = enabled;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("DevelopmentMode"), m_developmentMode);
+    emit developmentModeChanged(m_developmentMode);
 }

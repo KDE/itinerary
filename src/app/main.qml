@@ -83,6 +83,13 @@ Kirigami.ApplicationWindow {
                 text: i18n("About")
                 iconName: "help-about-symbolic"
                 onTriggered: pageStack.push(aboutComponent)
+            },
+            Kirigami.Action {
+                id: devModeAction
+                text: "Development"
+                iconName: "tools-report-bug"
+                onTriggered: pageStack.push(devModePageComponent)
+                visible: Settings.developmentMode
             }
         ]
     }
@@ -150,5 +157,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: indoorMapPage
         App.IndoorMapPage {}
+    }
+
+    Component {
+        id: devModePageComponent
+        App.DevelopmentModePage {}
     }
 }

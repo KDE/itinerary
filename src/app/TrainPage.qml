@@ -75,6 +75,7 @@ App.DetailsPage {
         Kirigami.Action {
             text: "Test Notification"
             iconName: "notifications"
+            visible: Settings.developmentMode
             onTriggered: LiveDataManager.showNotification(root.batchId)
         }
     }
@@ -83,7 +84,7 @@ App.DetailsPage {
         actions.contextualActions.push(alternativeAction.createObject(root));
         actions.contextualActions.push(journeyDetailsAction.createObject(root));
         actions.contextualActions.push(vehicleLayoutAction.createObject(root));
-        //actions.contextualActions.push(notifyTestAction.createObject(root));
+        actions.contextualActions.push(notifyTestAction.createObject(root));
     }
 
     ColumnLayout {

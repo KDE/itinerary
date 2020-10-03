@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.10
+import QtQuick 2.13
 import QtQuick.Layouts 1.11
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.4 as Kirigami
@@ -229,8 +229,21 @@ Kirigami.Page {
             height: parent.height
 
             QQC2.Label {
+                id: versionLabel
                 Layout.fillWidth: true
                 text: i18n("Application version: %1", ApplicationController.version)
+
+                // developement mode activation
+                property int tapCount: 0
+                TapHandler {
+                    onTapped: {
+                        versionLabel.tapCount++;
+                        if (versionLabel.tapCount == 7) {
+                            Settings.developmentMode = true;
+                            showPassiveNotification("Development mode enabled!");
+                        }
+                    }
+                }
             }
 
             Kirigami.Separator { Layout.fillWidth: true }
