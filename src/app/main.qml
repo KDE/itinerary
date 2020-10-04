@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
+import QtQuick 2.13
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
@@ -97,6 +97,21 @@ Kirigami.ApplicationWindow {
         id: contextDrawer
     }
     pageStack.initialPage: mainPageComponent
+
+    DropArea {
+        id: topDropArea
+        onEntered: {
+            if (!drag.hasUrls) {
+                drag.accepted = false;
+            }
+        }
+        onDropped: {
+            for (var i in drop.urls) {
+                ApplicationController.importFromUrl(drop.urls[i]);
+            }
+        }
+        anchors.fill: parent
+    }
 
     footer: Kirigami.InlineMessage {
         id: infoMessage
