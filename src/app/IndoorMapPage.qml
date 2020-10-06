@@ -56,6 +56,20 @@ Kirigami.Page {
     }
     contextualActions: [
         Kirigami.Action {
+            id: zoomInAction
+            text: i18n("Zoom In")
+            iconName: "zoom-in-symbolic"
+            onTriggered: map.view.setZoomLevel(map.view.zoomLevel + 1, Qt.point(map.width / 2.0, map.height/ 2.0));
+            enabled: map.view.zoomLevel < 21
+        },
+        Kirigami.Action {
+            id: zoomOutAction
+            text: i18n("Zoom Out")
+            iconName: "zoom-out-symbolic"
+            onTriggered: map.view.setZoomLevel(map.view.zoomLevel - 1, Qt.point(map.width / 2.0, map.height/ 2.0));
+            enabled: map.view.zoomLevel > 14
+        },
+        Kirigami.Action {
             id: platformAction
             text: i18n("Find Platform")
             onTriggered: platformSheet.sheetOpen = true

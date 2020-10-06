@@ -125,6 +125,8 @@ if (ANDROID)
         view-list-symbolic
         view-refresh
         view-statistics
+        zoom-in-symbolic
+        zoom-out-symbolic
 
         weather-clear
         weather-clear-wind
