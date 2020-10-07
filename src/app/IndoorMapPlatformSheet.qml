@@ -78,6 +78,7 @@ Kirigami.OverlaySheet {
                 level: 4
                 text: switch(parseInt(section)) {
                     case Platform.Rail: return i18n("Railway");
+                    case Platform.LightRail: return i18n("Light Rail");
                     case Platform.Subway: return i18n("Subway");
                     case Platform.Tram: return i18n("Tramway");
                     case Platform.Bus: return i18n("Bus");
