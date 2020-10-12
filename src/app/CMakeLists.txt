@@ -62,6 +62,7 @@ set(itinerary_app_srcs
     countrymodel.cpp
     developmentmodecontroller.cpp
     documentsmodel.cpp
+    mapdownloadmanager.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
     settings.cpp
@@ -102,6 +103,7 @@ if (ANDROID)
         document-open
         document-save
         documentinfo
+        download
         edit-delete
         edit-download
         edit-paste

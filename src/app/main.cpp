@@ -18,6 +18,7 @@
 #include "localizer.h"
 #include "locationinformation.h"
 #include "lockmanager.h"
+#include "mapdownloadmanager.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
 #include "pkpassmanager.h"
@@ -124,6 +125,7 @@ static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
+static MapDownloadManager *s_mapDownloadManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
@@ -154,6 +156,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
+    REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -285,6 +288,10 @@ int main(int argc, char **argv)
 
     s_tripGroupInfoProvider.setReservationManager(&resMgr);
     s_tripGroupInfoProvider.setWeatherForecastManager(&weatherForecastMgr);
+
+    MapDownloadManager mapDownloadMgr;
+    mapDownloadMgr.setReservationManager(&resMgr);
+    s_mapDownloadManager = &mapDownloadMgr;
 
     ApplicationController appController;
     appController.setReservationManager(&resMgr);

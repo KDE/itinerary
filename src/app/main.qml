@@ -56,6 +56,11 @@ Kirigami.ApplicationWindow {
                     LiveDataManager.checkForUpdates();
                 }
             },
+            /*Kirigami.Action {
+                text: i18n("Download Maps")
+                iconName: "download"
+                onTriggered: MapDownloadManager.download();
+            },*/
             Kirigami.Action {
                 id: statsAction
                 text: i18n("Statistics")
