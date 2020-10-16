@@ -58,8 +58,7 @@ public:
     void importBundle(const QByteArray &data);
 
     // data export
-    Q_INVOKABLE void exportData();
-    void exportToFile(const QString &filePath);
+    Q_INVOKABLE void exportToFile(const QString &filePath);
 
     // document attaching
     Q_INVOKABLE void addDocument(const QString &batchId);

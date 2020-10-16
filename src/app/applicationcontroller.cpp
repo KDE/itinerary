@@ -320,26 +320,6 @@ bool ApplicationController::hasClipboardContent() const
     return QGuiApplication::clipboard()->mimeData()->hasText() || QGuiApplication::clipboard()->mimeData()->hasUrls();
 }
 
-void ApplicationController::exportData()
-{
-    qCDebug(Log);
-#ifdef Q_OS_ANDROID
-    using namespace KAndroidExtras;
-    Intent intent;
-    intent.setAction(Intent::ACTION_CREATE_DOCUMENT);
-    intent.addCategory(Intent::CATEGORY_OPENABLE);
-    intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, [this](int, int, const QAndroidJniObject &jniIntent) {
-        Intent intent(jniIntent);
-        exportToFile(intent.getData().toString());
-    });
-#else
-    const auto filePath = QFileDialog::getSaveFileName(nullptr, i18n("Export Itinerary Data"),
-        QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation),
-        i18n("KDE Itinerary files (*.itinerary)"));
-    exportToFile(filePath);
-#endif
-}
 
 void ApplicationController::exportToFile(const QString &filePath)
 {

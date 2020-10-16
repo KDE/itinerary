@@ -20,11 +20,21 @@ Kirigami.ApplicationWindow {
     height: 720
 
     FileDialog {
-        id: fileDialog
+        id: importDialog
+        fileMode: FileDialog.OpenFile
         title: i18n("Import Reservation")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("KDE Itinerary files (*.itinerary)")]
         onAccepted: ApplicationController.importFromUrl(file)
+    }
+
+    FileDialog {
+        id: exportDialog
+        fileMode: FileDialog.SaveFile
+        title: i18n("Export Itinerary Data")
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
+        onAccepted: ApplicationController.exportToFile(file)
     }
 
     globalDrawer: Kirigami.GlobalDrawer {
@@ -35,7 +45,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import...")
                 iconName: "document-open"
-                onTriggered: fileDialog.open()
+                onTriggered: importDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Paste")
@@ -76,7 +86,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Export...")
                 iconName: "export-symbolic"
-                onTriggered: ApplicationController.exportData();
+                onTriggered: exportDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Help")
