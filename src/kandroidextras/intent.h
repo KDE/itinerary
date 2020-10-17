@@ -64,6 +64,8 @@ public:
 
     /** Flag for granting read URI permissions on content providers. */
     JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
+    /** Flag for granting write URI permissions on content providers. */
+    JNI_CONSTANT(jint, FLAG_GRANT_WRITE_URI_PERMISSION)
 
 private:
     QAndroidJniObject m_intent;

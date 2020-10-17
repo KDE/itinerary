@@ -44,5 +44,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             onClicked: DevelopmentModeController.purgeMapCSS();
         }
+
+        QQC2.Button {
+            text: "Enable KPT Logging"
+            Layout.fillWidth: true
+            onClicked: DevelopmentModeController.enablePublicTransportLogging();
+        }
     }
 }

@@ -6,14 +6,42 @@
 
 #include "developmentmodecontroller.h"
 
+#include <QByteArray>
 #include <QDebug>
 #include <QDir>
-#include <QFileDialog>
+#include <QFile>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/contentresolver.h>
+#include <kandroidextras/jnisignature.h>
+#include <kandroidextras/jnitypes.h>
+#include <kandroidextras/manifestpermission.h>
+using namespace KAndroidExtras;
+
+#include <QtAndroid>
 #endif
+
+void DevelopmentModeController::enablePublicTransportLogging()
+{
+#ifdef Q_OS_ANDROID
+    if (QtAndroid::checkPermission(ManifestPermission::WRITE_EXTERNAL_STORAGE) != QtAndroid::PermissionResult::Granted) {
+        QtAndroid::requestPermissions({ManifestPermission::WRITE_EXTERNAL_STORAGE}, [this] (const QtAndroid::PermissionResultMap &result){
+            if (result[ManifestPermission::WRITE_EXTERNAL_STORAGE] == QtAndroid::PermissionResult::Granted) {
+                enablePublicTransportLogging();
+            }
+        });
+        return;
+    }
+
+    const auto f = QtAndroid::androidContext().callObjectMethod("getExternalFilesDir", Jni::signature<java::io::File(java::lang::String)>(), nullptr);
+    const auto baseDir = f.callObjectMethod("getPath", Jni::signature<java::lang::String()>()).toString();
+#else
+    const auto baseDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#endif
+    qputenv("KPUBLICTRANSPORT_LOG_DIR", (baseDir + QLatin1String("/kpublictransport-log")).toUtf8());
+}
 
 void DevelopmentModeController::importMapCSS(const QUrl &url)
 {

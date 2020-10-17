@@ -48,6 +48,7 @@
 #include <kandroidextras/uri.h>
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
+#include <kandroidextras/manifestpermission.h>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -58,8 +59,6 @@
 using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
-
-#define PERMISSION_CALENDAR QStringLiteral("android.permission.READ_CALENDAR")
 
 static void importReservation(JNIEnv *env, jobject that, jstring data)
 {
@@ -297,15 +296,15 @@ void ApplicationController::importData(const QByteArray &data)
 void ApplicationController::checkCalendar()
 {
 #ifdef Q_OS_ANDROID
-
-    if (QtAndroid::checkPermission(PERMISSION_CALENDAR) == QtAndroid::PermissionResult::Granted) {
+    using namespace KAndroidExtras;
+    if (QtAndroid::checkPermission(ManifestPermission::READ_CALENDAR) == QtAndroid::PermissionResult::Granted) {
         const auto activity = QtAndroid::androidActivity();
         if (activity.isValid()) {
             activity.callMethod<void>("checkCalendar");
         }
     } else {
-        QtAndroid::requestPermissions({PERMISSION_CALENDAR}, [this] (const QtAndroid::PermissionResultMap &result){
-            if (result[PERMISSION_CALENDAR] == QtAndroid::PermissionResult::Granted) {
+        QtAndroid::requestPermissions({ManifestPermission::READ_CALENDAR}, [this] (const QtAndroid::PermissionResultMap &result){
+            if (result[ManifestPermission::READ_CALENDAR] == QtAndroid::PermissionResult::Granted) {
                 checkCalendar();
             }
         });

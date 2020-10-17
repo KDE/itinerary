@@ -45,9 +45,11 @@ namespace KAndroidExtras {
 JNI_TYPE(android, content, ContentResolver)
 JNI_TYPE(android, content, Intent)
 JNI_TYPE(android, database, Cursor)
+JNI_TYPE(android, Manifest, permission)
 JNI_TYPE(android, net, Uri)
 JNI_TYPE(android, provider, OpenableColumns)
 JNI_TYPE(android, provider, Settings)
+JNI_TYPE(java, io, File)
 JNI_TYPE(java, lang, String)
 JNI_TYPE(java, util, Locale)
 
