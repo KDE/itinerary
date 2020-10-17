@@ -7,6 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import Qt.labs.platform 1.1
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
@@ -22,6 +23,14 @@ Kirigami.ScrollablePage {
         reservationManager: ReservationManager
         batchId: controller.batchId
         documentManager: DocumentManager
+    }
+
+    FileDialog {
+        id: addDialog
+        title: i18n("Add Document")
+        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("All Files (*.*)")]
+        onAccepted: ApplicationController.addDocument(controller.batchId, file)
     }
 
     Component {
@@ -82,7 +91,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconName: "list-add"
                 text: i18n("Add Document...")
-                onTriggered: ApplicationController.addDocument(controller.batchId)
+                onTriggered: addDialog.open()
             }
         ]
     }

@@ -51,8 +51,6 @@
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
-#else
-#include <QFileDialog>
 #endif
 
 #include <memory>
@@ -388,26 +386,6 @@ void ApplicationController::importBundle(KItinerary::File *file)
     if (!favLocs.empty()) {
         m_favLocModel->setFavoriteLocations(std::move(favLocs));
     }
-}
-
-void ApplicationController::addDocument(const QString &batchId)
-{
-#ifndef Q_OS_ANDROID
-    const auto url = QFileDialog::getOpenFileUrl(nullptr, i18n("Add Document"),
-        QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)),
-        i18n("All Files (*.*)"));
-    addDocument(batchId, url);
-#else
-    using namespace KAndroidExtras;
-    Intent intent;
-    intent.setAction(Intent::ACTION_OPEN_DOCUMENT);
-    intent.addCategory(Intent::CATEGORY_OPENABLE);
-    intent.setType(QStringLiteral("*/*"));
-    QtAndroid::startActivity(intent, 0, [this, batchId](int, int, const QAndroidJniObject &jniIntent) {
-        Intent intent(jniIntent);
-        addDocument(batchId, intent.getData());
-    });
-#endif
 }
 
 void ApplicationController::addDocument(const QString &batchId, const QUrl &url)

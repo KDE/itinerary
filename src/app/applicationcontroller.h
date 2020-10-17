@@ -61,7 +61,7 @@ public:
     Q_INVOKABLE void exportToFile(const QString &filePath);
 
     // document attaching
-    Q_INVOKABLE void addDocument(const QString &batchId);
+    Q_INVOKABLE void addDocument(const QString &batchId, const QUrl &url);
     Q_INVOKABLE void removeDocument(const QString &batchId, const QString &docId);
     Q_INVOKABLE void openDocument(const QUrl &url);
 
@@ -75,7 +75,6 @@ Q_SIGNALS:
 private:
     void importLocalFile(const QUrl &url);
     void importBundle(KItinerary::File *file);
-    void addDocument(const QString &batchId, const QUrl &url);
 
     static ApplicationController *s_instance;
 
