@@ -75,6 +75,7 @@ add_executable(itinerary-app ${itinerary_app_srcs})
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
+    #KOSMIndoorMap
     Qt5::QuickControls2
 )
 if (ANDROID)

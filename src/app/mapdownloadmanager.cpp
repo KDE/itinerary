@@ -7,6 +7,10 @@
 #include "mapdownloadmanager.h"
 #include "reservationmanager.h"
 
+#if 0
+#include <KOSMIndoorMap/MapLoader>
+#endif
+
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 #include <KItinerary/SortUtil>
@@ -34,7 +38,8 @@ void MapDownloadManager::setReservationManager(ReservationManager *resMgr)
 
 static bool isRelevantTime(const QDateTime &dt)
 {
-    const auto now = QDateTime::currentDateTime();
+//     const auto now = QDateTime::currentDateTime();
+    const auto now = QDateTime({2020,1,30}, {0,0});
     return dt > now && dt < now.addDays(14);
 }
 
@@ -63,6 +68,7 @@ void MapDownloadManager::download()
     }
 
     qDebug() << m_pendingRequests.size() << "pending download requests";
+    downloadNext();
 }
 
 void MapDownloadManager::addRequest(double lat, double lon, const QDateTime &cacheUntil)
@@ -79,4 +85,29 @@ void MapDownloadManager::addRequest(double lat, double lon, const QDateTime &cac
     }
 
     m_pendingRequests.push_back({ lat, lon, cacheUntil });
+}
+
+void MapDownloadManager::downloadNext()
+{
+    if (m_loader || m_pendingRequests.empty()) {
+        return;
+    }
+
+    const auto req = std::move(m_pendingRequests.back());
+    m_pendingRequests.pop_back();
+
+#if 0
+    m_loader = new KOSMIndoorMap::MapLoader(this);
+    connect(m_loader, &KOSMIndoorMap::MapLoader::done, this, &MapDownloadManager::downloadFinished);
+    m_loader->loadForCoordinate(req.lat, req.lon, req.cacheUntil);
+#endif
+}
+
+void MapDownloadManager::downloadFinished()
+{
+#if 0
+    m_loader->deleteLater();
+#endif
+    m_loader = nullptr;
+    downloadNext();
 }

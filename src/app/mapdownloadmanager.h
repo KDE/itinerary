@@ -14,6 +14,10 @@
 
 class ReservationManager;
 
+namespace KOSMIndoorMap {
+class MapLoader;
+}
+
 /** Downloads indoor map tiles for upcoming trips. */
 class MapDownloadManager : public QObject
 {
@@ -34,6 +38,8 @@ public:
 
 private:
     void addRequest(double lat, double lon, const QDateTime &cacheUntil);
+    void downloadNext();
+    void downloadFinished();
 
     ReservationManager *m_resMgr = nullptr;
 
@@ -43,6 +49,8 @@ private:
         QDateTime cacheUntil;
     };
     std::vector<Request> m_pendingRequests;
+
+    KOSMIndoorMap::MapLoader *m_loader = nullptr;
 };
 
 #endif // MAPDOWNLOADMANAGER_H
