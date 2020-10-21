@@ -1,3 +1,7 @@
+<!--
+    SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
 <RCC>
     <qresource prefix="/knotifications5">
         <file>itinerary.notifyrc</file>

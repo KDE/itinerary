@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.in ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
 set(itinerary_srcs

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 set(solidextras_srcs
     brightnessmanager.cpp
     lockmanager.cpp

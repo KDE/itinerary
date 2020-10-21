@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_library(KAndroidExtras STATIC
     activity.cpp
     contentresolver.cpp

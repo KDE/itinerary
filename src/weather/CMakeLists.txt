@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 if (TARGET KF5::Holidays)
     set(HAVE_KHOLIDAYS TRUE)
 endif()
