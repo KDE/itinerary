@@ -77,6 +77,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="content" android:host="*" android:pathPattern=".*\\.itinerary" android:mimeType="*/*"/>
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content" android:host="*" android:pathPattern=".*\\.eml" android:mimeType="*/*"/>
+            </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="itinerary-app"/>
             <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
