@@ -41,9 +41,9 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
     endif()
 endif()
 
-set(QT_MIN_VERSION 5.11)
+set(QT_MIN_VERSION 5.14) # for new style QML Connections
 if (ANDROID)
-    set(QT_MIN_VERSION 5.13) # for content: support and lambda activity result receiver support
+    set(QT_MIN_VERSION 5.15.1) # for content: support
 endif()
 
 set(KF5_MIN_VERSION 5.64)
