@@ -66,11 +66,11 @@ Kirigami.ApplicationWindow {
                     LiveDataManager.checkForUpdates();
                 }
             },
-            /*Kirigami.Action {
+            Kirigami.Action {
                 text: i18n("Download Maps")
                 iconName: "download"
                 onTriggered: MapDownloadManager.download();
-            },*/
+            },
             Kirigami.Action {
                 id: statsAction
                 text: i18n("Statistics")
@@ -141,6 +141,11 @@ Kirigami.ApplicationWindow {
                 infoMessage.visible = true;
             }
         }
+    }
+
+    Connections {
+        target: MapDownloadManager
+        function onFinished() { showPassiveNotification(i18n("Map download finished."), "short"); }
     }
 
     Component.onCompleted: {

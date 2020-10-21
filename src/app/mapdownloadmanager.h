@@ -36,6 +36,10 @@ public:
     // TODO auto download options, considering network state
     // TODO progress reporting, cancel?
 
+Q_SIGNALS:
+    /** All pending downloads have been completed. */
+    void finished();
+
 private:
     void addRequest(double lat, double lon, const QDateTime &cacheUntil);
     void downloadNext();

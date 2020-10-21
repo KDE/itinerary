@@ -7,9 +7,7 @@
 #include "mapdownloadmanager.h"
 #include "reservationmanager.h"
 
-#if 0
 #include <KOSMIndoorMap/MapLoader>
-#endif
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
@@ -96,18 +94,19 @@ void MapDownloadManager::downloadNext()
     const auto req = std::move(m_pendingRequests.back());
     m_pendingRequests.pop_back();
 
-#if 0
     m_loader = new KOSMIndoorMap::MapLoader(this);
     connect(m_loader, &KOSMIndoorMap::MapLoader::done, this, &MapDownloadManager::downloadFinished);
     m_loader->loadForCoordinate(req.lat, req.lon, req.cacheUntil);
-#endif
 }
 
 void MapDownloadManager::downloadFinished()
 {
-#if 0
     m_loader->deleteLater();
-#endif
     m_loader = nullptr;
-    downloadNext();
+
+    if (m_pendingRequests.empty()) {
+        emit finished();
+    } else {
+        downloadNext();
+    }
 }
