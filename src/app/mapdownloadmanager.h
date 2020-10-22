@@ -33,7 +33,8 @@ public:
     /** Trigger download of missing map data immediately, regardless of the current network state. */
     Q_INVOKABLE void download();
 
-    // TODO auto download options, considering network state
+    void setAutomaticDownloadEnabled(bool enable);
+
     // TODO progress reporting, cancel?
 
 Q_SIGNALS:
@@ -41,11 +42,14 @@ Q_SIGNALS:
     void finished();
 
 private:
+    void addAutomaticRequestForBatch(const QString &batchId);
+    void addRequestForBatch(const QString &batchId);
     void addRequest(double lat, double lon, const QDateTime &cacheUntil);
     void downloadNext();
     void downloadFinished();
 
     ReservationManager *m_resMgr = nullptr;
+    bool m_autoDownloadEnabled = false;
 
     struct Request {
         double lat;
