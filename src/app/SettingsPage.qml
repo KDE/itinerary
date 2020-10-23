@@ -115,6 +115,19 @@ Kirigami.ScrollablePage {
             onLinkActivated: Qt.openUrlExternally(link)
         }
 
+        QQC2.Switch {
+            id: autoMapDownload
+            Kirigami.FormData.label: i18n("Preload Map Data")
+            checked: Settings.preloadMapData
+            onToggled: Settings.preloadMapData = checked
+        }
+        QQC2.Label {
+            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            text: i18n("Enabling this will download maps for all stations and airports for upcoming trips when connected to Wifi network.")
+        }
+
         // Transfer assistant
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

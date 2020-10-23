@@ -16,6 +16,7 @@ class Settings : public QObject
     Q_PROPERTY(bool weatherForecastEnabled READ weatherForecastEnabled WRITE setWeatherForecastEnabled NOTIFY weatherForecastEnabledChanged)
     Q_PROPERTY(QString homeCountryIsoCode READ homeCountryIsoCode WRITE setHomeCountryIsoCode NOTIFY homeCountryIsoCodeChanged)
     Q_PROPERTY(bool queryLiveData READ queryLiveData WRITE setQueryLiveData NOTIFY queryLiveDataChanged)
+    Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
     Q_PROPERTY(bool autoFillTransfers READ autoFillTransfers WRITE setAutoFillTransfers NOTIFY autoFillTransfersChanged)
@@ -37,6 +38,9 @@ public:
     bool queryLiveData() const;
     void setQueryLiveData(bool queryLiveData);
 
+    bool preloadMapData() const;
+    void setPreloadMapData(bool preload);
+
     bool autoAddTransfers() const;
     void setAutoAddTransfers(bool autoAdd);
     bool autoFillTransfers() const;
@@ -52,6 +56,7 @@ Q_SIGNALS:
     void weatherForecastEnabledChanged(bool enabled);
     void homeCountryIsoCodeChanged(const QString &isoCode);
     void queryLiveDataChanged(bool enabled);
+    void preloadMapDataChanged(bool preload);
     void autoAddTransfersChanged(bool autoAdd);
     void autoFillTransfersChanged(bool autoFill);
     void showNotificationOnLockScreenChanged(bool enabled);
@@ -61,6 +66,7 @@ private:
     QString m_homeCountry;
     bool m_weatherEnabled = false;
     bool m_queryLiveData = false;
+    bool m_preloadMapData = false;
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
     bool m_showNotificationOnLockScreen = false;

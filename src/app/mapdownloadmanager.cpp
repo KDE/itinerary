@@ -40,6 +40,7 @@ void MapDownloadManager::setReservationManager(ReservationManager *resMgr)
 void MapDownloadManager::setAutomaticDownloadEnabled(bool enable)
 {
     m_autoDownloadEnabled = enable;
+    // TODO trigger download if we are on Wifi
 }
 
 static bool isRelevantTime(const QDateTime &dt)

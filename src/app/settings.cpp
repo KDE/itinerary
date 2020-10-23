@@ -24,6 +24,8 @@ Settings::Settings(QObject *parent)
 
     m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
 
+    m_preloadMapData = s.value(QLatin1String("PreloadMapData"), false).toBool();
+
     m_autoAddTransfers = s.value(QLatin1String("AutoAddTransfers"), true).toBool();
     m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
 
@@ -93,6 +95,25 @@ void Settings::setQueryLiveData(bool queryLiveData)
     s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
 
     emit queryLiveDataChanged(queryLiveData);
+}
+
+bool Settings::preloadMapData() const
+{
+    return m_preloadMapData;
+}
+
+void Settings::setPreloadMapData(bool preload)
+{
+    if (m_preloadMapData == preload) {
+        return;
+    }
+
+    m_preloadMapData = preload;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("PreloadMapData"), preload);
+
+    emit preloadMapDataChanged(preload);
 }
 
 bool Settings::autoAddTransfers() const

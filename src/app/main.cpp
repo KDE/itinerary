@@ -291,6 +291,8 @@ int main(int argc, char **argv)
 
     MapDownloadManager mapDownloadMgr;
     mapDownloadMgr.setReservationManager(&resMgr);
+    mapDownloadMgr.setAutomaticDownloadEnabled(s_settings->preloadMapData());
+    QObject::connect(s_settings, &Settings::preloadMapDataChanged, &mapDownloadMgr, &MapDownloadManager::setAutomaticDownloadEnabled);
     s_mapDownloadManager = &mapDownloadMgr;
 
     ApplicationController appController;
