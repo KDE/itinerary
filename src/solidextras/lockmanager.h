@@ -7,6 +7,8 @@
 #ifndef LOCKMANAGER_H
 #define LOCKMANAGER_H
 
+#include "solidextras_export.h"
+
 #include <QObject>
 
 class LockBackend : public QObject
@@ -19,7 +21,7 @@ public:
     virtual void setInhibitionOff() = 0;
 };
 
-class LockManager : public QObject
+class SOLIDEXTRAS_EXPORT LockManager : public QObject
 {
     Q_OBJECT
 
@@ -39,5 +41,3 @@ private:
 };
 
 #endif // LOCKMANAGER_H
-
-

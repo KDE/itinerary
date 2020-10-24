@@ -7,6 +7,8 @@
 #ifndef BRIGHTNESSMANAGER_H
 #define BRIGHTNESSMANAGER_H
 
+#include "solidextras_export.h"
+
 #include <QObject>
 
 class BrightnessBackend : public QObject
@@ -31,7 +33,7 @@ private:
     int m_previousValue;
 };
 
-class BrightnessManager : public QObject
+class SOLIDEXTRAS_EXPORT BrightnessManager : public QObject
 {
     Q_OBJECT
 

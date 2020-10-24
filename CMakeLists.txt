@@ -10,7 +10,11 @@ set (RELEASE_SERVICE_VERSION_MICRO "1")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-find_package(ECM 5.59 REQUIRED NO_MODULE)
+set(KF5_MIN_VERSION 5.64)
+if (ANDROID)
+    set(KF5_MIN_VERSION 5.76) # for FindGradle
+endif()
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
 if (POLICY CMP0071)
     cmake_policy(SET CMP0071 NEW)
@@ -49,7 +53,6 @@ if (ANDROID)
     set(QT_MIN_VERSION 5.15.1) # for content: support
 endif()
 
-set(KF5_MIN_VERSION 5.64)
 # build-time dependencies
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Location QuickControls2)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
@@ -81,6 +84,7 @@ if (ANDROID)
         set(BREEZEICONS_DIR ${CMAKE_SOURCE_DIR}/../breeze-icons)
     endif()
     find_package(OpenSSL REQUIRED)
+    find_package(Gradle REQUIRED)
 else()
     find_package(Qt5 REQUIRED COMPONENTS Widgets DBus)
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)

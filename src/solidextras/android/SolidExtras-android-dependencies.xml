@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<rules>
+    <dependencies>
+        <lib name="SolidExtras">
+            <depends>
+                <jar bundling="1" file="jar/SolidExtras.aar"/>
+            </depends>
+        </lib>
+    </dependencies>
+</rules>
