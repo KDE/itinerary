@@ -14,6 +14,10 @@
 
 class ReservationManager;
 
+namespace SolidExtras {
+class NetworkStatus;
+}
+
 namespace KOSMIndoorMap {
 class MapLoader;
 }
@@ -42,11 +46,13 @@ Q_SIGNALS:
     void finished();
 
 private:
+    bool canAutoDownload() const;
     void addAutomaticRequestForBatch(const QString &batchId);
     void addRequestForBatch(const QString &batchId);
     void addRequest(double lat, double lon, const QDateTime &cacheUntil);
     void downloadNext();
     void downloadFinished();
+    void networkStatusChanged();
 
     ReservationManager *m_resMgr = nullptr;
     bool m_autoDownloadEnabled = false;
@@ -59,6 +65,7 @@ private:
     std::vector<Request> m_pendingRequests;
 
     KOSMIndoorMap::MapLoader *m_loader = nullptr;
+    SolidExtras::NetworkStatus *m_netStatus = nullptr;
 };
 
 #endif // MAPDOWNLOADMANAGER_H

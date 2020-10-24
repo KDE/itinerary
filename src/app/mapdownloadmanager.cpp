@@ -7,6 +7,8 @@
 #include "mapdownloadmanager.h"
 #include "reservationmanager.h"
 
+#include <solidextras/networkstatus.h>
+
 #include <KOSMIndoorMap/MapLoader>
 
 #include <KItinerary/LocationUtil>
@@ -20,10 +22,14 @@
 #include <cmath>
 
 using namespace KItinerary;
+using SolidExtras::NetworkStatus;
 
 MapDownloadManager::MapDownloadManager(QObject* parent)
     : QObject(parent)
+    , m_netStatus(new NetworkStatus(this))
 {
+    connect(m_netStatus, &NetworkStatus::connectivityChanged, this, &MapDownloadManager::networkStatusChanged);
+    connect(m_netStatus, &NetworkStatus::meteredChanged, this, &MapDownloadManager::networkStatusChanged);
 }
 
 MapDownloadManager::~MapDownloadManager() = default;
@@ -40,7 +46,9 @@ void MapDownloadManager::setReservationManager(ReservationManager *resMgr)
 void MapDownloadManager::setAutomaticDownloadEnabled(bool enable)
 {
     m_autoDownloadEnabled = enable;
-    // TODO trigger download if we are on Wifi
+    if (canAutoDownload()) {
+        download();
+    }
 }
 
 static bool isRelevantTime(const QDateTime &dt)
@@ -56,14 +64,19 @@ void MapDownloadManager::download()
         addRequestForBatch(batchId);
     }
 
-    qDebug() << m_pendingRequests.size() << "pending download requests";
+    qDebug() << m_pendingRequests.size() << "pending download requests" << m_netStatus->connectivity() << m_netStatus->metered();
     downloadNext();
+}
+
+bool MapDownloadManager::canAutoDownload() const
+{
+    return m_autoDownloadEnabled && m_netStatus->connectivity() != NetworkStatus::No && m_netStatus->metered() == NetworkStatus::No;
 }
 
 void MapDownloadManager::addAutomaticRequestForBatch(const QString& batchId)
 {
     addRequestForBatch(batchId);
-    if (m_autoDownloadEnabled) { //  TODO check for the network state, we only want to download this over Wifi automatically
+    if (canAutoDownload()) {
         QTimer::singleShot(std::chrono::seconds(5), this, &MapDownloadManager::downloadNext);
     }
 }
@@ -129,6 +142,13 @@ void MapDownloadManager::downloadFinished()
     if (m_pendingRequests.empty()) {
         emit finished();
     } else {
+        downloadNext();
+    }
+}
+
+void MapDownloadManager::networkStatusChanged()
+{
+    if (canAutoDownload()) {
         downloadNext();
     }
 }
