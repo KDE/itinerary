@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-package org.kde.solid;
+package org.kde.solidextras;
 
 import android.app.Activity;
 import android.view.WindowManager;

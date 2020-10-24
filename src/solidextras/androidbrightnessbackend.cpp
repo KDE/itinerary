@@ -21,12 +21,12 @@ AndroidBrightnessBackend::~AndroidBrightnessBackend()
 
 float AndroidBrightnessBackend::brightness() const
 {
-    return QAndroidJniObject::callStaticMethod<jfloat>("org.kde.solid.Solid", "getBrightness", "(Landroid/app/Activity;)F", QtAndroid::androidActivity().object());
+    return QAndroidJniObject::callStaticMethod<jfloat>("org.kde.solidextras.Solid", "getBrightness", "(Landroid/app/Activity;)F", QtAndroid::androidActivity().object());
 }
 
 void AndroidBrightnessBackend::setBrightness(float brightness)
 {
-    QAndroidJniObject::callStaticMethod<void>("org.kde.solid.Solid", "setBrightness", "(Landroid/app/Activity;F)V", QtAndroid::androidActivity().object(), brightness);
+    QAndroidJniObject::callStaticMethod<void>("org.kde.solidextras.Solid", "setBrightness", "(Landroid/app/Activity;F)V", QtAndroid::androidActivity().object(), brightness);
 }
 
 float AndroidBrightnessBackend::maxBrightness() const
