@@ -3,4 +3,6 @@
     SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
     SPDX-License-Identifier: CC0-1.0
 -->
-<manifest package="org.kde.solidextras"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.kde.solidextras">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
