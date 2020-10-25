@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
 import org.kde.kirigami 2.4 as Kirigami
+import org.kde.solidextras 1.0 as Solid
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -62,6 +63,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Check for Updates")
                 iconName: "view-refresh"
+                enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
                 onTriggered: {
                     LiveDataManager.checkForUpdates();
                 }
@@ -69,6 +71,8 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Download Maps")
                 iconName: "download"
+                enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+                icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
                 onTriggered: MapDownloadManager.download();
             },
             Kirigami.Action {
