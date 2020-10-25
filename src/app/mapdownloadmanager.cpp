@@ -53,8 +53,7 @@ void MapDownloadManager::setAutomaticDownloadEnabled(bool enable)
 
 static bool isRelevantTime(const QDateTime &dt)
 {
-//      const auto now = QDateTime::currentDateTime();
-    const auto now = QDateTime({2020,1,30}, {0,0});
+    const auto now = QDateTime::currentDateTime();
     return dt > now && dt < now.addDays(14);
 }
 
