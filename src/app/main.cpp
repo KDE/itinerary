@@ -8,7 +8,6 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
-#include "brightnessmanager.h"
 #include "countrymodel.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
@@ -17,7 +16,6 @@
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "locationinformation.h"
-#include "lockmanager.h"
 #include "mapdownloadmanager.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
@@ -235,9 +233,6 @@ int main(int argc, char **argv)
     tripGroupMgr.setReservationManager(&resMgr);
     s_tripGroupManager = &tripGroupMgr;
 
-    BrightnessManager brightnessManager;
-    LockManager lockManager;
-
     LiveDataManager liveDataMgr;
     liveDataMgr.setPkPassManager(&passMgr);
     liveDataMgr.setReservationManager(&resMgr);
@@ -315,9 +310,6 @@ int main(int argc, char **argv)
     auto l10nContext = new KLocalizedContext(&engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);
-    // TODO get rid of those, e.g. by using singletons
-    engine.rootContext()->setContextProperty(QStringLiteral("_brightnessManager"), &brightnessManager);
-    engine.rootContext()->setContextProperty(QStringLiteral("_lockManager"), &lockManager);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());

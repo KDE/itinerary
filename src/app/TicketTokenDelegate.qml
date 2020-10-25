@@ -10,6 +10,7 @@ import QtQuick.Controls 2.1 as QQC2
 import QtQuick.Window 2.10
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.prison 1.0 as Prison
+import org.kde.solidextras 1.0 as Solid
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -69,8 +70,8 @@ ColumnLayout {
             MouseArea {
                 anchors.fill: parent
                 onDoubleClicked: {
-                    _brightnessManager.toggleBrightness()
-                    _lockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"))
+                    Solid.BrightnessManager.toggleBrightness()
+                    Solid.LockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"))
                 }
             }
 
