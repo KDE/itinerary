@@ -4,6 +4,10 @@
 add_definitions(-DSOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
 
 ecm_add_test(jnisignaturetest.cpp LINK_LIBRARIES Qt5::Test)
+ecm_add_test(jnipropertytest.cpp LINK_LIBRARIES Qt5::Test)
+if (NOT ANDROID)
+    target_include_directories(jnipropertytest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/fake ${CMAKE_SOURCE_DIR}/src)
+endif()
 
 ecm_add_test(pkpassmanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(reservationmanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)

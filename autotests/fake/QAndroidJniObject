@@ -1,0 +1,62 @@
+/*
+    SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#ifndef FAKE_QANDROIDJNIOBJECT_H
+#define FAKE_QANDROIDJNIOBJECT_H
+
+#include <kandroidextras/jnisignature.h>
+#include <kandroidextras/jnitypes.h>
+
+#include <QStringList>
+
+#include <cstdint>
+
+typedef uint8_t jboolean;
+typedef int8_t jbyte;
+typedef uint16_t jchar;
+typedef int16_t jshort;
+typedef int32_t jint;
+typedef int64_t jlong;
+typedef float jfloat;
+typedef double jdouble;
+
+typedef void* jobject;
+typedef jobject jclass;
+typedef jobject jstring;
+typedef jobject jarray;
+
+/** Mock object for QAndroidJniObject outside of Android, for automated testing. */
+class QAndroidJniObject {
+public:
+    QString toString() const { return {}; }
+
+    static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName, const char *signature)
+    {
+        m_staticProtocol.push_back(QLatin1String("getStaticObjectField: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
+        return {};
+    }
+
+    template <typename T>
+    static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName)
+    {
+        m_staticProtocol.push_back(QLatin1String("getStaticObjectField<>: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName));
+        return {};
+    }
+
+    template <typename T>
+    static T getStaticField(const char *className, const char *fieldName)
+    {
+        m_staticProtocol.push_back(QLatin1String("getStaticField<>: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(KAndroidExtras::Jni::signature<T>()));
+        return {};
+    }
+
+
+    static QStringList m_staticProtocol;
+};
+
+QStringList QAndroidJniObject::m_staticProtocol;
+
+#endif
