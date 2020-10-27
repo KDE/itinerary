@@ -56,7 +56,7 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: i18n("End time: %1", Localizer.formatDateTime(reservationFor, "endDate"));
-            visible: root.rangeType != TimelineElement.RangeEnd
+            visible: root.rangeType != TimelineElement.RangeEnd && reservationFor.endDate > 0
         }
     }
 
