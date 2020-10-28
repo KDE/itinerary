@@ -7,6 +7,8 @@ ecm_add_test(jnisignaturetest.cpp LINK_LIBRARIES Qt5::Test)
 ecm_add_test(jnipropertytest.cpp LINK_LIBRARIES Qt5::Test)
 if (NOT ANDROID)
     target_include_directories(jnipropertytest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/fake ${CMAKE_SOURCE_DIR}/src)
+else ()
+    target_link_libraries(jnipropertytest Qt5::AndroidExtras)
 endif()
 
 ecm_add_test(pkpassmanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
