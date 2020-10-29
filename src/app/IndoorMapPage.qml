@@ -186,7 +186,7 @@ Kirigami.Page {
             locationQuery.request.maximumDistance = map.mapData.radius;
             locationQuery.request.types = PublicTransport.Location.RentedVehicleStation;
         } else {
-            // TODO clear the model
+            locationQuery.clear();
         }
     }
 
