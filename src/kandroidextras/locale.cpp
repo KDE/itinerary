@@ -19,7 +19,7 @@ QAndroidJniObject Locale::fromLocale(const QLocale &locale)
     auto country = QAndroidJniObject::fromString(QLocale::countryToString(locale.country()));
     auto script = QAndroidJniObject::fromString(QLocale::scriptToString(locale.script()));
 
-    return QAndroidJniObject("java.util.Locale", Jni::signature<void(java::lang::String, java::lang::String, java::lang::String)>(),
+    return QAndroidJniObject(Jni::typeName<java::util::Locale>(), Jni::signature<void(java::lang::String, java::lang::String, java::lang::String)>(),
         lang.object(), country.object(), script.object());
 }
 
