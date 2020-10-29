@@ -11,6 +11,7 @@ import org.kde.kirigami 2.7 as Kirigami
 import org.kde.kpublictransport 1.0 as PublicTransport
 import org.kde.kosmindoormap 1.0
 import org.kde.itinerary 1.0
+import org.kde.kosmindoormap.kpublictransport 1.0
 
 Kirigami.Page {
     id: root
@@ -80,6 +81,14 @@ Kirigami.Page {
             text: i18n("Find Gate")
             onTriggered: gateSheet.sheetOpen = true
             visible: !gateModel.isEmpty
+        },
+        Kirigami.Action { separator: true },
+        Kirigami.Action {
+            id: rentalVehicleAction
+            text: i18n("Show Rental Vehicles")
+            checkable: true
+            enabled: !map.mapLoader.isLoading
+            onTriggered: queryRentalVehicles();
         },
         Kirigami.Action {
             id: lightStyleAction
@@ -160,10 +169,31 @@ Kirigami.Page {
         model: floorLevelChangeModel
     }
 
+    LocationQueryOverlayProxyModel {
+        id: locationModel
+        sourceModel: PublicTransport.LocationQueryModel {
+            id: locationQuery
+            manager: LiveDataManager.publicTransportManager
+        }
+        mapData: map.mapData
+    }
+
+    function queryRentalVehicles()
+    {
+        if (rentalVehicleAction.checked) {
+            locationQuery.request.latitude = map.mapData.center.y;
+            locationQuery.request.longitude = map.mapData.center.x;
+            locationQuery.request.maximumDistance = map.mapData.radius;
+            locationQuery.request.types = PublicTransport.Location.RentedVehicleStation;
+        } else {
+            // TODO clear the model
+        }
+    }
+
     IndoorMap {
         id: map
         anchors.fill: parent
-        overlaySources: [ gateModel, platformModel ]
+        overlaySources: [ gateModel, platformModel, locationModel ]
 
         IndoorMapScale {
             map: map
@@ -204,6 +234,7 @@ Kirigami.Page {
             platformModel.setDeparturePlatform(root.departurePlatformName, Platform.Rail);
             gateModel.setArrivalGate(root.arrivalGateName);
             gateModel.setDepartureGate(root.departureGateName);
+            queryRentalVehicles();
         }
     }
 }
