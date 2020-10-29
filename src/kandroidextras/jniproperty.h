@@ -42,11 +42,11 @@ template <typename ClassType, typename NameHolder>
 struct StaticProperty<java::lang::String, ClassType, NameHolder, false> {
     inline operator QAndroidJniObject() const
     {
-        return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>());
+        return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>());
     }
     inline operator QString() const
     {
-        return QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>()).toString();
+        return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>()).toString();
     }
 };
 
