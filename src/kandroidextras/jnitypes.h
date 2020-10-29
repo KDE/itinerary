@@ -9,6 +9,7 @@
 
 namespace KAndroidExtras {
 
+///@cond internal
 // determine how many elements are in __VA_ARGS__
 #define PP_NARG(...) PP_NARG_(__VA_ARGS__, PP_RSEQ_N())
 #define PP_NARG_(...) PP_ARG_N(__VA_ARGS__)
@@ -20,7 +21,7 @@ namespace KAndroidExtras {
 #define PP_CONCAT1(arg1, arg2) PP_CONCAT2(arg1, arg2)
 #define PP_CONCAT2(arg1, arg2) arg1##arg2
 
-// preprocessor "iteration"
+// preprocessor "iteration" for regular classes
 #define JNI_TYPE_1(name, type, ...) \
     struct type { static constexpr const char* jniName() { return name #type; } };
 #define JNI_TYPE_2(name, type, ...) \
@@ -37,15 +38,34 @@ namespace KAndroidExtras {
     namespace type { JNI_TYPE_6(#type "/", __VA_ARGS__) }
 #define JNI_TYPE_(N, name, ...) PP_CONCAT(JNI_TYPE_, N)(name, __VA_ARGS__)
 
+// preprocessor "iteration" for nested classes
+#define JNI_NESTED_TYPE_2(name, type, nested_type, ...) \
+    struct type ## _ ## nested_type { static constexpr const char* jniName() { return name #type "$" #nested_type; } };
+#define JNI_NESTED_TYPE_3(name, type, ...) \
+    namespace type { JNI_NESTED_TYPE_2(name #type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_4(name, type, ...) \
+    namespace type { JNI_NESTED_TYPE_3(name #type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_5(name, type, ...) \
+    namespace type { JNI_NESTED_TYPE_4(name #type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_6(name, type, ...) \
+    namespace type { JNI_NESTED_TYPE_5(name #type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_7(name, type, ...) \
+    namespace type { JNI_NESTED_TYPE_6(#type "/", __VA_ARGS__) }
+#define JNI_NESTED_TYPE_(N, name, ...) PP_CONCAT(JNI_NESTED_TYPE_, N)(name, __VA_ARGS__)
+
+///@endcond
+
 /** Macro to define Java types with their corresponding JNI signature strings. */
 #define JNI_TYPE(...) JNI_TYPE_(PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
+/** Macro to define a nested Java class with its corresponding JNI signature string. */
+#define JNI_NESTED_TYPE(...) JNI_NESTED_TYPE_(PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
 // type declarations
 JNI_TYPE(android, content, ContentResolver)
 JNI_TYPE(android, content, Intent)
 JNI_TYPE(android, database, Cursor)
-JNI_TYPE(android, Manifest, permission)
+JNI_NESTED_TYPE(android, Manifest, permission)
 JNI_TYPE(android, net, Uri)
 JNI_TYPE(android, provider, OpenableColumns)
 JNI_TYPE(android, provider, Settings)

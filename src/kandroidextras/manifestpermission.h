@@ -15,13 +15,9 @@ namespace KAndroidExtras {
  * Access to manifest permissions.
  * @see https://developer.android.com/reference/android/Manifest.permission
  */
-class ManifestPermission
+class ManifestPermission : Jni::Wrapper<android::Manifest_permission>
 {
 public:
-    // TODO this is a workaround for missing support for nested classes in the JNI type code
-    typedef ManifestPermission JniBaseType;
-    static constexpr const char* jniName() { return "android/Manifest$permission"; }
-
     JNI_CONSTANT(java::lang::String, READ_CALENDAR)
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)
     JNI_CONSTANT(java::lang::String, WRITE_EXTERNAL_STORAGE)

@@ -6,6 +6,7 @@
 
 #include <../src/kandroidextras/jniproperty.h>
 #include <../src/kandroidextras/jnitypes.h>
+#include <../src/kandroidextras/manifestpermission.h>
 
 #include <QtTest/qtest.h>
 
@@ -37,6 +38,10 @@ private Q_SLOTS:
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(1), QLatin1String("getStaticField<>: android/content/Intent FLAG_GRANT_READ_URI_PERMISSION I"));
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(2), QLatin1String("getStaticObjectField: android/content/Intent OBJECT_TYPE_PROPERTY Landroid/net/Uri;"));
+
+        const QString p4 = ManifestPermission::READ_CALENDAR;
+        Q_UNUSED(p4);
+        QCOMPARE(QAndroidJniObject::m_staticProtocol.at(3), QLatin1String("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
 #endif
     }
 };

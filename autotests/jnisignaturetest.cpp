@@ -29,6 +29,7 @@ private Q_SLOTS:
     void testTypeName()
     {
         QCOMPARE((const char*)Jni::typeName<android::provider::OpenableColumns>(), "android/provider/OpenableColumns");
+        QCOMPARE((const char*)Jni::typeName<android::Manifest_permission>(), "android/Manifest$permission");
     }
 
     void testImplementationDetails()
