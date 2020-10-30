@@ -173,17 +173,6 @@ void registerApplicationSingletons()
 
 #undef REGISTER_SINGLETON_INSTANCE
 
-void handleViewIntent(ApplicationController *appController)
-{
-#ifdef Q_OS_ANDROID
-    // handle opened files
-    using namespace KAndroidExtras;
-    appController->importFromUrl(Activity::getIntent().getData());
-#else
-    Q_UNUSED(appController);
-#endif
-}
-
 void handlePositionalArguments(ApplicationController *appController, const QStringList &args)
 {
     for (const auto &file : args) {
@@ -332,7 +321,10 @@ int main(int argc, char **argv)
     engine.load(QStringLiteral("qrc:/main.qml"));
 
     handlePositionalArguments(&appController, parser.positionalArguments());
-    handleViewIntent(&appController);
+#ifdef Q_OS_ANDROID
+    using namespace KAndroidExtras;
+    appController.importFromIntent(Activity::getIntent());
+#endif
 
     return app.exec();
 }

@@ -91,9 +91,7 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 {
     Q_UNUSED(that)
     Q_UNUSED(env)
-
-    KAndroidExtras::Intent intent(data);
-    ApplicationController::instance()->importFromUrl(intent.getData());
+    ApplicationController::instance()->importFromIntent(KAndroidExtras::Intent(data));
 }
 
 static const JNINativeMethod methods[] = {
@@ -173,6 +171,38 @@ void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
     m_liveDataMgr = liveDataMgr;
 }
+
+#ifdef Q_OS_ANDROID
+void ApplicationController::importFromIntent(const KAndroidExtras::Intent &intent)
+{
+    using namespace KAndroidExtras;
+    const auto action = intent.getAction();
+
+    // main entry point, nothing to do
+    if (action == Intent::ACTION_MAIN) {
+        return;
+    }
+
+    // opening a file
+    if (action == Intent::ACTION_VIEW) {
+        importFromUrl(intent.getData());
+        return;
+    }
+
+    // shared data, e.g. from email applications like FairMail
+    if (action == Intent::ACTION_SEND || action == Intent::ACTION_SEND_MULTIPLE) {
+        const auto type = intent.getType();
+        const auto subject = intent.getStringExtra(Intent::EXTRA_SUBJECT);
+        const auto email = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
+        const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);
+        qCInfo(Log) << action << type << subject << email << text;
+        // TODO
+        return;
+    }
+
+    qCInfo(Log) << "Unhandled intent action:" << action;
+}
+#endif
 
 void ApplicationController::importFromClipboard()
 {

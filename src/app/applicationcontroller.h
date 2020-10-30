@@ -9,10 +9,6 @@
 
 #include <QObject>
 
-#ifdef Q_OS_ANDROID
-#include <QAndroidActivityResultReceiver>
-#endif
-
 class DocumentManager;
 class FavoriteLocationModel;
 class LiveDataManager;
@@ -22,6 +18,10 @@ class TransferManager;
 
 namespace KItinerary {
 class File;
+}
+
+namespace KAndroidExtras {
+class Intent;
 }
 
 class QNetworkAccessManager;
@@ -44,6 +44,7 @@ public:
     void setLiveDataManager(LiveDataManager *liveDataMgr);
 
     // data import
+    void importFromIntent(const KAndroidExtras::Intent &intent);
     Q_INVOKABLE void importFromClipboard();
     Q_INVOKABLE void importFromUrl(const QUrl &url);
     void importData(const QByteArray &data);
