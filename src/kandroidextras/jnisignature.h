@@ -12,6 +12,13 @@
 
 namespace KAndroidExtras {
 
+namespace Jni {
+
+/** Wrapper type for array return values (which we cannot specify using [] syntax). */
+template <typename T> struct Array {};
+
+}
+
 namespace Internal {
 
 /** Compile-time concat-able string. */
@@ -75,6 +82,16 @@ template <> struct JniSignature<void> { constexpr inline auto operator()() const
 
 template <typename T>
 struct JniSignature<T*>
+{
+    constexpr inline auto operator()() const
+    {
+        using namespace Internal;
+        return static_concat(StaticString<'['>(), JniSignature<T>()());
+    }
+};
+
+template <typename T>
+struct JniSignature<Jni::Array<T>>
 {
     constexpr inline auto operator()() const
     {

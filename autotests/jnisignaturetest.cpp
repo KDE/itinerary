@@ -24,6 +24,10 @@ private Q_SLOTS:
         QCOMPARE((const char*)Jni::signature<java::lang::String()>(), "()Ljava/lang/String;");
         QCOMPARE((const char*)Jni::signature<android::content::Intent(java::lang::String, bool[])>(), "(Ljava/lang/String;[Z)Landroid/content/Intent;");
         QCOMPARE((const char*)Jni::signature<android::database::Cursor(android::net::Uri, java::lang::String[], java::lang::String, java::lang::String[], java::lang::String)>(), "(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;");
+
+        // Jni::signature<java::lang::String[]()>() would be invalid C++, so we need alternatives for array returns
+        QCOMPARE((const char*)Jni::signature<java::lang::String*()>(), "()[Ljava/lang/String;");
+        QCOMPARE((const char*)Jni::signature<Jni::Array<java::lang::String>()>(), "()[Ljava/lang/String;");
     }
 
     void testTypeName()
