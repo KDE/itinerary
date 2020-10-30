@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "locale.h"
+#include "javalocale.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
 

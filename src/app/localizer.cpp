@@ -21,7 +21,7 @@
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
-#include <kandroidextras/locale.h>
+#include <kandroidextras/javalocale.h>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>

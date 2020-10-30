@@ -12,7 +12,10 @@ class QLocale;
 
 namespace KAndroidExtras {
 
-/** Conversion methods between java.util.Locale and QLocale. */
+/** Conversion methods between java.util.Locale and QLocale.
+ *  @note Do not rename this file to locale.h, that clashes with POSIX locale.h when your
+ *  include paths are unfortunately set up causing bizarre compilation issues.
+ */
 namespace Locale
 {
     /** Create an java.util.Locale object from a QLocale. */
