@@ -8,7 +8,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.7 as Kirigami
-import org.kde.kpublictransport 1.0 as PublicTransport
+import org.kde.kpublictransport 1.0 as PT
 import org.kde.kosmindoormap 1.0
 import org.kde.itinerary 1.0
 import org.kde.kosmindoormap.kpublictransport 1.0
@@ -171,7 +171,7 @@ Kirigami.Page {
 
     LocationQueryOverlayProxyModel {
         id: locationModel
-        sourceModel: PublicTransport.LocationQueryModel {
+        sourceModel: PT.LocationQueryModel {
             id: locationQuery
             manager: LiveDataManager.publicTransportManager
         }
@@ -184,7 +184,7 @@ Kirigami.Page {
             locationQuery.request.latitude = map.mapData.center.y;
             locationQuery.request.longitude = map.mapData.center.x;
             locationQuery.request.maximumDistance = map.mapData.radius;
-            locationQuery.request.types = PublicTransport.Location.RentedVehicleStation;
+            locationQuery.request.types = PT.Location.RentedVehicleStation;
         } else {
             locationQuery.clear();
         }
