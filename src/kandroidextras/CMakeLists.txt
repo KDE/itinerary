@@ -2,7 +2,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 set(kandroidextras_srcs
+    android/android_headers.cpp
+
     java/javalocale.cpp
+
+    jni/jni_headers.cpp
 )
 
 if (ANDROID)
