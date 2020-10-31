@@ -7,6 +7,7 @@
 #include "intent.h"
 #include "uri.h"
 
+#include <KAndroidExtras/JniArray>
 #include <KAndroidExtras/JniSignature>
 
 #include <QAndroidJniObject>
@@ -96,15 +97,5 @@ QString Intent::getStringExtra(const QAndroidJniObject &name) const
 QStringList Intent::getStringArrayExtra(const QAndroidJniObject &name) const
 {
     const auto extra = getObjectExtra<Jni::Array<java::lang::String>>("getStringArrayExtra", name);
-    const auto array = static_cast<jobjectArray>(extra.object());
-
-    QAndroidJniEnvironment env;
-    const auto size = env->GetArrayLength(array);
-
-    QStringList r;
-    r.reserve(size);
-    for (auto i = 0; i < size; ++i) {
-        r.push_back(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(array, i)).toString());;
-    }
-    return r;
+    return Jni::fromArray(extra);
 }
