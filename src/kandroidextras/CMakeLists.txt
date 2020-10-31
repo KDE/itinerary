@@ -18,6 +18,8 @@ if (ANDROID)
         android/activity.cpp
         android/intent.cpp
     )
+else()
+    list (APPEND kandroidextras_srcs fake/mock_impl.cpp)
 endif()
 
 add_library(KAndroidExtras STATIC ${kandroidextras_srcs})

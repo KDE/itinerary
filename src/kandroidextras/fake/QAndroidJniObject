@@ -42,7 +42,7 @@ public:
     bool isValid() const { return true; }
 
     static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
-    QString toString() const { return {}; }
+    QString toString() const { return m_protocol.join(QLatin1Char('\n')); }
 
     jobject object() const { return nullptr; }
     template <typename T>
@@ -51,23 +51,23 @@ public:
     template <typename T>
     T callMethod(const char *methodName, const char *signature, ...) const
     {
-        Q_UNUSED(methodName);
-        Q_UNUSED(signature);
+        m_protocol.push_back(QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
         return {};
     }
 
     QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, ...) const
     {
-        Q_UNUSED(methodName);
-        Q_UNUSED(signature);
-        return {};
+        QAndroidJniObject obj;
+        obj.m_protocol = m_protocol;
+        obj.m_protocol.push_back(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
+        return obj;
     }
 
     static QAndroidJniObject callStaticObjectMethod(const char *methodName, const char *signature, ...)
     {
-        Q_UNUSED(methodName);
-        Q_UNUSED(signature);
-        return {};
+        QAndroidJniObject obj;
+        obj.m_protocol.push_back(QLatin1String("callStaticObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
+        return obj;
     }
 
     static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName, const char *signature)
@@ -90,10 +90,8 @@ public:
         return {};
     }
 
-
+    mutable QStringList m_protocol;
     static QStringList m_staticProtocol;
 };
-
-QStringList QAndroidJniObject::m_staticProtocol;
 
 #endif
