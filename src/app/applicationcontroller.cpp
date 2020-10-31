@@ -45,10 +45,11 @@
 #include <kandroidextras/activity.h>
 #include <kandroidextras/contentresolver.h>
 #include <kandroidextras/intent.h>
-#include <kandroidextras/uri.h>
+#include <kandroidextras/jniarray.h>
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
 #include <kandroidextras/manifestpermission.h>
+#include <kandroidextras/uri.h>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>
@@ -196,6 +197,8 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         const auto email = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
         const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);
         qCInfo(Log) << action << type << subject << email << text;
+        const auto attachments = Jni::fromArray(QtAndroid::androidActivity().callObjectMethod("attachmentsForIntent", Jni::signature<Jni::Array<java::lang::String>(android::content::Intent)>(), static_cast<QAndroidJniObject>(intent).object()));
+        qCInfo(Log) << attachments;
         // TODO
         return;
     }
