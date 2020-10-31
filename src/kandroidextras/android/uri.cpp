@@ -6,8 +6,8 @@
 
 #include "uri.h"
 
+#include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniSignature>
-#include <KAndroidExtras/JniTypes>
 
 #include <QAndroidJniObject>
 #include <QUrl>

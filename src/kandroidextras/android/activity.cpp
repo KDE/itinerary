@@ -5,9 +5,10 @@
 */
 
 #include "activity.h"
-#include "intent.h"
+
+#include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/Intent>
 #include <KAndroidExtras/JniSignature>
-#include <KAndroidExtras/JniTypes>
 
 #include <QtAndroid>
 #include <QAndroidJniEnvironment>

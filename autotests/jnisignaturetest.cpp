@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <kandroidextras/androidtypes.h>
 #include <kandroidextras/jnisignature.h>
-#include <kandroidextras/jnitypes.h>
 
 #include <QtTest/qtest.h>
 

@@ -7,8 +7,8 @@
 #include "contentresolver.h"
 #include "uri.h"
 
+#include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniSignature>
-#include <KAndroidExtras/JniTypes>
 
 #include <QtAndroid>
 #include <QAndroidJniObject>

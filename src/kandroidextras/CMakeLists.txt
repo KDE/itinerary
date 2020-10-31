@@ -4,6 +4,7 @@
 set(kandroidextras_srcs
     android/android_headers.cpp
 
+    java/java_headers.cpp
     java/javalocale.cpp
 
     jni/jni_headers.cpp
@@ -31,6 +32,7 @@ endif()
 ecm_generate_headers(KAndroidExtras_android_FORWARDING_HEADERS
     HEADER_NAMES
         Activity
+        AndroidTypes
         ContentResolver
         Context
         Intent
@@ -45,6 +47,7 @@ ecm_generate_headers(KAndroidExtras_android_FORWARDING_HEADERS
 ecm_generate_headers(KAndroidExtras_java_FORWARDING_HEADERS
     HEADER_NAMES
         JavaLocale
+        JavaTypes
     PREFIX KAndroidExtras
     REQUIRED_HEADERS KAndroidExtras_java_HEADERS
     RELATIVE java

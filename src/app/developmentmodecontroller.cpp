@@ -15,8 +15,8 @@
 
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/contentresolver.h>
+#include <kandroidextras/javatypes.h>
 #include <kandroidextras/jnisignature.h>
-#include <kandroidextras/jnitypes.h>
 #include <kandroidextras/manifestpermission.h>
 using namespace KAndroidExtras;
 

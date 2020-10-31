@@ -19,8 +19,8 @@
 #include <QTimeZone>
 
 #ifdef Q_OS_ANDROID
+#include <kandroidextras/javatypes.h>
 #include <kandroidextras/jnisignature.h>
-#include <kandroidextras/jnitypes.h>
 #include <kandroidextras/javalocale.h>
 
 #include <QtAndroid>

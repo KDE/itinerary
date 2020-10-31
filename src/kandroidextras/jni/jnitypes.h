@@ -61,17 +61,8 @@ namespace KAndroidExtras {
 /** Macro to define a nested Java class with its corresponding JNI signature string. */
 #define JNI_NESTED_TYPE(...) JNI_NESTED_TYPE_(PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
-// type declarations
-JNI_TYPE(android, content, ContentResolver)
-JNI_TYPE(android, content, Intent)
-JNI_TYPE(android, database, Cursor)
-JNI_NESTED_TYPE(android, Manifest, permission)
-JNI_TYPE(android, net, Uri)
-JNI_TYPE(android, provider, OpenableColumns)
-JNI_TYPE(android, provider, Settings)
-JNI_TYPE(java, io, File)
+// defined here rather than as part of the java.* bindings as this is de-facto a basic built-in type
 JNI_TYPE(java, lang, String)
-JNI_TYPE(java, util, Locale)
 
 namespace Jni
 {

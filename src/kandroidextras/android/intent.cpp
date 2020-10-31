@@ -8,7 +8,6 @@
 #include "uri.h"
 
 #include <KAndroidExtras/JniSignature>
-#include <KAndroidExtras/JniTypes>
 
 #include <QAndroidJniObject>
 #include <QAndroidJniEnvironment>

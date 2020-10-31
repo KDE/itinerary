@@ -6,8 +6,8 @@
 
 #include "context.h"
 
+#include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniSignature>
-#include <KAndroidExtras/JniTypes>
 
 #include <QtAndroid>
 

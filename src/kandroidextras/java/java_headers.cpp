@@ -6,6 +6,4 @@
 
 // list all headers here that have no .cpp file
 // this only serves as a guarantee that these headers actually compile
-#include "androidtypes.h"
-#include "manifestpermission.h"
-#include "settings.h"
+#include "javatypes.h"

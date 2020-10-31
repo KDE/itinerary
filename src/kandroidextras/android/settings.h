@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_SETTINGS_H
 #define KANDROIDEXTRAS_SETTINGS_H
 
+#include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniProperty>
 
 namespace KAndroidExtras {
