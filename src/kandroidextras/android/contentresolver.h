@@ -26,7 +26,7 @@ namespace ContentResolver
 
     /** File name of a file provided by a content: URL. */
     QString fileName(const QUrl &url);
-};
+}
 
 }
 

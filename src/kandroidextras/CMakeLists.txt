@@ -3,6 +3,9 @@
 
 set(kandroidextras_srcs
     android/android_headers.cpp
+    android/contentresolver.cpp
+    android/context.cpp
+    android/uri.cpp
 
     java/java_headers.cpp
     java/javalocale.cpp
@@ -13,10 +16,7 @@ set(kandroidextras_srcs
 if (ANDROID)
     list (APPEND kandroidextras_srcs
         android/activity.cpp
-        android/contentresolver.cpp
-        android/context.cpp
         android/intent.cpp
-        android/uri.cpp
     )
 endif()
 

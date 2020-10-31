@@ -7,12 +7,17 @@
 #ifndef FAKE_QANDROIDJNIOBJECT_H
 #define FAKE_QANDROIDJNIOBJECT_H
 
+
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
 
 #include <QStringList>
 
 #include <cstdint>
+
+#ifdef Q_OS_ANDROID
+#error This is a mock object for use on non-Android!
+#endif
 
 typedef uint8_t jboolean;
 typedef int8_t jbyte;
@@ -33,9 +38,37 @@ class QAndroidJniObject {
 public:
     QAndroidJniObject() = default;
     QAndroidJniObject(const char *className, const char *signature, ...) { Q_UNUSED(className); Q_UNUSED(signature); }
+
+    bool isValid() const { return true; }
+
     static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
     QString toString() const { return {}; }
+
     jobject object() const { return nullptr; }
+    template <typename T>
+    T object() const { return {}; }
+
+    template <typename T>
+    T callMethod(const char *methodName, const char *signature, ...) const
+    {
+        Q_UNUSED(methodName);
+        Q_UNUSED(signature);
+        return {};
+    }
+
+    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, ...) const
+    {
+        Q_UNUSED(methodName);
+        Q_UNUSED(signature);
+        return {};
+    }
+
+    static QAndroidJniObject callStaticObjectMethod(const char *methodName, const char *signature, ...)
+    {
+        Q_UNUSED(methodName);
+        Q_UNUSED(signature);
+        return {};
+    }
 
     static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName, const char *signature)
     {

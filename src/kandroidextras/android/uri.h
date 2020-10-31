@@ -20,7 +20,7 @@ namespace Uri
 
     /** Convert a android.net.Uri to a QUrl. */
     QUrl toUrl(const QAndroidJniObject &uri);
-};
+}
 
 }
 
