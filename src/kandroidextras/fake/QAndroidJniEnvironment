@@ -1,0 +1,29 @@
+/*
+    SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#ifndef FAKE_QANDROIDJNIENVIRONMENT_H
+#define FAKE_QANDROIDJNIENVIRONMENT_H
+
+#include <QAndroidJniObject>
+
+struct JNIEnv
+{
+    inline bool ExceptionCheck() { return false; }
+    inline void ExceptionClear() {}
+    inline int GetArrayLength(jobjectArray) { return 0; }
+    inline jobject GetObjectArrayElement(jobjectArray, int) { return nullptr; }
+};
+
+class QAndroidJniEnvironment
+{
+public:
+    inline JNIEnv* operator->() { return &m_env; }
+
+private:
+    JNIEnv m_env;
+};
+
+#endif

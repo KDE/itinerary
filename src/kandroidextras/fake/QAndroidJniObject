@@ -32,16 +32,26 @@ typedef void* jobject;
 typedef jobject jclass;
 typedef jobject jstring;
 typedef jobject jarray;
+typedef jarray jobjectArray;
 
 /** Mock object for QAndroidJniObject outside of Android, for automated testing. */
 class QAndroidJniObject {
 public:
     QAndroidJniObject() = default;
-    QAndroidJniObject(const char *className, const char *signature, ...) { Q_UNUSED(className); Q_UNUSED(signature); }
+
+    QAndroidJniObject(const char *className)
+    {
+        m_protocol.push_back(QLatin1String("ctor: ") + QLatin1String(className));
+    }
+    QAndroidJniObject(const char *className, const char *signature, ...)
+    {
+        m_protocol.push_back(QLatin1String("ctor: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(signature));
+    }
 
     bool isValid() const { return true; }
 
     static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
+    static QAndroidJniObject fromLocalRef(jobject) { return {}; }
     QString toString() const { return m_protocol.join(QLatin1Char('\n')); }
 
     jobject object() const { return nullptr; }

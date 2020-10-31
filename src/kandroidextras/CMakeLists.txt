@@ -2,9 +2,11 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 set(kandroidextras_srcs
+    android/activity.cpp
     android/android_headers.cpp
     android/contentresolver.cpp
     android/context.cpp
+    android/intent.cpp
     android/uri.cpp
 
     java/java_headers.cpp
@@ -13,12 +15,7 @@ set(kandroidextras_srcs
     jni/jni_headers.cpp
 )
 
-if (ANDROID)
-    list (APPEND kandroidextras_srcs
-        android/activity.cpp
-        android/intent.cpp
-    )
-else()
+if (NOT ANDROID)
     list (APPEND kandroidextras_srcs fake/mock_impl.cpp)
 endif()
 

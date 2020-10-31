@@ -28,6 +28,8 @@ namespace QtAndroid {
         obj.m_protocol.push_back(QStringLiteral("global androidActivity()"));
         return obj;
     }
+
+    inline void startActivity(const QAndroidJniObject&, int) {}
 }
 
 #endif
