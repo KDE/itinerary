@@ -17,4 +17,19 @@ else()
     target_include_directories(KAndroidExtras INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/fake)
 endif()
 
-target_include_directories(KAndroidExtras INTERFACE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
+ecm_generate_headers(KAndroidExtras_FORWARDING_HEADERS
+    HEADER_NAMES
+        Activity
+        ContentResolver
+        Context
+        Intent
+        JavaLocale
+        JniProperty
+        JniSignature
+        JniTypes
+        ManifestPermission
+        Settings
+        Uri
+    PREFIX KAndroidExtras
+    REQUIRED_HEADERS KAndroidExtras_HEADERS
+)
