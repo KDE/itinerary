@@ -5,8 +5,9 @@
 */
 
 #include "javalocale.h"
-#include "jnisignature.h"
-#include "jnitypes.h"
+
+#include <KAndroidExtras/JniSignature>
+#include <KAndroidExtras/JniTypes>
 
 #include <QAndroidJniObject>
 #include <QLocale>

@@ -7,7 +7,7 @@
 #ifndef KANDROIDEXTRAS_INTENT_H
 #define KANDROIDEXTRAS_INTENT_H
 
-#include "jniproperty.h"
+#include <KAndroidExtras/JniProperty>
 
 #include <QAndroidJniObject>
 

@@ -7,7 +7,7 @@
 #ifndef KANDROIDEXTRAS_MANIFESTPERMISSIONM_H
 #define KANDROIDEXTRAS_MANIFESTPERMISSIONM_H
 
-#include "jniproperty.h"
+#include <KAndroidExtras/JniProperty>
 
 namespace KAndroidExtras {
 

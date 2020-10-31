@@ -6,8 +6,9 @@
 
 #include "intent.h"
 #include "uri.h"
-#include "jnitypes.h"
-#include "jnisignature.h"
+
+#include <KAndroidExtras/JniSignature>
+#include <KAndroidExtras/JniTypes>
 
 #include <QAndroidJniObject>
 #include <QAndroidJniEnvironment>

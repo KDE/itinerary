@@ -31,7 +31,11 @@ typedef jobject jarray;
 /** Mock object for QAndroidJniObject outside of Android, for automated testing. */
 class QAndroidJniObject {
 public:
+    QAndroidJniObject() = default;
+    QAndroidJniObject(const char *className, const char *signature, ...) { Q_UNUSED(className); Q_UNUSED(signature); }
+    static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
     QString toString() const { return {}; }
+    jobject object() const { return nullptr; }
 
     static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName, const char *signature)
     {
