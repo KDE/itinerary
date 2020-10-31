@@ -38,7 +38,7 @@ private Q_SLOTS:
             "callObjectMethod: getString (I)Ljava/lang/String;"
         ));
         QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 1);
-        QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField<>: android/provider/OpenableColumns DISPLAY_NAME"));
+        QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
 #endif
     }
 };

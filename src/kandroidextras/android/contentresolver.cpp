@@ -5,6 +5,7 @@
 */
 
 #include "contentresolver.h"
+#include "openablecolumns.h"
 #include "uri.h"
 
 #include <KAndroidExtras/AndroidTypes>
@@ -39,8 +40,8 @@ QString ContentResolver::fileName(const QUrl &url)
     // query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
     auto cursor = cs.callObjectMethod("query", Jni::signature<android::database::Cursor(android::net::Uri, java::lang::String[], java::lang::String, java::lang::String[], java::lang::String)>(), uri.object<jobject>(), 0, 0, 0, 0);
 
-    const auto DISPLAY_NAME = QAndroidJniObject::getStaticObjectField<jstring>(Jni::typeName<android::provider::OpenableColumns>(), "DISPLAY_NAME");
-    const auto nameIndex = cursor.callMethod<jint>("getColumnIndex", Jni::signature<int(java::lang::String)>(), DISPLAY_NAME.object<jobject>());
+    const QAndroidJniObject DISPLAY_NAME = OpenableColumns::DISPLAY_NAME;
+    const auto nameIndex = cursor.callMethod<jint>("getColumnIndex", Jni::signature<int(java::lang::String)>(), DISPLAY_NAME.object());
     cursor.callMethod<jboolean>("moveToFirst", Jni::signature<bool()>());
     return cursor.callObjectMethod("getString", Jni::signature<java::lang::String(int)>(), nameIndex).toString();
 }

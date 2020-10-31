@@ -36,6 +36,7 @@ ecm_generate_headers(KAndroidExtras_android_FORWARDING_HEADERS
         Context
         Intent
         ManifestPermission
+        OpenableColumns
         Settings
         Uri
     PREFIX KAndroidExtras
