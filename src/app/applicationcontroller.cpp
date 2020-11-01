@@ -42,6 +42,9 @@
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
+#include <KMime/Message>
+#include <KMime/Types>
+
 #include <kandroidextras/activity.h>
 #include <kandroidextras/contentresolver.h>
 #include <kandroidextras/intent.h>
@@ -194,11 +197,44 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
     if (action == Intent::ACTION_SEND || action == Intent::ACTION_SEND_MULTIPLE) {
         const auto type = intent.getType();
         const auto subject = intent.getStringExtra(Intent::EXTRA_SUBJECT);
-        const auto email = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
+        const auto from = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
         const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);
-        qCInfo(Log) << action << type << subject << email << text;
+        qCInfo(Log) << action << type << subject << from << text;
         const auto attachments = Jni::fromArray(QtAndroid::androidActivity().callObjectMethod("attachmentsForIntent", Jni::signature<Jni::Array<java::lang::String>(android::content::Intent)>(), static_cast<QAndroidJniObject>(intent).object()));
         qCInfo(Log) << attachments;
+
+        KMime::Message msg;
+        msg.subject()->fromUnicodeString(subject, "utf-8");
+        for (const auto &f : from) {
+            KMime::Types::Mailbox mb;
+            mb.fromUnicodeString(f);
+            msg.from()->addAddress(mb);
+        }
+
+        if (attachments.empty()) {
+            msg.contentType()->setMimeType(type.toUtf8());
+            msg.setBody(text.toUtf8());
+        } else {
+            auto body = new KMime::Content;
+            body->contentType()->setMimeType(type.toUtf8());
+            body->setBody(text.toUtf8());
+            msg.addContent(body);
+            for (const auto &a : attachments) {
+                auto att = new KMime::Content;
+                att->contentType()->setMimeType(ContentResolver::mimeType(QUrl(a)).toUtf8());
+                QFile f(a);
+                if (!f.open(QFile::ReadOnly)) {
+                    qCWarning(Log) << "Failed to open attachement:" << a << f.errorString();
+                    continue;
+                }
+                att->setBody(f.readAll());
+                msg.addContent(att);
+            }
+        }
+
+        msg.assemble();
+        qDebug().noquote() << msg.encodedContent();
+
         // TODO
         return;
     }

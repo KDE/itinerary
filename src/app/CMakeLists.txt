@@ -87,6 +87,7 @@ if (ANDROID)
     # so androiddeployqt picks them up
     target_link_libraries(itinerary PUBLIC Qt5::AndroidExtras KAndroidExtras)
     target_link_libraries(itinerary-app PRIVATE
+        KF5::Mime
         KF5::Archive
         KF5::Kirigami2
         Qt5::Svg
