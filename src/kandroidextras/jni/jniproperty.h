@@ -9,16 +9,11 @@
 
 #include "jnisignature.h"
 #include "jnitypes.h"
+#include "jnitypetraits.h"
 
 #include <QAndroidJniObject>
 
 namespace KAndroidExtras {
-
-namespace Internal {
-template <typename T> struct is_basic_type : std::false_type {};
-template <> struct is_basic_type<jint> : std::true_type {};
-// TODO extend this to all basic JNI types
-}
 
 namespace Jni
 {
@@ -64,7 +59,7 @@ struct StaticProperty<PropType, ClassType, NameHolder, true> {
 private: \
     struct name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
 public: \
-    static inline const Jni::StaticProperty<type, JniBaseType, name ## __NameHolder, Internal::is_basic_type<type>::value> name;
+    static inline const Jni::StaticProperty<type, JniBaseType, name ## __NameHolder, Jni::is_basic_type<type>::value> name;
 }
 
 #endif // KANDROIDEXTRAS_JNIPROPERTIES_H

@@ -10,3 +10,4 @@
 #include "jniproperty.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
+#include "jnitypetraits.h"

@@ -59,6 +59,7 @@ ecm_generate_headers(KAndroidExtras_jni_FORWARDING_HEADERS
         JniProperty
         JniSignature
         JniTypes
+        JniTypeTraits
     PREFIX KAndroidExtras
     REQUIRED_HEADERS KAndroidExtras_jni_HEADERS
     RELATIVE jni
