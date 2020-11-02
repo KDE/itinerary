@@ -20,6 +20,7 @@ if (NOT ANDROID)
 endif()
 
 add_library(KAndroidExtras STATIC ${kandroidextras_srcs})
+generate_export_header(KAndroidExtras BASE_NAME KAndroidExtras)
 target_link_libraries(KAndroidExtras PUBLIC Qt5::Core)
 
 if (ANDROID)

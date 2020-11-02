@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_ACTIVITY_H
 #define KANDROIDEXTRAS_ACTIVITY_H
 
+#include "kandroidextras_export.h"
+
 namespace KAndroidExtras {
 
 class Intent;
@@ -15,10 +17,10 @@ class Intent;
 namespace Activity
 {
     /** Returns the Intent that started the activity. */
-    Intent getIntent();
+    KANDROIDEXTRAS_EXPORT Intent getIntent();
 
     /** Same as QtAndroid::startActivity(), but with exception handling. */
-    bool startActivity(const Intent &intent, int receiverRequestCode); // TODO add callback arg
+    KANDROIDEXTRAS_EXPORT bool startActivity(const Intent &intent, int receiverRequestCode); // TODO add callback arg
 }
 
 }

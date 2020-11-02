@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_CONTENTRESOLVER_H
 #define KANDROIDEXTRAS_CONTENTRESOLVER_H
 
+#include "kandroidextras_export.h"
+
 class QAndroidJniObject;
 class QString;
 class QUrl;
@@ -17,15 +19,15 @@ namespace KAndroidExtras {
 namespace ContentResolver
 {
     /** Get the JNI content resolver. */
-    QAndroidJniObject get();
+    KANDROIDEXTRAS_EXPORT QAndroidJniObject get();
 
     /** Returns the mime type of the given content: URL.
      * @see Android ContentResolver.getType
      */
-    QString mimeType(const QUrl &url);
+    KANDROIDEXTRAS_EXPORT QString mimeType(const QUrl &url);
 
     /** File name of a file provided by a content: URL. */
-    QString fileName(const QUrl &url);
+    KANDROIDEXTRAS_EXPORT QString fileName(const QUrl &url);
 }
 
 }

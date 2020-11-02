@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_URI_H
 #define KANDROIDEXTRAS_URI_H
 
+#include "kandroidextras_export.h"
+
 class QAndroidJniObject;
 class QUrl;
 
@@ -16,10 +18,10 @@ namespace KAndroidExtras {
 namespace Uri
 {
     /** Create an android.net.Uri from a QUrl. */
-    QAndroidJniObject fromUrl(const QUrl &url);
+    KANDROIDEXTRAS_EXPORT QAndroidJniObject fromUrl(const QUrl &url);
 
     /** Convert a android.net.Uri to a QUrl. */
-    QUrl toUrl(const QAndroidJniObject &uri);
+    KANDROIDEXTRAS_EXPORT QUrl toUrl(const QAndroidJniObject &uri);
 }
 
 }

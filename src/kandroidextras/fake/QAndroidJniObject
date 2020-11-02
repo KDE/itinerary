@@ -7,7 +7,7 @@
 #ifndef FAKE_QANDROIDJNIOBJECT_H
 #define FAKE_QANDROIDJNIOBJECT_H
 
-
+#include "kandroidextras_export.h"
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
 
@@ -35,7 +35,7 @@ typedef jobject jarray;
 typedef jarray jobjectArray;
 
 /** Mock object for QAndroidJniObject outside of Android, for automated testing. */
-class QAndroidJniObject {
+class KANDROIDEXTRAS_EXPORT QAndroidJniObject {
 public:
     QAndroidJniObject() = default;
 

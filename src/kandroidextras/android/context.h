@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_CONTEXT_H
 #define KANDROIDEXTRAS_CONTEXT_H
 
+#include "kandroidextras_export.h"
+
 class QAndroidJniObject;
 
 namespace KAndroidExtras {
@@ -14,7 +16,7 @@ namespace KAndroidExtras {
 /** Methods around android.content.Context. */
 namespace Context
 {
-    QAndroidJniObject getPackageName();
+    KANDROIDEXTRAS_EXPORT QAndroidJniObject getPackageName();
 }
 
 }

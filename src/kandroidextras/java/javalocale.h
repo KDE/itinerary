@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_LOCALE_H
 #define KANDROIDEXTRAS_LOCALE_H
 
+#include "kandroidextras_export.h"
+
 class QAndroidJniObject;
 class QLocale;
 
@@ -19,10 +21,10 @@ namespace KAndroidExtras {
 namespace Locale
 {
     /** Create an java.util.Locale object from a QLocale. */
-    QAndroidJniObject fromLocale(const QLocale &locale);
+    KANDROIDEXTRAS_EXPORT QAndroidJniObject fromLocale(const QLocale &locale);
 
     /** Create an java.util.Locale object for the current QLocale. */
-    QAndroidJniObject current();
+    KANDROIDEXTRAS_EXPORT QAndroidJniObject current();
 }
 
 }
