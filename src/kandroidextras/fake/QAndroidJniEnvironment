@@ -7,15 +7,7 @@
 #ifndef FAKE_QANDROIDJNIENVIRONMENT_H
 #define FAKE_QANDROIDJNIENVIRONMENT_H
 
-#include <QAndroidJniObject>
-
-struct JNIEnv
-{
-    inline bool ExceptionCheck() { return false; }
-    inline void ExceptionClear() {}
-    inline int GetArrayLength(jobjectArray) { return 0; }
-    inline jobject GetObjectArrayElement(jobjectArray, int) { return nullptr; }
-};
+#include "jni.h"
 
 class QAndroidJniEnvironment
 {

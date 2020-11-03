@@ -97,5 +97,5 @@ QString Intent::getStringExtra(const QAndroidJniObject &name) const
 QStringList Intent::getStringArrayExtra(const QAndroidJniObject &name) const
 {
     const auto extra = getObjectExtra<Jni::Array<java::lang::String>>("getStringArrayExtra", name);
-    return Jni::fromArray(extra);
+    return Jni::fromArray<QStringList>(extra);
 }

@@ -9,10 +9,6 @@
 
 #include <QAndroidJniObject>
 
-#ifdef Q_OS_ANDROID
-#error This is a mock object for use on non-Android!
-#endif
-
 /** Mock object for QtAndroid namespace. */
 namespace QtAndroid {
     inline QAndroidJniObject androidContext()

@@ -8,31 +8,12 @@
 #define FAKE_QANDROIDJNIOBJECT_H
 
 #include "kandroidextras_export.h"
+#include "jni.h"
+
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
 
 #include <QStringList>
-
-#include <cstdint>
-
-#ifdef Q_OS_ANDROID
-#error This is a mock object for use on non-Android!
-#endif
-
-typedef uint8_t jboolean;
-typedef int8_t jbyte;
-typedef uint16_t jchar;
-typedef int16_t jshort;
-typedef int32_t jint;
-typedef int64_t jlong;
-typedef float jfloat;
-typedef double jdouble;
-
-typedef void* jobject;
-typedef jobject jclass;
-typedef jobject jstring;
-typedef jobject jarray;
-typedef jarray jobjectArray;
 
 /** Mock object for QAndroidJniObject outside of Android, for automated testing. */
 class KANDROIDEXTRAS_EXPORT QAndroidJniObject {
@@ -51,7 +32,12 @@ public:
     bool isValid() const { return true; }
 
     static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
-    static QAndroidJniObject fromLocalRef(jobject) { return {}; }
+    static QAndroidJniObject fromLocalRef(jobject o)
+    {
+        QAndroidJniObject obj;
+        obj.m_protocol.push_back(QLatin1String("ctor: ") + QString::number((qulonglong)o));
+        return obj;
+    }
     QString toString() const { return m_protocol.join(QLatin1Char('\n')); }
 
     jobject object() const { return nullptr; }
