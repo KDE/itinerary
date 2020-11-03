@@ -234,8 +234,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
 
         msg.assemble();
         qDebug().noquote() << msg.encodedContent();
-
-        // TODO
+        m_resMgr->importReservation(&msg);
         return;
     }
 

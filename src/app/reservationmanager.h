@@ -13,6 +13,8 @@
 #include <QObject>
 #include <QVariant>
 
+namespace KMime { class Message; }
+
 class PkPassManager;
 
 class QUrl;
@@ -54,6 +56,9 @@ public:
      */
     QVector<QString> importReservation(const QByteArray &data, const QString &fileName = {});
     QVector<QString> importReservations(const QVector<QVariant> &resData);
+#ifdef Q_OS_ANDROID
+    QVector<QString> importReservation(KMime::Message *msg);
+#endif
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

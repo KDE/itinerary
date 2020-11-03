@@ -18,6 +18,10 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
 
+#ifdef Q_OS_ANDROID
+#include <KMime/Message>
+#endif
+
 #include <KLocalizedString>
 
 #include <QDate>
@@ -149,6 +153,15 @@ QVector<QString> ReservationManager::importReservation(const QByteArray& data, c
     engine.setData(data, fileName);
     return importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
+
+#ifdef Q_OS_ANDROID
+QVector<QString> ReservationManager::importReservation(KMime::Message *msg)
+{
+    ExtractorEngine engine;
+    engine.setContent(msg);
+    return importReservations(JsonLdDocument::fromJson(engine.extract()));
+}
+#endif
 
 QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
 {
