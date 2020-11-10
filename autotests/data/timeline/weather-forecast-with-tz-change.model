@@ -21,7 +21,7 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55390167236328,
+                            "latitude": 52.55379867553711,
                             "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
@@ -75,7 +75,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 11,
@@ -92,7 +92,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -109,7 +109,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 16,
@@ -175,7 +175,7 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
-                "latitude": 52.55390167236328,
+                "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
                 "rentalVehicleStation": {
@@ -218,8 +218,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 60.31639862060547,
-                            "longitude": 24.969100952148438
+                            "latitude": 60.315799713134766,
+                            "longitude": 24.968599319458008
                         },
                         "iataCode": "HEL",
                         "name": "Helsinki-Vantaa"
@@ -237,7 +237,7 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55390167236328,
+                            "latitude": 52.55379867553711,
                             "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
@@ -275,8 +275,8 @@
             "floatingLocationType": "Reservation",
             "from": {
                 "@type": "Location",
-                "latitude": 60.31639862060547,
-                "longitude": 24.969100952148438,
+                "latitude": 60.315799713134766,
+                "longitude": 24.968599319458008,
                 "name": "Helsinki-Vantaa",
                 "rentalVehicleStation": {
                     "@type": "RentalVehicleStation",
@@ -323,8 +323,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 60.31639862060547,
-            "minimumTemperature": 24.969100952148438,
+            "maximumTemperature": 60.315799713134766,
+            "minimumTemperature": 24.968599319458008,
             "precipitation": 23,
             "range": 3,
             "symbolIconName": "weather-few-clouds-night",
@@ -410,8 +410,8 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 60.31639862060547,
-            "minimumTemperature": 24.969100952148438,
+            "maximumTemperature": 60.315799713134766,
+            "minimumTemperature": 24.968599319458008,
             "precipitation": 23,
             "range": 18,
             "symbolIconName": "weather-few-clouds",
@@ -456,8 +456,8 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
-                "latitude": 60.31639862060547,
-                "longitude": 24.969100952148438,
+                "latitude": 60.315799713134766,
+                "longitude": 24.968599319458008,
                 "name": "Helsinki-Vantaa",
                 "rentalVehicleStation": {
                     "@type": "RentalVehicleStation",
@@ -499,7 +499,7 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 52.55390167236328,
+                            "latitude": 52.55379867553711,
                             "longitude": 13.29319953918457
                         },
                         "iataCode": "TXL",
@@ -518,8 +518,8 @@
                         },
                         "geo": {
                             "@type": "GeoCoordinates",
-                            "latitude": 60.31639862060547,
-                            "longitude": 24.969100952148438
+                            "latitude": 60.315799713134766,
+                            "longitude": 24.968599319458008
                         },
                         "iataCode": "HEL",
                         "name": "Helsinki-Vantaa"
@@ -556,7 +556,7 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
-                "latitude": 52.55390167236328,
+                "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
                 "rentalVehicleStation": {
@@ -624,7 +624,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 5,
@@ -641,7 +641,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -658,7 +658,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -675,7 +675,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -692,7 +692,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -709,7 +709,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
@@ -726,7 +726,7 @@
         "weatherForecast": {
             "@context": "http://schema.org",
             "@type": "WeatherForecast",
-            "maximumTemperature": 52.55390167236328,
+            "maximumTemperature": 52.55379867553711,
             "minimumTemperature": 13.29319953918457,
             "precipitation": 23,
             "range": 24,
