@@ -71,3 +71,16 @@ void DevelopmentModeController::purgeMapCSS()
     path += QLatin1String("/org.kde.kosmindoormap/assets/css/");
     QDir(path).removeRecursively();
 }
+
+void DevelopmentModeController::clearOsmTileCache()
+{
+    // see KOSMIndoorMap::TileCache
+    QString base;
+    if (!qEnvironmentVariableIsSet("KOSMINDOORMAP_CACHE_PATH")) {
+        base = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation)
+            + QLatin1String("/org.kde.osm/vectorosm");
+    } else {
+        base = qEnvironmentVariable("KOSMINDOORMAP_CACHE_PATH");
+    }
+    QDir(base + QLatin1String("/17")).removeRecursively();
+}

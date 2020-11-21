@@ -44,6 +44,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             onClicked: DevelopmentModeController.purgeMapCSS();
         }
+        QQC2.Button {
+            text: "Clear OSM Tile Cache"
+            Layout.fillWidth: true
+            onClicked: DevelopmentModeController.clearOsmTileCache();
+        }
 
         QQC2.Button {
             text: "Enable KPT Logging"
