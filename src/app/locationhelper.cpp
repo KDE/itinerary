@@ -28,3 +28,16 @@ QString LocationHelper::destinationCountry(const QVariant &res)
     }
     return LocationUtil::address(LocationUtil::location(res)).addressCountry();
 }
+
+QString LocationHelper::regionCode(const QVariant &loc)
+{
+    const auto addr = LocationUtil::address(loc);
+    if (addr.addressCountry().isEmpty()) {
+        return {};
+    }
+
+    if (addr.addressRegion().isEmpty()) {
+        return addr.addressCountry();
+    }
+    return addr.addressCountry() + QLatin1Char('-') + addr.addressRegion();
+}

@@ -32,6 +32,11 @@ Kirigami.Page {
     property string departureGateName
     property string departurePlatformName
 
+    property alias region: map.region
+    property alias timeZone: map.timeZone
+    property date beginTime
+    property date endTime
+
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
@@ -234,6 +239,8 @@ Kirigami.Page {
             platformModel.setDeparturePlatform(root.departurePlatformName, Platform.Rail);
             gateModel.setArrivalGate(root.arrivalGateName);
             gateModel.setDepartureGate(root.departureGateName);
+            map.view.beginTime = root.beginTime;
+            map.view.endTime = root.endTime;
             queryRentalVehicles();
         }
     }

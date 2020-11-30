@@ -8,6 +8,7 @@
 
 #include "constants.h"
 #include "livedatamanager.h"
+#include "locationhelper.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
@@ -30,6 +31,7 @@
 #include <QDebug>
 #include <QPointF>
 #include <QTimer>
+#include <QTimeZone>
 
 QTimer* TimelineDelegateController::s_currentTimer = nullptr;
 int TimelineDelegateController::s_progressRefCount = 0;
@@ -557,6 +559,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     auto args = engine->newObject();
     const auto arrLoc = LocationUtil::arrivalLocation(res);
     args.setProperty(QStringLiteral("placeName"), LocationUtil::name(arrLoc));
+    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(arrLoc));
 
     // arrival location
     const auto arr = arrival();
@@ -567,11 +570,22 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
     // there is no arrival gate property (yet)
 
+    // arrival time
+    auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
+    if (!arrTime.isValid()) {
+        arrTime = SortUtil::endDateTime(res);
+    }
+    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
+    if (arrTime.timeSpec() == Qt::TimeZone) {
+        args.setProperty(QStringLiteral("timeZone"), QString::fromUtf8(arrTime.timeZone().id()));
+    }
+
     // look for departure for a following transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("departurePlatformName"), dep.hasExpectedDeparturePlatform() ? dep.expectedDeparturePlatform() : dep.scheduledDeparturePlatform());
+        args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
 
@@ -591,6 +605,12 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
         args.setProperty(QStringLiteral("departureGateName"), nextRes.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
     }
 
+    auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
+    if (!depTime.isValid()) {
+        depTime = SortUtil::startDateTime(nextRes);
+    }
+    args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(depTime));
+
     return args;
 }
 
@@ -609,6 +629,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     auto args = engine->newObject();
     const auto depLoc = LocationUtil::departureLocation(res);
     args.setProperty(QStringLiteral("placeName"), LocationUtil::name(depLoc));
+    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(depLoc));
 
     // departure location
     const auto dep = departure();
@@ -621,11 +642,22 @@ QJSValue TimelineDelegateController::departureMapArguments() const
         args.setProperty(QStringLiteral("departureGateName"), res.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
     }
 
-    // look for arrival for a preceeding transfer
+    // departure time
+    auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
+    if (!depTime.isValid()) {
+        depTime = SortUtil::startDateTime(res);
+    }
+    args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(depTime));
+    if (depTime.timeSpec() == Qt::TimeZone) {
+        args.setProperty(QStringLiteral("timeZone"), QString::fromUtf8(depTime.timeZone().id()));
+    }
+
+    // look for arrival for a preceding transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("arrivalPlatformName"), arr.hasExpectedArrivalPlatform() ? arr.expectedArrivalPlatform() : arr.scheduledArrivalPlatform());
+        args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }
 
@@ -642,6 +674,12 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     }
     args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
     // there is no arrival gate property (yet)
+
+    auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
+    if (!arrTime.isValid()) {
+        arrTime = SortUtil::endDateTime(prevRes);
+    }
+    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
 
     return args;
 }

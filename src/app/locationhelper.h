@@ -16,6 +16,9 @@ namespace LocationHelper
     QString departureCountry(const QVariant &res);
     /** Arrival country for location changes, location country otherwise. */
     QString destinationCountry(const QVariant &res);
+
+    /** ISO 3166-1/2 country or region code for @p loc. */
+    QString regionCode(const QVariant &loc);
 }
 
 #endif // LOCATIONHELPER_H
