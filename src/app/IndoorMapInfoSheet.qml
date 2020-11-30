@@ -91,7 +91,7 @@ Kirigami.OverlaySheet {
             verticalAlignment: Qt.AlignBottom
         }
         section.criteria: ViewSection.FullString
-        section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+        section.labelPositioning: ViewSection.InlineLabels
 
         delegate: Loader {
             property var row: model
