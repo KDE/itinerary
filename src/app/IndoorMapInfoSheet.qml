@@ -33,14 +33,14 @@ Kirigami.OverlaySheet {
             id: infoStringDelegate
             RowLayout {
                 QQC2.Label {
-                    visible: row.keyLabel != ""
-                    text: row.keyLabel + ":"
-                    color: row.category == OSMElementInformationModel.DebugCategory ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    visible: row && row.keyLabel != ""
+                    text: row ? row.keyLabel + ":" : ""
+                    color: (row && row.category == OSMElementInformationModel.DebugCategory) ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     Layout.alignment: Qt.AlignTop
                 }
                 QQC2.Label {
-                    text: row.value
-                    color: row.category == OSMElementInformationModel.DebugCategory ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    text: row ? row.value : ""
+                    color: (row && row.category == OSMElementInformationModel.DebugCategory) ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     wrapMode: Text.WordWrap
                     Layout.fillWidth: true
                 }
@@ -51,14 +51,14 @@ Kirigami.OverlaySheet {
             id: infoLinkDelegate
             RowLayout {
                 QQC2.Label {
-                    visible: row.keyLabel != ""
-                    text: row.keyLabel + ":"
-                    color: row.category == OSMElementInformationModel.DebugCategory ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    visible: row && row.keyLabel != ""
+                    text: row ? row.keyLabel + ":" : ""
+                    color: (row && row.category == OSMElementInformationModel.DebugCategory) ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     Layout.alignment: Qt.AlignTop
                 }
                 QQC2.Label {
-                    text: "<a href=\"" + row.url + "\">" + row.value + "</a>"
-                    color: row.category == OSMElementInformationModel.DebugCategory ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+                    text: row ? "<a href=\"" + row.url + "\">" + row.value + "</a>" : ""
+                    color: (row && row.category == OSMElementInformationModel.DebugCategory) ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
                     onLinkActivated: Qt.openUrlExternally(link)
                     wrapMode: Text.WordWrap
                     Layout.fillWidth: true
@@ -69,7 +69,7 @@ Kirigami.OverlaySheet {
         Component {
             id: infoAddressDelegate
             QQC2.Label {
-                text: Localizer.formatAddress(row.value)
+                text: row ? Localizer.formatAddress(row.value) : ""
             }
         }
 
