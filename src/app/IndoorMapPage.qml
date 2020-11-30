@@ -123,6 +123,7 @@ Kirigami.Page {
     IndoorMapInfoSheet {
         id: elementDetailsSheet
         model: infoModel
+        mapData: map.mapData
     }
 
     PlatformModel {
