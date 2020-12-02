@@ -67,9 +67,10 @@ Column {
             Row {
                 id: row
                 QQC2.Label {
-                    text: dayData.display
+                    text: dayData.shortDayName
                     width: delegateRoot.ListView.view.labelWidth + Kirigami.Units.smallSpacing
                     Component.onCompleted: delegateRoot.ListView.view.labelWidth = Math.max(delegateRoot.ListView.view.labelWidth, implicitWidth)
+                    font.bold: dayData.isToday
                 }
                 Repeater {
                     model: dayData.intervals
@@ -116,6 +117,9 @@ Column {
     IntervalModel {
         id: intervalModel
         openingHours: root.oh
+        // TODO we could use the layover time here, if available and in the future
+        beginDate: intervalModel.beginOfWeek(new Date())
+        endDate: new Date(intervalModel.beginDate.getTime() + 7 * 24 * 3600 * 1000)
     }
 
     ListView {
@@ -134,9 +138,10 @@ Column {
             property int itemWidth: (intervalHeader.ListView.view.width -  intervalHeader.ListView.view.labelWidth - Kirigami.Units.smallSpacing) / 8
             x: intervalHeader.ListView.view.labelWidth + Kirigami.Units.smallSpacing + intervalHeader.itemWidth/2
             Repeater {
+                // TODO we might need to use less when space constrained horizontally
                 model: [3, 6, 9, 12, 15, 18, 21]
                 QQC2.Label {
-                    text: modelData + ":00" // TODO
+                    text: intervalModel.formatTimeColumnHeader(modelData, 0)
                     width: intervalHeader.itemWidth
                     horizontalAlignment: Qt.AlignHCenter
                 }
