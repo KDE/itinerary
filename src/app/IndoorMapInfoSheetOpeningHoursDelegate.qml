@@ -30,24 +30,7 @@ Column {
         property var currentInterval: root.oh.interval(new Date())
 
         id: currentState
-        text: {
-            if (oh.error != OpeningHours.NoError) {
-                return "";
-            }
-
-            /* TODO if (i.end)   Math.round((i.end - Date.now())/60000) + " more minutes."; */
-            switch (currentInterval.state) {
-                case Interval.Open:
-                    return "Currently open";
-                    break;
-                case Interval.Closed:
-                    return "Currently closed";
-                    break;
-                case Interval.Unknown:
-                case Interval.Invalid:
-                    return "";
-            }
-        }
+        text: intervalModel.currentState // TODO we could update this every minute
         color: {
             switch (currentInterval.state) {
                 case Interval.Open: return Kirigami.Theme.positiveTextColor;
