@@ -55,10 +55,12 @@ Item {
             icon.name: "map-symbolic"
             onClicked: {
                 var args = {placeName: place.name};
-                if (isRangeBegin) {
-                    args = controller.departureMapArguments();
-                } else if (isRangeEnd) {
-                    args = controller.arrivalMapArguments();
+                if (controller.isLocationChange) {
+                    if (isRangeBegin) {
+                        args = controller.departureMapArguments();
+                    } else if (isRangeEnd) {
+                        args = controller.arrivalMapArguments();
+                    }
                 }
                 args.coordinate = Qt.point(place.geo.longitude, place.geo.latitude);
                 console.log(JSON.stringify(args));
