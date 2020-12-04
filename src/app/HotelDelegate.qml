@@ -24,13 +24,14 @@ App.TimelineDelegate {
         Layout.fillWidth: true
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         App.PlaceDelegate {
             place: reservationFor
             controller: root.controller
-            Layout.fillWidth: true
+            width: topLayout.width
             isRangeBegin: root.rangeType == TimelineElement.RangeBegin
             isRangeEnd: root.rangeType == TimelineElement.RangeEnd
         }

@@ -46,7 +46,7 @@ Item {
         anchors.left: root.left
     }
 
-    RowLayout {
+    Row {
         id: buttonLayout
         anchors.right: root.right
         y: Math.max(0, label.implicitHeight - buttonLayout.implicitHeight)

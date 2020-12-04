@@ -57,8 +57,9 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: i18nc("flight departure, %1 is airport, %2 is time", "Departure from %1: %2",
@@ -66,13 +67,13 @@ App.TimelineDelegate {
                 Localizer.formatTime(reservationFor, "departureTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         App.PlaceDelegate {
             place: reservationFor.departureAirport
             controller: root.controller
             isRangeBegin: true
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
@@ -82,7 +83,7 @@ App.TimelineDelegate {
         }
 
         Kirigami.Separator {
-            Layout.fillWidth: true
+            width: topLayout.width
         }
 
         QQC2.Label {
@@ -91,13 +92,13 @@ App.TimelineDelegate {
                 Localizer.formatDateTime(reservationFor, "arrivalTime") + " ")
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalAirport
             controller: root.controller
             isRangeEnd: true
-            Layout.fillWidth: true
+            width: topLayout.width
         }
     }
 

@@ -46,11 +46,12 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            Layout.fillWidth: true
+            width: topLayout.width
             text: locationInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
                 i18n("People are driving on the right side.") :
                 i18n("People are driving on the wrong side.")
@@ -60,21 +61,21 @@ Kirigami.AbstractCard {
         }
 
         QQC2.Label {
-            Layout.fillWidth: true
+            width: topLayout.width
             text: i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes)
             color: Kirigami.Theme.negativeTextColor
             visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
-            Layout.fillWidth: true
+            width: topLayout.width
             text: i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes)
             color: Kirigami.Theme.neutralTextColor
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
-            Layout.fillWidth: true
+            width: topLayout.width
             text: i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes)
             color: Kirigami.Theme.neutralTextColor
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
@@ -82,7 +83,7 @@ Kirigami.AbstractCard {
         }
 
         QQC2.Label {
-            Layout.fillWidth: true
+            width: topLayout.width
             text: i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta))
             color: Kirigami.Theme.neutralTextColor
             visible: locationInfo.timeZoneDiffers

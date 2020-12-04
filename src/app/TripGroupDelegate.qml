@@ -58,8 +58,9 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: contentLayout
+        spacing: Kirigami.Units.smallSpacing
         visible: root.rangeType != TimelineElement.RangeEnd
 
         QQC2.Label {
@@ -98,6 +99,7 @@ Kirigami.AbstractCard {
                 }
                 color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
                 wrapMode: Text.WordWrap
+                width: contentLayout.width
             }
         }
 
