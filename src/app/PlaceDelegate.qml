@@ -43,6 +43,7 @@ Item {
         visible: !place.address.isEmpty
         text: Localizer.formatAddress(place.address)
         color: Kirigami.Theme.textColor
+        anchors.left: root.left
     }
 
     RowLayout {
