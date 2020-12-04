@@ -33,8 +33,9 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: reservation.pickupLocation.name
@@ -44,7 +45,7 @@ App.TimelineDelegate {
             place: reservation.pickupLocation
             controller: root.controller
             isRangeBegin: true
-            Layout.fillWidth: true
+            width: topLayout.width
             visible: root.rangeType != TimelineElement.RangeEnd
         }
         QQC2.Label {
@@ -58,7 +59,7 @@ App.TimelineDelegate {
         App.PlaceDelegate {
             place: reservation.dropoffLocation
             isRangeEnd: true
-            Layout.fillWidth: true
+            width: topLayout.width
             visible: root.rangeType != TimelineElement.RangeBegin
             controller: root.controller
         }

@@ -39,36 +39,38 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: i18n("From: %1", reservationFor.departureBusStop.name)
             color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         App.PlaceDelegate {
             place: reservationFor.departureBusStop
             controller: root.controller
             isRangeBegin: true
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         Kirigami.Separator {
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         QQC2.Label {
             text: i18n("To: %1", reservationFor.arrivalBusStop.name)
             color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         App.PlaceDelegate {
             place: reservationFor.arrivalBusStop
             controller: root.controller
             isRangeEnd: true
-            Layout.fillWidth: true
+            width: topLayout.width
         }
-        RowLayout {
-            Layout.fillWidth: true
+        Row {
+            width: topLayout.width
+            spacing: Kirigami.Units.smallSpacing
             QQC2.Label {
                 text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
                 color: Kirigami.Theme.textColor

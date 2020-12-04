@@ -37,8 +37,9 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: reservationFor.location.name
@@ -48,7 +49,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeBegin: root.rangeType == TimelineElement.RangeBegin
             isRangeEnd: root.rangeType == TimelineElement.RangeEnd
-            Layout.fillWidth: true
+            width: topLayout.width
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))

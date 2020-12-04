@@ -30,13 +30,14 @@ App.TimelineDelegate {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
         id: topLayout
+        spacing: Kirigami.Units.smallSpacing
 
         App.PlaceDelegate {
             place: touristAttraction
             controller: root.controller
-            Layout.fillWidth: true
+            width: topLayout.width
         }
     }
 

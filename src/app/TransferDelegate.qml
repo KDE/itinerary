@@ -58,18 +58,20 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: ColumnLayout {
+    contentItem: Column {
+        id: topLayout
+        spacing: Kirigami.Units.smallSpacing
+
         ListView {
             delegate: App.JourneySectionDelegate{}
             model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
             implicitHeight: contentHeight
-            Layout.fillWidth: true
+            width: topLayout.width
             boundsBehavior: Flickable.StopAtBounds
         }
         App.JourneySummaryDelegate {
             journey: transfer.journey
             visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
-            Layout.fillWidth: true
         }
         QQC2.Button {
             text: i18n("Select...")
@@ -77,6 +79,7 @@ Kirigami.AbstractCard {
             onClicked: applicationWindow().pageStack.push(detailsComponent);
         }
         RowLayout {
+            width: topLayout.width
             visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
             QQC2.BusyIndicator {
                 running: visible
