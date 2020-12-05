@@ -66,6 +66,7 @@
     <p xml:lang="ko">KDE 여행 정보는 프라이버시를 지키는 디지털 여행 도우미입니다.</p>
     <p xml:lang="nl">KDE Itinerary is een digitale reisassistent met prioriteit op beschermen van uw privacy.</p>
     <p xml:lang="pt">O KDE Itinerary é um assistente digital de viagens com a prioridade de proteger a sua privacidade.</p>
+    <p xml:lang="pt-BR">O KDE Itinerary é um assistente de viagens digital com prioridade na proteção de sua privacidade.</p>
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
     <p xml:lang="sv">KDE-resplan är ett digitalt resehjälpprogram som prioriterar att skydda din integritet.</p>
     <p xml:lang="uk">KDE Itinerary — цифровий помічник у подорожах, акцент у якому зроблено на забезпеченні вашої конфіденційності.</p>
@@ -208,6 +209,7 @@
       <li xml:lang="ko">여행지의 일기 예보를 표시합니다.</li>
       <li xml:lang="nl">Weersvoorspelling voor bestemming langs de reisroute.</li>
       <li xml:lang="pt">Previsão meteorológica no destino, ao longo da sua viagem.</li>
+      <li xml:lang="pt-BR">Previsão meteorológica para os destinos de sua viagem.</li>
       <li xml:lang="sl">Vremenska napoved za cilje ob vašem potovanju.</li>
       <li xml:lang="sv">Väderprognos för mål längs resan.</li>
       <li xml:lang="uk">Показ прогнозу погоди у кінцевій точці вашої подорожі.</li>
@@ -273,6 +275,7 @@
       <li xml:lang="ko">환경 영향을 계산하는 개인 여행 통계 정보를 제공합니다.</li>
       <li xml:lang="nl">Persoonlijke reisstatistieken om impact op de omgeving te monitoren.</li>
       <li xml:lang="pt">Estatísticas pessoais da viagem para acompanhar o impacto ambiental.</li>
+      <li xml:lang="pt-BR">Estatísticas pessoais da viagem para monitorar o impacto ambiental.</li>
       <li xml:lang="sl">Osebna statistika potovanj za spremljanje vplivov na okolje.</li>
       <li xml:lang="sv">Personlig resestatistik för att övervaka miljöpåverkan.</li>
       <li xml:lang="uk">Особиста статистика подорожей для стеження за впливом на навколишнє середовище.</li>
@@ -290,6 +293,7 @@
     <p xml:lang="ko">KDE 여행 정보는 KMail의 여행 정보 추천 플러그인, KDE Connect, Nextcloud 허브 및 DavDroid와 같이 작동합니다.</p>
     <p xml:lang="nl">KDE Itinerary werkt het best naast de plug-in voor reisroute uitpakken van KMail en KDE Connect of Nextcloud Hub en DavDroid.</p>
     <p xml:lang="pt">O KDE Itinerary funciona melhor com o 'plugin' de extracção de itinerários e com o KDE Connect, o Nextcloud Hub ou o DavDroid.</p>
+    <p xml:lang="pt-BR">O KDE Itinerary funciona melhor junto com o plugin de extração de itinerário do KMail e KDE Connect ou Nextcloud Hub e DavDroid.</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
