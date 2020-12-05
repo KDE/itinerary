@@ -105,6 +105,10 @@ Column {
         endDate: new Date(intervalModel.beginDate.getTime() + 7 * 24 * 3600 * 1000)
     }
 
+    FontMetrics {
+        id: fm
+    }
+
     ListView {
         id: intervalView
         width: parent.width
@@ -118,13 +122,14 @@ Column {
         clip: true
         header: Row {
             id: intervalHeader
-            property int itemWidth: (intervalHeader.ListView.view.width -  intervalHeader.ListView.view.labelWidth - Kirigami.Units.smallSpacing) / 8
+            property int colCount: (intervalView.width - Kirigami.Units.smallSpacing - intervalView.labelWidth) / fm.advanceWidth(intervalModel.formatTimeColumnHeader(12, 59)) < 8 ? 4 : 8
+            property int itemWidth: (intervalHeader.ListView.view.width -  intervalHeader.ListView.view.labelWidth - Kirigami.Units.smallSpacing) / colCount
             x: intervalHeader.ListView.view.labelWidth + Kirigami.Units.smallSpacing + intervalHeader.itemWidth/2
             Repeater {
                 // TODO we might need to use less when space constrained horizontally
-                model: [3, 6, 9, 12, 15, 18, 21]
+                model: colCount - 1
                 QQC2.Label {
-                    text: intervalModel.formatTimeColumnHeader(modelData, 0)
+                    text: intervalModel.formatTimeColumnHeader((modelData + 1) * 24/colCount, 0)
                     width: intervalHeader.itemWidth
                     horizontalAlignment: Qt.AlignHCenter
                 }
