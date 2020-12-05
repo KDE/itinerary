@@ -152,6 +152,7 @@ Kirigami.AbstractListItem {
         // optional bottom row: notes
         QQC2.Label {
             Layout.columnSpan: 2
+            Layout.fillWidth: true
             text: modelData.notes.join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap

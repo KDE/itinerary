@@ -37,40 +37,40 @@ Kirigami.ScrollablePage {
         Kirigami.Card {
             id: top
             property var journey: model.journey
+
             header: JourneyDelegateHeader {
                 journey: top.journey
             }
 
-            contentItem: ColumnLayout {
+            contentItem: Column {
+                id: contentLayout
+                spacing: Kirigami.Units.smallSpacing
+
                 ListView {
                     delegate: App.JourneySectionDelegate{}
                     model: journeyView.currentIndex == index ? top.journey.sections : 0
                     implicitHeight: contentHeight
-                    Layout.fillWidth: true
+                    width: contentLayout.width
                     boundsBehavior: Flickable.StopAtBounds
                 }
                 App.JourneySummaryDelegate {
                     journey: top.journey
                     visible: journeyView.currentIndex != index
-                    Layout.fillWidth: true
+                }
+                QQC2.Button {
+                    text: i18n("Save")
+                    icon.name: "document-save";
+                    visible: journeyView.currentIndex == index
+                    onClicked: {
+                        replaceWarningSheet.journey = journey
+                        replaceWarningSheet.sheetOpen = true
+                    }
                 }
             }
 
             onClicked: {
                 journeyView.currentIndex = index;
             }
-
-            actions: [
-                Kirigami.Action {
-                    text: i18n("Save")
-                    iconName: "document-save"
-                    onTriggered: {
-                        replaceWarningSheet.journey = journey
-                        replaceWarningSheet.sheetOpen = true
-                    }
-                    visible: journeyView.currentIndex == index
-                }
-            ]
         }
     }
 
@@ -111,17 +111,20 @@ Kirigami.ScrollablePage {
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
-        footer: ColumnLayout {
+        footer: Column {
+            id: footerLayout
+            spacing: Kirigami.Units.smallSpacing
+
             x: Kirigami.Units.largeSpacing * 2
             width: journeyView.width - Kirigami.Units.largeSpacing * 4
             QQC2.ToolButton {
-                Layout.fillWidth: true
+                width: footerLayout.width
                 icon.name: "go-down-symbolic"
                 visible: journeyModel.canQueryNext
                 onClicked: journeyModel.queryNext()
             }
             QQC2.Label {
-                Layout.fillWidth: true
+                width: footerLayout.width
                 text: i18n("Data providers: %1", PublicTransport.attributionSummary(journeyModel.attributions))
                 visible: journeyModel.attributions.length > 0
                 wrapMode: Text.Wrap
