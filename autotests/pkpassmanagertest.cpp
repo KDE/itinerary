@@ -11,6 +11,14 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+void initLocale()
+{
+    qputenv("LC_ALL", "en_US.utf-8");
+    qputenv("LANG", "C");
+}
+
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+
 class PkPassManagerTest : public QObject
 {
     Q_OBJECT
