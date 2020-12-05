@@ -75,12 +75,14 @@ Kirigami.ScrollablePage {
             }
 
             contentItem: Column {
-                spacing: Kirigami.Units.largeSpacing
+                id: contentLayout
+                spacing: Kirigami.Units.smallSpacing
+
                 ListView {
                     delegate: App.JourneySectionDelegate{}
                     model: journeyView.currentIndex == index ? journey.sections : 0
                     implicitHeight: contentHeight
-                    width: parent.width
+                    width: contentLayout.width
                     boundsBehavior: Flickable.StopAtBounds
                 }
                 App.JourneySummaryDelegate {
