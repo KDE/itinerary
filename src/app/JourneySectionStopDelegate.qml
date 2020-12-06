@@ -146,12 +146,19 @@ Item {
             Layout.alignment: Qt.AlignVCenter
             visible: stop.stopPoint.hasCoordinate
             icon.name: "map-symbolic"
-            onClicked: applicationWindow().pageStack.push(indoorMapPage, {
-                coordinate: Qt.point(stop.stopPoint.longitude, stop.stopPoint.latitude),
-                placeName: stop.stopPoint.name,
-                arrivalPlatformName: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform,
-                departurePlatformName: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform
-            })
+            onClicked: {
+                var args = {
+                    coordinate: Qt.point(stop.stopPoint.longitude, stop.stopPoint.latitude),
+                    placeName: stop.stopPoint.name
+                };
+                if (!isDeparture) {
+                    args.arrivalPlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+                }
+                if (!isArrival) {
+                    args.departurePlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+                }
+                applicationWindow().pageStack.push(indoorMapPage, args);
+            }
         }
     }
 }
