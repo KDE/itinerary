@@ -268,6 +268,7 @@
       <li xml:lang="ca-valencia">Vista de la disposició de vagons del tren (només per a alguns operadors).</li>
       <li xml:lang="en-GB">Train coach layout view (for some operators only).</li>
       <li xml:lang="es">Vista del esquema del tren (solo para algunos operadores).</li>
+      <li xml:lang="it">Vista della disposizione della carrozza del treno (solo per alcuni operatori).</li>
       <li xml:lang="nl">Weergave van indeling treinwagons (alleen voor sommige vervoerders)</li>
       <li xml:lang="pt">Área de disposição dos lugares do comboio (apenas com alguns operadores).</li>
       <li xml:lang="sl">Pogled postavitve vlaka (samo za nekatere operaterje).</li>
@@ -279,6 +280,7 @@
       <li xml:lang="ca-valencia">Mapes per planta de l'estació de tren i l'aeroport basats en les dades d'OpenStreetMap.</li>
       <li xml:lang="en-GB">Train station and airport per-floor maps based on OpenStreetMap data.</li>
       <li xml:lang="es">Planos de las plantas de estaciones de tren y de aeropuertos basados en datos de OpenStreetMap.</li>
+      <li xml:lang="it">Mappe per piano di stazioni ferroviarie e aeroporti basate sui dati di OpenStreetMap.</li>
       <li xml:lang="nl">Kaarten per verdieping van station en luchthaven gebaseerd op gegevens uit OpenStreetMap.</li>
       <li xml:lang="pt">Mapas das estações de comboio e aeroportos por pisos, baseados em dados do OpenStreetMap.</li>
       <li xml:lang="sl">Zemljevidi železniške postaje in letališča po nadstropjih na podlagi podatkov OpenStreetMap.</li>
@@ -290,6 +292,7 @@
       <li xml:lang="ca-valencia">Les bicicletes de lloguer disponibles ancorades o flotants es poden mostrar en el mapa de l'estació de tren.</li>
       <li xml:lang="en-GB">Available dock-based or free-floating rental bikes can be displayed on the train station map.</li>
       <li xml:lang="es">Las bicicletas de alquiler disponibles en base o sin ella se pueden mostrar en el mapa de la estación de tren.</li>
+      <li xml:lang="it">Le biciclette a noleggio disponibili su rastrelliera o a flusso libero possono essere visualizzate sulla mappa della stazione ferroviaria.</li>
       <li xml:lang="nl">Beschikbare huurfietsen in stalling en vrijstaand kan getoond worden op de kaart van het treinstation.</li>
       <li xml:lang="pt">Poderá mostrar as bicicletas de aluguer com bloqueios ou livres no mapa das estações dos correios.</li>
       <li xml:lang="sl">Razpoložljiva kolesa za najem na stebričkih ali prosto dostopna kolesa na zemljevidu železniške postaje.</li>
@@ -404,6 +407,7 @@
       <caption xml:lang="ca-valencia">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i eixida.</caption>
       <caption xml:lang="en-GB">Train station platform map, highlighting arrival and departure platforms.</caption>
       <caption xml:lang="es">Mapa de andenes de estación de tren, resaltando andenes de llegada y salida.</caption>
+      <caption xml:lang="it">Mappa dei binari della stazione ferroviaria, evidenziando i binari di arrivo e partenza.</caption>
       <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons.</caption>
       <caption xml:lang="pt">Mapa das plataformas das estações de comboio, realçando as plataformas de partidas e chegadas.</caption>
       <caption xml:lang="sl">Zemljevid perona železniške postaje s poudarkom na peronih za prihod in odhod.</caption>
@@ -418,6 +422,7 @@
       <caption xml:lang="ca-valencia">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer.</caption>
       <caption xml:lang="en-GB">Train station map showing real-time availability of rental bikes.</caption>
       <caption xml:lang="es">Mapa de estación de tren mostrando la disponibilidad de bicicletas de alquiler en tiempo real.</caption>
+      <caption xml:lang="it">Mappa della stazione ferroviaria che mostra la disponibilità in tempo reale delle biciclette a noleggio.</caption>
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen.</caption>
       <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer.</caption>
       <caption xml:lang="sl">Zemljevid železniške postaje prikazuje sprotno razpoložljivost koles za najem.</caption>
@@ -432,6 +437,7 @@
       <caption xml:lang="ca-valencia">Informació detallada de l'entitat seleccionada en el mapa de l'estació de tren.</caption>
       <caption xml:lang="en-GB">Detailed information for the select entity on the train station map.</caption>
       <caption xml:lang="es">Información detallada para la entidad seleccionada en el mapa de la estación de tren.</caption>
+      <caption xml:lang="it">Informazioni dettagliate per l'entità selezionata sulla mappa della stazione ferroviaria.</caption>
       <caption xml:lang="nl">Gedetailleerde informatie voor het te selecteren item op kaart van het treinstation.</caption>
       <caption xml:lang="pt">Informações detalhadas para a entidade de selecção no mapa das estações de comboios.</caption>
       <caption xml:lang="sl">Podrobne informacije za izbrani predmet na zemljevidu železniške postaje.</caption>
