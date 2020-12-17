@@ -525,8 +525,12 @@ void TimelineModel::updateWeatherElements()
     }
 
     auto date = now();
-    date.setTime(QTime(date.time().hour() + 1, 0)); // ### this looks suspicious for 23:xx?
-    while(it != m_elements.end() && date < m_weatherMgr->maximumForecastTime(today())) {
+    // round to next full hour
+    date.setTime(QTime(date.time().hour(), 0));
+    date = date.addSecs(60 * 60);
+    const auto maxForecastTime = m_weatherMgr->maximumForecastTime(date.date());
+
+    while(it != m_elements.end() && date < maxForecastTime) {
 
         if ((*it).dt < date || (*it).elementType == TimelineElement::TodayMarker) {
             // clean up outdated weather elements (happens when merging previously split ranges)
@@ -604,7 +608,7 @@ void TimelineModel::updateWeatherElements()
     }
 
     // append weather elements beyond the end of the list if necessary
-    while (date < m_weatherMgr->maximumForecastTime(today()) && geo.isValid()) {
+    while (date < maxForecastTime && geo.isValid()) {
         auto endTime = date;
         endTime.setTime(QTime(23, 59, 59));
 
