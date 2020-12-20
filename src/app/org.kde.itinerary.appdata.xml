@@ -65,6 +65,7 @@
     <p xml:lang="it">KDE Itinerary è un assistente di viaggio digitale con una priorità sulla protezionedella tua riservatezza.</p>
     <p xml:lang="ko">KDE 여행 정보는 프라이버시를 지키는 디지털 여행 도우미입니다.</p>
     <p xml:lang="nl">KDE Itinerary is een digitale reisassistent met prioriteit op beschermen van uw privacy.</p>
+    <p xml:lang="pl">KDE Itinerary jest cyfrowym pomocnikiem podróży, którego nadrzędnym celem jest chronienie twojej prywatności.</p>
     <p xml:lang="pt">O KDE Itinerary é um assistente digital de viagens com a prioridade de proteger a sua privacidade.</p>
     <p xml:lang="pt-BR">O KDE Itinerary é um assistente de viagens digital com prioridade na proteção de sua privacidade.</p>
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
@@ -107,6 +108,7 @@
       <li xml:lang="it">Visualizzazione della sequenza temporale di un itinerario di viaggio unificato con raggruppamento automatico dei viaggi.</li>
       <li xml:lang="ko">자동 여행 그룹 기능이 있는 통합된 여정 타임라인 보기.</li>
       <li xml:lang="nl">Tijdlijn weergave van een geünificeerd reisroute met automatische groepering van trips.</li>
+      <li xml:lang="pl">Widok osi czasu dla ujednoliconego planu podróży z samoczynnym grupowaniem podróży.</li>
       <li xml:lang="pt">Visão cronológica de um itinerário de viagens unificado com o agrupamento automático das viagens.</li>
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
@@ -123,6 +125,7 @@
       <li xml:lang="it">Supporta prenotazioni per treni, autobus e voli aerei così come alberghi, ristoranti, eventi e noleggi auto.</li>
       <li xml:lang="ko">철도, 버스, 항공 예약 이외에도 호텔, 레스토랑, 행사, 렌터카 예약도 지원합니다.</li>
       <li xml:lang="nl">Ondersteunt boekingen van trein, bus en vlucht evenals reserveringen van hotel, restaurant, evenement en huurauto.</li>
+      <li xml:lang="pl">Obsługuje bilety na pociągi, autobusy i samoloty, a także hotele, restauracje, wydarzenia i wypożyczanie samochodów.</li>
       <li xml:lang="pt">Suporta as reservas de comboios, autocarros e voos, assim como dos hotéis, restaurantes, eventos e alugueres de carros.</li>
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
@@ -160,6 +163,7 @@
       <li xml:lang="it">Supporta la gestione dei biglietti per prenotazioni multi-viaggiatore e multi-biglietto.</li>
       <li xml:lang="ko">여행자가 여러 명이거나 여러 장의 표로 구성된 예약을 지원합니다.</li>
       <li xml:lang="nl">Ondersteuning voor beheer van tickets voor meerdere reizigers en booking van meerdere tickets.</li>
+      <li xml:lang="pl">Obsługuje zarządzanie biletami w przypadku rezerwacji u wielu przewoźników i wielu biletów.</li>
       <li xml:lang="pt">Suporta a gestão de bilhetes para reservas multi-viajantes e multi-bilhetes.</li>
       <li xml:lang="sl">Podpira upravljanje vozovnic za več potnikov in rezervacij za več vozovnic.</li>
       <li xml:lang="sv">Stöder biljetthantering för bokningar med flera resenärer och biljetter.</li>
@@ -176,6 +180,7 @@
       <li xml:lang="it">Estrazione automatica dei dati di prenotazione da vari formati di ingresso, eseguita localmente sul tuo dispositivo.</li>
       <li xml:lang="ko">다양한 입력 자료에서 여정을 추출하며, 로컬 장치에서 이루어집니다.</li>
       <li xml:lang="nl">Automatische extractie van bookinggegevens ui verschillende invoerformaten, lokaal uitgevoerd op uw apparaat.</li>
+      <li xml:lang="pl">Wydobywanie danych o rezerwacji z różnych formatów wejściowych, wykonywalne lokalnie na twoim urządzeniu.</li>
       <li xml:lang="pt">Extracção automática dos dados da reserva a partir de vários formatos de entrada, operando localmente no seu dispositivo.</li>
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
@@ -192,6 +197,7 @@
       <li xml:lang="it">Informazioni sui ritardi in tempo reale e sui cambi di binario per i treni.</li>
       <li xml:lang="ko">열차의 실시간 지연 정보와 승강장 변경을 표시합니다.</li>
       <li xml:lang="nl">Real-time informatie over vertraging en wijziging van perron voor treinen.</li>
+      <li xml:lang="pl">Dane w czasie rzeczywistym o opóźnieniach i zmianie peronów dla pociągów.</li>
       <li xml:lang="pt">Informações em tempo-real de atrasos e mudança de plataformas nos comboios.</li>
       <li xml:lang="sl">Informacije o zamudah v realnem času in o spremembah peronov za vlake.</li>
       <li xml:lang="sv">Information i realtid om fördröjningar och plattformsändringar för tåg.</li>
@@ -208,6 +214,7 @@
       <li xml:lang="it">Previsioni meteo per la destinazione lungo il tuo viaggio.</li>
       <li xml:lang="ko">여행지의 일기 예보를 표시합니다.</li>
       <li xml:lang="nl">Weersvoorspelling voor bestemming langs de reisroute.</li>
+      <li xml:lang="pl">Prognoza pogody dla miejsca docelowego podróży.</li>
       <li xml:lang="pt">Previsão meteorológica no destino, ao longo da sua viagem.</li>
       <li xml:lang="pt-BR">Previsão meteorológica para os destinos de sua viagem.</li>
       <li xml:lang="sl">Vremenska napoved za cilje ob vašem potovanju.</li>
@@ -225,6 +232,7 @@
       <li xml:lang="it">Pieno controllo su tutti gli accessi in linea.</li>
       <li xml:lang="ko">온라인 접근을 완전히 통제합니다.</li>
       <li xml:lang="nl">Volledige controle over alle online toegang.</li>
+      <li xml:lang="pl">Pełny nadzór nad dostępem do sieci.</li>
       <li xml:lang="pt">Controlo total sobre todo o acesso 'online'.</li>
       <li xml:lang="pt-BR">Controle completo sobre todos os acessos online.</li>
       <li xml:lang="sl">Popoln nadzor nad vsemi spletnimi dostopi.</li>
@@ -242,6 +250,7 @@
       <li xml:lang="it">Selezione di collegamenti ferroviari alternativi su biglietti non vincolati o collegamenti persi.</li>
       <li xml:lang="ko">열차를 놓쳤거나 자유 여정 승차권의 경우 대체 열차편 정보를 제공합니다.</li>
       <li xml:lang="nl">Selectie van alternatieve treinverbindingen op niet-gebonden tickets of over gemiste verbindingen.</li>
+      <li xml:lang="pl">Wybór zamiennych połączeń kolejowych dla nieprzypisanych biletów lub przegapionych połączeń.</li>
       <li xml:lang="pt">Selecção de ligações de comboio alternativas para bilhetes não vinculados ou para ligações perdidas.</li>
       <li xml:lang="sl">Izbira alternativnih železniških povezav na nevezanih vozovnicah ali vozovnicah zamujenih povezav.</li>
       <li xml:lang="sv">Val av alternativa tågförbindelser på öppna biljetter eller vid missade anslutningar.</li>
@@ -258,6 +267,7 @@
       <li xml:lang="it">Navigazione del trasporto via terra locale tra gli elementi del tuo itinerario.</li>
       <li xml:lang="ko">여행 중에 이용할 지역 대중 교통 정보를 제공합니다.</li>
       <li xml:lang="nl">Lokale navigatie van vervoer op de grond tussen elementen van uw reisroute.</li>
+      <li xml:lang="pl">Lokalne przemieszczanie się naziemne pomiędzy elementami twojego planu podróży.</li>
       <li xml:lang="pt">Navegação local em transportes terrestres entre elementos do seu itinerário.</li>
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
@@ -310,6 +320,7 @@
       <li xml:lang="it">Statistiche di viaggio personali per monitorare l'impatto ambientale.</li>
       <li xml:lang="ko">환경 영향을 계산하는 개인 여행 통계 정보를 제공합니다.</li>
       <li xml:lang="nl">Persoonlijke reisstatistieken om impact op de omgeving te monitoren.</li>
+      <li xml:lang="pl">Osobisty statystyki podróżowania do monitorowania wpływu na środowisko.</li>
       <li xml:lang="pt">Estatísticas pessoais da viagem para acompanhar o impacto ambiental.</li>
       <li xml:lang="pt-BR">Estatísticas pessoais da viagem para monitorar o impacto ambiental.</li>
       <li xml:lang="sl">Osebna statistika potovanj za spremljanje vplivov na okolje.</li>
@@ -328,6 +339,7 @@
     <p xml:lang="it">KDE Itinerary funziona meglio insieme all'estensione di estrazione degli itinerari di KMail e KDE Connect, o Nextcloud Hub e DavDroid.</p>
     <p xml:lang="ko">KDE 여행 정보는 KMail의 여행 정보 추천 플러그인, KDE Connect, Nextcloud 허브 및 DavDroid와 같이 작동합니다.</p>
     <p xml:lang="nl">KDE Itinerary werkt het best naast de plug-in voor reisroute uitpakken van KMail en KDE Connect of Nextcloud Hub en DavDroid.</p>
+    <p xml:lang="pl">KDE Itinerary działa najlepiej wraz z wtyczką do wydobywania itinerary dla KMaila oraz KDE Connect, lub Nextcloud Hub i DavDroid.</p>
     <p xml:lang="pt">O KDE Itinerary funciona melhor com o 'plugin' de extracção de itinerários e com o KDE Connect, o Nextcloud Hub ou o DavDroid.</p>
     <p xml:lang="pt-BR">O KDE Itinerary funciona melhor junto com o plugin de extração de itinerário do KMail e KDE Connect ou Nextcloud Hub e DavDroid.</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
@@ -374,6 +386,7 @@
       <caption xml:lang="it">Vista delle carte d'imbarco.</caption>
       <caption xml:lang="ko">탑승권 보기.</caption>
       <caption xml:lang="nl">Boardingpasweergave.</caption>
+      <caption xml:lang="pl">Widok kart odpraw.</caption>
       <caption xml:lang="pt">Visualização do cartão de embarque.</caption>
       <caption xml:lang="pt-BR">Visualização do cartão de embarque.</caption>
       <caption xml:lang="sl">Pogled vstopnega kupona.</caption>
@@ -394,6 +407,7 @@
       <caption xml:lang="it">Vista della disposizione del  treno che evidenzia la carrozza con la prenotazione di un posto.</caption>
       <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기.</caption>
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering.</caption>
+      <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc.</caption>
       <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva.</caption>
       <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža.</caption>
       <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning.</caption>
@@ -459,6 +473,7 @@
       <caption xml:lang="it">Vista delle statistiche di viaggio.</caption>
       <caption xml:lang="ko">여행 통계 보기입니다.</caption>
       <caption xml:lang="nl">Weergave reisstatistieken</caption>
+      <caption xml:lang="pl">Widok statystyki podróży.</caption>
       <caption xml:lang="pt">Área de estatísticas de viagens.</caption>
       <caption xml:lang="pt-BR">Visualização de estatísticas da viagem.</caption>
       <caption xml:lang="sl">Pogled potovalne statistike.</caption>
