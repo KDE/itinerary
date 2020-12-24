@@ -190,7 +190,7 @@ Kirigami.Page {
             locationQuery.request.latitude = map.mapData.center.y;
             locationQuery.request.longitude = map.mapData.center.x;
             locationQuery.request.maximumDistance = map.mapData.radius;
-            locationQuery.request.types = PT.Location.RentedVehicleStation;
+            locationQuery.request.types = PT.Location.RentedVehicleStation | PT.Location.RentedVehicle;
         } else {
             locationQuery.clear();
         }
