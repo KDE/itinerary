@@ -46,17 +46,6 @@
                 "@type": "Location",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
-                "rentalVehicleStation": {
-                    "@type": "RentalVehicleStation",
-                    "availableVehicles": -1,
-                    "capacity": -1,
-                    "isValid": false,
-                    "network": {
-                        "@type": "RentalVehicleNetwork",
-                        "isValid": false,
-                        "vehicleTypes": "Unknown"
-                    }
-                },
                 "type": "Place"
             },
             "fromName": "Home",
@@ -66,17 +55,6 @@
                 "latitude": 52.55970001220703,
                 "longitude": 13.287799835205078,
                 "name": "Tegel",
-                "rentalVehicleStation": {
-                    "@type": "RentalVehicleStation",
-                    "availableVehicles": -1,
-                    "capacity": -1,
-                    "isValid": false,
-                    "network": {
-                        "@type": "RentalVehicleNetwork",
-                        "isValid": false,
-                        "vehicleTypes": "Unknown"
-                    }
-                },
                 "type": "Place"
             },
             "toName": "Tegel"
@@ -373,17 +351,6 @@
                 "latitude": 43.808799743652344,
                 "longitude": 11.202899932861328,
                 "name": "Peretola",
-                "rentalVehicleStation": {
-                    "@type": "RentalVehicleStation",
-                    "availableVehicles": -1,
-                    "capacity": -1,
-                    "isValid": false,
-                    "network": {
-                        "@type": "RentalVehicleNetwork",
-                        "isValid": false,
-                        "vehicleTypes": "Unknown"
-                    }
-                },
                 "type": "Place"
             },
             "fromName": "Peretola",
@@ -392,17 +359,6 @@
                 "@type": "Location",
                 "latitude": 52.51860046386719,
                 "longitude": 13.376299858093262,
-                "rentalVehicleStation": {
-                    "@type": "RentalVehicleStation",
-                    "availableVehicles": -1,
-                    "capacity": -1,
-                    "isValid": false,
-                    "network": {
-                        "@type": "RentalVehicleNetwork",
-                        "isValid": false,
-                        "vehicleTypes": "Unknown"
-                    }
-                },
                 "type": "Place"
             },
             "toName": "Home"
