@@ -20,7 +20,7 @@ else()
     list(APPEND solidextras_srcs
         solidbrightnessbackend.cpp
         solidlockbackend.cpp
-        networkstatus_nm.cpp
+        networkstatus_dbus.cpp
     )
     qt5_add_dbus_interface(solidextras_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
     qt5_add_dbus_interface(solidextras_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
