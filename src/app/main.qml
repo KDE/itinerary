@@ -140,7 +140,7 @@ Kirigami.ApplicationWindow {
 
         Connections {
             target: ReservationManager
-            onInfoMessage: {
+            function onInfoMessage(msg) {
                 infoMessage.text = msg;
                 infoMessage.visible = true;
             }
