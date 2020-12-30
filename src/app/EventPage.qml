@@ -42,12 +42,14 @@ App.DetailsPage {
 
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Location:")
-                text: reservationFor.location.name
+                text: reservationFor.location != undefined ? reservationFor.location.name : ""
+                visible: reservationFor.location != undefined
             }
 
             App.PlaceDelegate {
                 place: reservationFor.location
                 controller: root.controller
+                visible: reservationFor.location != undefined
             }
 
             QQC2.Label {

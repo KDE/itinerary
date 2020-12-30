@@ -42,7 +42,7 @@ App.TimelineDelegate {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            text: reservationFor.location.name
+            text: reservationFor.location != undefined ? reservationFor.location.name : ""
         }
         App.PlaceDelegate {
             place: reservationFor.location
@@ -50,6 +50,7 @@ App.TimelineDelegate {
             isRangeBegin: root.rangeType == TimelineElement.RangeBegin
             isRangeEnd: root.rangeType == TimelineElement.RangeEnd
             width: topLayout.width
+            visible: reservationFor.location != undefined
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
