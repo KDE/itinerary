@@ -8,6 +8,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.7 as Kirigami
+import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport 1.0 as PT
 import org.kde.kosmindoormap 1.0
 import org.kde.itinerary 1.0
@@ -89,11 +90,20 @@ Kirigami.Page {
         },
         Kirigami.Action { separator: true },
         Kirigami.Action {
+            id: equipmentAction
+            text: i18n("Show Elevator Status")
+            checkable: true
+            enabled: !map.mapLoader.isLoading && Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+            icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            onTriggered: queryLiveLocationData();
+        },
+        Kirigami.Action {
             id: rentalVehicleAction
             text: i18n("Show Rental Vehicles")
             checkable: true
-            enabled: !map.mapLoader.isLoading
-            onTriggered: queryRentalVehicles();
+            enabled: !map.mapLoader.isLoading && Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+            icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            onTriggered: queryLiveLocationData();
         },
         Kirigami.Action {
             id: lightStyleAction
@@ -184,13 +194,21 @@ Kirigami.Page {
         mapData: map.mapData
     }
 
-    function queryRentalVehicles()
+    RealtimeEquipmentModel {
+        id: equipmentModel
+        mapData: map.mapData
+        realtimeModel: locationModel.sourceModel
+    }
+
+    function queryLiveLocationData()
     {
-        if (rentalVehicleAction.checked) {
+        if (rentalVehicleAction.checked || equipmentAction.checked) {
             locationQuery.request.latitude = map.mapData.center.y;
             locationQuery.request.longitude = map.mapData.center.x;
             locationQuery.request.maximumDistance = map.mapData.radius;
-            locationQuery.request.types = PT.Location.RentedVehicleStation | PT.Location.RentedVehicle;
+            locationQuery.request.types =
+                (rentalVehicleAction.checked ? (PT.Location.RentedVehicleStation | PT.Location.RentedVehicle) : 0)
+              | (equipmentAction.checked ? PT.Location.Equipment : 0);
         } else {
             locationQuery.clear();
         }
@@ -199,7 +217,7 @@ Kirigami.Page {
     IndoorMap {
         id: map
         anchors.fill: parent
-        overlaySources: [ gateModel, platformModel, locationModel ]
+        overlaySources: [ gateModel, platformModel, locationModel, equipmentModel ]
 
         IndoorMapScale {
             map: map
@@ -244,7 +262,7 @@ Kirigami.Page {
             map.timeZone = root.timeZone;
             map.view.beginTime = root.beginTime;
             map.view.endTime = root.endTime;
-            queryRentalVehicles();
+            queryLiveLocationData();
         }
     }
 }
