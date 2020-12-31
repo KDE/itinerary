@@ -247,6 +247,13 @@ Kirigami.Page {
                 elementDetailsSheet.sheetOpen = true;
             }
         }
+        onElementLongPressed: {
+            // this provides info model access for elements with other interactions
+            infoModel.element = element;
+            if (infoModel.name != "" || infoModel.debug) {
+                elementDetailsSheet.sheetOpen = true;
+            }
+        }
     }
 
     onCoordinateChanged: map.mapLoader.loadForCoordinate(coordinate.y, coordinate.x);
