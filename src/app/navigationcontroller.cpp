@@ -48,14 +48,17 @@ void NavigationController::showOnMap(const QVariant &place)
     }
 
     const auto geo = LocationUtil::geo(place);
-    const auto addr = LocationUtil::address(place);
-
-#ifdef Q_OS_ANDROID
-    QUrl url;
-    url.setScheme(QStringLiteral("geo"));
     if (geo.isValid()) {
-        url.setPath(QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
-    } else if (!addr.isEmpty()) {
+        // zoom out further from airports, they are larger and you usually want to go further away from them
+        showOnMap(geo.latitude(), geo.longitude(), place.userType() == qMetaTypeId<Airport>() ? 12 : 17);
+        return;
+    }
+
+    const auto addr = LocationUtil::address(place);
+    if (!addr.isEmpty()) {
+        QUrl url;
+#ifdef Q_OS_ANDROID
+        url.setScheme(QStringLiteral("geo"));
         url.setPath(QStringLiteral("0,0"));
         QUrlQuery query;
         query.addQueryItem(QStringLiteral("q"), addr.streetAddress() + QLatin1String(", ")
@@ -63,29 +66,7 @@ void NavigationController::showOnMap(const QVariant &place)
             + addr.addressLocality() + QLatin1String(", ")
             + addr.addressCountry());
         url.setQuery(query);
-    } else {
-        return;
-    }
-    startActivity(url);
-
 #else
-    if (geo.isValid()) {
-        // zoom out further from airports, they are larger and you usually want to go further away from them
-        const auto zoom = place.userType() == qMetaTypeId<Airport>() ? 12 : 17;
-        QUrl url;
-        url.setScheme(QStringLiteral("https"));
-        url.setHost(QStringLiteral("www.openstreetmap.org"));
-        url.setPath(QStringLiteral("/"));
-        const QString fragment = QLatin1String("map=") + QString::number(zoom)
-                                    + QLatin1Char('/') + QString::number(geo.latitude())
-                                    + QLatin1Char('/') + QString::number(geo.longitude());
-        url.setFragment(fragment);
-        QDesktopServices::openUrl(url);
-        return;
-    }
-
-    if (!addr.isEmpty()) {
-        QUrl url;
         url.setScheme(QStringLiteral("https"));
         url.setHost(QStringLiteral("www.openstreetmap.org"));
         url.setPath(QStringLiteral("/search"));
@@ -96,9 +77,33 @@ void NavigationController::showOnMap(const QVariant &place)
         QUrlQuery query;
         query.addQueryItem(QStringLiteral("query"), queryString);
         url.setQuery(query);
+#endif
         QDesktopServices::openUrl(url);
     }
+}
+
+void NavigationController::showOnMap(float latitude, float longitude, int zoom)
+{
+#ifdef Q_OS_ANDROID
+    constexpr const auto useGeoUrl = true;
+#else
+    constexpr const auto useGeoUrl = false;
 #endif
+
+    QUrl url;
+    if (useGeoUrl) {
+        url.setScheme(QStringLiteral("geo"));
+        url.setPath(QString::number(latitude) + QLatin1Char(',') + QString::number(longitude));
+    } else {
+        url.setScheme(QStringLiteral("https"));
+        url.setHost(QStringLiteral("www.openstreetmap.org"));
+        url.setPath(QStringLiteral("/"));
+        const QString fragment = QLatin1String("map=") + QString::number(zoom)
+                                    + QLatin1Char('/') + QString::number(latitude)
+                                    + QLatin1Char('/') + QString::number(longitude);
+        url.setFragment(fragment);
+    }
+    QDesktopServices::openUrl(url);
 }
 
 bool NavigationController::canNavigateTo(const QVariant& place)

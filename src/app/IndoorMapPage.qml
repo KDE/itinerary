@@ -105,6 +105,11 @@ Kirigami.Page {
             icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
             onTriggered: queryLiveLocationData();
         },
+        Kirigami.Action { separator: true },
+        Kirigami.Action {
+            text: i18n("Open Map");
+            onTriggered: NavigationController.showOnMap(map.mapData.center.y, map.mapData.center.x, 18);
+        },
         Kirigami.Action {
             id: lightStyleAction
             text: "Light Style"
