@@ -60,19 +60,26 @@ Column {
                     Rectangle {
                         id: intervalBox
                         property var interval: modelData
+                        property var closeColor: Kirigami.Theme.negativeBackgroundColor;
                         color: {
                             switch (interval.state) {
                                 case Interval.Open: return Kirigami.Theme.positiveBackgroundColor;
-                                case Interval.Closed: return Kirigami.Theme.negativeBackgroundColor;
+                                case Interval.Closed: return intervalBox.closeColor;
                                 case Interval.Unknown: return Kirigami.Theme.neutralBackgroundColor;
                             }
                             return "transparent";
                         }
                         width: {
-                            var ratio = (interval.end - interval.begin) / (24 * 60 * 60 * 1000);
+                            var ratio = (interval.estimatedEnd - interval.begin) / (24 * 60 * 60 * 1000);
                             return ratio * (delegateRoot.ListView.view.width - delegateRoot.ListView.view.labelWidth - Kirigami.Units.smallSpacing);
                         }
                         height: Kirigami.Units.gridUnit
+                        gradient: Gradient {
+                            orientation: Gradient.Horizontal
+                            GradientStop { position: 0.0; color: intervalBox.color }
+                            GradientStop { position: (interval.end - interval.begin) / (interval.estimatedEnd - interval.begin); color: intervalBox.color }
+                            GradientStop { position: 1.0; color: interval.hasOpenEndTime ? intervalBox.closeColor : intervalBox.color }
+                        }
 
                         QQC2.Label {
                             id: commentLabel
