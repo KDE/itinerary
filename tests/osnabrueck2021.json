@@ -1,0 +1,169 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2021-01-06T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "12",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.272533416,
+                    "longitude": 8.0612564
+                },
+                "identifier": "ibnr:8000294",
+                "name": "Osnabrück Hbf"
+            },
+            "arrivalTime": "2021-01-09T11:51:00",
+            "departureDay": "2021-01-09",
+            "departurePlatform": "13",
+            "departureStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.52492523,
+                    "longitude": 13.369289
+                },
+                "identifier": "ibnr:8011160",
+                "name": "Berlin Hbf"
+            },
+            "departureTime": "2021-01-09T08:37:00",
+            "trainNumber": "IC 148"
+        },
+        "reservationNumber": "OSNA21",
+        "reservationStatus": "http://schema.org/ReservationConfirmed",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketToken": "aztecbin:dummy demo ticket, nice try :)",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "45 46",
+                "seatSection": "7",
+                "seatingType": "2"
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "reservationStatus": "http://schema.org/Confirmed",
+        "reservationFor": {
+            "@type": "Event",
+            "name": "KDE PIM Osnabrück Meeting 2021",
+            "endDate": "2021-01-10T16:00:00",
+            "startDate": "2021-01-09T12:00:00",
+            "location": {
+                "@type": "Place",
+                "name": "Intevation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressLocality": "Osnabrück",
+                    "postalCode": "49074",
+                    "streetAddress": "Georgstraße 4"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.2745213,
+                    "longitude": 8.0477296
+                },
+                "url": "https://intevation.de/"
+            }
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "LodgingReservation",
+        "checkinDate": "2021-01-09T15:00:00",
+        "checkoutDate": "2021-01-10T10:00:00",
+        "reservationFor": {
+            "@type": "LodgingBusiness",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE",
+                "addressLocality": "Osnabrück",
+                "postalCode": "49074",
+                "streetAddress": "Kleine Domsfreiheit 5"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.2768885,
+                "longitude": 8.0457321
+            },
+            "name": "Dom-Hotel",
+            "url": "https://www.dom-hotel-osnabrueck.de/en/"
+        }
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "FoodEstablishmentReservation",
+        "endTime": "2021-01-09T22:00:00",
+        "partySize": 12,
+        "reservationStatus": "http://schema.org/Confirmed",
+        "reservationFor": {
+            "@type": "FoodEstablishment",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "DE",
+                "addressLocality": "Osnabrück",
+                "postalCode": "49074",
+                "streetAddress": "Hasestraße 35"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 52.2784240,
+                "longitude": 8.0433724
+            },
+            "name": "Rampendahl",
+            "url": "http://www.rampendahl.de/"
+        },
+        "startTime": "2021-01-09T19:00:00"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2021-01-06T00:00:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalPlatform": "11",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.52492523,
+                    "longitude": 13.369289
+                },
+                "identifier": "ibnr:8011160",
+                "name": "Berlin Hbf"
+            },
+            "arrivalTime": "2021-01-10T19:22:00",
+            "departureDay": "2021-01-10",
+            "departurePlatform": "11",
+            "departureStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.272533416,
+                    "longitude": 8.0612564
+                },
+                "name": "Osnabrück Hbf"
+            },
+            "departureTime": "2021-01-10T16:08:00",
+            "trainNumber": "IC 147"
+        },
+        "reservationNumber": "OSNA21",
+        "reservationStatus": "http://schema.org/ReservationConfirmed",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketToken": "aztecbin:dummy demo ticket, nice try :)",
+            "ticketedSeat": {
+                "@type": "Seat",
+                "seatNumber": "45 46",
+                "seatSection": "9",
+                "seatingType": "62 64"
+            }
+        }
+    }
+]
