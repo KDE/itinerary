@@ -33,6 +33,7 @@ App.DetailsPage {
 
         App.PlaceDelegate {
             Kirigami.FormData.label: i18n("Location:")
+            Kirigami.FormData.labelAlignment: Qt.AlignTop
             place: reservationFor
             controller: root.controller
         }
@@ -62,10 +63,12 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Booking reference:")
             text: reservation.reservationNumber
+            visible: reservation.reservationNumber != ""
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Under name:")
             text: reservation.underName.name
+            visible: reservation.underName.name != ""
         }
     }
 }

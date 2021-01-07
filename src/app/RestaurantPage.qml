@@ -33,6 +33,7 @@ App.DetailsPage {
 
         App.PlaceDelegate {
             Kirigami.FormData.label: i18n("Location:")
+            Kirigami.FormData.labelAlignment: Qt.AlignTop
             place: reservationFor
             controller: root.controller
         }
@@ -40,11 +41,13 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Telephone:")
             text: Util.textToHtml(reservationFor.telephone)
+            visible: reservationFor.telephone != ""
             onLinkActivated: Qt.openUrlExternally(link)
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Email:")
             text: Util.textToHtml(reservationFor.email)
+            visible: reservationFor.email != ""
             onLinkActivated: Qt.openUrlExternally(link)
         }
 
@@ -64,10 +67,12 @@ App.DetailsPage {
         QQC2.Label {
             Kirigami.FormData.label: i18n("Booking reference:")
             text: reservation.reservationNumber
+            visible: reservation.reservationNumber != ""
         }
         QQC2.Label {
             Kirigami.FormData.label: i18n("Under name:")
             text: reservation.underName.name
+            visible: reservation.underName.name != ""
         }
     }
 }
