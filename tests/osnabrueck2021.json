@@ -8,6 +8,13 @@
             "arrivalPlatform": "12",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressLocality": "Osnabrück",
+                    "postalCode": "49074",
+                    "streetAddress": "Theodor-Heuss-Platz 2"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 52.272533416,
@@ -21,6 +28,13 @@
             "departurePlatform": "13",
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressLocality": "Berlin",
+                    "postalCode": "10557",
+                    "streetAddress": "Europaplatz 1"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 52.52492523,
@@ -130,6 +144,13 @@
             "arrivalPlatform": "11",
             "arrivalStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressLocality": "Berlin",
+                    "postalCode": "10557",
+                    "streetAddress": "Europaplatz 1"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 52.52492523,
@@ -143,6 +164,13 @@
             "departurePlatform": "11",
             "departureStation": {
                 "@type": "TrainStation",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "DE",
+                    "addressLocality": "Osnabrück",
+                    "postalCode": "49074",
+                    "streetAddress": "Theodor-Heuss-Platz 2"
+                },
                 "geo": {
                     "@type": "GeoCoordinates",
                     "latitude": 52.272533416,
