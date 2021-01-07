@@ -27,7 +27,7 @@ Item {
     /** Indicates that this represents the full range of the element (only valid for non-transit elements). */
     readonly property bool isFullRange: !isRangeBegin && !isRangeEnd
 
-    implicitHeight: (!place.address.isEmpty || place.geo.isValid) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
+    implicitHeight: (place && (!place.address.isEmpty || place.geo.isValid)) ? Math.max(buttonLayout.implicitHeight, label.implicitHeight) : 0
     implicitWidth: label.width + buttonLayout.width
 
     Component {
@@ -40,8 +40,8 @@ Item {
 
     QQC2.Label {
         id: label
-        visible: !place.address.isEmpty
-        text: Localizer.formatAddress(place.address)
+        visible: place != undefined && !place.address.isEmpty
+        text: place ? Localizer.formatAddress(place.address) : ""
         color: Kirigami.Theme.textColor
         anchors.left: root.left
     }
@@ -52,7 +52,7 @@ Item {
         y: Math.max(0, label.implicitHeight - buttonLayout.implicitHeight)
 
         QQC2.ToolButton {
-            visible: place.geo.isValid
+            visible: place != undefined && place.geo.isValid
             icon.name: "map-symbolic"
             onClicked: {
                 var args = {placeName: place.name};
@@ -70,7 +70,7 @@ Item {
         }
 
         QQC2.ToolButton {
-            visible: place.geo.isValid || !place.address.isEmpty
+            visible: place != undefined && (place.geo.isValid || !place.address.isEmpty)
             icon.name: "map-globe"
             onClicked: NavigationController.showOnMap(place)
         }
@@ -91,7 +91,7 @@ Item {
         // - at all arrival locations, unless it's a layover to a subsequent transit element TODO
         // -  when leaving non-transit events
         QQC2.ToolButton {
-            visible: place.geo.isValid && !isRangeBegin
+            visible: place != undefined && place.geo.isValid && !isRangeBegin
             icon.name: "view-calendar-day"
             onClicked: {
                 applicationWindow().pageStack.push(departuresPage);

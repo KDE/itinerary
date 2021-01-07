@@ -20,7 +20,7 @@ ColumnLayout {
     property var resIds
 
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
-    readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket
+    readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
     Layout.fillWidth: true
 
     TicketTokenModel {
@@ -53,7 +53,7 @@ ColumnLayout {
             anchors.bottom: barcodeContainer.bottom
             color: "white"
             // aim at 50x50mm for 2d codes, and 25mm height for 1d codes, if we have the space for it
-            property bool is1dCode: currentTicket.ticketTokenType == Ticket.Code128
+            property bool is1dCode: currentTicket ? currentTicket.ticketTokenType == Ticket.Code128 : false
             // if this gets too wide, we need to rotate by 90°
             property bool showVertical: is1dCode && barcodeTargetWidth > root.width
 
