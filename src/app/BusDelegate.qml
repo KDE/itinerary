@@ -92,6 +92,6 @@ App.TimelineDelegate {
         }
     }
 
-    onClicked: applicationWindow().pageStack.push(detailsComponent);
+    onClicked: showDetails(detailsComponent)
 }
 

@@ -41,6 +41,13 @@ Kirigami.AbstractCard {
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure
 
+    function showDetails(detailsComponent) {
+        while (applicationWindow().pageStack.depth > 1) {
+            applicationWindow().pageStack.pop();
+        }
+        applicationWindow().pageStack.push(detailsComponent);
+    }
+
     header: Rectangle {
         id: headerBackground
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
