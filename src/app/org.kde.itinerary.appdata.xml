@@ -353,91 +353,24 @@
   <screenshots>
     <screenshot type="default">
       <caption>Timeline view</caption>
-      <caption xml:lang="ca">Vista de la línia de temps</caption>
-      <caption xml:lang="ca-valencia">Vista de la línia de temps.</caption>
-      <caption xml:lang="cs">Pohled časové osy.</caption>
-      <caption xml:lang="en-GB">Timeline view.</caption>
-      <caption xml:lang="es">Vista cronológica.</caption>
-      <caption xml:lang="et">Ajatelje vaade.</caption>
-      <caption xml:lang="eu">Denbora-lerro ikuspegia.</caption>
-      <caption xml:lang="fr">Vue chronologique.</caption>
-      <caption xml:lang="gl">Vista da liña de tempo.</caption>
-      <caption xml:lang="ia">Vista de Chronologia.</caption>
-      <caption xml:lang="id">Tampilan linimasa.</caption>
-      <caption xml:lang="it">Vista della linea temporale.</caption>
-      <caption xml:lang="ko">타임라인 보기.</caption>
-      <caption xml:lang="nl">Tijdlijnweergave</caption>
-      <caption xml:lang="pl">Widok osi czasu.</caption>
-      <caption xml:lang="pt">Vista cronológica.</caption>
-      <caption xml:lang="pt-BR">Exibição cronológica.</caption>
-      <caption xml:lang="sl">Pogled časovnice.</caption>
-      <caption xml:lang="sv">Tidslinjevisning.</caption>
-      <caption xml:lang="uk">Перегляд розкладу.</caption>
-      <caption xml:lang="x-test">xxTimeline view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png</image>
     </screenshot>
     <screenshot>
       <caption>Boarding pass view</caption>
-      <caption xml:lang="ca">Vista de les targetes d'embarcament</caption>
-      <caption xml:lang="ca-valencia">Vista de les targetes d'embarcament.</caption>
-      <caption xml:lang="cs">Pohled na nástupní doklad.</caption>
-      <caption xml:lang="en-GB">Boarding pass view.</caption>
-      <caption xml:lang="es">Vista de tarjetas de embarque.</caption>
-      <caption xml:lang="et">Piletivaade.</caption>
-      <caption xml:lang="eu">Hegazkineratze baimen ikuspegia.</caption>
-      <caption xml:lang="fr">Vue de la carte d'embarquement.</caption>
-      <caption xml:lang="it">Vista delle carte d'imbarco.</caption>
-      <caption xml:lang="ko">탑승권 보기.</caption>
-      <caption xml:lang="nl">Boardingpasweergave.</caption>
-      <caption xml:lang="pl">Widok kart odpraw.</caption>
-      <caption xml:lang="pt">Visualização do cartão de embarque.</caption>
-      <caption xml:lang="pt-BR">Visualização do cartão de embarque.</caption>
-      <caption xml:lang="sl">Pogled vstopnega kupona.</caption>
-      <caption xml:lang="sv">Visning av boardingkort.</caption>
-      <caption xml:lang="uk">Перегляд посадкових квитків.</caption>
-      <caption xml:lang="x-test">xxBoarding pass view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-boardingpass.png</image>
     </screenshot>
     <screenshot>
       <caption>Train layout view highlighting the coach with a seat reservation</caption>
-      <caption xml:lang="ca">Vista de la disposició del tren amb ressaltat del vagó amb una reserva de seient</caption>
-      <caption xml:lang="ca-valencia">Vista de la disposició del tren amb ressaltat del vagó amb una reserva de seient.</caption>
-      <caption xml:lang="en-GB">Train layout view highlighting the coach with a seat reservation.</caption>
-      <caption xml:lang="es">Vista del esquema del tren resaltando el coche con reserva de asiento.</caption>
-      <caption xml:lang="et">Rongi struktuurivaade ühes vaguni ja reserveeritud istme esiletõstmisega.</caption>
-      <caption xml:lang="eu">Tren antolamendu ikuspegia, bagoia eta jarlekua nabarmenduz.</caption>
-      <caption xml:lang="fr">Disposition du train surlignant la voiture où le siège est réservé.</caption>
-      <caption xml:lang="it">Vista della disposizione del  treno che evidenzia la carrozza con la prenotazione di un posto.</caption>
-      <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기.</caption>
-      <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering.</caption>
-      <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc.</caption>
-      <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva.</caption>
-      <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža.</caption>
-      <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning.</caption>
-      <caption xml:lang="uk">Панель місць у вагонах потягу із підсвічуванням заброньованих місць.</caption>
-      <caption xml:lang="x-test">xxTrain layout view highlighting the coach with a seat reservation.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-vehicle-layout.png</image>
     </screenshot>
     <screenshot>
       <caption>Train station platform map, highlighting arrival and departure platforms</caption>
-      <caption xml:lang="ca">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i sortida</caption>
-      <caption xml:lang="ca-valencia">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i eixida.</caption>
-      <caption xml:lang="en-GB">Train station platform map, highlighting arrival and departure platforms.</caption>
-      <caption xml:lang="es">Mapa de andenes de estación de tren, resaltando andenes de llegada y salida.</caption>
-      <caption xml:lang="fr">La carte des quais de gare, mettant en valeur les quais d'arrivée et de départ.</caption>
-      <caption xml:lang="it">Mappa dei binari della stazione ferroviaria, evidenziando i binari di arrivo e partenza.</caption>
-      <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons.</caption>
-      <caption xml:lang="pt">Mapa das plataformas das estações de comboio, realçando as plataformas de partidas e chegadas.</caption>
-      <caption xml:lang="sl">Zemljevid perona železniške postaje s poudarkom na peronih za prihod in odhod.</caption>
-      <caption xml:lang="sv">Tågstationskarta för plattformar, som markerar ankomst- och avgångsplattformar.</caption>
-      <caption xml:lang="uk">Мапа платформ залізничної станції, підсвічування платформ прибуття та відправлення.</caption>
-      <caption xml:lang="x-test">xxTrain station platform map, highlighting arrival and departure platforms.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-platform-map.png</image>
     </screenshot>
     <screenshot>
       <caption>Train station map showing real-time availability of rental bikes.</caption>
       <caption xml:lang="ca">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer</caption>
-      <caption xml:lang="ca-valencia">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer.</caption>
+      <caption xml:lang="ca-valencia">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer</caption>
       <caption xml:lang="en-GB">Train station map showing real-time availability of rental bikes.</caption>
       <caption xml:lang="es">Mapa de estación de tren mostrando la disponibilidad de bicicletas de alquiler en tiempo real.</caption>
       <caption xml:lang="fr">La carte de la gare affichant la disponibilité en temps réel des vélos de location.</caption>
@@ -452,40 +385,10 @@
     </screenshot>
     <screenshot>
       <caption>Detailed information for the select entity on the train station map</caption>
-      <caption xml:lang="ca">Informació detallada de l'entitat seleccionada en el mapa de l'estació de tren</caption>
-      <caption xml:lang="ca-valencia">Informació detallada de l'entitat seleccionada en el mapa de l'estació de tren.</caption>
-      <caption xml:lang="en-GB">Detailed information for the select entity on the train station map.</caption>
-      <caption xml:lang="es">Información detallada para la entidad seleccionada en el mapa de la estación de tren.</caption>
-      <caption xml:lang="fr">Informations détaillées pour l'entité sélectionnée sur la carte de la gare.</caption>
-      <caption xml:lang="it">Informazioni dettagliate per l'entità selezionata sulla mappa della stazione ferroviaria.</caption>
-      <caption xml:lang="nl">Gedetailleerde informatie voor het te selecteren item op kaart van het treinstation.</caption>
-      <caption xml:lang="pt">Informações detalhadas para a entidade de selecção no mapa das estações de comboios.</caption>
-      <caption xml:lang="sl">Podrobne informacije za izbrani predmet na zemljevidu železniške postaje.</caption>
-      <caption xml:lang="sv">Detaljerad information om objektet som valts på tågstationskartan.</caption>
-      <caption xml:lang="uk">Докладні відомості для позначеного пункту на мапі залізничної станції.</caption>
-      <caption xml:lang="x-test">xxDetailed information for the select entity on the train station map.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-map-details.png</image>
     </screenshot>
     <screenshot>
       <caption>Travel statistics view</caption>
-      <caption xml:lang="ca">Vista de les estadístiques dels viatges</caption>
-      <caption xml:lang="ca-valencia">Vista de les estadístiques dels viatges.</caption>
-      <caption xml:lang="cs">Pohled na statistiky cestování.</caption>
-      <caption xml:lang="en-GB">Travel statistics view.</caption>
-      <caption xml:lang="es">Vista de estadísticas de viajes.</caption>
-      <caption xml:lang="et">Reisistatistika vaade.</caption>
-      <caption xml:lang="eu">Bidai estatistika ikuspegia.</caption>
-      <caption xml:lang="fr">Vue statistiques de voyages.</caption>
-      <caption xml:lang="it">Vista delle statistiche di viaggio.</caption>
-      <caption xml:lang="ko">여행 통계 보기입니다.</caption>
-      <caption xml:lang="nl">Weergave reisstatistieken</caption>
-      <caption xml:lang="pl">Widok statystyki podróży.</caption>
-      <caption xml:lang="pt">Área de estatísticas de viagens.</caption>
-      <caption xml:lang="pt-BR">Visualização de estatísticas da viagem.</caption>
-      <caption xml:lang="sl">Pogled potovalne statistike.</caption>
-      <caption xml:lang="sv">Visning av resestatistik.</caption>
-      <caption xml:lang="uk">Панель статистики подорожей.</caption>
-      <caption xml:lang="x-test">xxTravel statistics view.xx</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-statistics.png</image>
     </screenshot>
   </screenshots>
