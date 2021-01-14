@@ -347,7 +347,7 @@ void ReservationManager::passUpdated(const QString& passId)
 
 void ReservationManager::passRemoved(const QString& passId)
 {
-    Q_UNUSED(passId);
+    Q_UNUSED(passId)
     // TODO
 }
 

@@ -66,7 +66,7 @@ using namespace KItinerary;
 
 static void importReservation(JNIEnv *env, jobject that, jstring data)
 {
-    Q_UNUSED(that);
+    Q_UNUSED(that)
     const char *str = env->GetStringUTFChars(data, nullptr);
     ApplicationController::instance()->importData(str);
     env->ReleaseStringUTFChars(data, str);
@@ -74,7 +74,7 @@ static void importReservation(JNIEnv *env, jobject that, jstring data)
 
 static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
 {
-    Q_UNUSED(that);
+    Q_UNUSED(that)
     const char *str = env->GetStringUTFChars(data, nullptr);
     const auto doc = QJsonDocument::fromJson(str);
     env->ReleaseStringUTFChars(data, str);

@@ -540,7 +540,7 @@ QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const Q
 
 void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)
 {
-    Q_UNUSED(passId);
+    Q_UNUSED(passId)
     // ### to provide more context, we need to have a passId -> batchId map here eventually
 
     if (!changes.isEmpty()) {

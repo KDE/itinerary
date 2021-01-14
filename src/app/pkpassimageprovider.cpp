@@ -21,7 +21,7 @@ PkPassImageProvider::PkPassImageProvider(PkPassManager *mgr)
 
 QImage PkPassImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
 {
-    Q_UNUSED(requestedSize);
+    Q_UNUSED(requestedSize)
 
     const int pos = id.lastIndexOf(QLatin1Char('/'));
     if (pos < 0)

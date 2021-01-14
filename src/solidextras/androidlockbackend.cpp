@@ -26,6 +26,6 @@ void AndroidLockBackend::setInhibitionOff()
 
 void AndroidLockBackend::setInhibitionOn(const QString &explanation)
 {
-    Q_UNUSED(explanation);
+    Q_UNUSED(explanation)
     QAndroidJniObject::callStaticMethod<void>("org.kde.solidextras.Solid", "setLockInhibitionOn", "(Landroid/app/Activity;)V", QtAndroid::androidActivity().object());
 }

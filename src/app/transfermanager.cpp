@@ -410,9 +410,9 @@ FavoriteLocation TransferManager::pickFavorite(const QVariant &anchoredLoc, cons
     // (2) pick the favorite closest to anchoredLoc - this can work very well if the favorites aren't close to each other
     // (3) pick the first one
 
-    Q_UNUSED(anchoredLoc);
-    Q_UNUSED(resId);
-    Q_UNUSED(alignment);
+    Q_UNUSED(anchoredLoc)
+    Q_UNUSED(resId)
+    Q_UNUSED(alignment)
 
     if (m_favLocModel->rowCount() == 0) {
         return {};
@@ -515,7 +515,7 @@ static KPublicTransport::Journey pickJourney(const Transfer &t, const std::vecto
     if (journeys.empty()) {
         return {};
     }
-    Q_UNUSED(t);
+    Q_UNUSED(t)
     return journeys[0]; // TODO
 }
 

@@ -28,11 +28,11 @@ private Q_SLOTS:
     {
 #ifndef Q_OS_ANDROID
         const QString p1 = TestClass::ACTION_CREATE_DOCUMENT;
-        Q_UNUSED(p1);
+        Q_UNUSED(p1)
         int32_t p2 = TestClass::FLAG_GRANT_READ_URI_PERMISSION;
-        Q_UNUSED(p2);
+        Q_UNUSED(p2)
         QAndroidJniObject p3 = TestClass::OBJECT_TYPE_PROPERTY;
-        Q_UNUSED(p3);
+        Q_UNUSED(p3)
 
         QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 3);
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
@@ -40,7 +40,7 @@ private Q_SLOTS:
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(2), QLatin1String("getStaticObjectField: android/content/Intent OBJECT_TYPE_PROPERTY Landroid/net/Uri;"));
 
         const QString p4 = ManifestPermission::READ_CALENDAR;
-        Q_UNUSED(p4);
+        Q_UNUSED(p4)
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(3), QLatin1String("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
 #endif
     }
