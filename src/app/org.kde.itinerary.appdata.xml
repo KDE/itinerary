@@ -62,6 +62,7 @@
     <p xml:lang="et">KDE Itineraar on digitaalne reisiabiline, mis seab sihiks sinu privaatsuse kaitsmise.</p>
     <p xml:lang="eu">KDE Itinerary bidai laguntzaile digitala da zure pribatutasuna babestean duena lehentasuna.</p>
     <p xml:lang="fr">KDE Itinerary est un assistant de voyage numérique qui donne la priorité au respect de votre confidentialité.</p>
+    <p xml:lang="id">KDE Itinerary adalah asisten perjalanan digital dengan prioritas melindungi privasimu.</p>
     <p xml:lang="it">KDE Itinerary è un assistente di viaggio digitale con una priorità sulla protezionedella tua riservatezza.</p>
     <p xml:lang="ko">KDE 여행 정보는 프라이버시를 지키는 디지털 여행 도우미입니다.</p>
     <p xml:lang="nl">KDE Itinerary is een digitale reisassistent met prioriteit op beschermen van uw privacy.</p>
@@ -105,6 +106,7 @@
       <li xml:lang="et">Ühendatud reisikava ajateljevaade ühes võimalusega reise automaatselt rühmitada.</li>
       <li xml:lang="eu">Bidai ibilbide bateratua denbora lerro ikuspegian, txango bateratze automatikoaz. </li>
       <li xml:lang="fr">Vue chronologique de votre itinéraire de voyage unifié grâce au regroupement automatique des voyages.</li>
+      <li xml:lang="id">Tampilan garis waktu dari rencana perjalanan terpadu dengan pengelompokan perjalanan otomatis.</li>
       <li xml:lang="it">Visualizzazione della sequenza temporale di un itinerario di viaggio unificato con raggruppamento automatico dei viaggi.</li>
       <li xml:lang="ko">자동 여행 그룹 기능이 있는 통합된 여정 타임라인 보기.</li>
       <li xml:lang="nl">Tijdlijn weergave van een geünificeerd reisroute met automatische groepering van trips.</li>
@@ -122,6 +124,7 @@
       <li xml:lang="et">Rongide, busside ja lennukite ning hotellide, restoranide, sündmuste ja rendiautode broneeringud ja reserveeringud.</li>
       <li xml:lang="eu">Tren, bus eta hegaldi erreserba euskarria du, hotel, jatetxe, gertaera eta ibilgailu alokairuenak bezala.</li>
       <li xml:lang="fr">Prise en charge des réservations de trains, de bus, de vols, d'hôtels, de restaurants, d'évènements et de véhicules.</li>
+      <li xml:lang="id">Mendukung pemesanan kereta api, bus dan penerbangan serta pemesanan hotel, restoran, acara dan persewaan mobil.</li>
       <li xml:lang="it">Supporta prenotazioni per treni, autobus e voli aerei così come alberghi, ristoranti, eventi e noleggi auto.</li>
       <li xml:lang="ko">철도, 버스, 항공 예약 이외에도 호텔, 레스토랑, 행사, 렌터카 예약도 지원합니다.</li>
       <li xml:lang="nl">Ondersteunt boekingen van trein, bus en vlucht evenals reserveringen van hotel, restaurant, evenement en huurauto.</li>
@@ -160,6 +163,7 @@
       <li xml:lang="et">Mitme reisija ja mitme pileti reserveerimise piletihalduse toetus.</li>
       <li xml:lang="eu">Txartel kudeaketa euskarria multi-bidaiari eta multi-txartel erreserbentzat.</li>
       <li xml:lang="fr">Prise en charge de la gestion des billets pour les réservations multi-voyageurs et multi-billets.</li>
+      <li xml:lang="id">Mendukung pengelolaan tiket untuk multi-traveller dan pemesanan multi-tiket.</li>
       <li xml:lang="it">Supporta la gestione dei biglietti per prenotazioni multi-viaggiatore e multi-biglietto.</li>
       <li xml:lang="ko">여행자가 여러 명이거나 여러 장의 표로 구성된 예약을 지원합니다.</li>
       <li xml:lang="nl">Ondersteuning voor beheer van tickets voor meerdere reizigers en booking van meerdere tickets.</li>
@@ -177,6 +181,7 @@
       <li xml:lang="et">Reserveerimisandmete automaatne hankimine mitmesugustest sisendvormingutest, mis sooritatakse otse sinu seadmes.</li>
       <li xml:lang="eu">Erreserba datu erauzle automatikoa hainbat sarrera formatuetan, zure gailuan lokalean gauzatua.</li>
       <li xml:lang="fr">Extraction automatique des données de réservation depuis de nombreux formats d'entrée, réalisée en local sur votre appareil.</li>
+      <li xml:lang="id">Ekstraksi data pemesanan otomatis dari berbagai format input, dilakukan secara lokal di perangkatmu.</li>
       <li xml:lang="it">Estrazione automatica dei dati di prenotazione da vari formati di ingresso, eseguita localmente sul tuo dispositivo.</li>
       <li xml:lang="ko">다양한 입력 자료에서 여정을 추출하며, 로컬 장치에서 이루어집니다.</li>
       <li xml:lang="nl">Automatische extractie van bookinggegevens ui verschillende invoerformaten, lokaal uitgevoerd op uw apparaat.</li>
@@ -194,6 +199,7 @@
       <li xml:lang="et">Rongide hilinemise ja platvormivahetuse reaalajas teave.</li>
       <li xml:lang="eu">Bat-bateko atzerapen eta nasa aldaketa informazioa trenetan.</li>
       <li xml:lang="fr">Informations de retard et de changement de quai en temps réel pour les trains.</li>
+      <li xml:lang="id">Informasi penundaan real-time dan perubahan platform untuk kereta api.</li>
       <li xml:lang="it">Informazioni sui ritardi in tempo reale e sui cambi di binario per i treni.</li>
       <li xml:lang="ko">열차의 실시간 지연 정보와 승강장 변경을 표시합니다.</li>
       <li xml:lang="nl">Real-time informatie over vertraging en wijziging van perron voor treinen.</li>
@@ -211,6 +217,7 @@
       <li xml:lang="et">Ilmaennustus kogu reisi kohta.</li>
       <li xml:lang="eu">Heldulekuko eguraldi-iragarpena zure bidaian zehar.</li>
       <li xml:lang="fr">Prévisions météorologiques pour la destination tout au long de votre voyage.</li>
+      <li xml:lang="id">Ramalan cuaca untuk tujuan selama perjalananmu.</li>
       <li xml:lang="it">Previsioni meteo per la destinazione lungo il tuo viaggio.</li>
       <li xml:lang="ko">여행지의 일기 예보를 표시합니다.</li>
       <li xml:lang="nl">Weersvoorspelling voor bestemming langs de reisroute.</li>
@@ -229,6 +236,7 @@
       <li xml:lang="et">Täielik kontroll kogu võrgukasutuse üle.</li>
       <li xml:lang="eu">Lineako sarbide guztien erabateko kontrola.</li>
       <li xml:lang="fr">Contrôle complet sur tous les accès en ligne.</li>
+      <li xml:lang="id">Kontrol penuh atas semua akses online.</li>
       <li xml:lang="it">Pieno controllo su tutti gli accessi in linea.</li>
       <li xml:lang="ko">온라인 접근을 완전히 통제합니다.</li>
       <li xml:lang="nl">Volledige controle over alle online toegang.</li>
@@ -247,6 +255,7 @@
       <li xml:lang="et">Alternatiivse rongiühenduse valimise võimalus näiteks piletite puudumise või mahajäämise korral.</li>
       <li xml:lang="eu">Ordezko tren konexioak aukeratzea helmuga gabeko txartelentzat edo konexio galduentzat.</li>
       <li xml:lang="fr">Sélection de correspondances ferroviaires alternatives pour les tickets non liés ou les correspondances manquées.</li>
+      <li xml:lang="id">Pemilihan koneksi kereta api alternatif untuk tiket tidak terikat atau koneksi yang terlewat.</li>
       <li xml:lang="it">Selezione di collegamenti ferroviari alternativi su biglietti non vincolati o collegamenti persi.</li>
       <li xml:lang="ko">열차를 놓쳤거나 자유 여정 승차권의 경우 대체 열차편 정보를 제공합니다.</li>
       <li xml:lang="nl">Selectie van alternatieve treinverbindingen op niet-gebonden tickets of over gemiste verbindingen.</li>
@@ -264,6 +273,7 @@
       <li xml:lang="et">Kohaliku maismaatranspordi kasutamise võimalus reisi etappide vahel.</li>
       <li xml:lang="eu">Zure ibilbidearen elementuen arteko lur garraio lokalaren nabigatzailea.</li>
       <li xml:lang="fr">Navigation à l'aide des transports en commun régionaux entre deux éléments de votre itinéraire.</li>
+      <li xml:lang="id">Navigasi transportasi darat lokal antara elemen rencana perjalananmu.</li>
       <li xml:lang="it">Navigazione del trasporto via terra locale tra gli elementi del tuo itinerario.</li>
       <li xml:lang="ko">여행 중에 이용할 지역 대중 교통 정보를 제공합니다.</li>
       <li xml:lang="nl">Lokale navigatie van vervoer op de grond tussen elementen van uw reisroute.</li>
@@ -281,6 +291,7 @@
       <li xml:lang="et">Isiklik reisistatistika oma ökoloogilise jalajälje selgitamiseks.</li>
       <li xml:lang="eu">Bidaia pertsonalen estatistikak ingurumen eragina gainbegiratzeko.</li>
       <li xml:lang="fr">Statistiques de voyages personnels pour calculer l'impact environnemental.</li>
+      <li xml:lang="id">Statistik perjalanan pribadi untuk memantau dampak lingkungan.</li>
       <li xml:lang="it">Statistiche di viaggio personali per monitorare l'impatto ambientale.</li>
       <li xml:lang="ko">환경 영향을 계산하는 개인 여행 통계 정보를 제공합니다.</li>
       <li xml:lang="nl">Persoonlijke reisstatistieken om impact op de omgeving te monitoren.</li>
@@ -300,6 +311,7 @@
     <p xml:lang="et">KDE Itineraar töötab kõige paremini koos KMaili reisikava hankimise plugina ja KDE Connectiga või ka Nextcloudi ja DavDroidiga.</p>
     <p xml:lang="eu">KDE Itinerary hobe lan egiten du KMail-en ibilbide erauzle pluginaz eta KDE Connect-ekin, edo Nextcloud Hub eta DavDroid.</p>
     <p xml:lang="fr">KDE Itinerary fonctionne au maximum de ses capacités avec le module d'extraction des itinéraires de KMail et KDE Connect, ou Nextcloud Hub et DavDroid.</p>
+    <p xml:lang="id">KDE Itinerary bekerja paling baik dengan plugin itinerary extraction KMail dan KDE Connect, atau Nextcloud Hub dan DavDroid.</p>
     <p xml:lang="it">KDE Itinerary funziona meglio insieme all'estensione di estrazione degli itinerari di KMail e KDE Connect, o Nextcloud Hub e DavDroid.</p>
     <p xml:lang="ko">KDE 여행 정보는 KMail의 여행 정보 추천 플러그인, KDE Connect, Nextcloud 허브 및 DavDroid와 같이 작동합니다.</p>
     <p xml:lang="nl">KDE Itinerary werkt het best naast de plug-in voor reisroute uitpakken van KMail en KDE Connect of Nextcloud Hub en DavDroid.</p>
@@ -347,6 +359,7 @@
       <caption xml:lang="et">Piletivaade.</caption>
       <caption xml:lang="eu">Hegazkineratze baimen ikuspegia.</caption>
       <caption xml:lang="fr">Vue de la carte d'embarquement.</caption>
+      <caption xml:lang="id">Tampilan boarding pass.</caption>
       <caption xml:lang="it">Vista delle carte d'imbarco.</caption>
       <caption xml:lang="ko">탑승권 보기.</caption>
       <caption xml:lang="nl">Boardingpasweergave.</caption>
@@ -369,6 +382,7 @@
       <caption xml:lang="et">Rongi struktuurivaade ühes vaguni ja reserveeritud istme esiletõstmisega.</caption>
       <caption xml:lang="eu">Tren antolamendu ikuspegia, bagoia eta jarlekua nabarmenduz.</caption>
       <caption xml:lang="fr">Disposition du train surlignant la voiture où le siège est réservé.</caption>
+      <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi.</caption>
       <caption xml:lang="it">Vista della disposizione del  treno che evidenzia la carrozza con la prenotazione di un posto.</caption>
       <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기.</caption>
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering.</caption>
@@ -390,6 +404,7 @@
       <caption xml:lang="et">Reisistatistika vaade.</caption>
       <caption xml:lang="eu">Bidai estatistika ikuspegia.</caption>
       <caption xml:lang="fr">Vue statistiques de voyages.</caption>
+      <caption xml:lang="id">Tampilan statistik perjalanan.</caption>
       <caption xml:lang="it">Vista delle statistiche di viaggio.</caption>
       <caption xml:lang="ko">여행 통계 보기입니다.</caption>
       <caption xml:lang="nl">Weergave reisstatistieken</caption>
