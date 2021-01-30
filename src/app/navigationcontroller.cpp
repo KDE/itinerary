@@ -106,6 +106,18 @@ void NavigationController::showOnMap(float latitude, float longitude, int zoom)
     QDesktopServices::openUrl(url);
 }
 
+void NavigationController::showOnWheelmap(float latitude, float longitude)
+{
+    QUrl url;
+    url.setScheme(QStringLiteral("https"));
+    url.setHost(QStringLiteral("wheelmap.org"));
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("lat"), QString::number(latitude));
+    query.addQueryItem(QStringLiteral("lon"), QString::number(longitude));
+    url.setQuery(query);
+    QDesktopServices::openUrl(url);
+}
+
 bool NavigationController::canNavigateTo(const QVariant& place)
 {
     if (place.isNull()) {

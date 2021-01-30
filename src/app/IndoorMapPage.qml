@@ -111,6 +111,11 @@ Kirigami.Page {
             onTriggered: NavigationController.showOnMap(map.mapData.center.y, map.mapData.center.x, 18);
         },
         Kirigami.Action {
+            text: i18n("Open wheelmap.org");
+            onTriggered: NavigationController.showOnWheelmap(map.mapData.center.y, map.mapData.center.x);
+        },
+
+        Kirigami.Action {
             id: lightStyleAction
             text: "Light Style"
             onTriggered: map.styleSheet = "breeze-light"

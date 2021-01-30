@@ -20,6 +20,7 @@ class NavigationController
 public:
     Q_INVOKABLE void showOnMap(const QVariant &place);
     Q_INVOKABLE void showOnMap(float latitude, float longitude, int zoom);
+    Q_INVOKABLE void showOnWheelmap(float latitude, float longitude);
 
     Q_INVOKABLE bool canNavigateTo(const QVariant &place);
     Q_INVOKABLE void navigateTo(const QVariant &place);
