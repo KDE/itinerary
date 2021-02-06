@@ -112,6 +112,7 @@
       <li xml:lang="nl">Tijdlijn weergave van een geünificeerd reisroute met automatische groepering van trips.</li>
       <li xml:lang="pl">Widok osi czasu dla ujednoliconego planu podróży z samoczynnym grupowaniem podróży.</li>
       <li xml:lang="pt">Visão cronológica de um itinerário de viagens unificado com o agrupamento automático das viagens.</li>
+      <li xml:lang="pt-BR">Exibição cronológica de um itinerário de viagem unificado com agrupamento automático de viagem.</li>
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
@@ -130,6 +131,7 @@
       <li xml:lang="nl">Ondersteunt boekingen van trein, bus en vlucht evenals reserveringen van hotel, restaurant, evenement en huurauto.</li>
       <li xml:lang="pl">Obsługuje bilety na pociągi, autobusy i samoloty, a także hotele, restauracje, wydarzenia i wypożyczanie samochodów.</li>
       <li xml:lang="pt">Suporta as reservas de comboios, autocarros e voos, assim como dos hotéis, restaurantes, eventos e alugueres de carros.</li>
+      <li xml:lang="pt-BR">Suporta reservas de trens, ônibus e voos, bem como reservas de hotéis, restaurantes, eventos e aluguel de veículos.</li>
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
       <li xml:lang="uk">Підтримка бронювання квитків на потяги, автобуси та літаки, а також бронювання номерів готелів, місць у ресторанах, участі у подіях та оренди автомобілів.</li>
@@ -169,6 +171,7 @@
       <li xml:lang="nl">Ondersteuning voor beheer van tickets voor meerdere reizigers en booking van meerdere tickets.</li>
       <li xml:lang="pl">Obsługuje zarządzanie biletami w przypadku rezerwacji u wielu przewoźników i wielu biletów.</li>
       <li xml:lang="pt">Suporta a gestão de bilhetes para reservas multi-viajantes e multi-bilhetes.</li>
+      <li xml:lang="pt-BR">Suporta o gerenciamento de bilhetes para reservas de vários viajantes e multibancos.</li>
       <li xml:lang="sl">Podpira upravljanje vozovnic za več potnikov in rezervacij za več vozovnic.</li>
       <li xml:lang="sv">Stöder biljetthantering för bokningar med flera resenärer och biljetter.</li>
       <li xml:lang="uk">Підтримка керування роботою з квитками для замовлень із пересадками та одночасного замовлення декількох квитків.</li>
@@ -187,6 +190,7 @@
       <li xml:lang="nl">Automatische extractie van bookinggegevens ui verschillende invoerformaten, lokaal uitgevoerd op uw apparaat.</li>
       <li xml:lang="pl">Wydobywanie danych o rezerwacji z różnych formatów wejściowych, wykonywalne lokalnie na twoim urządzeniu.</li>
       <li xml:lang="pt">Extracção automática dos dados da reserva a partir de vários formatos de entrada, operando localmente no seu dispositivo.</li>
+      <li xml:lang="pt-BR">Extração automática de dados de reserva de vários formatos de entrada, realizada localmente no seu dispositivo.</li>
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
       <li xml:lang="uk">Автоматичне видобування даних із різноманітних вхідних форматів, яке відбувається безпосередньо на вашому пристрої.</li>
@@ -205,6 +209,7 @@
       <li xml:lang="nl">Real-time informatie over vertraging en wijziging van perron voor treinen.</li>
       <li xml:lang="pl">Dane w czasie rzeczywistym o opóźnieniach i zmianie peronów dla pociągów.</li>
       <li xml:lang="pt">Informações em tempo-real de atrasos e mudança de plataformas nos comboios.</li>
+      <li xml:lang="pt-BR">Atraso em tempo real e informações de mudança de plataforma para trens.</li>
       <li xml:lang="sl">Informacije o zamudah v realnem času in o spremembah peronov za vlake.</li>
       <li xml:lang="sv">Information i realtid om fördröjningar och plattformsändringar för tåg.</li>
       <li xml:lang="uk">Інформування про затримки та зміни платформ для потягів.</li>
@@ -261,6 +266,7 @@
       <li xml:lang="nl">Selectie van alternatieve treinverbindingen op niet-gebonden tickets of over gemiste verbindingen.</li>
       <li xml:lang="pl">Wybór zamiennych połączeń kolejowych dla nieprzypisanych biletów lub przegapionych połączeń.</li>
       <li xml:lang="pt">Selecção de ligações de comboio alternativas para bilhetes não vinculados ou para ligações perdidas.</li>
+      <li xml:lang="pt-BR">Seleção de conexões ferroviárias alternativas em bilhetes não consolidados ou em conexões perdidas.</li>
       <li xml:lang="sl">Izbira alternativnih železniških povezav na nevezanih vozovnicah ali vozovnicah zamujenih povezav.</li>
       <li xml:lang="sv">Val av alternativa tågförbindelser på öppna biljetter eller vid missade anslutningar.</li>
       <li xml:lang="uk">Вибір альтернативних залізничних шляхів за умов наявності проїзного або неможливості з'єднання різних частин маршруту.</li>
@@ -279,6 +285,7 @@
       <li xml:lang="nl">Lokale navigatie van vervoer op de grond tussen elementen van uw reisroute.</li>
       <li xml:lang="pl">Lokalne przemieszczanie się naziemne pomiędzy elementami twojego planu podróży.</li>
       <li xml:lang="pt">Navegação local em transportes terrestres entre elementos do seu itinerário.</li>
+      <li xml:lang="pt-BR">Navegação por transporte terrestre local entre elementos do seu itinerário. </li>
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
       <li xml:lang="uk">Навігація на місцевості під час пересадок між фрагментами вашого маршруту.</li>
