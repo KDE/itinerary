@@ -180,7 +180,7 @@ void WeatherForecastManager::fetchNext()
     QUrl url;
     url.setScheme(QStringLiteral("https"));
     url.setHost(QStringLiteral("api.met.no"));
-    url.setPath(QStringLiteral("/weatherapi/locationforecast/1.9/"));
+    url.setPath(QStringLiteral("/weatherapi/locationforecast/2.0/classic"));
     QUrlQuery query;
     query.addQueryItem(QStringLiteral("lat"), QString::number(tile.latitude()));
     query.addQueryItem(QStringLiteral("lon"), QString::number(tile.longitude()));
