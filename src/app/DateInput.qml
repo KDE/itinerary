@@ -4,7 +4,7 @@ import QtQuick 2.3
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.3
 
-import org.kde.kirigami 2.4 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 
 /**
  * This Item provides an entry box for inputting a date.

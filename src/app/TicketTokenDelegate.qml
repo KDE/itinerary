@@ -8,7 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import QtQuick.Window 2.10
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.prison 1.0 as Prison
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kitinerary 1.0

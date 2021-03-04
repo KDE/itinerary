@@ -8,7 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import QtPositioning 5.11
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
