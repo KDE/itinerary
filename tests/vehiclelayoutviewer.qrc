@@ -1,0 +1,10 @@
+<!--
+    SPDX-FileCopyrightText: 2021 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<RCC>
+    <qresource prefix="/">
+        <file>vehiclelayoutviewer.qml</file>
+        <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
+    </qresource>
+</RCC>

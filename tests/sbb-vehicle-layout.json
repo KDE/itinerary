@@ -1,0 +1,179 @@
+{
+    "scheduledDepartureTime": "1970-01-01T00:00:00",
+    "stopPoint": {
+        "identifier": {
+            "ibnr": "8507000"
+        },
+        "latitude": 46.949005126953125,
+        "locality": "Bern",
+        "longitude": 7.439121246337891,
+        "name": "Bern HB",
+        "timezone": "Europe/Zurich",
+        "type": "Stop"
+    },
+    "route": {
+        "line": {
+            "mode": "LongDistanceTrain",
+            "name": "IC 8"
+        }
+    },
+    "platformLayout": {
+        "length": 1,
+        "sections": [
+            {
+                "begin": 0,
+                "end": 0.10979928821325302,
+                "name": "H"
+            },
+            {
+                "begin": 0.10979928821325302,
+                "end": 0.22963400185108185,
+                "name": "G"
+            },
+            {
+                "begin": 0.22963400185108185,
+                "end": 0.4096812307834625,
+                "name": "F"
+            },
+            {
+                "begin": 0.4096812307834625,
+                "end": 0.46989375352859497,
+                "name": "E"
+            },
+            {
+                "begin": 0.46989375352859497,
+                "end": 0.5802833437919617,
+                "name": "D"
+            },
+            {
+                "begin": 0.5802833437919617,
+                "end": 0.7001180648803711,
+                "name": "C"
+            },
+            {
+                "begin": 0.7001180648803711,
+                "end": 0.8199527859687805,
+                "name": "B"
+            },
+            {
+                "begin": 0.8199527859687805,
+                "end": 1,
+                "name": "A"
+            }
+        ]
+    },
+    "vehicleLayout": {
+        "direction": "UnknownDirection",
+        "sections": [
+            {
+                "classes": "UnknownClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "A",
+                "type": "Engine"
+            },
+            {
+                "classes": "FirstClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "WheelchairAccessible",
+                "name": "1",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "B",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "FirstClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "3",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "B",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "FirstClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "2",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "C",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "SecondClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "4",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "C",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "SecondClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "6",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "D",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "SecondClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "7",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "D",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "SecondClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "8",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "E",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "SecondClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "NoFeatures",
+                "name": "5",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "F",
+                "type": "PassengerCar"
+            },
+            {
+                "classes": "UnknownClass",
+                "connectedSides": "Front|Back",
+                "deckCount": 1,
+                "features": "BikeStorage",
+                "name": "9",
+                "platformPositionBegin": -1,
+                "platformPositionEnd": -1,
+                "platformSectionName": "F",
+                "type": "PassengerCar"
+            }
+        ]
+    }
+}
