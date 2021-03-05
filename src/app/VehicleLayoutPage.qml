@@ -117,7 +117,7 @@ Kirigami.ScrollablePage {
 
     Item {
         id: vehicleView
-        property real fullLength: vehicleModel.platform.length > 0 ? vehicleModel.platform.length * 3.5 : 1600 // full length of the platform display
+        property real fullLength: vehicleModel.platform.hasAbsoluteLength ? vehicleModel.platform.length * 3.5 : 1600 // full length of the platform display
         property real sectionWidth: 48
         width: parent.width
         height: vehicleView.fullLength
