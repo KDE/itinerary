@@ -30,7 +30,7 @@ Item {
         width: parent.width
         height: parent.height
         columns: 7
-        rows: 2
+        rows: 3
         Item {
             id: lineSegment
             Layout.column: 0
@@ -159,6 +159,38 @@ Item {
                 }
                 applicationWindow().pageStack.push(indoorMapPage, args);
             }
+        }
+
+        // intermediate stop notes
+        Item {
+            Layout.column: 0
+            Layout.row: 2
+            Layout.fillHeight: true
+            implicitWidth: lineSegment.implicitWidth
+            visible: notesLabel.visible
+
+            Rectangle {
+                y: -layout.rowSpacing
+                x: 2 * lineSegment.lineWidth
+                width: lineSegment.lineWidth
+                color: lineSegment.lineColor
+                height: parent.height - y
+            }
+        }
+
+        QQC2.Label {
+            id: notesLabel
+            Layout.column: 3
+            Layout.row: 2
+            Layout.columnSpan: 3
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            verticalAlignment: Qt.AlignTop
+            text: stop.notes.join("<br/>")
+            textFormat: Text.RichText
+            wrapMode: Text.Wrap
+            visible: stop.notes.length > 0 && !isDeparture
+            font.italic: true
         }
     }
 }
