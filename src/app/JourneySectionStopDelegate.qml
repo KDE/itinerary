@@ -69,6 +69,7 @@ Item {
                 }
                 color: Kirigami.Theme.backgroundColor
                 anchors.centerIn: parent
+                visible: !isIntermediate || stop.disruptionEffect != Disruption.NoService
             }
         }
 
@@ -100,6 +101,7 @@ Item {
             Layout.fillHeight: true
             text: stop.stopPoint.name
             verticalAlignment: Qt.AlignVCenter
+            enabled: stop.disruptionEffect != Disruption.NoService
         }
 
         QQC2.Label {
@@ -118,7 +120,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             text: (stop.departureDelay >= 0 ? "+" : "") + stop.departureDelay
             color: stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: stop.hasExpectedDepartureTime
+            visible: departureTime.visible && stop.hasExpectedDepartureTime
         }
 
         App.VehicleLoadIndicator {
