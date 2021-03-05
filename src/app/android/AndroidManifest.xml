@@ -1,4 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
+<!--
+    SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2019 Nicolas Fella <nicolas.fella@gmx.de>
+    SPDX-FileCopyrightText: 2020 Gabriel Souza Franco <gabrielfrancosouza@gmail.com>
+    SPDX-License-Identifier: CC0-1.0
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.kde.itinerary"
           android:versionName="0.0.1"
