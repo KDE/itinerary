@@ -59,23 +59,59 @@ Kirigami.ScrollablePage {
         return Qt.tint(bg, Qt.rgba(fg.r, fg.g, fg.b, alpha));
     }
 
-    header: ColumnLayout {
-        QQC2.Label {
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            text: vehicleModel.departure.stopPoint.name + " - " + vehicleModel.departure.route.line.name + " - " + Localizer.formatDateTime(vehicleModel.departure, "scheduledDepartureTime")
-        }
-        QQC2.Label {
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            text: i18n("Platform: %1", (vehicleModel.platform.name ? vehicleModel.platform.name : "-"))
-        }
-        QQC2.Label {
-            Layout.leftMargin: Kirigami.Units.gridUnit
-            Layout.rightMargin: Kirigami.Units.gridUnit
-            Layout.bottomMargin: Kirigami.Units.largeSpacing
-            text: i18n("Coach: %1 Seat: %2", (selectedVehicleSection ? selectedVehicleSection : "-"), (seat ? seat : "-"))
+    header: Item {
+        height: childrenRect.height + 2 * Kirigami.Units.gridUnit
+        GridLayout {
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.margins: Kirigami.Units.gridUnit
+
+            columns: 2
+            columnSpacing: Kirigami.Units.largeSpacing
+            rows: 4
+            rowSpacing: 0
+
+            Kirigami.Icon {
+                Layout.rowSpan: 4
+                id: icon
+                source: PublicTransport.lineIcon(vehicleModel.stopover.route.line)
+                width: height
+                height: Kirigami.Units.iconSizes.large
+                isMask: !vehicleModel.stopover.route.line.hasLogo && !vehicleModel.stopover.route.line.hasModeLogo
+            }
+
+            QQC2.Label {
+                Layout.row: 0
+                Layout.column: 1
+                Layout.fillWidth: true
+                text: "<b>" + vehicleModel.stopover.route.line.modeString + " " + vehicleModel.stopover.route.line.name + "</b> ("
+                            + vehicleModel.stopover.stopPoint.name + ")"
+            }
+
+            QQC2.Label {
+                Layout.row: 1
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: if (vehicleModel.stopover.scheduledDepartureTime > 0) {
+                    i18n("Departure: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledDepartureTime"))
+                } else if (vehicleModel.stopover.scheduledArrivalTime > 0) {
+                    i18n("Arrival: %1", Localizer.formatDateTime(vehicleModel.stopover, "scheduledArrivalTime"))
+                }
+            }
+
+            QQC2.Label {
+                Layout.row: 2
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: i18n("Platform: %1", (vehicleModel.platform.name ? vehicleModel.platform.name : "-"))
+            }
+            QQC2.Label {
+                Layout.row: 3
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: i18n("Coach: %1 Seat: %2", (selectedVehicleSection ? selectedVehicleSection : "-"), (seat ? seat : "-"))
+            }
         }
     }
 
