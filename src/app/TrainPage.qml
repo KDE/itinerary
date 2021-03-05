@@ -33,7 +33,6 @@ App.DetailsPage {
         id: vehicleLayoutPage
         App.VehicleLayoutPage {
             publicTransportManager: root.controller.liveDataManager.publicTransportManager
-            departure: root.departure
             selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
             selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
             seat: root.reservation.reservedTicket.ticketedSeat.seatNumber
@@ -51,13 +50,24 @@ App.DetailsPage {
         }
     }
     Component {
-        id: vehicleLayoutAction
+        id: vehicleDepartureLayoutAction
         Kirigami.Action {
-            text: i18n("Vehicle Layout")
+            text: i18n("Departure Vehicle Layout")
             iconName: "view-list-symbolic"
             enabled: departure && departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain
             onTriggered: {
-                applicationWindow().pageStack.push(vehicleLayoutPage);
+                applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.departure});
+            }
+        }
+    }
+    Component {
+        id: vehicleArrivalLayoutAction
+        Kirigami.Action {
+            text: i18n("Arrival Vehicle Layout")
+            iconName: "view-list-symbolic"
+            enabled: arrival && arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain
+            onTriggered: {
+                applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.arrival});
             }
         }
     }
@@ -83,7 +93,8 @@ App.DetailsPage {
     Component.onCompleted: {
         actions.contextualActions.push(alternativeAction.createObject(root));
         actions.contextualActions.push(journeyDetailsAction.createObject(root));
-        actions.contextualActions.push(vehicleLayoutAction.createObject(root));
+        actions.contextualActions.push(vehicleDepartureLayoutAction.createObject(root));
+        actions.contextualActions.push(vehicleArrivalLayoutAction.createObject(root));
         actions.contextualActions.push(notifyTestAction.createObject(root));
     }
 
