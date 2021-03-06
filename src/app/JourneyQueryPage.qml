@@ -14,13 +14,13 @@ import "." as App
 
 Kirigami.ScrollablePage {
     property QtObject controller;
+    property alias publicTransportManager: journeyModel.manager
 
     id: root
     title: i18n("Alternative Connections")
 
     JourneyQueryModel {
         id: journeyModel
-        manager: LiveDataManager.publicTransportManager
         request: controller.journeyRequest
     }
 

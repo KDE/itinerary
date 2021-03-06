@@ -26,6 +26,7 @@ App.DetailsPage {
         id: alternativePage
         App.JourneyQueryPage {
             controller: root.controller
+            publicTransportManager: LiveDataManager.publicTransportManager
         }
     }
 

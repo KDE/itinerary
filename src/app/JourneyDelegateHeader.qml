@@ -35,7 +35,7 @@ Rectangle {
         QQC2.Label {
             text: (journey.departureDelay >= 0 ? "+" : "") + journey.departureDelay;
             color: journey.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
-            visible: journey.hasExpectedDepartureTime && modelData.disruption != Disruption.NoService
+            visible: journey.hasExpectedDepartureTime && journey.disruption != Disruption.NoService
         }
 
         QQC2.Label {
