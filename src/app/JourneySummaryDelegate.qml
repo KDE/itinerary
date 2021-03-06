@@ -13,7 +13,29 @@ import org.kde.itinerary 1.0
 import "." as App
 
 RowLayout {
+    id: root
     property var journey
+
+    function maxLoad(loadInformation) {
+        var load = Load.Unknown;
+        for (var i = 0; i < loadInformation.length; ++i) {
+            load = Math.max(load, loadInformation[i].load);
+        }
+        return load;
+    }
+
+    readonly property int sectionWithMaxLoad: {
+        var loadMax = Load.Unknown;
+        var loadMaxIdx = -1;
+        for (var i = 0; journey != undefined && i < journey.sections.length; ++i) {
+            var l = maxLoad(journey.sections[i].loadInformation);
+            if (l > loadMax) {
+                loadMax = l;
+                loadMaxIdx = i;
+            }
+        }
+        return loadMaxIdx;
+    }
 
     Repeater {
         model: journey.sections
@@ -40,5 +62,10 @@ RowLayout {
     }
     QQC2.Label {
         text: i18np("One change", "%1 changes", journey.numberOfChanges)
+        Layout.fillWidth: true
+    }
+
+    App.VehicleLoadIndicator {
+        loadInformation: sectionWithMaxLoad < 0 ? undefined : root.journey.sections[sectionWithMaxLoad].loadInformation
     }
 }

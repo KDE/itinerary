@@ -88,6 +88,7 @@ Kirigami.ScrollablePage {
                 App.JourneySummaryDelegate {
                     journey: top.journey
                     visible: journeyView.currentIndex != index
+                    width: parent.width
                 }
                 QQC2.Button {
                     text: i18n("Select")

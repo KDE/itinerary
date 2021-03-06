@@ -18,7 +18,7 @@ Item {
 
     readonly property var maxLoad: {
         var load = Load.Unknown;
-        for (var i = 0; i < loadInformation.length; ++i) {
+        for (var i = 0; loadInformation != undefined && i < loadInformation.length; ++i) {
             load = Math.max(load, loadInformation[i].load);
         }
         return load;

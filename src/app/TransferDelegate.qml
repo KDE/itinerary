@@ -72,6 +72,7 @@ Kirigami.AbstractCard {
         App.JourneySummaryDelegate {
             journey: transfer.journey
             visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
+            width: parent.width
         }
         QQC2.Button {
             text: i18n("Select...")
