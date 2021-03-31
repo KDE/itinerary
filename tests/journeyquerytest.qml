@@ -22,6 +22,7 @@ Kirigami.ApplicationWindow {
 
     KPT.Manager {
         id: ptMgr;
+        allowInsecureBackends: true
     }
 
     QtObject {
