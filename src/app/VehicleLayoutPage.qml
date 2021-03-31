@@ -101,10 +101,20 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
+                property string platformName: {
+                    if (vehicleModel.platform.name)
+                        return vehicleModel.platform.name;
+                    if (vehicleModel.stopover.expectedPlatform)
+                        return vehicleModel.stopover.expectedPlatform;
+                    if (vehicleModel.stopover.scheduledPlatform)
+                        return vehicleModel.stopover.scheduledPlatform;
+                    return "-";
+                }
+
                 Layout.row: 2
                 Layout.column: 1
                 Layout.columnSpan: 2
-                text: i18n("Platform: %1", (vehicleModel.platform.name ? vehicleModel.platform.name : "-"))
+                text: i18n("Platform: %1", platformName)
             }
             QQC2.Label {
                 Layout.row: 3
