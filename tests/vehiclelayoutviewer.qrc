@@ -6,5 +6,8 @@
     <qresource prefix="/">
         <file>vehiclelayoutviewer.qml</file>
         <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
+
+        <file alias="images/longdistancetrain.svg">../src/app/images/longdistancetrain.svg</file>
+        <file alias="images/train.svg">../src/app/images/train.svg</file>
     </qresource>
 </RCC>

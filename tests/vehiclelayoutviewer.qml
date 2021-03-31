@@ -28,6 +28,8 @@ Kirigami.ApplicationWindow {
         id: layoutPage
         App.VehicleLayoutPage {
             stopover: _stopover
+            selectedVehicleSection: _coach
+            seat: _seat
             publicTransportManager: ptMgr
         }
     }

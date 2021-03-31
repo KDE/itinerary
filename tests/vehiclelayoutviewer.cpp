@@ -13,6 +13,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
+#include <QCommandLineParser>
 #include <QDebug>
 #include <QFile>
 #include <QGuiApplication>
@@ -30,12 +31,20 @@ int main(int argc, char **argv)
     QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
     QGuiApplication app(argc, argv);
 
-    if (app.arguments().size() <= 1) {
-        qCritical("Missing command line argument!");
-        exit(1);
+    QCommandLineParser parser;
+    parser.addHelpOption();
+    QCommandLineOption coachOpt(QStringLiteral("c"), QStringLiteral("Reserved coach number"), QStringLiteral("coach number"));
+    parser.addOption(coachOpt);
+    QCommandLineOption seatOpt(QStringLiteral("s"), QStringLiteral("Reserved seat number"), QStringLiteral("seat"));
+    parser.addOption(seatOpt);
+    parser.addPositionalArgument(QStringLiteral("stopover file"), QStringLiteral("KPT stopver JSON file"), QStringLiteral("file"));
+    parser.process(app);
+
+    if (parser.positionalArguments().empty()) {
+        parser.showHelp(1);
     }
 
-    QFile file(app.arguments().at(1));
+    QFile file(parser.positionalArguments().at(0));
     if (!file.open(QFile::ReadOnly)) {
         qCritical("Failed to open file!");
         exit(1);
@@ -50,6 +59,8 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.rootContext()->setContextProperty(QStringLiteral("_stopover"), stopover);
+    engine.rootContext()->setContextProperty(QStringLiteral("_coach"), parser.value(coachOpt));
+    engine.rootContext()->setContextProperty(QStringLiteral("_seat"), parser.value(seatOpt));
     engine.load(QStringLiteral("qrc:/vehiclelayoutviewer.qml"));
 
     return app.exec();
