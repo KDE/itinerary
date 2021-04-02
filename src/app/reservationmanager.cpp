@@ -18,6 +18,8 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
 
+#include <KPkPass/Pass>
+
 #ifdef Q_OS_ANDROID
 #include <KMime/Message>
 #endif
@@ -158,7 +160,7 @@ QVector<QString> ReservationManager::importReservation(const QByteArray& data, c
 QVector<QString> ReservationManager::importReservation(KMime::Message *msg)
 {
     ExtractorEngine engine;
-    engine.setContent(msg);
+    engine.setContent(QVariant::fromValue<KMime::Content*>(msg), u"message/rfc822");
     return importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
 #endif
@@ -334,7 +336,7 @@ void ReservationManager::passAdded(const QString& passId)
 {
     const auto pass = m_passMgr->pass(passId);
     ExtractorEngine engine;
-    engine.setPass(pass);
+    engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
     const auto data = engine.extract();
     const auto res = JsonLdDocument::fromJson(data);
     importReservations(res);
