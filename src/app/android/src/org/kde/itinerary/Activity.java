@@ -8,8 +8,6 @@ package org.kde.itinerary;
 
 import org.qtproject.qt5.android.bindings.QtActivity;
 
-import net.fortuna.ical4j.model.property.XProperty;
-
 import androidx.core.content.FileProvider;
 
 import android.content.Intent;
@@ -27,7 +25,6 @@ public class Activity extends QtActivity
 {
     private static final String TAG = "org.kde.itinerary";
 
-    public native void importReservation(String data);
     public native void importDavDroidJson(String data);
     public native void importFromIntent(Intent data);
 
@@ -66,19 +63,6 @@ public class Activity extends QtActivity
                         Log.i(TAG, propName);
                         if (propName.equals("unknown-property.v2") || propName.contains("vnd.ical4android.unknown-property")) {
                             importDavDroidJson(propValue);
-
-                            // legacy, replaced by the above in Feb 2019, removing this eventually will allow us to remove the ical4j dependency
-                        } else if (propName.equals("unknown-property")) {
-                            ByteArrayInputStream bis = new ByteArrayInputStream(android.util.Base64.decode(propValue, android.util.Base64.NO_WRAP));
-                            try {
-                                ObjectInputStream ois = new ObjectInputStream(bis);
-                                Object prop = ois.readObject();
-                                if (prop instanceof XProperty) {
-                                    importReservation(((XProperty) prop).getValue());
-                                }
-                            } catch (Exception e) {
-                                Log.i(TAG, e.toString());
-                            }
                         }
                     }
                 }

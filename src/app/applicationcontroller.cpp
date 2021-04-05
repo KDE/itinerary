@@ -64,14 +64,6 @@ using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
 
-static void importReservation(JNIEnv *env, jobject that, jstring data)
-{
-    Q_UNUSED(that)
-    const char *str = env->GetStringUTFChars(data, nullptr);
-    ApplicationController::instance()->importData(str);
-    env->ReleaseStringUTFChars(data, str);
-}
-
 static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
 {
     Q_UNUSED(that)
@@ -99,7 +91,6 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 }
 
 static const JNINativeMethod methods[] = {
-    {"importReservation", "(Ljava/lang/String;)V", (void*)importReservation},
     {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
     {"importDavDroidJson", "(Ljava/lang/String;)V", (void*)importDavDroidJson}
 };

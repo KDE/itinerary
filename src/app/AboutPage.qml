@@ -72,14 +72,6 @@ Kirigami.Page {
             url: "https://www.freetype.org/"
         }
         ListElement {
-            name: "iCal4j"
-            copyright: "© 2012, Ben Fortuna"
-            platform: "android"
-            licenseId: "BSD-3-Clause"
-            licenseName: "BSD 3-Clause License"
-            url: "https://github.com/ical4j/ical4j"
-        }
-        ListElement {
             name: "libintl lite"
             platform: "android"
             licenseId: "BSL-1.0"
