@@ -76,18 +76,21 @@ android {
     }
 
     packagingOptions {
+        exclude 'lib/*/*_Controls.2_Fusion_*'
+        exclude 'lib/*/*_Controls.2_Imagine_*'
         exclude 'lib/*/*RemoteObjects*'
+        exclude 'lib/*/*StateMachine*'
         exclude 'lib/*/*_imageformats_qico_*'
         exclude 'lib/*/*_imageformats_qicns_*'
         exclude 'lib/*/*_imageformats_qtga_*'
         exclude 'lib/*/*_imageformats_qtiff_*'
         exclude 'lib/*/*_qmltooling_*'
-        exclude 'lib/*/*_geoservices_esri_*'
-        exclude 'lib/*/*_geoservices_mapbox_*'
-        exclude 'lib/*/*_geoservices_nokia_*'
+        exclude 'lib/*/*_qtgeoservices_esri_*'
+        exclude 'lib/*/*_qtgeoservices_mapbox_*'
+        exclude 'lib/*/*_qtgeoservices_nokia_*'
     }
 
     aaptOptions {
-        ignoreAssetsPattern '!ECM:!doc:!man:!mime:!qlogging-categories5'
+        ignoreAssetsPattern '!ECM:!aclocal:!doc:!man:!mime:!pkgconfig:!qlogging-categories5'
     }
 }
