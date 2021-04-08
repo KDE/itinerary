@@ -90,6 +90,8 @@ android {
     }
 
     aaptOptions {
-        ignoreAssetsPattern '!ECM:!aclocal:!doc:!man:!mime:!pkgconfig:!qlogging-categories5'
+        // different syntax than above
+        // see https://android.googlesource.com/platform/frameworks/base/+/refs/heads/pie-release/tools/aapt2/util/Files.h#90
+        ignoreAssetsPattern '!<dir>ECM:!<dir>aclocal:!<dir>doc:!<dir>gtk-doc:!<dir>iso-codes:!<dir>man:!<dir>mime:!<dir>pkgconfig:!<dir>qlogging-categories5:!<file>iso_639-2.mo:!<file>iso_639-3.mo'
     }
 }
