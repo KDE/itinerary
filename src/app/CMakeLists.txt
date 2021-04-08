@@ -95,6 +95,8 @@ if (ANDROID)
         OpenSSL::SSL
     )
 
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
+
     kirigami_package_breeze_icons(ICONS
         application-pdf
         channel-insecure-symbolic
