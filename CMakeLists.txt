@@ -48,7 +48,7 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
     endif()
 endif()
 
-set(QT_MIN_VERSION 5.14) # for new style QML Connections
+set(QT_MIN_VERSION 5.15)
 if (ANDROID)
     set(QT_MIN_VERSION 5.15.1) # for content: support
 endif()
@@ -94,7 +94,7 @@ endif()
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
 add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
 add_definitions(-DQT_USE_QSTRINGBUILDER)
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050d00)
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
 if (ANDROID)
     set(CMAKE_MODULE_EXE_FLAGS "-Wl,--fatal-warnings -Wl,--no-undefined ${CMAKE_EXE_LINKER_FLAGS}")
 endif()

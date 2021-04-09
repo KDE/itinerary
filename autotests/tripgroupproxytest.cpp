@@ -11,9 +11,7 @@
 #include <tripgroupmanager.h>
 #include <tripgroupproxymodel.h>
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
 #include <QAbstractItemModelTester>
-#endif
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
@@ -79,9 +77,7 @@ private Q_SLOTS:
         model.setTripGroupManager(&groupMgr);
 
         TripGroupProxyModel proxy;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
         QAbstractItemModelTester tester(&proxy);
-#endif
         proxy.setSourceModel(&model);
         proxy.expand(addSpy.at(0).at(0).toString());
         proxy.expand(addSpy.at(1).at(0).toString());
@@ -133,9 +129,7 @@ private Q_SLOTS:
         model.setTripGroupManager(&groupMgr);
 
         TripGroupProxyModel proxy;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 11, 0)
         QAbstractItemModelTester tester(&proxy);
-#endif
         proxy.setSourceModel(&model);
 
         // future event, should be expanded
