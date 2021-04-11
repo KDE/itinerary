@@ -43,6 +43,7 @@ Kirigami.ScrollablePage {
 
         QQC2.ComboBox {
             Kirigami.FormData.label: i18n("Home Country")
+            Layout.fillWidth: true
             model: countryModel
             textRole: "display"
             currentIndex: countryModel.isoCodeToIndex(Settings.homeCountryIsoCode)
