@@ -75,16 +75,11 @@ Kirigami.OverlaySheet {
             }
         }
 
-        // TODO remove the conditional use once we can hard-depend on KOpeningHours
-        property bool hasOpeningHoursSupport: Qt.createQmlObject('import QtQml 2.0; import org.kde.kopeninghours 1.0; QtObject{}', contentView, "opening hour availability probe") != null
         Component {
             id: infoOpeningHoursDelegate
-            Loader {
-                source: "IndoorMapInfoSheetOpeningHoursDelegate.qml"
-                onLoaded: {
-                    item.mapData = elementDetailsSheet.mapData;
-                    item.model = row;
-                }
+            IndoorMapInfoSheetOpeningHoursDelegate {
+                mapData: elementDetailsSheet.mapData
+                model: row
             }
         }
 
@@ -111,7 +106,7 @@ Kirigami.OverlaySheet {
                     case OSMElementInformationModel.PostalAddress:
                         return infoAddressDelegate;
                     case OSMElementInformationModel.OpeningHoursType:
-                        return contentView.hasOpeningHoursSupport ? infoOpeningHoursDelegate : infoStringDelegate;
+                        return infoOpeningHoursDelegate;
                     case OSMElementInformationModel.String:
                     default:
                         return infoStringDelegate;
