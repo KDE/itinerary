@@ -19,6 +19,7 @@ Kirigami.ScrollablePage {
 
     KPublicTransport.BackendModel {
         id: backendModel
+        mode: KPublicTransport.BackendModel.GroupByCountry
     }
 
     Component {
@@ -79,7 +80,7 @@ Kirigami.ScrollablePage {
         model: backendModel
         delegate: backendDelegate
 
-        section.property: "primaryCountryCode"
+        section.property: "countryCode"
         section.delegate: Kirigami.ListSectionHeader {
             text: (section == "" || section == "UN") ? i18n("Global") : Localizer.countryFlag(section) + " " + Localizer.countryName(section)
         }
