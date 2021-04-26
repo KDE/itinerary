@@ -43,6 +43,8 @@ App.TimelineDelegate {
 
         QQC2.Label {
             text: reservationFor.location != undefined ? reservationFor.location.name : ""
+            wrapMode: Text.WordWrap
+            width: topLayout.width
         }
         App.PlaceDelegate {
             place: reservationFor.location
