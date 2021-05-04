@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 # KDE Application Version, managed by release script
 set (RELEASE_SERVICE_VERSION_MAJOR "21")
@@ -10,15 +10,11 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION 5.64)
-if (ANDROID)
-    set(KF5_MIN_VERSION 5.76) # for FindGradle
-endif()
+set(QT_MIN_VERSION 5.15.2)
+set(KF5_MIN_VERSION 5.78)
+
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
-if (POLICY CMP0071)
-    cmake_policy(SET CMP0071 NEW)
-endif()
 
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
@@ -48,11 +44,6 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
     endif()
 endif()
 
-set(QT_MIN_VERSION 5.15)
-if (ANDROID)
-    set(QT_MIN_VERSION 5.15.1) # for content: support
-endif()
-
 # build-time dependencies
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Location QuickControls2)
 find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
@@ -66,6 +57,8 @@ find_package(SharedMimeInfo 1.0 REQUIRED)
 find_package(ZLIB REQUIRED)
 set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather forecast data.")
 set_package_properties(KF5Solid PROPERTIES TYPE OPTIONAL TYPE RUNTIME PURPOSE "Used for controlling the screen brightness.")
+find_package(Poppler COMPONENTS Core REQUIRED)
+set_package_properties("Poppler" PROPERTIES TYPE REQUIRED PURPOSE "Support for extraction from PDF booking confirmations.")
 
 include(ECMQMLModules)
 ecm_find_qmlmodule(QtLocation 5.11)

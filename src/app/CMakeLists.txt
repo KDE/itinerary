@@ -80,6 +80,7 @@ target_link_libraries(itinerary-app PRIVATE
     itinerary
     KOSMIndoorMap
     Qt5::QuickControls2
+    Poppler::Core
 )
 if (ANDROID)
     target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
