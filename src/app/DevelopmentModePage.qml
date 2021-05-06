@@ -55,5 +55,11 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             onClicked: DevelopmentModeController.enablePublicTransportLogging();
         }
+
+        QQC2.Button {
+            text: "Crash"
+            Layout.fillWidth: true
+            onClicked: DevelopmentModeController.crash();
+        }
     }
 }

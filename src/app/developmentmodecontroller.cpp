@@ -23,6 +23,8 @@ using namespace KAndroidExtras;
 #include <QtAndroid>
 #endif
 
+#include <csignal>
+
 void DevelopmentModeController::enablePublicTransportLogging()
 {
 #ifdef Q_OS_ANDROID
@@ -83,4 +85,9 @@ void DevelopmentModeController::clearOsmTileCache()
         base = qEnvironmentVariable("KOSMINDOORMAP_CACHE_PATH");
     }
     QDir(base + QLatin1String("/17")).removeRecursively();
+}
+
+void DevelopmentModeController::crash()
+{
+    std::raise(SIGSEGV);
 }

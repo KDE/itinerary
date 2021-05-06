@@ -19,6 +19,7 @@ public:
     Q_INVOKABLE void importMapCSS(const QUrl &url);
     Q_INVOKABLE void purgeMapCSS();
     Q_INVOKABLE void clearOsmTileCache();
+    Q_INVOKABLE void crash();
 };
 
 Q_DECLARE_METATYPE(DevelopmentModeController)
