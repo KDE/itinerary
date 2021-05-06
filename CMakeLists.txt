@@ -89,7 +89,7 @@ if (ANDROID)
 else()
     find_package(Qt5 REQUIRED COMPONENTS Widgets DBus)
     find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS DBusAddons)
-    find_package(KF5 ${KF5_MIN_VERSION} COMPONENTS Solid Crash)
+    find_package(KF5 ${KF5_MIN_VERSION} OPTIONAL_COMPONENTS Solid Crash)
 endif()
 
 add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
