@@ -52,6 +52,8 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
+#include <KAboutData>
+
 #include <QQuickStyle>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
@@ -203,11 +205,16 @@ int main(int argc, char **argv)
     QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("itinerary")));
 
+    auto aboutData = KAboutData::applicationData();
+    aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name
+    aboutData.setLicense(KAboutLicense::LGPL);
+    KAboutData::setApplicationData(aboutData);
+
     QCommandLineParser parser;
-    parser.addHelpOption();
-    parser.addVersionOption();
+    aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
+    aboutData.processCommandLine(&parser);
 
 #ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
