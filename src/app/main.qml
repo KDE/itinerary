@@ -132,19 +132,9 @@ Kirigami.ApplicationWindow {
         anchors.fill: parent
     }
 
-    footer: Kirigami.InlineMessage {
-        id: infoMessage
-        Layout.fillWidth: true
-        visible: false
-        showCloseButton: true
-
-        Connections {
-            target: ReservationManager
-            function onInfoMessage(msg) {
-                infoMessage.text = msg;
-                infoMessage.visible = true;
-            }
-        }
+    Connections {
+        target: ReservationManager
+        function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
     }
 
     Connections {
