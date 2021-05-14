@@ -552,4 +552,8 @@
     <release version="20.12.3" date="2021-03-04"/>
     <release version="20.12.2" date="2021-02-04"/>
   </releases>
+  <custom>
+    <value key="KDE::f_droid">https://community.kde.org/Android/FDroid#KDE_F-Droid_Release_Repository</value>
+    <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.itinerary</value>
+  </custom>
 </component>
