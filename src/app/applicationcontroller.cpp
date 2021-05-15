@@ -235,16 +235,21 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
 
 void ApplicationController::importFromClipboard()
 {
-    if (QGuiApplication::clipboard()->mimeData()->hasUrls()) {
-        const auto urls = QGuiApplication::clipboard()->mimeData()->urls();
-        for (const auto &url : urls)
+    const auto md = QGuiApplication::clipboard()->mimeData();
+    if (md->hasUrls()) {
+        const auto urls = md->urls();
+        for (const auto &url : urls) {
             importFromUrl(url);
-        return;
+        }
     }
 
-    if (QGuiApplication::clipboard()->mimeData()->hasText()) {
-        const auto content = QGuiApplication::clipboard()->mimeData()->data(QLatin1String("text/plain"));
+    else if (md->hasText()) {
+        const auto content = md->data(QLatin1String("text/plain"));
         importData(content);
+    }
+
+    else if (md->hasFormat(QLatin1String("application/octet-stream"))) {
+        importData(md->data(QLatin1String("application/octet-stream")));
     }
 }
 
@@ -373,7 +378,8 @@ void ApplicationController::checkCalendar()
 
 bool ApplicationController::hasClipboardContent() const
 {
-    return QGuiApplication::clipboard()->mimeData()->hasText() || QGuiApplication::clipboard()->mimeData()->hasUrls();
+    const auto md = QGuiApplication::clipboard()->mimeData();
+    return md->hasText() || md->hasUrls() || md->hasFormat(QLatin1String("application/octet-stream"));
 }
 
 
