@@ -103,14 +103,14 @@ Kirigami.Page {
                     anchors.right: parent.right
                 }
                 QQC2.Label {
-                    text: i18n("Copyright: %1", model.copyright)
+                    text: model.copyright != undefined ? i18n("Copyright: %1", model.copyright) : ""
                     visible: model.copyright != undefined
                     wrapMode: Text.WordWrap
                     anchors.left: parent.left
                     anchors.right: parent.right
                 }
                 QQC2.Label {
-                    text: i18n("Homepage: <a href=\"%1\">%1</a>", model.url)
+                    text: model.url != undefined ? i18n("Homepage: <a href=\"%1\">%1</a>", model.url) : ""
                     visible: model.url != undefined
                     onLinkActivated: Qt.openUrlExternally(link)
                     wrapMode: Text.WordWrap
