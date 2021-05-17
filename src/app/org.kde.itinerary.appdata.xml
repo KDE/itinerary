@@ -312,6 +312,7 @@
       <li xml:lang="fr">Affichage des compositions des trains (pour certains opérateurs uniquement)</li>
       <li xml:lang="id">Tampilan tata letak gerbong kereta (hanya untuk beberapa operator).</li>
       <li xml:lang="it">Vista della disposizione della carrozza del treno (solo per alcuni operatori).</li>
+      <li xml:lang="ko">열차 객차 구성 보기(일부 철도 사업자만).</li>
       <li xml:lang="nl">Weergave van indeling treinwagons (alleen voor sommige vervoerders)</li>
       <li xml:lang="pl">Widok układu wagonu kolejowego (tylko dla wybranych przewoźników).</li>
       <li xml:lang="pt">Área de disposição dos lugares do comboio (apenas com alguns operadores).</li>
@@ -328,6 +329,7 @@
       <li xml:lang="fr">Les cartes de gares et d'aéroports s'appuyant sur les données de OpenStreetMap.</li>
       <li xml:lang="id">Peta stasiun kereta dan bandara per lantai berdasarkan data OpenStreetMap.</li>
       <li xml:lang="it">Mappe per piano di stazioni ferroviarie e aeroporti basate sui dati di OpenStreetMap.</li>
+      <li xml:lang="ko">OpenStreetMap 데이터를 사용하는 기차역과 공항 층별 지도 보기.</li>
       <li xml:lang="nl">Kaarten per verdieping van station en luchthaven gebaseerd op gegevens uit OpenStreetMap.</li>
       <li xml:lang="pl">Plany pięter dworców kolejowych i lotnisk na podstawie danych z OpenStreetMap.</li>
       <li xml:lang="pt">Mapas das estações de comboio e aeroportos por pisos, baseados em dados do OpenStreetMap.</li>
@@ -343,6 +345,7 @@
       <li xml:lang="fr">Les vélos de location disponibles en libre service ou en station d'accueil peuvent être affichés sur la carte des gares. </li>
       <li xml:lang="id">Penyewaan sepeda dock-based atau free-floating yang tersedia dapat ditampilkan di peta stasiun kereta.</li>
       <li xml:lang="it">Le biciclette a noleggio disponibili su rastrelliera o a flusso libero possono essere visualizzate sulla mappa della stazione ferroviaria.</li>
+      <li xml:lang="ko">기차역 지도에 고정 스테이션에 있거나 고정되어 있지 않은 렌탈 자전거를 표시할 수 있습니다.</li>
       <li xml:lang="nl">Beschikbare huurfietsen in stalling en vrijstaand kan getoond worden op de kaart van het treinstation.</li>
       <li xml:lang="pl">Dostępne rowery do wypożyczenia w systemie ze stacjami lub bez nich, można wyświetlić na mapie dworca kolejowego.</li>
       <li xml:lang="pt">Poderá mostrar as bicicletas de aluguer com bloqueios ou livres no mapa das estações dos correios.</li>
@@ -404,6 +407,7 @@
       <caption xml:lang="ia">Vista de Chronologia.</caption>
       <caption xml:lang="id">Tampilan linimasa</caption>
       <caption xml:lang="it">Vista della linea temporale</caption>
+      <caption xml:lang="ko">타임라인 보기</caption>
       <caption xml:lang="nl">Tijdlijnweergave</caption>
       <caption xml:lang="pl">Widok osi czasu</caption>
       <caption xml:lang="pt">Vista cronológica</caption>
@@ -424,6 +428,7 @@
       <caption xml:lang="fr">Affichage de la carte d'embarquement.</caption>
       <caption xml:lang="id">Tampilan boarding pass</caption>
       <caption xml:lang="it">Vista delle carte d'imbarco</caption>
+      <caption xml:lang="ko">탑승권 보기</caption>
       <caption xml:lang="nl">Boardingpasweergave</caption>
       <caption xml:lang="pl">Widok kart odpraw</caption>
       <caption xml:lang="pt">Vista do cartão de embarque</caption>
@@ -444,6 +449,7 @@
       <caption xml:lang="fr">Affichage de la composition du train, détaillant la voiture où le siège est réservé.</caption>
       <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi</caption>
       <caption xml:lang="it">Vista della disposizione del treno che evidenzia la carrozza con la prenotazione di un posto</caption>
+      <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기</caption>
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering</caption>
       <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc</caption>
       <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva</caption>
@@ -463,6 +469,7 @@
       <caption xml:lang="fr">La carte des quais de gare, détaillant les quais d'arrivée et de départ.</caption>
       <caption xml:lang="id">Peta platform stasiun kereta, menyoroti platform kedatangan dan keberangkatan</caption>
       <caption xml:lang="it">Mappa dei binari della stazione ferroviaria, evidenziando i binari di arrivo e partenza</caption>
+      <caption xml:lang="ko">출발 및 도착 승강장을 강조한 기차역 승강장 지도</caption>
       <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons</caption>
       <caption xml:lang="pl">Plan peronu dworca kolejowego, podświetlający perony przybycia i odjazdu</caption>
       <caption xml:lang="pt">Mapa das plataformas das estações de comboio que realça as plataformas de partidas</caption>
@@ -482,6 +489,7 @@
       <caption xml:lang="fr">La carte de la gare affichant la disponibilité en temps réel des vélos de location.</caption>
       <caption xml:lang="id">Peta stasiun kereta api yang menunjukkan ketersediaan sepeda rental secara real-time.</caption>
       <caption xml:lang="it">Mappa della stazione ferroviaria che mostra la disponibilità in tempo reale delle biciclette a noleggio.</caption>
+      <caption xml:lang="ko">실시간 렌탈 자전거 상황을 표시하는 기차역 지도입니다.</caption>
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen.</caption>
       <caption xml:lang="pl">Plan dworca kolejowego, pokazujący w czasie rzeczywistym dostępność rowerów do wypożyczenia.</caption>
       <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer.</caption>
@@ -501,6 +509,7 @@
       <caption xml:lang="fr">Informations détaillées pour l'entité sélectionnée sur la carte de la gare.</caption>
       <caption xml:lang="id">Informasi mendetail untuk entitas yang dipilih di peta stasiun kereta</caption>
       <caption xml:lang="it">Informazioni dettagliate per l'entità selezionata sulla mappa della stazione ferroviaria</caption>
+      <caption xml:lang="ko">기차역 지도에서 선택한 항목의 자세한 정보</caption>
       <caption xml:lang="nl">Gedetailleerde informatie voor het te selecteren item op kaart van het treinstation</caption>
       <caption xml:lang="pl">Szczegółowe nt. wybranego obiektu na planie dworca kolejowego</caption>
       <caption xml:lang="pt">Informações detalhadas para a entidade de selecção no mapa das estações de comboios</caption>
@@ -521,6 +530,7 @@
       <caption xml:lang="fr">Affichage des statistiques de voyages.</caption>
       <caption xml:lang="id">Tampilan statistik perjalanan</caption>
       <caption xml:lang="it">Vista delle statistiche di viaggio</caption>
+      <caption xml:lang="ko">여행 통계 보기</caption>
       <caption xml:lang="nl">Weergave reisstatistieken</caption>
       <caption xml:lang="pl">Widok statystyki podróży</caption>
       <caption xml:lang="pt">Área de estatísticas de viagens</caption>
