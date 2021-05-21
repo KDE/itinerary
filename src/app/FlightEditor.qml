@@ -71,11 +71,11 @@ App.EditorPage {
         QQC2.Label {
             Layout.columnSpan: 2
             Layout.fillWidth: true
-            text: i18n("Departure")
+            text: i18nc("flight departure", "Departure")
             horizontalAlignment: Qt.AlignHCenter
         }
         QQC2.Label {
-            text: i18n("Departure time:")
+            text: i18nc("flight departure time", "Departure time:")
         }
         App.DateTimeEdit {
             id: departureTime
@@ -83,14 +83,14 @@ App.EditorPage {
             propertyName: "departureTime"
         }
         QQC2.Label {
-            text: i18n("Departure terminal:")
+            text: i18nc("flight departure terminal", "Departure terminal:")
         }
         QQC2.TextField {
             id: departureTerminal
             text: reservation.reservationFor.departureTerminal
         }
         QQC2.Label {
-            text: i18n("Departure gate:")
+            text: i18nc("flight departure gate", "Departure gate:")
         }
         QQC2.TextField {
             id: departureGate

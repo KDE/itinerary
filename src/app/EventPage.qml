@@ -14,7 +14,7 @@ import "." as App
 
 App.DetailsPage {
     id: root
-    title: i18n("Event")
+    title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
     editor: Component {
         App.EventEditor {
             batchId: root.batchId

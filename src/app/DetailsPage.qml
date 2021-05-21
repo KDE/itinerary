@@ -79,7 +79,7 @@ Kirigami.ScrollablePage {
         delegate: Component {
             Kirigami.Action {
                 text: {
-                    if (modelData.className == "CancelAction") return i18n("Cancel Reservation");
+                    if (modelData.className == "CancelAction") return i18nc("cancel as in revoking a booking", "Cancel Reservation");
                     if (modelData.className == "CheckInAction") return i18n("Check-in");
                     if (modelData.className == "DownloadAction") return i18n("Download");
                     if (modelData.className == "UpdateAction") return i18n("Change Reservation");
