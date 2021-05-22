@@ -128,7 +128,7 @@ App.DetailsPage {
                 Kirigami.FormData.label: i18n("Departure")
             }
             RowLayout {
-                Kirigami.FormData.label: i18n("Time:")
+                Kirigami.FormData.label: i18n("Departure time:")
                 QQC2.Label {
                     text: Localizer.formatDateTime(reservationFor, "departureTime")
                 }
@@ -139,7 +139,7 @@ App.DetailsPage {
                 }
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Station:")
+                Kirigami.FormData.label: i18nc("train station", "Station:")
                 text: reservationFor.departureStation.name
             }
             App.PlaceDelegate {
@@ -149,14 +149,16 @@ App.DetailsPage {
             }
             RowLayout {
                 Kirigami.FormData.label: i18n("Platform:")
+                visible: departurePlatformLabel.text != ""
                 QQC2.Label {
+                    id: departurePlatformLabel
                     text: departure.hasExpectedPlatform ? departure.expectedPlatform : reservationFor.departurePlatform
                     color: departure.platformChanged ? Kirigami.Theme.negativeTextColor :
                         departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
                         Kirigami.Theme.textColor;
                 }
                 QQC2.Label {
-                    text: i18n("(was: %1)", reservationFor.departurePlatform)
+                    text: i18nc("previous platform", "(was: %1)", reservationFor.departurePlatform)
                     visible: departure.platformChanged && reservationFor.departurePlatform != ""
                 }
             }
@@ -186,7 +188,7 @@ App.DetailsPage {
                 }
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Station:")
+                Kirigami.FormData.label: i18nc("train station", "Station:")
                 text: reservationFor.arrivalStation.name
             }
             App.PlaceDelegate {
@@ -196,14 +198,16 @@ App.DetailsPage {
             }
             RowLayout {
                 Kirigami.FormData.label: i18n("Platform:")
+                visible: arrivalPlatformLabel.text != ""
                 QQC2.Label {
+                    id: arrivalPlatformLabel
                     text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
                     color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
                         arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
                         Kirigami.Theme.textColor;
                 }
                 QQC2.Label {
-                    text: i18n("(was: %1)", reservationFor.arrivalPlatform)
+                    text: i18nc("previous platform", "(was: %1)", reservationFor.arrivalPlatform)
                     visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
                 }
             }
@@ -225,7 +229,7 @@ App.DetailsPage {
                       || reservation.reservedTicket.ticketedSeat.seatingType != ""
             }
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Coach:")
+                Kirigami.FormData.label: i18nc("coach of a train", "Coach:")
                 text: reservation.reservedTicket.ticketedSeat.seatSection
                 visible: reservation.reservedTicket.ticketedSeat.seatSection != ""
             }
