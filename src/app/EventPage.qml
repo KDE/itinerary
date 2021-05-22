@@ -53,7 +53,7 @@ App.DetailsPage {
             }
 
             QQC2.Label {
-                Kirigami.FormData.label: i18n("Entrance:")
+                Kirigami.FormData.label: i18nc("time of entrance", "Entrance:")
                 text: Localizer.formatDateTime(reservationFor, "doorTime")
                 visible: reservationFor.doorTime > 0
             }
