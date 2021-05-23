@@ -33,7 +33,7 @@ Kirigami.AbstractListItem {
             QQC2.Label {
                 text: {
                     if (modelData.disruption == Disruption.NoService)
-                        return i18n("Cancelled");
+                        return i18nc("a train/bus journey canceled by its operator", "Canceled");
                     return (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay;
                 }
                 color: {

@@ -92,9 +92,9 @@ QString NotificationHelper::message(const LiveData &data)
 {
     QStringList msgs;
     if (data.departure.disruptionEffect() == Disruption::NoService) {
-        msgs.push_back(i18n("Trip has been cancelled."));
+        msgs.push_back(i18nc("a train/bus journey canceled by its operator", "Trip has been canceled."));
     } else if (data.arrival.disruptionEffect() == Disruption::NoService) {
-        msgs.push_back(i18n("Arrival has been cancelled."));
+        msgs.push_back(i18nc("a train/bus journey canceled by its operator", "Arrival has been canceled."));
     }
 
     if (data.departure.departureDelay() > 0) {

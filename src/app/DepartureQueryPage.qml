@@ -40,7 +40,7 @@ Kirigami.ScrollablePage {
                     QQC2.Label {
                         text: {
                             if (departure.disruption == Disruption.NoService)
-                                return i18nc("a train/bus journey cancelled by its operator", "Cancelled");
+                                return i18nc("a train/bus journey canceled by its operator", "Canceled");
                             return (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay;
                         }
                         color: {
