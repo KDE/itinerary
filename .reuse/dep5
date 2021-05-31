@@ -10,3 +10,7 @@ License: CC0-1.0
 Files: tests/*.json
 Copyright: none
 License: CC0-1.0
+
+Files: src/app/android/res/drawable/splash_logo.png src/app/android/res/mipmap-*/ic_launcher.png
+Copyright: Mathis Brüchert <mbb-mail@gmx.de>
+License: LGPL-2.0-or-later
