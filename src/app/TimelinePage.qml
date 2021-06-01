@@ -124,6 +124,28 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Kirigami.OverlaySheet {
+        id: deleteTripGroupWarningSheet
+        property string tripGroupId
+
+        QQC2.Label {
+            text: i18n("Do you really want to delete this trip?")
+            wrapMode: Text.WordWrap
+        }
+
+        footer: RowLayout {
+            QQC2.Button {
+                Layout.alignment: Qt.AlignHCenter
+                text: i18n("Delete")
+                icon.name: "edit-delete"
+                onClicked: {
+                    deleteTripGroupWarningSheet.sheetOpen = false;
+                    TripGroupManager.removeReservationsInGroup(deleteTripGroupWarningSheet.tripGroupId);
+                }
+            }
+        }
+    }
+
     Kirigami.CardsListView {
         id: listView
         model: TripGroupProxyModel

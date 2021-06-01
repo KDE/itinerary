@@ -143,6 +143,19 @@ void TripGroupManager::clear()
     d.removeRecursively();
 }
 
+void TripGroupManager::removeReservationsInGroup(const QString &groupId)
+{
+    const auto groupIt = m_tripGroups.constFind(groupId);
+    if (groupIt == m_tripGroups.constEnd()) {
+        return;
+    }
+
+    const auto elements = groupIt.value().elements();
+    for (const auto &element : elements) {
+        m_resMgr->removeBatch(element);
+    }
+}
+
 void TripGroupManager::batchAdded(const QString &resId)
 {
     auto it = std::lower_bound(m_reservations.begin(), m_reservations.end(), resId, [this](const auto &lhs, const auto &rhs) {

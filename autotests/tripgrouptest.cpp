@@ -203,6 +203,23 @@ private Q_SLOTS:
         QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
         QCOMPARE(g.name(), QStringLiteral("Oslo Airport (June 2000)"));
     }
+
+    void testDeletion()
+    {
+        ReservationManager resMgr;
+        clearReservations(&resMgr);
+        resMgr.importReservation(readFile(QStringLiteral(SOURCE_DIR "/../tests/randa2017.json")));
+        TripGroupManager mgr;
+        QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
+        mgr.setReservationManager(&resMgr);
+        QCOMPARE(addSpy.size(), 1);
+        QVERIFY(resMgr.batches().size() > 8);
+        const auto groupId = addSpy.at(0).at(0).toString();
+        const auto g = mgr.tripGroup(groupId);
+        mgr.removeReservationsInGroup(groupId);
+        QCOMPARE(resMgr.batches().size(), 0);
+        QCOMPARE(mgr.tripGroups().size(), 0);
+    }
 };
 QTEST_GUILESS_MAIN(TripGroupTest)
 

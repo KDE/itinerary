@@ -69,7 +69,7 @@ Kirigami.AbstractCard {
                        Localizer.formatDateTime(root.tripGroup, "beginDateTime"))
         }
 
-        RowLayout {
+        Row {
             visible: weatherForecast.valid
 
             Kirigami.Icon {
@@ -100,6 +100,22 @@ Kirigami.AbstractCard {
                 color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor
                 wrapMode: Text.WordWrap
                 width: contentLayout.width
+            }
+        }
+
+        Kirigami.Separator {
+            visible: root.rangeType == TimelineElement.RangeBegin
+        }
+
+        Row {
+            visible: root.rangeType == TimelineElement.RangeBegin
+            anchors.right: parent.right
+            QQC2.ToolButton {
+                icon.name: "edit-delete"
+                onClicked: {
+                    deleteTripGroupWarningSheet.tripGroupId = root.tripGroupId
+                    deleteTripGroupWarningSheet.sheetOpen = true
+                }
             }
         }
 
