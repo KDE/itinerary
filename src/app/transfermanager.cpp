@@ -8,13 +8,13 @@
 #include "logging.h"
 #include "favoritelocationmodel.h"
 #include "publictransport.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
-#include <KItinerary/SortUtil>
 
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyReply>
@@ -199,11 +199,11 @@ void TransferManager::checkReservation(const QString &resId)
     const auto res = m_resMgr->reservation(resId);
 
     const auto now = currentDateTime();
-    if (SortUtil::endDateTime(res) < now) {
+    if (ReservationHelper::arrivalTime(res) < now) {
         return;
     }
     checkReservation(resId, res, Transfer::After);
-    if (SortUtil::startDateTime(res) < now) {
+    if (ReservationHelper::departureTime(res) < now) {
         return;
     }
     checkReservation(resId, res, Transfer::Before);
@@ -236,7 +236,7 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
 
 TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    transfer.setAnchorTime(SortUtil::startDateTime(res));
+    transfer.setAnchorTime(ReservationHelper::departureTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant toLoc;
     if (isLocationChange) {
@@ -292,7 +292,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
 
 TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    transfer.setAnchorTime(SortUtil::endDateTime(res));
+    transfer.setAnchorTime(ReservationHelper::arrivalTime(res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant fromLoc;
     if (isLocationChange) {
