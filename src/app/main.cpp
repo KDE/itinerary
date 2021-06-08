@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "config-itinerary.h"
 #include "itinerary_version.h"
 #include "logging.h"
 
@@ -53,7 +54,7 @@
 #include <KLocalizedString>
 
 #include <KAboutData>
-#ifndef Q_OS_ANDROID
+#if HAVE_KCRASH
 #include <KCrash>
 #endif
 
@@ -218,9 +219,11 @@ int main(int argc, char **argv)
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
     aboutData.processCommandLine(&parser);
-#ifndef Q_OS_ANDROID
+#if HAVE_KCRASH
     KCrash::initialize();
+#endif
 
+#ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
 #endif
 
