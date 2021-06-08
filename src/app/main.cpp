@@ -53,6 +53,9 @@
 #include <KLocalizedString>
 
 #include <KAboutData>
+#ifndef Q_OS_ANDROID
+#include <KCrash>
+#endif
 
 #include <QQuickStyle>
 #include <QQmlApplicationEngine>
@@ -215,8 +218,9 @@ int main(int argc, char **argv)
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
     aboutData.processCommandLine(&parser);
-
 #ifndef Q_OS_ANDROID
+    KCrash::initialize();
+
     KDBusService service(KDBusService::Unique);
 #endif
 
