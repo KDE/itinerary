@@ -205,6 +205,10 @@ int main(int argc, char **argv)
     QQuickStyle::setStyle(QStringLiteral("Material"));
 #else
     QApplication app(argc, argv); // for native file dialogs
+    // Default to org.kde.desktop style unless the user forces another style
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
 #endif
     QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("itinerary")));
