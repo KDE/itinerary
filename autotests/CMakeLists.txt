@@ -8,6 +8,8 @@ ecm_add_test(jnipropertytest.cpp LINK_LIBRARIES Qt5::Test KAndroidExtras)
 ecm_add_test(jniarraytest.cpp LINK_LIBRARIES Qt5::Test KAndroidExtras)
 ecm_add_test(androidwrappertest.cpp LINK_LIBRARIES Qt5::Test KAndroidExtras)
 
+ecm_add_test(gpxwritertest.cpp LINK_LIBRARIES Qt5::Test GpxIo)
+
 ecm_add_test(pkpassmanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(reservationmanagertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
 ecm_add_test(applicationcontrollertest.cpp LINK_LIBRARIES Qt5::Test itinerary)
