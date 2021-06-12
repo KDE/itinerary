@@ -220,7 +220,7 @@ int main(int argc, char **argv)
     }
 #endif
     QGuiApplication::setApplicationDisplayName(i18n("KDE Itinerary"));
-    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("itinerary")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.itinerary")));
 
     auto aboutData = KAboutData::applicationData();
     aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name

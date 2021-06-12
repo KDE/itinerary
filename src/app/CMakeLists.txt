@@ -194,7 +194,7 @@ if (TARGET KF5::Crash)
 endif()
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})
-ecm_install_icons(ICONS 48-apps-itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
+ecm_install_icons(ICONS sc-apps-org.kde.itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
 if (NOT ANDROID)
     install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
     install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
