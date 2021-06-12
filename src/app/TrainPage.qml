@@ -169,6 +169,7 @@ App.DetailsPage {
                 wrapMode: Text.Wrap
                 visible: departure.notes.length > 0
                 font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
             }
 
             // arrival data
@@ -218,6 +219,7 @@ App.DetailsPage {
                 wrapMode: Text.Wrap
                 visible: arrival.notes.length > 0
                 font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
             }
 
             // seat reservation

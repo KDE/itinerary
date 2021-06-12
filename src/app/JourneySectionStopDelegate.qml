@@ -193,6 +193,7 @@ Item {
             wrapMode: Text.Wrap
             visible: stop.notes.length > 0 && !isDeparture
             font.italic: true
+            onLinkActivated: Qt.openUrlExternally(link)
         }
     }
 }

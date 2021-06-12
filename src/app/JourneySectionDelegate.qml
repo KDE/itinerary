@@ -158,6 +158,7 @@ Kirigami.AbstractListItem {
             wrapMode: Text.Wrap
             visible: modelData.notes.length > 0
             font.italic: true
+            onLinkActivated: Qt.openUrlExternally(link)
         }
     }
 }

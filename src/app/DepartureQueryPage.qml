@@ -111,6 +111,7 @@ Kirigami.ScrollablePage {
                     wrapMode: Text.Wrap
                     visible: departure.notes.length > 0
                     font.italic: true
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }
