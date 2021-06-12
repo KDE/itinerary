@@ -15,6 +15,7 @@ class LiveDataManager;
 class PkPassManager;
 class ReservationManager;
 class TransferManager;
+class TripGroupManager;
 
 namespace KItinerary {
 class File;
@@ -42,6 +43,7 @@ public:
     void setTransferManager(TransferManager *transferMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
     void setLiveDataManager(LiveDataManager *liveDataMgr);
+    void setTripGroupManager(TripGroupManager *tripGroupMgr);
 
     // data import
     void importFromIntent(const KAndroidExtras::Intent &intent);
@@ -60,6 +62,7 @@ public:
 
     // data export
     Q_INVOKABLE void exportToFile(const QString &filePath);
+    Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QString &filePath);
 
     // document attaching
     Q_INVOKABLE void addDocument(const QString &batchId, const QUrl &url);
@@ -85,6 +88,7 @@ private:
     TransferManager *m_transferMgr = nullptr;
     FavoriteLocationModel *m_favLocModel = nullptr;
     LiveDataManager *m_liveDataMgr = nullptr;
+    TripGroupManager *m_tripGroupMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 };
 

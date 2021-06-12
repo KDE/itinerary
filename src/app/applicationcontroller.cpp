@@ -7,11 +7,15 @@
 #include "applicationcontroller.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "gpxexport.h"
 #include "importexport.h"
+#include "livedatamanager.h"
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 #include <itinerary_version_detailed.h>
 
 #include <KItinerary/CreativeWork>
@@ -165,6 +169,11 @@ void ApplicationController::setFavoriteLocationModel(FavoriteLocationModel *favL
 void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
     m_liveDataMgr = liveDataMgr;
+}
+
+void ApplicationController::setTripGroupManager(TripGroupManager *tripGroupMgr)
+{
+    m_tripGroupMgr = tripGroupMgr;
 }
 
 #ifdef Q_OS_ANDROID
@@ -405,6 +414,41 @@ void ApplicationController::exportToFile(const QString &filePath)
     exporter.exportTransfers(m_resMgr, m_transferMgr);
     exporter.exportLiveData();
     exporter.exportSettings();
+}
+
+void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QString &filePath)
+{
+    if (filePath.isEmpty()) {
+        return;
+    }
+
+    QFile f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << f.errorString() << f.fileName();
+        return;
+    }
+    GpxExport exporter(&f);
+
+    const auto tg = m_tripGroupMgr->tripGroup(tripGroupId);
+    const auto batches = tg.elements();
+    for (const auto &batchId : batches) {
+        exporter.writeStartRoute();
+
+        auto transfer = m_transferMgr->transfer(batchId, Transfer::Before);
+        if (transfer.state() == Transfer::Selected) {
+            exporter.writeTransfer(transfer);
+        }
+
+        const auto res = m_resMgr->reservation(batchId);
+        exporter.writeReservation(res, m_liveDataMgr->journey(batchId));
+
+        transfer = m_transferMgr->transfer(batchId, Transfer::After);
+        if (transfer.state() == Transfer::Selected) {
+            exporter.writeTransfer(transfer);
+        }
+
+        exporter.writeEndRoute();
+    }
 }
 
 void ApplicationController::importBundle(const QUrl &url)

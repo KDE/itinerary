@@ -7,6 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -144,6 +145,16 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+    }
+
+    Platform.FileDialog {
+        id: tripGroupGpxExportDialog
+        property string tripGroupId
+        fileMode: Platform.FileDialog.SaveFile
+        title: i18n("Export Trip")
+        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("GPX Files (*.gpx)")]
+        onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
     }
 
     Kirigami.CardsListView {

@@ -111,6 +111,13 @@ Kirigami.AbstractCard {
             visible: root.rangeType == TimelineElement.RangeBegin
             anchors.right: parent.right
             QQC2.ToolButton {
+                icon.name: "export-symbolic"
+                onClicked: {
+                    tripGroupGpxExportDialog.tripGroupId = root.tripGroupId
+                    tripGroupGpxExportDialog.open()
+                }
+            }
+            QQC2.ToolButton {
                 icon.name: "edit-delete"
                 onClicked: {
                     deleteTripGroupWarningSheet.tripGroupId = root.tripGroupId

@@ -8,6 +8,7 @@ set(itinerary_srcs
     applicationcontroller.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
+    gpxexport.cpp
     importexport.cpp
     json.cpp
     livedata.cpp
@@ -44,6 +45,7 @@ add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
     SolidExtras
+    GpxIo
     KPublicTransport
     KPim::Itinerary
     KPim::PkPass
