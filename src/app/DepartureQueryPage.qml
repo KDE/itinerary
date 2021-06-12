@@ -105,6 +105,7 @@ Kirigami.ScrollablePage {
                 // optional bottom row: notes if present
                 QQC2.Label {
                     Layout.columnSpan: 2
+                    Layout.fillWidth: true
                     text: departure.notes.join("<br/>")
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
