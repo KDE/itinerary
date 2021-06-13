@@ -432,22 +432,10 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QS
     const auto tg = m_tripGroupMgr->tripGroup(tripGroupId);
     const auto batches = tg.elements();
     for (const auto &batchId : batches) {
-        exporter.writeStartRoute();
-
-        auto transfer = m_transferMgr->transfer(batchId, Transfer::Before);
-        if (transfer.state() == Transfer::Selected) {
-            exporter.writeTransfer(transfer);
-        }
-
         const auto res = m_resMgr->reservation(batchId);
-        exporter.writeReservation(res, m_liveDataMgr->journey(batchId));
-
-        transfer = m_transferMgr->transfer(batchId, Transfer::After);
-        if (transfer.state() == Transfer::Selected) {
-            exporter.writeTransfer(transfer);
-        }
-
-        exporter.writeEndRoute();
+        const auto transferBefore = m_transferMgr->transfer(batchId, Transfer::Before);
+        const auto transferAfter = m_transferMgr->transfer(batchId, Transfer::After);
+        exporter.writeReservation(res, m_liveDataMgr->journey(batchId), transferBefore, transferAfter);
     }
 }
 

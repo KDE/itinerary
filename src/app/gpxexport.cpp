@@ -12,7 +12,9 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
+#include <KItinerary/Visit>
 
+#include <KPublicTransport/Journey>
 #include <KPublicTransport/Stopover>
 
 #include <KLocalizedString>
@@ -30,42 +32,86 @@ GpxExport::GpxExport(QIODevice* out)
 
 GpxExport::~GpxExport() = default;
 
-void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::JourneySection &journey)
+void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::JourneySection &journey, const Transfer &before, const Transfer &after)
 {
     if (LocationUtil::isLocationChange(res)) {
+        m_writer.writeStartRoute();
+        writeTransfer(before);
         if (!journey.from().isEmpty() && !journey.to().isEmpty()) {
             writeJourneySection(journey);
         } else {
             const auto dep = LocationUtil::departureLocation(res);
             auto coord = LocationUtil::geo(dep);
-            m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
-            m_writer.writeName(LocationUtil::name(dep));
-            m_writer.writeTime(SortUtil::startDateTime(res));
-            m_writer.writeEndRoutePoint();
+            if (coord.isValid()) {
+                m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
+                m_writer.writeName(LocationUtil::name(dep));
+                m_writer.writeTime(SortUtil::startDateTime(res));
+                m_writer.writeEndRoutePoint();
+            }
 
             const auto arr = LocationUtil::arrivalLocation(res);
             coord = LocationUtil::geo(arr);
-            m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
-            m_writer.writeName(LocationUtil::name(arr));
-            m_writer.writeTime(SortUtil::endDateTime(res));
-            m_writer.writeEndRoutePoint();
+            if (coord.isValid()) {
+                m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
+                m_writer.writeName(LocationUtil::name(arr));
+                m_writer.writeTime(SortUtil::endDateTime(res));
+                m_writer.writeEndRoutePoint();
+            }
         }
-    } else {
-        if (JsonLd::isA<LodgingReservation>(res)) {
-            m_writer.writeName(res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().name());
-        } else if (JsonLd::isA<EventReservation>(res)) {
-            m_writer.writeName(res.value<EventReservation>().reservationFor().value<Event>().name());
-        } else if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
-            m_writer.writeName(res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().name());
+        writeTransfer(after);
+        m_writer.writeEndRoute();
+
+        // waypoints for departure/arrival
+        const auto dep = LocationUtil::departureLocation(res);
+        auto coord = LocationUtil::geo(dep);
+        if (coord.isValid()) {
+            m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
+            m_writer.writeName(LocationUtil::name(dep));
+            m_writer.writeTime(SortUtil::startDateTime(res));
+            m_writer.writeEndWaypoint();
         }
 
+        const auto arr = LocationUtil::arrivalLocation(res);
+        coord = LocationUtil::geo(arr);
+        if (coord.isValid()) {
+            m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
+            m_writer.writeName(LocationUtil::name(arr));
+            m_writer.writeTime(SortUtil::endDateTime(res));
+            m_writer.writeEndWaypoint();
+        }
+
+    } else {
+        writeSelfContainedTransfer(before);
         const auto loc = LocationUtil::location(res);
         const auto coord = LocationUtil::geo(loc);
-        m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
-        m_writer.writeEndRoutePoint();
-        m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
-        m_writer.writeEndRoutePoint();
+        if (coord.isValid()) {
+            m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
+            if (JsonLd::isA<LodgingReservation>(res)) {
+                m_writer.writeName(res.value<LodgingReservation>().reservationFor().value<LodgingBusiness>().name());
+            } else if (JsonLd::isA<EventReservation>(res)) {
+                m_writer.writeName(res.value<EventReservation>().reservationFor().value<Event>().name());
+            } else if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+                m_writer.writeName(res.value<FoodEstablishmentReservation>().reservationFor().value<FoodEstablishment>().name());
+            } else if (JsonLd::isA<TouristAttractionVisit>(res)) {
+                m_writer.writeName(res.value<TouristAttractionVisit>().touristAttraction().name());
+            }
+            m_writer.writeTime(SortUtil::startDateTime(res));
+            m_writer.writeEndWaypoint();
+        }
+        writeSelfContainedTransfer(after);
     }
+}
+
+void GpxExport::writeSelfContainedTransfer(const Transfer& transfer)
+{
+    if (transfer.state() != Transfer::Selected) {
+        return;
+    }
+
+    m_writer.writeStartRoute();
+    // TODO name
+    writeTransfer(transfer);
+    m_writer.writeEndRoute();
 }
 
 void GpxExport::writeTransfer(const Transfer &transfer)

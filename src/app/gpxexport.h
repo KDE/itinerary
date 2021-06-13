@@ -7,9 +7,11 @@
 #ifndef GPXEXPORT_H
 #define GPXEXPORT_H
 
-#include <KPublicTransport/Journey>
-
 #include <gpx/gpxwriter.h>
+
+namespace KPublicTransport {
+class JourneySection;
+}
 
 class FavoriteLocation;
 class Transfer;
@@ -21,14 +23,12 @@ public:
     explicit GpxExport(QIODevice *out);
     ~GpxExport();
 
-    void writeReservation(const QVariant &res, const KPublicTransport::JourneySection &journey = {});
-    void writeTransfer(const Transfer &transfer);
+    void writeReservation(const QVariant &res, const KPublicTransport::JourneySection &journey, const Transfer &before, const Transfer &after);
     void writeFavoriteLocation(const FavoriteLocation &fav);
 
-    inline void writeStartRoute() { m_writer.writeStartRoute(); }
-    inline void writeEndRoute() { m_writer.writeEndRoute(); }
-
 private:
+    void writeSelfContainedTransfer(const Transfer &transfer);
+    void writeTransfer(const Transfer &transfer);
     void writeJourneySection(const KPublicTransport::JourneySection &section);
 
     Gpx::Writer m_writer;
