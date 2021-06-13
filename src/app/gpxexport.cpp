@@ -8,10 +8,13 @@
 #include "favoritelocationmodel.h"
 #include "transfer.h"
 
+#include <KItinerary/BusTrip>
 #include <KItinerary/Event>
+#include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
+#include <KItinerary/TrainTrip>
 #include <KItinerary/Visit>
 
 #include <KPublicTransport/Journey>
@@ -36,11 +39,25 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
 {
     if (LocationUtil::isLocationChange(res)) {
         m_writer.writeStartRoute();
+        const auto dep = LocationUtil::departureLocation(res);
+        const auto arr = LocationUtil::arrivalLocation(res);
+
+        if (JsonLd::isA<FlightReservation>(res)) {
+            m_writer.writeName(i18n("Flight %1 from %2 to %3", res.value<FlightReservation>().reservationFor().value<Flight>().flightNumber(), LocationUtil::name(dep), LocationUtil::name(arr)));
+        } else if (JsonLd::isA<TrainReservation>(res)) {
+            const auto train = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+            const QString n = train.trainName() + QLatin1Char(' ') + train.trainNumber();
+            m_writer.writeName(i18n("Train %1 from %2 to %3", n.trimmed(), LocationUtil::name(dep), LocationUtil::name(arr)));
+        } else if (JsonLd::isA<BusReservation>(res)) {
+            const auto bus = res.value<BusReservation>().reservationFor().value<BusTrip>();
+            const QString n = bus.busName() + QLatin1Char(' ') + bus.busNumber();
+            m_writer.writeName(i18n("Bus %1 from %2 to %3", n.trimmed(), LocationUtil::name(dep), LocationUtil::name(arr)));
+        }
+
         writeTransfer(before);
         if (!journey.from().isEmpty() && !journey.to().isEmpty()) {
             writeJourneySection(journey);
         } else {
-            const auto dep = LocationUtil::departureLocation(res);
             auto coord = LocationUtil::geo(dep);
             if (coord.isValid()) {
                 m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
@@ -49,7 +66,6 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
                 m_writer.writeEndRoutePoint();
             }
 
-            const auto arr = LocationUtil::arrivalLocation(res);
             coord = LocationUtil::geo(arr);
             if (coord.isValid()) {
                 m_writer.writeStartRoutePoint(coord.latitude(), coord.longitude());
@@ -62,7 +78,6 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
         m_writer.writeEndRoute();
 
         // waypoints for departure/arrival
-        const auto dep = LocationUtil::departureLocation(res);
         auto coord = LocationUtil::geo(dep);
         if (coord.isValid()) {
             m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
@@ -71,7 +86,6 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
             m_writer.writeEndWaypoint();
         }
 
-        const auto arr = LocationUtil::arrivalLocation(res);
         coord = LocationUtil::geo(arr);
         if (coord.isValid()) {
             m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
