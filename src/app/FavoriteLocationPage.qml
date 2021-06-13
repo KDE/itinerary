@@ -7,6 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import Qt.labs.platform 1.1 as Platform
 import QtLocation 5.11 as QtLocation
 import QtPositioning 5.11
 import org.kde.kirigami 2.12 as Kirigami
@@ -32,6 +33,15 @@ Kirigami.Page {
         if (combo.count == 0)
             FavoriteLocationModel.appendNewLocation();
 
+    }
+
+    Platform.FileDialog {
+        id: favoriteGpxExportDialog
+        fileMode: Platform.FileDialog.SaveFile
+        title: i18n("Export Favorite Locations")
+        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("GPX Files (*.gpx)")]
+        onAccepted: FavoriteLocationModel.exportToGpx(file)
     }
 
    actions.main: Kirigami.Action {
@@ -66,6 +76,11 @@ Kirigami.Page {
                 FavoriteLocationModel.removeLocation(combo.currentIndex);
                 combo.currentIndex = Math.min(prevIndex, combo.count - 1);
             }
+        },
+        Kirigami.Action {
+            text: i18n("Export to GPX")
+            icon.name: "export-symbolic"
+            onTriggered: favoriteGpxExportDialog.open()
         }
     ]
 

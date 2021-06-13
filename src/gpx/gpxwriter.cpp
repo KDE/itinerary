@@ -45,6 +45,18 @@ void Gpx::Writer::writeEndRoute()
     m_writer.writeEndElement();
 }
 
+void Gpx::Writer::writeStartWaypoint(float latitude, float longitude)
+{
+    m_writer.writeStartElement(QStringLiteral("wpt"));
+    m_writer.writeAttribute(QStringLiteral("lat"), QString::number(latitude));
+    m_writer.writeAttribute(QStringLiteral("lon"), QString::number(longitude));
+}
+
+void Gpx::Writer::writeEndWaypoint()
+{
+    m_writer.writeEndElement();
+}
+
 void Gpx::Writer::writeStartRoutePoint(float latitude, float longitude)
 {
     m_writer.writeStartElement(QStringLiteral("rtept"));

@@ -5,6 +5,7 @@
 */
 
 #include "gpxexport.h"
+#include "favoritelocationmodel.h"
 #include "transfer.h"
 
 #include <KItinerary/Event>
@@ -105,4 +106,11 @@ void GpxExport::writeJourneySection(const KPublicTransport::JourneySection &sect
             }
         }
     }
+}
+
+void GpxExport::writeFavoriteLocation(const FavoriteLocation &fav)
+{
+    m_writer.writeStartWaypoint(fav.latitude(), fav.longitude());
+    m_writer.writeName(fav.name());
+    m_writer.writeEndWaypoint();
 }

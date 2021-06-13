@@ -5,7 +5,9 @@
 */
 
 #include "favoritelocationmodel.h"
+#include "gpxexport.h"
 #include "json.h"
+#include "logging.h"
 
 #include <KLocalizedString>
 
@@ -252,4 +254,21 @@ void FavoriteLocationModel::saveLocations() const
     }
 
     f.write(QJsonDocument(FavoriteLocation::toJson(m_locations)).toJson());
+}
+
+void FavoriteLocationModel::exportToGpx(const QString &filePath) const
+{
+    if (filePath.isEmpty()) {
+        return;
+    }
+
+    QFile f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << f.errorString() << f.fileName();
+        return;
+    }
+    GpxExport exporter(&f);
+    for (const auto &fav : m_locations) {
+        exporter.writeFavoriteLocation(fav);
+    }
 }

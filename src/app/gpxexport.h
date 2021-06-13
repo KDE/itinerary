@@ -11,6 +11,7 @@
 
 #include <gpx/gpxwriter.h>
 
+class FavoriteLocation;
 class Transfer;
 
 /** Trip group to GPX export. */
@@ -22,6 +23,7 @@ public:
 
     void writeReservation(const QVariant &res, const KPublicTransport::JourneySection &journey = {});
     void writeTransfer(const Transfer &transfer);
+    void writeFavoriteLocation(const FavoriteLocation &fav);
 
     inline void writeStartRoute() { m_writer.writeStartRoute(); }
     inline void writeEndRoute() { m_writer.writeEndRoute(); }

@@ -29,6 +29,9 @@ public:
     void writeStartRoute();
     void writeEndRoute();
 
+    void writeStartWaypoint(float latitude, float longitude);
+    void writeEndWaypoint();
+
     void writeStartRoutePoint(float latitude, float longitude);
     void writeEndRoutePoint();
 
