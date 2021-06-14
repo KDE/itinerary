@@ -7,7 +7,7 @@
   <id>org.kde.itinerary</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.0-or-later</project_license>
-  <content_rating type="oars-1.1" />
+  <content_rating type="oars-1.1"/>
   <name>KDE Itinerary</name>
   <name xml:lang="ca">KDE Itinerary</name>
   <name xml:lang="ca-valencia">KDE Itinerary</name>
@@ -509,23 +509,6 @@
     </screenshot>
     <screenshot>
       <caption>Train station map showing real-time availability of rental bikes</caption>
-      <caption xml:lang="ca">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer</caption>
-      <caption xml:lang="ca-valencia">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer</caption>
-      <caption xml:lang="en-GB">Train station map showing real-time availability of rental bikes.</caption>
-      <caption xml:lang="es">Mapa de estación de tren mostrando la disponibilidad de bicicletas de alquiler en tiempo real.</caption>
-      <caption xml:lang="fi">Rautatieasemakartta näyttää vuokrapolkupyörien tiedot todellisessa ajassa.</caption>
-      <caption xml:lang="fr">La carte de la gare affichant la disponibilité en temps réel des vélos de location.</caption>
-      <caption xml:lang="id">Peta stasiun kereta api yang menunjukkan ketersediaan sepeda rental secara real-time.</caption>
-      <caption xml:lang="it">Mappa della stazione ferroviaria che mostra la disponibilità in tempo reale delle biciclette a noleggio.</caption>
-      <caption xml:lang="ko">실시간 렌탈 자전거 상황을 표시하는 기차역 지도입니다.</caption>
-      <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen.</caption>
-      <caption xml:lang="pl">Plan dworca kolejowego, pokazujący w czasie rzeczywistym dostępność rowerów do wypożyczenia.</caption>
-      <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer.</caption>
-      <caption xml:lang="sl">Zemljevid železniške postaje prikazuje sprotno razpoložljivost koles za najem.</caption>
-      <caption xml:lang="sv">Tågstationskarta som visar tillgängliga hyrcyklar i realtid.</caption>
-      <caption xml:lang="uk">Мапа залізничної станції із показом доступності оренди велосипедів у режимі реального часу.</caption>
-      <caption xml:lang="x-test">xxTrain station map showing real-time availability of rental bikes.xx</caption>
-      <caption xml:lang="zh-CN">火车站地图显示出租自行车的实时信息。</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-map-with-rental-bike-data.png</image>
     </screenshot>
     <screenshot>
