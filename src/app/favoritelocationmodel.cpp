@@ -9,6 +9,10 @@
 #include "json.h"
 #include "logging.h"
 
+#include <gpx/gpxreader.h>
+
+#include <KItinerary/LocationUtil>
+
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -156,6 +160,19 @@ void FavoriteLocationModel::appendNewLocation()
     saveLocations();
 }
 
+void FavoriteLocationModel::appendLocationIfMissing(FavoriteLocation &&loc)
+{
+    for (const auto &l : m_locations) {
+        if (KItinerary::LocationUtil::distance(l.latitude(), l.longitude(), loc.latitude(), loc.longitude()) < 10) {
+            qCDebug(Log) << "Not importing" << loc.name() << "due to" << l.name() << "close by";
+            return;
+        }
+    }
+    beginInsertRows({}, rowCount(), rowCount());
+    m_locations.push_back(std::move(loc));
+    endInsertRows();
+}
+
 void FavoriteLocationModel::removeLocation(int row)
 {
     beginRemoveRows({}, row, row);
@@ -271,4 +288,56 @@ void FavoriteLocationModel::exportToGpx(const QString &filePath) const
     for (const auto &fav : m_locations) {
         exporter.writeFavoriteLocation(fav);
     }
+}
+
+void FavoriteLocationModel::importFromGpx(const QString &filePath)
+{
+    if (filePath.isEmpty()) {
+        return;
+    }
+
+    QFile f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
+    if (!f.open(QFile::ReadOnly)) {
+        qCWarning(Log) << f.errorString() << f.fileName();
+        return;
+    }
+
+    Gpx::Reader reader(&f);
+    while (reader.readNextStartElement()) {
+        if (reader.isRootElement()) {
+            continue;
+        }
+        if (reader.isWaypointStart()) {
+            FavoriteLocation loc;
+            loc.setLatitude(reader.latitude());
+            loc.setLongitude(reader.longitude());
+
+            QString name, type;
+            while (reader.readNext()) {
+                if (reader.isWaypointEnd()) {
+                    break;
+                }
+                if (reader.isGpxName()) {
+                    name = reader.gpxName();
+                } else if (reader.isGpxType()) {
+                    type = reader.gpxType();
+                }
+            }
+
+            if (name.isEmpty()) {
+                continue;
+            }
+            if (!type.isEmpty()) {
+                loc.setName(type + QLatin1Char('/') + name);
+            } else {
+                loc.setName(name);
+            }
+
+            appendLocationIfMissing(std::move(loc));
+            continue;
+        }
+        reader.skipCurrentElement();
+    }
+
+    saveLocations();
 }

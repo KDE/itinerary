@@ -110,6 +110,7 @@ if (ANDROID)
         dialog-cancel
         dialog-close
         document-edit
+        document-import
         document-open
         document-save
         documentinfo

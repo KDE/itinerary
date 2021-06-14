@@ -67,6 +67,8 @@ public:
 
     /** Appends a new dummy location. */
     Q_INVOKABLE void appendNewLocation();
+    /** Appends the given location if there is none yet that matches its position. */
+    void appendLocationIfMissing(FavoriteLocation &&loc);
     /** Removes location at index @row. */
     Q_INVOKABLE void removeLocation(int row);
 
@@ -79,6 +81,8 @@ public:
 
     /** Export to GPX. */
     Q_INVOKABLE void exportToGpx(const QString &filePath) const;
+    /** Import from GPX. */
+    Q_INVOKABLE void importFromGpx(const QString &filePath);
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;

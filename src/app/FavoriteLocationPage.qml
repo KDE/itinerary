@@ -43,6 +43,14 @@ Kirigami.Page {
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: FavoriteLocationModel.exportToGpx(file)
     }
+    Platform.FileDialog {
+        id: favoriteGpxImportDialog
+        fileMode: Platform.FileDialog.OpenFile
+        title: i18n("Import Favorite Locations")
+        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("GPX Files (*.gpx)")]
+        onAccepted: FavoriteLocationModel.importFromGpx(file)
+    }
 
    actions.main: Kirigami.Action {
         icon.name: "crosshairs"
@@ -81,6 +89,11 @@ Kirigami.Page {
             text: i18n("Export to GPX")
             icon.name: "export-symbolic"
             onTriggered: favoriteGpxExportDialog.open()
+        },
+        Kirigami.Action {
+            text: i18n("Import from GPX")
+            icon.name: "document-import"
+            onTriggered: favoriteGpxImportDialog.open()
         }
     ]
 
