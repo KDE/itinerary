@@ -49,6 +49,18 @@ Kirigami.ScrollablePage {
                     TransferManager.discardTransfer(root.transfer);
                     applicationWindow().pageStack.pop();
                 }
+            },
+            Kirigami.Action {
+                text: i18n("Earlier")
+                iconName: "go-up-symbolic"
+                onTriggered: journeyModel.queryPrevious()
+                enabled: journeyModel.canQueryPrevious
+            },
+            Kirigami.Action {
+                text: i18n("Later")
+                iconName: "go-down-symbolic"
+                onTriggered: journeyModel.queryNext()
+                enabled: journeyModel.canQueryNext
             }
         ]
     }

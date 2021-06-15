@@ -18,6 +18,20 @@ Kirigami.ScrollablePage {
 
     id: root
     title: i18n("Departures")
+    contextualActions: [
+        Kirigami.Action {
+            text: i18n("Earlier")
+            iconName: "go-up-symbolic"
+            onTriggered: departureModel.queryPrevious()
+            enabled: departureModel.canQueryPrevious
+        },
+        Kirigami.Action {
+            text: i18n("Later")
+            iconName: "go-down-symbolic"
+            onTriggered: departureModel.queryNext()
+            enabled: departureModel.canQueryNext
+        }
+    ]
 
     StopoverQueryModel {
         id: departureModel

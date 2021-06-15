@@ -18,6 +18,21 @@ Kirigami.ScrollablePage {
 
     id: root
     title: i18n("Alternative Connections")
+    contextualActions: [
+        Kirigami.Action {
+            text: i18n("Earlier")
+            iconName: "go-up-symbolic"
+            onTriggered: journeyModel.queryPrevious()
+            enabled: journeyModel.canQueryPrevious
+        },
+        Kirigami.Action {
+            text: i18n("Later")
+            iconName: "go-down-symbolic"
+            onTriggered: journeyModel.queryNext()
+            enabled: journeyModel.canQueryNext
+        }
+    ]
+
 
     JourneyQueryModel {
         id: journeyModel
