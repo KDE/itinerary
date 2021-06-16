@@ -149,8 +149,10 @@ QString PublicTransport::rentalVehicleIcon(const KPublicTransport::RentalVehicle
         case RentalVehicle::Unknown:
             return {};
         case RentalVehicle::Bicycle:
+        case RentalVehicle::Pedelec: // TODO
             return QStringLiteral("qrc:///images/bike.svg");
-        case RentalVehicle::ElectricScooter:
+        case RentalVehicle::ElectricMoped:
+        case RentalVehicle::ElectricKickScooter:
             return QStringLiteral("question"); // TODO
         case RentalVehicle::Car:
             return QStringLiteral("qrc:///images/car.svg");
@@ -351,7 +353,9 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
                     return false;
                 case RentalVehicle::Bicycle:
                     return section.duration() > 60*60 || section.distance() > 20000;
-                case RentalVehicle::ElectricScooter:
+                case RentalVehicle::ElectricKickScooter:
+                case RentalVehicle::ElectricMoped:
+                case RentalVehicle::Pedelec:
                 case RentalVehicle::Car:
                     return false; // ???
             }

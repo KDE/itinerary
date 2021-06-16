@@ -417,6 +417,8 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     req.setDateTime(std::max(QDateTime::currentDateTime(), SortUtil::startDateTime(res)));
     req.setDateTimeMode(KPublicTransport::JourneyRequest::Departure);
     req.setDownloadAssets(true);
+    req.setIncludeIntermediateStops(true);
+    req.setIncludePaths(true);
 
     // find full journey by looking at subsequent elements
     auto prevRes = res;
