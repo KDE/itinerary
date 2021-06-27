@@ -61,7 +61,7 @@ Item {
             Repeater {
                 model: pass.headerFields
                 delegate: QQC2.Label {
-                    text: modelData.value
+                    text: modelData.valueDisplayString
                     color: pass.foregroundColor
                 }
             }
@@ -89,7 +89,7 @@ Item {
                 }
                 QQC2.Label {
                     id: primaryValue
-                    text: pass.primaryFields[0].value
+                    text: pass.primaryFields[0].valueDisplayString
                     color: pass.foregroundColor
                     font.pointSize: 1.5 * primaryLabel.font.pointSize
                 }
@@ -119,7 +119,7 @@ Item {
                 }
                 QQC2.Label {
                     Layout.alignment: Qt.AlignRight
-                    text: pass.primaryFields[1].value
+                    text: pass.primaryFields[1].valueDisplayString
                     color: pass.foregroundColor
                     font.pointSize: primaryValue.font.pointSize
                 }
@@ -146,7 +146,7 @@ Item {
                     delegate: QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: modelData.value
+                        text: modelData.valueDisplayString
                         horizontalAlignment: modelData.textAlignment
                     }
                 }
@@ -173,7 +173,7 @@ Item {
                     delegate: QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: modelData.value
+                        text: modelData.valueDisplayString
                         horizontalAlignment: modelData.textAlignment
                     }
                 }
@@ -210,7 +210,7 @@ Item {
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: Util.textToHtml(modelData.value)
+                        text: Util.textToHtml(modelData.valueDisplayString)
                         wrapMode: Text.WordWrap
                         onLinkActivated: Qt.openUrlExternally(link)
                     }

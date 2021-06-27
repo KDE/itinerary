@@ -87,7 +87,7 @@ Item {
                     Repeater {
                         model: pass.headerFields
                         delegate: QQC2.Label {
-                            text: modelData.value
+                            text: modelData.valueDisplayString
                             color: pass.foregroundColor
                         }
                     }
@@ -123,7 +123,7 @@ Item {
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
                             color: pass.foregroundColor
-                            text: modelData.value
+                            text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
@@ -150,7 +150,7 @@ Item {
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
                             color: pass.foregroundColor
-                            text: modelData.value
+                            text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
@@ -177,7 +177,7 @@ Item {
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
                             color: pass.foregroundColor
-                            text: modelData.value
+                            text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
                     }
@@ -210,7 +210,7 @@ Item {
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
-                        text: Util.textToHtml(modelData.value)
+                        text: Util.textToHtml(modelData.valueDisplayString)
                         wrapMode: Text.WordWrap
                         onLinkActivated: Qt.openUrlExternally(link)
                     }
