@@ -131,6 +131,7 @@ Kirigami.ScrollablePage {
         delegate: Loader {
             property var modelData: model
             height: item ? item.implicitHeight : 0
+            width: parent ? parent.width : 0
             sourceComponent: {
                 if (!modelData)
                     return;
@@ -166,6 +167,12 @@ Kirigami.ScrollablePage {
         }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+
+        Component.onCompleted: {
+            if (listView.hasOwnProperty('reuseItems')) { // introduced in Kirigami 5.84 and heavily breaks things for us
+                listView.reuseItems = false;
+            }
+        }
     }
 
     // work around initial positioning not working correctly below, as at that point
