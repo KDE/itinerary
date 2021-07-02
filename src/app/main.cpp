@@ -177,14 +177,18 @@ void registerApplicationSingletons()
 
 #undef REGISTER_SINGLETON_INSTANCE
 
-void handlePositionalArguments(ApplicationController *appController, const QStringList &args)
+void handlePositionalArguments(ApplicationController *appController, const QStringList &args, bool isTemporary)
 {
     for (const auto &file : args) {
         const auto localUrl = QUrl::fromLocalFile(file);
-        if (QFile::exists(localUrl.toLocalFile()))
+        if (QFile::exists(localUrl.toLocalFile())) {
             appController->importFromUrl(localUrl);
-        else
+            if (isTemporary) {
+                QFile::remove(localUrl.toLocalFile());
+            }
+        } else {
             appController->importFromUrl(QUrl::fromUserInput(file));
+        }
     }
 }
 
@@ -220,6 +224,8 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
+    QCommandLineOption isTemporaryOpt(QStringLiteral("delete-after-use"), QStringLiteral("Input file is a temporary file that needs to be deleted after importing."));
+    parser.addOption(isTemporaryOpt);
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
@@ -307,12 +313,12 @@ int main(int argc, char **argv)
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
 #ifndef Q_OS_ANDROID
-    QObject::connect(&service, &KDBusService::activateRequested, [&parser, &appController](const QStringList &args, const QString &workingDir) {
+    QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
-            handlePositionalArguments(&appController, parser.positionalArguments());
+            handlePositionalArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt));
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
             QGuiApplication::allWindows().at(0)->requestActivate();
@@ -332,7 +338,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(l10nContext);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
-    handlePositionalArguments(&appController, parser.positionalArguments());
+    handlePositionalArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt));
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     appController.importFromIntent(Activity::getIntent());
