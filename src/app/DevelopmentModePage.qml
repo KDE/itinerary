@@ -8,7 +8,7 @@ import QtQuick 2.12
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 
 Kirigami.ScrollablePage {

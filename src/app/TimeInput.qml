@@ -8,7 +8,7 @@ import QtQuick 2.3
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.3
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.17 as Kirigami
 
 // temporary time input until we have that in Kirigami and David's prototype in
 // plasma-desktop depends on Plasma which we don't have on Android

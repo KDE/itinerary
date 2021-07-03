@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.16)
 
 # KDE Application Version, managed by release script
 set (RELEASE_SERVICE_VERSION_MAJOR "21")
@@ -10,10 +10,7 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION 5.64)
-if (ANDROID)
-    set(KF5_MIN_VERSION 5.76) # for FindGradle
-endif()
+set(KF5_MIN_VERSION 5.84)
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
 if (POLICY CMP0071)
