@@ -7,6 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
@@ -28,103 +29,6 @@ Kirigami.ScrollablePage {
     }
 
     // page content
-    Component {
-        id: flightDelegate
-        App.FlightDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: hotelDelegate
-        App.HotelDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: trainDelegate
-        App.TrainDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: busDelegate
-        App.BusDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: restaurantDelegate
-        App.RestaurantDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: touristAttractionDelegate
-        App.TouristAttractionDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: eventDelegate
-        App.EventDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: carRentalDelegate
-        App.CarRentalDelegate {
-            batchId: modelData.batchId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: todayDelegate
-        Item {
-            implicitHeight: visible ? label.implicitHeight : 0
-            visible: modelData.isTodayEmpty
-            QQC2.Label {
-                id: label
-                anchors.fill: parent
-                text: i18n("Nothing on the itinerary for today.");
-                color: Kirigami.Theme.textColor
-                horizontalAlignment: Qt.AlignHCenter
-            }
-        }
-    }
-    Component {
-        id: locationInfoDelegate
-        App.LocationInfoDelegate {
-            locationInfo: modelData.locationInformation
-        }
-    }
-    Component {
-        id: weatherForecastDelegate
-        App.WeatherForecastDelegate {
-            weatherForecast: modelData.weatherForecast
-        }
-    }
-    Component {
-        id: tripGrooupDelegate
-        App.TripGroupDelegate {
-            tripGroup: modelData.tripGroup
-            tripGroupId: modelData.tripGroupId
-            rangeType: modelData.rangeType
-        }
-    }
-    Component {
-        id: transferDelegate
-        App.TransferDelegate {
-            transfer: modelData.transfer
-        }
-    }
-
     Kirigami.OverlaySheet {
         id: deleteTripGroupWarningSheet
         property string tripGroupId
@@ -157,34 +61,111 @@ Kirigami.ScrollablePage {
         onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
     }
 
-    Kirigami.CardsListView {
-        id: listView
-        model: TripGroupProxyModel
-
-        delegate: Loader {
-            property var modelData: model
-            height: item ? item.implicitHeight : 0
-            width: parent ? parent.width : 0
-            sourceComponent: {
-                if (!modelData)
-                    return;
-                switch (modelData.type) {
-                    case TimelineElement.Flight: return flightDelegate;
-                    case TimelineElement.Hotel: return hotelDelegate;
-                    case TimelineElement.TrainTrip: return trainDelegate;
-                    case TimelineElement.BusTrip: return busDelegate;
-                    case TimelineElement.Restaurant: return restaurantDelegate;
-                    case TimelineElement.TouristAttraction: return touristAttractionDelegate;
-                    case TimelineElement.Event: return eventDelegate;
-                    case TimelineElement.CarRental: return carRentalDelegate;
-                    case TimelineElement.TodayMarker: return todayDelegate;
-                    case TimelineElement.LocationInfo: return locationInfoDelegate;
-                    case TimelineElement.WeatherForecast: return weatherForecastDelegate;
-                    case TimelineElement.TripGroup: return tripGrooupDelegate;
-                    case TimelineElement.Transfer: return transferDelegate;
+    Models.DelegateChooser {
+        id: chooser
+        role: "type"
+        Models.DelegateChoice {
+            roleValue: TimelineElement.Flight
+            App.FlightDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.Hotel
+            App.HotelDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.TrainTrip
+            App.TrainDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.BusTrip
+            App.BusDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.Restaurant
+            App.RestaurantDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.TouristAttraction
+            App.TouristAttractionDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.Event
+            App.EventDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.CarRental
+            App.CarRentalDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.TodayMarker
+            Item {
+                implicitHeight: visible ? label.implicitHeight : 0
+                visible: model.isTodayEmpty
+                QQC2.Label {
+                    id: label
+                    anchors.fill: parent
+                    text: i18n("Nothing on the itinerary for today.");
+                    color: Kirigami.Theme.textColor
+                    horizontalAlignment: Qt.AlignHCenter
                 }
             }
         }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.LocationInfo
+            App.LocationInfoDelegate {
+                locationInfo: model.locationInformation
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.WeatherForecast
+            App.WeatherForecastDelegate {
+                weatherForecast: model.weatherForecast
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.TripGroup
+            App.TripGroupDelegate {
+                tripGroup: model.tripGroup
+                tripGroupId: model.tripGroupId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.Transfer
+            App.TransferDelegate {
+                transfer: model.transfer
+            }
+        }
+    }
+
+    Kirigami.CardsListView {
+        id: listView
+        model: TripGroupProxyModel
+        delegate: chooser
 
         section.property: "sectionHeader"
         section.delegate: Item {
@@ -200,12 +181,6 @@ Kirigami.ScrollablePage {
         }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
-
-        Component.onCompleted: {
-            if (listView.hasOwnProperty('reuseItems')) { // introduced in Kirigami 5.84 and heavily breaks things for us
-                listView.reuseItems = false;
-            }
-        }
     }
 
     // work around initial positioning not working correctly below, as at that point
