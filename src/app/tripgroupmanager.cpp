@@ -133,7 +133,7 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
     if (!QFile::remove(basePath() + groupId + QLatin1String(".json"))) {
         qCWarning(Log) << "Failed to delete trip group file!" << groupId;
     }
-    emit tripGroupRemoved(groupId);
+    Q_EMIT tripGroupRemoved(groupId);
 }
 
 void TripGroupManager::clear()
@@ -199,7 +199,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
             groupIt.value().setElements(elems);
             groupIt.value().store(basePath() + mapIt.value() + QLatin1String(".json"));
             m_reservationToGroupMap.erase(mapIt);
-            emit tripGroupChanged(groupId);
+            Q_EMIT tripGroupChanged(groupId);
         }
     }
 
@@ -414,7 +414,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
         g.store(basePath() + tgId + QLatin1String(".json"));
-        emit tripGroupAdded(tgId);
+        Q_EMIT tripGroupAdded(tgId);
     } else {
         auto &g = groupIt.value();
         for (const auto &elem : g.elements()) { // remove old element mappings, some of them might no longer be valid
@@ -427,7 +427,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         g.setName(guessName(g));
         qDebug() << "updating trip group" << g.name();
         g.store(basePath() + groupIt.key() + QLatin1String(".json"));
-        emit tripGroupChanged(groupIt.key());
+        Q_EMIT tripGroupChanged(groupIt.key());
     }
 
     for (const auto &tgId : pendingGroupRemovals) {

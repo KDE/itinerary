@@ -84,7 +84,7 @@ void TripGroupProxyModel::collapse(const QString &groupId)
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
     Q_ASSERT(startSrcIdx.isValid());
     const auto startIdx = mapFromSource(startSrcIdx);
-    emit dataChanged(startIdx, startIdx); // collapse/expand state changed
+    Q_EMIT dataChanged(startIdx, startIdx); // collapse/expand state changed
 
     QSettings settings;
     settings.beginGroup(QLatin1String("TripGroupProxyState"));
@@ -99,7 +99,7 @@ void TripGroupProxyModel::expand(const QString &groupId)
     const auto startSrcIdx = m_sourceModel->match(m_sourceModel->index(0, 0), TimelineModel::TripGroupIdRole, groupId, 1, Qt::MatchExactly).at(0);
     Q_ASSERT(startSrcIdx.isValid());
     const auto startIdx = mapFromSource(startSrcIdx);
-    emit dataChanged(startIdx, startIdx); // collapse/expand state changed
+    Q_EMIT dataChanged(startIdx, startIdx); // collapse/expand state changed
 
     QSettings settings;
     settings.beginGroup(QLatin1String("TripGroupProxyState"));

@@ -180,10 +180,10 @@ QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkP
                 changes.push_back(f.changeMessage());
             }
         }
-        emit passUpdated(passId, changes);
+        Q_EMIT passUpdated(passId, changes);
         oldPass->deleteLater();
     } else {
-        emit passAdded(passId);
+        Q_EMIT passAdded(passId);
     }
 
     return passId;
@@ -193,7 +193,7 @@ void PkPassManager::removePass(const QString& passId)
 {
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
     QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1String(".pkpass"));
-    emit passRemoved(passId);
+    Q_EMIT passRemoved(passId);
     delete m_passes.take(passId);
 }
 

@@ -201,7 +201,7 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
         ids.push_back(addReservation(res));
     }
 
-    emit infoMessage(i18np("One reservation imported.", "%1 reservations imported.", ids.size()));
+    Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", ids.size()));
     return ids;
 }
 
@@ -243,11 +243,11 @@ QString ReservationManager::addReservation(const QVariant &res)
             // truly new, and added to an existing batch
             const QString resId = QUuid::createUuid().toString();
             storeReservation(resId, res);
-            emit reservationAdded(resId);
+            Q_EMIT reservationAdded(resId);
 
             m_batchToResMap[*it].push_back(resId);
             m_resToBatchMap.insert(resId, *it);
-            emit batchChanged(*it);
+            Q_EMIT batchChanged(*it);
             storeBatch(*it);
             return resId;
         }
@@ -256,7 +256,7 @@ QString ReservationManager::addReservation(const QVariant &res)
     // truly new, and starting a new batch
     const QString resId = QUuid::createUuid().toString();
     storeReservation(resId, res);
-    emit reservationAdded(resId);
+    Q_EMIT reservationAdded(resId);
 
     // search for the precise insertion place, beginIt is only the begin of our initial search range
     const auto insertIt = std::lower_bound(m_batches.begin(), m_batches.end(), SortUtil::startDateTime(res), [this](const auto &lhs, const auto &rhs) {
@@ -265,7 +265,7 @@ QString ReservationManager::addReservation(const QVariant &res)
     m_batches.insert(insertIt, resId);
     m_batchToResMap.insert(resId, {resId});
     m_resToBatchMap.insert(resId, resId);
-    emit batchAdded(resId);
+    Q_EMIT batchAdded(resId);
     storeBatch(resId);
     return resId;
 }
@@ -275,7 +275,7 @@ void ReservationManager::updateReservation(const QString &resId, const QVariant 
     const auto oldRes = reservation(resId);
 
     storeReservation(resId, res);
-    emit reservationChanged(resId);
+    Q_EMIT reservationChanged(resId);
 
     updateBatch(resId, res, oldRes);
 }
@@ -301,7 +301,7 @@ void ReservationManager::removeReservation(const QString& id)
 
     const QString basePath = reservationsBasePath();
     QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
-    emit reservationRemoved(id);
+    Q_EMIT reservationRemoved(id);
     m_reservations.remove(id);
 }
 
@@ -455,7 +455,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
 
     // still in the same batch?
     if (!oldBatchId.isEmpty() && oldBatchId == newBatchId) {
-        emit batchContentChanged(oldBatchId);
+        Q_EMIT batchContentChanged(oldBatchId);
         // no need to store here, as batching didn't actually change
         return;
     }
@@ -474,12 +474,12 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
         m_batches.insert(it, QString(resId));
         m_batchToResMap.insert(resId, {resId});
         m_resToBatchMap.insert(resId, resId);
-        emit batchAdded(resId);
+        Q_EMIT batchAdded(resId);
         storeBatch(resId);
     } else {
         m_batchToResMap[newBatchId].push_back(resId);
         m_resToBatchMap.insert(resId, newBatchId);
-        emit batchChanged(newBatchId);
+        Q_EMIT batchChanged(newBatchId);
         storeBatch(newBatchId);
     }
 }
@@ -496,7 +496,7 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         m_batchToResMap.remove(batchId);
         const auto it = std::find(m_batches.begin(), m_batches.end(), batchId);
         m_batches.erase(it);
-        emit batchRemoved(batchId);
+        Q_EMIT batchRemoved(batchId);
         storeRemoveBatch(batchId);
     } else if (resId == batchId) {
         // our id was the batch id, so rename the old batch
@@ -510,13 +510,13 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
         }
         m_batchToResMap[renamedBatchId] = batches;
         m_batchToResMap.remove(batchId);
-        emit batchRenamed(batchId, renamedBatchId);
+        Q_EMIT batchRenamed(batchId, renamedBatchId);
         storeRemoveBatch(batchId);
         storeBatch(renamedBatchId);
     } else {
         // old batch remains
         batches.removeAll(resId);
-        emit batchChanged(batchId);
+        Q_EMIT batchChanged(batchId);
         storeBatch(batchId);
     }
 }

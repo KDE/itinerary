@@ -99,7 +99,7 @@ void TransferManager::setJourneyForTransfer(Transfer transfer, const KPublicTran
     transfer.setJourney(journey);
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);
-    emit transferChanged(transfer);
+    Q_EMIT transferChanged(transfer);
 }
 
 Transfer TransferManager::setFavoriteLocationForTransfer(Transfer transfer, const FavoriteLocation& favoriteLocation)
@@ -123,7 +123,7 @@ Transfer TransferManager::setFavoriteLocationForTransfer(Transfer transfer, cons
     transfer.setJourney({});
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);
-    emit transferChanged(transfer);
+    Q_EMIT transferChanged(transfer);
 
     return transfer;
 }
@@ -353,8 +353,8 @@ void TransferManager::reservationRemoved(const QString &resId)
     removeFile(resId, Transfer::Before);
     removeFile(resId, Transfer::After);
     // TODO updates to adjacent transfers?
-    emit transferRemoved(resId, Transfer::Before);
-    emit transferRemoved(resId, Transfer::After);
+    Q_EMIT transferRemoved(resId, Transfer::Before);
+    Q_EMIT transferRemoved(resId, Transfer::After);
 }
 
 void TransferManager::tripGroupChanged(const QString &tgId)
@@ -430,15 +430,15 @@ void TransferManager::addOrUpdateTransfer(Transfer &t)
         autoFillTransfer(t);
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
-        emit transferAdded(t);
+        Q_EMIT transferAdded(t);
     } else if (t.state() == Transfer::Discarded) {
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
-        emit transferRemoved(t.reservationId(), t.alignment());
+        Q_EMIT transferRemoved(t.reservationId(), t.alignment());
     } else { // update existing data
         m_transfers[t.alignment()].insert(t.reservationId(), t);
         writeToFile(t);
-        emit transferChanged(t);
+        Q_EMIT transferChanged(t);
     }
 }
 
@@ -449,7 +449,7 @@ void TransferManager::removeTransfer(const Transfer &t)
     }
     m_transfers[t.alignment()].remove(t.reservationId());
     removeFile(t.reservationId(), t.alignment());
-    emit transferRemoved(t.reservationId(), t.alignment());
+    Q_EMIT transferRemoved(t.reservationId(), t.alignment());
 }
 
 static QString transferBasePath()
@@ -495,7 +495,7 @@ void TransferManager::importTransfer(const Transfer &transfer)
     m_transfers[transfer.alignment()].insert(transfer.reservationId(), transfer);
     writeToFile(transfer);
 
-    update ? emit transferChanged(transfer) : emit transferAdded(transfer);
+    update ? Q_EMIT transferChanged(transfer) : Q_EMIT transferAdded(transfer);
 }
 
 KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(const Transfer &transfer) const

@@ -69,7 +69,7 @@ void PortalNetworkMonitor::asyncUpdate()
         const QDBusPendingReply<unsigned int> reply(*watcher);
         if (reply.isValid() && ((reply.value() == 4) != (m_connected == NetworkStatus::Yes) || m_connected == NetworkStatus::Unknown)) {
             m_connected = (reply.value() == 4) ? NetworkStatus::Yes : NetworkStatus::No;
-            emit connectivityChanged();
+            Q_EMIT connectivityChanged();
         }
     });
 
@@ -79,7 +79,7 @@ void PortalNetworkMonitor::asyncUpdate()
         const QDBusPendingReply<bool> reply(*watcher);
         if (reply.isValid() && (reply.value() != (m_metered == NetworkStatus::Yes) || m_metered == NetworkStatus::Unknown)) {
             m_metered = reply.value() ? NetworkStatus::Yes : NetworkStatus::No;
-            emit meteredChanged();
+            Q_EMIT meteredChanged();
         }
     });
 }

@@ -233,17 +233,17 @@ bool FavoriteLocationModel::setData(const QModelIndex &index, const QVariant &va
     switch (role) {
         case Qt::DisplayRole:
             loc.setName(value.toString());
-            emit dataChanged(index, index);
+            Q_EMIT dataChanged(index, index);
             saveLocations();
             return true;
         case FavoriteLocationModel::LatitudeRole:
             loc.setLatitude(value.toFloat());
-            emit dataChanged(index, index);
+            Q_EMIT dataChanged(index, index);
             saveLocations();
             return true;
         case FavoriteLocationModel::LongitudeRole:
             loc.setLongitude(value.toFloat());
-            emit dataChanged(index, index);
+            Q_EMIT dataChanged(index, index);
             saveLocations();
             return true;
     }

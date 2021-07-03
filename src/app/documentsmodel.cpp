@@ -93,7 +93,7 @@ void DocumentsModel::setDocumentManager(DocumentManager *mgr)
     connect(mgr, &DocumentManager::documentAdded, this, &DocumentsModel::reload);
     connect(mgr, &DocumentManager::documentRemoved, this, &DocumentsModel::reload);
 
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void DocumentsModel::setReservationManager(ReservationManager* mgr)
@@ -109,7 +109,7 @@ void DocumentsModel::setReservationManager(ReservationManager* mgr)
         }
     });
 
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void DocumentsModel::reload()
@@ -135,7 +135,7 @@ void DocumentsModel::reload()
     std::sort(m_docIds.begin(), m_docIds.end());
     m_docIds.erase(std::unique(m_docIds.begin(), m_docIds.end()), m_docIds.end());
     endResetModel();
-    emit emptyChanged();
+    Q_EMIT emptyChanged();
 }
 
 bool DocumentsModel::isEmpty() const

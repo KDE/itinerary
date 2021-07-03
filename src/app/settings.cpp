@@ -52,7 +52,7 @@ void Settings::setWeatherForecastEnabled(bool enabled)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("WeatherForecastEnabled"), enabled);
 
-    emit weatherForecastEnabledChanged(enabled);
+    Q_EMIT weatherForecastEnabledChanged(enabled);
 }
 
 QString Settings::homeCountryIsoCode() const
@@ -71,7 +71,7 @@ void Settings::setHomeCountryIsoCode(const QString& isoCode)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("HomeCountry"), isoCode);
 
-    emit homeCountryIsoCodeChanged(isoCode);
+    Q_EMIT homeCountryIsoCodeChanged(isoCode);
 }
 
 bool Settings::queryLiveData() const
@@ -94,7 +94,7 @@ void Settings::setQueryLiveData(bool queryLiveData)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
 
-    emit queryLiveDataChanged(queryLiveData);
+    Q_EMIT queryLiveDataChanged(queryLiveData);
 }
 
 bool Settings::preloadMapData() const
@@ -113,7 +113,7 @@ void Settings::setPreloadMapData(bool preload)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("PreloadMapData"), preload);
 
-    emit preloadMapDataChanged(preload);
+    Q_EMIT preloadMapDataChanged(preload);
 }
 
 bool Settings::autoAddTransfers() const
@@ -136,7 +136,7 @@ void Settings::setAutoAddTransfers(bool autoAdd)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("AutoAddTransfers"), autoAdd);
 
-    emit autoAddTransfersChanged(autoAdd);
+    Q_EMIT autoAddTransfersChanged(autoAdd);
 }
 
 bool Settings::autoFillTransfers() const
@@ -155,7 +155,7 @@ void Settings::setAutoFillTransfers(bool autoFill)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("AutoFillTransfers"), autoFill);
 
-    emit autoFillTransfersChanged(autoFill);
+    Q_EMIT autoFillTransfersChanged(autoFill);
 }
 
 bool Settings::showNotificationOnLockScreen() const
@@ -174,7 +174,7 @@ void Settings::setShowNotificationOnLockScreen(bool enabled)
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
 
-    emit showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
+    Q_EMIT showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
 }
 
 bool Settings::developmentMode() const
@@ -192,5 +192,5 @@ void Settings::setDevelopmentMode(bool enabled)
     QSettings s;
     s.beginGroup(QLatin1String("Settings"));
     s.setValue(QLatin1String("DevelopmentMode"), m_developmentMode);
-    emit developmentModeChanged(m_developmentMode);
+    Q_EMIT developmentModeChanged(m_developmentMode);
 }

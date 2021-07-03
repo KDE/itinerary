@@ -129,9 +129,9 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
-    emit journeyUpdated(resId);
-    emit departureUpdated(resId);
-    emit arrivalUpdated(resId);
+    Q_EMIT journeyUpdated(resId);
+    Q_EMIT departureUpdated(resId);
+    Q_EMIT arrivalUpdated(resId);
 }
 
 void LiveDataManager::checkForUpdates()
@@ -225,7 +225,7 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
     }
 
     // emit update signals
-    emit type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
+    Q_EMIT type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
 
     // check if we need to notify
     if (NotificationHelper::shouldNotify(oldStop, stop, type)) {
@@ -324,9 +324,9 @@ void LiveDataManager::importData(const QString& resId, LiveData &&data)
 {
     // we don't need to store data, Importer already does that
     m_data[resId] = std::move(data);
-    emit journeyUpdated(resId);
-    emit departureUpdated(resId);
-    emit arrivalUpdated(resId);
+    Q_EMIT journeyUpdated(resId);
+    Q_EMIT departureUpdated(resId);
+    Q_EMIT arrivalUpdated(resId);
 }
 
 bool LiveDataManager::isRelevant(const QString &resId) const
@@ -375,20 +375,20 @@ void LiveDataManager::batchChanged(const QString &resId)
             (*dataIt).departure = {};
             (*dataIt).departureTimestamp = {};
             (*dataIt).store(resId, LiveData::Departure);
-            emit departureUpdated(resId);
+            Q_EMIT departureUpdated(resId);
         }
         if ((*dataIt).arrivalTimestamp.isValid() && !isArrivalForReservation(res, (*dataIt).arrival)) {
             (*dataIt).arrival = {};
             (*dataIt).arrivalTimestamp = {};
             (*dataIt).store(resId, LiveData::Arrival);
-            emit arrivalUpdated(resId);
+            Q_EMIT arrivalUpdated(resId);
         }
 
         // TODO check if the change made this necessary at all
         (*dataIt).journey = {};
         (*dataIt).journeyTimestamp = {};
         (*dataIt).store(resId, LiveData::Journey);
-        emit journeyUpdated(resId);
+        Q_EMIT journeyUpdated(resId);
     }
 
     m_pollTimer.setInterval(nextPollTime());

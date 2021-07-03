@@ -329,7 +329,7 @@ private Q_SLOTS:
         // check we get update signals for all weather elements
         QSignalSpy spy(&model, &TimelineModel::dataChanged);
         QVERIFY(spy.isValid());
-        emit weatherMgr.forecastUpdated();
+        Q_EMIT weatherMgr.forecastUpdated();
         QCOMPARE(spy.size(), 10);
 
         fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();

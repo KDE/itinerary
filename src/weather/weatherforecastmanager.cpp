@@ -62,7 +62,7 @@ bool WeatherForecastManager::allowNetworkAccess() const
 void WeatherForecastManager::setAllowNetworkAccess(bool enabled)
 {
     m_allowNetwork = enabled;
-    emit forecastUpdated();
+    Q_EMIT forecastUpdated();
     if (enabled) {
         scheduleUpdate();
     } else {
@@ -215,7 +215,7 @@ void WeatherForecastManager::tileDownloaded()
     m_pendingReply->deleteLater();
     m_pendingReply = nullptr;
     if (m_pendingTiles.empty()) {
-        emit forecastUpdated();
+        Q_EMIT forecastUpdated();
     }
     fetchNext();
 }

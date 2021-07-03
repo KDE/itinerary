@@ -99,7 +99,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
     }
     metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
     metaFile.close();
-    emit documentAdded(id);
+    Q_EMIT documentAdded(id);
 }
 
 void DocumentManager::addDocument(const QString& id, const QVariant& info, const QString& filePath)
@@ -134,7 +134,7 @@ void DocumentManager::addDocument(const QString& id, const QVariant& info, const
     }
     metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
     metaFile.close();
-    emit documentAdded(id);
+    Q_EMIT documentAdded(id);
 }
 
 void DocumentManager::removeDocument(const QString& id)
@@ -144,7 +144,7 @@ void DocumentManager::removeDocument(const QString& id)
     if (!docDir.removeRecursively()) {
         qCWarning(Log) << "Failed to delete directory" << path;
     }
-    emit documentRemoved(id);
+    Q_EMIT documentRemoved(id);
 }
 
 QString DocumentManager::basePath() const

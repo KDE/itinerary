@@ -35,7 +35,7 @@ void StatisticsTimeRangeModel::setReservationManager(ReservationManager *resMgr)
         return;
     }
     m_resMgr = resMgr;
-    emit setupChanged();
+    Q_EMIT setupChanged();
 
     beginResetModel();
     int y = 0;

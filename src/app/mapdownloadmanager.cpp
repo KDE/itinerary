@@ -139,7 +139,7 @@ void MapDownloadManager::downloadFinished()
     m_loader = nullptr;
 
     if (m_pendingRequests.empty()) {
-        emit finished();
+        Q_EMIT finished();
     } else {
         downloadNext();
     }

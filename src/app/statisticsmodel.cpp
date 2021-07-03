@@ -53,7 +53,7 @@ void StatisticsModel::setReservationManager(ReservationManager *resMgr)
     }
     m_resMgr = resMgr;
     connect(m_resMgr, &ReservationManager::batchAdded, this, &StatisticsModel::recompute);
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 TripGroupManager* StatisticsModel::tripGroupManager() const
@@ -68,7 +68,7 @@ void StatisticsModel::setTripGroupManager(TripGroupManager* tripGroupMgr)
     }
     m_tripGroupMgr = tripGroupMgr;
     connect(m_tripGroupMgr, &TripGroupManager::tripGroupAdded, this, &StatisticsModel::recompute);
-    emit setupChanged();
+    Q_EMIT setupChanged();
 }
 
 void StatisticsModel::setTimeRange(const QDate &begin, const QDate &end)
@@ -304,7 +304,7 @@ void StatisticsModel::recompute()
     m_tripGroupCount = tripGroups.size();
     m_prevTripGroupCount = prevTripGroups.size();
 
-    emit changed();
+    Q_EMIT changed();
 }
 
 StatisticsItem::Trend StatisticsModel::trend(int current, int prev) const

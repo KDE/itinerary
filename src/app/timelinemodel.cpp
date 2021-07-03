@@ -87,7 +87,7 @@ TimelineModel::TimelineModel(QObject *parent)
             return;
         }
         m_todayEmpty = !m_todayEmpty;
-        emit dataChanged(idx, idx);
+        Q_EMIT dataChanged(idx, idx);
     });
 }
 
@@ -135,7 +135,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     endResetModel();
 
     updateInformationElements();
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 }
 
 void TimelineModel::setWeatherForecastManager(WeatherForecastManager* mgr)
@@ -295,7 +295,7 @@ void TimelineModel::batchAdded(const QString &resId)
 
     updateInformationElements();
     updateTransfersForBatch(resId);
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 }
 
 void TimelineModel::insertElement(TimelineElement &&elem)
@@ -323,7 +323,7 @@ std::vector<TimelineElement>::iterator TimelineModel::insertOrUpdate(std::vector
     if (it != m_elements.end() && (*it) == elem) {
         const auto row = std::distance(m_elements.begin(), it);
         (*it) = std::move(elem);
-        emit dataChanged(index(row, 0), index(row, 0));
+        Q_EMIT dataChanged(index(row, 0), index(row, 0));
     } else {
         const auto row = std::distance(m_elements.begin(), it);
         beginInsertRows({}, row, row);
@@ -355,7 +355,7 @@ void TimelineModel::batchRenamed(const QString& oldBatchId, const QString& newBa
 
         (*it).setContent(newBatchId);
         const auto idx = index(std::distance(m_elements.begin(), it), 0);
-        emit dataChanged(idx, idx);
+        Q_EMIT dataChanged(idx, idx);
 
         if ((*it).rangeType == TimelineElement::SelfContained || (*it).rangeType == TimelineElement::RangeEnd) {
             break;
@@ -381,7 +381,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
         endRemoveRows();
         insertElement(TimelineElement{resId, res, rangeType});
     } else {
-        emit dataChanged(index(row, 0), index(row, 0));
+        Q_EMIT dataChanged(index(row, 0), index(row, 0));
     }
 }
 
@@ -399,7 +399,7 @@ void TimelineModel::batchRemoved(const QString &resId)
     beginRemoveRows({}, row, row);
     m_elements.erase(it);
     endRemoveRows();
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 
     if (isSplit) {
         batchRemoved(resId);
@@ -433,7 +433,7 @@ void TimelineModel::updateTodayMarker()
     beginRemoveRows({}, oldRow, oldRow);
     m_elements.erase(m_elements.begin() + oldRow);
     endRemoveRows();
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 }
 
 void TimelineModel::updateInformationElements()
@@ -727,7 +727,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
     }
     insertOrUpdate(it, TimelineElement(transfer));
 
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 }
 
 void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment alignment)
@@ -745,5 +745,5 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     m_elements.erase(it);
     endRemoveRows();
 
-    emit todayRowChanged();
+    Q_EMIT todayRowChanged();
 }
