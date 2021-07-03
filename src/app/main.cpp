@@ -224,7 +224,7 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    QCommandLineOption isTemporaryOpt(QStringLiteral("delete-after-use"), QStringLiteral("Input file is a temporary file that needs to be deleted after importing."));
+    QCommandLineOption isTemporaryOpt(QStringLiteral("tempfile"), QStringLiteral("Input file is a temporary file and will be deleted after importing."));
     parser.addOption(isTemporaryOpt);
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
