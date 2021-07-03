@@ -152,7 +152,7 @@ Kirigami.ScrollablePage {
         property string tripGroupId
         fileMode: Platform.FileDialog.SaveFile
         title: i18n("Export Trip")
-        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
     }
