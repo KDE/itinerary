@@ -82,6 +82,16 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.push(statisticsComponent)
             },
             Kirigami.Action {
+                id: healtCertAction
+                text: i18n("Health Certificates")
+                iconName: "cross-shape"
+                onTriggered: {
+                    healtCertificateComponent.source = "HealthCertificatePage.qml"
+                    pageStack.push(healtCertificateComponent.item)
+                }
+                visible: HealthCertificateManager.isAvailable
+            },
+            Kirigami.Action {
                 id: settingsAction
                 text: i18n("Settings...")
                 iconName: "settings-configure"
@@ -174,6 +184,10 @@ Kirigami.ApplicationWindow {
             tripGroupManager: TripGroupManager
             onIsCurrentPageChanged: statsAction.enabled = !statsPage.isCurrentPage
         }
+    }
+        // replace loader with component once we depend on KHealthCertificate unconditionally
+    Loader {
+        id: healtCertificateComponent
     }
     Component {
         id: welcomeComponent

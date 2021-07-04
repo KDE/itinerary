@@ -9,6 +9,7 @@ set(itinerary_srcs
     documentmanager.cpp
     favoritelocationmodel.cpp
     gpxexport.cpp
+    healthcertificatemanager.cpp
     importexport.cpp
     json.cpp
     livedata.cpp
@@ -56,6 +57,9 @@ target_link_libraries(itinerary PUBLIC
     Qt5::Network
     Qt5::Quick
 )
+if (TARGET KHealthCertificate)
+    target_link_libraries(itinerary PRIVATE KHealthCertificate)
+endif()
 
 if (Qt5QuickCompiler_FOUND)
     qtquick_compiler_add_resources(qml_srcs qml.qrc)
@@ -107,6 +111,7 @@ if (ANDROID)
         checkmark
         clock
         crosshairs
+        cross-shape
         dialog-cancel
         dialog-close
         document-edit

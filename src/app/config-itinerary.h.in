@@ -5,3 +5,4 @@
 */
 
 #cmakedefine01 HAVE_KCRASH
+#cmakedefine01 HAVE_KHEALTHCERTIFICATE

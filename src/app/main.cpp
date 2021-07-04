@@ -14,6 +14,7 @@
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "favoritelocationmodel.h"
+#include "healthcertificatemanager.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "locationinformation.h"
@@ -130,6 +131,7 @@ static WeatherForecastManager *s_weatherForecastManager = nullptr;
 static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
+static HealthCertificateManager *s_healthCertificateManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
@@ -161,6 +163,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
+    REGISTER_SINGLETON_INSTANCE(HealthCertificateManager, s_healthCertificateManager)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -303,6 +306,9 @@ int main(int argc, char **argv)
     mapDownloadMgr.setAutomaticDownloadEnabled(s_settings->preloadMapData());
     QObject::connect(s_settings, &Settings::preloadMapDataChanged, &mapDownloadMgr, &MapDownloadManager::setAutomaticDownloadEnabled);
     s_mapDownloadManager = &mapDownloadMgr;
+
+    HealthCertificateManager healthCertificateMgr;
+    s_healthCertificateManager = &healthCertificateMgr;
 
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
