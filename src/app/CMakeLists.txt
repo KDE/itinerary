@@ -41,6 +41,8 @@ ecm_qt_declare_logging_category(itinerary_srcs
     HEADER logging.h
     IDENTIFIER Log
     CATEGORY_NAME org.kde.itinerary
+    DESCRIPTION "KDE Itinerary app"
+    EXPORT ITINERARY 
 )
 add_library(itinerary STATIC ${itinerary_srcs})
 target_link_libraries(itinerary PUBLIC

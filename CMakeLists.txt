@@ -109,7 +109,12 @@ add_subdirectory(autotests)
 add_subdirectory(tests)
 
 if (NOT ANDROID)
-    install(FILES org_kde_itinerary.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+    ecm_qt_install_logging_categories(
+	    EXPORT ITINERARY
+	    FILE org_kde_itinerary.categories
+            DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+
+    )
 endif()
 ki18n_install(po)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
