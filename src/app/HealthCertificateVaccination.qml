@@ -103,5 +103,28 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Expires:")
             visible: certificate.certificateExpiryDate.getTime() != 0
         }
+        Kirigami.Icon {
+            source: {
+                switch(certificate.signatureState) {
+                    case KHC.HealthCertificate.ValidSignature: return "dialog-ok";
+                    case KHC.HealthCertificate.UnknownSignature: return "question";
+                    case KHC.HealthCertificate.InvalidSignature:
+                    default:
+                        return "dialog-error-symbolic";
+                }
+            }
+            height: Kirigami.Units.gridUnit
+            Kirigami.FormData.label: i18n("Signature:")
+            color: {
+                switch(certificate.signatureState) {
+                    case KHC.HealthCertificate.ValidSignature: return Kirigami.Theme.positiveTextColor;
+                    case KHC.HealthCertificate.UnknownSignature: return Kirigami.Theme.neutralTextColor;
+                    case KHC.HealthCertificate.InvalidSignature:
+                    default:
+                        return Kirigami.Theme.negativeTextColor;
+                }
+            }
+            visible: certificate.signatureState != KHC.HealthCertificate.UncheckedSignature
+        }
     }
 }

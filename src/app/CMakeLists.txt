@@ -116,6 +116,8 @@ if (ANDROID)
         cross-shape
         dialog-cancel
         dialog-close
+        dialog-error-symbolic
+        dialog-ok
         document-edit
         document-import
         document-open
