@@ -399,7 +399,7 @@ void ApplicationController::exportToFile(const QString &filePath)
         return;
     }
 
-    File f(filePath);
+    File f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString();
         // TODO show error in UI
