@@ -31,6 +31,8 @@ public:
 
     enum {
         CertificateRole = Qt::UserRole,
+        RawDataRole,
+        StorageIdRole,
     };
 
     int rowCount(const QModelIndex &parent = {}) const override;

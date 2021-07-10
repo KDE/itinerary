@@ -11,6 +11,7 @@
 
 class DocumentManager;
 class FavoriteLocationModel;
+class HealthCertificateManager;
 class LiveDataManager;
 class PkPassManager;
 class ReservationManager;
@@ -44,6 +45,7 @@ public:
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
     void setLiveDataManager(LiveDataManager *liveDataMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setHealthCertificateManager(HealthCertificateManager *healthCertMgr);
 
     // data import
     void importFromIntent(const KAndroidExtras::Intent &intent);
@@ -89,6 +91,7 @@ private:
     FavoriteLocationModel *m_favLocModel = nullptr;
     LiveDataManager *m_liveDataMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
+    HealthCertificateManager *m_healthCertMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 };
 

@@ -8,6 +8,7 @@
 
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "healthcertificatemanager.h"
 #include "livedata.h"
 #include "livedatamanager.h"
 #include "logging.h"
@@ -91,6 +92,17 @@ void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)
     if (favLocModel->rowCount() > 0) {
         m_file->addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
                         QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
+    }
+}
+
+void Exporter::exportHealthCertificates(const HealthCertificateManager *healthCertMgr)
+{
+    for (int i = 0; i < healthCertMgr->rowCount(); ++i) {
+        const auto idx = healthCertMgr->index(i, 0);
+        m_file->addCustomData(
+            QStringLiteral("org.kde.itinerary/health-certificates"),
+            healthCertMgr->data(idx, HealthCertificateManager::StorageIdRole).toString(),
+            healthCertMgr->data(idx, HealthCertificateManager::RawDataRole).toByteArray());
     }
 }
 

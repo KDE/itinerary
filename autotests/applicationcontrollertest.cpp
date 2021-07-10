@@ -9,6 +9,7 @@
 #include <reservationmanager.h>
 #include <documentmanager.h>
 #include <favoritelocationmodel.h>
+#include <healthcertificatemanager.h>
 #include <transfermanager.h>
 #include <tripgroupmanager.h>
 
@@ -133,12 +134,15 @@ private Q_SLOTS:
 
         FavoriteLocationModel favLoc;
 
+        HealthCertificateManager healthCertMgr;
+
         ApplicationController appController;
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
         appController.setTransferManager(&transferMgr);
         appController.setFavoriteLocationModel(&favLoc);
+        appController.setHealthCertificateManager(&healthCertMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));

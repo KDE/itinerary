@@ -318,6 +318,7 @@ int main(int argc, char **argv)
     appController.setTransferManager(&transferManager);
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
+    appController.setHealthCertificateManager(&healthCertificateMgr);
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;

@@ -107,25 +107,41 @@ int HealthCertificateManager::rowCount(const QModelIndex& parent) const
 
 QVariant HealthCertificateManager::data(const QModelIndex &index, int role) const
 {
+    const auto &v = m_certificates[index.row()];
     switch (role) {
         case Qt::DisplayRole:
 #if HAVE_KHEALTHCERTIFICATE
-            if (m_certificates[index.row()].cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
-                const auto cert = m_certificates[index.row()].cert.value<KVaccinationCertificate>();
+            if (v.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
+                const auto cert = v.cert.value<KVaccinationCertificate>();
                 return i18n("Vaccination %1/%2 (%3)", cert.dose(), cert.totalDoses(), cert.name());
             }
-            if (m_certificates[index.row()].cert.userType() == qMetaTypeId<KTestCertificate>()) {
-                const auto cert = m_certificates[index.row()].cert.value<KTestCertificate>();
+            if (v.cert.userType() == qMetaTypeId<KTestCertificate>()) {
+                const auto cert = v.cert.value<KTestCertificate>();
                 return i18n("Test %1 (%2)", QLocale().toString(cert.date(), QLocale::NarrowFormat), cert.name());
             }
-            if (m_certificates[index.row()].cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
-                const auto cert = m_certificates[index.row()].cert.value<KRecoveryCertificate>();
+            if (v.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
+                const auto cert = v.cert.value<KRecoveryCertificate>();
                 return i18n("Recovery (%1)", cert.name());
             }
 #endif
             return {};
         case CertificateRole:
-            return m_certificates[index.row()].cert;
+            return v.cert;
+        case RawDataRole:
+#if HAVE_KHEALTHCERTIFICATE
+            if (v.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
+                return v.cert.value<KVaccinationCertificate>().rawData();
+            }
+            if (v.cert.userType() == qMetaTypeId<KTestCertificate>()) {
+                return v.cert.value<KTestCertificate>().rawData();
+            }
+            if (v.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
+                return v.cert.value<KRecoveryCertificate>().rawData();
+            }
+#endif
+            return {};
+        case StorageIdRole:
+            return v.name;
     }
     return {};
 }
@@ -134,6 +150,8 @@ QHash<int, QByteArray> HealthCertificateManager::roleNames() const
 {
     auto rns = QAbstractListModel::roleNames();
     rns.insert(CertificateRole, "certificate");
+    rns.insert(RawDataRole, "rawData");
+    rns.insert(StorageIdRole, "storageId");
     return rns;
 }
 

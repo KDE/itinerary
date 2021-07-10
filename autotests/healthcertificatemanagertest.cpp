@@ -44,11 +44,15 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(&mgr);
             QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
             QCOMPARE(mgr.rowCount(), 0);
-            mgr.importCertificate(readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
+            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+            mgr.importCertificate(rawData);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr.rowCount(), 1);
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr.data(mgr.index(0, 0), Qt::DisplayRole).toString().isEmpty());
+            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::CertificateRole).isNull());
+            QCOMPARE(mgr.data(mgr.index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
 #endif
         }
 

@@ -8,6 +8,7 @@
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
 #include "gpxexport.h"
+#include "healthcertificatemanager.h"
 #include "importexport.h"
 #include "livedatamanager.h"
 #include "logging.h"
@@ -174,6 +175,11 @@ void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
 void ApplicationController::setTripGroupManager(TripGroupManager *tripGroupMgr)
 {
     m_tripGroupMgr = tripGroupMgr;
+}
+
+void ApplicationController::setHealthCertificateManager(HealthCertificateManager *healthCertMgr)
+{
+    m_healthCertMgr = healthCertMgr;
 }
 
 #ifdef Q_OS_ANDROID
@@ -412,6 +418,7 @@ void ApplicationController::exportToFile(const QString &filePath)
     exporter.exportDocuments(m_docMgr);
     exporter.exportFavoriteLocations(m_favLocModel);
     exporter.exportTransfers(m_resMgr, m_transferMgr);
+    exporter.exportHealthCertificates(m_healthCertMgr);
     exporter.exportLiveData();
     exporter.exportSettings();
 }

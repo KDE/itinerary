@@ -9,6 +9,7 @@
 
 class DocumentManager;
 class FavoriteLocationModel;
+class HealthCertificateManager;
 class LiveDataManager;
 class PkPassManager;
 class ReservationManager;
@@ -29,6 +30,7 @@ public:
     void exportDocuments(const DocumentManager *docMgr);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
     void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
+    void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();
     void exportSettings();
 
