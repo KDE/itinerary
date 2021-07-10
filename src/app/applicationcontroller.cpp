@@ -314,7 +314,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
         return;
     }
-    if (f.size() > 4000000) {
+    if (f.size() > 4000000 && !f.fileName().endsWith(QLatin1String(".itinerary"))) {
         qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
         return;
     }
