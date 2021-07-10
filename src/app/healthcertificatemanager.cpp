@@ -50,6 +50,12 @@ static QString basePath()
 
 void HealthCertificateManager::importCertificate(const QByteArray &rawData)
 {
+    // check whether we know this certificate already
+    for (const auto &c : m_certificates) {
+        if (certificateRawData(c) == rawData) {
+            return;
+        }
+    }
 #if HAVE_KHEALTHCERTIFICATE
     CertData certData;
     certData.cert = KHealthCertificateParser::parse(rawData);
@@ -73,8 +79,6 @@ void HealthCertificateManager::importCertificate(const QByteArray &rawData)
     beginInsertRows({}, m_certificates.size(), m_certificates.size());
     m_certificates.push_back(std::move(certData));
     endInsertRows();
-#else
-    Q_UNUSED(rawData);
 #endif
 }
 
@@ -128,18 +132,7 @@ QVariant HealthCertificateManager::data(const QModelIndex &index, int role) cons
         case CertificateRole:
             return v.cert;
         case RawDataRole:
-#if HAVE_KHEALTHCERTIFICATE
-            if (v.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
-                return v.cert.value<KVaccinationCertificate>().rawData();
-            }
-            if (v.cert.userType() == qMetaTypeId<KTestCertificate>()) {
-                return v.cert.value<KTestCertificate>().rawData();
-            }
-            if (v.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
-                return v.cert.value<KRecoveryCertificate>().rawData();
-            }
-#endif
-            return {};
+            return certificateRawData(v);
         case StorageIdRole:
             return v.name;
     }
@@ -178,4 +171,20 @@ void HealthCertificateManager::loadCertificates()
         m_certificates.push_back(std::move(certData));
     }
     endResetModel();
+}
+
+QByteArray HealthCertificateManager::certificateRawData(const CertData &certData) const
+{
+#if HAVE_KHEALTHCERTIFICATE
+    if (certData.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
+        return certData.cert.value<KVaccinationCertificate>().rawData();
+    }
+    if (certData.cert.userType() == qMetaTypeId<KTestCertificate>()) {
+        return certData.cert.value<KTestCertificate>().rawData();
+    }
+    if (certData.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
+        return certData.cert.value<KRecoveryCertificate>().rawData();
+    }
+#endif
+    return {};
 }

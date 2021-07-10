@@ -40,12 +40,14 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 private:
-    void loadCertificates();
-
     struct CertData {
         QString name;
         QVariant cert;
     };
+
+    void loadCertificates();
+    QByteArray certificateRawData(const CertData &certData) const;
+
     std::vector<CertData> m_certificates;
 };
 

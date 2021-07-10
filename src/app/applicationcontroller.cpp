@@ -481,6 +481,7 @@ void ApplicationController::importBundle(KItinerary::File *file)
     importer.importDocuments(m_docMgr);
     importer.importFavoriteLocations(m_favLocModel);
     importer.importTransfers(m_resMgr, m_transferMgr);
+    importer.importHealthCertificates(m_healthCertMgr);
     importer.importLiveData(m_liveDataMgr);
     importer.importSettings();
 

@@ -49,6 +49,7 @@ public:
     void importDocuments(DocumentManager *docMgr);
     void importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
     void importFavoriteLocations(FavoriteLocationModel *favLocModel);
+    void importHealthCertificates(HealthCertificateManager *healthCertMgr);
     void importLiveData(LiveDataManager *liveDataMgr);
     void importSettings();
 

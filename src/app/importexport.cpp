@@ -191,6 +191,15 @@ void Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
     }
 }
 
+void Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
+{
+    const auto domain = QStringLiteral("org.kde.itinerary/health-certificates");
+    const auto certIds = m_file->listCustomData(domain);
+    for (const auto &certId : certIds) {
+        healthCertMgr->importCertificate(m_file->customData(domain, certId));
+    }
+}
+
 void Importer::importLiveData(LiveDataManager *liveDataMgr)
 {
     const auto ids = m_file->listCustomData(QStringLiteral("org.kde.itinerary/live-data"));
