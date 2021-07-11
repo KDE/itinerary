@@ -122,16 +122,12 @@ Kirigami.ScrollablePage {
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.TodayMarker
-            Item {
-                implicitHeight: visible ? label.implicitHeight : 0
+            QQC2.Label {
+                height: visible ? implicitHeight : 0
                 visible: model.isTodayEmpty
-                QQC2.Label {
-                    id: label
-                    anchors.fill: parent
-                    text: i18n("Nothing on the itinerary for today.");
-                    color: Kirigami.Theme.textColor
-                    horizontalAlignment: Qt.AlignHCenter
-                }
+                text: i18n("Nothing on the itinerary for today.");
+                color: Kirigami.Theme.textColor
+                horizontalAlignment: Qt.AlignHCenter
             }
         }
         Models.DelegateChoice {
