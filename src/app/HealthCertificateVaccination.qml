@@ -63,8 +63,9 @@ ColumnLayout {
             visible: certificate.vaccineType
         }
         QQC2.Label {
-            text: certificate.vaccine
+            text: certificate.vaccineUrl != "" ? '<a href="' + certificate.vaccineUrl + '">' + certificate.vaccine + '</a>' : certificate.vaccine
             Kirigami.FormData.label: i18n("Vaccine:")
+            onLinkActivated: Qt.openUrlExternally(link)
         }
         QQC2.Label {
             text: certificate.manufacturer
