@@ -63,8 +63,8 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.label: i18n("Online Services")
         }
 
-        QQC2.Switch {
-            Kirigami.FormData.label: i18n("Query Traffic Data")
+        QQC2.CheckBox {
+            text: i18n("Query Traffic Data")
             checked: Settings.queryLiveData
             onToggled: Settings.queryLiveData = checked
         }
@@ -72,10 +72,11 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.isSection: true
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
+            font: Kirigami.Theme.smallFont
             text: i18n("When enabled, this will query transport provider online services for changes such as delays or gate and platform changes.")
         }
-        QQC2.Switch {
-            Kirigami.FormData.label: i18n("Use insecure services")
+        QQC2.CheckBox {
+            text: i18n("Use insecure services")
             checked: LiveDataManager.publicTransportManager.allowInsecureBackends
             onToggled: LiveDataManager.publicTransportManager.allowInsecureBackends = checked
         }
@@ -85,6 +86,7 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
             text: i18n("Enabling this will also use online services that do not offer transport encryption. This is not recommended, but might be unavoidable when relying on live data from certain providers.")
             color: Kirigami.Theme.negativeTextColor
+            font: Kirigami.Theme.smallFont
         }
         QQC2.Button {
             Kirigami.FormData.isSection: true
@@ -93,9 +95,9 @@ Kirigami.ScrollablePage {
             onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
         }
 
-        QQC2.Switch {
+        QQC2.CheckBox {
             id: weatherSwitch
-            Kirigami.FormData.label: i18n("Weather Forecast")
+            text: i18n("Weather Forecast")
             checked: Settings.weatherForecastEnabled
             onToggled: Settings.weatherForecastEnabled = checked
         }
@@ -105,6 +107,7 @@ Kirigami.ScrollablePage {
             wrapMode: Text.WordWrap
             text: i18n("Showing weather forecasts will query online services.")
             visible: !weatherSwitch.checked
+            font: Kirigami.Theme.smallFont
         }
         // ATTENTION do not remove this note, see https://api.met.no/license_data.html
         QQC2.Label {
@@ -116,9 +119,9 @@ Kirigami.ScrollablePage {
             onLinkActivated: Qt.openUrlExternally(link)
         }
 
-        QQC2.Switch {
+        QQC2.CheckBox {
             id: autoMapDownload
-            Kirigami.FormData.label: i18n("Preload Map Data")
+            text: i18n("Preload Map Data")
             checked: Settings.preloadMapData
             onToggled: Settings.preloadMapData = checked
         }
@@ -127,6 +130,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
             text: i18n("Enabling this will download maps for all stations and airports for upcoming trips when connected to Wifi network.")
+            font: Kirigami.Theme.smallFont
         }
 
         // Transfer assistant
@@ -135,13 +139,13 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.label: i18n("Transfer Assistant")
         }
 
-        QQC2.Switch {
-            Kirigami.FormData.label: i18n("Automatically add transfers")
+        QQC2.CheckBox {
+            text: i18n("Automatically add transfers")
             checked: Settings.autoAddTransfers
             onToggled: Settings.autoAddTransfers = checked
         }
-        QQC2.Switch {
-            Kirigami.FormData.label: i18n("Automatically fill transfers")
+        QQC2.CheckBox {
+            text: i18n("Automatically fill transfers")
             checked: Settings.autoFillTransfers
             onToggled: Settings.autoFillTransfers = checked
             enabled: Settings.autoAddTransfers && Settings.queryLiveData
@@ -167,8 +171,8 @@ Kirigami.ScrollablePage {
             onClicked: NotificationConfigController.configureNotifications()
             enabled: NotificationConfigController.canConfigureNotification
         }
-        QQC2.Switch {
-            Kirigami.FormData.label: i18n("Show notifications on lock screen")
+        QQC2.CheckBox {
+            text: i18n("Show notifications on lock screen")
             checked: Settings.showNotificationOnLockScreen
             onToggled: Settings.showNotificationOnLockScreen = checked
             enabled: NotificationConfigController.canShowOnLockScreen
