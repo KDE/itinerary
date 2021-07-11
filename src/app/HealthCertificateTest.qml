@@ -63,19 +63,15 @@ ColumnLayout {
             visible: certificate.testType
         }
         QQC2.Label {
+            text: certificate.testUrl != "" ? '<a href="' + certificate.testUrl + '">' + certificate.testName + '</a>' : certificate.testName
+            visible: certificate.testName.length > 0
+            Kirigami.FormData.label: i18n("Test:")
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
+        QQC2.Label {
             text: certificate.resultString
             Kirigami.FormData.label: i18n("Result:")
             color: certificate.result == KHC.TestCertificate.Positive ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-        }
-        QQC2.Label {
-            text: certificate.naaTestName
-            visible: certificate.naaTestName.length > 0
-            Kirigami.FormData.label: i18n("NAA Test:")
-        }
-        QQC2.Label {
-            text: certificate.ratTest
-            visible: certificate.ratTest.length > 0
-            Kirigami.FormData.label: i18n("RAT Test:")
         }
         QQC2.Label {
             text: certificate.testCenter
