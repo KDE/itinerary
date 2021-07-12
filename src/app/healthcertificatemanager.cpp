@@ -194,10 +194,14 @@ QByteArray HealthCertificateManager::certificateRawData(const CertData &certData
 
 bool HealthCertificateManager::certLessThan(const CertData &lhs, const CertData &rhs)
 {
+#if HAVE_KHEALTHCERTIFICATE
     const auto lhsDt = KHealthCertificate::relevantUntil(lhs.cert);
     const auto rhsDt = KHealthCertificate::relevantUntil(rhs.cert);
     if (lhsDt == rhsDt) {
         return lhs.name < rhs.name;
     }
     return lhsDt > rhsDt;
+#else
+    return lhs.name < rhs.name;
+#endif
 }
