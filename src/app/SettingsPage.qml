@@ -114,6 +114,7 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.isSection:true
             Layout.fillWidth: true
             text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
+            font: Kirigami.Theme.smallFont
             visible: weatherSwitch.checked
             wrapMode: Text.WordWrap
             onLinkActivated: Qt.openUrlExternally(link)
@@ -155,6 +156,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
             text: i18n("When enabled, this will query transport provider online services automatically for transfer information.")
+            font: Kirigami.Theme.smallFont
             enabled: Settings.autoAddTransfers && Settings.queryLiveData
         }
 
