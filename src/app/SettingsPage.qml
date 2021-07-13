@@ -54,7 +54,7 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.isSection: true
             text: i18n("Favorite Locations")
             icon.name: "go-home-symbolic"
-            onClicked: applicationWindow().pageStack.push(favoriteLocationPage);
+            onClicked: applicationWindow().pageStack.layers.push(favoriteLocationPage);
         }
 
         // Online services
@@ -90,7 +90,7 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.isSection: true
             text: i18n("Public Transport Information Sources...")
             icon.name: "settings-configure"
-            onClicked: applicationWindow().pageStack.push(ptBackendPage)
+            onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
         }
 
         QQC2.Switch {
