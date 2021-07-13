@@ -59,6 +59,7 @@ Kirigami.Page {
             var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
             FavoriteLocationModel.setData(idx, map.center.latitude, FavoriteLocationModel.LatitudeRole);
             FavoriteLocationModel.setData(idx, map.center.longitude, FavoriteLocationModel.LongitudeRole);
+            applicationWindow().pageStack.goBack();
         }
     }
     actions.contextualActions: [
