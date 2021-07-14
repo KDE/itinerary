@@ -76,8 +76,10 @@ void HealthCertificateManager::importCertificate(const QByteArray &rawData)
     f.write(rawData);
     f.close();
 
-    beginInsertRows({}, m_certificates.size(), m_certificates.size());
-    m_certificates.push_back(std::move(certData));
+    const auto it = std::lower_bound(m_certificates.begin(), m_certificates.end(), certData, certLessThan);
+    const auto row = std::distance(m_certificates.begin(), it);
+    beginInsertRows({}, row, row);
+    m_certificates.insert(it, std::move(certData));
     endInsertRows();
 #endif
 }
@@ -170,6 +172,7 @@ void HealthCertificateManager::loadCertificates()
 
         m_certificates.push_back(std::move(certData));
     }
+    std::sort(m_certificates.begin(), m_certificates.end(), certLessThan);
     endResetModel();
 }
 
@@ -187,4 +190,18 @@ QByteArray HealthCertificateManager::certificateRawData(const CertData &certData
     }
 #endif
     return {};
+}
+
+bool HealthCertificateManager::certLessThan(const CertData &lhs, const CertData &rhs)
+{
+#if HAVE_KHEALTHCERTIFICATE
+    const auto lhsDt = KHealthCertificate::relevantUntil(lhs.cert);
+    const auto rhsDt = KHealthCertificate::relevantUntil(rhs.cert);
+    if (lhsDt == rhsDt) {
+        return lhs.name < rhs.name;
+    }
+    return lhsDt > rhsDt;
+#else
+    return lhs.name < rhs.name;
+#endif
 }

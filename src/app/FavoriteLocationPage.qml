@@ -39,7 +39,7 @@ Kirigami.Page {
         id: favoriteGpxExportDialog
         fileMode: Platform.FileDialog.SaveFile
         title: i18n("Export Favorite Locations")
-        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: FavoriteLocationModel.exportToGpx(file)
     }
@@ -47,7 +47,7 @@ Kirigami.Page {
         id: favoriteGpxImportDialog
         fileMode: Platform.FileDialog.OpenFile
         title: i18n("Import Favorite Locations")
-        folder: Platform.StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: FavoriteLocationModel.importFromGpx(file)
     }
@@ -59,6 +59,7 @@ Kirigami.Page {
             var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
             FavoriteLocationModel.setData(idx, map.center.latitude, FavoriteLocationModel.LatitudeRole);
             FavoriteLocationModel.setData(idx, map.center.longitude, FavoriteLocationModel.LongitudeRole);
+            applicationWindow().pageStack.goBack();
         }
     }
     actions.contextualActions: [

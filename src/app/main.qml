@@ -79,7 +79,8 @@ Kirigami.ApplicationWindow {
                 id: statsAction
                 text: i18n("Statistics")
                 iconName: "view-statistics"
-                onTriggered: pageStack.push(statisticsComponent)
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(statisticsComponent)
             },
             Kirigami.Action {
                 id: healtCertAction
@@ -87,15 +88,17 @@ Kirigami.ApplicationWindow {
                 iconName: "cross-shape"
                 onTriggered: {
                     healtCertificateComponent.source = "HealthCertificatePage.qml"
-                    pageStack.push(healtCertificateComponent.item)
+                    pageStack.layers.push(healtCertificateComponent.item)
                 }
+                enabled: pageStack.layers.depth < 2
                 visible: HealthCertificateManager.isAvailable
             },
             Kirigami.Action {
                 id: settingsAction
                 text: i18n("Settings...")
                 iconName: "settings-configure"
-                onTriggered: pageStack.push(settingsComponent)
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(settingsComponent)
             },
             Kirigami.Action {
                 text: i18n("Export...")
@@ -105,19 +108,22 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Help")
                 iconName: "help-contents"
-                onTriggered: pageStack.push(welcomeComponent)
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(welcomeComponent)
             },
             Kirigami.Action {
                 id: aboutAction
                 text: i18n("About")
                 iconName: "help-about-symbolic"
-                onTriggered: pageStack.push(aboutComponent)
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(aboutComponent)
             },
             Kirigami.Action {
                 id: devModeAction
                 text: "Development"
                 iconName: "tools-report-bug"
-                onTriggered: pageStack.push(devModePageComponent)
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(devModePageComponent)
                 visible: Settings.developmentMode
             }
         ]
@@ -164,25 +170,17 @@ Kirigami.ApplicationWindow {
     }
     Component {
         id: settingsComponent
-        App.SettingsPage {
-            id: settingsPage
-            onIsCurrentPageChanged: settingsAction.enabled = !settingsPage.isCurrentPage
-        }
+        App.SettingsPage {}
     }
     Component {
         id: aboutComponent
-        App.AboutPage {
-            id: aboutPage
-            onIsCurrentPageChanged: aboutAction.enabled = !aboutPage.isCurrentPage
-        }
+        App.AboutPage {}
     }
     Component {
         id: statisticsComponent
         App.StatisticsPage {
-            id: statsPage
             reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
-            onIsCurrentPageChanged: statsAction.enabled = !statsPage.isCurrentPage
         }
     }
         // replace loader with component once we depend on KHealthCertificate unconditionally

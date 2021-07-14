@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
 
         QQC2.Button {
             text: i18n("Got it!")
-            onClicked: applicationWindow().pageStack.pop();
+            onClicked: applicationWindow().pageStack.goBack();
             Layout.alignment: Qt.AlignRight
             visible: ReservationManager.isEmpty()
         }

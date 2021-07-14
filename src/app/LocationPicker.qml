@@ -27,7 +27,7 @@ Kirigami.Page {
         text: i18n("Pick Location")
         onTriggered: {
             coordinate = map.center;
-            applicationWindow().pageStack.pop();
+            applicationWindow().pageStack.goBack();
         }
     }
 

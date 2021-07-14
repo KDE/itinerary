@@ -44,6 +44,7 @@ private:
         QString name;
         QVariant cert;
     };
+    static bool certLessThan(const CertData &lhs, const CertData &rhs);
 
     void loadCertificates();
     QByteArray certificateRawData(const CertData &certData) const;
