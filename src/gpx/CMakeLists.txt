@@ -6,4 +6,4 @@ add_library(GpxIo STATIC
     gpxwriter.cpp
 )
 target_include_directories(GpxIo PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
-target_link_libraries(GpxIo PUBLIC Qt5::Core)
+target_link_libraries(GpxIo PUBLIC Qt::Core)

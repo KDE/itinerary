@@ -57,8 +57,8 @@ target_link_libraries(itinerary PUBLIC
     KF5::Contacts
     KF5::CoreAddons
     KF5::Notifications
-    Qt5::Network
-    Qt5::Quick
+    Qt::Network
+    Qt::Quick
 )
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
@@ -88,18 +88,18 @@ target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
     KOSMIndoorMap
-    Qt5::QuickControls2
+    Qt::QuickControls2
 )
 if (ANDROID)
     target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
-    target_link_libraries(itinerary PUBLIC Qt5::AndroidExtras KAndroidExtras)
+    target_link_libraries(itinerary PUBLIC Qt::AndroidExtras KAndroidExtras)
     target_link_libraries(itinerary-app PRIVATE
         KF5::Mime
         KF5::Archive
         KF5::Kirigami2
-        Qt5::Svg
+        Qt::Svg
         KF5::Prison
         OpenSSL::SSL
     )
@@ -181,10 +181,10 @@ if (ANDROID)
         weather-storm
     )
 else ()
-    target_link_libraries(itinerary PRIVATE Qt5::Positioning Qt5::DBus Qt5::Widgets)
+    target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
         KF5::DBusAddons
-        Qt5::Widgets
+        Qt::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()

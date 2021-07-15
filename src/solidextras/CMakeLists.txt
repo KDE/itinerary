@@ -22,9 +22,9 @@ else()
         solidlockbackend.cpp
         networkstatus_dbus.cpp
     )
-    qt5_add_dbus_interface(solidextras_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
-    qt5_add_dbus_interface(solidextras_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
-    qt5_add_dbus_interface(solidextras_srcs org.freedesktop.portal.NetworkMonitor.xml portalnetworkmonitor)
+    qt_add_dbus_interface(solidextras_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)
+    qt_add_dbus_interface(solidextras_srcs org.freedesktop.ScreenSaver.xml screensaverdbusinterface)
+    qt_add_dbus_interface(solidextras_srcs org.freedesktop.portal.NetworkMonitor.xml portalnetworkmonitor)
 endif()
 
 add_library(SolidExtras ${solidextras_srcs})
@@ -36,12 +36,12 @@ endif()
 configure_file(config-solid-extras.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-solid-extras.h)
 
 target_include_directories(SolidExtras PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
-target_link_libraries(SolidExtras PUBLIC Qt5::Core)
+target_link_libraries(SolidExtras PUBLIC Qt::Core)
 
 if (ANDROID)
-    target_link_libraries(SolidExtras PRIVATE Qt5::AndroidExtras)
+    target_link_libraries(SolidExtras PRIVATE Qt::AndroidExtras)
 else ()
-    target_link_libraries(SolidExtras PRIVATE Qt5::DBus)
+    target_link_libraries(SolidExtras PRIVATE Qt::DBus)
     if (TARGET KF5::NetworkManagerQt)
         target_link_libraries(SolidExtras PRIVATE KF5::NetworkManagerQt)
     endif()

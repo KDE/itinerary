@@ -22,10 +22,10 @@ if (NOT ANDROID)
 endif()
 
 generate_export_header(KAndroidExtras BASE_NAME KAndroidExtras)
-target_link_libraries(KAndroidExtras PUBLIC Qt5::Core)
+target_link_libraries(KAndroidExtras PUBLIC Qt::Core)
 
 if (ANDROID)
-    target_link_libraries(KAndroidExtras PUBLIC Qt5::AndroidExtras)
+    target_link_libraries(KAndroidExtras PUBLIC Qt::AndroidExtras)
 else()
     target_include_directories(KAndroidExtras PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/fake)
 endif()

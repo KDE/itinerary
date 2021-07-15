@@ -14,9 +14,9 @@ target_sources(itinerary-weather PRIVATE
 
 target_link_libraries(itinerary-weather
     PUBLIC
-        Qt5::Core
+        Qt::Core
     PRIVATE
-        Qt5::Network
+        Qt::Network
         ZLIB::ZLIB
 )
 if (TARGET KF5::Holidays)

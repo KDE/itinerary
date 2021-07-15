@@ -3,7 +3,7 @@
 
 add_library(solidextrasqmlplugin solidextrasqmlplugin.cpp)
 target_link_libraries(solidextrasqmlplugin
-    Qt5::Qml
+    Qt::Qml
     SolidExtras
 )
 
