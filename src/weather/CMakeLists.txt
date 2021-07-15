@@ -6,12 +6,12 @@ if (TARGET KF5::Holidays)
 endif()
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-weather.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-weather.h)
 
-set(weather_srcs
+add_library(itinerary-weather STATIC)
+target_sources(itinerary-weather PRIVATE
     weatherforecast.cpp
     weatherforecastmanager.cpp
 )
 
-add_library(itinerary-weather STATIC ${weather_srcs})
 target_link_libraries(itinerary-weather
     PUBLIC
         Qt5::Core

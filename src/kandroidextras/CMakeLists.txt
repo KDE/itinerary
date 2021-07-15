@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
-set(kandroidextras_srcs
+add_library(KAndroidExtras STATIC)
+
+target_sources(KAndroidExtras PRIVATE
     android/activity.cpp
     android/android_headers.cpp
     android/contentresolver.cpp
@@ -16,10 +18,9 @@ set(kandroidextras_srcs
 )
 
 if (NOT ANDROID)
-    list (APPEND kandroidextras_srcs fake/mock_impl.cpp)
+    target_sources(KAndroidExtras PRIVATE fake/mock_impl.cpp)
 endif()
 
-add_library(KAndroidExtras STATIC ${kandroidextras_srcs})
 generate_export_header(KAndroidExtras BASE_NAME KAndroidExtras)
 target_link_libraries(KAndroidExtras PUBLIC Qt5::Core)
 

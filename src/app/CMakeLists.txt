@@ -4,7 +4,8 @@
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.in ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
-set(itinerary_srcs
+add_library(itinerary STATIC)
+target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
@@ -37,14 +38,14 @@ set(itinerary_srcs
     transfermanager.cpp
     util.cpp
 )
-ecm_qt_declare_logging_category(itinerary_srcs
+ecm_qt_declare_logging_category(itinerary
     HEADER logging.h
     IDENTIFIER Log
     CATEGORY_NAME org.kde.itinerary
     DESCRIPTION "KDE Itinerary app"
     EXPORT ITINERARY 
 )
-add_library(itinerary STATIC ${itinerary_srcs})
+
 target_link_libraries(itinerary PUBLIC
     itinerary-weather
     SolidExtras
@@ -69,7 +70,8 @@ else ()
     set(qml_srcs qml.qrc)
 endif()
 
-set(itinerary_app_srcs
+add_executable(itinerary-app ${itinerary_app_srcs})
+target_sources(itinerary-app PRIVATE
     main.cpp
     countrymodel.cpp
     developmentmodecontroller.cpp
@@ -81,9 +83,7 @@ set(itinerary_app_srcs
     tickettokenmodel.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
-)
-
-add_executable(itinerary-app ${itinerary_app_srcs})
+    )
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
