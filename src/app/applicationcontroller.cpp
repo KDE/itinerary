@@ -22,6 +22,8 @@
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/ExtractorCapabilities>
+#include <KItinerary/ExtractorEngine>
+#include <KItinerary/ExtractorDocumentNode>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
@@ -330,7 +332,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         }
     } else {
         const auto data = f.readAll();
-        const auto resIds = m_resMgr->importReservation(data, f.fileName());
+        const auto resIds = importReservationOrHealthCertificate(data, f.fileName());
         if (resIds.empty()) {
             return;
         }
@@ -368,7 +370,7 @@ void ApplicationController::importData(const QByteArray &data)
             importBundle(data);
         }
     } else {
-        m_resMgr->importReservation(data);
+        importReservationOrHealthCertificate(data);
     }
 }
 
@@ -489,6 +491,40 @@ void ApplicationController::importBundle(KItinerary::File *file)
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
     if (!favLocs.empty()) {
         m_favLocModel->setFavoriteLocations(std::move(favLocs));
+    }
+}
+
+QVector<QString> ApplicationController::importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName)
+{
+    using namespace KItinerary;
+    ExtractorEngine engine;
+    engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+    engine.setData(data, fileName);
+    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    if (!resIds.isEmpty()) {
+        return resIds;
+    }
+
+    // look for health certificate barcodes instead
+    importHealthCertificateRecursive(engine.rootDocumentNode());
+
+    return {};
+}
+
+void ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
+{
+    if (node.childNodes().size() == 1 && node.mimeType() == QLatin1String("internal/qimage")) {
+        const auto &child = node.childNodes()[0];
+        if (child.isA<QString>()) {
+            return m_healthCertMgr->importCertificate(child.content<QString>().toUtf8());
+        }
+        if (child.isA<QByteArray>()) {
+            return m_healthCertMgr->importCertificate(child.content<QByteArray>());
+        }
+    }
+
+    for (const auto &child : node.childNodes()) {
+        importHealthCertificateRecursive(child);
     }
 }
 
