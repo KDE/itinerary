@@ -19,6 +19,7 @@ class TransferManager;
 class TripGroupManager;
 
 namespace KItinerary {
+class ExtractorDocumentNode;
 class File;
 }
 
@@ -81,6 +82,8 @@ Q_SIGNALS:
 private:
     void importLocalFile(const QUrl &url);
     void importBundle(KItinerary::File *file);
+    QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
+    void importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
 
     static ApplicationController *s_instance;
 
