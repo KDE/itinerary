@@ -377,6 +377,7 @@
       <li xml:lang="en-GB">Available dock-based or free-floating rental bikes can be displayed on the train station map.</li>
       <li xml:lang="es">Las bicicletas de alquiler disponibles en base o sin ella se pueden mostrar en el mapa de la estación de tren.</li>
       <li xml:lang="fr">Les vélos de location disponibles en libre service ou en station d'accueil peuvent être affichés sur la carte des gares. </li>
+      <li xml:lang="ia">Bicyclettas disponiile de locar basate sur bassino o libere de flottar pote esser monstrate sur le mapa de station de traino.</li>
       <li xml:lang="id">Penyewaan sepeda dock-based atau free-floating yang tersedia dapat ditampilkan di peta stasiun kereta.</li>
       <li xml:lang="it">Le biciclette a noleggio disponibili su rastrelliera o a flusso libero possono essere visualizzate sulla mappa della stazione ferroviaria.</li>
       <li xml:lang="ko">기차역 지도에 고정 스테이션에 있거나 고정되어 있지 않은 렌탈 자전거를 표시할 수 있습니다.</li>
@@ -397,6 +398,7 @@
       <li xml:lang="eu">Bidaia pertsonalen estatistikak ingurumen eragina gainbegiratzeko.</li>
       <li xml:lang="fi">Matkan henkilökohtaiset tilastot ympäristövaikutusten tarkkailemiseksi.</li>
       <li xml:lang="fr">Statistiques de voyages personnels pour calculer l'impact environnemental.</li>
+      <li xml:lang="ia">Statistica de viage personal a supervisionar impacto ambiental.</li>
       <li xml:lang="id">Statistik perjalanan pribadi untuk memantau dampak lingkungan.</li>
       <li xml:lang="it">Statistiche di viaggio personali per monitorare l'impatto ambientale.</li>
       <li xml:lang="ko">환경 영향을 계산하는 개인 여행 통계 정보를 제공합니다.</li>
@@ -419,6 +421,7 @@
     <p xml:lang="eu">KDE Itinerary hobe lan egiten du KMail-en ibilbide erauzle pluginaz eta KDE Connect-ekin, edo Nextcloud Hub eta DavDroid.</p>
     <p xml:lang="fi">KDE Itinerary toimii parhaiten yhdessä KMailin matkasuunnitelmatietoliitännäisen ja KDE Connectin tai Nextcloud Hubin ja DavDroidin kanssa.</p>
     <p xml:lang="fr">KDE Itinerary fonctionne au maximum de ses capacités avec le module d'extraction des itinéraires de KMail et KDE Connect, ou Nextcloud Hub et DavDroid.</p>
+    <p xml:lang="ia">KDE Itinerary functiona meliormente  con plugin de extraction de itinerario de KMail e KDE Connect, o Hub de Nextcloud e DavDroid.</p>
     <p xml:lang="id">KDE Itinerary bekerja paling baik dengan plugin itinerary extraction KMail dan KDE Connect, atau Nextcloud Hub dan DavDroid.</p>
     <p xml:lang="it">KDE Itinerary funziona meglio insieme all'estensione di estrazione degli itinerari di KMail e KDE Connect, o Nextcloud Hub e DavDroid.</p>
     <p xml:lang="ko">KDE 여행 정보는 KMail의 여행 정보 추천 플러그인, KDE Connect, Nextcloud 허브 및 DavDroid와 같이 작동합니다.</p>
@@ -490,6 +493,7 @@
       <caption xml:lang="es">Vista del esquema del tren resaltando el coche con reserva de asiento</caption>
       <caption xml:lang="fi">Junan vaunukartta, joka korostaa varatun paikan</caption>
       <caption xml:lang="fr">Affichage de la composition du train, détaillant la voiture où le siège est réservé.</caption>
+      <caption xml:lang="ia">Dispoition de traino evidentiante le carrossa con un reservation de placia</caption>
       <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi</caption>
       <caption xml:lang="it">Vista della disposizione del treno che evidenzia la carrozza con la prenotazione di un posto</caption>
       <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기</caption>
@@ -511,6 +515,7 @@
       <caption xml:lang="es">Mapa de andenes de estación de tren, resaltando andenes de llegada y salida</caption>
       <caption xml:lang="fi">Rautatieaseman kartta, joka korostaa lähtö- ja saapumislaiturit</caption>
       <caption xml:lang="fr">La carte des quais de gare, détaillant les quais d'arrivée et de départ.</caption>
+      <caption xml:lang="ia">Mappa de platteforma de station de traino, evidentiante platteformas de arrivata e partita</caption>
       <caption xml:lang="id">Peta platform stasiun kereta, menyoroti platform kedatangan dan keberangkatan</caption>
       <caption xml:lang="it">Mappa dei binari della stazione ferroviaria, evidenziando i binari di arrivo e partenza</caption>
       <caption xml:lang="ko">출발 및 도착 승강장을 강조한 기차역 승강장 지도</caption>
@@ -531,6 +536,7 @@
       <caption xml:lang="en-GB">Train station map showing real-time availability of rental bikes</caption>
       <caption xml:lang="es">Mapa de estación de tren mostrando la disponibilidad de bicicletas de alquiler en tiempo real</caption>
       <caption xml:lang="fr">La carte de la gare ferroviaire affichant la disponibilité en temps réel des vélos de location.</caption>
+      <caption xml:lang="ia">Mappa de station de traino monstrante disponibilitate in tempore actual de bicyclettas a locar</caption>
       <caption xml:lang="it">Mappa della stazione ferroviaria che mostra la disponibilità in tempo reale delle biciclette a noleggio</caption>
       <caption xml:lang="ko">실시간 렌탈 자전거 상황을 표시하는 기차역 지도</caption>
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen</caption>
@@ -551,6 +557,7 @@
       <caption xml:lang="es">Información detallada para la entidad seleccionada en el mapa de la estación de tren</caption>
       <caption xml:lang="fi">Yksityiskohtainen tieto rautatieasemakartalta valitusta kohteesta</caption>
       <caption xml:lang="fr">Informations détaillées pour l'entité sélectionnée sur la carte de la gare.</caption>
+      <caption xml:lang="ia">Information detaliate per le entitate de seliger sur le mappa de station de traino</caption>
       <caption xml:lang="id">Informasi mendetail untuk entitas yang dipilih di peta stasiun kereta</caption>
       <caption xml:lang="it">Informazioni dettagliate per l'entità selezionata sulla mappa della stazione ferroviaria</caption>
       <caption xml:lang="ko">기차역 지도에서 선택한 항목의 자세한 정보</caption>
