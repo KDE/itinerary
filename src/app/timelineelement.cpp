@@ -61,14 +61,13 @@ static bool operator<(TimelineElement::RangeType lhs, TimelineElement::RangeType
 bool TimelineElement::operator<(const TimelineElement &other) const
 {
     if (dt == other.dt) {
-        bool typeOrder = elementType < other.elementType;
         if (rangeType == RangeEnd || other.rangeType == RangeEnd) {
             if (rangeType == RangeBegin || other.rangeType == RangeBegin) {
                 return rangeType < other.rangeType;
             }
-            return !typeOrder;
+            return elementType > other.elementType;
         }
-        return typeOrder;
+        return elementType < other.elementType;
     }
     return dt < other.dt;
 }
