@@ -86,5 +86,7 @@ void Gpx::Writer::writeLink(const QString &href, const QString &text)
 
 void Gpx::Writer::writeTime(const QDateTime &time)
 {
-    m_writer.writeTextElement(QStringLiteral("time"), time.toString(Qt::ISODate));
+    if (time.isValid()) {
+        m_writer.writeTextElement(QStringLiteral("time"), time.toString(Qt::ISODate));
+    }
 }

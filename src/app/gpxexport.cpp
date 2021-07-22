@@ -77,7 +77,7 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
         writeTransfer(after);
         m_writer.writeEndRoute();
 
-        // waypoints for departure/arrival
+        // waypoint for departure
         auto coord = LocationUtil::geo(dep);
         if (coord.isValid()) {
             m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
@@ -86,6 +86,18 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
             m_writer.writeEndWaypoint();
         }
 
+        // waypoints for intermediate stops
+        for (const auto &stop : journey.intermediateStops()) {
+            if (!stop.stopPoint().hasCoordinate()) {
+                continue;
+            }
+            m_writer.writeStartWaypoint(stop.stopPoint().latitude(), stop.stopPoint().longitude());
+            m_writer.writeName(stop.stopPoint().name());
+            m_writer.writeTime(stop.hasExpectedDepartureTime() ? stop.expectedDepartureTime() : stop.scheduledDepartureTime());
+            m_writer.writeEndWaypoint();
+        }
+
+        // waypoint for arrival
         coord = LocationUtil::geo(arr);
         if (coord.isValid()) {
             m_writer.writeStartWaypoint(coord.latitude(), coord.longitude());
@@ -144,6 +156,7 @@ void GpxExport::writeJourneySection(const KPublicTransport::JourneySection &sect
 
     if (section.path().isEmpty()) {
         m_writer.writeStartRoutePoint(section.from().latitude(), section.from().longitude());
+        m_writer.writeName(section.from().name());
         m_writer.writeTime(section.hasExpectedDepartureTime() ? section.expectedDepartureTime() : section.scheduledDepartureTime());
         m_writer.writeEndRoutePoint();
 
@@ -155,11 +168,12 @@ void GpxExport::writeJourneySection(const KPublicTransport::JourneySection &sect
         }
 
         m_writer.writeStartRoutePoint(section.to().latitude(), section.to().longitude());
+        m_writer.writeName(section.to().name());
         m_writer.writeTime(section.hasExpectedArrivalTime() ? section.expectedArrivalTime() : section.scheduledArrivalTime());
         m_writer.writeEndRoutePoint();
     } else {
         for (const auto &pathSec : section.path().sections()) {
-            // TODO name?
+            // TODO name/time
             for (const auto &pt : pathSec.path()) {
                 m_writer.writeStartRoutePoint(pt.y(), pt.x());
                 m_writer.writeEndRoutePoint();
