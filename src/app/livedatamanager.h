@@ -22,6 +22,7 @@ class TrainTrip;
 }
 
 namespace KPublicTransport {
+class JourneyReply;
 class JourneySection;
 class Manager;
 class StopoverReply;
@@ -86,8 +87,11 @@ private:
     void checkReservation(const QVariant &res, const QString &resId);
     void stopoverQueryFinished(KPublicTransport::StopoverReply *reply, LiveData::Type type, const QString &resId);
     void stopoverQueryFinished(std::vector<KPublicTransport::Stopover> &&result, LiveData::Type type, const QString &resId);
+    void journeyQueryFinished(KPublicTransport::JourneyReply *reply, const QString &resId);
 
     void updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res);
+    void updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res);
+
     void showNotification(const QString &resId, const LiveData &ld);
     void fillNotification(KNotification *n, const LiveData &ld) const;
     void cancelNotification(const QString &resId);

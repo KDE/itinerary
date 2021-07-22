@@ -19,6 +19,8 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/JourneyReply>
+#include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
 #include <KPublicTransport/StopoverReply>
@@ -163,9 +165,33 @@ static bool isArrivalForReservation(const QVariant &res, const KPublicTransport:
         && isSameLine(arr.route().line(), lineData.first, lineData.second);
 }
 
+static bool isJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey)
+{
+    const auto lineData = ReservationHelper::lineNameAndNumber(res);
+    return PublicTransport::isSameMode(res, journey.route().line().mode())
+        && SortUtil::startDateTime(res) == journey.scheduledDepartureTime()
+        && SortUtil::endDateTime(res) == journey.scheduledArrivalTime()
+        && isSameLine(journey.route().line(), lineData.first, lineData.second);
+}
+
 void LiveDataManager::checkReservation(const QVariant &res, const QString& resId)
 {
     using namespace KPublicTransport;
+    const auto arrived = hasArrived(resId, res);
+
+    // load full journey if we don't have one yet
+    if (!arrived && data(resId).journey.mode() == JourneySection::Invalid) {
+        const auto from = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res);
+        const auto to = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res);
+        JourneyRequest req(from, to);
+        req.setDateTime(SortUtil::startDateTime(res));
+        req.setDateTimeMode(JourneyRequest::Departure);
+        req.setIncludeIntermediateStops(true);
+        req.setIncludePaths(true);
+        auto reply = m_ptMgr->queryJourney(req);
+        connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
+        return;
+    }
 
     if (!hasDeparted(resId, res)) {
         StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
@@ -175,7 +201,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
     }
 
-    if (!hasArrived(resId, res)) {
+    if (!arrived) {
         StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
         req.setMode(StopoverRequest::QueryArrival);
         req.setDateTime(SortUtil::endDateTime(res));
@@ -210,6 +236,35 @@ void LiveDataManager::stopoverQueryFinished(std::vector<KPublicTransport::Stopov
     data(resId).setTimestamp(type, now());
 }
 
+void LiveDataManager::journeyQueryFinished(KPublicTransport::JourneyReply *reply, const QString &resId)
+{
+    reply->deleteLater();
+    if (reply->error() != KPublicTransport::Reply::NoError) {
+        qCDebug(Log) << reply->error() << reply->errorString();
+        return;
+    }
+
+    using namespace KPublicTransport;
+    const auto res = m_resMgr->reservation(resId);
+    for (const auto &journey : reply->result()) {
+        if (std::count_if(journey.sections().begin(), journey.sections().end(), [](const auto &sec) { return sec.mode() == JourneySection::PublicTransport; }) != 1) {
+            continue;
+        }
+        const auto it = std::find_if(journey.sections().begin(), journey.sections().end(), [](const auto &sec) { return sec.mode() == JourneySection::PublicTransport; });
+        assert(it != journey.sections().end());
+        qCDebug(Log) << "Got journey information:" << (*it).route().line().name() << (*it).scheduledDepartureTime();
+        if (isJourneyForReservation(res, (*it))) {
+            qCDebug(Log) << "Found journey information:" << (*it).route().line().name() << (*it).expectedDeparturePlatform() << (*it).expectedDepartureTime();
+            updateJourneyData((*it), resId, res);
+            return;
+        }
+    }
+
+    // record this is a failed lookup so we don't try again
+    data(resId).setTimestamp(LiveData::Arrival, now());
+    data(resId).setTimestamp(LiveData::Departure, now());
+}
+
 void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
 {
     auto &ld = data(resId);
@@ -229,6 +284,37 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
 
     // check if we need to notify
     if (NotificationHelper::shouldNotify(oldStop, stop, type)) {
+        showNotification(resId, ld);
+    }
+}
+
+void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
+{
+    auto &ld = data(resId);
+    const auto oldDep = ld.stopover(LiveData::Departure);
+    const auto oldArr = ld.stopover(LiveData::Arrival);
+    ld.journey = journey;
+    ld.journeyTimestamp = now();
+    ld.departure = journey.departure();
+    ld.departureTimestamp = now();
+    ld.arrival = journey.arrival();
+    ld.arrivalTimestamp = now();
+    ld.store(resId, LiveData::AllTypes);
+
+    // update reservation with live data
+    const auto newRes = PublicTransport::mergeJourney(res, journey);
+    if (!ReservationHelper::equals(res, newRes)) {
+        m_resMgr->updateReservation(resId, newRes);
+    }
+
+    // emit update signals
+    Q_EMIT journeyUpdated(resId);
+    Q_EMIT departureUpdated(resId);
+    Q_EMIT arrivalUpdated(resId);
+
+    // check if we need to notify
+    if (NotificationHelper::shouldNotify(oldDep, journey.departure(), LiveData::Departure) ||
+        NotificationHelper::shouldNotify(oldArr, journey.arrival(), LiveData::Arrival)) {
         showNotification(resId, ld);
     }
 }
@@ -384,11 +470,12 @@ void LiveDataManager::batchChanged(const QString &resId)
             Q_EMIT arrivalUpdated(resId);
         }
 
-        // TODO check if the change made this necessary at all
-        (*dataIt).journey = {};
-        (*dataIt).journeyTimestamp = {};
-        (*dataIt).store(resId, LiveData::Journey);
-        Q_EMIT journeyUpdated(resId);
+        if ((*dataIt).journeyTimestamp.isValid() && !isJourneyForReservation(res, (*dataIt).journey)) {
+            (*dataIt).journey = {};
+            (*dataIt).journeyTimestamp = {};
+            (*dataIt).store(resId, LiveData::Journey);
+            Q_EMIT journeyUpdated(resId);
+        }
     }
 
     m_pollTimer.setInterval(nextPollTime());

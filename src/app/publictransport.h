@@ -64,6 +64,7 @@ public:
      */
     static QVariant mergeDeparture(const QVariant &res, const KPublicTransport::Stopover &dep);
     static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr);
+    static QVariant mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey);
 
     /** Checks if the given reservation and journey section have a compatible mode of transportation. */
     static bool isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode);

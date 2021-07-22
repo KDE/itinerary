@@ -291,6 +291,13 @@ QVariant PublicTransport::mergeArrival(const QVariant &res, const KPublicTranspo
     return MergeUtil::merge(newRes, res);
 }
 
+QVariant PublicTransport::mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey)
+{
+    auto newRes = mergeDeparture(res, journey.departure());
+    newRes = mergeArrival(newRes, journey.arrival());
+    return newRes;
+}
+
 bool PublicTransport::isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
