@@ -27,6 +27,7 @@
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
+#include <KAboutData>
 #include <KLocalizedString>
 
 #include <QBuffer>
@@ -594,3 +595,10 @@ QString ApplicationController::extractorCapabilities() const
 {
     return ExtractorCapabilities::capabilitiesString();
 }
+
+QVariant ApplicationController::aboutData() const
+{
+    return QVariant::fromValue(KAboutData::applicationData());
+}
+
+#include "moc_applicationcontroller.cpp"

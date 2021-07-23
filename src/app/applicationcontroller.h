@@ -35,6 +35,7 @@ class ApplicationController : public QObject
     Q_PROPERTY(bool hasClipboardContent READ hasClipboardContent NOTIFY clipboardContentChanged)
     Q_PROPERTY(QString version READ applicationVersion CONSTANT)
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
+    Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController();
@@ -75,6 +76,7 @@ public:
     // about information
     QString applicationVersion() const;
     QString extractorCapabilities() const;
+    QVariant aboutData() const;
 
 Q_SIGNALS:
     void clipboardContentChanged();
