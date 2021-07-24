@@ -61,7 +61,6 @@ Kirigami.AbstractCard {
     contentItem: Column {
         id: contentLayout
         spacing: Kirigami.Units.smallSpacing
-        visible: root.rangeType != TimelineElement.RangeEnd
 
         QQC2.Label {
             text: i18np("Date: %2 (one day)", "Date: %2 (%1 days)",
@@ -125,11 +124,13 @@ Kirigami.AbstractCard {
                 }
             }
         }
+    }
 
-        Component.onCompleted: {
-            // hide content entirely in the header-only end elements
-            parent.visible = contentLayout.visible
-        }
+    // hide content entirely in the header-only end elements
+    Binding {
+        target: contentItem.parent
+        property: "visible"
+        value: rangeType != TimelineElement.RangeEnd
     }
 
     onClicked: {
