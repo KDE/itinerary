@@ -509,6 +509,7 @@ KPublicTransport::JourneyRequest TransferManager::journeyRequestForTransfer(cons
     req.setDownloadAssets(true);
     req.setIncludeIntermediateStops(true);
     req.setIncludePaths(true);
+    req.setMaximumResults(6);
     return req;
 }
 
