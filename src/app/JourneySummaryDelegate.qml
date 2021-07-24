@@ -61,7 +61,7 @@ RowLayout {
         }
     }
     QQC2.Label {
-        text: i18np("One change", "%1 changes", journey.numberOfChanges)
+        text: i18ncp("number of switches to another transport", "One change", "%1 changes", journey.numberOfChanges)
         Layout.fillWidth: true
     }
 
