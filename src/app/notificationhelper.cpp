@@ -27,7 +27,9 @@ bool NotificationHelper::shouldNotify(const Stopover &oldStop, const Stopover &n
     }
 
     // platform changed
-    if (newStop.hasExpectedPlatform() && oldStop.expectedPlatform() != newStop.expectedPlatform()) {
+    if ((newStop.hasExpectedPlatform() && oldStop.hasExpectedPlatform() && oldStop.expectedPlatform() != newStop.expectedPlatform())
+        || (!oldStop.hasExpectedPlatform() && newStop.platformChanged()))
+    {
         return true;
     }
 
