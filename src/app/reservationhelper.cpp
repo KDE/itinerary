@@ -8,6 +8,7 @@
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/Flight>
+#include <KItinerary/Person>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
