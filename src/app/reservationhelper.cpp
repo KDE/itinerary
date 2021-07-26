@@ -10,10 +10,20 @@
 #include <KItinerary/Flight>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
+#include <KItinerary/Ticket>
 
 #include <QDateTime>
 
 using namespace KItinerary;
+
+void ReservationHelper::setup()
+{
+    QMetaType::registerEqualsComparator<BusTrip>();
+    QMetaType::registerEqualsComparator<Flight>();
+    QMetaType::registerEqualsComparator<Person>();
+    QMetaType::registerEqualsComparator<Ticket>();
+    QMetaType::registerEqualsComparator<TrainTrip>();
+}
 
 std::pair<QString, QString> ReservationHelper::lineNameAndNumber(const QVariant &res)
 {

@@ -16,6 +16,11 @@ class QVariant;
 /** Helper methods for dealing with KItinerary reservation elements. */
 namespace ReservationHelper
 {
+    /** Type registration setup.
+     *  @todo This should happen automatically in KItinerary!
+     */
+    void setup();
+
     std::pair<QString, QString> lineNameAndNumber(const QVariant &res);
 
     bool equals(const QVariant &lhs, const QVariant &rhs);
