@@ -109,6 +109,19 @@ void MapDownloadManager::addRequest(double lat, double lon, const QDateTime &cac
         return;
     }
 
+    // check if we already have this cached
+    for (auto it = m_cachedRequests.begin(); it != m_cachedRequests.end(); ++it) {
+        if (LocationUtil::distance(lat, lon, (*it).lat, (*it).lon) > 10.0) {
+            continue;
+        }
+        if ((*it).cacheUntil >= cacheUntil) {
+            return;
+        }
+        m_cachedRequests.erase(it);
+        break;
+    }
+
+    // check if there is a pending request that would cover this
     for (auto &req : m_pendingRequests) {
         if (LocationUtil::distance(req.lat, req.lon, lat, lon) < 10.0) {
             req.cacheUntil = std::max(req.cacheUntil, cacheUntil);
@@ -125,18 +138,19 @@ void MapDownloadManager::downloadNext()
         return;
     }
 
-    const auto req = std::move(m_pendingRequests.back());
+    m_currentRequest = std::move(m_pendingRequests.back());
     m_pendingRequests.pop_back();
 
     m_loader = new KOSMIndoorMap::MapLoader(this);
     connect(m_loader, &KOSMIndoorMap::MapLoader::done, this, &MapDownloadManager::downloadFinished);
-    m_loader->loadForCoordinate(req.lat, req.lon, req.cacheUntil);
+    m_loader->loadForCoordinate(m_currentRequest.lat, m_currentRequest.lon, m_currentRequest.cacheUntil);
 }
 
 void MapDownloadManager::downloadFinished()
 {
     m_loader->deleteLater();
     m_loader = nullptr;
+    m_cachedRequests.push_back(std::move(m_currentRequest));
 
     if (m_pendingRequests.empty()) {
         Q_EMIT finished();

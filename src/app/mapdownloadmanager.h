@@ -63,6 +63,8 @@ private:
         QDateTime cacheUntil;
     };
     std::vector<Request> m_pendingRequests;
+    std::vector<Request> m_cachedRequests;
+    Request m_currentRequest;
 
     KOSMIndoorMap::MapLoader *m_loader = nullptr;
     SolidExtras::NetworkStatus *m_netStatus = nullptr;
