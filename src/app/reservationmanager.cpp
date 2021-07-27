@@ -6,6 +6,7 @@
 
 #include "reservationmanager.h"
 #include "pkpassmanager.h"
+#include "reservationhelper.h"
 #include "logging.h"
 
 #include <KItinerary/ExtractorEngine>
@@ -55,6 +56,8 @@ static bool isSameTrip(const QVariant &lhs, const QVariant &rhs)
 ReservationManager::ReservationManager(QObject* parent)
     : QObject(parent)
 {
+    ReservationHelper::setup();
+
     m_validator.setAcceptedTypes<
         BusReservation,
         EventReservation,
