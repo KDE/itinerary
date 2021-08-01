@@ -75,18 +75,22 @@ private Q_SLOTS:
         QVERIFY(resSpy.isValid());
 
         ApplicationController appController;
+        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
 
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(passSpy.size(), 0);
+        QCOMPARE(infoSpy.size(), 1);
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        QCOMPARE(resSpy.size(), 1);
-        QCOMPARE(passSpy.size(), 1);
-        appController.importData("M1DOE/JOHN            EXXX007 TXLBRUSN 2592 110Y");
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(infoSpy.size(), 2);
+        appController.importData("M1DOE/JOHN            EXXX007 TXLBRUSN 2592 110Y");
+        QCOMPARE(resSpy.size(), 3);
+        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(infoSpy.size(), 3);
         // TODO PDF
     }
 
@@ -103,15 +107,18 @@ private Q_SLOTS:
         QVERIFY(resSpy.isValid());
 
         ApplicationController appController;
+        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(passSpy.size(), 0);
+        QCOMPARE(infoSpy.size(), 1);
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        QCOMPARE(resSpy.size(), 1);
+        QCOMPARE(resSpy.size(), 2);
         QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(infoSpy.size(), 2);
         // TODO PDF
     }
 
@@ -137,6 +144,7 @@ private Q_SLOTS:
         HealthCertificateManager healthCertMgr;
 
         ApplicationController appController;
+        QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
@@ -146,17 +154,19 @@ private Q_SLOTS:
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(passMgr.passes().size(), 1);
+        QCOMPARE(infoSpy.size(), 2);
 
         QTemporaryFile tmp;
         QVERIFY(tmp.open());
         tmp.close();
         appController.exportToFile(tmp.fileName());
+        QCOMPARE(infoSpy.size(), 3);
 
         KItinerary::File f(tmp.fileName());
         QVERIFY(f.open(KItinerary::File::Read));
-        QCOMPARE(f.reservations().size(), 1);
+        QCOMPARE(f.reservations().size(), 2);
         QCOMPARE(f.passes().size(), 1);
 
         clearPasses(&passMgr);
@@ -166,8 +176,9 @@ private Q_SLOTS:
         QCOMPARE(passMgr.passes().size(), 0);
 
         appController.importFromUrl(QUrl::fromLocalFile(tmp.fileName()));
-        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(passMgr.passes().size(), 1);
+        QCOMPARE(infoSpy.size(), 4);
 
         clearPasses(&passMgr);
         clearReservations(&resMgr);
@@ -177,8 +188,9 @@ private Q_SLOTS:
         QFile bundle(tmp.fileName());
         QVERIFY(bundle.open(QFile::ReadOnly));
         appController.importData(bundle.readAll());
-        QCOMPARE(resMgr.batches().size(), 1);
+        QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(passMgr.passes().size(), 1);
+        QCOMPARE(infoSpy.size(), 5);
     }
 };
 

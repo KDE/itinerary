@@ -81,11 +81,15 @@ public:
 Q_SIGNALS:
     void clipboardContentChanged();
 
+    /** Human readable information message to be shown as passive notification. */
+    void infoMessage(const QString &msg);
+
 private:
     void importLocalFile(const QUrl &url);
     void importBundle(KItinerary::File *file);
     QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
     void importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
+    void importPass(const QString &passId);
 
     static ApplicationController *s_instance;
 

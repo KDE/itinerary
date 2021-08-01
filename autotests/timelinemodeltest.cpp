@@ -6,6 +6,7 @@
 
 #include "modelverificationpoint.h"
 
+#include <applicationcontroller.h>
 #include <favoritelocationmodel.h>
 #include <locationinformation.h>
 #include <pkpassmanager.h>
@@ -112,8 +113,10 @@ private Q_SLOTS:
         clearPasses(&mgr);
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setPkPassManager(&mgr);
+        ctrl.setReservationManager(&resMgr);
 
-        resMgr.setPkPassManager(&mgr);
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);

@@ -38,8 +38,6 @@ public:
     explicit ReservationManager(QObject *parent = nullptr);
     ~ReservationManager();
 
-    void setPkPassManager(PkPassManager *mgr);
-
     Q_INVOKABLE bool isEmpty() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
@@ -91,17 +89,10 @@ Q_SIGNALS:
     void batchRenamed(const QString &oldBatchId, const QString &newBatchId);
     void batchRemoved(const QString &batchId);
 
-    /** Human readable information message. */
-    void infoMessage(const QString &msg);
-
 private:
     static QString reservationsBasePath();
     static QString batchesBasePath();
     void storeReservation(const QString &resId, const QVariant &res) const;
-
-    void passAdded(const QString &passId);
-    void passUpdated(const QString &passId);
-    void passRemoved(const QString &passId);
 
     void loadBatches();
     void initialBatchCreate();
@@ -120,8 +111,6 @@ private:
     std::vector<QString> m_batches;
     QHash<QString, QStringList> m_batchToResMap; // ### QStringList for direct consumption by QML
     QHash<QString, QString> m_resToBatchMap;
-
-    PkPassManager *m_passMgr = nullptr;
 };
 
 #endif // RESERVATIONMANAGER_H

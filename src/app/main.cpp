@@ -248,7 +248,6 @@ int main(int argc, char **argv)
     s_pkPassManager = &passMgr;
 
     ReservationManager resMgr;
-    resMgr.setPkPassManager(&passMgr);
     s_reservationManager = &resMgr;
 
     DocumentManager docMgr;

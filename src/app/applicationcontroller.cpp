@@ -27,6 +27,8 @@
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
 
+#include <KPkPass/Pass>
+
 #include <KAboutData>
 #include <KLocalizedString>
 
@@ -153,6 +155,8 @@ void ApplicationController::setReservationManager(ReservationManager* resMgr)
 void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
+    connect(m_pkPassMgr, &PkPassManager::passAdded, this, &ApplicationController::importPass);
+    connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::importPass);
 }
 
 void ApplicationController::setDocumentManager(DocumentManager* docMgr)
@@ -295,6 +299,7 @@ void ApplicationController::importFromUrl(const QUrl &url)
         connect(reply, &QNetworkReply::finished, this, [this, reply]() {
             if (reply->error() != QNetworkReply::NoError) {
                 qCDebug(Log) << reply->url() << reply->errorString();
+                Q_EMIT infoMessage(i18n("Download failed: %1", reply->errorString()));
                 return;
             }
             importData(reply->readAll());
@@ -315,10 +320,12 @@ void ApplicationController::importLocalFile(const QUrl &url)
     QFile f(url.isLocalFile() ? url.toLocalFile() : url.toString());
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
+        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
     if (f.size() > 4000000 && !f.fileName().endsWith(QLatin1String(".itinerary"))) {
         qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
+        Q_EMIT infoMessage(i18n("Import failed: File too large."));
         return;
     }
 
@@ -411,7 +418,7 @@ void ApplicationController::exportToFile(const QString &filePath)
     File f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString();
-        // TODO show error in UI
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
         return;
     }
 
@@ -424,6 +431,7 @@ void ApplicationController::exportToFile(const QString &filePath)
     exporter.exportHealthCertificates(m_healthCertMgr);
     exporter.exportLiveData();
     exporter.exportSettings();
+    Q_EMIT infoMessage(i18n("Export completed."));
 }
 
 void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QString &filePath)
@@ -435,6 +443,7 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QS
     QFile f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << f.errorString() << f.fileName();
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
         return;
     }
     GpxExport exporter(&f);
@@ -447,14 +456,15 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QS
         const auto transferAfter = m_transferMgr->transfer(batchId, Transfer::After);
         exporter.writeReservation(res, m_liveDataMgr->journey(batchId), transferBefore, transferAfter);
     }
+    Q_EMIT infoMessage(i18n("Export completed."));
 }
 
 void ApplicationController::importBundle(const QUrl &url)
 {
     KItinerary::File f(url.isLocalFile() ? url.toLocalFile() : url.toString());
     if (!f.open(File::Read)) {
-        // TODO show error in the ui
         qCWarning(Log) << "Failed to open bundle file:" << url << f.errorString();
+        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
 
@@ -468,8 +478,8 @@ void ApplicationController::importBundle(const QByteArray &data)
     buffer.open(QBuffer::ReadOnly);
     KItinerary::File f(&buffer);
     if (!f.open(File::Read)) {
-        // TODO show error in the ui
         qCWarning(Log) << "Failed to open bundle data:" << f.errorString();
+        Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
 
@@ -479,20 +489,25 @@ void ApplicationController::importBundle(const QByteArray &data)
 void ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
-    importer.importReservations(m_resMgr);
-    importer.importPasses(m_pkPassMgr);
-    importer.importDocuments(m_docMgr);
-    importer.importFavoriteLocations(m_favLocModel);
-    importer.importTransfers(m_resMgr, m_transferMgr);
-    importer.importHealthCertificates(m_healthCertMgr);
-    importer.importLiveData(m_liveDataMgr);
-    importer.importSettings();
+    {
+        QSignalBlocker blocker(this); // suppress infoMessage()
+        importer.importReservations(m_resMgr);
+        importer.importPasses(m_pkPassMgr);
+        importer.importDocuments(m_docMgr);
+        importer.importFavoriteLocations(m_favLocModel);
+        importer.importTransfers(m_resMgr, m_transferMgr);
+        importer.importHealthCertificates(m_healthCertMgr);
+        importer.importLiveData(m_liveDataMgr);
+        importer.importSettings();
+    }
 
     // favorite locations
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
     if (!favLocs.empty()) {
         m_favLocModel->setFavoriteLocations(std::move(favLocs));
     }
+
+    Q_EMIT infoMessage(i18n("Import completed."));
 }
 
 QVector<QString> ApplicationController::importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName)
@@ -503,6 +518,7 @@ QVector<QString> ApplicationController::importReservationOrHealthCertificate(con
     engine.setData(data, fileName);
     const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
     if (!resIds.isEmpty()) {
+        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
         return resIds;
     }
 
@@ -526,6 +542,17 @@ void ApplicationController::importHealthCertificateRecursive(const ExtractorDocu
 
     for (const auto &child : node.childNodes()) {
         importHealthCertificateRecursive(child);
+    }
+}
+
+void ApplicationController::importPass(const QString &passId)
+{
+    const auto pass = m_pkPassMgr->pass(passId);
+    KItinerary::ExtractorEngine engine;
+    engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
+    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    if (!resIds.isEmpty()) {
+        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
     }
 }
 

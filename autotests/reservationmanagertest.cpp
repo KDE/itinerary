@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <pkpassmanager.h>
 
@@ -112,8 +113,11 @@ private Q_SLOTS:
         clearPasses(&passMgr);
 
         ReservationManager mgr;
-        mgr.setPkPassManager(&passMgr);
         clearReservations(&mgr);
+
+        ApplicationController ctrl;
+        ctrl.setPkPassManager(&passMgr);
+        ctrl.setReservationManager(&mgr);
 
         QSignalSpy addSpy(&mgr, &ReservationManager::reservationAdded);
         QVERIFY(addSpy.isValid());

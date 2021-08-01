@@ -149,7 +149,7 @@ Kirigami.ApplicationWindow {
     }
 
     Connections {
-        target: ReservationManager
+        target: ApplicationController
         function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
     }
 

@@ -19,8 +19,6 @@
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
 
-#include <KPkPass/Pass>
-
 #ifdef Q_OS_ANDROID
 #include <KMime/Message>
 #endif
@@ -74,14 +72,6 @@ ReservationManager::ReservationManager(QObject* parent)
 }
 
 ReservationManager::~ReservationManager() = default;
-
-void ReservationManager::setPkPassManager(PkPassManager* mgr)
-{
-    m_passMgr = mgr;
-    connect(mgr, &PkPassManager::passAdded, this, &ReservationManager::passAdded);
-    connect(mgr, &PkPassManager::passUpdated, this, &ReservationManager::passUpdated);
-    connect(mgr, &PkPassManager::passRemoved, this, &ReservationManager::passRemoved);
-}
 
 bool ReservationManager::isEmpty() const
 {
@@ -204,7 +194,6 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
         ids.push_back(addReservation(res));
     }
 
-    Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", ids.size()));
     return ids;
 }
 
@@ -333,27 +322,6 @@ void ReservationManager::removeBatch(const QString &batchId)
         }
     }
     removeReservation(batchId);
-}
-
-void ReservationManager::passAdded(const QString& passId)
-{
-    const auto pass = m_passMgr->pass(passId);
-    ExtractorEngine engine;
-    engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");
-    const auto data = engine.extract();
-    const auto res = JsonLdDocument::fromJson(data);
-    importReservations(res);
-}
-
-void ReservationManager::passUpdated(const QString& passId)
-{
-    passAdded(passId);
-}
-
-void ReservationManager::passRemoved(const QString& passId)
-{
-    Q_UNUSED(passId)
-    // TODO
 }
 
 void ReservationManager::loadBatches()
