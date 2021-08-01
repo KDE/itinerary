@@ -16,14 +16,16 @@ Kirigami.ScrollablePage {
     id: root
     /** The reservation batch identifier (@see ReservationManager). */
     property alias batchId: _controller.batchId
-    /** Currently selected reservation of the batch. */
+    /** Currently selected reservation id of the batch. */
     property var currentReservationId: batchId
+    /** Currently selected reservation of the batch. */
+    readonly property var currentReservation: ReservationManager.reservation(currentReservationId);
     /** @deprecated */
     readonly property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property var editor
-    readonly property string passId: PkPassManager.passId(reservation)
+    readonly property string passId: PkPassManager.passId(currentReservation)
 
     property QtObject controller: TimelineDelegateController {
         id: _controller
@@ -75,7 +77,7 @@ Kirigami.ScrollablePage {
 
     // TODO this needs multi-traveler support!
     Instantiator {
-        model: reservation.potentialAction
+        model: currentReservation.potentialAction
         delegate: Component {
             Kirigami.Action {
                 text: {
@@ -108,7 +110,7 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 iconName: "folder-documents-symbolic"
-                text: i18n("Documents (%1)", root.reservation.subjectOf.length)
+                text: i18n("Documents (%1)", root.currentReservation.subjectOf.length)
                 onTriggered: applicationWindow().pageStack.push(docsComponent, {"controller": root.controller });
             },
             Kirigami.Action {

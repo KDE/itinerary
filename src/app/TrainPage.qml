@@ -226,24 +226,44 @@ App.DetailsPage {
             Kirigami.Separator {
                 Kirigami.FormData.label: i18n("Seat")
                 Kirigami.FormData.isSection: true
-                visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
-                      || reservation.reservedTicket.ticketedSeat.seatSection != ""
-                      || reservation.reservedTicket.ticketedSeat.seatingType != ""
+                visible: coachLabel.visible || seatLabel.visible || classLabel.visible
             }
             QQC2.Label {
+                id: coachLabel
                 Kirigami.FormData.label: i18nc("coach of a train", "Coach:")
-                text: reservation.reservedTicket.ticketedSeat.seatSection
-                visible: reservation.reservedTicket.ticketedSeat.seatSection != ""
+                text: currentReservation.reservedTicket.ticketedSeat.seatSection
+                visible: text
             }
             QQC2.Label {
+                id: seatLabel
                 Kirigami.FormData.label: i18n("Seat:")
-                text: reservation.reservedTicket.ticketedSeat.seatNumber
-                visible: reservation.reservedTicket.ticketedSeat.seatNumber != ""
+                text: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                visible: text
             }
             QQC2.Label {
+                id: classLabel
                 Kirigami.FormData.label: i18n("Class:")
-                text: reservation.reservedTicket.ticketedSeat.seatingType
-                visible: reservation.reservedTicket.ticketedSeat.seatingType != ""
+                text: currentReservation.reservedTicket.ticketedSeat.seatingType
+                visible: text
+            }
+
+            // program membership
+            Kirigami.Separator {
+                Kirigami.FormData.label: i18nc("bonus, discount or frequent traveler program", "Program")
+                Kirigami.FormData.isSection: true
+                visible: programNameLabel.visible || membershipNumberLabel.visible
+            }
+            QQC2.Label {
+                id: programNameLabel
+                Kirigami.FormData.label: i18n("Name:")
+                text: root.currentReservation.programMembershipUsed.programName
+                visible: text
+            }
+            QQC2.Label {
+                id: membershipNumberLabel
+                Kirigami.FormData.label: i18n("Number:")
+                text: root.currentReservation.programMembershipUsed.membershipNumber
+                visible: text
             }
 
             // booking details

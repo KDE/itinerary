@@ -162,6 +162,25 @@ App.DetailsPage {
                     text: index % 2 == 0 ? res.underName.name : res.reservationNumber
                 }
             }
+
+            // frequent traveler program
+            Kirigami.Separator {
+                Kirigami.FormData.isSection: true
+                Kirigami.FormData.label: i18n("Frequent Traveler Program")
+                visible: programName.visible || membershipNumber.visible
+            }
+            QQC2.Label {
+                id: programName
+                Kirigami.FormData.label: i18nc("name of a frequent flyer program", "Program:")
+                text: root.currentReservation.programMembershipUsed.programName
+                visible: text
+            }
+            QQC2.Label {
+                id: membershipNumber
+                Kirigami.FormData.label: i18n("Number:")
+                text: root.currentReservation.programMembershipUsed.membershipNumber
+                visible: text
+            }
         }
     }
 }
