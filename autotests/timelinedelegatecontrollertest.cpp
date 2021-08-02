@@ -5,6 +5,7 @@
 */
 
 #include <timelinedelegatecontroller.h>
+#include <applicationcontroller.h>
 #include <livedatamanager.h>
 #include <reservationmanager.h>
 
@@ -163,7 +164,9 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         clearReservations(&mgr);
-        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&mgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -193,7 +196,9 @@ private Q_SLOTS:
         LiveData::clearStorage();
         LiveDataManager ldm;
         ldm.setReservationManager(&mgr);
-        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&mgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -233,7 +238,9 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         clearReservations(&mgr);
-        mgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&mgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);

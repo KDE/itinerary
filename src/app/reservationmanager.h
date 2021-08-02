@@ -48,11 +48,10 @@ public:
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
-    /** Attempts to extract reservation information from @p data.
+    /** Imports reservation in @p resData.
      *  @returns A list of reservation ids for the extracted elements. Those can be reservation
      *  ids that previously existed, in case the extracted elements could be merged.
      */
-    QVector<QString> importReservation(const QByteArray &data, const QString &fileName = {});
     QVector<QString> importReservations(const QVector<QVariant> &resData);
 #ifdef Q_OS_ANDROID
     QVector<QString> importReservation(KMime::Message *msg);

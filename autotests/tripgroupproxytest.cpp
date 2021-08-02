@@ -6,6 +6,7 @@
 
 #include "modelverificationpoint.h"
 
+#include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <timelinemodel.h>
 #include <tripgroupmanager.h>
@@ -38,13 +39,6 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -60,9 +54,11 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
@@ -114,7 +110,9 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);

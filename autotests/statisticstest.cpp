@@ -6,6 +6,7 @@
 
 #include <statisticsmodel.h>
 #include <statisticstimerangemodel.h>
+#include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <tripgroupmanager.h>
 
@@ -36,13 +37,6 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -60,16 +54,18 @@ private Q_SLOTS:
         TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
 
         StatisticsModel stats;
         QSignalSpy changeSpy(&stats, &StatisticsModel::changed);
         stats.setReservationManager(&resMgr);
         stats.setTripGroupManager(&tgMgr);
 
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
 
         stats.setTimeRange({}, {});
         QVERIFY(!changeSpy.isEmpty());
@@ -151,9 +147,12 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
 
         StatisticsTimeRangeModel model;
         QAbstractItemModelTester tester(&model);

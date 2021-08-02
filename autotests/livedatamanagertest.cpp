@@ -6,6 +6,7 @@
 
 #include <livedata.h>
 #include <livedatamanager.h>
+#include <applicationcontroller.h>
 #include <reservationmanager.h>
 
 #include <KItinerary/Reservation>
@@ -92,7 +93,9 @@ private Q_SLOTS:
         ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}, QTimeZone("Europe/Zurich")); // that's in the middle of the first train leg
         ldm.setReservationManager(&resMgr);
 
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(resMgr.batches().size(), 11);
 
         const auto flight = resMgr.batches()[0];

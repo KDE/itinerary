@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <tripgroup.h>
 #include <tripgroupmanager.h>
@@ -33,13 +34,6 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -56,7 +50,9 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -69,7 +65,7 @@ private Q_SLOTS:
 
         TripGroupManager::clear();
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -82,7 +78,7 @@ private Q_SLOTS:
 
         TripGroupManager::clear();
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -94,8 +90,8 @@ private Q_SLOTS:
         }
 
         TripGroupManager::clear();
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -109,7 +105,7 @@ private Q_SLOTS:
 
         clearReservations(&resMgr);
         TripGroupManager::clear();
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
         {
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
@@ -125,10 +121,12 @@ private Q_SLOTS:
         TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
 
         // after adding the third element this will find a loop between the two inner legs and remove the first leg as a leading appendix
         // the fourth leg however should be fixing that and result in a single 4 leg group
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/tripgroup/symmetric-two-leg-return-flight.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/tripgroup/symmetric-two-leg-return-flight.json")));
         QCOMPARE(mgr.tripGroups().size(), 1);
         auto g = mgr.tripGroup(mgr.tripGroups().at(0));
         QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -145,7 +143,9 @@ private Q_SLOTS:
         QSignalSpy changeSpy(&mgr, &TripGroupManager::tripGroupChanged);
         QSignalSpy rmSpy(&mgr, &TripGroupManager::tripGroupRemoved);
 
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -180,7 +180,9 @@ private Q_SLOTS:
 
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(fileName));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(fileName));
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
@@ -194,7 +196,9 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QStringLiteral(SOURCE_DIR "/data/tripgroup/leading-appendix.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QStringLiteral(SOURCE_DIR "/data/tripgroup/leading-appendix.json")));
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);
@@ -208,7 +212,9 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QStringLiteral(SOURCE_DIR "/../tests/randa2017.json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QStringLiteral(SOURCE_DIR "/../tests/randa2017.json")));
         TripGroupManager mgr;
         QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
         mgr.setReservationManager(&resMgr);

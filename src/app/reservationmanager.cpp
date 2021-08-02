@@ -141,14 +141,6 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/batches/");
 }
 
-QVector<QString> ReservationManager::importReservation(const QByteArray& data, const QString &fileName)
-{
-    ExtractorEngine engine;
-    engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-    engine.setData(data, fileName);
-    return importReservations(JsonLdDocument::fromJson(engine.extract()));
-}
-
 #ifdef Q_OS_ANDROID
 QVector<QString> ReservationManager::importReservation(KMime::Message *msg)
 {

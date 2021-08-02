@@ -58,13 +58,6 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -155,6 +148,8 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
@@ -170,7 +165,7 @@ private Q_SLOTS:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -185,7 +180,7 @@ private Q_SLOTS:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeEnd);
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
         QCOMPARE(insertSpy.size(), 5);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 2);
@@ -208,6 +203,8 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
@@ -217,7 +214,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -402,6 +399,8 @@ private Q_SLOTS:
 
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
         TimelineModel model;
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
@@ -415,7 +414,7 @@ private Q_SLOTS:
         QVERIFY(rmSpy.isValid());
 
         // full import at runtime
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
         QCOMPARE(insertSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
@@ -475,6 +474,8 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         clearReservations(&resMgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -496,7 +497,7 @@ private Q_SLOTS:
         QVERIFY(vp1.verify(&model));
 
         // load something to define the current location, so we get weather
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp2.verify(&model));
@@ -525,7 +526,9 @@ private Q_SLOTS:
         QFETCH(QString, baseName);
         ReservationManager resMgr;
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
@@ -566,7 +569,7 @@ private Q_SLOTS:
 
         // retry with loading during runtime
         clearReservations(&resMgr);
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
         QVERIFY(vp.verify(&model));
     }
 };

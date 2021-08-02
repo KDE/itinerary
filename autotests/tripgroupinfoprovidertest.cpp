@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include <applicationcontroller.h>
 #include <locationinformation.h>
 #include <reservationmanager.h>
 #include <tripgroup.h>
@@ -29,13 +30,6 @@ private:
         QCOMPARE(mgr->batches().size(), 0);
     }
 
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -52,8 +46,10 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         WeatherForecastManager fcMgr;
         fcMgr.setTestModeEnabled(true);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&resMgr);
 
-        resMgr.importReservation(readFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(mgr.tripGroups().size(), 1);
 
         TripGroupInfoProvider provider;
