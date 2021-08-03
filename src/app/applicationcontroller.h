@@ -59,14 +59,9 @@ public:
 
     static ApplicationController* instance();
 
-    bool hasClipboardContent() const;
-
-    void importBundle(const QUrl &url);
-    void importBundle(const QByteArray &data);
-
     // data export
-    Q_INVOKABLE void exportToFile(const QString &filePath);
-    Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QString &filePath);
+    Q_INVOKABLE void exportToFile(const QUrl &url);
+    Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QUrl &url);
 
     // document attaching
     Q_INVOKABLE void addDocument(const QString &batchId, const QUrl &url);
@@ -85,7 +80,11 @@ Q_SIGNALS:
     void infoMessage(const QString &msg);
 
 private:
+    bool hasClipboardContent() const;
+
     void importLocalFile(const QUrl &url);
+    void importBundle(const QUrl &url);
+    void importBundle(const QByteArray &data);
     void importBundle(KItinerary::File *file);
     QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
     void importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);

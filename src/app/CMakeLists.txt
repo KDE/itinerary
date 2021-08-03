@@ -9,6 +9,7 @@ target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
+    filehelper.cpp
     gpxexport.cpp
     healthcertificatemanager.cpp
     importexport.cpp

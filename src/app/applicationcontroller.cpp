@@ -7,6 +7,7 @@
 #include "applicationcontroller.h"
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
+#include "filehelper.h"
 #include "gpxexport.h"
 #include "healthcertificatemanager.h"
 #include "importexport.h"
@@ -282,7 +283,7 @@ void ApplicationController::importFromUrl(const QUrl &url)
     }
 
     qCDebug(Log) << url;
-    if (url.isLocalFile() || url.scheme() == QLatin1String("content")) {
+    if (FileHelper::isLocalFile(url)) {
         importLocalFile(url);
         return;
     }
@@ -317,7 +318,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         return;
     }
 
-    QFile f(url.isLocalFile() ? url.toLocalFile() : url.toString());
+    QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open" << f.fileName() << f.errorString();
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
@@ -334,7 +335,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         m_pkPassMgr->importPass(url);
     } else if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive)) {
         importBundle(url);
-    } else if (strncmp(head.constData(), "PK\x03\x04", 4) == 0) {
+    } else if (FileHelper::hasZipHeader(head)) {
         if (m_pkPassMgr->importPass(url).isEmpty()) {
             importBundle(url);
         }
@@ -373,7 +374,7 @@ void ApplicationController::importData(const QByteArray &data)
     if (data.size() < 4) {
         return;
     }
-    if (strncmp(data.constData(), "PK\x03\x04", 4) == 0) {
+    if (FileHelper::hasZipHeader(data)) {
         if (m_pkPassMgr->importPassFromData(data).isEmpty()) {
             importBundle(data);
         }
@@ -408,14 +409,14 @@ bool ApplicationController::hasClipboardContent() const
 }
 
 
-void ApplicationController::exportToFile(const QString &filePath)
+void ApplicationController::exportToFile(const QUrl &url)
 {
-    qCDebug(Log) << filePath;
-    if (filePath.isEmpty()) {
+    if (url.isEmpty()) {
         return;
     }
 
-    File f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
+    qCDebug(Log) << url;
+    File f(FileHelper::toLocalFile(url));
     if (!f.open(File::Write)) {
         qCWarning(Log) << f.errorString();
         Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
@@ -434,13 +435,13 @@ void ApplicationController::exportToFile(const QString &filePath)
     Q_EMIT infoMessage(i18n("Export completed."));
 }
 
-void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QString &filePath)
+void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QUrl &url)
 {
-    if (filePath.isEmpty()) {
+    if (url.isEmpty()) {
         return;
     }
 
-    QFile f(QUrl(filePath).isLocalFile() ? QUrl(filePath).toLocalFile() : filePath);
+    QFile f(FileHelper::toLocalFile(url));
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << f.errorString() << f.fileName();
         Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
@@ -461,7 +462,7 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QS
 
 void ApplicationController::importBundle(const QUrl &url)
 {
-    KItinerary::File f(url.isLocalFile() ? url.toLocalFile() : url.toString());
+    KItinerary::File f(FileHelper::toLocalFile(url));
     if (!f.open(File::Read)) {
         qCWarning(Log) << "Failed to open bundle file:" << url << f.errorString();
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
@@ -572,11 +573,11 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
     docInfo.setName(KAndroidExtras::ContentResolver::fileName(url));
 #else
     QMimeDatabase db;
-    docInfo.setEncodingFormat(db.mimeTypeForFile(url.isLocalFile() ? url.toLocalFile() : url.toString()).name());
+    docInfo.setEncodingFormat(db.mimeTypeForFile(FileHelper::toLocalFile(url)).name());
     docInfo.setName(url.fileName());
 #endif
 
-    m_docMgr->addDocument(docId, docInfo, url.isLocalFile() ? url.toLocalFile() : url.toString());
+    m_docMgr->addDocument(docId, docInfo, FileHelper::toLocalFile(url));
 
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
     for (const auto &resId : resIds) {

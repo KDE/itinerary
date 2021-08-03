@@ -161,7 +161,7 @@ private Q_SLOTS:
         QTemporaryFile tmp;
         QVERIFY(tmp.open());
         tmp.close();
-        appController.exportToFile(tmp.fileName());
+        appController.exportToFile(QUrl::fromLocalFile(tmp.fileName()));
         QCOMPARE(infoSpy.size(), 3);
 
         KItinerary::File f(tmp.fileName());
