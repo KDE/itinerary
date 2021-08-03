@@ -25,7 +25,7 @@ public:
     /** Health certificate support is compiled in. */
     bool isAvailable() const;
 
-    void importCertificate(const QByteArray &rawData);
+    bool importCertificate(const QByteArray &rawData);
     Q_INVOKABLE void importCertificateFromClipboard();
     Q_INVOKABLE void removeCertificate(int row);
 

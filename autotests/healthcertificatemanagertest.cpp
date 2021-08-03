@@ -45,14 +45,37 @@ private Q_SLOTS:
             QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
             QCOMPARE(mgr.rowCount(), 0);
             const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
-            mgr.importCertificate(rawData);
 #if HAVE_KHEALTHCERTIFICATE
+            QVERIFY(mgr.importCertificate(rawData));
             QCOMPARE(mgr.rowCount(), 1);
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr.data(mgr.index(0, 0), Qt::DisplayRole).toString().isEmpty());
             QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::CertificateRole).isNull());
             QCOMPARE(mgr.data(mgr.index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
             QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
+#endif
+        }
+
+        {
+            HealthCertificateManager mgr;
+            QAbstractItemModelTester modelTester(&mgr);
+#if HAVE_KHEALTHCERTIFICATE
+            QCOMPARE(mgr.rowCount(), 1);
+            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+            // no duplicates
+            QVERIFY(mgr.importCertificate(rawData));
+            QCOMPARE(mgr.rowCount(), 1);
+#endif
+        }
+
+        {
+            HealthCertificateManager mgr;
+            QAbstractItemModelTester modelTester(&mgr);
+#if HAVE_KHEALTHCERTIFICATE
+            QCOMPARE(mgr.rowCount(), 1);
+            // garbage is rejected
+            QVERIFY(!mgr.importCertificate("not a vaccination certificate"));
+            QCOMPARE(mgr.rowCount(), 1);
 #endif
         }
 

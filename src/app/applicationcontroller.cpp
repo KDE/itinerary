@@ -529,7 +529,7 @@ QVector<QString> ApplicationController::importReservationOrHealthCertificate(con
     return {};
 }
 
-void ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
+bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
 {
     if (node.childNodes().size() == 1 && node.mimeType() == QLatin1String("internal/qimage")) {
         const auto &child = node.childNodes()[0];
@@ -541,9 +541,13 @@ void ApplicationController::importHealthCertificateRecursive(const ExtractorDocu
         }
     }
 
+    bool result = false;
     for (const auto &child : node.childNodes()) {
-        importHealthCertificateRecursive(child);
+        if (importHealthCertificateRecursive(child)) { // no shortcut evaluation, more than one QR code per PDF is possible
+            result = true;
+        }
     }
+    return result;
 }
 
 void ApplicationController::importPass(const QString &passId)

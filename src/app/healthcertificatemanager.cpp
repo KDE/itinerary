@@ -48,19 +48,19 @@ static QString basePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/health-certificates/");
 }
 
-void HealthCertificateManager::importCertificate(const QByteArray &rawData)
+bool HealthCertificateManager::importCertificate(const QByteArray &rawData)
 {
     // check whether we know this certificate already
     for (const auto &c : m_certificates) {
         if (certificateRawData(c) == rawData) {
-            return;
+            return true;
         }
     }
 #if HAVE_KHEALTHCERTIFICATE
     CertData certData;
     certData.cert = KHealthCertificateParser::parse(rawData);
     if (certData.cert.isNull()) {
-        return;
+        return false;
     }
 
     auto path = basePath();
@@ -71,7 +71,7 @@ void HealthCertificateManager::importCertificate(const QByteArray &rawData)
     QFile f(path);
     if (!f.open(QFile::WriteOnly)) {
         qWarning() << f.errorString() << f.fileName();
-        return;
+        return false;
     }
     f.write(rawData);
     f.close();
@@ -81,6 +81,9 @@ void HealthCertificateManager::importCertificate(const QByteArray &rawData)
     beginInsertRows({}, row, row);
     m_certificates.insert(it, std::move(certData));
     endInsertRows();
+    return true;
+#else
+    return false;
 #endif
 }
 

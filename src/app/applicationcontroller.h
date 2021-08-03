@@ -87,7 +87,7 @@ private:
     void importBundle(const QByteArray &data);
     void importBundle(KItinerary::File *file);
     QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
-    void importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
+    bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);
 
     static ApplicationController *s_instance;
