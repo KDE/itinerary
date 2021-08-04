@@ -82,12 +82,29 @@ private Q_SLOTS:
         {
             HealthCertificateManager mgr;
             QAbstractItemModelTester modelTester(&mgr);
-            QSignalSpy removeSpy(&mgr, &QAbstractItemModel::rowsRemoved);
+            QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr.rowCount(), 1);
+            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
+            QVERIFY(mgr.importCertificate(rawData));
+            QCOMPARE(mgr.rowCount(), 2);
+            QCOMPARE(insertSpy.size(), 1);
+            QVERIFY(!mgr.data(mgr.index(0, 0), Qt::DisplayRole).toString().isEmpty());
+            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::CertificateRole).isNull());
+            QCOMPARE(mgr.data(mgr.index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
+#endif
+        }
+
+        {
+            HealthCertificateManager mgr;
+            QAbstractItemModelTester modelTester(&mgr);
+            QSignalSpy removeSpy(&mgr, &QAbstractItemModel::rowsRemoved);
+#if HAVE_KHEALTHCERTIFICATE
+            QCOMPARE(mgr.rowCount(), 2);
             mgr.removeCertificate(0);
             QCOMPARE(removeSpy.size(), 1);
-            QCOMPARE(mgr.rowCount(), 0);
+            QCOMPARE(mgr.rowCount(), 1);
 #endif
         }
     }
