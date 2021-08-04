@@ -341,30 +341,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         }
     } else {
         const auto data = f.readAll();
-        const auto resIds = importReservationOrHealthCertificate(data, f.fileName());
-        if (resIds.empty()) {
-            return;
-        }
-
-        // check if there is a document we want to attach here
-        QMimeDatabase db;
-        const auto mt = db.mimeTypeForFileNameAndData(f.fileName(), data);
-        if (mt.name() != QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
-            return;
-        }
-
-        DigitalDocument docInfo;
-        docInfo.setName(f.fileName());
-        docInfo.setEncodingFormat(mt.name());
-        const auto docId = DocumentUtil::idForContent(data);
-        m_docMgr->addDocument(docId, docInfo, data);
-
-        for (const auto &resId : resIds) {
-            auto res = m_resMgr->reservation(resId);
-            if (DocumentUtil::addDocumentId(res, docId)) {
-                m_resMgr->updateReservation(resId, res);
-            }
-        }
+        importReservationOrHealthCertificate(data, f.fileName());
     }
 }
 
@@ -517,6 +494,24 @@ QVector<QString> ApplicationController::importReservationOrHealthCertificate(con
     engine.setData(data, fileName);
     const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
     if (!resIds.isEmpty()) {
+        // check if there is a document we want to attach here
+        QMimeDatabase db;
+        const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
+        if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
+            DigitalDocument docInfo;
+            docInfo.setName(fileName);
+            docInfo.setEncodingFormat(mt.name());
+            const auto docId = DocumentUtil::idForContent(data);
+            m_docMgr->addDocument(docId, docInfo, data);
+
+            for (const auto &resId : resIds) {
+                auto res = m_resMgr->reservation(resId);
+                if (DocumentUtil::addDocumentId(res, docId)) {
+                    m_resMgr->updateReservation(resId, res);
+                }
+            }
+        }
+
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
         return resIds;
     }
