@@ -26,12 +26,13 @@
 #include <QSettings>
 #include <QTemporaryFile>
 
-static void copySettings(const QSettings *from, QSettings *to)
+static int copySettings(const QSettings *from, QSettings *to)
 {
     const auto keys = from->allKeys();
     for (const auto &key : keys) {
         to->setValue(key, from->value(key));
     }
+    return keys.size();
 }
 
 Exporter::Exporter(KItinerary::File *file)
@@ -148,59 +149,68 @@ Importer::Importer(const KItinerary::File *file)
 {
 }
 
-void Importer::importReservations(ReservationManager *resMgr)
+int Importer::importReservations(ReservationManager *resMgr)
 {
     const auto resIds = m_file->reservations();
     for (const auto &resId : resIds) {
         resMgr->addReservation(m_file->reservation(resId));
     }
+    return resIds.size();
 }
 
-void Importer::importPasses(PkPassManager *pkPassMgr)
+int Importer::importPasses(PkPassManager *pkPassMgr)
 {
     const auto passIds = m_file->passes();
     for (const auto &passId : passIds) {
         pkPassMgr->importPassFromData(m_file->passData(passId));
     }
+    return passIds.size();
 }
 
-void Importer::importDocuments(DocumentManager* docMgr)
+int Importer::importDocuments(DocumentManager* docMgr)
 {
     const auto docIds = m_file->documents();
     for (const auto &docId : docIds) {
         docMgr->addDocument(docId, m_file->documentInfo(docId), m_file->documentData(docId));
     }
+    return docIds.size();
 }
 
-void Importer::importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr)
+int Importer::importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr)
 {
+    int count = 0;
     const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
     for (const auto &batchId : resMgr->batches()) {
         auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
         transferMgr->importTransfer(t);
+        count += t.state() != Transfer::Discarded ? 1 : 0;
         t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::After))).object());
         transferMgr->importTransfer(t);
+        count += t.state() != Transfer::Discarded ? 1 : 0;
     }
+    return count;
 }
 
-void Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
+int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
 {
     auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(m_file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
     if (!favLocs.empty()) {
         favLocModel->setFavoriteLocations(std::move(favLocs));
     }
+    return favLocs.size();
 }
 
-void Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
+int Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)
 {
     const auto domain = QStringLiteral("org.kde.itinerary/health-certificates");
     const auto certIds = m_file->listCustomData(domain);
     for (const auto &certId : certIds) {
         healthCertMgr->importCertificate(m_file->customData(domain, certId));
     }
+    return certIds.size();
 }
 
-void Importer::importLiveData(LiveDataManager *liveDataMgr)
+int Importer::importLiveData(LiveDataManager *liveDataMgr)
 {
     const auto ids = m_file->listCustomData(QStringLiteral("org.kde.itinerary/live-data"));
     for (const auto &id : ids) {
@@ -217,19 +227,25 @@ void Importer::importLiveData(LiveDataManager *liveDataMgr)
         ld.store(id);
         liveDataMgr->importData(id, std::move(ld));
     }
+    return ids.size();
 }
 
-void Importer::importSettings()
+int Importer::importSettings()
 {
+    const auto iniData = m_file->customData(QStringLiteral("org.kde.itinerary/settings"), QStringLiteral("settings.ini"));
+    if (iniData.isEmpty()) {
+        return 0;
+    }
+
     QTemporaryFile tmp;
     if (!tmp.open()) {
         qCWarning(Log) << "Failed to open temporary file:" << tmp.errorString();
-        return;
+        return 0;
     }
-    tmp.write(m_file->customData(QStringLiteral("org.kde.itinerary/settings"), QStringLiteral("settings.ini")));
+    tmp.write(iniData);
     tmp.close();
 
     QSettings settings;
     const QSettings backup(tmp.fileName(), QSettings::IniFormat);
-    copySettings(&backup, &settings);
+    return copySettings(&backup, &settings);
 }

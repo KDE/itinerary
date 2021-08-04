@@ -460,19 +460,19 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QU
     Q_EMIT infoMessage(i18n("Export completed."));
 }
 
-void ApplicationController::importBundle(const QUrl &url)
+bool ApplicationController::importBundle(const QUrl &url)
 {
     KItinerary::File f(FileHelper::toLocalFile(url));
     if (!f.open(File::Read)) {
         qCWarning(Log) << "Failed to open bundle file:" << url << f.errorString();
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
-        return;
+        return false;
     }
 
-    importBundle(&f);
+    return importBundle(&f);
 }
 
-void ApplicationController::importBundle(const QByteArray &data)
+bool ApplicationController::importBundle(const QByteArray &data)
 {
     QBuffer buffer;
     buffer.setData(data);
@@ -481,34 +481,32 @@ void ApplicationController::importBundle(const QByteArray &data)
     if (!f.open(File::Read)) {
         qCWarning(Log) << "Failed to open bundle data:" << f.errorString();
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
-        return;
+        return false;
     }
 
-    importBundle(&f);
+    return importBundle(&f);
 }
 
-void ApplicationController::importBundle(KItinerary::File *file)
+bool ApplicationController::importBundle(KItinerary::File *file)
 {
     Importer importer(file);
+    int count = 0;
     {
         QSignalBlocker blocker(this); // suppress infoMessage()
-        importer.importReservations(m_resMgr);
-        importer.importPasses(m_pkPassMgr);
-        importer.importDocuments(m_docMgr);
-        importer.importFavoriteLocations(m_favLocModel);
-        importer.importTransfers(m_resMgr, m_transferMgr);
-        importer.importHealthCertificates(m_healthCertMgr);
-        importer.importLiveData(m_liveDataMgr);
-        importer.importSettings();
+        count += importer.importReservations(m_resMgr);
+        count += importer.importPasses(m_pkPassMgr);
+        count += importer.importDocuments(m_docMgr);
+        count += importer.importFavoriteLocations(m_favLocModel);
+        count += importer.importTransfers(m_resMgr, m_transferMgr);
+        count += importer.importHealthCertificates(m_healthCertMgr);
+        count += importer.importLiveData(m_liveDataMgr);
+        count += importer.importSettings();
     }
 
-    // favorite locations
-    auto favLocs = FavoriteLocation::fromJson(QJsonDocument::fromJson(file->customData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"))).array());
-    if (!favLocs.empty()) {
-        m_favLocModel->setFavoriteLocations(std::move(favLocs));
+    if (count > 0) {
+        Q_EMIT infoMessage(i18n("Import completed."));
     }
-
-    Q_EMIT infoMessage(i18n("Import completed."));
+    return count > 0;
 }
 
 QVector<QString> ApplicationController::importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName)

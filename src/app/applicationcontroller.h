@@ -83,9 +83,9 @@ private:
     bool hasClipboardContent() const;
 
     void importLocalFile(const QUrl &url);
-    void importBundle(const QUrl &url);
-    void importBundle(const QByteArray &data);
-    void importBundle(KItinerary::File *file);
+    bool importBundle(const QUrl &url);
+    bool importBundle(const QByteArray &data);
+    bool importBundle(KItinerary::File *file);
     QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
     bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);

@@ -44,14 +44,14 @@ class Importer
 public:
     explicit Importer(const KItinerary::File *file);
 
-    void importReservations(ReservationManager *resMgr);
-    void importPasses(PkPassManager *pkPassMgr);
-    void importDocuments(DocumentManager *docMgr);
-    void importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
-    void importFavoriteLocations(FavoriteLocationModel *favLocModel);
-    void importHealthCertificates(HealthCertificateManager *healthCertMgr);
-    void importLiveData(LiveDataManager *liveDataMgr);
-    void importSettings();
+    int importReservations(ReservationManager *resMgr);
+    int importPasses(PkPassManager *pkPassMgr);
+    int importDocuments(DocumentManager *docMgr);
+    int importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
+    int importFavoriteLocations(FavoriteLocationModel *favLocModel);
+    int importHealthCertificates(HealthCertificateManager *healthCertMgr);
+    int importLiveData(LiveDataManager *liveDataMgr);
+    int importSettings();
 
 private:
     const KItinerary::File *m_file;
