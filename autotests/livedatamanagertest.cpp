@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <livedata.h>
 #include <livedatamanager.h>
 #include <applicationcontroller.h>
@@ -29,15 +31,6 @@ class LiveDataManagerTest : public QObject
 {
     Q_OBJECT
 private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
     QByteArray readFile(const QString &fn)
     {
         QFile f(fn);
@@ -81,7 +74,7 @@ private Q_SLOTS:
     void testLiveData()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QSignalSpy resChangeSpy(&resMgr, &ReservationManager::batchContentChanged);
         LiveData::clearStorage();
 

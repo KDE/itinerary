@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <timelinedelegatecontroller.h>
 #include <applicationcontroller.h>
 #include <livedatamanager.h>
@@ -28,15 +30,6 @@ class TimelineDelegateControllerTest : public QObject
 {
     Q_OBJECT
 private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
     QByteArray readFile(const QString &fn)
     {
         QFile f(fn);
@@ -83,7 +76,7 @@ private Q_SLOTS:
     void testProgress()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
 
         TrainTrip trip;
         trip.setTrainNumber(QStringLiteral("TGV 1235"));
@@ -120,7 +113,7 @@ private Q_SLOTS:
     void testPreviousLocation()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -163,7 +156,7 @@ private Q_SLOTS:
     void testJourneyRequest()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&mgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
@@ -192,7 +185,7 @@ private Q_SLOTS:
     void testApplyJourney()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         LiveData::clearStorage();
         LiveDataManager ldm;
         ldm.setReservationManager(&mgr);
@@ -237,7 +230,7 @@ private Q_SLOTS:
     void testCancel()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&mgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));

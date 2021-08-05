@@ -5,6 +5,7 @@
 */
 
 #include "modelverificationpoint.h"
+#include "testhelper.h"
 
 #include <applicationcontroller.h>
 #include <reservationmanager.h>
@@ -29,16 +30,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class TripGroupProxyTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -53,7 +44,7 @@ private Q_SLOTS:
     void testExpandCollapse()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
@@ -109,7 +100,7 @@ private Q_SLOTS:
     void testCurrentGroup()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));

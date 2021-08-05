@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <pkpassmanager.h>
@@ -22,23 +24,6 @@ using namespace KItinerary;
 class ReservationManagerTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
-    void clearPasses(PkPassManager *mgr)
-    {
-        for (const auto &id : mgr->passes()) {
-            mgr->removePass(id);
-        }
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -48,7 +33,7 @@ private Q_SLOTS:
     void testOperations()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
 
         QSignalSpy addSpy(&mgr, &ReservationManager::reservationAdded);
         QVERIFY(addSpy.isValid());
@@ -87,7 +72,7 @@ private Q_SLOTS:
         QVERIFY(mgr.batches().empty());
         QVERIFY(mgr.reservation(resId).isNull());
 
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         auto attraction = KItinerary::TouristAttraction();
         attraction.setName(QStringLiteral("Sky Tree"));
         auto visit = KItinerary::TouristAttractionVisit();
@@ -105,10 +90,10 @@ private Q_SLOTS:
     void testPkPassChanges()
     {
         PkPassManager passMgr;
-        clearPasses(&passMgr);
+        Test::clearAll(&passMgr);
 
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
 
         ApplicationController ctrl;
         ctrl.setPkPassManager(&passMgr);
@@ -134,7 +119,7 @@ private Q_SLOTS:
     void testBatchPersistence()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&mgr);
 
@@ -168,7 +153,7 @@ private Q_SLOTS:
     void testBatchOperations()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         QCOMPARE(mgr.batches().size(), 0);
 
         QSignalSpy batchAddSpy(&mgr, &ReservationManager::batchAdded);
@@ -334,7 +319,7 @@ private Q_SLOTS:
     void testCancellation()
     {
         ReservationManager mgr;
-        clearReservations(&mgr);
+        Test::clearAll(&mgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&mgr);
         QCOMPARE(mgr.batches().size(), 0);

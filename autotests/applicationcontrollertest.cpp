@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <applicationcontroller.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
@@ -25,29 +27,6 @@ class AppControllerTest : public QObject
 {
     Q_OBJECT
 private:
-    void clearPasses(PkPassManager *mgr)
-    {
-        for (const auto &id : mgr->passes()) {
-            mgr->removePass(id);
-        }
-    }
-
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
-    void clearDocuments(DocumentManager *mgr)
-    {
-        for (const auto &id : mgr->documents()) {
-            mgr->removeDocument(id);
-        }
-    }
-
     QByteArray readFile(const QString &fn)
     {
         QFile f(fn);
@@ -65,12 +44,12 @@ private Q_SLOTS:
     void testImportData()
     {
         PkPassManager passMgr;
-        clearPasses(&passMgr);
+        Test::clearAll(&passMgr);
         QSignalSpy passSpy(&passMgr, &PkPassManager::passAdded);
         QVERIFY(passSpy.isValid());
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QSignalSpy resSpy(&resMgr, &ReservationManager::reservationAdded);
         QVERIFY(resSpy.isValid());
 
@@ -97,12 +76,12 @@ private Q_SLOTS:
     void testImportFile()
     {
         PkPassManager passMgr;
-        clearPasses(&passMgr);
+        Test::clearAll(&passMgr);
         QSignalSpy passSpy(&passMgr, &PkPassManager::passAdded);
         QVERIFY(passSpy.isValid());
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QSignalSpy resSpy(&resMgr, &ReservationManager::reservationAdded);
         QVERIFY(resSpy.isValid());
 
@@ -125,13 +104,13 @@ private Q_SLOTS:
     void testExportFile()
     {
         PkPassManager passMgr;
-        clearPasses(&passMgr);
+        Test::clearAll(&passMgr);
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
 
         DocumentManager docMgr;
-        clearDocuments(&docMgr);
+        Test::clearAll(&docMgr);
 
         TripGroupManager tripGroupMgr;
         tripGroupMgr.setReservationManager(&resMgr);
@@ -169,9 +148,9 @@ private Q_SLOTS:
         QCOMPARE(f.reservations().size(), 2);
         QCOMPARE(f.passes().size(), 1);
 
-        clearPasses(&passMgr);
-        clearReservations(&resMgr);
-        clearDocuments(&docMgr);
+        Test::clearAll(&passMgr);
+        Test::clearAll(&resMgr);
+        Test::clearAll(&docMgr);
         QCOMPARE(resMgr.batches().size(), 0);
         QCOMPARE(passMgr.passes().size(), 0);
 
@@ -180,8 +159,8 @@ private Q_SLOTS:
         QCOMPARE(passMgr.passes().size(), 1);
         QCOMPARE(infoSpy.size(), 4);
 
-        clearPasses(&passMgr);
-        clearReservations(&resMgr);
+        Test::clearAll(&passMgr);
+        Test::clearAll(&resMgr);
         QCOMPARE(resMgr.batches().size(), 0);
         QCOMPARE(passMgr.passes().size(), 0);
 

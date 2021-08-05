@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <statisticsmodel.h>
 #include <statisticstimerangemodel.h>
 #include <applicationcontroller.h>
@@ -27,16 +29,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class StatisticsTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -50,7 +42,7 @@ private Q_SLOTS:
     void testStats()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager tgMgr;
         tgMgr.setReservationManager(&resMgr);
@@ -146,7 +138,7 @@ private Q_SLOTS:
     void testTimeRangeModel()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
 

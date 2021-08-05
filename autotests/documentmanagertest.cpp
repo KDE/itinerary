@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
 #include <documentmanager.h>
 
 #include <KItinerary/CreativeWork>
@@ -37,9 +38,7 @@ private Q_SLOTS:
     void testAddRemove()
     {
         DocumentManager mgr;
-        for (const auto &id : mgr.documents()) {
-            mgr.removeDocument(id); // clean up previous test runs, if necessary
-        }
+        Test::clearAll(&mgr);
         QSignalSpy addSpy(&mgr, &DocumentManager::documentAdded);
         QSignalSpy rmSpy(&mgr, &DocumentManager::documentRemoved);
         QCOMPARE(mgr.documents().size(), 0);

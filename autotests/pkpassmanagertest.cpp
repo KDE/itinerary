@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <pkpassmanager.h>
 
 #include <QUrl>
@@ -22,14 +24,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class PkPassManagerTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearPasses(PkPassManager *mgr)
-    {
-        for (const auto &id : mgr->passes()) {
-            mgr->removePass(id);
-        }
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -39,7 +33,7 @@ private Q_SLOTS:
     void testImport()
     {
         PkPassManager mgr;
-        clearPasses(&mgr);
+        Test::clearAll(&mgr);
         const auto now = QDateTime::currentDateTime().addSecs(-1);
 
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
@@ -74,7 +68,7 @@ private Q_SLOTS:
         QCOMPARE(updateSpy.at(0).at(1).toStringList().at(0), QStringLiteral("Gate changed to G30."));
         QVERIFY(mgr.pass(passId));
 
-        clearPasses(&mgr);
+        Test::clearAll(&mgr);
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);

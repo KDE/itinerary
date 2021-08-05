@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <applicationcontroller.h>
 #include <locationinformation.h>
 #include <reservationmanager.h>
@@ -20,16 +22,6 @@
 class TripGroupInfoProviderTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -40,7 +32,7 @@ private Q_SLOTS:
     void testInfoProvider()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);

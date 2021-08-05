@@ -5,6 +5,7 @@
 */
 
 #include "modelverificationpoint.h"
+#include "testhelper.h"
 
 #include <applicationcontroller.h>
 #include <favoritelocationmodel.h>
@@ -41,23 +42,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class TimelineModelTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearPasses(PkPassManager *mgr)
-    {
-        for (const auto &id : mgr->passes()) {
-            mgr->removePass(id);
-        }
-    }
-
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -103,9 +87,9 @@ private Q_SLOTS:
     void testModel()
     {
         PkPassManager mgr;
-        clearPasses(&mgr);
+        Test::clearAll(&mgr);
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setPkPassManager(&mgr);
         ctrl.setReservationManager(&resMgr);
@@ -137,7 +121,7 @@ private Q_SLOTS:
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
         QCOMPARE(model.rowCount(), 2);
 
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 1);
@@ -147,7 +131,7 @@ private Q_SLOTS:
     void testNestedElements()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
 
@@ -202,7 +186,7 @@ private Q_SLOTS:
     void testCountryInfos()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
 
@@ -252,7 +236,7 @@ private Q_SLOTS:
         using namespace KItinerary;
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         WeatherForecastManager weatherMgr;
         weatherMgr.setTestModeEnabled(true);
 
@@ -398,7 +382,7 @@ private Q_SLOTS:
         using namespace KItinerary;
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         TimelineModel model;
@@ -464,7 +448,7 @@ private Q_SLOTS:
         // removal of merged items
         updateSpy.clear();
         rmSpy.clear();
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(rmSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
@@ -473,7 +457,7 @@ private Q_SLOTS:
     void testDayChange()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
@@ -525,7 +509,7 @@ private Q_SLOTS:
     {
         QFETCH(QString, baseName);
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
@@ -568,7 +552,7 @@ private Q_SLOTS:
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
         QVERIFY(vp.verify(&model));
     }

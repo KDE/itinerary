@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <transfer.h>
 #include <transfermanager.h>
 #include <applicationcontroller.h>
@@ -19,16 +21,6 @@
 class TransferTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -41,7 +33,7 @@ private Q_SLOTS:
     void testTransferManager()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
 

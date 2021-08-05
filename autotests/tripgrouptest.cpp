@@ -4,6 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "testhelper.h"
+
 #include <applicationcontroller.h>
 #include <reservationmanager.h>
 #include <tripgroup.h>
@@ -24,16 +26,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class TripGroupTest : public QObject
 {
     Q_OBJECT
-private:
-    void clearReservations(ReservationManager *mgr)
-    {
-        const auto batches = mgr->batches(); // copy, as this is getting modified in the process
-        for (const auto &id : batches) {
-            mgr->removeBatch(id);
-        }
-        QCOMPARE(mgr->batches().size(), 0);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -49,7 +41,7 @@ private Q_SLOTS:
     void testGrouping()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
@@ -64,7 +56,7 @@ private Q_SLOTS:
         }
 
         TripGroupManager::clear();
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         {
             TripGroupManager mgr;
@@ -77,7 +69,7 @@ private Q_SLOTS:
         }
 
         TripGroupManager::clear();
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         {
             TripGroupManager mgr;
@@ -103,7 +95,7 @@ private Q_SLOTS:
             QCOMPARE(mgr.tripGroup(addSpy.at(2).at(0).toString()).elements().size(), 11);
         }
 
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         TripGroupManager::clear();
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
         {
@@ -117,7 +109,7 @@ private Q_SLOTS:
     void testDynamicGrouping()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         TripGroupManager::clear();
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
@@ -135,7 +127,7 @@ private Q_SLOTS:
     void testChanges()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         TripGroupManager mgr;
         mgr.setReservationManager(&resMgr);
 
@@ -152,7 +144,7 @@ private Q_SLOTS:
         QCOMPARE(changeSpy.size(), 0);
 
         changeSpy.clear();
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         QCOMPARE(rmSpy.size(), 1);
         QCOMPARE(changeSpy.size(), 0);
     }
@@ -179,7 +171,7 @@ private Q_SLOTS:
         QFETCH(QString, expectedName);
 
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(fileName));
@@ -195,7 +187,7 @@ private Q_SLOTS:
     void testLeadingAppendixRemoval()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QStringLiteral(SOURCE_DIR "/data/tripgroup/leading-appendix.json")));
@@ -211,7 +203,7 @@ private Q_SLOTS:
     void testDeletion()
     {
         ReservationManager resMgr;
-        clearReservations(&resMgr);
+        Test::clearAll(&resMgr);
         ApplicationController ctrl;
         ctrl.setReservationManager(&resMgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QStringLiteral(SOURCE_DIR "/../tests/randa2017.json")));
