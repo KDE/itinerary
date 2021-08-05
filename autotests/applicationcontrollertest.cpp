@@ -53,10 +53,14 @@ private Q_SLOTS:
         QSignalSpy resSpy(&resMgr, &ReservationManager::reservationAdded);
         QVERIFY(resSpy.isValid());
 
+        DocumentManager docMgr;
+        Test::clearAll(&docMgr);
+
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
+        appController.setDocumentManager(&docMgr);
 
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
@@ -70,7 +74,11 @@ private Q_SLOTS:
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
-        // TODO PDF
+        appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        QCOMPARE(resSpy.size(), 4);
+        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(infoSpy.size(), 4);
+        QCOMPARE(docMgr.documents().size(), 1);
     }
 
     void testImportFile()
@@ -85,10 +93,14 @@ private Q_SLOTS:
         QSignalSpy resSpy(&resMgr, &ReservationManager::reservationAdded);
         QVERIFY(resSpy.isValid());
 
+        DocumentManager docMgr;
+        Test::clearAll(&docMgr);
+
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
+        appController.setDocumentManager(&docMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
@@ -98,7 +110,11 @@ private Q_SLOTS:
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
-        // TODO PDF
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        QCOMPARE(resSpy.size(), 3);
+        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(infoSpy.size(), 3);
+        QCOMPARE(docMgr.documents().size(), 1);
     }
 
     void testExportFile()
