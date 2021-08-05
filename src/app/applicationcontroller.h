@@ -53,7 +53,7 @@ public:
     void importFromIntent(const KAndroidExtras::Intent &intent);
     Q_INVOKABLE void importFromClipboard();
     Q_INVOKABLE void importFromUrl(const QUrl &url);
-    void importData(const QByteArray &data);
+    void importData(const QByteArray &data, const QString &fileName = {});
 
     Q_INVOKABLE void checkCalendar();
 
@@ -86,7 +86,6 @@ private:
     bool importBundle(const QUrl &url);
     bool importBundle(const QByteArray &data);
     bool importBundle(KItinerary::File *file);
-    QVector<QString> importReservationOrHealthCertificate(const QByteArray &data, const QString &fileName = {});
     bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);
 
