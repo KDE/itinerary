@@ -15,6 +15,7 @@
 #include <transfermanager.h>
 #include <tripgroupmanager.h>
 
+#include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/File>
 
 #include <QUrl>
@@ -32,6 +33,11 @@ private:
         QFile f(fn);
         f.open(QFile::ReadOnly);
         return f.readAll();
+    }
+
+    bool hasZxing()
+    {
+        return KItinerary::ExtractorCapabilities::capabilitiesString().contains(QLatin1String("zxing"), Qt::CaseInsensitive);
     }
 
 private Q_SLOTS:
@@ -75,6 +81,9 @@ private Q_SLOTS:
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        if (!hasZxing()) {
+            QSKIP("Built without ZXing");
+        }
         QCOMPARE(resSpy.size(), 4);
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 4);
@@ -111,6 +120,9 @@ private Q_SLOTS:
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        if (!hasZxing()) {
+            QSKIP("Built without ZXing");
+        }
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(passSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
