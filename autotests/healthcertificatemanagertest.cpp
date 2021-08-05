@@ -5,6 +5,7 @@
 */
 
 #include <config-itinerary.h>
+#include <applicationcontroller.h>
 #include <healthcertificatemanager.h>
 
 #include <QAbstractItemModelTester>
@@ -30,6 +31,8 @@ private Q_SLOTS:
 
     void testManager()
     {
+        ApplicationController ctrl;
+
         {
             HealthCertificateManager mgr;
             QAbstractItemModelTester modelTester(&mgr);
@@ -99,12 +102,25 @@ private Q_SLOTS:
         {
             HealthCertificateManager mgr;
             QAbstractItemModelTester modelTester(&mgr);
-            QSignalSpy removeSpy(&mgr, &QAbstractItemModel::rowsRemoved);
+            QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
+            ctrl.setHealthCertificateManager(&mgr);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr.rowCount(), 2);
+            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
+            QCOMPARE(mgr.rowCount(), 3);
+            QCOMPARE(insertSpy.size(), 1);
+#endif
+        }
+
+        {
+            HealthCertificateManager mgr;
+            QAbstractItemModelTester modelTester(&mgr);
+            QSignalSpy removeSpy(&mgr, &QAbstractItemModel::rowsRemoved);
+#if HAVE_KHEALTHCERTIFICATE
+            QCOMPARE(mgr.rowCount(), 3);
             mgr.removeCertificate(0);
             QCOMPARE(removeSpy.size(), 1);
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr.rowCount(), 2);
 #endif
         }
     }
