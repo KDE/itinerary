@@ -330,18 +330,18 @@ void ApplicationController::importLocalFile(const QUrl &url)
         return;
     }
 
+    // deal with things we can import more efficiently from a file directly
     const auto head = f.peek(4);
-    if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive)) {
-        m_pkPassMgr->importPass(url);
-    } else if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive)) {
-        importBundle(url);
-    } else if (FileHelper::hasZipHeader(head)) {
-        if (m_pkPassMgr->importPass(url).isEmpty()) {
-            importBundle(url);
+    if (FileHelper::hasZipHeader(head)) {
+        if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive) && !m_pkPassMgr->importPass(url).isEmpty()) {
+            return;
         }
-    } else {
-        importData(f.readAll(), f.fileName());
+        if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive) && importBundle(url)) {
+            return;
+        }
     }
+
+    importData(f.readAll(), f.fileName());
 }
 
 void ApplicationController::importData(const QByteArray &data, const QString &fileName)
@@ -350,42 +350,53 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
     if (data.size() < 4) {
         return;
     }
+
     if (FileHelper::hasZipHeader(data)) {
-        if (m_pkPassMgr->importPassFromData(data).isEmpty()) {
-            importBundle(data);
-        }
-    } else {
-        using namespace KItinerary;
-        ExtractorEngine engine;
-        engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-        engine.setData(data, fileName);
-        const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
-        if (!resIds.isEmpty()) {
-            // check if there is a document we want to attach here
-            QMimeDatabase db;
-            const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
-            if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
-                DigitalDocument docInfo;
-                docInfo.setName(fileName);
-                docInfo.setEncodingFormat(mt.name());
-                const auto docId = DocumentUtil::idForContent(data);
-                m_docMgr->addDocument(docId, docInfo, data);
-
-                for (const auto &resId : resIds) {
-                    auto res = m_resMgr->reservation(resId);
-                    if (DocumentUtil::addDocumentId(res, docId)) {
-                        m_resMgr->updateReservation(resId, res);
-                    }
-                }
-            }
-
-            Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
+        if (!m_pkPassMgr->importPassFromData(data).isEmpty()) {
             return;
         }
-
-        // look for health certificate barcodes instead
-        importHealthCertificateRecursive(engine.rootDocumentNode());
+        if (importBundle(data)) {
+            return;
+        }
     }
+
+    using namespace KItinerary;
+    ExtractorEngine engine;
+    engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+    engine.setData(data, fileName);
+    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    if (!resIds.isEmpty()) {
+        // check if there is a document we want to attach here
+        QMimeDatabase db;
+        const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
+        if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
+            DigitalDocument docInfo;
+            docInfo.setName(fileName);
+            docInfo.setEncodingFormat(mt.name());
+            const auto docId = DocumentUtil::idForContent(data);
+            m_docMgr->addDocument(docId, docInfo, data);
+
+            for (const auto &resId : resIds) {
+                auto res = m_resMgr->reservation(resId);
+                if (DocumentUtil::addDocumentId(res, docId)) {
+                    m_resMgr->updateReservation(resId, res);
+                }
+            }
+        }
+
+        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
+        return;
+    }
+
+    // look for health certificate barcodes instead
+    // if we don't find anything, try to import as health certificate directly
+    if (importHealthCertificateRecursive(engine.rootDocumentNode()) || m_healthCertMgr->importCertificate(data)) {
+        Q_EMIT infoMessage(i18n("Health certificate imported."));
+        return;
+    }
+
+    // nothing found
+    Q_EMIT infoMessage(i18n("Nothing imported."));
 }
 
 void ApplicationController::checkCalendar()
