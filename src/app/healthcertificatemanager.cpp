@@ -16,13 +16,10 @@
 
 #include <KLocalizedString>
 
-#include <QClipboard>
 #include <QDebug>
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
-#include <QGuiApplication>
-#include <QMimeData>
 #include <QStandardPaths>
 #include <QUuid>
 
@@ -85,16 +82,6 @@ bool HealthCertificateManager::importCertificate(const QByteArray &rawData)
 #else
     return false;
 #endif
-}
-
-void HealthCertificateManager::importCertificateFromClipboard()
-{
-    const auto md = QGuiApplication::clipboard()->mimeData();
-    if (md->hasText()) {
-        importCertificate(md->text().toUtf8());
-    } else if (md->hasFormat(QLatin1String("application/octet-stream"))) {
-        importCertificate(md->data(QLatin1String("application/octet-stream")));
-    }
 }
 
 void HealthCertificateManager::removeCertificate(int row)

@@ -26,7 +26,6 @@ public:
     bool isAvailable() const;
 
     bool importCertificate(const QByteArray &rawData);
-    Q_INVOKABLE void importCertificateFromClipboard();
     Q_INVOKABLE void removeCertificate(int row);
 
     enum {

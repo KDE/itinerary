@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconName: "edit-paste"
                 text: i18n("Import from Clipboard")
-                onTriggered: HealthCertificateManager.importCertificateFromClipboard()
+                onTriggered: ApplicationController.importFromClipboard()
             },
             Kirigami.Action {
                 iconName: "edit-delete"
