@@ -62,11 +62,14 @@ private Q_SLOTS:
         DocumentManager docMgr;
         Test::clearAll(&docMgr);
 
+        HealthCertificateManager healthCertMgr;
+
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&passMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
+        appController.setHealthCertificateManager(&healthCertMgr);
 
         appController.importData(readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
