@@ -23,6 +23,8 @@ class ExtractorDocumentNode;
 class File;
 }
 
+namespace KMime { class Message; }
+
 namespace KAndroidExtras {
 class Intent;
 }
@@ -88,6 +90,7 @@ private:
     bool importBundle(KItinerary::File *file);
     bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);
+    void importMimeMessage(KMime::Message *msg);
 
     static ApplicationController *s_instance;
 

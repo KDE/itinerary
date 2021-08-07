@@ -54,6 +54,7 @@ target_link_libraries(itinerary PUBLIC
     KPublicTransport
     KPim::Itinerary
     KPim::PkPass
+    KF5::Mime
     KF5::I18n
     KF5::Contacts
     KF5::CoreAddons
@@ -97,7 +98,6 @@ if (ANDROID)
     # so androiddeployqt picks them up
     target_link_libraries(itinerary PUBLIC Qt::AndroidExtras KAndroidExtras)
     target_link_libraries(itinerary-app PRIVATE
-        KF5::Mime
         KF5::Archive
         KF5::Kirigami2
         Qt::Svg

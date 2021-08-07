@@ -52,10 +52,10 @@
 #include <QUrl>
 #include <QUrlQuery>
 
-#ifdef Q_OS_ANDROID
 #include <KMime/Message>
 #include <KMime/Types>
 
+#ifdef Q_OS_ANDROID
 #include <kandroidextras/activity.h>
 #include <kandroidextras/contentresolver.h>
 #include <kandroidextras/intent.h>
@@ -248,7 +248,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
 
         msg.assemble();
         qDebug().noquote() << msg.encodedContent();
-        m_resMgr->importReservation(&msg);
+        importReservation(&msg);
         return;
     }
 
@@ -555,6 +555,13 @@ void ApplicationController::importPass(const QString &passId)
     if (!resIds.isEmpty()) {
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
     }
+}
+
+void ApplicationController::importMimeMessage(KMime::Message *msg)
+{
+    ExtractorEngine engine;
+    engine.setContent(QVariant::fromValue<KMime::Content*>(msg), u"message/rfc822");
+    m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
 }
 
 void ApplicationController::addDocument(const QString &batchId, const QUrl &url)

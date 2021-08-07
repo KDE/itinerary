@@ -13,10 +13,6 @@
 #include <QObject>
 #include <QVariant>
 
-namespace KMime { class Message; }
-
-class PkPassManager;
-
 class QUrl;
 
 /** Manages JSON-LD reservation data.
@@ -53,9 +49,6 @@ public:
      *  ids that previously existed, in case the extracted elements could be merged.
      */
     QVector<QString> importReservations(const QVector<QVariant> &resData);
-#ifdef Q_OS_ANDROID
-    QVector<QString> importReservation(KMime::Message *msg);
-#endif
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

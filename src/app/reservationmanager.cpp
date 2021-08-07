@@ -9,7 +9,6 @@
 #include "reservationhelper.h"
 #include "logging.h"
 
-#include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -18,10 +17,6 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
-
-#ifdef Q_OS_ANDROID
-#include <KMime/Message>
-#endif
 
 #include <KLocalizedString>
 
@@ -140,15 +135,6 @@ QString ReservationManager::batchesBasePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/batches/");
 }
-
-#ifdef Q_OS_ANDROID
-QVector<QString> ReservationManager::importReservation(KMime::Message *msg)
-{
-    ExtractorEngine engine;
-    engine.setContent(QVariant::fromValue<KMime::Content*>(msg), u"message/rfc822");
-    return importReservations(JsonLdDocument::fromJson(engine.extract()));
-}
-#endif
 
 QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
 {
