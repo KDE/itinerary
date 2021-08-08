@@ -54,7 +54,7 @@ Kirigami.AbstractCard {
             width: topLayout.width
             text: locationInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
                 i18n("People are driving on the right side.") :
-                i18n("People are driving on the wrong side.")
+                i18n("People are driving on the left side.")
             color: Kirigami.Theme.negativeTextColor
             visible: locationInfo.drivingSideDiffers
             wrapMode: Text.WordWrap
