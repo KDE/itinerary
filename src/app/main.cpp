@@ -211,6 +211,7 @@ int main(int argc, char **argv)
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("Material"));
 #else
+    QIcon::setFallbackThemeName(QStringLiteral("breeze"));
     QApplication app(argc, argv); // for native file dialogs
 
     // Default to org.kde.desktop style unless the user forces another style
