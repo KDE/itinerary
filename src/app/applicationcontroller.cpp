@@ -228,8 +228,12 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
             body->setBody(text.toUtf8());
             msg.addContent(body);
             for (const auto &a : attachments) {
+                QUrl attUrl(a);
                 auto att = new KMime::Content;
-                att->contentType()->setMimeType(ContentResolver::mimeType(QUrl(a)).toUtf8());
+                att->contentType()->setMimeType(ContentResolver::mimeType(attUrl).toUtf8());
+                att->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
+                att->contentTransferEncoding()->setDecoded(true);
+                att->contentType()->setName(attUrl.fileName(), "utf-8");
                 QFile f(a);
                 if (!f.open(QFile::ReadOnly)) {
                     qCWarning(Log) << "Failed to open attachement:" << a << f.errorString();
