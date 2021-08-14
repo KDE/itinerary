@@ -561,7 +561,10 @@ void ApplicationController::importMimeMessage(KMime::Message *msg)
 {
     ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KMime::Content*>(msg), u"message/rfc822");
-    m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    if (!resIds.isEmpty()) {
+        Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
+    }
 }
 
 void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
