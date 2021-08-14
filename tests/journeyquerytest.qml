@@ -34,6 +34,10 @@ Kirigami.ApplicationWindow {
         id: journeySectionPage
         App.JourneySectionPage {}
     }
+    Component {
+        id: journeyPathPage
+        App.JourneyPathPage {}
+    }
 
     Component {
         id: jnyQueryPage

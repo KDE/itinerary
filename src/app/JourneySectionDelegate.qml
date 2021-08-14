@@ -18,6 +18,8 @@ Kirigami.AbstractListItem {
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
             applicationWindow().pageStack.push(journeySectionPage, {"journeySection": modelData});
+        } else if (modelData.path.sections.length > 1) {
+            applicationWindow().pageStack.push(journeyPathPage, {"path": modelData.path});
         }
     }
 

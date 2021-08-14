@@ -6,6 +6,7 @@
     <qresource prefix="/">
         <file>journeyquerytest.qml</file>
         <file alias="JourneyDelegateHeader.qml">../src/app/JourneyDelegateHeader.qml</file>
+        <file alias="JourneyPathPage.qml">../src/app/JourneyPathPage.qml</file>
         <file alias="JourneyQueryPage.qml">../src/app/JourneyQueryPage.qml</file>
         <file alias="JourneySectionDelegate.qml">../src/app/JourneySectionDelegate.qml</file>
         <file alias="JourneySectionPage.qml">../src/app/JourneySectionPage.qml</file>
@@ -18,6 +19,8 @@
         <file alias="images/cablecar.svg">../src/app/images/cablecar.svg</file>
         <file alias="images/car.svg">../src/app/images/car.svg</file>
         <file alias="images/coach.svg">../src/app/images/coach.svg</file>
+        <file alias="images/elevator.svg">../src/app/images/elevator.svg</file>
+        <file alias="images/escalator.svg">../src/app/images/escalator.svg</file>
         <file alias="images/ferry.svg">../src/app/images/ferry.svg</file>
         <file alias="images/flight.svg">../src/app/images/flight.svg</file>
         <file alias="images/foodestablishment.svg">../src/app/images/foodestablishment.svg</file>
@@ -26,6 +29,7 @@
         <file alias="images/rapidtransit.svg">../src/app/images/rapidtransit.svg</file>
         <file alias="images/seat.svg">../src/app/images/seat.svg</file>
         <file alias="images/shuttle.svg">../src/app/images/shuttle.svg</file>
+        <file alias="images/stairs.svg">../src/app/images/stairs.svg</file>
         <file alias="images/subway.svg">../src/app/images/subway.svg</file>
         <file alias="images/taxi.svg">../src/app/images/taxi.svg</file>
         <file alias="images/train.svg">../src/app/images/train.svg</file>

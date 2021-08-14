@@ -43,6 +43,7 @@
         <file>IndoorMapPage.qml</file>
         <file>IndoorMapPlatformSheet.qml</file>
         <file>JourneyDelegateHeader.qml</file>
+        <file>JourneyPathPage.qml</file>
         <file>JourneyQueryPage.qml</file>
         <file>JourneySectionDelegate.qml</file>
         <file>JourneySectionPage.qml</file>
@@ -84,6 +85,8 @@
         <file>images/cablecar.svg</file>
         <file>images/car.svg</file>
         <file>images/coach.svg</file>
+        <file>images/elevator.svg</file>
+        <file>images/escalator.svg</file>
         <file>images/ferry.svg</file>
         <file>images/flight.svg</file>
         <file>images/foodestablishment.svg</file>
@@ -92,6 +95,7 @@
         <file>images/rapidtransit.svg</file>
         <file>images/seat.svg</file>
         <file>images/shuttle.svg</file>
+        <file>images/stairs.svg</file>
         <file>images/subway.svg</file>
         <file>images/taxi.svg</file>
         <file>images/train.svg</file>
