@@ -5,6 +5,7 @@
 */
 
 #include "publictransport.h"
+#include "reservationhelper.h"
 #include "logging.h"
 
 #include <KItinerary/BusTrip>
@@ -13,6 +14,7 @@
 #include <KItinerary/Ticket>
 
 #include <KPublicTransport/Attribution>
+#include <KPublicTransport/Backend>
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Location>
@@ -415,6 +417,31 @@ KPublicTransport::JourneySection PublicTransport::lastTransportSection(const KPu
     }
 
     return {};
+}
+
+QStringList PublicTransport::suitableBackendsForReservation(KPublicTransport::Manager *mgr, const QVariant &res)
+{
+    using namespace KPublicTransport;
+
+    const auto companyCode = ReservationHelper::uicCompanyCode(res);
+    if (companyCode.size() != 4) {
+        return {};
+    }
+
+    QStringList backendIds;
+    for (const auto &backend : mgr->backends()) {
+        if (!mgr->isBackendEnabled(backend.identifier())) {
+            continue;
+        }
+        for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
+            if (backend.coverageArea(cov).uicCompanyCodes().contains(companyCode)) {
+                backendIds.push_back(backend.identifier());
+                break;
+            }
+        }
+    }
+
+    return backendIds;
 }
 
 #include "moc_publictransport.cpp"

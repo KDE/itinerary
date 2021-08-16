@@ -90,3 +90,21 @@ QDateTime ReservationHelper::arrivalTime(const QVariant &res)
     }
     return {};
 }
+
+QString ReservationHelper::uicCompanyCode(const QVariant &res)
+{
+    QString id;
+    if (JsonLd::isA<TrainReservation>(res)) {
+        id = res.value<TrainReservation>().reservationFor().value<TrainTrip>().provider().identifier();
+    } // TODO in theory we can also have this for bus reservations
+
+    if (!id.startsWith(QLatin1String("uic:")) || id.size() > 8) {
+        return {};
+    }
+
+    id = id.mid(4);
+    while (id.size() < 4) {
+        id.insert(0, QLatin1Char('0'));
+    }
+    return id;
+}

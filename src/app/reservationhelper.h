@@ -30,6 +30,9 @@ namespace ReservationHelper
      */
     QDateTime departureTime(const QVariant &res);
     QDateTime arrivalTime(const QVariant &res);
+
+    /** Returns the UIC company code for @p res, if any. */
+    QString uicCompanyCode(const QVariant &res);
 }
 
 #endif // RESERVATIONHELPER_H

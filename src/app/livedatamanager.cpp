@@ -188,6 +188,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setDateTimeMode(JourneyRequest::Departure);
         req.setIncludeIntermediateStops(true);
         req.setIncludePaths(true);
+        PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryJourney(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
         return;
@@ -197,6 +198,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res));
         req.setMode(StopoverRequest::QueryDeparture);
         req.setDateTime(SortUtil::startDateTime(res));
+        PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
     }
@@ -205,6 +207,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         StopoverRequest req(PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res));
         req.setMode(StopoverRequest::QueryArrival);
         req.setDateTime(SortUtil::endDateTime(res));
+        PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Arrival, resId); });
     }

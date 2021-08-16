@@ -11,6 +11,8 @@
 #include <KItinerary/Ticket>
 
 #include <KPublicTransport/Journey>
+#include <KPublicTransport/JourneyRequest>
+#include <KPublicTransport/Manager>
 
 #include <QtTest/qtest.h>
 #include <QStandardPaths>
@@ -111,6 +113,33 @@ private Q_SLOTS:
         QVERIFY(!PublicTransport().warnAboutSection(section));
         section.setDistance(2000);
         QVERIFY(PublicTransport().warnAboutSection(section));
+    }
+
+    void testBackendSelection()
+    {
+        Organization provider;
+        provider.setIdentifier(QStringLiteral("uic:1181"));
+        TrainTrip trip;
+        trip.setProvider(provider);
+        TrainReservation res;
+        res.setReservationFor(trip);
+
+        KPublicTransport::Manager mgr;
+        KPublicTransport::JourneyRequest req;
+
+        mgr.setBackendEnabled(QLatin1String("at_oebb"), true);
+        PublicTransport::selectBackends(req, &mgr, res);
+        QCOMPARE(req.backendIds(), QStringList({ QLatin1String("at_oebb") }));
+        mgr.setBackendEnabled(QLatin1String("at_oebb"), false);
+        PublicTransport::selectBackends(req, &mgr, res);
+        QCOMPARE(req.backendIds(), QStringList());
+
+        provider.setIdentifier(QStringLiteral("uic:80"));
+        trip.setProvider(provider);
+        res.setReservationFor(trip);
+        mgr.setBackendEnabled(QLatin1String("de_db"), true);
+        PublicTransport::selectBackends(req, &mgr, res);
+        QCOMPARE(req.backendIds(), QStringList({ QLatin1String("de_db") }));
     }
 };
 
