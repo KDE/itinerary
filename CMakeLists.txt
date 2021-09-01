@@ -10,14 +10,11 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION 5.84)
+set(KF5_MIN_VERSION 5.85)
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
-if (POLICY CMP0071)
-    cmake_policy(SET CMP0071 NEW)
-endif()
 
-include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 include(ECMAddTests)
 include(ECMGenerateHeaders)
 include(ECMInstallIcons)
@@ -96,25 +93,16 @@ if (TARGET KHealthCertificate)
     set(HAVE_KHEALTHCERTIFICATE TRUE)
 endif()
 
-add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII -DQT_NO_URL_CAST_FROM_STRING)
-add_definitions(-DQT_NO_NARROWING_CONVERSIONS_IN_CONNECT)
-add_definitions(-DQT_USE_QSTRINGBUILDER)
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
-if (ANDROID)
-    set(CMAKE_MODULE_EXE_FLAGS "-Wl,--fatal-warnings -Wl,--no-undefined ${CMAKE_EXE_LINKER_FLAGS}")
-endif()
 
 add_subdirectory(src)
 add_subdirectory(autotests)
 add_subdirectory(tests)
 
-if (NOT ANDROID)
-    ecm_qt_install_logging_categories(
-	    EXPORT ITINERARY
-	    FILE org_kde_itinerary.categories
-            DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
-
-    )
-endif()
+ecm_qt_install_logging_categories(
+    EXPORT ITINERARY
+    FILE org_kde_itinerary.categories
+    DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
+)
 ki18n_install(po)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
