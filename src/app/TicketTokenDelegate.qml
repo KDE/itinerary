@@ -10,7 +10,6 @@ import QtQuick.Controls 2.1 as QQC2
 import QtQuick.Window 2.10
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.prison 1.0 as Prison
-import org.kde.solidextras 1.0 as Solid
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -22,6 +21,11 @@ ColumnLayout {
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
     Layout.fillWidth: true
+
+    /** There is a barcode displayed. */
+    readonly property alias hasBarcode: background.visible
+    /** Double tap on the barcode to request scan mode. */
+    signal scanModeToggled()
 
     TicketTokenModel {
         id: ticketModel
@@ -69,10 +73,7 @@ ColumnLayout {
 
             MouseArea {
                 anchors.fill: parent
-                onDoubleClicked: {
-                    Solid.BrightnessManager.toggleBrightness()
-                    Solid.LockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"))
-                }
+                onDoubleClicked: root.scanModeToggled()
             }
 
             Prison.Barcode {

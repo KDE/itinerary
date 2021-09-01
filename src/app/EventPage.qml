@@ -21,6 +21,20 @@ App.DetailsPage {
         }
     }
 
+    actions.main: Kirigami.Action {
+        icon.name: "view-barcode-qr"
+        text: i18n("Barcode Scan Mode")
+        onTriggered: scanModeController.toggle()
+        visible: ticketToken.hasBarcode
+        checkable: true
+        checked: scanModeController.enabled
+    }
+
+    BarcodeScanModeController {
+        id: scanModeController
+        page: root
+    }
+
     ColumnLayout {
         width: parent.width
 
@@ -33,9 +47,10 @@ App.DetailsPage {
         }
 
         App.TicketTokenDelegate {
+            id: ticketToken
             resIds: ReservationManager.reservationsForBatch(root.batchId)
+            onScanModeToggled: scanModeController.toggle()
         }
-
         Kirigami.FormLayout {
             Layout.fillWidth: true
 

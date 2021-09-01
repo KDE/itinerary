@@ -30,6 +30,20 @@ App.DetailsPage {
         }
     }
 
+    actions.main: Kirigami.Action {
+        icon.name: "view-barcode-qr"
+        text: i18n("Barcode Scan Mode")
+        onTriggered: scanModeController.toggle()
+        visible: ticketToken.hasBarcode
+        checkable: true
+        checked: scanModeController.enabled
+    }
+
+    BarcodeScanModeController {
+        id: scanModeController
+        page: root
+    }
+
     ColumnLayout {
         width: parent.width
 
@@ -42,13 +56,14 @@ App.DetailsPage {
 
         // ticket barcode
         App.TicketTokenDelegate {
-            id: ticketDelegate
+            id: ticketToken
             resIds: ReservationManager.reservationsForBatch(root.batchId)
             onCurrentReservationIdChanged: {
                 if (!currentReservationId)
                     return;
                 root.currentReservationId = currentReservationId;
             }
+            onScanModeToggled: scanModeController.toggle()
         }
 
         Kirigami.FormLayout {
@@ -57,7 +72,7 @@ App.DetailsPage {
             // sequence number belongs to the selected barcode
             QQC2.Label {
                 Kirigami.FormData.label: i18n("Sequence Number:")
-                text: ReservationManager.reservation(ticketDelegate.currentReservationId).passengerSequenceNumber
+                text: ReservationManager.reservation(ticketToken.currentReservationId).passengerSequenceNumber
                 visible: text
             }
 

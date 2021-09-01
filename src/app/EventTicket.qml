@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
+import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import QtGraphicalEffects 1.0 as Effects
@@ -19,6 +19,9 @@ Item {
     property string passId
     implicitHeight: bodyBackground.implicitHeight
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
+
+    /** Double tap on the barcode to request scan mode. */
+    signal scanModeToggled()
 
     Rectangle {
         id: bodyBackground
@@ -185,7 +188,12 @@ Item {
             }
 
             // barcode
-            App.PkPassBarcode { pass: root.pass }
+            App.PkPassBarcode {
+                pass: root.pass
+                TapHandler {
+                    onDoubleTapped: scanModeToggled()
+                }
+            }
 
             // footer
             Image {

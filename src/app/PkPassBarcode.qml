@@ -9,7 +9,6 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.pkpass 1.0 as KPkPass
 import org.kde.prison 1.0 as Prison
-import org.kde.solidextras 1.0 as Solid
 
 Rectangle {
     property var pass
@@ -19,14 +18,6 @@ Rectangle {
     color: "white"
     radius: 6
     Layout.alignment: Qt.AlignCenter
-
-    MouseArea {
-        anchors.fill: parent
-        onDoubleClicked: {
-            Solid.BrightnessManager.toggleBrightness()
-            Solid.LockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"))
-        }
-    }
 
     ColumnLayout {
         id: barcodeLayout

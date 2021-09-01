@@ -16,12 +16,19 @@ ColumnLayout {
     id: root
     width: parent.width
     property var certificate
+
+    /** Double tap on the barcode to request scan mode. */
+    signal scanModeToggled()
+
     function daysTo(d1, d2) {
         return (d2.getTime() - d1.getTime()) / (1000 * 60 * 60 * 24);
     }
 
     App.HealthCertificateBarcode {
         certificate: root.certificate
+        TapHandler {
+            onDoubleTapped: root.scanModeToggled()
+        }
     }
 
     Kirigami.FormLayout {

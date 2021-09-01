@@ -20,6 +20,15 @@ Kirigami.ScrollablePage {
         }
     }
 
+    actions.main: Kirigami.Action {
+        icon.name: "view-barcode-qr"
+        text: i18n("Barcode Scan Mode")
+        onTriggered: scanModeController.toggle()
+        visible: root.pass.barcodes.length > 0
+        checkable: true
+        checked: scanModeController.enabled
+    }
+
     Component {
         id: boardingPass
         App.BoardingPass {
@@ -36,6 +45,11 @@ Kirigami.ScrollablePage {
         }
     }
 
+    BarcodeScanModeController {
+        id: scanModeController
+        page: root
+    }
+
     Item {
         id: contentItem
         width: parent.width
@@ -49,6 +63,13 @@ Kirigami.ScrollablePage {
                     case KPkPass.Pass.BoardingPass: return boardingPass;
                     case KPkPass.Pass.EventTicket: return eventTicket;
                 }
+            }
+        }
+
+        Connections {
+            target: loader.item
+            function onScanModeToggled() {
+                scanModeController.toggle();
             }
         }
     }

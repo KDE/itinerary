@@ -17,6 +17,14 @@ Kirigami.ScrollablePage {
     title: i18n("Health Certificates")
 
     actions {
+        main: Kirigami.Action {
+            icon.name: "view-barcode-qr"
+            text: i18n("Barcode Scan Mode")
+            onTriggered: scanModeController.toggle()
+            visible: certSelector.currentValue != undefined
+            checkable: true
+            checked: scanModeController.enabled
+        }
         contextualActions: [
             Kirigami.Action {
                 iconName: "edit-paste"
@@ -97,6 +105,7 @@ Kirigami.ScrollablePage {
     }
 
     Loader {
+        id: loader
         sourceComponent: {
             switch (certSelector.currentValue.type) {
                 case KHC.HealthCertificate.Vaccination:
@@ -109,5 +118,17 @@ Kirigami.ScrollablePage {
                     return helpText;
             }
         }
+
+        BarcodeScanModeController {
+            id: scanModeController
+            page: root
+        }
+        Connections {
+            target: loader.item
+            function onScanModeToggled() {
+                scanModeController.toggle();
+            }
+        }
     }
+
 }

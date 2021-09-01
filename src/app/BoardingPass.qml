@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
+import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
@@ -19,6 +19,9 @@ Item {
     readonly property int __margin: 10
 
     implicitWidth: Math.max(bodyLayout.implicitWidth, 332)
+
+    /** Double tap on the barcode to request scan mode. */
+    signal scanModeToggled()
 
     ColumnLayout {
         id: topLayout
@@ -188,7 +191,12 @@ Item {
         }
 
         // barcode
-        App.PkPassBarcode { pass: root.pass }
+        App.PkPassBarcode {
+            pass: root.pass
+            TapHandler {
+                onDoubleTapped: root.scanModeToggled()
+            }
+        }
 
         ColumnLayout {
             id: backLayout

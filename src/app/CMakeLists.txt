@@ -144,6 +144,7 @@ if (ANDROID)
         notifications
         question
         settings-configure
+        view-barcode-qr
         view-calendar-day
         view-list-symbolic
         view-refresh
