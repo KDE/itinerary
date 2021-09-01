@@ -224,7 +224,10 @@ int main(int argc, char **argv)
 
     auto aboutData = KAboutData::applicationData();
     aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name
-    aboutData.setLicense(KAboutLicense::LGPL);
+    aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
+    aboutData.setHomepage(QStringLiteral("https://apps.kde.org/itinerary"));
+    aboutData.setShortDescription(i18n("Digital Travel Assistant"));
+    aboutData.setCopyrightStatement(i18n("Copyright © 2018-2021 The KDE Community"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
