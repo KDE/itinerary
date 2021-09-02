@@ -609,7 +609,14 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.08.1" date="2021-09-02"/>
+    <release version="21.08.1" date="2021-09-02">
+      <description>
+        <ul>
+          <li>Properly import mail attachments shared from FairEmail.</li>
+          <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.08.0" date="2021-08-12">
       <description>
         <ul>
