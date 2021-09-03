@@ -44,6 +44,8 @@ Kirigami.ScrollablePage {
                 }
                 QQC2.Label {
                     text: model.display
+                    Layout.fillWidth: true
+                    elide: Text.ElideMiddle
                 }
             }
             actions: [
