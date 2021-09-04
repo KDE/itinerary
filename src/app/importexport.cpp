@@ -183,10 +183,10 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
     for (const auto &batchId : resMgr->batches()) {
         auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
         transferMgr->importTransfer(t);
-        count += t.state() != Transfer::Discarded ? 1 : 0;
+        count += t.state() != Transfer::UndefinedState ? 1 : 0;
         t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::After))).object());
         transferMgr->importTransfer(t);
-        count += t.state() != Transfer::Discarded ? 1 : 0;
+        count += t.state() != Transfer::UndefinedState ? 1 : 0;
     }
     return count;
 }
