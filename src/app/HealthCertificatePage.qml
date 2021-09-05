@@ -62,6 +62,7 @@ Kirigami.ScrollablePage {
     header: Item {
         height: childrenRect.height + 2 * Kirigami.Units.largeSpacing
         width: parent.width
+        visible: certSelector.count > 0
         ColumnLayout {
             anchors.top: parent.top
             anchors.left: parent.left
@@ -107,6 +108,8 @@ Kirigami.ScrollablePage {
     Loader {
         id: loader
         sourceComponent: {
+            if (certSelector.count == 0 || !certSelector.currentValue)
+                return helpText;
             switch (certSelector.currentValue.type) {
                 case KHC.HealthCertificate.Vaccination:
                     return vaccinationDetails;
@@ -114,9 +117,8 @@ Kirigami.ScrollablePage {
                     return testDetails;
                 case KHC.HealthCertificate.Recovery:
                     return recoveryDetails;
-                default:
-                    return helpText;
             }
+            return helpText;
         }
 
         BarcodeScanModeController {

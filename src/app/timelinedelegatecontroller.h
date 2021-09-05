@@ -68,6 +68,9 @@ class TimelineDelegateController : public QObject
     /** Reservation has been canceled (by user or provider, we usually don't know which). */
     Q_PROPERTY(bool isCanceled READ isCanceled NOTIFY contentChanged)
 
+    /** Number of documents attached to the entire batch. */
+    Q_PROPERTY(int documentCount READ documentCount NOTIFY contentChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController();
@@ -106,6 +109,8 @@ public:
     Q_INVOKABLE QJSValue arrivalMapArguments() const;
     /** Map page arguments for the departure side, if this is a location change element. */
     Q_INVOKABLE QJSValue departureMapArguments() const;
+
+    int documentCount() const;
 
 Q_SIGNALS:
     void setupChanged();

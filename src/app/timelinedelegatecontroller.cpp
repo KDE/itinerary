@@ -15,6 +15,7 @@
 #include "transfer.h"
 #include "transfermanager.h"
 
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/SortUtil>
@@ -684,6 +685,25 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
 
     return args;
+}
+
+int TimelineDelegateController::documentCount() const
+{
+    if (!m_resMgr || m_batchId.isEmpty()) {
+        return 0;
+    }
+
+    QSet<QString> allDocIds;
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto docIds = DocumentUtil::documentIds(res);
+        for (const auto &docId : docIds) {
+            // TODO we could check if actually have the document first?
+            allDocIds.insert(docId.toString());
+        }
+    }
+    return allDocIds.size();
 }
 
 #include "moc_timelinedelegatecontroller.cpp"
