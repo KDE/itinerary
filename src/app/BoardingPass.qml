@@ -214,12 +214,14 @@ Item {
                         color: pass.labelColor
                         text: modelData.label
                         wrapMode: Text.WordWrap
+                        horizontalAlignment: modelData.textAlignment
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
                         text: Util.textToHtml(modelData.valueDisplayString)
                         wrapMode: Text.WordWrap
+                        horizontalAlignment: modelData.textAlignment
                         onLinkActivated: Qt.openUrlExternally(link)
                     }
                 }
