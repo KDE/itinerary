@@ -94,6 +94,7 @@ if (TARGET KHealthCertificate)
 endif()
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055600)
 
 add_subdirectory(src)
 add_subdirectory(autotests)
