@@ -26,6 +26,9 @@ public:
     /** Set a QDateTime property preserving the timezone of the current value. */
     Q_INVOKABLE QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value) const;
 
+    /** Checks whether @p text is rich-text. */
+    Q_INVOKABLE bool isRichText(const QString &text) const;
+
     /** Convert links, email address and phone numbers in the given text to HTML links. */
     Q_INVOKABLE QString textToHtml(const QString &text) const;
 

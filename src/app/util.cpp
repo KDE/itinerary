@@ -8,7 +8,6 @@
 
 #include <KItinerary/JsonLdDocument>
 
-#include <kcoreaddons_version.h>
 #include <KTextToHTML>
 
 #include <QAbstractItemModel>
@@ -46,13 +45,21 @@ QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& p
     return o;
 }
 
+bool Util::isRichText(const QString &text) const
+{
+    auto idx = text.indexOf(QLatin1Char('<'));
+    if (idx >= 0 && idx < text.size() - 2) {
+        return text[idx + 1].isLetter() || text[idx + 1] == QLatin1Char('/');
+    }
+    return false;
+}
+
 QString Util::textToHtml(const QString& text) const
 {
-#if KCOREADDONS_VERSION_MINOR >= 56
+    if (isRichText(text)) {
+        return text;
+    }
     return KTextToHTML::convertToHtml(text, KTextToHTML::ConvertPhoneNumbers | KTextToHTML::PreserveSpaces);
-#else
-    return text;
-#endif
 }
 
 void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const
