@@ -531,7 +531,11 @@ bool TimelineDelegateController::connectionWarning() const
     const auto prevArrDt = std::max(SortUtil::endDateTime(prevRes), prevArr.expectedArrivalTime());
 
     const auto curDepDt = std::max(SortUtil::startDateTime(curRes), departure().expectedDepartureTime());
-    return curDepDt < prevArrDt;
+    if (curDepDt.isValid() && prevArrDt.isValid()) {
+        return curDepDt < prevArrDt;
+    }
+
+    return false;
 }
 
 bool TimelineDelegateController::isCanceled() const

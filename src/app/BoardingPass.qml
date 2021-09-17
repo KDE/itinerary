@@ -220,6 +220,7 @@ Item {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
                         text: Util.textToHtml(modelData.valueDisplayString)
+                        textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.RichText : Text.AutoText
                         wrapMode: Text.WordWrap
                         horizontalAlignment: modelData.textAlignment
                         onLinkActivated: Qt.openUrlExternally(link)

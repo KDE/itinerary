@@ -17,7 +17,7 @@ import org.kde.kosmindoormap.kpublictransport 1.0
 Kirigami.Page {
     id: root
     title: {
-        if (map.mapLoader.isLoading || map.hasError)
+        if (map.mapLoader.isLoading || map.hasError || map.floorLevels.rowCount() == 0)
             return placeName;
         if (map.floorLevels.hasName(map.view.floorLevel))
             return map.floorLevels.name(map.view.floorLevel);

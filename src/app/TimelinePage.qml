@@ -166,13 +166,12 @@ Kirigami.ScrollablePage {
         section.property: "sectionHeader"
         section.delegate: Item {
             implicitHeight: headerItem.implicitHeight + Kirigami.Units.largeSpacing*2
-            implicitWidth: ListView.view.width
+            implicitWidth: parent.width
             Kirigami.BasicListItem {
                 id: headerItem
                 label: section
                 backgroundColor: Kirigami.Theme.backgroundColor
                 icon: "view-calendar-day"
-                x: - 2*Kirigami.Units.largeSpacing
             }
         }
         section.criteria: ViewSection.FullString
