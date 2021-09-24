@@ -72,13 +72,14 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Manufacturer:")
         }
         QQC2.Label {
-            text: i18n("%1/%2", certificate.dose, certificate.totalDoses)
+            text: certificate.totalDoses > 0 ? i18n("%1/%2", certificate.dose, certificate.totalDoses) : certificate.dose
             Kirigami.FormData.label: i18n("Dose:")
             color: certificate.dose < certificate.totalDoses ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
         }
         QQC2.Label {
             text: Localizer.countryFlag(certificate.country) + " " + Localizer.countryName(certificate.country)
             Kirigami.FormData.label: i18n("Country:")
+            visible: certificate.country
         }
 
         Kirigami.Separator {
@@ -94,6 +95,7 @@ ColumnLayout {
             text: certificate.certificateId
             Kirigami.FormData.label: i18n("Identifier:")
             wrapMode: Text.Wrap
+            visible: certificate.certificateId
         }
         QQC2.Label {
             text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
