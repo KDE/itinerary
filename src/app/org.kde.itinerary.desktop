@@ -81,3 +81,4 @@ Terminal=false
 MimeType=application/vnd.apple.pkpass;application/ld+json;application/pdf;text/calendar;text/html;application/json;message/rfc822;application/vnd.kde.itinerary;
 Categories=Qt;KDE;Utility;
 X-KDE-HasTempFileOption=true
+X-KDE-FormFactor=desktop;tablet;handset;
