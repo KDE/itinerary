@@ -124,7 +124,12 @@ Kirigami.ScrollablePage {
         id: topLayout
 
         QQC2.Label {
-            text: i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
+            text: {
+                if (root.reservation.className == "EventReservation") {
+                    return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                }
+                return i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
+            }
             visible: transfer.alignment == Transfer.After
             Layout.fillWidth: true
             Layout.margins: Kirigami.Units.largeSpacing
