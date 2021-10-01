@@ -71,7 +71,7 @@ private Q_SLOTS:
         auto batchId = resMgr.batches().at(0);
         auto transfer = mgr.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 15}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.anchorTimeDelta(), 3600);
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
@@ -90,7 +90,7 @@ private Q_SLOTS:
         TransferManager mgr2;
         transfer = mgr2.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 15}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
         QVERIFY(transfer.hasLocations());
@@ -107,8 +107,8 @@ private Q_SLOTS:
 
         KPublicTransport::Journey jny;
         KPublicTransport::JourneySection section;
-        section.setScheduledDepartureTime(QDateTime({2017, 9, 10}, {5, 30}, QTimeZone("Europe/Berlin")));
-        section.setScheduledArrivalTime(QDateTime({2017, 9, 10}, {6, 0}, QTimeZone("Europe/Berlin")));
+        section.setScheduledDepartureTime(QDateTime({2017, 9, 10}, {5, 0}, QTimeZone("Europe/Berlin")));
+        section.setScheduledArrivalTime(QDateTime({2017, 9, 10}, {5, 30}, QTimeZone("Europe/Berlin")));
         jny.setSections({section});
         mgr.setJourneyForTransfer(transfer, jny);
         QCOMPARE(addSpy.size(), 0);
@@ -118,7 +118,7 @@ private Q_SLOTS:
         transfer = mgr.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Selected);
         QCOMPARE(transfer.journey().sections().size(), 1);
-        QCOMPARE(transfer.journey().scheduledArrivalTime(), QDateTime({2017, 9, 10}, {6, 0}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.journey().scheduledArrivalTime(), QDateTime({2017, 9, 10}, {5, 30}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.anchorTimeDelta(), 45*60);
 
         addSpy.clear();
@@ -135,7 +135,7 @@ private Q_SLOTS:
 
         transfer = mgr.addTransfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Pending);
-        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 15}, QTimeZone("Europe/Berlin")));
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
         QVERIFY(transfer.hasLocations());

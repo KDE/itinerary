@@ -63,34 +63,6 @@ bool ReservationHelper::equals(const QVariant &lhs, const QVariant &rhs)
     return false;
 }
 
-QDateTime ReservationHelper::departureTime(const QVariant &res)
-{
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
-    }
-    if (JsonLd::isA<FlightReservation>(res)) {
-        return res.value<FlightReservation>().reservationFor().value<Flight>().departureTime();
-    }
-    return {};
-}
-
-QDateTime ReservationHelper::arrivalTime(const QVariant &res)
-{
-    if (JsonLd::isA<TrainReservation>(res)) {
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalTime();
-    }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalTime();
-    }
-    if (JsonLd::isA<FlightReservation>(res)) {
-        return res.value<FlightReservation>().reservationFor().value<Flight>().arrivalTime();
-    }
-    return {};
-}
-
 QString ReservationHelper::uicCompanyCode(const QVariant &res)
 {
     QString id;
