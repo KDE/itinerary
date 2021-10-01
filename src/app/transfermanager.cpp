@@ -317,28 +317,24 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
-    if (isLocationChange) {
-        const auto nextResId = m_resMgr->nextBatch(resId);
-        if (nextResId.isEmpty()) {
-            return ShouldRemove;
-        }
-        // TODO this needs to consider transfers after nextResId
-        const auto nextRes = m_resMgr->reservation(nextResId);
-        QVariant nextLoc;
-        if (LocationUtil::isLocationChange(nextRes)) {
-            nextLoc = LocationUtil::departureLocation(nextRes);
-        } else {
-            nextLoc = LocationUtil::location(nextRes);
-        }
-        if (!fromLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::WalkingDistance)) {
-            qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc);
-            transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
-            transfer.setToName(LocationUtil::name(nextLoc));
-            return ShouldAutoAdd;
-        }
+    const auto nextResId = m_resMgr->nextBatch(resId);
+    if (nextResId.isEmpty()) {
+        return ShouldRemove;
     }
-
-    // TODO
+    // TODO this needs to consider transfers after nextResId
+    const auto nextRes = m_resMgr->reservation(nextResId);
+    QVariant nextLoc;
+    if (LocationUtil::isLocationChange(nextRes)) {
+        nextLoc = LocationUtil::departureLocation(nextRes);
+    } else {
+        nextLoc = LocationUtil::location(nextRes);
+    }
+    if (!fromLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::WalkingDistance)) {
+        qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime();
+        transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
+        transfer.setToName(LocationUtil::name(nextLoc));
+        return isLocationChange ? ShouldAutoAdd : CanAddManually;
+    }
 
     return ShouldRemove;
 }
