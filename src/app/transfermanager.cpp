@@ -269,7 +269,19 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         return ShouldRemove;
     }
     const auto prevRes = m_resMgr->reservation(prevResId);
-    // TODO this needs to consider transfers before nextResId
+
+    // check if there is a transfer after prevRes already
+    const auto prevTransfer = this->transfer(prevResId, Transfer::After);
+    if (prevTransfer.state() != Transfer::UndefinedState && prevTransfer.state() != Transfer::Discarded) {
+        if (prevTransfer.floatingLocationType() == Transfer::FavoriteLocation) {
+            transfer.setFrom(prevTransfer.to());
+            transfer.setFromName(prevTransfer.toName());
+            transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+            return CanAddManually;
+        }
+        return ShouldRemove;
+    }
+
     QVariant prevLoc;
     if (LocationUtil::isLocationChange(prevRes)) {
         prevLoc = LocationUtil::arrivalLocation(prevRes);
@@ -321,8 +333,20 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     if (nextResId.isEmpty()) {
         return ShouldRemove;
     }
-    // TODO this needs to consider transfers after nextResId
     const auto nextRes = m_resMgr->reservation(nextResId);
+
+    // check if there is a transfer before nextRes already
+    const auto nextTransfer = this->transfer(nextResId, Transfer::Before);
+    if (nextTransfer.state() != Transfer::UndefinedState && nextTransfer.state() != Transfer::Discarded) {
+        if (nextTransfer.floatingLocationType() == Transfer::FavoriteLocation) {
+            transfer.setTo(nextTransfer.from());
+            transfer.setToName(nextTransfer.fromName());
+            transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+            return CanAddManually;
+        }
+        return ShouldRemove;
+    }
+
     QVariant nextLoc;
     if (LocationUtil::isLocationChange(nextRes)) {
         nextLoc = LocationUtil::departureLocation(nextRes);
