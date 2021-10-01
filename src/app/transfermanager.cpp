@@ -147,7 +147,8 @@ bool TransferManager::canAddTransfer(const QString& resId, Transfer::Alignment a
     t.setReservationId(resId);
     t.setAlignment(alignment);
 
-    return (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) != ShouldRemove;
+    const bool canAdd = (alignment == Transfer::Before ? checkTransferBefore(resId, res, t) : checkTransferAfter(resId, res, t)) != ShouldRemove;
+    return canAdd && t.hasLocations() && t.anchorTime().isValid();
 }
 
 Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment alignment)
@@ -263,29 +264,25 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
-    if (isLocationChange) {
-        const auto prevResId = m_resMgr->previousBatch(resId); // TODO this fails for multiple nested range elements!
-        if (prevResId.isEmpty()) {
-            return ShouldRemove;
-        }
-        const auto prevRes = m_resMgr->reservation(prevResId);
-        // TODO this needs to consider transfers before nextResId
-        QVariant prevLoc;
-        if (LocationUtil::isLocationChange(prevRes)) {
-            prevLoc = LocationUtil::arrivalLocation(prevRes);
-        } else {
-            prevLoc = LocationUtil::location(prevRes);
-        }
-        if (!toLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::WalkingDistance)) {
-            qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc);
-            transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
-            transfer.setFromName(LocationUtil::name(prevLoc));
-            return ShouldAutoAdd;
-
-        }
+    const auto prevResId = m_resMgr->previousBatch(resId); // TODO this fails for multiple nested range elements!
+    if (prevResId.isEmpty()) {
+        return ShouldRemove;
     }
+    const auto prevRes = m_resMgr->reservation(prevResId);
+    // TODO this needs to consider transfers before nextResId
+    QVariant prevLoc;
+    if (LocationUtil::isLocationChange(prevRes)) {
+        prevLoc = LocationUtil::arrivalLocation(prevRes);
+    } else {
+        prevLoc = LocationUtil::location(prevRes);
+    }
+    if (!toLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::WalkingDistance)) {
+        qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc) << transfer.anchorTime();
+        transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
+        transfer.setFromName(LocationUtil::name(prevLoc));
+        return isLocationChange ? ShouldAutoAdd : CanAddManually;
 
-    // TODO
+    }
 
     return ShouldRemove;
 }
