@@ -19,6 +19,8 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         Kirigami.Heading {
             text: i18n("How to import data?")
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
             Layout.fillWidth: true
@@ -28,6 +30,8 @@ Kirigami.ScrollablePage {
 
         Kirigami.Heading {
             text: i18n("Check the settings!")
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
             Layout.fillWidth: true
@@ -37,6 +41,8 @@ Kirigami.ScrollablePage {
 
         Kirigami.Heading {
             text: i18n("More information")
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
             Layout.fillWidth: true
