@@ -15,6 +15,7 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     property var transfer
+    readonly property var reservation: ReservationManager.reservation(transfer.reservationId)
     title: i18n("Select Transfer")
 
     JourneyQueryModel {
@@ -131,7 +132,12 @@ Kirigami.ScrollablePage {
         }
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
+            text: {
+                if (root.reservation.className == "EventReservation") {
+                    return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                }
+                return i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
+            }
             visible: transfer.alignment == Transfer.Before
             Layout.margins: Kirigami.Units.largeSpacing
             Layout.bottomMargin: 0
