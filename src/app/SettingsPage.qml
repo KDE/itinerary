@@ -67,6 +67,7 @@ Kirigami.ScrollablePage {
             text: i18n("Query Traffic Data")
             checked: Settings.queryLiveData
             onToggled: Settings.queryLiveData = checked
+            Layout.fillWidth: true
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -79,6 +80,7 @@ Kirigami.ScrollablePage {
             text: i18n("Use insecure services")
             checked: LiveDataManager.publicTransportManager.allowInsecureBackends
             onToggled: LiveDataManager.publicTransportManager.allowInsecureBackends = checked
+            Layout.fillWidth: true
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -100,6 +102,7 @@ Kirigami.ScrollablePage {
             text: i18n("Weather Forecast")
             checked: Settings.weatherForecastEnabled
             onToggled: Settings.weatherForecastEnabled = checked
+            Layout.fillWidth: true
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -125,6 +128,7 @@ Kirigami.ScrollablePage {
             text: i18n("Preload Map Data")
             checked: Settings.preloadMapData
             onToggled: Settings.preloadMapData = checked
+            Layout.fillWidth: true
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -144,12 +148,14 @@ Kirigami.ScrollablePage {
             text: i18n("Automatically add transfers")
             checked: Settings.autoAddTransfers
             onToggled: Settings.autoAddTransfers = checked
+            Layout.fillWidth: true
         }
         QQC2.CheckBox {
             text: i18n("Automatically fill transfers")
             checked: Settings.autoFillTransfers
             onToggled: Settings.autoFillTransfers = checked
             enabled: Settings.autoAddTransfers && Settings.queryLiveData
+            Layout.fillWidth: true
         }
         QQC2.Label {
             Kirigami.FormData.isSection: true
@@ -178,6 +184,7 @@ Kirigami.ScrollablePage {
             checked: Settings.showNotificationOnLockScreen
             onToggled: Settings.showNotificationOnLockScreen = checked
             enabled: NotificationConfigController.canShowOnLockScreen
+            Layout.fillWidth: true
         }
     }
 }

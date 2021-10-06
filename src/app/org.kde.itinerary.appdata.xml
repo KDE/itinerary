@@ -609,7 +609,18 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.08.2" date="2021-10-07"/>
+    <release version="21.08.2" date="2021-10-07">
+      <description>
+        <ul>
+          <li>Add support for SMART Health Card (SHC) vaccination certificates.</li>
+          <li>Don't trigger the connection warning when there is no previous arrival time.</li>
+          <li>Show correct number of attached documents for multi-traveller trips.</li>
+          <li>Show escalators to/from intermediate floor levels correctly in the indoor map. </li>
+          <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
+          <li>Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.08.1" date="2021-09-02">
       <description>
         <ul>
