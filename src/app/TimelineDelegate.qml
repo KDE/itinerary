@@ -71,8 +71,8 @@ Kirigami.AbstractCard {
 
             Kirigami.Icon {
                 source: headerIconSource
-                width: Kirigami.Units.iconSizes.small
-                height: width
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredHeight: Layout.preferredWidth
                 color: Kirigami.Theme.textColor
                 isMask: true
             }

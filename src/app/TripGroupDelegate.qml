@@ -44,8 +44,8 @@ Kirigami.AbstractCard {
                     case TimelineElement.RangeBegin: return "go-down-symbolic";
                     case TimelineElement.RangeEnd: return "go-up-symbolic";
                 }
-                width: Kirigami.Units.iconSizes.small
-                height: width
+                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                Layout.preferredHeight: Layout.preferredWidth
                 color: Kirigami.Theme.textColor
                 isMask: true
             }
