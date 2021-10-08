@@ -16,7 +16,7 @@ using namespace KItinerary;
 QString LocationHelper::departureCountry(const QVariant &res)
 {
     if (LocationUtil::isLocationChange(res)) {
-        return LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
+        return LocationUtil::address(LocationUtil::departureLocation(res)).addressCountry();
     }
     return LocationUtil::address(LocationUtil::location(res)).addressCountry();
 }
