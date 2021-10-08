@@ -57,7 +57,8 @@ ColumnLayout {
         QQC2.Label {
             text: certificate.date.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
             Kirigami.FormData.label: i18n("Date:")
-            color: daysTo(certificate.date, new Date()) >= 14 ? Kirigami.Theme.textColor : Kirigami.Theme.neutralTextColor
+            color: daysTo(certificate.date, new Date()) >= 14 ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
+            font.bold: true
         }
         QQC2.Label {
             text: certificate.disease
@@ -81,7 +82,8 @@ ColumnLayout {
         QQC2.Label {
             text: certificate.totalDoses > 0 ? i18n("%1/%2", certificate.dose, certificate.totalDoses) : certificate.dose
             Kirigami.FormData.label: i18n("Dose:")
-            color: certificate.dose < certificate.totalDoses ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            color: certificate.dose < certificate.totalDoses ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.positiveTextColor
+            font.bold: true
         }
         QQC2.Label {
             text: Localizer.countryFlag(certificate.country) + " " + Localizer.countryName(certificate.country)
