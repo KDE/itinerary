@@ -47,7 +47,36 @@ Kirigami.ScrollablePage {
         StatisticsDelegate { statItem: model.totalDistance }
         StatisticsDelegate { statItem: model.totalNights }
         StatisticsDelegate { statItem: model.totalCO2 }
-        StatisticsDelegate { statItem: model.visitedCountries }
+
+        StatisticsDelegate {
+            statItem: model.visitedCountries
+            label.text: model.visitedCountries.value.split(" ").map(countryCode => Localizer.countryFlag(countryCode)).join(" ")
+            visible: !countryDetailsLink.checked
+        }
+
+        ColumnLayout {
+            Kirigami.FormData.label: model.visitedCountries.label
+            Kirigami.FormData.labelAlignment: Qt.AlignTop
+            visible: countryDetailsRepeater.count > 0
+
+            Repeater {
+                id: countryDetailsRepeater
+                model: countryDetailsLink.checked ? model.visitedCountries.value.split(" ") : []
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    text: Localizer.countryFlag(modelData) + " " + Localizer.countryName(modelData);
+                }
+            }
+        }
+
+        Kirigami.LinkButton {
+            id: countryDetailsLink
+            property bool checked: false
+            text: checked ? i18nc("@action", "Hide Names") : i18nc("@action", "Show Names")
+            onClicked: checked = !checked
+        }
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

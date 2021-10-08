@@ -116,7 +116,7 @@ StatisticsItem StatisticsModel::visitedCountries() const
     QStringList l;
     l.reserve(m_countries.size());
     std::transform(m_countries.begin(), m_countries.end(), std::back_inserter(l), [](const auto &iso) {
-        return Localizer().countryFlag(iso);
+        return iso;
     });
     return StatisticsItem(i18n("Visited countries"), l.join(QLatin1Char(' ')), StatisticsItem::TrendUnknown);
 }

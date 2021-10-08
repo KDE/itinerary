@@ -14,6 +14,7 @@ import "." as App
 RowLayout {
     id: root
     property var statItem
+    property alias label: labelItem
 
     Kirigami.FormData.label: root.statItem.label
     Layout.fillWidth: true
@@ -27,6 +28,7 @@ RowLayout {
     }
 
     QQC2.Label {
+        id: labelItem
         Layout.fillWidth: true
         text: root.statItem.value
         wrapMode: Text.Wrap
