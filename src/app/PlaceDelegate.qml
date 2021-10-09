@@ -66,12 +66,20 @@ Item {
                 console.log(JSON.stringify(args));
                 applicationWindow().pageStack.push(indoorMapPage, args);
             }
+            Accessible.name: i18nc("@action:button", "View Indoor Map")
+            QQC2.ToolTip {
+                text: parent.Accessible.name
+            }
         }
 
         QQC2.ToolButton {
             visible: place != undefined && (place.geo.isValid || !place.address.isEmpty)
             icon.name: "map-globe"
             onClicked: NavigationController.showOnMap(place)
+            Accessible.name: i18nc("@action:button", "View on Map")
+            QQC2.ToolTip {
+                text: parent.Accessible.name
+            }
         }
 
         // navigate to is offered if:
@@ -84,6 +92,10 @@ Item {
             onClicked: {
                 controller.previousLocation ? NavigationController.navigateTo(controller.previousLocation, place) : NavigationController.navigateTo(place);
             }
+            Accessible.name: i18nc("@action:button Start route guidance to location", "Navigate")
+            QQC2.ToolTip {
+                text: parent.Accessible.name
+            }
         }
 
         // public transport connections are offered:
@@ -94,6 +106,10 @@ Item {
             icon.name: "view-calendar-day"
             onClicked: {
                 applicationWindow().pageStack.push(departuresPage);
+            }
+            Accessible.name: i18n("@action:button", "Public Transport Departures")
+            QQC2.ToolTip {
+                text: parent.Accessible.name
             }
         }
     }
