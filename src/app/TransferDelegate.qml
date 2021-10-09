@@ -22,6 +22,7 @@ Kirigami.AbstractCard {
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
+        radius: Kirigami.Units.smallSpacing
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.leftMargin: -root.leftPadding
         anchors.topMargin: -root.topPadding

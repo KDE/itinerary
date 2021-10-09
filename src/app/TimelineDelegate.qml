@@ -52,6 +52,7 @@ Kirigami.AbstractCard {
         id: headerBackground
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
+        radius: Kirigami.Units.smallSpacing
         color: {
             if (controller.connectionWarning)
                 return Kirigami.Theme.negativeTextColor;
