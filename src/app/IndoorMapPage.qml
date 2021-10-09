@@ -50,12 +50,16 @@ Kirigami.Page {
     actions {
         left: Kirigami.Action {
             iconName: "go-down-symbolic"
+            text: i18nc("@action:intoolbar Go down one floor", "Floor down")
+            displayHint: Kirigami.DisplayHint.IconOnly
             enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
             visible: map.floorLevels.hasFloorLevels
         }
         right: Kirigami.Action {
             iconName: "go-up-symbolic"
+            text: i18nc("@action:intoolbar Go up one floor", "Floor up")
+            displayHint: Kirigami.DisplayHint.IconOnly
             enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
             onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
             visible: map.floorLevels.hasFloorLevels
