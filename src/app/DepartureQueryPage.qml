@@ -62,7 +62,8 @@ Kirigami.ScrollablePage {
                                 return Kirigami.Theme.negativeTextColor;
                             return Kirigami.Theme.positiveTextColor;
                         }
-                        visible: departure.hasExpectedDepartureTime || departure.disruption == Disruption.NoService
+                        // Keeping it visible so the layout is more uniform
+                        opacity: (departure.hasExpectedDepartureTime || departure.disruption == Disruption.NoService) ? 1 : 0
                     }
                 }
                 RowLayout {
