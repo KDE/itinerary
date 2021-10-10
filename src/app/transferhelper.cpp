@@ -39,6 +39,9 @@ QDateTime TransferHelper::anchorTimeBefore(const QVariant &res)
         }
         return event.startDate();
     }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().startTime();
+    }
     return {};
 }
 
@@ -55,6 +58,9 @@ QDateTime TransferHelper::anchorTimeAfter(const QVariant &res)
     }
     if (JsonLd::isA<EventReservation>(res)) {
         return res.value<EventReservation>().reservationFor().value<Event>().endDate();
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().endTime();
     }
     return {};
 }
