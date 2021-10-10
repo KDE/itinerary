@@ -107,7 +107,7 @@ Item {
             onClicked: {
                 applicationWindow().pageStack.push(departuresPage);
             }
-            Accessible.name: i18n("@action:button", "Public Transport Departures")
+            Accessible.name: i18nc("@action:button", "Public Transport Departures")
             QQC2.ToolTip {
                 text: parent.Accessible.name
             }
