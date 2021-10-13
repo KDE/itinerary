@@ -22,6 +22,9 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
+    // prevent swipe to the right changing pages, we want to pan the map instead
+    Kirigami.ColumnView.preventStealing: true
+
    actions.main: Kirigami.Action {
         icon.name: "crosshairs"
         text: i18n("Pick Location")
