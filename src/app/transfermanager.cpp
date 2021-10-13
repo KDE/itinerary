@@ -32,7 +32,7 @@
 using namespace KItinerary;
 
 // bump this to trigger a full rescan for transfers
-enum { CurrentFullScanVerion = 1 };
+enum { CurrentFullScanVersion = 1 };
 
 TransferManager::TransferManager(QObject *parent)
     : QObject(parent)
@@ -180,7 +180,7 @@ void TransferManager::rescan(bool force)
     QSettings settings;
     settings.beginGroup(QStringLiteral("TransferManager"));
     const auto previousFullScanVersion = settings.value(QLatin1String("FullScan"), 0).toInt();
-    if (!force && previousFullScanVersion >= CurrentFullScanVerion) {
+    if (!force && previousFullScanVersion >= CurrentFullScanVersion) {
         return;
     }
 
@@ -188,7 +188,7 @@ void TransferManager::rescan(bool force)
     for (const auto &batchId : m_resMgr->batches()) {
         checkReservation(batchId);
     }
-    settings.setValue(QStringLiteral("FullScan"), CurrentFullScanVerion);
+    settings.setValue(QStringLiteral("FullScan"), CurrentFullScanVersion);
 }
 
 void TransferManager::checkReservation(const QString &resId)
