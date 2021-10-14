@@ -40,18 +40,7 @@ RowLayout {
     Repeater {
         model: journey.sections
         delegate: Kirigami.Icon {
-            source: {
-                switch (modelData.mode) {
-                    case JourneySection.PublicTransport:
-                        return PublicTransport.lineIcon(modelData.route.line);
-                    case JourneySection.Walking: return "qrc:///images/walk.svg";
-                    case JourneySection.Waiting: return "qrc:///images/wait.svg";
-                    case JourneySection.Transfer: return "qrc:///images/transfer.svg";
-                    case JourneySection.RentedVehicle:
-                        return PublicTransport.rentalVehicleIcon(modelData.rentalVehicle);
-                    default: return "question";
-                }
-            }
+            source: PublicTransport.journeySectionIcon(modelData)
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
             width: isMask ? height : implicitWidth
             height: Kirigami.Units.iconSizes.small

@@ -162,6 +162,45 @@ QString PublicTransport::rentalVehicleIcon(const KPublicTransport::RentalVehicle
     return QStringLiteral("question");
 }
 
+static QString individualTransportIcon(const KPublicTransport::IndividualTransport &it)
+{
+    using namespace KPublicTransport;
+
+    switch (it.mode()) {
+        case IndividualTransport::Bike:
+             return QStringLiteral("qrc:///images/bike.svg");
+        case IndividualTransport::Car:
+            return QStringLiteral("qrc:///images/car.svg");
+        case IndividualTransport::Walk:
+            return QStringLiteral("qrc:///images/walk.svg");
+    }
+
+    return QStringLiteral("question");
+}
+
+QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const
+{
+    using namespace KPublicTransport;
+    switch (journeySection.mode()) {
+        case JourneySection::Invalid:
+            break;
+        case JourneySection::PublicTransport:
+            return lineIcon(journeySection.route().line());
+        case JourneySection::Walking:
+            return QStringLiteral("qrc:///images/walk.svg");
+        case JourneySection::Waiting:
+            return QStringLiteral("qrc:///images/wait.svg");
+        case JourneySection::Transfer:
+            return QStringLiteral("qrc:///images/transfer.svg");
+        case JourneySection::RentedVehicle:
+            return rentalVehicleIcon(journeySection.rentalVehicle());
+        case JourneySection::IndividualTransport:
+            return individualTransportIcon(journeySection.individualTransport());
+    }
+
+    return QStringLiteral("question");
+}
+
 static KItinerary::Ticket clearSeat(KItinerary::Ticket ticket)
 {
     auto seat = ticket.ticketedSeat();
@@ -368,6 +407,17 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
                 case RentalVehicle::Car:
                     return false; // ???
             }
+            break;
+        case JourneySection::IndividualTransport:
+            switch (section.individualTransport().mode()) {
+                case IndividualTransport::Walk:
+                    return section.duration() > 20*60 || section.distance() > 1000;
+                case IndividualTransport::Bike:
+                    return section.duration() > 60*60 || section.distance() > 20000;
+                case IndividualTransport::Car:
+                    return false;
+            }
+            break;
     }
 
     return false;

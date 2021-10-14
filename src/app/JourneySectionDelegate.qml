@@ -72,18 +72,7 @@ Kirigami.AbstractListItem {
             Kirigami.Icon {
                 id: modeIcon
                 anchors.centerIn: parent
-                source: {
-                    switch (modelData.mode) {
-                        case JourneySection.PublicTransport:
-                            return PublicTransport.lineIcon(modelData.route.line);
-                        case JourneySection.Walking: return "qrc:///images/walk.svg";
-                        case JourneySection.Waiting: return "qrc:///images/wait.svg";
-                        case JourneySection.Transfer: return "qrc:///images/transfer.svg";
-                        case JourneySection.RentedVehicle:
-                            return PublicTransport.rentalVehicleIcon(modelData.rentalVehicle);
-                        default: return "question";
-                    }
-                }
+                source: PublicTransport.journeySectionIcon(modelData)
                 color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
                 width: !isMask ? implicitWidth : height
                 height: parent.height
@@ -113,6 +102,8 @@ Kirigami.AbstractListItem {
                         return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
                     case JourneySection.RentedVehicle:
                         return i18n("%1 (%2)", modelData.rentalVehicle.network, Localizer.formatDuration(modelData.duration));
+                    case JourneySection.IndividualTransport:
+                        return i18n("Drive %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
                     return "???";
                 }}
                 color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
