@@ -188,6 +188,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         req.setDateTimeMode(JourneyRequest::Departure);
         req.setIncludeIntermediateStops(true);
         req.setIncludePaths(true);
+        req.setModes(JourneySection::PublicTransport);
         PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryJourney(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
