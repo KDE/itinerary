@@ -6,7 +6,6 @@
 
 #include "notificationconfigcontroller.h"
 
-#include <knotifications_version.h>
 
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/activity.h>
@@ -28,7 +27,7 @@ bool NotificationConfigController::canConfigureNotification() const
 
 bool NotificationConfigController::canShowOnLockScreen() const
 {
-#if defined(Q_OS_ANDROID) && KNOTIFICATIONS_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#if defined(Q_OS_ANDROID)
     return true;
 #else
     return false;
