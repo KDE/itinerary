@@ -78,6 +78,7 @@ bool HealthCertificateManager::importCertificate(const QByteArray &rawData)
     beginInsertRows({}, row, row);
     m_certificates.insert(it, std::move(certData));
     endInsertRows();
+    Q_EMIT newCertificateLoaded(row);
     return true;
 #else
     return false;

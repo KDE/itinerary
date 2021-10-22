@@ -148,6 +148,7 @@ if (ANDROID)
         view-barcode-qr
         view-calendar-day
         view-list-symbolic
+        view-list-details
         view-refresh
         view-statistics
         zoom-in-symbolic

@@ -38,6 +38,9 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+Q_SIGNALS:
+    void newCertificateLoaded(int index);
+
 private:
     struct CertData {
         QString name;
