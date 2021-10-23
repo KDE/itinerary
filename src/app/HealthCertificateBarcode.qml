@@ -49,18 +49,33 @@ QQC2.Page {
             level: 3
             wrapMode: Text.WordWrap
             text: {
-                if (certificate.validationState) {
-                    return i18n('Certificate invalid');
+                if (!isNaN(certificate.certificateExpiryDate.getTime()) && certificate.certificateExpiryDate.getTime() < Date.now()) {
+                    return i18n("Certificate expired");
+                }
+                if (certificate.validationState == KHC.HealthCertificate.Invalid) {
+                    return i18n("Certificate invalid");
+                }
+                if (certificate.signatureState == KHC.HealthCertificate.UnknownSignature) {
+                    return i18n('Unknown issuer certficiate');
                 }
 
                 switch (certificate.type) {
                 case KHC.HealthCertificate.Vaccination:
-                switch (certificate.validationState) {
-                    case KHC.HealthCertificate.Valid: return i18n('Fully vaccinated');
-                    case KHC.HealthCertificate.Partial: return i18n('Partial vaccinated');
-                }
+                    switch (certificate.vaccinationState) {
+                        case KHC.VaccinationCertificate.VaccinationTooRecent: return i18n('Recently vaccinated');
+                        case KHC.VaccinationCertificate.PartiallyVaccinated: return i18n('Partially vaccinated');
+                        case KHC.VaccinationCertificate.Vaccinated: return i18n('Vaccinated');
+                        case KHC.VaccinationCertificate.FullyVaccinated: return i18n('Fully vaccinated');
+                    }
+                    break;
                 case KHC.HealthCertificate.Test:
-                    case KHC.HealthCertificate.Valid: return i18n('Test valid');
+                    if (certificate.isCurrent) {
+                        switch (certificate.result)  {
+                            case KHC.TestCertificate.Negative: return i18n('Negative test');
+                            case KHC.TestCertificate.Positive: return i18n('Positive test');
+                        }
+                    }
+                    return i18n('Test expired');
                 case KHC.HealthCertificate.Recovery:
                     return i18n('Recovery certificate valid');
                 default:
@@ -82,11 +97,16 @@ QQC2.Page {
 
     background: Rectangle {
         opacity: 0.4
-        color: switch (certificate.validationState) {
-            case KHC.HealthCertificate.Valid: return Kirigami.Theme.positiveTextColor;
-            case KHC.HealthCertificate.Partial: return Kirigami.Theme.neutralTextColor;
-            case KHC.HealthCertificate.Invalid: return Kirigami.Theme.negativeTextColor;
-            default: return "transparent"
+        color: {
+            if (certificate.type == KHC.HealthCertificate.Test && certificate.result == KHC.TestCertificate.Positive) {
+                return Kirigami.Theme.negativeTextColor;
+            }
+            switch (certificate.validationState) {
+                case KHC.HealthCertificate.Valid: return Kirigami.Theme.positiveTextColor;
+                case KHC.HealthCertificate.Partial: return Kirigami.Theme.neutralTextColor;
+                case KHC.HealthCertificate.Invalid: return Kirigami.Theme.negativeTextColor;
+                default: return "transparent"
+            }
         }
     }
 }
