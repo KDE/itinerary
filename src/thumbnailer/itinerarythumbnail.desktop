@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+Name=Tickets and boarding passes
+X-KDE-ServiceTypes=ThumbCreator
+MimeType=application/vnd.apple.pkpass;
+X-KDE-Library=itinerarythumbnail
+CacheThumbnail=false # FIXME

@@ -8,3 +8,7 @@ add_subdirectory(weather)
 add_subdirectory(kandroidextras)
 add_subdirectory(gpx)
 add_subdirectory(app)
+
+if (TARGET KF5::KIOWidgets)
+    add_subdirectory(thumbnailer)
+endif()
