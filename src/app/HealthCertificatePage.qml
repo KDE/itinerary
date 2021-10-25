@@ -135,7 +135,7 @@ Kirigami.Page {
             level: 2
         }
         QQC2.Label {
-            text: i18n("<p>You can import the following health certificates by scanning them with a barcode scanner app:<ul><li>European \"Digital Green Certificates\" for vaccinations, tests or recovery.</li><li>Indian vaccination certificates.</li></p>")
+            text: i18n("<p>You can import the following health certificates by scanning them with a barcode scanner app:<ul><li>European \"Digital Green Certificates\" for vaccinations, tests or recovery.</li><li>Indian vaccination certificates.</li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></p>")
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignHCenter
