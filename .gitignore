@@ -11,7 +11,7 @@ callgrind.*
 heaptrack.*
 *.qmlc
 *.fail
-build
+/build*
 /.clang-format
 /compile_commands.json
 .clangd
