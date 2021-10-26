@@ -7,7 +7,8 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import QtPositioning 5.11
+import QtLocation 5.15 as QtLocation
+import QtPositioning 5.15
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
@@ -90,6 +91,30 @@ Kirigami.FormLayout {
         currentIndex: countryModel.isoCodeToIndex(place.address.addressCountry)
     }
 
+    QtLocation.Plugin {
+        id: osmPlugin
+        required.geocoding: QtLocation.Plugin.AnyGeocodingFeatures
+        preferred: ["osm"]
+    }
+    QtLocation.GeocodeModel {
+        id: geocodeModel
+        plugin: osmPlugin
+        autoUpdate: false
+        limit: 1
+
+        query: Address {
+            id: geocodeAddr
+        }
+
+        onLocationsChanged: {
+            if (count >= 1) {
+                root.latitude = geocodeModel.get(0).coordinate.latitude;
+                root.longitude = geocodeModel.get(0).coordinate.longitude;
+            }
+        }
+        onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
+    }
+
     RowLayout  {
         QQC2.Button {
             icon.name: "crosshairs"
@@ -98,6 +123,18 @@ Kirigami.FormLayout {
         QQC2.Label {
             visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
             text: i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2));
+        }
+        QQC2.Button {
+            icon.name: "view-refresh"
+            enabled: geocodeModel.status !== QtLocation.GeocodeModel.Loading
+            onClicked: {
+                geocodeAddr.street = streetAddress.text;
+                geocodeAddr.postalCode = postalCode.text;
+                geocodeAddr.city = addressLocality.text;
+                geocodeAddr.state = addressRegion.text;
+                geocodeAddr.countryCode = countryModel.isoCodeFromIndex(addressCountry.currentIndex);
+                geocodeModel.update();
+            }
         }
     }
 }
