@@ -20,7 +20,7 @@ class HealthCertificateManager : public QAbstractListModel
     Q_PROPERTY(bool isAvailable READ isAvailable CONSTANT)
 public:
     explicit HealthCertificateManager(QObject *parent = nullptr);
-    ~HealthCertificateManager();
+    ~HealthCertificateManager() override;
 
     /** Health certificate support is compiled in. */
     bool isAvailable() const;

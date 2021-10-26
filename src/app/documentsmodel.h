@@ -27,7 +27,7 @@ class DocumentsModel : public QAbstractListModel
 
 public:
     explicit DocumentsModel(QObject *parent = nullptr);
-    ~DocumentsModel();
+    ~DocumentsModel() override;
 
     enum Roles {
         DocumentIdRole = Qt::UserRole,

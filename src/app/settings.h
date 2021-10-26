@@ -27,7 +27,7 @@ class Settings : public QObject
 
 public:
     explicit Settings(QObject *parent = nullptr);
-    ~Settings();
+    ~Settings() override;
 
     bool weatherForecastEnabled() const;
     void setWeatherForecastEnabled(bool enabled);

@@ -15,7 +15,7 @@ class DocumentManager : public QObject
     Q_OBJECT
 public:
     explicit DocumentManager(QObject *parent = nullptr);
-    ~DocumentManager();
+    ~DocumentManager() override;
 
     /** Lists all documents in storage. */
     QVector<QString> documents() const;

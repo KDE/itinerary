@@ -40,7 +40,7 @@ class ApplicationController : public QObject
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
-    ~ApplicationController();
+    ~ApplicationController() override;
 
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);

@@ -73,7 +73,7 @@ class TimelineDelegateController : public QObject
 
 public:
     TimelineDelegateController(QObject *parent = nullptr);
-    ~TimelineDelegateController();
+    ~TimelineDelegateController() override;
 
     QObject* reservationManager() const;
     void setReservationManager(QObject *resMgr);

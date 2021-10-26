@@ -28,7 +28,7 @@ class MapDownloadManager : public QObject
     Q_OBJECT
 public:
     explicit MapDownloadManager(QObject *parent = nullptr);
-    ~MapDownloadManager();
+    ~MapDownloadManager() override;
 
     void setReservationManager(ReservationManager *resMgr);
     // TODO always process complete trip groups?

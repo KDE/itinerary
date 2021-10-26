@@ -74,7 +74,7 @@ class StatisticsModel : public QObject
 
 public:
     explicit StatisticsModel(QObject *parent = nullptr);
-    ~StatisticsModel();
+    ~StatisticsModel() override;
 
     ReservationManager* reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);

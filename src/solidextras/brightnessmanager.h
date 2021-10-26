@@ -18,7 +18,7 @@ public:
     , m_maximized()
     , m_previousValue()
     {}
-    virtual ~BrightnessBackend() = default;
+    ~BrightnessBackend() override = default;
 
 public:
     virtual void toggleBrightness();
@@ -39,7 +39,7 @@ class SOLIDEXTRAS_EXPORT BrightnessManager : public QObject
 
 public:
     explicit BrightnessManager(QObject *parent = nullptr);
-    ~BrightnessManager();
+    ~BrightnessManager() override;
 
 public Q_SLOTS:
     void toggleBrightness();

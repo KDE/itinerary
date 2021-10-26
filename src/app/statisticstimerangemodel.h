@@ -19,7 +19,7 @@ class StatisticsTimeRangeModel : public QAbstractListModel
 
 public:
     explicit StatisticsTimeRangeModel(QObject *parent = nullptr);
-    ~StatisticsTimeRangeModel();
+    ~StatisticsTimeRangeModel() override;
 
     enum {
         BeginRole = Qt::UserRole,

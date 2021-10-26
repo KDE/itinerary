@@ -63,7 +63,7 @@ public:
     Q_ENUM(Role)
 
     explicit FavoriteLocationModel(QObject *parent = nullptr);
-    ~FavoriteLocationModel();
+    ~FavoriteLocationModel() override;
 
     /** Appends a new dummy location. */
     Q_INVOKABLE void appendNewLocation();

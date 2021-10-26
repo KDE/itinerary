@@ -40,7 +40,7 @@ class LiveDataManager : public QObject
     Q_PROPERTY(KPublicTransport::Manager* publicTransportManager READ publicTransportManager CONSTANT)
 public:
     explicit LiveDataManager(QObject *parent = nullptr);
-    ~LiveDataManager();
+    ~LiveDataManager() override;
 
     KPublicTransport::Manager* publicTransportManager() const;
 

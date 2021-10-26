@@ -21,7 +21,7 @@ class PkPassManager : public QObject
     Q_OBJECT
 public:
     explicit PkPassManager(QObject *parent = nullptr);
-    ~PkPassManager();
+    ~PkPassManager() override;
 
     QVector<QString> passes() const;
 

@@ -32,7 +32,7 @@ class TransferManager : public QObject
 
 public:
     explicit TransferManager(QObject *parent = nullptr);
-    ~TransferManager();
+    ~TransferManager() override;
     void setReservationManager(ReservationManager *resMgr);
     void setTripGroupManager(TripGroupManager *tgMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);

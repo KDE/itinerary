@@ -28,7 +28,7 @@ public:
     Q_ENUM(State)
 
     explicit NetworkStatus(QObject *parent = nullptr);
-    ~NetworkStatus();
+    ~NetworkStatus() override;
 
     State connectivity() const;
     State metered() const;

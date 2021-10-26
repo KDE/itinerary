@@ -32,7 +32,7 @@ class ReservationManager : public QObject
     Q_OBJECT
 public:
     explicit ReservationManager(QObject *parent = nullptr);
-    ~ReservationManager();
+    ~ReservationManager() override;
 
     Q_INVOKABLE bool isEmpty() const;
     Q_INVOKABLE QVariant reservation(const QString &id) const;

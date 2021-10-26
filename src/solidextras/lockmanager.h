@@ -16,7 +16,7 @@ class LockBackend : public QObject
 public:
     explicit LockBackend(QObject *parent = nullptr) : QObject(parent)
     {}
-    virtual ~LockBackend() = default;
+    ~LockBackend() override = default;
     virtual void setInhibitionOn(const QString &explanation) = 0;
     virtual void setInhibitionOff() = 0;
 };
@@ -27,7 +27,7 @@ class SOLIDEXTRAS_EXPORT LockManager : public QObject
 
 public:
     explicit LockManager(QObject *parent = nullptr);
-    ~LockManager();
+    ~LockManager() override;
 
 public Q_SLOTS:
     /** Toggle screen lock inhibition.

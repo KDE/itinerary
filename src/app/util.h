@@ -17,7 +17,7 @@ class Util : public QObject
     Q_OBJECT
 public:
     explicit Util(QObject *parent = nullptr);
-    ~Util();
+    ~Util() override;
 
     // workarounds for JS not preserving timezones
 

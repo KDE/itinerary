@@ -28,7 +28,7 @@ class WeatherForecastManager : public QObject
     Q_OBJECT
 public:
     explicit WeatherForecastManager(QObject *parent = nullptr);
-    ~WeatherForecastManager();
+    ~WeatherForecastManager() override;
 
     /** Kill switch for network operations. */
     bool allowNetworkAccess() const;

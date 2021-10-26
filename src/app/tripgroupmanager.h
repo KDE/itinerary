@@ -22,7 +22,7 @@ class TripGroupManager : public QObject
     Q_OBJECT
 public:
     explicit TripGroupManager(QObject *parent = nullptr);
-    ~TripGroupManager();
+    ~TripGroupManager() override;
 
     void setReservationManager(ReservationManager *resMgr);
 
