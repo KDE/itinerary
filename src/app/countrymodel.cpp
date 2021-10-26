@@ -41,6 +41,9 @@ int CountryModel::isoCodeToIndex(const QString &isoCode) const
 
 QString CountryModel::isoCodeFromIndex(int index) const
 {
+    if (index < 0 || index >= m_countries.size()) {
+        return {};
+    }
     return m_countries.at(index)->id.toString();
 }
 
