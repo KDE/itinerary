@@ -422,19 +422,29 @@ KPublicTransport::Location TransferManager::locationFromFavorite(const FavoriteL
 
 FavoriteLocation TransferManager::pickFavorite(const QVariant &anchoredLoc, const QString &resId, Transfer::Alignment alignment) const
 {
+    const auto &favLocs = m_favLocModel->favoriteLocations();
+    if (favLocs.empty()) {
+        return {};
+    }
+
     // TODO selection strategy:
     // (1) pick the same favorite as was used before/after resId
     // (2) pick the favorite closest to anchoredLoc - this can work very well if the favorites aren't close to each other
     // (3) pick the first one
 
-    Q_UNUSED(anchoredLoc)
     Q_UNUSED(resId)
     Q_UNUSED(alignment)
 
-    if (m_favLocModel->rowCount() == 0) {
-        return {};
+    // pick the first location within a 50km distance
+    const auto anchordCoord = LocationUtil::geo(anchoredLoc);
+    const auto it = std::find_if(favLocs.begin(), favLocs.end(), [&anchordCoord](const auto &fav) {
+        const auto d = LocationUtil::distance(anchordCoord.latitude(), anchordCoord.longitude(), fav.latitude(), fav.longitude());
+        return d < 50'000;
+    });
+    if (it != favLocs.end()) {
+        return (*it);
     }
-    return m_favLocModel->favoriteLocations()[0];
+    return {};
 }
 
 void TransferManager::addOrUpdateTransfer(Transfer &t)
