@@ -367,7 +367,7 @@ void LiveDataManager::cancelNotification(const QString &resId)
 
 QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainReservation>(res)) {
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
         const auto &dep = departure(resId);
         if (dep.hasExpectedDepartureTime()) {
             return dep.expectedDepartureTime();
@@ -379,7 +379,7 @@ QDateTime LiveDataManager::departureTime(const QString &resId, const QVariant &r
 
 QDateTime LiveDataManager::arrivalTime(const QString &resId, const QVariant &res) const
 {
-    if (JsonLd::isA<TrainReservation>(res)) {
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
         const auto &arr = arrival(resId);
         if (arr.hasExpectedArrivalTime()) {
             return arr.expectedArrivalTime();
@@ -533,7 +533,7 @@ void LiveDataManager::pollForUpdates(bool force)
             continue;
         }
 
-        if (JsonLd::isA<TrainReservation>(res)) {
+        if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
             checkReservation(res, batchId);
         }
 
