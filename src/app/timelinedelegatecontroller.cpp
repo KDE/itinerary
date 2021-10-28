@@ -403,7 +403,7 @@ static bool isLayover(const QVariant &res1, const QVariant &res2)
 
 KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() const
 {
-    if (!m_resMgr || m_batchId.isEmpty()) {
+    if (!m_resMgr || m_batchId.isEmpty() || !m_liveDataMgr) {
         return {};
     }
 
@@ -420,6 +420,7 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     req.setDownloadAssets(true);
     req.setIncludeIntermediateStops(true);
     req.setIncludePaths(true);
+    PublicTransport::selectBackends(req, m_liveDataMgr->publicTransportManager(), res);
 
     // find full journey by looking at subsequent elements
     auto prevRes = res;

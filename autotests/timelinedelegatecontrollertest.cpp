@@ -157,6 +157,7 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         Test::clearAll(&mgr);
+        LiveDataManager ldm;
         ApplicationController ctrl;
         ctrl.setReservationManager(&mgr);
         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
@@ -164,6 +165,7 @@ private Q_SLOTS:
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
         controller.setBatchId(mgr.batches().at(0)); // flight
+        controller.setLiveDataManager(&ldm);
         QVERIFY(!controller.journeyRequest().isValid());
 
         controller.setBatchId(mgr.batches().at(1)); // first train segment
