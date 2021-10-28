@@ -43,9 +43,18 @@ App.DetailsPage {
             }
         }
     }
+    Component {
+        id: journeyDetailsAction
+        Kirigami.Action {
+            text: i18n("Journey Details")
+            iconName: "view-calendar-day"
+            onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
+            visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0
+        }
+    }
 
     Component.onCompleted: {
-        actions.contextualActions.push(alternativeAction.createObject(root));
+        actions.contextualActions.push(alternativeAction.createObject(root), journeyDetailsAction.createObject(root));
     }
 
     BarcodeScanModeController {
