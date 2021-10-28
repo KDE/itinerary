@@ -63,13 +63,19 @@ bool ReservationHelper::equals(const QVariant &lhs, const QVariant &rhs)
     return false;
 }
 
+static QString providerIdentifier(const QVariant &res)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().provider().identifier();
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        return res.value<BusReservation>().reservationFor().value<BusTrip>().provider().identifier();
+    }
+    return {};
+}
+
 QString ReservationHelper::uicCompanyCode(const QVariant &res)
 {
-    QString id;
-    if (JsonLd::isA<TrainReservation>(res)) {
-        id = res.value<TrainReservation>().reservationFor().value<TrainTrip>().provider().identifier();
-    } // TODO in theory we can also have this for bus reservations
-
+    auto id = providerIdentifier(res);
     if (!id.startsWith(QLatin1String("uic:")) || id.size() > 8) {
         return {};
     }
@@ -79,4 +85,13 @@ QString ReservationHelper::uicCompanyCode(const QVariant &res)
         id.insert(0, QLatin1Char('0'));
     }
     return id;
+}
+
+QString ReservationHelper::vdvOrganizationId(const QVariant &res)
+{
+    const auto id = providerIdentifier(res);
+    if (!id.startsWith(QLatin1String("vdv:"))) {
+        return id.mid(4);
+    }
+    return {};
 }

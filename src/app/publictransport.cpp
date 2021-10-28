@@ -472,21 +472,34 @@ KPublicTransport::JourneySection PublicTransport::lastTransportSection(const KPu
 QStringList PublicTransport::suitableBackendsForReservation(KPublicTransport::Manager *mgr, const QVariant &res)
 {
     using namespace KPublicTransport;
+    QStringList backendIds;
 
     const auto companyCode = ReservationHelper::uicCompanyCode(res);
-    if (companyCode.size() != 4) {
-        return {};
+    if (companyCode.size() == 4) {
+        for (const auto &backend : mgr->backends()) {
+            if (!mgr->isBackendEnabled(backend.identifier())) {
+                continue;
+            }
+            for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
+                if (backend.coverageArea(cov).uicCompanyCodes().contains(companyCode)) {
+                    backendIds.push_back(backend.identifier());
+                    break;
+                }
+            }
+        }
     }
 
-    QStringList backendIds;
-    for (const auto &backend : mgr->backends()) {
-        if (!mgr->isBackendEnabled(backend.identifier())) {
-            continue;
-        }
-        for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
-            if (backend.coverageArea(cov).uicCompanyCodes().contains(companyCode)) {
-                backendIds.push_back(backend.identifier());
-                break;
+    const auto vdvOrgId = ReservationHelper::vdvOrganizationId(res);
+    if (!vdvOrgId.isEmpty()) {
+        for (const auto &backend : mgr->backends()) {
+            if (!mgr->isBackendEnabled(backend.identifier())) {
+                continue;
+            }
+            for (const auto cov : { CoverageArea::Realtime, CoverageArea::Regular, CoverageArea::Any }) {
+                if (backend.coverageArea(cov).vdvOrganizationIds().contains(vdvOrgId)) {
+                    backendIds.push_back(backend.identifier());
+                    break;
+                }
             }
         }
     }
