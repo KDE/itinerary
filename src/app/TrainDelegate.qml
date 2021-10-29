@@ -16,7 +16,7 @@ App.TimelineDelegate {
     id: root
     headerIcon {
         source: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineIcon(departure.route.line)
-        isMask: !departure.route.line.hasLogo
+        isMask: !departure.route.line.hasLogo && !departure.route.line.hasModeLogo
     }
     headerItem: RowLayout {
         QQC2.Label {
