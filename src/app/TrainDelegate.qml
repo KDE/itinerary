@@ -14,7 +14,10 @@ import "." as App
 
 App.TimelineDelegate {
     id: root
-    headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
+    headerIcon {
+        source: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineIcon(departure.route.line)
+        isMask: !departure.route.line.hasLogo
+    }
     headerItem: RowLayout {
         QQC2.Label {
             text: {

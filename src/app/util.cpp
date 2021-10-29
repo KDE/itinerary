@@ -1,10 +1,11 @@
 /*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2018-2021 Volker Krause <vkrause@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
 #include "util.h"
+#include "logging.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -12,7 +13,11 @@
 
 #include <QAbstractItemModel>
 #include <QDateTime>
+#include <QFile>
 #include <QTimeZone>
+#include <QXmlStreamReader>
+
+#include <cmath>
 
 using namespace KItinerary;
 
@@ -67,6 +72,48 @@ void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const
     if (auto qaim = qobject_cast<QAbstractItemModel*>(model)) {
         qaim->sort(column, sortOrder);
     }
+}
+
+float Util::svgAspectRatio(const QString &svgFilePath) const
+{
+    if (svgFilePath.isEmpty()) {
+        return 1.0f;
+    }
+
+    QFile file(svgFilePath);
+    if (!file.open(QFile::ReadOnly)) {
+        qCWarning(Log) << file.errorString() << svgFilePath;
+        return 1.0f;
+    }
+
+    QXmlStreamReader reader(&file);
+    while (!reader.atEnd()) {
+        if (reader.readNext() != QXmlStreamReader::StartElement) {
+            continue;
+        }
+        if (reader.name() != QLatin1String("svg")) {
+            qCDebug(Log) << svgFilePath << "not an svg file?";
+            return 1.0f;
+        }
+        const auto viewBox = reader.attributes().value(QLatin1String("viewBox"));
+        const auto parts = viewBox.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+        if (parts.size() != 4) {
+            qCDebug(Log) << "invalid SVG viewBox:" << viewBox;
+            return 1.0f;
+        }
+
+        bool widthValid, heightValid;
+        const auto width = parts.at(2).toDouble(&widthValid);
+        const auto height = parts.at(3).toDouble(&heightValid);
+        if (!widthValid || !heightValid || height == 0.0f || width == 0.0f) {
+            qCDebug(Log) << "invalid SVG viewBox:" << viewBox;
+            return 1.0f;
+        }
+
+        return width / height;
+    }
+
+    return 1.0f;
 }
 
 #include "moc_util.cpp"

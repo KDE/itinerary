@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2018-2021 Volker Krause <vkrause@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -34,6 +34,11 @@ public:
 
     /** Execute the non-exported sort() method on a QAbstractItemModel. */
     Q_INVOKABLE void sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const;
+
+    /** Determine the aspect ratio of an SVG file.
+     *  This is a dirty workaround for the problem that Kirigami.Icon has its implicit size hardcoded to 32x32...
+     */
+    Q_INVOKABLE float svgAspectRatio(const QString &svgFilePath) const;
 };
 
 #endif // UTIL_H

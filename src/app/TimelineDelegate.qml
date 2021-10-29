@@ -26,7 +26,8 @@ Kirigami.AbstractCard {
     property var rangeType
 
     property Item headerItem
-    property string headerIconSource
+    property alias headerIcon: _headerIcon
+    property alias headerIconSource: _headerIcon.source
 
     readonly property double headerFontScale: 1.0
 
@@ -71,11 +72,15 @@ Kirigami.AbstractCard {
             anchors.margins: Kirigami.Units.largeSpacing
 
             Kirigami.Icon {
-                source: headerIconSource
-                Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
-                Layout.preferredHeight: Layout.preferredWidth
+                id: _headerIcon
+                Layout.preferredWidth: Layout.preferredHeight * aspectRatio
+                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                 color: Kirigami.Theme.textColor
                 isMask: true
+
+                // work around the fact that Kirigami.Icon always gives us an implicit size of 32x32 no
+                // matter the size of the input icon
+                property real aspectRatio: isMask ? 1.0 : Util.svgAspectRatio(source)
             }
         }
 
