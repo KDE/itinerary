@@ -90,6 +90,11 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
     return loc;
 }
 
+QVariant PublicTransport::trainStationFromLocation(const KPublicTransport::Location &loc) const
+{
+    return PublicTransport::placeFromLocation<KItinerary::TrainStation>(loc);
+}
+
 QString PublicTransport::lineIcon(const QVariant &line) const
 {
     using namespace KPublicTransport;

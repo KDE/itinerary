@@ -42,6 +42,9 @@ public:
     template <typename T>
     static T placeFromLocation(const KPublicTransport::Location &loc);
 
+    /** Same as the above, but usable from QML. */
+    Q_INVOKABLE QVariant trainStationFromLocation(const KPublicTransport::Location &loc) const;
+
     /** Applies information from @p location to the given KItinerary place.
      *  Unlike mergeStation(), this does not assume both sides refer to the same location, and @p location has precedence.
      *  Data from @p station is only considered if both sides refer to the same location.

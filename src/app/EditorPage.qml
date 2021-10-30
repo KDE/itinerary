@@ -14,7 +14,8 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-    property var batchId
+    property var batchId: controller ? controller.batchId : undefined
+    property QtObject controller: null
     property var resIds: ReservationManager.reservationsForBatch(root.batchId)
     readonly property var reservation: ReservationManager.reservation(root.batchId);
 

@@ -18,7 +18,7 @@ App.DetailsPage {
     title: i18n("Train Ticket")
     editor: Component {
         App.TrainEditor {
-            batchId: root.batchId
+            controller: root.controller
         }
     }
 

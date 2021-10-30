@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kitinerary 1.0
+import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -16,9 +17,33 @@ App.EditorPage {
     id: root
     title: i18n("Edit Train Reservation")
 
+    property var departureStation: reservationFor.departureStation
+    property var departureTime: Util.dateTimeStripTimezone(reservationFor, "departureTime")
+    property var arrivalStation: reservationFor.arrivalStation
+    property var arrivalTime: Util.setDateTimePreserveTimezone(reservationFor, "arrivalTime")
+
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: i18n("Board later")
+            icon.name: "arrow-left"
+            enabled: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
+            onTriggered: boardSheet.open();
+        },
+        Kirigami.Action {
+            text: i18n("Alight earlier")
+            icon.name: "arrow-right"
+            enabled: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
+            onTriggered: alightSheet.open();
+        }
+    ]
+
     function save(resId, reservation) {
         var trip = reservation.reservationFor;
+        trip.departureStation = root.departureStation;
+        trip = Util.setDateTimePreserveTimezone(trip, "departureTime", root.departureTime);
         trip.departurePlatform = departurePlatform.text;
+        trip.arrivalStation = root.arrivalStation;
+        trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
         trip.arrivalPlatform = arrivalPlatform.text;
 
         var seat = reservation.reservedTicket.ticketedSeat;
@@ -36,6 +61,62 @@ App.EditorPage {
         ReservationManager.updateReservation(resId, newRes);
     }
 
+    Component {
+        id: intermediateStopDelegate
+        Kirigami.BasicListItem {
+            text: Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+            enabled: modelData.disruptionEffect != Disruption.NoService
+        }
+    }
+
+    Kirigami.OverlaySheet {
+        id: boardSheet
+        header: Kirigami.Heading {
+            text: i18n("Board Later")
+        }
+
+        ListView {
+            id: boardStopSelector
+            model: root.controller.journey.intermediateStops
+            delegate: intermediateStopDelegate
+        }
+
+        footer: QQC2.Button {
+            text: i18n("Change departure station")
+            enabled: boardStopSelector.currentIndex >= 0
+            onClicked: {
+                departureStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[boardStopSelector.currentIndex].stopPoint)
+                departureTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledDepartureTime");
+                boardSheet.close();
+            }
+        }
+    }
+    Kirigami.OverlaySheet {
+        id: alightSheet
+        header: Kirigami.Heading {
+            text: i18n("Alight Earlier")
+        }
+
+        ListView {
+            id: alightStopSelector
+            model: root.controller.journey.intermediateStops
+            delegate: intermediateStopDelegate
+        }
+
+        footer: QQC2.Button {
+            text: i18n("Change arrival station")
+            enabled: stopSelector.currentIndex >= 0
+            onClicked: {
+                arrivalStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[alightStopSelector.currentIndex].stopPoint);
+                arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledArrivalTime");
+                if (!arrivalTime) {
+                    arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledDepartureTime");
+                }
+                alightSheet.close();
+            }
+        }
+    }
+
     Kirigami.FormLayout {
         width: parent.width
 
@@ -47,8 +128,8 @@ App.EditorPage {
 
         // TODO time
         QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.departureStation.name
+            Kirigami.FormData.label: i18nc("train station", "Station:")
+            text: root.departureStation.name
         }
         QQC2.TextField {
             id: departurePlatform
@@ -64,8 +145,8 @@ App.EditorPage {
 
         // TODO time
         QQC2.Label {
-            Kirigami.FormData.label: i18n("Station:")
-            text: reservationFor.arrivalStation.name
+            Kirigami.FormData.label: i18nc("train station", "Station:")
+            text: root.arrivalStation.name
         }
         QQC2.TextField {
             id: arrivalPlatform
