@@ -273,12 +273,14 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
 {
     auto &ld = data(resId);
     const auto oldStop = ld.stopover(type);
-    ld.setStopover(type, stop);
+    auto newStop = stop;
+    newStop.applyMetaData(true); // download logo assets if needed
+    ld.setStopover(type, newStop);
     ld.setTimestamp(type, now());
     ld.store(resId);
 
     // update reservation with live data
-    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, stop) : PublicTransport::mergeDeparture(res, stop);
+    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, newStop) : PublicTransport::mergeDeparture(res, newStop);
     if (!ReservationHelper::equals(res, newRes)) {
         m_resMgr->updateReservation(resId, newRes);
     }
@@ -287,7 +289,7 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
     Q_EMIT type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
 
     // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldStop, stop, type)) {
+    if (NotificationHelper::shouldNotify(oldStop, newStop, type)) {
         showNotification(resId, ld);
     }
 }
@@ -298,6 +300,7 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     const auto oldDep = ld.stopover(LiveData::Departure);
     const auto oldArr = ld.stopover(LiveData::Arrival);
     ld.journey = journey;
+    ld.journey.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
     ld.departure = journey.departure();
     ld.departureTimestamp = now();
