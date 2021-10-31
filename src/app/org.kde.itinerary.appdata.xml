@@ -609,6 +609,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="21.08.3" date="2021-11-04"/>
     <release version="21.08.2" date="2021-10-07">
       <description>
         <ul>
@@ -641,7 +642,6 @@
         </ul>
       </description>
     </release>
-    <release version="21.04.3" date="2021-07-08"/>
   </releases>
   <custom>
     <value key="KDE::f_droid">https://community.kde.org/Android/FDroid#KDE_F-Droid_Release_Repository</value>
