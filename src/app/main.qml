@@ -83,7 +83,7 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.layers.push(statisticsComponent)
             },
             Kirigami.Action {
-                id: healtCertAction
+                id: healthCertAction
                 text: i18n("Health Certificates")
                 iconName: "cross-shape"
                 onTriggered: {
@@ -151,6 +151,18 @@ Kirigami.ApplicationWindow {
     Connections {
         target: ApplicationController
         function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
+        function onOpenPageRequested(page) {
+            switch (page) {
+            case "stats":
+                statsAction.trigger();
+                break;
+            case "healthCert":
+                healthCertAction.trigger();
+                break;
+            default:
+                console.warn("Requested to open unknown page", page);
+            }
+        }
     }
 
     Connections {

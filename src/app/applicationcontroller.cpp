@@ -148,6 +148,11 @@ ApplicationController* ApplicationController::instance()
     return s_instance;
 }
 
+void ApplicationController::requestOpenPage(const QString &page)
+{
+    Q_EMIT openPageRequested(page);
+}
+
 void ApplicationController::setReservationManager(ReservationManager* resMgr)
 {
     m_resMgr = resMgr;

@@ -180,7 +180,7 @@ void registerApplicationSingletons()
 
 #undef REGISTER_SINGLETON_INSTANCE
 
-void handlePositionalArguments(ApplicationController *appController, const QStringList &args, bool isTemporary)
+void handleCommandLineArguments(ApplicationController *appController, const QStringList &args, bool isTemporary, const QString &page)
 {
     for (const auto &file : args) {
         const auto localUrl = QUrl::fromLocalFile(file);
@@ -192,6 +192,10 @@ void handlePositionalArguments(ApplicationController *appController, const QStri
         } else {
             appController->importFromUrl(QUrl::fromUserInput(file));
         }
+    }
+
+    if (!page.isEmpty()) {
+        appController->requestOpenPage(page);
     }
 }
 
@@ -233,6 +237,8 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     QCommandLineOption isTemporaryOpt(QStringLiteral("tempfile"), QStringLiteral("Input file is a temporary file and will be deleted after importing."));
     parser.addOption(isTemporaryOpt);
+    QCommandLineOption pageOpt(QStringLiteral("page"), i18n("Open Itinerary on the given page"), QStringLiteral("page"));
+    parser.addOption(pageOpt);
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
@@ -328,7 +334,7 @@ int main(int argc, char **argv)
         if (!args.isEmpty()) {
             QDir::setCurrent(workingDir);
             parser.parse(args);
-            handlePositionalArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt));
+            handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
             QGuiApplication::allWindows().at(0)->requestActivate();
@@ -348,7 +354,8 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(l10nContext);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
-    handlePositionalArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt));
+    handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
+
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     appController.importFromIntent(Activity::getIntent());

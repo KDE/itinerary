@@ -42,6 +42,8 @@ public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
 
+    void requestOpenPage(const QString &page);
+
     void setReservationManager(ReservationManager *resMgr);
     void setPkPassManager(PkPassManager *pkPassMgr);
     void setDocumentManager(DocumentManager *docMgr);
@@ -80,6 +82,8 @@ Q_SIGNALS:
 
     /** Human readable information message to be shown as passive notification. */
     void infoMessage(const QString &msg);
+
+    void openPageRequested(const QString &page);
 
 private:
     bool hasClipboardContent() const;

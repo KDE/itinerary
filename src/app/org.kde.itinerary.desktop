@@ -82,3 +82,14 @@ MimeType=application/vnd.apple.pkpass;application/ld+json;application/pdf;text/c
 Categories=Qt;KDE;Utility;
 X-KDE-HasTempFileOption=true
 X-KDE-FormFactor=desktop;tablet;handset;
+Actions=statistics;healthCert;
+
+[Desktop Action statistics]
+Name=Statistics
+Icon=view-statistics
+Exec=itinerary --page stats
+
+[Desktop Action healthCert]
+Name=Health Certificates
+Icon=cross-shape
+Exec=itinerary --page healthCert
