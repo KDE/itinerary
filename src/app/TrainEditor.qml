@@ -20,7 +20,7 @@ App.EditorPage {
     property var departureStation: reservationFor.departureStation
     property var departureTime: Util.dateTimeStripTimezone(reservationFor, "departureTime")
     property var arrivalStation: reservationFor.arrivalStation
-    property var arrivalTime: Util.setDateTimePreserveTimezone(reservationFor, "arrivalTime")
+    property var arrivalTime: Util.dateTimeStripTimezone(reservationFor, "arrivalTime")
 
     actions.contextualActions: [
         Kirigami.Action {
