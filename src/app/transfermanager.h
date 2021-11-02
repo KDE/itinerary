@@ -97,6 +97,10 @@ private:
 
     void determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const;
 
+    /** Return the transfer anchor time before/after the reservation @p res. */
+    QDateTime anchorTimeBefore(const QString &resId, const QVariant &res) const;
+    QDateTime anchorTimeAfter(const QString &resId, const QVariant &res) const;
+
     static KPublicTransport::Location locationFromFavorite(const FavoriteLocation &favLoc);
     /** Pick the best favorite location for a given transfer. */
     FavoriteLocation pickFavorite(const QVariant &anchoredLoc, const QString &resId, Transfer::Alignment alignment) const;

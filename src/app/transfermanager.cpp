@@ -10,12 +10,15 @@
 #include "livedatamanager.h"
 #include "publictransport.h"
 #include "reservationmanager.h"
-#include "transferhelper.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#include <KItinerary/BusTrip>
+#include <KItinerary/Event>
+#include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
+#include <KItinerary/TrainTrip>
 
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyReply>
@@ -201,11 +204,11 @@ void TransferManager::checkReservation(const QString &resId)
     const auto res = m_resMgr->reservation(resId);
 
     const auto now = currentDateTime();
-    if (TransferHelper::anchorTimeAfter(res) < now) {
+    if (anchorTimeAfter(resId, res) < now) {
         return;
     }
     checkReservation(resId, res, Transfer::After);
-    if (TransferHelper::anchorTimeBefore(res) < now) {
+    if (anchorTimeBefore(resId, res) < now) {
         return;
     }
     checkReservation(resId, res, Transfer::Before);
@@ -238,7 +241,7 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
 
 TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    transfer.setAnchorTime(TransferHelper::anchorTimeBefore(res));
+    transfer.setAnchorTime(anchorTimeBefore(resId, res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant toLoc;
     if (isLocationChange) {
@@ -302,7 +305,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
 
 TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    transfer.setAnchorTime(TransferHelper::anchorTimeAfter(res));
+    transfer.setAnchorTime(anchorTimeAfter(resId, res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant fromLoc;
     if (isLocationChange) {
@@ -411,6 +414,54 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
     } else {
         transfer.setAnchorTimeDelta(10 * 60);
     }
+}
+
+QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant &res) const
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
+    }
+    if (JsonLd::isA<FlightReservation>(res)) {
+        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
+        if (flight.boardingTime().isValid()) {
+            return flight.boardingTime();
+        }
+        return flight.departureTime();
+    }
+    if (JsonLd::isA<EventReservation>(res)) {
+        const auto event = res.value<EventReservation>().reservationFor().value<Event>();
+        if (event.doorTime().isValid()) {
+            return event.doorTime();
+        }
+        return event.startDate();
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().startTime();
+    }
+    return {};
+}
+
+QDateTime TransferManager::anchorTimeAfter(const QString &resId, const QVariant &res) const
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalTime();
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalTime();
+    }
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return res.value<FlightReservation>().reservationFor().value<Flight>().arrivalTime();
+    }
+    if (JsonLd::isA<EventReservation>(res)) {
+        return res.value<EventReservation>().reservationFor().value<Event>().endDate();
+    }
+    if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        return res.value<FoodEstablishmentReservation>().endTime();
+    }
+    return {};
 }
 
 KPublicTransport::Location TransferManager::locationFromFavorite(const FavoriteLocation &favLoc)

@@ -36,7 +36,6 @@ target_sources(itinerary PRIVATE
     tripgroupmanager.cpp
     tripgroupproxymodel.cpp
     transfer.cpp
-    transferhelper.cpp
     transfermanager.cpp
     util.cpp
 )
