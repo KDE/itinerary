@@ -105,7 +105,7 @@ App.EditorPage {
 
         footer: QQC2.Button {
             text: i18n("Change arrival station")
-            enabled: stopSelector.currentIndex >= 0
+            enabled: alightStopSelector.currentIndex >= 0
             onClicked: {
                 arrivalStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[alightStopSelector.currentIndex].stopPoint);
                 arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledArrivalTime");
