@@ -7,6 +7,7 @@
 #include "transfermanager.h"
 #include "logging.h"
 #include "favoritelocationmodel.h"
+#include "livedatamanager.h"
 #include "publictransport.h"
 #include "reservationmanager.h"
 #include "transferhelper.h"
@@ -65,9 +66,9 @@ void TransferManager::setFavoriteLocationModel(FavoriteLocationModel *favLocMode
     rescan();
 }
 
-void TransferManager::setPublicTransportManager(KPublicTransport::Manager *ptMgr)
+void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
 {
-    m_ptrMgr = ptMgr;
+    m_liveDataMgr = liveDataMgr;
 }
 
 void TransferManager::setAutoAddTransfers(bool enable)
@@ -557,7 +558,7 @@ void TransferManager::autoFillTransfer(Transfer &t)
 
     t.setState(Transfer::Searching);
 
-    auto reply = m_ptrMgr->queryJourney(journeyRequestForTransfer(t));
+    auto reply = m_liveDataMgr->publicTransportManager()->queryJourney(journeyRequestForTransfer(t));
     const auto batchId = t.reservationId();
     const auto alignment = t.alignment();
     connect(reply, &KPublicTransport::JourneyReply::finished, this, [this, reply, batchId, alignment]() {

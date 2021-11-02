@@ -282,7 +282,7 @@ int main(int argc, char **argv)
     transferManager.setReservationManager(&resMgr);
     transferManager.setTripGroupManager(&tripGroupMgr);
     transferManager.setFavoriteLocationModel(&favLocModel);
-    transferManager.setPublicTransportManager(liveDataMgr.publicTransportManager());
+    transferManager.setLiveDataManager(&liveDataMgr);
     transferManager.setAutoAddTransfers(settings.autoAddTransfers());
     transferManager.setAutoFillTransfers(settings.autoFillTransfers());
     QObject::connect(&settings, &Settings::autoAddTransfersChanged, &transferManager, &TransferManager::setAutoAddTransfers);

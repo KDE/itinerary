@@ -16,12 +16,9 @@
 
 #include <cmath>
 
-namespace KPublicTransport {
-class Manager;
-}
-
 class FavoriteLocation;
 class FavoriteLocationModel;
+class LiveDataManager;
 class ReservationManager;
 class TripGroupManager;
 
@@ -36,7 +33,7 @@ public:
     void setReservationManager(ReservationManager *resMgr);
     void setTripGroupManager(TripGroupManager *tgMgr);
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
-    void setPublicTransportManager(KPublicTransport::Manager *ptMgr);
+    void setLiveDataManager(LiveDataManager *liveDataMgr);
 
     void setAutoAddTransfers(bool enabled);
     void setAutoFillTransfers(bool enabled);
@@ -118,7 +115,7 @@ private:
     ReservationManager *m_resMgr = nullptr;
     TripGroupManager *m_tgMgr = nullptr;
     FavoriteLocationModel *m_favLocModel = nullptr;
-    KPublicTransport::Manager *m_ptrMgr = nullptr;
+    LiveDataManager *m_liveDataMgr = nullptr;
     mutable QHash<QString, Transfer> m_transfers[2];
     QDateTime m_nowOverride;
     bool m_autoAddTransfers = true;
