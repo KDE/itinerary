@@ -419,6 +419,10 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
 QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
+        const auto departure = m_liveDataMgr->departure(resId);
+        if (departure.hasExpectedDepartureTime()) {
+            return departure.expectedDepartureTime();
+        }
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
     }
     if (JsonLd::isA<BusReservation>(res)) {
@@ -447,6 +451,10 @@ QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant
 QDateTime TransferManager::anchorTimeAfter(const QString &resId, const QVariant &res) const
 {
     if (JsonLd::isA<TrainReservation>(res)) {
+        const auto arrival = m_liveDataMgr->arrival(resId);
+        if (arrival.hasExpectedArrivalTime()) {
+            return arrival.expectedArrivalTime();
+        }
         return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalTime();
     }
     if (JsonLd::isA<BusReservation>(res)) {

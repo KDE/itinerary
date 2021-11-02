@@ -12,6 +12,7 @@
 #include <reservationmanager.h>
 #include <tripgroupmanager.h>
 #include <favoritelocationmodel.h>
+#include <livedatamanager.h>
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
@@ -52,12 +53,15 @@ private Q_SLOTS:
         favLocModel.setFavoriteLocations({favLoc});
         QCOMPARE(favLocModel.rowCount(), 1);
 
+        LiveDataManager liveDataMgr;
+
         TransferManager::clear();
         TransferManager mgr;
         mgr.setFavoriteLocationModel(&favLocModel);
         mgr.overrideCurrentDateTime(QDateTime({2017, 1, 1}, {}));
         mgr.setReservationManager(&resMgr);
         mgr.setTripGroupManager(&tgMgr);
+        mgr.setLiveDataManager(&liveDataMgr);
         QSignalSpy addSpy(&mgr, &TransferManager::transferAdded);
         QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
         QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
