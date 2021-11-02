@@ -182,6 +182,21 @@ QDateTime Transfer::journeyTime() const
     return std::max(dt, QDateTime::currentDateTime());
 }
 
+bool Transfer::isReachable() const
+{
+    if (state() == Transfer::Selected) {
+        if (alignment() == Transfer::After) {
+            if (journey().hasExpectedDepartureTime()) {
+                return journey().expectedDepartureTime() > anchorTime();
+            }
+            if (journey().scheduledDepartureTime().isValid()) {
+                return journey().scheduledDepartureTime() > anchorTime();
+            }
+        }
+    }
+    return true;
+}
+
 QString Transfer::identifier() const
 {
     return identifier(d->m_resId, d->m_alignment);

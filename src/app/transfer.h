@@ -37,6 +37,7 @@ class Transfer
     Q_PROPERTY(QDateTime anchorTime READ anchorTime WRITE setAnchorTime)
     Q_PROPERTY(int anchorTimeDelta READ anchorTimeDelta WRITE setAnchorTimeDelta)
     Q_PROPERTY(QDateTime journeyTime READ journeyTime STORED false)
+    Q_PROPERTY(bool isReachable READ isReachable STORED false)
 public:
     Transfer();
     Transfer(const Transfer&);
@@ -101,6 +102,9 @@ public:
 
     /** Anchor time +/- anchor delta, ie. the time we actually want to arrive/depart. */
     QDateTime journeyTime() const;
+
+    /** Returns @c false when this transfer isn't reachable (e.g. due to anchor time changes or a wrong journey pick). */
+    bool isReachable() const;
 
     /** Unique identifier usable naming the file to store this into. */
     QString identifier() const;

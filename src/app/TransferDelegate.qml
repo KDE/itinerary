@@ -21,7 +21,7 @@ Kirigami.AbstractCard {
         id: headerBackground
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
+        color: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
         radius: Kirigami.Units.smallSpacing
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.leftMargin: -root.leftPadding
