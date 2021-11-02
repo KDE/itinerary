@@ -10,7 +10,6 @@
 #include <KAndroidExtras/JniArray>
 #include <KAndroidExtras/JniSignature>
 
-#include <QAndroidJniObject>
 #include <QAndroidJniEnvironment>
 #include <QUrl>
 

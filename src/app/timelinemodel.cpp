@@ -33,7 +33,6 @@
 
 #include <KLocalizedString>
 
-#include <QDateTime>
 #include <QDebug>
 #include <QLocale>
 

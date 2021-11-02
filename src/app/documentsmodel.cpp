@@ -6,7 +6,6 @@
 
 #include "documentsmodel.h"
 #include "documentmanager.h"
-#include "reservationmanager.h"
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>

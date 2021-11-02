@@ -6,7 +6,6 @@
 
 #include "weatherforecastmanager.h"
 #include "weatherforecast.h"
-#include "weathertile.h"
 
 #include <QCoreApplication>
 #include <QDateTime>

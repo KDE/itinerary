@@ -15,7 +15,6 @@
 #include <KItinerary/Place>
 #include <KItinerary/SortUtil>
 
-#include <QDateTime>
 #include <QDebug>
 #include <QTimer>
 

@@ -22,7 +22,6 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
-#include <KPublicTransport/Journey>
 
 #include <QJSEngine>
 #include <QJSValue>

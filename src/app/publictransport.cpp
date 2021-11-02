@@ -16,8 +16,6 @@
 #include <KPublicTransport/Attribution>
 #include <KPublicTransport/Backend>
 #include <KPublicTransport/Journey>
-#include <KPublicTransport/Line>
-#include <KPublicTransport/Location>
 #include <KPublicTransport/RentalVehicle>
 #include <KPublicTransport/Stopover>
 #include <KPublicTransport/StopoverRequest>
