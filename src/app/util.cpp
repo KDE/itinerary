@@ -41,6 +41,11 @@ QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& proper
 
 QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& propertyName, QDateTime value) const
 {
+    if (!value.isValid()) {
+        qCDebug(Log) << "Invalid date passed for property" << propertyName;
+        return obj;
+    }
+
     QVariant o(obj);
     const auto oldDt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (oldDt.isValid()) {
