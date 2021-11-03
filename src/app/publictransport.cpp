@@ -379,9 +379,16 @@ QString PublicTransport::attributionSummary(const QVariantList& attributions) co
     l.reserve(attributions.size());
     for (const auto &v : attributions) {
         const auto attr = v.value<KPublicTransport::Attribution>();
-        l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
+        const auto multi = std::count_if(attributions.begin(), attributions.end(), [attr](const auto &other) {
+            return other.template value<KPublicTransport::Attribution>().name() == attr.name();
+        });
+        if (multi > 1) {
+            l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String(" (") + attr.license() + QLatin1String(")</a>"));
+        } else {
+            l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
+        }
     }
-    return l.join(QLatin1String(", "));
+    return QLocale().createSeparatedList(l);
 }
 
 bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &section) const
