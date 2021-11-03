@@ -617,8 +617,7 @@ static KPublicTransport::Journey pickJourney(const Transfer &t, const std::vecto
     if (journeys.empty()) {
         return {};
     }
-    Q_UNUSED(t)
-    return journeys[0]; // TODO
+    return t.alignment() == Transfer::Before ? journeys.back() : journeys.front();
 }
 
 void TransferManager::autoFillTransfer(Transfer &t)
