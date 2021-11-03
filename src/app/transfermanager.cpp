@@ -341,7 +341,6 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         const auto f = pickFavorite(fromLoc, resId, Transfer::After);
         transfer.setTo(locationFromFavorite(f));
         transfer.setToName(f.name());
-        transfer.setToName(i18n("Home"));
         transfer.setFloatingLocationType(Transfer::FavoriteLocation);
         return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
