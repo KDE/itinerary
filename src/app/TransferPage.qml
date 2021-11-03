@@ -72,7 +72,7 @@ Kirigami.ScrollablePage {
 
     Component.onCompleted: {
         if (transfer.floatingLocationType == Transfer.FavoriteLocation) {
-            //favLocCombo.currentIndex = favLocCombo.find(transfer.alignment == Transfer.Before ? transfer.fromName : transfer.toName);
+            favLocCombo.currentIndex = favLocCombo.find(transfer.alignment == Transfer.Before ? transfer.fromName : transfer.toName);
         }
         queryJourney();
     }
