@@ -83,6 +83,7 @@ target_sources(itinerary-app PRIVATE
     notifyrc.qrc
     settings.cpp
     tickettokenmodel.cpp
+    transferdelegatecontroller.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
     )

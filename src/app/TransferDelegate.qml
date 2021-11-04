@@ -14,12 +14,15 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property var transfer
+    property alias transfer: _controller.transfer
     property bool journeyDetailsExpanded: false
+    property QtObject controller: TransferDelegateController {
+        id: _controller
+    }
 
    header: Rectangle {
         id: headerBackground
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
         color: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
         radius: Kirigami.Units.smallSpacing
@@ -56,6 +59,16 @@ Kirigami.AbstractCard {
                 color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                 visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
             }
+        }
+
+        Rectangle {
+            id: progressBar
+            visible: controller.isCurrent
+            anchors.bottom: headerBackground.bottom
+            anchors.left: headerBackground.left
+            height: Kirigami.Units.smallSpacing
+            width: controller.progress * headerBackground.width
+            color: Kirigami.Theme.visitedLinkColor
         }
     }
 
