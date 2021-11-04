@@ -86,10 +86,26 @@ Actions=statistics;healthCert;
 
 [Desktop Action statistics]
 Name=Statistics
+Name[ca]=Estadístiques
+Name[ca@valencia]=Estadístiques
+Name[es]=Estadísticas
+Name[ia]=Statistica
+Name[nl]=Statistieken
+Name[sv]=Statistik
+Name[uk]=Статистика
+Name[x-test]=xxStatisticsxx
 Icon=view-statistics
 Exec=itinerary --page stats
 
 [Desktop Action healthCert]
 Name=Health Certificates
+Name[ca]=Certificats de salut
+Name[ca@valencia]=Certificats de salut
+Name[es]=Certificados sanitarios
+Name[ia]=Certificatos de Sanitate
+Name[nl]=Gezondheidscertificaten
+Name[sv]=Hälsocertifikat
+Name[uk]=Сертифікати здоров'я
+Name[x-test]=xxHealth Certificatesxx
 Icon=cross-shape
 Exec=itinerary --page healthCert
