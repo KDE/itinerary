@@ -15,6 +15,7 @@
 #include <QDateTime>
 #include <QFile>
 #include <QTimeZone>
+#include <QUrl>
 #include <QXmlStreamReader>
 
 #include <cmath>
@@ -85,9 +86,13 @@ float Util::svgAspectRatio(const QString &svgFilePath) const
         return 1.0f;
     }
 
-    QFile file(svgFilePath);
+    QString localFilePath(svgFilePath);
+    if (svgFilePath.startsWith(QLatin1String("qrc:"))) {
+        localFilePath = QLatin1Char(':') + QUrl(svgFilePath).path();
+    }
+    QFile file(localFilePath);
     if (!file.open(QFile::ReadOnly)) {
-        qCWarning(Log) << file.errorString() << svgFilePath;
+        qCWarning(Log) << file.errorString() << localFilePath;
         return 1.0f;
     }
 
