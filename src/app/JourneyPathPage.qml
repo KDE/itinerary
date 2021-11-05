@@ -42,6 +42,7 @@ Kirigami.ScrollablePage {
                     }
                     width: height
                     height: Kirigami.Units.iconSizes.medium
+                    isMask: true
                 }
 
                 // floor level change indicator
