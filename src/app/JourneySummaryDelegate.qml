@@ -42,10 +42,8 @@ RowLayout {
         delegate: Kirigami.Icon {
             source: PublicTransport.journeySectionIcon(modelData)
             color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-            width: isMask ? height : implicitWidth
-            height: Kirigami.Units.iconSizes.small
             isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
-            Layout.preferredWidth: width
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small * Util.svgAspectRatio(source)
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
         }
     }
