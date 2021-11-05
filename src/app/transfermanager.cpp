@@ -309,6 +309,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc) << transfer.anchorTime();
         transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
         transfer.setFromName(LocationUtil::name(prevLoc));
+        transfer.setFloatingLocationType(Transfer::Reservation);
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
 
     }
@@ -373,6 +374,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime();
         transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
         transfer.setToName(LocationUtil::name(nextLoc));
+        transfer.setFloatingLocationType(Transfer::Reservation);
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
     }
 
