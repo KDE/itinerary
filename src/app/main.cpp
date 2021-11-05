@@ -174,10 +174,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(NavigationController)
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
-
-    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
-        return new Util;
-    });
+    REGISTER_SINGLETON_GADGET_FACTORY(Util)
 }
 
 #undef REGISTER_SINGLETON_INSTANCE

@@ -7,38 +7,35 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include <QObject>
+#include <qobjectdefs.h>
 
 class QDateTime;
+class QVariant;
 
 /** Misc utilities. */
-class Util : public QObject
+class Util
 {
-    Q_OBJECT
+    Q_GADGET
 public:
-    explicit Util(QObject *parent = nullptr);
-    ~Util() override;
-
     // workarounds for JS not preserving timezones
-
     /** Read a QDateTime property with the timezone stripped off. */
-    Q_INVOKABLE QDateTime dateTimeStripTimezone(const QVariant &obj, const QString &propertyName) const;
+    Q_INVOKABLE static QDateTime dateTimeStripTimezone(const QVariant &obj, const QString &propertyName);
     /** Set a QDateTime property preserving the timezone of the current value. */
-    Q_INVOKABLE QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value) const;
+    Q_INVOKABLE static QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value);
 
     /** Checks whether @p text is rich-text. */
-    Q_INVOKABLE bool isRichText(const QString &text) const;
+    Q_INVOKABLE static bool isRichText(const QString &text);
 
     /** Convert links, email address and phone numbers in the given text to HTML links. */
-    Q_INVOKABLE QString textToHtml(const QString &text) const;
+    Q_INVOKABLE static QString textToHtml(const QString &text);
 
     /** Execute the non-exported sort() method on a QAbstractItemModel. */
-    Q_INVOKABLE void sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const;
+    Q_INVOKABLE static void sortModel(QObject *model, int column, Qt::SortOrder sortOrder);
 
     /** Determine the aspect ratio of an SVG file.
      *  This is a dirty workaround for the problem that Kirigami.Icon has its implicit size hardcoded to 32x32...
      */
-    Q_INVOKABLE float svgAspectRatio(const QString &svgFilePath) const;
+    Q_INVOKABLE static float svgAspectRatio(const QString &svgFilePath);
 };
 
 #endif // UTIL_H

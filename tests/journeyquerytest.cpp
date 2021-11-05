@@ -58,14 +58,14 @@ int main(int argc, char **argv)
     req.setIncludeIntermediateStops(true);
 
     qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel");
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
-        return engine->toScriptValue(Localizer()); \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(Localizer());
     });
-    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
-        return engine->toScriptValue(PublicTransport()); \
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(PublicTransport());
     });
-    qmlRegisterSingletonType<Util>("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine*) -> QObject*{
-        return new Util;
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(Util());
     });
 
     QQmlApplicationEngine engine;

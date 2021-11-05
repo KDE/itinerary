@@ -22,14 +22,7 @@
 
 using namespace KItinerary;
 
-Util::Util(QObject* parent)
-    : QObject(parent)
-{
-}
-
-Util::~Util() = default;
-
-QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& propertyName) const
+QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& propertyName)
 {
     auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
     if (!dt.isValid()) {
@@ -40,7 +33,7 @@ QDateTime Util::dateTimeStripTimezone(const QVariant& obj, const QString& proper
     return dt;
 }
 
-QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& propertyName, QDateTime value) const
+QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& propertyName, QDateTime value)
 {
     if (!value.isValid()) {
         qCDebug(Log) << "Invalid date passed for property" << propertyName;
@@ -56,7 +49,7 @@ QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& p
     return o;
 }
 
-bool Util::isRichText(const QString &text) const
+bool Util::isRichText(const QString &text)
 {
     auto idx = text.indexOf(QLatin1Char('<'));
     if (idx >= 0 && idx < text.size() - 2) {
@@ -65,7 +58,7 @@ bool Util::isRichText(const QString &text) const
     return false;
 }
 
-QString Util::textToHtml(const QString& text) const
+QString Util::textToHtml(const QString& text)
 {
     if (isRichText(text)) {
         return text;
@@ -73,14 +66,14 @@ QString Util::textToHtml(const QString& text) const
     return KTextToHTML::convertToHtml(text, KTextToHTML::ConvertPhoneNumbers | KTextToHTML::PreserveSpaces);
 }
 
-void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder) const
+void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder)
 {
     if (auto qaim = qobject_cast<QAbstractItemModel*>(model)) {
         qaim->sort(column, sortOrder);
     }
 }
 
-float Util::svgAspectRatio(const QString &svgFilePath) const
+float Util::svgAspectRatio(const QString &svgFilePath)
 {
     if (svgFilePath.isEmpty()) {
         return 1.0f;
