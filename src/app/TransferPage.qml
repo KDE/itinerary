@@ -62,12 +62,64 @@ Kirigami.ScrollablePage {
                 iconName: "go-down-symbolic"
                 onTriggered: journeyModel.queryNext()
                 enabled: journeyModel.canQueryNext
+            },
+            Kirigami.Action { separator: true },
+            Kirigami.Action {
+                id: bikeAction
+                text: i18n("Bike")
+                icon.source: "qrc:///images/bike.svg"
+                checkable: true
+                onCheckedChanged: queryJourney()
+            },
+            Kirigami.Action {
+                id: bikeRideAction
+                text: i18n("Bike & Ride")
+                icon.source: "qrc:///images/bike.svg"
+                checkable: true
+                visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
+                onCheckedChanged: queryJourney()
+            },
+            Kirigami.Action {
+                id: bikeSharingAction
+                text: i18n("Shared Bikes")
+                icon.source: "qrc:///images/bike.svg"
+                checkable: true
+                onCheckedChanged: queryJourney()
+            },
+            Kirigami.Action {
+                id: parkRideAction
+                text: i18n("Park & Ride")
+                icon.source: "qrc:///images/car.svg"
+                checkable: true
+                visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
+                onCheckedChanged: queryJourney()
             }
         ]
     }
 
     function queryJourney() {
         journeyModel.request = TransferManager.journeyRequestForTransfer(transfer);
+        var accessMode = [];
+        var egressMode = [];
+
+        if (bikeAction.checked) {
+            accessMode.push({ mode: IndividualTransport.Bike });
+            egressMode.push({ mode: IndividualTransport.Bike });
+        }
+        if (bikeRideAction.checked) {
+            accessMode.push({ mode: IndividualTransport.Bike, qualifier: IndividualTransport.Park });
+        }
+        if (bikeSharingAction.checked) {
+            accessMode.push({ mode: IndividualTransport.Bike, qualifier: IndividualTransport.Rent });
+            egressMode.push({ mode: IndividualTransport.Bike, qualifier: IndividualTransport.Rent });
+        }
+
+        if (parkRideAction.checked) {
+            accessMode.push({ mode: IndividualTransport.Car, qualifier: IndividualTransport.Park });
+        }
+
+        journeyModel.request.accessModes = accessMode;
+        journeyModel.request.egressModes = egressMode;
     }
 
     Component.onCompleted: {
