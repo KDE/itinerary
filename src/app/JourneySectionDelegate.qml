@@ -101,7 +101,7 @@ Kirigami.AbstractListItem {
                     case JourneySection.Waiting:
                         return i18n("Wait (%1)", Localizer.formatDuration(modelData.duration))
                     case JourneySection.RentedVehicle:
-                        return i18n("%1 (%2)", modelData.rentalVehicle.network, Localizer.formatDuration(modelData.duration));
+                        return i18n("%1 %2 (%3)", modelData.rentalVehicle.network.name, Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
                     case JourneySection.IndividualTransport:
                         return i18n("Drive %1 (%2)", Localizer.formatDistance(modelData.distance), Localizer.formatDuration(modelData.duration));
                     return "???";
