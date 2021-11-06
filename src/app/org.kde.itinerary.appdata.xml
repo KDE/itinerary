@@ -609,7 +609,19 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.08.3" date="2021-11-04"/>
+    <release version="21.08.3" date="2021-11-04">
+      <description>
+        <ul>
+          <li>Fix icon size issues on high DPI screens.</li>
+          <li>Fix map panning leaving the favorite location selector page.</li>
+          <li>Fix determining departure country for location changes.</li>
+          <li>Fix erroneous merging of train trips with the same line on the same day.</li>
+          <li>Fix parsing of OTP rental vehicle information.</li>
+          <li>Apply timezone information correctly to flight reservations with incomplete time information.</li>
+          <li>Improved data extraction for various providers.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.08.2" date="2021-10-07">
       <description>
         <ul>
