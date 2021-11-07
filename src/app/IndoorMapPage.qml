@@ -30,8 +30,10 @@ Kirigami.Page {
 
     property string arrivalGateName
     property string arrivalPlatformName
+    property var arrivalPlatformMode: Platform.Rail
     property string departureGateName
     property string departurePlatformName
+    property var departurePlatformMode: Platform.Rail
 
     property string region
     property string timeZone
@@ -285,8 +287,8 @@ Kirigami.Page {
     Connections {
         target: map.mapLoader
         function onDone() {
-            platformModel.setArrivalPlatform(root.arrivalPlatformName, Platform.Rail);
-            platformModel.setDeparturePlatform(root.departurePlatformName, Platform.Rail);
+            platformModel.setArrivalPlatform(root.arrivalPlatformName, root.arrivalPlatformMode);
+            platformModel.setDeparturePlatform(root.departurePlatformName, root.departurePlatformMode);
             gateModel.setArrivalGate(root.arrivalGateName);
             gateModel.setDepartureGate(root.departureGateName);
             map.region = root.region;
