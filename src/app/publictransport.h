@@ -13,6 +13,8 @@
 #include <KItinerary/MergeUtil>
 #include <KItinerary/Place>
 
+#include <KOSMIndoorMap/Platform>
+
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Line>
 #include <KPublicTransport/Manager>
@@ -106,10 +108,12 @@ public:
     /** Last public transport section of the given section. */
     static KPublicTransport::JourneySection lastTransportSection(const KPublicTransport::Journey &journey);
 
-
     /** Selects suitable backends based on UIC operator codes from the reservation. */
     template <typename Request>
     static void selectBackends(Request &request, KPublicTransport::Manager *mgr, const QVariant &res);
+
+    /** Convert KPublicTransport mode enum to one for KOSMIndoorMap */
+    Q_INVOKABLE static KOSMIndoorMap::Platform::Mode lineModeToPlatformMode(KPublicTransport::Line::Mode lineMode);
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);

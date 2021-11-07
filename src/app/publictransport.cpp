@@ -517,4 +517,37 @@ QStringList PublicTransport::suitableBackendsForReservation(KPublicTransport::Ma
     return backendIds;
 }
 
+KOSMIndoorMap::Platform::Mode PublicTransport::lineModeToPlatformMode(KPublicTransport::Line::Mode lineMode)
+{
+    using namespace KPublicTransport;
+
+    switch (lineMode) {
+        case Line::Unknown:
+        case Line::Air:
+        case Line::Boat:
+        case Line::Ferry:
+        case Line::Shuttle:
+        case Line::Taxi:
+        case Line::RideShare:
+            return KOSMIndoorMap::Platform::Unknown;
+        case Line::Bus:
+        case Line::BusRapidTransit:
+        case Line::Coach:
+            return KOSMIndoorMap::Platform::Bus;
+        case Line::Funicular:
+        case Line::LocalTrain:
+        case Line::LongDistanceTrain:
+        case Line::RailShuttle:
+        case Line::RapidTransit:
+        case Line::Train:
+            return KOSMIndoorMap::Platform::Rail;
+        case Line::Metro:
+            return KOSMIndoorMap::Platform::Subway;
+        case Line::Tramway:
+            return KOSMIndoorMap::Platform::Tram;
+    }
+
+    return KOSMIndoorMap::Platform::Unknown;
+}
+
 #include "moc_publictransport.cpp"

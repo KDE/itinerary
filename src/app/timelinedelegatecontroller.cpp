@@ -592,6 +592,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("departurePlatformName"), dep.hasExpectedDeparturePlatform() ? dep.expectedDeparturePlatform() : dep.scheduledDeparturePlatform());
+        args.setProperty(QStringLiteral("departurePlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
         args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
@@ -664,6 +665,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("arrivalPlatformName"), arr.hasExpectedArrivalPlatform() ? arr.expectedArrivalPlatform() : arr.scheduledArrivalPlatform());
+        args.setProperty(QStringLiteral("arrivalPlatformMode"), PublicTransport::lineModeToPlatformMode(arr.route().line().mode()));
         args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }

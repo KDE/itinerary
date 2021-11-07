@@ -155,9 +155,11 @@ Item {
                 };
                 if (!isDeparture) {
                     args.arrivalPlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+                    args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode)
                 }
                 if (!isArrival) {
                     args.departurePlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+                    args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode)
                 }
                 applicationWindow().pageStack.push(indoorMapPage, args);
             }
