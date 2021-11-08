@@ -25,7 +25,7 @@ Item {
 
     Rectangle {
         id: bodyBackground
-        color: pass.backgroundColor
+        color: Util.isValidColor(pass.backgroundColor) ? pass.backgroundColor : Kirigami.Theme.backgroundColor
         //implicitHeight: topLayout.implicitHeight + 2 * topLayout.anchors.margins
         width: parent.width
 
@@ -77,21 +77,21 @@ Item {
                         Layout.rowSpan: 2
                         Layout.fillWidth: pass ? true : false
                         text: pass ? pass.logoText : ""
-                        color: pass.foregroundColor
+                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                     }
 
                     Repeater {
                         model: pass.headerFields
                         delegate: QQC2.Label {
                             text: modelData.label
-                            color: pass.labelColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
                         }
                     }
                     Repeater {
                         model: pass.headerFields
                         delegate: QQC2.Label {
                             text: modelData.valueDisplayString
-                            color: pass.foregroundColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                         }
                     }
                 }
@@ -116,7 +116,7 @@ Item {
                         model: pass.primaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.labelColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -125,7 +125,7 @@ Item {
                         model: pass.primaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.foregroundColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -143,7 +143,7 @@ Item {
                         model: pass.secondaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.labelColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -152,7 +152,7 @@ Item {
                         model: pass.secondaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.foregroundColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -170,7 +170,7 @@ Item {
                         model: pass.auxiliaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.labelColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -179,7 +179,7 @@ Item {
                         model: pass.auxiliaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: pass.foregroundColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -211,14 +211,14 @@ Item {
                 ColumnLayout {
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: pass.labelColor
+                        color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
                         text: modelData.label
                         wrapMode: Text.WordWrap
                         horizontalAlignment: modelData.textAlignment
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: pass.foregroundColor
+                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
                         text: Util.textToHtml(modelData.valueDisplayString)
                         textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.RichText : Text.AutoText
                         wrapMode: Text.WordWrap

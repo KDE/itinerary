@@ -12,6 +12,7 @@
 #include <KTextToHTML>
 
 #include <QAbstractItemModel>
+#include <QColor>
 #include <QDateTime>
 #include <QFile>
 #include <QTimeZone>
@@ -117,6 +118,11 @@ float Util::svgAspectRatio(const QString &svgFilePath)
     }
 
     return 1.0f;
+}
+
+bool Util::isValidColor(const QColor &color)
+{
+    return color.isValid();
 }
 
 #include "moc_util.cpp"

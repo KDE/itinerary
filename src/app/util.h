@@ -9,6 +9,7 @@
 
 #include <qobjectdefs.h>
 
+class QColor;
 class QDateTime;
 class QVariant;
 
@@ -36,6 +37,9 @@ public:
      *  This is a dirty workaround for the problem that Kirigami.Icon has its implicit size hardcoded to 32x32...
      */
     Q_INVOKABLE static float svgAspectRatio(const QString &svgFilePath);
+
+    /** QColor::isValid for QML. */
+    Q_INVOKABLE static bool isValidColor(const QColor &color);
 };
 
 #endif // UTIL_H
