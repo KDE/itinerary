@@ -575,6 +575,8 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
         arrPlatform = res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalPlatform();
     }
     args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
+    args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Rail);
+    args.setProperty(QStringLiteral("arrivalPlatformIfopt"), arr.stopPoint().identifier(QStringLiteral("ifopt")));
     // there is no arrival gate property (yet)
 
     // arrival time
@@ -593,6 +595,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
         const auto dep = PublicTransport::firstTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("departurePlatformName"), dep.hasExpectedDeparturePlatform() ? dep.expectedDeparturePlatform() : dep.scheduledDeparturePlatform());
         args.setProperty(QStringLiteral("departurePlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
+        args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.from().identifier(QStringLiteral("ifopt")));
         args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
@@ -609,6 +612,8 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
         depPlatform = nextRes.value<TrainReservation>().reservationFor().value<TrainTrip>().departurePlatform();
     }
     args.setProperty(QStringLiteral("departurePlatformName"), depPlatform);
+    args.setProperty(QStringLiteral("departurePlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
+    args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
     if (JsonLd::isA<FlightReservation>(nextRes)) {
         args.setProperty(QStringLiteral("departureGateName"), nextRes.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
     }
@@ -646,6 +651,8 @@ QJSValue TimelineDelegateController::departureMapArguments() const
         depPlatform = res.value<TrainReservation>().reservationFor().value<TrainTrip>().departurePlatform();
     }
     args.setProperty(QStringLiteral("departurePlatformName"), depPlatform);
+    args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Rail);
+    args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
     if (JsonLd::isA<FlightReservation>(res)) {
         args.setProperty(QStringLiteral("departureGateName"), res.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
     }
@@ -666,6 +673,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
         const auto arr = PublicTransport::lastTransportSection(transfer.journey());
         args.setProperty(QStringLiteral("arrivalPlatformName"), arr.hasExpectedArrivalPlatform() ? arr.expectedArrivalPlatform() : arr.scheduledArrivalPlatform());
         args.setProperty(QStringLiteral("arrivalPlatformMode"), PublicTransport::lineModeToPlatformMode(arr.route().line().mode()));
+        args.setProperty(QStringLiteral("arrivalPlatformIfopt"), arr.to().identifier(QStringLiteral("ifopt")));
         args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }
@@ -682,6 +690,8 @@ QJSValue TimelineDelegateController::departureMapArguments() const
         arrPlatform = prevRes.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalPlatform();
     }
     args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
+    args.setProperty(QStringLiteral("arrivalPlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
+    args.setProperty(QStringLiteral("arrivalPlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
     // there is no arrival gate property (yet)
 
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
