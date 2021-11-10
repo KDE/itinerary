@@ -186,11 +186,14 @@ bool Transfer::isReachable() const
 {
     if (state() == Transfer::Selected) {
         if (alignment() == Transfer::After) {
+            const auto hasPT = std::any_of(journey().sections().begin(), journey().sections().end(), [](const auto &sec) {
+                return sec.mode() == KPublicTransport::JourneySection::PublicTransport;
+            });
             if (journey().hasExpectedDepartureTime()) {
-                return journey().expectedDepartureTime() > anchorTime();
+                return !hasPT || journey().expectedDepartureTime() > anchorTime();
             }
             if (journey().scheduledDepartureTime().isValid()) {
-                return journey().scheduledDepartureTime() > anchorTime();
+                return !hasPT || journey().scheduledDepartureTime() > anchorTime();
             }
         }
     }
