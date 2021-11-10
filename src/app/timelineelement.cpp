@@ -72,6 +72,11 @@ bool TimelineElement::operator<(const TimelineElement &other) const
     return dt < other.dt;
 }
 
+bool TimelineElement::operator<(const QDateTime &otherDt) const
+{
+    return dt < otherDt;
+}
+
 bool TimelineElement::operator==(const TimelineElement &other) const
 {
     if (elementType != other.elementType || rangeType != other.rangeType || dt != other.dt || batchId() != other.batchId()) {

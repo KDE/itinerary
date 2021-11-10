@@ -52,6 +52,7 @@ public:
 
     /** Timeline order. This considers only position in the timeline, not content. */
     bool operator<(const TimelineElement &other) const;
+    bool operator<(const QDateTime &otherDt) const;
     bool operator==(const TimelineElement &other) const;
 
     /** Element is holds a reservation type. */

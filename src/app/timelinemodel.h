@@ -27,6 +27,7 @@ class TimelineModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(int todayRow READ todayRow NOTIFY todayRowChanged)
+    Q_PROPERTY(QString currentBatchId READ currentBatchId NOTIFY currentBatchChanged)
 
 public:
     enum Role {
@@ -60,6 +61,9 @@ public:
 
     int todayRow() const;
 
+    /** The most "current" batch to show with the "ticket check" action. */
+    QString currentBatchId() const;
+
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
     QDateTime now() const;
@@ -67,6 +71,7 @@ public:
 
 Q_SIGNALS:
     void todayRowChanged();
+    void currentBatchChanged();
 
 private:
     void batchAdded(const QString &resId);
@@ -90,6 +95,8 @@ private:
     void updateWeatherElements();
     void updateTransfersForBatch(const QString &batchId);
 
+    void scheduleCurrentBatchTimer();
+
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     TripGroupManager *m_tripGroupManager = nullptr;
@@ -98,6 +105,7 @@ private:
     QString m_homeCountry;
     QDateTime m_unitTestTime;
     QTimer m_dayUpdateTimer;
+    QTimer m_currentBatchTimer;
     bool m_todayEmpty = true;
 };
 
