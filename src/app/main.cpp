@@ -130,16 +130,14 @@ static TransferManager *s_tranferManager = nullptr;
 static TripGroupManager *s_tripGroupManager = nullptr;
 static LiveDataManager *s_liveDataMnager = nullptr;
 static WeatherForecastManager *s_weatherForecastManager = nullptr;
+static TimelineModel *s_timelineModel = nullptr;
 static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static HealthCertificateManager *s_healthCertificateManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
-    qmlRegisterSingletonType<Class>("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QObject* { \
-        engine->setObjectOwnership(Instance, QQmlEngine::CppOwnership); \
-        return Instance; \
-    });
+    qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
 
 #define REGISTER_SINGLETON_GADGET_INSTANCE(Class, Instance) \
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, #Class, [](QQmlEngine *engine, QJSEngine*) -> QJSValue { \
@@ -163,6 +161,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TripGroupManager, s_tripGroupManager)
     REGISTER_SINGLETON_INSTANCE(LiveDataManager, s_liveDataMnager)
     REGISTER_SINGLETON_INSTANCE(WeatherForecastManager, s_weatherForecastManager)
+    REGISTER_SINGLETON_INSTANCE(TimelineModel, s_timelineModel)
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(HealthCertificateManager, s_healthCertificateManager)
@@ -178,6 +177,8 @@ void registerApplicationSingletons()
 }
 
 #undef REGISTER_SINGLETON_INSTANCE
+#undef REGISTER_SINGLETON_GADGET_INSTANCE
+#undef REGISTER_SINGLETON_GADGET_FACTORY
 
 void handleCommandLineArguments(ApplicationController *appController, const QStringList &args, bool isTemporary, const QString &page)
 {
@@ -301,6 +302,7 @@ int main(int argc, char **argv)
     timelineModel.setTransferManager(&transferManager);
     timelineModel.setTripGroupManager(&tripGroupMgr);
     QObject::connect(&settings, &Settings::homeCountryIsoCodeChanged, &timelineModel, &TimelineModel::setHomeCountryIsoCode);
+    s_timelineModel = &timelineModel;
 
     TripGroupProxyModel tripGroupProxy;
     tripGroupProxy.setSourceModel(&timelineModel);
