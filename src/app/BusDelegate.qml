@@ -85,13 +85,5 @@ App.TimelineDelegate {
         }
     }
 
-    Component {
-        id: detailsComponent
-        App.BusPage {
-            batchId: root.batchId
-        }
-    }
-
-    onClicked: showDetails(detailsComponent)
+    onClicked: showDetailsPage(busDetailsPage, root.batchId)
 }
-

@@ -65,13 +65,5 @@ App.TimelineDelegate {
         }
     }
 
-    Component {
-        id: detailsComponent
-        App.CarRentalPage {
-            batchId: root.batchId
-        }
-    }
-
-    onClicked: showDetails(detailsComponent)
+    onClicked: showDetailsPage(carRentalDetailsPage, root.batchId)
 }
-

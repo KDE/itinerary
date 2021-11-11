@@ -24,6 +24,12 @@ Kirigami.ScrollablePage {
                 text: i18n("Today")
                 iconName: "view-calendar-day"
                 onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+            },
+            Kirigami.Action {
+                text: i18n("Current Ticket")
+                iconName: "view-barcode-qr"
+                enabled: TimelineModel.currentBatchId !== ""
+                onTriggered: showDetailsPageForReservation(TimelineModel.currentBatchId)
             }
         ]
     }
@@ -59,6 +65,72 @@ Kirigami.ScrollablePage {
         folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
+    }
+
+    Component {
+        id: flightDetailsPage
+        App.FlightPage {}
+    }
+    Component {
+        id: trainDetailsPage
+        App.TrainPage {}
+    }
+    Component {
+        id: busDetailsPage
+        App.BusPage {}
+    }
+    Component {
+        id: hotelDetailsPage
+        App.HotelPage {}
+    }
+    Component {
+        id: eventDetailsPage
+        App.EventPage {}
+    }
+    Component {
+        id: restaurantDetailsPage
+        App.RestaurantPage {}
+    }
+    Component {
+        id: carRentalDetailsPage
+        App.CarRentalPage {}
+    }
+    Component {
+        id: touristAttractionDetailsPage
+        App.TouristAttractionPage {}
+    }
+
+    function detailsComponent(batchId) {
+        const res = ReservationManager.reservation(batchId);
+        if (!res) {
+            return undefined;
+        }
+        switch (res.className) {
+            case "FlightReservation": return flightDetailsPage;
+            case "TrainReservation": return trainDetailsPage;
+            case "BusReservation": return busDetailsPage;
+            case "LodgingReservation": return hotelDetailsPage;
+            case "EventReservation": return eventDetailsPage;
+            case "FoodEstablishmentReservation": return restaurantDetailsPage;
+            case "RentalCarReservation": return carRentalDetailsPage;
+            case "TouristAttractionVisit": return touristAttractionDetailsPage;
+        }
+        console.log("unhandled reservation type:", res.className);
+        return undefined;
+    }
+
+    function showDetailsPageForReservation(batchId) {
+        const c = detailsComponent(batchId);
+        if (c) {
+            showDetailsPage(c, batchId);
+        }
+    }
+
+    function showDetailsPage(detailsComponent, batchId) {
+        while (applicationWindow().pageStack.depth > 1) {
+            applicationWindow().pageStack.pop();
+        }
+        applicationWindow().pageStack.push(detailsComponent, { batchId: batchId });
     }
 
     Models.DelegateChooser {

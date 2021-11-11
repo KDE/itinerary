@@ -102,12 +102,5 @@ App.TimelineDelegate {
         }
     }
 
-    Component {
-        id: detailsComponent
-        App.FlightPage {
-            batchId: root.batchId
-        }
-    }
-
-    onClicked: showDetails(detailsComponent)
+    onClicked: showDetailsPage(flightDetailsPage, root.batchId)
 }

@@ -65,12 +65,5 @@ App.TimelineDelegate {
         }
     }
 
-    Component {
-        id: detailsComponent
-        App.EventPage {
-            batchId: root.batchId
-        }
-    }
-
-    onClicked: showDetails(detailsComponent)
+    onClicked: showDetailsPage(eventDetailsPage, root.batchId)
 }

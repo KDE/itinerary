@@ -82,7 +82,12 @@ MimeType=application/vnd.apple.pkpass;application/ld+json;application/pdf;text/c
 Categories=Qt;KDE;Utility;
 X-KDE-HasTempFileOption=true
 X-KDE-FormFactor=desktop;tablet;handset;
-Actions=statistics;healthCert;
+Actions=currentTicket;statistics;healthCert;
+
+[Desktop Action currentTicket]
+Name=Current Ticket
+Icon=view-barcode-qr
+Exec=itinerary --page currentTicket
 
 [Desktop Action statistics]
 Name=Statistics

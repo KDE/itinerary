@@ -49,12 +49,5 @@ App.TimelineDelegate {
 
     }
 
-    Component {
-        id: detailsComponent
-        App.HotelPage {
-            batchId: root.batchId
-        }
-    }
-
-    onClicked: showDetails(detailsComponent)
+    onClicked: showDetailsPage(hotelDetailsPage, root.batchId)
 }

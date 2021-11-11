@@ -156,6 +156,9 @@ Kirigami.ApplicationWindow {
                 pageStack.layers.pop();
             }
             switch (page) {
+            case "currentTicket":
+                applicationWindow().pageStack.get(0, false).showDetailsPageForReservation(TimelineModel.currentBatchId);
+                break;
             case "stats":
                 statsAction.trigger();
                 break;
