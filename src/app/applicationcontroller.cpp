@@ -206,9 +206,15 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         return;
     }
 
-    // opening a file
+    // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
-        importFromUrl(intent.getData());
+        const auto url = intent.getData();
+        if (url.scheme() == QLatin1String("page")) {
+            qCDebug(Log) << url;
+            requestOpenPage(url.path().mid(1));
+        } else {
+            importFromUrl(intent.getData());
+        }
         return;
     }
 
