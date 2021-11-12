@@ -18,7 +18,15 @@ public:
      JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
      JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
      JNI_CONSTANT(android::net::Uri, OBJECT_TYPE_PROPERTY)
+
+     JNI_PROPERTY(TestClass, java::lang::String, myStringField)
+     JNI_PROPERTY(TestClass, int, myIntField)
+     JNI_PROPERTY(TestClass, android::net::Uri, myUriField)
+
+    QAndroidJniObject m_handle;
 };
+
+static_assert(sizeof(TestClass) == sizeof(QAndroidJniObject));
 
 class JniPropertyTest : public QObject
 {
@@ -42,6 +50,22 @@ private Q_SLOTS:
         const QString p4 = ManifestPermission::READ_CALENDAR;
         Q_UNUSED(p4)
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(3), QLatin1String("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
+
+        TestClass obj;
+        const QString foo = obj.myStringField;
+        obj.myStringField = foo;
+        const int bar = obj.myIntField;
+        obj.myIntField = 42;
+        const QAndroidJniObject bla = obj.myUriField;
+        obj.myUriField = bla;
+
+        QCOMPARE(obj.m_handle.m_protocol.size(), 6);
+        QCOMPARE(obj.m_handle.m_protocol.at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.m_handle.m_protocol.at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.m_handle.m_protocol.at(2), QLatin1String("getField: myIntField I"));
+        QCOMPARE(obj.m_handle.m_protocol.at(3), QLatin1String("setField: myIntField I"));
+        QCOMPARE(obj.m_handle.m_protocol.at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.m_handle.m_protocol.at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
 #endif
     }
 };

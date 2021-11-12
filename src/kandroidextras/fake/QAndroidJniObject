@@ -59,6 +59,26 @@ public:
         return obj;
     }
 
+    template <typename T>
+    T getField(const char *fieldName) const
+    {
+        m_protocol.push_back(QLatin1String("getField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(KAndroidExtras::Jni::signature<T>()));
+        return {};
+    }
+
+    QAndroidJniObject getObjectField(const char *fieldName, const char *signature) const
+    {
+        m_protocol.push_back(QLatin1String("getObjectField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
+        return {};
+    }
+
+    template <typename T>
+    void setField(const char *fieldName, const char *signature, T value)
+    {
+        Q_UNUSED(value);
+        m_protocol.push_back(QLatin1String("setField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
+    }
+
     static QAndroidJniObject callStaticObjectMethod(const char *methodName, const char *signature, ...)
     {
         QAndroidJniObject obj;
