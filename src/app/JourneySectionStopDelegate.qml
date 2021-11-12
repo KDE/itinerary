@@ -155,11 +155,13 @@ Item {
                 };
                 if (!isDeparture) {
                     args.arrivalPlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
-                    args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode)
+                    args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode);
+                    args.arrivalPlatformIfopt = stop.stopPoint.identifier("ifopt");
                 }
                 if (!isArrival) {
                     args.departurePlatformName = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
-                    args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode)
+                    args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode);
+                    args.departurePlatformIfopt = stop.stopPoint.identifier("ifopt");
                 }
                 applicationWindow().pageStack.push(indoorMapPage, args);
             }

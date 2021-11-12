@@ -152,6 +152,9 @@ Kirigami.ApplicationWindow {
         target: ApplicationController
         function onInfoMessage(msg) { showPassiveNotification(msg, "short"); }
         function onOpenPageRequested(page) {
+            while (pageStack.layers.depth > 1) {
+                pageStack.layers.pop();
+            }
             switch (page) {
             case "stats":
                 statsAction.trigger();

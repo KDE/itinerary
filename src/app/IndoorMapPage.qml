@@ -29,11 +29,14 @@ Kirigami.Page {
     property alias map: map
 
     property string arrivalGateName
-    property string arrivalPlatformName
-    property var arrivalPlatformMode: Platform.Rail
+    property alias arrivalPlatformName: platformModel.arrivalPlatform.name
+    property alias arrivalPlatformMode: platformModel.arrivalPlatform.mode
+    property alias arrivalPlatformIfopt: platformModel.arrivalPlatform.ifopt
+
     property string departureGateName
-    property string departurePlatformName
-    property var departurePlatformMode: Platform.Rail
+    property alias departurePlatformName: platformModel.departurePlatform.name
+    property alias departurePlatformMode: platformModel.departurePlatform.mode
+    property alias departurePlatformIfopt: platformModel.departurePlatform.ifopt
 
     property string region
     property string timeZone
@@ -287,8 +290,6 @@ Kirigami.Page {
     Connections {
         target: map.mapLoader
         function onDone() {
-            platformModel.setArrivalPlatform(root.arrivalPlatformName, root.arrivalPlatformMode);
-            platformModel.setDeparturePlatform(root.departurePlatformName, root.departurePlatformMode);
             gateModel.setArrivalGate(root.arrivalGateName);
             gateModel.setDepartureGate(root.departureGateName);
             map.region = root.region;
