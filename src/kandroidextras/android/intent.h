@@ -11,6 +11,7 @@
 
 #include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniProperty>
+#include <KAndroidExtras/JavaTypes>
 
 #include <QAndroidJniObject>
 

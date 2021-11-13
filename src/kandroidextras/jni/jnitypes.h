@@ -61,9 +61,6 @@ namespace KAndroidExtras {
 /** Macro to define a nested Java class with its corresponding JNI signature string. */
 #define JNI_NESTED_TYPE(...) JNI_NESTED_TYPE_(PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
-// defined here rather than as part of the java.* bindings as this is de-facto a basic built-in type
-JNI_TYPE(java, lang, String)
-
 namespace Jni
 {
     /** Returns the JNI type name of the given template argument. */

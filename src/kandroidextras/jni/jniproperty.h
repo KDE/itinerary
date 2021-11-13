@@ -40,21 +40,17 @@ private: \
 template <typename PropType, typename ClassType, typename NameHolder, bool BasicType> struct StaticProperty {};
 template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, false> {
-    inline operator QAndroidJniObject() const
+    inline QAndroidJniObject get() const
     {
         return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<PropType>());
     }
-};
-
-template <typename ClassType, typename NameHolder>
-struct StaticProperty<java::lang::String, ClassType, NameHolder, false> {
     inline operator QAndroidJniObject() const
     {
-        return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>());
+        return get();
     }
-    inline operator QString() const
+    inline operator typename Jni::converter<PropType>::type() const
     {
-        return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>()).toString();
+        return Jni::converter<PropType>::convert(get());
     }
 };
 
@@ -80,37 +76,30 @@ protected:
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder, bool BasicType> struct Property {};
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder>
 class Property<PropType, ClassType, NameHolder, OffsetHolder, false> : public PropertyBase<ClassType, OffsetHolder> {
+private:
+    struct _jni_NoType {};
 public:
-    inline operator QAndroidJniObject() const
+    inline QAndroidJniObject get() const
     {
         return this->handle().getObjectField(Jni::typeName<NameHolder>(), Jni::signature<PropType>());
     }
+    inline operator QAndroidJniObject() const
+    {
+        return get();
+    }
+    inline operator typename Jni::converter<PropType>::type() const
+    {
+        return Jni::converter<PropType>::convert(get());
+    }
+
     inline Property& operator=(const QAndroidJniObject &value)
     {
         this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), value.object());
         return *this;
     }
-};
-
-template <typename ClassType, typename NameHolder, typename OffsetHolder>
-class Property<java::lang::String, ClassType, NameHolder, OffsetHolder, false> : public PropertyBase<ClassType, OffsetHolder> {
-public:
-    inline operator QAndroidJniObject() const
+    inline Property& operator=(const typename std::conditional<std::is_same_v<typename Jni::converter<PropType>::type, void>, _jni_NoType, typename Jni::converter<PropType>::type>::type &value)
     {
-        return this->handle().getObjectField(Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>());
-    }
-    inline operator QString() const
-    {
-        return this->handle().getObjectField(Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>()).toString();
-    }
-    inline Property& operator=(const QAndroidJniObject &value)
-    {
-        this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>(), value.object());
-        return *this;
-    }
-    inline Property& operator=(const QString &value)
-    {
-        this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<java::lang::String>(), QAndroidJniObject::fromString(value).object());
+        this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), Jni::reverse_converter<PropType>::type::convert(value).object());
         return *this;
     }
 };

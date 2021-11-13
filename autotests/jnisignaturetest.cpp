@@ -6,6 +6,7 @@
 
 #include <kandroidextras/androidtypes.h>
 #include <kandroidextras/jnisignature.h>
+#include <kandroidextras/javatypes.h>
 
 #include <QtTest/qtest.h>
 

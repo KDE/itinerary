@@ -8,6 +8,7 @@
 
 #include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniSignature>
+#include <KAndroidExtras/JavaTypes>
 
 #include <QAndroidJniObject>
 #include <QUrl>

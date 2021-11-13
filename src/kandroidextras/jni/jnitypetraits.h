@@ -7,6 +7,8 @@
 #ifndef KANDROIDEXTRAS_JNITYPETRAITS_H
 #define KANDROIDEXTRAS_JNITYPETRAITS_H
 
+#include "jnitypes.h"
+
 #include <QAndroidJniObject>
 
 #include <type_traits>
@@ -27,6 +29,15 @@ template <> struct is_basic_type<jint> : std::true_type {};
 template <> struct is_basic_type<jlong> : std::true_type {};
 template <> struct is_basic_type<jfloat> : std::true_type {};
 template <> struct is_basic_type<jdouble> : std::true_type {};
+
+
+template <typename T> struct converter {
+    typedef void type;
+};
+
+template <typename T> struct reverse_converter {
+    typedef converter<typename converter<T>::type> type;
+};
 
 }
 
