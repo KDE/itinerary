@@ -72,7 +72,7 @@ class PropertyBase {
 protected:
     inline QAndroidJniObject handle() const {
         const auto owner = reinterpret_cast<const ClassType*>(reinterpret_cast<const char*>(this) - OffsetHolder::offset());
-        return owner->m_handle;
+        return owner->handle();
     }
 };
 
@@ -167,6 +167,7 @@ public: \
 private: \
     struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
     struct _jni_ ## name ## __OffsetHolder { static constexpr std::size_t offset() { return offsetof(_jni_ThisType, name); } }; \
+    friend class KAndroidExtras::Jni::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
 public: \
     [[no_unique_address]] Jni::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
 }
