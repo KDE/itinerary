@@ -129,6 +129,15 @@ public:
     }
 };
 
+// TODO KF6: can be replaced by QT_WARNING_DISABLE_INVALID_OFFSETOF
+#if defined(Q_CC_CLANG)
+#define JNI_WARNING_DISABLE_INVALID_OFFSETOF QT_WARNING_DISABLE_CLANG("-Winvalid-offsetof")
+#elif defined(Q_CC_GNU)
+#define JNI_WARNING_DISABLE_INVALID_OFFSETOF QT_WARNING_DISABLE_GCC("-Winvalid-offsetof")
+#else
+#define JNI_WARNING_DISABLE_INVALID_OFFSETOF
+#endif
+
 /** @endcond */
 }
 
@@ -166,7 +175,13 @@ public: \
 #define JNI_PROPERTY(type, name) \
 private: \
     struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
-    struct _jni_ ## name ## __OffsetHolder { static constexpr std::size_t offset() { return offsetof(_jni_ThisType, name); } }; \
+    struct _jni_ ## name ## __OffsetHolder { \
+        static constexpr std::size_t offset() { \
+            QT_WARNING_PUSH JNI_WARNING_DISABLE_INVALID_OFFSETOF \
+            return offsetof(_jni_ThisType, name); \
+            QT_WARNING_POP \
+        } \
+    }; \
     friend class KAndroidExtras::Jni::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
 public: \
     [[no_unique_address]] Jni::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
