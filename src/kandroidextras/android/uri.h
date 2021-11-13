@@ -9,8 +9,12 @@
 
 #include "kandroidextras_export.h"
 
+#include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JniTypeTraits>
+
+#include <QUrl>
+
 class QAndroidJniObject;
-class QUrl;
 
 namespace KAndroidExtras {
 
@@ -23,6 +27,8 @@ namespace Uri
     /** Convert a android.net.Uri to a QUrl. */
     KANDROIDEXTRAS_EXPORT QUrl toUrl(const QAndroidJniObject &uri);
 }
+
+JNI_DECLARE_CONVERTER(android::net::Uri, QUrl, (Uri::toUrl(value)), (Uri::fromUrl(value)))
 
 }
 

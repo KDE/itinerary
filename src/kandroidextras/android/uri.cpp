@@ -6,12 +6,10 @@
 
 #include "uri.h"
 
-#include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniSignature>
 #include <KAndroidExtras/JavaTypes>
 
 #include <QAndroidJniObject>
-#include <QUrl>
 
 using namespace KAndroidExtras;
 
