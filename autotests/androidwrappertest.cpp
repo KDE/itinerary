@@ -20,9 +20,9 @@ private Q_SLOTS:
     {
 #ifndef Q_OS_ANDROID
         const auto pn = Context::getPackageName();
-        QCOMPARE(pn.m_protocol.size(), 2);
-        QCOMPARE(pn.m_protocol.at(0), QLatin1String("global androidContext()"));
-        QCOMPARE(pn.m_protocol.at(1), QLatin1String("callObjectMethod: getPackageName ()Ljava/lang/String;"));
+        QCOMPARE(pn.protocol().size(), 2);
+        QCOMPARE(pn.protocol().at(0), QLatin1String("global androidContext()"));
+        QCOMPARE(pn.protocol().at(1), QLatin1String("callObjectMethod: getPackageName ()Ljava/lang/String;"));
 #endif
     }
 

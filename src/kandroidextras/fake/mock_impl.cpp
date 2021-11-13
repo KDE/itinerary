@@ -7,4 +7,3 @@
 #include "QAndroidJniObject"
 
 int JNIEnv::m_arrayLength = 0;
-QStringList QAndroidJniObject::m_staticProtocol;

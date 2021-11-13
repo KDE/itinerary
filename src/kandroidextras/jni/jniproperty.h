@@ -70,11 +70,7 @@ struct StaticProperty<PropType, ClassType, NameHolder, true> {
 template <typename ClassType, typename OffsetHolder>
 class PropertyBase {
 protected:
-    inline QAndroidJniObject& handle() {
-        const auto owner = reinterpret_cast<ClassType*>(reinterpret_cast<char*>(this) - OffsetHolder::offset());
-        return owner->m_handle;
-    }
-    inline const QAndroidJniObject& handle() const {
+    inline QAndroidJniObject handle() const {
         const auto owner = reinterpret_cast<const ClassType*>(reinterpret_cast<const char*>(this) - OffsetHolder::offset());
         return owner->m_handle;
     }

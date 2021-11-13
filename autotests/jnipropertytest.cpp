@@ -61,13 +61,13 @@ private Q_SLOTS:
         const QAndroidJniObject bla = obj.myUriField;
         obj.myUriField = bla;
 
-        QCOMPARE(obj.m_handle.m_protocol.size(), 6);
-        QCOMPARE(obj.m_handle.m_protocol.at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.m_handle.m_protocol.at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.m_handle.m_protocol.at(2), QLatin1String("getField: myIntField I"));
-        QCOMPARE(obj.m_handle.m_protocol.at(3), QLatin1String("setField: myIntField I"));
-        QCOMPARE(obj.m_handle.m_protocol.at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
-        QCOMPARE(obj.m_handle.m_protocol.at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.m_handle.protocol().size(), 6);
+        QCOMPARE(obj.m_handle.protocol().at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.m_handle.protocol().at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.m_handle.protocol().at(2), QLatin1String("getField: myIntField I"));
+        QCOMPARE(obj.m_handle.protocol().at(3), QLatin1String("setField: myIntField I"));
+        QCOMPARE(obj.m_handle.protocol().at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.m_handle.protocol().at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
 #endif
     }
 };

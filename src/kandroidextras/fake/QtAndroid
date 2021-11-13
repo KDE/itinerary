@@ -14,14 +14,14 @@ namespace QtAndroid {
     inline QAndroidJniObject androidContext()
     {
         QAndroidJniObject obj;
-        obj.m_protocol.push_back(QStringLiteral("global androidContext()"));
+        obj.addToProtocol(QStringLiteral("global androidContext()"));
         return obj;
     }
 
     inline QAndroidJniObject androidActivity()
     {
         QAndroidJniObject obj;
-        obj.m_protocol.push_back(QStringLiteral("global androidActivity()"));
+        obj.addToProtocol(QStringLiteral("global androidActivity()"));
         return obj;
     }
 

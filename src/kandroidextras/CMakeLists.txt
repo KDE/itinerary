@@ -18,7 +18,10 @@ target_sources(KAndroidExtras PRIVATE
 )
 
 if (NOT ANDROID)
-    target_sources(KAndroidExtras PRIVATE fake/mock_impl.cpp)
+    target_sources(KAndroidExtras PRIVATE
+        fake/mock_impl.cpp
+        fake/qandroidjniobject.cpp
+    )
 endif()
 
 generate_export_header(KAndroidExtras BASE_NAME KAndroidExtras)
