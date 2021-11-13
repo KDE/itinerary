@@ -14,7 +14,6 @@
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- %%INSERT_PERMISSIONS -->
     <!-- %%INSERT_FEATURES -->
 
