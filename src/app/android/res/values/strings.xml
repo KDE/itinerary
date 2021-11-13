@@ -4,6 +4,9 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 <resources>
+    <string name="application_name_full">KDE Itinerary</string>
+    <string name="application_name_short">Itinerary</string>
+
     <string name="shortcut_label_current_ticket_short">Current Ticket</string>
     <string name="shortcut_label_health_certs_short">Health Certficates</string>
 </resources>

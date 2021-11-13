@@ -17,10 +17,10 @@
     <!-- %%INSERT_PERMISSIONS -->
     <!-- %%INSERT_FEATURES -->
 
-    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="KDE Itinerary" android:icon="@mipmap/ic_launcher">
+    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="@string/application_name_full" android:icon="@mipmap/ic_launcher">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
                   android:name="org.kde.itinerary.Activity"
-                  android:label="Itinerary"
+                  android:label="@string/application_name_short"
                   android:windowSoftInputMode="adjustResize"
                   android:launchMode="singleTop">
 
