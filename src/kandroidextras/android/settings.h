@@ -13,8 +13,9 @@
 namespace KAndroidExtras {
 
 /** Methods around android.provider.Settings. */
-class Settings : Jni::Wrapper<android::provider::Settings>
+class Settings : android::provider::Settings
 {
+    JNI_OBJECT(Settings)
     JNI_CONSTANT(java::lang::String, ACTION_APP_NOTIFICATION_SETTINGS)
     JNI_CONSTANT(java::lang::String, ACTION_CHANNEL_NOTIFICATION_SETTINGS)
     JNI_CONSTANT(java::lang::String, EXTRA_APP_PACKAGE)

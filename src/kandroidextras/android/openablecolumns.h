@@ -16,8 +16,9 @@ namespace KAndroidExtras {
  * Constants for ContentResolver queries.
  * @see https://developer.android.com/reference/android/provider/OpenableColumns
  */
-class OpenableColumns : Jni::Wrapper<android::provider::OpenableColumns>
+class OpenableColumns : android::provider::OpenableColumns
 {
+    JNI_OBJECT(OpenableColumns)
 public:
     JNI_CONSTANT(java::lang::String, DISPLAY_NAME)
     JNI_CONSTANT(java::lang::String, SIZE)

@@ -13,17 +13,30 @@
 
 #include <QAndroidJniObject>
 
+#include <type_traits>
+
 namespace KAndroidExtras {
 
 namespace Jni
 {
 
-template <typename T>
-class Wrapper {
-protected:
-    typedef T JniBaseType;
-};
+/** Annotates a class for holding JNI property wrappers.
+ *  This class has to provide a jniName() method, which is usually achieved by inheriting from
+ *  a type defined by the @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
+ *  For using non-static properties, this class also has to provide a @p handle() method returning
+ *  a @c QAndroidJniObject representing the current instance.
+ *
+ *  @param Class the name of the class this is added to.
+ */
+#define JNI_OBJECT(Class) \
+private: \
+    typedef Class _jni_ThisType; \
+    friend const char* KAndroidExtras::Jni::typeName<Class>();
 
+
+/** @cond internal */
+
+/** Wrapper for static properties. */
 template <typename PropType, typename ClassType, typename NameHolder, bool BasicType> struct StaticProperty {};
 template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, false> {
@@ -53,7 +66,7 @@ struct StaticProperty<PropType, ClassType, NameHolder, true> {
     }
 };
 
-
+/** Shared code for non-static property wrappers. */
 template <typename ClassType, typename OffsetHolder>
 class PropertyBase {
 protected:
@@ -67,6 +80,7 @@ protected:
     }
 };
 
+/** Wrapper for non-static properties. */
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder, bool BasicType> struct Property {};
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder>
 class Property<PropType, ClassType, NameHolder, OffsetHolder, false> : public PropertyBase<ClassType, OffsetHolder> {
@@ -118,21 +132,47 @@ public:
         return *this;
     }
 };
+
+/** @endcond */
 }
 
+/**
+ * Wrap a static final property.
+ * This will add a public static member named @p name to the current class. This member defines an
+ * implicit conversion operator which will trigger the corresponding a JNI read operation.
+ * Can only be placed in classes with a @c JNI_OBJECT.
+ *
+ * @note Make sure to access this member with a specific type, assigning to an @c auto variable will
+ * copy the wrapper type, not read the property value.
+ *
+ * @param type The data type of the property.
+ * @param name The name of the proeprty.
+ */
 #define JNI_CONSTANT(type, name) \
 private: \
-    struct name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
+    struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
 public: \
-    static inline const Jni::StaticProperty<type, JniBaseType, name ## __NameHolder, Jni::is_basic_type<type>::value> name;
+    static inline const Jni::StaticProperty<type, _jni_ThisType, _jni_ ## name ## __NameHolder, Jni::is_basic_type<type>::value> name;
 
-
-#define JNI_PROPERTY(Class, type, name) \
+/**
+ * Wrap a member property.
+ * This will add a public zero-size member named @p name to the current class. This member defines an
+ * implicit conversion operator which will trigger the corresponding a JNI read operation, as well
+ * as an overloaded assignment operator for the corresponding write operation.
+ * Can only be placed in classes with a @c JNI_OBJECT.
+ *
+ * @note Make sure to access this member with a specific type, assigning to an @c auto variable will
+ * copy the wrapper type, not read the property value.
+ *
+ * @param type The data type of the property.
+ * @param name The name of the proeprty.
+ */
+#define JNI_PROPERTY(type, name) \
 private: \
-    struct name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
-    struct name ## __OffsetHolder { static constexpr std::size_t offset() { return offsetof(Class, name); } }; \
+    struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
+    struct _jni_ ## name ## __OffsetHolder { static constexpr std::size_t offset() { return offsetof(_jni_ThisType, name); } }; \
 public: \
-    [[no_unique_address]] Jni::Property<type, Class, name ## __NameHolder, name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
+    [[no_unique_address]] Jni::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
 }
 
 #endif // KANDROIDEXTRAS_JNIPROPERTIES_H

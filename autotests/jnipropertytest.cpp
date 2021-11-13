@@ -12,17 +12,19 @@
 
 using namespace KAndroidExtras;
 
-class TestClass : Jni::Wrapper<android::content::Intent>
+class TestClass : android::content::Intent
 {
+    JNI_OBJECT(TestClass)
+
+    JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
+    JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
+    JNI_CONSTANT(android::net::Uri, OBJECT_TYPE_PROPERTY)
+
+    JNI_PROPERTY(java::lang::String, myStringField)
+    JNI_PROPERTY(int, myIntField)
+    JNI_PROPERTY(android::net::Uri, myUriField)
+
 public:
-     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
-     JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)
-     JNI_CONSTANT(android::net::Uri, OBJECT_TYPE_PROPERTY)
-
-     JNI_PROPERTY(TestClass, java::lang::String, myStringField)
-     JNI_PROPERTY(TestClass, int, myIntField)
-     JNI_PROPERTY(TestClass, android::net::Uri, myUriField)
-
     QAndroidJniObject m_handle;
 };
 

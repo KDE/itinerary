@@ -22,8 +22,9 @@ namespace KAndroidExtras {
  *  This does not only offer features beyond what QAndroidIntent, it also provides
  *  a putExtra() implementation that actually interoperates with system services.
  */
-class KANDROIDEXTRAS_EXPORT Intent : Jni::Wrapper<android::content::Intent>
+class KANDROIDEXTRAS_EXPORT Intent : android::content::Intent
 {
+    JNI_OBJECT(Intent)
 public:
     /** Creates a new empty intent. */
     Intent();
