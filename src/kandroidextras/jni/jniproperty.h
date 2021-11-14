@@ -17,9 +17,6 @@
 
 namespace KAndroidExtras {
 
-namespace Jni
-{
-
 /** Annotates a class for holding JNI property wrappers.
  *  This class has to provide a jniName() method, which is usually achieved by inheriting from
  *  a type defined by the @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
@@ -35,6 +32,7 @@ private: \
 
 
 /** @cond internal */
+namespace Internal {
 
 /** Wrapper for static properties. */
 template <typename PropType, typename ClassType, typename NameHolder, bool BasicType> struct StaticProperty {};
@@ -146,7 +144,7 @@ public:
 private: \
     struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
 public: \
-    static inline const Jni::StaticProperty<type, _jni_ThisType, _jni_ ## name ## __NameHolder, Jni::is_basic_type<type>::value> name;
+    static inline const KAndroidExtras::Internal::StaticProperty<type, _jni_ThisType, _jni_ ## name ## __NameHolder, Jni::is_basic_type<type>::value> name;
 
 /**
  * Wrap a member property.
@@ -171,9 +169,9 @@ private: \
             QT_WARNING_POP \
         } \
     }; \
-    friend class KAndroidExtras::Jni::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
+    friend class KAndroidExtras::Internal::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
 public: \
-    [[no_unique_address]] Jni::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
+    [[no_unique_address]] KAndroidExtras::Internal::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
 }
 
 #endif // KANDROIDEXTRAS_JNIPROPERTIES_H

@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNITYPES_H
 #define KANDROIDEXTRAS_JNITYPES_H
 
+/** C++/Android integration utilities built on top of @c QAndroidJniObject. */
 namespace KAndroidExtras {
 
 ///@cond internal
@@ -61,6 +62,7 @@ namespace KAndroidExtras {
 /** Macro to define a nested Java class with its corresponding JNI signature string. */
 #define JNI_NESTED_TYPE(...) JNI_NESTED_TYPE_(PP_NARG(__VA_ARGS__), "", __VA_ARGS__)
 
+/** Functions for interfacing with the Java Native Interface (JNI). */
 namespace Jni
 {
     /** Returns the JNI type name of the given template argument. */
