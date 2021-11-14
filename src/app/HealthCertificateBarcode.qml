@@ -56,7 +56,7 @@ QQC2.Page {
                     return i18n("Certificate invalid");
                 }
                 if (certificate.signatureState == KHC.HealthCertificate.UnknownSignature) {
-                    return i18n('Unknown issuer certficiate');
+                    return i18n('Unknown issuer certificate');
                 }
 
                 switch (certificate.type) {
