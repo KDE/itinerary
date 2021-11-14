@@ -17,6 +17,7 @@ function export_pot_file
     ANSI_COLORS_DISABLED=1 a2po export --android $ANDROID_RES_DIR --gettext outdir
     mv outdir/template.pot $1
     rm -rf outdir
+    rm -f rc.cpp
 }
 
 # Called by scripty for merging messages
