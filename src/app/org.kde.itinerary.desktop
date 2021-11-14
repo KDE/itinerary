@@ -86,6 +86,12 @@ Actions=currentTicket;statistics;healthCert;
 
 [Desktop Action currentTicket]
 Name=Current Ticket
+Name[ca]=Bitllet actual
+Name[es]=Billete actual
+Name[nl]=Huidige ticket
+Name[sv]=Aktuell biljett
+Name[uk]=Поточний квиток
+Name[x-test]=xxCurrent Ticketxx
 Icon=view-barcode-qr
 Exec=itinerary --page currentTicket
 
