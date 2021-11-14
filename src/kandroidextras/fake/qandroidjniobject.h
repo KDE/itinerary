@@ -48,14 +48,17 @@ public:
     T callMethod(const char *methodName, const char *signature, ...) const
     {
         addToProtocol(QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
-        return {};
+        if constexpr (!std::is_same_v<T, void>) {
+            return {};
+        }
     }
 
     QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, ...) const
     {
+        addToProtocol(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
+
         QAndroidJniObject obj;
         obj.setProtocol(protocol());
-        obj.addToProtocol(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
         return obj;
     }
 

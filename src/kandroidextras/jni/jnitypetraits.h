@@ -29,6 +29,7 @@ template <> struct is_basic_type<jint> : std::true_type {};
 template <> struct is_basic_type<jlong> : std::true_type {};
 template <> struct is_basic_type<jfloat> : std::true_type {};
 template <> struct is_basic_type<jdouble> : std::true_type {};
+template <> struct is_basic_type<void> : std::true_type {};
 
 /** Type conversion trait, see @c JNI_DECLARE_CONVERTER. */
 template <typename T> struct converter {

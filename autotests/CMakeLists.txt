@@ -6,6 +6,7 @@ add_definitions(-DSOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
 ecm_add_test(jnisignaturetest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(jnipropertytest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(jniarraytest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
+ecm_add_test(jnimethodtest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(androidwrappertest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 
 ecm_add_test(gpxwritertest.cpp LINK_LIBRARIES Qt::Test GpxIo)
