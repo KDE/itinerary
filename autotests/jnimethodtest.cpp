@@ -22,6 +22,10 @@ public:
     JNI_METHOD(void, setFlags, jint)
     JNI_METHOD(void, start)
     JNI_METHOD(bool, setCoordinates, jfloat, jfloat)
+    JNI_METHOD(void, startIntent, android::content::Intent)
+    JNI_METHOD(android::content::Intent, getIntent)
+
+    JNI_PROPERTY(java::lang::String, name)
 
     inline QAndroidJniObject handle() const { return m_handle; }
 private:
@@ -38,8 +42,8 @@ private Q_SLOTS:
         static_assert(Internal::is_argument_compatible<java::lang::String, QAndroidJniObject>::value);
         static_assert(Internal::is_argument_compatible<java::lang::String, QString>::value);
 
-        static_assert(!Internal::is_argument_compatible<jint, jdouble>::value);
         static_assert(!Internal::is_argument_compatible<jint, QAndroidJniObject>::value);
+        static_assert(!Internal::is_argument_compatible<jobject, jint>::value);
         static_assert(!Internal::is_argument_compatible<java::lang::String, QUrl>::value);
 
         static_assert(Internal::is_call_compatible<jint>::with<jint>::value);
@@ -47,6 +51,10 @@ private Q_SLOTS:
         static_assert(!Internal::is_call_compatible<java::lang::String, jfloat>::with<float, QAndroidJniObject>::value);
         static_assert(Internal::is_call_compatible<java::lang::String, java::lang::String>::with<QString, QAndroidJniObject>::value);
         static_assert(Internal::is_call_compatible<java::lang::String, java::lang::String>::with<QAndroidJniObject, QString>::value);
+
+        // implicit conversion
+        static_assert(Internal::is_argument_compatible<jint, jdouble>::value);
+        static_assert(Internal::is_argument_compatible<jfloat, jdouble>::value);
     }
 
     void testMethodCalls()
@@ -64,7 +72,21 @@ private Q_SLOTS:
         bool b = obj.setCoordinates(0.0f, 0.0f);
         Q_UNUSED(b)
 
-        QCOMPARE(obj.handle().protocol().size(), 7);
+        // implicit conversion
+        b = obj.setCoordinates(0.0, 0.0);
+        // implicit conversion, and must not copy the property wrapper
+        obj.setName(obj.name);
+        // implicit conversion from manual wrappers
+        Intent intent;
+        obj.startIntent(intent);
+        // returning a non-wrapped type
+        QAndroidJniObject j = obj.getIntent();
+        // lvalue QAndroidJniObject argument
+        obj.setName(j);
+        // implicit conversion from a static property wrapper
+        obj.setFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
+
+        QCOMPARE(obj.handle().protocol().size(), 14);
         QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String;"));
         QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
         QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
@@ -72,6 +94,14 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[4], QLatin1String("callMethod: setFlags (I)V"));
         QCOMPARE(obj.handle().protocol()[5], QLatin1String("callMethod: start ()V"));
         QCOMPARE(obj.handle().protocol()[6], QLatin1String("callMethod: setCoordinates (FF)Z"));
+
+        QCOMPARE(obj.handle().protocol()[7], QLatin1String("callMethod: setCoordinates (FF)Z"));
+        QCOMPARE(obj.handle().protocol()[8], QLatin1String("getObjectField: name Ljava/lang/String;"));
+        QCOMPARE(obj.handle().protocol()[9], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
+        QCOMPARE(obj.handle().protocol()[10], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V"));
+        QCOMPARE(obj.handle().protocol()[11], QLatin1String("callObjectMethod: getIntent ()Landroid/content/Intent;"));
+        QCOMPARE(obj.handle().protocol()[12], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
+        QCOMPARE(obj.handle().protocol()[13], QLatin1String("callMethod: setFlags (I)V"));
 
 #if 0
         // stuff that must not compile
