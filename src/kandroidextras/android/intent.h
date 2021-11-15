@@ -10,8 +10,10 @@
 #include "kandroidextras_export.h"
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JniMethod>
 #include <KAndroidExtras/JniProperty>
 #include <KAndroidExtras/JavaTypes>
+#include <KAndroidExtras/Uri>
 
 #include <QAndroidJniObject>
 
@@ -34,23 +36,22 @@ public:
     ~Intent();
 
     /** Add a category to the intent. */
-    void addCategory(const QAndroidJniObject &category);
+    JNI_METHOD(android::content::Intent, addCategory, java::lang::String)
     /** Add flags to this intent. */
-    void addFlags(jint flags);
+    JNI_METHOD(android::content::Intent, addFlags, jint)
     /** Returns the data of this intent. */
-    QUrl getData() const;
+    JNI_METHOD(android::net::Uri, getData)
     /** Get the intent action. */
-    QString getAction() const;
+    JNI_METHOD(java::lang::String, getAction)
     /** Sets the action of the intent. */
-    void setAction(const QAndroidJniObject &action);
+    JNI_METHOD(android::content::Intent, setAction, java::lang::String)
     /** Set the data URL of this intent. */
-    void setData(const QUrl &url);
-    void setData(const QAndroidJniObject &uri);
+    JNI_METHOD(android::content::Intent, setData, android::net::Uri)
 
     /** Returns the mimetype of this intent. */
-    QString getType() const;
+    JNI_METHOD(java::lang::String, getType)
     /** Set the mime type for this intent. */
-    void setType(const QString &type);
+    JNI_METHOD(android::content::Intent, setType, java::lang::String)
 
     /** Read extra intent data. */
     QString getStringExtra(const QAndroidJniObject &name) const;
@@ -64,6 +65,7 @@ public:
 
     /** Implicit conversion to an QAndroidJniObject. */
     operator QAndroidJniObject() const;
+    QAndroidJniObject handle() const;
 
     /** Action constant for create document intents. */
     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)

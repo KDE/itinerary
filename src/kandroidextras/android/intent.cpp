@@ -27,57 +27,12 @@ Intent::Intent(const QAndroidJniObject &intent)
 
 Intent::~Intent() = default;
 
-void Intent::addCategory(const QAndroidJniObject &category)
-{
-    m_intent.callObjectMethod("addCategory", Jni::signature<android::content::Intent(java::lang::String)>(), category.object());
-}
-
-void Intent::addFlags(jint flags)
-{
-    m_intent.callObjectMethod("addFlags", Jni::signature<android::content::Intent(int)>(), flags);
-}
-
-QUrl Intent::getData() const
-{
-    if (!m_intent.isValid()) {
-        return {};
-    }
-    const auto uri = m_intent.callObjectMethod("getData", Jni::signature<android::net::Uri()>());
-    return Uri::toUrl(uri);
-}
-
-QString Intent::getAction() const
-{
-    return m_intent.callObjectMethod("getAction", Jni::signature<java::lang::String()>()).toString();
-}
-
-void Intent::setAction(const QAndroidJniObject &action)
-{
-    m_intent.callObjectMethod("setAction", Jni::signature<android::content::Intent(java::lang::String)>(), action.object());
-}
-
-void Intent::setData(const QUrl& url)
-{
-    const auto uri = Uri::fromUrl(url);
-    setData(uri);
-}
-
-void Intent::setData(const QAndroidJniObject& uri)
-{
-    m_intent.callObjectMethod("setData", Jni::signature<android::content::Intent(android::net::Uri)>(), uri.object());
-}
-
-QString Intent::getType() const
-{
-    return m_intent.callObjectMethod("getType", Jni::signature<java::lang::String()>()).toString();
-}
-
-void Intent::setType(const QString &type)
-{
-    m_intent.callObjectMethod("setType", Jni::signature<android::content::Intent(java::lang::String)>(), QAndroidJniObject::fromString(type).object());
-}
-
 Intent::operator QAndroidJniObject() const
+{
+    return m_intent;
+}
+
+QAndroidJniObject Intent::handle() const
 {
     return m_intent;
 }
