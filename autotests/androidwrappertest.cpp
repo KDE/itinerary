@@ -22,7 +22,7 @@ private Q_SLOTS:
         const auto pn = Context::getPackageName();
         QCOMPARE(pn.protocol().size(), 2);
         QCOMPARE(pn.protocol().at(0), QLatin1String("global androidContext()"));
-        QCOMPARE(pn.protocol().at(1), QLatin1String("callObjectMethod: getPackageName ()Ljava/lang/String;"));
+        QCOMPARE(pn.protocol().at(1), QLatin1String("callObjectMethod: getPackageName ()Ljava/lang/String; ()"));
 #endif
     }
 
@@ -31,11 +31,11 @@ private Q_SLOTS:
 #ifndef Q_OS_ANDROID
         QCOMPARE(ContentResolver::fileName(QUrl()), QLatin1String(
             "global androidContext()\n"
-            "callObjectMethod: getContentResolver ()Landroid/content/ContentResolver;\n"
-            "callObjectMethod: query (Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;\n"
-            "callMethod: getColumnIndex (Ljava/lang/String;)I\n"
-            "callMethod: moveToFirst ()Z\n"
-            "callObjectMethod: getString (I)Ljava/lang/String;"
+            "callObjectMethod: getContentResolver ()Landroid/content/ContentResolver; ()\n"
+            "callObjectMethod: query (Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor; (oIIII)\n"
+            "callMethod: getColumnIndex (Ljava/lang/String;)I (o)\n"
+            "callMethod: moveToFirst ()Z ()\n"
+            "callObjectMethod: getString (I)Ljava/lang/String; (I)"
         ));
         QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 1);
         QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));

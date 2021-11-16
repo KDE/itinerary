@@ -87,21 +87,21 @@ private Q_SLOTS:
         obj.setFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
 
         QCOMPARE(obj.handle().protocol().size(), 14);
-        QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String;"));
-        QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
-        QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
-        QCOMPARE(obj.handle().protocol()[3], QLatin1String("callMethod: getFlags ()I"));
-        QCOMPARE(obj.handle().protocol()[4], QLatin1String("callMethod: setFlags (I)V"));
-        QCOMPARE(obj.handle().protocol()[5], QLatin1String("callMethod: start ()V"));
-        QCOMPARE(obj.handle().protocol()[6], QLatin1String("callMethod: setCoordinates (FF)Z"));
+        QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[3], QLatin1String("callMethod: getFlags ()I ()"));
+        QCOMPARE(obj.handle().protocol()[4], QLatin1String("callMethod: setFlags (I)V (I)"));
+        QCOMPARE(obj.handle().protocol()[5], QLatin1String("callMethod: start ()V ()"));
+        QCOMPARE(obj.handle().protocol()[6], QLatin1String("callMethod: setCoordinates (FF)Z (FF)"));
 
-        QCOMPARE(obj.handle().protocol()[7], QLatin1String("callMethod: setCoordinates (FF)Z"));
+        QCOMPARE(obj.handle().protocol()[7], QLatin1String("callMethod: setCoordinates (FF)Z (FF)"));
         QCOMPARE(obj.handle().protocol()[8], QLatin1String("getObjectField: name Ljava/lang/String;"));
-        QCOMPARE(obj.handle().protocol()[9], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
-        QCOMPARE(obj.handle().protocol()[10], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V"));
-        QCOMPARE(obj.handle().protocol()[11], QLatin1String("callObjectMethod: getIntent ()Landroid/content/Intent;"));
-        QCOMPARE(obj.handle().protocol()[12], QLatin1String("callMethod: setName (Ljava/lang/String;)V"));
-        QCOMPARE(obj.handle().protocol()[13], QLatin1String("callMethod: setFlags (I)V"));
+        QCOMPARE(obj.handle().protocol()[9], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[10], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[11], QLatin1String("callObjectMethod: getIntent ()Landroid/content/Intent; ()"));
+        QCOMPARE(obj.handle().protocol()[12], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[13], QLatin1String("callMethod: setFlags (I)V (I)"));
 
 #if 0
         // stuff that must not compile

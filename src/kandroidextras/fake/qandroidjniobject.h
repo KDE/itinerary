@@ -18,6 +18,21 @@
 
 class QAndroidJniObjectPrivate;
 
+namespace KAndroidExtras {
+namespace Internal {
+template <typename T>
+constexpr inline const char* argTypeToString()
+{
+    return KAndroidExtras::Jni::signature<T>();
+}
+template <>
+constexpr inline const char* argTypeToString<jobject>()
+{
+    return "o";
+}
+}
+}
+
 /** Mock object for QAndroidJniObject outside of Android, for automated testing. */
 class KANDROIDEXTRAS_EXPORT QAndroidJniObject {
 public:
@@ -44,18 +59,40 @@ public:
     template <typename T>
     T object() const { return {}; }
 
-    template <typename T>
-    T callMethod(const char *methodName, const char *signature, ...) const
+    template <typename T, typename ...Args>
+    T callMethod(const char *methodName, const char *signature, Args...) const
     {
-        addToProtocol(QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
+        const QString s = QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
+            + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')');
+        addToProtocol(s);
+        if constexpr (!std::is_same_v<T, void>) {
+            return {};
+        }
+    }
+    template <typename T>
+    T callMethod(const char *methodName, const char *signature) const
+    {
+        const QString s = QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()");
+        addToProtocol(s);
         if constexpr (!std::is_same_v<T, void>) {
             return {};
         }
     }
 
-    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, ...) const
+    template <typename ...Args>
+    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, Args...) const
     {
-        addToProtocol(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature));
+        const QString s = QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
+            + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')');
+        addToProtocol(s);
+
+        QAndroidJniObject obj;
+        obj.setProtocol(protocol());
+        return obj;
+    }
+    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature) const
+    {
+        addToProtocol(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()"));
 
         QAndroidJniObject obj;
         obj.setProtocol(protocol());
