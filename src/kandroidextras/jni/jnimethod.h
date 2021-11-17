@@ -34,7 +34,13 @@ namespace Internal {
         };
     };
 
-    // argument type conversion
+    // Argument type conversion
+    // This happens in two phases:
+    // - phase one applies implicit conversions for basic types, and conversion to QAndroidJniObject for non-basic types
+    // - the results of this are stored on the stack to outlive the JNI call
+    // - phase two converts QAndroidJniObject instances to jobject
+    // This is needed as we need temporary QAndroidJniObjects resulting from implicit conversion to
+    // still be valid when the JNI call is performed.
     template <typename SigT, typename ArgT, bool is_basic, bool is_convertible> struct call_argument {};
     template <typename SigT, typename ArgT> struct call_argument<SigT, ArgT, true, false>
     {
@@ -45,20 +51,23 @@ namespace Internal {
     };
     template <typename SigT, typename ArgT> struct call_argument<SigT, ArgT, false, true>
     {
-        inline constexpr jobject operator()(const typename Jni::converter<SigT>::type &value) const
+        inline QAndroidJniObject operator()(const typename Jni::converter<SigT>::type &value) const
         {
-            return Jni::reverse_converter<SigT>::type::convert(value).object();
+            return Jni::reverse_converter<SigT>::type::convert(value);
         }
     };
     template <typename ArgT, typename SigT> struct call_argument<SigT, ArgT, false, false>
     {
-        inline jobject operator()(const QAndroidJniObject &value) const
+        inline QAndroidJniObject operator()(const QAndroidJniObject &value) const
         {
-            return value.object();
+            return value;
         }
     };
 
     template <typename SigT, typename ArgT> constexpr call_argument<SigT, std::remove_reference_t<ArgT>, Jni::is_basic_type<SigT>::value, (!std::is_same_v<typename Jni::converter<SigT>::type, void> && !std::is_same_v<std::remove_cv_t<std::remove_reference_t<ArgT>>, QAndroidJniObject>)> toCallArgument = {};
+
+    template <typename T> inline constexpr T toFinalCallArgument(T value) { return value; }
+    inline jobject toFinalCallArgument(const QAndroidJniObject &value) { return value.object(); }
 
     // return type conversion
     template <typename RetT>
@@ -90,10 +99,17 @@ namespace Internal {
         static typename Internal::call_return<RetT>::CallReturnT call(QAndroidJniObject handle, const char *name, const char *signature, Args&&... args)
         {
             static_assert(is_call_compatible<Sig...>::template with<Args...>::value, "incompatible call arguments");
+            const auto params = std::make_tuple(toCallArgument<Sig, Args>(std::forward<Args>(args))...);
+            return doCall(handle, name, signature, params, std::index_sequence_for<Args...>{});
+        }
+
+        template <typename ParamT, std::size_t ...Index>
+        static typename Internal::call_return<RetT>::CallReturnT doCall(QAndroidJniObject handle, const char *name, const char *signature, const ParamT &params, std::index_sequence<Index...>)
+        {
             if constexpr (Jni::is_basic_type<RetT>::value) {
-                return handle.callMethod<RetT>(name, signature, toCallArgument<Sig, Args>(args)...);
+                return handle.callMethod<RetT>(name, signature, toFinalCallArgument(std::get<Index>(params))...);
             } else {
-                return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature, toCallArgument<Sig, Args>(std::forward<Args>(args))...));
+                return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature, toFinalCallArgument(std::get<Index>(params))...));
             }
             return {};
         }
@@ -105,7 +121,14 @@ namespace Internal {
         static void call(QAndroidJniObject handle, const char *name, const char *signature, Args&&... args)
         {
             static_assert(is_call_compatible<Sig...>::template with<Args...>::value, "incompatible call arguments");
-            handle.callMethod<void>(name, signature, toCallArgument<Sig, Args>(std::forward<Args>(args))...);
+            const auto params = std::make_tuple(toCallArgument<Sig, Args>(std::forward<Args>(args))...);
+            doCall(handle, name, signature, params, std::index_sequence_for<Args...>{});
+        }
+
+        template <typename ParamT, std::size_t ...Index>
+        static void doCall(QAndroidJniObject handle, const char *name, const char *signature, const ParamT &params, std::index_sequence<Index...>)
+        {
+            handle.callMethod<void>(name, signature, toFinalCallArgument(std::get<Index>(params))...);
         }
     };
 
