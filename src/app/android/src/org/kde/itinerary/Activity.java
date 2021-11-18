@@ -80,7 +80,7 @@ public class Activity extends QtActivity
     {
         Log.i(TAG, filePath);
         File file = new File(filePath);
-        return FileProvider.getUriForFile(this, "org.kde.itinerary.documentProvider", file);
+        return FileProvider.getUriForFile(this, "org.kde.itinerary.documentprovider", file);
     }
 
     /* Try to find attachment URLs from shared content from email applications.

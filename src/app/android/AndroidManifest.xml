@@ -135,7 +135,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="org.kde.itinerary.documentProvider"
+            android:authorities="org.kde.itinerary.documentprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
