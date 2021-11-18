@@ -64,7 +64,15 @@ namespace Internal {
         }
     };
 
-    template <typename SigT, typename ArgT> constexpr call_argument<SigT, std::remove_reference_t<ArgT>, Jni::is_basic_type<SigT>::value, (!std::is_same_v<typename Jni::converter<SigT>::type, void> && !std::is_same_v<std::remove_cv_t<std::remove_reference_t<ArgT>>, QAndroidJniObject>)> toCallArgument = {};
+    template <typename SigT, typename ArgT> struct is_convertible {
+        static inline constexpr bool value =
+            !std::is_same_v<typename Jni::converter<SigT>::type, void> &&
+            !std::is_same_v<std::remove_cv_t<std::remove_reference_t<ArgT>>, QAndroidJniObject> &&
+            // prefer conversion-less pass-through when possible
+            !std::is_convertible_v<ArgT, QAndroidJniObject>;
+    };
+
+    template <typename SigT, typename ArgT> constexpr call_argument<SigT, std::remove_reference_t<ArgT>, Jni::is_basic_type<SigT>::value, is_convertible<SigT, ArgT>::value> toCallArgument = {};
 
     template <typename T> inline constexpr T toFinalCallArgument(T value) { return value; }
     inline jobject toFinalCallArgument(const QAndroidJniObject &value) { return value.object(); }
