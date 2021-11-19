@@ -154,7 +154,6 @@ namespace Internal {
             } else {
                 return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature, toFinalCallArgument(std::get<Index>(params))...));
             }
-            return {};
         }
     };
 

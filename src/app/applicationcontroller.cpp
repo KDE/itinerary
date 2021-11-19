@@ -56,6 +56,8 @@
 #include <KMime/Types>
 
 #ifdef Q_OS_ANDROID
+#include "android/itineraryactivity.h"
+
 #include <kandroidextras/activity.h>
 #include <kandroidextras/contentresolver.h>
 #include <kandroidextras/intent.h>
@@ -118,7 +120,7 @@ Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
         qCWarning(Log) << "Failed to get JNI environment.";
         return -1;
     }
-    jclass cls = env->FindClass("org/kde/itinerary/Activity");
+    jclass cls = env->FindClass(KAndroidExtras::Jni::typeName<ItineraryActivity>());
     if (env->RegisterNatives(cls, methods, sizeof(methods) / sizeof(JNINativeMethod)) < 0) {
         qCWarning(Log) << "Failed to register native functions.";
         return -1;
@@ -225,7 +227,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         const auto from = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
         const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);
         qCInfo(Log) << action << type << subject << from << text;
-        const auto attachments = Jni::fromArray<QStringList>(QtAndroid::androidActivity().callObjectMethod("attachmentsForIntent", Jni::signature<Jni::Array<java::lang::String>(android::content::Intent)>(), static_cast<QAndroidJniObject>(intent).object()));
+        const QStringList attachments = ItineraryActivity().attachmentsForIntent(intent);
         qCInfo(Log) << attachments;
 
         KMime::Message msg;
@@ -627,7 +629,7 @@ void ApplicationController::openDocument(const QUrl &url)
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
     auto activity = QtAndroid::androidActivity();
-    auto uri = activity.callObjectMethod("openDocument", Jni::signature<android::net::Uri(java::lang::String)>(), QAndroidJniObject::fromString(url.toLocalFile()).object());
+    auto uri = ItineraryActivity().openDocument(url.toLocalFile());
 
     Intent intent;
     intent.setData(uri);
