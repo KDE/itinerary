@@ -1,2 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources/>
+<resources>
+  <string name="application_name_full">KDE Itinerary</string>
+  <string name="application_name_short">Itinéraire</string>
+  <string name="shortcut_label_current_ticket_short">Actuel</string>
+  <string name="shortcut_label_health_certs_short">Certificats de santé</string>
+</resources>
