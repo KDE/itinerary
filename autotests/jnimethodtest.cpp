@@ -86,7 +86,12 @@ private Q_SLOTS:
         // implicit conversion from a static property wrapper
         obj.setFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
 
-        QCOMPARE(obj.handle().protocol().size(), 14);
+        // avoiding type conversion on return values
+        j = obj.getName();
+        // call chaining with JNI handle pass-through
+        obj.setName(obj.getName());
+
+        QCOMPARE(obj.handle().protocol().size(), 17);
         QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -102,7 +107,9 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[11], QLatin1String("callObjectMethod: getIntent ()Landroid/content/Intent; ()"));
         QCOMPARE(obj.handle().protocol()[12], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.handle().protocol()[13], QLatin1String("callMethod: setFlags (I)V (I)"));
-
+        QCOMPARE(obj.handle().protocol()[14], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[15], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[16], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);

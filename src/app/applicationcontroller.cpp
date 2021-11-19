@@ -208,7 +208,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
 
     // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
-        const auto url = intent.getData();
+        const QUrl url = intent.getData();
         if (url.scheme() == QLatin1String("page")) {
             qCDebug(Log) << url;
             requestOpenPage(url.path().mid(1));
@@ -220,7 +220,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
 
     // shared data, e.g. from email applications like FairMail
     if (action == Intent::ACTION_SEND || action == Intent::ACTION_SEND_MULTIPLE) {
-        const auto type = intent.getType();
+        const QString type = intent.getType();
         const auto subject = intent.getStringExtra(Intent::EXTRA_SUBJECT);
         const auto from = intent.getStringArrayExtra(Intent::EXTRA_EMAIL);
         const auto text = intent.getStringExtra(Intent::EXTRA_TEXT);

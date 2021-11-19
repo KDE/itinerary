@@ -77,6 +77,24 @@ namespace Internal {
     template <typename T> inline constexpr T toFinalCallArgument(T value) { return value; }
     inline jobject toFinalCallArgument(const QAndroidJniObject &value) { return value.object(); }
 
+    // method return value wrapper for complex types we can implicitly convert
+    // this defers conversion until it's actually needed, so we can do direct JNI handle pass-through
+    // when chaining calls
+    template <typename RetT>
+    class ReturnValue {
+    public:
+        explicit inline ReturnValue(const QAndroidJniObject &v) : value(v) {}
+        inline operator QAndroidJniObject() const {
+            return value;
+        }
+        inline operator typename Jni::converter<RetT>::type() const {
+            return Jni::converter<RetT>::convert(value);
+        }
+
+    private:
+        QAndroidJniObject value;
+    };
+
     // return type conversion
     template <typename RetT>
     struct call_return {
@@ -84,12 +102,12 @@ namespace Internal {
         static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
 
         typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
-        typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, typename Jni::converter<RetT>::type> CallReturnT;
+        typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, ReturnValue<RetT>> CallReturnT;
 
         static inline constexpr CallReturnT toReturnValue(JniReturnT value)
         {
             if constexpr (is_convertible) {
-                return Jni::converter<RetT>::convert(value);
+                return ReturnValue<RetT>(value);
             } else {
                 return value;
             }
@@ -169,9 +187,16 @@ namespace Internal {
  * - basic types have to match exactly
  * - non-basic types can be either passed as @c QAndroidJniObject instance or with a type that has an
  *   conversion registered with @c JNI_DECLARE_CONVERTER.
- * The return type is handled similarly, if a conversion to a native type is available that is returned,
- * @c QAndroidJniObject otherwise.
- * Can only be placed in classes with a @c JNI_OBJECT.
+ *
+ * The return type of the method is determined as follows:
+ * - basic types are returned directly
+ * - non-basic types without a registered type conversion are returned as @c QAndroidJniObject.
+ * - non-basic types with a registered type conversion are returned in a wrapper class that can
+ *   be implicitly converted either to the destination type of the conversion, or a @c QAndroidJniObject.
+ *   This allows to avoid type conversion when chaining calls for example, it however needs additional
+ *   care when used in combination with automatic type deduction.
+ *
+ * Thie macro can only be placed in classes with a @c JNI_OBJECT.
  *
  * @param RetT The return type. Must either be a basic type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.
@@ -180,7 +205,8 @@ namespace Internal {
  */
 #define JNI_METHOD(RetT, Name, ...) \
 template <typename ...Args> \
-inline Internal::call_return<RetT>::CallReturnT Name(Args&&... args) const { \
+inline KAndroidExtras::Internal::call_return<RetT>::CallReturnT Name(Args&&... args) const { \
+    using namespace KAndroidExtras; \
     return Internal::invoker<RetT, ## __VA_ARGS__>::call(handle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
 }
 
