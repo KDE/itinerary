@@ -142,7 +142,7 @@ QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) 
     }
 
     if (dt.year() <= 1900) { // no year specified
-        return dt.toString(QStringLiteral("dd MMMM")); // TODO i18n in master
+        return dt.toString(i18nc("day-only date format", "dd MMMM"));
     }
     return QLocale().toString(dt, QLocale::ShortFormat);
 }

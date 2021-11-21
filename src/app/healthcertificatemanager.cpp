@@ -110,11 +110,14 @@ QVariant HealthCertificateManager::data(const QModelIndex &index, int role) cons
 #if HAVE_KHEALTHCERTIFICATE
             if (v.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
                 const auto cert = v.cert.value<KVaccinationCertificate>();
-                return i18n("Vaccination %1/%2 (%3)", cert.dose(), cert.totalDoses(), cert.name());
+                if (cert.dose() > 0 && cert.totalDoses() > 0) {
+                    return i18n("Vaccination %1/%2 (%3)", cert.dose(), cert.totalDoses(), cert.name());
+                }
+                return i18n("Vaccination (%1)", cert.name());
             }
             if (v.cert.userType() == qMetaTypeId<KTestCertificate>()) {
                 const auto cert = v.cert.value<KTestCertificate>();
-                return i18n("Test %1 (%2)", QLocale().toString(cert.date(), QLocale::NarrowFormat), cert.name());
+                return i18n("Test %1 (%2)", QLocale().toString(cert.date().isValid() ? cert.date() : cert.certificateIssueDate().date(), QLocale::NarrowFormat), cert.name());
             }
             if (v.cert.userType() == qMetaTypeId<KRecoveryCertificate>()) {
                 const auto cert = v.cert.value<KRecoveryCertificate>();

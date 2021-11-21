@@ -72,11 +72,10 @@ ColumnLayout {
                     return certificate.resultString;
                 }
                 switch (certificate.result) {
-                    // TODO as we are past the string freeze this reuses already existing strings that are close to what we want, fix this is master
                     case KHC.TestCertificate.Positive:
-                        return i18n('Positive test');
+                        return i18nc('test result', 'Positive');
                     case KHC.TestCertificate.Negative:
-                        return i18n('Negative test');
+                        return i18nc('test result', 'Negative');
                 }
             }
             Kirigami.FormData.label: i18n("Result:")
