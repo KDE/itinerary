@@ -37,7 +37,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Name:")
         }
         QQC2.Label {
-            text: certificate.dateOfBirth.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
+            text: Localizer.formatDate(certificate, "dateOfBirth")
             visible: !isNaN(certificate.dateOfBirth.getTime())
             Kirigami.FormData.label: i18n("Date of birth:")
         }
@@ -52,6 +52,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Date:")
             color: daysTo(certificate.date, new Date()) >= 14 ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
             font.bold: true
+            visible: !isNaN(certificate.date.getTime())
         }
         QQC2.Label {
             text: certificate.disease
@@ -67,16 +68,19 @@ ColumnLayout {
             text: certificate.vaccineUrl != "" ? '<a href="' + certificate.vaccineUrl + '">' + certificate.vaccine + '</a>' : certificate.vaccine
             Kirigami.FormData.label: i18n("Vaccine:")
             onLinkActivated: Qt.openUrlExternally(link)
+            visible: text !== ""
         }
         QQC2.Label {
             text: certificate.manufacturer
             Kirigami.FormData.label: i18n("Manufacturer:")
+            visible: text !== ""
         }
         QQC2.Label {
             text: certificate.totalDoses > 0 ? i18n("%1/%2", certificate.dose, certificate.totalDoses) : certificate.dose
             Kirigami.FormData.label: i18n("Dose:")
             color: certificate.dose < certificate.totalDoses ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.positiveTextColor
             font.bold: true
+            visible: certificate.dose > 0
         }
         QQC2.Label {
             text: Localizer.countryFlag(certificate.country) + " " + Localizer.countryName(certificate.country)

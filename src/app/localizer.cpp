@@ -134,6 +134,19 @@ QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) 
     return s;
 }
 
+QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) const
+{
+    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDate();
+    if (!dt.isValid()) {
+        return {};
+    }
+
+    if (dt.year() <= 1900) { // no year specified
+        return dt.toString(QStringLiteral("dd MMMM")); // TODO i18n in master
+    }
+    return QLocale().toString(dt, QLocale::ShortFormat);
+}
+
 QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyName) const
 {
     const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();

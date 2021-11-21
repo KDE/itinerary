@@ -166,6 +166,7 @@ Kirigami.Page {
     }
     QQC2.SwipeView {
         id: swipeView
+        visible: hasValidCertificate
         anchors.fill: parent
         onCurrentIndexChanged: if (swipeView.currentIndex === 1) {
             scanModeController.enabled = false;
