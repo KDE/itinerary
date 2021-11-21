@@ -34,7 +34,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Name:")
         }
         QQC2.Label {
-            text: certificate.dateOfBirth.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
+            text: Localizer.formatDate(certificate, "dateOfBirth")
             visible: !isNaN(certificate.dateOfBirth.getTime())
             Kirigami.FormData.label: i18n("Date of birth:")
         }
