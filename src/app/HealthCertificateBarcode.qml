@@ -102,7 +102,8 @@ QQC2.Page {
                 return Kirigami.Theme.negativeTextColor;
             }
             switch (certificate.validationState) {
-                case KHC.HealthCertificate.Valid: return Kirigami.Theme.positiveTextColor;
+                case KHC.HealthCertificate.Valid:
+                    return certificate.signatureState == KHC.HealthCertificate.UncheckedSignature ? 'transparent' : Kirigami.Theme.positiveTextColor;
                 case KHC.HealthCertificate.Partial: return Kirigami.Theme.neutralTextColor;
                 case KHC.HealthCertificate.Invalid: return Kirigami.Theme.negativeTextColor;
                 default: return "transparent"
