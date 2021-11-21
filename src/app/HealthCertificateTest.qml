@@ -48,6 +48,7 @@ ColumnLayout {
             text: certificate.date.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
             Kirigami.FormData.label: i18n("Date:")
             color: daysTo(certificate.date, new Date()) >= 2 ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
+            visible: !isNaN(certificate.date.getTime())
         }
         QQC2.Label {
             text: certificate.disease
@@ -66,13 +67,25 @@ ColumnLayout {
             onLinkActivated: Qt.openUrlExternally(link)
         }
         QQC2.Label {
-            text: certificate.resultString
+            text: {
+                if (certificate.resultString !== "") {
+                    return certificate.resultString;
+                }
+                switch (certificate.result) {
+                    // TODO as we are past the string freeze this reuses already existing strings that are close to what we want, fix this is master
+                    case KHC.TestCertificate.Positive:
+                        return i18n('Positive test');
+                    case KHC.TestCertificate.Negative:
+                        return i18n('Negative test');
+                }
+            }
             Kirigami.FormData.label: i18n("Result:")
             color: certificate.result == KHC.TestCertificate.Positive ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
         }
         QQC2.Label {
             text: certificate.testCenter
             Kirigami.FormData.label: i18n("Test Center:")
+            visible: text !== ""
         }
         QQC2.Label {
             text: Localizer.countryFlag(certificate.country) + " " + Localizer.countryName(certificate.country)
@@ -92,6 +105,7 @@ ColumnLayout {
             text: certificate.certificateId
             Kirigami.FormData.label: i18n("Identifier:")
             wrapMode: Text.Wrap
+            visible: text !== ""
         }
         QQC2.Label {
             text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
