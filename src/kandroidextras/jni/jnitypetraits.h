@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNITYPETRAITS_H
 #define KANDROIDEXTRAS_JNITYPETRAITS_H
 
+#include "jnicommon.h"
 #include "jnitypes.h"
 
 #include <QAndroidJniObject>
@@ -39,6 +40,10 @@ template <typename T> struct converter {
 template <typename T> struct reverse_converter {
     typedef converter<typename converter<T>::type> type;
 };
+
+/** Type trait for checking whether @tparam T is a JNI array type. */
+template <typename T> struct is_array : std::false_type {};
+template <typename T> struct is_array<Array<T>> : std::true_type {};
 
 }
 

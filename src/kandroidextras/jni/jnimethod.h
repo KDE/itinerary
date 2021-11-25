@@ -6,6 +6,7 @@
 #ifndef KANDROIDEXTRAS_JNIMETHOD_H
 #define KANDROIDEXTRAS_JNIMETHOD_H
 
+#include "jniarray.h"
 #include "jnitypetraits.h"
 
 #include <QAndroidJniObject>
@@ -95,11 +96,27 @@ namespace Internal {
         QAndroidJniObject value;
     };
 
+    template <typename RetT>
+    class ReturnValue<Jni::Array<RetT>> {
+    public:
+        explicit inline ReturnValue(const QAndroidJniObject &v) : value(v) {}
+        inline operator QAndroidJniObject() const {
+            return value;
+        }
+        template <typename Container>
+        inline operator Container() const {
+            return Jni::fromArray<Container>(value);
+        }
+
+    private:
+        QAndroidJniObject value;
+    };
+
     // return type conversion
     template <typename RetT>
     struct call_return {
         static inline constexpr bool is_basic = Jni::is_basic_type<RetT>::value;
-        static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
+        static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void> || Jni::is_array<RetT>::value;
 
         typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
         typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, ReturnValue<RetT>> CallReturnT;
@@ -195,8 +212,11 @@ namespace Internal {
  *   be implicitly converted either to the destination type of the conversion, or a @c QAndroidJniObject.
  *   This allows to avoid type conversion when chaining calls for example, it however needs additional
  *   care when used in combination with automatic type deduction.
+ * - array return types also result in a wrapper class that can be implicitly converted to a sequential
+ *   container or a @p QAndroidJniObject representing the JNI array.
  *
- * Thie macro can only be placed in classes with a @c JNI_OBJECT.
+ * Thie macro can only be placed in classes having a @c handle() method returning the corresponding
+ * QAndroidJniObject instance.
  *
  * @param RetT The return type. Must either be a basic type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.

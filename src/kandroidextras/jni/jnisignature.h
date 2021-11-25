@@ -7,18 +7,14 @@
 #ifndef KANDROIDEXTRAS_JNISIGNATURE_H
 #define KANDROIDEXTRAS_JNISIGNATURE_H
 
+#include "jnicommon.h"
+
 #include <cstdint>
 #include <utility>
 
 namespace KAndroidExtras {
 
-namespace Jni {
-
-/** Wrapper type for array return values (which we cannot specify using [] syntax). */
-template <typename T> struct Array {};
-
-}
-
+/** @cond internal */
 namespace Internal {
 
 /** Compile-time concat-able string. */
@@ -110,6 +106,7 @@ struct JniSignature<RetT(Args...)>
     }
 };
 }
+/** @endcond */
 
 /** Helper methods to deal with JNI. */
 namespace Jni

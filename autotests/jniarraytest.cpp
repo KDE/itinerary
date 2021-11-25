@@ -5,6 +5,7 @@
 */
 
 #include <KAndroidExtras/JniArray>
+#include <KAndroidExtras/JniTypeTraits>
 
 #include <QtTest/qtest.h>
 
@@ -14,6 +15,12 @@ class JniArrayTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
+    void testTypeTrait()
+    {
+        static_assert(!Jni::is_array<int>::value);
+        static_assert(Jni::is_array<Jni::Array<int>>::value);
+    }
+
     void testFromArray()
     {
 #ifndef Q_OS_ANDROID

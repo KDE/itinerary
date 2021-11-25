@@ -24,6 +24,7 @@ public:
     JNI_METHOD(bool, setCoordinates, jfloat, jfloat)
     JNI_METHOD(void, startIntent, android::content::Intent)
     JNI_METHOD(android::content::Intent, getIntent)
+    JNI_METHOD(Jni::Array<java::lang::String>, getStringList)
 
     JNI_PROPERTY(java::lang::String, name)
 
@@ -91,7 +92,12 @@ private Q_SLOTS:
         // call chaining with JNI handle pass-through
         obj.setName(obj.getName());
 
-        QCOMPARE(obj.handle().protocol().size(), 17);
+        // conversion of array return types
+        j = obj.getStringList();
+        QStringList l = obj.getStringList();
+        std::vector<QString> l2 = obj.getStringList();
+
+        QCOMPARE(obj.handle().protocol().size(), 20);
         QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -110,10 +116,14 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[14], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[15], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[16], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[17], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[18], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[19], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
 #if 0
         // stuff that must not compile
         obj.setName(42);
         obj.setFlags(QStringLiteral("42"));
+        s = obj.getStringList();
 #endif
 #endif
     }
