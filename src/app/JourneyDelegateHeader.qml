@@ -22,6 +22,7 @@ Rectangle {
     anchors.leftMargin: -root.leftPadding
     anchors.topMargin: -root.topPadding
     anchors.rightMargin: -root.rightPadding
+    radius: Kirigami.Units.smallSpacing
 
     RowLayout {
         id: headerLayout
