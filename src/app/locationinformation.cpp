@@ -6,6 +6,7 @@
 
 #include "locationinformation.h"
 
+#include <KCountry>
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -20,8 +21,9 @@ bool LocationInformation::operator==(const LocationInformation& other) const
     const auto dsEqual = m_drivingSide == other.m_drivingSide || m_drivingSide == KnowledgeDb::DrivingSide::Unknown || other.m_drivingSide == KnowledgeDb::DrivingSide::Unknown;
     const auto ppEqual = (m_incompatPlugs == other.m_incompatPlugs && m_incompatSockets == other.m_incompatSockets)
                         || m_powerPlugs == KnowledgeDb::Unknown || other.m_powerPlugs == KnowledgeDb::Unknown;
+    const auto currencyEqual = m_currency == other.m_currency || m_currency.isEmpty() || other.m_currency.isEmpty();
 
-    return dsEqual && ppEqual && !hasRelevantTimeZoneChange(other);
+    return dsEqual && ppEqual && !hasRelevantTimeZoneChange(other) && currencyEqual;
 }
 
 QString LocationInformation::isoCode() const
@@ -45,6 +47,12 @@ void LocationInformation::setIsoCode(const QString& isoCode)
     const auto countryRecord = KnowledgeDb::countryForId(id);
     setDrivingSide(countryRecord.drivingSide);
     setPowerPlugTypes(countryRecord.powerPlugTypes);
+
+    auto currency = KCountry::fromAlpha2(isoCode).currencyCode();
+    if (currency != m_currency && !m_currency.isEmpty() && !currency.isEmpty()) {
+        m_currencyDiffers = true;
+    }
+    m_currency = currency;
 }
 
 KnowledgeDb::DrivingSide LocationInformation::drivingSide() const
@@ -178,4 +186,14 @@ QString LocationInformation::timeZoneName() const
 int LocationInformation::timeZoneOffsetDelta() const
 {
     return m_timeZoneOffsetDelta;
+}
+
+bool LocationInformation::currencyDiffers() const
+{
+    return m_currencyDiffers;
+}
+
+QString LocationInformation::currencyName() const
+{
+    return m_currency;
 }

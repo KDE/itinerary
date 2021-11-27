@@ -284,6 +284,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyDiffers": false,
+            "currencyName": "EUR",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",
@@ -482,6 +484,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyDiffers": true,
+            "currencyName": "USD",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",
@@ -639,6 +643,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyDiffers": true,
+            "currencyName": "USD",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",
@@ -769,6 +775,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyDiffers": true,
+            "currencyName": "CHF",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "CH",

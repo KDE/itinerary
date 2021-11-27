@@ -91,6 +91,15 @@ Kirigami.AbstractCard {
             visible: locationInfo.timeZoneDiffers
             wrapMode: Text.WordWrap
         }
+
+        QQC2.Label {
+            width: topLayout.width
+            text: i18n("Currency: %1", locationInfo.currencyName)
+            color: Kirigami.Theme.neutralTextColor
+            visible: locationInfo.currencyDiffers
+            wrapMode: Text.WordWrap
+        }
+
     }
 }
 

@@ -33,6 +33,9 @@ class LocationInformation
     Q_PROPERTY(QString timeZoneName READ timeZoneName)
     Q_PROPERTY(int timeZoneOffsetDelta READ timeZoneOffsetDelta)
 
+    Q_PROPERTY(bool currencyDiffers READ currencyDiffers)
+    Q_PROPERTY(QString currencyName READ currencyName)
+
 public:
     LocationInformation();
     ~LocationInformation();
@@ -64,6 +67,9 @@ public:
     QString timeZoneName() const;
     int timeZoneOffsetDelta() const;
 
+    bool currencyDiffers() const;
+    QString currencyName() const;
+
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
     void setPowerPlugTypes(KItinerary::KnowledgeDb::PowerPlugTypes powerPlugs);
@@ -71,6 +77,7 @@ private:
     QString m_isoCode;
     QTimeZone m_timeZone;
     QDateTime m_transitionTime;
+    QString m_currency;
     KItinerary::KnowledgeDb::PowerPlugTypes m_powerPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatPlugs = KItinerary::KnowledgeDb::Unknown;
     KItinerary::KnowledgeDb::PowerPlugTypes m_incompatSockets = KItinerary::KnowledgeDb::Unknown;
@@ -78,6 +85,7 @@ private:
     bool m_drivingSideDiffers = false;
     PowerPlugCompatibility m_powerPlugCompat = FullyCompatible;
     int m_timeZoneOffsetDelta = 0;
+    bool m_currencyDiffers = false;
 };
 
 Q_DECLARE_METATYPE(LocationInformation)
