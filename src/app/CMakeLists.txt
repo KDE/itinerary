@@ -56,6 +56,7 @@ target_link_libraries(itinerary PUBLIC
     KPim::PkPass
     KF5::Mime
     KF5::I18n
+    KF5::I18nLocaleData
     KF5::Contacts
     KF5::CoreAddons
     KF5::Notifications

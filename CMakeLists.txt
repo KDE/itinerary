@@ -10,7 +10,7 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION 5.85)
+set(KF5_MIN_VERSION 5.88)
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -41,10 +41,7 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
     endif()
 endif()
 
-set(QT_MIN_VERSION 5.15)
-if (ANDROID)
-    set(QT_MIN_VERSION 5.15.1) # for content: support
-endif()
+set(QT_MIN_VERSION 5.15.2)
 
 # build-time dependencies
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning Location QuickControls2)
@@ -52,7 +49,7 @@ find_package(Qt5 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications)
 find_package(KF5 ${KF5_MIN_VERSION} OPTIONAL_COMPONENTS Holidays NetworkManagerQt)
 find_package(KPimPkPass CONFIG REQUIRED)
-find_package(KPimItinerary 5.17.41 CONFIG REQUIRED)
+find_package(KPimItinerary 5.18.0 CONFIG REQUIRED)
 find_package(KPublicTransport CONFIG REQUIRED)
 find_package(KOSMIndoorMap CONFIG REQUIRED)
 find_package(KHealthCertificate CONFIG)

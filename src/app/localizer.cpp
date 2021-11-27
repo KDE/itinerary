@@ -10,6 +10,8 @@
 #include <KItinerary/Place>
 
 #include <KContacts/Address>
+
+#include <KCountry>
 #include <KFormat>
 #include <KLocalizedString>
 
@@ -33,26 +35,6 @@ using namespace KAndroidExtras;
 
 using namespace KItinerary;
 
-QString Localizer::countryName(const QString& isoCode) const
-{
-    return KContacts::Address::ISOtoCountry(isoCode);
-}
-
-QString Localizer::countryFlag(const QString& isoCode) const
-{
-    if (isoCode.size() != 2) {
-        return {};
-    }
-
-    QString flag;
-    char flagA[] = "\xF0\x9F\x87\xA6";
-    flagA[3] = 0xA6 + (isoCode[0].toLatin1() - 'A');
-    flag += QString::fromUtf8(flagA);
-    flagA[3] = 0xA6 + (isoCode[1].toLatin1() - 'A');
-    flag += QString::fromUtf8(flagA);
-    return flag;
-}
-
 static QString readFromGadget(const QMetaObject *mo, const QVariant &gadget, const char *propName)
 {
     const auto propIdx = mo->indexOfProperty(propName);
@@ -75,14 +57,14 @@ QString Localizer::formatAddress(const QVariant &obj) const
         address.setPostalCode(a.postalCode());
         address.setLocality(a.addressLocality());
         address.setRegion(a.addressRegion());
-        address.setCountry(KContacts::Address::ISOtoCountry(a.addressCountry()));
+        address.setCountry(KCountry::fromAlpha2(a.addressCountry()).name());
     } else if (std::strcmp(obj.typeName(), "KOSMIndoorMap::OSMAddress") == 0) {
         const auto mo = QMetaType::metaObjectForType(obj.userType());
         address.setStreet(readFromGadget(mo, obj, "street") + QLatin1Char(' ') + readFromGadget(mo, obj, "houseNumber"));
         address.setPostalCode(readFromGadget(mo, obj, "postalCode"));
         address.setLocality(readFromGadget(mo, obj, "city"));
         address.setRegion(readFromGadget(mo, obj, "state"));
-        address.setCountry(KContacts::Address::ISOtoCountry(readFromGadget(mo, obj, "country")));
+        address.setCountry(KCountry::fromAlpha2(readFromGadget(mo, obj, "country")).name());
     } else {
         return {};
     }

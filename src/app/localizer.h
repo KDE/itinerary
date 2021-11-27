@@ -19,11 +19,6 @@ class Localizer
 {
     Q_GADGET
 public:
-    Q_INVOKABLE QString countryName(const QString &isoCode) const;
-    /** Emoji representation of @p isoCode.
-     *  @see https://en.wikipedia.org/wiki/Regional_Indicator_Symbol
-     */
-    Q_INVOKABLE QString countryFlag(const QString &isoCode) const;
     Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDate(const QVariant &obj, const QString &propertyName) const;

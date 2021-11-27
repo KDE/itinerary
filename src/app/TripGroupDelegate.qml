@@ -7,6 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
+import org.kde.i18n.localeData 1.0
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -90,11 +91,11 @@ Kirigami.AbstractCard {
                 text: {
                     if (modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible) {
                         if (modelData.powerPlugTypes == "")
-                            return i18n("%1: some incompatible power sockets (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
+                            return i18n("%1: some incompatible power sockets (%2)", Country.fromAlpha2(modelData.isoCode).name, modelData.powerSocketTypes);
                         else
-                            return i18n("%1: some incompatible power plugs (%2)", Localizer.countryName(modelData.isoCode), modelData.powerPlugTypes);
+                            return i18n("%1: some incompatible power plugs (%2)", Country.fromAlpha2(modelData.isoCode).name, modelData.powerPlugTypes);
                     } else {
-                        return i18n("%1: no compatible power plugs (%2)", Localizer.countryName(modelData.isoCode), modelData.powerSocketTypes);
+                        return i18n("%1: no compatible power plugs (%2)", Country.fromAlpha2(modelData.isoCode).name, modelData.powerSocketTypes);
                     }
                 }
                 color: modelData.powerPlugCompatibility == LocationInformation.PartiallyCompatible ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.negativeTextColor

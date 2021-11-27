@@ -8,11 +8,8 @@
 #define COUNTRYMODEL_H
 
 #include <QAbstractListModel>
-namespace KItinerary {
-namespace KnowledgeDb {
-    struct Country;
-}
-}
+
+class KCountry;
 
 /** Country model for selecting the home country. */
 class CountryModel : public QAbstractListModel
@@ -29,7 +26,7 @@ public:
     QVariant data(const QModelIndex& index, int role) const override;
 
 private:
-    QVector<const KItinerary::KnowledgeDb::Country *> m_countries;
+    QList<KCountry> m_countries;
 };
 
 #endif // COUNTRYMODEL_H

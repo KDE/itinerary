@@ -8,6 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.i18n.localeData 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -50,8 +51,8 @@ Kirigami.ScrollablePage {
 
         StatisticsDelegate {
             statItem: model.visitedCountries
-            label.text: model.visitedCountries.value.split(" ").map(countryCode => Localizer.countryFlag(countryCode)).join(" ")
-            visible: !countryDetailsLink.checked
+            label.text: model.visitedCountries.value.split(" ").map(countryCode => Country.fromAlpha2(countryCode).emojiFlag).join(" ")
+            visible: !countryDetailsLink.checked && model.visitedCountries.value !== ""
         }
 
         ColumnLayout {
@@ -66,7 +67,8 @@ Kirigami.ScrollablePage {
                 QQC2.Label {
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
-                    text: Localizer.countryFlag(modelData) + " " + Localizer.countryName(modelData);
+                    readonly property var country: Country.fromAlpha2(modelData)
+                    text: country.emojiFlag + " " + country.name
                 }
             }
         }
@@ -76,6 +78,7 @@ Kirigami.ScrollablePage {
             property bool checked: false
             text: checked ? i18nc("@action", "Hide Names") : i18nc("@action", "Show Names")
             onClicked: checked = !checked
+            visible: model.visitedCountries.value !== ""
         }
 
         Kirigami.Separator {

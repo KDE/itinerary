@@ -8,6 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.i18n.localeData 1.0
 import org.kde.kitinerary 1.0 as KItinerary
 import org.kde.itinerary 1.0
 import "." as App
@@ -40,7 +41,7 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
-                text: i18n("Entering %1", Localizer.countryName(locationInfo.isoCode))
+                text: i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
                 color: Kirigami.Theme.neutralTextColor
                 Layout.fillWidth: true
             }

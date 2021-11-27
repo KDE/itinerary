@@ -6,7 +6,7 @@
 
 #include "settings.h"
 
-#include <KContacts/Address>
+#include <KCountry>
 
 #include <QDebug>
 #include <QLocale>
@@ -19,7 +19,7 @@ Settings::Settings(QObject *parent)
     s.beginGroup(QLatin1String("Settings"));
     m_weatherEnabled = s.value(QLatin1String("WeatherForecastEnabled"), false).toBool();
 
-    const auto currentCountry = KContacts::Address::countryToISO(QLocale::countryToString(QLocale().country())).toUpper();
+    const auto currentCountry = KCountry::fromQLocale(QLocale().country()).alpha2();
     m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
 
     m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();

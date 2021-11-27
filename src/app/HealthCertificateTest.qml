@@ -7,6 +7,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.i18n.localeData 1.0
 import org.kde.prison 1.0 as Prison
 import org.kde.khealthcertificate 1.0 as KHC
 import org.kde.itinerary 1.0
@@ -87,8 +88,10 @@ ColumnLayout {
             visible: text !== ""
         }
         QQC2.Label {
-            text: Localizer.countryFlag(certificate.country) + " " + Localizer.countryName(certificate.country)
+            readonly property var country: Country.fromAlpha2(certificate.country)
+            text: country.emojiFlag + " " + country.name
             Kirigami.FormData.label: i18n("Country:")
+            visible: certificate.country
         }
 
         Kirigami.Separator {
