@@ -104,6 +104,10 @@ int HealthCertificateManager::rowCount(const QModelIndex& parent) const
 
 QVariant HealthCertificateManager::data(const QModelIndex &index, int role) const
 {
+    if (!checkIndex(index)) {
+        return {};
+    }
+
     const auto &v = m_certificates[index.row()];
     switch (role) {
         case Qt::DisplayRole:
