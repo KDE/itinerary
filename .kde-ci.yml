@@ -15,6 +15,7 @@ Dependencies:
     'frameworks/karchive': '@stable'
     'frameworks/prison': '@stable'
     'libraries/kpublictransport': "@same"
+    'libraries/kosmindoormap': "@same"
     'pim/kpkpass': '@same'
     'pim/kitinerary': '@same'
     'pim/kosmindoormap': '@same'
