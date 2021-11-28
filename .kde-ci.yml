@@ -18,7 +18,6 @@ Dependencies:
     'libraries/kosmindoormap': "@same"
     'pim/kpkpass': '@same'
     'pim/kitinerary': '@same'
-    'libraries/kosmindoormap': '@same'
     'pim/khealthcertificate': '@latest'
 
 - 'on': ['Linux', 'FreeBSD']
