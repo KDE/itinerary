@@ -318,8 +318,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyCode": "EUR",
             "currencyDiffers": false,
-            "currencyName": "EUR",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "IT",

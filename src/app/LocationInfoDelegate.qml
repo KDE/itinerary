@@ -15,7 +15,12 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property var locationInfo;
+    property alias locationInfo: _controller.locationInformation
+    property QtObject controller: LocationInformationDelegateController {
+        id: _controller
+        homeCurrencyCode: Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode
+        performCurrencyConversion: Settings.performCurrencyConversion
+    }
 
    header: Rectangle {
         id: headerBackground
@@ -94,7 +99,7 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             width: topLayout.width
-            text: i18n("Currency: %1", locationInfo.currencyName)
+            text: i18n("Currency: %1", controller.hasCurrencyConversion ? controller.currencyConversionLabel : locationInfo.currencyCode)
             color: Kirigami.Theme.neutralTextColor
             visible: locationInfo.currencyDiffers
             wrapMode: Text.WordWrap

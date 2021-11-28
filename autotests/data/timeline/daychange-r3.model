@@ -67,8 +67,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyCode": "GBP",
             "currencyDiffers": true,
-            "currencyName": "GBP",
             "drivingSide": "Left",
             "drivingSideDiffers": true,
             "isoCode": "GB",
@@ -151,8 +151,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyCode": "USD",
             "currencyDiffers": true,
-            "currencyName": "USD",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "US",

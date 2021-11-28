@@ -193,7 +193,7 @@ bool LocationInformation::currencyDiffers() const
     return m_currencyDiffers;
 }
 
-QString LocationInformation::currencyName() const
+QString LocationInformation::currencyCode() const
 {
     return m_currency;
 }

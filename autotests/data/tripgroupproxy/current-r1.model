@@ -94,8 +94,8 @@
         "locationInformation": {
             "@context": "http://schema.org",
             "@type": "LocationInformation",
+            "currencyCode": "CHF",
             "currencyDiffers": true,
-            "currencyName": "CHF",
             "drivingSide": "Right",
             "drivingSideDiffers": false,
             "isoCode": "CH",

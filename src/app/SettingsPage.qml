@@ -138,6 +138,23 @@ Kirigami.ScrollablePage {
             font: Kirigami.Theme.smallFont
         }
 
+        QQC2.CheckBox {
+            id: currencyConversion
+            text: i18n("Currency Conversion")
+            checked: Settings.performCurrencyConversion
+            onToggled: Settings.performCurrencyConversion = checked
+            Layout.fillWidth: true
+            visible: Settings.hasCurrencyConversion
+        }
+        QQC2.Label {
+            Kirigami.FormData.isSection: true
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            text: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
+            font: Kirigami.Theme.smallFont
+            visible: Settings.hasCurrencyConversion
+        }
+
         // Transfer assistant
         Kirigami.Separator {
             Kirigami.FormData.isSection: true

@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#include "config-itinerary.h"
 #include "settings.h"
 
 #include <KCountry>
@@ -25,6 +26,8 @@ Settings::Settings(QObject *parent)
     m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
 
     m_preloadMapData = s.value(QLatin1String("PreloadMapData"), false).toBool();
+
+    m_currencyConversion = s.value(QLatin1String("PerformCurrencyConversion"), false).toBool();
 
     m_autoAddTransfers = s.value(QLatin1String("AutoAddTransfers"), true).toBool();
     m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
@@ -114,6 +117,34 @@ void Settings::setPreloadMapData(bool preload)
     s.setValue(QLatin1String("PreloadMapData"), preload);
 
     Q_EMIT preloadMapDataChanged(preload);
+}
+
+bool Settings::hasCurrencyConversion() const
+{
+#if HAVE_KUNITCONVERSION
+    return true;
+#else
+    return false;
+#endif
+}
+
+bool Settings::performCurrencyConversion() const
+{
+    return m_currencyConversion;
+}
+
+void Settings::setPerformCurrencyConversion(bool enable)
+{
+    if (m_currencyConversion == enable) {
+        return;
+    }
+
+    m_currencyConversion = enable;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("PerformCurrencyConversion"), enable);
+
+    Q_EMIT performCurrencyConversionChanged(enable);
 }
 
 bool Settings::autoAddTransfers() const

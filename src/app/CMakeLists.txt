@@ -79,6 +79,7 @@ target_sources(itinerary-app PRIVATE
     countrymodel.cpp
     developmentmodecontroller.cpp
     documentsmodel.cpp
+    locationinformationdelegatecontroller.cpp
     mapdownloadmanager.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
@@ -195,6 +196,9 @@ else ()
 endif()
 if (TARGET KF5::Crash)
     target_link_libraries(itinerary-app PRIVATE KF5::Crash)
+endif()
+if (TARGET KF5::UnitConversion)
+    target_link_libraries(itinerary-app PRIVATE KF5::UnitConversion)
 endif()
 
 install(TARGETS itinerary-app ${INSTALL_TARGETS_DEFAULT_ARGS})

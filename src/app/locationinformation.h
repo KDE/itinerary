@@ -34,7 +34,7 @@ class LocationInformation
     Q_PROPERTY(int timeZoneOffsetDelta READ timeZoneOffsetDelta)
 
     Q_PROPERTY(bool currencyDiffers READ currencyDiffers)
-    Q_PROPERTY(QString currencyName READ currencyName)
+    Q_PROPERTY(QString currencyCode READ currencyCode)
 
 public:
     LocationInformation();
@@ -68,7 +68,7 @@ public:
     int timeZoneOffsetDelta() const;
 
     bool currencyDiffers() const;
-    QString currencyName() const;
+    QString currencyCode() const;
 
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
