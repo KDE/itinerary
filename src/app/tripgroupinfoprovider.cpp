@@ -17,6 +17,8 @@
 #include <KItinerary/Place>
 #include <KItinerary/SortUtil>
 
+#include <KCountry>
+
 #include <QDateTime>
 #include <QDebug>
 
@@ -105,6 +107,27 @@ QVariantList TripGroupInfoProvider::locationInformation(const TripGroup &group, 
         if (info.powerPlugCompatibility() != LocationInformation::FullyCompatible) {
             l.push_back(QVariant::fromValue(info));
         }
+    }
+
+    return l;
+}
+
+QStringList TripGroupInfoProvider::currencies(const TripGroup& group, const QString &homeCurrency) const
+{
+    QStringList l;
+    const auto elems = group.elements();
+    for (const auto &resId : elems) {
+        const auto res = m_resMgr->reservation(resId);
+        if (!LocationUtil::isLocationChange(res)) {
+            continue;
+        }
+
+        const auto destCountry = LocationUtil::address(LocationUtil::arrivalLocation(res)).addressCountry();
+        const auto currency = KCountry::fromAlpha2(destCountry).currencyCode();
+        if (currency.isEmpty() || currency == homeCurrency || l.contains(currency)) {
+            continue;
+        }
+        l.push_back(currency);
     }
 
     return l;

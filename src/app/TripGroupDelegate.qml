@@ -104,6 +104,12 @@ Kirigami.AbstractCard {
             }
         }
 
+        QQC2.Label {
+            readonly property var currencies: TripGroupInfoProvider.currencies(tripGroup, Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode)
+            text: visible ? i18n("Currencies: %1", currencies.join(", ")) : ""
+            visible: currencies.length > 0
+        }
+
         Kirigami.Separator {
             visible: root.rangeType == TimelineElement.RangeBegin
         }

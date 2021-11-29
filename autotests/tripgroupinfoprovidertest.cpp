@@ -58,6 +58,9 @@ private Q_SLOTS:
         const auto country = countries.at(0).value<LocationInformation>();
         QCOMPARE(country.isoCode(), QStringLiteral("CH"));
         QCOMPARE(country.powerPlugCompatibility(), LocationInformation::PartiallyCompatible);
+
+        QCOMPARE(provider.currencies(mgr.tripGroup(mgr.tripGroups().at(0)), QStringLiteral("EUR")), QStringList({QStringLiteral("CHF")}));
+        QCOMPARE(provider.currencies(mgr.tripGroup(mgr.tripGroups().at(0)), QStringLiteral("NZD")), QStringList({QStringLiteral("CHF"), QStringLiteral("EUR")}));
     }
 
 };

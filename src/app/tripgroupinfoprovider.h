@@ -27,6 +27,7 @@ public:
 
     Q_INVOKABLE WeatherForecast weatherForecast(const TripGroup &group) const;
     Q_INVOKABLE QVariantList locationInformation(const TripGroup &group, const QString &homeCountryIsoCode) const;
+    Q_INVOKABLE QStringList currencies(const TripGroup &group, const QString &homeCurrency) const;
 
 private:
     ReservationManager *m_resMgr = nullptr;
