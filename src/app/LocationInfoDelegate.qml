@@ -26,7 +26,7 @@ Kirigami.AbstractCard {
         id: headerBackground
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
+        color: Kirigami.Theme.neutralBackgroundColor
         radius: Kirigami.Units.smallSpacing
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.leftMargin: -root.leftPadding
@@ -42,12 +42,10 @@ Kirigami.AbstractCard {
                 source: "documentinfo"
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Layout.preferredWidth
-                color: Kirigami.Theme.neutralTextColor
                 isMask: true
             }
             QQC2.Label {
                 text: i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
-                color: Kirigami.Theme.neutralTextColor
                 Layout.fillWidth: true
             }
         }
@@ -62,45 +60,40 @@ Kirigami.AbstractCard {
             text: locationInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
                 i18n("People are driving on the right side.") :
                 i18n("People are driving on the left side.")
-            color: Kirigami.Theme.negativeTextColor
             visible: locationInfo.drivingSideDiffers
             wrapMode: Text.WordWrap
         }
 
         QQC2.Label {
             width: topLayout.width
-            text: i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes)
+            text: visible ? i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes) : ""
             color: Kirigami.Theme.negativeTextColor
             visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
             width: topLayout.width
-            text: i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes)
-            color: Kirigami.Theme.neutralTextColor
+            text: visible ? i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes) : ""
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
             wrapMode: Text.WordWrap
         }
         QQC2.Label {
             width: topLayout.width
-            text: i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes)
-            color: Kirigami.Theme.neutralTextColor
+            text: visible ? i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes) : ""
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
             wrapMode: Text.WordWrap
         }
 
         QQC2.Label {
             width: topLayout.width
-            text: i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta))
-            color: Kirigami.Theme.neutralTextColor
+            text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
             visible: locationInfo.timeZoneDiffers
             wrapMode: Text.WordWrap
         }
 
         QQC2.Label {
             width: topLayout.width
-            text: i18n("Currency: %1", controller.hasCurrencyConversion ? controller.currencyConversionLabel : locationInfo.currencyCode)
-            color: Kirigami.Theme.neutralTextColor
+            text: visible ? i18n("Currency: %1", controller.hasCurrencyConversion ? controller.currencyConversionLabel : locationInfo.currencyCode) : ""
             visible: locationInfo.currencyDiffers
             wrapMode: Text.WordWrap
         }
