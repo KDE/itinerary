@@ -97,7 +97,10 @@ private Q_SLOTS:
         QStringList l = obj.getStringList();
         std::vector<QString> l2 = obj.getStringList();
 
-        QCOMPARE(obj.handle().protocol().size(), 20);
+        // nullptr arguments
+        obj.startIntent(nullptr);
+
+        QCOMPARE(obj.handle().protocol().size(), 21);
         QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -119,11 +122,13 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[17], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[18], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[19], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.handle().protocol()[20], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);
         obj.setFlags(QStringLiteral("42"));
         s = obj.getStringList();
+        obj.setFlags(nullptr);
 #endif
 #endif
     }
