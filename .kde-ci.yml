@@ -15,13 +15,16 @@ Dependencies:
     'frameworks/karchive': '@stable'
     'frameworks/prison': '@stable'
     'libraries/kpublictransport': "@same"
+    'libraries/kosmindoormap': "@same"
     'pim/kpkpass': '@same'
     'pim/kitinerary': '@same'
-    'pim/kosmindoormap': '@same'
     'pim/khealthcertificate': '@latest'
+
+- 'on': ['Linux', 'FreeBSD']
+  'require':
+    'frameworks/kdbusaddons': '@stable'
+    'frameworks/qqc2-desktop-style': '@stable'
 
 - 'on': ['Linux']
   'require':
     'frameworks/networkmanager-qt': '@stable'
-    'frameworks/kdbusaddons': '@stable'
-    'frameworks/qqc2-desktop-style': '@stable'
