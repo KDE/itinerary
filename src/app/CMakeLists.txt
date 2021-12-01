@@ -31,6 +31,7 @@ target_sources(itinerary PRIVATE
     timelinedelegatecontroller.cpp
     timelineelement.cpp
     timelinemodel.cpp
+    timelinesectiondelegatecontroller.cpp
     tripgroup.cpp
     tripgroupinfoprovider.cpp
     tripgroupmanager.cpp
@@ -65,6 +66,9 @@ target_link_libraries(itinerary PUBLIC
 )
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
+endif()
+if (TARGET KF5::Holidays)
+    target_link_libraries(itinerary PUBLIC KF5::Holidays)
 endif()
 
 if (Qt5QuickCompiler_FOUND)

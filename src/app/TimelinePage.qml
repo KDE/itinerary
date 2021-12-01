@@ -236,16 +236,7 @@ Kirigami.ScrollablePage {
         delegate: chooser
 
         section.property: "sectionHeader"
-        section.delegate: Item {
-            implicitHeight: headerItem.implicitHeight + Kirigami.Units.largeSpacing*2
-            implicitWidth: parent.width
-            Kirigami.BasicListItem {
-                id: headerItem
-                label: section
-                backgroundColor: Kirigami.Theme.backgroundColor
-                icon: "view-calendar-day"
-            }
-        }
+        section.delegate: TimelineSectionDelegate { day: section }
         section.criteria: ViewSection.FullString
         section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
     }

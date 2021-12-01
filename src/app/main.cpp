@@ -32,6 +32,7 @@
 #include "statisticstimerangemodel.h"
 #include "tickettokenmodel.h"
 #include "timelinedelegatecontroller.h"
+#include "timelinesectiondelegatecontroller.h"
 #include "transferdelegatecontroller.h"
 #include "transfermanager.h"
 #include "tripgroupinfoprovider.h"
@@ -118,6 +119,7 @@ void registerApplicationTypes()
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
     qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");
     qmlRegisterType<TimelineDelegateController>("org.kde.itinerary", 1, 0, "TimelineDelegateController");
+    qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 }

@@ -4,6 +4,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+#ifndef CONFIG_ITINERARY_H
+#define CONFIG_ITINERARY_H
+
 #cmakedefine01 HAVE_KCRASH
 #cmakedefine01 HAVE_KHEALTHCERTIFICATE
+#cmakedefine01 HAVE_KHOLIDAYS
 #cmakedefine01 HAVE_KUNITCONVERSION
+
+#endif

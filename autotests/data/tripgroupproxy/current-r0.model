@@ -3,13 +3,13 @@
         "isToday": true,
         "isTodayEmpty": true,
         "rangeType": 0,
-        "sectionHeader": "Today",
+        "sectionHeader": "2017-09-09",
         "type": 1
     },
     {
         "isToday": false,
         "rangeType": 1,
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -93,7 +93,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 6
     },
     {
@@ -114,7 +114,7 @@
             "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 4
     },
     {
@@ -187,7 +187,7 @@
                 }
             }
         ],
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 7
     },
     {
@@ -250,7 +250,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 7
     },
     {
@@ -294,7 +294,7 @@
                 }
             }
         ],
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 12
     },
     {
@@ -336,7 +336,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "type": 13
     },
     {
@@ -386,7 +386,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Wednesday, 9/13/17",
+        "sectionHeader": "2017-09-13",
         "type": 9
     },
     {
@@ -422,7 +422,7 @@
                 }
             }
         ],
-        "sectionHeader": "Wednesday, 9/13/17",
+        "sectionHeader": "2017-09-13",
         "type": 11
     },
     {
@@ -464,7 +464,7 @@
                 }
             }
         ],
-        "sectionHeader": "Thursday, 9/14/17",
+        "sectionHeader": "2017-09-14",
         "type": 10
     },
     {
@@ -506,7 +506,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Friday, 9/15/17",
+        "sectionHeader": "2017-09-15",
         "type": 13
     },
     {
@@ -569,7 +569,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Friday, 9/15/17",
+        "sectionHeader": "2017-09-15",
         "type": 7
     },
     {
@@ -633,7 +633,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Friday, 9/15/17",
+        "sectionHeader": "2017-09-15",
         "type": 7
     },
     {
@@ -703,13 +703,13 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Friday, 9/15/17",
+        "sectionHeader": "2017-09-15",
         "type": 6
     },
     {
         "isToday": false,
         "rangeType": 2,
-        "sectionHeader": "Friday, 9/15/17",
+        "sectionHeader": "2017-09-15",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",

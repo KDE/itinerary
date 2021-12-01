@@ -57,20 +57,20 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Tuesday, 10/17/95",
+        "sectionHeader": "1995-10-17",
         "type": 6
     },
     {
         "isToday": true,
         "isTodayEmpty": false,
         "rangeType": 0,
-        "sectionHeader": "Today",
+        "sectionHeader": "1996-10-14",
         "type": 1
     },
     {
         "isToday": true,
         "rangeType": 0,
-        "sectionHeader": "Today",
+        "sectionHeader": "1996-10-14",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -87,7 +87,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Tuesday, 10/15/96",
+        "sectionHeader": "1996-10-15",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -104,7 +104,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -121,7 +121,7 @@
     {
         "isToday": false,
         "rangeType": 1,
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -142,7 +142,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -233,13 +233,13 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "type": 6
     },
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -274,7 +274,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -320,7 +320,7 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Wednesday, 10/16/96",
+        "sectionHeader": "1996-10-16",
         "type": 13
     },
     {
@@ -355,13 +355,13 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "type": 13
     },
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -378,7 +378,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -470,13 +470,13 @@
                 "reservationStatus": "http://schema.org/ReservationConfirmed"
             }
         ],
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "type": 6
     },
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -510,7 +510,7 @@
     {
         "isToday": false,
         "rangeType": 2,
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -531,7 +531,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Thursday, 10/17/96",
+        "sectionHeader": "1996-10-17",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -548,7 +548,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Friday, 10/18/96",
+        "sectionHeader": "1996-10-18",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -565,7 +565,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Saturday, 10/19/96",
+        "sectionHeader": "1996-10-19",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -582,7 +582,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Sunday, 10/20/96",
+        "sectionHeader": "1996-10-20",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -599,7 +599,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Monday, 10/21/96",
+        "sectionHeader": "1996-10-21",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -616,7 +616,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Tuesday, 10/22/96",
+        "sectionHeader": "1996-10-22",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",
@@ -633,7 +633,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Wednesday, 10/23/96",
+        "sectionHeader": "1996-10-23",
         "type": 3,
         "weatherForecast": {
             "@context": "http://schema.org",

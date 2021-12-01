@@ -206,15 +206,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
     const auto &elem = m_elements.at(index.row());
     switch (role) {
         case SectionHeader:
-        {
-            if (elem.dt.isNull()) {
-                return {};
-            }
-            if (elem.dt.date() == today()) {
-                return i18n("Today");
-            }
-            return i18nc("weekday, date", "%1, %2", QLocale().dayName(elem.dt.date().dayOfWeek(), QLocale::LongFormat), QLocale().toString(elem.dt.date(), QLocale::ShortFormat));
-        }
+            // see TimelineSectionDelegateController
+            return elem.dt.date().toString(Qt::ISODate);
         case BatchIdRole:
             return elem.isReservation() ? elem.batchId() : QString();
         case ElementTypeRole:
@@ -878,4 +871,24 @@ void TimelineModel::scheduleCurrentBatchTimer()
         m_currentBatchTimer.setInterval(std::chrono::seconds(std::max<qint64>(60, now().secsTo(triggerTime))));
         m_currentBatchTimer.start();
     }
+}
+
+QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
+{
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
+    if (it == m_elements.begin()) {
+        return {};
+    }
+
+    for (--it; it != m_elements.begin(); --it) {
+        if (!(*it).isReservation()) {
+            continue;
+        }
+        const auto res = m_resMgr->reservation((*it).batchId());
+        if (!LocationUtil::isLocationChange(res)) {
+            continue;
+        }
+        return LocationUtil::arrivalLocation(res);
+    }
+    return {};
 }

@@ -3,13 +3,13 @@
         "isToday": true,
         "isTodayEmpty": true,
         "rangeType": 0,
-        "sectionHeader": "Today",
+        "sectionHeader": "1996-10-14",
         "type": 1
     },
     {
         "isToday": false,
         "rangeType": 1,
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -30,7 +30,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "transfer": {
             "@context": "http://schema.org",
             "@type": "Transfer",
@@ -184,7 +184,7 @@
                 }
             }
         ],
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "type": 6
     },
     {
@@ -310,7 +310,7 @@
                 }
             }
         ],
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "type": 6
     },
     {
@@ -330,13 +330,13 @@
             "timeZoneOffsetDelta": 0
         },
         "rangeType": 0,
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "type": 4
     },
     {
         "isToday": false,
         "rangeType": 2,
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",

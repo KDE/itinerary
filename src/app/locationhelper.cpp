@@ -9,6 +9,9 @@
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 
+#include <KCountry>
+#include <KCountrySubdivision>
+
 #include <QVariant>
 
 using namespace KItinerary;
@@ -32,6 +35,15 @@ QString LocationHelper::destinationCountry(const QVariant &res)
 QString LocationHelper::regionCode(const QVariant &loc)
 {
     const auto addr = LocationUtil::address(loc);
+    const auto coord = LocationUtil::geo(loc);
+
+    if ((addr.addressRegion().isEmpty() || addr.addressCountry().isEmpty()) && coord.isValid()) {
+        const auto cs = KCountrySubdivision::fromLocation(coord.latitude(), coord.longitude());
+        if (cs.isValid()) {
+            return cs.code();
+        }
+    }
+
     if (addr.addressCountry().isEmpty()) {
         return {};
     }

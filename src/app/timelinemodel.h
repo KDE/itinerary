@@ -64,6 +64,9 @@ public:
     /** The most "current" batch to show with the "ticket check" action. */
     QString currentBatchId() const;
 
+    /** The location we are in at the given date/time. */
+    QVariant locationAtTime(const QDateTime &dt) const;
+
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
     QDateTime now() const;

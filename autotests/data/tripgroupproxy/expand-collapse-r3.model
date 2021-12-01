@@ -3,13 +3,13 @@
         "isToday": true,
         "isTodayEmpty": true,
         "rangeType": 0,
-        "sectionHeader": "Today",
+        "sectionHeader": "1996-10-14",
         "type": 1
     },
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Saturday, 1/1/00",
+        "sectionHeader": "2000-01-01",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -30,7 +30,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Saturday, 3/4/17",
+        "sectionHeader": "2017-03-04",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
@@ -51,7 +51,7 @@
     {
         "isToday": false,
         "rangeType": 0,
-        "sectionHeader": "Sunday, 9/10/17",
+        "sectionHeader": "2017-09-10",
         "tripGroup": {
             "@context": "http://schema.org",
             "@type": "TripGroup",
