@@ -17,9 +17,9 @@ namespace KAndroidExtras {
  * Access to manifest permissions.
  * @see https://developer.android.com/reference/android/Manifest.permission
  */
-class ManifestPermission : android::Manifest_permission
+class ManifestPermission
 {
-    JNI_OBJECT(ManifestPermission)
+    JNI_OBJECT(ManifestPermission, android::Manifest_permission)
 public:
     JNI_CONSTANT(java::lang::String, READ_CALENDAR)
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)

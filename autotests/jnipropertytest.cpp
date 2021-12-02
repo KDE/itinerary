@@ -14,9 +14,9 @@
 
 using namespace KAndroidExtras;
 
-class TestClass : android::content::Intent
+class TestClass
 {
-    JNI_OBJECT(TestClass)
+    JNI_OBJECT(TestClass, android::content::Intent)
 
     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
     JNI_CONSTANT(jint, FLAG_GRANT_READ_URI_PERMISSION)

@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNIPROPERTIES_H
 #define KANDROIDEXTRAS_JNIPROPERTIES_H
 
+#include "jnicommon.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
 #include "jnitypetraits.h"
@@ -16,20 +17,6 @@
 #include <type_traits>
 
 namespace KAndroidExtras {
-
-/** Annotates a class for holding JNI property wrappers.
- *  This class has to provide a jniName() method, which is usually achieved by inheriting from
- *  a type defined by the @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
- *  For using non-static properties, this class also has to provide a @p handle() method returning
- *  a @c QAndroidJniObject representing the current instance.
- *
- *  @param Class the name of the class this is added to.
- */
-#define JNI_OBJECT(Class) \
-private: \
-    typedef Class _jni_ThisType; \
-    friend const char* KAndroidExtras::Jni::typeName<Class>();
-
 
 /** @cond internal */
 namespace Internal {

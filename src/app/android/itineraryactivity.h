@@ -18,8 +18,8 @@
 JNI_TYPE(org, kde, itinerary, Activity)
 
 /** Interface to the Java Activity class. */
-class ItineraryActivity : org::kde::itinerary::Activity  {
-    JNI_OBJECT(ItineraryActivity)
+class ItineraryActivity {
+    JNI_OBJECT(ItineraryActivity, org::kde::itinerary::Activity)
 public:
     JNI_METHOD(void, checkCalendar)
     JNI_METHOD(KAndroidExtras::Jni::Array<KAndroidExtras::java::lang::String>, attachmentsForIntent, KAndroidExtras::android::content::Intent)

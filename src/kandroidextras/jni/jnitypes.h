@@ -66,7 +66,7 @@ namespace KAndroidExtras {
 namespace Jni
 {
     /** Returns the JNI type name of the given template argument. */
-    template <typename T> inline const char* typeName() { return T::jniName(); }
+    template <typename T> inline constexpr const char* typeName() { return T::jniName(); }
 }
 
 }

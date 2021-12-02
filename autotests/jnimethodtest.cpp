@@ -12,9 +12,9 @@
 
 using namespace KAndroidExtras;
 
-class TestClass : android::content::Intent
+class TestClass
 {
-    JNI_OBJECT(TestClass)
+    JNI_OBJECT(TestClass, android::content::Intent)
 public:
     JNI_METHOD(java::lang::String, getName)
     JNI_METHOD(void, setName, java::lang::String)
