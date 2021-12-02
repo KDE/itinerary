@@ -157,23 +157,6 @@ namespace Internal {
         }
     };
 
-    template <typename ...Sig>
-    struct invoker<void, Sig...> {
-        template <typename ...Args>
-        static void call(QAndroidJniObject handle, const char *name, const char *signature, Args&&... args)
-        {
-            static_assert(is_call_compatible<Sig...>::template with<Args...>::value, "incompatible call arguments");
-            const auto params = std::make_tuple(toCallArgument<Sig, Args>(std::forward<Args>(args))...);
-            doCall(handle, name, signature, params, std::index_sequence_for<Args...>{});
-        }
-
-        template <typename ParamT, std::size_t ...Index>
-        static void doCall(QAndroidJniObject handle, const char *name, const char *signature, const ParamT &params, std::index_sequence<Index...>)
-        {
-            handle.callMethod<void>(name, signature, toFinalCallArgument(std::get<Index>(params))...);
-        }
-    };
-
     template <typename RetT>
     struct invoker<RetT> {
         static typename Internal::call_return<RetT>::CallReturnT call(QAndroidJniObject handle, const char *name, const char *signature)
@@ -183,14 +166,6 @@ namespace Internal {
             } else {
                 return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature));
             }
-        }
-    };
-
-    template <>
-    struct invoker<void> {
-        static void call(QAndroidJniObject handle, const char *name, const char *signature)
-        {
-            handle.callMethod<void>(name, signature);
         }
     };
 }
