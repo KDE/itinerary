@@ -49,9 +49,16 @@ ColumnLayout {
         }
 
         QQC2.Label {
-            text: certificate.date.toLocaleDateString(Qt.locale(), Locale.ShortFormat)
+            readonly property int days: daysTo(certificate.date, new Date())
+            text: {
+                const formattedDate = certificate.date.toLocaleDateString(Qt.locale(), Locale.ShortFormat);
+                if (days > 0) {
+                    return i18np("%2 (%1 day ago)", "%2 (%1 days ago)", days, formattedDate);
+                }
+                return formattedDate;
+            }
             Kirigami.FormData.label: i18n("Date:")
-            color: daysTo(certificate.date, new Date()) >= 14 ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
+            color: days >= 14 ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
             font.bold: true
             visible: !isNaN(certificate.date.getTime())
         }
