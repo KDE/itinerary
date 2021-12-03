@@ -14,6 +14,7 @@ Dependencies:
     'frameworks/kholidays': '@stable'
     'frameworks/karchive': '@stable'
     'frameworks/prison': '@stable'
+    'frameworks/kunitconversion': '@stable'
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
     'pim/kpkpass': '@same'
@@ -24,6 +25,8 @@ Dependencies:
   'require':
     'frameworks/kdbusaddons': '@stable'
     'frameworks/qqc2-desktop-style': '@stable'
+    'frameworks/kcrash': '@stable'
+    'frameworks/kio': '@stable'
 
 - 'on': ['Linux']
   'require':
