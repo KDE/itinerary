@@ -152,7 +152,7 @@ private Q_SLOTS:
         QCOMPARE(QAndroidJniObject::m_staticProtocol[0], QLatin1String("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
         QCOMPARE(QAndroidJniObject::m_staticProtocol[1], QLatin1String("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
         QCOMPARE(QAndroidJniObject::m_staticProtocol[2], QLatin1String("callStaticMethod: android/content/Intent retNoArg ()J ()"));
-        QCOMPARE(o.protocol().at(0), QLatin1String("android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
+        QCOMPARE(o.protocol().at(0), QLatin1String("callStaticObjectMethod: android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
 #endif
     }
 };
