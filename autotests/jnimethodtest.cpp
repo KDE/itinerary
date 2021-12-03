@@ -29,6 +29,11 @@ public:
     JNI_PROPERTY(java::lang::String, name)
 
     inline QAndroidJniObject handle() const { return m_handle; }
+
+    JNI_STATIC_METHOD(void, noRetNoArg)
+    JNI_STATIC_METHOD(jlong, retNoArg)
+    JNI_STATIC_METHOD(void, noRetArg, java::lang::String)
+    JNI_STATIC_METHOD(android::content::Intent, retArg, bool)
 private:
     QAndroidJniObject m_handle;
 };
@@ -130,6 +135,24 @@ private Q_SLOTS:
         s = obj.getStringList();
         obj.setFlags(nullptr);
 #endif
+#endif
+    }
+
+    void testStaticCalls()
+    {
+#ifndef Q_OS_ANDROID
+        QAndroidJniObject::m_staticProtocol.clear();
+
+        TestClass::noRetNoArg();
+        TestClass::noRetArg(QStringLiteral("test"));
+        TestClass::retNoArg();
+        QAndroidJniObject o = TestClass::retArg(true);
+
+        QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 3);
+        QCOMPARE(QAndroidJniObject::m_staticProtocol[0], QLatin1String("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
+        QCOMPARE(QAndroidJniObject::m_staticProtocol[1], QLatin1String("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
+        QCOMPARE(QAndroidJniObject::m_staticProtocol[2], QLatin1String("callStaticMethod: android/content/Intent retNoArg ()J ()"));
+        QCOMPARE(o.protocol().at(0), QLatin1String("android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
 #endif
     }
 };

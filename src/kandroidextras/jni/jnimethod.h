@@ -168,6 +168,40 @@ namespace Internal {
             }
         }
     };
+
+    // static call wrapper
+    template <typename RetT, typename ...Sig>
+    struct static_invoker {
+        template <typename ...Args>
+        static typename Internal::call_return<RetT>::CallReturnT call(const char *className, const char *name, const char *signature, Args&&... args)
+        {
+            static_assert(is_call_compatible<Sig...>::template with<Args...>::value, "incompatible call arguments");
+            const auto params = std::make_tuple(toCallArgument<Sig, Args>(std::forward<Args>(args))...);
+            return doCall(className, name, signature, params, std::index_sequence_for<Args...>{});
+        }
+
+        template <typename ParamT, std::size_t ...Index>
+        static typename Internal::call_return<RetT>::CallReturnT doCall(const char *className, const char *name, const char *signature, const ParamT &params, std::index_sequence<Index...>)
+        {
+            if constexpr (Jni::is_basic_type<RetT>::value) {
+                return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature, toFinalCallArgument(std::get<Index>(params))...);
+            } else {
+                return Internal::call_return<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature, toFinalCallArgument(std::get<Index>(params))...));
+            }
+        }
+    };
+
+    template <typename RetT>
+    struct static_invoker<RetT> {
+        static typename Internal::call_return<RetT>::CallReturnT call(const char *className, const char *name, const char *signature)
+        {
+            if constexpr (Jni::is_basic_type<RetT>::value) {
+                return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature);
+            } else {
+                return Internal::call_return<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature));
+            }
+        }
+    };
 }
 ///@endcond
 
@@ -202,6 +236,38 @@ template <typename ...Args> \
 inline KAndroidExtras::Internal::call_return<RetT>::CallReturnT Name(Args&&... args) const { \
     using namespace KAndroidExtras; \
     return Internal::invoker<RetT, ## __VA_ARGS__>::call(handle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
+}
+
+/**
+ * Wrap a JNI static method call.
+ * This will add a static method named @p name to the current class. Argument types are checked at compile time,
+ * with the following inputs being accepted:
+ * - basic types have to match exactly
+ * - non-basic types can be either passed as @c QAndroidJniObject instance or with a type that has an
+ *   conversion registered with @c JNI_DECLARE_CONVERTER.
+ *
+ * The return type of the method is determined as follows:
+ * - basic types are returned directly
+ * - non-basic types without a registered type conversion are returned as @c QAndroidJniObject.
+ * - non-basic types with a registered type conversion are returned in a wrapper class that can
+ *   be implicitly converted either to the destination type of the conversion, or a @c QAndroidJniObject.
+ *   This allows to avoid type conversion when chaining calls for example, it however needs additional
+ *   care when used in combination with automatic type deduction.
+ * - array return types also result in a wrapper class that can be implicitly converted to a sequential
+ *   container or a @p QAndroidJniObject representing the JNI array.
+ *
+ * Thie macro can only be placed in classes having @c JNI_OBJECT macro.
+ *
+ * @param RetT The return type. Must either be a basic type or a type declared with @c JNI_TYPE
+ * @param Name The name of the method. Must match the JNI method to be called exactly.
+ * @param Args A list or argument types (can be empty). Must either be basic types or types declared
+ *        with @c JNI_TYPE.
+ */
+#define JNI_STATIC_METHOD(RetT, Name, ...) \
+template <typename ...Args> \
+static inline KAndroidExtras::Internal::call_return<RetT>::CallReturnT Name(Args&&... args) { \
+    using namespace KAndroidExtras; \
+    return Internal::static_invoker<RetT, ## __VA_ARGS__>::call(Jni::typeName<_jni_ThisType>(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
 }
 
 }
