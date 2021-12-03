@@ -104,7 +104,7 @@ int HealthCertificateManager::rowCount(const QModelIndex& parent) const
 
 QVariant HealthCertificateManager::data(const QModelIndex &index, int role) const
 {
-    if (!checkIndex(index)) {
+    if (!checkIndex(index) || index.row() < 0) {
         return {};
     }
 
