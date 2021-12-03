@@ -9,6 +9,7 @@
 
 #include "jnicommon.h"
 
+#include <jni.h>
 #include <cstdint>
 #include <utility>
 
@@ -71,7 +72,7 @@ template <> struct JniSignature<uint8_t> { constexpr inline auto operator()() co
 template <> struct JniSignature<char> { constexpr inline auto operator()() const { return StaticString<'C'>(); } };
 template <> struct JniSignature<short> { constexpr inline auto operator()() const { return StaticString<'S'>(); } };
 template <> struct JniSignature<int> { constexpr inline auto operator()() const { return StaticString<'I'>(); } };
-template <> struct JniSignature<long> { constexpr inline auto operator()() const { return StaticString<'J'>(); } };
+template <> struct JniSignature<jlong> { constexpr inline auto operator()() const { return StaticString<'J'>(); } };
 template <> struct JniSignature<float> { constexpr inline auto operator()() const { return StaticString<'F'>(); } };
 template <> struct JniSignature<double> { constexpr inline auto operator()() const { return StaticString<'D'>(); } };
 template <> struct JniSignature<void> { constexpr inline auto operator()() const { return StaticString<'V'>(); } };

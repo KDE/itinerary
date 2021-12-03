@@ -90,7 +90,7 @@ static QString tzAbbreviation(const QDateTime &dt)
     // the QTimeZone backend implementation on Android isn't as complete as the desktop ones, so we need to do this ourselves here
     // eventually, this should be upstreamed to Qt
     auto abbr = QAndroidJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone", "abbreviation",
-                    Jni::signature<java::lang::String(java::lang::String, long, java::util::Locale, bool)>(),
+                    Jni::signature<java::lang::String(java::lang::String, jlong, java::util::Locale, bool)>(),
                     QAndroidJniObject::fromString(QString::fromUtf8(tz.id())).object(), dt.toMSecsSinceEpoch(),
                     KAndroidExtras::Locale::current().object(), tz.isDaylightTime(dt)).toString();
 

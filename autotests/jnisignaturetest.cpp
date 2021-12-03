@@ -29,6 +29,8 @@ private Q_SLOTS:
         // Jni::signature<java::lang::String[]()>() would be invalid C++, so we need alternatives for array returns
         QCOMPARE((const char*)Jni::signature<java::lang::String*()>(), "()[Ljava/lang/String;");
         QCOMPARE((const char*)Jni::signature<Jni::Array<java::lang::String>()>(), "()[Ljava/lang/String;");
+
+        QCOMPARE((const char*)Jni::signature<jlong()>(), "()J");
     }
 
     void testTypeName()
