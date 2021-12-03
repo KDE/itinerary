@@ -191,7 +191,10 @@ bool HealthCertificateManager::certLessThan(const CertData &lhs, const CertData 
     if (lhsDt == rhsDt) {
         return lhs.name < rhs.name;
     }
-    return lhsDt > rhsDt;
+    if (!lhsDt.isValid()) {
+        return false;
+    }
+    return !rhsDt.isValid() || lhsDt > rhsDt;
 #else
     return lhs.name < rhs.name;
 #endif
