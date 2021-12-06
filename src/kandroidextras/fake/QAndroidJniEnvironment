@@ -12,10 +12,11 @@
 class QAndroidJniEnvironment
 {
 public:
+    inline operator JNIEnv*() const { return &m_env; }
     inline JNIEnv* operator->() { return &m_env; }
 
 private:
-    JNIEnv m_env;
+    mutable JNIEnv m_env;
 };
 
 #endif

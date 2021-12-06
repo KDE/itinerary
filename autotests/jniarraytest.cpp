@@ -34,6 +34,10 @@ private Q_SLOTS:
         const auto a2 = Jni::fromArray<QStringList>(array);
         QCOMPARE(a2.size(), 2);
         QCOMPARE(a2, QStringList({ QStringLiteral("ctor: 0"), QStringLiteral("ctor: 1") }));
+
+        JNIEnv::m_arrayLength = 4;
+        const auto a3 = Jni::fromArray<std::vector<int>>(array);
+        QCOMPARE(a3.size(), 4);
 #endif
     }
 };

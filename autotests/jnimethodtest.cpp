@@ -25,6 +25,7 @@ public:
     JNI_METHOD(void, startIntent, android::content::Intent)
     JNI_METHOD(android::content::Intent, getIntent)
     JNI_METHOD(Jni::Array<java::lang::String>, getStringList)
+    JNI_METHOD(Jni::Array<jshort>, getShortList)
 
     JNI_PROPERTY(java::lang::String, name)
 
@@ -101,11 +102,12 @@ private Q_SLOTS:
         j = obj.getStringList();
         QStringList l = obj.getStringList();
         std::vector<QString> l2 = obj.getStringList();
+        std::vector<jshort> l3 = obj.getShortList();
 
         // nullptr arguments
         obj.startIntent(nullptr);
 
-        QCOMPARE(obj.handle().protocol().size(), 21);
+        QCOMPARE(obj.handle().protocol().size(), 22);
         QCOMPARE(obj.handle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.handle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -127,7 +129,8 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[17], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[18], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[19], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
-        QCOMPARE(obj.handle().protocol()[20], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
+        QCOMPARE(obj.handle().protocol()[20], QLatin1String("callObjectMethod: getShortList ()[S ()"));
+        QCOMPARE(obj.handle().protocol()[21], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);
