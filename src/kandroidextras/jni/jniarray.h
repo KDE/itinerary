@@ -63,8 +63,8 @@ struct FromArray<Container, QAndroidJniObject, false>
     }
 };
 
-template <typename Container>
-struct FromArray<Container, QString, false>
+template <typename Container, typename Value>
+struct FromArray<Container, Value, false>
 {
     inline auto operator()(const QAndroidJniObject &array) const
     {
@@ -77,7 +77,7 @@ struct FromArray<Container, QString, false>
         Container r;
         r.reserve(size);
         for (auto i = 0; i < size; ++i) {
-            r.push_back(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(a, i)).toString());
+            r.push_back(Jni::reverse_converter<Value>::type::convert(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(a, i))));
         }
         return r;
     }
@@ -113,7 +113,10 @@ struct FromArray<Container, Value, true>
 
 namespace Jni {
     /** Convert a JNI array to a C++ container.
-     *  Container value types can be any of QAndroidJniObject, QString or a basic JNI type.
+     *  Container value types can be any of
+     *  - QAndroidJniObject
+     *  - a basic JNI type
+     *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
      */
     template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_basic_type<typename Container::value_type>::value> fromArray = {};
 }

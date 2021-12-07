@@ -6,6 +6,8 @@
 
 #include <KAndroidExtras/JniArray>
 #include <KAndroidExtras/JniTypeTraits>
+#include <KAndroidExtras/JavaTypes>
+#include <KAndroidExtras/Uri>
 
 #include <QtTest/qtest.h>
 
@@ -38,6 +40,10 @@ private Q_SLOTS:
         JNIEnv::m_arrayLength = 4;
         const auto a3 = Jni::fromArray<std::vector<int>>(array);
         QCOMPARE(a3.size(), 4);
+
+        JNIEnv::m_arrayLength = 1;
+        const auto a4 = Jni::fromArray<QVector<QUrl>>(array);
+        QCOMPARE(a4.size(), 1);
 #endif
     }
 };
