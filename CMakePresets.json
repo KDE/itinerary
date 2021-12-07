@@ -1,5 +1,5 @@
 {
-    "version": 2,
+    "version": 3,
     "configurePresets": [
         {
             "name": "dev",
@@ -8,8 +8,33 @@
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF5}"
+        },
+        {
+            "name": "dev-qt6",
+            "displayName": "Build against qt6",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-qt6",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_WITH_QT6": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF6}"
+        },
+        {
+            "name": "dev-disable-deprecated",
+            "displayName": "Build as without deprecated methods",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-disable-deprecated",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_FLAGS_INIT": "-DQT_DISABLE_DEPRECATED_BEFORE=0x060000 -DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000"
+            },
+	    "installDir": "$env{KF5}"
         },
         {
             "name": "asan",
@@ -19,8 +44,48 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "ECM_ENABLE_SANITIZERS" : "'address;undefined'",
-		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF5}"
+        },
+        {
+            "name": "pch",
+            "displayName": "Build with PCH support.",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-pch",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+		"COMPILE_WITH_CMAKE_PCH_SUPPORT": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF5}"
+        },
+        {
+            "name": "dev-clang",
+            "displayName": "dev-clang",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-clang",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "environment": {
+                "CXX": "clang++",
+                "CCACHE_DISABLE": "ON"
+            },
+            "installDir": "$env{KF5}"
+        },
+        {
+            "name": "unity",
+            "displayName": "Build with CMake unity support.",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-unity",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "USE_UNITY_CMAKE_SUPPORT": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF5}"
         },
         {
             "name": "release",
@@ -29,7 +94,8 @@
             "binaryDir": "${sourceDir}/build-release",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
-            }
+            },
+            "installDir": "$env{KF5}"
         },
         {
             "name": "profile",
@@ -38,8 +104,9 @@
             "binaryDir": "${sourceDir}/build-profile",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-		"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "installDir": "$env{KF5}"
         },
         {
             "name": "clazy",
@@ -52,7 +119,8 @@
             "environment": {
                 "CXX": "clazy",
                 "CCACHE_DISABLE": "ON"
-            }
+            },
+            "installDir": "$env{KF5}"
         }
 
     ],
@@ -62,6 +130,34 @@
             "configurePreset": "dev"
         },
         {
+            "name": "dev-qt6",
+            "configurePreset": "dev-qt6"
+        },
+        {
+            "name": "dev-disable-deprecated",
+            "configurePreset": "dev-disable-deprecated"
+        },
+        {
+            "name": "pch",
+            "configurePreset": "pch"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        },
+        {
+            "name": "dev-clang",
+            "configurePreset": "dev-clang"
+        },
+        {
+            "name": "asan",
+            "configurePreset": "asan"
+        },
+        {
+            "name": "unity",
+            "configurePreset": "unity"
+        },
+        {
             "name": "clazy",
             "configurePreset": "clazy",
             "environment": {
@@ -69,6 +165,19 @@
                 "CCACHE_DISABLE" : "ON"
             }
         }
+    ],
+    "testPresets": [
+    { 
+      "name": "dev",
+      "configurePreset": "dev",
+      "output": {"outputOnFailure": true},
+      "execution": {"noTestsAction": "error", "stopOnFailure": false}
+    },
+    { 
+      "name": "asan",
+      "configurePreset": "asan",
+      "output": {"outputOnFailure": true},
+      "execution": {"noTestsAction": "error", "stopOnFailure": true}
+    }
     ]
-
 }
