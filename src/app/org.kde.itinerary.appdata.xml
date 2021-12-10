@@ -610,7 +610,25 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.12.0" date="2021-12-09"/>
+    <release version="21.12.0" date="2021-12-09">
+      <description>
+        <ul>
+          <li>New health certificate user interface.</li>
+          <li>New navigation maneuver details page for individual transport or walking journey sections.</li>
+          <li>Smarter transfer auto-selection.</li>
+          <li>Live disruption information and journey details for bus trips.</li>
+          <li>Ability to shorten train and bus trips.</li>
+          <li>Additional individual transport modes for transfers.</li>
+          <li>Improved platform identification for trams and subways.</li>
+          <li>Easier accessible barcode scan mode, and support for PDF417 ticket barcodes.</li>
+          <li>Improved data import feedback.</li>
+          <li>Fixed pinch zoom on station maps.</li>
+          <li>Improved Apple Wallet pass rendering.</li>
+          <li>Warn about rental vehicles with limited remaining range.</li>
+          <li>Numerous improvements to travel document data extraction.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.08.3" date="2021-11-04">
       <description>
         <ul>
@@ -641,6 +659,18 @@
         <ul>
           <li>Properly import mail attachments shared from FairEmail.</li>
           <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.08.0" date="2021-08-12">
+      <description>
+        <ul>
+          <li>Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
+          <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
+          <li>Support for local German public transport operators INVG, RSAG, VRT and VSN.</li>
+          <li>Improved travel document extractor.</li>
+          <li>Various fixes to the page flow.</li>
+          <li>Entire trip groups can now be deleted.</li>
         </ul>
       </description>
     </release>
