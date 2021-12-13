@@ -562,6 +562,7 @@ int LiveDataManager::nextPollTime() const
     return t;
 }
 
+static constexpr const int MAX_POLL_INTERVAL = 7 * 24 * 3600;
 struct {
     int distance; // secs
     int pollInterval; // secs
@@ -570,6 +571,7 @@ struct {
     { 4 * 3600, 15 * 60 }, // for <4h we poll every 15 minutes
     { 24 * 3600, 3600 }, // for <1d we poll once per hour
     { 4 * 24 * 3600, 24 * 3600 }, // for <4d we poll once per day
+    { 60 * 24 * 3600, MAX_POLL_INTERVAL }, // anything before we should at least do one poll to get full details right away
 };
 
 int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
@@ -604,7 +606,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
         }
     }
     const int lastPollDist = !lastRelevantPoll.isValid()
-        ? (24 * 3600) // no poll yet == long time ago
+        ? MAX_POLL_INTERVAL // no poll yet == long time ago
         : lastRelevantPoll.secsTo(now);
     return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs
 }
