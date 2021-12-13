@@ -7,6 +7,7 @@
 #include "locationinformation.h"
 
 #include <KCountry>
+#include <KLazyLocalizedString>
 #include <KLocalizedString>
 
 #include <QDebug>
@@ -85,24 +86,24 @@ LocationInformation::PowerPlugCompatibility LocationInformation::powerPlugCompat
 
 struct plugTypeName {
     KnowledgeDb::PowerPlugType type;
-    const char *name;
+    const KLazyLocalizedString name;
 }
 
 static const plug_name_table[] = {
-    { KnowledgeDb::TypeA, I18N_NOOP("Type A") },
-    { KnowledgeDb::TypeB, I18N_NOOP("Type B") },
-    { KnowledgeDb::TypeC, I18N_NOOP("Europlug") },
-    { KnowledgeDb::TypeD, I18N_NOOP("Type D") },
-    { KnowledgeDb::TypeE, I18N_NOOP("Type E") },
-    { KnowledgeDb::TypeF, I18N_NOOP("Schuko") },
-    { KnowledgeDb::TypeG, I18N_NOOP("Type G") },
-    { KnowledgeDb::TypeH, I18N_NOOP("Type H") },
-    { KnowledgeDb::TypeI, I18N_NOOP("Type I") },
-    { KnowledgeDb::TypeJ, I18N_NOOP("Type J") },
-    { KnowledgeDb::TypeK, I18N_NOOP("Type K") },
-    { KnowledgeDb::TypeL, I18N_NOOP("Type L") },
-    { KnowledgeDb::TypeM, I18N_NOOP("Type M") },
-    { KnowledgeDb::TypeN, I18N_NOOP("Type N") },
+    { KnowledgeDb::TypeA, kli18n("Type A") },
+    { KnowledgeDb::TypeB, kli18n("Type B") },
+    { KnowledgeDb::TypeC, kli18n("Europlug") },
+    { KnowledgeDb::TypeD, kli18n("Type D") },
+    { KnowledgeDb::TypeE, kli18n("Type E") },
+    { KnowledgeDb::TypeF, kli18n("Schuko") },
+    { KnowledgeDb::TypeG, kli18n("Type G") },
+    { KnowledgeDb::TypeH, kli18n("Type H") },
+    { KnowledgeDb::TypeI, kli18n("Type I") },
+    { KnowledgeDb::TypeJ, kli18n("Type J") },
+    { KnowledgeDb::TypeK, kli18n("Type K") },
+    { KnowledgeDb::TypeL, kli18n("Type L") },
+    { KnowledgeDb::TypeM, kli18n("Type M") },
+    { KnowledgeDb::TypeN, kli18n("Type N") },
 };
 
 static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
@@ -110,7 +111,7 @@ static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
     QStringList l;
     for (const auto &elem : plug_name_table) {
         if (type & elem.type) {
-            l.push_back(i18n(elem.name));
+            l.push_back(KLocalizedString(elem.name).toString());
         }
     }
     return l.join(QLatin1String(", "));
