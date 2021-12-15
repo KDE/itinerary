@@ -30,7 +30,7 @@ Kirigami.ScrollablePage {
             onClicked: {
                 Settings.developmentMode = false;
                 showPassiveNotification("Development mode disabled");
-                applicationWindow().pageStack.pop();
+                applicationWindow().pageStack.goBack();
             }
         }
 
