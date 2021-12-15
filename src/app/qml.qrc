@@ -46,6 +46,7 @@
         <file>IndoorMapPlatformSheet.qml</file>
         <file>JourneyDelegateHeader.qml</file>
         <file>JourneyPathPage.qml</file>
+        <file>JourneyRequestPage.qml</file>
         <file>JourneyQueryPage.qml</file>
         <file>JourneySectionDelegate.qml</file>
         <file>JourneySectionPage.qml</file>
@@ -64,6 +65,7 @@
         <file>SettingsPage.qml</file>
         <file>StatisticsDelegate.qml</file>
         <file>StatisticsPage.qml</file>
+        <file>StopPickerPage.qml</file>
         <file>TicketTokenDelegate.qml</file>
         <file>TimeInput.qml</file>
         <file>TimelineDelegate.qml</file>

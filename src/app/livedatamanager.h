@@ -57,7 +57,7 @@ public:
     /** Sets journey data for a given reservation.
      *  Used to retain live data from alternative journey selections for example.
      */
-    void setJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
+    Q_INVOKABLE void setJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
 
     /** Import a single LiveData element.
      *  Used by Importer.

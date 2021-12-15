@@ -55,7 +55,7 @@ public:
     static T updateToLocation(const T &place, const KPublicTransport::Location &loc);
 
     /** Creates a reservation from the given journey section. */
-    static QVariant reservationFromJourneySection(const KPublicTransport::JourneySection &section);
+    Q_INVOKABLE static QVariant reservationFromJourneySection(const KPublicTransport::JourneySection &section);
 
     /** Update a reservation with a KPublictTransport::JourneySection.
      *  The journey section overwrites all corresponding properties of the reservation.
@@ -114,6 +114,9 @@ public:
 
     /** Convert KPublicTransport mode enum to one for KOSMIndoorMap */
     Q_INVOKABLE static KOSMIndoorMap::Platform::Mode lineModeToPlatformMode(KPublicTransport::Line::Mode lineMode);
+
+    /** yay for JavaScript! */
+    Q_INVOKABLE static KPublicTransport::Location copyLocation(const KPublicTransport::Location &loc);
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);

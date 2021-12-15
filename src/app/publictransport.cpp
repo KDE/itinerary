@@ -550,4 +550,9 @@ KOSMIndoorMap::Platform::Mode PublicTransport::lineModeToPlatformMode(KPublicTra
     return KOSMIndoorMap::Platform::Unknown;
 }
 
+KPublicTransport::Location PublicTransport::copyLocation(const KPublicTransport::Location &loc)
+{
+    return loc;
+}
+
 #include "moc_publictransport.cpp"
