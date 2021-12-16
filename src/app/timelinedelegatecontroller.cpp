@@ -15,6 +15,7 @@
 #include "transfer.h"
 #include "transfermanager.h"
 
+#include <KItinerary/BusTrip>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
@@ -551,6 +552,53 @@ bool TimelineDelegateController::isCanceled() const
     return JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
 }
 
+static void mapArgumentsForPt(QJSValue &args, QLatin1String prefix, const KPublicTransport::Stopover &stop)
+{
+    const auto platformName = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
+    if (!platformName.isEmpty()) {
+        args.setProperty(prefix + QLatin1String("PlatformName"), platformName);
+    }
+
+    if (stop.route().line().mode() != KPublicTransport::Line::Unknown) {
+        args.setProperty(prefix + QLatin1String("PlatformMode"), PublicTransport::lineModeToPlatformMode(stop.route().line().mode()));
+    }
+
+    const auto ifopt = stop.stopPoint().identifier(QStringLiteral("ifopt"));
+    if (!ifopt.isEmpty()) {
+        args.setProperty(prefix + QLatin1String("PlatformIfopt"), ifopt);
+    }
+}
+
+static void mapArrivalArgumesForRes(QJSValue &args, const QVariant &res)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        args.setProperty(QStringLiteral("arrivalPlatformName"), trip.arrivalPlatform());
+        args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Rail);
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        args.setProperty(QStringLiteral("arrivalPlatformName"), trip.arrivalPlatform());
+        args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Bus);
+    }
+    // TODO there is no arrival gate property (yet)
+}
+
+static void mapDepartureArgumentsForRes(QJSValue &args, const QVariant &res)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        const auto trip = res.value<TrainReservation>().reservationFor().value<TrainTrip>();
+        args.setProperty(QStringLiteral("departurePlatformName"), trip.departurePlatform());
+        args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Rail);
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        const auto trip = res.value<BusReservation>().reservationFor().value<BusTrip>();
+        args.setProperty(QStringLiteral("departurePlatformName"), trip.departurePlatform());
+        args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Bus);
+    } else if (JsonLd::isA<FlightReservation>(res)) {
+        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
+        args.setProperty(QStringLiteral("departureGateName"), flight.departureGate());
+    }
+}
+
 QJSValue TimelineDelegateController::arrivalMapArguments() const
 {
     const auto engine = qjsEngine(this);
@@ -569,15 +617,9 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(arrLoc));
 
     // arrival location
+    mapArrivalArgumesForRes(args, res);
     const auto arr = arrival();
-    auto arrPlatform = arr.hasExpectedPlatform() ? arr.expectedPlatform() : arr.scheduledPlatform();
-    if (arrPlatform.isEmpty() && JsonLd::isA<TrainReservation>(res)) {
-        arrPlatform = res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalPlatform();
-    }
-    args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
-    args.setProperty(QStringLiteral("arrivalPlatformMode"), KOSMIndoorMap::Platform::Rail);
-    args.setProperty(QStringLiteral("arrivalPlatformIfopt"), arr.stopPoint().identifier(QStringLiteral("ifopt")));
-    // there is no arrival gate property (yet)
+    mapArgumentsForPt(args, QLatin1String("arrival"), arr);
 
     // arrival time
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
@@ -592,10 +634,8 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     // look for departure for a following transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
-        const auto dep = PublicTransport::firstTransportSection(transfer.journey());
-        args.setProperty(QStringLiteral("departurePlatformName"), dep.hasExpectedDeparturePlatform() ? dep.expectedDeparturePlatform() : dep.scheduledDeparturePlatform());
-        args.setProperty(QStringLiteral("departurePlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
-        args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.from().identifier(QStringLiteral("ifopt")));
+        const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
+        mapArgumentsForPt(args, QLatin1String("departure"), dep);
         args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
@@ -606,17 +646,9 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     if (!isLayover(res, nextRes)) {
         return args;
     }
+    mapDepartureArgumentsForRes(args, nextRes);
     const auto dep = m_liveDataMgr->departure(nextResId);
-    auto depPlatform = dep.hasExpectedPlatform() ? dep.expectedPlatform() : dep.scheduledPlatform();
-    if (depPlatform.isEmpty() && JsonLd::isA<TrainReservation>(nextRes)) {
-        depPlatform = nextRes.value<TrainReservation>().reservationFor().value<TrainTrip>().departurePlatform();
-    }
-    args.setProperty(QStringLiteral("departurePlatformName"), depPlatform);
-    args.setProperty(QStringLiteral("departurePlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
-    args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
-    if (JsonLd::isA<FlightReservation>(nextRes)) {
-        args.setProperty(QStringLiteral("departureGateName"), nextRes.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
-    }
+    mapArgumentsForPt(args, QLatin1String("departure"), dep);
 
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
     if (!depTime.isValid()) {
@@ -645,17 +677,9 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(depLoc));
 
     // departure location
+    mapDepartureArgumentsForRes(args, res);
     const auto dep = departure();
-    auto depPlatform = dep.hasExpectedPlatform() ? dep.expectedPlatform() : dep.scheduledPlatform();
-    if (depPlatform.isEmpty() && JsonLd::isA<TrainReservation>(res)) {
-        depPlatform = res.value<TrainReservation>().reservationFor().value<TrainTrip>().departurePlatform();
-    }
-    args.setProperty(QStringLiteral("departurePlatformName"), depPlatform);
-    args.setProperty(QStringLiteral("departurePlatformMode"), KOSMIndoorMap::Platform::Rail);
-    args.setProperty(QStringLiteral("departurePlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
-    if (JsonLd::isA<FlightReservation>(res)) {
-        args.setProperty(QStringLiteral("departureGateName"), res.value<FlightReservation>().reservationFor().value<Flight>().departureGate());
-    }
+    mapArgumentsForPt(args, QLatin1String("departure"), dep);
 
     // departure time
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
@@ -670,10 +694,8 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     // look for arrival for a preceding transfer
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
-        const auto arr = PublicTransport::lastTransportSection(transfer.journey());
-        args.setProperty(QStringLiteral("arrivalPlatformName"), arr.hasExpectedArrivalPlatform() ? arr.expectedArrivalPlatform() : arr.scheduledArrivalPlatform());
-        args.setProperty(QStringLiteral("arrivalPlatformMode"), PublicTransport::lineModeToPlatformMode(arr.route().line().mode()));
-        args.setProperty(QStringLiteral("arrivalPlatformIfopt"), arr.to().identifier(QStringLiteral("ifopt")));
+        const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
+        mapArgumentsForPt(args, QLatin1String("arrival"), arr);
         args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }
@@ -684,15 +706,9 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     if (!isLayover(prevRes, res)) {
         return args;
     }
+    mapArrivalArgumesForRes(args, prevRes);
     const auto arr = m_liveDataMgr->arrival(prevResId);
-    auto arrPlatform = arr.hasExpectedPlatform() ? arr.expectedPlatform() : arr.scheduledPlatform();
-    if (arrPlatform.isEmpty() && JsonLd::isA<TrainReservation>(prevRes)) {
-        arrPlatform = prevRes.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalPlatform();
-    }
-    args.setProperty(QStringLiteral("arrivalPlatformName"), arrPlatform);
-    args.setProperty(QStringLiteral("arrivalPlatformMode"), PublicTransport::lineModeToPlatformMode(dep.route().line().mode()));
-    args.setProperty(QStringLiteral("arrivalPlatformIfopt"), dep.stopPoint().identifier(QStringLiteral("ifopt")));
-    // there is no arrival gate property (yet)
+    mapArgumentsForPt(args, QLatin1String("arrival"), arr);
 
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
     if (!arrTime.isValid()) {
