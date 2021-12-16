@@ -1,23 +1,26 @@
 /*
-    SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2019-2021 Volker Krause <vkrause@kde.org>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ScrollablePage {
-    property QtObject controller;
+    id: root
+
+    /** The journey selected by the user on this page. */
+    property var journey
+    /** The journey to query for. */
+    property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
 
-    id: root
-    title: i18n("Alternative Connections")
     contextualActions: [
         Kirigami.Action {
             text: i18n("Earlier")
@@ -36,7 +39,6 @@ Kirigami.ScrollablePage {
 
     JourneyQueryModel {
         id: journeyModel
-        request: controller.journeyRequest
     }
 
     SortFilterProxyModel {
@@ -74,40 +76,15 @@ Kirigami.ScrollablePage {
                     width: parent.width
                 }
                 QQC2.Button {
-                    text: i18n("Save")
+                    text: i18n("Select")
                     icon.name: "document-save";
                     visible: journeyView.currentIndex == index
-                    onClicked: {
-                        replaceWarningSheet.journey = journey
-                        replaceWarningSheet.sheetOpen = true
-                    }
+                    onClicked: root.journey = journey
                 }
             }
 
             onClicked: {
                 journeyView.currentIndex = index;
-            }
-        }
-    }
-
-    Kirigami.OverlaySheet {
-        id: replaceWarningSheet
-        property var journey
-
-        QQC2.Label {
-            text: i18n("Do you really want to replace your existing reservation with the newly selected journey?")
-            wrapMode: Text.WordWrap
-        }
-
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n("Replace")
-                icon.name: "edit-save"
-                onClicked: {
-                    controller.applyJourney(replaceWarningSheet.journey);
-                    applicationWindow().pageStack.pop();
-                }
             }
         }
     }

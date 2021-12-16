@@ -18,7 +18,7 @@ App.DetailsPage {
 
     Component {
         id: alternativePage
-        App.JourneyQueryPage {
+        App.AlternativeJourneyPage {
             controller: root.controller
             publicTransportManager: LiveDataManager.publicTransportManager
         }

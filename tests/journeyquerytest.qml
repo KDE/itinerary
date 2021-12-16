@@ -25,11 +25,6 @@ Kirigami.ApplicationWindow {
         allowInsecureBackends: true
     }
 
-    QtObject {
-        id: dummyController
-        property var journeyRequest: _request
-    }
-
     Component {
         id: journeySectionPage
         App.JourneySectionPage {}
@@ -42,7 +37,8 @@ Kirigami.ApplicationWindow {
     Component {
         id: jnyQueryPage
         App.JourneyQueryPage {
-            controller: dummyController
+            title: "Journey Query"
+            journeyRequest: _request
             publicTransportManager: ptMgr
         }
     }
