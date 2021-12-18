@@ -62,6 +62,9 @@ Kirigami.ScrollablePage {
             model: {
                 var countries = new Array();
                 for (const b of publicTransportManager.backends) {
+                    if (!publicTransportManager.isBackendEnabled(b.identifier)) {
+                        continue;
+                    }
                     for (const t of [CoverageArea.Realtime, CoverageArea.Regular, CoverageArea.Any]) {
                         for (const c of b.coverageArea(t).regions) {
                             if (c != 'UN' && c != 'EU') {
