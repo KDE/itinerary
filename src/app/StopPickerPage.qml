@@ -73,7 +73,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                return [...new Set(countries)].sort();
+                return [...new Set(countries)].sort((lhs, rhs) => { return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name); });
             }
             Layout.fillWidth: true
             readonly property var currentCountry: Country.fromAlpha2(currentValue)
