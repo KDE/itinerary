@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 text: i18n("Add train trip...")
-                iconName: i18n("list-add-symbolic")
+                iconName: "list-add-symbolic"
                 visible: Settings.developmentMode
                 onTriggered: applicationWindow().pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), { publicTransportManager: LiveDataManager.publicTransportManager })
             }
