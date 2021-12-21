@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/ki18n': '@stable'
     'frameworks/kcontacts': '@stable'
     'frameworks/kirigami': '@stable'
+    'frameworks/kitemmodels': '@stable'
     'frameworks/knotifications': '@stable'
     'frameworks/kholidays': '@stable'
     'frameworks/karchive': '@stable'
