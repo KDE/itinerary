@@ -14,6 +14,11 @@ import org.kde.kpublictransport 1.0
 Kirigami.ScrollablePage {
     id: root
     property var publicTransportManager
+    /**
+     * Initially selected country.
+     * If not specified the country from the current locale is used.
+     */
+    property string initialCountry: Qt.locale().name.match(/_([A-Z]{2})/)[1]
     property var location
 
     QQC2.ActionGroup { id: sortActionGroup }
@@ -85,9 +90,8 @@ Kirigami.ScrollablePage {
                 }
                 width: parent ? parent.width : undefined
             }
-            // TODO prefer previous itinerary location if known
             Component.onCompleted: {
-                countryCombo.currentIndex = countryCombo.indexOfValue(Qt.locale().name.match(/_([A-Z]{2})/)[1])
+                countryCombo.currentIndex = countryCombo.indexOfValue(root.initialCountry)
             }
         }
         Kirigami.SearchField {

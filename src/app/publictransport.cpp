@@ -63,14 +63,14 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
 
     if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
         loc.setName(KItinerary::LocationUtil::name(place));
-    } else {
-        const auto addr = KItinerary::LocationUtil::address(place);
-        loc.setStreetAddress(addr.streetAddress());
-        loc.setPostalCode(addr.postalCode());
-        loc.setLocality(addr.addressLocality());
-        loc.setRegion(addr.addressRegion());
-        loc.setCountry(addr.addressCountry());
     }
+
+    const auto addr = KItinerary::LocationUtil::address(place);
+    loc.setStreetAddress(addr.streetAddress());
+    loc.setPostalCode(addr.postalCode());
+    loc.setLocality(addr.addressLocality());
+    loc.setRegion(addr.addressRegion());
+    loc.setCountry(addr.addressCountry());
 
     const auto geo = KItinerary::LocationUtil::geo(place);
     loc.setCoordinate(geo.latitude(), geo.longitude());

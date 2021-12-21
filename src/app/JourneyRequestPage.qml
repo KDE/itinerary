@@ -16,6 +16,14 @@ Kirigami.Page {
     id: root
     property var publicTransportManager
 
+    /**
+     * Pre-selected country in the location pickers.
+     * If not specified the country from the current locale is used.
+     */
+    property string initialCountry
+    /** Pre-selected departure time. */
+    property date initialDateTime: new Date()
+
     property var departureStop
     property var arrivalStop
 
@@ -47,6 +55,7 @@ Kirigami.Page {
         StopPickerPage {
             title: i18nc("departure train station", "Select Departure Stop")
             publicTransportManager: root.publicTransportManager
+            initialCountry: root.initialCountry
             // force a deep copy, otherwise this breaks as soon as the other stop picker page is shown...
             onLocationChanged: root.departureStop = PublicTransport.copyLocation(location);
         }
@@ -56,6 +65,7 @@ Kirigami.Page {
         StopPickerPage {
             title: i18nc("arrival train station", "Select Arrival Stop")
             publicTransportManager: root.publicTransportManager
+            initialCountry: root.initialCountry
             onLocationChanged: root.arrivalStop = PublicTransport.copyLocation(location)
         }
     }
@@ -105,9 +115,11 @@ Kirigami.Page {
             Layout.fillWidth: true
             Addon.DateInput {
                 id: dateInput
+                selectedDate: root.initialDateTime
             }
             Addon.TimeInput {
                 id: timeInput
+                value: root.initialDateTime
             }
         }
     }

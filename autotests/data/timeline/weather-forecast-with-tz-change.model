@@ -164,6 +164,7 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",
@@ -253,6 +254,7 @@
             "floatingLocationType": "Reservation",
             "from": {
                 "@type": "Location",
+                "country": "FI",
                 "latitude": 60.315799713134766,
                 "longitude": 24.968599319458008,
                 "name": "Helsinki-Vantaa",
@@ -401,6 +403,7 @@
             "state": "Pending",
             "to": {
                 "@type": "Location",
+                "country": "FI",
                 "latitude": 60.315799713134766,
                 "longitude": 24.968599319458008,
                 "name": "Helsinki-Vantaa",
@@ -490,6 +493,7 @@
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
+                "country": "DE",
                 "latitude": 52.55379867553711,
                 "longitude": 13.29319953918457,
                 "name": "Tegel",

@@ -205,7 +205,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 
     const auto &elem = m_elements.at(index.row());
     switch (role) {
-        case SectionHeader:
+        case SectionHeaderRole:
             // see TimelineSectionDelegateController
             return elem.dt.date().toString(Qt::ISODate);
         case BatchIdRole:
@@ -257,6 +257,8 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
                 return elem.content();
             }
             break;
+        case StartDateTimeRole:
+            return elem.dt;
     }
     return {};
 }
@@ -264,7 +266,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
 QHash<int, QByteArray> TimelineModel::roleNames() const
 {
     auto names = QAbstractListModel::roleNames();
-    names.insert(SectionHeader, "sectionHeader");
+    names.insert(SectionHeaderRole, "sectionHeader");
     names.insert(BatchIdRole, "batchId");
     names.insert(ElementTypeRole, "type");
     names.insert(TodayEmptyRole, "isTodayEmpty");

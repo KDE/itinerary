@@ -31,7 +31,7 @@ class TimelineModel : public QAbstractListModel
 
 public:
     enum Role {
-        SectionHeader = Qt::UserRole + 1,
+        SectionHeaderRole = Qt::UserRole + 1,
         BatchIdRole,
         ElementTypeRole,
         TodayEmptyRole,
@@ -43,7 +43,9 @@ public:
         TripGroupIdRole,
         TripGroupRole,
         TransferRole,
+        StartDateTimeRole,
     };
+    Q_ENUM(Role)
 
     explicit TimelineModel(QObject *parent = nullptr);
     ~TimelineModel() override;
@@ -65,7 +67,7 @@ public:
     QString currentBatchId() const;
 
     /** The location we are in at the given date/time. */
-    QVariant locationAtTime(const QDateTime &dt) const;
+    Q_INVOKABLE QVariant locationAtTime(const QDateTime &dt) const;
 
     // for unit testing
     void setCurrentDateTime(const QDateTime &dt);
