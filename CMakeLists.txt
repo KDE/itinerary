@@ -62,6 +62,7 @@ set_package_properties(KHealthCertificate PROPERTIES TYPE OPTIONAL PURPOSE "Need
 include(ECMQMLModules)
 ecm_find_qmlmodule(QtLocation 5.11)
 ecm_find_qmlmodule(QtPositioning 5.11)
+ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.prison 1.0)
 ecm_find_qmlmodule(org.kde.kosmindoormap 1.0)
 ecm_find_qmlmodule(org.kde.kopeninghours 1.0)
