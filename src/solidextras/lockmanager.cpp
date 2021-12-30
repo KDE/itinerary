@@ -11,7 +11,7 @@
 #if defined(Q_OS_ANDROID)
 #include "androidlockbackend.h"
 #elif defined(Q_OS_LINUX)
-#include "solidlockbackend.h"
+#include "freedesktoplockbackend.h"
 #endif
 
 LockManager::LockManager(QObject *parent)
@@ -21,7 +21,7 @@ LockManager::LockManager(QObject *parent)
 #if defined(Q_OS_ANDROID)
     m_backend = new AndroidLockBackend(this);
 #elif defined(Q_OS_LINUX)
-    m_backend = new SolidLockBackend(this);
+    m_backend = new FreedesktopLockBackend(this);
 #endif
 }
 

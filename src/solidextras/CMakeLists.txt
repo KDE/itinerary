@@ -19,7 +19,7 @@ if (ANDROID)
 else()
     list(APPEND solidextras_srcs
         solidbrightnessbackend.cpp
-        solidlockbackend.cpp
+        freedesktoplockbackend.cpp
         networkstatus_dbus.cpp
     )
     qt_add_dbus_interface(solidextras_srcs org.kde.Solid.PowerManagement.Actions.BrightnessControl.xml brightnesscontroldbusinterface)

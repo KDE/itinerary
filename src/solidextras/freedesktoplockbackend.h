@@ -12,11 +12,11 @@
 
 class OrgFreedesktopScreenSaverInterface;
 
-class SolidLockBackend : public LockBackend
+class FreedesktopLockBackend : public LockBackend
 {
 
 public:
-    explicit SolidLockBackend(QObject *parent = nullptr);
+    explicit FreedesktopLockBackend(QObject *parent = nullptr);
 
     void setInhibitionOff() override;
     void setInhibitionOn(const QString &explanation) override;
