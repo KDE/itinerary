@@ -622,6 +622,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="21.12.1" date="2022-01-06"/>
     <release version="21.12.0" date="2021-12-09">
       <description>
         <ul>
@@ -663,26 +664,6 @@
           <li>Show escalators to/from intermediate floor levels correctly in the indoor map. </li>
           <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
           <li>Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.08.1" date="2021-09-02">
-      <description>
-        <ul>
-          <li>Properly import mail attachments shared from FairEmail.</li>
-          <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.08.0" date="2021-08-12">
-      <description>
-        <ul>
-          <li>Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
-          <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
-          <li>Support for local German public transport operators INVG, RSAG, VRT and VSN.</li>
-          <li>Improved travel document extractor.</li>
-          <li>Various fixes to the page flow.</li>
-          <li>Entire trip groups can now be deleted.</li>
         </ul>
       </description>
     </release>
