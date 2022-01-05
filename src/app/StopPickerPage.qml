@@ -61,9 +61,13 @@ Kirigami.ScrollablePage {
         }
     ]
     header: ColumnLayout {
+        spacing: Kirigami.Units.smallSpacing
         QQC2.ComboBox {
             id: countryCombo
-            spacing: Kirigami.Units.smallSpacing
+            Layout.topMargin: Kirigami.Units.smallSpacing
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.fillWidth: true
             model: {
                 var countries = new Array();
                 for (const b of publicTransportManager.backends) {
@@ -80,7 +84,6 @@ Kirigami.ScrollablePage {
                 }
                 return [...new Set(countries)].sort((lhs, rhs) => { return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name); });
             }
-            Layout.fillWidth: true
             readonly property var currentCountry: Country.fromAlpha2(currentValue)
             displayText: currentCountry.emojiFlag + ' ' + currentCountry.name
             delegate: QQC2.ItemDelegate {
@@ -96,6 +99,9 @@ Kirigami.ScrollablePage {
         }
         Kirigami.SearchField {
             id: queryTextField
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            Layout.bottomMargin: Kirigami.Units.smallSpacing
             Layout.fillWidth: true
             onAccepted: {
                 if (text !== "" && countryCombo.currentValue !== "") {
