@@ -9,7 +9,6 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
-#include "countrymodel.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
@@ -111,7 +110,6 @@ void registerApplicationTypes()
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
 
-    qmlRegisterType<CountryModel>("org.kde.itinerary", 1, 0, "CountryModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterType<LocationInformationDelegateController>("org.kde.itinerary", 1, 0, "LocationInformationDelegateController");
     qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel"); // TODO use this from kitemmodels?

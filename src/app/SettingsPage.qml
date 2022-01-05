@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import QtPositioning 5.11
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.i18n.localeData 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -28,10 +29,6 @@ Kirigami.ScrollablePage {
         FavoriteLocationPage {}
     }
 
-    CountryModel {
-        id: countryModel
-    }
-
     Kirigami.FormLayout {
         width: root.width
 
@@ -41,13 +38,12 @@ Kirigami.ScrollablePage {
             Kirigami.FormData.label: i18n("Home")
         }
 
-        QQC2.ComboBox {
+        App.CountryComboBox {
             Kirigami.FormData.label: i18n("Home Country")
             Layout.fillWidth: true
-            model: countryModel
-            textRole: "display"
-            currentIndex: countryModel.isoCodeToIndex(Settings.homeCountryIsoCode)
-            onActivated: Settings.homeCountryIsoCode = countryModel.isoCodeFromIndex(currentIndex)
+            model: Country.allCountries.map(c => c.alpha2)
+            initialCountry: Settings.homeCountryIsoCode
+            onActivated: Settings.homeCountryIsoCode = currentValue
         }
 
         QQC2.Button {

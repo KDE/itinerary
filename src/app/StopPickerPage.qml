@@ -10,6 +10,7 @@ import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kitemmodels 1.0
 import org.kde.i18n.localeData 1.0
 import org.kde.kpublictransport 1.0
+import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -62,7 +63,7 @@ Kirigami.ScrollablePage {
     ]
     header: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
-        QQC2.ComboBox {
+        App.CountryComboBox {
             id: countryCombo
             Layout.topMargin: Kirigami.Units.smallSpacing
             Layout.leftMargin: Kirigami.Units.smallSpacing
@@ -82,20 +83,9 @@ Kirigami.ScrollablePage {
                         }
                     }
                 }
-                return [...new Set(countries)].sort((lhs, rhs) => { return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name); });
+                return [...new Set(countries)];
             }
-            readonly property var currentCountry: Country.fromAlpha2(currentValue)
-            displayText: currentCountry.emojiFlag + ' ' + currentCountry.name
-            delegate: QQC2.ItemDelegate {
-                text: {
-                    const c = Country.fromAlpha2(modelData);
-                    return c.emojiFlag + ' ' + c.name;
-                }
-                width: parent ? parent.width : undefined
-            }
-            Component.onCompleted: {
-                countryCombo.currentIndex = countryCombo.indexOfValue(root.initialCountry)
-            }
+            initialCountry: root.initialCountry
         }
         Kirigami.SearchField {
             id: queryTextField

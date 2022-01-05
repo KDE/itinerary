@@ -10,6 +10,7 @@ import QtQuick.Controls 2.1 as QQC2
 import QtLocation 5.15 as QtLocation
 import QtPositioning 5.15
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.i18n.localeData 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -29,7 +30,7 @@ Kirigami.FormLayout {
         addr.postalCode = postalCode.text;
         addr.addressLocality = addressLocality.text;
         addr.addressRegion = addressRegion.text;
-        addr.addressCountry = countryModel.isoCodeFromIndex(addressCountry.currentIndex)
+        addr.addressCountry = addressCountry.currentValue;
         var geo = place.geo;
         geo.latitude = latitude;
         geo.longitude = longitude;
@@ -80,15 +81,11 @@ Kirigami.FormLayout {
         text: place.address.addressRegion
     }
 
-    CountryModel {
-        id: countryModel
-    }
-    QQC2.ComboBox {
+    App.CountryComboBox {
         id: addressCountry
         Kirigami.FormData.label: i18n("Country:")
-        model: countryModel
-        textRole: "display"
-        currentIndex: countryModel.isoCodeToIndex(place.address.addressCountry)
+        model: Country.allCountries.map(c => c.alpha2)
+        initialCountry: place.address.addressCountry
     }
 
     QtLocation.Plugin {
@@ -132,7 +129,7 @@ Kirigami.FormLayout {
                 geocodeAddr.postalCode = postalCode.text;
                 geocodeAddr.city = addressLocality.text;
                 geocodeAddr.state = addressRegion.text;
-                geocodeAddr.countryCode = countryModel.isoCodeFromIndex(addressCountry.currentIndex);
+                geocodeAddr.countryCode = addressCountry.currentValue;
                 geocodeModel.update();
             }
         }

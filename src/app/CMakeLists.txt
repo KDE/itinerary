@@ -80,7 +80,6 @@ endif()
 add_executable(itinerary-app ${itinerary_app_srcs})
 target_sources(itinerary-app PRIVATE
     main.cpp
-    countrymodel.cpp
     developmentmodecontroller.cpp
     documentsmodel.cpp
     locationinformationdelegatecontroller.cpp
