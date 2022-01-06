@@ -622,7 +622,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.12.1" date="2022-01-06"/>
+    <release version="21.12.1" date="2022-01-06">
+      <description>
+        <ul>
+          <li>Fix station map positioning for elements without live data.</li>
+          <li>Improved travel document extraction for Amtrak and VIA Rail.</li>
+          <li>Support for alternative Hafas platform formats.</li>
+          <li>Improved opening hours evaluation in the station maps.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.12.0" date="2021-12-09">
       <description>
         <ul>
