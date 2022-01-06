@@ -32,6 +32,9 @@ public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings() override;
 
+    Q_INVOKABLE QVariant read(const QString &key, const QVariant &defaultValue) const;
+    Q_INVOKABLE void write(const QString &key, const QVariant &value);
+
     bool weatherForecastEnabled() const;
     void setWeatherForecastEnabled(bool enabled);
 

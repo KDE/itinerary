@@ -10,6 +10,7 @@ import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kitemmodels 1.0
 import org.kde.i18n.localeData 1.0
 import org.kde.kpublictransport 1.0
+import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ScrollablePage {
@@ -31,34 +32,26 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action { separator: true },
 
-        // TODO store sort mode
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
+            checked: historySortModel.sortRole == "locationName"
             text: i18n("Sort by name")
-            onTriggered: {
-                historySortModel.sortRole = "locationName";
-                historySortModel.sortOrder = Qt.AscendingOrder;
-            }
+            onTriggered: historySortModel.sortRole = "locationName"
         },
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
-            checked: true
+            checked: historySortModel.sortRole == "lastUsed"
             text: i18n("Most recently used")
-            onTriggered: {
-                historySortModel.sortRole = "lastUsed";
-                historySortModel.sortOrder = Qt.DescendingOrder;
-            }
+            onTriggered: historySortModel.sortRole = "lastUsed"
         },
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
+            checked: historySortModel.sortRole == "useCount"
             text: i18n("Most often used")
-            onTriggered: {
-                historySortModel.sortRole = "useCount";
-                historySortModel.sortOrder = Qt.DescendingOrder;
-            }
+            onTriggered: historySortModel.sortRole = "useCount"
         }
     ]
     header: ColumnLayout {
@@ -116,8 +109,9 @@ Kirigami.ScrollablePage {
     KSortFilterProxyModel {
         id: historySortModel
         sourceModel: locationHistoryModel
-        sortRole: "lastUsed"
-        sortOrder: Qt.DescendingOrder
+        sortRole: Settings.read("StopPicker/historySortMode", "lastUsed")
+        onSortRoleChanged: Settings.write("StopPicker/historySortMode", sortRole)
+        sortOrder: sortRole == "locationName" ? Qt.AscendingOrder: Qt.DescendingOrder
     }
 
     Component {

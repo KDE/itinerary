@@ -39,6 +39,18 @@ Settings::Settings(QObject *parent)
 
 Settings::~Settings() = default;
 
+QVariant Settings::read(const QString &key, const QVariant &defaultValue) const
+{
+    QSettings s;
+    return s.value(key, defaultValue);
+}
+
+void Settings::write(const QString& key, const QVariant& value)
+{
+    QSettings s;
+    s.setValue(key, value);
+}
+
 bool Settings::weatherForecastEnabled() const
 {
     return m_weatherEnabled;
