@@ -97,6 +97,8 @@ Kirigami.Page {
                     certSelector.currentIndex = index;
                 }
             }
+            onCurrentIndexChanged: Settings.write("HealthCertificatePage/currentCertificateIndex", currentIndex)
+            currentIndex: Settings.read("HealthCertificatePage/currentCertificateIndex", 0)
         }
         Kirigami.Separator {
             Layout.fillWidth: true
