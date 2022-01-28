@@ -610,6 +610,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="21.12.2" date="2022-02-03"/>
     <release version="21.12.1" date="2022-01-06">
       <description>
         <ul>
@@ -649,38 +650,6 @@
           <li>Fix parsing of OTP rental vehicle information.</li>
           <li>Apply timezone information correctly to flight reservations with incomplete time information.</li>
           <li>Improved data extraction for various providers.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.08.2" date="2021-10-07">
-      <description>
-        <ul>
-          <li>Add support for SMART Health Card (SHC) vaccination certificates.</li>
-          <li>Don't trigger the connection warning when there is no previous arrival time.</li>
-          <li>Show correct number of attached documents for multi-traveller trips.</li>
-          <li>Show escalators to/from intermediate floor levels correctly in the indoor map. </li>
-          <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
-          <li>Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.08.1" date="2021-09-02">
-      <description>
-        <ul>
-          <li>Properly import mail attachments shared from FairEmail.</li>
-          <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.08.0" date="2021-08-12">
-      <description>
-        <ul>
-          <li>Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
-          <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
-          <li>Support for local German public transport operators INVG, RSAG, VRT and VSN.</li>
-          <li>Improved travel document extractor.</li>
-          <li>Various fixes to the page flow.</li>
-          <li>Entire trip groups can now be deleted.</li>
         </ul>
       </description>
     </release>
