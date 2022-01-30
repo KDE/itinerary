@@ -28,6 +28,7 @@ class WeatherForecast
     Q_PROPERTY(float windSpeed READ windSpeed CONSTANT)
     Q_PROPERTY(QString symbolIconName READ symbolIconName CONSTANT)
     Q_PROPERTY(int range READ range CONSTANT)
+    Q_PROPERTY(bool isSevere READ isSevere STORED false)
 
 public:
     enum SymbolFlag : uint16_t {
@@ -86,6 +87,10 @@ public:
     // internal for weighting different forecast elements
     int range() const;
     void setRange(int hours);
+
+    /** Severe weather conditions. */
+    bool isSevere() const;
+
     // internal for computing the day/night icons
     WeatherTile tile() const;
     void setTile(WeatherTile tile);

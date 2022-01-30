@@ -27,6 +27,7 @@ Kirigami.Page {
         Kirigami.AbstractListItem {
             readonly property var fc: model.weatherForecast
             highlighted: false
+            backgroundColor: fc.isSevere ? Kirigami.Theme.negativeBackgroundColor : "transparent"
             Row {
                 spacing: Kirigami.Units.largeSpacing
                 Kirigami.Icon {

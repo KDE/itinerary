@@ -213,3 +213,30 @@ void WeatherForecast::setTile(WeatherTile tile)
     d.detach();
     d->m_tile = tile;
 }
+
+bool WeatherForecast::isSevere() const
+{
+    // heat: https://en.wikipedia.org/wiki/Heat_index
+    // TODO to do this properly we need the humidity value as well
+    if (d->m_maxTemp > 35.0) {
+        return true;
+    }
+
+    // cold
+    if (d->m_minTemp < -20.0) {
+        return true;
+    }
+
+    // precipitation: https://de.wikipedia.org/wiki/Unwetter
+    if ((d->m_precipitation / d->m_range) > 25.0 || (d->m_precipitation > 35.0 && d->m_range >= 6)) {
+        return true;
+    }
+
+    // wind: https://en.wikipedia.org/wiki/Beaufort_scale
+    if (d->m_windSpeed > 17.5) {
+        return true;
+    }
+
+
+    return false;
+}

@@ -22,7 +22,7 @@ Kirigami.AbstractCard {
         id: headerBackground
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
+        color: weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
         radius: Kirigami.Units.smallSpacing
         implicitWidth: icon.implicitWidth + Kirigami.Units.largeSpacing * 2
         Layout.minimumHeight: implicitWidth

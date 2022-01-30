@@ -60,6 +60,7 @@ private Q_SLOTS:
         QCOMPARE((*it).precipitation(), 0.0f);
         QCOMPARE((*it).symbolType(), WeatherForecast::Clear);
         QCOMPARE((*it).windSpeed(), 1.6f);
+        QCOMPARE((*it).isSevere(), false);
     }
 
     void testWeatherSymbol()
