@@ -623,7 +623,14 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="21.12.2" date="2022-02-03"/>
+    <release version="21.12.2" date="2022-02-03">
+      <description>
+        <ul>
+          <li>Fix trip grouping producing wrong results in densely populated areas.</li>
+          <li>Improve vector barcode detection in PDF documents.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.12.1" date="2022-01-06">
       <description>
         <ul>
