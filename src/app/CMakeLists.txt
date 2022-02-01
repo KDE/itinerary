@@ -149,6 +149,7 @@ if (ANDROID)
         meeting-attending
         notifications
         question
+        search
         settings-configure
         view-barcode-qr
         view-calendar-day
