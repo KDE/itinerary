@@ -54,7 +54,7 @@ void DevelopmentModeController::importMapCSS(const QUrl &url)
     auto dest = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
 #else
     const auto fileName = KAndroidExtras::ContentResolver::fileName(url);
-    auto dest = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    auto dest = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
 #endif
     dest += QLatin1String("/org.kde.kosmindoormap/assets/css/");
 
@@ -68,7 +68,7 @@ void DevelopmentModeController::purgeMapCSS()
 #ifndef Q_OS_ANDROID
     QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
 #else
-    QString path = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+    QString path = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
 #endif
     path += QLatin1String("/org.kde.kosmindoormap/assets/css/");
     QDir(path).removeRecursively();
