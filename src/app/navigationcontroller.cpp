@@ -56,53 +56,18 @@ void NavigationController::showOnMap(const QVariant &place)
 
     const auto addr = LocationUtil::address(place);
     if (!addr.isEmpty()) {
-        QUrl url;
-#ifdef Q_OS_ANDROID
-        url.setScheme(QStringLiteral("geo"));
-        url.setPath(QStringLiteral("0,0"));
-        QUrlQuery query;
-        query.addQueryItem(QStringLiteral("q"), addr.streetAddress() + QLatin1String(", ")
-            + addr.postalCode() + QLatin1Char(' ')
-            + addr.addressLocality() + QLatin1String(", ")
-            + addr.addressCountry());
-        url.setQuery(query);
-#else
-        url.setScheme(QStringLiteral("https"));
-        url.setHost(QStringLiteral("www.openstreetmap.org"));
-        url.setPath(QStringLiteral("/search"));
-        const QString queryString = addr.streetAddress() + QLatin1String(", ")
-                                    + addr.postalCode() + QLatin1Char(' ')
-                                    + addr.addressLocality() + QLatin1String(", ")
-                                    + addr.addressCountry();
-        QUrlQuery query;
-        query.addQueryItem(QStringLiteral("query"), queryString);
-        url.setQuery(query);
-#endif
-        QDesktopServices::openUrl(url);
+        QDesktopServices::openUrl(LocationUtil::geoUri(place));
     }
 }
 
 void NavigationController::showOnMap(float latitude, float longitude, int zoom)
 {
-#ifdef Q_OS_ANDROID
-    constexpr const auto useGeoUrl = true;
-#else
-    constexpr const auto useGeoUrl = false;
-#endif
-
     QUrl url;
-    if (useGeoUrl) {
-        url.setScheme(QStringLiteral("geo"));
-        url.setPath(QString::number(latitude) + QLatin1Char(',') + QString::number(longitude));
-    } else {
-        url.setScheme(QStringLiteral("https"));
-        url.setHost(QStringLiteral("www.openstreetmap.org"));
-        url.setPath(QStringLiteral("/"));
-        const QString fragment = QLatin1String("map=") + QString::number(zoom)
-                                    + QLatin1Char('/') + QString::number(latitude)
-                                    + QLatin1Char('/') + QString::number(longitude);
-        url.setFragment(fragment);
-    }
+    url.setScheme(QStringLiteral("geo"));
+    url.setPath(QString::number(latitude) + QLatin1Char(',') + QString::number(longitude));
+    QUrlQuery query;
+    query.addQueryItem(QStringLiteral("z"), QString::number(zoom));
+    url.setQuery(query);
     QDesktopServices::openUrl(url);
 }
 
