@@ -93,7 +93,7 @@ static QString formatCo2(int amount)
 
 StatisticsItem StatisticsModel::totalCount() const
 {
-    return StatisticsItem(i18n("Trips"), QString::number(m_tripGroupCount), trend(m_tripGroupCount, m_prevTripGroupCount));
+    return StatisticsItem(i18n("Trips"), QLocale().toString(m_tripGroupCount), trend(m_tripGroupCount, m_prevTripGroupCount));
 }
 
 StatisticsItem StatisticsModel::totalDistance() const
@@ -103,7 +103,7 @@ StatisticsItem StatisticsModel::totalDistance() const
 
 StatisticsItem StatisticsModel::totalNights() const
 {
-    return StatisticsItem(i18n("Hotel nights"), QString::number(m_hotelCount), trend(m_hotelCount, m_prevHotelCount));
+    return StatisticsItem(i18n("Hotel nights"), QLocale().toString(m_hotelCount), trend(m_hotelCount, m_prevHotelCount));
 }
 
 StatisticsItem StatisticsModel::totalCO2() const
@@ -123,7 +123,7 @@ StatisticsItem StatisticsModel::visitedCountries() const
 
 StatisticsItem StatisticsModel::flightCount() const
 {
-    return StatisticsItem(i18n("Flights"), QString::number(m_statData[Flight][TripCount]), trend(Flight, TripCount));
+    return StatisticsItem(i18n("Flights"), QLocale().toString(m_statData[Flight][TripCount]), trend(Flight, TripCount));
 }
 
 StatisticsItem StatisticsModel::flightDistance() const
@@ -138,7 +138,7 @@ StatisticsItem StatisticsModel::flightCO2() const
 
 StatisticsItem StatisticsModel::trainCount() const
 {
-    return StatisticsItem(i18n("Train rides"), QString::number(m_statData[Train][TripCount]), trend(Train, TripCount));
+    return StatisticsItem(i18n("Train rides"), QLocale().toString(m_statData[Train][TripCount]), trend(Train, TripCount));
 }
 
 StatisticsItem StatisticsModel::trainDistance() const
@@ -153,7 +153,7 @@ StatisticsItem StatisticsModel::trainCO2() const
 
 StatisticsItem StatisticsModel::busCount() const
 {
-    return StatisticsItem(i18n("Bus rides"), QString::number(m_statData[Bus][TripCount]), trend(Bus, TripCount));
+    return StatisticsItem(i18n("Bus rides"), QLocale().toString(m_statData[Bus][TripCount]), trend(Bus, TripCount));
 }
 
 StatisticsItem StatisticsModel::busDistance() const
@@ -168,7 +168,7 @@ StatisticsItem StatisticsModel::busCO2() const
 
 StatisticsItem StatisticsModel::carCount() const
 {
-    return StatisticsItem(i18n("Car rides"), QString::number(m_statData[Car][TripCount]), trend(Car, TripCount));
+    return StatisticsItem(i18n("Car rides"), QLocale().toString(m_statData[Car][TripCount]), trend(Car, TripCount));
 }
 
 StatisticsItem StatisticsModel::carDistance() const
