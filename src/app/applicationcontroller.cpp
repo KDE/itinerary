@@ -20,6 +20,7 @@
 #include "tripgroupmanager.h"
 #include <itinerary_version_detailed.h>
 
+#include <kitinerary_version.h>
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/ExtractorCapabilities>
@@ -379,6 +380,11 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
 
     using namespace KItinerary;
     ExtractorEngine engine;
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 19, 41)
+    // user opened the file, so we can be reasonably sure they assume it contains
+    // relevant content, so try expensive extraction methods too
+    engine.setHints(ExtractorEngine::ExtractFullPageRasterImages);
+#endif
     engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     engine.setData(data, fileName);
     const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
