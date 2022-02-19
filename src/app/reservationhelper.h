@@ -9,7 +9,6 @@
 
 #include <utility>
 
-class QDateTime;
 class QString;
 class QVariant;
 

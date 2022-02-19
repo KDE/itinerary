@@ -19,10 +19,6 @@ class WeatherForecastManager;
 class TripGroupManager;
 class TransferManager;
 
-namespace KItinerary {
-class GeoCoordinates;
-}
-
 class TimelineModel : public QAbstractListModel
 {
     Q_OBJECT

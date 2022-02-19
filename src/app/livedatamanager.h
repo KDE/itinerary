@@ -17,10 +17,6 @@
 
 #include <vector>
 
-namespace KItinerary {
-class TrainTrip;
-}
-
 namespace KPublicTransport {
 class JourneyReply;
 class JourneySection;

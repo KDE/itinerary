@@ -13,7 +13,6 @@
 #include <QObject>
 #include <QVariant>
 
-class QUrl;
 
 /** Manages JSON-LD reservation data.
  *  This is done on two levels:
