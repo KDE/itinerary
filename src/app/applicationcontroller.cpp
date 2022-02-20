@@ -375,21 +375,21 @@ void ApplicationController::importLocalFile(const QUrl &url)
     importData(f.readAll(), f.fileName());
 }
 
-void ApplicationController::importData(const QByteArray &data, const QString &fileName)
+bool ApplicationController::importData(const QByteArray &data, const QString &fileName)
 {
     qCDebug(Log);
     if (data.size() < 4) {
-        return;
+        return false;
     }
 
     if (FileHelper::hasZipHeader(data)) {
 #ifndef NEW_PKPASS_IMPORT
         if (!m_pkPassMgr->importPassFromData(data).isEmpty()) {
-            return;
+            return true;
         }
 #endif
         if (importBundle(data)) {
-            return;
+            return true;
         }
     }
 
@@ -428,24 +428,30 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
         importNode(engine.rootDocumentNode());
 
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
-        return;
+        return true;
     }
 
     // look for time-less passes/program memberships/etc
     if (m_passMgr->import(extractorResult) || importGenericPkPass(engine.rootDocumentNode())) {
         Q_EMIT infoMessage(i18n("Pass imported."));
-        return;
+        return true;
     }
 
     // look for health certificate barcodes instead
     // if we don't find anything, try to import as health certificate directly
     if (importHealthCertificateRecursive(engine.rootDocumentNode()) || m_healthCertMgr->importCertificate(data)) {
         Q_EMIT infoMessage(i18n("Health certificate imported."));
-        return;
+        return true;
     }
 
     // nothing found
     Q_EMIT infoMessage(i18n("Nothing imported."));
+    return false;
+}
+
+bool ApplicationController::importText(const QString& text)
+{
+    return importData(text.toUtf8());
 }
 
 void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &node)

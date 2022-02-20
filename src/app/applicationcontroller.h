@@ -59,7 +59,8 @@ public:
     void importFromIntent(const KAndroidExtras::Intent &intent);
     Q_INVOKABLE void importFromClipboard();
     Q_INVOKABLE void importFromUrl(const QUrl &url);
-    void importData(const QByteArray &data, const QString &fileName = {});
+    Q_INVOKABLE bool importData(const QByteArray &data, const QString &fileName = {});
+    Q_INVOKABLE bool importText(const QString &text);
 
     Q_INVOKABLE void checkCalendar();
 

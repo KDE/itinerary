@@ -18,6 +18,8 @@ QtObject {
      *  Scan mode will automatically be disabled when the page is left or moves down in the page stack.
      */
     property var page
+    /** Enable full brightness. */
+    property bool fullBrightness: true
 
     function toggle() {
         controller.enabled = !controller.enabled;
@@ -25,7 +27,9 @@ QtObject {
 
     onEnabledChanged: function() {
         console.log("switching barcode scan mode", controller.enabled);
-        Solid.BrightnessManager.toggleBrightness();
+        if (controller.fullBrightness) {
+            Solid.BrightnessManager.toggleBrightness();
+        }
         Solid.LockManager.toggleInhibitScreenLock(i18n("In barcode scanning mode"));
     }
 

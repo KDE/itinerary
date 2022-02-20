@@ -49,6 +49,11 @@ Kirigami.ApplicationWindow {
                 onTriggered: importDialog.open()
             },
             Kirigami.Action {
+                text: i18n("Scan Barcode...")
+                iconName: "view-barcode-qr"
+                onTriggered: pageStack.layers.push(scanBarcodeComponent)
+            },
+            Kirigami.Action {
                 text: i18n("Paste")
                 iconName: "edit-paste"
                 onTriggered: ApplicationController.importFromClipboard()
@@ -191,6 +196,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: mainPageComponent
         App.TimelinePage {}
+    }
+    Component {
+        id: scanBarcodeComponent
+        App.BarcodeScannerPage {}
     }
     Component {
         id: settingsComponent

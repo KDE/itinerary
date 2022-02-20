@@ -10,7 +10,7 @@ set (RELEASE_SERVICE_VERSION_MICRO "70")
 set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
 project(itinerary VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF5_MIN_VERSION 5.90)
+set(KF5_MIN_VERSION 5.94)
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR} ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -59,11 +59,13 @@ set_package_properties("ZLIB" PROPERTIES PURPOSE "Needed for retrieving weather 
 set_package_properties(KF5Solid PROPERTIES TYPE OPTIONAL TYPE RUNTIME PURPOSE "Used for controlling the screen brightness.")
 set_package_properties(KHealthCertificate PROPERTIES TYPE OPTIONAL PURPOSE "Needed for the vaccination certificate manager.")
 
-include(ECMQMLModules)
+include(ECMFindQmlModule)
 ecm_find_qmlmodule(QtLocation 5.11)
+ecm_find_qmlmodule(QtMultimedia 5.15)
 ecm_find_qmlmodule(QtPositioning 5.11)
 ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
 ecm_find_qmlmodule(org.kde.prison 1.0)
+ecm_find_qmlmodule(org.kde.prison.scanner 1.0)
 ecm_find_qmlmodule(org.kde.kosmindoormap 1.0)
 ecm_find_qmlmodule(org.kde.kopeninghours 1.0)
 if (NOT ANDROID)
