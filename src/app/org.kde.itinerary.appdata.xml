@@ -28,6 +28,7 @@
   <name xml:lang="pl">KDE Itinerary</name>
   <name xml:lang="pt">KDE Itinerary</name>
   <name xml:lang="pt-BR">KDE Itinerary</name>
+  <name xml:lang="ru">Маршруты KDE</name>
   <name xml:lang="sk">KDE Itinerár</name>
   <name xml:lang="sl">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="pl">Cyfrowy pomocnik podróży</summary>
   <summary xml:lang="pt">Assistente de viagens digital</summary>
   <summary xml:lang="pt-BR">Assistente de viagens digital</summary>
+  <summary xml:lang="ru">Цифровой помощник в путешествиях</summary>
   <summary xml:lang="sk">Digitálny cestovný asistent</summary>
   <summary xml:lang="sl">Digitalni potovalni pomočnik</summary>
   <summary xml:lang="sv">Digitalt resehjälpprogram</summary>
@@ -79,6 +81,7 @@
     <p xml:lang="pl">KDE Itinerary jest cyfrowym pomocnikiem podróży, którego nadrzędnym celem jest chronienie twojej prywatności.</p>
     <p xml:lang="pt">O KDE Itinerary é um assistente digital de viagens com a prioridade de proteger a sua privacidade.</p>
     <p xml:lang="pt-BR">O KDE Itinerary é um assistente de viagens digital com prioridade na proteção de sua privacidade.</p>
+    <p xml:lang="ru">Маршруты KDE — это цифровой помощник в путешествиях, в котором сделан акцент на обеспечении конфиденциальности пользователя.</p>
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
     <p xml:lang="sv">KDE-resplan är ett digitalt resehjälpprogram som prioriterar att skydda din integritet.</p>
     <p xml:lang="uk">KDE Itinerary — цифровий помічник у подорожах, акцент у якому зроблено на забезпеченні вашої конфіденційності.</p>
@@ -129,6 +132,7 @@
       <li xml:lang="pl">Widok osi czasu dla ujednoliconego planu podróży z samoczynnym grupowaniem podróży.</li>
       <li xml:lang="pt">Visão cronológica de um itinerário de viagens unificado com o agrupamento automático das viagens.</li>
       <li xml:lang="pt-BR">Exibição cronológica de um itinerário de viagem unificado com agrupamento automático de viagem.</li>
+      <li xml:lang="ru">Просмотр расписания унифицированного маршрута с автоматической группировкой по поездкам.</li>
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
@@ -151,6 +155,7 @@
       <li xml:lang="pl">Obsługuje bilety na pociągi, autobusy i samoloty, a także hotele, restauracje, wydarzenia i wypożyczanie samochodów.</li>
       <li xml:lang="pt">Suporta as reservas de comboios, autocarros e voos, assim como dos hotéis, restaurantes, eventos e alugueres de carros.</li>
       <li xml:lang="pt-BR">Suporta reservas de trens, ônibus e voos, bem como reservas de hotéis, restaurantes, eventos e aluguel de veículos.</li>
+      <li xml:lang="ru">Поддержка заказа билетов на поезда, автобусы и самолеты, а также бронирования прокатных автомобилей, гостиничных номеров, мест в ресторанах и посещения мероприятий.</li>
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
       <li xml:lang="uk">Підтримка бронювання квитків на потяги, автобуси та літаки, а також бронювання номерів готелів, місць у ресторанах, участі у подіях та оренди автомобілів.</li>
@@ -174,6 +179,7 @@
       <li xml:lang="pl">Zarządzanie kartami pokładowymi.</li>
       <li xml:lang="pt">Gestão de cartões de embarque.</li>
       <li xml:lang="pt-BR">Gerenciamento de cartões de embarque.</li>
+      <li xml:lang="ru">Управление посадочными талонами.</li>
       <li xml:lang="sk">Správa leteniek</li>
       <li xml:lang="sl">Upravljanje vstopnih kuponov.</li>
       <li xml:lang="sv">Hantering av boardingkort.</li>
@@ -197,6 +203,7 @@
       <li xml:lang="pl">Obsługuje zarządzanie biletami w przypadku rezerwacji u wielu przewoźników i wielu biletów.</li>
       <li xml:lang="pt">Suporta a gestão de bilhetes para reservas multi-viajantes e multi-bilhetes.</li>
       <li xml:lang="pt-BR">Suporta o gerenciamento de bilhetes para reservas de vários viajantes e multibancos.</li>
+      <li xml:lang="ru">Поддержка управления работой с билетами для заказа с пересадками и одновременного заказа нескольких билетов.</li>
       <li xml:lang="sl">Podpira upravljanje vozovnic za več potnikov in rezervacij za več vozovnic.</li>
       <li xml:lang="sv">Stöder biljetthantering för bokningar med flera resenärer och biljetter.</li>
       <li xml:lang="uk">Підтримка керування роботою з квитками для замовлень із пересадками та одночасного замовлення декількох квитків.</li>
@@ -219,6 +226,7 @@
       <li xml:lang="pl">Wydobywanie danych o rezerwacji z różnych formatów wejściowych, wykonywalne lokalnie na twoim urządzeniu.</li>
       <li xml:lang="pt">Extracção automática dos dados da reserva a partir de vários formatos de entrada, operando localmente no seu dispositivo.</li>
       <li xml:lang="pt-BR">Extração automática de dados de reserva de vários formatos de entrada, realizada localmente no seu dispositivo.</li>
+      <li xml:lang="ru">Автоматическое извлечение данных бронирования из различных входных форматов, которое происходит непосредственно на устройстве пользователя.</li>
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
       <li xml:lang="uk">Автоматичне видобування даних із різноманітних вхідних форматів, яке відбувається безпосередньо на вашому пристрої.</li>
@@ -241,6 +249,7 @@
       <li xml:lang="pl">Dane w czasie rzeczywistym o opóźnieniach i zmianie peronów dla pociągów.</li>
       <li xml:lang="pt">Informações em tempo-real de atrasos e mudança de plataformas nos comboios.</li>
       <li xml:lang="pt-BR">Atraso em tempo real e informações de mudança de plataforma para trens.</li>
+      <li xml:lang="ru">Информация о задержках и изменениях платформ для поездов.</li>
       <li xml:lang="sl">Informacije o zamudah v realnem času in o spremembah peronov za vlake.</li>
       <li xml:lang="sv">Information i realtid om fördröjningar och plattformsändringar för tåg.</li>
       <li xml:lang="uk">Інформування про затримки та зміни платформ для потягів.</li>
@@ -263,6 +272,7 @@
       <li xml:lang="pl">Prognoza pogody dla miejsca docelowego podróży.</li>
       <li xml:lang="pt">Previsão meteorológica no destino, ao longo da sua viagem.</li>
       <li xml:lang="pt-BR">Previsão meteorológica para os destinos de sua viagem.</li>
+      <li xml:lang="ru">Показ прогноза погоды в пункте назначения по ходу путешествия.</li>
       <li xml:lang="sl">Vremenska napoved za cilje ob vašem potovanju.</li>
       <li xml:lang="sv">Väderprognos för mål längs resan.</li>
       <li xml:lang="uk">Показ прогнозу погоди у кінцевій точці вашої подорожі.</li>
@@ -285,6 +295,7 @@
       <li xml:lang="pl">Pełny nadzór nad dostępem do sieci.</li>
       <li xml:lang="pt">Controlo total sobre todo o acesso 'online'.</li>
       <li xml:lang="pt-BR">Controle completo sobre todos os acessos online.</li>
+      <li xml:lang="ru">Полное управление всеми параметрами доступа в Интернет.</li>
       <li xml:lang="sl">Popoln nadzor nad vsemi spletnimi dostopi.</li>
       <li xml:lang="sv">Fullständig kontroll över alla nätåtkomster.</li>
       <li xml:lang="uk">Повне керування усіма параметрами доступу до інтернету.</li>
@@ -307,6 +318,7 @@
       <li xml:lang="pl">Wybór zamiennych połączeń kolejowych dla nieprzypisanych biletów lub przegapionych połączeń.</li>
       <li xml:lang="pt">Selecção de ligações de comboio alternativas para bilhetes não vinculados ou para ligações perdidas.</li>
       <li xml:lang="pt-BR">Seleção de conexões ferroviárias alternativas em bilhetes não consolidados ou em conexões perdidas.</li>
+      <li xml:lang="ru">Выбор альтернативных железнодорожных маршрутов при наличии проездного илиопоздании на пересадку.</li>
       <li xml:lang="sl">Izbira alternativnih železniških povezav na nevezanih vozovnicah ali vozovnicah zamujenih povezav.</li>
       <li xml:lang="sv">Val av alternativa tågförbindelser på öppna biljetter eller vid missade anslutningar.</li>
       <li xml:lang="uk">Вибір альтернативних залізничних шляхів за умов наявності проїзного або неможливості з'єднання різних частин маршруту.</li>
@@ -328,6 +340,7 @@
       <li xml:lang="pl">Lokalne przemieszczanie się naziemne pomiędzy elementami twojego planu podróży.</li>
       <li xml:lang="pt">Navegação local em transportes terrestres entre elementos do seu itinerário.</li>
       <li xml:lang="pt-BR">Navegação por transporte terrestre local entre elementos do seu itinerário. </li>
+      <li xml:lang="ru">Навигация по местному наземному транспорту между фрагментами маршрута.</li>
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
       <li xml:lang="uk">Навігація на місцевості під час пересадок між фрагментами вашого маршруту.</li>
@@ -347,6 +360,7 @@
       <li xml:lang="nl">Weergave van indeling treinwagons (alleen voor sommige vervoerders)</li>
       <li xml:lang="pl">Widok układu wagonu kolejowego (tylko dla wybranych przewoźników).</li>
       <li xml:lang="pt">Área de disposição dos lugares do comboio (apenas com alguns operadores).</li>
+      <li xml:lang="ru">Просмотр мест в вагоне поезда (только для некоторых операторов).</li>
       <li xml:lang="sl">Pogled postavitve vlaka (samo za nekatere operaterje).</li>
       <li xml:lang="sv">Tågvagnslayout (bara för vissa operatörer).</li>
       <li xml:lang="uk">Перегляд місць у вагоні потягу (лише для деяких операторів).</li>
@@ -366,6 +380,7 @@
       <li xml:lang="nl">Kaarten per verdieping van station en luchthaven gebaseerd op gegevens uit OpenStreetMap.</li>
       <li xml:lang="pl">Plany pięter dworców kolejowych i lotnisk na podstawie danych z OpenStreetMap.</li>
       <li xml:lang="pt">Mapas das estações de comboio e aeroportos por pisos, baseados em dados do OpenStreetMap.</li>
+      <li xml:lang="ru">Поэтажные карты железнодорожных станций и аэропортов на основе данных OpenStreetMap.</li>
       <li xml:lang="sl">Zemljevidi železniške postaje in letališča po nadstropjih na podlagi podatkov OpenStreetMap.</li>
       <li xml:lang="sv">Tågstations- och flygplatskartor för varje våning baserade på data från OpenStreetMap.</li>
       <li xml:lang="uk">Мапи поверхів залізничних станцій та аеропортів засновано на даних OpenStreetMap.</li>
@@ -384,6 +399,7 @@
       <li xml:lang="nl">Beschikbare huurfietsen in stalling en vrijstaand kan getoond worden op de kaart van het treinstation.</li>
       <li xml:lang="pl">Dostępne rowery do wypożyczenia w systemie ze stacjami lub bez nich, można wyświetlić na mapie dworca kolejowego.</li>
       <li xml:lang="pt">Poderá mostrar as bicicletas de aluguer com bloqueios ou livres no mapa das estações dos correios.</li>
+      <li xml:lang="ru">На карте железнодорожной станции могут быть показаны доступные прокатныевелосипеды со стационарной или произвольной парковкой.</li>
       <li xml:lang="sl">Razpoložljiva kolesa za najem na stebričkih ali prosto dostopna kolesa na zemljevidu železniške postaje.</li>
       <li xml:lang="sv">Tillgängliga stationsbaserade eller fristående hyrcyklar kan visas på tågstationskartan.</li>
       <li xml:lang="uk">На мапі залізничної станції може бути показано доступні орендовані велосипеди зі стаціонарними або довільними місцями паркування.</li>
@@ -406,6 +422,7 @@
       <li xml:lang="pl">Osobisty statystyki podróżowania do monitorowania wpływu na środowisko.</li>
       <li xml:lang="pt">Estatísticas pessoais da viagem para acompanhar o impacto ambiental.</li>
       <li xml:lang="pt-BR">Estatísticas pessoais da viagem para monitorar o impacto ambiental.</li>
+      <li xml:lang="ru">Личная статистика путешествий для наблюдения за воздействием на окружающую среду.</li>
       <li xml:lang="sl">Osebna statistika potovanj za spremljanje vplivov na okolje.</li>
       <li xml:lang="sv">Personlig resestatistik för att övervaka miljöpåverkan.</li>
       <li xml:lang="uk">Особиста статистика подорожей для стеження за впливом на навколишнє середовище.</li>
@@ -422,6 +439,7 @@
       <li xml:lang="ko">코로나19(COVID-19) 예방 접종, 검사, 완치 증명 등 디지털 건강 증명서를 관리합니다.</li>
       <li xml:lang="nl">Beheer van digitaal gezondheidscertificaat voor COVID-19 vaccinatie, herstel of testcertificaten.</li>
       <li xml:lang="pl">Zarządzanie cyfrowymi certyfikatami zdrowia dla szczepień COVID-19, ozdrowień oraz badań.</li>
+      <li xml:lang="ru">Управление цифровыми сертификатами здоровья о вакцинации от COVID-19, перенесённом заболевании или тестировании.</li>
       <li xml:lang="sl">Upravljanje zdravstvenega potrdila o cepljenjih za COVID-19, prebolevnosti ali testiranjih.</li>
       <li xml:lang="sv">Hantering av digitala hälsocertifikat för COVID-19 vaccinering, tillfrisknande eller testcertifikat.</li>
       <li xml:lang="uk">Керування цифровими сертифікатами здоров'я щодо вакцинації, одужання та тестування з COVID-19.</li>
@@ -444,6 +462,7 @@
     <p xml:lang="pl">KDE Itinerary działa najlepiej wraz z wtyczką do wydobywania itinerary dla KMaila oraz KDE Connect, lub Nextcloud Hub i DavDroid.</p>
     <p xml:lang="pt">O KDE Itinerary funciona melhor com o 'plugin' de extracção de itinerários e com o KDE Connect, o Nextcloud Hub ou o DavDroid.</p>
     <p xml:lang="pt-BR">O KDE Itinerary funciona melhor junto com o plugin de extração de itinerário do KMail e KDE Connect ou Nextcloud Hub e DavDroid.</p>
+    <p xml:lang="ru">Программа «Маршруты KDE» лучше всего работает с модулем извлечения маршрутов KMail и KDE Connect или Nextcloud Hub и DavDroid.</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
@@ -469,6 +488,7 @@
       <caption xml:lang="pl">Widok osi czasu</caption>
       <caption xml:lang="pt">Vista cronológica</caption>
       <caption xml:lang="pt-BR">Exibição cronológica</caption>
+      <caption xml:lang="ru">Просмотр расписания</caption>
       <caption xml:lang="sl">Pogled časovnice</caption>
       <caption xml:lang="sv">Tidslinjevisning</caption>
       <caption xml:lang="uk">Перегляд розкладу</caption>
@@ -493,6 +513,7 @@
       <caption xml:lang="pl">Widok kart odpraw</caption>
       <caption xml:lang="pt">Vista do cartão de embarque</caption>
       <caption xml:lang="pt-BR">Visualização do cartão de embarque</caption>
+      <caption xml:lang="ru">Просмотр посадочных талонов</caption>
       <caption xml:lang="sl">Pogled vstopnega kupona</caption>
       <caption xml:lang="sv">Visning av boardingkort</caption>
       <caption xml:lang="uk">Перегляд посадкових квитків</caption>
@@ -515,6 +536,7 @@
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering</caption>
       <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc</caption>
       <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva</caption>
+      <caption xml:lang="ru">Просмотр мест в вагонах поезда с подсветкой вагона с забронированным местом</caption>
       <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža</caption>
       <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning</caption>
       <caption xml:lang="uk">Панель місць у вагонах потягу із підсвічуванням заброньованих місць</caption>
@@ -537,6 +559,7 @@
       <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons</caption>
       <caption xml:lang="pl">Plan peronu dworca kolejowego, podświetlający perony przybycia i odjazdu</caption>
       <caption xml:lang="pt">Mapa das plataformas das estações de comboio que realça as plataformas de partidas</caption>
+      <caption xml:lang="ru">Карта платформ железнодорожной станции с подсветкой платформ прибытия и отправления</caption>
       <caption xml:lang="sl">Zemljevid perona železniške postaje s poudarkom na peronih za prihod in odhod</caption>
       <caption xml:lang="sv">Tågstationskarta för plattformar, som markerar ankomst- och avgångsplattformar</caption>
       <caption xml:lang="uk">Мапа платформ залізничної станції, підсвічування платформ прибуття та відправлення</caption>
@@ -557,6 +580,7 @@
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen</caption>
       <caption xml:lang="pl">Plan dworca kolejowego, pokazujący w czasie rzeczywistym dostępność rowerów do wypożyczenia</caption>
       <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer</caption>
+      <caption xml:lang="ru">Карта железнодорожной станции с показом доступности прокатных велосипедов в режиме реального времени</caption>
       <caption xml:lang="sl">Zemljevid železniške postaje sproti prikazuje razpoložljivost koles za najem</caption>
       <caption xml:lang="sv">Tågstationskarta som visar tillgängliga hyrcyklar i realtid.</caption>
       <caption xml:lang="uk">Мапа залізничної станції із показом доступності оренди велосипедів у режимі реального часу</caption>
@@ -580,6 +604,7 @@
       <caption xml:lang="pl">Szczegółowe nt. wybranego obiektu na planie dworca kolejowego</caption>
       <caption xml:lang="pt">Informações detalhadas para a entidade de selecção no mapa das estações de comboios</caption>
       <caption xml:lang="pt-BR">Informação detalhada para a entidade selecionada no mapa da estação de trem</caption>
+      <caption xml:lang="ru">Подробные сведения о выбранном объекте на карте железнодорожной станции</caption>
       <caption xml:lang="sl">Podrobne informacije za izbrani predmet na zemljevidu železniške postaje</caption>
       <caption xml:lang="sv">Detaljerad information om objektet som valts på tågstationskartan</caption>
       <caption xml:lang="uk">Докладні відомості для позначеного пункту на мапі залізничної станції</caption>
@@ -604,6 +629,7 @@
       <caption xml:lang="pl">Widok statystyki podróży</caption>
       <caption xml:lang="pt">Área de estatísticas de viagens</caption>
       <caption xml:lang="pt-BR">Visualização de estatísticas da viagem</caption>
+      <caption xml:lang="ru">Просмотр статистики путешествий</caption>
       <caption xml:lang="sl">Pogled potovalne statistike</caption>
       <caption xml:lang="sv">Visning av resestatistik</caption>
       <caption xml:lang="uk">Панель статистики подорожей</caption>
