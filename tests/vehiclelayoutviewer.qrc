@@ -7,7 +7,10 @@
         <file>vehiclelayoutviewer.qml</file>
         <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
 
+        <file alias="images/couchettecar.svg">../src/app/images/couchettecar.svg</file>
         <file alias="images/longdistancetrain.svg">../src/app/images/longdistancetrain.svg</file>
+        <file alias="images/seat.svg">../src/app/images/seat.svg</file>
+        <file alias="images/sleepingcar.svg">../src/app/images/sleepingcar.svg</file>
         <file alias="images/train.svg">../src/app/images/train.svg</file>
     </qresource>
 </RCC>

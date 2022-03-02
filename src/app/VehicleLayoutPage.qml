@@ -191,9 +191,28 @@ Kirigami.ScrollablePage {
                 inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, isSelected ? 1 : 0.25)
                 restaurantBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.neutralTextColor, isSelected ? 1 : 0.25)
 
-                QQC2.Label {
+                ColumnLayout {
                     anchors.centerIn: parent
-                    text: section.name
+                    QQC2.Label {
+                        Layout.alignment: Qt.AlignCenter
+                        text: section.name
+                    }
+                    Kirigami.Icon {
+                        Layout.alignment: Qt.AlignCenter
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                        Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
+                        source: {
+                            switch (section.type) {
+                                case KPublicTransport.VehicleSection.PassengerCar: return "qrc:///images/seat.svg"
+                                case KPublicTransport.VehicleSection.SleepingCar: return "qrc:///images/sleepingcar.svg"
+                                case KPublicTransport.VehicleSection.CouchetteCar: return "qrc:///images/couchettecar.svg"
+                                case KPublicTransport.VehicleSection.RestaurantCar: return "qrc:///images/foodestablishment.svg"
+                            }
+                        }
+                        color: Kirigami.Theme.textColor
+                        isMask: true
+                        visible: source ? true : false
+                    }
                 }
 
                 ColumnLayout {

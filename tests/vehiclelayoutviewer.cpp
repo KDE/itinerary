@@ -5,6 +5,7 @@
 */
 
 #include "publictransport.h"
+#include "localizer.h"
 
 #include <KPublicTransport/Stopover>
 
@@ -54,6 +55,9 @@ int main(int argc, char **argv)
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PublicTransport", [](QQmlEngine*, QJSEngine *engine) -> QJSValue { \
         return engine->toScriptValue(PublicTransport()); \
+    });
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(Localizer());
     });
 
     QQmlApplicationEngine engine;
