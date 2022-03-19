@@ -60,6 +60,7 @@
 #if HAVE_KCRASH
 #include <KCrash>
 #endif
+#include <KContacts/AddressFormat>
 
 #include <QQuickStyle>
 #include <QQmlApplicationEngine>
@@ -81,6 +82,20 @@
 #include <QGuiApplication>
 #include <QIcon>
 #include <QWindow>
+
+void registerKContactsTypes()
+{
+    // ### this should move into a real QML plugin for KContacts
+    qmlRegisterUncreatableMetaObject(KContacts::staticMetaObject, "org.kde.contacts", 1, 0, "KContacts", {});
+    qmlRegisterSingletonType("org.kde.contacts", 1, 0, "AddressFormatRepository", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
+        return jsEngine->toScriptValue(KContacts::AddressFormatRepository());
+    });
+    qRegisterMetaType<KContacts::AddressFormat>();
+    qRegisterMetaType<KContacts::AddressFormatElement>();
+    qRegisterMetaType<KContacts::AddressFormatRepository>();
+    qRegisterMetaType<KContacts::AddressFormatPreference>();
+    qRegisterMetaType<KContacts::AddressFormatScriptPreference>();
+}
 
 void registerKPkPassTypes()
 {
@@ -346,6 +361,7 @@ int main(int argc, char **argv)
     });
 #endif
 
+    registerKContactsTypes();
     registerKPkPassTypes();
     registerKItineraryTypes();
     registerApplicationTypes();

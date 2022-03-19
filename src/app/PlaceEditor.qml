@@ -4,13 +4,14 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import QtLocation 5.15 as QtLocation
 import QtPositioning 5.15
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.i18n.localeData 1.0
+import org.kde.contacts 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -67,6 +68,21 @@ Kirigami.FormLayout {
         id: postalCode
         Kirigami.FormData.label: ("Postal Code:")
         text: place.address.postalCode
+
+        readonly property string format: AddressFormatRepository.formatForCountry(addressCountry.currentValue, KContacts.AddressFormatScriptPreference.Local).postalCodeRegularExpression
+        readonly property bool validFormat: text.match('^' + format + '$')
+
+        Kirigami.Icon {
+            source: postalCode.validFormat ? "dialog-ok" : "dialog-warning"
+            isMask: true
+            color: postalCode.validFormat ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
+            visible: postalCode.text && postalCode.format
+            height: Kirigami.Units.iconSizes.small
+            width: height
+            anchors.right: parent.right
+            anchors.rightMargin: Kirigami.Units.smallSpacing
+            anchors.verticalCenter: parent.verticalCenter
+        }
     }
 
     QQC2.TextField {
