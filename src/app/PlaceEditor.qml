@@ -41,6 +41,8 @@ Kirigami.FormLayout {
         return newPlace;
     }
 
+    readonly property var addressFormat: AddressFormatRepository.formatForCountry(addressCountry.currentValue, KContacts.AddressFormatScriptPreference.Local)
+
     Component {
         id: locationPickerPage
         LocationPicker {
@@ -69,14 +71,13 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: ("Postal Code:")
         text: place.address.postalCode
 
-        readonly property string format: AddressFormatRepository.formatForCountry(addressCountry.currentValue, KContacts.AddressFormatScriptPreference.Local).postalCodeRegularExpression
-        readonly property bool validFormat: text.match('^' + format + '$')
+        readonly property bool validFormat: text.match('^' + root.addressFormat.postalCodeRegularExpression + '$')
 
         Kirigami.Icon {
             source: postalCode.validFormat ? "dialog-ok" : "dialog-warning"
             isMask: true
             color: postalCode.validFormat ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
-            visible: postalCode.text && postalCode.format
+            visible: postalCode.text && root.addressFormat.postalCodeRegularExpression
             height: Kirigami.Units.iconSizes.small
             width: height
             anchors.right: parent.right
@@ -95,6 +96,7 @@ Kirigami.FormLayout {
         id: addressRegion
         Kirigami.FormData.label: i18n("Region:")
         text: place.address.addressRegion
+        visible: (root.addressFormat.usedFields & KContacts.AddressFormatField.Region) || text
     }
 
     App.CountryComboBox {
