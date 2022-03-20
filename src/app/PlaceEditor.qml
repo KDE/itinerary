@@ -25,6 +25,9 @@ Kirigami.FormLayout {
     property double latitude: place.geo.latitude;
     property double longitude: place.geo.longitude;
 
+    /** Initially selected country if the given address doesn't specify one. */
+    property string defaultCountry: Settings.homeCountryIsoCode
+
     function save(place) {
         var addr = place.address;
         addr.streetAddress = streetAddress.text;
@@ -103,7 +106,7 @@ Kirigami.FormLayout {
         id: addressCountry
         Kirigami.FormData.label: i18n("Country:")
         model: Country.allCountries.map(c => c.alpha2)
-        initialCountry: place.address.addressCountry
+        initialCountry: place.address.addressCountry ? place.address.addressCountry : root.defaultCountry
     }
 
     QtLocation.Plugin {
