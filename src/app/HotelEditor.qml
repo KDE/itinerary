@@ -35,6 +35,13 @@ App.EditorPage {
             Kirigami.FormData.isSection: true
             place: reservation.reservationFor
             name: reservation.reservationFor.name
+            defaultCountry: {
+                const HOUR = 60 * 60 * 1000;
+                const DAY = 24 * HOUR;
+                var dt = reservation.checkinTime;
+                dt.setTime(dt.getTime() - (dt.getHours() * HOUR) + DAY);
+                return countryAtTime(dt);
+            }
         }
 
         Kirigami.FormLayout {

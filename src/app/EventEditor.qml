@@ -43,6 +43,7 @@ App.EditorPage {
             nameLabel: i18n("Venue:")
             place: reservation.reservationFor.location
             name: reservation.reservationFor.location.name
+            defaultCountry: countryAtTime(reservation.reservationFor.startDate)
         }
 
         // TODO start/end/entrance times

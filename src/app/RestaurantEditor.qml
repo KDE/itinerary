@@ -32,6 +32,7 @@ App.EditorPage {
             id: address
             place: reservation.reservationFor
             name: reservation.reservationFor.name
+            defaultCountry: countryAtTime(reservation.startTime)
         }
 
         // time

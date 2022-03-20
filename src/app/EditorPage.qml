@@ -21,6 +21,15 @@ Kirigami.ScrollablePage {
 
     property alias dateTimeEditSheet: _dateTimeEditSheet
 
+    /** Returns the country we are assumed to be in at the given time. */
+    function countryAtTime(dt) {
+        const place = TimelineModel.locationAtTime(dt);
+        if (place && place.address.addressCountry) {
+            return place.address.addressCountry;
+        }
+        return Settings.homeCountryIsoCode;
+    }
+
     actions {
         main: Kirigami.Action {
             iconName: "document-save"
