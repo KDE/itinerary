@@ -33,7 +33,11 @@ Kirigami.FormLayout {
         addr.streetAddress = streetAddress.text;
         addr.postalCode = postalCode.text;
         addr.addressLocality = addressLocality.text;
-        addr.addressRegion = addressRegion.text;
+        if (addressRegion.visible) {
+            addr.addressRegion = addressRegion.currentIndex < 0 ? addressRegion.editText : addressRegion.currentValue.substr(3);
+        } else {
+            addr.addressRegion = '';
+        }
         addr.addressCountry = addressCountry.currentValue;
         var geo = place.geo;
         geo.latitude = latitude;
@@ -95,11 +99,41 @@ Kirigami.FormLayout {
         text: place.address.addressLocality
     }
 
-    QQC2.TextField {
+    CountrySubdivisionModel {
+        id: regionModel
+        country: addressCountry.currentCountry
+        onCountryChanged: {
+            if (addressRegion.currentIndex < 0) {
+                addressRegion.tryFindRegion(addressRegion.editText != '' ? addressRegion.editText : place.address.addressRegion);
+            } else {
+                addressRegion.currentIndex = -1;
+            }
+        }
+    }
+    QQC2.ComboBox {
         id: addressRegion
         Kirigami.FormData.label: i18n("Region:")
-        text: place.address.addressRegion
-        visible: (root.addressFormat.usedFields & KContacts.AddressFormatField.Region) || text
+        editable: true
+        model: regionModel
+        textRole: "display"
+        valueRole: "code"
+        Layout.fillWidth: true
+        visible: (root.addressFormat.usedFields & KContacts.AddressFormatField.Region) || editText
+
+        function tryFindRegion(input) {
+            const i = regionModel.rowForNameOrCode(input)
+            if (i >= 0) {
+                currentIndex = i;
+            } else if (input) {
+                editText = input;
+            } else {
+                currentIndex = -1;
+                editText = '';
+            }
+        }
+
+        Component.onCompleted: tryFindRegion(place.address.addressRegion)
+        onAccepted: tryFindRegion(editText)
     }
 
     App.CountryComboBox {
