@@ -141,6 +141,7 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Country:")
         model: Country.allCountries.map(c => c.alpha2)
         initialCountry: place.address.addressCountry ? place.address.addressCountry : root.defaultCountry
+        Layout.fillWidth: true
     }
 
     QtLocation.Plugin {
