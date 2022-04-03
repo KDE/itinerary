@@ -8,6 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kitemmodels 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -23,7 +24,7 @@ Kirigami.ScrollablePage {
         manager: LiveDataManager.publicTransportManager
     }
 
-    SortFilterProxyModel {
+    KSortFilterProxyModel {
         id: sortedJourneyModel
         sourceModel: journeyModel
         sortRole: JourneyQueryModel.ScheduledDepartureTime

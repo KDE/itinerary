@@ -129,7 +129,6 @@ void registerApplicationTypes()
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterType<LocationInformationDelegateController>("org.kde.itinerary", 1, 0, "LocationInformationDelegateController");
-    qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel"); // TODO use this from kitemmodels?
     qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
     qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");

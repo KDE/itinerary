@@ -21,7 +21,6 @@
 #include <QFile>
 #include <QGuiApplication>
 #include <QUrl>
-#include <QSortFilterProxyModel>
 
 int main(int argc, char **argv)
 {
@@ -57,7 +56,6 @@ int main(int argc, char **argv)
     req.setTo(to);
     req.setIncludeIntermediateStops(true);
 
-    qmlRegisterType<QSortFilterProxyModel>("org.kde.itinerary", 1, 0, "SortFilterProxyModel");
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Localizer());
     });
