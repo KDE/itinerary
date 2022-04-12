@@ -653,6 +653,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="22.04.0" date="2022-04-21"/>
     <release version="21.12.3" date="2022-03-03">
       <description>
         <ul>
@@ -676,25 +677,6 @@
           <li>Improved travel document extraction for Amtrak and VIA Rail.</li>
           <li>Support for alternative Hafas platform formats.</li>
           <li>Improved opening hours evaluation in the station maps.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.12.0" date="2021-12-09">
-      <description>
-        <ul>
-          <li>New health certificate user interface.</li>
-          <li>New navigation maneuver details page for individual transport or walking journey sections.</li>
-          <li>Smarter transfer auto-selection.</li>
-          <li>Live disruption information and journey details for bus trips.</li>
-          <li>Ability to shorten train and bus trips.</li>
-          <li>Additional individual transport modes for transfers.</li>
-          <li>Improved platform identification for trams and subways.</li>
-          <li>Easier accessible barcode scan mode, and support for PDF417 ticket barcodes.</li>
-          <li>Improved data import feedback.</li>
-          <li>Fixed pinch zoom on station maps.</li>
-          <li>Improved Apple Wallet pass rendering.</li>
-          <li>Warn about rental vehicles with limited remaining range.</li>
-          <li>Numerous improvements to travel document data extraction.</li>
         </ul>
       </description>
     </release>
