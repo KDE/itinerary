@@ -40,7 +40,7 @@
                 "@value": "2000-01-01T13:00:00+01:00",
                 "timezone": "Europe/Berlin"
             },
-            "anchorTimeDelta": 3600,
+            "anchorTimeDelta": 5400,
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
