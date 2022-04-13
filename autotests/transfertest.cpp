@@ -76,7 +76,7 @@ private Q_SLOTS:
         auto transfer = mgr.transfer(batchId, Transfer::Before);
         QCOMPARE(transfer.state(), Transfer::Pending);
         QCOMPARE(transfer.anchorTime(), QDateTime({2017, 9, 10}, {6, 15}, QTimeZone("Europe/Berlin")));
-        QCOMPARE(transfer.anchorTimeDelta(), 3600);
+        QCOMPARE(transfer.anchorTimeDelta(), 5400);
         QCOMPARE(transfer.alignment(), Transfer::Before);
         QCOMPARE(transfer.reservationId(), batchId);
         QVERIFY(transfer.from().hasCoordinate());

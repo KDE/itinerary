@@ -152,7 +152,7 @@
                 "@value": "1996-10-16T17:50:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "anchorTimeDelta": 3600,
+            "anchorTimeDelta": 5400,
             "floatingLocationType": "FavoriteLocation",
             "from": {
                 "@type": "Location",
@@ -390,7 +390,7 @@
                 "@value": "1996-10-17T17:35:00+03:00",
                 "timezone": "Europe/Helsinki"
             },
-            "anchorTimeDelta": 3600,
+            "anchorTimeDelta": 5400,
             "floatingLocationType": "Reservation",
             "from": {
                 "@type": "Location",

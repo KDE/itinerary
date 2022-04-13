@@ -417,17 +417,32 @@ bool TransferManager::isNotInTripGroup(const QString &resId) const
     return m_tgMgr->tripGroupIdForReservation(resId).isEmpty();
 }
 
+// default transfer anchor deltas (in minutes)
+enum { FlightDelta, TrainDelta, BusDelta, FallbackDelta };
+static constexpr const int default_deltas[][2] = {
+    { 90, 30 }, // Flight
+    { 20, 10 }, // Train
+    { 15, 10 }, // Bus
+    { 30, 15 }, // anything else
+};
+
 void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVariant &res) const
 {
     if (transfer.state() != Transfer::UndefinedState) {
         return;
     }
 
+    int delta;
     if (JsonLd::isA<FlightReservation>(res)) {
-        transfer.setAnchorTimeDelta(transfer.alignment() == Transfer::Before ? 60 * 60 : 30 * 60);
+        delta = default_deltas[FlightDelta][transfer.alignment()];
+    } else if (JsonLd::isA<TrainReservation>(res)) {
+        delta = default_deltas[TrainDelta][transfer.alignment()];
+    } else if (JsonLd::isA<BusReservation>(res)) {
+        delta = default_deltas[BusDelta][transfer.alignment()];
     } else {
-        transfer.setAnchorTimeDelta(10 * 60);
+        delta = default_deltas[FallbackDelta][transfer.alignment()];
     }
+    transfer.setAnchorTimeDelta(delta * 60);
 }
 
 QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant &res) const
