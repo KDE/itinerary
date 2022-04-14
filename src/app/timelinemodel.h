@@ -97,6 +97,7 @@ private:
     void updateTransfersForBatch(const QString &batchId);
 
     void scheduleCurrentBatchTimer();
+    bool isDateEmpty(const QDate &date) const;
 
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;

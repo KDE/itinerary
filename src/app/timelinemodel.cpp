@@ -214,7 +214,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             return elem.elementType;
         case TodayEmptyRole:
             if (elem.elementType == TimelineElement::TodayMarker) {
-                return index.row() == (int)(m_elements.size() - 1) || m_elements.at(index.row() + 1).dt.date() > today();
+                return isDateEmpty(m_elements.at(index.row()).dt.date());
             }
             return {};
         case IsTodayRole:
@@ -893,4 +893,20 @@ QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
         return LocationUtil::arrivalLocation(res);
     }
     return {};
+}
+
+bool TimelineModel::isDateEmpty(const QDate &date) const
+{
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), date, [](const auto &lhs, auto rhs) {
+        return lhs.dt.date() < rhs;
+    });
+    for (; it != m_elements.end(); ++it) {
+        if ((*it).dt.date() == date && (*it).elementType != TimelineElement::TodayMarker) {
+            return false;
+        }
+        if ((*it).dt.date() != date) {
+            break;
+        }
+    }
+    return true;
 }
