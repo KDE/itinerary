@@ -11,7 +11,12 @@
 #include <QString>
 #include <QVariant>
 
+class TimelineModel;
 class Transfer;
+
+namespace KItinerary {
+class GeoCoordinates;
+}
 
 /** TimelineModel items. */
 class TimelineElement {
@@ -46,9 +51,9 @@ public:
     Q_ENUM(RangeType)
 
     explicit TimelineElement();
-    explicit TimelineElement(ElementType type, const QDateTime &dateTime, const QVariant &data = {});
-    explicit TimelineElement(const QString &resId, const QVariant &res, RangeType rt);
-    explicit TimelineElement(const ::Transfer &transfer);
+    explicit TimelineElement(TimelineModel *model, ElementType type, const QDateTime &dateTime, const QVariant &data = {});
+    explicit TimelineElement(TimelineModel *model, const QString &resId, const QVariant &res, RangeType rt);
+    explicit TimelineElement(TimelineModel *model, const ::Transfer &transfer);
 
     /** Timeline order. This considers only position in the timeline, not content. */
     bool operator<(const TimelineElement &other) const;
@@ -66,6 +71,37 @@ public:
     QVariant content() const;
     void setContent(const QVariant &content);
 
+    /** Returns @c true if this element changes our location after taking effect. */
+    bool isLocationChange() const;
+
+    /** Returns @c true if this is element has an exclusively assigned defined
+     *  time range. That's location change elements or e.g. events with a fixed end time,
+     *  all things for which an end time is meaningful.
+     *  The opposite to this, besides informational elements, are hotel or rental car bookings for example.
+     */
+    bool isTimeBoxed() const;
+
+    /** Returns @c true if this element is cancelled or otherwise not happening,
+     *  and thus its effect (such as a location change) wont actually happen.
+     */
+    bool isCanceled() const;
+
+    /** Destination country code, ie. the country we are in when/after
+     *  this element took effect.
+     */
+    QString destinationCountry() const;
+
+    /** Geo coordinates of/after this element, ie. the location we are in when/after
+     *  this element took effect.
+     */
+    KItinerary::GeoCoordinates destinationCoordinates() const;
+
+    /** End or arrival time.
+     *  For location changes this is the arrival time.
+     *  For timeboxed elements this is the end time.
+     */
+    QDateTime endDateTime() const;
+
     /** The time @p res is added to the timeline, for range type @p range. */
     static QDateTime relevantDateTime(const QVariant &res, TimelineElement::RangeType range);
 
@@ -75,6 +111,7 @@ public:
 
 private:
     QVariant m_content;
+    TimelineModel *m_model = nullptr;
 };
 
 Q_DECLARE_METATYPE(TimelineElement)

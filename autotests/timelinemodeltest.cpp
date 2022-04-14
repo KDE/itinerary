@@ -60,20 +60,20 @@ private Q_SLOTS:
 
         const auto dt = QDateTime::currentDateTimeUtc();
 
-        TimelineElement group(TimelineElement::TripGroup, dt);
+        TimelineElement group(nullptr, TimelineElement::TripGroup, dt);
         group.rangeType = TimelineElement::RangeBegin;
-        QTest::newRow("transfer-group-begin") << group << TimelineElement(TimelineElement::Transfer, dt);
+        QTest::newRow("transfer-group-begin") << group << TimelineElement(nullptr, TimelineElement::Transfer, dt);
         group.rangeType = TimelineElement::RangeEnd;
-        QTest::newRow("transfer-group-end") << TimelineElement(TimelineElement::Transfer, dt) << group;
+        QTest::newRow("transfer-group-end") << TimelineElement(nullptr, TimelineElement::Transfer, dt) << group;
 
-        TimelineElement locInfo(TimelineElement::LocationInfo, dt);
-        TimelineElement hotel(TimelineElement::Hotel, dt);
+        TimelineElement locInfo(nullptr, TimelineElement::LocationInfo, dt);
+        TimelineElement hotel(nullptr, TimelineElement::Hotel, dt);
         hotel.rangeType = TimelineElement::RangeBegin;
         QTest::newRow("locinfo-before-hotel") << locInfo << hotel;
-        TimelineElement flight(TimelineElement::Flight, dt);
+        TimelineElement flight(nullptr, TimelineElement::Flight, dt);
         QTest::newRow("locinfo-before-flight") << locInfo << flight;
 
-        QTest::newRow("location-info-before-transfer") << TimelineElement(TimelineElement::LocationInfo, dt) << TimelineElement(TimelineElement::Transfer, dt);
+        QTest::newRow("location-info-before-transfer") << TimelineElement(nullptr, TimelineElement::LocationInfo, dt) << TimelineElement(nullptr, TimelineElement::Transfer, dt);
     }
 
     void testElementCompare()

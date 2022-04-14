@@ -99,6 +99,7 @@ private:
     void scheduleCurrentBatchTimer();
     bool isDateEmpty(const QDate &date) const;
 
+    friend class TimelineElement;
     ReservationManager *m_resMgr = nullptr;
     WeatherForecastManager *m_weatherMgr = nullptr;
     TripGroupManager *m_tripGroupManager = nullptr;

@@ -5,12 +5,21 @@
 */
 
 #include "timelineelement.h"
+
+#include "locationhelper.h"
+#include "reservationmanager.h"
+#include "timelinemodel.h"
 #include "transfer.h"
 
 #include <KItinerary/Event>
+#include <KItinerary/LocationUtil>
+#include <KItinerary/Place>
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 #include <KItinerary/Visit>
+
+#include <KPublicTransport/Journey>
+#include <KPublicTransport/Stopover>
 
 using namespace KItinerary;
 
@@ -29,26 +38,29 @@ static TimelineElement::ElementType elementType(const QVariant &res)
 
 TimelineElement::TimelineElement() = default;
 
-TimelineElement::TimelineElement(TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
+TimelineElement::TimelineElement(TimelineModel *model, TimelineElement::ElementType type, const QDateTime &dateTime, const QVariant &data)
     : dt(dateTime)
     , elementType(type)
     , m_content(data)
+    , m_model(model)
 {
 }
 
-TimelineElement::TimelineElement(const QString& resId, const QVariant& res, TimelineElement::RangeType rt)
+TimelineElement::TimelineElement(TimelineModel *model, const QString& resId, const QVariant& res, TimelineElement::RangeType rt)
     : dt(relevantDateTime(res, rt))
     , elementType(::elementType(res))
     , rangeType(rt)
     , m_content(resId)
+    , m_model(model)
 {
 }
 
-TimelineElement::TimelineElement(const ::Transfer &transfer)
+TimelineElement::TimelineElement(TimelineModel *model, const ::Transfer &transfer)
     : dt(transfer.anchorTime())
     , elementType(Transfer)
     , rangeType(SelfContained)
     , m_content(QVariant::fromValue(transfer))
+    , m_model(model)
 {
 }
 
@@ -140,6 +152,119 @@ QDateTime TimelineElement::relevantDateTime(const QVariant &res, TimelineElement
     }
     if (range == TimelineElement::RangeEnd) {
         return SortUtil::endDateTime(res);
+    }
+
+    return {};
+}
+
+bool TimelineElement::isLocationChange() const
+{
+    if (isReservation()) {
+        // ### can be done without reservation lookup for some of the reservation element types
+        const auto res = m_model->m_resMgr->reservation(batchId());
+        return LocationUtil::isLocationChange(res);
+    }
+
+    if (elementType == Transfer) {
+        return m_content.value<::Transfer>().state() == Transfer::Selected;
+    }
+
+    return false;
+}
+
+bool TimelineElement::isTimeBoxed() const
+{
+    switch (elementType) {
+        case Undefined:
+        case TodayMarker:
+        case TripGroup:
+        case WeatherForecast:
+        case LocationInfo:
+            return false;
+        case Transfer:
+            return m_content.value<::Transfer>().state() == Transfer::Selected;
+        case Flight:
+        case TrainTrip:
+        case BusTrip:
+            return true;
+        case Hotel:
+        case CarRental:
+            return false;
+        case Restaurant:
+        case TouristAttraction:
+        case Event:
+            return SortUtil::endDateTime(m_model->m_resMgr->reservation(batchId())).isValid();
+    }
+    return false;
+}
+
+bool TimelineElement::isCanceled() const
+{
+    if (isReservation()) {
+        const auto res = m_model->m_resMgr->reservation(batchId());
+        return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+    }
+
+    // TODO transfers with Disruption::NoService
+    return false;
+}
+
+QString TimelineElement::destinationCountry() const
+{
+    if (isReservation()) {
+        const auto res = m_model->m_resMgr->reservation(batchId());
+        return LocationHelper::destinationCountry(res);
+    }
+
+    if (elementType == Transfer) {
+        const auto transfer = m_content.value<::Transfer>();
+        if (transfer.state() == Transfer::Selected) {
+            const auto &sections = transfer.journey().sections();
+            if (!sections.empty()) {
+                return sections.back().arrival().stopPoint().country();
+            }
+        }
+    }
+
+    return {};
+}
+
+KItinerary::GeoCoordinates TimelineElement::destinationCoordinates() const
+{
+    if (isReservation()) {
+        const auto res = m_model->m_resMgr->reservation(batchId());
+        if (LocationUtil::isLocationChange(res)) {
+            return LocationUtil::geo(LocationUtil::arrivalLocation(res));
+        }
+        return LocationUtil::geo(LocationUtil::location(res));
+    }
+
+    if (elementType == Transfer) {
+        const auto transfer = m_content.value<::Transfer>();
+        if (transfer.state() == Transfer::Selected) {
+            const auto &sections = transfer.journey().sections();
+            if (!sections.empty()) {
+                const auto loc = sections.back().arrival().stopPoint();
+                return KItinerary::GeoCoordinates(loc.latitude(), loc.longitude());
+            }
+        }
+    }
+
+    return {};
+}
+
+QDateTime TimelineElement::endDateTime() const
+{
+    if (isReservation()) {
+        const auto res = m_model->m_resMgr->reservation(batchId());
+        return SortUtil::endDateTime(res);
+    }
+
+    if (elementType == Transfer) {
+        const auto transfer = m_content.value<::Transfer>();
+        if (transfer.state() == Transfer::Selected) {
+            return transfer.journey().scheduledArrivalTime();
+        }
     }
 
     return {};

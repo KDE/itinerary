@@ -53,23 +53,9 @@ static bool needsSplitting(const QVariant &res)
         || JsonLd::isA<RentalCarReservation>(res);
 }
 
-static QTimeZone destinationTimeZone(const QVariant &res)
+static QTimeZone timeZone(const QDateTime &dt)
 {
-    const auto dt = SortUtil::endDateTime(res);
     return dt.timeSpec() == Qt::TimeZone ? dt.timeZone() : QTimeZone();
-}
-
-static GeoCoordinates geoCoordinate(const QVariant &res)
-{
-    if (LocationUtil::isLocationChange(res)) {
-        return LocationUtil::geo(LocationUtil::arrivalLocation(res));
-    }
-    return LocationUtil::geo(LocationUtil::location(res));
-}
-
-static bool isCanceled(const QVariant &res)
-{
-    return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
 }
 
 TimelineModel::TimelineModel(QObject *parent)
@@ -119,18 +105,18 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     m_resMgr = mgr;
     for (const auto &resId : mgr->batches()) {
         const auto res = m_resMgr->reservation(resId);
-        auto elem = TimelineElement(resId, res, TimelineElement::SelfContained);
+        auto elem = TimelineElement(this, resId, res, TimelineElement::SelfContained);
         if (!elem.isReservation()) { // a type we can't handle
             continue;
         }
         if (needsSplitting(res)) {
-            m_elements.push_back(TimelineElement{resId, res, TimelineElement::RangeBegin});
-            m_elements.push_back(TimelineElement{resId, res, TimelineElement::RangeEnd});
+            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeBegin});
+            m_elements.push_back(TimelineElement{this, resId, res, TimelineElement::RangeEnd});
         } else {
             m_elements.push_back(std::move(elem));
         }
     }
-    m_elements.push_back(TimelineElement{TimelineElement::TodayMarker, QDateTime(today(), QTime(0, 0))});
+    m_elements.push_back(TimelineElement{this, TimelineElement::TodayMarker,  QDateTime(today(), QTime(0, 0))});
     std::sort(m_elements.begin(), m_elements.end());
 
     connect(mgr, &ReservationManager::batchAdded, this, &TimelineModel::batchAdded);
@@ -291,10 +277,10 @@ void TimelineModel::batchAdded(const QString &resId)
 {
     const auto res = m_resMgr->reservation(resId);
     if (needsSplitting(res)) {
-        insertElement(TimelineElement{resId, res, TimelineElement::RangeBegin});
-        insertElement(TimelineElement{resId, res, TimelineElement::RangeEnd});
+        insertElement(TimelineElement{this, resId, res, TimelineElement::RangeBegin});
+        insertElement(TimelineElement{this, resId, res, TimelineElement::RangeEnd});
     } else {
-        insertElement(TimelineElement{resId, res, TimelineElement::SelfContained});
+        insertElement(TimelineElement{this, resId, res, TimelineElement::SelfContained});
     }
 
     updateInformationElements();
@@ -389,7 +375,7 @@ void TimelineModel::updateElement(const QString &resId, const QVariant &res, Tim
         beginRemoveRows({}, row, row);
         m_elements.erase(it);
         endRemoveRows();
-        insertElement(TimelineElement{resId, res, rangeType});
+        insertElement(TimelineElement{this, resId, res, rangeType});
     } else {
         Q_EMIT dataChanged(index(row, 0), index(row, 0));
     }
@@ -443,7 +429,7 @@ void TimelineModel::updateTodayMarker()
     Q_ASSERT(oldRow < newRow);
 
     beginInsertRows({}, newRow, newRow);
-    m_elements.insert(it, TimelineElement{TimelineElement::TodayMarker, QDateTime(today(), QTime(0, 0))});
+    m_elements.insert(it, TimelineElement{this, TimelineElement::TodayMarker, QDateTime(today(), QTime(0, 0))});
     endInsertRows();
 
     beginRemoveRows({}, oldRow, oldRow);
@@ -474,28 +460,23 @@ void TimelineModel::updateInformationElements()
             continue;
         }
 
-        if (!(*it).isReservation()) {
-            ++it;
-            continue;
-        }
-        const auto res = m_resMgr->reservation((*it).batchId());
-        if (isCanceled(res)) {
+        if ((*it).isCanceled()) {
             ++it;
             continue;
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode(LocationHelper::destinationCountry(res));
+        newCountry.setIsoCode((*it).destinationCountry());
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
-        newCountry.setTimeZone(destinationTimeZone(res), (*it).dt);
+        newCountry.setTimeZone(timeZone((*it).endDateTime()), (*it).dt);
         if (newCountry == previousCountry) {
             ++it;
             continue;
         }
         if (!(newCountry == homeCountry) || newCountry.hasRelevantTimeZoneChange(previousCountry)) {
             // for location changes, we want this after the corresponding element
-            const auto dt =  LocationUtil::isLocationChange(res) ? SortUtil::endDateTime(res) : SortUtil::startDateTime(res);
-            it = insertOrUpdate(it, TimelineElement{TimelineElement::LocationInfo, dt, QVariant::fromValue(newCountry)});
+            const auto dt = (*it).isLocationChange() ? (*it).endDateTime() : (*it).dt;
+            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::LocationInfo, dt, QVariant::fromValue(newCountry)});
         }
 
         ++it;
@@ -525,16 +506,13 @@ void TimelineModel::updateWeatherElements()
             continue;
         }
 
-        if (!(*it).isReservation()) {
+        if ((*it).isCanceled()) {
             ++it;
             continue;
         }
-        const auto res = m_resMgr->reservation((*it).batchId());
-        if (!isCanceled(res)) {
-            const auto newGeo = geoCoordinate(res);
-            if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
-                geo = newGeo;
-            }
+        const auto newGeo = (*it).destinationCoordinates();
+        if ((*it).isLocationChange() || newGeo.isValid()) {
+            geo = newGeo;
         }
 
         ++it;
@@ -562,16 +540,13 @@ void TimelineModel::updateWeatherElements()
             }
 
             // track where we are
-            if (!(*it).isReservation()) {
+            if ((*it).isCanceled()) {
                 ++it;
                 continue;
             }
-            const auto res = m_resMgr->reservation((*it).batchId());
-            if (!isCanceled(res)) {
-                const auto newGeo = geoCoordinate(res);
-                if (LocationUtil::isLocationChange(res) || newGeo.isValid()) {
-                    geo = newGeo;
-                }
+            const auto newGeo = (*it).destinationCoordinates();
+            if ((*it).isLocationChange() || newGeo.isValid()) {
+                geo = newGeo;
             }
 
             ++it;
@@ -587,15 +562,11 @@ void TimelineModel::updateWeatherElements()
             if ((*it2).dt >= endTime) {
                 break;
             }
-            if (!(*it2).isReservation()) {
-                continue;
-            }
-            const auto res = m_resMgr->reservation((*it2).batchId());
-            if (LocationUtil::isLocationChange(res)) {
+            if ((*it2).isLocationChange()) {
                 // exclude the actual travel time from forecast ranges
-                endTime = std::min(endTime, TimelineElement::relevantDateTime(res, TimelineElement::RangeBegin));
-                nextStartTime = std::max(endTime, TimelineElement::relevantDateTime(res, TimelineElement::RangeEnd));
-                newGeo = geoCoordinate(res);
+                endTime = std::min(endTime, (*it2).dt);
+                nextStartTime = std::max(endTime, (*it2).endDateTime());
+                newGeo = (*it2).destinationCoordinates();
                 break;
             }
         }
@@ -609,7 +580,7 @@ void TimelineModel::updateWeatherElements()
 
         // updated or new data
         if (fc.isValid()) {
-            it = insertOrUpdate(it, TimelineElement{TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
+            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
         }
         // we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
@@ -633,7 +604,7 @@ void TimelineModel::updateWeatherElements()
         if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, TimelineElement{TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
+            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
             ++it;
             endInsertRows();
         }
@@ -690,11 +661,11 @@ void TimelineModel::tripGroupAdded(const QString& groupId)
 {
     const auto g = m_tripGroupManager->tripGroup(groupId);
 
-    TimelineElement beginElem{TimelineElement::TripGroup, g.beginDateTime(), groupId};
+    TimelineElement beginElem{this, TimelineElement::TripGroup, g.beginDateTime(), groupId};
     beginElem.rangeType = TimelineElement::RangeBegin;
     insertElement(std::move(beginElem));
 
-    TimelineElement endElem{TimelineElement::TripGroup, g.endDateTime(), groupId};
+    TimelineElement endElem{this, TimelineElement::TripGroup, g.endDateTime(), groupId};
     endElem.rangeType = TimelineElement::RangeEnd;
     insertElement(std::move(endElem));
 }
@@ -743,7 +714,7 @@ void TimelineModel::transferChanged(const Transfer& transfer)
             --it;
         }
     }
-    insertOrUpdate(it, TimelineElement(transfer));
+    insertOrUpdate(it, TimelineElement(this, transfer));
 
     Q_EMIT todayRowChanged();
 }
@@ -883,13 +854,10 @@ QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
     }
 
     for (--it; it != m_elements.begin(); --it) {
-        if (!(*it).isReservation()) {
+        if (!(*it).isReservation() || !(*it).isLocationChange()) {
             continue;
         }
         const auto res = m_resMgr->reservation((*it).batchId());
-        if (!LocationUtil::isLocationChange(res)) {
-            continue;
-        }
         return LocationUtil::arrivalLocation(res);
     }
     return {};
