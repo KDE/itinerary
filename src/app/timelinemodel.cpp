@@ -78,6 +78,7 @@ TimelineModel::TimelineModel(QObject *parent)
     });
 
     connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::currentBatchChanged);
+    connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::updateTodayMarker);
     connect(&m_currentBatchTimer, &QTimer::timeout, this, &TimelineModel::scheduleCurrentBatchTimer);
     m_currentBatchTimer.setTimerType(Qt::VeryCoarseTimer);
     m_currentBatchTimer.setSingleShot(true);
@@ -126,6 +127,7 @@ void TimelineModel::setReservationManager(ReservationManager* mgr)
     connect(mgr, &ReservationManager::batchRemoved, this, &TimelineModel::batchRemoved);
     endResetModel();
 
+    updateTodayMarker();
     updateInformationElements();
     Q_EMIT todayRowChanged();
 
@@ -421,15 +423,31 @@ void TimelineModel::dayChanged()
 
 void TimelineModel::updateTodayMarker()
 {
-    const auto it = std::lower_bound(m_elements.begin(), m_elements.end(), today(), [](const auto &lhs, const auto &rhs) {
-        return lhs.dt.date() < rhs;
-    });
+    auto dt = now();
+    auto it = std::lower_bound(m_elements.begin(), m_elements.end(), dt);
+
+    if (it != m_elements.begin()) {
+        const auto prevIt = std::prev(it);
+        // check if the previous element is the old today marker, if so nothing to do
+        if ((*prevIt).elementType == TimelineElement::TodayMarker) {
+            (*prevIt).dt = dt;
+            return;
+        }
+        // check if the previous element is still ongoing, in that case we want to be before that
+        if ((*prevIt).dt.date() == today() && ((*prevIt).isTimeBoxed() && (*prevIt).endDateTime() > now())) {
+            it = prevIt;
+            dt = (*prevIt).dt;
+        }
+    }
+
     const auto newRow = std::distance(m_elements.begin(), it);
     const auto oldRow = todayRow();
-    Q_ASSERT(oldRow < newRow);
+    if (oldRow >= newRow) {
+        return;
+    }
 
     beginInsertRows({}, newRow, newRow);
-    m_elements.insert(it, TimelineElement{this, TimelineElement::TodayMarker, QDateTime(today(), QTime(0, 0))});
+    m_elements.insert(it, TimelineElement{this, TimelineElement::TodayMarker, dt});
     endInsertRows();
 
     beginRemoveRows({}, oldRow, oldRow);

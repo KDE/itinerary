@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: i18n("Today")
+                text: i18n("Go To Now")
                 iconName: "view-calendar-day"
                 onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
             },
