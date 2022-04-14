@@ -5,6 +5,7 @@
 */
 
 #include "transfermanager.h"
+#include "constants.h"
 #include "logging.h"
 #include "favoritelocationmodel.h"
 #include "livedatamanager.h"
@@ -18,6 +19,7 @@
 #include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Reservation>
+#include <KItinerary/SortUtil>
 #include <KItinerary/TrainTrip>
 
 #include <KPublicTransport/Journey>
@@ -271,6 +273,9 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     // - res is an event and we are not at its location already
     // ... and can happen in the following cases:
     // - res is not in a trip group at all (that assumes we are at home)
+    // - res is a location change, and the previous element is also a location change but not a connection
+    //   (ie. transfer from favorite location at the destination of a roundtrip trip group)
+
 
     const auto notInGroup = isNotInTripGroup(resId);
     if ((isLocationChange && isFirstInTripGroup(resId)) || notInGroup) {
@@ -314,6 +319,17 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
 
     }
 
+    // transfer to favorite at destination of a roundtrip trip group
+    if (LocationUtil::isLocationChange(res) && LocationUtil::isLocationChange(prevRes) && LocationUtil::isSameLocation(toLoc, prevLoc)) {
+        const auto arrivalTime = SortUtil::endDateTime(prevRes);
+        const auto departureTime = SortUtil::startDateTime(res);
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        const auto f = pickFavorite(toLoc, resId, Transfer::Before);
+        transfer.setFrom(locationFromFavorite(f));
+        transfer.setFromName(f.name());
+        return std::chrono::seconds(arrivalTime.secsTo(departureTime)) < Constants::MaximumLayoverTime ? ShouldRemove : CanAddManually;
+    }
+
     return ShouldRemove;
 }
 
@@ -336,6 +352,8 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     // - res is an event and the following or enclosing element is a lodging element
     // ... and can happen in the following cases
     // - res is not in a trip group at all (that assumes we are at home)
+    // - res is a location change, and the subsequent element is also a location change but not a connection
+    //   (ie. transfer to favorite location at the destination of a roundtrip trip group)
 
     const auto notInGroup = isNotInTripGroup(resId);
     if ((isLocationChange && isLastInTripGroup(resId)) || notInGroup) {
@@ -376,6 +394,17 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         transfer.setToName(LocationUtil::name(nextLoc));
         transfer.setFloatingLocationType(Transfer::Reservation);
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
+    }
+
+    // transfer to favorite at destination of a roundtrip trip group
+    if (LocationUtil::isLocationChange(res) && LocationUtil::isLocationChange(nextRes) && LocationUtil::isSameLocation(fromLoc, nextLoc)) {
+        const auto arrivalTime = SortUtil::endDateTime(res);
+        const auto departureTime = SortUtil::startDateTime(nextRes);
+        transfer.setFloatingLocationType(Transfer::FavoriteLocation);
+        const auto f = pickFavorite(fromLoc, resId, Transfer::After);
+        transfer.setTo(locationFromFavorite(f));
+        transfer.setToName(f.name());
+        return std::chrono::seconds(arrivalTime.secsTo(departureTime)) < Constants::MaximumLayoverTime ? ShouldRemove : CanAddManually;
     }
 
     return ShouldRemove;
