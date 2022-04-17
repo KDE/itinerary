@@ -401,7 +401,7 @@ static bool isLayover(const QVariant &res1, const QVariant &res2)
     return LocationUtil::isSameLocation(LocationUtil::arrivalLocation(res1), LocationUtil::departureLocation(res2), LocationUtil::WalkingDistance);
 }
 
-KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() const
+KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestOne() const
 {
     if (!m_resMgr || m_batchId.isEmpty() || !m_liveDataMgr) {
         return {};
@@ -421,9 +421,18 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     req.setIncludeIntermediateStops(true);
     req.setIncludePaths(true);
     PublicTransport::selectBackends(req, m_liveDataMgr->publicTransportManager(), res);
+    return req;
+}
+
+KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequestFull() const
+{
+    auto req = journeyRequestOne();
+    if (!req.isValid()) {
+        return {};
+    }
 
     // find full journey by looking at subsequent elements
-    auto prevRes = res;
+    auto prevRes = m_resMgr->reservation(m_batchId);
     auto prevBatchId = m_batchId;
     while (true) {
         auto endBatchId = m_resMgr->nextBatch(prevBatchId);
@@ -440,7 +449,7 @@ KPublicTransport::JourneyRequest TimelineDelegateController::journeyRequest() co
     return req;
 }
 
-void TimelineDelegateController::applyJourney(const QVariant &journey)
+void TimelineDelegateController::applyJourney(const QVariant &journey, bool includeFollowing)
 {
     if (!m_resMgr || m_batchId.isEmpty()) {
         return;
@@ -457,7 +466,7 @@ void TimelineDelegateController::applyJourney(const QVariant &journey)
 
     // find all batches we are replying here (same logic as in journeyRequest)
     std::vector<QString> oldBatches({m_batchId});
-    {
+    if (includeFollowing) {
         auto prevRes = m_resMgr->reservation(m_batchId);
         auto prevBatchId = m_batchId;
         while (true) {

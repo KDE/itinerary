@@ -60,7 +60,11 @@ class TimelineDelegateController : public QObject
     /** A KPublicTransport::JourneyRequest for the current journey.
      *  This includes the current element as well as any immediately connected following elements.
      */
-    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequest READ journeyRequest NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
+    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestFull READ journeyRequestFull NOTIFY contentChanged) // TODO technically notification also depends on other elements, so similar to previousLocationChanged
+    /** A KPublicTransport::JourneyRequest for the current element.
+     *  This does not include any connected following elements.
+     */
+    Q_PROPERTY(KPublicTransport::JourneyRequest journeyRequestOne READ journeyRequestOne NOTIFY contentChanged)
 
     /** Inbound connection is unlikely to work. */
     Q_PROPERTY(bool connectionWarning READ connectionWarning NOTIFY connectionWarningChanged)
@@ -99,8 +103,9 @@ public:
     bool isLocationChange() const;
     bool isPublicTransport() const;
 
-    KPublicTransport::JourneyRequest journeyRequest() const;
-    Q_INVOKABLE void applyJourney(const QVariant &journey);
+    KPublicTransport::JourneyRequest journeyRequestFull() const;
+    KPublicTransport::JourneyRequest journeyRequestOne() const;
+    Q_INVOKABLE void applyJourney(const QVariant &journey, bool includeFollowing);
 
     bool connectionWarning() const;
     bool isCanceled() const;

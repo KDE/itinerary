@@ -18,9 +18,40 @@ App.JourneyQueryPage {
     property QtObject controller;
 
     title: i18n("Alternative Connections")
-    journeyRequest: controller.journeyRequest
+    journeyRequest: controller.journeyRequestFull
 
     onJourneyChanged: replaceWarningSheet.sheetOpen = true
+
+    QQC2.ActionGroup { id: journeyActionGroup }
+    Component {
+        id: fullJourneyAction
+        Kirigami.Action {
+            text: i18nc("to travel destination", "To %1", controller.journeyRequestFull.to.name)
+            checkable: true
+            checked: controller.journeyRequestFull.to.name == root.journeyRequest.to.name
+            iconName: "go-next-symbolic"
+            visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
+            QQC2.ActionGroup.group: journeyActionGroup
+            onTriggered: root.journeyRequest = controller.journeyRequestFull
+        }
+    }
+    Component {
+        id: oneJourneyAction
+        Kirigami.Action {
+            text: i18nc("to travel destination", "To %1", controller.journeyRequestOne.to.name)
+            checkable: true
+            checked: controller.journeyRequestOne.to.name == root.journeyRequest.to.name
+            iconName: "go-next-symbolic"
+            visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
+            QQC2.ActionGroup.group: journeyActionGroup
+            onTriggered: root.journeyRequest = controller.journeyRequestOne
+        }
+    }
+
+    Component.onCompleted: {
+        actions.contextualActions.push(fullJourneyAction.createObject(root));
+        actions.contextualActions.push(oneJourneyAction.createObject(root));
+    }
 
     Kirigami.OverlaySheet {
         id: replaceWarningSheet
@@ -40,7 +71,7 @@ App.JourneyQueryPage {
                 text: i18n("Replace")
                 icon.name: "document-save"
                 onClicked: {
-                    controller.applyJourney(root.journey);
+                    controller.applyJourney(root.journey, root.journeyRequest.to.name == controller.journeyRequestFull.to.name);
                     applicationWindow().pageStack.pop();
                 }
             }

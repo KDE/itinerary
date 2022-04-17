@@ -56,7 +56,8 @@ private Q_SLOTS:
         QCOMPARE(controller.effectiveEndTime(), QDateTime());
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
-        QVERIFY(!controller.journeyRequest().isValid());
+        QVERIFY(!controller.journeyRequestFull().isValid());
+        QVERIFY(!controller.journeyRequestOne().isValid());
         QCOMPARE(controller.isCanceled(), false);
 
         controller.setBatchId(QStringLiteral("foo"));
@@ -170,19 +171,28 @@ private Q_SLOTS:
         controller.setReservationManager(&mgr);
         controller.setBatchId(mgr.batches().at(0)); // flight
         controller.setLiveDataManager(&ldm);
-        QVERIFY(!controller.journeyRequest().isValid());
+        QVERIFY(!controller.journeyRequestFull().isValid());
+        QVERIFY(!controller.journeyRequestOne().isValid());
 
         controller.setBatchId(mgr.batches().at(1)); // first train segment
         QCOMPARE(controller.isLocationChange(), true);
         QCOMPARE(controller.isPublicTransport(), true);
 
-        auto jnyReq = controller.journeyRequest();
+        auto jnyReq = controller.journeyRequestFull();
         QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
         QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+        jnyReq = controller.journeyRequestOne();
+        QCOMPARE(jnyReq.isValid(), true);
+        QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
+        QCOMPARE(jnyReq.to().name(), QLatin1String("Visp"));
 
         controller.setBatchId(mgr.batches().at(2)); // second train segment
-        jnyReq = controller.journeyRequest();
+        jnyReq = controller.journeyRequestFull();
+        QCOMPARE(jnyReq.isValid(), true);
+        QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
+        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+        jnyReq = controller.journeyRequestOne();
         QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
         QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
@@ -212,7 +222,7 @@ private Q_SLOTS:
 
         // apply alternative with 3 segments to test segment insertion
         const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
-        controller.applyJourney(QVariant::fromValue(jny3));
+        controller.applyJourney(QVariant::fromValue(jny3), true);
         QCOMPARE(mgr.batches().size(), batchCount + 1);
         QCOMPARE(addSpy.size(), 3);
         QCOMPARE(updateSpy.size(), 0); // as we move beyond other elements, we get add/remove rather than updated here
@@ -225,7 +235,7 @@ private Q_SLOTS:
         updateSpy.clear();
         rmSpy.clear();
         const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
-        controller.applyJourney(QVariant::fromValue(jny2));
+        controller.applyJourney(QVariant::fromValue(jny2), true);
         QCOMPARE(mgr.batches().size(), batchCount);
         QCOMPARE(addSpy.size(), 2);
         QCOMPARE(updateSpy.size(), 0);
