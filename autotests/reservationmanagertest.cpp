@@ -107,11 +107,11 @@ private Q_SLOTS:
         QVERIFY(mgr.batches().empty());
         const auto passId = QStringLiteral("pass.booking.kde.org/MTIzNA==");
 
-        passMgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(addSpy.size(), 1);
         QVERIFY(updateSpy.isEmpty());
 
-        passMgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
     }
