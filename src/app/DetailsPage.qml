@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
     Component {
         id: pkpassComponent
         App.PkPassPage {
-            pass: PkPassManager.passObject(passId)
+            pass: PkPassManager.pass(passId)
         }
     }
 

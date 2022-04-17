@@ -76,11 +76,6 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
     return file;
 }
 
-QObject* PkPassManager::passObject(const QString& passId)
-{
-    return pass(passId);
-}
-
 QString PkPassManager::passId(const QVariant &reservation) const
 {
     if (!JsonLd::canConvert<Reservation>(reservation)) {
@@ -248,3 +243,5 @@ QByteArray PkPassManager::rawData(const QString &passId) const
     }
     return f.readAll();
 }
+
+#include "moc_pkpassmanager.cpp"
