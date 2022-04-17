@@ -1,0 +1,12 @@
+{
+    "@context": "http://schema.org",
+    "@type": "ProgramMembership",
+    "member": {
+        "@type": "Person",
+        "familyName": "Dragon",
+        "givenName": "Konqi"
+    },
+    "membershipNumber": "7081123456789012",
+    "programName": "BahnCard 25 (2. Kl.) (BC25)",
+    "token": "aztec:dummy_barcode"
+}

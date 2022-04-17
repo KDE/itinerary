@@ -13,6 +13,7 @@
 #include "importexport.h"
 #include "livedatamanager.h"
 #include "logging.h"
+#include "passmanager.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "transfermanager.h"
@@ -200,6 +201,11 @@ void ApplicationController::setLiveDataManager(LiveDataManager *liveDataMgr)
 void ApplicationController::setTripGroupManager(TripGroupManager *tripGroupMgr)
 {
     m_tripGroupMgr = tripGroupMgr;
+}
+
+void ApplicationController::setPassManager(PassManager *passMgr)
+{
+    m_passMgr = passMgr;
 }
 
 void ApplicationController::setHealthCertificateManager(HealthCertificateManager *healthCertMgr)
@@ -395,7 +401,8 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
 #endif
     engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     engine.setData(data, fileName);
-    const auto resIds = m_resMgr->importReservations(JsonLdDocument::fromJson(engine.extract()));
+    const auto extractorResult = JsonLdDocument::fromJson(engine.extract());
+    const auto resIds = m_resMgr->importReservations(extractorResult);
     if (!resIds.isEmpty()) {
         // check if there is a document we want to attach here
         QMimeDatabase db;
@@ -420,6 +427,12 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
         importNode(engine.rootDocumentNode());
 
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
+        return;
+    }
+
+    // look for time-less passes/program memberships/etc
+    if (m_passMgr->import(extractorResult)) {
+        Q_EMIT infoMessage(i18n("Pass imported."));
         return;
     }
 

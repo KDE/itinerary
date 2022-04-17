@@ -13,6 +13,7 @@ class DocumentManager;
 class FavoriteLocationModel;
 class HealthCertificateManager;
 class LiveDataManager;
+class PassManager;
 class PkPassManager;
 class ReservationManager;
 class TransferManager;
@@ -51,6 +52,7 @@ public:
     void setFavoriteLocationModel(FavoriteLocationModel *favLocModel);
     void setLiveDataManager(LiveDataManager *liveDataMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
+    void setPassManager(PassManager *passMgr);
     void setHealthCertificateManager(HealthCertificateManager *healthCertMgr);
 
     // data import
@@ -106,6 +108,7 @@ private:
     FavoriteLocationModel *m_favLocModel = nullptr;
     LiveDataManager *m_liveDataMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
+    PassManager *m_passMgr = nullptr;
     HealthCertificateManager *m_healthCertMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 

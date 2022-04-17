@@ -83,6 +83,13 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageStack.layers.push(statisticsComponent)
             },
             Kirigami.Action {
+                id: passAction
+                text: i18n("Passes & Programs")
+                iconName: "wallet-open"
+                onTriggered: pageStack.push(passComponent)
+                visible: Settings.developmentMode // TODO remove once this is sufficiently complete
+            },
+            Kirigami.Action {
                 id: healthCertAction
                 text: i18n("Health Certificates")
                 iconName: "cross-shape"
@@ -200,6 +207,10 @@ Kirigami.ApplicationWindow {
             reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
         }
+    }
+    Component {
+        id: passComponent
+        App.PassPage {}
     }
         // replace loader with component once we depend on KHealthCertificate unconditionally
     Loader {

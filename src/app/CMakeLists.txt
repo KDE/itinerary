@@ -21,6 +21,7 @@ target_sources(itinerary PRIVATE
     locationinformation.cpp
     navigationcontroller.cpp
     notificationhelper.cpp
+    passmanager.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     publictransport.cpp
@@ -158,6 +159,7 @@ if (ANDROID)
         view-list-details
         view-refresh
         view-statistics
+        wallet-open
         zoom-in-symbolic
         zoom-out-symbolic
 

@@ -22,6 +22,7 @@
 #include "mapdownloadmanager.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
+#include "passmanager.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
 #include "pkpassimageprovider.h"
@@ -153,6 +154,7 @@ static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static HealthCertificateManager *s_healthCertificateManager = nullptr;
+static PassManager *s_passManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -183,6 +185,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(HealthCertificateManager, s_healthCertificateManager)
+    REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -273,8 +276,8 @@ int main(int argc, char **argv)
     Settings settings;
     s_settings = &settings;
 
-    PkPassManager passMgr;
-    s_pkPassManager = &passMgr;
+    PkPassManager pkPassMgr;
+    s_pkPassManager = &pkPassMgr;
 
     ReservationManager resMgr;
     s_reservationManager = &resMgr;
@@ -290,7 +293,7 @@ int main(int argc, char **argv)
     s_tripGroupManager = &tripGroupMgr;
 
     LiveDataManager liveDataMgr;
-    liveDataMgr.setPkPassManager(&passMgr);
+    liveDataMgr.setPkPassManager(&pkPassMgr);
     liveDataMgr.setReservationManager(&resMgr);
     liveDataMgr.setPollingEnabled(settings.queryLiveData());
     liveDataMgr.setShowNotificationsOnLockScreen(settings.showNotificationOnLockScreen());
@@ -339,14 +342,18 @@ int main(int argc, char **argv)
     HealthCertificateManager healthCertificateMgr;
     s_healthCertificateManager = &healthCertificateMgr;
 
+    PassManager passMgr;
+    s_passManager = &passMgr;
+
     ApplicationController appController;
     appController.setReservationManager(&resMgr);
-    appController.setPkPassManager(&passMgr);
+    appController.setPkPassManager(&pkPassMgr);
     appController.setDocumentManager(&docMgr);
     appController.setFavoriteLocationModel(&favLocModel);
     appController.setTransferManager(&transferManager);
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
+    appController.setPassManager(&passMgr);
     appController.setHealthCertificateManager(&healthCertificateMgr);
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
@@ -369,7 +376,7 @@ int main(int argc, char **argv)
     registerApplicationSingletons();
 
     QQmlApplicationEngine engine;
-    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
+    engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&pkPassMgr));
     auto l10nContext = new KLocalizedContext(&engine);
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
     engine.rootContext()->setContextObject(l10nContext);

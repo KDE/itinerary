@@ -11,8 +11,18 @@
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 
+#include <QFile>
+
 namespace Test
 {
+
+/** Read the entire file content. */
+inline QByteArray readFile(const QString &fn)
+{
+    QFile f(fn);
+    f.open(QFile::ReadOnly);
+    return f.readAll();
+}
 
 /** Delete all reservations. */
 inline void clearAll(ReservationManager *mgr)
