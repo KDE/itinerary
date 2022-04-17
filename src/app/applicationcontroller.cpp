@@ -30,6 +30,12 @@
 #include <KItinerary/JsonLdDocument>
 
 #include <KPkPass/Pass>
+#if __has_include(<KPkPass/kpkpass_version.h>)
+#include <KPkPass/kpkpass_version.h>
+#if KPKPASS_VERSION < QT_VERSION_CHECK(5, 20, 41)
+#define NEW_PKPASS_IMPORT
+#endif
+#endif
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -48,6 +54,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
 #include <QNetworkReply>
+#include <QScopedValueRollback>
 #include <QStandardPaths>
 #include <QUuid>
 #include <QUrl>
@@ -164,7 +171,9 @@ void ApplicationController::setReservationManager(ReservationManager* resMgr)
 void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
+#ifndef NEW_PKPASS_IMPORT
     connect(m_pkPassMgr, &PkPassManager::passAdded, this, &ApplicationController::importPass);
+#endif
     connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::importPass);
 }
 
@@ -351,9 +360,6 @@ void ApplicationController::importLocalFile(const QUrl &url)
     // deal with things we can import more efficiently from a file directly
     const auto head = f.peek(4);
     if (FileHelper::hasZipHeader(head)) {
-        if (url.fileName().endsWith(QLatin1String(".pkpass"), Qt::CaseInsensitive) && !m_pkPassMgr->importPass(url).isEmpty()) {
-            return;
-        }
         if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive) && importBundle(url)) {
             return;
         }
@@ -370,9 +376,11 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
     }
 
     if (FileHelper::hasZipHeader(data)) {
+#ifndef NEW_PKPASS_IMPORT
         if (!m_pkPassMgr->importPassFromData(data).isEmpty()) {
             return;
         }
+#endif
         if (importBundle(data)) {
             return;
         }
@@ -407,6 +415,10 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
             }
         }
 
+        // collect pkpass files from the document tree
+        QScopedValueRollback importLocker(m_importLock, true);
+        importNode(engine.rootDocumentNode());
+
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
         return;
     }
@@ -420,6 +432,21 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
 
     // nothing found
     Q_EMIT infoMessage(i18n("Nothing imported."));
+}
+
+void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &node)
+{
+    if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
+#ifdef NEW_PKPASS_IMPORT
+        const auto pass = node.content<KPkPass::Pass*>();
+        // ### could we pass along pass directly here to avoid the extra parsing roundtrip?
+        m_pkPassMgr->importPassFromData(pass->rawData());
+#endif
+    }
+
+    for (const auto &child : node.childNodes()) {
+        importNode(child);
+    }
 }
 
 void ApplicationController::checkCalendar()
@@ -571,6 +598,10 @@ bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocu
 
 void ApplicationController::importPass(const QString &passId)
 {
+    if (m_importLock) {
+        return;
+    }
+
     const auto pass = m_pkPassMgr->pass(passId);
     KItinerary::ExtractorEngine engine;
     engine.setContent(QVariant::fromValue<KPkPass::Pass*>(pass), u"application/vnd.apple.pkpass");

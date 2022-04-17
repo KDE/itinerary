@@ -95,6 +95,7 @@ private:
     bool importHealthCertificateRecursive(const KItinerary::ExtractorDocumentNode &node);
     void importPass(const QString &passId);
     void importMimeMessage(KMime::Message *msg);
+    void importNode(const KItinerary::ExtractorDocumentNode &node);
 
     static ApplicationController *s_instance;
 
@@ -107,6 +108,8 @@ private:
     TripGroupManager *m_tripGroupMgr = nullptr;
     HealthCertificateManager *m_healthCertMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
+
+    bool m_importLock = false;
 };
 
 #endif // APPLICATIONCONTROLLER_H
