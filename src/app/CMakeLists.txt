@@ -118,6 +118,7 @@ if (ANDROID)
 
     kirigami_package_breeze_icons(ICONS
         application-pdf
+        bookmarks
         channel-insecure-symbolic
         channel-secure-symbolic
         checkmark

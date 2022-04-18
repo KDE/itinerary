@@ -51,7 +51,7 @@ Kirigami.ScrollablePage {
                 highlighted: false
                 text: pkPass.description
                 subtitle: pkPass.organizationName
-                icon: "image://org.kde.pkpass/" + pkPassId + "/icon"
+                icon: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
                 reserveSpaceForIcon: true
                 onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
             }
