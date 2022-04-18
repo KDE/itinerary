@@ -11,6 +11,7 @@ class DocumentManager;
 class FavoriteLocationModel;
 class HealthCertificateManager;
 class LiveDataManager;
+class PassManager;
 class PkPassManager;
 class ReservationManager;
 class TransferManager;
@@ -30,6 +31,7 @@ public:
     void exportDocuments(const DocumentManager *docMgr);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
     void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
+    void exportPasses(const PassManager *passMgr);
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();
     void exportSettings();
@@ -49,6 +51,7 @@ public:
     int importDocuments(DocumentManager *docMgr);
     int importTransfers(const ReservationManager *resMgr, TransferManager *transferMgr);
     int importFavoriteLocations(FavoriteLocationModel *favLocModel);
+    int importPasses(PassManager *passMgr);
     int importHealthCertificates(HealthCertificateManager *healthCertMgr);
     int importLiveData(LiveDataManager *liveDataMgr);
     int importSettings();

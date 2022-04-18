@@ -18,6 +18,12 @@
 
 using namespace KItinerary;
 
+bool PassManager::Entry::operator<(const PassManager::Entry &other) const
+{
+    return id < other.id;
+}
+
+
 PassManager::PassManager(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -34,11 +40,11 @@ int PassManager::rowCount(const QModelIndex &parent) const
     return m_entries.size();
 }
 
-bool PassManager::import(const QVariant &pass)
+bool PassManager::import(const QVariant &pass, const QString &id)
 {
     if (JsonLd::isA<KItinerary::ProgramMembership>(pass)) {
         Entry entry;
-        entry.id = QUuid::createUuid().toString();
+        entry.id = id.isEmpty() ? QUuid::createUuid().toString() : id;
         entry.data = pass;
 
         auto path = basePath();
@@ -52,9 +58,17 @@ bool PassManager::import(const QVariant &pass)
         f.write(QJsonDocument(JsonLdDocument::toJson(entry.data)).toJson());
         f.close();
 
-        beginInsertRows({}, rowCount(), rowCount());
-        m_entries.push_back(std::move(entry));
-        endInsertRows();
+        const auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry);
+        if (it != m_entries.end() && (*it).id == entry.id) {
+            (*it).data = entry.data;
+            const auto idx = index(std::distance(m_entries.begin(), it), 0);
+            Q_EMIT dataChanged(idx, idx);
+        } else {
+            const auto row = std::distance(m_entries.begin(), it);
+            beginInsertRows({}, row, row);
+            m_entries.insert(it, std::move(entry));
+            endInsertRows();
+        }
         return true;
     }
 
@@ -94,6 +108,8 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
                 return ProgramMembership;
             }
             return {};
+        case PassDataRole:
+            return rawData(entry);
     }
 
     return {};
@@ -115,6 +131,7 @@ void PassManager::load()
         it.next();
         m_entries.push_back({it.fileName(), QVariant()});
     }
+    std::sort(m_entries.begin(), m_entries.end());
 }
 
 void PassManager::ensureLoaded(Entry &entry) const
@@ -123,13 +140,21 @@ void PassManager::ensureLoaded(Entry &entry) const
         return;
     }
 
+    const auto data = rawData(entry);
+    if (!data.isEmpty()) {
+        entry.data = JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
+    }
+}
+
+QByteArray PassManager::rawData(const Entry &entry) const
+{
     QFile f(basePath() + entry.id);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open file:" << f.fileName() << f.errorString();
-        return;
+        return {};
     }
 
-    entry.data = JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(f.readAll()).object());
+    return f.readAll();
 }
 
 bool PassManager::remove(const QString &passId)

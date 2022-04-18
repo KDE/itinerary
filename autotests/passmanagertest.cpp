@@ -34,10 +34,7 @@ private Q_SLOTS:
         PassManager mgr;
         QAbstractItemModelTester modelTest(&mgr);
 
-        // clear previous leftovers
-        while (mgr.rowCount()) {
-            QVERIFY(mgr.removeRow(0));
-        }
+        Test::clearAll(&mgr);
         QCOMPARE(mgr.rowCount(), 0);
 
         // test import
@@ -52,6 +49,7 @@ private Q_SLOTS:
         QVERIFY(!pass.isNull());
         QVERIFY(JsonLd::isA<ProgramMembership>(pass));
         QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::ProgramMembership);
+        QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
 
         {
             // test persistence

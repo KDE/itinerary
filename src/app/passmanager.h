@@ -23,6 +23,7 @@ public:
         PassRole = Qt::UserRole,
         PassIdRole,
         PassTypeRole,
+        PassDataRole,
     };
 
     enum PassType {
@@ -31,7 +32,7 @@ public:
     };
     Q_ENUM(PassType)
 
-    bool import(const QVariant &pass);
+    bool import(const QVariant &pass, const QString &id = {});
     bool import(const QVector<QVariant> &passes);
 
     int rowCount(const QModelIndex &parent = {}) const override;
@@ -47,11 +48,15 @@ private:
     struct Entry {
         QString id;
         QVariant data;
+
+        bool operator<(const Entry &other) const;
     };
     mutable std::vector<Entry> m_entries;
 
     void load();
     void ensureLoaded(Entry &entry) const;
+    QByteArray rawData(const Entry &entry) const;
+
     static QString basePath();
 };
 

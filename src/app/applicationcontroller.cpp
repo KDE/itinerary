@@ -508,6 +508,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportDocuments(m_docMgr);
     exporter.exportFavoriteLocations(m_favLocModel);
     exporter.exportTransfers(m_resMgr, m_transferMgr);
+    exporter.exportPasses(m_passMgr);
     exporter.exportHealthCertificates(m_healthCertMgr);
     exporter.exportLiveData();
     exporter.exportSettings();
@@ -577,6 +578,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         count += importer.importDocuments(m_docMgr);
         count += importer.importFavoriteLocations(m_favLocModel);
         count += importer.importTransfers(m_resMgr, m_transferMgr);
+        count += importer.importPasses(m_passMgr);
         count += importer.importHealthCertificates(m_healthCertMgr);
         count += importer.importLiveData(m_liveDataMgr);
         count += importer.importSettings();

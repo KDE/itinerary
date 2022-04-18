@@ -12,12 +12,14 @@
 #include "livedata.h"
 #include "livedatamanager.h"
 #include "logging.h"
+#include "passmanager.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
 #include "transfer.h"
 #include "transfermanager.h"
 
 #include <KItinerary/File>
+#include <KItinerary/JsonLdDocument>
 
 #include <QFile>
 #include <QJsonArray>
@@ -93,6 +95,18 @@ void Exporter::exportFavoriteLocations(const FavoriteLocationModel* favLocModel)
     if (favLocModel->rowCount() > 0) {
         m_file->addCustomData(QStringLiteral("org.kde.itinerary/favorite-locations"), QStringLiteral("locations"),
                         QJsonDocument(FavoriteLocation::toJson(favLocModel->favoriteLocations())).toJson());
+    }
+}
+
+void Exporter::exportPasses(const PassManager *passMgr)
+{
+    for (int i = 0; i < passMgr->rowCount(); ++i) {
+        const auto idx = passMgr->index(i, 0);
+        m_file->addCustomData(
+            QStringLiteral("org.kde.itinerary/programs"),
+            passMgr->data(idx, PassManager::PassIdRole).toString(),
+            passMgr->data(idx, PassManager::PassDataRole).toByteArray()
+        );
     }
 }
 
@@ -198,6 +212,18 @@ int Importer::importFavoriteLocations(FavoriteLocationModel *favLocModel)
         favLocModel->setFavoriteLocations(std::move(favLocs));
     }
     return favLocs.size();
+}
+
+int Importer::importPasses(PassManager *passMgr)
+{
+    const auto domain = QStringLiteral("org.kde.itinerary/programs");
+    const auto ids = m_file->listCustomData(domain);
+    for (const auto &id : ids) {
+        const auto data = m_file->customData(domain, id);
+        const auto pass = KItinerary::JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
+        passMgr->import(pass, id);
+    }
+    return ids.size();
 }
 
 int Importer::importHealthCertificates(HealthCertificateManager *healthCertMgr)

@@ -8,6 +8,7 @@
 #define TESTHELPER_H
 
 #include <documentmanager.h>
+#include <passmanager.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
 
@@ -50,6 +51,15 @@ inline void clearAll(DocumentManager *docMgr)
         docMgr->removeDocument(id);
     }
     Q_ASSERT(docMgr->documents().isEmpty());
+
+}
+
+inline void clearAll(PassManager *passMgr)
+{
+    while (passMgr->rowCount()) {
+        passMgr->removeRow(0);
+    }
+    Q_ASSERT(passMgr->rowCount() == 0);
 }
 
 }
