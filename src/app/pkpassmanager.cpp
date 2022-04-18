@@ -5,6 +5,7 @@
 */
 
 #include "pkpassmanager.h"
+#include "genericpkpass.h"
 #include "logging.h"
 
 #include <KItinerary/Reservation>
@@ -78,12 +79,18 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
 
 QString PkPassManager::passId(const QVariant &reservation) const
 {
-    if (!JsonLd::canConvert<Reservation>(reservation)) {
-        return {};
+    QString passTypeId, serialNum;
+
+    if (JsonLd::canConvert<Reservation>(reservation)) {
+        const auto res = JsonLd::convert<Reservation>(reservation);
+        passTypeId = res.pkpassPassTypeIdentifier();
+        serialNum = res.pkpassSerialNumber();
+    } else if (JsonLd::isA<GenericPkPass>(reservation)) {
+        const auto p = JsonLd::convert<GenericPkPass>(reservation);
+        passTypeId = p.pkpassPassTypeIdentifier();
+        serialNum = p.pkpassSerialNumber();
     }
-    const auto res = JsonLd::convert<Reservation>(reservation);
-    const auto passTypeId = res.pkpassPassTypeIdentifier();
-    const auto serialNum = res.pkpassSerialNumber();
+
     if (passTypeId.isEmpty() || serialNum.isEmpty()) {
         return {};
     }

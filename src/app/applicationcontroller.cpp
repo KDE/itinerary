@@ -8,6 +8,7 @@
 #include "documentmanager.h"
 #include "favoritelocationmodel.h"
 #include "filehelper.h"
+#include "genericpkpass.h"
 #include "gpxexport.h"
 #include "healthcertificatemanager.h"
 #include "importexport.h"
@@ -431,7 +432,7 @@ void ApplicationController::importData(const QByteArray &data, const QString &fi
     }
 
     // look for time-less passes/program memberships/etc
-    if (m_passMgr->import(extractorResult)) {
+    if (m_passMgr->import(extractorResult) || importGenericPkPass(engine.rootDocumentNode())) {
         Q_EMIT infoMessage(i18n("Pass imported."));
         return;
     }
@@ -460,6 +461,31 @@ void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &
     for (const auto &child : node.childNodes()) {
         importNode(child);
     }
+}
+
+bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocumentNode &node)
+{
+#ifdef NEW_PKPASS_IMPORT
+    if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
+        const auto pass = node.content<KPkPass::Pass*>();
+
+        GenericPkPass wrapper;
+        wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
+        wrapper.setPkpassSerialNumber(pass->serialNumber());
+
+        QScopedValueRollback importLocker(m_importLock, true);
+        m_pkPassMgr->importPassFromData(pass->rawData());
+        m_passMgr->import(wrapper);
+
+        return true;
+    }
+#endif
+
+    bool res = false;
+    for (const auto &child : node.childNodes()) {
+        res |= importGenericPkPass(child);
+    }
+    return res;
 }
 
 void ApplicationController::checkCalendar()

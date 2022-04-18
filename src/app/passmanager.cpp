@@ -4,6 +4,7 @@
 */
 
 #include "passmanager.h"
+#include "genericpkpass.h"
 #include "logging.h"
 
 #include <KItinerary/ExtractorPostprocessor>
@@ -42,7 +43,7 @@ int PassManager::rowCount(const QModelIndex &parent) const
 
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
-    if (JsonLd::isA<KItinerary::ProgramMembership>(pass)) {
+    if (JsonLd::isA<KItinerary::ProgramMembership>(pass) || JsonLd::isA<GenericPkPass>(pass)) {
         Entry entry;
         entry.id = id.isEmpty() ? QUuid::createUuid().toString() : id;
         entry.data = pass;
@@ -106,6 +107,9 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             ensureLoaded(entry);
             if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
                 return ProgramMembership;
+            }
+            if (JsonLd::isA<GenericPkPass>(entry.data)) {
+                return PkPass;
             }
             return {};
         case PassDataRole:

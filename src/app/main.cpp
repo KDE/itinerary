@@ -14,6 +14,7 @@
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "favoritelocationmodel.h"
+#include "genericpkpass.h"
 #include "healthcertificatemanager.h"
 #include "livedatamanager.h"
 #include "localizer.h"
@@ -44,7 +45,9 @@
 
 #include <weatherforecastmanager.h>
 
+#include <kitinerary_version.h>
 #include <KItinerary/CountryDb>
+#include <KItinerary/JsonLdDocument>
 #include <KItinerary/Ticket>
 
 #include <KPkPass/Field>
@@ -112,6 +115,12 @@ void registerKItineraryTypes()
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
+
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 20, 41)
+    KItinerary::JsonLdDocument().registerType<GenericPkPass>();
+#else
+    KItinerary::JsonLdDocument::registerType<GenericPkPass>();
+#endif
 }
 
 void registerApplicationTypes()

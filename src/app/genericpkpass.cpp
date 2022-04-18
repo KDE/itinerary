@@ -1,0 +1,52 @@
+/*
+    SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "genericpkpass.h"
+
+class GenericPkPassPrivate : public QSharedData
+{
+public:
+    QString pkpassPassTypeIdentifier;
+    QString pkpassSerialNumber;
+};
+
+// TODO replace this by the use of the KITINERARY_XXX implementation macros,
+// once those are installed
+GenericPkPass::GenericPkPass() : d(new GenericPkPassPrivate) {}
+GenericPkPass::GenericPkPass(const GenericPkPass&) = default;
+GenericPkPass::~GenericPkPass() = default;
+GenericPkPass& GenericPkPass::operator=(const GenericPkPass &other) = default;
+QString GenericPkPass::className() const { return QStringLiteral("GenericPkPass"); }
+GenericPkPass::operator QVariant() const { return QVariant::fromValue(*this); }
+const char* GenericPkPass::typeName() { return "GenericPkPass"; }
+
+QString GenericPkPass::pkpassPassTypeIdentifier() const
+{
+    return d->pkpassPassTypeIdentifier;
+}
+
+void GenericPkPass::setPkpassPassTypeIdentifier(const QString &value)
+{
+    d.detach();
+    d->pkpassPassTypeIdentifier = value;
+}
+
+QString GenericPkPass::pkpassSerialNumber() const
+{
+    return d->pkpassSerialNumber;
+}
+
+void GenericPkPass::setPkpassSerialNumber(const QString &value)
+{
+    d.detach();
+    d->pkpassSerialNumber = value;
+}
+
+bool GenericPkPass::operator==(const GenericPkPass &other) const
+{
+    return d->pkpassPassTypeIdentifier == other.pkpassPassTypeIdentifier() && d->pkpassSerialNumber == other.pkpassSerialNumber();
+}
+
+#include "moc_genericpkpass.cpp"

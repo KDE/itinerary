@@ -98,6 +98,7 @@ private:
     void importPass(const QString &passId);
     void importMimeMessage(KMime::Message *msg);
     void importNode(const KItinerary::ExtractorDocumentNode &node);
+    bool importGenericPkPass(const KItinerary::ExtractorDocumentNode &node);
 
     static ApplicationController *s_instance;
 

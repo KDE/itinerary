@@ -19,6 +19,10 @@ Kirigami.ScrollablePage {
         id: programMembershipPage
         App.ProgramMembershipPage {}
     }
+    Component {
+        id: pkpassComponent
+        App.PkPassPage {}
+    }
 
     Models.DelegateChooser {
         id: chooser
@@ -27,6 +31,7 @@ Kirigami.ScrollablePage {
             roleValue: PassManager.ProgramMembership
             Kirigami.BasicListItem {
                 highlighted: false
+                icon: "meeting-attending"
                 text: model.pass.programName
                 subtitle: {
                     if (!model.pass.member.name)
@@ -36,6 +41,19 @@ Kirigami.ScrollablePage {
                     return i18nc("name - number", "%1 - %2", model.pass.member.name, model.pass.membershipNumber)
                 }
                 onClicked: applicationWindow().pageStack.push(programMembershipPage, { programMembership: model.pass, passId: model.passId })
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: PassManager.PkPass
+            Kirigami.BasicListItem {
+                readonly property string pkPassId: PkPassManager.passId(model.pass)
+                readonly property var pkPass: PkPassManager.pass(pkPassId)
+                highlighted: false
+                text: pkPass.description
+                subtitle: pkPass.organizationName
+                icon: "image://org.kde.pkpass/" + pkPassId + "/icon"
+                reserveSpaceForIcon: true
+                onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass });
             }
         }
     }

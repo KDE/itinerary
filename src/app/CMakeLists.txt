@@ -10,6 +10,7 @@ target_sources(itinerary PRIVATE
     documentmanager.cpp
     favoritelocationmodel.cpp
     filehelper.cpp
+    genericpkpass.cpp
     gpxexport.cpp
     healthcertificatemanager.cpp
     importexport.cpp
