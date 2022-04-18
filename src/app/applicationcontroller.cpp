@@ -468,6 +468,10 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
 #ifdef NEW_PKPASS_IMPORT
     if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
         const auto pass = node.content<KPkPass::Pass*>();
+        if (pass->type() == KPkPass::Pass::Coupon || pass->type() == KPkPass::Pass::StoreCard) {
+            // no support for displaying those yet
+            return false;
+        }
 
         GenericPkPass wrapper;
         wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
