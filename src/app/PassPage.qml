@@ -73,6 +73,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
+            width: parent.width
             visible: passListView.count === 0
             icon.name: "wallet-open"
             text: i18n("Import bonus or discount program cards or flat rate passes.")
