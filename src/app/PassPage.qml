@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
     }
     Component {
         id: pkpassComponent
-        App.PkPassPage {}
+        App.GenericPkPassPage {}
     }
 
     Models.DelegateChooser {
@@ -53,7 +53,7 @@ Kirigami.ScrollablePage {
                 subtitle: pkPass.organizationName
                 icon: "image://org.kde.pkpass/" + pkPassId + "/icon"
                 reserveSpaceForIcon: true
-                onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass });
+                onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
             }
         }
     }
