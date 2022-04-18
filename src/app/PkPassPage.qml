@@ -17,6 +17,7 @@ Kirigami.ScrollablePage {
         switch (pass.type) {
             case KPkPass.Pass.BoardingPass: return i18n("Boarding Pass");
             case KPkPass.Pass.EventTicket: return i18n("Event Ticket");
+            case KPkPass.Pass.Generic: return i18n("Pass");
         }
     }
 
@@ -45,6 +46,14 @@ Kirigami.ScrollablePage {
         }
     }
 
+    Component {
+        id: genericPass
+        App.GenericPass {
+            passId: root.passId
+            pass: root.pass
+        }
+    }
+
     BarcodeScanModeController {
         id: scanModeController
         page: root
@@ -62,6 +71,7 @@ Kirigami.ScrollablePage {
                 switch (root.pass.type) {
                     case KPkPass.Pass.BoardingPass: return boardingPass;
                     case KPkPass.Pass.EventTicket: return eventTicket;
+                    case KPkPass.Pass.Generic: return genericPass;
                 }
             }
         }
