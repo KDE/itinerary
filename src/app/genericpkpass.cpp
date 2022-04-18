@@ -8,6 +8,7 @@
 class GenericPkPassPrivate : public QSharedData
 {
 public:
+    QString name;
     QString pkpassPassTypeIdentifier;
     QString pkpassSerialNumber;
 };
@@ -21,6 +22,17 @@ GenericPkPass& GenericPkPass::operator=(const GenericPkPass &other) = default;
 QString GenericPkPass::className() const { return QStringLiteral("GenericPkPass"); }
 GenericPkPass::operator QVariant() const { return QVariant::fromValue(*this); }
 const char* GenericPkPass::typeName() { return "GenericPkPass"; }
+
+QString GenericPkPass::name() const
+{
+    return d->name;
+}
+
+void GenericPkPass::setName(const QString &value)
+{
+    d.detach();
+    d->name = value;
+}
 
 QString GenericPkPass::pkpassPassTypeIdentifier() const
 {

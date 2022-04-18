@@ -114,6 +114,16 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             return {};
         case PassDataRole:
             return rawData(entry);
+        case NameRole:
+            ensureLoaded(entry);
+            if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
+                return entry.data.value<KItinerary::ProgramMembership>().programName();
+            }
+            if (JsonLd::isA<GenericPkPass>(entry.data)) {
+                return entry.data.value<GenericPkPass>().name();
+            }
+            return {};
+
     }
 
     return {};
@@ -125,6 +135,7 @@ QHash<int, QByteArray> PassManager::roleNames() const
     r.insert(PassRole, "pass");
     r.insert(PassIdRole, "passId");
     r.insert(PassTypeRole, "type");
+    r.insert(NameRole, "name");
     return r;
 }
 

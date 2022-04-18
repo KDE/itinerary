@@ -14,6 +14,7 @@ class GenericPkPassPrivate;
 class GenericPkPass
 {
     KITINERARY_GADGET(GenericPkPass)
+    KITINERARY_PROPERTY(QString, name, setName)
     KITINERARY_PROPERTY(QString, pkpassPassTypeIdentifier, setPkpassPassTypeIdentifier)
     KITINERARY_PROPERTY(QString, pkpassSerialNumber, setPkpassSerialNumber)
 private:

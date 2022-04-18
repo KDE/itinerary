@@ -7,6 +7,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
+import org.kde.kitemmodels 1.0
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -58,9 +59,16 @@ Kirigami.ScrollablePage {
         }
     }
 
+    KSortFilterProxyModel {
+        id: passSortModel
+        sourceModel: PassManager
+        sortRole: "name"
+        sortOrder: Qt.AscendingOrder
+    }
+
     ListView {
         id: passListView
-        model: PassManager
+        model: passSortModel
         delegate: chooser
 
         Kirigami.PlaceholderMessage {

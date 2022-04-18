@@ -474,6 +474,7 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
         }
 
         GenericPkPass wrapper;
+        wrapper.setName(pass->description());
         wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
         wrapper.setPkpassSerialNumber(pass->serialNumber());
 

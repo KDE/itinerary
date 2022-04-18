@@ -50,6 +50,7 @@ private Q_SLOTS:
         QVERIFY(JsonLd::isA<ProgramMembership>(pass));
         QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::ProgramMembership);
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
+        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("BahnCard 25 (2. Kl.) (BC25)"));
 
         {
             // test persistence

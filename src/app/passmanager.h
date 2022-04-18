@@ -24,6 +24,7 @@ public:
         PassIdRole,
         PassTypeRole,
         PassDataRole,
+        NameRole,
     };
 
     enum PassType {
