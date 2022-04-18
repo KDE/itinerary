@@ -34,7 +34,7 @@
 #include <KPkPass/Pass>
 #if __has_include(<KPkPass/kpkpass_version.h>)
 #include <KPkPass/kpkpass_version.h>
-#if KPKPASS_VERSION < QT_VERSION_CHECK(5, 20, 41)
+#if KPKPASS_VERSION >= QT_VERSION_CHECK(5, 20, 41)
 #define NEW_PKPASS_IMPORT
 #endif
 #endif
