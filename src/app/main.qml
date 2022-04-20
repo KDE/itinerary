@@ -87,7 +87,6 @@ Kirigami.ApplicationWindow {
                 text: Kirigami.Settings.isMobile ? i18n("Passes && Programs") : i18n("Passes & Programs") // TODO Kirigami or style bug?
                 iconName: "wallet-open"
                 onTriggered: pageStack.push(passComponent)
-                visible: Settings.developmentMode // TODO remove once this is sufficiently complete
             },
             Kirigami.Action {
                 id: healthCertAction
