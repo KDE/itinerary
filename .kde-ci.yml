@@ -28,6 +28,7 @@ Dependencies:
     'frameworks/qqc2-desktop-style': '@stable'
     'frameworks/kcrash': '@stable'
     'frameworks/kio': '@stable'
+    'frameworks/kfilemetadata': '@stable'
 
 - 'on': ['Linux']
   'require':
