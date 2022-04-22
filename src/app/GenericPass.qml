@@ -79,7 +79,7 @@ Rectangle {
         GridLayout {
             id: primaryFieldLayout
             rows: 2
-            columns: pass.primaryFields.length
+            columns: pass.primaryFields.length + 1
             Layout.fillWidth: true
 
             Repeater {
@@ -90,6 +90,10 @@ Rectangle {
                     text: modelData.label
                     horizontalAlignment: modelData.textAlignment
                 }
+            }
+            Image {
+                Layout.rowSpan: 2
+                source: "image://org.kde.pkpass/" + passId + "/thumbnail"
             }
             Repeater {
                 model: pass.primaryFields
