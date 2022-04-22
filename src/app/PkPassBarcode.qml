@@ -11,6 +11,7 @@ import org.kde.pkpass 1.0 as KPkPass
 import org.kde.prison 1.0 as Prison
 
 Rectangle {
+    id: root
     property var pass
 
     implicitHeight: barcodeLayout.implicitHeight
@@ -25,9 +26,17 @@ Rectangle {
         Prison.Barcode {
             Layout.alignment: Qt.AlignCenter
             Layout.margins: 4
-            Layout.preferredWidth: Math.max(implicitWidth, 0.8 * bodyBackground.width)
-            Layout.preferredHeight: Layout.preferredWidth
-            barcodeType: pass.barcodes[0].format == KPkPass.Barcode.QR ? Prison.Barcode.QRCode : Prison.Barcode.Aztec
+            Layout.preferredWidth: 0.8 * root.parent.width
+            Layout.preferredHeight: implicitHeight * (Layout.preferredWidth / implicitWidth)
+            barcodeType: {
+                switch(pass.barcodes[0].format) {
+                    case KPkPass.Barcode.QR: return Prison.Barcode.QRCode
+                    case KPkPass.Barcode.Aztec: return Prison.Barcode.Aztec
+                    case KPkPass.Barcode.PDF417: return Prison.Barcode.PDF417;
+                    case KPkPass.Barcode.Code128: return Prison.Barcode.Code128;
+                }
+                return Prison.Barcode.Null;
+            }
             content: pass.barcodes[0].message
         }
 
