@@ -8,6 +8,7 @@
         <file alias="BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>
         <file alias="BoardingPass.qml">../src/app/BoardingPass.qml</file>
         <file alias="EventTicket.qml">../src/app/EventTicket.qml</file>
+        <file alias="GenericPass.qml">../src/app/GenericPass.qml</file>
         <file alias="PkPassBarcode.qml">../src/app/PkPassBarcode.qml</file>
         <file alias="PkPassPage.qml">../src/app/PkPassPage.qml</file>
         <file alias="images/flight.svg">../src/app/images/flight.svg</file>
