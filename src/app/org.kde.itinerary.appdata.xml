@@ -764,6 +764,6 @@
   </releases>
   <custom>
     <value key="KDE::f_droid">https://community.kde.org/Android/FDroid#KDE_F-Droid_Release_Repository</value>
-    <value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.itinerary</value>
+    <!--<value key="KDE::google_play">https://play.google.com/store/apps/details?id=org.kde.itinerary</value>-->
   </custom>
 </component>
