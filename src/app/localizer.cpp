@@ -58,14 +58,14 @@ QString Localizer::formatAddress(const QVariant &obj) const
         address.setPostalCode(a.postalCode());
         address.setLocality(a.addressLocality());
         address.setRegion(a.addressRegion());
-        address.setCountry(KCountry::fromAlpha2(a.addressCountry()).name());
+        address.setCountry(a.addressCountry());
     } else if (std::strcmp(obj.typeName(), "KOSMIndoorMap::OSMAddress") == 0) {
         const auto mo = QMetaType::metaObjectForType(obj.userType());
         address.setStreet(readFromGadget(mo, obj, "street") + QLatin1Char(' ') + readFromGadget(mo, obj, "houseNumber"));
         address.setPostalCode(readFromGadget(mo, obj, "postalCode"));
         address.setLocality(readFromGadget(mo, obj, "city"));
         address.setRegion(readFromGadget(mo, obj, "state"));
-        address.setCountry(KCountry::fromAlpha2(readFromGadget(mo, obj, "country")).name());
+        address.setCountry(readFromGadget(mo, obj, "country"));
     } else {
         return {};
     }
