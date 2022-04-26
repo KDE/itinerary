@@ -184,7 +184,7 @@ Kirigami.FormLayout {
                 geocodeAddr.street = streetAddress.text;
                 geocodeAddr.postalCode = postalCode.text;
                 geocodeAddr.city = addressLocality.text;
-                geocodeAddr.state = addressRegion.text;
+                geocodeAddr.state = addressRegion.currentValue ? addressRegion.currentValue : "";
                 geocodeAddr.countryCode = addressCountry.currentValue;
                 geocodeModel.update();
             }
