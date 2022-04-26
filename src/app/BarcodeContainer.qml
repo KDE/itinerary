@@ -61,7 +61,7 @@ Item {
         Prison.Barcode {
             id: barcode
             anchors.centerIn: background
-            width: background.barcodeTargetWidth
+            width: background.showVertical ? background.barcodeTargetWidth : Math.min(background.barcodeTargetWidth, barcodeContainer.width)
             height: background.barcodeTargetHeight
             rotation: background.showVertical ? 90 : 0
             barcodeType:
