@@ -85,6 +85,7 @@ target_sources(itinerary-app PRIVATE
     countrysubdivisionmodel.cpp
     developmentmodecontroller.cpp
     documentsmodel.cpp
+    factory.cpp
     locationinformationdelegatecontroller.cpp
     mapdownloadmanager.cpp
     notificationconfigcontroller.cpp

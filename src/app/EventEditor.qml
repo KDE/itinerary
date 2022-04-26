@@ -18,7 +18,7 @@ App.EditorPage {
 
     function save(resId, reservation) {
         var event = reservation.reservationFor;
-        var loc = address.save(reservation.reservationFor.location);
+        var loc = address.save(reservation.reservationFor.location ? reservation.reservationFor.location : Factory.makePlace());
         loc.name = address.name;
         event.location = loc;
         var newRes = reservation;
@@ -41,8 +41,8 @@ App.EditorPage {
             id: address
             Kirigami.FormData.isSection: true
             nameLabel: i18n("Venue:")
-            place: reservation.reservationFor.location
-            name: reservation.reservationFor.location.name
+            place: reservation.reservationFor.location ? reservation.reservationFor.location : Factory.makePlace()
+            name: reservation.reservationFor.location ? reservation.reservationFor.location.name : ""
             defaultCountry: countryAtTime(reservation.reservationFor.startDate)
         }
 
