@@ -513,6 +513,12 @@ void TimelineModel::updateWeatherElements()
     qDebug() << "recomputing weather elements";
     GeoCoordinates geo;
 
+    auto date = now();
+    // round to next full hour
+    date.setTime(QTime(date.time().hour(), 0));
+    date = date.addSecs(60 * 60);
+    const auto maxForecastTime = m_weatherMgr->maximumForecastTime(date.date());
+
     // look through the past, clean up weather elements there and figure out where we are
     auto it = m_elements.begin();
     for (; it != m_elements.end() && (*it).dt < now();) {
@@ -531,16 +537,16 @@ void TimelineModel::updateWeatherElements()
         const auto newGeo = (*it).destinationCoordinates();
         if ((*it).isLocationChange() || newGeo.isValid()) {
             geo = newGeo;
+
+            // if we are in an ongoing location change, start afterwards
+            const auto endDt = (*it).endDateTime();
+            if (endDt.isValid() && date < endDt) {
+                date = endDt;
+            }
         }
 
         ++it;
     }
-
-    auto date = now();
-    // round to next full hour
-    date.setTime(QTime(date.time().hour(), 0));
-    date = date.addSecs(60 * 60);
-    const auto maxForecastTime = m_weatherMgr->maximumForecastTime(date.date());
 
     while(it != m_elements.end() && date < maxForecastTime) {
 
