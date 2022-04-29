@@ -5,7 +5,7 @@ set(itinerarythumbnail_SRCS itinerarycreator.cpp)
 add_library(itinerarythumbnail MODULE ${itinerarythumbnail_SRCS})
 target_link_libraries(itinerarythumbnail
     KF5::KIOWidgets
-    Qt5::Gui
+    Qt::Gui
     KPim::PkPass
 )
 
