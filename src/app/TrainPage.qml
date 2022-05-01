@@ -281,6 +281,13 @@ App.DetailsPage {
                 text: root.currentReservation.programMembershipUsed.membershipNumber
                 visible: text
             }
+            QQC2.Button {
+                id: passButton
+                property string passId: PassManager.findMatchingPass(root.currentReservation.programMembershipUsed)
+                text: i18n("Show")
+                visible: passId
+                onClicked: applicationWindow().pageStack.push(programMembershipPage, { programMembership: PassManager.pass(passButton.passId), passId: passButton.passId })
+            }
 
             // booking details
             Kirigami.Separator {

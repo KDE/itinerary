@@ -90,6 +90,44 @@ bool PassManager::import(const QVector<QVariant> &passes)
     return result;
 }
 
+QString PassManager::findMatchingPass(const QVariant &pass) const
+{
+    if (JsonLd::isA<KItinerary::ProgramMembership>(pass)) {
+        const auto program = pass.value<KItinerary::ProgramMembership>();
+        if (!program.membershipNumber().isEmpty()) {
+            const auto it = std::find_if(m_entries.begin(), m_entries.end(), [program](const auto &entry) {
+                return entry.data.template value<KItinerary::ProgramMembership>().membershipNumber() == program.membershipNumber();
+            });
+            return it == m_entries.end() ? QString() : (*it).id;
+        }
+        if (!program.programName().isEmpty()) {
+            // unique substring match
+            QString id;
+            for (const auto &entry : m_entries) {
+                const auto name = entry.data.value<KItinerary::ProgramMembership>().programName();
+                if (name.isEmpty() || (!name.contains(program.programName(), Qt::CaseInsensitive) && !(program.programName().contains(name, Qt::CaseInsensitive)))) {
+                    continue;
+                }
+                if (id.isEmpty()) {
+                    id = entry.id;
+                } else {
+                    return {};
+                }
+            }
+            return id;
+        }
+    }
+    return QString();
+}
+
+QVariant PassManager::pass(const QString &passId) const
+{
+    const auto it = std::find_if(m_entries.begin(), m_entries.end(), [passId](const auto &entry) {
+        return entry.id == passId;
+    });
+    return it == m_entries.end() ? QVariant(): (*it).data;
+}
+
 QVariant PassManager::data(const QModelIndex &index, int role) const
 {
     if (!checkIndex(index)) {

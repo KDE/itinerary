@@ -208,6 +208,10 @@ Kirigami.ApplicationWindow {
         }
     }
     Component {
+        id: programMembershipPage
+        App.ProgramMembershipPage {}
+    }
+    Component {
         id: passComponent
         App.PassPage {}
     }

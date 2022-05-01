@@ -36,6 +36,16 @@ public:
     bool import(const QVariant &pass, const QString &id = {});
     bool import(const QVector<QVariant> &passes);
 
+    /** Returns the pass id for the pass that is the closest match
+     *  to the given ProgramMembership object.
+     *  This is useful for finding the membership pass based on potentially
+     *  incomplete data from a ticket.
+     *  An empty string is returned if no matching membership is found.
+     */
+    Q_INVOKABLE QString findMatchingPass(const QVariant &pass) const;
+    /** Returns the pass object for @p passId. */
+    Q_INVOKABLE QVariant pass(const QString &passId) const;
+
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;

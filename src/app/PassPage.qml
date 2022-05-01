@@ -17,10 +17,6 @@ Kirigami.ScrollablePage {
     title: i18n("Passes and Programs")
 
     Component {
-        id: programMembershipPage
-        App.ProgramMembershipPage {}
-    }
-    Component {
         id: pkpassComponent
         App.GenericPkPassPage {}
     }

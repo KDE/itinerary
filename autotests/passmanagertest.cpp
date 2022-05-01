@@ -51,6 +51,7 @@ private Q_SLOTS:
         QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::ProgramMembership);
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("BahnCard 25 (2. Kl.) (BC25)"));
+        QVERIFY(!mgr.pass(passId).isNull());
 
         {
             // test persistence
@@ -66,6 +67,44 @@ private Q_SLOTS:
         // test removal
         QVERIFY(mgr.remove(passId));
         QCOMPARE(mgr.rowCount(), 0);
+    }
+
+    void testPassMatching_data()
+    {
+        QTest::addColumn<QString>("name");
+        QTest::addColumn<QString>("number");
+        QTest::addColumn<bool>("matches");
+
+        QTest::newRow("empty") << QString() << QString() << false;
+        QTest::newRow("generic-name") << QStringLiteral("BahnCard") << QString() << true;
+        QTest::newRow("generic-name-case-mismatch") << QStringLiteral("Bahncard") << QString() << true;
+        QTest::newRow("number-match") << QStringLiteral("BahnCard") << QStringLiteral("7081123456789012") << true;
+        QTest::newRow("number-mismatch") << QStringLiteral("BahnCard") << QStringLiteral("7081123456789013") << false;
+        QTest::newRow("name-mismatch") << QStringLiteral("CartaFRECCIA") << QString() << false;
+        QTest::newRow("abbr-match") << QStringLiteral("BC25") << QString() << true;
+        QTest::newRow("abbr-mismatch") << QStringLiteral("BC50") << QString() << false;
+    }
+
+    void testPassMatching()
+    {
+        QFETCH(QString, name);
+        QFETCH(QString, number);
+        QFETCH(bool, matches);
+
+        PassManager mgr;
+        Test::clearAll(&mgr);
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
+        const auto passId = mgr.index(0, 0).data(PassManager::PassIdRole).toString();
+        QVERIFY(!passId.isEmpty());
+
+        ProgramMembership program;
+        program.setProgramName(name);
+        program.setMembershipNumber(number);
+        if (matches) {
+            QCOMPARE(mgr.findMatchingPass(program), passId);
+        } else {
+            QCOMPARE(mgr.findMatchingPass(program), QString());
+        }
     }
 };
 
