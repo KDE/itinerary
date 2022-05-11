@@ -9,6 +9,10 @@ ecm_add_test(jniarraytest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(jnimethodtest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 ecm_add_test(androidwrappertest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras)
 
+if (TARGET LibIcal)
+    ecm_add_test(androidicalconvertertest.cpp LINK_LIBRARIES Qt::Test KAndroidExtras KCalendarCoreExtras LibIcal)
+endif()
+
 ecm_add_test(gpxwritertest.cpp LINK_LIBRARIES Qt::Test GpxIo)
 
 ecm_add_test(pkpassmanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)

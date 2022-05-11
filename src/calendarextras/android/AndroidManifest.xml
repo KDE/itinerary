@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: CC0-1.0
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.kde.kcalendarcore">
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+</manifest>

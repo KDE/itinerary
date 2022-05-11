@@ -7,6 +7,7 @@ add_subdirectory(solidextras)
 add_subdirectory(weather)
 add_subdirectory(kandroidextras)
 add_subdirectory(gpx)
+add_subdirectory(calendarextras)
 add_subdirectory(app)
 
 if (TARGET KF5::FileMetaData)

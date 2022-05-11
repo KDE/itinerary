@@ -1,0 +1,48 @@
+/*
+    SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: BSD-3-Clause
+*/
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:@Gradle_ANDROID_GRADLE_PLUGIN_VERSION@'
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    buildToolsVersion '@ANDROID_SDK_BUILD_TOOLS_REVISION@'
+    compileSdkVersion @ANDROID_SDK_COMPILE_API@
+
+    sourceSets {
+        main {
+            manifest.srcFile '@CMAKE_CURRENT_SOURCE_DIR@/AndroidManifest.xml'
+            java.srcDirs = ['@CMAKE_CURRENT_SOURCE_DIR@/org']
+       }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    defaultConfig {
+        minSdkVersion @ANDROID_API_LEVEL@
+        targetSdkVersion @ANDROID_SDK_COMPILE_API@
+    }
+}
