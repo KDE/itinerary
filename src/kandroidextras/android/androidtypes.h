@@ -12,6 +12,7 @@
 namespace KAndroidExtras {
 
 JNI_TYPE(android, content, ContentResolver)
+JNI_TYPE(android, content, Context)
 JNI_TYPE(android, content, Intent)
 JNI_TYPE(android, database, Cursor)
 JNI_NESTED_TYPE(android, Manifest, permission)
