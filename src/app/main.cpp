@@ -47,6 +47,9 @@
 
 #include <weatherforecastmanager.h>
 
+#include <calendarlistmodel.h>
+#include <calendarpluginloader.h>
+
 #include <kitinerary_version.h>
 #include <KItinerary/CountryDb>
 #include <KItinerary/JsonLdDocument>
@@ -100,6 +103,16 @@ void registerKContactsTypes()
     qRegisterMetaType<KContacts::AddressFormatRepository>();
     qRegisterMetaType<KContacts::AddressFormatPreference>();
     qRegisterMetaType<KContacts::AddressFormatScriptPreference>();
+}
+
+void registerKCalendarCoreTypes()
+{
+    // ### this should move into a QML plugin of KCalendarCore
+    qmlRegisterUncreatableMetaObject(KCalendarCore::staticMetaObject, "org.kde.kcalendarcore", 1, 0, "KCalendarCore", {});
+    qmlRegisterType<KCalendarCore::CalendarListModel>("org.kde.kcalendarcore", 1, 0, "CalendarListModel");
+    qmlRegisterSingletonType("org.kde.kcalendarcore", 1, 0, "CalendarPluginLoader", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
+        return jsEngine->toScriptValue(KCalendarCore::CalendarPluginLoader());
+    });
 }
 
 void registerKPkPassTypes()
@@ -385,6 +398,7 @@ int main(int argc, char **argv)
 #endif
 
     registerKContactsTypes();
+    registerKCalendarCoreTypes();
     registerKPkPassTypes();
     registerKItineraryTypes();
     registerApplicationTypes();

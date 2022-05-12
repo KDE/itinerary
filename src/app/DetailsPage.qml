@@ -8,6 +8,8 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kitemmodels 1.0
+import org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -52,6 +54,32 @@ Kirigami.ScrollablePage {
                 onClicked: {
                     ReservationManager.removeBatch(root.batchId);
                     applicationWindow().pageStack.pop();
+                }
+            }
+        }
+    }
+
+    Component {
+        id: calendarModel
+        // needs to be created on demand, after we have calendar access permissions
+        KCalendarCore.CalendarListModel {}
+    }
+    KSortFilterProxyModel {
+        id: writableCalendars
+        filterRole: "accessMode"
+        filterString: KCalendarCore.KCalendarCore.ReadWrite
+    }
+    Kirigami.OverlaySheet {
+        id: calendarSelector
+        title: i18n("Select Calendar")
+
+        ListView {
+            model: writableCalendars
+            delegate: Kirigami.BasicListItem {
+                text: model.name
+                onClicked: {
+                    controller.addToCalendar(model.calendar);
+                    calendarSelector.close();
                 }
             }
         }
@@ -136,6 +164,17 @@ Kirigami.ScrollablePage {
                 text: i18n("Edit")
                 visible: root.editor != undefined
                 onTriggered: applicationWindow().pageStack.push(editor);
+            },
+            Kirigami.Action {
+                iconName: "view-calendar-day"
+                text: i18n("Add to calendar...")
+                onTriggered: PermissionManager.requestPermission(Permission.WriteCalendar, function() {
+                    if (!writableCalendars.sourceModel) {
+                        writableCalendars.sourceModel = calendarModel.createObject(root);
+                    }
+                    calendarSelector.open();
+                })
+                visible: KCalendarCore.CalendarPluginLoader.hasPlugin
             },
             Kirigami.Action {
                 iconName: "edit-delete"

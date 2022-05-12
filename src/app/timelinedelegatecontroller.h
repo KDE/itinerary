@@ -11,6 +11,8 @@
 #include <KPublicTransport/Journey>
 #include <KPublicTransport/JourneyRequest>
 
+#include <KCalendarCore/Calendar>
+
 #include <QObject>
 #include <QVariant>
 
@@ -116,6 +118,9 @@ public:
     Q_INVOKABLE QJSValue departureMapArguments() const;
 
     int documentCount() const;
+
+    /** Add the current reservation to the calendar @p cal. */
+    Q_INVOKABLE void addToCalendar(KCalendarCore::Calendar *cal);
 
 Q_SIGNALS:
     void setupChanged();

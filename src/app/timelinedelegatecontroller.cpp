@@ -16,6 +16,7 @@
 #include "transfermanager.h"
 
 #include <KItinerary/BusTrip>
+#include <KItinerary/CalendarHandler>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
@@ -745,6 +746,31 @@ int TimelineDelegateController::documentCount() const
         }
     }
     return allDocIds.size();
+}
+
+void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
+{
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
+    if (resIds.isEmpty() || !cal) {
+        return;
+    }
+    QVector<QVariant> reservations;
+    reservations.reserve(resIds.size());
+    for (const auto &resId : resIds) {
+        reservations.push_back(m_resMgr->reservation(resId));
+    }
+
+    const auto existingEvents = CalendarHandler::findEvents(cal, reservations.at(0));
+    if (existingEvents.size() == 1) {
+        auto event = existingEvents.at(0);
+        event->startUpdates();
+        CalendarHandler::fillEvent(reservations, event);
+        event->endUpdates();
+    } else {
+        KCalendarCore::Event::Ptr event(new KCalendarCore::Event);
+        CalendarHandler::fillEvent(reservations, event);
+        cal->addEvent(event);
+    }
 }
 
 #include "moc_timelinedelegatecontroller.cpp"
