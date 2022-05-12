@@ -207,7 +207,7 @@ namespace Internal {
 
 /**
  * Wrap a JNI method call.
- * This will add a method named @p name to the current class. Argument types are checked at compile time,
+ * This will add a method named @p Name to the current class. Argument types are checked at compile time,
  * with the following inputs being accepted:
  * - basic types have to match exactly
  * - non-basic types can be either passed as @c QAndroidJniObject instance or with a type that has an
@@ -240,7 +240,7 @@ inline KAndroidExtras::Internal::call_return<RetT>::CallReturnT Name(Args&&... a
 
 /**
  * Wrap a JNI static method call.
- * This will add a static method named @p name to the current class. Argument types are checked at compile time,
+ * This will add a static method named @p Name to the current class. Argument types are checked at compile time,
  * with the following inputs being accepted:
  * - basic types have to match exactly
  * - non-basic types can be either passed as @c QAndroidJniObject instance or with a type that has an

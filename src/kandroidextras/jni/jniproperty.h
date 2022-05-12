@@ -125,7 +125,7 @@ public:
  * copy the wrapper type, not read the property value.
  *
  * @param type The data type of the property.
- * @param name The name of the proeprty.
+ * @param name The name of the property.
  */
 #define JNI_CONSTANT(type, name) \
 private: \
@@ -144,7 +144,7 @@ public: \
  * copy the wrapper type, not read the property value.
  *
  * @param type The data type of the property.
- * @param name The name of the proeprty.
+ * @param name The name of the property.
  */
 #define JNI_PROPERTY(type, name) \
 private: \
