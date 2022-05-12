@@ -8,6 +8,7 @@
 #define KANDROIDEXTRAS_JNISIGNATURE_H
 
 #include "jnicommon.h"
+#include "jnitypes.h"
 
 #include <jni.h>
 #include <cstdint>
@@ -53,7 +54,7 @@ template <typename, typename> struct staticStringFromJniType;
 template <typename T, std::size_t... Indexes>
 struct staticStringFromJniType<T, std::index_sequence<Indexes...>>
 {
-    typedef StaticString<T::jniName()[Indexes]...> value;
+    typedef StaticString<Jni::typeName<T>()[Indexes]...> value;
 };
 
 /** Meta function for assembling JNI signatures. */
@@ -63,7 +64,7 @@ struct JniSignature
     constexpr inline auto operator()() const
     {
         using namespace Internal;
-        return static_concat(StaticString<'L'>(), typename staticStringFromJniType<T, std::make_index_sequence<static_strlen(T::jniName())>>::value(), StaticString<';'>());
+        return static_concat(StaticString<'L'>(), typename staticStringFromJniType<T, std::make_index_sequence<static_strlen(Jni::typeName<T>())>>::value(), StaticString<';'>());
     }
 };
 

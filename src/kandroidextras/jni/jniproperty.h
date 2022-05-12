@@ -158,7 +158,7 @@ private: \
     }; \
     friend class KAndroidExtras::Internal::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
 public: \
-    [[no_unique_address]] KAndroidExtras::Internal::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, Jni::is_basic_type<type>::value> name;
+    [[no_unique_address]] KAndroidExtras::Internal::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, KAndroidExtras::Jni::is_basic_type<type>::value> name;
 }
 
 #endif // KANDROIDEXTRAS_JNIPROPERTIES_H
