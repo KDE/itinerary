@@ -202,6 +202,32 @@ namespace Internal {
             }
         }
     };
+
+    // ctor wrapper
+    template <typename ...Sig>
+    struct constructor {
+        template <typename ...Args>
+        static QAndroidJniObject call(const char *className, const char *signature, Args&&... args)
+        {
+            static_assert(is_call_compatible<Sig...>::template with<Args...>::value, "incompatible constructor arguments");
+            const auto params = std::make_tuple(toCallArgument<Sig, Args>(std::forward<Args>(args))...);
+            return doCall(className, signature, params, std::index_sequence_for<Args...>{});
+        }
+
+        template <typename ParamT, std::size_t ...Index>
+        static QAndroidJniObject doCall(const char *className, const char *signature, const ParamT &params, std::index_sequence<Index...>)
+        {
+            return QAndroidJniObject(className, signature, toFinalCallArgument(std::get<Index>(params))...);
+        }
+    };
+
+    template <>
+    struct constructor<> {
+        static QAndroidJniObject call(const char *className, const char *signature)
+        {
+            return QAndroidJniObject(className, signature);
+        }
+    };
 }
 ///@endcond
 
@@ -268,6 +294,27 @@ template <typename ...Args> \
 static inline KAndroidExtras::Internal::call_return<RetT>::CallReturnT Name(Args&&... args) { \
     using namespace KAndroidExtras; \
     return Internal::static_invoker<RetT, ## __VA_ARGS__>::call(Jni::typeName<_jni_ThisType>(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
+}
+
+/**
+ * Wrap a JNI constructor call.
+ * This will add a constructor named @p Name to the current class. Argument types are checked at compile time,
+ * with the following inputs being accepted:
+ * - basic types have to match exactly
+ * - non-basic types can be either passed as @c QAndroidJniObject instance or with a type that has an
+ *   conversion registered with @c JNI_DECLARE_CONVERTER.
+ *
+ * Thie macro can only be placed in classes having @c JNI_OBJECT macro.
+ *
+ * @param Name The name of the method. Must match the JNI method to be called exactly.
+ * @param Args A list or argument types (can be empty). Must either be basic types or types declared
+ *        with @c JNI_TYPE.
+ */
+#define JNI_CONSTRUCTOR(Name, ...) \
+template <typename ...Args> \
+inline Name(Args&&... args) { \
+    using namespace KAndroidExtras; \
+    m_handle = Internal::constructor<__VA_ARGS__>::call(Jni::typeName<_jni_ThisType>(), Jni::signature<void(__VA_ARGS__)>(), std::forward<Args>(args)...); \
 }
 
 }

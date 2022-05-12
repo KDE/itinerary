@@ -16,6 +16,8 @@ class TestClass
 {
     JNI_OBJECT(TestClass, android::content::Intent)
 public:
+    TestClass() = default;
+    JNI_CONSTRUCTOR(TestClass, android::content::Intent)
     JNI_METHOD(java::lang::String, getName)
     JNI_METHOD(void, setName, java::lang::String)
     JNI_METHOD(jint, getFlags)
@@ -131,6 +133,11 @@ private Q_SLOTS:
         QCOMPARE(obj.handle().protocol()[19], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
         QCOMPARE(obj.handle().protocol()[20], QLatin1String("callObjectMethod: getShortList ()[S ()"));
         QCOMPARE(obj.handle().protocol()[21], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
+
+        // ctor call
+        obj = TestClass(intent);
+        QCOMPARE(obj.handle().protocol().size(), 1);
+        QCOMPARE(obj.handle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V"));
 #if 0
         // stuff that must not compile
         obj.setName(42);
