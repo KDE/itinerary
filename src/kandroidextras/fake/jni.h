@@ -8,6 +8,7 @@
 #define FAKE_JNI_H
 
 #include <cstdint>
+#include <numeric>
 
 #ifdef Q_OS_ANDROID
 #error This is a mock object for use on non-Android!
@@ -38,6 +39,16 @@ typedef jarray jlongArray;
 typedef jarray jfloatArray;
 typedef jarray jdoubleArray;
 
+namespace detail {
+template <typename T>
+inline T* getArrayElements(jsize size)
+{
+    T* array = new T[size];
+    std::iota(array, array + size, T{});
+    return array;
+}
+}
+
 struct JNIEnv
 {
     inline bool ExceptionCheck() { return false; }
@@ -54,14 +65,14 @@ struct JNIEnv
     inline jfloatArray   NewFloatArray  (jsize) { return nullptr; }
     inline jdoubleArray  NewDoubleArray (jsize) { return nullptr; }
 
-    inline jboolean* GetBooleanArrayElements(jbooleanArray, jboolean*) { return new jboolean[m_arrayLength]; }
-    inline jbyte*    GetByteArrayElements   (jbyteArray, jboolean*)    { return new jbyte[m_arrayLength]; }
-    inline jchar*    GetCharArrayElements   (jcharArray, jboolean*)    { return new jchar[m_arrayLength]; }
-    inline jshort*   GetShortArrayElements  (jshortArray, jboolean*)   { return new jshort[m_arrayLength]; }
-    inline jint*     GetIntArrayElements    (jintArray, jboolean*)     { return new jint[m_arrayLength]; }
-    inline jlong*    GetLongArrayElements   (jlongArray, jboolean*)    { return new jlong[m_arrayLength]; }
-    inline jfloat*   GetFloatArrayElements  (jfloatArray, jboolean*)   { return new jfloat[m_arrayLength]; }
-    inline jdouble*  GetDoubleArrayElements (jdoubleArray, jboolean*)  { return new jdouble[m_arrayLength]; }
+    inline jboolean* GetBooleanArrayElements(jbooleanArray, jboolean*) { return detail::getArrayElements<jboolean>(m_arrayLength); }
+    inline jbyte*    GetByteArrayElements   (jbyteArray, jboolean*)    { return detail::getArrayElements<jbyte>(m_arrayLength); }
+    inline jchar*    GetCharArrayElements   (jcharArray, jboolean*)    { return detail::getArrayElements<jchar>(m_arrayLength); }
+    inline jshort*   GetShortArrayElements  (jshortArray, jboolean*)   { return detail::getArrayElements<jshort>(m_arrayLength); }
+    inline jint*     GetIntArrayElements    (jintArray, jboolean*)     { return detail::getArrayElements<jint>(m_arrayLength); }
+    inline jlong*    GetLongArrayElements   (jlongArray, jboolean*)    { return detail::getArrayElements<jlong>(m_arrayLength); }
+    inline jfloat*   GetFloatArrayElements  (jfloatArray, jboolean*)   { return detail::getArrayElements<jfloat>(m_arrayLength); }
+    inline jdouble*  GetDoubleArrayElements (jdoubleArray, jboolean*)  { return detail::getArrayElements<jdouble>(m_arrayLength); }
 
     inline void ReleaseBooleanArrayElements(jbooleanArray, jboolean *data, jint) { delete[] data; }
     inline void ReleaseByteArrayElements   (jbyteArray, jbyte *data, jint)       { delete[] data; }
@@ -81,7 +92,7 @@ struct JNIEnv
     inline void SetFloatArrayRegion  (jfloatArray, jsize, jsize, const jfloat*)     {}
     inline void SetDoubleArrayRegion (jdoubleArray, jsize, jsize, const jdouble*)   {}
 
-    static int m_arrayLength;
+    static jsize m_arrayLength;
 };
 
 #define JNI_COMMIT 1
