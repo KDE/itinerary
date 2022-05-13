@@ -119,11 +119,11 @@ public:
     typedef jsize difference_type;
 
     ArrayImplBase() = default;
-    ArrayImplBase(const QAndroidJniObject &array) : m_array(array) {}
+    inline ArrayImplBase(const QAndroidJniObject &array) : m_array(array) {}
     ArrayImplBase(const ArrayImplBase &) = default;
     ArrayImplBase(ArrayImplBase &&) = default;
 
-    size_type size() const
+    inline size_type size() const
     {
         if (!m_array.isValid()) {
             return 0;
@@ -131,6 +131,10 @@ public:
         const auto a = static_cast<typename _t::type>(m_array.object());
         QAndroidJniEnvironment env;
         return env->GetArrayLength(a);
+    }
+
+    inline operator QAndroidJniObject() const {
+        return m_array;
     }
 
 protected:
@@ -233,13 +237,6 @@ public:
 
 namespace Jni {
 
-/** Container-like wrapper for JNI arrays. */
-template <typename T>
-class Array : public Internal::ArrayImpl<T, Jni::is_basic_type<T>::value> {
-public:
-    using Internal::ArrayImpl<T, Jni::is_basic_type<T>::value>::ArrayImpl;
-};
-
 /** Convert a JNI array to a C++ container.
     *  Container value types can be any of
     *  - QAndroidJniObject
@@ -247,6 +244,18 @@ public:
     *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
     */
 template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_basic_type<typename Container::value_type>::value> fromArray = {};
+
+/** Container-like wrapper for JNI arrays. */
+template <typename T>
+class Array : public Internal::ArrayImpl<T, Jni::is_basic_type<T>::value> {
+public:
+    using Internal::ArrayImpl<T, Jni::is_basic_type<T>::value>::ArrayImpl;
+    template <typename Container>
+    inline operator Container() const {
+        // ### should this be re-implemented in terms of Jni::Array API rather than direct JNI access?
+        return Jni::fromArray<Container>(this->m_array);
+    }
+};
 }
 
 }

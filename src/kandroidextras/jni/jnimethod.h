@@ -96,27 +96,11 @@ namespace Internal {
         QAndroidJniObject value;
     };
 
-    template <typename RetT>
-    class ReturnValue<Jni::Array<RetT>> {
-    public:
-        explicit inline ReturnValue(const QAndroidJniObject &v) : value(v) {}
-        inline operator QAndroidJniObject() const {
-            return value;
-        }
-        template <typename Container>
-        inline operator Container() const {
-            return Jni::fromArray<Container>(value);
-        }
-
-    private:
-        QAndroidJniObject value;
-    };
-
     // return type conversion
     template <typename RetT>
     struct call_return {
         static inline constexpr bool is_basic = Jni::is_basic_type<RetT>::value;
-        static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void> || Jni::is_array<RetT>::value;
+        static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
 
         typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
         typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, ReturnValue<RetT>> CallReturnT;
@@ -128,6 +112,14 @@ namespace Internal {
             } else {
                 return value;
             }
+        }
+    };
+    template <typename RetT>
+    struct call_return<Jni::Array<RetT>> {
+        typedef Jni::Array<RetT> CallReturnT;
+        static inline constexpr CallReturnT toReturnValue(const QAndroidJniObject &value)
+        {
+            return CallReturnT(value);
         }
     };
     template <>
