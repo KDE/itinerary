@@ -46,6 +46,36 @@ private Q_SLOTS:
         QCOMPARE(a4.size(), 1);
 #endif
     }
+
+    void testArrayWrapper()
+    {
+#ifndef Q_OS_ANDROID
+        JNIEnv::m_arrayLength = 3;
+
+        QAndroidJniObject array;
+        // basic types
+        const auto a1 = Jni::Array<jint>(array);
+        QCOMPARE(a1.size(), 3);
+        QCOMPARE(std::distance(a1.begin(), a1.end()), 3);
+        QCOMPARE(a1[0], 0);
+        QCOMPARE(a1[2], 2);
+        for (jint i : a1) {
+            QVERIFY(i >= 0 && i < 3);
+        }
+
+        // complex types
+        const auto a2 = Jni::Array<java::lang::String>(array);
+        JNIEnv::m_arrayLength = 2;
+        QCOMPARE(a2.size(), 2);
+        QCOMPARE(std::distance(a2.begin(), a2.end()), 2);
+        QCOMPARE(a2[0].toString(), QLatin1String("ctor: 0"));
+        QCOMPARE(a2[1].toString(), QLatin1String("ctor: 1"));
+        for (const auto &i : a2) {
+            QVERIFY(i.isValid());
+        }
+
+#endif
+    }
 };
 
 QTEST_GUILESS_MAIN(JniArrayTest)

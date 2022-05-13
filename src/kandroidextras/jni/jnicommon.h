@@ -12,7 +12,7 @@ namespace KAndroidExtras {
 namespace Jni {
 
 /** Wrapper type for array return values (which we cannot specify using [] syntax). */
-template <typename T> struct Array {};
+template <typename T> class Array;
 
 }
 

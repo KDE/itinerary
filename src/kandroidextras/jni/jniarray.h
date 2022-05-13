@@ -18,7 +18,9 @@ namespace KAndroidExtras {
 namespace Internal {
 
 /** Basic type array type traits. */
-template <typename T> struct array_trait {};
+template <typename T> struct array_trait {
+    typedef jobjectArray type;
+};
 
 #define MAKE_ARRAY_TRAIT(base_type, type_name) \
 template <> struct array_trait<base_type> { \
@@ -108,17 +110,143 @@ struct FromArray<Container, Value, true>
     }
 };
 
+// array wrapper, common base for basic and non-basic types
+template <typename T>
+class ArrayImplBase {
+public:
+    typedef T value_type;
+    typedef jsize size_type;
+    typedef jsize difference_type;
+
+    ArrayImplBase() = default;
+    ArrayImplBase(const QAndroidJniObject &array) : m_array(array) {}
+    ArrayImplBase(const ArrayImplBase &) = default;
+    ArrayImplBase(ArrayImplBase &&) = default;
+
+    size_type size() const
+    {
+        if (!m_array.isValid()) {
+            return 0;
+        }
+        const auto a = static_cast<typename _t::type>(m_array.object());
+        QAndroidJniEnvironment env;
+        return env->GetArrayLength(a);
+    }
+
+protected:
+    typedef array_trait<T> _t;
+
+    typename _t::type handle() const { return static_cast<typename _t::type>(m_array.object()); }
+
+    QAndroidJniObject m_array;
+};
+
+template <typename T, bool is_basic>
+class ArrayImpl {};
+
+// array wrapper for basic types
+template <typename T>
+class ArrayImpl<T, true> : public ArrayImplBase<T>
+{
+public:
+    ArrayImpl(const QAndroidJniObject &array)
+        : ArrayImplBase<T>(array)
+    {
+        if (!array.isValid()) {
+            return;
+        }
+        // ### do this on demand?
+        QAndroidJniEnvironment env;
+        m_data = ArrayImplBase<T>::_t::getArrayElements(env, this->handle(), nullptr);
+    }
+    ~ArrayImpl()
+    {
+        QAndroidJniEnvironment env;
+        ArrayImplBase<T>::_t::releaseArrayElements(env, this->handle(), m_data, JNI_ABORT);
+    }
+    ArrayImpl() = default;
+    ArrayImpl(const ArrayImpl&) = delete; // ### ref count m_data and allow copying?
+    ArrayImpl(ArrayImpl&&) = default;
+
+    T operator[](jsize index) const
+    {
+        return m_data[index];
+    }
+
+    T* begin() const { return m_data; }
+    T* end() const { return m_data + ArrayImplBase<T>::size(); }
+
+private:
+    T *m_data = nullptr;
+};
+
+// array wrapper for non-based types
+template <typename T>
+class ArrayImpl<T, false> : public ArrayImplBase<T>
+{
+public:
+    using ArrayImplBase<T>::ArrayImplBase;
+    ArrayImpl() = default;
+    ArrayImpl(const ArrayImpl&) = default;
+    ArrayImpl(ArrayImpl&&) = default;
+
+    QAndroidJniObject operator[](jsize index) const
+    {
+        QAndroidJniEnvironment env;
+        return QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index));
+    }
+
+    class const_iterator
+    {
+        const ArrayImpl<T, false> &c;
+        jsize i = 0;
+    public:
+        typedef jsize difference_type;
+        typedef T value_type;
+        typedef T& reference;
+        typedef std::random_access_iterator_tag iterator_category;
+        typedef T* pointer;
+
+        const_iterator(const ArrayImpl<T, false> &_c, jsize _i) : c(_c), i(_i) {}
+
+        difference_type operator-(const_iterator other) const { return i - other.i; }
+
+        const_iterator& operator++() { ++i; return *this; }
+        const_iterator operator++(int) { return const_iterator(c, i++); }
+
+        bool operator==(const_iterator other) const { return i == other.i; }
+        bool operator!=(const_iterator other) const { return i != other.i; }
+
+        // TODO return type should be the same as for the method wrapper
+        QAndroidJniObject operator*() const {
+            return c[i];
+        }
+    };
+
+    const_iterator begin() const { return const_iterator(*this, 0); }
+    const_iterator end() const { return const_iterator(*this, ArrayImplBase<T>::size()); }
+
+};
+
 }
 ///@endcond
 
 namespace Jni {
-    /** Convert a JNI array to a C++ container.
-     *  Container value types can be any of
-     *  - QAndroidJniObject
-     *  - a basic JNI type
-     *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
-     */
-    template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_basic_type<typename Container::value_type>::value> fromArray = {};
+
+/** Container-like wrapper for JNI arrays. */
+template <typename T>
+class Array : public Internal::ArrayImpl<T, Jni::is_basic_type<T>::value> {
+public:
+    using Internal::ArrayImpl<T, Jni::is_basic_type<T>::value>::ArrayImpl;
+};
+
+/** Convert a JNI array to a C++ container.
+    *  Container value types can be any of
+    *  - QAndroidJniObject
+    *  - a basic JNI type
+    *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
+    */
+template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_basic_type<typename Container::value_type>::value> fromArray = {};
 }
 
 }
