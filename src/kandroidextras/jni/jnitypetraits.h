@@ -46,6 +46,10 @@ template <typename T> struct reverse_converter {
 template <typename T> struct is_array : std::false_type {};
 template <typename T> struct is_array<Array<T>> : std::true_type {};
 
+/** Type trais for checking whether @tparam T is a JNI object wrapper type. */
+template <typename T, typename = std::void_t<>> struct is_object_wrapper : std::false_type {};
+template <typename T> struct is_object_wrapper<T, std::void_t<typename T::_jni_ThisType>> : std::true_type {};
+
 }
 
 /**

@@ -53,8 +53,9 @@ private:
  *  @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
  */
 #define JNI_OBJECT(Class, BaseType) \
-private: \
+public: \
     typedef Class _jni_ThisType; \
+private: \
     static inline constexpr const char *jniName() { return KAndroidExtras::Jni::typeName<BaseType>(); } \
     friend constexpr const char* KAndroidExtras::Jni::typeName<Class>();
 
