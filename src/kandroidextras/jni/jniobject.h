@@ -11,6 +11,8 @@
 
 namespace KAndroidExtras {
 
+namespace java { namespace lang { struct String; } }
+
 namespace Jni {
 
 /** Wrapper for JNI objects with a convertible C++ type.
@@ -26,6 +28,15 @@ public:
     }
     inline operator typename Jni::converter<T>::type() const {
         return Jni::converter<T>::convert(m_handle);
+    }
+
+    // forward basic QAndroidJniObject API
+    inline bool isValid() const {
+        return m_handle.isValid();
+    }
+    template <typename StrT = QString, typename = std::enable_if_t<std::is_same_v<T, java::lang::String>, StrT>>
+    inline QString toString() const {
+        return m_handle.toString();
     }
 private:
     QAndroidJniObject m_handle;
