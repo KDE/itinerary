@@ -8,6 +8,7 @@
 
 #include "jniarray.h"
 #include "jniobject.h"
+#include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
 #include <QAndroidJniObject>
@@ -79,33 +80,6 @@ namespace Internal {
     template <typename T> inline constexpr T toFinalCallArgument(T value) { return value; }
     inline jobject toFinalCallArgument(const QAndroidJniObject &value) { return value.object(); }
 
-    // return type conversion
-    template <typename RetT>
-    struct call_return {
-        static inline constexpr bool is_basic = Jni::is_basic_type<RetT>::value;
-        static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
-
-        typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
-
-        static inline constexpr auto toReturnValue(JniReturnT value)
-        {
-            if constexpr (is_convertible) {
-                return Jni::Object<RetT>(value);
-            } else {
-                return value;
-            }
-        }
-    };
-    template <typename RetT>
-    struct call_return<Jni::Array<RetT>> {
-        static inline auto toReturnValue(const QAndroidJniObject &value)
-        {
-            return Jni::Array<RetT>(value);
-        }
-    };
-    template <>
-    struct call_return<void> {};
-
     // call wrapper
     template <typename RetT, typename ...Sig>
     struct invoker {
@@ -123,7 +97,7 @@ namespace Internal {
             if constexpr (Jni::is_basic_type<RetT>::value) {
                 return handle.callMethod<RetT>(name, signature, toFinalCallArgument(std::get<Index>(params))...);
             } else {
-                return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature, toFinalCallArgument(std::get<Index>(params))...));
+                return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature, toFinalCallArgument(std::get<Index>(params))...));
             }
         }
     };
@@ -135,7 +109,7 @@ namespace Internal {
             if constexpr (Jni::is_basic_type<RetT>::value) {
                 return handle.callMethod<RetT>(name, signature);
             } else {
-                return Internal::call_return<RetT>::toReturnValue(handle.callObjectMethod(name, signature));
+                return Internal::return_wrapper<RetT>::toReturnValue(handle.callObjectMethod(name, signature));
             }
         }
     };
@@ -157,7 +131,7 @@ namespace Internal {
             if constexpr (Jni::is_basic_type<RetT>::value) {
                 return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature, toFinalCallArgument(std::get<Index>(params))...);
             } else {
-                return Internal::call_return<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature, toFinalCallArgument(std::get<Index>(params))...));
+                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature, toFinalCallArgument(std::get<Index>(params))...));
             }
         }
     };
@@ -169,7 +143,7 @@ namespace Internal {
             if constexpr (Jni::is_basic_type<RetT>::value) {
                 return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature);
             } else {
-                return Internal::call_return<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature));
+                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature));
             }
         }
     };

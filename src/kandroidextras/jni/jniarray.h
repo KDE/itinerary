@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNIARRAY_H
 #define KANDROIDEXTRAS_JNIARRAY_H
 
+#include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
 #include <QAndroidJniEnvironment>
@@ -194,10 +195,10 @@ public:
     ArrayImpl(const ArrayImpl&) = default;
     ArrayImpl(ArrayImpl&&) = default;
 
-    QAndroidJniObject operator[](jsize index) const
+    auto operator[](jsize index) const
     {
         QAndroidJniEnvironment env;
-        return QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index));
+        return Internal::return_wrapper<T>::toReturnValue(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index)));
     }
 
     class const_iterator
@@ -221,8 +222,7 @@ public:
         bool operator==(const_iterator other) const { return i == other.i; }
         bool operator!=(const_iterator other) const { return i != other.i; }
 
-        // TODO return type should be the same as for the method wrapper
-        QAndroidJniObject operator*() const {
+        auto operator*() const {
             return c[i];
         }
     };

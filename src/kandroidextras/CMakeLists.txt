@@ -63,6 +63,7 @@ ecm_generate_headers(KAndroidExtras_jni_FORWARDING_HEADERS
         JniArray
         JniObject
         JniMethod
+        JniReturnValue
         JniProperty
         JniSignature
         JniTypes

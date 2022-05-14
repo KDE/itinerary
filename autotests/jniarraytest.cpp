@@ -5,6 +5,7 @@
 */
 
 #include <KAndroidExtras/JniArray>
+#include <KAndroidExtras/JniProperty>
 #include <KAndroidExtras/JniTypeTraits>
 #include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/Uri>
@@ -13,6 +14,16 @@
 
 using namespace KAndroidExtras;
 
+class TestClass
+{
+    JNI_OBJECT(TestClass, android::content::Context)
+public:
+    TestClass(const QAndroidJniObject &o) : m_handle(o) {}
+    JNI_PROPERTY(bool, myBoolProp)
+private:
+    inline QAndroidJniObject handle() const { return m_handle; }
+    QAndroidJniObject m_handle;
+};
 class JniArrayTest : public QObject
 {
     Q_OBJECT
@@ -63,7 +74,7 @@ private Q_SLOTS:
             QVERIFY(i >= 0 && i < 3);
         }
 
-        // complex types
+        // complex types without wrappers
         const auto a2 = Jni::Array<java::lang::String>(array);
         JNIEnv::m_arrayLength = 2;
         QCOMPARE(a2.size(), 2);
@@ -73,7 +84,21 @@ private Q_SLOTS:
         for (const auto &i : a2) {
             QVERIFY(i.isValid());
         }
+        for (const QString &i : a2) {
+            QVERIFY(!i.isEmpty());
+        }
 
+        // complex type with custom wrapper
+        static_assert(Jni::is_object_wrapper<TestClass>::value);
+        JNIEnv::m_arrayLength = 1;
+        const auto a3 = Jni::Array<TestClass>(array);
+        QCOMPARE(a3.size(), 1);
+        QCOMPARE(std::distance(a3.begin(), a3.end()), 1);
+        const auto v = a3[0];
+        bool b = a3[0].myBoolProp;
+        for (const TestClass &i : a3) {
+            bool b = i.myBoolProp; // verifies this is of the correct type
+        }
 #endif
     }
 };

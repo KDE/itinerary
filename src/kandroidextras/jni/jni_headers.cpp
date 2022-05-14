@@ -10,6 +10,7 @@
 #include "jnimethod.h"
 #include "jniobject.h"
 #include "jniproperty.h"
+#include "jnireturnvalue.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
 #include "jnitypetraits.h"
