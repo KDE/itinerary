@@ -7,14 +7,29 @@
 #ifndef KANDROIDEXTRAS_JNICOMMON_H
 #define KANDROIDEXTRAS_JNICOMMON_H
 
+#include "jnitypetraits.h"
+
 namespace KAndroidExtras {
 
 namespace Jni {
 
-/** Wrapper type for array return values (which we cannot specify using [] syntax). */
-template <typename T> class Array;
-
-}
+/** Wrapper for JNI objects with a convertible C++ type.
+ *  This provides implicit on-demand conversion to the C++ type, for types
+ *  that don't have a manually defined wrapper.
+ */
+template <typename T>
+class Object {
+public:
+    explicit inline Object(const QAndroidJniObject &v) : m_handle(v) {}
+    inline operator QAndroidJniObject() const {
+        return m_handle;
+    }
+    inline operator typename Jni::converter<T>::type() const {
+        return Jni::converter<T>::convert(m_handle);
+    }
+private:
+    QAndroidJniObject m_handle;
+};
 
 /** Annotates a class for holding JNI method or property wrappers.
  *
@@ -32,6 +47,7 @@ private: \
     static inline constexpr const char *jniName() { return KAndroidExtras::Jni::typeName<BaseType>(); } \
     friend constexpr const char* KAndroidExtras::Jni::typeName<Class>();
 
+}
 }
 
 #endif

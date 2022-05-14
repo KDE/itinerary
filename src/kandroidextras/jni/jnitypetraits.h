@@ -7,7 +7,6 @@
 #ifndef KANDROIDEXTRAS_JNITYPETRAITS_H
 #define KANDROIDEXTRAS_JNITYPETRAITS_H
 
-#include "jnicommon.h"
 #include "jnitypes.h"
 
 #include <QAndroidJniObject>
@@ -17,6 +16,8 @@
 namespace KAndroidExtras {
 
 namespace Jni {
+
+template <typename T> class Array;
 
 /** Type trait to check whether @tparam T is a basic JNI type or an object type.
  *  Those two typically need different handling both with JNI API and with QAndroidJniObject API.

@@ -7,7 +7,6 @@
 #ifndef KANDROIDEXTRAS_JNISIGNATURE_H
 #define KANDROIDEXTRAS_JNISIGNATURE_H
 
-#include "jnicommon.h"
 #include "jnitypes.h"
 
 #include <jni.h>
@@ -15,6 +14,10 @@
 #include <utility>
 
 namespace KAndroidExtras {
+
+namespace Jni {
+template <typename T> class Array;
+}
 
 /** @cond internal */
 namespace Internal {

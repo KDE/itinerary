@@ -8,6 +8,7 @@
 #define KANDROIDEXTRAS_MANIFESTPERMISSIONM_H
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JniObject>
 #include <KAndroidExtras/JniProperty>
 #include <KAndroidExtras/JavaTypes>
 

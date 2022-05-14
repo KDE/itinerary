@@ -8,6 +8,7 @@
 #define KANDROIDEXTRAS_OPENABLECOLUMNS_H
 
 #include <KAndroidExtras/AndroidTypes>
+#include <KAndroidExtras/JniObject>
 #include <KAndroidExtras/JniProperty>
 #include <KAndroidExtras/JavaTypes>
 

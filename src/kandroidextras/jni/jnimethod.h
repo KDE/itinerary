@@ -7,6 +7,7 @@
 #define KANDROIDEXTRAS_JNIMETHOD_H
 
 #include "jniarray.h"
+#include "jniobject.h"
 #include "jnitypetraits.h"
 
 #include <QAndroidJniObject>
@@ -78,24 +79,6 @@ namespace Internal {
     template <typename T> inline constexpr T toFinalCallArgument(T value) { return value; }
     inline jobject toFinalCallArgument(const QAndroidJniObject &value) { return value.object(); }
 
-    // method return value wrapper for complex types we can implicitly convert
-    // this defers conversion until it's actually needed, so we can do direct JNI handle pass-through
-    // when chaining calls
-    template <typename RetT>
-    class ReturnValue {
-    public:
-        explicit inline ReturnValue(const QAndroidJniObject &v) : value(v) {}
-        inline operator QAndroidJniObject() const {
-            return value;
-        }
-        inline operator typename Jni::converter<RetT>::type() const {
-            return Jni::converter<RetT>::convert(value);
-        }
-
-    private:
-        QAndroidJniObject value;
-    };
-
     // return type conversion
     template <typename RetT>
     struct call_return {
@@ -103,12 +86,12 @@ namespace Internal {
         static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
 
         typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
-        typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, ReturnValue<RetT>> CallReturnT;
+        typedef std::conditional_t<is_basic || !is_convertible, JniReturnT, Jni::Object<RetT>> CallReturnT;
 
         static inline constexpr CallReturnT toReturnValue(JniReturnT value)
         {
             if constexpr (is_convertible) {
-                return ReturnValue<RetT>(value);
+                return Jni::Object<RetT>(value);
             } else {
                 return value;
             }
