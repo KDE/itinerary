@@ -16,6 +16,7 @@ using namespace KAndroidExtras;
 
 class TestClass
 {
+    TestClass() = default;
     JNI_OBJECT(TestClass, android::content::Intent)
 
     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
@@ -26,11 +27,8 @@ class TestClass
     JNI_PROPERTY(int, myIntField)
     JNI_PROPERTY(android::net::Uri, myUriField)
     JNI_PROPERTY(android::content::Intent, myIntentField)
-
-
-    inline QAndroidJniObject handle() const { return m_handle; }
-private:
-    QAndroidJniObject m_handle;
+public:
+    friend class JniPropertyTest;
 };
 
 static_assert(sizeof(TestClass) == sizeof(QAndroidJniObject));
@@ -69,15 +67,15 @@ private Q_SLOTS:
         const QAndroidJniObject bla = obj.myIntentField;
         obj.myIntentField = bla;
 
-        QCOMPARE(obj.handle().protocol().size(), 8);
-        QCOMPARE(obj.handle().protocol().at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.handle().protocol().at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.handle().protocol().at(2), QLatin1String("getField: myIntField I"));
-        QCOMPARE(obj.handle().protocol().at(3), QLatin1String("setField: myIntField I"));
-        QCOMPARE(obj.handle().protocol().at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
-        QCOMPARE(obj.handle().protocol().at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
-        QCOMPARE(obj.handle().protocol().at(6), QLatin1String("getObjectField: myIntentField Landroid/content/Intent;"));
-        QCOMPARE(obj.handle().protocol().at(7), QLatin1String("setField: myIntentField Landroid/content/Intent;"));
+        QCOMPARE(obj.jniHandle().protocol().size(), 8);
+        QCOMPARE(obj.jniHandle().protocol().at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.jniHandle().protocol().at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.jniHandle().protocol().at(2), QLatin1String("getField: myIntField I"));
+        QCOMPARE(obj.jniHandle().protocol().at(3), QLatin1String("setField: myIntField I"));
+        QCOMPARE(obj.jniHandle().protocol().at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.jniHandle().protocol().at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.jniHandle().protocol().at(6), QLatin1String("getObjectField: myIntentField Landroid/content/Intent;"));
+        QCOMPARE(obj.jniHandle().protocol().at(7), QLatin1String("setField: myIntentField Landroid/content/Intent;"));
 #endif
     }
 };

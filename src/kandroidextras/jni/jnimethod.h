@@ -194,8 +194,7 @@ namespace Internal {
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
  *   container or a @p QAndroidJniObject representing the JNI array.
  *
- * Thie macro can only be placed in classes having a @c handle() method returning the corresponding
- * QAndroidJniObject instance.
+ * Thie macro can only be placed in classes having the @c JNI_OBJECT macro.
  *
  * @param RetT The return type. Must either be a basic type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.
@@ -206,7 +205,7 @@ namespace Internal {
 template <typename ...Args> \
 inline auto Name(Args&&... args) const { \
     using namespace KAndroidExtras; \
-    return Internal::invoker<RetT, ## __VA_ARGS__>::call(handle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
+    return Internal::invoker<RetT, ## __VA_ARGS__>::call(jniHandle(), "" #Name, Jni::signature<RetT(__VA_ARGS__)>(), std::forward<Args>(args)...); \
 }
 
 /**
@@ -227,7 +226,7 @@ inline auto Name(Args&&... args) const { \
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
  *   container or a @p QAndroidJniObject representing the JNI array.
  *
- * Thie macro can only be placed in classes having @c JNI_OBJECT macro.
+ * Thie macro can only be placed in classes having the @c JNI_UNMANAGED_OBJECT or @c JNI_OBJECT macro.
  *
  * @param RetT The return type. Must either be a basic type or a type declared with @c JNI_TYPE
  * @param Name The name of the method. Must match the JNI method to be called exactly.
@@ -259,7 +258,7 @@ static inline auto Name(Args&&... args) { \
 template <typename ...Args> \
 inline Name(Args&&... args) { \
     using namespace KAndroidExtras; \
-    m_handle = Internal::constructor<__VA_ARGS__>::call(Jni::typeName<_jni_ThisType>(), Jni::signature<void(__VA_ARGS__)>(), std::forward<Args>(args)...); \
+    setJniHandle(Internal::constructor<__VA_ARGS__>::call(Jni::typeName<_jni_ThisType>(), Jni::signature<void(__VA_ARGS__)>(), std::forward<Args>(args)...)); \
 }
 
 }

@@ -17,13 +17,9 @@ using namespace KAndroidExtras;
 class TestClass
 {
     JNI_OBJECT(TestClass, android::content::Context)
-public:
-    TestClass(const QAndroidJniObject &o) : m_handle(o) {}
     JNI_PROPERTY(bool, myBoolProp)
-private:
-    inline QAndroidJniObject handle() const { return m_handle; }
-    QAndroidJniObject m_handle;
 };
+
 class JniArrayTest : public QObject
 {
     Q_OBJECT

@@ -20,7 +20,7 @@ namespace KAndroidExtras {
  */
 class OpenableColumns
 {
-    JNI_OBJECT(OpenableColumns, android::provider::OpenableColumns)
+    JNI_UNMANAGED_OBJECT(OpenableColumns, android::provider::OpenableColumns)
 public:
     JNI_CONSTANT(java::lang::String, DISPLAY_NAME)
     JNI_CONSTANT(java::lang::String, SIZE)

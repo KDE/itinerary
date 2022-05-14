@@ -44,21 +44,36 @@ private:
 
 /** Annotates a class for holding JNI method or property wrappers.
  *
- *  For using non-static methods or properties, this class also has to provide a
- *  @p handle() method returning a @c QAndroidJniObject representing the current
- *  instance.
+ *  Use this if the class only has static methods or constants. For methods
+ *  and properties, you either need to use @c JNI_OBJECT instead, or make
+ *  sure there is a @p jniHandle() method returning a @c QAndroidJniObject
+ *  representing the current instance.
  *
  *  @param Class the name of the class this is added to.
  *  @param BaseType the Java type this class represents, defined by the
  *  @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
  */
-#define JNI_OBJECT(Class, BaseType) \
+#define JNI_UNMANAGED_OBJECT(Class, BaseType) \
 public: \
     typedef Class _jni_ThisType; \
 private: \
     static inline constexpr const char *jniName() { return KAndroidExtras::Jni::typeName<BaseType>(); } \
     friend constexpr const char* KAndroidExtras::Jni::typeName<Class>();
 
+/** Annotates a class for holding JNI method or property wrappers.
+ *
+ *  @param Class the name of the class this is added to.
+ *  @param BaseType the Java type this class represents, defined by the
+ *  @c JNI_TYPE or @c JNI_NESTED_TYPE macros.
+ */
+#define JNI_OBJECT(Class, BaseType) \
+    JNI_UNMANAGED_OBJECT(Class, BaseType) \
+private: \
+    QAndroidJniObject _m_jni_handle; \
+    inline QAndroidJniObject jniHandle() const { return _m_jni_handle; } \
+    inline void setJniHandle(const QAndroidJniObject &h) { _m_jni_handle = h; } \
+public: \
+    explicit Class(const QAndroidJniObject &h) : _m_jni_handle(h) {}
 }
 }
 

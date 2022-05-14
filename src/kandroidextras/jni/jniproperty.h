@@ -56,7 +56,7 @@ class PropertyBase {
 protected:
     inline QAndroidJniObject handle() const {
         const auto owner = reinterpret_cast<const ClassType*>(reinterpret_cast<const char*>(this) - OffsetHolder::offset());
-        return owner->handle();
+        return owner->jniHandle();
     }
 };
 

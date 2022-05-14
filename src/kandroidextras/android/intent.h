@@ -31,8 +31,6 @@ class KANDROIDEXTRAS_EXPORT Intent
 public:
     /** Creates a new empty intent. */
     Intent();
-    /** Adopts an existing intent available as a JNI object. */
-    explicit Intent(const QAndroidJniObject &intent);
     ~Intent();
 
     /** Add a category to the intent. */
@@ -60,12 +58,11 @@ public:
     template <typename T>
     inline void putExtra(const QAndroidJniObject &name, const QAndroidJniObject &value)
     {
-        m_intent.callObjectMethod("putExtra", Jni::signature<android::content::Intent(java::lang::String, T)>(), name.object(), value.object());
+        jniHandle().callObjectMethod("putExtra", Jni::signature<android::content::Intent(java::lang::String, T)>(), name.object(), value.object());
     }
 
     /** Implicit conversion to an QAndroidJniObject. */
     operator QAndroidJniObject() const;
-    QAndroidJniObject handle() const;
 
     /** Action constant for create document intents. */
     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
@@ -96,7 +93,6 @@ public:
 private:
     template <typename T>
     QAndroidJniObject getObjectExtra(const char* methodName, const QAndroidJniObject &name) const;
-    QAndroidJniObject m_intent;
 };
 
 }

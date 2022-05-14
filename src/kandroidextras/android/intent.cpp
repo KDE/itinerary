@@ -17,30 +17,20 @@ using namespace KAndroidExtras;
 
 Intent::Intent()
 {
-    m_intent = QAndroidJniObject(Jni::typeName<android::content::Intent>());
-}
-
-Intent::Intent(const QAndroidJniObject &intent)
-    : m_intent(intent)
-{
+    setJniHandle(QAndroidJniObject(Jni::typeName<android::content::Intent>()));
 }
 
 Intent::~Intent() = default;
 
 Intent::operator QAndroidJniObject() const
 {
-    return m_intent;
-}
-
-QAndroidJniObject Intent::handle() const
-{
-    return m_intent;
+    return jniHandle();
 }
 
 template <typename T>
 QAndroidJniObject Intent::getObjectExtra(const char *methodName, const QAndroidJniObject &name) const
 {
-    return m_intent.callObjectMethod(methodName, Jni::signature<T(java::lang::String)>(), name.object());
+    return jniHandle().callObjectMethod(methodName, Jni::signature<T(java::lang::String)>(), name.object());
 }
 
 QString Intent::getStringExtra(const QAndroidJniObject &name) const

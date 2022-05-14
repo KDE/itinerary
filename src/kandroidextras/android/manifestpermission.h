@@ -20,7 +20,7 @@ namespace KAndroidExtras {
  */
 class ManifestPermission
 {
-    JNI_OBJECT(ManifestPermission, android::Manifest_permission)
+    JNI_UNMANAGED_OBJECT(ManifestPermission, android::Manifest_permission)
 public:
     JNI_CONSTANT(java::lang::String, READ_CALENDAR)
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)

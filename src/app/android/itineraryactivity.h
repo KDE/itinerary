@@ -19,13 +19,13 @@ JNI_TYPE(org, kde, itinerary, Activity)
 
 /** Interface to the Java Activity class. */
 class ItineraryActivity {
-    JNI_OBJECT(ItineraryActivity, org::kde::itinerary::Activity)
+    JNI_UNMANAGED_OBJECT(ItineraryActivity, org::kde::itinerary::Activity)
 public:
     JNI_METHOD(void, checkCalendar)
     JNI_METHOD(KAndroidExtras::Jni::Array<KAndroidExtras::java::lang::String>, attachmentsForIntent, KAndroidExtras::android::content::Intent)
     JNI_METHOD(KAndroidExtras::android::net::Uri, openDocument, java::lang::String)
 private:
-    inline QAndroidJniObject handle() const { return QtAndroid::androidActivity(); }
+    inline QAndroidJniObject jniHandle() const { return QtAndroid::androidActivity(); }
 };
 
 #endif
