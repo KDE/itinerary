@@ -200,6 +200,7 @@ else ()
     target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
         KF5::DBusAddons
+        KF5::WindowSystem
         Qt::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")

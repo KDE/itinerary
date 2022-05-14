@@ -57,6 +57,7 @@
 
 #ifndef Q_OS_ANDROID
 #include <KDBusService>
+#include <KWindowSystem>
 #endif
 
 #include <KLocalizedContext>
@@ -375,7 +376,9 @@ int main(int argc, char **argv)
             handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
         }
         if (!QGuiApplication::allWindows().isEmpty()) {
-            QGuiApplication::allWindows().at(0)->requestActivate();
+            QWindow *window = QGuiApplication::allWindows().at(0);
+            KWindowSystem::updateStartupId(window);
+            KWindowSystem::activateWindow(window);
         }
     });
 #endif

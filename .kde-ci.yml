@@ -29,6 +29,7 @@ Dependencies:
     'frameworks/kcrash': '@stable'
     'frameworks/kio': '@stable'
     'frameworks/kfilemetadata': '@stable'
+    'frameworks/kwindowsystem': '@stable'
 
 - 'on': ['Linux']
   'require':
