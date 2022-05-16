@@ -47,6 +47,7 @@ ecm_generate_headers(KAndroidExtras_android_FORWARDING_HEADERS
     HEADER_NAMES
         Activity
         AndroidTypes
+        CalendarContract
         ContentResolver
         Context
         Intent
