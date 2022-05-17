@@ -79,6 +79,11 @@ public:
     {
         return Jni::converter<PropType>::convert(get());
     }
+    template <typename RetT = PropType, typename = std::enable_if_t<Jni::is_array<PropType>::value, RetT>>
+    inline operator PropType() const
+    {
+        return PropType(get());
+    }
 
     inline Property& operator=(const QAndroidJniObject &value)
     {
