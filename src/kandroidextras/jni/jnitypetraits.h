@@ -24,6 +24,7 @@ template <typename T> class Array;
  */
 template <typename T> struct is_basic_type : std::false_type {};
 template <> struct is_basic_type<bool> : std::true_type {};
+template <> struct is_basic_type<jboolean> : std::true_type {};
 template <> struct is_basic_type<jbyte> : std::true_type {};
 template <> struct is_basic_type<jchar> : std::true_type {};
 template <> struct is_basic_type<jshort> : std::true_type {};

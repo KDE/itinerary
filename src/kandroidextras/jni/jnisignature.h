@@ -72,7 +72,8 @@ struct JniSignature
 };
 
 template <> struct JniSignature<bool> { constexpr inline auto operator()() const { return StaticString<'Z'>(); } };
-template <> struct JniSignature<uint8_t> { constexpr inline auto operator()() const { return StaticString<'B'>(); } };
+template <> struct JniSignature<jboolean> { constexpr inline auto operator()() const { return StaticString<'Z'>(); } };
+template <> struct JniSignature<jbyte> { constexpr inline auto operator()() const { return StaticString<'B'>(); } };
 template <> struct JniSignature<char> { constexpr inline auto operator()() const { return StaticString<'C'>(); } };
 template <> struct JniSignature<short> { constexpr inline auto operator()() const { return StaticString<'S'>(); } };
 template <> struct JniSignature<int> { constexpr inline auto operator()() const { return StaticString<'I'>(); } };
