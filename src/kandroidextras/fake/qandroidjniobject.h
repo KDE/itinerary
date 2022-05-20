@@ -15,6 +15,7 @@
 
 #include <QExplicitlySharedDataPointer>
 #include <QStringList>
+#include <QVariant>
 
 class QAndroidJniObjectPrivate;
 
@@ -46,16 +47,24 @@ public:
 
     bool isValid() const { return true; }
 
-    static QAndroidJniObject fromString(const QString &s) { Q_UNUSED(s); return {}; }
+    static QAndroidJniObject fromString(const QString &s)
+    {
+        QAndroidJniObject o;
+        o.setValue(s);
+        return o;
+    }
     static QAndroidJniObject fromLocalRef(jobject o)
     {
         QAndroidJniObject obj;
         obj.addToProtocol(QLatin1String("ctor: ") + QString::number((qulonglong)o));
         return obj;
     }
-    QString toString() const { return protocol().join(QLatin1Char('\n')); }
+    QString toString() const
+    {
+        return value().type() == QVariant::String ? value().toString() : protocol().join(QLatin1Char('\n'));
+    }
 
-    jobject object() const { return nullptr; }
+    jobject object() const { return d.data(); }
     template <typename T>
     T object() const { return {}; }
 
@@ -103,13 +112,13 @@ public:
     T getField(const char *fieldName) const
     {
         addToProtocol(QLatin1String("getField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(KAndroidExtras::Jni::signature<T>()));
-        return {};
+        return property(fieldName).value<T>();
     }
 
     QAndroidJniObject getObjectField(const char *fieldName, const char *signature) const
     {
         addToProtocol(QLatin1String("getObjectField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
-        return {};
+        return property(fieldName).value<QAndroidJniObject>();
     }
 
     template <typename T>
@@ -117,6 +126,11 @@ public:
     {
         Q_UNUSED(value);
         addToProtocol(QLatin1String("setField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
+        if constexpr (std::is_same_v<jobject, T>) {
+            setProperty(fieldName, value);
+        } else {
+            setProperty(fieldName, QVariant::fromValue(value));
+        }
     }
 
     template <typename T, typename ...Args>
@@ -186,8 +200,16 @@ public:
     void addToProtocol(const QString &line) const;
 
 private:
+    QVariant property(const QByteArray &name) const;
+    void setProperty(const QByteArray &name, const QVariant &value);
+    void setProperty(const QByteArray &name, jobject value);
+    QVariant value() const;
+    void setValue(const QVariant &value);
+
     void setProtocol(const QStringList &protocol);
     QExplicitlySharedDataPointer<QAndroidJniObjectPrivate> d;
 };
+
+Q_DECLARE_METATYPE(QAndroidJniObject)
 
 #endif

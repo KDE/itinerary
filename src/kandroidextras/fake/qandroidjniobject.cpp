@@ -12,6 +12,8 @@ class QAndroidJniObjectPrivate : public QSharedData
 {
 public:
     QStringList protocol;
+    QHash<QByteArray, QVariant> properties;
+    QVariant value;
 };
 
 QAndroidJniObject::QAndroidJniObject()
@@ -48,4 +50,31 @@ void QAndroidJniObject::addToProtocol(const QString &line) const
 void QAndroidJniObject::setProtocol(const QStringList &protocol)
 {
     d->protocol = protocol;
+}
+
+QVariant QAndroidJniObject::property(const QByteArray &name) const
+{
+    return d->properties.value(name);
+}
+
+void QAndroidJniObject::setProperty(const QByteArray &name, const QVariant &value)
+{
+    d->properties.insert(name, value);
+}
+
+QVariant QAndroidJniObject::value() const
+{
+    return d->value;
+}
+
+void QAndroidJniObject::setValue(const QVariant &value)
+{
+    d->value = value;
+}
+
+void QAndroidJniObject::setProperty(const QByteArray &name, jobject value)
+{
+    QAndroidJniObject o;
+    o.d = reinterpret_cast<QAndroidJniObjectPrivate*>(value);
+    setProperty(name, QVariant::fromValue(o));
 }
