@@ -15,11 +15,6 @@
 
 using namespace KAndroidExtras;
 
-Intent::Intent()
-{
-    setJniHandle(QAndroidJniObject(Jni::typeName<android::content::Intent>()));
-}
-
 Intent::~Intent() = default;
 
 Intent::operator QAndroidJniObject() const

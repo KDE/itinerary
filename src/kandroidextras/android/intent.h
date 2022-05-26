@@ -30,7 +30,7 @@ class KANDROIDEXTRAS_EXPORT Intent
     JNI_OBJECT(Intent, android::content::Intent)
 public:
     /** Creates a new empty intent. */
-    Intent();
+    JNI_CONSTRUCTOR(Intent)
     ~Intent();
 
     /** Add a category to the intent. */

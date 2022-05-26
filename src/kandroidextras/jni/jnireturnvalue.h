@@ -41,7 +41,7 @@ namespace Internal {
     public:
         static inline auto toReturnValue(const QAndroidJniObject &value)
         {
-            return RetT(value);
+            return Jni::fromHandle<RetT>(value);
         }
     };
     template <typename RetT>

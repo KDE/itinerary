@@ -22,7 +22,7 @@ Intent Activity::getIntent()
         return {};
 
     const auto intent = activity.callObjectMethod("getIntent", Jni::signature<android::content::Intent()>());
-    return Intent(intent);
+    return Intent(Jni::fromHandle<Intent>(intent));
 }
 
 bool Activity::startActivity(const Intent &intent, int receiverRequestCode)

@@ -13,12 +13,31 @@ namespace KAndroidExtras {
 
 namespace java { namespace lang { struct String; } }
 
+namespace Internal { struct FromHandleTag{}; }
+
 namespace Jni {
 
 template <typename T>
 inline QAndroidJniObject handle(const T &wrapper)
 {
     return wrapper.jniHandle();
+}
+
+/** Convert an untyped JNI object handle to a typed wrapper.
+ *  This is essentially the JNI equivalent to a reinterpret_cast from a void*.
+ *  Only use this if you are sure @p handle has the correct type, otherwise
+ *  things will horribly go wrong.
+ */
+template <typename T>
+inline T fromHandle(const QAndroidJniObject &handle)
+{
+    return T(handle, Internal::FromHandleTag());
+}
+
+template <typename T>
+inline T fromHandle(jobject handle)
+{
+    return fromHandle<T>(QAndroidJniObject(handle));
 }
 
 /** Wrapper for JNI objects with a convertible C++ type.
@@ -111,8 +130,9 @@ private: \
     inline QAndroidJniObject jniHandle() const { return _m_jni_handle; } \
     inline void setJniHandle(const QAndroidJniObject &h) { _m_jni_handle = h; } \
     friend QAndroidJniObject KAndroidExtras::Jni::handle<Class>(const Class&); \
-public: \
-    explicit Class(const QAndroidJniObject &h) : _m_jni_handle(h) {}
+    friend Class KAndroidExtras::Jni::fromHandle<Class>(const QAndroidJniObject&); \
+    explicit inline Class(const QAndroidJniObject &handle, KAndroidExtras::Internal::FromHandleTag) : _m_jni_handle(handle) {}
+
 }
 }
 

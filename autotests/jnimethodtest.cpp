@@ -133,7 +133,7 @@ private Q_SLOTS:
         QCOMPARE(obj.jniHandle().protocol()[26], QLatin1String("callMethod: overloaded (JLjava/lang/String;[S)I (Joo)"));
 
         // ctor call
-        obj = TestClass(Jni::Object<android::content::Intent>(intent)); // FIXME: this require removal of the ctor in JNI_OBJECT to work without the explicit cast
+        obj = TestClass(intent);
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
         QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V"));
 #if 0

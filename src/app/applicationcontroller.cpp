@@ -110,7 +110,7 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 {
     Q_UNUSED(that)
     Q_UNUSED(env)
-    ApplicationController::instance()->importFromIntent(KAndroidExtras::Intent(data));
+    ApplicationController::instance()->importFromIntent(KAndroidExtras::Jni::fromHandle<KAndroidExtras::Intent>(data));
 }
 
 static const JNINativeMethod methods[] = {
