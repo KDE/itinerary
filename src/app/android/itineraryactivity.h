@@ -23,7 +23,7 @@ class ItineraryActivity {
 public:
     JNI_METHOD(void, checkCalendar)
     JNI_METHOD(KAndroidExtras::Jni::Array<KAndroidExtras::java::lang::String>, attachmentsForIntent, KAndroidExtras::android::content::Intent)
-    JNI_METHOD(KAndroidExtras::android::net::Uri, openDocument, java::lang::String)
+    JNI_METHOD(KAndroidExtras::android::net::Uri, openDocument, KAndroidExtras::java::lang::String)
 private:
     inline QAndroidJniObject jniHandle() const { return QtAndroid::androidActivity(); }
 };
