@@ -44,6 +44,8 @@ public:
 
     QAndroidJniObject(const char *className);
     QAndroidJniObject(const char *className, const char *signature, ...);
+    QAndroidJniObject(jclass, const char *signature, ...);
+    QAndroidJniObject(jobject object);
 
     bool isValid() const { return true; }
 

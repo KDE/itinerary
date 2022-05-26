@@ -33,6 +33,13 @@ QAndroidJniObject::QAndroidJniObject(const char* className, const char* signatur
     addToProtocol(QLatin1String("ctor: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(signature));
 }
 
+QAndroidJniObject::QAndroidJniObject(jobject object)
+    : d(new QAndroidJniObjectPrivate)
+{
+    Q_UNUSED(object);
+    addToProtocol(QLatin1String("ctor: o"));
+}
+
 QAndroidJniObject::QAndroidJniObject(const QAndroidJniObject&) = default;
 QAndroidJniObject & QAndroidJniObject::operator=(const QAndroidJniObject&) = default;
 QAndroidJniObject::~QAndroidJniObject() = default;
