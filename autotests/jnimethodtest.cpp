@@ -57,7 +57,8 @@ private Q_SLOTS:
         QString s = obj.getName();
         Q_UNUSED(s);
         obj.setName(QStringLiteral("bla"));
-        obj.setName(QAndroidJniObject::fromString(QStringLiteral("bla")));
+         // explicit cast needed when coming from untyped JNI handler
+        obj.setName(Jni::Object<java::lang::String>(QAndroidJniObject::fromString(QStringLiteral("bla"))));
         int i = obj.getFlags();
         Q_UNUSED(i);
         obj.setFlags(42);
@@ -74,8 +75,8 @@ private Q_SLOTS:
         obj.startIntent(intent);
         // returning a non-wrapped type
         QAndroidJniObject j = obj.getIntent();
-        // lvalue QAndroidJniObject argument
-        obj.setName(j);
+        // lvalue QAndroidJniObject argument needs explicit cast
+        obj.setName(Jni::Object<java::lang::String>(j));
         // implicit conversion from a static property wrapper
         obj.setFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
 

@@ -17,6 +17,8 @@ namespace Internal { struct FromHandleTag{}; }
 
 namespace Jni {
 
+template <typename T> class Object;
+
 template <typename T>
 inline QAndroidJniObject handle(const T &wrapper)
 {
@@ -29,13 +31,17 @@ inline QAndroidJniObject handle(const T &wrapper)
  *  things will horribly go wrong.
  */
 template <typename T>
-inline T fromHandle(const QAndroidJniObject &handle)
+inline auto fromHandle(const QAndroidJniObject &handle)
 {
-    return T(handle, Internal::FromHandleTag());
+    if constexpr (Jni::is_object_wrapper<T>::value) {
+        return T(handle, Internal::FromHandleTag());
+    } else {
+        return Jni::Object<T>(handle);
+    }
 }
 
 template <typename T>
-inline T fromHandle(jobject handle)
+inline auto fromHandle(jobject handle)
 {
     return fromHandle<T>(QAndroidJniObject(handle));
 }
@@ -49,7 +55,7 @@ class Object {
 private:
     template <typename DummyT> class _dummy_t {};
 public:
-    inline Object(const QAndroidJniObject &v) : m_handle(v) {}
+    inline explicit Object(const QAndroidJniObject &v) : m_handle(v) {}
 
     // implicit conversion from a compatible C++ type
     inline Object(const std::conditional_t<std::is_same_v<typename Jni::converter<T>::type, void>,
@@ -130,7 +136,7 @@ private: \
     inline QAndroidJniObject jniHandle() const { return _m_jni_handle; } \
     inline void setJniHandle(const QAndroidJniObject &h) { _m_jni_handle = h; } \
     friend QAndroidJniObject KAndroidExtras::Jni::handle<Class>(const Class&); \
-    friend Class KAndroidExtras::Jni::fromHandle<Class>(const QAndroidJniObject&); \
+    friend auto KAndroidExtras::Jni::fromHandle<Class>(const QAndroidJniObject&); \
     explicit inline Class(const QAndroidJniObject &handle, KAndroidExtras::Internal::FromHandleTag) : _m_jni_handle(handle) {}
 
 }
