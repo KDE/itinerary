@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KANDROIDEXTRAS_JNICOMMON_H
-#define KANDROIDEXTRAS_JNICOMMON_H
+#ifndef KANDROIDEXTRAS_JNIOBJECT_H
+#define KANDROIDEXTRAS_JNIOBJECT_H
 
 #include "jnitypetraits.h"
 
@@ -15,19 +15,56 @@ namespace java { namespace lang { struct String; } }
 
 namespace Jni {
 
+template <typename T>
+inline QAndroidJniObject handle(const T &wrapper)
+{
+    return wrapper.jniHandle();
+}
+
 /** Wrapper for JNI objects with a convertible C++ type.
  *  This provides implicit on-demand conversion to the C++ type, for types
  *  that don't have a manually defined wrapper.
  */
 template <typename T>
 class Object {
+private:
+    template <typename DummyT> class _dummy_t {};
 public:
-    explicit inline Object(const QAndroidJniObject &v) : m_handle(v) {}
+    inline Object(const QAndroidJniObject &v) : m_handle(v) {}
+
+    // implicit conversion from a compatible C++ type
+    inline Object(const std::conditional_t<std::is_same_v<typename Jni::converter<T>::type, void>,
+                  _dummy_t<T>, typename Jni::converter<T>::type> &v)
+        : m_handle(Jni::reverse_converter<T>::type::convert(v))
+    {}
+
+    // implicit conversion from a custom wrapper for the same type
+    template <typename WrapperT, typename = std::enable_if_t<std::is_same_v<typename WrapperT::_jni_BaseType, T>, WrapperT>>
+    inline Object(const WrapperT &w)
+        : m_handle(Jni::handle(w))
+    {}
+
+    // special-case QString, as that often comes out of implicitly converted types,
+    // and thus can't be consumed by another implicit conversion step
+    template <typename StrT = QString, typename = std::enable_if_t<std::is_same_v<T, java::lang::String>, StrT>>
+    inline Object(const QString &s)
+        : m_handle(QAndroidJniObject::fromString(s))
+    {}
+
+    // special case for null values
+    inline Object(std::nullptr_t)
+        : m_handle((jobject)nullptr)
+    {}
+
     inline operator QAndroidJniObject() const {
         return m_handle;
     }
     inline operator typename Jni::converter<T>::type() const {
         return Jni::converter<T>::convert(m_handle);
+    }
+
+    inline QAndroidJniObject jniHandle() const {
+        return m_handle;
     }
 
     // forward basic QAndroidJniObject API
@@ -56,6 +93,7 @@ private:
 #define JNI_UNMANAGED_OBJECT(Class, BaseType) \
 public: \
     typedef Class _jni_ThisType; \
+    typedef BaseType _jni_BaseType; \
 private: \
     static inline constexpr const char *jniName() { return KAndroidExtras::Jni::typeName<BaseType>(); } \
     friend constexpr const char* KAndroidExtras::Jni::typeName<Class>();
@@ -72,6 +110,7 @@ private: \
     QAndroidJniObject _m_jni_handle; \
     inline QAndroidJniObject jniHandle() const { return _m_jni_handle; } \
     inline void setJniHandle(const QAndroidJniObject &h) { _m_jni_handle = h; } \
+    friend QAndroidJniObject KAndroidExtras::Jni::handle<Class>(const Class&); \
 public: \
     explicit Class(const QAndroidJniObject &h) : _m_jni_handle(h) {}
 }

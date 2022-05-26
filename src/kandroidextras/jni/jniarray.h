@@ -137,6 +137,7 @@ public:
     inline operator QAndroidJniObject() const {
         return m_array;
     }
+    inline QAndroidJniObject jniHandle() const { return m_array; }
 
 protected:
     typedef array_trait<T> _t;

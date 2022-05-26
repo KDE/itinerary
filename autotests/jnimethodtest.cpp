@@ -29,6 +29,13 @@ public:
     JNI_METHOD(Jni::Array<java::lang::String>, getStringList)
     JNI_METHOD(Jni::Array<jshort>, getShortList)
 
+    // overloads
+    JNI_METHOD(void, overloaded)
+    JNI_METHOD(void, overloaded, jint)
+    JNI_METHOD(void, overloaded, java::lang::String, jboolean)
+    JNI_METHOD(jint, overloaded, jlong, java::lang::String, Jni::Array<jshort>)
+    JNI_METHOD(Jni::Array<jshort>, overloaded, Intent)
+
     JNI_PROPERTY(java::lang::String, name)
 
     JNI_STATIC_METHOD(void, noRetNoArg)
@@ -43,27 +50,6 @@ class JniMethodTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
-    void testArgumentConversion()
-    {
-        static_assert(Internal::is_argument_compatible<jint, jint>::value);
-        static_assert(Internal::is_argument_compatible<java::lang::String, QAndroidJniObject>::value);
-        static_assert(Internal::is_argument_compatible<java::lang::String, QString>::value);
-
-        static_assert(!Internal::is_argument_compatible<jint, QAndroidJniObject>::value);
-        static_assert(!Internal::is_argument_compatible<jobject, jint>::value);
-        static_assert(!Internal::is_argument_compatible<java::lang::String, QUrl>::value);
-
-        static_assert(Internal::is_call_compatible<jint>::with<jint>::value);
-        static_assert(Internal::is_call_compatible<java::lang::String, jfloat>::with<QAndroidJniObject, float>::value);
-        static_assert(!Internal::is_call_compatible<java::lang::String, jfloat>::with<float, QAndroidJniObject>::value);
-        static_assert(Internal::is_call_compatible<java::lang::String, java::lang::String>::with<QString, QAndroidJniObject>::value);
-        static_assert(Internal::is_call_compatible<java::lang::String, java::lang::String>::with<QAndroidJniObject, QString>::value);
-
-        // implicit conversion
-        static_assert(Internal::is_argument_compatible<jint, jdouble>::value);
-        static_assert(Internal::is_argument_compatible<jfloat, jdouble>::value);
-    }
-
     void testMethodCalls()
     {
 #ifndef Q_OS_ANDROID
@@ -107,7 +93,15 @@ private Q_SLOTS:
         // nullptr arguments
         obj.startIntent(nullptr);
 
-        QCOMPARE(obj.jniHandle().protocol().size(), 22);
+        // overloaded methods
+        obj.overloaded();
+        obj.overloaded(42);
+        obj.overloaded(QStringLiteral("hello"), true);
+        Jni::Array<jshort> l4 = obj.overloaded(intent);
+        obj.overloaded(23, QStringLiteral("world"), l4);
+
+
+        QCOMPARE(obj.jniHandle().protocol().size(), 27);
         QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.jniHandle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.jniHandle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -132,8 +126,14 @@ private Q_SLOTS:
         QCOMPARE(obj.jniHandle().protocol()[20], QLatin1String("callObjectMethod: getShortList ()[S ()"));
         QCOMPARE(obj.jniHandle().protocol()[21], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
 
+        QCOMPARE(obj.jniHandle().protocol()[22], QLatin1String("callMethod: overloaded ()V ()"));
+        QCOMPARE(obj.jniHandle().protocol()[23], QLatin1String("callMethod: overloaded (I)V (I)"));
+        QCOMPARE(obj.jniHandle().protocol()[24], QLatin1String("callMethod: overloaded (Ljava/lang/String;Z)V (oZ)"));
+        QCOMPARE(obj.jniHandle().protocol()[25], QLatin1String("callObjectMethod: overloaded (Landroid/content/Intent;)[S (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[26], QLatin1String("callMethod: overloaded (JLjava/lang/String;[S)I (Joo)"));
+
         // ctor call
-        obj = TestClass(intent);
+        obj = TestClass(Jni::Object<android::content::Intent>(intent)); // FIXME: this require removal of the ctor in JNI_OBJECT to work without the explicit cast
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
         QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V"));
 #if 0
