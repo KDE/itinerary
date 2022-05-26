@@ -51,6 +51,11 @@ template <typename T> struct is_array<Array<T>> : std::true_type {};
 template <typename T, typename = std::void_t<>> struct is_object_wrapper : std::false_type {};
 template <typename T> struct is_object_wrapper<T, std::void_t<typename T::_jni_ThisType>> : std::true_type {};
 
+/** Type trais for checking whether @tparam T is needs the generic JNI object wrapper (Jni::Object). */
+template <typename T> struct is_generic_wrapper : std::conditional_t<
+    !is_basic_type<T>::value && !is_array<T>::value && !is_object_wrapper<T>::value, std::true_type, std::false_type>
+    {};
+
 }
 
 /**

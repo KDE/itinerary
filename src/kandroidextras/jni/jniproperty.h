@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNIPROPERTIES_H
 #define KANDROIDEXTRAS_JNIPROPERTIES_H
 
+#include "jniobject.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
 #include "jnitypetraits.h"
@@ -39,6 +40,11 @@ struct StaticProperty<PropType, ClassType, NameHolder, false> {
     inline operator typename Jni::converter<PropType>::type() const
     {
         return Jni::converter<PropType>::convert(get());
+    }
+    template <typename RetT = PropType, typename = std::enable_if_t<Jni::is_generic_wrapper<PropType>::value, RetT>>
+    inline operator Jni::Object<PropType>() const
+    {
+        return Jni::Object<PropType>(get());
     }
 };
 
@@ -83,6 +89,11 @@ public:
     inline operator PropType() const
     {
         return PropType(get());
+    }
+    template <typename RetT = PropType, typename = std::enable_if_t<Jni::is_generic_wrapper<PropType>::value, RetT>>
+    inline operator Jni::Object<PropType>() const
+    {
+        return Jni::Object<PropType>(get());
     }
 
     inline Property& operator=(const QAndroidJniObject &value)
