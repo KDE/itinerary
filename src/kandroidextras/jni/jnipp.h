@@ -13,7 +13,7 @@
 ///@cond internal
 
 // determine how many elements are in __VA_ARGS__
-#define JNI_PP_NARG(...) JNI_PP_NARG_(__VA_ARGS__, JNI_PP_RSEQ_N())
+#define JNI_PP_NARG(...) JNI_PP_NARG_(__VA_ARGS__ __VA_OPT__(,) JNI_PP_RSEQ_N())
 #define JNI_PP_NARG_(...) JNI_PP_ARG_N(__VA_ARGS__)
 #define JNI_PP_ARG_N(_1, _2, _3, _4, _5, _6, _7, N, ...) N
 #define JNI_PP_RSEQ_N() 7, 6, 5, 4, 3, 2, 1, 0

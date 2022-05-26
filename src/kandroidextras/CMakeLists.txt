@@ -25,6 +25,7 @@ if (NOT ANDROID)
 endif()
 
 generate_export_header(KAndroidExtras BASE_NAME KAndroidExtras)
+target_compile_features(KAndroidExtras PUBLIC cxx_std_20) # for __VA_OPT__
 target_link_libraries(KAndroidExtras PUBLIC Qt::Core)
 
 if (ANDROID)
