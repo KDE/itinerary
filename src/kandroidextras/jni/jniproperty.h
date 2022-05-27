@@ -117,7 +117,7 @@ public:
     }
     inline Property& operator=(PropType value)
     {
-        this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), value);
+        this->handle().setField(Jni::typeName<NameHolder>(), value);
         return *this;
     }
 };

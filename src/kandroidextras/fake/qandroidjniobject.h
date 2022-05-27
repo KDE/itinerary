@@ -134,6 +134,11 @@ public:
             setProperty(fieldName, QVariant::fromValue(value));
         }
     }
+    template <typename T>
+    void setField(const char *fieldName, T value)
+    {
+        setField(fieldName, KAndroidExtras::Jni::signature<T>(), value);
+    }
 
     template <typename T, typename ...Args>
     static T callStaticMethod(const char *className, const char *methodName, const char *signature, Args...)
