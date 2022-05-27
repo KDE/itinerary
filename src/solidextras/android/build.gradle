@@ -22,6 +22,7 @@ repositories {
 apply plugin: 'com.android.library'
 
 android {
+    buildToolsVersion '@ANDROID_SDK_BUILD_TOOLS_REVISION@'
     compileSdkVersion @ANDROID_SDK_COMPILE_API@
 
     sourceSets {
