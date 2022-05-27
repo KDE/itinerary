@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNIPROPERTIES_H
 #define KANDROIDEXTRAS_JNIPROPERTIES_H
 
+#include "jniargument.h"
 #include "jniobject.h"
 #include "jnisignature.h"
 #include "jnitypes.h"
@@ -96,6 +97,11 @@ public:
         return Jni::Object<PropType>(get());
     }
 
+    inline Property& operator=(typename Internal::argument<PropType>::type value)
+    {
+        this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), Internal::argument<PropType>::toCallArgument(value));
+        return *this;
+    }
     inline Property& operator=(const QAndroidJniObject &value)
     {
         this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), value.object());
