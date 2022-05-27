@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNIARRAY_H
 #define KANDROIDEXTRAS_JNIARRAY_H
 
+#include "jniargument.h"
 #include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
@@ -150,29 +151,34 @@ protected:
 template <typename T, bool is_basic>
 class ArrayImpl {};
 
-// array wrapper for basic types
+// array wrapper for primitive types
 template <typename T>
 class ArrayImpl<T, true> : public ArrayImplBase<T>
 {
 public:
-    ArrayImpl(const QAndroidJniObject &array)
+    inline ArrayImpl(const QAndroidJniObject &array)
         : ArrayImplBase<T>(array)
     {
-        if (!array.isValid()) {
-            return;
-        }
         // ### do this on demand?
-        QAndroidJniEnvironment env;
-        m_data = ArrayImplBase<T>::_t::getArrayElements(env, this->handle(), nullptr);
+        getArrayElements();
     }
+
+    /** Create a new array with @p size elements. */
+    inline explicit ArrayImpl(jsize size)
+    {
+        QAndroidJniEnvironment env;
+        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(ArrayImplBase<T>::_t::newArray(env, size));
+        getArrayElements();
+    }
+
+    ArrayImpl() = default;
+    ArrayImpl(const ArrayImpl&) = delete; // ### ref count m_data and allow copying?
+    ArrayImpl(ArrayImpl&&) = default;
     ~ArrayImpl()
     {
         QAndroidJniEnvironment env;
         ArrayImplBase<T>::_t::releaseArrayElements(env, this->handle(), m_data, JNI_ABORT);
     }
-    ArrayImpl() = default;
-    ArrayImpl(const ArrayImpl&) = delete; // ### ref count m_data and allow copying?
-    ArrayImpl(ArrayImpl&&) = default;
 
     T operator[](jsize index) const
     {
@@ -183,15 +189,41 @@ public:
     T* end() const { return m_data + ArrayImplBase<T>::size(); }
 
 private:
+    inline void getArrayElements()
+    {
+        if (!ArrayImplBase<T>::m_array.isValid()) {
+            return;
+        }
+        QAndroidJniEnvironment env;
+        m_data = ArrayImplBase<T>::_t::getArrayElements(env, this->handle(), nullptr);
+    }
+
     T *m_data = nullptr;
 };
 
-// array wrapper for non-based types
+// array wrapper for non-primitive types
 template <typename T>
 class ArrayImpl<T, false> : public ArrayImplBase<T>
 {
 public:
     using ArrayImplBase<T>::ArrayImplBase;
+
+    /** Create a new array with @p size elements initialized with @p value. */
+    explicit inline ArrayImpl(jsize size, typename Internal::argument<T>::type value)
+    {
+        QAndroidJniEnvironment env;
+        auto clazz = env.findClass(Jni::typeName<T>());
+        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(env->NewObjectArray(size, clazz, Internal::argument<T>::toCallArgument(value)));
+    }
+
+    /** Create a new array with @p size null elements. */
+    explicit inline ArrayImpl(jsize size, std::nullptr_t = nullptr)
+    {
+        QAndroidJniEnvironment env;
+        auto clazz = env.findClass(Jni::typeName<T>());
+        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(env->NewObjectArray(size, clazz, nullptr));
+    }
+
     ArrayImpl() = default;
     ArrayImpl(const ArrayImpl&) = default;
     ArrayImpl(ArrayImpl&&) = default;

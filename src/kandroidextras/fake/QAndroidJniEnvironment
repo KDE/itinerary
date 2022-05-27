@@ -12,6 +12,7 @@
 class QAndroidJniEnvironment
 {
 public:
+    inline jclass findClass(const char *) { return nullptr; }
     inline operator JNIEnv*() const { return &m_env; }
     inline JNIEnv* operator->() { return &m_env; }
 

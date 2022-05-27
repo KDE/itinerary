@@ -53,8 +53,11 @@ struct JNIEnv
 {
     inline bool ExceptionCheck() { return false; }
     inline void ExceptionClear() {}
+
     inline int GetArrayLength(jobjectArray) { return m_arrayLength; }
+    inline jobjectArray  NewObjectArray(jsize, jclass, jobject) { return nullptr; }
     inline jobject GetObjectArrayElement(jobjectArray, int index) { return reinterpret_cast<jobject>(index); }
+    inline void SetObjectArrayElement(jobjectArray, jsize, jobject) {}
 
     inline jbooleanArray NewBooleanArray(jsize) { return nullptr; }
     inline jbyteArray    NewByteArray   (jsize) { return nullptr; }

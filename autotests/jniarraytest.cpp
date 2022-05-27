@@ -97,6 +97,13 @@ private Q_SLOTS:
         }
 #endif
     }
+
+    void testArrayCreate()
+    {
+        auto a1 = Jni::Array<jshort>(10);
+        auto a2 = Jni::Array<java::lang::String>(5);
+        auto a3 = Jni::Array<java::lang::String>(3, QStringLiteral("test"));
+    }
 };
 
 QTEST_GUILESS_MAIN(JniArrayTest)
