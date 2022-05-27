@@ -102,6 +102,7 @@ private Q_SLOTS:
     {
         auto a1 = Jni::Array<jshort>(10);
         auto a2 = Jni::Array<java::lang::String>(5);
+        a2[2] = QStringLiteral("test");
         auto a3 = Jni::Array<java::lang::String>(3, QStringLiteral("test"));
     }
 };

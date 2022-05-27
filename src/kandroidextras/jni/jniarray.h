@@ -234,6 +234,32 @@ public:
         return Internal::return_wrapper<T>::toReturnValue(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index)));
     }
 
+    class ref
+    {
+    public:
+        inline operator auto()
+        {
+            QAndroidJniEnvironment env;
+            return Internal::return_wrapper<T>::toReturnValue(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(c.handle(), index)));
+        }
+        inline ref& operator=(typename Internal::argument<T>::type v)
+        {
+            QAndroidJniEnvironment env;
+            env->SetObjectArrayElement(c.handle(), index, Internal::argument<T>::toCallArgument(v));
+            return *this;
+        }
+    private:
+        ArrayImpl<T, false> &c;
+        jsize index;
+
+        friend class ArrayImpl<T, false>;
+        inline ref(jsize _i, ArrayImpl<T, false> &_c) : c(_c), index(_i) {}
+    };
+    ref operator[](jsize index)
+    {
+        return ref(index, *this);
+    }
+
     class const_iterator
     {
         const ArrayImpl<T, false> &c;
