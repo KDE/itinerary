@@ -140,7 +140,7 @@
       <li xml:lang="zh-CN">时间线视图，可自动分组并归类旅程。</li>
       <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="ca">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
-      <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
+      <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, aixina com reserves d'hotels, restaurants, esdeveniments i lloguer de coches.</li>
       <li xml:lang="en-GB">Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="es">Permite el uso de reservas de trenes, autobuses y vuelos, así como de hoteles, restaurantes, eventos y alquiler de automóviles.</li>
       <li xml:lang="et">Rongide, busside ja lennukite ning hotellide, restoranide, sündmuste ja rendiautode broneeringud ja reserveeringud.</li>
@@ -239,7 +239,7 @@
       <li xml:lang="es">Retrasos e información de cambios de andén en tiempo real para trenes.</li>
       <li xml:lang="et">Rongide hilinemise ja platvormivahetuse reaalajas teave.</li>
       <li xml:lang="eu">Bat-bateko atzerapen eta nasa aldaketa informazioa trenetan.</li>
-      <li xml:lang="fi">Todellisen ajan junien viivästys- ja laiturinmuutostieto.</li>
+      <li xml:lang="fi">Tosiaikainen junien viivästys- ja laiturinmuutostieto.</li>
       <li xml:lang="fr">Informations de retard et de changement de quai en temps réel pour les trains.</li>
       <li xml:lang="ia">Information de retardo in tempo actual e cambiamento de platteforma per trainos. </li>
       <li xml:lang="id">Informasi penundaan real-time dan perubahan platform untuk kereta api.</li>
@@ -331,6 +331,7 @@
       <li xml:lang="es">Exploración de transporte terrestre local entre elementos de su itinerario.</li>
       <li xml:lang="et">Kohaliku maismaatranspordi kasutamise võimalus reisi etappide vahel.</li>
       <li xml:lang="eu">Zure ibilbidearen elementuen arteko lur garraio lokalaren nabigatzailea.</li>
+      <li xml:lang="fi">Paikallinen maaliikennenavigointi matkasuunnitelmasi osien välillä.</li>
       <li xml:lang="fr">Navigation à l'aide des transports en commun régionaux entre deux éléments de votre itinéraire.</li>
       <li xml:lang="ia">Navigation de transportation de terra local inter elementos de tu itinerario.</li>
       <li xml:lang="id">Navigasi transportasi darat lokal antara elemen rencana perjalananmu.</li>
@@ -529,7 +530,7 @@
       <caption xml:lang="ca-valencia">Vista de la disposició del tren amb ressaltat del vagó amb una reserva de seient</caption>
       <caption xml:lang="en-GB">Train layout view highlighting the coach with a seat reservation</caption>
       <caption xml:lang="es">Vista del esquema del tren resaltando el coche con reserva de asiento</caption>
-      <caption xml:lang="fi">Junan vaunukartta, joka korostaa varatun paikan</caption>
+      <caption xml:lang="fi">Varatun paikan korostava junan vaunukartta</caption>
       <caption xml:lang="fr">Affichage de la composition du train, détaillant la voiture où le siège est réservé.</caption>
       <caption xml:lang="ia">Dispoition de traino evidentiante le carrossa con un reservation de placia</caption>
       <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi</caption>
@@ -552,7 +553,7 @@
       <caption xml:lang="ca-valencia">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i eixida</caption>
       <caption xml:lang="en-GB">Train station platform map, highlighting arrival and departure platforms</caption>
       <caption xml:lang="es">Mapa de andenes de estación de tren, resaltando andenes de llegada y salida</caption>
-      <caption xml:lang="fi">Rautatieaseman kartta, joka korostaa lähtö- ja saapumislaiturit</caption>
+      <caption xml:lang="fi">Lähtö- ja saapumislaitureita korostava rautatieasemakartta</caption>
       <caption xml:lang="fr">La carte des quais de gare, détaillant les quais d'arrivée et de départ.</caption>
       <caption xml:lang="ia">Mappa de platteforma de station de traino, evidentiante platteformas de arrivata e partita</caption>
       <caption xml:lang="id">Peta platform stasiun kereta, menyoroti platform kedatangan dan keberangkatan</caption>
@@ -575,6 +576,7 @@
       <caption xml:lang="ca-valencia">Mapa de l'estació de tren que mostra la disponibilitat en temps real de les bicicletes de lloguer</caption>
       <caption xml:lang="en-GB">Train station map showing real-time availability of rental bikes</caption>
       <caption xml:lang="es">Mapa de estación de tren mostrando la disponibilidad de bicicletas de alquiler en tiempo real</caption>
+      <caption xml:lang="fi">Rautatieasemakartta näyttää tosiaikaiset vuokrapolkupyörätiedot</caption>
       <caption xml:lang="fr">La carte de la gare ferroviaire affichant la disponibilité en temps réel des vélos de location.</caption>
       <caption xml:lang="ia">Mappa de station de traino monstrante disponibilitate in tempore actual de bicyclettas a locar</caption>
       <caption xml:lang="id">Peta stasiun kereta api yang menunjukkan ketersediaan sepeda rental secara real-time.</caption>
