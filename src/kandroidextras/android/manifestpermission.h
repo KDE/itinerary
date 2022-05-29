@@ -23,6 +23,7 @@ class ManifestPermission
     JNI_UNMANAGED_OBJECT(ManifestPermission, android::Manifest_permission)
 public:
     JNI_CONSTANT(java::lang::String, READ_CALENDAR)
+    JNI_CONSTANT(java::lang::String, WRITE_CALENDAR)
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)
     JNI_CONSTANT(java::lang::String, WRITE_EXTERNAL_STORAGE)
 };
