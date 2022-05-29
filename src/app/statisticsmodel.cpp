@@ -320,3 +320,5 @@ StatisticsItem::Trend StatisticsModel::trend(StatisticsModel::AggregateType type
 {
     return trend(m_statData[type][stat], m_prevStatData[type][stat]);
 }
+
+#include "moc_statisticsmodel.cpp"

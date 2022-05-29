@@ -26,9 +26,8 @@
 #include <KPublicTransport/StopoverReply>
 #include <KPublicTransport/StopoverRequest>
 
-#include <KNotifications/KNotification>
-
 #include <KLocalizedString>
+#include <KNotification>
 
 #include <QDir>
 #include <QDirIterator>
