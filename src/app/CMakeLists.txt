@@ -55,6 +55,7 @@ target_link_libraries(itinerary PUBLIC
     SolidExtras
     GpxIo
     KPublicTransport
+    KOSMIndoorMap
     KPim::Itinerary
     KPim::PkPass
     KF5::Mime
@@ -99,7 +100,6 @@ target_sources(itinerary-app PRIVATE
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    KOSMIndoorMap
     Qt::QuickControls2
 )
 if (ANDROID)
