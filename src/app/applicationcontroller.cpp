@@ -77,8 +77,11 @@
 #include <kandroidextras/manifestpermission.h>
 #include <kandroidextras/uri.h>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
-#include <QAndroidJniObject>
+#else
+#include <private/qandroidextras_p.h>
+#endif
 #endif
 
 #include <memory>
@@ -504,11 +507,10 @@ void ApplicationController::checkCalendar()
 {
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (QtAndroid::checkPermission(ManifestPermission::READ_CALENDAR) == QtAndroid::PermissionResult::Granted) {
-        const auto activity = QtAndroid::androidActivity();
-        if (activity.isValid()) {
-            activity.callMethod<void>("checkCalendar");
-        }
+        ItineraryActivity activity;
+        activity.checkCalendar();
     } else {
         QtAndroid::requestPermissions({ManifestPermission::READ_CALENDAR}, [this] (const QtAndroid::PermissionResultMap &result){
             if (result[ManifestPermission::READ_CALENDAR] == QtAndroid::PermissionResult::Granted) {
@@ -516,6 +518,14 @@ void ApplicationController::checkCalendar()
             }
         });
     }
+#else
+    if (QtAndroidPrivate::checkPermission(ManifestPermission::READ_CALENDAR).result() == QtAndroidPrivate::PermissionResult::Authorized) {
+        ItineraryActivity activity;
+        activity.checkCalendar();
+    } else if (QtAndroidPrivate::requestPermission(ManifestPermission::READ_CALENDAR).result() == QtAndroidPrivate::PermissionResult::Authorized) {
+        checkCalendar();
+    }
+#endif
 #endif
 }
 

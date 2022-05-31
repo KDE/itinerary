@@ -13,7 +13,11 @@
 #include <kandroidextras/androidtypes.h>
 #include <kandroidextras/uri.h>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
+#else
+#include <QCoreApplication>
+#endif
 
 JNI_TYPE(org, kde, itinerary, Activity)
 
@@ -25,7 +29,13 @@ public:
     JNI_METHOD(KAndroidExtras::Jni::Array<KAndroidExtras::java::lang::String>, attachmentsForIntent, KAndroidExtras::android::content::Intent)
     JNI_METHOD(KAndroidExtras::android::net::Uri, openDocument, KAndroidExtras::java::lang::String)
 private:
-    inline QAndroidJniObject jniHandle() const { return QtAndroid::androidActivity(); }
+    inline QAndroidJniObject jniHandle() const {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+        return QtAndroid::androidActivity();
+#else
+        return QNativeInterface::QAndroidApplication::context();
+#endif
+    }
 };
 
 #endif

@@ -26,9 +26,6 @@
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/javalocale.h>
 
-#include <QtAndroid>
-#include <QAndroidJniObject>
-
 using namespace KAndroidExtras;
 #endif
 

@@ -104,9 +104,13 @@ target_link_libraries(itinerary-app PRIVATE
 )
 if (ANDROID)
     target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
+    target_link_libraries(itinerary PUBLIC KAndroidExtras)
+    if (QT_MAJOR_VERSION EQUAL "6")
+        target_link_libraries(itinerary PRIVATE Qt::CorePrivate)
+        target_link_libraries(itinerary-app PRIVATE Qt::CorePrivate)
+    endif()
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
-    target_link_libraries(itinerary PUBLIC Qt::AndroidExtras KAndroidExtras)
     target_link_libraries(itinerary-app PRIVATE
         KF5::Archive
         KF5::Kirigami2

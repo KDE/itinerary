@@ -76,9 +76,6 @@
 #ifdef Q_OS_ANDROID
 #include <kandroidextras/activity.h>
 #include <kandroidextras/intent.h>
-
-#include <QtAndroid>
-#include <QAndroidJniObject>
 #else
 #include <QApplication>
 #endif
