@@ -717,7 +717,6 @@ void ApplicationController::openDocument(const QUrl &url)
 {
 #ifdef Q_OS_ANDROID
     using namespace KAndroidExtras;
-    auto activity = QtAndroid::androidActivity();
     auto uri = ItineraryActivity().openDocument(url.toLocalFile());
 
     Intent intent;
