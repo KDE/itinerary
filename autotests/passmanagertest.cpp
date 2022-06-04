@@ -8,6 +8,7 @@
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/ProgramMembership>
+#include <KItinerary/Ticket>
 
 #include <qtest.h>
 #include <QAbstractItemModelTester>
@@ -38,8 +39,9 @@ private Q_SLOTS:
         QCOMPARE(mgr.rowCount(), 0);
 
         // test import
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
-        QCOMPARE(mgr.rowCount(), 1);
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object()), QStringLiteral("1")));
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()), QStringLiteral("2")));
+        QCOMPARE(mgr.rowCount(), 2);
 
         // retrieval
         auto idx = mgr.index(0, 0);
@@ -52,6 +54,19 @@ private Q_SLOTS:
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("BahnCard 25 (2. Kl.) (BC25)"));
         QVERIFY(!mgr.pass(passId).isNull());
+
+        idx = mgr.index(1, 0);
+        const auto passId2 = idx.data(PassManager::PassIdRole).toString();
+        QVERIFY(!passId2.isEmpty());
+        const auto ticket = idx.data(PassManager::PassRole);
+        QVERIFY(!ticket.isNull());
+        QVERIFY(JsonLd::isA<Ticket>(ticket));
+        QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::Ticket);
+        QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
+        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("9-Euro-Ticket"));
+        QVERIFY(!mgr.pass(passId2).isNull());
+        mgr.remove(passId2);
+        QCOMPARE(mgr.rowCount(), 1);
 
         {
             // test persistence

@@ -10,6 +10,7 @@
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/ProgramMembership>
+#include <KItinerary/Ticket>
 
 #include <QDirIterator>
 #include <QJsonDocument>
@@ -43,7 +44,7 @@ int PassManager::rowCount(const QModelIndex &parent) const
 
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
-    if (JsonLd::isA<KItinerary::ProgramMembership>(pass) || JsonLd::isA<GenericPkPass>(pass)) {
+    if (JsonLd::isA<KItinerary::ProgramMembership>(pass) || JsonLd::isA<GenericPkPass>(pass) || JsonLd::isA<KItinerary::Ticket>(pass)) {
         Entry entry;
         entry.id = id.isEmpty() ? QUuid::createUuid().toString() : id;
         entry.data = pass;
@@ -149,6 +150,9 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             if (JsonLd::isA<GenericPkPass>(entry.data)) {
                 return PkPass;
             }
+            if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
+                return Ticket;
+            }
             return {};
         case PassDataRole:
             return rawData(entry);
@@ -159,6 +163,9 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             }
             if (JsonLd::isA<GenericPkPass>(entry.data)) {
                 return entry.data.value<GenericPkPass>().name();
+            }
+            if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
+                return entry.data.value<KItinerary::Ticket>().name();
             }
             return {};
 

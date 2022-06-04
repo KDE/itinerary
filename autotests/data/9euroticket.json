@@ -1,0 +1,19 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Ticket",
+    "issuedBy": {
+        "@type": "Organization",
+        "identifier": "uic:0080"
+    },
+    "name": "9-Euro-Ticket",
+    "ticketNumber": "XXX007",
+    "ticketToken": "aztec:<ticket-barcode-omitted>",
+    "ticketedSeat": {
+        "@type": "Seat",
+        "seatingType": "2"
+    },
+    "underName": {
+        "@type": "Person",
+        "name": "Dr Konqui"
+    }
+}

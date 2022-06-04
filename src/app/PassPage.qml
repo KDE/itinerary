@@ -20,6 +20,10 @@ Kirigami.ScrollablePage {
         id: pkpassComponent
         App.GenericPkPassPage {}
     }
+    Component {
+        id: ticketComponent
+        App.TicketPage {}
+    }
 
     Models.DelegateChooser {
         id: chooser
@@ -51,6 +55,16 @@ Kirigami.ScrollablePage {
                 icon: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
                 reserveSpaceForIcon: true
                 onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: PassManager.Ticket
+            Kirigami.BasicListItem {
+                highlighted: false
+                icon: "bookmarks"
+                text: model.pass.name
+                subtitle: model.pass.underName.name
+                onClicked: applicationWindow().pageStack.push(ticketComponent, { ticket: model.pass, passId: model.passId })
             }
         }
     }

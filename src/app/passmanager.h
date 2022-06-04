@@ -29,7 +29,8 @@ public:
 
     enum PassType {
         ProgramMembership,
-        PkPass
+        PkPass,
+        Ticket,
     };
     Q_ENUM(PassType)
 
