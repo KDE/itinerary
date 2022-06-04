@@ -27,10 +27,10 @@ template <typename T> struct array_trait {
 #define MAKE_ARRAY_TRAIT(base_type, type_name) \
 template <> struct array_trait<base_type> { \
     typedef base_type ## Array type; \
-    static inline type newArray(JNIEnv *env, jsize size) { return env->New ## type_name ## Array(size); } \
-    static inline base_type* getArrayElements(JNIEnv *env, type array, jboolean *isCopy) { return env->Get ## type_name ## ArrayElements(array, isCopy); } \
-    static inline void releaseArrayElements(JNIEnv *env, type array, base_type *data, jint mode) { return env->Release ## type_name ## ArrayElements(array, data, mode); } \
-    static inline void setArrayRegion(JNIEnv *env, type array, jsize start, jsize length, const base_type *data) { env->Set ## type_name ## ArrayRegion(array, start, length, data); } \
+    static inline type newArray(QAndroidJniEnvironment &env, jsize size) { return env->New ## type_name ## Array(size); } \
+    static inline base_type* getArrayElements(QAndroidJniEnvironment &env, type array, jboolean *isCopy) { return env->Get ## type_name ## ArrayElements(array, isCopy); } \
+    static inline void releaseArrayElements(QAndroidJniEnvironment &env, type array, base_type *data, jint mode) { return env->Release ## type_name ## ArrayElements(array, data, mode); } \
+    static inline void setArrayRegion(QAndroidJniEnvironment &env, type array, jsize start, jsize length, const base_type *data) { env->Set ## type_name ## ArrayRegion(array, start, length, data); } \
 };
 
 MAKE_ARRAY_TRAIT(jboolean, Boolean)
