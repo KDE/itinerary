@@ -4,6 +4,6 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "QAndroidJniObject"
+#include "jni.h"
 
 int JNIEnv::m_arrayLength = 0;

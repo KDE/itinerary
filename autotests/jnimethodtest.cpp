@@ -136,7 +136,7 @@ private Q_SLOTS:
         // ctor call
         obj = TestClass(intent);
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
-        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V"));
+        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V (o)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);

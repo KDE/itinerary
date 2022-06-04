@@ -20,7 +20,7 @@ target_sources(KAndroidExtras PRIVATE
 if (NOT ANDROID)
     target_sources(KAndroidExtras PRIVATE
         fake/mock_impl.cpp
-        fake/qandroidjniobject.cpp
+        fake/mock_jniobject.cpp
     )
 endif()
 
@@ -32,6 +32,11 @@ if (ANDROID)
     target_link_libraries(KAndroidExtras PUBLIC Qt::AndroidExtras)
 else()
     target_include_directories(KAndroidExtras PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/fake)
+    if (QT_MAJOR_VERSION EQUAL "5")
+        target_include_directories(KAndroidExtras PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/fake/qt5)
+    else()
+        target_include_directories(KAndroidExtras PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/fake/qt6)
+    endif()
 endif()
 
 ecm_generate_headers(KAndroidExtras_android_FORWARDING_HEADERS

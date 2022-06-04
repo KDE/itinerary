@@ -1,11 +1,10 @@
 /*
-    SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
-
+    SPDX-FileCopyrightText: 2020-2022 Volker Krause <vkrause@kde.org>
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef FAKE_QANDROIDJNIOBJECT_H
-#define FAKE_QANDROIDJNIOBJECT_H
+#ifndef KANDROIDEXTRAS_MOCK_JNIOBJECT_H
+#define KANDROIDEXTRAS_MOCK_JNIOBJECT_H
 
 #include "kandroidextras_export.h"
 #include "jni.h"
@@ -17,7 +16,7 @@
 #include <QStringList>
 #include <QVariant>
 
-class QAndroidJniObjectPrivate;
+class MockJniObjectBasePrivate;
 
 namespace KAndroidExtras {
 namespace Internal {
@@ -31,47 +30,77 @@ constexpr inline const char* argTypeToString<jobject>()
 {
     return "o";
 }
-}
-}
 
-/** Mock object for QAndroidJniObject outside of Android, for automated testing. */
-class KANDROIDEXTRAS_EXPORT QAndroidJniObject {
+class KANDROIDEXTRAS_EXPORT MockJniObjectBase {
 public:
-    QAndroidJniObject();
-    QAndroidJniObject(const QAndroidJniObject&);
-    ~QAndroidJniObject();
-    QAndroidJniObject& operator=(const QAndroidJniObject&);
+    MockJniObjectBase();
+    MockJniObjectBase(const MockJniObjectBase&);
+    ~MockJniObjectBase();
+    MockJniObjectBase& operator=(const MockJniObjectBase&);
 
-    QAndroidJniObject(const char *className);
-    QAndroidJniObject(const char *className, const char *signature, ...);
-    QAndroidJniObject(jclass, const char *signature, ...);
-    QAndroidJniObject(jobject object);
+    MockJniObjectBase(const char *className);
+
+    inline MockJniObjectBase(const char *className, const char *signature)
+        : MockJniObjectBase()
+    {
+        addToProtocol(QLatin1String("ctor: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(signature));
+    }
+    template <typename ...Args>
+    inline MockJniObjectBase(const char *className, const char *signature, Args...)
+        : MockJniObjectBase()
+    {
+        addToProtocol(QLatin1String("ctor: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(signature)
+            + QLatin1String(" (") + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')'));
+    }
+
+    MockJniObjectBase(jobject object);
 
     bool isValid() const { return true; }
 
-    static QAndroidJniObject fromString(const QString &s)
+    static QStringList m_staticProtocol;
+
+    QStringList protocol() const;
+    void addToProtocol(const QString &line) const;
+
+protected:
+    QVariant property(const QByteArray &name) const;
+    void setProperty(const QByteArray &name, const QVariant &value);
+    QVariant value() const;
+    void setValue(const QVariant &value);
+    void setData(jobject object);
+
+    void setProtocol(const QStringList &protocol);
+    QExplicitlySharedDataPointer<MockJniObjectBasePrivate> d;
+};
+
+
+template <typename JniObjectT>
+class MockJniObject : public MockJniObjectBase {
+public:
+    using MockJniObjectBase::MockJniObjectBase;
+    static inline JniObjectT fromString(const QString &s)
     {
-        QAndroidJniObject o;
+        JniObjectT o;
         o.setValue(s);
         return o;
     }
-    static QAndroidJniObject fromLocalRef(jobject o)
+    static inline JniObjectT fromLocalRef(jobject o)
     {
-        QAndroidJniObject obj;
+        JniObjectT obj;
         obj.addToProtocol(QLatin1String("ctor: ") + QString::number((qulonglong)o));
         return obj;
     }
-    QString toString() const
+    inline QString toString() const
     {
         return value().type() == QVariant::String ? value().toString() : protocol().join(QLatin1Char('\n'));
     }
 
-    jobject object() const { return d.data(); }
+    inline jobject object() const { return d.data(); }
     template <typename T>
-    T object() const { return {}; }
+    inline T object() const { return {}; }
 
     template <typename T, typename ...Args>
-    T callMethod(const char *methodName, const char *signature, Args...) const
+    inline T callMethod(const char *methodName, const char *signature, Args...) const
     {
         const QString s = QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
             + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')');
@@ -81,7 +110,7 @@ public:
         }
     }
     template <typename T>
-    T callMethod(const char *methodName, const char *signature) const
+    inline T callMethod(const char *methodName, const char *signature) const
     {
         const QString s = QLatin1String("callMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()");
         addToProtocol(s);
@@ -91,57 +120,57 @@ public:
     }
 
     template <typename ...Args>
-    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature, Args...) const
+    inline JniObjectT callObjectMethod(const char *methodName, const char *signature, Args...) const
     {
         const QString s = QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
             + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')');
         addToProtocol(s);
 
-        QAndroidJniObject obj;
+        JniObjectT obj;
         obj.setProtocol(protocol());
         return obj;
     }
-    QAndroidJniObject callObjectMethod(const char *methodName, const char *signature) const
+    inline JniObjectT callObjectMethod(const char *methodName, const char *signature) const
     {
         addToProtocol(QLatin1String("callObjectMethod: ") + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()"));
 
-        QAndroidJniObject obj;
+        JniObjectT obj;
         obj.setProtocol(protocol());
         return obj;
     }
 
     template <typename T>
-    T getField(const char *fieldName) const
+    inline T getField(const char *fieldName) const
     {
         addToProtocol(QLatin1String("getField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(KAndroidExtras::Jni::signature<T>()));
-        return property(fieldName).value<T>();
+        return property(fieldName).template value<T>();
     }
 
-    QAndroidJniObject getObjectField(const char *fieldName, const char *signature) const
+    inline JniObjectT getObjectField(const char *fieldName, const char *signature) const
     {
         addToProtocol(QLatin1String("getObjectField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
-        return property(fieldName).value<QAndroidJniObject>();
+        return property(fieldName).template value<JniObjectT>();
     }
 
     template <typename T>
-    void setField(const char *fieldName, const char *signature, T value)
+    inline void setField(const char *fieldName, const char *signature, T value)
     {
         Q_UNUSED(value);
         addToProtocol(QLatin1String("setField: ") + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
         if constexpr (std::is_same_v<jobject, T>) {
-            setProperty(fieldName, value);
+            setObjectProperty(fieldName, value);
         } else {
             setProperty(fieldName, QVariant::fromValue(value));
         }
     }
     template <typename T>
-    void setField(const char *fieldName, T value)
+    inline void setField(const char *fieldName, T value)
     {
         setField(fieldName, KAndroidExtras::Jni::signature<T>(), value);
     }
 
     template <typename T, typename ...Args>
-    static T callStaticMethod(const char *className, const char *methodName, const char *signature, Args...)
+    static inline T callStaticMethod(const char *className, const char *methodName, const char *signature, Args...)
     {
         const QString s = QLatin1String("callStaticMethod: ") + QLatin1String(className) + QLatin1Char(' ')
             + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
@@ -152,7 +181,7 @@ public:
         }
     }
     template <typename T>
-    static T callStaticMethod(const char *className, const char *methodName, const char *signature)
+    static inline T callStaticMethod(const char *className, const char *methodName, const char *signature)
     {
         const QString s = QLatin1String("callStaticMethod: ") + QLatin1String(className) + QLatin1Char(' ')
             + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()");
@@ -163,60 +192,53 @@ public:
     }
 
     template <typename ...Args>
-    static QAndroidJniObject callStaticObjectMethod(const char *className, const char *methodName, const char *signature, Args...)
+    static inline JniObjectT callStaticObjectMethod(const char *className, const char *methodName, const char *signature, Args...)
     {
         const QString s = QLatin1String("callStaticObjectMethod: ") + QLatin1String(className) + QLatin1Char(' ')
             + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" (")
             + (...+QLatin1String(KAndroidExtras::Internal::argTypeToString<Args>())) + QLatin1Char(')');
-        QAndroidJniObject obj;
+        JniObjectT obj;
         obj.addToProtocol(s);
         return obj;
     }
 
-    static QAndroidJniObject callStaticObjectMethod(const char *className, const char *methodName, const char *signature)
+    static inline JniObjectT callStaticObjectMethod(const char *className, const char *methodName, const char *signature)
     {
-        QAndroidJniObject obj;
+        JniObjectT obj;
         obj.addToProtocol(QLatin1String("callStaticObjectMethod: ") + QLatin1String(className) + QLatin1Char(' ')
             + QLatin1String(methodName) + QLatin1Char(' ') + QLatin1String(signature) + QLatin1String(" ()"));
         return obj;
     }
 
-    static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName, const char *signature)
+    static inline JniObjectT getStaticObjectField(const char *className, const char *fieldName, const char *signature)
     {
         m_staticProtocol.push_back(QLatin1String("getStaticObjectField: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(signature));
         return {};
     }
 
     template <typename T>
-    static QAndroidJniObject getStaticObjectField(const char *className, const char *fieldName)
+    static inline JniObjectT getStaticObjectField(const char *className, const char *fieldName)
     {
         m_staticProtocol.push_back(QLatin1String("getStaticObjectField<>: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName));
         return {};
     }
 
     template <typename T>
-    static T getStaticField(const char *className, const char *fieldName)
+    static inline T getStaticField(const char *className, const char *fieldName)
     {
         m_staticProtocol.push_back(QLatin1String("getStaticField<>: ") + QLatin1String(className) + QLatin1Char(' ') + QLatin1String(fieldName) + QLatin1Char(' ') + QLatin1String(KAndroidExtras::Jni::signature<T>()));
         return {};
     }
 
-    static QStringList m_staticProtocol;
-
-    QStringList protocol() const;
-    void addToProtocol(const QString &line) const;
-
-private:
-    QVariant property(const QByteArray &name) const;
-    void setProperty(const QByteArray &name, const QVariant &value);
-    void setProperty(const QByteArray &name, jobject value);
-    QVariant value() const;
-    void setValue(const QVariant &value);
-
-    void setProtocol(const QStringList &protocol);
-    QExplicitlySharedDataPointer<QAndroidJniObjectPrivate> d;
+    inline void setObjectProperty(const QByteArray &name, jobject value)
+    {
+        JniObjectT o;
+        o.setData(value);
+        setProperty(name, QVariant::fromValue(o));
+    }
 };
 
-Q_DECLARE_METATYPE(QAndroidJniObject)
+}
+}
 
 #endif
