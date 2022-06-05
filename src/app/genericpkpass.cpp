@@ -5,12 +5,15 @@
 
 #include "genericpkpass.h"
 
+#include <QDateTime>
+
 class GenericPkPassPrivate : public QSharedData
 {
 public:
     QString name;
     QString pkpassPassTypeIdentifier;
     QString pkpassSerialNumber;
+    QDateTime validUntil;
 };
 
 // TODO replace this by the use of the KITINERARY_XXX implementation macros,
@@ -56,9 +59,20 @@ void GenericPkPass::setPkpassSerialNumber(const QString &value)
     d->pkpassSerialNumber = value;
 }
 
+QDateTime GenericPkPass::validUnitl() const
+{
+    return d->validUntil;
+}
+
+void GenericPkPass::setValidUntil(const QDateTime &value)
+{
+    d.detach();
+    d->validUntil = value;
+}
+
 bool GenericPkPass::operator==(const GenericPkPass &other) const
 {
-    return d->pkpassPassTypeIdentifier == other.pkpassPassTypeIdentifier() && d->pkpassSerialNumber == other.pkpassSerialNumber();
+    return d->pkpassPassTypeIdentifier == other.pkpassPassTypeIdentifier() && d->pkpassSerialNumber == other.pkpassSerialNumber() && d->validUntil == other.validUnitl();
 }
 
 #include "moc_genericpkpass.cpp"

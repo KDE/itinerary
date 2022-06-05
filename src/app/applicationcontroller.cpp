@@ -483,6 +483,7 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
         wrapper.setName(pass->description());
         wrapper.setPkpassPassTypeIdentifier(pass->passTypeIdentifier());
         wrapper.setPkpassSerialNumber(pass->serialNumber());
+        wrapper.setValidUntil(pass->expirationDate());
 
         QScopedValueRollback importLocker(m_importLock, true);
         m_pkPassMgr->importPassFromData(pass->rawData());

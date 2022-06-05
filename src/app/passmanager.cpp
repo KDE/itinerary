@@ -41,6 +41,9 @@ QDateTime PassManager::Entry::validUntil() const
     if (JsonLd::isA<KItinerary::ProgramMembership>(data)) {
         return data.value<KItinerary::ProgramMembership>().validUntil();
     }
+    if (JsonLd::isA<GenericPkPass>(data)) {
+        return data.value<GenericPkPass>().validUnitl();
+    }
     if (JsonLd::isA<KItinerary::Ticket>(data)) {
         return data.value<KItinerary::Ticket>().validUntil();
     }
