@@ -7,8 +7,15 @@
 #include "androidbrightnessbackend.h"
 
 #include <QDebug>
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
 #include <QAndroidJniObject>
+#else
+#include <QCoreApplication>
+#include <QJniObject>
+using QAndroidJniObject = QJniObject;
+#endif
 
 AndroidBrightnessBackend::AndroidBrightnessBackend(QObject *parent)
     : BrightnessBackend(parent)
@@ -21,12 +28,22 @@ AndroidBrightnessBackend::~AndroidBrightnessBackend()
 
 float AndroidBrightnessBackend::brightness() const
 {
-    return QAndroidJniObject::callStaticMethod<jfloat>("org.kde.solidextras.Solid", "getBrightness", "(Landroid/app/Activity;)F", QtAndroid::androidActivity().object());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto activity = QtAndroid::androidActivity();
+#else
+    const QJniObject activity = QNativeInterface::QAndroidApplication::context();
+#endif
+    return QAndroidJniObject::callStaticMethod<jfloat>("org.kde.solidextras.Solid", "getBrightness", "(Landroid/app/Activity;)F", activity.object());
 }
 
 void AndroidBrightnessBackend::setBrightness(float brightness)
 {
-    QAndroidJniObject::callStaticMethod<void>("org.kde.solidextras.Solid", "setBrightness", "(Landroid/app/Activity;F)V", QtAndroid::androidActivity().object(), brightness);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto activity = QtAndroid::androidActivity();
+#else
+    const QJniObject activity = QNativeInterface::QAndroidApplication::context();
+#endif
+    QAndroidJniObject::callStaticMethod<void>("org.kde.solidextras.Solid", "setBrightness", "(Landroid/app/Activity;F)V", activity.object(), brightness);
 }
 
 float AndroidBrightnessBackend::maxBrightness() const

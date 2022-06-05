@@ -6,9 +6,17 @@
 
 #include "networkstatus.h"
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
 #include <QAndroidJniEnvironment>
 #include <QAndroidJniObject>
+#else
+#include <QCoreApplication>
+#include <QJniEnvironment>
+#include <QJniObject>
+using QAndroidJniEnvironment = QJniEnvironment;
+using QAndroidJniObject = QJniObject;
+#endif
 
 using namespace SolidExtras;
 
@@ -42,7 +50,12 @@ NetworkStatusBackend::NetworkStatusBackend(QObject *parent)
     static JNINativeMethod methods = {"networkStatusChanged", "()V", reinterpret_cast<void *>(networkStatusChangedCallback)};
     env->RegisterNatives(cls, &methods, sizeof(methods) / sizeof(JNINativeMethod));
 
-    m_obj = QAndroidJniObject("org/kde/solidextras/NetworkStatus", "(Landroid/content/Context;)V", QtAndroid::androidContext().object());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto context = QtAndroid::androidContext();
+#else
+    const QJniObject context = QNativeInterface::QAndroidApplication::context();
+#endif
+    m_obj = QAndroidJniObject("org/kde/solidextras/NetworkStatus", "(Landroid/content/Context;)V", context.object());
 }
 
 NetworkStatusBackend* NetworkStatusBackend::instance()
@@ -53,12 +66,22 @@ NetworkStatusBackend* NetworkStatusBackend::instance()
 
 bool NetworkStatusBackend::connectivity() const
 {
-    return m_obj.callMethod<jboolean>("connectivity", "(Landroid/content/Context;)Z", QtAndroid::androidContext().object());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto context = QtAndroid::androidContext();
+#else
+    const QJniObject context = QNativeInterface::QAndroidApplication::context();
+#endif
+    return m_obj.callMethod<jboolean>("connectivity", "(Landroid/content/Context;)Z", context.object());
 }
 
 bool NetworkStatusBackend::metered() const
 {
-    return m_obj.callMethod<jboolean>("metered", "(Landroid/content/Context;)Z", QtAndroid::androidContext().object());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto context = QtAndroid::androidContext();
+#else
+    const QJniObject context = QNativeInterface::QAndroidApplication::context();
+#endif
+    return m_obj.callMethod<jboolean>("metered", "(Landroid/content/Context;)Z", context.object());
 }
 
 

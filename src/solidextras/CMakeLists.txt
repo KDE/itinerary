@@ -39,7 +39,9 @@ target_include_directories(SolidExtras PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT
 target_link_libraries(SolidExtras PUBLIC Qt::Core)
 
 if (ANDROID)
-    target_link_libraries(SolidExtras PRIVATE Qt::AndroidExtras)
+    if (QT_MAJOR_VERSION EQUAL "5")
+        target_link_libraries(SolidExtras PRIVATE Qt::AndroidExtras)
+    endif()
 else ()
     target_link_libraries(SolidExtras PRIVATE Qt::DBus)
     if (TARGET KF5::NetworkManagerQt)
