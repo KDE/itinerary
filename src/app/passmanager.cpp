@@ -138,12 +138,10 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
     auto &entry = m_entries[index.row()];
     switch (role) {
         case PassRole:
-            ensureLoaded(entry);
             return entry.data;
         case PassIdRole:
             return entry.id;
         case PassTypeRole:
-            ensureLoaded(entry);
             if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
                 return ProgramMembership;
             }
@@ -157,7 +155,6 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
         case PassDataRole:
             return rawData(entry);
         case NameRole:
-            ensureLoaded(entry);
             if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
                 return entry.data.value<KItinerary::ProgramMembership>().programName();
             }
@@ -189,21 +186,15 @@ void PassManager::load()
     QDirIterator it(basePath(), QDir::Files);
     while (it.hasNext()) {
         it.next();
-        m_entries.push_back({it.fileName(), QVariant()});
+        Entry entry;
+        entry.id = it.fileName();
+        const auto data = rawData(entry);
+        if (!data.isEmpty()) {
+            entry.data = JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
+        }
+        m_entries.push_back(std::move(entry));
     }
     std::sort(m_entries.begin(), m_entries.end());
-}
-
-void PassManager::ensureLoaded(Entry &entry) const
-{
-    if (!entry.data.isNull()) {
-        return;
-    }
-
-    const auto data = rawData(entry);
-    if (!data.isEmpty()) {
-        entry.data = JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
-    }
 }
 
 QByteArray PassManager::rawData(const Entry &entry) const

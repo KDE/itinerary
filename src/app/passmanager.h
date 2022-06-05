@@ -63,10 +63,9 @@ private:
 
         bool operator<(const Entry &other) const;
     };
-    mutable std::vector<Entry> m_entries;
+    std::vector<Entry> m_entries;
 
     void load();
-    void ensureLoaded(Entry &entry) const;
     QByteArray rawData(const Entry &entry) const;
 
     static QString basePath();

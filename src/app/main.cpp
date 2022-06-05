@@ -117,12 +117,6 @@ void registerKItineraryTypes()
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
-
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 20, 41)
-    KItinerary::JsonLdDocument().registerType<GenericPkPass>();
-#else
-    KItinerary::JsonLdDocument::registerType<GenericPkPass>();
-#endif
 }
 
 void registerApplicationTypes()
@@ -354,6 +348,11 @@ int main(int argc, char **argv)
     HealthCertificateManager healthCertificateMgr;
     s_healthCertificateManager = &healthCertificateMgr;
 
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 20, 41)
+    KItinerary::JsonLdDocument().registerType<GenericPkPass>();
+#else
+    KItinerary::JsonLdDocument::registerType<GenericPkPass>();
+#endif
     PassManager passMgr;
     s_passManager = &passMgr;
 
