@@ -148,6 +148,21 @@ QString Localizer::formatDateTime(const QVariant& obj, const QString& propertyNa
     return s;
 }
 
+QString Localizer::formatDateOrDateTimeLocal(const QVariant& obj, const QString& propertyName) const
+{
+    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
+    if (!dt.isValid()) {
+        return {};
+    }
+
+    // detect likely date-only values
+    if (dt.timeSpec() == Qt::LocalTime && (dt.time() == QTime{0, 0, 0} || dt.time() == QTime{23, 59, 59})) {
+        return QLocale().toString(dt.date(), QLocale::ShortFormat);
+    }
+
+    return QLocale().toString(dt.toLocalTime(), QLocale::ShortFormat);
+}
+
 QString Localizer::formatDuration(int seconds) const
 {
     if (seconds < 0) {

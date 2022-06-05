@@ -103,6 +103,16 @@ Kirigami.ScrollablePage {
                 text: programMembership.membershipNumber
                 visible: programMembership.membershipNumber !== ""
             }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Valid from:")
+                text: Localizer.formatDateOrDateTimeLocal(programMembership, "validFrom")
+                visible: text !== ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Valid until:")
+                text: Localizer.formatDateOrDateTimeLocal(programMembership, "validUntil")
+                visible: text !== ""
+            }
         }
     }
 }

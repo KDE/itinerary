@@ -89,13 +89,22 @@ Kirigami.ScrollablePage {
             Kirigami.Separator {
                 Kirigami.FormData.label: i18n("Ticket")
                 Kirigami.FormData.isSection: true
-                visible: nameLabel.visible || numberLabel.visible || classLabel.visible
             }
             QQC2.Label {
                 id: nameLabel
                 Kirigami.FormData.label: i18n("Name:")
                 text: ticket.underName.name
                 visible: ticket.underName.name !== ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Valid from:")
+                text: Localizer.formatDateOrDateTimeLocal(ticket, "validFrom")
+                visible: text !== ""
+            }
+            QQC2.Label {
+                Kirigami.FormData.label: i18n("Valid until:")
+                text: Localizer.formatDateOrDateTimeLocal(ticket, "validUntil")
+                visible: text !== ""
             }
             QQC2.Label {
                 id: numberLabel
