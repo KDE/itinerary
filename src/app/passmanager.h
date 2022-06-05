@@ -7,6 +7,7 @@
 #define PASSMANAGER_H
 
 #include <QAbstractListModel>
+#include <QDateTime>
 
 /** Holds time-less pass or program membership elements.
  *  Not to be confused with PkPassManager, which handles storage
@@ -26,6 +27,7 @@ public:
         PassDataRole,
         NameRole,
         ValidUntilRole,
+        SectionRole,
     };
 
     enum PassType {
@@ -64,15 +66,21 @@ private:
 
         QString name() const;
         QDateTime validUntil() const;
-
-        bool operator<(const Entry &other) const;
     };
-    std::vector<Entry> m_entries;
+
+    struct PassComparator {
+        PassComparator(const QDateTime &baseTime) : m_baseTime(baseTime) {}
+        bool operator()(const PassManager::Entry &lhs, const PassManager::Entry &rhs) const;
+        QDateTime m_baseTime;
+    };
 
     void load();
     QByteArray rawData(const Entry &entry) const;
 
     static QString basePath();
+
+    std::vector<Entry> m_entries;
+    QDateTime m_baseTime;
 };
 
 #endif // PASSMANAGER_H

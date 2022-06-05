@@ -39,8 +39,8 @@ private Q_SLOTS:
         QCOMPARE(mgr.rowCount(), 0);
 
         // test import
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object()), QStringLiteral("1")));
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()), QStringLiteral("2")));
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())));
         QCOMPARE(mgr.rowCount(), 2);
 
         // retrieval
@@ -54,6 +54,7 @@ private Q_SLOTS:
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("BahnCard 25 (2. Kl.) (BC25)"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2122, 3, 24}, {23, 59, 59}));
+        QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId).isNull());
 
         idx = mgr.index(1, 0);
@@ -66,6 +67,7 @@ private Q_SLOTS:
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
         QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("9-Euro-Ticket"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2022, 5, 31}, {23, 59, 59}));
+        QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId2).isNull());
         mgr.remove(passId2);
         QCOMPARE(mgr.rowCount(), 1);

@@ -69,17 +69,14 @@ Kirigami.ScrollablePage {
         }
     }
 
-    KSortFilterProxyModel {
-        id: passSortModel
-        sourceModel: PassManager
-        sortRole: "name"
-        sortOrder: Qt.AscendingOrder
-    }
-
     ListView {
         id: passListView
-        model: passSortModel
+        model: PassManager
         delegate: chooser
+        section.delegate: Kirigami.ListSectionHeader {
+            text: section
+        }
+        section.property: "section"
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent

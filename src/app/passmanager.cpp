@@ -12,6 +12,8 @@
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Ticket>
 
+#include <KLocalizedString>
+
 #include <QDirIterator>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -45,14 +47,26 @@ QDateTime PassManager::Entry::validUntil() const
     return {};
 }
 
-bool PassManager::Entry::operator<(const PassManager::Entry &other) const
+bool PassManager::PassComparator::operator()(const PassManager::Entry &lhs, const PassManager::Entry &rhs) const
 {
-    return id < other.id;
-}
+    // valid before invalid, then sorted by name
+    const auto lhsExpired = lhs.validUntil().isValid() && lhs.validUntil() < m_baseTime;
+    const auto rhsExpired = rhs.validUntil().isValid() && rhs.validUntil() < m_baseTime;
 
+    if (lhsExpired == rhsExpired) {
+        const auto nameCmp = lhs.name().localeAwareCompare(rhs.name());
+        if (nameCmp == 0) {
+            return lhs.id < rhs.id;
+        }
+        return nameCmp < 0;
+    }
+
+    return !lhsExpired;
+}
 
 PassManager::PassManager(QObject *parent)
     : QAbstractListModel(parent)
+    , m_baseTime(QDateTime::currentDateTime())
 {
     load();
 }
@@ -85,7 +99,7 @@ bool PassManager::import(const QVariant &pass, const QString &id)
         f.write(QJsonDocument(JsonLdDocument::toJson(entry.data)).toJson());
         f.close();
 
-        const auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry);
+        const auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry, PassComparator(m_baseTime));
         if (it != m_entries.end() && (*it).id == entry.id) {
             (*it).data = entry.data;
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
@@ -183,6 +197,11 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             return entry.name();
         case ValidUntilRole:
             return entry.validUntil();
+        case SectionRole:
+            if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
+                return i18nc("no longer valid tickets", "Expired");
+            }
+            return i18nc("not yet expired tickets", "Valid");
     }
 
     return {};
@@ -196,6 +215,7 @@ QHash<int, QByteArray> PassManager::roleNames() const
     r.insert(PassTypeRole, "type");
     r.insert(NameRole, "name");
     r.insert(ValidUntilRole, "validUntil");
+    r.insert(SectionRole, "section");
     return r;
 }
 
@@ -212,7 +232,7 @@ void PassManager::load()
         }
         m_entries.push_back(std::move(entry));
     }
-    std::sort(m_entries.begin(), m_entries.end());
+    std::sort(m_entries.begin(), m_entries.end(), PassComparator(m_baseTime));
 }
 
 QByteArray PassManager::rawData(const Entry &entry) const
