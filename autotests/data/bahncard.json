@@ -8,5 +8,7 @@
     },
     "membershipNumber": "7081123456789012",
     "programName": "BahnCard 25 (2. Kl.) (BC25)",
-    "token": "aztec:dummy_barcode"
+    "token": "aztec:dummy_barcode",
+    "validFrom": "2021-03-25T00:00:00",
+    "validUntil": "2122-03-24T23:59:59"
 }
