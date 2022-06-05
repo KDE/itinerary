@@ -25,6 +25,7 @@ public:
         PassTypeRole,
         PassDataRole,
         NameRole,
+        ValidUntilRole,
     };
 
     enum PassType {
@@ -60,6 +61,9 @@ private:
     struct Entry {
         QString id;
         QVariant data;
+
+        QString name() const;
+        QDateTime validUntil() const;
 
         bool operator<(const Entry &other) const;
     };

@@ -20,6 +20,31 @@
 
 using namespace KItinerary;
 
+QString PassManager::Entry::name() const
+{
+    if (JsonLd::isA<KItinerary::ProgramMembership>(data)) {
+        return data.value<KItinerary::ProgramMembership>().programName();
+    }
+    if (JsonLd::isA<GenericPkPass>(data)) {
+        return data.value<GenericPkPass>().name();
+    }
+    if (JsonLd::isA<KItinerary::Ticket>(data)) {
+        return data.value<KItinerary::Ticket>().name();
+    }
+    return {};
+}
+
+QDateTime PassManager::Entry::validUntil() const
+{
+    if (JsonLd::isA<KItinerary::ProgramMembership>(data)) {
+        return data.value<KItinerary::ProgramMembership>().validUntil();
+    }
+    if (JsonLd::isA<KItinerary::Ticket>(data)) {
+        return data.value<KItinerary::Ticket>().validUntil();
+    }
+    return {};
+}
+
 bool PassManager::Entry::operator<(const PassManager::Entry &other) const
 {
     return id < other.id;
@@ -155,17 +180,9 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
         case PassDataRole:
             return rawData(entry);
         case NameRole:
-            if (JsonLd::isA<KItinerary::ProgramMembership>(entry.data)) {
-                return entry.data.value<KItinerary::ProgramMembership>().programName();
-            }
-            if (JsonLd::isA<GenericPkPass>(entry.data)) {
-                return entry.data.value<GenericPkPass>().name();
-            }
-            if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
-                return entry.data.value<KItinerary::Ticket>().name();
-            }
-            return {};
-
+            return entry.name();
+        case ValidUntilRole:
+            return entry.validUntil();
     }
 
     return {};
@@ -178,6 +195,7 @@ QHash<int, QByteArray> PassManager::roleNames() const
     r.insert(PassIdRole, "passId");
     r.insert(PassTypeRole, "type");
     r.insert(NameRole, "name");
+    r.insert(ValidUntilRole, "validUntil");
     return r;
 }
 
