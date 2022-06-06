@@ -19,11 +19,12 @@ namespace Internal {
     /** Call argument wrapper. */
     template <typename T, typename = std::void_t<>>
     struct argument {
-        typedef std::conditional_t<Jni::is_basic_type<T>::value, T, const Jni::Object<T>&> type;
+        static_assert(!is_invalid_primitive_type<T>::value, "Using an incompatible primitive type!");
+        typedef std::conditional_t<Jni::is_primitive_type<T>::value, T, const Jni::Object<T>&> type;
         static inline constexpr auto toCallArgument(type value)
         {
-            if constexpr (Jni::is_basic_type<T>::value) {
-                return value;
+            if constexpr (Jni::is_primitive_type<T>::value) {
+                return primitive_value<T>::toJni(value);
             } else {
                 return value.jniHandle().object();
             }

@@ -71,16 +71,17 @@ struct JniSignature
     }
 };
 
-template <> struct JniSignature<bool> { constexpr inline auto operator()() const { return StaticString<'Z'>(); } };
 template <> struct JniSignature<jboolean> { constexpr inline auto operator()() const { return StaticString<'Z'>(); } };
 template <> struct JniSignature<jbyte> { constexpr inline auto operator()() const { return StaticString<'B'>(); } };
-template <> struct JniSignature<char> { constexpr inline auto operator()() const { return StaticString<'C'>(); } };
-template <> struct JniSignature<short> { constexpr inline auto operator()() const { return StaticString<'S'>(); } };
-template <> struct JniSignature<int> { constexpr inline auto operator()() const { return StaticString<'I'>(); } };
+template <> struct JniSignature<jchar> { constexpr inline auto operator()() const { return StaticString<'C'>(); } };
+template <> struct JniSignature<jshort> { constexpr inline auto operator()() const { return StaticString<'S'>(); } };
+template <> struct JniSignature<jint> { constexpr inline auto operator()() const { return StaticString<'I'>(); } };
 template <> struct JniSignature<jlong> { constexpr inline auto operator()() const { return StaticString<'J'>(); } };
-template <> struct JniSignature<float> { constexpr inline auto operator()() const { return StaticString<'F'>(); } };
-template <> struct JniSignature<double> { constexpr inline auto operator()() const { return StaticString<'D'>(); } };
+template <> struct JniSignature<jfloat> { constexpr inline auto operator()() const { return StaticString<'F'>(); } };
+template <> struct JniSignature<jdouble> { constexpr inline auto operator()() const { return StaticString<'D'>(); } };
 template <> struct JniSignature<void> { constexpr inline auto operator()() const { return StaticString<'V'>(); } };
+// special case due to jboolean != bool
+template <> struct JniSignature<bool> { constexpr inline auto operator()() const { return StaticString<'Z'>(); } };
 
 template <typename T>
 struct JniSignature<T*>

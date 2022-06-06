@@ -60,7 +60,7 @@ private Q_SLOTS:
         JNIEnv::m_arrayLength = 3;
 
         QAndroidJniObject array;
-        // basic types
+        // primitive types
         const auto a1 = Jni::Array<jint>(array);
         QCOMPARE(a1.size(), 3);
         QCOMPARE(std::distance(a1.begin(), a1.end()), 3);

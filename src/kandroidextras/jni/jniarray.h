@@ -23,7 +23,7 @@ namespace KAndroidExtras {
 ///@cond internal
 namespace Internal {
 
-/** Basic type array type traits. */
+/** Primitive type array type traits. */
 template <typename T> struct array_trait {
     typedef jobjectArray type;
 };
@@ -49,7 +49,7 @@ MAKE_ARRAY_TRAIT(jdouble, Double)
 #undef MAKE_ARRAY_TRAIT
 
 /** Meta function for retrieving a JNI array .*/
-template <typename Container, typename Value, bool is_basic> struct FromArray {};
+template <typename Container, typename Value, bool is_primitive> struct FromArray {};
 
 template <typename Container>
 struct FromArray<Container, QAndroidJniObject, false>
@@ -91,7 +91,7 @@ struct FromArray<Container, Value, false>
     }
 };
 
-// specializations for basic types
+// specializations for primitive types
 template <typename Container, typename Value>
 struct FromArray<Container, Value, true>
 {
@@ -116,7 +116,7 @@ struct FromArray<Container, Value, true>
     }
 };
 
-// array wrapper, common base for basic and non-basic types
+// array wrapper, common base for primitive and non-primitive types
 template <typename T>
 class ArrayImplBase {
 public:
@@ -152,13 +152,14 @@ protected:
     QAndroidJniObject m_array;
 };
 
-template <typename T, bool is_basic>
+template <typename T, bool is_primitive>
 class ArrayImpl {};
 
 // array wrapper for primitive types
 template <typename T>
 class ArrayImpl<T, true> : public ArrayImplBase<T>
 {
+    static_assert(!Internal::is_invalid_primitive_type<T>::value, "Using an incompatible primitive type!");
 public:
     inline ArrayImpl(const QAndroidJniObject &array)
         : ArrayImplBase<T>(array)
@@ -303,16 +304,16 @@ namespace Jni {
 /** Convert a JNI array to a C++ container.
     *  Container value types can be any of
     *  - QAndroidJniObject
-    *  - a basic JNI type
+    *  - a primitive JNI type
     *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
     */
-template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_basic_type<typename Container::value_type>::value> fromArray = {};
+template <typename Container> constexpr __attribute__((__unused__)) Internal::FromArray<Container, typename Container::value_type, Jni::is_primitive_type<typename Container::value_type>::value> fromArray = {};
 
 /** Container-like wrapper for JNI arrays. */
 template <typename T>
-class Array : public Internal::ArrayImpl<T, Jni::is_basic_type<T>::value> {
+class Array : public Internal::ArrayImpl<T, Jni::is_primitive_type<T>::value> {
 public:
-    using Internal::ArrayImpl<T, Jni::is_basic_type<T>::value>::ArrayImpl;
+    using Internal::ArrayImpl<T, Jni::is_primitive_type<T>::value>::ArrayImpl;
     template <typename Container>
     inline operator Container() const {
         // ### should this be re-implemented in terms of Jni::Array API rather than direct JNI access?

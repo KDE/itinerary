@@ -25,9 +25,10 @@ template <typename T> class Array;
 namespace Internal {
 
 /** Wrapper for static properties. */
-template <typename PropType, typename ClassType, typename NameHolder, bool BasicType> struct StaticProperty {};
+template <typename PropType, typename ClassType, typename NameHolder, bool PrimitiveType> struct StaticProperty {};
 template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, false> {
+    static_assert(!is_invalid_primitive_type<PropType>::value, "Using an incompatible primitive type!");
     inline QAndroidJniObject get() const
     {
         return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<PropType>());
@@ -49,9 +50,9 @@ struct StaticProperty<PropType, ClassType, NameHolder, false> {
 
 template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, true> {
-    inline operator PropType() const
+    inline operator auto() const
     {
-        return QAndroidJniObject::getStaticField<PropType>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>());
+        return primitive_value<PropType>::fromJni(QAndroidJniObject::getStaticField<typename primitive_value<PropType>::JniType>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>()));
     }
 };
 
@@ -66,11 +67,12 @@ protected:
 };
 
 /** Wrapper for non-static properties. */
-template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder, bool BasicType> struct Property {};
+template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder, bool PrimitiveType> struct Property {};
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder>
 class Property<PropType, ClassType, NameHolder, OffsetHolder, false> : public PropertyBase<ClassType, OffsetHolder> {
 private:
     struct _jni_NoType {};
+    static_assert(!is_invalid_primitive_type<PropType>::value, "Using an incompatible primitive type!");
 public:
     inline QAndroidJniObject get() const
     {
@@ -115,13 +117,13 @@ public:
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder>
 class Property<PropType, ClassType, NameHolder, OffsetHolder, true> : public PropertyBase<ClassType, OffsetHolder> {
 public:
-    inline operator PropType() const
+    inline operator auto() const
     {
-        return this->handle().template getField<PropType>(Jni::typeName<NameHolder>());
+        return primitive_value<PropType>::fromJni(this->handle().template getField<typename primitive_value<PropType>::JniType>(Jni::typeName<NameHolder>()));
     }
     inline Property& operator=(PropType value)
     {
-        this->handle().setField(Jni::typeName<NameHolder>(), value);
+        this->handle().setField(Jni::typeName<NameHolder>(), primitive_value<PropType>::toJni(value));
         return *this;
     }
 };
@@ -154,7 +156,7 @@ public:
 private: \
     struct _jni_ ## name ## __NameHolder { static constexpr const char* jniName() { return "" #name; } }; \
 public: \
-    static inline const KAndroidExtras::Internal::StaticProperty<type, _jni_ThisType, _jni_ ## name ## __NameHolder, Jni::is_basic_type<type>::value> name;
+    static inline const KAndroidExtras::Internal::StaticProperty<type, _jni_ThisType, _jni_ ## name ## __NameHolder, Jni::is_primitive_type<type>::value> name;
 
 /**
  * Wrap a member property.
@@ -181,7 +183,7 @@ private: \
     }; \
     friend class KAndroidExtras::Internal::PropertyBase<_jni_ThisType, _jni_ ## name ## __OffsetHolder>; \
 public: \
-    [[no_unique_address]] KAndroidExtras::Internal::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, KAndroidExtras::Jni::is_basic_type<type>::value> name;
+    [[no_unique_address]] KAndroidExtras::Internal::Property<type, _jni_ThisType, _jni_ ## name ## __NameHolder, _jni_ ## name ## __OffsetHolder, KAndroidExtras::Jni::is_primitive_type<type>::value> name;
 }
 
 #endif // KANDROIDEXTRAS_JNIPROPERTIES_H

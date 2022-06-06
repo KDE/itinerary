@@ -11,6 +11,7 @@
 #include "jnimethod.h"
 #include "jniobject.h"
 #include "jnipp.h"
+#include "jniprimitivetypes.h"
 #include "jniproperty.h"
 #include "jnireturnvalue.h"
 #include "jnisignature.h"

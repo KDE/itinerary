@@ -19,17 +19,22 @@ namespace Internal {
     /** Return value wrapping helper. */
     template <typename RetT, typename = std::void_t<>>
     class return_wrapper {
-        static inline constexpr bool is_basic = Jni::is_basic_type<RetT>::value;
+        static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
+        static inline constexpr bool is_primitive = Jni::is_primitive_type<RetT>::value;
         static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
 
-        typedef std::conditional_t<is_basic, RetT, QAndroidJniObject> JniReturnT;
+        typedef std::conditional_t<is_primitive, RetT, QAndroidJniObject> JniReturnT;
 
     public:
         static inline constexpr auto toReturnValue(JniReturnT value)
         {
             if constexpr (is_convertible) {
                 return Jni::Object<RetT>(value);
-            } else {
+            }
+            else if constexpr (is_primitive) {
+                return primitive_value<RetT>::fromJni(value);
+            }
+            else {
                 return value;
             }
         }

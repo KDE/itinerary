@@ -32,7 +32,7 @@ public:
     // overloads
     JNI_METHOD(void, overloaded)
     JNI_METHOD(void, overloaded, jint)
-    JNI_METHOD(void, overloaded, java::lang::String, jboolean)
+    JNI_METHOD(void, overloaded, java::lang::String, bool)
     JNI_METHOD(jint, overloaded, jlong, java::lang::String, Jni::Array<jshort>)
     JNI_METHOD(Jni::Array<jshort>, overloaded, Intent)
 
@@ -42,6 +42,17 @@ public:
     JNI_STATIC_METHOD(jlong, retNoArg)
     JNI_STATIC_METHOD(void, noRetArg, java::lang::String)
     JNI_STATIC_METHOD(android::content::Intent, retArg, bool)
+
+    // bool/jboolean arguments
+    JNI_METHOD(void, setBool, bool)
+    JNI_CONSTRUCTOR(TestClass, bool)
+
+    // basic C++ types that do not map to JNI (must not compile)
+//     JNI_METHOD(void, setUnsigned, uint32_t)
+//     JNI_STATIC_METHOD(void, setStaticUnsigned, uint64_t)
+//     JNI_METHOD(char, charReturn)
+//     JNI_STATIC_METHOD(uint64_t, staticCharReturn);
+//     JNI_CONSTRUCTOR(TestClass, char)
 
     friend class JniMethodTest;
 };
@@ -101,8 +112,10 @@ private Q_SLOTS:
         Jni::Array<jshort> l4 = obj.overloaded(intent);
         obj.overloaded(23, QStringLiteral("world"), l4);
 
+        // bool conversion
+        obj.setBool(true);
 
-        QCOMPARE(obj.jniHandle().protocol().size(), 27);
+        QCOMPARE(obj.jniHandle().protocol().size(), 28);
         QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
         QCOMPARE(obj.jniHandle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
         QCOMPARE(obj.jniHandle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
@@ -132,11 +145,15 @@ private Q_SLOTS:
         QCOMPARE(obj.jniHandle().protocol()[24], QLatin1String("callMethod: overloaded (Ljava/lang/String;Z)V (oZ)"));
         QCOMPARE(obj.jniHandle().protocol()[25], QLatin1String("callObjectMethod: overloaded (Landroid/content/Intent;)[S (o)"));
         QCOMPARE(obj.jniHandle().protocol()[26], QLatin1String("callMethod: overloaded (JLjava/lang/String;[S)I (Joo)"));
+        QCOMPARE(obj.jniHandle().protocol()[27], QLatin1String("callMethod: setBool (Z)V (Z)"));
 
         // ctor call
         obj = TestClass(intent);
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
         QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V (o)"));
+        obj = TestClass(false);
+        QCOMPARE(obj.jniHandle().protocol().size(), 1);
+        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Z)V (Z)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);

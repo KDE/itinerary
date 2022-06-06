@@ -7,6 +7,7 @@
 #ifndef KANDROIDEXTRAS_JNITYPETRAITS_H
 #define KANDROIDEXTRAS_JNITYPETRAITS_H
 
+#include "jniprimitivetypes.h"
 #include "jnitypes.h"
 
 #include <qglobal.h>
@@ -17,28 +18,11 @@
 using QAndroidJniObject = QJniObject;
 #endif
 
-#include <type_traits>
-
 namespace KAndroidExtras {
 
 namespace Jni {
 
 template <typename T> class Array;
-
-/** Type trait to check whether @tparam T is a basic JNI type or an object type.
- *  Those two typically need different handling both with JNI API and with QAndroidJniObject API.
- */
-template <typename T> struct is_basic_type : std::false_type {};
-template <> struct is_basic_type<bool> : std::true_type {};
-template <> struct is_basic_type<jboolean> : std::true_type {};
-template <> struct is_basic_type<jbyte> : std::true_type {};
-template <> struct is_basic_type<jchar> : std::true_type {};
-template <> struct is_basic_type<jshort> : std::true_type {};
-template <> struct is_basic_type<jint> : std::true_type {};
-template <> struct is_basic_type<jlong> : std::true_type {};
-template <> struct is_basic_type<jfloat> : std::true_type {};
-template <> struct is_basic_type<jdouble> : std::true_type {};
-template <> struct is_basic_type<void> : std::true_type {};
 
 /** Type conversion trait, see @c JNI_DECLARE_CONVERTER. */
 template <typename T> struct converter {
@@ -59,7 +43,7 @@ template <typename T> struct is_object_wrapper<T, std::void_t<typename T::_jni_T
 
 /** Type trais for checking whether @tparam T is needs the generic JNI object wrapper (Jni::Object). */
 template <typename T> struct is_generic_wrapper : std::conditional_t<
-    !is_basic_type<T>::value && !is_array<T>::value && !is_object_wrapper<T>::value, std::true_type, std::false_type>
+    !is_primitive_type<T>::value && !is_array<T>::value && !is_object_wrapper<T>::value, std::true_type, std::false_type>
     {};
 
 }
