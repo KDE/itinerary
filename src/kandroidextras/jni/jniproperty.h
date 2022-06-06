@@ -13,8 +13,6 @@
 #include "jnitypes.h"
 #include "jnitypetraits.h"
 
-#include <QAndroidJniObject>
-
 #include <type_traits>
 
 namespace KAndroidExtras {

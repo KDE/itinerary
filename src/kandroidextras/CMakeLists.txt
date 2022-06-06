@@ -29,7 +29,11 @@ target_compile_features(KAndroidExtras PUBLIC cxx_std_20) # for __VA_OPT__
 target_link_libraries(KAndroidExtras PUBLIC Qt::Core)
 
 if (ANDROID)
-    target_link_libraries(KAndroidExtras PUBLIC Qt::AndroidExtras)
+    if (QT_MAJOR_VERSION EQUAL "5")
+        target_link_libraries(KAndroidExtras PUBLIC Qt5::AndroidExtras)
+    else()
+        target_link_libraries(KAndroidExtras PRIVATE Qt::CorePrivate)
+    endif()
 else()
     target_include_directories(KAndroidExtras PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/fake)
     if (QT_MAJOR_VERSION EQUAL "5")

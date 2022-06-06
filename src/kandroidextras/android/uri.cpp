@@ -9,8 +9,6 @@
 #include <KAndroidExtras/JniSignature>
 #include <KAndroidExtras/JavaTypes>
 
-#include <QAndroidJniObject>
-
 using namespace KAndroidExtras;
 
 QAndroidJniObject Uri::fromUrl(const QUrl &url)

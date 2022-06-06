@@ -11,8 +11,12 @@
 #include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QAndroidJniEnvironment>
-#include <QAndroidJniObject>
+#else
+#include <QJniEnvironment>
+using QAndroidJniEnvironment = QJniEnvironment;
+#endif
 
 namespace KAndroidExtras {
 

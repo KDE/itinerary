@@ -9,7 +9,13 @@
 
 #include "kandroidextras_export.h"
 
+#include <qglobal.h>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 class QAndroidJniObject;
+#else
+class QJniObject;
+using QAndroidJniObject = QJniObject;
+#endif
 class QLocale;
 
 namespace KAndroidExtras {

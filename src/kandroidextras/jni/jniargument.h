@@ -9,8 +9,6 @@
 #include "jniobject.h"
 #include "jnitypetraits.h"
 
-#include <QAndroidJniObject>
-
 namespace KAndroidExtras {
 namespace Jni {
 template <typename T> class Array;

@@ -9,7 +9,6 @@
 #include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniSignature>
 
-#include <QAndroidJniObject>
 #include <QLocale>
 
 using namespace KAndroidExtras;

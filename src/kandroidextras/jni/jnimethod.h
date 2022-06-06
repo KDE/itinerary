@@ -13,8 +13,6 @@
 #include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
-#include <QAndroidJniObject>
-
 namespace KAndroidExtras {
 ///@cond internal
 

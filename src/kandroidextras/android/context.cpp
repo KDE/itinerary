@@ -9,11 +9,20 @@
 #include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/JniSignature>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
+#else
+#include <QCoreApplication>
+#endif
 
 using namespace KAndroidExtras;
 
 QAndroidJniObject Context::getPackageName()
 {
-    return QtAndroid::androidContext().callObjectMethod("getPackageName", Jni::signature<java::lang::String()>());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto context = QtAndroid::androidContext();
+#else
+    const QJniObject context = QNativeInterface::QAndroidApplication::context();
+#endif
+    return context.callObjectMethod("getPackageName", Jni::signature<java::lang::String()>());
 }

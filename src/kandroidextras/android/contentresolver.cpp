@@ -11,8 +11,12 @@
 #include <KAndroidExtras/AndroidTypes>
 #include <KAndroidExtras/JniSignature>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QtAndroid>
 #include <QAndroidJniObject>
+#else
+#include <QCoreApplication>
+#endif
 
 #include <QString>
 #include <QUrl>
@@ -21,7 +25,12 @@ using namespace KAndroidExtras;
 
 QAndroidJniObject ContentResolver::get()
 {
-    return QtAndroid::androidContext().callObjectMethod("getContentResolver", Jni::signature<android::content::ContentResolver()>());
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const auto context = QtAndroid::androidContext();
+#else
+    const QJniObject context = QNativeInterface::QAndroidApplication::context();
+#endif
+    return context.callObjectMethod("getContentResolver", Jni::signature<android::content::ContentResolver()>());
 }
 
 QString ContentResolver::mimeType(const QUrl &url)

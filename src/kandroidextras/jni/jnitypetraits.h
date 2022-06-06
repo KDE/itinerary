@@ -9,7 +9,13 @@
 
 #include "jnitypes.h"
 
+#include <qglobal.h>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QAndroidJniObject>
+#else
+#include <QJniObject>
+using QAndroidJniObject = QJniObject;
+#endif
 
 #include <type_traits>
 

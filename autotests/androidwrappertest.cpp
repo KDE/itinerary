@@ -7,7 +7,12 @@
 #include <KAndroidExtras/Context>
 #include <KAndroidExtras/ContentResolver>
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QAndroidJniObject>
+#else
+#include <QJniObject>
+using QAndroidJniObject = QJniObject;
+#endif
 #include <QtTest/qtest.h>
 
 using namespace KAndroidExtras;

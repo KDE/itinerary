@@ -14,8 +14,6 @@
 
 #include <QUrl>
 
-class QAndroidJniObject;
-
 namespace KAndroidExtras {
 
 /** Conversion methods for android.net.Uri. */

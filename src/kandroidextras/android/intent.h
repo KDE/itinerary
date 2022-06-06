@@ -15,8 +15,6 @@
 #include <KAndroidExtras/JavaTypes>
 #include <KAndroidExtras/Uri>
 
-#include <QAndroidJniObject>
-
 class QUrl;
 
 namespace KAndroidExtras {
