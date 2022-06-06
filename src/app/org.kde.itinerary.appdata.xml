@@ -655,7 +655,14 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.04.2" date="2022-06-09"/>
+    <release version="22.04.2" date="2022-06-09">
+      <description>
+        <ul>
+          <li>Improved travel data extraction for Thalys, UK national rail, Eurowings and Eventbrite.</li>
+          <li>Fixed train load information parsing for German public transport operators.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.04.1" date="2022-05-12">
       <description>
         <ul>
