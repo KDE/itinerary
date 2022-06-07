@@ -37,7 +37,7 @@
   <name xml:lang="zh-CN">KDE Itinerary</name>
   <summary>Digital travel assistant</summary>
   <summary xml:lang="ca">Assistent de viatges digital</summary>
-  <summary xml:lang="ca-valencia">Assistent de viatges digital</summary>
+  <summary xml:lang="ca-valencia">Assistent de viages digital</summary>
   <summary xml:lang="cs">Digitální asistent na cesty</summary>
   <summary xml:lang="de">Digitaler Reiseassistent</summary>
   <summary xml:lang="en-GB">Digital travel assistant</summary>
@@ -65,7 +65,7 @@
   <description>
     <p>KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="ca">El KDE Itinerary és un assistent digital de viatge amb la prioritat de protegir la vostra privadesa.</p>
-    <p xml:lang="ca-valencia">KDE Itinerary és un assistent digital de viatge amb la prioritat de protegir la vostra privadesa.</p>
+    <p xml:lang="ca-valencia">KDE Itinerary és un assistent digital de viage amb la prioritat de protegir la vostra privadesa.</p>
     <p xml:lang="cs">Itinerář KDE je digitální asistent na cestování jehož prioritou je ochrana vašeho soukromí.</p>
     <p xml:lang="en-GB">KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.</p>
     <p xml:lang="es">KDE Itinerary es un asistente de viajes digital que tiene como prioridad proteger su privacidad.</p>
@@ -117,7 +117,7 @@
     <ul>
       <li>Timeline view of a unified travel itinerary with automatic trip grouping.</li>
       <li xml:lang="ca">Vista de la línia de temps d'un itinerari unificat de viatges amb agrupació automàtica de viatge.</li>
-      <li xml:lang="ca-valencia">Vista de la llínea de temps d'un itinerari unificat de viatges amb agrupament automàtica de viatge.</li>
+      <li xml:lang="ca-valencia">Vista de la llínea de temps d'un itinerari unificat de viages amb agrupament automàtica de viage.</li>
       <li xml:lang="en-GB">Timeline view of a unified travel itinerary with automatic trip grouping.</li>
       <li xml:lang="es">Vista cronológica de un itinerario de viaje unificado con agrupación de viajes automática.</li>
       <li xml:lang="et">Ühendatud reisikava ajateljevaade ühes võimalusega reise automaatselt rühmitada.</li>
@@ -140,7 +140,7 @@
       <li xml:lang="zh-CN">时间线视图，可自动分组并归类旅程。</li>
       <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="ca">Permet reserva de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
-      <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, aixina com reserves d'hotels, restaurants, esdeveniments i lloguer de coches.</li>
+      <li xml:lang="ca-valencia">Permet reserva de tren, autobús i avió, aixina com reserves d'hotels, restaurants, successos i lloguer de coches.</li>
       <li xml:lang="en-GB">Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="es">Permite el uso de reservas de trenes, autobuses y vuelos, así como de hoteles, restaurantes, eventos y alquiler de automóviles.</li>
       <li xml:lang="et">Rongide, busside ja lennukite ning hotellide, restoranide, sündmuste ja rendiautode broneeringud ja reserveeringud.</li>
@@ -188,7 +188,7 @@
       <li xml:lang="zh-CN">登机牌管理。</li>
       <li>Supports ticket management for multi-traveler and multi-ticket bookings.</li>
       <li xml:lang="ca">Permet la gestió de bitllets per a reserves multiviatger i multibitllet.</li>
-      <li xml:lang="ca-valencia">Permet la gestió de bitllets per a reserves multiviatger i multibitllet.</li>
+      <li xml:lang="ca-valencia">Permet la gestió de billets per a reserves multiviager i multibitllet.</li>
       <li xml:lang="en-GB">Supports ticket management for multi-traveller and multi-ticket bookings.</li>
       <li xml:lang="es">Permite gestión de billetes para reservas de varios viajeros y de varios billetes.</li>
       <li xml:lang="et">Mitme reisija ja mitme pileti reserveerimise piletihalduse toetus.</li>
@@ -257,7 +257,7 @@
       <li xml:lang="zh-CN">提供火车延误和站台变更的实时信息。</li>
       <li>Weather forecast for destination along your trip.</li>
       <li xml:lang="ca">Previsió meteorològica de la destinació durant el viatge.</li>
-      <li xml:lang="ca-valencia">Previsió meteorològica de la destinació durant el viatge.</li>
+      <li xml:lang="ca-valencia">Previsió meteorològica del destí durant el viage.</li>
       <li xml:lang="en-GB">Weather forecast for destination along your trip.</li>
       <li xml:lang="es">Previsión meteorológica para el destino a lo largo de su viaje.</li>
       <li xml:lang="et">Ilmaennustus kogu reisi kohta.</li>
@@ -303,7 +303,7 @@
       <li xml:lang="zh-CN">完全掌控所有在线功能。</li>
       <li>Selection of alternative train connections on unbound tickets or on missed connections.</li>
       <li xml:lang="ca">Selecció de connexions alternatives de tren en bitllets independents o en connexions perdudes.</li>
-      <li xml:lang="ca-valencia">Seleccioneu les connexions alternatives de tren en bitllets independents o en connexions perdudes.</li>
+      <li xml:lang="ca-valencia">Seleccioneu les connexions alternatives de tren en billets independents o en connexions perdudes.</li>
       <li xml:lang="en-GB">Selection of alternative train connections on unbound tickets or on missed connections.</li>
       <li xml:lang="es">Selección de conexiones de tren alternativas en billetes sin consolidar o en conexiones perdidas.</li>
       <li xml:lang="et">Alternatiivse rongiühenduse valimise võimalus näiteks piletite puudumise või mahajäämise korral.</li>
@@ -408,7 +408,7 @@
       <li xml:lang="zh-CN">火车站地图显示空余的有桩或无桩共享单车。</li>
       <li>Personal travel statistics to monitor environmental impact.</li>
       <li xml:lang="ca">Estadístiques de viatges personals per a controlar l'impacte ambiental.</li>
-      <li xml:lang="ca-valencia">Estadístiques de viatges personals per a controlar l'impacte ambiental.</li>
+      <li xml:lang="ca-valencia">Estadístiques de viages personals per a controlar l'impacte ambiental.</li>
       <li xml:lang="en-GB">Personal travel statistics to monitor environmental impact.</li>
       <li xml:lang="es">Estadísticas de viaje personales para monitorizar el impacto ambiental.</li>
       <li xml:lang="et">Isiklik reisistatistika oma ökoloogilise jalajälje selgitamiseks.</li>
@@ -450,7 +450,7 @@
     </ul>
     <p>KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.</p>
     <p xml:lang="ca">El KDE Itinerary funciona millor amb el connector d'extracció d'itineraris del KMail i el KDE Connect, o el Nextcloud Hub i el DavDroid.</p>
-    <p xml:lang="ca-valencia">KDE Itinerary funciona millor amb el connector d'extracció d'itineraris de KMail i KDE Connect, o el Nextcloud Hub i el DavDroid.</p>
+    <p xml:lang="ca-valencia">KDE Itinerary funciona millor amb el conector d'extracció d'itineraris de KMail i KDE Connect, o el Nextcloud Hub i el DavDroid.</p>
     <p xml:lang="en-GB">KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.</p>
     <p xml:lang="es">KDE Itinerary funciona mejor con el complemento de extracción de itinerarios de KMail y con KDE Connect, o con Nextcloud Hub y DavDroid.</p>
     <p xml:lang="et">KDE Itineraar töötab kõige paremini koos KMaili reisikava hankimise plugina ja KDE Connectiga või ka Nextcloudi ja DavDroidiga.</p>
@@ -620,7 +620,7 @@
     <screenshot>
       <caption>Travel statistics view</caption>
       <caption xml:lang="ca">Vista de les estadístiques dels viatges</caption>
-      <caption xml:lang="ca-valencia">Vista de les estadístiques dels viatges</caption>
+      <caption xml:lang="ca-valencia">Vista de les estadístiques dels viages</caption>
       <caption xml:lang="cs">Pohled na statistiky cestování</caption>
       <caption xml:lang="en-GB">Travel statistics view</caption>
       <caption xml:lang="es">Vista de estadísticas de viajes</caption>
