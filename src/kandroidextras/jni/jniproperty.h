@@ -112,6 +112,14 @@ public:
         this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), Jni::reverse_converter<PropType>::type::convert(value).object());
         return *this;
     }
+
+    // special case for string comparison, which is often done against different types and thus the implicit conversion operator
+    // isn't going to be enough
+    template <typename CmpT, typename = std::enable_if_t<std::is_same_v<PropType, java::lang::String>, CmpT>>
+    inline bool operator==(const CmpT &other) const
+    {
+        return QString(*this) == other;
+    }
 };
 
 template <typename PropType, typename ClassType, typename NameHolder, typename OffsetHolder>
