@@ -7,6 +7,6 @@
 #ifndef CONFIG_WEATHER_H
 #define CONFIG_WEATHER_H
 
-#cmakedefine HAVE_KHOLIDAYS
+#cmakedefine01 HAVE_KHOLIDAYS
 
 #endif

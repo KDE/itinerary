@@ -8,7 +8,7 @@
 #include "weatherforecast.h"
 #include "weathertile.h"
 
-#ifdef HAVE_KHOLIDAYS
+#if HAVE_KHOLIDAYS
 #include <KHolidays/SunRiseSet>
 #endif
 
@@ -124,7 +124,7 @@ static const icon_map_t icon_map[] = {
 
 bool WeatherForecastPrivate::useDayTimeIcon() const
 {
-#ifdef HAVE_KHOLIDAYS
+#if HAVE_KHOLIDAYS
     if (m_range >= 24) {
         return true;
     }
