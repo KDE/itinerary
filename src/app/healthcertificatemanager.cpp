@@ -174,7 +174,7 @@ void HealthCertificateManager::loadCertificates()
     endResetModel();
 }
 
-QByteArray HealthCertificateManager::certificateRawData(const CertData &certData) const
+QByteArray HealthCertificateManager::certificateRawData([[maybe_unused]] const CertData &certData) const
 {
 #if HAVE_KHEALTHCERTIFICATE
     if (certData.cert.userType() == qMetaTypeId<KVaccinationCertificate>()) {
