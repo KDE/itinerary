@@ -8,7 +8,7 @@
 #include "networkstatus.h"
 #include "portalnetworkmonitor.h"
 
-#ifdef HAVE_NM
+#if HAVE_NM
 #include <NetworkManagerQt/Manager>
 #endif
 
@@ -92,7 +92,7 @@ NetworkStatus::NetworkStatus(QObject *parent)
     connect(PortalNetworkMonitor::instance(), &PortalNetworkMonitor::connectivityChanged, this, &NetworkStatus::connectivityChanged);
     connect(PortalNetworkMonitor::instance(), &PortalNetworkMonitor::meteredChanged, this, &NetworkStatus::meteredChanged);
 
-#ifdef HAVE_NM
+#if HAVE_NM
     if (!PortalNetworkMonitor::hasPortal()) {
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &NetworkStatus::connectivityChanged);
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::meteredChanged, this, &NetworkStatus::meteredChanged);
@@ -105,7 +105,7 @@ NetworkStatus::State NetworkStatus::connectivity() const
     if (PortalNetworkMonitor::hasPortal()) {
         return PortalNetworkMonitor::connectivity();
     }
-#ifdef HAVE_NM
+#if HAVE_NM
     switch (NetworkManager::connectivity()) {
         case NetworkManager::UnknownConnectivity:
             return Unknown;
@@ -126,7 +126,7 @@ NetworkStatus::State NetworkStatus::metered() const
     if (PortalNetworkMonitor::hasPortal()) {
         return PortalNetworkMonitor::metered();
     }
-#ifdef HAVE_NM
+#if HAVE_NM
     switch (NetworkManager::metered()) {
         case NetworkManager::Device::UnknownStatus:
             return Unknown;

@@ -7,6 +7,6 @@
 #ifndef CONFIG_SOLID_EXTRAS_H
 #define CONFIG_SOLID_EXTRAS_H
 
-#cmakedefine HAVE_NM
+#cmakedefine01 HAVE_NM
 
 #endif
