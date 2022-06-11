@@ -33,7 +33,7 @@ generate_export_header(SolidExtras BASE_NAME SolidExtras)
 if (TARGET KF5::NetworkManagerQt)
     set(HAVE_NM ON)
 endif()
-configure_file(config-solid-extras.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-solid-extras.h)
+configure_file(config-solid-extras.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-solid-extras.h)
 
 target_include_directories(SolidExtras PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>")
 target_link_libraries(SolidExtras PUBLIC Qt::Core)
