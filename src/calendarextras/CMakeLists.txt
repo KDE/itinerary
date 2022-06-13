@@ -1,7 +1,11 @@
 # SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
-add_library(KCalendarCoreExtras)
+if (ANDROID)
+    add_library(KCalendarCoreExtras)
+else()
+    add_library(KCalendarCoreExtras STATIC)
+endif()
 generate_export_header(KCalendarCoreExtras BASE_NAME KCalendarCoreExtras)
 
 target_sources(KCalendarCoreExtras PRIVATE
@@ -21,4 +25,6 @@ endif()
 
 target_link_libraries(KCalendarCoreExtras PUBLIC KF5::CalendarCore)
 
-install(TARGETS KCalendarCoreExtras ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+if (ANDROID)
+    install(TARGETS KCalendarCoreExtras ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+endif()
