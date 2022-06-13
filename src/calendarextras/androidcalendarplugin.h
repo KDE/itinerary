@@ -20,7 +20,9 @@ public:
     QVector<KCalendarCore::Calendar::Ptr> calendars() const override;
 
 private:
-    QVector<KCalendarCore::Calendar::Ptr> m_calendars;
+    void loadCalendars() const;
+
+    mutable QVector<KCalendarCore::Calendar::Ptr> m_calendars;
     JniCalendarPlugin m_jni;
 };
 

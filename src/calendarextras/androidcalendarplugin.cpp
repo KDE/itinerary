@@ -28,6 +28,21 @@ AndroidCalendarPlugin::AndroidCalendarPlugin(QObject *parent, const QVariantList
     , m_jni(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())))
 #endif
 {
+}
+
+AndroidCalendarPlugin::~AndroidCalendarPlugin() = default;
+
+QVector<KCalendarCore::Calendar::Ptr> AndroidCalendarPlugin::calendars() const
+{
+    if (m_calendars.isEmpty()) {
+        loadCalendars();
+    }
+
+    return m_calendars;
+}
+
+void AndroidCalendarPlugin::loadCalendars() const
+{
     const Jni::Array<JniCalendarData> cals = m_jni.getCalendars();
     for (const JniCalendarData &calData : cals) {
         auto *cal = new AndroidCalendar(QTimeZone(QString(calData.timezone).toUtf8()), calData.id);
@@ -45,11 +60,4 @@ AndroidCalendarPlugin::AndroidCalendarPlugin(QObject *parent, const QVariantList
 
         m_calendars.push_back(KCalendarCore::Calendar::Ptr(cal));
     }
-}
-
-AndroidCalendarPlugin::~AndroidCalendarPlugin() = default;
-
-QVector<KCalendarCore::Calendar::Ptr> AndroidCalendarPlugin::calendars() const
-{
-    return m_calendars;
 }
