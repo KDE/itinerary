@@ -56,7 +56,7 @@ Icon=org.kde.itinerary
 Type=Application
 Comment=Travel assistance application.
 Comment[ca]=Aplicació per a l'assistència en viatge.
-Comment[ca@valencia]=Aplicació per a l'assistència en viage.
+Comment[ca@valencia]=Aplicació per a l'assistència en viatge.
 Comment[cs]=Pomocník při cestování.
 Comment[de]=Anwendung zur Unterstützung bei Reisen.
 Comment[en_GB]=Travel assistance application.
@@ -90,7 +90,7 @@ Actions=currentTicket;statistics;healthCert;
 [Desktop Action currentTicket]
 Name=Current Ticket
 Name[ca]=Bitllet actual
-Name[ca@valencia]=Billet actual
+Name[ca@valencia]=Bitllet actual
 Name[de]=Aktueller Fahrschein
 Name[en_GB]=Current Ticket
 Name[es]=Billete actual
