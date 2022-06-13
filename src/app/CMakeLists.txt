@@ -91,6 +91,7 @@ target_sources(itinerary-app PRIVATE
     mapdownloadmanager.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
+    permissionmanager.cpp
     settings.cpp
     tickettokenmodel.cpp
     transferdelegatecontroller.cpp

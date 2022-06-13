@@ -27,6 +27,7 @@
 #include "passmanager.h"
 #include "pkpassmanager.h"
 #include "timelinemodel.h"
+#include "permissionmanager.h"
 #include "pkpassimageprovider.h"
 #include "publictransport.h"
 #include "reservationmanager.h"
@@ -122,12 +123,15 @@ void registerApplicationTypes()
     qRegisterMetaType<Transfer::Alignment>();
     qRegisterMetaType<TripGroupManager*>();
     qRegisterMetaType<WeatherForecast>();
+    qRegisterMetaType<Permission::Permission>();
 
     qmlRegisterUncreatableType<LocationInformation>("org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
     qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
     qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
+
+    qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
 
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
@@ -196,6 +200,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(Localizer)
     REGISTER_SINGLETON_GADGET_FACTORY(NavigationController)
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
+    REGISTER_SINGLETON_GADGET_FACTORY(PermissionManager)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
 }
