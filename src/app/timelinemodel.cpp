@@ -247,6 +247,12 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
             break;
         case StartDateTimeRole:
             return elem.dt;
+        case EndDateTimeRole:
+            return elem.endDateTime();
+        case IsTimeboxedRole:
+            return elem.isTimeBoxed();
+        case IsCanceledRole:
+            return elem.isCanceled();
     }
     return {};
 }

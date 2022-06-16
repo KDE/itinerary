@@ -42,18 +42,26 @@ Kirigami.ScrollablePage {
                         row = listView.indexAt(0, i);
                     }
                     const idx = listView.model.index(row, 0);
-                    var dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+
+                    const HOUR = 60 * 60 * 1000;
+                    var roundInterval = HOUR;
+                    var dt;
+                    if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+                        dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
+                        roundInterval = 5 * 60 * 1000;
+                    } else {
+                        dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+                    }
 
                     // clamp to future times and round to the next plausible hour
                     const now = new Date();
                     if (!dt || dt.getTime() < now.getTime()) {
                         dt = now;
                     }
-                    const HOUR = 60 * 60 * 1000;
                     if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
                         dt.setTime(dt.getTime() + HOUR * 8);
                     } else {
-                        dt.setTime(dt.getTime() + HOUR - (dt.getTime() % HOUR));
+                        dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
                     }
 
                     // determine where we are at that time

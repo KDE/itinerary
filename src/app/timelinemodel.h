@@ -40,6 +40,9 @@ public:
         TripGroupRole,
         TransferRole,
         StartDateTimeRole,
+        EndDateTimeRole,
+        IsTimeboxedRole,
+        IsCanceledRole,
     };
     Q_ENUM(Role)
 
