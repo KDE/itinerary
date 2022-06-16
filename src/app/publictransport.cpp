@@ -9,6 +9,7 @@
 #include "logging.h"
 
 #include <KItinerary/BusTrip>
+#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 #include <KItinerary/Ticket>
@@ -254,14 +255,25 @@ static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation
     return res;
 }
 
+static QVariant postProcessOne(const QVariant &res)
+{
+    KItinerary::ExtractorPostprocessor postProc;
+    postProc.process({res});
+    const auto result = postProc.result();
+    if (result.size() == 1) {
+        return result.at(0);
+    }
+    return res;
+}
+
 QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::JourneySection &section)
 {
     using namespace KItinerary;
     if (isTrainMode(section.route().line().mode())) {
-        return ::applyJourneySection(TrainReservation(), section);
+        return postProcessOne(::applyJourneySection(TrainReservation(), section));
     }
     if (isBusMode(section.route().line().mode())) {
-        return ::applyJourneySection(BusReservation(), section);
+        return postProcessOne(::applyJourneySection(BusReservation(), section));
     }
 
     qCWarning(Log) << "Unsupported section type:" << section.route().line().mode();
@@ -273,10 +285,10 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     using namespace KItinerary;
 
     if (JsonLd::isA<TrainReservation>(res)) {
-        return ::applyJourneySection(res.value<TrainReservation>(), section);
+        return postProcessOne(::applyJourneySection(res.value<TrainReservation>(), section));
     }
     if (JsonLd::isA<BusReservation>(res)) {
-        return ::applyJourneySection(res.value<BusReservation>(), section);
+        return postProcessOne(::applyJourneySection(res.value<BusReservation>(), section));
     }
 
     qCWarning(Log) << res.typeName() << "Unsupported section type!";

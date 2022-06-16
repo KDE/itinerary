@@ -16,6 +16,7 @@
 
 #include <QtTest/qtest.h>
 #include <QStandardPaths>
+#include <QTimeZone>
 
 using namespace KItinerary;
 
@@ -25,7 +26,7 @@ class PublicTransportTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        qputenv("TZ", "UTC");
+        qputenv("TZ", "Europe/Zurich");
         QStandardPaths::setTestModeEnabled(true);
     }
 
@@ -80,6 +81,10 @@ private Q_SLOTS:
         QCOMPARE(newTrip.departureTime(), section.scheduledDepartureTime());
         QCOMPARE(newTrip.arrivalTime(), section.scheduledArrivalTime());
 
+        // times have correct timezones now (while input was in local time)
+        QCOMPARE(newTrip.departureTime().timeSpec(), Qt::TimeZone);
+        QCOMPARE(newTrip.departureTime().timeZone().id(), "Europe/Zurich");
+
         // old line name parts need to be cleared
         QCOMPARE(newTrip.trainName(), QString());
         QCOMPARE(newTrip.trainNumber(), QLatin1String("R 342"));
@@ -97,6 +102,9 @@ private Q_SLOTS:
         const auto newArr = newTrip.arrivalStation();
         QCOMPARE(newArr.name(), section.to().name());
         QVERIFY(!newArr.geo().isValid());
+
+        // locations got country data assigned
+        QCOMPARE(newDep.address().addressCountry(), QLatin1String("CH"));
 
         // ticket token is preserved, but seat reservation is cleared
         const auto newTicket = newRes.reservedTicket().value<Ticket>();
