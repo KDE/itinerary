@@ -13,8 +13,10 @@
 /** Android system calendar plugin. */
 class AndroidCalendarPlugin : public KCalendarCore::CalendarPlugin
 {
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.kcalendarcore.CalendarPlugin")
 public:
-    explicit AndroidCalendarPlugin (QObject *parent, const QVariantList &args);
+    explicit AndroidCalendarPlugin (QObject *parent = nullptr, const QVariantList &args = {});
     ~AndroidCalendarPlugin();
 
     QVector<KCalendarCore::Calendar::Ptr> calendars() const override;

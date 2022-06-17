@@ -11,6 +11,7 @@ generate_export_header(KCalendarCoreExtras BASE_NAME KCalendarCoreExtras)
 target_sources(KCalendarCoreExtras PRIVATE
     calendarlistmodel.cpp
     calendarpluginloader.cpp
+    integration.cpp
 )
 
 if (ANDROID)
@@ -20,6 +21,7 @@ if (ANDROID)
         androidcalendarplugin.cpp
         androidicalconverter.cpp
     )
+    target_compile_definitions(KCalendarCoreExtras PRIVATE -DQT_STATICPLUGIN)
     target_link_libraries(KCalendarCoreExtras PRIVATE KAndroidExtras LibIcal)
 endif()
 

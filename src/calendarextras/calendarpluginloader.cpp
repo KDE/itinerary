@@ -5,10 +5,6 @@
 
 #include "calendarpluginloader.h"
 
-#ifdef Q_OS_ANDROID
-#include "androidcalendarplugin.h"
-#endif
-
 #include <QCoreApplication>
 #include <QDirIterator>
 #include <QPluginLoader>
@@ -22,9 +18,18 @@ struct PluginLoader {
 
 PluginLoader::PluginLoader()
 {
-#ifdef Q_OS_ANDROID
-    plugin.reset(new AndroidCalendarPlugin(nullptr, {}));
-#else
+    // static plugins
+    const auto staticPluginData = QPluginLoader::staticPlugins();
+    for (const auto &data : staticPluginData) {
+        if (data.metaData().value(QLatin1String("IID")).toString() == QLatin1String("org.kde.kcalendarcore.CalendarPlugin")) {
+            plugin.reset(qobject_cast<KCalendarCore::CalendarPlugin*>(data.instance()));
+        }
+        if (plugin) {
+            return;
+        }
+    }
+
+    // dynamic plugins
     QStringList searchPaths(QCoreApplication::applicationDirPath());
     searchPaths += QCoreApplication::libraryPaths();
 
@@ -40,7 +45,6 @@ PluginLoader::PluginLoader()
             }
         }
     }
-#endif
 }
 
 Q_GLOBAL_STATIC(PluginLoader, s_pluginLoader)
