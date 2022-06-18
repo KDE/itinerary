@@ -86,9 +86,9 @@ private Q_SLOTS:
         ldm.m_unitTestTime = QDateTime({2017, 9, 10}, {12, 0}, QTimeZone("Europe/Zurich")); // that's in the middle of the first train leg
         ldm.setReservationManager(&resMgr);
 
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&resMgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(resMgr.batches().size(), 11);
 
         const auto flight = resMgr.batches()[0];

@@ -49,9 +49,9 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         Test::clearAll(&mgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineModel model;
         model.setCurrentDateTime(QDateTime({2021, 3, 7}, {8, 0}));
@@ -91,10 +91,10 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         Test::clearAll(&mgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
         // test data puts our known location to DE-BY and then adds a hotel in DE-BE for the BY-only public holiday on 2022-06-16
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/bug455083.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/bug455083.json")));
 
         TimelineModel model;
         model.setCurrentDateTime(QDateTime({2022, 6, 14}, {8, 0}));

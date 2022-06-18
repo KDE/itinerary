@@ -45,11 +45,11 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&resMgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);
@@ -101,9 +101,9 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&resMgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TripGroupManager groupMgr;
         QSignalSpy addSpy(&groupMgr, &TripGroupManager::tripGroupAdded);

@@ -7,7 +7,9 @@
 #ifndef TESTHELPER_H
 #define TESTHELPER_H
 
+#include <applicationcontroller.h>
 #include <documentmanager.h>
+#include <healthcertificatemanager.h>
 #include <passmanager.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
@@ -60,6 +62,20 @@ inline void clearAll(PassManager *passMgr)
         passMgr->removeRow(0);
     }
     Q_ASSERT(passMgr->rowCount() == 0);
+}
+
+/** Fully set up application controller. */
+inline std::unique_ptr<ApplicationController> makeAppController()
+{
+    std::unique_ptr<ApplicationController> ctrl(new ApplicationController);
+
+    auto healthMgr = new HealthCertificateManager(ctrl.get());
+    ctrl->setHealthCertificateManager(healthMgr);
+
+    auto passMgr = new PassManager(ctrl.get());
+    clearAll(passMgr);
+    ctrl->setPassManager(passMgr);
+    return ctrl;
 }
 
 }

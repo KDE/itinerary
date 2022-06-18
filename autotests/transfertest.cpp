@@ -35,8 +35,8 @@ private Q_SLOTS:
     {
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
 
         TripGroupManager::clear();
         TripGroupManager tgMgr;
@@ -66,7 +66,7 @@ private Q_SLOTS:
         QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
         QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
 
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
 //         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
 

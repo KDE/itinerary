@@ -163,9 +163,9 @@ private Q_SLOTS:
         ReservationManager mgr;
         Test::clearAll(&mgr);
         LiveDataManager ldm;
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -205,9 +205,9 @@ private Q_SLOTS:
         LiveData::clearStorage();
         LiveDataManager ldm;
         ldm.setReservationManager(&mgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -247,9 +247,9 @@ private Q_SLOTS:
     {
         ReservationManager mgr;
         Test::clearAll(&mgr);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -266,9 +266,9 @@ private Q_SLOTS:
         LiveDataManager ldm;
         ldm.setReservationManager(&mgr);
         TransferManager trfMgr;
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&mgr);
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);

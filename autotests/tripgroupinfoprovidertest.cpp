@@ -38,10 +38,10 @@ private Q_SLOTS:
         mgr.setReservationManager(&resMgr);
         WeatherForecastManager fcMgr;
         fcMgr.setTestModeEnabled(true);
-        ApplicationController ctrl;
-        ctrl.setReservationManager(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
 
-        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(mgr.tripGroups().size(), 1);
 
         TripGroupInfoProvider provider;

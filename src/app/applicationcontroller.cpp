@@ -396,13 +396,12 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
         }
     }
 
+    bool success = false;
     using namespace KItinerary;
     ExtractorEngine engine;
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 19, 41)
     // user opened the file, so we can be reasonably sure they assume it contains
     // relevant content, so try expensive extraction methods too
     engine.setHints(ExtractorEngine::ExtractFullPageRasterImages);
-#endif
     engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     engine.setData(data, fileName);
     const auto extractorResult = JsonLdDocument::fromJson(engine.extract());
@@ -431,25 +430,27 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
         importNode(engine.rootDocumentNode());
 
         Q_EMIT infoMessage(i18np("One reservation imported.", "%1 reservations imported.", resIds.size()));
-        return true;
+        success = true;
     }
 
     // look for time-less passes/program memberships/etc
-    if (m_passMgr->import(extractorResult) || importGenericPkPass(engine.rootDocumentNode())) {
+    if (m_passMgr->import(extractorResult) || (resIds.isEmpty() && importGenericPkPass(engine.rootDocumentNode()))) {
         Q_EMIT infoMessage(i18n("Pass imported."));
-        return true;
+        success = true;
     }
 
     // look for health certificate barcodes instead
     // if we don't find anything, try to import as health certificate directly
     if (importHealthCertificateRecursive(engine.rootDocumentNode()) || m_healthCertMgr->importCertificate(data)) {
         Q_EMIT infoMessage(i18n("Health certificate imported."));
-        return true;
+        success = true;
     }
 
     // nothing found
-    Q_EMIT infoMessage(i18n("Nothing imported."));
-    return false;
+    if (!success) {
+        Q_EMIT infoMessage(i18n("Nothing imported."));
+    }
+    return success;
 }
 
 bool ApplicationController::importText(const QString& text)
