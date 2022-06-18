@@ -883,13 +883,28 @@ QVariant TimelineModel::locationAtTime(const QDateTime& dt) const
         return {};
     }
 
-    for (--it; it != m_elements.begin(); --it) {
-        if (!(*it).isReservation() || !(*it).isLocationChange()) {
-            continue;
+    for (--it ;; --it) {
+        // this is a still ongoing non-location change
+        if (it != m_elements.end() && !(*it).isLocationChange() && (*it).endDateTime().isValid() && (*it).endDateTime() > dt) {
+            if ((*it).isReservation()) {
+                auto loc = LocationUtil::location(m_resMgr->reservation((*it).batchId()));
+                if (LocationUtil::geo(loc).isValid() || !LocationUtil::address(loc).addressCountry().isEmpty()) {
+                    return loc;
+                }
+            }
         }
-        const auto res = m_resMgr->reservation((*it).batchId());
-        return LocationUtil::arrivalLocation(res);
+
+        if ((*it).isReservation() && (*it).isLocationChange()) {
+            // TODO make this work for transfers too
+            const auto res = m_resMgr->reservation((*it).batchId());
+            return LocationUtil::arrivalLocation(res);
+        }
+
+        if (it == m_elements.begin()) {
+            break;
+        }
     }
+
     return {};
 }
 

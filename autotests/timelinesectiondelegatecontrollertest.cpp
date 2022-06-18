@@ -16,6 +16,7 @@
 #include <QtTest/qtest.h>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTimeZone>
 
 using namespace KItinerary;
 
@@ -84,6 +85,27 @@ private Q_SLOTS:
         QCOMPARE(controller.isToday(), false);
         QCOMPARE(controller.subTitle(), QLatin1String("Neujahr"));
         QCOMPARE(controller.isHoliday(), true);
+    }
+
+    void testBug455083()
+    {
+        ReservationManager mgr;
+        Test::clearAll(&mgr);
+        ApplicationController ctrl;
+        ctrl.setReservationManager(&mgr);
+        // test data puts our known location to DE-BY and then adds a hotel in DE-BE for the BY-only public holiday on 2022-06-16
+        ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/bug455083.json")));
+
+        TimelineModel model;
+        model.setCurrentDateTime(QDateTime({2022, 6, 14}, {8, 0}));
+        model.setReservationManager(&mgr);
+
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 12}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BY"));
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 13}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BY"));
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 14}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BE"));
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 16}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BE"));
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 17}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BY"));
+        QCOMPARE(LocationHelper::regionCode(model.locationAtTime(QDateTime({2022, 6, 18}, {0, 0}, QTimeZone("Europe/Berlin")))), QLatin1String("DE-BY"));
     }
 };
 
