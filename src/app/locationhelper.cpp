@@ -37,19 +37,21 @@ QString LocationHelper::regionCode(const QVariant &loc)
     const auto addr = LocationUtil::address(loc);
     const auto coord = LocationUtil::geo(loc);
 
-    if ((addr.addressRegion().isEmpty() || addr.addressCountry().isEmpty()) && coord.isValid()) {
+    QString code = addr.addressCountry();
+    if (!code.isEmpty() && !addr.addressRegion().isEmpty()) {
+        code += QLatin1Char('-') + addr.addressRegion();
+        if (KCountrySubdivision::fromCode(code).isValid()) {
+            return code;
+        }
+    }
+
+    // prefer coordinate lookup over explicitly specified values if those don't result in a valid machine-readable code
+    if (coord.isValid()) {
         const auto cs = KCountrySubdivision::fromLocation(coord.latitude(), coord.longitude());
         if (cs.isValid()) {
             return cs.code();
         }
     }
 
-    if (addr.addressCountry().isEmpty()) {
-        return {};
-    }
-
-    if (addr.addressRegion().isEmpty()) {
-        return addr.addressCountry();
-    }
-    return addr.addressCountry() + QLatin1Char('-') + addr.addressRegion();
+    return code;
 }
