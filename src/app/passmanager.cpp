@@ -9,6 +9,7 @@
 
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/MergeUtil>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Ticket>
 
@@ -86,21 +87,24 @@ int PassManager::rowCount(const QModelIndex &parent) const
 
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
+    // check if this is an element we already have
+    for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
+        if ((!id.isEmpty() && (*it).id == id) || MergeUtil::isSame((*it).data, pass)) {
+            (*it).data = MergeUtil::merge((*it).data, pass);
+            write((*it).data, (*it).id);
+            const auto idx = index(std::distance(m_entries.begin(), it), 0);
+            Q_EMIT dataChanged(idx, idx);
+            return true;
+        }
+    }
+
     if (JsonLd::isA<KItinerary::ProgramMembership>(pass) || JsonLd::isA<GenericPkPass>(pass) || JsonLd::isA<KItinerary::Ticket>(pass)) {
         Entry entry;
         entry.id = id.isEmpty() ? QUuid::createUuid().toString() : id;
         entry.data = pass;
-
-        auto path = basePath();
-        QDir().mkpath(path);
-        path += entry.id;
-        QFile f(path);
-        if (!f.open(QFile::WriteOnly)) {
-            qCWarning(Log) << "Failed to open file:" << f.fileName() << f.errorString();
+        if (!write(entry.data, entry.id)) {
             return false;
         }
-        f.write(QJsonDocument(JsonLdDocument::toJson(entry.data)).toJson());
-        f.close();
 
         const auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry, PassComparator(m_baseTime));
         if (it != m_entries.end() && (*it).id == entry.id) {
@@ -236,6 +240,20 @@ void PassManager::load()
         m_entries.push_back(std::move(entry));
     }
     std::sort(m_entries.begin(), m_entries.end(), PassComparator(m_baseTime));
+}
+
+bool PassManager::write(const QVariant &data, const QString &id) const
+{
+    auto path = basePath();
+    QDir().mkpath(path);
+    path += id;
+    QFile f(path);
+    if (!f.open(QFile::WriteOnly)) {
+        qCWarning(Log) << "Failed to open file:" << f.fileName() << f.errorString();
+        return false;
+    }
+    f.write(QJsonDocument(JsonLdDocument::toJson(data)).toJson());
+    return true;
 }
 
 QByteArray PassManager::rawData(const Entry &entry) const

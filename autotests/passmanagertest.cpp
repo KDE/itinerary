@@ -41,6 +41,8 @@ private Q_SLOTS:
         // test import
         QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
         QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())));
+        // duplicates get merged
+        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())));
         QCOMPARE(mgr.rowCount(), 2);
 
         // retrieval
@@ -69,8 +71,11 @@ private Q_SLOTS:
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2022, 5, 31}, {23, 59, 59}));
         QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId2).isNull());
+
         mgr.remove(passId2);
         QCOMPARE(mgr.rowCount(), 1);
+
+
 
         {
             // test persistence

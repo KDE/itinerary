@@ -75,6 +75,7 @@ private:
     };
 
     void load();
+    bool write(const QVariant &data, const QString &id) const;
     QByteArray rawData(const Entry &entry) const;
 
     static QString basePath();
