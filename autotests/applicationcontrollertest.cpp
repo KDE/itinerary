@@ -43,10 +43,10 @@ private Q_SLOTS:
 
     void testImportData()
     {
-        PkPassManager passMgr;
-        Test::clearAll(&passMgr);
-        QSignalSpy passSpy(&passMgr, &PkPassManager::passAdded);
-        QVERIFY(passSpy.isValid());
+        PkPassManager pkPassMgr;
+        Test::clearAll(&pkPassMgr);
+        QSignalSpy pkPassSpy(&pkPassMgr, &PkPassManager::passAdded);
+        QVERIFY(pkPassSpy.isValid());
 
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
@@ -57,34 +57,44 @@ private Q_SLOTS:
         Test::clearAll(&docMgr);
 
         HealthCertificateManager healthCertMgr;
+        PassManager passMgr;
+        Test::clearAll(&passMgr);
 
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
-        appController.setPkPassManager(&passMgr);
+        appController.setPkPassManager(&pkPassMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
         appController.setHealthCertificateManager(&healthCertMgr);
+        appController.setPassManager(&passMgr);
 
         appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
-        QCOMPARE(passSpy.size(), 0);
+        QCOMPARE(pkPassSpy.size(), 0);
         QCOMPARE(infoSpy.size(), 1);
         appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(resSpy.size(), 2);
-        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
         appController.importData("M1DOE/JOHN            EXXX007 TXLBRUSN 2592 110Y");
         QCOMPARE(resSpy.size(), 3);
-        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
         appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
         if (!hasZxing()) {
             QSKIP("Built without ZXing");
         }
         QCOMPARE(resSpy.size(), 4);
-        QCOMPARE(passSpy.size(), 1);
+        QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 4);
         QCOMPARE(docMgr.documents().size(), 1);
+
+        // combined reservation/ticket data
+        appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/mixed-reservation-ticket.json")));
+        QCOMPARE(resSpy.size(), 5);
+        QEXPECT_FAIL("", "hybrid import not implemented yet", Abort);
+        QCOMPARE(passMgr.rowCount(), 1);
+        QCOMPARE(infoSpy.size(), 6);
     }
 
     void testImportFile()

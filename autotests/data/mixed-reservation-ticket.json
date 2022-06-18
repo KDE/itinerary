@@ -1,0 +1,33 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "Ticket",
+        "name": "VVT: Einzel-Ticket",
+        "ticketNumber": "123456",
+        "ticketToken": "aztec:ticket_token1",
+        "validFrom": "2022-02-20T11:00:00Z",
+        "validUntil": "2022-02-20T16:00:00Z"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "name": "MUENCHEN HBF"
+            },
+            "departureDay": "2022-02-20",
+            "departureStation": {
+                "@type": "TrainStation",
+                "name": "WIEN HBF"
+            }
+        },
+        "reservationNumber": "YYY008",
+        "reservationStatus": "http://schema.org/ReservationConfirmed",
+        "reservedTicket": {
+            "@type": "Ticket",
+            "ticketToken": "aztec:ticket_token2"
+        }
+    }
+]
