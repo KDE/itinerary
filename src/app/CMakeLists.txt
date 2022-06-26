@@ -7,6 +7,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.cmake ${
 add_library(itinerary STATIC)
 target_sources(itinerary PRIVATE
     applicationcontroller.cpp
+    calendarimportmodel.cpp
     documentmanager.cpp
     favoritelocationmodel.cpp
     filehelper.cpp

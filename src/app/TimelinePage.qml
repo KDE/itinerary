@@ -10,6 +10,7 @@ import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -81,6 +82,17 @@ Kirigami.ScrollablePage {
                         departureStop: departureLocation
                     });
                 }
+            },
+            Kirigami.Action {
+                iconName: "view-calendar-day"
+                text: i18n("Add from calendar...")
+                onTriggered: PermissionManager.requestPermission(Permission.ReadCalendar, function() {
+                    if (!calendarSelectorListView.model) {
+                        calendarSelectorListView.model = calendarModel.createObject(root);
+                    }
+                    calendarSelector.open();
+                })
+                visible: KCalendarCore.CalendarPluginLoader.hasPlugin
             }
         ]
     }
@@ -116,6 +128,31 @@ Kirigami.ScrollablePage {
         folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
+    }
+
+    Component {
+        id: calendarModel
+        // needs to be created on demand, after we have calendar access permissions
+        KCalendarCore.CalendarListModel {}
+    }
+    Component {
+        id: calendarImportPage
+        App.CalendarImportPage {}
+    }
+    Kirigami.OverlaySheet {
+        id: calendarSelector
+        title: i18n("Select Calendar")
+
+        ListView {
+            id: calendarSelectorListView
+            delegate: Kirigami.BasicListItem {
+                text: model.name
+                onClicked: {
+                    applicationWindow().pageStack.push(calendarImportPage, {calendar: model.calendar});
+                    calendarSelector.close();
+                }
+            }
+        }
     }
 
     Component {

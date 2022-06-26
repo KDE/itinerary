@@ -48,6 +48,7 @@ public:
      *  ids that previously existed, in case the extracted elements could be merged.
      */
     QVector<QString> importReservations(const QVector<QVariant> &resData);
+    Q_INVOKABLE void importReservation(const QVariant &resData);
 
     const std::vector<QString>& batches() const;
     bool hasBatch(const QString &batchId) const;

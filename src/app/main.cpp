@@ -9,6 +9,7 @@
 #include "logging.h"
 
 #include "applicationcontroller.h"
+#include "calendarimportmodel.h"
 #include "countrysubdivisionmodel.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
@@ -146,6 +147,7 @@ void registerApplicationTypes()
 
     qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
 
+    qmlRegisterType<CalendarImportModel>("org.kde.itinerary", 1, 0, "CalendarImportModel");
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterType<LocationInformationDelegateController>("org.kde.itinerary", 1, 0, "LocationInformationDelegateController");

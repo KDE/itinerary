@@ -240,6 +240,11 @@ QString ReservationManager::addReservation(const QVariant &res)
     return resId;
 }
 
+void ReservationManager::importReservation(const QVariant &resData)
+{
+    importReservations({resData});
+}
+
 void ReservationManager::updateReservation(const QString &resId, const QVariant &res)
 {
     const auto oldRes = reservation(resId);

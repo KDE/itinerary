@@ -1,0 +1,95 @@
+BEGIN:VCALENDAR
+PRODID:-//K Desktop Environment//NONSGML libkcal 4.3//EN
+VERSION:2.0
+X-KDE-ICAL-IMPLEMENTATION-VERSION:1.0
+BEGIN:VEVENT
+DTSTAMP:20220626T094245Z
+X-KDE-KITINERARY-RESERVATION:[{"@context":"http://schema.org"\,"@type":
+ "FoodEstablishmentReservation"\,"endTime":{"@type":"QDateTime"\,"@value":
+ "2017-09-14T22:00:00+02:00"\,"timezone":"Europe/Zurich"}\,"modifiedTime":
+ "2017-06-22T00:00:00"\,"partySize":20\,"reservationFor":{"@type":
+ "FoodEstablishment"\,"address":{"@type":"PostalAddress"\,"addressCountry":
+ "CH"\,"addressLocality":"Randa"\,"addressRegion":"Wallis"\,"postalCode":
+ "3928"\,"streetAddress":"Haus Maria am Weg"}\,"geo":{"@type":
+ "GeoCoordinates"\,"latitude":46.099029541015625\,"longitude":
+ 7.783259868621826}\,"name":"Raclette"}\,"reservationStatus":"http:
+ //schema.org/ReservationConfirmed"\,"startTime":{"@type":
+ "QDateTime"\,"@value":"2017-09-14T19:00:00+02:00"\,"timezone":
+ "Europe/Zurich"}}]
+CREATED:20220626T094245Z
+UID:KIT-64bdd76e-dd7c-4afd-8f53-660427b2f3f5
+LAST-MODIFIED:20220626T094245Z
+DESCRIPTION:Number of people: 20
+SUMMARY:Restaurant reservation: Raclette
+LOCATION:Haus Maria am Weg\, 3928 Randa\, Switzerland
+DTSTART;TZID=Europe/Zurich:20170914T190000
+DTEND;TZID=Europe/Zurich:20170914T220000
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220626T094245Z
+X-KDE-KITINERARY-RESERVATION:[{"@context":"http://schema.org"\,"@type":
+ "TrainReservation"\,"modifiedTime":"2017-06-22T00:00:
+ 00"\,"reservationFor":{"@type":"TrainTrip"\,"arrivalStation":{"@type":
+ "TrainStation"\,"address":{"@type":"PostalAddress"\,"addressCountry":
+ "CH"}\,"geo":{"@type":"GeoCoordinates"\,"latitude":
+ 46.09989929199219\,"longitude":7.781469821929932}\,"identifier":"ibnr:
+ 8501687"\,"name":"Randa"}\,"arrivalTime":{"@type":"QDateTime"\,"@value":
+ "2017-09-10T14:53:00+02:00"\,"timezone":"Europe/Zurich"}\,"departureDay":
+ "2017-09-10"\,"departurePlatform":"3"\,"departureStation":{"@type":
+ "TrainStation"\,"address":{"@type":"PostalAddress"\,"addressCountry":
+ "CH"}\,"geo":{"@type":"GeoCoordinates"\,"latitude":
+ 46.29399871826172\,"longitude":7.881460189819336}\,"identifier":"ibnr:
+ 8501605"\,"name":"Visp"}\,"departureTime":{"@type":"QDateTime"\,"@value":
+ "2017-09-10T14:08:00+02:00"\,"timezone":"Europe/Zurich"}\,"provider":
+ {"@type":"Organization"\,"name":"SBB"}\,"trainName":"R"\,"trainNumber":
+ "241"}\,"reservationStatus":"http://schema.org/ReservationConfirmed"}]
+CREATED:20220626T094245Z
+UID:KIT-0757766c-1235-4dba-a1b4-3243651f0ef3
+LAST-MODIFIED:20220626T094245Z
+DESCRIPTION:Departure platform: 3
+SUMMARY:Train 241 from Visp to Randa
+LOCATION:Visp
+GEO:46.293999;7.881460
+DTSTART;TZID=Europe/Zurich:20170910T140800
+DTEND;TZID=Europe/Zurich:20170910T145300
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220626T094245Z
+CREATED:20220626T094245Z
+UID:d59bda31-a28e-4cae-b261-c4e4b2769cf0
+LAST-MODIFIED:20220626T094245Z
+DESCRIPTION:Check-in: 15:00\nCheck-out: 10:00\nWebsite: https:
+ //randa-meetings.ch/
+SUMMARY:Hotel reservation: Haus Randa
+LOCATION:Haus Maria am Weg\, 3928 Randa\, Switzerland
+DTSTART;VALUE=DATE:20170910
+DTEND;VALUE=DATE:20170916
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220626T094245Z
+CREATED:20220626T094245Z
+UID:82d09baa-b4e9-41bd-a77f-2e997f850a38
+LAST-MODIFIED:20220626T094245Z
+DESCRIPTION:Haus Maria am Weg\n3928 Randa\nSwitzerland\n\nDr Konqui
+SUMMARY:KDE Randa Meeting 2017
+LOCATION:Haus Randa
+GEO:46.099030;7.783260
+DTSTART;TZID=Europe/Zurich:20170910T150000
+DTEND;TZID=Europe/Zurich:20170910T160000
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220626T094245Z
+CREATED:20220626T094245Z
+UID:bahn20170915145400
+LAST-MODIFIED:20220626T094245Z
+DESCRIPTION:simulated DB ical to trigger extractor script
+SUMMARY:Randa -> Visp
+DTSTART;TZID=Europe/Zurich:20170915T145400
+DTEND;TZID=Europe/Zurich:20170915T154600
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
