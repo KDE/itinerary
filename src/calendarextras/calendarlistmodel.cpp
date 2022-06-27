@@ -9,8 +9,9 @@
 #include <KCalendarCore/CalendarPlugin>
 
 using namespace KCalendarCore;
+using namespace KCalendarCoreExtras;
 
-namespace KCalendarCore {
+namespace KCalendarCoreExtras {
 class CalendarListModelPrivate
 {
 public:

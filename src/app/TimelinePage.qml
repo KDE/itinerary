@@ -10,7 +10,7 @@ import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.17 as Kirigami
-import org.kde.kcalendarcore 1.0 as KCalendarCore
+import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.itinerary 1.0
 import "." as App
 

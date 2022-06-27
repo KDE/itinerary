@@ -10,6 +10,7 @@
 #include <QPluginLoader>
 
 using namespace KCalendarCore;
+using namespace KCalendarCoreExtras;
 
 struct PluginLoader {
     PluginLoader();

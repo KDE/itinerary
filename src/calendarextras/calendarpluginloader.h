@@ -10,7 +10,7 @@
 
 #include <KCalendarCore/CalendarPlugin>
 
-namespace KCalendarCore {
+namespace KCalendarCoreExtras {
 
 /** Access to KCalendarCore::CalendarPlugin instances. */
 class KCALENDARCOREEXTRAS_EXPORT CalendarPluginLoader

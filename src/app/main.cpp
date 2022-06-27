@@ -109,10 +109,10 @@ void registerKContactsTypes()
 void registerKCalendarCoreTypes()
 {
     // ### this should move into a QML plugin of KCalendarCore
-    qmlRegisterUncreatableMetaObject(KCalendarCore::staticMetaObject, "org.kde.kcalendarcore", 1, 0, "KCalendarCore", {});
-    qmlRegisterType<KCalendarCore::CalendarListModel>("org.kde.kcalendarcore", 1, 0, "CalendarListModel");
-    qmlRegisterSingletonType("org.kde.kcalendarcore", 1, 0, "CalendarPluginLoader", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
-        return jsEngine->toScriptValue(KCalendarCore::CalendarPluginLoader());
+    qmlRegisterUncreatableMetaObject(KCalendarCore::staticMetaObject, "internal.org.kde.kcalendarcore", 1, 0, "KCalendarCore", {});
+    qmlRegisterType<KCalendarCoreExtras::CalendarListModel>("internal.org.kde.kcalendarcore", 1, 0, "CalendarListModel");
+    qmlRegisterSingletonType("internal.org.kde.kcalendarcore", 1, 0, "CalendarPluginLoader", [](QQmlEngine *, QJSEngine *jsEngine) -> QJSValue {
+        return jsEngine->toScriptValue(KCalendarCoreExtras::CalendarPluginLoader());
     });
 }
 

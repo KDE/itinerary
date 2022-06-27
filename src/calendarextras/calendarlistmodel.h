@@ -12,7 +12,7 @@
 
 #include <memory>
 
-namespace KCalendarCore {
+namespace KCalendarCoreExtras {
 
 class CalendarListModelPrivate;
 
