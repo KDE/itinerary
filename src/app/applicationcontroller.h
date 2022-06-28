@@ -62,8 +62,6 @@ public:
     Q_INVOKABLE bool importData(const QByteArray &data, const QString &fileName = {});
     Q_INVOKABLE bool importText(const QString &text);
 
-    Q_INVOKABLE void checkCalendar();
-
     static ApplicationController* instance();
 
     // data export

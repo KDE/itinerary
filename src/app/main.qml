@@ -60,12 +60,6 @@ Kirigami.ApplicationWindow {
                 enabled: ApplicationController.hasClipboardContent
             },
             Kirigami.Action {
-                text: i18n("Check Calendar")
-                iconName: "view-calendar-day"
-                onTriggered: ApplicationController.checkCalendar()
-                visible: Qt.platform.os == "android"
-            },
-            Kirigami.Action {
                 text: i18n("Check for Updates")
                 iconName: "view-refresh"
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No

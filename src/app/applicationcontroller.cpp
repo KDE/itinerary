@@ -74,14 +74,7 @@
 #include <kandroidextras/jniarray.h>
 #include <kandroidextras/jnisignature.h>
 #include <kandroidextras/jnitypes.h>
-#include <kandroidextras/manifestpermission.h>
 #include <kandroidextras/uri.h>
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtAndroid>
-#else
-#include <private/qandroidextras_p.h>
-#endif
 #endif
 
 #include <memory>
@@ -89,25 +82,6 @@
 using namespace KItinerary;
 
 #ifdef Q_OS_ANDROID
-
-static void importDavDroidJson(JNIEnv *env, jobject that, jstring data)
-{
-    Q_UNUSED(that)
-    const char *str = env->GetStringUTFChars(data, nullptr);
-    const auto doc = QJsonDocument::fromJson(str);
-    env->ReleaseStringUTFChars(data, str);
-
-    const auto array = doc.array();
-    if (array.size() < 2 || array.at(0).toString() != QLatin1String("X-KDE-KITINERARY-RESERVATION")) {
-        return;
-    }
-
-    auto propValue = array.at(1).toString().toUtf8();
-    // work around ical/JSON mis-encoding with newer DAVx⁵ versions
-    propValue.replace("\\,", ",");
-
-    ApplicationController::instance()->importData(propValue);
-}
 
 static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 {
@@ -118,7 +92,6 @@ static void importFromIntent(JNIEnv *env, jobject that, jobject data)
 
 static const JNINativeMethod methods[] = {
     {"importFromIntent", "(Landroid/content/Intent;)V", (void*)importFromIntent},
-    {"importDavDroidJson", "(Ljava/lang/String;)V", (void*)importDavDroidJson}
 };
 
 Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void*)
@@ -502,32 +475,6 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
         res |= importGenericPkPass(child);
     }
     return res;
-}
-
-void ApplicationController::checkCalendar()
-{
-#ifdef Q_OS_ANDROID
-    using namespace KAndroidExtras;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (QtAndroid::checkPermission(ManifestPermission::READ_CALENDAR) == QtAndroid::PermissionResult::Granted) {
-        ItineraryActivity activity;
-        activity.checkCalendar();
-    } else {
-        QtAndroid::requestPermissions({ManifestPermission::READ_CALENDAR}, [this] (const QtAndroid::PermissionResultMap &result){
-            if (result[ManifestPermission::READ_CALENDAR] == QtAndroid::PermissionResult::Granted) {
-                checkCalendar();
-            }
-        });
-    }
-#else
-    if (QtAndroidPrivate::checkPermission(ManifestPermission::READ_CALENDAR).result() == QtAndroidPrivate::PermissionResult::Authorized) {
-        ItineraryActivity activity;
-        activity.checkCalendar();
-    } else if (QtAndroidPrivate::requestPermission(ManifestPermission::READ_CALENDAR).result() == QtAndroidPrivate::PermissionResult::Authorized) {
-        checkCalendar();
-    }
-#endif
-#endif
 }
 
 bool ApplicationController::hasClipboardContent() const
