@@ -63,9 +63,15 @@ static QVariant convertToEvent(const KCalendarCore::Event::Ptr &ev)
     Event e;
     e.setName(ev->summary());
     e.setDescription(ev->description());
-    e.setStartDate(ev->dtStart());
-    e.setEndDate(ev->dtEnd());
     e.setUrl(ev->url());
+
+    if (ev->allDay()) {
+        e.setStartDate(QDateTime(ev->dtStart().date(), {0, 0}, Qt::LocalTime));
+        e.setEndDate(QDateTime(ev->dtEnd().date(), {23, 59, 59}, Qt::LocalTime));
+    } else {
+        e.setStartDate(ev->dtStart());
+        e.setEndDate(ev->dtEnd());
+    }
 
     Place venue;
     venue.setName(ev->location()); // TODO attempt to detect addresses in here
