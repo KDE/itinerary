@@ -34,6 +34,7 @@ ecm_add_test(livedatamanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(healthcertificatemanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(passmanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(calendarimportmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)
+ecm_add_test(calendarhelpertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})

@@ -6,6 +6,7 @@
 
 #include "timelinedelegatecontroller.h"
 
+#include "calendarhelper.h"
 #include "constants.h"
 #include "livedatamanager.h"
 #include "locationhelper.h"
@@ -761,14 +762,20 @@ void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
     }
 
     const auto existingEvents = CalendarHandler::findEvents(cal, reservations.at(0));
+    KCalendarCore::Event::Ptr event;
     if (existingEvents.size() == 1) {
-        auto event = existingEvents.at(0);
+        event = existingEvents.at(0);
         event->startUpdates();
-        CalendarHandler::fillEvent(reservations, event);
+    } else {
+        event = KCalendarCore::Event::Ptr(new KCalendarCore::Event);
+    }
+
+    CalendarHandler::fillEvent(reservations, event);
+    CalendarHelper::fillPreTransfer(event, m_transferMgr->transfer(m_batchId, Transfer::Before));
+
+    if (existingEvents.size() == 1) {
         event->endUpdates();
     } else {
-        KCalendarCore::Event::Ptr event(new KCalendarCore::Event);
-        CalendarHandler::fillEvent(reservations, event);
         cal->addEvent(event);
     }
 }
