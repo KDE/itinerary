@@ -254,6 +254,25 @@ void TransferManager::checkReservation(const QString &resId, const QVariant &res
     }
 }
 
+/** Checks whether @p loc1 and @p loc2 are far enough apart to need a tranfer,
+ *  with sufficient certainty.
+ */
+static bool isLikelyNotSameLocation(const QVariant &loc1, const QVariant &loc2)
+{
+    // if we are sure they are the same location we are done here
+    if (LocationUtil::isSameLocation(loc1, loc2, LocationUtil::WalkingDistance)) {
+        return false;
+    }
+
+    // if both have a geo coordinate we are also sure about both being different from the above check
+    if (LocationUtil::geo(loc1).isValid() && LocationUtil::geo(loc2).isValid()) {
+        return true;
+    }
+
+    // if we have to rely on the name, only do that if we are really sure they are different
+    return !LocationUtil::isSameLocation(loc1, loc2, LocationUtil::CityLevel);
+}
+
 TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
     transfer.setAnchorTime(anchorTimeBefore(resId, res));
@@ -310,13 +329,12 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     } else {
         prevLoc = LocationUtil::location(prevRes);
     }
-    if (!toLoc.isNull() && !prevLoc.isNull() && !LocationUtil::isSameLocation(toLoc, prevLoc, LocationUtil::WalkingDistance)) {
+    if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc)) {
         qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc) << transfer.anchorTime();
         transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
         transfer.setFromName(LocationUtil::name(prevLoc));
         transfer.setFloatingLocationType(Transfer::Reservation);
         return isLocationChange ? ShouldAutoAdd : CanAddManually;
-
     }
 
     // transfer to favorite at destination of a roundtrip trip group
@@ -388,7 +406,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     } else {
         nextLoc = LocationUtil::location(nextRes);
     }
-    if (!fromLoc.isNull() && !nextLoc.isNull() && !LocationUtil::isSameLocation(fromLoc, nextLoc, LocationUtil::WalkingDistance)) {
+    if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc)) {
         qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime();
         transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
         transfer.setToName(LocationUtil::name(nextLoc));
