@@ -32,12 +32,6 @@
 #include <KItinerary/JsonLdDocument>
 
 #include <KPkPass/Pass>
-#if __has_include(<KPkPass/kpkpass_version.h>)
-#include <KPkPass/kpkpass_version.h>
-#if KPKPASS_VERSION >= QT_VERSION_CHECK(5, 20, 41)
-#define NEW_PKPASS_IMPORT
-#endif
-#endif
 
 #include <KAboutData>
 #include <KLocalizedString>
@@ -149,9 +143,6 @@ void ApplicationController::setReservationManager(ReservationManager* resMgr)
 void ApplicationController::setPkPassManager(PkPassManager* pkPassMgr)
 {
     m_pkPassMgr = pkPassMgr;
-#ifndef NEW_PKPASS_IMPORT
-    connect(m_pkPassMgr, &PkPassManager::passAdded, this, &ApplicationController::importPass);
-#endif
     connect(m_pkPassMgr, &PkPassManager::passUpdated, this, &ApplicationController::importPass);
 }
 
@@ -359,11 +350,6 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     }
 
     if (FileHelper::hasZipHeader(data)) {
-#ifndef NEW_PKPASS_IMPORT
-        if (!m_pkPassMgr->importPassFromData(data).isEmpty()) {
-            return true;
-        }
-#endif
         if (importBundle(data)) {
             return true;
         }
@@ -434,11 +420,9 @@ bool ApplicationController::importText(const QString& text)
 void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &node)
 {
     if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
-#ifdef NEW_PKPASS_IMPORT
         const auto pass = node.content<KPkPass::Pass*>();
         // ### could we pass along pass directly here to avoid the extra parsing roundtrip?
         m_pkPassMgr->importPassFromData(pass->rawData());
-#endif
     }
 
     for (const auto &child : node.childNodes()) {
@@ -448,7 +432,6 @@ void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &
 
 bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocumentNode &node)
 {
-#ifdef NEW_PKPASS_IMPORT
     if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
         const auto pass = node.content<KPkPass::Pass*>();
         if (pass->type() == KPkPass::Pass::Coupon || pass->type() == KPkPass::Pass::StoreCard) {
@@ -468,7 +451,6 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
 
         return true;
     }
-#endif
 
     bool res = false;
     for (const auto &child : node.childNodes()) {

@@ -51,7 +51,6 @@
 #include <calendarlistmodel.h>
 #include <calendarpluginloader.h>
 
-#include <kitinerary_version.h>
 #include <KItinerary/CountryDb>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Ticket>
@@ -365,11 +364,7 @@ int main(int argc, char **argv)
     HealthCertificateManager healthCertificateMgr;
     s_healthCertificateManager = &healthCertificateMgr;
 
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 20, 41)
-    KItinerary::JsonLdDocument().registerType<GenericPkPass>();
-#else
     KItinerary::JsonLdDocument::registerType<GenericPkPass>();
-#endif
     PassManager passMgr;
     s_passManager = &passMgr;
 

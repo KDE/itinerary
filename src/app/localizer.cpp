@@ -9,7 +9,6 @@
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
 
-#include <kcontacts_version.h>
 #include <KContacts/Address>
 
 #include <KCountry>
@@ -67,11 +66,7 @@ QString Localizer::formatAddress(const QVariant &obj) const
         return {};
     }
 
-#if KContacts_VERSION < QT_VERSION_CHECK(5, 92, 0)
-    return address.formattedAddress().replace(QLatin1String("\n\n"), QLatin1String("\n")).trimmed();
-#else
     return address.formatted(KContacts::AddressFormatStyle::MultiLineInternational);
-#endif
 }
 
 static bool needsTimeZone(const QDateTime &dt)
