@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.3
 
 import org.kde.kirigami 2.4 as Kirigami
-import org.kde.kirigamiaddons.dateandtime 0.1
+import org.kde.itinerary.kirigamiaddons.dateandtime 0.1
 
 RowLayout {
     id: layout

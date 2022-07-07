@@ -7,7 +7,7 @@ import QtQuick.Window 2.15
 import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.3 as Controls
 import org.kde.kirigami 2.8 as Kirigami
-import org.kde.kirigamiaddons.dateandtime 0.1 as KDT
+import org.kde.itinerary.kirigamiaddons.dateandtime 0.1 as KDT
 
 Controls.TextField { //inherited for style reasons to show we're interactive
     id: root

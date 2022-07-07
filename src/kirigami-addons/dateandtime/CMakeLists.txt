@@ -13,11 +13,11 @@ if (ANDROID)
     install(TARGETS KF5KirigamiDateAndTime ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
-ecm_add_qml_module(dateandtimeplugin URI "org.kde.kirigamiaddons.dateandtime" VERSION 0.1)
+ecm_add_qml_module(itinerary-dateandtimeplugin URI "org.kde.itinerary.kirigamiaddons.dateandtime" VERSION 0.1)
 
-target_compile_definitions(dateandtimeplugin PRIVATE -DTRANSLATION_DOMAIN=\"kirigami_dateandtime\")
+#target_compile_definitions(itinerary-dateandtimeplugin PRIVATE -DTRANSLATION_DOMAIN=\"kirigami_dateandtime\")
 
-target_sources(dateandtimeplugin PRIVATE
+target_sources(itinerary-dateandtimeplugin PRIVATE
     lib/yearmodel.cpp
     lib/monthmodel.cpp
     lib/plugin.cpp
@@ -26,7 +26,7 @@ target_sources(dateandtimeplugin PRIVATE
     lib/infinitecalendarviewmodel.cpp
 )
 
-ecm_target_qml_sources(dateandtimeplugin SOURCES
+ecm_target_qml_sources(itinerary-dateandtimeplugin SOURCES
     ClockElement.qml
     ClockFace.qml
     DateInput.qml
@@ -40,13 +40,13 @@ ecm_target_qml_sources(dateandtimeplugin SOURCES
     TimeInput.qml
 )
 
-target_link_libraries(dateandtimeplugin
+target_link_libraries(itinerary-dateandtimeplugin
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::Qml
     KF5::I18n
 )
 if (TARGET KF5KirigamiDateAndTime)
-    target_link_libraries(dateandtimeplugin KF5KirigamiDateAndTime)
+    target_link_libraries(itinerary-dateandtimeplugin KF5KirigamiDateAndTime)
 endif()
 
-ecm_finalize_qml_module(dateandtimeplugin DESTINATION ${KDE_INSTALL_QMLDIR})
+ecm_finalize_qml_module(itinerary-dateandtimeplugin DESTINATION ${KDE_INSTALL_QMLDIR})

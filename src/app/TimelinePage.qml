@@ -35,7 +35,6 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 text: i18n("Add train trip...")
                 iconName: "list-add-symbolic"
-                visible: Settings.developmentMode
                 onTriggered: {
                     // find date/time at the current screen center
                     var row = -1;

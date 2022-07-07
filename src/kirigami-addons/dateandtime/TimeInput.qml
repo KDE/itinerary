@@ -6,7 +6,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.5
-import org.kde.kirigamiaddons.dateandtime 0.1
+import org.kde.itinerary.kirigamiaddons.dateandtime 0.1
 
 /**
  * TimeInput is a single line time editor.
