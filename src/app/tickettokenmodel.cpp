@@ -13,6 +13,8 @@
 
 #include <KLocalizedString>
 
+#include <KUser>
+
 using namespace KItinerary;
 
 TicketTokenModel::TicketTokenModel(QObject* parent)
@@ -76,6 +78,7 @@ void TicketTokenModel::setReservationIds(const QStringList& resIds)
         }
     }
     endResetModel();
+    Q_EMIT initialIndexChanged();
 }
 
 QVariant TicketTokenModel::reservationAt(int row) const
@@ -126,4 +129,16 @@ QHash<int, QByteArray> TicketTokenModel::roleNames() const
     auto names = QAbstractListModel::roleNames();
     names.insert(ReservationRole, "reservation");
     return names;
+}
+
+int TicketTokenModel::initialIndex() const
+{
+    auto fullName = KUser().property(KUser::FullName).toString();
+    auto it = std::find_if(m_personNames.begin(), m_personNames.end(), [fullName](const auto &name) {
+        return !name.compare(fullName, Qt::CaseInsensitive);
+    });
+    if (it == m_personNames.end()) {
+        return 0;
+    }
+    return it - m_personNames.begin();
 }

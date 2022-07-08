@@ -19,6 +19,8 @@ class TicketTokenModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager)
     Q_PROPERTY(QStringList reservationIds READ reservationIds WRITE setReservationIds)
+    Q_PROPERTY(int initialIndex READ initialIndex NOTIFY initialIndexChanged)
+
 public:
     enum Roles {
         ReservationRole = Qt::UserRole
@@ -38,6 +40,11 @@ public:
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
+
+    int initialIndex() const;
+
+Q_SIGNALS:
+    void initialIndexChanged();
 
 private:
     ReservationManager *m_resMgr = nullptr;

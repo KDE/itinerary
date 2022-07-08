@@ -39,6 +39,7 @@ ColumnLayout {
         model: ticketModel
         textRole: "display"
         Layout.fillWidth: true
+        currentIndex: ticketModel.initialIndex
 
         // ugly, but rowCount does not trigger binding changes
         Component.onCompleted: visible = ticketModel.rowCount() >= 1 && root.resIds.length > 1
