@@ -22,7 +22,7 @@ Yes, but so far only nightly development builds, no stable releases yet.
 - On Android: via the system calendar, if you use DavDroid to sync to a calendar that has
   events with reservation data created by KMail.
 - Manually importing Apple Wallet pass or JSON-LD files.
-- By sending data created by KMail to your phone via KDE Connect
+- By sending data created by KMail to your phone via KDE Connect. This requires a KMail plugin, which is part of [kdepim-addons](https://invent.kde.org/pim/kdepim-addons).
 
 
 ## Contributing
