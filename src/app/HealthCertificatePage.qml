@@ -55,30 +55,28 @@ Kirigami.Page {
             Kirigami.Action {
                 iconName: "edit-delete"
                 text: i18n("Delete")
-                onTriggered: deleteWarningSheet.open()
+                onTriggered: deleteWarningDialog.open()
                 enabled: certSelector.currentIndex >= 0 && certSelector.count > 0
             }
         ]
     }
 
-    Kirigami.OverlaySheet {
-        id: deleteWarningSheet
-        QQC2.Label {
-            text: i18n("Do you really want to delete this certificate?")
-            wrapMode: Text.WordWrap
-        }
+    Kirigami.PromptDialog {
+        id: deleteWarningDialog
 
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        title: i18n("Delete Certificate")
+        subtitle: i18n("Do you really want to delete this certificate?")
+        standardButtons: QQC2.Dialog.Cancel
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
-                onClicked: {
+                onTriggered: {
                     HealthCertificateManager.removeCertificate(certSelector.currentIndex);
-                    deleteWarningSheet.close();
+                    deleteWarningDialog.close();
                 }
             }
-        }
+        ]
     }
     header: ColumnLayout {
         visible: certSelector.count > 0

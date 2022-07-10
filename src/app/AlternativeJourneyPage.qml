@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -20,7 +20,7 @@ App.JourneyQueryPage {
     title: i18n("Alternative Connections")
     journeyRequest: controller.journeyRequestFull
 
-    onJourneyChanged: replaceWarningSheet.sheetOpen = true
+    onJourneyChanged: replaceWarningDialog.open()
 
     QQC2.ActionGroup { id: journeyActionGroup }
     Component {
@@ -53,28 +53,21 @@ App.JourneyQueryPage {
         actions.contextualActions.push(oneJourneyAction.createObject(root));
     }
 
-    Kirigami.OverlaySheet {
-        id: replaceWarningSheet
+    Kirigami.PromptDialog {
+        id: replaceWarningDialog
 
-        header: Kirigami.Heading {
-            text: i18n("Replace Journey")
-        }
-
-        QQC2.Label {
-            text: i18n("Do you really want to replace your existing reservation with the newly selected journey?")
-            wrapMode: Text.WordWrap
-        }
-
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        title: i18n("Replace Journey")
+        subtitle: i18n("Do you really want to replace your existing reservation with the newly selected journey?")
+        standardButtons: QQC2.Dialog.No
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Replace")
                 icon.name: "document-save"
-                onClicked: {
+                onTriggered: {
                     controller.applyJourney(root.journey, root.journeyRequest.to.name == controller.journeyRequestFull.to.name);
                     applicationWindow().pageStack.pop();
                 }
             }
-        }
+        ]
     }
 }

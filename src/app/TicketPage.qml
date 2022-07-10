@@ -22,28 +22,24 @@ Kirigami.ScrollablePage {
         page: root
     }
 
-    Kirigami.OverlaySheet {
-        id: deleteWarningSheet
-        header: Kirigami.Heading {
-            text: i18n("Delete Ticket")
-        }
+    Kirigami.PromptDialog {
+        id: deleteWarningDialog
 
-        QQC2.Label {
-            text: i18n("Do you really want to delete this ticket?")
-            wrapMode: Text.WordWrap
-        }
+        title: i18n("Delete Ticket")
+        subtitle: i18n("Do you really want to delete this ticket?")
 
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
-                onClicked: {
+                onTriggered: {
                     PassManager.remove(passId)
                     applicationWindow().pageStack.pop();
                 }
             }
-        }
+        ]
     }
 
     actions.main: Kirigami.Action {
@@ -59,7 +55,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             icon.name: "edit-delete"
             text: i18n("Delete")
-            onTriggered: deleteWarningSheet.open()
+            onTriggered: deleteWarningDialog.open()
         }
     ]
 

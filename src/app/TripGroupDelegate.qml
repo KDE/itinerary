@@ -127,8 +127,8 @@ Kirigami.AbstractCard {
             QQC2.ToolButton {
                 icon.name: "edit-delete"
                 onClicked: {
-                    deleteTripGroupWarningSheet.tripGroupId = root.tripGroupId
-                    deleteTripGroupWarningSheet.sheetOpen = true
+                    deleteTripGroupWarningDialog.tripGroupId = root.tripGroupId
+                    deleteTripGroupWarningDialog.open()
                 }
             }
         }

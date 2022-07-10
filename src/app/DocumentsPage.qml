@@ -8,7 +8,7 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -58,34 +58,33 @@ Kirigami.ScrollablePage {
                     iconName: "edit-delete"
                     text: i18n("Delete Document")
                     onTriggered: {
-                        deleteWarningSheet.docId = model.id;
-                        deleteWarningSheet.sheetOpen = true;
+                        deleteWarningDialog.docId = model.id;
+                        deleteWarningDialog.open()
                     }
                 }
             ]
         }
     }
 
-    Kirigami.OverlaySheet {
-        id: deleteWarningSheet
+    Kirigami.PromptDialog {
+        id: deleteWarningDialog
         property string docId
 
-        QQC2.Label {
-            text: i18n("Do you really want to delete this document?")
-            wrapMode: Text.WordWrap
-        }
+        title: i18n("Delete Document")
+        subtitle: i18n("Do you really want to delete this document?")
 
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
-                onClicked: {
-                    ApplicationController.removeDocument(controller.batchId, deleteWarningSheet.docId);
-                    deleteWarningSheet.sheetOpen = false;
+                onTriggered: {
+                    ApplicationController.removeDocument(controller.batchId, deleteWarningDialog.docId);
+                    deleteWarningDialog.close()
                 }
             }
-        }
+        ]
     }
 
     actions {

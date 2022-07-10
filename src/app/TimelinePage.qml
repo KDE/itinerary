@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.itinerary 1.0
 import "." as App
@@ -97,26 +97,25 @@ Kirigami.ScrollablePage {
     }
 
     // page content
-    Kirigami.OverlaySheet {
-        id: deleteTripGroupWarningSheet
+    Kirigami.PromptDialog {
+        id: deleteTripGroupWarningDialog
         property string tripGroupId
 
-        QQC2.Label {
-            text: i18n("Do you really want to delete this trip?")
-            wrapMode: Text.WordWrap
-        }
+        title: i18n("Delete Trip")
+        subtitle: i18n("Do you really want to delete this trip?")
 
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
-                onClicked: {
-                    deleteTripGroupWarningSheet.sheetOpen = false;
-                    TripGroupManager.removeReservationsInGroup(deleteTripGroupWarningSheet.tripGroupId);
+                onTriggered: {
+                    TripGroupManager.removeReservationsInGroup(deleteTripGroupWarningDialog.tripGroupId);
+                    deleteTripGroupWarningDialog.close();
                 }
             }
-        }
+        ]
     }
 
     Platform.FileDialog {

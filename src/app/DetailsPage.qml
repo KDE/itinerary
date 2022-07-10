@@ -7,7 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kitemmodels 1.0
 import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.kitinerary 1.0
@@ -38,25 +38,24 @@ Kirigami.ScrollablePage {
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure
 
-    Kirigami.OverlaySheet {
-        id: deleteWarningSheet
+    Kirigami.PromptDialog {
+        id: deleteWarningDialog
 
-        QQC2.Label {
-            text: i18n("Do you really want to delete this event?")
-            wrapMode: Text.WordWrap
-        }
+        title: i18n("Delete Event")
+        subtitle: i18n("Do you really want to delete this event?")
 
-        footer: RowLayout {
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
-                onClicked: {
+                onTriggered: {
                     ReservationManager.removeBatch(root.batchId);
                     applicationWindow().pageStack.pop();
                 }
             }
-        }
+        ]
     }
 
     Component {
@@ -179,7 +178,7 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconName: "edit-delete"
                 text: i18n("Delete")
-                onTriggered: deleteWarningSheet.sheetOpen = true
+                onTriggered: deleteWarningDialog.open()
             }
         ]
     }
