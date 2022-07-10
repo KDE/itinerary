@@ -25,6 +25,7 @@ class QTimer;
 class LiveDataManager;
 class ReservationManager;
 class TransferManager;
+class DocumentManager;
 
 /** C++ side logic for timeline delegates. */
 class TimelineDelegateController : public QObject
@@ -33,6 +34,7 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(QObject* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(QObject* liveDataManager READ liveDataManager WRITE setLiveDataManager NOTIFY setupChanged)
     Q_PROPERTY(QObject* transferManager READ transferManager WRITE setTransferManager NOTIFY setupChanged)
+    Q_PROPERTY(QObject* documentManager READ documentManager WRITE setDocumentManager NOTIFY setupChanged)
     Q_PROPERTY(QString batchId READ batchId WRITE setBatchId NOTIFY batchIdChanged)
 
     Q_PROPERTY(bool isCurrent READ isCurrent NOTIFY currentChanged)
@@ -87,6 +89,8 @@ public:
     void setLiveDataManager(QObject *liveDataMgr);
     QObject* transferManager() const;
     void setTransferManager(QObject *transferMgr);
+    QObject* documentManager() const;
+    void setDocumentManager(QObject *documentMgr);
 
     QString batchId() const;
     void setBatchId(const QString &batchId);
@@ -148,6 +152,7 @@ private:
     ReservationManager *m_resMgr = nullptr; // ### should this be static?
     LiveDataManager *m_liveDataMgr = nullptr;
     TransferManager *m_transferMgr = nullptr;
+    DocumentManager *m_documentMgr = nullptr;
     QString m_batchId;
     bool m_isCurrent = false;
 

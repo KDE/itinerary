@@ -15,6 +15,7 @@
 #include "publictransport.h"
 #include "transfer.h"
 #include "transfermanager.h"
+#include "documentmanager.h"
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CalendarHandler>
@@ -128,6 +129,21 @@ void TimelineDelegateController::setTransferManager(QObject *transferMgr)
     }
 
     m_transferMgr = qobject_cast<TransferManager*>(transferMgr);
+    Q_EMIT setupChanged();
+}
+
+QObject* TimelineDelegateController::documentManager() const
+{
+    return m_documentMgr;
+}
+
+void TimelineDelegateController::setDocumentManager(QObject *documentMgr)
+{
+    if (m_documentMgr == documentMgr) {
+        return;
+    }
+
+    m_documentMgr = qobject_cast<DocumentManager*>(documentMgr);
     Q_EMIT setupChanged();
 }
 
@@ -742,8 +758,9 @@ int TimelineDelegateController::documentCount() const
         const auto res = m_resMgr->reservation(resId);
         const auto docIds = DocumentUtil::documentIds(res);
         for (const auto &docId : docIds) {
-            // TODO we could check if actually have the document first?
-            allDocIds.insert(docId.toString());
+            if (m_documentMgr->hasDocument(docId.toString())) {
+                allDocIds.insert(docId.toString());
+            }
         }
     }
     return allDocIds.size();
