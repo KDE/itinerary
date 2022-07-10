@@ -102,9 +102,10 @@ Kirigami.ScrollablePage {
         delegate: documentDelegate
         model: docsModel
 
-        QQC2.Label {
+        Kirigami.PlaceholderMessage {
             text: i18n("No documents attached to this reservation.")
             anchors.centerIn: parent
+            width: parent.width - (Kirigami.Units.largeSpacing * 4)
             visible: docsModel.empty
         }
     }
