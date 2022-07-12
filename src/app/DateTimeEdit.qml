@@ -4,55 +4,56 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.itinerary.kirigamiaddons.dateandtime 0.1 as Addon
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-MouseArea {
+RowLayout {
     id: root
 
     property variant obj
     property string propertyName
     property date value: Util.dateTimeStripTimezone(obj, propertyName)
+    readonly property bool hasValue: !isNaN(value.getTime())
     property bool isModified: Util.dateTimeStripTimezone(obj, propertyName).getTime() != value.getTime()
 
-    implicitHeight: layout.implicitHeight
-    implicitWidth: layout.implicitWidth
-
-    RowLayout {
-        id: layout
-
-        QQC2.Label {
-            text: isModified ? value.toLocaleString(Qt.locale(), Locale.ShortFormat) : Localizer.formatDateTime(obj, propertyName)
-        }
-
-        Kirigami.Icon {
-            source: "document-edit"
-            width: Kirigami.Units.iconSizes.smallMedium
-            height: width
-        }
+    Addon.DateInput {
+        id: dateInput
+        selectedDate: root.value
+        onSelectedDateChanged: root.updateValue()
+        visible: root.hasValue
     }
-
-    // FIXME super ugly, we reference stuff from our parent here
-    onClicked: {
-        dateTimeEditSheet.value = isNaN(root.value.getTime()) ? new Date() : root.value;
-        dateTimeEditSheet.sheetOpen = true;
-        conn.enabled = true;
+    Addon.TimeInput {
+        id: timeInput
+        value: root.value
+        onValueChanged: root.updateValue()
+        visible: root.hasValue
+    }
+    QQC2.ToolButton {
+        icon.name: "document-edit"
+        visible: !root.hasValue
+        onClicked: {
+            dateInput.item.selectedDate = new Date();
+            timeInput.value = new Date();
+        }
     }
 
     Connections {
-        id: conn
-        enabled: false
-        target: dateTimeEditSheet
-        onSheetOpenChanged: {
-            console.log(root.value, dateTimeEditSheet.value);
-            root.value = dateTimeEditSheet.value;
-            root.value.setSeconds(0, 0);
-            enabled = false;
-        }
+        target: dateInput
+        onSelectedDateChanged: root.updateValue()
+    }
+
+    function updateValue() {
+        const MSECS_PER_DAY = 24 * 60 * 60 * 1000;
+        let dt = new Date();
+        dt.setTime(dateInput.selectedDate.getTime() - (dateInput.selectedDate.getTime() % MSECS_PER_DAY) + (timeInput.value.getTime() % MSECS_PER_DAY));
+        dt.setSeconds(0, 0);
+        console.log(dt, dateInput.selectedDate, timeInput.value);
+        root.value = dt;
     }
 }
