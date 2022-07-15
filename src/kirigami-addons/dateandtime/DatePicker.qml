@@ -307,7 +307,11 @@ QQC2.Control {
                                     date.getFullYear() === clickedDate.getFullYear()
                                 opacity: sameMonth ? 1 : 0.7
                                 text: model.dayNumber
-                                onClicked: datePicked(model.date), clickedDate = model.date
+                                onClicked: {
+                                    clickedDate = model.date;
+                                    selectedDate = model.date;
+                                    datePicked(model.date);
+                                }
                             }
                         }
                     }
