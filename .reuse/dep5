@@ -3,7 +3,7 @@ Upstream-Name: KDE Itinerary
 Upstream-Contact: Volker Krause <vkrause@kde.org>
 Source: https://invent.kde.org/pim/itinerary
 
-Files: autotests/data/*.json autotests/data/*.pkpass autotests/data/*.xml autotests/data/timeline/* autotests/data/tripgroup/*.json autotests/data/tripgroupproxy/*.model autotests/data/publictransport/*.json
+Files: autotests/data/*.ics autotests/data/*.json autotests/data/*.pkpass autotests/data/*.xml autotests/data/timeline/* autotests/data/tripgroup/*.json autotests/data/tripgroupproxy/*.model autotests/data/publictransport/*.json
 Copyright: none
 License: CC0-1.0
 
