@@ -58,6 +58,9 @@ bool ReservationHelper::equals(const QVariant &lhs, const QVariant &rhs)
     if (JsonLd::isA<BusReservation>(lhs)) {
         return lhs.value<BusReservation>() == rhs.value<BusReservation>();
     }
+    if (JsonLd::isA<BoatReservation>(lhs)) {
+        return lhs.value<BoatReservation>() == rhs.value<BoatReservation>();
+    }
     if (JsonLd::isA<FlightReservation>(lhs)) {
         return lhs.value<FlightReservation>() == rhs.value<FlightReservation>();
     }

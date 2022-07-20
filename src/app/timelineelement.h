@@ -35,6 +35,7 @@ public:
         TrainTrip,
         CarRental,
         BusTrip,
+        BoatTrip,
         Restaurant,
         TouristAttraction,
         Event,

@@ -29,6 +29,7 @@ static TimelineElement::ElementType elementType(const QVariant &res)
     if (JsonLd::isA<LodgingReservation>(res)) { return TimelineElement::Hotel; }
     if (JsonLd::isA<TrainReservation>(res)) { return TimelineElement::TrainTrip; }
     if (JsonLd::isA<BusReservation>(res)) { return TimelineElement::BusTrip; }
+    if (JsonLd::isA<BoatReservation>(res)) { return TimelineElement::BoatTrip; }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) { return TimelineElement::Restaurant; }
     if (JsonLd::isA<TouristAttractionVisit>(res)) { return TimelineElement::TouristAttraction; }
     if (JsonLd::isA<EventReservation>(res)) { return TimelineElement::Event; }
@@ -114,14 +115,23 @@ bool TimelineElement::isReservation() const
         case TrainTrip:
         case CarRental:
         case BusTrip:
+        case BoatTrip:
         case Restaurant:
         case TouristAttraction:
         case Event:
         case Hotel:
             return true;
-        default:
+        case Undefined:
+        case TodayMarker:
+        case TripGroup:
+        case WeatherForecast:
+        case LocationInfo:
+        case Transfer:
             return false;
     }
+
+    Q_UNREACHABLE();
+    return false;
 }
 
 QString TimelineElement::batchId() const
@@ -186,6 +196,7 @@ bool TimelineElement::isTimeBoxed() const
         case Flight:
         case TrainTrip:
         case BusTrip:
+        case BoatTrip:
             return true;
         case Hotel:
         case CarRental:

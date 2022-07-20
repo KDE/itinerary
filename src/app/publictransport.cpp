@@ -62,7 +62,8 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
 
     KPublicTransport::Location loc;
 
-    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
+    if (JsonLd::isA<FlightReservation>(reservation) || JsonLd::isA<TrainReservation>(reservation)
+     || JsonLd::isA<BusReservation>(reservation) || JsonLd::isA<BoatReservation>(reservation)) {
         loc.setName(KItinerary::LocationUtil::name(place));
     }
 

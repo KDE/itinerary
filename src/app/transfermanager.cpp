@@ -14,6 +14,7 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -465,11 +466,12 @@ bool TransferManager::isNotInTripGroup(const QString &resId) const
 }
 
 // default transfer anchor deltas (in minutes)
-enum { FlightDelta, TrainDelta, BusDelta, FallbackDelta };
+enum { FlightDelta, TrainDelta, BusDelta, BoatDelta, FallbackDelta };
 static constexpr const int default_deltas[][2] = {
     { 90, 30 }, // Flight
     { 20, 10 }, // Train
     { 15, 10 }, // Bus
+    { 60, 30 }, // Boat/Ferry
     { 30, 15 }, // anything else
 };
 
@@ -486,6 +488,8 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
         delta = default_deltas[TrainDelta][transfer.alignment()];
     } else if (JsonLd::isA<BusReservation>(res)) {
         delta = default_deltas[BusDelta][transfer.alignment()];
+    } else if (JsonLd::isA<BoatReservation>(res)) {
+        delta = default_deltas[BoatDelta][transfer.alignment()];
     } else {
         delta = default_deltas[FallbackDelta][transfer.alignment()];
     }
@@ -499,18 +503,17 @@ QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant
         if (departure.hasExpectedDepartureTime()) {
             return departure.expectedDepartureTime();
         }
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime();
     }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime();
-    }
-    if (JsonLd::isA<FlightReservation>(res)) {
+        if (JsonLd::isA<FlightReservation>(res)) {
         const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
         if (flight.boardingTime().isValid()) {
             return flight.boardingTime();
         }
-        return flight.departureTime();
     }
+    if (LocationUtil::isLocationChange(res)) {
+        return SortUtil::startDateTime(res);
+    }
+
     if (JsonLd::isA<EventReservation>(res)) {
         const auto event = res.value<EventReservation>().reservationFor().value<Event>();
         if (event.doorTime().isValid()) {
@@ -521,6 +524,7 @@ QDateTime TransferManager::anchorTimeBefore(const QString &resId, const QVariant
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().startTime();
     }
+
     return {};
 }
 
@@ -531,20 +535,18 @@ QDateTime TransferManager::anchorTimeAfter(const QString &resId, const QVariant 
         if (arrival.hasExpectedArrivalTime()) {
             return arrival.expectedArrivalTime();
         }
-        return res.value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalTime();
     }
-    if (JsonLd::isA<BusReservation>(res)) {
-        return res.value<BusReservation>().reservationFor().value<BusTrip>().arrivalTime();
+    if (LocationUtil::isLocationChange(res)) {
+        return SortUtil::endDateTime(res);
     }
-    if (JsonLd::isA<FlightReservation>(res)) {
-        return res.value<FlightReservation>().reservationFor().value<Flight>().arrivalTime();
-    }
+
     if (JsonLd::isA<EventReservation>(res)) {
         return res.value<EventReservation>().reservationFor().value<Event>().endDate();
     }
     if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
         return res.value<FoodEstablishmentReservation>().endTime();
     }
+
     return {};
 }
 
