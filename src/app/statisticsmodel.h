@@ -69,6 +69,10 @@ class StatisticsModel : public QObject
     Q_PROPERTY(StatisticsItem carDistance READ carDistance NOTIFY changed)
     Q_PROPERTY(StatisticsItem carCO2 READ carCO2 NOTIFY changed)
 
+    Q_PROPERTY(StatisticsItem boatCount READ boatCount NOTIFY changed)
+    Q_PROPERTY(StatisticsItem boatDistance READ boatDistance NOTIFY changed)
+    Q_PROPERTY(StatisticsItem boatCO2 READ boatCO2 NOTIFY changed)
+
     Q_PROPERTY(ReservationManager* reservationManager READ reservationManager WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(TripGroupManager* tripGroupManager READ tripGroupManager WRITE setTripGroupManager NOTIFY setupChanged)
 
@@ -105,6 +109,10 @@ public:
     StatisticsItem carDistance() const;
     StatisticsItem carCO2() const;
 
+    StatisticsItem boatCount() const;
+    StatisticsItem boatDistance() const;
+    StatisticsItem boatCO2() const;
+
 Q_SIGNALS:
     void setupChanged();
     void changed();
@@ -117,7 +125,7 @@ private:
     QDate m_begin;
     QDate m_end;
 
-    enum AggregateType { Total, Flight, Train, Bus, Car, AGGREGATE_TYPE_COUNT };
+    enum AggregateType { Total, Flight, Train, Bus, Car, Boat, AGGREGATE_TYPE_COUNT };
     enum StatType { TripCount, Distance, CO2, STAT_TYPE_COUNT };
 
     AggregateType typeForReservation(const QVariant &res) const;

@@ -107,6 +107,14 @@ Kirigami.ScrollablePage {
 
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
+            Kirigami.FormData.label: i18n("Boat")
+        }
+        StatisticsDelegate { statItem: model.boatCount }
+        StatisticsDelegate { statItem: model.boatDistance }
+        StatisticsDelegate { statItem: model.boatCO2 }
+
+        Kirigami.Separator {
+            Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Car")
         }
         StatisticsDelegate { statItem: model.carCount }

@@ -181,6 +181,21 @@ StatisticsItem StatisticsModel::carCO2() const
     return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Car][CO2]), trend(Car, CO2));
 }
 
+StatisticsItem StatisticsModel::boatCount() const
+{
+    return StatisticsItem(i18n("Boat trips"), QLocale().toString(m_statData[Boat][TripCount]), trend(Boat, TripCount));
+}
+
+StatisticsItem StatisticsModel::boatDistance() const
+{
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Boat][Distance] / 1000), trend(Boat, Distance));
+}
+
+StatisticsItem StatisticsModel::boatCO2() const
+{
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Boat][CO2]), trend(Boat, CO2));
+}
+
 StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVariant &res) const
 {
     if (JsonLd::isA<FlightReservation>(res)) {
@@ -189,6 +204,8 @@ StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVarian
         return Train;
     } else if (JsonLd::isA<BusReservation>(res)) {
         return Bus;
+    } else if (JsonLd::isA<BoatReservation>(res)) {
+        return Boat;
     }
     return Car;
 }
@@ -215,6 +232,7 @@ static const int emissionPerKm[] = {
     14, // train
     68, // bus
     158, // car
+    113, // ferry
 };
 
 int StatisticsModel::co2emission(StatisticsModel::AggregateType type, int distance) const
