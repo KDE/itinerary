@@ -74,6 +74,7 @@ Item {
                     case Ticket.Code128: return Prison.Barcode.Code128;
                     case Ticket.DataMatrix: return Prison.Barcode.DataMatrix;
                     case Ticket.PDF417: return Prison.Barcode.PDF417;
+                    case Ticket.Code39: return Prison.Barcode.Code39;
                 }
                 return Prison.Barcode.Null;
             }
