@@ -8,6 +8,7 @@
 #include "favoritelocationmodel.h"
 #include "transfer.h"
 
+#include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -52,6 +53,9 @@ void GpxExport::writeReservation(const QVariant &res, const KPublicTransport::Jo
             const auto bus = res.value<BusReservation>().reservationFor().value<BusTrip>();
             const QString n = bus.busName() + QLatin1Char(' ') + bus.busNumber();
             m_writer.writeName(i18n("Bus %1 from %2 to %3", n.trimmed(), LocationUtil::name(dep), LocationUtil::name(arr)));
+        } else if (JsonLd::isA<BoatReservation>(res)) {
+            const auto boat = res.value<BoatReservation>().reservationFor().value<BoatTrip>();
+            m_writer.writeName(i18n("Ferry from %1 to %2", LocationUtil::name(dep), LocationUtil::name(arr)));
         }
 
         writeTransfer(before);
