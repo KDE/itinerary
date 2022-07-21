@@ -182,6 +182,10 @@ Kirigami.ScrollablePage {
         App.CarRentalPage {}
     }
     Component {
+        id: boatDetailsPage
+        App.BoatPage {}
+    }
+    Component {
         id: touristAttractionDetailsPage
         App.TouristAttractionPage {}
     }
@@ -274,6 +278,13 @@ Kirigami.ScrollablePage {
         Models.DelegateChoice {
             roleValue: TimelineElement.CarRental
             App.CarRentalDelegate {
+                batchId: model.batchId
+                rangeType: model.rangeType
+            }
+        }
+        Models.DelegateChoice {
+            roleValue: TimelineElement.BoatTrip
+            App.BoatDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
