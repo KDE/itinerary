@@ -23,10 +23,11 @@ using namespace KItinerary;
 
 StatisticsItem::StatisticsItem() = default;
 
-StatisticsItem::StatisticsItem(const QString &label, const QString &value, StatisticsItem::Trend trend)
+StatisticsItem::StatisticsItem(const QString &label, const QString &value, StatisticsItem::Trend trend, bool hasData)
     : m_label(label)
     , m_value(value)
     , m_trend(trend)
+    , m_hasData(hasData)
 {
 }
 
@@ -123,77 +124,77 @@ StatisticsItem StatisticsModel::visitedCountries() const
 
 StatisticsItem StatisticsModel::flightCount() const
 {
-    return StatisticsItem(i18n("Flights"), QLocale().toString(m_statData[Flight][TripCount]), trend(Flight, TripCount));
+    return StatisticsItem(i18n("Flights"), QLocale().toString(m_statData[Flight][TripCount]), trend(Flight, TripCount), m_hasData[Flight]);
 }
 
 StatisticsItem StatisticsModel::flightDistance() const
 {
-    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Flight][Distance] / 1000), trend(Flight, Distance));
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Flight][Distance] / 1000), trend(Flight, Distance), m_hasData[Flight]);
 }
 
 StatisticsItem StatisticsModel::flightCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Flight][CO2]), trend(Flight, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Flight][CO2]), trend(Flight, CO2), m_hasData[Flight]);
 }
 
 StatisticsItem StatisticsModel::trainCount() const
 {
-    return StatisticsItem(i18n("Train rides"), QLocale().toString(m_statData[Train][TripCount]), trend(Train, TripCount));
+    return StatisticsItem(i18n("Train rides"), QLocale().toString(m_statData[Train][TripCount]), trend(Train, TripCount), m_hasData[Train]);
 }
 
 StatisticsItem StatisticsModel::trainDistance() const
 {
-    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Train][Distance] / 1000), trend(Train, Distance));
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Train][Distance] / 1000), trend(Train, Distance), m_hasData[Train]);
 }
 
 StatisticsItem StatisticsModel::trainCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Train][CO2]), trend(Train, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Train][CO2]), trend(Train, CO2), m_hasData[Train]);
 }
 
 StatisticsItem StatisticsModel::busCount() const
 {
-    return StatisticsItem(i18n("Bus rides"), QLocale().toString(m_statData[Bus][TripCount]), trend(Bus, TripCount));
+    return StatisticsItem(i18n("Bus rides"), QLocale().toString(m_statData[Bus][TripCount]), trend(Bus, TripCount), m_hasData[Bus]);
 }
 
 StatisticsItem StatisticsModel::busDistance() const
 {
-    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Bus][Distance] / 1000), trend(Bus, Distance));
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Bus][Distance] / 1000), trend(Bus, Distance), m_hasData[Bus]);
 }
 
 StatisticsItem StatisticsModel::busCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Bus][CO2]), trend(Bus, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Bus][CO2]), trend(Bus, CO2), m_hasData[Bus]);
 }
 
 StatisticsItem StatisticsModel::carCount() const
 {
-    return StatisticsItem(i18n("Car rides"), QLocale().toString(m_statData[Car][TripCount]), trend(Car, TripCount));
+    return StatisticsItem(i18n("Car rides"), QLocale().toString(m_statData[Car][TripCount]), trend(Car, TripCount), m_hasData[Car]);
 }
 
 StatisticsItem StatisticsModel::carDistance() const
 {
-    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Car][Distance] / 1000), trend(Car, Distance));
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Car][Distance] / 1000), trend(Car, Distance), m_hasData[Car]);
 }
 
 StatisticsItem StatisticsModel::carCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Car][CO2]), trend(Car, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Car][CO2]), trend(Car, CO2), m_hasData[Car]);
 }
 
 StatisticsItem StatisticsModel::boatCount() const
 {
-    return StatisticsItem(i18n("Boat trips"), QLocale().toString(m_statData[Boat][TripCount]), trend(Boat, TripCount));
+    return StatisticsItem(i18n("Boat trips"), QLocale().toString(m_statData[Boat][TripCount]), trend(Boat, TripCount), m_hasData[Boat]);
 }
 
 StatisticsItem StatisticsModel::boatDistance() const
 {
-    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Boat][Distance] / 1000), trend(Boat, Distance));
+    return StatisticsItem(i18n("Distance"), i18n("%1 km", m_statData[Boat][Distance] / 1000), trend(Boat, Distance), m_hasData[Boat]);
 }
 
 StatisticsItem StatisticsModel::boatCO2() const
 {
-    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Boat][CO2]), trend(Boat, CO2));
+    return StatisticsItem(i18n("CO₂"), formatCo2(m_statData[Boat][CO2]), trend(Boat, CO2), m_hasData[Boat]);
 }
 
 StatisticsModel::AggregateType StatisticsModel::typeForReservation(const QVariant &res) const
@@ -259,6 +260,8 @@ void StatisticsModel::recompute()
 {
     memset(m_statData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
     memset(m_prevStatData, 0, AGGREGATE_TYPE_COUNT * STAT_TYPE_COUNT * sizeof(int));
+    memset(m_hasData, 0, AGGREGATE_TYPE_COUNT * sizeof(bool));
+    m_hasData[Total] = true;
     m_hotelCount = 0;
     m_prevHotelCount = 0;
     m_countries.clear();
@@ -277,6 +280,9 @@ void StatisticsModel::recompute()
     const auto &batches = m_resMgr->batches();
     for (const auto &batchId : batches) {
         const auto res = m_resMgr->reservation(batchId);
+        if (LocationUtil::isLocationChange(res)) {
+            m_hasData[typeForReservation(res)] = true;
+        }
         const auto dt = SortUtil::startDateTime(res);
 
         bool isPrev = false;

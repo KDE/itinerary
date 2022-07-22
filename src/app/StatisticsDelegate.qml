@@ -16,6 +16,7 @@ RowLayout {
     property var statItem
     property alias label: labelItem
 
+    visible: statItem.hasData
     Kirigami.FormData.label: root.statItem.label
     Layout.fillWidth: true
 

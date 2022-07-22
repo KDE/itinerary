@@ -19,6 +19,7 @@ class TripGroupManager;
 class StatisticsItem
 {
     Q_GADGET
+    Q_PROPERTY(bool hasData MEMBER m_hasData CONSTANT)
     Q_PROPERTY(QString label MEMBER m_label CONSTANT)
     Q_PROPERTY(QString value MEMBER m_value CONSTANT)
     Q_PROPERTY(Trend trend MEMBER m_trend CONSTANT)
@@ -33,12 +34,13 @@ public:
     Q_ENUM(Trend)
 
     StatisticsItem();
-    explicit StatisticsItem(const QString &label, const QString &value, StatisticsItem::Trend trend = TrendUnknown);
+    explicit StatisticsItem(const QString &label, const QString &value, StatisticsItem::Trend trend = TrendUnknown, bool hasData = true);
     ~StatisticsItem();
 
     QString m_label;
     QString m_value;
     Trend m_trend = TrendUnknown;
+    bool m_hasData = true;
 };
 
 Q_DECLARE_METATYPE(StatisticsItem)
@@ -139,6 +141,7 @@ private:
 
     int m_statData[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT];
     int m_prevStatData[AGGREGATE_TYPE_COUNT][STAT_TYPE_COUNT];
+    bool m_hasData[AGGREGATE_TYPE_COUNT];
     int m_hotelCount = 0;
     int m_prevHotelCount = 0;
     int m_tripGroupCount = 0;

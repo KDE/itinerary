@@ -64,39 +64,50 @@ private Q_SLOTS:
         auto item = stats.totalCount();
         QCOMPARE(item.m_value, QLatin1String("2"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("13"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalDistance();
         QCOMPARE(item.m_value, QLatin1String("6,182 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
         QCOMPARE(item.m_value, QLatin1String("1,673 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
 
         item = stats.flightCount();
         QCOMPARE(item.m_value, QLatin1String("6"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.flightDistance();
         QCOMPARE(item.m_value, QLatin1String("5,859 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.flightCO2();
         QCOMPARE(item.m_value, QLatin1String("1,668 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
 
         item = stats.trainCount();
         QCOMPARE(item.m_value, QLatin1String("4"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.trainDistance();
         QCOMPARE(item.m_value, QLatin1String("323 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
         QCOMPARE(item.m_value, QLatin1String("4.5 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, true);
 
         item = stats.carCount();
         QCOMPARE(item.m_value, QLatin1String("0"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
+        QCOMPARE(item.m_hasData, false);
 
         changeSpy.clear();
         stats.setTimeRange({2017, 9, 1}, {2018, 1, 1});
@@ -104,35 +115,50 @@ private Q_SLOTS:
         item = stats.totalCount();
         QCOMPARE(item.m_value, QLatin1String("1"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnchanged);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalNights();
         QCOMPARE(item.m_value, QLatin1String("5"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalDistance();
         QCOMPARE(item.m_value, QLatin1String("1,642 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
         QCOMPARE(item.m_value, QLatin1String("380 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
 
         item = stats.flightCount();
         QCOMPARE(item.m_value, QLatin1String("2"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.flightDistance();
         QCOMPARE(item.m_value, QLatin1String("1,319 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
         item = stats.flightCO2();
         QCOMPARE(item.m_value, QLatin1String("375 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
+        QCOMPARE(item.m_hasData, true);
 
         item = stats.trainCount();
         QCOMPARE(item.m_value, QLatin1String("4"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
+        QCOMPARE(item.m_hasData, true);
         item = stats.trainDistance();
         QCOMPARE(item.m_value, QLatin1String("323 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
+        QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
         QCOMPARE(item.m_value, QLatin1String("4.5 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
+        QCOMPARE(item.m_hasData, true);
+
+        QCOMPARE(stats.boatCount().m_value, QLatin1String("0"));
+        QCOMPARE(stats.boatCount().m_hasData, false);
+        QCOMPARE(stats.boatDistance().m_hasData, false);
+        QCOMPARE(stats.boatCO2().m_hasData, false);
     }
 
     void testTimeRangeModel()

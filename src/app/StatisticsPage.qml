@@ -84,6 +84,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Flights")
+            visible: model.flightCount.hasData
         }
         StatisticsDelegate { statItem: model.flightCount }
         StatisticsDelegate { statItem: model.flightDistance }
@@ -92,6 +93,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Trains")
+            visible: model.trainCount.hasData
         }
         StatisticsDelegate { statItem: model.trainCount }
         StatisticsDelegate { statItem: model.trainDistance }
@@ -100,6 +102,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Bus")
+            visible: model.busCoutn.hasData
         }
         StatisticsDelegate { statItem: model.busCount }
         StatisticsDelegate { statItem: model.busDistance }
@@ -108,6 +111,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Boat")
+            visible: model.boatCount.hasData
         }
         StatisticsDelegate { statItem: model.boatCount }
         StatisticsDelegate { statItem: model.boatDistance }
@@ -116,6 +120,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Car")
+            visible: model.carCount.hasData
         }
         StatisticsDelegate { statItem: model.carCount }
         StatisticsDelegate { statItem: model.carDistance }
