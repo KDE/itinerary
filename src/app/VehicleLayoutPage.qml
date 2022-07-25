@@ -131,6 +131,7 @@ Kirigami.ScrollablePage {
         property real sectionWidth: 48
         width: parent.width
         height: vehicleView.fullLength
+        implicitHeight: height
 
         Repeater {
             width: parent.width

@@ -21,11 +21,11 @@
 #include <KItinerary/CalendarHandler>
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/Flight>
+#include <KItinerary/JsonLdDocument>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/SortUtil>
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
-
 
 #include <QJSEngine>
 #include <QJSValue>
@@ -504,9 +504,11 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
 
     // align sections with affected batches, by type, and insert/update accordingly
     auto it = oldBatches.begin();
+    QString lastResId;
     for (const auto &section : sections) {
         QVariant oldRes;
         if (it != oldBatches.end()) {
+            lastResId = *it;
             oldRes = m_resMgr->reservation(*it);
         }
 
@@ -521,7 +523,16 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
             }
             ++it;
         } else {
-            const auto res = PublicTransport::reservationFromJourneySection(section);
+            auto res = PublicTransport::reservationFromJourneySection(section);
+
+            // copy ticket data from previous element
+            // TODO this would need to be done for the entire batch!
+            if (!lastResId.isEmpty()) {
+                auto lastRes = m_resMgr->reservation(lastResId);
+                JsonLdDocument::writeProperty(lastRes, "reservationFor", {});
+                res = JsonLdDocument::apply(lastRes, res);
+            }
+
             const auto resId = m_resMgr->addReservation(res);
             m_liveDataMgr->setJourney(resId, section);
         }

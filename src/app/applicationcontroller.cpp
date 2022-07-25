@@ -355,7 +355,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
         }
     }
 
-    bool success = false;
+    bool success = false, healthCertImported = false;
     using namespace KItinerary;
     ExtractorEngine engine;
     // user opened the file, so we can be reasonably sure they assume it contains
@@ -392,21 +392,21 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
         success = true;
     }
 
-    // look for time-less passes/program memberships/etc
-    if (m_passMgr->import(extractorResult) || (resIds.isEmpty() && importGenericPkPass(engine.rootDocumentNode()))) {
-        Q_EMIT infoMessage(i18n("Pass imported."));
-        success = true;
-    }
-
     // look for health certificate barcodes instead
     // if we don't find anything, try to import as health certificate directly
     if (importHealthCertificateRecursive(engine.rootDocumentNode()) || m_healthCertMgr->importCertificate(data)) {
         Q_EMIT infoMessage(i18n("Health certificate imported."));
+        healthCertImported = true;
+    }
+
+    // look for time-less passes/program memberships/etc
+    if (m_passMgr->import(extractorResult) || (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode()))) {
+        Q_EMIT infoMessage(i18n("Pass imported."));
         success = true;
     }
 
     // nothing found
-    if (!success) {
+    if (!success && !healthCertImported) {
         Q_EMIT infoMessage(i18n("Nothing imported."));
     }
     return success;
@@ -570,7 +570,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
 
 bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
 {
-    if (node.childNodes().size() == 1 && node.mimeType() == QLatin1String("internal/qimage")) {
+    if (node.childNodes().size() == 1 && (node.mimeType() == QLatin1String("internal/qimage") || node.mimeType() == QLatin1String("application/vnd.apple.pkpass"))) {
         const auto &child = node.childNodes()[0];
         if (child.isA<QString>()) {
             return m_healthCertMgr->importCertificate(child.content<QString>().toUtf8());
