@@ -53,8 +53,9 @@ RowLayout {
         id: daySelectComponent
 
         SpinBox {
-            function daysInMonth (month, year) {
-                return new Date(year, month, 0).getDate();
+            function daysInMonth (year, month) {
+                // we want the days in @p month but go back one day from its start, therefore +1
+                return new Date(year, month + 1, 0).getDate();
             }
 
             from: 1
