@@ -52,6 +52,7 @@ ReservationManager::ReservationManager(QObject* parent)
     ReservationHelper::setup();
 
     m_validator.setAcceptedTypes<
+        BoatReservation,
         BusReservation,
         EventReservation,
         FlightReservation,
