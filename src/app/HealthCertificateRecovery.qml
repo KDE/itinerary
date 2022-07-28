@@ -78,6 +78,7 @@ ColumnLayout {
         }
         QQC2.Label {
             text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)
+            visible: !isNaN(certificate.certificateIssueDate.getTime())
             Kirigami.FormData.label: i18n("Issued:")
         }
         QQC2.Label {
