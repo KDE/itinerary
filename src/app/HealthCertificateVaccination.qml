@@ -58,7 +58,7 @@ ColumnLayout {
                 return formattedDate;
             }
             Kirigami.FormData.label: i18n("Date:")
-            color: days >= 14 ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
+            color: certificate.vaccinationState != KHC.VaccinationCertificate.VaccinationTooRecent ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.neutralTextColor
             font.bold: true
             visible: !isNaN(certificate.date.getTime())
         }
