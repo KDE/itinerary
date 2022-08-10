@@ -677,6 +677,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="22.08.0" date="2022-08-18"/>
     <release version="22.04.3" date="2022-07-07">
       <description>
         <ul>
@@ -698,32 +699,6 @@
           <li>Fix the wrong country being displayed in formatted addresses.</li>
           <li>Display all supported barcode types in Apple Wallet passes.</li>
           <li>Improved travel document extractors for booking.com, Eurowings, onepagebooking.com and SNCF.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.04.0" date="2022-04-21">
-      <description>
-        <ul>
-          <li>Support for overnight train coaches in the train coach layout view.</li>
-          <li>Show currencies and optionally current conversion rates when entering a different country.</li>
-          <li>Allow to add train trips from an online journey query to the timeline.</li>
-          <li>New or improved extractors for Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
-          <li>Highlight severe weather conditions in the weather forecast.</li>
-          <li>Show public holidays in the timeline.</li>
-          <li>Fixed high DPI scaling issues in the train coach view.</li>
-          <li>Support for Amtrak and IATA train station identifiers.</li>
-          <li>Support for importing Danish COVID certificates.</li>
-          <li>Follow system settings on Linux for which external map application to use.</li>
-          <li>Add jump list action to directly open the current ticket.</li>
-          <li>Fixed geometry reassembly issues in the train station map.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="21.12.3" date="2022-03-03">
-      <description>
-        <ul>
-          <li>Add travel data extraction from Air France ticket PDF documents.</li>
-          <li>Fix locale-aware formatting of numbers.</li>
         </ul>
       </description>
     </release>
