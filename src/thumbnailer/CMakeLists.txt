@@ -1,13 +1,10 @@
 # SPDX-FileCopyrightText: 2021 Kai Uwe Broulik <kde@broulik.de>
 # SPDX-License-Identifier: BSD-3-Clause
 
-set(itinerarythumbnail_SRCS itinerarycreator.cpp)
-add_library(itinerarythumbnail MODULE ${itinerarythumbnail_SRCS})
+kcoreaddons_add_plugin(itinerarythumbnail SOURCES itinerarycreator.cpp INSTALL_NAMESPACE "kf${QT_MAJOR_VERSION}/thumbcreator")
+
 target_link_libraries(itinerarythumbnail
     KF5::KIOWidgets
     Qt::Gui
     KPim::PkPass
 )
-
-install(TARGETS itinerarythumbnail DESTINATION ${KDE_INSTALL_PLUGINDIR})
-install(FILES itinerarythumbnail.desktop DESTINATION ${KDE_INSTALL_KSERVICESDIR})

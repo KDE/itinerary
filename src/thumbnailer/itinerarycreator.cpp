@@ -19,6 +19,12 @@ extern "C"
     }
 }
 
+class KIOPluginForMetaData : public QObject
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "KIOPluginForMetaData" FILE "itinerarythumbnail.json")
+};
+
 ItineraryCreator::ItineraryCreator() = default;
 ItineraryCreator::~ItineraryCreator() = default;
 
@@ -58,3 +64,5 @@ ThumbCreator::Flags ItineraryCreator::flags() const
 {
     return None;
 }
+
+#include "itinerarycreator.moc"

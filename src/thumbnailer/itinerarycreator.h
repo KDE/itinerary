@@ -7,10 +7,13 @@
 #ifndef ITINERARYCREATOR_H
 #define ITINERARYCREATOR_H
 
+#include <QObject>
+
 #include <kio/thumbcreator.h>
 
-class ItineraryCreator : public ThumbCreator
+class ItineraryCreator : public QObject, public ThumbCreator
 {
+    Q_OBJECT
 public:
     ItineraryCreator();
     ~ItineraryCreator() override;
