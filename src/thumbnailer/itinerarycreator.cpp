@@ -60,9 +60,4 @@ bool ItineraryCreator::create(const QString &path, int width, int height, QImage
     return false;
 }
 
-ThumbCreator::Flags ItineraryCreator::flags() const
-{
-    return None;
-}
-
 #include "itinerarycreator.moc"
