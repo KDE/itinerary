@@ -4,6 +4,11 @@
         "MimeTypes": [
             "application/vnd.apple.pkpass"
         ],
-        "Name": "Tickets and boarding passes"
+        "Name": "Tickets and boarding passes",
+        "Name[ca@valencia]": "Entrades i targetes d'embarcament",
+        "Name[ca]": "Entrades i passis d'embarcament",
+        "Name[es]": "Billetes y tarjetas de embarque",
+        "Name[pt]": "Bilhetes e cartões de embarque",
+        "Name[x-test]": "xxTickets and boarding passesxx"
     }
 }
