@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
@@ -153,6 +153,7 @@ Kirigami.Page {
         id: elementDetailsSheet
         model: infoModel
         mapData: map.mapData
+        parent: root.overlay
     }
 
     PlatformModel {
@@ -177,6 +178,7 @@ Kirigami.Page {
     IndoorMapPlatformSheet {
         id: platformSheet
         model: platformModel
+        parent: root.overlay
     }
 
     GateModel {
@@ -201,6 +203,7 @@ Kirigami.Page {
     IndoorMapGateSheet {
         id: gateSheet
         model: gateModel
+        parent: root.overlay
     }
 
     FloorLevelChangeModel {
@@ -212,6 +215,7 @@ Kirigami.Page {
     IndoorMapElevatorSheet {
         id: elevatorSheet
         model: floorLevelChangeModel
+        parent: root.overlay
     }
 
     LocationQueryOverlayProxyModel {

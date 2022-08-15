@@ -20,6 +20,7 @@ Kirigami.OverlaySheet {
 
     ListView {
         model: gateSheet.model
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
         delegate: Kirigami.BasicListItem {
             property var gate: model
