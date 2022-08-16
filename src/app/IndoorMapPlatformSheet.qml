@@ -22,6 +22,7 @@ Kirigami.OverlaySheet {
 
     ListView {
         model: platformSheet.model
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         Component {
             id: platformDelegate

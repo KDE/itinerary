@@ -30,6 +30,7 @@ Kirigami.OverlaySheet {
     ListView {
         id: contentView
         model: elementDetailsSheet.model
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         Component {
             id: infoStringDelegate

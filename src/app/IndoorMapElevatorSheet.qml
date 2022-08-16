@@ -20,6 +20,7 @@ Kirigami.OverlaySheet {
 
     ListView {
         model: elevatorSheet.model
+        Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
         delegate: Kirigami.BasicListItem {
             highlighted: false
