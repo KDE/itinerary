@@ -8,7 +8,7 @@ if (ANDROID)
         lib/androidintegration.cpp
     )
     generate_export_header(KF5KirigamiDateAndTime BASE_NAME KirigamiDateAndTime)
-    target_link_libraries(KF5KirigamiDateAndTime PUBLIC Qt${QT_MAJOR_VERSION}::Core Qt${QT_MAJOR_VERSION}::AndroidExtras)
+    target_link_libraries(KF5KirigamiDateAndTime PUBLIC Qt::Core Qt::AndroidExtras)
     add_subdirectory(android)
     install(TARGETS KF5KirigamiDateAndTime ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
@@ -41,8 +41,8 @@ ecm_target_qml_sources(itinerary-dateandtimeplugin SOURCES
 )
 
 target_link_libraries(itinerary-dateandtimeplugin
-    Qt${QT_MAJOR_VERSION}::Quick
-    Qt${QT_MAJOR_VERSION}::Qml
+    Qt::Quick
+    Qt::Qml
     KF5::I18n
 )
 if (TARGET KF5KirigamiDateAndTime)
