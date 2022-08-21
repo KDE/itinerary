@@ -49,4 +49,4 @@ else ()
     endif()
 endif()
 
-install(TARGETS SolidExtras ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS SolidExtras ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

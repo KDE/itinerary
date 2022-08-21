@@ -28,5 +28,5 @@ endif()
 target_link_libraries(KCalendarCoreExtras PUBLIC KF5::CalendarCore)
 
 if (ANDROID)
-    install(TARGETS KCalendarCoreExtras ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+    install(TARGETS KCalendarCoreExtras ${KF_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
