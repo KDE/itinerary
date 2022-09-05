@@ -704,7 +704,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.08.1" date="2022-09-08"/>
+    <release version="22.08.1" date="2022-09-08">
+      <description>
+        <ul>
+          <li>Improve size and positioning of map overlays.</li>
+          <li>Improved travel data extractors for Amtrak, Flixbus and Vistara.</li>
+          <li>Improved airport terminal and gate detection.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.08.0" date="2022-08-18">
       <description>
         <ul>
