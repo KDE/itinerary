@@ -103,6 +103,8 @@ Item {
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredWidth: Math.min(320, stripImage.implicitWidth); // 320 as per spec
+                    Layout.preferredHeight: (Layout.preferredWidth / stripImage.implicitWidth) * stripImage.implicitHeight
+                    fillMode: Image.PreserveAspectFit
                 }
 
                 // primary fields
