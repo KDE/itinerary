@@ -85,6 +85,8 @@ Item {
                         delegate: QQC2.Label {
                             text: modelData.label
                             color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            Layout.row: 0
+                            Layout.column: index + 2
                         }
                     }
                     Repeater {
@@ -92,6 +94,8 @@ Item {
                         delegate: QQC2.Label {
                             text: modelData.valueDisplayString
                             color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            Layout.row: 1
+                            Layout.column: index + 2
                         }
                     }
                 }
