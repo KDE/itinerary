@@ -50,6 +50,11 @@ App.DetailsPage {
             id: ticketToken
             resIds: ReservationManager.reservationsForBatch(root.batchId)
             onScanModeToggled: scanModeController.toggle()
+            onCurrentReservationIdChanged: {
+                if (!currentReservationId)
+                    return;
+                root.currentReservationId = currentReservationId;
+            }
         }
         Kirigami.FormLayout {
             Layout.fillWidth: true
