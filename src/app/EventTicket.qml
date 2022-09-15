@@ -85,6 +85,8 @@ Item {
                         delegate: QQC2.Label {
                             text: modelData.label
                             color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            Layout.row: 0
+                            Layout.column: index + 2
                         }
                     }
                     Repeater {
@@ -92,6 +94,8 @@ Item {
                         delegate: QQC2.Label {
                             text: modelData.valueDisplayString
                             color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            Layout.row: 1
+                            Layout.column: index + 2
                         }
                     }
                 }
@@ -103,6 +107,8 @@ Item {
                     sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                     Layout.alignment: Qt.AlignCenter
                     Layout.preferredWidth: Math.min(320, stripImage.implicitWidth); // 320 as per spec
+                    Layout.preferredHeight: (Layout.preferredWidth / stripImage.implicitWidth) * stripImage.implicitHeight
+                    fillMode: Image.PreserveAspectFit
                 }
 
                 // primary fields
