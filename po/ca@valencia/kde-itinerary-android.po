@@ -1,0 +1,38 @@
+# Translation of kde-itinerary-android.po to Catalan (Valencian)
+# Copyright (C) 2021 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: itinerary\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-01-01 00:44+0000\n"
+"PO-Revision-Date: 2021-11-15 09:00+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 21.08.1\n"
+
+msgctxt "application_name_full"
+msgid "KDE Itinerary"
+msgstr "KDE Itinerary"
+
+msgctxt "application_name_short"
+msgid "Itinerary"
+msgstr "Itinerari"
+
+msgctxt "shortcut_label_current_ticket_short"
+msgid "Current Ticket"
+msgstr "Bitllet actual"
+
+msgctxt "shortcut_label_health_certs_short"
+msgid "Health Certificates"
+msgstr "Certificats de salut"

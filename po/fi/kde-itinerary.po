@@ -1,0 +1,2563 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the itinerary package.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: itinerary\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-01 00:48+0000\n"
+"PO-Revision-Date: 2022-08-05 12:15+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Tommi Nieminen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "translator@legisign.org"
+
+#: app/AboutPage.qml:16 app/main.qml:121
+#, kde-format
+msgid "About"
+msgstr "Tietoa"
+
+#: app/AboutPage.qml:106
+#, kde-format
+msgid "Copyright: %1"
+msgstr "Tekijänoikeudet: %1"
+
+#: app/AboutPage.qml:113
+#, kde-format
+msgid "Homepage: <a href=\"%1\">%1</a>"
+msgstr "Kotisivu: <a href=\"%1\">%1</a>"
+
+#: app/AboutPage.qml:121
+#, kde-format
+msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+msgstr "Lisenssi: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#: app/AboutPage.qml:145
+#, kde-format
+msgid "License: <a href=\"%2\">%1</a>"
+msgstr "Lisenssi: <a href=\"%2\">%1</a>"
+
+#: app/AboutPage.qml:156
+#, kde-format
+msgid "Application"
+msgstr "Sovellus"
+
+#: app/AboutPage.qml:157
+#, kde-format
+msgid "Transport Data"
+msgstr "Kulkuvälinetiedot"
+
+#: app/AboutPage.qml:158
+#, kde-format
+msgid "Version"
+msgstr "Versio"
+
+#: app/AboutPage.qml:173
+#, kde-format
+msgid ""
+"KDE Itinerary is developed by the KDE community as free software and uses "
+"the components listed below."
+msgstr ""
+"KDE Itineraryn on kehittänyt KDE-yhteisö vapaana ohjelmistona, ja se käyttää "
+"alla lueteltuja osia."
+
+#: app/AboutPage.qml:199
+#, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr "KDE Itinerary käyttää seuraavien lähteiden julkista liikennetietoa."
+
+#: app/AboutPage.qml:226
+#, kde-format
+msgid "Application version: %1"
+msgstr "Sovellusversio: %1"
+
+#: app/AboutPage.qml:245
+#, kde-format
+msgid "Extractor capabilities:"
+msgstr "Purkajan kyvyt:"
+
+#: app/AlternativeJourneyPage.qml:20
+#, kde-format
+msgid "Alternative Connections"
+msgstr "Yhteysvaihtoehdot"
+
+#: app/AlternativeJourneyPage.qml:29 app/AlternativeJourneyPage.qml:41
+#, kde-format
+msgctxt "to travel destination"
+msgid "To %1"
+msgstr "Kohteeseen %1"
+
+#: app/AlternativeJourneyPage.qml:59
+#, kde-format
+msgid "Replace Journey"
+msgstr "Korvaa matkaa"
+
+#: app/AlternativeJourneyPage.qml:60
+#, kde-format
+msgid ""
+"Do you really want to replace your existing reservation with the newly "
+"selected journey?"
+msgstr "Haluatko varmasti korvata varauksesi vasta valitulla matkalla?"
+
+#: app/AlternativeJourneyPage.qml:64
+#, kde-format
+msgid "Replace"
+msgstr "Korvaa"
+
+#: app/applicationcontroller.cpp:304
+#, kde-format
+msgid "Download failed: %1"
+msgstr "Lataus epäonnistui: %1"
+
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
+#: app/applicationcontroller.cpp:541
+#, kde-format
+msgid "Import failed: %1"
+msgstr "Tuonti epäonnistui: %1"
+
+#: app/applicationcontroller.cpp:330
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "Tuonti epäonnistui: Liian suuri tiedosto."
+
+#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:613
+#, kde-format
+msgid "One reservation imported."
+msgid_plural "%1 reservations imported."
+msgstr[0] "Tuotiin yksi varaus."
+msgstr[1] "Tuotiin %1 varausta."
+
+#: app/applicationcontroller.cpp:398
+#, kde-format
+msgid "Health certificate imported."
+msgstr "Tuotiin terveystodistus."
+
+#: app/applicationcontroller.cpp:404
+#, kde-format
+msgid "Pass imported."
+msgstr "Lippu on tuotu."
+
+#: app/applicationcontroller.cpp:410
+#, kde-format
+msgid "Nothing imported."
+msgstr "Mitään ei tuotu."
+
+#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#, kde-format
+msgid "Export failed: %1"
+msgstr "Vienti epäonnistui: %1"
+
+#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#, kde-format
+msgid "Export completed."
+msgstr "Vienti valmis."
+
+#: app/applicationcontroller.cpp:566
+#, kde-format
+msgid "Import completed."
+msgstr "Tuonti valmis."
+
+#: app/BarcodeScanModeController.qml:33
+#, kde-format
+msgid "In barcode scanning mode"
+msgstr "Viivakoodinlukutilassa"
+
+#: app/BarcodeScannerPage.qml:17
+#, kde-format
+msgid "Scan Barcode"
+msgstr "Lue viivakoodi"
+
+#: app/BarcodeScannerPage.qml:76
+#, kde-format
+msgid "No camera available."
+msgstr "Ei kameraa käytettävissä."
+
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:27
+#: app/TransferDelegate.qml:47
+#, kde-format
+msgid "%1 to %2"
+msgstr "%1 – %2"
+
+#: app/BoatDelegate.qml:35 app/BusDelegate.qml:47
+#, kde-format
+msgid "From: %1"
+msgstr "Mistä: %1"
+
+#: app/BoatDelegate.qml:48 app/BusDelegate.qml:61
+#, kde-format
+msgid "To: %1"
+msgstr "Mihin: %1"
+
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:75 app/TrainDelegate.qml:84
+#, kde-format
+msgid "Arrival time: %1"
+msgstr "Saapumisaika: %1"
+
+#: app/BoatPage.qml:16
+#, kde-format
+msgid "Boat Ticket"
+msgstr "Laivalippu"
+
+#: app/BoatPage.qml:20 app/BusPage.qml:29 app/EventPage.qml:26
+#: app/FlightPage.qml:35 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
+#: app/ProgramMembershipPage.qml:47 app/TicketPage.qml:47 app/TrainPage.qml:27
+#, kde-format
+msgid "Barcode Scan Mode"
+msgstr "Viivakoodinlukutila"
+
+#: app/BoatPage.qml:61 app/BusPage.qml:93 app/TrainEditor.qml:126
+#: app/TrainPage.qml:144
+#, kde-format
+msgid "Departure"
+msgstr "Lähtö"
+
+#: app/BoatPage.qml:64 app/BoatPage.qml:83 app/BusPage.qml:96
+#: app/BusPage.qml:115 app/CarRentalPage.qml:27 app/CarRentalPage.qml:45
+#: app/FlightPage.qml:115 app/FlightPage.qml:147
+#, kde-format
+msgid "Time:"
+msgstr "Aika:"
+
+#: app/BoatPage.qml:68 app/BoatPage.qml:87 app/FlightPage.qml:130
+#: app/FlightPage.qml:162
+#, kde-format
+msgid "Terminal:"
+msgstr "Pääte:"
+
+#: app/BoatPage.qml:79 app/BusPage.qml:111 app/TrainEditor.qml:143
+#: app/TrainPage.qml:194
+#, kde-format
+msgid "Arrival"
+msgstr "Saapuminen"
+
+#: app/BoatPage.qml:98 app/BusPage.qml:143 app/FlightPage.qml:170
+#: app/TrainEditor.qml:181 app/TrainPage.qml:294
+#, kde-format
+msgid "Booking"
+msgstr "Varaaminen"
+
+#: app/BoatPage.qml:104 app/BusPage.qml:149 app/CarRentalPage.qml:87
+#: app/FlightPage.qml:176 app/TrainEditor.qml:185 app/TrainPage.qml:300
+#, kde-format
+msgid "Reference:"
+msgstr "Viite:"
+
+#: app/BoatPage.qml:110 app/BusPage.qml:155 app/CarRentalPage.qml:83
+#: app/FlightPage.qml:176 app/HotelPage.qml:69 app/RestaurantPage.qml:73
+#: app/TrainEditor.qml:189 app/TrainPage.qml:306
+#, kde-format
+msgid "Under name:"
+msgstr "Nimellä:"
+
+#: app/BusPage.qml:17
+#, kde-format
+msgid "Bus Ticket"
+msgstr "Bussilippu"
+
+#: app/BusPage.qml:39 app/TrainPage.qml:55
+#, kde-format
+msgid "Alternatives"
+msgstr "Vaihtoehdot"
+
+#: app/BusPage.qml:49 app/JourneySectionPage.qml:15 app/TrainPage.qml:87
+#, kde-format
+msgid "Journey Details"
+msgstr "Matkatiedot"
+
+#: app/BusPage.qml:100 app/BusPage.qml:119
+#, kde-format
+msgid "Station:"
+msgstr "Asema:"
+
+#: app/BusPage.qml:130 app/TrainEditor.qml:160 app/TrainPage.qml:243
+#, kde-format
+msgid "Seat"
+msgstr "Istumapaikka"
+
+#: app/BusPage.qml:136 app/FlightEditor.qml:57 app/FlightPage.qml:97
+#: app/TrainEditor.qml:170 app/TrainPage.qml:255
+#, kde-format
+msgid "Seat:"
+msgstr "Paikka:"
+
+#: app/calendarhelper.cpp:28
+#, kde-format
+msgid "Transfer to %1"
+msgstr "Siirto %1:een"
+
+#: app/CalendarImportPage.qml:19
+#, kde-format
+msgid "Calendar Import"
+msgstr "Kalenterin tuonti"
+
+#: app/CalendarImportPage.qml:23
+#, kde-format
+msgid "Import selected events"
+msgstr "Tuo valitut tapahtumat"
+
+#: app/CarRentalDelegate.qml:21
+#, kde-format
+msgid "Rental Car Drop-off"
+msgstr "Vuokra-auton jättö"
+
+#: app/CarRentalDelegate.qml:22
+#, kde-format
+msgid "Rental Car Pick-up"
+msgstr "Vuokra-auton nouto"
+
+#: app/CarRentalDelegate.qml:52
+#, kde-format
+msgid "Drop-off: %1"
+msgstr "Jättö: %1"
+
+#: app/CarRentalPage.qml:17
+#, kde-format
+msgid "Rental Car"
+msgstr "Vuokra-auto"
+
+#: app/CarRentalPage.qml:24
+#, kde-format
+msgid "Pick-up"
+msgstr "Nouto"
+
+#: app/CarRentalPage.qml:31 app/CarRentalPage.qml:49 app/EventPage.qml:64
+#: app/HotelPage.qml:35 app/RestaurantPage.qml:35
+#: app/TouristAttractionPage.qml:31
+#, kde-format
+msgid "Location:"
+msgstr "Sijainti:"
+
+#: app/CarRentalPage.qml:42
+#, kde-format
+msgid "Drop-off"
+msgstr "Jättö"
+
+#: app/CarRentalPage.qml:60
+#, kde-format
+msgid "Vehicle"
+msgstr "Ajoneuvo"
+
+#: app/CarRentalPage.qml:63 app/HealthCertificateTest.qml:61
+#: app/HealthCertificateVaccination.qml:72
+#, kde-format
+msgid "Type:"
+msgstr "Tyyppi:"
+
+#: app/CarRentalPage.qml:68
+#, kde-format
+msgid "Model:"
+msgstr "Malli:"
+
+#: app/CarRentalPage.qml:73
+#, kde-format
+msgid "Brand:"
+msgstr "Merkki:"
+
+#: app/CarRentalPage.qml:80
+#, kde-format
+msgid "Reservation"
+msgstr "Varaus"
+
+#: app/DepartureQueryPage.qml:20
+#, kde-format
+msgid "Departures"
+msgstr "Lähdöt"
+
+#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:27
+#: app/TransferPage.qml:56
+#, kde-format
+msgid "Earlier"
+msgstr "Aikaisemmin"
+
+#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:33
+#: app/TransferPage.qml:62
+#, kde-format
+msgid "Later"
+msgstr "Myöhemmin"
+
+#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:38
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr "Peruttu"
+
+#: app/DepartureQueryPage.qml:109
+#, kde-format
+msgctxt "destination"
+msgid "To:"
+msgstr "Kohde:"
+
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:122
+#: app/TransferPage.qml:245
+#, kde-format
+msgid "Data providers: %1"
+msgstr "Tiedontarjoajat: %1"
+
+#: app/DetailsPage.qml:45
+#, kde-format
+msgid "Delete Event"
+msgstr "Poista tapahtuma"
+
+#: app/DetailsPage.qml:46
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Haluatko varmasti poistaa tämän tapahtuman?"
+
+#: app/DetailsPage.qml:52 app/DetailsPage.qml:181 app/DocumentsPage.qml:80
+#: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
+#: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
+#: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
+#: app/TicketPage.qml:35 app/TicketPage.qml:57 app/TimelinePage.qml:111
+#, kde-format
+msgid "Delete"
+msgstr "Poista"
+
+#: app/DetailsPage.qml:74 app/TimelinePage.qml:142
+#, kde-format
+msgid "Select Calendar"
+msgstr "Valitse kalenteri"
+
+#: app/DetailsPage.qml:112
+#, kde-format
+msgctxt "cancel as in revoking a booking"
+msgid "Cancel Reservation"
+msgstr "Peru varaus"
+
+#: app/DetailsPage.qml:113
+#, kde-format
+msgid "Check-in"
+msgstr "Palautus"
+
+#: app/DetailsPage.qml:114
+#, kde-format
+msgid "Download"
+msgstr "Lataa"
+
+#: app/DetailsPage.qml:115
+#, kde-format
+msgid "Change Reservation"
+msgstr "Muuta varausta"
+
+#: app/DetailsPage.qml:116
+#, kde-format
+msgid "View Reservation"
+msgstr "Näytä varaus"
+
+#: app/DetailsPage.qml:135
+#, kde-format
+msgid "Show Boarding Pass"
+msgstr "Näytä maihinnousukortti"
+
+#: app/DetailsPage.qml:135
+#, kde-format
+msgid "Show Ticket"
+msgstr "Näytä matkalippu"
+
+#: app/DetailsPage.qml:141
+#, kde-format
+msgid "Documents (%1)"
+msgstr "Asiakirjat (%1)"
+
+#: app/DetailsPage.qml:146
+#, kde-format
+msgid "Add transfer before"
+msgstr "Lisää vaihto edelle"
+
+#: app/DetailsPage.qml:155
+#, kde-format
+msgid "Add transfer after"
+msgstr "Lisää vaihto jälkeen"
+
+#: app/DetailsPage.qml:164
+#, kde-format
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: app/DetailsPage.qml:170
+#, kde-format
+msgid "Add to calendar..."
+msgstr "Lisää kalenteriin…"
+
+#: app/DocumentsPage.qml:18
+#, kde-format
+msgid "Documents"
+msgstr "Asiakirjat"
+
+#: app/DocumentsPage.qml:30
+#, kde-format
+msgid "Add Document"
+msgstr "Lisää asiakirja"
+
+#: app/DocumentsPage.qml:32 app/main.qml:28
+#, kde-format
+msgid "All Files (*.*)"
+msgstr "Kaikki tiedostot (*)"
+
+#: app/DocumentsPage.qml:54
+#, kde-format
+msgid "Open Document"
+msgstr "Avaa asiakirja"
+
+#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:73
+#, kde-format
+msgid "Delete Document"
+msgstr "Poista asiakirja"
+
+#: app/DocumentsPage.qml:74
+#, kde-format
+msgid "Do you really want to delete this document?"
+msgstr "Haluatko varmasti poistaa tämän asiakirjan?"
+
+#: app/DocumentsPage.qml:94
+#, kde-format
+msgid "Add Document..."
+msgstr "Lisää asiakirja…"
+
+#: app/DocumentsPage.qml:105
+#, kde-format
+msgid "No documents attached to this reservation."
+msgstr "Tähän varaukseen ei ole liitetty asiakirjoja."
+
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:55
+#, kde-format
+msgid "End: %1"
+msgstr "Päättyminen: %1"
+
+#: app/EventDelegate.qml:59
+#, kde-format
+msgid "Start time: %1"
+msgstr "Aloitusaika: %1"
+
+#: app/EventDelegate.qml:63
+#, kde-format
+msgid "End time: %1"
+msgstr "Päättymisaika: %1"
+
+#: app/EventEditor.qml:17
+#, kde-format
+msgid "Edit Event"
+msgstr "Muokkaa tapahtumaa"
+
+#: app/EventEditor.qml:43
+#, kde-format
+msgid "Venue:"
+msgstr "Tapahtumapaikka:"
+
+#: app/EventPage.qml:17
+#, kde-format
+msgctxt "event as in concert/conference/show, not as in appointment"
+msgid "Event"
+msgstr "Tapahtuma"
+
+#: app/EventPage.qml:76
+#, kde-format
+msgctxt "time of entrance"
+msgid "Entrance:"
+msgstr "Saapuminen:"
+
+#: app/EventPage.qml:81
+#, kde-format
+msgid "Start Time:"
+msgstr "Aloitusaika:"
+
+#: app/EventPage.qml:85
+#, kde-format
+msgid "End Time:"
+msgstr "Päättymisaika:"
+
+#: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
+#: app/SettingsPage.qml:38
+#, kde-format
+msgid "Home"
+msgstr "Koti"
+
+#: app/favoritelocationmodel.cpp:152
+#, kde-format
+msgid "Work"
+msgstr "Työ"
+
+#: app/favoritelocationmodel.cpp:155
+#, kde-format
+msgid "Location %1"
+msgstr "Sijainti %1"
+
+#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:51
+#, kde-format
+msgid "Favorite Locations"
+msgstr "Suosikkisijainnit"
+
+#: app/FavoriteLocationPage.qml:41
+#, kde-format
+msgid "Export Favorite Locations"
+msgstr "Tuo suosikkisijainnit"
+
+#: app/FavoriteLocationPage.qml:43 app/FavoriteLocationPage.qml:51
+#: app/TimelinePage.qml:127
+#, kde-format
+msgid "GPX Files (*.gpx)"
+msgstr "GPX-tiedostot (*.gpx)"
+
+#: app/FavoriteLocationPage.qml:49
+#, kde-format
+msgid "Import Favorite Locations"
+msgstr "Tuo suosikkisijainnit"
+
+#: app/FavoriteLocationPage.qml:57 app/LocationPicker.qml:30
+#: app/PlaceEditor.qml:56
+#, kde-format
+msgid "Pick Location"
+msgstr "Valitse sijainti"
+
+#: app/FavoriteLocationPage.qml:67
+#, kde-format
+msgid "Add Favorite Location"
+msgstr "Lisää suosikkisijainniksi"
+
+#: app/FavoriteLocationPage.qml:75
+#, kde-format
+msgid "Rename Favorite Location"
+msgstr "Muuta suosikkisijainnin nimeä"
+
+#: app/FavoriteLocationPage.qml:80
+#, kde-format
+msgid "Remove Favorite Location"
+msgstr "Poista suosikkisijainneista"
+
+#: app/FavoriteLocationPage.qml:90
+#, kde-format
+msgid "Export to GPX"
+msgstr "Vie GPX-muotoon"
+
+#: app/FavoriteLocationPage.qml:95
+#, kde-format
+msgid "Import from GPX"
+msgstr "Tuo GPX-muodosta"
+
+#: app/FavoriteLocationPage.qml:105
+#, kde-format
+msgid "Rename favorite location"
+msgstr "Muuta suosikkisijainnin nimeä"
+
+#: app/FavoriteLocationPage.qml:116
+#, kde-format
+msgid "Rename"
+msgstr "Muuta nimeä"
+
+#: app/FlightDelegate.qml:42
+#, kde-format
+msgid "%1 %2 → %3"
+msgstr "%1 %2 → %3"
+
+#: app/FlightDelegate.qml:65
+#, kde-format
+msgctxt "flight departure, %1 is airport, %2 is time"
+msgid "Departure from %1: %2"
+msgstr "Lähtö: %1: %2"
+
+#: app/FlightDelegate.qml:79
+#, kde-format
+msgid "Terminal: %1  Gate: %2  Seat: %3"
+msgstr "Terminaali: %1  Portti: %2  Paikka: %3"
+
+#: app/FlightDelegate.qml:90
+#, kde-format
+msgctxt "flight arrival, %1 is airport, %2 is time"
+msgid "Arrival at %1: %2"
+msgstr "Saapuminen %1: %2"
+
+#: app/FlightEditor.qml:17
+#, kde-format
+msgid "Edit Flight"
+msgstr "Muokkaa lentoa"
+
+#: app/FlightEditor.qml:49
+#, kde-format
+msgid "Boarding time:"
+msgstr "Koneeseennousuaika:"
+
+#: app/FlightEditor.qml:74 app/FlightPage.qml:112
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure"
+msgstr "Lähtö"
+
+#: app/FlightEditor.qml:78
+#, kde-format
+msgctxt "flight departure time"
+msgid "Departure time:"
+msgstr "Lähtöaika:"
+
+#: app/FlightEditor.qml:86
+#, kde-format
+msgctxt "flight departure terminal"
+msgid "Departure terminal:"
+msgstr "Lähtöterminaali:"
+
+#: app/FlightEditor.qml:93
+#, kde-format
+msgctxt "flight departure gate"
+msgid "Departure gate:"
+msgstr "Lähtöportti:"
+
+#: app/FlightPage.qml:17 app/FlightPage.qml:82
+#, kde-format
+msgid "Flight"
+msgstr "Lento"
+
+#: app/FlightPage.qml:74
+#, kde-format
+msgid "Sequence Number:"
+msgstr "Järjestysnumero:"
+
+#: app/FlightPage.qml:85
+#, kde-format
+msgid "Boarding:"
+msgstr "Koneeseen nousu:"
+
+#: app/FlightPage.qml:91
+#, kde-format
+msgid "Boarding group:"
+msgstr "Koneeseennousuryhmä:"
+
+#: app/FlightPage.qml:103
+#, kde-format
+msgid "Airline:"
+msgstr "Lentoyhtiö:"
+
+#: app/FlightPage.qml:120 app/FlightPage.qml:152
+#, kde-format
+msgid "Airport:"
+msgstr "Lentokenttä:"
+
+#: app/FlightPage.qml:135
+#, kde-format
+msgid "Gate:"
+msgstr "Portti:"
+
+#: app/FlightPage.qml:144
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival"
+msgstr "Saapuminen"
+
+#: app/FlightPage.qml:184
+#, kde-format
+msgid "Frequent Traveler Program"
+msgstr "Usein matkustavien ohjelma"
+
+#: app/FlightPage.qml:189
+#, kde-format
+msgctxt "name of a frequent flyer program"
+msgid "Program:"
+msgstr "Ohjelma:"
+
+#: app/FlightPage.qml:195 app/ProgramMembershipPage.qml:98
+#: app/TicketPage.qml:107 app/TrainPage.qml:280
+#, kde-format
+msgid "Number:"
+msgstr "Numero:"
+
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
+#, kde-format
+msgid "Delete Pass"
+msgstr "Poista lippu"
+
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
+#, kde-format
+msgid "Do you really want to delete this pass?"
+msgstr "Haluatko varmasti poistaa tämän lipun?"
+
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:42
+#, kde-format
+msgid "KDE Itinerary"
+msgstr "KDE Itinerary"
+
+#: app/gpxexport.cpp:47
+#, kde-format
+msgid "Flight %1 from %2 to %3"
+msgstr "Lento %1 %2–%3"
+
+#: app/gpxexport.cpp:51
+#, kde-format
+msgid "Train %1 from %2 to %3"
+msgstr "Juna %1 %2–%3"
+
+#: app/gpxexport.cpp:55
+#, kde-format
+msgid "Bus %1 from %2 to %3"
+msgstr "Bussi %1 %2–%3"
+
+#: app/gpxexport.cpp:58
+#, kde-format
+msgid "Ferry from %1 to %2"
+msgstr "Lautta %1–%2"
+
+#: app/HealthCertificateBarcode.qml:53
+#, kde-format
+msgid "Certificate expired"
+msgstr "Todistus on vanhentunut"
+
+#: app/HealthCertificateBarcode.qml:56
+#, kde-format
+msgid "Certificate invalid"
+msgstr "Virheellinen todistus"
+
+#: app/healthcertificatemanager.cpp:118
+#, kde-format
+msgid "Vaccination %1/%2 (%3)"
+msgstr "Rokotus %1/%2 (%3)"
+
+#: app/healthcertificatemanager.cpp:120
+#, kde-format
+msgid "Vaccination (%1)"
+msgstr "Rokotus (%1)"
+
+#: app/healthcertificatemanager.cpp:124
+#, kde-format
+msgid "Test %1 (%2)"
+msgstr "Testi %1 (%2)"
+
+#: app/healthcertificatemanager.cpp:128
+#, kde-format
+msgid "Recovery (%1)"
+msgstr "Toipuminen (%1)"
+
+#: app/HealthCertificatePage.qml:17 app/main.qml:92
+#, kde-format
+msgid "Health Certificates"
+msgstr "Terveystodistukset"
+
+#: app/HealthCertificatePage.qml:52
+#, kde-format
+msgid "Import from Clipboard"
+msgstr "Tuo leikepöydältä"
+
+#: app/HealthCertificatePage.qml:67
+#, kde-format
+msgid "Delete Certificate"
+msgstr "Poista todistus"
+
+#: app/HealthCertificatePage.qml:68
+#, kde-format
+msgid "Do you really want to delete this certificate?"
+msgstr "Haluatko varmasti poistaa tämän todistuksen?"
+
+#: app/HealthCertificatePage.qml:138
+#, kde-format
+msgid ""
+"<p>You can import the following health certificates by scanning them with a "
+"barcode scanner app:<ul><li>European \"Digital Green Certificates\" for "
+"vaccinations, tests or recovery.</li><li>Indian vaccination certificates.</"
+"li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
+"p>"
+msgstr ""
+"<p>Seuraavat terveystodistukset voi tuoda lukemalla ne "
+"viivankoodinlukusovelluksella:<ul><li>eurooppalaiset rokotus-, testi- tai "
+"toipumistodistukset</li><li>intialaisen rokotustodistuksen</li><li>Kanadassa "
+"ja Yhdysvalloissa käytetyt SHC-todistukset (Smart Health Cards).</li></p>"
+
+#: app/HealthCertificateRecovery.qml:29 app/HealthCertificateTest.qml:30
+#: app/HealthCertificateVaccination.qml:33
+#, kde-format
+msgid "Person"
+msgstr "Henkilö"
+
+#: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
+#: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
+#: app/ProgramMembershipPage.qml:92 app/TicketPage.qml:91 app/TrainPage.qml:274
+#, kde-format
+msgid "Name:"
+msgstr "Nimi:"
+
+#: app/HealthCertificateRecovery.qml:39 app/HealthCertificateTest.qml:40
+#: app/HealthCertificateVaccination.qml:43
+#, kde-format
+msgid "Date of birth:"
+msgstr "Syntymäaika:"
+
+#: app/HealthCertificateRecovery.qml:44
+#, kde-format
+msgid "Recovery"
+msgstr "Palautus"
+
+#: app/HealthCertificateRecovery.qml:49
+#, kde-format
+msgid "Positive test:"
+msgstr "Positiivinen testitulos:"
+
+#: app/HealthCertificateRecovery.qml:53 app/HealthCertificateTest.qml:56
+#: app/HealthCertificateVaccination.qml:67
+#, kde-format
+msgid "Disease:"
+msgstr "Sairaus:"
+
+#: app/HealthCertificateRecovery.qml:57 app/ProgramMembershipPage.qml:103
+#: app/TicketPage.qml:96
+#, kde-format
+msgid "Valid from:"
+msgstr "Voimassa alkaen:"
+
+#: app/HealthCertificateRecovery.qml:61 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:101
+#, kde-format
+msgid "Valid until:"
+msgstr "Vanhenemisaika:"
+
+#: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:99
+#: app/HealthCertificateVaccination.qml:102
+#, kde-format
+msgid "Certificate"
+msgstr "Todistus"
+
+#: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
+#: app/HealthCertificateVaccination.qml:107
+#, kde-format
+msgid "Issuer:"
+msgstr "Julkaisija:"
+
+#: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:109
+#: app/HealthCertificateVaccination.qml:112
+#, kde-format
+msgid "Identifier:"
+msgstr "Tunniste:"
+
+#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:116
+#: app/HealthCertificateVaccination.qml:119
+#, kde-format
+msgid "Issued:"
+msgstr "Annettu:"
+
+#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:120
+#: app/HealthCertificateVaccination.qml:123
+#, kde-format
+msgid "Expires:"
+msgstr "Vanhenee:"
+
+#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:135
+#: app/HealthCertificateVaccination.qml:138
+#, kde-format
+msgid "Signature:"
+msgstr "Allekirjoitus:"
+
+#: app/HealthCertificateTest.qml:45
+#, kde-format
+msgid "Test"
+msgstr "Testi"
+
+#: app/HealthCertificateTest.qml:50 app/HealthCertificateVaccination.qml:60
+#, kde-format
+msgid "Date:"
+msgstr "Päiväys:"
+
+#: app/HealthCertificateTest.qml:67
+#, kde-format
+msgid "Test:"
+msgstr "Testi:"
+
+#: app/HealthCertificateTest.qml:82
+#, kde-format
+msgid "Result:"
+msgstr "Tulos:"
+
+#: app/HealthCertificateTest.qml:87
+#, kde-format
+msgid "Test Center:"
+msgstr "Testausasema:"
+
+#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
+#: app/PlaceEditor.qml:141
+#, kde-format
+msgid "Country:"
+msgstr "Maa:"
+
+#: app/HealthCertificateVaccination.qml:48
+#, kde-format
+msgid "Vaccination"
+msgstr "Rokotus"
+
+#: app/HealthCertificateVaccination.qml:56
+#, kde-format
+msgid "%2 (%1 day ago)"
+msgid_plural "%2 (%1 days ago)"
+msgstr[0] "%2 (%1 päivä sitten)"
+msgstr[1] "%2 (%1 päivää sitten)"
+
+#: app/HealthCertificateVaccination.qml:77
+#, kde-format
+msgid "Vaccine:"
+msgstr "Rokotus:"
+
+#: app/HealthCertificateVaccination.qml:83
+#, kde-format
+msgid "Manufacturer:"
+msgstr "Valmistaja:"
+
+#: app/HealthCertificateVaccination.qml:87
+#, kde-format
+msgid "%1/%2"
+msgstr "%1/%2"
+
+#: app/HealthCertificateVaccination.qml:88
+#, kde-format
+msgid "Dose:"
+msgstr "Annos:"
+
+#: app/HotelDelegate.qml:20
+#, kde-format
+msgid "Check-out %1"
+msgstr "Kirjaudu ulos: %1"
+
+#: app/HotelDelegate.qml:39
+#, kde-format
+msgid "Check-in time: %1"
+msgstr "Sisäänkirjautumisaika: %1"
+
+#: app/HotelDelegate.qml:45 app/HotelDelegate.qml:46
+#, kde-format
+msgid "Check-out time: %1"
+msgstr "Uloskirjautumisaika: %1"
+
+#: app/HotelEditor.qml:17
+#, kde-format
+msgid "Edit Hotel Reservation"
+msgstr "Muokkaa hotellivarausta"
+
+#: app/HotelEditor.qml:52 app/HotelPage.qml:42 app/RestaurantPage.qml:42
+#, kde-format
+msgid "Telephone:"
+msgstr "Puhelin:"
+
+#: app/HotelEditor.qml:57 app/HotelPage.qml:48 app/RestaurantPage.qml:48
+#, kde-format
+msgid "Email:"
+msgstr "Sähköposti:"
+
+#: app/HotelPage.qml:17
+#, kde-format
+msgid "Hotel Reservation"
+msgstr "Hotellivaraus"
+
+#: app/HotelPage.qml:55
+#, kde-format
+msgid "Check-in time:"
+msgstr "Sisäänkirjautumisaika:"
+
+#: app/HotelPage.qml:59
+#, kde-format
+msgid "Check-out time:"
+msgstr "Uloskirjautumisaika:"
+
+#: app/HotelPage.qml:64 app/RestaurantPage.qml:68
+#, kde-format
+msgid "Booking reference:"
+msgstr "Varausviite:"
+
+#: app/IndoorMapElevatorSheet.qml:18
+#, kde-format
+msgid "Elevator"
+msgstr "Hissi"
+
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
+#, kde-format
+msgid "Find Gate"
+msgstr "Etsi portti"
+
+#: app/IndoorMapGateSheet.qml:29
+#, kde-format
+msgctxt "flight departure/arrival gate"
+msgid "%1 (arrival + departure)"
+msgstr "%1 (saapuminen + lähtö)"
+
+#: app/IndoorMapGateSheet.qml:31
+#, kde-format
+msgctxt "flight departure gate"
+msgid "%1 (departure)"
+msgstr "%1 (lähtö)"
+
+#: app/IndoorMapGateSheet.qml:33
+#, kde-format
+msgctxt "flight arrival gate"
+msgid "%1 (arrival)"
+msgstr "%1 (saapuminen)"
+
+#: app/IndoorMapPage.qml:24
+#, kde-format
+msgid "Floor %1"
+msgstr "%1. kerros"
+
+#: app/IndoorMapPage.qml:58
+#, kde-format
+msgctxt "@action:intoolbar Go down one floor"
+msgid "Floor down"
+msgstr "Kerros alaspäin"
+
+#: app/IndoorMapPage.qml:66
+#, kde-format
+msgctxt "@action:intoolbar Go up one floor"
+msgid "Floor up"
+msgstr "Kerros ylöspäin"
+
+#: app/IndoorMapPage.qml:76
+#, kde-format
+msgid "Zoom In"
+msgstr "Lähennä"
+
+#: app/IndoorMapPage.qml:83
+#, kde-format
+msgid "Zoom Out"
+msgstr "Loitonna"
+
+#: app/IndoorMapPage.qml:90 app/IndoorMapPlatformSheet.qml:20
+#, kde-format
+msgid "Find Platform"
+msgstr "Etsi laituri"
+
+#: app/IndoorMapPage.qml:103
+#, kde-format
+msgid "Show Elevator Status"
+msgstr "Näytä hissin tila"
+
+#: app/IndoorMapPage.qml:111
+#, kde-format
+msgid "Show Rental Vehicles"
+msgstr "Näytä vuokra-autot"
+
+#: app/IndoorMapPage.qml:119
+#, kde-format
+msgid "Open Map"
+msgstr "Avaa kartta"
+
+#: app/IndoorMapPage.qml:123
+#, kde-format
+msgid "Open wheelmap.org"
+msgstr "Avaa wheelmap.org"
+
+#: app/IndoorMapPage.qml:270
+#, kde-format
+msgid "Switched to floor %1"
+msgstr "Vaihdettu %1. kerrokseen"
+
+#: app/IndoorMapPlatformSheet.qml:36
+#, kde-format
+msgctxt "train arrival/departure platform"
+msgid "%1 (arrival/departure)"
+msgstr "%1 (saapuminen/lähtö)"
+
+#: app/IndoorMapPlatformSheet.qml:38
+#, kde-format
+msgctxt "train departure platform"
+msgid "%1 (departure)"
+msgstr "%1 (lähtö)"
+
+#: app/IndoorMapPlatformSheet.qml:40
+#, kde-format
+msgctxt "train arrival platform"
+msgid "%1 (arrival)"
+msgstr "%1 (saapuminen)"
+
+#: app/IndoorMapPlatformSheet.qml:81
+#, kde-format
+msgid "Railway"
+msgstr "Rautatie"
+
+#: app/IndoorMapPlatformSheet.qml:82
+#, kde-format
+msgid "Light Rail"
+msgstr "Raitiotie"
+
+#: app/IndoorMapPlatformSheet.qml:83
+#, kde-format
+msgid "Subway"
+msgstr "Metro"
+
+#: app/IndoorMapPlatformSheet.qml:84
+#, kde-format
+msgid "Tramway"
+msgstr "Raitiotie"
+
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:104
+#, kde-format
+msgid "Bus"
+msgstr "Bussi"
+
+#: app/JourneyQueryPage.qml:80 app/TransferPage.qml:160
+#, kde-format
+msgid "Select"
+msgstr "Valitse"
+
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#, kde-format
+msgid "Select Journey"
+msgstr "Valitse matka"
+
+#: app/JourneyRequestPage.qml:34
+#, kde-format
+msgid "Search Journey"
+msgstr "Etsi matkaa"
+
+#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#, kde-format
+msgctxt "departure train station"
+msgid "Select Departure Stop"
+msgstr "Valitse lähtöasema"
+
+#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#, kde-format
+msgctxt "arrival train station"
+msgid "Select Arrival Stop"
+msgstr "Valitse tuloasema"
+
+#: app/JourneyRequestPage.qml:96
+#, kde-format
+msgctxt "departure train station"
+msgid "From:"
+msgstr "Mistä:"
+
+#: app/JourneyRequestPage.qml:104
+#, kde-format
+msgctxt "arrival train station"
+msgid "To:"
+msgstr "Mihin:"
+
+#: app/JourneyRequestPage.qml:112
+#, kde-format
+msgctxt "departure time for a train"
+msgid "Departure time:"
+msgstr "Lähtöaika:"
+
+#: app/JourneySectionDelegate.qml:92
+#, kde-format
+msgid "%1 to %2 (%3)"
+msgstr "%1 – %2 (%3)"
+
+#: app/JourneySectionDelegate.qml:93 app/tickettokenmodel.cpp:116
+#, kde-format
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: app/JourneySectionDelegate.qml:97
+#, kde-format
+msgid "Walk (%1)"
+msgstr "Kävely (%1)"
+
+#: app/JourneySectionDelegate.qml:98
+#, kde-format
+msgid "Walk %1 (%2)"
+msgstr "Kävely %1 (%2)"
+
+#: app/JourneySectionDelegate.qml:100
+#, kde-format
+msgid "Transfer (%1)"
+msgstr "Vaihto (%1)"
+
+#: app/JourneySectionDelegate.qml:102
+#, kde-format
+msgid "Wait (%1)"
+msgstr "Odotus (%1)"
+
+#: app/JourneySectionDelegate.qml:104
+#, kde-format
+msgid "%1 %2 (%3)"
+msgstr "%1 %2 (%3)"
+
+# *** TARKISTA: epäselvä
+#: app/JourneySectionDelegate.qml:106
+#, kde-format
+msgid "Drive %1 (%2)"
+msgstr "Ajomatka %1 (%2)"
+
+#: app/JourneySectionPage.qml:51
+#, kde-format
+msgid "Direction: %1"
+msgstr "Suunta: %1"
+
+#: app/JourneySectionPage.qml:58
+#, kde-format
+msgid "Distance: %1"
+msgstr "Etäisyys: %1"
+
+#: app/JourneySectionPage.qml:64
+#, kde-format
+msgid "CO₂: %1g"
+msgstr "CO₂: %1 g"
+
+#: app/JourneySummaryDelegate.qml:51
+#, kde-format
+msgctxt "number of switches to another transport"
+msgid "One change"
+msgid_plural "%1 changes"
+msgstr[0] "Yksi vaihto"
+msgstr[1] "%1 vaihtoa"
+
+#: app/livedatamanager.cpp:642
+#, kde-format
+msgid "Itinerary change"
+msgstr "Matkasuunnitelman muutos"
+
+#: app/localizer.cpp:124
+#, kde-format
+msgctxt "day-only date format"
+msgid "dd MMMM"
+msgstr "pp KKKK"
+
+#: app/localizer.cpp:169
+#, kde-format
+msgid "%1m"
+msgstr "%1 m"
+
+#: app/localizer.cpp:172 app/localizer.cpp:174
+#, kde-format
+msgid "%1km"
+msgstr "%1 km"
+
+#: app/LocationInfoDelegate.qml:48
+#, kde-format
+msgid "Entering %1"
+msgstr "Saavutaan: %1"
+
+#: app/LocationInfoDelegate.qml:61
+#, kde-format
+msgid "People are driving on the right side."
+msgstr "Ajo oikealla puolen."
+
+#: app/LocationInfoDelegate.qml:62
+#, kde-format
+msgid "People are driving on the left side."
+msgstr "Ajo vasemmalla puolen."
+
+#: app/LocationInfoDelegate.qml:69
+#, kde-format
+msgid "No compatible power sockets: %1"
+msgstr "Ei yhteensopivia pistorasioita: %1"
+
+#: app/LocationInfoDelegate.qml:76
+#, kde-format
+msgid "Some incompatible power sockets: %1"
+msgstr "Epäyhteensopivia pistorasioita: %1"
+
+#: app/LocationInfoDelegate.qml:82
+#, kde-format
+msgid "Some incompatible power plugs: %1"
+msgstr "Epäyhteensopivia virtaliittimiä: %1"
+
+#: app/LocationInfoDelegate.qml:89
+#, kde-format
+msgid "Timezone change: %1 (%2)"
+msgstr "Aikavyöhykkeen vaihto: %1 (%2)"
+
+#: app/LocationInfoDelegate.qml:96
+#, kde-format
+msgid "Currency: %1"
+msgstr "Valuutta: %1"
+
+#: app/locationinformation.cpp:93
+msgid "Type A"
+msgstr "Tyyppi A"
+
+#: app/locationinformation.cpp:94
+msgid "Type B"
+msgstr "Tyyppi B"
+
+#: app/locationinformation.cpp:95
+msgid "Europlug"
+msgstr "Maadoittamaton pistorasia"
+
+#: app/locationinformation.cpp:96
+msgid "Type D"
+msgstr "Tyyppi D"
+
+#: app/locationinformation.cpp:97
+msgid "Type E"
+msgstr "Tyyppi E"
+
+#: app/locationinformation.cpp:98
+msgid "Schuko"
+msgstr "Maadoitettu pistorasia"
+
+#: app/locationinformation.cpp:99
+msgid "Type G"
+msgstr "Tyyppi G"
+
+#: app/locationinformation.cpp:100
+msgid "Type H"
+msgstr "Tyyppi H"
+
+#: app/locationinformation.cpp:101
+msgid "Type I"
+msgstr "Tyyppi I"
+
+#: app/locationinformation.cpp:102
+msgid "Type J"
+msgstr "Tyyppi J"
+
+#: app/locationinformation.cpp:103
+msgid "Type K"
+msgstr "Tyyppi K"
+
+#: app/locationinformation.cpp:104
+msgid "Type L"
+msgstr "Tyyppi L"
+
+#: app/locationinformation.cpp:105
+msgid "Type M"
+msgstr "Tyyppi M"
+
+#: app/locationinformation.cpp:106
+msgid "Type N"
+msgstr "Tyyppi N"
+
+#: app/locationinformationdelegatecontroller.cpp:76
+#, kde-format
+msgctxt "currency conversion rate"
+msgid "1 %1 = %2 %3"
+msgstr "1 %1 = %2 %3"
+
+#: app/main.cpp:277
+#, kde-format
+msgid "Digital Travel Assistant"
+msgstr "Digitaalinen matka-avustaja"
+
+#: app/main.cpp:278
+#, kde-format
+msgid "Copyright © 2018-%1 The KDE Community"
+msgstr "Tekijänoikeudet © 2018–%1 KDE-yhteisö"
+
+#: app/main.cpp:284
+#, kde-format
+msgid "Open Itinerary on the given page"
+msgstr "Avaa Itinerary annetulle sivulle"
+
+#: app/main.cpp:287
+#, kde-format
+msgid "PkPass or JSON-LD file to import."
+msgstr "Tuotava PkPass- tai JSON-LD-tiedosto."
+
+#: app/main.qml:26
+#, kde-format
+msgid "Import Reservation"
+msgstr "Tuo varaus"
+
+#: app/main.qml:28
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr "PkPass-tiedostot (*.pkpass)"
+
+#: app/main.qml:28
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr "PDF-tiedostot (*.pdf)"
+
+#: app/main.qml:28 app/main.qml:37
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE Itinerary -tiedostot (*.itinerary)"
+
+#: app/main.qml:35
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "Vie matkasuunnitelmatiedot"
+
+#: app/main.qml:47 app/PassPage.qml:88
+#, kde-format
+msgid "Import..."
+msgstr "Tuo…"
+
+#: app/main.qml:52
+#, kde-format
+msgid "Scan Barcode..."
+msgstr "Lue viivakoodi…"
+
+#: app/main.qml:57
+#, kde-format
+msgid "Paste"
+msgstr "Liitä"
+
+#: app/main.qml:63
+#, kde-format
+msgid "Check for Updates"
+msgstr "Tarkista päivitykset"
+
+#: app/main.qml:71
+#, kde-format
+msgid "Download Maps"
+msgstr "Lataa kartat"
+
+#: app/main.qml:79 app/StatisticsPage.qml:17
+#, kde-format
+msgid "Statistics"
+msgstr "Tilastot"
+
+#: app/main.qml:86
+#, kde-format
+msgid "Passes && Programs"
+msgstr "Liput ja ohjelmat"
+
+#: app/main.qml:86
+#, kde-format
+msgid "Passes & Programs"
+msgstr "Liput ja ohjelmat"
+
+#: app/main.qml:103
+#, kde-format
+msgid "Settings..."
+msgstr "Asetukset…"
+
+#: app/main.qml:109
+#, kde-format
+msgid "Export..."
+msgstr "Vie…"
+
+#: app/main.qml:114 app/WelcomePage.qml:17
+#, kde-format
+msgid "Help"
+msgstr "Ohje"
+
+#: app/main.qml:181
+#, kde-format
+msgid "Map download finished."
+msgstr "Kartan lataus valmistui."
+
+#: app/notificationhelper.cpp:62
+#, kde-format
+msgid "Disruption on %1"
+msgstr "Häiriö: %1"
+
+#: app/notificationhelper.cpp:70
+#, kde-format
+msgid "Changes on %1"
+msgstr "Muutoksia: %1"
+
+#: app/notificationhelper.cpp:74
+#, kde-format
+msgid "Delays on %1"
+msgstr "Viivästyksiä: %1"
+
+#: app/notificationhelper.cpp:77
+#, kde-format
+msgid "Delayed departure on %1"
+msgstr "Myöhempi lähtö: %1"
+
+#: app/notificationhelper.cpp:80
+#, kde-format
+msgid "Earlier departure on %1"
+msgstr "Aiempi lähtö: %1"
+
+#: app/notificationhelper.cpp:83
+#, kde-format
+msgid "Delayed arrival on %1"
+msgstr "Myöhempi saapuminen: %1"
+
+#: app/notificationhelper.cpp:87
+#, kde-format
+msgid "Platform change on %1"
+msgstr "Laiturin muutos: %1"
+
+#: app/notificationhelper.cpp:97
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Trip has been canceled."
+msgstr "Matka on peruttu."
+
+#: app/notificationhelper.cpp:99
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Arrival has been canceled."
+msgstr "Saapuminen on peruttu."
+
+#: app/notificationhelper.cpp:103
+#, kde-format
+msgid "New departure time is: %1 (+%2)"
+msgstr "Uusi lähtöaika on: %1 (+ %2)"
+
+#: app/notificationhelper.cpp:105
+#, kde-format
+msgid "New departure time is: %1 (%2)"
+msgstr "Uusi lähtöaika on: %1 (%2)"
+
+#: app/notificationhelper.cpp:109
+#, kde-format
+msgid "New arrival time is: %1 (+%2)"
+msgstr "Uusi saapumisaika on: %1 (+ %2)"
+
+#: app/notificationhelper.cpp:113
+#, kde-format
+msgid "New departure platform is: %1"
+msgstr "Uusi lähtölaituri on: %1"
+
+#: app/notificationhelper.cpp:116
+#, kde-format
+msgid "New arrival platform is: %1"
+msgstr "Uusi saapumislaituri on: %1"
+
+#: app/passmanager.cpp:209
+#, kde-format
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr "Vanhentunut"
+
+#: app/passmanager.cpp:211
+#, kde-format
+msgctxt "not yet expired tickets"
+msgid "Valid"
+msgstr "Kelvollinen"
+
+#: app/PassPage.qml:17
+#, kde-format
+msgid "Passes and Programs"
+msgstr "Liput ja ohjelmat"
+
+#: app/PassPage.qml:42
+#, kde-format
+msgctxt "name - number"
+msgid "%1 - %2"
+msgstr "%1 – %2"
+
+#: app/PassPage.qml:86
+#, kde-format
+msgid "Import bonus or discount program cards or flat rate passes."
+msgstr "Tuo bonus- tai alennusohjelmakortit tai kiinteähintaiset liput."
+
+# *** TARKISTA: Onko tätä käännettäväkään?
+#: app/PassPage.qml:89
+#, kde-format
+msgid "document-open"
+msgstr "tiedosto-avaa"
+
+#: app/PkPassPage.qml:18
+#, kde-format
+msgid "Boarding Pass"
+msgstr "Maihinnousukortti"
+
+#: app/PkPassPage.qml:19
+#, kde-format
+msgid "Event Ticket"
+msgstr "Tapahtumalippu"
+
+#: app/PkPassPage.qml:20
+#, kde-format
+msgid "Pass"
+msgstr "Lippu"
+
+#: app/PlaceDelegate.qml:69
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr "Näytä sisäkartta"
+
+#: app/PlaceDelegate.qml:79
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr "Näytä kartalla"
+
+#: app/PlaceDelegate.qml:95
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "Navigoi"
+
+#: app/PlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Julkisen liikenteen lähdöt"
+
+#: app/PlaceEditor.qml:72
+#, kde-format
+msgid "Street:"
+msgstr "Katuosoite:"
+
+#: app/PlaceEditor.qml:98
+#, kde-format
+msgid "City:"
+msgstr "Kaupunki:"
+
+#: app/PlaceEditor.qml:115
+#, kde-format
+msgid "Region:"
+msgstr "Alue:"
+
+#: app/PlaceEditor.qml:178
+#, kde-format
+msgid "%1°, %2°"
+msgstr "%1°, %2°"
+
+#: app/ProgramMembershipPage.qml:16
+#, kde-format
+msgid "Program Membership"
+msgstr "Ohjelman jäsenyys"
+
+#: app/ProgramMembershipPage.qml:86
+#, kde-format
+msgid "Member"
+msgstr "Jäsen"
+
+#: app/PublicTransportBackendPage.qml:17
+#, kde-format
+msgid "Public Transport Information Sources"
+msgstr "Julkisen liikenteen tietolähteet"
+
+#: app/PublicTransportBackendPage.qml:90
+#, kde-format
+msgid "Global"
+msgstr "Yleinen"
+
+#: app/PublicTransportBackendPage.qml:92
+#, kde-format
+msgid "🇪🇺 European Union"
+msgstr "🇪🇺 Euroopan unioni"
+
+#: app/RestaurantEditor.qml:17
+#, kde-format
+msgid "Edit Restaurant"
+msgstr "Muokkaa ravintolaa"
+
+#: app/RestaurantPage.qml:17
+#, kde-format
+msgid "Restaurant Reservation"
+msgstr "Ravintolavaraus"
+
+#: app/RestaurantPage.qml:55
+#, kde-format
+msgid "Start time:"
+msgstr "Aloitusaika:"
+
+#: app/RestaurantPage.qml:59
+#, kde-format
+msgid "End time:"
+msgstr "Päättymisaika:"
+
+#: app/RestaurantPage.qml:63
+#, kde-format
+msgid "Party size:"
+msgstr "Seurueen koko:"
+
+#: app/SettingsPage.qml:18
+#, kde-format
+msgid "Settings"
+msgstr "Asetukset"
+
+#: app/SettingsPage.qml:42
+#, kde-format
+msgid "Home Country"
+msgstr "Kotimaa"
+
+#: app/SettingsPage.qml:59
+#, kde-format
+msgid "Online Services"
+msgstr "Verkkopalvelut"
+
+#: app/SettingsPage.qml:63
+#, kde-format
+msgid "Query Traffic Data"
+msgstr "Kysele liikennetiedot"
+
+#: app/SettingsPage.qml:73
+#, kde-format
+msgid ""
+"When enabled, this will query transport provider online services for changes "
+"such as delays or gate and platform changes."
+msgstr ""
+"Jos käytössä, muutostiedot kuten viivästykset ja portin tai laiturin "
+"vaihdokset kysellään verkkopalveluntarjoajilta."
+
+#: app/SettingsPage.qml:76
+#, kde-format
+msgid "Use insecure services"
+msgstr "Salli salaamattomat palvelut"
+
+#: app/SettingsPage.qml:85
+#, kde-format
+msgid ""
+"Enabling this will also use online services that do not offer transport "
+"encryption. This is not recommended, but might be unavoidable when relying "
+"on live data from certain providers."
+msgstr ""
+"Ottamalla tämä käyttöön käytetään myös salaamatonta liikennettä käyttäviä "
+"verkkopalveluja. Tätä ei suositella, mutta käyttöä ei aina voi välttää, jos "
+"haluaa joiltakin tarjoajilta ajantasaista tietoa."
+
+#: app/SettingsPage.qml:91
+#, kde-format
+msgid "Public Transport Information Sources..."
+msgstr "Julkisen liikenteen tietolähteet…"
+
+#: app/SettingsPage.qml:98 app/WeatherForecastPage.qml:18
+#, kde-format
+msgid "Weather Forecast"
+msgstr "Sääennuste"
+
+#: app/SettingsPage.qml:107
+#, kde-format
+msgid "Showing weather forecasts will query online services."
+msgstr "Sääennusteiden näyttö kyselee verkkopalveluista."
+
+#: app/SettingsPage.qml:115
+#, kde-format
+msgid ""
+"Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
+"Institute</a> under <a href=\"https://creativecommons.org/licenses/"
+"by/4.0\">Creative Commons 4.0 BY International</a> license."
+msgstr ""
+"Käytetään <a href=\"https://www.met.no/\">Norjan meteorologian laitoksen</a> "
+"tietoja <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative "
+"Commons 4.0 BY International<a> -lisenssillä."
+
+#: app/SettingsPage.qml:124
+#, kde-format
+msgid "Preload Map Data"
+msgstr "Esilataa karttatiedot"
+
+#: app/SettingsPage.qml:133
+#, kde-format
+msgid ""
+"Enabling this will download maps for all stations and airports for upcoming "
+"trips when connected to Wifi network."
+msgstr ""
+"Ottamalla tämä käyttöön kaikkien tulevien matkojen asemien kartat ladataan, "
+"kun ollaan langattomassa verkossa."
+
+#: app/SettingsPage.qml:139
+#, kde-format
+msgid "Currency Conversion"
+msgstr "Valuutanmuunnos"
+
+#: app/SettingsPage.qml:149
+#, kde-format
+msgid ""
+"Enabling this will perform online queries for exchange rates to currencies "
+"at travel destinations."
+msgstr ""
+"Tämän käyttöönotto kyselee verkosta matkakohteiden valuutanvaihtokursseja."
+
+#: app/SettingsPage.qml:157
+#, kde-format
+msgid "Transfer Assistant"
+msgstr "Vaihtoavustaja"
+
+#: app/SettingsPage.qml:161
+#, kde-format
+msgid "Automatically add transfers"
+msgstr "Lisää vaihdot automaattisesti"
+
+#: app/SettingsPage.qml:167
+#, kde-format
+msgid "Automatically fill transfers"
+msgstr "Täytä vaihdot automaattisesti"
+
+#: app/SettingsPage.qml:177
+#, kde-format
+msgid ""
+"When enabled, this will query transport provider online services "
+"automatically for transfer information."
+msgstr ""
+"Jos käytössä, vaihtotiedot kysellään verkkopalveluntarjoajilta "
+"automaattisesti."
+
+#: app/SettingsPage.qml:185
+#, kde-format
+msgid "Notifications"
+msgstr "Ilmoitukset"
+
+#: app/SettingsPage.qml:190
+#, kde-format
+msgid "Configure Notifications..."
+msgstr "Ilmoitusasetukset…"
+
+#: app/SettingsPage.qml:196
+#, kde-format
+msgid "Show notifications on lock screen"
+msgstr "Näytä ilmoitukset lukitusnäytöllä"
+
+#: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
+#, kde-format
+msgid "%1 kg"
+msgstr "%1 kg"
+
+#: app/statisticsmodel.cpp:97
+#, kde-format
+msgid "Trips"
+msgstr "Matkat"
+
+#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
+#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
+#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
+#, kde-format
+msgid "Distance"
+msgstr "Etäisyys"
+
+#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
+#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
+#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
+#, kde-format
+msgid "%1 km"
+msgstr "%1 km"
+
+#: app/statisticsmodel.cpp:107
+#, kde-format
+msgid "Hotel nights"
+msgstr "Hotelliyöt"
+
+#: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:137
+#: app/statisticsmodel.cpp:152 app/statisticsmodel.cpp:167
+#: app/statisticsmodel.cpp:182 app/statisticsmodel.cpp:197
+#, kde-format
+msgid "CO₂"
+msgstr "CO₂"
+
+#: app/statisticsmodel.cpp:122
+#, kde-format
+msgid "Visited countries"
+msgstr "Vieraillut maat"
+
+#: app/statisticsmodel.cpp:127 app/StatisticsPage.qml:86
+#, kde-format
+msgid "Flights"
+msgstr "Lennot"
+
+#: app/statisticsmodel.cpp:142
+#, kde-format
+msgid "Train rides"
+msgstr "Junamatkat"
+
+#: app/statisticsmodel.cpp:157
+#, kde-format
+msgid "Bus rides"
+msgstr "Bussimatkat"
+
+#: app/statisticsmodel.cpp:172
+#, kde-format
+msgid "Car rides"
+msgstr "Automatkat"
+
+#: app/statisticsmodel.cpp:187
+#, kde-format
+msgid "Boat trips"
+msgstr "Laivamatkat"
+
+#: app/StatisticsPage.qml:45 app/statisticstimerangemodel.cpp:69
+#, kde-format
+msgid "Total"
+msgstr "Kaikkiaan"
+
+#: app/StatisticsPage.qml:79
+#, kde-format
+msgctxt "@action"
+msgid "Hide Names"
+msgstr "Piilota nimet"
+
+#: app/StatisticsPage.qml:79
+#, kde-format
+msgctxt "@action"
+msgid "Show Names"
+msgstr "Näytä nimet"
+
+#: app/StatisticsPage.qml:95
+#, kde-format
+msgid "Trains"
+msgstr "Junat"
+
+#: app/StatisticsPage.qml:113
+#, kde-format
+msgid "Boat"
+msgstr "Laiva"
+
+#: app/StatisticsPage.qml:122
+#, kde-format
+msgid "Car"
+msgstr "Auto"
+
+#: app/StopPickerPage.qml:29
+#, kde-format
+msgid "Clear history"
+msgstr "Tyhjennä historia"
+
+#: app/StopPickerPage.qml:39
+#, kde-format
+msgid "Sort by name"
+msgstr "Lajittele nimen mukaan"
+
+#: app/StopPickerPage.qml:46
+#, kde-format
+msgid "Most recently used"
+msgstr "Viimeisimmin käytetyt"
+
+#: app/StopPickerPage.qml:53
+#, kde-format
+msgid "Most often used"
+msgstr "Useimmin käytetyt"
+
+#: app/StopPickerPage.qml:127
+#, kde-format
+msgid "Remove history entry"
+msgstr "Poista historiatietue"
+
+#: app/StopPickerPage.qml:173
+#, kde-format
+msgid "No locations found"
+msgstr "Sijainteja ei löytynyt"
+
+#: app/TicketPage.qml:16 app/TicketPage.qml:86
+#, kde-format
+msgid "Ticket"
+msgstr "Lippu"
+
+#: app/TicketPage.qml:28
+#, kde-format
+msgid "Delete Ticket"
+msgstr "Poista lippu"
+
+#: app/TicketPage.qml:29
+#, kde-format
+msgid "Do you really want to delete this ticket?"
+msgstr "Haluatko varmasti poistaa tämän lipun?"
+
+#: app/TicketPage.qml:113 app/TrainEditor.qml:175 app/TrainPage.qml:261
+#, kde-format
+msgid "Class:"
+msgstr "Luokka:"
+
+#: app/tickettokenmodel.cpp:74
+#, kde-format
+msgid "Attendee %1"
+msgstr "Osallistuja %1"
+
+#: app/tickettokenmodel.cpp:76
+#, kde-format
+msgid "Traveler %1"
+msgstr "Matkustaja %1"
+
+#: app/TimelinePage.qml:20
+#, kde-format
+msgid "My Itinerary"
+msgstr "Matkasuunnitelmani"
+
+#: app/TimelinePage.qml:25
+#, kde-format
+msgid "Go To Now"
+msgstr "Siirry nyt"
+
+#: app/TimelinePage.qml:30
+#, kde-format
+msgid "Current Ticket"
+msgstr "Nykyinen matkalippu"
+
+#: app/TimelinePage.qml:36
+#, kde-format
+msgid "Add train trip..."
+msgstr "Lisää junamatka…"
+
+#: app/TimelinePage.qml:87
+#, kde-format
+msgid "Add from calendar..."
+msgstr "Lisää kalenterista…"
+
+#: app/TimelinePage.qml:104
+#, kde-format
+msgid "Delete Trip"
+msgstr "Poista matka"
+
+#: app/TimelinePage.qml:105
+#, kde-format
+msgid "Do you really want to delete this trip?"
+msgstr "Haluatko varmasti poistaa tämän matkan?"
+
+#: app/TimelinePage.qml:125
+#, kde-format
+msgid "Export Trip"
+msgstr "Vie matka"
+
+#: app/TimelinePage.qml:297
+#, kde-format
+msgid "Nothing on the itinerary for today."
+msgstr "Matkasuunnitelmassa ei tänään ole mitään."
+
+#: app/timelinesectiondelegatecontroller.cpp:65
+#: kirigami-addons/dateandtime/DatePopup.qml:62
+#, kde-format
+msgid "Today"
+msgstr "Tänään"
+
+#: app/timelinesectiondelegatecontroller.cpp:67
+#, kde-format
+msgctxt "weekday, date"
+msgid "%1, %2"
+msgstr "%1 %2"
+
+#: app/TouristAttractionPage.qml:18
+#, kde-format
+msgid "Tourist Attraction"
+msgstr "Turistinähtävyys"
+
+#: app/TouristAttractionPage.qml:37
+#, kde-format
+msgid "Arrival Time:"
+msgstr "Saapumisaika: "
+
+#: app/TouristAttractionPage.qml:41
+#, kde-format
+msgid "Departure Time:"
+msgstr "Lähtöaika:"
+
+#: app/TrainDelegate.qml:51
+#, kde-format
+msgid "Departure from %1 on platform %2"
+msgstr "Lähtö: %1, laituri %2"
+
+#: app/TrainDelegate.qml:72
+#, kde-format
+msgid "Arrival at %1 on platform %2"
+msgstr "Saapuminen: %1, laituri %2"
+
+#: app/TrainEditor.qml:18
+#, kde-format
+msgid "Edit Train Reservation"
+msgstr "Muokkaa junavarausta"
+
+#: app/TrainEditor.qml:27
+#, kde-format
+msgid "Board later"
+msgstr "Nouse junaan myöhemmin"
+
+#: app/TrainEditor.qml:33
+#, kde-format
+msgid "Alight earlier"
+msgstr "Nouse junasta aikaisemmin"
+
+#: app/TrainEditor.qml:75
+#, kde-format
+msgid "Board Later"
+msgstr "Nouse junaan myöhemmin"
+
+#: app/TrainEditor.qml:85
+#, kde-format
+msgid "Change departure station"
+msgstr "Vaihda lähtöasemaa"
+
+#: app/TrainEditor.qml:97
+#, kde-format
+msgid "Alight Earlier"
+msgstr "Nouse junasta myöhemmin"
+
+#: app/TrainEditor.qml:107
+#, kde-format
+msgid "Change arrival station"
+msgstr "Vaihta tuloasemaa"
+
+#: app/TrainEditor.qml:131 app/TrainEditor.qml:148 app/TrainPage.qml:158
+#: app/TrainPage.qml:208
+#, kde-format
+msgctxt "train station"
+msgid "Station:"
+msgstr "Asema:"
+
+#: app/TrainEditor.qml:136 app/TrainEditor.qml:153 app/TrainPage.qml:167
+#: app/TrainPage.qml:217
+#, kde-format
+msgid "Platform:"
+msgstr "Laituri:"
+
+#: app/TrainEditor.qml:165
+#, kde-format
+msgid "Coach:"
+msgstr "Vaunu:"
+
+#: app/TrainPage.qml:18
+#, kde-format
+msgid "Train Ticket"
+msgstr "Junalippu"
+
+#: app/TrainPage.qml:65
+#, kde-format
+msgid "Departure Vehicle Layout"
+msgstr "Lähtövaunun kartta"
+
+#: app/TrainPage.qml:76
+#, kde-format
+msgid "Arrival Vehicle Layout"
+msgstr "Tulovaunun kartta"
+
+#: app/TrainPage.qml:147
+#, kde-format
+msgid "Departure time:"
+msgstr "Lähtöaika:"
+
+#: app/TrainPage.qml:177 app/TrainPage.qml:227
+#, kde-format
+msgctxt "previous platform"
+msgid "(was: %1)"
+msgstr "(oli: %1)"
+
+#: app/TrainPage.qml:197
+#, kde-format
+msgid "Arrival time:"
+msgstr "Saapumisaika: "
+
+#: app/TrainPage.qml:249
+#, kde-format
+msgctxt "coach of a train"
+msgid "Coach:"
+msgstr "Vaunu:"
+
+#: app/TrainPage.qml:268
+#, kde-format
+msgctxt "bonus, discount or frequent traveler program"
+msgid "Program"
+msgstr "Ohjelma"
+
+#: app/TrainPage.qml:287
+#, kde-format
+msgid "Show"
+msgstr "Näytä"
+
+#: app/TransferDelegate.qml:92
+#, kde-format
+msgid "Select..."
+msgstr "Valitse…"
+
+#: app/TransferDelegate.qml:104
+#, kde-format
+msgid "Select transfer..."
+msgstr "Valitse vaihto…"
+
+#: app/TransferPage.qml:20
+#, kde-format
+msgid "Select Transfer"
+msgstr "Valitse vaihto"
+
+#: app/TransferPage.qml:38
+#, kde-format
+msgid "Depart Now"
+msgstr "Lähde nyt"
+
+#: app/TransferPage.qml:48
+#, kde-format
+msgid "Discard"
+msgstr "Hylkää"
+
+#: app/TransferPage.qml:70
+#, kde-format
+msgid "Bike"
+msgstr "Polkupyörä"
+
+#: app/TransferPage.qml:77
+#, kde-format
+msgid "Bike & Ride"
+msgstr "Polkupyörä ja kulku"
+
+#: app/TransferPage.qml:85
+#, kde-format
+msgid "Shared Bikes"
+msgstr "Jaetut polkupyörät"
+
+#: app/TransferPage.qml:92
+#, kde-format
+msgid "Park & Ride"
+msgstr "Pysäköinti ja kulku"
+
+#: app/TransferPage.qml:182
+#, kde-format
+msgid "%1 ends at %2"
+msgstr "%1 päättyy %2"
+
+#: app/TransferPage.qml:184
+#, kde-format
+msgid "Preceding arrival %1 at %2"
+msgstr "Edeltävä saapuminen %1 (%2)"
+
+#: app/TransferPage.qml:195
+#, kde-format
+msgid "%1 starts at %2"
+msgstr "%1 alkaa %2"
+
+#: app/TransferPage.qml:197
+#, kde-format
+msgid "Following departure %1 from %2"
+msgstr "Seuraava lähtö %1 (%2)"
+
+#: app/TripGroupDelegate.qml:55
+#, kde-format
+msgid "Trip: %1"
+msgstr "Matka: %1"
+
+#: app/TripGroupDelegate.qml:68
+#, kde-format
+msgid "Date: %2 (one day)"
+msgid_plural "Date: %2 (%1 days)"
+msgstr[0] "Päivämäärä: %2 (yksi päivä)"
+msgstr[1] "Päivämäärä: %2 (%1 päivää)"
+
+#: app/TripGroupDelegate.qml:83 app/WeatherForecastPage.qml:49
+#, kde-format
+msgid "%1°C / %2°C"
+msgstr "%1 °C / %2 °C"
+
+#: app/TripGroupDelegate.qml:94
+#, kde-format
+msgid "%1: some incompatible power sockets (%2)"
+msgstr "%1: epäyhteensopivia pistorasioita (%2)"
+
+#: app/TripGroupDelegate.qml:96
+#, kde-format
+msgid "%1: some incompatible power plugs (%2)"
+msgstr "%1: epäyhteensopivia virtaliittimiä (%2)"
+
+#: app/TripGroupDelegate.qml:98
+#, kde-format
+msgid "%1: no compatible power plugs (%2)"
+msgstr "%1: ei yhteensopivia virtaliittimiä (%2)"
+
+#: app/TripGroupDelegate.qml:109
+#, kde-format
+msgid "Currency: %2"
+msgid_plural "Currencies: %2"
+msgstr[0] "Valuutta: %2"
+msgstr[1] "Valuutat: %2"
+
+#: app/tripgroupmanager.cpp:588
+#, kde-format
+msgid "%1 (%2 %3)"
+msgstr "%1 (%2 %3)"
+
+#: app/tripgroupmanager.cpp:590
+#, kde-format
+msgid "%1 (%2/%3 %4)"
+msgstr "%1 (%2/%3 %4)"
+
+#: app/tripgroupmanager.cpp:592
+#, kde-format
+msgid "%1 (%2/%3)"
+msgstr "%1 (%2/%3)"
+
+#: app/VehicleLayoutPage.qml:17
+#, kde-format
+msgid "Vehicle Layout"
+msgstr "Vaunukartta"
+
+#: app/VehicleLayoutPage.qml:97
+#, kde-format
+msgid "Departure: %1"
+msgstr "Lähtö: %1"
+
+#: app/VehicleLayoutPage.qml:99
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Saapuminen: %1"
+
+#: app/VehicleLayoutPage.qml:117
+#, kde-format
+msgid "Platform: %1"
+msgstr "Laituri: %1"
+
+#: app/VehicleLayoutPage.qml:123
+#, kde-format
+msgid "Coach: %1 Seat: %2"
+msgstr "Vaunu %1, paikka %2"
+
+#: app/VehicleLayoutPage.qml:247
+#, kde-format
+msgid "First class"
+msgstr "Ensimmäinen luokka"
+
+#: app/VehicleLayoutPage.qml:249
+#, kde-format
+msgid "Second class"
+msgstr "Toinen luokka"
+
+#: app/VehicleLayoutPage.qml:251
+#, kde-format
+msgid "First/second class"
+msgstr "Ensimmäinen/toinen luokka"
+
+#: app/VehicleLayoutPage.qml:252
+#, kde-format
+msgid "Unknown class"
+msgstr "Tuntematon luokka"
+
+#: app/VehicleLayoutPage.qml:296
+#, kde-format
+msgid "No vehicle layout information available."
+msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
+
+#: app/VehicleLoadIndicator.qml:29
+#, kde-format
+msgid "FULL"
+msgstr "TÄYNNÄ"
+
+#: app/WeatherForecastDelegate.qml:46
+#, kde-format
+msgid "Temperature: %1°C"
+msgstr "Lämpötila: %1 °C"
+
+#: app/WeatherForecastDelegate.qml:47
+#, kde-format
+msgid "Temperature: %1°C / %2°C"
+msgstr "Lämpötila: %1 °C / %2 °C"
+
+#: app/WeatherForecastDelegate.qml:52
+#, kde-format
+msgid "Precipitation: %1 mm"
+msgstr "Sademäärä: %1 mm"
+
+#: app/WeatherForecastPage.qml:47
+#, kde-format
+msgid "%1°C"
+msgstr "%1 °C"
+
+#: app/WeatherForecastPage.qml:56
+#, kde-format
+msgid "☂ %1 mm"
+msgstr "☂ %1 mm"
+
+#: app/WeatherForecastPage.qml:61
+#, kde-format
+msgid "🌬️ %1 m/s"
+msgstr "🌬️ %1 m/s"
+
+#: app/WelcomePage.qml:17
+#, kde-format
+msgid "Welcome!"
+msgstr "Tervetuloa!"
+
+#: app/WelcomePage.qml:21
+#, kde-format
+msgid "How to import data?"
+msgstr "Kuinka tiedot tuodaan?"
+
+#: app/WelcomePage.qml:27
+#, kde-format
+msgid ""
+"<p>There's a number of ways to import data into KDE Itinerary:"
+"<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+"the Android calendar, for entries made via the KMail, Nextcloud or "
+"Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
+"Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
+"barcodes and pasting their content.</li></p>"
+msgstr ""
+"<p>Tietoa voi tuoda KDE Itineraryyn monella tapaa:<ul><li>PDF- tai Apple "
+"Wallet -lipusta suoraan</li><li>Androidin kalenterista KMailin, Nextcloudin "
+"tai Thunderbirdin Itinerary-liitännäisillä tehdyt ja DaVx⁵:llä synkronoidut "
+"tietueet</li><li>KDE Connectista KMailin Itinerary-liitännäisellä</"
+"li><li>lukemalla maihinnousukortin viivakoodin ja liitämällä sen sisällön.</"
+"li></p>"
+
+#: app/WelcomePage.qml:32
+#, kde-format
+msgid "Check the settings!"
+msgstr "Tarkista asetukset!"
+
+#: app/WelcomePage.qml:38
+#, kde-format
+msgid ""
+"KDE Itinerary has all features disabled by default that require online "
+"access, such as retrieving live traffic data or weather forecasts. You "
+"therefore might want to review these settings. While you are at it, you "
+"might want to configure your home location to enable the transfer assistant "
+"to automatically suggests ways to your next departure station or airport."
+msgstr ""
+"Kaikki verkkoa vaativat ominaisuudet kuten ajantasaisten liikennetietojen "
+"tai sääennusteiden nouto on oletusarvoisesti poistettu KDE Itineraryssa "
+"käytöstä. Nämä asetukset kannattaa tarkistaa. Samalla saatat haluta asettaa "
+"kotisijaintisi, jolloin matka-avustaja osaa automaattisesti ehdottaa kulkua "
+"seuraavalle lähtöasemallesi."
+
+#: app/WelcomePage.qml:43
+#, kde-format
+msgid "More information"
+msgstr "Lisätietoa"
+
+#: app/WelcomePage.qml:49
+#, kde-format
+msgid ""
+"For more information about KDE Itinerary check out the <a href=\"https://"
+"community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+msgstr ""
+"KDE Itinerarysta saa lisätietoa <a href=\"https://community.kde.org/KDE_PIM/"
+"KDE_Itinerary\">sen wikisivulta</a>."
+
+#: app/WelcomePage.qml:56
+#, kde-format
+msgid "Got it!"
+msgstr "Selvä!"
+
+#: kirigami-addons/dateandtime/DatePicker.qml:141
+#, kde-format
+msgctxt "%1 is month name, %2 is year"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: kirigami-addons/dateandtime/DatePicker.qml:182
+#, kde-format
+msgid "Days"
+msgstr "Päivät"
+
+#: kirigami-addons/dateandtime/DatePicker.qml:190
+#, kde-format
+msgid "Months"
+msgstr "Kuukaudet"
+
+#: kirigami-addons/dateandtime/DatePicker.qml:196
+#, kde-format
+msgid "Years"
+msgstr "Vuodet"
+
+#: kirigami-addons/dateandtime/DatePopup.qml:55
+#, kde-format
+msgid "Previous"
+msgstr "Edellinen"
+
+#: kirigami-addons/dateandtime/DatePopup.qml:69
+#, kde-format
+msgid "Next"
+msgstr "Seuraava"
+
+#: kirigami-addons/dateandtime/DatePopup.qml:86
+#, kde-format
+msgid "Cancel"
+msgstr "Peru"
+
+#: kirigami-addons/dateandtime/DatePopup.qml:95
+#, kde-format
+msgid "Accept"
+msgstr "Hyväksy"
+
+#: metadataextractor/itineraryextractor.cpp:108
+#, kde-format
+msgctxt "Airline Flightnumber from Airport to Airport on Date"
+msgid "%1%2 from %3 to %4 on %5"
+msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgctxt "@title:window"
+#~ msgid "Edit date/time"
+#~ msgstr "Muokkaa päivää tai aikaa"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Check Calendar"
+#~ msgstr "Tarkista kalenteri"
+
+#~ msgid "Save"
+#~ msgstr "Tallenna"
+
+#, fuzzy
+#~| msgid "Cancelled"
+#~ msgctxt "a train/bus journey cancelled by its operator"
+#~ msgid "Cancelled"
+#~ msgstr "Peruttu"

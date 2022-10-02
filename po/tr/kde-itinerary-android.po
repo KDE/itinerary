@@ -1,0 +1,37 @@
+# Translations template for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-01-01 00:44+0000\n"
+"PO-Revision-Date: 2022-07-14 19:53+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.04.2\n"
+
+msgctxt "application_name_full"
+msgid "KDE Itinerary"
+msgstr "KDE Yolculuk"
+
+msgctxt "application_name_short"
+msgid "Itinerary"
+msgstr "Yolculuk"
+
+msgctxt "shortcut_label_current_ticket_short"
+msgid "Current Ticket"
+msgstr "Geçerli Bilet"
+
+msgctxt "shortcut_label_health_certs_short"
+msgid "Health Certificates"
+msgstr "Sağlık Sertifikaları"
