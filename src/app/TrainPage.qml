@@ -293,13 +293,19 @@ App.DetailsPage {
             Kirigami.Separator {
                 Kirigami.FormData.label: i18n("Booking")
                 Kirigami.FormData.isSection: true
-                visible: referenceLabel.visible || underNameLabel.visible
+                visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible
             }
             QQC2.Label {
                 id: referenceLabel
                 Kirigami.FormData.label: i18n("Reference:")
                 text: reservation.reservationNumber
                 visible: reservation.reservationNumber
+            }
+            QQC2.Label {
+                id: ticketNumberLabel
+                Kirigami.FormData.label: i18n("Ticket number:")
+                text: root.currentReservation.reservedTicket.ticketNumber
+                visible: ticketNumberLabel.text !== "" && ticketNumberLabel.text != referenceLabel.text
             }
             QQC2.Label {
                 id: underNameLabel
