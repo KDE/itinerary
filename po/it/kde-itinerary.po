@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:48+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2022-07-23 07:42+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -263,7 +263,7 @@ msgstr "Riferimento:"
 
 #: app/BoatPage.qml:110 app/BusPage.qml:155 app/CarRentalPage.qml:83
 #: app/FlightPage.qml:176 app/HotelPage.qml:69 app/RestaurantPage.qml:73
-#: app/TrainEditor.qml:189 app/TrainPage.qml:306
+#: app/TrainEditor.qml:189 app/TrainPage.qml:312
 #, kde-format
 msgid "Under name:"
 msgstr "Con il nome:"
@@ -2231,6 +2231,12 @@ msgstr "Programma"
 #, kde-format
 msgid "Show"
 msgstr "Mostra"
+
+#: app/TrainPage.qml:306
+#, fuzzy, kde-format
+#| msgid "Sequence Number:"
+msgid "Ticket number:"
+msgstr "Numero di sequenza:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format

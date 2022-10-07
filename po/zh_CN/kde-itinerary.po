@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:48+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2022-10-02 15:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -259,7 +259,7 @@ msgstr "订单号："
 
 #: app/BoatPage.qml:110 app/BusPage.qml:155 app/CarRentalPage.qml:83
 #: app/FlightPage.qml:176 app/HotelPage.qml:69 app/RestaurantPage.qml:73
-#: app/TrainEditor.qml:189 app/TrainPage.qml:306
+#: app/TrainEditor.qml:189 app/TrainPage.qml:312
 #, kde-format
 msgid "Under name:"
 msgstr "乘客姓名："
@@ -2210,6 +2210,12 @@ msgstr "折扣计划信息"
 #, kde-format
 msgid "Show"
 msgstr ""
+
+#: app/TrainPage.qml:306
+#, fuzzy, kde-format
+#| msgid "Sequence Number:"
+msgid "Ticket number:"
+msgstr "登机序号："
 
 #: app/TransferDelegate.qml:92
 #, kde-format

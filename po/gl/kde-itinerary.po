@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-01 00:48+0000\n"
+"POT-Creation-Date: 2022-10-07 00:46+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -273,7 +273,7 @@ msgstr "Referencia:"
 
 #: app/BoatPage.qml:110 app/BusPage.qml:155 app/CarRentalPage.qml:83
 #: app/FlightPage.qml:176 app/HotelPage.qml:69 app/RestaurantPage.qml:73
-#: app/TrainEditor.qml:189 app/TrainPage.qml:306
+#: app/TrainEditor.qml:189 app/TrainPage.qml:312
 #, kde-format
 msgid "Under name:"
 msgstr "A nome de:"
@@ -2326,6 +2326,12 @@ msgstr ""
 #, kde-format
 msgid "Show"
 msgstr ""
+
+#: app/TrainPage.qml:306
+#, fuzzy, kde-format
+#| msgid "Bus Ticket"
+msgid "Ticket number:"
+msgstr "Billete de bus"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
