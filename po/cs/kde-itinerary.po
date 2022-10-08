@@ -2221,10 +2221,9 @@ msgid "Show"
 msgstr "Zobrazit"
 
 #: app/TrainPage.qml:306
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "Číslo sekvence:"
+msgstr ""
 
 #: app/TransferDelegate.qml:92
 #, kde-format
