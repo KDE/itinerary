@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-07 00:46+0000\n"
-"PO-Revision-Date: 2022-10-06 09:17+0200\n"
+"PO-Revision-Date: 2022-10-08 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -436,12 +436,12 @@ msgstr "აირჩიეთ კალენდარი"
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
-msgstr ""
+msgstr "რეზერვაციის გაუქმება"
 
 #: app/DetailsPage.qml:113
 #, kde-format
 msgid "Check-in"
-msgstr ""
+msgstr "ჩეკინი"
 
 #: app/DetailsPage.qml:114
 #, kde-format
@@ -451,12 +451,12 @@ msgstr "ჩამოტვირთვა"
 #: app/DetailsPage.qml:115
 #, kde-format
 msgid "Change Reservation"
-msgstr ""
+msgstr "ჯავშნის შეცვლა"
 
 #: app/DetailsPage.qml:116
 #, kde-format
 msgid "View Reservation"
-msgstr ""
+msgstr "ჯავშნის ნახვა"
 
 #: app/DetailsPage.qml:135
 #, kde-format
@@ -667,23 +667,23 @@ msgstr "%1 %2 → %3"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
-msgstr ""
+msgstr "%1-დან გაფრენის თარიღი: %2"
 
 #: app/FlightDelegate.qml:79
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
-msgstr ""
+msgstr "ტერმინალი: %1  გეითი: %2  სავარძელი: %3"
 
 #: app/FlightDelegate.qml:90
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
-msgstr ""
+msgstr "%1-ზე ჩაფრენა: %2"
 
 #: app/FlightEditor.qml:17
 #, kde-format
 msgid "Edit Flight"
-msgstr ""
+msgstr "ფრენის ჩასწორება"
 
 #: app/FlightEditor.qml:49
 #, kde-format
@@ -706,7 +706,7 @@ msgstr "გასვლის დრო:"
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Departure terminal:"
-msgstr "გაფრენის ტერმინალი"
+msgstr "გაფრენის ტერმინალი:"
 
 #: app/FlightEditor.qml:93
 #, kde-format
@@ -1077,19 +1077,19 @@ msgstr ""
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
-msgstr ""
+msgstr "%1 (დაჯდომა + გაფრენა)"
 
 #: app/IndoorMapGateSheet.qml:31
 #, kde-format
 msgctxt "flight departure gate"
 msgid "%1 (departure)"
-msgstr ""
+msgstr "%1 (გაფრენა)"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
 msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
-msgstr ""
+msgstr "%1 (დაჯდომა)"
 
 #: app/IndoorMapPage.qml:24
 #, kde-format
@@ -1100,18 +1100,18 @@ msgstr "სართული %1"
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
-msgstr ""
+msgstr "სართულით დაბლა"
 
 #: app/IndoorMapPage.qml:66
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
-msgstr ""
+msgstr "სართულით მაღლა"
 
 #: app/IndoorMapPage.qml:76
 #, kde-format
 msgid "Zoom In"
-msgstr ""
+msgstr "გადიდება"
 
 #: app/IndoorMapPage.qml:83
 #, kde-format
@@ -1121,7 +1121,7 @@ msgstr "დაპატარავება"
 #: app/IndoorMapPage.qml:90 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
-msgstr ""
+msgstr "პლატფორმის მოძებნა"
 
 #: app/IndoorMapPage.qml:103
 #, kde-format
@@ -1158,13 +1158,13 @@ msgstr ""
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
-msgstr ""
+msgstr "%1 (გასვლა)"
 
 #: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
-msgstr ""
+msgstr "%1 (შემოსვლა)"
 
 #: app/IndoorMapPlatformSheet.qml:81
 #, kde-format
@@ -1194,7 +1194,7 @@ msgstr "მატარებელი"
 #: app/JourneyQueryPage.qml:80 app/TransferPage.qml:160
 #, kde-format
 msgid "Select"
-msgstr ""
+msgstr "არჩევა"
 
 #: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
 #, kde-format
@@ -1239,7 +1239,7 @@ msgstr "გასვლის დრო:"
 #: app/JourneySectionDelegate.qml:92
 #, kde-format
 msgid "%1 to %2 (%3)"
-msgstr ""
+msgstr "%1-დან %2-მდე (%3)"
 
 #: app/JourneySectionDelegate.qml:93 app/tickettokenmodel.cpp:116
 #, kde-format
@@ -1249,27 +1249,27 @@ msgstr "%1 (%2)"
 #: app/JourneySectionDelegate.qml:97
 #, kde-format
 msgid "Walk (%1)"
-msgstr ""
+msgstr "სიარული (%1)"
 
 #: app/JourneySectionDelegate.qml:98
 #, kde-format
 msgid "Walk %1 (%2)"
-msgstr ""
+msgstr "სიარული %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:100
 #, kde-format
 msgid "Transfer (%1)"
-msgstr ""
+msgstr "ტრანსფერი (%1)"
 
 #: app/JourneySectionDelegate.qml:102
 #, kde-format
 msgid "Wait (%1)"
-msgstr ""
+msgstr "სიარული (%1)"
 
 #: app/JourneySectionDelegate.qml:104
 #, kde-format
 msgid "%1 %2 (%3)"
-msgstr ""
+msgstr "%1 %2 (%3)"
 
 #: app/JourneySectionDelegate.qml:106
 #, kde-format
@@ -1279,12 +1279,12 @@ msgstr ""
 #: app/JourneySectionPage.qml:51
 #, kde-format
 msgid "Direction: %1"
-msgstr ""
+msgstr "მიმართულება: %1"
 
 #: app/JourneySectionPage.qml:58
 #, kde-format
 msgid "Distance: %1"
-msgstr ""
+msgstr "მანძილი: %1"
 
 #: app/JourneySectionPage.qml:64
 #, kde-format
@@ -1296,8 +1296,8 @@ msgstr "CO₂: %1g"
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ერთი ცვლილება"
+msgstr[1] "%1 ცვლილება"
 
 #: app/livedatamanager.cpp:642
 #, kde-format
@@ -1729,12 +1729,12 @@ msgstr ""
 #: app/RestaurantPage.qml:55
 #, kde-format
 msgid "Start time:"
-msgstr ""
+msgstr "დაწყების დრო:"
 
 #: app/RestaurantPage.qml:59
 #, kde-format
 msgid "End time:"
-msgstr ""
+msgstr "დასრულების დრო:"
 
 #: app/RestaurantPage.qml:63
 #, kde-format
@@ -1868,7 +1868,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
 msgid "%1 kg"
-msgstr ""
+msgstr "%1 კგ"
 
 #: app/statisticsmodel.cpp:97
 #, kde-format
@@ -1899,17 +1899,17 @@ msgstr ""
 #: app/statisticsmodel.cpp:182 app/statisticsmodel.cpp:197
 #, kde-format
 msgid "CO₂"
-msgstr ""
+msgstr "CO₂"
 
 #: app/statisticsmodel.cpp:122
 #, kde-format
 msgid "Visited countries"
-msgstr ""
+msgstr "ნანახი ქვეყნები"
 
 #: app/statisticsmodel.cpp:127 app/StatisticsPage.qml:86
 #, kde-format
 msgid "Flights"
-msgstr ""
+msgstr "ფრენები"
 
 #: app/statisticsmodel.cpp:142
 #, kde-format
@@ -1940,13 +1940,13 @@ msgstr "ჯამში"
 #, kde-format
 msgctxt "@action"
 msgid "Hide Names"
-msgstr ""
+msgstr "სახელების დამალვა"
 
 #: app/StatisticsPage.qml:79
 #, kde-format
 msgctxt "@action"
 msgid "Show Names"
-msgstr ""
+msgstr "სახელების ჩვენება"
 
 #: app/StatisticsPage.qml:95
 #, kde-format
@@ -1971,7 +1971,7 @@ msgstr "ისტორიის გაწმენდა"
 #: app/StopPickerPage.qml:39
 #, kde-format
 msgid "Sort by name"
-msgstr ""
+msgstr "სახელით დალაგება"
 
 #: app/StopPickerPage.qml:46
 #, kde-format
@@ -2001,7 +2001,7 @@ msgstr "ბილეთი"
 #: app/TicketPage.qml:28
 #, kde-format
 msgid "Delete Ticket"
-msgstr ""
+msgstr "ბილეთის წაშლა"
 
 #: app/TicketPage.qml:29
 #, kde-format
@@ -2142,7 +2142,7 @@ msgstr ""
 
 #: app/TrainEditor.qml:131 app/TrainEditor.qml:148 app/TrainPage.qml:158
 #: app/TrainPage.qml:208
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "train station"
 msgid "Station:"
 msgstr "სადგური:"
@@ -2182,7 +2182,7 @@ msgstr "გასვლის დრო:"
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
-msgstr ""
+msgstr "(იყო: %1)"
 
 #: app/TrainPage.qml:197
 #, kde-format
@@ -2207,10 +2207,9 @@ msgid "Show"
 msgstr "ჩვენება"
 
 #: app/TrainPage.qml:306
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "მიმდევრობის ნომერი:"
+msgstr "ბილეთის ნომერი:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
@@ -2313,8 +2312,8 @@ msgstr ""
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ვალუტა: %2"
+msgstr[1] "ვალუტა: %2"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2334,22 +2333,22 @@ msgstr "%1 (%2/%3)"
 #: app/VehicleLayoutPage.qml:17
 #, kde-format
 msgid "Vehicle Layout"
-msgstr ""
+msgstr "მანქანის განლაგება"
 
 #: app/VehicleLayoutPage.qml:97
 #, kde-format
 msgid "Departure: %1"
-msgstr ""
+msgstr "გაფრენა: %1"
 
 #: app/VehicleLayoutPage.qml:99
 #, kde-format
 msgid "Arrival: %1"
-msgstr ""
+msgstr "ჩამოსვლა: %1"
 
 #: app/VehicleLayoutPage.qml:117
 #, kde-format
 msgid "Platform: %1"
-msgstr ""
+msgstr "პლატფორმა: %1"
 
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
@@ -2359,22 +2358,22 @@ msgstr ""
 #: app/VehicleLayoutPage.qml:247
 #, kde-format
 msgid "First class"
-msgstr ""
+msgstr "პირველი კლასი"
 
 #: app/VehicleLayoutPage.qml:249
 #, kde-format
 msgid "Second class"
-msgstr ""
+msgstr "მეორე კლასი"
 
 #: app/VehicleLayoutPage.qml:251
 #, kde-format
 msgid "First/second class"
-msgstr ""
+msgstr "პირველი/მეორე კლასი"
 
 #: app/VehicleLayoutPage.qml:252
 #, kde-format
 msgid "Unknown class"
-msgstr ""
+msgstr "უცნობი კლასი"
 
 #: app/VehicleLayoutPage.qml:296
 #, kde-format
@@ -2389,17 +2388,17 @@ msgstr ""
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
 msgid "Temperature: %1°C"
-msgstr ""
+msgstr "ტემპერატურა: %1°C"
 
 #: app/WeatherForecastDelegate.qml:47
 #, kde-format
 msgid "Temperature: %1°C / %2°C"
-msgstr ""
+msgstr "ტემპერატურა: %1°C / %2°C"
 
 #: app/WeatherForecastDelegate.qml:52
 #, kde-format
 msgid "Precipitation: %1 mm"
-msgstr ""
+msgstr "ნალექი: %1 მმ"
 
 #: app/WeatherForecastPage.qml:47
 #, kde-format
@@ -2409,12 +2408,12 @@ msgstr "%1°C"
 #: app/WeatherForecastPage.qml:56
 #, kde-format
 msgid "☂ %1 mm"
-msgstr ""
+msgstr "☂ %1 მმ"
 
 #: app/WeatherForecastPage.qml:61
 #, kde-format
 msgid "🌬️ %1 m/s"
-msgstr ""
+msgstr "🌬️ %1 მ/წმ"
 
 #: app/WelcomePage.qml:17
 #, kde-format
