@@ -704,7 +704,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.08.2" date="2022-10-13"/>
+    <release version="22.08.2" date="2022-10-13">
+      <description>
+        <ul>
+          <li>Improved travel data extraction for Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
+          <li>Handle transliteration when comparing traveler names.</li>
+          <li>Fix trip grouping when connecting journey is part of a different reservation.</li>
+          <li>Fix selecting the right Apple Wallet event ticket for multi-attendee events.</li>
+          <li>Fix rendering of Apple Wallet event tickets.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.08.1" date="2022-09-08">
       <description>
         <ul>
@@ -729,6 +739,131 @@
       <description>
         <ul>
           <li>Fix monorail platforms being misdetected as regular railway.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="22.04.2" date="2022-06-09">
+      <description>
+        <ul>
+          <li>Improved travel data extraction for Thalys, UK national rail, Eurowings and Eventbrite.</li>
+          <li>Fixed train load information parsing for German public transport operators.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="22.04.1" date="2022-05-12">
+      <description>
+        <ul>
+          <li>Fix the wrong country being displayed in formatted addresses.</li>
+          <li>Display all supported barcode types in Apple Wallet passes.</li>
+          <li>Improved travel document extractors for booking.com, Eurowings, onepagebooking.com and SNCF.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="22.04.0" date="2022-04-21">
+      <description>
+        <ul>
+          <li>Support for overnight train coaches in the train coach layout view.</li>
+          <li>Show currencies and optionally current conversion rates when entering a different country.</li>
+          <li>Allow to add train trips from an online journey query to the timeline.</li>
+          <li>New or improved extractors for Renfe, SNCF, ÖBB, Spring Airlines, Peach Aviation.</li>
+          <li>Highlight severe weather conditions in the weather forecast.</li>
+          <li>Show public holidays in the timeline.</li>
+          <li>Fixed high DPI scaling issues in the train coach view.</li>
+          <li>Support for Amtrak and IATA train station identifiers.</li>
+          <li>Support for importing Danish COVID certificates.</li>
+          <li>Follow system settings on Linux for which external map application to use.</li>
+          <li>Add jump list action to directly open the current ticket.</li>
+          <li>Fixed geometry reassembly issues in the train station map.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.12.3" date="2022-03-03">
+      <description>
+        <ul>
+          <li>Add travel data extraction from Air France ticket PDF documents.</li>
+          <li>Fix locale-aware formatting of numbers.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.12.2" date="2022-02-03">
+      <description>
+        <ul>
+          <li>Fix trip grouping producing wrong results in densely populated areas.</li>
+          <li>Improve vector barcode detection in PDF documents.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.12.1" date="2022-01-06">
+      <description>
+        <ul>
+          <li>Fix station map positioning for elements without live data.</li>
+          <li>Improved travel document extraction for Amtrak and VIA Rail.</li>
+          <li>Support for alternative Hafas platform formats.</li>
+          <li>Improved opening hours evaluation in the station maps.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.12.0" date="2021-12-09">
+      <description>
+        <ul>
+          <li>New health certificate user interface.</li>
+          <li>New navigation maneuver details page for individual transport or walking journey sections.</li>
+          <li>Smarter transfer auto-selection.</li>
+          <li>Live disruption information and journey details for bus trips.</li>
+          <li>Ability to shorten train and bus trips.</li>
+          <li>Additional individual transport modes for transfers.</li>
+          <li>Improved platform identification for trams and subways.</li>
+          <li>Easier accessible barcode scan mode, and support for PDF417 ticket barcodes.</li>
+          <li>Improved data import feedback.</li>
+          <li>Fixed pinch zoom on station maps.</li>
+          <li>Improved Apple Wallet pass rendering.</li>
+          <li>Warn about rental vehicles with limited remaining range.</li>
+          <li>Numerous improvements to travel document data extraction.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.08.3" date="2021-11-04">
+      <description>
+        <ul>
+          <li>Fix icon size issues on high DPI screens.</li>
+          <li>Fix map panning leaving the favorite location selector page.</li>
+          <li>Fix determining departure country for location changes.</li>
+          <li>Fix erroneous merging of train trips with the same line on the same day.</li>
+          <li>Fix parsing of OTP rental vehicle information.</li>
+          <li>Apply timezone information correctly to flight reservations with incomplete time information.</li>
+          <li>Improved data extraction for various providers.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.08.2" date="2021-10-07">
+      <description>
+        <ul>
+          <li>Add support for SMART Health Card (SHC) vaccination certificates.</li>
+          <li>Don't trigger the connection warning when there is no previous arrival time.</li>
+          <li>Show correct number of attached documents for multi-traveller trips.</li>
+          <li>Show escalators to/from intermediate floor levels correctly in the indoor map. </li>
+          <li>Fix rendering of Apple Wallet pass rich-text back fields.</li>
+          <li>Improved data extraction for SNCF, Accor, Feratel and onepagebooking.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.08.1" date="2021-09-02">
+      <description>
+        <ul>
+          <li>Properly import mail attachments shared from FairEmail.</li>
+          <li>Improvements for importing data from Airdo, MÁV, Regionado, Ryanair and SNCF.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="21.08.0" date="2021-08-12">
+      <description>
+        <ul>
+          <li>Health certificate manager for DIVOC and EU DGC vaccination, test and recovery certificates.</li>
+          <li>GPX import and export of favorite locations and GPX export of trips for Nextcloud Maps interoperability.</li>
+          <li>Support for local German public transport operators INVG, RSAG, VRT and VSN.</li>
+          <li>Improved travel document extractor.</li>
+          <li>Various fixes to the page flow.</li>
+          <li>Entire trip groups can now be deleted.</li>
         </ul>
       </description>
     </release>
