@@ -708,7 +708,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.08.2" date="2022-10-13"/>
+    <release version="22.08.2" date="2022-10-13">
+      <description>
+        <ul>
+          <li>Improved travel data extraction for Airbnb, Amadeus, BlaBlaCar, Eventim, Ryanair, SNCF, Thalys, Vueling.</li>
+          <li>Handle transliteration when comparing traveler names.</li>
+          <li>Fix trip grouping when connecting journey is part of a different reservation.</li>
+          <li>Fix selecting the right Apple Wallet event ticket for multi-attendee events.</li>
+          <li>Fix rendering of Apple Wallet event tickets.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.08.1" date="2022-09-08">
       <description>
         <ul>
