@@ -102,7 +102,7 @@ Kirigami.ScrollablePage {
         Kirigami.Separator {
             Kirigami.FormData.isSection: true
             Kirigami.FormData.label: i18n("Bus")
-            visible: model.busCoutn.hasData
+            visible: model.busCount.hasData
         }
         StatisticsDelegate { statItem: model.busCount }
         StatisticsDelegate { statItem: model.busDistance }
