@@ -10,6 +10,7 @@
 #include "timelinemodel.h"
 
 #if HAVE_KHOLIDAYS
+#include <kholidays_version.h>
 #include <KHolidays/HolidayRegion>
 #endif
 
@@ -114,7 +115,11 @@ void TimelineSectionDelegateController::recheckHoliday()
 
     const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
     if (holidayRegion.isValid()) {
+#if KHOLIDAYS_VERSION < QT_VERSION_CHECK(5, 95, 0)
         m_holidays = holidayRegion.holidays(m_date);
+#else
+        m_holidays = holidayRegion.rawHolidaysWithAstroSeasons(m_date);
+#endif
         // prioritize non-workdays
         std::sort(m_holidays.begin(), m_holidays.end(), [](const auto &lhs, const auto &rhs) {
             return lhs.dayType() == KHolidays::Holiday::NonWorkday && rhs.dayType() == KHolidays::Holiday::Workday;
