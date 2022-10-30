@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:46+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2022-10-08 08:57+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2097,13 +2097,13 @@ msgstr "Izvozi načrt poti"
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:66
 #: kirigami-addons/dateandtime/DatePopup.qml:62
 #, kde-format
 msgid "Today"
 msgstr "Danes"
 
-#: app/timelinesectiondelegatecontroller.cpp:67
+#: app/timelinesectiondelegatecontroller.cpp:68
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"

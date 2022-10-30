@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-07 00:46+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2022-08-05 12:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2088,13 +2088,13 @@ msgstr "Vie matka"
 msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:66
 #: kirigami-addons/dateandtime/DatePopup.qml:62
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: app/timelinesectiondelegatecontroller.cpp:67
+#: app/timelinesectiondelegatecontroller.cpp:68
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
