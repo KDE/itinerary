@@ -708,7 +708,13 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.08.3" date="2022-11-03"/>
+    <release version="22.08.3" date="2022-11-03">
+      <description>
+        <ul>
+          <li>New travel data extractor for Italo train tickets.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.08.2" date="2022-10-13">
       <description>
         <ul>
