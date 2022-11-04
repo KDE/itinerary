@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-30 00:47+0000\n"
-"PO-Revision-Date: 2022-07-14 19:03+0200\n"
+"PO-Revision-Date: 2022-11-03 15:33+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -212,10 +212,9 @@ msgid "Arrival time: %1"
 msgstr "Tempore de arrivata: %1"
 
 #: app/BoatPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Bus Ticket"
+#, kde-format
 msgid "Boat Ticket"
-msgstr "Billet de bus"
+msgstr "Billet de barca"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:29 app/EventPage.qml:26
 #: app/FlightPage.qml:35 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
@@ -807,11 +806,9 @@ msgid "Bus %1 from %2 to %3"
 msgstr "Autobus %1 ex %2 a %3"
 
 #: app/gpxexport.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgid "Ferry from %1 to %2"
-msgstr "Partita ex %1: %2"
+msgstr "Ferry ex %1 a %2"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -1956,7 +1953,7 @@ msgstr "Viages de auto"
 #: app/statisticsmodel.cpp:187
 #, kde-format
 msgid "Boat trips"
-msgstr ""
+msgstr "Viages de barca"
 
 #: app/StatisticsPage.qml:45 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -1983,7 +1980,7 @@ msgstr "Trainos"
 #: app/StatisticsPage.qml:113
 #, kde-format
 msgid "Boat"
-msgstr ""
+msgstr "Barca"
 
 #: app/StatisticsPage.qml:122
 #, kde-format
@@ -2234,10 +2231,9 @@ msgid "Show"
 msgstr "Monstra"
 
 #: app/TrainPage.qml:306
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "Numero de sequentia:"
+msgstr "Numero de Billet:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
