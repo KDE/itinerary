@@ -6,7 +6,7 @@
 
 import QtQuick 2.12
 import QtQuick.Controls 2.5 as Controls2
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 import QtQuick.Layouts 1.11
 
         
@@ -32,7 +32,7 @@ Controls2.ToolButton {
         implicitHeight: Kirigami.Units.gridUnit
         implicitWidth: height
         radius: width*0.5
-        color: parent.checked ? Kirigami.Theme.buttonBackgroundColor : "transparent"
+        color: parent.checked ? Kirigami.Theme.activeBackgroundColor : "transparent"
     }                 
 }
     

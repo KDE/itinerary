@@ -2,11 +2,11 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-import QtQuick 2.3
+import QtQuick 2.15
 import QtQuick.Window 2.15
-import QtQuick.Layouts 1.2
-import QtQuick.Controls 2.3 as Controls
-import org.kde.kirigami 2.8 as Kirigami
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as Controls
+import org.kde.kirigami 2.19 as Kirigami
 
 /**
  * A popup that prompts the user to select a date
@@ -52,23 +52,29 @@ Kirigami.OverlaySheet {
 
         Controls.Button {
             icon.name: "go-previous"
-            Controls.ToolTip.text: i18n("Previous")
-            Controls.ToolTip.visible: hovered
-            Controls.ToolTip.delay: Kirigami.Units.shortDuration
+            text: i18nd("kirigami-addons", "Previous")
+            display: Controls.AbstractButton.IconOnly
+            Controls.ToolTip {
+                text: parent.text
+            }
             onClicked: datePicker.prevMonth()
         }
         Controls.Button {
             icon.name: "go-jump-today"
-            Controls.ToolTip.text: i18n("Today")
-            Controls.ToolTip.visible: hovered
-            Controls.ToolTip.delay: Kirigami.Units.shortDuration
+            text: i18nd("kirigami-addons", "Today")
+            display: Controls.AbstractButton.IconOnly
+            Controls.ToolTip {
+                text: parent.text
+            }
             onClicked: datePicker.goToday()
         }
         Controls.Button {
             icon.name: "go-next"
-            Controls.ToolTip.text: i18n("Next")
-            Controls.ToolTip.visible: hovered
-            Controls.ToolTip.delay: Kirigami.Units.shortDuration
+            text: i18nd("kirigami-addons", "Next")
+            display: Controls.AbstractButton.IconOnly
+            Controls.ToolTip {
+                text: parent.text
+            }
             onClicked: datePicker.nextMonth()
         }
     }
@@ -83,7 +89,7 @@ Kirigami.OverlaySheet {
             Layout.fillWidth: true
         }
         Controls.Button {
-            text: i18n("Cancel")
+            text: i18nd("kirigami-addons", "Cancel")
             icon.name: "dialog-cancel"
             onClicked: {
                 root.cancelled()
@@ -92,7 +98,7 @@ Kirigami.OverlaySheet {
 
         }
         Controls.Button {
-            text: i18n("Accept")
+            text: i18nd("kirigami-addons", "Accept")
             icon.name: "dialog-ok-apply"
             onClicked: {
                 root.selectedDate = datePicker.selectedDate

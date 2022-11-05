@@ -46,7 +46,7 @@ Controls.TextField { //inherited for style reasons to show we're interactive
         active: false
 
         sourceComponent: Component {
-            DatePopup {
+            KDT.DatePopup {
                 onAccepted: {
                     root.selectedDate = item.selectedDate
                     active = false

@@ -7,8 +7,15 @@
 
 #include "androidintegration.h"
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <QAndroidJniObject>
 #include <QtAndroid>
+#else
+#include <QCoreApplication>
+#include <QJniObject>
+// TODO KF6 remove this porting aid
+using QAndroidJniObject = QJniObject;
+#endif
 #include <QDebug>
 
 using namespace KirigamiAddonsDateAndTime;
@@ -87,12 +94,22 @@ Q_DECL_EXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *)
 
 void AndroidIntegration::showDatePicker(qint64 initialDate)
 {
-    QAndroidJniObject picker("org/kde/kirigamiaddons/dateandtime/DatePicker", "(Landroid/app/Activity;J)V", QtAndroid::androidActivity().object(), initialDate);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    QAndroidJniObject activity = QtAndroid::androidActivity();
+#else
+    QJniObject activity = QNativeInterface::QAndroidApplication::context();
+#endif
+    QAndroidJniObject picker("org/kde/kirigamiaddons/dateandtime/DatePicker", "(Landroid/app/Activity;J)V", activity.object(), initialDate);
     picker.callMethod<void>("doShow");
 }
 
 void AndroidIntegration::showTimePicker(qint64 initialTime)
 {
-    QAndroidJniObject picker("org/kde/kirigamiaddons/dateandtime/TimePicker", "(Landroid/app/Activity;J)V", QtAndroid::androidActivity().object(), initialTime);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    QAndroidJniObject activity = QtAndroid::androidActivity();
+#else
+    QJniObject activity = QNativeInterface::QAndroidApplication::context();
+#endif
+    QAndroidJniObject picker("org/kde/kirigamiaddons/dateandtime/TimePicker", "(Landroid/app/Activity;J)V", activity.object(), initialTime);
     picker.callMethod<void>("doShow");
 }

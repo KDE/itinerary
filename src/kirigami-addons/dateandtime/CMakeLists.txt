@@ -8,7 +8,10 @@ if (ANDROID)
         lib/androidintegration.cpp
     )
     generate_export_header(KF5KirigamiDateAndTime BASE_NAME KirigamiDateAndTime)
-    target_link_libraries(KF5KirigamiDateAndTime PUBLIC Qt::Core Qt::AndroidExtras)
+    target_link_libraries(KF5KirigamiDateAndTime PUBLIC Qt${QT_MAJOR_VERSION}::Core)
+    if (QT_MAJOR_VERSION EQUAL "5")
+        target_link_libraries(KF5KirigamiDateAndTime PUBLIC Qt5::AndroidExtras)
+    endif()
     add_subdirectory(android)
     install(TARGETS KF5KirigamiDateAndTime ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
@@ -27,22 +30,24 @@ target_sources(itinerary-dateandtimeplugin PRIVATE
 )
 
 ecm_target_qml_sources(itinerary-dateandtimeplugin SOURCES
-    ClockElement.qml
     ClockFace.qml
     DateInput.qml
     DatePicker.qml
     DatePopup.qml
-    DesktopDateInput.qml
-    MobileDateInput.qml
-    Hand.qml
     TimeLabel.qml
     TimePicker.qml
     TimeInput.qml
 )
+ecm_target_qml_sources(itinerary-dateandtimeplugin PATH private SOURCES
+    private/ClockElement.qml
+    private/DesktopDateInput.qml
+    private/Hand.qml
+    private/MobileDateInput.qml
+)
 
 target_link_libraries(itinerary-dateandtimeplugin
-    Qt::Quick
-    Qt::Qml
+    Qt${QT_MAJOR_VERSION}::Quick
+    Qt${QT_MAJOR_VERSION}::Qml
     KF5::I18n
 )
 if (TARGET KF5KirigamiDateAndTime)

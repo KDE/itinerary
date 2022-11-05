@@ -138,7 +138,7 @@ QQC2.Control {
             Kirigami.Heading {
                 id: monthLabel
                 Layout.fillWidth: true
-                text: i18nc("%1 is month name, %2 is year", "%1 %2", Qt.locale().standaloneMonthName(selectedDate.getMonth()), String(selectedDate.getFullYear()))
+                text: i18ndc("kirigami-addons", "%1 is month name, %2 is year", "%1 %2", Qt.locale().standaloneMonthName(selectedDate.getMonth()), String(selectedDate.getFullYear()))
                 level: 1
             }
             QQC2.ToolButton {
@@ -179,7 +179,7 @@ QQC2.Control {
             QQC2.TabButton {
                 id: daysViewCheck
                 Layout.fillWidth: true
-                text: i18n("Days")
+                text: i18nc("kirigami-addons", "Days")
                 onClicked: pickerView.currentIndex = 0 // dayGrid is first item in pickerView
                 visible: datepicker.showDays
                 width: visible ? implicitWidth : 0
@@ -187,13 +187,13 @@ QQC2.Control {
             QQC2.TabButton {
                 id: monthsViewCheck
                 Layout.fillWidth: true
-                text: i18n("Months")
+                text: i18nc("kirigami-addons", "Months")
                 onClicked: pickerView.currentIndex = 1
             }
             QQC2.TabButton {
                 id: yearsViewCheck
                 Layout.fillWidth: true
-                text: i18n("Years")
+                text: i18nc("kirigami-addons", "Years")
                 onClicked: pickerView.currentIndex = 2
             }
         }

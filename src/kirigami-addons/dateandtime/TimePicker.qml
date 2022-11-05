@@ -8,6 +8,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.5 as Controls2
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick.Layouts 1.11
+import "private"
 
 /**
  * A large time picker

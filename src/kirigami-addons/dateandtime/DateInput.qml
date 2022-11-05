@@ -24,7 +24,7 @@ Loader {
 
     //maybe we need something more like QQC2 combox to handle user changed signals separately from the others
 
-    source: Kirigami.Settings.tabletMode ? Qt.resolvedUrl("MobileDateInput.qml") : Qt.resolvedUrl("DesktopDateInput.qml")
+    source: Kirigami.Settings.tabletMode ? Qt.resolvedUrl("private/MobileDateInput.qml") : Qt.resolvedUrl("private/DesktopDateInput.qml")
 
     onSelectedDateChanged: {
         if (item && root.selectedDate) {

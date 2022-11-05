@@ -5,7 +5,8 @@
 #include <QDate>
 #include <QRandomGenerator>
 
-struct MonthModel::Private {
+class MonthModel::Private {
+public:
     int year;
     int month;
     QCalendar calendar = QCalendar();
