@@ -45,6 +45,19 @@ private Q_SLOTS:
         QCOMPARE(l.timeZoneOffsetDelta(), -3600);
         QVERIFY(!l.timeZoneName().isEmpty());
     }
+
+    void testBug461438()
+    {
+        // UK -> BE transition - https://bugs.kde.org/461438
+        LocationInformation info;
+        info.setIsoCode(QStringLiteral("GB"));
+        info.setIsoCode(QStringLiteral("BE"));
+        QVERIFY(info.drivingSideDiffers());
+        QCOMPARE(info.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
+        QCOMPARE(info.powerPlugCompatibility(), LocationInformation::Incompatible);
+        QVERIFY(info.currencyDiffers());
+        QCOMPARE(info.currencyCode(), QLatin1String("EUR"));
+    }
 };
 
 QTEST_GUILESS_MAIN(LocationInformationTest)
