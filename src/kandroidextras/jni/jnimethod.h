@@ -174,7 +174,7 @@ static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
 #define JNI_CONSTRUCTOR(Name, ...) \
 inline Name( JNI_PARAMS(__VA_ARGS__) ) { \
     using namespace KAndroidExtras; \
-    setJniHandle(QAndroidJniObject(Jni::typeName<_jni_ThisType>(), Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__))); \
+    setJniHandle(QAndroidJniObject(Jni::typeName<_jni_ThisType>(), (const char*)Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__))); \
 }
 
 }
