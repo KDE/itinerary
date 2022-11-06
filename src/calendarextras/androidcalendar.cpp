@@ -57,7 +57,7 @@ KCalendarCore::Event::List AndroidCalendar::rawEvents(KCalendarCore::EventSortFi
     result.reserve(jniEvents.size());
     std::transform(jniEvents.begin(), jniEvents.end(), std::back_inserter(result), &AndroidIcalConverter::readEvent);
     registerEvents(result);
-    return sortEvents(result, sortField, sortDirection);
+    return sortEvents(std::move(result), sortField, sortDirection);
 }
 
 #if KCALENDARCORE_BUILD_DEPRECATED_SINCE(5, 95)
