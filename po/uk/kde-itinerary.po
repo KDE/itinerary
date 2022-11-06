@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-11-06 00:47+0000\n"
 "PO-Revision-Date: 2022-10-07 07:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2107,7 +2107,7 @@ msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:62
+#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Сьогодні"
@@ -2533,17 +2533,23 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "kirigami-addons"
 msgid "Days"
 msgstr "Дні"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Months"
+msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Місяці"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Years"
+msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "Роки"
 
@@ -2552,17 +2558,17 @@ msgstr "Роки"
 msgid "Previous"
 msgstr "Назад"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:69
+#: kirigami-addons/dateandtime/DatePopup.qml:73
 #, kde-format
 msgid "Next"
 msgstr "Далі"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:86
+#: kirigami-addons/dateandtime/DatePopup.qml:92
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:95
+#: kirigami-addons/dateandtime/DatePopup.qml:101
 #, kde-format
 msgid "Accept"
 msgstr "Прийняти"

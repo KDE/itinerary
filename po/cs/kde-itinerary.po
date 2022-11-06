@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-11-06 00:47+0000\n"
 "PO-Revision-Date: 2022-01-14 14:15+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2083,7 +2083,7 @@ msgid "Nothing on the itinerary for today."
 msgstr "Dnes nemáte v itineráři nic."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:62
+#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
@@ -2503,17 +2503,23 @@ msgid "%1 %2"
 msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "kirigami-addons"
 msgid "Days"
 msgstr "Dnů"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Months"
+msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Měsíce"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Years"
+msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "Roky"
 
@@ -2522,17 +2528,17 @@ msgstr "Roky"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:69
+#: kirigami-addons/dateandtime/DatePopup.qml:73
 #, kde-format
 msgid "Next"
 msgstr "Následující"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:86
+#: kirigami-addons/dateandtime/DatePopup.qml:92
 #, kde-format
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:95
+#: kirigami-addons/dateandtime/DatePopup.qml:101
 #, kde-format
 msgid "Accept"
 msgstr "Přijmout"
