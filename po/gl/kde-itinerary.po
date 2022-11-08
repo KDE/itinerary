@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-11-08 02:25+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1395,97 +1395,97 @@ msgstr ""
 msgid "Entering %1"
 msgstr "Entrando en %1"
 
-#: app/LocationInfoDelegate.qml:61
-#, kde-format
-msgid "People are driving on the right side."
-msgstr "A xente conduce polo lado correcto."
-
-#: app/LocationInfoDelegate.qml:62
-#, fuzzy, kde-format
-#| msgid "People are driving on the right side."
-msgid "People are driving on the left side."
-msgstr "A xente conduce polo lado correcto."
-
-#: app/LocationInfoDelegate.qml:69
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Non hai tomas de corrente compatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:76
+#: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Hai algunhas tomas de corrente incompatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:82
+#: app/LocationInfoDelegate.qml:80
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Algúns enchufes incompatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:89
+#: app/LocationInfoDelegate.qml:87
 #, fuzzy, kde-format
 #| msgid "One change"
 #| msgid_plural "%1 changes"
 msgid "Timezone change: %1 (%2)"
 msgstr "Un cambio"
 
-#: app/LocationInfoDelegate.qml:96
+#: app/LocationInfoDelegate.qml:94
 #, kde-format
 msgid "Currency: %1"
 msgstr ""
 
-#: app/locationinformation.cpp:93
+#: app/locationinformation.cpp:85
+#, kde-format
+msgid "People are driving on the right side."
+msgstr "A xente conduce polo lado correcto."
+
+#: app/locationinformation.cpp:86
+#, fuzzy, kde-format
+#| msgid "People are driving on the right side."
+msgid "People are driving on the left side."
+msgstr "A xente conduce polo lado correcto."
+
+#: app/locationinformation.cpp:103
 msgid "Type A"
 msgstr "Tipo A"
 
-#: app/locationinformation.cpp:94
+#: app/locationinformation.cpp:104
 msgid "Type B"
 msgstr "Tipo B"
 
-#: app/locationinformation.cpp:95
+#: app/locationinformation.cpp:105
 msgid "Europlug"
 msgstr "Enchufe europeo"
 
-#: app/locationinformation.cpp:96
+#: app/locationinformation.cpp:106
 msgid "Type D"
 msgstr "Tipo D"
 
-#: app/locationinformation.cpp:97
+#: app/locationinformation.cpp:107
 msgid "Type E"
 msgstr "Tipo E"
 
-#: app/locationinformation.cpp:98
+#: app/locationinformation.cpp:108
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:99
+#: app/locationinformation.cpp:109
 msgid "Type G"
 msgstr "Tipo G"
 
-#: app/locationinformation.cpp:100
+#: app/locationinformation.cpp:110
 msgid "Type H"
 msgstr "Tipo H"
 
-#: app/locationinformation.cpp:101
+#: app/locationinformation.cpp:111
 msgid "Type I"
 msgstr "Tipo I"
 
-#: app/locationinformation.cpp:102
+#: app/locationinformation.cpp:112
 msgid "Type J"
 msgstr "Tipo J"
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:113
 msgid "Type K"
 msgstr "Tipo K"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:114
 msgid "Type L"
 msgstr "Tipo L"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:115
 msgid "Type M"
 msgstr "Tipo M"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:116
 msgid "Type N"
 msgstr "Tipo N"
 
@@ -2180,7 +2180,7 @@ msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:62
+#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Hoxe"
@@ -2604,16 +2604,19 @@ msgstr "%1 %2°C"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
 #, kde-format
+msgctxt "kirigami-addons"
 msgid "Days"
 msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
 #, kde-format
+msgctxt "kirigami-addons"
 msgid "Months"
 msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
 #, kde-format
+msgctxt "kirigami-addons"
 msgid "Years"
 msgstr ""
 
@@ -2622,18 +2625,18 @@ msgstr ""
 msgid "Previous"
 msgstr ""
 
-#: kirigami-addons/dateandtime/DatePopup.qml:69
+#: kirigami-addons/dateandtime/DatePopup.qml:73
 #, kde-format
 msgid "Next"
 msgstr ""
 
-#: kirigami-addons/dateandtime/DatePopup.qml:86
+#: kirigami-addons/dateandtime/DatePopup.qml:92
 #, fuzzy, kde-format
 #| msgid "Cancelled"
 msgid "Cancel"
 msgstr "Cancelada"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:95
+#: kirigami-addons/dateandtime/DatePopup.qml:101
 #, kde-format
 msgid "Accept"
 msgstr ""

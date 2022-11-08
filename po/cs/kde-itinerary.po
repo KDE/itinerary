@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-11-08 02:25+0000\n"
 "PO-Revision-Date: 2022-01-14 14:15+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1327,94 +1327,94 @@ msgstr "%1km"
 msgid "Entering %1"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:61
-#, kde-format
-msgid "People are driving on the right side."
-msgstr ""
-
-#: app/LocationInfoDelegate.qml:62
-#, kde-format
-msgid "People are driving on the left side."
-msgstr "Lidé jezdí vlevo."
-
-#: app/LocationInfoDelegate.qml:69
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:76
+#: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:82
+#: app/LocationInfoDelegate.qml:80
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:89
+#: app/LocationInfoDelegate.qml:87
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:96
+#: app/LocationInfoDelegate.qml:94
 #, kde-format
 msgid "Currency: %1"
 msgstr "Měna: %1"
 
-#: app/locationinformation.cpp:93
+#: app/locationinformation.cpp:85
+#, kde-format
+msgid "People are driving on the right side."
+msgstr ""
+
+#: app/locationinformation.cpp:86
+#, kde-format
+msgid "People are driving on the left side."
+msgstr "Lidé jezdí vlevo."
+
+#: app/locationinformation.cpp:103
 msgid "Type A"
 msgstr "Typ A"
 
-#: app/locationinformation.cpp:94
+#: app/locationinformation.cpp:104
 msgid "Type B"
 msgstr "Typ B"
 
-#: app/locationinformation.cpp:95
+#: app/locationinformation.cpp:105
 msgid "Europlug"
 msgstr "Eurozásuvka"
 
-#: app/locationinformation.cpp:96
+#: app/locationinformation.cpp:106
 msgid "Type D"
 msgstr "Typ D"
 
-#: app/locationinformation.cpp:97
+#: app/locationinformation.cpp:107
 msgid "Type E"
 msgstr "Typ E"
 
-#: app/locationinformation.cpp:98
+#: app/locationinformation.cpp:108
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:99
+#: app/locationinformation.cpp:109
 msgid "Type G"
 msgstr "Typ G"
 
-#: app/locationinformation.cpp:100
+#: app/locationinformation.cpp:110
 msgid "Type H"
 msgstr "Typ H"
 
-#: app/locationinformation.cpp:101
+#: app/locationinformation.cpp:111
 msgid "Type I"
 msgstr "Typ I"
 
-#: app/locationinformation.cpp:102
+#: app/locationinformation.cpp:112
 msgid "Type J"
 msgstr "Typ J"
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:113
 msgid "Type K"
 msgstr "Typ K"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:114
 msgid "Type L"
 msgstr "Typ L"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:115
 msgid "Type M"
 msgstr "Typ M"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:116
 msgid "Type N"
 msgstr "Typ N"
 
@@ -2083,7 +2083,7 @@ msgid "Nothing on the itinerary for today."
 msgstr "Dnes nemáte v itineráři nic."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:62
+#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
@@ -2503,17 +2503,23 @@ msgid "%1 %2"
 msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "kirigami-addons"
 msgid "Days"
 msgstr "Dnů"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Months"
+msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Měsíce"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Years"
+msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "Roky"
 
@@ -2522,17 +2528,17 @@ msgstr "Roky"
 msgid "Previous"
 msgstr "Předchozí"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:69
+#: kirigami-addons/dateandtime/DatePopup.qml:73
 #, kde-format
 msgid "Next"
 msgstr "Následující"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:86
+#: kirigami-addons/dateandtime/DatePopup.qml:92
 #, kde-format
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: kirigami-addons/dateandtime/DatePopup.qml:95
+#: kirigami-addons/dateandtime/DatePopup.qml:101
 #, kde-format
 msgid "Accept"
 msgstr "Přijmout"
