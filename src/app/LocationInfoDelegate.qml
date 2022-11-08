@@ -57,9 +57,7 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             width: topLayout.width
-            text: locationInfo.drivingSide == KItinerary.KnowledgeDb.DrivingSide.Right ?
-                i18n("People are driving on the right side.") :
-                i18n("People are driving on the left side.")
+            text: locationInfo.drivingSideLabel
             visible: locationInfo.drivingSideDiffers
             wrapMode: Text.WordWrap
         }

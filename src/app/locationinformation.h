@@ -19,9 +19,14 @@ class LocationInformation
     Q_GADGET
     Q_PROPERTY(QString isoCode READ isoCode)
 
+    /** @warning Careful with using this in QML, this is an 8bit enum which QML doesn't seem to like
+     *  and you might silently get arbitrary values instead.
+     */
     Q_PROPERTY(KItinerary::KnowledgeDb::DrivingSide drivingSide READ drivingSide)
     /** This indicates that the driving side information changed and needs to be displayed. */
     Q_PROPERTY(bool drivingSideDiffers READ drivingSideDiffers)
+    /** Display label for the driving side information. */
+    Q_PROPERTY(QString drivingSideLabel READ drivingSideLabel STORED false)
 
     Q_PROPERTY(PowerPlugCompatibility powerPlugCompatibility READ powerPlugCompatibility)
     /** Plugs from the home country that will not fit. */
@@ -54,6 +59,7 @@ public:
 
     KItinerary::KnowledgeDb::DrivingSide drivingSide() const;
     bool drivingSideDiffers() const;
+    QString drivingSideLabel() const;
 
     PowerPlugCompatibility powerPlugCompatibility() const;
     QString powerPlugTypes() const;

@@ -79,6 +79,16 @@ bool LocationInformation::drivingSideDiffers() const
     return m_drivingSideDiffers;
 }
 
+QString LocationInformation::drivingSideLabel() const
+{
+    switch (m_drivingSide) {
+        case KItinerary::KnowledgeDb::DrivingSide::Right: return i18n("People are driving on the right side.");
+        case KItinerary::KnowledgeDb::DrivingSide::Left: return i18n("People are driving on the left side.");
+        case KItinerary::KnowledgeDb::DrivingSide::Unknown: return {};
+    }
+    return {};
+}
+
 LocationInformation::PowerPlugCompatibility LocationInformation::powerPlugCompatibility() const
 {
     return m_powerPlugCompat;
