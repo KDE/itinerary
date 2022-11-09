@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-06 00:47+0000\n"
+"POT-Creation-Date: 2022-11-09 00:48+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -1392,95 +1392,95 @@ msgstr "%1km"
 msgid "Entering %1"
 msgstr "Sarrera %1"
 
-#: app/LocationInfoDelegate.qml:61
+#: app/LocationInfoDelegate.qml:67
+#, kde-format
+msgid "No compatible power sockets: %1"
+msgstr "Indar-hargune ez bateragarriak: %1"
+
+#: app/LocationInfoDelegate.qml:74
+#, kde-format
+msgid "Some incompatible power sockets: %1"
+msgstr "Hainbat indar-hargune ez bateragarri: %1"
+
+#: app/LocationInfoDelegate.qml:80
+#, kde-format
+msgid "Some incompatible power plugs: %1"
+msgstr "Hainbat entxufe ez bateragarri: %1"
+
+#: app/LocationInfoDelegate.qml:87
+#, kde-format
+msgid "Timezone change: %1 (%2)"
+msgstr "Ordu-zona: %1 (%2)"
+
+#: app/LocationInfoDelegate.qml:94
+#, kde-format
+msgid "Currency: %1"
+msgstr ""
+
+#: app/locationinformation.cpp:85
 #, kde-format
 msgid "People are driving on the right side."
 msgstr "Jendarteak alde zuzenetik gidatzen du."
 
-#: app/LocationInfoDelegate.qml:62
+#: app/locationinformation.cpp:86
 #, fuzzy, kde-format
 #| msgid "People are driving on the right side."
 msgid "People are driving on the left side."
 msgstr "Jendarteak alde zuzenetik gidatzen du."
 
-#: app/LocationInfoDelegate.qml:69
-#, kde-format
-msgid "No compatible power sockets: %1"
-msgstr "Indar-hargune ez bateragarriak: %1"
-
-#: app/LocationInfoDelegate.qml:76
-#, kde-format
-msgid "Some incompatible power sockets: %1"
-msgstr "Hainbat indar-hargune ez bateragarri: %1"
-
-#: app/LocationInfoDelegate.qml:82
-#, kde-format
-msgid "Some incompatible power plugs: %1"
-msgstr "Hainbat entxufe ez bateragarri: %1"
-
-#: app/LocationInfoDelegate.qml:89
-#, kde-format
-msgid "Timezone change: %1 (%2)"
-msgstr "Ordu-zona: %1 (%2)"
-
-#: app/LocationInfoDelegate.qml:96
-#, kde-format
-msgid "Currency: %1"
-msgstr ""
-
-#: app/locationinformation.cpp:93
+#: app/locationinformation.cpp:103
 msgid "Type A"
 msgstr "A mota"
 
-#: app/locationinformation.cpp:94
+#: app/locationinformation.cpp:104
 msgid "Type B"
 msgstr "B mota"
 
-#: app/locationinformation.cpp:95
+#: app/locationinformation.cpp:105
 msgid "Europlug"
 msgstr "Euro-entxufea"
 
-#: app/locationinformation.cpp:96
+#: app/locationinformation.cpp:106
 msgid "Type D"
 msgstr "D mota"
 
-#: app/locationinformation.cpp:97
+#: app/locationinformation.cpp:107
 msgid "Type E"
 msgstr "E mota"
 
-#: app/locationinformation.cpp:98
+#: app/locationinformation.cpp:108
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:99
+#: app/locationinformation.cpp:109
 msgid "Type G"
 msgstr "G mota"
 
-#: app/locationinformation.cpp:100
+#: app/locationinformation.cpp:110
 msgid "Type H"
 msgstr "H mota"
 
-#: app/locationinformation.cpp:101
+#: app/locationinformation.cpp:111
 msgid "Type I"
 msgstr "I mota"
 
-#: app/locationinformation.cpp:102
+#: app/locationinformation.cpp:112
 msgid "Type J"
 msgstr "J mota"
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:113
 msgid "Type K"
 msgstr "K mota"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:114
 msgid "Type L"
 msgstr "L mota"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:115
 msgid "Type M"
 msgstr "M mota"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:116
 msgid "Type N"
 msgstr "N mota"
 

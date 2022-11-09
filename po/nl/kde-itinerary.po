@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-06 00:47+0000\n"
+"POT-Creation-Date: 2022-11-09 00:48+0000\n"
 "PO-Revision-Date: 2022-11-06 15:45-0400\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1335,94 +1335,94 @@ msgstr "%1km"
 msgid "Entering %1"
 msgstr "Komt binnen op %1"
 
-#: app/LocationInfoDelegate.qml:61
-#, kde-format
-msgid "People are driving on the right side."
-msgstr "Er wordt aan de rechterkant gereden."
-
-#: app/LocationInfoDelegate.qml:62
-#, kde-format
-msgid "People are driving on the left side."
-msgstr "Er wordt aan de linkerkant gereden."
-
-#: app/LocationInfoDelegate.qml:69
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Geen overeenkomstige stopcontacten: %1"
 
-#: app/LocationInfoDelegate.qml:76
+#: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Enige niet-overeenkomstige stopcontacten: %1"
 
-#: app/LocationInfoDelegate.qml:82
+#: app/LocationInfoDelegate.qml:80
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Enige niet-overeenkomstige stekker: %1"
 
-#: app/LocationInfoDelegate.qml:89
+#: app/LocationInfoDelegate.qml:87
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Wijziging in tijdzone: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:96
+#: app/LocationInfoDelegate.qml:94
 #, kde-format
 msgid "Currency: %1"
 msgstr "Valuta: %1"
 
-#: app/locationinformation.cpp:93
+#: app/locationinformation.cpp:85
+#, kde-format
+msgid "People are driving on the right side."
+msgstr "Er wordt aan de rechterkant gereden."
+
+#: app/locationinformation.cpp:86
+#, kde-format
+msgid "People are driving on the left side."
+msgstr "Er wordt aan de linkerkant gereden."
+
+#: app/locationinformation.cpp:103
 msgid "Type A"
 msgstr "Type A"
 
-#: app/locationinformation.cpp:94
+#: app/locationinformation.cpp:104
 msgid "Type B"
 msgstr "Type B"
 
-#: app/locationinformation.cpp:95
+#: app/locationinformation.cpp:105
 msgid "Europlug"
 msgstr "Europlug"
 
-#: app/locationinformation.cpp:96
+#: app/locationinformation.cpp:106
 msgid "Type D"
 msgstr "Type D"
 
-#: app/locationinformation.cpp:97
+#: app/locationinformation.cpp:107
 msgid "Type E"
 msgstr "Type E"
 
-#: app/locationinformation.cpp:98
+#: app/locationinformation.cpp:108
 msgid "Schuko"
 msgstr "Schuko"
 
-#: app/locationinformation.cpp:99
+#: app/locationinformation.cpp:109
 msgid "Type G"
 msgstr "Type G"
 
-#: app/locationinformation.cpp:100
+#: app/locationinformation.cpp:110
 msgid "Type H"
 msgstr "Type H"
 
-#: app/locationinformation.cpp:101
+#: app/locationinformation.cpp:111
 msgid "Type I"
 msgstr "Type I"
 
-#: app/locationinformation.cpp:102
+#: app/locationinformation.cpp:112
 msgid "Type J"
 msgstr "Type J"
 
-#: app/locationinformation.cpp:103
+#: app/locationinformation.cpp:113
 msgid "Type K"
 msgstr "Type K"
 
-#: app/locationinformation.cpp:104
+#: app/locationinformation.cpp:114
 msgid "Type L"
 msgstr "Type L"
 
-#: app/locationinformation.cpp:105
+#: app/locationinformation.cpp:115
 msgid "Type M"
 msgstr "Type M"
 
-#: app/locationinformation.cpp:106
+#: app/locationinformation.cpp:116
 msgid "Type N"
 msgstr "Type N"
 
