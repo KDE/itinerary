@@ -219,8 +219,9 @@ Item {
                     QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
+                        linkColor: color
                         text: Util.textToHtml(modelData.valueDisplayString)
-                        textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.RichText : Text.AutoText
+                        textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
                         wrapMode: Text.WordWrap
                         horizontalAlignment: modelData.textAlignment
                         onLinkActivated: Qt.openUrlExternally(link)

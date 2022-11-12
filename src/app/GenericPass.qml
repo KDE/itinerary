@@ -185,8 +185,9 @@ Rectangle {
                 QQC2.Label {
                     Layout.fillWidth: true
                     color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                    linkColor: color
                     text: Util.textToHtml(modelData.valueDisplayString)
-                    textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.RichText : Text.AutoText
+                    textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
                     wrapMode: Text.WordWrap
                     horizontalAlignment: modelData.textAlignment
                     onLinkActivated: Qt.openUrlExternally(link)
