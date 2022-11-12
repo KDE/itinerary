@@ -61,8 +61,10 @@ App.DetailsPage {
 
 
             QQC2.Label {
+                Layout.fillWidth: true
                 Kirigami.FormData.label: i18n("Location:")
                 text: reservationFor.location != undefined ? reservationFor.location.name : ""
+                wrapMode: Text.WordWrap
                 visible: reservationFor.location != undefined
             }
 
