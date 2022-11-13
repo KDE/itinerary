@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-09 00:48+0000\n"
+"POT-Creation-Date: 2022-11-13 00:46+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -356,7 +356,7 @@ msgstr "Alokairu ibilgailua"
 msgid "Pick-up"
 msgstr "hartzea"
 
-#: app/CarRentalPage.qml:31 app/CarRentalPage.qml:49 app/EventPage.qml:64
+#: app/CarRentalPage.qml:31 app/CarRentalPage.qml:49 app/EventPage.qml:65
 #: app/HotelPage.qml:35 app/RestaurantPage.qml:35
 #: app/TouristAttractionPage.qml:31
 #, kde-format
@@ -593,19 +593,19 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Gertaera"
 
-#: app/EventPage.qml:76
+#: app/EventPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Entrance:"
 msgctxt "time of entrance"
 msgid "Entrance:"
 msgstr "Sarrera:"
 
-#: app/EventPage.qml:81
+#: app/EventPage.qml:83
 #, kde-format
 msgid "Start Time:"
 msgstr "Hasierako ordua: "
 
-#: app/EventPage.qml:85
+#: app/EventPage.qml:87
 #, kde-format
 msgid "End Time:"
 msgstr "Amaierako ordua: "
