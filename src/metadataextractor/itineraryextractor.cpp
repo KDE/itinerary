@@ -10,6 +10,7 @@
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Datatypes>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/LocationUtil>
 
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -101,6 +102,17 @@ void KFileMetaData::ItineraryExtractor::extract(ExtractionResult *result)
             if (pass->description() != eventName) {
                 result->add(Property::Subject, eventName);
             }
+        }
+
+        const QString placeName = KItinerary::LocationUtil::name(event.location());
+        if (!placeName.isEmpty()) {
+            result->add(Property::Location, placeName);
+        }
+
+        const GeoCoordinates geo = KItinerary::LocationUtil::geo(event.location());
+        if (geo.isValid()) {
+            result->add(Property::PhotoGpsLatitude, geo.latitude());
+            result->add(Property::PhotoGpsLongitude, geo.longitude());
         }
     } else if (JsonLd::isA<Flight>(res->reservationFor())) {
         const auto flight = res->reservationFor().value<Flight>();
