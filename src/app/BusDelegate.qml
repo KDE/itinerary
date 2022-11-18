@@ -6,7 +6,7 @@
 
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
@@ -53,6 +53,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeBegin: true
             width: topLayout.width
+            showButtons: false
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -67,6 +68,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeEnd: true
             width: topLayout.width
+            showButtons: false
         }
         Row {
             width: topLayout.width

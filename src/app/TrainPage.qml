@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kpublictransport 1.0 as KPublicTransport
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
@@ -17,10 +17,8 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Train Ticket")
-    editor: Component {
-        App.TrainEditor {
-            controller: root.controller
-        }
+    editor: App.TrainEditor {
+        controller: root.controller
     }
 
     actions.main: Kirigami.Action {
@@ -48,65 +46,6 @@ App.DetailsPage {
             selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
             seat: root.reservation.reservedTicket.ticketedSeat.seatNumber
         }
-    }
-
-    Component {
-        id: alternativeAction
-        Kirigami.Action {
-            text: i18n("Alternatives")
-            iconName: "clock"
-            onTriggered: {
-                applicationWindow().pageStack.push(alternativePage);
-            }
-        }
-    }
-    Component {
-        id: vehicleDepartureLayoutAction
-        Kirigami.Action {
-            text: i18n("Departure Vehicle Layout")
-            iconName: "view-list-symbolic"
-            enabled: departure && departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain
-            onTriggered: {
-                applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.departure});
-            }
-        }
-    }
-    Component {
-        id: vehicleArrivalLayoutAction
-        Kirigami.Action {
-            text: i18n("Arrival Vehicle Layout")
-            iconName: "view-list-symbolic"
-            enabled: arrival && arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain
-            onTriggered: {
-                applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.arrival});
-            }
-        }
-    }
-    Component {
-        id: journeyDetailsAction
-        Kirigami.Action {
-            text: i18n("Journey Details")
-            iconName: "view-calendar-day"
-            onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
-            visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0
-        }
-    }
-    Component {
-        id: notifyTestAction
-        Kirigami.Action {
-            text: "Test Notification"
-            iconName: "notifications"
-            visible: Settings.developmentMode
-            onTriggered: LiveDataManager.showNotification(root.batchId)
-        }
-    }
-
-    Component.onCompleted: {
-        actions.contextualActions.push(alternativeAction.createObject(root));
-        actions.contextualActions.push(journeyDetailsAction.createObject(root));
-        actions.contextualActions.push(vehicleDepartureLayoutAction.createObject(root));
-        actions.contextualActions.push(vehicleArrivalLayoutAction.createObject(root));
-        actions.contextualActions.push(notifyTestAction.createObject(root));
     }
 
     BarcodeScanModeController {
@@ -181,7 +120,9 @@ App.DetailsPage {
                     description: reservationFor.departureStation.name
                 }
 
-                MobileForm.FormTextDelegate {
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    Layout.fillWidth: true
                     contentItem: App.PlaceDelegate {
                         place: reservationFor.departureStation
                         controller: root.controller
@@ -258,7 +199,9 @@ App.DetailsPage {
                     description: reservationFor.arrivalStation.name
                 }
 
-                MobileForm.FormTextDelegate {
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    Layout.fillWidth: true
                     contentItem: App.PlaceDelegate {
                         place: reservationFor.arrivalStation
                         controller: root.controller
@@ -354,28 +297,8 @@ App.DetailsPage {
             }
         }
 
-        MobileForm.FormCard {
-            visible: referenceLabel.visible || underNameLabel.visible
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                // booking details
-                MobileForm.FormCardHeader {
-                    title: i18n("Booking")
-                }
-                MobileForm.FormTextDelegate {
-                    id: referenceLabel
-                    text: i18n("Reference:")
-                    description: reservation.reservationNumber
-                    visible: reservation.reservationNumber
-                }
-                MobileForm.FormTextDelegate {
-                    id: underNameLabel
-                    text: i18n("Under name:")
-                    description: reservation.underName.name
-                    visible: reservation.underName.name !== ""
-                }
-            }
+        App.BookingCard {
+            reservation: root.reservation
         }
 
         App.DocumentsPage {
@@ -385,6 +308,37 @@ App.DetailsPage {
         App.ActionsCard {
             batchId: root.batchId
             editor: root.editor
+            additionalActions: [
+                QQC2.Action {
+                    text: i18n("Alternatives")
+                    icon.name: "clock"
+                    onTriggered: applicationWindow().pageStack.push(alternativePage)
+                },
+                QQC2.Action {
+                    text: i18n("Departure Vehicle Layout")
+                    icon.name: "view-list-symbolic"
+                    enabled: departure && departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain
+                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.departure})
+                },
+                QQC2.Action {
+                    text: i18n("Arrival Vehicle Layout")
+                    icon.name: "view-list-symbolic"
+                    enabled: arrival && arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain
+                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.arrival});
+                },
+                Kirigami.Action {
+                    text: i18n("Journey Details")
+                    icon.name: "view-calendar-day"
+                    onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
+                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0
+                },
+                Kirigami.Action {
+                    text: "Test Notification"
+                    icon.name: "notifications"
+                    visible: Settings.developmentMode
+                    onTriggered: LiveDataManager.showNotification(root.batchId)
+                }
+            ]
         }
     }
 }

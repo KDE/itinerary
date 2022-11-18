@@ -37,6 +37,7 @@ App.TimelineDelegate {
             place: reservationFor
             controller: root.controller
             width: topLayout.width
+            showButtons: false
         }
     }
 

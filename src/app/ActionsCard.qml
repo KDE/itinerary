@@ -67,7 +67,8 @@ MobileForm.FormCard {
             text: i18n("Delete")
             onTriggered: deleteWarningDialog.open()
         }
-    ]// + additionalActions
+    ]
+
     property var batchId
     property var editor
 
@@ -167,9 +168,19 @@ MobileForm.FormCard {
         Repeater {
             MobileForm.FormButtonDelegate {
                 action: modelData
+                visible: modelData.visible ?? true
             }
 
             model: _defaultActions
+        }
+
+        Repeater {
+            MobileForm.FormButtonDelegate {
+                action: modelData
+                visible: modelData.visible ?? true
+            }
+
+            model: additionalActions
         }
     }
 }

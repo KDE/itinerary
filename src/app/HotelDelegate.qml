@@ -34,6 +34,7 @@ App.TimelineDelegate {
             width: topLayout.width
             isRangeBegin: root.rangeType == TimelineElement.RangeBegin
             isRangeEnd: root.rangeType == TimelineElement.RangeEnd
+            showButtons: false
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))

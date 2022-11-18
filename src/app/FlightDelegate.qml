@@ -74,6 +74,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeBegin: true
             width: topLayout.width
+            showButtons: false
         }
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
@@ -99,6 +100,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeEnd: true
             width: topLayout.width
+            showButtons: false
         }
     }
 

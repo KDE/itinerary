@@ -61,6 +61,7 @@ App.TimelineDelegate {
             isRangeBegin: true
             width: topLayout.width
             controller: root.controller
+            showButtons: false
         }
 
         // TODO reserved seat
@@ -97,6 +98,7 @@ App.TimelineDelegate {
             isRangeEnd: true
             width: topLayout.width
             controller: root.controller
+            showButtons: false
         }
     }
 

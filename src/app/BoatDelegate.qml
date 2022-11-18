@@ -40,6 +40,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeBegin: true
             width: topLayout.width
+            showButtons: false
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -53,6 +54,7 @@ App.TimelineDelegate {
             controller: root.controller
             isRangeEnd: true
             width: topLayout.width
+            showButtons: false
         }
         QQC2.Label {
             text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))

@@ -8,7 +8,6 @@ import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
-import org.kde.kitemmodels 1.0
 import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
@@ -26,7 +25,7 @@ Kirigami.ScrollablePage {
     readonly property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
-    property var editor
+    property Component editor
     readonly property string passId: PkPassManager.passId(currentReservation)
 
     property QtObject controller: TimelineDelegateController {
