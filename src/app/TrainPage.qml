@@ -121,9 +121,11 @@ App.DetailsPage {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             contentItem: ColumnLayout {
-                spacing: 0
-                 QQC2.Label {
+                 spacing: 0
+                 Kirigami.Heading {
                      Layout.fillWidth: true
+                     Layout.topMargin: Kirigami.Units.largeSpacing
+                     Layout.bottomMargin: Kirigami.Units.largeSpacing
                      text: reservationFor.trainName + " " + reservationFor.trainNumber
                      horizontalAlignment: Qt.AlignHCenter
                      font.bold: true
@@ -266,7 +268,7 @@ App.DetailsPage {
 
                 RowLayout {
                     Kirigami.FormData.label: i18n("Platform:")
-                    visible: arrivalPlatformLabel.text != ""
+                    visible: arrivalPlatformLabel.text.length > 0
                     QQC2.Label {
                         id: arrivalPlatformLabel
                         text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
@@ -374,6 +376,15 @@ App.DetailsPage {
                     visible: reservation.underName.name !== ""
                 }
             }
+        }
+
+        App.DocumentsPage {
+            controller: root.controller
+        }
+
+        App.ActionsCard {
+            batchId: root.batchId
+            editor: root.editor
         }
     }
 }

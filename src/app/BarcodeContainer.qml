@@ -17,6 +17,7 @@ Item {
     id: barcodeContainer
     implicitHeight: childrenRect.height
     visible: barcode.implicitHeight > 0
+    clip: true
 
     /** Barcode format to use, using the KItinerary::Ticket enum. */
     property var barcodeType

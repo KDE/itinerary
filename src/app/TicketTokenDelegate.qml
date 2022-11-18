@@ -39,6 +39,8 @@ ColumnLayout {
         model: ticketModel
         textRole: "display"
         Layout.fillWidth: true
+        Layout.leftMargin: Kirigami.Units.largeSpacing
+        Layout.rightMargin: Kirigami.Units.largeSpacing
 
         // ugly, but rowCount does not trigger binding changes
         Component.onCompleted: {

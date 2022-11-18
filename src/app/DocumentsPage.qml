@@ -4,19 +4,21 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import Qt.labs.platform 1.1
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import "." as App
 
-Kirigami.ScrollablePage {
-    id: page
-    title: i18n("Documents")
+MobileForm.FormCard {
+    id: documentFormCard
     property var controller: null
+    Layout.fillWidth: true
+    Layout.topMargin: Kirigami.Units.largeSpacing
 
     DocumentsModel {
         id: docsModel
@@ -35,34 +37,33 @@ Kirigami.ScrollablePage {
 
     Component {
         id: documentDelegate
-        Kirigami.SwipeListItem {
-            RowLayout {
+        MobileForm.AbstractFormDelegate {
+            Layout.fillWidth: true
+            onClicked: ApplicationController.openDocument(model.filePath);
+            contentItem: RowLayout {
                 Kirigami.Icon {
                     source: model.decoration
                     width: height
                     height: Kirigami.Units.iconSizes.small
                 }
+
                 QQC2.Label {
                     text: model.display
                     Layout.fillWidth: true
                     elide: Text.ElideMiddle
                 }
-            }
-            actions: [
-                Kirigami.Action {
-                    iconName: "document-open"
-                    text: i18n("Open Document")
-                    onTriggered: ApplicationController.openDocument(model.filePath);
-                },
-                Kirigami.Action {
-                    iconName: "edit-delete"
-                    text: i18n("Delete Document")
-                    onTriggered: {
-                        deleteWarningDialog.docId = model.id;
-                        deleteWarningDialog.open()
+
+                Kirigami.ActionToolBar {
+                    actions: QQC2.Action {
+                        icon.name: "edit-delete"
+                        text: i18n("Delete Document")
+                        onTriggered: {
+                            deleteWarningDialog.docId = model.id;
+                            deleteWarningDialog.open()
+                        }
                     }
                 }
-            ]
+            }
         }
     }
 
@@ -87,25 +88,30 @@ Kirigami.ScrollablePage {
         ]
     }
 
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                iconName: "list-add"
-                text: i18n("Add Document...")
-                onTriggered: addDialog.open()
-            }
-        ]
-    }
+    contentItem: ColumnLayout {
+        spacing: 0
 
-    ListView {
-        delegate: documentDelegate
-        model: docsModel
+        MobileForm.FormCardHeader {
+            title: i18n("Documents and Tickets")
+        }
 
-        Kirigami.PlaceholderMessage {
+        MobileForm.FormDelegateSeparator {}
+
+        Repeater {
+            delegate: documentDelegate
+            model: docsModel
+        }
+
+        MobileForm.FormTextDelegate {
             text: i18n("No documents attached to this reservation.")
-            anchors.centerIn: parent
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
             visible: docsModel.empty
+        }
+
+        MobileForm.FormDelegateSeparator {}
+
+        MobileForm.FormButtonDelegate {
+            text: i18n("Add Document...")
+            onClicked: addDialog.open()
         }
     }
 }
