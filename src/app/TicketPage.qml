@@ -6,7 +6,8 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -62,57 +63,65 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         width: parent.width
 
-        QQC2.Label {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: root.ticket.name
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
-        }
+            contentItem: ColumnLayout {
+                spacing: 0
 
-        App.BarcodeContainer {
-            id: barcodeContainer
-            Layout.alignment: Qt.AlignCenter
-            Layout.fillWidth: true
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: root.ticket.name
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
 
-            barcodeType: root.ticket.ticketTokenType
-            barcodeContent: root.ticket.ticketTokenData
-            onDoubleClicked: scanModeController.toggle()
-        }
+                App.BarcodeContainer {
+                    id: barcodeContainer
+                    Layout.alignment: Qt.AlignCenter
+                    Layout.fillWidth: true
 
-        Kirigami.FormLayout {
-            Layout.fillWidth: true
+                    barcodeType: root.ticket.ticketTokenType
+                    barcodeContent: root.ticket.ticketTokenData
+                    onDoubleClicked: scanModeController.toggle()
+                }
 
-            Kirigami.Separator {
-                Kirigami.FormData.label: i18n("Ticket")
-                Kirigami.FormData.isSection: true
-            }
-            QQC2.Label {
-                id: nameLabel
-                Kirigami.FormData.label: i18n("Name:")
-                text: ticket.underName.name
-                visible: ticket.underName.name !== ""
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Valid from:")
-                text: Localizer.formatDateOrDateTimeLocal(ticket, "validFrom")
-                visible: text !== ""
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Valid until:")
-                text: Localizer.formatDateOrDateTimeLocal(ticket, "validUntil")
-                visible: text !== ""
-            }
-            QQC2.Label {
-                id: numberLabel
-                Kirigami.FormData.label: i18n("Number:")
-                text: ticket.ticketNumber
-                visible: ticket.ticketNumber !== ""
-            }
-            QQC2.Label {
-                id: classLabel
-                Kirigami.FormData.label: i18n("Class:")
-                text: ticket.ticketedSeat.seatingType
-                visible: ticket.ticketedSeat.seatingType !== ""
+                // departure data
+                MobileForm.FormCardHeader {
+                    title: i18n("Ticket")
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Name")
+                    description: ticket.underName.name
+                    visible: ticket.underName.name !== ""
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Valid from")
+                    description: Localizer.formatDateOrDateTimeLocal(ticket, "validFrom")
+                    visible: description
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Valid until")
+                    description: Localizer.formatDateOrDateTimeLocal(ticket, "validUntil")
+                    visible: description
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Number")
+                    description: ticket.ticketNumber
+                    visible: ticket.ticketNumber !== ""
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Class")
+                    description: ticket.ticketedSeat.seatingType
+                    visible: ticket.ticketedSeat.seatingType !== ""
+                }
             }
         }
     }
