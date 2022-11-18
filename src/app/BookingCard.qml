@@ -29,8 +29,8 @@ MobileForm.FormCard {
         MobileForm.FormTextDelegate {
             id: underNameLabel
             text: i18n("Under name:")
-            description: reservation.underName.name
-            visible: reservation.underName.name !== ""
+            description: reservation.underName ? reservation.underName.name : ''
+            visible: reservation.underName && reservation.underName.name !== ""
         }
     }
 }

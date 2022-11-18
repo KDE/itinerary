@@ -1,12 +1,12 @@
-/*
-    SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2022 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -32,85 +32,99 @@ App.DetailsPage {
     ColumnLayout {
         width: parent.width
 
-        // TODO vessel name not yet available in the data model
-        /*QQC2.Label {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: reservationFor.boatName
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
-        }*/
+            contentItem: ColumnLayout {
+                spacing: 0
 
-        // ticket barcode
-        App.TicketTokenDelegate {
-            id: ticketToken
-            resIds: ReservationManager.reservationsForBatch(root.batchId)
-            onCurrentReservationIdChanged: {
-                if (!currentReservationId)
-                    return;
-                root.currentReservationId = currentReservationId;
+                // TODO vessel name not yet available in the data model
+                /* Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    Layout.fillWidth: true
+                    text: reservationFor.boatName
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }*/
+
+                // ticket barcode
+                App.TicketTokenDelegate {
+                    id: ticketToken
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    resIds: ReservationManager.reservationsForBatch(root.batchId)
+                    onCurrentReservationIdChanged: {
+                        if (!currentReservationId)
+                            return;
+                        root.currentReservationId = currentReservationId;
+                    }
+                    onScanModeToggled: scanModeController.toggle()
+                }
+
+                // departure data
+                MobileForm.FormCardHeader {
+                    title: i18n("Departure")
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Departure time")
+                    description: Localizer.formatDateTime(reservationFor, "departureTime")
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18nc("Boat terminal", "Terminal")
+                    description: reservationFor.departureBoatTerminal.name
+                }
+
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    Layout.fillWidth: true
+                    contentItem: App.PlaceDelegate {
+                        place: reservationFor.departureBoatTerminal
+                        controller: root.controller
+                        isRangeBegin: true
+                    }
+                }
+
+                // arrival data
+                MobileForm.FormCardHeader {
+                    title: i18n("Arrival")
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Arrival time")
+                    description: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18nc("Boat terminal", "Terminal")
+                    description: reservationFor.arrivalBoatTerminal.name
+                }
+
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
+                    Layout.fillWidth: true
+                    contentItem: App.PlaceDelegate {
+                        place: reservationFor.arrivalBoatTerminal
+                        controller: root.controller
+                        isRangeBegin: true
+                    }
+                }
             }
-            onScanModeToggled: scanModeController.toggle()
         }
 
-        Kirigami.FormLayout {
-            Layout.fillWidth: true
+        App.BookingCard {
+            reservation: root.reservation
+        }
 
-            // departure data
-            Kirigami.Separator {
-                Kirigami.FormData.isSection: true
-                Kirigami.FormData.label: i18n("Departure")
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Time:")
-                text: Localizer.formatDateTime(reservationFor, "departureTime")
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Terminal:")
-                text: reservationFor.departureBoatTerminal.name
-            }
-            App.PlaceDelegate {
-                place: reservationFor.departureBoatTerminal
-                controller: root.controller
-                isRangeBegin: true
-            }
+        App.DocumentsPage {
+            controller: root.controller
+        }
 
-            // arrival data
-            Kirigami.Separator {
-                Kirigami.FormData.label: i18n("Arrival")
-                Kirigami.FormData.isSection: true
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Time:")
-                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Terminal:")
-                text: reservationFor.arrivalBoatTerminal.name
-            }
-            App.PlaceDelegate {
-                place: reservationFor.arrivalBoatTerminal
-                controller: root.controller
-                isRangeEnd: true
-            }
-
-            // booking details
-            Kirigami.Separator {
-                Kirigami.FormData.label: i18n("Booking")
-                Kirigami.FormData.isSection: true
-                visible: referenceLabel.visible || underNameLabel.visible
-            }
-            QQC2.Label {
-                id: referenceLabel
-                Kirigami.FormData.label: i18n("Reference:")
-                text: reservation.reservationNumber
-                visible: reservation.reservationNumber
-            }
-            QQC2.Label {
-                id: underNameLabel
-                Kirigami.FormData.label: i18n("Under name:")
-                text: reservation.underName.name
-                visible: reservation.underName.name !== ""
-            }
+        App.ActionsCard {
+            batchId: root.batchId
+            editor: root.editor
         }
     }
 }
