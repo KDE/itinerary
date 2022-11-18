@@ -105,7 +105,8 @@ App.DetailsPage {
                     description: reservationFor.departureBusStop.name
                 }
 
-                MobileForm.FormTextDelegate {
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
                     Layout.fillWidth: true
                     contentItem: App.PlaceDelegate {
                         place: reservationFor.departureBusStop
@@ -150,7 +151,8 @@ App.DetailsPage {
                     description: reservationFor.arrivalBusStop.name
                 }
 
-                MobileForm.FormTextDelegate {
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
                     Layout.fillWidth: true
                     contentItem: App.PlaceDelegate {
                         place: reservationFor.arrivalBusStop

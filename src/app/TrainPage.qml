@@ -60,28 +60,28 @@ App.DetailsPage {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             contentItem: ColumnLayout {
-                 spacing: 0
-                 Kirigami.Heading {
-                     Layout.fillWidth: true
-                     Layout.topMargin: Kirigami.Units.largeSpacing
-                     Layout.bottomMargin: Kirigami.Units.largeSpacing
-                     text: reservationFor.trainName + " " + reservationFor.trainNumber
-                     horizontalAlignment: Qt.AlignHCenter
-                     font.bold: true
-                 }
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: reservationFor.trainName + " " + reservationFor.trainNumber
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
 
-                 // ticket barcode
-                 App.TicketTokenDelegate {
-                     id: ticketToken
-                     Layout.fillWidth: true
-                     resIds: ReservationManager.reservationsForBatch(root.batchId)
-                     onCurrentReservationIdChanged: {
-                         if (!currentReservationId)
-                             return;
-                         root.currentReservationId = currentReservationId;
-                     }
-                     onScanModeToggled: scanModeController.toggle()
-                 }
+                // ticket barcode
+                App.TicketTokenDelegate {
+                    id: ticketToken
+                    Layout.fillWidth: true
+                    resIds: ReservationManager.reservationsForBatch(root.batchId)
+                    onCurrentReservationIdChanged: {
+                        if (!currentReservationId)
+                            return;
+                        root.currentReservationId = currentReservationId;
+                    }
+                    onScanModeToggled: scanModeController.toggle()
+                }
 
                 // departure data
                 MobileForm.FormCardHeader {
