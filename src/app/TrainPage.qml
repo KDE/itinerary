@@ -65,7 +65,12 @@ App.DetailsPage {
                     Layout.fillWidth: true
                     Layout.topMargin: Kirigami.Units.largeSpacing
                     Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.trainName + " " + reservationFor.trainNumber
+                    text: {
+                        if (reservationFor.trainName || reservationFor.trainNumber) {
+                            return reservationFor.trainName + " " + reservationFor.trainNumber
+                        }
+                        return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
+                    }
                     horizontalAlignment: Qt.AlignHCenter
                     font.bold: true
                 }
