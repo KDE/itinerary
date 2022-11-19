@@ -95,8 +95,6 @@ MobileForm.FormCard {
             title: i18n("Documents and Tickets")
         }
 
-        MobileForm.FormDelegateSeparator {}
-
         Repeater {
             delegate: documentDelegate
             model: docsModel

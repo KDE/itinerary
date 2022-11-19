@@ -1,13 +1,12 @@
-/*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
-
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -15,64 +14,110 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Restaurant Reservation")
-    editor: Component {
-        App.RestaurantEditor {
-            batchId: root.batchId
-        }
+    editor: App.RestaurantEditor {
+        batchId: root.batchId
     }
 
-    Kirigami.FormLayout {
-        width: root.width
+    ColumnLayout {
+        width: parent.width
 
-        QQC2.Label {
-            Kirigami.FormData.isSection: true
-            text: reservationFor.name
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: reservationFor.name
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
+            }
         }
 
-        App.PlaceDelegate {
-            Kirigami.FormData.label: i18n("Location:")
-            Kirigami.FormData.labelAlignment: Qt.AlignTop
-            place: reservationFor
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                App.FormPlaceDelegate {
+                    place: reservationFor
+                    controller: root.controller
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            visible: reservationFor.telephone || reservationFor.email
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Contact")
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Telephone")
+                    description: Util.textToHtml(reservationFor.telephone)
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    visible: reservationFor.telephone
+                }
+
+                MobileForm.FormDelegateSeparator { visible: reservationFor.telephone }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Email")
+                    description: Util.textToHtml(reservationFor.email)
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    visible: reservationFor.email
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Start time")
+                    description: Localizer.formatDateTime(reservation, "startTime")
+                    visible: description
+                }
+
+                MobileForm.FormDelegateSeparator { visible: reservation.startTime > 0 }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("End time")
+                    description: Localizer.formatDateTime(reservation, "endTime")
+                    visible: description
+                }
+
+                MobileForm.FormDelegateSeparator { visible: reservation.endTime > 0 }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Party size")
+                    description: reservation.partySize
+                    visible: description
+                }
+            }
+        }
+
+        App.BookingCard {
+            reservation: root.reservation
+        }
+
+        App.DocumentsPage {
             controller: root.controller
         }
 
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Telephone:")
-            text: Util.textToHtml(reservationFor.telephone)
-            visible: reservationFor.telephone != ""
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Email:")
-            text: Util.textToHtml(reservationFor.email)
-            visible: reservationFor.email != ""
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
-
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Start time:")
-            text: Localizer.formatDateTime(reservation, "startTime")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("End time:")
-            text: Localizer.formatDateTime(reservation, "endTime")
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Party size:")
-            text: reservation.partySize
-        }
-
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Booking reference:")
-            text: reservation.reservationNumber
-            visible: reservation.reservationNumber != ""
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Under name:")
-            text: reservation.underName.name
-            visible: reservation.underName.name != ""
+        App.ActionsCard {
+            batchId: root.batchId
+            editor: root.editor
         }
     }
 }

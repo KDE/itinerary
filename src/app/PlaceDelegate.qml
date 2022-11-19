@@ -47,7 +47,7 @@ ColumnLayout {
         id: buttonLayout
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignRight
-        visible: showButtons
+        visible: showButtons && place !== undefined && place.geo.isValid
 
         actions: [
             Kirigami.Action {

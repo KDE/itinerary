@@ -67,6 +67,14 @@ App.DetailsPage {
                     }
                     onScanModeToggled: scanModeController.toggle()
                 }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // departure data
                 MobileForm.FormCardHeader {
@@ -74,7 +82,7 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    visible: departureTimeLabel.length > 0
+                    visible: departureTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
@@ -89,7 +97,6 @@ App.DetailsPage {
                                 id: departureTimeLabel
                                 text: Localizer.formatDateTime(reservationFor, "departureTime")
                                 color: Kirigami.Theme.disabledTextColor
-                                font: Kirigami.Theme.smallFont
                                 elide: Text.ElideRight
                             }
                             QQC2.Label {
@@ -100,27 +107,38 @@ App.DetailsPage {
                         }
                     }
                 }
+
+                MobileForm.FormDelegateSeparator { visible: departureTimeLabel.text.length > 0 }
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("bus station", "Station")
                     description: reservationFor.departureBusStop.name
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.departureBusStop
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator { visible: arrivalDelegate.visible }
+
+                App.FormPlaceDelegate {
+                    id: departureDelegate
+                    place: reservationFor.departureBusStop
+                    controller: root.controller
+                    isRangeBegin: true
                 }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // arrival data
                 MobileForm.FormCardHeader {
                     title: i18n("Arrival")
                 }
 
-                MobileForm.FormTextDelegate {
+                MobileForm.AbstractFormDelegate {
+                    background: Item {}
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
@@ -132,9 +150,9 @@ App.DetailsPage {
                         RowLayout {
                             Layout.fillWidth: true
                             QQC2.Label {
+                                id: arrivalTimeLabel
                                 text: Localizer.formatDateTime(reservationFor, "arrivalTime")
                                 color: Kirigami.Theme.disabledTextColor
-                                font: Kirigami.Theme.smallFont
                                 elide: Text.ElideRight
                             }
                             QQC2.Label {
@@ -146,19 +164,21 @@ App.DetailsPage {
                         }
                     }
                 }
+
+                MobileForm.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("bus station", "Station")
                     description: reservationFor.arrivalBusStop.name
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.arrivalBusStop
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator { visible: arrivalDelegate.visible }
+
+                App.FormPlaceDelegate {
+                    id: arrivalDelegate
+                    place: reservationFor.arrivalBusStop
+                    controller: root.controller
+                    isRangeEnd: true
                 }
             }
         }

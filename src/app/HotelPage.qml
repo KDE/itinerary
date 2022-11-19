@@ -33,25 +33,35 @@ App.DetailsPage {
                     horizontalAlignment: Qt.AlignHCenter
                     font.bold: true
                 }
+            }
+        }
 
-                MobileForm.FormSectionText {
-                    text: i18n("Location")
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Location")
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor
-                        controller: root.controller
-                    }
+                App.FormPlaceDelegate {
+                    place: reservationFor
+                    controller: root.controller
                 }
+            }
+        }
 
-                MobileForm.FormDelegateSeparator {}
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            visible: reservationFor.telephone || reservationFor.email
+            contentItem: ColumnLayout {
+                spacing: 0
 
-                MobileForm.FormSectionText {
-                    text: i18n("Contact")
-                    visible: reservationFor.telephone || reservationFor.email
+                MobileForm.FormCardHeader {
+                    title: i18n("Contact")
                 }
 
                 MobileForm.FormTextDelegate {
@@ -61,19 +71,30 @@ App.DetailsPage {
                     visible: reservationFor.telephone
                 }
 
+                MobileForm.FormDelegateSeparator { visible: reservationFor.telephone }
+
                 MobileForm.FormTextDelegate {
                     text: i18n("Email")
                     description: Util.textToHtml(reservationFor.email)
                     onLinkActivated: Qt.openUrlExternally(link)
                     visible: reservationFor.email
                 }
+            }
+        }
 
-                MobileForm.FormDelegateSeparator {}
+        MobileForm.FormCard {
+            visible: reservation.checkinTime > 0 || reservation.checkoutTime > 0
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 MobileForm.FormTextDelegate {
                     text: i18n("Check-in time")
                     description: Localizer.formatDateTime(reservation, "checkinTime")
                 }
+
+                MobileForm.FormDelegateSeparator { visible: reservation.checkinTime > 0 }
 
                 MobileForm.FormTextDelegate {
                     text: i18n("Check-out time")

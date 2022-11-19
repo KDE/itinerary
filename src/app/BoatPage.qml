@@ -61,6 +61,14 @@ App.DetailsPage {
                     }
                     onScanModeToggled: scanModeController.toggle()
                 }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // departure data
                 MobileForm.FormCardHeader {
@@ -72,20 +80,31 @@ App.DetailsPage {
                     description: Localizer.formatDateTime(reservationFor, "departureTime")
                 }
 
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("Boat terminal", "Terminal")
                     description: reservationFor.departureBoatTerminal.name
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.departureBoatTerminal
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator {
+                    visible: departurePlace
                 }
+
+                App.FormPlaceDelegate {
+                    id: departurePlace
+                    place: reservationFor.departureBoatTerminal
+                    controller: root.controller
+                    isRangeEnd: true
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // arrival data
                 MobileForm.FormCardHeader {
@@ -97,19 +116,22 @@ App.DetailsPage {
                     description: Localizer.formatDateTime(reservationFor, "arrivalTime")
                 }
 
+                MobileForm.FormDelegateSeparator {}
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("Boat terminal", "Terminal")
                     description: reservationFor.arrivalBoatTerminal.name
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.arrivalBoatTerminal
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator {
+                    visible: arrivalPlace
+                }
+
+                App.FormPlaceDelegate {
+                    id: arrivalPlace
+                    place: reservationFor.arrivalBoatTerminal
+                    controller: root.controller
+                    isRangeEnd: true
                 }
             }
         }

@@ -85,15 +85,22 @@ App.DetailsPage {
                     }
                     onScanModeToggled: scanModeController.toggle()
                 }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // departure data
                 MobileForm.FormCardHeader {
                     title: i18n("Departure")
                 }
                 MobileForm.FormTextDelegate {
-                    visible: departureTimeLabel.length > 0
+                    visible: departureTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
-                        Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
                         QQC2.Label {
                             Layout.fillWidth: true
@@ -118,20 +125,15 @@ App.DetailsPage {
                     }
                 }
 
+                MobileForm.FormDelegateSeparator { visible: departureTimeLabel.text.length > 0 }
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("train station", "Station")
                     description: reservationFor.departureStation.name
+                    visible: description
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.departureStation
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
-                }
+                MobileForm.FormDelegateSeparator { visible: reservationFor.departureStation.name }
 
                 MobileForm.FormTextDelegate {
                     visible: departurePlatformLabel.text != ""
@@ -160,11 +162,38 @@ App.DetailsPage {
                         }
                     }
                 }
+
+                MobileForm.FormDelegateSeparator {
+                    visible: departurePlatformLabel.text != ""
+                }
+
+                App.FormPlaceDelegate {
+                    id: departureDelegate
+                    place: reservationFor.departureStation
+                    controller: root.controller
+                    isRangeEnd: true
+                }
+
+                MobileForm.FormDelegateSeparator {
+                    visible: departureDelegate.visible
+                }
+
                 MobileForm.FormTextDelegate {
-                    visible: departure.notes.length > 0
-                    text: departure.notes.join("<br/>")
+                    text: i18n("Additional notes")
+                    description: departure.notes.join("<br/>")
+                    textFormat: Text.RichText
+                    wrapMode: Text.Wrap
+                    visible: arrival.notes.length > 0
                     onLinkActivated: Qt.openUrlExternally(link)
                 }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // arrival data
                 MobileForm.FormCardHeader {
@@ -172,6 +201,7 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
+                    visible: arrivalTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
@@ -183,6 +213,7 @@ App.DetailsPage {
                         RowLayout {
                             Layout.fillWidth: true
                             QQC2.Label {
+                                id: arrivalTimeLabel
                                 text: Localizer.formatDateTime(reservationFor, "arrivalTime")
                                 color: Kirigami.Theme.disabledTextColor
                                 font: Kirigami.Theme.smallFont
@@ -197,39 +228,60 @@ App.DetailsPage {
                         }
                     }
                 }
+
+                MobileForm.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
+
                 MobileForm.FormTextDelegate {
                     text: i18nc("train station", "Station")
                     description: reservationFor.arrivalStation.name
                 }
 
+                MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
+
                 MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.arrivalStation
-                        controller: root.controller
-                        isRangeBegin: true
+                    text: i18n("Platform")
+                    visible: arrivalPlatformLabel.text.length > 0
+                    contentItem: ColumnLayout {
+                        Layout.fillWidth: true
+                        spacing: Kirigami.Units.smallSpacing
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: i18n("Arrival time")
+                            elide: Text.ElideRight
+                        }
+                        RowLayout {
+                            Layout.fillWidth: true
+                            QQC2.Label {
+                                id: arrivalPlatformLabel
+                                text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
+                                color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
+                                    arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
+                                    Kirigami.Theme.textColor;
+                            }
+                            QQC2.Label {
+                                text: i18nc("previous platform", "(was: %1)", reservationFor.arrivalPlatform)
+                                visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
+                            }
+                        }
                     }
                 }
 
-                RowLayout {
-                    Kirigami.FormData.label: i18n("Platform:")
-                    visible: arrivalPlatformLabel.text.length > 0
-                    QQC2.Label {
-                        id: arrivalPlatformLabel
-                        text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
-                        color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
-                            arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                            Kirigami.Theme.textColor;
-                    }
-                    QQC2.Label {
-                        text: i18nc("previous platform", "(was: %1)", reservationFor.arrivalPlatform)
-                        visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
-                    }
+                MobileForm.FormDelegateSeparator { visible: arrivalPlatformLabel.text.length > 0 }
+
+                App.FormPlaceDelegate {
+                    id: arrivalDelegate
+                    place: reservationFor.arrivalStation
+                    controller: root.controller
+                    isRangeEnd: true
                 }
-                QQC2.Label {
-                    Kirigami.FormData.isSection: true
-                    text: arrival.notes.join("<br/>")
+
+                MobileForm.FormDelegateSeparator {
+                    visible: arrivalDelegate
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Additional notes")
+                    description: arrival.notes.join("<br/>")
                     textFormat: Text.RichText
                     wrapMode: Text.Wrap
                     visible: arrival.notes.length > 0
@@ -254,11 +306,17 @@ App.DetailsPage {
                     description: currentReservation.reservedTicket.ticketedSeat.seatSection
                     visible: description
                 }
+                MobileForm.FormDelegateSeparator {
+                    visible: currentReservation.reservedTicket.ticketedSeat.seatSection
+                }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
                     text: i18n("Seat:")
                     description: currentReservation.reservedTicket.ticketedSeat.seatNumber
                     visible: description
+                }
+                MobileForm.FormDelegateSeparator {
+                    visible: currentReservation.reservedTicket.ticketedSeat.seatNumber
                 }
                 MobileForm.FormTextDelegate {
                     id: classLabel
@@ -284,18 +342,27 @@ App.DetailsPage {
                     description: root.currentReservation.programMembershipUsed.programName
                     visible: description
                 }
+                MobileForm.FormDelegateSeparator {
+                    visible: programNameLabel.visible
+                }
                 MobileForm.FormTextDelegate {
                     id: membershipNumberLabel
                     text: i18n("Number")
                     description: root.currentReservation.programMembershipUsed.membershipNumber
                     visible: description
                 }
+                MobileForm.FormDelegateSeparator {
+                    visible: membershipNumberLabel.visible
+                }
                 MobileForm.FormButtonDelegate {
                     id: passButton
                     text: i18n("Show program pass")
                     property string passId: PassManager.findMatchingPass(root.currentReservation.programMembershipUsed)
                     visible: passId
-                    onClicked: applicationWindow().pageStack.push(programMembershipPage, { programMembership: PassManager.pass(passButton.passId), passId: passButton.passId })
+                    onClicked: applicationWindow().pageStack.push(programMembershipPage, {
+                        programMembership: PassManager.pass(passButton.passId),
+                        passId: passButton.passId,
+                    })
                 }
             }
         }

@@ -75,12 +75,16 @@ App.DetailsPage {
                     id: sequenceNumberDelegate
                     text: i18n("Sequence Number:")
                     description: ReservationManager.reservation(ticketToken.currentReservationId).passengerSequenceNumber
-                    visible: text
+                    visible: description
                 }
+            }
+        }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: sequenceNumberDelegate.text
-                }
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 // flight data
                 MobileForm.FormCardHeader {
@@ -138,7 +142,6 @@ App.DetailsPage {
 
                 MobileForm.FormDelegateSeparator { visible: reservationFor.departureTime > 0 }
 
-
                 MobileForm.FormTextDelegate {
                     id: departureAirportDelegate
                     text: i18n("Airport")
@@ -146,11 +149,15 @@ App.DetailsPage {
                     visible: text.length > 0
                 }
 
+                MobileForm.FormDelegateSeparator { visible: departureAirportDelegate.text }
+
                 MobileForm.FormTextDelegate {
                     text: i18n("Terminal")
                     description: reservationFor.departureTerminal
                     visible: reservationFor.departureTerminal.length > 0
                 }
+
+                MobileForm.FormDelegateSeparator { visible: reservationFor.departureTerminal.length > 0 }
 
                 MobileForm.FormTextDelegate {
                     text: i18n("Gate")
@@ -158,14 +165,12 @@ App.DetailsPage {
                     visible: reservationFor.departureGate.length > 0
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.departureAirport
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
+
+                App.FormPlaceDelegate {
+                    place: reservationFor.arrivalAirport
+                    controller: root.controller
+                    isRangeBegin: true
                 }
             }
         }
@@ -197,20 +202,20 @@ App.DetailsPage {
                     visible: text.length > 0
                 }
 
+                MobileForm.FormDelegateSeparator { visible: arrivalAirportDelegate.visible }
+
                 MobileForm.FormTextDelegate {
                     text: i18n("Terminal")
                     description: reservationFor.arrivalTerminal
                     visible: reservationFor.arrivalTerminal.length > 0
                 }
 
-                MobileForm.AbstractFormDelegate {
-                    background: Item {}
-                    Layout.fillWidth: true
-                    contentItem: App.PlaceDelegate {
-                        place: reservationFor.arrivalAirport
-                        controller: root.controller
-                        isRangeBegin: true
-                    }
+                MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalTerminal.length > 0 }
+
+                App.FormPlaceDelegate {
+                    place: reservationFor.arrivalAirport
+                    controller: root.controller
+                    isRangeEnd: true
                 }
             }
         }
@@ -229,6 +234,7 @@ App.DetailsPage {
                     delegate: MobileForm.FormTextDelegate {
                         Layout.fillWidth: true
                         property var res: ReservationManager.reservation(resIds[Math.floor(index/2)]);
+                        visible: description
                         text: index % 2 == 0 ? i18n("Under name") : i18n("Reference")
                         description: index % 2 == 0 ? res.underName.name : res.reservationNumber
                     }
@@ -237,8 +243,8 @@ App.DetailsPage {
                 MobileForm.FormDelegateSeparator {}
 
                 // frequent traveler program
-                MobileForm.FormSectionText {
-                    text: i18n("Frequent Traveler Program")
+                MobileForm.FormCardHeader {
+                    title: i18n("Frequent Traveler Program")
                     visible: programName.visible || membershipNumber.visible
                 }
 
