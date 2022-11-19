@@ -409,7 +409,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     if (!success && !healthCertImported) {
         Q_EMIT infoMessage(i18n("Nothing imported."));
     }
-    return success;
+    return success || healthCertImported;
 }
 
 bool ApplicationController::importText(const QString& text)
