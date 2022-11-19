@@ -22,14 +22,14 @@ MobileForm.FormCard {
         }
         MobileForm.FormTextDelegate {
             id: referenceLabel
-            text: i18n("Reference:")
+            text: i18n("Reference")
             description: reservation.reservationNumber
             visible: reservation.reservationNumber
         }
         MobileForm.FormDelegateSeparator {}
         MobileForm.FormTextDelegate {
             id: underNameLabel
-            text: i18n("Under name:")
+            text: i18n("Under name")
             description: reservation.underName ? reservation.underName.name : ''
             visible: description
         }

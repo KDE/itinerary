@@ -162,9 +162,6 @@ MobileForm.FormCard {
             title: i18n("Actions")
         }
 
-        MobileForm.FormDelegateSeparator {}
-
-
         Repeater {
             MobileForm.FormButtonDelegate {
                 action: modelData
