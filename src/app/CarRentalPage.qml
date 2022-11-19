@@ -59,7 +59,7 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    id: pickupTimeDelegate
+                    id: dropoffTimeDelegate
                     text: i18n("Time")
                     description: Localizer.formatDateTime(reservation, "dropoffTime")
                 }
@@ -91,7 +91,6 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    id: pickupTimeDelegate
                     text: i18n("Type")
                     description: reservationFor.name
                     visible: description
@@ -102,7 +101,6 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    id: pickupTimeDelegate
                     text: i18n("Model")
                     description: reservationFor.model
                     visible: description
@@ -113,7 +111,6 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    id: pickupTimeDelegate
                     text: i18n("Brand")
                     description: reservationFor.brand.name
                     visible: description

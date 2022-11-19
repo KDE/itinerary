@@ -181,8 +181,8 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     text: i18n("Additional notes")
                     description: departure.notes.join("<br/>")
-                    textFormat: Text.RichText
-                    wrapMode: Text.Wrap
+                    descriptionItem.textFormat: Text.RichText
+                    descriptionItem.wrapMode: Text.Wrap
                     visible: arrival.notes.length > 0
                     onLinkActivated: Qt.openUrlExternally(link)
                 }
@@ -282,8 +282,8 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     text: i18n("Additional notes")
                     description: arrival.notes.join("<br/>")
-                    textFormat: Text.RichText
-                    wrapMode: Text.Wrap
+                    descriptionItem.textFormat: Text.RichText
+                    descriptionItem.wrapMode: Text.Wrap
                     visible: arrival.notes.length > 0
                     font.italic: true
                     onLinkActivated: Qt.openUrlExternally(link)

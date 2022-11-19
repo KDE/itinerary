@@ -41,6 +41,7 @@ ColumnLayout {
         visible: place != undefined && !place.address.isEmpty
         Layout.fillWidth: true
         text: place ? Localizer.formatAddress(place.address) : ""
+        color: showButtons ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     }
 
     Kirigami.ActionToolBar {
