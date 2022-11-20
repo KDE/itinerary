@@ -20,6 +20,7 @@ ColumnLayout {
     /** The place to display and to navigate to. */
     property var place
     property bool showButtons: true
+    property bool showLocationName: false
 
     /** Indicates that this is the begin (and only the begin) of an element (e.g. departure location of a transit element). */
     property bool isRangeBegin: false
@@ -34,6 +35,13 @@ ColumnLayout {
             stop: place
             dateTime: controller.effectiveEndTime
         }
+    }
+
+    QQC2.Label {
+        visible: showLocationName && place != undefined && place.name !== undefined
+        Layout.fillWidth: true
+        text: place != undefined ? place.name : ""
+        color: showButtons ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
     }
 
     QQC2.Label {

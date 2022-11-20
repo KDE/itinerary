@@ -1,8 +1,6 @@
-/*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.5
 import QtQuick.Layouts 1.1

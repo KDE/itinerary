@@ -15,6 +15,7 @@ MobileForm.AbstractFormDelegate {
     property alias controller: internal.controller
     property alias isRangeBegin: internal.isRangeBegin
     property alias isRangeEnd: internal.isRangeEnd
+    property alias showLocationName: internal.showLocationName
 
     background: Item {}
     Layout.fillWidth: true

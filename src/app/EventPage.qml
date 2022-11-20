@@ -1,13 +1,12 @@
-/*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
-
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
+import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -15,10 +14,8 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
-    editor: Component {
-        App.EventEditor {
-            batchId: root.batchId
-        }
+    editor: App.EventEditor {
+        batchId: root.batchId
     }
 
     actions.main: Kirigami.Action {
@@ -38,55 +35,71 @@ App.DetailsPage {
     ColumnLayout {
         width: parent.width
 
-        QQC2.Label {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: reservationFor.name
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
-            wrapMode: Text.WordWrap
+            contentItem: ColumnLayout {
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: reservationFor.name
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
+
+                // ticket barcode
+                App.TicketTokenDelegate {
+                    id: ticketToken
+                    Layout.fillWidth: true
+                    resIds: ReservationManager.reservationsForBatch(root.batchId)
+                    onCurrentReservationIdChanged: {
+                        if (!currentReservationId)
+                            return;
+                        root.currentReservationId = currentReservationId;
+                    }
+                    onScanModeToggled: scanModeController.toggle()
+                }
+            }
         }
 
-        App.TicketTokenDelegate {
-            id: ticketToken
-            resIds: ReservationManager.reservationsForBatch(root.batchId)
-            onScanModeToggled: scanModeController.toggle()
-            onCurrentReservationIdChanged: {
-                if (!currentReservationId)
-                    return;
-                root.currentReservationId = currentReservationId;
-            }
-        }
-        Kirigami.FormLayout {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
+                App.FormPlaceDelegate {
+                    place: reservationFor.location
+                    controller: root.controller
+                    showLocationName: true
+                    visible: reservationFor.location != undefined
+                }
 
-            QQC2.Label {
-                Layout.fillWidth: true
-                Kirigami.FormData.label: i18n("Location:")
-                text: reservationFor.location != undefined ? reservationFor.location.name : ""
-                wrapMode: Text.WordWrap
-                visible: reservationFor.location != undefined
-            }
+                MobileForm.FormDelegateSeparator { visible: reservationFor.location != undefined }
 
-            App.PlaceDelegate {
-                place: reservationFor.location
-                controller: root.controller
-                visible: reservationFor.location != undefined
-            }
+                MobileForm.FormTextDelegate {
+                    text: i18nc("time of entrance", "Entrance")
+                    description: Localizer.formatDateTime(reservationFor, "doorTime")
+                    visible: reservationFor.doorTime > 0
+                }
 
-            QQC2.Label {
-                Kirigami.FormData.label: i18nc("time of entrance", "Entrance:")
-                text: Localizer.formatDateTime(reservationFor, "doorTime")
-                visible: reservationFor.doorTime > 0
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Start Time:")
-                text: Localizer.formatDateTime(reservationFor, "startDate")
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("End Time:")
-                text: Localizer.formatDateTime(reservationFor, "endDate")
-                visible: reservationFor.endDate > 0
+                MobileForm.FormDelegateSeparator { visible: reservationFor.doorTime > 0 }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("Start Time")
+                    description: Localizer.formatDateTime(reservationFor, "startDate")
+                    visible: reservationFor.startDate > 0
+                }
+
+                MobileForm.FormDelegateSeparator { visible: reservationFor.startDate > 0 }
+
+                MobileForm.FormTextDelegate {
+                    text: i18n("End Time")
+                    description: Localizer.formatDateTime(reservationFor, "endDate")
+                    visible: reservationFor.endDate > 0
+                }
             }
         }
     }
