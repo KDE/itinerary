@@ -54,6 +54,7 @@ App.TimelineDelegate {
             isRangeEnd: root.rangeType == TimelineElement.RangeEnd
             width: topLayout.width
             visible: reservationFor.location != undefined
+            showButtons: false
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))
