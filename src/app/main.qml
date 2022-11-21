@@ -17,8 +17,34 @@ Kirigami.ApplicationWindow {
     title: i18n("KDE Itinerary")
     reachableModeEnabled: false
 
-    width: 480
-    height: 720
+    width: Kirigami.Settings.isMobile ? 480 : 800
+    height: Kirigami.Settings.isMobile ? 720 : 650
+
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+    
+    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+
+    // pop pages when not in use
+    Connections {
+        target: applicationWindow().pageStack
+        function onCurrentIndexChanged() {
+            // wait for animation to finish before popping pages
+            timer.restart();
+        }
+    }
+    
+    Timer {
+        id: timer
+        interval: 300
+        onTriggered: {
+            let currentIndex = applicationWindow().pageStack.currentIndex;
+            while (applicationWindow().pageStack.depth > (currentIndex + 1) && currentIndex >= 0) {
+                applicationWindow().pageStack.pop();
+            }
+        }
+    }
+
 
     FileDialog {
         id: importDialog
