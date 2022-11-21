@@ -38,6 +38,7 @@ App.TimelineDelegate {
             place: touristAttraction
             controller: root.controller
             width: topLayout.width
+            showButtons: false
         }
     }
 
