@@ -15,7 +15,7 @@ Kirigami.OverlaySheet {
     property var model
 
     header: Kirigami.Heading {
-        text: i18n("Elevator")
+        text: model.title
     }
 
     ListView {
