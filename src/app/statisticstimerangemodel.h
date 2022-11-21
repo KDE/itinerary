@@ -21,10 +21,11 @@ public:
     explicit StatisticsTimeRangeModel(QObject *parent = nullptr);
     ~StatisticsTimeRangeModel() override;
 
-    enum {
+    enum CustomRoles {
         BeginRole = Qt::UserRole,
         EndRole
     };
+    Q_ENUM(CustomRoles);
 
     ReservationManager* reservationManager() const;
     void setReservationManager(ReservationManager *resMgr);
