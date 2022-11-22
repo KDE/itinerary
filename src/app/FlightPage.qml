@@ -93,7 +93,7 @@ App.DetailsPage {
 
                 MobileForm.FormTextDelegate {
                     visible: reservationFor.boardingTime > 0
-                    text: i18n("Bording time")
+                    text: i18n("Boarding time")
                     description: Localizer.formatDateTime(reservationFor, "boardingTime")
                 }
 
@@ -101,7 +101,7 @@ App.DetailsPage {
 
                 MobileForm.FormTextDelegate {
                     visible: reservation.boardingGroup.length > 0
-                    text: i18n("Bording group")
+                    text: i18n("Boarding group")
                     description: reservation.boardingGroup
                 }
 
