@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-14 02:35+0000\n"
+"POT-Creation-Date: 2022-11-22 02:44+0000\n"
 "PO-Revision-Date: 2022-11-10 10:20+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1205,7 +1205,7 @@ msgstr "Autobus"
 msgid "Select"
 msgstr "Seleziona"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, kde-format
 msgid "Select Journey"
 msgstr "Seleziona viaggio"
@@ -1215,31 +1215,31 @@ msgstr "Seleziona viaggio"
 msgid "Search Journey"
 msgstr "Cerca viaggio"
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Seleziona la fermata di partenza"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Seleziona la fermata di arrivo"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Da:"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-14 02:35+0000\n"
+"POT-Creation-Date: 2022-11-22 02:44+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1246,7 +1246,7 @@ msgstr "Buss"
 msgid "Select"
 msgstr "Vali"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Select Journey"
@@ -1257,35 +1257,35 @@ msgstr "Transfeeri valimine"
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Delayed departure on %1"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "%1 väljumine hilineb"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, fuzzy, kde-format
 #| msgid "Delayed arrival on %1"
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "%1 saabumine hilineb"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Asukohast: %1"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Sihtkohta:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure time for a train"
