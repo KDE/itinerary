@@ -39,9 +39,7 @@ Kirigami.Page {
             req.from = root.departureStop;
             req.to = root.arrivalStop;
 
-            const MSECS_PER_DAY = 24 * 60 * 60 * 1000;
-            var dt = new Date();
-            dt.setTime(dateInput.selectedDate.getTime() - (dateInput.selectedDate.getTime() % MSECS_PER_DAY) + (timeInput.value.getTime() % MSECS_PER_DAY));
+            const dt = new Date(dateInput.selectedDate.getFullYear(), dateInput.selectedDate.getMonth(), dateInput.selectedDate.getDate(), timeInput.value.getHours(), timeInput.value.getMinutes());
             console.log(dt, dateInput.selectedDate, timeInput.value);
             req.dateTime = dt;
             req.maximumResults = 6;
