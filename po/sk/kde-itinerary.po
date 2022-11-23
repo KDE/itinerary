@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:46+0000\n"
+"POT-Creation-Date: 2022-11-23 00:48+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -764,12 +764,12 @@ msgstr "Palubný lístok"
 #: app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Bording time"
+msgid "Boarding time"
 msgstr "Čas nástupu:"
 
 #: app/FlightPage.qml:104
 #, fuzzy, kde-format
-msgid "Bording group"
+msgid "Boarding group"
 msgstr "Skupina nástupu: %1"
 
 #: app/FlightPage.qml:119
@@ -1261,7 +1261,7 @@ msgstr "Autobus"
 msgid "Select"
 msgstr "Vybrať"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Select"
 msgid "Select Journey"
@@ -1272,34 +1272,34 @@ msgstr "Vybrať"
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Čas odchodu:"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Od: %1"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Pre:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure time for a train"
@@ -2665,6 +2665,11 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
+
+#, fuzzy
+#~| msgid "Boarding time:"
+#~ msgid "Bording time"
+#~ msgstr "Čas nástupu:"
 
 #~ msgid "Reservation"
 #~ msgstr "Rezervácia"

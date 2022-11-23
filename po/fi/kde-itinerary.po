@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:46+0000\n"
+"POT-Creation-Date: 2022-11-23 00:48+0000\n"
 "PO-Revision-Date: 2022-08-05 12:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -754,13 +754,13 @@ msgstr "Koneeseen nousu:"
 #: app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Bording time"
+msgid "Boarding time"
 msgstr "Koneeseennousuaika:"
 
 #: app/FlightPage.qml:104
 #, fuzzy, kde-format
 #| msgid "Boarding group:"
-msgid "Bording group"
+msgid "Boarding group"
 msgstr "Koneeseennousuryhmä:"
 
 #: app/FlightPage.qml:119
@@ -1246,7 +1246,7 @@ msgstr "Bussi"
 msgid "Select"
 msgstr "Valitse"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, kde-format
 msgid "Select Journey"
 msgstr "Valitse matka"
@@ -1256,31 +1256,31 @@ msgstr "Valitse matka"
 msgid "Search Journey"
 msgstr "Etsi matkaa"
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Valitse lähtöasema"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Valitse tuloasema"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Mistä:"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Mihin:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
@@ -2639,6 +2639,11 @@ msgstr "Hyväksy"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#, fuzzy
+#~| msgid "Boarding time:"
+#~ msgid "Bording time"
+#~ msgstr "Koneeseennousuaika:"
 
 #~ msgid "Reservation"
 #~ msgstr "Varaus"

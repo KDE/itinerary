@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:46+0000\n"
+"POT-Creation-Date: 2022-11-23 00:48+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -788,13 +788,13 @@ msgstr "Embarque:"
 #: app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Bording time"
+msgid "Boarding time"
 msgstr "Hora de embarque:"
 
 #: app/FlightPage.qml:104
 #, fuzzy, kde-format
 #| msgid "Boarding group:"
-msgid "Bording group"
+msgid "Boarding group"
 msgstr "Grupo de embarque:"
 
 #: app/FlightPage.qml:119
@@ -1293,7 +1293,7 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, kde-format
 msgid "Select Journey"
 msgstr ""
@@ -1303,35 +1303,35 @@ msgstr ""
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Delayed departure on %1"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Saída atrasada o %1"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, fuzzy, kde-format
 #| msgid "Delayed arrival on %1"
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Chegada atrasada o %1"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "De: %1"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Para:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure time for a train"
@@ -2721,6 +2721,11 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "De %1 a %2"
+
+#, fuzzy
+#~| msgid "Boarding time:"
+#~ msgid "Bording time"
+#~ msgstr "Hora de embarque:"
 
 #~ msgid "Reservation"
 #~ msgstr "Reserva"

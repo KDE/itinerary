@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:46+0000\n"
-"PO-Revision-Date: 2022-11-06 10:02+0200\n"
+"POT-Creation-Date: 2022-11-23 00:48+0000\n"
+"PO-Revision-Date: 2022-11-22 22:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -178,10 +178,9 @@ msgid "Do you really want to delete this event?"
 msgstr "Ви справді бажаєте вилучити цю подію?"
 
 #: app/ActionsCard.qml:162
-#, fuzzy, kde-format
-#| msgid "Application"
+#, kde-format
 msgid "Actions"
-msgstr "Програма"
+msgstr "Дії"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -324,17 +323,15 @@ msgstr "Відправлення"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:91 app/FlightPage.qml:138
 #: app/TrainPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Departure time:"
+#, kde-format
 msgid "Departure time"
-msgstr "Час відправлення:"
+msgstr "Час відправлення"
 
 #: app/BoatPage.qml:86 app/BoatPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr "Термінал:"
+msgstr "Термінал"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:137 app/FlightPage.qml:187
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
@@ -345,10 +342,9 @@ msgstr "Прибуття"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:147 app/FlightPage.qml:191
 #: app/TrainPage.qml:210 app/TrainPage.qml:249
-#, fuzzy, kde-format
-#| msgid "Arrival time:"
+#, kde-format
 msgid "Arrival time"
-msgstr "Час прибуття:"
+msgstr "Час прибуття"
 
 #: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
@@ -356,16 +352,14 @@ msgid "Booking"
 msgstr "Бронювання"
 
 #: app/BookingCard.qml:25 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Reference"
-msgstr "Ідентифікатор:"
+msgstr "Ідентифікатор"
 
 #: app/BookingCard.qml:32 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgid "Under name"
-msgstr "На ім'я:"
+msgstr "На ім'я"
 
 #: app/BookingCard.qml:39
 #, kde-format
@@ -378,11 +372,10 @@ msgid "Bus Ticket"
 msgstr "Квиток на автобус"
 
 #: app/BusPage.qml:114 app/BusPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "bus station"
 msgid "Station"
-msgstr "Станція:"
+msgstr "Станція"
 
 #: app/BusPage.qml:193 app/BusPage.qml:197 app/FlightPage.qml:111
 #: app/TrainEditor.qml:160 app/TrainPage.qml:301
@@ -441,17 +434,15 @@ msgid "Pick-up"
 msgstr "Взяття"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "Час:"
+msgstr "Час"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "Місце:"
+msgstr "Місце"
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -464,22 +455,19 @@ msgid "Vehicle"
 msgstr "Автомобіль"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "Тип:"
+msgstr "Тип"
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "Модель:"
+msgstr "Модель"
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "Фірма:"
+msgstr "Фірма"
 
 #: app/DepartureQueryPage.qml:20
 #, kde-format
@@ -537,10 +525,9 @@ msgid "Do you really want to delete this document?"
 msgstr "Ви справді бажаєте вилучити цей документ?"
 
 #: app/DocumentsPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgid "Documents and Tickets"
-msgstr "Поточний квиток"
+msgstr "Документи і квитки"
 
 #: app/DocumentsPage.qml:104
 #, kde-format
@@ -584,24 +571,20 @@ msgid "Event"
 msgstr "Подія"
 
 #: app/EventPage.qml:83
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "Вхід:"
+msgstr "Вхід"
 
 #: app/EventPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "Час початку:"
+msgstr "Час початку"
 
 #: app/EventPage.qml:99
-#, fuzzy, kde-format
-#| msgid "End Time:"
+#, kde-format
 msgid "End Time"
-msgstr "Час завершення:"
+msgstr "Час завершення"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
@@ -753,46 +736,41 @@ msgid "Sequence Number:"
 msgstr "Число з послідовності:"
 
 #: app/FlightPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Boarding:"
+#, kde-format
 msgid "Boarding"
-msgstr "Стіл реєстрації:"
+msgstr "Стіл реєстрації"
 
 #: app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Bording time"
+msgid "Boarding time"
 msgstr "Час реєстрації:"
 
 #: app/FlightPage.qml:104
 #, fuzzy, kde-format
-#| msgid "Boarding group:"
-msgid "Bording group"
-msgstr "Група реєстрації:"
+#| msgid "Bording group"
+msgid "Boarding group"
+msgstr "Група реєстрації"
 
 #: app/FlightPage.qml:119
-#, fuzzy, kde-format
-#| msgid "Airline:"
+#, kde-format
 msgid "Airline"
-msgstr "Авіакомпанія:"
+msgstr "Авіакомпанія"
 
 #: app/FlightPage.qml:147 app/FlightPage.qml:200
-#, fuzzy, kde-format
-#| msgid "Airport:"
+#, kde-format
 msgid "Airport"
-msgstr "Аеропорт:"
+msgstr "Аеропорт"
 
 #: app/FlightPage.qml:155 app/FlightPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "Термінал:"
+msgstr "Термінал"
 
 #: app/FlightPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Gate:"
+#, kde-format
 msgid "Gate"
-msgstr "Вихід:"
+msgstr "Вихід"
 
 #: app/FlightPage.qml:247
 #, kde-format
@@ -800,18 +778,15 @@ msgid "Frequent Traveler Program"
 msgstr "Програма регулярних поїздок"
 
 #: app/FlightPage.qml:253
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Програма"
 
 #: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "Номер:"
+msgstr "Номер"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
 #, kde-format
@@ -1102,31 +1077,27 @@ msgstr "Бронювання готелю"
 #: app/HotelPage.qml:64 app/RestaurantPage.qml:60
 #, kde-format
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "Телефон:"
+msgstr "Телефон"
 
 #: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgid "Email"
-msgstr "Ел. пошта:"
+msgstr "Ел. пошта"
 
 #: app/HotelPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Check-in time:"
+#, kde-format
 msgid "Check-in time"
-msgstr "Час перевірки на вході:"
+msgstr "Час перевірки на вході"
 
 #: app/HotelPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Check-out time:"
+#, kde-format
 msgid "Check-out time"
-msgstr "Час перевірки на виході:"
+msgstr "Час перевірки на виході"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
 #, kde-format
@@ -1256,7 +1227,7 @@ msgstr "Автобус"
 msgid "Select"
 msgstr "Вибрати"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, kde-format
 msgid "Select Journey"
 msgstr "Виберіть подорож"
@@ -1266,31 +1237,31 @@ msgstr "Виберіть подорож"
 msgid "Search Journey"
 msgstr "Шукати подорож"
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Виберіть зупинку відправлення"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Виберіть зупинку прибуття"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "З:"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "До:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
@@ -1795,22 +1766,19 @@ msgid "Restaurant Reservation"
 msgstr "Бронювання ресторану"
 
 #: app/RestaurantPage.qml:87
-#, fuzzy, kde-format
-#| msgid "Start time:"
+#, kde-format
 msgid "Start time"
-msgstr "Час початку:"
+msgstr "Час початку"
 
 #: app/RestaurantPage.qml:95
-#, fuzzy, kde-format
-#| msgid "End time:"
+#, kde-format
 msgid "End time"
-msgstr "Час завершення:"
+msgstr "Час завершення"
 
 #: app/RestaurantPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Party size:"
+#, kde-format
 msgid "Party size"
-msgstr "Кількість учасників:"
+msgstr "Кількість учасників"
 
 #: app/SettingsPage.qml:17
 #, kde-format
@@ -2022,11 +1990,9 @@ msgid "Boat trips"
 msgstr "Подорожі човном"
 
 #: app/StatisticsPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt "kirigami-addons"
-#| msgid "Years"
+#, kde-format
 msgid "Year"
-msgstr "Роки"
+msgstr "Рік"
 
 #: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -2034,8 +2000,7 @@ msgid "Total"
 msgstr "Загалом"
 
 #: app/StatisticsPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Trains"
+#, kde-format
 msgid "Train"
 msgstr "Залізниця"
 
@@ -2095,28 +2060,24 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Ви справді бажаєте вилучити цей квиток?"
 
 #: app/TicketPage.qml:97 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "Назва:"
+msgstr "Назва"
 
 #: app/TicketPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Valid from:"
+#, kde-format
 msgid "Valid from"
-msgstr "Початок чинності:"
+msgstr "Початок чинності"
 
 #: app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid until:"
+#, kde-format
 msgid "Valid until"
-msgstr "Завершення чинності:"
+msgstr "Завершення чинності"
 
 #: app/TicketPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Class:"
+#, kde-format
 msgid "Class"
-msgstr "Клас:"
+msgstr "Клас"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -2191,16 +2152,14 @@ msgid "Tourist Attraction"
 msgstr "Туристичний атракціон"
 
 #: app/TouristAttractionPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Departure Time:"
+#, kde-format
 msgid "Depature Time"
-msgstr "Час відправлення:"
+msgstr "Час відправлення"
 
 #: app/TouristAttractionPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Arrival Time:"
+#, kde-format
 msgid "Arrival Time"
-msgstr "Час прибуття:"
+msgstr "Час прибуття"
 
 #: app/TrainDelegate.qml:49
 #, kde-format
@@ -2284,17 +2243,15 @@ msgid "Train Ticket"
 msgstr "Квиток на потяг"
 
 #: app/TrainPage.qml:131 app/TrainPage.qml:235
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "train station"
 msgid "Station"
-msgstr "Станція:"
+msgstr "Станція"
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:242
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgid "Platform"
-msgstr "Платформа:"
+msgstr "Платформа"
 
 #: app/TrainPage.qml:159 app/TrainPage.qml:262
 #, kde-format
@@ -2305,7 +2262,7 @@ msgstr "(було: %1)"
 #: app/TrainPage.qml:182 app/TrainPage.qml:283
 #, kde-format
 msgid "Additional notes"
-msgstr ""
+msgstr "Додаткові примітки"
 
 #: app/TrainPage.qml:305
 #, kde-format
@@ -2320,10 +2277,9 @@ msgid "Program"
 msgstr "Програма"
 
 #: app/TrainPage.qml:359
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show program pass"
-msgstr "Показати посадковий талон"
+msgstr "Показати пароль програми"
 
 #: app/TrainPage.qml:388
 #, kde-format
@@ -2661,6 +2617,10 @@ msgstr "Прийняти"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~| msgid "Boarding time:"
+#~ msgid "Bording time"
+#~ msgstr "Час реєстрації"
 
 #~ msgid "Reservation"
 #~ msgstr "Бронювання"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 00:46+0000\n"
-"PO-Revision-Date: 2022-11-06 10:50+0300\n"
+"POT-Creation-Date: 2022-11-23 00:48+0000\n"
+"PO-Revision-Date: 2022-11-22 16:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -173,10 +173,9 @@ msgid "Do you really want to delete this event?"
 msgstr "Bu etkinliği gerçekten silmek istiyor musunuz?"
 
 #: app/ActionsCard.qml:162
-#, fuzzy, kde-format
-#| msgid "Application"
+#, kde-format
 msgid "Actions"
-msgstr "Uygulama"
+msgstr "Eylemler"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -319,17 +318,15 @@ msgstr "Kalkış"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:91 app/FlightPage.qml:138
 #: app/TrainPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Departure time:"
+#, kde-format
 msgid "Departure time"
-msgstr "Kalkış zamanı:"
+msgstr "Kalkış zamanı"
 
 #: app/BoatPage.qml:86 app/BoatPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr "Terminal:"
+msgstr "Terminal"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:137 app/FlightPage.qml:187
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
@@ -340,10 +337,9 @@ msgstr "Varış"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:147 app/FlightPage.qml:191
 #: app/TrainPage.qml:210 app/TrainPage.qml:249
-#, fuzzy, kde-format
-#| msgid "Arrival time:"
+#, kde-format
 msgid "Arrival time"
-msgstr "Varış zamanı:"
+msgstr "Varış zamanı"
 
 #: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
@@ -351,16 +347,14 @@ msgid "Booking"
 msgstr "Rezervasyon"
 
 #: app/BookingCard.qml:25 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Reference"
-msgstr "Başvuru:"
+msgstr "Başvuru"
 
 #: app/BookingCard.qml:32 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgid "Under name"
-msgstr "Şu ad ile:"
+msgstr "Şu ad ile"
 
 #: app/BookingCard.qml:39
 #, kde-format
@@ -373,11 +367,10 @@ msgid "Bus Ticket"
 msgstr "Otobüs Bileti"
 
 #: app/BusPage.qml:114 app/BusPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "bus station"
 msgid "Station"
-msgstr "İstasyon:"
+msgstr "İstasyon"
 
 #: app/BusPage.qml:193 app/BusPage.qml:197 app/FlightPage.qml:111
 #: app/TrainEditor.qml:160 app/TrainPage.qml:301
@@ -436,17 +429,15 @@ msgid "Pick-up"
 msgstr "Alma"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "Zaman:"
+msgstr "Zaman"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "Konum:"
+msgstr "Konum"
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -459,22 +450,19 @@ msgid "Vehicle"
 msgstr "Araç"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "Tür:"
+msgstr "Tür"
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "Model:"
+msgstr "Model"
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "Marka:"
+msgstr "Marka"
 
 #: app/DepartureQueryPage.qml:20
 #, kde-format
@@ -532,10 +520,9 @@ msgid "Do you really want to delete this document?"
 msgstr "Bu belgeyi gerçekten silmek istiyor musunuz?"
 
 #: app/DocumentsPage.qml:95
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgid "Documents and Tickets"
-msgstr "Geçerli Bilet"
+msgstr "Belgeler ve Biletler"
 
 #: app/DocumentsPage.qml:104
 #, kde-format
@@ -579,24 +566,20 @@ msgid "Event"
 msgstr "Etkinlik:"
 
 #: app/EventPage.qml:83
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "Giriş Zamanı:"
+msgstr "Giriş"
 
 #: app/EventPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "Başlangıç Zamanı:"
+msgstr "Başlangıç Zamanı"
 
 #: app/EventPage.qml:99
-#, fuzzy, kde-format
-#| msgid "End Time:"
+#, kde-format
 msgid "End Time"
-msgstr "Bitiş Zamanı:"
+msgstr "Bitiş Zamanı"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
@@ -748,46 +731,41 @@ msgid "Sequence Number:"
 msgstr "Sıralama Numarası:"
 
 #: app/FlightPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Boarding:"
+#, kde-format
 msgid "Boarding"
-msgstr "Biniş:"
+msgstr "Biniş"
 
 #: app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
-msgid "Bording time"
+msgid "Boarding time"
 msgstr "Biniş zamanı:"
 
 #: app/FlightPage.qml:104
 #, fuzzy, kde-format
-#| msgid "Boarding group:"
-msgid "Bording group"
-msgstr "Biniş grubu:"
+#| msgid "Bording group"
+msgid "Boarding group"
+msgstr "Biniş grubu"
 
 #: app/FlightPage.qml:119
-#, fuzzy, kde-format
-#| msgid "Airline:"
+#, kde-format
 msgid "Airline"
-msgstr "Havayolu:"
+msgstr "Havayolu"
 
 #: app/FlightPage.qml:147 app/FlightPage.qml:200
-#, fuzzy, kde-format
-#| msgid "Airport:"
+#, kde-format
 msgid "Airport"
-msgstr "Havaalanı:"
+msgstr "Havaalanı"
 
 #: app/FlightPage.qml:155 app/FlightPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "Terminal:"
+msgstr "Terminal"
 
 #: app/FlightPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Gate:"
+#, kde-format
 msgid "Gate"
-msgstr "Kapı:"
+msgstr "Kapı"
 
 #: app/FlightPage.qml:247
 #, kde-format
@@ -795,18 +773,15 @@ msgid "Frequent Traveler Program"
 msgstr "Sık Yolcu Programı"
 
 #: app/FlightPage.qml:253
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Program"
 
 #: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "Numara:"
+msgstr "Numara"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
 #, kde-format
@@ -1095,31 +1070,27 @@ msgstr "Otel Rezervasyonu"
 #: app/HotelPage.qml:64 app/RestaurantPage.qml:60
 #, kde-format
 msgid "Contact"
-msgstr ""
+msgstr "İletişim"
 
 #: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "Telefon:"
+msgstr "Telefon"
 
 #: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgid "Email"
-msgstr "E-posta:"
+msgstr "E-posta"
 
 #: app/HotelPage.qml:93
-#, fuzzy, kde-format
-#| msgid "Check-in time:"
+#, kde-format
 msgid "Check-in time"
-msgstr "Giriş zamanı:"
+msgstr "Giriş zamanı"
 
 #: app/HotelPage.qml:100
-#, fuzzy, kde-format
-#| msgid "Check-out time:"
+#, kde-format
 msgid "Check-out time"
-msgstr "Çıkış zamanı:"
+msgstr "Çıkış zamanı"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
 #, kde-format
@@ -1249,7 +1220,7 @@ msgstr "Otobüs"
 msgid "Select"
 msgstr "Seç"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:76
+#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
 #, kde-format
 msgid "Select Journey"
 msgstr "Yolculuk Seç"
@@ -1259,31 +1230,31 @@ msgstr "Yolculuk Seç"
 msgid "Search Journey"
 msgstr "Yolculuk Ara"
 
-#: app/JourneyRequestPage.qml:56 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Kalkış Durağını Seç"
 
-#: app/JourneyRequestPage.qml:66 app/JourneyRequestPage.qml:108
+#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Varış Durağını Seç"
 
-#: app/JourneyRequestPage.qml:96
+#: app/JourneyRequestPage.qml:94
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Nereden:"
 
-#: app/JourneyRequestPage.qml:104
+#: app/JourneyRequestPage.qml:102
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Nereye:"
 
-#: app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:110
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
@@ -1786,22 +1757,19 @@ msgid "Restaurant Reservation"
 msgstr "Restoran Rezervasyonu"
 
 #: app/RestaurantPage.qml:87
-#, fuzzy, kde-format
-#| msgid "Start time:"
+#, kde-format
 msgid "Start time"
-msgstr "Başlangıç zamanı:"
+msgstr "Başlangıç zamanı"
 
 #: app/RestaurantPage.qml:95
-#, fuzzy, kde-format
-#| msgid "End time:"
+#, kde-format
 msgid "End time"
-msgstr "Bitiş zamanı:"
+msgstr "Bitiş zamanı"
 
 #: app/RestaurantPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Party size:"
+#, kde-format
 msgid "Party size"
-msgstr "Grup boyutu:"
+msgstr "Grup boyutu"
 
 #: app/SettingsPage.qml:17
 #, kde-format
@@ -2009,9 +1977,7 @@ msgid "Boat trips"
 msgstr "Bot yolculukları"
 
 #: app/StatisticsPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt "kirigami-addons"
-#| msgid "Years"
+#, kde-format
 msgid "Year"
 msgstr "Yıl"
 
@@ -2021,10 +1987,9 @@ msgid "Total"
 msgstr "Toplam"
 
 #: app/StatisticsPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Trains"
+#, kde-format
 msgid "Train"
-msgstr "Trenler"
+msgstr "Tren"
 
 #: app/StatisticsPage.qml:176
 #, kde-format
@@ -2082,28 +2047,24 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Bu bileti gerçekten silmek istiyor musunuz?"
 
 #: app/TicketPage.qml:97 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "Ad:"
+msgstr "Ad"
 
 #: app/TicketPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Valid from:"
+#, kde-format
 msgid "Valid from"
-msgstr "Geçerlilik başlangıcı:"
+msgstr "Geçerlilik başlangıcı"
 
 #: app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid until:"
+#, kde-format
 msgid "Valid until"
-msgstr "Geçerlilik bitimi:"
+msgstr "Geçerlilik bitimi"
 
 #: app/TicketPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Class:"
+#, kde-format
 msgid "Class"
-msgstr "Sınıf:"
+msgstr "Sınıf"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -2178,16 +2139,14 @@ msgid "Tourist Attraction"
 msgstr "Turist Merkezi"
 
 #: app/TouristAttractionPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Departure Time:"
+#, kde-format
 msgid "Depature Time"
-msgstr "Kalkış Zamanı:"
+msgstr "Kalkış Zamanı"
 
 #: app/TouristAttractionPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Arrival Time:"
+#, kde-format
 msgid "Arrival Time"
-msgstr "Varış Zamanı:"
+msgstr "Varış Zamanı"
 
 #: app/TrainDelegate.qml:49
 #, kde-format
@@ -2271,17 +2230,15 @@ msgid "Train Ticket"
 msgstr "Tren Bileti"
 
 #: app/TrainPage.qml:131 app/TrainPage.qml:235
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "train station"
 msgid "Station"
-msgstr "İstasyon:"
+msgstr "İstasyon"
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:242
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgid "Platform"
-msgstr "Platform:"
+msgstr "Platform"
 
 #: app/TrainPage.qml:159 app/TrainPage.qml:262
 #, kde-format
@@ -2292,7 +2249,7 @@ msgstr "(idi: %1)"
 #: app/TrainPage.qml:182 app/TrainPage.qml:283
 #, kde-format
 msgid "Additional notes"
-msgstr ""
+msgstr "Ek notlar"
 
 #: app/TrainPage.qml:305
 #, kde-format
@@ -2307,10 +2264,9 @@ msgid "Program"
 msgstr "Program"
 
 #: app/TrainPage.qml:359
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show program pass"
-msgstr "Biniş Kartını Göster"
+msgstr "Program kartını göster"
 
 #: app/TrainPage.qml:388
 #, kde-format
@@ -2641,6 +2597,10 @@ msgstr "Kabul Et"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 konumundan %4 konumuna %1%2"
+
+#~| msgid "Boarding time:"
+#~ msgid "Bording time"
+#~ msgstr "Biniş zamanı"
 
 #~ msgid "Reservation"
 #~ msgstr "Rezervasyon"
