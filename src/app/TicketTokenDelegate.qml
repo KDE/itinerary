@@ -21,6 +21,7 @@ ColumnLayout {
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
     Layout.fillWidth: true
+    Layout.bottomMargin: Kirigami.Units.largeSpacing
 
     /** There is a barcode displayed. */
     readonly property alias hasBarcode: barcodeContainer.visible
