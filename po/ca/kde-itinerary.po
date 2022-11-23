@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 02:44+0000\n"
-"PO-Revision-Date: 2022-11-06 10:38+0100\n"
+"PO-Revision-Date: 2022-11-22 10:43+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -763,7 +763,7 @@ msgstr "Arribada"
 #: app/FlightPage.qml:184
 #, kde-format
 msgid "Frequent Traveler Program"
-msgstr "Programa del viatger freqüent"
+msgstr "Programa de viatger freqüent"
 
 #: app/FlightPage.qml:189
 #, kde-format
@@ -1076,7 +1076,7 @@ msgstr "Referència de la reserva:"
 #: app/IndoorMapElevatorSheet.qml:18
 #, kde-format
 msgid "Elevator"
-msgstr "Elevador"
+msgstr "Ascensor"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
 #, kde-format
