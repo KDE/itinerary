@@ -222,7 +222,9 @@ App.DetailsPage {
                     text: i18n("Journey Details")
                     icon.name: "view-calendar-day"
                     onTriggered: applicationWindow().pageStack.push(journeySectionPage, {"journeySection": root.controller.journey});
-                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0
+                    Component.onCompleted: {
+                        visible = Qt.binding(function() { return root.controller.journey && root.controller.journey.intermediateStops.length > 0});
+                    }
                 }
             ]
         }
