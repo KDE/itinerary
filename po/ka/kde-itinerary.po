@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 00:48+0000\n"
-"PO-Revision-Date: 2022-11-22 06:47+0100\n"
+"PO-Revision-Date: 2022-11-23 06:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -103,12 +103,12 @@ msgstr "ბილეთის ჩვენება"
 #: app/ActionsCard.qml:32
 #, kde-format
 msgid "Add transfer before"
-msgstr ""
+msgstr "დაამატეთ გადაჯდომა მანამდე"
 
 #: app/ActionsCard.qml:41
 #, kde-format
 msgid "Add transfer after"
-msgstr ""
+msgstr "დაამატეთ გადაჯდომა შემდეგ"
 
 #: app/ActionsCard.qml:50
 #, kde-format
@@ -553,7 +553,7 @@ msgstr "მოვლენის ჩასწორება"
 #: app/EventEditor.qml:43
 #, kde-format
 msgid "Venue:"
-msgstr ""
+msgstr "შეხვედრის ადგილი:"
 
 #: app/EventPage.qml:16
 #, kde-format
@@ -1317,13 +1317,13 @@ msgstr[1] "%1 ცვლილება"
 #: app/livedatamanager.cpp:642
 #, kde-format
 msgid "Itinerary change"
-msgstr ""
+msgstr "მარშრუტის ცვლილება"
 
 #: app/localizer.cpp:124
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
-msgstr ""
+msgstr "დდ თთთთ"
 
 #: app/localizer.cpp:169
 #, kde-format
@@ -1358,7 +1358,7 @@ msgstr ""
 #: app/LocationInfoDelegate.qml:87
 #, kde-format
 msgid "Timezone change: %1 (%2)"
-msgstr ""
+msgstr "დროის სარტყლის ცვლილება: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:94
 #, kde-format
@@ -1440,7 +1440,7 @@ msgstr "1 %1 = %2 %3"
 #: app/main.cpp:277
 #, kde-format
 msgid "Digital Travel Assistant"
-msgstr ""
+msgstr "მოგზაურობის ციფრული დამხმარე"
 
 #: app/main.cpp:278
 #, kde-format
@@ -1480,7 +1480,7 @@ msgstr "KDE Itinerary-ის ფაილები (*.itinerary)"
 #: app/main.qml:61
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr ""
+msgstr "მოგზაურობის ინფორმაციის გატანა"
 
 #: app/main.qml:73 app/PassPage.qml:88
 #, kde-format
@@ -1592,27 +1592,27 @@ msgstr "ჩამოსვლა გაუქმდა."
 #: app/notificationhelper.cpp:103
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
-msgstr ""
+msgstr "ახალი გასვლის დრო: %1 (+%2)"
 
 #: app/notificationhelper.cpp:105
 #, kde-format
 msgid "New departure time is: %1 (%2)"
-msgstr ""
+msgstr "ახალი გასვლის დრო: %1 (%2)"
 
 #: app/notificationhelper.cpp:109
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
-msgstr ""
+msgstr "ახალი ჩამოსვლის დრო: %1 (+%2)"
 
 #: app/notificationhelper.cpp:113
 #, kde-format
 msgid "New departure platform is: %1"
-msgstr ""
+msgstr "ახალი გასვლის პლატფორმა: %1"
 
 #: app/notificationhelper.cpp:116
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr ""
+msgstr "ახალი ჩამოსვლის პლატფორმა: %1"
 
 #: app/passmanager.cpp:209
 #, kde-format
@@ -1779,7 +1779,7 @@ msgstr "ონლაინ სერვისები"
 #: app/SettingsPage.qml:78
 #, kde-format
 msgid "Query Traffic Data"
-msgstr ""
+msgstr "ტრაფიკის მონაცემების გამოთხოვა"
 
 #: app/SettingsPage.qml:81
 #, kde-format
@@ -1791,7 +1791,7 @@ msgstr ""
 #: app/SettingsPage.qml:87
 #, kde-format
 msgid "Use insecure services"
-msgstr ""
+msgstr "დაუცველი სერვისების გამოყენება"
 
 #: app/SettingsPage.qml:90
 #, kde-format
@@ -1856,12 +1856,12 @@ msgstr "გადაჯდომაში დამხმარე"
 #: app/SettingsPage.qml:157
 #, kde-format
 msgid "Automatically add transfers"
-msgstr ""
+msgstr "გადაჯდომების ავტომატური დამატება"
 
 #: app/SettingsPage.qml:165
 #, kde-format
 msgid "Automatically fill transfers"
-msgstr ""
+msgstr "გადაჯდომების ავტომატური შევსება"
 
 #: app/SettingsPage.qml:166
 #, kde-format
@@ -1883,7 +1883,7 @@ msgstr "შეტყობინებების მორგება…"
 #: app/SettingsPage.qml:197
 #, kde-format
 msgid "Show notifications on lock screen"
-msgstr ""
+msgstr "გაფრთხილებების დაბლოკილ ეკრანზე ჩვენება"
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
@@ -1989,17 +1989,17 @@ msgstr "სახელით დალაგება"
 #: app/StopPickerPage.qml:46
 #, kde-format
 msgid "Most recently used"
-msgstr ""
+msgstr "ყველაზე ცოტა ხნის წინ გამოყენებული"
 
 #: app/StopPickerPage.qml:53
 #, kde-format
 msgid "Most often used"
-msgstr ""
+msgstr "ყველაზე ხშირად გამოყენებული"
 
 #: app/StopPickerPage.qml:127
 #, kde-format
 msgid "Remove history entry"
-msgstr ""
+msgstr "ისტორიის ჩანწერის წაშლა"
 
 #: app/StopPickerPage.qml:173
 #, kde-format
@@ -2019,7 +2019,7 @@ msgstr "ბილეთის წაშლა"
 #: app/TicketPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this ticket?"
-msgstr ""
+msgstr "მართლა გნებავთ, წაშალოთ ეს ბილეთ?"
 
 #: app/TicketPage.qml:97 app/TrainPage.qml:341
 #, kde-format
@@ -2054,12 +2054,12 @@ msgstr "მოგზაური %1"
 #: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
-msgstr ""
+msgstr "ჩემი მარშრუტი"
 
 #: app/TimelinePage.qml:25
 #, kde-format
 msgid "Go To Now"
-msgstr ""
+msgstr "ახლავე გადასვლა"
 
 #: app/TimelinePage.qml:30
 #, kde-format
@@ -2069,27 +2069,27 @@ msgstr "მიმდინარე ბილეთი"
 #: app/TimelinePage.qml:36
 #, kde-format
 msgid "Add train trip..."
-msgstr ""
+msgstr "მატარებლით მოგზაურობის დამატება..."
 
 #: app/TimelinePage.qml:87
 #, kde-format
 msgid "Add from calendar..."
-msgstr ""
+msgstr "კალენდარიდან დამატება..."
 
 #: app/TimelinePage.qml:104
 #, kde-format
 msgid "Delete Trip"
-msgstr ""
+msgstr "მოგზაურობის წაშლა"
 
 #: app/TimelinePage.qml:105
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr ""
+msgstr "მართლა გნებავთ ამ მოგზაურობის წაშლა?"
 
 #: app/TimelinePage.qml:125
 #, kde-format
 msgid "Export Trip"
-msgstr ""
+msgstr "მოგზაურობის გატანა"
 
 #: app/TimelinePage.qml:297
 #, kde-format
@@ -2111,7 +2111,7 @@ msgstr "%1, %2"
 #: app/TouristAttractionPage.qml:17
 #, kde-format
 msgid "Tourist Attraction"
-msgstr ""
+msgstr "ტურისტული ღირსშესანიშნაობა"
 
 #: app/TouristAttractionPage.qml:63
 #, kde-format
@@ -2126,17 +2126,17 @@ msgstr "ჩამოსვლის დრო"
 #: app/TrainDelegate.qml:49
 #, kde-format
 msgid "Departure from %1 on platform %2"
-msgstr ""
+msgstr "გასვლის რო %1 პლატფორმიდან %2"
 
 #: app/TrainDelegate.qml:71
 #, kde-format
 msgid "Arrival at %1 on platform %2"
-msgstr ""
+msgstr "ჩამოსვლის დრო %1 პლატფორმაზე %2"
 
 #: app/TrainEditor.qml:18
 #, kde-format
 msgid "Edit Train Reservation"
-msgstr ""
+msgstr "მატარებლის ჯავშნის ჩასწორება"
 
 #: app/TrainEditor.qml:27
 #, kde-format
@@ -2156,7 +2156,7 @@ msgstr "მოგვიანებით ჩაჯდომა"
 #: app/TrainEditor.qml:85
 #, kde-format
 msgid "Change departure station"
-msgstr ""
+msgstr "გამგზავრების სადგურის შეცვლა"
 
 #: app/TrainEditor.qml:97
 #, kde-format
@@ -2230,7 +2230,7 @@ msgstr "დამატებითი შენიშვნები"
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
-msgstr ""
+msgstr "გამძღოლი:"
 
 #: app/TrainPage.qml:337
 #, kde-format
@@ -2348,7 +2348,7 @@ msgstr ""
 #: app/TripGroupDelegate.qml:98
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
-msgstr ""
+msgstr "%1: თავსებადი შესაერთებლების გარეშე (%2)"
 
 #: app/TripGroupDelegate.qml:109
 #, kde-format
@@ -2395,7 +2395,7 @@ msgstr "პლატფორმა: %1"
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Coach: %1 Seat: %2"
-msgstr ""
+msgstr "გამძღოლი: %1 სავარძელი: %2"
 
 #: app/VehicleLayoutPage.qml:247
 #, kde-format
@@ -2420,7 +2420,7 @@ msgstr "უცნობი კლასი"
 #: app/VehicleLayoutPage.qml:296
 #, kde-format
 msgid "No vehicle layout information available."
-msgstr ""
+msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია"
 
 #: app/VehicleLoadIndicator.qml:29
 #, kde-format

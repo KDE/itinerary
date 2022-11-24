@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 00:48+0000\n"
-"PO-Revision-Date: 2022-11-22 22:41+0200\n"
+"PO-Revision-Date: 2022-11-23 07:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -741,14 +741,12 @@ msgid "Boarding"
 msgstr "Стіл реєстрації"
 
 #: app/FlightPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Boarding time"
-msgstr "Час реєстрації:"
+msgstr "Час реєстрації"
 
 #: app/FlightPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Bording group"
+#, kde-format
 msgid "Boarding group"
 msgstr "Група реєстрації"
 
