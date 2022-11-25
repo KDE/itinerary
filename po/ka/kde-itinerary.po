@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-23 00:48+0000\n"
-"PO-Revision-Date: 2022-11-23 06:21+0100\n"
+"PO-Revision-Date: 2022-11-24 07:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -732,14 +732,12 @@ msgid "Boarding"
 msgstr "ჩასხდომა"
 
 #: app/FlightPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Boarding time"
-msgstr "ჩასხდომის დრო:"
+msgstr "ჩასხდომის დრო"
 
 #: app/FlightPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Bording group"
+#, kde-format
 msgid "Boarding group"
 msgstr "ჩაჯდომის ჯგუფი"
 
@@ -1343,17 +1341,17 @@ msgstr "%1-ში შესვლა"
 #: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
-msgstr ""
+msgstr "კვების შეუთავსებელი ბუდეები: %1"
 
 #: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
-msgstr ""
+msgstr "კვების ზოგიერთი შეუთავსებელი ბუდე: %1"
 
 #: app/LocationInfoDelegate.qml:80
 #, kde-format
 msgid "Some incompatible power plugs: %1"
-msgstr ""
+msgstr "კვების ზოგიერთი შეუთავსებელი ჩანგალი: %1"
 
 #: app/LocationInfoDelegate.qml:87
 #, kde-format
@@ -1385,7 +1383,7 @@ msgstr "ტიპი B"
 
 #: app/locationinformation.cpp:105
 msgid "Europlug"
-msgstr ""
+msgstr "ევროჩანგალი"
 
 #: app/locationinformation.cpp:106
 msgid "Type D"
@@ -1445,17 +1443,17 @@ msgstr "მოგზაურობის ციფრული დამხმ�
 #: app/main.cpp:278
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
-msgstr ""
+msgstr "© 2018-%1 KDE -ის საზოგადოება, ყველა უფლება დაცულია"
 
 #: app/main.cpp:284
 #, kde-format
 msgid "Open Itinerary on the given page"
-msgstr ""
+msgstr "Itinerary-ის მითითებულ გვერდზე გასვლა"
 
 #: app/main.cpp:287
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
-msgstr ""
+msgstr "შემოსატანი PkPass ან JSON-LD ფაილი."
 
 #: app/main.qml:52
 #, kde-format
@@ -1804,7 +1802,7 @@ msgstr ""
 #: app/SettingsPage.qml:98
 #, kde-format
 msgid "Public Transport Information Sources..."
-msgstr ""
+msgstr "საჯარო ტრანსპორტის ინფორმაციის წყაროები..."
 
 #: app/SettingsPage.qml:107 app/WeatherForecastPage.qml:18
 #, kde-format
@@ -1814,7 +1812,7 @@ msgstr "ამინდი;პროგნოზი"
 #: app/SettingsPage.qml:110
 #, kde-format
 msgid "Showing weather forecasts will query online services."
-msgstr ""
+msgstr "ონლაინ სერვისებიდან გამოთხოვილი ამინდის პროგნოზის ჩვენება."
 
 #: app/SettingsPage.qml:115
 #, kde-format
@@ -2094,7 +2092,7 @@ msgstr "მოგზაურობის გატანა"
 #: app/TimelinePage.qml:297
 #, kde-format
 msgid "Nothing on the itinerary for today."
-msgstr ""
+msgstr "მოგზაურობისთვის დღეს არაფერი გაქვთ გასაკეთებელი."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
 #: kirigami-addons/dateandtime/DatePopup.qml:64
@@ -2338,12 +2336,12 @@ msgstr "%1°C / %2°C"
 #: app/TripGroupDelegate.qml:94
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
-msgstr ""
+msgstr "%1: ზოგიერთი შეუთავსებელი კვების ბუდე (%2)"
 
 #: app/TripGroupDelegate.qml:96
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
-msgstr ""
+msgstr "%1: ზოგიერთი შეუთავსებელი კვების ჩანგალი (%2)"
 
 #: app/TripGroupDelegate.qml:98
 #, kde-format
@@ -2420,7 +2418,7 @@ msgstr "უცნობი კლასი"
 #: app/VehicleLayoutPage.qml:296
 #, kde-format
 msgid "No vehicle layout information available."
-msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია"
+msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
 
 #: app/VehicleLoadIndicator.qml:29
 #, kde-format
