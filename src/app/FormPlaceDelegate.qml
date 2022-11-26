@@ -31,7 +31,6 @@ MobileForm.AbstractFormDelegate {
             id: internal
             place: place
             controller: root.controller
-            isRangeBegin: true
         }
     }
 }

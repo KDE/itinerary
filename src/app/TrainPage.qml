@@ -171,7 +171,7 @@ App.DetailsPage {
                     id: departureDelegate
                     place: reservationFor.departureStation
                     controller: root.controller
-                    isRangeEnd: true
+                    isRangeBegin: true
                 }
 
                 MobileForm.FormDelegateSeparator {
