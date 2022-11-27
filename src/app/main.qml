@@ -19,6 +19,8 @@ Kirigami.ApplicationWindow {
 
     width: Kirigami.Settings.isMobile ? 480 : 800
     height: Kirigami.Settings.isMobile ? 720 : 650
+    minimumWidth: 300
+    minimumHeight: 400
 
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
