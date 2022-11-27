@@ -1,31 +1,50 @@
-/*
-    SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
-
-    SPDX-License-Identifier: LGPL-2.0-or-later
-*/
+// SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+// SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick 2.15
 import org.kde.kirigami 2.17 as Kirigami
+import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts 1.15
 import org.kde.itinerary 1.0
 import "." as App
 
-Item {
-    id: root
+QQC2.Pane {
     property alias day: _controller.date
     property QtObject controller: TimelineSectionDelegateController {
         id: _controller;
         timelineModel: TimelineModel
     }
 
-    implicitHeight: headerItem.implicitHeight + Kirigami.Units.largeSpacing*2
-    implicitWidth: parent.width
-    Kirigami.BasicListItem {
-        id: headerItem
-        label: controller.title
-        backgroundColor: Kirigami.Theme.backgroundColor // otherwise background is transparent
-        icon: "view-calendar-day"
-        iconColor: controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-        bold: controller.isToday
-        subtitle: controller.subTitle
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: Kirigami.Units.smallSpacing
+    bottomPadding: Kirigami.Units.smallSpacing
+
+    width: ListView.view.width - ListView.view.parent.QQC2.ScrollBar.vertical.width
+
+    contentItem: RowLayout {
+        Kirigami.Icon {
+            source: "view-calendar-day"
+            color: controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            isMask: controller.isHoliday
+            implicitHeight: Kirigami.Units.iconSizes.smallMedium
+            implicitWidth: Kirigami.Units.iconSizes.smallMedium
+        }
+        ColumnLayout {
+            Layout.fillWidth: true
+            Kirigami.Heading {
+                text: controller.title
+                type: Kirigami.Heading.Type.Secondary
+                font.weight: controller.isToday === Kirigami.Heading.Type.Primary ? Font.DemiBold : Font.Normal
+                Layout.fillWidth: true
+                level: 4
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: controller.subTitle
+                visible: text
+            }
+        }
     }
 }
