@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-23 00:48+0000\n"
+"POT-Creation-Date: 2022-11-28 00:49+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: app/AboutPage.qml:16 app/main.qml:147
+#: app/AboutPage.qml:16 app/main.qml:149
 #, kde-format
 msgid "About"
 msgstr "Sobre"
@@ -535,7 +535,7 @@ msgstr "Fornecedores de datos: %1"
 msgid "Add Document"
 msgstr "Engadir un documento"
 
-#: app/DocumentsPage.qml:34 app/main.qml:54
+#: app/DocumentsPage.qml:34 app/main.qml:56
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Todos os ficheiros (*.*)"
@@ -849,7 +849,7 @@ msgstr "Eliminar"
 msgid "Do you really want to delete this pass?"
 msgstr "Seguro que quere eliminar este evento?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:68
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:70
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -911,7 +911,7 @@ msgstr "%1 (%2)"
 msgid "Recovery (%1)"
 msgstr ""
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:118
+#: app/HealthCertificatePage.qml:17 app/main.qml:120
 #, kde-format
 msgid "Health Certificates"
 msgstr ""
@@ -1555,88 +1555,88 @@ msgstr ""
 msgid "PkPass or JSON-LD file to import."
 msgstr "Ficheiro PkPass ou JSON-LD para importar."
 
-#: app/main.qml:52
+#: app/main.qml:54
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importar a reserva"
 
-#: app/main.qml:54
+#: app/main.qml:56
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Ficheiros PkPass (*.pkpass)"
 
-#: app/main.qml:54
+#: app/main.qml:56
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Ficheiros PDF (*.pdf)"
 
-#: app/main.qml:54 app/main.qml:63
+#: app/main.qml:56 app/main.qml:65
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Ficheiros de KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:61
+#: app/main.qml:63
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportar os datos do itinerario"
 
-#: app/main.qml:73 app/PassPage.qml:88
+#: app/main.qml:75 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Importar…"
 
-#: app/main.qml:78
+#: app/main.qml:80
 #, kde-format
 msgid "Scan Barcode..."
 msgstr ""
 
-#: app/main.qml:83
+#: app/main.qml:85
 #, kde-format
 msgid "Paste"
 msgstr "Pegar"
 
-#: app/main.qml:89
+#: app/main.qml:91
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprobar se hai novas actualizacións"
 
-#: app/main.qml:97
+#: app/main.qml:99
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download Maps"
 msgstr "Descargar"
 
-#: app/main.qml:105 app/StatisticsPage.qml:16
+#: app/main.qml:107 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr ""
 
-#: app/main.qml:112
+#: app/main.qml:114
 #, kde-format
 msgid "Passes && Programs"
 msgstr ""
 
-#: app/main.qml:112
+#: app/main.qml:114
 #, kde-format
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/main.qml:129
+#: app/main.qml:131
 #, kde-format
 msgid "Settings..."
 msgstr "Configuración…"
 
-#: app/main.qml:135
+#: app/main.qml:137
 #, kde-format
 msgid "Export..."
 msgstr "Exportar…"
 
-#: app/main.qml:140 app/WelcomePage.qml:17
+#: app/main.qml:142 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr ""
 
-#: app/main.qml:207
+#: app/main.qml:209
 #, kde-format
 msgid "Map download finished."
 msgstr ""
