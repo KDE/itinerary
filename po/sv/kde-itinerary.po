@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 02:44+0000\n"
-"PO-Revision-Date: 2022-08-02 22:13+0200\n"
+"PO-Revision-Date: 2022-11-27 11:58+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -2228,10 +2228,9 @@ msgid "Show"
 msgstr "Visa"
 
 #: app/TrainPage.qml:306
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "Sekvensnummer:"
+msgstr "Biljettnummer: "
 
 #: app/TransferDelegate.qml:92
 #, kde-format
@@ -2511,22 +2510,19 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Days"
 msgstr "Dagar"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Månader"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "År"
