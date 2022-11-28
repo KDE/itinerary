@@ -19,11 +19,15 @@ Kirigami.OverlaySheet {
     header: Column {
         Kirigami.Heading {
             text: elementDetailsSheet.model.name
+            width: parent.width
+            wrapMode: Text.WordWrap
         }
         Kirigami.Heading {
             text: elementDetailsSheet.model.category
             level: 4
             visible: text != ""
+            width: parent.width
+            wrapMode: Text.WordWrap
         }
     }
 
