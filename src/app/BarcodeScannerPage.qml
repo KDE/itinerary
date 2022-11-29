@@ -21,6 +21,15 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    actions.main: Kirigami.Action {
+        icon.name: checked ? "flashlight-off" : "flashlight-on"
+        text: i18n("Light")
+        checkable: true
+        checked: camera.flash.mode == Camera.FlashVideoLight
+        visible: camera.flash.supportedModes.length > 1
+        onTriggered: camera.flash.mode = (camera.flash.mode == Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
+    }
+
     VideoOutput {
         id: viewFinder
         anchors.fill: parent

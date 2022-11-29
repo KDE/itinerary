@@ -150,6 +150,8 @@ if (ANDROID)
         edit-paste
         edit-rename
         export-symbolic
+        flashlight-off
+        flashlight-on
         folder-documents-symbolic
         go-down-symbolic
         go-home-symbolic
