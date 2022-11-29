@@ -27,7 +27,7 @@ MobileForm.FormComboBoxDelegate {
 
     displayText: currentCountry ? (currentCountry.emojiFlag + ' ' + currentCountry.name) : ""
 
-    delegate: QQC2.ItemDelegate {
+    comboBoxDelegate: QQC2.ItemDelegate {
         implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
         highlighted: controlRoot.highlightedIndex === index
         property bool separatorVisible: false
@@ -39,7 +39,7 @@ MobileForm.FormComboBoxDelegate {
         }
     }
 
-    mobileDelegate: QQC2.RadioDelegate {
+    dialogDelegate: QQC2.RadioDelegate {
         implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
         text: {
             const c = Country.fromAlpha2(modelData);
