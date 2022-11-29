@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-28 00:49+0000\n"
-"PO-Revision-Date: 2022-11-03 15:33+0100\n"
+"PO-Revision-Date: 2022-11-28 15:50+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -324,11 +324,10 @@ msgid "Departure time"
 msgstr "Tempore de partita:"
 
 #: app/BoatPage.qml:86 app/BoatPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr "Terminal:"
+msgstr "Terminal"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:137 app/FlightPage.qml:187
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
@@ -350,10 +349,9 @@ msgid "Booking"
 msgstr "Reservation (Booking)"
 
 #: app/BookingCard.qml:25 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Reference"
-msgstr "Referentia:"
+msgstr "Referentia"
 
 #: app/BookingCard.qml:32 app/FlightPage.qml:238
 #, fuzzy, kde-format
@@ -435,17 +433,15 @@ msgid "Pick-up"
 msgstr "Recuperar"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "Tempore:"
+msgstr "Tempore"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "Location:"
+msgstr "Location"
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -458,22 +454,19 @@ msgid "Vehicle"
 msgstr "Vehiculo"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "Typo:"
+msgstr "Typo"
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "Modello:"
+msgstr "Modello"
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "Marca:"
+msgstr "Marca"
 
 #: app/DepartureQueryPage.qml:20
 #, kde-format
@@ -578,24 +571,21 @@ msgid "Event"
 msgstr "Evento"
 
 #: app/EventPage.qml:83
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "Ingresso:"
+msgstr "Ingresso"
 
 #: app/EventPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "Tempore de initio:"
+msgstr "Tempore de initio"
 
 #: app/EventPage.qml:99
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
-msgstr "Tempore de Fin: "
+msgstr "Tempore de Fin"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
@@ -777,10 +767,9 @@ msgid "Airport"
 msgstr "Aeroporto:"
 
 #: app/FlightPage.qml:155 app/FlightPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "Terminal:"
+msgstr "Terminal"
 
 #: app/FlightPage.qml:163
 #, fuzzy, kde-format
@@ -794,18 +783,15 @@ msgid "Frequent Traveler Program"
 msgstr "Programma de Viagiator Frequente"
 
 #: app/FlightPage.qml:253
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Programma"
 
 #: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:350
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "Numero:"
+msgstr "Numero"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
 #, kde-format
@@ -1094,19 +1080,18 @@ msgstr "Reservation de Hotel: "
 #: app/HotelPage.qml:64 app/RestaurantPage.qml:60
 #, kde-format
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "Telephono:"
+msgstr "Telephono"
 
 #: app/HotelPage.qml:77 app/RestaurantPage.qml:72
 #, fuzzy, kde-format
 #| msgid "Email:"
 msgid "Email"
-msgstr "E-posta:"
+msgstr "E-posta"
 
 #: app/HotelPage.qml:93
 #, fuzzy, kde-format
@@ -1788,7 +1773,7 @@ msgstr "Reservation de restaurante: "
 #, fuzzy, kde-format
 #| msgid "Start time:"
 msgid "Start time"
-msgstr "Tempore de initio:"
+msgstr "Tempore de initio"
 
 #: app/RestaurantPage.qml:95
 #, fuzzy, kde-format
@@ -2008,10 +1993,9 @@ msgid "Boat trips"
 msgstr "Viages de barca"
 
 #: app/StatisticsPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Year"
-msgstr "Annos"
+msgstr "Anno"
 
 #: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -2080,10 +2064,9 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Tu vermente vole deler iste billet?"
 
 #: app/TicketPage.qml:97 app/TrainPage.qml:341
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "Nomine:"
+msgstr "Nomine"
 
 #: app/TicketPage.qml:103
 #, fuzzy, kde-format
@@ -2101,7 +2084,7 @@ msgstr "Valide usque:"
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
-msgstr "Classe:"
+msgstr "Classe"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -2276,10 +2259,9 @@ msgid "Station"
 msgstr "Station:"
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:242
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgid "Platform"
-msgstr "Platteforma:"
+msgstr "Platteforma"
 
 #: app/TrainPage.qml:159 app/TrainPage.qml:262
 #, kde-format
@@ -2606,15 +2588,13 @@ msgid "Days"
 msgstr "Dies"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Menses"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "Annos"
