@@ -18,6 +18,7 @@ Dependencies:
     'frameworks/kunitconversion': '@stable'
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
+    'libraries/kirigami-addons': '@latest'
     'pim/kpkpass': '@same'
     'pim/kitinerary': '@same'
     'pim/khealthcertificate': '@latest'
