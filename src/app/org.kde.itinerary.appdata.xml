@@ -716,6 +716,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="22.12.0" date="2022-12-08"/>
     <release version="22.08.3" date="2022-11-03">
       <description>
         <ul>
@@ -740,32 +741,6 @@
           <li>Improve size and positioning of map overlays.</li>
           <li>Improved travel data extractors for Amtrak, Flixbus and Vistara.</li>
           <li>Improved airport terminal and gate detection.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.08.0" date="2022-08-18">
-      <description>
-        <ul>
-          <li>Improved calendar import, allowing more fine-grained selection and supporting Linux too.</li>
-          <li>Support for exporting reservations to the calendar.</li>
-          <li>Support for passes and program cards that aren't tied to a specific trip, such as flat-rate or time interval tickets or discount program memberships.</li>
-          <li>Support for adding train and bus trips from online journey searches.</li>
-          <li>Integrated barcode scanner.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.04.3" date="2022-07-07">
-      <description>
-        <ul>
-          <li>Fix monorail platforms being misdetected as regular railway.</li>
-        </ul>
-      </description>
-    </release>
-    <release version="22.04.2" date="2022-06-09">
-      <description>
-        <ul>
-          <li>Improved travel data extraction for Thalys, UK national rail, Eurowings and Eventbrite.</li>
-          <li>Fixed train load information parsing for German public transport operators.</li>
         </ul>
       </description>
     </release>
