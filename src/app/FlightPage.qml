@@ -168,7 +168,7 @@ App.DetailsPage {
                 MobileForm.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
 
                 App.FormPlaceDelegate {
-                    place: reservationFor.arrivalAirport
+                    place: reservationFor.departureAirport
                     controller: root.controller
                     isRangeBegin: true
                 }
