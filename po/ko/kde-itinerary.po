@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-28 00:49+0000\n"
+"POT-Creation-Date: 2022-11-30 00:48+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -268,7 +268,13 @@ msgstr "바코드 스캔 모드"
 msgid "Scan Barcode"
 msgstr "바코드 스캔"
 
-#: app/BarcodeScannerPage.qml:76
+#: app/BarcodeScannerPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Flight"
+msgid "Light"
+msgstr "항공편"
+
+#: app/BarcodeScannerPage.qml:85
 #, kde-format
 msgid "No camera available."
 msgstr "사용 가능한 카메라가 없습니다."

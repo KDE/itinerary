@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-28 00:49+0000\n"
+"POT-Creation-Date: 2022-11-30 00:48+0000\n"
 "PO-Revision-Date: 2022-11-19 14:48\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -268,7 +268,13 @@ msgstr "处于条形码扫描模式"
 msgid "Scan Barcode"
 msgstr ""
 
-#: app/BarcodeScannerPage.qml:76
+#: app/BarcodeScannerPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Flight"
+msgid "Light"
+msgstr "航班信息"
+
+#: app/BarcodeScannerPage.qml:85
 #, kde-format
 msgid "No camera available."
 msgstr ""

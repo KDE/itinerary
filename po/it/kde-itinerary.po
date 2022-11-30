@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-28 00:49+0000\n"
+"POT-Creation-Date: 2022-11-30 00:48+0000\n"
 "PO-Revision-Date: 2022-11-10 10:20+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -272,7 +272,13 @@ msgstr "In modalità di scansione dei codici a barre"
 msgid "Scan Barcode"
 msgstr "Scansione codice a barre"
 
-#: app/BarcodeScannerPage.qml:76
+#: app/BarcodeScannerPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Flight"
+msgid "Light"
+msgstr "Volo"
+
+#: app/BarcodeScannerPage.qml:85
 #, kde-format
 msgid "No camera available."
 msgstr "Nessuna fotocamera disponibile."
