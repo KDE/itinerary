@@ -47,6 +47,7 @@ App.DetailsPage {
                     text: reservationFor.name
                     horizontalAlignment: Qt.AlignHCenter
                     font.bold: true
+                    wrapMode: Text.WordWrap
                 }
 
                 // ticket barcode
