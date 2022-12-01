@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-22 02:44+0000\n"
-"PO-Revision-Date: 2022-11-10 10:20+0100\n"
+"PO-Revision-Date: 2022-11-24 09:32+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -704,7 +704,7 @@ msgstr "Partenza"
 #, kde-format
 msgctxt "flight departure time"
 msgid "Departure time:"
-msgstr "Orario di partenza:"
+msgstr "Ora di partenza:"
 
 #: app/FlightEditor.qml:86
 #, kde-format
@@ -1243,7 +1243,7 @@ msgstr "A:"
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
-msgstr "Orario di partenza:"
+msgstr "Ora di partenza:"
 
 #: app/JourneySectionDelegate.qml:92
 #, kde-format
