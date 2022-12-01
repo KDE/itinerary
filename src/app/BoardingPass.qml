@@ -16,7 +16,7 @@ Item {
     id: root
     property var pass: null
     property string passId
-    readonly property int __margin: 10
+    property int __margin: 10
 
     implicitWidth: Math.max(bodyLayout.implicitWidth, 332)
 
