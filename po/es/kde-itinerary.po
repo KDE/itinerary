@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-30 00:48+0000\n"
-"PO-Revision-Date: 2022-11-24 02:16+0100\n"
+"PO-Revision-Date: 2022-11-30 18:25+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -274,10 +274,9 @@ msgid "Scan Barcode"
 msgstr "Escanear código de barras"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Vuelo"
+msgstr "Luz"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format

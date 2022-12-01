@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-30 00:48+0000\n"
-"PO-Revision-Date: 2022-11-28 18:13+0000\n"
+"PO-Revision-Date: 2022-11-30 09:25+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -278,10 +278,9 @@ msgid "Scan Barcode"
 msgstr "Analisar o Código de Barras"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Voo"
+msgstr "Luz"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-30 00:48+0000\n"
-"PO-Revision-Date: 2022-11-24 23:57+0100\n"
+"PO-Revision-Date: 2022-11-30 10:30+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -273,10 +273,9 @@ msgid "Scan Barcode"
 msgstr "Barcode scannen"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Vlucht"
+msgstr "Licht"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format
