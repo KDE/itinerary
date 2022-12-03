@@ -29,7 +29,7 @@ Kirigami.AbstractCard {
     property alias headerIcon: _headerIcon
     property alias headerIconSource: _headerIcon.source
 
-    readonly property double headerFontScale: 1.0
+    property double headerFontScale: 1.0
 
     showClickFeedback: true
 
