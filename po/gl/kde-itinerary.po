@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -605,20 +605,20 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Evento"
 
-#: app/EventPage.qml:83
+#: app/EventPage.qml:84
 #, fuzzy, kde-format
 #| msgid "Entrance:"
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada:"
 
-#: app/EventPage.qml:91
+#: app/EventPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Data de comezo:"
 
-#: app/EventPage.qml:99
+#: app/EventPage.qml:100
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"

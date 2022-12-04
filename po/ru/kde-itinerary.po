@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -589,7 +589,7 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Событие"
 
-#: app/EventPage.qml:83
+#: app/EventPage.qml:84
 #, fuzzy, kde-format
 #| msgctxt "time of entrance"
 #| msgid "Entrance:"
@@ -597,13 +597,13 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Вход:"
 
-#: app/EventPage.qml:91
+#: app/EventPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Время начала:"
 
-#: app/EventPage.qml:99
+#: app/EventPage.qml:100
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"

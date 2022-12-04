@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-30 00:48+0000\n"
+"POT-Creation-Date: 2022-12-04 00:47+0000\n"
 "PO-Revision-Date: 2022-12-01 06:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -566,18 +566,18 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "მოვლენა"
 
-#: app/EventPage.qml:83
+#: app/EventPage.qml:84
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "შესასვლელი"
 
-#: app/EventPage.qml:91
+#: app/EventPage.qml:92
 #, kde-format
 msgid "Start Time"
 msgstr "დაწყების დრო"
 
-#: app/EventPage.qml:99
+#: app/EventPage.qml:100
 #, kde-format
 msgid "End Time"
 msgstr "დასრულების დრო"
