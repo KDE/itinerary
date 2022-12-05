@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-04 00:47+0000\n"
-"PO-Revision-Date: 2022-11-23 22:52+0100\n"
+"PO-Revision-Date: 2022-12-04 02:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.11.80\n"
+"X-Generator: Lokalize 22.11.90\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -274,10 +274,9 @@ msgid "Scan Barcode"
 msgstr "Numériser le code barre"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Vol"
+msgstr "Clair"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format
