@@ -590,6 +590,12 @@ bool TimelineDelegateController::isCanceled() const
     return JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
 }
 
+static void mapArgumentsForLocation(QJSValue &args, const QVariant &location, QJSEngine *engine)
+{
+    args.setProperty(QStringLiteral("placeName"), LocationUtil::name(location));
+    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(location));
+}
+
 static void mapArgumentsForPt(QJSValue &args, QLatin1String prefix, const KPublicTransport::Stopover &stop)
 {
     const auto platformName = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
@@ -650,9 +656,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     }
 
     auto args = engine->newObject();
-    const auto arrLoc = LocationUtil::arrivalLocation(res);
-    args.setProperty(QStringLiteral("placeName"), LocationUtil::name(arrLoc));
-    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(arrLoc));
+    mapArgumentsForLocation(args, LocationUtil::arrivalLocation(res), engine);
 
     // arrival location
     mapArrivalArgumesForRes(args, res);
@@ -710,9 +714,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     }
 
     auto args = engine->newObject();
-    const auto depLoc = LocationUtil::departureLocation(res);
-    args.setProperty(QStringLiteral("placeName"), LocationUtil::name(depLoc));
-    args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(depLoc));
+    mapArgumentsForLocation(args, LocationUtil::departureLocation(res), engine);
 
     // departure location
     mapDepartureArgumentsForRes(args, res);
@@ -754,6 +756,23 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     }
     args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arrTime));
 
+    return args;
+}
+
+QJSValue TimelineDelegateController::mapArguments() const
+{
+    const auto engine = qjsEngine(this);
+    if (!engine || !m_resMgr || m_batchId.isEmpty() || !m_transferMgr || !m_liveDataMgr) {
+        return {};
+    }
+
+    const auto res = m_resMgr->reservation(m_batchId);
+    if (LocationUtil::isLocationChange(res)) {
+        return {};
+    }
+
+    auto args = engine->newObject();
+    mapArgumentsForLocation(args, LocationUtil::location(res), engine);
     return args;
 }
 

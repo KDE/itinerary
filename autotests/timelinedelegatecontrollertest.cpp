@@ -347,6 +347,16 @@ private Q_SLOTS:
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
         QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
 
+        controller.setBatchId(mgr.batches().at(3)); // accommodation
+        args = controller.mapArguments().toVariant().toMap();
+        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
+        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
+
+        controller.setBatchId(mgr.batches().at(7)); // food
+        args = controller.mapArguments().toVariant().toMap();
+        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Raclette"));
+        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
+
         controller.setBatchId(mgr.batches().at(9)); // final return leg
         args = controller.arrivalMapArguments().toVariant().toMap();
         QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);

@@ -63,13 +63,15 @@ ColumnLayout {
                 visible: place != undefined && place.geo.isValid
                 icon.name: "map-symbolic"
                 onTriggered: {
-                    var args = {placeName: place.name};
+                    var args = {};
                     if (controller.isLocationChange) {
                         if (isRangeBegin) {
                             args = controller.departureMapArguments();
                         } else if (isRangeEnd) {
                             args = controller.arrivalMapArguments();
                         }
+                    } else {
+                        args = controller.mapArguments();
                     }
                     args.coordinate = Qt.point(place.geo.longitude, place.geo.latitude);
                     console.log(JSON.stringify(args));
