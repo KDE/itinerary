@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-06 00:46+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -1767,25 +1767,25 @@ msgstr "Gertaera txartela"
 msgid "Pass"
 msgstr ""
 
-#: app/PlaceDelegate.qml:78
+#: app/PlaceDelegate.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:85
+#: app/PlaceDelegate.qml:87
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:98
+#: app/PlaceDelegate.qml:100
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr ""
 
-#: app/PlaceDelegate.qml:108
+#: app/PlaceDelegate.qml:110
 #, fuzzy, kde-format
 #| msgid "Public Transport Information Sources"
 msgctxt "@action:button"

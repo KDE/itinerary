@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-06 00:46+0000\n"
 "PO-Revision-Date: 2022-12-01 06:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1663,25 +1663,25 @@ msgstr "活动门票"
 msgid "Pass"
 msgstr ""
 
-#: app/PlaceDelegate.qml:78
+#: app/PlaceDelegate.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:85
+#: app/PlaceDelegate.qml:87
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:98
+#: app/PlaceDelegate.qml:100
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr ""
 
-#: app/PlaceDelegate.qml:108
+#: app/PlaceDelegate.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"

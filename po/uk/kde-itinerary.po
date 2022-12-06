@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-04 00:47+0000\n"
+"POT-Creation-Date: 2022-12-06 00:46+0000\n"
 "PO-Revision-Date: 2022-11-30 06:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1684,25 +1684,25 @@ msgstr "Квиток на подію"
 msgid "Pass"
 msgstr "Передати"
 
-#: app/PlaceDelegate.qml:78
+#: app/PlaceDelegate.qml:80
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Переглянути внутрішню карту"
 
-#: app/PlaceDelegate.qml:85
+#: app/PlaceDelegate.qml:87
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Переглянути на карті"
 
-#: app/PlaceDelegate.qml:98
+#: app/PlaceDelegate.qml:100
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Навігація"
 
-#: app/PlaceDelegate.qml:108
+#: app/PlaceDelegate.qml:110
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
