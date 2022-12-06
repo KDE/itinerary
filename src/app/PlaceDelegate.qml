@@ -73,7 +73,6 @@ ColumnLayout {
                     } else {
                         args = controller.mapArguments();
                     }
-                    args.coordinate = Qt.point(place.geo.longitude, place.geo.latitude);
                     console.log(JSON.stringify(args));
                     applicationWindow().pageStack.push(indoorMapPage, args);
                 }

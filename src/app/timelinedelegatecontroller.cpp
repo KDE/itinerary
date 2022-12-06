@@ -594,6 +594,9 @@ static void mapArgumentsForLocation(QJSValue &args, const QVariant &location, QJ
 {
     args.setProperty(QStringLiteral("placeName"), LocationUtil::name(location));
     args.setProperty(QStringLiteral("region"), LocationHelper::regionCode(location));
+
+    const auto geo = LocationUtil::geo(location);
+    args.setProperty(QStringLiteral("coordinate"), engine->toScriptValue(QPointF(geo.longitude(), geo.latitude())));
 }
 
 static void mapArgumentsForPt(QJSValue &args, QLatin1String prefix, const KPublicTransport::Stopover &stop)
@@ -773,6 +776,18 @@ QJSValue TimelineDelegateController::mapArguments() const
 
     auto args = engine->newObject();
     mapArgumentsForLocation(args, LocationUtil::location(res), engine);
+
+    // TODO more precise times when we have preceeding/following location changes
+    auto beginDt = SortUtil::startDateTime(res);
+    beginDt.setTime({});
+    args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(beginDt));
+    auto endDt = SortUtil::endDateTime(res);
+    if (endDt.isValid()) {
+        endDt = endDt.addDays(1);
+        endDt.setTime({});
+        args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(endDt));
+    }
+
     return args;
 }
 

@@ -347,15 +347,21 @@ private Q_SLOTS:
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
         QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
 
-        controller.setBatchId(mgr.batches().at(3)); // accommodation
+        controller.setBatchId(mgr.batches().at(3)); // event
         args = controller.mapArguments().toVariant().toMap();
         QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
+        auto coord = args.value(QLatin1String("coordinate")).value<QPointF>();
+        QVERIFY(!coord.isNull());
+        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QVERIFY(!args.value(QLatin1String("endTime")).toDateTime().isValid());
 
         controller.setBatchId(mgr.batches().at(7)); // food
         args = controller.mapArguments().toVariant().toMap();
         QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Raclette"));
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
+        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 14}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {0, 0}, QTimeZone("Europe/Zurich")));
 
         controller.setBatchId(mgr.batches().at(9)); // final return leg
         args = controller.arrivalMapArguments().toVariant().toMap();
@@ -367,6 +373,8 @@ private Q_SLOTS:
         QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich Flughafen"));
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
         QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        coord = args.value(QLatin1String("coordinate")).value<QPointF>();
+        QVERIFY(!coord.isNull());
 
         controller.setBatchId(mgr.batches().at(10)); // return flight
         args = controller.departureMapArguments().toVariant().toMap();
