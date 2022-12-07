@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-06 00:46+0000\n"
+"POT-Creation-Date: 2022-12-07 00:47+0000\n"
 "PO-Revision-Date: 2022-11-30 09:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1677,25 +1677,25 @@ msgstr "Entrada de l'esdeveniment"
 msgid "Pass"
 msgstr "Passi"
 
-#: app/PlaceDelegate.qml:80
+#: app/PlaceDelegate.qml:79
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Visualitza el mapa d'interiors"
 
-#: app/PlaceDelegate.qml:87
+#: app/PlaceDelegate.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Visualitza en el mapa"
 
-#: app/PlaceDelegate.qml:100
+#: app/PlaceDelegate.qml:99
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navega"
 
-#: app/PlaceDelegate.qml:110
+#: app/PlaceDelegate.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"

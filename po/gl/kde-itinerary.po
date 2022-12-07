@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-06 00:46+0000\n"
+"POT-Creation-Date: 2022-12-07 00:47+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1775,25 +1775,25 @@ msgstr "Billete do evento"
 msgid "Pass"
 msgstr ""
 
-#: app/PlaceDelegate.qml:80
+#: app/PlaceDelegate.qml:79
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:87
+#: app/PlaceDelegate.qml:86
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:100
+#: app/PlaceDelegate.qml:99
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr ""
 
-#: app/PlaceDelegate.qml:110
+#: app/PlaceDelegate.qml:109
 #, fuzzy, kde-format
 #| msgid "Public Transport Information Sources"
 msgctxt "@action:button"
