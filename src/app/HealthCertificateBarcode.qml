@@ -31,11 +31,11 @@ QQC2.Page {
                 const name = certificate.name.toLowerCase().replace(/(^|\s)\S/g, (t) => { return t.toUpperCase() });
                 switch (certificate.type) {
                 case KHC.HealthCertificate.Vaccination:
-                    return i18n('Vaccination certificate of %1', name);
+                    return i18n("Vaccination certificate of %1", name);
                 case KHC.HealthCertificate.Test:
-                    return i18n('Test certificate of %1', name);
+                    return i18n("Test certificate of %1", name);
                 case KHC.HealthCertificate.Recovery:
-                    return i18n('Recovery certificate of %1', name);
+                    return i18n("Recovery certificate of %1", name);
                 default:
                     return '';
                 }
@@ -56,28 +56,28 @@ QQC2.Page {
                     return i18n("Certificate invalid");
                 }
                 if (certificate.signatureState == KHC.HealthCertificate.UnknownSignature) {
-                    return i18n('Unknown issuer certificate');
+                    return i18n("Unknown issuer certificate");
                 }
 
                 switch (certificate.type) {
                 case KHC.HealthCertificate.Vaccination:
                     switch (certificate.vaccinationState) {
-                        case KHC.VaccinationCertificate.VaccinationTooRecent: return i18n('Recently vaccinated');
-                        case KHC.VaccinationCertificate.PartiallyVaccinated: return i18n('Partially vaccinated');
-                        case KHC.VaccinationCertificate.Vaccinated: return i18n('Vaccinated');
-                        case KHC.VaccinationCertificate.FullyVaccinated: return i18n('Fully vaccinated');
+                        case KHC.VaccinationCertificate.VaccinationTooRecent: return i18n("Recently vaccinated");
+                        case KHC.VaccinationCertificate.PartiallyVaccinated: return i18n("Partially vaccinated");
+                        case KHC.VaccinationCertificate.Vaccinated: return i18n("Vaccinated");
+                        case KHC.VaccinationCertificate.FullyVaccinated: return i18n("Fully vaccinated");
                     }
                     break;
                 case KHC.HealthCertificate.Test:
                     if (certificate.isCurrent) {
                         switch (certificate.result)  {
-                            case KHC.TestCertificate.Negative: return i18n('Negative test');
-                            case KHC.TestCertificate.Positive: return i18n('Positive test');
+                            case KHC.TestCertificate.Negative: return i18n("Negative test");
+                            case KHC.TestCertificate.Positive: return i18n("Positive test");
                         }
                     }
-                    return i18n('Test expired');
+                    return i18n("Test expired");
                 case KHC.HealthCertificate.Recovery:
-                    return i18n('Recovery certificate valid');
+                    return i18n("Recovery certificate valid");
                 default:
                     return '';
                 }
