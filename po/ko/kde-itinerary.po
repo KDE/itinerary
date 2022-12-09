@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:47+0000\n"
+"POT-Creation-Date: 2022-12-09 00:47+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -846,6 +846,23 @@ msgstr "%2에서 %3(으)로 가는 %1 버스|/|%2에서 %3$[으 %3]로 가는 %1
 msgid "Ferry from %1 to %2"
 msgstr "%1에서 %2(으)로 가는 선박|/|%1에서 %2$[으 %2]로 가는 선박"
 
+#: app/HealthCertificateBarcode.qml:34
+#, fuzzy, kde-format
+#| msgid "Vaccination (%1)"
+msgid "Vaccination certificate of %1"
+msgstr "예방 접종(%1)"
+
+#: app/HealthCertificateBarcode.qml:36
+#, fuzzy, kde-format
+#| msgid "Delete Certificate"
+msgid "Test certificate of %1"
+msgstr "증명서 삭제"
+
+#: app/HealthCertificateBarcode.qml:38
+#, kde-format
+msgid "Recovery certificate of %1"
+msgstr ""
+
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
 msgid "Certificate expired"
@@ -854,6 +871,56 @@ msgstr "증명서가 만료됨"
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
+msgstr "증명서가 유효하지 않음"
+
+#: app/HealthCertificateBarcode.qml:59
+#, kde-format
+msgid "Unknown issuer certificate"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:65
+#, kde-format
+msgid "Recently vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:66
+#, kde-format
+msgid "Partially vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:67
+#, fuzzy, kde-format
+#| msgid "Vaccine:"
+msgid "Vaccinated"
+msgstr "백신:"
+
+#: app/HealthCertificateBarcode.qml:68
+#, kde-format
+msgid "Fully vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:74
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Negative test"
+msgstr "양성 검사:"
+
+#: app/HealthCertificateBarcode.qml:75
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Positive test"
+msgstr "양성 검사:"
+
+#: app/HealthCertificateBarcode.qml:78
+#, fuzzy, kde-format
+#| msgid "Certificate expired"
+msgid "Test expired"
+msgstr "증명서가 만료됨"
+
+#: app/HealthCertificateBarcode.qml:80
+#, fuzzy, kde-format
+#| msgid "Certificate invalid"
+msgid "Recovery certificate valid"
 msgstr "증명서가 유효하지 않음"
 
 #: app/healthcertificatemanager.cpp:118

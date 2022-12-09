@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:47+0000\n"
+"POT-Creation-Date: 2022-12-09 00:47+0000\n"
 "PO-Revision-Date: 2022-12-01 06:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -817,6 +817,22 @@ msgstr "从 %2 开往 %3 的 %1 次汽车"
 msgid "Ferry from %1 to %2"
 msgstr ""
 
+#: app/HealthCertificateBarcode.qml:34
+#, kde-format
+msgid "Vaccination certificate of %1"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:36
+#, fuzzy, kde-format
+#| msgid "Health certificate imported."
+msgid "Test certificate of %1"
+msgstr "已导入健康证书。"
+
+#: app/HealthCertificateBarcode.qml:38
+#, kde-format
+msgid "Recovery certificate of %1"
+msgstr ""
+
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
 msgid "Certificate expired"
@@ -825,6 +841,54 @@ msgstr ""
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:59
+#, kde-format
+msgid "Unknown issuer certificate"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:65
+#, kde-format
+msgid "Recently vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:66
+#, kde-format
+msgid "Partially vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:67
+#, fuzzy, kde-format
+#| msgid "Vaccine:"
+msgid "Vaccinated"
+msgstr "疫苗："
+
+#: app/HealthCertificateBarcode.qml:68
+#, kde-format
+msgid "Fully vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:74
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Negative test"
+msgstr "阳性检测结果："
+
+#: app/HealthCertificateBarcode.qml:75
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Positive test"
+msgstr "阳性检测结果："
+
+#: app/HealthCertificateBarcode.qml:78
+#, kde-format
+msgid "Test expired"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:80
+#, kde-format
+msgid "Recovery certificate valid"
 msgstr ""
 
 #: app/healthcertificatemanager.cpp:118

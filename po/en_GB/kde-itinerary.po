@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:47+0000\n"
+"POT-Creation-Date: 2022-12-09 00:47+0000\n"
 "PO-Revision-Date: 2022-07-22 15:58+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -849,6 +849,23 @@ msgstr "Bus %1 from %2 to %3"
 msgid "Ferry from %1 to %2"
 msgstr "Ferry from %1 to %2"
 
+#: app/HealthCertificateBarcode.qml:34
+#, fuzzy, kde-format
+#| msgid "Vaccination (%1)"
+msgid "Vaccination certificate of %1"
+msgstr "Vaccination (%1)"
+
+#: app/HealthCertificateBarcode.qml:36
+#, fuzzy, kde-format
+#| msgid "Delete Certificate"
+msgid "Test certificate of %1"
+msgstr "Delete Certificate"
+
+#: app/HealthCertificateBarcode.qml:38
+#, kde-format
+msgid "Recovery certificate of %1"
+msgstr ""
+
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
 msgid "Certificate expired"
@@ -857,6 +874,56 @@ msgstr "Certificate expired"
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
+msgstr "Certificate invalid"
+
+#: app/HealthCertificateBarcode.qml:59
+#, kde-format
+msgid "Unknown issuer certificate"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:65
+#, kde-format
+msgid "Recently vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:66
+#, kde-format
+msgid "Partially vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:67
+#, fuzzy, kde-format
+#| msgid "Vaccine:"
+msgid "Vaccinated"
+msgstr "Vaccine:"
+
+#: app/HealthCertificateBarcode.qml:68
+#, kde-format
+msgid "Fully vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:74
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Negative test"
+msgstr "Positive test:"
+
+#: app/HealthCertificateBarcode.qml:75
+#, fuzzy, kde-format
+#| msgid "Positive test:"
+msgid "Positive test"
+msgstr "Positive test:"
+
+#: app/HealthCertificateBarcode.qml:78
+#, fuzzy, kde-format
+#| msgid "Certificate expired"
+msgid "Test expired"
+msgstr "Certificate expired"
+
+#: app/HealthCertificateBarcode.qml:80
+#, fuzzy, kde-format
+#| msgid "Certificate invalid"
+msgid "Recovery certificate valid"
 msgstr "Certificate invalid"
 
 #: app/healthcertificatemanager.cpp:118

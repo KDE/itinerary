@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-07 00:47+0000\n"
+"POT-Creation-Date: 2022-12-09 00:47+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -883,6 +883,23 @@ msgstr "De %1 a %2"
 msgid "Ferry from %1 to %2"
 msgstr "Saída de %1: %2"
 
+#: app/HealthCertificateBarcode.qml:34
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Vaccination certificate of %1"
+msgstr "Lugar:"
+
+#: app/HealthCertificateBarcode.qml:36
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Test certificate of %1"
+msgstr "Billete do evento"
+
+#: app/HealthCertificateBarcode.qml:38
+#, kde-format
+msgid "Recovery certificate of %1"
+msgstr ""
+
 #: app/HealthCertificateBarcode.qml:53
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
@@ -893,6 +910,54 @@ msgstr "Importouse unha reserva."
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:59
+#, kde-format
+msgid "Unknown issuer certificate"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:65
+#, kde-format
+msgid "Recently vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:66
+#, kde-format
+msgid "Partially vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:67
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Vaccinated"
+msgstr "Lugar:"
+
+#: app/HealthCertificateBarcode.qml:68
+#, kde-format
+msgid "Fully vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:74
+#, kde-format
+msgid "Negative test"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:75
+#, kde-format
+msgid "Positive test"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:78
+#, fuzzy, kde-format
+#| msgid "One reservation imported."
+#| msgid_plural "%1 reservations imported."
+msgid "Test expired"
+msgstr "Importouse unha reserva."
+
+#: app/HealthCertificateBarcode.qml:80
+#, kde-format
+msgid "Recovery certificate valid"
 msgstr ""
 
 #: app/healthcertificatemanager.cpp:118
