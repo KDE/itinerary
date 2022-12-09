@@ -38,7 +38,7 @@ MobileForm.FormCard {
             id: ticketNumberLabel
             text: i18n("Ticket number:")
             description: root.currentReservation.reservedTicket.ticketNumber
-            visible: ticketNumberLabel.text !== "" && ticketNumberLabel.text != referenceLabel.text
+            visible: ticketNumberLabel.description !== "" && ticketNumberLabel.description != referenceLabel.description
         }
     }
 }
