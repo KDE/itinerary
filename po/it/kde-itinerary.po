@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:47+0000\n"
-"PO-Revision-Date: 2022-11-24 09:32+0100\n"
+"PO-Revision-Date: 2022-12-09 14:16+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -272,10 +272,9 @@ msgid "Scan Barcode"
 msgstr "Scansione codice a barre"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Volo"
+msgstr "Torcia"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format
@@ -823,21 +822,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Traghetto da %1 a %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "Vaccinazione (%1)"
+msgstr "Certificato di vaccinazione di %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Delete Certificate"
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "Elimina certificato"
+msgstr "Certificato di esame di %1"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "Certificato di guarigione di %1"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -852,52 +849,47 @@ msgstr "Certificato non valido"
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "Certificato di emittente sconosciuto"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "Vaccinato di recente"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "Parzialmente vaccinato"
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "Vaccino:"
+msgstr "Vaccinato"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "Completamente vaccinato"
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "Esame positivo:"
+msgstr "Esame negativo"
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "Esame positivo:"
+msgstr "Esame positivo"
 
 #: app/HealthCertificateBarcode.qml:78
-#, fuzzy, kde-format
-#| msgid "Certificate expired"
+#, kde-format
 msgid "Test expired"
-msgstr "Certificato scaduto"
+msgstr "Esame scaduto"
 
 #: app/HealthCertificateBarcode.qml:80
-#, fuzzy, kde-format
-#| msgid "Certificate invalid"
+#, kde-format
 msgid "Recovery certificate valid"
-msgstr "Certificato non valido"
+msgstr "Certificato di guarigione valido"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
