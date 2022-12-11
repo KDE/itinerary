@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:47+0000\n"
-"PO-Revision-Date: 2022-12-04 07:00+0100\n"
+"PO-Revision-Date: 2022-12-10 06:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -74,11 +74,13 @@ msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
+"KDE itineraray KDE-ის საზოგადოებამ როგორც უფასო პროგრამა დავწერეთ და ის "
+"ქვემოთ ჩამოთვლილ კომპონენტებს იყენებს."
 
 #: app/AboutPage.qml:199
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr ""
+msgstr "KDE Itinerary საჯარო ტრანსპორტის მონაცემებს შემდეგი წყაროებიდან იღებს."
 
 #: app/AboutPage.qml:226
 #, kde-format
@@ -196,7 +198,7 @@ msgstr "მგზავრობას შეცვლა"
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
-msgstr ""
+msgstr "მართლა გნებავთ თქვენი არსებული ჯავშანი ახალი მოგზაურობით შეცვალოთ?"
 
 #: app/AlternativeJourneyPage.qml:64
 #, kde-format
@@ -818,21 +820,19 @@ msgid "Ferry from %1 to %2"
 msgstr "ბორანი %1-დან %2-მდე"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "ვაქცინაცია (%1)"
+msgstr "%1-ის ვაქცინაციის სერტიფიკატი"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Delete Certificate"
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "სერტიფიკატის წაშლა"
+msgstr "%1-ის ტესტის სერტიფიკატი"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "%1-ის გამოკეთების სერტიფიკატი"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -847,52 +847,47 @@ msgstr "სერტიფიკატი არასწორია"
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "გამომცემლის სერტიფიკატი უცნობია"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "ახლახანს ვაქცინირებული"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "ნაწილობრივ ვაქცინირებული"
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "ვაქცინა:"
+msgstr "ვაქცინირებული"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "სრულად ვაქცინირებული"
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "დადებითი ტესტი:"
+msgstr "უარყოფითი ტესტი"
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "დადებითი ტესტი:"
+msgstr "დადებითი ტესტი"
 
 #: app/HealthCertificateBarcode.qml:78
-#, fuzzy, kde-format
-#| msgid "Certificate expired"
+#, kde-format
 msgid "Test expired"
-msgstr "სერტიფიკატი ვადაგასულია"
+msgstr "ტესტი ვადაგასულია"
 
 #: app/HealthCertificateBarcode.qml:80
-#, fuzzy, kde-format
-#| msgid "Certificate invalid"
+#, kde-format
 msgid "Recovery certificate valid"
-msgstr "სერტიფიკატი არასწორია"
+msgstr "აღდგენის სერტიფიკატი სწორია"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
@@ -1711,6 +1706,8 @@ msgstr "%1 - %2"
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
+"შემოტანის ბონუსი, ფასდაკლების პროგრამის ბარათები ან ბრტყელი სიჩქარის "
+"ბილეთები."
 
 #: app/PassPage.qml:89
 #, kde-format
@@ -1857,6 +1854,8 @@ msgid ""
 "When enabled, this will query transport provider online services for changes "
 "such as delays or gate and platform changes."
 msgstr ""
+"თუ ჩართულია, პროგრამა ტრანსპორტის კომპანიის ონლაინ სერვისებს ისეთ "
+"ცვლილებებზე შეამოწმებს, როგორცაა შეყოვნებები და პლატფორმის ცვლილებები."
 
 #: app/SettingsPage.qml:87
 #, kde-format
@@ -2366,7 +2365,7 @@ msgstr "გაზიარებული ველოსიპედები"
 #: app/TransferPage.qml:92
 #, kde-format
 msgid "Park & Ride"
-msgstr ""
+msgstr "პარკინგი და ტარება"
 
 #: app/TransferPage.qml:182
 #, kde-format
@@ -2376,7 +2375,7 @@ msgstr "%1 -ის დასრულების დროა %2"
 #: app/TransferPage.qml:184
 #, kde-format
 msgid "Preceding arrival %1 at %2"
-msgstr ""
+msgstr "ჩამოსვლა %1-ზე დრო %2"
 
 #: app/TransferPage.qml:195
 #, kde-format
@@ -2386,7 +2385,7 @@ msgstr "%1-ის დაწყების დროა %2"
 #: app/TransferPage.qml:197
 #, kde-format
 msgid "Following departure %1 from %2"
-msgstr ""
+msgstr "გასვლა %1-დან დრო %2"
 
 #: app/TripGroupDelegate.qml:55
 #, kde-format
@@ -2574,6 +2573,8 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
+"KDE Itinerary -ის შესახებ მეტი ინფორმაციის მისაღებად იხილეთ ჩვენი <a href="
+"\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">ვიკის გვერდი</a>."
 
 #: app/WelcomePage.qml:56
 #, kde-format
@@ -2628,7 +2629,7 @@ msgstr "დასტური"
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
-msgstr ""
+msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
 
 #~ msgid "Bording time"
 #~ msgstr "ჩასხდომის დრო"

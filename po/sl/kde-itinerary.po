@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:47+0000\n"
-"PO-Revision-Date: 2022-12-01 08:38+0100\n"
+"PO-Revision-Date: 2022-12-10 09:18+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.1.1\n"
 
 #, kde-format
@@ -823,21 +823,19 @@ msgid "Ferry from %1 to %2"
 msgstr "Trajekt iz %1 do %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "Cepljenje (%1)"
+msgstr "Potrdilo o cepljenju %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Delete Certificate"
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "Zbriši potrdilo"
+msgstr "Potrdilo o testu %1"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "Potrdilo o prebolelosti %1"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -852,52 +850,47 @@ msgstr "Potrdilo neveljavno"
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "Neznani izdajatelj potrdila"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "Nedavno cepljen"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "Delno cepljen"
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "Cepivo:"
+msgstr "Cepljen"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "Polno cepljen"
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "Pozitivni test:"
+msgstr "Negativni test"
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "Pozitivni test:"
+msgstr "Pozitivni test"
 
 #: app/HealthCertificateBarcode.qml:78
-#, fuzzy, kde-format
-#| msgid "Certificate expired"
+#, kde-format
 msgid "Test expired"
-msgstr "Potrdilo preteklo"
+msgstr "Preteklo potrdilo"
 
 #: app/HealthCertificateBarcode.qml:80
-#, fuzzy, kde-format
-#| msgid "Certificate invalid"
+#, kde-format
 msgid "Recovery certificate valid"
-msgstr "Potrdilo neveljavno"
+msgstr "Veljavno potrdilo o prebolelosti"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
