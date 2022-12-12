@@ -353,7 +353,7 @@ private Q_SLOTS:
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
         auto coord = args.value(QLatin1String("coordinate")).value<QPointF>();
         QVERIFY(!coord.isNull());
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
         QVERIFY(!args.value(QLatin1String("endTime")).toDateTime().isValid());
 
         controller.setBatchId(mgr.batches().at(7)); // food

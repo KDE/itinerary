@@ -777,10 +777,29 @@ QJSValue TimelineDelegateController::mapArguments() const
     auto args = engine->newObject();
     mapArgumentsForLocation(args, LocationUtil::location(res), engine);
 
-    // TODO more precise times when we have preceeding/following location changes
+    // determine time on site, considering the following sources:
+    // (1) the full days res is covering
+    // (2) arrival time of a preceding location change, departure time of a following location change (TODO)
+    // (3) arrival time of a preceding transfer, departure time of a following transfer (TODO)
+
     auto beginDt = SortUtil::startDateTime(res);
     beginDt.setTime({});
+
+    const auto prevResId = m_resMgr->previousBatch(m_batchId);
+    const auto prevRes = m_resMgr->reservation(prevResId);
+    if (LocationUtil::isLocationChange(prevRes)) {
+        beginDt = std::max(SortUtil::endDateTime(prevRes), beginDt);
+    }
+
+    const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
+    if (transfer.state() == Transfer::Selected) {
+        const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
+        mapArgumentsForPt(args, QLatin1String("arrival"), arr);
+        beginDt = std::max(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime(), beginDt);
+    }
+
     args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(beginDt));
+
     auto endDt = SortUtil::endDateTime(res);
     if (endDt.isValid()) {
         endDt = endDt.addDays(1);
