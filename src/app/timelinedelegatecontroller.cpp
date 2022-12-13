@@ -780,7 +780,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     // determine time on site, considering the following sources:
     // (1) the full days res is covering
     // (2) arrival time of a preceding location change, departure time of a following location change (TODO)
-    // (3) arrival time of a preceding transfer, departure time of a following transfer (TODO)
+    // (3) arrival time of a preceding transfer, departure time of a following transfer
 
     auto beginDt = SortUtil::startDateTime(res);
     beginDt.setTime({});
@@ -791,7 +791,7 @@ QJSValue TimelineDelegateController::mapArguments() const
         beginDt = std::max(SortUtil::endDateTime(prevRes), beginDt);
     }
 
-    const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
+    auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
         mapArgumentsForPt(args, QLatin1String("arrival"), arr);
@@ -804,6 +804,17 @@ QJSValue TimelineDelegateController::mapArguments() const
     if (endDt.isValid()) {
         endDt = endDt.addDays(1);
         endDt.setTime({});
+    }
+
+    transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
+    if (transfer.state() == Transfer::Selected) {
+        const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
+        mapArgumentsForPt(args, QLatin1String("departure"), dep);
+        const auto depDt = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
+        endDt = endDt.isValid() ? std::min(endDt, depDt) : depDt;
+    }
+
+    if (endDt.isValid()) {
         args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(endDt));
     }
 
