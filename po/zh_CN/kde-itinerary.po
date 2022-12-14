@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-09 00:47+0000\n"
-"PO-Revision-Date: 2022-12-01 06:51\n"
+"PO-Revision-Date: 2022-12-13 12:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -823,10 +823,9 @@ msgid "Vaccination certificate of %1"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "已导入健康证书。"
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
@@ -859,10 +858,9 @@ msgid "Partially vaccinated"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "疫苗："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
@@ -870,16 +868,14 @@ msgid "Fully vaccinated"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "阳性检测结果："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "阳性检测结果："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:78
 #, kde-format
