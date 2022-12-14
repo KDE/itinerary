@@ -779,7 +779,7 @@ QJSValue TimelineDelegateController::mapArguments() const
 
     // determine time on site, considering the following sources:
     // (1) the full days res is covering
-    // (2) arrival time of a preceding location change, departure time of a following location change (TODO)
+    // (2) arrival time of a preceding location change, departure time of a following location change
     // (3) arrival time of a preceding transfer, departure time of a following transfer
 
     auto beginDt = SortUtil::startDateTime(res);
@@ -812,6 +812,16 @@ QJSValue TimelineDelegateController::mapArguments() const
         mapArgumentsForPt(args, QLatin1String("departure"), dep);
         const auto depDt = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
         endDt = endDt.isValid() ? std::min(endDt, depDt) : depDt;
+    }
+
+    const auto nextResId = m_resMgr->nextBatch(m_batchId);
+    const auto nextRes = m_resMgr->reservation(nextResId);
+    if (LocationUtil::isLocationChange(nextRes)) {
+        const auto depDt = SortUtil::startDateTime(nextRes);
+        // TODO for hotels we actually need to find the first location change after checkout!
+        if (depDt.isValid() && depDt >= SortUtil::endDateTime((res))) {
+            endDt = endDt.isValid() ? std::min(depDt, endDt) : depDt;
+        }
     }
 
     if (endDt.isValid()) {
