@@ -814,14 +814,21 @@ QJSValue TimelineDelegateController::mapArguments() const
         endDt = endDt.isValid() ? std::min(endDt, depDt) : depDt;
     }
 
-    const auto nextResId = m_resMgr->nextBatch(m_batchId);
-    const auto nextRes = m_resMgr->reservation(nextResId);
-    if (LocationUtil::isLocationChange(nextRes)) {
-        const auto depDt = SortUtil::startDateTime(nextRes);
-        // TODO for hotels we actually need to find the first location change after checkout!
-        if (depDt.isValid() && depDt >= SortUtil::endDateTime((res))) {
-            endDt = endDt.isValid() ? std::min(depDt, endDt) : depDt;
+    // search the first location change after the end (which might not always be the next element)
+    const auto dt = SortUtil::endDateTime(res);
+    auto nextResId = m_resMgr->nextBatch(m_batchId);
+    auto nextRes = m_resMgr->reservation(nextResId);
+    while (dt.isValid() && SortUtil::startDateTime(nextRes).date() <= dt.date()) {
+        if (LocationUtil::isLocationChange(nextRes)) {
+            const auto depDt = SortUtil::startDateTime(nextRes);
+            if (depDt.isValid() && depDt >= SortUtil::endDateTime((res))) {
+                endDt = endDt.isValid() ? std::min(depDt, endDt) : depDt;
+                break;
+            }
         }
+
+        nextResId = m_resMgr->nextBatch(nextResId);
+        nextRes = m_resMgr->reservation(nextResId);
     }
 
     if (endDt.isValid()) {
