@@ -785,10 +785,12 @@ QJSValue TimelineDelegateController::mapArguments() const
     auto beginDt = SortUtil::startDateTime(res);
     beginDt.setTime({});
 
-    const auto prevResId = m_resMgr->previousBatch(m_batchId);
-    const auto prevRes = m_resMgr->reservation(prevResId);
-    if (LocationUtil::isLocationChange(prevRes)) {
-        beginDt = std::max(SortUtil::endDateTime(prevRes), beginDt);
+    for (auto prevResId = m_resMgr->previousBatch(m_batchId); !prevResId.isEmpty(); prevResId = m_resMgr->previousBatch(prevResId)) {
+        const auto prevRes = m_resMgr->reservation(prevResId);
+        if (LocationUtil::isLocationChange(prevRes)) {
+            beginDt = std::max(SortUtil::endDateTime(prevRes), beginDt);
+            break;
+        }
     }
 
     auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
