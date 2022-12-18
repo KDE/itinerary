@@ -57,6 +57,7 @@ target_link_libraries(itinerary PUBLIC
     SolidExtras
     GpxIo
     KPublicTransport
+    KPublicTransportOnboard
     KOSMIndoorMap
     KPim::Itinerary
     KPim::PkPass
@@ -163,6 +164,7 @@ if (ANDROID)
         help-contents
         list-add
         mail-message-new
+        media-playback-playing
         map-globe
         map-symbolic
         meeting-attending

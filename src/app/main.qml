@@ -10,6 +10,7 @@ import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.solidextras 1.0 as Solid
+import org.kde.kpublictransport.onboard 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -61,6 +62,10 @@ Kirigami.ApplicationWindow {
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
         onAccepted: ApplicationController.exportToFile(file)
+    }
+
+    OnboardStatus {
+        id: onboardStatus
     }
 
     globalDrawer: Kirigami.GlobalDrawer {
@@ -122,6 +127,14 @@ Kirigami.ApplicationWindow {
                 }
                 enabled: pageStack.layers.depth < 2
                 visible: HealthCertificateManager.isAvailable
+            },
+            Kirigami.Action {
+                id: liveAction
+                text: i18n("Live Status")
+                iconName: "media-playback-playing"
+                onTriggered: pageStack.push(liveStatusPage)
+                enabled: pageStack.layers.depth < 2
+                visible: onboardStatus.status == OnboardStatus.Onboard
             },
             Kirigami.Action {
                 id: settingsAction
@@ -262,6 +275,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: indoorMapPage
         App.IndoorMapPage {}
+    }
+    Component {
+        id: liveStatusPage
+        App.LiveStatusPage {}
     }
 
     Component {
