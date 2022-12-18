@@ -27,6 +27,9 @@ public:
     Q_INVOKABLE QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDuration(int seconds) const;
     Q_INVOKABLE QString formatDistance(int meter) const;
+
+    /** Format speed value. */
+    Q_INVOKABLE QString formatSpeed(int km_per_hour) const;
 };
 
 #endif // LOCALIZER_H

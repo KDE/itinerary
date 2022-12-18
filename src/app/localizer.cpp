@@ -173,3 +173,9 @@ QString Localizer::formatDistance(int meter) const
     }
     return i18n("%1km", (int)qRound(meter/1000.0));
 }
+
+QString Localizer::formatSpeed(int km_per_hour) const
+{
+    // TODO locale-specific unit conversion
+    return i18n("%1km/h", km_per_hour);
+}
