@@ -10,54 +10,44 @@
 #include <QScopedPointer>
 
 #include <KPkPass/Pass>
+#include <KPluginFactory>
 
-extern "C"
+K_PLUGIN_CLASS_WITH_JSON(ItineraryCreator, "itinerarythumbnail.json")
+
+ItineraryCreator::ItineraryCreator(QObject *parent, const QVariantList &args)
+    : KIO::ThumbnailCreator(parent, args)
 {
-    Q_DECL_EXPORT ThumbCreator *new_creator()
-    {
-        return new ItineraryCreator;
-    }
 }
 
-class KIOPluginForMetaData : public QObject
-{
-    Q_OBJECT
-    Q_PLUGIN_METADATA(IID "KIOPluginForMetaData" FILE "itinerarythumbnail.json")
-};
-
-ItineraryCreator::ItineraryCreator() = default;
 ItineraryCreator::~ItineraryCreator() = default;
 
-bool ItineraryCreator::create(const QString &path, int width, int height, QImage &image)
+KIO::ThumbnailResult ItineraryCreator::create(const KIO::ThumbnailRequest &request)
 {
-    Q_UNUSED(width);
-    Q_UNUSED(height);
-
-    QScopedPointer<KPkPass::Pass> pass(KPkPass::Pass::fromFile(path, nullptr));
+    QScopedPointer<KPkPass::Pass> pass(KPkPass::Pass::fromFile(request.url().toLocalFile(), nullptr));
     if (pass.isNull()) {
-        return false;
+        return KIO::ThumbnailResult::fail();
     }
 
     // See if it has a dedicated thumbnail
     // The thumbnails are typically quite small, so we just pick the largest one
     // rather than taking into account UI scaling
     for (uint dpr = 3; dpr >= 1; --dpr) {
-        image = pass->image(QStringLiteral("thumbnail"), dpr);
+        QImage image = pass->image(QStringLiteral("thumbnail"), dpr);
         if (!image.isNull()) {
-            return true;
+            return KIO::ThumbnailResult::pass(image);
         }
     }
 
     for (const QString &imageName : {QStringLiteral("icon"), QStringLiteral("logo")}) {
         for (uint dpr = 3; dpr >= 1; --dpr) {
-            image = pass->image(imageName, dpr);
+            QImage image = pass->image(imageName, dpr);
             if (!image.isNull()) {
-                return true;
+                return KIO::ThumbnailResult::pass(image);
             }
         }
     }
 
-    return false;
+    return KIO::ThumbnailResult::fail();
 }
 
 #include "itinerarycreator.moc"

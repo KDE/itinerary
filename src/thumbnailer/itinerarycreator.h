@@ -9,16 +9,16 @@
 
 #include <QObject>
 
-#include <kio/thumbcreator.h>
+#include <KIO/ThumbnailCreator>
 
-class ItineraryCreator : public QObject, public ThumbCreator
+class ItineraryCreator : public KIO::ThumbnailCreator
 {
     Q_OBJECT
 public:
-    ItineraryCreator();
+    ItineraryCreator(QObject *parent, const QVariantList &args);
     ~ItineraryCreator() override;
 
-    bool create(const QString &path, int width, int height, QImage &image) override;
+    KIO::ThumbnailResult create(const KIO::ThumbnailRequest &request) override;
 };
 
 #endif // ITINERARYCREATOR_H
