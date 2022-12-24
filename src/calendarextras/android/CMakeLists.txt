@@ -8,4 +8,4 @@ configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/KCalendarCoreExtras-android-dependencies.xml
     ${CMAKE_BINARY_DIR}/lib/KCalendarCoreExtras_${CMAKE_ANDROID_ARCH_ABI}-android-dependencies.xml
 )
-install(FILES KCalendarCoreExtras-android-dependencies.xml DESTINATION ${KDE_INSTALL_LIBDIR} RENAME KCalendarCoreExtras${CMAKE_ANDROID_ARCH_ABI}-android-dependencies.xml)
+install(FILES KCalendarCoreExtras-android-dependencies.xml DESTINATION ${KDE_INSTALL_LIBDIR} RENAME KCalendarCoreExtras_${CMAKE_ANDROID_ARCH_ABI}-android-dependencies.xml)
