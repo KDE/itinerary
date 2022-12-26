@@ -25,6 +25,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(GenerateExportHeader)
 include(ECMQmlModule)
+include(ECMDeprecationSettings)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
@@ -70,6 +71,11 @@ else()
     find_package(SharedMimeInfo 1.0 REQUIRED)
 endif()
 
+ecm_set_disabled_deprecation_versions(QT 5.15.2
+     KF 5.101.0
+    )
+
+
 include(ECMFindQmlModule)
 ecm_find_qmlmodule(QtLocation 5.11)
 ecm_find_qmlmodule(QtMultimedia 5.15)
@@ -112,9 +118,6 @@ endif()
 if (TARGET KF5::UnitConversion)
     set(HAVE_KUNITCONVERSION TRUE)
 endif()
-
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050f00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055900)
 
 add_subdirectory(src)
 add_subdirectory(autotests)
