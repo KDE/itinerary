@@ -22,8 +22,12 @@ Kirigami.Page {
 
     OnboardStatus {
         id: onboardStatus
-        positionUpdateInterval: 10
-        journeyUpdateInterval: 60
+        positionUpdateInterval: positionAction.checked ? 10 : -1
+        journeyUpdateInterval: journeyAction.checked ? 60 : -1
+        Component.onCompleted: {
+            requestPosition();
+            requestJourney();
+        }
     }
 
     QQC2.SwipeView {
@@ -89,6 +93,7 @@ Kirigami.Page {
     footer: Kirigami.NavigationTabBar {
         actions: [
             Kirigami.Action {
+                id: positionAction
                 text: i18n("Position")
                 icon.name: 'map-symbolic'
                 onTriggered: swipeView.currentIndex = 0
@@ -96,6 +101,7 @@ Kirigami.Page {
                 enabled: onboardStatus.hasPosition
             },
             Kirigami.Action {
+                id: journeyAction
                 text: i18n("Journey")
                 icon.name: 'view-calendar-day'
                 onTriggered: swipeView.currentIndex = 1;
