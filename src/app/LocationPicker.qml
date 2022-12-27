@@ -45,6 +45,8 @@ Kirigami.Page {
         anchors.fill: parent
         center: root.coordinate
         plugin: mapPlugin
+        gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
+        gesture.preventStealing: true
 
         QtLocation.MapQuickItem {
             coordinate: map.center
