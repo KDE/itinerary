@@ -20,6 +20,7 @@ ColumnLayout {
 
     readonly property var currentReservationId: ticketModel.reservationIdAt(travelerBox.currentIndex)
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
+    readonly property int ticketTokenCount: travelerBox.count
     Layout.fillWidth: true
     Layout.bottomMargin: Kirigami.Units.largeSpacing
 

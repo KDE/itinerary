@@ -61,6 +61,7 @@ App.DetailsPage {
                         root.currentReservationId = currentReservationId;
                     }
                     onScanModeToggled: scanModeController.toggle()
+                    visible: ticketToken.ticketTokenCount > 0
                 }
             }
         }
