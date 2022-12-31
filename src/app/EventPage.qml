@@ -105,6 +105,42 @@ App.DetailsPage {
             }
         }
 
+        // seat reservation
+        MobileForm.FormCard {
+            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                MobileForm.FormCardHeader {
+                    title: i18n("Seat")
+                }
+                MobileForm.FormTextDelegate {
+                    id: seatSectionLabel
+                    text: i18nc("seat section, e.g. block in a stadium", "Section:")
+                    description: currentReservation.reservedTicket.ticketedSeat.seatSection
+                    visible: description
+                }
+                MobileForm.FormDelegateSeparator {
+                    visible: currentReservation.reservedTicket.ticketedSeat.seatSection
+                }
+                MobileForm.FormTextDelegate {
+                    id: seatRowLabel
+                    text: i18nc("seat row", "Row:")
+                    description: currentReservation.reservedTicket.ticketedSeat.seatRow
+                    visible: description
+                }
+                MobileForm.FormDelegateSeparator {
+                    visible: currentReservation.reservedTicket.ticketedSeat.seatRow
+                }
+                MobileForm.FormTextDelegate {
+                    id: seatNumberLabel
+                    text: i18nc("seat number", "Number:")
+                    description: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                    visible: description
+                }
+            }
+        }
+
         App.ActionsCard {
             batchId: root.batchId
             editor: root.editor
