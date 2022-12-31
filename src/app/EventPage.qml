@@ -63,6 +63,11 @@ App.DetailsPage {
                     onScanModeToggled: scanModeController.toggle()
                     visible: ticketToken.ticketTokenCount > 0
                 }
+
+                MobileForm.FormTextDelegate {
+                    description: reservationFor.description
+                    visible: reservationFor.description
+                }
             }
         }
 
