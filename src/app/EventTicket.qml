@@ -32,10 +32,12 @@ Item {
         Image {
             id: backgroundImage
             source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
-            fillMode: Image.PreserveAspectFit
+            fillMode: Image.TileVertically
+            verticalAlignment: Image.AlignTop
             x: -(implicitWidth - bodyBackground.width) / 2
             y: 0
             visible: false
+            height: parent.implicitHeight
         }
         Effects.FastBlur {
             anchors.fill: backgroundImage
