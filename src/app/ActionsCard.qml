@@ -18,6 +18,7 @@ MobileForm.FormCard {
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
 
+    property string passId
     property list<QQC2.Action> additionalActions
 
     property list<QQC2.Action> _defaultActions: [
