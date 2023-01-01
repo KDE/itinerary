@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-09 00:47+0000\n"
+"POT-Creation-Date: 2023-01-01 00:58+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -97,39 +97,39 @@ msgstr "Aplikazio bertsioa %1"
 msgid "Extractor capabilities:"
 msgstr "Erauzlearen ahalmenak:"
 
-#: app/ActionsCard.qml:26
+#: app/ActionsCard.qml:27
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Erakutsi ibilgailuratze baimena"
 
-#: app/ActionsCard.qml:26
+#: app/ActionsCard.qml:27
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Show Ticket"
 msgstr "Bus txartela"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:33
 #, kde-format
 msgid "Add transfer before"
 msgstr "Gehitu lekualdatzea aurretik"
 
-#: app/ActionsCard.qml:41
+#: app/ActionsCard.qml:42
 #, kde-format
 msgid "Add transfer after"
 msgstr "Gehitu lekualdatzea ondoren"
 
-#: app/ActionsCard.qml:50
+#: app/ActionsCard.qml:51
 #, kde-format
 msgid "Edit"
 msgstr "Editatu"
 
-#: app/ActionsCard.qml:56
+#: app/ActionsCard.qml:57
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add to calendar..."
 msgstr "Gehitu dokumentua..."
 
-#: app/ActionsCard.qml:67 app/ActionsCard.qml:148 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -138,51 +138,51 @@ msgstr "Gehitu dokumentua..."
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: app/ActionsCard.qml:81
+#: app/ActionsCard.qml:82
 #, fuzzy, kde-format
 #| msgid "Cancel Reservation"
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Bertan behera utzi erreserba"
 
-#: app/ActionsCard.qml:82
+#: app/ActionsCard.qml:83
 #, kde-format
 msgid "Check-in"
 msgstr "Check-in"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:84
 #, kde-format
 msgid "Download"
 msgstr "Deskargatu"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:85
 #, kde-format
 msgid "Change Reservation"
 msgstr "Aldatu erreserba"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:86
 #, kde-format
 msgid "View Reservation"
 msgstr "Erakutsi erreserba"
 
-#: app/ActionsCard.qml:117 app/TimelinePage.qml:142
+#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
 #, fuzzy, kde-format
 #| msgid "Check Calendar"
 msgid "Select Calendar"
 msgstr "Egiaztatu egutegia"
 
-#: app/ActionsCard.qml:141
+#: app/ActionsCard.qml:142
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Event"
 msgstr "Ezabatu dokumentua"
 
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:143
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Benetan ezabatu nahi duzu gertaera hau?"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:163
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -407,18 +407,18 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Geltokia:"
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/FlightPage.qml:111
-#: app/TrainEditor.qml:160 app/TrainPage.qml:301
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:301
 #, kde-format
 msgid "Seat"
 msgstr "Jarlekua"
 
-#: app/BusPage.qml:217 app/TrainPage.qml:383
+#: app/BusPage.qml:218 app/TrainPage.qml:383
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:222 app/JourneySectionPage.qml:15 app/TrainPage.qml:400
+#: app/BusPage.qml:223 app/JourneySectionPage.qml:15 app/TrainPage.qml:400
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -610,24 +610,44 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Gertaera"
 
-#: app/EventPage.qml:84
+#: app/EventPage.qml:90
 #, fuzzy, kde-format
 #| msgid "Entrance:"
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Sarrera:"
 
-#: app/EventPage.qml:92
+#: app/EventPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Hasierako ordua: "
 
-#: app/EventPage.qml:100
+#: app/EventPage.qml:106
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Amaierako ordua: "
+
+#: app/EventPage.qml:124
+#, fuzzy, kde-format
+#| msgid "Station:"
+msgctxt "seat section, e.g. block in a stadium"
+msgid "Section:"
+msgstr "Geltokia:"
+
+#: app/EventPage.qml:133
+#, kde-format
+msgctxt "seat row"
+msgid "Row:"
+msgstr ""
+
+#: app/EventPage.qml:142
+#, fuzzy, kde-format
+#| msgid "Sequence Number:"
+msgctxt "seat number"
+msgid "Number:"
+msgstr "Sekuentziaren zenbakia:"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
