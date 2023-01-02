@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-01 00:58+0000\n"
-"PO-Revision-Date: 2022-12-10 06:14+0100\n"
+"PO-Revision-Date: 2023-01-01 06:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -585,25 +585,22 @@ msgid "End Time"
 msgstr "დასრულების დრო"
 
 #: app/EventPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "სადგური:"
+msgstr "სექცია:"
 
 #: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
-msgstr ""
+msgstr "მწკრივი:"
 
 #: app/EventPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
-msgstr "რიცხვი:"
+msgstr "ნომერი:"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
@@ -1937,6 +1934,8 @@ msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
+"ამის ჩართვა სამოგზაურო ადგილებში ვალუტის კურსებს ონლაინ გამოთხოვას "
+"გამოიწვევს."
 
 #: app/SettingsPage.qml:153
 #, kde-format
@@ -1959,6 +1958,7 @@ msgid ""
 "When enabled, this will query transport provider online services "
 "automatically for transfer information."
 msgstr ""
+"თუ ჩართულია, გადაჯდომის ინფორმაცია ავტომატურად იქნება გამოთხოვილი ონლაინ."
 
 #: app/SettingsPage.qml:184
 #, kde-format
