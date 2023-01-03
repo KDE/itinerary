@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # Automatically generated, 2019.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-01 00:58+0000\n"
-"PO-Revision-Date: 2022-12-09 23:51+0100\n"
+"PO-Revision-Date: 2023-01-02 04:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -589,22 +589,19 @@ msgid "End Time"
 msgstr "Hora de finalización"
 
 #: app/EventPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Estación:"
+msgstr "Sección:"
 
 #: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
-msgstr ""
+msgstr "Fila:"
 
 #: app/EventPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Número:"

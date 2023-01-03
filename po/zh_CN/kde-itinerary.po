@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-01 00:58+0000\n"
-"PO-Revision-Date: 2022-12-24 11:42\n"
+"PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -583,12 +583,10 @@ msgid "End Time"
 msgstr ""
 
 #: app/EventPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "车站："
+msgstr ""
 
 #: app/EventPage.qml:133
 #, kde-format
@@ -597,11 +595,10 @@ msgid "Row:"
 msgstr ""
 
 #: app/EventPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
-msgstr "会员号："
+msgstr ""
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
