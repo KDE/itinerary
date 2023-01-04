@@ -713,7 +713,19 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.12.1" date="2023-01-05"/>
+    <release version="22.12.1" date="2023-01-05">
+      <description>
+        <ul>
+          <li>Support importing of Mobilizon events.</li>
+          <li>Improved travel data extraction for Eventim, MÁV, NH Hotels, Trenitalia.</li>
+          <li>Fix display of floating rental vehicles.</li>
+          <li>Fix rendering of Apple Wallet event passes with background images.</li>
+          <li>Improve map gesture interaction on favorite location picker.</li>
+          <li>Fix interaction with near-horizontal or near-vertical stairs on the train station map.</li>
+          <li>Fix handling of always closed opening hours.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.12.0" date="2022-12-08">
       <description>
         <ul>
