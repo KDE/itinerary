@@ -2503,25 +2503,22 @@ msgid "%1 %2"
 msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Days"
-msgstr "Dnů"
+msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Months"
-msgstr "Měsíce"
+msgstr ""
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Years"
-msgstr "Roky"
+msgstr ""
 
 #: kirigami-addons/dateandtime/DatePopup.qml:55
 #, kde-format
