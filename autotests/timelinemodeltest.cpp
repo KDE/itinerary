@@ -9,6 +9,7 @@
 
 #include <applicationcontroller.h>
 #include <favoritelocationmodel.h>
+#include <livedatamanager.h>
 #include <locationinformation.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
@@ -535,12 +536,15 @@ private Q_SLOTS:
         favLocModel.setFavoriteLocations({favLoc});
         QCOMPARE(favLocModel.rowCount(), 1);
 
+        LiveDataManager liveMgr;
+
         TransferManager::clear();
         TransferManager transferMgr;
         transferMgr.overrideCurrentDateTime(QDateTime({1996, 10, 14}, {12, 34}));
         transferMgr.setReservationManager(&resMgr);
         transferMgr.setTripGroupManager(&groupMgr);
         transferMgr.setFavoriteLocationModel(&favLocModel);
+        transferMgr.setLiveDataManager(&liveMgr);
 
         TimelineModel model;
         QAbstractItemModelTester tester(&model);

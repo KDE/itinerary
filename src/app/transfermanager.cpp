@@ -88,6 +88,7 @@ void TransferManager::setLiveDataManager(LiveDataManager *liveDataMgr)
         // TODO if there's existing transfer, check if we miss this now
         // if so: warn and search for a new one if auto transfers are enabled
     });
+    rescan();
 }
 
 void TransferManager::setAutoAddTransfers(bool enable)
@@ -193,7 +194,7 @@ Transfer TransferManager::addTransfer(const QString& resId, Transfer::Alignment 
 
 void TransferManager::rescan(bool force)
 {
-    if (!m_resMgr || !m_tgMgr || !m_favLocModel || !m_autoAddTransfers) {
+    if (!m_resMgr || !m_tgMgr || !m_favLocModel || !m_autoAddTransfers || !m_liveDataMgr) {
         return;
     }
 
