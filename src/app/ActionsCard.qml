@@ -23,7 +23,7 @@ MobileForm.FormCard {
 
     property list<QQC2.Action> _defaultActions: [
         Kirigami.Action {
-            iconSource: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
+            icon.name: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
             text: currentReservation.className === "FlightReservation" ? i18n("Show Boarding Pass") : i18n("Show Ticket")
             visible: PkPassManager.hasPass(root.passId)
             onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
