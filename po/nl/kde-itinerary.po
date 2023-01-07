@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-22 02:44+0000\n"
+"POT-Creation-Date: 2023-01-07 03:38+0000\n"
 "PO-Revision-Date: 2022-11-07 07:14-0400\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -1609,13 +1609,13 @@ msgstr "Nieuw vertrekperron is: %1"
 msgid "New arrival platform is: %1"
 msgstr "Nieuw perron van aankomst is: %1"
 
-#: app/passmanager.cpp:209
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Verlopen"
 
-#: app/passmanager.cpp:211
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
