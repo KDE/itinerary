@@ -75,6 +75,7 @@ Item {
                         fillMode: Image.PreserveAspectFit
                         source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
                         sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                        mipmap: true
                     }
 
                     QQC2.Label {
