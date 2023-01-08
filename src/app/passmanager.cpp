@@ -85,11 +85,27 @@ int PassManager::rowCount(const QModelIndex &parent) const
     return m_entries.size();
 }
 
+// ### this should eventually be replaced by custom type support in MergeUtil
+static bool isSamePass(const QVariant &lhs, const QVariant &rhs)
+{
+    if (!MergeUtil::isSame(lhs, rhs)) {
+        return false;
+    }
+
+    if (JsonLd::isA<GenericPkPass>(lhs)) {
+        const auto lhsPass = lhs.value<GenericPkPass>();
+        const auto rhsPass = rhs.value<GenericPkPass>();
+        return lhsPass.pkpassPassTypeIdentifier() == rhsPass.pkpassPassTypeIdentifier() && lhsPass.pkpassSerialNumber() == rhsPass.pkpassSerialNumber();
+    }
+
+    return true;
+}
+
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
     // check if this is an element we already have
     for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
-        if ((!id.isEmpty() && (*it).id == id) || MergeUtil::isSame((*it).data, pass)) {
+        if ((!id.isEmpty() && (*it).id == id) || isSamePass((*it).data, pass)) {
             (*it).data = MergeUtil::merge((*it).data, pass);
             write((*it).data, (*it).id);
             const auto idx = index(std::distance(m_entries.begin(), it), 0);

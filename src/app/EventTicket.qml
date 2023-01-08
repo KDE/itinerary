@@ -34,10 +34,12 @@ Item {
             source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
             fillMode: Image.TileVertically
             verticalAlignment: Image.AlignTop
-            x: -(implicitWidth - bodyBackground.width) / 2
+            horizontalAlignment: Image.AlignHCenter
+            x: -(width - bodyBackground.width) / 2
             y: 0
             visible: false
             height: parent.implicitHeight
+            width: root.implicitWidth
         }
         Effects.FastBlur {
             anchors.fill: backgroundImage
@@ -73,6 +75,7 @@ Item {
                         fillMode: Image.PreserveAspectFit
                         source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
                         sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                        mipmap: true
                     }
 
                     QQC2.Label {
