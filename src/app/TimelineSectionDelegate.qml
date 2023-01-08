@@ -34,17 +34,22 @@ QQC2.Pane {
         ColumnLayout {
             Layout.fillWidth: true
             Kirigami.Heading {
+                id: titleLabel
                 text: controller.title
                 type: Kirigami.Heading.Type.Secondary
                 font.weight: controller.isToday === Kirigami.Heading.Type.Primary ? Font.DemiBold : Font.Normal
                 Layout.fillWidth: true
                 level: 4
+                Accessible.ignored: true
             }
             QQC2.Label {
                 Layout.fillWidth: true
                 text: controller.subTitle
                 visible: text
+                Accessible.ignored: !visible
             }
         }
     }
+
+    Accessible.name: titleLabel.text
 }

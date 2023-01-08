@@ -63,4 +63,6 @@ Kirigami.AbstractCard {
     }
 
     onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(detailsComponent); }
+
+    Accessible.name: i18n("Weather Forecast")
 }
