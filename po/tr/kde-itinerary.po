@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:58+0000\n"
+"POT-Creation-Date: 2023-01-09 00:56+0000\n"
 "PO-Revision-Date: 2023-01-04 22:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -539,7 +539,7 @@ msgstr "Bu rezervasyonu ekli belge yok."
 msgid "Add Document..."
 msgstr "Belge Ekle..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:55
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Bitir: %1"
@@ -1704,13 +1704,13 @@ msgstr "Yeni kalkış platformu: %1"
 msgid "New arrival platform is: %1"
 msgstr "Yeni varış platformu: %1"
 
-#: app/passmanager.cpp:209
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Süresi geçmiş"
 
-#: app/passmanager.cpp:211
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -1902,7 +1902,8 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Toplu Taşıma Bilgi Kaynakları..."
 
-#: app/SettingsPage.qml:107 app/WeatherForecastPage.qml:18
+#: app/SettingsPage.qml:107 app/WeatherForecastDelegate.qml:67
+#: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Hava Durumu Tahmini"
@@ -2424,39 +2425,39 @@ msgstr "%1 başlangıcı: %2"
 msgid "Following departure %1 from %2"
 msgstr "%2 konumundan %1 kalkışını izler"
 
-#: app/TripGroupDelegate.qml:55
+#: app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "Trip: %1"
 msgstr "Yolculuk: %1"
 
-#: app/TripGroupDelegate.qml:68
+#: app/TripGroupDelegate.qml:70
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Tarih: %2 (bir gün)"
 msgstr[1] "Tarih: %2 (%1 gün)"
 
-#: app/TripGroupDelegate.qml:83 app/WeatherForecastPage.qml:49
+#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:49
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:94
+#: app/TripGroupDelegate.qml:96
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: Bazı uyumsuz güç yuvaları (%2)"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:98
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: Bazı uyumsuz güç prizleri (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:100
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: Uyumlu güç prizi yok (%2)"
 
-#: app/TripGroupDelegate.qml:109
+#: app/TripGroupDelegate.qml:111
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"

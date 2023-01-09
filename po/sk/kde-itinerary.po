@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:58+0000\n"
+"POT-Creation-Date: 2023-01-09 00:56+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -557,7 +557,7 @@ msgstr "K tejto rezervácii nie sú pripojené žiadne dokumenty."
 msgid "Add Document..."
 msgstr "Pridať dokument..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:55
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Koniec: %1"
@@ -1768,14 +1768,14 @@ msgstr ""
 msgid "New arrival platform is: %1"
 msgstr ""
 
-#: app/passmanager.cpp:209
+#: app/passmanager.cpp:225
 #, fuzzy, kde-format
 #| msgid "Expires:"
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Vyprší:"
 
-#: app/passmanager.cpp:211
+#: app/passmanager.cpp:227
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgctxt "not yet expired tickets"
@@ -1966,7 +1966,8 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr ""
 
-#: app/SettingsPage.qml:107 app/WeatherForecastPage.qml:18
+#: app/SettingsPage.qml:107 app/WeatherForecastDelegate.qml:67
+#: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Predpoveď počasia"
@@ -2504,12 +2505,12 @@ msgstr "Začína o 9"
 msgid "Following departure %1 from %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:55
+#: app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "Trip: %1"
 msgstr "Výlet: %1"
 
-#: app/TripGroupDelegate.qml:68
+#: app/TripGroupDelegate.qml:70
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
@@ -2517,27 +2518,27 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:83 app/WeatherForecastPage.qml:49
+#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:49
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:94
+#: app/TripGroupDelegate.qml:96
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:98
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:100
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:109
+#: app/TripGroupDelegate.qml:111
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"

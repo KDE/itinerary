@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 00:58+0000\n"
+"POT-Creation-Date: 2023-01-09 00:56+0000\n"
 "PO-Revision-Date: 2023-01-01 06:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -537,7 +537,7 @@ msgstr "ამ რეზერვაციას დოკუმენტებ�
 msgid "Add Document..."
 msgstr "დოკუმენტის დამატება..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:55
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "დასასრული: %1"
@@ -1697,13 +1697,13 @@ msgstr "ახალი გასვლის პლატფორმა: %1"
 msgid "New arrival platform is: %1"
 msgstr "ახალი ჩამოსვლის პლატფორმა: %1"
 
-#: app/passmanager.cpp:209
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "ვადაგასული"
 
-#: app/passmanager.cpp:211
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -1893,7 +1893,8 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "საჯარო ტრანსპორტის ინფორმაციის წყაროები..."
 
-#: app/SettingsPage.qml:107 app/WeatherForecastPage.qml:18
+#: app/SettingsPage.qml:107 app/WeatherForecastDelegate.qml:67
+#: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
 msgstr "ამინდი;პროგნოზი"
@@ -2408,39 +2409,39 @@ msgstr "%1-ის დაწყების დროა %2"
 msgid "Following departure %1 from %2"
 msgstr "გასვლა %1-დან დრო %2"
 
-#: app/TripGroupDelegate.qml:55
+#: app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "Trip: %1"
 msgstr "მოგზაურობა: %1"
 
-#: app/TripGroupDelegate.qml:68
+#: app/TripGroupDelegate.qml:70
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "თარიღი: %2 (ერთი დღე)"
 msgstr[1] "თარიღი: %2 (%1 დღე)"
 
-#: app/TripGroupDelegate.qml:83 app/WeatherForecastPage.qml:49
+#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:49
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:94
+#: app/TripGroupDelegate.qml:96
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: ზოგიერთი შეუთავსებელი კვების ბუდე (%2)"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:98
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: ზოგიერთი შეუთავსებელი კვების ჩანგალი (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:100
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: თავსებადი შესაერთებლების გარეშე (%2)"
 
-#: app/TripGroupDelegate.qml:109
+#: app/TripGroupDelegate.qml:111
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
