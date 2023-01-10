@@ -146,8 +146,7 @@ Kirigami.FormLayout {
 
     QtLocation.Plugin {
         id: osmPlugin
-        required.geocoding: QtLocation.Plugin.AnyGeocodingFeatures
-        preferred: ["osm"]
+        name: "osm"
     }
     QtLocation.GeocodeModel {
         id: geocodeModel
@@ -167,19 +166,42 @@ Kirigami.FormLayout {
         }
         onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
     }
+    QtLocation.GeocodeModel {
+        id: reverseGeocodeModel
+        plugin: osmPlugin
+        autoUpdate: false
+        limit: 1
+        onLocationsChanged: {
+            if (count >= 1) {
+                const loc = reverseGeocodeModel.get(0).address;
+                streetAddress.text = loc.street;
+                postalCode.text = loc.postalCode
+                addressLocality.text = loc.city;
+                addressRegion.tryFindRegion(loc.state);
+                // countryCode is supposed to be the code already, but isn't always...
+                addressCountry.currentIndex = addressCountry.indexOfValue(Country.fromName(loc.countryCode).alpha2);
+            }
+        }
+        onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
+    }
 
     RowLayout  {
+        Kirigami.FormData.label: i18n("Coordinate:")
         QQC2.Button {
             icon.name: "crosshairs"
             onClicked: applicationWindow().pageStack.push(locationPickerPage);
+            Accessible.name: i18n("Pick coordinate")
+            QQC2.ToolTip.text: Accessible.name
+            // TODO we can autofill country/region using KCountry[Subdivision] here?
         }
         QQC2.Label {
             visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
             text: i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2));
         }
         QQC2.Button {
-            icon.name: "view-refresh"
+            icon.name: "go-down-symbolic"
             enabled: geocodeModel.status !== QtLocation.GeocodeModel.Loading
+            visible: addressLocality.text
             onClicked: {
                 geocodeAddr.street = streetAddress.text;
                 geocodeAddr.postalCode = postalCode.text;
@@ -188,6 +210,19 @@ Kirigami.FormLayout {
                 geocodeAddr.countryCode = addressCountry.currentValue;
                 geocodeModel.update();
             }
+            Accessible.name: i18n("Find coordinate from address")
+            QQC2.ToolTip.text: Accessible.name
+        }
+        QQC2.Button {
+            icon.name: "go-up-symbolic"
+            enabled: reverseGeocodeModel.status !== QtLocation.GeocodeModel.Loading
+            visible: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude)
+            onClicked: {
+                reverseGeocodeModel.query = QtPositioning.coordinate(root.latitude, root.longitude)
+                reverseGeocodeModel.update();
+            }
+            Accessible.name: i18n("Fill address from coordinate")
+            QQC2.ToolTip.text: Accessible.name
         }
     }
 }
