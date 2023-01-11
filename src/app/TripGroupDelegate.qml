@@ -151,4 +151,5 @@ Kirigami.AbstractCard {
     }
 
     Accessible.name: headerLabel.text
+    Accessible.onPressAction: root.clicked()
 }

@@ -101,4 +101,6 @@ Kirigami.AbstractCard {
             headerItem.parent = headerLayout
         }
     }
+
+    Accessible.onPressAction: root.clicked()
 }
