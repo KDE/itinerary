@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-09 00:56+0000\n"
+"POT-Creation-Date: 2023-01-11 00:58+0000\n"
 "PO-Revision-Date: 2023-01-01 13:28+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1792,10 +1792,31 @@ msgstr "Stad:"
 msgid "Region:"
 msgstr "Regio:"
 
-#: app/PlaceEditor.qml:178
+#: app/PlaceEditor.qml:189
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Coordinate:"
+msgstr "Boardingtijd:"
+
+#: app/PlaceEditor.qml:193
+#, kde-format
+msgid "Pick coordinate"
+msgstr ""
+
+#: app/PlaceEditor.qml:199
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
+
+#: app/PlaceEditor.qml:213
+#, kde-format
+msgid "Find coordinate from address"
+msgstr ""
+
+#: app/PlaceEditor.qml:224
+#, kde-format
+msgid "Fill address from coordinate"
+msgstr ""
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
