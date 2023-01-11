@@ -17,12 +17,14 @@ App.TimelineDelegate {
     headerIconSource: "meeting-attending"
     headerItem: RowLayout {
         QQC2.Label {
+            id: headerLabel
             text: root.rangeType == TimelineElement.RangeEnd ?
                 i18n("End: %1", reservationFor.name) : reservationFor.name
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: Kirigami.Theme.textColor
             elide: Text.ElideRight
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
         QQC2.Label {
             text: {
@@ -67,4 +69,6 @@ App.TimelineDelegate {
     }
 
     onClicked: showDetailsPage(eventDetailsPage, root.batchId)
+
+    Accessible.name: headerLabel.text
 }

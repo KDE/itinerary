@@ -83,6 +83,7 @@ Kirigami.AbstractCard {
 
             QQC2.Label {
                 text: i18n("%1°C / %2°C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
+                Accessible.ignored: !parent.visible
             }
         }
 
@@ -110,6 +111,7 @@ Kirigami.AbstractCard {
             readonly property var currencies: TripGroupInfoProvider.currencies(tripGroup, Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode)
             text: currencies.length > 0 ? i18np("Currency: %2", "Currencies: %2", currencies.length, currencies.join(", ")) : ""
             visible: currencies.length > 0
+            Accessible.ignored: !visible
         }
 
         Kirigami.Separator {
@@ -125,6 +127,8 @@ Kirigami.AbstractCard {
                     tripGroupGpxExportDialog.tripGroupId = root.tripGroupId
                     tripGroupGpxExportDialog.open()
                 }
+                Accessible.name: i18n("Export trip to GPX")
+                QQC2.ToolTip.text: Accessible.name
             }
             QQC2.ToolButton {
                 icon.name: "edit-delete"
@@ -132,6 +136,8 @@ Kirigami.AbstractCard {
                     deleteTripGroupWarningDialog.tripGroupId = root.tripGroupId
                     deleteTripGroupWarningDialog.open()
                 }
+                Accessible.name: i18n("Delete trip")
+                QQC2.ToolTip.text: Accessible.name
             }
         }
     }

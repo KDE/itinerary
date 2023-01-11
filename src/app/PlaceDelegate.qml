@@ -42,6 +42,7 @@ ColumnLayout {
         Layout.fillWidth: true
         text: place != undefined ? place.name : ""
         color: showButtons ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+        Accessible.ignored: !visible
     }
 
     QQC2.Label {
@@ -50,6 +51,7 @@ ColumnLayout {
         Layout.fillWidth: true
         text: place ? Localizer.formatAddress(place.address) : ""
         color: showButtons ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+        Accessible.ignored: !visible
     }
 
     Kirigami.ActionToolBar {
