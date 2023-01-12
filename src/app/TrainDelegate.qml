@@ -18,6 +18,7 @@ App.TimelineDelegate {
     }
     headerItem: RowLayout {
         QQC2.Label {
+            id: headerLabel
             text: {
                 if (reservationFor.trainName || reservationFor.trainNumber) {
                     return reservationFor.trainName + " " + reservationFor.trainNumber
@@ -28,6 +29,7 @@ App.TimelineDelegate {
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             elide: Text.ElideRight
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
@@ -38,6 +40,7 @@ App.TimelineDelegate {
             text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
             color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departure.hasExpectedDepartureTime
+            Accessible.ignored: !visible
         }
     }
 
@@ -89,6 +92,7 @@ App.TimelineDelegate {
                 text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                 color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                 visible: arrival.hasExpectedArrivalTime
+                Accessible.ignored: !visible
             }
         }
         App.PlaceDelegate {
@@ -101,4 +105,5 @@ App.TimelineDelegate {
     }
 
     onClicked: showDetailsPage(trainDetailsPage, root.batchId)
+    Accessible.name: headerLabel.text
 }

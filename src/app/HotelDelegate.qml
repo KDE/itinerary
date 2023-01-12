@@ -16,12 +16,14 @@ App.TimelineDelegate {
 
     headerIconSource: "go-home-symbolic"
     headerItem: QQC2.Label {
+        id: headerLabel
         text: root.rangeType == TimelineElement.RangeEnd ?
             i18n("Check-out %1", reservationFor.name) : reservationFor.name
         color: Kirigami.Theme.textColor
         font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         elide: Text.ElideRight
         Layout.fillWidth: true
+        Accessible.ignored: true
     }
 
     contentItem: Column {
@@ -51,4 +53,5 @@ App.TimelineDelegate {
     }
 
     onClicked: showDetailsPage(hotelDetailsPage, root.batchId)
+    Accessible.name: headerLabel.text
 }

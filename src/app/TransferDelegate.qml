@@ -44,10 +44,12 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
+                id: headerLabel
                 text: i18n("%1 to %2", transfer.fromName, transfer.toName)
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
                 elide: Text.ElideRight
+                Accessible.ignored: true
             }
             QQC2.Label {
                 text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
@@ -58,6 +60,7 @@ Kirigami.AbstractCard {
                 text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
                 color: (transfer.journey.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                 visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
+                Accessible.ignored: !visible
             }
         }
 
@@ -92,6 +95,7 @@ Kirigami.AbstractCard {
             text: i18n("Select...")
             visible: transfer.state == Transfer.Selected && journeyDetailsExpanded
             onClicked: applicationWindow().pageStack.push(detailsComponent);
+            Accessible.ignored: !visible
         }
         RowLayout {
             width: topLayout.width
@@ -99,6 +103,7 @@ Kirigami.AbstractCard {
             QQC2.BusyIndicator {
                 running: visible
                 visible: transfer.state == Transfer.Searching
+                Accessible.ignored: !visible
             }
             QQC2.Label {
                 text: i18n("Select transfer...")
@@ -106,6 +111,8 @@ Kirigami.AbstractCard {
             }
             QQC2.ToolButton {
                 icon.name: "edit-delete"
+                text: i18n("Delete transfer")
+                display: QQC2.AbstractButton.IconOnly
                 onClicked: TransferManager.discardTransfer(transfer)
             }
         }
@@ -125,4 +132,6 @@ Kirigami.AbstractCard {
             applicationWindow().pageStack.push(detailsComponent);
         }
     }
+
+    Accessible.name: headerLabel.text
 }

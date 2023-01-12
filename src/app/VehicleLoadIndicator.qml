@@ -26,9 +26,10 @@ Item {
 
     QQC2.Label {
         id: fullMarker
-        text: i18n("FULL")
+        text: i18nc("vehicle load", "FULL")
         color: Kirigami.Theme.negativeTextColor
         visible: maxLoad == Load.Full
+        Accessible.ignored: !visible
     }
 
     Kirigami.Icon {
@@ -46,5 +47,13 @@ Item {
             }
             return Kirigami.Theme.textColor;
         }
+        Accessible.name: {
+            switch (maxLoad) {
+                case Load.Low: return i18nc("vehicle load", "Low");
+                case Load.Medium: return i18nc("vehicle load", "Medium")
+                case Load.High: return i18nc("vehicle load", "High")
+            }
+        }
+        Accessible.ignored: !visible
     }
 }
