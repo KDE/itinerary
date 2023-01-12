@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:55+0000\n"
 "PO-Revision-Date: 2022-12-09 14:16+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -539,17 +539,17 @@ msgstr "Nessun documento allegato a questa prenotazione"
 msgid "Add Document..."
 msgstr "Aggiungi documento..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Fine: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "Start time: %1"
 msgstr "Ora d'inizio: %1"
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:66
 #, kde-format
 msgid "End time: %1"
 msgstr "Ora di fine: %1"
@@ -1755,25 +1755,25 @@ msgstr "Biglietto dell'evento"
 msgid "Pass"
 msgstr "Pass"
 
-#: app/PlaceDelegate.qml:79
+#: app/PlaceDelegate.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Visualizza la mappa degli interni"
 
-#: app/PlaceDelegate.qml:86
+#: app/PlaceDelegate.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Visualizza sulla mappa"
 
-#: app/PlaceDelegate.qml:99
+#: app/PlaceDelegate.qml:101
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Naviga"
 
-#: app/PlaceDelegate.qml:109
+#: app/PlaceDelegate.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
@@ -2467,27 +2467,39 @@ msgstr[1] "Data: %2 (%1 giorni)"
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1. alcune prese di corrente incompatibili (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: alcune spine elettriche incompatibili (%2)"
 
-#: app/TripGroupDelegate.qml:100
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: non ci sono spine elettriche incompatibili (%2)"
 
-#: app/TripGroupDelegate.qml:111
+#: app/TripGroupDelegate.qml:112
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuta: %2"
 msgstr[1] "Valute: %2"
+
+#: app/TripGroupDelegate.qml:130
+#, fuzzy, kde-format
+#| msgid "Export to GPX"
+msgid "Export trip to GPX"
+msgstr "Esporta in GPX"
+
+#: app/TripGroupDelegate.qml:139
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Delete trip"
+msgstr "Elimina viaggio"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format

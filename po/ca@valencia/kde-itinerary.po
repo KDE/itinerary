@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:58+0000\n"
-"PO-Revision-Date: 2023-01-01 05:45+0100\n"
+"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"PO-Revision-Date: 2023-01-11 09:13+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -540,17 +540,17 @@ msgstr "Ni hi ha documents adjunts en esta reserva."
 msgid "Add Document..."
 msgstr "Afig un document..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Final: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "Start time: %1"
 msgstr "Hora d'inici: %1"
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:66
 #, kde-format
 msgid "End time: %1"
 msgstr "Hora de finalització: %1"
@@ -1756,25 +1756,25 @@ msgstr "Entrada de l'esdeveniment"
 msgid "Pass"
 msgstr "Passe"
 
-#: app/PlaceDelegate.qml:79
+#: app/PlaceDelegate.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Visualitza el mapa d'interiors"
 
-#: app/PlaceDelegate.qml:86
+#: app/PlaceDelegate.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Visualitza en el mapa"
 
-#: app/PlaceDelegate.qml:99
+#: app/PlaceDelegate.qml:101
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navega"
 
-#: app/PlaceDelegate.qml:109
+#: app/PlaceDelegate.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
@@ -1796,15 +1796,14 @@ msgid "Region:"
 msgstr "Regió:"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Hora d'embarcament:"
+msgstr "Coordenades:"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Seleccioneu les coordenades"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1814,12 +1813,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Troba les coordenades a partir de l'adreça"
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Emplena l'adreça a partir de les coordenades"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -1992,7 +1991,7 @@ msgstr "Afig automàticament els transbordaments"
 #: app/SettingsPage.qml:165
 #, kde-format
 msgid "Automatically fill transfers"
-msgstr "Òmpliga automàticament els transbordaments"
+msgstr "Emplena automàticament els transbordaments"
 
 #: app/SettingsPage.qml:166
 #, kde-format
@@ -2468,27 +2467,39 @@ msgstr[1] "Data: %2 (%1 dies)"
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: algunes preses de corrent són incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: alguns endolls són incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:100
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: no hi ha preses de corrent compatibles (%2)"
 
-#: app/TripGroupDelegate.qml:111
+#: app/TripGroupDelegate.qml:112
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Divisa: %2"
 msgstr[1] "Divises: %2"
+
+#: app/TripGroupDelegate.qml:130
+#, fuzzy, kde-format
+#| msgid "Export to GPX"
+msgid "Export trip to GPX"
+msgstr "Exporta a GPX"
+
+#: app/TripGroupDelegate.qml:139
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Delete trip"
+msgstr "Suprimix el viatge"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format

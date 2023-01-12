@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:55+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -558,17 +558,17 @@ msgstr "К этому бронированию не добавлены ника�
 msgid "Add Document..."
 msgstr "Добавить документ..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Окончание: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "Start time: %1"
 msgstr "Время начала: %1"
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:66
 #, kde-format
 msgid "End time: %1"
 msgstr "Время окончания: %1"
@@ -1808,25 +1808,25 @@ msgstr "Билет на событие"
 msgid "Pass"
 msgstr "Пропуск"
 
-#: app/PlaceDelegate.qml:79
+#: app/PlaceDelegate.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Просмотреть карту помещения"
 
-#: app/PlaceDelegate.qml:86
+#: app/PlaceDelegate.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Просмотреть на карте"
 
-#: app/PlaceDelegate.qml:99
+#: app/PlaceDelegate.qml:101
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Навигация"
 
-#: app/PlaceDelegate.qml:109
+#: app/PlaceDelegate.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
@@ -2537,22 +2537,22 @@ msgstr[3] "Дата: %2 (один день)"
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: несовместимые розетки (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: несовместимые вилки (%2)"
 
-#: app/TripGroupDelegate.qml:100
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: нет совместимых вилок (%2)"
 
-#: app/TripGroupDelegate.qml:111
+#: app/TripGroupDelegate.qml:112
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -2560,6 +2560,18 @@ msgstr[0] "Валюты: %2"
 msgstr[1] "Валюты: %2"
 msgstr[2] "Валюты: %2"
 msgstr[3] "Валюта: %2"
+
+#: app/TripGroupDelegate.qml:130
+#, fuzzy, kde-format
+#| msgid "Export to GPX"
+msgid "Export trip to GPX"
+msgstr "Экспорт в GPX"
+
+#: app/TripGroupDelegate.qml:139
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Delete trip"
+msgstr "Удалить поездку"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format

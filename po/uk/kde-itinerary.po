@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:58+0000\n"
-"PO-Revision-Date: 2023-01-01 09:41+0200\n"
+"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"PO-Revision-Date: 2023-01-11 08:43+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -544,17 +544,17 @@ msgstr "До цього бронювання не долучено жодних 
 msgid "Add Document..."
 msgstr "Додати документ…"
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Кінець: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "Start time: %1"
 msgstr "Час початку: %1"
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:66
 #, kde-format
 msgid "End time: %1"
 msgstr "Час завершення: %1"
@@ -1762,25 +1762,25 @@ msgstr "Квиток на подію"
 msgid "Pass"
 msgstr "Передати"
 
-#: app/PlaceDelegate.qml:79
+#: app/PlaceDelegate.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Переглянути внутрішню карту"
 
-#: app/PlaceDelegate.qml:86
+#: app/PlaceDelegate.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Переглянути на карті"
 
-#: app/PlaceDelegate.qml:99
+#: app/PlaceDelegate.qml:101
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Навігація"
 
-#: app/PlaceDelegate.qml:109
+#: app/PlaceDelegate.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
@@ -1802,15 +1802,14 @@ msgid "Region:"
 msgstr "Область:"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Час реєстрації:"
+msgstr "Координата:"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Вибрати координату"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1820,12 +1819,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Визначити координату з адреси"
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Заповнити адресу за координатою"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -2478,22 +2477,22 @@ msgstr[3] "Дата: %2 (%1 день)"
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: несумісні розетки (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: несумісні штекери (%2)"
 
-#: app/TripGroupDelegate.qml:100
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: немає сумісних штекерів (%2)"
 
-#: app/TripGroupDelegate.qml:111
+#: app/TripGroupDelegate.qml:112
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -2501,6 +2500,18 @@ msgstr[0] "Валюти: %2"
 msgstr[1] "Валюти: %2"
 msgstr[2] "Валюти: %2"
 msgstr[3] "Валюта: %2"
+
+#: app/TripGroupDelegate.qml:130
+#, fuzzy, kde-format
+#| msgid "Export to GPX"
+msgid "Export trip to GPX"
+msgstr "Експорт до GPX"
+
+#: app/TripGroupDelegate.qml:139
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Delete trip"
+msgstr "Вилучити подорож"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format

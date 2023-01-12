@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-11 00:58+0000\n"
-"PO-Revision-Date: 2023-01-09 18:35+0000\n"
+"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"PO-Revision-Date: 2023-01-11 09:28+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -545,17 +545,17 @@ msgstr "Não foram anexados documentos a esta reserva."
 msgid "Add Document..."
 msgstr "Adicionar um Documento..."
 
-#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
 msgstr "Fim: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "Start time: %1"
 msgstr "Hora de início: %1"
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:66
 #, kde-format
 msgid "End time: %1"
 msgstr "Hora de fim: %1"
@@ -1759,25 +1759,25 @@ msgstr "Bilhete do Evento"
 msgid "Pass"
 msgstr "Passe"
 
-#: app/PlaceDelegate.qml:79
+#: app/PlaceDelegate.qml:81
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Ver o Mapa do Interior"
 
-#: app/PlaceDelegate.qml:86
+#: app/PlaceDelegate.qml:88
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Ver no Mapa"
 
-#: app/PlaceDelegate.qml:99
+#: app/PlaceDelegate.qml:101
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navegar"
 
-#: app/PlaceDelegate.qml:109
+#: app/PlaceDelegate.qml:111
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
@@ -1799,15 +1799,14 @@ msgid "Region:"
 msgstr "Região:"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Hora de embarque:"
+msgstr "Coordenada:"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Escolher a coordenada"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1817,12 +1816,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Obter a coordenada de um endereço"
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Preencher o endereço da coordenada"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -2470,27 +2469,39 @@ msgstr[1] "Data: %2 (%1 dias)"
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:96
+#: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: algumas ligações à corrente incompatíveis (%2)"
 
-#: app/TripGroupDelegate.qml:98
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: algumas tomadas de corrente incompatíveis (%2)"
 
-#: app/TripGroupDelegate.qml:100
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: sem tomadas de corrente compatíveis (%2)"
 
-#: app/TripGroupDelegate.qml:111
+#: app/TripGroupDelegate.qml:112
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Moeda: %2"
 msgstr[1] "Moedas: %2"
+
+#: app/TripGroupDelegate.qml:130
+#, fuzzy, kde-format
+#| msgid "Export to GPX"
+msgid "Export trip to GPX"
+msgstr "Exportar para GPX"
+
+#: app/TripGroupDelegate.qml:139
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Delete trip"
+msgstr "Remover a Viagem"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
