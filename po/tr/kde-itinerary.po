@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-07 03:38+0000\n"
-"PO-Revision-Date: 2023-01-10 21:15+0300\n"
+"PO-Revision-Date: 2023-01-13 00:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -74,13 +74,14 @@ msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
-"KDE Yolculuk, KDE topluluğu tarafından özgür yazılım olarak geliştirilmiştir "
-"ve aşağıdaki bileşenleri kullanır."
+"KDE Yolcu Belgesi, KDE topluluğu tarafından özgür yazılım olarak "
+"geliştirilmiştir ve aşağıdaki bileşenleri kullanır."
 
 #: app/AboutPage.qml:199
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "KDE Yolculuk, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
+msgstr ""
+"KDE Yolcu Belgesi, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
 
 #: app/AboutPage.qml:226
 #, kde-format
@@ -789,7 +790,7 @@ msgstr "Bu kartı gerçekten silmek istiyor musunuz?"
 #: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:42
 #, kde-format
 msgid "KDE Itinerary"
-msgstr "KDE Yolculuk"
+msgstr "KDE Yolcu Belgesi"
 
 #: app/gpxexport.cpp:47
 #, kde-format
@@ -1311,7 +1312,7 @@ msgstr[1] "%1 aktarma"
 #: app/livedatamanager.cpp:642
 #, kde-format
 msgid "Itinerary change"
-msgstr "Yolculuk değişikliği"
+msgstr "Yolcu belgesi değişikliği"
 
 #: app/localizer.cpp:124
 #, kde-format
@@ -1444,7 +1445,7 @@ msgstr "Telif hakkı © 2018-%1 KDE Topluluğu"
 #: app/main.cpp:284
 #, kde-format
 msgid "Open Itinerary on the given page"
-msgstr "Verilen sayfadaki yolculuk belgesini aç"
+msgstr "Verilen sayfadaki yolcu belgesini aç"
 
 #: app/main.cpp:287
 #, kde-format
@@ -1469,12 +1470,12 @@ msgstr "PDF dosyaları (*.pdf)"
 #: app/main.qml:28 app/main.qml:37
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Yolculuk dosyaları (*.itinerary)"
+msgstr "KDE Yolcu Belgesi dosyaları (*.itinerary)"
 
 #: app/main.qml:35
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr "Yolculuk Belgesi Verisi Dışa Aktar"
+msgstr "Yolcu Belgesi Verisini Dışa Aktar"
 
 #: app/main.qml:47 app/PassPage.qml:88
 #, kde-format
@@ -2051,7 +2052,7 @@ msgstr "Yolcu %1"
 #: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
-msgstr "Yolculuk Programım"
+msgstr "Yolcu Belgem"
 
 #: app/TimelinePage.qml:25
 #, kde-format
@@ -2091,7 +2092,7 @@ msgstr "Yolculuğu Dışa Aktar"
 #: app/TimelinePage.qml:297
 #, kde-format
 msgid "Nothing on the itinerary for today."
-msgstr "Programınızda bugün için bir şey yok."
+msgstr "Bugün için yolcu belgenizde bir şey yok."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
 #: kirigami-addons/dateandtime/DatePopup.qml:64
@@ -2460,7 +2461,7 @@ msgid ""
 "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
 "barcodes and pasting their content.</li></p>"
 msgstr ""
-"<p>Veriyi, KDE Yolculuk'a içe aktarmanın birkaç yolu bulunmaktadır:"
+"<p>Veriyi, KDE Yolcu Belgesi'ne içe aktarmanın birkaç yolu bulunmaktadır:"
 "<ul><li>PDF biletlerini veya Apple Cüzdan kartlarını doğrudan açmak.</"
 "li><li>Android takviminden; K Posta, Nextcloud veya Thunderbird yolculuk "
 "eklentilerinden ve DAVx⁵ kullanarak eşzamanlayarak.</li><li>K Posta Yolculuk "
@@ -2481,11 +2482,11 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"KDE Yolculuk'ta, çevrimiçi erişim gerektiren tüm hizmekler öntanımlı olarak "
-"devre dışıdır; örneğin, canlı trafik verisi veya hava durumu tahminleri. Bu "
-"ayarları gözden geçirmek isteyebilirsiniz. Bunu yaparken, ev konumunuzu da "
-"ayarlayarak bir sonraki kalkış istasyonu veya havaalanı önerileri de "
-"alabilirsiniz."
+"KDE Yolcu Belgesi'nde, çevrimiçi erişim gerektiren tüm hizmetler öntanımlı "
+"olarak devre dışıdır; örneğin, canlı trafik verisi veya hava durumu "
+"tahminleri. Bu ayarları gözden geçirmek isteyebilirsiniz. Bunu yaparken, ev "
+"konumunuzu da ayarlayarak bir sonraki kalkış istasyonu veya havaalanı "
+"önerileri de alabilirsiniz."
 
 #: app/WelcomePage.qml:43
 #, kde-format
@@ -2498,7 +2499,7 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
-"KDE Yolculuk hakkında daha fazla bilgi almak için <a href=\"https://"
+"KDE Yolcu Belgesi hakkında daha fazla bilgi almak için <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">viki sayfasını</a> ziyaret edin."
 
 #: app/WelcomePage.qml:56
