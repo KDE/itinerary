@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
-"PO-Revision-Date: 2023-01-11 18:40+0300\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
+"PO-Revision-Date: 2023-01-13 01:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -74,13 +74,13 @@ msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr ""
-"KDE Yolculuk, KDE topluluğu tarafından özgür yazılım olarak geliştirilmiştir "
-"ve aşağıdaki bileşenleri kullanır."
+"KDE Yol Kılavuzu, KDE topluluğu tarafından özgür yazılım olarak "
+"geliştirilmiştir ve aşağıdaki bileşenleri kullanır."
 
 #: app/AboutPage.qml:199
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
-msgstr "KDE Yolculuk, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
+msgstr "KDE Yol Kılavuzu, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
 
 #: app/AboutPage.qml:226
 #, kde-format
@@ -281,8 +281,8 @@ msgstr "Açık"
 msgid "No camera available."
 msgstr "Kullanılabilir kamera yok."
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 konumundan %2 konumuna"
@@ -297,7 +297,7 @@ msgstr "Nereden: %1"
 msgid "To: %1"
 msgstr "Nereye: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Varış zamanı: %1"
@@ -817,7 +817,7 @@ msgstr "Bu kartı gerçekten silmek istiyor musunuz?"
 #: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:70
 #, kde-format
 msgid "KDE Itinerary"
-msgstr "KDE Yolculuk"
+msgstr "KDE Yol Kılavuzu"
 
 #: app/gpxexport.cpp:47
 #, kde-format
@@ -1113,17 +1113,17 @@ msgstr "%1/%2"
 msgid "Dose:"
 msgstr "Doz:"
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr "%1 çıkışını yap"
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Giriş zamanı: %1"
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Çıkış zamanı: %1"
@@ -1407,7 +1407,7 @@ msgstr[1] "%1 aktarma"
 #: app/livedatamanager.cpp:642
 #, kde-format
 msgid "Itinerary change"
-msgstr "Yolculuk değişikliği"
+msgstr "Yolcu belgesi değişikliği"
 
 #: app/localizer.cpp:124
 #, kde-format
@@ -1540,7 +1540,7 @@ msgstr "Telif hakkı © 2018-%1 KDE Topluluğu"
 #: app/main.cpp:284
 #, kde-format
 msgid "Open Itinerary on the given page"
-msgstr "Verilen sayfadaki yolculuk belgesini aç"
+msgstr "Verilen sayfadaki yolcu belgesini aç"
 
 #: app/main.cpp:287
 #, kde-format
@@ -1565,12 +1565,12 @@ msgstr "PDF dosyaları (*.pdf)"
 #: app/main.qml:56 app/main.qml:65
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Yolculuk dosyaları (*.itinerary)"
+msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
 
 #: app/main.qml:63
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr "Yolculuk Belgesi Verisi Dışa Aktar"
+msgstr "Yolcu Belgesi Verisini Dışa Aktar"
 
 #: app/main.qml:75 app/PassPage.qml:88
 #, kde-format
@@ -2181,7 +2181,7 @@ msgstr "Yolcu %1"
 #: app/TimelinePage.qml:20
 #, kde-format
 msgid "My Itinerary"
-msgstr "Yolculuk Programım"
+msgstr "Yolcu Belgem"
 
 #: app/TimelinePage.qml:25
 #, kde-format
@@ -2221,7 +2221,7 @@ msgstr "Yolculuğu Dışa Aktar"
 #: app/TimelinePage.qml:297
 #, kde-format
 msgid "Nothing on the itinerary for today."
-msgstr "Programınızda bugün için bir şey yok."
+msgstr "Bugün için yolcu belgenizde bir şey yok."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
 #: kirigami-addons/dateandtime/DatePopup.qml:64
@@ -2250,12 +2250,12 @@ msgstr "Kalkış Zamanı"
 msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "%2 platformunda %1 konumundan kalkış"
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "%2 platformunda %1 konumuna varış"
@@ -2380,15 +2380,21 @@ msgstr "Kalkış Aracı Yerleşimi"
 msgid "Arrival Vehicle Layout"
 msgstr "Varış Aracı Yerleşimi"
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Seç..."
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Aktarma seç..."
+
+#: app/TransferDelegate.qml:114
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Delete transfer"
+msgstr "Aktarma Seç"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2485,16 +2491,14 @@ msgstr[0] "Para birimi: %2"
 msgstr[1] "Para birimleri: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "GPX Olarak Dışa Aktar"
+msgstr "Yolculuğu GPX'e dışa aktar"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
-msgstr "Yolculuğu Sil"
+msgstr "Yolculuğu sil"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2562,9 +2566,29 @@ msgid "No vehicle layout information available."
 msgstr "Araç yerleşim bilgisi yok."
 
 #: app/VehicleLoadIndicator.qml:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "FULL"
+msgctxt "vehicle load"
 msgid "FULL"
 msgstr "DOLU"
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
@@ -2616,7 +2640,7 @@ msgid ""
 "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
 "barcodes and pasting their content.</li></p>"
 msgstr ""
-"<p>Veriyi, KDE Yolculuk'a içe aktarmanın birkaç yolu bulunmaktadır:"
+"<p>Veriyi, KDE Yol Kılavuzu'na içe aktarmanın birkaç yolu bulunmaktadır:"
 "<ul><li>PDF biletlerini veya Apple Cüzdan kartlarını doğrudan açmak.</"
 "li><li>Android takviminden; K Posta, Nextcloud veya Thunderbird yolculuk "
 "eklentilerinden ve DAVx⁵ kullanarak eşzamanlayarak.</li><li>K Posta Yolculuk "
@@ -2637,11 +2661,11 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"KDE Yolculuk'ta, çevrimiçi erişim gerektiren tüm hizmekler öntanımlı olarak "
-"devre dışıdır; örneğin, canlı trafik verisi veya hava durumu tahminleri. Bu "
-"ayarları gözden geçirmek isteyebilirsiniz. Bunu yaparken, ev konumunuzu da "
-"ayarlayarak bir sonraki kalkış istasyonu veya havaalanı önerileri de "
-"alabilirsiniz."
+"KDE Yol Kılavuzu'nda, çevrimiçi erişim gerektiren tüm hizmetler öntanımlı "
+"olarak devre dışıdır; örneğin, canlı trafik verisi veya hava durumu "
+"tahminleri. Bu ayarları gözden geçirmek isteyebilirsiniz. Bunu yaparken, ev "
+"konumunuzu da ayarlayarak bir sonraki kalkış istasyonu veya havaalanı "
+"önerileri de alabilirsiniz."
 
 #: app/WelcomePage.qml:43
 #, kde-format
@@ -2654,7 +2678,7 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
-"KDE Yolculuk hakkında daha fazla bilgi almak için <a href=\"https://"
+"KDE Yol Kılavuzu hakkında daha fazla bilgi almak için <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">viki sayfasını</a> ziyaret edin."
 
 #: app/WelcomePage.qml:56

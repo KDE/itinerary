@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -275,8 +275,8 @@ msgstr ""
 msgid "No camera available."
 msgstr ""
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr ""
@@ -291,7 +291,7 @@ msgstr ""
 msgid "To: %1"
 msgstr ""
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr ""
@@ -1101,17 +1101,17 @@ msgstr ""
 msgid "Dose:"
 msgstr ""
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr ""
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr ""
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr ""
@@ -2221,12 +2221,12 @@ msgstr ""
 msgid "Arrival Time"
 msgstr ""
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr ""
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr ""
@@ -2351,14 +2351,19 @@ msgstr ""
 msgid "Arrival Vehicle Layout"
 msgstr ""
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr ""
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
+msgstr ""
+
+#: app/TransferDelegate.qml:114
+#, kde-format
+msgid "Delete transfer"
 msgstr ""
 
 #: app/TransferPage.qml:20
@@ -2531,7 +2536,26 @@ msgstr ""
 
 #: app/VehicleLoadIndicator.qml:29
 #, kde-format
+msgctxt "vehicle load"
 msgid "FULL"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
 msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -302,8 +302,8 @@ msgstr "Hegaldia"
 msgid "No camera available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 %2ra"
@@ -318,7 +318,7 @@ msgstr "Nondik: %1"
 msgid "To: %1"
 msgstr "Nora: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Heltzeko ordua: %1"
@@ -1186,17 +1186,17 @@ msgstr ""
 msgid "Dose:"
 msgstr ""
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr "Check-out %1"
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Check-in ordua: %1"
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Check-out ordua: %1"
@@ -2365,12 +2365,12 @@ msgstr "Irteera ordua:"
 msgid "Arrival Time"
 msgstr "Heltzeko ordua: "
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "Irteera %1(e)tik %2 nasan"
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "Helduera %1(e)tan %2 nasan"
@@ -2507,15 +2507,21 @@ msgstr "Ibilgailu antolamendua"
 msgid "Arrival Vehicle Layout"
 msgstr "Ibilgailu antolamendua"
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Hautatu..."
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "hautatu lekualdatzea..."
+
+#: app/TransferDelegate.qml:114
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Delete transfer"
+msgstr "hautatu lekualdatzea"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2692,7 +2698,26 @@ msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
 
 #: app/VehicleLoadIndicator.qml:29
 #, kde-format
+msgctxt "vehicle load"
 msgid "FULL"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
 msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46

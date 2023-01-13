@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -286,8 +286,8 @@ msgstr "Let"
 msgid "No camera available."
 msgstr ""
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 do %2"
@@ -302,7 +302,7 @@ msgstr "Od: %1"
 msgid "To: %1"
 msgstr "Pre: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Čas príchodu: %1"
@@ -1155,17 +1155,17 @@ msgstr ""
 msgid "Dose:"
 msgstr "Dávka:"
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr "Výstupná kontrola %1"
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr ""
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr ""
@@ -2320,12 +2320,12 @@ msgstr "Čas odchodu:"
 msgid "Arrival Time"
 msgstr "Čas príchodu: %1"
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr ""
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr ""
@@ -2460,15 +2460,21 @@ msgstr "Vozidlo"
 msgid "Arrival Vehicle Layout"
 msgstr "Vozidlo"
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Vybrať..."
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr ""
+
+#: app/TransferDelegate.qml:114
+#, fuzzy, kde-format
+#| msgid "Delete Document"
+msgid "Delete transfer"
+msgstr "Odstrániť dokument"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2649,8 +2655,27 @@ msgstr ""
 
 #: app/VehicleLoadIndicator.qml:29
 #, fuzzy, kde-format
+msgctxt "vehicle load"
 msgid "FULL"
 msgstr "Plné"
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

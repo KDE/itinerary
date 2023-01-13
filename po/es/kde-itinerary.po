@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
-"PO-Revision-Date: 2023-01-11 17:01+0100\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
+"PO-Revision-Date: 2023-01-13 01:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -283,8 +283,8 @@ msgstr "Luz"
 msgid "No camera available."
 msgstr "No hay ninguna cámara disponible."
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 a %2"
@@ -299,7 +299,7 @@ msgstr "De: %1"
 msgid "To: %1"
 msgstr "A: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Hora de llegada: %1"
@@ -1116,17 +1116,17 @@ msgstr "%1/%2"
 msgid "Dose:"
 msgstr "Dosis:"
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr "Check-out %1"
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Hora de check-in: %1"
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Hora de check-out: %1"
@@ -2256,12 +2256,12 @@ msgstr "Hora de salida"
 msgid "Arrival Time"
 msgstr "Hora de llegada"
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "Salida de %1 del andén %2"
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "Llegada a %1 en el andén %2"
@@ -2386,15 +2386,21 @@ msgstr "Información sobre la salida del vehículo"
 msgid "Arrival Vehicle Layout"
 msgstr "Información sobre la llegada del vehículo"
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Seleccionar..."
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Seleccionar trasbordo..."
+
+#: app/TransferDelegate.qml:114
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Delete transfer"
+msgstr "Seleccionar trasbordo"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2491,14 +2497,12 @@ msgstr[0] "Divisa: %2"
 msgstr[1] "Divisas: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Exportar a GPX"
+msgstr "Exportar viaje a GPX"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
 msgstr "Borrar viaje"
 
@@ -2568,9 +2572,29 @@ msgid "No vehicle layout information available."
 msgstr "No se dispone de información sobre el automóvil."
 
 #: app/VehicleLoadIndicator.qml:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "FULL"
+msgctxt "vehicle load"
 msgid "FULL"
 msgstr "Completa"
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

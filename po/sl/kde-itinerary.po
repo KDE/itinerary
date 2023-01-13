@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:55+0000\n"
-"PO-Revision-Date: 2023-01-02 20:00+0100\n"
+"POT-Creation-Date: 2023-01-13 00:57+0000\n"
+"PO-Revision-Date: 2023-01-12 08:27+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
@@ -282,8 +282,8 @@ msgstr "Luč"
 msgid "No camera available."
 msgstr "Kamere ni na voljo."
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:25
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:26
+#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 do %2"
@@ -298,7 +298,7 @@ msgstr "Od: %1"
 msgid "To: %1"
 msgstr "Do: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:83
+#: app/BoatDelegate.qml:60 app/BusDelegate.qml:77 app/TrainDelegate.qml:86
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Čas prihoda: %1"
@@ -1116,17 +1116,17 @@ msgstr "%1/%2"
 msgid "Dose:"
 msgstr "Doza:"
 
-#: app/HotelDelegate.qml:20
+#: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
 msgstr "Odjava %1"
 
-#: app/HotelDelegate.qml:40
+#: app/HotelDelegate.qml:42
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Čas prijave v hotelu: %1"
 
-#: app/HotelDelegate.qml:46 app/HotelDelegate.qml:47
+#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Čas odjave iz hotela: %1"
@@ -1797,15 +1797,14 @@ msgid "Region:"
 msgstr "Regija:"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Čas vkrcanja:"
+msgstr "Koordinate:"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Poberi koordinate"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1815,12 +1814,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Najdi koordinate iz naslova"
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Izpolni naslov iz koordinat"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -2255,12 +2254,12 @@ msgstr "Čas odhoda"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
 
-#: app/TrainDelegate.qml:49
+#: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "Odhod ob %1 na peronu %2"
 
-#: app/TrainDelegate.qml:71
+#: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "Prihod ob %1 na peron %2"
@@ -2385,15 +2384,21 @@ msgstr "Oblika vozila v odhodu"
 msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"
 
-#: app/TransferDelegate.qml:92
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Izberi..."
 
-#: app/TransferDelegate.qml:104
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Izberi prevoz..."
+
+#: app/TransferDelegate.qml:114
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Delete transfer"
+msgstr "Izberi prevoz"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2494,16 +2499,14 @@ msgstr[2] "Valute: %2"
 msgstr[3] "Valute: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Izvozi v GPX"
+msgstr "Izvozi izlet v GPX"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
-msgstr "Zbriši izlet"
+msgstr "Izbriši izlet"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2571,9 +2574,29 @@ msgid "No vehicle layout information available."
 msgstr "Podatki o postavitvi vlaka niso na voljo."
 
 #: app/VehicleLoadIndicator.qml:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "FULL"
+msgctxt "vehicle load"
 msgid "FULL"
 msgstr "POLNO"
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
