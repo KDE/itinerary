@@ -45,8 +45,10 @@ Kirigami.AbstractCard {
                 isMask: true
             }
             QQC2.Label {
+                id: headerLabel
                 text: i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
                 Layout.fillWidth: true
+                Accessible.ignored: true
             }
         }
     }
@@ -60,6 +62,7 @@ Kirigami.AbstractCard {
             text: locationInfo.drivingSideLabel
             visible: locationInfo.drivingSideDiffers
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
 
         QQC2.Label {
@@ -68,18 +71,21 @@ Kirigami.AbstractCard {
             color: Kirigami.Theme.negativeTextColor
             visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
         QQC2.Label {
             width: topLayout.width
             text: visible ? i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes) : ""
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
         QQC2.Label {
             width: topLayout.width
             text: visible ? i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes) : ""
             visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
 
         QQC2.Label {
@@ -87,6 +93,7 @@ Kirigami.AbstractCard {
             text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
             visible: locationInfo.timeZoneDiffers
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
 
         QQC2.Label {
@@ -94,8 +101,10 @@ Kirigami.AbstractCard {
             text: visible ? i18n("Currency: %1", controller.hasCurrencyConversion ? controller.currencyConversionLabel : locationInfo.currencyCode) : ""
             visible: locationInfo.currencyDiffers
             wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
         }
-
     }
+
+    Accessible.name: headerLabel.text
 }
 

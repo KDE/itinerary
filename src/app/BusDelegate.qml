@@ -17,6 +17,7 @@ App.TimelineDelegate {
     headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/bus.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
     headerItem: RowLayout {
         QQC2.Label {
+            id: headerLabel
             text: {
                 if (reservationFor.busName || reservationFor.busNumber ) {
                     return reservationFor.busName + " " + reservationFor.busNumber
@@ -26,6 +27,7 @@ App.TimelineDelegate {
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
@@ -36,6 +38,7 @@ App.TimelineDelegate {
             text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
             color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departure.hasExpectedDepartureTime
+            Accessible.ignored: !visible
         }
     }
 
@@ -83,9 +86,11 @@ App.TimelineDelegate {
                 text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                 color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                 visible: arrival.hasExpectedArrivalTime
+                Accessible.ignored: !visible
             }
         }
     }
 
     onClicked: showDetailsPage(busDetailsPage, root.batchId)
+    Accessible.name: headerLabel.text
 }

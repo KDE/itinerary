@@ -39,6 +39,7 @@ App.TimelineDelegate {
     headerIconSource: "qrc:///images/flight.svg"
     headerItem: RowLayout {
         QQC2.Label {
+            id: headerLabel
             text: i18n("%1 %2 → %3",
                 reservationFor.airline.iataCode + " " + reservationFor.flightNumber,
                 airportDisplayCode(reservationFor.departureAirport),
@@ -47,6 +48,7 @@ App.TimelineDelegate {
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             elide: Text.ElideRight
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
         QQC2.Label {
             text: isNaN(reservationFor.boardingTime.getTime()) ?
@@ -105,4 +107,5 @@ App.TimelineDelegate {
     }
 
     onClicked: showDetailsPage(flightDetailsPage, root.batchId)
+    Accessible.name: headerLabel.text
 }

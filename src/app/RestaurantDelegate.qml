@@ -17,10 +17,12 @@ App.TimelineDelegate {
     headerIconSource: "qrc:///images/foodestablishment.svg"
     headerItem: RowLayout {
         QQC2.Label {
+            id: headerLabel
             text: reservationFor.name
             color: Kirigami.Theme.textColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservation, "startTime")
@@ -42,4 +44,5 @@ App.TimelineDelegate {
     }
 
     onClicked: showDetailsPage(restaurantDetailsPage, root.batchId)
+    Accessible.name: headerLabel.text
 }
