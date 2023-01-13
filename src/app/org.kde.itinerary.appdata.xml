@@ -33,7 +33,7 @@
   <name xml:lang="sk">KDE Itinerár</name>
   <name xml:lang="sl">KDE Itinerary</name>
   <name xml:lang="sv">KDE-resplan</name>
-  <name xml:lang="tr">KDE Yolculuk</name>
+  <name xml:lang="tr">KDE Yolcu Belgesi</name>
   <name xml:lang="uk">KDE Itinerary</name>
   <name xml:lang="x-test">xxKDE Itineraryxx</name>
   <name xml:lang="zh-CN">KDE Itinerary</name>
@@ -89,7 +89,7 @@
     <p xml:lang="ru">Маршруты KDE — это цифровой помощник в путешествиях, в котором сделан акцент на обеспечении конфиденциальности пользователя.</p>
     <p xml:lang="sl">KDE Itinerary je digitalni pomočnik pri potovanju s pomembno zasnovo pri zaščiti vaše zasebnosti.</p>
     <p xml:lang="sv">KDE-resplan är ett digitalt resehjälpprogram som prioriterar att skydda din integritet.</p>
-    <p xml:lang="tr">KDE Yolculuk, gizliliğinize öncelik veren bir sayısal yolculuk asistanıdır.</p>
+    <p xml:lang="tr">KDE Yolcu Belgesi, gizliliğinize öncelik veren bir sayısal yolculuk asistanıdır.</p>
     <p xml:lang="uk">KDE Itinerary — цифровий помічник у подорожах, акцент у якому зроблено на забезпеченні вашої конфіденційності.</p>
     <p xml:lang="x-test">xxKDE Itinerary is a digital travel assistant with a priority on protecting your privacy.xx</p>
     <p xml:lang="zh-CN">KDE Itinerary 是一款注重保护用户隐私的数字旅行助理应用。</p>
@@ -144,7 +144,7 @@
       <li xml:lang="ru">Просмотр расписания унифицированного маршрута с автоматической группировкой по поездкам.</li>
       <li xml:lang="sl">Pogled časovnice poenotenega plana potovanja s samodejnim grupiranjem potovanj.</li>
       <li xml:lang="sv">TIdslinjevisning av en enhetlig resplan med automatisk resegruppering.</li>
-      <li xml:lang="tr">Otomatik yolculuk gruplandırması ile birleşik yolculuk belgelerinin zaman akışı görünümü.</li>
+      <li xml:lang="tr">Otomatik yolculuk gruplandırması ile birleşik yolcu belgelerinin zaman akışı görünümü.</li>
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
       <li xml:lang="x-test">xxTimeline view of a unified travel itinerary with automatic trip grouping.xx</li>
       <li xml:lang="zh-CN">时间线视图，可自动分组并归类旅程。</li>
@@ -169,7 +169,7 @@
       <li xml:lang="ru">Поддержка заказа билетов на поезда, автобусы и самолеты, а также бронирования прокатных автомобилей, гостиничных номеров, мест в ресторанах и посещения мероприятий.</li>
       <li xml:lang="sl">Podpira rezervacije vlakov, avtobusov in letal kot tudi hotelov, restavracij, dogodkov in rezervacij najema avtomobilov.</li>
       <li xml:lang="sv">Stöder tåg-, buss-, och flygbokningar samt bokning av hotell, restauranger, evenemang och hyrbilar.</li>
-      <li xml:lang="tr">Tren, otobüs ve uçak rezervasyonlarının yanısıra otel, restoran ve kiralık araç rezervasyonlarını da destekler.</li>
+      <li xml:lang="tr">Tren, otobüs ve uçak rezervasyonlarının yanı sıra otel, restoran ve kiralık araç rezervasyonlarını da destekler.</li>
       <li xml:lang="uk">Підтримка бронювання квитків на потяги, автобуси та літаки, а також бронювання номерів готелів, місць у ресторанах, участі у подіях та оренди автомобілів.</li>
       <li xml:lang="x-test">xxSupports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.xx</li>
       <li xml:lang="zh-CN">支持预订火车、公共汽车、航班、酒店、餐厅、活动和租车服务。</li>
@@ -247,7 +247,7 @@
       <li xml:lang="ru">Автоматическое извлечение данных бронирования из различных входных форматов, которое происходит непосредственно на устройстве пользователя.</li>
       <li xml:lang="sl">Avtomatsko pridobivanje podatkov iz različnih vhodnih formatov lokalno v vaši napravi.</li>
       <li xml:lang="sv">Automatisk extrahering av bokningsinformation från diverse indataformat, utförd lokalt på din enhet.</li>
-      <li xml:lang="tr">Çeşitli girdi biçimlerinden otomatik yolculuk verisi çıkarımı, yerel olarak aygıtınızda.</li>
+      <li xml:lang="tr">Yerel olarak aygıtınızda gerçekleştirilen, çeşitli girdi biçimlerinden otomatik rezervasyon verisi çıkarımı.</li>
       <li xml:lang="uk">Автоматичне видобування даних із різноманітних вхідних форматів, яке відбувається безпосередньо на вашому пристрої.</li>
       <li xml:lang="x-test">xxAutomatic booking data extraction from various input formats, performed locally on your device.xx</li>
       <li xml:lang="zh-CN">在设备端处理多种输入格式并自动提取预订数据。</li>
@@ -375,7 +375,7 @@
       <li xml:lang="ru">Навигация по местному наземному транспорту между фрагментами маршрута.</li>
       <li xml:lang="sl">Lokalna navigacija po zemeljskih prevozi med elementi vašega plana potovanja.</li>
       <li xml:lang="sv">Navigering för lokal marktransport mellan delar av resplanen.</li>
-      <li xml:lang="tr">Yolculuk belgeniz ögeleri arasında yerel yer ulaşımı dolaşımı.</li>
+      <li xml:lang="tr">Yolcu belgesi ögeleriniz arasında yerel yer ulaşımı dolaşımı.</li>
       <li xml:lang="uk">Навігація на місцевості під час пересадок між фрагментами вашого маршруту.</li>
       <li xml:lang="x-test">xxLocal ground transportation navigation between elements of your itinerary.xx</li>
       <li xml:lang="zh-CN">在各段行程间为您进行本地地面交通导航。</li>
@@ -457,6 +457,7 @@
       <li xml:lang="ia">Statistica de viage personal a supervisionar impacto ambiental.</li>
       <li xml:lang="id">Statistik perjalanan pribadi untuk memantau dampak lingkungan.</li>
       <li xml:lang="it">Statistiche di viaggio personali per monitorare l'impatto ambientale.</li>
+      <li xml:lang="ka">მოგზაურობის სტატისტიკა გარემოზე ეფექტის მონიტორინგისთვის.</li>
       <li xml:lang="ko">환경 영향을 계산하는 개인 여행 통계 정보를 제공합니다.</li>
       <li xml:lang="nl">Persoonlijke reisstatistieken om impact op de omgeving te monitoren.</li>
       <li xml:lang="pl">Osobisty statystyki podróżowania do monitorowania wpływu na środowisko.</li>
@@ -512,7 +513,7 @@
     <p xml:lang="ru">Программа «Маршруты KDE» лучше всего работает с модулем извлечения маршрутов KMail и KDE Connect или Nextcloud Hub и DavDroid.</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
-    <p xml:lang="tr">KDE Yolculuk, en iyi olarak K Posta'nın yolculuk belgesi çıkarma eklentisi ve KDE Connect, Nextcloud Hub veya DavDroid ile birlikte çalışır.</p>
+    <p xml:lang="tr">KDE Yolcu Belgesi, en iyi olarak K Posta'nın yolculuk belgesi çıkarma eklentisi ve KDE Connect, Nextcloud Hub veya DavDroid ile birlikte çalışır.</p>
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
     <p xml:lang="x-test">xxKDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.xx</p>
     <p xml:lang="zh-CN">KDE Itinerary 是 KMail 行程提取插件和 KDE Connect 的最佳搭档，还能配合 Nextcloud Hub 和 DavDroid 使用。</p>
