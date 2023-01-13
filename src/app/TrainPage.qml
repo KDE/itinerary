@@ -99,13 +99,16 @@ App.DetailsPage {
                     title: i18n("Departure")
                 }
                 MobileForm.FormTextDelegate {
+                    id: departureTimeDelegate
+                    text: i18n("Departure time")
                     visible: departureTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
                         spacing: Kirigami.Units.smallSpacing
                         QQC2.Label {
+                            text: departureTimeDelegate.text
                             Layout.fillWidth: true
-                            text: i18n("Departure time")
                             elide: Text.ElideRight
+                            Accessible.ignored: true
                         }
                         RowLayout {
                             Layout.fillWidth: true
@@ -120,6 +123,7 @@ App.DetailsPage {
                                 text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
                                 color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                                 visible: departure.hasExpectedDepartureTime
+                                Accessible.ignored: !visible
                             }
                         }
                     }
@@ -136,14 +140,17 @@ App.DetailsPage {
                 MobileForm.FormDelegateSeparator { visible: reservationFor.departureStation.name }
 
                 MobileForm.FormTextDelegate {
+                    id: departurePlatformDelegate
+                    text: i18n("Platform")
                     visible: departurePlatformLabel.text != ""
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
                         QQC2.Label {
+                            text: departurePlatformDelegate.text
                             Layout.fillWidth: true
-                            text: i18n("Platform")
                             elide: Text.ElideRight
+                            Accessible.ignored: true
                         }
                         RowLayout {
                             QQC2.Label {
@@ -158,6 +165,7 @@ App.DetailsPage {
                             QQC2.Label {
                                 text: i18nc("previous platform", "(was: %1)", reservationFor.departurePlatform)
                                 visible: departure.platformChanged && reservationFor.departurePlatform != ""
+                                Accessible.ignored: !visible
                             }
                         }
                     }
@@ -201,14 +209,17 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
+                    id: arrivalTimeDelegate
+                    text: i18n("Arrival time")
                     visible: arrivalTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
                         QQC2.Label {
+                            text: arrivalTimeDelegate.text
                             Layout.fillWidth: true
-                            text: i18n("Arrival time")
                             elide: Text.ElideRight
+                            Accessible.ignored: true
                         }
                         RowLayout {
                             Layout.fillWidth: true
@@ -224,6 +235,7 @@ App.DetailsPage {
                                 text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                                 color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                                 visible: arrival.hasExpectedArrivalTime
+                                Accessible.ignored: !visible
                             }
                         }
                     }
@@ -239,6 +251,7 @@ App.DetailsPage {
                 MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
 
                 MobileForm.AbstractFormDelegate {
+                    id: arrivalPlatformDelegate
                     text: i18n("Platform")
                     visible: arrivalPlatformLabel.text.length > 0
                     contentItem: ColumnLayout {
@@ -246,8 +259,9 @@ App.DetailsPage {
                         spacing: Kirigami.Units.smallSpacing
                         QQC2.Label {
                             Layout.fillWidth: true
-                            text: i18n("Arrival time")
+                            text: arrivalPlatformDelegate.text
                             elide: Text.ElideRight
+                            Accessible.ignored: true
                         }
                         RowLayout {
                             Layout.fillWidth: true
@@ -261,6 +275,7 @@ App.DetailsPage {
                             QQC2.Label {
                                 text: i18nc("previous platform", "(was: %1)", reservationFor.arrivalPlatform)
                                 visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
+                                Accessible.ignored: !visible
                             }
                         }
                     }
