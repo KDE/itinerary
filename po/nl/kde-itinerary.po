@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2023-01-12 10:49+0100\n"
+"PO-Revision-Date: 2023-01-13 10:44+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2393,10 +2393,9 @@ msgid "Select transfer..."
 msgstr "Overstap selecteren..."
 
 #: app/TransferDelegate.qml:114
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Overstap selecteren"
+msgstr "Overstap verwijderen"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2568,8 +2567,7 @@ msgid "No vehicle layout information available."
 msgstr "Geen informatie over de indeling van het voertuig beschikbaar."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "VOL"
@@ -2578,19 +2576,19 @@ msgstr "VOL"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Laag"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Middel"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Hoog"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
