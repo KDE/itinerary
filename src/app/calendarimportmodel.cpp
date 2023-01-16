@@ -5,6 +5,7 @@
 
 #include "calendarimportmodel.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
@@ -56,35 +57,6 @@ void CalendarImportModel::setCalendar(KCalendarCore::Calendar *calendar)
 #endif
 }
 
-static QVariant convertToEvent(const KCalendarCore::Event::Ptr &ev)
-{
-    using namespace KItinerary;
-
-    Event e;
-    e.setName(ev->summary());
-    e.setDescription(ev->description());
-    e.setUrl(ev->url());
-
-    if (ev->allDay()) {
-        e.setStartDate(QDateTime(ev->dtStart().date(), {0, 0}, Qt::LocalTime));
-        e.setEndDate(QDateTime(ev->dtEnd().date(), {23, 59, 59}, Qt::LocalTime));
-    } else {
-        e.setStartDate(ev->dtStart());
-        e.setEndDate(ev->dtEnd());
-    }
-
-    Place venue;
-    venue.setName(ev->location()); // TODO attempt to detect addresses in here
-    if (ev->hasGeo()) {
-        venue.setGeo({ev->geoLatitude(), ev->geoLongitude()});
-    }
-    e.setLocation(venue);
-
-    // TODO attachments?
-
-    return e;
-}
-
 QVector<QVariant> CalendarImportModel::selectedReservations() const
 {
     QVector<QVariant> res;
@@ -92,11 +64,7 @@ QVector<QVariant> CalendarImportModel::selectedReservations() const
         if (!ev.selected) {
             continue;
         }
-        if (!ev.data.isEmpty()) {
-            std::copy(ev.data.begin(), ev.data.end(), std::back_inserter(res));
-        } else {
-            res.push_back(convertToEvent(ev.event));
-        }
+        std::copy(ev.data.begin(), ev.data.end(), std::back_inserter(res));
     }
     return res;
 }
@@ -190,21 +158,24 @@ void CalendarImportModel::reload()
     m_events.clear();
 
     KItinerary::ExtractorEngine extractorEngine;
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 22, 41)
+    extractorEngine.setHints(KItinerary::ExtractorEngine::ExtractGenericIcalEvents);
+#endif
 
     auto calEvents = m_calendar->events(today().addDays(-5), today().addDays(180));
     calEvents = m_calendar->sortEvents(std::move(calEvents), KCalendarCore::EventSortStartDate, KCalendarCore::SortDirectionAscending);
     for (const auto &ev : std::as_const(calEvents)) {
-        if (ev->recurs() || ev->hasRecurrenceId()) {
-            continue;
-        }
-
         extractorEngine.clear();
         extractorEngine.setContent(QVariant::fromValue(ev), u"internal/event");
         KItinerary::ExtractorPostprocessor postProc;
         postProc.process(KItinerary::JsonLdDocument::fromJson(extractorEngine.extract()));
         const auto res = postProc.result();
+        if (res.empty()) {
+            continue;
+        }
 
-        m_events.push_back({ev, res, !res.isEmpty()});
+        const auto isReservation = !KItinerary::JsonLd::isA<KItinerary::Event>(res.at(0));
+        m_events.push_back({ev, res, isReservation});
     }
 
     endResetModel();
