@@ -20,12 +20,15 @@ MobileForm.AbstractFormDelegate {
     background: Item {}
     Layout.fillWidth: true
     visible: place && !place.address.isEmpty
+    text: i18n("Location")
+
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
         QQC2.Label {
             Layout.fillWidth: true
-            text: i18n("Location")
             elide: Text.ElideRight
+            text: root.text
+            Accessible.ignored: true
         }
         App.PlaceDelegate {
             id: internal

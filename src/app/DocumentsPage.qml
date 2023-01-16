@@ -40,6 +40,8 @@ MobileForm.FormCard {
         MobileForm.AbstractFormDelegate {
             Layout.fillWidth: true
             onClicked: ApplicationController.openDocument(model.filePath);
+            Accessible.onPressAction: clicked()
+            Accessible.name: model.display
             contentItem: RowLayout {
                 Kirigami.Icon {
                     source: model.decoration
@@ -51,6 +53,7 @@ MobileForm.FormCard {
                     text: model.display
                     Layout.fillWidth: true
                     elide: Text.ElideMiddle
+                    Accessible.ignored: true
                 }
 
                 Kirigami.ActionToolBar {
@@ -103,6 +106,7 @@ MobileForm.FormCard {
         MobileForm.FormTextDelegate {
             text: i18n("No documents attached to this reservation.")
             visible: docsModel.empty
+            Accessible.ignored: !visible
         }
 
         MobileForm.FormDelegateSeparator {}
