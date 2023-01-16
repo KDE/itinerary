@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2023-01-12 07:34+0100\n"
+"PO-Revision-Date: 2023-01-15 03:42+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1931,6 +1931,9 @@ msgid ""
 "Institute</a> under <a href=\"https://creativecommons.org/licenses/"
 "by/4.0\">Creative Commons 4.0 BY International</a> license."
 msgstr ""
+"<a href=\"https://www.met.no/\">ნორვეგიული მეტეოროლოგიის ინსტიტუტიდან </a> "
+"მონაცემების გამოყენება <a href=\"https://creativecommons.org/licenses/"
+"by/4.0\">Creative Commons 4.0 BY International </a>ლიცენზიით ხდება."
 
 #: app/SettingsPage.qml:124
 #, kde-format
@@ -1943,6 +1946,8 @@ msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
 msgstr ""
+"ამის ჩართვა გამოიწვევს მომავალი მოგზაურობისთვის ყველა სადგურისა და "
+"აეროპორტის რუკის გადმოწერას, როცა უსადენო ქსელ მიუერთდებით."
 
 #: app/SettingsPage.qml:134
 #, kde-format
@@ -2375,10 +2380,9 @@ msgid "Select transfer..."
 msgstr "აირჩიეთ გადაჯომა..."
 
 #: app/TransferDelegate.qml:114
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "აირჩეთ გადაჯდომა"
+msgstr "გადაჯდომის წაშლა"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2550,8 +2554,7 @@ msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "სრული"
@@ -2560,19 +2563,19 @@ msgstr "სრული"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "დაბალი"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "საშუალო"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "მაღალი"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

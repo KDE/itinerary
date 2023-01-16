@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2019, 2020, 2021, 2022.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2022-12-09 14:16+0100\n"
+"PO-Revision-Date: 2023-01-15 13:23+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -587,22 +587,19 @@ msgid "End Time"
 msgstr "Ora di fine"
 
 #: app/EventPage.qml:124
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Stazione:"
+msgstr "Sezione:"
 
 #: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
-msgstr ""
+msgstr "Riga:"
 
 #: app/EventPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Numero:"
@@ -1795,15 +1792,14 @@ msgid "Region:"
 msgstr "Regione:"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Ora d'imbarco:"
+msgstr "Coordinate:"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Scegli le coordinate"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1813,12 +1809,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Trova le coordinate dall'indirizzo"
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Riempi l'indirizzo dalle coordinate"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -2396,10 +2392,9 @@ msgid "Select transfer..."
 msgstr "Seleziona trasferimento..."
 
 #: app/TransferDelegate.qml:114
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Seleziona trasferimento"
+msgstr "Elimina trasferimento"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2496,14 +2491,12 @@ msgstr[0] "Valuta: %2"
 msgstr[1] "Valute: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Esporta in GPX"
+msgstr "Esporta viaggio in GPX"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
 msgstr "Elimina viaggio"
 
@@ -2573,29 +2566,28 @@ msgid "No vehicle layout information available."
 msgstr "Nessuna informazione disponibile di suddivisione del veicolo."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
-msgstr "COMPLETO"
+msgstr "PIENO"
 
 #: app/VehicleLoadIndicator.qml:52
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Basso"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Medio"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Alto"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

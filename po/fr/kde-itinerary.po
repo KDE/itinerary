@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2023-01-01 19:37+0100\n"
+"PO-Revision-Date: 2023-01-14 19:50+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -706,7 +706,7 @@ msgstr "Départ de %1 : %2"
 #: app/FlightDelegate.qml:82
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
-msgstr "Terminal : %1 Porte : %2  Siège : %3"
+msgstr "Terminal : %1 Porte : %2 Siège : %3"
 
 #: app/FlightDelegate.qml:93
 #, kde-format
@@ -1812,15 +1812,14 @@ msgid "Region:"
 msgstr "Région :"
 
 #: app/PlaceEditor.qml:189
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Heure d'embarquement :"
+msgstr "Coordonnée :"
 
 #: app/PlaceEditor.qml:193
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Coordonnées de rendez-vous"
 
 #: app/PlaceEditor.qml:199
 #, kde-format
@@ -1830,12 +1829,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:213
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Remplir une coordonnée à partir de l’adresse "
 
 #: app/PlaceEditor.qml:224
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Remplir l’adresse à partir de la coordonnée"
 
 #: app/ProgramMembershipPage.qml:16
 #, kde-format
@@ -2419,10 +2418,9 @@ msgid "Select transfer..."
 msgstr "Sélectionner la correspondance..."
 
 #: app/TransferDelegate.qml:114
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Sélectionner la correspondance"
+msgstr "Supprimer une correspondance"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2519,14 +2517,12 @@ msgstr[0] "Devise : %2"
 msgstr[1] "Devises : %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Exporter vers un format « GPX »"
+msgstr "Exporter un trajet vers un fichier « GPX »"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
 msgstr "Supprimer un voyage"
 
@@ -2598,8 +2594,7 @@ msgid "No vehicle layout information available."
 msgstr "Aucune information de disposition du véhicule disponible."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "COMPLET"
@@ -2608,19 +2603,19 @@ msgstr "COMPLET"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Faible"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Moyen"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Haut"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
@@ -2673,7 +2668,7 @@ msgid ""
 "barcodes and pasting their content.</li></p>"
 msgstr ""
 "<p>Il y a de nombreuses façons d'importer des données dans KDE Itinerary :"
-"<ul><li> Directement par ouverture de tickets « PDF »  ou de laisser-passer "
+"<ul><li> Directement par ouverture de tickets « PDF » ou de laisser-passer "
 "de portefeuille Apple.</li><li>A partir de l'agenda de Android, pour les "
 "entrées produites grâce aux modules externes de Itinerary pour KMail, "
 "Nextcloud or Thunderbird et synchronisées avec DAVx⁵.</li><li>Grâce à KDE "
