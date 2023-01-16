@@ -107,6 +107,14 @@ App.DetailsPage {
                     description: Localizer.formatDateTime(reservationFor, "endDate")
                     visible: reservationFor.endDate > 0
                 }
+
+                MobileForm.FormDelegateSeparator { visible: reservationFor.url != "" }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Website")
+                    description: Util.textToHtml(reservationFor.url)
+                    visible: reservationFor.url != ""
+                    onLinkActivated: Qt.openUrlExternally(link)
+                }
             }
         }
 
