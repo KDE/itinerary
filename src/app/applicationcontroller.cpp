@@ -361,6 +361,9 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     // user opened the file, so we can be reasonably sure they assume it contains
     // relevant content, so try expensive extraction methods too
     engine.setHints(ExtractorEngine::ExtractFullPageRasterImages);
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 22, 41)
+    engine.setHints(engine.hints() | ExtractorEngine::ExtractGenericIcalEvents);
+#endif
     engine.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     engine.setData(data, fileName);
     const auto extractorResult = JsonLdDocument::fromJson(engine.extract());
