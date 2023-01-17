@@ -6,7 +6,7 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="${applicationId}"
+          package="org.kde.itinerary"
           android:versionName="${versionName}"
           android:versionCode="${versionCode}"
           android:installLocation="auto">
