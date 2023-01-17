@@ -55,6 +55,7 @@ Kirigami.AbstractCard {
                 text: Localizer.formatTime(transfer.journey, "scheduledDepartureTime")
                 visible: transfer.state == Transfer.Selected
                 color: Kirigami.Theme.textColor
+                Accessible.ignored: !visible
             }
             QQC2.Label {
                 text: (transfer.journey.departureDelay >= 0 ? "+" : "") + transfer.journey.departureDelay
@@ -108,12 +109,14 @@ Kirigami.AbstractCard {
             QQC2.Label {
                 text: i18n("Select transfer...")
                 Layout.fillWidth: true
+                Accessible.ignored: !parent.visible
             }
             QQC2.ToolButton {
                 icon.name: "edit-delete"
                 text: i18n("Delete transfer")
                 display: QQC2.AbstractButton.IconOnly
                 onClicked: TransferManager.discardTransfer(transfer)
+                Accessible.ignored: !parent.visible
             }
         }
     }

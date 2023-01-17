@@ -45,11 +45,13 @@ RowLayout {
             isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
             Layout.preferredWidth: Kirigami.Units.iconSizes.small * Util.svgAspectRatio(source)
             Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Accessible.name: PublicTransport.journeySectionLabel(modelData)
         }
     }
     QQC2.Label {
         text: i18ncp("number of switches to another transport", "One change", "%1 changes", journey.numberOfChanges)
         Layout.fillWidth: true
+        Accessible.ignored: !parent.visible
     }
 
     App.VehicleLoadIndicator {
