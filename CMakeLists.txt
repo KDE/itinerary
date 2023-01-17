@@ -44,6 +44,9 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
 endif()
 
 set(QT_MIN_VERSION 5.15.2)
+if (ANDROID)
+    set(QT_MIN_VERSION 5.15.8) # due to 5.15.8 changing the Gradle version in a non-backward compat way
+endif()
 
 # build-time dependencies
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2)
