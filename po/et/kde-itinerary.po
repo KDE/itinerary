@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:58+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -124,7 +124,7 @@ msgstr "Muuda"
 msgid "Add to calendar..."
 msgstr "Lisa dokument ..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -218,8 +218,8 @@ msgstr "Asenda"
 msgid "Download failed: %1"
 msgstr "Laadi alla"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
-#: app/applicationcontroller.cpp:541
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import failed: %1"
 msgstr ""
@@ -229,46 +229,46 @@ msgstr ""
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:613
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:616
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Imporditi üks reserveering."
 msgstr[1] "Imporditi %1 reserveeringut."
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:401
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Health certificate imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:404
+#: app/applicationcontroller.cpp:407
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Pass imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Nothing imported."
 msgstr "Imporditi üks reserveering."
 
-#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -400,7 +400,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Jaam:"
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:316
 #, kde-format
 msgid "Seat"
@@ -464,7 +464,7 @@ msgid "Time"
 msgstr "Kellaaeg:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -545,28 +545,28 @@ msgstr "Dokumendi lisamine"
 msgid "All Files (*.*)"
 msgstr "Kõik failid (*.*)"
 
-#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:74
+#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "Kustuta dokument"
 
-#: app/DocumentsPage.qml:75
+#: app/DocumentsPage.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Kas tõesti kustutada see dokument?"
 
-#: app/DocumentsPage.qml:95
+#: app/DocumentsPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Documents and Tickets"
 msgstr "Sündmuse pilet"
 
-#: app/DocumentsPage.qml:104
+#: app/DocumentsPage.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Reserveeringule ei ole lisatud ühtegi dokumenti."
 
-#: app/DocumentsPage.qml:111
+#: app/DocumentsPage.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "Lisa dokument ..."
@@ -622,20 +622,25 @@ msgstr "Algusaeg:"
 msgid "End Time"
 msgstr "Lõpuaeg:"
 
-#: app/EventPage.qml:124
+#: app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/EventPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Jaam:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:150
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgctxt "seat number"

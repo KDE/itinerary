@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:58+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -121,7 +121,7 @@ msgstr "편집"
 msgid "Add to calendar..."
 msgstr "캘린더에 추가..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -210,8 +210,8 @@ msgstr "바꾸기"
 msgid "Download failed: %1"
 msgstr "다운로드 실패: %1"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
-#: app/applicationcontroller.cpp:541
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
@@ -221,39 +221,39 @@ msgstr "가져오기 실패: %1"
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:613
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:616
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Health certificate imported."
 msgstr "건강 증명서를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:404
+#: app/applicationcontroller.cpp:407
 #, kde-format
 msgid "Pass imported."
 msgstr "패스를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Nothing imported."
 msgstr "가져온 것이 없습니다."
 
-#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
 #, kde-format
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -382,7 +382,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "정류장:"
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:316
 #, kde-format
 msgid "Seat"
@@ -445,7 +445,7 @@ msgid "Time"
 msgstr "시간:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -524,28 +524,28 @@ msgstr "문서 추가"
 msgid "All Files (*.*)"
 msgstr "모든 파일 (*.*)"
 
-#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:74
+#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "문서 삭제"
 
-#: app/DocumentsPage.qml:75
+#: app/DocumentsPage.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "이 문서를 삭제하시겠습니까?"
 
-#: app/DocumentsPage.qml:95
+#: app/DocumentsPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Current Ticket"
 msgid "Documents and Tickets"
 msgstr "현재 승차권"
 
-#: app/DocumentsPage.qml:104
+#: app/DocumentsPage.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "이 예약에 첨부한 문서가 없습니다."
 
-#: app/DocumentsPage.qml:111
+#: app/DocumentsPage.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "문서 추가..."
@@ -601,7 +601,12 @@ msgstr "시작 시간:"
 msgid "End Time"
 msgstr "종료 시간:"
 
-#: app/EventPage.qml:124
+#: app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/EventPage.qml:132
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -609,13 +614,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "정거장:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:150
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "seat number"

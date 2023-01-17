@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:58+0000\n"
 "PO-Revision-Date: 2023-01-13 19:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -122,7 +122,7 @@ msgstr "Düzenle"
 msgid "Add to calendar..."
 msgstr "Takvime ekle..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -212,8 +212,8 @@ msgstr "Değiştir"
 msgid "Download failed: %1"
 msgstr "İndirme başarısız: %1"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
-#: app/applicationcontroller.cpp:541
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
@@ -223,40 +223,40 @@ msgstr "İçe aktarma başarısız: %1"
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:613
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:616
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Bir rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:404
+#: app/applicationcontroller.cpp:407
 #, kde-format
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -377,7 +377,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "İstasyon"
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:316
 #, kde-format
 msgid "Seat"
@@ -439,7 +439,7 @@ msgid "Time"
 msgstr "Zaman"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
 #, kde-format
 msgid "Location"
 msgstr "Konum"
@@ -514,27 +514,27 @@ msgstr "Belge Ekle"
 msgid "All Files (*.*)"
 msgstr "Tüm Dosyalar (*.*)"
 
-#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:74
+#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "Belgeyi Sil"
 
-#: app/DocumentsPage.qml:75
+#: app/DocumentsPage.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Bu belgeyi gerçekten silmek istiyor musunuz?"
 
-#: app/DocumentsPage.qml:95
+#: app/DocumentsPage.qml:98
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Belgeler ve Biletler"
 
-#: app/DocumentsPage.qml:104
+#: app/DocumentsPage.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Bu rezervasyonu ekli belge yok."
 
-#: app/DocumentsPage.qml:111
+#: app/DocumentsPage.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "Belge Ekle..."
@@ -586,19 +586,24 @@ msgstr "Başlangıç Zamanı"
 msgid "End Time"
 msgstr "Bitiş Zamanı"
 
-#: app/EventPage.qml:124
+#: app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/EventPage.qml:132
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Bölüm:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Satır:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:150
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
-"PO-Revision-Date: 2023-01-12 16:25+0100\n"
+"POT-Creation-Date: 2023-01-17 00:58+0000\n"
+"PO-Revision-Date: 2023-01-13 13:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -125,7 +125,7 @@ msgstr "Edita"
 msgid "Add to calendar..."
 msgstr "Afig al calendari..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -213,8 +213,8 @@ msgstr "Substituïx"
 msgid "Download failed: %1"
 msgstr "Ha fallat la baixada: %1"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
-#: app/applicationcontroller.cpp:541
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
@@ -224,40 +224,40 @@ msgstr "Ha fallat la importació: %1"
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:613
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:616
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Health certificate imported."
 msgstr "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:404
+#: app/applicationcontroller.cpp:407
 #, kde-format
 msgid "Pass imported."
 msgstr "S'ha importat el passe."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Nothing imported."
 msgstr "No s'ha importat res."
 
-#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
 #, kde-format
 msgid "Export failed: %1"
 msgstr "No s'ha pogut fer l'exportació: %1"
 
-#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -378,7 +378,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Estació"
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:316
 #, kde-format
 msgid "Seat"
@@ -440,7 +440,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
 #, kde-format
 msgid "Location"
 msgstr "Ubicació"
@@ -515,27 +515,27 @@ msgstr "Afig un document"
 msgid "All Files (*.*)"
 msgstr "Tots els fitxers (*.*)"
 
-#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:74
+#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "Suprimix el document"
 
-#: app/DocumentsPage.qml:75
+#: app/DocumentsPage.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Segur que voleu suprimir este document?"
 
-#: app/DocumentsPage.qml:95
+#: app/DocumentsPage.qml:98
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Documents i bitllets"
 
-#: app/DocumentsPage.qml:104
+#: app/DocumentsPage.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Ni hi ha documents adjunts en esta reserva."
 
-#: app/DocumentsPage.qml:111
+#: app/DocumentsPage.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "Afig un document..."
@@ -587,19 +587,24 @@ msgstr "Hora d'inici"
 msgid "End Time"
 msgstr "Hora final"
 
-#: app/EventPage.qml:124
+#: app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/EventPage.qml:132
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Secció:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Fila:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:150
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -646,7 +651,7 @@ msgstr "Importa les ubicacions preferides"
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
-msgstr "Selecció d'ubicació"
+msgstr "Seleccioneu una ubicació"
 
 #: app/FavoriteLocationPage.qml:67
 #, kde-format
@@ -2396,10 +2401,9 @@ msgid "Select transfer..."
 msgstr "Seleccioneu el transbordament..."
 
 #: app/TransferDelegate.qml:114
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Seleccioneu el transbordament"
+msgstr "Suprimix el transbordament"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2571,29 +2575,28 @@ msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
-msgstr "Complet"
+msgstr "Completa"
 
 #: app/VehicleLoadIndicator.qml:52
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Baixa"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Mitjana"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Alta"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

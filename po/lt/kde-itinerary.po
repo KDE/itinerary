@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:57+0000\n"
+"POT-Creation-Date: 2023-01-17 00:58+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Add to calendar..."
 msgstr ""
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:81
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
@@ -208,8 +208,8 @@ msgstr ""
 msgid "Download failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:526
-#: app/applicationcontroller.cpp:541
+#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
+#: app/applicationcontroller.cpp:544
 #, kde-format
 msgid "Import failed: %1"
 msgstr ""
@@ -219,8 +219,8 @@ msgstr ""
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:391 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:613
+#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:616
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -229,32 +229,32 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: app/applicationcontroller.cpp:398
+#: app/applicationcontroller.cpp:401
 #, kde-format
 msgid "Health certificate imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:404
+#: app/applicationcontroller.cpp:407
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Nothing imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:479 app/applicationcontroller.cpp:505
+#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:493 app/applicationcontroller.cpp:518
+#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:569
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -375,7 +375,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr ""
 
-#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:120
+#: app/BusPage.qml:193 app/BusPage.qml:197 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:316
 #, kde-format
 msgid "Seat"
@@ -437,7 +437,7 @@ msgid "Time"
 msgstr ""
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:27 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
 #, kde-format
 msgid "Location"
 msgstr ""
@@ -512,27 +512,27 @@ msgstr ""
 msgid "All Files (*.*)"
 msgstr ""
 
-#: app/DocumentsPage.qml:59 app/DocumentsPage.qml:74
+#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr ""
 
-#: app/DocumentsPage.qml:75
+#: app/DocumentsPage.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr ""
 
-#: app/DocumentsPage.qml:95
+#: app/DocumentsPage.qml:98
 #, kde-format
 msgid "Documents and Tickets"
 msgstr ""
 
-#: app/DocumentsPage.qml:104
+#: app/DocumentsPage.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr ""
 
-#: app/DocumentsPage.qml:111
+#: app/DocumentsPage.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr ""
@@ -584,19 +584,24 @@ msgstr ""
 msgid "End Time"
 msgstr ""
 
-#: app/EventPage.qml:124
+#: app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/EventPage.qml:132
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr ""
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:150
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
