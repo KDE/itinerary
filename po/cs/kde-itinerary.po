@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:58+0000\n"
+"POT-Creation-Date: 2023-01-18 00:58+0000\n"
 "PO-Revision-Date: 2022-01-14 14:15+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1393,7 +1393,7 @@ msgstr "Vzdálenost: %1"
 msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
-#: app/JourneySummaryDelegate.qml:51
+#: app/JourneySummaryDelegate.qml:52
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -1829,6 +1829,49 @@ msgstr "Člen"
 msgid "Number:"
 msgstr "Číslo:"
 
+#: app/publictransport.cpp:220 app/publictransport.cpp:247
+#, fuzzy, kde-format
+#| msgid "Walk (%1)"
+msgid "Walk"
+msgstr "Chůze (%1)"
+
+#: app/publictransport.cpp:222
+#, fuzzy, kde-format
+#| msgid "Wait (%1)"
+msgid "Wait"
+msgstr "Počkat (%1)"
+
+#: app/publictransport.cpp:231
+#, kde-format
+msgid "Rented bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:233
+#, kde-format
+msgid "Rented moped"
+msgstr ""
+
+#: app/publictransport.cpp:235
+#, kde-format
+msgid "Rented kick scooter"
+msgstr ""
+
+#: app/publictransport.cpp:237
+#, fuzzy, kde-format
+#| msgid "Rental Car"
+msgid "Rented car"
+msgstr "Půjčené auto"
+
+#: app/publictransport.cpp:243
+#, kde-format
+msgid "Bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:245 app/StatisticsPage.qml:195
+#, kde-format
+msgid "Car"
+msgstr "Auto"
+
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -2091,11 +2134,6 @@ msgstr ""
 #, kde-format
 msgid "Boat"
 msgstr ""
-
-#: app/StatisticsPage.qml:195
-#, kde-format
-msgid "Car"
-msgstr "Auto"
 
 #: app/StopPickerPage.qml:29
 #, kde-format
@@ -2375,17 +2413,17 @@ msgstr ""
 msgid "Arrival Vehicle Layout"
 msgstr ""
 
-#: app/TransferDelegate.qml:95
+#: app/TransferDelegate.qml:96
 #, kde-format
 msgid "Select..."
 msgstr "Vybrat..."
 
-#: app/TransferDelegate.qml:109
+#: app/TransferDelegate.qml:110
 #, kde-format
 msgid "Select transfer..."
 msgstr "Vyberte přesun..."
 
-#: app/TransferDelegate.qml:114
+#: app/TransferDelegate.qml:116
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Delete transfer"

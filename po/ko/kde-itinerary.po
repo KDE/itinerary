@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:58+0000\n"
+"POT-Creation-Date: 2023-01-18 00:58+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1437,7 +1437,7 @@ msgstr "거리: %1"
 msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
-#: app/JourneySummaryDelegate.qml:51
+#: app/JourneySummaryDelegate.qml:52
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
@@ -1872,6 +1872,49 @@ msgstr "회원"
 msgid "Number:"
 msgstr "번호:"
 
+#: app/publictransport.cpp:220 app/publictransport.cpp:247
+#, fuzzy, kde-format
+#| msgid "Walk (%1)"
+msgid "Walk"
+msgstr "걷기(%1)"
+
+#: app/publictransport.cpp:222
+#, fuzzy, kde-format
+#| msgid "Wait (%1)"
+msgid "Wait"
+msgstr "대기(%1)"
+
+#: app/publictransport.cpp:231
+#, kde-format
+msgid "Rented bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:233
+#, kde-format
+msgid "Rented moped"
+msgstr ""
+
+#: app/publictransport.cpp:235
+#, kde-format
+msgid "Rented kick scooter"
+msgstr ""
+
+#: app/publictransport.cpp:237
+#, fuzzy, kde-format
+#| msgid "Rental Car"
+msgid "Rented car"
+msgstr "렌터카"
+
+#: app/publictransport.cpp:243
+#, kde-format
+msgid "Bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:245 app/StatisticsPage.qml:195
+#, kde-format
+msgid "Car"
+msgstr "자동차"
+
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
@@ -2139,11 +2182,6 @@ msgstr "열차"
 #, kde-format
 msgid "Boat"
 msgstr "선박"
-
-#: app/StatisticsPage.qml:195
-#, kde-format
-msgid "Car"
-msgstr "자동차"
 
 #: app/StopPickerPage.qml:29
 #, kde-format
@@ -2431,17 +2469,17 @@ msgstr "출발하는 차량 구성"
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
-#: app/TransferDelegate.qml:95
+#: app/TransferDelegate.qml:96
 #, kde-format
 msgid "Select..."
 msgstr "선택..."
 
-#: app/TransferDelegate.qml:109
+#: app/TransferDelegate.qml:110
 #, kde-format
 msgid "Select transfer..."
 msgstr "환승 선택..."
 
-#: app/TransferDelegate.qml:114
+#: app/TransferDelegate.qml:116
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Delete transfer"
