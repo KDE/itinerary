@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-18 00:58+0000\n"
-"PO-Revision-Date: 2023-01-13 01:31+0000\n"
+"PO-Revision-Date: 2023-01-18 13:49+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -595,7 +595,7 @@ msgstr "Hora Final"
 #: app/EventPage.qml:113
 #, kde-format
 msgid "Website"
-msgstr ""
+msgstr "Página Web"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1858,17 +1858,17 @@ msgstr "Espera (%1)"
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Bicicleta alugada"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Lambreta alugada"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Trotinete alugada"
 
 #: app/publictransport.cpp:237
 #, fuzzy, kde-format
@@ -1879,7 +1879,7 @@ msgstr "Carro de Aluguer"
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Bicicleta"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
