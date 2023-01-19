@@ -7,6 +7,7 @@
 #include "genericpkpass.h"
 #include "logging.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
@@ -22,6 +23,11 @@
 #include <QUuid>
 
 using namespace KItinerary;
+
+static bool isSamePass(const GenericPkPass &lhs, const GenericPkPass &rhs)
+{
+    return lhs.pkpassPassTypeIdentifier() == rhs.pkpassPassTypeIdentifier() && lhs.pkpassSerialNumber() == rhs.pkpassSerialNumber();
+}
 
 QString PassManager::Entry::name() const
 {
@@ -72,6 +78,10 @@ PassManager::PassManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_baseTime(QDateTime::currentDateTime())
 {
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 22, 42)
+    MergeUtil::registerComparator(isSamePass);
+#endif
+
     load();
 }
 
@@ -85,8 +95,9 @@ int PassManager::rowCount(const QModelIndex &parent) const
     return m_entries.size();
 }
 
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 22, 42)
 // ### this should eventually be replaced by custom type support in MergeUtil
-static bool isSamePass(const QVariant &lhs, const QVariant &rhs)
+static bool isSameBackwardCompat(const QVariant &lhs, const QVariant &rhs)
 {
     if (!MergeUtil::isSame(lhs, rhs)) {
         return false;
@@ -95,17 +106,22 @@ static bool isSamePass(const QVariant &lhs, const QVariant &rhs)
     if (JsonLd::isA<GenericPkPass>(lhs)) {
         const auto lhsPass = lhs.value<GenericPkPass>();
         const auto rhsPass = rhs.value<GenericPkPass>();
-        return lhsPass.pkpassPassTypeIdentifier() == rhsPass.pkpassPassTypeIdentifier() && lhsPass.pkpassSerialNumber() == rhsPass.pkpassSerialNumber();
+        return isSamePass(lhsPass, rhsPass);
     }
 
     return true;
 }
+#endif
 
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
     // check if this is an element we already have
     for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
-        if ((!id.isEmpty() && (*it).id == id) || isSamePass((*it).data, pass)) {
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 22, 42)
+        if ((!id.isEmpty() && (*it).id == id) || isSameBackwardCompat((*it).data, pass)) {
+#else
+        if ((!id.isEmpty() && (*it).id == id) || MergeUtil::isSame((*it).data, pass)) {
+#endif
             (*it).data = MergeUtil::merge((*it).data, pass);
             write((*it).data, (*it).id);
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
