@@ -7,6 +7,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -62,52 +63,65 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         width: parent.width
 
-        QQC2.Label {
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: programMembership.programName
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: programMembership.programName
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
+
+                App.BarcodeContainer {
+                    id: barcodeContainer
+                    Layout.alignment: Qt.AlignCenter
+                    Layout.fillWidth: true
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+
+                    barcodeType: programMembership.tokenType
+                    barcodeContent: programMembership.tokenData
+                    onDoubleClicked: scanModeController.toggle()
+                }
+            }
         }
 
-        App.BarcodeContainer {
-            id: barcodeContainer
-            Layout.alignment: Qt.AlignCenter
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-
-            barcodeType: programMembership.tokenType
-            barcodeContent: programMembership.tokenData
-            onDoubleClicked: scanModeController.toggle()
-        }
-
-        Kirigami.FormLayout {
-            Layout.fillWidth: true
-
-            Kirigami.Separator {
-                Kirigami.FormData.label: i18n("Member")
-                Kirigami.FormData.isSection: true
-                visible: nameLabel.visible || numberLabel.visible
-            }
-            QQC2.Label {
-                id: nameLabel
-                Kirigami.FormData.label: i18n("Name:")
-                text: programMembership.member.name
-                visible: programMembership.member.name !== ""
-            }
-            QQC2.Label {
-                id: numberLabel
-                Kirigami.FormData.label: i18n("Number:")
-                text: programMembership.membershipNumber
-                visible: programMembership.membershipNumber !== ""
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Valid from:")
-                text: Localizer.formatDateOrDateTimeLocal(programMembership, "validFrom")
-                visible: text !== ""
-            }
-            QQC2.Label {
-                Kirigami.FormData.label: i18n("Valid until:")
-                text: Localizer.formatDateOrDateTimeLocal(programMembership, "validUntil")
-                visible: text !== ""
+            contentItem: ColumnLayout {
+                MobileForm.FormTextDelegate {
+                    id: memberNameLabel
+                    text: i18n("Member")
+                    description: programMembership.member.name
+                    visible: programMembership.member.name !== ""
+                }
+                MobileForm.FormDelegateSeparator {
+                    visible: memberNameLabel.visible
+                }
+                MobileForm.FormTextDelegate {
+                    id: membershipNumberLabel
+                    text: i18n("Number")
+                    description: programMembership.membershipNumber
+                    visible: programMembership.membershipNumber !== ""
+                }
+                MobileForm.FormDelegateSeparator {
+                    visible: membershipNumberLabel.visible
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Valid from")
+                    description: Localizer.formatDateOrDateTimeLocal(programMembership, "validFrom")
+                    visible: description !== ""
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Valid until")
+                    description: Localizer.formatDateOrDateTimeLocal(programMembership, "validUntil")
+                    visible: description !== ""
+                }
             }
         }
     }
