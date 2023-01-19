@@ -216,6 +216,7 @@ Item {
             // back fields
             Kirigami.Separator {
                 Layout.fillWidth: true
+                visible: pass.backFields.length > 0
             }
             Repeater {
                 model: pass.backFields
