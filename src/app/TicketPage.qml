@@ -82,13 +82,19 @@ Kirigami.ScrollablePage {
                     id: barcodeContainer
                     Layout.alignment: Qt.AlignCenter
                     Layout.fillWidth: true
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
 
                     barcodeType: root.ticket.ticketTokenType
                     barcodeContent: root.ticket.ticketTokenData
                     onDoubleClicked: scanModeController.toggle()
                 }
+            }
+        }
 
-                // departure data
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
                 MobileForm.FormCardHeader {
                     title: i18n("Ticket")
                 }
