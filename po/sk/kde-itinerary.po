@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:58+0000\n"
+"POT-Creation-Date: 2023-01-20 00:58+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -125,7 +125,7 @@ msgstr "Pridať dokument..."
 #: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
 #: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
 #, kde-format
 msgid "Delete"
@@ -315,7 +315,7 @@ msgstr "Lístok na autobus"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
 #: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:47 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr ""
@@ -839,18 +839,19 @@ msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Program"
 
-#: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:115 app/TrainPage.qml:365
 #, fuzzy, kde-format
 msgid "Number"
 msgstr "Číslo:"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Pass"
 msgstr "Vymazať"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this pass?"
@@ -1018,7 +1019,6 @@ msgstr "Osoba"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
-#: app/ProgramMembershipPage.qml:92
 #, fuzzy, kde-format
 msgid "Name:"
 msgstr "Názov:"
@@ -1045,12 +1045,12 @@ msgstr ""
 msgid "Disease:"
 msgstr "Ochorenie:"
 
-#: app/HealthCertificateRecovery.qml:57 app/ProgramMembershipPage.qml:103
+#: app/HealthCertificateRecovery.qml:57
 #, kde-format
 msgid "Valid from:"
 msgstr "Platné od:"
 
-#: app/HealthCertificateRecovery.qml:61 app/ProgramMembershipPage.qml:108
+#: app/HealthCertificateRecovery.qml:61
 #, kde-format
 msgid "Valid until:"
 msgstr "Platný do:"
@@ -1773,14 +1773,14 @@ msgstr ""
 msgid "New arrival platform is: %1"
 msgstr ""
 
-#: app/passmanager.cpp:225
+#: app/passmanager.cpp:241
 #, fuzzy, kde-format
 #| msgid "Expires:"
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Vyprší:"
 
-#: app/passmanager.cpp:227
+#: app/passmanager.cpp:243
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgctxt "not yet expired tickets"
@@ -1890,20 +1890,27 @@ msgstr ""
 msgid "Fill address from coordinate"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:16
+#: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:86
+#: app/ProgramMembershipPage.qml:99
 #, fuzzy, kde-format
 msgid "Member"
 msgstr "Číslo:"
 
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
 #, fuzzy, kde-format
-msgid "Number:"
-msgstr "Číslo:"
+#| msgid "Valid from:"
+msgid "Valid from"
+msgstr "Platné od:"
+
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#, fuzzy, kde-format
+#| msgid "Valid until:"
+msgid "Valid until"
+msgstr "Platný do:"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
 #, kde-format
@@ -2255,18 +2262,6 @@ msgstr "Naozaj chcete odstrániť túto udalosť?"
 #, fuzzy, kde-format
 msgid "Name"
 msgstr "Názov:"
-
-#: app/TicketPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Valid from:"
-msgid "Valid from"
-msgstr "Platné od:"
-
-#: app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid until:"
-msgid "Valid until"
-msgstr "Platný do:"
 
 #: app/TicketPage.qml:121
 #, fuzzy, kde-format
@@ -2854,6 +2849,10 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
+
+#, fuzzy
+#~ msgid "Number:"
+#~ msgstr "Číslo:"
 
 #, fuzzy
 #~| msgid "Boarding time:"

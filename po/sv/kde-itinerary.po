@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:58+0000\n"
+"POT-Creation-Date: 2023-01-20 00:58+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -125,7 +125,7 @@ msgstr "Lägg till i kalender..."
 #: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
 #: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
 #, kde-format
 msgid "Delete"
@@ -310,7 +310,7 @@ msgstr "Båtbiljett"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
 #: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:47 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Streckkodsinläsning"
@@ -834,18 +834,19 @@ msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Program"
 
-#: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:115 app/TrainPage.qml:365
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Number"
 msgstr "Nummer:"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
 msgid "Delete Pass"
 msgstr "Ta bort passerkort"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Vill du verkligen ta bort passet?"
@@ -1015,7 +1016,6 @@ msgstr "Person"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
-#: app/ProgramMembershipPage.qml:92
 #, kde-format
 msgid "Name:"
 msgstr "Namn:"
@@ -1042,12 +1042,12 @@ msgstr "Positiv test:"
 msgid "Disease:"
 msgstr "Sjukdom:"
 
-#: app/HealthCertificateRecovery.qml:57 app/ProgramMembershipPage.qml:103
+#: app/HealthCertificateRecovery.qml:57
 #, kde-format
 msgid "Valid from:"
 msgstr "Giltig från:"
 
-#: app/HealthCertificateRecovery.qml:61 app/ProgramMembershipPage.qml:108
+#: app/HealthCertificateRecovery.qml:61
 #, kde-format
 msgid "Valid until:"
 msgstr "Giltig till:"
@@ -1751,13 +1751,13 @@ msgstr "Ny avgångsplattform är: %1"
 msgid "New arrival platform is: %1"
 msgstr "Ny ankomstplattform är: %1"
 
-#: app/passmanager.cpp:225
+#: app/passmanager.cpp:241
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Utgångna"
 
-#: app/passmanager.cpp:227
+#: app/passmanager.cpp:243
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -1864,20 +1864,27 @@ msgstr ""
 msgid "Fill address from coordinate"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:16
+#: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
 msgstr "Programmedlemskap"
 
-#: app/ProgramMembershipPage.qml:86
+#: app/ProgramMembershipPage.qml:99
 #, kde-format
 msgid "Member"
 msgstr "Medlem"
 
-#: app/ProgramMembershipPage.qml:98
-#, kde-format
-msgid "Number:"
-msgstr "Nummer:"
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Valid from:"
+msgid "Valid from"
+msgstr "Giltig från:"
+
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#, fuzzy, kde-format
+#| msgid "Valid until:"
+msgid "Valid until"
+msgstr "Giltig till:"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
 #, fuzzy, kde-format
@@ -2241,18 +2248,6 @@ msgstr "Vill du verkligen ta bort biljetten?"
 #| msgid "Name:"
 msgid "Name"
 msgstr "Namn:"
-
-#: app/TicketPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Valid from:"
-msgid "Valid from"
-msgstr "Giltig från:"
-
-#: app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid until:"
-msgid "Valid until"
-msgstr "Giltig till:"
 
 #: app/TicketPage.qml:121
 #, fuzzy, kde-format
@@ -2838,6 +2833,9 @@ msgstr "Acceptera"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "Number:"
+#~ msgstr "Nummer:"
 
 #, fuzzy
 #~| msgid "Boarding time:"

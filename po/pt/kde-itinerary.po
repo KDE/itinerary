@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 13:49+0000\n"
+"POT-Creation-Date: 2023-01-20 00:58+0000\n"
+"PO-Revision-Date: 2023-01-19 02:30+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-POFile-SpellExtra: Disrupção Fi Wi wheelmap org Wallet Android KMail\n"
 "X-POFile-IgnoreConsistency: FULL\n"
 "X-POFile-SpellExtra: Nextcloud DavDroid Connect GPX gpx NAA RAT Davx SMART\n"
-"X-POFile-SpellExtra: SHC dd MMMM Ferry\n"
+"X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete\n"
 "X-POFile-IgnoreConsistency: Show\n"
 
 #, kde-format
@@ -131,7 +131,7 @@ msgstr "Adicionar ao calendário..."
 #: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
 #: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
 #, kde-format
 msgid "Delete"
@@ -315,7 +315,7 @@ msgstr "Bilhete de Barco"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
 #: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:47 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Modo de Análise do Código de Barras"
@@ -810,17 +810,18 @@ msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:115 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "Número"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
 msgid "Delete Pass"
 msgstr "Apagar o Passe"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente remover este passe?"
@@ -983,7 +984,6 @@ msgstr "Pessoa"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
-#: app/ProgramMembershipPage.qml:92
 #, kde-format
 msgid "Name:"
 msgstr "Nome:"
@@ -1010,12 +1010,12 @@ msgstr "Teste positivo:"
 msgid "Disease:"
 msgstr "Doença:"
 
-#: app/HealthCertificateRecovery.qml:57 app/ProgramMembershipPage.qml:103
+#: app/HealthCertificateRecovery.qml:57
 #, kde-format
 msgid "Valid from:"
 msgstr "Válido de:"
 
-#: app/HealthCertificateRecovery.qml:61 app/ProgramMembershipPage.qml:108
+#: app/HealthCertificateRecovery.qml:61
 #, kde-format
 msgid "Valid until:"
 msgstr "Válido até:"
@@ -1715,13 +1715,13 @@ msgstr "A nova plataforma de partida é: %1"
 msgid "New arrival platform is: %1"
 msgstr "A nova plataforma de chegada é: %1"
 
-#: app/passmanager.cpp:225
+#: app/passmanager.cpp:241
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expirado"
 
-#: app/passmanager.cpp:227
+#: app/passmanager.cpp:243
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -1828,32 +1828,35 @@ msgstr "Obter a coordenada de um endereço"
 msgid "Fill address from coordinate"
 msgstr "Preencher o endereço da coordenada"
 
-#: app/ProgramMembershipPage.qml:16
+#: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
 msgstr "Inscrição no Programa"
 
-#: app/ProgramMembershipPage.qml:86
+#: app/ProgramMembershipPage.qml:99
 #, kde-format
 msgid "Member"
 msgstr "Membro"
 
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
 #, kde-format
-msgid "Number:"
-msgstr "Número:"
+msgid "Valid from"
+msgstr "Válido de"
+
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#, kde-format
+msgid "Valid until"
+msgstr "Válido até"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Caminhada (%1)"
+msgstr "Caminhada"
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Espera (%1)"
+msgstr "Espera"
 
 #: app/publictransport.cpp:231
 #, kde-format
@@ -1871,10 +1874,9 @@ msgid "Rented kick scooter"
 msgstr "Trotinete alugada"
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "Carro de Aluguer"
+msgstr "Carro de aluguer"
 
 #: app/publictransport.cpp:243
 #, kde-format
@@ -2203,16 +2205,6 @@ msgstr "Deseja realmente remover este bilhete?"
 msgid "Name"
 msgstr "Nome"
 
-#: app/TicketPage.qml:103
-#, kde-format
-msgid "Valid from"
-msgstr "Válido de"
-
-#: app/TicketPage.qml:109
-#, kde-format
-msgid "Valid until"
-msgstr "Válido até"
-
 #: app/TicketPage.qml:121
 #, kde-format
 msgid "Class"
@@ -2441,10 +2433,9 @@ msgid "Select transfer..."
 msgstr "Seleccionar a transferência..."
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Seleccionar a Transferência"
+msgstr "Apagar a transferência"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2616,29 +2607,28 @@ msgid "No vehicle layout information available."
 msgstr "Não está disponível nenhuma informação da disposição do veículo."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
-msgstr "COMPLETO"
+msgstr "COMPLETA"
 
 #: app/VehicleLoadIndicator.qml:52
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Baixa"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Média"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Elevada"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
@@ -2787,3 +2777,6 @@ msgstr "Aceitar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
+
+#~ msgid "Number:"
+#~ msgstr "Número:"

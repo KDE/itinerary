@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:58+0000\n"
+"POT-Creation-Date: 2023-01-20 00:58+0000\n"
 "PO-Revision-Date: 2023-01-18 17:51+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -127,7 +127,7 @@ msgstr "Ajouter à l'agenda..."
 #: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:35 app/ProgramMembershipPage.qml:57
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
 #: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
 #, kde-format
 msgid "Delete"
@@ -314,7 +314,7 @@ msgstr "Ticket de bateau"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
 #: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:47 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Mode « Numérisation de code-barres »"
@@ -814,18 +814,19 @@ msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Programme"
 
-#: app/FlightPage.qml:260 app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:115 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "Numéro"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
 msgid "Delete Pass"
 msgstr "Supprimer un mot de passe"
 
 # unreviewed-context
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Voulez-vous vraiment supprimer ce mot de passe ?"
@@ -991,7 +992,6 @@ msgstr "Personne"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
 #: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
-#: app/ProgramMembershipPage.qml:92
 #, kde-format
 msgid "Name:"
 msgstr "Nom :"
@@ -1018,12 +1018,12 @@ msgstr "Test positif :"
 msgid "Disease:"
 msgstr "Maladie :"
 
-#: app/HealthCertificateRecovery.qml:57 app/ProgramMembershipPage.qml:103
+#: app/HealthCertificateRecovery.qml:57
 #, kde-format
 msgid "Valid from:"
 msgstr "Valable à partir de :"
 
-#: app/HealthCertificateRecovery.qml:61 app/ProgramMembershipPage.qml:108
+#: app/HealthCertificateRecovery.qml:61
 #, kde-format
 msgid "Valid until:"
 msgstr "Valable jusqu'à :"
@@ -1727,13 +1727,13 @@ msgstr "Nouveau quai de départ : %1"
 msgid "New arrival platform is: %1"
 msgstr "Nouveau quai d'arrivée : %1"
 
-#: app/passmanager.cpp:225
+#: app/passmanager.cpp:241
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expiré"
 
-#: app/passmanager.cpp:227
+#: app/passmanager.cpp:243
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -1841,20 +1841,25 @@ msgstr "Remplir une coordonnée à partir de l’adresse "
 msgid "Fill address from coordinate"
 msgstr "Remplir l’adresse à partir de la coordonnée"
 
-#: app/ProgramMembershipPage.qml:16
+#: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
 msgstr "Adhésion à un programme"
 
-#: app/ProgramMembershipPage.qml:86
+#: app/ProgramMembershipPage.qml:99
 #, kde-format
 msgid "Member"
 msgstr "Membre"
 
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
 #, kde-format
-msgid "Number:"
-msgstr "Numéro :"
+msgid "Valid from"
+msgstr "Valable à partir de"
+
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#, kde-format
+msgid "Valid until"
+msgstr "Valable jusqu'à"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
 #, fuzzy, kde-format
@@ -2221,16 +2226,6 @@ msgstr "Voulez-vous vraiment supprimer ce billet ?"
 #, kde-format
 msgid "Name"
 msgstr "Nom"
-
-#: app/TicketPage.qml:103
-#, kde-format
-msgid "Valid from"
-msgstr "Valable à partir de"
-
-#: app/TicketPage.qml:109
-#, kde-format
-msgid "Valid until"
-msgstr "Valable jusqu'à"
 
 #: app/TicketPage.qml:121
 #, kde-format
@@ -2809,6 +2804,9 @@ msgstr "Accepter"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1 %2 à partir de %3 vers %4 sur %5"
+
+#~ msgid "Number:"
+#~ msgstr "Numéro :"
 
 #, fuzzy
 #~| msgid "Boarding time:"
