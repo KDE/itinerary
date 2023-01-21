@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:58+0000\n"
+"POT-Creation-Date: 2023-01-21 00:58+0000\n"
 "PO-Revision-Date: 2023-01-19 09:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
@@ -806,7 +806,7 @@ msgid "Program"
 msgstr "Program"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/TicketPage.qml:121 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "Številka"
@@ -1836,12 +1836,12 @@ msgstr "Članstvo v programu"
 msgid "Member"
 msgstr "Član"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid from"
 msgstr "Veljavno od"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
 #, kde-format
 msgid "Valid until"
 msgstr "Veljavno do"
@@ -2182,7 +2182,7 @@ msgstr "Odstrani vnos v zgodovino"
 msgid "No locations found"
 msgstr "Ni najdenih lokacij"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:93
+#: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
 msgstr "Vstopnica"
@@ -2197,12 +2197,12 @@ msgstr "Zbriši vstopnico"
 msgid "Do you really want to delete this ticket?"
 msgstr "Ali zares želite izbrisati to vstopnico?"
 
-#: app/TicketPage.qml:97 app/TrainPage.qml:356
+#: app/TicketPage.qml:103 app/TrainPage.qml:356
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: app/TicketPage.qml:121
+#: app/TicketPage.qml:127
 #, kde-format
 msgid "Class"
 msgstr "Razred"

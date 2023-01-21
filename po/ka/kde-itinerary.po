@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:58+0000\n"
+"POT-Creation-Date: 2023-01-21 00:58+0000\n"
 "PO-Revision-Date: 2023-01-19 05:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -803,7 +803,7 @@ msgid "Program"
 msgstr "პროგრამა"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/TicketPage.qml:121 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "რიცხვი"
@@ -1826,12 +1826,12 @@ msgstr "პროგრამის წევრობა"
 msgid "Member"
 msgstr "წევრი"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid from"
 msgstr "Ძალაშია"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
 #, kde-format
 msgid "Valid until"
 msgstr "ვადა"
@@ -2170,7 +2170,7 @@ msgstr "ისტორიის ჩანწერის წაშლა"
 msgid "No locations found"
 msgstr "მდებარეობები ვერ მოიძებნა"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:93
+#: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
 msgstr "ბილეთი"
@@ -2185,12 +2185,12 @@ msgstr "ბილეთის წაშლა"
 msgid "Do you really want to delete this ticket?"
 msgstr "მართლა გნებავთ, წაშალოთ ეს ბილეთ?"
 
-#: app/TicketPage.qml:97 app/TrainPage.qml:356
+#: app/TicketPage.qml:103 app/TrainPage.qml:356
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: app/TicketPage.qml:121
+#: app/TicketPage.qml:127
 #, kde-format
 msgid "Class"
 msgstr "კლასი"

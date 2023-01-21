@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:58+0000\n"
+"POT-Creation-Date: 2023-01-21 00:58+0000\n"
 "PO-Revision-Date: 2023-01-18 11:58+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -810,7 +810,7 @@ msgid "Program"
 msgstr "Програма"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/TicketPage.qml:121 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "Номер"
@@ -1841,12 +1841,12 @@ msgstr "Учасник програми"
 msgid "Member"
 msgstr "Учасник"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid from"
 msgstr "Початок чинності"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
 #, kde-format
 msgid "Valid until"
 msgstr "Завершення чинності"
@@ -2191,7 +2191,7 @@ msgstr "Вилучити запис журналу"
 msgid "No locations found"
 msgstr "Не знайдено жодного місця"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:93
+#: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
 msgstr "Квиток"
@@ -2206,12 +2206,12 @@ msgstr "Вилучення квитка"
 msgid "Do you really want to delete this ticket?"
 msgstr "Ви справді бажаєте вилучити цей квиток?"
 
-#: app/TicketPage.qml:97 app/TrainPage.qml:356
+#: app/TicketPage.qml:103 app/TrainPage.qml:356
 #, kde-format
 msgid "Name"
 msgstr "Назва"
 
-#: app/TicketPage.qml:121
+#: app/TicketPage.qml:127
 #, kde-format
 msgid "Class"
 msgstr "Клас"

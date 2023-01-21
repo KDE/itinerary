@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:58+0000\n"
+"POT-Creation-Date: 2023-01-21 00:58+0000\n"
 "PO-Revision-Date: 2022-11-10 20:24+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -836,7 +836,7 @@ msgid "Program"
 msgstr "Programm"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/TicketPage.qml:121 app/TrainPage.qml:365
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Number"
@@ -1874,13 +1874,13 @@ msgstr "Programmmitgliedschaft"
 msgid "Member"
 msgstr "Mitglied"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Gültig ab:"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
@@ -2232,7 +2232,7 @@ msgstr "Verlaufseintrag löschen"
 msgid "No locations found"
 msgstr "Keine Orte gefunden"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:93
+#: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
 msgstr "Fahrkarte"
@@ -2247,13 +2247,13 @@ msgstr "Fahrkarte löschen"
 msgid "Do you really want to delete this ticket?"
 msgstr "Möchten Sie diese Fahrkarte wirklich löschen?"
 
-#: app/TicketPage.qml:97 app/TrainPage.qml:356
+#: app/TicketPage.qml:103 app/TrainPage.qml:356
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Name:"
 
-#: app/TicketPage.qml:121
+#: app/TicketPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-20 00:58+0000\n"
-"PO-Revision-Date: 2023-01-15 13:23+0100\n"
+"POT-Creation-Date: 2023-01-21 00:58+0000\n"
+"PO-Revision-Date: 2023-01-18 20:31+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -589,7 +589,7 @@ msgstr "Ora di fine"
 #: app/EventPage.qml:113
 #, kde-format
 msgid "Website"
-msgstr ""
+msgstr "Sito web"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -805,7 +805,7 @@ msgid "Program"
 msgstr "Programma"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:115 app/TrainPage.qml:365
+#: app/TicketPage.qml:121 app/TrainPage.qml:365
 #, kde-format
 msgid "Number"
 msgstr "Numero"
@@ -1831,53 +1831,50 @@ msgstr "Adesione al programma"
 msgid "Member"
 msgstr "Membro"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:103
+#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
 #, kde-format
 msgid "Valid from"
 msgstr "Valido da"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
 #, kde-format
 msgid "Valid until"
 msgstr "Valido fino a"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Cammino (%1)"
+msgstr "Cammino"
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Attesa (%1)"
+msgstr "Attesa"
 
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Bicicletta noleggiata"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Motorino noleggiato"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Monopattino noleggiato"
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "Auto a noleggio"
+msgstr "Auto noleggiata"
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Bicicletta"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
@@ -2182,7 +2179,7 @@ msgstr "Rimuovi la voce della cronologia"
 msgid "No locations found"
 msgstr "Nessuna posizione trovata"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:93
+#: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
 msgstr "Biglietto"
@@ -2197,12 +2194,12 @@ msgstr "Elimina biglietto"
 msgid "Do you really want to delete this ticket?"
 msgstr "Vuoi davvero eliminare questo biglietto?"
 
-#: app/TicketPage.qml:97 app/TrainPage.qml:356
+#: app/TicketPage.qml:103 app/TrainPage.qml:356
 #, kde-format
 msgid "Name"
 msgstr "Nome"
 
-#: app/TicketPage.qml:121
+#: app/TicketPage.qml:127
 #, kde-format
 msgid "Class"
 msgstr "Classe"
