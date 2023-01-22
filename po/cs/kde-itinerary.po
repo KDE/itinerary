@@ -585,7 +585,7 @@ msgstr "Čas ukončení"
 #: app/EventPage.qml:113
 #, kde-format
 msgid "Website"
-msgstr ""
+msgstr "Webová stránka"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1835,16 +1835,14 @@ msgid "Valid until"
 msgstr "Platný do"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Chůze (%1)"
+msgstr ""
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Počkat (%1)"
+msgstr "Čekejte"
 
 #: app/publictransport.cpp:231
 #, kde-format
@@ -1862,15 +1860,14 @@ msgid "Rented kick scooter"
 msgstr ""
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "Půjčené auto"
+msgstr ""
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Kolo"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
@@ -2419,10 +2416,9 @@ msgid "Select transfer..."
 msgstr "Vyberte přesun..."
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Vyberte přesun"
+msgstr ""
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2763,6 +2759,3 @@ msgstr "Přijmout"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Number:"
-#~ msgstr "Číslo:"

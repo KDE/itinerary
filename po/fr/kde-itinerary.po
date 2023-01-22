@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-21 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 17:51+0100\n"
+"PO-Revision-Date: 2023-01-20 19:13+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1862,42 +1862,39 @@ msgid "Valid until"
 msgstr "Valable jusqu'à"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Marche (%1)"
+msgstr "Marche"
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Attente (%1)"
+msgstr "Attendre"
 
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Vélo de location"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Mobylette de location"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Trottinette de location"
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
 msgstr "Voiture de location"
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Vélo"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
