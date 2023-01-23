@@ -79,6 +79,14 @@ App.DetailsPage {
                     onLinkActivated: Qt.openUrlExternally(link)
                     visible: reservationFor.email
                 }
+
+                MobileForm.FormDelegateSeparator { visible: reservationFor.url != "" }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Website")
+                    description: Util.textToHtml(reservationFor.url)
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    visible: reservationFor.url != ""
+                }
             }
         }
 
