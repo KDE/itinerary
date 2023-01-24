@@ -37,7 +37,7 @@ static QJsonValue variantToJson(const QVariant &v)
         }
         case QMetaType::Int:
             return v.toInt();
-        case QVariant::DateTime:
+        case QMetaType::QDateTime:
         {
             const auto dt = v.toDateTime();
             if (!dt.isValid()) {
@@ -51,16 +51,16 @@ static QJsonValue variantToJson(const QVariant &v)
             }
             return v.toDateTime().toString(Qt::ISODate);
         }
-        case QVariant::Url:
+        case QMetaType::QUrl:
         {
             const auto url = v.toUrl();
             return url.isValid() ? url.toString() : QJsonValue();
         }
-    }
-
-    if (v.userType() == qMetaTypeId<QColor>()) {
-        const auto c = v.value<QColor>();
-        return c.isValid() ? v.value<QColor>().name() : QJsonValue();;
+        case QMetaType::QColor:
+        {
+            const auto c = v.value<QColor>();
+            return c.isValid() ? v.value<QColor>().name() : QJsonValue();;
+        }
     }
 
     if (v.canConvert<QVariantList>()) {
@@ -98,7 +98,7 @@ QJsonObject Json::toJson(const QMetaObject *mo, const void *elem)
             const auto value = prop.enumerator().valueToKey(key);
             obj.insert(QString::fromUtf8(prop.name()), QString::fromUtf8(value));
             continue;
-        } else if (QMetaType::typeFlags(prop.userType()) & QMetaType::IsEnumeration) { // external enums
+        } else if (QMetaType(prop.userType()).flags() & QMetaType::IsEnumeration) { // external enums
             obj.insert(QString::fromUtf8(prop.name()), prop.readOnGadget(elem).toString());
             continue;
         }
@@ -122,7 +122,7 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
             return v.toDouble();
         case QMetaType::Int:
             return v.toInt();
-        case QVariant::DateTime:
+        case QMetaType::QDateTime:
         {
             if (v.isObject()) {
                 const auto dtObj = v.toObject();
@@ -139,9 +139,9 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
             }
             return QDateTime::fromString(v.toString(), Qt::ISODate);
         }
-        case QVariant::Url:
+        case QMetaType::QUrl:
             return QUrl(v.toString());
-        case QVariant::StringList:
+        case QMetaType::QStringList:
         {
             const auto a = v.toArray();
             QStringList l;
@@ -151,10 +151,8 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
             }
             return l;
         }
-    }
-
-    if (mt == qMetaTypeId<QColor>()) {
-        return QColor(v.toString());
+        case QMetaType::QColor:
+            return QColor(v.toString());
     }
 
     return {};
@@ -183,23 +181,23 @@ void Json::fromJson(const QMetaObject *mo, const QJsonObject &obj, void *elem)
             prop.writeOnGadget(elem, key);
             continue;
         }
-        if ((QMetaType::typeFlags(prop.userType()) & QMetaType::IsEnumeration) && it.value().isString()) { // external enums
+        if ((QMetaType(prop.userType()).flags() & QMetaType::IsEnumeration) && it.value().isString()) { // external enums
             const QMetaType mt(prop.userType());
             const auto mo = mt.metaObject();
             if (!mo) {
-                qCWarning(Log) << "No meta object found for enum type:" << prop.type();
+                qCWarning(Log) << "No meta object found for enum type:" << prop.typeName();
                 continue;
             }
             const auto enumIdx = mo->indexOfEnumerator(prop.typeName() + strlen(mo->className()) + 2);
             if (enumIdx < 0) {
-                qCWarning(Log) << "Could not find QMetaEnum for" << prop.type();
+                qCWarning(Log) << "Could not find QMetaEnum for" << prop.typeName();
                 continue;
             }
             const auto me = mo->enumerator(enumIdx);
             bool success = false;
             const auto numValue = me.keyToValue(it.value().toString().toUtf8().constData(), &success);
             if (!success) {
-                qCWarning(Log) << "Unknown enum value" << it.value().toString() << "for" << prop.type();
+                qCWarning(Log) << "Unknown enum value" << it.value().toString() << "for" << prop.typeName();
                 continue;
             }
             auto valueData = mt.create();

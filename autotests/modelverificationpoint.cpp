@@ -35,10 +35,10 @@ void ModelVerificationPoint::setJsonPropertyFilter(std::vector<QString> &&filter
 
 QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
 {
-    switch (v.type()) {
-        case QVariant::String:
+    switch (v.userType()) {
+        case QMetaType::QString:
             return v.toString();
-        case QVariant::StringList:
+        case QMetaType::QStringList:
         {
             const auto l = v.toStringList();
             if (l.isEmpty()) {
@@ -48,15 +48,15 @@ QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
             std::copy(l.begin(), l.end(), std::back_inserter(a));
             return a;
         }
-        case QVariant::Bool:
+        case QMetaType::Bool:
             return v.toBool();
-        case QVariant::Int:
+        case QMetaType::Int:
             return v.toInt();
         default:
             break;
     }
 
-    if (QMetaType::metaObjectForType(v.userType())) {
+    if (QMetaType(v.userType()).metaObject()) {
         auto obj = KItinerary::JsonLdDocument::toJson(v);
         for (const auto &filter : m_jsonPropertyFilter) {
             obj.remove(filter);

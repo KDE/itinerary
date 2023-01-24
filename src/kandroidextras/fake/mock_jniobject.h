@@ -92,7 +92,7 @@ public:
     }
     inline QString toString() const
     {
-        return value().type() == QVariant::String ? value().toString() : protocol().join(QLatin1Char('\n'));
+        return value().userType() == QMetaType::QString ? value().toString() : protocol().join(QLatin1Char('\n'));
     }
 
     inline jobject object() const { return d.data(); }

@@ -56,7 +56,7 @@ QString Localizer::formatAddress(const QVariant &obj) const
         address.setRegion(a.addressRegion());
         address.setCountry(a.addressCountry());
     } else if (std::strcmp(obj.typeName(), "KOSMIndoorMap::OSMAddress") == 0) {
-        const auto mo = QMetaType::metaObjectForType(obj.userType());
+        const auto mo = QMetaType(obj.userType()).metaObject();
         address.setStreet(readFromGadget(mo, obj, "street") + QLatin1Char(' ') + readFromGadget(mo, obj, "houseNumber"));
         address.setPostalCode(readFromGadget(mo, obj, "postalCode"));
         address.setLocality(readFromGadget(mo, obj, "city"));
