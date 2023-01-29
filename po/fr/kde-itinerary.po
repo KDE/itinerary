@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-24 00:59+0000\n"
-"PO-Revision-Date: 2023-01-20 19:13+0100\n"
+"PO-Revision-Date: 2023-01-27 19:13+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1497,7 +1497,7 @@ msgstr "Type B"
 
 #: app/locationinformation.cpp:105
 msgid "Europlug"
-msgstr "Europlug"
+msgstr "Prise européenne"
 
 #: app/locationinformation.cpp:106
 msgid "Type D"
@@ -1568,7 +1568,7 @@ msgstr "Ouvrir Itinerary sur la page fournie"
 #: app/main.cpp:287
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
-msgstr "Fichier PkPass ou JSON-LD à importer."
+msgstr "Fichier « PkPass » ou « JSON-LD » à importer."
 
 #: app/main.qml:54
 #, kde-format
