@@ -717,7 +717,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.12.2" date="2023-02-02"/>
+    <release version="22.12.2" date="2023-02-02">
+      <description>
+        <ul>
+          <li>Improved data extraction for booking.com, Deutsche Bahn, Indico, MÁV, onepagebooking and Pretix.</li>
+          <li>Improved merging of separate train ticket and seat reservation data.</li>
+          <li>Fixed rendering of certain Apple Wallet event tickets.</li>
+          <li>Fixed importing multiple generic Apple Wallet passes.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.12.1" date="2023-01-05">
       <description>
         <ul>
