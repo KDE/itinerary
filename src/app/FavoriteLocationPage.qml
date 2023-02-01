@@ -25,8 +25,9 @@ Kirigami.Page {
 
     QtLocation.Plugin {
         id: mapPlugin
-        required.mapping: QtLocation.Plugin.AnyMappingFeatures
-        preferred: ["osm"]
+        name: "osm"
+        QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
+        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
     }
 
     Component.onCompleted: {

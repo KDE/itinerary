@@ -147,6 +147,8 @@ Kirigami.FormLayout {
     QtLocation.Plugin {
         id: osmPlugin
         name: "osm"
+        QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
+        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
     }
     QtLocation.GeocodeModel {
         id: geocodeModel

@@ -39,6 +39,7 @@ class ApplicationController : public QObject
     Q_PROPERTY(QString version READ applicationVersion CONSTANT)
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
+    Q_PROPERTY(QString userAgent READ userAgent CONSTANT)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
@@ -77,6 +78,7 @@ public:
     QString applicationVersion() const;
     QString extractorCapabilities() const;
     QVariant aboutData() const;
+    QString userAgent() const;
 
 Q_SIGNALS:
     void clipboardContentChanged();
