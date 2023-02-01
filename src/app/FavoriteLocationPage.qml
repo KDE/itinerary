@@ -134,6 +134,7 @@ Kirigami.Page {
         onCurrentIndexChanged: {
             var favLoc = delegateModel.items.get(currentIndex)
             map.center = QtPositioning.coordinate(favLoc.model.latitude, favLoc.model.longitude)
+            map.zoomLevel = 16;
         }
     }
 
