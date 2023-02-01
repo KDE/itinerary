@@ -60,21 +60,21 @@ target_link_libraries(itinerary PUBLIC
     KOSMIndoorMap
     KPim::Itinerary
     KPim::PkPass
-    KF5::CalendarCore
     KF5::Mime
-    KF5::I18n
-    KF5::I18nLocaleData
-    KF5::Contacts
-    KF5::CoreAddons
-    KF5::Notifications
+    KF${KF_MAJOR_VERSION}::CalendarCore
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::I18nLocaleData
+    KF${KF_MAJOR_VERSION}::Contacts
+    KF${KF_MAJOR_VERSION}::CoreAddons
+    KF${KF_MAJOR_VERSION}::Notifications
     Qt::Network
     Qt::Quick
 )
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
 endif()
-if (TARGET KF5::Holidays)
-    target_link_libraries(itinerary PUBLIC KF5::Holidays)
+if (TARGET KF${KF_MAJOR_VERSION}::Holidays)
+    target_link_libraries(itinerary PUBLIC KF${KF_MAJOR_VERSION}::Holidays)
 endif()
 
 if (Qt5QuickCompiler_FOUND)
@@ -117,10 +117,10 @@ if (ANDROID)
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
     target_link_libraries(itinerary-app PRIVATE
-        KF5::Archive
-        KF5::Kirigami2
+        KF${KF_MAJOR_VERSION}::Archive
+        KF${KF_MAJOR_VERSION}::Kirigami2
         Qt::Svg
-        KF5::Prison
+        KF${KF_MAJOR_VERSION}::Prison
         OpenSSL::SSL
     )
 
@@ -210,17 +210,17 @@ if (ANDROID)
 else ()
     target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
-        KF5::DBusAddons
-        KF5::WindowSystem
+        KF${KF_MAJOR_VERSION}::DBusAddons
+        KF${KF_MAJOR_VERSION}::WindowSystem
         Qt::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
 endif()
-if (TARGET KF5::Crash)
-    target_link_libraries(itinerary-app PRIVATE KF5::Crash)
+if (TARGET KF${KF_MAJOR_VERSION}::Crash)
+    target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::Crash)
 endif()
-if (TARGET KF5::UnitConversion)
-    target_link_libraries(itinerary-app PRIVATE KF5::UnitConversion)
+if (TARGET KF${KF_MAJOR_VERSION}::UnitConversion)
+    target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::UnitConversion)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

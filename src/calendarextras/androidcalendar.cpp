@@ -24,7 +24,9 @@ AndroidCalendar::AndroidCalendar(const QTimeZone &tz, jlong id)
     , m_calendar(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())), id)
 #endif
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setDeletionTracking(false);
+#endif
 }
 
 AndroidCalendar::~AndroidCalendar() = default;
@@ -140,6 +142,7 @@ KCalendarCore::Event::Ptr AndroidCalendar::event(const QString &uid, const QDate
     return event;
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 KCalendarCore::Event::Ptr AndroidCalendar::deletedEvent(const QString &uid, const QDateTime& recurrenceId) const
 {
     // deletion tracking not supported
@@ -155,6 +158,7 @@ KCalendarCore::Event::List AndroidCalendar::deletedEvents(KCalendarCore::EventSo
     Q_UNUSED(sortDirection);
     return {};
 }
+#endif
 
 KCalendarCore::Event::List AndroidCalendar::eventInstances(const KCalendarCore::Incidence::Ptr &event, KCalendarCore::EventSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {
@@ -215,6 +219,7 @@ KCalendarCore::Todo::Ptr AndroidCalendar::todo(const QString &uid, const QDateTi
     return {};
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 KCalendarCore::Todo::Ptr AndroidCalendar::deletedTodo(const QString &uid, const QDateTime& recurrenceId) const
 {
     // deletion tracking not supported
@@ -230,6 +235,7 @@ KCalendarCore::Todo::List AndroidCalendar::deletedTodos(KCalendarCore::TodoSortF
     Q_UNUSED(sortDirection);
     return {};
 }
+#endif
 
 KCalendarCore::Todo::List AndroidCalendar::todoInstances(const KCalendarCore::Incidence::Ptr &todo, KCalendarCore::TodoSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {
@@ -279,6 +285,7 @@ KCalendarCore::Journal::Ptr AndroidCalendar::journal(const QString &uid, const Q
     return {};
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 KCalendarCore::Journal::Ptr AndroidCalendar::deletedJournal(const QString& uid, const QDateTime& recurrenceId) const
 {
     Q_UNUSED(uid);
@@ -292,6 +299,7 @@ KCalendarCore::Journal::List AndroidCalendar::deletedJournals(KCalendarCore::Jou
     Q_UNUSED(sortDirection);
     return {};
 }
+#endif
 
 KCalendarCore::Journal::List AndroidCalendar::journalInstances(const KCalendarCore::Incidence::Ptr &journal, KCalendarCore::JournalSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {

@@ -16,6 +16,6 @@ target_link_libraries(itinerary-weather
         Qt::Network
         ZLIB::ZLIB
 )
-if (TARGET KF5::Holidays)
-    target_link_libraries(itinerary-weather PRIVATE KF5::Holidays)
+if (TARGET KF${KF_MAJOR_VERSION}::Holidays)
+    target_link_libraries(itinerary-weather PRIVATE KF${KF_MAJOR_VERSION}::Holidays)
 endif()

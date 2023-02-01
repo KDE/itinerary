@@ -48,7 +48,7 @@ ecm_target_qml_sources(itinerary-dateandtimeplugin PATH private SOURCES
 target_link_libraries(itinerary-dateandtimeplugin
     Qt${QT_MAJOR_VERSION}::Quick
     Qt${QT_MAJOR_VERSION}::Qml
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::I18n
 )
 if (TARGET KF5KirigamiDateAndTime)
     target_link_libraries(itinerary-dateandtimeplugin KF5KirigamiDateAndTime)

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5', 'Android/Qt5']
   'require':
     'frameworks/extra-cmake-modules': '@stable'
     'frameworks/kcoreaddons': '@stable'
@@ -23,7 +23,7 @@ Dependencies:
     'pim/kitinerary': '@same'
     'pim/khealthcertificate': '@latest'
 
-- 'on': ['Linux', 'FreeBSD']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
   'require':
     'frameworks/kdbusaddons': '@stable'
     'frameworks/qqc2-desktop-style': '@stable'
@@ -32,9 +32,44 @@ Dependencies:
     'frameworks/kfilemetadata': '@stable'
     'frameworks/kwindowsystem': '@stable'
 
-- 'on': ['Linux']
+- 'on': ['Linux/Qt5']
   'require':
     'frameworks/networkmanager-qt': '@stable'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6', 'Android/Qt6']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
+    'frameworks/kconfig': '@latest-kf6'
+    'frameworks/ki18n': '@latest-kf6'
+    'frameworks/kcontacts': '@latest-kf6'
+    'frameworks/kirigami': '@latest-kf6'
+    'frameworks/kitemmodels': '@latest-kf6'
+    'frameworks/knotifications': '@latest-kf6'
+    'frameworks/kholidays': '@latest-kf6'
+    'frameworks/karchive': '@latest-kf6'
+    'frameworks/prison': '@latest-kf6'
+    'frameworks/kunitconversion': '@latest-kf6'
+    'libraries/kpublictransport': "@same"
+    'libraries/kosmindoormap': "@same"
+# TODO we cannot pull this in as long as it doesn't depend on "real" KF6
+#    'libraries/kirigami-addons': '@latest'
+    'pim/kpkpass': '@same'
+    'pim/kitinerary': '@same'
+    'pim/khealthcertificate': '@latest'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
+  'require':
+    'frameworks/kdbusaddons': '@latest-kf6'
+    'frameworks/qqc2-desktop-style': '@latest-kf6'
+    'frameworks/kcrash': '@latest-kf6'
+    'frameworks/kio': '@latest-kf6'
+    'frameworks/kfilemetadata': '@latest-kf6'
+    'frameworks/kwindowsystem': '@latest-kf6'
+
+- 'on': ['Linux/Qt6']
+  'require':
+    'frameworks/networkmanager-qt': '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD' ]

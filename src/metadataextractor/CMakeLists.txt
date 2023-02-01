@@ -4,8 +4,8 @@
 add_library(kfilemetadata_itineraryextractor MODULE itineraryextractor.cpp)
 
 target_link_libraries(kfilemetadata_itineraryextractor
-    KF5::FileMetaData
-    KF5::I18n
+    KF${KF_MAJOR_VERSION}::FileMetaData
+    KF${KF_MAJOR_VERSION}::I18n
     Qt::Gui
     KPim::Itinerary
     KPim::PkPass

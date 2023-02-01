@@ -4,7 +4,7 @@
 kcoreaddons_add_plugin(itinerarythumbnail SOURCES itinerarycreator.cpp INSTALL_NAMESPACE "kf${QT_MAJOR_VERSION}/thumbcreator")
 
 target_link_libraries(itinerarythumbnail
-    KF5::KIOGui
+    KF${KF_MAJOR_VERSION}::KIOGui
     Qt::Gui
     KPim::PkPass
 )
