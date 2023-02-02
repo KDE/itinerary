@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:58+0000\n"
 "PO-Revision-Date: 2023-01-18 21:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: app/AboutPage.qml:16 app/main.qml:149
+#: app/AboutPage.qml:16 app/main.qml:146
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -509,7 +509,7 @@ msgstr "Veri sağlayıcıları: %1"
 msgid "Add Document"
 msgstr "Belge Ekle"
 
-#: app/DocumentsPage.qml:34 app/main.qml:56
+#: app/DocumentsPage.qml:34 app/main.qml:53
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tüm Dosyalar (*.*)"
@@ -630,59 +630,59 @@ msgstr "Konum %1"
 msgid "Favorite Locations"
 msgstr "Sık Kullanılan Konumlar"
 
-#: app/FavoriteLocationPage.qml:41
+#: app/FavoriteLocationPage.qml:42
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Sık Kullanılan Konumları Dışa Aktar"
 
-#: app/FavoriteLocationPage.qml:43 app/FavoriteLocationPage.qml:51
+#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX Dosyaları (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:49
+#: app/FavoriteLocationPage.qml:50
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Sık Kullanılan Konumları İçe Aktar"
 
-#: app/FavoriteLocationPage.qml:57 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Konum Seç"
 
-#: app/FavoriteLocationPage.qml:67
+#: app/FavoriteLocationPage.qml:68
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Sık Kullanılan Konum Ekle"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Sık Kullanılan Konumu Yeniden Adlandır"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Sık Kullanılan Konumu Kaldır"
 
-#: app/FavoriteLocationPage.qml:90
+#: app/FavoriteLocationPage.qml:91
 #, kde-format
 msgid "Export to GPX"
 msgstr "GPX Olarak Dışa Aktar"
 
-#: app/FavoriteLocationPage.qml:95
+#: app/FavoriteLocationPage.qml:96
 #, kde-format
 msgid "Import from GPX"
 msgstr "GPX'ten İçe Aktar"
 
-#: app/FavoriteLocationPage.qml:105
+#: app/FavoriteLocationPage.qml:106
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Sık kullanılan konumu yeniden adlandır"
 
-#: app/FavoriteLocationPage.qml:116
+#: app/FavoriteLocationPage.qml:117
 #, kde-format
 msgid "Rename"
 msgstr "Yeniden Adlandır"
@@ -820,7 +820,7 @@ msgstr "Kartı Sil"
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı gerçekten silmek istiyor musunuz?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:70
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -935,7 +935,7 @@ msgstr "Sınama %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "İyileşme (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:120
+#: app/HealthCertificatePage.qml:17 app/main.qml:117
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sağlık Sertifikaları"
@@ -1552,87 +1552,87 @@ msgstr "Verilen sayfadaki yolcu belgesini aç"
 msgid "PkPass or JSON-LD file to import."
 msgstr "İçe aktarılacak PkPass veya JSON-LD dosyası."
 
-#: app/main.qml:54
+#: app/main.qml:51
 #, kde-format
 msgid "Import Reservation"
 msgstr "Rezervasyon İçe Aktar"
 
-#: app/main.qml:56
+#: app/main.qml:53
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass dosyaları (*.pkpass)"
 
-#: app/main.qml:56
+#: app/main.qml:53
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF dosyaları (*.pdf)"
 
-#: app/main.qml:56 app/main.qml:65
+#: app/main.qml:53 app/main.qml:62
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
 
-#: app/main.qml:63
+#: app/main.qml:60
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Yolcu Belgesi Verisini Dışa Aktar"
 
-#: app/main.qml:75 app/PassPage.qml:88
+#: app/main.qml:72 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "İçe Aktar..."
 
-#: app/main.qml:80
+#: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Barkod Tara..."
 
-#: app/main.qml:85
+#: app/main.qml:82
 #, kde-format
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: app/main.qml:91
+#: app/main.qml:88
 #, kde-format
 msgid "Check for Updates"
 msgstr "Güncellemeleri Denetle"
 
-#: app/main.qml:99
+#: app/main.qml:96
 #, kde-format
 msgid "Download Maps"
 msgstr "Haritalar İndir"
 
-#: app/main.qml:107 app/StatisticsPage.qml:16
+#: app/main.qml:104 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "İstatistikler"
 
-#: app/main.qml:114
+#: app/main.qml:111
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Kartlar ve Programlar"
 
-#: app/main.qml:114
+#: app/main.qml:111
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Kartlar ve Programlar"
 
-#: app/main.qml:131
+#: app/main.qml:128
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
 
-#: app/main.qml:137
+#: app/main.qml:134
 #, kde-format
 msgid "Export..."
 msgstr "Dışa Aktar..."
 
-#: app/main.qml:142 app/WelcomePage.qml:17
+#: app/main.qml:139 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Yardım"
 
-#: app/main.qml:209
+#: app/main.qml:206
 #, kde-format
 msgid "Map download finished."
 msgstr "Harita indirme bitti."
@@ -1797,27 +1797,27 @@ msgstr "Kent:"
 msgid "Region:"
 msgstr "Bölge:"
 
-#: app/PlaceEditor.qml:189
+#: app/PlaceEditor.qml:191
 #, kde-format
 msgid "Coordinate:"
 msgstr "Koordinat:"
 
-#: app/PlaceEditor.qml:193
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "Pick coordinate"
 msgstr "Koordinat seç"
 
-#: app/PlaceEditor.qml:199
+#: app/PlaceEditor.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:213
+#: app/PlaceEditor.qml:215
 #, kde-format
 msgid "Find coordinate from address"
 msgstr "Koordinatı adresten bul"
 
-#: app/PlaceEditor.qml:224
+#: app/PlaceEditor.qml:226
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr "Adresi koordinattan doldur"

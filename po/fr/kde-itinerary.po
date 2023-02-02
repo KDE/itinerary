@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-24 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:58+0000\n"
 "PO-Revision-Date: 2023-01-27 19:13+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: app/AboutPage.qml:16 app/main.qml:149
+#: app/AboutPage.qml:16 app/main.qml:146
 #, kde-format
 msgid "About"
 msgstr "À propos"
@@ -516,7 +516,7 @@ msgstr "Fournisseurs de données : %1"
 msgid "Add Document"
 msgstr "Ajouter un document"
 
-#: app/DocumentsPage.qml:34 app/main.qml:56
+#: app/DocumentsPage.qml:34 app/main.qml:53
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tous les fichiers (*.*)"
@@ -638,59 +638,59 @@ msgstr "Emplacement %1"
 msgid "Favorite Locations"
 msgstr "Emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:41
+#: app/FavoriteLocationPage.qml:42
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Exporter vos emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:43 app/FavoriteLocationPage.qml:51
+#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fichiers GPX (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:49
+#: app/FavoriteLocationPage.qml:50
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Importer vos emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:57 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Choisir l'emplacement"
 
-#: app/FavoriteLocationPage.qml:67
+#: app/FavoriteLocationPage.qml:68
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Ajouter un emplacement favori"
 
-#: app/FavoriteLocationPage.qml:75
+#: app/FavoriteLocationPage.qml:76
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Renommer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:80
+#: app/FavoriteLocationPage.qml:81
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Supprimer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:90
+#: app/FavoriteLocationPage.qml:91
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exporter vers un format « GPX »"
 
-#: app/FavoriteLocationPage.qml:95
+#: app/FavoriteLocationPage.qml:96
 #, kde-format
 msgid "Import from GPX"
 msgstr "Importer à partir d'un format « GPX »"
 
-#: app/FavoriteLocationPage.qml:105
+#: app/FavoriteLocationPage.qml:106
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Renommer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:116
+#: app/FavoriteLocationPage.qml:117
 #, kde-format
 msgid "Rename"
 msgstr "Renommer"
@@ -831,7 +831,7 @@ msgstr "Supprimer un mot de passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Voulez-vous vraiment supprimer ce mot de passe ?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:70
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -947,7 +947,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Récupération (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:120
+#: app/HealthCertificatePage.qml:17 app/main.qml:117
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de santé"
@@ -1570,87 +1570,87 @@ msgstr "Ouvrir Itinerary sur la page fournie"
 msgid "PkPass or JSON-LD file to import."
 msgstr "Fichier « PkPass » ou « JSON-LD » à importer."
 
-#: app/main.qml:54
+#: app/main.qml:51
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importer une réservation"
 
-#: app/main.qml:56
+#: app/main.qml:53
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Fichiers PkPass (*.pkpass)"
 
-#: app/main.qml:56
+#: app/main.qml:53
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Fichiers PDF (*.pdf)"
 
-#: app/main.qml:56 app/main.qml:65
+#: app/main.qml:53 app/main.qml:62
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Fichiers KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:63
+#: app/main.qml:60
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exporter les données d'itinéraire"
 
-#: app/main.qml:75 app/PassPage.qml:88
+#: app/main.qml:72 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Importer..."
 
-#: app/main.qml:80
+#: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Numériser le code barre..."
 
-#: app/main.qml:85
+#: app/main.qml:82
 #, kde-format
 msgid "Paste"
 msgstr "Coller"
 
-#: app/main.qml:91
+#: app/main.qml:88
 #, kde-format
 msgid "Check for Updates"
 msgstr "Vérifier les mises à jour"
 
-#: app/main.qml:99
+#: app/main.qml:96
 #, kde-format
 msgid "Download Maps"
 msgstr "Télécharger des cartes"
 
-#: app/main.qml:107 app/StatisticsPage.qml:16
+#: app/main.qml:104 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiques"
 
-#: app/main.qml:114
+#: app/main.qml:111
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Mots de passe && Programmes"
 
-#: app/main.qml:114
+#: app/main.qml:111
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Mots de passe & programmes"
 
-#: app/main.qml:131
+#: app/main.qml:128
 #, kde-format
 msgid "Settings..."
 msgstr "Paramètres..."
 
-#: app/main.qml:137
+#: app/main.qml:134
 #, kde-format
 msgid "Export..."
 msgstr "Exporter..."
 
-#: app/main.qml:142 app/WelcomePage.qml:17
+#: app/main.qml:139 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Aide"
 
-#: app/main.qml:209
+#: app/main.qml:206
 #, kde-format
 msgid "Map download finished."
 msgstr "Chargement de la carte terminé."
@@ -1816,27 +1816,27 @@ msgstr "Ville : "
 msgid "Region:"
 msgstr "Région :"
 
-#: app/PlaceEditor.qml:189
+#: app/PlaceEditor.qml:191
 #, kde-format
 msgid "Coordinate:"
 msgstr "Coordonnée :"
 
-#: app/PlaceEditor.qml:193
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "Pick coordinate"
 msgstr "Coordonnées de rendez-vous"
 
-#: app/PlaceEditor.qml:199
+#: app/PlaceEditor.qml:201
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:213
+#: app/PlaceEditor.qml:215
 #, kde-format
 msgid "Find coordinate from address"
 msgstr "Remplir une coordonnée à partir de l’adresse "
 
-#: app/PlaceEditor.qml:224
+#: app/PlaceEditor.qml:226
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr "Remplir l’adresse à partir de la coordonnée"
