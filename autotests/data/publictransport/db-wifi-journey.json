@@ -1,0 +1,389 @@
+{
+    "sections": [
+        {
+            "disruptionEffect": "NormalService",
+            "distance": 507330,
+            "expectedArrivalPlatform": "15",
+            "expectedArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2021-12-21T12:10:00+01:00"
+            },
+            "expectedDeparturePlatform": "6",
+            "expectedDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2021-12-21T07:36:00+01:00"
+            },
+            "from": {
+                "identifier": {
+                    "ibnr": "8010255"
+                },
+                "latitude": 52.5104866027832,
+                "longitude": 13.434680938720703,
+                "name": "Berlin Ostbahnhof",
+                "type": "Stop"
+            },
+            "intermediateStops": [
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:42:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:47:00+01:00"
+                    },
+                    "expectedPlatform": "13",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:42:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:46:00+01:00"
+                    },
+                    "scheduledPlatform": "13",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8011160"
+                        },
+                        "latitude": 52.52559280395508,
+                        "longitude": 13.369544982910156,
+                        "name": "Berlin Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:59:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:02:00+01:00"
+                    },
+                    "expectedPlatform": "3",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T07:58:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:00:00+01:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8010404"
+                        },
+                        "latitude": 52.53464889526367,
+                        "longitude": 13.196898460388184,
+                        "name": "Berlin-Spandau",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:52:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:55:00+01:00"
+                    },
+                    "expectedPlatform": "1",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:52:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T08:53:00+01:00"
+                    },
+                    "scheduledPlatform": "1",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8006552"
+                        },
+                        "latitude": 52.42949676513672,
+                        "longitude": 10.7877836227417,
+                        "name": "Wolfsburg Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T09:28:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T09:33:00+01:00"
+                    },
+                    "expectedPlatform": "12",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T09:28:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T09:31:00+01:00"
+                    },
+                    "scheduledPlatform": "12",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000152"
+                        },
+                        "latitude": 52.37676239013672,
+                        "longitude": 9.741021156311035,
+                        "name": "Hannover Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:22:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:24:00+01:00"
+                    },
+                    "expectedPlatform": "4",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:20:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:22:00+01:00"
+                    },
+                    "scheduledPlatform": "4",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000036"
+                        },
+                        "latitude": 52.02926254272461,
+                        "longitude": 8.532722473144531,
+                        "name": "Bielefeld Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:50:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:54:00+01:00"
+                    },
+                    "expectedPlatform": "10",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:48:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T10:51:00+01:00"
+                    },
+                    "scheduledPlatform": "10",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000149"
+                        },
+                        "latitude": 51.678077697753906,
+                        "longitude": 7.807820796966553,
+                        "name": "Hamm (Westf) Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:12:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:14:00+01:00"
+                    },
+                    "expectedPlatform": "18",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:10:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:12:00+01:00"
+                    },
+                    "scheduledPlatform": "18",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000080"
+                        },
+                        "latitude": 51.51789474487305,
+                        "longitude": 7.459290027618408,
+                        "name": "Dortmund Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:25:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:26:00+01:00"
+                    },
+                    "expectedPlatform": "3",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:23:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:24:00+01:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000041"
+                        },
+                        "latitude": 51.478607177734375,
+                        "longitude": 7.223275184631348,
+                        "name": "Bochum Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:38:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:40:00+01:00"
+                    },
+                    "expectedPlatform": "1",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:35:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:37:00+01:00"
+                    },
+                    "scheduledPlatform": "1",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000098"
+                        },
+                        "latitude": 51.45135498046875,
+                        "longitude": 7.0147929191589355,
+                        "name": "Essen Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:52:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:54:00+01:00"
+                    },
+                    "expectedPlatform": "3",
+                    "notes": [
+                        "Reparatur am Zug"
+                    ],
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:48:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:50:00+01:00"
+                    },
+                    "scheduledPlatform": "3",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000086"
+                        },
+                        "latitude": 51.429786682128906,
+                        "longitude": 6.775903224945068,
+                        "name": "Duisburg Hbf",
+                        "type": "Stop"
+                    }
+                },
+                {
+                    "disruptionEffect": "NormalService",
+                    "expectedArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T12:02:00+01:00"
+                    },
+                    "expectedDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T12:03:00+01:00"
+                    },
+                    "expectedPlatform": "4",
+                    "scheduledArrivalTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T11:58:00+01:00"
+                    },
+                    "scheduledDepartureTime": {
+                        "timezone": "Europe/Berlin",
+                        "value": "2021-12-21T12:00:00+01:00"
+                    },
+                    "scheduledPlatform": "4",
+                    "stopPoint": {
+                        "identifier": {
+                            "ibnr": "8000082"
+                        },
+                        "latitude": 51.29200744628906,
+                        "longitude": 6.78683614730835,
+                        "name": "Düsseldorf Flughafen",
+                        "type": "Stop"
+                    }
+                }
+            ],
+            "mode": "PublicTransport",
+            "route": {
+                "direction": "Düsseldorf Hbf",
+                "line": {
+                    "mode": "LongDistanceTrain",
+                    "name": "ICE 944"
+                }
+            },
+            "scheduledArrivalPlatform": "15",
+            "scheduledArrivalTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2021-12-21T12:07:00+01:00"
+            },
+            "scheduledDeparturePlatform": "6",
+            "scheduledDepartureTime": {
+                "timezone": "Europe/Berlin",
+                "value": "2021-12-21T07:35:00+01:00"
+            },
+            "to": {
+                "identifier": {
+                    "ibnr": "8000085"
+                },
+                "latitude": 51.21996307373047,
+                "longitude": 6.794319152832031,
+                "name": "Düsseldorf Hbf",
+                "type": "Stop"
+            }
+        }
+    ]
+}

@@ -16,6 +16,7 @@ target_sources(itinerary PRIVATE
     gpxexport.cpp
     healthcertificatemanager.cpp
     importexport.cpp
+    journeysectionmodel.cpp
     json.cpp
     livedata.cpp
     livedatamanager.cpp
