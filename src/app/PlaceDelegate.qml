@@ -42,6 +42,7 @@ ColumnLayout {
         Layout.fillWidth: true
         text: place != undefined ? place.name : ""
         color: showButtons ? Kirigami.Theme.disabledTextColor : Kirigami.Theme.textColor
+        wrapMode: Text.WordWrap
         Accessible.ignored: !visible
     }
 
