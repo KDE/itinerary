@@ -54,6 +54,7 @@ Kirigami.Page {
                 center: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
                 plugin: mapPlugin
                 zoomLevel: 12
+                visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
 
                 QtLocation.MapQuickItem {
                     coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
@@ -82,6 +83,12 @@ Kirigami.Page {
                         }
                     }
                 }
+            }
+
+            Kirigami.PlaceholderMessage {
+                anchors.fill: parent
+                visible: !map.visible
+                text: i18n("Waiting for data...")
             }
         }
 
