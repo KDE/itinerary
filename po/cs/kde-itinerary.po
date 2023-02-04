@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Vit Pelcak <vit@pelcak.org>, 2019, 2020, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2019, 2020, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-07 03:38+0000\n"
-"PO-Revision-Date: 2022-01-14 14:15+0100\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"PO-Revision-Date: 2023-01-27 14:23+0100\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -98,7 +98,7 @@ msgstr ""
 #, kde-format
 msgctxt "to travel destination"
 msgid "To %1"
-msgstr ""
+msgstr "Do %1"
 
 #: app/AlternativeJourneyPage.qml:59
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Importován zdravotní certifikát."
 #: app/applicationcontroller.cpp:404
 #, kde-format
 msgid "Pass imported."
-msgstr ""
+msgstr "Letenka importována."
 
 #: app/applicationcontroller.cpp:410
 #, kde-format
@@ -180,12 +180,12 @@ msgstr ""
 #: app/BarcodeScannerPage.qml:17
 #, kde-format
 msgid "Scan Barcode"
-msgstr ""
+msgstr "Skenovat čarový kód"
 
 #: app/BarcodeScannerPage.qml:76
 #, kde-format
 msgid "No camera available."
-msgstr ""
+msgstr "Fotoaparát nedostupný."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:24 app/TrainDelegate.qml:27
 #: app/TransferDelegate.qml:47
@@ -211,7 +211,7 @@ msgstr "Čas příjezdu: %1"
 #: app/BoatPage.qml:16
 #, kde-format
 msgid "Boat Ticket"
-msgstr ""
+msgstr "Lístek na loď"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:29 app/EventPage.qml:26
 #: app/FlightPage.qml:35 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
@@ -303,7 +303,7 @@ msgstr "Převod na %1"
 #: app/CalendarImportPage.qml:19
 #, kde-format
 msgid "Calendar Import"
-msgstr ""
+msgstr "Importovat kalendář"
 
 #: app/CalendarImportPage.qml:23
 #, kde-format
@@ -411,7 +411,7 @@ msgstr "Poskytovatelé dat: %1"
 #: app/DetailsPage.qml:45
 #, kde-format
 msgid "Delete Event"
-msgstr ""
+msgstr "Smazat událost"
 
 #: app/DetailsPage.qml:46
 #, kde-format
@@ -491,7 +491,7 @@ msgstr "Upravit"
 #: app/DetailsPage.qml:170
 #, kde-format
 msgid "Add to calendar..."
-msgstr ""
+msgstr "Přidat do kalendáře..."
 
 #: app/DocumentsPage.qml:18
 #, kde-format
@@ -775,12 +775,12 @@ msgstr "Číslo:"
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:28
 #, kde-format
 msgid "Delete Pass"
-msgstr ""
+msgstr "Smazat letenku"
 
 #: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:29
 #, kde-format
 msgid "Do you really want to delete this pass?"
-msgstr ""
+msgstr "Opravdu si přejete smazat tuto letenku?"
 
 #: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:42
 #, kde-format
@@ -805,7 +805,7 @@ msgstr "Autobus %1 z %2 do %3"
 #: app/gpxexport.cpp:58
 #, kde-format
 msgid "Ferry from %1 to %2"
-msgstr ""
+msgstr "Přívoz z %1 do %2"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -850,7 +850,7 @@ msgstr "Importovat ze schránky"
 #: app/HealthCertificatePage.qml:67
 #, kde-format
 msgid "Delete Certificate"
-msgstr ""
+msgstr "Smazat certifikát"
 
 #: app/HealthCertificatePage.qml:68
 #, kde-format
@@ -1325,7 +1325,7 @@ msgstr "%1km"
 #: app/LocationInfoDelegate.qml:48
 #, kde-format
 msgid "Entering %1"
-msgstr ""
+msgstr "Vstupujete do %1"
 
 #: app/LocationInfoDelegate.qml:67
 #, kde-format
@@ -1335,17 +1335,17 @@ msgstr ""
 #: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
-msgstr ""
+msgstr "Některé nekompatibilní zásuvky: %1"
 
 #: app/LocationInfoDelegate.qml:80
 #, kde-format
 msgid "Some incompatible power plugs: %1"
-msgstr ""
+msgstr "Některé nekompatibilní zásuvky: %1"
 
 #: app/LocationInfoDelegate.qml:87
 #, kde-format
 msgid "Timezone change: %1 (%2)"
-msgstr ""
+msgstr "Změna časového pásma: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:94
 #, kde-format
@@ -1970,7 +1970,7 @@ msgstr "Vlaky"
 #: app/StatisticsPage.qml:113
 #, kde-format
 msgid "Boat"
-msgstr ""
+msgstr "Člun"
 
 #: app/StatisticsPage.qml:122
 #, kde-format
@@ -2070,7 +2070,7 @@ msgstr ""
 #: app/TimelinePage.qml:105
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr ""
+msgstr "Opravdu si přejete smazat tento výlet?"
 
 #: app/TimelinePage.qml:125
 #, kde-format
@@ -2102,17 +2102,17 @@ msgstr "Turistická zajímavost"
 #: app/TouristAttractionPage.qml:37
 #, kde-format
 msgid "Arrival Time:"
-msgstr ""
+msgstr "Čas příjezdu:"
 
 #: app/TouristAttractionPage.qml:41
 #, kde-format
 msgid "Departure Time:"
-msgstr ""
+msgstr "Čas odjezdu:"
 
 #: app/TrainDelegate.qml:51
 #, kde-format
 msgid "Departure from %1 on platform %2"
-msgstr ""
+msgstr "Odjezd z %1 na nástupišti %2"
 
 #: app/TrainDelegate.qml:72
 #, kde-format
@@ -2223,7 +2223,7 @@ msgstr "Zobrazit"
 #: app/TrainPage.qml:306
 #, kde-format
 msgid "Ticket number:"
-msgstr ""
+msgstr "Číslo jízdenky:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
@@ -2348,7 +2348,7 @@ msgstr "%1 (%2/%3)"
 #: app/VehicleLayoutPage.qml:17
 #, kde-format
 msgid "Vehicle Layout"
-msgstr ""
+msgstr "Rozvržení vozidla"
 
 #: app/VehicleLayoutPage.qml:97
 #, kde-format
@@ -2398,7 +2398,7 @@ msgstr ""
 #: app/VehicleLoadIndicator.qml:29
 #, kde-format
 msgid "FULL"
-msgstr ""
+msgstr "PLNO"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format
@@ -2500,25 +2500,25 @@ msgstr "Jasně."
 #, kde-format
 msgctxt "%1 is month name, %2 is year"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
 #, kde-format
 msgctxt "kirigami-addons"
 msgid "Days"
-msgstr ""
+msgstr "Dnů"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
 #, kde-format
 msgctxt "kirigami-addons"
 msgid "Months"
-msgstr ""
+msgstr "Měsíce"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
 #, kde-format
 msgctxt "kirigami-addons"
 msgid "Years"
-msgstr ""
+msgstr "Roky"
 
 #: kirigami-addons/dateandtime/DatePopup.qml:55
 #, kde-format
