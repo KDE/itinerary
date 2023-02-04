@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:58+0000\n"
+"POT-Creation-Date: 2023-02-04 00:59+0000\n"
 "PO-Revision-Date: 2023-01-19 02:30+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1764,25 +1764,25 @@ msgstr "Bilhete do Evento"
 msgid "Pass"
 msgstr "Passe"
 
-#: app/PlaceDelegate.qml:81
+#: app/PlaceDelegate.qml:82
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Ver o Mapa do Interior"
 
-#: app/PlaceDelegate.qml:88
+#: app/PlaceDelegate.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Ver no Mapa"
 
-#: app/PlaceDelegate.qml:101
+#: app/PlaceDelegate.qml:102
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navegar"
 
-#: app/PlaceDelegate.qml:111
+#: app/PlaceDelegate.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"

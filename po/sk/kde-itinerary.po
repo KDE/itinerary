@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:58+0000\n"
+"POT-Creation-Date: 2023-02-04 00:59+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1824,25 +1824,25 @@ msgstr ""
 msgid "Pass"
 msgstr ""
 
-#: app/PlaceDelegate.qml:81
+#: app/PlaceDelegate.qml:82
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:88
+#: app/PlaceDelegate.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr ""
 
-#: app/PlaceDelegate.qml:101
+#: app/PlaceDelegate.qml:102
 #, fuzzy, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Prejsť"
 
-#: app/PlaceDelegate.qml:111
+#: app/PlaceDelegate.qml:112
 #, fuzzy, kde-format
 #| msgid "Transport Data"
 msgctxt "@action:button"

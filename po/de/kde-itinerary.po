@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:58+0000\n"
+"POT-Creation-Date: 2023-02-04 00:59+0000\n"
 "PO-Revision-Date: 2022-11-10 20:24+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1799,25 +1799,25 @@ msgstr "Eintrittskarte"
 msgid "Pass"
 msgstr "Pass"
 
-#: app/PlaceDelegate.qml:81
+#: app/PlaceDelegate.qml:82
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Innenraumkarte anzeigen"
 
-#: app/PlaceDelegate.qml:88
+#: app/PlaceDelegate.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Auf Karte anzeigen"
 
-#: app/PlaceDelegate.qml:101
+#: app/PlaceDelegate.qml:102
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navigieren"
 
-#: app/PlaceDelegate.qml:111
+#: app/PlaceDelegate.qml:112
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
