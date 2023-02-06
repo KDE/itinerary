@@ -80,6 +80,7 @@ Kirigami.ScrollablePage {
                     text: i18n("Select")
                     icon.name: "document-save";
                     visible: journeyView.currentIndex == index
+                    enabled: top.journey.disruptionEffect != Disruption.NoService
                     onClicked: root.journey = journey
                 }
             }
