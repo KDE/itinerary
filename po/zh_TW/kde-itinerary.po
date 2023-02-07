@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:59+0000\n"
+"POT-Creation-Date: 2023-02-07 01:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -492,7 +492,7 @@ msgctxt "destination"
 msgid "To:"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:123
 #: app/TransferPage.qml:245
 #, kde-format
 msgid "Data providers: %1"

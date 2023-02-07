@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-04 00:59+0000\n"
+"POT-Creation-Date: 2023-02-07 01:00+0000\n"
 "PO-Revision-Date: 2023-01-19 02:30+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -504,7 +504,7 @@ msgctxt "destination"
 msgid "To:"
 msgstr "Para:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:123
 #: app/TransferPage.qml:245
 #, kde-format
 msgid "Data providers: %1"
