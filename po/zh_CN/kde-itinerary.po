@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 01:00+0000\n"
-"PO-Revision-Date: 2023-01-12 10:29\n"
+"PO-Revision-Date: 2023-02-07 11:01\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -603,7 +603,7 @@ msgstr ""
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
-msgstr ""
+msgstr "会员号："
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:44
@@ -1831,16 +1831,14 @@ msgid "Valid until"
 msgstr ""
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "步行 (%1)"
+msgstr ""
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "候车 (%1)"
+msgstr ""
 
 #: app/publictransport.cpp:231
 #, kde-format
@@ -1858,10 +1856,9 @@ msgid "Rented kick scooter"
 msgstr ""
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "出租车"
+msgstr ""
 
 #: app/publictransport.cpp:243
 #, kde-format
@@ -2409,10 +2406,9 @@ msgid "Select transfer..."
 msgstr "选择换乘方式..."
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "选择换乘方式"
+msgstr ""
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2507,16 +2503,14 @@ msgid_plural "Currencies: %2"
 msgstr[0] ""
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "导出为 GPX 文件"
+msgstr ""
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete trip"
-msgstr "删除"
+msgstr ""
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2584,11 +2578,10 @@ msgid "No vehicle layout information available."
 msgstr "没有列车编组的相关信息。"
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
-msgstr "满座"
+msgstr ""
 
 #: app/VehicleLoadIndicator.qml:52
 #, kde-format
@@ -2750,6 +2743,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Number:"
-#~ msgstr "会员号："
