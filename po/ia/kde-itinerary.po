@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 01:00+0000\n"
-"PO-Revision-Date: 2023-02-01 17:51+0100\n"
+"PO-Revision-Date: 2023-02-08 22:04+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1804,7 +1804,7 @@ msgstr "Coordinate:"
 #: app/PlaceEditor.qml:195
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Collige coordinata"
 
 #: app/PlaceEditor.qml:201
 #, kde-format
@@ -1814,12 +1814,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:215
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Trova coordinata ex adresse"
 
 #: app/PlaceEditor.qml:226
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Reimple adresse ex coordinata"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -1854,17 +1854,17 @@ msgstr "Pausa"
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Bicycletta locate"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Cyclo a motor locate"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Monopatin locate"
 
 #: app/publictransport.cpp:237
 #, kde-format
@@ -1874,7 +1874,7 @@ msgstr "Auto de location"
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Bicycletta"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format

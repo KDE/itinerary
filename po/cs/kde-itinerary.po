@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-07 01:00+0000\n"
-"PO-Revision-Date: 2023-01-27 14:23+0100\n"
+"PO-Revision-Date: 2023-02-07 10:57+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -177,7 +177,7 @@ msgstr "Činnosti"
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
 msgid "Alternative Connections"
-msgstr ""
+msgstr "Alternativní spojení"
 
 #: app/AlternativeJourneyPage.qml:29 app/AlternativeJourneyPage.qml:41
 #, kde-format
@@ -260,7 +260,7 @@ msgstr "Import byl dokončen."
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
 msgid "In barcode scanning mode"
-msgstr ""
+msgstr "Režim čtení čarového kódu"
 
 #: app/BarcodeScannerPage.qml:17
 #, kde-format
@@ -360,7 +360,7 @@ msgstr "Na jméno"
 #: app/BookingCard.qml:39
 #, kde-format
 msgid "Ticket number:"
-msgstr "Číslo jízdenky:"
+msgstr "Číslo lístku:"
 
 #: app/BusPage.qml:18
 #, kde-format
@@ -402,7 +402,7 @@ msgstr "Importovat kalendář"
 #: app/CalendarImportPage.qml:23
 #, kde-format
 msgid "Import selected events"
-msgstr ""
+msgstr "Importovat vybrané události"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -523,7 +523,7 @@ msgstr ""
 #: app/DocumentsPage.qml:98
 #, kde-format
 msgid "Documents and Tickets"
-msgstr ""
+msgstr "Dokumenty a letenky"
 
 #: app/DocumentsPage.qml:107
 #, kde-format
@@ -767,7 +767,7 @@ msgstr "Čas nástupu"
 #: app/FlightPage.qml:104
 #, kde-format
 msgid "Boarding group"
-msgstr ""
+msgstr "Nastupující skupina"
 
 #: app/FlightPage.qml:119
 #, kde-format
@@ -849,12 +849,12 @@ msgstr "Certifikát očkování pro %1"
 #: app/HealthCertificateBarcode.qml:36
 #, kde-format
 msgid "Test certificate of %1"
-msgstr ""
+msgstr "Certifikát testu %1"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "Certifikát zotavení  %1"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -869,7 +869,7 @@ msgstr "Certifikát není platný"
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "Neznámý certifikát vydavatele"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
@@ -909,7 +909,7 @@ msgstr "Test vypršel"
 #: app/HealthCertificateBarcode.qml:80
 #, kde-format
 msgid "Recovery certificate valid"
-msgstr ""
+msgstr "Certifikát zotavení je platný"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
@@ -1202,13 +1202,13 @@ msgstr "Patro %1"
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
-msgstr ""
+msgstr "O patro níže"
 
 #: app/IndoorMapPage.qml:66
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
-msgstr ""
+msgstr "O patro výš"
 
 #: app/IndoorMapPage.qml:76
 #, kde-format
@@ -1578,7 +1578,7 @@ msgstr "Importovat..."
 #: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
-msgstr ""
+msgstr "Číst čarový kód..."
 
 #: app/main.qml:82
 #, kde-format
@@ -1706,13 +1706,13 @@ msgstr ""
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
-msgstr ""
+msgstr "Prošlý"
 
 #: app/passmanager.cpp:243
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
-msgstr ""
+msgstr "Platný"
 
 #: app/PassPage.qml:17
 #, kde-format
@@ -1723,7 +1723,7 @@ msgstr ""
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: app/PassPage.qml:86
 #, kde-format
@@ -1743,7 +1743,7 @@ msgstr "Nástupní doklad"
 #: app/PkPassPage.qml:19
 #, kde-format
 msgid "Event Ticket"
-msgstr ""
+msgstr "Lístek události"
 
 #: app/PkPassPage.qml:20
 #, kde-format
@@ -1792,7 +1792,7 @@ msgstr "Region:"
 #: app/PlaceEditor.qml:191
 #, kde-format
 msgid "Coordinate:"
-msgstr ""
+msgstr "Souřadnice:"
 
 #: app/PlaceEditor.qml:195
 #, kde-format
@@ -2130,7 +2130,7 @@ msgstr "Celkem"
 #: app/StatisticsPage.qml:138
 #, kde-format
 msgid "Train"
-msgstr ""
+msgstr "Vlak"
 
 #: app/StatisticsPage.qml:176
 #, kde-format
@@ -2170,17 +2170,17 @@ msgstr "Nenalezeno žádné místo"
 #: app/TicketPage.qml:17 app/TicketPage.qml:99
 #, kde-format
 msgid "Ticket"
-msgstr ""
+msgstr "Lístek"
 
 #: app/TicketPage.qml:29
 #, kde-format
 msgid "Delete Ticket"
-msgstr ""
+msgstr "Smazat lístek"
 
 #: app/TicketPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this ticket?"
-msgstr ""
+msgstr "Opravdu si přejete smazat tento lístek?"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/TicketPage.qml:103 app/TrainPage.qml:357
@@ -2226,12 +2226,12 @@ msgstr "Přidat cestu vlakem..."
 #: app/TimelinePage.qml:87
 #, kde-format
 msgid "Add from calendar..."
-msgstr ""
+msgstr "Přidat z kalendáře..."
 
 #: app/TimelinePage.qml:104
 #, kde-format
 msgid "Delete Trip"
-msgstr ""
+msgstr "Smazat výlet"
 
 #: app/TimelinePage.qml:105
 #, kde-format
@@ -2268,12 +2268,12 @@ msgstr "Turistická zajímavost"
 #: app/TouristAttractionPage.qml:63
 #, kde-format
 msgid "Depature Time"
-msgstr ""
+msgstr "Čas odletu"
 
 #: app/TouristAttractionPage.qml:81
 #, kde-format
 msgid "Arrival Time"
-msgstr ""
+msgstr "Čas příletu"
 
 #: app/TrainDelegate.qml:52
 #, kde-format
@@ -2360,7 +2360,7 @@ msgstr "Vlaková jízddenka"
 #, kde-format
 msgctxt "train station"
 msgid "Station"
-msgstr ""
+msgstr "Zastávka"
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:256
 #, kde-format
@@ -2376,7 +2376,7 @@ msgstr "(bylo: %1)"
 #: app/TrainPage.qml:191 app/TrainPage.qml:299
 #, kde-format
 msgid "Additional notes"
-msgstr ""
+msgstr "Dodatečné poznámky"
 
 #: app/TrainPage.qml:321
 #, kde-format
@@ -2418,7 +2418,7 @@ msgstr "Vyberte přesun..."
 #: app/TransferDelegate.qml:116
 #, kde-format
 msgid "Delete transfer"
-msgstr ""
+msgstr "Smazat přesun"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2511,9 +2511,9 @@ msgstr ""
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Měna: %2"
+msgstr[1] "Měny: %2"
+msgstr[2] "Měna: %2"
 
 #: app/TripGroupDelegate.qml:130
 #, kde-format
@@ -2758,4 +2758,4 @@ msgstr "Přijmout"
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
-msgstr ""
+msgstr "%1%2 z %3 do %4 na %5"
