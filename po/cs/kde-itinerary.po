@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-07 03:38+0000\n"
-"PO-Revision-Date: 2023-01-27 14:23+0100\n"
+"PO-Revision-Date: 2023-02-07 10:57+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,7 +92,7 @@ msgstr "Schopnosti extraktoru:"
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
 msgid "Alternative Connections"
-msgstr ""
+msgstr "Alternativní spojení"
 
 #: app/AlternativeJourneyPage.qml:29 app/AlternativeJourneyPage.qml:41
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "Import byl dokončen."
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
 msgid "In barcode scanning mode"
-msgstr ""
+msgstr "Režim čtení čarového kódu"
 
 #: app/BarcodeScannerPage.qml:17
 #, kde-format
@@ -308,7 +308,7 @@ msgstr "Importovat kalendář"
 #: app/CalendarImportPage.qml:23
 #, kde-format
 msgid "Import selected events"
-msgstr ""
+msgstr "Importovat vybrané události"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -732,7 +732,7 @@ msgstr "Nástup: "
 #: app/FlightPage.qml:91
 #, kde-format
 msgid "Boarding group:"
-msgstr ""
+msgstr "Nastupující skupina:"
 
 #: app/FlightPage.qml:103
 #, kde-format
@@ -1101,13 +1101,13 @@ msgstr "Patro %1"
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
-msgstr ""
+msgstr "O patro níže"
 
 #: app/IndoorMapPage.qml:66
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
-msgstr ""
+msgstr "O patro výš"
 
 #: app/IndoorMapPage.qml:76
 #, kde-format
@@ -1477,7 +1477,7 @@ msgstr "Importovat..."
 #: app/main.qml:52
 #, kde-format
 msgid "Scan Barcode..."
-msgstr ""
+msgstr "Číst čarový kód..."
 
 #: app/main.qml:57
 #, kde-format
@@ -1605,13 +1605,13 @@ msgstr ""
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
-msgstr ""
+msgstr "Prošlý"
 
 #: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
-msgstr ""
+msgstr "Platný"
 
 #: app/PassPage.qml:17
 #, kde-format
@@ -1622,7 +1622,7 @@ msgstr ""
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: app/PassPage.qml:86
 #, kde-format
@@ -1642,7 +1642,7 @@ msgstr "Nástupní doklad"
 #: app/PkPassPage.qml:19
 #, kde-format
 msgid "Event Ticket"
-msgstr ""
+msgstr "Lístek události"
 
 #: app/PkPassPage.qml:20
 #, kde-format
@@ -2010,17 +2010,17 @@ msgstr "Nenalezeno žádné místo"
 #: app/TicketPage.qml:16 app/TicketPage.qml:86
 #, kde-format
 msgid "Ticket"
-msgstr ""
+msgstr "Lístek"
 
 #: app/TicketPage.qml:28
 #, kde-format
 msgid "Delete Ticket"
-msgstr ""
+msgstr "Smazat lístek"
 
 #: app/TicketPage.qml:29
 #, kde-format
 msgid "Do you really want to delete this ticket?"
-msgstr ""
+msgstr "Opravdu si přejete smazat tento lístek?"
 
 #: app/TicketPage.qml:113 app/TrainEditor.qml:175 app/TrainPage.qml:261
 #, kde-format
@@ -2060,12 +2060,12 @@ msgstr "Přidat cestu vlakem..."
 #: app/TimelinePage.qml:87
 #, kde-format
 msgid "Add from calendar..."
-msgstr ""
+msgstr "Přidat z kalendáře..."
 
 #: app/TimelinePage.qml:104
 #, kde-format
 msgid "Delete Trip"
-msgstr ""
+msgstr "Smazat výlet"
 
 #: app/TimelinePage.qml:105
 #, kde-format
@@ -2223,7 +2223,7 @@ msgstr "Zobrazit"
 #: app/TrainPage.qml:306
 #, kde-format
 msgid "Ticket number:"
-msgstr "Číslo jízdenky:"
+msgstr "Číslo lístku:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
@@ -2326,9 +2326,9 @@ msgstr ""
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Měna: %2"
+msgstr[1] "Měny: %2"
+msgstr[2] "Měna: %2"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2544,4 +2544,4 @@ msgstr "Přijmout"
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
-msgstr ""
+msgstr "%1%2 z %3 do %4 na %5"
