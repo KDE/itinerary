@@ -81,6 +81,7 @@
     <p xml:lang="ia">KDE Itinerary es un assistente digital de viage con le prioritate de proteger tu confidentialitate.</p>
     <p xml:lang="id">KDE Itinerary adalah asisten perjalanan digital dengan prioritas melindungi privasimu.</p>
     <p xml:lang="it">KDE Itinerary è un assistente di viaggio digitale con una priorità sulla protezionedella tua riservatezza.</p>
+    <p xml:lang="ka">KDE Itinerary მოგზაურობის ციფრული დამხმარეა, თქვენი კონფიდენციალობის შენარჩუნების პრიორიტეტით.</p>
     <p xml:lang="ko">KDE 여행 정보는 프라이버시를 지키는 디지털 여행 도우미입니다.</p>
     <p xml:lang="nl">KDE Itinerary is een digitale reisassistent met prioriteit op beschermen van uw privacy.</p>
     <p xml:lang="pl">KDE Itinerary jest cyfrowym pomocnikiem podróży, którego nadrzędnym celem jest chronienie twojej prywatności.</p>
@@ -136,6 +137,7 @@
       <li xml:lang="ia">Vista de chronologia de unitinerario unificate viage con gruppamento de viages automatic.</li>
       <li xml:lang="id">Tampilan garis waktu dari rencana perjalanan terpadu dengan pengelompokan perjalanan otomatis.</li>
       <li xml:lang="it">Visualizzazione della sequenza temporale di un itinerario di viaggio unificato con raggruppamento automatico dei viaggi.</li>
+      <li xml:lang="ka">Itinerrary-ის გაერთიანებული მოგზაურობის ხედი დროის ხაზზე, მოვლენების ავტომატური დაჯგუფებით.</li>
       <li xml:lang="ko">자동 여행 그룹 기능이 있는 통합된 여정 타임라인 보기.</li>
       <li xml:lang="nl">Tijdlijn weergave van een geünificeerd reisroute met automatische groepering van trips.</li>
       <li xml:lang="pl">Widok osi czasu dla ujednoliconego planu podróży z samoczynnym grupowaniem podróży.</li>
@@ -161,6 +163,7 @@
       <li xml:lang="ia">Supporta reservationes de traino, bus e volo tal como hotel, restaurante, eventos e reservationes de location de vehiculo.</li>
       <li xml:lang="id">Mendukung pemesanan kereta api, bus dan penerbangan serta pemesanan hotel, restoran, acara dan persewaan mobil.</li>
       <li xml:lang="it">Supporta prenotazioni per treni, autobus e voli aerei così come alberghi, ristoranti, eventi e noleggi auto.</li>
+      <li xml:lang="ka">აქვს მატარებლის, ავტობუსის და ფრენის ბილეთების დაჯავშნის, ასევე სასტუმროს, რესტორანის, მოვლენისა და მანქანის ქირაობის რეზერვაციების მხარდაჭერა.</li>
       <li xml:lang="ko">철도, 버스, 항공 예약 이외에도 호텔, 레스토랑, 행사, 렌터카 예약도 지원합니다.</li>
       <li xml:lang="nl">Ondersteunt boekingen van trein, bus en vlucht evenals reserveringen van hotel, restaurant, evenement en huurauto.</li>
       <li xml:lang="pl">Obsługuje bilety na pociągi, autobusy i samoloty, a także hotele, restauracje, wydarzenia i wypożyczanie samochodów.</li>
@@ -214,6 +217,7 @@
       <li xml:lang="ia">Supporta gestion de billet per reservationes de multi-traveler e multi-ticket.</li>
       <li xml:lang="id">Mendukung pengelolaan tiket untuk multi-traveller dan pemesanan multi-tiket.</li>
       <li xml:lang="it">Supporta la gestione dei biglietti per prenotazioni multi-viaggiatore e multi-biglietto.</li>
+      <li xml:lang="ka">აქვს მრავალ-მოგზაურიანი და მრავალ-ბილეთიანი ჯავშნების მართვის მხარდაჭერა.</li>
       <li xml:lang="ko">여행자가 여러 명이거나 여러 장의 표로 구성된 예약을 지원합니다.</li>
       <li xml:lang="nl">Ondersteuning voor beheer van tickets voor meerdere reizigers en booking van meerdere tickets.</li>
       <li xml:lang="pl">Obsługuje zarządzanie biletami w przypadku rezerwacji u wielu przewoźników i wielu biletów.</li>
@@ -239,6 +243,7 @@
       <li xml:lang="ia">Extraction de datos de reservation automatic ex varie formatos de entrata, executate localmente sur tu dispositivo.</li>
       <li xml:lang="id">Ekstraksi data pemesanan otomatis dari berbagai format input, dilakukan secara lokal di perantimu.</li>
       <li xml:lang="it">Estrazione automatica dei dati di prenotazione da vari formati di ingresso, eseguita localmente sul tuo dispositivo.</li>
+      <li xml:lang="ka">ჯავშნის მონაცემების ავტომატური ამოღება მრავალი ფორმატიდან, რომელიც თქვენს მოწყობილობაზე ხდება.</li>
       <li xml:lang="ko">다양한 입력 자료에서 여정을 추출하며, 로컬 장치에서 이루어집니다.</li>
       <li xml:lang="nl">Automatische extractie van bookinggegevens ui verschillende invoerformaten, lokaal uitgevoerd op uw apparaat.</li>
       <li xml:lang="pl">Wydobywanie danych o rezerwacji z różnych formatów wejściowych, wykonywalne lokalnie na twoim urządzeniu.</li>
@@ -342,6 +347,7 @@
       <li xml:lang="ia">Selection de connexiones alternative de traino sur billetes libere o sur connexiones mancate.</li>
       <li xml:lang="id">Pemilihan koneksi kereta api alternatif untuk tiket tidak terikat atau koneksi yang terlewat.</li>
       <li xml:lang="it">Selezione di collegamenti ferroviari alternativi su biglietti non vincolati o collegamenti persi.</li>
+      <li xml:lang="ka">მატარებლების სხვა მიერთებების არჩევანის მხარდაჭერა გაუქმებული ბილეთების ან დაგვიანებული გადაჯდომის დროს.</li>
       <li xml:lang="ko">열차를 놓쳤거나 자유 여정 승차권의 경우 대체 열차편 정보를 제공합니다.</li>
       <li xml:lang="nl">Selectie van alternatieve treinverbindingen op niet-gebonden tickets of over gemiste verbindingen.</li>
       <li xml:lang="pl">Wybór zamiennych połączeń kolejowych dla nieprzypisanych biletów lub przegapionych połączeń.</li>
@@ -367,6 +373,7 @@
       <li xml:lang="ia">Navigation de transportation de terra local inter elementos de tu itinerario.</li>
       <li xml:lang="id">Navigasi transportasi darat lokal antara elemen rencana perjalananmu.</li>
       <li xml:lang="it">Navigazione del trasporto via terra locale tra gli elementi del tuo itinerario.</li>
+      <li xml:lang="ka">ადგილობრივი სახმელეთო ტრანსპორტირების ნავიგაცია თქვენი მარშრუტის ელემენტებს შორის.</li>
       <li xml:lang="ko">여행 중에 이용할 지역 대중 교통 정보를 제공합니다.</li>
       <li xml:lang="nl">Lokale navigatie van vervoer op de grond tussen elementen van uw reisroute.</li>
       <li xml:lang="pl">Lokalne przemieszczanie się naziemne pomiędzy elementami twojego planu podróży.</li>
@@ -390,6 +397,7 @@
       <li xml:lang="ia">Vista de disposition de carrossa (solment eper alcun operatores)</li>
       <li xml:lang="id">Tampilan tata letak gerbong kereta (hanya untuk beberapa operator).</li>
       <li xml:lang="it">Vista della disposizione della carrozza del treno (solo per alcuni operatori).</li>
+      <li xml:lang="ka">მატარებლის ვაგონში ადგილების დათვალიერება (მხოლოდ ზოგიერთი ოპერატორისთვის).</li>
       <li xml:lang="ko">열차 객차 구성 보기(일부 철도 사업자만).</li>
       <li xml:lang="nl">Weergave van indeling treinwagons (alleen voor sommige vervoerders)</li>
       <li xml:lang="pl">Widok układu wagonu kolejowego (tylko dla wybranych przewoźników).</li>
@@ -412,6 +420,7 @@
       <li xml:lang="ia">Mappas per plano de  Station de traino e aeroporto basate sur datos de OpenStreetMap.</li>
       <li xml:lang="id">Peta stasiun kereta dan bandara per lantai berdasarkan data OpenStreetMap.</li>
       <li xml:lang="it">Mappe per piano di stazioni ferroviarie e aeroporti basate sui dati di OpenStreetMap.</li>
+      <li xml:lang="ka">რკინიგზის სადგურებისა და აეროპორტების სართულების რუკა OpenStreetMap -ზე დაყრდნობით.</li>
       <li xml:lang="ko">OpenStreetMap 데이터를 사용하는 기차역과 공항 층별 지도 보기.</li>
       <li xml:lang="nl">Kaarten per verdieping van station en luchthaven gebaseerd op gegevens uit OpenStreetMap.</li>
       <li xml:lang="pl">Plany pięter dworców kolejowych i lotnisk na podstawie danych z OpenStreetMap.</li>
