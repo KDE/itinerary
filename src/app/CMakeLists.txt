@@ -4,7 +4,7 @@
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
-add_library(itinerary STATIC)
+add_library(itinerary STATIC matrixmanager.cpp matrixmanager.h)
 target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     calendarhelper.cpp
@@ -69,6 +69,7 @@ target_link_libraries(itinerary PUBLIC
     KF5::Notifications
     Qt::Network
     Qt::Quick
+    Qt${QT_MAJOR_VERSION}Keychain::Qt${QT_MAJOR_VERSION}Keychain
 )
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)

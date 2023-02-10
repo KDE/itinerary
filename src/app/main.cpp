@@ -45,6 +45,7 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
+#include "matrixmanager.h"
 
 #include <weatherforecastmanager.h>
 
@@ -175,6 +176,7 @@ static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static HealthCertificateManager *s_healthCertificateManager = nullptr;
 static PassManager *s_passManager = nullptr;
+static MatrixManager *s_matrixManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -206,6 +208,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(HealthCertificateManager, s_healthCertificateManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
+    REGISTER_SINGLETON_INSTANCE(MatrixManager, s_matrixManager)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -367,6 +370,9 @@ int main(int argc, char **argv)
     KItinerary::JsonLdDocument::registerType<GenericPkPass>();
     PassManager passMgr;
     s_passManager = &passMgr;
+
+    MatrixManager matrixManager;
+    s_matrixManager = &matrixManager;
 
     ApplicationController appController;
     appController.setReservationManager(&resMgr);

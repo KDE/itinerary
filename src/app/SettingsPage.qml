@@ -201,5 +201,33 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                MobileForm.FormCardHeader {
+                    Kirigami.FormData.isSection: true
+                    title: i18n("Matrix Integration")
+                    subtitle: MatrixManager.errorString.length > 0 ? MatrixManager.errorString : MatrixManager.isLoggedIn ? i18n("Logged in as %1", MatrixManager.userId) : ""
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: matrixId
+                    label: i18n("Matrix ID")
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: matrixPassword
+                    label: i18n("Password")
+                    echoMode: TextInput.Password
+                }
+                MobileForm.FormButtonDelegate {
+                    text: MatrixManager.isLoggedIn ? i18n("Log out") : i18n("Log in")
+                    icon.name: "go-next"
+                    onClicked: MatrixManager.isLoggedIn ? MatrixManager.logout() : MatrixManager.login(matrixId.text, matrixPassword.text)
+                    enabled: MatrixManager.isLoggedIn || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
+                }
+            }
+        }
     }
 }
