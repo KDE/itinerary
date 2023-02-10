@@ -9,6 +9,7 @@ add_subdirectory(kandroidextras)
 add_subdirectory(gpx)
 add_subdirectory(calendarextras)
 add_subdirectory(app)
+add_subdirectory(matrix)
 
 if (TARGET KF${KF_MAJOR_VERSION}::FileMetaData)
     add_subdirectory(metadataextractor)

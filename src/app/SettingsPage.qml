@@ -282,5 +282,50 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                MobileForm.FormCardHeader {
+                    Kirigami.FormData.isSection: true
+                    title: i18n("Matrix Integration")
+                    subtitle: MatrixManager.infoString.length > 0 ? MatrixManager.infoString : MatrixManager.connected ? i18n("Logged in as %1", MatrixManager.userId) : ""
+                }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Synchronize rooms")
+                    icon.name: "view-refresh"
+                    onClicked: MatrixManager.sync()
+                    enabled: MatrixManager.connected
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: matrixId
+                    label: i18n("Matrix ID")
+                    enabled: !MatrixManager.connected
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: matrixPassword
+                    label: i18n("Password")
+                    echoMode: TextInput.Password
+                    enabled: !MatrixManager.connected
+                }
+                MobileForm.FormButtonDelegate {
+                    text: MatrixManager.connected ? i18n("Log out") : i18n("Log in")
+                    icon.name: "go-next"
+                    onClicked: MatrixManager.connected ? MatrixManager.logout() : MatrixManager.login(matrixId.text, matrixPassword.text)
+                    enabled: MatrixManager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
+                }
+                Repeater {
+                    model: MatrixRoomsModel {
+                        connection: MatrixManager.connection
+                    }
+                    delegate: MobileForm.FormButtonDelegate {
+                        text: model.displayName
+                        icon.name: "go-next"
+                        onClicked: MatrixManager.postLocation(model.id, 52.52745, 13.32466, "KDAB office")
+                    }
+                }
+            }
+        }
     }
 }
