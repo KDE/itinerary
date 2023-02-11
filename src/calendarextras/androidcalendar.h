@@ -30,7 +30,7 @@ public:
     bool deleteEvent(const KCalendarCore::Event::Ptr &event) override;
     bool deleteEventInstances(const KCalendarCore::Event::Ptr &event) override;
     KCalendarCore::Event::List rawEvents(KCalendarCore::EventSortField sortField = KCalendarCore::EventSortUnsorted, KCalendarCore::SortDirection sortDirection = KCalendarCore::SortDirectionAscending) const override;
-#if KCALENDARCORE_BUILD_DEPRECATED_SINCE(5, 95)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     KCalendarCore::Event::List rawEventsForDate(const QDateTime &dt) const override;
 #endif
     KCalendarCore::Event::List rawEvents(const QDate &start, const QDate &end, const QTimeZone &timeZone = {}, bool inclusive = false) const override;

@@ -62,7 +62,7 @@ KCalendarCore::Event::List AndroidCalendar::rawEvents(KCalendarCore::EventSortFi
     return sortEvents(std::move(result), sortField, sortDirection);
 }
 
-#if KCALENDARCORE_BUILD_DEPRECATED_SINCE(5, 95)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 KCalendarCore::Event::List AndroidCalendar::rawEventsForDate(const QDateTime &dt) const
 {
     return rawEventsForDate(dt.date(), dt.timeZone());
