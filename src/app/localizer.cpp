@@ -75,6 +75,8 @@ static bool needsTimeZone(const QDateTime &dt)
         return true;
     } else if (dt.timeSpec() == Qt::OffsetFromUTC && dt.timeZone().offsetFromUtc(dt) != dt.offsetFromUtc()) {
         return true;
+    } else if (dt.timeSpec() == Qt::UTC && QTimeZone::systemTimeZone() != QTimeZone::utc()) {
+        return true;
     }
     return false;
 }
