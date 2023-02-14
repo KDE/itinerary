@@ -1,9 +1,45 @@
 # SPDX-FileCopyrightText: None
 # SPDX-License-Identifier: CC0-1.0
 
+# include:
+#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
+#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
+#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
+#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
+#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd-qt6.yml
+
 include:
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd-qt6.yml
+  - project: sysadmin/ci-utilities
+    ref: work/kloecker/android-app-bundle
+    file:
+      - /gitlab-templates/craft-android-arm32.yml
+      - /gitlab-templates/craft-android-arm64.yml
+      - /gitlab-templates/craft-android-x86-64.yml
+
+variables:
+  KDECI_ANDROID_TARGET: itinerary
+
+craft_android_appbundle:
+  stage: deploy
+  when: manual
+  image: kdeorg/android-qt515:latest
+  tags:
+    - Linux
+  variables:
+    GIT_STRATEGY: none
+  interruptible: true
+  needs:
+    - craft_android_arm64
+  # before_script:
+  script:
+    - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+    - export APK_PATH=${CI_PROJECT_DIR}/build-aab/
+    - cd ${APK_PATH}
+    - ./gradlew bundleRelease
+    - ls -la build/outputs/bundle/release
+    - cp -vf build/outputs/bundle/release/build_aab-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
+  artifacts:
+    expire_in: 3 days
+    when: on_success
+    paths:
+     - "*.aab"
