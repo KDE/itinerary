@@ -8,16 +8,70 @@
 #   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
 #   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd-qt6.yml
 
-include:
-  - project: sysadmin/ci-utilities
-    ref: work/kloecker/android-app-bundle
-    file:
-      - /gitlab-templates/craft-android-arm32.yml
-      - /gitlab-templates/craft-android-arm64.yml
-      - /gitlab-templates/craft-android-x86-64.yml
+# include:
+#   - project: sysadmin/ci-utilities
+#     ref: work/kloecker/android-app-bundle
+#     file:
+#       - /gitlab-templates/craft-android-arm32.yml
+#       - /gitlab-templates/craft-android-arm64.yml
+#       - /gitlab-templates/craft-android-x86-64.yml
 
 variables:
   KDECI_ANDROID_TARGET: itinerary-app
+
+.craft_android_base:
+  stage: deploy
+  when: manual
+  image: kdeorg/android-qt515:latest
+  #needs: ["android_qt515"]
+  tags:
+    - Linux
+  variables:
+    GIT_STRATEGY: none
+    # KDECI_CRAFT_PLATFORM is specified in the derived jobs
+    KDECI_CRAFT_CACHE: /mnt/craft-cache/$KDECI_CRAFT_PLATFORM/
+    KDECI_CRAFT_CONFIG: ci-utilities/resources/CraftConfig.ini
+    KDECI_CRAFT_PROJECT_CONFIG: $CI_PROJECT_DIR/src/.craft.ini
+  interruptible: true
+  before_script:
+    - git clone $CI_REPOSITORY_URL --branch=$CI_COMMIT_REF_NAME src/
+    # Create empty .craft.ini if none exists
+    - touch $KDECI_CRAFT_PROJECT_CONFIG
+    - git clone https://invent.kde.org/packaging/craftmaster --branch=master
+    - git clone https://invent.kde.org/sysadmin/ci-utilities
+    # Define a short cut for the lengthy CraftMaster command line
+    - function craftmaster { python3 craftmaster/CraftMaster.py --config $KDECI_CRAFT_CONFIG --config-override $KDECI_CRAFT_PROJECT_CONFIG --target $KDECI_CRAFT_PLATFORM $@; }
+  script:
+    # Set up craft settings and blueprint settings
+    - craftmaster --setup
+    # Get Craft itself ready
+    - craftmaster -c -i craft
+    # Install all of our dependencies
+    - craftmaster -c --install-deps $CI_PROJECT_NAME
+    # Build the actual application
+    - craftmaster -c --no-cache --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
+    # Package it up!
+    - craftmaster -c --package --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
+    # Save our package
+    - packageDir=$(craftmaster -c -q --get "packageDestinationDir()" virtual/base)
+    - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
+    - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
+    # Save the things we need for creating an application bundle
+    - mkdir $CI_PROJECT_DIR/build-aab
+    - cp -arv ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src} $CI_PROJECT_DIR/build-aab
+
+craft_android_arm64:
+  extends: .craft_android_base
+  variables:
+    KDECI_CRAFT_PLATFORM: android-arm64-clang
+    # KDECI_ANDROID_ARCH_ABI: arm64-v8a
+  artifacts:
+    expire_in: 3 days
+    when: on_success
+    expose_as: "Android arm64"
+    paths:
+     - ".kde-ci-packages/"
+     - build-aab/
 
 craft_android_appbundle:
   stage: deploy
