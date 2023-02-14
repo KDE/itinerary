@@ -8,7 +8,6 @@ add_subdirectory(weather)
 add_subdirectory(kandroidextras)
 add_subdirectory(gpx)
 add_subdirectory(calendarextras)
-add_subdirectory(kirigami-addons/dateandtime)
 add_subdirectory(app)
 
 if (TARGET KF${KF_MAJOR_VERSION}::FileMetaData)
