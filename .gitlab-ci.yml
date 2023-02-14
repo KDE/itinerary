@@ -17,7 +17,7 @@ include:
       - /gitlab-templates/craft-android-x86-64.yml
 
 variables:
-  KDECI_ANDROID_TARGET: itinerary
+  KDECI_ANDROID_TARGET: itinerary-app
 
 craft_android_appbundle:
   stage: deploy
