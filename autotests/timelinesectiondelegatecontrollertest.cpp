@@ -22,6 +22,7 @@ using namespace KItinerary;
 
 void initLocale()
 {
+    qputenv("LC_ALL", "en_US.utf-8");
     qputenv("TZ", "UTC");
     qputenv("LANG", "en_US");
 }
