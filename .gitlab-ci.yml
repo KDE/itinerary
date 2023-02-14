@@ -57,8 +57,11 @@ variables:
     - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
     - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
     # Save the things we need for creating an application bundle
-    - mkdir $CI_PROJECT_DIR/build-aab
-    - cp -arv ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src} $CI_PROJECT_DIR/build-aab
+    - mkdir -p $CI_PROJECT_DIR/build-aab/${KDECI_ANDROID_TARGET}_build_apk
+    - ls -l ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build
+    - ls -l ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk
+    - cp -av ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle $CI_PROJECT_DIR/build-aab
+    - cp -arv ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src} $CI_PROJECT_DIR/build-aab/${KDECI_ANDROID_TARGET}_build_apk
 
 craft_android_arm64:
   extends: .craft_android_base
@@ -87,7 +90,7 @@ craft_android_appbundle:
   # before_script:
   script:
     - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-    - export APK_PATH=${CI_PROJECT_DIR}/build-aab/
+    - export APK_PATH=${CI_PROJECT_DIR}/build-aab/${KDECI_ANDROID_TARGET}_build_apk/
     - cd ${APK_PATH}
     - ./gradlew bundleRelease
     - ls -la build/outputs/bundle/release
