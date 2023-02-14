@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-07 01:00+0000\n"
+"POT-Creation-Date: 2023-02-14 00:59+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -1507,18 +1507,18 @@ msgstr[1] "%1 aldaketa"
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
 
-#: app/localizer.cpp:124
+#: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr ""
 
-#: app/localizer.cpp:169
+#: app/localizer.cpp:171
 #, kde-format
 msgid "%1m"
 msgstr "%1m"
 
-#: app/localizer.cpp:172 app/localizer.cpp:174
+#: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
 msgstr "%1km"
