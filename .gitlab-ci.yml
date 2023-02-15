@@ -70,7 +70,7 @@ craft_android_arm64:
      # Save the things we need for creating an application bundle
      - ${KDECI_CRAFT_PLATFORM}/src/android/java
      - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle
-     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/
+     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src}
 
 craft_android_appbundle:
   stage: deploy
