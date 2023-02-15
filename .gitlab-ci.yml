@@ -67,10 +67,22 @@ craft_android_arm64:
     when: on_success
     paths:
      - ".kde-ci-packages/"
-     # Save the things we need for creating an application bundle
+     # Archive everything we need for creating an application bundle
      - ${KDECI_CRAFT_PLATFORM}/src/android/java
      - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle
      - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src}
+
+craft_android_arm32:
+  extends: .craft_android_base
+  variables:
+    KDECI_CRAFT_PLATFORM: android-arm-clang
+  artifacts:
+    expire_in: 3 days
+    when: on_success
+    paths:
+     - ".kde-ci-packages/"
+     # Archive only the architecture-specific artifacts for creating an application bundle
+     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs
 
 craft_android_appbundle:
   stage: deploy
@@ -82,11 +94,15 @@ craft_android_appbundle:
     GIT_STRATEGY: none
   interruptible: true
   needs:
+    - craft_android_arm32
     - craft_android_arm64
   script:
     - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
     - export APK_PATH=${CI_PROJECT_DIR}/android-arm64-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk
     - cd ${APK_PATH}
+    # Make the artifacts of the other architectures available for the app bundle
+    - mv ${CI_PROJECT_DIR}/android-arm-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/armeabi-v7a libs/
+    # Now build the app bundle
     - ./gradlew bundleRelease
     - ls -la build/outputs/bundle/release
     - mv -vf build/outputs/bundle/release/${KDECI_ANDROID_TARGET}_build_apk-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
