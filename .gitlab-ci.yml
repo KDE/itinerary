@@ -89,7 +89,7 @@ craft_android_appbundle:
     - cd ${APK_PATH}
     - ./gradlew bundleRelease
     - ls -la build/outputs/bundle/release
-    - mv -vf build/outputs/bundle/release/build_aab-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
+    - mv -vf build/outputs/bundle/release/${KDECI_ANDROID_TARGET}_build_apk-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
   artifacts:
     expire_in: 3 days
     when: on_success
