@@ -115,7 +115,7 @@ craft_android_appbundle:
     - cd ${APK_PATH}
     # Make the artifacts of the other architectures available for the app bundle
     - mv -v ${CI_PROJECT_DIR}/android-arm-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/armeabi-v7a libs/
-    - mv -v ${CI_PROJECT_DIR}/android-arm-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/x86_64 libs/
+    - mv -v ${CI_PROJECT_DIR}/android-x86_64-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/x86_64 libs/
     # Now build the app bundle
     - ./gradlew bundleRelease
     - mv -vf build/outputs/bundle/release/${KDECI_ANDROID_TARGET}_build_apk-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
