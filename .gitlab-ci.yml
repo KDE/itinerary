@@ -56,12 +56,6 @@ variables:
     - packageDir=$(craftmaster -c -q --get "packageDestinationDir()" virtual/base)
     - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
     - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
-    # Save the things we need for creating an application bundle
-    - mkdir -p $CI_PROJECT_DIR/build-aab/${KDECI_ANDROID_TARGET}_build_apk
-    - ls -l ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build
-    - ls -l ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk
-    - cp -av ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle $CI_PROJECT_DIR/build-aab
-    - cp -arv ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src} $CI_PROJECT_DIR/build-aab/${KDECI_ANDROID_TARGET}_build_apk
 
 craft_android_arm64:
   extends: .craft_android_base
@@ -74,7 +68,10 @@ craft_android_arm64:
     expose_as: "Android arm64"
     paths:
      - ".kde-ci-packages/"
-     - build-aab/
+     # Save the things we need for creating an application bundle
+     - ${KDECI_CRAFT_PLATFORM}/src/android/java
+     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle
+     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/
 
 craft_android_appbundle:
   stage: deploy
@@ -87,14 +84,13 @@ craft_android_appbundle:
   interruptible: true
   needs:
     - craft_android_arm64
-  # before_script:
   script:
     - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-    - export APK_PATH=${CI_PROJECT_DIR}/build-aab/${KDECI_ANDROID_TARGET}_build_apk/
+    - export APK_PATH=${CI_PROJECT_DIR}/android-arm64-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk
     - cd ${APK_PATH}
     - ./gradlew bundleRelease
     - ls -la build/outputs/bundle/release
-    - cp -vf build/outputs/bundle/release/build_aab-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
+    - mv -vf build/outputs/bundle/release/build_aab-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
   artifacts:
     expire_in: 3 days
     when: on_success
