@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2023-02-08 22:04+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2258,7 +2258,6 @@ msgid "Nothing on the itinerary for today."
 msgstr "Nihil sur le itinerario per hodie."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Hodie"
@@ -2720,55 +2719,39 @@ msgstr ""
 msgid "Got it!"
 msgstr "Obtenite!"
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr "Dies"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr "Menses"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr "Annos"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr "Precedente"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr "Proxime"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, kde-format
-msgid "Cancel"
-msgstr "Cancella"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr "Accepta"
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Days"
+#~ msgstr "Dies"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Months"
+#~ msgstr "Menses"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Years"
+#~ msgstr "Annos"
+
+#~ msgid "Previous"
+#~ msgstr "Precedente"
+
+#~ msgid "Next"
+#~ msgstr "Proxime"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancella"
+
+#~ msgid "Accept"
+#~ msgstr "Accepta"
 
 #~ msgid "Number:"
 #~ msgstr "Numero:"

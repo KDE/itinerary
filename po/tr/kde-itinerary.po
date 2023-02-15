@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2023-01-18 21:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2259,7 +2259,6 @@ msgid "Nothing on the itinerary for today."
 msgstr "Bugün için yolcu belgenizde bir şey yok."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Bugün"
@@ -2719,55 +2718,39 @@ msgstr ""
 msgid "Got it!"
 msgstr "Anladım!"
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr "Gün"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr "Ay"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr "Yıl"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr "Önceki"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr "Sonraki"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, kde-format
-msgid "Cancel"
-msgstr "İptal"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr "Kabul Et"
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 konumundan %4 konumuna %1%2"
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Days"
+#~ msgstr "Gün"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Months"
+#~ msgstr "Ay"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Years"
+#~ msgstr "Yıl"
+
+#~ msgid "Previous"
+#~ msgstr "Önceki"
+
+#~ msgid "Next"
+#~ msgstr "Sonraki"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgid "Accept"
+#~ msgstr "Kabul Et"
 
 #~ msgid "Number:"
 #~ msgstr "Numara:"

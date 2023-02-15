@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -2374,7 +2374,6 @@ msgid "Nothing on the itinerary for today."
 msgstr "Ezer ez dago ibilbidean gaurko"
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Gaur"
@@ -2847,58 +2846,23 @@ msgstr ""
 msgid "Got it!"
 msgstr "Ulertuta!"
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, fuzzy, kde-format
-#| msgid "%1 to %2 (%3)"
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1(e)tik %2(e)ra (%3)"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, fuzzy, kde-format
-#| msgid "Cancelled"
-msgid "Cancel"
-msgstr "Bertan behera utzita"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr ""
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, fuzzy, kde-format
 #| msgid "%1 to %2 (%3)"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1(e)tik %2(e)ra (%3)"
+
+#, fuzzy
+#~| msgid "%1 to %2 (%3)"
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1(e)tik %2(e)ra (%3)"
+
+#, fuzzy
+#~| msgid "Cancelled"
+#~ msgid "Cancel"
+#~ msgstr "Bertan behera utzita"
 
 #, fuzzy
 #~| msgid "Sequence Number:"

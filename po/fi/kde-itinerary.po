@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2022-08-05 12:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2310,7 +2310,6 @@ msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
@@ -2779,58 +2778,45 @@ msgstr ""
 msgid "Got it!"
 msgstr "Selvä!"
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, fuzzy, kde-format
-#| msgid "Days"
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr "Päivät"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, fuzzy, kde-format
-#| msgid "Months"
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr "Kuukaudet"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, fuzzy, kde-format
-#| msgid "Years"
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr "Vuodet"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr "Edellinen"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr "Seuraava"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, kde-format
-msgid "Cancel"
-msgstr "Peru"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr "Hyväksy"
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#, fuzzy
+#~| msgid "Days"
+#~ msgctxt "kirigami-addons"
+#~ msgid "Days"
+#~ msgstr "Päivät"
+
+#, fuzzy
+#~| msgid "Months"
+#~ msgctxt "kirigami-addons"
+#~ msgid "Months"
+#~ msgstr "Kuukaudet"
+
+#, fuzzy
+#~| msgid "Years"
+#~ msgctxt "kirigami-addons"
+#~ msgid "Years"
+#~ msgstr "Vuodet"
+
+#~ msgid "Previous"
+#~ msgstr "Edellinen"
+
+#~ msgid "Next"
+#~ msgstr "Seuraava"
+
+#~ msgid "Cancel"
+#~ msgstr "Peru"
+
+#~ msgid "Accept"
+#~ msgstr "Hyväksy"
 
 #~ msgid "Number:"
 #~ msgstr "Numero:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2023-02-07 10:57+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2249,7 +2249,6 @@ msgid "Nothing on the itinerary for today."
 msgstr "Dnes nemáte v itineráři nic."
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
@@ -2710,52 +2709,36 @@ msgstr ""
 msgid "Got it!"
 msgstr "Jasně."
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, kde-format
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr "Dnů"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr "Měsíce"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr "Roky"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr "Předchozí"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr "Následující"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, kde-format
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr "Přijmout"
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
+
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Days"
+#~ msgstr "Dnů"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Months"
+#~ msgstr "Měsíce"
+
+#~ msgctxt "kirigami-addons"
+#~ msgid "Years"
+#~ msgstr "Roky"
+
+#~ msgid "Previous"
+#~ msgstr "Předchozí"
+
+#~ msgid "Next"
+#~ msgstr "Následující"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušit"
+
+#~ msgid "Accept"
+#~ msgstr "Přijmout"

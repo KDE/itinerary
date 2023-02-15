@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-14 00:59+0000\n"
+"POT-Creation-Date: 2023-02-15 00:59+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2329,7 +2329,6 @@ msgid "Nothing on the itinerary for today."
 msgstr ""
 
 #: app/timelinesectiondelegatecontroller.cpp:66
-#: kirigami-addons/dateandtime/DatePopup.qml:64
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
@@ -2796,59 +2795,24 @@ msgstr ""
 msgid "Got it!"
 msgstr "Mám to!"
 
-#: kirigami-addons/dateandtime/DatePicker.qml:141
-#, fuzzy, kde-format
-#| msgid "%1 %2°C"
-msgctxt "%1 is month name, %2 is year"
-msgid "%1 %2"
-msgstr "%1 %2°C"
-
-#: kirigami-addons/dateandtime/DatePicker.qml:182
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Days"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePicker.qml:190
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Months"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePicker.qml:196
-#, kde-format
-msgctxt "kirigami-addons"
-msgid "Years"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:55
-#, kde-format
-msgid "Previous"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:73
-#, kde-format
-msgid "Next"
-msgstr ""
-
-#: kirigami-addons/dateandtime/DatePopup.qml:92
-#, fuzzy, kde-format
-#| msgctxt "a train/bus journey canceled by its operator"
-#| msgid "Canceled"
-msgid "Cancel"
-msgstr "Zrušené"
-
-#: kirigami-addons/dateandtime/DatePopup.qml:101
-#, kde-format
-msgid "Accept"
-msgstr ""
-
 #: metadataextractor/itineraryextractor.cpp:120
 #, fuzzy, kde-format
 #| msgid "Bus %1 from %2 to %3"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
+
+#, fuzzy
+#~| msgid "%1 %2°C"
+#~ msgctxt "%1 is month name, %2 is year"
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2°C"
+
+#, fuzzy
+#~| msgctxt "a train/bus journey canceled by its operator"
+#~| msgid "Canceled"
+#~ msgid "Cancel"
+#~ msgstr "Zrušené"
 
 #, fuzzy
 #~ msgid "Number:"
