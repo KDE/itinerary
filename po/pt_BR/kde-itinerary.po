@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2019.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-13 02:41+0000\n"
-"PO-Revision-Date: 2022-07-14 09:45-0300\n"
+"PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -213,10 +213,9 @@ msgid "Arrival time: %1"
 msgstr "Hora de chegada: %1"
 
 #: app/BoatPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Bus Ticket"
+#, kde-format
 msgid "Boat Ticket"
-msgstr "Passagem de ônibus"
+msgstr "Passagem de barco"
 
 #: app/BoatPage.qml:20 app/BusPage.qml:29 app/EventPage.qml:26
 #: app/FlightPage.qml:35 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
@@ -301,10 +300,9 @@ msgid "Seat:"
 msgstr "Local:"
 
 #: app/calendarhelper.cpp:28
-#, fuzzy, kde-format
-#| msgid "Transfer (%1)"
+#, kde-format
 msgid "Transfer to %1"
-msgstr "Transferência (%1)"
+msgstr "Transferência para %1"
 
 #: app/CalendarImportPage.qml:19
 #, kde-format
@@ -470,10 +468,9 @@ msgid "Show Boarding Pass"
 msgstr "Mostrar cartão de embarque"
 
 #: app/DetailsPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Bus Ticket"
+#, kde-format
 msgid "Show Ticket"
-msgstr "Passagem de ônibus"
+msgstr "Ingresso de show"
 
 #: app/DetailsPage.qml:141
 #, kde-format
@@ -812,11 +809,9 @@ msgid "Bus %1 from %2 to %3"
 msgstr "Ônibus %1 de %2 para %3"
 
 #: app/gpxexport.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgid "Ferry from %1 to %2"
-msgstr "Partida de %1: %2"
+msgstr "Balsa de %1 para %2"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -1962,7 +1957,7 @@ msgstr "Viagens de carro"
 #: app/statisticsmodel.cpp:187
 #, kde-format
 msgid "Boat trips"
-msgstr ""
+msgstr "Viagens de barco"
 
 #: app/StatisticsPage.qml:45 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -1989,7 +1984,7 @@ msgstr "Trens"
 #: app/StatisticsPage.qml:113
 #, kde-format
 msgid "Boat"
-msgstr ""
+msgstr "Barco"
 
 #: app/StatisticsPage.qml:122
 #, kde-format
@@ -2027,22 +2022,19 @@ msgid "No locations found"
 msgstr "Nenhum local encontrado"
 
 #: app/TicketPage.qml:16 app/TicketPage.qml:86
-#, fuzzy, kde-format
-#| msgid "Bus Ticket"
+#, kde-format
 msgid "Ticket"
-msgstr "Passagem de ônibus"
+msgstr "Ingresso"
 
 #: app/TicketPage.qml:28
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Delete Ticket"
-msgstr "Ingresso do evento"
+msgstr "Excluir ingresso"
 
 #: app/TicketPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this trip?"
+#, kde-format
 msgid "Do you really want to delete this ticket?"
-msgstr "Deseja realmente excluir esta viagem?"
+msgstr "Deseja realmente excluir este ingresso?"
 
 #: app/TicketPage.qml:113 app/TrainEditor.qml:175 app/TrainPage.qml:261
 #, kde-format
@@ -2070,10 +2062,9 @@ msgid "Go To Now"
 msgstr ""
 
 #: app/TimelinePage.qml:30
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Current Ticket"
-msgstr "Ingresso do evento"
+msgstr "Ingresso atual"
 
 #: app/TimelinePage.qml:36
 #, kde-format
@@ -2086,10 +2077,9 @@ msgid "Add from calendar..."
 msgstr "Adicionar do calendário..."
 
 #: app/TimelinePage.qml:104
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Delete Trip"
-msgstr "Ingresso do evento"
+msgstr "Excluir viagem"
 
 #: app/TimelinePage.qml:105
 #, kde-format
@@ -2204,7 +2194,7 @@ msgstr "Vagão:"
 #: app/TrainPage.qml:18
 #, kde-format
 msgid "Train Ticket"
-msgstr "Passagem do trem"
+msgstr "Passagem de trem"
 
 #: app/TrainPage.qml:65
 #, kde-format
@@ -2250,10 +2240,9 @@ msgid "Show"
 msgstr "Mostrar"
 
 #: app/TrainPage.qml:306
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "Número da sequência:"
+msgstr "Número da passagem:"
 
 #: app/TransferDelegate.qml:92
 #, kde-format
@@ -2527,22 +2516,19 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:182
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Days"
 msgstr "Dias"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Months"
 msgstr "Meses"
 
 #: kirigami-addons/dateandtime/DatePicker.qml:196
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "kirigami-addons"
 msgid "Years"
 msgstr "Anos"
