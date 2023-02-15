@@ -65,7 +65,6 @@ craft_android_arm64:
   artifacts:
     expire_in: 3 days
     when: on_success
-    expose_as: "Android arm64"
     paths:
      - ".kde-ci-packages/"
      # Save the things we need for creating an application bundle
