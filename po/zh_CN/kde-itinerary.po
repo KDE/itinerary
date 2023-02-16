@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-15 00:59+0000\n"
-"PO-Revision-Date: 2023-02-07 11:01\n"
+"PO-Revision-Date: 2023-02-15 11:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -558,7 +558,7 @@ msgstr "编辑活动信息"
 #: app/EventEditor.qml:43
 #, kde-format
 msgid "Venue:"
-msgstr "地点︰"
+msgstr "地点："
 
 #: app/EventPage.qml:16
 #, kde-format
