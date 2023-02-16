@@ -9,6 +9,7 @@ import QtPositioning 5.11
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.i18n.localeData 1.0
+import org.kde.kpublictransport.onboard 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -198,6 +199,86 @@ Kirigami.ScrollablePage {
                     checked: Settings.showNotificationOnLockScreen
                     onToggled: Settings.showNotificationOnLockScreen = checked
                     enabled: NotificationConfigController.canShowOnLockScreen
+                }
+            }
+        }
+
+        // Wifi access for onboard status information
+        OnboardStatus {
+            id: onboardStatus
+        }
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    Kirigami.FormData.isSection: true
+                    title: i18n("Onboard Status")
+                }
+
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Request permissions...")
+                    description: i18n("Additional permissions are required to access the Wi-Fi status.")
+                    icon.name: "documentinfo"
+                    icon.color: Kirigami.Theme.neutralTextColor
+                    visible: onboardStatus.status == OnboardStatus.MissingPermissions
+                    onClicked: onboardStatus.requestPermissions()
+                }
+
+                MobileForm.FormTextDelegate {
+                    text: {
+                        switch (onboardStatus.status) {
+                            case OnboardStatus.NotConnected:
+                            case OnboardStatus.Onboard:
+                                return i18n("Wi-Fi access for onboard information is available.");
+                            case OnboardStatus.WifiNotEnabled:
+                                return i18n("Wi-Fi is not enabled");
+                            case OnboardStatus.LocationServiceNotEnabled:
+                                return i18n("Location service is not enabled");
+                            case OnboardStatus.NotAvailable:
+                                return i18n("Wi-Fi access is not available on this system");
+                        }
+                    }
+                    description: {
+                        switch (onboardStatus.status) {
+                            case OnboardStatus.NotConnected:
+                            case OnboardStatus.Onboard:
+                                return i18n("No further action required.");
+                            case OnboardStatus.WifiNotEnabled:
+                                return i18n("Enable Wi-Fi on your system to access onboard information.");
+                            case OnboardStatus.LocationServiceNotEnabled:
+                                return i18n("Enable the location service on your device to access onboard information.");
+                            case OnboardStatus.NotAvailable:
+                                return i18n("Onboard information are unfortunately not supported on your device at this time.");
+                        }
+                    }
+                    icon.name: {
+                        switch (onboardStatus.status) {
+                            case OnboardStatus.NotConnected:
+                            case OnboardStatus.Onboard:
+                                return "checkmark"
+                            case OnboardStatus.WifiNotEnabled:
+                            case OnboardStatus.LocationServiceNotEnabled:
+                                return "documentinfo"
+                            case OnboardStatus.NotAvailable:
+                                return "dialog-cancel"
+                        }
+                    }
+                    icon.color: {
+                        switch (onboardStatus.status) {
+                            case OnboardStatus.NotConnected:
+                            case OnboardStatus.Onboard:
+                                return Kirigami.Theme.positiveTextColor
+                            case OnboardStatus.WifiNotEnabled:
+                            case OnboardStatus.LocationServiceNotEnabled:
+                                return Kirigami.Theme.neutralTextColor
+                            case OnboardStatus.NotAvailable:
+                                return Kirigami.Theme.negativeTextColor
+                        }
+                    }
+                    enabled: onboardStatus.status != OnboardStatus.MissingPermissions
                 }
             }
         }
