@@ -41,6 +41,8 @@ variables:
     - git clone https://invent.kde.org/sysadmin/ci-utilities
     # Define a short cut for the lengthy CraftMaster command line
     - function craftmaster { python3 craftmaster/CraftMaster.py --config $KDECI_CRAFT_CONFIG --config-override $KDECI_CRAFT_PROJECT_CONFIG --target $KDECI_CRAFT_PLATFORM $@; }
+    # Set KDECI_ANDROID_TARGET to CI_PROJECT_NAME if it's not set
+    - if [ -z "$KDECI_ANDROID_TARGET" ]; then export KDECI_ANDROID_TARGET=$CI_PROJECT_NAME && echo "Using KDECI_ANDROID_TARGET=$KDECI_ANDROID_TARGET"; fi
   script:
     # Set up craft settings and blueprint settings
     - craftmaster --setup
