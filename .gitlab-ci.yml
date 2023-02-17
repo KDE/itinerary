@@ -124,9 +124,9 @@ craft_android_appbundle:
     # Unpack the artifacts
     - tar xzf app-bundle-artifacts/common.tar.gz
     - cd ${APK_PATH}
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_arm32.tar.gz
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_arm64.tar.gz
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_x86_64.tar.gz
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-arm-clang.tar.gz
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-arm64-clang.tar.gz
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-x86_64-clang.tar.gz
     # debug
     - ls -la
     - ls -la libs
