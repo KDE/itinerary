@@ -16,9 +16,6 @@
 #       - /gitlab-templates/craft-android-arm64.yml
 #       - /gitlab-templates/craft-android-x86-64.yml
 
-variables:
-  KDECI_ANDROID_TARGET: itinerary-app
-
 .craft_android_base:
   stage: deploy
   when: manual
@@ -41,8 +38,6 @@ variables:
     - git clone https://invent.kde.org/sysadmin/ci-utilities
     # Define a short cut for the lengthy CraftMaster command line
     - function craftmaster { python3 craftmaster/CraftMaster.py --config $KDECI_CRAFT_CONFIG --config-override $KDECI_CRAFT_PROJECT_CONFIG --target $KDECI_CRAFT_PLATFORM $@; }
-    # Set KDECI_ANDROID_TARGET to CI_PROJECT_NAME if it's not set
-    - if [ -z "$KDECI_ANDROID_TARGET" ]; then export KDECI_ANDROID_TARGET=$CI_PROJECT_NAME && echo "Using KDECI_ANDROID_TARGET=$KDECI_ANDROID_TARGET"; fi
   script:
     # Set up craft settings and blueprint settings
     - craftmaster --setup
@@ -61,9 +56,11 @@ variables:
     # Archive the artifacts we need for creating an application bundle
     - cd $CI_PROJECT_DIR
     # Get the relative path of the build directory
-    - buildDir=$(craftmaster -c -q --get "buildDir()" itinerary)
+    - buildDir=$(craftmaster -c -q --get "buildDir()" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME)
     - buildDir=${buildDir#$(pwd)/}
-    - buildApkDir=${buildDir}/${KDECI_ANDROID_TARGET}_build_apk
+    # Get the Android target (we assume a single target)
+    - androidTarget=$(craftmaster -c -q --get "androidApkTargets" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME | cut -d "'" -f 2)
+    - buildApkDir=${buildDir}/${androidTarget}_build_apk
     - mkdir app-bundle-artifacts
     # Archive the architecture-independent artifacts only for android-arm64-clang
     - if [ ${KDECI_CRAFT_PLATFORM} = "android-arm64-clang" ]; then tar czf app-bundle-artifacts/common.tar.gz ${KDECI_CRAFT_PLATFORM}/src/android/java ${buildDir}/*.gradle ${buildApkDir}/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,local.properties,res,src}; fi
@@ -132,7 +129,9 @@ craft_android_appbundle:
     - ls -la libs
     # Now build the app bundle
     - ./gradlew bundleRelease
-    - mv -vf build/outputs/bundle/release/${KDECI_ANDROID_TARGET}_build_apk-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
+    - buildAabName=$(basename $(ls build/outputs/bundle/release/*_build_apk-release.aab))
+    - finalAabName=${buildAabName%_build_apk-release.aab}-${CI_COMMIT_REF_SLUG}.aab
+    - mv -vf build/outputs/bundle/release/${buildAabName} ${CI_PROJECT_DIR}/${finalAabName}
   artifacts:
     expire_in: 3 days
     when: on_success
