@@ -58,21 +58,30 @@ variables:
     - packageDir=$(craftmaster -c -q --get "packageDestinationDir()" virtual/base)
     - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
     - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
+    # Archive the artifacts we need for creating an application bundle
+    - cd $CI_PROJECT_DIR
+    # Get the relative path of the build directory
+    - buildDir=$(craftmaster -c -q --get "buildDir()" itinerary)
+    - buildDir=${buildDir#$(pwd)/}
+    - buildApkDir=${buildDir}/${KDECI_ANDROID_TARGET}_build_apk
+    - mkdir app-bundle-artifacts
+    # Archive the architecture-independent artifacts only for android-arm64-clang
+    - if [ ${KDECI_CRAFT_PLATFORM} = "android-arm64-clang" ]; then tar czf app-bundle-artifacts/common.tar.gz ${KDECI_CRAFT_PLATFORM}/src/android/java ${buildDir}/*.gradle ${buildApkDir}/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,local.properties,res,src}; fi
+    # Archive the architecture-specific artifacts
+    - (cd ${buildApkDir} && tar czf ${CI_PROJECT_DIR}/app-bundle-artifacts/${KDECI_CRAFT_PLATFORM}.tar.gz libs)
+    # Remember the APK_PATH for subsequent jobs
+    - echo "${CI_PROJECT_DIR}/${buildApkDir}" >app-bundle-artifacts/build-apk-path-${KDECI_CRAFT_PLATFORM}
 
 craft_android_arm64:
   extends: .craft_android_base
   variables:
     KDECI_CRAFT_PLATFORM: android-arm64-clang
-    # KDECI_ANDROID_ARCH_ABI: arm64-v8a
   artifacts:
     expire_in: 3 days
     when: on_success
     paths:
      - ".kde-ci-packages/"
-     # Archive everything we need for creating an application bundle
-     - ${KDECI_CRAFT_PLATFORM}/src/android/java
-     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/*.gradle
-     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,libs,local.properties,res,src}
+     - app-bundle-artifacts/
 
 craft_android_arm32:
   extends: .craft_android_base
@@ -83,8 +92,7 @@ craft_android_arm32:
     when: on_success
     paths:
      - ".kde-ci-packages/"
-     # Archive only the architecture-specific artifacts for creating an application bundle
-     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs
+     - app-bundle-artifacts/
 
 craft_android_x86_64:
   extends: .craft_android_base
@@ -95,8 +103,7 @@ craft_android_x86_64:
     when: on_success
     paths:
      - ".kde-ci-packages/"
-     # Archive only the architecture-specific artifacts for creating an application bundle
-     - ${KDECI_CRAFT_PLATFORM}/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs
+     - app-bundle-artifacts/
 
 craft_android_appbundle:
   stage: deploy
@@ -112,12 +119,17 @@ craft_android_appbundle:
     - craft_android_arm64
     - craft_android_x86_64
   script:
-    - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
-    - export APK_PATH=${CI_PROJECT_DIR}/android-arm64-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk
+    # Set APK_PATH to the path of the craft_android_arm64 job (where we captured the architecture-independent artifacts)
+    - export APK_PATH=$(cat app-bundle-artifacts/build-apk-path-android-arm64-clang)
+    # Unpack the artifacts
+    - tar xzf app-bundle-artifacts/common.tar.gz
     - cd ${APK_PATH}
-    # Make the artifacts of the other architectures available for the app bundle
-    - mv -v ${CI_PROJECT_DIR}/android-arm-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/armeabi-v7a libs/
-    - mv -v ${CI_PROJECT_DIR}/android-x86_64-clang/build/kde/applications/${CI_PROJECT_NAME}/work/build/${KDECI_ANDROID_TARGET}_build_apk/libs/x86_64 libs/
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_arm32.tar.gz
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_arm64.tar.gz
+    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/craft_android_x86_64.tar.gz
+    # debug
+    - ls -la
+    - ls -la libs
     # Now build the app bundle
     - ./gradlew bundleRelease
     - mv -vf build/outputs/bundle/release/${KDECI_ANDROID_TARGET}_build_apk-release.aab ${CI_PROJECT_DIR}/${KDECI_ANDROID_TARGET}-${CI_COMMIT_REF_SLUG}.aab
