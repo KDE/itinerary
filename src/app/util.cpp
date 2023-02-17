@@ -9,6 +9,8 @@
 
 #include <KItinerary/JsonLdDocument>
 
+#include <KContacts/PhoneNumber>
+
 #include <KTextToHTML>
 
 #include <QAbstractItemModel>
@@ -65,6 +67,16 @@ QString Util::textToHtml(const QString& text)
         return text;
     }
     return KTextToHTML::convertToHtml(text, KTextToHTML::ConvertPhoneNumbers | KTextToHTML::PreserveSpaces);
+}
+
+QString Util::telephoneUrl(const QString &phoneNumber)
+{
+    return QLatin1String("tel:") + KContacts::PhoneNumber(phoneNumber).normalizedNumber();
+}
+
+QString Util::emailUrl(const QString &emailAddress)
+{
+    return QLatin1String("mailto:") + emailAddress;
 }
 
 void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder)

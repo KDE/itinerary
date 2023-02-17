@@ -129,6 +129,7 @@ if (ANDROID)
     kirigami_package_breeze_icons(ICONS
         application-pdf
         bookmarks
+        call-start
         channel-insecure-symbolic
         channel-secure-symbolic
         checkmark
@@ -153,6 +154,7 @@ if (ANDROID)
         flashlight-off
         flashlight-on
         folder-documents-symbolic
+        globe
         go-down-symbolic
         go-home-symbolic
         go-next-symbolic
@@ -160,6 +162,7 @@ if (ANDROID)
         help-about-symbolic
         help-contents
         list-add
+        mail-message-new
         map-globe
         map-symbolic
         meeting-attending

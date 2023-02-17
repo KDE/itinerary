@@ -29,6 +29,10 @@ public:
 
     /** Convert links, email address and phone numbers in the given text to HTML links. */
     Q_INVOKABLE static QString textToHtml(const QString &text);
+    /** Convert a phone number into a tel: link. */
+    Q_INVOKABLE static QString telephoneUrl(const QString &phoneNumber);
+    /** Convert an email address into a mailto: link. */
+    Q_INVOKABLE static QString emailUrl(const QString &emailAddress);
 
     /** Execute the non-exported sort() method on a QAbstractItemModel. */
     Q_INVOKABLE static void sortModel(QObject *model, int column, Qt::SortOrder sortOrder);

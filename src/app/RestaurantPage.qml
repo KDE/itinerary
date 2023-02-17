@@ -49,32 +49,10 @@ App.DetailsPage {
             }
         }
 
-        MobileForm.FormCard {
+        App.ContactCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            visible: reservationFor.telephone || reservationFor.email
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Contact")
-                }
-                MobileForm.FormTextDelegate {
-                    text: i18n("Telephone")
-                    description: Util.textToHtml(reservationFor.telephone)
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    visible: reservationFor.telephone
-                }
-
-                MobileForm.FormDelegateSeparator { visible: reservationFor.telephone }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Email")
-                    description: Util.textToHtml(reservationFor.email)
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    visible: reservationFor.email
-                }
-            }
+            contact: root.reservationFor
         }
 
         MobileForm.FormCard {
