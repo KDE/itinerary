@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-15 00:59+0000\n"
+"POT-Creation-Date: 2023-02-17 00:58+0000\n"
 "PO-Revision-Date: 2023-01-18 14:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -612,7 +612,7 @@ msgid "Number:"
 msgstr "Número:"
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
-#: app/SettingsPage.qml:44
+#: app/SettingsPage.qml:45
 #, kde-format
 msgid "Home"
 msgstr "Inicio"
@@ -627,7 +627,7 @@ msgstr "Trabajo"
 msgid "Location %1"
 msgstr "Ubicación %1"
 
-#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:59
+#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:60
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Ubicaciones favoritas"
@@ -1926,27 +1926,27 @@ msgstr "Hora de finalización"
 msgid "Party size"
 msgstr "Tamaño de la fiesta"
 
-#: app/SettingsPage.qml:17
+#: app/SettingsPage.qml:18
 #, kde-format
 msgid "Settings"
 msgstr "Preferencias"
 
-#: app/SettingsPage.qml:48
+#: app/SettingsPage.qml:49
 #, kde-format
 msgid "Home Country"
 msgstr "País de inicio"
 
-#: app/SettingsPage.qml:74
+#: app/SettingsPage.qml:75
 #, kde-format
 msgid "Online Services"
 msgstr "Servicios en línea"
 
-#: app/SettingsPage.qml:78
+#: app/SettingsPage.qml:79
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Consultar datos de tráfico"
 
-#: app/SettingsPage.qml:81
+#: app/SettingsPage.qml:82
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -1956,12 +1956,12 @@ msgstr ""
 "transporte para posibles cambios, como retrasos o cambios de puerta de "
 "embarque o de andén."
 
-#: app/SettingsPage.qml:87
+#: app/SettingsPage.qml:88
 #, kde-format
 msgid "Use insecure services"
 msgstr "Usar servicios no seguros"
 
-#: app/SettingsPage.qml:90
+#: app/SettingsPage.qml:91
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -1972,24 +1972,24 @@ msgstr ""
 "de transporte. Esto no está recomendado, pero puede ser inevitable si "
 "depende de datos en directo de ciertos proveedores."
 
-#: app/SettingsPage.qml:98
+#: app/SettingsPage.qml:99
 #, kde-format
 msgid "Public Transport Information Sources..."
 msgstr "Fuentes de información de transporte público..."
 
-#: app/SettingsPage.qml:107 app/WeatherForecastDelegate.qml:67
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:67
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Previsión meteorológica"
 
-#: app/SettingsPage.qml:110
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Para mostrar previsiones meteorológicas se consultarán servicios en línea."
 
-#: app/SettingsPage.qml:115
+#: app/SettingsPage.qml:116
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2001,12 +2001,12 @@ msgstr ""
 "creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</"
 "a>."
 
-#: app/SettingsPage.qml:124
+#: app/SettingsPage.qml:125
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Precargar datos de mapas"
 
-#: app/SettingsPage.qml:127
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -2015,12 +2015,12 @@ msgstr ""
 "Si se activa, se descargarán los mapas de todas las estaciones y aeropuertos "
 "para los próximos viajes cuando esté conectado a una red Wi-Fi."
 
-#: app/SettingsPage.qml:134
+#: app/SettingsPage.qml:135
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Conversión de divisas"
 
-#: app/SettingsPage.qml:138
+#: app/SettingsPage.qml:139
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -2029,22 +2029,22 @@ msgstr ""
 "Si se activa esto, se realizarán consultas en línea sobre las tasas de "
 "cambio de divisas en los destinos de los viajes."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:154
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Asistente de trasbordo"
 
-#: app/SettingsPage.qml:157
+#: app/SettingsPage.qml:158
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Añadir trasbordos automáticamente"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Rellenar trasbordos automáticamente"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:167
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -2053,20 +2053,79 @@ msgstr ""
 "Cuando está activado se consultarán los servicios en línea del proveedor de "
 "transporte automáticamente para información de trasbordos."
 
-#: app/SettingsPage.qml:184
+#: app/SettingsPage.qml:185
 #, kde-format
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:189
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configurar notificaciones..."
 
-#: app/SettingsPage.qml:197
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Mostrar notificaciones en la pantalla de bloqueo"
+
+#: app/SettingsPage.qml:218
+#, kde-format
+msgid "Onboard Status"
+msgstr ""
+
+#: app/SettingsPage.qml:222
+#, kde-format
+msgid "Request permissions..."
+msgstr ""
+
+#: app/SettingsPage.qml:223
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr ""
+
+#: app/SettingsPage.qml:235
+#, fuzzy, kde-format
+#| msgid "No vehicle layout information available."
+msgid "Wi-Fi access for onboard information is available."
+msgstr "No se dispone de información sobre el automóvil."
+
+#: app/SettingsPage.qml:237
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr ""
+
+#: app/SettingsPage.qml:239
+#, kde-format
+msgid "Location service is not enabled"
+msgstr ""
+
+#: app/SettingsPage.qml:241
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr ""
+
+#: app/SettingsPage.qml:248
+#, kde-format
+msgid "No further action required."
+msgstr ""
+
+#: app/SettingsPage.qml:250
+#, kde-format
+msgid "Enable Wi-Fi on your system to access onboard information."
+msgstr ""
+
+#: app/SettingsPage.qml:252
+#, kde-format
+msgid ""
+"Enable the location service on your device to access onboard information."
+msgstr ""
+
+#: app/SettingsPage.qml:254
+#, kde-format
+msgid ""
+"Onboard information are unfortunately not supported on your device at this "
+"time."
+msgstr ""
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
