@@ -80,7 +80,7 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     text: i18n("Party size")
                     description: reservation.partySize
-                    visible: description
+                    visible: reservation.partySize > 0
                 }
             }
         }
