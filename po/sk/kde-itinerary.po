@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -485,6 +485,28 @@ msgstr "Model:"
 msgid "Brand"
 msgstr "Značka:"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr ""
+
+#: app/ContactCard.qml:26
+#, fuzzy, kde-format
+#| msgid "Telephone:"
+msgid "Telephone"
+msgstr "Telefón:"
+
+#: app/ContactCard.qml:35
+#, fuzzy, kde-format
+#| msgid "Email:"
+msgid "Email"
+msgstr "E-mail:"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -606,11 +628,6 @@ msgstr "Čas začiatku:"
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Čas konca:"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr ""
 
 #: app/EventPage.qml:132
 #, fuzzy, kde-format
@@ -1195,30 +1212,13 @@ msgstr "E-mail:"
 msgid "Hotel Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr ""
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Telephone:"
-msgid "Telephone"
-msgstr "Telefón:"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Email:"
-msgid "Email"
-msgstr "E-mail:"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgid "Check-in time"
 msgstr "Vstupná kontrola"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgid "Check-out time"
@@ -1978,19 +1978,19 @@ msgstr ""
 msgid "Restaurant Reservation"
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, fuzzy, kde-format
 #| msgid "Start time:"
 msgid "Start time"
 msgstr "Čas spustenia:"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, fuzzy, kde-format
 #| msgid "End time:"
 msgid "End time"
 msgstr "Čas konca:"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr ""

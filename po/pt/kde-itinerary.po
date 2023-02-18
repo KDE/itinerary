@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
-"PO-Revision-Date: 2023-01-19 02:30+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"PO-Revision-Date: 2023-02-17 12:32+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -475,6 +475,26 @@ msgstr "Modelo"
 msgid "Brand"
 msgstr "Marca"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "Contacto"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "Telefone"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "E-mail"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "Página Web"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -591,11 +611,6 @@ msgstr "Hora Inicial"
 #, kde-format
 msgid "End Time"
 msgstr "Hora Final"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "Página Web"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1159,27 +1174,12 @@ msgstr "E-mail:"
 msgid "Hotel Reservation"
 msgstr "Reserva de Hotel"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "Contacto"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "Telefone"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "E-mail"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "Hora de entrada"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "Hora de saída"
@@ -1913,17 +1913,17 @@ msgstr "Editar o Restaurante"
 msgid "Restaurant Reservation"
 msgstr "Reserva de Restaurante"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "Hora de início"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "Hora de fim"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "Tamanho da festa"
@@ -2072,54 +2072,55 @@ msgstr "Mostrar as notificações no ecrã de bloqueio"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Estado do Embarque"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Pedir permissão..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "São necessárias permissões adicionais para aceder ao estado do Wi-Fi."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Não está disponível nenhuma informação da disposição do veículo."
+msgstr "Está disponível o acesso por Wi-Fi à informação de embarque."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "O Wi-Fi não está activo"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "O serviço de localização não está activo"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "O acesso Wi-Fi não está disponível neste sistema"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "Não é necessário fazer mais nada."
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr ""
+msgstr "Active o Wi-Fi no seu sistema para aceder à informação de embarque."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Active o serviço de localização no seu sistema para aceder à informação de "
+"embarque."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2127,6 +2128,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Infelizmente, a informação de embarque não é suportada no seu dispositivo "
+"nesta altura."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
@@ -2791,34 +2794,3 @@ msgstr "Compreendi!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
-
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%1 de %2"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Days"
-#~ msgstr "Dias"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Months"
-#~ msgstr "Meses"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Years"
-#~ msgstr "Anos"
-
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Next"
-#~ msgstr "Seguinte"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancelar"
-
-#~ msgid "Accept"
-#~ msgstr "Aceitar"
-
-#~ msgid "Number:"
-#~ msgstr "Número:"

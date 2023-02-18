@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 21:56+0300\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"PO-Revision-Date: 2023-02-17 18:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -469,6 +469,26 @@ msgstr "Model"
 msgid "Brand"
 msgstr "Marka"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "İletişim"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "Telefon"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "E-posta"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "Web Sayfası"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -585,11 +605,6 @@ msgstr "Başlangıç Zamanı"
 #, kde-format
 msgid "End Time"
 msgstr "Bitiş Zamanı"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "Web Sayfası"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1153,27 +1168,12 @@ msgstr "E-posta:"
 msgid "Hotel Reservation"
 msgstr "Otel Rezervasyonu"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "İletişim"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "Telefon"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "E-posta"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "Giriş zamanı"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "Çıkış zamanı"
@@ -1907,17 +1907,17 @@ msgstr "Restoranı Düzenle"
 msgid "Restaurant Reservation"
 msgstr "Restoran Rezervasyonu"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "Başlangıç zamanı"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "Bitiş zamanı"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "Grup boyutu"
@@ -2065,61 +2065,60 @@ msgstr "Kilit ekranında bildirimleri göster"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Biniş Durumu"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "İzinler iste..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Wi-Fi durumuna erişmek için ek izinler gerekiyor."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Araç yerleşim bilgisi yok."
+msgstr "Biniş bilgisi için Wi-Fi erişimi kullanılabilir."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "Wi-Fi etkin değil"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Konum hizmeti etkin değil"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "Bu sistemde Wi-Fi erişimi etkin değil"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "Başka bir eylem gerekmiyor"
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr ""
+msgstr "Biniş durumuna erişmek için sisteminizde Wi-Fi'yi etkinleştirin."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
-msgstr ""
+msgstr "Biniş durumuna erişmek için aygıtınızda konum hizmetini etkinleştirin."
 
 #: app/SettingsPage.qml:254
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
-msgstr ""
+msgstr "Biniş durumu, şu anda aygıtınızda ne yazık ki şu anda desteklenmiyor."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format

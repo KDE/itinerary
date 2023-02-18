@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
 "PO-Revision-Date: 2023-02-15 11:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -465,6 +465,26 @@ msgstr ""
 msgid "Brand"
 msgstr ""
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr ""
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr ""
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr ""
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -580,11 +600,6 @@ msgstr ""
 #: app/EventPage.qml:106
 #, kde-format
 msgid "End Time"
-msgstr ""
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
 msgstr ""
 
 #: app/EventPage.qml:132
@@ -1143,27 +1158,12 @@ msgstr "电子邮箱："
 msgid "Hotel Reservation"
 msgstr "酒店预订"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr ""
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr ""
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr ""
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr ""
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr ""
@@ -1895,17 +1895,17 @@ msgstr "编辑餐厅信息"
 msgid "Restaurant Reservation"
 msgstr "餐厅订座"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr ""
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr ""
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr ""

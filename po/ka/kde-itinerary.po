@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
 "PO-Revision-Date: 2023-01-19 05:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -467,6 +467,26 @@ msgstr "მოდელი"
 msgid "Brand"
 msgstr "სავაჭრო მარკა"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "კონტაქტი"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "ტელეფონი"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "ელფოტა"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "ვებსაიტი"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -583,11 +603,6 @@ msgstr "დაწყების დრო"
 #, kde-format
 msgid "End Time"
 msgstr "დასრულების დრო"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "ვებსაიტი"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1146,27 +1161,12 @@ msgstr "ელ-ფოსტა:"
 msgid "Hotel Reservation"
 msgstr "სასტუმროს ჯავშანი"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "კონტაქტი"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "ტელეფონი"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "ელფოტა"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "ჩეკინის დრო"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"
@@ -1901,17 +1901,17 @@ msgstr "რესტორანის ჩასწორება"
 msgid "Restaurant Reservation"
 msgstr "რესტორნის ჯავშანი"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "დაწყების დრო"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "დასრულების დრო"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "წვეულების ზომა"

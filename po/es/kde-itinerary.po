@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 14:50+0100\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"PO-Revision-Date: 2023-02-17 18:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -471,6 +471,26 @@ msgstr "Modelo"
 msgid "Brand"
 msgstr "Marca"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "Contacto"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "Teléfono"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "Sitio web"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -587,11 +607,6 @@ msgstr "Hora de inicio"
 #, kde-format
 msgid "End Time"
 msgstr "Hora de finalización"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "Sitio web"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1156,27 +1171,12 @@ msgstr "Correo electrónico:"
 msgid "Hotel Reservation"
 msgstr "Reserva de hotel"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "Contacto"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "Teléfono"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "Correo electrónico"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "Hora de check-in"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "Hora de check-out"
@@ -1911,17 +1911,17 @@ msgstr "Editar restaurante"
 msgid "Restaurant Reservation"
 msgstr "Reserva de restaurante"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "Hora de inicio"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "Hora de finalización"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "Tamaño de la fiesta"
@@ -2076,38 +2076,38 @@ msgstr ""
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Solicitar permisos..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Se necesitan permisos adicionales para acceder al estado de la wifi."
 
 #: app/SettingsPage.qml:235
 #, fuzzy, kde-format
 #| msgid "No vehicle layout information available."
 msgid "Wi-Fi access for onboard information is available."
-msgstr "No se dispone de información sobre el automóvil."
+msgstr "El acceso wifi para la información a bordo está disponible."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "La wifi no está activa"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "El servicio de localización no está activo"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "El acceso wifi no está disponible en este sistema"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "No se requieren más acciones."
 
 #: app/SettingsPage.qml:250
 #, kde-format

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 11:58+0200\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"PO-Revision-Date: 2023-02-17 09:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -474,6 +474,26 @@ msgstr "Модель"
 msgid "Brand"
 msgstr "Фірма"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "Контакт"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "Телефон"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "Ел. пошта"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "Сайт"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -590,11 +610,6 @@ msgstr "Час початку"
 #, kde-format
 msgid "End Time"
 msgstr "Час завершення"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "Сайт"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1160,27 +1175,12 @@ msgstr "Ел. пошта:"
 msgid "Hotel Reservation"
 msgstr "Бронювання готелю"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "Контакт"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "Телефон"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "Ел. пошта"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "Час перевірки на вході"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
@@ -1916,17 +1916,17 @@ msgstr "Зміна параметрів ресторану"
 msgid "Restaurant Reservation"
 msgstr "Бронювання ресторану"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "Час початку"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "Час завершення"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "Кількість учасників"
@@ -2078,54 +2078,56 @@ msgstr "Показувати сповіщення при заблоковано�
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Стан посадки"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Запит щодо прав доступу…"
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Для доступу до стану Wi-Fi потрібні додаткові права доступу."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Немає доступної інформації щодо компонування засобу пересування."
+msgstr "Немає доступу до Wi-Fi для отримання даних щодо посадки."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "Wi-Fi не увімкнено"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Службу визначення місця перебування не увімкнено"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "У цій системі немає доступу до Wi-Fi"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "Потреби у подальшому втручанні немає."
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
+"Для отримання доступу до даних щодо посадки увімкніть у вашій системі Wi-Fi."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Увімкніть службу визначення місця перебування на вашому пристрої, щоб "
+"отримати доступ до даних щодо посадки."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2133,6 +2135,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"На жаль, на вашому пристрої у цій версії не передбачено підтримки даних щодо "
+"посадки."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format

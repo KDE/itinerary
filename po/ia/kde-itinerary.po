@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
 "PO-Revision-Date: 2023-02-08 22:04+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -468,6 +468,26 @@ msgstr "Modello"
 msgid "Brand"
 msgstr "Marca"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr "Contacto"
+
+#: app/ContactCard.qml:26
+#, kde-format
+msgid "Telephone"
+msgstr "Telephono"
+
+#: app/ContactCard.qml:35
+#, kde-format
+msgid "Email"
+msgstr "E-posta"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr "Sito Web"
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -584,11 +604,6 @@ msgstr "Tempore de initio"
 #, kde-format
 msgid "End Time"
 msgstr "Tempore de Fin"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr "Sito Web"
 
 #: app/EventPage.qml:132
 #, kde-format
@@ -1152,27 +1167,12 @@ msgstr "E-posta:"
 msgid "Hotel Reservation"
 msgstr "Reservation de Hotel: "
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr "Contacto"
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, kde-format
-msgid "Telephone"
-msgstr "Telephono"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, kde-format
-msgid "Email"
-msgstr "E-posta"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, kde-format
 msgid "Check-in time"
 msgstr "Tempore de Check-in"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, kde-format
 msgid "Check-out time"
 msgstr "Tempore de Check-Out"
@@ -1906,17 +1906,17 @@ msgstr "Modifica restaurante"
 msgid "Restaurant Reservation"
 msgstr "Reservation de restaurante: "
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, kde-format
 msgid "Start time"
 msgstr "Tempore de initio"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
 msgstr "Tempore de Fin"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
 msgstr "Grandor de festa (Party)"

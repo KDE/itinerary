@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-17 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 00:59+0000\n"
 "PO-Revision-Date: 2022-08-05 12:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -480,6 +480,28 @@ msgstr "Malli:"
 msgid "Brand"
 msgstr "Merkki:"
 
+#: app/ContactCard.qml:22
+#, kde-format
+msgid "Contact"
+msgstr ""
+
+#: app/ContactCard.qml:26
+#, fuzzy, kde-format
+#| msgid "Telephone:"
+msgid "Telephone"
+msgstr "Puhelin:"
+
+#: app/ContactCard.qml:35
+#, fuzzy, kde-format
+#| msgid "Email:"
+msgid "Email"
+msgstr "Sähköposti:"
+
+#: app/ContactCard.qml:44 app/EventPage.qml:113
+#, kde-format
+msgid "Website"
+msgstr ""
+
 #: app/DepartureQueryPage.qml:20
 #, kde-format
 msgid "Departures"
@@ -601,11 +623,6 @@ msgstr "Aloitusaika:"
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Päättymisaika:"
-
-#: app/EventPage.qml:113 app/HotelPage.qml:85
-#, kde-format
-msgid "Website"
-msgstr ""
 
 #: app/EventPage.qml:132
 #, fuzzy, kde-format
@@ -1188,30 +1205,13 @@ msgstr "Sähköposti:"
 msgid "Hotel Reservation"
 msgstr "Hotellivaraus"
 
-#: app/HotelPage.qml:64 app/RestaurantPage.qml:60
-#, kde-format
-msgid "Contact"
-msgstr ""
-
-#: app/HotelPage.qml:68 app/RestaurantPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Telephone:"
-msgid "Telephone"
-msgstr "Puhelin:"
-
-#: app/HotelPage.qml:77 app/RestaurantPage.qml:72
-#, fuzzy, kde-format
-#| msgid "Email:"
-msgid "Email"
-msgstr "Sähköposti:"
-
-#: app/HotelPage.qml:101
+#: app/HotelPage.qml:70
 #, fuzzy, kde-format
 #| msgid "Check-in time:"
 msgid "Check-in time"
 msgstr "Sisäänkirjautumisaika:"
 
-#: app/HotelPage.qml:108
+#: app/HotelPage.qml:77
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Check-out time"
@@ -1953,19 +1953,19 @@ msgstr "Muokkaa ravintolaa"
 msgid "Restaurant Reservation"
 msgstr "Ravintolavaraus"
 
-#: app/RestaurantPage.qml:87
+#: app/RestaurantPage.qml:65
 #, fuzzy, kde-format
 #| msgid "Start time:"
 msgid "Start time"
 msgstr "Aloitusaika:"
 
-#: app/RestaurantPage.qml:95
+#: app/RestaurantPage.qml:73
 #, fuzzy, kde-format
 #| msgid "End time:"
 msgid "End time"
 msgstr "Päättymisaika:"
 
-#: app/RestaurantPage.qml:103
+#: app/RestaurantPage.qml:81
 #, fuzzy, kde-format
 #| msgid "Party size:"
 msgid "Party size"
