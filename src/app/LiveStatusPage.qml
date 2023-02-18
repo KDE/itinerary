@@ -41,18 +41,11 @@ Kirigami.Page {
             bottomPadding: 0
             Kirigami.ColumnView.preventStealing: true
 
-            QtLocation.Plugin {
-                id: mapPlugin
-                name: "osm"
-                QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
-                QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
-            }
-
             QtLocation.Map {
                 id: map
                 anchors.fill: parent
                 center: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
-                plugin: mapPlugin
+                plugin: applicationWindow().osmPlugin()
                 zoomLevel: 12
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
 

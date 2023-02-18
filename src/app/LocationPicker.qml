@@ -34,19 +34,12 @@ Kirigami.Page {
         }
     }
 
-    QtLocation.Plugin {
-        id: mapPlugin
-        name: "osm"
-        QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
-        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
-    }
-
     QtLocation.Map {
         id: map
         anchors.fill: parent
         center: root.coordinate
         zoomLevel: root.coordinate.isValid ? 15 : 8
-        plugin: mapPlugin
+        plugin: applicationWindow().osmPlugin()
         gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
         gesture.preventStealing: true
 

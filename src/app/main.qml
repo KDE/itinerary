@@ -8,6 +8,7 @@ import QtQuick 2.13
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
+import QtLocation 5.11 as QtLocation
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport.onboard 1.0
@@ -284,5 +285,24 @@ Kirigami.ApplicationWindow {
     Component {
         id: devModePageComponent
         App.DevelopmentModePage {}
+    }
+
+    // "singleton" OSM QtLocation plugin
+    // we only want one of these, and created only when absolutely necessary
+    // as this triggers network operations on creation already
+    function osmPlugin() {
+        if (!__qtLocationOSMPlugin) {
+            __qtLocationOSMPlugin = __qtLocationOSMPluginComponent.createObject();
+        }
+        return __qtLocationOSMPlugin;
+    }
+    property var __qtLocationOSMPlugin: null
+    Component {
+        id: __qtLocationOSMPluginComponent
+        QtLocation.Plugin {
+            name: "osm"
+            QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
+            QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
+        }
     }
 }

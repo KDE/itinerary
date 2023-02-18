@@ -144,15 +144,9 @@ Kirigami.FormLayout {
         Layout.fillWidth: true
     }
 
-    QtLocation.Plugin {
-        id: osmPlugin
-        name: "osm"
-        QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
-        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
-    }
     QtLocation.GeocodeModel {
         id: geocodeModel
-        plugin: osmPlugin
+        plugin: applicationWindow().osmPlugin()
         autoUpdate: false
         limit: 1
 
@@ -170,7 +164,7 @@ Kirigami.FormLayout {
     }
     QtLocation.GeocodeModel {
         id: reverseGeocodeModel
-        plugin: osmPlugin
+        plugin: applicationWindow().osmPlugin()
         autoUpdate: false
         limit: 1
         onLocationsChanged: {

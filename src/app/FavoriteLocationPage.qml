@@ -23,13 +23,6 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
-    QtLocation.Plugin {
-        id: mapPlugin
-        name: "osm"
-        QtLocation.PluginParameter { name: "osm.useragent"; value: ApplicationController.userAgent }
-        QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
-    }
-
     Component.onCompleted: {
         if (combo.count == 0)
             FavoriteLocationModel.appendNewLocation();
@@ -141,7 +134,7 @@ Kirigami.Page {
     QtLocation.Map {
         id: map
         anchors { top: combo.bottom; left: parent.left; right: parent.right; bottom: parent.bottom; topMargin: Kirigami.Units.largeSpacing }
-        plugin: mapPlugin
+        plugin: applicationWindow().osmPlugin()
 
         QtLocation.MapQuickItem {
             coordinate: map.center
