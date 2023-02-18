@@ -39,6 +39,14 @@ MobileForm.AbstractFormDelegate {
         }
     }
 
+    MatrixRoomSelectionSheet {
+        id: matrixRoomSheet
+            onRoomSelected: {
+            console.log(id);
+            MatrixManager.postLocation(id, root.place.geo.latitude, root.place.geo.longitude, root.place.name)
+        }
+    }
+
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
         QQC2.Label {
@@ -118,6 +126,14 @@ MobileForm.AbstractFormDelegate {
                     icon.name: "view-calendar-day"
                     onTriggered: applicationWindow().pageStack.push(departuresPage)
                     text: i18nc("@action:button", "Public Transport Departures")
+                },
+
+                // share in Matrix channel
+                Kirigami.Action {
+                    visible: root.place != undefined && root.place.geo.isValid && root.place.name
+                    icon.name: "org.kde.neochat-symbolic"
+                    onTriggered: matrixRoomSheet.open()
+                    text: i18nc("@action:button", "Share via Matrix")
                 }
             ]
         }
