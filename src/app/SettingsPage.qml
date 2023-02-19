@@ -315,16 +315,6 @@ Kirigami.ScrollablePage {
                     onClicked: MatrixManager.connected ? MatrixManager.logout() : MatrixManager.login(matrixId.text, matrixPassword.text)
                     enabled: MatrixManager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
                 }
-                Repeater {
-                    model: MatrixRoomsModel {
-                        connection: MatrixManager.connection
-                    }
-                    delegate: MobileForm.FormButtonDelegate {
-                        text: model.displayName
-                        icon.name: "go-next"
-                        onClicked: MatrixManager.postLocation(model.id, 52.52745, 13.32466, "KDAB office")
-                    }
-                }
             }
         }
     }
