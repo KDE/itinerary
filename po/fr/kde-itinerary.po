@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:59+0000\n"
-"PO-Revision-Date: 2023-01-27 19:13+0100\n"
+"POT-Creation-Date: 2023-02-19 00:58+0000\n"
+"PO-Revision-Date: 2023-02-17 20:04+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@neuf.fr"
 
-#: app/AboutPage.qml:16 app/main.qml:146
+#: app/AboutPage.qml:16 app/main.qml:160
 #, kde-format
 msgid "About"
 msgstr "À propos"
@@ -536,7 +536,7 @@ msgstr "Fournisseurs de données : %1"
 msgid "Add Document"
 msgstr "Ajouter un document"
 
-#: app/DocumentsPage.qml:34 app/main.qml:53
+#: app/DocumentsPage.qml:34 app/main.qml:55
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tous les fichiers (*.*)"
@@ -653,59 +653,59 @@ msgstr "Emplacement %1"
 msgid "Favorite Locations"
 msgstr "Emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:42
+#: app/FavoriteLocationPage.qml:35
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Exporter vos emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fichiers GPX (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:50
+#: app/FavoriteLocationPage.qml:43
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Importer vos emplacements favoris"
 
-#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Choisir l'emplacement"
 
-#: app/FavoriteLocationPage.qml:68
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Ajouter un emplacement favori"
 
-#: app/FavoriteLocationPage.qml:76
+#: app/FavoriteLocationPage.qml:69
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Renommer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:81
+#: app/FavoriteLocationPage.qml:74
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Supprimer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:84
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exporter vers un format « GPX »"
 
-#: app/FavoriteLocationPage.qml:96
+#: app/FavoriteLocationPage.qml:89
 #, kde-format
 msgid "Import from GPX"
 msgstr "Importer à partir d'un format « GPX »"
 
-#: app/FavoriteLocationPage.qml:106
+#: app/FavoriteLocationPage.qml:99
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Renommer l'emplacement favori"
 
-#: app/FavoriteLocationPage.qml:117
+#: app/FavoriteLocationPage.qml:110
 #, kde-format
 msgid "Rename"
 msgstr "Renommer"
@@ -846,7 +846,7 @@ msgstr "Supprimer un mot de passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Voulez-vous vraiment supprimer ce mot de passe ?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -962,7 +962,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Récupération (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:117
+#: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de santé"
@@ -1431,6 +1431,28 @@ msgstr[1] "%1 modifications"
 msgid "Itinerary change"
 msgstr "Changement d'itinéraire"
 
+#: app/LiveStatusPage.qml:17 app/main.qml:134
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:84
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Position"
+msgstr "Emplacement"
+
+#: app/LiveStatusPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Journey"
+msgstr "Sélectionner un voyage"
+
 #: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
@@ -1445,6 +1467,12 @@ msgstr "%1 m"
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
+msgstr "%1 km"
+
+#: app/localizer.cpp:182
+#, fuzzy, kde-format
+#| msgid "%1km"
+msgid "%1km/h"
 msgstr "%1 km"
 
 #: app/LocationInfoDelegate.qml:49
@@ -1570,87 +1598,87 @@ msgstr "Ouvrir Itinerary sur la page fournie"
 msgid "PkPass or JSON-LD file to import."
 msgstr "Fichier « PkPass » ou « JSON-LD » à importer."
 
-#: app/main.qml:51
+#: app/main.qml:53
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importer une réservation"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Fichiers PkPass (*.pkpass)"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Fichiers PDF (*.pdf)"
 
-#: app/main.qml:53 app/main.qml:62
+#: app/main.qml:55 app/main.qml:64
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Fichiers KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:60
+#: app/main.qml:62
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exporter les données d'itinéraire"
 
-#: app/main.qml:72 app/PassPage.qml:88
+#: app/main.qml:78 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Importer..."
 
-#: app/main.qml:77
+#: app/main.qml:83
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Numériser le code barre..."
 
-#: app/main.qml:82
+#: app/main.qml:88
 #, kde-format
 msgid "Paste"
 msgstr "Coller"
 
-#: app/main.qml:88
+#: app/main.qml:94
 #, kde-format
 msgid "Check for Updates"
 msgstr "Vérifier les mises à jour"
 
-#: app/main.qml:96
+#: app/main.qml:102
 #, kde-format
 msgid "Download Maps"
 msgstr "Télécharger des cartes"
 
-#: app/main.qml:104 app/StatisticsPage.qml:16
+#: app/main.qml:110 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiques"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Mots de passe && Programmes"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Mots de passe & programmes"
 
-#: app/main.qml:128
+#: app/main.qml:142
 #, kde-format
 msgid "Settings..."
 msgstr "Paramètres..."
 
-#: app/main.qml:134
+#: app/main.qml:148
 #, kde-format
 msgid "Export..."
 msgstr "Exporter..."
 
-#: app/main.qml:139 app/WelcomePage.qml:17
+#: app/main.qml:153 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Aide"
 
-#: app/main.qml:206
+#: app/main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "Chargement de la carte terminé."
@@ -1816,27 +1844,27 @@ msgstr "Ville : "
 msgid "Region:"
 msgstr "Région :"
 
-#: app/PlaceEditor.qml:191
+#: app/PlaceEditor.qml:185
 #, kde-format
 msgid "Coordinate:"
 msgstr "Coordonnée :"
 
-#: app/PlaceEditor.qml:195
+#: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
 msgstr "Coordonnées de rendez-vous"
 
-#: app/PlaceEditor.qml:201
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:215
+#: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
 msgstr "Remplir une coordonnée à partir de l’adresse "
 
-#: app/PlaceEditor.qml:226
+#: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr "Remplir l’adresse à partir de la coordonnée"
@@ -2090,54 +2118,58 @@ msgstr "Afficher les notifications sur l'écran de verrouillage"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "État à bord"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Demander des droits d'accès..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
+"Des droits d'accès supplémentaires sont nécessaires pour accéder à l'état "
+"Wifi."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Aucune information de disposition du véhicule disponible."
+msgstr "L'accès au Wifi aux informations d'état à bord est disponible."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "Le Wifi n'est pas activé."
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Le service de localisation n'est pas activé."
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "L'accès au Wifi est indisponible sur ce système."
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "Aucune action supplémentaire n'est requise."
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
+"Activer le Wifi sur votre système pour accéder aux informations d'état à bord"
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Activer le service de localisation sur votre périphérique pour accéder aux "
+"informations d'état à bord"
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2145,6 +2177,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Les informations d'état à bord ne sont malheureusement pas prises en charge "
+"par votre périphérique pour le moment."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format

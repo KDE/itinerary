@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"POT-Creation-Date: 2023-02-19 00:58+0000\n"
 "PO-Revision-Date: 2023-02-17 12:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: app/AboutPage.qml:16 app/main.qml:146
+#: app/AboutPage.qml:16 app/main.qml:160
 #, kde-format
 msgid "About"
 msgstr "Quant al"
@@ -530,7 +530,7 @@ msgstr "Proveïdors de dades: %1"
 msgid "Add Document"
 msgstr "Afegeix un document"
 
-#: app/DocumentsPage.qml:34 app/main.qml:53
+#: app/DocumentsPage.qml:34 app/main.qml:55
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tots els fitxers (*.*)"
@@ -646,59 +646,59 @@ msgstr "Ubicació %1"
 msgid "Favorite Locations"
 msgstr "Ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:42
+#: app/FavoriteLocationPage.qml:35
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Exporta les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fitxers GPX (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:50
+#: app/FavoriteLocationPage.qml:43
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Importa les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Selecció d'ubicació"
 
-#: app/FavoriteLocationPage.qml:68
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Afegeix una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:76
+#: app/FavoriteLocationPage.qml:69
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Reanomena una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:81
+#: app/FavoriteLocationPage.qml:74
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Elimina una ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:84
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exporta a GPX"
 
-#: app/FavoriteLocationPage.qml:96
+#: app/FavoriteLocationPage.qml:89
 #, kde-format
 msgid "Import from GPX"
 msgstr "Importa des de GPX"
 
-#: app/FavoriteLocationPage.qml:106
+#: app/FavoriteLocationPage.qml:99
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Reanomena la ubicació preferida"
 
-#: app/FavoriteLocationPage.qml:117
+#: app/FavoriteLocationPage.qml:110
 #, kde-format
 msgid "Rename"
 msgstr "Reanomena"
@@ -836,7 +836,7 @@ msgstr "Suprimeix el passi"
 msgid "Do you really want to delete this pass?"
 msgstr "Segur que voleu suprimir aquest passi?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -951,7 +951,7 @@ msgstr "Prova %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperació (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:117
+#: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de salut"
@@ -1415,6 +1415,28 @@ msgstr[1] "%1 canvis"
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
 
+#: app/LiveStatusPage.qml:17 app/main.qml:134
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:84
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Position"
+msgstr "Ubicació"
+
+#: app/LiveStatusPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Journey"
+msgstr "Selecciona el viatge"
+
 #: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
@@ -1429,6 +1451,12 @@ msgstr "%1 m"
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
+msgstr "%1 km"
+
+#: app/localizer.cpp:182
+#, fuzzy, kde-format
+#| msgid "%1km"
+msgid "%1km/h"
 msgstr "%1 km"
 
 #: app/LocationInfoDelegate.qml:49
@@ -1554,87 +1582,87 @@ msgstr "Obre l'itinerari a la pàgina indicada"
 msgid "PkPass or JSON-LD file to import."
 msgstr "Fitxer PkPass o JSON-LD a importar."
 
-#: app/main.qml:51
+#: app/main.qml:53
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importa la reserva"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Fitxers PkPass (*.pkpass)"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Fitxers PDF (*.pdf)"
 
-#: app/main.qml:53 app/main.qml:62
+#: app/main.qml:55 app/main.qml:64
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Fitxers del KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:60
+#: app/main.qml:62
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportació de dades de l'Itinerary"
 
-#: app/main.qml:72 app/PassPage.qml:88
+#: app/main.qml:78 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Importa..."
 
-#: app/main.qml:77
+#: app/main.qml:83
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Escaneja un codi de barres..."
 
-#: app/main.qml:82
+#: app/main.qml:88
 #, kde-format
 msgid "Paste"
 msgstr "Enganxa"
 
-#: app/main.qml:88
+#: app/main.qml:94
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprova si hi ha actualitzacions"
 
-#: app/main.qml:96
+#: app/main.qml:102
 #, kde-format
 msgid "Download Maps"
 msgstr "Baixa els mapes"
 
-#: app/main.qml:104 app/StatisticsPage.qml:16
+#: app/main.qml:110 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Estadístiques"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Passis i programes"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Passis i programes"
 
-#: app/main.qml:128
+#: app/main.qml:142
 #, kde-format
 msgid "Settings..."
 msgstr "Arranjament..."
 
-#: app/main.qml:134
+#: app/main.qml:148
 #, kde-format
 msgid "Export..."
 msgstr "Exporta..."
 
-#: app/main.qml:139 app/WelcomePage.qml:17
+#: app/main.qml:153 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:206
+#: app/main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
@@ -1799,27 +1827,27 @@ msgstr "Ciutat:"
 msgid "Region:"
 msgstr "Regió:"
 
-#: app/PlaceEditor.qml:191
+#: app/PlaceEditor.qml:185
 #, kde-format
 msgid "Coordinate:"
 msgstr "Coordenades:"
 
-#: app/PlaceEditor.qml:195
+#: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
 msgstr "Trieu les coordenades"
 
-#: app/PlaceEditor.qml:201
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:215
+#: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
 msgstr "Troba les coordenades a partir de l'adreça"
 
-#: app/PlaceEditor.qml:226
+#: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr "Omple l'adreça a partir de les coordenades"

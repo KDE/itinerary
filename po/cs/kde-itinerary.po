@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"POT-Creation-Date: 2023-02-19 00:58+0000\n"
 "PO-Revision-Date: 2023-02-17 14:17+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: app/AboutPage.qml:16 app/main.qml:146
+#: app/AboutPage.qml:16 app/main.qml:160
 #, kde-format
 msgid "About"
 msgstr "O aplikaci"
@@ -525,7 +525,7 @@ msgstr "Poskytovatelé dat: %1"
 msgid "Add Document"
 msgstr "Přidat dokument"
 
-#: app/DocumentsPage.qml:34 app/main.qml:53
+#: app/DocumentsPage.qml:34 app/main.qml:55
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Všechny soubory (*.*)"
@@ -641,59 +641,59 @@ msgstr "Umístění %1"
 msgid "Favorite Locations"
 msgstr "Oblíbená místa"
 
-#: app/FavoriteLocationPage.qml:42
+#: app/FavoriteLocationPage.qml:35
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Exportovat oblíbená místa"
 
-#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Soubory GPX (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:50
+#: app/FavoriteLocationPage.qml:43
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Importovat oblíbená místa"
 
-#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Vyberte si místo"
 
-#: app/FavoriteLocationPage.qml:68
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Přidejte oblíbené místo"
 
-#: app/FavoriteLocationPage.qml:76
+#: app/FavoriteLocationPage.qml:69
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Přejmenovat oblíbené místo"
 
-#: app/FavoriteLocationPage.qml:81
+#: app/FavoriteLocationPage.qml:74
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Odstranit oblíbené místo"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:84
 #, kde-format
 msgid "Export to GPX"
 msgstr "Exportovat do GPX"
 
-#: app/FavoriteLocationPage.qml:96
+#: app/FavoriteLocationPage.qml:89
 #, kde-format
 msgid "Import from GPX"
 msgstr "Importovat z GPX"
 
-#: app/FavoriteLocationPage.qml:106
+#: app/FavoriteLocationPage.qml:99
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Přejmenovat oblíbené místo"
 
-#: app/FavoriteLocationPage.qml:117
+#: app/FavoriteLocationPage.qml:110
 #, kde-format
 msgid "Rename"
 msgstr "Přejmenovat"
@@ -831,7 +831,7 @@ msgstr "Smazat letenku"
 msgid "Do you really want to delete this pass?"
 msgstr "Opravdu si přejete smazat tuto letenku?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Itinerář KDE"
@@ -946,7 +946,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Zotavení (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:117
+#: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravotní certifikáty"
@@ -1407,6 +1407,28 @@ msgstr[2] "%1 přestupů"
 msgid "Itinerary change"
 msgstr "Změna itineráře"
 
+#: app/LiveStatusPage.qml:17 app/main.qml:134
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:84
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Position"
+msgstr "Umístění"
+
+#: app/LiveStatusPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Journey"
+msgstr "Vyberte výlet"
+
 #: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
@@ -1421,6 +1443,12 @@ msgstr "%1m"
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
+msgstr "%1km"
+
+#: app/localizer.cpp:182
+#, fuzzy, kde-format
+#| msgid "%1km"
+msgid "%1km/h"
 msgstr "%1km"
 
 #: app/LocationInfoDelegate.qml:49
@@ -1545,87 +1573,87 @@ msgstr ""
 msgid "PkPass or JSON-LD file to import."
 msgstr ""
 
-#: app/main.qml:51
+#: app/main.qml:53
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importovat rezervaci"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Soubory PkPass (*.pkpass)"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Soubory PDF (*.pdf)"
 
-#: app/main.qml:53 app/main.qml:62
+#: app/main.qml:55 app/main.qml:64
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Soubory KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:60
+#: app/main.qml:62
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportovat data itineráře"
 
-#: app/main.qml:72 app/PassPage.qml:88
+#: app/main.qml:78 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Importovat..."
 
-#: app/main.qml:77
+#: app/main.qml:83
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Číst čarový kód..."
 
-#: app/main.qml:82
+#: app/main.qml:88
 #, kde-format
 msgid "Paste"
 msgstr "Vložit"
 
-#: app/main.qml:88
+#: app/main.qml:94
 #, kde-format
 msgid "Check for Updates"
 msgstr "Zkontrolovat aktualizace"
 
-#: app/main.qml:96
+#: app/main.qml:102
 #, kde-format
 msgid "Download Maps"
 msgstr "Stáhnout mapy"
 
-#: app/main.qml:104 app/StatisticsPage.qml:16
+#: app/main.qml:110 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes && Programs"
 msgstr ""
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/main.qml:128
+#: app/main.qml:142
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavení..."
 
-#: app/main.qml:134
+#: app/main.qml:148
 #, kde-format
 msgid "Export..."
 msgstr "Exportovat..."
 
-#: app/main.qml:139 app/WelcomePage.qml:17
+#: app/main.qml:153 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Nápověda"
 
-#: app/main.qml:206
+#: app/main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "Stažení mapy bylo dokončeno."
@@ -1789,27 +1817,27 @@ msgstr "Město:"
 msgid "Region:"
 msgstr "Region:"
 
-#: app/PlaceEditor.qml:191
+#: app/PlaceEditor.qml:185
 #, kde-format
 msgid "Coordinate:"
 msgstr "Souřadnice:"
 
-#: app/PlaceEditor.qml:195
+#: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
 msgstr ""
 
-#: app/PlaceEditor.qml:201
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:215
+#: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
 msgstr ""
 
-#: app/PlaceEditor.qml:226
+#: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr ""

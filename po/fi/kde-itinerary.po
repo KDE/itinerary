@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"POT-Creation-Date: 2023-02-19 00:58+0000\n"
 "PO-Revision-Date: 2022-08-05 12:15+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translator@legisign.org"
 
-#: app/AboutPage.qml:16 app/main.qml:146
+#: app/AboutPage.qml:16 app/main.qml:160
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
@@ -542,7 +542,7 @@ msgstr "Tiedontarjoajat: %1"
 msgid "Add Document"
 msgstr "Lisää asiakirja"
 
-#: app/DocumentsPage.qml:34 app/main.qml:53
+#: app/DocumentsPage.qml:34 app/main.qml:55
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Kaikki tiedostot (*)"
@@ -666,59 +666,59 @@ msgstr "Sijainti %1"
 msgid "Favorite Locations"
 msgstr "Suosikkisijainnit"
 
-#: app/FavoriteLocationPage.qml:42
+#: app/FavoriteLocationPage.qml:35
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Tuo suosikkisijainnit"
 
-#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-tiedostot (*.gpx)"
 
-#: app/FavoriteLocationPage.qml:50
+#: app/FavoriteLocationPage.qml:43
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Tuo suosikkisijainnit"
 
-#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Valitse sijainti"
 
-#: app/FavoriteLocationPage.qml:68
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Lisää suosikkisijainniksi"
 
-#: app/FavoriteLocationPage.qml:76
+#: app/FavoriteLocationPage.qml:69
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Muuta suosikkisijainnin nimeä"
 
-#: app/FavoriteLocationPage.qml:81
+#: app/FavoriteLocationPage.qml:74
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Poista suosikkisijainneista"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:84
 #, kde-format
 msgid "Export to GPX"
 msgstr "Vie GPX-muotoon"
 
-#: app/FavoriteLocationPage.qml:96
+#: app/FavoriteLocationPage.qml:89
 #, kde-format
 msgid "Import from GPX"
 msgstr "Tuo GPX-muodosta"
 
-#: app/FavoriteLocationPage.qml:106
+#: app/FavoriteLocationPage.qml:99
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Muuta suosikkisijainnin nimeä"
 
-#: app/FavoriteLocationPage.qml:117
+#: app/FavoriteLocationPage.qml:110
 #, kde-format
 msgid "Rename"
 msgstr "Muuta nimeä"
@@ -866,7 +866,7 @@ msgstr "Poista lippu"
 msgid "Do you really want to delete this pass?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -988,7 +988,7 @@ msgstr "Testi %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Toipuminen (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:117
+#: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
 msgstr "Terveystodistukset"
@@ -1454,6 +1454,28 @@ msgstr[1] "%1 vaihtoa"
 msgid "Itinerary change"
 msgstr "Matkasuunnitelman muutos"
 
+#: app/LiveStatusPage.qml:17 app/main.qml:134
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:84
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Position"
+msgstr "Sijainti:"
+
+#: app/LiveStatusPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Journey"
+msgstr "Valitse matka"
+
 #: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
@@ -1468,6 +1490,12 @@ msgstr "%1 m"
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
+msgstr "%1 km"
+
+#: app/localizer.cpp:182
+#, fuzzy, kde-format
+#| msgid "%1km"
+msgid "%1km/h"
 msgstr "%1 km"
 
 #: app/LocationInfoDelegate.qml:49
@@ -1592,87 +1620,87 @@ msgstr "Avaa Itinerary annetulle sivulle"
 msgid "PkPass or JSON-LD file to import."
 msgstr "Tuotava PkPass- tai JSON-LD-tiedosto."
 
-#: app/main.qml:51
+#: app/main.qml:53
 #, kde-format
 msgid "Import Reservation"
 msgstr "Tuo varaus"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass-tiedostot (*.pkpass)"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF-tiedostot (*.pdf)"
 
-#: app/main.qml:53 app/main.qml:62
+#: app/main.qml:55 app/main.qml:64
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Itinerary -tiedostot (*.itinerary)"
 
-#: app/main.qml:60
+#: app/main.qml:62
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Vie matkasuunnitelmatiedot"
 
-#: app/main.qml:72 app/PassPage.qml:88
+#: app/main.qml:78 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Tuo…"
 
-#: app/main.qml:77
+#: app/main.qml:83
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Lue viivakoodi…"
 
-#: app/main.qml:82
+#: app/main.qml:88
 #, kde-format
 msgid "Paste"
 msgstr "Liitä"
 
-#: app/main.qml:88
+#: app/main.qml:94
 #, kde-format
 msgid "Check for Updates"
 msgstr "Tarkista päivitykset"
 
-#: app/main.qml:96
+#: app/main.qml:102
 #, kde-format
 msgid "Download Maps"
 msgstr "Lataa kartat"
 
-#: app/main.qml:104 app/StatisticsPage.qml:16
+#: app/main.qml:110 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Tilastot"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Liput ja ohjelmat"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Liput ja ohjelmat"
 
-#: app/main.qml:128
+#: app/main.qml:142
 #, kde-format
 msgid "Settings..."
 msgstr "Asetukset…"
 
-#: app/main.qml:134
+#: app/main.qml:148
 #, kde-format
 msgid "Export..."
 msgstr "Vie…"
 
-#: app/main.qml:139 app/WelcomePage.qml:17
+#: app/main.qml:153 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Ohje"
 
-#: app/main.qml:206
+#: app/main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
@@ -1837,28 +1865,28 @@ msgstr "Kaupunki:"
 msgid "Region:"
 msgstr "Alue:"
 
-#: app/PlaceEditor.qml:191
+#: app/PlaceEditor.qml:185
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate:"
 msgstr "Koneeseennousuaika:"
 
-#: app/PlaceEditor.qml:195
+#: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
 msgstr ""
 
-#: app/PlaceEditor.qml:201
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:215
+#: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
 msgstr ""
 
-#: app/PlaceEditor.qml:226
+#: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr ""

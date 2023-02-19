@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 00:59+0000\n"
+"POT-Creation-Date: 2023-02-19 00:58+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
-#: app/AboutPage.qml:16 app/main.qml:146
+#: app/AboutPage.qml:16 app/main.qml:160
 #, kde-format
 msgid "About"
 msgstr "О программе"
@@ -549,7 +549,7 @@ msgstr "Поставщики данных: %1"
 msgid "Add Document"
 msgstr "Добавить документ"
 
-#: app/DocumentsPage.qml:34 app/main.qml:53
+#: app/DocumentsPage.qml:34 app/main.qml:55
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Все файлы (*.*)"
@@ -673,59 +673,59 @@ msgstr "Расположение %1"
 msgid "Favorite Locations"
 msgstr "Избранные расположения"
 
-#: app/FavoriteLocationPage.qml:42
+#: app/FavoriteLocationPage.qml:35
 #, kde-format
 msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:44 app/FavoriteLocationPage.qml:52
+#: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
 #: app/TimelinePage.qml:127
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
 
-#: app/FavoriteLocationPage.qml:50
+#: app/FavoriteLocationPage.qml:43
 #, kde-format
 msgid "Import Favorite Locations"
 msgstr "Импорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:58 app/LocationPicker.qml:30
+#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
 #: app/PlaceEditor.qml:56
 #, kde-format
 msgid "Pick Location"
 msgstr "Выбрать расположение"
 
-#: app/FavoriteLocationPage.qml:68
+#: app/FavoriteLocationPage.qml:61
 #, kde-format
 msgid "Add Favorite Location"
 msgstr "Добавить избранное расположение"
 
-#: app/FavoriteLocationPage.qml:76
+#: app/FavoriteLocationPage.qml:69
 #, kde-format
 msgid "Rename Favorite Location"
 msgstr "Переименовать избранное расположение"
 
-#: app/FavoriteLocationPage.qml:81
+#: app/FavoriteLocationPage.qml:74
 #, kde-format
 msgid "Remove Favorite Location"
 msgstr "Удалить избранное расположение"
 
-#: app/FavoriteLocationPage.qml:91
+#: app/FavoriteLocationPage.qml:84
 #, kde-format
 msgid "Export to GPX"
 msgstr "Экспорт в GPX"
 
-#: app/FavoriteLocationPage.qml:96
+#: app/FavoriteLocationPage.qml:89
 #, kde-format
 msgid "Import from GPX"
 msgstr "Импорт из GPX"
 
-#: app/FavoriteLocationPage.qml:106
+#: app/FavoriteLocationPage.qml:99
 #, kde-format
 msgid "Rename favorite location"
 msgstr "Переименовать избранное расположение"
 
-#: app/FavoriteLocationPage.qml:117
+#: app/FavoriteLocationPage.qml:110
 #, kde-format
 msgid "Rename"
 msgstr "Переименовать"
@@ -873,7 +873,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:17 app/main.qml:67
+#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -995,7 +995,7 @@ msgstr "Тест %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Перенесённое заболевание (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:117
+#: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
 msgstr "Сертификаты здоровья"
@@ -1465,6 +1465,28 @@ msgstr[3] "Одна смена"
 msgid "Itinerary change"
 msgstr "Изменение маршрута"
 
+#: app/LiveStatusPage.qml:17 app/main.qml:134
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:84
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:97
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Position"
+msgstr "Расположение:"
+
+#: app/LiveStatusPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Journey"
+msgstr "Выбрать поездку"
+
 #: app/localizer.cpp:126
 #, kde-format
 msgctxt "day-only date format"
@@ -1479,6 +1501,12 @@ msgstr "%1 м"
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
 msgid "%1km"
+msgstr "%1 км"
+
+#: app/localizer.cpp:182
+#, fuzzy, kde-format
+#| msgid "%1km"
+msgid "%1km/h"
 msgstr "%1 км"
 
 #: app/LocationInfoDelegate.qml:49
@@ -1606,87 +1634,87 @@ msgstr "Открыть программу на указанной страниц
 msgid "PkPass or JSON-LD file to import."
 msgstr "Файл PkPass или JSON-LD для импорта."
 
-#: app/main.qml:51
+#: app/main.qml:53
 #, kde-format
 msgid "Import Reservation"
 msgstr "Импорт бронирования"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Файлы PkPass (*.pkpass)"
 
-#: app/main.qml:53
+#: app/main.qml:55
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Файлы PDF (*.pdf)"
 
-#: app/main.qml:53 app/main.qml:62
+#: app/main.qml:55 app/main.qml:64
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 
-#: app/main.qml:60
+#: app/main.qml:62
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Экспорт данных маршрута"
 
-#: app/main.qml:72 app/PassPage.qml:88
+#: app/main.qml:78 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Импорт…"
 
-#: app/main.qml:77
+#: app/main.qml:83
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Сканировать штрихкод..."
 
-#: app/main.qml:82
+#: app/main.qml:88
 #, kde-format
 msgid "Paste"
 msgstr "Вставить"
 
-#: app/main.qml:88
+#: app/main.qml:94
 #, kde-format
 msgid "Check for Updates"
 msgstr "Проверить обновления"
 
-#: app/main.qml:96
+#: app/main.qml:102
 #, kde-format
 msgid "Download Maps"
 msgstr "Загрузить карты"
 
-#: app/main.qml:104 app/StatisticsPage.qml:16
+#: app/main.qml:110 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Статистика"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Пропуска &и программы"
 
-#: app/main.qml:111
+#: app/main.qml:117
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Пропуска и программы"
 
-#: app/main.qml:128
+#: app/main.qml:142
 #, kde-format
 msgid "Settings..."
 msgstr "Параметры…"
 
-#: app/main.qml:134
+#: app/main.qml:148
 #, kde-format
 msgid "Export..."
 msgstr "Экспорт…"
 
-#: app/main.qml:139 app/WelcomePage.qml:17
+#: app/main.qml:153 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Справка"
 
-#: app/main.qml:206
+#: app/main.qml:220
 #, kde-format
 msgid "Map download finished."
 msgstr "Загрузка карты завершена."
@@ -1852,28 +1880,28 @@ msgstr "Город:"
 msgid "Region:"
 msgstr "Регион:"
 
-#: app/PlaceEditor.qml:191
+#: app/PlaceEditor.qml:185
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate:"
 msgstr "Время посадки:"
 
-#: app/PlaceEditor.qml:195
+#: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
 msgstr ""
 
-#: app/PlaceEditor.qml:201
+#: app/PlaceEditor.qml:195
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/PlaceEditor.qml:215
+#: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
 msgstr ""
 
-#: app/PlaceEditor.qml:226
+#: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
 msgstr ""
