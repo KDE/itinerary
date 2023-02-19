@@ -14,7 +14,7 @@ import "." as App
 // TODO room icon/avatar
 Kirigami.OverlaySheet {
     id: sheet
-    signal roomSelected(string id)
+    signal roomSelected(var room)
 
     header: Kirigami.Heading { text: i18n("Share Location") }
     ListView {
@@ -29,7 +29,7 @@ Kirigami.OverlaySheet {
             label: model.displayName
             onClicked: {
                 console.log(model.id);
-                sheet.roomSelected(model.id);
+                sheet.roomSelected({ id: model.id, displayName: model.displayName });
                 sheet.close();
             }
         }

@@ -42,9 +42,34 @@ MobileForm.AbstractFormDelegate {
     MatrixRoomSelectionSheet {
         id: matrixRoomSheet
             onRoomSelected: {
-            console.log(id);
-            MatrixManager.postLocation(id, root.place.geo.latitude, root.place.geo.longitude, root.place.name)
-        }
+            console.log(room);
+            shareConfirmDialog.room = room;
+            shareConfirmDialog.open();
+         }
+    }
+
+    Kirigami.PromptDialog {
+        id: shareConfirmDialog
+
+        property var room
+
+        title: i18n("Share Place")
+        subtitle: room ? i18n("Do you really want to share %1 to the Matrix channel %2?", root.place.name, room.displayName) : ""
+
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Share")
+                icon.name: "org.kde.neochat-symbolic"
+                onTriggered: {
+                    console.log(shareConfirmDialog.room.id);
+                    MatrixManager.postLocation(shareConfirmDialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
+                    shareConfirmDialog.close();
+                }
+            }
+        ]
+        closePolicy: QQC2.Popup.CloseOnEscape
     }
 
     contentItem: ColumnLayout {
