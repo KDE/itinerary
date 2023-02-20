@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-19 00:58+0000\n"
-"PO-Revision-Date: 2023-02-17 12:44+0100\n"
+"PO-Revision-Date: 2023-02-19 11:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1418,24 +1418,22 @@ msgstr "Canvi en l'itinerari"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Estat en directe"
 
 #: app/LiveStatusPage.qml:84
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "S'està esperant les dades..."
 
 #: app/LiveStatusPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
-msgstr "Ubicació"
+msgstr "Posició"
 
 #: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Selecciona el viatge"
+msgstr "Viatge"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1454,10 +1452,9 @@ msgid "%1km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1 km"
+msgstr "%1km/h"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-19 00:58+0000\n"
-"PO-Revision-Date: 2023-02-17 18:15+0100\n"
+"PO-Revision-Date: 2023-02-19 11:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1420,24 +1420,22 @@ msgstr "Cambio de itinerario"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Estado en directo"
 
 #: app/LiveStatusPage.qml:84
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "Esperando datos..."
 
 #: app/LiveStatusPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
-msgstr "Ubicación"
+msgstr "Posición"
 
 #: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Seleccionar viaje"
+msgstr "Viaje"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1456,10 +1454,9 @@ msgid "%1km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1 km"
+msgstr "%1km/h"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2041,7 +2038,7 @@ msgid ""
 "trips when connected to Wifi network."
 msgstr ""
 "Si se activa, se descargarán los mapas de todas las estaciones y aeropuertos "
-"para los próximos viajes cuando esté conectado a una red Wi-Fi."
+"para los próximos viajes cuando esté conectado a una red wifi."
 
 #: app/SettingsPage.qml:135
 #, kde-format
@@ -2099,7 +2096,7 @@ msgstr "Mostrar notificaciones en la pantalla de bloqueo"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Estado a bordo"
 
 #: app/SettingsPage.qml:222
 #, kde-format
@@ -2112,10 +2109,9 @@ msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Se necesitan permisos adicionales para acceder al estado de la wifi."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "El acceso wifi para la información a bordo está disponible."
+msgstr "El acceso wifi para la información de a bordo está disponible."
 
 #: app/SettingsPage.qml:237
 #, kde-format
@@ -2140,13 +2136,15 @@ msgstr "No se requieren más acciones."
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr ""
+msgstr "Active la wifi de su sistema para acceder a información de a bordo."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Active el servicio de ubicación en su dispositivo para acceder a información "
+"de a bordo."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2154,6 +2152,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Desafortunadamente, la información de a bordo no es compatible con su "
+"dispositivo en este momento."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
@@ -2789,7 +2789,7 @@ msgid ""
 msgstr ""
 "KDE Itinerary tiene desactivadas de forma predeterminada todas las funciones "
 "que necesitan acceso a Internet, como la obtención de datos de tráfico en "
-"vivo o la previsión meteorológica. Precisamente por ello es posible que "
+"directo o la previsión meteorológica. Precisamente por ello es posible que "
 "necesite revisar estas preferencias. Mientras lo hace, tal vez quiera "
 "configurar su ubicación inicial para activar el asistente de transferencia "
 "de modo que le sugiera automáticamente la forma de llegar a su próxima "
