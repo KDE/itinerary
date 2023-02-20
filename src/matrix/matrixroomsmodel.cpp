@@ -92,7 +92,7 @@ void MatrixRoomsModel::connectRoomSignals(Room *room)
         refresh(room);
     });
     connect(room, &Room::avatarChanged, this, [this, room] {
-        refresh(room, {AvatarRole});
+        refresh(room, {AvatarRole, AvatarImageRole});
     });
 }
 
@@ -167,6 +167,9 @@ QVariant MatrixRoomsModel::data(const QModelIndex &index, int role) const
     if (role == IdRole) {
         return room->id();
     }
+    if (role == AvatarImageRole) {
+        return room->avatar(48);
+    }
     return {};
 }
 
@@ -188,5 +191,6 @@ QHash<int, QByteArray> MatrixRoomsModel::roleNames() const
     roles[CanonicalAliasRole] = "canonicalAlias";
     roles[TopicRole] = "topic";
     roles[IdRole] = "id";
+    roles[AvatarImageRole] = "avatarImage";
     return roles;
 }

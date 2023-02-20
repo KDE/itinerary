@@ -26,6 +26,7 @@ public:
         CanonicalAliasRole,
         TopicRole,
         IdRole,
+        AvatarImageRole,
     };
     Q_ENUM(EventRoles)
 

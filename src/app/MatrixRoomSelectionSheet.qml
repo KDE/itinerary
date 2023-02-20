@@ -11,7 +11,6 @@ import "." as App
 
 // TODO sort room list in activity order
 // TODO remember last selected room
-// TODO room icon/avatar
 Kirigami.OverlaySheet {
     id: sheet
     signal roomSelected(var room)
@@ -25,8 +24,45 @@ Kirigami.OverlaySheet {
             sortRole: MatrixRoomsModel.DisplayNameRole
         }
 
-        delegate: Kirigami.BasicListItem {
-            label: model.displayName
+        delegate: Kirigami.AbstractListItem {
+            GridLayout {
+                rows: 2
+                columns: 3
+                Kirigami.Avatar {
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.large
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.large
+                    Layout.rowSpan: 2
+                    Layout.row: 0
+                    Layout.column: 0
+                    name: model.displayName
+                    visible: !model.avatar
+                }
+                Kirigami.Icon { // FIXME hack as Avatar cannot consume a QImage, and we don't have the mxc image provider here (yet)
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.large
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.large
+                    Layout.rowSpan: 2
+                    Layout.row: 0
+                    Layout.column: 1
+                    source: model.avatarImage
+                    visible: model.avatar
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    Layout.row: 0
+                    Layout.column: 2
+                    text: model.displayName
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    Layout.row: 1
+                    Layout.column: 2
+                    text: model.topic
+                    elide: Text.ElideRight
+                    maximumLineCount: 1
+                    color: Kirigami.Theme.disabledTextColor
+                }
+            }
+
             onClicked: {
                 console.log(model.id);
                 sheet.roomSelected({ id: model.id, displayName: model.displayName });
