@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # Automatically generated, 2019.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-13 02:41+0000\n"
-"PO-Revision-Date: 2022-11-06 20:01+0100\n"
+"PO-Revision-Date: 2023-02-19 11:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1841,7 +1841,7 @@ msgid ""
 "trips when connected to Wifi network."
 msgstr ""
 "Si se activa, se descargarán los mapas de todas las estaciones y aeropuertos "
-"para los próximos viajes cuando esté conectado a una red Wi-Fi."
+"para los próximos viajes cuando esté conectado a una red wifi."
 
 #: app/SettingsPage.qml:139
 #, kde-format
@@ -2490,7 +2490,7 @@ msgid ""
 msgstr ""
 "KDE Itinerary tiene desactivadas de forma predeterminada todas las funciones "
 "que necesitan acceso a Internet, como la obtención de datos de tráfico en "
-"vivo o la previsión meteorológica. Precisamente por ello es posible que "
+"directo o la previsión meteorológica. Precisamente por ello es posible que "
 "necesite revisar estas preferencias. Mientras lo hace, tal vez quiera "
 "configurar su ubicación inicial para activar el asistente de transferencia "
 "de modo que le sugiera automáticamente la forma de llegar a su próxima "
