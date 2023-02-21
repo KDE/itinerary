@@ -9,20 +9,44 @@ include:
       - /gitlab-templates/freebsd.yml
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
+      - /gitlab-templates/craft-android-arm32.yml
       - /gitlab-templates/craft-android-arm64.yml
       - /gitlab-templates/craft-android-x86-64.yml
       - /gitlab-templates/craft-android-appbundle.yml
 
-craft_android_arm32:
-  extends: .craft_android_base
-  needs:
-    - job: android_qt515
-      artifacts: false
-  variables:
-    KDECI_CRAFT_PLATFORM: android-arm-clang
-  artifacts:
-    expire_in: 3 days
-    when: on_success
-    paths:
-     - ".kde-ci-packages/"
-     - app-bundle-artifacts/
+craft_android_arm64:
+  script:
+    # Set up craft settings and blueprint settings
+    - craftmaster --setup
+    # Get Craft itself ready
+    - craftmaster -c -i craft
+    # Install all of our dependencies
+    - craftmaster -c --install-deps $CI_PROJECT_NAME
+    # Build the actual application
+    - craftmaster -c --no-cache --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
+    # Package it up!
+    - craftmaster -c --package --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
+    # Save our package
+    - packageDir=$(craftmaster -c -q --get "packageDestinationDir()" virtual/base)
+    - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
+    - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
+    # Archive the artifacts we need for creating an application bundle
+    - cd $CI_PROJECT_DIR
+    # Get the relative path of the build directory
+    - buildDir=$(craftmaster -c -q --get "buildDir()" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME)
+    - buildDir=${buildDir#$(pwd)/}
+    # Get the Android target (we assume a single target)
+    - androidTarget=$(craftmaster -c -q --get "androidApkTargets" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME | cut -d "'" -f 2)
+    - buildApkDir=${buildDir}/${androidTarget}_build_apk
+    - mkdir app-bundle-artifacts
+    # Archive the architecture-specific artifacts (relative to the build_apk directory)
+    - (cd ${buildApkDir} && tar czf ${CI_PROJECT_DIR}/app-bundle-artifacts/${KDECI_CRAFT_PLATFORM}.tar.gz libs)
+    # Remove build artifacts that we do not want to archive
+    - rm -rf ${buildApkDir}/{build,libs,.gradle}
+    # Archive the architecture-independent artifacts (only for android-arm64-clang)
+    - echo ${KDECI_CRAFT_PLATFORM}/src/android/java >.files_to_archive
+    - echo ${buildApkDir} >>.files_to_archive
+    - if [ -f ${buildDir}/version.gradle ]; then echo ${buildDir}/version.gradle >>.files_to_archive; fi
+    - if [ ${KDECI_CRAFT_PLATFORM} = "android-arm64-clang" ]; then tar czf app-bundle-artifacts/common.tar.gz --exclude-backups --files-from .files_to_archive; fi
+    # Remember the build_apk path for subsequent jobs
+    - echo "${CI_PROJECT_DIR}/${buildApkDir}" >app-bundle-artifacts/build-apk-path-${KDECI_CRAFT_PLATFORM}
