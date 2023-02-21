@@ -4,6 +4,7 @@
 include:
   - project: sysadmin/ci-utilities
     file:
+      - /gitlab-templates/android.yml
       - /gitlab-templates/linux.yml
       - /gitlab-templates/freebsd.yml
       - /gitlab-templates/linux-qt6.yml
@@ -16,7 +17,6 @@ craft_android_arm32:
   extends: .craft_android_base
   needs:
     - job: android_qt515
-      optional: true
       artifacts: false
   variables:
     KDECI_CRAFT_PLATFORM: android-arm-clang
