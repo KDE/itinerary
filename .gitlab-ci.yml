@@ -1,139 +1,15 @@
 # SPDX-FileCopyrightText: None
 # SPDX-License-Identifier: CC0-1.0
 
-# include:
-#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
-#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
-#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd.yml
-#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux-qt6.yml
-#   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/freebsd-qt6.yml
-
-# include:
-#   - project: sysadmin/ci-utilities
-#     ref: work/kloecker/android-app-bundle
-#     file:
-#       - /gitlab-templates/craft-android-arm32.yml
-#       - /gitlab-templates/craft-android-arm64.yml
-#       - /gitlab-templates/craft-android-x86-64.yml
-
-.craft_android_base:
-  stage: deploy
-  when: manual
-  image: kdeorg/android-qt515:latest
-  #needs: ["android_qt515"]
-  tags:
-    - Linux
-  variables:
-    GIT_STRATEGY: none
-    # KDECI_CRAFT_PLATFORM is specified in the derived jobs
-    KDECI_CRAFT_CACHE: /mnt/craft-cache/$KDECI_CRAFT_PLATFORM/
-    KDECI_CRAFT_CONFIG: ci-utilities/resources/CraftConfig.ini
-    KDECI_CRAFT_PROJECT_CONFIG: $CI_PROJECT_DIR/src/.craft.ini
-  interruptible: true
-  before_script:
-    - git clone $CI_REPOSITORY_URL --branch=$CI_COMMIT_REF_NAME src/
-    # Create empty .craft.ini if none exists
-    - touch $KDECI_CRAFT_PROJECT_CONFIG
-    - git clone https://invent.kde.org/packaging/craftmaster --branch=master
-    - git clone https://invent.kde.org/sysadmin/ci-utilities
-    # Define a short cut for the lengthy CraftMaster command line
-    - function craftmaster { python3 craftmaster/CraftMaster.py --config $KDECI_CRAFT_CONFIG --config-override $KDECI_CRAFT_PROJECT_CONFIG --target $KDECI_CRAFT_PLATFORM $@; }
-  script:
-    # Set up craft settings and blueprint settings
-    - craftmaster --setup
-    # Get Craft itself ready
-    - craftmaster -c -i craft
-    # Install all of our dependencies
-    - craftmaster -c --install-deps $CI_PROJECT_NAME
-    # Build the actual application
-    - craftmaster -c --no-cache --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
-    # Package it up!
-    - craftmaster -c --package --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME
-    # Save our package
-    - packageDir=$(craftmaster -c -q --get "packageDestinationDir()" virtual/base)
-    - mkdir $CI_PROJECT_DIR/.kde-ci-packages/
-    - cp -vrf $packageDir/*.apk $packageDir/metadata/*.zip $CI_PROJECT_DIR/.kde-ci-packages/
-    # Archive the artifacts we need for creating an application bundle
-    - cd $CI_PROJECT_DIR
-    # Get the relative path of the build directory
-    - buildDir=$(craftmaster -c -q --get "buildDir()" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME)
-    - buildDir=${buildDir#$(pwd)/}
-    # Get the Android target (we assume a single target)
-    - androidTarget=$(craftmaster -c -q --get "androidApkTargets" --target master --src-dir $CI_PROJECT_DIR/src/ $CI_PROJECT_NAME | cut -d "'" -f 2)
-    - buildApkDir=${buildDir}/${androidTarget}_build_apk
-    - mkdir app-bundle-artifacts
-    # Archive the architecture-independent artifacts only for android-arm64-clang
-    - if [ ${KDECI_CRAFT_PLATFORM} = "android-arm64-clang" ]; then tar czf app-bundle-artifacts/common.tar.gz ${KDECI_CRAFT_PLATFORM}/src/android/java ${buildDir}/*.gradle ${buildApkDir}/{AndroidManifest.xml,assets,build.gradle,gradle,gradle.properties,gradlew,local.properties,res,src}; fi
-    # Archive the architecture-specific artifacts
-    - (cd ${buildApkDir} && tar czf ${CI_PROJECT_DIR}/app-bundle-artifacts/${KDECI_CRAFT_PLATFORM}.tar.gz libs)
-    # Remember the APK_PATH for subsequent jobs
-    - echo "${CI_PROJECT_DIR}/${buildApkDir}" >app-bundle-artifacts/build-apk-path-${KDECI_CRAFT_PLATFORM}
-
-craft_android_arm64:
-  extends: .craft_android_base
-  variables:
-    KDECI_CRAFT_PLATFORM: android-arm64-clang
-  artifacts:
-    expire_in: 3 days
-    when: on_success
-    paths:
-     - ".kde-ci-packages/"
-     - app-bundle-artifacts/
-
-craft_android_arm32:
-  extends: .craft_android_base
-  variables:
-    KDECI_CRAFT_PLATFORM: android-arm-clang
-  artifacts:
-    expire_in: 3 days
-    when: on_success
-    paths:
-     - ".kde-ci-packages/"
-     - app-bundle-artifacts/
-
-craft_android_x86_64:
-  extends: .craft_android_base
-  variables:
-    KDECI_CRAFT_PLATFORM: android-x86_64-clang
-  artifacts:
-    expire_in: 3 days
-    when: on_success
-    paths:
-     - ".kde-ci-packages/"
-     - app-bundle-artifacts/
-
-craft_android_appbundle:
-  stage: deploy
-  when: manual
-  image: kdeorg/android-qt515:latest
-  tags:
-    - Linux
-  variables:
-    GIT_STRATEGY: none
-  interruptible: true
-  needs:
-    - craft_android_arm32
-    - craft_android_arm64
-    - craft_android_x86_64
-  script:
-    # Set APK_PATH to the path of the craft_android_arm64 job (where we captured the architecture-independent artifacts)
-    - export APK_PATH=$(cat app-bundle-artifacts/build-apk-path-android-arm64-clang)
-    # Unpack the artifacts
-    - tar xzf app-bundle-artifacts/common.tar.gz
-    - cd ${APK_PATH}
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-arm-clang.tar.gz
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-arm64-clang.tar.gz
-    - tar xzf ${CI_PROJECT_DIR}/app-bundle-artifacts/android-x86_64-clang.tar.gz
-    # debug
-    - ls -la
-    - ls -la libs
-    # Now build the app bundle
-    - ./gradlew bundleRelease
-    - buildAabName=$(basename $(ls build/outputs/bundle/release/*_build_apk-release.aab))
-    - finalAabName=${buildAabName%_build_apk-release.aab}-${CI_COMMIT_REF_SLUG}.aab
-    - mv -vf build/outputs/bundle/release/${buildAabName} ${CI_PROJECT_DIR}/${finalAabName}
-  artifacts:
-    expire_in: 3 days
-    when: on_success
-    paths:
-     - "*.aab"
+include:
+  - project: sysadmin/ci-utilities
+    file:
+      - /gitlab-templates/android.yml
+      - /gitlab-templates/linux.yml
+      - /gitlab-templates/freebsd.yml
+      - /gitlab-templates/linux-qt6.yml
+      - /gitlab-templates/freebsd-qt6.yml
+      - /gitlab-templates/craft-android-arm32.yml
+      - /gitlab-templates/craft-android-arm64.yml
+      - /gitlab-templates/craft-android-x86-64.yml
+      - /gitlab-templates/craft-android-appbundle.yml
