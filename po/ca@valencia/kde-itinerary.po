@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-19 00:58+0000\n"
-"PO-Revision-Date: 2023-01-18 09:35+0100\n"
+"PO-Revision-Date: 2023-02-19 11:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1418,24 +1418,22 @@ msgstr "Canvi en l'itinerari"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Estat en directe"
 
 #: app/LiveStatusPage.qml:84
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "S'estan esperant les dades..."
 
 #: app/LiveStatusPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
-msgstr "Ubicació"
+msgstr "Posició"
 
 #: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Selecciona el viatge"
+msgstr "Viatge"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1454,10 +1452,9 @@ msgid "%1km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1 km"
+msgstr "%1km/h"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2098,54 +2095,57 @@ msgstr "Mostra les notificacions a la pantalla de bloqueig"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Estat a bord"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Sol·licita els permisos..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
+"Es requerixen permisos addicionals per a accedir a l'estat de la Wi-Fi."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "No hi ha informació disponible de la disposició del vehicle."
+msgstr "Hi ha disponible un accés Wi-Fi per a la informació a bord."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "La Wi-Fi no està activada"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "El servei d'ubicació no està activat"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "En este sistema no hi ha disponible l'accés Wi-Fi"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "No cal cap més acció."
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
+"Activeu la Wi-Fi del vostre sistema per a accedir a la informació a bord."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
+"informació a bord."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2153,6 +2153,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"La informació a bord no està implementada en el vostre dispositiu en este "
+"moment."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
@@ -2817,34 +2819,3 @@ msgstr "Entesos!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Days"
-#~ msgstr "Dies"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Months"
-#~ msgstr "Mesos"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Years"
-#~ msgstr "Anys"
-
-#~ msgid "Previous"
-#~ msgstr "Anterior"
-
-#~ msgid "Next"
-#~ msgstr "Següent"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgid "Accept"
-#~ msgstr "Accepta"
-
-#~ msgid "Number:"
-#~ msgstr "Número:"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-19 00:58+0000\n"
-"PO-Revision-Date: 2023-02-18 07:23+0100\n"
+"PO-Revision-Date: 2023-02-20 07:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1410,24 +1410,22 @@ msgstr "მარშრუტის ცვლილება"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "მიმდინარე სტატუსი"
 
 #: app/LiveStatusPage.qml:84
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "მონაცემების მოლოდინი..."
 
 #: app/LiveStatusPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
 msgstr "მდებარეობა"
 
 #: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "აირჩიეთ მოგზაურობა"
+msgstr "მგზავრობა"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1446,10 +1444,9 @@ msgid "%1km"
 msgstr "%1კმ"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1კმ"
+msgstr "%1კმ/სთ"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2095,7 +2092,7 @@ msgstr "წვდომების მოთხოვნა..."
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Wi-Fi სტატუსზე წვდომისთვის დამატებითი ნებართვებია საჭირო."
 
 #: app/SettingsPage.qml:235
 #, kde-format
