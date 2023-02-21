@@ -9,7 +9,20 @@ include:
       - /gitlab-templates/freebsd.yml
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
-      - /gitlab-templates/craft-android-arm32.yml
       - /gitlab-templates/craft-android-arm64.yml
       - /gitlab-templates/craft-android-x86-64.yml
       - /gitlab-templates/craft-android-appbundle.yml
+
+craft_android_arm32:
+  extends: .craft_android_base
+  needs:
+    - job: android_qt515
+      artifacts: false
+  variables:
+    KDECI_CRAFT_PLATFORM: android-arm-clang
+  artifacts:
+    expire_in: 3 days
+    when: on_success
+    paths:
+     - ".kde-ci-packages/"
+     - app-bundle-artifacts/
