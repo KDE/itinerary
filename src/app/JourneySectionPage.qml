@@ -12,8 +12,10 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 
 Kirigami.ScrollablePage {
+    id: root
     title: i18n("Journey Details")
     property var journeySection
+    property alias showProgress: sectionModel.showProgress
 
     header: Item {
         height: childrenRect.height + 2 * Kirigami.Units.gridUnit
@@ -67,16 +69,21 @@ Kirigami.ScrollablePage {
         }
     }
 
+    JourneySectionModel {
+        id: sectionModel
+        journeySection: root.journeySection
+    }
+
     ListView {
         clip: true
-        model: journeySection.intermediateStops
+        model: sectionModel
 
         header: JourneySectionStopDelegate {
             stop: journeySection.departure
             isDeparture: true
         }
         delegate: JourneySectionStopDelegate {
-            stop: modelData
+            stop: model.stopover
         }
         footer: JourneySectionStopDelegate {
             stop: journeySection.arrival
