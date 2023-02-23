@@ -21,6 +21,14 @@ Item {
     readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
     readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
 
+    // outbound progress overlay properties
+    readonly property real leadingSegmentLength: leadingLine.height
+    readonly property real trailingSegmentLength: trailingLine.height + stopNotesLine.height
+    // inbound progress overlay properties
+    property real leadingProgress
+    property real trailingProgress
+    property bool stopoverPassed
+
     x: Kirigami.Units.gridUnit
     implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
     implicitWidth: ListView.view.width - x - Kirigami.Units.largeSpacing
@@ -44,6 +52,7 @@ Item {
             implicitWidth: lineSegment.lineWidth * 5
 
             Rectangle {
+                id: leadingLine
                 x: 2 * lineSegment.lineWidth
                 width: lineSegment.lineWidth
                 color: lineSegment.lineColor
@@ -51,6 +60,7 @@ Item {
                 visible: !isDeparture
             }
             Rectangle {
+                id: trailingLine
                 x: 2 * lineSegment.lineWidth
                 y: height
                 width: lineSegment.lineWidth
@@ -60,6 +70,7 @@ Item {
             }
 
             Rectangle {
+                id: stopDot
                 radius: width / 2
                 width: lineSegment.lineWidth * (isIntermediate ? 4 : 5)
                 height: width
@@ -176,6 +187,7 @@ Item {
             visible: notesLabel.visible
 
             Rectangle {
+                id: stopNotesLine
                 y: -layout.rowSpacing
                 x: 2 * lineSegment.lineWidth
                 width: lineSegment.lineWidth

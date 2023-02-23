@@ -81,13 +81,40 @@ Kirigami.ScrollablePage {
         header: JourneySectionStopDelegate {
             stop: journeySection.departure
             isDeparture: true
+            trailingProgress: sectionModel.departureTrailingProgress
+            stopoverPassed: sectionModel.departed
+            Binding {
+                target: sectionModel
+                property: "departureTrailingSegmentLength"
+                value: trailingSegmentLength
+            }
         }
         delegate: JourneySectionStopDelegate {
             stop: model.stopover
+            leadingProgress: model.leadingProgress
+            trailingProgress: model.trailingProgress
+            stopoverPassed: model.stopoverPassed
+            Binding {
+                target: model
+                property: "leadingLength"
+                value: leadingSegmentLength
+            }
+            Binding {
+                target: model
+                property: "trailingLength"
+                value: trailingSegmentLength
+            }
         }
         footer: JourneySectionStopDelegate {
             stop: journeySection.arrival
             isArrival: true
+            leadingProgress: sectionModel.arrivalLeadingProgress
+            stopoverPassed: sectionModel.arrived
+            Binding {
+                target: sectionModel
+                property: "arrivalLeadingSegmentLength"
+                value: leadingSegmentLength
+            }
         }
     }
 }
