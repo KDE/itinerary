@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:58+0000\n"
-"PO-Revision-Date: 2023-02-17 14:17+0100\n"
+"POT-Creation-Date: 2023-02-23 00:58+0000\n"
+"PO-Revision-Date: 2023-02-22 13:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -35,7 +35,7 @@ msgstr "O aplikaci"
 #: app/AboutPage.qml:106
 #, kde-format
 msgid "Copyright: %1"
-msgstr "Copyright: %1"
+msgstr "Autorská práva: %1"
 
 #: app/AboutPage.qml:113
 #, kde-format
@@ -384,7 +384,7 @@ msgstr "Sedadlo"
 msgid "Alternatives"
 msgstr "Alternativy"
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:15 app/TrainPage.qml:416
+#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti výletu"
@@ -831,7 +831,7 @@ msgstr "Smazat letenku"
 msgid "Do you really want to delete this pass?"
 msgstr "Opravdu si přejete smazat tuto letenku?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:272 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Itinerář KDE"
@@ -1378,17 +1378,17 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionPage.qml:51
+#: app/JourneySectionPage.qml:53
 #, kde-format
 msgid "Direction: %1"
 msgstr "Směr: %1"
 
-#: app/JourneySectionPage.qml:58
+#: app/JourneySectionPage.qml:60
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdálenost: %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
@@ -1415,19 +1415,17 @@ msgstr ""
 #: app/LiveStatusPage.qml:84
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "Čeká se na data..."
 
 #: app/LiveStatusPage.qml:97
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
-msgstr "Umístění"
+msgstr "Pozice"
 
 #: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Vyberte výlet"
+msgstr "Cesta"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1446,10 +1444,9 @@ msgid "%1km"
 msgstr "%1km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1km"
+msgstr "%1km/h"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -1553,22 +1550,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:277
+#: app/main.cpp:279
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitální asistent na cesty"
 
-#: app/main.cpp:278
+#: app/main.cpp:280
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
-msgstr "Copyright © 2018-%1 Komunita KDE"
+msgstr "Autorská práva © 2018-%1 Komunita KDE"
 
-#: app/main.cpp:284
+#: app/main.cpp:286
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:287
+#: app/main.cpp:289
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr ""
@@ -1865,7 +1862,7 @@ msgstr "Platný do"
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
 #, kde-format
 msgid "Walk"
-msgstr ""
+msgstr "Chůze"
 
 #: app/publictransport.cpp:222
 #, kde-format
@@ -1935,12 +1932,12 @@ msgstr "Čas zahájení"
 #: app/RestaurantPage.qml:73
 #, kde-format
 msgid "End time"
-msgstr ""
+msgstr "Čas ukončení"
 
 #: app/RestaurantPage.qml:81
 #, kde-format
 msgid "Party size"
-msgstr ""
+msgstr "Velikost skupiny"
 
 #: app/SettingsPage.qml:18
 #, kde-format
@@ -2580,12 +2577,12 @@ msgstr "%1°C / %2°C"
 #: app/TripGroupDelegate.qml:97
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
-msgstr ""
+msgstr "%1: některé nekompatibilní zásuvky (%2)"
 
 #: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
-msgstr ""
+msgstr "%1: některé nekompatibilní zástrčky (%2)"
 
 #: app/TripGroupDelegate.qml:101
 #, kde-format

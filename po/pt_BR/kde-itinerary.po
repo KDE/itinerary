@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-19 00:58+0000\n"
+"POT-Creation-Date: 2023-02-23 00:58+0000\n"
 "PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -396,7 +396,7 @@ msgstr "Local"
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:15 app/TrainPage.qml:416
+#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalhes da viagem"
@@ -870,7 +870,7 @@ msgstr "Excluir"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:270 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:272 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1430,17 +1430,17 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/JourneySectionPage.qml:51
+#: app/JourneySectionPage.qml:53
 #, kde-format
 msgid "Direction: %1"
 msgstr "Direção: %1"
 
-#: app/JourneySectionPage.qml:58
+#: app/JourneySectionPage.qml:60
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distância: %1"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
@@ -1604,22 +1604,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:277
+#: app/main.cpp:279
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:278
+#: app/main.cpp:280
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 A comunidade KDE"
 
-#: app/main.cpp:284
+#: app/main.cpp:286
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:287
+#: app/main.cpp:289
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Arquivo PkPass ou JSON-LD a importar."
