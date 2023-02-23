@@ -53,6 +53,7 @@ Item {
                 case Load.Medium: return i18nc("vehicle load", "Medium")
                 case Load.High: return i18nc("vehicle load", "High")
             }
+            return null;
         }
         Accessible.ignored: !visible
     }
