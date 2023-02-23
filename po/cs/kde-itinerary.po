@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-13 02:41+0000\n"
-"PO-Revision-Date: 2023-02-07 10:57+0100\n"
+"PO-Revision-Date: 2023-02-22 13:25+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -35,7 +35,7 @@ msgstr "O aplikaci"
 #: app/AboutPage.qml:106
 #, kde-format
 msgid "Copyright: %1"
-msgstr "Copyright: %1"
+msgstr "Autorská práva: %1"
 
 #: app/AboutPage.qml:113
 #, kde-format
@@ -1432,7 +1432,7 @@ msgstr "Digitální asistent na cesty"
 #: app/main.cpp:278
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
-msgstr "Copyright © 2018-%1 Komunita KDE"
+msgstr "Autorská práva © 2018-%1 Komunita KDE"
 
 #: app/main.cpp:284
 #, kde-format
@@ -2310,12 +2310,12 @@ msgstr "%1°C / %2°C"
 #: app/TripGroupDelegate.qml:94
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
-msgstr ""
+msgstr "%1: některé nekompatibilní zásuvky (%2)"
 
 #: app/TripGroupDelegate.qml:96
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
-msgstr ""
+msgstr "%1: některé nekompatibilní zástrčky (%2)"
 
 #: app/TripGroupDelegate.qml:98
 #, kde-format
