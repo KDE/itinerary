@@ -128,8 +128,31 @@ Item {
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            text: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform
+
             color: stop.hasExpectedPlatform ? (stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
+            text: {
+                const platform = stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform;
+
+                if (platform.length === 0) {
+                    return '';
+                }
+
+                switch (stop.route.line.mode) {
+                    case Line.Train:
+                    case Line.Funicular:
+                    case Line.LocalTrain:
+                    case Line.LongDistanceTrain:
+                    case Line.Metro:
+                    case Line.RailShuttle:
+                    case Line.RapidTransit:
+                    case Line.Tramway:
+                        return i18nc("Abreviation of train platform", "Pl. %1", platform)
+                    case Line.Ferry:
+                        return i18nc("Ferry dock, if possible use an abreviation", "Dock %1", platform)
+                    default:
+                        return i18nc("Generic abreviation of platform", "Pl. %1", platform)
+                }
+            }
         }
 
         QQC2.ToolButton {
