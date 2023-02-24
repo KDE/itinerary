@@ -113,6 +113,7 @@ Item {
             text: stop.stopPoint.name
             verticalAlignment: Qt.AlignVCenter
             enabled: stop.disruptionEffect != Disruption.NoService
+            elide: Text.ElideRight
         }
 
         QQC2.Label {
