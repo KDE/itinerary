@@ -17,21 +17,21 @@ Kirigami.ScrollablePage {
     property var journeySection
     property alias showProgress: sectionModel.showProgress
 
-    header: Item {
-        height: childrenRect.height + 2 * Kirigami.Units.gridUnit
-        GridLayout {
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.margins: Kirigami.Units.gridUnit
+    header: ColumnLayout {
+        spacing: 0
 
+        GridLayout {
             columns: 2
             columnSpacing: Kirigami.Units.largeSpacing
             rows: 4
             rowSpacing: 0
 
+            Layout.margins: Kirigami.Units.gridUnit
+
             Kirigami.Icon {
                 Layout.rowSpan: 4
+                Layout.alignment: Qt.AlignTop
+                Layout.rightMargin: Kirigami.Units.largeSpacing
                 id: icon
                 source: PublicTransport.lineIcon(journeySection.route.line)
                 width: height
@@ -66,6 +66,10 @@ Kirigami.ScrollablePage {
                 text: i18n("CO₂: %1g", journeySection.co2Emission)
                 visible: journeySection.co2Emission >= 0
             }
+        }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
         }
     }
 
