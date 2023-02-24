@@ -37,16 +37,28 @@ Item {
         x: 2 * lineSegment.lineWidth
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
-        height: parent.height / 2
+        height: {
+            let l = parent.height / 2;
+            if (lineSegment.hasStop) {
+                l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
+            }
+            return Math.max(0.0, l);
+        }
         visible: !isDeparture
     }
     Rectangle {
         id: trailingLine
         x: 2 * lineSegment.lineWidth
-        y: height
+        y: stopDot.y + stopDot.height - lineSegment.lineWidth / 2
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
-        height: parent.height / 2
+        height: {
+            let l = parent.height / 2;
+            if (lineSegment.hasStop) {
+                l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
+            }
+            return Math.max(0.0, l);
+        }
         visible: !isArrival
     }
 
@@ -59,7 +71,7 @@ Item {
             width: lineSegment.lineWidth
             color: lineSegment.lineColor
         }
-        color: Kirigami.Theme.backgroundColor
+        color: "transparent"
         anchors.centerIn: parent
         visible: !isIntermediate || stop.disruptionEffect != Disruption.NoService
     }
