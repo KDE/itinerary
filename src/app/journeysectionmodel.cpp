@@ -41,6 +41,14 @@ KPublicTransport::JourneySection JourneySectionModel::journeySection() const
 
 void JourneySectionModel::setJourneySection(const KPublicTransport::JourneySection& section)
 {
+    // is this an update to the current state? if so, try to avoid resetting the model
+    if (KPublicTransport::JourneySection::isSame(m_journey, section) && m_journey.intermediateStops().size() == section.intermediateStops().size()) {
+        m_journey = section;
+        Q_EMIT dataChanged(index(0, 0), index(rowCount() - 1, 0));
+        Q_EMIT journeySectionChanged();
+        return;
+    }
+
     beginResetModel();
     m_journey = section;
     m_data.clear();
