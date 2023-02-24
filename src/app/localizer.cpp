@@ -108,11 +108,16 @@ QString Localizer::formatTime(const QVariant &obj, const QString &propertyName) 
         return {};
     }
 
-    auto s = QLocale().toString(dt.time(), QLocale::ShortFormat);
-    if (needsTimeZone(dt)) {
-        s += QLatin1Char(' ') + tzAbbreviation(dt);
+    QString output;
+    if (QLocale().timeFormat(QLocale::ShortFormat).contains(QStringLiteral("ss"))) {
+        output = QLocale().toString(dt.time(), QStringLiteral("hh:mm"));
+    } else {
+        output = QLocale().toString(dt.time(), QLocale::ShortFormat);
     }
-    return s;
+    if (needsTimeZone(dt)) {
+        output += QLatin1Char(' ') + tzAbbreviation(dt);
+    }
+    return output;
 }
 
 QString Localizer::formatDate(const QVariant &obj, const QString &propertyName) const
