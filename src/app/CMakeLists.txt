@@ -62,7 +62,6 @@ target_link_libraries(itinerary PUBLIC
     KOSMIndoorMap
     KPim::Itinerary
     KPim::PkPass
-    KF5::Mime
     KF${KF_MAJOR_VERSION}::CalendarCore
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::I18nLocaleData
@@ -72,6 +71,12 @@ target_link_libraries(itinerary PUBLIC
     Qt::Network
     Qt::Quick
 )
+if (TARGET KF5::Mime)
+    target_link_libraries(itinerary PUBLIC KF5::Mime)
+else()
+    target_link_libraries(itinerary PUBLIC KPim${KF_MAJOR_VERSION}::Mime)
+endif()
+
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
 endif()
