@@ -23,7 +23,10 @@ Item {
     property color lineColor: Kirigami.Theme.textColor
     property int lineWidth: Kirigami.Units.smallSpacing
 
+    property real leadingProgress: NaN
+    property real trailingProgress: NaN
     property bool hasStop: true
+    property bool showStop: lineSegment.hasStop
 
     implicitWidth: lineSegment.lineWidth * 5
 
@@ -42,6 +45,10 @@ Item {
             if (lineSegment.hasStop) {
                 l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
             }
+            if (isNaN(lineSegment.leadingProgress)) {
+                return l;
+            }
+            l *= leadingProgress;
             return Math.max(0.0, l);
         }
         visible: !isDeparture
@@ -57,6 +64,10 @@ Item {
             if (lineSegment.hasStop) {
                 l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
             }
+            if (isNaN(lineSegment.trailingProgress)) {
+                return l;
+            }
+            l *= trailingProgress;
             return Math.max(0.0, l);
         }
         visible: !isArrival
@@ -73,6 +84,6 @@ Item {
         }
         color: "transparent"
         anchors.centerIn: parent
-        visible: !isIntermediate || stop.disruptionEffect != Disruption.NoService
+        visible: lineSegment.showStop
     }
 }

@@ -27,7 +27,7 @@ Item {
     // inbound progress overlay properties
     property real leadingProgress
     property real trailingProgress
-    property bool stopoverPassed
+    property alias stopoverPassed: progressLineSegment.showStop
 
     x: Kirigami.Units.gridUnit
     implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
@@ -50,6 +50,18 @@ Item {
             isDeparture: root.isDeparture
             lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
             hasStop: !isIntermediate || stop.disruptionEffect != Disruption.NoService
+
+            JourneySectionStopDelegateLineSegment {
+                id: progressLineSegment
+                anchors.fill: parent
+                isArrival: root.isArrival
+                isDeparture: root.isDeparture
+                lineColor: Kirigami.Theme.activeTextColor
+                hasStop: lineSegment.hasStop
+                showStop: false
+                leadingProgress: root.leadingProgress
+                trailingProgress: Math.min(1.0, (root.trailingProgress * root.trailingSegmentLength) / lineSegment.trailingLineLength)
+            }
         }
 
         QQC2.Label {
@@ -162,6 +174,13 @@ Item {
                 width: lineSegment.lineWidth
                 color: lineSegment.lineColor
                 height: parent.height - y
+
+                Rectangle {
+                    id: progressNotesLine
+                    width: parent.width
+                    color: Kirigami.Theme.activeTextColor
+                    height: Math.max(0, (root.trailingProgress * root.trailingSegmentLength) - lineSegment.trailingLineLength)
+                }
             }
         }
 
