@@ -68,11 +68,12 @@ Kirigami.Page {
                             onTransformOriginChanged: icon.transformOrigin = Item.Center
                         }
                         QQC2.Label {
+                            Kirigami.Theme.colorSet: Kirigami.Theme.Selection
+                            Kirigami.Theme.inherit: false
                             anchors.top: icon.bottom
-                            color: Kirigami.Theme.activeTextColor
                             text: Localizer.formatSpeed(onboardStatus.speed)
                             visible: Localizer.hasSpeed
-                            background: Rectangle { color: Kirigami.Theme.activeBackgroundColor }
+                            background: Rectangle { color: Kirigami.Theme.backgroundColor }
                         }
                     }
                 }
