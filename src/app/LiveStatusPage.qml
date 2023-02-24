@@ -87,6 +87,7 @@ Kirigami.Page {
 
         JourneySectionPage {
             journeySection: onboardStatus.journey.sections[0]
+            showProgress: true
         }
     }
 
