@@ -123,6 +123,7 @@ App.DetailsPage {
         }
 
         App.BookingCard {
+            currentReservation: root.currentReservation
             reservation: root.reservation
         }
 

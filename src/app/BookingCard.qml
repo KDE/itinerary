@@ -10,35 +10,45 @@ import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 
 MobileForm.FormCard {
-    property var reservation
+    id: root
+
+    required property var currentReservation
+    required property var reservation
 
     visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible
+
     Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.fillWidth: true
+
     contentItem: ColumnLayout {
         // booking details
         MobileForm.FormCardHeader {
             title: i18n("Booking")
         }
+
         MobileForm.FormTextDelegate {
             id: referenceLabel
             text: i18n("Reference")
-            description: reservation.reservationNumber
-            visible: reservation.reservationNumber
+            description: root.reservation.reservationNumber
+            visible: root.reservation.reservationNumber
         }
+
         MobileForm.FormDelegateSeparator {}
+
         MobileForm.FormTextDelegate {
             id: underNameLabel
             text: i18n("Under name")
-            description: reservation.underName ? reservation.underName.name : ''
+            description: root.reservation.underName ? root.reservation.underName.name : ''
             visible: description
         }
+
         MobileForm.FormDelegateSeparator { visible: underNameLabel.visible }
+
         MobileForm.FormTextDelegate {
             id: ticketNumberLabel
             text: i18n("Ticket number:")
-            description: root.currentReservation.reservedTicket.ticketNumber
-            visible: ticketNumberLabel.description !== "" && ticketNumberLabel.description != referenceLabel.description
+            description: root.currentReservation.reservedTicket ? root.currentReservation.reservedTicket.ticketNumber : ''
+            visible: description.length > 0 && description !== referenceLabel.description
         }
     }
 }
