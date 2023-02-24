@@ -13,17 +13,17 @@ import org.kde.itinerary 1.0
 import "." as App
 
 Item {
+    id: root
     property var stop
     property bool isDeparture: false
     property bool isArrival: false
-    readonly property bool isIntermediate: !isDeparture && !isArrival
 
     readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
     readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
 
     // outbound progress overlay properties
-    readonly property real leadingSegmentLength: leadingLine.height
-    readonly property real trailingSegmentLength: trailingLine.height + stopNotesLine.height
+    readonly property real leadingSegmentLength: lineSegment.leadingLineLength
+    readonly property real trailingSegmentLength: lineSegment.trailingLineLength + stopNotesLine.height
     // inbound progress overlay properties
     property real leadingProgress
     property real trailingProgress
@@ -39,49 +39,17 @@ Item {
         height: parent.height
         columns: 7
         rows: 3
-        Item {
+        JourneySectionStopDelegateLineSegment {
             id: lineSegment
             Layout.column: 0
             Layout.row: 0
             Layout.fillHeight: true
             Layout.rowSpan: 2
 
-            property color lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
-            property int lineWidth: Kirigami.Units.smallSpacing
-
-            implicitWidth: lineSegment.lineWidth * 5
-
-            Rectangle {
-                id: leadingLine
-                x: 2 * lineSegment.lineWidth
-                width: lineSegment.lineWidth
-                color: lineSegment.lineColor
-                height: parent.height / 2
-                visible: !isDeparture
-            }
-            Rectangle {
-                id: trailingLine
-                x: 2 * lineSegment.lineWidth
-                y: height
-                width: lineSegment.lineWidth
-                color: lineSegment.lineColor
-                height: parent.height / 2
-                visible: !isArrival
-            }
-
-            Rectangle {
-                id: stopDot
-                radius: width / 2
-                width: lineSegment.lineWidth * (isIntermediate ? 4 : 5)
-                height: width
-                border {
-                    width: lineSegment.lineWidth
-                    color: lineSegment.lineColor
-                }
-                color: Kirigami.Theme.backgroundColor
-                anchors.centerIn: parent
-                visible: !isIntermediate || stop.disruptionEffect != Disruption.NoService
-            }
+            isArrival: root.isArrival
+            isDeparture: root.isDeparture
+            lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
+            hasStop: !isIntermediate || stop.disruptionEffect != Disruption.NoService
         }
 
         QQC2.Label {
