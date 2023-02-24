@@ -37,7 +37,7 @@ Item {
         id: layout
         width: parent.width
         height: parent.height
-        columns: 7
+        columns: 6
         rows: 3
         JourneySectionStopDelegateLineSegment {
             id: lineSegment
@@ -49,7 +49,7 @@ Item {
             isArrival: root.isArrival
             isDeparture: root.isDeparture
             lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
-            hasStop: !isIntermediate || stop.disruptionEffect != Disruption.NoService
+            hasStop: !isIntermediate || stop.disruptionEffect !== Disruption.NoService
 
             JourneySectionStopDelegateLineSegment {
                 id: progressLineSegment
@@ -81,19 +81,18 @@ Item {
             text: (stop.arrivalDelay >= 0 ? "+" : "") + stop.arrivalDelay
             color: stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: stop.hasExpectedArrivalTime && !isSameTime
-            verticalAlignment: Qt.AlignVCenter
         }
 
         QQC2.Label {
             Layout.column: 3
             Layout.row: 0
-            Layout.rowSpan: 2
+            Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.fillWidth: true
-            Layout.fillHeight: true
+            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: stop.stopPoint.name
-            verticalAlignment: Qt.AlignVCenter
             enabled: stop.disruptionEffect != Disruption.NoService
             elide: Text.ElideRight
+            font.bold: root.isDeparture || root.isArrival
         }
 
         QQC2.Label {
@@ -105,6 +104,7 @@ Item {
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
             visible: stop.scheduledDepartureTime > 0
         }
+
         QQC2.Label {
             Layout.column: 2
             Layout.row: departureTime.Layout.row
@@ -116,32 +116,34 @@ Item {
         }
 
         App.VehicleLoadIndicator {
-            Layout.column: 4
-            Layout.row: 0
-            Layout.rowSpan: 2
-            Layout.alignment: Qt.AlignVCenter
+            Layout.column: 3
+            Layout.row: 1
+            Layout.rowSpan: 1
+            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             loadInformation: stop.loadInformation
         }
 
         QQC2.Label {
-            Layout.column: 5
+            Layout.column: 4
             Layout.row: 0
-            Layout.rowSpan: 2
-            Layout.fillHeight: true
-            verticalAlignment: Qt.AlignVCenter
-            text: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform
+            Layout.rowSpan: arrivalTime.Layout.rowSpan
+            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            text: i18nc("Abreviation of platform", "Pl. %1", stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform)
             color: stop.hasExpectedPlatform ? (stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
         }
 
         QQC2.ToolButton {
-            Layout.column: 6
+            Layout.column: 5
             Layout.row: 0
-            Layout.rowSpan: 2
-            Layout.alignment: Qt.AlignVCenter
+            Layout.rowSpan: arrivalTime.Layout.rowSpan
+            Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
+            Layout.bottomMargin: isSingleTime ? 0 : Math.round(-height / 4)
             visible: stop.stopPoint.hasCoordinate
             icon.name: "map-symbolic"
+            text: i18n("Show location")
+            display: QQC2.AbstractButton.IconOnly
             onClicked: {
-                var args = {
+                const args = {
                     coordinate: Qt.point(stop.stopPoint.longitude, stop.stopPoint.latitude),
                     placeName: stop.stopPoint.name
                 };
@@ -157,6 +159,10 @@ Item {
                 }
                 applicationWindow().pageStack.push(indoorMapPage, args);
             }
+
+            QQC2.ToolTip.text: text
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.visible: hovered
         }
 
         // intermediate stop notes
