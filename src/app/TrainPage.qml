@@ -319,25 +319,25 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     id: coachLabel
                     text: i18nc("coach of a train", "Coach:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatSection
+                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatSection : ''
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket.ticketedSeat.seatSection
+                    visible: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatSection : false
                 }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
                     text: i18n("Seat:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatNumber : ''
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                    visible: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatNumber : false
                 }
                 MobileForm.FormTextDelegate {
                     id: classLabel
                     text: i18n("Class:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatingType
+                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatingType : ''
                     visible: description
                 }
             }
