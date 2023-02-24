@@ -82,7 +82,13 @@ QVariant JourneySectionModel::data(const QModelIndex &index, int role) const
         case TrailingSegmentProgressRole:
             return trailingProgress(index.row());
         case StopoverRole:
-            return m_journey.intermediateStops()[index.row()];
+        {
+            auto stop = m_journey.intermediateStops()[index.row()];
+            if (stop.route().line().mode() == KPublicTransport::Line::Unknown) {
+                stop.setRoute(m_journey.route());
+            }
+            return stop;
+        }
         case StopoverPassedRole:
             return stopoverPassed(index.row());
     }
