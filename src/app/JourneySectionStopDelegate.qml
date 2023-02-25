@@ -128,7 +128,7 @@ Item {
             Layout.row: 0
             Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
-            text: i18nc("Abreviation of platform", "Pl. %1", stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform)
+            text: stop.hasExpectedPlatform ? stop.expectedPlatform : stop.scheduledPlatform
             color: stop.hasExpectedPlatform ? (stop.platformChanged ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor) : Kirigami.Theme.textColor
         }
 
