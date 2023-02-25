@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-23 00:58+0000\n"
-"PO-Revision-Date: 2023-02-23 09:01+0100\n"
+"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"PO-Revision-Date: 2023-02-24 08:41+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1424,17 +1424,17 @@ msgstr "Sprememba itinerarja"
 msgid "Live Status"
 msgstr "Stanje v živo"
 
-#: app/LiveStatusPage.qml:84
+#: app/LiveStatusPage.qml:85
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Čakanje na podatke..."
 
-#: app/LiveStatusPage.qml:97
+#: app/LiveStatusPage.qml:99
 #, kde-format
 msgid "Position"
 msgstr "Pozicija"
 
-#: app/LiveStatusPage.qml:105
+#: app/LiveStatusPage.qml:107
 #, kde-format
 msgid "Journey"
 msgstr "Potovanje"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-23 00:58+0000\n"
-"PO-Revision-Date: 2023-02-15 11:04\n"
+"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1408,21 +1408,20 @@ msgstr "行程更变"
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:84
+#: app/LiveStatusPage.qml:85
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:97
+#: app/LiveStatusPage.qml:99
 #, kde-format
 msgid "Position"
 msgstr ""
 
-#: app/LiveStatusPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#: app/LiveStatusPage.qml:107
+#, kde-format
 msgid "Journey"
-msgstr "旅程详情"
+msgstr ""
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1441,10 +1440,9 @@ msgid "%1km"
 msgstr "%1km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1km"
+msgstr ""
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2085,10 +2083,9 @@ msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "没有列车编组的相关信息。"
+msgstr ""
 
 #: app/SettingsPage.qml:237
 #, kde-format
