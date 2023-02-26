@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"POT-Creation-Date: 2023-02-26 00:59+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -366,24 +366,24 @@ msgstr "Chegada"
 msgid "Arrival time"
 msgstr "Hora de chegada:"
 
-#: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:25 app/FlightPage.qml:238
+#: app/BookingCard.qml:31 app/FlightPage.qml:238
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referencia:"
 
-#: app/BookingCard.qml:32 app/FlightPage.qml:238
+#: app/BookingCard.qml:40 app/FlightPage.qml:238
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
 msgstr "A nome de:"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:49
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Ticket number:"
@@ -407,12 +407,12 @@ msgstr "Estación:"
 msgid "Seat"
 msgstr "Asento"
 
-#: app/BusPage.qml:219 app/TrainPage.qml:399
+#: app/BusPage.qml:220 app/TrainPage.qml:400
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -1492,6 +1492,12 @@ msgstr ""
 #, kde-format
 msgid "CO₂: %1g"
 msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:143
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Show location"
+msgstr "Lugar:"
 
 #: app/JourneySummaryDelegate.qml:52
 #, fuzzy, kde-format
@@ -2629,13 +2635,13 @@ msgstr ""
 msgid "Show program pass"
 msgstr "Mostrar o pase de embarque"
 
-#: app/TrainPage.qml:404
+#: app/TrainPage.qml:405
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Departure Vehicle Layout"
 msgstr "Vehículo"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:411
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Arrival Vehicle Layout"

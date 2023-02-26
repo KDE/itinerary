@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"POT-Creation-Date: 2023-02-26 00:59+0000\n"
 "PO-Revision-Date: 2023-02-19 11:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -346,22 +346,22 @@ msgstr "Varış"
 msgid "Arrival time"
 msgstr "Varış zamanı"
 
-#: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
 msgid "Booking"
 msgstr "Rezervasyon"
 
-#: app/BookingCard.qml:25 app/FlightPage.qml:238
+#: app/BookingCard.qml:31 app/FlightPage.qml:238
 #, kde-format
 msgid "Reference"
 msgstr "Başvuru"
 
-#: app/BookingCard.qml:32 app/FlightPage.qml:238
+#: app/BookingCard.qml:40 app/FlightPage.qml:238
 #, kde-format
 msgid "Under name"
 msgstr "Şu ad ile"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:49
 #, kde-format
 msgid "Ticket number:"
 msgstr "Bilet numarası:"
@@ -383,12 +383,12 @@ msgstr "İstasyon"
 msgid "Seat"
 msgstr "Koltuk"
 
-#: app/BusPage.qml:219 app/TrainPage.qml:399
+#: app/BusPage.qml:220 app/TrainPage.qml:400
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatifler"
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
 #, kde-format
 msgid "Journey Details"
 msgstr "Yolculuk Ayrıntıları"
@@ -1400,6 +1400,12 @@ msgstr "Uzaklık: %1"
 #, kde-format
 msgid "CO₂: %1g"
 msgstr "CO₂: %1 g"
+
+#: app/JourneySectionStopDelegate.qml:143
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Show location"
+msgstr "Konum"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -2487,12 +2493,12 @@ msgstr "Program"
 msgid "Show program pass"
 msgstr "Program kartını göster"
 
-#: app/TrainPage.qml:404
+#: app/TrainPage.qml:405
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Kalkış Aracı Yerleşimi"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:411
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Varış Aracı Yerleşimi"

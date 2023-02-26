@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"POT-Creation-Date: 2023-02-26 00:59+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -338,22 +338,22 @@ msgstr ""
 msgid "Arrival time"
 msgstr ""
 
-#: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
 msgid "Booking"
 msgstr ""
 
-#: app/BookingCard.qml:25 app/FlightPage.qml:238
+#: app/BookingCard.qml:31 app/FlightPage.qml:238
 #, kde-format
 msgid "Reference"
 msgstr ""
 
-#: app/BookingCard.qml:32 app/FlightPage.qml:238
+#: app/BookingCard.qml:40 app/FlightPage.qml:238
 #, kde-format
 msgid "Under name"
 msgstr ""
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:49
 #, kde-format
 msgid "Ticket number:"
 msgstr ""
@@ -375,12 +375,12 @@ msgstr ""
 msgid "Seat"
 msgstr ""
 
-#: app/BusPage.qml:219 app/TrainPage.qml:399
+#: app/BusPage.qml:220 app/TrainPage.qml:400
 #, kde-format
 msgid "Alternatives"
 msgstr ""
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -1386,6 +1386,11 @@ msgstr ""
 #: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "CO₂: %1g"
+msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:143
+#, kde-format
+msgid "Show location"
 msgstr ""
 
 #: app/JourneySummaryDelegate.qml:52
@@ -2458,12 +2463,12 @@ msgstr ""
 msgid "Show program pass"
 msgstr ""
 
-#: app/TrainPage.qml:404
+#: app/TrainPage.qml:405
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr ""
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:411
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr ""

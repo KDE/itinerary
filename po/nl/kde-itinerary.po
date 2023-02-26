@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 01:01+0000\n"
+"POT-Creation-Date: 2023-02-26 00:59+0000\n"
 "PO-Revision-Date: 2023-02-19 18:13+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -347,22 +347,22 @@ msgstr "Aankomst"
 msgid "Arrival time"
 msgstr "Aankomsttijd"
 
-#: app/BookingCard.qml:21 app/FlightPage.qml:229 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
 msgid "Booking"
 msgstr "Boeking"
 
-#: app/BookingCard.qml:25 app/FlightPage.qml:238
+#: app/BookingCard.qml:31 app/FlightPage.qml:238
 #, kde-format
 msgid "Reference"
 msgstr "Referentie"
 
-#: app/BookingCard.qml:32 app/FlightPage.qml:238
+#: app/BookingCard.qml:40 app/FlightPage.qml:238
 #, kde-format
 msgid "Under name"
 msgstr "Onder de naam"
 
-#: app/BookingCard.qml:39
+#: app/BookingCard.qml:49
 #, kde-format
 msgid "Ticket number:"
 msgstr "Ticketnummer:"
@@ -384,12 +384,12 @@ msgstr "Station"
 msgid "Seat"
 msgstr "Plaats"
 
-#: app/BusPage.qml:219 app/TrainPage.qml:399
+#: app/BusPage.qml:220 app/TrainPage.qml:400
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatieven"
 
-#: app/BusPage.qml:224 app/JourneySectionPage.qml:16 app/TrainPage.qml:416
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
 #, kde-format
 msgid "Journey Details"
 msgstr "Details van reis"
@@ -1401,6 +1401,12 @@ msgstr "Afstand: %1"
 #, kde-format
 msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
+
+#: app/JourneySectionStopDelegate.qml:143
+#, fuzzy, kde-format
+#| msgid "Location"
+msgid "Show location"
+msgstr "Locatie"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -2494,12 +2500,12 @@ msgstr "Programma"
 msgid "Show program pass"
 msgstr "Programmapas tonen"
 
-#: app/TrainPage.qml:404
+#: app/TrainPage.qml:405
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Indeling van het vertrekkende voertuig"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:411
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"
