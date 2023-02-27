@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-26 00:59+0000\n"
-"PO-Revision-Date: 2023-02-19 11:52+0100\n"
+"PO-Revision-Date: 2023-02-26 04:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1405,10 +1405,9 @@ msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Show location"
-msgstr "Ubicación"
+msgstr "Mostrar ubicación"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format

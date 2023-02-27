@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-26 00:59+0000\n"
-"PO-Revision-Date: 2023-02-19 18:13+0100\n"
+"PO-Revision-Date: 2023-02-26 17:08+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1403,10 +1403,9 @@ msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Show location"
-msgstr "Locatie"
+msgstr "Locatie tonen"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
