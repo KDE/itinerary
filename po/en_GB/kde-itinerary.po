@@ -1,15 +1,15 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2019, 2020, 2021, 2022.
+# Steve Allewell <steve.allewell@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-26 00:59+0000\n"
-"PO-Revision-Date: 2022-12-31 16:39+0000\n"
+"PO-Revision-Date: 2023-02-27 20:47+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: English <kde-l10n-en_gb@kde.org>\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -486,7 +486,7 @@ msgstr "Email"
 #: app/ContactCard.qml:44 app/EventPage.qml:113
 #, kde-format
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: app/DepartureQueryPage.qml:20
 #, kde-format
@@ -606,22 +606,19 @@ msgid "End Time"
 msgstr "End Time"
 
 #: app/EventPage.qml:132
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Station:"
+msgstr "Section:"
 
 #: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
-msgstr ""
+msgstr "Row:"
 
 #: app/EventPage.qml:150
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Number:"
@@ -1404,10 +1401,9 @@ msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Show location"
-msgstr "Location"
+msgstr "Show location"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -1425,24 +1421,22 @@ msgstr "Itinerary change"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Live Status"
 
 #: app/LiveStatusPage.qml:85
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "Waiting for data..."
 
 #: app/LiveStatusPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Position"
-msgstr "Location"
+msgstr "Position"
 
 #: app/LiveStatusPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Select Journey"
+msgstr "Journey"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1461,10 +1455,9 @@ msgid "%1km"
 msgstr "%1km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgid "%1km/h"
-msgstr "%1km"
+msgstr "%1km/h"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -1833,15 +1826,14 @@ msgid "Region:"
 msgstr "Region:"
 
 #: app/PlaceEditor.qml:185
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Boarding time:"
+msgstr "Coordinate:"
 
 #: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Pick coordinate"
 
 #: app/PlaceEditor.qml:195
 #, kde-format
@@ -1851,12 +1843,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Find coordinate from address"
 
 #: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Fill address from coordinate"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -1879,42 +1871,39 @@ msgid "Valid until"
 msgstr "Valid until"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Walk (%1)"
+msgstr "Walk"
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Wait (%1)"
+msgstr "Wait"
 
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Rented bicycle"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Rented moped"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Rented kick scooter"
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "Rental Car"
+msgstr "Rented car"
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Bicycle"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
@@ -2103,54 +2092,54 @@ msgstr "Show notifications on lock screen"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Onboard Status"
 
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Request permissions..."
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Additional permissions are required to access the Wi-Fi status."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "No vehicle layout information available."
+msgstr "Wi-Fi access for onboard information is available."
 
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "Wi-Fi is not enabled"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Location service is not enabled"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "Wi-Fi access is not available on this system"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "No further action required."
 
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr ""
+msgstr "Enable Wi-Fi on your system to access onboard information."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Enable the location service on your device to access onboard information."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2158,6 +2147,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Onboard information are unfortunately not supported on your device at this "
+"time."
 
 #: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
 #, kde-format
@@ -2522,10 +2513,9 @@ msgid "Select transfer..."
 msgstr "Select transfer..."
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Select Transfer"
+msgstr "Delete transfer"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2622,16 +2612,14 @@ msgstr[0] "Currency: %2"
 msgstr[1] "Currencies: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Export to GPX"
+msgstr "Export trip to GPX"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
-msgstr "Delete Trip"
+msgstr "Delete trip"
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
@@ -2699,8 +2687,7 @@ msgid "No vehicle layout information available."
 msgstr "No vehicle layout information available."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "FULL"
@@ -2709,19 +2696,19 @@ msgstr "FULL"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Low"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "High"
 
 #: app/WeatherForecastDelegate.qml:46
 #, kde-format

@@ -1394,10 +1394,9 @@ msgid "CO₂: %1g"
 msgstr "CO₂: %1g"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Show location"
-msgstr "Umístění"
+msgstr "Zobrazit umístění"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
