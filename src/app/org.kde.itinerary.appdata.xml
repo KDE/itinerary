@@ -726,7 +726,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="22.12.3" date="2023-03-02"/>
+    <release version="22.12.3" date="2023-03-02">
+      <description>
+        <ul>
+          <li>Improved data extraction for Flixbus and UK railway tickets.</li>
+          <li>Fixed eliding of stop names in the journey view.</li>
+          <li>Fixed missing timezone display for times in UTC.</li>
+          <li>Fixed train station map stacking order for layered building parts.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.12.2" date="2023-02-02">
       <description>
         <ul>
