@@ -44,6 +44,7 @@ target_sources(itinerary PRIVATE
     transfer.cpp
     transfermanager.cpp
     util.cpp
+    weatherinformation.cpp
 )
 ecm_qt_declare_logging_category(itinerary
     HEADER logging.h

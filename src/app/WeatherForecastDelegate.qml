@@ -13,7 +13,10 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property var weatherForecast
+
+    required property var weatherInformation
+    readonly property var weatherForecast: weatherInformation.forecast
+
     visible: weatherForecast.valid
     headerOrientation: Qt.Horizontal
     showClickFeedback: weatherForecast.range > 1
@@ -58,7 +61,7 @@ Kirigami.AbstractCard {
     Component {
         id: detailsComponent
         App.WeatherForecastPage {
-            weatherForecast: root.weatherForecast
+            weatherInformation: root.weatherInformation
         }
     }
 

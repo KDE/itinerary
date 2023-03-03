@@ -14,11 +14,12 @@ import "." as App
 
 Kirigami.Page {
     id: root
-    property alias weatherForecast: forecastModel.weatherForecast
+    property var weatherInformation
     title: i18n("Weather Forecast")
 
     WeatherForecastModel {
         id: forecastModel
+        weatherForecast: root.weatherInformation.forecast
         weatherForecastManager: WeatherForecastManager
     }
 

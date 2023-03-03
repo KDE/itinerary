@@ -72,16 +72,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-14",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 11,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 11,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -89,16 +92,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-15",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -106,16 +112,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 16,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 16,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -278,16 +287,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-16",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 60.315799713134766,
-            "minimumTemperature": 24.968599319458008,
-            "precipitation": 23,
-            "range": 3,
-            "symbolIconName": "weather-few-clouds-night",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 60.315799713134766,
+                "minimumTemperature": 24.968599319458008,
+                "precipitation": 23,
+                "range": 3,
+                "symbolIconName": "weather-few-clouds-night",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -365,16 +377,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 60.315799713134766,
-            "minimumTemperature": 24.968599319458008,
-            "precipitation": 23,
-            "range": 18,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 60.315799713134766,
+                "minimumTemperature": 24.968599319458008,
+                "precipitation": 23,
+                "range": 18,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -537,16 +552,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-17",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 5,
-            "symbolIconName": "weather-few-clouds-night",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 5,
+                "symbolIconName": "weather-few-clouds-night",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -554,16 +572,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-18",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -571,16 +592,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-19",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -588,16 +612,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-20",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -605,16 +632,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-21",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -622,16 +652,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-22",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     },
     {
@@ -639,16 +672,19 @@
         "rangeType": 0,
         "sectionHeader": "1996-10-23",
         "type": 3,
-        "weatherForecast": {
+        "weatherInformation": {
             "@context": "http://schema.org",
-            "@type": "WeatherForecast",
-            "maximumTemperature": 52.55379867553711,
-            "minimumTemperature": 13.29319953918457,
-            "precipitation": 23,
-            "range": 24,
-            "symbolIconName": "weather-few-clouds",
-            "valid": true,
-            "windSpeed": 0
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.55379867553711,
+                "minimumTemperature": 13.29319953918457,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
         }
     }
 ]

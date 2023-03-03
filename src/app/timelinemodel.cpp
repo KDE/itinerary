@@ -13,6 +13,7 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include "transfermanager.h"
+#include "weatherinformation.h"
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -267,7 +268,7 @@ QHash<int, QByteArray> TimelineModel::roleNames() const
     names.insert(IsTodayRole, "isToday");
     names.insert(ElementRangeRole, "rangeType");
     names.insert(LocationInformationRole, "locationInformation");
-    names.insert(WeatherForecastRole, "weatherForecast");
+    names.insert(WeatherForecastRole, "weatherInformation");
     names.insert(ReservationsRole, "reservations");
     names.insert(TripGroupIdRole, "tripGroupId");
     names.insert(TripGroupRole, "tripGroup");
@@ -610,7 +611,7 @@ void TimelineModel::updateWeatherElements()
 
         // updated or new data
         if (fc.isValid()) {
-            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
+            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, QString()})});
         }
         // we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
@@ -634,7 +635,7 @@ void TimelineModel::updateWeatherElements()
         if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(fc)});
+            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, QString()})});
             ++it;
             endInsertRows();
         }

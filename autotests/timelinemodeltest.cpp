@@ -16,6 +16,7 @@
 #include <timelinemodel.h>
 #include <tripgroupmanager.h>
 #include <transfermanager.h>
+#include <weatherinformation.h>
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -270,13 +271,13 @@ private Q_SLOTS:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        auto fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), currentDate);
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(model.index(10, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(10, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), currentDate.addDays(8));
 
@@ -294,24 +295,24 @@ private Q_SLOTS:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(2, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.dateTime().date(), currentDate);
         QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
         QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(5, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(5, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(14, 0)));
         QCOMPARE(model.index(6, 0).data(TimelineModel::ElementTypeRole), TimelineElement::WeatherForecast);
-        fc = model.index(6, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(6, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
         QVERIFY(fc.isValid());
@@ -323,12 +324,12 @@ private Q_SLOTS:
         Q_EMIT weatherMgr.forecastUpdated();
         QCOMPARE(spy.size(), 10);
 
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
@@ -344,12 +345,12 @@ private Q_SLOTS:
         resMgr.addReservation(res);
         QCOMPARE(model.rowCount(), 14);
 
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);
@@ -360,12 +361,12 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         QCOMPARE(model.rowCount(), 14);
 
-        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(3, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 13.0f);
         QCOMPARE(fc.maximumTemperature(), 52.0f);
         QCOMPARE(fc.dateTime(), QDateTime(currentDate.addDays(1), QTime(0, 0)));
-        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherForecast>();
+        fc = model.index(9, 0).data(TimelineModel::WeatherForecastRole).value<WeatherInformation>().forecast;
         QVERIFY(fc.isValid());
         QCOMPARE(fc.minimumTemperature(), 8.0f);
         QCOMPARE(fc.maximumTemperature(), 46.0f);

@@ -307,9 +307,7 @@ Kirigami.ScrollablePage {
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.WeatherForecast
-            App.WeatherForecastDelegate {
-                weatherForecast: model.weatherForecast
-            }
+            App.WeatherForecastDelegate {}
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.TripGroup
