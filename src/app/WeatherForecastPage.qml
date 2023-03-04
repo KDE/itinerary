@@ -4,15 +4,15 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.Page {
+Kirigami.ScrollablePage {
     id: root
     property var weatherInformation
     title: i18n("Weather Forecast")
@@ -21,6 +21,12 @@ Kirigami.Page {
         id: forecastModel
         weatherForecast: root.weatherInformation.forecast
         weatherForecastManager: WeatherForecastManager
+    }
+
+    header: QQC2.Label {
+        text: root.weatherInformation.locationName
+        padding: Kirigami.Units.largeSpacing
+        visible: text
     }
 
     Component {
@@ -70,5 +76,14 @@ Kirigami.Page {
         id: forecastList
         model: forecastModel
         delegate: weatherForecastDelegate
+
+        footer: QQC2.Label {
+            width: forecastList.width
+            text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
+            padding: Kirigami.Units.largeSpacing
+            font: Kirigami.Theme.smallFont
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
     }
 }
