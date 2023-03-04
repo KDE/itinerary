@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-26 00:59+0000\n"
+"POT-Creation-Date: 2023-03-04 00:47+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2074,7 +2074,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr ""
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:67
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2672,7 +2672,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:49
+#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:50
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2804,32 +2804,32 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:46
+#: app/WeatherForecastDelegate.qml:49
 #, kde-format
 msgid "Temperature: %1°C"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:47
+#: app/WeatherForecastDelegate.qml:50
 #, kde-format
 msgid "Temperature: %1°C / %2°C"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:52
+#: app/WeatherForecastDelegate.qml:55
 #, kde-format
 msgid "Precipitation: %1 mm"
 msgstr ""
 
-#: app/WeatherForecastPage.qml:47
+#: app/WeatherForecastPage.qml:48
 #, kde-format
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/WeatherForecastPage.qml:56
+#: app/WeatherForecastPage.qml:57
 #, kde-format
 msgid "☂ %1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastPage.qml:61
+#: app/WeatherForecastPage.qml:62
 #, kde-format
 msgid "🌬️ %1 m/s"
 msgstr "🌬️ %1 m/s"
