@@ -185,7 +185,7 @@ QString Localizer::formatSpeed(int km_per_hour)
 QString Localizer::formatWeight(int gram)
 {
     if (gram < 1000) {
-        return i18nc("weight in gram", "%1 g").arg(gram);
+        return i18nc("weight in gram", "%1 g", gram);
     }
     if (gram < 10000) {
         return i18nc("weight in kilogram", "%1 kg", ((int)gram/100)/10.0);

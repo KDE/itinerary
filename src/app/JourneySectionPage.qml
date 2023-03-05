@@ -58,13 +58,14 @@ Kirigami.ScrollablePage {
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: i18n("Distance: %1", Localizer.formatDistance(journeySection.distance))
+                visible: journeySection.distance > 0
             }
             QQC2.Label {
                 Layout.row: 3
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
-                visible: journeySection.co2Emission >= 0
+                visible: journeySection.co2Emission > 0
             }
         }
 
