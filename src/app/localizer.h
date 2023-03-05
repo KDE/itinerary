@@ -26,10 +26,13 @@ public:
     /** Auto-detect date or date/time, and convert to local time zone. */
     Q_INVOKABLE QString formatDateOrDateTimeLocal(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDuration(int seconds) const;
-    Q_INVOKABLE QString formatDistance(int meter) const;
-
+    /** Format a distance value. */
+    Q_INVOKABLE static QString formatDistance(int meter);
     /** Format speed value. */
-    Q_INVOKABLE QString formatSpeed(int km_per_hour) const;
+    Q_INVOKABLE static QString formatSpeed(int km_per_hour);
+    /** Format a weight value. */
+    Q_INVOKABLE static QString formatWeight(int gram);
 };
+
 
 #endif // LOCALIZER_H

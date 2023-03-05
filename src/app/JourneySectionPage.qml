@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
                 Layout.row: 3
                 Layout.column: 1
                 Layout.columnSpan: 2
-                text: i18n("CO₂: %1g", journeySection.co2Emission)
+                text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
                 visible: journeySection.co2Emission >= 0
             }
         }

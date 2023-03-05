@@ -165,19 +165,31 @@ QString Localizer::formatDuration(int seconds) const
     return KFormat().formatDuration(seconds * 1000, KFormat::HideSeconds);
 }
 
-QString Localizer::formatDistance(int meter) const
+QString Localizer::formatDistance(int meter)
 {
     if (meter < 1000) {
-        return i18n("%1m", meter);
+        return i18nc("distance in meter", "%1 m", meter);
     }
     if (meter < 10000) {
-        return i18n("%1km", ((int)meter/100)/10.0);
+        return i18nc("distance in kilometer", "%1 km", ((int)meter/100)/10.0);
     }
-    return i18n("%1km", (int)qRound(meter/1000.0));
+    return i18nc("distance in kilometer", "%1 km", (int)qRound(meter/1000.0));
 }
 
-QString Localizer::formatSpeed(int km_per_hour) const
+QString Localizer::formatSpeed(int km_per_hour)
 {
     // TODO locale-specific unit conversion
-    return i18n("%1km/h", km_per_hour);
+    return i18nc("speed in kilometers per hour", "%1 km/h", km_per_hour);
+}
+
+QString Localizer::formatWeight(int gram)
+{
+    if (gram < 1000) {
+        return i18nc("weight in gram", "%1 g").arg(gram);
+    }
+    if (gram < 10000) {
+        return i18nc("weight in kilogram", "%1 kg", ((int)gram/100)/10.0);
+    }
+    return i18nc("weight in kilogram", "%1 kg", (int)qRound(gram/1000.0));
+
 }
