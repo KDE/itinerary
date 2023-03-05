@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-04 00:47+0000\n"
+"POT-Creation-Date: 2023-03-05 00:53+0000\n"
 "PO-Revision-Date: 2022-11-23 20:15+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2071,7 +2071,7 @@ msgstr "Prognoza pogody"
 msgid "Showing weather forecasts will query online services."
 msgstr "Pokazywanie prognozy pogody odpyta usługi sieciowe."
 
-#: app/SettingsPage.qml:116
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2654,7 +2654,7 @@ msgstr[0] "Data: %2 (jeden dzień)"
 msgstr[1] "Data: %2 (%1 dni)"
 msgstr[2] "Data: %2 (%1 dni)"
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:50
+#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:56
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2799,17 +2799,17 @@ msgstr "Temperatura: %1°C / %2°C"
 msgid "Precipitation: %1 mm"
 msgstr "Opady: %1 mm"
 
-#: app/WeatherForecastPage.qml:48
+#: app/WeatherForecastPage.qml:54
 #, kde-format
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/WeatherForecastPage.qml:57
+#: app/WeatherForecastPage.qml:63
 #, kde-format
 msgid "☂ %1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastPage.qml:62
+#: app/WeatherForecastPage.qml:68
 #, kde-format
 msgid "🌬️ %1 m/s"
 msgstr "🌬️ %1 m/s"
