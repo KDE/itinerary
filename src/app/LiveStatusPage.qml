@@ -46,7 +46,7 @@ Kirigami.Page {
                 anchors.fill: parent
                 center: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
                 plugin: applicationWindow().osmPlugin()
-                zoomLevel: 12
+                zoomLevel: (onboardStatus.hasSpeed && onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
 
                 QtLocation.MapQuickItem {
@@ -72,7 +72,7 @@ Kirigami.Page {
                             Kirigami.Theme.inherit: false
                             anchors.top: icon.bottom
                             text: Localizer.formatSpeed(onboardStatus.speed)
-                            visible: Localizer.hasSpeed
+                            visible: onboardStatus.hasSpeed
                             background: Rectangle { color: Kirigami.Theme.backgroundColor }
                         }
                     }
