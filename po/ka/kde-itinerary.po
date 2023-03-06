@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 00:53+0000\n"
+"POT-Creation-Date: 2023-03-06 00:48+0000\n"
 "PO-Revision-Date: 2023-02-27 06:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1389,9 +1389,10 @@ msgstr "მიმართულება: %1"
 msgid "Distance: %1"
 msgstr "მანძილი: %1"
 
-#: app/JourneySectionPage.qml:66
-#, kde-format
-msgid "CO₂: %1g"
+#: app/JourneySectionPage.qml:67
+#, fuzzy, kde-format
+#| msgid "CO₂: %1g"
+msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
 #: app/JourneySectionStopDelegate.qml:143
@@ -1439,19 +1440,38 @@ msgid "dd MMMM"
 msgstr "დდ თთთთ"
 
 #: app/localizer.cpp:171
-#, kde-format
-msgid "%1m"
-msgstr "%1მ"
+#, fuzzy, kde-format
+#| msgid "☂ %1 mm"
+msgctxt "distance in meter"
+msgid "%1 m"
+msgstr "☂ %1 მმ"
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
-#, kde-format
-msgid "%1km"
-msgstr "%1კმ"
+#, fuzzy, kde-format
+#| msgid "%1 km"
+msgctxt "distance in kilometer"
+msgid "%1 km"
+msgstr "%1 კმ"
 
 #: app/localizer.cpp:182
-#, kde-format
-msgid "%1km/h"
+#, fuzzy, kde-format
+#| msgid "%1km/h"
+msgctxt "speed in kilometers per hour"
+msgid "%1 km/h"
 msgstr "%1კმ/სთ"
+
+#: app/localizer.cpp:188
+#, kde-format
+msgctxt "weight in gram"
+msgid "%1 g"
+msgstr ""
+
+#: app/localizer.cpp:191 app/localizer.cpp:193
+#, fuzzy, kde-format
+#| msgid "%1 kg"
+msgctxt "weight in kilogram"
+msgid "%1 kg"
+msgstr "%1 კგ"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2142,68 +2162,56 @@ msgid ""
 "time."
 msgstr ""
 
-#: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
-#, kde-format
-msgid "%1 kg"
-msgstr "%1 კგ"
-
-#: app/statisticsmodel.cpp:97
+#: app/statisticsmodel.cpp:88
 #, kde-format
 msgid "Trips"
 msgstr "მოგზაურობები"
 
-#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
-#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
-#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
+#: app/statisticsmodel.cpp:93 app/statisticsmodel.cpp:123
+#: app/statisticsmodel.cpp:138 app/statisticsmodel.cpp:153
+#: app/statisticsmodel.cpp:168 app/statisticsmodel.cpp:183
 #, kde-format
 msgid "Distance"
 msgstr "მანძილი"
 
-#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
-#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
-#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
-#, kde-format
-msgid "%1 km"
-msgstr "%1 კმ"
-
-#: app/statisticsmodel.cpp:107
+#: app/statisticsmodel.cpp:98
 #, kde-format
 msgid "Hotel nights"
 msgstr "სასტუმროს ღამეები"
 
-#: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:137
-#: app/statisticsmodel.cpp:152 app/statisticsmodel.cpp:167
-#: app/statisticsmodel.cpp:182 app/statisticsmodel.cpp:197
+#: app/statisticsmodel.cpp:103 app/statisticsmodel.cpp:128
+#: app/statisticsmodel.cpp:143 app/statisticsmodel.cpp:158
+#: app/statisticsmodel.cpp:173 app/statisticsmodel.cpp:188
 #, kde-format
 msgid "CO₂"
 msgstr "CO₂"
 
-#: app/statisticsmodel.cpp:122
+#: app/statisticsmodel.cpp:113
 #, kde-format
 msgid "Visited countries"
 msgstr "ნანახი ქვეყნები"
 
-#: app/statisticsmodel.cpp:127
+#: app/statisticsmodel.cpp:118
 #, kde-format
 msgid "Flights"
 msgstr "ფრენები"
 
-#: app/statisticsmodel.cpp:142
+#: app/statisticsmodel.cpp:133
 #, kde-format
 msgid "Train rides"
 msgstr "მატარებლით მოგზაურობა"
 
-#: app/statisticsmodel.cpp:157
+#: app/statisticsmodel.cpp:148
 #, kde-format
 msgid "Bus rides"
 msgstr "ავტობუსით მოგზაურობა"
 
-#: app/statisticsmodel.cpp:172
+#: app/statisticsmodel.cpp:163
 #, kde-format
 msgid "Car rides"
 msgstr "მანქანით მოგზაურობა"
 
-#: app/statisticsmodel.cpp:187
+#: app/statisticsmodel.cpp:178
 #, kde-format
 msgid "Boat trips"
 msgstr "ნავით მოგზაურობა"
@@ -2792,6 +2800,12 @@ msgstr "Გავიგე!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgid "%1m"
+#~ msgstr "%1მ"
+
+#~ msgid "%1km"
+#~ msgstr "%1კმ"
 
 #~ msgctxt "%1 is month name, %2 is year"
 #~ msgid "%1 %2"

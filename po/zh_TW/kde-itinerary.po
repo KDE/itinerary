@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 00:53+0000\n"
+"POT-Creation-Date: 2023-03-06 00:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -1384,9 +1384,9 @@ msgstr ""
 msgid "Distance: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
-msgid "CO₂: %1g"
+msgid "CO₂: %1"
 msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:143
@@ -1434,17 +1434,32 @@ msgstr ""
 
 #: app/localizer.cpp:171
 #, kde-format
-msgid "%1m"
+msgctxt "distance in meter"
+msgid "%1 m"
 msgstr ""
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
-msgid "%1km"
+msgctxt "distance in kilometer"
+msgid "%1 km"
 msgstr ""
 
 #: app/localizer.cpp:182
 #, kde-format
-msgid "%1km/h"
+msgctxt "speed in kilometers per hour"
+msgid "%1 km/h"
+msgstr ""
+
+#: app/localizer.cpp:188
+#, kde-format
+msgctxt "weight in gram"
+msgid "%1 g"
+msgstr ""
+
+#: app/localizer.cpp:191 app/localizer.cpp:193
+#, kde-format
+msgctxt "weight in kilogram"
+msgid "%1 kg"
 msgstr ""
 
 #: app/LocationInfoDelegate.qml:49
@@ -2121,68 +2136,56 @@ msgid ""
 "time."
 msgstr ""
 
-#: app/statisticsmodel.cpp:90 app/statisticsmodel.cpp:92
-#, kde-format
-msgid "%1 kg"
-msgstr ""
-
-#: app/statisticsmodel.cpp:97
+#: app/statisticsmodel.cpp:88
 #, kde-format
 msgid "Trips"
 msgstr ""
 
-#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
-#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
-#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
+#: app/statisticsmodel.cpp:93 app/statisticsmodel.cpp:123
+#: app/statisticsmodel.cpp:138 app/statisticsmodel.cpp:153
+#: app/statisticsmodel.cpp:168 app/statisticsmodel.cpp:183
 #, kde-format
 msgid "Distance"
 msgstr ""
 
-#: app/statisticsmodel.cpp:102 app/statisticsmodel.cpp:132
-#: app/statisticsmodel.cpp:147 app/statisticsmodel.cpp:162
-#: app/statisticsmodel.cpp:177 app/statisticsmodel.cpp:192
-#, kde-format
-msgid "%1 km"
-msgstr ""
-
-#: app/statisticsmodel.cpp:107
+#: app/statisticsmodel.cpp:98
 #, kde-format
 msgid "Hotel nights"
 msgstr ""
 
-#: app/statisticsmodel.cpp:112 app/statisticsmodel.cpp:137
-#: app/statisticsmodel.cpp:152 app/statisticsmodel.cpp:167
-#: app/statisticsmodel.cpp:182 app/statisticsmodel.cpp:197
+#: app/statisticsmodel.cpp:103 app/statisticsmodel.cpp:128
+#: app/statisticsmodel.cpp:143 app/statisticsmodel.cpp:158
+#: app/statisticsmodel.cpp:173 app/statisticsmodel.cpp:188
 #, kde-format
 msgid "CO₂"
 msgstr ""
 
-#: app/statisticsmodel.cpp:122
+#: app/statisticsmodel.cpp:113
 #, kde-format
 msgid "Visited countries"
 msgstr ""
 
-#: app/statisticsmodel.cpp:127
+#: app/statisticsmodel.cpp:118
 #, kde-format
 msgid "Flights"
 msgstr ""
 
-#: app/statisticsmodel.cpp:142
+#: app/statisticsmodel.cpp:133
 #, kde-format
 msgid "Train rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:157
+#: app/statisticsmodel.cpp:148
 #, kde-format
 msgid "Bus rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:172
+#: app/statisticsmodel.cpp:163
 #, kde-format
 msgid "Car rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:187
+#: app/statisticsmodel.cpp:178
 #, kde-format
 msgid "Boat trips"
 msgstr ""
