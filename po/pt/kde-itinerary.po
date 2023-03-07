@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-02-17 12:32+0000\n"
+"PO-Revision-Date: 2023-03-06 16:11+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -1403,16 +1403,14 @@ msgid "Distance: %1"
 msgstr "Distância: %1"
 
 #: app/JourneySectionPage.qml:67
-#, fuzzy, kde-format
-#| msgid "CO₂: %1g"
+#, kde-format
 msgid "CO₂: %1"
-msgstr "CO₂: %1g"
+msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgid "Show location"
-msgstr "Localização"
+msgstr "Mostrar a localização"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -1430,12 +1428,12 @@ msgstr "Mudança de itinerário"
 #: app/LiveStatusPage.qml:17 app/main.qml:134
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Estado em Directo"
 
 #: app/LiveStatusPage.qml:85
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "À espera dos dados..."
 
 #: app/LiveStatusPage.qml:99
 #, kde-format
@@ -1454,35 +1452,31 @@ msgid "dd MMMM"
 msgstr "dd de MMMM"
 
 #: app/localizer.cpp:171
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
+#, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
-msgstr "☂ %1 mm"
+msgstr "%1 m"
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
-#, fuzzy, kde-format
-#| msgid "%1 km"
+#, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
-msgstr "%1km"
+msgstr "%1 km/h"
 
 #: app/localizer.cpp:188
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
-msgstr ""
+msgstr "%1 g"
 
 #: app/localizer.cpp:191 app/localizer.cpp:193
-#, fuzzy, kde-format
-#| msgid "%1 kg"
+#, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
@@ -2833,9 +2827,3 @@ msgstr "Compreendi!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
-
-#~ msgid "%1m"
-#~ msgstr "%1m"
-
-#~ msgid "%1km"
-#~ msgstr "%1km"
