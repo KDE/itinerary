@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2023-02-26 12:59+0300\n"
+"PO-Revision-Date: 2023-03-06 13:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1397,10 +1397,9 @@ msgid "Distance: %1"
 msgstr "Uzaklık: %1"
 
 #: app/JourneySectionPage.qml:67
-#, fuzzy, kde-format
-#| msgid "CO₂: %1g"
+#, kde-format
 msgid "CO₂: %1"
-msgstr "CO₂: %1 g"
+msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:143
 #, kde-format
@@ -1447,22 +1446,19 @@ msgid "dd MMMM"
 msgstr "gg AAAA"
 
 #: app/localizer.cpp:171
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
+#, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
-msgstr "☂ %1 mm"
+msgstr "%1 m"
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
-#, fuzzy, kde-format
-#| msgid "%1 km"
+#, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km/h"
+#, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/sa"
@@ -1471,11 +1467,10 @@ msgstr "%1 km/sa"
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
-msgstr ""
+msgstr "%1 g"
 
 #: app/localizer.cpp:191 app/localizer.cpp:193
-#, fuzzy, kde-format
-#| msgid "%1 kg"
+#, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
