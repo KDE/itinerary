@@ -220,6 +220,35 @@ bool TimelineElement::isCanceled() const
     return false;
 }
 
+static KPublicTransport::Location destinationOfJourney(const KPublicTransport::Journey &jny)
+{
+    if (jny.sections().empty()) {
+        return {};
+    }
+    const auto &sections = jny.sections();
+    auto loc = sections.back().arrival().stopPoint();
+
+    if (sections.size() == 1 || sections.back().mode() != KPublicTransport::JourneySection::Walking || sections.back().distance() > 1000) {
+        return loc;
+    }
+
+    // the last section is a short walk, its arrival location might not have all the data we have on the previous stop
+    const auto prevLoc = sections[sections.size() - 2].arrival().stopPoint();
+    const auto locName = loc.name();
+
+    // "anonymous" location with the coordinates as name
+    if (std::none_of(locName.begin(), locName.end(), [](QChar c) { return c.isLetter(); }) && !prevLoc.name().isEmpty()) {
+        return prevLoc;
+    }
+
+    // propagate address information from the last stop to the final destination
+    if (loc.locality().isEmpty()) { loc.setLocality(prevLoc.locality()); }
+    if (loc.region().isEmpty()) { loc.setRegion(prevLoc.region()); }
+    if (loc.country().isEmpty()) { loc.setLocality(prevLoc.country()); }
+
+    return loc;
+ }
+
 QString TimelineElement::destinationCountry() const
 {
     if (isReservation()) {
@@ -230,9 +259,9 @@ QString TimelineElement::destinationCountry() const
     if (elementType == Transfer) {
         const auto transfer = m_content.value<::Transfer>();
         if (transfer.state() == Transfer::Selected) {
-            const auto &sections = transfer.journey().sections();
-            if (!sections.empty()) {
-                return sections.back().arrival().stopPoint().country();
+            const auto loc = destinationOfJourney(transfer.journey());
+            if (!loc.isEmpty()) {
+                return loc.country();
             }
         }
     }
@@ -253,9 +282,8 @@ KItinerary::GeoCoordinates TimelineElement::destinationCoordinates() const
     if (elementType == Transfer) {
         const auto transfer = m_content.value<::Transfer>();
         if (transfer.state() == Transfer::Selected) {
-            const auto &sections = transfer.journey().sections();
-            if (!sections.empty()) {
-                const auto loc = sections.back().arrival().stopPoint();
+            const auto loc = destinationOfJourney(transfer.journey());
+            if (!loc.isEmpty()) {
                 return KItinerary::GeoCoordinates(loc.latitude(), loc.longitude());
             }
         }
