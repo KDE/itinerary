@@ -183,6 +183,9 @@ QString PassManager::findMatchingPass(const QVariant &pass) const
             // unique substring match
             QString id;
             for (const auto &entry : m_entries) {
+                if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
+                    continue; // expired
+                }
                 const auto name = entry.data.value<KItinerary::ProgramMembership>().programName();
                 if (name.isEmpty() || (!name.contains(program.programName(), Qt::CaseInsensitive) && !(program.programName().contains(name, Qt::CaseInsensitive)))) {
                     continue;
