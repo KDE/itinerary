@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-06 00:48+0000\n"
+"POT-Creation-Date: 2023-03-11 00:49+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1749,13 +1749,13 @@ msgstr "新的出发站台：%1"
 msgid "New arrival platform is: %1"
 msgstr "新的到达站台：%1"
 
-#: app/passmanager.cpp:241
+#: app/passmanager.cpp:244
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr ""
 
-#: app/passmanager.cpp:243
+#: app/passmanager.cpp:246
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
