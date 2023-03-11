@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-06 00:48+0000\n"
-"PO-Revision-Date: 2022-08-05 12:15+0300\n"
+"PO-Revision-Date: 2023-03-08 22:59+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -322,17 +322,15 @@ msgstr "Lähtö"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:92 app/FlightPage.qml:138
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure time:"
+#, kde-format
 msgid "Departure time"
-msgstr "Lähtöaika:"
+msgstr "Lähtöaika"
 
 #: app/BoatPage.qml:86 app/BoatPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr "Pääte:"
+msgstr "Terminaali"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:138 app/FlightPage.qml:187
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
@@ -343,10 +341,9 @@ msgstr "Saapuminen"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:148 app/FlightPage.qml:191
 #: app/TrainPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Arrival time:"
+#, kde-format
 msgid "Arrival time"
-msgstr "Saapumisaika: "
+msgstr "Saapumisaika:"
 
 #: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
@@ -354,22 +351,19 @@ msgid "Booking"
 msgstr "Varaaminen"
 
 #: app/BookingCard.qml:31 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Reference"
-msgstr "Viite:"
+msgstr "Viite"
 
 #: app/BookingCard.qml:40 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgid "Under name"
-msgstr "Nimellä:"
+msgstr "Nimellä"
 
 #: app/BookingCard.qml:49
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
+#, kde-format
 msgid "Ticket number:"
-msgstr "Järjestysnumero:"
+msgstr "Lipun numero:"
 
 #: app/BusPage.qml:18
 #, kde-format
@@ -377,11 +371,10 @@ msgid "Bus Ticket"
 msgstr "Bussilippu"
 
 #: app/BusPage.qml:115 app/BusPage.qml:172
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "bus station"
 msgid "Station"
-msgstr "Asema:"
+msgstr "Pysäkki"
 
 #: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:317
@@ -440,17 +433,15 @@ msgid "Pick-up"
 msgstr "Nouto"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "Aika:"
+msgstr "Aika"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "Sijainti:"
+msgstr "Sijainti"
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -463,44 +454,39 @@ msgid "Vehicle"
 msgstr "Ajoneuvo"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "Tyyppi:"
+msgstr "Tyyppi"
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "Malli:"
+msgstr "Malli"
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "Merkki:"
+msgstr "Merkki"
 
 #: app/ContactCard.qml:22
 #, kde-format
 msgid "Contact"
-msgstr ""
+msgstr "Yhteystieto"
 
 #: app/ContactCard.qml:26
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "Puhelin:"
+msgstr "Puhelin"
 
 #: app/ContactCard.qml:35
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgid "Email"
-msgstr "Sähköposti:"
+msgstr "Sähköposti"
 
 #: app/ContactCard.qml:44 app/EventPage.qml:113
 #, kde-format
 msgid "Website"
-msgstr ""
+msgstr "Verkkosivusto"
 
 #: app/DepartureQueryPage.qml:20
 #, kde-format
@@ -558,10 +544,9 @@ msgid "Do you really want to delete this document?"
 msgstr "Haluatko varmasti poistaa tämän asiakirjan?"
 
 #: app/DocumentsPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgid "Documents and Tickets"
-msgstr "Nykyinen matkalippu"
+msgstr "Asiakirjat ja liput"
 
 #: app/DocumentsPage.qml:107
 #, kde-format
@@ -605,42 +590,35 @@ msgid "Event"
 msgstr "Tapahtuma"
 
 #: app/EventPage.qml:90
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "Saapuminen:"
+msgstr "Sisääntulo"
 
 #: app/EventPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "Aloitusaika:"
+msgstr "Aloitusaika"
 
 #: app/EventPage.qml:106
-#, fuzzy, kde-format
-#| msgid "End Time:"
+#, kde-format
 msgid "End Time"
-msgstr "Päättymisaika:"
+msgstr "Päättymisaika"
 
 #: app/EventPage.qml:132
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Asema:"
+msgstr "Osio:"
 
 #: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
-msgstr ""
+msgstr "Rivi:"
 
 #: app/EventPage.qml:150
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Numero:"
@@ -813,28 +791,24 @@ msgid "Boarding group"
 msgstr "Koneeseennousuryhmä:"
 
 #: app/FlightPage.qml:119
-#, fuzzy, kde-format
-#| msgid "Airline:"
+#, kde-format
 msgid "Airline"
-msgstr "Lentoyhtiö:"
+msgstr "Lentoyhtiö"
 
 #: app/FlightPage.qml:147 app/FlightPage.qml:200
-#, fuzzy, kde-format
-#| msgid "Airport:"
+#, kde-format
 msgid "Airport"
-msgstr "Lentokenttä:"
+msgstr "Lentokenttä"
 
 #: app/FlightPage.qml:155 app/FlightPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "Pääte:"
+msgstr "Terminaali"
 
 #: app/FlightPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Gate:"
+#, kde-format
 msgid "Gate"
-msgstr "Portti:"
+msgstr "Portti"
 
 #: app/FlightPage.qml:247
 #, kde-format
@@ -842,19 +816,16 @@ msgid "Frequent Traveler Program"
 msgstr "Usein matkustavien ohjelma"
 
 #: app/FlightPage.qml:253
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Ohjelma"
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
 #: app/TicketPage.qml:121 app/TrainPage.qml:366
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "Numero:"
+msgstr "Numero"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
@@ -921,46 +892,42 @@ msgstr "Virheellinen todistus"
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "Tuntemattoman myöntäjän varmenne"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "Vastikään rokotettu"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "Osin rokotettu"
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "Rokotus:"
+msgstr "Rokotettu"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "Täysin rokotettu"
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "Positiivinen testitulos:"
+msgstr "Negatiivinen koetulos"
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "Positiivinen testitulos:"
+msgstr "Positiivinen koetulos"
 
 #: app/HealthCertificateBarcode.qml:78
-#, fuzzy, kde-format
-#| msgid "Certificate expired"
+#, kde-format
 msgid "Test expired"
-msgstr "Todistus on vanhentunut"
+msgstr "Koetulos on vanhentunut"
 
 #: app/HealthCertificateBarcode.qml:80
 #, fuzzy, kde-format
@@ -1206,16 +1173,14 @@ msgid "Hotel Reservation"
 msgstr "Hotellivaraus"
 
 #: app/HotelPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Check-in time:"
+#, kde-format
 msgid "Check-in time"
-msgstr "Sisäänkirjautumisaika:"
+msgstr "Sisäänkirjautumisaika"
 
 #: app/HotelPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Check-out time:"
+#, kde-format
 msgid "Check-out time"
-msgstr "Uloskirjautumisaika:"
+msgstr "Uloskirjautumisaika"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
 #, kde-format
@@ -1437,16 +1402,14 @@ msgid "Distance: %1"
 msgstr "Etäisyys: %1"
 
 #: app/JourneySectionPage.qml:67
-#, fuzzy, kde-format
-#| msgid "CO₂: %1g"
+#, kde-format
 msgid "CO₂: %1"
-msgstr "CO₂: %1 g"
+msgstr "CO₂: %1"
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Show location"
-msgstr "Sijainti:"
+msgstr "Näytä sijainti"
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -1469,19 +1432,17 @@ msgstr ""
 #: app/LiveStatusPage.qml:85
 #, kde-format
 msgid "Waiting for data..."
-msgstr ""
+msgstr "Odotetaan tietoa…"
 
 #: app/LiveStatusPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Position"
-msgstr "Sijainti:"
+msgstr "Sijainti"
 
 #: app/LiveStatusPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Journey"
-msgstr "Valitse matka"
+msgstr "Matka"
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1490,35 +1451,31 @@ msgid "dd MMMM"
 msgstr "pp KKKK"
 
 #: app/localizer.cpp:171
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
+#, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
-msgstr "☂ %1 mm"
+msgstr "%1 m"
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
-#, fuzzy, kde-format
-#| msgid "%1 km"
+#, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1km"
+#, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
-msgstr "%1 km"
+msgstr "%1 km/t"
 
 #: app/localizer.cpp:188
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
-msgstr ""
+msgstr "%1 g"
 
 #: app/localizer.cpp:191 app/localizer.cpp:193
-#, fuzzy, kde-format
-#| msgid "%1 kg"
+#, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
@@ -1891,15 +1848,14 @@ msgid "Region:"
 msgstr "Alue:"
 
 #: app/PlaceEditor.qml:185
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "Koneeseennousuaika:"
+msgstr "Koordinaatti:"
 
 #: app/PlaceEditor.qml:189
 #, kde-format
 msgid "Pick coordinate"
-msgstr ""
+msgstr "Poimi koordinaatti"
 
 #: app/PlaceEditor.qml:195
 #, kde-format
@@ -1909,12 +1865,12 @@ msgstr "%1°, %2°"
 #: app/PlaceEditor.qml:209
 #, kde-format
 msgid "Find coordinate from address"
-msgstr ""
+msgstr "Etsi osoitteesta koordinaatti"
 
 #: app/PlaceEditor.qml:220
 #, kde-format
 msgid "Fill address from coordinate"
-msgstr ""
+msgstr "Täytä osoite koordinaatista"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -1927,54 +1883,49 @@ msgid "Member"
 msgstr "Jäsen"
 
 #: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid from:"
+#, kde-format
 msgid "Valid from"
-msgstr "Voimassa alkaen:"
+msgstr "Voimassa alkaen"
 
 #: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
-#, fuzzy, kde-format
-#| msgid "Valid until:"
+#, kde-format
 msgid "Valid until"
-msgstr "Vanhenemisaika:"
+msgstr "Vanhenee"
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "Kävely (%1)"
+msgstr "Kävely"
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "Odotus (%1)"
+msgstr "Odota"
 
 #: app/publictransport.cpp:231
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Vuokrapolkupyörä"
 
 #: app/publictransport.cpp:233
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Vuokramopo"
 
 #: app/publictransport.cpp:235
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Vuokrapotkulauta"
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
 msgstr "Vuokra-auto"
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Bicycle"
-msgstr ""
+msgstr "Polkupyörä"
 
 #: app/publictransport.cpp:245 app/StatisticsPage.qml:195
 #, kde-format
@@ -2007,22 +1958,19 @@ msgid "Restaurant Reservation"
 msgstr "Ravintolavaraus"
 
 #: app/RestaurantPage.qml:65
-#, fuzzy, kde-format
-#| msgid "Start time:"
+#, kde-format
 msgid "Start time"
-msgstr "Aloitusaika:"
+msgstr "Aloitusaika"
 
 #: app/RestaurantPage.qml:73
-#, fuzzy, kde-format
-#| msgid "End time:"
+#, kde-format
 msgid "End time"
-msgstr "Päättymisaika:"
+msgstr "Päättymisaika"
 
 #: app/RestaurantPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Party size:"
+#, kde-format
 msgid "Party size"
-msgstr "Seurueen koko:"
+msgstr "Seurueen koko"
 
 #: app/SettingsPage.qml:18
 #, kde-format
@@ -2094,7 +2042,7 @@ msgid ""
 msgstr ""
 "Käytetään <a href=\"https://www.met.no/\">Norjan meteorologian laitoksen</a> "
 "tietoja <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative "
-"Commons 4.0 BY International<a> -lisenssillä."
+"Commons 4.0 BY International</a> -lisenssillä."
 
 #: app/SettingsPage.qml:125
 #, kde-format
@@ -2170,12 +2118,12 @@ msgstr ""
 #: app/SettingsPage.qml:222
 #, kde-format
 msgid "Request permissions..."
-msgstr ""
+msgstr "Pyydä käyttölupaa…"
 
 #: app/SettingsPage.qml:223
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
-msgstr ""
+msgstr "Langattoman verkon tilan saamiseksi vaaditaan lisäkäyttöoikeuksia."
 
 #: app/SettingsPage.qml:235
 #, fuzzy, kde-format
@@ -2186,22 +2134,22 @@ msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
 #: app/SettingsPage.qml:237
 #, kde-format
 msgid "Wi-Fi is not enabled"
-msgstr ""
+msgstr "Langaton verkko ei ole käytössä"
 
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Sijaintipalvelu ei ole käytössä"
 
 #: app/SettingsPage.qml:241
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
-msgstr ""
+msgstr "Pääsy langattomaan verkkoon ei ole käytettävissä"
 
 #: app/SettingsPage.qml:248
 #, kde-format
 msgid "No further action required."
-msgstr ""
+msgstr "Lisätoimia ei vaadita."
 
 #: app/SettingsPage.qml:250
 #, kde-format
@@ -2276,10 +2224,9 @@ msgid "Boat trips"
 msgstr "Laivamatkat"
 
 #: app/StatisticsPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Year"
-msgstr "Vuodet"
+msgstr "Vuosi"
 
 #: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -2287,10 +2234,9 @@ msgid "Total"
 msgstr "Kaikkiaan"
 
 #: app/StatisticsPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Trains"
+#, kde-format
 msgid "Train"
-msgstr "Junat"
+msgstr "Juna"
 
 #: app/StatisticsPage.qml:176
 #, kde-format
@@ -2343,16 +2289,14 @@ msgid "Do you really want to delete this ticket?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
 #: app/TicketPage.qml:103 app/TrainPage.qml:357
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "Nimi:"
+msgstr "Nimi"
 
 #: app/TicketPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Class:"
+#, kde-format
 msgid "Class"
-msgstr "Luokka:"
+msgstr "Luokka"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -2426,16 +2370,14 @@ msgid "Tourist Attraction"
 msgstr "Turistinähtävyys"
 
 #: app/TouristAttractionPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Departure Time:"
+#, kde-format
 msgid "Depature Time"
-msgstr "Lähtöaika:"
+msgstr "Lähtöaika"
 
 #: app/TouristAttractionPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Arrival Time:"
+#, kde-format
 msgid "Arrival Time"
-msgstr "Saapumisaika: "
+msgstr "Saapumisaika:"
 
 #: app/TrainDelegate.qml:52
 #, kde-format
@@ -2519,17 +2461,15 @@ msgid "Train Ticket"
 msgstr "Junalippu"
 
 #: app/TrainPage.qml:136 app/TrainPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "train station"
 msgid "Station"
-msgstr "Asema:"
+msgstr "Pysäkki"
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:256
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgid "Platform"
-msgstr "Laituri:"
+msgstr "Laituri"
 
 #: app/TrainPage.qml:167 app/TrainPage.qml:277
 #, kde-format
@@ -2540,7 +2480,7 @@ msgstr "(oli: %1)"
 #: app/TrainPage.qml:191 app/TrainPage.qml:299
 #, kde-format
 msgid "Additional notes"
-msgstr ""
+msgstr "Lisähuomiot"
 
 #: app/TrainPage.qml:321
 #, kde-format
@@ -2581,10 +2521,9 @@ msgid "Select transfer..."
 msgstr "Valitse vaihto…"
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "Valitse vaihto"
+msgstr "Poista vaihto"
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2681,14 +2620,12 @@ msgstr[0] "Valuutta: %2"
 msgstr[1] "Valuutat: %2"
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "Vie GPX-muotoon"
+msgstr "Vie matka GPX-muotoon"
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Delete trip"
 msgstr "Poista matka"
 
@@ -2758,8 +2695,7 @@ msgid "No vehicle layout information available."
 msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
 
 #: app/VehicleLoadIndicator.qml:29
-#, fuzzy, kde-format
-#| msgid "FULL"
+#, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "TÄYNNÄ"
@@ -2768,19 +2704,19 @@ msgstr "TÄYNNÄ"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low"
-msgstr ""
+msgstr "Vähäinen"
 
 #: app/VehicleLoadIndicator.qml:53
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium"
-msgstr ""
+msgstr "Keskitasoinen"
 
 #: app/VehicleLoadIndicator.qml:54
 #, kde-format
 msgctxt "vehicle load"
 msgid "High"
-msgstr ""
+msgstr "Suuri"
 
 #: app/WeatherForecastDelegate.qml:49
 #, kde-format
