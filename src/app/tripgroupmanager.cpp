@@ -585,9 +585,9 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     Q_ASSERT(beginDt.daysTo(endDt) <= MaximumTripDuration);
     if (beginDt.date().year() == endDt.date().year()) {
         if (beginDt.date().month() == endDt.date().month()) {
-            return i18n("%1 (%2 %3)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
+            return i18nc("%1 is destination, %2 is the standalone month name, %3 is the year", "%1 (%2 %3)", dest, QLocale().standaloneMonthName(beginDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
         }
-        return i18n("%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().monthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
+        return i18nc("%1 is destination, %2 and %3 are the standalone month names and %4 is the year", "%1 (%2/%3 %4)", dest, QLocale().monthName(beginDt.date().month(), QLocale::LongFormat), QLocale().standaloneMonthName(endDt.date().month(), QLocale::LongFormat), beginDt.date().toString(QStringLiteral("yyyy")));
     }
-    return i18n("%1 (%2/%3)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
+    return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
 }
