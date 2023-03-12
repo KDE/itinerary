@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 00:49+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-03-11 04:52\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -1387,16 +1387,14 @@ msgid "Distance: %1"
 msgstr "距离：%1"
 
 #: app/JourneySectionPage.qml:67
-#, fuzzy, kde-format
-#| msgid "CO₂: %1g"
+#, kde-format
 msgid "CO₂: %1"
-msgstr "CO₂ 排放：%1g"
+msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Pick Location"
+#, kde-format
 msgid "Show location"
-msgstr "选择地点"
+msgstr ""
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -1437,25 +1435,22 @@ msgid "dd MMMM"
 msgstr ""
 
 #: app/localizer.cpp:171
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
+#, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
-msgstr "☂ %1 mm"
+msgstr ""
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
-#, fuzzy, kde-format
-#| msgid "%1 km"
+#, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
-msgstr "%1 km"
+msgstr ""
 
 #: app/localizer.cpp:182
-#, fuzzy, kde-format
-#| msgid "%1 km"
+#, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
-msgstr "%1 km"
+msgstr ""
 
 #: app/localizer.cpp:188
 #, kde-format
@@ -1464,11 +1459,10 @@ msgid "%1 g"
 msgstr ""
 
 #: app/localizer.cpp:191 app/localizer.cpp:193
-#, fuzzy, kde-format
-#| msgid "%1 kg"
+#, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
-msgstr "%1 kg"
+msgstr ""
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2795,9 +2789,3 @@ msgstr "知道了！"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "%1m"
-#~ msgstr "%1m"
-
-#~ msgid "%1km"
-#~ msgstr "%1km"
