@@ -491,7 +491,7 @@ void TimelineModel::updateInformationElements()
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode((*it).destinationCountry());
+        newCountry.setIsoCode(LocationUtil::address((*it).destination()).addressCountry());
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(timeZone((*it).endDateTime()), (*it).dt);
         if (newCountry == previousCountry) {
@@ -541,7 +541,7 @@ void TimelineModel::updateWeatherElements()
             ++it;
             continue;
         }
-        const auto newGeo = (*it).destinationCoordinates();
+        const auto newGeo = LocationUtil::geo((*it).destination());
         if ((*it).isLocationChange() || newGeo.isValid()) {
             geo = newGeo;
 
@@ -575,7 +575,7 @@ void TimelineModel::updateWeatherElements()
                 ++it;
                 continue;
             }
-            const auto newGeo = (*it).destinationCoordinates();
+            const auto newGeo = LocationUtil::geo((*it).destination());
             if ((*it).isLocationChange() || newGeo.isValid()) {
                 geo = newGeo;
             }
@@ -597,7 +597,7 @@ void TimelineModel::updateWeatherElements()
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, (*it2).dt);
                 nextStartTime = std::max(endTime, (*it2).endDateTime());
-                newGeo = (*it2).destinationCoordinates();
+                newGeo = LocationUtil::geo((*it2).destination());
                 break;
             }
         }
