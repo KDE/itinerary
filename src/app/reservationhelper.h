@@ -28,6 +28,9 @@ namespace ReservationHelper
     QString uicCompanyCode(const QVariant &res);
     /** Returns the VDV org id for @p res, if any. */
     QString vdvOrganizationId(const QVariant &res);
+
+    /** Returns whether @p res is an unbound reservation. */
+    bool isUnbound(const QVariant &res);
 }
 
 #endif // RESERVATIONHELPER_H

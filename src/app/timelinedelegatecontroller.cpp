@@ -8,14 +8,15 @@
 
 #include "calendarhelper.h"
 #include "constants.h"
+#include "documentmanager.h"
 #include "livedatamanager.h"
 #include "locationhelper.h"
 #include "logging.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
 #include "transfer.h"
 #include "transfermanager.h"
-#include "documentmanager.h"
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CalendarHandler>
@@ -405,7 +406,7 @@ static bool isJourneyCandidate(const QVariant &res)
 
 static bool isLayover(const QVariant &res1, const QVariant &res2)
 {
-    if (!LocationUtil::isLocationChange(res1) || !LocationUtil::isLocationChange(res2)) {
+    if (!LocationUtil::isLocationChange(res1) || !LocationUtil::isLocationChange(res2) || ReservationHelper::isUnbound(res1) || ReservationHelper::isUnbound(res2)) {
         return false;
     }
 
