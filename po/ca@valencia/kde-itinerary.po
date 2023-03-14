@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-13 00:49+0000\n"
-"PO-Revision-Date: 2023-03-06 11:02+0100\n"
+"PO-Revision-Date: 2023-03-13 09:36+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2636,15 +2636,13 @@ msgid "Delete trip"
 msgstr "Suprimix el viatge"
 
 #: app/tripgroupmanager.cpp:588
-#, fuzzy, kde-format
-#| msgid "%1 (%2 %3)"
+#, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
 #: app/tripgroupmanager.cpp:590
-#, fuzzy, kde-format
-#| msgid "%1 (%2/%3 %4)"
+#, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
 "year"
@@ -2652,8 +2650,7 @@ msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
 #: app/tripgroupmanager.cpp:592
-#, fuzzy, kde-format
-#| msgid "%1 (%2/%3)"
+#, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
