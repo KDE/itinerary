@@ -4,3 +4,15 @@
 */
 
 #include "weatherinformation.h"
+
+#include <KItinerary/LocationUtil>
+#include <KItinerary/Place>
+
+using namespace KItinerary;
+
+QString WeatherInformation::labelForPlace(const QVariant &place)
+{
+    // TODO add fallbacks to region or place name
+    const auto addr = LocationUtil::address(place);
+    return addr.addressLocality();
+}

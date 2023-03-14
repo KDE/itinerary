@@ -19,6 +19,8 @@ class WeatherInformation
 public:
     WeatherForecast forecast;
     QString locationName;
+
+    static QString labelForPlace(const QVariant &place);
 };
 
 Q_DECLARE_METATYPE(WeatherInformation)
