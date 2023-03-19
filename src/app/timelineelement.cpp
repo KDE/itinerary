@@ -6,7 +6,7 @@
 
 #include "timelineelement.h"
 
-#include "locationhelper.h"
+#include "publictransport.h"
 #include "reservationmanager.h"
 #include "timelinemodel.h"
 #include "transfer.h"
@@ -247,45 +247,23 @@ static KPublicTransport::Location destinationOfJourney(const KPublicTransport::J
     if (loc.country().isEmpty()) { loc.setLocality(prevLoc.country()); }
 
     return loc;
- }
-
-QString TimelineElement::destinationCountry() const
-{
-    if (isReservation()) {
-        const auto res = m_model->m_resMgr->reservation(batchId());
-        return LocationHelper::destinationCountry(res);
-    }
-
-    if (elementType == Transfer) {
-        const auto transfer = m_content.value<::Transfer>();
-        if (transfer.state() == Transfer::Selected) {
-            const auto loc = destinationOfJourney(transfer.journey());
-            if (!loc.isEmpty()) {
-                return loc.country();
-            }
-        }
-    }
-
-    return {};
 }
 
-KItinerary::GeoCoordinates TimelineElement::destinationCoordinates() const
+QVariant TimelineElement::destination() const
 {
     if (isReservation()) {
         const auto res = m_model->m_resMgr->reservation(batchId());
         if (LocationUtil::isLocationChange(res)) {
-            return LocationUtil::geo(LocationUtil::arrivalLocation(res));
+            return LocationUtil::arrivalLocation(res);
         }
-        return LocationUtil::geo(LocationUtil::location(res));
+        return LocationUtil::location(res);
     }
 
     if (elementType == Transfer) {
         const auto transfer = m_content.value<::Transfer>();
         if (transfer.state() == Transfer::Selected) {
             const auto loc = destinationOfJourney(transfer.journey());
-            if (!loc.isEmpty()) {
-                return KItinerary::GeoCoordinates(loc.latitude(), loc.longitude());
-            }
+            return loc.isEmpty() ? QVariant() : PublicTransport::placeFromLocation<KItinerary::Place>(loc);
         }
     }
 

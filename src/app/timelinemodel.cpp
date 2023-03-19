@@ -491,7 +491,7 @@ void TimelineModel::updateInformationElements()
         }
 
         auto newCountry = homeCountry;
-        newCountry.setIsoCode((*it).destinationCountry());
+        newCountry.setIsoCode(LocationUtil::address((*it).destination()).addressCountry());
         newCountry.setTimeZone(previousCountry.timeZone(), (*it).dt);
         newCountry.setTimeZone(timeZone((*it).endDateTime()), (*it).dt);
         if (newCountry == previousCountry) {
@@ -519,6 +519,7 @@ void TimelineModel::updateWeatherElements()
 
     qDebug() << "recomputing weather elements";
     GeoCoordinates geo;
+    QString label;
 
     auto date = now();
     // round to next full hour
@@ -541,9 +542,10 @@ void TimelineModel::updateWeatherElements()
             ++it;
             continue;
         }
-        const auto newGeo = (*it).destinationCoordinates();
+        const auto newGeo = LocationUtil::geo((*it).destination());
         if ((*it).isLocationChange() || newGeo.isValid()) {
             geo = newGeo;
+            label = WeatherInformation::labelForPlace((*it).destination());
 
             // if we are in an ongoing location change, start afterwards
             const auto endDt = (*it).endDateTime();
@@ -575,9 +577,10 @@ void TimelineModel::updateWeatherElements()
                 ++it;
                 continue;
             }
-            const auto newGeo = (*it).destinationCoordinates();
+            const auto newGeo = LocationUtil::geo((*it).destination());
             if ((*it).isLocationChange() || newGeo.isValid()) {
                 geo = newGeo;
+                label = WeatherInformation::labelForPlace((*it).destination());
             }
 
             ++it;
@@ -589,6 +592,7 @@ void TimelineModel::updateWeatherElements()
         endTime.setTime(QTime(23, 59, 59));
         auto nextStartTime = endTime;
         GeoCoordinates newGeo = geo;
+        QString newLabel = label;
         for (auto it2 = it; it2 != m_elements.end(); ++it2) {
             if ((*it2).dt >= endTime) {
                 break;
@@ -597,7 +601,8 @@ void TimelineModel::updateWeatherElements()
                 // exclude the actual travel time from forecast ranges
                 endTime = std::min(endTime, (*it2).dt);
                 nextStartTime = std::max(endTime, (*it2).endDateTime());
-                newGeo = (*it2).destinationCoordinates();
+                newGeo = LocationUtil::geo((*it2).destination());
+                newLabel = WeatherInformation::labelForPlace((*it2).destination());
                 break;
             }
         }
@@ -608,10 +613,11 @@ void TimelineModel::updateWeatherElements()
             fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         }
         geo = newGeo;
+        label = newLabel;
 
         // updated or new data
         if (fc.isValid()) {
-            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, QString()})});
+            it = insertOrUpdate(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, label})});
         }
         // we have no forecast data, but a matching weather element: remove
         else if ((*it).elementType == TimelineElement::WeatherForecast && (*it).dt == date) {
@@ -635,7 +641,7 @@ void TimelineModel::updateWeatherElements()
         if (fc.isValid()) {
             const auto row = std::distance(m_elements.begin(), it);
             beginInsertRows({}, row, row);
-            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, QString()})});
+            it = m_elements.insert(it, TimelineElement{this, TimelineElement::WeatherForecast, date, QVariant::fromValue(WeatherInformation{fc, label})});
             ++it;
             endInsertRows();
         }

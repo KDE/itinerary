@@ -6,6 +6,7 @@
 
 #include "reservationhelper.h"
 
+#include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Flight>
 #include <KItinerary/Person>
@@ -99,4 +100,21 @@ QString ReservationHelper::vdvOrganizationId(const QVariant &res)
         return id.mid(4);
     }
     return {};
+}
+
+bool ReservationHelper::isUnbound(const QVariant& res)
+{
+    if (JsonLd::isA<TrainReservation>(res)) {
+        return !res.value<TrainReservation>().reservationFor().value<TrainTrip>().departureTime().isValid();
+    }
+    if (JsonLd::isA<BusReservation>(res)) {
+        return !res.value<BusReservation>().reservationFor().value<BusTrip>().departureTime().isValid();
+    }
+    if (JsonLd::isA<FlightReservation>(res)) {
+        return !res.value<FlightReservation>().reservationFor().value<Flight>().departureTime().isValid();
+    }
+    if (JsonLd::isA<BoatReservation>(res)) {
+        return !res.value<BoatReservation>().reservationFor().value<BoatTrip>().departureTime().isValid();
+    }
+    return false;
 }

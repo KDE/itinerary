@@ -87,15 +87,11 @@ public:
      */
     bool isCanceled() const;
 
-    /** Destination country code, ie. the country we are in when/after
+    /** Destination location, ie. the location we are in when/fter
      *  this element took effect.
+     *  @return a KItinerary place-like vocabulary type.
      */
-    QString destinationCountry() const;
-
-    /** Geo coordinates of/after this element, ie. the location we are in when/after
-     *  this element took effect.
-     */
-    KItinerary::GeoCoordinates destinationCoordinates() const;
+    QVariant destination() const;
 
     /** End or arrival time.
      *  For location changes this is the arrival time.
