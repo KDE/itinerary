@@ -1,0 +1,56 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "TrainReservation",
+        "modifiedTime": "2023-01-01T00:00:00+01:00",
+        "reservationFor": {
+            "@type": "TrainTrip",
+            "arrivalStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.52510070800781,
+                    "longitude": 13.369400024414062
+                },
+                "identifier": "ibnr:8011160",
+                "name": "Berlin Hbf"
+            },
+            "arrivalTime": "2023-02-26T21:30:00+01:00",
+            "departureDay": "2023-02-26",
+            "departureStation": {
+                "@type": "TrainStation",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 48.993900299072266,
+                    "longitude": 8.40056037902832
+                },
+                "identifier": "ibnr:8000191",
+                "name": "Karlsruhe Hbf"
+            },
+            "departureTime": "2023-02-26T16:00:00+01:00"
+        },
+        "reservationNumber": "XXX007",
+        "reservationStatus": "http://schema.org/ReservationConfirmed"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "EventReservation",
+        "modifiedTime": "2023-03-19T00:00:00",
+        "reservationFor": {
+            "@type": "Event",
+            "endDate": "2023-03-18T00:00:00+01:00",
+            "location": {
+                "@type": "Place",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 52.43093490600586,
+                    "longitude": 13.531732559204102
+                }
+            },
+            "name": "FOSSGIS-Konferenz 2023",
+            "startDate": "2023-03-15T00:00:00+01:00"
+        },
+        "reservationNumber": "ABCDEF",
+        "reservationStatus": "http://schema.org/ReservationConfirmed"
+    }
+]

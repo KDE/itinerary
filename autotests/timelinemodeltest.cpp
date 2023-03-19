@@ -385,6 +385,30 @@ private Q_SLOTS:
         // TODO
     }
 
+    // multi-day event at different location from last known location, but no explicit transfers/location changes
+    // should produce weather elements on event site
+    void testWeatherNoLocationChange()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        auto ctrl = Test::makeAppController();
+        ctrl->setReservationManager(&resMgr);
+        WeatherForecastManager weatherMgr;
+        weatherMgr.setTestModeEnabled(true);
+
+        TimelineModel model;
+        QAbstractItemModelTester tester(&model);
+        model.setHomeCountryIsoCode(QStringLiteral("DE"));
+        model.setCurrentDateTime(QDateTime({2023, 3, 16}, {12, 34}));
+        model.setReservationManager(&resMgr);
+        model.setWeatherForecastManager(&weatherMgr);
+
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/weather-no-location-change.json")));
+        ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/weather-no-location-change.model"));
+        vp0.setRoleFilter({TimelineModel::BatchIdRole});
+        QVERIFY(vp0.verify(&model));
+    }
+
     void testMultiTraveller()
     {
         using namespace KItinerary;
