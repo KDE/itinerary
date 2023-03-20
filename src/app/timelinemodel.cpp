@@ -485,7 +485,7 @@ void TimelineModel::updateInformationElements()
             continue;
         }
 
-        if ((*it).isCanceled()) {
+        if ((*it).isCanceled() || (*it).isInformational()) {
             ++it;
             continue;
         }
