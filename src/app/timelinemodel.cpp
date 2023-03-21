@@ -485,7 +485,7 @@ void TimelineModel::updateInformationElements()
             continue;
         }
 
-        if ((*it).isCanceled()) {
+        if ((*it).isCanceled() || (*it).isInformational()) {
             ++it;
             continue;
         }
@@ -549,7 +549,7 @@ void TimelineModel::updateWeatherElements()
 
             // if we are in an ongoing location change, start afterwards
             const auto endDt = (*it).endDateTime();
-            if (endDt.isValid() && date < endDt) {
+            if ((*it).isLocationChange() && endDt.isValid() && date < endDt) {
                 date = endDt;
             }
         }

@@ -87,6 +87,11 @@ public:
      */
     bool isCanceled() const;
 
+    /** Return @c true if this is element is an informational/virtual item, rather than something
+     *  tied to a real-world action.
+     */
+    bool isInformational() const;
+
     /** Destination location, ie. the location we are in when/fter
      *  this element took effect.
      *  @return a KItinerary place-like vocabulary type.

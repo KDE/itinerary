@@ -1,0 +1,328 @@
+[
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "TrainReservation",
+                "modifiedTime": "2023-01-01T00:00:00+01:00",
+                "reservationFor": {
+                    "@type": "TrainTrip",
+                    "arrivalStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.52510070800781,
+                            "longitude": 13.369400024414062
+                        },
+                        "identifier": "ibnr:8011160",
+                        "name": "Berlin Hbf"
+                    },
+                    "arrivalTime": {
+                        "@type": "QDateTime",
+                        "@value": "2023-02-26T21:30:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "departureDay": "2023-02-26",
+                    "departureStation": {
+                        "@type": "TrainStation",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 48.993900299072266,
+                            "longitude": 8.40056037902832
+                        },
+                        "identifier": "ibnr:8000191",
+                        "name": "Karlsruhe Hbf"
+                    },
+                    "departureTime": {
+                        "@type": "QDateTime",
+                        "@value": "2023-02-26T16:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    }
+                },
+                "reservationNumber": "XXX007",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-02-26",
+        "type": 7
+    },
+    {
+        "isToday": false,
+        "rangeType": 1,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "EventReservation",
+                "modifiedTime": "2023-03-19T00:00:00",
+                "reservationFor": {
+                    "@type": "Event",
+                    "endDate": {
+                        "@type": "QDateTime",
+                        "@value": "2023-03-18T00:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.43093490600586,
+                            "longitude": 13.531732559204102
+                        }
+                    },
+                    "name": "FOSSGIS-Konferenz 2023",
+                    "startDate": {
+                        "@type": "QDateTime",
+                        "@value": "2023-03-15T00:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    }
+                },
+                "reservationNumber": "ABCDEF",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-03-15",
+        "type": 13
+    },
+    {
+        "isToday": true,
+        "isTodayEmpty": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-16",
+        "type": 1
+    },
+    {
+        "isToday": true,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-16",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 11,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-17",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 2,
+        "reservations": [
+            {
+                "@context": "http://schema.org",
+                "@type": "EventReservation",
+                "modifiedTime": "2023-03-19T00:00:00",
+                "reservationFor": {
+                    "@type": "Event",
+                    "endDate": {
+                        "@type": "QDateTime",
+                        "@value": "2023-03-18T00:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressCountry": "DE"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 52.43093490600586,
+                            "longitude": 13.531732559204102
+                        }
+                    },
+                    "name": "FOSSGIS-Konferenz 2023",
+                    "startDate": {
+                        "@type": "QDateTime",
+                        "@value": "2023-03-15T00:00:00+01:00",
+                        "timezone": "Europe/Berlin"
+                    }
+                },
+                "reservationNumber": "ABCDEF",
+                "reservationStatus": "http://schema.org/ReservationConfirmed"
+            }
+        ],
+        "sectionHeader": "2023-03-18",
+        "type": 13
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-18",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-19",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-20",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-21",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-22",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-23",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    },
+    {
+        "isToday": false,
+        "rangeType": 0,
+        "sectionHeader": "2023-03-24",
+        "type": 3,
+        "weatherInformation": {
+            "@context": "http://schema.org",
+            "@type": "WeatherInformation",
+            "forecast": {
+                "@type": "WeatherForecast",
+                "maximumTemperature": 52.43093490600586,
+                "minimumTemperature": 13.531732559204102,
+                "precipitation": 23,
+                "range": 24,
+                "symbolIconName": "weather-few-clouds",
+                "valid": true,
+                "windSpeed": 0
+            }
+        }
+    }
+]

@@ -209,6 +209,30 @@ bool TimelineElement::isTimeBoxed() const
     return false;
 }
 
+bool TimelineElement::isInformational() const
+{
+    switch (elementType) {
+        case Undefined:
+        case TodayMarker:
+        case TripGroup:
+        case WeatherForecast:
+        case LocationInfo:
+            return true;
+        case Transfer:
+        case Flight:
+        case TrainTrip:
+        case BusTrip:
+        case BoatTrip:
+        case Hotel:
+        case CarRental:
+        case Restaurant:
+        case TouristAttraction:
+        case Event:
+            return false;
+    }
+    Q_UNREACHABLE();
+}
+
 bool TimelineElement::isCanceled() const
 {
     if (isReservation()) {
