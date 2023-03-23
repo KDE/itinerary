@@ -169,7 +169,6 @@ static bool isJourneyForReservation(const QVariant &res, const KPublicTransport:
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransport::isSameMode(res, journey.route().line().mode())
         && SortUtil::startDateTime(res) == journey.scheduledDepartureTime()
-        && std::abs(SortUtil::endDateTime(res).secsTo(journey.scheduledArrivalTime())) < 300 // arrival time can have minor variations...
         && isSameLine(journey.route().line(), lineData.first, lineData.second);
 }
 
