@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -18,9 +19,10 @@ App.EditorPage {
 
     function save(resId, reservation) {
         var hotel = address.save(reservation.reservationFor);
-        hotel.name = address.name;
-        hotel.telephone = phoneNumber.text;
-        hotel.email = emailAddress.text;
+        if (hotelName.text) {
+            hotel.name = hotelName.text;
+        }
+        hotel = contactEdit.save(hotel);
         var newRes = reservation;
         newRes.reservationFor = hotel;
         ReservationManager.updateReservation(resId, newRes);
@@ -29,38 +31,43 @@ App.EditorPage {
     ColumnLayout {
         width: root.width
 
-        App.PlaceEditor {
-            id: address
-            twinFormLayouts: [address, bottomLayout]
-            Kirigami.FormData.isSection: true
-            place: reservation.reservationFor
-            name: reservation.reservationFor.name
-            defaultCountry: {
-                const HOUR = 60 * 60 * 1000;
-                const DAY = 24 * HOUR;
-                var dt = reservation.checkinTime;
-                dt.setTime(dt.getTime() - (dt.getHours() * HOUR) + DAY);
-                return countryAtTime(dt);
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Hotel")
+                }
+                MobileForm.FormDelegateSeparator {}
+                MobileForm.FormTextFieldDelegate {
+                    id: hotelName
+                    label: i18nc("hotel name", "Name")
+                    text: reservation.reservationFor.name
+                }
+                MobileForm.FormDelegateSeparator {}
+                App.FormPlaceEditorDelegate {
+                    id: address
+                    place: reservation.reservationFor
+                    defaultCountry: {
+                        const HOUR = 60 * 60 * 1000;
+                        const DAY = 24 * HOUR;
+                        let dt = reservation.checkinTime;
+                        dt.setTime(dt.getTime() - (dt.getHours() * HOUR) + DAY);
+                        return countryAtTime(dt);
+                    }
+                }
             }
         }
 
-        Kirigami.FormLayout {
-            id: bottomLayout
-            twinFormLayouts: [address, bottomLayout]
-            QQC2.TextField {
-                id: phoneNumber
-                Kirigami.FormData.label: i18n("Telephone:")
-                text: reservationFor.telephone
-            }
-            QQC2.TextField {
-                id: emailAddress
-                Kirigami.FormData.label: i18n("Email:")
-                text: reservationFor.email
-            }
+        // TODO
+        // checkin time
+        // checkout time
 
-            // TODO
-            // checkin time
-            // checkout time
+        App.ContactEditorCard {
+            id: contactEdit
+            contact: reservation.reservationFor
         }
     }
 }
