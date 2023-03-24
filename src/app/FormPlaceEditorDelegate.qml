@@ -159,9 +159,15 @@ ColumnLayout {
                 streetAddress.text = loc.street;
                 postalCode.text = loc.postalCode
                 addressLocality.text = loc.city;
-                addressRegion.tryFindRegion(loc.state);
                 // countryCode is supposed to be the code already, but isn't always...
                 addressCountry.currentIndex = addressCountry.indexOfValue(Country.fromName(loc.countryCode).alpha2);
+                // only apply region if the new country actually needs that
+                if (root.addressFormat.usedFields & KContacts.AddressFormatField.Region) {
+                    addressRegion.tryFindRegion(loc.state);
+                } else {
+                    addressRegion.currentIndex = -1;
+                    addressRegion.editText = '';
+                }
             }
         }
         onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
