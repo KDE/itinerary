@@ -30,6 +30,7 @@ Kirigami.ScrollablePage {
 
     actions {
         main: Kirigami.Action {
+            text: i18n("Save")
             iconName: "document-save"
             onTriggered: {
                 root.save(batchId, reservation);
