@@ -612,8 +612,6 @@ void TimelineModel::updateWeatherElements()
             m_weatherMgr->monitorLocation(geo.latitude(), geo.longitude());
             fc = m_weatherMgr->forecast(geo.latitude(), geo.longitude(), date, endTime);
         }
-        geo = newGeo;
-        label = newLabel;
 
         // updated or new data
         if (fc.isValid()) {
@@ -627,6 +625,8 @@ void TimelineModel::updateWeatherElements()
             endRemoveRows();
         }
 
+        geo = newGeo;
+        label = newLabel;
         date = nextStartTime.addSecs(1);
         ++it;
     }
