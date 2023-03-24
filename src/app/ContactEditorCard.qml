@@ -35,18 +35,21 @@ MobileForm.FormCard {
             id: phoneEdit
             label: i18n("Telephone")
             text: contact.telephone
+            inputMethodHints: Qt.ImhDialableCharactersOnly
         }
         MobileForm.FormDelegateSeparator {}
         MobileForm.FormTextFieldDelegate {
             id: emailEdit
             label: i18n("Email")
             text: contact.email
+            inputMethodHints: Qt.ImhEmailCharactersOnly
         }
         MobileForm.FormDelegateSeparator {}
         MobileForm.FormTextFieldDelegate {
             id: urlEdit
             label: i18n("Website")
             text: contact.url
+            inputMethodHints: Qt.ImhUrlCharactersOnly
         }
     }
 }
