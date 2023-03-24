@@ -169,7 +169,6 @@ static bool isJourneyForReservation(const QVariant &res, const KPublicTransport:
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransport::isSameMode(res, journey.route().line().mode())
         && SortUtil::startDateTime(res) == journey.scheduledDepartureTime()
-        && std::abs(SortUtil::endDateTime(res).secsTo(journey.scheduledArrivalTime())) < 300 // arrival time can have minor variations...
         && isSameLine(journey.route().line(), lineData.first, lineData.second);
 }
 
@@ -183,7 +182,10 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         const auto from = PublicTransport::locationFromPlace(LocationUtil::departureLocation(res), res);
         const auto to = PublicTransport::locationFromPlace(LocationUtil::arrivalLocation(res), res);
         JourneyRequest req(from, to);
-        req.setDateTime(SortUtil::startDateTime(res));
+        // start searching slightly earlier, so leading walking section because our coordinates
+        // aren't exactly at the right spot wont make the routing service consider the train we
+        // are looking for as impossible to reach on time
+        req.setDateTime(SortUtil::startDateTime(res).addSecs(-600));
         req.setDateTimeMode(JourneyRequest::Departure);
         req.setIncludeIntermediateStops(true);
         req.setIncludePaths(true);
