@@ -26,7 +26,6 @@
         <file>ContactEditorCard.qml</file>
         <file>CountryComboBox.qml</file>
         <file>CountryComboBoxDelegate.qml</file>
-        <file>DateTimeEdit.qml</file>
         <file>DepartureQueryPage.qml</file>
         <file>DetailsPage.qml</file>
         <file>DevelopmentModePage.qml</file>
@@ -40,6 +39,7 @@
         <file>FlightDelegate.qml</file>
         <file>FlightEditor.qml</file>
         <file>FlightPage.qml</file>
+        <file>FormDateTimeEditDelegate.qml</file>
         <file>FormPlaceDelegate.qml</file>
         <file>FormPlaceEditorDelegate.qml</file>
         <file>FormPlatformDelegate.qml</file>

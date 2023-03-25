@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -31,70 +32,82 @@ App.EditorPage {
         ReservationManager.updateReservation(resId, newRes);
     }
 
-    GridLayout {
-        id: grid
-        width: parent.width
-        columns: 2
+    ColumnLayout {
+        width: root.width
 
-        QQC2.Label {
-            Layout.columnSpan: 2
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber
-            horizontalAlignment: Qt.AlignHCenter
-            font.bold: true
+            contentItem: ColumnLayout {
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: reservation.reservationFor.airline.iataCode + " " + reservation.reservationFor.flightNumber
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                }
+            }
         }
 
-        // flight details
-        QQC2.Label {
-            text: i18n("Boarding time:")
-        }
-        App.DateTimeEdit {
-            id: boardingTime
-            obj: reservation.reservationFor
-            propertyName: "boardingTime"
-        }
-        QQC2.Label {
-            text: i18n("Seat:")
-        }
-        QQC2.TextField {
-            id: seat
-            text: reservation.airplaneSeat
-        }
-
-        Kirigami.Separator {
-            Layout.columnSpan: 2
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18nc("flight departure", "Departure")
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Airport")
+                    description: reservation.reservationFor.departureAirport.iataCode
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: departureTerminal
+                    text: reservation.reservationFor.departureTerminal
+                    label: i18nc("flight departure terminal", "Departure terminal")
+                }
+                App.FormDateTimeEditDelegate {
+                    id: departureTime
+                    text: i18nc("flight departure time", "Departure time")
+                    obj: reservation.reservationFor
+                    propertyName: "departureTime"
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: departureGate
+                    text: reservation.reservationFor.departureGate
+                    label: i18nc("flight departure gate", "Departure gate")
+                }
+                App.FormDateTimeEditDelegate {
+                    id: boardingTime
+                    text: i18n("Boarding time")
+                    obj: reservation.reservationFor
+                    propertyName: "boardingTime"
+                }
+            }
         }
 
+        // Arrival TODO
 
-        // departure data
-        QQC2.Label {
-            Layout.columnSpan: 2
+        // TODO the below is per reservation, not per batch, so add a selector for that!
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            text: i18nc("flight departure", "Departure")
-            horizontalAlignment: Qt.AlignHCenter
-        }
-        QQC2.Label {
-            text: i18nc("flight departure time", "Departure time:")
-        }
-        App.DateTimeEdit {
-            id: departureTime
-            obj: reservation.reservationFor
-            propertyName: "departureTime"
-        }
-        QQC2.Label {
-            text: i18nc("flight departure terminal", "Departure terminal:")
-        }
-        QQC2.TextField {
-            id: departureTerminal
-            text: reservation.reservationFor.departureTerminal
-        }
-        QQC2.Label {
-            text: i18nc("flight departure gate", "Departure gate:")
-        }
-        QQC2.TextField {
-            id: departureGate
-            text: reservation.reservationFor.departureGate
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Seat")
+                }
+                MobileForm.FormDelegateSeparator {}
+                MobileForm.FormTextFieldDelegate {
+                    id: seat
+                    label: i18n("Seat")
+                    text: reservation.airplaneSeat
+                }
+            }
         }
     }
 }
