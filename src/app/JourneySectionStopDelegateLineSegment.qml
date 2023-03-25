@@ -56,7 +56,7 @@ Item {
     Rectangle {
         id: trailingLine
         x: 2 * lineSegment.lineWidth
-        y: stopDot.y + stopDot.height - lineSegment.lineWidth / 2
+        y: stopDot.y + (lineSegment.hasStop ? stopDot.height - lineSegment.lineWidth / 2 : stopDot.height / 2)
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
         height: {
@@ -84,6 +84,6 @@ Item {
         }
         color: "transparent"
         anchors.centerIn: parent
-        visible: lineSegment.showStop
+        visible: lineSegment.showStop && lineSegment.hasStop
     }
 }

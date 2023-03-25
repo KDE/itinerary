@@ -12,7 +12,10 @@ using namespace KItinerary;
 
 QString WeatherInformation::labelForPlace(const QVariant &place)
 {
-    // TODO add fallbacks to region or place name
+    // TODO add fallbacks to region if we have no better name
     const auto addr = LocationUtil::address(place);
-    return addr.addressLocality();
+    if (!addr.addressLocality().isEmpty()) {
+        return addr.addressLocality();
+    }
+    return LocationUtil::name(place);
 }
