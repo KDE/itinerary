@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-13 00:49+0000\n"
+"POT-Creation-Date: 2023-03-25 00:47+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1416,7 +1416,7 @@ msgstr[0] "Jedna przesiadka"
 msgstr[1] "%1 przesiadki"
 msgstr[2] "%1 przesiadek"
 
-#: app/livedatamanager.cpp:642
+#: app/livedatamanager.cpp:644
 #, kde-format
 msgid "Itinerary change"
 msgstr "Zmiana planu podróży"
