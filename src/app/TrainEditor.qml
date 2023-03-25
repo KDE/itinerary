@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
@@ -117,77 +118,99 @@ App.EditorPage {
         }
     }
 
-    Kirigami.FormLayout {
+    ColumnLayout {
         width: parent.width
 
-        // departure data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Departure")
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18nc("train departure", "Departure")
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18nc("train station", "Station")
+                    description: root.departureStation.name
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: departurePlatform
+                    label: i18nc("train platform", "Platform")
+                    text: reservationFor.departurePlatform
+                }
+            }
         }
 
-        // TODO time
-        QQC2.Label {
-            Kirigami.FormData.label: i18nc("train station", "Station:")
-            text: root.departureStation.name
-        }
-        QQC2.TextField {
-            id: departurePlatform
-            Kirigami.FormData.label: i18n("Platform:")
-            text: reservationFor.departurePlatform
-        }
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
-        // arrival data
-        Kirigami.Separator {
-            Kirigami.FormData.isSection: true
-            Kirigami.FormData.label: i18n("Arrival")
-        }
-
-        // TODO time
-        QQC2.Label {
-            Kirigami.FormData.label: i18nc("train station", "Station:")
-            text: root.arrivalStation.name
-        }
-        QQC2.TextField {
-            id: arrivalPlatform
-            Kirigami.FormData.label: i18n("Platform:")
-            text: reservationFor.arrivalPlatform
+                MobileForm.FormCardHeader {
+                    title: i18nc("train arrival", "Arrival")
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18nc("train station", "Station")
+                    description: root.arrivalStation.name
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: arrivalPlatform
+                    label: i18nc("train platform", "Platform")
+                    text: reservationFor.arrivalPlatform
+                }
+            }
         }
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
-        // seat reservation
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Seat")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.TextField {
-            id: coachEdit
-            Kirigami.FormData.label: i18n("Coach:")
-            text: reservation.reservedTicket.ticketedSeat.seatSection
-        }
-        QQC2.TextField {
-            id: seatEdit
-            Kirigami.FormData.label: i18n("Seat:")
-            text: reservation.reservedTicket.ticketedSeat.seatNumber
-        }
-        QQC2.TextField {
-            id: classEdit
-            Kirigami.FormData.label: i18n("Class:")
-            text: reservation.reservedTicket.ticketedSeat.seatingType
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Seat")
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: coachEdit
+                    label: i18nc("carriage on a train", "Coach")
+                    text: reservation.reservedTicket.ticketedSeat.seatSection
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: seatEdit
+                    label: i18n("Seat")
+                    text: reservation.reservedTicket.ticketedSeat.seatNumber
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: classEdit
+                    label: i18nc("seating class on a train", "Class")
+                    text: reservation.reservedTicket.ticketedSeat.seatingType
+                }
+            }
         }
 
-        // booking details
-        Kirigami.Separator {
-            Kirigami.FormData.label: i18n("Booking")
-            Kirigami.FormData.isSection: true
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Reference:")
-            text: reservation.reservationNumber
-        }
-        QQC2.Label {
-            Kirigami.FormData.label: i18n("Under name:")
-            text: reservation.underName.name
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Booking")
+                }
+                MobileForm.FormDelegateSeparator {}
+                MobileForm.FormTextDelegate {
+                    text: i18n("Reference")
+                    description: reservation.reservationNumber
+                }
+                MobileForm.FormDelegateSeparator {}
+                MobileForm.FormTextDelegate {
+                    text: i18n("Under name")
+                    description: reservation.underName.name
+                }
+            }
         }
     }
 }
