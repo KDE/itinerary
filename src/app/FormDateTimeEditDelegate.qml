@@ -57,10 +57,7 @@ MobileForm.AbstractFormDelegate {
         onSelectedDateChanged: root.updateValue()
     }
     function updateValue() {
-        const MSECS_PER_DAY = 24 * 60 * 60 * 1000;
-        let dt = new Date();
-        dt.setTime(dateInput.selectedDate.getTime() - (dateInput.selectedDate.getTime() % MSECS_PER_DAY) + (timeInput.value.getTime() % MSECS_PER_DAY));
-        dt.setSeconds(0, 0);
+        const dt = new Date(dateInput.selectedDate.getFullYear(), dateInput.selectedDate.getMonth(), dateInput.selectedDate.getDate(), timeInput.value.getHours(), timeInput.value.getMinutes());
         console.log(dt, dateInput.selectedDate, timeInput.value);
         root.value = dt;
     }
