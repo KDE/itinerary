@@ -65,7 +65,12 @@ App.EditorPage {
     Component {
         id: intermediateStopDelegate
         Kirigami.BasicListItem {
-            text: Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+            text: {
+                if (modelData.scheduledDepartureTime.getTime()) {
+                    return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+                }
+                return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
+            }
             enabled: modelData.disruptionEffect != Disruption.NoService
         }
     }
