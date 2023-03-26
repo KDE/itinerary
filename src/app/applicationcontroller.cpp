@@ -269,6 +269,15 @@ void ApplicationController::importFromClipboard()
 
     else if (md->hasText()) {
         const auto content = md->data(QLatin1String("text/plain"));
+
+        // URL copied as plain text
+        if (content.startsWith("https://") && content.size() < 256) {
+            const QUrl url(QString::fromUtf8(content));
+            if (url.isValid()) {
+                importFromUrl(url);
+                return;
+            }
+        }
         importData(content);
     }
 
