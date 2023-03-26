@@ -26,6 +26,10 @@ App.EditorPage {
         if (departureTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
 
+        flight.arrivalTerminal = arrivalTerminal.text
+        if (arrivalTime.isModified)
+            flight = Util.setDateTimePreserveTimezone(flight, "arrivalTime", arrivalTime.value);
+
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
@@ -67,18 +71,18 @@ App.EditorPage {
                 MobileForm.FormTextFieldDelegate {
                     id: departureTerminal
                     text: reservation.reservationFor.departureTerminal
-                    label: i18nc("flight departure terminal", "Departure terminal")
+                    label: i18nc("flight departure terminal", "Terminal")
                 }
                 App.FormDateTimeEditDelegate {
                     id: departureTime
-                    text: i18nc("flight departure time", "Departure time")
+                    text: i18nc("flight departure time", "Time")
                     obj: reservation.reservationFor
                     propertyName: "departureTime"
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: departureGate
                     text: reservation.reservationFor.departureGate
-                    label: i18nc("flight departure gate", "Departure gate")
+                    label: i18nc("flight departure gate", "Gate")
                 }
                 App.FormDateTimeEditDelegate {
                     id: boardingTime
@@ -89,7 +93,32 @@ App.EditorPage {
             }
         }
 
-        // Arrival TODO
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18nc("flight arrival", "Arrival")
+                }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Airport")
+                    description: reservation.reservationFor.arrivalAirport.iataCode
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: arrivalTerminal
+                    text: reservation.reservationFor.arrivalTerminal
+                    label: i18nc("flight arrival terminal", "Terminal")
+                }
+                App.FormDateTimeEditDelegate {
+                    id: arrivalTime
+                    text: i18nc("flight arrival time", "Time")
+                    obj: reservation.reservationFor
+                    propertyName: "arrivalTime"
+                }
+            }
+        }
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
         MobileForm.FormCard {
