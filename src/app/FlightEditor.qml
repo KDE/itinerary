@@ -21,12 +21,19 @@ App.EditorPage {
         var flight = reservation.reservationFor;
         if (boardingTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "boardingTime", boardingTime.value);
-        flight.departureGate = departureGate.text
-        flight.departureTerminal = departureTerminal.text
+
+        let airport = flight.departureAirport;
+        airport.name = departureAirportName.text;
+        flight.departureAirport = airport;
+        flight.departureGate = departureGate.text;
+        flight.departureTerminal = departureTerminal.text;
         if (departureTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "departureTime", departureTime.value);
 
-        flight.arrivalTerminal = arrivalTerminal.text
+        airport = flight.arrivalAirport;
+        airport.name = arrivalAirportName.text;
+        flight.arrivalAirport = airport;
+        flight.arrivalTerminal = arrivalTerminal.text;
         if (arrivalTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "arrivalTime", arrivalTime.value);
 
@@ -62,11 +69,12 @@ App.EditorPage {
                 spacing: 0
 
                 MobileForm.FormCardHeader {
-                    title: i18nc("flight departure", "Departure")
+                    title: i18nc("flight departure", "Departure - %1", reservation.reservationFor.departureAirport.iataCode)
                 }
-                MobileForm.FormTextDelegate {
-                    text: i18n("Airport")
-                    description: reservation.reservationFor.departureAirport.iataCode
+                MobileForm.FormTextFieldDelegate {
+                    id: departureAirportName
+                    label: i18n("Airport")
+                    text: reservation.reservationFor.departureAirport.name
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: departureTerminal
@@ -100,11 +108,12 @@ App.EditorPage {
                 spacing: 0
 
                 MobileForm.FormCardHeader {
-                    title: i18nc("flight arrival", "Arrival")
+                    title: i18nc("flight arrival", "Arrival - %1", reservation.reservationFor.arrivalAirport.iataCode)
                 }
-                MobileForm.FormTextDelegate {
-                    text: i18n("Airport")
-                    description: reservation.reservationFor.arrivalAirport.iataCode
+                MobileForm.FormTextFieldDelegate {
+                    id: arrivalAirportName
+                    label: i18n("Airport")
+                    text: reservation.reservationFor.arrivalAirport.name
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: arrivalTerminal
