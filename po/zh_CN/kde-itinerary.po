@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-24 02:39+0000\n"
-"PO-Revision-Date: 2023-03-11 04:55\n"
+"POT-Creation-Date: 2023-03-27 04:20+0000\n"
+"PO-Revision-Date: 2023-03-26 02:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -172,10 +172,9 @@ msgid "Do you really want to delete this event?"
 msgstr "您确定要删除此活动吗？"
 
 #: app/ActionsCard.qml:163
-#, fuzzy, kde-format
-#| msgid "Application"
+#, kde-format
 msgid "Actions"
-msgstr "应用程序"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -205,55 +204,55 @@ msgstr "您确定要用新选择的行程替换现有预订吗？"
 msgid "Replace"
 msgstr "替换"
 
-#: app/applicationcontroller.cpp:304
+#: app/applicationcontroller.cpp:313
 #, kde-format
 msgid "Download failed: %1"
 msgstr "下载失败：%1"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
+#: app/applicationcontroller.cpp:553
 #, kde-format
 msgid "Import failed: %1"
 msgstr "导入失败：%1"
 
-#: app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:339
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "导入失败：文件太大。"
 
-#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
-#: app/applicationcontroller.cpp:616
+#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:625
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "已导入 %1 个预约。"
 
-#: app/applicationcontroller.cpp:401
+#: app/applicationcontroller.cpp:410
 #, kde-format
 msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
-#: app/applicationcontroller.cpp:407
+#: app/applicationcontroller.cpp:416
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:422
 #, kde-format
 msgid "Nothing imported."
 msgstr "您提供的信息中没有可被导入的内容。"
 
-#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
 #, kde-format
 msgid "Export failed: %1"
 msgstr "导出失败：%1"
 
-#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
+#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
 #, kde-format
 msgid "Export completed."
 msgstr "导出完成。"
 
-#: app/applicationcontroller.cpp:569
+#: app/applicationcontroller.cpp:578
 #, kde-format
 msgid "Import completed."
 msgstr "导入完成。"
@@ -269,10 +268,9 @@ msgid "Scan Barcode"
 msgstr ""
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "航班信息"
+msgstr ""
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format
@@ -321,17 +319,15 @@ msgstr "出发时间"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:92 app/FlightPage.qml:138
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure time:"
+#, kde-format
 msgid "Departure time"
-msgstr "起飞时间："
+msgstr ""
 
 #: app/BoatPage.qml:86 app/BoatPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr "航站楼："
+msgstr ""
 
 #: app/BoatPage.qml:111 app/BusPage.qml:138 app/FlightPage.qml:187
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
@@ -342,10 +338,9 @@ msgstr "到达信息"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:148 app/FlightPage.qml:191
 #: app/TrainPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Arrival time:"
+#, kde-format
 msgid "Arrival time"
-msgstr "到达时间："
+msgstr ""
 
 #: app/BookingCard.qml:26 app/FlightPage.qml:229 app/TrainEditor.qml:181
 #, kde-format
@@ -353,16 +348,14 @@ msgid "Booking"
 msgstr "预约详情"
 
 #: app/BookingCard.qml:31 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgid "Reference"
-msgstr "订单号："
+msgstr ""
 
 #: app/BookingCard.qml:40 app/FlightPage.qml:238
-#, fuzzy, kde-format
-#| msgid "Under name:"
+#, kde-format
 msgid "Under name"
-msgstr "乘客姓名："
+msgstr ""
 
 #: app/BookingCard.qml:49
 #, kde-format
@@ -375,11 +368,10 @@ msgid "Bus Ticket"
 msgstr "车票"
 
 #: app/BusPage.qml:115 app/BusPage.qml:172
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "bus station"
 msgid "Station"
-msgstr "站点："
+msgstr ""
 
 #: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:128
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:317
@@ -438,17 +430,15 @@ msgid "Pick-up"
 msgstr "上车信息"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "时间："
+msgstr ""
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "地点："
+msgstr ""
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -461,22 +451,19 @@ msgid "Vehicle"
 msgstr "车辆"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "类型："
+msgstr ""
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "型号："
+msgstr ""
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "品牌："
+msgstr ""
 
 #: app/ContactCard.qml:22
 #, kde-format
@@ -484,16 +471,14 @@ msgid "Contact"
 msgstr ""
 
 #: app/ContactCard.qml:26
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "电话："
+msgstr ""
 
 #: app/ContactCard.qml:35
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgid "Email"
-msgstr "电子邮箱："
+msgstr ""
 
 #: app/ContactCard.qml:44 app/EventPage.qml:113
 #, kde-format
@@ -556,10 +541,9 @@ msgid "Do you really want to delete this document?"
 msgstr "您确定要删除此证件吗？"
 
 #: app/DocumentsPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Documents and Tickets"
-msgstr "活动门票"
+msgstr ""
 
 #: app/DocumentsPage.qml:107
 #, kde-format
@@ -603,31 +587,26 @@ msgid "Event"
 msgstr "活动"
 
 #: app/EventPage.qml:90
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "入场时间："
+msgstr ""
 
 #: app/EventPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "开始时间："
+msgstr ""
 
 #: app/EventPage.qml:106
-#, fuzzy, kde-format
-#| msgid "End Time:"
+#, kde-format
 msgid "End Time"
-msgstr "结束时间："
+msgstr ""
 
 #: app/EventPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "站点："
+msgstr ""
 
 #: app/EventPage.qml:141
 #, kde-format
@@ -636,11 +615,10 @@ msgid "Row:"
 msgstr ""
 
 #: app/EventPage.qml:150
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
-msgstr "会员号："
+msgstr "数字："
 
 #: app/favoritelocationmodel.cpp:129 app/favoritelocationmodel.cpp:149
 #: app/SettingsPage.qml:45
@@ -792,46 +770,39 @@ msgid "Sequence Number:"
 msgstr "登机序号："
 
 #: app/FlightPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Boarding:"
+#, kde-format
 msgid "Boarding"
-msgstr "登机时间："
+msgstr ""
 
 #: app/FlightPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Boarding time"
-msgstr "登机时间："
+msgstr ""
 
 #: app/FlightPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Boarding group:"
+#, kde-format
 msgid "Boarding group"
-msgstr "登机组别："
+msgstr ""
 
 #: app/FlightPage.qml:119
-#, fuzzy, kde-format
-#| msgid "Airline:"
+#, kde-format
 msgid "Airline"
-msgstr "航空公司："
+msgstr ""
 
 #: app/FlightPage.qml:147 app/FlightPage.qml:200
-#, fuzzy, kde-format
-#| msgid "Airport:"
+#, kde-format
 msgid "Airport"
-msgstr "机场："
+msgstr ""
 
 #: app/FlightPage.qml:155 app/FlightPage.qml:208
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "航站楼："
+msgstr ""
 
 #: app/FlightPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Gate:"
+#, kde-format
 msgid "Gate"
-msgstr "登机口："
+msgstr ""
 
 #: app/FlightPage.qml:247
 #, kde-format
@@ -839,19 +810,16 @@ msgid "Frequent Traveler Program"
 msgstr "飞行常客奖励计划"
 
 #: app/FlightPage.qml:253
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
-msgstr "折扣计划信息"
+msgstr ""
 
 #: app/FlightPage.qml:260 app/ProgramMembershipPage.qml:108
 #: app/TicketPage.qml:121 app/TrainPage.qml:366
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "会员号："
+msgstr ""
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
@@ -894,10 +862,9 @@ msgid "Vaccination certificate of %1"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Health certificate imported."
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "已导入健康证书。"
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
@@ -930,10 +897,9 @@ msgid "Partially vaccinated"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "疫苗："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
@@ -941,16 +907,14 @@ msgid "Fully vaccinated"
 msgstr ""
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "阳性检测结果："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "阳性检测结果："
+msgstr ""
 
 #: app/HealthCertificateBarcode.qml:78
 #, kde-format
@@ -1195,16 +1159,14 @@ msgid "Hotel Reservation"
 msgstr "酒店预订"
 
 #: app/HotelPage.qml:70
-#, fuzzy, kde-format
-#| msgid "Check-in time:"
+#, kde-format
 msgid "Check-in time"
-msgstr "入住时间："
+msgstr ""
 
 #: app/HotelPage.qml:77
-#, fuzzy, kde-format
-#| msgid "Check-out time:"
+#, kde-format
 msgid "Check-out time"
-msgstr "退房时间："
+msgstr ""
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
 #, kde-format
@@ -1425,16 +1387,14 @@ msgid "Distance: %1"
 msgstr "距离：%1"
 
 #: app/JourneySectionPage.qml:67
-#, fuzzy, kde-format
-#| msgid "CO₂: %1g"
+#, kde-format
 msgid "CO₂: %1"
-msgstr "CO₂ 排放：%1g"
+msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:143
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Show location"
-msgstr "地点："
+msgstr ""
 
 #: app/JourneySummaryDelegate.qml:52
 #, kde-format
@@ -1464,10 +1424,9 @@ msgid "Position"
 msgstr ""
 
 #: app/LiveStatusPage.qml:107
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgid "Journey"
-msgstr "旅程详情"
+msgstr ""
 
 #: app/localizer.cpp:126
 #, kde-format
@@ -1476,11 +1435,10 @@ msgid "dd MMMM"
 msgstr ""
 
 #: app/localizer.cpp:171
-#, fuzzy, kde-format
-#| msgid "☂ %1 mm"
+#, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
-msgstr "☂ %1 mm"
+msgstr ""
 
 #: app/localizer.cpp:174 app/localizer.cpp:176
 #, kde-format
@@ -1873,10 +1831,9 @@ msgid "Region:"
 msgstr "地区："
 
 #: app/PlaceEditor.qml:185
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Coordinate:"
-msgstr "登机时间："
+msgstr ""
 
 #: app/PlaceEditor.qml:189
 #, kde-format
@@ -1909,28 +1866,24 @@ msgid "Member"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
-#, fuzzy, kde-format
-#| msgid "Valid from:"
+#, kde-format
 msgid "Valid from"
-msgstr "有效期自："
+msgstr ""
 
 #: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
-#, fuzzy, kde-format
-#| msgid "Valid until:"
+#, kde-format
 msgid "Valid until"
-msgstr "有效期至："
+msgstr ""
 
 #: app/publictransport.cpp:220 app/publictransport.cpp:247
-#, fuzzy, kde-format
-#| msgid "Walk (%1)"
+#, kde-format
 msgid "Walk"
-msgstr "步行 (%1)"
+msgstr ""
 
 #: app/publictransport.cpp:222
-#, fuzzy, kde-format
-#| msgid "Wait (%1)"
+#, kde-format
 msgid "Wait"
-msgstr "候车 (%1)"
+msgstr ""
 
 #: app/publictransport.cpp:231
 #, kde-format
@@ -1948,10 +1901,9 @@ msgid "Rented kick scooter"
 msgstr ""
 
 #: app/publictransport.cpp:237
-#, fuzzy, kde-format
-#| msgid "Rental Car"
+#, kde-format
 msgid "Rented car"
-msgstr "出租车"
+msgstr ""
 
 #: app/publictransport.cpp:243
 #, kde-format
@@ -1989,22 +1941,19 @@ msgid "Restaurant Reservation"
 msgstr "餐厅订座"
 
 #: app/RestaurantPage.qml:65
-#, fuzzy, kde-format
-#| msgid "Start time:"
+#, kde-format
 msgid "Start time"
-msgstr "开始时间："
+msgstr ""
 
 #: app/RestaurantPage.qml:73
-#, fuzzy, kde-format
-#| msgid "End time:"
+#, kde-format
 msgid "End time"
-msgstr "结束时间："
+msgstr ""
 
 #: app/RestaurantPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Party size:"
+#, kde-format
 msgid "Party size"
-msgstr "用餐人数："
+msgstr ""
 
 #: app/SettingsPage.qml:18
 #, kde-format
@@ -2154,10 +2103,9 @@ msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "没有列车编组的相关信息。"
+msgstr ""
 
 #: app/SettingsPage.qml:237
 #, kde-format
@@ -2252,11 +2200,9 @@ msgid "Boat trips"
 msgstr ""
 
 #: app/StatisticsPage.qml:44
-#, fuzzy, kde-format
-#| msgctxt "kirigami-addons"
-#| msgid "Years"
+#, kde-format
 msgid "Year"
-msgstr "年"
+msgstr ""
 
 #: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
 #, kde-format
@@ -2264,10 +2210,9 @@ msgid "Total"
 msgstr "合计信息"
 
 #: app/StatisticsPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Trains"
+#, kde-format
 msgid "Train"
-msgstr "火车"
+msgstr ""
 
 #: app/StatisticsPage.qml:176
 #, kde-format
@@ -2320,16 +2265,14 @@ msgid "Do you really want to delete this ticket?"
 msgstr ""
 
 #: app/TicketPage.qml:103 app/TrainPage.qml:357
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgid "Name"
-msgstr "名称："
+msgstr ""
 
 #: app/TicketPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Class:"
+#, kde-format
 msgid "Class"
-msgstr "座位等级："
+msgstr ""
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -2403,16 +2346,14 @@ msgid "Tourist Attraction"
 msgstr "旅游景点"
 
 #: app/TouristAttractionPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Departure Time:"
+#, kde-format
 msgid "Depature Time"
-msgstr "出发时间："
+msgstr ""
 
 #: app/TouristAttractionPage.qml:81
-#, fuzzy, kde-format
-#| msgid "Arrival Time:"
+#, kde-format
 msgid "Arrival Time"
-msgstr "到达时间："
+msgstr ""
 
 #: app/TrainDelegate.qml:52
 #, kde-format
@@ -2496,17 +2437,15 @@ msgid "Train Ticket"
 msgstr "火车票"
 
 #: app/TrainPage.qml:136 app/TrainPage.qml:248
-#, fuzzy, kde-format
-#| msgid "Station:"
+#, kde-format
 msgctxt "train station"
 msgid "Station"
-msgstr "站点："
+msgstr ""
 
 #: app/TrainPage.qml:145 app/TrainPage.qml:256
-#, fuzzy, kde-format
-#| msgid "Platform:"
+#, kde-format
 msgid "Platform"
-msgstr "站台："
+msgstr ""
 
 #: app/TrainPage.qml:167 app/TrainPage.qml:277
 #, kde-format
@@ -2532,10 +2471,9 @@ msgid "Program"
 msgstr "折扣计划信息"
 
 #: app/TrainPage.qml:375
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show program pass"
-msgstr "出示登机牌"
+msgstr ""
 
 #: app/TrainPage.qml:405
 #, kde-format
@@ -2558,10 +2496,9 @@ msgid "Select transfer..."
 msgstr "选择换乘方式..."
 
 #: app/TransferDelegate.qml:116
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Delete transfer"
-msgstr "选择换乘方式"
+msgstr ""
 
 #: app/TransferPage.qml:20
 #, kde-format
@@ -2656,31 +2593,29 @@ msgid_plural "Currencies: %2"
 msgstr[0] ""
 
 #: app/TripGroupDelegate.qml:130
-#, fuzzy, kde-format
-#| msgid "Export to GPX"
+#, kde-format
 msgid "Export trip to GPX"
-msgstr "导出为 GPX 文件"
+msgstr ""
 
 #: app/TripGroupDelegate.qml:139
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgid "Delete trip"
-msgstr "删除"
+msgstr ""
 
 #: app/tripgroupmanager.cpp:588
 #, kde-format
 msgid "%1 (%2 %3)"
-msgstr "%1 (%3%2)"
+msgstr ""
 
 #: app/tripgroupmanager.cpp:590
 #, kde-format
 msgid "%1 (%2/%3 %4)"
-msgstr "%1 (%4，%2至%3)"
+msgstr ""
 
 #: app/tripgroupmanager.cpp:592
 #, kde-format
 msgid "%1 (%2/%3)"
-msgstr "%1 (%2至 %3)"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:17
 #, kde-format
@@ -2854,70 +2789,3 @@ msgstr "知道了！"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Reservation"
-#~ msgstr "预约信息"
-
-#~ msgid "Documents (%1)"
-#~ msgstr "证件 (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "证件"
-
-#~ msgid "Open Document"
-#~ msgstr "打开证件"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "到达信息"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program:"
-#~ msgstr "计划名："
-
-#~ msgid "Booking reference:"
-#~ msgstr "预订单号："
-
-#~ msgid "Elevator"
-#~ msgstr "电梯"
-
-#~ msgid "%1m"
-#~ msgstr "%1m"
-
-#~ msgid "%1km"
-#~ msgstr "%1km"
-
-#~ msgctxt "@action"
-#~ msgid "Hide Names"
-#~ msgstr "隐藏名称"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "显示名称"
-
-#~ msgid "Show"
-#~ msgstr "显示"
-
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Days"
-#~ msgstr "天"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Months"
-#~ msgstr "月"
-
-#~ msgid "Previous"
-#~ msgstr "上一个"
-
-#~ msgid "Next"
-#~ msgstr "下一个"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid "Accept"
-#~ msgstr "接受"
