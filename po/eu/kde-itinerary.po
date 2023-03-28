@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 00:47+0000\n"
+"POT-Creation-Date: 2023-03-28 00:48+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -219,63 +219,63 @@ msgstr ""
 msgid "Replace"
 msgstr "Ordeztu"
 
-#: app/applicationcontroller.cpp:304
+#: app/applicationcontroller.cpp:313
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download failed: %1"
 msgstr "Deskargatu"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
+#: app/applicationcontroller.cpp:553
 #, kde-format
 msgid "Import failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:339
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
-#: app/applicationcontroller.cpp:616
+#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:625
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Erreserba bat inportatua."
 msgstr[1] "%1 erreserba inportatuak."
 
-#: app/applicationcontroller.cpp:401
+#: app/applicationcontroller.cpp:410
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Health certificate imported."
 msgstr "Erreserba bat inportatua."
 
-#: app/applicationcontroller.cpp:407
+#: app/applicationcontroller.cpp:416
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Pass imported."
 msgstr "Erreserba bat inportatua."
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:422
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Nothing imported."
 msgstr "Erreserba bat inportatua."
 
-#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
+#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:569
+#: app/applicationcontroller.cpp:578
 #, kde-format
 msgid "Import completed."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 00:47+0000\n"
+"POT-Creation-Date: 2023-03-28 00:48+0000\n"
 "PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -207,57 +207,57 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:304
+#: app/applicationcontroller.cpp:313
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Falha ao baixar: %1"
 
-#: app/applicationcontroller.cpp:325 app/applicationcontroller.cpp:529
-#: app/applicationcontroller.cpp:544
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
+#: app/applicationcontroller.cpp:553
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
-#: app/applicationcontroller.cpp:330
+#: app/applicationcontroller.cpp:339
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Falha ao importar: arquivo muito grande."
 
-#: app/applicationcontroller.cpp:394 app/applicationcontroller.cpp:606
-#: app/applicationcontroller.cpp:616
+#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:625
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:401
+#: app/applicationcontroller.cpp:410
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:407
+#: app/applicationcontroller.cpp:416
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Pass imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:422
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:482 app/applicationcontroller.cpp:508
+#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:496 app/applicationcontroller.cpp:521
+#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:569
+#: app/applicationcontroller.cpp:578
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
