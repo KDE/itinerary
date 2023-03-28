@@ -70,7 +70,7 @@ Column {
                             return "transparent";
                         }
                         width: {
-                            var ratio = (interval.estimatedEnd - interval.begin) / (24 * 60 * 60 * 1000);
+                            var ratio = (interval.estimatedEnd - interval.begin + interval.dstOffset * 1000) / (24 * 60 * 60 * 1000);
                             return ratio * (delegateRoot.ListView.view.width - delegateRoot.ListView.view.labelWidth - Kirigami.Units.smallSpacing);
                         }
                         height: Kirigami.Units.gridUnit
