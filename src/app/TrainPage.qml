@@ -129,8 +129,13 @@ App.DetailsPage {
                         }
                     }
                 }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Departure date")
+                    visible: !departureTimeDelegate.visible && text.length > 0
+                    description: Localizer.formatDate(reservationFor, "departureDay")
+                }
 
-                MobileForm.FormDelegateSeparator { visible: departureTimeLabel.text.length > 0 }
+                MobileForm.FormDelegateSeparator {}
 
                 MobileForm.FormTextDelegate {
                     text: i18nc("train station", "Station")

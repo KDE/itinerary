@@ -83,6 +83,7 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
+                    id: departureTimeDelegate
                     visible: departureTimeLabel.text.length > 0
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
@@ -108,8 +109,13 @@ App.DetailsPage {
                         }
                     }
                 }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Departure date")
+                    visible: !departureTimeDelegate.visible && text.length > 0
+                    description: Localizer.formatDate(reservationFor, "departureDay")
+                }
 
-                MobileForm.FormDelegateSeparator { visible: departureTimeLabel.text.length > 0 }
+                MobileForm.FormDelegateSeparator {}
 
                 MobileForm.FormTextDelegate {
                     text: i18nc("bus station", "Station")

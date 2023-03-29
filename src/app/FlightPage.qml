@@ -135,12 +135,18 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
+                    id: departureTimeDelegate
                     text: i18n("Departure time")
                     description: Localizer.formatDateTime(reservationFor, "departureTime")
                     visible: reservationFor.departureTime > 0
                 }
+                MobileForm.FormTextDelegate {
+                    text: i18n("Departure date")
+                    visible: !departureTimeDelegate.visible && text.length > 0
+                    description: Localizer.formatDate(reservationFor, "departureDay")
+                }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.departureTime > 0 }
+                MobileForm.FormDelegateSeparator {}
 
                 MobileForm.FormTextDelegate {
                     id: departureAirportDelegate
