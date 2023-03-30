@@ -109,11 +109,12 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormDelegateSeparator { visible: reservationFor.url != "" }
-                MobileForm.FormTextDelegate {
+                MobileForm.FormButtonDelegate {
                     text: i18n("Website")
-                    description: Util.textToHtml(reservationFor.url)
+                    description: reservationFor.url
+                    icon.name: "globe"
+                    onClicked: Qt.openUrlExternally(reservationFor.url)
                     visible: reservationFor.url != ""
-                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }
