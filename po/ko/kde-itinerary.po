@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-27 04:20+0000\n"
+"POT-Creation-Date: 2023-03-30 02:43+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -382,7 +382,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "정류장:"
 
-#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:128
+#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:129
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:317
 #, kde-format
 msgid "Seat"
@@ -445,7 +445,7 @@ msgid "Time"
 msgstr "시간:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -623,7 +623,7 @@ msgstr "시작 시간:"
 msgid "End Time"
 msgstr "종료 시간:"
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:133
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -631,13 +631,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "정거장:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:142
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:151
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "seat number"
@@ -1202,13 +1202,13 @@ msgstr "이메일:"
 msgid "Hotel Reservation"
 msgstr "호텔 예약"
 
-#: app/HotelPage.qml:70
+#: app/HotelPage.qml:71
 #, fuzzy, kde-format
 #| msgid "Check-in time:"
 msgid "Check-in time"
 msgstr "체크인 시간:"
 
-#: app/HotelPage.qml:77
+#: app/HotelPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Check-out time"
