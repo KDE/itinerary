@@ -22,6 +22,15 @@ App.EditorPage {
         var loc = address.save(reservation.reservationFor.location ? reservation.reservationFor.location : Factory.makePlace());
         loc.name = venueName.text;
         event.location = loc;
+        event.url = urlEdit.text;
+
+        if (entranceTimeEdit.isModified)
+            event = Util.setDateTimePreserveTimezone(event, "doorTime", entranceTimeEdit.value);
+        if (startDateEdit.isModified)
+            event = Util.setDateTimePreserveTimezone(event, "startDate", startDateEdit.value);
+        if (endDateEdit.isModified)
+            event = Util.setDateTimePreserveTimezone(event, "endDate", endDateEdit.value);
+
         var newRes = reservation;
         newRes.reservationFor = event;
         ReservationManager.updateReservation(resId, newRes);
@@ -70,6 +79,42 @@ App.EditorPage {
             }
         }
 
-        // TODO start/end/entrance times, seat
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
+                }
+                App.FormDateTimeEditDelegate {
+                    id: entranceTimeEdit
+                    text: i18nc("time of entrance", "Entrance")
+                    obj: reservation.reservationFor
+                    propertyName: "doorTime"
+                }
+                App.FormDateTimeEditDelegate {
+                    id: startDateEdit
+                    text: i18n("Start Time")
+                    obj: reservation.reservationFor
+                    propertyName: "startDate"
+                }
+                App.FormDateTimeEditDelegate {
+                    id: endDateEdit
+                    text: i18n("End Time")
+                    obj: reservation.reservationFor
+                    propertyName: "endDate"
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: urlEdit
+                    label: i18n("Website")
+                    text: reservationFor.url
+                    inputMethodHints: Qt.ImhEmailCharactersOnly
+                }
+            }
+        }
+
+        // TODO seat
     }
 }
