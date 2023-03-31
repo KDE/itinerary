@@ -129,17 +129,11 @@ App.EditorPage {
                     label: i18nc("train platform", "Platform")
                     text: reservationFor.departurePlatform
                 }
-                MobileForm.AbstractFormDelegate {
-                    contentItem: Kirigami.ActionToolBar {
-                        actions: [
-                            Kirigami.Action {
-                                text: i18n("Board later")
-                                icon.name: "arrow-right"
-                                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
-                                onTriggered: boardSheet.open();
-                            }
-                        ]
-                    }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Board later")
+                    icon.name: "arrow-right"
+                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
+                    onClicked: boardSheet.open();
                 }
             }
         }
@@ -162,17 +156,11 @@ App.EditorPage {
                     label: i18nc("train platform", "Platform")
                     text: reservationFor.arrivalPlatform
                 }
-                MobileForm.AbstractFormDelegate {
-                    contentItem: Kirigami.ActionToolBar {
-                        actions: [
-                            Kirigami.Action {
-                                text: i18n("Alight earlier")
-                                icon.name: "arrow-left"
-                                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
-                                onTriggered: alightSheet.open();
-                            }
-                        ]
-                    }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Alight earlier")
+                    icon.name: "arrow-left"
+                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
+                    onClicked: alightSheet.open();
                 }
             }
         }
