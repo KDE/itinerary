@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:49+0000\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -413,7 +413,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Geltokia:"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:128
+#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
 #, kde-format
 msgid "Seat"
@@ -477,7 +477,7 @@ msgid "Time"
 msgstr "Ordua:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -657,20 +657,20 @@ msgstr "Hasierako ordua: "
 msgid "End Time"
 msgstr "Amaierako ordua: "
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:133
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Geltokia:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:142
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:151
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgctxt "seat number"
@@ -1249,13 +1249,13 @@ msgstr "Helbide elektronikoa:"
 msgid "Hotel Reservation"
 msgstr "Hotel erreserba"
 
-#: app/HotelPage.qml:70
+#: app/HotelPage.qml:71
 #, fuzzy, kde-format
 #| msgid "Check-in time:"
 msgid "Check-in time"
 msgstr "Check-in ordua: "
 
-#: app/HotelPage.qml:77
+#: app/HotelPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Check-out time"

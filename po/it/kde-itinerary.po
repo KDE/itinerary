@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:49+0000\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
 "PO-Revision-Date: 2023-03-13 19:53+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -384,7 +384,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Stazione"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:128
+#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
 #, kde-format
 msgid "Seat"
@@ -446,7 +446,7 @@ msgid "Time"
 msgstr "Orario"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
 #, kde-format
 msgid "Location"
 msgstr "Posizione"
@@ -613,19 +613,19 @@ msgstr "Ora di inizio"
 msgid "End Time"
 msgstr "Ora di fine"
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Sezione:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:142
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Riga:"
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:151
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1175,12 +1175,12 @@ msgstr "Posta elettronica:"
 msgid "Hotel Reservation"
 msgstr "Prenotazione albergo"
 
-#: app/HotelPage.qml:70
+#: app/HotelPage.qml:71
 #, kde-format
 msgid "Check-in time"
 msgstr "Orario del check-in"
 
-#: app/HotelPage.qml:77
+#: app/HotelPage.qml:78
 #, kde-format
 msgid "Check-out time"
 msgstr "Orario del check-out"

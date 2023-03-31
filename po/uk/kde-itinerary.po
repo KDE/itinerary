@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:49+0000\n"
-"PO-Revision-Date: 2023-03-13 08:44+0200\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
+"PO-Revision-Date: 2023-03-30 06:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -377,11 +377,9 @@ msgid "Bus Ticket"
 msgstr "Квиток на автобус"
 
 #: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Departure gate:"
+#, kde-format
 msgid "Departure date"
-msgstr "Вихід відправлення:"
+msgstr "Дата відправлення"
 
 #: app/BusPage.qml:121 app/BusPage.qml:178
 #, kde-format
@@ -389,7 +387,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Станція"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:128
+#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
 #, kde-format
 msgid "Seat"
@@ -451,7 +449,7 @@ msgid "Time"
 msgstr "Час"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
 #, kde-format
 msgid "Location"
 msgstr "Місце"
@@ -618,19 +616,19 @@ msgstr "Час початку"
 msgid "End Time"
 msgstr "Час завершення"
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Секція:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:142
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Ряд:"
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:151
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1182,12 +1180,12 @@ msgstr "Ел. пошта:"
 msgid "Hotel Reservation"
 msgstr "Бронювання готелю"
 
-#: app/HotelPage.qml:70
+#: app/HotelPage.qml:71
 #, kde-format
 msgid "Check-in time"
 msgstr "Час перевірки на вході"
 
-#: app/HotelPage.qml:77
+#: app/HotelPage.qml:78
 #, kde-format
 msgid "Check-out time"
 msgstr "Час перевірки на виході"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 00:49+0000\n"
-"PO-Revision-Date: 2023-03-14 05:01+0100\n"
+"POT-Creation-Date: 2023-03-31 00:48+0000\n"
+"PO-Revision-Date: 2023-03-31 02:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -370,11 +370,9 @@ msgid "Bus Ticket"
 msgstr "ავტობუსის ბილეთი"
 
 #: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Departure gate:"
+#, kde-format
 msgid "Departure date"
-msgstr "გაფრენის გეითი:"
+msgstr "გაფრენის თარიღი"
 
 #: app/BusPage.qml:121 app/BusPage.qml:178
 #, kde-format
@@ -382,7 +380,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "სადგური"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:128
+#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
 #, kde-format
 msgid "Seat"
@@ -444,7 +442,7 @@ msgid "Time"
 msgstr "დრო"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:46
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
 #, kde-format
 msgid "Location"
 msgstr "მდებარეობა"
@@ -611,19 +609,19 @@ msgstr "დაწყების დრო"
 msgid "End Time"
 msgstr "დასრულების დრო"
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:133
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "სექცია:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:142
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "მწკრივი:"
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:151
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1168,12 +1166,12 @@ msgstr "ელ-ფოსტა:"
 msgid "Hotel Reservation"
 msgstr "სასტუმროს ჯავშანი"
 
-#: app/HotelPage.qml:70
+#: app/HotelPage.qml:71
 #, kde-format
 msgid "Check-in time"
 msgstr "ჩეკინის დრო"
 
-#: app/HotelPage.qml:77
+#: app/HotelPage.qml:78
 #, kde-format
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"
