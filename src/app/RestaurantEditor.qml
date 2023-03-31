@@ -23,8 +23,14 @@ App.EditorPage {
             foodEstablishment.name = restaurantName.text;
         }
         foodEstablishment = contactEdit.save(foodEstablishment);
+
         var newRes = reservation;
         newRes.reservationFor = foodEstablishment;
+        if (startTimeEdit.isModified)
+            newRes = Util.setDateTimePreserveTimezone(newRes, "startTime", startTimeEdit.value);
+        if (endTimeEdit.isModified)
+            newRes = Util.setDateTimePreserveTimezone(newRes, "endTime", endTimeEdit.value);
+
         ReservationManager.updateReservation(resId, newRes);
     }
 
@@ -55,8 +61,31 @@ App.EditorPage {
             }
         }
 
-        // time
-        // TODO
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Reservation")
+                }
+                MobileForm.FormDelegateSeparator {}
+                App.FormDateTimeEditDelegate {
+                    id: startTimeEdit
+                    text: i18n("Start Time")
+                    obj: reservation
+                    propertyName: "startTime"
+                }
+                MobileForm.FormDelegateSeparator {}
+                App.FormDateTimeEditDelegate {
+                    id: endTimeEdit
+                    text: i18n("End Time")
+                    obj: reservation
+                    propertyName: "endTime"
+                }
+            }
+        }
 
         App.ContactEditorCard {
             id: contactEdit
