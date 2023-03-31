@@ -114,6 +114,24 @@ App.EditorPage {
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+            visible: reservationFor.trainNumber || reservationFor.trainName
+            contentItem: ColumnLayout {
+                spacing: 0
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+                    Layout.topMargin: Kirigami.Units.largeSpacing
+                    Layout.bottomMargin: Kirigami.Units.largeSpacing
+                    text: reservationFor.trainName + " " + reservationFor.trainNumber
+                    horizontalAlignment: Qt.AlignHCenter
+                    font.bold: true
+                    wrapMode: Text.WordWrap
+                }
+            }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
             contentItem: ColumnLayout {
                 spacing: 0
 
