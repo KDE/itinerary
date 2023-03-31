@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-30 02:43+0000\n"
+"POT-Creation-Date: 2023-03-31 02:50+0000\n"
 "PO-Revision-Date: 2023-03-06 11:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1425,17 +1425,17 @@ msgstr "Canvi en l'itinerari"
 msgid "Live Status"
 msgstr "Estat en directe"
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:87
 #, kde-format
 msgid "Waiting for data..."
 msgstr "S'estan esperant les dades..."
 
-#: app/LiveStatusPage.qml:99
+#: app/LiveStatusPage.qml:101
 #, kde-format
 msgid "Position"
 msgstr "Posició"
 
-#: app/LiveStatusPage.qml:107
+#: app/LiveStatusPage.qml:109
 #, kde-format
 msgid "Journey"
 msgstr "Viatge"
