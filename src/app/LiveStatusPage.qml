@@ -48,6 +48,8 @@ Kirigami.Page {
                 plugin: applicationWindow().osmPlugin()
                 zoomLevel: (onboardStatus.hasSpeed && onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
+                gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
+                gesture.preventStealing: true
 
                 QtLocation.MapQuickItem {
                     coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
