@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 00:48+0000\n"
-"PO-Revision-Date: 2023-03-13 03:12+0100\n"
+"POT-Creation-Date: 2023-04-01 00:51+0000\n"
+"PO-Revision-Date: 2023-03-31 21:05+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -374,11 +374,9 @@ msgid "Bus Ticket"
 msgstr "Billete de autobús"
 
 #: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Departure gate:"
+#, kde-format
 msgid "Departure date"
-msgstr "Puerta de embarque:"
+msgstr "Fecha de salida"
 
 #: app/BusPage.qml:121 app/BusPage.qml:178
 #, kde-format
@@ -1434,17 +1432,17 @@ msgstr "Cambio de itinerario"
 msgid "Live Status"
 msgstr "Estado en directo"
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:87
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Esperando datos..."
 
-#: app/LiveStatusPage.qml:99
+#: app/LiveStatusPage.qml:101
 #, kde-format
 msgid "Position"
 msgstr "Posición"
 
-#: app/LiveStatusPage.qml:107
+#: app/LiveStatusPage.qml:109
 #, kde-format
 msgid "Journey"
 msgstr "Viaje"

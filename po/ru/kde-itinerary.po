@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 00:48+0000\n"
+"POT-Creation-Date: 2023-04-01 00:51+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1484,18 +1484,18 @@ msgstr "Изменение маршрута"
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:87
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:99
+#: app/LiveStatusPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Расположение:"
 
-#: app/LiveStatusPage.qml:107
+#: app/LiveStatusPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Select Journey"
 msgid "Journey"

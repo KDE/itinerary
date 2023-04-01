@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 00:48+0000\n"
+"POT-Creation-Date: 2023-04-01 00:51+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -1525,18 +1525,18 @@ msgstr "Ibilbide aldaketa"
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:87
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:99
+#: app/LiveStatusPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Helbidea:"
 
-#: app/LiveStatusPage.qml:107
+#: app/LiveStatusPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Journey"

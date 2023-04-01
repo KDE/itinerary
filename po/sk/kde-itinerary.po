@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 00:48+0000\n"
+"POT-Creation-Date: 2023-04-01 00:51+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1490,18 +1490,18 @@ msgstr ""
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:85
+#: app/LiveStatusPage.qml:87
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:99
+#: app/LiveStatusPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Umiestnenie:"
 
-#: app/LiveStatusPage.qml:107
+#: app/LiveStatusPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Select"
 msgid "Journey"
