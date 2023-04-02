@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-01 00:51+0000\n"
-"PO-Revision-Date: 2023-03-14 07:25+0100\n"
+"PO-Revision-Date: 2023-03-31 19:23+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -377,11 +377,9 @@ msgid "Bus Ticket"
 msgstr "Ticket de bus"
 
 #: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Departure gate:"
+#, kde-format
 msgid "Departure date"
-msgstr "Porte de départ :"
+msgstr "Date de départ"
 
 #: app/BusPage.qml:121 app/BusPage.qml:178
 #, kde-format
