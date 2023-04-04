@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-31 02:50+0000\n"
-"PO-Revision-Date: 2023-03-08 22:59+0200\n"
+"PO-Revision-Date: 2023-04-02 16:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -172,10 +172,9 @@ msgid "Do you really want to delete this event?"
 msgstr "Haluatko varmasti poistaa tämän tapahtuman?"
 
 #: app/ActionsCard.qml:163
-#, fuzzy, kde-format
-#| msgid "Application"
+#, kde-format
 msgid "Actions"
-msgstr "Sovellus"
+msgstr "Toiminnot"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -270,10 +269,9 @@ msgid "Scan Barcode"
 msgstr "Lue viivakoodi"
 
 #: app/BarcodeScannerPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Flight"
+#, kde-format
 msgid "Light"
-msgstr "Lento"
+msgstr "Vaalea"
 
 #: app/BarcodeScannerPage.qml:85
 #, kde-format
@@ -2126,10 +2124,9 @@ msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Langattoman verkon tilan saamiseksi vaaditaan lisäkäyttöoikeuksia."
 
 #: app/SettingsPage.qml:235
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
+msgstr "Tietoa kulkuvälineen langattomasta verkosta ei ole saatavilla."
 
 #: app/SettingsPage.qml:237
 #, kde-format
