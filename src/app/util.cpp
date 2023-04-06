@@ -52,6 +52,12 @@ QVariant Util::setDateTimePreserveTimezone(const QVariant &obj, const QString& p
     return o;
 }
 
+bool Util::isStartOfDay(const QVariant &obj, const QString &propertyName)
+{
+    const auto dt = JsonLdDocument::readProperty(obj, propertyName.toUtf8().constData()).toDateTime();
+    return dt.isValid() && dt.time() == QTime(0, 0);
+}
+
 bool Util::isRichText(const QString &text)
 {
     auto idx = text.indexOf(QLatin1Char('<'));

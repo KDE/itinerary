@@ -23,6 +23,8 @@ public:
     Q_INVOKABLE static QDateTime dateTimeStripTimezone(const QVariant &obj, const QString &propertyName);
     /** Set a QDateTime property preserving the timezone of the current value. */
     Q_INVOKABLE static QVariant setDateTimePreserveTimezone(const QVariant &obj, const QString &propertyName, QDateTime value);
+    /** Check whether a QDateTime property is the start of of day (ie. 00:00) in its given timezone. */
+    Q_INVOKABLE static bool isStartOfDay(const QVariant &obj, const QString &propertyName);
 
     /** Checks whether @p text is rich-text. */
     Q_INVOKABLE static bool isRichText(const QString &text);
