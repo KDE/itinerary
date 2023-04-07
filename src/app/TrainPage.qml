@@ -43,6 +43,10 @@ App.DetailsPage {
             selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
             selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
             seat: root.reservation.reservedTicket.ticketedSeat.seatNumber
+
+            property bool arrival
+
+            onLayoutUpdated: root.controller.setVehicleLayout(vehicleLayout, arrival);
         }
     }
 

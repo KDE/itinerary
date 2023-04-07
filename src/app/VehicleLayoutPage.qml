@@ -22,6 +22,9 @@ Kirigami.ScrollablePage {
     property string selectedClasses
     property string seat
 
+    readonly property alias vehicleLayout: vehicleModel.stopover
+    signal layoutUpdated()
+
     readonly property var selectedClassTypes: {
         var c = KPublicTransport.VehicleSection.UnknownClass;
         if (selectedClasses.match(/1/)) {
@@ -51,6 +54,9 @@ Kirigami.ScrollablePage {
 
             offset = Math.max(offset, 0);
             root.flickable.contentY = offset;
+
+            if (vehicleModel.rowCount() > 0)
+                root.layoutUpdated();
         }
     }
 

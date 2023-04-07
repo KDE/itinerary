@@ -128,6 +128,9 @@ public:
     /** Add the current reservation to the calendar @p cal. */
     Q_INVOKABLE void addToCalendar(KCalendarCore::Calendar *cal);
 
+    /** Store vehicle layout data we got from the vehicle layout page. */
+    Q_INVOKABLE void setVehicleLayout(const KPublicTransport::Stopover &stopover, bool arrival);
+
 Q_SIGNALS:
     void setupChanged();
     void batchIdChanged();

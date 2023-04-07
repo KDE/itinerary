@@ -28,6 +28,11 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>
 
+#include <KPublicTransport/Platform>
+#include <KPublicTransport/PlatformLayout>
+#include <KPublicTransport/Stopover>
+#include <KPublicTransport/Vehicle>
+
 #include <QJSEngine>
 #include <QJSValue>
 
@@ -889,6 +894,40 @@ void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
         event->endUpdates();
     } else {
         cal->addEvent(event);
+    }
+}
+
+static void applyVehicleLayout(KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
+{
+    using namespace KPublicTransport;
+
+    if (!Stopover::isSame(stop, layout)) {
+        qDebug() << "stop mismatch";
+        return;
+    }
+
+    const auto platform = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
+    if (platform != layout.scheduledPlatform()) { // TODO this might need a more sophisticated check if there's platform sections involved
+        qDebug() << "platform mismatch";
+        return;
+    }
+
+    stop = Stopover::merge(stop, layout);
+}
+
+void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopover& stopover, bool arrival)
+{
+    auto jny = journey();
+    if (!arrival) {
+        auto dep = jny.departure();
+        applyVehicleLayout(dep, stopover);
+        jny.setDeparture(dep);
+        m_liveDataMgr->setJourney(m_batchId, jny);
+    } else {
+        auto arr = jny.arrival();
+        applyVehicleLayout(arr, stopover);
+        jny.setArrival(arr);
+        m_liveDataMgr->setJourney(m_batchId, jny);
     }
 }
 
