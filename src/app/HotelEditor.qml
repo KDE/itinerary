@@ -25,6 +25,12 @@ App.EditorPage {
         hotel = contactEdit.save(hotel);
         var newRes = reservation;
         newRes.reservationFor = hotel;
+
+        if (checkinEdit.isModified)
+            newRes = Util.setDateTimePreserveTimezone(newRes, "checkinTime", checkinEdit.value);
+        if (checkoutEdit.isModified)
+            newRes = Util.setDateTimePreserveTimezone(newRes, "checkoutTime", checkoutEdit.value);
+
         ReservationManager.updateReservation(resId, newRes);
     }
 
@@ -61,9 +67,27 @@ App.EditorPage {
             }
         }
 
-        // TODO
-        // checkin time
-        // checkout time
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                App.FormDateTimeEditDelegate {
+                    id: checkinEdit
+                    text: i18nc("hotel checkin", "Check-in")
+                    obj: reservation
+                    propertyName: "checkinTime"
+                }
+                MobileForm.FormDelegateSeparator {}
+                App.FormDateTimeEditDelegate {
+                    id: checkoutEdit
+                    text: i18nc("hotel checkout", "Check-out")
+                    obj: reservation
+                    propertyName: "checkoutTime"
+                }
+            }
+        }
 
         App.ContactEditorCard {
             id: contactEdit
