@@ -41,13 +41,14 @@ App.TimelineDelegate {
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))
             color: Kirigami.Theme.textColor
-            visible: root.rangeType == TimelineElement.RangeBegin
+            visible: root.rangeType == TimelineElement.RangeBegin && !Util.isStartOfDay(reservation, "checkinTime")
         }
         QQC2.Label {
             text: root.rangeType == TimelineElement.RangeBegin ?
-                i18n("Check-out time: %1", Localizer.formatDateTime(reservation, "checkoutTime")) :
+                i18n("Check-out time: %1", !Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDateTime(reservation, "checkoutTime") : Localizer.formatDate(reservation, "checkoutTime")) :
                 i18n("Check-out time: %1", Localizer.formatTime(reservation, "checkoutTime"))
             color: Kirigami.Theme.textColor
+            visible: root.rangeType == TimelineElement.RangeBegin || !Util.isStartOfDay(reservation, "checkoutTime")
         }
 
     }

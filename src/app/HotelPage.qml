@@ -69,14 +69,14 @@ App.DetailsPage {
 
                 MobileForm.FormTextDelegate {
                     text: i18n("Check-in time")
-                    description: Localizer.formatDateTime(reservation, "checkinTime")
+                    description: Util.isStartOfDay(reservation, "checkinTime") ? Localizer.formatDate(reservation, "checkinTime") : Localizer.formatDateTime(reservation, "checkinTime")
                 }
 
                 MobileForm.FormDelegateSeparator { visible: reservation.checkinTime > 0 }
 
                 MobileForm.FormTextDelegate {
                     text: i18n("Check-out time")
-                    description: Localizer.formatDateTime(reservation, "checkoutTime")
+                    description: Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDate(reservation, "checkoutTime") : Localizer.formatDateTime(reservation, "checkoutTime")
                 }
             }
         }
