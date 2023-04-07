@@ -31,10 +31,12 @@ AndroidCalendar::AndroidCalendar(const QTimeZone &tz, jlong id)
 
 AndroidCalendar::~AndroidCalendar() = default;
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void AndroidCalendar::close()
 {
     m_incidences.clear();
 }
+#endif
 
 bool AndroidCalendar::deleteIncidenceInstances(const KCalendarCore::Incidence::Ptr &incidence)
 {

@@ -23,7 +23,9 @@ public:
     ~AndroidCalendar();
 
     // KCalendarCore::Calendar interface
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void close() override;
+#endif
     bool deleteIncidenceInstances(const KCalendarCore::Incidence::Ptr &incidence) override;
 
     bool addEvent(const KCalendarCore::Event::Ptr &event) override;
