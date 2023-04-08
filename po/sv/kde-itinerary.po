@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-01 00:51+0000\n"
+"POT-Creation-Date: 2023-04-08 00:47+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -283,7 +283,7 @@ msgid "No camera available."
 msgstr "Ingen kamera tillgänglig."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 till %2"
@@ -317,13 +317,13 @@ msgstr "Streckkodsinläsning"
 
 #: app/BoatPage.qml:75 app/BusPage.qml:82 app/FlightPage.qml:134
 #: app/TouristAttractionPage.qml:59 app/TrainEditor.qml:126
-#: app/TrainPage.qml:100
+#: app/TrainPage.qml:104
 #, kde-format
 msgid "Departure"
 msgstr "Avgång"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:93 app/FlightPage.qml:139
-#: app/TrainPage.qml:104
+#: app/TrainPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgid "Departure time"
@@ -338,13 +338,13 @@ msgstr "Terminal:"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:214
+#: app/TrainPage.qml:218
 #, kde-format
 msgid "Arrival"
 msgstr "Ankomst"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
-#: app/TrainPage.qml:219
+#: app/TrainPage.qml:223
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
@@ -378,7 +378,7 @@ msgstr "Sekvensnummer:"
 msgid "Bus Ticket"
 msgstr "Bussbiljett"
 
-#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
+#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgctxt "flight departure gate"
 #| msgid "Departure gate:"
@@ -393,17 +393,17 @@ msgid "Station"
 msgstr "Station:"
 
 #: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:326
 #, kde-format
 msgid "Seat"
 msgstr "Plats"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:405
+#: app/BusPage.qml:226 app/TrainPage.qml:409
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativ"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:422
+#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:426
 #, kde-format
 msgid "Journey Details"
 msgstr "Reseinformation"
@@ -764,7 +764,7 @@ msgstr "Redigera flyg"
 msgid "Boarding time:"
 msgstr "Ombordstigningstid:"
 
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:335
+#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:339
 #, kde-format
 msgid "Seat:"
 msgstr "Plats:"
@@ -859,7 +859,7 @@ msgid "Program"
 msgstr "Program"
 
 #: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:371
+#: app/TicketPage.qml:121 app/TrainPage.qml:375
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Number"
@@ -2350,7 +2350,7 @@ msgstr "Ta bort biljett"
 msgid "Do you really want to delete this ticket?"
 msgstr "Vill du verkligen ta bort biljetten?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:362
+#: app/TicketPage.qml:103 app/TrainPage.qml:366
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
@@ -2506,7 +2506,7 @@ msgstr "Plattform:"
 msgid "Coach:"
 msgstr "Buss:"
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:344
+#: app/TrainEditor.qml:175 app/TrainPage.qml:348
 #, kde-format
 msgid "Class:"
 msgstr "Klass:"
@@ -2526,54 +2526,54 @@ msgstr "I namn: "
 msgid "Train Ticket"
 msgstr "Tågbiljett"
 
-#: app/TrainPage.qml:141 app/TrainPage.qml:253
+#: app/TrainPage.qml:145 app/TrainPage.qml:257
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
 msgid "Station"
 msgstr "Station:"
 
-#: app/TrainPage.qml:150 app/TrainPage.qml:261
+#: app/TrainPage.qml:154 app/TrainPage.qml:265
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgid "Platform"
 msgstr "Plattform:"
 
-#: app/TrainPage.qml:172 app/TrainPage.qml:282
+#: app/TrainPage.qml:176 app/TrainPage.qml:286
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(var: %1)"
 
-#: app/TrainPage.qml:196 app/TrainPage.qml:304
+#: app/TrainPage.qml:200 app/TrainPage.qml:308
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:326
+#: app/TrainPage.qml:330
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Buss:"
 
-#: app/TrainPage.qml:358
+#: app/TrainPage.qml:362
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Program"
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:384
 #, fuzzy, kde-format
 #| msgid "Show Boarding Pass"
 msgid "Show program pass"
 msgstr "Visa boardingkort"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:414
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Avgående fordonsklass"
 
-#: app/TrainPage.qml:416
+#: app/TrainPage.qml:420
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Ankommande fordonsklass"
@@ -2728,47 +2728,47 @@ msgstr "%1 (%2/%3)"
 msgid "Vehicle Layout"
 msgstr "Fordonsklasser"
 
-#: app/VehicleLayoutPage.qml:97
+#: app/VehicleLayoutPage.qml:103
 #, kde-format
 msgid "Departure: %1"
 msgstr "Avgång: %1"
 
-#: app/VehicleLayoutPage.qml:99
+#: app/VehicleLayoutPage.qml:105
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Ankomst: %1"
 
-#: app/VehicleLayoutPage.qml:117
+#: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Platform: %1"
 msgstr "Plattform: %1"
 
-#: app/VehicleLayoutPage.qml:123
+#: app/VehicleLayoutPage.qml:129
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Buss: %1 Plats: %2"
 
-#: app/VehicleLayoutPage.qml:247
+#: app/VehicleLayoutPage.qml:253
 #, kde-format
 msgid "First class"
 msgstr "Första klass"
 
-#: app/VehicleLayoutPage.qml:249
+#: app/VehicleLayoutPage.qml:255
 #, kde-format
 msgid "Second class"
 msgstr "Andra klass"
 
-#: app/VehicleLayoutPage.qml:251
+#: app/VehicleLayoutPage.qml:257
 #, kde-format
 msgid "First/second class"
 msgstr "Första eller andra klass"
 
-#: app/VehicleLayoutPage.qml:252
+#: app/VehicleLayoutPage.qml:258
 #, kde-format
 msgid "Unknown class"
 msgstr "Okänd klass"
 
-#: app/VehicleLayoutPage.qml:296
+#: app/VehicleLayoutPage.qml:302
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ingen information om fordonsklasser tillgänglig."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-01 00:51+0000\n"
+"POT-Creation-Date: 2023-04-08 00:47+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -280,7 +280,7 @@ msgid "No camera available."
 msgstr "사용 가능한 카메라가 없습니다."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
@@ -314,13 +314,13 @@ msgstr "바코드 스캔 모드"
 
 #: app/BoatPage.qml:75 app/BusPage.qml:82 app/FlightPage.qml:134
 #: app/TouristAttractionPage.qml:59 app/TrainEditor.qml:126
-#: app/TrainPage.qml:100
+#: app/TrainPage.qml:104
 #, kde-format
 msgid "Departure"
 msgstr "출발"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:93 app/FlightPage.qml:139
-#: app/TrainPage.qml:104
+#: app/TrainPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgid "Departure time"
@@ -335,13 +335,13 @@ msgstr "터미널:"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:214
+#: app/TrainPage.qml:218
 #, kde-format
 msgid "Arrival"
 msgstr "도착"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
-#: app/TrainPage.qml:219
+#: app/TrainPage.qml:223
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
@@ -375,7 +375,7 @@ msgstr "순서 번호:"
 msgid "Bus Ticket"
 msgstr "버스 승차권"
 
-#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
+#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgctxt "flight departure gate"
 #| msgid "Departure gate:"
@@ -390,17 +390,17 @@ msgid "Station"
 msgstr "정류장:"
 
 #: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:326
 #, kde-format
 msgid "Seat"
 msgstr "좌석"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:405
+#: app/BusPage.qml:226 app/TrainPage.qml:409
 #, kde-format
 msgid "Alternatives"
 msgstr "대안"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:422
+#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:426
 #, kde-format
 msgid "Journey Details"
 msgstr "여정 정보"
@@ -761,7 +761,7 @@ msgstr "항공편 편집"
 msgid "Boarding time:"
 msgstr "탑승 시간:"
 
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:335
+#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:339
 #, kde-format
 msgid "Seat:"
 msgstr "좌석:"
@@ -856,7 +856,7 @@ msgid "Program"
 msgstr "서비스"
 
 #: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:371
+#: app/TicketPage.qml:121 app/TrainPage.qml:375
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Number"
@@ -2342,7 +2342,7 @@ msgstr "티켓 삭제"
 msgid "Do you really want to delete this ticket?"
 msgstr "이 티켓을 삭제하시겠습니까?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:362
+#: app/TicketPage.qml:103 app/TrainPage.qml:366
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
@@ -2498,7 +2498,7 @@ msgstr "승강장:"
 msgid "Coach:"
 msgstr "차량:"
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:344
+#: app/TrainEditor.qml:175 app/TrainPage.qml:348
 #, kde-format
 msgid "Class:"
 msgstr "등급:"
@@ -2518,54 +2518,54 @@ msgstr "예약자 이름:"
 msgid "Train Ticket"
 msgstr "열차 승차권"
 
-#: app/TrainPage.qml:141 app/TrainPage.qml:253
+#: app/TrainPage.qml:145 app/TrainPage.qml:257
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
 msgid "Station"
 msgstr "정류장:"
 
-#: app/TrainPage.qml:150 app/TrainPage.qml:261
+#: app/TrainPage.qml:154 app/TrainPage.qml:265
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgid "Platform"
 msgstr "승강장:"
 
-#: app/TrainPage.qml:172 app/TrainPage.qml:282
+#: app/TrainPage.qml:176 app/TrainPage.qml:286
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(이전: %1)"
 
-#: app/TrainPage.qml:196 app/TrainPage.qml:304
+#: app/TrainPage.qml:200 app/TrainPage.qml:308
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:326
+#: app/TrainPage.qml:330
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "차량:"
 
-#: app/TrainPage.qml:358
+#: app/TrainPage.qml:362
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "서비스"
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:384
 #, fuzzy, kde-format
 #| msgid "Show Boarding Pass"
 msgid "Show program pass"
 msgstr "탑승권 표시"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:414
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "출발하는 차량 구성"
 
-#: app/TrainPage.qml:416
+#: app/TrainPage.qml:420
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
@@ -2718,47 +2718,47 @@ msgstr "%1(%2/%3)"
 msgid "Vehicle Layout"
 msgstr "차량 구성"
 
-#: app/VehicleLayoutPage.qml:97
+#: app/VehicleLayoutPage.qml:103
 #, kde-format
 msgid "Departure: %1"
 msgstr "출발: %1"
 
-#: app/VehicleLayoutPage.qml:99
+#: app/VehicleLayoutPage.qml:105
 #, kde-format
 msgid "Arrival: %1"
 msgstr "도착: %1"
 
-#: app/VehicleLayoutPage.qml:117
+#: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Platform: %1"
 msgstr "승강장: %1"
 
-#: app/VehicleLayoutPage.qml:123
+#: app/VehicleLayoutPage.qml:129
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "차량: %1 좌석: %2"
 
-#: app/VehicleLayoutPage.qml:247
+#: app/VehicleLayoutPage.qml:253
 #, kde-format
 msgid "First class"
 msgstr "1등석"
 
-#: app/VehicleLayoutPage.qml:249
+#: app/VehicleLayoutPage.qml:255
 #, kde-format
 msgid "Second class"
 msgstr "2등석"
 
-#: app/VehicleLayoutPage.qml:251
+#: app/VehicleLayoutPage.qml:257
 #, kde-format
 msgid "First/second class"
 msgstr "1등석/2등석"
 
-#: app/VehicleLayoutPage.qml:252
+#: app/VehicleLayoutPage.qml:258
 #, kde-format
 msgid "Unknown class"
 msgstr "알 수 없는 등급"
 
-#: app/VehicleLayoutPage.qml:296
+#: app/VehicleLayoutPage.qml:302
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "차량 구성 정보를 알 수 없습니다."

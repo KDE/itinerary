@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-01 00:51+0000\n"
+"POT-Creation-Date: 2023-04-08 00:47+0000\n"
 "PO-Revision-Date: 2023-03-31 09:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -283,7 +283,7 @@ msgid "No camera available."
 msgstr "Kamere ni na voljo."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:70 app/TransferDelegate.qml:48
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:48
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 do %2"
@@ -317,13 +317,13 @@ msgstr "Način optičnega branja črtne kode"
 
 #: app/BoatPage.qml:75 app/BusPage.qml:82 app/FlightPage.qml:134
 #: app/TouristAttractionPage.qml:59 app/TrainEditor.qml:126
-#: app/TrainPage.qml:100
+#: app/TrainPage.qml:104
 #, kde-format
 msgid "Departure"
 msgstr "Odhod"
 
 #: app/BoatPage.qml:79 app/BusPage.qml:93 app/FlightPage.qml:139
-#: app/TrainPage.qml:104
+#: app/TrainPage.qml:108
 #, kde-format
 msgid "Departure time"
 msgstr "Čas odhoda"
@@ -336,13 +336,13 @@ msgstr "Terminal"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:214
+#: app/TrainPage.qml:218
 #, kde-format
 msgid "Arrival"
 msgstr "Prihod"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
-#: app/TrainPage.qml:219
+#: app/TrainPage.qml:223
 #, kde-format
 msgid "Arrival time"
 msgstr "Čas prihoda"
@@ -372,7 +372,7 @@ msgstr "Številka vozovnice:"
 msgid "Bus Ticket"
 msgstr "Avtobusna karta"
 
-#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:133
+#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
 #, kde-format
 msgid "Departure date"
 msgstr "Datum odhoda"
@@ -384,17 +384,17 @@ msgid "Station"
 msgstr "Postaja"
 
 #: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:322
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:326
 #, kde-format
 msgid "Seat"
 msgstr "Sedež"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:405
+#: app/BusPage.qml:226 app/TrainPage.qml:409
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:422
+#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:426
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti potovanja"
@@ -740,7 +740,7 @@ msgstr "Uredi let"
 msgid "Boarding time:"
 msgstr "Čas vkrcanja:"
 
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:335
+#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:339
 #, kde-format
 msgid "Seat:"
 msgstr "Sedež:"
@@ -826,7 +826,7 @@ msgid "Program"
 msgstr "Program"
 
 #: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:371
+#: app/TicketPage.qml:121 app/TrainPage.qml:375
 #, kde-format
 msgid "Number"
 msgstr "Številka"
@@ -2294,7 +2294,7 @@ msgstr "Zbriši vstopnico"
 msgid "Do you really want to delete this ticket?"
 msgstr "Ali zares želite izbrisati to vstopnico?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:362
+#: app/TicketPage.qml:103 app/TrainPage.qml:366
 #, kde-format
 msgid "Name"
 msgstr "Ime"
@@ -2446,7 +2446,7 @@ msgstr "Peron:"
 msgid "Coach:"
 msgstr "Vagon:"
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:344
+#: app/TrainEditor.qml:175 app/TrainPage.qml:348
 #, kde-format
 msgid "Class:"
 msgstr "Razred:"
@@ -2466,51 +2466,51 @@ msgstr "Pod imenom:"
 msgid "Train Ticket"
 msgstr "Železniška vozovnica"
 
-#: app/TrainPage.qml:141 app/TrainPage.qml:253
+#: app/TrainPage.qml:145 app/TrainPage.qml:257
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Postaja"
 
-#: app/TrainPage.qml:150 app/TrainPage.qml:261
+#: app/TrainPage.qml:154 app/TrainPage.qml:265
 #, kde-format
 msgid "Platform"
 msgstr "Peron"
 
-#: app/TrainPage.qml:172 app/TrainPage.qml:282
+#: app/TrainPage.qml:176 app/TrainPage.qml:286
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(je bilo: %1)"
 
-#: app/TrainPage.qml:196 app/TrainPage.qml:304
+#: app/TrainPage.qml:200 app/TrainPage.qml:308
 #, kde-format
 msgid "Additional notes"
 msgstr "Dodatne opombe"
 
-#: app/TrainPage.qml:326
+#: app/TrainPage.qml:330
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Vagon:"
 
-#: app/TrainPage.qml:358
+#: app/TrainPage.qml:362
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Program"
 
-#: app/TrainPage.qml:380
+#: app/TrainPage.qml:384
 #, kde-format
 msgid "Show program pass"
 msgstr "Pokaži vstopni kupon"
 
-#: app/TrainPage.qml:410
+#: app/TrainPage.qml:414
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Oblika vozila v odhodu"
 
-#: app/TrainPage.qml:416
+#: app/TrainPage.qml:420
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"
@@ -2663,47 +2663,47 @@ msgstr "%1 (%2/%3)"
 msgid "Vehicle Layout"
 msgstr "Oblika vozila"
 
-#: app/VehicleLayoutPage.qml:97
+#: app/VehicleLayoutPage.qml:103
 #, kde-format
 msgid "Departure: %1"
 msgstr "Odhod: %1"
 
-#: app/VehicleLayoutPage.qml:99
+#: app/VehicleLayoutPage.qml:105
 #, kde-format
 msgid "Arrival: %1"
 msgstr "Prihod: %1"
 
-#: app/VehicleLayoutPage.qml:117
+#: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Platform: %1"
 msgstr "Peron: %1"
 
-#: app/VehicleLayoutPage.qml:123
+#: app/VehicleLayoutPage.qml:129
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagon: %1 Sedež: %2"
 
-#: app/VehicleLayoutPage.qml:247
+#: app/VehicleLayoutPage.qml:253
 #, kde-format
 msgid "First class"
 msgstr "Prvi razred"
 
-#: app/VehicleLayoutPage.qml:249
+#: app/VehicleLayoutPage.qml:255
 #, kde-format
 msgid "Second class"
 msgstr "Drugi razred"
 
-#: app/VehicleLayoutPage.qml:251
+#: app/VehicleLayoutPage.qml:257
 #, kde-format
 msgid "First/second class"
 msgstr "Prvi/drugi razred"
 
-#: app/VehicleLayoutPage.qml:252
+#: app/VehicleLayoutPage.qml:258
 #, kde-format
 msgid "Unknown class"
 msgstr "Neznani razred"
 
-#: app/VehicleLayoutPage.qml:296
+#: app/VehicleLayoutPage.qml:302
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Podatki o postavitvi vlaka niso na voljo."
