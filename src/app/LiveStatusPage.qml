@@ -27,7 +27,10 @@ Kirigami.Page {
         Component.onCompleted: {
             requestPosition();
             requestJourney();
+            map.autoPositionMap();
         }
+
+        onPositionChanged: map.autoPositionMap();
     }
 
     QQC2.SwipeView {
@@ -43,14 +46,24 @@ Kirigami.Page {
 
             QtLocation.Map {
                 id: map
+                property bool autoFollow: true
+
+                function autoPositionMap() {
+                    if (map.autoFollow && !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)) {
+                        map.center = QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
+                        map.zoomLevel = (onboardStatus.hasSpeed && onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
+                        map.autoFollow = true;
+                    }
+                }
+
                 anchors.fill: parent
-                center: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
                 plugin: applicationWindow().osmPlugin()
-                zoomLevel: (onboardStatus.hasSpeed && onboardStatus.speed > 600) ? 8 : 12 // zoom out further when flying
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
                 gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
                 gesture.preventStealing: true
                 onCopyrightLinkActivated: Qt.openUrlExternally(link)
+                onZoomLevelChanged: autoFollow = false
+                onCenterChanged: autoFollow = false
 
                 QtLocation.MapQuickItem {
                     coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
@@ -79,6 +92,26 @@ Kirigami.Page {
                             background: Rectangle { color: Kirigami.Theme.backgroundColor }
                         }
                     }
+                }
+            }
+
+            QQC2.Button {
+                checkable: true
+                checked: map.autoFollow
+                icon.name: "map-symbolic"
+                text: i18n("Automatically follow on the map")
+                display: QQC2.Button.IconOnly
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+                onCheckedChanged: {
+                    map.autoFollow = checked;
+                    map.autoPositionMap();
+                }
+                anchors {
+                    top: map.top
+                    right: map.right
+                    margins: Kirigami.Units.largeSpacing
                 }
             }
 
