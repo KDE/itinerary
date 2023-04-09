@@ -37,11 +37,12 @@ MobileForm.FormTextDelegate {
                 text: (root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.scheduledPlatform) + (root.sections ? " " + root.sections: "")
                 color: root.platformChanged ? Kirigami.Theme.negativeTextColor :
                     root.stopover.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                    Kirigami.Theme.textColor;
+                    Kirigami.Theme.disabledTextColor
             }
             QQC2.Label {
                 text: i18nc("previous platform", "(was: %1)", root.scheduledPlatform)
                 visible: root.stopover.platformChanged && root.scheduledPlatform !== ""
+                color: Kirigami.Theme.disabledTextColor
                 Accessible.ignored: !visible
             }
         }
