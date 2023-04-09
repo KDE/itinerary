@@ -16,6 +16,9 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Bus Ticket")
+    editor: App.BusEditor {
+        controller: root.controller
+    }
 
     Component {
         id: alternativePage
