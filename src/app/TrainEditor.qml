@@ -50,6 +50,7 @@ App.EditorPage {
     Component {
         id: intermediateStopDelegate
         Kirigami.BasicListItem {
+            highlighted: ListView.isCurrentItem
             text: {
                 if (modelData.scheduledDepartureTime.getTime()) {
                     return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
@@ -70,6 +71,7 @@ App.EditorPage {
             id: boardStopSelector
             model: root.controller.journey.intermediateStops
             delegate: intermediateStopDelegate
+            currentIndex: -1
         }
 
         footer: QQC2.Button {
@@ -92,6 +94,7 @@ App.EditorPage {
             id: alightStopSelector
             model: root.controller.journey.intermediateStops
             delegate: intermediateStopDelegate
+            currentIndex: -1
         }
 
         footer: QQC2.Button {
