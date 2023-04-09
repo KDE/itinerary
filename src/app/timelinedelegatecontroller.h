@@ -79,6 +79,10 @@ class TimelineDelegateController : public QObject
     /** Number of documents attached to the entire batch. */
     Q_PROPERTY(int documentCount READ documentCount NOTIFY contentChanged)
 
+    /** Platform sections to the extend known. */
+    Q_PROPERTY(QString departurePlatformSections READ departurePlatformSections NOTIFY layoutChanged)
+    Q_PROPERTY(QString arrivalPlatformSections READ arrivalPlatformSections NOTIFY layoutChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController() override;
@@ -131,6 +135,10 @@ public:
     /** Store vehicle layout data we got from the vehicle layout page. */
     Q_INVOKABLE void setVehicleLayout(const KPublicTransport::Stopover &stopover, bool arrival);
 
+    /** Platform section information. */
+    QString departurePlatformSections() const;
+    QString arrivalPlatformSections() const;
+
 Q_SIGNALS:
     void setupChanged();
     void batchIdChanged();
@@ -142,6 +150,7 @@ Q_SIGNALS:
     void journeyChanged();
     void previousLocationChanged();
     void connectionWarningChanged();
+    void layoutChanged();
 
 private:
     void setCurrent(bool current, const QVariant &res = {});

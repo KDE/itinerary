@@ -82,6 +82,7 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
     Q_EMIT previousLocationChanged();
+    Q_EMIT layoutChanged();
 
     connect(m_resMgr, &ReservationManager::batchChanged, this, &TimelineDelegateController::batchChanged);
     connect(m_resMgr, &ReservationManager::batchContentChanged, this, &TimelineDelegateController::batchChanged);
@@ -107,6 +108,7 @@ void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
     Q_EMIT setupChanged();
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
+    Q_EMIT layoutChanged();
 
     connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, &TimelineDelegateController::checkForUpdate);
     connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, &TimelineDelegateController::checkForUpdate);
@@ -630,19 +632,25 @@ static CoachData coachDataForReservation(const QVariant &res)
     return data;
 }
 
+static QString platformSectionsForCoachData(const KPublicTransport::Stopover &stop, const CoachData &coach)
+{
+    KPublicTransport::PlatformLayout layouter;
+    if (!coach.coachName.isEmpty()) {
+        return layouter.sectionsForVehicleSection(stop, coach.coachName);
+    } else if (coach.coachClass != KPublicTransport::VehicleSection::UnknownClass) {
+        return layouter.sectionsForClass(stop, coach.coachClass);
+    } else {
+        return layouter.sectionsForVehicle(stop);
+    }
+
+    return {};
+}
+
 static void mapArgumentsForPt(QJSValue &args, QLatin1String prefix, const KPublicTransport::Stopover &stop, const CoachData &coach)
 {
     const auto platformName = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
     if (!platformName.isEmpty()) {
-        KPublicTransport::PlatformLayout layouter;
-        QString sections;
-        if (!coach.coachName.isEmpty()) {
-            sections = layouter.sectionsForVehicleSection(stop, coach.coachName);
-        } else if (coach.coachClass != KPublicTransport::VehicleSection::UnknownClass) {
-            sections = layouter.sectionsForClass(stop, coach.coachClass);
-        } else {
-            sections = layouter.sectionsForVehicle(stop);
-        }
+        const auto sections = platformSectionsForCoachData(stop, coach);
         args.setProperty(prefix + QLatin1String("PlatformName"), sections.isEmpty() ? platformName : (platformName + QLatin1Char(' ') + sections));
     }
 
@@ -963,6 +971,26 @@ void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopov
         jny.setArrival(arr);
         m_liveDataMgr->setJourney(m_batchId, jny);
     }
+
+    Q_EMIT layoutChanged();
+}
+
+QString TimelineDelegateController::departurePlatformSections() const
+{
+    if (!m_resMgr) {
+        return {};
+    }
+    const auto res = m_resMgr->reservation(m_batchId);
+    return platformSectionsForCoachData(departure(), coachDataForReservation(res));
+}
+
+QString TimelineDelegateController::arrivalPlatformSections() const
+{
+    if (!m_resMgr) {
+        return {};
+    }
+    const auto res = m_resMgr->reservation(m_batchId);
+    return platformSectionsForCoachData(arrival(), coachDataForReservation(res));
 }
 
 #include "moc_timelinedelegatecontroller.cpp"

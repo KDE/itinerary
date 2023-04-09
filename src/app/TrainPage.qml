@@ -152,6 +152,7 @@ App.DetailsPage {
                 App.FormPlatformDelegate {
                     id: departurePlatformDelegate
                     stopover: departure
+                    sections: root.controller.departurePlatformSections
                     scheduledPlatform: reservationFor.departurePlatform
                 }
 
@@ -235,6 +236,7 @@ App.DetailsPage {
                 App.FormPlatformDelegate {
                     id: arrivalPlatformDelegate
                     stopover: arrival
+                    sections: root.controller.arrivalPlatformSections
                     scheduledPlatform: reservationFor.arrivalPlatform
                 }
 

@@ -16,6 +16,7 @@ MobileForm.FormTextDelegate {
     visible: platformLabel.text != ""
 
     property var stopover
+    property string sections
     property string scheduledPlatform
 
     contentItem: ColumnLayout {
@@ -33,7 +34,7 @@ MobileForm.FormTextDelegate {
             QQC2.Label {
                 Layout.fillWidth: true
                 id: platformLabel
-                text: root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.scheduledPlatform
+                text: (root.stopover.hasExpectedPlatform ? root.stopover.expectedPlatform : root.scheduledPlatform) + (root.sections ? " " + root.sections: "")
                 color: root.platformChanged ? Kirigami.Theme.negativeTextColor :
                     root.stopover.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
                     Kirigami.Theme.textColor;
