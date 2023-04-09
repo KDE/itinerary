@@ -149,41 +149,13 @@ App.DetailsPage {
 
                 MobileForm.FormDelegateSeparator { visible: reservationFor.departureStation.name }
 
-                MobileForm.FormTextDelegate {
+                App.FormPlatformDelegate {
                     id: departurePlatformDelegate
-                    text: i18n("Platform")
-                    visible: departurePlatformLabel.text != ""
-                    contentItem: ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: Kirigami.Units.smallSpacing
-                        QQC2.Label {
-                            text: departurePlatformDelegate.text
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                            Accessible.ignored: true
-                        }
-                        RowLayout {
-                            QQC2.Label {
-                                Layout.fillWidth: true
-                                id: departurePlatformLabel
-                                font: Kirigami.Theme.smallFont
-                                text: departure.hasExpectedPlatform ? departure.expectedPlatform : reservationFor.departurePlatform
-                                color: departure.platformChanged ? Kirigami.Theme.negativeTextColor :
-                                    departure.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                                    Kirigami.Theme.textColor;
-                            }
-                            QQC2.Label {
-                                text: i18nc("previous platform", "(was: %1)", reservationFor.departurePlatform)
-                                visible: departure.platformChanged && reservationFor.departurePlatform != ""
-                                Accessible.ignored: !visible
-                            }
-                        }
-                    }
+                    stopover: departure
+                    scheduledPlatform: reservationFor.departurePlatform
                 }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: departurePlatformLabel.text != ""
-                }
+                MobileForm.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
 
                 App.FormPlaceDelegate {
                     id: departureDelegate
@@ -260,38 +232,13 @@ App.DetailsPage {
 
                 MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
 
-                MobileForm.AbstractFormDelegate {
+                App.FormPlatformDelegate {
                     id: arrivalPlatformDelegate
-                    text: i18n("Platform")
-                    visible: arrivalPlatformLabel.text.length > 0
-                    contentItem: ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: Kirigami.Units.smallSpacing
-                        QQC2.Label {
-                            Layout.fillWidth: true
-                            text: arrivalPlatformDelegate.text
-                            elide: Text.ElideRight
-                            Accessible.ignored: true
-                        }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            QQC2.Label {
-                                id: arrivalPlatformLabel
-                                text: arrival.hasExpectedPlatform ? arrival.expectedPlatform : reservationFor.arrivalPlatform
-                                color: arrival.platformChanged ? Kirigami.Theme.negativeTextColor :
-                                    arrival.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
-                                    Kirigami.Theme.textColor;
-                            }
-                            QQC2.Label {
-                                text: i18nc("previous platform", "(was: %1)", reservationFor.arrivalPlatform)
-                                visible: arrival.platformChanged && reservationFor.arrivalPlatform != ""
-                                Accessible.ignored: !visible
-                            }
-                        }
-                    }
+                    stopover: arrival
+                    scheduledPlatform: reservationFor.arrivalPlatform
                 }
 
-                MobileForm.FormDelegateSeparator { visible: arrivalPlatformLabel.text.length > 0 }
+                MobileForm.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
 
                 App.FormPlaceDelegate {
                     id: arrivalDelegate
