@@ -47,64 +47,30 @@ App.EditorPage {
         ReservationManager.updateReservation(resId, newRes);
     }
 
-    Component {
-        id: intermediateStopDelegate
-        Kirigami.BasicListItem {
-            highlighted: ListView.isCurrentItem
-            text: {
-                if (modelData.scheduledDepartureTime.getTime()) {
-                    return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
-                }
-                return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
-            }
-            enabled: modelData.disruptionEffect != Disruption.NoService
-        }
-    }
-
-    Kirigami.OverlaySheet {
+    App.IntermediateStopSelector {
         id: boardSheet
-        header: Kirigami.Heading {
-            text: i18n("Board Later")
-        }
-
-        ListView {
-            id: boardStopSelector
-            model: root.controller.journey.intermediateStops
-            delegate: intermediateStopDelegate
-            currentIndex: -1
-        }
-
-        footer: QQC2.Button {
+        title: i18n("Board Later")
+        model: root.controller.journey.intermediateStops
+        action: Kirigami.Action {
             text: i18n("Change departure station")
-            enabled: boardStopSelector.currentIndex >= 0
-            onClicked: {
-                departureStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[boardStopSelector.currentIndex].stopPoint)
-                departureTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledDepartureTime");
+            onTriggered: {
+                departureStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[boardSheet.currentIndex].stopPoint)
+                departureTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[boardSheet.currentIndex], "scheduledDepartureTime");
                 boardSheet.close();
             }
         }
     }
-    Kirigami.OverlaySheet {
+    App.IntermediateStopSelector {
         id: alightSheet
-        header: Kirigami.Heading {
-            text: i18n("Alight Earlier")
-        }
-
-        ListView {
-            id: alightStopSelector
-            model: root.controller.journey.intermediateStops
-            delegate: intermediateStopDelegate
-            currentIndex: -1
-        }
-
-        footer: QQC2.Button {
+        title: i18n("Alight Earlier")
+        model: root.controller.journey.intermediateStops
+        action: Kirigami.Action {
             text: i18n("Change arrival station")
-            enabled: alightStopSelector.currentIndex >= 0
-            onClicked: {
-                arrivalStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[alightStopSelector.currentIndex].stopPoint);
-                arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledArrivalTime");
+            onTriggered: {
+                arrivalStation = PublicTransport.trainStationFromLocation(root.controller.journey.intermediateStops[alightSheet.currentIndex].stopPoint);
+                arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightSheet.currentIndex], "scheduledArrivalTime");
                 if (!arrivalTime) {
-                    arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightStopSelector.currentIndex], "scheduledDepartureTime");
+                    arrivalTime = Util.dateTimeStripTimezone(root.controller.journey.intermediateStops[alightSheet.currentIndex], "scheduledDepartureTime");
                 }
                 alightSheet.close();
             }
