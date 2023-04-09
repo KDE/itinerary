@@ -42,6 +42,7 @@ Kirigami.Page {
         plugin: applicationWindow().osmPlugin()
         gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
         gesture.preventStealing: true
+        onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
         QtLocation.MapQuickItem {
             coordinate: map.center

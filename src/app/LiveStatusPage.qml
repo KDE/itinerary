@@ -50,6 +50,7 @@ Kirigami.Page {
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
                 gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
                 gesture.preventStealing: true
+                onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
                 QtLocation.MapQuickItem {
                     coordinate: QtPositioning.coordinate(onboardStatus.latitude, onboardStatus.longitude)
