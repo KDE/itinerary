@@ -414,13 +414,13 @@ App.DetailsPage {
                     text: i18n("Departure Vehicle Layout")
                     icon.name: "view-list-symbolic"
                     enabled: departure && departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain
-                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.departure})
+                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
                 },
                 QQC2.Action {
                     text: i18n("Arrival Vehicle Layout")
                     icon.name: "view-list-symbolic"
                     enabled: arrival && arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain
-                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {"stopover": root.controller.arrival});
+                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
                 },
                 Kirigami.Action {
                     text: i18n("Journey Details")
