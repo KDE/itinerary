@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:47+0000\n"
+"POT-Creation-Date: 2023-04-10 00:47+0000\n"
 "PO-Revision-Date: 2023-04-02 16:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -332,13 +332,13 @@ msgstr "Terminaali"
 
 #: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:218
+#: app/TrainPage.qml:191
 #, kde-format
 msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
-#: app/TrainPage.qml:223
+#: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr "Saapumisaika:"
@@ -382,17 +382,17 @@ msgid "Station"
 msgstr "Pysäkki"
 
 #: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:326
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
 msgstr "Istumapaikka"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:409
+#: app/BusPage.qml:226 app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Vaihtoehdot"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:426
+#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
 #, kde-format
 msgid "Journey Details"
 msgstr "Matkatiedot"
@@ -738,7 +738,7 @@ msgstr "Muokkaa lentoa"
 msgid "Boarding time:"
 msgstr "Koneeseennousuaika:"
 
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:339
+#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:288
 #, kde-format
 msgid "Seat:"
 msgstr "Paikka:"
@@ -827,10 +827,21 @@ msgid "Program"
 msgstr "Ohjelma"
 
 #: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:375
+#: app/TicketPage.qml:121 app/TrainPage.qml:324
 #, kde-format
 msgid "Number"
 msgstr "Numero"
+
+#: app/FormPlatformDelegate.qml:15
+#, kde-format
+msgid "Platform"
+msgstr "Laituri"
+
+#: app/FormPlatformDelegate.qml:43
+#, kde-format
+msgctxt "previous platform"
+msgid "(was: %1)"
+msgstr "(oli: %1)"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
@@ -1434,17 +1445,23 @@ msgstr "Matkasuunnitelman muutos"
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:87
+#: app/LiveStatusPage.qml:102
+#, fuzzy, kde-format
+#| msgid "Automatically fill transfers"
+msgid "Automatically follow on the map"
+msgstr "Täytä vaihdot automaattisesti"
+
+#: app/LiveStatusPage.qml:121
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Odotetaan tietoa…"
 
-#: app/LiveStatusPage.qml:101
+#: app/LiveStatusPage.qml:135
 #, kde-format
 msgid "Position"
 msgstr "Sijainti"
 
-#: app/LiveStatusPage.qml:109
+#: app/LiveStatusPage.qml:143
 #, kde-format
 msgid "Journey"
 msgstr "Matka"
@@ -2292,7 +2309,7 @@ msgstr "Poista lippu"
 msgid "Do you really want to delete this ticket?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:366
+#: app/TicketPage.qml:103 app/TrainPage.qml:315
 #, kde-format
 msgid "Name"
 msgstr "Nimi"
@@ -2444,7 +2461,7 @@ msgstr "Laituri:"
 msgid "Coach:"
 msgstr "Vaunu:"
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:348
+#: app/TrainEditor.qml:175 app/TrainPage.qml:297
 #, kde-format
 msgid "Class:"
 msgstr "Luokka:"
@@ -2464,52 +2481,41 @@ msgstr "Nimellä:"
 msgid "Train Ticket"
 msgstr "Junalippu"
 
-#: app/TrainPage.qml:145 app/TrainPage.qml:257
+#: app/TrainPage.qml:145 app/TrainPage.qml:230
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Pysäkki"
 
-#: app/TrainPage.qml:154 app/TrainPage.qml:265
-#, kde-format
-msgid "Platform"
-msgstr "Laituri"
-
-#: app/TrainPage.qml:176 app/TrainPage.qml:286
-#, kde-format
-msgctxt "previous platform"
-msgid "(was: %1)"
-msgstr "(oli: %1)"
-
-#: app/TrainPage.qml:200 app/TrainPage.qml:308
+#: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
 msgid "Additional notes"
 msgstr "Lisähuomiot"
 
-#: app/TrainPage.qml:330
+#: app/TrainPage.qml:279
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Vaunu:"
 
-#: app/TrainPage.qml:362
+#: app/TrainPage.qml:311
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Ohjelma"
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:333
 #, fuzzy, kde-format
 #| msgid "Show Boarding Pass"
 msgid "Show program pass"
 msgstr "Näytä maihinnousukortti"
 
-#: app/TrainPage.qml:414
+#: app/TrainPage.qml:363
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Lähtövaunun kartta"
 
-#: app/TrainPage.qml:420
+#: app/TrainPage.qml:369
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Tulovaunun kartta"

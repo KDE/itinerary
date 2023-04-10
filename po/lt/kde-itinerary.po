@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-08 00:47+0000\n"
+"POT-Creation-Date: 2023-04-10 00:47+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -333,13 +333,13 @@ msgstr ""
 
 #: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
 #: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:218
+#: app/TrainPage.qml:191
 #, kde-format
 msgid "Arrival"
 msgstr ""
 
 #: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
-#: app/TrainPage.qml:223
+#: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr ""
@@ -381,17 +381,17 @@ msgid "Station"
 msgstr ""
 
 #: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:326
+#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
 msgstr ""
 
-#: app/BusPage.qml:226 app/TrainPage.qml:409
+#: app/BusPage.qml:226 app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr ""
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:426
+#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -737,7 +737,7 @@ msgstr ""
 msgid "Boarding time:"
 msgstr ""
 
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:339
+#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:288
 #, kde-format
 msgid "Seat:"
 msgstr ""
@@ -823,9 +823,20 @@ msgid "Program"
 msgstr ""
 
 #: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:375
+#: app/TicketPage.qml:121 app/TrainPage.qml:324
 #, kde-format
 msgid "Number"
+msgstr ""
+
+#: app/FormPlatformDelegate.qml:15
+#, kde-format
+msgid "Platform"
+msgstr ""
+
+#: app/FormPlatformDelegate.qml:43
+#, kde-format
+msgctxt "previous platform"
+msgid "(was: %1)"
 msgstr ""
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
@@ -1426,17 +1437,22 @@ msgstr ""
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:87
+#: app/LiveStatusPage.qml:102
+#, kde-format
+msgid "Automatically follow on the map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:121
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:101
+#: app/LiveStatusPage.qml:135
 #, kde-format
 msgid "Position"
 msgstr ""
 
-#: app/LiveStatusPage.qml:109
+#: app/LiveStatusPage.qml:143
 #, kde-format
 msgid "Journey"
 msgstr ""
@@ -2270,7 +2286,7 @@ msgstr ""
 msgid "Do you really want to delete this ticket?"
 msgstr ""
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:366
+#: app/TicketPage.qml:103 app/TrainPage.qml:315
 #, kde-format
 msgid "Name"
 msgstr ""
@@ -2422,7 +2438,7 @@ msgstr ""
 msgid "Coach:"
 msgstr ""
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:348
+#: app/TrainEditor.qml:175 app/TrainPage.qml:297
 #, kde-format
 msgid "Class:"
 msgstr ""
@@ -2442,51 +2458,40 @@ msgstr ""
 msgid "Train Ticket"
 msgstr ""
 
-#: app/TrainPage.qml:145 app/TrainPage.qml:257
+#: app/TrainPage.qml:145 app/TrainPage.qml:230
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr ""
 
-#: app/TrainPage.qml:154 app/TrainPage.qml:265
-#, kde-format
-msgid "Platform"
-msgstr ""
-
-#: app/TrainPage.qml:176 app/TrainPage.qml:286
-#, kde-format
-msgctxt "previous platform"
-msgid "(was: %1)"
-msgstr ""
-
-#: app/TrainPage.qml:200 app/TrainPage.qml:308
+#: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:330
+#: app/TrainPage.qml:279
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr ""
 
-#: app/TrainPage.qml:362
+#: app/TrainPage.qml:311
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr ""
 
-#: app/TrainPage.qml:384
+#: app/TrainPage.qml:333
 #, kde-format
 msgid "Show program pass"
 msgstr ""
 
-#: app/TrainPage.qml:414
+#: app/TrainPage.qml:363
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr ""
 
-#: app/TrainPage.qml:420
+#: app/TrainPage.qml:369
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr ""
