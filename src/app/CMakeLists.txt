@@ -159,6 +159,7 @@ if (ANDROID)
         edit-paste
         edit-rename
         export-symbolic
+        flag
         flashlight-off
         flashlight-on
         folder-documents-symbolic
@@ -177,8 +178,12 @@ if (ANDROID)
         meeting-attending
         notifications
         question
+        raindrop
         search
         settings-configure
+        temperature-cold
+        temperature-normal
+        temperature-warm
         view-barcode-qr
         view-calendar-day
         view-list-symbolic

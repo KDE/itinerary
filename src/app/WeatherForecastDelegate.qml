@@ -4,9 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -21,51 +21,73 @@ Kirigami.AbstractCard {
     headerOrientation: Qt.Horizontal
     showClickFeedback: weatherForecast.range > 1
 
-    header: Rectangle {
-        id: headerBackground
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-        Kirigami.Theme.inherit: false
-        color: weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.smallSpacing
-        implicitWidth: icon.implicitWidth + Kirigami.Units.largeSpacing * 2
-        Layout.minimumHeight: implicitWidth
-        Layout.fillHeight: true
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.bottomMargin: -root.rightPadding
+    contentItem: RowLayout {
+        spacing: 0
+
+        anchors {
+            fill: parent
+            leftMargin: Kirigami.Units.largeSpacing
+            topMargin: -Kirigami.Units.largeSpacing
+        }
 
         Kirigami.Icon {
-            id: icon
-            anchors.fill: parent
-            anchors.margins: Kirigami.Units.largeSpacing
             source: weatherForecast.symbolIconName
+            Layout.preferredHeight: Kirigami.Units.iconSizes.medium
+            Layout.preferredWidth: Kirigami.Units.iconSizes.medium
+            Layout.rightMargin: Kirigami.Units.largeSpacing
         }
-    }
 
-    contentItem: ColumnLayout {
-        Layout.fillWidth: true
+        Kirigami.Icon {
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            source: {
+                if (weatherForecast.maximumTemperature > 35.0)
+                    return "temperature-warm";
+                if (weatherForecast.minimumTemperature < -20.0)
+                    return "temperature-cold";
+                return "temperature-normal"
+            }
+        }
         QQC2.Label {
             text: weatherForecast.minimumTemperature == weatherForecast.maximumTemperature ?
-                i18n("Temperature: %1°C", weatherForecast.maximumTemperature) :
-                i18n("Temperature: %1°C / %2°C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
-            color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
+                Localizer.formatTemperature(weatherForecast.maximumTemperature) :
+                i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecast.minimumTemperature),
+                                                       Localizer.formatTemperature(weatherForecast.maximumTemperature))
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+        }
+
+        Kirigami.Icon {
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            source: "raindrop"
+            color: weatherForecast.precipitation > 25.0 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            visible: weatherForecast.precipitation > 0
         }
         QQC2.Label {
-            text: i18n("Precipitation: %1 mm", weatherForecast.precipitation)
-            color: Kirigami.Theme.textColor
-            Layout.fillWidth: true
+            text: i18nc("precipitation", "%1 mm", weatherForecast.precipitation)
+            visible: weatherForecast.precipitation > 0
+            Layout.rightMargin: Kirigami.Units.largeSpacing
+        }
+
+        Kirigami.Icon {
+            Layout.preferredHeight: Kirigami.Units.iconSizes.small
+            Layout.preferredWidth: Kirigami.Units.iconSizes.small
+            source: "flag"
+            color: weatherForecast.windSpeed > 17.5 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+            visible: weatherForecast.windSpeed > 3.5
+        }
+        QQC2.Label {
+            text: i18nc("windSpeed", "%1 m/s", weatherForecast.windSpeed)
+            visible: weatherForecast.windSpeed > 3.5
+        }
+
+        Item { Layout.fillWidth: true }
+        Component.onCompleted: {
+            root.background.defaultColor = Qt.binding(function() { return weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor; });
         }
     }
 
-    Component {
-        id: detailsComponent
-        App.WeatherForecastPage {
-            weatherInformation: root.weatherInformation
-        }
-    }
-
-    onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(detailsComponent); }
+    onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(weatherForecastPage, {weatherInformation: root.weatherInformation}); }
 
     Accessible.name: i18n("Weather Forecast")
     Accessible.onPressAction: root.clicked()

@@ -32,6 +32,8 @@ public:
     Q_INVOKABLE static QString formatSpeed(int km_per_hour);
     /** Format a weight value. */
     Q_INVOKABLE static QString formatWeight(int gram);
+    /** Format a temperatur, given in degree Celsius. */
+    Q_INVOKABLE static QString formatTemperature(double temperature);
 };
 
 

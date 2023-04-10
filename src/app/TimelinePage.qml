@@ -189,6 +189,10 @@ Kirigami.ScrollablePage {
         id: touristAttractionDetailsPage
         App.TouristAttractionPage {}
     }
+    Component {
+        id: weatherForecastPage
+        App.WeatherForecastPage {}
+    }
 
     function detailsComponent(batchId) {
         const res = ReservationManager.reservation(batchId);

@@ -193,3 +193,8 @@ QString Localizer::formatWeight(int gram)
     return i18nc("weight in kilogram", "%1 kg", (int)qRound(gram/1000.0));
 
 }
+
+QString Localizer::formatTemperature(double temperature)
+{
+    return i18nc("temperature", "%1°C", (int)qRound(temperature));
+}
