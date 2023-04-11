@@ -76,6 +76,7 @@ Kirigami.ScrollablePage {
         id: forecastList
         model: forecastModel
         delegate: weatherForecastDelegate
+        clip: true
 
         footer: QQC2.Label {
             width: forecastList.width
