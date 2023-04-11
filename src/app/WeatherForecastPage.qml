@@ -35,38 +35,67 @@ Kirigami.ScrollablePage {
             readonly property var fc: model.weatherForecast
             highlighted: false
             backgroundColor: fc.isSevere ? Kirigami.Theme.negativeBackgroundColor : "transparent"
-            Row {
-                spacing: Kirigami.Units.largeSpacing
+
+            RowLayout {
+                spacing: 0
+
                 Kirigami.Icon {
-                    source: fc.symbolIconName
-                    isMask: false
-                    width: Kirigami.Units.iconSizes.small
-                    height: width
+                    source: weatherForecast.symbolIconName
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
                 QQC2.Label {
                     text: model.localizedTime
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
-                QQC2.Label {
-                    text: {
-                        if (fc.maximumTemperature == fc.minimumTemperature) {
-                            return i18n("%1°C", fc.maximumTemperature);
-                        } else {
-                            return i18n("%1°C / %2°C", fc.minimumTemperature, fc.maximumTemperature);
-                        }
+                Kirigami.Icon {
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    source: {
+                        if (weatherForecast.maximumTemperature > 35.0)
+                            return "temperature-warm";
+                        if (weatherForecast.minimumTemperature < -20.0)
+                            return "temperature-cold";
+                        return "temperature-normal"
                     }
                 }
-
                 QQC2.Label {
-                    visible: fc.precipitation > 0
-                    text: i18n("☂ %1 mm", fc.precipitation)
+                    text: weatherForecast.minimumTemperature == weatherForecast.maximumTemperature ?
+                        Localizer.formatTemperature(weatherForecast.maximumTemperature) :
+                        i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecast.minimumTemperature),
+                                                            Localizer.formatTemperature(weatherForecast.maximumTemperature))
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
-                QQC2.Label {
-                    visible: fc.windSpeed > 3.5
-                    text: i18n("🌬️ %1 m/s", fc.windSpeed)
+                Kirigami.Icon {
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    source: "raindrop"
+                    color: weatherForecast.precipitation > 25.0 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    visible: weatherForecast.precipitation > 0
                 }
+                QQC2.Label {
+                    text: i18nc("precipitation", "%1 mm", weatherForecast.precipitation)
+                    visible: weatherForecast.precipitation > 0
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                }
+
+                Kirigami.Icon {
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.small
+                    source: "flag"
+                    color: weatherForecast.windSpeed > 17.5 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    visible: weatherForecast.windSpeed > 3.5
+                }
+                QQC2.Label {
+                    text: i18nc("windSpeed", "%1 m/s", weatherForecast.windSpeed)
+                    visible: weatherForecast.windSpeed > 3.5
+                }
+
+                Item { Layout.fillWidth: true }
             }
         }
     }
