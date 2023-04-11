@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
 "PO-Revision-Date: 2023-03-31 02:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1490,6 +1490,13 @@ msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 კგ"
 
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
+
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
 msgid "Entering %1"
@@ -2033,7 +2040,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "საჯარო ტრანსპორტის ინფორმაციის წყაროები..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2358,7 +2365,7 @@ msgstr "მართლა გნებავთ ამ მოგზაურო
 msgid "Export Trip"
 msgstr "მოგზაურობის გატანა"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "მოგზაურობისთვის დღეს არაფერი გაქვთ გასაკეთებელი."
@@ -2721,20 +2728,28 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "მაღალი"
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "ტემპერატურა: %1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "ტემპერატურა: %1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "%1 მ"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "ნალექი: %1 მმ"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "%1 მ"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2811,6 +2826,15 @@ msgstr "Გავიგე!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "ტემპერატურა: %1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "ტემპერატურა: %1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "ნალექი: %1 მმ"
 
 #~ msgid "%1m"
 #~ msgstr "%1მ"

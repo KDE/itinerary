@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
 "PO-Revision-Date: 2023-04-01 17:49+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1496,6 +1496,13 @@ msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
+
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
 msgid "Entering %1"
@@ -2037,7 +2044,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Public Transport Information Sources..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2366,7 +2373,7 @@ msgstr "Do you really want to delete this trip?"
 msgid "Export Trip"
 msgstr "Export Trip"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nothing on the itinerary for today."
@@ -2729,20 +2736,28 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "High"
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "Temperature: %1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "Temperature: %1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "%1 m"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "Precipitation: %1 mm"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "%1 m"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2830,6 +2845,15 @@ msgstr "Got it!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 from %3 to %4 on %5"
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "Temperature: %1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "Temperature: %1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "Precipitation: %1 mm"
 
 #~ msgid "%1m"
 #~ msgstr "%1m"

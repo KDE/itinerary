@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
-"PO-Revision-Date: 2023-03-30 10:02+0200\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"PO-Revision-Date: 2023-04-10 17:39+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1442,10 +1442,9 @@ msgid "Live Status"
 msgstr "Actuele status"
 
 #: app/LiveStatusPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Automatically fill transfers"
+#, kde-format
 msgid "Automatically follow on the map"
-msgstr "Automatisch overstappen vullen"
+msgstr "Automatisch volgen op de kaart"
 
 #: app/LiveStatusPage.qml:121
 #, kde-format
@@ -1497,6 +1496,13 @@ msgstr "%1 g"
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
+
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2041,7 +2047,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Bronnen met informatie over openbaar vervoer..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2373,7 +2379,7 @@ msgstr "Wilt u deze reis verwijderen?"
 msgid "Export Trip"
 msgstr "Reis exporteren"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Niets op de reisroute voor vandaag."
@@ -2736,20 +2742,28 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Hoog"
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "Temperatuur: %1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "Temperatuur: %1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "%1 m"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "Neerslag: %1 mm"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "%1 m"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2838,6 +2852,15 @@ msgstr "Begrepen!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "Temperatuur: %1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "Temperatuur: %1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "Neerslag: %1 mm"
 
 #~ msgid "%1m"
 #~ msgstr "%1m"

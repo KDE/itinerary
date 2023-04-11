@@ -6,17 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
-"PO-Revision-Date: 2023-04-08 07:54+0200\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"PO-Revision-Date: 2023-04-10 06:12+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1446,10 +1446,9 @@ msgid "Live Status"
 msgstr "Stanje v živo"
 
 #: app/LiveStatusPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Automatically fill transfers"
+#, kde-format
 msgid "Automatically follow on the map"
-msgstr "Samodejno zapolni prevoze"
+msgstr "Samodejno sledi zemljevidu"
 
 #: app/LiveStatusPage.qml:121
 #, kde-format
@@ -1501,6 +1500,13 @@ msgstr "%1 g"
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
+
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2043,7 +2049,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Viri podatkov o javnem prevozu..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2371,7 +2377,7 @@ msgstr "Ali res želite izbrisati to potovanje?"
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -2738,20 +2744,28 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Visoko"
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "Temperatura: %1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "Temperatura: %1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "%1 m"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "Padavine: %1 mm"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "%1 m"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2840,6 +2854,15 @@ msgstr "Razumem!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "Temperatura: %1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "Temperatura: %1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "Padavine: %1 mm"
 
 #~ msgid "%1m"
 #~ msgstr "%1m"

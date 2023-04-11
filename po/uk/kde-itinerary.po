@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
-"PO-Revision-Date: 2023-03-30 06:24+0300\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"PO-Revision-Date: 2023-04-10 15:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1450,10 +1450,9 @@ msgid "Live Status"
 msgstr "Інтерактивний стан"
 
 #: app/LiveStatusPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Automatically fill transfers"
+#, kde-format
 msgid "Automatically follow on the map"
-msgstr "Автоматично заповнювати пересадки"
+msgstr "Автоматично стежити на карті"
 
 #: app/LiveStatusPage.qml:121
 #, kde-format
@@ -1505,6 +1504,13 @@ msgstr "%1 г"
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
+
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2049,7 +2055,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Джерела даних щодо громадського транспорту…"
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2384,7 +2390,7 @@ msgstr "Ви справді бажаєте вилучити цю подорож?
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
@@ -2751,20 +2757,28 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Висока"
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "Температура: %1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "Температура: %1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "%1 м"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "Опади: %1 мм"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgctxt "distance in meter"
+#| msgid "%1 m"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "%1 м"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2855,6 +2869,15 @@ msgstr "Гаразд!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "Температура: %1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "Температура: %1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "Опади: %1 мм"
 
 #~ msgid "%1m"
 #~ msgstr "%1 м"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-10 00:47+0000\n"
-"PO-Revision-Date: 2023-03-27 11:58\n"
+"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"PO-Revision-Date: 2023-04-10 14:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -368,11 +368,9 @@ msgid "Bus Ticket"
 msgstr "车票"
 
 #: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
-#, fuzzy, kde-format
-#| msgctxt "flight departure gate"
-#| msgid "Departure gate:"
+#, kde-format
 msgid "Departure date"
-msgstr "登机口："
+msgstr ""
 
 #: app/BusPage.qml:121 app/BusPage.qml:178
 #, kde-format
@@ -1488,6 +1486,13 @@ msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr ""
 
+#: app/localizer.cpp:199
+#, fuzzy, kde-format
+#| msgid "%1°C"
+msgctxt "temperature"
+msgid "%1°C"
+msgstr "%1°C"
+
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
 msgid "Entering %1"
@@ -2028,7 +2033,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "公共交通信息源..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:70
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2348,7 +2353,7 @@ msgstr "您确定要删除此行程吗？"
 msgid "Export Trip"
 msgstr "导出行程"
 
-#: app/TimelinePage.qml:297
+#: app/TimelinePage.qml:301
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"
@@ -2709,20 +2714,26 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:49
-#, kde-format
-msgid "Temperature: %1°C"
-msgstr "温度：%1°C"
+#: app/WeatherForecastDelegate.qml:54
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:50
-#, kde-format
-msgid "Temperature: %1°C / %2°C"
-msgstr "温度：%1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:67
+#, fuzzy, kde-format
+#| msgid "☂ %1 mm"
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr "☂ %1 mm"
 
-#: app/WeatherForecastDelegate.qml:55
-#, kde-format
-msgid "Precipitation: %1 mm"
-msgstr "降水量：%1 mm"
+#: app/WeatherForecastDelegate.qml:80
+#, fuzzy, kde-format
+#| msgid "🌬️ %1 m/s"
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr "🌬️ %1 m/s"
 
 #: app/WeatherForecastPage.qml:54
 #, kde-format
@@ -2807,3 +2818,12 @@ msgstr "知道了！"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgid "Temperature: %1°C"
+#~ msgstr "温度：%1°C"
+
+#~ msgid "Temperature: %1°C / %2°C"
+#~ msgstr "温度：%1°C / %2°C"
+
+#~ msgid "Precipitation: %1 mm"
+#~ msgstr "降水量：%1 mm"
