@@ -302,5 +302,7 @@ Kirigami.ScrollablePage {
             text: i18n("No vehicle layout information available.")
         }
     }
+
+    Component.onCompleted: contentItem.clip = true // workaround for Android not doing this automatically
 }
 
