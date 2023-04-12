@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 02:50+0000\n"
+"POT-Creation-Date: 2023-04-12 02:47+0000\n"
 "PO-Revision-Date: 2022-08-09 13:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2079,7 +2079,7 @@ msgstr "일기 예보"
 msgid "Showing weather forecasts will query online services."
 msgstr "일기 예보를 표시하면 온라인 서비스에 조회합니다."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:83
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "

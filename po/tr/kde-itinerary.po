@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-31 02:50+0000\n"
+"POT-Creation-Date: 2023-04-12 02:47+0000\n"
 "PO-Revision-Date: 2023-04-02 17:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2029,7 +2029,7 @@ msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Hava durumu tahminlerini göstermek, çevrimiçi hizmetleri sorgulayacaktır."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:83
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
