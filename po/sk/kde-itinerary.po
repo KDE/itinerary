@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:50+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2134,7 +2134,7 @@ msgstr "Predpoveď počasia"
 msgid "Showing weather forecasts will query online services."
 msgstr ""
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:111
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2697,7 +2697,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:56
+#: app/TripGroupDelegate.qml:85
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2837,41 +2837,26 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:67
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastDelegate.qml:80
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "windSpeed"
 msgid "%1 m/s"
 msgstr "☂ %1 mm"
-
-#: app/WeatherForecastPage.qml:54
-#, kde-format
-msgid "%1°C"
-msgstr "%1°C"
-
-#: app/WeatherForecastPage.qml:63
-#, kde-format
-msgid "☂ %1 mm"
-msgstr "☂ %1 mm"
-
-#: app/WeatherForecastPage.qml:68
-#, kde-format
-msgid "🌬️ %1 m/s"
-msgstr "🌬️ %1 m/s"
 
 #: app/WelcomePage.qml:17
 #, kde-format
@@ -2932,6 +2917,15 @@ msgstr "Mám to!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
+
+#~ msgid "%1°C"
+#~ msgstr "%1°C"
+
+#~ msgid "☂ %1 mm"
+#~ msgstr "☂ %1 mm"
+
+#~ msgid "🌬️ %1 m/s"
+#~ msgstr "🌬️ %1 m/s"
 
 #~ msgid "%1m"
 #~ msgstr "%1m"

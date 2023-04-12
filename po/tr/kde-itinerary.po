@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:48+0000\n"
-"PO-Revision-Date: 2023-04-10 12:41+0300\n"
+"POT-Creation-Date: 2023-04-12 00:50+0000\n"
+"PO-Revision-Date: 2023-04-11 20:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1497,8 +1497,7 @@ msgid "%1 kg"
 msgstr "%1 kg"
 
 #: app/localizer.cpp:199
-#, fuzzy, kde-format
-#| msgid "%1°C"
+#, kde-format
 msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
@@ -2057,7 +2056,7 @@ msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Hava durumu tahminlerini göstermek, çevrimiçi hizmetleri sorgulayacaktır."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:111
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2604,7 +2603,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Tarih: %2 (bir gün)"
 msgstr[1] "Tarih: %2 (%1 gün)"
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:56
+#: app/TripGroupDelegate.qml:85
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2735,43 +2734,23 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Yüksek"
 
-#: app/WeatherForecastDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "%1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
+#, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
-msgstr "%1°C / %2°C"
+msgstr "%1 / %2"
 
-#: app/WeatherForecastDelegate.qml:67
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
-msgstr "%1 m"
+msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
-msgstr "%1 m"
-
-#: app/WeatherForecastPage.qml:54
-#, kde-format
-msgid "%1°C"
-msgstr "%1°C"
-
-#: app/WeatherForecastPage.qml:63
-#, kde-format
-msgid "☂ %1 mm"
-msgstr "☂ %1 mm"
-
-#: app/WeatherForecastPage.qml:68
-#, kde-format
-msgid "🌬️ %1 m/s"
-msgstr "🌬️ %1 m/sn"
+msgstr "%1 m/sn"
 
 #: app/WelcomePage.qml:17
 #, kde-format
@@ -2844,6 +2823,15 @@ msgstr "Anladım!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 konumundan %4 konumuna %1%2"
+
+#~ msgid "%1°C"
+#~ msgstr "%1°C"
+
+#~ msgid "☂ %1 mm"
+#~ msgstr "☂ %1 mm"
+
+#~ msgid "🌬️ %1 m/s"
+#~ msgstr "🌬️ %1 m/sn"
 
 #~ msgid "Temperature: %1°C"
 #~ msgstr "Sıcaklık: %1°C"

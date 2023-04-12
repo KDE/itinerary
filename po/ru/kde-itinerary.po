@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:48+0000\n"
+"POT-Creation-Date: 2023-04-12 00:50+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -2134,7 +2134,7 @@ msgstr "Прогноз погоды"
 msgid "Showing weather forecasts will query online services."
 msgstr "При отображении прогноза погода опрашиваются интернет-службы."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:111
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2695,7 +2695,7 @@ msgstr[1] "Дата: %2 (%1 дня)"
 msgstr[2] "Дата: %2 (%1 дней)"
 msgstr[3] "Дата: %2 (один день)"
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:56
+#: app/TripGroupDelegate.qml:85
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2834,41 +2834,26 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1°C / %2°C"
 
-#: app/WeatherForecastDelegate.qml:67
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "☂ %1 мм"
 
-#: app/WeatherForecastDelegate.qml:80
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "windSpeed"
 msgid "%1 m/s"
 msgstr "☂ %1 мм"
-
-#: app/WeatherForecastPage.qml:54
-#, kde-format
-msgid "%1°C"
-msgstr "%1°C"
-
-#: app/WeatherForecastPage.qml:63
-#, kde-format
-msgid "☂ %1 mm"
-msgstr "☂ %1 мм"
-
-#: app/WeatherForecastPage.qml:68
-#, kde-format
-msgid "🌬️ %1 m/s"
-msgstr "🌬️ %1 м/с"
 
 #: app/WelcomePage.qml:17
 #, kde-format
@@ -2943,6 +2928,15 @@ msgstr "Ладно!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#~ msgid "%1°C"
+#~ msgstr "%1°C"
+
+#~ msgid "☂ %1 mm"
+#~ msgstr "☂ %1 мм"
+
+#~ msgid "🌬️ %1 m/s"
+#~ msgstr "🌬️ %1 м/с"
 
 #~ msgid "Temperature: %1°C"
 #~ msgstr "Температура: %1°C"

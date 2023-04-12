@@ -3,22 +3,22 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020, 2021, 2022.
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020, 2021, 2022, 2023.
 # Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-11 00:48+0000\n"
-"PO-Revision-Date: 2023-04-10 10:00+0200\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"POT-Creation-Date: 2023-04-12 00:50+0000\n"
+"PO-Revision-Date: 2023-04-11 20:47+0200\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1444,7 +1444,7 @@ msgstr "Estat en directe"
 #: app/LiveStatusPage.qml:102
 #, kde-format
 msgid "Automatically follow on the map"
-msgstr "Segueix utomàticament een el mapa"
+msgstr "Segueix automàticament en el mapa"
 
 #: app/LiveStatusPage.qml:121
 #, kde-format
@@ -1498,8 +1498,7 @@ msgid "%1 kg"
 msgstr "%1 kg"
 
 #: app/localizer.cpp:199
-#, fuzzy, kde-format
-#| msgid "%1°C"
+#, kde-format
 msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
@@ -2060,7 +2059,7 @@ msgstr ""
 "Per a mostrar les previsions meteorològiques es consultaran els serveis en "
 "línia."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:82
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:111
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2613,7 +2612,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Data: %2 (un dia)"
 msgstr[1] "Data: %2 (%1 dies)"
 
-#: app/TripGroupDelegate.qml:85 app/WeatherForecastPage.qml:56
+#: app/TripGroupDelegate.qml:85
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
@@ -2744,43 +2743,23 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Alta"
 
-#: app/WeatherForecastDelegate.qml:54
-#, fuzzy, kde-format
-#| msgid "%1°C / %2°C"
+#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
+#, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
-msgstr "%1°C / %2°C"
+msgstr "%1 / %2"
 
-#: app/WeatherForecastDelegate.qml:67
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
-msgstr "%1 m"
+msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
-msgstr "%1 m"
-
-#: app/WeatherForecastPage.qml:54
-#, kde-format
-msgid "%1°C"
-msgstr "%1°C"
-
-#: app/WeatherForecastPage.qml:63
-#, kde-format
-msgid "☂ %1 mm"
-msgstr "☂ %1 mm"
-
-#: app/WeatherForecastPage.qml:68
-#, kde-format
-msgid "🌬️ %1 m/s"
-msgstr "🌬️ %1 m/s"
+msgstr "%1 m/s"
 
 #: app/WelcomePage.qml:17
 #, kde-format
@@ -2857,11 +2836,11 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
 
-#~ msgid "Temperature: %1°C"
-#~ msgstr "Temperatura: %1°C"
+#~ msgid "%1°C"
+#~ msgstr "%1°C"
 
-#~ msgid "Temperature: %1°C / %2°C"
-#~ msgstr "Temperatura: %1°C / %2°C"
+#~ msgid "☂ %1 mm"
+#~ msgstr "☂ %1 mm"
 
-#~ msgid "Precipitation: %1 mm"
-#~ msgstr "Precipitació: %1 mm"
+#~ msgid "🌬️ %1 m/s"
+#~ msgstr "🌬️ %1 m/s"
