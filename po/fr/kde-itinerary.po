@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 00:50+0000\n"
-"PO-Revision-Date: 2023-03-31 19:23+0200\n"
+"POT-Creation-Date: 2023-04-13 00:49+0000\n"
+"PO-Revision-Date: 2023-04-11 18:22+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1458,10 +1458,9 @@ msgid "Live Status"
 msgstr "État en temps réel"
 
 #: app/LiveStatusPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Automatically fill transfers"
+#, kde-format
 msgid "Automatically follow on the map"
-msgstr "Remplir automatiquement les correspondances"
+msgstr "Suivre automatiquement sur la carte"
 
 #: app/LiveStatusPage.qml:121
 #, kde-format
@@ -2080,7 +2079,7 @@ msgstr ""
 "L'affichage des prévisions météorologiques enverra une requête vers un "
 "service en ligne."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:111
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:112
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
