@@ -50,7 +50,7 @@ MobileForm.FormCard {
             icon.name: "document-edit"
             text: i18n("Edit")
             visible: root.editor != undefined
-            onTriggered: applicationWindow().pageStack.push(editor);
+            onTriggered: applicationWindow().pageStack.push(editor, {batchId: root.batchId});
         },
         Kirigami.Action {
             icon.name: "view-calendar-day"

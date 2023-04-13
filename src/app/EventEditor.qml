@@ -17,7 +17,7 @@ App.EditorPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Edit Event")
 
-    function save(resId, reservation) {
+    function apply(reservation) {
         var event = reservation.reservationFor;
         var loc = address.save(reservation.reservationFor.location ? reservation.reservationFor.location : Factory.makePlace());
         loc.name = venueName.text;
@@ -33,7 +33,7 @@ App.EditorPage {
 
         var newRes = reservation;
         newRes.reservationFor = event;
-        ReservationManager.updateReservation(resId, newRes);
+        return newRes;
     }
 
     ColumnLayout {

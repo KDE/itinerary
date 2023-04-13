@@ -15,9 +15,7 @@ App.DetailsPage {
     id: root
     title: i18n("Flight")
     property var resIds: ReservationManager.reservationsForBatch(root.batchId)
-    editor: App.FlightEditor {
-        batchId: root.batchId
-    }
+    editor: App.FlightEditor {}
 
     function airportDisplayString(airport) {
         if (airport.name && airport.iataCode) {

@@ -19,7 +19,7 @@ App.EditorPage {
 
     isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue
 
-    function save(resId, reservation) {
+    function apply(reservation) {
         var hotel = address.save(reservation.reservationFor);
         if (hotelName.text) {
             hotel.name = hotelName.text;
@@ -33,7 +33,7 @@ App.EditorPage {
         if (checkoutEdit.isModified)
             newRes = Util.setDateTimePreserveTimezone(newRes, "checkoutTime", checkoutEdit.value);
 
-        ReservationManager.updateReservation(resId, newRes);
+        return newRes;
     }
 
     ColumnLayout {

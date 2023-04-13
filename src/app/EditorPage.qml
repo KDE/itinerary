@@ -16,7 +16,7 @@ Kirigami.ScrollablePage {
     id: root
     property var batchId: controller ? controller.batchId : undefined
     property QtObject controller: null
-    readonly property var reservation: ReservationManager.reservation(root.batchId);
+    property var reservation: ReservationManager.reservation(root.batchId);
 
     /** Input validation for derived pages. */
     property bool isValidInput: true
@@ -36,7 +36,12 @@ Kirigami.ScrollablePage {
             iconName: "document-save"
             enabled: root.isValidInput
             onTriggered: {
-                root.save(batchId, reservation);
+                const newRes = root.apply(root.reservation);
+                if (root.batchId) { // update to an existing element
+                    ReservationManager.updateReservation(root.batchId, newRes);
+                } else { // newly added element
+                    ReservationManager.importReservation(newRes);
+                }
                 pageStack.pop();
             }
         }

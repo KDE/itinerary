@@ -23,7 +23,7 @@ App.EditorPage {
     property var arrivalStation: reservationFor.arrivalStation
     property var arrivalTime: Util.dateTimeStripTimezone(reservationFor, "arrivalTime")
 
-    function save(resId, reservation) {
+    function apply(reservation) {
         var trip = reservation.reservationFor;
         trip.departureStation = root.departureStation;
         trip = Util.setDateTimePreserveTimezone(trip, "departureTime", root.departureTime);
@@ -43,8 +43,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.reservationFor = trip;
         newRes.reservedTicket = ticket;
-
-        ReservationManager.updateReservation(resId, newRes);
+        return newRes;
     }
 
     App.IntermediateStopSelector {

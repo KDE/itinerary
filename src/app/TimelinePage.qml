@@ -194,6 +194,15 @@ Kirigami.ScrollablePage {
         App.WeatherForecastPage {}
     }
 
+    Component {
+        id: hotelEditorPage
+        App.HotelEditor {}
+    }
+    Component {
+        id: restaurantEditorPage
+        App.RestaurantEditor {}
+    }
+
     function detailsComponent(batchId) {
         const res = ReservationManager.reservation(batchId);
         if (!res) {

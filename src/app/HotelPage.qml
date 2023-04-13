@@ -14,9 +14,7 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Hotel Reservation")
-    editor: App.HotelEditor {
-        batchId: root.batchId
-    }
+    editor: hotelEditorPage
 
     ColumnLayout {
         width: parent.width

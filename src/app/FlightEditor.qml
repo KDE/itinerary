@@ -17,7 +17,7 @@ App.EditorPage {
     id: root
     title: i18n("Edit Flight")
 
-    function save(resId, reservation) {
+    function apply(reservation) {
         var flight = reservation.reservationFor;
         if (boardingTime.isModified)
             flight = Util.setDateTimePreserveTimezone(flight, "boardingTime", boardingTime.value);
@@ -40,7 +40,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
-        ReservationManager.updateReservation(resId, newRes);
+        return newRes;
     }
 
     ColumnLayout {

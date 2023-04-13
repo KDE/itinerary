@@ -19,7 +19,7 @@ App.EditorPage {
 
     isValidInput: startTimeEdit.hasValue
 
-    function save(resId, reservation) {
+    function apply(reservation) {
         var foodEstablishment = address.save(reservation.reservationFor)
         if (restaurantName.text) {
             foodEstablishment.name = restaurantName.text;
@@ -33,7 +33,7 @@ App.EditorPage {
         if (endTimeEdit.isModified)
             newRes = Util.setDateTimePreserveTimezone(newRes, "endTime", endTimeEdit.value);
 
-        ReservationManager.updateReservation(resId, newRes);
+        return newRes;
     }
 
     ColumnLayout {
