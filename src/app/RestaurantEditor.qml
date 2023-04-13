@@ -17,6 +17,8 @@ App.EditorPage {
     id: root
     title: i18n("Edit Restaurant")
 
+    isValidInput: startTimeEdit.hasValue
+
     function save(resId, reservation) {
         var foodEstablishment = address.save(reservation.reservationFor)
         if (restaurantName.text) {

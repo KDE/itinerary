@@ -18,6 +18,9 @@ Kirigami.ScrollablePage {
     property QtObject controller: null
     readonly property var reservation: ReservationManager.reservation(root.batchId);
 
+    /** Input validation for derived pages. */
+    property bool isValidInput: true
+
     /** Returns the country we are assumed to be in at the given time. */
     function countryAtTime(dt) {
         const place = TimelineModel.locationAtTime(dt);
@@ -31,6 +34,7 @@ Kirigami.ScrollablePage {
         main: Kirigami.Action {
             text: i18n("Save")
             iconName: "document-save"
+            enabled: root.isValidInput
             onTriggered: {
                 root.save(batchId, reservation);
                 pageStack.pop();

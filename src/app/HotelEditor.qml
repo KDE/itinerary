@@ -17,6 +17,8 @@ App.EditorPage {
     id: root
     title: i18n("Edit Hotel Reservation")
 
+    isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue
+
     function save(resId, reservation) {
         var hotel = address.save(reservation.reservationFor);
         if (hotelName.text) {
