@@ -726,7 +726,22 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.04.0" date="2023-04-20"/>
+    <release version="23.04.0" date="2023-04-20">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Aegean Air, Amadeus, availpro, BlaBlaCar, Deutsche Bahn, Kinoheld, Meetup, National Express, ÖBB, Octorate, Ouigo, Premier Inn, SNCF, Taiwan Highspeed Rail and whyline.</li>
+          <li>Support for Eurostar, SBB and UK railway ticket barcodes.</li>
+          <li>New live status page using onboard vehicle API.</li>
+          <li>New UI for reservation details pages.</li>
+          <li>Faster loading of train station and airport maps.</li>
+          <li>Improved display of doors, trees, barrier blocks, platform section markers and accessibility information on train station maps.</li>
+          <li>Allow to enable LED light for barcode scanning.</li>
+          <li>Fix wrong public transport service being used in France.</li>
+          <li>Fix public transport data access in Switzerland.</li>
+          <li>Fix handling of pasted URLs.</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.12.3" date="2023-03-02">
       <description>
         <ul>
