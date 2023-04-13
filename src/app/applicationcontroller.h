@@ -88,6 +88,10 @@ Q_SIGNALS:
 
     void openPageRequested(const QString &page);
 
+    /** Edit and add a new reservation. */
+    void editNewHotelReservation(const QVariant &res);
+    void editNewRestaurantReservation(const QVariant &res);
+
 private:
     bool hasClipboardContent() const;
 

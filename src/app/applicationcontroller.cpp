@@ -28,8 +28,11 @@
 #include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorDocumentNode>
+#include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/File>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/Place>
+#include <KItinerary/Reservation>
 
 #include <KPkPass/Pass>
 
@@ -415,6 +418,35 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     if (m_passMgr->import(extractorResult) || (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode()))) {
         Q_EMIT infoMessage(i18n("Pass imported."));
         success = true;
+    }
+
+    // check for things we can add reservations for manually
+    if (!success && !extractorResult.isEmpty()) {
+        ExtractorPostprocessor postProc;
+        postProc.setValidationEnabled(false);
+        postProc.process(extractorResult);
+        const auto postProcssedResult = postProc.result();
+        ExtractorValidator validator;
+        validator.setAcceptedTypes<LodgingBusiness, FoodEstablishment>();
+        validator.setAcceptOnlyCompleteElements(true);
+        for (const auto &resFor : postProcssedResult) {
+            if (!validator.isValidElement(resFor)) {
+                continue;
+            }
+            if (JsonLd::isA<LodgingBusiness>(resFor)) {
+                LodgingReservation res;
+                res.setReservationFor(resFor);
+                Q_EMIT editNewHotelReservation(res);
+                success = true;
+                break;
+            } else if (JsonLd::isA<FoodEstablishment>(resFor)) {
+                FoodEstablishmentReservation res;
+                res.setReservationFor(resFor);
+                Q_EMIT editNewRestaurantReservation(res);
+                success = true;
+                break;
+            }
+        }
     }
 
     // nothing found
