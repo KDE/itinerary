@@ -16,7 +16,6 @@ Kirigami.ScrollablePage {
     id: root
     property var batchId: controller ? controller.batchId : undefined
     property QtObject controller: null
-    property var resIds: ReservationManager.reservationsForBatch(root.batchId)
     readonly property var reservation: ReservationManager.reservation(root.batchId);
 
     /** Returns the country we are assumed to be in at the given time. */
