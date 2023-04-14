@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-13 00:49+0000\n"
-"PO-Revision-Date: 2023-04-11 18:22+0200\n"
+"PO-Revision-Date: 2023-04-12 18:26+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1514,11 +1514,10 @@ msgid "%1 kg"
 msgstr "%1 kg"
 
 #: app/localizer.cpp:199
-#, fuzzy, kde-format
-#| msgid "%1°C"
+#, kde-format
 msgctxt "temperature"
 msgid "%1°C"
-msgstr "%1°C"
+msgstr "%1 °C"
 
 #: app/LocationInfoDelegate.qml:49
 #, kde-format
@@ -2772,27 +2771,22 @@ msgid "High"
 msgstr "Haut"
 
 #: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1°C / %2°C"
+#, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
-msgstr "%1°C / %2°C"
+msgstr "%1 / %2"
 
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
-msgstr "%1 m"
+msgstr "%1 mm"
 
 #: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
-msgstr "%1 m"
+msgstr "%1 m / s"
 
 #: app/WelcomePage.qml:17
 #, kde-format
