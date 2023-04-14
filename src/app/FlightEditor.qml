@@ -86,6 +86,7 @@ App.EditorPage {
                     text: i18nc("flight departure time", "Time")
                     obj: reservation.reservationFor
                     propertyName: "departureTime"
+                    initialValue: reservation.reservationFor.departureDay
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: departureGate
@@ -97,6 +98,11 @@ App.EditorPage {
                     text: i18n("Boarding time")
                     obj: reservation.reservationFor
                     propertyName: "boardingTime"
+                    initialValue: {
+                        let d = new Date(departureTime.value);
+                        d.setTime(d.getTime() - 30 * 60 * 1000);
+                        return d;
+                    }
                 }
             }
         }
@@ -125,6 +131,11 @@ App.EditorPage {
                     text: i18nc("flight arrival time", "Time")
                     obj: reservation.reservationFor
                     propertyName: "arrivalTime"
+                    initialValue: {
+                        let d = new Date(departureTime.value);
+                        d.setTime(d.getTime() + 120 * 60 * 1000);
+                        return d;
+                    }
                 }
             }
         }

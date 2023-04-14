@@ -85,6 +85,11 @@ App.EditorPage {
                     text: i18n("End Time")
                     obj: reservation
                     propertyName: "endTime"
+                    initialValue: {
+                        let d = new Date(startTimeEdit.value);
+                        d.setHours(d.getHours() + 2);
+                        return d;
+                    }
                 }
             }
         }

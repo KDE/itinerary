@@ -87,6 +87,12 @@ App.EditorPage {
                     text: i18nc("hotel checkout", "Check-out")
                     obj: reservation
                     propertyName: "checkoutTime"
+                    initialValue: {
+                        let d = new Date(checkinEdit.value);
+                        d.setDate(d.getDate() + 1);
+                        d.setHours(12);
+                        return d;
+                    }
                 }
             }
         }

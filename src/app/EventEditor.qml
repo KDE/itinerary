@@ -93,6 +93,11 @@ App.EditorPage {
                     text: i18nc("time of entrance", "Entrance")
                     obj: reservation.reservationFor
                     propertyName: "doorTime"
+                    initialValue: {
+                        let d = new Date(startDateEdit.value);
+                        d.setHours(d.getHours() - 2);
+                        return d;
+                    }
                 }
                 App.FormDateTimeEditDelegate {
                     id: startDateEdit
