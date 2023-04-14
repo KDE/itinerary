@@ -21,6 +21,11 @@ MobileForm.AbstractFormDelegate {
     property date value: Util.dateTimeStripTimezone(obj, propertyName)
     readonly property bool hasValue: !isNaN(value.getTime())
     property bool isModified: Util.dateTimeStripTimezone(obj, propertyName).getTime() != value.getTime()
+    property date initialValue: {
+        let d = new Date();
+        d.setTime(d.getTime() + 60 * 60 * 1000 - (d.getTime() % (60 * 60 * 1000)));
+        return d;
+    }
 
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
@@ -46,15 +51,15 @@ MobileForm.AbstractFormDelegate {
             icon.name: "document-edit"
             visible: !root.hasValue
             onClicked: {
-                dateInput.item.selectedDate = new Date();
-                timeInput.value = new Date();
+                dateInput.item.selectedDate = root.initialValue
+                timeInput.value = root.initialValue
             }
         }
     }
 
     Connections {
         target: dateInput
-        onSelectedDateChanged: root.updateValue()
+        function onSelectedDateChanged() { root.updateValue(); }
     }
     function updateValue() {
         const dt = new Date(dateInput.selectedDate.getFullYear(), dateInput.selectedDate.getMonth(), dateInput.selectedDate.getDate(), timeInput.value.getHours(), timeInput.value.getMinutes());
