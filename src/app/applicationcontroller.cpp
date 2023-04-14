@@ -427,7 +427,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
         postProc.process(extractorResult);
         const auto postProcssedResult = postProc.result();
         ExtractorValidator validator;
-        validator.setAcceptedTypes<LodgingBusiness, FoodEstablishment>();
+        validator.setAcceptedTypes<LodgingBusiness, FoodEstablishment, LocalBusiness>();
         validator.setAcceptOnlyCompleteElements(true);
         for (const auto &resFor : postProcssedResult) {
             if (!validator.isValidElement(resFor)) {
@@ -439,7 +439,8 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
                 Q_EMIT editNewHotelReservation(res);
                 success = true;
                 break;
-            } else if (JsonLd::isA<FoodEstablishment>(resFor)) {
+            } else if (JsonLd::isA<FoodEstablishment>(resFor) || JsonLd::isA<LocalBusiness>(resFor)) {
+                // LocalBusiness is frequently used for restaurants in website annotations
                 FoodEstablishmentReservation res;
                 res.setReservationFor(resFor);
                 Q_EMIT editNewRestaurantReservation(res);
