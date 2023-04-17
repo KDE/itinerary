@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:49+0000\n"
+"POT-Creation-Date: 2023-04-17 00:49+0000\n"
 "PO-Revision-Date: 2023-04-11 20:47+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -208,56 +208,56 @@ msgstr "Voleu substituir la reserva existent amb el nou viatge seleccionat?"
 msgid "Replace"
 msgstr "Substituïx"
 
-#: app/applicationcontroller.cpp:313
+#: app/applicationcontroller.cpp:316
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Ha fallat la baixada: %1"
 
-#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
-#: app/applicationcontroller.cpp:553
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:571
+#: app/applicationcontroller.cpp:586
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
 
-#: app/applicationcontroller.cpp:339
+#: app/applicationcontroller.cpp:342
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:658
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Health certificate imported."
 msgstr "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:416
+#: app/applicationcontroller.cpp:419
 #, kde-format
 msgid "Pass imported."
 msgstr "S'ha importat el passe."
 
-#: app/applicationcontroller.cpp:422
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Nothing imported."
 msgstr "No s'ha importat res."
 
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
+#: app/applicationcontroller.cpp:524 app/applicationcontroller.cpp:550
 #, kde-format
 msgid "Export failed: %1"
 msgstr "No s'ha pogut fer l'exportació: %1"
 
-#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
+#: app/applicationcontroller.cpp:538 app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:578
+#: app/applicationcontroller.cpp:611
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -308,21 +308,20 @@ msgstr "Hora d'arribada: %1"
 msgid "Boat Ticket"
 msgstr "Bitllet de vaixell"
 
-#: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
-#: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
+#: app/BoatPage.qml:20 app/BusPage.qml:33 app/EventPage.qml:21
+#: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Mode lectura dels codis de barres"
 
-#: app/BoatPage.qml:75 app/BusPage.qml:82 app/FlightPage.qml:134
-#: app/TouristAttractionPage.qml:59 app/TrainEditor.qml:126
-#: app/TrainPage.qml:104
+#: app/BoatPage.qml:75 app/BusPage.qml:85 app/FlightPage.qml:132
+#: app/TouristAttractionPage.qml:59 app/TrainPage.qml:104
 #, kde-format
 msgid "Departure"
 msgstr "Eixida"
 
-#: app/BoatPage.qml:79 app/BusPage.qml:93 app/FlightPage.qml:139
+#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:137
 #: app/TrainPage.qml:108
 #, kde-format
 msgid "Departure time"
@@ -334,30 +333,32 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
-#: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:191
+#: app/BoatPage.qml:111 app/BusPage.qml:147 app/FlightPage.qml:191
+#: app/TouristAttractionPage.qml:77 app/TrainPage.qml:191
 #, kde-format
 msgid "Arrival"
 msgstr "Arribada"
 
-#: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
+#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:195
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/BookingCard.qml:26 app/FlightPage.qml:235 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/BusEditor.qml:152 app/FlightPage.qml:233
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:31 app/FlightPage.qml:244
+#: app/BookingCard.qml:31 app/BusEditor.qml:156 app/FlightPage.qml:242
+#: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Referència"
 
-#: app/BookingCard.qml:40 app/FlightPage.qml:244
+#: app/BookingCard.qml:40 app/BusEditor.qml:161 app/FlightPage.qml:242
+#: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "A nom de"
@@ -367,34 +368,100 @@ msgstr "A nom de"
 msgid "Ticket number:"
 msgstr "Número de tiquet:"
 
+#: app/BusEditor.qml:18
+#, fuzzy, kde-format
+#| msgid "Edit Hotel Reservation"
+msgid "Edit Bus Reservation"
+msgstr "Edita una reserva d'hotel"
+
+#: app/BusEditor.qml:41 app/TrainEditor.qml:51
+#, kde-format
+msgid "Board Later"
+msgstr "Embarcament més tard"
+
+#: app/BusEditor.qml:44
+#, fuzzy, kde-format
+#| msgid "Change departure station"
+msgid "Change departure stop"
+msgstr "Canvia l'estació d'eixida"
+
+#: app/BusEditor.qml:54 app/TrainEditor.qml:64
+#, kde-format
+msgid "Alight Earlier"
+msgstr "Baixar-se abans"
+
+#: app/BusEditor.qml:57
+#, fuzzy, kde-format
+#| msgid "Change arrival station"
+msgid "Change arrival stop"
+msgstr "Canvia l'estació d'arribada"
+
+#: app/BusEditor.qml:97
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "bus departure"
+msgid "Departure"
+msgstr "Eixida"
+
+#: app/BusEditor.qml:100 app/BusEditor.qml:127
+#, kde-format
+msgctxt "bus stop"
+msgid "Stop"
+msgstr ""
+
+#: app/BusEditor.qml:105 app/BusEditor.qml:132
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "bus stop platform"
+msgid "Platform"
+msgstr "Plataforma"
+
+#: app/BusEditor.qml:109 app/TrainEditor.qml:119
+#, kde-format
+msgid "Board later"
+msgstr "Embarcament més tard"
+
+#: app/BusEditor.qml:124
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "bus arrival"
+msgid "Arrival"
+msgstr "Arribada"
+
+#: app/BusEditor.qml:136 app/TrainEditor.qml:146
+#, kde-format
+msgid "Alight earlier"
+msgstr "Baixar-se abans"
+
 #: app/BusPage.qml:18
 #, kde-format
 msgid "Bus Ticket"
 msgstr "Bitllet d'autobús"
 
-#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
+#: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, kde-format
 msgid "Departure date"
 msgstr "Data d'eixida"
 
-#: app/BusPage.qml:121 app/BusPage.qml:178
+#: app/BusPage.qml:124 app/BusPage.qml:181
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Estació"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:275
+#: app/BusPage.qml:203 app/BusPage.qml:207 app/EventPage.qml:127
+#: app/FlightEditor.qml:151 app/FlightEditor.qml:156 app/FlightPage.qml:109
+#: app/TrainEditor.qml:162 app/TrainEditor.qml:171 app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
 msgstr "Seient"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:358
+#: app/BusPage.qml:229 app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:234 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalls del viatge"
@@ -445,7 +512,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
 #, kde-format
 msgid "Location"
 msgstr "Ubicació"
@@ -475,22 +542,23 @@ msgstr "Model"
 msgid "Brand"
 msgstr "Marca"
 
-#: app/ContactCard.qml:22
+#: app/ContactCard.qml:22 app/ContactEditorCard.qml:31
 #, kde-format
 msgid "Contact"
 msgstr "Contacte"
 
-#: app/ContactCard.qml:26
+#: app/ContactCard.qml:26 app/ContactEditorCard.qml:36
 #, kde-format
 msgid "Telephone"
 msgstr "Telèfon"
 
-#: app/ContactCard.qml:35
+#: app/ContactCard.qml:35 app/ContactEditorCard.qml:43
 #, kde-format
 msgid "Email"
 msgstr "Correu electrònic"
 
-#: app/ContactCard.qml:44 app/EventPage.qml:113
+#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:116
+#: app/EventPage.qml:111
 #, kde-format
 msgid "Website"
 msgstr "Lloc web"
@@ -565,6 +633,11 @@ msgstr "Ni hi ha documents adjunts en esta reserva."
 msgid "Add Document..."
 msgstr "Afig un document..."
 
+#: app/EditorPage.qml:35
+#, kde-format
+msgid "Save"
+msgstr ""
+
 #: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
@@ -580,51 +653,61 @@ msgstr "Hora d'inici: %1"
 msgid "End time: %1"
 msgstr "Hora de finalització: %1"
 
-#: app/EventEditor.qml:17
-#, kde-format
+#: app/EventEditor.qml:18
+#, fuzzy, kde-format
+#| msgid "Edit Event"
+msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Edita l'esdeveniment"
 
-#: app/EventEditor.qml:43
-#, kde-format
-msgid "Venue:"
+#: app/EventEditor.qml:66
+#, fuzzy, kde-format
+#| msgid "Venue:"
+msgid "Venue"
 msgstr "Lloc:"
 
-#: app/EventPage.qml:16
+#: app/EventEditor.qml:70
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt "venue name"
+msgid "Name"
+msgstr "Nom"
+
+#: app/EventEditor.qml:89 app/EventPage.qml:16
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Esdeveniment"
 
-#: app/EventPage.qml:90
+#: app/EventEditor.qml:93 app/EventPage.qml:88
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada"
 
-#: app/EventPage.qml:98
+#: app/EventEditor.qml:104 app/EventPage.qml:96 app/RestaurantEditor.qml:78
 #, kde-format
 msgid "Start Time"
 msgstr "Hora d'inici"
 
-#: app/EventPage.qml:106
+#: app/EventEditor.qml:110 app/EventPage.qml:104 app/RestaurantEditor.qml:85
 #, kde-format
 msgid "End Time"
 msgstr "Hora final"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:131
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Secció:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:140
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Fila:"
 
-#: app/EventPage.qml:151
+#: app/EventPage.qml:149
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -667,8 +750,8 @@ msgstr "Fitxers GPX (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Importa les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
-#: app/PlaceEditor.qml:56
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
 msgstr "Seleccioneu una ubicació"
@@ -730,106 +813,179 @@ msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
 msgstr "Arribada a les %1: %2"
 
-#: app/FlightEditor.qml:17
+#: app/FlightEditor.qml:18
 #, kde-format
 msgid "Edit Flight"
 msgstr "Edita el vol"
 
-#: app/FlightEditor.qml:49
-#, kde-format
-msgid "Boarding time:"
-msgstr "Hora d'embarcament:"
-
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:288
-#, kde-format
-msgid "Seat:"
-msgstr "Seient:"
-
-#: app/FlightEditor.qml:74
-#, kde-format
+#: app/FlightEditor.qml:72
+#, fuzzy, kde-format
+#| msgid "Departure: %1"
 msgctxt "flight departure"
-msgid "Departure"
-msgstr "Eixida"
+msgid "Departure - %1"
+msgstr "Eixida: %1"
 
-#: app/FlightEditor.qml:78
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
+#: app/FlightPage.qml:204
 #, kde-format
-msgctxt "flight departure time"
-msgid "Departure time:"
-msgstr "Hora d'eixida:"
+msgid "Airport"
+msgstr "Aeroport"
+
+#: app/FlightEditor.qml:82
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "flight departure terminal"
+msgid "Terminal"
+msgstr "Terminal"
 
 #: app/FlightEditor.qml:86
-#, kde-format
-msgctxt "flight departure terminal"
-msgid "Departure terminal:"
-msgstr "Terminal d'eixida:"
+#, fuzzy, kde-format
+#| msgid "Time"
+msgctxt "flight departure time"
+msgid "Time"
+msgstr "Hora"
 
-#: app/FlightEditor.qml:93
-#, kde-format
+#: app/FlightEditor.qml:94
+#, fuzzy, kde-format
+#| msgid "Gate"
 msgctxt "flight departure gate"
-msgid "Departure gate:"
-msgstr "Porta d'eixida:"
+msgid "Gate"
+msgstr "Porta"
+
+#: app/FlightEditor.qml:98 app/FlightPage.qml:94
+#, kde-format
+msgid "Boarding time"
+msgstr "Hora d'embarcament"
+
+#: app/FlightEditor.qml:117
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgctxt "flight arrival"
+msgid "Arrival - %1"
+msgstr "Arribada: %1"
+
+#: app/FlightEditor.qml:127
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "flight arrival terminal"
+msgid "Terminal"
+msgstr "Terminal"
+
+#: app/FlightEditor.qml:131
+#, fuzzy, kde-format
+#| msgid "Time"
+msgctxt "flight arrival time"
+msgid "Time"
+msgstr "Hora"
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
 msgid "Flight"
 msgstr "Vol"
 
-#: app/FlightPage.qml:76
+#: app/FlightPage.qml:74
 #, kde-format
 msgid "Sequence Number:"
 msgstr "Número de seqüència:"
 
-#: app/FlightPage.qml:91
+#: app/FlightPage.qml:89
 #, kde-format
 msgid "Boarding"
 msgstr "Embarcament"
 
-#: app/FlightPage.qml:96
-#, kde-format
-msgid "Boarding time"
-msgstr "Hora d'embarcament"
-
-#: app/FlightPage.qml:104
+#: app/FlightPage.qml:102
 #, kde-format
 msgid "Boarding group"
 msgstr "Grup d'embarcament"
 
-#: app/FlightPage.qml:119
+#: app/FlightPage.qml:117
 #, kde-format
 msgid "Airline"
 msgstr "Línia aèria"
 
-#: app/FlightPage.qml:153 app/FlightPage.qml:206
-#, kde-format
-msgid "Airport"
-msgstr "Aeroport"
-
-#: app/FlightPage.qml:161 app/FlightPage.qml:214
+#: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightPage.qml:169
+#: app/FlightPage.qml:167
 #, kde-format
 msgid "Gate"
 msgstr "Porta"
 
-#: app/FlightPage.qml:253
+#: app/FlightPage.qml:251
 #, kde-format
 msgid "Frequent Traveler Program"
 msgstr "Programa de viatger freqüent"
 
-#: app/FlightPage.qml:259
+#: app/FlightPage.qml:257
 #, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
+#: app/FlightPage.qml:264 app/ProgramMembershipPage.qml:108
 #: app/TicketPage.qml:121 app/TrainPage.qml:324
 #, kde-format
 msgid "Number"
 msgstr "Número"
+
+#: app/FormPlaceEditorDelegate.qml:66
+#, fuzzy, kde-format
+#| msgid "Street:"
+msgid "Street"
+msgstr "Carrer:"
+
+#: app/FormPlaceEditorDelegate.qml:78
+#, kde-format
+msgid "Invalid postal code format for this country."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:84
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Ciutat:"
+
+#: app/FormPlaceEditorDelegate.qml:102
+#, fuzzy, kde-format
+#| msgid "Region:"
+msgid "Region"
+msgstr "Regió:"
+
+#: app/FormPlaceEditorDelegate.qml:128
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "País:"
+
+#: app/FormPlaceEditorDelegate.qml:177
+#, fuzzy, kde-format
+#| msgid "Coordinate:"
+msgid "Coordinate"
+msgstr "Coordenades:"
+
+#: app/FormPlaceEditorDelegate.qml:178
+#, kde-format
+msgid "%1°, %2°"
+msgstr "%1°, %2°"
+
+#: app/FormPlaceEditorDelegate.qml:178
+#, kde-format
+msgid "Pick..."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:188
+#, fuzzy, kde-format
+#| msgid "Fill address from coordinate"
+msgid "Address to coordinate"
+msgstr "Emplena l'adreça a partir de les coordenades"
+
+#: app/FormPlaceEditorDelegate.qml:202
+#, fuzzy, kde-format
+#| msgid "Find coordinate from address"
+msgid "Coordinate to address"
+msgstr "Troba les coordenades a partir de l'adreça"
 
 #: app/FormPlatformDelegate.qml:15
 #, kde-format
@@ -1009,7 +1165,7 @@ msgid "Person"
 msgstr "Persona"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
-#: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
+#: app/HealthCertificateVaccination.qml:38
 #, kde-format
 msgid "Name:"
 msgstr "Nom:"
@@ -1113,7 +1269,6 @@ msgid "Test Center:"
 msgstr "Centre de proves:"
 
 #: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
-#: app/PlaceEditor.qml:141
 #, kde-format
 msgid "Country:"
 msgstr "País:"
@@ -1165,32 +1320,48 @@ msgstr "Hora de la facturació: %1"
 msgid "Check-out time: %1"
 msgstr "Hora de l'eixida: %1"
 
-#: app/HotelEditor.qml:17
+#: app/HotelEditor.qml:18
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Edita una reserva d'hotel"
 
-#: app/HotelEditor.qml:52
+#: app/HotelEditor.qml:49
 #, kde-format
-msgid "Telephone:"
-msgstr "Telèfon:"
+msgid "Hotel"
+msgstr ""
 
-#: app/HotelEditor.qml:57
-#, kde-format
-msgid "Email:"
-msgstr "Correu electrònic:"
+#: app/HotelEditor.qml:54
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt "hotel name"
+msgid "Name"
+msgstr "Nom"
+
+#: app/HotelEditor.qml:80
+#, fuzzy, kde-format
+#| msgid "Check-in"
+msgctxt "hotel checkin"
+msgid "Check-in"
+msgstr "Facturació"
+
+#: app/HotelEditor.qml:87
+#, fuzzy, kde-format
+#| msgid "Check-out %1"
+msgctxt "hotel checkout"
+msgid "Check-out"
+msgstr "Eixida %1"
 
 #: app/HotelPage.qml:16
 #, kde-format
 msgid "Hotel Reservation"
 msgstr "Reserva d'hotel"
 
-#: app/HotelPage.qml:71
+#: app/HotelPage.qml:69
 #, kde-format
 msgid "Check-in time"
 msgstr "Hora de la facturació"
 
-#: app/HotelPage.qml:78
+#: app/HotelPage.qml:76
 #, kde-format
 msgid "Check-out time"
 msgstr "Hora de l'eixida"
@@ -1857,46 +2028,6 @@ msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Eixides del transport públic"
 
-#: app/PlaceEditor.qml:72
-#, kde-format
-msgid "Street:"
-msgstr "Carrer:"
-
-#: app/PlaceEditor.qml:98
-#, kde-format
-msgid "City:"
-msgstr "Ciutat:"
-
-#: app/PlaceEditor.qml:115
-#, kde-format
-msgid "Region:"
-msgstr "Regió:"
-
-#: app/PlaceEditor.qml:185
-#, kde-format
-msgid "Coordinate:"
-msgstr "Coordenades:"
-
-#: app/PlaceEditor.qml:189
-#, kde-format
-msgid "Pick coordinate"
-msgstr "Seleccioneu les coordenades"
-
-#: app/PlaceEditor.qml:195
-#, kde-format
-msgid "%1°, %2°"
-msgstr "%1°, %2°"
-
-#: app/PlaceEditor.qml:209
-#, kde-format
-msgid "Find coordinate from address"
-msgstr "Troba les coordenades a partir de l'adreça"
-
-#: app/PlaceEditor.qml:220
-#, kde-format
-msgid "Fill address from coordinate"
-msgstr "Emplena l'adreça a partir de les coordenades"
-
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
@@ -1917,42 +2048,42 @@ msgstr "Vàlida des de"
 msgid "Valid until"
 msgstr "Vàlid fins a"
 
-#: app/publictransport.cpp:220 app/publictransport.cpp:247
+#: app/publictransport.cpp:225 app/publictransport.cpp:252
 #, kde-format
 msgid "Walk"
 msgstr "Caminar"
 
-#: app/publictransport.cpp:222
+#: app/publictransport.cpp:227
 #, kde-format
 msgid "Wait"
 msgstr "Esperar"
 
-#: app/publictransport.cpp:231
+#: app/publictransport.cpp:236
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicicleta llogada"
 
-#: app/publictransport.cpp:233
+#: app/publictransport.cpp:238
 #, kde-format
 msgid "Rented moped"
 msgstr "Ciclomotor llogat"
 
-#: app/publictransport.cpp:235
+#: app/publictransport.cpp:240
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Patinet elèctric llogat"
 
-#: app/publictransport.cpp:237
+#: app/publictransport.cpp:242
 #, kde-format
 msgid "Rented car"
 msgstr "Cotxe llogat"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:248
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicicleta"
 
-#: app/publictransport.cpp:245 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:250 app/StatisticsPage.qml:195
 #, kde-format
 msgid "Car"
 msgstr "Cotxe"
@@ -1972,27 +2103,46 @@ msgstr "Global"
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unió Europea"
 
-#: app/RestaurantEditor.qml:17
+#: app/RestaurantEditor.qml:18
 #, kde-format
 msgid "Edit Restaurant"
 msgstr "Edita el restaurant"
+
+#: app/RestaurantEditor.qml:49
+#, fuzzy, kde-format
+#| msgid "Edit Restaurant"
+msgid "Restaurant"
+msgstr "Edita el restaurant"
+
+#: app/RestaurantEditor.qml:54
+#, fuzzy, kde-format
+#| msgid "Name"
+msgctxt "restaurant name"
+msgid "Name"
+msgstr "Nom"
+
+#: app/RestaurantEditor.qml:73
+#, fuzzy, kde-format
+#| msgid "View Reservation"
+msgid "Reservation"
+msgstr "Veure la reserva"
 
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
 msgstr "Reserva de restaurant"
 
-#: app/RestaurantPage.qml:65
+#: app/RestaurantPage.qml:63
 #, kde-format
 msgid "Start time"
 msgstr "Hora d'inici"
 
-#: app/RestaurantPage.qml:73
+#: app/RestaurantPage.qml:71
 #, kde-format
 msgid "End time"
 msgstr "Hora final"
 
-#: app/RestaurantPage.qml:81
+#: app/RestaurantPage.qml:79
 #, kde-format
 msgid "Party size"
 msgstr "Mida del grup"
@@ -2382,7 +2532,7 @@ msgstr "Segur que voleu suprimir este viatge?"
 msgid "Export Trip"
 msgstr "Exporta un viatge"
 
-#: app/TimelinePage.qml:301
+#: app/TimelinePage.qml:310
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Res per a l'itinerari d'hui."
@@ -2423,82 +2573,67 @@ msgstr "Eixida des de %1 en la plataforma %2"
 msgid "Arrival at %1 on platform %2"
 msgstr "Arribada a les %1 en la plataforma %2"
 
-#: app/TrainEditor.qml:18
+#: app/TrainEditor.qml:19
 #, kde-format
 msgid "Edit Train Reservation"
 msgstr "Edició de reserva de tren"
 
-#: app/TrainEditor.qml:27
-#, kde-format
-msgid "Board later"
-msgstr "Embarcament més tard"
-
-#: app/TrainEditor.qml:33
-#, kde-format
-msgid "Alight earlier"
-msgstr "Baixar-se abans"
-
-#: app/TrainEditor.qml:75
-#, kde-format
-msgid "Board Later"
-msgstr "Embarcament més tard"
-
-#: app/TrainEditor.qml:85
+#: app/TrainEditor.qml:54
 #, kde-format
 msgid "Change departure station"
 msgstr "Canvia l'estació d'eixida"
 
-#: app/TrainEditor.qml:97
-#, kde-format
-msgid "Alight Earlier"
-msgstr "Baixar-se abans"
-
-#: app/TrainEditor.qml:107
+#: app/TrainEditor.qml:67
 #, kde-format
 msgid "Change arrival station"
 msgstr "Canvia l'estació d'arribada"
 
-#: app/TrainEditor.qml:131 app/TrainEditor.qml:148
+#: app/TrainEditor.qml:107
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "train departure"
+msgid "Departure"
+msgstr "Eixida"
+
+#: app/TrainEditor.qml:110 app/TrainEditor.qml:137 app/TrainPage.qml:145
+#: app/TrainPage.qml:230
 #, kde-format
 msgctxt "train station"
-msgid "Station:"
-msgstr "Estació:"
+msgid "Station"
+msgstr "Estació"
 
-#: app/TrainEditor.qml:136 app/TrainEditor.qml:153
-#, kde-format
-msgid "Platform:"
-msgstr "Plataforma:"
+#: app/TrainEditor.qml:115 app/TrainEditor.qml:142
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "train platform"
+msgid "Platform"
+msgstr "Plataforma"
 
-#: app/TrainEditor.qml:165
-#, kde-format
-msgid "Coach:"
+#: app/TrainEditor.qml:134
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "train arrival"
+msgid "Arrival"
+msgstr "Arribada"
+
+#: app/TrainEditor.qml:166
+#, fuzzy, kde-format
+#| msgid "Coach:"
+msgctxt "carriage on a train"
+msgid "Coach"
 msgstr "Cotxe:"
 
-#: app/TrainEditor.qml:175 app/TrainPage.qml:297
-#, kde-format
-msgid "Class:"
-msgstr "Classe:"
-
-#: app/TrainEditor.qml:185
-#, kde-format
-msgid "Reference:"
-msgstr "Referència:"
-
-#: app/TrainEditor.qml:189
-#, kde-format
-msgid "Under name:"
-msgstr "Davall el nom:"
+#: app/TrainEditor.qml:176
+#, fuzzy, kde-format
+#| msgid "Class"
+msgctxt "seating class on a train"
+msgid "Class"
+msgstr "Classe"
 
 #: app/TrainPage.qml:17
 #, kde-format
 msgid "Train Ticket"
 msgstr "Bitllet de tren"
-
-#: app/TrainPage.qml:145 app/TrainPage.qml:230
-#, kde-format
-msgctxt "train station"
-msgid "Station"
-msgstr "Estació"
 
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
@@ -2510,6 +2645,16 @@ msgstr "Notes addicionals"
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Cotxe:"
+
+#: app/TrainPage.qml:288
+#, kde-format
+msgid "Seat:"
+msgstr "Seient:"
+
+#: app/TrainPage.qml:297
+#, kde-format
+msgid "Class:"
+msgstr "Classe:"
 
 #: app/TrainPage.qml:311
 #, kde-format
@@ -2836,6 +2981,47 @@ msgstr "Entesos!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgid "Boarding time:"
+#~ msgstr "Hora d'embarcament:"
+
+#~ msgctxt "flight departure"
+#~ msgid "Departure"
+#~ msgstr "Eixida"
+
+#~ msgctxt "flight departure time"
+#~ msgid "Departure time:"
+#~ msgstr "Hora d'eixida:"
+
+#~ msgctxt "flight departure terminal"
+#~ msgid "Departure terminal:"
+#~ msgstr "Terminal d'eixida:"
+
+#~ msgctxt "flight departure gate"
+#~ msgid "Departure gate:"
+#~ msgstr "Porta d'eixida:"
+
+#~ msgid "Telephone:"
+#~ msgstr "Telèfon:"
+
+#~ msgid "Email:"
+#~ msgstr "Correu electrònic:"
+
+#~ msgid "Pick coordinate"
+#~ msgstr "Seleccioneu les coordenades"
+
+#~ msgctxt "train station"
+#~ msgid "Station:"
+#~ msgstr "Estació:"
+
+#~ msgid "Platform:"
+#~ msgstr "Plataforma:"
+
+#~ msgid "Reference:"
+#~ msgstr "Referència:"
+
+#~ msgid "Under name:"
+#~ msgstr "Davall el nom:"
 
 #~ msgid "%1°C"
 #~ msgstr "%1°C"

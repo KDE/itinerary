@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-13 00:49+0000\n"
+"POT-Creation-Date: 2023-04-17 00:49+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -209,25 +209,25 @@ msgstr ""
 msgid "Replace"
 msgstr "Nahradiť"
 
-#: app/applicationcontroller.cpp:313
+#: app/applicationcontroller.cpp:316
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download failed: %1"
 msgstr "Sťahovanie zlyhalo"
 
-#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
-#: app/applicationcontroller.cpp:553
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:571
+#: app/applicationcontroller.cpp:586
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import zlyhal: %1"
 
-#: app/applicationcontroller.cpp:339
+#: app/applicationcontroller.cpp:342
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:658
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -235,32 +235,32 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Health certificate imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:416
+#: app/applicationcontroller.cpp:419
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:422
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Nothing imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
+#: app/applicationcontroller.cpp:524 app/applicationcontroller.cpp:550
 #, fuzzy, kde-format
 msgid "Export failed: %1"
 msgstr "Export zlyhal"
 
-#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
+#: app/applicationcontroller.cpp:538 app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:578
+#: app/applicationcontroller.cpp:611
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -313,21 +313,20 @@ msgstr "Čas príchodu: %1"
 msgid "Boat Ticket"
 msgstr "Lístok na autobus"
 
-#: app/BoatPage.qml:20 app/BusPage.qml:30 app/EventPage.qml:23
-#: app/FlightPage.qml:32 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
+#: app/BoatPage.qml:20 app/BusPage.qml:33 app/EventPage.qml:21
+#: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr ""
 
-#: app/BoatPage.qml:75 app/BusPage.qml:82 app/FlightPage.qml:134
-#: app/TouristAttractionPage.qml:59 app/TrainEditor.qml:126
-#: app/TrainPage.qml:104
+#: app/BoatPage.qml:75 app/BusPage.qml:85 app/FlightPage.qml:132
+#: app/TouristAttractionPage.qml:59 app/TrainPage.qml:104
 #, kde-format
 msgid "Departure"
 msgstr "Odchod"
 
-#: app/BoatPage.qml:79 app/BusPage.qml:93 app/FlightPage.qml:139
+#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:137
 #: app/TrainPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Departure time:"
@@ -341,31 +340,33 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/BoatPage.qml:111 app/BusPage.qml:144 app/FlightPage.qml:193
-#: app/TouristAttractionPage.qml:77 app/TrainEditor.qml:143
-#: app/TrainPage.qml:191
+#: app/BoatPage.qml:111 app/BusPage.qml:147 app/FlightPage.qml:191
+#: app/TouristAttractionPage.qml:77 app/TrainPage.qml:191
 #, kde-format
 msgid "Arrival"
 msgstr "Príchod"
 
-#: app/BoatPage.qml:115 app/BusPage.qml:154 app/FlightPage.qml:197
+#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:195
 #: app/TrainPage.qml:196
 #, fuzzy, kde-format
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
 
-#: app/BookingCard.qml:26 app/FlightPage.qml:235 app/TrainEditor.qml:181
+#: app/BookingCard.qml:26 app/BusEditor.qml:152 app/FlightPage.qml:233
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Rezervácia"
 
-#: app/BookingCard.qml:31 app/FlightPage.qml:244
+#: app/BookingCard.qml:31 app/BusEditor.qml:156 app/FlightPage.qml:242
+#: app/TrainEditor.qml:193
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referencia:"
 
-#: app/BookingCard.qml:40 app/FlightPage.qml:244
+#: app/BookingCard.qml:40 app/BusEditor.qml:161 app/FlightPage.qml:242
+#: app/TrainEditor.qml:198
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
@@ -376,36 +377,104 @@ msgstr "Pod menom:"
 msgid "Ticket number:"
 msgstr "Poradové číslo:"
 
+#: app/BusEditor.qml:18
+#, fuzzy, kde-format
+#| msgid "Edit Hotel Reservation"
+msgid "Edit Bus Reservation"
+msgstr "Upraviť rezerváciu hotelu"
+
+#: app/BusEditor.qml:41 app/TrainEditor.qml:51
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Board Later"
+msgstr "Čas nástupu:"
+
+#: app/BusEditor.qml:44
+#, fuzzy, kde-format
+#| msgid "Change Reservation"
+msgid "Change departure stop"
+msgstr "Zmena rezervácie"
+
+#: app/BusEditor.qml:54 app/TrainEditor.qml:64
+#, kde-format
+msgid "Alight Earlier"
+msgstr ""
+
+#: app/BusEditor.qml:57
+#, fuzzy, kde-format
+#| msgid "Change Reservation"
+msgid "Change arrival stop"
+msgstr "Zmena rezervácie"
+
+#: app/BusEditor.qml:97
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "bus departure"
+msgid "Departure"
+msgstr "Odchod"
+
+#: app/BusEditor.qml:100 app/BusEditor.qml:127
+#, kde-format
+msgctxt "bus stop"
+msgid "Stop"
+msgstr ""
+
+#: app/BusEditor.qml:105 app/BusEditor.qml:132
+#, fuzzy, kde-format
+#| msgid "Platform:"
+msgctxt "bus stop platform"
+msgid "Platform"
+msgstr "Platforma:"
+
+#: app/BusEditor.qml:109 app/TrainEditor.qml:119
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Board later"
+msgstr "Čas nástupu:"
+
+#: app/BusEditor.qml:124
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "bus arrival"
+msgid "Arrival"
+msgstr "Príchod"
+
+#: app/BusEditor.qml:136 app/TrainEditor.qml:146
+#, kde-format
+msgid "Alight earlier"
+msgstr ""
+
 #: app/BusPage.qml:18
 #, kde-format
 msgid "Bus Ticket"
 msgstr "Lístok na autobus"
 
-#: app/BusPage.qml:113 app/FlightPage.qml:144 app/TrainPage.qml:137
+#: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Departure gate:"
 msgid "Departure date"
 msgstr "Odletová brána:"
 
-#: app/BusPage.qml:121 app/BusPage.qml:178
+#: app/BusPage.qml:124 app/BusPage.qml:181
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Stanica:"
 
-#: app/BusPage.qml:200 app/BusPage.qml:204 app/EventPage.qml:129
-#: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:275
+#: app/BusPage.qml:203 app/BusPage.qml:207 app/EventPage.qml:127
+#: app/FlightEditor.qml:151 app/FlightEditor.qml:156 app/FlightPage.qml:109
+#: app/TrainEditor.qml:162 app/TrainEditor.qml:171 app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
 msgstr "Sedlo"
 
-#: app/BusPage.qml:226 app/TrainPage.qml:358
+#: app/BusPage.qml:229 app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatívy"
 
-#: app/BusPage.qml:231 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:234 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -457,7 +526,7 @@ msgid "Time"
 msgstr "Čas:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:47
+#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -491,24 +560,25 @@ msgstr "Model:"
 msgid "Brand"
 msgstr "Značka:"
 
-#: app/ContactCard.qml:22
+#: app/ContactCard.qml:22 app/ContactEditorCard.qml:31
 #, kde-format
 msgid "Contact"
 msgstr ""
 
-#: app/ContactCard.qml:26
+#: app/ContactCard.qml:26 app/ContactEditorCard.qml:36
 #, fuzzy, kde-format
 #| msgid "Telephone:"
 msgid "Telephone"
 msgstr "Telefón:"
 
-#: app/ContactCard.qml:35
+#: app/ContactCard.qml:35 app/ContactEditorCard.qml:43
 #, fuzzy, kde-format
 #| msgid "Email:"
 msgid "Email"
 msgstr "E-mail:"
 
-#: app/ContactCard.qml:44 app/EventPage.qml:113
+#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:116
+#: app/EventPage.qml:111
 #, kde-format
 msgid "Website"
 msgstr ""
@@ -585,6 +655,11 @@ msgstr "K tejto rezervácii nie sú pripojené žiadne dokumenty."
 msgid "Add Document..."
 msgstr "Pridať dokument..."
 
+#: app/EditorPage.qml:35
+#, kde-format
+msgid "Save"
+msgstr "Uložiť"
+
 #: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
 #, kde-format
 msgid "End: %1"
@@ -600,42 +675,51 @@ msgstr "Čas spustenia: %1"
 msgid "End time: %1"
 msgstr "Čas konca: %1"
 
-#: app/EventEditor.qml:17
-#, kde-format
+#: app/EventEditor.qml:18
+#, fuzzy, kde-format
+#| msgid "Edit Event"
+msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Upraviť udalosť"
 
-#: app/EventEditor.qml:43
-#, kde-format
-msgid "Venue:"
+#: app/EventEditor.qml:66
+#, fuzzy, kde-format
+#| msgid "Venue:"
+msgid "Venue"
 msgstr "Miesto konania:"
 
-#: app/EventPage.qml:16
+#: app/EventEditor.qml:70
+#, fuzzy, kde-format
+msgctxt "venue name"
+msgid "Name"
+msgstr "Názov:"
+
+#: app/EventEditor.qml:89 app/EventPage.qml:16
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Udalosť"
 
-#: app/EventPage.qml:90
+#: app/EventEditor.qml:93 app/EventPage.qml:88
 #, fuzzy, kde-format
 #| msgid "Entrance:"
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Vchod"
 
-#: app/EventPage.qml:98
+#: app/EventEditor.qml:104 app/EventPage.qml:96 app/RestaurantEditor.qml:78
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Čas začiatku:"
 
-#: app/EventPage.qml:106
+#: app/EventEditor.qml:110 app/EventPage.qml:104 app/RestaurantEditor.qml:85
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Čas konca:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:131
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -643,13 +727,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Stanica:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:140
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:151
+#: app/EventPage.qml:149
 #, fuzzy, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -695,8 +779,8 @@ msgstr "Všetky súbory (*.*)"
 msgid "Import Favorite Locations"
 msgstr "Obľúbené miesta"
 
-#: app/FavoriteLocationPage.qml:51 app/LocationPicker.qml:30
-#: app/PlaceEditor.qml:56
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
 msgstr "Vybrať miesto"
@@ -758,103 +842,117 @@ msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
 msgstr "Príchod v %1: %2"
 
-#: app/FlightEditor.qml:17
+#: app/FlightEditor.qml:18
 #, kde-format
 msgid "Edit Flight"
 msgstr "Upraviť let"
 
-#: app/FlightEditor.qml:49
-#, kde-format
-msgid "Boarding time:"
-msgstr "Čas nástupu:"
-
-#: app/FlightEditor.qml:57 app/TrainEditor.qml:170 app/TrainPage.qml:288
-#, kde-format
-msgid "Seat:"
-msgstr "Sedalo:"
-
-#: app/FlightEditor.qml:74
-#, kde-format
+#: app/FlightEditor.qml:72
+#, fuzzy, kde-format
+#| msgid "Departure"
 msgctxt "flight departure"
-msgid "Departure"
+msgid "Departure - %1"
 msgstr "Odchod"
 
-#: app/FlightEditor.qml:78
-#, kde-format
-msgctxt "flight departure time"
-msgid "Departure time:"
-msgstr "Čas odchodu:"
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
+#: app/FlightPage.qml:204
+#, fuzzy, kde-format
+#| msgid "Airport:"
+msgid "Airport"
+msgstr "Letisko:"
+
+#: app/FlightEditor.qml:82
+#, fuzzy, kde-format
+#| msgid "Terminal:"
+msgctxt "flight departure terminal"
+msgid "Terminal"
+msgstr "Terminál:"
 
 #: app/FlightEditor.qml:86
 #, fuzzy, kde-format
-#| msgid "Departure terminal:"
-msgctxt "flight departure terminal"
-msgid "Departure terminal:"
-msgstr "Odletový terminál:"
+#| msgid "Time:"
+msgctxt "flight departure time"
+msgid "Time"
+msgstr "Čas:"
 
-#: app/FlightEditor.qml:93
+#: app/FlightEditor.qml:94
 #, fuzzy, kde-format
-#| msgid "Departure gate:"
+#| msgid "Gate:"
 msgctxt "flight departure gate"
-msgid "Departure gate:"
-msgstr "Odletová brána:"
+msgid "Gate"
+msgstr "Brána"
+
+#: app/FlightEditor.qml:98 app/FlightPage.qml:94
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Boarding time"
+msgstr "Čas nástupu:"
+
+#: app/FlightEditor.qml:117
+#, fuzzy, kde-format
+#| msgid "Arrival time: %1"
+msgctxt "flight arrival"
+msgid "Arrival - %1"
+msgstr "Príchod"
+
+#: app/FlightEditor.qml:127
+#, fuzzy, kde-format
+#| msgid "Terminal:"
+msgctxt "flight arrival terminal"
+msgid "Terminal"
+msgstr "Terminál:"
+
+#: app/FlightEditor.qml:131
+#, fuzzy, kde-format
+#| msgid "Time:"
+msgctxt "flight arrival time"
+msgid "Time"
+msgstr "Čas:"
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
 msgid "Flight"
 msgstr "Let"
 
-#: app/FlightPage.qml:76
+#: app/FlightPage.qml:74
 #, fuzzy, kde-format
 msgid "Sequence Number:"
 msgstr "Poradové číslo:"
 
-#: app/FlightPage.qml:91
+#: app/FlightPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Boarding Pass"
 msgid "Boarding"
 msgstr "Palubný lístok"
 
-#: app/FlightPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
-msgid "Boarding time"
-msgstr "Čas nástupu:"
-
-#: app/FlightPage.qml:104
+#: app/FlightPage.qml:102
 #, fuzzy, kde-format
 msgid "Boarding group"
 msgstr "Skupina nástupu: %1"
 
-#: app/FlightPage.qml:119
+#: app/FlightPage.qml:117
 #, kde-format
 msgid "Airline"
 msgstr ""
 
-#: app/FlightPage.qml:153 app/FlightPage.qml:206
-#, fuzzy, kde-format
-#| msgid "Airport:"
-msgid "Airport"
-msgstr "Letisko:"
-
-#: app/FlightPage.qml:161 app/FlightPage.qml:214
+#: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgid "Terminal"
 msgstr "Terminál:"
 
-#: app/FlightPage.qml:169
+#: app/FlightPage.qml:167
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgid "Gate"
 msgstr "Brána"
 
-#: app/FlightPage.qml:253
+#: app/FlightPage.qml:251
 #, kde-format
 msgid "Frequent Traveler Program"
 msgstr ""
 
-#: app/FlightPage.qml:259
+#: app/FlightPage.qml:257
 #, fuzzy, kde-format
 #| msgctxt "bonus, discount or frequent traveler program"
 #| msgid "Program"
@@ -862,11 +960,67 @@ msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Program"
 
-#: app/FlightPage.qml:266 app/ProgramMembershipPage.qml:108
+#: app/FlightPage.qml:264 app/ProgramMembershipPage.qml:108
 #: app/TicketPage.qml:121 app/TrainPage.qml:324
 #, fuzzy, kde-format
 msgid "Number"
 msgstr "Číslo:"
+
+#: app/FormPlaceEditorDelegate.qml:66
+#, fuzzy, kde-format
+#| msgid "Street:"
+msgid "Street"
+msgstr "Ulica:"
+
+#: app/FormPlaceEditorDelegate.qml:78
+#, kde-format
+msgid "Invalid postal code format for this country."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:84
+#, fuzzy, kde-format
+#| msgid "City:"
+msgid "City"
+msgstr "Mesto:"
+
+#: app/FormPlaceEditorDelegate.qml:102
+#, fuzzy, kde-format
+#| msgid "Region:"
+msgid "Region"
+msgstr "Región:"
+
+#: app/FormPlaceEditorDelegate.qml:128
+#, fuzzy, kde-format
+#| msgid "Country:"
+msgid "Country"
+msgstr "Krajina:"
+
+#: app/FormPlaceEditorDelegate.qml:177
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Coordinate"
+msgstr "Čas nástupu:"
+
+#: app/FormPlaceEditorDelegate.qml:178
+#, kde-format
+msgid "%1°, %2°"
+msgstr "%1°, %2°"
+
+#: app/FormPlaceEditorDelegate.qml:178
+#, kde-format
+msgid "Pick..."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:188
+#, kde-format
+msgid "Address to coordinate"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:202
+#, fuzzy, kde-format
+#| msgid "Boarding time:"
+msgid "Coordinate to address"
+msgstr "Čas nástupu:"
 
 #: app/FormPlatformDelegate.qml:15
 #, fuzzy, kde-format
@@ -1053,7 +1207,7 @@ msgid "Person"
 msgstr "Osoba"
 
 #: app/HealthCertificateRecovery.qml:34 app/HealthCertificateTest.qml:35
-#: app/HealthCertificateVaccination.qml:38 app/PlaceEditor.qml:23
+#: app/HealthCertificateVaccination.qml:38
 #, fuzzy, kde-format
 msgid "Name:"
 msgstr "Názov:"
@@ -1157,7 +1311,6 @@ msgid "Test Center:"
 msgstr ""
 
 #: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
-#: app/PlaceEditor.qml:141
 #, kde-format
 msgid "Country:"
 msgstr "Krajina:"
@@ -1210,33 +1363,48 @@ msgstr ""
 msgid "Check-out time: %1"
 msgstr ""
 
-#: app/HotelEditor.qml:17
+#: app/HotelEditor.qml:18
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Upraviť rezerváciu hotelu"
 
-#: app/HotelEditor.qml:52
+#: app/HotelEditor.qml:49
 #, kde-format
-msgid "Telephone:"
-msgstr "Telefón:"
+msgid "Hotel"
+msgstr ""
 
-#: app/HotelEditor.qml:57
-#, kde-format
-msgid "Email:"
-msgstr "E-mail:"
+#: app/HotelEditor.qml:54
+#, fuzzy, kde-format
+msgctxt "hotel name"
+msgid "Name"
+msgstr "Názov:"
+
+#: app/HotelEditor.qml:80
+#, fuzzy, kde-format
+#| msgid "Check-in"
+msgctxt "hotel checkin"
+msgid "Check-in"
+msgstr "Vstupná kontrola"
+
+#: app/HotelEditor.qml:87
+#, fuzzy, kde-format
+#| msgid "Check-out %1"
+msgctxt "hotel checkout"
+msgid "Check-out"
+msgstr "Výstupná kontrola %1"
 
 #: app/HotelPage.qml:16
 #, kde-format
 msgid "Hotel Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/HotelPage.qml:71
+#: app/HotelPage.qml:69
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgid "Check-in time"
 msgstr "Vstupná kontrola"
 
-#: app/HotelPage.qml:78
+#: app/HotelPage.qml:76
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgid "Check-out time"
@@ -1932,47 +2100,6 @@ msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Údaje o doprave"
 
-#: app/PlaceEditor.qml:72
-#, kde-format
-msgid "Street:"
-msgstr "Ulica:"
-
-#: app/PlaceEditor.qml:98
-#, kde-format
-msgid "City:"
-msgstr "Mesto:"
-
-#: app/PlaceEditor.qml:115
-#, kde-format
-msgid "Region:"
-msgstr "Región:"
-
-#: app/PlaceEditor.qml:185
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
-msgid "Coordinate:"
-msgstr "Čas nástupu:"
-
-#: app/PlaceEditor.qml:189
-#, kde-format
-msgid "Pick coordinate"
-msgstr ""
-
-#: app/PlaceEditor.qml:195
-#, kde-format
-msgid "%1°, %2°"
-msgstr "%1°, %2°"
-
-#: app/PlaceEditor.qml:209
-#, kde-format
-msgid "Find coordinate from address"
-msgstr ""
-
-#: app/PlaceEditor.qml:220
-#, kde-format
-msgid "Fill address from coordinate"
-msgstr ""
-
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
@@ -1995,43 +2122,43 @@ msgstr "Platné od:"
 msgid "Valid until"
 msgstr "Platný do:"
 
-#: app/publictransport.cpp:220 app/publictransport.cpp:247
+#: app/publictransport.cpp:225 app/publictransport.cpp:252
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:222
+#: app/publictransport.cpp:227
 #, fuzzy, kde-format
 msgid "Wait"
 msgstr "Čakanie"
 
-#: app/publictransport.cpp:231
+#: app/publictransport.cpp:236
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:233
+#: app/publictransport.cpp:238
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:235
+#: app/publictransport.cpp:240
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:237
+#: app/publictransport.cpp:242
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Prenajaté auto"
 
-#: app/publictransport.cpp:243
+#: app/publictransport.cpp:248
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:245 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:250 app/StatisticsPage.qml:195
 #, kde-format
 msgid "Car"
 msgstr "Auto"
@@ -2051,29 +2178,45 @@ msgstr "Globálne"
 msgid "🇪🇺 European Union"
 msgstr ""
 
-#: app/RestaurantEditor.qml:17
+#: app/RestaurantEditor.qml:18
 #, kde-format
 msgid "Edit Restaurant"
 msgstr ""
+
+#: app/RestaurantEditor.qml:49
+#, fuzzy, kde-format
+msgid "Restaurant"
+msgstr "Rezervácia reštaurácie: %1"
+
+#: app/RestaurantEditor.qml:54
+#, fuzzy, kde-format
+msgctxt "restaurant name"
+msgid "Name"
+msgstr "Názov:"
+
+#: app/RestaurantEditor.qml:73
+#, kde-format
+msgid "Reservation"
+msgstr "Rezervácia"
 
 #: app/RestaurantPage.qml:16
 #, fuzzy, kde-format
 msgid "Restaurant Reservation"
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/RestaurantPage.qml:65
+#: app/RestaurantPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Start time:"
 msgid "Start time"
 msgstr "Čas spustenia:"
 
-#: app/RestaurantPage.qml:73
+#: app/RestaurantPage.qml:71
 #, fuzzy, kde-format
 #| msgid "End time:"
 msgid "End time"
 msgstr "Čas konca:"
 
-#: app/RestaurantPage.qml:81
+#: app/RestaurantPage.qml:79
 #, kde-format
 msgid "Party size"
 msgstr ""
@@ -2452,7 +2595,7 @@ msgstr "Naozaj chcete odstrániť túto udalosť?"
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:301
+#: app/TimelinePage.qml:310
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -2494,88 +2637,71 @@ msgstr ""
 msgid "Arrival at %1 on platform %2"
 msgstr ""
 
-#: app/TrainEditor.qml:18
+#: app/TrainEditor.qml:19
 #, fuzzy, kde-format
 #| msgid "Hotel Reservation"
 msgid "Edit Train Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/TrainEditor.qml:27
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
-msgid "Board later"
-msgstr "Čas nástupu:"
-
-#: app/TrainEditor.qml:33
-#, kde-format
-msgid "Alight earlier"
-msgstr ""
-
-#: app/TrainEditor.qml:75
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
-msgid "Board Later"
-msgstr "Čas nástupu:"
-
-#: app/TrainEditor.qml:85
+#: app/TrainEditor.qml:54
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change departure station"
 msgstr "Zmena rezervácie"
 
-#: app/TrainEditor.qml:97
-#, kde-format
-msgid "Alight Earlier"
-msgstr ""
-
-#: app/TrainEditor.qml:107
+#: app/TrainEditor.qml:67
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change arrival station"
 msgstr "Zmena rezervácie"
 
-#: app/TrainEditor.qml:131 app/TrainEditor.qml:148
-#, kde-format
-msgctxt "train station"
-msgid "Station:"
-msgstr "Stanica:"
+#: app/TrainEditor.qml:107
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "train departure"
+msgid "Departure"
+msgstr "Odchod"
 
-#: app/TrainEditor.qml:136 app/TrainEditor.qml:153
-#, kde-format
-msgid "Platform:"
-msgstr "Platforma:"
-
-#: app/TrainEditor.qml:165
-#, kde-format
-msgid "Coach:"
-msgstr "Tréner:"
-
-#: app/TrainEditor.qml:175 app/TrainPage.qml:297
-#, kde-format
-msgid "Class:"
-msgstr "Trieda:"
-
-#: app/TrainEditor.qml:185
-#, kde-format
-msgid "Reference:"
-msgstr "Referencia:"
-
-#: app/TrainEditor.qml:189
-#, kde-format
-msgid "Under name:"
-msgstr "Pod menom:"
-
-#: app/TrainPage.qml:17
-#, kde-format
-msgid "Train Ticket"
-msgstr ""
-
-#: app/TrainPage.qml:145 app/TrainPage.qml:230
+#: app/TrainEditor.qml:110 app/TrainEditor.qml:137 app/TrainPage.qml:145
+#: app/TrainPage.qml:230
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
 msgid "Station"
 msgstr "Stanica:"
+
+#: app/TrainEditor.qml:115 app/TrainEditor.qml:142
+#, fuzzy, kde-format
+#| msgid "Platform:"
+msgctxt "train platform"
+msgid "Platform"
+msgstr "Platforma:"
+
+#: app/TrainEditor.qml:134
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "train arrival"
+msgid "Arrival"
+msgstr "Príchod"
+
+#: app/TrainEditor.qml:166
+#, fuzzy, kde-format
+#| msgid "Coach:"
+msgctxt "carriage on a train"
+msgid "Coach"
+msgstr "Tréner:"
+
+#: app/TrainEditor.qml:176
+#, fuzzy, kde-format
+#| msgid "Class:"
+msgctxt "seating class on a train"
+msgid "Class"
+msgstr "Trieda:"
+
+#: app/TrainPage.qml:17
+#, kde-format
+msgid "Train Ticket"
+msgstr ""
 
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
@@ -2587,6 +2713,16 @@ msgstr ""
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Tréner:"
+
+#: app/TrainPage.qml:288
+#, kde-format
+msgid "Seat:"
+msgstr "Sedalo:"
+
+#: app/TrainPage.qml:297
+#, kde-format
+msgid "Class:"
+msgstr "Trieda:"
 
 #: app/TrainPage.qml:311
 #, kde-format
@@ -2918,6 +3054,48 @@ msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "Autobus %1 z %2 do %3"
 
+#~ msgid "Boarding time:"
+#~ msgstr "Čas nástupu:"
+
+#~ msgctxt "flight departure"
+#~ msgid "Departure"
+#~ msgstr "Odchod"
+
+#~ msgctxt "flight departure time"
+#~ msgid "Departure time:"
+#~ msgstr "Čas odchodu:"
+
+#, fuzzy
+#~| msgid "Departure terminal:"
+#~ msgctxt "flight departure terminal"
+#~ msgid "Departure terminal:"
+#~ msgstr "Odletový terminál:"
+
+#, fuzzy
+#~| msgid "Departure gate:"
+#~ msgctxt "flight departure gate"
+#~ msgid "Departure gate:"
+#~ msgstr "Odletová brána:"
+
+#~ msgid "Telephone:"
+#~ msgstr "Telefón:"
+
+#~ msgid "Email:"
+#~ msgstr "E-mail:"
+
+#~ msgctxt "train station"
+#~ msgid "Station:"
+#~ msgstr "Stanica:"
+
+#~ msgid "Platform:"
+#~ msgstr "Platforma:"
+
+#~ msgid "Reference:"
+#~ msgstr "Referencia:"
+
+#~ msgid "Under name:"
+#~ msgstr "Pod menom:"
+
 #~ msgid "%1°C"
 #~ msgstr "%1°C"
 
@@ -2954,9 +3132,6 @@ msgstr "Autobus %1 z %2 do %3"
 #~ msgid "Bording time"
 #~ msgstr "Čas nástupu:"
 
-#~ msgid "Reservation"
-#~ msgstr "Rezervácia"
-
 #~ msgid "Documents (%1)"
 #~ msgstr "Dokumenty (%1)"
 
@@ -2991,9 +3166,6 @@ msgstr "Autobus %1 z %2 do %3"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
-
-#~ msgid "Save"
-#~ msgstr "Uložiť"
 
 #, fuzzy
 #~| msgid "Cancelled"
