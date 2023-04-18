@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-17 00:49+0000\n"
-"PO-Revision-Date: 2023-04-11 08:50+0200\n"
+"PO-Revision-Date: 2023-04-17 18:28+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
@@ -369,10 +369,9 @@ msgid "Ticket number:"
 msgstr "Številka vozovnice:"
 
 #: app/BusEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Hotel Reservation"
+#, kde-format
 msgid "Edit Bus Reservation"
-msgstr "Uredi hotelsko rezervacijo"
+msgstr "Uredi rezervacijo avtobusa"
 
 #: app/BusEditor.qml:41 app/TrainEditor.qml:51
 #, kde-format
@@ -380,10 +379,9 @@ msgid "Board Later"
 msgstr "Vkrcanje kasneje"
 
 #: app/BusEditor.qml:44
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgid "Change departure stop"
-msgstr "Spremeni začetno postajo"
+msgstr "Zamenjaj začetno postajo"
 
 #: app/BusEditor.qml:54 app/TrainEditor.qml:64
 #, kde-format
@@ -391,14 +389,12 @@ msgid "Alight Earlier"
 msgstr "Zgodnejši odlet"
 
 #: app/BusEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgid "Change arrival stop"
-msgstr "Spremeni ciljno postajo"
+msgstr "Zamenjaj ciljno postajo"
 
 #: app/BusEditor.qml:97
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Odhod"
@@ -407,11 +403,10 @@ msgstr "Odhod"
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
-msgstr ""
+msgstr "Postaja"
 
 #: app/BusEditor.qml:105 app/BusEditor.qml:132
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Peron"
@@ -422,8 +417,7 @@ msgid "Board later"
 msgstr "Vkrcanje kasneje"
 
 #: app/BusEditor.qml:124
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Prihod"
@@ -654,21 +648,18 @@ msgid "End time: %1"
 msgstr "Končni čas: %1"
 
 #: app/EventEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Uredi dogodek"
 
 #: app/EventEditor.qml:66
-#, fuzzy, kde-format
-#| msgid "Venue:"
+#, kde-format
 msgid "Venue"
-msgstr "Prihod:"
+msgstr "Prihod"
 
 #: app/EventEditor.qml:70
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "venue name"
 msgid "Name"
 msgstr "Ime"
@@ -819,11 +810,10 @@ msgid "Edit Flight"
 msgstr "Uredi let"
 
 #: app/FlightEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "Odhod: %1"
+msgstr "Odhod - %1"
 
 #: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
 #: app/FlightPage.qml:204
@@ -832,22 +822,19 @@ msgid "Airport"
 msgstr "Letališče"
 
 #: app/FlightEditor.qml:82
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
 #: app/FlightEditor.qml:86
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Čas"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Gate"
+#, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Izhodna vrata"
@@ -858,22 +845,19 @@ msgid "Boarding time"
 msgstr "Čas vkrcanja"
 
 #: app/FlightEditor.qml:117
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "Prihod: %1"
+msgstr "Prihod - %1"
 
 #: app/FlightEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
 #: app/FlightEditor.qml:131
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Čas"
@@ -931,39 +915,34 @@ msgid "Number"
 msgstr "Številka"
 
 #: app/FormPlaceEditorDelegate.qml:66
-#, fuzzy, kde-format
-#| msgid "Street:"
+#, kde-format
 msgid "Street"
-msgstr "Ulica:"
+msgstr "Ulica"
 
 #: app/FormPlaceEditorDelegate.qml:78
 #, kde-format
 msgid "Invalid postal code format for this country."
-msgstr ""
+msgstr "Neveljavna poštna številka za to državo."
 
 #: app/FormPlaceEditorDelegate.qml:84
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Mesto:"
+msgstr "Mesto"
 
 #: app/FormPlaceEditorDelegate.qml:102
-#, fuzzy, kde-format
-#| msgid "Region:"
+#, kde-format
 msgid "Region"
-msgstr "Regija:"
+msgstr "Regija"
 
 #: app/FormPlaceEditorDelegate.qml:128
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "Država:"
+msgstr "Država"
 
 #: app/FormPlaceEditorDelegate.qml:177
-#, fuzzy, kde-format
-#| msgid "Coordinate:"
+#, kde-format
 msgid "Coordinate"
-msgstr "Koordinate:"
+msgstr "Koordinate"
 
 #: app/FormPlaceEditorDelegate.qml:178
 #, kde-format
@@ -973,19 +952,17 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:178
 #, kde-format
 msgid "Pick..."
-msgstr ""
+msgstr "Poberi..."
 
 #: app/FormPlaceEditorDelegate.qml:188
-#, fuzzy, kde-format
-#| msgid "Fill address from coordinate"
+#, kde-format
 msgid "Address to coordinate"
-msgstr "Izpolni naslov iz koordinat"
+msgstr "Naslov v koordinate"
 
 #: app/FormPlaceEditorDelegate.qml:202
-#, fuzzy, kde-format
-#| msgid "Find coordinate from address"
+#, kde-format
 msgid "Coordinate to address"
-msgstr "Najdi koordinate iz naslova"
+msgstr "Koordinate v naslov"
 
 #: app/FormPlatformDelegate.qml:15
 #, kde-format
@@ -1330,28 +1307,25 @@ msgstr "Uredi hotelsko rezervacijo"
 #: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "Hotel"
 
 #: app/HotelEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Ime"
 
 #: app/HotelEditor.qml:80
-#, fuzzy, kde-format
-#| msgid "Check-in"
+#, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Prijava ob prihodu"
 
 #: app/HotelEditor.qml:87
-#, fuzzy, kde-format
-#| msgid "Check-out %1"
+#, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
-msgstr "Odjava %1"
+msgstr "Odjava ob odhodu"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2110,14 +2084,12 @@ msgid "Edit Restaurant"
 msgstr "Uredi restavracijo"
 
 #: app/RestaurantEditor.qml:49
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgid "Restaurant"
-msgstr "Uredi restavracijo"
+msgstr "Restavracija"
 
 #: app/RestaurantEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "restaurant name"
 msgid "Name"
 msgstr "Ime"
@@ -2582,8 +2554,7 @@ msgid "Change arrival station"
 msgstr "Spremeni ciljno postajo"
 
 #: app/TrainEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "Odhod"
@@ -2596,29 +2567,25 @@ msgid "Station"
 msgstr "Postaja"
 
 #: app/TrainEditor.qml:115 app/TrainEditor.qml:142
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Peron"
 
 #: app/TrainEditor.qml:134
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Prihod"
 
 #: app/TrainEditor.qml:166
-#, fuzzy, kde-format
-#| msgid "Coach:"
+#, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
-msgstr "Vagon:"
+msgstr "Vagon"
 
 #: app/TrainEditor.qml:176
-#, fuzzy, kde-format
-#| msgid "Class"
+#, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
 msgstr "Razred"
