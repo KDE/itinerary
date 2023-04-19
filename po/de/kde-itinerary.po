@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-17 00:49+0000\n"
-"PO-Revision-Date: 2023-04-16 14:19+0200\n"
+"PO-Revision-Date: 2023-04-18 22:31+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -235,7 +235,7 @@ msgstr[1] "%1 Reservierungen importiert."
 #: app/applicationcontroller.cpp:413
 #, kde-format
 msgid "Health certificate imported."
-msgstr "Gesundheitszertifikat wurde importiert."
+msgstr "Gesundheitsnachweis wurde importiert."
 
 #: app/applicationcontroller.cpp:419
 #, kde-format
@@ -1036,32 +1036,32 @@ msgstr "Fähre von %1 nach %2"
 #: app/HealthCertificateBarcode.qml:34
 #, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "Impfzertifikat von %1"
+msgstr "Impfnachweis von %1"
 
 #: app/HealthCertificateBarcode.qml:36
 #, kde-format
 msgid "Test certificate of %1"
-msgstr "Testzertifikat von %1"
+msgstr "Testnachweis von %1"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr "Genesungszertifikat von %1"
+msgstr "Genesungsnachweis von %1"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
 msgid "Certificate expired"
-msgstr "Zertifikat abgelaufen"
+msgstr "Nachweis abgelaufen"
 
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
-msgstr "Zertifikat ungültig"
+msgstr "Nachweis ungültig"
 
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr "Unbekannter Aussteller des Zertifikats"
+msgstr "Unbekannter Aussteller des Nachweises"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
@@ -1101,7 +1101,7 @@ msgstr "Test abgelaufen"
 #: app/HealthCertificateBarcode.qml:80
 #, kde-format
 msgid "Recovery certificate valid"
-msgstr "Genesungszertifikat gültig"
+msgstr "Genesungsnachweis gültig"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
@@ -1126,7 +1126,7 @@ msgstr "Genesen (%1)"
 #: app/HealthCertificatePage.qml:17 app/main.qml:123
 #, kde-format
 msgid "Health Certificates"
-msgstr "Gesundheitszertifikate"
+msgstr "Gesundheitsnachweise"
 
 #: app/HealthCertificatePage.qml:52
 #, kde-format
@@ -1136,12 +1136,12 @@ msgstr "Aus der Zwischenablage importieren"
 #: app/HealthCertificatePage.qml:67
 #, kde-format
 msgid "Delete Certificate"
-msgstr "Zertifikat löschen"
+msgstr "Nachweis löschen"
 
 #: app/HealthCertificatePage.qml:68
 #, kde-format
 msgid "Do you really want to delete this certificate?"
-msgstr "Möchten Sie dieses Zertifikat wirklich löschen?"
+msgstr "Möchten Sie diesen Nachweis wirklich löschen?"
 
 #: app/HealthCertificatePage.qml:138
 #, kde-format
@@ -1152,7 +1152,7 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
-"<p>Sie können folgende Gesundheitszertifikate importieren, indem Sie sie mit "
+"<p>Sie können folgende Gesundheitsnachweise importieren, indem Sie sie mit "
 "einer Barcode-Scanner-App einscannen:<ul><li>Europäische „Digital Green "
 "Certificates“ für Impfungen, Tests oder Genesung.</li><li>Indische "
 "Impfbescheinigungen.</li></p>"
@@ -1205,7 +1205,7 @@ msgstr "Gültig bis:"
 #: app/HealthCertificateVaccination.qml:102
 #, kde-format
 msgid "Certificate"
-msgstr "Zertifikat"
+msgstr "Nachweis"
 
 #: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
 #: app/HealthCertificateVaccination.qml:107
