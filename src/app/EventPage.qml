@@ -65,8 +65,9 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
-                    description: reservationFor.description
+                    description: Util.textToHtml(reservationFor.description)
                     visible: reservationFor.description
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }
