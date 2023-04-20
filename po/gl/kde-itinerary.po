@@ -671,8 +671,7 @@ msgid "Add Document..."
 msgstr "Engadir un documento…"
 
 #: app/EditorPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgid "Save"
 msgstr "Gardar"
 
@@ -2231,8 +2230,7 @@ msgid "Name"
 msgstr ""
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation"
 msgstr "Reserva"
 
