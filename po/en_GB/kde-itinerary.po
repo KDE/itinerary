@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:47+0000\n"
+"POT-Creation-Date: 2023-04-20 03:00+0000\n"
 "PO-Revision-Date: 2023-03-10 17:28+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -376,7 +376,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Station"
 
-#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:129
+#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:130
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:317
 #, kde-format
 msgid "Seat"
@@ -483,7 +483,7 @@ msgstr "Telephone"
 msgid "Email"
 msgstr "Email"
 
-#: app/ContactCard.qml:44 app/EventPage.qml:113
+#: app/ContactCard.qml:44 app/EventPage.qml:114
 #, kde-format
 msgid "Website"
 msgstr "Website"
@@ -589,35 +589,35 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Event"
 
-#: app/EventPage.qml:90
+#: app/EventPage.qml:91
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrance"
 
-#: app/EventPage.qml:98
+#: app/EventPage.qml:99
 #, kde-format
 msgid "Start Time"
 msgstr "Start Time"
 
-#: app/EventPage.qml:106
+#: app/EventPage.qml:107
 #, kde-format
 msgid "End Time"
 msgstr "End Time"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:134
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Section:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:143
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Row:"
 
-#: app/EventPage.qml:151
+#: app/EventPage.qml:152
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:47+0000\n"
+"POT-Creation-Date: 2023-04-20 03:00+0000\n"
 "PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -385,7 +385,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Estação:"
 
-#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:129
+#: app/BusPage.qml:194 app/BusPage.qml:198 app/EventPage.qml:130
 #: app/FlightPage.qml:111 app/TrainEditor.qml:160 app/TrainPage.qml:317
 #, kde-format
 msgid "Seat"
@@ -499,7 +499,7 @@ msgstr "Telefone:"
 msgid "Email"
 msgstr "E-mail:"
 
-#: app/ContactCard.qml:44 app/EventPage.qml:113
+#: app/ContactCard.qml:44 app/EventPage.qml:114
 #, kde-format
 msgid "Website"
 msgstr ""
@@ -606,7 +606,7 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Evento"
 
-#: app/EventPage.qml:90
+#: app/EventPage.qml:91
 #, fuzzy, kde-format
 #| msgctxt "time of entrance"
 #| msgid "Entrance:"
@@ -614,19 +614,19 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada:"
 
-#: app/EventPage.qml:98
+#: app/EventPage.qml:99
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Hora inicial:"
 
-#: app/EventPage.qml:106
+#: app/EventPage.qml:107
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Hora final:"
 
-#: app/EventPage.qml:133
+#: app/EventPage.qml:134
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -634,13 +634,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Estação:"
 
-#: app/EventPage.qml:142
+#: app/EventPage.qml:143
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:151
+#: app/EventPage.qml:152
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "seat number"
