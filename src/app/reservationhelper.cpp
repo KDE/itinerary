@@ -118,3 +118,8 @@ bool ReservationHelper::isUnbound(const QVariant& res)
     }
     return false;
 }
+
+bool ReservationHelper::isCancelled(const QVariant &res)
+{
+    return JsonLd::canConvert<Reservation>(res) && JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+}
