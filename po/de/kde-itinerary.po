@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-17 00:49+0000\n"
-"PO-Revision-Date: 2023-04-18 22:31+0200\n"
+"PO-Revision-Date: 2023-04-20 20:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -369,10 +369,9 @@ msgid "Ticket number:"
 msgstr "Kartennummer:"
 
 #: app/BusEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Hotel Reservation"
+#, kde-format
 msgid "Edit Bus Reservation"
-msgstr "Hotelreservierung bearbeiten"
+msgstr "Busreservierung bearbeiten"
 
 #: app/BusEditor.qml:41 app/TrainEditor.qml:51
 #, kde-format
@@ -380,10 +379,9 @@ msgid "Board Later"
 msgstr "Später einsteigen"
 
 #: app/BusEditor.qml:44
-#, fuzzy, kde-format
-#| msgid "Change departure station"
+#, kde-format
 msgid "Change departure stop"
-msgstr "Abfahrtsbahnhof ändern"
+msgstr "Abfahrtshaltestelle ändern"
 
 #: app/BusEditor.qml:54 app/TrainEditor.qml:64
 #, kde-format
@@ -391,14 +389,12 @@ msgid "Alight Earlier"
 msgstr "Früher aussteigen"
 
 #: app/BusEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Change arrival station"
+#, kde-format
 msgid "Change arrival stop"
-msgstr "Ankunftsbahnhof ändern"
+msgstr "Ankunftshaltestelle ändern"
 
 #: app/BusEditor.qml:97
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Abfahrt"
@@ -407,11 +403,10 @@ msgstr "Abfahrt"
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
-msgstr ""
+msgstr "Haltestelle"
 
 #: app/BusEditor.qml:105 app/BusEditor.qml:132
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Bahnsteig"
@@ -422,8 +417,7 @@ msgid "Board later"
 msgstr "Später einsteigen"
 
 #: app/BusEditor.qml:124
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Ankunft"
@@ -654,21 +648,18 @@ msgid "End time: %1"
 msgstr "Endzeit: %1"
 
 #: app/EventEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Event"
+#, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Veranstaltung bearbeiten"
 
 #: app/EventEditor.qml:66
-#, fuzzy, kde-format
-#| msgid "Venue:"
+#, kde-format
 msgid "Venue"
-msgstr "Veranstaltungsort:"
+msgstr "Veranstaltungsort"
 
 #: app/EventEditor.qml:70
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "venue name"
 msgid "Name"
 msgstr "Name"
@@ -819,11 +810,10 @@ msgid "Edit Flight"
 msgstr "Flug bearbeiten"
 
 #: app/FlightEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "Abfahrt: %1"
+msgstr "Abflug - %1"
 
 #: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
 #: app/FlightPage.qml:204
@@ -832,22 +822,19 @@ msgid "Airport"
 msgstr "Flughafen"
 
 #: app/FlightEditor.qml:82
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
 #: app/FlightEditor.qml:86
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Zeit"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Gate"
+#, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Gate"
@@ -858,22 +845,19 @@ msgid "Boarding time"
 msgstr "Boarding-Zeit"
 
 #: app/FlightEditor.qml:117
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "Ankunft: %1"
+msgstr "Ankunft - %1"
 
 #: app/FlightEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
 #: app/FlightEditor.qml:131
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Zeit"
@@ -931,39 +915,34 @@ msgid "Number"
 msgstr "Nummer"
 
 #: app/FormPlaceEditorDelegate.qml:66
-#, fuzzy, kde-format
-#| msgid "Street:"
+#, kde-format
 msgid "Street"
-msgstr "Straße:"
+msgstr "Straße"
 
 #: app/FormPlaceEditorDelegate.qml:78
 #, kde-format
 msgid "Invalid postal code format for this country."
-msgstr ""
+msgstr "Ungültiges Postleitzahlenformat für dieses Land."
 
 #: app/FormPlaceEditorDelegate.qml:84
-#, fuzzy, kde-format
-#| msgid "City:"
+#, kde-format
 msgid "City"
-msgstr "Stadt:"
+msgstr "Stadt"
 
 #: app/FormPlaceEditorDelegate.qml:102
-#, fuzzy, kde-format
-#| msgid "Region:"
+#, kde-format
 msgid "Region"
-msgstr "Region:"
+msgstr "Region"
 
 #: app/FormPlaceEditorDelegate.qml:128
-#, fuzzy, kde-format
-#| msgid "Country:"
+#, kde-format
 msgid "Country"
-msgstr "Land:"
+msgstr "Land"
 
 #: app/FormPlaceEditorDelegate.qml:177
-#, fuzzy, kde-format
-#| msgid "Coordinate:"
+#, kde-format
 msgid "Coordinate"
-msgstr "Koordinate:"
+msgstr "Koordinate"
 
 #: app/FormPlaceEditorDelegate.qml:178
 #, kde-format
@@ -973,7 +952,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:178
 #, kde-format
 msgid "Pick..."
-msgstr ""
+msgstr "Auswahl ..."
 
 #: app/FormPlaceEditorDelegate.qml:188
 #, fuzzy, kde-format
@@ -1327,28 +1306,25 @@ msgstr "Hotelreservierung bearbeiten"
 #: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "Hotel"
 
 #: app/HotelEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Name"
 
 #: app/HotelEditor.qml:80
-#, fuzzy, kde-format
-#| msgid "Check-in"
+#, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
-msgstr "Check-In"
+msgstr "Einchecken"
 
 #: app/HotelEditor.qml:87
-#, fuzzy, kde-format
-#| msgid "Check-out %1"
+#, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
-msgstr "Check-out %1"
+msgstr "Auschecken"
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2106,14 +2082,12 @@ msgid "Edit Restaurant"
 msgstr "Restaurant bearbeiten"
 
 #: app/RestaurantEditor.qml:49
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgid "Restaurant"
-msgstr "Restaurant bearbeiten"
+msgstr "Restaurant"
 
 #: app/RestaurantEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "restaurant name"
 msgid "Name"
 msgstr "Name"
@@ -2314,7 +2288,7 @@ msgstr "Wi-Fi ist nicht aktiviert"
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Standortdienst ist nicht aktiviert"
 
 #: app/SettingsPage.qml:241
 #, kde-format
@@ -2580,8 +2554,7 @@ msgid "Change arrival station"
 msgstr "Ankunftsbahnhof ändern"
 
 #: app/TrainEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "Abfahrt"
@@ -2594,29 +2567,25 @@ msgid "Station"
 msgstr "Bahnhof"
 
 #: app/TrainEditor.qml:115 app/TrainEditor.qml:142
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Bahnsteig"
 
 #: app/TrainEditor.qml:134
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Ankunft"
 
 #: app/TrainEditor.qml:166
-#, fuzzy, kde-format
-#| msgid "Coach:"
+#, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
-msgstr "Wagen:"
+msgstr "Wagen"
 
 #: app/TrainEditor.qml:176
-#, fuzzy, kde-format
-#| msgid "Class"
+#, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
 msgstr "Klasse"
@@ -2789,15 +2758,13 @@ msgid "Delete trip"
 msgstr "Reise löschen"
 
 #: app/tripgroupmanager.cpp:588
-#, fuzzy, kde-format
-#| msgid "%1 (%2 %3)"
+#, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
 #: app/tripgroupmanager.cpp:590
-#, fuzzy, kde-format
-#| msgid "%1 (%2/%3 %4)"
+#, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
 "year"
@@ -2805,8 +2772,7 @@ msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
 #: app/tripgroupmanager.cpp:592
-#, fuzzy, kde-format
-#| msgid "%1 (%2/%3)"
+#, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
@@ -2886,27 +2852,22 @@ msgid "High"
 msgstr "Hoch"
 
 #: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1°C / %2°C"
+#, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
-msgstr "%1 °C / %2 °C"
+msgstr "%1 / %2"
 
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
-msgstr "%1 m"
+msgstr "%1 mm"
 
 #: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
-#, fuzzy, kde-format
-#| msgctxt "distance in meter"
-#| msgid "%1 m"
+#, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
-msgstr "%1 m"
+msgstr "%1 m/s"
 
 #: app/WelcomePage.qml:17
 #, kde-format
