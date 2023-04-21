@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-20 03:00+0000\n"
-"PO-Revision-Date: 2023-04-18 22:31+0200\n"
+"PO-Revision-Date: 2023-04-20 20:02+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2137,7 +2137,7 @@ msgstr "Wi-Fi ist nicht aktiviert"
 #: app/SettingsPage.qml:239
 #, kde-format
 msgid "Location service is not enabled"
-msgstr ""
+msgstr "Standortdienst ist nicht aktiviert"
 
 #: app/SettingsPage.qml:241
 #, kde-format
