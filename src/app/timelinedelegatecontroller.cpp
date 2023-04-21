@@ -262,6 +262,10 @@ void TimelineDelegateController::checkForUpdate(const QString& batchId)
     if (!LocationUtil::isLocationChange(res)) {
         return;
     }
+    if (ReservationHelper::isCancelled(res)) {
+        setCurrent(false);
+        return;
+    }
 
     const auto now = QDateTime::currentDateTime();
     const auto startTime = relevantStartDateTime(res);
