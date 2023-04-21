@@ -270,6 +270,10 @@ void TimelineDelegateController::checkForUpdate(const QString& batchId)
     if (!LocationUtil::isLocationChange(res)) {
         return;
     }
+    if (ReservationHelper::isCancelled(res)) {
+        setCurrent(false);
+        return;
+    }
 
     const auto now = QDateTime::currentDateTime();
     const auto startTime = relevantStartDateTime(res);
@@ -560,7 +564,7 @@ bool TimelineDelegateController::connectionWarning() const
     }
 
     const auto curRes = m_resMgr->reservation(m_batchId);
-    if (!LocationUtil::isLocationChange(curRes)) {
+    if (!LocationUtil::isLocationChange(curRes) || ReservationHelper::isCancelled(curRes)) {
         return false;
     }
 
@@ -571,7 +575,7 @@ bool TimelineDelegateController::connectionWarning() const
 
     const auto prevResId = m_resMgr->previousBatch(m_batchId);
     const auto prevRes = m_resMgr->reservation(prevResId);
-    if (!LocationUtil::isLocationChange(prevRes)) {
+    if (!LocationUtil::isLocationChange(prevRes) || ReservationHelper::isCancelled(prevRes)) {
         return false;
     }
 
@@ -593,10 +597,7 @@ bool TimelineDelegateController::isCanceled() const
     }
 
     const auto res = m_resMgr->reservation(m_batchId);
-    if (!JsonLd::canConvert<Reservation>(res)) {
-        return false;
-    }
-    return JsonLd::convert<Reservation>(res).reservationStatus() == Reservation::ReservationCancelled;
+    return ReservationHelper::isCancelled(res);
 }
 
 static void mapArgumentsForLocation(QJSValue &args, const QVariant &location, QJSEngine *engine)

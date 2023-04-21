@@ -10,6 +10,7 @@
 #include "favoritelocationmodel.h"
 #include "livedatamanager.h"
 #include "publictransport.h"
+#include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
@@ -277,6 +278,10 @@ static bool isLikelyNotSameLocation(const QVariant &loc1, const QVariant &loc2)
 
 TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
+    if (ReservationHelper::isCancelled(res)) {
+        return ShouldRemove;
+    }
+
     transfer.setAnchorTime(anchorTimeBefore(resId, res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant toLoc;
@@ -307,11 +312,19 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
         return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
-    const auto prevResId = m_resMgr->previousBatch(resId); // TODO this fails for multiple nested range elements!
-    if (prevResId.isEmpty()) {
-        return ShouldRemove;
+    // find the first preceeding non-cancelled reservation
+    QString prevResId = resId;
+    QVariant prevRes;
+    while (true) {
+        prevResId = m_resMgr->previousBatch(prevResId); // TODO this fails for multiple nested range elements!
+        if (prevResId.isEmpty()) {
+            return ShouldRemove;
+        }
+        prevRes = m_resMgr->reservation(prevResId);
+        if (!ReservationHelper::isCancelled(prevRes)) {
+            break;
+        }
     }
-    const auto prevRes = m_resMgr->reservation(prevResId);
 
     // check if there is a transfer after prevRes already
     const auto prevTransfer = this->transfer(prevResId, Transfer::After);
@@ -355,6 +368,10 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
 
 TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
+    if (ReservationHelper::isCancelled(res)) {
+        return ShouldRemove;
+    }
+
     transfer.setAnchorTime(anchorTimeAfter(resId, res));
     const auto isLocationChange = LocationUtil::isLocationChange(res);
     QVariant fromLoc;
@@ -384,11 +401,19 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
         return notInGroup ? CanAddManually : ShouldAutoAdd;
     }
 
-    const auto nextResId = m_resMgr->nextBatch(resId);
-    if (nextResId.isEmpty()) {
-        return ShouldRemove;
+    // find next non-cancelled reservation
+    QString nextResId = resId;
+    QVariant nextRes;
+    while (true) {
+        nextResId = m_resMgr->nextBatch(nextResId);
+        if (nextResId.isEmpty()) {
+            return ShouldRemove;
+        }
+        nextRes = m_resMgr->reservation(nextResId);
+        if (!ReservationHelper::isCancelled(nextRes)) {
+            break;
+        }
     }
-    const auto nextRes = m_resMgr->reservation(nextResId);
 
     // check if there is a transfer before nextRes already
     const auto nextTransfer = this->transfer(nextResId, Transfer::Before);

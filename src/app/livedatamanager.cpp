@@ -427,7 +427,7 @@ bool LiveDataManager::isRelevant(const QString &resId) const
 {
     const auto res = m_resMgr->reservation(resId);
     // we only care about transit reservations
-    if (!JsonLd::canConvert<Reservation>(res) || !LocationUtil::isLocationChange(res)) {
+    if (!JsonLd::canConvert<Reservation>(res) || !LocationUtil::isLocationChange(res) || ReservationHelper::isCancelled(res)) {
         return false;
     }
     // we don't care about past events

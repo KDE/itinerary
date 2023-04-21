@@ -31,6 +31,9 @@ namespace ReservationHelper
 
     /** Returns whether @p res is an unbound reservation. */
     bool isUnbound(const QVariant &res);
+
+    /** Checks whether the given reservation is canclled. */
+    bool isCancelled(const QVariant &res);
 }
 
 #endif // RESERVATIONHELPER_H
