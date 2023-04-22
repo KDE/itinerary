@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-17 00:49+0000\n"
+"POT-Creation-Date: 2023-04-22 00:51+0000\n"
 "PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -461,7 +461,7 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Estação:"
 
-#: app/BusPage.qml:203 app/BusPage.qml:207 app/EventPage.qml:127
+#: app/BusPage.qml:203 app/BusPage.qml:207 app/EventPage.qml:128
 #: app/FlightEditor.qml:151 app/FlightEditor.qml:156 app/FlightPage.qml:109
 #: app/TrainEditor.qml:162 app/TrainEditor.qml:171 app/TrainPage.qml:275
 #, kde-format
@@ -577,7 +577,7 @@ msgid "Email"
 msgstr "E-mail:"
 
 #: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:116
-#: app/EventPage.qml:111
+#: app/EventPage.qml:112
 #, kde-format
 msgid "Website"
 msgstr ""
@@ -699,7 +699,7 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Evento"
 
-#: app/EventEditor.qml:93 app/EventPage.qml:88
+#: app/EventEditor.qml:93 app/EventPage.qml:89
 #, fuzzy, kde-format
 #| msgctxt "time of entrance"
 #| msgid "Entrance:"
@@ -707,19 +707,19 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada:"
 
-#: app/EventEditor.qml:104 app/EventPage.qml:96 app/RestaurantEditor.qml:78
+#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:78
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Hora inicial:"
 
-#: app/EventEditor.qml:110 app/EventPage.qml:104 app/RestaurantEditor.qml:85
+#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:85
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Hora final:"
 
-#: app/EventPage.qml:131
+#: app/EventPage.qml:132
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -727,13 +727,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Estação:"
 
-#: app/EventPage.qml:140
+#: app/EventPage.qml:141
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:149
+#: app/EventPage.qml:150
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgctxt "seat number"
