@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-04-20 20:02+0200\n"
+"PO-Revision-Date: 2023-04-22 17:10+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.07.70\n"
 
 #, kde-format
@@ -955,16 +955,14 @@ msgid "Pick..."
 msgstr "Auswahl ..."
 
 #: app/FormPlaceEditorDelegate.qml:188
-#, fuzzy, kde-format
-#| msgid "Pick coordinate"
+#, kde-format
 msgid "Address to coordinate"
-msgstr "Koordinate wählen"
+msgstr "Adresse zu Koordinaten"
 
 #: app/FormPlaceEditorDelegate.qml:202
-#, fuzzy, kde-format
-#| msgid "Coordinate:"
+#, kde-format
 msgid "Coordinate to address"
-msgstr "Koordinate:"
+msgstr "Koordinaten zu Adresse"
 
 #: app/FormPlatformDelegate.qml:15
 #, kde-format
