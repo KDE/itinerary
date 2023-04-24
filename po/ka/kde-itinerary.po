@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-22 00:51+0000\n"
-"PO-Revision-Date: 2023-04-18 06:28+0200\n"
+"PO-Revision-Date: 2023-04-23 07:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2255,7 +2255,7 @@ msgstr "გაფრთხილებების დაბლოკილ ე�
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "ბორტის სტატუსი"
 
 #: app/SettingsPage.qml:222
 #, kde-format
@@ -2295,13 +2295,15 @@ msgstr "მეტი ქმედება საჭირო არაა."
 #: app/SettingsPage.qml:250
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr ""
+msgstr "ბორტის ინფორმაციის სანახავად ჩართეთ Wi-Fi."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"ბორტის ინფორმაციასთან წვდომისთვის თქვენს მოწყობილობაზე მდებარეობის სერვისი "
+"ჩართეთ."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2309,6 +2311,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"თქვენს მოწყობილობაზე ბორტის ინფორმაცია, სამწუხაროდ, ამჟამად ხელმისაწვდომი "
+"არაა."
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
