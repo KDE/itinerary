@@ -137,6 +137,7 @@ Kirigami.ScrollablePage {
             property var journey: model.journey
 
             header: JourneyDelegateHeader {
+                card: top
                 journey: top.journey
             }
 

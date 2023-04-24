@@ -20,16 +20,13 @@ Kirigami.AbstractCard {
         id: _controller
     }
 
-   header: Rectangle {
+   header: TimelineDelegateHeaderBackground {
         id: headerBackground
+        card: root
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
-        radius: Kirigami.Units.smallSpacing
+        defaultColor: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.rightMargin: -root.rightPadding
 
         RowLayout {
             id: headerLayout

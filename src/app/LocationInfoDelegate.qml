@@ -22,16 +22,13 @@ Kirigami.AbstractCard {
         performCurrencyConversion: Settings.performCurrencyConversion
     }
 
-   header: Rectangle {
+   header: TimelineDelegateHeaderBackground {
         id: headerBackground
+        card: root
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.neutralBackgroundColor
-        radius: Kirigami.Units.smallSpacing
+        defaultColor: Kirigami.Theme.neutralBackgroundColor
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.rightMargin: -root.rightPadding
 
         RowLayout {
             id: headerLayout

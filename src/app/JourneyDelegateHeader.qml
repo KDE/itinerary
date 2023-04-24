@@ -12,17 +12,13 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Rectangle {
+TimelineDelegateHeaderBackground {
     property var journey
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
     Kirigami.Theme.inherit: false
-    color: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
+    defaultColor: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
     implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-    anchors.leftMargin: -root.leftPadding
-    anchors.topMargin: -root.topPadding
-    anchors.rightMargin: -root.rightPadding
-    radius: Kirigami.Units.smallSpacing
 
     RowLayout {
         id: headerLayout

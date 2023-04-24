@@ -23,17 +23,19 @@ Kirigami.AbstractCard {
     showClickFeedback: true
     topPadding: rangeType == TimelineElement.RangeEnd ? 0 : Kirigami.Units.largeSpacing
 
-    header: Rectangle {
+    header: TimelineDelegateHeaderBackground {
         id: headerBackground
+        card: root
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        color: Kirigami.Theme.backgroundColor
-        radius: Kirigami.Units.smallSpacing
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.rightMargin: -root.rightPadding
         anchors.bottomMargin: root.rangeType == TimelineElement.RangeEnd ? -root.bottomPadding : 0
+        corners {
+            topLeftRadius: Kirigami.Units.smallSpacing
+            topRightRadius: Kirigami.Units.smallSpacing
+            bottomLeftRadius: root.rangeType == TimelineElement.RangeEnd ? Kirigami.Units.smallSpacing : 0
+            bottomRightRadius: root.rangeType == TimelineElement.RangeEnd ? Kirigami.Units.smallSpacing : 0
+        }
 
         RowLayout {
             id: headerLayout

@@ -50,12 +50,12 @@ Kirigami.AbstractCard {
         applicationWindow().pageStack.push(detailsComponent);
     }
 
-    header: Rectangle {
+    header: TimelineDelegateHeaderBackground {
         id: headerBackground
+        card: root
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
-        radius: Kirigami.Units.smallSpacing
-        color: {
+        defaultColor: {
             if (controller.connectionWarning)
                 return Kirigami.Theme.negativeTextColor;
             if (controller.isCanceled)
@@ -63,9 +63,6 @@ Kirigami.AbstractCard {
             return Kirigami.Theme.backgroundColor;
         }
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.leftMargin: -root.leftPadding
-        anchors.topMargin: -root.topPadding
-        anchors.rightMargin: -root.rightPadding
 
         RowLayout {
             id: headerLayout
