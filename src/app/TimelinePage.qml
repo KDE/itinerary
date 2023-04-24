@@ -332,9 +332,10 @@ Kirigami.ScrollablePage {
         Models.DelegateChoice {
             roleValue: TimelineElement.TripGroup
             App.TripGroupDelegate {
-                tripGroup: model.tripGroup
-                tripGroupId: model.tripGroupId
-                rangeType: model.rangeType
+                onRemoveTrip: (tripGroupId) => {
+                    deleteTripGroupWarningDialog.tripGroupId = tripGroupId;
+                    deleteTripGroupWarningDialog.open();
+                }
             }
         }
         Models.DelegateChoice {
