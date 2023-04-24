@@ -19,13 +19,13 @@ App.TimelineDelegate {
     headerItem: RowLayout {
         QQC2.Label {
             text: touristAttraction.name
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservation, "arrivalTime")
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
     }

@@ -21,7 +21,7 @@ App.TimelineDelegate {
                 i18n("Rental Car Drop-off") :
                 i18n("Rental Car Pick-up")
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             Layout.fillWidth: true
         }
         QQC2.Label {
@@ -29,7 +29,7 @@ App.TimelineDelegate {
                 Localizer.formatTime(reservation, "dropoffTime") :
                 Localizer.formatTime(reservation, "pickupTime")
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
         }
     }
 

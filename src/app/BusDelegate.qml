@@ -24,14 +24,14 @@ App.TimelineDelegate {
                 }
                 return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
             }
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
             Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
         QQC2.Label {

@@ -21,7 +21,7 @@ App.TimelineDelegate {
             text: root.rangeType == TimelineElement.RangeEnd ?
                 i18n("End: %1", reservationFor.name) : reservationFor.name
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             elide: Text.ElideRight
             Layout.fillWidth: true
             Accessible.ignored: true
@@ -35,7 +35,7 @@ App.TimelineDelegate {
                 return Localizer.formatTime(reservationFor, "startDate");
             }
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
         }
     }
 

@@ -25,7 +25,7 @@ App.TimelineDelegate {
                 }
                 return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
             }
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             elide: Text.ElideRight
             Layout.fillWidth: true
@@ -33,7 +33,7 @@ App.TimelineDelegate {
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
         QQC2.Label {

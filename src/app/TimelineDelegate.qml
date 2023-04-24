@@ -4,9 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.0
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
@@ -50,16 +50,16 @@ Kirigami.AbstractCard {
         applicationWindow().pageStack.push(detailsComponent);
     }
 
+    property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
+
     header: TimelineDelegateHeaderBackground {
         id: headerBackground
         card: root
-        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
         defaultColor: {
             if (controller.connectionWarning)
                 return Kirigami.Theme.negativeTextColor;
-            if (controller.isCanceled)
-                return Kirigami.Theme.disabledTextColor;
             return Kirigami.Theme.backgroundColor;
         }
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
@@ -73,7 +73,7 @@ Kirigami.AbstractCard {
                 id: _headerIcon
                 Layout.preferredWidth: Layout.preferredHeight * aspectRatio
                 Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
-                color: Kirigami.Theme.textColor
+                color: root.headerTextColor
                 isMask: true
 
                 // work around the fact that Kirigami.Icon always gives us an implicit size of 32x32 no

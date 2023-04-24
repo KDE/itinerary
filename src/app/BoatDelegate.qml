@@ -16,13 +16,13 @@ App.TimelineDelegate {
     headerItem: RowLayout {
         QQC2.Label {
             text: i18n("%1 to %2", reservationFor.departureBoatTerminal.name, reservationFor.arrivalBoatTerminal.name);
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
-            color: Kirigami.Theme.textColor
+            color: root.headerTextColor
             font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
     }
