@@ -23,7 +23,7 @@ Kirigami.AbstractCard {
    header: TimelineDelegateHeaderBackground {
         id: headerBackground
         card: root
-        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         defaultColor: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2

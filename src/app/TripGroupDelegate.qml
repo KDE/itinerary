@@ -26,7 +26,7 @@ Kirigami.AbstractCard {
     header: TimelineDelegateHeaderBackground {
         id: headerBackground
         card: root
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
         anchors.bottomMargin: root.rangeType == TimelineElement.RangeEnd ? -root.bottomPadding : 0

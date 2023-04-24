@@ -15,7 +15,7 @@ import "." as App
 TimelineDelegateHeaderBackground {
     property var journey
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
     Kirigami.Theme.inherit: false
     defaultColor: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
     implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2

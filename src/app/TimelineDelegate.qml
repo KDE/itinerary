@@ -55,7 +55,7 @@ Kirigami.AbstractCard {
     header: TimelineDelegateHeaderBackground {
         id: headerBackground
         card: root
-        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Complementary
+        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         defaultColor: {
             if (controller.connectionWarning)
