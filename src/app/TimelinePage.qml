@@ -343,10 +343,12 @@ Kirigami.ScrollablePage {
         model: TripGroupProxyModel
         delegate: chooser
 
-        section.property: "sectionHeader"
-        section.delegate: TimelineSectionDelegate { day: section }
-        section.criteria: ViewSection.FullString
-        section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+        section {
+            property: "sectionHeader"
+            delegate: TimelineSectionDelegate { day: section }
+            criteria: ViewSection.FullString
+            labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+        }
     }
 
     Connections {

@@ -30,9 +30,11 @@ QQC2.Pane {
             isMask: controller.isHoliday
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
             implicitWidth: Kirigami.Units.iconSizes.smallMedium
+            Layout.alignment: Qt.AlignTop
         }
         ColumnLayout {
             Layout.fillWidth: true
+            spacing: 0
             Kirigami.Heading {
                 id: titleLabel
                 text: controller.title
@@ -47,6 +49,7 @@ QQC2.Pane {
                 text: controller.subTitle
                 visible: text
                 Accessible.ignored: !visible
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
             }
         }
     }
