@@ -204,8 +204,7 @@ App.DetailsPage {
                 }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
-                    Kirigami.FormData.label: i18n("Seat")
-                    text: reservation.reservedTicket.ticketedSeat.seatNumber
+                    text: currentReservation.reservedTicket.ticketedSeat.seatNumber
                     visible: text !== ""
                 }
             }

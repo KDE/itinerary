@@ -23,7 +23,7 @@ App.EditorPage {
     property var arrivalTime: Util.dateTimeStripTimezone(reservationFor, "arrivalTime")
 
     function apply(reservation) {
-        var trip = reservation.reservationFor;
+        let trip = reservation.reservationFor;
         trip.departureBusStop = root.departureBusStop;
         trip = Util.setDateTimePreserveTimezone(trip, "departureTime", root.departureTime);
         trip.departurePlatform = departurePlatform.text;
@@ -31,8 +31,15 @@ App.EditorPage {
         trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
         trip.arrivalPlatform = arrivalPlatform.text;
 
+        let seat = reservation.reservedTicket.ticketedSeat;
+        seat.seatNumber = seatNumber.text;
+
+        let ticket = reservation.reservedTicket;
+        ticket.ticketedSeat = seat;
+
         var newRes = reservation;
         newRes.reservationFor = trip;
+        newRes.reservedTicket = ticket;
         return newRes;
     }
 
@@ -142,6 +149,23 @@ App.EditorPage {
         }
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
+
+                MobileForm.FormCardHeader {
+                    title: i18n("Seat")
+                }
+                MobileForm.FormTextFieldDelegate {
+                    id: seatNumber
+                    label: i18n("Seat")
+                    text: reservation.reservedTicket.ticketedSeat.seatNumber
+                }
+            }
+        }
+
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
