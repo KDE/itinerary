@@ -143,10 +143,17 @@ Kirigami.ScrollablePage {
 
         ListView {
             id: calendarSelectorListView
+            implicitWidth: Kirigami.Units.gridUnit * 20
             delegate: Kirigami.BasicListItem {
-                text: model.name
+                required property int index
+                required property string name
+                required property var calendar
+
+                text: name
                 onClicked: {
-                    applicationWindow().pageStack.push(calendarImportPage, {calendar: model.calendar});
+                    applicationWindow().pageStack.push(calendarImportPage, {
+                        calendar: calendar,
+                    });
                     calendarSelector.close();
                 }
             }
