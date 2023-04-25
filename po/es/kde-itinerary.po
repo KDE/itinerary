@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-22 00:51+0000\n"
+"POT-Creation-Date: 2023-04-25 00:52+0000\n"
 "PO-Revision-Date: 2023-04-17 22:27+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -284,7 +284,7 @@ msgid "No camera available."
 msgstr "No hay ninguna cámara disponible."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:74 app/TransferDelegate.qml:48
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:45
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 a %2"
@@ -346,19 +346,19 @@ msgstr "Llegada"
 msgid "Arrival time"
 msgstr "Hora de llegada"
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:152 app/FlightPage.qml:233
+#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:233
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:156 app/FlightPage.qml:242
+#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:242
 #: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Referencia"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:161 app/FlightPage.qml:242
+#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:242
 #: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
@@ -374,59 +374,67 @@ msgstr "Número de billete:"
 msgid "Edit Bus Reservation"
 msgstr "Editar reserva de autobús"
 
-#: app/BusEditor.qml:41 app/TrainEditor.qml:51
+#: app/BusEditor.qml:48 app/TrainEditor.qml:51
 #, kde-format
 msgid "Board Later"
 msgstr "Embarcar más tarde"
 
-#: app/BusEditor.qml:44
+#: app/BusEditor.qml:51
 #, kde-format
 msgid "Change departure stop"
 msgstr "Cambiar parada de salida"
 
-#: app/BusEditor.qml:54 app/TrainEditor.qml:64
+#: app/BusEditor.qml:61 app/TrainEditor.qml:64
 #, kde-format
 msgid "Alight Earlier"
 msgstr "Bajar antes"
 
-#: app/BusEditor.qml:57
+#: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
 msgstr "Cambiar parada de llegada"
 
-#: app/BusEditor.qml:97
+#: app/BusEditor.qml:104
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Salida"
 
-#: app/BusEditor.qml:100 app/BusEditor.qml:127
+#: app/BusEditor.qml:107 app/BusEditor.qml:134
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Parada"
 
-#: app/BusEditor.qml:105 app/BusEditor.qml:132
+#: app/BusEditor.qml:112 app/BusEditor.qml:139
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Andén"
 
-#: app/BusEditor.qml:109 app/TrainEditor.qml:119
+#: app/BusEditor.qml:116 app/TrainEditor.qml:119
 #, kde-format
 msgid "Board later"
 msgstr "Embarcar más tarde"
 
-#: app/BusEditor.qml:124
+#: app/BusEditor.qml:131
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Llegada"
 
-#: app/BusEditor.qml:136 app/TrainEditor.qml:146
+#: app/BusEditor.qml:143 app/TrainEditor.qml:146
 #, kde-format
 msgid "Alight earlier"
 msgstr "Bajar antes"
+
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:203
+#: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
+#: app/FlightPage.qml:109 app/TrainEditor.qml:162 app/TrainEditor.qml:171
+#: app/TrainPage.qml:275
+#, kde-format
+msgid "Seat"
+msgstr "Asiento"
 
 #: app/BusPage.qml:18
 #, kde-format
@@ -444,19 +452,12 @@ msgctxt "bus station"
 msgid "Station"
 msgstr "Estación"
 
-#: app/BusPage.qml:203 app/BusPage.qml:207 app/EventPage.qml:128
-#: app/FlightEditor.qml:151 app/FlightEditor.qml:156 app/FlightPage.qml:109
-#: app/TrainEditor.qml:162 app/TrainEditor.qml:171 app/TrainPage.qml:275
-#, kde-format
-msgid "Seat"
-msgstr "Asiento"
-
-#: app/BusPage.qml:229 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:358
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:234 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalles del viaje"
@@ -587,8 +588,8 @@ msgctxt "destination"
 msgid "To:"
 msgstr "A:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:123
-#: app/TransferPage.qml:245
+#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:124
+#: app/TransferPage.qml:246
 #, kde-format
 msgid "Data providers: %1"
 msgstr "Proveedores de datos: %1"
@@ -633,7 +634,7 @@ msgstr "Añadir documento..."
 msgid "Save"
 msgstr "Guardar"
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:56
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "End: %1"
 msgstr "Fin: %1"
@@ -1465,7 +1466,7 @@ msgstr "Tranvía"
 msgid "Bus"
 msgstr "Autobús"
 
-#: app/JourneyQueryPage.qml:80 app/TransferPage.qml:160
+#: app/JourneyQueryPage.qml:81 app/TransferPage.qml:161
 #, kde-format
 msgid "Select"
 msgstr "Seleccionar"
@@ -1650,32 +1651,32 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:49
+#: app/LocationInfoDelegate.qml:46
 #, kde-format
 msgid "Entering %1"
 msgstr "Entrando en %1"
 
-#: app/LocationInfoDelegate.qml:70
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Tomas de corriente no compatibles: %1"
 
-#: app/LocationInfoDelegate.qml:78
+#: app/LocationInfoDelegate.qml:75
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Algunas tomas de corriente incompatibles: %1"
 
-#: app/LocationInfoDelegate.qml:85
+#: app/LocationInfoDelegate.qml:82
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Algunas clavijas de corriente incompatibles: %1"
 
-#: app/LocationInfoDelegate.qml:93
+#: app/LocationInfoDelegate.qml:90
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Cambio de zona horaria: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:101
+#: app/LocationInfoDelegate.qml:98
 #, kde-format
 msgid "Currency: %1"
 msgstr "Divisa: %1"
@@ -2642,17 +2643,17 @@ msgstr "Información sobre la salida del vehículo"
 msgid "Arrival Vehicle Layout"
 msgstr "Información sobre la llegada del vehículo"
 
-#: app/TransferDelegate.qml:96
+#: app/TransferDelegate.qml:93
 #, kde-format
 msgid "Select..."
 msgstr "Seleccionar..."
 
-#: app/TransferDelegate.qml:110
+#: app/TransferDelegate.qml:107
 #, kde-format
 msgid "Select transfer..."
 msgstr "Seleccionar trasbordo..."
 
-#: app/TransferDelegate.qml:116
+#: app/TransferDelegate.qml:113
 #, kde-format
 msgid "Delete transfer"
 msgstr "Borrar trasbordo"
@@ -2692,71 +2693,71 @@ msgstr "Bicicletas compartidas"
 msgid "Park & Ride"
 msgstr "Aparcamiento con enlace"
 
-#: app/TransferPage.qml:182
+#: app/TransferPage.qml:183
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 termina a las %2"
 
-#: app/TransferPage.qml:184
+#: app/TransferPage.qml:185
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Antes de la llegada a las %1 a %2"
 
-#: app/TransferPage.qml:195
+#: app/TransferPage.qml:196
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 empieza a las %2"
 
-#: app/TransferPage.qml:197
+#: app/TransferPage.qml:198
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Después de la salida a las %1 de %2"
 
-#: app/TripGroupDelegate.qml:56
+#: app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "Trip: %1"
 msgstr "Viaje: %1"
 
-#: app/TripGroupDelegate.qml:70
+#: app/TripGroupDelegate.qml:72
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Fecha: %2 (1 día)"
 msgstr[1] "Fecha: %2 (%1 días)"
 
-#: app/TripGroupDelegate.qml:85
+#: app/TripGroupDelegate.qml:87
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:97
+#: app/TripGroupDelegate.qml:99
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: algunas tomas de corriente incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:99
+#: app/TripGroupDelegate.qml:101
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: algunas clavijas de corriente incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:101
+#: app/TripGroupDelegate.qml:103
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: sin clavijas de corriente compatibles (%2)"
 
-#: app/TripGroupDelegate.qml:112
+#: app/TripGroupDelegate.qml:114
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Divisa: %2"
 msgstr[1] "Divisas: %2"
 
-#: app/TripGroupDelegate.qml:130
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Exportar viaje a GPX"
 
-#: app/TripGroupDelegate.qml:139
+#: app/TripGroupDelegate.qml:141
 #, kde-format
 msgid "Delete trip"
 msgstr "Borrar viaje"
