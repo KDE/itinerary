@@ -19,8 +19,8 @@ Dependencies:
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
     'libraries/kirigami-addons': '@latest'
-    'pim/kpkpass': '@same'
-    'pim/kitinerary': '@same'
+    'pim/kpkpass': '@latest'
+    'pim/kitinerary': '@latest'
     'pim/khealthcertificate': '@latest'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
@@ -54,8 +54,8 @@ Dependencies:
     'libraries/kosmindoormap': "@same"
 # TODO we cannot pull this in as long as it doesn't depend on "real" KF6
 #    'libraries/kirigami-addons': '@latest'
-    'pim/kpkpass': '@same'
-    'pim/kitinerary': '@same'
+    'pim/kpkpass': '@latest-kf6'
+    'pim/kitinerary': '@latest-kf6'
     'pim/khealthcertificate': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
