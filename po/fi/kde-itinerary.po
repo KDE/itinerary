@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-20 03:00+0000\n"
-"PO-Revision-Date: 2023-04-02 16:14+0300\n"
+"PO-Revision-Date: 2023-04-20 10:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -771,22 +771,19 @@ msgid "Sequence Number:"
 msgstr "Järjestysnumero:"
 
 #: app/FlightPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Boarding:"
+#, kde-format
 msgid "Boarding"
-msgstr "Koneeseen nousu:"
+msgstr "Koneeseen nousu"
 
 #: app/FlightPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Boarding time"
-msgstr "Koneeseennousuaika:"
+msgstr "Koneeseennousuaika"
 
 #: app/FlightPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Boarding group:"
+#, kde-format
 msgid "Boarding group"
-msgstr "Koneeseennousuryhmä:"
+msgstr "Koneeseennousuryhmä"
 
 #: app/FlightPage.qml:119
 #, kde-format
@@ -861,16 +858,14 @@ msgid "Ferry from %1 to %2"
 msgstr "Lautta %1–%2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "Rokotus (%1)"
+msgstr "Rokotustodistus – %1"
 
 #: app/HealthCertificateBarcode.qml:36
-#, fuzzy, kde-format
-#| msgid "Delete Certificate"
+#, kde-format
 msgid "Test certificate of %1"
-msgstr "Poista todistus"
+msgstr "Testitodistus – %1"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
