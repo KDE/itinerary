@@ -61,8 +61,8 @@ target_link_libraries(itinerary PUBLIC
     KPublicTransport
     KPublicTransportOnboard
     KOSMIndoorMap
-    KPim::Itinerary
-    KPim::PkPass
+    KPim${KF_MAJOR_VERSION}::Itinerary
+    KPim${KF_MAJOR_VERSION}::PkPass
     KF${KF_MAJOR_VERSION}::CalendarCore
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::I18nLocaleData

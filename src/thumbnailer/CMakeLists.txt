@@ -6,5 +6,5 @@ kcoreaddons_add_plugin(itinerarythumbnail SOURCES itinerarycreator.cpp INSTALL_N
 target_link_libraries(itinerarythumbnail
     KF${KF_MAJOR_VERSION}::KIOGui
     Qt::Gui
-    KPim::PkPass
+    KPim${KF_MAJOR_VERSION}::PkPass
 )

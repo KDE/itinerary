@@ -7,8 +7,8 @@ target_link_libraries(kfilemetadata_itineraryextractor
     KF${KF_MAJOR_VERSION}::FileMetaData
     KF${KF_MAJOR_VERSION}::I18n
     Qt::Gui
-    KPim::Itinerary
-    KPim::PkPass
+    KPim${KF_MAJOR_VERSION}::Itinerary
+    KPim${KF_MAJOR_VERSION}::PkPass
 )
 
 set_target_properties(kfilemetadata_itineraryextractor PROPERTIES
