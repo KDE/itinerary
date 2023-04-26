@@ -348,7 +348,17 @@ void ApplicationController::importLocalFile(const QUrl &url)
         }
     }
 
-    importData(f.readAll(), f.fileName());
+    QString fileName;
+#ifdef Q_OS_ANDROID
+    if (url.scheme() == QLatin1String("content")) {
+        fileName = KAndroidExtras::ContentResolver::fileName(url);
+    }
+#endif
+    if (fileName.isEmpty()) {
+        fileName = f.fileName();
+    }
+
+    importData(f.readAll(), fileName);
 }
 
 bool ApplicationController::importData(const QByteArray &data, const QString &fileName)
