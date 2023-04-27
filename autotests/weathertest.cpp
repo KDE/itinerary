@@ -5,7 +5,6 @@
 */
 
 #include "itinerary_version.h"
-#include "config-weather.h"
 
 #include <weatherforecast.h>
 #include <weatherforecastmanager.h>
@@ -69,7 +68,6 @@ private Q_SLOTS:
         fc.setDateTime({QDate(2018, 8, 1), QTime(2, 0), Qt::UTC}); // CEST is UTC +2
         fc.setTile({52.4, 13.5});
         fc.setRange(1);
-#ifdef HAVE_KHOLIDAYS
         fc.setSymbolType(WeatherForecast::Clear);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-clear-night"));
         fc.setRange(2);
@@ -84,7 +82,6 @@ private Q_SLOTS:
         fc.setDateTime({QDate(2018, 8, 1), QTime(22, 0), Qt::UTC});
         fc.setRange(24);
         QCOMPARE(fc.symbolIconName(), QStringLiteral("weather-few-clouds"));
-#endif
 
         QVERIFY(!(fc.symbolType() & WeatherForecast::Wind));
         fc.setWindSpeed(20.0f);

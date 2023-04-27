@@ -69,6 +69,7 @@ target_link_libraries(itinerary PUBLIC
     KF${KF_MAJOR_VERSION}::Contacts
     KF${KF_MAJOR_VERSION}::CoreAddons
     KF${KF_MAJOR_VERSION}::Notifications
+    KF${KF_MAJOR_VERSION}::Holidays
     Qt::Network
     Qt::Quick
 )
@@ -80,9 +81,6 @@ endif()
 
 if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
-endif()
-if (TARGET KF${KF_MAJOR_VERSION}::Holidays)
-    target_link_libraries(itinerary PUBLIC KF${KF_MAJOR_VERSION}::Holidays)
 endif()
 
 if (Qt5QuickCompiler_FOUND)

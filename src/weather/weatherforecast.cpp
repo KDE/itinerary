@@ -4,13 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "config-weather.h"
 #include "weatherforecast.h"
 #include "weathertile.h"
 
-#if HAVE_KHOLIDAYS
 #include <KHolidays/SunRiseSet>
-#endif
 
 #include <QDateTime>
 #include <QDebug>
@@ -124,7 +121,6 @@ static const icon_map_t icon_map[] = {
 
 bool WeatherForecastPrivate::useDayTimeIcon() const
 {
-#if HAVE_KHOLIDAYS
     if (m_range >= 24) {
         return true;
     }
@@ -134,9 +130,6 @@ bool WeatherForecastPrivate::useDayTimeIcon() const
     const auto sunset = QDateTime(m_dt.date(), KHolidays::SunRiseSet::utcSunset(m_dt.date(), m_tile.latitude(), m_tile.longitude()), Qt::UTC);
     // check overlap for two days, otherwise we might miss one on a day boundary
     return (sunrise < endDt && sunset > m_dt) || (sunrise.addDays(1) < endDt && sunset.addDays(1) > m_dt);
-#else
-    return true;
-#endif
 }
 
 QString WeatherForecast::symbolIconName() const

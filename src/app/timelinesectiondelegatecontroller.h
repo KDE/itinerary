@@ -7,11 +7,7 @@
 #ifndef TIMELINESECTIONDELEGATECONTROLLER_H
 #define TIMELINESECTIONDELEGATECONTROLLER_H
 
-#include "config-itinerary.h"
-
-#if HAVE_KHOLIDAYS
 #include <KHolidays/Holiday>
-#endif
 
 #include <QDate>
 #include <QObject>
@@ -59,9 +55,7 @@ private:
 
     TimelineModel *m_model = nullptr;
     QDate m_date;
-#if HAVE_KHOLIDAYS
     KHolidays::Holiday::List m_holidays;
-#endif
 };
 
 #endif // TIMELINESECTIONDELEGATECONTROLLER_H

@@ -9,7 +9,6 @@
 
 #cmakedefine01 HAVE_KCRASH
 #cmakedefine01 HAVE_KHEALTHCERTIFICATE
-#cmakedefine01 HAVE_KHOLIDAYS
 #cmakedefine01 HAVE_KUNITCONVERSION
 
 #endif

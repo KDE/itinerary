@@ -9,10 +9,7 @@
 #include "locationhelper.h"
 #include "timelinemodel.h"
 
-#if HAVE_KHOLIDAYS
-#include <kholidays_version.h>
 #include <KHolidays/HolidayRegion>
-#endif
 
 #include <KLocalizedString>
 
@@ -75,23 +72,17 @@ bool TimelineSectionDelegateController::isToday() const
 
 QString TimelineSectionDelegateController::subTitle() const
 {
-#if HAVE_KHOLIDAYS
     if (!m_holidays.isEmpty()) {
         return m_holidays.at(0).name();
     }
-#endif
 
     return {};
 }
 
 bool TimelineSectionDelegateController::isHoliday() const
 {
-#if HAVE_KHOLIDAYS
     // non-workdays being first is ensured recheckHoliday
     return !m_holidays.isEmpty() && m_holidays.at(0).dayType() == KHolidays::Holiday::NonWorkday;
-#else
-    return false;
-#endif
 }
 
 void TimelineSectionDelegateController::recheckHoliday()
@@ -100,7 +91,6 @@ void TimelineSectionDelegateController::recheckHoliday()
         return;
     }
 
-#if HAVE_KHOLIDAYS
     m_holidays.clear();
 
     const auto regionCode = LocationHelper::regionCode(m_model->locationAtTime(QDateTime(m_date, {})));
@@ -115,17 +105,12 @@ void TimelineSectionDelegateController::recheckHoliday()
 
     const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
     if (holidayRegion.isValid()) {
-#if KHOLIDAYS_VERSION < QT_VERSION_CHECK(5, 95, 0)
-        m_holidays = holidayRegion.holidays(m_date);
-#else
         m_holidays = holidayRegion.rawHolidaysWithAstroSeasons(m_date);
-#endif
         // prioritize non-workdays
         std::sort(m_holidays.begin(), m_holidays.end(), [](const auto &lhs, const auto &rhs) {
             return lhs.dayType() == KHolidays::Holiday::NonWorkday && rhs.dayType() == KHolidays::Holiday::Workday;
         });
     }
-#endif
 }
 
 #include "moc_timelinesectiondelegatecontroller.cpp"
