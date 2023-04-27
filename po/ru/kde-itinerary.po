@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-20 03:00+0000\n"
+"POT-Creation-Date: 2023-04-27 02:44+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -216,8 +216,8 @@ msgstr "Заменить"
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
 
-#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
-#: app/applicationcontroller.cpp:553
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
@@ -227,8 +227,8 @@ msgstr "Ошибка импорта: %1"
 msgid "Import failed: File too large."
 msgstr "Ошибка импорта: слишком большой файл."
 
-#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:413 app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:635
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -237,32 +237,32 @@ msgstr[1] "Импортировано %1 бронирования."
 msgstr[2] "Импортировано %1 бронирований."
 msgstr[3] "Импортировано одно бронирование."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:420
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:416
+#: app/applicationcontroller.cpp:426
 #, kde-format
 msgid "Pass imported."
 msgstr "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:422
+#: app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ничего не импортировано."
 
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
+#: app/applicationcontroller.cpp:501 app/applicationcontroller.cpp:527
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
+#: app/applicationcontroller.cpp:515 app/applicationcontroller.cpp:540
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:578
+#: app/applicationcontroller.cpp:588
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."

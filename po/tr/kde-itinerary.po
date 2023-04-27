@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-20 03:00+0000\n"
+"POT-Creation-Date: 2023-04-27 02:44+0000\n"
 "PO-Revision-Date: 2023-04-02 17:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -212,8 +212,8 @@ msgstr "Değiştir"
 msgid "Download failed: %1"
 msgstr "İndirme başarısız: %1"
 
-#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
-#: app/applicationcontroller.cpp:553
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
@@ -223,40 +223,40 @@ msgstr "İçe aktarma başarısız: %1"
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:413 app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:635
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Bir rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:420
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:416
+#: app/applicationcontroller.cpp:426
 #, kde-format
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:422
+#: app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
+#: app/applicationcontroller.cpp:501 app/applicationcontroller.cpp:527
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
+#: app/applicationcontroller.cpp:515 app/applicationcontroller.cpp:540
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:578
+#: app/applicationcontroller.cpp:588
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."

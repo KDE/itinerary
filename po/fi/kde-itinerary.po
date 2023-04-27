@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-20 03:00+0000\n"
+"POT-Creation-Date: 2023-04-27 02:44+0000\n"
 "PO-Revision-Date: 2023-04-20 10:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -209,8 +209,8 @@ msgstr "Korvaa"
 msgid "Download failed: %1"
 msgstr "Lataus epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:538
-#: app/applicationcontroller.cpp:553
+#: app/applicationcontroller.cpp:334 app/applicationcontroller.cpp:548
+#: app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Tuonti epäonnistui: %1"
@@ -220,40 +220,40 @@ msgstr "Tuonti epäonnistui: %1"
 msgid "Import failed: File too large."
 msgstr "Tuonti epäonnistui: Liian suuri tiedosto."
 
-#: app/applicationcontroller.cpp:403 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:413 app/applicationcontroller.cpp:625
+#: app/applicationcontroller.cpp:635
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Tuotiin yksi varaus."
 msgstr[1] "Tuotiin %1 varausta."
 
-#: app/applicationcontroller.cpp:410
+#: app/applicationcontroller.cpp:420
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Tuotiin terveystodistus."
 
-#: app/applicationcontroller.cpp:416
+#: app/applicationcontroller.cpp:426
 #, kde-format
 msgid "Pass imported."
 msgstr "Lippu on tuotu."
 
-#: app/applicationcontroller.cpp:422
+#: app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Nothing imported."
 msgstr "Mitään ei tuotu."
 
-#: app/applicationcontroller.cpp:491 app/applicationcontroller.cpp:517
+#: app/applicationcontroller.cpp:501 app/applicationcontroller.cpp:527
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Vienti epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:505 app/applicationcontroller.cpp:530
+#: app/applicationcontroller.cpp:515 app/applicationcontroller.cpp:540
 #, kde-format
 msgid "Export completed."
 msgstr "Vienti valmis."
 
-#: app/applicationcontroller.cpp:578
+#: app/applicationcontroller.cpp:588
 #, kde-format
 msgid "Import completed."
 msgstr "Tuonti valmis."
