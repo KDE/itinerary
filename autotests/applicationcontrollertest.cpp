@@ -12,6 +12,7 @@
 #include <documentmanager.h>
 #include <favoritelocationmodel.h>
 #include <healthcertificatemanager.h>
+#include <livedatamanager.h>
 #include <passmanager.h>
 #include <transfermanager.h>
 #include <tripgroupmanager.h>
@@ -165,6 +166,8 @@ private Q_SLOTS:
 
         HealthCertificateManager healthCertMgr;
 
+        LiveDataManager liveDataMgr;
+
         ApplicationController appController;
         QSignalSpy infoSpy(&appController, &ApplicationController::infoMessage);
         appController.setPkPassManager(&pkPassMgr);
@@ -174,6 +177,7 @@ private Q_SLOTS:
         appController.setFavoriteLocationModel(&favLoc);
         appController.setPassManager(&passMgr);
         appController.setHealthCertificateManager(&healthCertMgr);
+        appController.setLiveDataManager(&liveDataMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
