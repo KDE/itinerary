@@ -86,9 +86,10 @@ Item {
                 QQC2.Label {
                     id: primaryLabel
                     Layout.fillWidth: true
-                    Layout.preferredWidth: 1
+                    Layout.preferredWidth: primaryFieldsLayout.width/2 - Kirigami.Units.iconSizes.smallMedium
                     text: pass.primaryFields[0].label
                     color: pass.labelColor
+                    wrapMode: Text.WordWrap
                 }
                 QQC2.Label {
                     id: primaryValue
@@ -107,18 +108,19 @@ Item {
                         }
                         return "go-next-symbolic";
                     }
-                    width: Kirigami.Units.iconSizes.smallMedium
-                    height: width
+                    Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                    Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                     color: pass.labelColor
                     isMask: true
                 }
 
                 QQC2.Label {
                     Layout.fillWidth: true
-                    Layout.preferredWidth: 1
+                    Layout.preferredWidth: primaryFieldsLayout.width/2 - Kirigami.Units.iconSizes.smallMedium
                     horizontalAlignment: Qt.AlignRight
                     text: pass.primaryFields[1].label
                     color: pass.labelColor
+                    wrapMode: Text.WordWrap
                 }
                 QQC2.Label {
                     Layout.alignment: Qt.AlignRight
