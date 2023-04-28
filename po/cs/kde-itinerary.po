@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-26 00:50+0000\n"
+"POT-Creation-Date: 2023-04-28 00:49+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -207,8 +207,8 @@ msgstr "Nahradit"
 msgid "Download failed: %1"
 msgstr "Stažení bylo neúspěšné: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:571
-#: app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
+#: app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import selhal: %1"
@@ -218,8 +218,8 @@ msgstr "Import selhal: %1"
 msgid "Import failed: File too large."
 msgstr "Import selhal: Soubor je příliš velký."
 
-#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:668
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -227,32 +227,32 @@ msgstr[0] "Importována jedna rezervace."
 msgstr[1] "Importovány %1 rezervace."
 msgstr[2] "Importováno %1 rezervací."
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:423
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Importován zdravotní certifikát."
 
-#: app/applicationcontroller.cpp:419
+#: app/applicationcontroller.cpp:429
 #, kde-format
 msgid "Pass imported."
 msgstr "Letenka importována."
 
-#: app/applicationcontroller.cpp:455
+#: app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nic nebylo importováno."
 
-#: app/applicationcontroller.cpp:524 app/applicationcontroller.cpp:550
+#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exportování selhalo: %1"
 
-#: app/applicationcontroller.cpp:538 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "Exportování bylo dokončeno."
 
-#: app/applicationcontroller.cpp:611
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import completed."
 msgstr "Import byl dokončen."
@@ -2537,12 +2537,12 @@ msgstr "Exportovat výlet"
 msgid "Nothing on the itinerary for today."
 msgstr "Dnes nemáte v itineráři nic."
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:63
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"

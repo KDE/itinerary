@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-26 00:50+0000\n"
+"POT-Creation-Date: 2023-04-28 00:49+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -211,8 +211,8 @@ msgstr "Zastąp"
 msgid "Download failed: %1"
 msgstr "Nie udało się pobrać: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:571
-#: app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
+#: app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Nie udało się zaimportować: %1"
@@ -222,8 +222,8 @@ msgstr "Nie udało się zaimportować: %1"
 msgid "Import failed: File too large."
 msgstr "Nie udało się zaimportować: Plik jest zbyt duży."
 
-#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:668
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -231,32 +231,32 @@ msgstr[0] "Zaimportowano jedną rezerwację."
 msgstr[1] "Zaimportowano %1 rezerwacje."
 msgstr[2] "Zaimportowano %1 rezerwacji."
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:423
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Zaimportowano certyfikat zdrowia."
 
-#: app/applicationcontroller.cpp:419
+#: app/applicationcontroller.cpp:429
 #, kde-format
 msgid "Pass imported."
 msgstr "Zaimportowano wejściówkę."
 
-#: app/applicationcontroller.cpp:455
+#: app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nie zaimportowano niczego."
 
-#: app/applicationcontroller.cpp:524 app/applicationcontroller.cpp:550
+#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Nie udało się wyeksportować: %1"
 
-#: app/applicationcontroller.cpp:538 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "Ukończono eksportowanie."
 
-#: app/applicationcontroller.cpp:611
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import completed."
 msgstr "Ukończono importowanie."
@@ -2555,12 +2555,12 @@ msgstr "Wyeksportuj podróż"
 msgid "Nothing on the itinerary for today."
 msgstr "Nic w planie podróży na dzisiaj."
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:63
 #, kde-format
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"

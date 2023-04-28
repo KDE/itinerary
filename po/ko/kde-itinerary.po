@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-26 00:50+0000\n"
+"POT-Creation-Date: 2023-04-28 00:49+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -209,8 +209,8 @@ msgstr "바꾸기"
 msgid "Download failed: %1"
 msgstr "다운로드 실패: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:571
-#: app/applicationcontroller.cpp:586
+#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
+#: app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
@@ -220,39 +220,39 @@ msgstr "가져오기 실패: %1"
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/applicationcontroller.cpp:406 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
+#: app/applicationcontroller.cpp:668
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:413
+#: app/applicationcontroller.cpp:423
 #, kde-format
 msgid "Health certificate imported."
 msgstr "건강 증명서를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:419
+#: app/applicationcontroller.cpp:429
 #, kde-format
 msgid "Pass imported."
 msgstr "패스를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:455
+#: app/applicationcontroller.cpp:465
 #, kde-format
 msgid "Nothing imported."
 msgstr "가져온 것이 없습니다."
 
-#: app/applicationcontroller.cpp:524 app/applicationcontroller.cpp:550
+#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
 #, kde-format
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:538 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:611
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -2504,12 +2504,12 @@ msgstr "여행 내보내기"
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:63
 #, kde-format
 msgid "Today"
 msgstr "오늘"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
