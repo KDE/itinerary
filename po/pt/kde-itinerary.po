@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-28 00:49+0000\n"
-"PO-Revision-Date: 2023-04-17 16:54+0100\n"
+"PO-Revision-Date: 2023-04-28 12:30+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-POFile-SpellExtra: Disrupção Fi Wi wheelmap org Wallet Android KMail\n"
 "X-POFile-IgnoreConsistency: FULL\n"
 "X-POFile-SpellExtra: Nextcloud DavDroid Connect GPX gpx NAA RAT Davx SMART\n"
-"X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete\n"
+"X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete Pl\n"
 "X-POFile-IgnoreConsistency: Show\n"
 
 #, kde-format
@@ -1573,19 +1573,19 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:151
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
-msgstr ""
+msgstr "Cais %1"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "Pl. %1"
 
 #: app/JourneySectionStopDelegate.qml:166
 #, kde-format
