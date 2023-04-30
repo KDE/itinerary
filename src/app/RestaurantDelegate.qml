@@ -20,14 +20,12 @@ App.TimelineDelegate {
             id: headerLabel
             text: reservationFor.name
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
             Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservation, "startTime")
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
     }
 

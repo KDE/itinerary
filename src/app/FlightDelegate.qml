@@ -45,7 +45,6 @@ App.TimelineDelegate {
                 airportDisplayCode(reservationFor.departureAirport),
                 airportDisplayCode(reservationFor.arrivalAirport))
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             elide: Text.ElideRight
             Layout.fillWidth: true
             Accessible.ignored: true
@@ -55,7 +54,6 @@ App.TimelineDelegate {
                 Localizer.formatTime(reservationFor, "departureTime") :
                 Localizer.formatTime(reservationFor, "boardingTime")
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
     }
 

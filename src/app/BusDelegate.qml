@@ -25,14 +25,12 @@ App.TimelineDelegate {
                 return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
             }
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             Layout.fillWidth: true
             Accessible.ignored: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
             color: root.headerTextColor
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         }
         QQC2.Label {
             text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay

@@ -20,7 +20,6 @@ App.TimelineDelegate {
             text: root.rangeType == TimelineElement.RangeEnd ?
                 i18n("Rental Car Drop-off") :
                 i18n("Rental Car Pick-up")
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: root.headerTextColor
             Layout.fillWidth: true
         }
@@ -28,7 +27,6 @@ App.TimelineDelegate {
             text: root.rangeType ==  TimelineElement.RangeEnd ?
                 Localizer.formatTime(reservation, "dropoffTime") :
                 Localizer.formatTime(reservation, "pickupTime")
-            font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
             color: root.headerTextColor
         }
     }

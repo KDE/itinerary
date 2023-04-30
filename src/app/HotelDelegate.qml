@@ -20,7 +20,6 @@ App.TimelineDelegate {
         text: root.rangeType == TimelineElement.RangeEnd ?
             i18n("Check-out %1", reservationFor.name) : reservationFor.name
         color: root.headerTextColor
-        font.pointSize: Kirigami.Theme.defaultFont.pointSize * root.headerFontScale
         elide: Text.ElideRight
         Layout.fillWidth: true
         Accessible.ignored: true

@@ -29,8 +29,6 @@ Kirigami.AbstractCard {
     property alias headerIcon: _headerIcon
     property alias headerIconSource: _headerIcon.source
 
-    property double headerFontScale: 1.0
-
     showClickFeedback: true
 
     property QtObject controller: TimelineDelegateController {
