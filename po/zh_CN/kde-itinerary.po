@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 02:44+0000\n"
-"PO-Revision-Date: 2023-04-16 12:34\n"
+"PO-Revision-Date: 2023-04-29 08:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -573,7 +573,7 @@ msgstr "结束时间：%1"
 #: app/EventEditor.qml:17
 #, kde-format
 msgid "Edit Event"
-msgstr "编辑活动信息"
+msgstr ""
 
 #: app/EventEditor.qml:43
 #, kde-format
@@ -739,7 +739,7 @@ msgstr "座号："
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure"
-msgstr "出发信息"
+msgstr "出发时间"
 
 #: app/FlightEditor.qml:78
 #, kde-format

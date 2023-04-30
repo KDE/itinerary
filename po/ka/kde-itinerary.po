@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 02:44+0000\n"
-"PO-Revision-Date: 2023-04-23 06:14+0200\n"
+"PO-Revision-Date: 2023-04-30 04:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2764,6 +2764,12 @@ msgid ""
 "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
 "barcodes and pasting their content.</li></p>"
 msgstr ""
+"<p>KDE Itinerary-ში მონაცემები სხვადასხვანაირად შეგიძლიათ, შემოიტანოთ:"
+"<ul><li>პირდაპირ გახსენით PDF ბილეთები ან Apple Wallet-ის ბილეთები.</"
+"li><li>Android-ის კალენდარიდან, ჩანაწერებისთვის, რომლებიც KMail-ის, "
+"Nextcloud-ის ან Thunderbird-ის Itinerary-ის დამატებით და DAVx⁵-ით "
+"დასინქრონებული.</li><li>ბილეთის ბარკოდების სკანირებით და მათი შემცველობის "
+"ჩასმით.</li></p>"
 
 #: app/WelcomePage.qml:32
 #, kde-format
@@ -2779,6 +2785,11 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
+"KDE itinerary-ის ყველა ფუნქცია, რომელსაც ინტერნეტთან წვდომა სჭირდება, "
+"ნაგულისხმებად გამორთულია. ამიტომ, დიდი შანსია, ამ პარამეტრების გადახედვა "
+"დაგჭირდეთ. პროგრამის მოვლების დროს ასევე გირჩევთ, შეცვალოთ თქვენი "
+"მდებარეობის პარამეტრები, რათა შემდეგ სადგურამდე ან აეროპორტამდე უფრო ადვილად "
+"მიგაცილოთ."
 
 #: app/WelcomePage.qml:43
 #, kde-format
