@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:49+0000\n"
+"POT-Creation-Date: 2023-05-01 00:53+0000\n"
 "PO-Revision-Date: 2023-04-26 08:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -288,17 +288,17 @@ msgstr "Kamere ni na voljo."
 msgid "%1 to %2"
 msgstr "%1 do %2"
 
-#: app/BoatDelegate.qml:35 app/BusDelegate.qml:50
+#: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
 #, kde-format
 msgid "From: %1"
 msgstr "Od: %1"
 
-#: app/BoatDelegate.qml:49 app/BusDelegate.qml:65
+#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
 #, kde-format
 msgid "To: %1"
 msgstr "Do: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:80 app/TrainDelegate.qml:86
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:84
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Čas prihoda: %1"
@@ -486,7 +486,7 @@ msgstr "Oddaja najetega avta"
 msgid "Rental Car Pick-up"
 msgstr "Prevzem najetega avta"
 
-#: app/CarRentalDelegate.qml:52
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Oddaja: %1"
@@ -638,12 +638,12 @@ msgstr "Shrani"
 msgid "End: %1"
 msgstr "Konec: %1"
 
-#: app/EventDelegate.qml:62
+#: app/EventDelegate.qml:60
 #, kde-format
 msgid "Start time: %1"
 msgstr "Začetni čas: %1"
 
-#: app/EventDelegate.qml:66
+#: app/EventDelegate.qml:64
 #, kde-format
 msgid "End time: %1"
 msgstr "Končni čas: %1"
@@ -788,18 +788,18 @@ msgstr "Preimenuj"
 msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
 
-#: app/FlightDelegate.qml:67
+#: app/FlightDelegate.qml:65
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Odhod iz %1: %2"
 
-#: app/FlightDelegate.qml:82
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr "Terminal: %1  Izhod: %2  Sedež: %3"
 
-#: app/FlightDelegate.qml:93
+#: app/FlightDelegate.qml:91
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1290,12 +1290,12 @@ msgstr "Doza:"
 msgid "Check-out %1"
 msgstr "Odjava %1"
 
-#: app/HotelDelegate.qml:42
+#: app/HotelDelegate.qml:41
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Čas prijave v hotelu: %1"
 
-#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
+#: app/HotelDelegate.qml:47 app/HotelDelegate.qml:48
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Čas odjave iz hotela: %1"
@@ -2547,12 +2547,12 @@ msgstr "Čas odhoda"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
 
-#: app/TrainDelegate.qml:52
+#: app/TrainDelegate.qml:50
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "Odhod ob %1 na peronu %2"
 
-#: app/TrainDelegate.qml:74
+#: app/TrainDelegate.qml:72
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "Prihod ob %1 na peron %2"

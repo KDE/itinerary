@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:49+0000\n"
+"POT-Creation-Date: 2023-05-01 00:53+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -302,17 +302,17 @@ msgstr ""
 msgid "%1 to %2"
 msgstr "De %1 a %2"
 
-#: app/BoatDelegate.qml:35 app/BusDelegate.qml:50
+#: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
 #, kde-format
 msgid "From: %1"
 msgstr "De: %1"
 
-#: app/BoatDelegate.qml:49 app/BusDelegate.qml:65
+#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
 #, kde-format
 msgid "To: %1"
 msgstr "Para: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:80 app/TrainDelegate.qml:86
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:84
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Hora de chegada: %1"
@@ -519,7 +519,7 @@ msgstr "Devolución do coche de arrendamento"
 msgid "Rental Car Pick-up"
 msgstr "Recollida do coche de arrendamento"
 
-#: app/CarRentalDelegate.qml:52
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Devolución: %1"
@@ -681,12 +681,12 @@ msgstr "Gardar"
 msgid "End: %1"
 msgstr "Fin: %1"
 
-#: app/EventDelegate.qml:62
+#: app/EventDelegate.qml:60
 #, kde-format
 msgid "Start time: %1"
 msgstr "Data de comezo: %1"
 
-#: app/EventDelegate.qml:66
+#: app/EventDelegate.qml:64
 #, kde-format
 msgid "End time: %1"
 msgstr "Data de remate: %1"
@@ -843,19 +843,19 @@ msgstr ""
 msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
 
-#: app/FlightDelegate.qml:67
+#: app/FlightDelegate.qml:65
 #, fuzzy, kde-format
 #| msgid "Departure from %1: %2"
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Saída de %1: %2"
 
-#: app/FlightDelegate.qml:82
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr "Terminal: %1  Porta: %2  Asento: %3"
 
-#: app/FlightDelegate.qml:93
+#: app/FlightDelegate.qml:91
 #, fuzzy, kde-format
 #| msgid "Arrival at %1: %2"
 msgctxt "flight arrival, %1 is airport, %2 is time"
@@ -1381,12 +1381,12 @@ msgstr ""
 msgid "Check-out %1"
 msgstr "Emprestar %1"
 
-#: app/HotelDelegate.qml:42
+#: app/HotelDelegate.qml:41
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Hora de rexistro: %1"
 
-#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
+#: app/HotelDelegate.qml:47 app/HotelDelegate.qml:48
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Hora de saída: %1"
@@ -2699,12 +2699,12 @@ msgstr "Hora de saída:"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:52
+#: app/TrainDelegate.qml:50
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "Saída de %1 desde a plataforma %2"
 
-#: app/TrainDelegate.qml:74
+#: app/TrainDelegate.qml:72
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "Chegada a %1 na plataforma %2"

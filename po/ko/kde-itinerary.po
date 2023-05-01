@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-28 00:49+0000\n"
+"POT-Creation-Date: 2023-05-01 00:53+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -283,17 +283,17 @@ msgstr "사용 가능한 카메라가 없습니다."
 msgid "%1 to %2"
 msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
 
-#: app/BoatDelegate.qml:35 app/BusDelegate.qml:50
+#: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
 #, kde-format
 msgid "From: %1"
 msgstr "시점: %1"
 
-#: app/BoatDelegate.qml:49 app/BusDelegate.qml:65
+#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
 #, kde-format
 msgid "To: %1"
 msgstr "종점: %1"
 
-#: app/BoatDelegate.qml:60 app/BusDelegate.qml:80 app/TrainDelegate.qml:86
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:84
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "도착 시간: %1"
@@ -481,7 +481,7 @@ msgstr "렌터카 반납"
 msgid "Rental Car Pick-up"
 msgstr "렌터카 픽업"
 
-#: app/CarRentalDelegate.qml:52
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "반납: %1"
@@ -633,12 +633,12 @@ msgstr "저장"
 msgid "End: %1"
 msgstr "끝: %1"
 
-#: app/EventDelegate.qml:62
+#: app/EventDelegate.qml:60
 #, kde-format
 msgid "Start time: %1"
 msgstr "시작 시간: %1"
 
-#: app/EventDelegate.qml:66
+#: app/EventDelegate.qml:64
 #, kde-format
 msgid "End time: %1"
 msgstr "종료 시간: %1"
@@ -783,18 +783,18 @@ msgstr "이름 바꾸기"
 msgid "%1 %2 → %3"
 msgstr "%1 %2 → %3"
 
-#: app/FlightDelegate.qml:67
+#: app/FlightDelegate.qml:65
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "%1 출발: %2"
 
-#: app/FlightDelegate.qml:82
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr "터미널: %1 탑승구: %2 좌석: %3"
 
-#: app/FlightDelegate.qml:93
+#: app/FlightDelegate.qml:91
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1280,12 +1280,12 @@ msgstr "접종 차수:"
 msgid "Check-out %1"
 msgstr "%1 체크아웃"
 
-#: app/HotelDelegate.qml:42
+#: app/HotelDelegate.qml:41
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "체크인 시간: %1"
 
-#: app/HotelDelegate.qml:48 app/HotelDelegate.qml:49
+#: app/HotelDelegate.qml:47 app/HotelDelegate.qml:48
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "체크아웃 시간: %1"
@@ -2530,12 +2530,12 @@ msgstr "출발 시간"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/TrainDelegate.qml:52
+#: app/TrainDelegate.qml:50
 #, kde-format
 msgid "Departure from %1 on platform %2"
 msgstr "%1 출발: %2번 승강장"
 
-#: app/TrainDelegate.qml:74
+#: app/TrainDelegate.qml:72
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr "%1 도착: %2번 승강장"
