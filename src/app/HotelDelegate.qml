@@ -29,13 +29,10 @@ App.TimelineDelegate {
         id: topLayout
         spacing: Kirigami.Units.smallSpacing
 
-        App.PlaceDelegate {
-            place: reservationFor
-            controller: root.controller
+        QQC2.Label {
+            visible: !reservationFor.address.isEmpty
             width: topLayout.width
-            isRangeBegin: root.rangeType == TimelineElement.RangeBegin
-            isRangeEnd: root.rangeType == TimelineElement.RangeEnd
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.address)
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))

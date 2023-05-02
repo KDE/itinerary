@@ -33,11 +33,10 @@ App.TimelineDelegate {
         id: topLayout
         spacing: Kirigami.Units.smallSpacing
 
-        App.PlaceDelegate {
-            place: reservationFor
-            controller: root.controller
+        QQC2.Label {
+            visible: !reservationFor.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.address)
         }
     }
 

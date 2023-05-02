@@ -55,12 +55,10 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.departureStation
-            isRangeBegin: true
+        QQC2.Label {
+            visible: !reservationFor.departureStation.address.isEmpty
             width: topLayout.width
-            controller: root.controller
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.departureStation.address)
         }
 
         // TODO reserved seat
@@ -93,12 +91,10 @@ App.TimelineDelegate {
                 Accessible.ignored: !visible
             }
         }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalStation
-            isRangeEnd: true
+        QQC2.Label {
+            visible: !reservationFor.arrivalStation.address.isEmpty
             width: topLayout.width
-            controller: root.controller
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.arrivalStation.address)
         }
     }
 

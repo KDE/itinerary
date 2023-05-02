@@ -49,12 +49,10 @@ App.TimelineDelegate {
             color: Kirigami.Theme.textColor
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.departureBusStop
-            controller: root.controller
-            isRangeBegin: true
+        QQC2.Label {
+            visible: !reservationFor.departureBusStop.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.departureBusStop.address)
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -64,12 +62,10 @@ App.TimelineDelegate {
             color: Kirigami.Theme.textColor
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalBusStop
-            controller: root.controller
-            isRangeEnd: true
+        QQC2.Label {
+            visible: !reservationFor.arrivalBusStop.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.arrivalBusStop.address)
         }
         Row {
             width: topLayout.width

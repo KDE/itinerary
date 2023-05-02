@@ -33,12 +33,10 @@ App.TimelineDelegate {
             text: i18n("From: %1", reservationFor.departureBoatTerminal.name)
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.departureBoatTerminal
-            controller: root.controller
-            isRangeBegin: true
+        QQC2.Label {
+            visible: !reservationFor.departureBoatTerminal.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.departureBoatTerminal.address)
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -47,12 +45,10 @@ App.TimelineDelegate {
             text: i18n("To: %1", reservationFor.arrivalBoatTerminal.name)
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalBoatTerminal
-            controller: root.controller
-            isRangeEnd: true
+        QQC2.Label {
+            visible: !reservationFor.arrivalBoatTerminal.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.arrivalBoatTerminal.address)
         }
         QQC2.Label {
             text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))

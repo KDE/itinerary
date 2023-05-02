@@ -69,12 +69,10 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.departureAirport
-            controller: root.controller
-            isRangeBegin: true
+        QQC2.Label {
+            visible: !reservationFor.departureAirport.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.departureAirport.address)
         }
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
@@ -95,12 +93,10 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.arrivalAirport
-            controller: root.controller
-            isRangeEnd: true
+        QQC2.Label {
+            visible: !reservationFor.arrivalAirport.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.arrivalAirport.address)
         }
     }
 

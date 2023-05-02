@@ -47,14 +47,10 @@ App.TimelineDelegate {
             wrapMode: Text.WordWrap
             width: topLayout.width
         }
-        App.PlaceDelegate {
-            place: reservationFor.location
-            controller: root.controller
-            isRangeBegin: root.rangeType == TimelineElement.RangeBegin
-            isRangeEnd: root.rangeType == TimelineElement.RangeEnd
+        QQC2.Label {
+            visible: !reservationFor.location.address.isEmpty
             width: topLayout.width
-            visible: reservationFor.location != undefined
-            showButtons: false
+            text: Localizer.formatAddress(reservationFor.location.address)
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))

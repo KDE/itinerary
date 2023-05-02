@@ -39,12 +39,10 @@ App.TimelineDelegate {
             text: reservation.pickupLocation.name
             visible: root.rangeType != TimelineElement.RangeEnd
         }
-        App.PlaceDelegate {
-            place: reservation.pickupLocation
-            controller: root.controller
-            isRangeBegin: true
+        QQC2.Label {
+            visible: !reservationFor.pickupLocation.address.isEmpty
             width: topLayout.width
-            visible: root.rangeType != TimelineElement.RangeEnd
+            text: Localizer.formatAddress(reservationFor.pickupLocation.address)
         }
         QQC2.Label {
             text: i18n("Drop-off: %1", Localizer.formatDateTime(reservation, "dropoffTime"))
@@ -54,12 +52,10 @@ App.TimelineDelegate {
             text: reservation.dropoffLocation.name
             visible: root.rangeType != TimelineElement.RangeBegin
         }
-        App.PlaceDelegate {
-            place: reservation.dropoffLocation
-            isRangeEnd: true
+        QQC2.Label {
+            visible: !reservationFor.dropoffLocation.address.isEmpty
             width: topLayout.width
-            visible: root.rangeType != TimelineElement.RangeBegin
-            controller: root.controller
+            text: Localizer.formatAddress(reservationFor.dropoffLocation.address)
         }
     }
 
