@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-01 00:53+0000\n"
+"POT-Creation-Date: 2023-05-03 00:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -286,12 +286,12 @@ msgstr ""
 msgid "From: %1"
 msgstr ""
 
-#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
+#: app/BoatDelegate.qml:45 app/BusDelegate.qml:61
 #, kde-format
 msgid "To: %1"
 msgstr ""
 
-#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:84
+#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:82
 #, kde-format
 msgid "Arrival time: %1"
 msgstr ""
@@ -479,7 +479,7 @@ msgstr ""
 msgid "Rental Car Pick-up"
 msgstr ""
 
-#: app/CarRentalDelegate.qml:50
+#: app/CarRentalDelegate.qml:48
 #, kde-format
 msgid "Drop-off: %1"
 msgstr ""
@@ -626,17 +626,17 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
 #, kde-format
 msgid "End: %1"
 msgstr ""
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:56
 #, kde-format
 msgid "Start time: %1"
 msgstr ""
 
-#: app/EventDelegate.qml:64
+#: app/EventDelegate.qml:60
 #, kde-format
 msgid "End time: %1"
 msgstr ""
@@ -787,12 +787,12 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr ""
 
-#: app/FlightDelegate.qml:80
+#: app/FlightDelegate.qml:78
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr ""
 
-#: app/FlightDelegate.qml:91
+#: app/FlightDelegate.qml:89
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1275,12 +1275,12 @@ msgstr ""
 msgid "Check-out %1"
 msgstr ""
 
-#: app/HotelDelegate.qml:41
+#: app/HotelDelegate.qml:38
 #, kde-format
 msgid "Check-in time: %1"
 msgstr ""
 
-#: app/HotelDelegate.qml:47 app/HotelDelegate.qml:48
+#: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
 #, kde-format
 msgid "Check-out time: %1"
 msgstr ""
@@ -2482,7 +2482,7 @@ msgstr ""
 msgid "Export Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:310
+#: app/TimelinePage.qml:317
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -2518,7 +2518,7 @@ msgstr ""
 msgid "Departure from %1 on platform %2"
 msgstr ""
 
-#: app/TrainDelegate.qml:72
+#: app/TrainDelegate.qml:70
 #, kde-format
 msgid "Arrival at %1 on platform %2"
 msgstr ""
@@ -2692,50 +2692,50 @@ msgstr ""
 msgid "Following departure %1 from %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:58
+#: app/TripGroupDelegate.qml:62
 #, kde-format
 msgid "Trip: %1"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:72
+#: app/TripGroupDelegate.qml:86
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:87
+#: app/TripGroupDelegate.qml:102
 #, kde-format
 msgid "%1°C / %2°C"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:99
+#: app/TripGroupDelegate.qml:116
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:101
+#: app/TripGroupDelegate.qml:118
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:103
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:114
+#: app/TripGroupDelegate.qml:131
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:154
 #, kde-format
 msgid "Export trip to GPX"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:141
+#: app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Delete trip"
 msgstr ""
