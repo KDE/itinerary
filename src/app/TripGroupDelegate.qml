@@ -99,7 +99,8 @@ Kirigami.AbstractCard {
                 }
 
                 QQC2.Label {
-                    text: i18n("%1°C / %2°C", weatherForecast.minimumTemperature, weatherForecast.maximumTemperature)
+                    text: i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecast.minimumTemperature),
+                                                                 Localizer.formatTemperature(weatherForecast.maximumTemperature))
                     Accessible.ignored: !parent.visible
                     Layout.fillWidth: true
                 }
