@@ -9,6 +9,7 @@
 
 #include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
+#include <KItinerary/ExtractorValidator>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/MergeUtil>
 #include <KItinerary/ProgramMembership>
@@ -162,9 +163,14 @@ bool PassManager::import(const QVector<QVariant> &passes)
     postproc.process(passes);
     const auto processed = postproc.result();
 
+    ExtractorValidator validator;
+    validator.setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
+
     bool result = false;
     for (const auto &pass : processed) {
-        result |= import(pass);
+        if (validator.isValidElement(pass)) {
+            result |= import(pass);
+        }
     }
     return result;
 }
