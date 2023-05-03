@@ -73,7 +73,7 @@ ColumnLayout {
         label: ("Postal Code")
         text: place.address.postalCode
 
-        readonly property bool validFormat: root.addressFormat.postalCodeRegularExpression && text.match('^' + root.addressFormat.postalCodeRegularExpression + '$')
+        readonly property bool validFormat: root.addressFormat.postalCodeRegularExpression === '' || text.match('^' + root.addressFormat.postalCodeRegularExpression + '$')
         status: validFormat ? Kirigami.MessageType.Positive : Kirigami.MessageType.Warning
         statusMessage: postalCode.text && !validFormat ? i18n("Invalid postal code format for this country.") : "";
     }
