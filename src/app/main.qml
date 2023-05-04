@@ -209,6 +209,9 @@ Kirigami.ApplicationWindow {
             case "healthCert":
                 healthCertAction.trigger();
                 break;
+            case "live":
+                liveAction.trigger();
+                break;
             default:
                 console.warn("Requested to open unknown page", page);
             }

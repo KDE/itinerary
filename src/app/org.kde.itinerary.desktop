@@ -90,7 +90,7 @@ MimeType=application/vnd.apple.pkpass;application/ld+json;application/pdf;text/c
 Categories=Qt;KDE;Utility;
 X-KDE-HasTempFileOption=true
 X-KDE-FormFactor=desktop;tablet;handset;
-Actions=currentTicket;statistics;healthCert;
+Actions=currentTicket;statistics;healthCert;live;
 
 [Desktop Action currentTicket]
 Name=Current Ticket
@@ -174,3 +174,8 @@ Name[uk]=Сертифікати здоров'я
 Name[x-test]=xxHealth Certificatesxx
 Icon=cross-shape
 Exec=itinerary --page healthCert
+
+[Desktop Action live]
+Name=Live Status
+Icon=media-playback-playing
+Exec=itinerary --page live
