@@ -67,6 +67,18 @@ Kirigami.ScrollablePage {
                 text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
                 visible: journeySection.co2Emission > 0
             }
+
+            QQC2.Label {
+                Layout.row: 3
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: journeySection.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                visible: journeySection.notes.length > 0
+                font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
         }
 
         Kirigami.Separator {
