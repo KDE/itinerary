@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:49+0000\n"
+"POT-Creation-Date: 2023-05-04 00:48+0000\n"
 "PO-Revision-Date: 2023-04-27 14:24+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2767,39 +2767,41 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Date : %2 (un jour)"
 msgstr[1] "Date : %2 (%1 jours)"
 
-#: app/TripGroupDelegate.qml:102
+#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastPage.qml:68
 #, kde-format
-msgid "%1°C / %2°C"
-msgstr "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:116
+#: app/TripGroupDelegate.qml:117
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1 : certaines prises de courant sont incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:118
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1 : certaines fiches de courant sont incompatibles (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:122
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1 : pas de prise de courant compatible (%2)"
 
-#: app/TripGroupDelegate.qml:131
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Devise : %2"
 msgstr[1] "Devises : %2"
 
-#: app/TripGroupDelegate.qml:154
+#: app/TripGroupDelegate.qml:155
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Exporter un trajet vers un fichier « GPX »"
 
-#: app/TripGroupDelegate.qml:162
+#: app/TripGroupDelegate.qml:163
 #, kde-format
 msgid "Delete trip"
 msgstr "Supprimer un voyage"
@@ -2900,12 +2902,6 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Haut"
 
-#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, kde-format
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr "%1 / %2"
-
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, kde-format
 msgctxt "precipitation"
@@ -2993,6 +2989,9 @@ msgstr "Compris !"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1 %2 à partir de %3 vers %4 sur %5"
+
+#~ msgid "%1°C / %2°C"
+#~ msgstr "%1°C / %2°C"
 
 #~ msgid "Boarding time:"
 #~ msgstr "Heure d'embarquement :"

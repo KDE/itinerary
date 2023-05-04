@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:49+0000\n"
+"POT-Creation-Date: 2023-05-04 00:48+0000\n"
 "PO-Revision-Date: 2023-04-29 08:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2712,38 +2712,40 @@ msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "日期：%2 (%1 天)"
 
-#: app/TripGroupDelegate.qml:102
+#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastPage.qml:68
 #, kde-format
-msgid "%1°C / %2°C"
-msgstr "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr ""
 
-#: app/TripGroupDelegate.qml:116
+#: app/TripGroupDelegate.qml:117
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1：部分电源插座不兼容 (%2)"
 
-#: app/TripGroupDelegate.qml:118
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1：部分电源插头不兼容 (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:122
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1：没有兼容的电源插头 (%2)"
 
-#: app/TripGroupDelegate.qml:131
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 
-#: app/TripGroupDelegate.qml:154
+#: app/TripGroupDelegate.qml:155
 #, kde-format
 msgid "Export trip to GPX"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:162
+#: app/TripGroupDelegate.qml:163
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -2842,12 +2844,6 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, kde-format
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr ""
-
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, kde-format
 msgctxt "precipitation"
@@ -2928,3 +2924,6 @@ msgstr "知道了！"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgid "%1°C / %2°C"
+#~ msgstr "%1°C / %2°C"

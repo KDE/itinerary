@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:49+0000\n"
+"POT-Creation-Date: 2023-05-04 00:48+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2720,38 +2720,40 @@ msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "날짜: %2(%1일)"
 
-#: app/TripGroupDelegate.qml:102
+#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastPage.qml:68
 #, kde-format
-msgid "%1°C / %2°C"
-msgstr "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:116
+#: app/TripGroupDelegate.qml:117
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: 일부 전원 콘센트 호환되지 않음(%2)"
 
-#: app/TripGroupDelegate.qml:118
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: 일부 전원 플러그 호환되지 않음(%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:122
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: 호환되는 전원 플러그 없음(%2)"
 
-#: app/TripGroupDelegate.qml:131
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "통화: %2"
 
-#: app/TripGroupDelegate.qml:154
+#: app/TripGroupDelegate.qml:155
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "여정을 GPX로 내보내기"
 
-#: app/TripGroupDelegate.qml:162
+#: app/TripGroupDelegate.qml:163
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"
@@ -2850,12 +2852,6 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "높음"
 
-#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, kde-format
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr "%1 / %2"
-
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, kde-format
 msgctxt "precipitation"
@@ -2937,6 +2933,9 @@ msgstr "알겠습니다!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "%1°C / %2°C"
+#~ msgstr "%1°C / %2°C"
 
 #~ msgid "Boarding time:"
 #~ msgstr "탑승 시간:"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-03 00:49+0000\n"
+"POT-Creation-Date: 2023-05-04 00:48+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2778,27 +2778,30 @@ msgstr[0] "Data: %2 (jeden dzień)"
 msgstr[1] "Data: %2 (%1 dni)"
 msgstr[2] "Data: %2 (%1 dni)"
 
-#: app/TripGroupDelegate.qml:102
-#, kde-format
-msgid "%1°C / %2°C"
+#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/WeatherForecastPage.qml:68
+#, fuzzy, kde-format
+#| msgid "%1°C / %2°C"
+msgctxt "temperature range"
+msgid "%1 / %2"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:116
+#: app/TripGroupDelegate.qml:117
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: niektóre z gniazdek elektrycznych są niezgodne: (%2)"
 
-#: app/TripGroupDelegate.qml:118
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: Niektóre z wtyczek elektrycznych są niezgodne: (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:122
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: brak zgodnych wtyczek elektrycznych (%2)"
 
-#: app/TripGroupDelegate.qml:131
+#: app/TripGroupDelegate.qml:132
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -2806,12 +2809,12 @@ msgstr[0] "Waluta: %2"
 msgstr[1] "Waluty: %2"
 msgstr[2] "Waluty: %2"
 
-#: app/TripGroupDelegate.qml:154
+#: app/TripGroupDelegate.qml:155
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Wyeksportuj podróż do GPX"
 
-#: app/TripGroupDelegate.qml:162
+#: app/TripGroupDelegate.qml:163
 #, kde-format
 msgid "Delete trip"
 msgstr "Usuń podróż"
@@ -2913,13 +2916,6 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Wysokie"
 
-#: app/WeatherForecastDelegate.qml:54 app/WeatherForecastPage.qml:68
-#, fuzzy, kde-format
-#| msgid "%1°C / %2°C"
-msgctxt "temperature range"
-msgid "%1 / %2"
-msgstr "%1°C / %2°C"
-
 #: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
 #, fuzzy, kde-format
 #| msgctxt "distance in meter"
@@ -3008,6 +3004,9 @@ msgstr "Rozumiem!"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 o czasie %5"
+
+#~ msgid "%1°C / %2°C"
+#~ msgstr "%1°C / %2°C"
 
 #~ msgid "Boarding time:"
 #~ msgstr "Czas odprawy:"
