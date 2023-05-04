@@ -48,7 +48,7 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.location.address.isEmpty
+            visible: reservationFor.location != undefined && !reservationFor.location.address.isEmpty
             width: topLayout.width
             text: Localizer.formatAddress(reservationFor.location.address)
         }
