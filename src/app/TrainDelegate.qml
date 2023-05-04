@@ -47,10 +47,21 @@ App.TimelineDelegate {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            text: i18n("Departure from %1 on platform %2",
-                reservationFor.departureStation.name,
-                departure.hasExpectedPlatform ? departure.expectedPlatform :
-                reservationFor.departurePlatform ? reservationFor.departurePlatform : "-")
+            text: {
+                let platform = "";
+                if (departure.hasExpectedPlatform) {
+                    platform = departure.expectedPlatform;
+                } else if (reservationFor.departurePlatform) {
+                    platform = reservationFor.departurePlatform;
+                }
+
+                const station = reservationFor.departureStation.name;
+                if (platform) {
+                    return i18nc("Train departure", "Departure from %1 on platform %2", station, platform);
+                } else {
+                    return i18nc("Train departure", "Departure from %1", station);
+                }
+            }
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             width: topLayout.width
@@ -67,10 +78,22 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            text: i18n("Arrival at %1 on platform %2",
-                reservationFor.arrivalStation.name,
-                arrival.hasExpectedPlatform ? arrival.expectedPlatform :
-                reservationFor.arrivalPlatform ? reservationFor.arrivalPlatform : "-")
+            text: {
+                let platform = "";
+                if (arrival.hasExpectedPlatform) {
+                    platform = arrival.expectedPlatform;
+                } else if (reservationFor.arrivalPlatform) {
+                    platform = reservationFor.arrivalPlatform;
+                }
+
+                const station = reservationFor.arrivalStation.name;
+
+                if (platform) {
+                    return i18nc("Train arrival", "Arrival at %1 on platform %2", station, platform);
+                } else {
+                    return i18nc("Train arrival", "Arrival at %1", station);
+                }
+            }
             color: Kirigami.Theme.textColor
             wrapMode: Text.WordWrap
             width: topLayout.width
