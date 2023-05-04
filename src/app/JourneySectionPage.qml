@@ -51,6 +51,7 @@ Kirigami.ScrollablePage {
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: i18n("Direction: %1", journeySection.route.direction)
+                visible: journeySection.route.direction !== ""
             }
 
             QQC2.Label {
