@@ -22,6 +22,8 @@ App.TimelineDelegate {
                 i18n("End: %1", reservationFor.name) : reservationFor.name
             color: root.headerTextColor
             elide: Text.ElideRight
+            wrapMode: Text.WordWrap
+            maximumLineCount: 2
             Layout.fillWidth: true
             Accessible.ignored: true
         }

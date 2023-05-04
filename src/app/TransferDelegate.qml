@@ -46,6 +46,8 @@ Kirigami.AbstractCard {
                 color: Kirigami.Theme.textColor
                 Layout.fillWidth: true
                 elide: Text.ElideRight
+                wrapMode: Text.WordWrap
+                maximumLineCount: 2
                 Accessible.ignored: true
             }
             QQC2.Label {

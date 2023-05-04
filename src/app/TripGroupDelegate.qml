@@ -62,6 +62,8 @@ Kirigami.AbstractCard {
                 text: root.rangeType === TimelineElement.RangeEnd ? i18n("End: %1", tripGroup.name) : i18n("Trip: %1", tripGroup.name)
                 color: Kirigami.Theme.textColor
                 elide: Text.ElideRight
+                wrapMode: Text.WordWrap
+                maximumLineCount: 2
                 Layout.fillWidth: true
                 Accessible.ignored: true
             }
