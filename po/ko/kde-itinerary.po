@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 02:44+0000\n"
+"POT-Creation-Date: 2023-05-04 02:56+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1746,13 +1746,13 @@ msgstr "새 출발 승강장: %1"
 msgid "New arrival platform is: %1"
 msgstr "새 도착 승강장: %1"
 
-#: app/passmanager.cpp:244
+#: app/passmanager.cpp:250
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "만료됨"
 
-#: app/passmanager.cpp:246
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
