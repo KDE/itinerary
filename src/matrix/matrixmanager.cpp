@@ -123,8 +123,11 @@ void MatrixManager::postLocation(const QString &roomId, float latitude, float lo
             }},
             {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
             {QLatin1String("geo_uri"), QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
-            {QLatin1String("org.matrix.msc1767.text"), i18n("%1 at Lat: %2, Lon: %3", description, latitude, longitude)},
-            {QLatin1String("org.matrix.msc3488.location"),  QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+            {QLatin1String("org.matrix.msc1767.text"), description},
+            {QLatin1String("org.matrix.msc3488.location"), QJsonObject {
+                {QLatin1String("uri"), QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+                {QLatin1String("description"), description}
+            }}
     };
 
     postEvent(roomId, QLatin1String("m.room.message"), content);
