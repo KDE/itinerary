@@ -9,6 +9,7 @@
 #include "reservationhelper.h"
 #include "logging.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -37,6 +38,7 @@ using namespace KItinerary;
 
 static bool isSameTrip(const QVariant &lhs, const QVariant &rhs)
 {
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 23, 41)
     if (lhs.userType() != rhs.userType() || !JsonLd::canConvert<Reservation>(lhs) || !JsonLd::canConvert<Reservation>(rhs)) {
         return false;
     }
@@ -44,6 +46,9 @@ static bool isSameTrip(const QVariant &lhs, const QVariant &rhs)
     const auto lhsTrip = JsonLd::convert<Reservation>(lhs).reservationFor();
     const auto rhsTrip = JsonLd::convert<Reservation>(rhs).reservationFor();
     return MergeUtil::isSame(lhsTrip, rhsTrip);
+#else
+    return MergeUtil::isSameIncidence(lhs, rhs);
+#endif
 }
 
 ReservationManager::ReservationManager(QObject* parent)
