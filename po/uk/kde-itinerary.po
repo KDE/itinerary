@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-05-05 00:48+0000\n"
 "PO-Revision-Date: 2023-04-26 15:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -642,12 +642,12 @@ msgstr "Зберегти"
 msgid "End: %1"
 msgstr "Кінець: %1"
 
-#: app/EventDelegate.qml:56
+#: app/EventDelegate.qml:58
 #, kde-format
 msgid "Start time: %1"
 msgstr "Час початку: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "End time: %1"
 msgstr "Час завершення: %1"
@@ -1560,12 +1560,12 @@ msgstr "Проїзд %1 (%2)"
 msgid "Direction: %1"
 msgstr "Напрям: %1"
 
-#: app/JourneySectionPage.qml:60
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Відстань: %1"
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -1877,7 +1877,7 @@ msgstr "Експортувати…"
 msgid "Help"
 msgstr "Довідка"
 
-#: app/main.qml:220
+#: app/main.qml:223
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."
@@ -2669,17 +2669,17 @@ msgstr "Компонування засобу пересування відпр�
 msgid "Arrival Vehicle Layout"
 msgstr "Компонування засобу пересування прибуття"
 
-#: app/TransferDelegate.qml:93
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Вибрати…"
 
-#: app/TransferDelegate.qml:107
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Вибрати пересадку…"
 
-#: app/TransferDelegate.qml:113
+#: app/TransferDelegate.qml:115
 #, kde-format
 msgid "Delete transfer"
 msgstr "Вилучити пересадку"
@@ -2744,7 +2744,7 @@ msgstr "Після відправлення %1 з %2"
 msgid "Trip: %1"
 msgstr "Подорож: %1"
 
-#: app/TripGroupDelegate.qml:86
+#: app/TripGroupDelegate.qml:88
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
@@ -2753,29 +2753,29 @@ msgstr[1] "Дата: %2 (%1 дні)"
 msgstr[2] "Дата: %2 (%1 днів)"
 msgstr[3] "Дата: %2 (%1 день)"
 
-#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
 #: app/WeatherForecastPage.qml:68
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:117
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: несумісні розетки (%2)"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: несумісні штекери (%2)"
 
-#: app/TripGroupDelegate.qml:122
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: немає сумісних штекерів (%2)"
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:134
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -2784,12 +2784,12 @@ msgstr[1] "Валюти: %2"
 msgstr[2] "Валюти: %2"
 msgstr[3] "Валюта: %2"
 
-#: app/TripGroupDelegate.qml:155
+#: app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Експорт подорож до GPX"
 
-#: app/TripGroupDelegate.qml:163
+#: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
 msgstr "Вилучити подорож"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-05-05 00:48+0000\n"
 "PO-Revision-Date: 2023-04-26 10:57+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -638,12 +638,12 @@ msgstr "Opslaan"
 msgid "End: %1"
 msgstr "Einde: %1"
 
-#: app/EventDelegate.qml:56
+#: app/EventDelegate.qml:58
 #, kde-format
 msgid "Start time: %1"
 msgstr "Begintijd: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "End time: %1"
 msgstr "Eindtijd: %1"
@@ -1554,12 +1554,12 @@ msgstr "Autorijden %1 (%2)"
 msgid "Direction: %1"
 msgstr "Richting: %1"
 
-#: app/JourneySectionPage.qml:60
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Afstand: %1"
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -1869,7 +1869,7 @@ msgstr "Exporteren..."
 msgid "Help"
 msgstr "Help"
 
-#: app/main.qml:220
+#: app/main.qml:223
 #, kde-format
 msgid "Map download finished."
 msgstr "Download van kaart voltooid."
@@ -2658,17 +2658,17 @@ msgstr "Indeling van het vertrekkende voertuig"
 msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"
 
-#: app/TransferDelegate.qml:93
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Selecteren..."
 
-#: app/TransferDelegate.qml:107
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Overstap selecteren..."
 
-#: app/TransferDelegate.qml:113
+#: app/TransferDelegate.qml:115
 #, kde-format
 msgid "Delete transfer"
 msgstr "Overstap verwijderen"
@@ -2733,48 +2733,48 @@ msgstr "Volgend vertrek %1 om %2"
 msgid "Trip: %1"
 msgstr "Trip: %1"
 
-#: app/TripGroupDelegate.qml:86
+#: app/TripGroupDelegate.qml:88
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Datum: %2 (één dag)"
 msgstr[1] "Datum: %2 (%1 dagen)"
 
-#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
 #: app/WeatherForecastPage.qml:68
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:117
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: enige niet-overeenkomstige stopcontacten: (%2)"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: enige niet-overeenkomstige stekkers: (%2)"
 
-#: app/TripGroupDelegate.qml:122
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: niet-overeenkomstige stekkers: (%2)"
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:134
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuta: %2"
 msgstr[1] "Valuta's: %2"
 
-#: app/TripGroupDelegate.qml:155
+#: app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Reis exporteren naar GPX"
 
-#: app/TripGroupDelegate.qml:163
+#: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
 msgstr "Reis verwijderen"

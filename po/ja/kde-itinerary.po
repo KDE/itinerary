@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-05-05 00:48+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -629,12 +629,12 @@ msgstr ""
 msgid "End: %1"
 msgstr ""
 
-#: app/EventDelegate.qml:56
+#: app/EventDelegate.qml:58
 #, kde-format
 msgid "Start time: %1"
 msgstr ""
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "End time: %1"
 msgstr ""
@@ -1540,12 +1540,12 @@ msgstr ""
 msgid "Direction: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:60
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "CO₂: %1"
 msgstr ""
@@ -1855,7 +1855,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: app/main.qml:220
+#: app/main.qml:223
 #, kde-format
 msgid "Map download finished."
 msgstr ""
@@ -2622,17 +2622,17 @@ msgstr ""
 msgid "Arrival Vehicle Layout"
 msgstr ""
 
-#: app/TransferDelegate.qml:93
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr ""
 
-#: app/TransferDelegate.qml:107
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr ""
 
-#: app/TransferDelegate.qml:113
+#: app/TransferDelegate.qml:115
 #, kde-format
 msgid "Delete transfer"
 msgstr ""
@@ -2697,48 +2697,48 @@ msgstr ""
 msgid "Trip: %1"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:86
+#: app/TripGroupDelegate.qml:88
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
 #: app/WeatherForecastPage.qml:68
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:117
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:122
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:134
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:155
+#: app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export trip to GPX"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:163
+#: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
 msgstr ""

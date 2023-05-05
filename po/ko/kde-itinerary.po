@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-05-05 00:48+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -633,12 +633,12 @@ msgstr "저장"
 msgid "End: %1"
 msgstr "끝: %1"
 
-#: app/EventDelegate.qml:56
+#: app/EventDelegate.qml:58
 #, kde-format
 msgid "Start time: %1"
 msgstr "시작 시간: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "End time: %1"
 msgstr "종료 시간: %1"
@@ -1546,12 +1546,12 @@ msgstr "%1 운전(%2)"
 msgid "Direction: %1"
 msgstr "방향: %1"
 
-#: app/JourneySectionPage.qml:60
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "거리: %1"
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -1860,7 +1860,7 @@ msgstr "내보내기..."
 msgid "Help"
 msgstr "도움말"
 
-#: app/main.qml:220
+#: app/main.qml:223
 #, kde-format
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
@@ -2639,17 +2639,17 @@ msgstr "출발하는 차량 구성"
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
-#: app/TransferDelegate.qml:93
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "선택..."
 
-#: app/TransferDelegate.qml:107
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "환승 선택..."
 
-#: app/TransferDelegate.qml:113
+#: app/TransferDelegate.qml:115
 #, kde-format
 msgid "Delete transfer"
 msgstr "환승 삭제"
@@ -2714,46 +2714,46 @@ msgstr "다음: %2 출발: %1"
 msgid "Trip: %1"
 msgstr "여행: %1"
 
-#: app/TripGroupDelegate.qml:86
+#: app/TripGroupDelegate.qml:88
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "날짜: %2(%1일)"
 
-#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
 #: app/WeatherForecastPage.qml:68
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:117
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: 일부 전원 콘센트 호환되지 않음(%2)"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: 일부 전원 플러그 호환되지 않음(%2)"
 
-#: app/TripGroupDelegate.qml:122
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: 호환되는 전원 플러그 없음(%2)"
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:134
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "통화: %2"
 
-#: app/TripGroupDelegate.qml:155
+#: app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "여정을 GPX로 내보내기"
 
-#: app/TripGroupDelegate.qml:163
+#: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
 msgstr "여정 삭제"

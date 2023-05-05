@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 00:48+0000\n"
+"POT-Creation-Date: 2023-05-05 00:48+0000\n"
 "PO-Revision-Date: 2023-04-26 08:00+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -638,12 +638,12 @@ msgstr "Shrani"
 msgid "End: %1"
 msgstr "Konec: %1"
 
-#: app/EventDelegate.qml:56
+#: app/EventDelegate.qml:58
 #, kde-format
 msgid "Start time: %1"
 msgstr "Začetni čas: %1"
 
-#: app/EventDelegate.qml:60
+#: app/EventDelegate.qml:62
 #, kde-format
 msgid "End time: %1"
 msgstr "Končni čas: %1"
@@ -1556,12 +1556,12 @@ msgstr "Vožnja %1 (%2)"
 msgid "Direction: %1"
 msgstr "Smer: %1"
 
-#: app/JourneySectionPage.qml:60
+#: app/JourneySectionPage.qml:61
 #, kde-format
 msgid "Distance: %1"
 msgstr "Razdalja: %1"
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -1873,7 +1873,7 @@ msgstr "Izvozi..."
 msgid "Help"
 msgstr "Pomoč"
 
-#: app/main.qml:220
+#: app/main.qml:223
 #, kde-format
 msgid "Map download finished."
 msgstr "Prenos zemljevidov končan."
@@ -2656,17 +2656,17 @@ msgstr "Oblika vozila v odhodu"
 msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"
 
-#: app/TransferDelegate.qml:93
+#: app/TransferDelegate.qml:95
 #, kde-format
 msgid "Select..."
 msgstr "Izberi..."
 
-#: app/TransferDelegate.qml:107
+#: app/TransferDelegate.qml:109
 #, kde-format
 msgid "Select transfer..."
 msgstr "Izberi prevoz..."
 
-#: app/TransferDelegate.qml:113
+#: app/TransferDelegate.qml:115
 #, kde-format
 msgid "Delete transfer"
 msgstr "Izbriši prevoz"
@@ -2731,7 +2731,7 @@ msgstr "Po odhodu %1 iz %2"
 msgid "Trip: %1"
 msgstr "Izlet: %1"
 
-#: app/TripGroupDelegate.qml:86
+#: app/TripGroupDelegate.qml:88
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
@@ -2740,29 +2740,29 @@ msgstr[1] "Datum: %2 (%1 dneva)"
 msgstr[2] "Datum: %2 (%1 dnevi)"
 msgstr[3] "Datum: %2 (%1 dni)"
 
-#: app/TripGroupDelegate.qml:102 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
 #: app/WeatherForecastPage.qml:68
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:117
+#: app/TripGroupDelegate.qml:119
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: nekaj nezdružljivih vtičnic (%2)"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:121
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: nekaj nezdružljivih vtikačev (%2)"
 
-#: app/TripGroupDelegate.qml:122
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: nobenih združljivih vtikačev (%2)"
 
-#: app/TripGroupDelegate.qml:132
+#: app/TripGroupDelegate.qml:134
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -2771,12 +2771,12 @@ msgstr[1] "Valuti: %2"
 msgstr[2] "Valute: %2"
 msgstr[3] "Valute: %2"
 
-#: app/TripGroupDelegate.qml:155
+#: app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export trip to GPX"
 msgstr "Izvozi izlet v GPX"
 
-#: app/TripGroupDelegate.qml:163
+#: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši izlet"
