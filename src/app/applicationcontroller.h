@@ -95,6 +95,7 @@ Q_SIGNALS:
 private:
     bool hasClipboardContent() const;
 
+    static bool probablyUrl(const QString &text);
     void importLocalFile(const QUrl &url);
     bool importBundle(const QUrl &url);
     bool importBundle(const QByteArray &data);

@@ -184,6 +184,11 @@ void ApplicationController::setHealthCertificateManager(HealthCertificateManager
     m_healthCertMgr = healthCertMgr;
 }
 
+bool ApplicationController::probablyUrl(const QString &text)
+{
+    return text.startsWith(QLatin1String("https://")) && text.size() < 256;
+}
+
 #ifdef Q_OS_ANDROID
 void ApplicationController::importFromIntent(const KAndroidExtras::Intent &intent)
 {
@@ -207,7 +212,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         return;
     }
 
-    // shared data, e.g. from email applications like FairMail
+    // shared content, e.g. URL from the browser or email applications like FairMail
     if (action == Intent::ACTION_SEND || action == Intent::ACTION_SEND_MULTIPLE) {
         const QString type = intent.getType();
         const auto subject = intent.getStringExtra(Intent::EXTRA_SUBJECT);
@@ -216,6 +221,11 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
         qCInfo(Log) << action << type << subject << from << text;
         const QStringList attachments = ItineraryActivity().attachmentsForIntent(intent);
         qCInfo(Log) << attachments;
+
+        if (probablyUrl(text)) {
+            importFromUrl(QUrl(text));
+            return;
+        }
 
         KMime::Message msg;
         msg.subject()->fromUnicodeString(subject, "utf-8");
@@ -273,9 +283,10 @@ void ApplicationController::importFromClipboard()
     else if (md->hasText()) {
         const auto content = md->data(QLatin1String("text/plain"));
 
+        const QString contentString = QString::fromUtf8(content);
         // URL copied as plain text
-        if (content.startsWith("https://") && content.size() < 256) {
-            const QUrl url(QString::fromUtf8(content));
+        if (probablyUrl(contentString)) {
+            const QUrl url(contentString);
             if (url.isValid()) {
                 importFromUrl(url);
                 return;
