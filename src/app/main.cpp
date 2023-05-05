@@ -410,6 +410,11 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(l10nContext);
     engine.load(QStringLiteral("qrc:/main.qml"));
 
+    // Exit on QML load error.
+    if (engine.rootObjects().isEmpty()) {
+        return 1;
+    }
+
     handleCommandLineArguments(&appController, parser.positionalArguments(), parser.isSet(isTemporaryOpt), parser.value(pageOpt));
 
 #ifdef Q_OS_ANDROID
