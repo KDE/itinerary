@@ -36,6 +36,7 @@ Kirigami.Page {
     QQC2.SwipeView {
         id: swipeView
         anchors.fill: parent
+        currentIndex: !onboardStatus.supportsPosition ? 1 : 0
 
         Kirigami.Page {
             leftPadding: 0
@@ -125,10 +126,18 @@ Kirigami.Page {
         JourneySectionPage {
             journeySection: onboardStatus.journey.sections[0]
             showProgress: true
+
+            Kirigami.PlaceholderMessage {
+                anchors.fill: parent
+                visible: !onboardStatus.hasJourney
+                text: i18n("Waiting for data...")
+            }
         }
     }
 
     footer: Kirigami.NavigationTabBar {
+        visible: onboardStatus.supportsPosition && onboardStatus.supportsJourney
+
         actions: [
             Kirigami.Action {
                 id: positionAction
@@ -137,6 +146,7 @@ Kirigami.Page {
                 onTriggered: swipeView.currentIndex = 0
                 checked: swipeView.currentIndex === 0
                 enabled: onboardStatus.hasPosition
+                visible: onboardStatus.supportsPosition
             },
             Kirigami.Action {
                 id: journeyAction
@@ -145,6 +155,7 @@ Kirigami.Page {
                 onTriggered: swipeView.currentIndex = 1;
                 checked: swipeView.currentIndex === 1
                 enabled: onboardStatus.hasJourney
+                visible: onboardStatus.supportsJourney
             }
         ]
     }
