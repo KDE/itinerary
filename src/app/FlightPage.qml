@@ -129,7 +129,7 @@ App.DetailsPage {
 
                 // departure data
                 MobileForm.FormCardHeader {
-                    title: i18n("Departure")
+                    title: i18nc("Flight departure", "Departure")
                 }
 
                 MobileForm.FormTextDelegate {
@@ -188,7 +188,7 @@ App.DetailsPage {
 
                 // departure data
                 MobileForm.FormCardHeader {
-                    title: i18n("Arrival")
+                    title: i18nc("Flight arrival", "Arrival")
                 }
 
                 MobileForm.FormTextDelegate {

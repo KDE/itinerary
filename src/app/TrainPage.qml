@@ -101,7 +101,7 @@ App.DetailsPage {
 
                 // departure data
                 MobileForm.FormCardHeader {
-                    title: i18n("Departure")
+                    title: i18nc("Train departure", "Departure")
                 }
                 MobileForm.FormTextDelegate {
                     id: departureTimeDelegate
@@ -188,7 +188,7 @@ App.DetailsPage {
 
                 // arrival data
                 MobileForm.FormCardHeader {
-                    title: i18n("Arrival")
+                    title: i18nc("Train arrival", "Arrival")
                 }
 
                 MobileForm.FormTextDelegate {
