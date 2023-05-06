@@ -177,5 +177,13 @@ Exec=itinerary --page healthCert
 
 [Desktop Action live]
 Name=Live Status
+Name[ca]=Estat en directe
+Name[ca@valencia]=Estat en directe
+Name[de]=Live-Status
+Name[nl]=Actuele status
+Name[sl]=Stanje v živo
+Name[tr]=Canlı Durum
+Name[uk]=Інтерактивний стан
+Name[x-test]=xxLive Statusxx
 Icon=media-playback-playing
 Exec=itinerary --page live
