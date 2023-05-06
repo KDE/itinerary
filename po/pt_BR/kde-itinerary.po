@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-05 00:48+0000\n"
+"POT-Creation-Date: 2023-05-06 00:48+0000\n"
 "PO-Revision-Date: 2023-02-14 09:23-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -207,57 +207,57 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:316
+#: app/applicationcontroller.cpp:327
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Falha ao baixar: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
-#: app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:592
+#: app/applicationcontroller.cpp:607
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
-#: app/applicationcontroller.cpp:342
+#: app/applicationcontroller.cpp:353
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Falha ao importar: arquivo muito grande."
 
-#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
-#: app/applicationcontroller.cpp:668
+#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:669
+#: app/applicationcontroller.cpp:679
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:423
+#: app/applicationcontroller.cpp:434
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:440
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Pass imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:465
+#: app/applicationcontroller.cpp:476
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
+#: app/applicationcontroller.cpp:545 app/applicationcontroller.cpp:571
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:621
+#: app/applicationcontroller.cpp:632
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -299,7 +299,7 @@ msgstr "De: %1"
 msgid "To: %1"
 msgstr "Para: %1"
 
-#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:82
+#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:105
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Hora de chegada: %1"
@@ -316,9 +316,10 @@ msgstr "Passagem de barco"
 msgid "Barcode Scan Mode"
 msgstr "Modo de escaneamento de código de barras"
 
-#: app/BoatPage.qml:75 app/BusPage.qml:85 app/FlightPage.qml:132
-#: app/TouristAttractionPage.qml:59 app/TrainPage.qml:104
-#, kde-format
+#: app/BoatPage.qml:75
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Partida"
 
@@ -336,9 +337,10 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/BoatPage.qml:111 app/BusPage.qml:147 app/FlightPage.qml:191
-#: app/TouristAttractionPage.qml:77 app/TrainPage.qml:191
-#, kde-format
+#: app/BoatPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
@@ -455,6 +457,13 @@ msgstr "Local"
 msgid "Bus Ticket"
 msgstr "Passagem de ônibus"
 
+#: app/BusPage.qml:85
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Bus departure"
+msgid "Departure"
+msgstr "Partida"
+
 #: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgctxt "flight departure gate"
@@ -468,6 +477,13 @@ msgstr "Portão de partida:"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Estação:"
+
+#: app/BusPage.qml:147
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Bus arrival"
+msgid "Arrival"
+msgstr "Chegada"
 
 #: app/BusPage.qml:228 app/TrainPage.qml:358
 #, kde-format
@@ -936,6 +952,13 @@ msgstr "Grupo de embarque:"
 msgid "Airline"
 msgstr "Linha aérea:"
 
+#: app/FlightPage.qml:132
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Flight departure"
+msgid "Departure"
+msgstr "Partida"
+
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, fuzzy, kde-format
 #| msgid "Terminal:"
@@ -947,6 +970,13 @@ msgstr "Terminal:"
 #| msgid "Gate:"
 msgid "Gate"
 msgstr "Portão:"
+
+#: app/FlightPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Flight arrival"
+msgid "Arrival"
+msgstr "Chegada"
 
 #: app/FlightPage.qml:251
 #, kde-format
@@ -2632,11 +2662,21 @@ msgstr "%1, %2"
 msgid "Tourist Attraction"
 msgstr "Atração turística"
 
+#: app/TouristAttractionPage.qml:59
+#, kde-format
+msgid "Departure"
+msgstr "Partida"
+
 #: app/TouristAttractionPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Departure Time:"
 msgid "Depature Time"
 msgstr "Hora de partida:"
+
+#: app/TouristAttractionPage.qml:77
+#, kde-format
+msgid "Arrival"
+msgstr "Chegada"
 
 #: app/TouristAttractionPage.qml:81
 #, fuzzy, kde-format
@@ -2644,15 +2684,34 @@ msgstr "Hora de partida:"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:50
-#, kde-format
+#: app/TrainDelegate.qml:60
+#, fuzzy, kde-format
+#| msgid "Departure from %1 on platform %2"
+msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "Partida de %1 na plataforma %2"
 
-#: app/TrainDelegate.qml:70
-#, kde-format
+#: app/TrainDelegate.qml:62
+#, fuzzy, kde-format
+#| msgctxt "flight departure, %1 is airport, %2 is time"
+#| msgid "Departure from %1: %2"
+msgctxt "Train departure"
+msgid "Departure from %1"
+msgstr "Partida de %1: %2"
+
+#: app/TrainDelegate.qml:92
+#, fuzzy, kde-format
+#| msgid "Arrival at %1 on platform %2"
+msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Chegada as %1 na plataforma %2"
+
+#: app/TrainDelegate.qml:94
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgctxt "Train arrival"
+msgid "Arrival at %1"
+msgstr "Chegada: %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2719,10 +2778,24 @@ msgstr "Classe:"
 msgid "Train Ticket"
 msgstr "Passagem de trem"
 
+#: app/TrainPage.qml:104
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Train departure"
+msgid "Departure"
+msgstr "Partida"
+
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
 msgid "Additional notes"
 msgstr ""
+
+#: app/TrainPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Train arrival"
+msgid "Arrival"
+msgstr "Chegada"
 
 #: app/TrainPage.qml:279
 #, kde-format

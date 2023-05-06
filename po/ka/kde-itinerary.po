@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-05 00:48+0000\n"
+"POT-Creation-Date: 2023-05-06 00:48+0000\n"
 "PO-Revision-Date: 2023-04-27 06:52+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -205,56 +205,56 @@ msgstr "მართლა გნებავთ თქვენი არსე
 msgid "Replace"
 msgstr "ჩანაცვლება"
 
-#: app/applicationcontroller.cpp:316
+#: app/applicationcontroller.cpp:327
 #, kde-format
 msgid "Download failed: %1"
 msgstr "გადმოწერის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
-#: app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:592
+#: app/applicationcontroller.cpp:607
 #, kde-format
 msgid "Import failed: %1"
 msgstr "შემოტანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:342
+#: app/applicationcontroller.cpp:353
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "შემოტანის შეცდომა: ფაილი ძალიან დიდია."
 
-#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
-#: app/applicationcontroller.cpp:668
+#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:669
+#: app/applicationcontroller.cpp:679
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "შემოტანილია 1 რეზერვაცია."
 msgstr[1] "შემოტანილია %1 რეზერვაცია."
 
-#: app/applicationcontroller.cpp:423
+#: app/applicationcontroller.cpp:434
 #, kde-format
 msgid "Health certificate imported."
 msgstr "ჯანმრთელობის სერტიფიკატი შემოტანილია."
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:440
 #, kde-format
 msgid "Pass imported."
 msgstr "ბილიკი შემოტანილია."
 
-#: app/applicationcontroller.cpp:465
+#: app/applicationcontroller.cpp:476
 #, kde-format
 msgid "Nothing imported."
 msgstr "არაფერი შემოტანილა."
 
-#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
+#: app/applicationcontroller.cpp:545 app/applicationcontroller.cpp:571
 #, kde-format
 msgid "Export failed: %1"
 msgstr "გატანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export completed."
 msgstr "გატანა დასრულდა."
 
-#: app/applicationcontroller.cpp:621
+#: app/applicationcontroller.cpp:632
 #, kde-format
 msgid "Import completed."
 msgstr "შემოტანა დასრულდა."
@@ -295,7 +295,7 @@ msgstr "გამომგზავნი: %1"
 msgid "To: %1"
 msgstr "სადამდე: %1"
 
-#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:82
+#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:105
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "ჩამოსვლის დრო: %1"
@@ -312,9 +312,10 @@ msgstr "გემის ბილეთი"
 msgid "Barcode Scan Mode"
 msgstr "შტრიხკოდის სკანირების რეჟიმი"
 
-#: app/BoatPage.qml:75 app/BusPage.qml:85 app/FlightPage.qml:132
-#: app/TouristAttractionPage.qml:59 app/TrainPage.qml:104
-#, kde-format
+#: app/BoatPage.qml:75
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Boat departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
@@ -330,9 +331,10 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: app/BoatPage.qml:111 app/BusPage.qml:147 app/FlightPage.qml:191
-#: app/TouristAttractionPage.qml:77 app/TrainPage.qml:191
-#, kde-format
+#: app/BoatPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
@@ -437,6 +439,13 @@ msgstr "სავარძელი"
 msgid "Bus Ticket"
 msgstr "ავტობუსის ბილეთი"
 
+#: app/BusPage.qml:85
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Bus departure"
+msgid "Departure"
+msgstr "გამგზავრება"
+
 #: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, kde-format
 msgid "Departure date"
@@ -447,6 +456,13 @@ msgstr "გაფრენის თარიღი"
 msgctxt "bus station"
 msgid "Station"
 msgstr "სადგური"
+
+#: app/BusPage.qml:147
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Bus arrival"
+msgid "Arrival"
+msgstr "ჩამოსვლა"
 
 #: app/BusPage.qml:228 app/TrainPage.qml:358
 #, kde-format
@@ -885,6 +901,13 @@ msgstr "ჩაჯდომის ჯგუფი"
 msgid "Airline"
 msgstr "ავიაკომპანია"
 
+#: app/FlightPage.qml:132
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Flight departure"
+msgid "Departure"
+msgstr "გამგზავრება"
+
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, kde-format
 msgid "Terminal"
@@ -894,6 +917,13 @@ msgstr "ტერმინალი"
 #, kde-format
 msgid "Gate"
 msgstr "გეითი"
+
+#: app/FlightPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Flight arrival"
+msgid "Arrival"
+msgstr "ჩამოსვლა"
 
 #: app/FlightPage.qml:251
 #, kde-format
@@ -2533,25 +2563,55 @@ msgstr "%1, %2"
 msgid "Tourist Attraction"
 msgstr "ტურისტული ღირსშესანიშნაობა"
 
+#: app/TouristAttractionPage.qml:59
+#, kde-format
+msgid "Departure"
+msgstr "გამგზავრება"
+
 #: app/TouristAttractionPage.qml:63
 #, kde-format
 msgid "Depature Time"
 msgstr "გასვლის დრო"
+
+#: app/TouristAttractionPage.qml:77
+#, kde-format
+msgid "Arrival"
+msgstr "ჩამოსვლა"
 
 #: app/TouristAttractionPage.qml:81
 #, kde-format
 msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
 
-#: app/TrainDelegate.qml:50
-#, kde-format
+#: app/TrainDelegate.qml:60
+#, fuzzy, kde-format
+#| msgid "Departure from %1 on platform %2"
+msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "გასვლის რო %1 პლატფორმიდან %2"
 
-#: app/TrainDelegate.qml:70
-#, kde-format
+#: app/TrainDelegate.qml:62
+#, fuzzy, kde-format
+#| msgctxt "flight departure, %1 is airport, %2 is time"
+#| msgid "Departure from %1: %2"
+msgctxt "Train departure"
+msgid "Departure from %1"
+msgstr "%1-დან გაფრენის თარიღი: %2"
+
+#: app/TrainDelegate.qml:92
+#, fuzzy, kde-format
+#| msgid "Arrival at %1 on platform %2"
+msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "ჩამოსვლის დრო %1 პლატფორმაზე %2"
+
+#: app/TrainDelegate.qml:94
+#, fuzzy, kde-format
+#| msgctxt "flight arrival"
+#| msgid "Arrival - %1"
+msgctxt "Train arrival"
+msgid "Arrival at %1"
+msgstr "ჩამოსვლა - %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2610,10 +2670,24 @@ msgstr "კლასი"
 msgid "Train Ticket"
 msgstr "მატარებლის ბილეთი"
 
+#: app/TrainPage.qml:104
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Train departure"
+msgid "Departure"
+msgstr "გამგზავრება"
+
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
 msgid "Additional notes"
 msgstr "დამატებითი შენიშვნები"
+
+#: app/TrainPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Train arrival"
+msgid "Arrival"
+msgstr "ჩამოსვლა"
 
 #: app/TrainPage.qml:279
 #, kde-format

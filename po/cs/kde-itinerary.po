@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-05 00:48+0000\n"
+"POT-Creation-Date: 2023-05-06 00:48+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -202,24 +202,24 @@ msgstr "Opravdu chcete nahradit existující rezervaci nově vybraným výletem?
 msgid "Replace"
 msgstr "Nahradit"
 
-#: app/applicationcontroller.cpp:316
+#: app/applicationcontroller.cpp:327
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Stažení bylo neúspěšné: %1"
 
-#: app/applicationcontroller.cpp:337 app/applicationcontroller.cpp:581
-#: app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:592
+#: app/applicationcontroller.cpp:607
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import selhal: %1"
 
-#: app/applicationcontroller.cpp:342
+#: app/applicationcontroller.cpp:353
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Import selhal: Soubor je příliš velký."
 
-#: app/applicationcontroller.cpp:416 app/applicationcontroller.cpp:658
-#: app/applicationcontroller.cpp:668
+#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:669
+#: app/applicationcontroller.cpp:679
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -227,32 +227,32 @@ msgstr[0] "Importována jedna rezervace."
 msgstr[1] "Importovány %1 rezervace."
 msgstr[2] "Importováno %1 rezervací."
 
-#: app/applicationcontroller.cpp:423
+#: app/applicationcontroller.cpp:434
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Importován zdravotní certifikát."
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:440
 #, kde-format
 msgid "Pass imported."
 msgstr "Letenka importována."
 
-#: app/applicationcontroller.cpp:465
+#: app/applicationcontroller.cpp:476
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nic nebylo importováno."
 
-#: app/applicationcontroller.cpp:534 app/applicationcontroller.cpp:560
+#: app/applicationcontroller.cpp:545 app/applicationcontroller.cpp:571
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exportování selhalo: %1"
 
-#: app/applicationcontroller.cpp:548 app/applicationcontroller.cpp:573
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export completed."
 msgstr "Exportování bylo dokončeno."
 
-#: app/applicationcontroller.cpp:621
+#: app/applicationcontroller.cpp:632
 #, kde-format
 msgid "Import completed."
 msgstr "Import byl dokončen."
@@ -293,7 +293,7 @@ msgstr "Od: %1"
 msgid "To: %1"
 msgstr "Do: %1"
 
-#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:82
+#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:105
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Čas příjezdu: %1"
@@ -310,9 +310,10 @@ msgstr "Lístek na loď"
 msgid "Barcode Scan Mode"
 msgstr "Režim čtení čarových kódů"
 
-#: app/BoatPage.qml:75 app/BusPage.qml:85 app/FlightPage.qml:132
-#: app/TouristAttractionPage.qml:59 app/TrainPage.qml:104
-#, kde-format
+#: app/BoatPage.qml:75
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Odjezd"
 
@@ -328,9 +329,10 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminál"
 
-#: app/BoatPage.qml:111 app/BusPage.qml:147 app/FlightPage.qml:191
-#: app/TouristAttractionPage.qml:77 app/TrainPage.qml:191
-#, kde-format
+#: app/BoatPage.qml:111
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Příjezd"
 
@@ -441,6 +443,13 @@ msgstr "Sedadlo"
 msgid "Bus Ticket"
 msgstr "Autobusová jízdenka"
 
+#: app/BusPage.qml:85
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Bus departure"
+msgid "Departure"
+msgstr "Odjezd"
+
 #: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, kde-format
 msgid "Departure date"
@@ -451,6 +460,13 @@ msgstr "Datum odjezdu"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Stanice"
+
+#: app/BusPage.qml:147
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Bus arrival"
+msgid "Arrival"
+msgstr "Příjezd"
 
 #: app/BusPage.qml:228 app/TrainPage.qml:358
 #, kde-format
@@ -900,6 +916,13 @@ msgstr "Nastupující skupina"
 msgid "Airline"
 msgstr "Letecká společnost"
 
+#: app/FlightPage.qml:132
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Flight departure"
+msgid "Departure"
+msgstr "Odjezd"
+
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, kde-format
 msgid "Terminal"
@@ -909,6 +932,13 @@ msgstr "Terminál"
 #, kde-format
 msgid "Gate"
 msgstr "Brána"
+
+#: app/FlightPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Flight arrival"
+msgid "Arrival"
+msgstr "Příjezd"
 
 #: app/FlightPage.qml:251
 #, kde-format
@@ -2553,25 +2583,54 @@ msgstr "%1, %2"
 msgid "Tourist Attraction"
 msgstr "Turistická zajímavost"
 
+#: app/TouristAttractionPage.qml:59
+#, kde-format
+msgid "Departure"
+msgstr "Odjezd"
+
 #: app/TouristAttractionPage.qml:63
 #, kde-format
 msgid "Depature Time"
 msgstr "Čas odletu"
+
+#: app/TouristAttractionPage.qml:77
+#, kde-format
+msgid "Arrival"
+msgstr "Příjezd"
 
 #: app/TouristAttractionPage.qml:81
 #, kde-format
 msgid "Arrival Time"
 msgstr "Čas příletu"
 
-#: app/TrainDelegate.qml:50
-#, kde-format
+#: app/TrainDelegate.qml:60
+#, fuzzy, kde-format
+#| msgid "Departure from %1 on platform %2"
+msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "Odjezd z %1 na nástupišti %2"
 
-#: app/TrainDelegate.qml:70
-#, kde-format
+#: app/TrainDelegate.qml:62
+#, fuzzy, kde-format
+#| msgctxt "flight departure, %1 is airport, %2 is time"
+#| msgid "Departure from %1: %2"
+msgctxt "Train departure"
+msgid "Departure from %1"
+msgstr "Odlet z %1: %2"
+
+#: app/TrainDelegate.qml:92
+#, fuzzy, kde-format
+#| msgid "Arrival at %1 on platform %2"
+msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Příjezd v %1 na nástupiště %2"
+
+#: app/TrainDelegate.qml:94
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgctxt "Train arrival"
+msgid "Arrival at %1"
+msgstr "Přílet: %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2634,10 +2693,24 @@ msgstr "Třída"
 msgid "Train Ticket"
 msgstr "Vlaková jízddenka"
 
+#: app/TrainPage.qml:104
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "Train departure"
+msgid "Departure"
+msgstr "Odjezd"
+
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
 msgid "Additional notes"
 msgstr "Dodatečné poznámky"
+
+#: app/TrainPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "Train arrival"
+msgid "Arrival"
+msgstr "Příjezd"
 
 #: app/TrainPage.qml:279
 #, kde-format
