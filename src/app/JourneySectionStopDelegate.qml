@@ -72,6 +72,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: Localizer.formatTime(stop, "scheduledArrivalTime")
             visible: stop.scheduledArrivalTime > 0 && !isSameTime
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
         QQC2.Label {
             Layout.column: 2
@@ -81,6 +82,7 @@ Item {
             text: (stop.arrivalDelay >= 0 ? "+" : "") + stop.arrivalDelay
             color: stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: stop.hasExpectedArrivalTime && !isSameTime
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
 
         QQC2.Label {
@@ -90,9 +92,9 @@ Item {
             Layout.fillWidth: true
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: stop.stopPoint.name
-            enabled: stop.disruptionEffect != Disruption.NoService
             elide: Text.ElideRight
             font.bold: root.isDeparture || root.isArrival
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
 
         QQC2.Label {
@@ -103,6 +105,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             text: Localizer.formatTime(stop, "scheduledDepartureTime")
             visible: stop.scheduledDepartureTime > 0
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
 
         QQC2.Label {
@@ -113,6 +116,7 @@ Item {
             text: (stop.departureDelay >= 0 ? "+" : "") + stop.departureDelay
             color: stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
             visible: departureTime.visible && stop.hasExpectedDepartureTime
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
 
         App.VehicleLoadIndicator {
@@ -153,6 +157,7 @@ Item {
                         return i18nc("Generic abreviation of platform", "Pl. %1", platform)
                 }
             }
+            font.strikeout: stop.disruptionEffect === Disruption.NoService
         }
 
         QQC2.ToolButton {
