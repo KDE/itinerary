@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:48+0000\n"
-"PO-Revision-Date: 2023-04-26 12:51+0300\n"
+"POT-Creation-Date: 2023-05-07 00:50+0000\n"
+"PO-Revision-Date: 2023-05-06 10:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -315,8 +315,7 @@ msgid "Barcode Scan Mode"
 msgstr "Barkod Tarama Kipi"
 
 #: app/BoatPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Kalkış"
@@ -334,8 +333,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: app/BoatPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Varış"
@@ -442,8 +440,7 @@ msgid "Bus Ticket"
 msgstr "Otobüs Bileti"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Kalkış"
@@ -460,8 +457,7 @@ msgid "Station"
 msgstr "İstasyon"
 
 #: app/BusPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Varış"
@@ -807,7 +803,7 @@ msgstr "%1 %2 → %3"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
-msgstr "%1 konumundan kalkış: %2"
+msgstr "%1 havaalanından kalkış: %2"
 
 #: app/FlightDelegate.qml:78
 #, kde-format
@@ -818,7 +814,7 @@ msgstr "Terminal: %1  Kapı: %2  Koltuk: %3"
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
-msgstr "%1 varışı: %2"
+msgstr "%1 havaalanına varış: %2"
 
 #: app/FlightEditor.qml:18
 #, kde-format
@@ -904,8 +900,7 @@ msgid "Airline"
 msgstr "Havayolu"
 
 #: app/FlightPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Kalkış"
@@ -921,8 +916,7 @@ msgid "Gate"
 msgstr "Kapı"
 
 #: app/FlightPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Varış"
@@ -1634,63 +1628,63 @@ msgstr "Yolcu belgesi değişikliği"
 msgid "Live Status"
 msgstr "Canlı Durum"
 
-#: app/LiveStatusPage.qml:102
+#: app/LiveStatusPage.qml:103
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Haritada kendiliğinden izle"
 
-#: app/LiveStatusPage.qml:121
+#: app/LiveStatusPage.qml:122 app/LiveStatusPage.qml:133
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Veri bekleniyor..."
 
-#: app/LiveStatusPage.qml:135
+#: app/LiveStatusPage.qml:144
 #, kde-format
 msgid "Position"
 msgstr "Konum"
 
-#: app/LiveStatusPage.qml:143
+#: app/LiveStatusPage.qml:153
 #, kde-format
 msgid "Journey"
 msgstr "Yolculuk"
 
-#: app/localizer.cpp:126
+#: app/localizer.cpp:131
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "gg AAAA"
 
-#: app/localizer.cpp:171
+#: app/localizer.cpp:176
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:174 app/localizer.cpp:176
+#: app/localizer.cpp:179 app/localizer.cpp:181
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:187
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/sa"
 
-#: app/localizer.cpp:188
+#: app/localizer.cpp:193
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:191 app/localizer.cpp:193
+#: app/localizer.cpp:196 app/localizer.cpp:198
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:199
+#: app/localizer.cpp:204
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2534,7 +2528,7 @@ msgstr "Yolculuğu Sil"
 #: app/TimelinePage.qml:105
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr "Bu yolculuğu gerçekten silmek istiyor musunuz?"
+msgstr "Bu yolculuğu silmeyi gerçekten istiyor musunuz?"
 
 #: app/TimelinePage.qml:125
 #, kde-format
@@ -2583,34 +2577,28 @@ msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
-msgstr "%2 platformunda %1 konumundan kalkış"
+msgstr "%2 platformunda %1 istasyonundan kalkış"
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "%1 konumundan kalkış: %2"
+msgstr "%1 istasyonundan kalkış"
 
 #: app/TrainDelegate.qml:92
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
-msgstr "%2 platformunda %1 konumuna varış"
+msgstr "%2 platformunda %1 istasyonuna varış"
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival - %1"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
-msgstr "Varış - %1"
+msgstr "%1 istasyonuna varış"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2670,8 +2658,7 @@ msgid "Train Ticket"
 msgstr "Tren Bileti"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Kalkış"
@@ -2682,8 +2669,7 @@ msgid "Additional notes"
 msgstr "Ek notlar"
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Varış"
@@ -3022,7 +3008,7 @@ msgstr "Anladım!"
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
-msgstr "%5 tarihinde %3 konumundan %4 konumuna %1%2"
+msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1°C / %2°C"

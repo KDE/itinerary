@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:48+0000\n"
+"POT-Creation-Date: 2023-05-07 00:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -1615,63 +1615,63 @@ msgstr ""
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:102
+#: app/LiveStatusPage.qml:103
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:121
+#: app/LiveStatusPage.qml:122 app/LiveStatusPage.qml:133
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:135
+#: app/LiveStatusPage.qml:144
 #, kde-format
 msgid "Position"
 msgstr ""
 
-#: app/LiveStatusPage.qml:143
+#: app/LiveStatusPage.qml:153
 #, kde-format
 msgid "Journey"
 msgstr ""
 
-#: app/localizer.cpp:126
+#: app/localizer.cpp:131
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr ""
 
-#: app/localizer.cpp:171
+#: app/localizer.cpp:176
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr ""
 
-#: app/localizer.cpp:174 app/localizer.cpp:176
+#: app/localizer.cpp:179 app/localizer.cpp:181
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr ""
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:187
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr ""
 
-#: app/localizer.cpp:188
+#: app/localizer.cpp:193
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr ""
 
-#: app/localizer.cpp:191 app/localizer.cpp:193
+#: app/localizer.cpp:196 app/localizer.cpp:198
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr ""
 
-#: app/localizer.cpp:199
+#: app/localizer.cpp:204
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"

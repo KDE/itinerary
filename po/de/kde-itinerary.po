@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-06 00:48+0000\n"
+"POT-Creation-Date: 2023-05-07 00:50+0000\n"
 "PO-Revision-Date: 2023-04-22 17:10+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1634,64 +1634,64 @@ msgstr "Reiseplan geändert"
 msgid "Live Status"
 msgstr "Live-Status"
 
-#: app/LiveStatusPage.qml:102
+#: app/LiveStatusPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Automatically fill transfers"
 msgid "Automatically follow on the map"
 msgstr "Verbindungen automatisch auswählen"
 
-#: app/LiveStatusPage.qml:121
+#: app/LiveStatusPage.qml:122 app/LiveStatusPage.qml:133
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Warten auf Daten ..."
 
-#: app/LiveStatusPage.qml:135
+#: app/LiveStatusPage.qml:144
 #, kde-format
 msgid "Position"
 msgstr "Position"
 
-#: app/LiveStatusPage.qml:143
+#: app/LiveStatusPage.qml:153
 #, kde-format
 msgid "Journey"
 msgstr "Reise"
 
-#: app/localizer.cpp:126
+#: app/localizer.cpp:131
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:171
+#: app/localizer.cpp:176
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:174 app/localizer.cpp:176
+#: app/localizer.cpp:179 app/localizer.cpp:181
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:187
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:188
+#: app/localizer.cpp:193
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:191 app/localizer.cpp:193
+#: app/localizer.cpp:196 app/localizer.cpp:198
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:199
+#: app/localizer.cpp:204
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
