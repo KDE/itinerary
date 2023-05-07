@@ -723,7 +723,7 @@ msgstr "Terminal: %1  Porta: %2  Seient: %3"
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
-msgstr "Arribada a les %1: %2"
+msgstr "Arribada a %1: %2"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -2392,7 +2392,7 @@ msgstr "Sortida des de %1 a la plataforma %2"
 #: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
-msgstr "Arribada a les %1 a la plataforma %2"
+msgstr "Arribada a %1 a la plataforma %2"
 
 #: app/TrainEditor.qml:18
 #, kde-format

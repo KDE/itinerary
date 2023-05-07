@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-04 02:56+0000\n"
-"PO-Revision-Date: 2023-04-02 17:25+0300\n"
+"PO-Revision-Date: 2023-05-06 10:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -711,7 +711,7 @@ msgstr "%1 %2 → %3"
 #, kde-format
 msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
-msgstr "%1 konumundan kalkış: %2"
+msgstr "%1 havaalanından kalkış: %2"
 
 #: app/FlightDelegate.qml:82
 #, kde-format
@@ -722,7 +722,7 @@ msgstr "Terminal: %1  Kapı: %2  Koltuk: %3"
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
-msgstr "%1 varışı: %2"
+msgstr "%1 havaalanına varış: %2"
 
 #: app/FlightEditor.qml:17
 #, kde-format
@@ -2337,7 +2337,7 @@ msgstr "Yolculuğu Sil"
 #: app/TimelinePage.qml:105
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr "Bu yolculuğu gerçekten silmek istiyor musunuz?"
+msgstr "Bu yolculuğu silmeyi gerçekten istiyor musunuz?"
 
 #: app/TimelinePage.qml:125
 #, kde-format
@@ -2813,7 +2813,7 @@ msgstr "Anladım!"
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
-msgstr "%5 tarihinde %3 konumundan %4 konumuna %1%2"
+msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 
 #~ msgid "%1m"
 #~ msgstr "%1 m"
