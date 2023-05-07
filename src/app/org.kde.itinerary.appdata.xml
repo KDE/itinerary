@@ -442,6 +442,7 @@
       <li xml:lang="ia">Bicyclettas disponiile de locar basate sur bassino o libere de flottar pote esser monstrate sur le mapa de station de traino.</li>
       <li xml:lang="id">Penyewaan sepeda dock-based atau free-floating yang tersedia dapat ditampilkan di peta stasiun kereta.</li>
       <li xml:lang="it">Le biciclette a noleggio disponibili su rastrelliera o a flusso libero possono essere visualizzate sulla mappa della stazione ferroviaria.</li>
+      <li xml:lang="ka">მატარებლის სადგურის რუკაზე შეგიძლიათ დოკზე ბაზირებული ან თავისუფლად მოსრიალე გაქირავებადი ველოსიპედები გაჩვენოთ.</li>
       <li xml:lang="ko">기차역 지도에 고정 스테이션에 있거나 고정되어 있지 않은 렌탈 자전거를 표시할 수 있습니다.</li>
       <li xml:lang="nl">Beschikbare huurfietsen in stalling en vrijstaand kan getoond worden op de kaart van het treinstation.</li>
       <li xml:lang="pl">Dostępne rowery do wypożyczenia w systemie ze stacjami lub bez nich, można wyświetlić na mapie dworca kolejowego.</li>
@@ -490,6 +491,7 @@
       <li xml:lang="ia">Gestion de certificato de sanitate digital per vaccination de COVID-19, recuperation o certificatos de test.</li>
       <li xml:lang="id">Pengelolaan seritifikat kesehatan digital untuk sertifikat vaksinasi COVID-19, pemulihan atau pengujian.</li>
       <li xml:lang="it">Gestisci i tuoi certificati sanitari digitali come certificati di vaccinazione COVID-19, guarigione e test.</li>
+      <li xml:lang="ka">ციფრული ჯანმრთელობის სერტიფიკატის მართვა COVID-19-ის ვაქცინაციისთვის, გამოკეთებისა და ტესტირების სერტიფიკატებისთვის.</li>
       <li xml:lang="ko">코로나19(COVID-19) 예방 접종, 검사, 완치 증명 등 디지털 건강 증명서를 관리합니다.</li>
       <li xml:lang="nl">Beheer van digitaal gezondheidscertificaat voor COVID-19 vaccinatie, herstel of testcertificaten.</li>
       <li xml:lang="pl">Zarządzanie cyfrowymi certyfikatami zdrowia dla szczepień COVID-19, ozdrowień oraz badań.</li>
@@ -514,6 +516,7 @@
     <p xml:lang="ia">KDE Itinerary functiona meliormente  con plugin de extraction de itinerario de KMail e KDE Connect, o Hub de Nextcloud e DavDroid.</p>
     <p xml:lang="id">KDE Itinerary bekerja paling baik dengan plugin itinerary extraction KMail dan KDE Connect, atau Nextcloud Hub dan DavDroid.</p>
     <p xml:lang="it">KDE Itinerary funziona meglio insieme all'estensione di estrazione degli itinerari di KMail e KDE Connect, o Nextcloud Hub e DavDroid.</p>
+    <p xml:lang="ka">KDE Itinerarary ყველაზე კარგად KMail-ის დამატებასთან, KDE Connect-თან, Nextcloud Hub-თან და DavDroid-თან მუშაობს.</p>
     <p xml:lang="ko">KDE 여행 정보는 KMail의 여행 정보 추천 플러그인, KDE Connect, Nextcloud 허브 및 DavDroid와 같이 작동합니다.</p>
     <p xml:lang="nl">KDE Itinerary werkt het best naast de plug-in voor reisroute uitpakken van KMail en KDE Connect of Nextcloud Hub en DavDroid.</p>
     <p xml:lang="pl">KDE Itinerary działa najlepiej wraz z wtyczką do wydobywania itinerary dla KMaila oraz KDE Connect, lub Nextcloud Hub i DavDroid.</p>
@@ -596,6 +599,7 @@
       <caption xml:lang="ia">Dispoition de traino evidentiante le carrossa con un reservation de placia</caption>
       <caption xml:lang="id">Tampilan tata letak kereta yang menyoroti gerbong dengan reservasi kursi</caption>
       <caption xml:lang="it">Vista della disposizione del treno che evidenzia la carrozza con la prenotazione di un posto</caption>
+      <caption xml:lang="ka">მატარებლის განლაგების ხედი სავარძლის რეზერვაციის გამოკვეთით</caption>
       <caption xml:lang="ko">예약한 열차 좌석이 강조된 열차 구성 보기</caption>
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering</caption>
       <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc</caption>
@@ -621,6 +625,7 @@
       <caption xml:lang="ia">Mappa de platteforma de station de traino, evidentiante platteformas de arrivata e partita</caption>
       <caption xml:lang="id">Peta platform stasiun kereta, menyoroti platform kedatangan dan keberangkatan</caption>
       <caption xml:lang="it">Mappa dei binari della stazione ferroviaria, evidenziando i binari di arrivo e partenza</caption>
+      <caption xml:lang="ka">მატარებლის სადგურის პლატფორმების რუკა, ჩამომსვლელი და გასამგზავრებელი პლატფორმების გამოკვეთით</caption>
       <caption xml:lang="ko">출발 및 도착 승강장을 강조한 기차역 승강장 지도</caption>
       <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons</caption>
       <caption xml:lang="pl">Plan peronu dworca kolejowego, podświetlający perony przybycia i odjazdu</caption>
@@ -646,6 +651,7 @@
       <caption xml:lang="ia">Mappa de station de traino monstrante disponibilitate in tempore actual de bicyclettas a locar</caption>
       <caption xml:lang="id">Peta stasiun kereta api yang menunjukkan ketersediaan sepeda rental secara real-time.</caption>
       <caption xml:lang="it">Mappa della stazione ferroviaria che mostra la disponibilità in tempo reale delle biciclette a noleggio</caption>
+      <caption xml:lang="ka">რკინიგზის სადგური გასაქირავებელი ველოსიპედების რეალურ დროში ჩვენებით</caption>
       <caption xml:lang="ko">실시간 렌탈 자전거 상황을 표시하는 기차역 지도</caption>
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen</caption>
       <caption xml:lang="pl">Plan dworca kolejowego, pokazujący w czasie rzeczywistym dostępność rowerów do wypożyczenia</caption>
@@ -671,6 +677,7 @@
       <caption xml:lang="ia">Information detaliate per le entitate de seliger sur le mappa de station de traino</caption>
       <caption xml:lang="id">Informasi mendetail untuk entitas yang dipilih di peta stasiun kereta</caption>
       <caption xml:lang="it">Informazioni dettagliate per l'entità selezionata sulla mappa della stazione ferroviaria</caption>
+      <caption xml:lang="ka">რკინიგზის სადგურზე მონიშნული ელემენტის დეტალური ინფორმაცია</caption>
       <caption xml:lang="ko">기차역 지도에서 선택한 항목의 자세한 정보</caption>
       <caption xml:lang="nl">Gedetailleerde informatie voor het te selecteren item op kaart van het treinstation</caption>
       <caption xml:lang="pl">Szczegółowe nt. wybranego obiektu na planie dworca kolejowego</caption>
