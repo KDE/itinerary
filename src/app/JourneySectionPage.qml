@@ -70,7 +70,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
-                Layout.row: 3
+                Layout.row: 4
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: journeySection.notes.join("<br/>")
