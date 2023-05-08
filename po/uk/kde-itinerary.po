@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-07 00:50+0000\n"
-"PO-Revision-Date: 2023-04-26 15:11+0300\n"
+"POT-Creation-Date: 2023-05-08 00:47+0000\n"
+"PO-Revision-Date: 2023-05-06 08:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -320,8 +320,7 @@ msgid "Barcode Scan Mode"
 msgstr "Режим сканування штрихкоду"
 
 #: app/BoatPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Відправлення"
@@ -339,8 +338,7 @@ msgid "Terminal"
 msgstr "Термінал"
 
 #: app/BoatPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Прибуття"
@@ -447,8 +445,7 @@ msgid "Bus Ticket"
 msgstr "Квиток на автобус"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Відправлення"
@@ -465,8 +462,7 @@ msgid "Station"
 msgstr "Станція"
 
 #: app/BusPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Прибуття"
@@ -909,8 +905,7 @@ msgid "Airline"
 msgstr "Авіакомпанія"
 
 #: app/FlightPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Відправлення"
@@ -926,8 +921,7 @@ msgid "Gate"
 msgstr "Вихід"
 
 #: app/FlightPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Прибуття"
@@ -1600,25 +1594,25 @@ msgstr "Відстань: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:149
+#: app/JourneySectionStopDelegate.qml:153
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:151
+#: app/JourneySectionStopDelegate.qml:155
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Док %1"
 
-#: app/JourneySectionStopDelegate.qml:153
+#: app/JourneySectionStopDelegate.qml:157
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:166
+#: app/JourneySectionStopDelegate.qml:171
 #, kde-format
 msgid "Show location"
 msgstr "Показати місце"
@@ -2601,31 +2595,25 @@ msgid "Arrival Time"
 msgstr "Час прибуття"
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "Відправлення з %1, платформа %2"
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "Відправлення з %1: %2"
+msgstr "Відправлення з %1"
 
 #: app/TrainDelegate.qml:92
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Прибуття у %1, платформа %2"
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival - %1"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
 msgstr "Прибуття – %1"
@@ -2688,8 +2676,7 @@ msgid "Train Ticket"
 msgstr "Квиток на потяг"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Відправлення"
@@ -2700,8 +2687,7 @@ msgid "Additional notes"
 msgstr "Додаткові примітки"
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Прибуття"
