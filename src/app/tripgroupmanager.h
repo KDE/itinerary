@@ -11,6 +11,7 @@
 #include <QHash>
 
 class ReservationManager;
+class TransferManager;
 class TripGroup;
 
 /** Trip group computation and persistence.
@@ -24,6 +25,7 @@ public:
     ~TripGroupManager() override;
 
     void setReservationManager(ReservationManager *resMgr);
+    void setTransferManager(TransferManager *transferMgr);
 
     QVector<QString> tripGroups() const;
     TripGroup tripGroup(const QString &id) const;
@@ -61,6 +63,7 @@ private:
     bool isRoundTrip(const TripGroup &g) const;
 
     ReservationManager *m_resMgr = nullptr;
+    TransferManager *m_transferMgr = nullptr;
     QHash<QString, TripGroup> m_tripGroups;
     QHash<QString, QString> m_reservationToGroupMap;
 

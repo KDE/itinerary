@@ -8,6 +8,8 @@
 #include "logging.h"
 #include "reservationmanager.h"
 #include "tripgroupmanager.h"
+#include "transfer.h"
+#include "transfermanager.h"
 
 #include <KItinerary/SortUtil>
 
@@ -90,7 +92,13 @@ QDateTime TripGroup::beginDateTime() const
         return {};
     }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.at(0));
-    return KItinerary::SortUtil::startDateTime(res);
+    const auto dt = KItinerary::SortUtil::startDateTime(res);
+
+    const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.at(0), Transfer::Before) : Transfer();
+    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
+        return std::min(dt, transfer.journey().scheduledDepartureTime());
+    }
+    return dt;
 }
 
 QDateTime TripGroup::endDateTime() const
@@ -99,5 +107,11 @@ QDateTime TripGroup::endDateTime() const
         return {};
     }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
-    return KItinerary::SortUtil::endDateTime(res);
+    const auto dt = KItinerary::SortUtil::endDateTime(res);
+
+    const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.constLast(), Transfer::After) : Transfer();
+    if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
+        return std::max(dt, transfer.journey().scheduledArrivalTime());
+    }
+    return dt;
 }

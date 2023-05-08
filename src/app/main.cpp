@@ -341,6 +341,8 @@ int main(int argc, char **argv)
     QObject::connect(&settings, &Settings::autoFillTransfersChanged, &transferManager, &TransferManager::setAutoFillTransfers);
     s_tranferManager = &transferManager;
 
+    tripGroupMgr.setTransferManager(&transferManager);
+
     TimelineModel timelineModel;
     timelineModel.setHomeCountryIsoCode(settings.homeCountryIsoCode());
     timelineModel.setReservationManager(&resMgr);
