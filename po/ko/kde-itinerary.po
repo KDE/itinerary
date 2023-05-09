@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 02:56+0000\n"
+"POT-Creation-Date: 2023-05-09 02:53+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2610,17 +2610,17 @@ msgstr "여정을 GPX로 내보내기"
 msgid "Delete trip"
 msgstr "여정 삭제"
 
-#: app/tripgroupmanager.cpp:588
+#: app/tripgroupmanager.cpp:594
 #, kde-format
 msgid "%1 (%2 %3)"
 msgstr "%1(%3년 %2)"
 
-#: app/tripgroupmanager.cpp:590
+#: app/tripgroupmanager.cpp:596
 #, kde-format
 msgid "%1 (%2/%3 %4)"
 msgstr "%1(%4년 %2/%3)"
 
-#: app/tripgroupmanager.cpp:592
+#: app/tripgroupmanager.cpp:598
 #, kde-format
 msgid "%1 (%2/%3)"
 msgstr "%1(%2년/%3년)"

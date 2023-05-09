@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-04 02:56+0000\n"
+"POT-Creation-Date: 2023-05-09 02:53+0000\n"
 "PO-Revision-Date: 2023-03-14 22:56+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2627,17 +2627,17 @@ msgstr "Exporta viage a GPX"
 msgid "Delete trip"
 msgstr "Dele viage"
 
-#: app/tripgroupmanager.cpp:588
+#: app/tripgroupmanager.cpp:594
 #, kde-format
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:590
+#: app/tripgroupmanager.cpp:596
 #, kde-format
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:592
+#: app/tripgroupmanager.cpp:598
 #, kde-format
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
