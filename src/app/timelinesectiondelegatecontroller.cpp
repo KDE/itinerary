@@ -19,6 +19,8 @@
 #include <QDebug>
 #include <QLocale>
 
+#include <optional>
+
 TimelineSectionDelegateController::TimelineSectionDelegateController(QObject *parent)
     : QObject(parent)
 {
@@ -94,6 +96,32 @@ bool TimelineSectionDelegateController::isHoliday() const
 #endif
 }
 
+#if HAVE_KHOLIDAYS
+// ATTENTION the HolidayRegion methods we call here are very expensive!
+static std::optional<KHolidays::HolidayRegion> cachedHolidayRegion(const QString &regionCode)
+{
+    static QHash<QString, std::optional<KHolidays::HolidayRegion>> s_cache;
+    if (const auto it = s_cache.constFind(regionCode); it != s_cache.constEnd()) {
+        return it.value();
+    }
+
+    const auto holidayRegionCode = KHolidays::HolidayRegion::defaultRegionCode(regionCode);
+    if (holidayRegionCode.isEmpty()) {
+        s_cache.insert(regionCode, {});
+        return {};
+    }
+
+    const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
+    if (holidayRegion.isValid()) {
+        s_cache.insert(regionCode, holidayRegion);
+        return holidayRegion;
+    }
+
+    s_cache.insert(regionCode, {});
+    return {};
+}
+#endif
+
 void TimelineSectionDelegateController::recheckHoliday()
 {
     if (!m_model || !m_date.isValid()) {
@@ -108,17 +136,12 @@ void TimelineSectionDelegateController::recheckHoliday()
         return;
     }
 
-    const auto holidayRegionCode = KHolidays::HolidayRegion::defaultRegionCode(regionCode);
-    if (holidayRegionCode.isEmpty()) {
-        return;
-    }
 
-    const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
-    if (holidayRegion.isValid()) {
+    if (const auto holidayRegion = cachedHolidayRegion(regionCode); holidayRegion) {
 #if KHOLIDAYS_VERSION < QT_VERSION_CHECK(5, 95, 0)
-        m_holidays = holidayRegion.holidays(m_date);
+        m_holidays = holidayRegion->holidays(m_date);
 #else
-        m_holidays = holidayRegion.rawHolidaysWithAstroSeasons(m_date);
+        m_holidays = holidayRegion->rawHolidaysWithAstroSeasons(m_date);
 #endif
         // prioritize non-workdays
         std::sort(m_holidays.begin(), m_holidays.end(), [](const auto &lhs, const auto &rhs) {
