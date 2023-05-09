@@ -643,8 +643,6 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
     }
 
     const auto docId = QUuid::createUuid().toString();
-    auto res = m_resMgr->reservation(batchId);
-    DocumentUtil::addDocumentId(res, docId);
 
     DigitalDocument docInfo;
 #ifdef Q_OS_ANDROID
@@ -660,6 +658,8 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
 
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
     for (const auto &resId : resIds) {
+        auto res = m_resMgr->reservation(resId);
+        DocumentUtil::addDocumentId(res, docId);
         m_resMgr->updateReservation(resId, res);
     }
 }
