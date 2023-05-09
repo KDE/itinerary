@@ -733,7 +733,20 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.04.1" date="2023-05-11"/>
+    <release version="23.04.1" date="2023-05-11">
+      <description>
+        <ul>
+          <li>Improved travel document extractors for Air Asia, ATPI, B&amp;B Hotels, Best Western, CD, FlixBus, Gepard Express, Grimaldi Lines, MAV, SNCB and Vueling.</li>
+          <li>Support importing various variants of the Deutschlandticket.</li>
+          <li>Fixed rendering of MAV ticket barcodes.</li>
+          <li>Fixed public transport queries in the Czech Republic and the UK.</li>
+          <li>Fixed imported PDFs losing their file name on Android.</li>
+          <li>Improved Apple Wallet boarding pass layout for overflowing labels.</li>
+          <li>Improved handling of canceled elements in the timeline.</li>
+          <li>Improved rendering of barrier elements in the train station map.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.04.0" date="2023-04-20">
       <description>
         <ul>

@@ -9,6 +9,7 @@
 #include "constants.h"
 #include "logging.h"
 #include "reservationmanager.h"
+#include "transfermanager.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Organization>
@@ -59,6 +60,11 @@ void TripGroupManager::setReservationManager(ReservationManager *resMgr)
 
     checkConsistency();
     scanAll();
+}
+
+void TripGroupManager::setTransferManager(TransferManager *transferMgr)
+{
+    m_transferMgr = transferMgr;
 }
 
 QVector<QString> TripGroupManager::tripGroups() const

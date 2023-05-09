@@ -16,6 +16,8 @@
 #include <QDebug>
 #include <QLocale>
 
+#include <optional>
+
 TimelineSectionDelegateController::TimelineSectionDelegateController(QObject *parent)
     : QObject(parent)
 {
@@ -85,6 +87,30 @@ bool TimelineSectionDelegateController::isHoliday() const
     return !m_holidays.isEmpty() && m_holidays.at(0).dayType() == KHolidays::Holiday::NonWorkday;
 }
 
+// ATTENTION the HolidayRegion methods we call here are very expensive!
+static std::optional<KHolidays::HolidayRegion> cachedHolidayRegion(const QString &regionCode)
+{
+    static QHash<QString, std::optional<KHolidays::HolidayRegion>> s_cache;
+    if (const auto it = s_cache.constFind(regionCode); it != s_cache.constEnd()) {
+        return it.value();
+    }
+
+    const auto holidayRegionCode = KHolidays::HolidayRegion::defaultRegionCode(regionCode);
+    if (holidayRegionCode.isEmpty()) {
+        s_cache.insert(regionCode, {});
+        return {};
+    }
+
+    const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
+    if (holidayRegion.isValid()) {
+        s_cache.insert(regionCode, holidayRegion);
+        return holidayRegion;
+    }
+
+    s_cache.insert(regionCode, {});
+    return {};
+}
+
 void TimelineSectionDelegateController::recheckHoliday()
 {
     if (!m_model || !m_date.isValid()) {
@@ -98,14 +124,8 @@ void TimelineSectionDelegateController::recheckHoliday()
         return;
     }
 
-    const auto holidayRegionCode = KHolidays::HolidayRegion::defaultRegionCode(regionCode);
-    if (holidayRegionCode.isEmpty()) {
-        return;
-    }
-
-    const auto holidayRegion = KHolidays::HolidayRegion(holidayRegionCode);
-    if (holidayRegion.isValid()) {
-        m_holidays = holidayRegion.rawHolidaysWithAstroSeasons(m_date);
+    if (const auto holidayRegion = cachedHolidayRegion(regionCode); holidayRegion) {
+        m_holidays = holidayRegion->rawHolidaysWithAstroSeasons(m_date);
         // prioritize non-workdays
         std::sort(m_holidays.begin(), m_holidays.end(), [](const auto &lhs, const auto &rhs) {
             return lhs.dayType() == KHolidays::Holiday::NonWorkday && rhs.dayType() == KHolidays::Holiday::Workday;
