@@ -32,11 +32,10 @@ App.TimelineDelegate {
         id: topLayout
         spacing: Kirigami.Units.smallSpacing
 
-        App.PlaceDelegate {
-            place: touristAttraction
-            controller: root.controller
+        QQC2.Label {
+            visible: !touristAttraction.address.isEmpty
             width: topLayout.width
-            showButtons: false
+            text: Localizer.formatAddress(touristAttraction.address)
         }
     }
 
