@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 00:47+0000\n"
-"PO-Revision-Date: 2023-04-22 17:10+0200\n"
+"PO-Revision-Date: 2023-05-08 23:46+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -316,8 +316,7 @@ msgid "Barcode Scan Mode"
 msgstr "Barcode-Scanmodus"
 
 #: app/BoatPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Abfahrt"
@@ -335,8 +334,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: app/BoatPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Ankunft"
@@ -443,8 +441,7 @@ msgid "Bus Ticket"
 msgstr "Busfahrkarte"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Abfahrt"
@@ -461,8 +458,7 @@ msgid "Station"
 msgstr "Station"
 
 #: app/BusPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Ankunft"
@@ -905,11 +901,10 @@ msgid "Airline"
 msgstr "Fluglinie"
 
 #: app/FlightPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
-msgstr "Abfahrt"
+msgstr "Abflug"
 
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, kde-format
@@ -922,11 +917,10 @@ msgid "Gate"
 msgstr "Gate"
 
 #: app/FlightPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
-msgstr "Ankunft"
+msgstr "Landung"
 
 #: app/FlightPage.qml:251
 #, kde-format
