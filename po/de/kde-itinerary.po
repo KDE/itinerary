@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:47+0000\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
 "PO-Revision-Date: 2023-05-08 23:46+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1970,13 +1970,13 @@ msgstr "Neues Abfahrtgleis: %1"
 msgid "New arrival platform is: %1"
 msgstr "Neues Ankunftgleis: %1"
 
-#: app/passmanager.cpp:244
+#: app/passmanager.cpp:250
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Abgelaufen"
 
-#: app/passmanager.cpp:246
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2543,12 +2543,12 @@ msgstr "Reise exportieren"
 msgid "Nothing on the itinerary for today."
 msgstr "Für heute steht nichts im Reiseplan."
 
-#: app/timelinesectiondelegatecontroller.cpp:63
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgid "Today"
 msgstr "Heute"
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:67
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -2844,13 +2844,13 @@ msgstr "Reise als GPX exportieren"
 msgid "Delete trip"
 msgstr "Reise löschen"
 
-#: app/tripgroupmanager.cpp:588
+#: app/tripgroupmanager.cpp:594
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:590
+#: app/tripgroupmanager.cpp:596
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -2858,7 +2858,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:592
+#: app/tripgroupmanager.cpp:598
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"

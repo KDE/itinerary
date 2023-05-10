@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:47+0000\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -2111,13 +2111,13 @@ msgstr "Irteera nasa berria: %1"
 msgid "New arrival platform is: %1"
 msgstr "Helduera nasa berria: %1"
 
-#: app/passmanager.cpp:244
+#: app/passmanager.cpp:250
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr ""
 
-#: app/passmanager.cpp:246
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2700,12 +2700,12 @@ msgstr "Esportatu..."
 msgid "Nothing on the itinerary for today."
 msgstr "Ezer ez dago ibilbidean gaurko"
 
-#: app/timelinesectiondelegatecontroller.cpp:63
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgid "Today"
 msgstr "Gaur"
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:67
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -3017,14 +3017,14 @@ msgstr "Esportatu..."
 msgid "Delete trip"
 msgstr "Gertaera txartela"
 
-#: app/tripgroupmanager.cpp:588
+#: app/tripgroupmanager.cpp:594
 #, fuzzy, kde-format
 #| msgid "%1 (%2 %3)"
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:590
+#: app/tripgroupmanager.cpp:596
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3 %4)"
 msgctxt ""
@@ -3033,7 +3033,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:592
+#: app/tripgroupmanager.cpp:598
 #, fuzzy, kde-format
 #| msgid "%1 (%2/%3)"
 msgctxt "%1 is destination, %2 and %3 are years"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 00:47+0000\n"
+"POT-Creation-Date: 2023-05-10 00:47+0000\n"
 "PO-Revision-Date: 2023-04-14 21:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1995,13 +1995,13 @@ msgstr ""
 msgid "New arrival platform is: %1"
 msgstr ""
 
-#: app/passmanager.cpp:244
+#: app/passmanager.cpp:250
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Prošlý"
 
-#: app/passmanager.cpp:246
+#: app/passmanager.cpp:252
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2567,12 +2567,12 @@ msgstr "Exportovat výlet"
 msgid "Nothing on the itinerary for today."
 msgstr "Dnes nemáte v itineráři nic."
 
-#: app/timelinesectiondelegatecontroller.cpp:63
+#: app/timelinesectiondelegatecontroller.cpp:65
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: app/timelinesectiondelegatecontroller.cpp:65
+#: app/timelinesectiondelegatecontroller.cpp:67
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
@@ -2871,13 +2871,13 @@ msgstr "Exportovat výlet do GPX"
 msgid "Delete trip"
 msgstr "Smazat výlet"
 
-#: app/tripgroupmanager.cpp:588
+#: app/tripgroupmanager.cpp:594
 #, kde-format
 msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
 msgid "%1 (%2 %3)"
 msgstr "%1 (%2 %3)"
 
-#: app/tripgroupmanager.cpp:590
+#: app/tripgroupmanager.cpp:596
 #, kde-format
 msgctxt ""
 "%1 is destination, %2 and %3 are the standalone month names and %4 is the "
@@ -2885,7 +2885,7 @@ msgctxt ""
 msgid "%1 (%2/%3 %4)"
 msgstr "%1 (%2/%3 %4)"
 
-#: app/tripgroupmanager.cpp:592
+#: app/tripgroupmanager.cpp:598
 #, kde-format
 msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
