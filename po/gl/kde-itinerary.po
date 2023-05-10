@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 02:53+0000\n"
+"POT-Creation-Date: 2023-05-10 02:39+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2481,12 +2481,12 @@ msgstr "Exportar…"
 msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:68
 #, kde-format
 msgid "Today"
 msgstr "Hoxe"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:70
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"

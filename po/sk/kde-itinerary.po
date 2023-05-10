@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 02:53+0000\n"
+"POT-Creation-Date: 2023-05-10 02:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2427,12 +2427,12 @@ msgstr "Exportovať..."
 msgid "Nothing on the itinerary for today."
 msgstr ""
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:68
 #, kde-format
 msgid "Today"
 msgstr "Dnes"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:70
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"

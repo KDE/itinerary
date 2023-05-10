@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-09 02:53+0000\n"
+"POT-Creation-Date: 2023-05-10 02:39+0000\n"
 "PO-Revision-Date: 2023-03-06 08:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2367,12 +2367,12 @@ msgstr "Експорт подорожі"
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
 
-#: app/timelinesectiondelegatecontroller.cpp:66
+#: app/timelinesectiondelegatecontroller.cpp:68
 #, kde-format
 msgid "Today"
 msgstr "Сьогодні"
 
-#: app/timelinesectiondelegatecontroller.cpp:68
+#: app/timelinesectiondelegatecontroller.cpp:70
 #, kde-format
 msgctxt "weekday, date"
 msgid "%1, %2"
