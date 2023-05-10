@@ -109,7 +109,8 @@ void TripGroupProxyModel::expand(const QString &groupId)
 bool TripGroupProxyModel::isCollapsed(const QString &groupId) const
 {
     const auto g = m_sourceModel->tripGroupManager()->tripGroup(groupId);
-    if (g.beginDateTime() <= m_sourceModel->now() && m_sourceModel->now() <= g.endDateTime()) {
+    const auto now = m_sourceModel->now();
+    if (g.beginDateTime() <= now && now <= g.endDateTime()) {
         return false; // the current trip must always be expanded
     }
 
@@ -119,5 +120,5 @@ bool TripGroupProxyModel::isCollapsed(const QString &groupId) const
     }
 
     // by default collapse past trips
-    return g.endDateTime() < m_sourceModel->now();
+    return g.endDateTime() < now;
 }
