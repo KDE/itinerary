@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-10 02:39+0000\n"
+"POT-Creation-Date: 2023-05-11 02:34+0000\n"
 "PO-Revision-Date: 2023-03-08 14:37+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -1589,7 +1589,7 @@ msgid "Type N"
 msgstr "Type N"
 
 # unreviewed-context
-#: app/locationinformationdelegatecontroller.cpp:76
+#: app/locationinformationdelegatecontroller.cpp:77
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
