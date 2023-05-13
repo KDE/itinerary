@@ -46,9 +46,12 @@
 #include "tripgroupproxymodel.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
+
+#if HAVE_MATRIX
 #include "matrix/matrixroomsmodel.h"
 #include "matrix/matrixmanager.h"
 #include <connection.h>
+#endif
 
 #include <weatherforecastmanager.h>
 
@@ -142,7 +145,9 @@ void registerApplicationTypes()
     qRegisterMetaType<WeatherForecast>();
     qRegisterMetaType<Permission::Permission>();
     qRegisterMetaType<HealthCertificateManager*>();
+#if HAVE_MATRIX
     qRegisterMetaType<Quotient::Connection *>();
+#endif
 
     qmlRegisterUncreatableType<LocationInformation>("org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
@@ -164,7 +169,9 @@ void registerApplicationTypes()
     qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
+#if HAVE_MATRIX
     qmlRegisterType<MatrixRoomsModel>("org.kde.itinerary", 1, 0, "MatrixRoomsModel");
+#endif
 }
 
 // for registering QML singletons only
@@ -182,7 +189,9 @@ static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
+#if HAVE_MATRIX
 static MatrixManager *s_matrixManager = nullptr;
+#endif
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -213,7 +222,9 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
+#if HAVE_MATRIX
     REGISTER_SINGLETON_INSTANCE(MatrixManager, s_matrixManager);
+#endif
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -377,8 +388,10 @@ int main(int argc, char **argv)
     PassManager passMgr;
     s_passManager = &passMgr;
 
+#if HAVE_MATRIX
     MatrixManager matrixManager;
     s_matrixManager = &matrixManager;
+#endif
 
     ApplicationController appController;
     appController.setReservationManager(&resMgr);

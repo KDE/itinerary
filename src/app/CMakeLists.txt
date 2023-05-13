@@ -62,7 +62,6 @@ target_link_libraries(itinerary PUBLIC
     KPublicTransport
     KPublicTransportOnboard
     KOSMIndoorMap
-    KMatrix
     KPim${KF_MAJOR_VERSION}::Itinerary
     KPim${KF_MAJOR_VERSION}::PkPass
     KF${KF_MAJOR_VERSION}::CalendarCore
@@ -79,6 +78,9 @@ if (TARGET KF5::Mime)
     target_link_libraries(itinerary PUBLIC KF5::Mime)
 else()
     target_link_libraries(itinerary PUBLIC KPim${KF_MAJOR_VERSION}::Mime)
+endif()
+if (HAVE_MATRIX)
+    target_link_libraries(itinerary PUBLIC KMatrix)
 endif()
 
 if (TARGET KHealthCertificate)
