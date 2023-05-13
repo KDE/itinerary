@@ -400,6 +400,11 @@ bool LiveDataManager::hasDeparted(const QString &resId, const QVariant &res) con
 
 bool LiveDataManager::hasArrived(const QString &resId, const QVariant &res) const
 {
+    const auto n = now();
+    // avoid loading live data for everything on startup
+    if (SortUtil::endDateTime(res).addDays(1) < n) {
+        return true;
+    }
     return arrivalTime(resId, res) < now();
 }
 
