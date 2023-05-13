@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
@@ -6,21 +7,37 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.itinerary 1.0
 import "." as App
 
+/** Display a location and corresponding navigation actions. */
 MobileForm.AbstractFormDelegate {
     id: root
 
-    property alias place: internal.place
-    property alias controller: internal.controller
-    property alias isRangeBegin: internal.isRangeBegin
-    property alias isRangeEnd: internal.isRangeEnd
-    property alias showLocationName: internal.showLocationName
+    property var controller: null
+    /** The place to display and to navigate to. */
+    property var place
+    property bool showLocationName: false
+
+    /** Indicates that this is the begin (and only the begin) of an element (e.g. departure location of a transit element). */
+    property bool isRangeBegin: false
+    /** Indicates that this is the end (and only the end) of an element (e.g. arrival location of a transit element). */
+    property bool isRangeEnd: false
+    /** Indicates that this represents the full range of the element (only valid for non-transit elements). */
+    readonly property bool isFullRange: !isRangeBegin && !isRangeEnd
 
     background: Item {}
     Layout.fillWidth: true
     visible: place && !place.address.isEmpty
     text: i18n("Location")
+
+    Component {
+        id: departuresPage
+        App.DepartureQueryPage {
+            stop: place
+            dateTime: controller.effectiveEndTime
+        }
+    }
 
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
@@ -30,10 +47,79 @@ MobileForm.AbstractFormDelegate {
             text: root.text
             Accessible.ignored: true
         }
-        App.PlaceDelegate {
-            id: internal
-            place: place
-            controller: root.controller
+        QQC2.Label {
+            visible: showLocationName && root.place != undefined && root.place.name !== undefined
+            Layout.fillWidth: true
+            text: root.place != undefined ? place.name : ""
+            color: Kirigami.Theme.disabledTextColor
+            wrapMode: Text.WordWrap
+            Accessible.ignored: !visible
+        }
+        QQC2.Label {
+            visible: root.place != undefined && !root.place.address.isEmpty
+            Layout.fillWidth: true
+            text: root.place ? Localizer.formatAddress(root.place.address) : ""
+            color: Kirigami.Theme.disabledTextColor
+            Accessible.ignored: !visible
+        }
+
+        Kirigami.ActionToolBar {
+            id: buttonLayout
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignRight
+            visible: root.place !== undefined && root.place.geo.isValid
+
+            actions: [
+                Kirigami.Action {
+                    visible: root.place != undefined && root.place.geo.isValid
+                    icon.name: "map-symbolic"
+                    onTriggered: {
+                        var args = {};
+                        if (root.controller.isLocationChange) {
+                            if (root.isRangeBegin) {
+                                args = root.controller.departureMapArguments();
+                            } else if (root.isRangeEnd) {
+                                args = root.controller.arrivalMapArguments();
+                            }
+                        } else {
+                            args = root.controller.mapArguments();
+                        }
+                        console.log(JSON.stringify(args));
+                        applicationWindow().pageStack.push(indoorMapPage, args);
+                    }
+                    text: i18nc("@action:button", "View Indoor Map")
+                },
+
+                Kirigami.Action {
+                    visible: root.place != undefined && (root.place.geo.isValid || !root.place.address.isEmpty)
+                    icon.name: "map-globe"
+                    onTriggered: NavigationController.showOnMap(place)
+                    text: i18nc("@action:button", "View on Map")
+                },
+
+                // navigate to is offered if:
+                // - for departures (begins) of any transit element, unless it's a layover from a previous transit element TODO
+                // - for begins of any non-transit element
+                // - for the end/arrival of non-public transport transit elements (e.g. car rental drop-offs)
+                Kirigami.Action {
+                    visible: NavigationController.canNavigateTo(root.place) && (!root.isRangeEnd || (root.controller.isLocationChange && !root.controller.isPublicTransport))
+                    icon.name: "go-next-symbolic"
+                    onTriggered: {
+                        root.controller.previousLocation ? NavigationController.navigateTo(root.controller.previousLocation, root.place) : NavigationController.navigateTo(root.place);
+                    }
+                    text: i18nc("@action:button Start route guidance to location", "Navigate")
+                },
+
+                // public transport connections are offered:
+                // - at all arrival locations, unless it's a layover to a subsequent transit element TODO
+                // -  when leaving non-transit events
+                Kirigami.Action {
+                    visible: root.place != undefined && root.place.geo.isValid && !root.isRangeBegin
+                    icon.name: "view-calendar-day"
+                    onTriggered: applicationWindow().pageStack.push(departuresPage)
+                    text: i18nc("@action:button", "Public Transport Departures")
+                }
+            ]
         }
     }
 }
