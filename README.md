@@ -34,3 +34,5 @@ General introduction: https://community.kde.org/Get_Involved
 Building:
 - Android: https://develop.kde.org/docs/packaging/android/building_applications/
 - Othe platforms: https://community.kde.org/Get_Involved/development
+
+Matrix channel: [#itinerary:kde.org](https://matrix.to/#/#itinerary:kde.org)
