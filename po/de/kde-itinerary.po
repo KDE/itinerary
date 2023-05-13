@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 00:47+0000\n"
-"PO-Revision-Date: 2023-05-08 23:46+0200\n"
+"PO-Revision-Date: 2023-05-12 19:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2580,34 +2580,28 @@ msgid "Arrival Time"
 msgstr "Ankunftszeit"
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
-msgstr "Abfahrt von %1 auf Bahnsteig %2"
+msgstr "Abfahrt in %1 von Bahnsteig %2"
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "Abflug von %1: %2"
+msgstr "Abfahrt in %1"
 
 #: app/TrainDelegate.qml:92
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Ankunft in %1 auf Bahnsteig %2"
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival - %1"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
-msgstr "Ankunft - %1"
+msgstr "Ankunft in %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2667,8 +2661,7 @@ msgid "Train Ticket"
 msgstr "Zugkarte"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Abfahrt"
@@ -2679,8 +2672,7 @@ msgid "Additional notes"
 msgstr "Zusätzliche Notizen"
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Ankunft"
