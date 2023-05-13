@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:34+0000\n"
-"PO-Revision-Date: 2023-04-20 20:02+0200\n"
+"PO-Revision-Date: 2023-05-12 19:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -2380,7 +2380,7 @@ msgstr "Ankunftszeit"
 #: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
-msgstr "Abfahrt von %1 auf Bahnsteig %2"
+msgstr "Abfahrt in %1 von Bahnsteig %2"
 
 #: app/TrainDelegate.qml:74
 #, kde-format
