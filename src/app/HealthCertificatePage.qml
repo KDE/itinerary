@@ -72,7 +72,7 @@ Kirigami.Page {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onTriggered: {
-                    HealthCertificateManager.removeCertificate(certSelector.currentIndex);
+                    ApplicationController.healthCertificateManager.removeCertificate(certSelector.currentIndex);
                     deleteWarningDialog.close();
                 }
             }
@@ -86,11 +86,11 @@ Kirigami.Page {
             id: certSelector
             Layout.margins: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            model: HealthCertificateManager
+            model: ApplicationController.healthCertificateManager
             valueRole: "certificate"
             textRole: "display"
             Connections {
-                target: HealthCertificateManager
+                target: ApplicationController.healthCertificateManager
                 function onNewCertificateLoaded(index) {
                     certSelector.currentIndex = index;
                 }

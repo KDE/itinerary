@@ -31,7 +31,7 @@ HealthCertificateManager::HealthCertificateManager(QObject *parent)
 
 HealthCertificateManager::~HealthCertificateManager() = default;
 
-bool HealthCertificateManager::isAvailable() const
+bool HealthCertificateManager::isAvailable()
 {
 #if HAVE_KHEALTHCERTIFICATE
     return true;

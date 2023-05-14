@@ -9,7 +9,6 @@
 
 #include <applicationcontroller.h>
 #include <documentmanager.h>
-#include <healthcertificatemanager.h>
 #include <passmanager.h>
 #include <pkpassmanager.h>
 #include <reservationmanager.h>
@@ -68,9 +67,6 @@ inline void clearAll(PassManager *passMgr)
 inline std::unique_ptr<ApplicationController> makeAppController()
 {
     std::unique_ptr<ApplicationController> ctrl(new ApplicationController);
-
-    auto healthMgr = new HealthCertificateManager(ctrl.get());
-    ctrl->setHealthCertificateManager(healthMgr);
 
     auto passMgr = new PassManager(ctrl.get());
     clearAll(passMgr);

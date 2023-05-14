@@ -35,10 +35,6 @@ private Q_SLOTS:
     {
         PkPassManager passMgr;
         ReservationManager resMgr;
-        ApplicationController ctrl;
-        ctrl.setPkPassManager(&passMgr);
-        ctrl.setReservationManager(&resMgr);
-        QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
 
         {
             HealthCertificateManager mgr;
@@ -50,91 +46,101 @@ private Q_SLOTS:
         }
 
         {
-            HealthCertificateManager mgr;
-            QAbstractItemModelTester modelTester(&mgr);
-            QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
-            ctrl.setHealthCertificateManager(&mgr);
-            QCOMPARE(mgr.rowCount(), 0);
+            ApplicationController ctrl;
+            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ctrl.setPkPassManager(&passMgr);
+            ctrl.setReservationManager(&resMgr);
+            auto mgr = ctrl.healthCertificateManager();
+            QAbstractItemModelTester modelTester(mgr);
+            QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
+            QCOMPARE(mgr->rowCount(), 0);
             const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
 #if HAVE_KHEALTHCERTIFICATE
             ctrl.importData(rawData);
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
             QCOMPARE(insertSpy.size(), 1);
-            QVERIFY(!mgr.data(mgr.index(0, 0), Qt::DisplayRole).toString().isEmpty());
-            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::CertificateRole).isNull());
-            QCOMPARE(mgr.data(mgr.index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
-            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
+            QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
+            QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::CertificateRole).isNull());
+            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
 
             QCOMPARE(infoSpy.size(), 1);
-            infoSpy.clear();
 #endif
         }
 
         {
-            HealthCertificateManager mgr;
-            QAbstractItemModelTester modelTester(&mgr);
-            ctrl.setHealthCertificateManager(&mgr);
+            ApplicationController ctrl;
+            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ctrl.setPkPassManager(&passMgr);
+            ctrl.setReservationManager(&resMgr);
+            auto mgr = ctrl.healthCertificateManager();
+            QAbstractItemModelTester modelTester(mgr);
 #if HAVE_KHEALTHCERTIFICATE
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
             const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
             // no duplicates
             ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
-            infoSpy.clear();
 #endif
         }
 
         {
-            HealthCertificateManager mgr;
-            QAbstractItemModelTester modelTester(&mgr);
-            ctrl.setHealthCertificateManager(&mgr);
+            ApplicationController ctrl;
+            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ctrl.setPkPassManager(&passMgr);
+            ctrl.setReservationManager(&resMgr);
+            auto mgr = ctrl.healthCertificateManager();
+            QAbstractItemModelTester modelTester(mgr);
 #if HAVE_KHEALTHCERTIFICATE
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
             // garbage is rejected
             ctrl.importData("not a vaccination certificate");
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
-            infoSpy.clear();
 #endif
         }
 
         {
-            HealthCertificateManager mgr;
-            QAbstractItemModelTester modelTester(&mgr);
-            QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
-            ctrl.setHealthCertificateManager(&mgr);
+            ApplicationController ctrl;
+            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ctrl.setPkPassManager(&passMgr);
+            ctrl.setReservationManager(&resMgr);
+            auto mgr = ctrl.healthCertificateManager();
+            QAbstractItemModelTester modelTester(mgr);
+            QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
-            QCOMPARE(mgr.rowCount(), 1);
+            QCOMPARE(mgr->rowCount(), 1);
             const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
             ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
-            QCOMPARE(mgr.rowCount(), 2);
+            QCOMPARE(mgr->rowCount(), 2);
             QCOMPARE(insertSpy.size(), 1);
-            QVERIFY(!mgr.data(mgr.index(0, 0), Qt::DisplayRole).toString().isEmpty());
-            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::CertificateRole).isNull());
-            QCOMPARE(mgr.data(mgr.index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
-            QVERIFY(!mgr.data(mgr.index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
+            QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
+            QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::CertificateRole).isNull());
+            QCOMPARE(mgr->data(mgr->index(0, 0), HealthCertificateManager::RawDataRole).toByteArray(),  rawData);
+            QVERIFY(!mgr->data(mgr->index(0, 0), HealthCertificateManager::StorageIdRole).toString().isEmpty());
 
             QCOMPARE(infoSpy.size(), 1);
-            infoSpy.clear();
 #endif
         }
 
         {
-            HealthCertificateManager mgr;
-            QAbstractItemModelTester modelTester(&mgr);
-            QSignalSpy insertSpy(&mgr, &QAbstractItemModel::rowsInserted);
-            ctrl.setHealthCertificateManager(&mgr);
+            ApplicationController ctrl;
+            QSignalSpy infoSpy(&ctrl, &ApplicationController::infoMessage);
+            ctrl.setPkPassManager(&passMgr);
+            ctrl.setReservationManager(&resMgr);
+            auto mgr = ctrl.healthCertificateManager();
+            QAbstractItemModelTester modelTester(mgr);
+            QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
-            QCOMPARE(mgr.rowCount(), 2);
+            QCOMPARE(mgr->rowCount(), 2);
             ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
-            QCOMPARE(mgr.rowCount(), 3);
+            QCOMPARE(mgr->rowCount(), 3);
             QCOMPARE(insertSpy.size(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
-            infoSpy.clear();
 #endif
         }
 

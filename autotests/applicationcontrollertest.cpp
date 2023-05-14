@@ -11,7 +11,6 @@
 #include <reservationmanager.h>
 #include <documentmanager.h>
 #include <favoritelocationmodel.h>
-#include <healthcertificatemanager.h>
 #include <livedatamanager.h>
 #include <passmanager.h>
 #include <transfermanager.h>
@@ -57,7 +56,6 @@ private Q_SLOTS:
         DocumentManager docMgr;
         Test::clearAll(&docMgr);
 
-        HealthCertificateManager healthCertMgr;
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
@@ -66,7 +64,6 @@ private Q_SLOTS:
         appController.setPkPassManager(&pkPassMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
-        appController.setHealthCertificateManager(&healthCertMgr);
         appController.setPassManager(&passMgr);
 
         appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
@@ -112,7 +109,6 @@ private Q_SLOTS:
         DocumentManager docMgr;
         Test::clearAll(&docMgr);
 
-        HealthCertificateManager healthCertMgr;
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
@@ -121,7 +117,6 @@ private Q_SLOTS:
         appController.setPkPassManager(&pkPassMgr);
         appController.setReservationManager(&resMgr);
         appController.setDocumentManager(&docMgr);
-        appController.setHealthCertificateManager(&healthCertMgr);
         appController.setPassManager(&passMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
@@ -164,8 +159,6 @@ private Q_SLOTS:
         PassManager passMgr;
         Test::clearAll(&passMgr);
 
-        HealthCertificateManager healthCertMgr;
-
         LiveDataManager liveDataMgr;
 
         ApplicationController appController;
@@ -176,7 +169,6 @@ private Q_SLOTS:
         appController.setTransferManager(&transferMgr);
         appController.setFavoriteLocationModel(&favLoc);
         appController.setPassManager(&passMgr);
-        appController.setHealthCertificateManager(&healthCertMgr);
         appController.setLiveDataManager(&liveDataMgr);
 
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));

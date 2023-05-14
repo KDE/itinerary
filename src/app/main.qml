@@ -127,7 +127,7 @@ Kirigami.ApplicationWindow {
                     pageStack.layers.push(healtCertificateComponent.item)
                 }
                 enabled: pageStack.layers.depth < 2
-                visible: HealthCertificateManager.isAvailable
+                visible: ApplicationController.hasHealthCertificateSupport
             },
             Kirigami.Action {
                 id: liveAction

@@ -179,11 +179,6 @@ void ApplicationController::setPassManager(PassManager *passMgr)
     m_passMgr = passMgr;
 }
 
-void ApplicationController::setHealthCertificateManager(HealthCertificateManager *healthCertMgr)
-{
-    m_healthCertMgr = healthCertMgr;
-}
-
 bool ApplicationController::probablyUrl(const QString &text)
 {
     return text.startsWith(QLatin1String("https://")) && text.size() < 256;
@@ -430,7 +425,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
 
     // look for health certificate barcodes instead
     // if we don't find anything, try to import as health certificate directly
-    if (importHealthCertificateRecursive(engine.rootDocumentNode()) || m_healthCertMgr->importCertificate(data)) {
+    if (importHealthCertificateRecursive(engine.rootDocumentNode()) || healthCertificateManager()->importCertificate(data)) {
         Q_EMIT infoMessage(i18n("Health certificate imported."));
         healthCertImported = true;
     }
@@ -553,7 +548,7 @@ void ApplicationController::exportToFile(const QUrl &url)
     exporter.exportFavoriteLocations(m_favLocModel);
     exporter.exportTransfers(m_resMgr, m_transferMgr);
     exporter.exportPasses(m_passMgr);
-    exporter.exportHealthCertificates(m_healthCertMgr);
+    exporter.exportHealthCertificates(healthCertificateManager());
     exporter.exportLiveData();
     exporter.exportSettings();
     Q_EMIT infoMessage(i18n("Export completed."));
@@ -623,7 +618,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
         count += importer.importFavoriteLocations(m_favLocModel);
         count += importer.importTransfers(m_resMgr, m_transferMgr);
         count += importer.importPasses(m_passMgr);
-        count += importer.importHealthCertificates(m_healthCertMgr);
+        count += importer.importHealthCertificates(healthCertificateManager());
         count += importer.importLiveData(m_liveDataMgr);
         count += importer.importSettings();
     }
@@ -639,10 +634,10 @@ bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocu
     if (node.childNodes().size() == 1 && (node.mimeType() == QLatin1String("internal/qimage") || node.mimeType() == QLatin1String("application/vnd.apple.pkpass"))) {
         const auto &child = node.childNodes()[0];
         if (child.isA<QString>()) {
-            return m_healthCertMgr->importCertificate(child.content<QString>().toUtf8());
+            return healthCertificateManager()->importCertificate(child.content<QString>().toUtf8());
         }
         if (child.isA<QByteArray>()) {
-            return m_healthCertMgr->importCertificate(child.content<QByteArray>());
+            return healthCertificateManager()->importCertificate(child.content<QByteArray>());
         }
     }
 
@@ -754,6 +749,19 @@ QVariant ApplicationController::aboutData() const
 QString ApplicationController::userAgent() const
 {
     return QLatin1String("org.kde.itinerary/") + QCoreApplication::applicationVersion() + QLatin1String(" (kde-pim@kde.org)");
+}
+
+bool ApplicationController::hasHealthCertificateSupport() const
+{
+    return HealthCertificateManager::isAvailable();
+}
+
+HealthCertificateManager* ApplicationController::healthCertificateManager() const
+{
+    if (!m_healthCertMgr) {
+        m_healthCertMgr = new HealthCertificateManager(const_cast<ApplicationController*>(this));
+    }
+    return m_healthCertMgr;
 }
 
 #include "moc_applicationcontroller.cpp"

@@ -138,6 +138,7 @@ void registerApplicationTypes()
     qRegisterMetaType<TripGroupManager*>();
     qRegisterMetaType<WeatherForecast>();
     qRegisterMetaType<Permission::Permission>();
+    qRegisterMetaType<HealthCertificateManager*>();
 
     qmlRegisterUncreatableType<LocationInformation>("org.kde.itinerary", 1, 0, "LocationInformation", {});
     qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
@@ -175,7 +176,6 @@ static TimelineModel *s_timelineModel = nullptr;
 static TripGroupInfoProvider s_tripGroupInfoProvider;
 static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
-static HealthCertificateManager *s_healthCertificateManager = nullptr;
 static PassManager *s_passManager = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
@@ -206,7 +206,6 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(TimelineModel, s_timelineModel)
     REGISTER_SINGLETON_INSTANCE(TripGroupProxyModel, s_tripGroupProxyModel)
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
-    REGISTER_SINGLETON_INSTANCE(HealthCertificateManager, s_healthCertificateManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
@@ -365,9 +364,6 @@ int main(int argc, char **argv)
     QObject::connect(s_settings, &Settings::preloadMapDataChanged, &mapDownloadMgr, &MapDownloadManager::setAutomaticDownloadEnabled);
     s_mapDownloadManager = &mapDownloadMgr;
 
-    HealthCertificateManager healthCertificateMgr;
-    s_healthCertificateManager = &healthCertificateMgr;
-
     KItinerary::JsonLdDocument::registerType<GenericPkPass>();
     PassManager passMgr;
     s_passManager = &passMgr;
@@ -381,7 +377,6 @@ int main(int argc, char **argv)
     appController.setLiveDataManager(&liveDataMgr);
     appController.setTripGroupManager(&tripGroupMgr);
     appController.setPassManager(&passMgr);
-    appController.setHealthCertificateManager(&healthCertificateMgr);
 #ifndef Q_OS_ANDROID
     QObject::connect(&service, &KDBusService::activateRequested, [&](const QStringList &args, const QString &workingDir) {
         qCDebug(Log) << "remote activation" << args << workingDir;

@@ -40,6 +40,8 @@ class ApplicationController : public QObject
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
     Q_PROPERTY(QString userAgent READ userAgent CONSTANT)
+    Q_PROPERTY(bool hasHealthCertificateSupport READ hasHealthCertificateSupport CONSTANT)
+    Q_PROPERTY(HealthCertificateManager *healthCertificateManager READ healthCertificateManager CONSTANT)
 public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
@@ -54,7 +56,6 @@ public:
     void setLiveDataManager(LiveDataManager *liveDataMgr);
     void setTripGroupManager(TripGroupManager *tripGroupMgr);
     void setPassManager(PassManager *passMgr);
-    void setHealthCertificateManager(HealthCertificateManager *healthCertMgr);
 
     // data import
     void importFromIntent(const KAndroidExtras::Intent &intent);
@@ -79,6 +80,10 @@ public:
     QString extractorCapabilities() const;
     QVariant aboutData() const;
     QString userAgent() const;
+
+    // health certificate manager
+    bool hasHealthCertificateSupport() const;
+    HealthCertificateManager *healthCertificateManager() const;
 
 Q_SIGNALS:
     void clipboardContentChanged();
@@ -116,7 +121,7 @@ private:
     LiveDataManager *m_liveDataMgr = nullptr;
     TripGroupManager *m_tripGroupMgr = nullptr;
     PassManager *m_passMgr = nullptr;
-    HealthCertificateManager *m_healthCertMgr = nullptr;
+    mutable HealthCertificateManager *m_healthCertMgr = nullptr;
     QNetworkAccessManager *m_nam = nullptr;
 
     bool m_importLock = false;
