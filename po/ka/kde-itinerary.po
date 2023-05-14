@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2023-05-07 06:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -516,7 +516,7 @@ msgid "Time"
 msgstr "დრო"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, kde-format
 msgid "Location"
 msgstr "მდებარეობა"
@@ -935,6 +935,30 @@ msgstr "პროგრამა"
 #, kde-format
 msgid "Number"
 msgstr "რიცხვი"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr "შიდა რუკის ნახვა"
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr "რუკაზე ნახვა"
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "ნავიგაცია"
+
+#: app/FormPlaceDelegate.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "საჯარო ტრანსპორტის გასვლის დროები"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1616,7 +1640,7 @@ msgid_plural "%1 changes"
 msgstr[0] "ერთი ცვლილება"
 msgstr[1] "%1 ცვლილება"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr "მარშრუტის ცვლილება"
@@ -2016,30 +2040,6 @@ msgstr "ღონისძიების ბილეთი"
 #, kde-format
 msgid "Pass"
 msgstr "ბილეთი"
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr "შიდა რუკის ნახვა"
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr "რუკაზე ნახვა"
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr "ნავიგაცია"
-
-#: app/PlaceDelegate.qml:112
-#, kde-format
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "საჯარო ტრანსპორტის გასვლის დროები"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

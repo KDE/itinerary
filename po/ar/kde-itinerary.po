@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -518,7 +518,7 @@ msgid "Time"
 msgstr "الوقت"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, kde-format
 msgid "Location"
 msgstr "المكان"
@@ -937,6 +937,30 @@ msgstr ""
 #, kde-format
 msgid "Number"
 msgstr "الرقم"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1621,7 +1645,7 @@ msgstr[3] ""
 msgstr[4] ""
 msgstr[5] ""
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
@@ -1691,7 +1715,7 @@ msgstr ""
 #, fuzzy, kde-format
 msgctxt "temperature"
 msgid "%1°C"
-msgstr "© ٢٠١٩-٢٠٢٣"
+msgstr "© 2019-2023"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2019,30 +2043,6 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "Pass"
 msgstr "تمريران"
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr ""
-
-#: app/PlaceDelegate.qml:112
-#, kde-format
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr ""
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

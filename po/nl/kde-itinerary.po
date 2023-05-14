@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2023-05-06 12:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -519,7 +519,7 @@ msgid "Time"
 msgstr "Tijd"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, kde-format
 msgid "Location"
 msgstr "Locatie"
@@ -938,6 +938,30 @@ msgstr "Programma"
 #, kde-format
 msgid "Number"
 msgstr "Nummer"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr "Indoorkaart bekijken"
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr "Op kaart bekijken"
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "Navigeren"
+
+#: app/FormPlaceDelegate.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Vertrektijden van openbaar vervoer"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1619,7 +1643,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Eén overstap"
 msgstr[1] "%1 keer overstappen"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
@@ -2017,30 +2041,6 @@ msgstr "Ticket voor evenement"
 #, kde-format
 msgid "Pass"
 msgstr "Pas"
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr "Indoorkaart bekijken"
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr "Op kaart bekijken"
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr "Navigeren"
-
-#: app/PlaceDelegate.qml:112
-#, kde-format
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "Vertrektijden van openbaar vervoer"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

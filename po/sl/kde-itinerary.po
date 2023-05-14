@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2023-05-07 08:26+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -519,7 +519,7 @@ msgid "Time"
 msgstr "Čas"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, kde-format
 msgid "Location"
 msgstr "Lokacija"
@@ -938,6 +938,30 @@ msgstr "Program"
 #, kde-format
 msgid "Number"
 msgstr "Številka"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr "Pogled načrt notranjosti"
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr "Pogled na mapo"
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "Krmari"
+
+#: app/FormPlaceDelegate.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Odhodi v javnem transportu"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1623,7 +1647,7 @@ msgstr[1] "%1 spremembi"
 msgstr[2] "%1 spremembe"
 msgstr[3] "%1 sprememb"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
@@ -2021,30 +2045,6 @@ msgstr "Vstopnica za dogodek"
 #, kde-format
 msgid "Pass"
 msgstr "Vozovnica"
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr "Pogled načrt notranjosti"
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr "Pogled na mapo"
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr "Krmari"
-
-#: app/PlaceDelegate.qml:112
-#, kde-format
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "Odhodi v javnem transportu"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

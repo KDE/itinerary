@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -557,7 +557,7 @@ msgid "Time"
 msgstr "Hora:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -1015,6 +1015,31 @@ msgstr ""
 #, kde-format
 msgid "Number"
 msgstr ""
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:120
+#, fuzzy, kde-format
+#| msgid "Public Transport Information Sources"
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Fontes de información de transporte público"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, fuzzy, kde-format
@@ -1742,7 +1767,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Un cambio"
 msgstr[1] "%1 cambios"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
@@ -2157,31 +2182,6 @@ msgstr "Billete do evento"
 #, kde-format
 msgid "Pass"
 msgstr ""
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr ""
-
-#: app/PlaceDelegate.qml:112
-#, fuzzy, kde-format
-#| msgid "Public Transport Information Sources"
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "Fontes de información de transporte público"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

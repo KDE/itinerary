@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -544,7 +544,7 @@ msgid "Time"
 msgstr "Время:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -999,6 +999,30 @@ msgstr "Программа"
 #| msgid "Number:"
 msgid "Number"
 msgstr "Номер:"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr "Просмотреть карту помещения"
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr "Просмотреть на карте"
+
+#: app/FormPlaceDelegate.qml:110
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "Навигация"
+
+#: app/FormPlaceDelegate.qml:120
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Отправления общественного транспорта"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, fuzzy, kde-format
@@ -1705,7 +1729,7 @@ msgstr[1] "%1 смены"
 msgstr[2] "%1 смен"
 msgstr[3] "Одна смена"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr "Изменение маршрута"
@@ -2116,30 +2140,6 @@ msgstr "Билет на событие"
 #, kde-format
 msgid "Pass"
 msgstr "Пропуск"
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr "Просмотреть карту помещения"
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr "Просмотреть на карте"
-
-#: app/PlaceDelegate.qml:102
-#, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr "Навигация"
-
-#: app/PlaceDelegate.qml:112
-#, kde-format
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "Отправления общественного транспорта"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

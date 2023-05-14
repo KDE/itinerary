@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 00:47+0000\n"
+"POT-Creation-Date: 2023-05-14 00:49+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -543,7 +543,7 @@ msgid "Time"
 msgstr "Čas:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:23 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -996,6 +996,31 @@ msgstr "Program"
 #, fuzzy, kde-format
 msgid "Number"
 msgstr "Číslo:"
+
+#: app/FormPlaceDelegate.qml:90
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:97
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:110
+#, fuzzy, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr "Prejsť"
+
+#: app/FormPlaceDelegate.qml:120
+#, fuzzy, kde-format
+#| msgid "Transport Data"
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr "Údaje o doprave"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, fuzzy, kde-format
@@ -1709,7 +1734,7 @@ msgstr[0] ""
 msgstr[1] "Zmeny"
 msgstr[2] "Zmeny"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:649
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
@@ -2123,31 +2148,6 @@ msgstr ""
 #, kde-format
 msgid "Pass"
 msgstr ""
-
-#: app/PlaceDelegate.qml:82
-#, kde-format
-msgctxt "@action:button"
-msgid "View Indoor Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:89
-#, kde-format
-msgctxt "@action:button"
-msgid "View on Map"
-msgstr ""
-
-#: app/PlaceDelegate.qml:102
-#, fuzzy, kde-format
-msgctxt "@action:button Start route guidance to location"
-msgid "Navigate"
-msgstr "Prejsť"
-
-#: app/PlaceDelegate.qml:112
-#, fuzzy, kde-format
-#| msgid "Transport Data"
-msgctxt "@action:button"
-msgid "Public Transport Departures"
-msgstr "Údaje o doprave"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
