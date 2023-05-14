@@ -285,35 +285,36 @@ Kirigami.ScrollablePage {
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+            visible: MatrixController.isAvailable
             contentItem: ColumnLayout {
                 spacing: 0
                 MobileForm.FormCardHeader {
                     Kirigami.FormData.isSection: true
                     title: i18n("Matrix Integration")
-                    subtitle: MatrixManager.infoString.length > 0 ? MatrixManager.infoString : MatrixManager.connected ? i18n("Logged in as %1", MatrixManager.userId) : ""
+                    subtitle: MatrixController.manager.infoString.length > 0 ? MatrixController.manager.infoString : MatrixController.manager.connected ? i18n("Logged in as %1", MatrixController.manager.userId) : ""
                 }
                 MobileForm.FormButtonDelegate {
                     text: i18n("Synchronize rooms")
                     icon.name: "view-refresh"
-                    onClicked: MatrixManager.sync()
-                    enabled: MatrixManager.connected
+                    onClicked: MatrixController.manager.sync()
+                    enabled: MatrixController.manager.connected
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: matrixId
                     label: i18n("Matrix ID")
-                    enabled: !MatrixManager.connected
+                    enabled: !MatrixController.manager.connected
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: matrixPassword
                     label: i18n("Password")
                     echoMode: TextInput.Password
-                    enabled: !MatrixManager.connected
+                    enabled: !MatrixController.manager.connected
                 }
                 MobileForm.FormButtonDelegate {
-                    text: MatrixManager.connected ? i18n("Log out") : i18n("Log in")
+                    text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
                     icon.name: "go-next"
-                    onClicked: MatrixManager.connected ? MatrixManager.logout() : MatrixManager.login(matrixId.text, matrixPassword.text)
-                    enabled: MatrixManager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
+                    onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
+                    enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
                 }
             }
         }

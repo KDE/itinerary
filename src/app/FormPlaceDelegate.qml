@@ -64,7 +64,7 @@ MobileForm.AbstractFormDelegate {
                 icon.name: "org.kde.neochat-symbolic"
                 onTriggered: {
                     console.log(shareConfirmDialog.room.id);
-                    MatrixManager.postLocation(shareConfirmDialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
+                    MatrixController.manager.postLocation(shareConfirmDialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
                     shareConfirmDialog.close();
                 }
             }
@@ -155,7 +155,7 @@ MobileForm.AbstractFormDelegate {
 
                 // share in Matrix channel
                 Kirigami.Action {
-                    visible: root.place != undefined && root.place.geo.isValid && root.place.name
+                    visible: MatrixController.isAvailable && root.place != undefined && root.place.geo.isValid && root.place.name
                     icon.name: "org.kde.neochat-symbolic"
                     onTriggered: matrixRoomSheet.open()
                     text: i18nc("@action:button", "Share via Matrix")

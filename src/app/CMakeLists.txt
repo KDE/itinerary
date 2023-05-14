@@ -102,6 +102,7 @@ target_sources(itinerary-app PRIVATE
     factory.cpp
     locationinformationdelegatecontroller.cpp
     mapdownloadmanager.cpp
+    matrixcontroller.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
     permissionmanager.cpp
