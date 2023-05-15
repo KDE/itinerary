@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-14 00:49+0000\n"
+"POT-Creation-Date: 2023-05-15 00:47+0000\n"
 "PO-Revision-Date: 2023-05-06 11:50+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -213,56 +213,56 @@ msgstr ""
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:327
+#: app/applicationcontroller.cpp:322
 #, kde-format
 msgid "Download failed: %1"
 msgstr "Não foi possível transferir: %1"
 
-#: app/applicationcontroller.cpp:348 app/applicationcontroller.cpp:592
-#: app/applicationcontroller.cpp:607
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:587
+#: app/applicationcontroller.cpp:602
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Não foi possível a importação: %1"
 
-#: app/applicationcontroller.cpp:353
+#: app/applicationcontroller.cpp:348
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Não foi possível a importação: O ficheiro é demasiado grande."
 
-#: app/applicationcontroller.cpp:427 app/applicationcontroller.cpp:669
-#: app/applicationcontroller.cpp:679
+#: app/applicationcontroller.cpp:422 app/applicationcontroller.cpp:664
+#: app/applicationcontroller.cpp:674
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Foi importada uma reserva."
 msgstr[1] "Foram importadas %1 reservas."
 
-#: app/applicationcontroller.cpp:434
+#: app/applicationcontroller.cpp:429
 #, kde-format
 msgid "Health certificate imported."
 msgstr "O certificado de saúde foi importado."
 
-#: app/applicationcontroller.cpp:440
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Pass imported."
 msgstr "O passe foi importado."
 
-#: app/applicationcontroller.cpp:476
+#: app/applicationcontroller.cpp:471
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nada foi importado."
 
-#: app/applicationcontroller.cpp:545 app/applicationcontroller.cpp:571
+#: app/applicationcontroller.cpp:540 app/applicationcontroller.cpp:566
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Não foi possível a exportação: %1"
 
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:579
 #, kde-format
 msgid "Export completed."
 msgstr "A exportação terminou."
 
-#: app/applicationcontroller.cpp:632
+#: app/applicationcontroller.cpp:627
 #, kde-format
 msgid "Import completed."
 msgstr "A importação terminou."
@@ -1039,7 +1039,7 @@ msgstr "Apagar o Passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente remover este passe?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:272 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:271 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1822,22 +1822,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:279
+#: app/main.cpp:278
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente Digital de Viagens"
 
-#: app/main.cpp:280
+#: app/main.cpp:279
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 da Comunidade do KDE"
 
-#: app/main.cpp:286
+#: app/main.cpp:285
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Abrir o itinerário na página indicada"
 
-#: app/main.cpp:289
+#: app/main.cpp:288
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "O ficheiro PkPass ou JSON-LD a importar."
