@@ -21,6 +21,9 @@ Kirigami.OverlaySheet {
             // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
             sourceModel: sheet.sheetOpen ? MatrixController.roomsModel : null
             sortRole: MatrixRoomsModel.DisplayNameRole
+            isSortLocaleAware: true
+            filterCaseSensitivity: Qt.CaseInsensitive
+            filterString: searchField.text
         }
 
         delegate: Kirigami.AbstractListItem {
@@ -75,5 +78,15 @@ Kirigami.OverlaySheet {
                 sheet.close();
             }
         }
+    }
+
+    footer: Kirigami.SearchField {
+        id: searchField
+        focus: true
+    }
+
+    onSheetOpenChanged: {
+        if (sheetOpen)
+            searchField.clear();
     }
 }
