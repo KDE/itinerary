@@ -79,6 +79,9 @@ Room *MatrixRoomsModel::roomAt(int row) const
 void MatrixRoomsModel::doAddRoom(Room *r)
 {
     if (auto room = static_cast<Room *>(r)) {
+        if (!room->successorId().isEmpty()) {
+            return;
+        }
         m_rooms.append(room);
         connectRoomSignals(room);
     } else {
