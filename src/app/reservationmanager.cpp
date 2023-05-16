@@ -217,7 +217,7 @@ QString ReservationManager::addReservation(const QVariant &res)
             }
 
             // truly new, and added to an existing batch
-            const QString resId = QUuid::createUuid().toString();
+            const QString resId = QUuid::createUuid().toString(QUuid::WithoutBraces);
             storeReservation(resId, res);
             Q_EMIT reservationAdded(resId);
 
@@ -230,7 +230,7 @@ QString ReservationManager::addReservation(const QVariant &res)
     }
 
     // truly new, and starting a new batch
-    const QString resId = QUuid::createUuid().toString();
+    const QString resId = QUuid::createUuid().toString(QUuid::WithoutBraces);
     storeReservation(resId, res);
     Q_EMIT reservationAdded(resId);
 

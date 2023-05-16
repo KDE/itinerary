@@ -406,7 +406,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     std::set<QString> pendingGroupRemovals;
     if (groupIt == m_tripGroups.end()) {
-        const auto tgId = QUuid::createUuid().toString();
+        const auto tgId = QUuid::createUuid().toString(QUuid::WithoutBraces);
         TripGroup g(this);
         g.setElements(elems);
         for (auto it2 = beginIt; it2 != it; ++it2) {

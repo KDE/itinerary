@@ -681,7 +681,7 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
         return;
     }
 
-    const auto docId = QUuid::createUuid().toString();
+    const auto docId = QUuid::createUuid().toString(QUuid::WithoutBraces);
 
     DigitalDocument docInfo;
 #ifdef Q_OS_ANDROID

@@ -62,7 +62,7 @@ bool HealthCertificateManager::importCertificate(const QByteArray &rawData)
 
     auto path = basePath();
     QDir().mkpath(path);
-    certData.name = QUuid::createUuid().toString();
+    certData.name = QUuid::createUuid().toString(QUuid::WithoutBraces);
     path += QLatin1Char('/') + certData.name;
 
     QFile f(path);

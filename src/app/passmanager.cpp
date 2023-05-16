@@ -133,7 +133,7 @@ bool PassManager::import(const QVariant &pass, const QString &id)
 
     if (JsonLd::isA<KItinerary::ProgramMembership>(pass) || JsonLd::isA<GenericPkPass>(pass) || JsonLd::isA<KItinerary::Ticket>(pass)) {
         Entry entry;
-        entry.id = id.isEmpty() ? QUuid::createUuid().toString() : id;
+        entry.id = id.isEmpty() ? QUuid::createUuid().toString(QUuid::WithoutBraces) : id;
         entry.data = pass;
         if (!write(entry.data, entry.id)) {
             return false;
