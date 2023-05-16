@@ -3,7 +3,7 @@ Upstream-Name: KDE Itinerary
 Upstream-Contact: Volker Krause <vkrause@kde.org>
 Source: https://invent.kde.org/pim/itinerary
 
-Files: autotests/data/*.ics autotests/data/*.json autotests/data/*.pkpass autotests/data/*.xml autotests/data/timeline/* autotests/data/tripgroup/*.json autotests/data/tripgroupproxy/*.model autotests/data/publictransport/*.json
+Files: autotests/data/*.ics autotests/data/*.json autotests/data/*.model autotests/data/*.pkpass autotests/data/*.xml autotests/data/timeline/* autotests/data/tripgroup/*.json autotests/data/tripgroupproxy/*.model autotests/data/publictransport/*.json
 Copyright: none
 License: CC0-1.0
 
@@ -11,6 +11,18 @@ Files: tests/*.json
 Copyright: none
 License: CC0-1.0
 
-Files: src/app/android/res/drawable/splash_logo.png src/app/android/res/mipmap-*/ic_launcher.png
+Files: src/app/android/res/drawable/splash_logo.png src/app/android/res/mipmap-*/ic_launcher.png src/app/android/ic_launcher-playstore.png
 Copyright: Mathis Brüchert <mbb-mail@gmx.de>
+License: LGPL-2.0-or-later
+
+Files: fastlane/metadata/org.kde.itinerary/en-US/images/featureGraphic.*
+Copyright: Mathis Brüchert <mbb-mail@gmx.de>, Volker Krause <vkrause@kde.org>
+License: LGPL-2.0-or-later
+
+Files: src/app/android/res/drawable/vendor_logo.png
+Copyright: KDE Breeze Team
+License: LGPL-2.0-or-later
+
+Files: src/app/android/res/values-*/strings.xml
+Copyright: KDE Translation Teams
 License: LGPL-2.0-or-later
