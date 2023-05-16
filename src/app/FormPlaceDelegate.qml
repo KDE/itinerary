@@ -156,6 +156,7 @@ MobileForm.AbstractFormDelegate {
                 // share in Matrix channel
                 Kirigami.Action {
                     visible: MatrixController.isAvailable && root.place != undefined && root.place.geo.isValid && root.place.name
+                    enabled: MatrixController.manager.connected
                     icon.name: "org.kde.neochat-symbolic"
                     onTriggered: matrixRoomSheet.open()
                     text: i18nc("@action:button", "Share via Matrix")
