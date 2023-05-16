@@ -27,7 +27,6 @@ using namespace KItinerary;
 
 PkPassManager::PkPassManager(QObject* parent)
     : QObject(parent)
-    , m_nam(new QNetworkAccessManager(this))
 {
 }
 
@@ -210,8 +209,9 @@ void PkPassManager::updatePass(const QString& passId)
     QNetworkRequest req(p->passUpdateUrl());
     req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
-    auto reply = m_nam->get(req);
+    auto reply = nam()->get(req);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        reply->deleteLater();
         if (reply->error() != QNetworkReply::NoError) {
             qCWarning(Log) << "Failed to download pass:" << reply->errorString();
             return;
@@ -249,6 +249,17 @@ QByteArray PkPassManager::rawData(const QString &passId) const
         return {};
     }
     return f.readAll();
+}
+
+QNetworkAccessManager* PkPassManager::nam()
+{
+    if (!m_nam) {
+        m_nam = new QNetworkAccessManager(this);
+        m_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+        m_nam->setStrictTransportSecurityEnabled(true);
+        m_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
+    }
+    return m_nam;
 }
 
 #include "moc_pkpassmanager.cpp"

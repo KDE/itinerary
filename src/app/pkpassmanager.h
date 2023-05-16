@@ -53,8 +53,10 @@ private:
     void importPassFromTempFile(const QUrl &tmpFile);
     QString doImportPass(const QUrl &url, const QByteArray &data, ImportMode mode);
 
+    QNetworkAccessManager *nam();
+
     QHash<QString, KPkPass::Pass*> m_passes;
-    QNetworkAccessManager *m_nam;
+    QNetworkAccessManager *m_nam = nullptr;
 };
 
 #endif // PKPASSMANAGER_H
