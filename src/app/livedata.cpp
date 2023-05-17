@@ -5,12 +5,13 @@
 */
 
 #include "livedata.h"
+
+#include "jsonio.h"
 #include "logging.h"
 
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
 
@@ -44,7 +45,7 @@ static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime 
     }
 
     timestamp = f.fileTime(QFile::FileModificationTime);
-    return QJsonDocument::fromJson(f.readAll()).object();
+    return JsonIO::read(f.readAll()).toObject();
 }
 
 KPublicTransport::Stopover LiveData::stopover(LiveData::Type type) const
@@ -96,7 +97,7 @@ static void storeOne(const QString &resId, LiveData::Type type, const QJsonObjec
             qCWarning(Log) << "Failed to open public transport cache file:" << file.fileName() << file.errorString();
             return;
         }
-        file.write(QJsonDocument(obj).toJson());
+        file.write(JsonIO::write(obj));
         file.close();
 
         // mtime changes need to be done without content changes to take effect

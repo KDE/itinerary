@@ -18,6 +18,7 @@ target_sources(itinerary PRIVATE
     importexport.cpp
     journeysectionmodel.cpp
     json.cpp
+    jsonio.cpp
     livedata.cpp
     livedatamanager.cpp
     localizer.cpp

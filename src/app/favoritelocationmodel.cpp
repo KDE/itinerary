@@ -5,8 +5,10 @@
 */
 
 #include "favoritelocationmodel.h"
+
 #include "gpxexport.h"
 #include "json.h"
+#include "jsonio.h"
 #include "logging.h"
 
 #include <gpx/gpxreader.h>
@@ -18,7 +20,6 @@
 #include <QDebug>
 #include <QDir>
 #include <QJsonArray>
-#include <QJsonDocument>
 #include <QFile>
 #include <QSettings>
 #include <QStandardPaths>
@@ -113,9 +114,9 @@ FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
     // load existing locations
     QFile f(favoriteLocationPath() + QLatin1String("locations.json"));
     if (f.open(QFile::ReadOnly)) { // error is fine, file might not exist yet
-        const auto doc = QJsonDocument::fromJson(f.readAll());
+        const auto val = JsonIO::read(f.readAll());
         beginResetModel();
-        m_locations = FavoriteLocation::fromJson(doc.array());
+        m_locations = FavoriteLocation::fromJson(val.toArray());
         endResetModel();
     }
 
@@ -270,7 +271,7 @@ void FavoriteLocationModel::saveLocations() const
         return;
     }
 
-    f.write(QJsonDocument(FavoriteLocation::toJson(m_locations)).toJson());
+    f.write(JsonIO::write(FavoriteLocation::toJson(m_locations)));
 }
 
 void FavoriteLocationModel::exportToGpx(const QString &filePath) const

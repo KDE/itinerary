@@ -4,7 +4,9 @@
 */
 
 #include "passmanager.h"
+
 #include "genericpkpass.h"
+#include "jsonio.h"
 #include "logging.h"
 
 #include <kitinerary_version.h>
@@ -18,7 +20,6 @@
 #include <KLocalizedString>
 
 #include <QDirIterator>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
 #include <QUuid>
@@ -240,7 +241,7 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             }
             return {};
         case PassDataRole:
-            return rawData(entry);
+            return JsonIO::convert(rawData(entry), JsonIO::JSON);
         case NameRole:
             return entry.name();
         case ValidUntilRole:
@@ -276,7 +277,7 @@ void PassManager::load()
         entry.id = it.fileName();
         const auto data = rawData(entry);
         if (!data.isEmpty()) {
-            entry.data = JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(data).object());
+            entry.data = JsonLdDocument::fromJsonSingular(JsonIO::read(data).toObject());
         }
         m_entries.push_back(std::move(entry));
     }
@@ -293,7 +294,7 @@ bool PassManager::write(const QVariant &data, const QString &id) const
         qCWarning(Log) << "Failed to open file:" << f.fileName() << f.errorString();
         return false;
     }
-    f.write(QJsonDocument(JsonLdDocument::toJson(data)).toJson());
+    f.write(JsonIO::write(JsonLdDocument::toJson(data)));
     return true;
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "tripgroup.h"
+
+#include "jsonio.h"
 #include "logging.h"
 #include "reservationmanager.h"
 #include "tripgroupmanager.h"
@@ -17,7 +19,6 @@
 #include <QDebug>
 #include <QFile>
 #include <QJsonArray>
-#include <QJsonDocument>
 #include <QJsonObject>
 
 TripGroup::TripGroup() = default;
@@ -57,8 +58,7 @@ bool TripGroup::load(const QString &path)
         return false;
     }
 
-    const auto doc = QJsonDocument::fromJson(f.readAll());
-    const auto obj = doc.object();
+    const auto obj = JsonIO::read(f.readAll()).toObject();
     m_name = obj.value(QLatin1String("name")).toString();
     const auto elems = obj.value(QLatin1String("elements")).toArray();
     m_elements.clear();
@@ -83,7 +83,7 @@ void TripGroup::store(const QString &path) const
     QJsonArray elems;
     std::copy(m_elements.begin(), m_elements.end(), std::back_inserter(elems));
     obj.insert(QLatin1String("elements"), elems);
-    f.write(QJsonDocument(obj).toJson());
+    f.write(JsonIO::write(obj));
 }
 
 QDateTime TripGroup::beginDateTime() const

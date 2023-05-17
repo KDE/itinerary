@@ -5,9 +5,11 @@
 */
 
 #include "reservationmanager.h"
+
+#include "jsonio.h"
+#include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationhelper.h"
-#include "logging.h"
 
 #include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
@@ -26,7 +28,6 @@
 #include <QDirIterator>
 #include <QFile>
 #include <QJsonArray>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QScopeGuard>
 #include <QStandardPaths>
@@ -102,13 +103,13 @@ QVariant ReservationManager::reservation(const QString& id) const
         return {};
     }
 
-    const auto doc = QJsonDocument::fromJson(f.readAll());
-    if (!(doc.isArray() && doc.array().size() == 1) && !doc.isObject()) {
+    const auto val = JsonIO::read(f.readAll());
+    if (!(val.isArray() && val.toArray().size() == 1) && !val.isObject()) {
         qCWarning(Log) << "Invalid JSON-LD reservation data file:" << resPath;
         return {};
     }
 
-    const auto resData = JsonLdDocument::fromJson(doc.isArray() ? doc.array() : QJsonArray({doc.object()}));
+    const auto resData = JsonLdDocument::fromJson(val.isArray() ? val.toArray() : QJsonArray({val.toObject()}));
     if (resData.size() != 1) {
         qCWarning(Log) << "Unable to parse JSON-LD reservation data file:" << resPath;
         return {};
@@ -271,7 +272,7 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
         qCWarning(Log) << "Unable to open file:" << f.errorString();
         return;
     }
-    f.write(QJsonDocument(JsonLdDocument::toJson(res)).toJson());
+    f.write(JsonIO::write(JsonLdDocument::toJson(res)));
     m_reservations.insert(resId, res);
 }
 
@@ -334,8 +335,8 @@ void ReservationManager::loadBatches()
         const auto batchId = it.fileInfo().baseName();
         m_batches.push_back(batchId);
 
-        const auto batchDoc = QJsonDocument::fromJson(batchFile.readAll());
-        const auto top = batchDoc.object();
+        const auto batchVal = JsonIO::read(batchFile.readAll());
+        const auto top = batchVal.toObject();
         const auto resArray = top.value(QLatin1String("elements")).toArray();
         QStringList l;
         l.reserve(resArray.size());
@@ -368,7 +369,7 @@ void ReservationManager::storeBatch(const QString &batchId) const
         return;
     }
 
-    f.write(QJsonDocument(top).toJson());
+    f.write(JsonIO::write(top));
 }
 
 void ReservationManager::storeRemoveBatch(const QString &batchId) const

@@ -5,6 +5,8 @@
 */
 
 #include "documentmanager.h"
+
+#include "jsonio.h"
 #include "logging.h"
 
 #include <KItinerary/CreativeWork>
@@ -14,7 +16,6 @@
 #include <QDebug>
 #include <QDir>
 #include <QDirIterator>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QStandardPaths>
 #include <QVariant>
@@ -54,7 +55,7 @@ QVariant DocumentManager::documentInfo(const QString &id) const
         qCWarning(Log) << "Failed to load document meta data" << filePath << f.errorString();
         return {};
     }
-    return JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(f.readAll()).object());
+    return JsonLdDocument::fromJsonSingular(JsonIO::read(f.readAll()).toObject());
 }
 
 QString DocumentManager::documentFilePath(const QString &id) const
@@ -97,7 +98,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
         // TODO error message for the ui
         return;
     }
-    metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
+    metaFile.write(JsonIO::write(JsonLdDocument::toJson(normalizedDocInfo)));
     metaFile.close();
     Q_EMIT documentAdded(id);
 }
@@ -132,7 +133,7 @@ void DocumentManager::addDocument(const QString& id, const QVariant& info, const
         // TODO error message for the ui
         return;
     }
-    metaFile.write(QJsonDocument(JsonLdDocument::toJson(normalizedDocInfo)).toJson());
+    metaFile.write(JsonIO::write(JsonLdDocument::toJson(normalizedDocInfo)));
     metaFile.close();
     Q_EMIT documentAdded(id);
 }

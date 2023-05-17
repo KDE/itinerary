@@ -5,7 +5,9 @@
 */
 
 #include "transfermanager.h"
+
 #include "constants.h"
+#include "jsonio.h"
 #include "logging.h"
 #include "favoritelocationmodel.h"
 #include "livedatamanager.h"
@@ -32,7 +34,6 @@
 
 #include <QDir>
 #include <QFile>
-#include <QJsonDocument>
 #include <QJsonObject>
 #include <QSettings>
 #include <QStandardPaths>
@@ -655,7 +656,7 @@ Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment
     if (!f.open(QFile::ReadOnly)) {
         return {};
     }
-    return Transfer::fromJson(QJsonDocument::fromJson(f.readAll()).object());
+    return Transfer::fromJson(JsonIO::read(f.readAll()).toObject());
 }
 
 void TransferManager::writeToFile(const Transfer &transfer) const
@@ -667,7 +668,7 @@ void TransferManager::writeToFile(const Transfer &transfer) const
         qCWarning(Log) << "Failed to store transfer data" << f.fileName() << f.errorString();
         return;
     }
-    f.write(QJsonDocument(Transfer::toJson(transfer)).toJson());
+    f.write(JsonIO::write(Transfer::toJson(transfer)));
 }
 
 void TransferManager::removeFile(const QString &resId, Transfer::Alignment alignment) const
