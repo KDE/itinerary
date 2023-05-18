@@ -20,6 +20,16 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    actions {
+        contextualActions: [
+            Kirigami.Action {
+                text: i18n("Share Location via Matrix")
+                iconName: "org.kde.neochat-symbolic"
+                onTriggered: matrixRoomSheet.open()
+            }
+        ]
+    }
+
     OnboardStatus {
         id: onboardStatus
         positionUpdateInterval: positionAction.checked ? 10 : -1
@@ -30,7 +40,50 @@ Kirigami.Page {
             map.autoPositionMap();
         }
 
-        onPositionChanged: map.autoPositionMap();
+        onPositionChanged: {
+            map.autoPositionMap();
+            matrixBeacon.updateLocation(onboardStatus.latitude, onboardStatus.longitude);
+        }
+    }
+
+    MatrixRoomSelectionSheet {
+        id: matrixRoomSheet
+        onRoomSelected: {
+            shareConfirmDialog.room = room;
+            shareConfirmDialog.open();
+        }
+    }
+
+    MatrixBeacon {
+        id: matrixBeacon
+        connection: MatrixController.manager.connection
+    }
+
+    Kirigami.PromptDialog {
+        id: shareConfirmDialog
+
+        property var room
+
+        title: i18n("Share Live Location")
+        subtitle: room ? i18n("Do you really want to share your current location to the Matrix channel %1?", room.displayName) : ""
+
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Share")
+                icon.name: "org.kde.neochat-symbolic"
+                visible: MatrixController.isAvailable
+                enabled: MatrixController.manager.connected
+                onTriggered: {
+                    console.log(shareConfirmDialog.room.id);
+                    matrixBeacon.roomId = shareConfirmDialog.room.id;
+                    matrixBeacon.start("TODO"); // TODO get train number
+                    shareConfirmDialog.close();
+                }
+            }
+        ]
+        closePolicy: QQC2.Popup.CloseOnEscape
     }
 
     QQC2.SwipeView {

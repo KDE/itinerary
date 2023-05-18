@@ -50,6 +50,7 @@
 
 #if HAVE_MATRIX
 #include "matrix/matrixroomsmodel.h"
+#include "matrix/matrixbeacon.h"
 #endif
 
 #include <weatherforecastmanager.h>
@@ -168,6 +169,9 @@ void registerApplicationTypes()
     qmlRegisterType<TimelineSectionDelegateController>("org.kde.itinerary", 1, 0, "TimelineSectionDelegateController");
     qmlRegisterType<TransferDelegateController>("org.kde.itinerary", 1, 0, "TransferDelegateController");
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
+#if HAVE_MATRIX
+    qmlRegisterType<MatrixBeacon>("org.kde.itinerary", 1, 0, "MatrixBeacon");
+#endif
 }
 
 // for registering QML singletons only

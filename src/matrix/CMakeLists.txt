@@ -4,6 +4,7 @@
 add_library(KMatrix STATIC)
 
 target_sources(KMatrix PRIVATE
+        matrixbeacon.cpp
         matrixmanager.cpp
         matrixroomsmodel.cpp
         matrixroomssortproxymodel.cpp
