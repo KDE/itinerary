@@ -6,7 +6,8 @@ add_library(KMatrix STATIC)
 target_sources(KMatrix PRIVATE
         matrixmanager.cpp
         matrixroomsmodel.cpp
-        )
+        matrixroomssortproxymodel.cpp
+)
 
 generate_export_header(KMatrix BASE_NAME KMatrix)
 target_link_libraries(KMatrix PUBLIC Qt::Core Quotient PRIVATE KF${KF_MAJOR_VERSION}::I18n)
