@@ -27,8 +27,19 @@ public:
         CanonicalAliasRole,
         TopicRole,
         IdRole,
+        CategoryRole,
     };
     Q_ENUM(EventRoles)
+
+    enum RoomType {
+        InvitedRoom,
+        FavoriteRoom,
+        DirectChatRoom,
+        RegularRoom,
+        LowPriorityRoom,
+        Space,
+    };
+    Q_ENUM(RoomType)
 
     MatrixRoomsModel(QObject *parent = nullptr);
 

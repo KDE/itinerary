@@ -3,7 +3,8 @@
 
 #include "matrixroomsmodel.h"
 
-#include <room.h>
+#include <Quotient/events/roomevent.h>
+#include <Quotient/room.h>
 
 using namespace Quotient;
 
@@ -155,23 +156,39 @@ QVariant MatrixRoomsModel::data(const QModelIndex &index, int role) const
         return {};
     }
     Room *room = m_rooms.at(index.row());
-    if (role == DisplayNameRole) {
-        return room->displayName();
-    }
-    if (role == AvatarRole) {
-        return room->avatarMediaId();
-    }
-    if (role == CanonicalAliasRole) {
-        return room->canonicalAlias();
-    }
-    if (role == TopicRole) {
-        return room->topic();
-    }
-    if (role == IdRole) {
-        return room->id();
-    }
-    if (role == AvatarImageRole) {
-        return room->avatar(48);
+    switch (role) {
+        case DisplayNameRole:
+            return room->displayName();
+        case AvatarRole:
+            return room->avatarMediaId();
+        case CanonicalAliasRole:
+            return room->canonicalAlias();
+        case TopicRole:
+            return room->topic();
+        case IdRole:
+            return room->id();
+        case AvatarImageRole:
+            return room->avatar(48);
+        case CategoryRole:
+            if (room->joinState() == JoinState::Invite) {
+                return InvitedRoom;
+            }
+            if (room->isFavourite()) {
+                return FavoriteRoom;
+            }
+            if (room->isLowPriority()) {
+                return LowPriorityRoom;
+            }
+            if (room->isDirectChat()) {
+                return DirectChatRoom;
+            }
+            if (const RoomCreateEvent *creationEvent = room->creation(); creationEvent) {
+                const auto contentJson = creationEvent->contentJson();
+                if (contentJson.value(Quotient::TypeKey) == QLatin1String("m.space")) {
+                    return Space;
+                }
+            }
+            return RegularRoom;
     }
     return {};
 }
@@ -195,5 +212,6 @@ QHash<int, QByteArray> MatrixRoomsModel::roleNames() const
     roles[TopicRole] = "topic";
     roles[IdRole] = "id";
     roles[AvatarImageRole] = "avatarImage";
+    roles[CategoryRole] = "category";
     return roles;
 }
