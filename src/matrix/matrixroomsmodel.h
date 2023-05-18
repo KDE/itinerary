@@ -22,11 +22,11 @@ Q_OBJECT
 public:
     enum EventRoles {
         DisplayNameRole = Qt::DisplayRole,
-        AvatarRole,
+        AvatarImageRole = Qt::DecorationRole,
+        AvatarRole = Qt::UserRole,
         CanonicalAliasRole,
         TopicRole,
         IdRole,
-        AvatarImageRole,
     };
     Q_ENUM(EventRoles)
 
