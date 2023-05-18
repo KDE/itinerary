@@ -46,7 +46,7 @@ void MatrixRoomsModel::setConnection(Connection *connection)
             for (const QString &roomID : std::as_const(rooms)) {
                 auto room = connection->room(roomID);
                 if (room) {
-                    refresh(static_cast<Room *>(room));
+                    refresh(room);
                 }
             }
         };
@@ -76,9 +76,9 @@ Room *MatrixRoomsModel::roomAt(int row) const
     return m_rooms.at(row);
 }
 
-void MatrixRoomsModel::doAddRoom(Room *r)
+void MatrixRoomsModel::doAddRoom(Room *room)
 {
-    if (auto room = static_cast<Room *>(r)) {
+    if (room) {
         if (!room->successorId().isEmpty()) {
             return;
         }
@@ -102,10 +102,10 @@ void MatrixRoomsModel::connectRoomSignals(Room *room)
 void MatrixRoomsModel::updateRoom(Room *room, Room *prev)
 {
     if (prev == room) {
-        refresh(static_cast<Room *>(room));
+        refresh(room);
         return;
     }
-    const auto newRoom = static_cast<Room *>(room);
+    const auto newRoom = room;
     const auto it = std::find_if(m_rooms.begin(), m_rooms.end(), [=](const Room *r) {
         return r == prev || r == newRoom;
     });
