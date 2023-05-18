@@ -10,6 +10,7 @@
 
 class MatrixManager;
 class MatrixRoomsModel;
+class MatrixRoomsSortProxyModel;
 
 class QAbstractItemModel;
 
@@ -34,7 +35,7 @@ public:
 
 private:
     MatrixManager *m_mgr = nullptr;
-    MatrixRoomsModel *m_roomsModel = nullptr;
+    MatrixRoomsSortProxyModel *m_roomsModel = nullptr;
 };
 
 #endif // MATRIXCONTROLLER_H

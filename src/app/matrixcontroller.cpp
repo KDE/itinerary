@@ -8,8 +8,9 @@
 #include "matrixcontroller.h"
 
 #if HAVE_MATRIX
-#include <kmatrix/matrixmanager.h>
-#include <kmatrix/matrixroomsmodel.h>
+#include <matrix/matrixmanager.h>
+#include <matrix/matrixroomsmodel.h>
+#include <matrix/matrixroomssortproxymodel.h>
 #endif
 
 MatrixController::MatrixController(QObject *parent)
@@ -45,9 +46,12 @@ QAbstractItemModel* MatrixController::roomsModel()
 {
 #if HAVE_MATRIX
     if (!m_roomsModel) {
-        m_roomsModel = new MatrixRoomsModel(this);
-        m_roomsModel->setConnection(m_mgr->connection());
-        connect(m_mgr, &MatrixManager::connectionChanged, m_roomsModel, [this]() { m_roomsModel->setConnection(m_mgr->connection()); });
+        auto roomsModel = new MatrixRoomsModel(this);
+        roomsModel->setConnection(m_mgr->connection());
+        connect(m_mgr, &MatrixManager::connectionChanged, roomsModel, [roomsModel, this]() { roomsModel->setConnection(m_mgr->connection()); });
+
+        m_roomsModel = new MatrixRoomsSortProxyModel(this);
+        m_roomsModel->setSourceModel(roomsModel);
     }
     return m_roomsModel;
 #else

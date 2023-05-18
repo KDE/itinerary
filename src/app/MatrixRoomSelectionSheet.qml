@@ -20,10 +20,24 @@ Kirigami.OverlaySheet {
         model: KSortFilterProxyModel {
             // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
             sourceModel: sheet.sheetOpen ? MatrixController.roomsModel : null
-            sortRole: MatrixRoomsModel.DisplayNameRole
-            isSortLocaleAware: true
             filterCaseSensitivity: Qt.CaseInsensitive
             filterString: searchField.text
+        }
+
+        section {
+            property: "category"
+            delegate: Kirigami.ListSectionHeader {
+                text: {
+                    switch (section * 1) {
+                        case MatrixRoomsModel.InvitedRoom: return i18nc("matrix room type", "Invited");
+                        case MatrixRoomsModel.FavoriteRoom: return i18nc("matrix room type", "Favorite Rooms");
+                        case MatrixRoomsModel.DirectChatRoom: return i18nc("matrix room type", "Direct Messages");
+                        case MatrixRoomsModel.RegularRoom: return i18nc("matrix room type", "Rooms");
+                        case MatrixRoomsModel.LowPriorityRoom: return i18nc("matrix room type", "Low Priority");
+                        case MatrixRoomsModel.Space: return i18nc("matrix room type", "Spaces");
+                    }
+                }
+            }
         }
 
         delegate: Kirigami.AbstractListItem {
