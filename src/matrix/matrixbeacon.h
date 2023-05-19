@@ -16,6 +16,7 @@ class MatrixBeacon : public QObject
     Q_OBJECT
     Q_PROPERTY(Quotient::Connection *connection READ connection WRITE setConnection NOTIFY connectionChanged)
     Q_PROPERTY(QString roomId READ roomId WRITE setRoomId NOTIFY roomIdChanged)
+    Q_PROPERTY(bool isActive READ isActive NOTIFY activeChanged)
 
 public:
     explicit MatrixBeacon(QObject *parent = nullptr);
@@ -27,6 +28,9 @@ public:
     QString roomId() const;
     void setRoomId(const QString &roomId);
 
+    /** Returns true if the beacon is currently live. */
+    bool isActive() const;
+
 public Q_SLOTS:
     void start(const QString &description);
     void stop();
@@ -35,8 +39,11 @@ public Q_SLOTS:
 Q_SIGNALS:
     void connectionChanged();
     void roomIdChanged();
+    void activeChanged();
 
 private:
+    void setBeaconInfoId(const QString &id);
+
     Quotient::Connection *m_connection = nullptr;
     QString m_roomId;
     QString m_beaconInfoId;

@@ -23,9 +23,9 @@ Kirigami.Page {
     actions {
         contextualActions: [
             Kirigami.Action {
-                text: i18n("Share Location via Matrix")
-                iconName: "org.kde.neochat-symbolic"
-                onTriggered: matrixRoomSheet.open()
+                text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
+                iconName: matrixBeacon.isActive ? "dialog-cancel" : "org.kde.neochat-symbolic"
+                onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
             }
         ]
     }

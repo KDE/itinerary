@@ -51,6 +51,11 @@ void MatrixBeacon::setRoomId(const QString &roomId)
     Q_EMIT roomIdChanged();
 }
 
+bool MatrixBeacon::isActive() const
+{
+    return !m_beaconInfoId.isEmpty();
+}
+
 void MatrixBeacon::start(const QString &description)
 {
     if (!m_connection || m_roomId.isEmpty()) {
@@ -77,7 +82,7 @@ void MatrixBeacon::start(const QString &description)
     connect(job, &Quotient::SetRoomStateWithKeyJob::result, this, [job, this]() {
         qDebug() << job->errorString() << job->jsonData();
         if (job->error() == Quotient::BaseJob::NoError) {
-            m_beaconInfoId = job->jsonData().value(QLatin1String("event_id")).toString();
+            setBeaconInfoId(job->jsonData().value(QLatin1String("event_id")).toString());
         } else {
             qWarning() << job->errorString();
         }
@@ -86,7 +91,7 @@ void MatrixBeacon::start(const QString &description)
 
 void MatrixBeacon::stop()
 {
-    m_beaconInfoId.clear();
+    setBeaconInfoId(QString());
     if (!m_connection || m_roomId.isEmpty()) {
         return;
     }
@@ -110,7 +115,7 @@ void MatrixBeacon::stop()
 
 void MatrixBeacon::updateLocation(float latitude, float longitude)
 {
-    if (!m_connection || m_roomId.isEmpty() || m_beaconInfoId.isEmpty()) {
+    if (!m_connection || m_roomId.isEmpty() || !isActive()) {
         return;
     }
 
@@ -133,4 +138,14 @@ void MatrixBeacon::updateLocation(float latitude, float longitude)
         }},
     };
     room->postJson(QLatin1String("org.matrix.msc3672.beacon"), content);
+}
+
+void MatrixBeacon::setBeaconInfoId(const QString& id)
+{
+    if (m_beaconInfoId == id) {
+        return;
+    }
+
+    m_beaconInfoId = id;
+    Q_EMIT activeChanged();
 }
