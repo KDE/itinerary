@@ -83,6 +83,7 @@ void MatrixBeacon::start(const QString &description)
         qDebug() << job->errorString() << job->jsonData();
         if (job->error() == Quotient::BaseJob::NoError) {
             setBeaconInfoId(job->jsonData().value(QLatin1String("event_id")).toString());
+            updateLocation(m_latitude, m_longitude);
         } else {
             qWarning() << job->errorString();
         }
@@ -115,7 +116,9 @@ void MatrixBeacon::stop()
 
 void MatrixBeacon::updateLocation(float latitude, float longitude)
 {
-    if (!m_connection || m_roomId.isEmpty() || !isActive()) {
+    m_latitude = latitude;
+    m_longitude = longitude;
+    if (!m_connection || m_roomId.isEmpty() || !isActive() || std::isnan(m_latitude) || std::isnan(m_longitude)) {
         return;
     }
 
@@ -129,7 +132,7 @@ void MatrixBeacon::updateLocation(float latitude, float longitude)
         {QLatin1String("msgtype"), QLatin1String("org.matrix.msc3672.beacon")},
         {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
         {QLatin1String("org.matrix.msc3488.location"), QJsonObject {
-            {QLatin1String("uri"), QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+            {QLatin1String("uri"), QLatin1String("geo:%1,%2").arg(QString::number(m_latitude), QString::number(m_longitude))},
             // {QLatin1String("description"), m_description} TODO?
         }},
         {QLatin1String("m.relates_to"), QJsonObject{

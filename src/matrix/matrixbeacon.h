@@ -8,6 +8,8 @@
 
 #include <Quotient/connection.h>
 
+#include <cmath>
+
 /** Live location sharing.
  *  @see https://github.com/matrix-org/matrix-spec-proposals/pull/3489
  */
@@ -47,6 +49,8 @@ private:
     Quotient::Connection *m_connection = nullptr;
     QString m_roomId;
     QString m_beaconInfoId;
+    float m_latitude = NAN;
+    float m_longitude = NAN;
 };
 
 #endif // MATRIXBEACON_H
