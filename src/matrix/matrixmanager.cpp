@@ -1,13 +1,15 @@
 // SPDX-FileCopyrightText: 2023 Tobias Fella <tobias.fella@kde.org>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include <qt_connection_util.h>
-#include <KLocalizedString>
-#include <Quotient/settings.h>
-#include <accountregistry.h>
-#include <room.h>
-#include <QCoreApplication>
 #include "matrixmanager.h"
+
+#include <Quotient/accountregistry.h>
+#include <Quotient/room.h>
+#include <Quotient/qt_connection_util.h>
+#include <Quotient/settings.h>
+
+#include <KLocalizedString>
+#include <QCoreApplication>
 
 using namespace Quotient;
 

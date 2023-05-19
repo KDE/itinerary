@@ -6,7 +6,7 @@
 
 #include <QObject>
 
-#include <connection.h>
+#include <Quotient/connection.h>
 
 class MatrixManager : public QObject
 {
