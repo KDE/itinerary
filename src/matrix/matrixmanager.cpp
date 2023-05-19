@@ -17,7 +17,7 @@ MatrixManager::MatrixManager(QObject *parent)
     : QObject(parent)
 {
     Accounts.invokeLogin();
-    connect(&Accounts, &AccountRegistry::rowsInserted, this, [=](){
+    connect(&Accounts, &AccountRegistry::rowsInserted, this, [this](){
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
@@ -27,7 +27,7 @@ MatrixManager::MatrixManager(QObject *parent)
             Accounts.accounts()[0]->stopSync();
         });
     });
-    connect(&Accounts, &AccountRegistry::rowsRemoved, this, [=](){
+    connect(&Accounts, &AccountRegistry::rowsRemoved, this, [this](){
         Q_EMIT connectedChanged();
         Q_EMIT userIdChanged();
         Q_EMIT connectionChanged();
@@ -38,7 +38,7 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
 {
     auto connection = new Connection(this);
     connection->resolveServer(matrixId);
-    connectSingleShot(connection, &Connection::loginFlowsChanged, this, [=](){
+    connectSingleShot(connection, &Connection::loginFlowsChanged, this, [this, connection, matrixId, password](){
         if (!connection->supportsPasswordAuth()) {
             setInfoString(i18n("This server does not support logging in using a password"));
         }
