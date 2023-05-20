@@ -78,7 +78,13 @@ Kirigami.Page {
                 onTriggered: {
                     console.log(shareConfirmDialog.room.id);
                     matrixBeacon.roomId = shareConfirmDialog.room.id;
-                    matrixBeacon.start("TODO"); // TODO get train number
+                    if (onboardStatus.hasJourney && onboardStatus.journey.sections[0].route.line.name) {
+                        const jny = onboardStatus.journey.sections[0];
+                        const name = jny.route.line.modeString + " " + jny.route.line.name;
+                        matrixBeacon.start(name.trim());
+                    } else {
+                        matrixBeacon.start("Live Position");
+                    }
                     shareConfirmDialog.close();
                 }
             }
