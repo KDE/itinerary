@@ -39,3 +39,9 @@ ecm_add_test(journeysectionmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)
 
 ecm_add_test(weathertest.cpp LINK_LIBRARIES Qt::Test itinerary-weather)
 target_include_directories(weathertest PRIVATE ${CMAKE_BINARY_DIR})
+
+# verify QML code
+# TODO remove limit on Qt5 once the QML code is ported to Qt6
+if (QT_MAJOR_VERSION EQUAL 5)
+    add_test(NAME itinerary-self-test COMMAND itinerary-app --self-test)
+endif()

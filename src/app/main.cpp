@@ -284,6 +284,8 @@ int main(int argc, char **argv)
     parser.addOption(isTemporaryOpt);
     QCommandLineOption pageOpt(QStringLiteral("page"), i18n("Open Itinerary on the given page"), QStringLiteral("page"));
     parser.addOption(pageOpt);
+    QCommandLineOption selfTestOpt(QStringLiteral("self-test"), QStringLiteral("internal, for automated testing"));
+    parser.addOption(selfTestOpt);
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
     parser.process(app);
@@ -418,6 +420,10 @@ int main(int argc, char **argv)
     using namespace KAndroidExtras;
     appController.importFromIntent(Activity::getIntent());
 #endif
+
+    if (parser.isSet(selfTestOpt)) {
+        QTimer::singleShot(std::chrono::milliseconds(250), &app, &QCoreApplication::quit);
+    }
 
     return app.exec();
 }
