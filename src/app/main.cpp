@@ -98,6 +98,15 @@
 #include <QIcon>
 #include <QWindow>
 
+#if !HAVE_MATRIX
+class MatrixBeaconStub : public QObject
+{
+    Q_OBJECT
+    Q_PROPERTY(QVariant connection MEMBER m_connection)
+    QVariant m_connection;
+};
+#endif
+
 void registerKContactsTypes()
 {
     // ### this should move into a real QML plugin for KContacts
@@ -171,6 +180,8 @@ void registerApplicationTypes()
     qmlRegisterType<WeatherForecastModel>("org.kde.itinerary", 1, 0, "WeatherForecastModel");
 #if HAVE_MATRIX
     qmlRegisterType<MatrixBeacon>("org.kde.itinerary", 1, 0, "MatrixBeacon");
+#else
+    qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
 #endif
 }
 
@@ -444,3 +455,5 @@ int main(int argc, char **argv)
 
     return app.exec();
 }
+
+#include "main.moc"
