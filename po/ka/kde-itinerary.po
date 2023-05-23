@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:49+0000\n"
+"POT-Creation-Date: 2023-05-23 00:47+0000\n"
 "PO-Revision-Date: 2023-05-07 06:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1829,7 +1829,7 @@ msgstr "© 2018-%1 KDE -ის საზოგადოება, ყველ�
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary-ის მითითებულ გვერდზე გასვლა"
 
-#: app/main.cpp:288
+#: app/main.cpp:290
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "შემოსატანი PkPass ან JSON-LD ფაილი."

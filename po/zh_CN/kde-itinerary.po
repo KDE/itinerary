@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:49+0000\n"
-"PO-Revision-Date: 2023-04-29 08:33\n"
+"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"PO-Revision-Date: 2023-05-22 14:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -311,11 +311,10 @@ msgid "Barcode Scan Mode"
 msgstr "条形码扫描模式"
 
 #: app/BoatPage.qml:75
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
-msgstr "出发时间"
+msgstr ""
 
 #: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:137
 #: app/TrainPage.qml:108
@@ -330,11 +329,10 @@ msgid "Terminal"
 msgstr ""
 
 #: app/BoatPage.qml:111
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
-msgstr "到达信息"
+msgstr ""
 
 #: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:195
 #: app/TrainPage.qml:196
@@ -438,11 +436,10 @@ msgid "Bus Ticket"
 msgstr "车票"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
-msgstr "出发时间"
+msgstr ""
 
 #: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
 #, kde-format
@@ -456,11 +453,10 @@ msgid "Station"
 msgstr ""
 
 #: app/BusPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
-msgstr "到达信息"
+msgstr ""
 
 #: app/BusPage.qml:228 app/TrainPage.qml:358
 #, kde-format
@@ -900,11 +896,10 @@ msgid "Airline"
 msgstr ""
 
 #: app/FlightPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
-msgstr "出发时间"
+msgstr ""
 
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
 #, kde-format
@@ -917,11 +912,10 @@ msgid "Gate"
 msgstr ""
 
 #: app/FlightPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
-msgstr "到达信息"
+msgstr ""
 
 #: app/FlightPage.qml:251
 #, kde-format
@@ -1826,7 +1820,7 @@ msgstr ""
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:288
+#: app/main.cpp:290
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "要导入的 PkPass 文件或 JSON-LD 文件。"
@@ -2563,34 +2557,28 @@ msgid "Arrival Time"
 msgstr ""
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
-msgstr "从 %1 的 %2 站台出发"
+msgstr ""
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "从 %1 出发的时间：%2"
+msgstr ""
 
 #: app/TrainDelegate.qml:92
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
-msgstr "抵达 %1 的 %2 站台"
+msgstr ""
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgctxt "flight arrival, %1 is airport, %2 is time"
-#| msgid "Arrival at %1: %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
-msgstr "到达 %1 的时间：%2"
+msgstr ""
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2650,11 +2638,10 @@ msgid "Train Ticket"
 msgstr "火车票"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
-msgstr "出发时间"
+msgstr ""
 
 #: app/TrainPage.qml:173 app/TrainPage.qml:257
 #, kde-format
@@ -2662,11 +2649,10 @@ msgid "Additional notes"
 msgstr ""
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
-msgstr "到达信息"
+msgstr ""
 
 #: app/TrainPage.qml:279
 #, kde-format
@@ -2998,6 +2984,3 @@ msgstr "知道了！"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "%1°C / %2°C"
-#~ msgstr "%1°C / %2°C"

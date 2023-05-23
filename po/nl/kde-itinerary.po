@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:49+0000\n"
+"POT-Creation-Date: 2023-05-23 00:47+0000\n"
 "PO-Revision-Date: 2023-05-06 12:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1832,7 +1832,7 @@ msgstr "Copyright © 2018-%1 De KDE gemeenschap"
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary (reisroute) openen op de gegeven pagina"
 
-#: app/main.cpp:288
+#: app/main.cpp:290
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Te importeren PkPass- of JSON-LD-bestand."

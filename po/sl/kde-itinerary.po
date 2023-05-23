@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-18 00:49+0000\n"
+"POT-Creation-Date: 2023-05-23 00:47+0000\n"
 "PO-Revision-Date: 2023-05-07 08:26+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1836,7 +1836,7 @@ msgstr "Copyright © 2018-%1 Skupnost KDE"
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:288
+#: app/main.cpp:290
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Datoteka PkPass ali JSON-LD za uvoz."
