@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-11 02:34+0000\n"
-"PO-Revision-Date: 2023-04-29 08:36\n"
+"PO-Revision-Date: 2023-05-22 14:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2358,12 +2358,12 @@ msgstr ""
 #: app/TrainDelegate.qml:52
 #, kde-format
 msgid "Departure from %1 on platform %2"
-msgstr "从 %1 的 %2 站台出发"
+msgstr ""
 
 #: app/TrainDelegate.qml:74
 #, kde-format
 msgid "Arrival at %1 on platform %2"
-msgstr "抵达 %1 的 %2 站台"
+msgstr ""
 
 #: app/TrainEditor.qml:18
 #, kde-format
