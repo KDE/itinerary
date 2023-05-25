@@ -30,9 +30,9 @@ App.TimelineDelegate {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            visible: !reservationFor.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.address)
+            text: Localizer.formatAddressWithContext(reservationFor.address, null, Settings.homeCountryIsoCode)
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))

@@ -52,7 +52,7 @@ App.TimelineDelegate {
         QQC2.Label {
             visible: reservationFor.location != undefined && !reservationFor.location.address.isEmpty
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.location.address)
+            text: Localizer.formatAddressWithContext(reservationFor.location.address, null, Settings.homeCountryIsoCode)
         }
         QQC2.Label {
             text: i18n("Start time: %1", Localizer.formatDateTime(reservationFor, "startDate"))

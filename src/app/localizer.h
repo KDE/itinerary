@@ -20,6 +20,7 @@ class Localizer
     Q_GADGET
 public:
     Q_INVOKABLE QString formatAddress(const QVariant &obj) const;
+    Q_INVOKABLE QString formatAddressWithContext(const QVariant &obj, const QVariant &otherObj, const QString &homeCountryIsoCode);
     Q_INVOKABLE QString formatTime(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDate(const QVariant &obj, const QString &propertyName) const;
     Q_INVOKABLE QString formatDateTime(const QVariant &obj, const QString &propertyName) const;

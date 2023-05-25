@@ -34,9 +34,9 @@ App.TimelineDelegate {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
-            visible: !reservationFor.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.address)
+            text: Localizer.formatAddressWithContext(reservationFor.address, null, Settings.homeCountryIsoCode)
         }
     }
 

@@ -67,9 +67,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.departureStation.address.isEmpty
+            visible: text !== ""
+            text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+                                                     reservationFor.arrivalStation.address,
+                                                     Settings.homeCountryIsoCode)
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.departureStation.address)
         }
 
         // TODO reserved seat
@@ -115,9 +117,11 @@ App.TimelineDelegate {
             }
         }
         QQC2.Label {
-            visible: !reservationFor.arrivalStation.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.arrivalStation.address)
+            text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+                                                     reservationFor.departureStation.address,
+                                                     Settings.homeCountryIsoCode)
         }
     }
 

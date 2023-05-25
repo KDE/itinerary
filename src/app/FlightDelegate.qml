@@ -70,9 +70,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.departureAirport.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.departureAirport.address)
+            text: Localizer.formatAddressWithContext(reservationFor.departureAirport.address,
+                                                     reservationFor.arrivalAirport.address,
+                                                     Settings.homeCountryIsoCode)
         }
         QQC2.Label {
             text: i18n("Terminal: %1  Gate: %2  Seat: %3",
@@ -94,9 +96,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.arrivalAirport.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.arrivalAirport.address)
+            text: Localizer.formatAddressWithContext(reservationFor.arrivalAirport.address,
+                                                     reservationFor.departureAirport.address,
+                                                     Settings.homeCountryIsoCode)
         }
     }
 

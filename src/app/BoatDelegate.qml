@@ -34,9 +34,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.departureBoatTerminal.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.departureBoatTerminal.address)
+            text: Localizer.formatAddressWithContext(reservationFor.departureBoatTerminal.address,
+                                                     reservationFor.arrivalBoatTerminal.address,
+                                                     Settings.homeCountryIsoCode)
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -46,9 +48,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.arrivalBoatTerminal.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.arrivalBoatTerminal.address)
+            text: Localizer.formatAddressWithContext(reservationFor.arrivalBoatTerminal.address,
+                                                     reservationFor.departureBoatTerminal.address,
+                                                     Settings.homeCountryIsoCode)
         }
         QQC2.Label {
             text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))

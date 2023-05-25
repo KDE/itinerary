@@ -50,9 +50,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.departureBusStop.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.departureBusStop.address)
+            text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
+                                                     reservationFor.arrivalBusStop.address,
+                                                     Settings.homeCountryIsoCode)
         }
         Kirigami.Separator {
             width: topLayout.width
@@ -63,9 +65,11 @@ App.TimelineDelegate {
             width: topLayout.width
         }
         QQC2.Label {
-            visible: !reservationFor.arrivalBusStop.address.isEmpty
+            visible: text !== ""
             width: topLayout.width
-            text: Localizer.formatAddress(reservationFor.arrivalBusStop.address)
+            text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
+                                                     reservationFor.departureBusStop.address,
+                                                     Settings.homeCountryIsoCode)
         }
         Row {
             width: topLayout.width
