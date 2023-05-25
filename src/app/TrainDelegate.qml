@@ -71,8 +71,23 @@ App.TimelineDelegate {
             width: topLayout.width
             text: Localizer.formatAddress(reservationFor.departureStation.address)
         }
-
-        // TODO reserved seat
+        QQC2.Label {
+            text: {
+                const ticket = reservation.reservedTicket;
+                if (ticket) {
+                    const seat = ticket.ticketedSeat;
+                    // Avoid showing just "Class 2" for virtually all trains.
+                    if (seat.seatSection && seat.seatNumber) {
+                        return i18nc("Train coach, seat, class", "Coach: %1  Seat: %2  Class: %3",
+                                     seat.seatSection || "-",
+                                     seat.seatNumber || "-",
+                                     seat.seatingType || "-");
+                    }
+                }
+                return "";
+            }
+            visible: text !== ""
+        }
 
         Kirigami.Separator {
             width: topLayout.width
