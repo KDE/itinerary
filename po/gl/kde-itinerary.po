@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"POT-Creation-Date: 2023-05-26 00:47+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -499,12 +499,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:359
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -2880,13 +2880,13 @@ msgstr ""
 msgid "Show program pass"
 msgstr "Mostrar o pase de embarque"
 
-#: app/TrainPage.qml:363
+#: app/TrainPage.qml:364
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Departure Vehicle Layout"
 msgstr "Vehículo"
 
-#: app/TrainPage.qml:369
+#: app/TrainPage.qml:370
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Arrival Vehicle Layout"

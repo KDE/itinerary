@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"POT-Creation-Date: 2023-05-26 00:47+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -498,12 +498,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:359
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatiivid"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
 #, kde-format
 msgid "Journey Details"
 msgstr "Teekonna üksikasjad"
@@ -2873,13 +2873,13 @@ msgstr ""
 msgid "Show program pass"
 msgstr "Näita pardakaarti"
 
-#: app/TrainPage.qml:363
+#: app/TrainPage.qml:364
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Departure Vehicle Layout"
 msgstr "Sõiduki struktuur"
 
-#: app/TrainPage.qml:369
+#: app/TrainPage.qml:370
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Arrival Vehicle Layout"

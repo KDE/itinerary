@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"POT-Creation-Date: 2023-05-26 00:47+0000\n"
 "PO-Revision-Date: 2023-05-22 14:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -458,12 +458,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:228 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:359
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -2681,12 +2681,12 @@ msgstr "折扣计划信息"
 msgid "Show program pass"
 msgstr ""
 
-#: app/TrainPage.qml:363
+#: app/TrainPage.qml:364
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "离站列车编组"
 
-#: app/TrainPage.qml:369
+#: app/TrainPage.qml:370
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"

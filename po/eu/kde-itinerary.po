@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"POT-Creation-Date: 2023-05-26 00:47+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -505,12 +505,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Helduera"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:359
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -2880,13 +2880,13 @@ msgstr ""
 msgid "Show program pass"
 msgstr "Erakutsi ibilgailuratze baimena"
 
-#: app/TrainPage.qml:363
+#: app/TrainPage.qml:364
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Departure Vehicle Layout"
 msgstr "Ibilgailu antolamendua"
 
-#: app/TrainPage.qml:369
+#: app/TrainPage.qml:370
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Arrival Vehicle Layout"

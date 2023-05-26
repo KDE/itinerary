@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-23 00:47+0000\n"
+"POT-Creation-Date: 2023-05-26 00:47+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -474,12 +474,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Przybycie"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:358
+#: app/BusPage.qml:228 app/TrainPage.qml:359
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatywy"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:375
+#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
 #, kde-format
 msgid "Journey Details"
 msgstr "Szczegóły podróży"
@@ -2758,12 +2758,12 @@ msgstr "Program"
 msgid "Show program pass"
 msgstr "Pokaż przepustkę programu"
 
-#: app/TrainPage.qml:363
+#: app/TrainPage.qml:364
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Układ pojazdu odjeżdżającego"
 
-#: app/TrainPage.qml:369
+#: app/TrainPage.qml:370
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Układ pojazdu przyjeżdżającego"
