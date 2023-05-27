@@ -28,6 +28,9 @@ Kirigami.ScrollablePage {
         return Settings.homeCountryIsoCode;
     }
 
+    leftPadding: 0
+    rightPadding: 0
+
     actions {
         main: Kirigami.Action {
             iconName: "document-save"
