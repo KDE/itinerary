@@ -77,7 +77,7 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
     return file;
 }
 
-QString PkPassManager::passId(const QVariant &reservation) const
+QString PkPassManager::passId(const QVariant &reservation)
 {
     QString passTypeId, serialNum;
 

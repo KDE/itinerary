@@ -27,7 +27,7 @@ public:
 
     Q_INVOKABLE KPkPass::Pass* pass(const QString &passId);
     Q_INVOKABLE bool hasPass(const QString &passId) const;
-    Q_INVOKABLE QString passId(const QVariant &reservation) const;
+    Q_INVOKABLE static QString passId(const QVariant &reservation);
 
     /** Import pass from a local @p url, returns the pass id if successful. */
     QString importPass(const QUrl &url);
