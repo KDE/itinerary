@@ -86,6 +86,22 @@ Kirigami.Page {
             licenseName: "GNU Lesser General Public License v2.1 or later"
             url: "https://github.com/fukuchi/libqrencode"
         }
+        ListElement {
+            name: "libical"
+            copyright: "© The libical developers"
+            platform: "android"
+            licenseId: "LGPL-2.1-only"
+            licenseName: "GNU Lesser General Public License v2.1"
+            url: "https://github.com/libical/libical"
+        }
+        ListElement {
+            name: "libxml2"
+            copyright: "Copyright (C) 1998-2012 Daniel Veillard"
+            platform: "android"
+            licenseId: "MIT"
+            licenseName: "MIT License"
+            url: "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
+        }
     }
 
     Component {
