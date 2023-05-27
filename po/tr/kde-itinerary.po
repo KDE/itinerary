@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 02:34+0000\n"
+"POT-Creation-Date: 2023-05-27 02:33+0000\n"
 "PO-Revision-Date: 2023-05-06 10:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -383,12 +383,12 @@ msgstr "İstasyon"
 msgid "Seat"
 msgstr "Koltuk"
 
-#: app/BusPage.qml:220 app/TrainPage.qml:400
+#: app/BusPage.qml:220 app/TrainPage.qml:401
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatifler"
 
-#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:418
 #, kde-format
 msgid "Journey Details"
 msgstr "Yolculuk Ayrıntıları"
@@ -2495,12 +2495,12 @@ msgstr "Program"
 msgid "Show program pass"
 msgstr "Program kartını göster"
 
-#: app/TrainPage.qml:405
+#: app/TrainPage.qml:406
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Kalkış Aracı Yerleşimi"
 
-#: app/TrainPage.qml:411
+#: app/TrainPage.qml:412
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Varış Aracı Yerleşimi"

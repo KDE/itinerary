@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-11 02:34+0000\n"
+"POT-Creation-Date: 2023-05-27 02:33+0000\n"
 "PO-Revision-Date: 2023-03-06 10:31+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -384,12 +384,12 @@ msgstr "Station"
 msgid "Seat"
 msgstr "Plaats"
 
-#: app/BusPage.qml:220 app/TrainPage.qml:400
+#: app/BusPage.qml:220 app/TrainPage.qml:401
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatieven"
 
-#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:417
+#: app/BusPage.qml:225 app/JourneySectionPage.qml:16 app/TrainPage.qml:418
 #, kde-format
 msgid "Journey Details"
 msgstr "Details van reis"
@@ -2502,12 +2502,12 @@ msgstr "Programma"
 msgid "Show program pass"
 msgstr "Programmapas tonen"
 
-#: app/TrainPage.qml:405
+#: app/TrainPage.qml:406
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Indeling van het vertrekkende voertuig"
 
-#: app/TrainPage.qml:411
+#: app/TrainPage.qml:412
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"
