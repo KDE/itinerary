@@ -61,7 +61,7 @@ MobileForm.AbstractFormDelegate {
         customFooterActions: [
             Kirigami.Action {
                 text: i18n("Share")
-                icon.name: "org.kde.neochat-symbolic"
+                icon.name: "emblem-shared-symbolic"
                 onTriggered: {
                     console.log(shareConfirmDialog.room.id);
                     MatrixController.manager.postLocation(shareConfirmDialog.room.id, root.place.geo.latitude, root.place.geo.longitude, root.place.name);
@@ -157,7 +157,7 @@ MobileForm.AbstractFormDelegate {
                 Kirigami.Action {
                     visible: MatrixController.isAvailable && root.place != undefined && root.place.geo.isValid && root.place.name
                     enabled: MatrixController.manager.connected
-                    icon.name: "org.kde.neochat-symbolic"
+                    icon.name: "emblem-shared-symbolic"
                     onTriggered: matrixRoomSheet.open()
                     text: i18nc("@action:button", "Share via Matrix")
                 }

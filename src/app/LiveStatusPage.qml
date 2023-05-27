@@ -24,7 +24,7 @@ Kirigami.Page {
         contextualActions: [
             Kirigami.Action {
                 text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
-                iconName: matrixBeacon.isActive ? "dialog-cancel" : "org.kde.neochat-symbolic"
+                iconName: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
                 onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
             }
         ]
@@ -72,7 +72,7 @@ Kirigami.Page {
         customFooterActions: [
             Kirigami.Action {
                 text: i18n("Share")
-                icon.name: "org.kde.neochat-symbolic"
+                icon.name: "emblem-shared-symbolic"
                 visible: MatrixController.isAvailable
                 enabled: MatrixController.manager.connected
                 onTriggered: {
