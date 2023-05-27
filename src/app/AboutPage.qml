@@ -102,6 +102,28 @@ Kirigami.Page {
             licenseName: "MIT License"
             url: "https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
         }
+        ListElement {
+            name: "libQuotient"
+            platform: "android"
+            licenseId: "LGPL-2.1-or-later"
+            licenseName: "GNU Lesser General Public License v2.1 or later"
+            url: "https://github.com/frankosterfeld/qtkeychain/"
+        }
+        ListElement {
+            name: "QtKeychain"
+            platform: "android"
+            licenseId: "BSD-3-Clause"
+            licenseName: "Modified BSD License"
+            url: "https://github.com/frankosterfeld/qtkeychain/"
+        }
+        ListElement {
+            name: "Olm"
+            copyright: "OpenMarket Ltd"
+            platform: "android"
+            licenseId: "Apache-2.0"
+            licenseName: "Apache License 2.0"
+            url: "https://gitlab.matrix.org/matrix-org/olm"
+        }
     }
 
     Component {
