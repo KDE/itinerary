@@ -61,7 +61,11 @@ void MatrixManager::login(const QString &matrixId, const QString &password)
             setInfoString({});
         });
     });
-    connection = connection;
+
+    connect(connection, &Connection::loginError, this, [this](const QString &message) {
+        setInfoString(message);
+    });
+
     setInfoString(i18n("Logging in"));
 }
 
