@@ -8,6 +8,7 @@
 #include "logging.h"
 
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/LocationUtil>
 
 #include <KContacts/PhoneNumber>
 
@@ -141,6 +142,11 @@ float Util::svgAspectRatio(const QString &svgFilePath)
 bool Util::isValidColor(const QColor &color)
 {
     return color.isValid();
+}
+
+bool Util::isLocationChange(const QVariant &res)
+{
+    return LocationUtil::isLocationChange(res);
 }
 
 #include "moc_util.cpp"

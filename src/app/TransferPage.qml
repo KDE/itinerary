@@ -178,7 +178,7 @@ Kirigami.ScrollablePage {
 
         QQC2.Label {
             text: {
-                if (root.reservation.className == "EventReservation") {
+                if (!Util.isLocationChange(root.reservation)) {
                     return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
                 }
                 return i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
@@ -191,7 +191,7 @@ Kirigami.ScrollablePage {
         QQC2.Label {
             Layout.fillWidth: true
             text: {
-                if (root.reservation.className == "EventReservation") {
+                if (!Util.isLocationChange(root.reservation)) {
                     return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
                 }
                 return i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
