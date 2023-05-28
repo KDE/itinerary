@@ -22,6 +22,7 @@ Dependencies:
     'pim/kpkpass': '@latest'
     'pim/kitinerary': '@latest'
     'pim/khealthcertificate': '@latest'
+    'third-party/libquotient': '@latest'
 
 - 'on': ['Linux/Qt5', 'FreeBSD/Qt5']
   'require':
@@ -57,6 +58,7 @@ Dependencies:
     'pim/kpkpass': '@latest-kf6'
     'pim/kitinerary': '@latest-kf6'
     'pim/khealthcertificate': '@latest'
+    'third-party/libquotient': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
   'require':
