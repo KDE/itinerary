@@ -74,6 +74,7 @@ Kirigami.OverlaySheet {
                     Layout.row: 0
                     Layout.column: 2
                     text: displayName
+                    elide: Text.ElideRight
                 }
                 QQC2.Label {
                     Layout.fillWidth: true
