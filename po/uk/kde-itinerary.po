@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-26 00:47+0000\n"
+"POT-Creation-Date: 2023-05-28 00:48+0000\n"
 "PO-Revision-Date: 2023-05-06 08:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -35,43 +35,43 @@ msgstr "yurchor@ukr.net"
 msgid "About"
 msgstr "Про програму"
 
-#: app/AboutPage.qml:106
+#: app/AboutPage.qml:122
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Авторські права: %1"
 
-#: app/AboutPage.qml:113
+#: app/AboutPage.qml:129
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Домашня сторінка: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:121
+#: app/AboutPage.qml:137
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr ""
 "Умови ліцензування: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:145
+#: app/AboutPage.qml:161
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Умови ліцензування: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:156
+#: app/AboutPage.qml:172
 #, kde-format
 msgid "Application"
 msgstr "Програма"
 
-#: app/AboutPage.qml:157
+#: app/AboutPage.qml:173
 #, kde-format
 msgid "Transport Data"
 msgstr "Дані щодо транспорту"
 
-#: app/AboutPage.qml:158
+#: app/AboutPage.qml:174
 #, kde-format
 msgid "Version"
 msgstr "Версія"
 
-#: app/AboutPage.qml:173
+#: app/AboutPage.qml:189
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -80,19 +80,19 @@ msgstr ""
 "KDE Itinerary розроблено спільнотою KDE як вільне програмне забезпечення. У "
 "ньому використано компоненти, список яких наведено нижче."
 
-#: app/AboutPage.qml:199
+#: app/AboutPage.qml:215
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "KDE Itinerary використовує дані щодо громадського транспорту з наведених "
 "нижче джерел."
 
-#: app/AboutPage.qml:226
+#: app/AboutPage.qml:242
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версія програми: %1"
 
-#: app/AboutPage.qml:245
+#: app/AboutPage.qml:261
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
@@ -297,12 +297,12 @@ msgstr "з %1 до %2"
 msgid "From: %1"
 msgstr "З: %1"
 
-#: app/BoatDelegate.qml:45 app/BusDelegate.qml:61
+#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
 #, kde-format
 msgid "To: %1"
 msgstr "До: %1"
 
-#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:105
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:107
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Час прибуття: %1"
@@ -502,7 +502,7 @@ msgstr "Полишення орендованого авто"
 msgid "Rental Car Pick-up"
 msgstr "Взяття орендованого авто"
 
-#: app/CarRentalDelegate.qml:48
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Полишення: %1"
@@ -810,12 +810,12 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Відправлення з %1: %2"
 
-#: app/FlightDelegate.qml:78
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr "Термінал: %1  Вихід: %2  Місце: %3"
 
-#: app/FlightDelegate.qml:89
+#: app/FlightDelegate.qml:91
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1681,43 +1681,43 @@ msgstr "Розташування"
 msgid "Journey"
 msgstr "Подорож"
 
-#: app/localizer.cpp:131
+#: app/localizer.cpp:180
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:176
+#: app/localizer.cpp:225
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 м"
 
-#: app/localizer.cpp:179 app/localizer.cpp:181
+#: app/localizer.cpp:228 app/localizer.cpp:230
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 км"
 
-#: app/localizer.cpp:187
+#: app/localizer.cpp:236
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 км/год"
 
-#: app/localizer.cpp:193
+#: app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:196 app/localizer.cpp:198
+#: app/localizer.cpp:245 app/localizer.cpp:247
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:204
+#: app/localizer.cpp:253
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2606,13 +2606,13 @@ msgctxt "Train departure"
 msgid "Departure from %1"
 msgstr "Відправлення з %1"
 
-#: app/TrainDelegate.qml:92
+#: app/TrainDelegate.qml:94
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Прибуття у %1, платформа %2"
 
-#: app/TrainDelegate.qml:94
+#: app/TrainDelegate.qml:96
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"

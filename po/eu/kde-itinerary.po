@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-26 00:47+0000\n"
+"POT-Creation-Date: 2023-05-28 00:48+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -36,42 +36,42 @@ msgstr "Bidaiaren xehetasunak"
 msgid "About"
 msgstr "Honi buruz"
 
-#: app/AboutPage.qml:106
+#: app/AboutPage.qml:122
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Copyright: %1"
 
-#: app/AboutPage.qml:113
+#: app/AboutPage.qml:129
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Orri nagusia: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:121
+#: app/AboutPage.qml:137
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "Lizentzia: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:145
+#: app/AboutPage.qml:161
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Lizentzia: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:156
+#: app/AboutPage.qml:172
 #, kde-format
 msgid "Application"
 msgstr "Aplikazioa"
 
-#: app/AboutPage.qml:157
+#: app/AboutPage.qml:173
 #, kde-format
 msgid "Transport Data"
 msgstr "Garraio datuak"
 
-#: app/AboutPage.qml:158
+#: app/AboutPage.qml:174
 #, kde-format
 msgid "Version"
 msgstr "Bertsioa"
 
-#: app/AboutPage.qml:173
+#: app/AboutPage.qml:189
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -80,19 +80,19 @@ msgstr ""
 "KDE Itinerary KDE komunitateak garatzen du software libre bezala eta azpian "
 "zerrendatutakoak erabiltzen ditu."
 
-#: app/AboutPage.qml:199
+#: app/AboutPage.qml:215
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "KDE Itinerary garraio publikoaren datuak erabiltzen ditu ondorengo "
 "jatorrietatik."
 
-#: app/AboutPage.qml:226
+#: app/AboutPage.qml:242
 #, kde-format
 msgid "Application version: %1"
 msgstr "Aplikazio bertsioa %1"
 
-#: app/AboutPage.qml:245
+#: app/AboutPage.qml:261
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Erauzlearen ahalmenak:"
@@ -313,12 +313,12 @@ msgstr "%1 %2ra"
 msgid "From: %1"
 msgstr "Nondik: %1"
 
-#: app/BoatDelegate.qml:45 app/BusDelegate.qml:61
+#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
 #, kde-format
 msgid "To: %1"
 msgstr "Nora: %1"
 
-#: app/BoatDelegate.qml:54 app/BusDelegate.qml:74 app/TrainDelegate.qml:105
+#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:107
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Heltzeko ordua: %1"
@@ -541,7 +541,7 @@ msgstr "Alokairu ibilgailu itzultzea"
 msgid "Rental Car Pick-up"
 msgstr "Alokairu ibilgailu hartzea"
 
-#: app/CarRentalDelegate.qml:48
+#: app/CarRentalDelegate.qml:50
 #, kde-format
 msgid "Drop-off: %1"
 msgstr "Itzultzea: %1"
@@ -871,12 +871,12 @@ msgctxt "flight departure, %1 is airport, %2 is time"
 msgid "Departure from %1: %2"
 msgstr "Irteera %1(e)tik: %2"
 
-#: app/FlightDelegate.qml:78
+#: app/FlightDelegate.qml:80
 #, kde-format
 msgid "Terminal: %1  Gate: %2  Seat: %3"
 msgstr "Terminala: %1  Atea: %2  Jarlekua: %3"
 
-#: app/FlightDelegate.qml:89
+#: app/FlightDelegate.qml:91
 #, kde-format
 msgctxt "flight arrival, %1 is airport, %2 is time"
 msgid "Arrival at %1: %2"
@@ -1804,47 +1804,47 @@ msgstr "Helbidea:"
 msgid "Journey"
 msgstr "hautatu lekualdatzea"
 
-#: app/localizer.cpp:131
+#: app/localizer.cpp:180
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr ""
 
-#: app/localizer.cpp:176
+#: app/localizer.cpp:225
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "☂ %1 mm"
 
-#: app/localizer.cpp:179 app/localizer.cpp:181
+#: app/localizer.cpp:228 app/localizer.cpp:230
 #, fuzzy, kde-format
 #| msgid "%1 km"
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:187
+#: app/localizer.cpp:236
 #, fuzzy, kde-format
 #| msgid "%1km"
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1km"
 
-#: app/localizer.cpp:193
+#: app/localizer.cpp:242
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr ""
 
-#: app/localizer.cpp:196 app/localizer.cpp:198
+#: app/localizer.cpp:245 app/localizer.cpp:247
 #, fuzzy, kde-format
 #| msgid "%1 kg"
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:204
+#: app/localizer.cpp:253
 #, fuzzy, kde-format
 #| msgid "%1°C"
 msgctxt "temperature"
@@ -2753,14 +2753,14 @@ msgctxt "Train departure"
 msgid "Departure from %1"
 msgstr "Irteera %1(e)tik: %2"
 
-#: app/TrainDelegate.qml:92
+#: app/TrainDelegate.qml:94
 #, fuzzy, kde-format
 #| msgid "Arrival at %1 on platform %2"
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Helduera %1(e)tan %2 nasan"
 
-#: app/TrainDelegate.qml:94
+#: app/TrainDelegate.qml:96
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgctxt "Train arrival"
