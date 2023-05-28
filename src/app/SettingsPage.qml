@@ -303,6 +303,7 @@ Kirigami.ScrollablePage {
                     id: matrixId
                     label: i18n("Matrix ID")
                     enabled: !MatrixController.manager.connected
+                    text: MatrixController.manager.userId
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: matrixPassword
