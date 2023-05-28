@@ -46,6 +46,9 @@ public:
 
     /** QColor::isValid for QML. */
     Q_INVOKABLE static bool isValidColor(const QColor &color);
+
+    /** Expose LocationUtil::isLocationCahnge to QML. */
+    Q_INVOKABLE static bool isLocationChange(const QVariant &res);
 };
 
 #endif // UTIL_H

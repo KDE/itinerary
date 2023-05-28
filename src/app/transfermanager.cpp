@@ -493,12 +493,13 @@ bool TransferManager::isNotInTripGroup(const QString &resId) const
 }
 
 // default transfer anchor deltas (in minutes)
-enum { FlightDelta, TrainDelta, BusDelta, BoatDelta, FallbackDelta };
+enum { FlightDelta, TrainDelta, BusDelta, BoatDelta, RestaurantDelta, FallbackDelta };
 static constexpr const int default_deltas[][2] = {
     { 90, 30 }, // Flight
     { 20, 10 }, // Train
     { 15, 10 }, // Bus
     { 60, 30 }, // Boat/Ferry
+    {  5,  5 }, // Restaurant
     { 30, 15 }, // anything else
 };
 
@@ -517,6 +518,8 @@ void TransferManager::determineAnchorDeltaDefault(Transfer &transfer, const QVar
         delta = default_deltas[BusDelta][transfer.alignment()];
     } else if (JsonLd::isA<BoatReservation>(res)) {
         delta = default_deltas[BoatDelta][transfer.alignment()];
+    } else if (JsonLd::isA<FoodEstablishmentReservation>(res)) {
+        delta = default_deltas[RestaurantDelta][transfer.alignment()];
     } else {
         delta = default_deltas[FallbackDelta][transfer.alignment()];
     }

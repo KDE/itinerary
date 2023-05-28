@@ -26,6 +26,8 @@
 #include <KPublicTransport/StopoverReply>
 #include <KPublicTransport/StopoverRequest>
 
+#include <KPkPass/Pass>
+
 #include <KLocalizedString>
 #include <KNotification>
 
@@ -37,6 +39,8 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QVector>
+
+#include <cassert>
 
 using namespace KItinerary;
 
@@ -65,6 +69,7 @@ LiveDataManager::~LiveDataManager() = default;
 
 void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 {
+    assert(m_pkPassMgr);
     m_resMgr = resMgr;
     connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded);
     connect(resMgr, &ReservationManager::batchChanged, this, &LiveDataManager::batchChanged);
@@ -440,9 +445,18 @@ bool LiveDataManager::isRelevant(const QString &resId) const
         return false;
     }
 
-    // TODO: we could discard non-train trips without a pkpass in their batch here?
+    // things handled by KPublicTransport
+    if (JsonLd::isA<TrainReservation>(res) || JsonLd::isA<BusReservation>(res)) {
+        return true;
+    }
 
-    return true;
+    // things with an updatable pkpass
+    const auto passId = PkPassManager::passId(res);
+    if (passId.isEmpty()) {
+        return false;
+    }
+    const auto pass = m_pkPassMgr->pass(passId);
+    return pass && pass->webServiceUrl().isValid();
 }
 
 void LiveDataManager::batchAdded(const QString &resId)

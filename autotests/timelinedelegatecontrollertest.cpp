@@ -161,8 +161,10 @@ private Q_SLOTS:
     void testJourneyRequest()
     {
         ReservationManager mgr;
+        PkPassManager pkPassMgr;
         Test::clearAll(&mgr);
         LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
@@ -201,9 +203,11 @@ private Q_SLOTS:
     void testApplyJourney()
     {
         ReservationManager mgr;
+        PkPassManager pkPassMgr;
         Test::clearAll(&mgr);
         LiveData::clearStorage();
         LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
         ldm.setReservationManager(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
@@ -261,9 +265,11 @@ private Q_SLOTS:
     void testMapArgs()
     {
         ReservationManager mgr;
+        PkPassManager pkPassMgr;
         Test::clearAll(&mgr);
         LiveData::clearStorage();
         LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
         ldm.setReservationManager(&mgr);
         TransferManager trfMgr;
         auto ctrl = Test::makeAppController();

@@ -74,11 +74,13 @@ private Q_SLOTS:
     void testLiveData()
     {
         ReservationManager resMgr;
+        PkPassManager pkPassMgr;
         Test::clearAll(&resMgr);
         QSignalSpy resChangeSpy(&resMgr, &ReservationManager::batchContentChanged);
         LiveData::clearStorage();
 
         LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
         QSignalSpy arrivalUpdateSpy(&ldm, &LiveDataManager::arrivalUpdated);
         QSignalSpy departureUpdateSpy(&ldm, &LiveDataManager::departureUpdated);
         ldm.setPollingEnabled(false); // we don't want to trigger network requests here
