@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 02:33+0000\n"
+"POT-Creation-Date: 2023-05-28 02:52+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1458,7 +1458,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Ett byte"
 msgstr[1] "%1 byten"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:658
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ändring av resplan"

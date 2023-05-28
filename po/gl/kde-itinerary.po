@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 02:33+0000\n"
+"POT-Creation-Date: 2023-05-28 02:52+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1509,7 +1509,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Un cambio"
 msgstr[1] "%1 cambios"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:658
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"

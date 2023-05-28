@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-27 02:33+0000\n"
+"POT-Creation-Date: 2023-05-28 02:52+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1474,7 +1474,7 @@ msgstr[0] ""
 msgstr[1] "Zmeny"
 msgstr[2] "Zmeny"
 
-#: app/livedatamanager.cpp:644
+#: app/livedatamanager.cpp:658
 #, kde-format
 msgid "Itinerary change"
 msgstr ""
