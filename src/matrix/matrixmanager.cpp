@@ -87,7 +87,7 @@ void MatrixManager::setInfoString(const QString &infoString)
 
 QString MatrixManager::userId() const
 {
-    return Accounts.accounts()[0]->userId();
+    return Accounts.count() > 0 ? Accounts.accounts()[0]->userId() : QString();
 }
 
 void MatrixManager::logout()
