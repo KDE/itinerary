@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-28 00:48+0000\n"
+"POT-Creation-Date: 2023-05-29 00:48+0000\n"
 "PO-Revision-Date: 2023-05-06 11:50+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -37,42 +37,42 @@ msgstr "zepires@gmail.com"
 msgid "About"
 msgstr "Acerca"
 
-#: app/AboutPage.qml:122
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Direitos de cópia: %1"
 
-#: app/AboutPage.qml:129
+#: app/AboutPage.qml:151
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Página Web: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:137
+#: app/AboutPage.qml:159
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "Licença: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:161
+#: app/AboutPage.qml:183
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Licença: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:172
+#: app/AboutPage.qml:194
 #, kde-format
 msgid "Application"
 msgstr "Aplicação"
 
-#: app/AboutPage.qml:173
+#: app/AboutPage.qml:195
 #, kde-format
 msgid "Transport Data"
 msgstr "Dados de Transportes"
 
-#: app/AboutPage.qml:174
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "Version"
 msgstr "Versão"
 
-#: app/AboutPage.qml:189
+#: app/AboutPage.qml:211
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -81,19 +81,19 @@ msgstr ""
 "O KDE Itinerary foi desenvolvido pela comunidade do KDE como 'software' "
 "livre e usa os componentes indicados abaixo."
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:237
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "O KDE Itinerary usa dados de transportes públicos a partir das seguintes "
 "fontes."
 
-#: app/AboutPage.qml:242
+#: app/AboutPage.qml:264
 #, kde-format
 msgid "Application version: %1"
 msgstr "Versão da aplicação: %1"
 
-#: app/AboutPage.qml:261
+#: app/AboutPage.qml:283
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Capacidades de extracção:"
@@ -944,29 +944,52 @@ msgstr "Programa"
 msgid "Number"
 msgstr "Número"
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:56
+#, fuzzy, kde-format
+#| msgid "Shared Bikes"
+msgid "Share Place"
+msgstr "Bicicletas Partilhadas"
+
+#: app/FormPlaceDelegate.qml:57
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete this ticket?"
+msgid "Do you really want to share %1 to the Matrix channel %2?"
+msgstr "Deseja realmente remover este bilhete?"
+
+#: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Ver o Mapa do Interior"
 
-#: app/FormPlaceDelegate.qml:97
+#: app/FormPlaceDelegate.qml:130
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Ver no Mapa"
 
-#: app/FormPlaceDelegate.qml:110
+#: app/FormPlaceDelegate.qml:143
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Navegar"
 
-#: app/FormPlaceDelegate.qml:120
+#: app/FormPlaceDelegate.qml:153
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Partidas de Transportes Públicos"
+
+#: app/FormPlaceDelegate.qml:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Share via Matrix"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1039,7 +1062,7 @@ msgstr "Apagar o Passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente remover este passe?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:271 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:296 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1648,7 +1671,7 @@ msgid_plural "%1 changes"
 msgstr[0] "Uma alteração"
 msgstr[1] "%1 alterações"
 
-#: app/livedatamanager.cpp:649
+#: app/livedatamanager.cpp:663
 #, kde-format
 msgid "Itinerary change"
 msgstr "Mudança de itinerário"
@@ -1658,22 +1681,49 @@ msgstr "Mudança de itinerário"
 msgid "Live Status"
 msgstr "Estado em Directo"
 
-#: app/LiveStatusPage.qml:103
+#: app/LiveStatusPage.qml:26
+#, kde-format
+msgid "Stop Location Sharing"
+msgstr ""
+
+#: app/LiveStatusPage.qml:26
+#, kde-format
+msgid "Share Location via Matrix"
+msgstr ""
+
+#: app/LiveStatusPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgid "Share Live Location"
+msgstr "Localizações Favoritas"
+
+#: app/LiveStatusPage.qml:68
+#, fuzzy, kde-format
+#| msgid ""
+#| "Do you really want to replace your existing reservation with the newly "
+#| "selected journey?"
+msgid ""
+"Do you really want to share your current location to the Matrix channel %1?"
+msgstr ""
+"Deseja realmente substituir a sua reserva existente pelo trajecto acabado de "
+"seleccionar?"
+
+#: app/LiveStatusPage.qml:162
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Seguir automaticamente no mapa"
 
-#: app/LiveStatusPage.qml:122 app/LiveStatusPage.qml:133
+#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr "À espera dos dados..."
 
-#: app/LiveStatusPage.qml:144
+#: app/LiveStatusPage.qml:203
 #, kde-format
 msgid "Position"
 msgstr "Posição"
 
-#: app/LiveStatusPage.qml:153
+#: app/LiveStatusPage.qml:212
 #, kde-format
 msgid "Journey"
 msgstr "Viagem"
@@ -1822,22 +1872,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:278
+#: app/main.cpp:303
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente Digital de Viagens"
 
-#: app/main.cpp:279
+#: app/main.cpp:304
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 da Comunidade do KDE"
 
-#: app/main.cpp:285
+#: app/main.cpp:310
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Abrir o itinerário na página indicada"
 
-#: app/main.cpp:290
+#: app/main.cpp:315
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "O ficheiro PkPass ou JSON-LD a importar."
@@ -1926,6 +1976,49 @@ msgstr "Ajuda"
 #, kde-format
 msgid "Map download finished."
 msgstr "Terminou a transferência do mapa."
+
+#: app/MatrixRoomSelectionSheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgid "Share Location"
+msgstr "Localizações Favoritas"
+
+#: app/MatrixRoomSelectionSheet.qml:32
+#, kde-format
+msgctxt "matrix room type"
+msgid "Invited"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:33
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "matrix room type"
+msgid "Favorite Rooms"
+msgstr "Localizações Favoritas"
+
+#: app/MatrixRoomSelectionSheet.qml:34
+#, kde-format
+msgctxt "matrix room type"
+msgid "Direct Messages"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:35
+#, kde-format
+msgctxt "matrix room type"
+msgid "Rooms"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:36
+#, kde-format
+msgctxt "matrix room type"
+msgid "Low Priority"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:37
+#, kde-format
+msgctxt "matrix room type"
+msgid "Spaces"
+msgstr ""
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2366,6 +2459,42 @@ msgid ""
 msgstr ""
 "Infelizmente, a informação de embarque não é suportada no seu dispositivo "
 "nesta altura."
+
+#: app/SettingsPage.qml:293
+#, kde-format
+msgid "Matrix Integration"
+msgstr ""
+
+#: app/SettingsPage.qml:294
+#, kde-format
+msgid "Logged in as %1"
+msgstr ""
+
+#: app/SettingsPage.qml:297
+#, kde-format
+msgid "Synchronize rooms"
+msgstr ""
+
+#: app/SettingsPage.qml:304
+#, kde-format
+msgid "Matrix ID"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, fuzzy, kde-format
+#| msgid "Pass"
+msgid "Password"
+msgstr "Passe"
+
+#: app/SettingsPage.qml:315
+#, kde-format
+msgid "Log out"
+msgstr ""
+
+#: app/SettingsPage.qml:315
+#, kde-format
+msgid "Log in"
+msgstr ""
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -3016,6 +3145,22 @@ msgstr ""
 #, kde-format
 msgid "Got it!"
 msgstr "Compreendi!"
+
+#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
+#: matrix/matrixmanager.cpp:110
+#, kde-format
+msgid "Syncing…"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:43
+#, kde-format
+msgid "This server does not support logging in using a password"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:69
+#, kde-format
+msgid "Logging in"
+msgstr ""
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format

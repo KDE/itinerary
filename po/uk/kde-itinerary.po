@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-28 00:48+0000\n"
+"POT-Creation-Date: 2023-05-29 00:48+0000\n"
 "PO-Revision-Date: 2023-05-06 08:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -35,43 +35,43 @@ msgstr "yurchor@ukr.net"
 msgid "About"
 msgstr "Про програму"
 
-#: app/AboutPage.qml:122
+#: app/AboutPage.qml:144
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Авторські права: %1"
 
-#: app/AboutPage.qml:129
+#: app/AboutPage.qml:151
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Домашня сторінка: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:137
+#: app/AboutPage.qml:159
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr ""
 "Умови ліцензування: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:161
+#: app/AboutPage.qml:183
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Умови ліцензування: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:172
+#: app/AboutPage.qml:194
 #, kde-format
 msgid "Application"
 msgstr "Програма"
 
-#: app/AboutPage.qml:173
+#: app/AboutPage.qml:195
 #, kde-format
 msgid "Transport Data"
 msgstr "Дані щодо транспорту"
 
-#: app/AboutPage.qml:174
+#: app/AboutPage.qml:196
 #, kde-format
 msgid "Version"
 msgstr "Версія"
 
-#: app/AboutPage.qml:189
+#: app/AboutPage.qml:211
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -80,19 +80,19 @@ msgstr ""
 "KDE Itinerary розроблено спільнотою KDE як вільне програмне забезпечення. У "
 "ньому використано компоненти, список яких наведено нижче."
 
-#: app/AboutPage.qml:215
+#: app/AboutPage.qml:237
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr ""
 "KDE Itinerary використовує дані щодо громадського транспорту з наведених "
 "нижче джерел."
 
-#: app/AboutPage.qml:242
+#: app/AboutPage.qml:264
 #, kde-format
 msgid "Application version: %1"
 msgstr "Версія програми: %1"
 
-#: app/AboutPage.qml:261
+#: app/AboutPage.qml:283
 #, kde-format
 msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
@@ -943,29 +943,52 @@ msgstr "Програма"
 msgid "Number"
 msgstr "Номер"
 
-#: app/FormPlaceDelegate.qml:90
+#: app/FormPlaceDelegate.qml:56
+#, fuzzy, kde-format
+#| msgid "Shared Bikes"
+msgid "Share Place"
+msgstr "Велосипеди спільного користування"
+
+#: app/FormPlaceDelegate.qml:57
+#, fuzzy, kde-format
+#| msgid "Do you really want to delete this ticket?"
+msgid "Do you really want to share %1 to the Matrix channel %2?"
+msgstr "Ви справді бажаєте вилучити цей квиток?"
+
+#: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:123
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Переглянути внутрішню карту"
 
-#: app/FormPlaceDelegate.qml:97
+#: app/FormPlaceDelegate.qml:130
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Переглянути на карті"
 
-#: app/FormPlaceDelegate.qml:110
+#: app/FormPlaceDelegate.qml:143
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Навігація"
 
-#: app/FormPlaceDelegate.qml:120
+#: app/FormPlaceDelegate.qml:153
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Відправлення громадського транспорту"
+
+#: app/FormPlaceDelegate.qml:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Share via Matrix"
+msgstr ""
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1038,7 +1061,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:271 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:296 app/main.qml:19 app/main.qml:73
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1651,7 +1674,7 @@ msgstr[1] "%1 зміни"
 msgstr[2] "%1 змін"
 msgstr[3] "%1 зміна"
 
-#: app/livedatamanager.cpp:649
+#: app/livedatamanager.cpp:663
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -1661,22 +1684,47 @@ msgstr "Зміна маршруту"
 msgid "Live Status"
 msgstr "Інтерактивний стан"
 
-#: app/LiveStatusPage.qml:103
+#: app/LiveStatusPage.qml:26
+#, kde-format
+msgid "Stop Location Sharing"
+msgstr ""
+
+#: app/LiveStatusPage.qml:26
+#, kde-format
+msgid "Share Location via Matrix"
+msgstr ""
+
+#: app/LiveStatusPage.qml:67
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgid "Share Live Location"
+msgstr "Улюблені місця"
+
+#: app/LiveStatusPage.qml:68
+#, fuzzy, kde-format
+#| msgid ""
+#| "Do you really want to replace your existing reservation with the newly "
+#| "selected journey?"
+msgid ""
+"Do you really want to share your current location to the Matrix channel %1?"
+msgstr "Ви справді хочете замінити ваше наявне бронювання на нове?"
+
+#: app/LiveStatusPage.qml:162
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Автоматично стежити на карті"
 
-#: app/LiveStatusPage.qml:122 app/LiveStatusPage.qml:133
+#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Очікуємо на дані…"
 
-#: app/LiveStatusPage.qml:144
+#: app/LiveStatusPage.qml:203
 #, kde-format
 msgid "Position"
 msgstr "Розташування"
 
-#: app/LiveStatusPage.qml:153
+#: app/LiveStatusPage.qml:212
 #, kde-format
 msgid "Journey"
 msgstr "Подорож"
@@ -1825,22 +1873,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:278
+#: app/main.cpp:303
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:279
+#: app/main.cpp:304
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "© Спільнота KDE, 2018–%1"
 
-#: app/main.cpp:285
+#: app/main.cpp:310
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:290
+#: app/main.cpp:315
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Файл PkPass або JSON-LD, який слід імпортувати."
@@ -1929,6 +1977,49 @@ msgstr "Довідка"
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."
+
+#: app/MatrixRoomSelectionSheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgid "Share Location"
+msgstr "Улюблені місця"
+
+#: app/MatrixRoomSelectionSheet.qml:32
+#, kde-format
+msgctxt "matrix room type"
+msgid "Invited"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:33
+#, fuzzy, kde-format
+#| msgid "Favorite Locations"
+msgctxt "matrix room type"
+msgid "Favorite Rooms"
+msgstr "Улюблені місця"
+
+#: app/MatrixRoomSelectionSheet.qml:34
+#, kde-format
+msgctxt "matrix room type"
+msgid "Direct Messages"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:35
+#, kde-format
+msgctxt "matrix room type"
+msgid "Rooms"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:36
+#, kde-format
+msgctxt "matrix room type"
+msgid "Low Priority"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:37
+#, kde-format
+msgctxt "matrix room type"
+msgid "Spaces"
+msgstr ""
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2373,6 +2464,42 @@ msgid ""
 msgstr ""
 "На жаль, на вашому пристрої у цій версії не передбачено підтримки даних щодо "
 "посадки."
+
+#: app/SettingsPage.qml:293
+#, kde-format
+msgid "Matrix Integration"
+msgstr ""
+
+#: app/SettingsPage.qml:294
+#, kde-format
+msgid "Logged in as %1"
+msgstr ""
+
+#: app/SettingsPage.qml:297
+#, kde-format
+msgid "Synchronize rooms"
+msgstr ""
+
+#: app/SettingsPage.qml:304
+#, kde-format
+msgid "Matrix ID"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, fuzzy, kde-format
+#| msgid "Pass"
+msgid "Password"
+msgstr "Передати"
+
+#: app/SettingsPage.qml:315
+#, kde-format
+msgid "Log out"
+msgstr ""
+
+#: app/SettingsPage.qml:315
+#, kde-format
+msgid "Log in"
+msgstr ""
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -3028,6 +3155,22 @@ msgstr ""
 #, kde-format
 msgid "Got it!"
 msgstr "Гаразд!"
+
+#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
+#: matrix/matrixmanager.cpp:110
+#, kde-format
+msgid "Syncing…"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:43
+#, kde-format
+msgid "This server does not support logging in using a password"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:69
+#, kde-format
+msgid "Logging in"
+msgstr ""
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
