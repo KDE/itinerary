@@ -5,7 +5,6 @@
 
 #include "calendarimportmodel.h"
 
-#include <kitinerary_version.h>
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
@@ -158,9 +157,7 @@ void CalendarImportModel::reload()
     m_events.clear();
 
     KItinerary::ExtractorEngine extractorEngine;
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 22, 41)
     extractorEngine.setHints(KItinerary::ExtractorEngine::ExtractGenericIcalEvents);
-#endif
 
     auto calEvents = m_calendar->events(today().addDays(-5), today().addDays(180));
     calEvents = m_calendar->sortEvents(std::move(calEvents), KCalendarCore::EventSortStartDate, KCalendarCore::SortDirectionAscending);

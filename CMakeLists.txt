@@ -65,7 +65,7 @@ if (NOT KF_MAJOR_VERSION EQUAL "6") # TODO temporary workaround until kirigami-a
 find_package(KF5KirigamiAddons 0.8 REQUIRED)
 endif()
 find_package(KPim${KF_MAJOR_VERSION}PkPass CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}Itinerary 5.18.0 CONFIG REQUIRED)
+find_package(KPim${KF_MAJOR_VERSION}Itinerary 5.23.0 CONFIG REQUIRED)
 find_package(KPublicTransport 23.03.80 CONFIG REQUIRED)
 find_package(KOSMIndoorMap CONFIG REQUIRED)
 find_package(KHealthCertificate CONFIG)

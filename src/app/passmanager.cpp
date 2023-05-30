@@ -9,7 +9,6 @@
 #include "jsonio.h"
 #include "logging.h"
 
-#include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/ExtractorValidator>
 #include <KItinerary/JsonLdDocument>
@@ -80,10 +79,7 @@ PassManager::PassManager(QObject *parent)
     : QAbstractListModel(parent)
     , m_baseTime(QDateTime::currentDateTime())
 {
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 22, 42)
     MergeUtil::registerComparator(isSamePass);
-#endif
-
     load();
 }
 
@@ -97,33 +93,11 @@ int PassManager::rowCount(const QModelIndex &parent) const
     return m_entries.size();
 }
 
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 22, 42)
-// ### this should eventually be replaced by custom type support in MergeUtil
-static bool isSameBackwardCompat(const QVariant &lhs, const QVariant &rhs)
-{
-    if (!MergeUtil::isSame(lhs, rhs)) {
-        return false;
-    }
-
-    if (JsonLd::isA<GenericPkPass>(lhs)) {
-        const auto lhsPass = lhs.value<GenericPkPass>();
-        const auto rhsPass = rhs.value<GenericPkPass>();
-        return isSamePass(lhsPass, rhsPass);
-    }
-
-    return true;
-}
-#endif
-
 bool PassManager::import(const QVariant &pass, const QString &id)
 {
     // check if this is an element we already have
     for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 22, 42)
-        if ((!id.isEmpty() && (*it).id == id) || isSameBackwardCompat((*it).data, pass)) {
-#else
         if ((!id.isEmpty() && (*it).id == id) || MergeUtil::isSame((*it).data, pass)) {
-#endif
             (*it).data = MergeUtil::merge((*it).data, pass);
             write((*it).data, (*it).id);
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
