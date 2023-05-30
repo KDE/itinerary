@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:48+0000\n"
-"PO-Revision-Date: 2023-05-06 10:49+0300\n"
+"PO-Revision-Date: 2023-05-29 10:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -939,21 +939,19 @@ msgid "Number"
 msgstr "Numara"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "Paylaşılan Bisikletler"
+msgstr "Yeri Paylaş"
 
 #: app/FormPlaceDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this ticket?"
+#, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "Bu bileti gerçekten silmek istiyor musunuz?"
+msgstr "%1 ögesini %2 Matrix kanalına paylaşmayı gerçekten istiyor musunuz?"
 
 #: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Paylaş"
 
 #: app/FormPlaceDelegate.qml:123
 #, kde-format
@@ -983,7 +981,7 @@ msgstr "Toplu Taşıma Kalkışları"
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr ""
+msgstr "Matrix ile Paylaş"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1678,29 +1676,24 @@ msgstr "Canlı Durum"
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Stop Location Sharing"
-msgstr ""
+msgstr "Konum Paylaşmayı Durdur"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Share Location via Matrix"
-msgstr ""
+msgstr "Konumu Matrix ile Paylaş"
 
 #: app/LiveStatusPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Live Location"
-msgstr "Sık Kullanılan Konumlar"
+msgstr "Canlı Konum Paylaş"
 
 #: app/LiveStatusPage.qml:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you really want to replace your existing reservation with the newly "
-#| "selected journey?"
+#, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr ""
-"Var olan rezervasyonunuzu yeni seçilen yolculukla değiştirmeyi gerçekten "
-"istiyor musunuz?"
+"Geçerli konumunuzu %1 Matrix kanalına paylaşmayı gerçekten istiyor musunuz?"
 
 #: app/LiveStatusPage.qml:162
 #, kde-format
@@ -1972,47 +1965,45 @@ msgid "Map download finished."
 msgstr "Harita indirme bitti."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "Sık Kullanılan Konumlar"
+msgstr "Konumu Paylaş"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "Davet Edildi"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "Sık Kullanılan Konumlar"
+msgstr "Sık Kullanılan Odalar"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "Doğrudan İletiler"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "Odalar"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "Düşük Öncelik"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "Alanlar"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2269,7 +2260,7 @@ msgstr "Çevrimiçi Hizmetler"
 #: app/SettingsPage.qml:79
 #, kde-format
 msgid "Query Traffic Data"
-msgstr "Trafik Verisi Sorgula"
+msgstr "Trafik verisini sorgula"
 
 #: app/SettingsPage.qml:82
 #, kde-format
@@ -2305,7 +2296,7 @@ msgstr "Toplu Taşıma Bilgi Kaynakları..."
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
-msgstr "Hava Durumu Tahmini"
+msgstr "Hava durumu tahmini"
 
 #: app/SettingsPage.qml:111
 #, kde-format
@@ -2327,7 +2318,7 @@ msgstr ""
 #: app/SettingsPage.qml:125
 #, kde-format
 msgid "Preload Map Data"
-msgstr "Harita Verisini Önyükle"
+msgstr "Harita verisini önyükle"
 
 #: app/SettingsPage.qml:128
 #, kde-format
@@ -2341,7 +2332,7 @@ msgstr ""
 #: app/SettingsPage.qml:135
 #, kde-format
 msgid "Currency Conversion"
-msgstr "Para Birimi Dönüştürme"
+msgstr "Para birimi dönüştürme"
 
 #: app/SettingsPage.qml:139
 #, kde-format
@@ -2452,38 +2443,37 @@ msgstr "Biniş durumu, şu anda aygıtınızda ne yazık ki şu anda desteklenmi
 #: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix Integration"
-msgstr ""
+msgstr "Matrix Tümleştirmesi"
 
 #: app/SettingsPage.qml:294
 #, kde-format
 msgid "Logged in as %1"
-msgstr ""
+msgstr "%1 olarak giriş yapıldı"
 
 #: app/SettingsPage.qml:297
 #, kde-format
 msgid "Synchronize rooms"
-msgstr ""
+msgstr "Odaları eşzamanla"
 
 #: app/SettingsPage.qml:304
 #, kde-format
 msgid "Matrix ID"
-msgstr ""
+msgstr "Matrix kimliği"
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "Kart"
+msgstr "Parola"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Oturumu Kapat"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Oturum Aç"
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -2562,12 +2552,12 @@ msgstr "Bot"
 #: app/StopPickerPage.qml:29
 #, kde-format
 msgid "Clear history"
-msgstr "Geçmişi temizle"
+msgstr "Geçmişi Temizle"
 
 #: app/StopPickerPage.qml:39
 #, kde-format
 msgid "Sort by name"
-msgstr "Ada göre sırala"
+msgstr "Ada Göre Sırala"
 
 #: app/StopPickerPage.qml:46
 #, kde-format
@@ -2577,7 +2567,7 @@ msgstr "En son kullanılan"
 #: app/StopPickerPage.qml:53
 #, kde-format
 msgid "Most often used"
-msgstr "En sık kullanılan"
+msgstr "En Sık Kullanılan"
 
 #: app/StopPickerPage.qml:127
 #, kde-format
@@ -2642,12 +2632,12 @@ msgstr "Geçerli Bilet"
 #: app/TimelinePage.qml:36
 #, kde-format
 msgid "Add train trip..."
-msgstr "Tren yolculuğu ekle..."
+msgstr "Tren Yolculuğu Ekle..."
 
 #: app/TimelinePage.qml:87
 #, kde-format
 msgid "Add from calendar..."
-msgstr "Takvimden ekle..."
+msgstr "Takvimden Ekle..."
 
 #: app/TimelinePage.qml:104
 #, kde-format
@@ -3137,17 +3127,17 @@ msgstr "Anladım!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "Eşzamanlanıyor..."
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr ""
+msgstr "Bu sunucu, bir parola kullanarak oturum açmayı desteklemiyor"
 
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "Oturum açılıyor"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
