@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-28 02:52+0000\n"
-"PO-Revision-Date: 2023-05-06 10:49+0300\n"
+"PO-Revision-Date: 2023-05-29 10:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1985,7 +1985,7 @@ msgstr "Çevrimiçi Hizmetler"
 #: app/SettingsPage.qml:79
 #, kde-format
 msgid "Query Traffic Data"
-msgstr "Trafik Verisi Sorgula"
+msgstr "Trafik verisini sorgula"
 
 #: app/SettingsPage.qml:82
 #, kde-format
@@ -2021,7 +2021,7 @@ msgstr "Toplu Taşıma Bilgi Kaynakları..."
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
-msgstr "Hava Durumu Tahmini"
+msgstr "Hava durumu tahmini"
 
 #: app/SettingsPage.qml:111
 #, kde-format
@@ -2043,7 +2043,7 @@ msgstr ""
 #: app/SettingsPage.qml:125
 #, kde-format
 msgid "Preload Map Data"
-msgstr "Harita Verisini Önyükle"
+msgstr "Harita verisini önyükle"
 
 #: app/SettingsPage.qml:128
 #, kde-format
@@ -2057,7 +2057,7 @@ msgstr ""
 #: app/SettingsPage.qml:135
 #, kde-format
 msgid "Currency Conversion"
-msgstr "Para Birimi Dönüştürme"
+msgstr "Para birimi dönüştürme"
 
 #: app/SettingsPage.qml:139
 #, kde-format
@@ -2242,12 +2242,12 @@ msgstr "Bot"
 #: app/StopPickerPage.qml:29
 #, kde-format
 msgid "Clear history"
-msgstr "Geçmişi temizle"
+msgstr "Geçmişi Temizle"
 
 #: app/StopPickerPage.qml:39
 #, kde-format
 msgid "Sort by name"
-msgstr "Ada göre sırala"
+msgstr "Ada Göre Sırala"
 
 #: app/StopPickerPage.qml:46
 #, kde-format
@@ -2257,7 +2257,7 @@ msgstr "En son kullanılan"
 #: app/StopPickerPage.qml:53
 #, kde-format
 msgid "Most often used"
-msgstr "En sık kullanılan"
+msgstr "En Sık Kullanılan"
 
 #: app/StopPickerPage.qml:127
 #, kde-format
@@ -2322,12 +2322,12 @@ msgstr "Geçerli Bilet"
 #: app/TimelinePage.qml:36
 #, kde-format
 msgid "Add train trip..."
-msgstr "Tren yolculuğu ekle..."
+msgstr "Tren Yolculuğu Ekle..."
 
 #: app/TimelinePage.qml:87
 #, kde-format
 msgid "Add from calendar..."
-msgstr "Takvimden ekle..."
+msgstr "Takvimden Ekle..."
 
 #: app/TimelinePage.qml:104
 #, kde-format
