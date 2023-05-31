@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:48+0000\n"
-"PO-Revision-Date: 2023-05-07 06:30+0200\n"
+"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"PO-Revision-Date: 2023-05-30 06:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -205,56 +205,56 @@ msgstr "მართლა გნებავთ თქვენი არსე
 msgid "Replace"
 msgstr "ჩანაცვლება"
 
-#: app/applicationcontroller.cpp:322
+#: app/applicationcontroller.cpp:321
 #, kde-format
 msgid "Download failed: %1"
 msgstr "გადმოწერის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:587
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:599
 #, kde-format
 msgid "Import failed: %1"
 msgstr "შემოტანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:348
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "შემოტანის შეცდომა: ფაილი ძალიან დიდია."
 
-#: app/applicationcontroller.cpp:422 app/applicationcontroller.cpp:664
-#: app/applicationcontroller.cpp:674
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:671
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "შემოტანილია 1 რეზერვაცია."
 msgstr[1] "შემოტანილია %1 რეზერვაცია."
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:426
 #, kde-format
 msgid "Health certificate imported."
 msgstr "ჯანმრთელობის სერტიფიკატი შემოტანილია."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Pass imported."
 msgstr "ბილიკი შემოტანილია."
 
-#: app/applicationcontroller.cpp:471
+#: app/applicationcontroller.cpp:468
 #, kde-format
 msgid "Nothing imported."
 msgstr "არაფერი შემოტანილა."
 
-#: app/applicationcontroller.cpp:540 app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Export failed: %1"
 msgstr "გატანის შეცდომა: %1"
 
-#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:579
+#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
 #, kde-format
 msgid "Export completed."
 msgstr "გატანა დასრულდა."
 
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:624
 #, kde-format
 msgid "Import completed."
 msgstr "შემოტანა დასრულდა."
@@ -637,7 +637,7 @@ msgstr "ამ რეზერვაციას დოკუმენტებ�
 msgid "Add Document..."
 msgstr "დოკუმენტის დამატება..."
 
-#: app/EditorPage.qml:35
+#: app/EditorPage.qml:38
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
@@ -937,21 +937,19 @@ msgid "Number"
 msgstr "რიცხვი"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "გაზიარებული ველოსიპედები"
+msgstr "ადგილის გაზიარება"
 
 #: app/FormPlaceDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this ticket?"
+#, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "მართლა გნებავთ, წაშალოთ ეს ბილეთ?"
+msgstr "მართლა გნებავთ %1-ის Matrix-ის არხ %2-ში გაზიარება?"
 
 #: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "გაზიარება"
 
 #: app/FormPlaceDelegate.qml:123
 #, kde-format
@@ -981,7 +979,7 @@ msgstr "საჯარო ტრანსპორტის გასვლი�
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr ""
+msgstr "Matrix-ით გაზიარება"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1676,27 +1674,24 @@ msgstr "მიმდინარე სტატუსი"
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Stop Location Sharing"
-msgstr ""
+msgstr "მდებარეობის გაზიარების შეწყვეტა"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Share Location via Matrix"
-msgstr ""
+msgstr "მდებარეობის გაზიარება Matrix-ით"
 
 #: app/LiveStatusPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Live Location"
-msgstr "რჩეული მდებარეობები"
+msgstr "მიმდინარე მდებარეობის გაზიარება"
 
 #: app/LiveStatusPage.qml:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you really want to replace your existing reservation with the newly "
-#| "selected journey?"
+#, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
-msgstr "მართლა გნებავთ თქვენი არსებული ჯავშანი ახალი მოგზაურობით შეცვალოთ?"
+msgstr ""
+"მართლა გნებავთ, თქვენი მიმდინარე მდებარეობა Matrix-ის არხ %1-ში გააზიაროთ?"
 
 #: app/LiveStatusPage.qml:162
 #, kde-format
@@ -1968,47 +1963,45 @@ msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "რჩეული მდებარეობები"
+msgstr "მდებარეობის გაზიარება"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "მოწვეულია"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "რჩეული მდებარეობები"
+msgstr "რჩეული ოთახები"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "პირდაპირი შეტყობინებები"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "ოთახები"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "დაბალი პრიორიტეტი"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "სივრცეები"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2082,13 +2075,13 @@ msgstr "ახალი გასვლის პლატფორმა: %1"
 msgid "New arrival platform is: %1"
 msgstr "ახალი ჩამოსვლის პლატფორმა: %1"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "ვადაგასული"
 
-#: app/passmanager.cpp:253
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2451,38 +2444,37 @@ msgstr ""
 #: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix Integration"
-msgstr ""
+msgstr "Matrix-ის ინტეგრაცია"
 
 #: app/SettingsPage.qml:294
 #, kde-format
 msgid "Logged in as %1"
-msgstr ""
+msgstr "შეხვედით, როგორც %1"
 
 #: app/SettingsPage.qml:297
 #, kde-format
 msgid "Synchronize rooms"
-msgstr ""
+msgstr "ოთახების სინქრონიზაცია"
 
 #: app/SettingsPage.qml:304
 #, kde-format
 msgid "Matrix ID"
-msgstr ""
+msgstr "Matrix ID"
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "ბილეთი"
+msgstr "პაროლი"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "გასვლა"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "შესვლა"
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -3136,17 +3128,17 @@ msgstr "Გავიგე!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "სინქრონიზაცია…"
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr ""
+msgstr "ამ სერვერს პაროლით შესვლის მხარდაჭერა არ გააჩნია"
 
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "შესვლა"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format

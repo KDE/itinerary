@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:48+0000\n"
+"POT-Creation-Date: 2023-05-31 00:48+0000\n"
 "PO-Revision-Date: 2023-05-22 14:00\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -204,55 +204,55 @@ msgstr "您确定要用新选择的行程替换现有预订吗？"
 msgid "Replace"
 msgstr "替换"
 
-#: app/applicationcontroller.cpp:322
+#: app/applicationcontroller.cpp:321
 #, kde-format
 msgid "Download failed: %1"
 msgstr "下载失败：%1"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:587
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:599
 #, kde-format
 msgid "Import failed: %1"
 msgstr "导入失败：%1"
 
-#: app/applicationcontroller.cpp:348
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "导入失败：文件太大。"
 
-#: app/applicationcontroller.cpp:422 app/applicationcontroller.cpp:664
-#: app/applicationcontroller.cpp:674
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:671
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "已导入 %1 个预约。"
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:426
 #, kde-format
 msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:432
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:471
+#: app/applicationcontroller.cpp:468
 #, kde-format
 msgid "Nothing imported."
 msgstr "您提供的信息中没有可被导入的内容。"
 
-#: app/applicationcontroller.cpp:540 app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Export failed: %1"
 msgstr "导出失败：%1"
 
-#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:579
+#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
 #, kde-format
 msgid "Export completed."
 msgstr "导出完成。"
 
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:624
 #, kde-format
 msgid "Import completed."
 msgstr "导入完成。"
@@ -635,7 +635,7 @@ msgstr "没有附加于此预约的证件。"
 msgid "Add Document..."
 msgstr "添加证件..."
 
-#: app/EditorPage.qml:35
+#: app/EditorPage.qml:38
 #, kde-format
 msgid "Save"
 msgstr ""
@@ -2072,13 +2072,13 @@ msgstr "新的出发站台：%1"
 msgid "New arrival platform is: %1"
 msgstr "新的到达站台：%1"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr ""
 
-#: app/passmanager.cpp:253
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"

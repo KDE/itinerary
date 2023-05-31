@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:48+0000\n"
+"POT-Creation-Date: 2023-05-31 00:48+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -214,63 +214,63 @@ msgstr ""
 msgid "Replace"
 msgstr "Substituír"
 
-#: app/applicationcontroller.cpp:322
+#: app/applicationcontroller.cpp:321
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download failed: %1"
 msgstr "Descargar"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:587
-#: app/applicationcontroller.cpp:602
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:599
 #, kde-format
 msgid "Import failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:348
+#: app/applicationcontroller.cpp:347
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:422 app/applicationcontroller.cpp:664
-#: app/applicationcontroller.cpp:674
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:671
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Importouse unha reserva."
 msgstr[1] "Importáronse %1 reservas."
 
-#: app/applicationcontroller.cpp:429
+#: app/applicationcontroller.cpp:426
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Health certificate imported."
 msgstr "Importouse unha reserva."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:432
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Pass imported."
 msgstr "Importouse unha reserva."
 
-#: app/applicationcontroller.cpp:471
+#: app/applicationcontroller.cpp:468
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Nothing imported."
 msgstr "Importouse unha reserva."
 
-#: app/applicationcontroller.cpp:540 app/applicationcontroller.cpp:566
+#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
 #, kde-format
 msgid "Export failed: %1"
 msgstr ""
 
-#: app/applicationcontroller.cpp:554 app/applicationcontroller.cpp:579
+#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:624
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -687,7 +687,7 @@ msgstr "Non hai documentos anexados a esta reserva."
 msgid "Add Document..."
 msgstr "Engadir un documento…"
 
-#: app/EditorPage.qml:35
+#: app/EditorPage.qml:38
 #, kde-format
 msgid "Save"
 msgstr "Gardar"
@@ -2226,13 +2226,13 @@ msgstr "A nova plataforma de saída é: %1"
 msgid "New arrival platform is: %1"
 msgstr "A nova hora de chegada é: %1"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:225
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr ""
 
-#: app/passmanager.cpp:253
+#: app/passmanager.cpp:227
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
