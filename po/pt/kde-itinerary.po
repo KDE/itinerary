@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-31 00:48+0000\n"
-"PO-Revision-Date: 2023-05-06 11:50+0100\n"
+"PO-Revision-Date: 2023-05-31 10:59+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-POFile-SpellExtra: Disrupção Fi Wi wheelmap org Wallet Android KMail\n"
 "X-POFile-IgnoreConsistency: FULL\n"
 "X-POFile-SpellExtra: Nextcloud DavDroid Connect GPX gpx NAA RAT Davx SMART\n"
-"X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete Pl\n"
+"X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete Pl Matrix\n"
 "X-POFile-IgnoreConsistency: Show\n"
 
 #, kde-format
@@ -945,21 +945,19 @@ msgid "Number"
 msgstr "Número"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "Bicicletas Partilhadas"
+msgstr "Partilhar o Local"
 
 #: app/FormPlaceDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this ticket?"
+#, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "Deseja realmente remover este bilhete?"
+msgstr "Deseja realmente partilhar o %1 no canal de Matrix %2?"
 
 #: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Partilhar"
 
 #: app/FormPlaceDelegate.qml:123
 #, kde-format
@@ -989,7 +987,7 @@ msgstr "Partidas de Transportes Públicos"
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr ""
+msgstr "Partilhar no Matrix"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1684,29 +1682,24 @@ msgstr "Estado em Directo"
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Stop Location Sharing"
-msgstr ""
+msgstr "Parar a Partilha da Localização"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Share Location via Matrix"
-msgstr ""
+msgstr "Partilhar a Localização no Matrix"
 
 #: app/LiveStatusPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Live Location"
-msgstr "Localizações Favoritas"
+msgstr "Partilhar a Localização em Directo"
 
 #: app/LiveStatusPage.qml:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you really want to replace your existing reservation with the newly "
-#| "selected journey?"
+#, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr ""
-"Deseja realmente substituir a sua reserva existente pelo trajecto acabado de "
-"seleccionar?"
+"Deseja realmente partilhar a sua localização actual no canal de Matrix %1?"
 
 #: app/LiveStatusPage.qml:162
 #, kde-format
@@ -1978,47 +1971,45 @@ msgid "Map download finished."
 msgstr "Terminou a transferência do mapa."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "Localizações Favoritas"
+msgstr "Partilhar a Localização"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "Convidado"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "Localizações Favoritas"
+msgstr "Salas Favoritas"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "Mensagens Directas"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "Salas"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "Prioridade Baixa"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "Espaços"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2463,38 +2454,37 @@ msgstr ""
 #: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix Integration"
-msgstr ""
+msgstr "Integração no Matrix"
 
 #: app/SettingsPage.qml:294
 #, kde-format
 msgid "Logged in as %1"
-msgstr ""
+msgstr "Autenticado como %1"
 
 #: app/SettingsPage.qml:297
 #, kde-format
 msgid "Synchronize rooms"
-msgstr ""
+msgstr "Sincronizar as salas"
 
 #: app/SettingsPage.qml:304
 #, kde-format
 msgid "Matrix ID"
-msgstr ""
+msgstr "ID do Matrix"
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "Passe"
+msgstr "Senha"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Encerrar"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Ligar"
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -3150,17 +3140,17 @@ msgstr "Compreendi!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "A sincronizar…"
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr ""
+msgstr "Este servidor não suporta a autenticação com senhas"
 
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "A autenticar"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
