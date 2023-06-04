@@ -733,7 +733,21 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.04.2" date="2023-06-08"/>
+    <release version="23.04.2" date="2023-06-08">
+      <description>
+        <ul>
+          <li>Fixed automatic transfer selection producing nonsense when geo coordinates are missing.</li>
+          <li>Fixed showing of attached Appled Wallet passes for trains, hotels, busses and car rental reservations.</li>
+          <li>Fixed a potential deadlock on updating currency conversion rates.</li>
+          <li>Fixed attaching documents to multi-traveler reservations.</li>
+          <li>Improved scrolling speed of the timeline view.</li>
+          <li>New or improved travel document extractors for European Sleeper, IndiGo, PKP, Qatar Airways, SBB, SNCB, Thalys as well as for Latvian and Lithuanian railway tickets.</li>
+          <li>New generic ERA FCB ticket barcode extractor.</li>
+          <li>Improved extractor for restaurant data in websites.</li>
+          <li>Fixed merging of public transport disruption notes from different sources.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.04.1" date="2023-05-11">
       <description>
         <ul>
