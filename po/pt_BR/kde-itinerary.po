@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-31 00:48+0000\n"
-"PO-Revision-Date: 2023-02-14 09:23-0300\n"
+"PO-Revision-Date: 2023-06-07 14:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -536,17 +536,15 @@ msgid "Pick-up"
 msgstr "Entrega"
 
 #: app/CarRentalPage.qml:31 app/CarRentalPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Time:"
+#, kde-format
 msgid "Time"
-msgstr "Hora:"
+msgstr "Hora"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
 #: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Location:"
+#, kde-format
 msgid "Location"
-msgstr "Localização:"
+msgstr "Localização"
 
 #: app/CarRentalPage.qml:58
 #, kde-format
@@ -559,22 +557,19 @@ msgid "Vehicle"
 msgstr "Veículo"
 
 #: app/CarRentalPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type"
-msgstr "Tipo:"
+msgstr "Tipo"
 
 #: app/CarRentalPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Model:"
+#, kde-format
 msgid "Model"
-msgstr "Modelo:"
+msgstr "Modelo"
 
 #: app/CarRentalPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Brand:"
+#, kde-format
 msgid "Brand"
-msgstr "Marca:"
+msgstr "Marca"
 
 #: app/ContactCard.qml:22 app/ContactEditorCard.qml:31
 #, kde-format
@@ -582,16 +577,14 @@ msgid "Contact"
 msgstr ""
 
 #: app/ContactCard.qml:26 app/ContactEditorCard.qml:36
-#, fuzzy, kde-format
-#| msgid "Telephone:"
+#, kde-format
 msgid "Telephone"
-msgstr "Telefone:"
+msgstr "Telefone"
 
 #: app/ContactCard.qml:35 app/ContactEditorCard.qml:43
-#, fuzzy, kde-format
-#| msgid "Email:"
+#, kde-format
 msgid "Email"
-msgstr "E-mail:"
+msgstr "E-mail"
 
 #: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:116
 #: app/EventPage.qml:112
@@ -717,32 +710,26 @@ msgid "Event"
 msgstr "Evento"
 
 #: app/EventEditor.qml:93 app/EventPage.qml:89
-#, fuzzy, kde-format
-#| msgctxt "time of entrance"
-#| msgid "Entrance:"
+#, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
-msgstr "Entrada:"
+msgstr "Entrada"
 
 #: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:78
-#, fuzzy, kde-format
-#| msgid "Start Time:"
+#, kde-format
 msgid "Start Time"
-msgstr "Hora inicial:"
+msgstr "Hora inicial"
 
 #: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:85
-#, fuzzy, kde-format
-#| msgid "End Time:"
+#, kde-format
 msgid "End Time"
-msgstr "Hora final:"
+msgstr "Hora final"
 
 #: app/EventPage.qml:132
-#, fuzzy, kde-format
-#| msgctxt "train station"
-#| msgid "Station:"
+#, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
-msgstr "Estação:"
+msgstr "Seção:"
 
 #: app/EventPage.qml:141
 #, kde-format
@@ -751,8 +738,7 @@ msgid "Row:"
 msgstr ""
 
 #: app/EventPage.qml:150
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Número:"
@@ -871,10 +857,9 @@ msgstr "Partida: %1"
 
 #: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
 #: app/FlightPage.qml:204
-#, fuzzy, kde-format
-#| msgid "Airport:"
+#, kde-format
 msgid "Airport"
-msgstr "Aeroporto:"
+msgstr "Aeroporto"
 
 #: app/FlightEditor.qml:82
 #, fuzzy, kde-format
@@ -898,10 +883,9 @@ msgid "Gate"
 msgstr "Portão:"
 
 #: app/FlightEditor.qml:98 app/FlightPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Boarding time:"
+#, kde-format
 msgid "Boarding time"
-msgstr "Horário do embarque:"
+msgstr "Horário do embarque"
 
 #: app/FlightEditor.qml:117
 #, fuzzy, kde-format
@@ -935,22 +919,19 @@ msgid "Sequence Number:"
 msgstr "Número da sequência:"
 
 #: app/FlightPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Boarding:"
+#, kde-format
 msgid "Boarding"
-msgstr "Embarque:"
+msgstr "Embarque"
 
 #: app/FlightPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Boarding group:"
+#, kde-format
 msgid "Boarding group"
-msgstr "Grupo de embarque:"
+msgstr "Grupo de embarque"
 
 #: app/FlightPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Airline:"
+#, kde-format
 msgid "Airline"
-msgstr "Linha aérea:"
+msgstr "Linha aérea"
 
 #: app/FlightPage.qml:132
 #, fuzzy, kde-format
@@ -960,16 +941,14 @@ msgid "Departure"
 msgstr "Partida"
 
 #: app/FlightPage.qml:159 app/FlightPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Terminal:"
+#, kde-format
 msgid "Terminal"
-msgstr "Terminal:"
+msgstr "Terminal"
 
 #: app/FlightPage.qml:167
-#, fuzzy, kde-format
-#| msgid "Gate:"
+#, kde-format
 msgid "Gate"
-msgstr "Portão:"
+msgstr "Portão"
 
 #: app/FlightPage.qml:191
 #, fuzzy, kde-format
@@ -984,19 +963,16 @@ msgid "Frequent Traveler Program"
 msgstr "Programa de viajante frequente"
 
 #: app/FlightPage.qml:257
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgctxt "name of a frequent flyer program"
 msgid "Program"
 msgstr "Programa"
 
 #: app/FlightPage.qml:264 app/ProgramMembershipPage.qml:108
 #: app/TicketPage.qml:121 app/TrainPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Number:"
+#, kde-format
 msgid "Number"
-msgstr "Número:"
+msgstr "Número"
 
 #: app/FormPlaceDelegate.qml:56
 #, fuzzy, kde-format
@@ -1151,10 +1127,9 @@ msgid "Ferry from %1 to %2"
 msgstr "Balsa de %1 para %2"
 
 #: app/HealthCertificateBarcode.qml:34
-#, fuzzy, kde-format
-#| msgid "Vaccination (%1)"
+#, kde-format
 msgid "Vaccination certificate of %1"
-msgstr "Vacinação (%1)"
+msgstr "Certificado de vacinação de %1"
 
 #: app/HealthCertificateBarcode.qml:36
 #, fuzzy, kde-format
@@ -1185,41 +1160,37 @@ msgstr ""
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "Vacinado recentemente"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "Vacinado parcialmente"
 
 #: app/HealthCertificateBarcode.qml:67
-#, fuzzy, kde-format
-#| msgid "Vaccine:"
+#, kde-format
 msgid "Vaccinated"
-msgstr "Vacina:"
+msgstr "Vacinado"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "Completamente vacinado"
 
 #: app/HealthCertificateBarcode.qml:74
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Negative test"
-msgstr "Teste positivo:"
+msgstr "Teste negativo"
 
 #: app/HealthCertificateBarcode.qml:75
-#, fuzzy, kde-format
-#| msgid "Positive test:"
+#, kde-format
 msgid "Positive test"
-msgstr "Teste positivo:"
+msgstr "Teste positivo"
 
 #: app/HealthCertificateBarcode.qml:78
-#, fuzzy, kde-format
-#| msgid "Certificate expired"
+#, kde-format
 msgid "Test expired"
-msgstr "certificado expirado"
+msgstr "Teste expirado"
 
 #: app/HealthCertificateBarcode.qml:80
 #, fuzzy, kde-format
