@@ -105,6 +105,8 @@ target_sources(itinerary-app PRIVATE
     matrixcontroller.cpp
     notificationconfigcontroller.cpp
     notifyrc.qrc
+    onlineticketimporter.cpp
+    onlineticketretrievaljob.cpp
     permissionmanager.cpp
     settings.cpp
     tickettokenmodel.cpp
