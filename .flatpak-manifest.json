@@ -1,0 +1,267 @@
+{
+    "id": "org.kde.itinerary",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15-22.08",
+    "sdk": "org.kde.Sdk",
+    "command": "itinerary",
+    "tags": [
+        "nightly"
+    ],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--device=dri",
+        "--share=network"
+    ],
+    "modules": [
+        {
+            "name": "poppler",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF",
+                "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+                "-DENABLE_CPP=OFF",
+                "-DENABLE_GLIB=OFF",
+                "-DENABLE_GOBJECT_INTROSPECTION=OFF",
+                "-DENABLE_UTILS=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://anongit.freedesktop.org/poppler/poppler.git",
+                    "branch": "master"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "openjpeg",
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "config-opts": [
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                    ],
+                    "cleanup": [
+                        "/bin",
+                        "/include",
+                        "/lib/openjpeg-*",
+                        "/lib/pkgconfig"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://github.com/uclouvain/openjpeg/archive/v2.5.0.tar.gz",
+                            "sha256": "0333806d6adecc6f7a91243b2b839ff4d2053823634d4f6ed7a59bc87409122a",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 2550,
+                                "stable-only": true,
+                                "url-template": "https://github.com/uclouvain/openjpeg/archive/v$version.tar.gz"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "boost",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "./bootstrap.sh --prefix=/app --with-libraries=system",
+                        "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
+                    ],
+                    "cleanup": [
+                        "/include",
+                        "/lib/*.a",
+                        "/lib/cmake"
+                    ],
+                    "sources": [
+                        {
+                            "type": "archive",
+                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2",
+                            "sha256": "a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6",
+                            "x-checker-data": {
+                                "type": "anitya",
+                                "project-id": 6845,
+                                "stable-only": true,
+                                "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ]
+        },
+        {
+            "name": "kitinerary",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kitinerary",
+                    "branch": "master"
+                }
+            ],
+            "modules": [
+                {
+                    "name": "kpkpass",
+                    "config-opts": [
+                        "-DBUILD_TESTING=OFF",
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                    ],
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://invent.kde.org/pim/kpkpass",
+                            "branch": "master"
+                        }
+                    ],
+                    "cleanup": [
+                        "/include",
+                        "/lib/cmake",
+                        "/mkspecs",
+                        "/etc/xdg/*categories"
+                    ]
+                },
+                {
+                    "name": "kmime",
+                    "config-opts": [
+                        "-DBUILD_TESTING=OFF",
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                    ],
+                    "buildsystem": "cmake-ninja",
+                    "builddir": true,
+                    "sources": [
+                        {
+                            "type": "git",
+                            "url": "https://invent.kde.org/pim/kmime",
+                            "branch": "master"
+                        }
+                    ],
+                    "cleanup": [
+                        "/include",
+                        "/lib/cmake",
+                        "/mkspecs",
+                        "/etc/xdg/*categories"
+                    ]
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/lib/libexec"
+            ]
+        },
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-addons",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "kpublictransport",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kpublictransport",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories"
+            ]
+        },
+        {
+            "name": "kopeninghours",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kopeninghours",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories"
+            ]
+        },
+        {
+            "name": "kosmindoormap",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kosmindoormap",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories"
+            ]
+        },
+        {
+            "name": "icon",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p /app/share/icons/hicolor/32x32/apps/",
+                "install -D /usr/share/icons/breeze/actions/22/map-globe.svg /app/share/icons/hicolor/32x32/apps/"
+            ]
+        },
+        {
+            "name": "itinerary",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ],
+            "cleanup": [
+                "/etc/xdg/*categories"
+            ]
+        }
+    ]
+}
