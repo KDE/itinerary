@@ -86,8 +86,8 @@ Kirigami.ScrollablePage {
                 iconName: "view-calendar-day"
                 text: i18n("Add from calendar...")
                 onTriggered: PermissionManager.requestPermission(Permission.ReadCalendar, function() {
-                    if (!calendarSelectorListView.model) {
-                        calendarSelectorListView.model = calendarModel.createObject(root);
+                    if (!calendarSelector.model) {
+                        calendarSelector.model = calendarModel.createObject(root);
                     }
                     calendarSelector.open();
                 })
@@ -137,27 +137,9 @@ Kirigami.ScrollablePage {
         id: calendarImportPage
         App.CalendarImportPage {}
     }
-    Kirigami.OverlaySheet {
+    App.CalendarSelectionSheet {
         id: calendarSelector
-        title: i18n("Select Calendar")
-
-        ListView {
-            id: calendarSelectorListView
-            implicitWidth: Kirigami.Units.gridUnit * 20
-            delegate: Kirigami.BasicListItem {
-                required property int index
-                required property string name
-                required property var calendar
-
-                text: name
-                onClicked: {
-                    applicationWindow().pageStack.push(calendarImportPage, {
-                        calendar: calendar,
-                    });
-                    calendarSelector.close();
-                }
-            }
-        }
+        onCalendarSelected: applicationWindow().pageStack.push(calendarImportPage, { calendar: calendar });
     }
 
     Component {

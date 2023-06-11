@@ -113,20 +113,10 @@ MobileForm.FormCard {
         filterRole: "accessMode"
         filterString: KCalendarCore.KCalendarCore.ReadWrite
     }
-    Kirigami.OverlaySheet {
+    App.CalendarSelectionSheet {
         id: calendarSelector
-        title: i18n("Select Calendar")
-
-        ListView {
-            model: writableCalendars
-            delegate: Kirigami.BasicListItem {
-                text: model.name
-                onClicked: {
-                    controller.addToCalendar(model.calendar);
-                    calendarSelector.close();
-                }
-            }
-        }
+        model: writableCalendars
+        onCalendarSelected: controller.addToCalendar(calendar);
     }
 
     Component {
