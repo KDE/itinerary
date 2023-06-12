@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
 import QtLocation 5.11 as QtLocation
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport.onboard 1.0
 import org.kde.itinerary 1.0
@@ -46,9 +46,57 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    Kirigami.MenuDialog {
+        id: importDialog
+        title: i18n("Import")
+        actions: [
+            Kirigami.Action {
+                text: i18n("Open File...")
+                iconName: "document-open"
+                onTriggered: {
+                    importDialog.close();
+                    importFileDialog.open();
+                }
+            },
+            Kirigami.Action {
+                text: i18n("Paste")
+                iconName: "edit-paste"
+                enabled: ApplicationController.hasClipboardContent
+                onTriggered: {
+                    importDialog.close();
+                    ApplicationController.importFromClipboard();
+                }
+            },
+            Kirigami.Action {
+                text: i18n("Scan Barcode...")
+                iconName: "view-barcode-qr"
+                onTriggered: {
+                    importDialog.close();
+                    pageStack.layers.push(scanBarcodeComponent);
+                }
+            },
+            // TODO calendar import
+            Kirigami.Action {
+                text: i18n("Deutsche Bahn Online Ticket...")
+                iconName: "download"
+                onTriggered: {
+                    importDialog.close();
+                    pageStack.layers.push(onlineImportPage, {source: "db"});
+                }
+            },
+            Kirigami.Action {
+                text: i18n("SNCF Online Ticket...")
+                iconName: "download"
+                onTriggered: {
+                    importDialog.close();
+                    pageStack.layers.push(onlineImportPage, {source: "sncf"});
+                }
+            }
+        ]
+    }
 
     FileDialog {
-        id: importDialog
+        id: importFileDialog
         fileMode: FileDialog.OpenFile
         title: i18n("Import Reservation")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
@@ -76,19 +124,8 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: i18n("Import...")
-                iconName: "document-open"
+                iconName: "document-import"
                 onTriggered: importDialog.open()
-            },
-            Kirigami.Action {
-                text: i18n("Scan Barcode...")
-                iconName: "view-barcode-qr"
-                onTriggered: pageStack.layers.push(scanBarcodeComponent)
-            },
-            Kirigami.Action {
-                text: i18n("Paste")
-                iconName: "edit-paste"
-                onTriggered: ApplicationController.importFromClipboard()
-                enabled: ApplicationController.hasClipboardContent
             },
             Kirigami.Action {
                 text: i18n("Check for Updates")
@@ -283,6 +320,10 @@ Kirigami.ApplicationWindow {
     Component {
         id: liveStatusPage
         App.LiveStatusPage {}
+    }
+    Component {
+        id: onlineImportPage
+        App.OnlineImportPage {}
     }
 
     Component {
