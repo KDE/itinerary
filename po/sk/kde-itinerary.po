@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"POT-Creation-Date: 2023-06-12 00:54+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -122,7 +122,7 @@ msgstr "Upraviť"
 msgid "Add to calendar..."
 msgstr "Pridať dokument..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -158,23 +158,18 @@ msgstr "Zmena rezervácie"
 msgid "View Reservation"
 msgstr "Zobraziť rezerváciu"
 
-#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
-#, kde-format
-msgid "Select Calendar"
-msgstr ""
-
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:132
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Event"
 msgstr "Odstrániť dokument"
 
-#: app/ActionsCard.qml:143
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/ActionsCard.qml:163
+#: app/ActionsCard.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -509,6 +504,11 @@ msgstr ""
 #: app/CalendarImportPage.qml:23
 #, kde-format
 msgid "Import selected events"
+msgstr ""
+
+#: app/CalendarSelectionSheet.qml:13
+#, kde-format
+msgid "Select Calendar"
 msgstr ""
 
 #: app/CarRentalDelegate.qml:21
@@ -2766,7 +2766,7 @@ msgstr "Naozaj chcete odstrániť túto udalosť?"
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:317
+#: app/TimelinePage.qml:299
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""

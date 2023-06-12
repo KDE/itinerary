@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"POT-Creation-Date: 2023-06-12 00:54+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -124,7 +124,7 @@ msgstr "Muuda"
 msgid "Add to calendar..."
 msgstr "Lisa dokument ..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -160,24 +160,18 @@ msgstr "Muuda reserveeringut"
 msgid "View Reservation"
 msgstr "Vaata reserveeringut"
 
-#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Check Calendar"
-msgid "Select Calendar"
-msgstr "Kontrolli kalendrit"
-
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:132
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Event"
 msgstr "Kustuta dokument"
 
-#: app/ActionsCard.qml:143
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/ActionsCard.qml:163
+#: app/ActionsCard.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -523,6 +517,12 @@ msgstr ""
 #, kde-format
 msgid "Import selected events"
 msgstr ""
+
+#: app/CalendarSelectionSheet.qml:13
+#, fuzzy, kde-format
+#| msgid "Check Calendar"
+msgid "Select Calendar"
+msgstr "Kontrolli kalendrit"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -2815,7 +2815,7 @@ msgstr "Kas tõesti kustutada see sündmus?"
 msgid "Export Trip"
 msgstr "Ekspordi ..."
 
-#: app/TimelinePage.qml:317
+#: app/TimelinePage.qml:299
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Tänaseks ei ole itineraaris midagi."

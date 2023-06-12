@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"POT-Creation-Date: 2023-06-12 00:54+0000\n"
 "PO-Revision-Date: 2023-06-07 14:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -123,7 +123,7 @@ msgstr "Editar"
 msgid "Add to calendar..."
 msgstr "Adicionar ao calendário..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -158,22 +158,17 @@ msgstr "Alterar reserva"
 msgid "View Reservation"
 msgstr "Ver reserva"
 
-#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
-#, kde-format
-msgid "Select Calendar"
-msgstr "Selecionar calendário"
-
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:132
 #, kde-format
 msgid "Delete Event"
 msgstr "Excluir evento"
 
-#: app/ActionsCard.qml:143
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Deseja realmente excluir este evento?"
 
-#: app/ActionsCard.qml:163
+#: app/ActionsCard.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -509,6 +504,11 @@ msgstr "Importar calendário"
 #, kde-format
 msgid "Import selected events"
 msgstr "Importar eventos selecionados"
+
+#: app/CalendarSelectionSheet.qml:13
+#, kde-format
+msgid "Select Calendar"
+msgstr "Selecionar calendário"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -2739,7 +2739,7 @@ msgstr "Deseja realmente excluir esta viagem?"
 msgid "Export Trip"
 msgstr "Exportar viagem..."
 
-#: app/TimelinePage.qml:317
+#: app/TimelinePage.qml:299
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nada no itinerário para hoje."

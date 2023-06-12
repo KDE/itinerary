@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"POT-Creation-Date: 2023-06-12 00:54+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -124,7 +124,7 @@ msgstr "Editar"
 msgid "Add to calendar..."
 msgstr "Engadir un documento…"
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -160,24 +160,18 @@ msgstr "Cambiar a reserva"
 msgid "View Reservation"
 msgstr "Ver a reserva"
 
-#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
-#, fuzzy, kde-format
-#| msgid "Check Calendar"
-msgid "Select Calendar"
-msgstr "Comprobar o calendario"
-
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:132
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Event"
 msgstr "Eliminar o documento"
 
-#: app/ActionsCard.qml:143
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Seguro que quere eliminar este evento?"
 
-#: app/ActionsCard.qml:163
+#: app/ActionsCard.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -524,6 +518,12 @@ msgstr ""
 #, kde-format
 msgid "Import selected events"
 msgstr ""
+
+#: app/CalendarSelectionSheet.qml:13
+#, fuzzy, kde-format
+#| msgid "Check Calendar"
+msgid "Select Calendar"
+msgstr "Comprobar o calendario"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -2825,7 +2825,7 @@ msgstr "Seguro que quere eliminar este evento?"
 msgid "Export Trip"
 msgstr "Exportar…"
 
-#: app/TimelinePage.qml:317
+#: app/TimelinePage.qml:299
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"

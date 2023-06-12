@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-31 00:48+0000\n"
+"POT-Creation-Date: 2023-06-12 00:54+0000\n"
 "PO-Revision-Date: 2023-05-30 18:45+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -123,7 +123,7 @@ msgstr "Bearbeiten"
 msgid "Add to calendar..."
 msgstr "Zum Kalender hinzufügen ..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:149 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -158,22 +158,17 @@ msgstr "Reservierung ändern"
 msgid "View Reservation"
 msgstr "Reservierung anzeigen"
 
-#: app/ActionsCard.qml:118 app/TimelinePage.qml:142
-#, kde-format
-msgid "Select Calendar"
-msgstr "Kalender auswählen"
-
-#: app/ActionsCard.qml:142
+#: app/ActionsCard.qml:132
 #, kde-format
 msgid "Delete Event"
 msgstr "Termin löschen"
 
-#: app/ActionsCard.qml:143
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Möchten Sie diesen Termin wirklich löschen?"
 
-#: app/ActionsCard.qml:163
+#: app/ActionsCard.qml:153
 #, kde-format
 msgid "Actions"
 msgstr "Aktionen"
@@ -487,6 +482,11 @@ msgstr "Kalenderimport"
 #, kde-format
 msgid "Import selected events"
 msgstr "Ausgewählte Termine importieren"
+
+#: app/CalendarSelectionSheet.qml:13
+#, kde-format
+msgid "Select Calendar"
+msgstr "Kalender auswählen"
 
 #: app/CarRentalDelegate.qml:21
 #, kde-format
@@ -2667,7 +2667,7 @@ msgstr "Möchten Sie diese Reise wirklich löschen?"
 msgid "Export Trip"
 msgstr "Reise exportieren"
 
-#: app/TimelinePage.qml:317
+#: app/TimelinePage.qml:299
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Für heute steht nichts im Reiseplan."
