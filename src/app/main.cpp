@@ -27,9 +27,9 @@
 #include "matrixcontroller.h"
 #include "navigationcontroller.h"
 #include "notificationconfigcontroller.h"
+#include "onlineticketimporter.h"
 #include "passmanager.h"
 #include "pkpassmanager.h"
-#include "timelinemodel.h"
 #include "permissionmanager.h"
 #include "pkpassimageprovider.h"
 #include "publictransport.h"
@@ -39,6 +39,7 @@
 #include "statisticstimerangemodel.h"
 #include "tickettokenmodel.h"
 #include "timelinedelegatecontroller.h"
+#include "timelinemodel.h"
 #include "timelinesectiondelegatecontroller.h"
 #include "transferdelegatecontroller.h"
 #include "transfermanager.h"
@@ -183,6 +184,7 @@ void registerApplicationTypes()
 #else
     qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
 #endif
+    qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
 }
 
 // for registering QML singletons only
