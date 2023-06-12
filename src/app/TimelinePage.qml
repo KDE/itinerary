@@ -10,7 +10,6 @@ import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.19 as Kirigami
-import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -18,6 +17,8 @@ Kirigami.ScrollablePage {
     id: root
 
     title: i18n("My Itinerary")
+    onBackRequested: event => { event.accepted = true; }
+
     // context drawer content
     actions {
         contextualActions: [
@@ -81,17 +82,6 @@ Kirigami.ScrollablePage {
                         departureStop: departureLocation
                     });
                 }
-            },
-            Kirigami.Action {
-                iconName: "view-calendar-day"
-                text: i18n("Add from calendar...")
-                onTriggered: PermissionManager.requestPermission(Permission.ReadCalendar, function() {
-                    if (!calendarSelector.model) {
-                        calendarSelector.model = calendarModel.createObject(root);
-                    }
-                    calendarSelector.open();
-                })
-                visible: KCalendarCore.CalendarPluginLoader.hasPlugin
             }
         ]
     }
@@ -126,20 +116,6 @@ Kirigami.ScrollablePage {
         folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
         onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
-    }
-
-    Component {
-        id: calendarModel
-        // needs to be created on demand, after we have calendar access permissions
-        KCalendarCore.CalendarListModel {}
-    }
-    Component {
-        id: calendarImportPage
-        App.CalendarImportPage {}
-    }
-    App.CalendarSelectionSheet {
-        id: calendarSelector
-        onCalendarSelected: applicationWindow().pageStack.push(calendarImportPage, { calendar: calendar });
     }
 
     Component {

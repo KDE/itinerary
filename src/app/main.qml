@@ -12,10 +12,12 @@ import QtLocation 5.11 as QtLocation
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport.onboard 1.0
+import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.itinerary 1.0
 import "." as App
 
 Kirigami.ApplicationWindow {
+    id: root
     title: i18n("KDE Itinerary")
     reachableModeEnabled: false
 
@@ -75,7 +77,22 @@ Kirigami.ApplicationWindow {
                     pageStack.layers.push(scanBarcodeComponent);
                 }
             },
-            // TODO calendar import
+            Kirigami.Action {
+                iconName: "view-calendar-day"
+                text: i18n("Add from Calendar...")
+                onTriggered: {
+                    importDialog.close();
+                    PermissionManager.requestPermission(Permission.ReadCalendar, function() {
+                        if (!calendarSelector.model) {
+                            calendarSelector.model = calendarModel.createObject(root);
+                        }
+                        calendarSelector.open();
+                    })
+                }
+                visible: KCalendarCore.CalendarPluginLoader.hasPlugin
+            },
+            // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
+            // sources we support
             Kirigami.Action {
                 text: i18n("Deutsche Bahn Online Ticket...")
                 iconName: "download"
@@ -111,6 +128,21 @@ Kirigami.ApplicationWindow {
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
         onAccepted: ApplicationController.exportToFile(file)
+    }
+
+    Component {
+        id: calendarModel
+        // needs to be created on demand, after we have calendar access permissions
+        KCalendarCore.CalendarListModel {}
+    }
+    Component {
+        id: calendarImportPage
+        App.CalendarImportPage {}
+    }
+    App.CalendarSelectionSheet {
+        id: calendarSelector
+        // parent: root.Overlay.overlay
+        onCalendarSelected: pageStack.push(calendarImportPage, { calendar: calendar });
     }
 
     OnboardStatus {
