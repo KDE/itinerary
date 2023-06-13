@@ -822,7 +822,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     const auto dt = SortUtil::endDateTime(res);
     auto nextResId = m_resMgr->nextBatch(m_batchId);
     auto nextRes = m_resMgr->reservation(nextResId);
-    while (dt.isValid() && SortUtil::startDateTime(nextRes).date() <= dt.date()) {
+    while (dt.isValid() && !nextResId.isEmpty() && SortUtil::startDateTime(nextRes).date() <= dt.date()) {
         if (LocationUtil::isLocationChange(nextRes)) {
             const auto depDt = SortUtil::startDateTime(nextRes);
             if (depDt.isValid() && depDt >= SortUtil::endDateTime((res))) {
