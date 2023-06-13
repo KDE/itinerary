@@ -213,7 +213,11 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
             if (JsonLd::isA<KItinerary::Ticket>(entry.data)) {
                 return Ticket;
             }
-            return {};
+            qCWarning(Log) << "Invalid pass type!" << entry.data;
+            // return a valid result here, as an invalid one will completely break the delegate chooser and
+            // nothing will be display at all. With a valid type we'll get an empty item that to the very least
+            // allows deletion
+            return Ticket;
         case PassDataRole:
             return JsonIO::convert(rawData(entry), JsonIO::JSON);
         case NameRole:

@@ -308,4 +308,14 @@ Kirigami.ApplicationWindow {
             QtLocation.PluginParameter { name: "osm.mapping.providersrepository.address"; value: "https://autoconfig.kde.org/qtlocation/" }
         }
     }
+
+    // workaround for Back key handling on Android causing the application to close
+    // on secondary layers if those have no focus (either explicitly or via interaction)
+    // ### if there isn't a proepr fix for this, should this happen in Kirigami instead?
+    Connections {
+        target: pageStack.layers
+        function onCurrentItemChanged() {
+            pageStack.layers.currentItem.forceActiveFocus();
+        }
+    }
 }
