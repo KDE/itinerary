@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-28 02:52+0000\n"
+"POT-Creation-Date: 2023-06-14 02:36+0000\n"
 "PO-Revision-Date: 2023-03-06 16:11+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -1760,13 +1760,13 @@ msgstr "A nova plataforma de partida é: %1"
 msgid "New arrival platform is: %1"
 msgstr "A nova plataforma de chegada é: %1"
 
-#: app/passmanager.cpp:250
+#: app/passmanager.cpp:254
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expirado"
 
-#: app/passmanager.cpp:252
+#: app/passmanager.cpp:256
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
