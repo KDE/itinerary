@@ -79,6 +79,10 @@ App.DetailsPage {
             }
         }
 
+        App.ProgramMembershipCard {
+            programMembership: root.currentReservation.programMembershipUsed
+        }
+
         App.BookingCard {
             currentReservation: root.currentReservation
             reservation: root.reservation

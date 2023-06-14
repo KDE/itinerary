@@ -301,44 +301,8 @@ App.DetailsPage {
             }
         }
 
-        // program membership
-        MobileForm.FormCard {
-            visible: programNameLabel.visible || membershipNumberLabel.visible
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                MobileForm.FormCardHeader {
-                    title: i18nc("bonus, discount or frequent traveler program", "Program")
-                }
-                MobileForm.FormTextDelegate {
-                    id: programNameLabel
-                    text: i18n("Name")
-                    description: root.currentReservation.programMembershipUsed.programName
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: programNameLabel.visible
-                }
-                MobileForm.FormTextDelegate {
-                    id: membershipNumberLabel
-                    text: i18n("Number")
-                    description: root.currentReservation.programMembershipUsed.membershipNumber
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: membershipNumberLabel.visible
-                }
-                MobileForm.FormButtonDelegate {
-                    id: passButton
-                    text: i18n("Show program pass")
-                    property string passId: PassManager.findMatchingPass(root.currentReservation.programMembershipUsed)
-                    visible: passId
-                    onClicked: applicationWindow().pageStack.push(programMembershipPage, {
-                        programMembership: PassManager.pass(passButton.passId),
-                        passId: passButton.passId,
-                    })
-                }
-            }
+        App.ProgramMembershipCard {
+            programMembership: root.currentReservation.programMembershipUsed
         }
 
         App.BookingCard {

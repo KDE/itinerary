@@ -243,29 +243,11 @@ App.DetailsPage {
                         description: index % 2 == 0 ? res.underName.name : res.reservationNumber
                     }
                 }
-
-                MobileForm.FormDelegateSeparator {}
-
-                // frequent traveler program
-                MobileForm.FormCardHeader {
-                    title: i18n("Frequent Traveler Program")
-                    visible: programName.visible || membershipNumber.visible
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: programName
-                    text: i18nc("name of a frequent flyer program", "Program")
-                    description: root.currentReservation.programMembershipUsed.programName
-                    visible: description
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: membershipNumber
-                    text: i18n("Number")
-                    description: root.currentReservation.programMembershipUsed.membershipNumber
-                    visible: description
-                }
             }
+        }
+
+        App.ProgramMembershipCard {
+            programMembership: root.currentReservation.programMembershipUsed
         }
 
         App.DocumentsPage {
