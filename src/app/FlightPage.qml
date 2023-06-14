@@ -81,6 +81,7 @@ App.DetailsPage {
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
+            visible: boardingTimeLabel.visible || boardingGroupLabel.visible || seatLabel.visible || airlineNameLabel.visible
             contentItem: ColumnLayout {
                 spacing: 0
 
@@ -90,30 +91,34 @@ App.DetailsPage {
                 }
 
                 MobileForm.FormTextDelegate {
+                    id: boardingTimeLabel
                     visible: reservationFor.boardingTime > 0
                     text: i18n("Boarding time")
                     description: Localizer.formatDateTime(reservationFor, "boardingTime")
                 }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.boardingTime > 0 }
+                MobileForm.FormDelegateSeparator { visible: boardingTimeLabel.visible }
 
                 MobileForm.FormTextDelegate {
+                    id: boardingGroupLabel
                     visible: reservation.boardingGroup.length > 0
                     text: i18n("Boarding group")
                     description: reservation.boardingGroup
                 }
 
-                MobileForm.FormDelegateSeparator { visible: reservation.boardingGroup.length > 0 }
+                MobileForm.FormDelegateSeparator { visible: boardingGroupLabel.visible }
 
                 MobileForm.FormTextDelegate {
+                    id: seatLabel
                     text: i18n("Seat")
                     description: reservation.airplaneSeat
                     visible: reservation.airplaneSeat.length > 0
                 }
 
-                MobileForm.FormDelegateSeparator { visible: reservation.airplaneSeat.length > 0 }
+                MobileForm.FormDelegateSeparator { visible: seatLabel.visible }
 
                 MobileForm.FormTextDelegate {
+                    id: airlineNameLabel
                     text: i18n("Airline")
                     description: reservationFor.airline.name
                     visible: reservationFor.airline.name.length > 0
