@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 00:54+0000\n"
+"POT-Creation-Date: 2023-06-14 00:48+0000\n"
 "PO-Revision-Date: 2023-05-29 16:58+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2080,13 +2080,13 @@ msgstr "Nuevo andén de salida: %1"
 msgid "New arrival platform is: %1"
 msgstr "Nuevo andén de llegada: %1"
 
-#: app/passmanager.cpp:225
+#: app/passmanager.cpp:229
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expirado"
 
-#: app/passmanager.cpp:227
+#: app/passmanager.cpp:231
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
