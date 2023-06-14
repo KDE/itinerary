@@ -401,6 +401,16 @@ private Q_SLOTS:
         QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich"));
         QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
         QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+
+        // single static element, see 44ed4fbe96d45a60b33e2bf784196489197d7dcc
+        Test::clearAll(&mgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        QCOMPARE(mgr.batches().size(), 1);
+        controller.setBatchId(mgr.batches().at(0));
+        args = controller.mapArguments().toVariant().toMap();
+        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
+        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 16}, {0, 0}, QTimeZone("Europe/Zurich")));
     }
 };
 
