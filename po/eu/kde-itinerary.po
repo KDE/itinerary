@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-14 00:48+0000\n"
+"POT-Creation-Date: 2023-06-15 00:47+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -338,7 +338,7 @@ msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Irteera"
 
-#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:137
+#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Departure time:"
@@ -359,27 +359,27 @@ msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Helduera"
 
-#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:195
+#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
 msgstr "Heltzeko ordua: "
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:233
+#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:238
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Erreserba"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:242
+#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:247
 #: app/TrainEditor.qml:193
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Erreferentzia:"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:242
+#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:247
 #: app/TrainEditor.qml:198
 #, fuzzy, kde-format
 #| msgid "Under name:"
@@ -461,7 +461,7 @@ msgstr ""
 
 #: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:203
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
-#: app/FlightPage.qml:109 app/TrainEditor.qml:162 app/TrainEditor.qml:171
+#: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
@@ -479,7 +479,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Irteera"
 
-#: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
+#: app/BusPage.qml:116 app/FlightPage.qml:147 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Departure gate:"
 msgid "Departure date"
@@ -499,12 +499,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Helduera"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:359
+#: app/BusPage.qml:232 app/TrainPage.qml:323
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
+#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:340
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -894,8 +894,8 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Irteera"
 
-#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
-#: app/FlightPage.qml:204
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:156
+#: app/FlightPage.qml:209
 #, fuzzy, kde-format
 #| msgid "Airport:"
 msgid "Airport"
@@ -922,7 +922,7 @@ msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Atea:"
 
-#: app/FlightEditor.qml:98 app/FlightPage.qml:94
+#: app/FlightEditor.qml:98 app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Boarding time"
@@ -959,67 +959,49 @@ msgstr "Hegaldia"
 msgid "Sequence Number:"
 msgstr "Sekuentziaren zenbakia:"
 
-#: app/FlightPage.qml:89
+#: app/FlightPage.qml:90
 #, fuzzy, kde-format
 #| msgid "Boarding:"
 msgid "Boarding"
 msgstr "Hegazkineratzea:"
 
-#: app/FlightPage.qml:102
+#: app/FlightPage.qml:105
 #, fuzzy, kde-format
 #| msgid "Boarding group:"
 msgid "Boarding group"
 msgstr "Hegazkineratze taldea:"
 
-#: app/FlightPage.qml:117
+#: app/FlightPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Airline:"
 msgid "Airline"
 msgstr "Airelinea:"
 
-#: app/FlightPage.qml:132
+#: app/FlightPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Irteera"
 
-#: app/FlightPage.qml:159 app/FlightPage.qml:212
+#: app/FlightPage.qml:164 app/FlightPage.qml:217
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgid "Terminal"
 msgstr "Terminala:"
 
-#: app/FlightPage.qml:167
+#: app/FlightPage.qml:172
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgid "Gate"
 msgstr "Atea:"
 
-#: app/FlightPage.qml:191
+#: app/FlightPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Helduera"
-
-#: app/FlightPage.qml:251
-#, kde-format
-msgid "Frequent Traveler Program"
-msgstr ""
-
-#: app/FlightPage.qml:257
-#, kde-format
-msgctxt "name of a frequent flyer program"
-msgid "Program"
-msgstr ""
-
-#: app/FlightPage.qml:264 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Sequence Number:"
-msgid "Number"
-msgstr "Sekuentziaren zenbakia:"
 
 #: app/FormPlaceDelegate.qml:56
 #, kde-format
@@ -2277,6 +2259,31 @@ msgstr "Gertaera txartela"
 msgid "Pass"
 msgstr ""
 
+#: app/ProgramMembershipCard.qml:23
+#, kde-format
+msgctxt "bonus, discount or frequent traveler program"
+msgid "Program"
+msgstr ""
+
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgid "Name"
+msgstr "Izena:"
+
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:121
+#, fuzzy, kde-format
+#| msgid "Sequence Number:"
+msgid "Number"
+msgstr "Sekuentziaren zenbakia:"
+
+#: app/ProgramMembershipCard.qml:45
+#, fuzzy, kde-format
+#| msgid "Show Boarding Pass"
+msgid "Show program pass"
+msgstr "Erakutsi ibilgailuratze baimena"
+
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
@@ -2756,12 +2763,6 @@ msgstr "Gertaera txartela"
 msgid "Do you really want to delete this ticket?"
 msgstr "Benetan ezabatu nahi duzu gertaera hau?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:315
-#, fuzzy, kde-format
-#| msgid "Name:"
-msgid "Name"
-msgstr "Izena:"
-
 #: app/TicketPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Class:"
@@ -2997,25 +2998,13 @@ msgstr "Jarlekua:"
 msgid "Class:"
 msgstr "Klasea:"
 
-#: app/TrainPage.qml:311
-#, kde-format
-msgctxt "bonus, discount or frequent traveler program"
-msgid "Program"
-msgstr ""
-
-#: app/TrainPage.qml:333
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
-msgid "Show program pass"
-msgstr "Erakutsi ibilgailuratze baimena"
-
-#: app/TrainPage.qml:364
+#: app/TrainPage.qml:328
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Departure Vehicle Layout"
 msgstr "Ibilgailu antolamendua"
 
-#: app/TrainPage.qml:370
+#: app/TrainPage.qml:334
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Arrival Vehicle Layout"

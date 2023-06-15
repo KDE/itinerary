@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-14 00:48+0000\n"
+"POT-Creation-Date: 2023-06-15 00:47+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -317,7 +317,7 @@ msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Avgång"
 
-#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:137
+#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Departure time:"
@@ -338,27 +338,27 @@ msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Ankomst"
 
-#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:195
+#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
 msgstr "Ankomsttid:"
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:233
+#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:238
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Bokning"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:242
+#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:247
 #: app/TrainEditor.qml:193
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referens:"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:242
+#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:247
 #: app/TrainEditor.qml:198
 #, fuzzy, kde-format
 #| msgid "Under name:"
@@ -438,7 +438,7 @@ msgstr "Stig av tidigare"
 
 #: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:203
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
-#: app/FlightPage.qml:109 app/TrainEditor.qml:162 app/TrainEditor.qml:171
+#: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
 #, kde-format
 msgid "Seat"
@@ -456,7 +456,7 @@ msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Avgång"
 
-#: app/BusPage.qml:116 app/FlightPage.qml:142 app/TrainPage.qml:137
+#: app/BusPage.qml:116 app/FlightPage.qml:147 app/TrainPage.qml:137
 #, fuzzy, kde-format
 #| msgctxt "flight departure gate"
 #| msgid "Departure gate:"
@@ -477,12 +477,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Ankomst"
 
-#: app/BusPage.qml:228 app/TrainPage.qml:359
+#: app/BusPage.qml:232 app/TrainPage.qml:323
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativ"
 
-#: app/BusPage.qml:233 app/JourneySectionPage.qml:16 app/TrainPage.qml:376
+#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:340
 #, kde-format
 msgid "Journey Details"
 msgstr "Reseinformation"
@@ -866,8 +866,8 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Avgång: %1"
 
-#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:151
-#: app/FlightPage.qml:204
+#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:156
+#: app/FlightPage.qml:209
 #, fuzzy, kde-format
 #| msgid "Airport:"
 msgid "Airport"
@@ -894,7 +894,7 @@ msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Gate:"
 
-#: app/FlightEditor.qml:98 app/FlightPage.qml:94
+#: app/FlightEditor.qml:98 app/FlightPage.qml:96
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Boarding time"
@@ -931,69 +931,49 @@ msgstr "Flyg"
 msgid "Sequence Number:"
 msgstr "Sekvensnummer:"
 
-#: app/FlightPage.qml:89
+#: app/FlightPage.qml:90
 #, fuzzy, kde-format
 #| msgid "Boarding:"
 msgid "Boarding"
 msgstr "Ombordstigning:"
 
-#: app/FlightPage.qml:102
+#: app/FlightPage.qml:105
 #, fuzzy, kde-format
 #| msgid "Boarding group:"
 msgid "Boarding group"
 msgstr "Ombordstigningsgrupp:"
 
-#: app/FlightPage.qml:117
+#: app/FlightPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Airline:"
 msgid "Airline"
 msgstr "Flygbolag:"
 
-#: app/FlightPage.qml:132
+#: app/FlightPage.qml:137
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Avgång"
 
-#: app/FlightPage.qml:159 app/FlightPage.qml:212
+#: app/FlightPage.qml:164 app/FlightPage.qml:217
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/FlightPage.qml:167
+#: app/FlightPage.qml:172
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgid "Gate"
 msgstr "Gate:"
 
-#: app/FlightPage.qml:191
+#: app/FlightPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Ankomst"
-
-#: app/FlightPage.qml:251
-#, kde-format
-msgid "Frequent Traveler Program"
-msgstr "Resebonusprogram"
-
-#: app/FlightPage.qml:257
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
-msgctxt "name of a frequent flyer program"
-msgid "Program"
-msgstr "Program"
-
-#: app/FlightPage.qml:264 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121 app/TrainPage.qml:324
-#, fuzzy, kde-format
-#| msgid "Number:"
-msgid "Number"
-msgstr "Nummer:"
 
 #: app/FormPlaceDelegate.qml:56
 #, fuzzy, kde-format
@@ -2219,6 +2199,31 @@ msgstr "Evenemangsbiljett"
 msgid "Pass"
 msgstr "Passerkort"
 
+#: app/ProgramMembershipCard.qml:23
+#, kde-format
+msgctxt "bonus, discount or frequent traveler program"
+msgid "Program"
+msgstr "Program"
+
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgid "Name"
+msgstr "Namn:"
+
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
+#: app/TicketPage.qml:121
+#, fuzzy, kde-format
+#| msgid "Number:"
+msgid "Number"
+msgstr "Nummer:"
+
+#: app/ProgramMembershipCard.qml:45
+#, fuzzy, kde-format
+#| msgid "Show Boarding Pass"
+msgid "Show program pass"
+msgstr "Visa boardingkort"
+
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
@@ -2699,12 +2704,6 @@ msgstr "Ta bort biljett"
 msgid "Do you really want to delete this ticket?"
 msgstr "Vill du verkligen ta bort biljetten?"
 
-#: app/TicketPage.qml:103 app/TrainPage.qml:315
-#, fuzzy, kde-format
-#| msgid "Name:"
-msgid "Name"
-msgstr "Namn:"
-
 #: app/TicketPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Class:"
@@ -2931,24 +2930,12 @@ msgstr "Plats:"
 msgid "Class:"
 msgstr "Klass:"
 
-#: app/TrainPage.qml:311
-#, kde-format
-msgctxt "bonus, discount or frequent traveler program"
-msgid "Program"
-msgstr "Program"
-
-#: app/TrainPage.qml:333
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
-msgid "Show program pass"
-msgstr "Visa boardingkort"
-
-#: app/TrainPage.qml:364
+#: app/TrainPage.qml:328
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Avgående fordonsklass"
 
-#: app/TrainPage.qml:370
+#: app/TrainPage.qml:334
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Ankommande fordonsklass"
@@ -3278,6 +3265,16 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "Frequent Traveler Program"
+#~ msgstr "Resebonusprogram"
+
+#, fuzzy
+#~| msgctxt "bonus, discount or frequent traveler program"
+#~| msgid "Program"
+#~ msgctxt "name of a frequent flyer program"
+#~ msgid "Program"
+#~ msgstr "Program"
 
 #~ msgid "%1°C / %2°C"
 #~ msgstr "%1 °C / %2 °C"
