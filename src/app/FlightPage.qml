@@ -255,7 +255,7 @@ App.DetailsPage {
             programMembership: root.currentReservation.programMembershipUsed
         }
 
-        App.DocumentsPage {
+        App.DocumentsCard {
             controller: root.controller
         }
 

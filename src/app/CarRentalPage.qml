@@ -127,7 +127,7 @@ App.DetailsPage {
             reservation: root.reservation
         }
 
-        App.DocumentsPage {
+        App.DocumentsCard {
             controller: root.controller
         }
 
