@@ -154,6 +154,10 @@ App.DetailsPage {
             }
         }
 
+        App.DocumentsCard {
+            controller: root.controller
+        }
+
         App.ActionsCard {
             batchId: root.batchId
             editor: root.editor
