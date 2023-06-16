@@ -154,7 +154,7 @@ App.DetailsPage {
             }
         }
 
-        App.DocumentsCard {
+        App.ReservationDocumentsCard {
             controller: root.controller
         }
 

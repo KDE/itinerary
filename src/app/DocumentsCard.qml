@@ -16,13 +16,16 @@ import "." as App
 
 MobileForm.FormCard {
     id: documentFormCard
-    property var controller: null
+    property alias documentIds: docsModel.documentIds
+
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
 
+    signal addDocument(string file)
+    signal removeDocument(string docId)
+
     DocumentsModel {
         id: docsModel
-        documentIds: controller.documentIds
         documentManager: DocumentManager
     }
 
@@ -31,7 +34,7 @@ MobileForm.FormCard {
         title: i18n("Add Document")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("All Files (*.*)")]
-        onAccepted: ApplicationController.addDocument(controller.batchId, file)
+        onAccepted: documentFormCard.addDocument(file)
     }
 
     Component {
@@ -83,7 +86,7 @@ MobileForm.FormCard {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onTriggered: {
-                    ApplicationController.removeDocument(controller.batchId, deleteWarningDialog.docId);
+                    documentFormCard.removeDocument(deleteWarningDialog.docId);
                     deleteWarningDialog.close()
                 }
             }
