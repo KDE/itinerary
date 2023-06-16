@@ -124,5 +124,14 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+
+        App.DocumentsCard {
+            documentIds: PassManager.documentIds(programMembership)
+            onAddDocument: (file) => {
+                ApplicationController.addDocumentToPass(root.passId, file);
+                documentIds = Qt.binding(function() { return PassManager.documentIds(programMembership) });
+            }
+            onRemoveDocument: (docId) => { ApplicationController.removeDocumentFromPass(root.passId, docId); }
+        }
     }
 }

@@ -17,6 +17,7 @@ import "." as App
 MobileForm.FormCard {
     id: documentFormCard
     property alias documentIds: docsModel.documentIds
+    property alias title: cardHeader.title
 
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
@@ -97,7 +98,8 @@ MobileForm.FormCard {
         spacing: 0
 
         MobileForm.FormCardHeader {
-            title: i18n("Documents and Tickets")
+            id: cardHeader
+            title: i18n("Documents")
         }
 
         Repeater {

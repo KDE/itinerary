@@ -17,6 +17,7 @@ App.DocumentsCard {
     property QtObject controller: null
 
     documentIds: controller.documentIds
+    title: i18n("Documents and Tickets")
 
     onAddDocument: (file) => { ApplicationController.addDocumentToReservation(controller.batchId, file); }
     onRemoveDocument: (docId) => { ApplicationController.removeDocumentFromReservation(controller.batchId, docId); }

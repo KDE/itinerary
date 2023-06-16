@@ -9,6 +9,7 @@
 #include "jsonio.h"
 #include "logging.h"
 
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/ExtractorValidator>
 #include <KItinerary/JsonLdDocument>
@@ -333,6 +334,11 @@ bool PassManager::removeRows(int row, int count, const QModelIndex& parent)
     m_entries.erase(m_entries.begin() + row, m_entries.begin() + row + count);
     endRemoveRows();
     return true;
+}
+
+QVariantList PassManager::documentIds(const QVariant& pass)
+{
+    return DocumentUtil::documentIds(pass);
 }
 
 QString PassManager::basePath()

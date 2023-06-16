@@ -60,6 +60,9 @@ public:
     Q_INVOKABLE bool removeRow(int row, const QModelIndex &parent = QModelIndex()); // not exported to QML in Qt5 yet
     Q_INVOKABLE bool removeRows(int row, int count, const QModelIndex &parent = {}) override;
 
+    /** Ids of documents attached to @p pass. */
+    Q_INVOKABLE static QVariantList documentIds(const QVariant &pass);
+
 private:
     struct Entry {
         QString id;
