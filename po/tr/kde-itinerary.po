@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-15 00:47+0000\n"
+"POT-Creation-Date: 2023-06-16 00:47+0000\n"
 "PO-Revision-Date: 2023-05-29 10:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: app/AboutPage.qml:16 app/main.qml:160
+#: app/AboutPage.qml:16 app/main.qml:229
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -122,11 +122,11 @@ msgstr "Düzenle"
 msgid "Add to calendar..."
 msgstr "Takvime ekle..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
+#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Sil"
@@ -604,37 +604,37 @@ msgstr "Nereye:"
 msgid "Data providers: %1"
 msgstr "Veri sağlayıcıları: %1"
 
-#: app/DocumentsPage.qml:32
+#: app/DocumentsCard.qml:32
 #, kde-format
 msgid "Add Document"
 msgstr "Belge Ekle"
 
-#: app/DocumentsPage.qml:34 app/main.qml:55
+#: app/DocumentsCard.qml:34 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tüm Dosyalar (*.*)"
 
-#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
+#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "Belgeyi Sil"
 
-#: app/DocumentsPage.qml:78
+#: app/DocumentsCard.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Bu belgeyi gerçekten silmek istiyor musunuz?"
 
-#: app/DocumentsPage.qml:98
+#: app/DocumentsCard.qml:98
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Belgeler ve Biletler"
 
-#: app/DocumentsPage.qml:107
+#: app/DocumentsCard.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Bu rezervasyonu ekli belge yok."
 
-#: app/DocumentsPage.qml:115
+#: app/DocumentsCard.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "Belge Ekle..."
@@ -743,7 +743,7 @@ msgid "Export Favorite Locations"
 msgstr "Sık Kullanılan Konumları Dışa Aktar"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:127
+#: app/TimelinePage.qml:117
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX Dosyaları (*.gpx)"
@@ -1037,7 +1037,7 @@ msgstr "Kartı Sil"
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı gerçekten silmek istiyor musunuz?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:296 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:153
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -1152,7 +1152,7 @@ msgstr "Sınama %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "İyileşme (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:123
+#: app/HealthCertificatePage.qml:17 app/main.qml:192
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sağlık Sertifikaları"
@@ -1651,7 +1651,7 @@ msgstr[1] "%1 aktarma"
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:134
+#: app/LiveStatusPage.qml:17 app/main.qml:203
 #, kde-format
 msgid "Live Status"
 msgstr "Canlı Durum"
@@ -1842,107 +1842,134 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:303
+#: app/main.cpp:305
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Sayısal Yolculuk Asistanı"
 
-#: app/main.cpp:304
+#: app/main.cpp:306
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Telif hakkı © 2018-%1 KDE Topluluğu"
 
-#: app/main.cpp:310
+#: app/main.cpp:312
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Verilen sayfadaki yolcu belgesini aç"
 
-#: app/main.cpp:315
+#: app/main.cpp:317
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "İçe aktarılacak PkPass veya JSON-LD dosyası."
 
 #: app/main.qml:53
-#, kde-format
-msgid "Import Reservation"
-msgstr "Rezervasyon İçe Aktar"
-
-#: app/main.qml:55
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "PkPass dosyaları (*.pkpass)"
-
-#: app/main.qml:55
-#, kde-format
-msgid "PDF files (*.pdf)"
-msgstr "PDF dosyaları (*.pdf)"
-
-#: app/main.qml:55 app/main.qml:64
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
-
-#: app/main.qml:62
-#, kde-format
-msgid "Export Itinerary Data"
-msgstr "Yolcu Belgesi Verisini Dışa Aktar"
-
-#: app/main.qml:78 app/PassPage.qml:88
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import"
 msgstr "İçe Aktar..."
 
-#: app/main.qml:83
+#: app/main.qml:56
 #, kde-format
-msgid "Scan Barcode..."
-msgstr "Barkod Tara..."
+msgid "Open File..."
+msgstr ""
 
-#: app/main.qml:88
+#: app/main.qml:64
 #, kde-format
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: app/main.qml:94
+#: app/main.qml:73
+#, kde-format
+msgid "Scan Barcode..."
+msgstr "Barkod Tara..."
+
+#: app/main.qml:82
+#, fuzzy, kde-format
+#| msgid "Add from calendar..."
+msgid "Add from Calendar..."
+msgstr "Takvimden Ekle..."
+
+#: app/main.qml:97
+#, kde-format
+msgid "Deutsche Bahn Online Ticket..."
+msgstr ""
+
+#: app/main.qml:105
+#, kde-format
+msgid "SNCF Online Ticket..."
+msgstr ""
+
+#: app/main.qml:118
+#, kde-format
+msgid "Import Reservation"
+msgstr "Rezervasyon İçe Aktar"
+
+#: app/main.qml:120
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr "PkPass dosyaları (*.pkpass)"
+
+#: app/main.qml:120
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr "PDF dosyaları (*.pdf)"
+
+#: app/main.qml:120 app/main.qml:129
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE Yol Kılavuzu dosyaları (*.itinerary)"
+
+#: app/main.qml:127
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "Yolcu Belgesi Verisini Dışa Aktar"
+
+#: app/main.qml:158 app/PassPage.qml:88
+#, kde-format
+msgid "Import..."
+msgstr "İçe Aktar..."
+
+#: app/main.qml:163
 #, kde-format
 msgid "Check for Updates"
 msgstr "Güncellemeleri Denetle"
 
-#: app/main.qml:102
+#: app/main.qml:171
 #, kde-format
 msgid "Download Maps"
 msgstr "Haritalar İndir"
 
-#: app/main.qml:110 app/StatisticsPage.qml:16
+#: app/main.qml:179 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "İstatistikler"
 
-#: app/main.qml:117
+#: app/main.qml:186
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Kartlar ve Programlar"
 
-#: app/main.qml:117
+#: app/main.qml:186
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Kartlar ve Programlar"
 
-#: app/main.qml:142
+#: app/main.qml:211
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
 
-#: app/main.qml:148
+#: app/main.qml:217
 #, kde-format
 msgid "Export..."
 msgstr "Dışa Aktar..."
 
-#: app/main.qml:153 app/WelcomePage.qml:17
+#: app/main.qml:222 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Yardım"
 
-#: app/main.qml:223
+#: app/main.qml:292
 #, kde-format
 msgid "Map download finished."
 msgstr "Harita indirme bitti."
@@ -2059,6 +2086,46 @@ msgstr "Yeni kalkış platformu: %1"
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Yeni varış platformu: %1"
+
+#: app/OnlineImportPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Train Ticket"
+msgid "Import Online Ticket"
+msgstr "Tren Bileti"
+
+#: app/OnlineImportPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Ticket imported"
+msgstr "Bir şey içe aktarılmadı."
+
+#: app/OnlineImportPage.qml:30
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No ticket found"
+msgstr "Konum bulunamadı"
+
+#: app/OnlineImportPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Train Ticket"
+msgid "Online Ticket"
+msgstr "Tren Bileti"
+
+#: app/OnlineImportPage.qml:48
+#, kde-format
+msgid "Family name"
+msgstr ""
+
+#: app/OnlineImportPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Booking reference"
+msgstr "Rezervasyon başvurusu:"
+
+#: app/OnlineImportPage.qml:62
+#, kde-format
+msgid "Search..."
+msgstr ""
 
 #: app/passmanager.cpp:229
 #, kde-format
@@ -2614,47 +2681,42 @@ msgstr "Katılımcı %1"
 msgid "Traveler %1"
 msgstr "Yolcu %1"
 
-#: app/TimelinePage.qml:20
+#: app/TimelinePage.qml:19
 #, kde-format
 msgid "My Itinerary"
 msgstr "Yolcu Belgem"
 
-#: app/TimelinePage.qml:25
+#: app/TimelinePage.qml:26
 #, kde-format
 msgid "Go To Now"
 msgstr "Şimdiye Git"
 
-#: app/TimelinePage.qml:30
+#: app/TimelinePage.qml:31
 #, kde-format
 msgid "Current Ticket"
 msgstr "Geçerli Bilet"
 
-#: app/TimelinePage.qml:36
+#: app/TimelinePage.qml:37
 #, kde-format
 msgid "Add train trip..."
 msgstr "Tren Yolculuğu Ekle..."
 
-#: app/TimelinePage.qml:87
-#, kde-format
-msgid "Add from calendar..."
-msgstr "Takvimden Ekle..."
-
-#: app/TimelinePage.qml:104
+#: app/TimelinePage.qml:94
 #, kde-format
 msgid "Delete Trip"
 msgstr "Yolculuğu Sil"
 
-#: app/TimelinePage.qml:105
+#: app/TimelinePage.qml:95
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Bu yolculuğu silmeyi gerçekten istiyor musunuz?"
 
-#: app/TimelinePage.qml:125
+#: app/TimelinePage.qml:115
 #, kde-format
 msgid "Export Trip"
 msgstr "Yolculuğu Dışa Aktar"
 
-#: app/TimelinePage.qml:299
+#: app/TimelinePage.qml:275
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Bugün için yolcu belgenizde bir şey yok."
@@ -3260,9 +3322,6 @@ msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Program:"
-
-#~ msgid "Booking reference:"
-#~ msgstr "Rezervasyon başvurusu:"
 
 #~ msgid "Elevator"
 #~ msgstr "Asansör"

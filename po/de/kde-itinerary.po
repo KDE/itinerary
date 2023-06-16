@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-15 00:47+0000\n"
-"PO-Revision-Date: 2023-05-30 18:45+0200\n"
+"POT-Creation-Date: 2023-06-16 00:47+0000\n"
+"PO-Revision-Date: 2023-06-15 14:04+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "spitz234@hotmail.com, dev-kde@felsenfleischer.de"
 
-#: app/AboutPage.qml:16 app/main.qml:160
+#: app/AboutPage.qml:16 app/main.qml:229
 #, kde-format
 msgid "About"
 msgstr "Über"
@@ -123,11 +123,11 @@ msgstr "Bearbeiten"
 msgid "Add to calendar..."
 msgstr "Zum Kalender hinzufügen ..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsPage.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:111
+#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
@@ -605,37 +605,37 @@ msgstr "Nach:"
 msgid "Data providers: %1"
 msgstr "Datenanbieter: %1"
 
-#: app/DocumentsPage.qml:32
+#: app/DocumentsCard.qml:32
 #, kde-format
 msgid "Add Document"
 msgstr "Dokument hinzufügen"
 
-#: app/DocumentsPage.qml:34 app/main.qml:55
+#: app/DocumentsCard.qml:34 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Alle Dateien (*.*)"
 
-#: app/DocumentsPage.qml:62 app/DocumentsPage.qml:77
+#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
 #, kde-format
 msgid "Delete Document"
 msgstr "Dokument löschen"
 
-#: app/DocumentsPage.qml:78
+#: app/DocumentsCard.qml:78
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Möchten Sie dieses Dokument wirklich löschen?"
 
-#: app/DocumentsPage.qml:98
+#: app/DocumentsCard.qml:98
 #, kde-format
 msgid "Documents and Tickets"
 msgstr "Dokumente und Fahrscheine"
 
-#: app/DocumentsPage.qml:107
+#: app/DocumentsCard.qml:107
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Keine Dokumente für diese Reservierung hinterlegt."
 
-#: app/DocumentsPage.qml:115
+#: app/DocumentsCard.qml:115
 #, kde-format
 msgid "Add Document..."
 msgstr "Dokument hinzufügen ..."
@@ -744,7 +744,7 @@ msgid "Export Favorite Locations"
 msgstr "Bevorzugte Orte exportieren"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:127
+#: app/TimelinePage.qml:117
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-Dateien (*.gpx)"
@@ -1040,7 +1040,7 @@ msgstr "Pass löschen"
 msgid "Do you really want to delete this pass?"
 msgstr "Möchten Sie diesen Pass wirklich löschen?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:296 app/main.qml:19 app/main.qml:73
+#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:153
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-Itinerary"
@@ -1155,7 +1155,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Genesen (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:123
+#: app/HealthCertificatePage.qml:17 app/main.qml:192
 #, kde-format
 msgid "Health Certificates"
 msgstr "Gesundheitsnachweise"
@@ -1653,7 +1653,7 @@ msgstr[1] "%1 Umstiege"
 msgid "Itinerary change"
 msgstr "Reiseplan geändert"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:134
+#: app/LiveStatusPage.qml:17 app/main.qml:203
 #, kde-format
 msgid "Live Status"
 msgstr "Live-Status"
@@ -1850,147 +1850,172 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:303
+#: app/main.cpp:305
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitaler Reiseassistent"
 
-#: app/main.cpp:304
+#: app/main.cpp:306
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 Die KDE-Gemeinschaft"
 
-#: app/main.cpp:310
+#: app/main.cpp:312
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Reiseplan auf der angegebenen Seite öffnen"
 
-#: app/main.cpp:315
+#: app/main.cpp:317
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Zu öffnende PkPass- oder JSON-LD-Datei."
 
 #: app/main.qml:53
-#, kde-format
-msgid "Import Reservation"
-msgstr "Reservierung importieren"
-
-#: app/main.qml:55
-#, kde-format
-msgid "PkPass files (*.pkpass)"
-msgstr "PkPass-Dateien (*.pkpass)"
-
-#: app/main.qml:55
-#, kde-format
-msgid "PDF files (*.pdf)"
-msgstr "PDF-Dateien (*.pdf)"
-
-#: app/main.qml:55 app/main.qml:64
-#, kde-format
-msgid "KDE Itinerary files (*.itinerary)"
-msgstr "KDE-Itinerary-Dateien (*.itinerary)"
-
-#: app/main.qml:62
-#, kde-format
-msgid "Export Itinerary Data"
-msgstr "Reiseplan exportieren"
-
-#: app/main.qml:78 app/PassPage.qml:88
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import"
 msgstr "Importieren ..."
 
-#: app/main.qml:83
+#: app/main.qml:56
 #, kde-format
-msgid "Scan Barcode..."
-msgstr "Barcode scannen ..."
+msgid "Open File..."
+msgstr ""
 
-#: app/main.qml:88
+#: app/main.qml:64
 #, kde-format
 msgid "Paste"
 msgstr "Einfügen"
 
-#: app/main.qml:94
+#: app/main.qml:73
+#, kde-format
+msgid "Scan Barcode..."
+msgstr "Barcode scannen ..."
+
+#: app/main.qml:82
+#, fuzzy, kde-format
+#| msgid "Add from calendar..."
+msgid "Add from Calendar..."
+msgstr "Aus Kalender hinzufügen ..."
+
+#: app/main.qml:97
+#, kde-format
+msgid "Deutsche Bahn Online Ticket..."
+msgstr ""
+
+#: app/main.qml:105
+#, kde-format
+msgid "SNCF Online Ticket..."
+msgstr ""
+
+#: app/main.qml:118
+#, kde-format
+msgid "Import Reservation"
+msgstr "Reservierung importieren"
+
+#: app/main.qml:120
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr "PkPass-Dateien (*.pkpass)"
+
+#: app/main.qml:120
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr "PDF-Dateien (*.pdf)"
+
+#: app/main.qml:120 app/main.qml:129
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr "KDE-Itinerary-Dateien (*.itinerary)"
+
+#: app/main.qml:127
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr "Reiseplan exportieren"
+
+#: app/main.qml:158 app/PassPage.qml:88
+#, kde-format
+msgid "Import..."
+msgstr "Importieren ..."
+
+#: app/main.qml:163
 #, kde-format
 msgid "Check for Updates"
 msgstr "Auf Aktualisierungen prüfen"
 
-#: app/main.qml:102
+#: app/main.qml:171
 #, kde-format
 msgid "Download Maps"
 msgstr "Karten herunterladen"
 
-#: app/main.qml:110 app/StatisticsPage.qml:16
+#: app/main.qml:179 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistik"
 
-#: app/main.qml:117
+#: app/main.qml:186
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Pässe && Programme"
 
-#: app/main.qml:117
+#: app/main.qml:186
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Pässe & Programme"
 
-#: app/main.qml:142
+#: app/main.qml:211
 #, kde-format
 msgid "Settings..."
 msgstr "Einstellungen ..."
 
-#: app/main.qml:148
+#: app/main.qml:217
 #, kde-format
 msgid "Export..."
 msgstr "Exportieren ..."
 
-#: app/main.qml:153 app/WelcomePage.qml:17
+#: app/main.qml:222 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Hilfe"
 
-#: app/main.qml:223
+#: app/main.qml:292
 #, kde-format
 msgid "Map download finished."
 msgstr "Das Herunterladen der Karte ist abgeschlossen."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "Bevorzugte Orte"
+msgstr "Standort teilen"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "Eingeladen"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "Bevorzugte Orte"
+msgstr "Bevorzugte Räume"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "Direktnachrichten"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "Räume"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "Niedrige Priorität"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
@@ -2069,6 +2094,46 @@ msgstr "Neues Abfahrtgleis: %1"
 #, kde-format
 msgid "New arrival platform is: %1"
 msgstr "Neues Ankunftgleis: %1"
+
+#: app/OnlineImportPage.qml:16
+#, fuzzy, kde-format
+#| msgid "Train Ticket"
+msgid "Import Online Ticket"
+msgstr "Zugkarte"
+
+#: app/OnlineImportPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Nothing imported."
+msgid "Ticket imported"
+msgstr "Nichts importiert."
+
+#: app/OnlineImportPage.qml:30
+#, fuzzy, kde-format
+#| msgid "No locations found"
+msgid "No ticket found"
+msgstr "Keine Orte gefunden"
+
+#: app/OnlineImportPage.qml:44
+#, fuzzy, kde-format
+#| msgid "Train Ticket"
+msgid "Online Ticket"
+msgstr "Zugkarte"
+
+#: app/OnlineImportPage.qml:48
+#, kde-format
+msgid "Family name"
+msgstr ""
+
+#: app/OnlineImportPage.qml:56
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Booking reference"
+msgstr "Buchungsreferenz:"
+
+#: app/OnlineImportPage.qml:62
+#, kde-format
+msgid "Search..."
+msgstr ""
 
 #: app/passmanager.cpp:229
 #, kde-format
@@ -2479,20 +2544,19 @@ msgid "Matrix ID"
 msgstr ""
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "Pass"
+msgstr "Passwort"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Abmelden"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Anmelden"
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
@@ -2628,47 +2692,42 @@ msgstr "Teilnehmer %1"
 msgid "Traveler %1"
 msgstr "Reisende(r) %1"
 
-#: app/TimelinePage.qml:20
+#: app/TimelinePage.qml:19
 #, kde-format
 msgid "My Itinerary"
 msgstr "Mein Reiseplan"
 
-#: app/TimelinePage.qml:25
+#: app/TimelinePage.qml:26
 #, kde-format
 msgid "Go To Now"
 msgstr "Jetzt"
 
-#: app/TimelinePage.qml:30
+#: app/TimelinePage.qml:31
 #, kde-format
 msgid "Current Ticket"
 msgstr "Aktueller Fahrschein"
 
-#: app/TimelinePage.qml:36
+#: app/TimelinePage.qml:37
 #, kde-format
 msgid "Add train trip..."
 msgstr "Zugreise hinzufügen ..."
 
-#: app/TimelinePage.qml:87
-#, kde-format
-msgid "Add from calendar..."
-msgstr "Aus Kalender hinzufügen ..."
-
-#: app/TimelinePage.qml:104
+#: app/TimelinePage.qml:94
 #, kde-format
 msgid "Delete Trip"
 msgstr "Reise löschen"
 
-#: app/TimelinePage.qml:105
+#: app/TimelinePage.qml:95
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Möchten Sie diese Reise wirklich löschen?"
 
-#: app/TimelinePage.qml:125
+#: app/TimelinePage.qml:115
 #, kde-format
 msgid "Export Trip"
 msgstr "Reise exportieren"
 
-#: app/TimelinePage.qml:299
+#: app/TimelinePage.qml:275
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Für heute steht nichts im Reiseplan."
@@ -3132,7 +3191,7 @@ msgstr "Verstanden"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "Abgleichen ..."
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
@@ -3142,7 +3201,7 @@ msgstr ""
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "Anmeldung läuft"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
@@ -3280,9 +3339,6 @@ msgstr "%1%2 von %3 nach %4 am %5"
 #~ msgctxt "name of a frequent flyer program"
 #~ msgid "Program:"
 #~ msgstr "Programm:"
-
-#~ msgid "Booking reference:"
-#~ msgstr "Buchungsreferenz:"
 
 #~ msgid "Elevator"
 #~ msgstr "Aufzug"
