@@ -76,9 +76,6 @@ class TimelineDelegateController : public QObject
     /** Reservation has been canceled (by user or provider, we usually don't know which). */
     Q_PROPERTY(bool isCanceled READ isCanceled NOTIFY contentChanged)
 
-    /** Number of documents attached to the entire batch. */
-    Q_PROPERTY(int documentCount READ documentCount NOTIFY contentChanged)
-
     /** Platform sections to the extend known. */
     Q_PROPERTY(QString departurePlatformSections READ departurePlatformSections NOTIFY layoutChanged)
     Q_PROPERTY(QString arrivalPlatformSections READ arrivalPlatformSections NOTIFY layoutChanged)
@@ -126,8 +123,6 @@ public:
     Q_INVOKABLE QJSValue departureMapArguments() const;
     /** Map page arugments for an element that isn't a location change. */
     Q_INVOKABLE QJSValue mapArguments() const;
-
-    int documentCount() const;
 
     /** Add the current reservation to the calendar @p cal. */
     Q_INVOKABLE void addToCalendar(KCalendarCore::Calendar *cal);

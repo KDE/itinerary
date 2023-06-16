@@ -889,26 +889,6 @@ QJSValue TimelineDelegateController::mapArguments() const
     return args;
 }
 
-int TimelineDelegateController::documentCount() const
-{
-    if (!m_resMgr || m_batchId.isEmpty()) {
-        return 0;
-    }
-
-    QSet<QString> allDocIds;
-    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
-    for (const auto &resId : resIds) {
-        const auto res = m_resMgr->reservation(resId);
-        const auto docIds = DocumentUtil::documentIds(res);
-        for (const auto &docId : docIds) {
-            if (m_documentMgr->hasDocument(docId.toString())) {
-                allDocIds.insert(docId.toString());
-            }
-        }
-    }
-    return allDocIds.size();
-}
-
 void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
 {
     const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
