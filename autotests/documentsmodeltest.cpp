@@ -38,6 +38,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setDocumentManager(&mgr);
         ReservationManager resMgr;
+        Test::clearAll(&resMgr);
         ctrl->setReservationManager(&resMgr);
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
         QCOMPARE(resMgr.batches().size(), 1);
