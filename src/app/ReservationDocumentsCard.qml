@@ -18,6 +18,6 @@ App.DocumentsCard {
 
     documentIds: controller.documentIds
 
-    onAddDocument: (file) => { ApplicationController.addDocument(controller.batchId, file); }
-    onRemoveDocument: (docId) => { ApplicationController.removeDocument(controller.batchId, docId); }
+    onAddDocument: (file) => { ApplicationController.addDocumentToReservation(controller.batchId, file); }
+    onRemoveDocument: (docId) => { ApplicationController.removeDocumentFromReservation(controller.batchId, docId); }
 }

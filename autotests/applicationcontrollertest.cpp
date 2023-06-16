@@ -16,6 +16,7 @@
 #include <transfermanager.h>
 #include <tripgroupmanager.h>
 
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/ExtractorCapabilities>
 #include <KItinerary/File>
 
@@ -204,6 +205,59 @@ private Q_SLOTS:
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 6);
+    }
+
+    void testDocumentAttaching()
+    {
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+        DocumentManager docMgr;
+        Test::clearAll(&docMgr);
+        PassManager passMgr;
+        Test::clearAll(&passMgr);
+        auto ctrl = Test::makeAppController();
+
+        ctrl->setReservationManager(&resMgr);
+        ctrl->setDocumentManager(&docMgr);
+        ctrl->setPassManager(&passMgr);
+
+        {
+            QCOMPARE(docMgr.documents().size(), 0);
+            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+            QCOMPARE(resMgr.batches().size(), 1);
+            const auto resId = resMgr.batches().at(0);
+
+            QCOMPARE(KItinerary::DocumentUtil::documentIds(resMgr.reservation(resId)).size(), 0);
+            ctrl->addDocumentToReservation(resId, QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+            QCOMPARE(docMgr.documents().size(), 1);
+            const auto docIds = KItinerary::DocumentUtil::documentIds(resMgr.reservation(resId));
+            QCOMPARE(docIds.size(), 1);
+
+            ctrl->removeDocumentFromReservation(resId, docIds.at(0).toString());
+            QCOMPARE(docMgr.documents().size(), 0);
+            QCOMPARE(resMgr.batches().size(), 1);
+            QCOMPARE(KItinerary::DocumentUtil::documentIds(resMgr.reservation(resId)).size(), 0);
+        }
+
+        {
+            QCOMPARE(passMgr.rowCount(), 0);
+            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/9euroticket.json")));
+            QCOMPARE(docMgr.documents().size(), 0);
+            QCOMPARE(passMgr.rowCount(), 1);
+            const auto passId = passMgr.index(0, 0).data(PassManager::PassIdRole).toString();
+            auto docIds = KItinerary::DocumentUtil::documentIds(passMgr.pass(passId));
+            QCOMPARE(docIds.size(), 0);
+
+            ctrl->addDocumentToPass(passId, QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+            QCOMPARE(docMgr.documents().size(), 1);
+            docIds = KItinerary::DocumentUtil::documentIds(passMgr.pass(passId));
+            QCOMPARE(docIds.size(), 1);
+
+            ctrl->removeDocumentFromPass(passId, docIds.at(0).toString());
+            QCOMPARE(docMgr.documents().size(), 0);
+            QCOMPARE(passMgr.rowCount(), 1);
+            QCOMPARE(KItinerary::DocumentUtil::documentIds(passMgr.pass(passId)).size(), 0);
+        }
     }
 };
 

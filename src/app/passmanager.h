@@ -54,6 +54,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    Q_INVOKABLE void update(const QString &passId, const QVariant &pass);
     Q_INVOKABLE bool remove(const QString &passId);
 
     Q_INVOKABLE bool removeRow(int row, const QModelIndex &parent = QModelIndex()); // not exported to QML in Qt5 yet

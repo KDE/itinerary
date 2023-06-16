@@ -71,8 +71,10 @@ public:
     Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QUrl &url);
 
     // document attaching
-    Q_INVOKABLE void addDocument(const QString &batchId, const QUrl &url);
-    Q_INVOKABLE void removeDocument(const QString &batchId, const QString &docId);
+    Q_INVOKABLE void addDocumentToReservation(const QString &batchId, const QUrl &url);
+    Q_INVOKABLE void removeDocumentFromReservation(const QString &batchId, const QString &docId);
+    Q_INVOKABLE void addDocumentToPass(const QString &passId, const QUrl &url);
+    Q_INVOKABLE void removeDocumentFromPass(const QString &passId, const QString &docId);
     Q_INVOKABLE void openDocument(const QUrl &url);
 
     // about information
@@ -110,6 +112,8 @@ private:
     void importMimeMessage(KMime::Message *msg);
     void importNode(const KItinerary::ExtractorDocumentNode &node);
     bool importGenericPkPass(const KItinerary::ExtractorDocumentNode &node);
+
+    QString addDocumentFromFile(const QUrl &url);
 
     static ApplicationController *s_instance;
 

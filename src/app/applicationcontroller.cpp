@@ -676,10 +676,10 @@ void ApplicationController::importMimeMessage(KMime::Message *msg)
     }
 }
 
-void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
+QString ApplicationController::addDocumentFromFile(const QUrl &url)
 {
     if (!url.isValid()) {
-        return;
+        return {};
     }
 
     const auto docId = QUuid::createUuid().toString(QUuid::WithoutBraces);
@@ -695,7 +695,15 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
 #endif
 
     m_docMgr->addDocument(docId, docInfo, FileHelper::toLocalFile(url));
+    return docId;
+}
 
+void ApplicationController::addDocumentToReservation(const QString &batchId, const QUrl &url)
+{
+    const auto docId = addDocumentFromFile(url);
+    if (docId.isEmpty()) {
+        return;
+    }
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
     for (const auto &resId : resIds) {
         auto res = m_resMgr->reservation(resId);
@@ -704,7 +712,19 @@ void ApplicationController::addDocument(const QString &batchId, const QUrl &url)
     }
 }
 
-void ApplicationController::removeDocument(const QString &batchId, const QString &docId)
+void ApplicationController::addDocumentToPass(const QString &passId, const QUrl &url)
+{
+    const auto docId = addDocumentFromFile(url);
+    if (docId.isEmpty()) {
+        return;
+    }
+    auto pass = m_passMgr->pass(passId);
+    if (DocumentUtil::addDocumentId(pass, docId)) {
+        m_passMgr->update(passId, pass);
+    }
+}
+
+void ApplicationController::removeDocumentFromReservation(const QString &batchId, const QString &docId)
 {
     const auto resIds = m_resMgr->reservationsForBatch(batchId);
     for (const auto &resId : resIds) {
@@ -712,6 +732,15 @@ void ApplicationController::removeDocument(const QString &batchId, const QString
         if (DocumentUtil::removeDocumentId(res, docId)) {
             m_resMgr->updateReservation(resId, res);
         }
+    }
+    m_docMgr->removeDocument(docId);
+}
+
+void ApplicationController::removeDocumentFromPass(const QString &passId, const QString &docId)
+{
+    auto pass = m_passMgr->pass(passId);
+    if (DocumentUtil::removeDocumentId(pass, docId)) {
+        m_passMgr->update(passId, pass);
     }
     m_docMgr->removeDocument(docId);
 }

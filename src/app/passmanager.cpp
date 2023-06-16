@@ -290,6 +290,19 @@ QByteArray PassManager::rawData(const Entry &entry) const
     return f.readAll();
 }
 
+void PassManager::update(const QString &passId, const QVariant &pass)
+{
+    auto it = std::find_if(m_entries.begin(), m_entries.end(), [&passId](const auto &lhs) { return lhs.id == passId; });
+    if (it == m_entries.end()) {
+        qWarning() << "couldn't find pass to update!?" << passId << pass;
+        return;
+    }
+    (*it).data = pass;
+    write((*it).data, (*it).id);
+    const auto idx = index(std::distance(m_entries.begin(), it), 0);
+    Q_EMIT dataChanged(idx, idx);
+}
+
 bool PassManager::remove(const QString &passId)
 {
     auto it = std::find_if(m_entries.begin(), m_entries.end(), [passId](const auto &entry) {
