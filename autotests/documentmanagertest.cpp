@@ -20,14 +20,6 @@ class DocumentManagerTest : public QObject
 
 {
     Q_OBJECT
-private:
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -62,7 +54,7 @@ private Q_SLOTS:
         const auto docFilePath = mgr.documentFilePath(QStringLiteral("docId1"));
         QVERIFY(docFilePath.endsWith(QLatin1String("/docId1/boarding_pass.pdf")));
         QVERIFY(QFile::exists(docFilePath));
-        QCOMPARE(readFile(docFilePath), QByteArray("%PDF123456"));
+        QCOMPARE(Test::readFile(docFilePath), QByteArray("%PDF123456"));
 
         mgr.addDocument(QStringLiteral("docId2"), docInfo, docFilePath);
         QCOMPARE(addSpy.size(), 2);
@@ -71,7 +63,7 @@ private Q_SLOTS:
         QVERIFY(docFilePath2.endsWith(QLatin1String("/docId2/boarding_pass.pdf")));
         QVERIFY(docFilePath != docFilePath2);
         QVERIFY(QFile::exists(docFilePath2));
-        QCOMPARE(readFile(docFilePath2), QByteArray("%PDF123456"));
+        QCOMPARE(Test::readFile(docFilePath2), QByteArray("%PDF123456"));
         QCOMPARE(mgr.documents().size(), 2);
         QVERIFY(mgr.documents().contains(QLatin1String("docId2")));
 

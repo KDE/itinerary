@@ -32,14 +32,6 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 class TimelineSectionDelegateControllerTest : public QObject
 {
     Q_OBJECT
-private:
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {

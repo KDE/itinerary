@@ -28,12 +28,6 @@
 class AppControllerTest : public QObject
 {
     Q_OBJECT
-private:
-    bool hasZxing()
-    {
-        return KItinerary::ExtractorCapabilities::capabilitiesString().contains(QLatin1String("zxing"), Qt::CaseInsensitive);
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -79,9 +73,6 @@ private Q_SLOTS:
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
         appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
-        if (!hasZxing()) {
-            QSKIP("Built without ZXing");
-        }
         QCOMPARE(resSpy.size(), 4);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 4);
@@ -128,9 +119,6 @@ private Q_SLOTS:
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
         appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
-        if (!hasZxing()) {
-            QSKIP("Built without ZXing");
-        }
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
