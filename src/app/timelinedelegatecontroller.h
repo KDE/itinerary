@@ -80,6 +80,9 @@ class TimelineDelegateController : public QObject
     Q_PROPERTY(QString departurePlatformSections READ departurePlatformSections NOTIFY layoutChanged)
     Q_PROPERTY(QString arrivalPlatformSections READ arrivalPlatformSections NOTIFY layoutChanged)
 
+    /** Attached documents of this element. */
+    Q_PROPERTY(QStringList documentIds READ documentIds NOTIFY contentChanged)
+
 public:
     TimelineDelegateController(QObject *parent = nullptr);
     ~TimelineDelegateController() override;
@@ -133,6 +136,9 @@ public:
     /** Platform section information. */
     QString departurePlatformSections() const;
     QString arrivalPlatformSections() const;
+
+    /** Ids of attached documents. */
+    QStringList documentIds() const;
 
 Q_SIGNALS:
     void setupChanged();

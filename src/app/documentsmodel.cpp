@@ -81,6 +81,16 @@ QHash<int, QByteArray> DocumentsModel::roleNames() const
     return names;
 }
 
+void DocumentsModel::setDocumentIds(const QStringList &docIds)
+{
+    if (m_requestedDocIds == docIds) {
+        return;
+    }
+    m_requestedDocIds = docIds;
+    Q_EMIT requestedDocumentIdsChanged();
+    reload();
+}
+
 void DocumentsModel::setDocumentManager(DocumentManager *mgr)
 {
     if (m_docMgr == mgr) {
@@ -95,39 +105,17 @@ void DocumentsModel::setDocumentManager(DocumentManager *mgr)
     Q_EMIT setupChanged();
 }
 
-void DocumentsModel::setReservationManager(ReservationManager* mgr)
-{
-    if (m_resMgr == mgr) {
-        return;
-    }
-    m_resMgr = mgr;
-
-    connect(mgr, &ReservationManager::batchContentChanged, this, [this](const QString &batchId) {
-        if (batchId == m_batchId) {
-            reload();
-        }
-    });
-
-    Q_EMIT setupChanged();
-}
-
 void DocumentsModel::reload()
 {
-    if (!m_docMgr || !m_resMgr || m_batchId.isEmpty()) {
+    if (!m_docMgr) {
         return;
     }
 
     beginResetModel();
     m_docIds.clear();
-    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
-    for (const auto &resId : resIds) {
-        const auto res = m_resMgr->reservation(resId);
-        const auto docIds = DocumentUtil::documentIds(res);
-        for (const auto &docId : docIds) {
-            const auto id = docId.toString();
-            if (!id.isEmpty() && m_docMgr->hasDocument(id)) {
-                m_docIds.push_back(id);
-            }
+    for (const auto &id : m_requestedDocIds) {
+        if (!id.isEmpty() && m_docMgr->hasDocument(id)) {
+            m_docIds.push_back(id);
         }
     }
 

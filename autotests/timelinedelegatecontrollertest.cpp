@@ -76,6 +76,7 @@ private Q_SLOTS:
         QCOMPARE(controller.isLocationChange(), false);
         QCOMPARE(controller.isPublicTransport(), false);
         QCOMPARE(controller.isCanceled(), false);
+        QCOMPARE(controller.documentIds(), QStringList());
     }
 
     void testProgress()

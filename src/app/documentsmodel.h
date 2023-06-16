@@ -7,22 +7,18 @@
 #ifndef DOCUMENTSMODEL_H
 #define DOCUMENTSMODEL_H
 
-#include "reservationmanager.h"
-
 #include <QAbstractListModel>
 
 #include <vector>
 
 class DocumentManager;
-class ReservationManager;
 
 /** Model containing the documents attached to the given batch of reservations. */
 class DocumentsModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString batchId MEMBER m_batchId NOTIFY setupChanged)
+    Q_PROPERTY(QStringList documentIds MEMBER m_requestedDocIds WRITE setDocumentIds NOTIFY requestedDocumentIdsChanged)
     Q_PROPERTY(DocumentManager* documentManager MEMBER m_docMgr WRITE setDocumentManager NOTIFY setupChanged)
-    Q_PROPERTY(ReservationManager* reservationManager MEMBER m_resMgr  WRITE setReservationManager NOTIFY setupChanged)
     Q_PROPERTY(bool empty READ isEmpty NOTIFY emptyChanged)
 
 public:
@@ -35,14 +31,15 @@ public:
         DocumentFilePathRole
     };
 
-    int rowCount(const QModelIndex & parent) const override;
+    int rowCount(const QModelIndex & parent = {}) const override;
     QVariant data(const QModelIndex & index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
 
+    void setDocumentIds(const QStringList &docIds);
     void setDocumentManager(DocumentManager *mgr);
-    void setReservationManager(ReservationManager *mgr);
 
 Q_SIGNALS:
+    void requestedDocumentIdsChanged();
     void setupChanged();
     void emptyChanged();
 
@@ -50,10 +47,9 @@ private:
     bool isEmpty() const;
     void reload();
 
-    QString m_batchId;
+    QStringList m_requestedDocIds;
     std::vector<QString> m_docIds;
     DocumentManager *m_docMgr = nullptr;
-    ReservationManager *m_resMgr = nullptr;
 };
 
 #endif // DOCUMENTSMODEL_H

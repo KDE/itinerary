@@ -154,6 +154,7 @@ void TimelineDelegateController::setDocumentManager(QObject *documentMgr)
 
     m_documentMgr = qobject_cast<DocumentManager*>(documentMgr);
     Q_EMIT setupChanged();
+    Q_EMIT contentChanged();
 }
 
 QString TimelineDelegateController::batchId() const
@@ -972,6 +973,30 @@ QString TimelineDelegateController::arrivalPlatformSections() const
     }
     const auto res = m_resMgr->reservation(m_batchId);
     return platformSectionsForCoachData(arrival(), coachDataForReservation(res));
+}
+
+QStringList TimelineDelegateController::documentIds() const
+{
+    if (!m_resMgr || !m_documentMgr || m_batchId.isEmpty()) {
+        return {};
+    }
+
+    QStringList result;
+    const auto resIds = m_resMgr->reservationsForBatch(m_batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto docIds = DocumentUtil::documentIds(res);
+        for (const auto &docId : docIds) {
+            const auto id = docId.toString();
+            if (!id.isEmpty() && m_documentMgr->hasDocument(id)) {
+                result.push_back(id);
+            }
+        }
+    }
+
+    std::sort(result.begin(), result.end());
+    result.erase(std::unique(result.begin(), result.end()), result.end());
+    return result;
 }
 
 #include "moc_timelinedelegatecontroller.cpp"

@@ -10,6 +10,7 @@ target_sources(itinerary PRIVATE
     calendarhelper.cpp
     calendarimportmodel.cpp
     documentmanager.cpp
+    documentsmodel.cpp
     favoritelocationmodel.cpp
     filehelper.cpp
     genericpkpass.cpp
@@ -98,7 +99,6 @@ target_sources(itinerary-app PRIVATE
     main.cpp
     countrysubdivisionmodel.cpp
     developmentmodecontroller.cpp
-    documentsmodel.cpp
     factory.cpp
     locationinformationdelegatecontroller.cpp
     mapdownloadmanager.cpp

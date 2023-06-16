@@ -22,8 +22,7 @@ MobileForm.FormCard {
 
     DocumentsModel {
         id: docsModel
-        reservationManager: ReservationManager
-        batchId: controller.batchId
+        documentIds: controller.documentIds
         documentManager: DocumentManager
     }
 
