@@ -428,7 +428,11 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     }
 
     // look for time-less passes/program memberships/etc
-    if (m_passMgr->import(extractorResult) || (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode()))) {
+    if (const auto passIds = m_passMgr->import(extractorResult); !passIds.isEmpty()) {
+        // TODO attach documents as done above for reservations
+        Q_EMIT infoMessage(i18np("One pass imported.", "%1 passes imported.", passIds.size()));
+        success = true;
+    } else if (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode())) {
         Q_EMIT infoMessage(i18n("Pass imported."));
         success = true;
     }

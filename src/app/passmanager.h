@@ -37,8 +37,8 @@ public:
     };
     Q_ENUM(PassType)
 
-    bool import(const QVariant &pass, const QString &id = {});
-    bool import(const QVector<QVariant> &passes);
+    QString import(const QVariant &pass, const QString &id = {});
+    QStringList import(const QVector<QVariant> &passes);
 
     /** Returns the pass id for the pass that is the closest match
      *  to the given ProgramMembership object.

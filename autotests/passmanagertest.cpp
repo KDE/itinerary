@@ -39,10 +39,10 @@ private Q_SLOTS:
         QCOMPARE(mgr.rowCount(), 0);
 
         // test import
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())));
+        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())).isEmpty());
+        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())).isEmpty());
         // duplicates get merged
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())));
+        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object())).isEmpty());
         QCOMPARE(mgr.rowCount(), 2);
 
         // retrieval
@@ -117,7 +117,7 @@ private Q_SLOTS:
 
         PassManager mgr;
         Test::clearAll(&mgr);
-        QVERIFY(mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())));
+        QVERIFY(!mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/bahncard.json"))).object())).isEmpty());
         const auto passId = mgr.index(0, 0).data(PassManager::PassIdRole).toString();
         QVERIFY(!passId.isEmpty());
 

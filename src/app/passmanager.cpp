@@ -93,7 +93,7 @@ int PassManager::rowCount(const QModelIndex &parent) const
     return m_entries.size();
 }
 
-bool PassManager::import(const QVariant &pass, const QString &id)
+QString PassManager::import(const QVariant &pass, const QString &id)
 {
     // check if this is an element we already have
     for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
@@ -102,7 +102,7 @@ bool PassManager::import(const QVariant &pass, const QString &id)
             write((*it).data, (*it).id);
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
             Q_EMIT dataChanged(idx, idx);
-            return true;
+            return (*it).id;
         }
     }
 
@@ -111,10 +111,10 @@ bool PassManager::import(const QVariant &pass, const QString &id)
         entry.id = id.isEmpty() ? QUuid::createUuid().toString(QUuid::WithoutBraces) : id;
         entry.data = pass;
         if (!write(entry.data, entry.id)) {
-            return false;
+            return {};
         }
 
-        const auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry, PassComparator(m_baseTime));
+        auto it = std::lower_bound(m_entries.begin(), m_entries.end(), entry, PassComparator(m_baseTime));
         if (it != m_entries.end() && (*it).id == entry.id) {
             (*it).data = entry.data;
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
@@ -122,16 +122,16 @@ bool PassManager::import(const QVariant &pass, const QString &id)
         } else {
             const auto row = std::distance(m_entries.begin(), it);
             beginInsertRows({}, row, row);
-            m_entries.insert(it, std::move(entry));
+            it = m_entries.insert(it, std::move(entry));
             endInsertRows();
         }
-        return true;
+        return (*it).id;
     }
 
-    return false;
+    return {};
 }
 
-bool PassManager::import(const QVector<QVariant> &passes)
+QStringList PassManager::import(const QVector<QVariant> &passes)
 {
     ExtractorPostprocessor postproc;
     postproc.setValidationEnabled(false);
@@ -141,10 +141,13 @@ bool PassManager::import(const QVector<QVariant> &passes)
     ExtractorValidator validator;
     validator.setAcceptedTypes<KItinerary::Ticket, KItinerary::ProgramMembership>();
 
-    bool result = false;
+    QStringList result;
     for (const auto &pass : processed) {
         if (validator.isValidElement(pass)) {
-            result |= import(pass);
+            auto id = import(pass);
+            if (!id.isEmpty()) {
+                result.push_back(id);
+            }
         }
     }
     return result;
