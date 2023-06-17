@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -127,7 +127,7 @@ msgstr "Изменить"
 msgid "Add to calendar..."
 msgstr "Добавить в календарь..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -211,8 +211,8 @@ msgstr "Заменить"
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
@@ -222,8 +222,8 @@ msgstr "Ошибка импорта: %1"
 msgid "Import failed: File too large."
 msgstr "Ошибка импорта: слишком большой файл."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -237,27 +237,37 @@ msgstr[3] "Импортировано одно бронирование."
 msgid "Health certificate imported."
 msgstr "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Пропуск импортирован."
+msgstr[1] "Пропуск импортирован."
+msgstr[2] "Пропуск импортирован."
+msgstr[3] "Пропуск импортирован."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ничего не импортировано."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -636,38 +646,37 @@ msgstr "В:"
 msgid "Data providers: %1"
 msgstr "Поставщики данных: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Добавить документ"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Все файлы (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Удалить документ"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Удалить этот документ?"
 
-#: app/DocumentsCard.qml:98
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
-msgid "Documents and Tickets"
-msgstr "Текущий билет"
+#: app/DocumentsCard.qml:102
+#, kde-format
+msgid "Documents"
+msgstr "Документы"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "К этому бронированию не добавлены никакие документы."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Добавить документ..."
@@ -2229,13 +2238,13 @@ msgstr "Код бронирования:"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Недействительные"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2383,6 +2392,12 @@ msgstr "Глобальные"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Европейский союз"
+
+#: app/ReservationDocumentsCard.qml:20
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgid "Documents and Tickets"
+msgstr "Текущий билет"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3470,9 +3485,6 @@ msgstr "%1%2 из %3 в %4 %5"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Документы (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Документы"
 
 #~ msgid "Open Document"
 #~ msgstr "Открыть документ"

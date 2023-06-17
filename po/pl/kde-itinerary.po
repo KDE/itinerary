@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -123,7 +123,7 @@ msgstr "Edytuj"
 msgid "Add to calendar..."
 msgstr "Dodaj do kalendarza..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -206,8 +206,8 @@ msgstr "Zastąp"
 msgid "Download failed: %1"
 msgstr "Nie udało się pobrać: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Nie udało się zaimportować: %1"
@@ -217,8 +217,8 @@ msgstr "Nie udało się zaimportować: %1"
 msgid "Import failed: File too large."
 msgstr "Nie udało się zaimportować: Plik jest zbyt duży."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -231,27 +231,36 @@ msgstr[2] "Zaimportowano %1 rezerwacji."
 msgid "Health certificate imported."
 msgstr "Zaimportowano certyfikat zdrowia."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Zaimportowano wejściówkę."
+msgstr[1] "Zaimportowano wejściówkę."
+msgstr[2] "Zaimportowano wejściówkę."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Zaimportowano wejściówkę."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nie zaimportowano niczego."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Nie udało się wyeksportować: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Ukończono eksportowanie."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "Ukończono importowanie."
@@ -616,37 +625,37 @@ msgstr "Do:"
 msgid "Data providers: %1"
 msgstr "Dostawcy danych: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Dodaj dokument"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Wszystkie pliki (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Usuń dokument"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Czy na pewno chcesz usunąć ten dokument?"
 
-#: app/DocumentsCard.qml:98
+#: app/DocumentsCard.qml:102
 #, kde-format
-msgid "Documents and Tickets"
-msgstr "Dokumenty i bilety"
+msgid "Documents"
+msgstr "Dokumenty"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Nie dołączono żadnych dokumentów do tej rezerwacji."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Dodaj dokument..."
@@ -2172,13 +2181,13 @@ msgstr "Numer rezerwacji:"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Wygasły"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2318,6 +2327,11 @@ msgstr "Globalna"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unia Europejska"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Dokumenty i bilety"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3385,9 +3399,6 @@ msgstr "%1%2 z %3 do %4 o czasie %5"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Dokumenty (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Dokumenty"
 
 #~ msgid "Open Document"
 #~ msgstr "Otwórz dokument"

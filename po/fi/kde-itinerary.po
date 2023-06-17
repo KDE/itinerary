@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
 "PO-Revision-Date: 2023-04-20 10:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -121,7 +121,7 @@ msgstr "Muokkaa"
 msgid "Add to calendar..."
 msgstr "Lisää kalenteriin…"
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -204,8 +204,8 @@ msgstr "Korvaa"
 msgid "Download failed: %1"
 msgstr "Lataus epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Tuonti epäonnistui: %1"
@@ -215,8 +215,8 @@ msgstr "Tuonti epäonnistui: %1"
 msgid "Import failed: File too large."
 msgstr "Tuonti epäonnistui: Liian suuri tiedosto."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -228,27 +228,35 @@ msgstr[1] "Tuotiin %1 varausta."
 msgid "Health certificate imported."
 msgstr "Tuotiin terveystodistus."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Lippu on tuotu."
+msgstr[1] "Lippu on tuotu."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Lippu on tuotu."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Mitään ei tuotu."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Vienti epäonnistui: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Vienti valmis."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "Tuonti valmis."
@@ -605,37 +613,37 @@ msgstr "Kohde:"
 msgid "Data providers: %1"
 msgstr "Tiedontarjoajat: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Lisää asiakirja"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Kaikki tiedostot (*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Poista asiakirja"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Haluatko varmasti poistaa tämän asiakirjan?"
 
-#: app/DocumentsCard.qml:98
+#: app/DocumentsCard.qml:102
 #, kde-format
-msgid "Documents and Tickets"
-msgstr "Asiakirjat ja liput"
+msgid "Documents"
+msgstr "Asiakirjat"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Tähän varaukseen ei ole liitetty asiakirjoja."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Lisää asiakirja…"
@@ -2138,13 +2146,13 @@ msgstr "Varausviite:"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Vanhentunut"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2284,6 +2292,11 @@ msgstr "Yleinen"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Euroopan unioni"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Asiakirjat ja liput"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3334,9 +3347,6 @@ msgstr "%1%2 portilta %3 portille %4 %5"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Asiakirjat (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Asiakirjat"
 
 #~ msgid "Open Document"
 #~ msgstr "Avaa asiakirja"

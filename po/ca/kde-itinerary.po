@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
-"PO-Revision-Date: 2023-05-29 11:23+0200\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
+"PO-Revision-Date: 2023-06-16 11:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -125,7 +125,7 @@ msgstr "Edita"
 msgid "Add to calendar..."
 msgstr "Afegeix al calendari..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -208,8 +208,8 @@ msgstr "Substitueix"
 msgid "Download failed: %1"
 msgstr "Ha fallat la baixada: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
@@ -219,8 +219,8 @@ msgstr "Ha fallat la importació: %1"
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -232,27 +232,35 @@ msgstr[1] "S'han importat %1 reserves."
 msgid "Health certificate imported."
 msgstr "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "S'ha importat el passi."
+msgstr[1] "S'ha importat el passi."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "S'ha importat el passi."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "No s'ha importat res."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ha fallat l'exportació: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -605,37 +613,38 @@ msgstr "A:"
 msgid "Data providers: %1"
 msgstr "Proveïdors de dades: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Afegeix un document"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tots els fitxers (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Suprimeix el document"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Segur que voleu suprimir aquest document?"
 
-#: app/DocumentsCard.qml:98
-#, kde-format
-msgid "Documents and Tickets"
-msgstr "Documents i bitllets"
+#: app/DocumentsCard.qml:102
+#, fuzzy, kde-format
+#| msgid "Add Document"
+msgid "Documents"
+msgstr "Afegeix un document"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Ni hi ha documents adjunts en aquesta reserva."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Afegeix un document..."
@@ -1867,15 +1876,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "Fitxer PkPass o JSON-LD a importar."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Importa..."
+msgstr "Importa"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Obre un fitxer..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1888,20 +1896,19 @@ msgid "Scan Barcode..."
 msgstr "Escaneja un codi de barres..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Afegeix a partir del calendari..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Bitllet en línia de la Deutsche Bahn..."
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "Bitllet en línia de la SNCF..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2092,52 +2099,47 @@ msgid "New arrival platform is: %1"
 msgstr "La plataforma d'arribada nova és: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Bitllet de tren"
+msgstr "Importa un bitllet en línia"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "No s'ha importat res."
+msgstr "El bitllet s'ha importat"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "No s'ha trobat cap ubicació"
+msgstr "No s'ha trobat cap bitllet"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Bitllet de tren"
+msgstr "Bitllet en línia"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Cognoms"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Reference"
+#, kde-format
 msgid "Booking reference"
-msgstr "Referència"
+msgstr "Referència de la reserva"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Cerca..."
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Caducat"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2276,6 +2278,11 @@ msgstr "Global"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unió Europea"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Documents i bitllets"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format

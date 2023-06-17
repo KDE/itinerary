@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
-"PO-Revision-Date: 2023-05-29 14:49+0200\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
+"PO-Revision-Date: 2023-06-16 09:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -123,7 +123,7 @@ msgstr "Bewerken"
 msgid "Add to calendar..."
 msgstr "Aan agenda toevoegen..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -208,8 +208,8 @@ msgstr "Vervangen"
 msgid "Download failed: %1"
 msgstr "Downloaden is mislukt: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importeren mislukt: %1"
@@ -219,8 +219,8 @@ msgstr "Importeren mislukt: %1"
 msgid "Import failed: File too large."
 msgstr "Importeren is mislukt: bestand is te groot."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -232,27 +232,35 @@ msgstr[1] "%1 reserveringen geïmporteerd."
 msgid "Health certificate imported."
 msgstr "Gezondheidscertificaten geïmporteerd."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Pas geïmporteerd."
+msgstr[1] "Pas geïmporteerd."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Pas geïmporteerd."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Niets geïmporteerd."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exporteren is mislukt: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Exporteren voltooid."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "Importeren voltooid."
@@ -605,37 +613,37 @@ msgstr "Naar:"
 msgid "Data providers: %1"
 msgstr "Leveranciers van gegevens: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Document toevoegen"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Alle bestanden (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Document verwijderen"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Wilt u dit document verwijderen?"
 
-#: app/DocumentsCard.qml:98
+#: app/DocumentsCard.qml:102
 #, kde-format
-msgid "Documents and Tickets"
-msgstr "Documenten en tickets"
+msgid "Documents"
+msgstr "Documenten"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Geen documenten bij deze reservering bijgesloten."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Document toevoegen..."
@@ -1863,15 +1871,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "Te importeren PkPass- of JSON-LD-bestand."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Importeren..."
+msgstr "Importeren"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Bestand openen..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1884,20 +1891,19 @@ msgid "Scan Barcode..."
 msgstr "Barcode scannen..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Uit agenda toevoegen..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Online-ticket van Deutsche Bahn..."
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "Online-ticket van SNCF..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2088,52 +2094,47 @@ msgid "New arrival platform is: %1"
 msgstr "Nieuw perron van aankomst is: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Treinticket"
+msgstr "Online-ticket importeren"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Niets geïmporteerd."
+msgstr "Ticket geïmporteerd"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Geen locaties gevonden"
+msgstr "Geen ticket gevonden"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Treinticket"
+msgstr "Online-ticket"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Achternaam"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Boekingreferentie:"
+msgstr "Boekingreferentie"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Zoeken..."
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Verlopen"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2271,6 +2272,11 @@ msgstr "Globaal"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Europese Unie"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Documenten en tickets"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3315,9 +3321,6 @@ msgstr "%1%2 van %3 naar %4 op %5"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Documenten (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Documenten"
 
 #~ msgid "Open Document"
 #~ msgstr "Document openen"

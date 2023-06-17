@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
-"PO-Revision-Date: 2023-05-29 10:37+0300\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
+"PO-Revision-Date: 2023-06-16 12:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -122,7 +122,7 @@ msgstr "Düzenle"
 msgid "Add to calendar..."
 msgstr "Takvime ekle..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -207,8 +207,8 @@ msgstr "Değiştir"
 msgid "Download failed: %1"
 msgstr "İndirme başarısız: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
@@ -218,8 +218,8 @@ msgstr "İçe aktarma başarısız: %1"
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -231,27 +231,35 @@ msgstr[1] "%1 rezervasyon içe aktarıldı."
 msgid "Health certificate imported."
 msgstr "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Kart içe aktarıldı."
+msgstr[1] "Kart içe aktarıldı."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -604,37 +612,37 @@ msgstr "Nereye:"
 msgid "Data providers: %1"
 msgstr "Veri sağlayıcıları: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Belge Ekle"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Tüm Dosyalar (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Belgeyi Sil"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Bu belgeyi gerçekten silmek istiyor musunuz?"
 
-#: app/DocumentsCard.qml:98
+#: app/DocumentsCard.qml:102
 #, kde-format
-msgid "Documents and Tickets"
-msgstr "Belgeler ve Biletler"
+msgid "Documents"
+msgstr "Belgeler"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Bu rezervasyonu ekli belge yok."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Belge Ekle..."
@@ -1863,15 +1871,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "İçe aktarılacak PkPass veya JSON-LD dosyası."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "İçe Aktar..."
+msgstr "İçe Aktar"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Dosya Aç..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1884,20 +1891,19 @@ msgid "Scan Barcode..."
 msgstr "Barkod Tara..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Takvimden Ekle..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Deutsche Bahn Çevrimiçi Bilet..."
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "SNCF Çevrimiçi Bilet..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2088,52 +2094,47 @@ msgid "New arrival platform is: %1"
 msgstr "Yeni varış platformu: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Tren Bileti"
+msgstr "Çevrimiçi Bilet İçe Aktar"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Bir şey içe aktarılmadı."
+msgstr "Bilet içe aktarıldı"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Konum bulunamadı"
+msgstr "Bilet bulunamadı"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Tren Bileti"
+msgstr "Çevrimiçi Bilet"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Soyadı"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Rezervasyon başvurusu:"
+msgstr "Rezervasyon başvurusu"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Ara..."
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Süresi geçmiş"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2272,6 +2273,11 @@ msgstr "Global"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Avrupa Birliği"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Belgeler ve Biletler"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3308,9 +3314,6 @@ msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Belgeler (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Belgeler"
 
 #~ msgid "Open Document"
 #~ msgstr "Belge Aç"

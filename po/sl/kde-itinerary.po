@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 00:47+0000\n"
-"PO-Revision-Date: 2023-05-29 07:37+0200\n"
+"POT-Creation-Date: 2023-06-17 00:49+0000\n"
+"PO-Revision-Date: 2023-06-16 08:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "Uredi"
 msgid "Add to calendar..."
 msgstr "Dodaj v koledar..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:84
+#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -206,8 +206,8 @@ msgstr "Zamenjaj"
 msgid "Download failed: %1"
 msgstr "Prenos ni uspel: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
+#: app/applicationcontroller.cpp:603
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
@@ -217,8 +217,8 @@ msgstr "Uvoz ni uspel: %1"
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:671
+#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -232,27 +232,37 @@ msgstr[3] "%1 uvoženih rezervacij."
 msgid "Health certificate imported."
 msgstr "Zdravstvena potrdila uvožena."
 
-#: app/applicationcontroller.cpp:432
+#: app/applicationcontroller.cpp:433
+#, fuzzy, kde-format
+#| msgid "Pass imported."
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "Vozovnica uvožena."
+msgstr[1] "Vozovnica uvožena."
+msgstr[2] "Vozovnica uvožena."
+msgstr[3] "Vozovnica uvožena."
+
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Pass imported."
 msgstr "Vozovnica uvožena."
 
-#: app/applicationcontroller.cpp:468
+#: app/applicationcontroller.cpp:472
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ničesar uvoženega."
 
-#: app/applicationcontroller.cpp:537 app/applicationcontroller.cpp:563
+#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:551 app/applicationcontroller.cpp:576
+#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:624
+#: app/applicationcontroller.cpp:628
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -605,37 +615,37 @@ msgstr "Za:"
 msgid "Data providers: %1"
 msgstr "Dobavitelji podatkov: %1"
 
-#: app/DocumentsCard.qml:32
+#: app/DocumentsCard.qml:35
 #, kde-format
 msgid "Add Document"
 msgstr "Dodaj dokument"
 
-#: app/DocumentsCard.qml:34 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:120
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Vse datoteke (*.*)"
 
-#: app/DocumentsCard.qml:62 app/DocumentsCard.qml:77
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
 #, kde-format
 msgid "Delete Document"
 msgstr "Zbriši dokument"
 
-#: app/DocumentsCard.qml:78
+#: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
 msgstr "Ali res želite izbrisati ta dokument?"
 
-#: app/DocumentsCard.qml:98
+#: app/DocumentsCard.qml:102
 #, kde-format
-msgid "Documents and Tickets"
-msgstr "Dokumenti in vstopnice"
+msgid "Documents"
+msgstr "Dokumenti"
 
-#: app/DocumentsCard.qml:107
+#: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
 msgstr "Ta rezervacija nima priloženih nobenih dokumentov."
 
-#: app/DocumentsCard.qml:115
+#: app/DocumentsCard.qml:119
 #, kde-format
 msgid "Add Document..."
 msgstr "Dodaj dokument..."
@@ -1867,15 +1877,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "Datoteka PkPass ali JSON-LD za uvoz."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Uvozi..."
+msgstr "Uvozi"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Odpri datoteko..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1888,20 +1897,19 @@ msgid "Scan Barcode..."
 msgstr "Branje črtne kode..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Dodaj iz koledarja..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Deutsche Bahn spletna vozovnica..."
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "SNCF spletna vozovnica..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2092,52 +2100,47 @@ msgid "New arrival platform is: %1"
 msgstr "Nov peron prihoda je: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Železniška vozovnica"
+msgstr "Uvozi spletno vozovnico"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Ničesar uvoženega."
+msgstr "Vozovnica uvožena"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Ni najdenih lokacij"
+msgstr "Ni najdene vozovnice"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Železniška vozovnica"
+msgstr "Spletna vozovnica"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Družinsko ime"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Referenca rezervacije:"
+msgstr "Referenca rezervacije"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Išči..."
 
-#: app/passmanager.cpp:229
+#: app/passmanager.cpp:233
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: app/passmanager.cpp:231
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2275,6 +2278,11 @@ msgstr "Globalno"
 #, kde-format
 msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Evropska unija"
+
+#: app/ReservationDocumentsCard.qml:20
+#, kde-format
+msgid "Documents and Tickets"
+msgstr "Dokumenti in vstopnice"
 
 #: app/RestaurantEditor.qml:18
 #, kde-format
@@ -3318,9 +3326,6 @@ msgstr "%1%2 od %3 do %4 na %5"
 
 #~ msgid "Documents (%1)"
 #~ msgstr "Dokumenti (%1)"
-
-#~ msgid "Documents"
-#~ msgstr "Dokumenti"
 
 #~ msgid "Open Document"
 #~ msgstr "Odpri dokument"
