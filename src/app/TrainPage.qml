@@ -316,7 +316,7 @@ App.DetailsPage {
         App.ActionsCard {
             batchId: root.batchId
             editor: root.editor
-            passId: root.passId
+            reservation: root.reservation
             additionalActions: [
                 QQC2.Action {
                     text: i18n("Alternatives")

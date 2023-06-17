@@ -26,7 +26,6 @@ Kirigami.ScrollablePage {
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property Component editor
-    readonly property string passId: PkPassManager.passId(currentReservation)
 
     property QtObject controller: TimelineDelegateController {
         id: _controller

@@ -18,13 +18,17 @@ MobileForm.FormCard {
     Layout.fillWidth: true
     Layout.topMargin: Kirigami.Units.largeSpacing
 
-    property string passId
+    property var batchId
+    property var editor
+    property var reservation
     property list<QQC2.Action> additionalActions
+
+    readonly property string passId: PkPassManager.passId(root.reservation)
 
     property list<QQC2.Action> _defaultActions: [
         Kirigami.Action {
             icon.name: root.passId !== "" ? "image://org.kde.pkpass/" + passId + "/icon" : ""
-            text: currentReservation.className === "FlightReservation" ? i18n("Show Boarding Pass") : i18n("Show Ticket")
+            text: root.reservation.className === "FlightReservation" ? i18n("Show Boarding Pass") : i18n("Show Ticket")
             visible: PkPassManager.hasPass(root.passId)
             onTriggered: applicationWindow().pageStack.push(pkpassComponent, {"passId": root.passId });
         },
@@ -70,12 +74,9 @@ MobileForm.FormCard {
         }
     ]
 
-    property var batchId
-    property var editor
-
     // TODO this needs multi-traveler support!
     Instantiator {
-        model: currentReservation.potentialAction
+        model: root.reservation.potentialAction
         delegate: Component {
             Kirigami.Action {
                 text: {
@@ -122,7 +123,7 @@ MobileForm.FormCard {
     Component {
         id: pkpassComponent
         App.PkPassPage {
-            pass: PkPassManager.pass(passId)
+            pass: PkPassManager.pass(root.passId)
         }
     }
 

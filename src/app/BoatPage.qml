@@ -147,7 +147,7 @@ App.DetailsPage {
         App.ActionsCard {
             batchId: root.batchId
             editor: root.editor
-            passId: root.passId
+            reservation: root.reservation
         }
     }
 }
