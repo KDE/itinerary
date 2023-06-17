@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     /** Currently selected reservation id of the batch. */
     property var currentReservationId: batchId
     /** Currently selected reservation of the batch. */
-    readonly property var reservation: ReservationManager.reservation(currentReservationId);
+    property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
     property Component editor
@@ -37,4 +37,13 @@ Kirigami.ScrollablePage {
 
     leftPadding: 0
     rightPadding: 0
+
+    Connections {
+        target: ReservationManager
+        function onBatchContentChanged(batchId) {
+            if (batchId == root.batchId) {
+                root.reservation = Qt.binding(function() { return ReservationManager.reservation(root.currentReservationId); })
+            }
+        }
+    }
 }
