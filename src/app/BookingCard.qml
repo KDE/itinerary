@@ -12,7 +12,6 @@ import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 MobileForm.FormCard {
     id: root
 
-    required property var currentReservation
     required property var reservation
 
     visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible
@@ -33,7 +32,7 @@ MobileForm.FormCard {
             visible: root.reservation.reservationNumber
         }
 
-        MobileForm.FormDelegateSeparator {}
+        MobileForm.FormDelegateSeparator { visible: referenceLabel.visible }
 
         MobileForm.FormTextDelegate {
             id: underNameLabel
@@ -47,7 +46,7 @@ MobileForm.FormCard {
         MobileForm.FormTextDelegate {
             id: ticketNumberLabel
             text: i18n("Ticket number:")
-            description: root.currentReservation.reservedTicket ? root.currentReservation.reservedTicket.ticketNumber : ''
+            description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketNumber : ''
             visible: description.length > 0 && description !== referenceLabel.description
         }
     }
