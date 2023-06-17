@@ -374,7 +374,7 @@ QString ApplicationController::addAttachableDocument(const QString &fileName, co
     // check if there is a document we want to attach here
     QMimeDatabase db;
     const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
-    if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
+    if (mt.name() == QLatin1String("application/pdf") || mt.name() == QLatin1String("message/rfc822") || mt.name() == QLatin1String("application/mbox")) {
         DigitalDocument docInfo;
         docInfo.setName(fileName);
         docInfo.setEncodingFormat(mt.name());
