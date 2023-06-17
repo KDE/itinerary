@@ -95,7 +95,7 @@ App.DetailsPage {
                     id: departurePlace
                     place: reservationFor.departureBoatTerminal
                     controller: root.controller
-                    isRangeEnd: true
+                    isRangeBegin: true
                 }
             }
         }
