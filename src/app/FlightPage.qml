@@ -252,7 +252,7 @@ App.DetailsPage {
         }
 
         App.ProgramMembershipCard {
-            programMembership: root.currentReservation.programMembershipUsed
+            programMembership: root.reservation.programMembershipUsed
         }
 
         App.ReservationDocumentsCard {

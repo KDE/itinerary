@@ -204,14 +204,14 @@ App.DetailsPage {
                 }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
-                    text: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                    text: root.eservation.reservedTicket.ticketedSeat.seatNumber
                     visible: text !== ""
                 }
             }
         }
 
         App.ProgramMembershipCard {
-            programMembership: root.currentReservation.programMembershipUsed
+            programMembership: root.reservation.programMembershipUsed
         }
 
         App.BookingCard {

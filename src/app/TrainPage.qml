@@ -277,32 +277,32 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     id: coachLabel
                     text: i18nc("coach of a train", "Coach:")
-                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatSection : ''
+                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : ''
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatSection : false
+                    visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : false
                 }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
                     text: i18n("Seat:")
-                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatNumber : ''
+                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ''
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatNumber : false
+                    visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : false
                 }
                 MobileForm.FormTextDelegate {
                     id: classLabel
                     text: i18n("Class:")
-                    description: currentReservation.reservedTicket ? currentReservation.reservedTicket.ticketedSeat.seatingType : ''
+                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatingType : ''
                     visible: description
                 }
             }
         }
 
         App.ProgramMembershipCard {
-            programMembership: root.currentReservation.programMembershipUsed
+            programMembership: root.reservation.programMembershipUsed
         }
 
         App.BookingCard {

@@ -130,25 +130,25 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     id: seatSectionLabel
                     text: i18nc("seat section, e.g. block in a stadium", "Section:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatSection
+                    description: root.reservation.reservedTicket.ticketedSeat.seatSection
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket.ticketedSeat.seatSection
+                    visible: root.reservation.reservedTicket.ticketedSeat.seatSection
                 }
                 MobileForm.FormTextDelegate {
                     id: seatRowLabel
                     text: i18nc("seat row", "Row:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatRow
+                    description: root.reservation.reservedTicket.ticketedSeat.seatRow
                     visible: description
                 }
                 MobileForm.FormDelegateSeparator {
-                    visible: currentReservation.reservedTicket.ticketedSeat.seatRow
+                    visible: root.reservation.reservedTicket.ticketedSeat.seatRow
                 }
                 MobileForm.FormTextDelegate {
                     id: seatNumberLabel
                     text: i18nc("seat number", "Number:")
-                    description: currentReservation.reservedTicket.ticketedSeat.seatNumber
+                    description: root.reservation.reservedTicket.ticketedSeat.seatNumber
                     visible: description
                 }
             }

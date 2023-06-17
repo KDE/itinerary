@@ -20,8 +20,6 @@ Kirigami.ScrollablePage {
     /** Currently selected reservation id of the batch. */
     property var currentReservationId: batchId
     /** Currently selected reservation of the batch. */
-    readonly property var currentReservation: ReservationManager.reservation(currentReservationId);
-    /** @deprecated */
     readonly property var reservation: ReservationManager.reservation(currentReservationId);
     /** Reservation::reservationFor, unique for all travelers on a multi-traveler reservation set */
     readonly property var reservationFor: reservation.reservationFor
