@@ -114,6 +114,7 @@ private:
     bool importGenericPkPass(const KItinerary::ExtractorDocumentNode &node);
 
     QString addDocumentFromFile(const QUrl &url);
+    QString addAttachableDocument(const QString &fileName, const QByteArray &data);
 
     static ApplicationController *s_instance;
 

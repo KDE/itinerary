@@ -369,6 +369,23 @@ void ApplicationController::importLocalFile(const QUrl &url)
     importData(f.readAll(), fileName);
 }
 
+QString ApplicationController::addAttachableDocument(const QString &fileName, const QByteArray &data)
+{
+    // check if there is a document we want to attach here
+    QMimeDatabase db;
+    const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
+    if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
+        DigitalDocument docInfo;
+        docInfo.setName(fileName);
+        docInfo.setEncodingFormat(mt.name());
+        const auto docId = DocumentUtil::idForContent(data);
+        m_docMgr->addDocument(docId, docInfo, data);
+        return docId;
+    }
+
+    return {};
+}
+
 bool ApplicationController::importData(const QByteArray &data, const QString &fileName)
 {
     qCDebug(Log);
@@ -395,15 +412,8 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     const auto resIds = m_resMgr->importReservations(extractorResult);
     if (!resIds.isEmpty()) {
         // check if there is a document we want to attach here
-        QMimeDatabase db;
-        const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
-        if (mt.name() == QLatin1String("application/pdf")) { // TODO support more file types (however we certainly want to exclude pkpass and json here)
-            DigitalDocument docInfo;
-            docInfo.setName(fileName);
-            docInfo.setEncodingFormat(mt.name());
-            const auto docId = DocumentUtil::idForContent(data);
-            m_docMgr->addDocument(docId, docInfo, data);
-
+        const auto docId = addAttachableDocument(fileName, data);
+        if (!docId.isEmpty()) {
             for (const auto &resId : resIds) {
                 auto res = m_resMgr->reservation(resId);
                 if (DocumentUtil::addDocumentId(res, docId)) {
@@ -429,7 +439,15 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
 
     // look for time-less passes/program memberships/etc
     if (const auto passIds = m_passMgr->import(extractorResult); !passIds.isEmpty()) {
-        // TODO attach documents as done above for reservations
+        const auto docId = addAttachableDocument(fileName, data);
+        if (!docId.isEmpty()) {
+            for (const auto &passId : passIds) {
+                auto pass = m_passMgr->pass(passId);
+                if (DocumentUtil::addDocumentId(pass, docId)) {
+                    m_passMgr->update(passId, pass);
+                }
+            }
+        }
         Q_EMIT infoMessage(i18np("One pass imported.", "%1 passes imported.", passIds.size()));
         success = true;
     } else if (resIds.isEmpty() && !healthCertImported && importGenericPkPass(engine.rootDocumentNode())) {
