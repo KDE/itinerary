@@ -121,7 +121,7 @@ ColumnLayout {
         Component.onCompleted: tryFindRegion(place.address.addressRegion)
         onAccepted: tryFindRegion(editText)
     }
-    MobileForm.FormDelegateSeparator {}
+    MobileForm.FormDelegateSeparator { visible: addressRegion.visible }
 
     App.CountryComboBoxDelegate {
         id: addressCountry
