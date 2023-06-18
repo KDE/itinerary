@@ -51,7 +51,7 @@ App.EditorPage {
                 }
                 App.FormDateTimeEditDelegate {
                     id: departureTimeEdit
-                    text: i18nc("Boat departure", "Deparutre Time")
+                    text: i18nc("Boat departure", "Departure Time")
                     obj: reservation.reservationFor
                     propertyName: "departureTime"
                 }
