@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-17 00:49+0000\n"
-"PO-Revision-Date: 2023-06-16 08:52+0300\n"
+"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"PO-Revision-Date: 2023-06-17 08:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -97,37 +97,37 @@ msgstr "Версія програми: %1"
 msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Показати посадковий талон"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Ticket"
 msgstr "Показати квиток"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:37
 #, kde-format
 msgid "Add transfer before"
 msgstr "Додати пересадку до"
 
-#: app/ActionsCard.qml:42
+#: app/ActionsCard.qml:46
 #, kde-format
 msgid "Add transfer after"
 msgstr "Додати пересадку після"
 
-#: app/ActionsCard.qml:51
+#: app/ActionsCard.qml:55
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: app/ActionsCard.qml:57
+#: app/ActionsCard.qml:61
 #, kde-format
 msgid "Add to calendar..."
 msgstr "Додати до календаря…"
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -136,43 +136,43 @@ msgstr "Додати до календаря…"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: app/ActionsCard.qml:82
+#: app/ActionsCard.qml:83
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Скасувати бронювання"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:84
 #, kde-format
 msgid "Check-in"
 msgstr "Повернути з боргу"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:85
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:86
 #, kde-format
 msgid "Change Reservation"
 msgstr "Змінити бронювання"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:87
 #, kde-format
 msgid "View Reservation"
 msgstr "Переглянути бронювання"
 
-#: app/ActionsCard.qml:132
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Delete Event"
 msgstr "Вилучити подію"
 
-#: app/ActionsCard.qml:133
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Ви справді бажаєте вилучити цю подію?"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:154
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -210,8 +210,8 @@ msgstr "Замінити"
 msgid "Download failed: %1"
 msgstr "Невдала спроба отримання: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Не вдалося імпортувати: %1"
@@ -221,8 +221,8 @@ msgstr "Не вдалося імпортувати: %1"
 msgid "Import failed: File too large."
 msgstr "Не вдалося імпортувати: надто великий файл."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:693
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -231,42 +231,41 @@ msgstr[1] "Імпортовано %1 бронювання"
 msgstr[2] "Імпортовано %1 бронювань"
 msgstr[3] "Імпортовано одне бронювання"
 
-#: app/applicationcontroller.cpp:426
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Імпортовано сертифікат здоров'я."
 
-#: app/applicationcontroller.cpp:433
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#: app/applicationcontroller.cpp:451
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Безкоштовний квиток імпортовано."
-msgstr[1] "Безкоштовний квиток імпортовано."
-msgstr[2] "Безкоштовний квиток імпортовано."
-msgstr[3] "Безкоштовний квиток імпортовано."
+msgstr[0] "Імпортовано %1 безкоштовний квиток."
+msgstr[1] "Імпортовано %1 безкоштовні квитки."
+msgstr[2] "Імпортовано %1 безкоштовних квитків."
+msgstr[3] "Імпортовано безкоштовний квиток."
 
-#: app/applicationcontroller.cpp:436
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "Безкоштовний квиток імпортовано."
 
-#: app/applicationcontroller.cpp:472
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Нічого не імпортовано."
 
-#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:585
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:598
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:628
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -312,67 +311,94 @@ msgstr "До: %1"
 msgid "Arrival time: %1"
 msgstr "Час прибуття: %1"
 
+#: app/BoatEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgid "Edit Boat Trip"
+msgstr "Подорожі човном"
+
+#: app/BoatEditor.qml:50 app/BoatPage.qml:76
+#, kde-format
+msgctxt "Boat departure"
+msgid "Departure"
+msgstr "Відправлення"
+
+#: app/BoatEditor.qml:54
+#, fuzzy, kde-format
+#| msgid "Depature Time"
+msgctxt "Boat departure"
+msgid "Deparutre Time"
+msgstr "Час відправлення"
+
+#: app/BoatEditor.qml:61 app/BoatEditor.qml:90
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal Name"
+msgstr "Термінал"
+
+#: app/BoatEditor.qml:79 app/BoatPage.qml:112
+#, kde-format
+msgctxt "Boat arrival"
+msgid "Arrival"
+msgstr "Прибуття"
+
+#: app/BoatEditor.qml:83
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Boat arrival"
+msgid "Arrival Time"
+msgstr "Час прибуття"
+
 #: app/BoatPage.qml:16
 #, kde-format
 msgid "Boat Ticket"
 msgstr "Квиток на човен"
 
-#: app/BoatPage.qml:20 app/BusPage.qml:33 app/EventPage.qml:21
+#: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Режим сканування штрихкоду"
 
-#: app/BoatPage.qml:75
-#, kde-format
-msgctxt "Boat departure"
-msgid "Departure"
-msgstr "Відправлення"
-
-#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:142
+#: app/BoatPage.qml:80 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
 #, kde-format
 msgid "Departure time"
 msgstr "Час відправлення"
 
-#: app/BoatPage.qml:86 app/BoatPage.qml:122
+#: app/BoatPage.qml:87 app/BoatPage.qml:123
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Термінал"
 
-#: app/BoatPage.qml:111
-#, kde-format
-msgctxt "Boat arrival"
-msgid "Arrival"
-msgstr "Прибуття"
-
-#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:157 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr "Час прибуття"
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:238
+#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/FlightPage.qml:238
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Бронювання"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:247
+#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/FlightPage.qml:247
 #: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Ідентифікатор"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:247
+#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/FlightPage.qml:247
 #: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "На ім'я"
 
-#: app/BookingCard.qml:49
+#: app/BookingCard.qml:48
 #, kde-format
 msgid "Ticket number:"
 msgstr "Номер квитка:"
@@ -472,12 +498,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Прибуття"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:323
+#: app/BusPage.qml:231 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Альтернативи"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:340
+#: app/BusPage.qml:236 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Подробиці щодо подорожі"
@@ -2898,12 +2924,12 @@ msgstr "Місце:"
 msgid "Class:"
 msgstr "Клас:"
 
-#: app/TrainPage.qml:328
+#: app/TrainPage.qml:327
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Компонування засобу пересування відправлення"
 
-#: app/TrainPage.qml:334
+#: app/TrainPage.qml:333
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Компонування засобу пересування прибуття"

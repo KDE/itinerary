@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-17 00:49+0000\n"
-"PO-Revision-Date: 2023-06-16 12:05+0300\n"
+"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"PO-Revision-Date: 2023-06-17 13:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -92,37 +92,37 @@ msgstr "Uygulama sürümü: %1"
 msgid "Extractor capabilities:"
 msgstr "Çıkarıcı yetenekleri:"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Biniş Kartını Göster"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Ticket"
 msgstr "Bileti Göster"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:37
 #, kde-format
 msgid "Add transfer before"
 msgstr "Öncesinde aktarma ekle"
 
-#: app/ActionsCard.qml:42
+#: app/ActionsCard.qml:46
 #, kde-format
 msgid "Add transfer after"
 msgstr "Sonrasında aktarma ekle"
 
-#: app/ActionsCard.qml:51
+#: app/ActionsCard.qml:55
 #, kde-format
 msgid "Edit"
 msgstr "Düzenle"
 
-#: app/ActionsCard.qml:57
+#: app/ActionsCard.qml:61
 #, kde-format
 msgid "Add to calendar..."
 msgstr "Takvime ekle..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -131,43 +131,43 @@ msgstr "Takvime ekle..."
 msgid "Delete"
 msgstr "Sil"
 
-#: app/ActionsCard.qml:82
+#: app/ActionsCard.qml:83
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Rezervasyonu İptal Et"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:84
 #, kde-format
 msgid "Check-in"
 msgstr "Giriş"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:85
 #, kde-format
 msgid "Download"
 msgstr "İndir"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:86
 #, kde-format
 msgid "Change Reservation"
 msgstr "Rezervasyonu Değiştir"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:87
 #, kde-format
 msgid "View Reservation"
 msgstr "Rezervasyonu Görüntüle"
 
-#: app/ActionsCard.qml:132
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Delete Event"
 msgstr "Etkinliği Sil"
 
-#: app/ActionsCard.qml:133
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Bu etkinliği gerçekten silmek istiyor musunuz?"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:154
 #, kde-format
 msgid "Actions"
 msgstr "Eylemler"
@@ -207,8 +207,8 @@ msgstr "Değiştir"
 msgid "Download failed: %1"
 msgstr "İndirme başarısız: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
@@ -218,48 +218,47 @@ msgstr "İçe aktarma başarısız: %1"
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:693
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Bir rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
-#: app/applicationcontroller.cpp:426
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:433
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#: app/applicationcontroller.cpp:451
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Kart içe aktarıldı."
-msgstr[1] "Kart içe aktarıldı."
+msgstr[0] "Bir kart içe aktarıldı."
+msgstr[1] "%1 kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:436
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:472
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:585
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:598
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:628
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -305,67 +304,94 @@ msgstr "Nereye: %1"
 msgid "Arrival time: %1"
 msgstr "Varış zamanı: %1"
 
+#: app/BoatEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgid "Edit Boat Trip"
+msgstr "Bot yolculukları"
+
+#: app/BoatEditor.qml:50 app/BoatPage.qml:76
+#, kde-format
+msgctxt "Boat departure"
+msgid "Departure"
+msgstr "Kalkış"
+
+#: app/BoatEditor.qml:54
+#, fuzzy, kde-format
+#| msgid "Depature Time"
+msgctxt "Boat departure"
+msgid "Deparutre Time"
+msgstr "Kalkış Zamanı"
+
+#: app/BoatEditor.qml:61 app/BoatEditor.qml:90
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal Name"
+msgstr "Terminal"
+
+#: app/BoatEditor.qml:79 app/BoatPage.qml:112
+#, kde-format
+msgctxt "Boat arrival"
+msgid "Arrival"
+msgstr "Varış"
+
+#: app/BoatEditor.qml:83
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Boat arrival"
+msgid "Arrival Time"
+msgstr "Varış Zamanı"
+
 #: app/BoatPage.qml:16
 #, kde-format
 msgid "Boat Ticket"
 msgstr "Bot Bileti"
 
-#: app/BoatPage.qml:20 app/BusPage.qml:33 app/EventPage.qml:21
+#: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Barkod Tarama Kipi"
 
-#: app/BoatPage.qml:75
-#, kde-format
-msgctxt "Boat departure"
-msgid "Departure"
-msgstr "Kalkış"
-
-#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:142
+#: app/BoatPage.qml:80 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
 #, kde-format
 msgid "Departure time"
 msgstr "Kalkış zamanı"
 
-#: app/BoatPage.qml:86 app/BoatPage.qml:122
+#: app/BoatPage.qml:87 app/BoatPage.qml:123
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:111
-#, kde-format
-msgctxt "Boat arrival"
-msgid "Arrival"
-msgstr "Varış"
-
-#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:157 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr "Varış zamanı"
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:238
+#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/FlightPage.qml:238
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Rezervasyon"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:247
+#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/FlightPage.qml:247
 #: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Başvuru"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:247
+#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/FlightPage.qml:247
 #: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "Şu ad ile"
 
-#: app/BookingCard.qml:49
+#: app/BookingCard.qml:48
 #, kde-format
 msgid "Ticket number:"
 msgstr "Bilet numarası:"
@@ -465,12 +491,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:323
+#: app/BusPage.qml:231 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatifler"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:340
+#: app/BusPage.qml:236 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Yolculuk Ayrıntıları"
@@ -2877,12 +2903,12 @@ msgstr "Koltuk:"
 msgid "Class:"
 msgstr "Sınıf:"
 
-#: app/TrainPage.qml:328
+#: app/TrainPage.qml:327
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Kalkış Aracı Yerleşimi"
 
-#: app/TrainPage.qml:334
+#: app/TrainPage.qml:333
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Varış Aracı Yerleşimi"

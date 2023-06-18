@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-17 00:49+0000\n"
-"PO-Revision-Date: 2023-05-29 14:23+0200\n"
+"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"PO-Revision-Date: 2023-06-16 14:32+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -92,37 +92,37 @@ msgstr "Versione dell'applicazione: %1"
 msgid "Extractor capabilities:"
 msgstr "Capacità dell'estrattore:"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Mostra carta d'imbarco"
 
-#: app/ActionsCard.qml:27
+#: app/ActionsCard.qml:31
 #, kde-format
 msgid "Show Ticket"
 msgstr "Mostra biglietto"
 
-#: app/ActionsCard.qml:33
+#: app/ActionsCard.qml:37
 #, kde-format
 msgid "Add transfer before"
 msgstr "Aggiungi trasferimento prima"
 
-#: app/ActionsCard.qml:42
+#: app/ActionsCard.qml:46
 #, kde-format
 msgid "Add transfer after"
 msgstr "Aggiungi trasferimento dopo"
 
-#: app/ActionsCard.qml:51
+#: app/ActionsCard.qml:55
 #, kde-format
 msgid "Edit"
 msgstr "Modifica"
 
-#: app/ActionsCard.qml:57
+#: app/ActionsCard.qml:61
 #, kde-format
 msgid "Add to calendar..."
 msgstr "Aggiungi al calendario..."
 
-#: app/ActionsCard.qml:68 app/ActionsCard.qml:139 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
@@ -131,43 +131,43 @@ msgstr "Aggiungi al calendario..."
 msgid "Delete"
 msgstr "Elimina"
 
-#: app/ActionsCard.qml:82
+#: app/ActionsCard.qml:83
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Annulla prenotazione"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:84
 #, kde-format
 msgid "Check-in"
 msgstr "Check-in"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:85
 #, kde-format
 msgid "Download"
 msgstr "Scarica"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:86
 #, kde-format
 msgid "Change Reservation"
 msgstr "Cambia prenotazione"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:87
 #, kde-format
 msgid "View Reservation"
 msgstr "Visualizza prenotazione"
 
-#: app/ActionsCard.qml:132
+#: app/ActionsCard.qml:133
 #, kde-format
 msgid "Delete Event"
 msgstr "Elimina evento"
 
-#: app/ActionsCard.qml:133
+#: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Vuoi davvero eliminare questo evento?"
 
-#: app/ActionsCard.qml:153
+#: app/ActionsCard.qml:154
 #, kde-format
 msgid "Actions"
 msgstr "Azioni"
@@ -207,8 +207,8 @@ msgstr "Sostituisci"
 msgid "Download failed: %1"
 msgstr "Scaricamento non riuscito: %1"
 
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:588
-#: app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:606
+#: app/applicationcontroller.cpp:621
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importazione non riuscita: %1"
@@ -218,20 +218,20 @@ msgstr "Importazione non riuscita: %1"
 msgid "Import failed: File too large."
 msgstr "Importazione non riuscita. File troppo grande."
 
-#: app/applicationcontroller.cpp:419 app/applicationcontroller.cpp:665
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:693
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Una prenotazione importata."
 msgstr[1] "%1 prenotazioni importate."
 
-#: app/applicationcontroller.cpp:426
+#: app/applicationcontroller.cpp:436
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Certificato medico importato."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:451
 #, fuzzy, kde-format
 #| msgid "Pass imported."
 msgid "One pass imported."
@@ -239,27 +239,27 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Pass importato."
 msgstr[1] "Pass importato."
 
-#: app/applicationcontroller.cpp:436
+#: app/applicationcontroller.cpp:454
 #, kde-format
 msgid "Pass imported."
 msgstr "Pass importato."
 
-#: app/applicationcontroller.cpp:472
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Non è stato importato niente."
 
-#: app/applicationcontroller.cpp:541 app/applicationcontroller.cpp:567
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:585
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Esportazione non riuscita: %1"
 
-#: app/applicationcontroller.cpp:555 app/applicationcontroller.cpp:580
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:598
 #, kde-format
 msgid "Export completed."
 msgstr "Esportazione completata."
 
-#: app/applicationcontroller.cpp:628
+#: app/applicationcontroller.cpp:646
 #, kde-format
 msgid "Import completed."
 msgstr "Importazione completata."
@@ -305,67 +305,94 @@ msgstr "A: %1"
 msgid "Arrival time: %1"
 msgstr "Ora di arrivo: %1"
 
+#: app/BoatEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgid "Edit Boat Trip"
+msgstr "Viaggi in nave"
+
+#: app/BoatEditor.qml:50 app/BoatPage.qml:76
+#, kde-format
+msgctxt "Boat departure"
+msgid "Departure"
+msgstr "Partenza"
+
+#: app/BoatEditor.qml:54
+#, fuzzy, kde-format
+#| msgid "Depature Time"
+msgctxt "Boat departure"
+msgid "Deparutre Time"
+msgstr "Ora di partenza"
+
+#: app/BoatEditor.qml:61 app/BoatEditor.qml:90
+#, fuzzy, kde-format
+#| msgid "Terminal"
+msgctxt "boat terminal"
+msgid "Terminal Name"
+msgstr "Terminale"
+
+#: app/BoatEditor.qml:79 app/BoatPage.qml:112
+#, kde-format
+msgctxt "Boat arrival"
+msgid "Arrival"
+msgstr "Arrivo"
+
+#: app/BoatEditor.qml:83
+#, fuzzy, kde-format
+#| msgid "Arrival Time"
+msgctxt "Boat arrival"
+msgid "Arrival Time"
+msgstr "Ora di arrivo"
+
 #: app/BoatPage.qml:16
 #, kde-format
 msgid "Boat Ticket"
 msgstr "Biglietto per la nave"
 
-#: app/BoatPage.qml:20 app/BusPage.qml:33 app/EventPage.qml:21
+#: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Modalità di scansione dei codici a barre"
 
-#: app/BoatPage.qml:75
-#, kde-format
-msgctxt "Boat departure"
-msgid "Departure"
-msgstr "Partenza"
-
-#: app/BoatPage.qml:79 app/BusPage.qml:96 app/FlightPage.qml:142
+#: app/BoatPage.qml:80 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
 #, kde-format
 msgid "Departure time"
 msgstr "Orario di partenza"
 
-#: app/BoatPage.qml:86 app/BoatPage.qml:122
+#: app/BoatPage.qml:87 app/BoatPage.qml:123
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminale"
 
-#: app/BoatPage.qml:111
-#, kde-format
-msgctxt "Boat arrival"
-msgid "Arrival"
-msgstr "Arrivo"
-
-#: app/BoatPage.qml:115 app/BusPage.qml:157 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:157 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
 msgstr "Ora di arrivo"
 
-#: app/BookingCard.qml:26 app/BusEditor.qml:176 app/FlightPage.qml:238
+#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/FlightPage.qml:238
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Prenotazione"
 
-#: app/BookingCard.qml:31 app/BusEditor.qml:180 app/FlightPage.qml:247
+#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/FlightPage.qml:247
 #: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Riferimento"
 
-#: app/BookingCard.qml:40 app/BusEditor.qml:185 app/FlightPage.qml:247
+#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/FlightPage.qml:247
 #: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "Con il nome"
 
-#: app/BookingCard.qml:49
+#: app/BookingCard.qml:48
 #, kde-format
 msgid "Ticket number:"
 msgstr "Numero del biglietto:"
@@ -465,12 +492,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arrivo"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:323
+#: app/BusPage.qml:231 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:340
+#: app/BusPage.qml:236 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Dettagli di viaggio"
@@ -1871,15 +1898,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "File PkPass o JSON da importare."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Importa..."
+msgstr "Importa"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Apri file..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1892,20 +1918,19 @@ msgid "Scan Barcode..."
 msgstr "Scansione codice a barre..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Aggiungi da calendario..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Biglietto in linea Deutsche Bahn"
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "Biglietto in linea SNCF..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2096,44 +2121,39 @@ msgid "New arrival platform is: %1"
 msgstr "Il nuovo binario di arrivo è: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Biglietto del treno"
+msgstr "Importa biglietto in linea"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Non è stato importato niente."
+msgstr "Biglietto importato"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Nessuna posizione trovata"
+msgstr "Nessun biglietto trovato"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Biglietto del treno"
+msgstr "Biglietto in linea"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Cognome"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Riferimento della prenotazione:"
+msgstr "Riferimento della prenotazione"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Cerca..."
 
 #: app/passmanager.cpp:233
 #, kde-format
@@ -2890,12 +2910,12 @@ msgstr "Posto:"
 msgid "Class:"
 msgstr "Classe:"
 
-#: app/TrainPage.qml:328
+#: app/TrainPage.qml:327
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Suddivisione veicolo di partenza"
 
-#: app/TrainPage.qml:334
+#: app/TrainPage.qml:333
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Suddivisione veicolo di arrivo"
