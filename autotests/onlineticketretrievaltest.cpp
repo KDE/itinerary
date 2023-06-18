@@ -1,0 +1,59 @@
+/*
+    SPDX-FileCopyrightText: 2023 Volker Krause <vkrause@kde.org>
+    SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "testhelper.h"
+#include "mocknetworkaccessmanager.h"
+
+#include <onlineticketretrievaljob.h>
+
+#include <QUrl>
+#include <QtTest/qtest.h>
+#include <QSignalSpy>
+#include <QStandardPaths>
+
+class OnlineTicketRetrievalTest : public QObject
+{
+    Q_OBJECT
+private Q_SLOTS:
+    void initTestCase()
+    {
+        QStandardPaths::setTestModeEnabled(true);
+    }
+
+    void testTicketRetrieval_data()
+    {
+        QTest::addColumn<QString>("sourceId");
+        QTest::addColumn<QVariantMap>("arguments");
+        QTest::addColumn<QByteArray>("postData");
+
+        QTest::newRow("db") << QStringLiteral("db") << QVariantMap({ {QStringLiteral("name"), QStringLiteral("KONQUI")}, {QStringLiteral("reference"), QStringLiteral("XYZ007")}})
+            << QByteArray(R"(<rqorderdetails version="1.0"><rqheader v="19120000" os="KCI" app="KCI-Webservice"/><rqorder on="XYZ007"/><authname tln="KONQUI"/></rqorderdetails>)");
+        QTest::newRow("sncf") << QStringLiteral("sncf") << QVariantMap({ {QStringLiteral("name"), QStringLiteral("KONQUI")}, {QStringLiteral("reference"), QStringLiteral("XYZ007")}})
+            << QByteArray(R"({"reference":"XYZ007","name":"KONQUI"})");
+    }
+
+    void testTicketRetrieval()
+    {
+        QFETCH(QString, sourceId);
+        QFETCH(QVariantMap, arguments);
+        QFETCH(QByteArray, postData);
+
+        m_nam.requests.clear();
+        OnlineTicketRetrievalJob job(sourceId, arguments, &m_nam);
+        QSignalSpy finishedSpy(&job, &OnlineTicketRetrievalJob::finished);
+        QVERIFY(finishedSpy.wait());
+
+        QCOMPARE(m_nam.requests.size(), 1);
+        QCOMPARE(m_nam.requests[0].op, QNetworkAccessManager::PostOperation);
+        QCOMPARE(m_nam.requests[0].data, postData);
+    }
+
+private:
+    MockNetworkAccessManager m_nam;
+};
+
+QTEST_GUILESS_MAIN(OnlineTicketRetrievalTest)
+
+#include "onlineticketretrievaltest.moc"

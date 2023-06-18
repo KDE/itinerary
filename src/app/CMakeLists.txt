@@ -27,6 +27,7 @@ target_sources(itinerary PRIVATE
     locationinformation.cpp
     navigationcontroller.cpp
     notificationhelper.cpp
+    onlineticketretrievaljob.cpp
     passmanager.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp
@@ -106,7 +107,6 @@ target_sources(itinerary-app PRIVATE
     notificationconfigcontroller.cpp
     notifyrc.qrc
     onlineticketimporter.cpp
-    onlineticketretrievaljob.cpp
     permissionmanager.cpp
     settings.cpp
     tickettokenmodel.cpp
