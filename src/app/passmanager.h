@@ -63,6 +63,9 @@ public:
     /** Ids of documents attached to @p pass. */
     Q_INVOKABLE static QVariantList documentIds(const QVariant &pass);
 
+Q_SIGNALS:
+    void passChanged(const QString &passId);
+
 private:
     struct Entry {
         QString id;

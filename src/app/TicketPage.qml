@@ -15,8 +15,16 @@ import "." as App
 Kirigami.ScrollablePage {
     id: root
     title: i18n("Ticket")
-    property var passId
+    property string passId
     property var ticket
+
+    Connections {
+        target: PassManager
+        function onPassChanged(passId) {
+            if (passId == root.passId)
+                root.ticket = PassManager.pass(passId);
+        }
+    }
 
     Component {
         id: editor

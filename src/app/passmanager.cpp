@@ -103,6 +103,7 @@ QString PassManager::import(const QVariant &pass, const QString &id)
             write((*it).data, (*it).id);
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
             Q_EMIT dataChanged(idx, idx);
+            Q_EMIT passChanged((*it).id);
             return (*it).id;
         }
     }
@@ -120,6 +121,7 @@ QString PassManager::import(const QVariant &pass, const QString &id)
             (*it).data = entry.data;
             const auto idx = index(std::distance(m_entries.begin(), it), 0);
             Q_EMIT dataChanged(idx, idx);
+            Q_EMIT passChanged((*it).id);
         } else {
             const auto row = std::distance(m_entries.begin(), it);
             beginInsertRows({}, row, row);
@@ -302,6 +304,7 @@ void PassManager::update(const QString &passId, const QVariant &pass)
     write((*it).data, (*it).id);
     const auto idx = index(std::distance(m_entries.begin(), it), 0);
     Q_EMIT dataChanged(idx, idx);
+    Q_EMIT passChanged((*it).id);
 }
 
 bool PassManager::remove(const QString &passId)

@@ -130,6 +130,30 @@ private Q_SLOTS:
             QCOMPARE(mgr.findMatchingPass(program), QString());
         }
     }
+
+    void testPassUpdate()
+    {
+        PassManager mgr;
+        QAbstractItemModelTester modelTest(&mgr);
+        QSignalSpy updateSpy(&mgr, &PassManager::passChanged);
+
+        Test::clearAll(&mgr);
+        QCOMPARE(mgr.rowCount(), 0);
+
+        const auto passId = mgr.import(JsonLdDocument::fromJsonSingular(QJsonDocument::fromJson(Test::readFile(QStringLiteral(SOURCE_DIR "/data/9euroticket.json"))).object()));
+        QVERIFY(!passId.isEmpty());
+
+        auto pass = mgr.pass(passId).value<Ticket>();
+        QCOMPARE(pass.name(), QLatin1String("9-Euro-Ticket"));
+        pass.setName(QLatin1String("9-Euro-Ticket (May 2022)"));
+        mgr.update(passId, pass);
+
+        QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(updateSpy[0][0].toString(), passId);
+
+        pass = mgr.pass(passId).value<Ticket>();
+        QCOMPARE(pass.name(), QLatin1String("9-Euro-Ticket (May 2022)"));
+    }
 };
 
 QTEST_GUILESS_MAIN(PassManagerTest)
