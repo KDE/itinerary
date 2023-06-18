@@ -18,6 +18,11 @@ Kirigami.ScrollablePage {
     property var passId
     property var ticket
 
+    Component {
+        id: editor
+        App.TicketEditor {}
+    }
+
     BarcodeScanModeController {
         id: scanModeController
         page: root
@@ -51,14 +56,6 @@ Kirigami.ScrollablePage {
         checkable: true
         checked: scanModeController.enabled
     }
-
-    actions.contextualActions: [
-        Kirigami.Action {
-            icon.name: "edit-delete"
-            text: i18n("Delete")
-            onTriggered: deleteWarningDialog.open()
-        }
-    ]
 
     ColumnLayout {
         width: parent.width
@@ -138,6 +135,31 @@ Kirigami.ScrollablePage {
                 documentIds = Qt.binding(function() { return PassManager.documentIds(ticket) });
             }
             onRemoveDocument: (docId) => { ApplicationController.removeDocumentFromPass(root.passId, docId); }
+        }
+
+        MobileForm.FormCard {
+            Layout.topMargin: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                MobileForm.FormCardHeader {
+                    title: i18n("Actions")
+                }
+
+                MobileForm.FormButtonDelegate {
+                    action: Kirigami.Action {
+                        icon.name: "document-edit"
+                        text: i18n("Edit")
+                        onTriggered: applicationWindow().pageStack.push(editor, {passId: root.passId, ticket: root.ticket});
+                    }
+                }
+                MobileForm.FormButtonDelegate {
+                    action: Kirigami.Action {
+                        icon.name: "edit-delete"
+                        text: i18n("Delete")
+                        onTriggered: deleteWarningDialog.open()
+                    }
+                }
+            }
         }
     }
 }
