@@ -55,7 +55,8 @@ qint64 MockNetworkReply::readData([[maybe_unused]] char *data, [[maybe_unused]] 
 
 QNetworkReply* MockNetworkAccessManager::createRequest(QNetworkAccessManager::Operation op, const QNetworkRequest &originalReq, QIODevice *outgoingData)
 {
-    requests.emplace_back(op, originalReq, outgoingData ? outgoingData->readAll() : QByteArray());
+    Request r{op, originalReq, outgoingData ? outgoingData->readAll() : QByteArray()};
+    requests.push_back(std::move(r));
     return new MockNetworkReply(op, originalReq, this);
 }
 
