@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"POT-Creation-Date: 2023-06-19 00:51+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -117,7 +117,7 @@ msgstr "Добавить пересадку до"
 msgid "Add transfer after"
 msgstr "Добавить пересадку после"
 
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Изменить"
@@ -130,8 +130,8 @@ msgstr "Добавить в календарь..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -172,7 +172,8 @@ msgstr "Удалить событие"
 msgid "Do you really want to delete this event?"
 msgstr "Удалить это событие?"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -331,7 +332,7 @@ msgstr "Отправление"
 #, fuzzy, kde-format
 #| msgid "Departure Time:"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Время отправления:"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
@@ -362,7 +363,7 @@ msgstr "Билет на автобус"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Режим сканирования штрихкода"
@@ -708,7 +709,7 @@ msgstr "К этому бронированию не добавлены ника�
 msgid "Add Document..."
 msgstr "Добавить документ..."
 
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Сохранить"
@@ -2265,13 +2266,13 @@ msgstr "Код бронирования:"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Недействительные"
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2321,14 +2322,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Программа"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Имя:"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Number:"
 msgid "Number"
@@ -2345,18 +2346,18 @@ msgstr "Показать посадочный талон"
 msgid "Program Membership"
 msgstr "Участие в программе"
 
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr "Участник"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Действует с:"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
@@ -2816,22 +2817,38 @@ msgstr "Удалить запись журнала"
 msgid "No locations found"
 msgstr "Расположения не найдены"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Билет на событие"
+
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
 msgid "Ticket"
 msgstr "Билет"
 
-#: app/TicketPage.qml:29
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+msgid "Ticket name"
+msgstr "Порядковый номер:"
+
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:42
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Удалить билет"
 
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Удалить этот билет?"
 
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -3392,6 +3409,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 из %3 в %4 %5"
+
+#, fuzzy
+#~| msgid "Departure Time:"
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Время отправления:"
 
 #~ msgid "Frequent Traveler Program"
 #~ msgstr "Программа для лиц, которые часто путешествуют"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"POT-Creation-Date: 2023-06-19 00:51+0000\n"
 "PO-Revision-Date: 2023-04-20 10:42+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -111,7 +111,7 @@ msgstr "Lisää vaihto edelle"
 msgid "Add transfer after"
 msgstr "Lisää vaihto jälkeen"
 
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Muokkaa"
@@ -124,8 +124,8 @@ msgstr "Lisää kalenteriin…"
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
@@ -166,7 +166,8 @@ msgstr "Poista tapahtuma"
 msgid "Do you really want to delete this event?"
 msgstr "Haluatko varmasti poistaa tämän tapahtuman?"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
 msgstr "Toiminnot"
@@ -319,7 +320,7 @@ msgstr "Lähtö"
 #, fuzzy, kde-format
 #| msgid "Depature Time"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Lähtöaika"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
@@ -350,7 +351,7 @@ msgstr "Laivalippu"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Viivakoodinlukutila"
@@ -675,7 +676,7 @@ msgstr "Tähän varaukseen ei ole liitetty asiakirjoja."
 msgid "Add Document..."
 msgstr "Lisää asiakirja…"
 
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Tallenna"
@@ -2173,13 +2174,13 @@ msgstr "Varausviite:"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Vanhentunut"
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2228,13 +2229,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Ohjelma"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Nimi"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Numero"
@@ -2250,17 +2251,17 @@ msgstr "Näytä maihinnousukortti"
 msgid "Program Membership"
 msgstr "Ohjelman jäsenyys"
 
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr "Jäsen"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Voimassa alkaen"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "Vanhenee"
@@ -2702,22 +2703,39 @@ msgstr "Poista historiatietue"
 msgid "No locations found"
 msgstr "Sijainteja ei löytynyt"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Tapahtumalippu"
+
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
 msgid "Ticket"
 msgstr "Lippu"
 
-#: app/TicketPage.qml:29
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgid "Ticket name"
+msgstr "Lipun numero:"
+
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:42
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Poista lippu"
 
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Haluatko varmasti poistaa tämän lipun?"
 
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, kde-format
 msgid "Class"
 msgstr "Luokka"
@@ -3254,6 +3272,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#, fuzzy
+#~| msgid "Depature Time"
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Lähtöaika"
 
 #~ msgid "Frequent Traveler Program"
 #~ msgstr "Usein matkustavien ohjelma"

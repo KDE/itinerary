@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 00:55+0000\n"
-"PO-Revision-Date: 2023-06-17 10:27+0200\n"
+"POT-Creation-Date: 2023-06-19 00:51+0000\n"
+"PO-Revision-Date: 2023-06-18 17:39+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -113,7 +113,7 @@ msgstr "Overstap voor toevoegen"
 msgid "Add transfer after"
 msgstr "Overstap na toevoegen"
 
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Bewerken"
@@ -126,8 +126,8 @@ msgstr "Aan agenda toevoegen..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Verwijderen"
@@ -168,7 +168,8 @@ msgstr "Evenement wissen"
 msgid "Do you really want to delete this event?"
 msgstr "Wilt u deze gebeurtenis verwijderen?"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
 msgstr "Acties"
@@ -306,10 +307,9 @@ msgid "Arrival time: %1"
 msgstr "Aankomsttijd: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Bootreizen"
+msgstr "Bootreis bewerken"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -321,15 +321,14 @@ msgstr "Vertrek"
 #, fuzzy, kde-format
 #| msgid "Depature Time"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Vertrektijd"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminal"
+msgstr "Terminalnaam"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -338,8 +337,7 @@ msgid "Arrival"
 msgstr "Aankomst"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Aankomsttijd"
@@ -351,7 +349,7 @@ msgstr "Bootkaartje"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "In modus barcode scannen"
@@ -674,7 +672,7 @@ msgstr "Geen documenten bij deze reservering bijgesloten."
 msgid "Add Document..."
 msgstr "Document toevoegen..."
 
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Opslaan"
@@ -2154,13 +2152,13 @@ msgstr "Boekingreferentie"
 msgid "Search..."
 msgstr "Zoeken..."
 
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Verlopen"
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2208,13 +2206,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programma"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Naam"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Nummer"
@@ -2229,17 +2227,17 @@ msgstr "Programmapas tonen"
 msgid "Program Membership"
 msgstr "Lidmaatschap van programma"
 
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr "Lid"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Geldig van"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "Geldig tot"
@@ -2689,22 +2687,39 @@ msgstr "Geschiedenisitem verwijderen"
 msgid "No locations found"
 msgstr "Geen locaties gevonden"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Ticket voor evenement"
+
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
 msgid "Ticket"
 msgstr "Kaartje"
 
-#: app/TicketPage.qml:29
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgid "Ticket name"
+msgstr "Ticketnummer:"
+
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:42
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Ticket verwijderen"
 
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Wilt u dit ticket verwijderen?"
 
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, kde-format
 msgid "Class"
 msgstr "Klasse"
@@ -3234,6 +3249,11 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~| msgid "Depature Time"
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Vertrektijd"
 
 #~ msgid "Frequent Traveler Program"
 #~ msgstr "Frequente reiziger programma"

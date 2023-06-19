@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 00:55+0000\n"
-"PO-Revision-Date: 2023-06-17 08:02+0200\n"
+"POT-Creation-Date: 2023-06-19 00:51+0000\n"
+"PO-Revision-Date: 2023-06-18 19:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -112,7 +112,7 @@ msgstr "Dodaj transfer pred"
 msgid "Add transfer after"
 msgstr "Dodaj transfer po"
 
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
@@ -125,8 +125,8 @@ msgstr "Dodaj v koledar..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Zbriši"
@@ -167,7 +167,8 @@ msgstr "Zbriši dogodek"
 msgid "Do you really want to delete this event?"
 msgstr "Ali res želite izbrisati ta dogodek?"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
 msgstr "Akcije"
@@ -308,10 +309,9 @@ msgid "Arrival time: %1"
 msgstr "Čas prihoda: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Ladijska potovanja"
+msgstr "Uredi ladijsko potovanje"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -323,15 +323,14 @@ msgstr "Odhod"
 #, fuzzy, kde-format
 #| msgid "Depature Time"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Čas odhoda"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminal"
+msgstr "Ime terminala"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -340,8 +339,7 @@ msgid "Arrival"
 msgstr "Prihod"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Čas prihoda"
@@ -353,7 +351,7 @@ msgstr "Ladijska vozovnica"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Način optičnega branja črtne kode"
@@ -676,7 +674,7 @@ msgstr "Ta rezervacija nima priloženih nobenih dokumentov."
 msgid "Add Document..."
 msgstr "Dodaj dokument..."
 
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Shrani"
@@ -2160,13 +2158,13 @@ msgstr "Referenca rezervacije"
 msgid "Search..."
 msgstr "Išči..."
 
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2214,13 +2212,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Program"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Številka"
@@ -2235,17 +2233,17 @@ msgstr "Pokaži vstopni kupon"
 msgid "Program Membership"
 msgstr "Članstvo v programu"
 
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr "Član"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Veljavno od"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "Veljavno do"
@@ -2689,22 +2687,39 @@ msgstr "Odstrani vnos v zgodovino"
 msgid "No locations found"
 msgstr "Ni najdenih lokacij"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Vstopnica za dogodek"
+
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
 msgid "Ticket"
 msgstr "Vstopnica"
 
-#: app/TicketPage.qml:29
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgid "Ticket name"
+msgstr "Številka vozovnice:"
+
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:42
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Zbriši vstopnico"
 
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Ali zares želite izbrisati to vstopnico?"
 
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, kde-format
 msgid "Class"
 msgstr "Razred"
@@ -3238,6 +3253,10 @@ msgstr "Prijavljanje"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Čas odhoda"
 
 #~ msgid "Frequent Traveler Program"
 #~ msgstr "Program zvestega popotnika"

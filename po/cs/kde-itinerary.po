@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-18 00:55+0000\n"
+"POT-Creation-Date: 2023-06-19 00:51+0000\n"
 "PO-Revision-Date: 2023-06-06 10:45+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -109,7 +109,7 @@ msgstr "Přidat přestup před"
 msgid "Add transfer after"
 msgstr "Přidat přestup po"
 
-#: app/ActionsCard.qml:55
+#: app/ActionsCard.qml:55 app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Upravit"
@@ -122,8 +122,8 @@ msgstr "Přidat do kalendáře..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:58
-#: app/TicketPage.qml:36 app/TicketPage.qml:58 app/TimelinePage.qml:101
+#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Smazat"
@@ -164,7 +164,8 @@ msgstr "Smazat událost"
 msgid "Do you really want to delete this event?"
 msgstr "Opravdu si přejete smazat tuto událost?"
 
-#: app/ActionsCard.qml:154
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
 msgstr "Činnosti"
@@ -318,7 +319,7 @@ msgstr "Odjezd"
 #, fuzzy, kde-format
 #| msgid "Depature Time"
 msgctxt "Boat departure"
-msgid "Deparutre Time"
+msgid "Departure Time"
 msgstr "Čas odletu"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
@@ -348,7 +349,7 @@ msgstr "Lístek na loď"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:48 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Režim čtení čarových kódů"
@@ -672,7 +673,7 @@ msgstr ""
 msgid "Add Document..."
 msgstr "Přidat dokument..."
 
-#: app/EditorPage.qml:38
+#: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
 msgstr "Uložit"
@@ -2158,13 +2159,13 @@ msgstr "Odkaz"
 msgid "Search..."
 msgstr ""
 
-#: app/passmanager.cpp:233
+#: app/passmanager.cpp:235
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Prošlý"
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:237
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
@@ -2213,13 +2214,13 @@ msgid "Program"
 msgstr "Program"
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:103
+#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Název"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:108
-#: app/TicketPage.qml:121
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
+#: app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Číslo"
@@ -2234,17 +2235,17 @@ msgstr ""
 msgid "Program Membership"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipPage.qml:91
 #, kde-format
 msgid "Member"
 msgstr "Člen"
 
-#: app/ProgramMembershipPage.qml:116 app/TicketPage.qml:109
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Platný od"
 
-#: app/ProgramMembershipPage.qml:121 app/TicketPage.qml:115
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "Platný do"
@@ -2685,22 +2686,39 @@ msgstr ""
 msgid "No locations found"
 msgstr "Nenalezeno žádné místo"
 
-#: app/TicketPage.qml:17 app/TicketPage.qml:99
+#: app/TicketEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Event Ticket"
+msgid "Edit Ticket"
+msgstr "Lístek události"
+
+#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
 msgid "Ticket"
 msgstr "Lístek"
 
-#: app/TicketPage.qml:29
+#: app/TicketEditor.qml:50
+#, fuzzy, kde-format
+#| msgid "Ticket number:"
+msgid "Ticket name"
+msgstr "Číslo lístku:"
+
+#: app/TicketEditor.qml:53
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:42
 #, kde-format
 msgid "Delete Ticket"
 msgstr "Smazat lístek"
 
-#: app/TicketPage.qml:30
+#: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
 msgstr "Opravdu si přejete smazat tento lístek?"
 
-#: app/TicketPage.qml:127
+#: app/TicketPage.qml:132
 #, kde-format
 msgid "Class"
 msgstr "Třída"
@@ -3230,6 +3248,12 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
+
+#, fuzzy
+#~| msgid "Depature Time"
+#~ msgctxt "Boat departure"
+#~ msgid "Deparutre Time"
+#~ msgstr "Čas odletu"
 
 #~ msgid "Frequent Traveler Program"
 #~ msgstr "Program pro pravidelného cestovatele"
