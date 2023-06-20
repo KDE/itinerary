@@ -28,11 +28,13 @@ TimelineDelegateHeaderBackground {
         QQC2.Label {
             text: Localizer.formatTime(journey, "scheduledDepartureTime")
             color: Kirigami.Theme.textColor
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
         QQC2.Label {
             text: (journey.departureDelay >= 0 ? "+" : "") + journey.departureDelay;
             color: journey.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
             visible: journey.hasExpectedDepartureTime && journey.disruption != Disruption.NoService
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
 
         QQC2.Label {
@@ -40,6 +42,7 @@ TimelineDelegateHeaderBackground {
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignRight
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
     }
 }
