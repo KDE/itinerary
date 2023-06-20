@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-19 00:51+0000\n"
-"PO-Revision-Date: 2023-06-17 05:57+0200\n"
+"PO-Revision-Date: 2023-06-19 05:51+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -304,10 +304,9 @@ msgid "Arrival time: %1"
 msgstr "ჩამოსვლის დრო: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "ნავით მოგზაურობა"
+msgstr "ნავით მოგზაურობის ჩასწორება"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -316,18 +315,16 @@ msgid "Departure"
 msgstr "გამგზავრება"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "გასვლის დრო"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "ტერმინალი"
+msgstr "ტერმინალის სახელი"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -336,8 +333,7 @@ msgid "Arrival"
 msgstr "შემოსვლა"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
@@ -2686,10 +2682,9 @@ msgid "No locations found"
 msgstr "მდებარეობები ვერ მოიძებნა"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "ღონისძიების ბილეთი"
+msgstr "ბილეთის ჩასწორება"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2697,15 +2692,14 @@ msgid "Ticket"
 msgstr "ბილეთი"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "ბილეთის ნომერი:"
+msgstr "ბილეთის სახელი"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "ბილეთის სახელი ცარიელი ვერ იქნება."
 
 #: app/TicketPage.qml:42
 #, kde-format
