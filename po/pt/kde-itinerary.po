@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-19 00:51+0000\n"
-"PO-Revision-Date: 2023-06-18 01:05+0100\n"
+"PO-Revision-Date: 2023-06-21 00:42+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -313,10 +313,9 @@ msgid "Arrival time: %1"
 msgstr "Hora de chegada: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Viagens de barco"
+msgstr "Editar a Viagem de Barco"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -325,18 +324,16 @@ msgid "Departure"
 msgstr "Partida"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Hora de Partida"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminal"
+msgstr "Nome do Terminal"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -345,8 +342,7 @@ msgid "Arrival"
 msgstr "Chegada"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Hora de Chegada"
@@ -2697,10 +2693,9 @@ msgid "No locations found"
 msgstr "Não foram encontradas localizações"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Bilhete do Evento"
+msgstr "Editar o Bilhete"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2708,15 +2703,14 @@ msgid "Ticket"
 msgstr "Bilhete"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Número do bilhete:"
+msgstr "Nome do bilhete"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "O nome do bilhete não pode estar vazio."
 
 #: app/TicketPage.qml:42
 #, kde-format
@@ -3259,9 +3253,3 @@ msgstr "A autenticar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
-
-#, fuzzy
-#~| msgid "Depature Time"
-#~ msgctxt "Boat departure"
-#~ msgid "Deparutre Time"
-#~ msgstr "Hora de Partida"
