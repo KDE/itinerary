@@ -105,6 +105,9 @@ QVariant CalendarImportModel::data(const QModelIndex &index, int role) const
                 if (JsonLd::isA<BusReservation>(res)) {
                     return QStringLiteral("qrc:///images/bus.svg");
                 }
+                if (JsonLd::isA<BoatReservation>(res)) {
+                    return QStringLiteral("qrc:///images/ferry.svg");
+                }
                 if (JsonLd::isA<LodgingReservation>(res)) {
                     return QStringLiteral("go-home-symbolic");
                 }
