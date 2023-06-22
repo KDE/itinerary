@@ -61,5 +61,11 @@ Kirigami.ScrollablePage {
             }
             onClicked: model.selected = !model.selected
         }
+
+        Kirigami.PlaceholderMessage {
+            text: i18n("No importable events found in this caledar.")
+            visible: eventList.count === 0
+            anchors.fill: parent
+        }
     }
 }
