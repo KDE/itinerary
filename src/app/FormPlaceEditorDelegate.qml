@@ -126,7 +126,9 @@ ColumnLayout {
     App.CountryComboBoxDelegate {
         id: addressCountry
         text: i18n("Country")
-        model: Country.allCountries.map(c => c.alpha2)
+        model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
+            return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
+        })
         initialCountry: place.address.addressCountry ? place.address.addressCountry : root.defaultCountry
     }
 
