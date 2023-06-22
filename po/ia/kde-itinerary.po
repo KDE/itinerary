@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-19 00:51+0000\n"
-"PO-Revision-Date: 2023-05-29 14:58+0200\n"
+"PO-Revision-Date: 2023-06-21 16:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -232,12 +232,11 @@ msgid "Health certificate imported."
 msgstr "Certificatos de Sanitate importate."
 
 #: app/applicationcontroller.cpp:451
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Pass importate."
-msgstr[1] "Pass importate."
+msgstr[0] "Un Pass importate."
+msgstr[1] "%1 Passes importate."
 
 #: app/applicationcontroller.cpp:454
 #, kde-format
@@ -306,10 +305,9 @@ msgid "Arrival time: %1"
 msgstr "Tempore de arrivata: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Viages de barca"
+msgstr "Mofiidca Viage de barca"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -318,18 +316,16 @@ msgid "Departure"
 msgstr "Partita"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Tempore de partita"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminal"
+msgstr "Nomine de Terminal"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -338,8 +334,7 @@ msgid "Arrival"
 msgstr "Arrivata"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Tempore de arrivata:"
@@ -1897,15 +1892,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "File de PkPass o JSON-LD a importar."
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Importa..."
+msgstr "Importa"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Aperi file..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1918,20 +1912,19 @@ msgid "Scan Barcode..."
 msgstr "Scande Codice a barras..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
-msgstr "Adde ex calendario.."
+msgstr "Adde ex calendario..."
 
 #: app/main.qml:97
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Billet in linea de Deutsche Bahn..."
 
 #: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "Billet in linea de SNFC..."
 
 #: app/main.qml:118
 #, kde-format
@@ -2122,44 +2115,39 @@ msgid "New arrival platform is: %1"
 msgstr "Nove platteforma de arrivata es: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Billet de traino"
+msgstr "Importa Billet in linea"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Nulle importate."
+msgstr "Billet importate."
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Nulle location trovate"
+msgstr "Nulle billet trovate"
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Billet de traino"
+msgstr "Billet In Linea"
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Nomine de Familia"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Referentia de reservation: "
+msgstr "Referentia de reservation"
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Cerca..."
 
 #: app/passmanager.cpp:235
 #, kde-format
@@ -2695,10 +2683,9 @@ msgid "No locations found"
 msgstr "Nulle location trovate"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Billet de Evento"
+msgstr "Modifica Billet "
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2706,15 +2693,14 @@ msgid "Ticket"
 msgstr "Billet"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Numero de Billet:"
+msgstr "Nomine de Billet:"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "Nomine de Billet non pote esser vacue."
 
 #: app/TicketPage.qml:42
 #, kde-format

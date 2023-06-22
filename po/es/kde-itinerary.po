@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-19 00:51+0000\n"
-"PO-Revision-Date: 2023-06-19 01:30+0200\n"
+"PO-Revision-Date: 2023-06-20 01:06+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -319,8 +319,7 @@ msgid "Departure"
 msgstr "Salida"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Hora de salida"
@@ -2692,10 +2691,9 @@ msgid "No locations found"
 msgstr "No se han encontrado ubicaciones"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Entrada para el evento"
+msgstr "Editar billete"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2703,15 +2701,14 @@ msgid "Ticket"
 msgstr "Billete"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Número de billete:"
+msgstr "Nombre del billete"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "El nombre del billete no puede estar vacío."
 
 #: app/TicketPage.qml:42
 #, kde-format
