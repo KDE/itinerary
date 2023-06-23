@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:51+0000\n"
+"POT-Creation-Date: 2023-06-23 00:48+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -537,6 +537,11 @@ msgstr "Kalenderimport"
 #, kde-format
 msgid "Import selected events"
 msgstr "Importera markerade händelser"
+
+#: app/CalendarImportPage.qml:66
+#, kde-format
+msgid "No importable events found in this caledar."
+msgstr ""
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
@@ -1086,28 +1091,28 @@ msgstr "Område:"
 msgid "Country"
 msgstr "Land:"
 
-#: app/FormPlaceEditorDelegate.qml:177
+#: app/FormPlaceEditorDelegate.qml:179
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Ombordstigningstid:"
 
-#: app/FormPlaceEditorDelegate.qml:178
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:178
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "Pick..."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:188
+#: app/FormPlaceEditorDelegate.qml:190
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:202
+#: app/FormPlaceEditorDelegate.qml:204
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"

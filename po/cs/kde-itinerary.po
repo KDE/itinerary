@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:51+0000\n"
+"POT-Creation-Date: 2023-06-23 00:48+0000\n"
 "PO-Revision-Date: 2023-06-06 10:45+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -229,13 +229,12 @@ msgid "Health certificate imported."
 msgstr "Importován zdravotní certifikát."
 
 #: app/applicationcontroller.cpp:451
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Letenka importována."
-msgstr[1] "Letenka importována."
-msgstr[2] "Letenka importována."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: app/applicationcontroller.cpp:454
 #, kde-format
@@ -304,10 +303,9 @@ msgid "Arrival time: %1"
 msgstr "Čas příjezdu: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Exportovat výlet"
+msgstr ""
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -316,18 +314,16 @@ msgid "Departure"
 msgstr "Odjezd"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminál"
+msgstr ""
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -336,11 +332,10 @@ msgid "Arrival"
 msgstr "Příjezd"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Čas příletu"
+msgstr ""
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -515,6 +510,11 @@ msgstr "Importovat kalendář"
 msgid "Import selected events"
 msgstr "Importovat vybrané události"
 
+#: app/CalendarImportPage.qml:66
+#, kde-format
+msgid "No importable events found in this caledar."
+msgstr ""
+
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
 msgid "Select Calendar"
@@ -658,10 +658,9 @@ msgid "Do you really want to delete this document?"
 msgstr ""
 
 #: app/DocumentsCard.qml:102
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Documents"
-msgstr "Přidat dokument"
+msgstr "Dokumenty"
 
 #: app/DocumentsCard.qml:111
 #, kde-format
@@ -1026,27 +1025,27 @@ msgstr "Region"
 msgid "Country"
 msgstr "Země"
 
-#: app/FormPlaceEditorDelegate.qml:177
+#: app/FormPlaceEditorDelegate.qml:179
 #, kde-format
 msgid "Coordinate"
 msgstr "Souřadnice"
 
-#: app/FormPlaceEditorDelegate.qml:178
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:178
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "Pick..."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:188
+#: app/FormPlaceEditorDelegate.qml:190
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:202
+#: app/FormPlaceEditorDelegate.qml:204
 #, kde-format
 msgid "Coordinate to address"
 msgstr ""
@@ -1895,15 +1894,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr ""
 
 #: app/main.qml:53
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Importovat..."
+msgstr "Importovat"
 
 #: app/main.qml:56
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Otevřít soubor..."
 
 #: app/main.qml:64
 #, kde-format
@@ -1916,10 +1914,9 @@ msgid "Scan Barcode..."
 msgstr "Číst čarový kód..."
 
 #: app/main.qml:82
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
-msgstr "Přidat z kalendáře..."
+msgstr ""
 
 #: app/main.qml:97
 #, kde-format
@@ -2120,44 +2117,39 @@ msgid "New arrival platform is: %1"
 msgstr ""
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Vlaková jízddenka"
+msgstr ""
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Nic nebylo importováno."
+msgstr ""
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Nenalezeno žádné místo"
+msgstr ""
 
 #: app/OnlineImportPage.qml:44
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Vlaková jízddenka"
+msgstr ""
 
 #: app/OnlineImportPage.qml:48
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Příjmení"
 
 #: app/OnlineImportPage.qml:56
-#, fuzzy, kde-format
-#| msgid "Reference"
+#, kde-format
 msgid "Booking reference"
-msgstr "Odkaz"
+msgstr ""
 
 #: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Hledat..."
 
 #: app/passmanager.cpp:235
 #, kde-format
@@ -2687,10 +2679,9 @@ msgid "No locations found"
 msgstr "Nenalezeno žádné místo"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Lístek události"
+msgstr ""
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2698,10 +2689,9 @@ msgid "Ticket"
 msgstr "Lístek"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Číslo lístku:"
+msgstr ""
 
 #: app/TicketEditor.qml:53
 #, kde-format
@@ -3248,16 +3238,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#, fuzzy
-#~| msgid "Depature Time"
-#~ msgctxt "Boat departure"
-#~ msgid "Deparutre Time"
-#~ msgstr "Čas odletu"
-
-#~ msgid "Frequent Traveler Program"
-#~ msgstr "Program pro pravidelného cestovatele"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program"
-#~ msgstr "Program"
