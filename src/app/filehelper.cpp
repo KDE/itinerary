@@ -18,7 +18,7 @@ bool FileHelper::isLocalFile(const QUrl &url)
 
 QString FileHelper::toLocalFile(const QUrl &url)
 {
-    return url.isLocalFile() ? url.toLocalFile() : url.toString();
+    return url.isLocalFile() ? url.toLocalFile() : url.toString(QUrl::FullyEncoded);
 }
 
 bool FileHelper::hasZipHeader(const QByteArray &data)

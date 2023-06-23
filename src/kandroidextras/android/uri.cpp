@@ -14,7 +14,7 @@ using namespace KAndroidExtras;
 QAndroidJniObject Uri::fromUrl(const QUrl &url)
 {
     return QAndroidJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(), "parse", Jni::signature<android::net::Uri(java::lang::String)>(),
-        QAndroidJniObject::fromString(url.toString()).object<jstring>());
+        QAndroidJniObject::fromString(url.toString(QUrl::FullyEncoded)).object<jstring>());
 }
 
 QUrl Uri::toUrl(const QAndroidJniObject &uri)

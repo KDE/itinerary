@@ -8,8 +8,10 @@
 #include <KItinerary/Event>
 #include <KItinerary/ExtractorEngine>
 #include <KItinerary/ExtractorPostprocessor>
+#include <KItinerary/ExtractorValidator>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Reservation>
+#include <KItinerary/Visit>
 
 #include <kcalendarcore_version.h>
 
@@ -102,6 +104,9 @@ QVariant CalendarImportModel::data(const QModelIndex &index, int role) const
                 if (JsonLd::isA<BusReservation>(res)) {
                     return QStringLiteral("qrc:///images/bus.svg");
                 }
+                if (JsonLd::isA<BoatReservation>(res)) {
+                    return QStringLiteral("qrc:///images/ferry.svg");
+                }
                 if (JsonLd::isA<LodgingReservation>(res)) {
                     return QStringLiteral("go-home-symbolic");
                 }
@@ -159,6 +164,20 @@ void CalendarImportModel::reload()
     KItinerary::ExtractorEngine extractorEngine;
     extractorEngine.setHints(KItinerary::ExtractorEngine::ExtractGenericIcalEvents);
 
+    KItinerary::ExtractorValidator validator;
+    validator.setAcceptedTypes<
+        KItinerary::BoatReservation,
+        KItinerary::BusReservation,
+        KItinerary::Event,
+        KItinerary::EventReservation,
+        KItinerary::FlightReservation,
+        KItinerary::FoodEstablishmentReservation,
+        KItinerary::LodgingReservation,
+        KItinerary::RentalCarReservation,
+        KItinerary::TrainReservation,
+        KItinerary::TouristAttractionVisit
+    >();
+
     auto calEvents = m_calendar->events(today().addDays(-5), today().addDays(180));
     calEvents = m_calendar->sortEvents(std::move(calEvents), KCalendarCore::EventSortStartDate, KCalendarCore::SortDirectionAscending);
     for (const auto &ev : std::as_const(calEvents)) {
@@ -166,7 +185,9 @@ void CalendarImportModel::reload()
         extractorEngine.setContent(QVariant::fromValue(ev), u"internal/event");
         KItinerary::ExtractorPostprocessor postProc;
         postProc.process(KItinerary::JsonLdDocument::fromJson(extractorEngine.extract()));
-        const auto res = postProc.result();
+        postProc.setValidationEnabled(false);
+        auto res = postProc.result();
+        res.erase(std::remove_if(res.begin(), res.end(), [&validator](const auto &elem) { return !validator.isValidElement(elem); }), res.end());
         if (res.empty()) {
             continue;
         }
