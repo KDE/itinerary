@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
         }
 
         Kirigami.PlaceholderMessage {
-            text: i18n("No importable events found in this caledar.")
+            text: i18n("No importable events found in this calendar.")
             visible: eventList.count === 0
             anchors.fill: parent
         }
