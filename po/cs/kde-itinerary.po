@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:48+0000\n"
-"PO-Revision-Date: 2023-06-06 10:45+0200\n"
+"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"PO-Revision-Date: 2023-06-23 13:36+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -264,7 +264,7 @@ msgstr "Import byl dokončen."
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
 msgid "In barcode scanning mode"
-msgstr "Režim čtení čarového kódu"
+msgstr "Režim čtení čárového kódu"
 
 #: app/BarcodeScannerPage.qml:17
 #, kde-format
@@ -347,7 +347,7 @@ msgstr "Lístek na loď"
 #: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
-msgstr "Režim čtení čarových kódů"
+msgstr "Režim čtení čárových kódů"
 
 #: app/BoatPage.qml:80 app/BusPage.qml:96 app/FlightPage.qml:142
 #: app/TrainPage.qml:108
@@ -512,7 +512,7 @@ msgstr "Importovat vybrané události"
 
 #: app/CalendarImportPage.qml:66
 #, kde-format
-msgid "No importable events found in this caledar."
+msgid "No importable events found in this calendar."
 msgstr ""
 
 #: app/CalendarSelectionSheet.qml:13
@@ -2601,7 +2601,7 @@ msgstr "CO₂"
 #: app/statisticsmodel.cpp:113
 #, kde-format
 msgid "Visited countries"
-msgstr "Navštívené zěmě"
+msgstr "Navštívené země"
 
 #: app/statisticsmodel.cpp:118
 #, kde-format
@@ -2878,7 +2878,7 @@ msgstr "Třída"
 #: app/TrainPage.qml:17
 #, kde-format
 msgid "Train Ticket"
-msgstr "Vlaková jízddenka"
+msgstr "Vlaková jízdenka"
 
 #: app/TrainPage.qml:104
 #, kde-format
@@ -3174,9 +3174,9 @@ msgstr ""
 "<p>Existuje spousta způsobů jak importovat data do Itineráře KDE:"
 "<ul><li>Použitím přímo PDF jízdenek nebo Apple Wallet.</li><li>Z kalendáře "
 "Android, pro položky vytvořené pomocí modulů pro itineráře KMailu, "
-"Nextcloudu nebo Thunderbird, a synchronizované pomocí DAVx⁵.</li><li>Přes "
+"NextCloudu nebo Thunderbird, a synchronizované pomocí DAVx⁵.</li><li>Přes "
 "KDE Connect z modulu Itineráře KMailu.</li><li>Skenováním a vložením "
-"čarového kódu palubní letenky.</li></p>"
+"čárového kódu palubní letenky.</li></p>"
 
 #: app/WelcomePage.qml:32
 #, kde-format

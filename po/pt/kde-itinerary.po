@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:48+0000\n"
-"PO-Revision-Date: 2023-06-21 00:42+0100\n"
+"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"PO-Revision-Date: 2023-06-24 01:42+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -521,9 +521,10 @@ msgid "Import selected events"
 msgstr "Importar os eventos seleccionados"
 
 #: app/CalendarImportPage.qml:66
-#, kde-format
-msgid "No importable events found in this caledar."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No importable events found in this caledar."
+msgid "No importable events found in this calendar."
+msgstr "Não foram encontrados eventos para importar neste calendário."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:48+0000\n"
-"PO-Revision-Date: 2023-06-16 14:32+0200\n"
+"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"PO-Revision-Date: 2023-06-19 13:49+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -233,12 +233,11 @@ msgid "Health certificate imported."
 msgstr "Certificato medico importato."
 
 #: app/applicationcontroller.cpp:451
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Pass importato."
-msgstr[1] "Pass importato."
+msgstr[0] "Un pass importato."
+msgstr[1] "%1 pass importati."
 
 #: app/applicationcontroller.cpp:454
 #, kde-format
@@ -307,10 +306,9 @@ msgid "Arrival time: %1"
 msgstr "Ora di arrivo: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Viaggi in nave"
+msgstr "Modifica viaggio in nave"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -319,18 +317,16 @@ msgid "Departure"
 msgstr "Partenza"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Ora di partenza"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminale"
+msgstr "Nome del terminale"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -339,8 +335,7 @@ msgid "Arrival"
 msgstr "Arrivo"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Ora di arrivo"
@@ -520,7 +515,7 @@ msgstr "Importa gli eventi selezionati"
 
 #: app/CalendarImportPage.qml:66
 #, kde-format
-msgid "No importable events found in this caledar."
+msgid "No importable events found in this calendar."
 msgstr ""
 
 #: app/CalendarSelectionSheet.qml:13
@@ -2697,10 +2692,9 @@ msgid "No locations found"
 msgstr "Nessuna posizione trovata"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Biglietto dell'evento"
+msgstr "Modifica biglietto"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2708,15 +2702,14 @@ msgid "Ticket"
 msgstr "Biglietto"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Numero del biglietto:"
+msgstr "Nome del biglietto"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "Il nome del biglietto non può essere vuoto."
 
 #: app/TicketPage.qml:42
 #, kde-format

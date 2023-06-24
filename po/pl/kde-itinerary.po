@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-23 00:48+0000\n"
+"POT-Creation-Date: 2023-06-24 00:51+0000\n"
 "PO-Revision-Date: 2023-03-12 08:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -533,7 +533,7 @@ msgstr "Zaimportuj zaznaczone wydarzenia"
 
 #: app/CalendarImportPage.qml:66
 #, kde-format
-msgid "No importable events found in this caledar."
+msgid "No importable events found in this calendar."
 msgstr ""
 
 #: app/CalendarSelectionSheet.qml:13
