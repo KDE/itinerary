@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-24 00:51+0000\n"
-"PO-Revision-Date: 2023-04-20 10:42+0300\n"
+"PO-Revision-Date: 2023-05-28 16:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -310,8 +310,7 @@ msgid "Edit Boat Trip"
 msgstr "Laivamatkat"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -331,8 +330,7 @@ msgid "Terminal Name"
 msgstr "Terminaali"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
@@ -470,8 +468,7 @@ msgid "Bus Ticket"
 msgstr "Bussilippu"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -488,8 +485,7 @@ msgid "Station"
 msgstr "Pysäkki"
 
 #: app/BusPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
@@ -942,8 +938,7 @@ msgid "Airline"
 msgstr "Lentoyhtiö"
 
 #: app/FlightPage.qml:137
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -959,8 +954,7 @@ msgid "Gate"
 msgstr "Portti"
 
 #: app/FlightPage.qml:196
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
@@ -1118,10 +1112,11 @@ msgstr "Rokotustodistus – %1"
 msgid "Test certificate of %1"
 msgstr "Testitodistus – %1"
 
+# *** TARKISTA: Jossakin muussa yhteydessä ”palautusvarmenne”, mutta tässä tarkoitettaneen todistusta, että jostakin taudista (kuten koronasta) on toivuttu.
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "Toipumistodistus – %1"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
@@ -1666,19 +1661,19 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "R. %1"
 
 #: app/JourneySectionStopDelegate.qml:155
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
-msgstr ""
+msgstr "Lait. %1"
 
 #: app/JourneySectionStopDelegate.qml:157
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "R. %1"
 
 #: app/JourneySectionStopDelegate.qml:171
 #, kde-format
@@ -1701,7 +1696,7 @@ msgstr "Matkasuunnitelman muutos"
 #: app/LiveStatusPage.qml:17 app/main.qml:203
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Elävä tilanne"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
@@ -2510,10 +2505,11 @@ msgstr "Ilmoitusasetukset…"
 msgid "Show notifications on lock screen"
 msgstr "Näytä ilmoitukset lukitusnäytöllä"
 
+# Huono. ”Onboard” voi kai tässä koskea muutakin kuin laivaa (?), eikä ole aivan selvää, tarkoittaako ”status” ’tilannetta’ vai jotakin muuta.
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Laivaannousun tilanne"
 
 #: app/SettingsPage.qml:222
 #, kde-format
@@ -2554,19 +2550,23 @@ msgstr "Lisätoimia ei vaadita."
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
+"Laivaannousun tilanteen selvittämiseksi salli laitteen käyttää langatonta "
+"verkkoa."
 
 #: app/SettingsPage.qml:252
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
+"Laivaannousutietojen selvittämiseksi salli laitteen käyttää "
+"paikannuspalvelua."
 
 #: app/SettingsPage.qml:254
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
-msgstr ""
+msgstr "Laite ei valitettavasti toistaiseksi tue laivaannousutietoja."
 
 #: app/SettingsPage.qml:293
 #, kde-format
@@ -2832,34 +2832,28 @@ msgid "Arrival Time"
 msgstr "Saapumisaika:"
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "Lähtö: %1, laituri %2"
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "Lähtö: %1: %2"
+msgstr "Lähtö: %1"
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "Saapuminen: %1, laituri %2"
 
 #: app/TrainDelegate.qml:96
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival - %1"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
-msgstr "Saapuminen – %1"
+msgstr "Saapuminen: %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -2919,8 +2913,7 @@ msgid "Train Ticket"
 msgstr "Junalippu"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Lähtö"
@@ -2931,8 +2924,7 @@ msgid "Additional notes"
 msgstr "Lisähuomiot"
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Saapuminen"

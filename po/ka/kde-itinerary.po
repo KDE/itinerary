@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-24 00:51+0000\n"
-"PO-Revision-Date: 2023-06-19 05:51+0200\n"
+"PO-Revision-Date: 2023-06-24 07:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -514,7 +514,7 @@ msgstr "მონიშნული მოვლენების შემო�
 #: app/CalendarImportPage.qml:66
 #, kde-format
 msgid "No importable events found in this calendar."
-msgstr ""
+msgstr "ამ კალენდარში შემოტანადი მოვლენები აღმოჩენილი არაა."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
