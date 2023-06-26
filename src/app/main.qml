@@ -26,7 +26,11 @@ Kirigami.ApplicationWindow {
     minimumWidth: 300
     minimumHeight: 400
 
-    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+    pageStack {
+        columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+
+        globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
+    }
 
     // pop pages when not in use
     Connections {
