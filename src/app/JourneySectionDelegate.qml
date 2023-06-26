@@ -4,50 +4,57 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import "." as App
 
-Kirigami.AbstractListItem {
-    highlighted: false
+MobileForm.AbstractFormDelegate {
+    id: root
+
+    required property var modelData
 
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
-            applicationWindow().pageStack.push(journeySectionPage, {"journeySection": modelData});
+            applicationWindow().pageStack.push(journeySectionPage, {
+                journeySection: root.modelData,
+            });
         } else if (modelData.path.sections.length > 1) {
-            applicationWindow().pageStack.push(journeyPathPage, {"path": modelData.path});
+            applicationWindow().pageStack.push(journeyPathPage, {
+                path: root.modelData.path,
+            });
         }
     }
 
-    GridLayout {
+    contentItem: GridLayout {
         columns: 2
 
         // top row: departure time, departure location, departure platform
         RowLayout {
-            visible: modelData.mode != JourneySection.Waiting
+            visible: root.modelData.mode != JourneySection.Waiting
             QQC2.Label {
-                text: Localizer.formatTime(modelData, "scheduledDepartureTime")
+                text: Localizer.formatTime(root.modelData, "scheduledDepartureTime")
             }
             QQC2.Label {
                 text: {
-                    if (modelData.disruption == Disruption.NoService)
+                    if (root.modelData.disruption === Disruption.NoService)
                         return i18nc("a train/bus journey canceled by its operator", "Canceled");
-                    return (modelData.departureDelay >= 0 ? "+" : "") + modelData.departureDelay;
+                    return (root.modelData.departureDelay >= 0 ? "+" : "") + root.modelData.departureDelay;
                 }
                 color: {
-                    if (modelData.departureDelay > 1 || modelData.disruption == Disruption.NoService)
+                    if (root.modelData.departureDelay > 1 || root.modelData.disruption === Disruption.NoService)
                         return Kirigami.Theme.negativeTextColor;
                     return Kirigami.Theme.positiveTextColor;
                 }
-                visible: modelData.hasExpectedDepartureTime || modelData.disruption == Disruption.NoService
+                visible: root.modelData.hasExpectedDepartureTime || root.modelData.disruption === Disruption.NoService
             }
         }
         RowLayout {
-            visible: modelData.mode != JourneySection.Waiting
+            visible: root.modelData.mode !== JourneySection.Waiting
             QQC2.Label {
                 text: modelData.from.name
                 Layout.fillWidth: true
@@ -58,13 +65,13 @@ Kirigami.AbstractListItem {
                 color: modelData.departurePlatformChanged ? Kirigami.Theme.negativeTextColor
                     : modelData.hasExpectedDeparturePlatform ? Kirigami.Theme.positiveTextColor
                     : Kirigami.Theme.textColor
-                visible: modelData.scheduledDeparturePlatform !== ""
+                visible: root.modelData.scheduledDeparturePlatform.length > 0
             }
         }
 
         // middle row: mode symbol, transport mode, duration
         Rectangle {
-            color: (modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
+            color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
             implicitWidth: modeIcon.width
             Layout.alignment: Qt.AlignHCenter

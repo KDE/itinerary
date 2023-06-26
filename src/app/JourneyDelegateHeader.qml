@@ -12,24 +12,30 @@ import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-TimelineDelegateHeaderBackground {
-    property var journey
+ColumnLayout {
+    id: root
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-    Kirigami.Theme.inherit: false
-    defaultColor: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
-    implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+    required property var journey
+
+    //defaultColor: journey.disruptionEffect == Disruption.NormalService ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeTextColor
 
     RowLayout {
         id: headerLayout
-        anchors.fill: parent
-        anchors.margins: Kirigami.Units.largeSpacing
+
+        Layout.fillWidth: true
+        Layout.bottomMargin: Kirigami.Units.largeSpacing
+        Layout.topMargin: Kirigami.Units.largeSpacing
+        Layout.leftMargin: Kirigami.Units.gridUnit
+        Layout.rightMargin: Kirigami.Units.gridUnit
+
+        spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: Localizer.formatTime(journey, "scheduledDepartureTime")
             color: Kirigami.Theme.textColor
             font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
+
         QQC2.Label {
             text: (journey.departureDelay >= 0 ? "+" : "") + journey.departureDelay;
             color: journey.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
@@ -45,4 +51,10 @@ TimelineDelegateHeaderBackground {
             font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
     }
+
+     Kirigami.Separator {
+         opacity: 0.5
+         Layout.fillWidth: true
+         Accessible.ignored: true
+     }
 }

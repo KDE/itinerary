@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2019-2021 Volker Krause <vkrause@kde.org>
+    SPDX-FileCopyrightText: 2023 Carl Schwan <carl@carlschwan.eu>
 
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -7,10 +8,11 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kitemmodels 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import "." as App
 
 Kirigami.ScrollablePage {
@@ -37,6 +39,11 @@ Kirigami.ScrollablePage {
         }
     ]
 
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Kirigami.Theme.inherit: false
+
+    leftPadding: 0
+    rightPadding: 0
 
     JourneyQueryModel {
         id: journeyModel
@@ -52,52 +59,62 @@ Kirigami.ScrollablePage {
 
     Component {
         id: journeyDelegate
-        Kirigami.Card {
+        MobileForm.FormCard {
             id: top
-            property var journey: model.journey
+            width: ListView.view.width
 
-            header: JourneyDelegateHeader {
-                card: top
-                journey: top.journey
-            }
+            required property int index
+            required property var journey
 
-            contentItem: Column {
+            contentItem: ColumnLayout {
                 id: contentLayout
-                spacing: Kirigami.Units.smallSpacing
+                spacing: 0
 
-                ListView {
-                    delegate: App.JourneySectionDelegate{}
-                    model: journeyView.currentIndex == index ? top.journey.sections : 0
-                    implicitHeight: contentHeight
-                    width: contentLayout.width
-                    boundsBehavior: Flickable.StopAtBounds
-                }
-                App.JourneySummaryDelegate {
+                JourneyDelegateHeader {
                     journey: top.journey
-                    visible: journeyView.currentIndex != index
-                    width: parent.width
                 }
-                QQC2.Button {
+
+                Repeater {
+                    delegate: App.JourneySectionDelegate {
+                        Layout.fillWidth: true
+                    }
+                    model: journeyView.currentIndex === top.index ? top.journey.sections : 0
+                }
+
+                App.JourneySummaryDelegate {
+                    id: summaryButton
+
+                    journey: top.journey
+                    visible: journeyView.currentIndex !== top.index
+                    onClicked: journeyView.currentIndex = top.index
+
+                    Layout.fillWidth: true
+                }
+
+                MobileForm.FormDelegateSeparator {
+                    below: summaryButton
+                    above: selectButton
+                }
+
+                MobileForm.FormButtonDelegate {
+                    id: selectButton
+
                     text: i18n("Select")
-                    icon.name: "document-save";
-                    visible: journeyView.currentIndex == index
-                    enabled: top.journey.disruptionEffect != Disruption.NoService
+                    icon.name: "checkbox";
+                    visible: journeyView.currentIndex === top.index
+                    enabled: top.journey.disruptionEffect !== Disruption.NoService
                     onClicked: root.journey = journey
                 }
-            }
-
-            onClicked: {
-                journeyView.currentIndex = index;
             }
         }
     }
 
-    Kirigami.CardsListView {
+    ListView {
         id: journeyView
-        anchors.fill: parent
         clip: true
         delegate: journeyDelegate
         model: sortedJourneyModel
+        spacing: Kirigami.Units.largeSpacing
 
         header: QQC2.ToolButton {
             icon.name: "go-up-symbolic"
@@ -137,7 +154,7 @@ Kirigami.ScrollablePage {
 
         QQC2.Label {
             anchors.centerIn: parent
-            width: parent.width
+            width: parent.width - Kirigami.Units.gridUnit * 4
             text: journeyModel.errorMessage
             color: Kirigami.Theme.negativeTextColor
             wrapMode: Text.Wrap
