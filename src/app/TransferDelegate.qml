@@ -10,17 +10,19 @@ import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property alias transfer: _controller.transfer
+
+    required property var transfer
     property bool journeyDetailsExpanded: false
     property QtObject controller: TransferDelegateController {
-        id: _controller
+        transfer: root.transfer
     }
 
-   header: TimelineDelegateHeaderBackground {
+    header: TimelineDelegateHeaderBackground {
         id: headerBackground
         card: root
         Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Window
@@ -62,6 +64,12 @@ Kirigami.AbstractCard {
                 visible: transfer.state == Transfer.Selected && transfer.journey.hasExpectedDepartureTime
                 Accessible.ignored: !visible
             }
+
+            QQC2.BusyIndicator {
+                running: visible
+                visible: transfer.state == Transfer.Searching
+                Accessible.ignored: !visible
+            }
         }
 
         Rectangle {
@@ -75,47 +83,53 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: Column {
-        id: topLayout
-        spacing: Kirigami.Units.smallSpacing
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
 
-        ListView {
-            delegate: App.JourneySectionDelegate{}
-            model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
-            implicitHeight: contentHeight
-            width: topLayout.width
-            boundsBehavior: Flickable.StopAtBounds
-        }
-        App.JourneySummaryDelegate {
-            journey: transfer.journey
-            visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
-            width: parent.width
-        }
-        QQC2.Button {
-            text: i18n("Select...")
-            visible: transfer.state == Transfer.Selected && journeyDetailsExpanded
-            onClicked: applicationWindow().pageStack.push(detailsComponent);
-            Accessible.ignored: !visible
-        }
-        RowLayout {
-            width: topLayout.width
-            visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
-            QQC2.BusyIndicator {
-                running: visible
-                visible: transfer.state == Transfer.Searching
+    contentItem: Item {
+        implicitHeight: topLayout.implicitHeight
+
+        ColumnLayout {
+            id: topLayout
+
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.top
+            }
+
+            spacing: 0
+
+            Repeater {
+                delegate: App.JourneySectionDelegate{
+                    Layout.fillWidth: true
+                }
+                model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
+            }
+
+            App.JourneySummaryDelegate {
+                journey: transfer.journey
+                visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
+                Layout.fillWidth: true
+                onClicked: journeyDetailsExpanded = true
+            }
+
+            MobileForm.FormButtonDelegate {
+                icon.name: "checkbox"
+                text: i18n("Select transfer")
+                onClicked: root.clicked()
+                visible: (transfer.state === Transfer.Pending || transfer.state === Transfer.Searching)
                 Accessible.ignored: !visible
             }
-            QQC2.Label {
-                text: i18n("Select transfer...")
-                Layout.fillWidth: true
-                Accessible.ignored: !parent.visible
-            }
-            QQC2.ToolButton {
+
+            MobileForm.FormButtonDelegate {
                 icon.name: "edit-delete"
                 text: i18n("Delete transfer")
-                display: QQC2.AbstractButton.IconOnly
                 onClicked: TransferManager.discardTransfer(transfer)
-                Accessible.ignored: !parent.visible
+                visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
+                Accessible.ignored: !visible
             }
         }
     }
