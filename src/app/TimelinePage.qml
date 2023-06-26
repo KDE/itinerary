@@ -298,9 +298,7 @@ Kirigami.ScrollablePage {
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.Transfer
-            App.TransferDelegate {
-                transfer: model.transfer
-            }
+            App.TransferDelegate {}
         }
     }
 
