@@ -233,7 +233,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("About")
                 iconName: "help-about-symbolic"
                 enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(aboutComponent)
+                onTriggered: pageStack.pushDialogLayer('qrc:/AboutPage.qml')
             },
             Kirigami.Action {
                 id: devModeAction
@@ -313,10 +313,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: settingsComponent
         App.SettingsPage {}
-    }
-    Component {
-        id: aboutComponent
-        App.AboutPage {}
     }
     Component {
         id: statisticsComponent

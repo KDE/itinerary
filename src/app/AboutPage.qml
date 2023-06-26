@@ -11,9 +11,14 @@ import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.Page {
+import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+
+MobileForm.AboutPage {
     id: root
+
     title: i18n("About")
+
+    aboutData: About
 
     ListModel {
         id: licenseModel
@@ -128,39 +133,37 @@ Kirigami.Page {
 
     Component {
         id: licenseDelegate
-        Kirigami.AbstractListItem {
+
+        MobileForm.AbstractFormDelegate {
             visible: !model.platform || model.platform == Qt.platform.os
-            highlighted: false
-            Column {
+            background: null
+
+            contentItem: ColumnLayout {
                 id: layout
                 QQC2.Label {
                     text: model.name
                     font.weight: Font.Bold
                     wrapMode: Text.WordWrap
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillWidth: true
                 }
                 QQC2.Label {
                     text: model.copyright != undefined ? i18n("Copyright: %1", model.copyright) : ""
                     visible: model.copyright != undefined
                     wrapMode: Text.WordWrap
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillWidth: true
                 }
                 QQC2.Label {
                     text: model.url != undefined ? i18n("Homepage: <a href=\"%1\">%1</a>", model.url) : ""
                     visible: model.url != undefined
                     onLinkActivated: Qt.openUrlExternally(link)
                     wrapMode: Text.WordWrap
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillWidth: true
                 }
                 QQC2.Label {
                     text: i18n("License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>", model.licenseId, model.licenseName)
                     wrapMode: Text.WordWrap
                     onLinkActivated: Qt.openUrlExternally(link)
-                    anchors.left: parent.left
-                    anchors.right: parent.right
+                    Layout.fillWidth: true
                 }
             }
         }
@@ -168,10 +171,10 @@ Kirigami.Page {
 
     Component {
         id: transportDataDelegate
-        Kirigami.AbstractListItem {
-            width: ListView.view.width
-            highlighted: false
-            ColumnLayout {
+
+        MobileForm.AbstractFormDelegate {
+            background: null
+            contentItem: ColumnLayout {
                 QQC2.Label {
                     Layout.fillWidth: true
                     wrapMode: Text.WordWrap
@@ -189,84 +192,54 @@ Kirigami.Page {
         }
     }
 
-    header: QQC2.TabBar {
-        id: tabBar
-        QQC2.TabButton { text: i18n("Application") }
-        QQC2.TabButton { text: i18n("Transport Data") }
-        QQC2.TabButton { text: i18n("Version") }
-    }
-
-    StackLayout {
-        id: tabLayout
-        anchors.fill: parent
-        currentIndex: tabBar.currentIndex
-
-        ColumnLayout {
-            id: appPage
-            width: parent.width
-            height: parent.height
-
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
-                wrapMode: Text.WordWrap
-            }
-
-            Kirigami.Separator { Layout.fillWidth: true }
-
-            ListView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.preferredHeight: contentHeight
-
-                boundsMovement: Flickable.StopAtBounds
-                clip: true
-                model: licenseModel
+    extraContent: [
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
                 spacing: 0
-                delegate: licenseDelegate
+
+                MobileForm.FormCardHeader {
+                    title: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
+                }
+
+                Repeater {
+                    model: licenseModel
+                    delegate: licenseDelegate
+                }
             }
-        }
-
-        ColumnLayout {
-            id: transportDataPage
-            width: parent.width
-            height: parent.height
-
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: i18n("KDE Itinerary uses public transport data from the following sources.")
-                wrapMode: Text.WordWrap
-            }
-
-            Kirigami.Separator { Layout.fillWidth: true }
-
-            ListView {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Layout.preferredHeight: contentHeight
-
-                boundsMovement: Flickable.StopAtBounds
-                clip: true
-                model: LiveDataManager.publicTransportManager.attributions
+        },
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
                 spacing: 0
-                delegate: transportDataDelegate
+
+                MobileForm.FormCardHeader {
+                    title: i18n("KDE Itinerary uses public transport data from the following sources.")
+                }
+
+                Repeater {
+                    model: LiveDataManager.publicTransportManager.attributions
+                    delegate: transportDataDelegate
+                }
             }
-        }
+        },
 
-        ColumnLayout {
-            id: versionPage
-            width: parent.width
-            height: parent.height
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+            contentItem: ColumnLayout {
+                spacing: 0
 
-            QQC2.Label {
-                id: versionLabel
-                Layout.fillWidth: true
-                text: i18n("Application version: %1", ApplicationController.version)
+                MobileForm.FormCardHeader {
+                    title: i18n("Developer information")
+                }
 
-                // developement mode activation
-                property int tapCount: 0
-                TapHandler {
-                    onTapped: {
+                MobileForm.FormTextDelegate {
+                    id: versionLabel
+                    text: i18n("Application version: %1", ApplicationController.version)
+
+                    // developement mode activation
+                    property int tapCount: 0
+                    onClicked: {
                         versionLabel.tapCount++;
                         if (versionLabel.tapCount == 7) {
                             Settings.developmentMode = true;
@@ -274,20 +247,15 @@ Kirigami.Page {
                         }
                     }
                 }
-            }
 
-            Kirigami.Separator { Layout.fillWidth: true }
+                MobileForm.FormDelegateSeparator { }
 
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: i18n("Extractor capabilities:")
-            }
-
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: ApplicationController.extractorCapabilities
-                font.family: "monospace"
+                MobileForm.FormTextDelegate {
+                    text: i18n("Extractor capabilities:")
+                    description: ApplicationController.extractorCapabilities
+                    font.family: "monospace"
+                }
             }
         }
-    }
+    ]
 }
