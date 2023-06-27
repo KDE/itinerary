@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"POT-Creation-Date: 2023-06-27 00:48+0000\n"
 "PO-Revision-Date: 2023-06-24 07:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: app/AboutPage.qml:16 app/main.qml:229
+#: app/AboutPage.qml:16 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
@@ -643,7 +643,7 @@ msgstr "მონაცემების მომწოდებლები: 
 msgid "Add Document"
 msgstr "დოკუმენტის დამატება"
 
-#: app/DocumentsCard.qml:37 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:124
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "ყველა ფაილი (*.*)"
@@ -1071,7 +1071,7 @@ msgstr "ბილეთის წაშლა"
 msgid "Do you really want to delete this pass?"
 msgstr "მართლა გნებავთ, ეს ბილეთი წაშალოთ?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:153
+#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1186,7 +1186,7 @@ msgstr "%1-ის ტესტი (%2)"
 msgid "Recovery (%1)"
 msgstr "აღდგენა (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:192
+#: app/HealthCertificatePage.qml:17 app/main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr "ჯანმრთელობის სერტიფიკატები"
@@ -1685,7 +1685,7 @@ msgstr[1] "%1 ცვლილება"
 msgid "Itinerary change"
 msgstr "მარშრუტის ცვლილება"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:203
+#: app/LiveStatusPage.qml:17 app/main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr "მიმდინარე სტატუსი"
@@ -1896,112 +1896,112 @@ msgstr "Itinerary-ის მითითებულ გვერდზე გ�
 msgid "PkPass or JSON-LD file to import."
 msgstr "შემოსატანი PkPass ან JSON-LD ფაილი."
 
-#: app/main.qml:53
+#: app/main.qml:57
 #, kde-format
 msgid "Import"
 msgstr "შემოტანა"
 
-#: app/main.qml:56
+#: app/main.qml:60
 #, kde-format
 msgid "Open File..."
 msgstr "ფაილის გახსნა..."
 
-#: app/main.qml:64
+#: app/main.qml:68
 #, kde-format
 msgid "Paste"
 msgstr "ჩასმა"
 
-#: app/main.qml:73
+#: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "შტრიხკოდის სკანირება..."
 
-#: app/main.qml:82
+#: app/main.qml:86
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "კალენდარიდან დამატება..."
 
-#: app/main.qml:97
+#: app/main.qml:101
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Deutsche Bahn-Is ონლაინ ბილეთი..."
 
-#: app/main.qml:105
+#: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF-ის ონლაინ ბილეთი..."
 
-#: app/main.qml:118
+#: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
 msgstr "ჯავშნის შემოტანა"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass ფაილები (*.pkpass)"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF ფაილები (*.pdf)"
 
-#: app/main.qml:120 app/main.qml:129
+#: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Itinerary-ის ფაილები (*.itinerary)"
 
-#: app/main.qml:127
+#: app/main.qml:131
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "მოგზაურობის ინფორმაციის გატანა"
 
-#: app/main.qml:158 app/PassPage.qml:88
+#: app/main.qml:162 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "შემოტანა..."
 
-#: app/main.qml:163
+#: app/main.qml:167
 #, kde-format
 msgid "Check for Updates"
 msgstr "განახლებების &შემოწმება"
 
-#: app/main.qml:171
+#: app/main.qml:175
 #, kde-format
 msgid "Download Maps"
 msgstr "რუკების გადმოწერა"
 
-#: app/main.qml:179 app/StatisticsPage.qml:16
+#: app/main.qml:183 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "სტატისტიკა"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes && Programs"
 msgstr "ბილეთები და პროგრამები"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes & Programs"
 msgstr "ბილეთები და პროგრამები"
 
-#: app/main.qml:211
+#: app/main.qml:215
 #, kde-format
 msgid "Settings..."
 msgstr "მორგება..."
 
-#: app/main.qml:217
+#: app/main.qml:221
 #, kde-format
 msgid "Export..."
 msgstr "გატანა..."
 
-#: app/main.qml:222 app/WelcomePage.qml:17
+#: app/main.qml:226 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "დახმარება"
 
-#: app/main.qml:292
+#: app/main.qml:296
 #, kde-format
 msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."

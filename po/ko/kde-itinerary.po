@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"POT-Creation-Date: 2023-06-27 00:48+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: app/AboutPage.qml:16 app/main.qml:229
+#: app/AboutPage.qml:16 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "정보"
@@ -649,7 +649,7 @@ msgstr "데이터 공급자: %1"
 msgid "Add Document"
 msgstr "문서 추가"
 
-#: app/DocumentsCard.qml:37 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:124
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "모든 파일 (*.*)"
@@ -1081,7 +1081,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:153
+#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -1196,7 +1196,7 @@ msgstr "검사 %1(%2)"
 msgid "Recovery (%1)"
 msgstr "완치(%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:192
+#: app/HealthCertificatePage.qml:17 app/main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr "건강 증명서"
@@ -1691,7 +1691,7 @@ msgstr[0] "환승 %1회"
 msgid "Itinerary change"
 msgstr "여정 변경"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:203
+#: app/LiveStatusPage.qml:17 app/main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr "실시간 상태"
@@ -1905,114 +1905,114 @@ msgstr "지정한 페이지의 여행 정보 열기"
 msgid "PkPass or JSON-LD file to import."
 msgstr "가져올 PkPass 및 JSON-LD 파일입니다."
 
-#: app/main.qml:53
+#: app/main.qml:57
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import"
 msgstr "가져오기..."
 
-#: app/main.qml:56
+#: app/main.qml:60
 #, kde-format
 msgid "Open File..."
 msgstr ""
 
-#: app/main.qml:64
+#: app/main.qml:68
 #, kde-format
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: app/main.qml:73
+#: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "바코드 스캔..."
 
-#: app/main.qml:82
+#: app/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Add from calendar..."
 msgid "Add from Calendar..."
 msgstr "캘린더에서 추가..."
 
-#: app/main.qml:97
+#: app/main.qml:101
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr ""
 
-#: app/main.qml:105
+#: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr ""
 
-#: app/main.qml:118
+#: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
 msgstr "예약 가져오기"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass 파일 (*.pkpass)"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF 파일 (*.pdf)"
 
-#: app/main.qml:120 app/main.qml:129
+#: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE 여행 정보 파일 (*.itinerary)"
 
-#: app/main.qml:127
+#: app/main.qml:131
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "여행 정보 내보내기"
 
-#: app/main.qml:158 app/PassPage.qml:88
+#: app/main.qml:162 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "가져오기..."
 
-#: app/main.qml:163
+#: app/main.qml:167
 #, kde-format
 msgid "Check for Updates"
 msgstr "업데이트 확인"
 
-#: app/main.qml:171
+#: app/main.qml:175
 #, kde-format
 msgid "Download Maps"
 msgstr "지도 다운로드"
 
-#: app/main.qml:179 app/StatisticsPage.qml:16
+#: app/main.qml:183 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "통계"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes && Programs"
 msgstr "패스와 프로그램"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes & Programs"
 msgstr "패스와 프로그램"
 
-#: app/main.qml:211
+#: app/main.qml:215
 #, kde-format
 msgid "Settings..."
 msgstr "설정..."
 
-#: app/main.qml:217
+#: app/main.qml:221
 #, kde-format
 msgid "Export..."
 msgstr "내보내기..."
 
-#: app/main.qml:222 app/WelcomePage.qml:17
+#: app/main.qml:226 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: app/main.qml:292
+#: app/main.qml:296
 #, kde-format
 msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."

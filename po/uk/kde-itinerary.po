@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-24 00:51+0000\n"
+"POT-Creation-Date: 2023-06-27 00:48+0000\n"
 "PO-Revision-Date: 2023-06-24 07:58+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: app/AboutPage.qml:16 app/main.qml:229
+#: app/AboutPage.qml:16 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "Про програму"
@@ -652,7 +652,7 @@ msgstr "Надавачі даних: %1"
 msgid "Add Document"
 msgstr "Додати документ"
 
-#: app/DocumentsCard.qml:37 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:124
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "усі файли (*.*)"
@@ -1080,7 +1080,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:153
+#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1195,7 +1195,7 @@ msgstr "Тест %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Відновлення (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:192
+#: app/HealthCertificatePage.qml:17 app/main.qml:196
 #, kde-format
 msgid "Health Certificates"
 msgstr "Сертифікати здоров'я"
@@ -1698,7 +1698,7 @@ msgstr[3] "%1 зміна"
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:203
+#: app/LiveStatusPage.qml:17 app/main.qml:207
 #, kde-format
 msgid "Live Status"
 msgstr "Інтерактивний стан"
@@ -1910,112 +1910,112 @@ msgstr "Відкрити Itinerary на вказаній сторінці"
 msgid "PkPass or JSON-LD file to import."
 msgstr "Файл PkPass або JSON-LD, який слід імпортувати."
 
-#: app/main.qml:53
+#: app/main.qml:57
 #, kde-format
 msgid "Import"
 msgstr "Імпортувати"
 
-#: app/main.qml:56
+#: app/main.qml:60
 #, kde-format
 msgid "Open File..."
 msgstr "Відкрити файл…"
 
-#: app/main.qml:64
+#: app/main.qml:68
 #, kde-format
 msgid "Paste"
 msgstr "Вставити"
 
-#: app/main.qml:73
+#: app/main.qml:77
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Сканувати штрихкод…"
 
-#: app/main.qml:82
+#: app/main.qml:86
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Додати з календаря…"
 
-#: app/main.qml:97
+#: app/main.qml:101
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Інтернет-квиток Deutsche Bahn…"
 
-#: app/main.qml:105
+#: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Інтернет-квиток SNCF…"
 
-#: app/main.qml:118
+#: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
 msgstr "Імпортувати бронювання"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "файли PkPass (*.pkpass)"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "файли PDF (*.pdf)"
 
-#: app/main.qml:120 app/main.qml:129
+#: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "файли путівних даних KDE (*.itinerary)"
 
-#: app/main.qml:127
+#: app/main.qml:131
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Експортувати путівні дані"
 
-#: app/main.qml:158 app/PassPage.qml:88
+#: app/main.qml:162 app/PassPage.qml:88
 #, kde-format
 msgid "Import..."
 msgstr "Імпортувати…"
 
-#: app/main.qml:163
+#: app/main.qml:167
 #, kde-format
 msgid "Check for Updates"
 msgstr "Перевірити наявність оновлень"
 
-#: app/main.qml:171
+#: app/main.qml:175
 #, kde-format
 msgid "Download Maps"
 msgstr "Отримати карти"
 
-#: app/main.qml:179 app/StatisticsPage.qml:16
+#: app/main.qml:183 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Статистика"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Безкоштовні квитки і програми"
 
-#: app/main.qml:186
+#: app/main.qml:190
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Безкоштовні квитки і програми"
 
-#: app/main.qml:211
+#: app/main.qml:215
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
 
-#: app/main.qml:217
+#: app/main.qml:221
 #, kde-format
 msgid "Export..."
 msgstr "Експортувати…"
 
-#: app/main.qml:222 app/WelcomePage.qml:17
+#: app/main.qml:226 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
 
-#: app/main.qml:292
+#: app/main.qml:296
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."
