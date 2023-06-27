@@ -71,6 +71,18 @@ Kirigami.ScrollablePage {
         }
     }
 
+    // either true/false if all mode switches are in that position, undefined otherwise
+    function fullModeSwitchState()
+    {
+        let state = longDistanceSwitch.checked;
+        for (const s of [localTrainSwitch, rapidTransitSwitch, busSwitch, ferrySwitch]) {
+            if (s.checked != state) {
+                return undefined;
+            }
+        }
+        return state;
+    }
+
     ColumnLayout {
         anchors.fill: parent
 
@@ -139,7 +151,7 @@ Kirigami.ScrollablePage {
                     id: searchButton
                     icon.name: "search"
                     text: i18n("Search Journey")
-                    enabled: root.departureStop != undefined && root.arrivalStop != undefined
+                    enabled: root.departureStop != undefined && root.arrivalStop != undefined && root.fullModeSwitchState() !== false
                     onClicked: {
                         applicationWindow().pageStack.push(journeyQueryPage);
                         const req = applicationWindow().pageStack.currentItem.journeyRequest;
@@ -150,8 +162,77 @@ Kirigami.ScrollablePage {
                         console.log(dt, dateInput.selectedDate, timeInput.value);
                         req.dateTime = dt;
                         req.maximumResults = 6;
+
+                        let lineModes = [];
+                        if (root.fullModeSwitchState() == undefined) {
+                            if (longDistanceSwitch.checked)
+                                lineModes.push(Line.LongDistanceTrain, Line.Train);
+                            if (localTrainSwitch.checked)
+                                lineModes.push(Line.LocalTrain);
+                            if (rapidTransitSwitch.checked)
+                                lineModes.push(Line.RapidTransit, Line.Metro, Line.Tramway, Line.RailShuttle);
+                            if (busSwitch.checked)
+                                lineModes.push(Line.Bus, Line.Coach);
+                            if (ferrySwitch.checked)
+                                lineModes.push(Line.Ferry, Line.Boat);
+                        }
+                        req.lineModes = lineModes;
+
                         console.log(req);
                         applicationWindow().pageStack.currentItem.journeyRequest = req;
+                    }
+                }
+
+                MobileForm.FormDelegateSeparator {}
+
+                MobileForm.FormSwitchDelegate {
+                    id: longDistanceSwitch
+                    text: i18nc("journey query search constraint, title", "Long distance trains")
+                    description: i18nc("journey query search constraint, description", "High speed or intercity trains")
+                    checked: true
+                    leading: Kirigami.Icon {
+                        source: PublicTransport.lineModeIcon(Line.LongDistanceTrain)
+                        isMask: true
+                    }
+                }
+                MobileForm.FormSwitchDelegate {
+                    id: localTrainSwitch
+                    text: i18nc("journey query search constraint, title", "Local trains")
+                    description: i18nc("journey query search constraint, description", "Regional or local trains")
+                    checked: true
+                    leading: Kirigami.Icon {
+                        source: PublicTransport.lineModeIcon(Line.LocalTrain)
+                        isMask: true
+                    }
+                }
+                MobileForm.FormSwitchDelegate {
+                    id: rapidTransitSwitch
+                    text: i18nc("journey query search constraint, title", "Rapid transit")
+                    description: i18nc("journey query search constraint, description", "Rapid transit, metro, trams")
+                    checked: true
+                    leading: Kirigami.Icon {
+                        source: PublicTransport.lineModeIcon(Line.Tramway)
+                        isMask: true
+                    }
+                }
+                MobileForm.FormSwitchDelegate {
+                    id: busSwitch
+                    text: i18nc("journey query search constraint, title", "Bus")
+                    description: i18nc("journey query search constraint, description", "Local or regional bus services")
+                    checked: true
+                    leading: Kirigami.Icon {
+                        source: PublicTransport.lineModeIcon(Line.Bus)
+                        isMask: true
+                    }
+                }
+                MobileForm.FormSwitchDelegate {
+                    id: ferrySwitch
+                    text: i18nc("journey query search constraint, title", "Ferry")
+                    description: i18nc("journey query search constraint, description", "Boats or ferries")
+                    checked: true
+                    leading: Kirigami.Icon {
+                        source: PublicTransport.lineModeIcon(Line.Ferry)
+                        isMask: true
                     }
                 }
             }
