@@ -1,8 +1,10 @@
 # KDE Itinerary
 
-Itinerary and boarding pass management application.
+A digital travel assistant that supports you while traveling without compromising your privacy.
 
-## Using KDE Itinerary
+![KDE Itinerary timeline view](https://cdn.kde.org/screenshots/itinerary/kde-itinerary-timeline.png)
+
+## Getting KDE Itinerary
 
 ### Pre-built packages
 
@@ -34,5 +36,10 @@ General introduction: https://community.kde.org/Get_Involved
 Building:
 - Android: https://develop.kde.org/docs/packaging/android/building_applications/
 - Othe platforms: https://community.kde.org/Get_Involved/development
+
+Important external components:
+- Travel document extractor engine: https://invent.kde.org/pim/kitinerary
+- Public transport data access: https://invent.kde.org/libraries/kpublictransport
+- Indoor map renderer: https://invent.kde.org/libraries/kosmindoormap
 
 Matrix channel: [#itinerary:kde.org](https://matrix.to/#/#itinerary:kde.org)
