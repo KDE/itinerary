@@ -126,7 +126,7 @@ Kirigami.AbstractCard {
                 }
                 visible: transfer.state === Transfer.Pending
                     || transfer.state === Transfer.Searching
-                    || transfer.state === Transfer.Selected && !journeyDetailsExpanded
+                    || transfer.state === Transfer.Selected && journeyDetailsExpanded
                 Accessible.ignored: !visible
             }
 

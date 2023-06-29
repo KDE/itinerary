@@ -33,6 +33,12 @@ Kirigami.ScrollablePage {
         Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
     }
 
+    background: Rectangle {
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+    }
+
     actions {
         contextualActions: [
             Kirigami.Action {
@@ -140,6 +146,8 @@ Kirigami.ScrollablePage {
             required property int index
             required property var journey
 
+            width: ListView.view.width
+
             contentItem: ColumnLayout {
                 id: contentLayout
 
@@ -167,8 +175,8 @@ Kirigami.ScrollablePage {
                 }
 
                 MobileForm.FormDelegateSeparator {
-                    below: summaryButton
                     above: selectButton
+                    visible: journeyView.currentIndex === top.index
                 }
 
                 MobileForm.FormButtonDelegate {
@@ -187,82 +195,88 @@ Kirigami.ScrollablePage {
         }
     }
 
-    header: ColumnLayout {
-        id: topLayout
+    header: QQC2.Pane {
+        Kirigami.Theme.colorSet: Kirigami.Theme.Header
+        Kirigami.Theme.inherit: false
 
-        QQC2.Label {
-            text: {
-                if (!Util.isLocationChange(root.reservation)) {
-                    return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
-                }
-                return i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
-            }
-            visible: transfer.alignment == Transfer.After
-            Layout.fillWidth: true
-            Layout.margins: Kirigami.Units.largeSpacing
-            Layout.bottomMargin: 0
-        }
-        QQC2.Label {
-            Layout.fillWidth: true
-            text: {
-                if (!Util.isLocationChange(root.reservation)) {
-                    return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
-                }
-                return i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
-            }
-            visible: transfer.alignment == Transfer.Before
-            Layout.margins: Kirigami.Units.largeSpacing
-            Layout.bottomMargin: 0
-        }
+        contentItem: ColumnLayout {
+            id: topLayout
 
-        QQC2.ComboBox {
-            id: favLocCombo
-            model: FavoriteLocationModel
-            visible: transfer.floatingLocationType == Transfer.FavoriteLocation
-            textRole: "display"
-            Layout.fillWidth: true
-            Layout.margins: Kirigami.Units.largeSpacing
-            Layout.bottomMargin: 0
-            onActivated: {
-                var favLoc = delegateModel.items.get(currentIndex)
-                console.log(favLoc.model.favoriteLocation);
-                root.transfer = TransferManager.setFavoriteLocationForTransfer(root.transfer, favLoc.model.favoriteLocation);
-                queryJourney();
+            QQC2.Label {
+                text: {
+                    if (!Util.isLocationChange(root.reservation)) {
+                        return i18n("%1 ends at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                    }
+                    return i18n("Preceding arrival %1 at %2", Localizer.formatTime(transfer, "anchorTime"), transfer.fromName);
+                }
+                visible: transfer.alignment === Transfer.After
+                Layout.fillWidth: true
+            }
+
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: {
+                    if (!Util.isLocationChange(root.reservation)) {
+                        return i18n("%1 starts at %2", root.reservation.reservationFor.name, Localizer.formatTime(transfer, "anchorTime"));
+                    }
+                    return i18n("Following departure %1 from %2", Localizer.formatTime(transfer, "anchorTime"), transfer.toName);
+                }
+                visible: transfer.alignment === Transfer.Before
+            }
+
+            QQC2.ComboBox {
+                id: favLocCombo
+                model: FavoriteLocationModel
+                visible: transfer.floatingLocationType === Transfer.FavoriteLocation
+                textRole: "display"
+                Layout.fillWidth: true
+                onActivated: {
+                    var favLoc = delegateModel.items.get(currentIndex)
+                    console.log(favLoc.model.favoriteLocation);
+                    root.transfer = TransferManager.setFavoriteLocationForTransfer(root.transfer, favLoc.model.favoriteLocation);
+                    queryJourney();
+                }
             }
         }
     }
 
     ListView {
         id: journeyView
+
         clip: true
         delegate: journeyDelegate
         model: sortedJourneyModel
         spacing: Kirigami.Units.largeSpacing
 
-        header: QQC2.ToolButton {
-            icon.name: "go-up-symbolic"
+        header: VerticalNavigationButton {
             visible: journeyModel.canQueryPrevious
+            width: journeyView.width
+            text: i18nc("@action:button", "Load earlier connections")
+            iconName: "go-up-symbolic"
             onClicked: journeyModel.queryPrevious()
-            width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
-        footer: ColumnLayout {
-            width: journeyView.width - Kirigami.Units.largeSpacing * 4
+        footer: VerticalNavigationButton {
+            visible: journeyModel.canQueryNext
+            width: journeyView.width
+            iconName: "go-down-symbolic"
+            text: i18nc("@action:button", "Load later connections")
+            onClicked: journeyModel.queryNext()
 
-            QQC2.ToolButton {
-                Layout.fillWidth: true
-                icon.name: "go-down-symbolic"
-                visible: journeyModel.canQueryNext
-                onClicked: journeyModel.queryNext()
-            }
-            QQC2.Label {
-                Layout.fillWidth: true
-                text: i18n("Data providers: %1", PublicTransport.attributionSummary(journeyModel.attributions))
+            MobileForm.FormCard {
                 visible: journeyModel.attributions.length > 0
-                wrapMode: Text.Wrap
-                font.pointSize: Kirigami.Units.pointSize * 0.8
-                font.italic: true
-                onLinkActivated: Qt.openUrlExternally(link)
+
+                Layout.fillWidth: true
+
+                contentItem: ColumnLayout {
+                    spacing: 0
+
+                    MobileForm.FormTextDelegate {
+                        text: i18n("Data providers:")
+                        description: PublicTransport.attributionSummary(journeyModel.attributions)
+                        onLinkActivated: Qt.openUrlExternally(link)
+                    }
+                }
             }
         }
 

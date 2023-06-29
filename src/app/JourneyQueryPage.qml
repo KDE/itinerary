@@ -59,8 +59,10 @@ Kirigami.ScrollablePage {
 
     Component {
         id: journeyDelegate
+
         MobileForm.FormCard {
             id: top
+
             width: ListView.view.width
 
             required property int index
@@ -92,7 +94,7 @@ Kirigami.ScrollablePage {
                 }
 
                 MobileForm.FormDelegateSeparator {
-                    below: summaryButton
+                    visible: journeyView.currentIndex === top.index
                     above: selectButton
                 }
 
@@ -111,39 +113,41 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: journeyView
+
         clip: true
         delegate: journeyDelegate
         model: sortedJourneyModel
         spacing: Kirigami.Units.largeSpacing
 
-        header: QQC2.ToolButton {
-            icon.name: "go-up-symbolic"
+        header: VerticalNavigationButton {
             visible: journeyModel.canQueryPrevious
+            width: journeyView.width
+            text: i18nc("@action:button", "Load earlier connections")
+            iconName: "go-up-symbolic"
             onClicked: journeyModel.queryPrevious()
-            x: Kirigami.Units.largeSpacing * 2
-            width: journeyView.width - Kirigami.Units.largeSpacing * 4
         }
 
-        footer: Column {
-            id: footerLayout
-            spacing: Kirigami.Units.smallSpacing
+        footer: VerticalNavigationButton {
+            visible: journeyModel.canQueryNext
+            width: journeyView.width
+            iconName: "go-down-symbolic"
+            text: i18nc("@action:button", "Load later connections")
+            onClicked: journeyModel.queryNext()
 
-            x: Kirigami.Units.largeSpacing * 2
-            width: journeyView.width - Kirigami.Units.largeSpacing * 4
-            QQC2.ToolButton {
-                width: footerLayout.width
-                icon.name: "go-down-symbolic"
-                visible: journeyModel.canQueryNext
-                onClicked: journeyModel.queryNext()
-            }
-            QQC2.Label {
-                width: footerLayout.width
-                text: i18n("Data providers: %1", PublicTransport.attributionSummary(journeyModel.attributions))
+            MobileForm.FormCard {
                 visible: journeyModel.attributions.length > 0
-                wrapMode: Text.Wrap
-                font.pointSize: Kirigami.Units.pointSize * 0.8
-                font.italic: true
-                onLinkActivated: Qt.openUrlExternally(link)
+
+                Layout.fillWidth: true
+
+                contentItem: ColumnLayout {
+                    spacing: 0
+
+                    MobileForm.FormTextDelegate {
+                        text: i18n("Data providers:")
+                        description: PublicTransport.attributionSummary(journeyModel.attributions)
+                        onLinkActivated: Qt.openUrlExternally(link)
+                    }
+                }
             }
         }
 
