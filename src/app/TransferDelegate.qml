@@ -119,8 +119,14 @@ Kirigami.AbstractCard {
             MobileForm.FormButtonDelegate {
                 icon.name: "checkbox"
                 text: i18n("Select transfer")
-                onClicked: root.clicked()
-                visible: (transfer.state === Transfer.Pending || transfer.state === Transfer.Searching)
+                onClicked: if (transfer.state === Transfer.Selected) {
+                    applicationWindow().pageStack.push(detailsComponent)
+                } else {
+                    root.clicked()
+                }
+                visible: transfer.state === Transfer.Pending
+                    || transfer.state === Transfer.Searching
+                    || transfer.state === Transfer.Selected && !journeyDetailsExpanded
                 Accessible.ignored: !visible
             }
 
