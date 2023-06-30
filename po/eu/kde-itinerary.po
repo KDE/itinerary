@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2020-06-14 19:59+0200\n"
 "Last-Translator: Ander Elortondo <ander.elor@gmail.com>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -2296,24 +2296,24 @@ msgstr "Erreserba bat inportatua."
 msgid "No ticket found"
 msgstr ""
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Tren txartela"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, fuzzy, kde-format
 #| msgid "Booking reference:"
 msgid "Booking reference"
 msgstr "Erreserba erreferentzia:"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr ""

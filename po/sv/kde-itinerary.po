@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2022-08-02 22:13+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2236,24 +2236,24 @@ msgstr "Ingenting importerat."
 msgid "No ticket found"
 msgstr "Inga platser hittades"
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Tågbiljett"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, fuzzy, kde-format
 #| msgid "Booking reference:"
 msgid "Booking reference"
 msgstr "Bokningsnummer:"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr ""

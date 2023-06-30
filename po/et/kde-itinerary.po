@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2287,24 +2287,24 @@ msgstr "Imporditi üks reserveering."
 msgid "No ticket found"
 msgstr ""
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Rongipilet"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, fuzzy, kde-format
 #| msgid "Booking reference:"
 msgid "Booking reference"
 msgstr "Reserveeringu viide:"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr ""

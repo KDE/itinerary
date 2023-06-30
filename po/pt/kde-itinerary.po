@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2023-06-24 10:19+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2143,22 +2143,22 @@ msgstr "Bilhete importado"
 msgid "No ticket found"
 msgstr "Não foi encontrado nenhum bilhete"
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, kde-format
 msgid "Online Ticket"
 msgstr "Bilhete 'Online'"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr "Apelido"
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, kde-format
 msgid "Booking reference"
 msgstr "Referência da reserva"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr "Procurar..."

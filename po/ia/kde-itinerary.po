@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
-"PO-Revision-Date: 2023-06-21 16:26+0200\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"PO-Revision-Date: 2023-06-29 10:28+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -515,7 +515,7 @@ msgstr "Importa eventos seligite"
 #: app/CalendarImportPage.qml:66
 #, kde-format
 msgid "No importable events found in this calendar."
-msgstr ""
+msgstr "Necun eventos importabile trovate in iste calendario."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
@@ -2134,22 +2134,22 @@ msgstr "Billet importate."
 msgid "No ticket found"
 msgstr "Nulle billet trovate"
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, kde-format
 msgid "Online Ticket"
 msgstr "Billet In Linea"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr "Nomine de Familia"
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, kde-format
 msgid "Booking reference"
 msgstr "Referentia de reservation"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr "Cerca..."

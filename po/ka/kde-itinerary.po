@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-27 00:48+0000\n"
+"POT-Creation-Date: 2023-06-30 00:48+0000\n"
 "PO-Revision-Date: 2023-06-24 07:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2134,22 +2134,22 @@ msgstr "ბილეთი შემოტანილია"
 msgid "No ticket found"
 msgstr "ბილეთი ვერ მოიძებნა"
 
-#: app/OnlineImportPage.qml:44
+#: app/OnlineImportPage.qml:45
 #, kde-format
 msgid "Online Ticket"
 msgstr "ონლაინ ბილეთი"
 
-#: app/OnlineImportPage.qml:48
+#: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
 msgstr "საოჯახო სახელი"
 
-#: app/OnlineImportPage.qml:56
+#: app/OnlineImportPage.qml:57
 #, kde-format
 msgid "Booking reference"
 msgstr "მიმართვა ჯავშანზე"
 
-#: app/OnlineImportPage.qml:62
+#: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
 msgstr "ძებნა..."
