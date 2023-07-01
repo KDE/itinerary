@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-01 00:49+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -281,7 +281,7 @@ msgid "No camera available."
 msgstr "사용 가능한 카메라가 없습니다."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:74 app/TransferDelegate.qml:45
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:47
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1에서 %2(으)로|/|%1에서 %2$[으 %2]로"
@@ -614,19 +614,19 @@ msgstr "웹사이트"
 msgid "Departures"
 msgstr "출발"
 
-#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:27
-#: app/TransferPage.qml:56
+#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:29
+#: app/TransferPage.qml:63
 #, kde-format
 msgid "Earlier"
 msgstr "더 일찍"
 
-#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:33
-#: app/TransferPage.qml:62
+#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:35
+#: app/TransferPage.qml:69
 #, kde-format
 msgid "Later"
 msgstr "더 나중"
 
-#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:38
+#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:45
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -638,8 +638,7 @@ msgctxt "destination"
 msgid "To:"
 msgstr "목적지:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:124
-#: app/TransferPage.qml:246
+#: app/DepartureQueryPage.qml:162
 #, kde-format
 msgid "Data providers: %1"
 msgstr "데이터 공급자: %1"
@@ -1556,87 +1555,107 @@ msgstr "노면 전차"
 msgid "Bus"
 msgstr "버스"
 
-#: app/JourneyQueryPage.qml:81 app/TransferPage.qml:161
+#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:185
 #, kde-format
 msgid "Select"
 msgstr "선택"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
+#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
+#, fuzzy, kde-format
+#| msgid "Alternative Connections"
+msgctxt "@action:button"
+msgid "Load earlier connections"
+msgstr "대체 연결편"
+
+#: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
+#, fuzzy, kde-format
+#| msgid "Alternative Connections"
+msgctxt "@action:button"
+msgid "Load later connections"
+msgstr "대체 연결편"
+
+#: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
+#, fuzzy, kde-format
+#| msgid "Data providers: %1"
+msgid "Data providers:"
+msgstr "데이터 공급자: %1"
+
+#: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
 msgid "Select Journey"
 msgstr "여정 선택"
 
-#: app/JourneyRequestPage.qml:34
-#, kde-format
-msgid "Search Journey"
-msgstr "여정 검색"
-
-#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
+#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:87
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "출발역 선택"
 
-#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
+#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:100
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "도착역 선택"
 
-#: app/JourneyRequestPage.qml:94
+#: app/JourneyRequestPage.qml:86
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "출발역:"
 
-#: app/JourneyRequestPage.qml:102
+#: app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "도착역:"
 
-#: app/JourneyRequestPage.qml:110
+#: app/JourneyRequestPage.qml:111
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "출발 시간:"
 
-#: app/JourneySectionDelegate.qml:92
+#: app/JourneyRequestPage.qml:141
+#, kde-format
+msgid "Search Journey"
+msgstr "여정 검색"
+
+#: app/JourneySectionDelegate.qml:99
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1에서 %2(으)로(%3)|/|%1에서 %2$[으 %2]로(%3)"
 
-#: app/JourneySectionDelegate.qml:93 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1(%2)"
 
-#: app/JourneySectionDelegate.qml:97
+#: app/JourneySectionDelegate.qml:104
 #, kde-format
 msgid "Walk (%1)"
 msgstr "걷기(%1)"
 
-#: app/JourneySectionDelegate.qml:98
+#: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "%1 걷기(%2)"
 
-#: app/JourneySectionDelegate.qml:100
+#: app/JourneySectionDelegate.qml:107
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "환승(%1)"
 
-#: app/JourneySectionDelegate.qml:102
+#: app/JourneySectionDelegate.qml:109
 #, kde-format
 msgid "Wait (%1)"
 msgstr "대기(%1)"
 
-#: app/JourneySectionDelegate.qml:104
+#: app/JourneySectionDelegate.qml:111
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2(%3)"
 
-#: app/JourneySectionDelegate.qml:106
+#: app/JourneySectionDelegate.qml:113
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "%1 운전(%2)"
@@ -1679,12 +1698,17 @@ msgstr ""
 msgid "Show location"
 msgstr "위치 표시"
 
-#: app/JourneySummaryDelegate.qml:52
+#: app/JourneySummaryDelegate.qml:57
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "환승 %1회"
+
+#: app/JourneySummaryDelegate.qml:68
+#, kde-format
+msgid "Click to extend"
+msgstr ""
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2953,72 +2977,68 @@ msgstr "출발하는 차량 구성"
 msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
-#: app/TransferDelegate.qml:95
-#, kde-format
-msgid "Select..."
-msgstr "선택..."
+#: app/TransferDelegate.qml:121
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Select transfer"
+msgstr "환승 선택"
 
-#: app/TransferDelegate.qml:109
-#, kde-format
-msgid "Select transfer..."
-msgstr "환승 선택..."
-
-#: app/TransferDelegate.qml:115
+#: app/TransferDelegate.qml:135
 #, kde-format
 msgid "Delete transfer"
 msgstr "환승 삭제"
 
-#: app/TransferPage.qml:20
+#: app/TransferPage.qml:21
 #, kde-format
 msgid "Select Transfer"
 msgstr "환승 선택"
 
-#: app/TransferPage.qml:38
+#: app/TransferPage.qml:45
 #, kde-format
 msgid "Depart Now"
 msgstr "지금 출발"
 
-#: app/TransferPage.qml:48
+#: app/TransferPage.qml:55
 #, kde-format
 msgid "Discard"
 msgstr "무시"
 
-#: app/TransferPage.qml:70
+#: app/TransferPage.qml:77
 #, kde-format
 msgid "Bike"
 msgstr "자전거"
 
-#: app/TransferPage.qml:77
+#: app/TransferPage.qml:84
 #, kde-format
 msgid "Bike & Ride"
 msgstr "바이크 앤 라이드"
 
-#: app/TransferPage.qml:85
+#: app/TransferPage.qml:92
 #, kde-format
 msgid "Shared Bikes"
 msgstr "공유 자전거"
 
-#: app/TransferPage.qml:92
+#: app/TransferPage.qml:99
 #, kde-format
 msgid "Park & Ride"
 msgstr "파크 앤 라이드"
 
-#: app/TransferPage.qml:183
+#: app/TransferPage.qml:208
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1이(가) %2에 종료|/|%1$[이가 %1] %2에 종료"
 
-#: app/TransferPage.qml:185
+#: app/TransferPage.qml:210
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "이전: %2 도착: %1"
 
-#: app/TransferPage.qml:196
+#: app/TransferPage.qml:220
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1이(가) %2에 시작|/|%1$[이가 %1] %2에 시작"
 
-#: app/TransferPage.qml:198
+#: app/TransferPage.qml:222
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "다음: %2 출발: %1"
@@ -3263,6 +3283,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Select..."
+#~ msgstr "선택..."
+
+#~ msgid "Select transfer..."
+#~ msgstr "환승 선택..."
 
 #, fuzzy
 #~| msgid "Depature Time"

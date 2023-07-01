@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-30 00:48+0000\n"
+"POT-Creation-Date: 2023-07-01 00:49+0000\n"
 "PO-Revision-Date: 2023-05-28 16:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -283,7 +283,7 @@ msgid "No camera available."
 msgstr "Ei kameraa käytettävissä."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:74 app/TransferDelegate.qml:45
+#: app/TrainPage.qml:74 app/TransferDelegate.qml:47
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 – %2"
@@ -612,19 +612,19 @@ msgstr "Verkkosivusto"
 msgid "Departures"
 msgstr "Lähdöt"
 
-#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:27
-#: app/TransferPage.qml:56
+#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:29
+#: app/TransferPage.qml:63
 #, kde-format
 msgid "Earlier"
 msgstr "Aikaisemmin"
 
-#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:33
-#: app/TransferPage.qml:62
+#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:35
+#: app/TransferPage.qml:69
 #, kde-format
 msgid "Later"
 msgstr "Myöhemmin"
 
-#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:38
+#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:45
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -636,8 +636,7 @@ msgctxt "destination"
 msgid "To:"
 msgstr "Kohde:"
 
-#: app/DepartureQueryPage.qml:162 app/JourneyQueryPage.qml:124
-#: app/TransferPage.qml:246
+#: app/DepartureQueryPage.qml:162
 #, kde-format
 msgid "Data providers: %1"
 msgstr "Tiedontarjoajat: %1"
@@ -1556,88 +1555,108 @@ msgstr "Raitiotie"
 msgid "Bus"
 msgstr "Bussi"
 
-#: app/JourneyQueryPage.qml:81 app/TransferPage.qml:161
+#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:185
 #, kde-format
 msgid "Select"
 msgstr "Valitse"
 
-#: app/JourneyRequestPage.qml:30 app/JourneyRequestPage.qml:74
+#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
+#, fuzzy, kde-format
+#| msgid "Alternative Connections"
+msgctxt "@action:button"
+msgid "Load earlier connections"
+msgstr "Yhteysvaihtoehdot"
+
+#: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
+#, fuzzy, kde-format
+#| msgid "Alternative Connections"
+msgctxt "@action:button"
+msgid "Load later connections"
+msgstr "Yhteysvaihtoehdot"
+
+#: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
+#, fuzzy, kde-format
+#| msgid "Data providers: %1"
+msgid "Data providers:"
+msgstr "Tiedontarjoajat: %1"
+
+#: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
 msgid "Select Journey"
 msgstr "Valitse matka"
 
-#: app/JourneyRequestPage.qml:34
-#, kde-format
-msgid "Search Journey"
-msgstr "Etsi matkaa"
-
-#: app/JourneyRequestPage.qml:54 app/JourneyRequestPage.qml:98
+#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:87
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Valitse lähtöasema"
 
-#: app/JourneyRequestPage.qml:64 app/JourneyRequestPage.qml:106
+#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:100
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Valitse tuloasema"
 
-#: app/JourneyRequestPage.qml:94
+#: app/JourneyRequestPage.qml:86
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Mistä:"
 
-#: app/JourneyRequestPage.qml:102
+#: app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Mihin:"
 
-#: app/JourneyRequestPage.qml:110
+#: app/JourneyRequestPage.qml:111
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "Lähtöaika:"
 
-#: app/JourneySectionDelegate.qml:92
+#: app/JourneyRequestPage.qml:141
+#, kde-format
+msgid "Search Journey"
+msgstr "Etsi matkaa"
+
+#: app/JourneySectionDelegate.qml:99
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 – %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:93 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:97
+#: app/JourneySectionDelegate.qml:104
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Kävely (%1)"
 
-#: app/JourneySectionDelegate.qml:98
+#: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Kävely %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:100
+#: app/JourneySectionDelegate.qml:107
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Vaihto (%1)"
 
-#: app/JourneySectionDelegate.qml:102
+#: app/JourneySectionDelegate.qml:109
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Odotus (%1)"
 
-#: app/JourneySectionDelegate.qml:104
+#: app/JourneySectionDelegate.qml:111
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
 # *** TARKISTA: epäselvä
-#: app/JourneySectionDelegate.qml:106
+#: app/JourneySectionDelegate.qml:113
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Ajomatka %1 (%2)"
@@ -1680,13 +1699,18 @@ msgstr "R. %1"
 msgid "Show location"
 msgstr "Näytä sijainti"
 
-#: app/JourneySummaryDelegate.qml:52
+#: app/JourneySummaryDelegate.qml:57
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
 msgstr[0] "Yksi vaihto"
 msgstr[1] "%1 vaihtoa"
+
+#: app/JourneySummaryDelegate.qml:68
+#, kde-format
+msgid "Click to extend"
+msgstr ""
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2955,72 +2979,68 @@ msgstr "Lähtövaunun kartta"
 msgid "Arrival Vehicle Layout"
 msgstr "Tulovaunun kartta"
 
-#: app/TransferDelegate.qml:95
-#, kde-format
-msgid "Select..."
-msgstr "Valitse…"
+#: app/TransferDelegate.qml:121
+#, fuzzy, kde-format
+#| msgid "Select Transfer"
+msgid "Select transfer"
+msgstr "Valitse vaihto"
 
-#: app/TransferDelegate.qml:109
-#, kde-format
-msgid "Select transfer..."
-msgstr "Valitse vaihto…"
-
-#: app/TransferDelegate.qml:115
+#: app/TransferDelegate.qml:135
 #, kde-format
 msgid "Delete transfer"
 msgstr "Poista vaihto"
 
-#: app/TransferPage.qml:20
+#: app/TransferPage.qml:21
 #, kde-format
 msgid "Select Transfer"
 msgstr "Valitse vaihto"
 
-#: app/TransferPage.qml:38
+#: app/TransferPage.qml:45
 #, kde-format
 msgid "Depart Now"
 msgstr "Lähde nyt"
 
-#: app/TransferPage.qml:48
+#: app/TransferPage.qml:55
 #, kde-format
 msgid "Discard"
 msgstr "Hylkää"
 
-#: app/TransferPage.qml:70
+#: app/TransferPage.qml:77
 #, kde-format
 msgid "Bike"
 msgstr "Polkupyörä"
 
-#: app/TransferPage.qml:77
+#: app/TransferPage.qml:84
 #, kde-format
 msgid "Bike & Ride"
 msgstr "Polkupyörä ja kulku"
 
-#: app/TransferPage.qml:85
+#: app/TransferPage.qml:92
 #, kde-format
 msgid "Shared Bikes"
 msgstr "Jaetut polkupyörät"
 
-#: app/TransferPage.qml:92
+#: app/TransferPage.qml:99
 #, kde-format
 msgid "Park & Ride"
 msgstr "Pysäköinti ja kulku"
 
-#: app/TransferPage.qml:183
+#: app/TransferPage.qml:208
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 päättyy %2"
 
-#: app/TransferPage.qml:185
+#: app/TransferPage.qml:210
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Edeltävä saapuminen %1 (%2)"
 
-#: app/TransferPage.qml:196
+#: app/TransferPage.qml:220
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 alkaa %2"
 
-#: app/TransferPage.qml:198
+#: app/TransferPage.qml:222
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Seuraava lähtö %1 (%2)"
@@ -3269,6 +3289,12 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgid "Select..."
+#~ msgstr "Valitse…"
+
+#~ msgid "Select transfer..."
+#~ msgstr "Valitse vaihto…"
 
 #, fuzzy
 #~| msgid "Depature Time"
