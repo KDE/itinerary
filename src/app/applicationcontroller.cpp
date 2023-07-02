@@ -181,7 +181,7 @@ void ApplicationController::setPassManager(PassManager *passMgr)
 
 bool ApplicationController::probablyUrl(const QString &text)
 {
-    return text.startsWith(QLatin1String("https://")) && text.size() < 256;
+    return (text.startsWith(QLatin1String("https://")) || text.startsWith(QLatin1String("http://"))) && text.size() < 256;
 }
 
 #ifdef Q_OS_ANDROID
