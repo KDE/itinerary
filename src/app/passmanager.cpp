@@ -45,6 +45,17 @@ QString PassManager::Entry::name() const
     return {};
 }
 
+QDateTime PassManager::Entry::validFrom() const
+{
+    if (JsonLd::isA<KItinerary::ProgramMembership>(data)) {
+        return data.value<KItinerary::ProgramMembership>().validFrom();
+    }
+    if (JsonLd::isA<KItinerary::Ticket>(data)) {
+        return data.value<KItinerary::Ticket>().validFrom();
+    }
+    return {};
+}
+
 QDateTime PassManager::Entry::validUntil() const
 {
     if (JsonLd::isA<KItinerary::ProgramMembership>(data)) {
@@ -233,6 +244,9 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
         case SectionRole:
             if (const auto dt = entry.validUntil(); dt.isValid() && dt < m_baseTime) {
                 return i18nc("no longer valid tickets", "Expired");
+            }
+            if (const auto dt = entry.validFrom(); dt.isValid() && dt > m_baseTime) {
+                return i18nc("not yet valid tickets", "Future");
             }
             return i18nc("not yet expired tickets", "Valid");
     }

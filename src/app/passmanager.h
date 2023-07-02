@@ -72,6 +72,7 @@ private:
         QVariant data;
 
         QString name() const;
+        QDateTime validFrom() const;
         QDateTime validUntil() const;
     };
 
