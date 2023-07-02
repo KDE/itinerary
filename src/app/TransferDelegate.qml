@@ -117,7 +117,7 @@ Kirigami.AbstractCard {
             }
 
             MobileForm.FormButtonDelegate {
-                icon.name: "checkbox"
+                icon.name: "checkmark"
                 text: i18n("Select transfer")
                 onClicked: if (transfer.state === Transfer.Selected) {
                     applicationWindow().pageStack.push(detailsComponent)

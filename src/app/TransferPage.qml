@@ -251,7 +251,7 @@ Kirigami.ScrollablePage {
                     id: selectButton
 
                     text: i18n("Select")
-                    icon.name: "checkbox";
+                    icon.name: "checkmark"
                     visible: journeyView.currentIndex === top.index
                     enabled: top.journey.disruptionEffect !== Disruption.NoService
                     onClicked: {
