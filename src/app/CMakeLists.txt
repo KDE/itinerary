@@ -12,6 +12,7 @@ target_sources(itinerary PRIVATE
     clipboard.cpp
     documentmanager.cpp
     documentsmodel.cpp
+    downloadjob.cpp
     favoritelocationmodel.cpp
     filehelper.cpp
     genericpkpass.cpp

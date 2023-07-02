@@ -6,6 +6,7 @@
 
 #include "applicationcontroller.h"
 #include "documentmanager.h"
+#include "downloadjob.h"
 #include "favoritelocationmodel.h"
 #include "filehelper.h"
 #include "genericpkpass.h"
@@ -310,18 +311,14 @@ void ApplicationController::importFromUrl(const QUrl &url)
         if (!m_nam ) {
             m_nam = new QNetworkAccessManager(this);
         }
-        auto reqUrl(url);
-        reqUrl.setScheme(QLatin1String("https"));
-        QNetworkRequest req(reqUrl);
-        req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
-        auto reply = m_nam->get(req);
-        connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-            if (reply->error() != QNetworkReply::NoError) {
-                qCDebug(Log) << reply->url() << reply->errorString();
-                Q_EMIT infoMessage(i18n("Download failed: %1", reply->errorString()));
+        auto job = new DownloadJob(url, m_nam, this);
+        connect(job, &DownloadJob::finished, this, [this, job]() {
+            job->deleteLater();
+            if (job->hasError()) {
+                Q_EMIT infoMessage(job->errorMessage());
                 return;
             }
-            importData(reply->readAll());
+            importData(job->data());
         });
         return;
     }
