@@ -183,8 +183,15 @@ Kirigami.ScrollablePage {
                         applicationWindow().pageStack.currentItem.journeyRequest = req;
                     }
                 }
+            }
+        }
 
-                MobileForm.FormDelegateSeparator {}
+        MobileForm.FormCard {
+            Layout.fillWidth: true
+            Layout.topMargin: Kirigami.Units.largeSpacing
+
+            contentItem: ColumnLayout {
+                spacing: 0
 
                 MobileForm.FormSwitchDelegate {
                     id: longDistanceSwitch
