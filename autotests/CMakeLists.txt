@@ -25,6 +25,7 @@ ecm_add_test(timelinesectiondelegatecontrollertest.cpp LINK_LIBRARIES Qt::Test i
 ecm_add_test(tripgroupproxytest.cpp modelverificationpoint.cpp TEST_NAME tripgroupproxytest LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(tripgroupinfoprovidertest.cpp TEST_NAME tripgroupinfoprovidertest LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(publictransporttest.cpp TEST_NAME publictransporttest LINK_LIBRARIES Qt::Test itinerary)
+ecm_add_test(publictransportmatchertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(timelinedelegatecontrollertest.cpp TEST_NAME timelinedelegatecontrollertest LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(documentmanagertest.cpp TEST_NAME documentmanagertest LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(documentsmodeltest.cpp LINK_LIBRARIES Qt::Test itinerary)

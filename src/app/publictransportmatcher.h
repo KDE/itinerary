@@ -25,7 +25,7 @@ bool isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode);
 bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
 
 /** Checks whether a given route and a given train name/number from a reservation refer to the same thing. */
-bool isSameLine(const KPublicTransport::Line &lhs, const QString &trainName, const QString &trainNumber);
+bool isSameRoute(const KPublicTransport::Route &lhs, const QString &trainName, const QString &trainNumber);
 
 /** Check whether a given reservation matches the respective departure/arrival/journey object. */
 bool isDepartureForReservation(const QVariant &res, const KPublicTransport::Stopover &dep);

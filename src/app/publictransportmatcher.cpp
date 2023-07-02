@@ -38,12 +38,12 @@ bool PublicTransportMatcher::isSameMode(const QVariant &res, const KPublicTransp
     return isSameMode(res, section.route().line().mode());
 }
 
-bool PublicTransportMatcher::isSameLine(const KPublicTransport::Line &lhs, const QString &trainName, const QString &trainNumber)
+bool PublicTransportMatcher::isSameRoute(const KPublicTransport::Route &lhs, const QString &trainName, const QString &trainNumber)
 {
     KPublicTransport::Line rhs;
     rhs.setModeString(trainName);
     rhs.setName(trainNumber);
-    return KPublicTransport::Line::isSame(lhs, rhs);
+    return KPublicTransport::Line::isSame(lhs.line(), rhs);
 }
 
 bool PublicTransportMatcher::isDepartureForReservation(const QVariant &res, const KPublicTransport::Stopover &dep)
@@ -51,7 +51,7 @@ bool PublicTransportMatcher::isDepartureForReservation(const QVariant &res, cons
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransportMatcher::isSameMode(res, dep.route().line().mode())
         && KItinerary::SortUtil::startDateTime(res) == dep.scheduledDepartureTime()
-        && PublicTransportMatcher::isSameLine(dep.route().line(), lineData.first, lineData.second);
+        && PublicTransportMatcher::isSameRoute(dep.route(), lineData.first, lineData.second);
 }
 
 bool PublicTransportMatcher::isArrivalForReservation(const QVariant &res, const KPublicTransport::Stopover &arr)
@@ -59,7 +59,7 @@ bool PublicTransportMatcher::isArrivalForReservation(const QVariant &res, const 
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransportMatcher::isSameMode(res, arr.route().line().mode())
         && KItinerary::SortUtil::endDateTime(res) == arr.scheduledArrivalTime()
-        && PublicTransportMatcher::isSameLine(arr.route().line(), lineData.first, lineData.second);
+        && PublicTransportMatcher::isSameRoute(arr.route(), lineData.first, lineData.second);
 }
 
 bool PublicTransportMatcher::isJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey)
@@ -67,5 +67,5 @@ bool PublicTransportMatcher::isJourneyForReservation(const QVariant &res, const 
     const auto lineData = ReservationHelper::lineNameAndNumber(res);
     return PublicTransportMatcher::isSameMode(res, journey.route().line().mode())
         && KItinerary::SortUtil::startDateTime(res) == journey.scheduledDepartureTime()
-        && PublicTransportMatcher::isSameLine(journey.route().line(), lineData.first, lineData.second);
+        && PublicTransportMatcher::isSameRoute(journey.route(), lineData.first, lineData.second);
 }
