@@ -162,6 +162,7 @@ Kirigami.ScrollablePage {
                         console.log(dt, dateInput.selectedDate, timeInput.value);
                         req.dateTime = dt;
                         req.maximumResults = 6;
+                        req.downloadAssets = true;
 
                         let lineModes = [];
                         if (root.fullModeSwitchState() == undefined) {
