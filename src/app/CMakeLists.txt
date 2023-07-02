@@ -32,6 +32,7 @@ target_sources(itinerary PRIVATE
     pkpassmanager.cpp
     pkpassimageprovider.cpp
     publictransport.cpp
+    publictransportmatcher.cpp
     reservationhelper.cpp
     reservationmanager.cpp
     statisticsmodel.cpp

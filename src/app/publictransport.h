@@ -73,9 +73,9 @@ public:
     static QVariant mergeArrival(const QVariant &res, const KPublicTransport::Stopover &arr);
     static QVariant mergeJourney(const QVariant &res, const KPublicTransport::JourneySection &journey);
 
-    /** Checks if the given reservation and journey section have a compatible mode of transportation. */
-    static bool isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode);
-    static bool isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section);
+    /** Checkes whether @p mode is a train or bus mode respectively. */
+    static bool isTrainMode(KPublicTransport::Line::Mode mode);
+    static bool isBusMode(KPublicTransport::Line::Mode mode);
 
     /** Provide an icon source for usage in Kirigami.Icon that represents the line mode.
      *  This can be an official line logo, and official product logo or a generic mode icon,

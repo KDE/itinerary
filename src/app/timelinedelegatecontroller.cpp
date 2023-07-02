@@ -15,6 +15,7 @@
 #include "reservationhelper.h"
 #include "reservationmanager.h"
 #include "publictransport.h"
+#include "publictransportmatcher.h"
 #include "transfer.h"
 #include "transfermanager.h"
 
@@ -527,7 +528,7 @@ void TimelineDelegateController::applyJourney(const QVariant &journey, bool incl
         }
 
         // same type -> update the existing one
-        if (PublicTransport::isSameMode(oldRes, section)) {
+        if (PublicTransportMatcher::isSameMode(oldRes, section)) {
             const auto resIds = m_resMgr->reservationsForBatch(*it);
             for (const auto &resId : resIds) {
                 auto res = m_resMgr->reservation(resId);

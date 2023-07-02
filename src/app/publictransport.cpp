@@ -27,7 +27,7 @@
 #include <QDebug>
 #include <QUrl>
 
-static bool isTrainMode(KPublicTransport::Line::Mode mode)
+bool PublicTransport::isTrainMode(KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
     switch (mode) {
@@ -45,7 +45,7 @@ static bool isTrainMode(KPublicTransport::Line::Mode mode)
     }
 }
 
-static bool isBusMode(KPublicTransport::Line::Mode mode)
+bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
 {
     using namespace KPublicTransport;
     switch (mode) {
@@ -403,28 +403,6 @@ QVariant PublicTransport::mergeJourney(const QVariant &res, const KPublicTranspo
     auto newRes = mergeDeparture(res, journey.departure());
     newRes = mergeArrival(newRes, journey.arrival());
     return newRes;
-}
-
-bool PublicTransport::isSameMode(const QVariant &res, KPublicTransport::Line::Mode mode)
-{
-    using namespace KPublicTransport;
-
-    if (KItinerary::JsonLd::isA<KItinerary::TrainReservation>(res)) {
-        return isTrainMode(mode);
-    } else if (KItinerary::JsonLd::isA<KItinerary::BusReservation>(res)) {
-        return isBusMode(mode);
-    } else if (KItinerary::JsonLd::isA<KItinerary::FlightReservation>(res)) {
-        return mode == Line::Air;
-    } else if (res.isValid()) {
-        qCWarning(Log) << "unexpected reservation type!?" << res;
-    }
-
-    return false;
-}
-
-bool PublicTransport::isSameMode(const QVariant &res, const KPublicTransport::JourneySection &section)
-{
-    return isSameMode(res, section.route().line().mode());
 }
 
 KPublicTransport::StopoverRequest PublicTransport::stopoverRequestForPlace(const QVariant &place, const QDateTime &dt) const
