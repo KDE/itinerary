@@ -43,7 +43,17 @@ bool PublicTransportMatcher::isSameRoute(const KPublicTransport::Route &lhs, con
     KPublicTransport::Line rhs;
     rhs.setModeString(trainName);
     rhs.setName(trainNumber);
-    return KPublicTransport::Line::isSame(lhs.line(), rhs);
+    if (KPublicTransport::Line::isSame(lhs.line(), rhs)) {
+        return true;
+    }
+    if (lhs.name().size() >= 3) {
+        rhs.setName(QString(trainName + QLatin1Char(' ') + trainNumber).trimmed());
+        auto lhsLine = lhs.line();
+        lhsLine.setModeString(QString());
+        lhsLine.setName(lhs.name());
+        return KPublicTransport::Line::isSame(lhsLine, rhs);
+    }
+    return false;
 }
 
 bool PublicTransportMatcher::isDepartureForReservation(const QVariant &res, const KPublicTransport::Stopover &dep)

@@ -25,6 +25,12 @@ private Q_SLOTS:
         route.setLine(line);
         QVERIFY(PublicTransportMatcher::isSameRoute(route, s("RE"), s("13")));
         QVERIFY(PublicTransportMatcher::isSameRoute(route, QString(), s("RE13")));
+        QVERIFY(!PublicTransportMatcher::isSameRoute(route, s("RE"), s("20072")));
+
+        route.setName(s("RE 20072"));
+        QVERIFY(PublicTransportMatcher::isSameRoute(route, s("RE"), s("13")));
+        QVERIFY(PublicTransportMatcher::isSameRoute(route, s("RE"), s("20072")));
+        QVERIFY(PublicTransportMatcher::isSameRoute(route, QString(), s("RE20072")));
     }
 };
 
