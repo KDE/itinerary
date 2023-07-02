@@ -214,6 +214,7 @@ Kirigami.ScrollablePage {
                                 case KPublicTransport.VehicleSection.SleepingCar: return "qrc:///images/sleepingcar.svg"
                                 case KPublicTransport.VehicleSection.CouchetteCar: return "qrc:///images/couchettecar.svg"
                                 case KPublicTransport.VehicleSection.RestaurantCar: return "qrc:///images/foodestablishment.svg"
+                                case KPublicTransport.VehicleSection.CarTransportCar: return "qrc:///images/car.svg"
                             }
                         }
                         color: Kirigami.Theme.textColor
