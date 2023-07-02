@@ -249,6 +249,26 @@ QVariant PassManager::data(const QModelIndex &index, int role) const
                 return i18nc("not yet valid tickets", "Future");
             }
             return i18nc("not yet expired tickets", "Valid");
+        case ValidRangeLabelRole:
+        {
+            // TODO align this with the time labels in the trip groups? those handle a few more cases...
+            const auto from = entry.validFrom();
+            const auto to = entry.validUntil();
+            if (!from.isValid()) {
+                return {};
+            }
+            const auto days = from.daysTo(to);
+            if (!to.isValid() || days <= 1) {
+                return QLocale().toString(from.date(), QLocale::ShortFormat);
+            }
+            if (days >= 28 && days <= 31) {
+                return QLocale().toString(from, QStringLiteral("MMMM yyyy"));
+            }
+            if (days >= 365 && days <= 366) {
+                return QLocale().toString(from, QStringLiteral("yyyy"));
+            }
+            return i18n("%1 - %2", QLocale().toString(from.date(), QLocale::ShortFormat), QLocale().toString(to.date(), QLocale::ShortFormat));
+        }
     }
 
     return {};
@@ -263,6 +283,7 @@ QHash<int, QByteArray> PassManager::roleNames() const
     r.insert(NameRole, "name");
     r.insert(ValidUntilRole, "validUntil");
     r.insert(SectionRole, "section");
+    r.insert(ValidRangeLabelRole, "validRangeLabel");
     return r;
 }
 

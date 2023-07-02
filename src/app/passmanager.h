@@ -28,6 +28,7 @@ public:
         NameRole,
         ValidUntilRole,
         SectionRole,
+        ValidRangeLabelRole,
     };
 
     enum PassType {

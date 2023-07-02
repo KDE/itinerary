@@ -63,7 +63,13 @@ Kirigami.ScrollablePage {
                 highlighted: false
                 icon: "bookmarks"
                 text: model.pass.name
-                subtitle: model.pass.underName.name
+                subtitle: {
+                    if (model.pass.underName.name === "")
+                        return model.validRangeLabel;
+                    if (model.validRangeLabel === "")
+                        return model.pass.underName.name;
+                    return i18nc("name - valid time range", "%1 - %2", model.pass.underName.name, model.validRangeLabel);
+                }
                 onClicked: applicationWindow().pageStack.push(ticketComponent, { ticket: model.pass, passId: model.passId })
             }
         }
