@@ -203,6 +203,7 @@ Kirigami.ScrollablePage {
                     QQC2.Label {
                         Layout.alignment: Qt.AlignCenter
                         text: section.name
+                        visible: text !== ""
                     }
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignCenter
