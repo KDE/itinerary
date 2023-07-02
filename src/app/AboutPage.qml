@@ -254,6 +254,10 @@ MobileForm.AboutPage {
                     text: i18n("Extractor capabilities:")
                     description: ApplicationController.extractorCapabilities
                     font.family: "monospace"
+                    onClicked: {
+                        Clipboard.saveText(ApplicationController.extractorCapabilities);
+                        applicationWindow().showPassiveNotification(i18n("Extractor capabilities copied to clipboard"));
+                    }
                 }
             }
         }

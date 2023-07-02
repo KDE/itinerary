@@ -11,6 +11,7 @@
 #include "applicationcontroller.h"
 #include "calendarimportmodel.h"
 #include "countrysubdivisionmodel.h"
+#include "clipboard.h"
 #include "developmentmodecontroller.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
@@ -188,6 +189,10 @@ void registerApplicationTypes()
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
+    });
+
+    qmlRegisterSingletonType<Clipboard>("org.kde.itinerary", 1, 0, "Clipboard", [](QQmlEngine *, QJSEngine *) -> QObject * {
+        return new Clipboard;
     });
 }
 

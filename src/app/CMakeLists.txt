@@ -9,6 +9,7 @@ target_sources(itinerary PRIVATE
     applicationcontroller.cpp
     calendarhelper.cpp
     calendarimportmodel.cpp
+    clipboard.cpp
     documentmanager.cpp
     documentsmodel.cpp
     favoritelocationmodel.cpp
