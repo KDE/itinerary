@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-24 07:58+0300\n"
+"PO-Revision-Date: 2023-07-01 09:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1565,24 +1565,21 @@ msgid "Select"
 msgstr "Вибрати"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Альтернативні з'єднання"
+msgstr "Завантажити раніші з'єднання"
 
 #: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Альтернативні з'єднання"
+msgstr "Завантажити пізніші з'єднання"
 
 #: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Надавачі даних: %1"
+msgstr "Надавачі даних:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1715,7 +1712,7 @@ msgstr[3] "%1 зміна"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Натисніть, щоб розширити"
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2976,8 +2973,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Компонування засобу пересування прибуття"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Виберіть пересадку"
 

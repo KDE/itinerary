@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-24 13:20+0200\n"
+"PO-Revision-Date: 2023-07-01 12:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1558,24 +1558,21 @@ msgid "Select"
 msgstr "Selecciona"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Connexions alternatives"
+msgstr "Carrega les connexions anteriors"
 
 #: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Connexions alternatives"
+msgstr "Carrega les connexions posteriors"
 
 #: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Proveïdors de dades: %1"
+msgstr "Proveïdors de dades:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1707,7 +1704,7 @@ msgstr[1] "%1 canvis"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Cliqueu per a ampliar"
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2967,8 +2964,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Disposició del vehicle d'arribada"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Selecció de transbordament"
 
@@ -3279,9 +3275,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Select..."
-#~ msgstr "Selecciona..."
-
-#~ msgid "Select transfer..."
-#~ msgstr "Selecció de transbordament..."

@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-24 07:33+0200\n"
+"PO-Revision-Date: 2023-07-01 08:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
@@ -1561,24 +1561,21 @@ msgid "Select"
 msgstr "Izberi"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Alternativne povezave"
+msgstr "Naloži zgodnejše povezave"
 
 #: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Alternativne povezave"
+msgstr "Naloži kasnejše povezave"
 
 #: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Dobavitelji podatkov: %1"
+msgstr "Dobavitelji podatkov:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1711,7 +1708,7 @@ msgstr[3] "%1 sprememb"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Klikni za razširitev"
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2961,10 +2958,9 @@ msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
-msgstr "Izberi prevoz"
+msgstr "Izberi transfer"
 
 #: app/TransferDelegate.qml:135
 #, kde-format

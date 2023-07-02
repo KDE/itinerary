@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-24 12:08+0200\n"
+"PO-Revision-Date: 2023-07-01 11:52+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1557,24 +1557,21 @@ msgid "Select"
 msgstr "Selecteren"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Alternatieve verbindingen"
+msgstr "Eerdere verbindingen laden"
 
 #: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Alternatieve verbindingen"
+msgstr "Latere verbindingen laden"
 
 #: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Leveranciers van gegevens: %1"
+msgstr "Leveranciers van gegevens:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1705,7 +1702,7 @@ msgstr[1] "%1 keer overstappen"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Klik om uit te breiden"
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2961,8 +2958,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Overstap selecteren"
 

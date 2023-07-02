@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-18 23:46+0200\n"
+"PO-Revision-Date: 2023-07-01 18:36+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -308,10 +308,9 @@ msgid "Arrival time: %1"
 msgstr "Ankunftszeit: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Bootsfahrt"
+msgstr "Bootsfahrt bearbeiten"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -320,18 +319,16 @@ msgid "Departure"
 msgstr "Abfahrt"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "Abfahrtszeit"
+msgstr "Ablegezeit"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminal"
+msgstr "Name des Terminals"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -340,11 +337,10 @@ msgid "Arrival"
 msgstr "Ankunft"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Ankunftszeit"
+msgstr "Anlegezeit"
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -523,6 +519,7 @@ msgstr "Ausgewählte Termine importieren"
 #, kde-format
 msgid "No importable events found in this calendar."
 msgstr ""
+"In diesem Kalender können keine importierbaren Termine gefunden werden."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
@@ -963,10 +960,9 @@ msgid "Arrival"
 msgstr "Landung"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "Fahrradverleih"
+msgstr "Ort mitteilen"
 
 #: app/FormPlaceDelegate.qml:57
 #, fuzzy, kde-format

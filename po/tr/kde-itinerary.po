@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-24 12:55+0300\n"
+"PO-Revision-Date: 2023-07-01 12:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1556,24 +1556,21 @@ msgid "Select"
 msgstr "Seç"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Alternatif Bağlantılar"
+msgstr "Önceki bağlantıları yükle"
 
 #: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Alternatif Bağlantılar"
+msgstr "Sonraki bağlantıları yükle"
 
 #: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Veri sağlayıcıları: %1"
+msgstr "Veri sağlayıcıları:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1704,7 +1701,7 @@ msgstr[1] "%1 aktarma"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Genişletmek için tıkla"
 
 #: app/livedatamanager.cpp:663
 #, kde-format
@@ -2955,10 +2952,9 @@ msgid "Arrival Vehicle Layout"
 msgstr "Varış Aracı Yerleşimi"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
-msgstr "Aktarma Seç"
+msgstr "Aktarma seç"
 
 #: app/TransferDelegate.qml:135
 #, kde-format
