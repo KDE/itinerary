@@ -32,6 +32,8 @@ Q_SIGNALS:
     void finished();
 
 private:
+    bool handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam);
+
     QByteArray m_data;
     QString m_errorMessage;
 };
