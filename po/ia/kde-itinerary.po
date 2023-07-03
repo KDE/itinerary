@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:49+0000\n"
-"PO-Revision-Date: 2023-06-29 10:28+0200\n"
+"POT-Creation-Date: 2023-07-03 00:56+0000\n"
+"PO-Revision-Date: 2023-07-02 21:55+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -175,20 +175,57 @@ msgstr "Actiones"
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
 msgid "Alternative Connections"
-msgstr "Connexiones altrnative"
+msgstr "Connexiones alternative"
 
-#: app/AlternativeJourneyPage.qml:29 app/AlternativeJourneyPage.qml:41
+#: app/AlternativeJourneyPage.qml:57 app/AlternativeJourneyPage.qml:67
 #, kde-format
 msgctxt "to travel destination"
 msgid "To %1"
 msgstr "A %1"
 
-#: app/AlternativeJourneyPage.qml:59
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
+#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:110
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Long distance trains"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
+#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Location"
+msgctxt "journey query search constraint, title"
+msgid "Local trains"
+msgstr "Location"
+
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
+#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Rapid transit"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
+#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
+#, fuzzy, kde-format
+#| msgid "Bus"
+msgctxt "journey query search constraint, title"
+msgid "Bus"
+msgstr "Bus"
+
+#: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
+#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:142
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Ferry"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:131
 #, kde-format
 msgid "Replace Journey"
 msgstr "Reimplacia Viage"
 
-#: app/AlternativeJourneyPage.qml:60
+#: app/AlternativeJourneyPage.qml:132
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -197,7 +234,7 @@ msgstr ""
 "Tu vermente vole reimplaciar tu reservation existente con le viage justo "
 "seligite?"
 
-#: app/AlternativeJourneyPage.qml:64
+#: app/AlternativeJourneyPage.qml:136
 #, kde-format
 msgid "Replace"
 msgstr "Reimplacia"
@@ -604,39 +641,54 @@ msgstr "E-posta"
 msgid "Website"
 msgstr "Sito Web"
 
-#: app/DepartureQueryPage.qml:20
+#: app/DepartureQueryPage.qml:21
 #, kde-format
 msgid "Departures"
 msgstr "Partitas"
 
-#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:29
+#: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:29
 #: app/TransferPage.qml:63
 #, kde-format
 msgid "Earlier"
 msgstr "Antecedente"
 
-#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:35
+#: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:35
 #: app/TransferPage.qml:69
 #, kde-format
 msgid "Later"
 msgstr "Plus tarde"
 
-#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:45
+#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:45
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Cancellate"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:186
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "A:"
 
-#: app/DepartureQueryPage.qml:162
+#: app/DepartureQueryPage.qml:226
+#, fuzzy, kde-format
+#| msgid "Earlier departure on %1"
+msgctxt "@action:button"
+msgid "Load earlier departures"
+msgstr "Partita anticipate a %1"
+
+#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
+#: app/TransferPage.qml:331
 #, kde-format
-msgid "Data providers: %1"
-msgstr "Fornitores de datos: %1"
+msgctxt "@action:button"
+msgid "Load later connections"
+msgstr "Carga connexiones ulterior"
+
+#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
+#: app/TransferPage.qml:343
+#, kde-format
+msgid "Data providers:"
+msgstr "Fornitores de datos:"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1549,70 +1601,88 @@ msgstr "Tramvia"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:185
+#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:253
 #, kde-format
 msgid "Select"
 msgstr "Selige"
 
-#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Connexiones altrnative"
-
-#: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
-msgctxt "@action:button"
-msgid "Load later connections"
-msgstr "Connexiones altrnative"
-
-#: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
-msgid "Data providers:"
-msgstr "Fornitores de datos: %1"
+msgstr "Carga connexiones anterior"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
 msgid "Select Journey"
 msgstr "Selige Viage"
 
-#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:87
+#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Selige Station de Partita"
 
-#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:112
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Selige Station de Arrivata"
 
-#: app/JourneyRequestPage.qml:86
+#: app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Ex:"
 
-#: app/JourneyRequestPage.qml:99
+#: app/JourneyRequestPage.qml:111
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:111
+#: app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "Tempore de partita:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:153
 #, kde-format
 msgid "Search Journey"
 msgstr "Cerca Viage"
+
+#: app/JourneyRequestPage.qml:199
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "High speed or intercity trains"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Rename favorite location"
+msgctxt "journey query search constraint, description"
+msgid "Regional or local trains"
+msgstr "Renomina location favorite"
+
+#: app/JourneyRequestPage.qml:219
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Rapid transit, metro, trams"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:229
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Local or regional bus services"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:239
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgctxt "journey query search constraint, description"
+msgid "Boats or ferries"
+msgstr "Viages de barca"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -1703,9 +1773,9 @@ msgstr[1] "%1 modificationes"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Pulsa pro extender"
 
-#: app/livedatamanager.cpp:663
+#: app/livedatamanager.cpp:632
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
@@ -1980,7 +2050,7 @@ msgstr "Files de KDE Itinerary  (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Exporta datos de itinerario"
 
-#: app/main.qml:162 app/PassPage.qml:88
+#: app/main.qml:162 app/PassPage.qml:94
 #, kde-format
 msgid "Import..."
 msgstr "Importa..."
@@ -2178,17 +2248,30 @@ msgstr "Referentia de reservation"
 msgid "Search..."
 msgstr "Cerca..."
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:246
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expirate"
 
-#: app/passmanager.cpp:237
+#: app/passmanager.cpp:249
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr ""
+
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Valide"
+
+#: app/passmanager.cpp:270
+#, fuzzy, kde-format
+#| msgctxt "name - number"
+#| msgid "%1 - %2"
+msgid "%1 - %2"
+msgstr "%1 - %2"
 
 #: app/PassPage.qml:17
 #, kde-format
@@ -2201,13 +2284,21 @@ msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:86
+#: app/PassPage.qml:71
+#, fuzzy, kde-format
+#| msgctxt "name - number"
+#| msgid "%1 - %2"
+msgctxt "name - valid time range"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: app/PassPage.qml:92
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
 "Importa bonus o cartas de programma de disconto o passes de rata platte."
 
-#: app/PassPage.qml:89
+#: app/PassPage.qml:95
 #, kde-format
 msgid "document-open"
 msgstr "Documento de aperir (docuent-open)"
@@ -2957,8 +3048,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Disposition de Vehiculo de arrivata"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Selige transferimento"
 
@@ -3002,22 +3092,22 @@ msgstr "Bicyclettas compartite"
 msgid "Park & Ride"
 msgstr "Parcar e Viagiar"
 
-#: app/TransferPage.qml:208
+#: app/TransferPage.qml:276
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 termina a  %2"
 
-#: app/TransferPage.qml:210
+#: app/TransferPage.qml:278
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Arrivata precedente %1 a %2"
 
-#: app/TransferPage.qml:220
+#: app/TransferPage.qml:288
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 initia a %2"
 
-#: app/TransferPage.qml:222
+#: app/TransferPage.qml:290
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Sequente partita %1 ex %2"
@@ -3118,27 +3208,27 @@ msgstr "Platteforma: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Autocar: %1 Placia: %2"
 
-#: app/VehicleLayoutPage.qml:253
+#: app/VehicleLayoutPage.qml:255
 #, kde-format
 msgid "First class"
 msgstr "Prime classe"
 
-#: app/VehicleLayoutPage.qml:255
+#: app/VehicleLayoutPage.qml:257
 #, kde-format
 msgid "Second class"
 msgstr "Secunde classe"
 
-#: app/VehicleLayoutPage.qml:257
+#: app/VehicleLayoutPage.qml:259
 #, kde-format
 msgid "First/second class"
 msgstr "Prime/secunde classe"
 
-#: app/VehicleLayoutPage.qml:258
+#: app/VehicleLayoutPage.qml:260
 #, kde-format
 msgid "Unknown class"
 msgstr "Classe incognite"
 
-#: app/VehicleLayoutPage.qml:302
+#: app/VehicleLayoutPage.qml:304
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Nulle information de disposition de vehiculo disponibile."
@@ -3268,6 +3358,9 @@ msgstr "Accedente "
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgid "Data providers: %1"
+#~ msgstr "Fornitores de datos: %1"
 
 #~ msgid "Select..."
 #~ msgstr "Selige..."

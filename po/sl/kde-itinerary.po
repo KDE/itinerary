@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-01 00:49+0000\n"
+"POT-Creation-Date: 2023-07-03 00:56+0000\n"
 "PO-Revision-Date: 2023-07-01 08:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
@@ -178,18 +178,55 @@ msgstr "Akcije"
 msgid "Alternative Connections"
 msgstr "Alternativne povezave"
 
-#: app/AlternativeJourneyPage.qml:29 app/AlternativeJourneyPage.qml:41
+#: app/AlternativeJourneyPage.qml:57 app/AlternativeJourneyPage.qml:67
 #, kde-format
 msgctxt "to travel destination"
 msgid "To %1"
 msgstr "Do %1"
 
-#: app/AlternativeJourneyPage.qml:59
+#: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
+#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:110
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Long distance trains"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
+#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
+#, fuzzy, kde-format
+#| msgid "Location"
+msgctxt "journey query search constraint, title"
+msgid "Local trains"
+msgstr "Lokacija"
+
+#: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
+#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Rapid transit"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
+#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
+#, fuzzy, kde-format
+#| msgid "Bus"
+msgctxt "journey query search constraint, title"
+msgid "Bus"
+msgstr "Avtobus"
+
+#: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
+#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:142
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Ferry"
+msgstr ""
+
+#: app/AlternativeJourneyPage.qml:131
 #, kde-format
 msgid "Replace Journey"
 msgstr "Zamenjaj potovanje"
 
-#: app/AlternativeJourneyPage.qml:60
+#: app/AlternativeJourneyPage.qml:132
 #, kde-format
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
@@ -197,7 +234,7 @@ msgid ""
 msgstr ""
 "Ali res želite zamenjati obstoječo rezervacijo za novo izbrano potovanje?"
 
-#: app/AlternativeJourneyPage.qml:64
+#: app/AlternativeJourneyPage.qml:136
 #, kde-format
 msgid "Replace"
 msgstr "Zamenjaj"
@@ -608,39 +645,54 @@ msgstr "E-pošta"
 msgid "Website"
 msgstr "Spletišče"
 
-#: app/DepartureQueryPage.qml:20
+#: app/DepartureQueryPage.qml:21
 #, kde-format
 msgid "Departures"
 msgstr "Odhodi"
 
-#: app/DepartureQueryPage.qml:23 app/JourneyQueryPage.qml:29
+#: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:29
 #: app/TransferPage.qml:63
 #, kde-format
 msgid "Earlier"
 msgstr "Zgodnejše"
 
-#: app/DepartureQueryPage.qml:29 app/JourneyQueryPage.qml:35
+#: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:35
 #: app/TransferPage.qml:69
 #, kde-format
 msgid "Later"
 msgstr "Poznejše"
 
-#: app/DepartureQueryPage.qml:57 app/JourneySectionDelegate.qml:45
+#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:45
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Preklicano"
 
-#: app/DepartureQueryPage.qml:109
+#: app/DepartureQueryPage.qml:186
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "Za:"
 
-#: app/DepartureQueryPage.qml:162
+#: app/DepartureQueryPage.qml:226
+#, fuzzy, kde-format
+#| msgid "Earlier departure on %1"
+msgctxt "@action:button"
+msgid "Load earlier departures"
+msgstr "Zgodnejši odhod na %1"
+
+#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
+#: app/TransferPage.qml:331
 #, kde-format
-msgid "Data providers: %1"
-msgstr "Dobavitelji podatkov: %1"
+msgctxt "@action:button"
+msgid "Load later connections"
+msgstr "Naloži kasnejše povezave"
+
+#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
+#: app/TransferPage.qml:343
+#, kde-format
+msgid "Data providers:"
+msgstr "Dobavitelji podatkov:"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1555,67 +1607,88 @@ msgstr "Tramvaj"
 msgid "Bus"
 msgstr "Avtobus"
 
-#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:185
+#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:253
 #, kde-format
 msgid "Select"
 msgstr "Izberi"
 
-#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:254
+#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Naloži zgodnejše povezave"
-
-#: app/JourneyQueryPage.qml:134 app/TransferPage.qml:263
-#, kde-format
-msgctxt "@action:button"
-msgid "Load later connections"
-msgstr "Naloži kasnejše povezave"
-
-#: app/JourneyQueryPage.qml:146 app/TransferPage.qml:275
-#, kde-format
-msgid "Data providers:"
-msgstr "Dobavitelji podatkov:"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
 msgid "Select Journey"
 msgstr "Izberi potovanje"
 
-#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:87
+#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Izberi izhodiščno postajo"
 
-#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:100
+#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:112
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Izberi končno postajo"
 
-#: app/JourneyRequestPage.qml:86
+#: app/JourneyRequestPage.qml:98
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Od:"
 
-#: app/JourneyRequestPage.qml:99
+#: app/JourneyRequestPage.qml:111
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Za:"
 
-#: app/JourneyRequestPage.qml:111
+#: app/JourneyRequestPage.qml:123
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "Čas odhoda:"
 
-#: app/JourneyRequestPage.qml:141
+#: app/JourneyRequestPage.qml:153
 #, kde-format
 msgid "Search Journey"
 msgstr "Išči potovanje"
+
+#: app/JourneyRequestPage.qml:199
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "High speed or intercity trains"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Rename favorite location"
+msgctxt "journey query search constraint, description"
+msgid "Regional or local trains"
+msgstr "Preimenuj priljubljeno lokacijo"
+
+#: app/JourneyRequestPage.qml:219
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Rapid transit, metro, trams"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:229
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Local or regional bus services"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:239
+#, fuzzy, kde-format
+#| msgid "Boat trips"
+msgctxt "journey query search constraint, description"
+msgid "Boats or ferries"
+msgstr "Ladijska potovanja"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -1710,7 +1783,7 @@ msgstr[3] "%1 sprememb"
 msgid "Click to extend"
 msgstr "Klikni za razširitev"
 
-#: app/livedatamanager.cpp:663
+#: app/livedatamanager.cpp:632
 #, kde-format
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
@@ -1985,7 +2058,7 @@ msgstr "Datoteke itinerarja KDE (* .itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
 
-#: app/main.qml:162 app/PassPage.qml:88
+#: app/main.qml:162 app/PassPage.qml:94
 #, kde-format
 msgid "Import..."
 msgstr "Uvozi..."
@@ -2183,17 +2256,30 @@ msgstr "Referenca rezervacije"
 msgid "Search..."
 msgstr "Išči..."
 
-#: app/passmanager.cpp:235
+#: app/passmanager.cpp:246
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: app/passmanager.cpp:237
+#: app/passmanager.cpp:249
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr ""
+
+#: app/passmanager.cpp:251
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Veljavno"
+
+#: app/passmanager.cpp:270
+#, fuzzy, kde-format
+#| msgctxt "name - number"
+#| msgid "%1 - %2"
+msgid "%1 - %2"
+msgstr "%1 - %2"
 
 #: app/PassPage.qml:17
 #, kde-format
@@ -2206,12 +2292,20 @@ msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:86
+#: app/PassPage.qml:71
+#, fuzzy, kde-format
+#| msgctxt "name - number"
+#| msgid "%1 - %2"
+msgctxt "name - valid time range"
+msgid "%1 - %2"
+msgstr "%1 - %2"
+
+#: app/PassPage.qml:92
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Uvozi bonus ali kartice programov zvestobe ali pavšalne vozovnice."
 
-#: app/PassPage.qml:89
+#: app/PassPage.qml:95
 #, kde-format
 msgid "document-open"
 msgstr "dokument-open"
@@ -3002,22 +3096,22 @@ msgstr "Deljenje koles"
 msgid "Park & Ride"
 msgstr "Parkiraj in odpelji se"
 
-#: app/TransferPage.qml:208
+#: app/TransferPage.qml:276
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 se konča ob %2"
 
-#: app/TransferPage.qml:210
+#: app/TransferPage.qml:278
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Predhodni prihod %1 na %2"
 
-#: app/TransferPage.qml:220
+#: app/TransferPage.qml:288
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 se začne ob %2"
 
-#: app/TransferPage.qml:222
+#: app/TransferPage.qml:290
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Po odhodu %1 iz %2"
@@ -3122,27 +3216,27 @@ msgstr "Peron: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagon: %1 Sedež: %2"
 
-#: app/VehicleLayoutPage.qml:253
+#: app/VehicleLayoutPage.qml:255
 #, kde-format
 msgid "First class"
 msgstr "Prvi razred"
 
-#: app/VehicleLayoutPage.qml:255
+#: app/VehicleLayoutPage.qml:257
 #, kde-format
 msgid "Second class"
 msgstr "Drugi razred"
 
-#: app/VehicleLayoutPage.qml:257
+#: app/VehicleLayoutPage.qml:259
 #, kde-format
 msgid "First/second class"
 msgstr "Prvi/drugi razred"
 
-#: app/VehicleLayoutPage.qml:258
+#: app/VehicleLayoutPage.qml:260
 #, kde-format
 msgid "Unknown class"
 msgstr "Neznani razred"
 
-#: app/VehicleLayoutPage.qml:302
+#: app/VehicleLayoutPage.qml:304
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Podatki o postavitvi vlaka niso na voljo."
@@ -3271,6 +3365,9 @@ msgstr "Prijavljanje"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Data providers: %1"
+#~ msgstr "Dobavitelji podatkov: %1"
 
 #~ msgid "Select..."
 #~ msgstr "Izberi..."
