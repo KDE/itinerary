@@ -34,7 +34,8 @@ Kirigami.ScrollablePage {
         Kirigami.AbstractListItem {
             readonly property var fc: model.weatherForecast
             highlighted: false
-            backgroundColor: fc.isSevere ? Kirigami.Theme.negativeBackgroundColor : "transparent"
+            // HACK: the Material style has negativeBackgroundColor == negativeTextColor, which makes content unreadable
+            backgroundColor: fc.isSevere && Qt.platform.os !== 'android' ? Kirigami.Theme.negativeBackgroundColor : "transparent"
 
             RowLayout {
                 spacing: 0
