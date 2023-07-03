@@ -22,6 +22,7 @@ public:
     JNI_PROPERTY(jint, accessLevel)
     JNI_PROPERTY(jint, color)
     JNI_PROPERTY(KAndroidExtras::java::lang::String, timezone)
+    JNI_PROPERTY(KAndroidExtras::java::lang::String, owner)
 };
 
 #endif

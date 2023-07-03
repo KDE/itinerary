@@ -16,13 +16,14 @@
 
 using namespace KAndroidExtras;
 
-AndroidCalendar::AndroidCalendar(const QTimeZone &tz, jlong id)
+AndroidCalendar::AndroidCalendar(const QTimeZone &tz, const QString &owner, jlong id)
     : KCalendarCore::Calendar(tz)
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     , m_calendar(Jni::fromHandle<android::content::Context>(QtAndroid::androidContext()), id)
 #else
     , m_calendar(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())), id)
 #endif
+    , m_owner(owner)
 {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     setDeletionTracking(false);
@@ -73,6 +74,15 @@ KCalendarCore::Event::List AndroidCalendar::rawEventsForDate(const QDateTime &dt
 
 bool AndroidCalendar::addEvent(const KCalendarCore::Event::Ptr &event)
 {
+    // set the organizer to the calendar owner if not otherwise specified
+    // this is checked by several Android calendar apps to decide whether they
+    // should offer to edit the event
+    if (event->organizer().email().isEmpty()) {
+        auto org = event->organizer();
+        org.setEmail(m_owner);
+        event->setOrganizer(org);
+    }
+
     const auto data = AndroidIcalConverter::writeEvent(event);
     const auto result = m_calendar.addEvent(data);
     if (result) {

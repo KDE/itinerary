@@ -22,7 +22,8 @@ public class CalendarPlugin
         CalendarContract.Calendars.CALENDAR_DISPLAY_NAME,
         CalendarContract.Calendars.CALENDAR_ACCESS_LEVEL,
         CalendarContract.Calendars.CALENDAR_COLOR,
-        CalendarContract.Calendars.CALENDAR_TIME_ZONE
+        CalendarContract.Calendars.CALENDAR_TIME_ZONE,
+        CalendarContract.Calendars.OWNER_ACCOUNT
     };
 
     public CalendarData[] getCalendars()
@@ -40,6 +41,7 @@ public class CalendarPlugin
             data.accessLevel = cur.getInt(2);
             data.color = cur.getInt(3);
             data.timezone = cur.getString(4);
+            data.owner = cur.getString(5);
             result[cur.getPosition()] = data;
         }
 

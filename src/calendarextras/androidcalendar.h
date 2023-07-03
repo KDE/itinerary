@@ -19,7 +19,7 @@
 class AndroidCalendar : public KCalendarCore::Calendar
 {
 public:
-    explicit AndroidCalendar(const QTimeZone &tz, jlong id);
+    explicit AndroidCalendar(const QTimeZone &tz, const QString &owner, jlong id);
     ~AndroidCalendar();
 
     // KCalendarCore::Calendar interface
@@ -80,6 +80,7 @@ private:
     void registerEvent(const KCalendarCore::Event::Ptr &event) const;
 
     JniCalendar m_calendar;
+    const QString m_owner;
     mutable std::unordered_map<IncidenceKey, KCalendarCore::Event::Ptr> m_incidences;
 };
 

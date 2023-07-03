@@ -13,4 +13,5 @@ public class CalendarData
     public int accessLevel;
     public int color;
     public java.lang.String timezone;
+    public java.lang.String owner;
 }
