@@ -149,6 +149,7 @@ App.DetailsPage {
 
                 MobileForm.AbstractFormDelegate {
                     background: Item {}
+                    visible: reservationFor.arrivalTime > 0
                     contentItem: ColumnLayout {
                         Layout.fillWidth: true
                         spacing: Kirigami.Units.smallSpacing
