@@ -733,7 +733,19 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.04.3" date="2023-07-06"/>
+    <release version="23.04.3" date="2023-07-06">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Color Line, DJH, Fjord Line, Flixbus, Grimladi Lines, onepagebooking, SNCB, Thalys and Trenitalia.</li>
+          <li>Fixed a crash on Android when importing a file with a space in its path.</li>
+          <li>Fixed public transport queries for VRS.</li>
+          <li>Fixed missing transport mode information for some OpenTripPlanner results.</li>
+          <li>Filter implausible walking paths from public transport routers.</li>
+          <li>Fixed importing boat or ferry reservations from the calendar.</li>
+          <li>Fixed an infinite loop when computing indoor map arguments.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.04.2" date="2023-06-08">
       <description>
         <ul>
