@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-03 00:56+0000\n"
-"PO-Revision-Date: 2023-06-17 04:11\n"
+"POT-Creation-Date: 2023-07-04 00:49+0000\n"
+"PO-Revision-Date: 2023-07-03 11:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -266,12 +266,10 @@ msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
 #: app/applicationcontroller.cpp:451
-#, fuzzy, kde-format
-#| msgid "One reservation imported."
-#| msgid_plural "%1 reservations imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "已导入 %1 个预约。"
+msgstr[0] ""
 
 #: app/applicationcontroller.cpp:454
 #, kde-format
@@ -340,10 +338,9 @@ msgid "Arrival time: %1"
 msgstr "到达时间：%1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Export Trip"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "导出行程"
+msgstr ""
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -352,12 +349,10 @@ msgid "Departure"
 msgstr ""
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgctxt "departure time for a train"
-#| msgid "Departure time:"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
-msgstr "起飞时间："
+msgstr ""
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
 #, kde-format
@@ -372,11 +367,10 @@ msgid "Arrival"
 msgstr ""
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival time: %1"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "到达时间：%1"
+msgstr ""
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -681,18 +675,16 @@ msgstr "线路 %1 早点"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "改签联运交通"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
 #: app/TransferPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "数据提供者：%1"
+msgstr ""
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -715,10 +707,9 @@ msgid "Do you really want to delete this document?"
 msgstr "您确定要删除此证件吗？"
 
 #: app/DocumentsCard.qml:102
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "Documents"
-msgstr "添加证件"
+msgstr ""
 
 #: app/DocumentsCard.qml:111
 #, kde-format
@@ -1606,11 +1597,10 @@ msgid "Select"
 msgstr "选择"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "改签联运交通"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -2503,7 +2493,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "公共交通信息源..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2514,7 +2504,7 @@ msgstr "天气预报"
 msgid "Showing weather forecasts will query online services."
 msgstr "显示天气预报需要查询在线服务。"
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:112
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2784,10 +2774,9 @@ msgid "No locations found"
 msgstr ""
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "活动门票"
+msgstr ""
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -3030,10 +3019,9 @@ msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
-msgstr "选择换乘方式"
+msgstr ""
 
 #: app/TransferDelegate.qml:135
 #, kde-format
@@ -3107,7 +3095,7 @@ msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "日期：%2 (%1 天)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:68
+#: app/WeatherForecastPage.qml:69
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3238,13 +3226,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
@@ -3337,9 +3325,3 @@ msgstr ""
 
 #~ msgid "Data providers: %1"
 #~ msgstr "数据提供者：%1"
-
-#~ msgid "Select..."
-#~ msgstr "选择..."
-
-#~ msgid "Select transfer..."
-#~ msgstr "选择换乘方式..."

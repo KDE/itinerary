@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-03 00:56+0000\n"
-"PO-Revision-Date: 2023-06-28 14:13+0200\n"
+"POT-Creation-Date: 2023-07-04 00:49+0000\n"
+"PO-Revision-Date: 2023-07-03 11:56+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -186,27 +186,25 @@ msgstr "Do %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "Dálkové vlaky"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "Umístění"
+msgstr "Místní vlaky"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "Rychlá doprava"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobus"
@@ -216,7 +214,7 @@ msgstr "Autobus"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "Přívoz"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -670,26 +668,23 @@ msgid "To:"
 msgstr "Komu:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "Dřívější odlet  na %1"
+msgstr "Načíst dřívější odjezdy"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Alternativní spojení"
+msgstr "Načíst pozdější spojení"
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
 #: app/TransferPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Poskytovatelé dat: %1"
+msgstr "Poskytovatelé dat:"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1606,11 +1601,10 @@ msgid "Select"
 msgstr "Vybrat"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Alternativní spojení"
+msgstr "Načíst dřívější spojení"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1656,14 +1650,13 @@ msgstr "Hledat výlet"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Vysokorychlostní nebo meziměstské vlaky"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "Přejmenovat oblíbené místo"
+msgstr "Regionální nebo místní vlaky"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -1675,13 +1668,13 @@ msgstr ""
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Místní nebo regionální autodopravci"
 
 #: app/JourneyRequestPage.qml:239
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr ""
+msgstr "Lodě nebo přívozy"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -2258,7 +2251,7 @@ msgstr "Prošlý"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Budoucí"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2267,9 +2260,7 @@ msgid "Valid"
 msgstr "Platný"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -2285,9 +2276,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2512,7 +2501,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Zdroje informací o veřejné dopravě..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2523,7 +2512,7 @@ msgstr "Předpověď počasí"
 msgid "Showing weather forecasts will query online services."
 msgstr "Pro zobrazení předpovědi počasí budou dotazovány služby online."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:112
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3042,8 +3031,7 @@ msgid "Arrival Vehicle Layout"
 msgstr ""
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Vyberte přesun"
 
@@ -3120,7 +3108,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:68
+#: app/WeatherForecastPage.qml:69
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3253,13 +3241,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Vysoká"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
@@ -3352,12 +3340,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Poskytovatelé dat: %1"
-
-#~ msgid "Select..."
-#~ msgstr "Vybrat..."
-
-#~ msgid "Select transfer..."
-#~ msgstr "Vyberte přesun..."

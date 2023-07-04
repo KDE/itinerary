@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-03 00:56+0000\n"
+"POT-Creation-Date: 2023-07-04 00:49+0000\n"
 "PO-Revision-Date: 2023-06-29 09:50+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2540,7 +2540,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Sources d'informations sur les transports publics..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2553,7 +2553,7 @@ msgstr ""
 "L'affichage des prévisions météorologiques enverra une requête vers un "
 "service en ligne."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:112
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3164,7 +3164,7 @@ msgstr[0] "Date : %2 (un jour)"
 msgstr[1] "Date : %2 (%1 jours)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:68
+#: app/WeatherForecastPage.qml:69
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3298,13 +3298,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Haut"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"

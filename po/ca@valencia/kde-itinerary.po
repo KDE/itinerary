@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-03 00:56+0000\n"
-"PO-Revision-Date: 2023-07-01 12:46+0200\n"
+"POT-Creation-Date: 2023-07-04 00:49+0000\n"
+"PO-Revision-Date: 2023-07-03 09:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -192,27 +192,25 @@ msgstr "A %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "Trens de llarga distància"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "Ubicació"
+msgstr "Trens locals"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "Transport ràpid"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobús"
@@ -222,7 +220,7 @@ msgstr "Autobús"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "Transbordador"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -674,11 +672,10 @@ msgid "To:"
 msgstr "A:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "Eixida avançada a %1"
+msgstr "Carrega les eixides anteriors"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
@@ -1659,33 +1656,31 @@ msgstr "Busca un viatge"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Trens d'alta velocitat o interurbans"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "Canvia el nom de la ubicació preferida"
+msgstr "Trens regionals o locals"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "Transport ràpid, metro, tramvia"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Serveis d'autobús local o regional"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "Viatges de vaixell"
+msgstr "Vaixells o transbordadors"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -2265,7 +2260,7 @@ msgstr "Caducat"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Futur"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2274,9 +2269,7 @@ msgid "Valid"
 msgstr "Vàlid"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -2292,9 +2285,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2519,7 +2510,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Fonts d'informació de transport públic..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:92
+#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:18
 #, kde-format
 msgid "Weather Forecast"
@@ -2532,7 +2523,7 @@ msgstr ""
 "Per a mostrar les previsions meteorològiques es consultaran els serveis en "
 "línia."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:112
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -3137,7 +3128,7 @@ msgstr[0] "Data: %2 (un dia)"
 msgstr[1] "Data: %2 (%1 dies)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:68
+#: app/WeatherForecastPage.qml:69
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3269,13 +3260,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Alta"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:81
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:94
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
@@ -3370,6 +3361,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Proveïdors de dades: %1"
