@@ -9,6 +9,7 @@
 #include <QObject>
 
 class QNetworkAccessManager;
+class QNetworkReply;
 class QUrl;
 
 /** Download content from an online source.
@@ -21,7 +22,7 @@ class DownloadJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit DownloadJob(QUrl url, QNetworkAccessManager *nam, QObject *parent = nullptr);
+    explicit DownloadJob(const QUrl &url, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~DownloadJob();
 
     bool hasError() const;
@@ -33,6 +34,10 @@ Q_SIGNALS:
 
 private:
     bool handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam);
+    QNetworkReply* makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam);
+    bool handleActivityPubReply(QNetworkReply *reply);
+    QNetworkReply* makeDownloadRequest(QUrl url, QNetworkAccessManager *nam);
+    void handleDownloadReply(QNetworkReply *reply);
 
     QByteArray m_data;
     QString m_errorMessage;

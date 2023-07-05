@@ -5,23 +5,28 @@
 
 #include "mocknetworkaccessmanager.h"
 
-#include <QNetworkReply>
+#include <cstring>
 
 class MockNetworkReply : public QNetworkReply
 {
     Q_OBJECT
 public:
-    explicit MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request, QObject *parent);
+    explicit MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request,  const MockNetworkAccessManager::Reply &replyData, QObject *parent);
 
     qint64 bytesAvailable() const override;
     void abort() override;
 
 protected:
     qint64 readData(char *data, qint64 maxSize) override;
+
+private:
+    QByteArray m_data;
+    qint64 m_offset = 0;
 };
 
-MockNetworkReply::MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request, QObject *parent)
+MockNetworkReply::MockNetworkReply(const QNetworkAccessManager::Operation op, const QNetworkRequest &request, const MockNetworkAccessManager::Reply &replyData, QObject *parent)
     : QNetworkReply(parent)
+    , m_data(replyData.data)
 {
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
@@ -33,31 +38,45 @@ MockNetworkReply::MockNetworkReply(const QNetworkAccessManager::Operation op, co
         setSslConfiguration(request.sslConfiguration());
     }
 
-    // TODO actually provide a result
-    setError(QNetworkReply::QNetworkReply::NetworkSessionFailedError, QLatin1String("providing replies not implemented yet"));
+    setError(replyData.error, replyData.errorMessage);
+    setAttribute(QNetworkRequest::HttpStatusCodeAttribute, replyData.statusCode);
     setFinished(true);
     QMetaObject::invokeMethod(this, &QNetworkReply::finished, Qt::QueuedConnection);
 }
 
 qint64 MockNetworkReply::bytesAvailable() const
 {
-    return 0;
+    return QNetworkReply::bytesAvailable() + m_data.size() - m_offset;
 }
 
 void MockNetworkReply::abort()
 {
 }
 
-qint64 MockNetworkReply::readData([[maybe_unused]] char *data, [[maybe_unused]] qint64 maxSize)
+qint64 MockNetworkReply::readData(char *data, qint64 maxSize)
 {
-    return 0;
+    const qint64 length = std::min(qint64(m_data.length() - m_offset), maxSize);
+
+    if (length <= 0) {
+        return 0;
+    }
+
+    std::memcpy(data, m_data.constData() + m_offset, length);
+    m_offset += length;
+    return length;
 }
 
 QNetworkReply* MockNetworkAccessManager::createRequest(QNetworkAccessManager::Operation op, const QNetworkRequest &originalReq, QIODevice *outgoingData)
 {
     Request r{op, originalReq, outgoingData ? outgoingData->readAll() : QByteArray()};
     requests.push_back(std::move(r));
-    return new MockNetworkReply(op, originalReq, this);
+
+    Reply replyData;
+    if (!replies.empty()) {
+        replyData = replies.front();
+        replies.pop();
+    }
+    return new MockNetworkReply(op, originalReq, replyData, this);
 }
 
 #include "mocknetworkaccessmanager.moc"

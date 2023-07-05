@@ -4,7 +4,9 @@
 */
 
 #include <QNetworkAccessManager>
+#include <QNetworkReply>
 
+#include <queue>
 #include <vector>
 
 class MockNetworkAccessManager : public QNetworkAccessManager
@@ -18,6 +20,15 @@ public:
     };
 
     std::vector<Request> requests;
+
+    struct Reply {
+        QNetworkReply::NetworkError error = QNetworkReply::NetworkSessionFailedError;
+        int statusCode = 0;
+        QByteArray data;
+        QString errorMessage = QStringLiteral("no pending reply available");
+    };
+
+    std::queue<Reply> replies;
 
 protected:
     QNetworkReply* createRequest(QNetworkAccessManager::Operation op, const QNetworkRequest &originalReq, QIODevice *outgoingData = nullptr) override;

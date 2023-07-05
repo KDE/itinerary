@@ -18,29 +18,24 @@
 #include <QNetworkRequest>
 #include <QUrlQuery>
 
-DownloadJob::DownloadJob(QUrl url, QNetworkAccessManager *nam, QObject *parent)
+DownloadJob::DownloadJob(const QUrl &url, QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
 {
+    // see if this is a URL patterns for an online ticket
     if (handleOnlineTicketRetrievalUrl(url, nam)) {
         return;
     }
 
-    url.setScheme(QLatin1String("https"));
-    QNetworkRequest req(url);
-    req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
-    qCDebug(Log) << "Downloading" << url;
-    auto reply = nam->get(req);
-    reply->setParent(this);
-
-    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        reply->deleteLater();
-        if (reply->error() != QNetworkReply::NoError) {
-            qCDebug(Log) << reply->url() << reply->errorString();
-            m_errorMessage = i18n("Download failed: %1", reply->errorString());
-        } else {
-            m_data = reply->readAll();
+    // try if this provides an ActivityPub object
+    auto reply = makeActivityPubRequest(url, nam);
+    connect(reply, &QNetworkReply::finished, this, [this, reply, url, nam]() {
+        if (handleActivityPubReply(reply)) {
+            return;
         }
-        Q_EMIT finished();
+
+        // ActivityPub request failed, try regular download instead
+        auto reply2 = makeDownloadRequest(url, nam);
+        connect(reply2, &QNetworkReply::finished, this, [this, reply2]() { handleDownloadReply(reply2); });
     });
 }
 
@@ -85,4 +80,54 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
         return true;
     }
     return false;
+}
+
+QNetworkReply* DownloadJob::makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam)
+{
+    url.setScheme(QLatin1String("https"));
+    QNetworkRequest req(url);
+    req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+    req.setRawHeader("Accept", "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\"");
+    qCDebug(Log) << "Checking for ActivityStreams" << url;
+    auto reply = nam->get(req);
+    reply->setParent(this);
+    return reply;
+}
+
+bool DownloadJob::handleActivityPubReply(QNetworkReply *reply)
+{
+    reply->deleteLater();
+    if (reply->error() != QNetworkReply::NoError) {
+        // TODO distinguish between persistent network errors (and stop here for those),
+        // and errors caused by just the server not supporting ActivityPub requests
+        qCDebug(Log) << reply->url() << reply->errorString();
+        return false;
+    }
+
+    m_data = reply->readAll();
+    Q_EMIT finished();
+    return true;
+}
+
+QNetworkReply* DownloadJob::makeDownloadRequest(QUrl url, QNetworkAccessManager *nam)
+{
+    url.setScheme(QLatin1String("https"));
+    QNetworkRequest req(url);
+    req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+    qCDebug(Log) << "Downloading" << url;
+    auto reply = nam->get(req);
+    reply->setParent(this);
+    return reply;
+}
+
+void DownloadJob::handleDownloadReply(QNetworkReply *reply)
+{
+    reply->deleteLater();
+    if (reply->error() != QNetworkReply::NoError) {
+        qCDebug(Log) << reply->url() << reply->errorString();
+        m_errorMessage = i18n("Download failed: %1", reply->errorString());
+    } else {
+        m_data = reply->readAll();
+    }
+    Q_EMIT finished();
 }
