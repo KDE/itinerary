@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-04 00:49+0000\n"
-"PO-Revision-Date: 2023-07-02 07:04+0200\n"
+"PO-Revision-Date: 2023-07-04 08:27+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -189,37 +189,35 @@ msgstr "%1-მდე"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "საქალაქთაშორისო მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "მდებარეობა"
+msgstr "ადგილობრივი მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "სწრაფი ტრანზიტი"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
-msgstr "მატარებელი"
+msgstr "ავტობუსი"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
 #: app/JourneyRequestPage.qml:238 app/TransferPage.qml:142
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "ბორანი"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -670,11 +668,10 @@ msgid "To:"
 msgstr "ვის:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "ნაადრევი გასვლა %1-ზე"
+msgstr "ნაადრევი გასვლების ჩატვირთვა"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
@@ -1655,33 +1652,31 @@ msgstr "მოგზაურობის ძებნა"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "ჩქაროსნული ან საქალაქთაშორისო მატარებლები"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "ადგილის სანიშნის სახელის გადარქმევა"
+msgstr "რეგიონალური ან ადგილობრივი მატარებლები"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "სწრაფი ტრანზიტი, მეტრო, ტრამვაი"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "ადგილობრივი ან რეგიონული ავტობუსის მომსახურება"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "ნავით მოგზაურობა"
+msgstr "ნავები ან ბორნები"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -2258,7 +2253,7 @@ msgstr "ვადაგასული"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "მომავალი"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2267,9 +2262,7 @@ msgid "Valid"
 msgstr "სწორი"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -2285,9 +2278,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"

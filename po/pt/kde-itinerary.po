@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-04 00:49+0000\n"
-"PO-Revision-Date: 2023-07-03 00:53+0100\n"
+"PO-Revision-Date: 2023-07-05 00:24+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-POFile-SpellExtra: Nextcloud DavDroid Connect GPX gpx NAA RAT Davx SMART\n"
 "X-POFile-SpellExtra: SHC dd MMMM Ferry Lambreta Trotinete Pl Matrix\n"
 "X-POFile-IgnoreConsistency: Show\n"
-"X-POFile-SpellExtra: Deutsche Bahn SNCF\n"
+"X-POFile-SpellExtra: Deutsche Bahn SNCF intercidades ferries\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -196,27 +196,25 @@ msgstr "Para %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "Comboios de longa distância"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "Localização"
+msgstr "Comboios locais"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "Trânsito rápido"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autocarro"
@@ -226,7 +224,7 @@ msgstr "Autocarro"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "'Ferry'"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -679,11 +677,10 @@ msgid "To:"
 msgstr "Para:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "Partida antecipada em %1"
+msgstr "Carregar as partidas antecipadas"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
@@ -1664,33 +1661,31 @@ msgstr "Procurar uma Jornada"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Comboios de alta velocidade ou intercidades"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "Mudar o nome da localização favorita"
+msgstr "Comboios locais ou regionais"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "Trânsito rápido, metro, eléctricos"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Serviços de autocarros locais ou regionais"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "Viagens de barco"
+msgstr "Barcos ou 'ferries'"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -2267,7 +2262,7 @@ msgstr "Expirado"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Futuro"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2292,9 +2287,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3366,6 +3359,3 @@ msgstr "A autenticar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Fornecedores de dados: %1"
