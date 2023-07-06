@@ -101,6 +101,22 @@ private Q_SLOTS:
         QCOMPARE(job.data(), QByteArray());
     }
 
+    void testNetworkFailure()
+    {
+        m_nam.requests.clear();
+
+        DownloadJob job(QUrl(QStringLiteral("https://akademy.kde.org/2023/")), &m_nam);
+        QSignalSpy finishedSpy(&job, &DownloadJob::finished);
+        QVERIFY(finishedSpy.wait());
+
+        QCOMPARE(m_nam.requests.size(), 1);
+        QCOMPARE(m_nam.requests[0].op, QNetworkAccessManager::GetOperation);
+        QCOMPARE(m_nam.requests[0].request.url(), QUrl(QStringLiteral("https://akademy.kde.org/2023/")));
+        QVERIFY(job.hasError());
+        QVERIFY(!job.errorMessage().isEmpty());
+        QCOMPARE(job.data(), QByteArray());
+    }
+
 private:
     MockNetworkAccessManager m_nam;
 };

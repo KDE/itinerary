@@ -97,9 +97,14 @@ QNetworkReply* DownloadJob::makeActivityPubRequest(QUrl url, QNetworkAccessManag
 bool DownloadJob::handleActivityPubReply(QNetworkReply *reply)
 {
     reply->deleteLater();
+    if (reply->error() == QNetworkReply::NetworkSessionFailedError) {
+        // assumed persistent network error, not worth trying a regular download either
+        m_errorMessage = i18n("Network error: %1", reply->errorString());
+        Q_EMIT finished();
+        return true;
+    }
     if (reply->error() != QNetworkReply::NoError) {
-        // TODO distinguish between persistent network errors (and stop here for those),
-        // and errors caused by just the server not supporting ActivityPub requests
+        // ActivityPub not available, try regular download
         qCDebug(Log) << reply->url() << reply->errorString();
         return false;
     }
