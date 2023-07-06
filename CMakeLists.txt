@@ -45,7 +45,7 @@ endif()
 
 set(QT_MIN_VERSION 5.15.2)
 if (ANDROID)
-    set(QT_MIN_VERSION 5.15.8) # due to 5.15.8 changing the Gradle version in a non-backward compat way
+    set(QT_MIN_VERSION 5.15.10) # due to 5.15.10 changing NDK versioning
 endif()
 if (QT_MAJOR_VERSION EQUAL "6")
     set(KF_MAJOR_VERSION "6")
