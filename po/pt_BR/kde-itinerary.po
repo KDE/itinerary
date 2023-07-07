@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-06 01:00+0000\n"
+"POT-Creation-Date: 2023-07-07 00:51+0000\n"
 "PO-Revision-Date: 2023-06-07 14:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -29,47 +29,32 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "elchevive@opensuse.org"
 
-#: app/AboutPage.qml:16 app/main.qml:233
+#: app/AboutPage.qml:19 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "Sobre"
 
-#: app/AboutPage.qml:144
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Copyright: %1"
 
-#: app/AboutPage.qml:151
+#: app/AboutPage.qml:156
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "Site: <a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:163
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "Licença: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:183
+#: app/AboutPage.qml:186
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "Licença: <a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:194
-#, kde-format
-msgid "Application"
-msgstr "Aplicativo"
-
-#: app/AboutPage.qml:195
-#, kde-format
-msgid "Transport Data"
-msgstr "Dados de transporte"
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "Version"
-msgstr "Versão"
-
-#: app/AboutPage.qml:211
+#: app/AboutPage.qml:202
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
@@ -78,19 +63,31 @@ msgstr ""
 "O KDE Itinerary é desenvolvido pela comunidade KDE como software livre e usa "
 "os componentes listados abaixo."
 
-#: app/AboutPage.qml:237
+#: app/AboutPage.qml:217
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "O KDE Itinerary usa dados de transporte públicos das seguintes fontes."
 
-#: app/AboutPage.qml:264
+#: app/AboutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Developer information"
+msgstr "Mais informações"
+
+#: app/AboutPage.qml:238
 #, kde-format
 msgid "Application version: %1"
 msgstr "Versão do aplicativo: %1"
 
-#: app/AboutPage.qml:283
+#: app/AboutPage.qml:254
 #, kde-format
 msgid "Extractor capabilities:"
+msgstr "Recursos do extrator:"
+
+#: app/AboutPage.qml:259
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities:"
+msgid "Extractor capabilities copied to clipboard"
 msgstr "Recursos do extrator:"
 
 #: app/ActionsCard.qml:31
@@ -240,36 +237,31 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:321
-#, kde-format
-msgid "Download failed: %1"
-msgstr "Falha ao baixar: %1"
-
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:606
-#: app/applicationcontroller.cpp:621
+#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:618
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
-#: app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:344
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Falha ao importar: arquivo muito grande."
 
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:683
-#: app/applicationcontroller.cpp:693
+#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
+#: app/applicationcontroller.cpp:690
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:436
+#: app/applicationcontroller.cpp:433
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:448
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "One pass imported."
@@ -277,28 +269,28 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Nada a importar."
 msgstr[1] "Nada a importar."
 
-#: app/applicationcontroller.cpp:454
+#: app/applicationcontroller.cpp:451
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Pass imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:487
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:598
+#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:646
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -756,6 +748,16 @@ msgstr "Nenhum documento anexado a esta reserva."
 msgid "Add Document..."
 msgstr "Adicionar documento..."
 
+#: app/downloadjob.cpp:102
+#, kde-format
+msgid "Network error: %1"
+msgstr ""
+
+#: app/downloadjob.cpp:133
+#, kde-format
+msgid "Download failed: %1"
+msgstr "Falha ao baixar: %1"
+
 #: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
@@ -1177,7 +1179,7 @@ msgstr "Excluir"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2045,22 +2047,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:305
+#: app/main.cpp:314
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:306
+#: app/main.cpp:315
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 A comunidade KDE"
 
-#: app/main.cpp:312
+#: app/main.cpp:322
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:317
+#: app/main.cpp:327
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Arquivo PkPass ou JSON-LD a importar."
@@ -3480,6 +3482,15 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#~ msgid "Application"
+#~ msgstr "Aplicativo"
+
+#~ msgid "Transport Data"
+#~ msgstr "Dados de transporte"
+
+#~ msgid "Version"
+#~ msgstr "Versão"
 
 #~ msgid "Data providers: %1"
 #~ msgstr "Fornecedores de dados: %1"

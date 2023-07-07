@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-06 01:00+0000\n"
+"POT-Creation-Date: 2023-07-07 00:51+0000\n"
 "PO-Revision-Date: 2023-07-03 11:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -29,66 +29,63 @@ msgstr ""
 "kde-china@kde.org, zhouwenqing655@gmail.com, i@guoyunhe.me, wordless@echo."
 "moe, tysontan@tysontan.com"
 
-#: app/AboutPage.qml:16 app/main.qml:233
+#: app/AboutPage.qml:19 app/main.qml:233
 #, kde-format
 msgid "About"
 msgstr "关于"
 
-#: app/AboutPage.qml:144
+#: app/AboutPage.qml:150
 #, kde-format
 msgid "Copyright: %1"
 msgstr "Copyright：%1"
 
-#: app/AboutPage.qml:151
+#: app/AboutPage.qml:156
 #, kde-format
 msgid "Homepage: <a href=\"%1\">%1</a>"
 msgstr "项目主页：<a href=\"%1\">%1</a>"
 
-#: app/AboutPage.qml:159
+#: app/AboutPage.qml:163
 #, kde-format
 msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 msgstr "许可协议：<a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
 
-#: app/AboutPage.qml:183
+#: app/AboutPage.qml:186
 #, kde-format
 msgid "License: <a href=\"%2\">%1</a>"
 msgstr "许可协议：<a href=\"%2\">%1</a>"
 
-#: app/AboutPage.qml:194
-#, kde-format
-msgid "Application"
-msgstr "应用程序"
-
-#: app/AboutPage.qml:195
-#, kde-format
-msgid "Transport Data"
-msgstr "交通数据"
-
-#: app/AboutPage.qml:196
-#, kde-format
-msgid "Version"
-msgstr "版本"
-
-#: app/AboutPage.qml:211
+#: app/AboutPage.qml:202
 #, kde-format
 msgid ""
 "KDE Itinerary is developed by the KDE community as free software and uses "
 "the components listed below."
 msgstr "KDE Itinerary 是由社区使用如下组件开发的自由软件。"
 
-#: app/AboutPage.qml:237
+#: app/AboutPage.qml:217
 #, kde-format
 msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Itinerary 使用以下来源的公共交通数据。"
 
-#: app/AboutPage.qml:264
+#: app/AboutPage.qml:233
+#, fuzzy, kde-format
+#| msgid "More information"
+msgid "Developer information"
+msgstr "更多信息"
+
+#: app/AboutPage.qml:238
 #, kde-format
 msgid "Application version: %1"
 msgstr "应用程序版本：%1"
 
-#: app/AboutPage.qml:283
+#: app/AboutPage.qml:254
 #, kde-format
 msgid "Extractor capabilities:"
+msgstr "数据提取器特性列表："
+
+#: app/AboutPage.qml:259
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities:"
+msgid "Extractor capabilities copied to clipboard"
 msgstr "数据提取器特性列表："
 
 #: app/ActionsCard.qml:31
@@ -237,61 +234,56 @@ msgstr "您确定要用新选择的行程替换现有预订吗？"
 msgid "Replace"
 msgstr "替换"
 
-#: app/applicationcontroller.cpp:321
-#, kde-format
-msgid "Download failed: %1"
-msgstr "下载失败：%1"
-
-#: app/applicationcontroller.cpp:342 app/applicationcontroller.cpp:606
-#: app/applicationcontroller.cpp:621
+#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
+#: app/applicationcontroller.cpp:618
 #, kde-format
 msgid "Import failed: %1"
 msgstr "导入失败：%1"
 
-#: app/applicationcontroller.cpp:347
+#: app/applicationcontroller.cpp:344
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "导入失败：文件太大。"
 
-#: app/applicationcontroller.cpp:429 app/applicationcontroller.cpp:683
-#: app/applicationcontroller.cpp:693
+#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
+#: app/applicationcontroller.cpp:690
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "已导入 %1 个预约。"
 
-#: app/applicationcontroller.cpp:436
+#: app/applicationcontroller.cpp:433
 #, kde-format
 msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:448
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:454
+#: app/applicationcontroller.cpp:451
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:487
 #, kde-format
 msgid "Nothing imported."
 msgstr "您提供的信息中没有可被导入的内容。"
 
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:585
+#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
 #, kde-format
 msgid "Export failed: %1"
 msgstr "导出失败：%1"
 
-#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:598
+#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
 #, kde-format
 msgid "Export completed."
 msgstr "导出完成。"
 
-#: app/applicationcontroller.cpp:646
+#: app/applicationcontroller.cpp:643
 #, kde-format
 msgid "Import completed."
 msgstr "导入完成。"
@@ -721,6 +713,16 @@ msgstr "没有附加于此预约的证件。"
 msgid "Add Document..."
 msgstr "添加证件..."
 
+#: app/downloadjob.cpp:102
+#, kde-format
+msgid "Network error: %1"
+msgstr ""
+
+#: app/downloadjob.cpp:133
+#, kde-format
+msgid "Download failed: %1"
+msgstr "下载失败：%1"
+
 #: app/EditorPage.qml:38 app/TicketEditor.qml:23
 #, kde-format
 msgid "Save"
@@ -1119,7 +1121,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:298 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1958,22 +1960,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr ""
 
-#: app/main.cpp:305
+#: app/main.cpp:314
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:306
+#: app/main.cpp:315
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr ""
 
-#: app/main.cpp:312
+#: app/main.cpp:322
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:317
+#: app/main.cpp:327
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "要导入的 PkPass 文件或 JSON-LD 文件。"
@@ -3322,6 +3324,15 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
+
+#~ msgid "Application"
+#~ msgstr "应用程序"
+
+#~ msgid "Transport Data"
+#~ msgstr "交通数据"
+
+#~ msgid "Version"
+#~ msgstr "版本"
 
 #~ msgid "Data providers: %1"
 #~ msgstr "数据提供者：%1"
