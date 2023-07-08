@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 10:52+0200\n"
+"PO-Revision-Date: 2023-07-07 22:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -69,10 +69,9 @@ msgstr ""
 "volgende bronnen."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Meer informatie"
+msgstr "Informatie voor ontwikkelaar"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -85,10 +84,9 @@ msgid "Extractor capabilities:"
 msgstr "Functies van extractor:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Functies van extractor:"
+msgstr "Mogelijkheden van extractor gekopieerd naar klembord"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -719,7 +717,7 @@ msgstr "Document toevoegen..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Netwerkfout: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

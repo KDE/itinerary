@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 09:04+0300\n"
+"PO-Revision-Date: 2023-07-07 08:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -73,10 +73,9 @@ msgstr ""
 "нижче джерел."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Докладніше"
+msgstr "Відомості для розробника"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -89,10 +88,9 @@ msgid "Extractor capabilities:"
 msgstr "Можливості видобування:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Можливості видобування:"
+msgstr "Можливості видобування скопійовано до буфера обміну даними"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -725,7 +723,7 @@ msgstr "Додати документ…"
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Помилка мережі: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

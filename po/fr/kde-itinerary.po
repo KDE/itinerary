@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-06-29 09:50+0200\n"
+"PO-Revision-Date: 2023-07-05 21:48+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -190,27 +190,25 @@ msgstr "Vers %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "Trains à longue distance"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "Emplacement"
+msgstr "Trains locaux"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "Correspondance rapide"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
@@ -220,7 +218,7 @@ msgstr "Bus"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "Traversier"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -672,26 +670,23 @@ msgid "To:"
 msgstr "Vers :"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "Départ avancé sur %1"
+msgstr "Charger les départs anticipés"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Correspondances alternatives"
+msgstr "Charger les correspondances plus tardives"
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
 #: app/TransferPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Fournisseurs de données : %1"
+msgstr "Fournisseurs de données :"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -1628,11 +1623,10 @@ msgid "Select"
 msgstr "Sélectionner"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Correspondances alternatives"
+msgstr "Charger les correspondances antérieures"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1680,33 +1674,31 @@ msgstr "Rechercher un voyage"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Trains à grande vitesse ou inter-cités"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "Renommer l'emplacement favori"
+msgstr "Trains régionaux ou locaux"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "Trams, métros, transfert rapide"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Services de bus locaux ou régionaux"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "Voyages en bateau"
+msgstr "Bateaux ou traversiers"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -1798,7 +1790,7 @@ msgstr[1] "%1 modifications"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Cliquer pour développer"
 
 #: app/livedatamanager.cpp:632
 #, kde-format
@@ -2286,7 +2278,7 @@ msgstr "Expiré"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Futur"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2295,9 +2287,7 @@ msgid "Valid"
 msgstr "Valable"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -2313,9 +2303,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -3088,10 +3076,9 @@ msgid "Arrival Vehicle Layout"
 msgstr "Disposition du véhicule à l'arrivée"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
-msgstr "Sélectionner la correspondance"
+msgstr "Sélectionner le transfert"
 
 #: app/TransferDelegate.qml:135
 #, kde-format

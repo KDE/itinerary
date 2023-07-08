@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 11:53+0300\n"
+"PO-Revision-Date: 2023-07-07 11:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -68,10 +68,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Yol Kılavuzu, aşağıdaki kaynaklardan toplu taşıma verisi kullanır."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Daha fazla bilgi"
+msgstr "Geliştirici bilgisi"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -84,10 +83,9 @@ msgid "Extractor capabilities:"
 msgstr "Çıkarıcı yetenekleri:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Çıkarıcı yetenekleri:"
+msgstr "Çıkarıcı yetenekleri panoya kopyalandı"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -718,7 +716,7 @@ msgstr "Belge Ekle..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Ağ hatası: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

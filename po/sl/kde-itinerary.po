@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 09:28+0200\n"
+"PO-Revision-Date: 2023-07-07 06:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.3.1\n"
 
 #, kde-format
@@ -68,10 +68,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Itinerary uporablja podatke javnega prevoza iz naslednjih virov."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Več informacij"
+msgstr "Razvojne informacije"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -84,10 +83,9 @@ msgid "Extractor capabilities:"
 msgstr "Zmogljivosti ekstraktorja:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Zmogljivosti ekstraktorja:"
+msgstr "Zmogljivosti ekstraktorja kopirane na odložišče"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -721,7 +719,7 @@ msgstr "Dodaj dokument..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Napaka omrežja: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

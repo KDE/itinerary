@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 09:52+0200\n"
+"PO-Revision-Date: 2023-07-07 10:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -71,10 +71,9 @@ msgstr ""
 "KDE Itinerary utilitza les dades de transport públic de les següents fonts."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Més informació"
+msgstr "Informació del desenvolupador"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -87,10 +86,9 @@ msgid "Extractor capabilities:"
 msgstr "Capacitats de l'extractor:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Capacitats de l'extractor:"
+msgstr "Les capacitats de l'extractor s'han copiat al porta-retalls"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -720,7 +718,7 @@ msgstr "Afig un document..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "S'ha produït un error de la xarxa: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -2494,7 +2492,7 @@ msgstr ""
 #: app/SettingsPage.qml:88
 #, kde-format
 msgid "Use insecure services"
-msgstr "Utilitza els serveis insegurs"
+msgstr "Utilitza serveis insegurs"
 
 #: app/SettingsPage.qml:91
 #, kde-format
@@ -2607,7 +2605,7 @@ msgstr "Mostra les notificacions a la pantalla de bloqueig"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr "Estat a bord"
+msgstr "Estat d'incorporació"
 
 #: app/SettingsPage.qml:222
 #, kde-format
@@ -2623,7 +2621,7 @@ msgstr ""
 #: app/SettingsPage.qml:235
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Hi ha disponible un accés Wi-Fi per a la informació a bord."
+msgstr "Hi ha disponible l'accés Wi-Fi per a la informació d'incorporació."
 
 #: app/SettingsPage.qml:237
 #, kde-format
@@ -2649,7 +2647,8 @@ msgstr "No cal cap més acció."
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
-"Activeu la Wi-Fi del vostre sistema per a accedir a la informació a bord."
+"Activeu la Wi-Fi del vostre sistema per a accedir a la informació "
+"d'incorporació."
 
 #: app/SettingsPage.qml:252
 #, kde-format
@@ -2657,7 +2656,7 @@ msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
-"informació a bord."
+"informació d'incorporació."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2665,8 +2664,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
-"La informació a bord no està implementada en el vostre dispositiu en este "
-"moment."
+"La informació d'incorporació no està implementada en el vostre dispositiu en "
+"este moment."
 
 #: app/SettingsPage.qml:293
 #, kde-format
@@ -3363,12 +3362,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Application"
-#~ msgstr "Aplicació"
-
-#~ msgid "Transport Data"
-#~ msgstr "Dades de transport"
-
-#~ msgid "Version"
-#~ msgstr "Versió"
