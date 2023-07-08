@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-14 02:36+0000\n"
-"PO-Revision-Date: 2023-03-06 11:02+0100\n"
+"PO-Revision-Date: 2023-07-07 10:46+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2002,7 +2002,7 @@ msgstr ""
 #: app/SettingsPage.qml:88
 #, kde-format
 msgid "Use insecure services"
-msgstr "Utilitza els serveis insegurs"
+msgstr "Utilitza serveis insegurs"
 
 #: app/SettingsPage.qml:91
 #, kde-format
@@ -2115,7 +2115,7 @@ msgstr "Mostra les notificacions a la pantalla de bloqueig"
 #: app/SettingsPage.qml:218
 #, kde-format
 msgid "Onboard Status"
-msgstr "Estat a bord"
+msgstr "Estat d'incorporació"
 
 #: app/SettingsPage.qml:222
 #, kde-format
@@ -2131,7 +2131,7 @@ msgstr ""
 #: app/SettingsPage.qml:235
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Hi ha disponible un accés Wi-Fi per a la informació a bord."
+msgstr "Hi ha disponible l'accés Wi-Fi per a la informació d'incorporació."
 
 #: app/SettingsPage.qml:237
 #, kde-format
@@ -2157,7 +2157,8 @@ msgstr "No cal cap més acció."
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
-"Activeu la Wi-Fi del vostre sistema per a accedir a la informació a bord."
+"Activeu la Wi-Fi del vostre sistema per a accedir a la informació "
+"d'incorporació."
 
 #: app/SettingsPage.qml:252
 #, kde-format
@@ -2165,7 +2166,7 @@ msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
-"informació a bord."
+"informació d'incorporació."
 
 #: app/SettingsPage.qml:254
 #, kde-format
@@ -2173,8 +2174,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
-"La informació a bord no està implementada en el vostre dispositiu en este "
-"moment."
+"La informació d'incorporació no està implementada en el vostre dispositiu en "
+"este moment."
 
 #: app/statisticsmodel.cpp:88
 #, kde-format
