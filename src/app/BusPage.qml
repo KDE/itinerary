@@ -125,7 +125,16 @@ App.DetailsPage {
                     description: reservationFor.departureBusStop.name
                 }
 
-                MobileForm.FormDelegateSeparator { visible: arrivalDelegate.visible }
+                MobileForm.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
+
+                MobileForm.FormTextDelegate {
+                    id: departurePlatformDelegate
+                    text: i18nc("bus station platform", "Platform")
+                    description: reservationFor.departurePlatform
+                    visible: description !== ""
+                }
+
+                MobileForm.FormDelegateSeparator { visible: departureDelegate.visible }
 
                 App.FormPlaceDelegate {
                     id: departureDelegate
@@ -181,6 +190,15 @@ App.DetailsPage {
                 MobileForm.FormTextDelegate {
                     text: i18nc("bus station", "Station")
                     description: reservationFor.arrivalBusStop.name
+                }
+
+                MobileForm.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
+
+                MobileForm.FormTextDelegate {
+                    id: arrivalPlatformDelegate
+                    text: i18nc("bus station platform", "Platform")
+                    description: reservationFor.arrivalPlatform
+                    visible: description !== ""
                 }
 
                 MobileForm.FormDelegateSeparator { visible: arrivalDelegate.visible }
