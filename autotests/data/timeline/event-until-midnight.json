@@ -1,0 +1,34 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "endDate": {
+            "@type": "QDateTime",
+            "@value": "2023-07-15T00:00:00+03:00",
+            "timezone": "Europe/Athens"
+        },
+        "location": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "GR",
+                "addressLocality": "Θεσσαλονίκη",
+                "postalCode": "546 38",
+                "streetAddress": "Λεωφόρος Κωνσταντίνου Καραμανλή 21"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.620174407958984,
+                "longitude": 22.9627742767334
+            },
+            "name": "Μπομπονέλλα"
+        },
+        "name": "KDE Akademy 2023 Welcome Event",
+        "startDate": {
+            "@type": "QDateTime",
+            "@value": "2023-07-14T20:00:00+03:00",
+            "timezone": "Europe/Athens"
+        },
+        "url": "https://akademy.kde.org/2023/welcomeevent/"
+    }
+]

@@ -47,7 +47,14 @@ static bool needsSplitting(const QVariant &res)
     // multi-day event?
     if (JsonLd::isA<EventReservation>(res)) {
         const auto ev = res.value<EventReservation>().reservationFor().value<Event>();
-        return ev.startDate().date() != ev.endDate().date() && ev.endDate().isValid();
+        if (!ev.endDate().isValid() || ev.startDate().date() == ev.endDate().date()) {
+            return false;
+        }
+        // don't split single day events that end at midnight either
+        if (ev.startDate().secsTo(ev.endDate()) < 60 * 60 * 8 && ev.endDate().time().hour() == 0) {
+            return false;
+        }
+        return true;
     }
 
     return JsonLd::isA<LodgingReservation>(res)
