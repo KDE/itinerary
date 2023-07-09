@@ -233,6 +233,8 @@ if (ANDROID)
         weather-snow-scattered
         weather-storm
     )
+
+    install(FILES sc-apps-org.kde.itinerary.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/ RENAME org.kde.itinerary.svg)
 else ()
     target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
@@ -241,6 +243,7 @@ else ()
         Qt::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
+    ecm_install_icons(ICONS sc-apps-org.kde.itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
 endif()
 if (TARGET KF${KF_MAJOR_VERSION}::Crash)
     target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::Crash)
@@ -250,7 +253,6 @@ if (TARGET KF${KF_MAJOR_VERSION}::UnitConversion)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-ecm_install_icons(ICONS sc-apps-org.kde.itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
 if (NOT ANDROID)
     install(PROGRAMS org.kde.itinerary.desktop DESTINATION ${KDE_INSTALL_APPDIR})
     install(FILES org.kde.itinerary.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
