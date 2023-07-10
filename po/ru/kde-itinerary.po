@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -411,7 +411,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Терминал:"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
@@ -508,7 +508,7 @@ msgstr "Прибытие"
 msgid "Alight earlier"
 msgstr "Высадка раньше"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -535,26 +535,33 @@ msgstr "Отправление"
 msgid "Departure date"
 msgstr "Выход на посадку:"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Станция:"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, fuzzy, kde-format
+#| msgid "Platform:"
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "Платформа:"
+
+#: app/BusPage.qml:156
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Прибытие"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Варианты"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Сведения о поездке"

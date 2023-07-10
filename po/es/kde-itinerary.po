@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-03 04:30+0200\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"PO-Revision-Date: 2023-07-09 12:33+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -70,10 +70,9 @@ msgstr ""
 "KDE Itinerary usa datos de transporte públicos de las siguientes fuentes."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Más información"
+msgstr "Información para desarrolladores"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -86,10 +85,9 @@ msgid "Extractor capabilities:"
 msgstr "Capacidades del extractor:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Capacidades del extractor:"
+msgstr "Capacidades del extractor copiadas al portapapeles"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -393,7 +391,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
@@ -481,7 +479,7 @@ msgstr "Llegada"
 msgid "Alight earlier"
 msgstr "Bajar antes"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -505,24 +503,30 @@ msgstr "Salida"
 msgid "Departure date"
 msgstr "Fecha de salida"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Estación"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, kde-format
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "Andén"
+
+#: app/BusPage.qml:156
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Llegada"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalles del viaje"
@@ -721,7 +725,7 @@ msgstr "Añadir documento..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Error de red: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-07 10:46+0200\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"PO-Revision-Date: 2023-07-09 10:43+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -390,7 +390,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
@@ -478,7 +478,7 @@ msgstr "Arribada"
 msgid "Alight earlier"
 msgstr "Baixar-se abans"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -502,24 +502,30 @@ msgstr "Sortida"
 msgid "Departure date"
 msgstr "Data de sortida"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Estació"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, kde-format
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "Plataforma"
+
+#: app/BusPage.qml:156
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arribada"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalls del viatge"
@@ -3361,15 +3367,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Application"
-#~ msgstr "Aplicació"
-
-#~ msgid "Transport Data"
-#~ msgstr "Dades de transport"
-
-#~ msgid "Version"
-#~ msgstr "Versió"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Proveïdors de dades: %1"

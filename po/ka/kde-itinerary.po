@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-04 08:27+0200\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"PO-Revision-Date: 2023-07-08 06:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -68,10 +68,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Itinerary საჯარო ტრანსპორტის მონაცემებს შემდეგი წყაროებიდან იღებს."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "მეტი ინფორმაცია"
+msgstr "ინფორმაცია დეველოპერზე"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -84,10 +83,9 @@ msgid "Extractor capabilities:"
 msgstr "ექსტრაქტორის შესაძლებლობები:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "ექსტრაქტორის შესაძლებლობები:"
+msgstr "ექსტრაქტორის შესაძლებლობები ბუფერში დაკოპირდა"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -389,7 +387,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "ტერმინალი"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
@@ -477,7 +475,7 @@ msgstr "ჩამოსვლა"
 msgid "Alight earlier"
 msgstr "უფრო ადრე ჩამოსვლა"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -501,24 +499,31 @@ msgstr "გამგზავრება"
 msgid "Departure date"
 msgstr "გაფრენის თარიღი"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "სადგური"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "პლატფორმა"
+
+#: app/BusPage.qml:156
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "ალტერნატივები"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "მგზავრობის დეტალები"
@@ -716,7 +721,7 @@ msgstr "დოკუმენტის დამატება..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "ქსელის შეცდომა: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format

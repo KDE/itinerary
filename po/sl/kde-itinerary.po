@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-07 06:34+0200\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"PO-Revision-Date: 2023-07-09 08:49+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
 "%100<=4 ? 2 : 3);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -392,7 +392,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
@@ -480,7 +480,7 @@ msgstr "Prihod"
 msgid "Alight earlier"
 msgstr "Zgodnejši odlet"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -504,24 +504,30 @@ msgstr "Odhod"
 msgid "Departure date"
 msgstr "Datum odhoda"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Postaja"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, kde-format
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "Peron"
+
+#: app/BusPage.qml:156
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Prihod"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti potovanja"

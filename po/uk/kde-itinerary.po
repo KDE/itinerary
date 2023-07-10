@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-07 00:51+0000\n"
-"PO-Revision-Date: 2023-07-07 08:39+0300\n"
+"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"PO-Revision-Date: 2023-07-09 08:34+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -396,7 +396,7 @@ msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Термінал"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:158 app/FlightPage.qml:200
+#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
 #: app/TrainPage.qml:196
 #, kde-format
 msgid "Arrival time"
@@ -484,7 +484,7 @@ msgstr "Прибуття"
 msgid "Alight earlier"
 msgstr "Приземлиться раніше"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:204
+#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
 #: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
@@ -508,24 +508,30 @@ msgstr "Відправлення"
 msgid "Departure date"
 msgstr "Дата відправлення"
 
-#: app/BusPage.qml:124 app/BusPage.qml:182
+#: app/BusPage.qml:124 app/BusPage.qml:191
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Станція"
 
-#: app/BusPage.qml:147
+#: app/BusPage.qml:132 app/BusPage.qml:199
+#, kde-format
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr "Платформа"
+
+#: app/BusPage.qml:156
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Прибуття"
 
-#: app/BusPage.qml:232 app/TrainPage.qml:322
+#: app/BusPage.qml:250 app/TrainPage.qml:322
 #, kde-format
 msgid "Alternatives"
 msgstr "Альтернативи"
 
-#: app/BusPage.qml:237 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
 #, kde-format
 msgid "Journey Details"
 msgstr "Подробиці щодо подорожі"
