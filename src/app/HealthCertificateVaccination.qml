@@ -77,6 +77,8 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Vaccine:")
             onLinkActivated: Qt.openUrlExternally(link)
             visible: text !== ""
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: certificate.manufacturer
