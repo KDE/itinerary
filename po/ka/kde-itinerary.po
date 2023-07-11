@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-09 01:03+0000\n"
-"PO-Revision-Date: 2023-07-08 06:09+0200\n"
+"PO-Revision-Date: 2023-07-10 07:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -506,8 +506,7 @@ msgid "Station"
 msgstr "სადგური"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "პლატფორმა"
