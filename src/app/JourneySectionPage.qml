@@ -70,6 +70,7 @@ Kirigami.ScrollablePage {
             }
 
             QQC2.Label {
+                id: notesLabel
                 Layout.row: 4
                 Layout.column: 1
                 Layout.columnSpan: 2
@@ -77,9 +78,37 @@ Kirigami.ScrollablePage {
                 text: journeySection.notes.join("<br/>")
                 textFormat: Text.RichText
                 wrapMode: Text.Wrap
+                verticalAlignment: Text.AlignTop
+                // Doesn't work with RichText.
+                elide: Text.ElideRight
+                maximumLineCount: 10
+                Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
+                clip: true
                 visible: journeySection.notes.length > 0
                 font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
+
+                Kirigami.OverlaySheet {
+                    id: moreNotesSheet
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        text: journeySection.notes.join("<br/>")
+                        textFormat: Text.RichText
+                        wrapMode: Text.Wrap
+                        onLinkActivated: Qt.openUrlExternally(link)
+                    }
+                }
+            }
+
+            Kirigami.LinkButton {
+                Layout.row: 5
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: i18nc("@action:button", "Show More…")
+                visible: notesLabel.implicitHeight > notesLabel.height
+                onClicked: {
+                    moreNotesSheet.open();
+                }
             }
         }
 
