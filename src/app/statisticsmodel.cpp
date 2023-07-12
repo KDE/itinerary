@@ -15,9 +15,12 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/SortUtil>
 
+#include <KCountry>
 #include <KLocalizedString>
 
 #include <QDebug>
+
+#include <algorithm>
 
 using namespace KItinerary;
 
@@ -109,6 +112,9 @@ StatisticsItem StatisticsModel::visitedCountries() const
     l.reserve(m_countries.size());
     std::transform(m_countries.begin(), m_countries.end(), std::back_inserter(l), [](const auto &iso) {
         return iso;
+    });
+    std::sort(l.begin(), l.end(), [](const auto &lhs, const auto &rhs) {
+        return KCountry::fromAlpha2(lhs).name().localeAwareCompare(KCountry::fromAlpha2(rhs).name()) < 0;
     });
     return StatisticsItem(i18n("Visited countries"), l.join(QLatin1Char(' ')), StatisticsItem::TrendUnknown);
 }
