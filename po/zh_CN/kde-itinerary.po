@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"POT-Creation-Date: 2023-07-12 00:48+0000\n"
 "PO-Revision-Date: 2023-07-03 11:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1318,37 +1318,37 @@ msgid "Valid until:"
 msgstr "有效期至："
 
 #: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:99
-#: app/HealthCertificateVaccination.qml:102
+#: app/HealthCertificateVaccination.qml:104
 #, kde-format
 msgid "Certificate"
 msgstr "证书信息"
 
 #: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
-#: app/HealthCertificateVaccination.qml:107
+#: app/HealthCertificateVaccination.qml:109
 #, kde-format
 msgid "Issuer:"
 msgstr "颁发单位："
 
 #: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:109
-#: app/HealthCertificateVaccination.qml:112
+#: app/HealthCertificateVaccination.qml:114
 #, kde-format
 msgid "Identifier:"
 msgstr "标识符："
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:116
-#: app/HealthCertificateVaccination.qml:119
+#: app/HealthCertificateVaccination.qml:121
 #, kde-format
 msgid "Issued:"
 msgstr "颁发时间："
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
+#: app/HealthCertificateVaccination.qml:125
 #, kde-format
 msgid "Expires:"
 msgstr "有效期至："
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:135
-#: app/HealthCertificateVaccination.qml:138
+#: app/HealthCertificateVaccination.qml:140
 #, kde-format
 msgid "Signature:"
 msgstr "签名："
@@ -1383,7 +1383,7 @@ msgstr "结果："
 msgid "Test Center:"
 msgstr "检测机构："
 
-#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
+#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:98
 #, kde-format
 msgid "Country:"
 msgstr "国家："
@@ -1404,17 +1404,17 @@ msgstr[0] ""
 msgid "Vaccine:"
 msgstr "疫苗："
 
-#: app/HealthCertificateVaccination.qml:83
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Manufacturer:"
 msgstr "生产厂家："
 
-#: app/HealthCertificateVaccination.qml:87
+#: app/HealthCertificateVaccination.qml:89
 #, kde-format
 msgid "%1/%2"
 msgstr "已接种 %1 剂，共 %2 剂"
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:90
 #, kde-format
 msgid "Dose:"
 msgstr "接种次数："

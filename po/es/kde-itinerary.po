@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"POT-Creation-Date: 2023-07-12 00:48+0000\n"
 "PO-Revision-Date: 2023-07-09 12:33+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1326,37 +1326,37 @@ msgid "Valid until:"
 msgstr "Válido hasta:"
 
 #: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:99
-#: app/HealthCertificateVaccination.qml:102
+#: app/HealthCertificateVaccination.qml:104
 #, kde-format
 msgid "Certificate"
 msgstr "Certificado"
 
 #: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
-#: app/HealthCertificateVaccination.qml:107
+#: app/HealthCertificateVaccination.qml:109
 #, kde-format
 msgid "Issuer:"
 msgstr "Emisor:"
 
 #: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:109
-#: app/HealthCertificateVaccination.qml:112
+#: app/HealthCertificateVaccination.qml:114
 #, kde-format
 msgid "Identifier:"
 msgstr "Identificador:"
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:116
-#: app/HealthCertificateVaccination.qml:119
+#: app/HealthCertificateVaccination.qml:121
 #, kde-format
 msgid "Issued:"
 msgstr "Emitido:"
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
+#: app/HealthCertificateVaccination.qml:125
 #, kde-format
 msgid "Expires:"
 msgstr "Expira:"
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:135
-#: app/HealthCertificateVaccination.qml:138
+#: app/HealthCertificateVaccination.qml:140
 #, kde-format
 msgid "Signature:"
 msgstr "Firma:"
@@ -1391,7 +1391,7 @@ msgstr "Resultado:"
 msgid "Test Center:"
 msgstr "Centro de la prueba:"
 
-#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
+#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:98
 #, kde-format
 msgid "Country:"
 msgstr "País:"
@@ -1413,17 +1413,17 @@ msgstr[1] "%2 (hace %1 días)"
 msgid "Vaccine:"
 msgstr "Vacuna:"
 
-#: app/HealthCertificateVaccination.qml:83
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Manufacturer:"
 msgstr "Fabricante:"
 
-#: app/HealthCertificateVaccination.qml:87
+#: app/HealthCertificateVaccination.qml:89
 #, kde-format
 msgid "%1/%2"
 msgstr "%1/%2"
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:90
 #, kde-format
 msgid "Dose:"
 msgstr "Dosis:"

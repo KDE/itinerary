@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-09 01:03+0000\n"
+"POT-Creation-Date: 2023-07-12 00:48+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -1402,37 +1402,37 @@ msgid "Valid until:"
 msgstr "Platný do:"
 
 #: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:99
-#: app/HealthCertificateVaccination.qml:102
+#: app/HealthCertificateVaccination.qml:104
 #, kde-format
 msgid "Certificate"
 msgstr "Certifikát"
 
 #: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
-#: app/HealthCertificateVaccination.qml:107
+#: app/HealthCertificateVaccination.qml:109
 #, kde-format
 msgid "Issuer:"
 msgstr "Vydavateľ:"
 
 #: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:109
-#: app/HealthCertificateVaccination.qml:112
+#: app/HealthCertificateVaccination.qml:114
 #, fuzzy, kde-format
 msgid "Identifier:"
 msgstr "Identifikátor:"
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:116
-#: app/HealthCertificateVaccination.qml:119
+#: app/HealthCertificateVaccination.qml:121
 #, kde-format
 msgid "Issued:"
 msgstr ""
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:123
+#: app/HealthCertificateVaccination.qml:125
 #, kde-format
 msgid "Expires:"
 msgstr "Vyprší:"
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:135
-#: app/HealthCertificateVaccination.qml:138
+#: app/HealthCertificateVaccination.qml:140
 #, kde-format
 msgid "Signature:"
 msgstr "Podpis:"
@@ -1467,7 +1467,7 @@ msgstr "Výsledok:"
 msgid "Test Center:"
 msgstr ""
 
-#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:96
+#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:98
 #, kde-format
 msgid "Country:"
 msgstr "Krajina:"
@@ -1490,17 +1490,17 @@ msgstr[2] ""
 msgid "Vaccine:"
 msgstr "Vakcína:"
 
-#: app/HealthCertificateVaccination.qml:83
+#: app/HealthCertificateVaccination.qml:85
 #, kde-format
 msgid "Manufacturer:"
 msgstr "Výrobca:"
 
-#: app/HealthCertificateVaccination.qml:87
+#: app/HealthCertificateVaccination.qml:89
 #, kde-format
 msgid "%1/%2"
 msgstr ""
 
-#: app/HealthCertificateVaccination.qml:88
+#: app/HealthCertificateVaccination.qml:90
 #, kde-format
 msgid "Dose:"
 msgstr "Dávka:"
