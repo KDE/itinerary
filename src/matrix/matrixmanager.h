@@ -15,6 +15,7 @@ class MatrixManager : public QObject
     Q_PROPERTY(QString infoString READ infoString NOTIFY infoStringChanged)
     Q_PROPERTY(QString userId READ userId NOTIFY userIdChanged)
     Q_PROPERTY(Quotient::Connection *connection READ connection NOTIFY connectionChanged)
+    Q_PROPERTY(QString syncRoom READ syncRoom WRITE setSyncRoom NOTIFY syncRoomChanged)
 
 public:
     explicit MatrixManager(QObject *parent = nullptr);
@@ -44,11 +45,15 @@ public:
     Q_INVOKABLE void postLocation(const QString &roomId, float latitude, float longitude, const QString &description);
     void postEvent(const QString &roomId, const QString &type, const QJsonObject &content);
 
+    QString syncRoom() const;
+    void setSyncRoom(const QString &roomId);
+
 Q_SIGNALS:
     void connectedChanged();
     void infoStringChanged();
     void userIdChanged();
     void connectionChanged();
+    void syncRoomChanged();
 
 private:
     QString m_infoString;

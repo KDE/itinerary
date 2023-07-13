@@ -299,6 +299,18 @@ Kirigami.ScrollablePage {
                     onClicked: MatrixController.manager.sync()
                     enabled: MatrixController.manager.connected
                 }
+                MobileForm.FormButtonDelegate {
+                    text: i18n("Choose a room for reservation synchronization")
+                    icon.name: "settings-configure"
+                    onClicked: roomSelectionSheetComponent.createObject(applicationWindow()).open()
+                    enabled: MatrixController.manager.connected
+                    Component {
+                        id: roomSelectionSheetComponent
+                        MatrixRoomSelectionSheet {
+                            onRoomSelected: MatrixController.manager.syncRoom = room.id
+                        }
+                    }
+                }
                 MobileForm.FormTextFieldDelegate {
                     id: matrixId
                     label: i18n("Matrix ID")

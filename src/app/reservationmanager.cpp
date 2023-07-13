@@ -10,6 +10,7 @@
 #include "logging.h"
 #include "pkpassmanager.h"
 #include "reservationhelper.h"
+#include "matrixmanager.h"
 
 #include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
@@ -272,7 +273,12 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
         qCWarning(Log) << "Unable to open file:" << f.errorString();
         return;
     }
-    f.write(JsonIO::write(JsonLdDocument::toJson(res)));
+    auto json = JsonLdDocument::toJson(res);
+    f.write(JsonIO::write(json));
+    static MatrixManager matrixManager;
+    QJsonObject content;
+    content[QStringLiteral("data")] = QString::fromLatin1(JsonIO::write(json, JsonIO::JSON).toBase64());
+    matrixManager.postEvent(matrixManager.syncRoom(), QStringLiteral("org.kde.itinerary.reservation"), content);
     m_reservations.insert(resId, res);
 }
 
