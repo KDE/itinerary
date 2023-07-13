@@ -87,6 +87,8 @@ public:
     bool hasHealthCertificateSupport() const;
     HealthCertificateManager *healthCertificateManager() const;
 
+    Q_INVOKABLE void importSyncedReservation(const QString &data);
+
 Q_SIGNALS:
     void clipboardContentChanged();
 

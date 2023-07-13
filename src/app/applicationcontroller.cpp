@@ -22,6 +22,7 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include <itinerary_version_detailed.h>
+#include "jsonio.h"
 
 #include <KItinerary/CreativeWork>
 #include <KItinerary/DocumentUtil>
@@ -807,6 +808,12 @@ HealthCertificateManager* ApplicationController::healthCertificateManager() cons
         m_healthCertMgr = new HealthCertificateManager(const_cast<ApplicationController*>(this));
     }
     return m_healthCertMgr;
+}
+
+
+void ApplicationController::importSyncedReservation(const QString &data)
+{
+    importData(QByteArray::fromBase64(data.toLatin1()));
 }
 
 #include "moc_applicationcontroller.cpp"

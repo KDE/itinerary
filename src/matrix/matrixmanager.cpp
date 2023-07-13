@@ -106,7 +106,7 @@ Quotient::Connection *MatrixManager::connection() const
 void MatrixManager::sync()
 {
     auto connection = Accounts.accounts()[0];
-    connection->sync();
+    connection->syncLoop();
     setInfoString(i18n("Syncing…"));
     connectSingleShot(connection, &Connection::syncDone, this, [this](){
         setInfoString({});
@@ -145,6 +145,12 @@ QString syncRoomId;
 void MatrixManager::setSyncRoom(const QString &roomId)
 {
     syncRoomId = roomId;
+    const auto &room = Accounts.accounts()[0]->room(roomId);
+    connect(room, &Room::addedMessages, this, [room, this](int lowest, int largest){
+        for (int i = lowest; i <= largest; i++) {
+            Q_EMIT newSyncedReservation(room->messageEvents()[lowest]->contentJson()[QStringLiteral("data")].toString());
+        }
+    });
     Q_EMIT syncRoomChanged();
 }
 

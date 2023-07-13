@@ -26,6 +26,13 @@ Kirigami.ApplicationWindow {
     minimumWidth: 300
     minimumHeight: 400
 
+    Connections {
+        target: MatrixController.manager
+        function onNewSyncedReservation(data) {
+            ApplicationController.importSyncedReservation(data)
+        }
+    }
+
     pageStack {
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 

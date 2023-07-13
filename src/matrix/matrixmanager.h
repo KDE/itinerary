@@ -54,6 +54,7 @@ Q_SIGNALS:
     void userIdChanged();
     void connectionChanged();
     void syncRoomChanged();
+    void newSyncedReservation(const QString &data);
 
 private:
     QString m_infoString;
