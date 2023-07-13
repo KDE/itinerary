@@ -87,7 +87,9 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             width: topLayout.width
-            text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName, Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
+            text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName,
+                                 (locationInfo.timeZoneOffsetDelta >= 0 ? "+" : "")
+                                 + Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
             visible: locationInfo.timeZoneDiffers
             wrapMode: Text.WordWrap
             Accessible.ignored: !visible
