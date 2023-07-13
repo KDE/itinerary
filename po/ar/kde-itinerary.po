@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-12 00:48+0000\n"
+"POT-Creation-Date: 2023-07-13 00:49+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1747,6 +1747,12 @@ msgstr "الم&سافة:"
 msgid "CO₂: %1"
 msgstr ""
 
+#: app/JourneySectionPage.qml:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Show More…"
+msgstr ""
+
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
 msgctxt "Abreviation of train platform"
@@ -2689,56 +2695,56 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: app/statisticsmodel.cpp:88
+#: app/statisticsmodel.cpp:91
 #, kde-format
 msgid "Trips"
 msgstr ""
 
-#: app/statisticsmodel.cpp:93 app/statisticsmodel.cpp:123
-#: app/statisticsmodel.cpp:138 app/statisticsmodel.cpp:153
-#: app/statisticsmodel.cpp:168 app/statisticsmodel.cpp:183
+#: app/statisticsmodel.cpp:96 app/statisticsmodel.cpp:129
+#: app/statisticsmodel.cpp:144 app/statisticsmodel.cpp:159
+#: app/statisticsmodel.cpp:174 app/statisticsmodel.cpp:189
 #, fuzzy, kde-format
 msgid "Distance"
 msgstr "الم&سافة:"
 
-#: app/statisticsmodel.cpp:98
+#: app/statisticsmodel.cpp:101
 #, kde-format
 msgid "Hotel nights"
 msgstr ""
 
-#: app/statisticsmodel.cpp:103 app/statisticsmodel.cpp:128
-#: app/statisticsmodel.cpp:143 app/statisticsmodel.cpp:158
-#: app/statisticsmodel.cpp:173 app/statisticsmodel.cpp:188
+#: app/statisticsmodel.cpp:106 app/statisticsmodel.cpp:134
+#: app/statisticsmodel.cpp:149 app/statisticsmodel.cpp:164
+#: app/statisticsmodel.cpp:179 app/statisticsmodel.cpp:194
 #, kde-format
 msgid "CO₂"
 msgstr ""
 
-#: app/statisticsmodel.cpp:113
+#: app/statisticsmodel.cpp:119
 #, kde-format
 msgid "Visited countries"
 msgstr ""
 
-#: app/statisticsmodel.cpp:118
+#: app/statisticsmodel.cpp:124
 #, kde-format
 msgid "Flights"
 msgstr ""
 
-#: app/statisticsmodel.cpp:133
+#: app/statisticsmodel.cpp:139
 #, kde-format
 msgid "Train rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:148
+#: app/statisticsmodel.cpp:154
 #, kde-format
 msgid "Bus rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:163
+#: app/statisticsmodel.cpp:169
 #, kde-format
 msgid "Car rides"
 msgstr ""
 
-#: app/statisticsmodel.cpp:178
+#: app/statisticsmodel.cpp:184
 #, kde-format
 msgid "Boat trips"
 msgstr ""
