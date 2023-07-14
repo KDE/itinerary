@@ -14,6 +14,7 @@
 #include "publictransportmatcher.h"
 
 #include <KItinerary/BusTrip>
+#include <KItinerary/Flight>
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>
 #include <KItinerary/Reservation>
@@ -625,12 +626,35 @@ QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const Q
 
 void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)
 {
-    Q_UNUSED(passId)
-    // ### to provide more context, we need to have a passId -> batchId map here eventually
-
-    if (!changes.isEmpty()) {
-        KNotification::event(KNotification::Notification, i18n("Itinerary change"), changes.join(QLatin1Char('\n')), QLatin1String("clock"));
+    if (changes.isEmpty()) {
+        return;
     }
+
+    QVariant passRes;
+
+    // Find relevant reservation for the given passId.
+    for (const QString &resId : std::as_const(m_reservations)) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto resPassId = PkPassManager::passId(res);
+        if (resPassId == passId) {
+            passRes = res;
+            break;
+        }
+    }
+
+    QString text = changes.join(QLatin1Char('\n'));
+
+    if (JsonLd::isA<FlightReservation>(passRes)) {
+        const auto flight = passRes.value<FlightReservation>().reservationFor().value<Flight>();
+
+        text.prepend(QLatin1Char('\n'));
+        text.prepend(i18n("Flight %1 to %2:",
+                          // TODO add formatter util for this.
+                          flight.airline().iataCode() + QLatin1Char(' ') + flight.flightNumber(),
+                          LocationUtil::name(LocationUtil::arrivalLocation(passRes))));
+    }
+
+    KNotification::event(KNotification::Notification, i18n("Itinerary change"), text, QLatin1String("clock"));
 }
 
 KPublicTransport::Manager* LiveDataManager::publicTransportManager() const
