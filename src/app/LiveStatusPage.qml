@@ -96,6 +96,7 @@ Kirigami.Page {
         id: swipeView
         anchors.fill: parent
         currentIndex: !onboardStatus.supportsPosition ? 1 : 0
+        interactive: footerTabBar.visible
 
         Kirigami.Page {
             leftPadding: 0
@@ -195,6 +196,7 @@ Kirigami.Page {
     }
 
     footer: Kirigami.NavigationTabBar {
+        id: footerTabBar
         visible: onboardStatus.supportsPosition && onboardStatus.supportsJourney
 
         actions: [
