@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-13 00:49+0000\n"
-"PO-Revision-Date: 2023-05-28 16:40+0300\n"
+"PO-Revision-Date: 2023-06-27 18:04+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -259,12 +259,11 @@ msgid "Health certificate imported."
 msgstr "Tuotiin terveystodistus."
 
 #: app/applicationcontroller.cpp:448
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "Lippu on tuotu."
-msgstr[1] "Lippu on tuotu."
+msgstr[0] "Yksi lippu tuotu."
+msgstr[1] "%1 lippua tuotu."
 
 #: app/applicationcontroller.cpp:451
 #, kde-format
@@ -333,10 +332,9 @@ msgid "Arrival time: %1"
 msgstr "Saapumisaika: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "Laivamatkat"
+msgstr "Muokkaa laivamatkaa"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
 #, kde-format
@@ -345,18 +343,16 @@ msgid "Departure"
 msgstr "Lähtö"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Lähtöaika"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "Terminaali"
+msgstr "Terminaalin nimi"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
 #, kde-format
@@ -365,11 +361,10 @@ msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
-msgstr "Saapumisaika:"
+msgstr "Saapumisaika"
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -554,7 +549,7 @@ msgstr "Tuo valitut tapahtumat"
 #: app/CalendarImportPage.qml:66
 #, kde-format
 msgid "No importable events found in this calendar."
-msgstr ""
+msgstr "Kalenterista ei löytynyt tuotavissa olevia tapahtumia."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
@@ -1022,21 +1017,19 @@ msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "Jaetut polkupyörät"
+msgstr "Jaettu sijainti"
 
 #: app/FormPlaceDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this ticket?"
+#, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "Haluatko varmasti poistaa tämän lipun?"
+msgstr "Haluatko varmasti jakaa kohteen %1 Matrix-kanavalle %2?"
 
 #: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Jaa"
 
 #: app/FormPlaceDelegate.qml:123
 #, kde-format
@@ -1066,7 +1059,7 @@ msgstr "Julkisen liikenteen lähdöt"
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr ""
+msgstr "Jaa Matrixilla"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1231,10 +1224,9 @@ msgid "Test expired"
 msgstr "Koetulos on vanhentunut"
 
 #: app/HealthCertificateBarcode.qml:80
-#, fuzzy, kde-format
-#| msgid "Certificate invalid"
+#, kde-format
 msgid "Recovery certificate valid"
-msgstr "Virheellinen todistus"
+msgstr "Kelvollinen palautusvarmenne"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
@@ -1813,27 +1805,23 @@ msgstr "Elävä tilanne"
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Stop Location Sharing"
-msgstr ""
+msgstr "Lopeta sijainnin jakaminen"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Share Location via Matrix"
-msgstr ""
+msgstr "Jaa sijainti Matrixilla"
 
 #: app/LiveStatusPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Live Location"
-msgstr "Suosikkisijainnit"
+msgstr "Jaa elävä sijainti"
 
 #: app/LiveStatusPage.qml:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you really want to replace your existing reservation with the newly "
-#| "selected journey?"
+#, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
-msgstr "Haluatko varmasti korvata varauksesi vasta valitulla matkalla?"
+msgstr "Haluatko varmasti jakaa nykyisen sijaintisi Matrix-kanavalle %1?"
 
 #: app/LiveStatusPage.qml:162
 #, kde-format
@@ -2020,15 +2008,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "Tuotava PkPass- tai JSON-LD-tiedosto."
 
 #: app/main.qml:57
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "Tuo…"
+msgstr "Tuo"
 
 #: app/main.qml:60
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "Avaa tiedosto…"
 
 #: app/main.qml:68
 #, kde-format
@@ -2041,20 +2028,19 @@ msgid "Scan Barcode..."
 msgstr "Lue viivakoodi…"
 
 #: app/main.qml:86
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "Lisää kalenterista…"
 
 #: app/main.qml:101
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Deutsche Bahnin verkkolippu…"
 
 #: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "SNCF:n verkkolippu…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2132,47 +2118,45 @@ msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "Suosikkisijainnit"
+msgstr "Jaa sijainti"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "Kutsuttu"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "Suosikkisijainnit"
+msgstr "Suosikkihuoneet"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "Suoraviestit"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "Huoneet"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "Vähäinen etusija"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "Välilyönnit"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2253,38 +2237,34 @@ msgid "Import Online Ticket"
 msgstr "Junalippu"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "Mitään ei tuotu."
+msgstr "Lippu tuotu"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "Sijainteja ei löytynyt"
+msgstr "Lippua ei löytynyt"
 
 #: app/OnlineImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "Junalippu"
+msgstr "Verkkolippu"
 
 #: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "Sukunimi"
 
 #: app/OnlineImportPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "Varausviite:"
+msgstr "Varausviite"
 
 #: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "Etsi…"
 
 #: app/passmanager.cpp:246
 #, kde-format
@@ -2704,38 +2684,37 @@ msgstr "Laite ei valitettavasti toistaiseksi tue laivaannousutietoja."
 #: app/SettingsPage.qml:293
 #, kde-format
 msgid "Matrix Integration"
-msgstr ""
+msgstr "Matrix-eheytys"
 
 #: app/SettingsPage.qml:294
 #, kde-format
 msgid "Logged in as %1"
-msgstr ""
+msgstr "Kirjauduttu tunnuksella %1"
 
 #: app/SettingsPage.qml:297
 #, kde-format
 msgid "Synchronize rooms"
-msgstr ""
+msgstr "Tahdista huoneet"
 
 #: app/SettingsPage.qml:304
 #, kde-format
 msgid "Matrix ID"
-msgstr ""
+msgstr "Matrix-tunniste"
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "Lippu"
+msgstr "Salasana"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "Kirjaudu ulos"
 
 #: app/SettingsPage.qml:315
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Kirjaudu"
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
@@ -2842,10 +2821,9 @@ msgid "No locations found"
 msgstr "Sijainteja ei löytynyt"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "Tapahtumalippu"
+msgstr "Muokkaa lippua"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2853,15 +2831,14 @@ msgid "Ticket"
 msgstr "Lippu"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "Lipun numero:"
+msgstr "Lipun nimi"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "Lipun nimi ei voi olla tyhjä."
 
 #: app/TicketPage.qml:42
 #, kde-format
@@ -3381,17 +3358,17 @@ msgstr "Selvä!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "Tahdistetaan…"
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr ""
+msgstr "Palvelin ei tue kirjautumista salasanalla"
 
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "Kirjaudutaan"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
