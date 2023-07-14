@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-14 02:36+0000\n"
-"PO-Revision-Date: 2023-05-28 16:40+0300\n"
+"PO-Revision-Date: 2023-06-27 18:04+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -924,10 +924,9 @@ msgid "Test expired"
 msgstr "Koetulos on vanhentunut"
 
 #: app/HealthCertificateBarcode.qml:80
-#, fuzzy, kde-format
-#| msgid "Certificate invalid"
+#, kde-format
 msgid "Recovery certificate valid"
-msgstr "Virheellinen todistus"
+msgstr "Kelvollinen palautusvarmenne"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
