@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
-"PO-Revision-Date: 2023-07-09 12:33+0200\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"PO-Revision-Date: 2023-07-14 00:49+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1749,7 +1749,7 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Mostrar más..."
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -1906,7 +1906,7 @@ msgstr "Algunas clavijas de corriente incompatibles: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Cambio de zona horaria: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr "Divisa: %1"

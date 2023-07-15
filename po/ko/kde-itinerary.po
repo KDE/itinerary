@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1920,7 +1920,7 @@ msgstr "일부 전원 플러그 호환되지 않음: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "시간대 변경: %1(%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr "통화: %1"

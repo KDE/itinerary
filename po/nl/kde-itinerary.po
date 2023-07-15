@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
 "PO-Revision-Date: 2023-07-13 12:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1902,7 +1902,7 @@ msgstr "Enige niet-overeenkomstige stekker: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Wijziging in tijdzone: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr "Valuta: %1"

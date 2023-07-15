@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
 "PO-Revision-Date: 2023-07-13 10:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1906,7 +1906,7 @@ msgstr "Alguns endolls són incompatibles: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Canvi de la zona horària: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr "Divisa: %1"

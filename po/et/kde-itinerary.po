@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2050,7 +2050,7 @@ msgstr "Mõned mitteühilduvad pistikud: %1"
 msgid "Timezone change: %1 (%2)"
 msgstr "Ajavööndi muutus: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr ""

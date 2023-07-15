@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 00:49+0000\n"
-"PO-Revision-Date: 2023-07-10 07:05+0200\n"
+"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"PO-Revision-Date: 2023-07-14 06:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1743,7 +1743,7 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "მეტის ჩვენება…"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -1900,7 +1900,7 @@ msgstr "კვების ზოგიერთი შეუთავსებ�
 msgid "Timezone change: %1 (%2)"
 msgstr "დროის სარტყლის ცვლილება: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:98
+#: app/LocationInfoDelegate.qml:100
 #, kde-format
 msgid "Currency: %1"
 msgstr "ვალუტა: %1"
