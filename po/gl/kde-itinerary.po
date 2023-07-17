@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-17 00:49+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1920,7 +1920,13 @@ msgstr[1] "%1 cambios"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:632
+#: app/livedatamanager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Departure from %1: %2"
+msgid "Flight %1 to %2:"
+msgstr "Saída de %1: %2"
+
+#: app/livedatamanager.cpp:657
 #, kde-format
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
@@ -1957,23 +1963,23 @@ msgstr ""
 "Seguro que quere substituír a súa reserva actual polo novo traxecto "
 "seleccionado?"
 
-#: app/LiveStatusPage.qml:162
+#: app/LiveStatusPage.qml:163
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:205
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Lugar:"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:214
 #, fuzzy, kde-format
 #| msgid "Replace"
 msgid "Journey"

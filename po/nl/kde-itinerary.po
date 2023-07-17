@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-17 00:49+0000\n"
 "PO-Revision-Date: 2023-07-13 12:33+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1784,7 +1784,13 @@ msgstr[1] "%1 keer overstappen"
 msgid "Click to extend"
 msgstr "Klik om uit te breiden"
 
-#: app/livedatamanager.cpp:632
+#: app/livedatamanager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight %1 to %2:"
+msgstr "Vlucht %1 van %2 naar %3"
+
+#: app/livedatamanager.cpp:657
 #, kde-format
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
@@ -1815,22 +1821,22 @@ msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "Wilt u uw huidige locatie delen op het Matrix-kanaal %1?"
 
-#: app/LiveStatusPage.qml:162
+#: app/LiveStatusPage.qml:163
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Automatisch volgen op de kaart"
 
-#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Wachten op gegevens..."
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:205
 #, kde-format
 msgid "Position"
 msgstr "Positie"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:214
 #, kde-format
 msgid "Journey"
 msgstr "Reis"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-17 00:49+0000\n"
 "PO-Revision-Date: 2023-07-13 08:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1794,7 +1794,13 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:632
+#: app/livedatamanager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight %1 to %2:"
+msgstr "Рейс %1 з %2 до %3"
+
+#: app/livedatamanager.cpp:657
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -1827,22 +1833,22 @@ msgstr ""
 "Ви справді хочете оприлюднити дані щодо вашого поточного місця перебування "
 "на каналі Matrix %1?"
 
-#: app/LiveStatusPage.qml:162
+#: app/LiveStatusPage.qml:163
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Автоматично стежити на карті"
 
-#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Очікуємо на дані…"
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:205
 #, kde-format
 msgid "Position"
 msgstr "Розташування"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:214
 #, kde-format
 msgid "Journey"
 msgstr "Подорож"

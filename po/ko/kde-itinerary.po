@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-17 00:49+0000\n"
 "PO-Revision-Date: 2023-04-21 23:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1798,7 +1798,13 @@ msgstr[0] "환승 %1회"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:632
+#: app/livedatamanager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Flight %1 from %2 to %3"
+msgid "Flight %1 to %2:"
+msgstr "%2에서 %3(으)로 가는 %1 항공편|/|%2에서 %3$[으 %3]로 가는 %1 항공편"
+
+#: app/livedatamanager.cpp:657
 #, kde-format
 msgid "Itinerary change"
 msgstr "여정 변경"
@@ -1833,22 +1839,22 @@ msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?"
 
-#: app/LiveStatusPage.qml:162
+#: app/LiveStatusPage.qml:163
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "자동으로 지도에서 따라가기"
 
-#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
 #, kde-format
 msgid "Waiting for data..."
 msgstr "데이터 대기 중..."
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:205
 #, kde-format
 msgid "Position"
 msgstr "위치"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:214
 #, kde-format
 msgid "Journey"
 msgstr "여정"
