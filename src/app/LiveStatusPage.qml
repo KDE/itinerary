@@ -6,7 +6,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import QtLocation 5.11 as QtLocation
+import QtLocation @QTLOCATION_MODULE_VERSION@ as QtLocation
 import QtPositioning 5.11
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kpublictransport 1.0

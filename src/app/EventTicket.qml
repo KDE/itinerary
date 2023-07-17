@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import QtGraphicalEffects 1.0 as Effects
+import @QTGRAPHICALEFFECTS_MODULE@ as Effects
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.pkpass 1.0 as KPkPass
 import org.kde.itinerary 1.0
