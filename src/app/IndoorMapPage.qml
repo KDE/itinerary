@@ -54,7 +54,7 @@ Kirigami.Page {
 
     actions {
         left: Kirigami.Action {
-            iconName: "go-down-symbolic"
+            icon.name: "go-down-symbolic"
             text: i18nc("@action:intoolbar Go down one floor", "Floor down")
             displayHint: Kirigami.DisplayHint.IconOnly
             enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
@@ -62,7 +62,7 @@ Kirigami.Page {
             visible: map.floorLevels.hasFloorLevels
         }
         right: Kirigami.Action {
-            iconName: "go-up-symbolic"
+            icon.name: "go-up-symbolic"
             text: i18nc("@action:intoolbar Go up one floor", "Floor up")
             displayHint: Kirigami.DisplayHint.IconOnly
             enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
@@ -74,14 +74,14 @@ Kirigami.Page {
         Kirigami.Action {
             id: zoomInAction
             text: i18n("Zoom In")
-            iconName: "zoom-in-symbolic"
+            icon.name: "zoom-in-symbolic"
             onTriggered: map.view.setZoomLevel(map.view.zoomLevel + 1, Qt.point(map.width / 2.0, map.height/ 2.0));
             enabled: map.view.zoomLevel < 21
         },
         Kirigami.Action {
             id: zoomOutAction
             text: i18n("Zoom Out")
-            iconName: "zoom-out-symbolic"
+            icon.name: "zoom-out-symbolic"
             onTriggered: map.view.setZoomLevel(map.view.zoomLevel - 1, Qt.point(map.width / 2.0, map.height/ 2.0));
             enabled: map.view.zoomLevel > 14
         },

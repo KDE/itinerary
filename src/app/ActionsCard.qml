@@ -86,7 +86,7 @@ MobileForm.FormCard {
                     if (modelData.className == "UpdateAction") return i18n("Change Reservation");
                     if (modelData.className == "ViewAction") return i18n("View Reservation");
                 }
-                iconName: {
+                icon.name: {
                     if (modelData.className == "CancelAction") return "dialog-cancel";
                     if (modelData.className == "CheckInAction") return "checkmark";
                     if (modelData.className == "DownloadAction") return "edit-download";

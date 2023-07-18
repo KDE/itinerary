@@ -24,7 +24,7 @@ Kirigami.Page {
         contextualActions: [
             Kirigami.Action {
                 text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
-                iconName: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
+                icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
                 onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
             }
         ]

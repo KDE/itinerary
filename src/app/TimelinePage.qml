@@ -24,18 +24,18 @@ Kirigami.ScrollablePage {
         contextualActions: [
             Kirigami.Action {
                 text: i18n("Go To Now")
-                iconName: "view-calendar-day"
+                icon.name: "view-calendar-day"
                 onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
             },
             Kirigami.Action {
                 text: i18n("Current Ticket")
-                iconName: "view-barcode-qr"
+                icon.name: "view-barcode-qr"
                 enabled: TimelineModel.currentBatchId !== ""
                 onTriggered: showDetailsPageForReservation(TimelineModel.currentBatchId)
             },
             Kirigami.Action {
                 text: i18n("Add train trip...")
-                iconName: "list-add-symbolic"
+                icon.name: "list-add-symbolic"
                 onTriggered: {
                     // find date/time at the current screen center
                     var row = -1;

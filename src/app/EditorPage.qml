@@ -36,7 +36,7 @@ Kirigami.ScrollablePage {
     actions {
         main: Kirigami.Action {
             text: i18n("Save")
-            iconName: "document-save"
+            icon.name: "document-save"
             enabled: root.isValidInput
             onTriggered: {
                 const newRes = root.apply(root.reservation);

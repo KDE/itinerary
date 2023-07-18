@@ -43,7 +43,7 @@ Kirigami.ScrollablePage {
         contextualActions: [
             Kirigami.Action {
                 text: i18n("Depart Now")
-                iconName: "clock"
+                icon.name: "clock"
                 onTriggered: {
                     var req = journeyModel.request;
                     req.dateTime = new Date();
@@ -53,7 +53,7 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 text: i18n("Discard")
-                iconName: "edit-delete"
+                icon.name: "edit-delete"
                 onTriggered: {
                     TransferManager.discardTransfer(root.transfer);
                     applicationWindow().pageStack.pop();
@@ -61,13 +61,13 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 text: i18n("Earlier")
-                iconName: "go-up-symbolic"
+                icon.name: "go-up-symbolic"
                 onTriggered: journeyModel.queryPrevious()
                 enabled: journeyModel.canQueryPrevious
             },
             Kirigami.Action {
                 text: i18n("Later")
-                iconName: "go-down-symbolic"
+                icon.name: "go-down-symbolic"
                 onTriggered: journeyModel.queryNext()
                 enabled: journeyModel.canQueryNext
             },

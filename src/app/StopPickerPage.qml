@@ -27,7 +27,7 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             text: i18n("Clear history")
-            iconName: "edit-clear-history"
+            icon.name: "edit-clear-history"
             onTriggered: locationHistoryModel.clear()
         },
         Kirigami.Action { separator: true },
@@ -123,7 +123,7 @@ Kirigami.ScrollablePage {
             }
             actions: [
                 Kirigami.Action {
-                    iconName: "edit-delete"
+                    icon.name: "edit-delete"
                     text: i18n("Remove history entry")
                     onTriggered: {
                         sourceModel.removeRows(model.index, 1)

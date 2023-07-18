@@ -48,12 +48,12 @@ Kirigami.Page {
         contextualActions: [
             Kirigami.Action {
                 id: importFromClipboardAction
-                iconName: "edit-paste"
+                icon.name: "edit-paste"
                 text: i18n("Import from Clipboard")
                 onTriggered: ApplicationController.importFromClipboard()
             },
             Kirigami.Action {
-                iconName: "edit-delete"
+                icon.name: "edit-delete"
                 text: i18n("Delete")
                 onTriggered: deleteWarningDialog.open()
                 enabled: certSelector.currentIndex >= 0 && certSelector.count > 0

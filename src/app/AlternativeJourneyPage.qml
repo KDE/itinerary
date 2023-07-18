@@ -57,7 +57,7 @@ App.JourneyQueryPage {
         text: i18nc("to travel destination", "To %1", controller.journeyRequestFull.to.name)
         checkable: true
         checked: controller.journeyRequestFull.to.name == root.journeyRequest.to.name
-        iconName: "go-next-symbolic"
+        icon.name: "go-next-symbolic"
         visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
         QQC2.ActionGroup.group: journeyActionGroup
         onTriggered: updateRequest()
@@ -67,7 +67,7 @@ App.JourneyQueryPage {
         text: i18nc("to travel destination", "To %1", controller.journeyRequestOne.to.name)
         checkable: true
         checked: controller.journeyRequestOne.to.name == root.journeyRequest.to.name
-        iconName: "go-next-symbolic"
+        icon.name: "go-next-symbolic"
         visible: controller.journeyRequestFull.to.name != controller.journeyRequestOne.to.name
         QQC2.ActionGroup.group: journeyActionGroup
         onTriggered: updateRequest()

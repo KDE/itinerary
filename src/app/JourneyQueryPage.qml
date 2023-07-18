@@ -27,13 +27,13 @@ Kirigami.ScrollablePage {
     contextualActions: [
         Kirigami.Action {
             text: i18n("Earlier")
-            iconName: "go-up-symbolic"
+            icon.name: "go-up-symbolic"
             onTriggered: journeyModel.queryPrevious()
             enabled: journeyModel.canQueryPrevious
         },
         Kirigami.Action {
             text: i18n("Later")
-            iconName: "go-down-symbolic"
+            icon.name: "go-down-symbolic"
             onTriggered: journeyModel.queryNext()
             enabled: journeyModel.canQueryNext
         }

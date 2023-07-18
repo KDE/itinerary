@@ -58,7 +58,7 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: i18n("Open File...")
-                iconName: "document-open"
+                icon.name: "document-open"
                 onTriggered: {
                     importDialog.close();
                     importFileDialog.open();
@@ -66,7 +66,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18n("Paste")
-                iconName: "edit-paste"
+                icon.name: "edit-paste"
                 enabled: ApplicationController.hasClipboardContent
                 onTriggered: {
                     importDialog.close();
@@ -75,14 +75,14 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18n("Scan Barcode...")
-                iconName: "view-barcode-qr"
+                icon.name: "view-barcode-qr"
                 onTriggered: {
                     importDialog.close();
                     pageStack.layers.push(scanBarcodeComponent);
                 }
             },
             Kirigami.Action {
-                iconName: "view-calendar-day"
+                icon.name: "view-calendar-day"
                 text: i18n("Add from Calendar...")
                 onTriggered: {
                     importDialog.close();
@@ -99,7 +99,7 @@ Kirigami.ApplicationWindow {
             // sources we support
             Kirigami.Action {
                 text: i18n("Deutsche Bahn Online Ticket...")
-                iconName: "download"
+                icon.name: "download"
                 onTriggered: {
                     importDialog.close();
                     pageStack.layers.push(onlineImportPage, {source: "db"});
@@ -107,7 +107,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18n("SNCF Online Ticket...")
-                iconName: "download"
+                icon.name: "download"
                 onTriggered: {
                     importDialog.close();
                     pageStack.layers.push(onlineImportPage, {source: "sncf"});
@@ -160,12 +160,12 @@ Kirigami.ApplicationWindow {
         actions: [
             Kirigami.Action {
                 text: i18n("Import...")
-                iconName: "document-import"
+                icon.name: "document-import"
                 onTriggered: importDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Check for Updates")
-                iconName: "view-refresh"
+                icon.name: "view-refresh"
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
                 onTriggered: {
                     LiveDataManager.checkForUpdates();
@@ -173,7 +173,7 @@ Kirigami.ApplicationWindow {
             },
             Kirigami.Action {
                 text: i18n("Download Maps")
-                iconName: "download"
+                icon.name: "download"
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
                 icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
                 onTriggered: MapDownloadManager.download();
@@ -181,20 +181,20 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 id: statsAction
                 text: i18n("Statistics")
-                iconName: "view-statistics"
+                icon.name: "view-statistics"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: pageStack.layers.push(statisticsComponent)
             },
             Kirigami.Action {
                 id: passAction
                 text: Kirigami.Settings.isMobile ? i18n("Passes && Programs") : i18n("Passes & Programs") // TODO Kirigami or style bug?
-                iconName: "wallet-open"
+                icon.name: "wallet-open"
                 onTriggered: pageStack.push(passComponent)
             },
             Kirigami.Action {
                 id: healthCertAction
                 text: i18n("Health Certificates")
-                iconName: "cross-shape"
+                icon.name: "cross-shape"
                 onTriggered: {
                     healtCertificateComponent.source = "HealthCertificatePage.qml"
                     pageStack.layers.push(healtCertificateComponent.item)
@@ -205,7 +205,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 id: liveAction
                 text: i18n("Live Status")
-                iconName: "media-playback-playing"
+                icon.name: "media-playback-playing"
                 onTriggered: pageStack.push(liveStatusPage)
                 enabled: pageStack.layers.depth < 2
                 visible: onboardStatus.status == OnboardStatus.Onboard
@@ -213,32 +213,32 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 id: settingsAction
                 text: i18n("Settings...")
-                iconName: "settings-configure"
+                icon.name: "settings-configure"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: pageStack.layers.push(settingsComponent)
             },
             Kirigami.Action {
                 text: i18n("Export...")
-                iconName: "export-symbolic"
+                icon.name: "export-symbolic"
                 onTriggered: exportDialog.open()
             },
             Kirigami.Action {
                 text: i18n("Help")
-                iconName: "help-contents"
+                icon.name: "help-contents"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: pageStack.layers.push(welcomeComponent)
             },
             Kirigami.Action {
                 id: aboutAction
                 text: i18n("About")
-                iconName: "help-about-symbolic"
+                icon.name: "help-about-symbolic"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: pageStack.pushDialogLayer('qrc:/AboutPage.qml')
             },
             Kirigami.Action {
                 id: devModeAction
                 text: "Development"
-                iconName: "tools-report-bug"
+                icon.name: "tools-report-bug"
                 enabled: pageStack.layers.depth < 2
                 onTriggered: pageStack.layers.push(devModePageComponent)
                 visible: Settings.developmentMode
