@@ -7,7 +7,7 @@
 import QtQuick 2.5
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import QtLocation @QTLOCATION_MODULE_VERSION@ as QtLocation
+import QtLocation  as QtLocation
 import QtPositioning 5.11
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
@@ -25,7 +25,7 @@ Kirigami.Page {
     // prevent swipe to the right changing pages, we want to pan the map instead
     Kirigami.ColumnView.preventStealing: true
 
-   actions.main: Kirigami.Action {
+   actions: Kirigami.Action {
         icon.name: "crosshairs"
         text: i18n("Pick Location")
         onTriggered: {

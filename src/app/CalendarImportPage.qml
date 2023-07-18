@@ -18,7 +18,7 @@ Kirigami.ScrollablePage {
 
     title: i18n("Calendar Import")
 
-    actions.main: Kirigami.Action {
+    @KIRIGAMI_MAIN_ACTIONS@: Kirigami.Action {
         icon.name: "document-open"
         text: i18n("Import selected events")
         enabled: importModel.hasSelection

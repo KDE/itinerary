@@ -19,7 +19,7 @@ Kirigami.ScrollablePage {
     required property string passId
     required property var ticket
 
-    actions.main: Kirigami.Action {
+    @KIRIGAMI_MAIN_ACTIONS@: Kirigami.Action {
         text: i18n("Save")
         icon.name: "document-save"
         enabled: root.isValidInput

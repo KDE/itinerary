@@ -98,6 +98,18 @@ configure_file(FormPlaceEditorDelegate.qml ${CMAKE_CURRENT_BINARY_DIR}/FormPlace
 configure_file(LocationPicker.qml ${CMAKE_CURRENT_BINARY_DIR}/LocationPicker.qml)
 configure_file(LiveStatusPage.qml ${CMAKE_CURRENT_BINARY_DIR}/LiveStatusPage.qml)
 configure_file(FavoriteLocationPage.qml ${CMAKE_CURRENT_BINARY_DIR}/FavoriteLocationPage.qml)
+configure_file(MatrixRoomSelectionSheet.qml ${CMAKE_CURRENT_BINARY_DIR}/MatrixRoomSelectionSheet.qml)
+configure_file(BoatPage.qml ${CMAKE_CURRENT_BINARY_DIR}/BoatPage.qml)
+configure_file(BusPage.qml ${CMAKE_CURRENT_BINARY_DIR}/BusPage.qml)
+configure_file(CalendarImportPage.qml ${CMAKE_CURRENT_BINARY_DIR}/CalendarImportPage.qml)
+configure_file(EventPage.qml ${CMAKE_CURRENT_BINARY_DIR}/EventPage.qml)
+configure_file(FlightPage.qml ${CMAKE_CURRENT_BINARY_DIR}/FlightPage.qml)
+configure_file(TicketPage.qml ${CMAKE_CURRENT_BINARY_DIR}/TicketPage.qml)
+configure_file(TrainPage.qml ${CMAKE_CURRENT_BINARY_DIR}/TrainPage.qml)
+configure_file(PkPassPage.qml ${CMAKE_CURRENT_BINARY_DIR}/PkPassPage.qml)
+configure_file(ProgramMembershipPage.qml ${CMAKE_CURRENT_BINARY_DIR}/ProgramMembershipPage.qml)
+configure_file(TicketEditor.qml ${CMAKE_CURRENT_BINARY_DIR}/TicketEditor.qml)
+configure_file(IndoorMapElevatorSheet.qml ${CMAKE_CURRENT_BINARY_DIR}/IndoorMapElevatorSheet.qml)
 
 configure_file(qml.qrc ${CMAKE_CURRENT_SOURCE_DIR}/qml.generated.qrc)
 

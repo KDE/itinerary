@@ -32,7 +32,7 @@ Kirigami.ScrollablePage {
             roleValue: PassManager.ProgramMembership
             Kirigami.BasicListItem {
                 highlighted: false
-                icon: "meeting-attending"
+                @KIRIGAMI_BASICLISTITEM_ICON@: "meeting-attending"
                 text: model.pass.programName
                 subtitle: {
                     if (!model.pass.member.name)
@@ -52,7 +52,7 @@ Kirigami.ScrollablePage {
                 highlighted: false
                 text: pkPass.description
                 subtitle: pkPass.organizationName
-                icon: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
+                @KIRIGAMI_BASICLISTITEM_ICON@: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
                 reserveSpaceForIcon: true
                 onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
             }
@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
             roleValue: PassManager.Ticket
             Kirigami.BasicListItem {
                 highlighted: false
-                icon: "bookmarks"
+                @KIRIGAMI_BASICLISTITEM_ICON@: "bookmarks"
                 text: model.pass.name
                 subtitle: {
                     if (model.pass.underName.name === "")

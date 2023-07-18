@@ -19,7 +19,7 @@ App.DetailsPage {
         controller: root.controller
     }
 
-    actions.main: Kirigami.Action {
+    @KIRIGAMI_MAIN_ACTIONS@: Kirigami.Action {
         icon.name: "view-barcode-qr"
         text: i18n("Barcode Scan Mode")
         onTriggered: scanModeController.toggle()

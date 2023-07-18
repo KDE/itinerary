@@ -100,7 +100,7 @@ Kirigami.OverlaySheet {
         focus: true
     }
 
-    onSheetOpenChanged: {
+    @OVERLAYSHEET_OPEN@: {
         if (sheetOpen)
             searchField.clear();
     }

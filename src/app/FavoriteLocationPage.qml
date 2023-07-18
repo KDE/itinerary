@@ -46,7 +46,7 @@ Kirigami.Page {
         onAccepted: FavoriteLocationModel.importFromGpx(file)
     }
 
-   actions.main: Kirigami.Action {
+   @KIRIGAMI_MAIN_ACTIONS@: Kirigami.Action {
         icon.name: "crosshairs"
         text: i18n("Pick Location")
         onTriggered: {

@@ -16,12 +16,12 @@
         <file>BoardingPass.qml</file>
         <file>BoatDelegate.qml</file>
         <file>BoatEditor.qml</file>
-        <file>BoatPage.qml</file>
+        <file alias="BoatPage.qml">@CMAKE_CURRENT_BINARY_DIR@/BoatPage.qml</file>
         <file>BookingCard.qml</file>
         <file>BusDelegate.qml</file>
         <file>BusEditor.qml</file>
-        <file>BusPage.qml</file>
-        <file>CalendarImportPage.qml</file>
+        <file alias="BusPage.qml">@CMAKE_CURRENT_BINARY_DIR@/BusPage.qml</file>
+        <file alias="CalendarImportPage.qml">@CMAKE_CURRENT_BINARY_DIR@/CalendarImportPage.qml</file>
         <file>CalendarSelectionSheet.qml</file>
         <file>CarRentalDelegate.qml</file>
         <file>CarRentalPage.qml</file>
@@ -36,12 +36,12 @@
         <file>EditorPage.qml</file>
         <file>EventDelegate.qml</file>
         <file>EventEditor.qml</file>
-        <file>EventPage.qml</file>
+        <file alias="EventPage.qml">@CMAKE_CURRENT_BINARY_DIR@/EventPage.qml</file>
         <file alias="EventTicket.qml">@CMAKE_CURRENT_BINARY_DIR@/EventTicket.qml</file>
         <file alias="FavoriteLocationPage.qml">@CMAKE_CURRENT_BINARY_DIR@/FavoriteLocationPage.qml</file>
         <file>FlightDelegate.qml</file>
         <file>FlightEditor.qml</file>
-        <file>FlightPage.qml</file>
+        <file alias="FlightPage.qml">@CMAKE_CURRENT_BINARY_DIR@/FlightPage.qml</file>
         <file>FormDateTimeEditDelegate.qml</file>
         <file>FormPlaceDelegate.qml</file>
         <file alias="FormPlaceEditorDelegate.qml">@CMAKE_CURRENT_BINARY_DIR@/FormPlaceEditorDelegate.qml</file>
@@ -56,7 +56,7 @@
         <file>HotelDelegate.qml</file>
         <file>HotelEditor.qml</file>
         <file>HotelPage.qml</file>
-        <file>IndoorMapElevatorSheet.qml</file>
+        <file alias="IndoorMapElevatorSheet.qml">@CMAKE_CURRENT_BINARY_DIR@/IndoorMapElevatorSheet.qml</file>
         <file>IndoorMapGateSheet.qml</file>
         <file>IndoorMapInfoSheet.qml</file>
         <file>IndoorMapInfoSheetOpeningHoursDelegate.qml</file>
@@ -75,13 +75,13 @@
         <file alias="LiveStatusPage.qml">@CMAKE_CURRENT_BINARY_DIR@/LiveStatusPage.qml</file>
         <file>LocationInfoDelegate.qml</file>
         <file alias="LocationPicker.qml">@CMAKE_CURRENT_BINARY_DIR@/LocationPicker.qml</file>
-        <file>MatrixRoomSelectionSheet.qml</file>
+        <file alias="MatrixRoomSelectionSheet.qml">@CMAKE_CURRENT_BINARY_DIR@/MatrixRoomSelectionSheet.qml</file>
         <file>OnlineImportPage.qml</file>
         <file>PassPage.qml</file>
         <file>PkPassBarcode.qml</file>
-        <file>PkPassPage.qml</file>
+        <file alias="PkPassPage.qml">@CMAKE_CURRENT_BINARY_DIR@/PkPassPage.qml</file>
         <file>ProgramMembershipCard.qml</file>
-        <file>ProgramMembershipPage.qml</file>
+        <file alias="ProgramMembershipPage.qml">@CMAKE_CURRENT_BINARY_DIR@/ProgramMembershipPage.qml</file>
         <file>PublicTransportBackendPage.qml</file>
         <file>ReservationDocumentsCard.qml</file>
         <file>RestaurantDelegate.qml</file>
@@ -91,8 +91,8 @@
         <file>StatisticsDelegate.qml</file>
         <file>StatisticsPage.qml</file>
         <file>StopPickerPage.qml</file>
-        <file>TicketEditor.qml</file>
-        <file>TicketPage.qml</file>
+        <file alias="TicketEditor.qml">@CMAKE_CURRENT_BINARY_DIR@/TicketEditor.qml</file>
+        <file alias="TicketPage.qml">@CMAKE_CURRENT_BINARY_DIR@/TicketPage.qml</file>
         <file>TicketTokenDelegate.qml</file>
         <file>TimelineDelegate.qml</file>
         <file>TimelineDelegateHeaderBackground.qml</file>
@@ -102,7 +102,7 @@
         <file>TouristAttractionPage.qml</file>
         <file>TrainDelegate.qml</file>
         <file>TrainEditor.qml</file>
-        <file>TrainPage.qml</file>
+        <file alias="TrainPage.qml">@CMAKE_CURRENT_BINARY_DIR@/TrainPage.qml</file>
         <file>TransferDelegate.qml</file>
         <file>TransferPage.qml</file>
         <file>TripGroupDelegate.qml</file>

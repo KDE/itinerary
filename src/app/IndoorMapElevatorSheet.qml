@@ -25,7 +25,7 @@ Kirigami.OverlaySheet {
         delegate: Kirigami.BasicListItem {
             highlighted: false
             label: model.display
-            bold: model.isCurrentFloor
+            @KIRIGAMI_BASICLISTITEM_BOLD_FONT@: model.isCurrentFloor
             onClicked: {
                 elevatorSheet.sheetOpen = false;
                 map.view.floorLevel = model.floorLevel;
