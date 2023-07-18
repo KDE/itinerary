@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-17 00:49+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1920,7 +1920,13 @@ msgstr[1] "%1 ümberistumist"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:632
+#: app/livedatamanager.cpp:651
+#, fuzzy, kde-format
+#| msgid "Following departure %1 from %2"
+msgid "Flight %1 to %2:"
+msgstr "Järgmine %1 väljumine kell %2"
+
+#: app/livedatamanager.cpp:657
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itineraari muutus"
@@ -1955,24 +1961,24 @@ msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "Kas tõesti asendada olemasolev reserveering uue valitud reisiga?"
 
-#: app/LiveStatusPage.qml:162
+#: app/LiveStatusPage.qml:163
 #, fuzzy, kde-format
 #| msgid "Automatically fill transfers"
 msgid "Automatically follow on the map"
 msgstr "Transfeeride automaatne täitmine"
 
-#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
+#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:205
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Asukoht:"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:214
 #, fuzzy, kde-format
 #| msgid "Select Transfer"
 msgid "Journey"
