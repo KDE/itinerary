@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 00:49+0000\n"
-"PO-Revision-Date: 2023-07-13 08:33+0300\n"
+"PO-Revision-Date: 2023-07-17 09:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1795,10 +1795,9 @@ msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Рейс %1 з %2 до %3"
+msgstr "Рейс %1 до %2:"
 
 #: app/livedatamanager.cpp:657
 #, kde-format

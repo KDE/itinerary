@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 00:49+0000\n"
-"PO-Revision-Date: 2023-07-13 13:13+0300\n"
+"PO-Revision-Date: 2023-07-17 15:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -160,7 +160,7 @@ msgstr "Etkinliği Sil"
 #: app/ActionsCard.qml:134
 #, kde-format
 msgid "Do you really want to delete this event?"
-msgstr "Bu etkinliği gerçekten silmek istiyor musunuz?"
+msgstr "Bu etkinliği silmeyi gerçekten istiyor musunuz?"
 
 #: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
 #: app/TicketPage.qml:153
@@ -313,7 +313,7 @@ msgstr "Kullanılabilir kamera yok."
 #: app/TrainPage.qml:74 app/TransferDelegate.qml:47
 #, kde-format
 msgid "%1 to %2"
-msgstr "%1 konumundan %2 konumuna"
+msgstr "%1 → %2"
 
 #: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
 #, kde-format
@@ -702,7 +702,7 @@ msgstr "Belgeyi Sil"
 #: app/DocumentsCard.qml:81
 #, kde-format
 msgid "Do you really want to delete this document?"
-msgstr "Bu belgeyi gerçekten silmek istiyor musunuz?"
+msgstr "Bu belgeyi silmeyi gerçekten istiyor musunuz?"
 
 #: app/DocumentsCard.qml:102
 #, kde-format
@@ -737,7 +737,7 @@ msgstr "Kaydet"
 #: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
 #, kde-format
 msgid "End: %1"
-msgstr "Bitir: %1"
+msgstr "Bitiş: %1"
 
 #: app/EventDelegate.qml:58
 #, kde-format
@@ -1115,7 +1115,7 @@ msgstr "Platform"
 #, kde-format
 msgctxt "previous platform"
 msgid "(was: %1)"
-msgstr "(idi: %1)"
+msgstr "(%1 idi)"
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
 #, kde-format
@@ -1125,7 +1125,7 @@ msgstr "Kartı Sil"
 #: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
 #, kde-format
 msgid "Do you really want to delete this pass?"
-msgstr "Bu kartı gerçekten silmek istiyor musunuz?"
+msgstr "Bu kartı silmeyi gerçekten istiyor musunuz?"
 
 #: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
 #, kde-format
@@ -1135,22 +1135,22 @@ msgstr "KDE Yol Kılavuzu"
 #: app/gpxexport.cpp:47
 #, kde-format
 msgid "Flight %1 from %2 to %3"
-msgstr "%2 konumundan %3 konumuna %1 uçuşu"
+msgstr "%2 → %3 %1 uçuşu"
 
 #: app/gpxexport.cpp:51
 #, kde-format
 msgid "Train %1 from %2 to %3"
-msgstr "%2 konumundan %3 konumuna %1 treni"
+msgstr "%2 → %3 %1 treni"
 
 #: app/gpxexport.cpp:55
 #, kde-format
 msgid "Bus %1 from %2 to %3"
-msgstr "%2 konumundan %3 konumuna %1 otobüsü"
+msgstr "%2 → %3 %1 otobüsü"
 
 #: app/gpxexport.cpp:58
 #, kde-format
 msgid "Ferry from %1 to %2"
-msgstr "%1 konumundan %2 konumuna feribot"
+msgstr "%1 → %2 feribotu"
 
 #: app/HealthCertificateBarcode.qml:34
 #, kde-format
@@ -1260,7 +1260,7 @@ msgstr "Sertifikayı Sil"
 #: app/HealthCertificatePage.qml:68
 #, kde-format
 msgid "Do you really want to delete this certificate?"
-msgstr "Bu sertifikayı gerçekten silmek istiyor musunuz?"
+msgstr "Bu sertifikayı silmeyi gerçekten istiyor musunuz?"
 
 #: app/HealthCertificatePage.qml:138
 #, kde-format
@@ -1427,7 +1427,7 @@ msgstr "Doz:"
 #: app/HotelDelegate.qml:21
 #, kde-format
 msgid "Check-out %1"
-msgstr "%1 çıkışını yap"
+msgstr "Çıkış Yap: %1"
 
 #: app/HotelDelegate.qml:38
 #, kde-format
@@ -1689,7 +1689,7 @@ msgstr "Botlar veya feribotlar"
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
 msgid "%1 to %2 (%3)"
-msgstr "%2 konumuna %1 (%3)"
+msgstr "%1 → %2 (%3)"
 
 #: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
 #, kde-format
@@ -1704,7 +1704,7 @@ msgstr "Yürü (%1)"
 #: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk %1 (%2)"
-msgstr "%1 Konumuna Yürü (%2)"
+msgstr "%1 Yürü (%2)"
 
 #: app/JourneySectionDelegate.qml:107
 #, kde-format
@@ -1724,7 +1724,7 @@ msgstr "%1 %2 (%3)"
 #: app/JourneySectionDelegate.qml:113
 #, kde-format
 msgid "Drive %1 (%2)"
-msgstr "%1 Konumuna Sür (%2)"
+msgstr "%1 Sür (%2)"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1784,10 +1784,9 @@ msgid "Click to extend"
 msgstr "Genişletmek için tıkla"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "%2 konumundan %3 konumuna %1 uçuşu"
+msgstr "%1 uçuşu, %2:"
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -1886,7 +1885,7 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
 msgid "Entering %1"
-msgstr "Giriliyor: %1"
+msgstr "%1 ülkesine giriş"
 
 #: app/LocationInfoDelegate.qml:67
 #, kde-format
@@ -2159,37 +2158,37 @@ msgstr "Alanlar"
 #: app/notificationhelper.cpp:62
 #, kde-format
 msgid "Disruption on %1"
-msgstr "%1 konumunda aksama"
+msgstr "%1 için aksama"
 
 #: app/notificationhelper.cpp:70
 #, kde-format
 msgid "Changes on %1"
-msgstr "%1 konumunda değişiklik"
+msgstr "%1 için değişiklik"
 
 #: app/notificationhelper.cpp:74
 #, kde-format
 msgid "Delays on %1"
-msgstr "%1 konumunda gecikmeler"
+msgstr "%1 için gecikmeler"
 
 #: app/notificationhelper.cpp:77
 #, kde-format
 msgid "Delayed departure on %1"
-msgstr "%1 konumunda gecikmiş kalkış"
+msgstr "%1 için gecikmiş kalkış"
 
 #: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Earlier departure on %1"
-msgstr "%1 konumunda erken kalkış"
+msgstr "%1 için erken kalkış"
 
 #: app/notificationhelper.cpp:83
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr "%1 konumunda gecikmiş varış"
+msgstr "%1 için gecikmiş varış"
 
 #: app/notificationhelper.cpp:87
 #, kde-format
 msgid "Platform change on %1"
-msgstr "%1 konumunda platform değişikliği"
+msgstr "%1 için platform değişikliği"
 
 #: app/notificationhelper.cpp:97
 #, kde-format
@@ -2678,7 +2677,7 @@ msgstr "Matrix Tümleştirmesi"
 #: app/SettingsPage.qml:294
 #, kde-format
 msgid "Logged in as %1"
-msgstr "%1 olarak giriş yapıldı"
+msgstr "%1 olarak oturum açıldı"
 
 #: app/SettingsPage.qml:297
 #, kde-format
@@ -2837,7 +2836,7 @@ msgstr "Bileti Sil"
 #: app/TicketPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this ticket?"
-msgstr "Bu bileti gerçekten silmek istiyor musunuz?"
+msgstr "Bu bileti silmeyi gerçekten istiyor musunuz?"
 
 #: app/TicketPage.qml:132
 #, kde-format
@@ -3363,164 +3362,3 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
-
-#~ msgid "Application"
-#~ msgstr "Uygulama"
-
-#~ msgid "Transport Data"
-#~ msgstr "Taşıma Verisi"
-
-#~ msgid "Version"
-#~ msgstr "Sürüm"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "Veri sağlayıcıları: %1"
-
-#~ msgid "Select..."
-#~ msgstr "Seç..."
-
-#~ msgid "Select transfer..."
-#~ msgstr "Aktarma seç..."
-
-#~| msgid "Depature Time"
-#~ msgctxt "Boat departure"
-#~ msgid "Deparutre Time"
-#~ msgstr "Kalkış Zamanı"
-
-#~ msgid "Frequent Traveler Program"
-#~ msgstr "Sık Yolcu Programı"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program"
-#~ msgstr "Program"
-
-#~ msgid "%1°C / %2°C"
-#~ msgstr "%1°C / %2°C"
-
-#~ msgid "Boarding time:"
-#~ msgstr "Biniş zamanı:"
-
-#~ msgctxt "flight departure"
-#~ msgid "Departure"
-#~ msgstr "Kalkış"
-
-#~ msgctxt "flight departure time"
-#~ msgid "Departure time:"
-#~ msgstr "Kalkış zamanı:"
-
-#~ msgctxt "flight departure terminal"
-#~ msgid "Departure terminal:"
-#~ msgstr "Kalkış terminali:"
-
-#~ msgctxt "flight departure gate"
-#~ msgid "Departure gate:"
-#~ msgstr "Kalkış kapısı:"
-
-#~ msgid "Telephone:"
-#~ msgstr "Telefon:"
-
-#~ msgid "Email:"
-#~ msgstr "E-posta:"
-
-#~ msgid "Pick coordinate"
-#~ msgstr "Koordinat seç"
-
-#~ msgctxt "train station"
-#~ msgid "Station:"
-#~ msgstr "İstasyon:"
-
-#~ msgid "Platform:"
-#~ msgstr "Platform:"
-
-#~ msgid "Reference:"
-#~ msgstr "Başvuru:"
-
-#~ msgid "Under name:"
-#~ msgstr "Şu ad ile:"
-
-#~ msgid "%1°C"
-#~ msgstr "%1°C"
-
-#~ msgid "☂ %1 mm"
-#~ msgstr "☂ %1 mm"
-
-#~ msgid "🌬️ %1 m/s"
-#~ msgstr "🌬️ %1 m/sn"
-
-#~ msgid "Temperature: %1°C"
-#~ msgstr "Sıcaklık: %1°C"
-
-#~ msgid "Temperature: %1°C / %2°C"
-#~ msgstr "Sıcaklık: %1°C / %2°C"
-
-#~ msgid "Precipitation: %1 mm"
-#~ msgstr "Yağış: %1 mm"
-
-#~ msgid "%1m"
-#~ msgstr "%1 m"
-
-#~ msgid "%1km"
-#~ msgstr "%1 km"
-
-#~ msgctxt "%1 is month name, %2 is year"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Days"
-#~ msgstr "Gün"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Months"
-#~ msgstr "Ay"
-
-#~ msgctxt "kirigami-addons"
-#~ msgid "Years"
-#~ msgstr "Yıl"
-
-#~ msgid "Previous"
-#~ msgstr "Önceki"
-
-#~ msgid "Next"
-#~ msgstr "Sonraki"
-
-#~ msgid "Cancel"
-#~ msgstr "İptal"
-
-#~ msgid "Accept"
-#~ msgstr "Kabul Et"
-
-#~ msgid "Number:"
-#~ msgstr "Numara:"
-
-#~| msgid "Boarding time:"
-#~ msgid "Bording time"
-#~ msgstr "Biniş zamanı"
-
-#~ msgid "Documents (%1)"
-#~ msgstr "Belgeler (%1)"
-
-#~ msgid "Open Document"
-#~ msgstr "Belge Aç"
-
-#~ msgctxt "flight arrival"
-#~ msgid "Arrival"
-#~ msgstr "Varış"
-
-#~ msgctxt "name of a frequent flyer program"
-#~ msgid "Program:"
-#~ msgstr "Program:"
-
-#~ msgid "Elevator"
-#~ msgstr "Asansör"
-
-#~ msgctxt "@action"
-#~ msgid "Hide Names"
-#~ msgstr "Adları Gizle"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "Adları Göster"
-
-#~ msgid "Show"
-#~ msgstr "Göster"
