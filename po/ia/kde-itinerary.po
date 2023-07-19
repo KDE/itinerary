@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 00:49+0000\n"
-"PO-Revision-Date: 2023-07-13 22:13+0200\n"
+"PO-Revision-Date: 2023-07-18 21:53+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1783,10 +1783,9 @@ msgid "Click to extend"
 msgstr "Pulsa pro extender"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Volo %1 ex %2 a %3"
+msgstr "Volo %1 a %2:"
 
 #: app/livedatamanager.cpp:657
 #, kde-format
