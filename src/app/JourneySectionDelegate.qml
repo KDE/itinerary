@@ -89,6 +89,7 @@ MobileForm.AbstractFormDelegate {
         RowLayout {
             Layout.fillWidth: true
             QQC2.Label {
+                id: journeyTitleLabel
                 Layout.fillWidth: true
                 text: {
                     switch (modelData.mode) {
@@ -151,14 +152,45 @@ MobileForm.AbstractFormDelegate {
 
         // optional bottom row: notes
         QQC2.Label {
+            id: notesLabel
             Layout.columnSpan: 2
             Layout.fillWidth: true
             text: modelData.notes.join("<br/>")
             textFormat: Text.RichText
             wrapMode: Text.Wrap
+            verticalAlignment: Text.AlignTop
+            // Doesn't work with RichText.
+            elide: Text.ElideRight
+            maximumLineCount: 6
+            Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
             visible: modelData.notes.length > 0
             font.italic: true
+            clip: implicitHeight > height
             onLinkActivated: Qt.openUrlExternally(link)
+
+            Kirigami.OverlaySheet {
+                id: moreNotesSheet
+                header: Kirigami.Heading {
+                    text: journeyTitleLabel.text
+                }
+
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: modelData.notes.join("<br/>")
+                    textFormat: Text.RichText
+                    wrapMode: Text.Wrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                }
+            }
+        }
+
+        Kirigami.LinkButton {
+            Layout.columnSpan: 2
+            text: i18nc("@action:button", "Show More…")
+            visible: notesLabel.implicitHeight > notesLabel.height
+            onClicked: {
+                moreNotesSheet.open();
+            }
         }
     }
 }
