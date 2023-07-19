@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 00:49+0000\n"
-"PO-Revision-Date: 2023-07-03 11:38\n"
+"PO-Revision-Date: 2023-07-18 11:10\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -67,10 +67,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Itinerary 使用以下来源的公共交通数据。"
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "更多信息"
+msgstr ""
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -83,10 +82,9 @@ msgid "Extractor capabilities:"
 msgstr "数据提取器特性列表："
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "数据提取器特性列表："
+msgstr ""
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -189,11 +187,10 @@ msgstr ""
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location %1"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "地点 %1"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
@@ -204,11 +201,10 @@ msgstr ""
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
-msgstr "公共汽车"
+msgstr ""
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
 #: app/JourneyRequestPage.qml:238 app/TransferPage.qml:142
@@ -507,11 +503,10 @@ msgid "Station"
 msgstr ""
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform: %1"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr "站台：%1"
+msgstr ""
 
 #: app/BusPage.qml:156
 #, kde-format
@@ -666,11 +661,10 @@ msgid "To:"
 msgstr "目的地："
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "线路 %1 早点"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
@@ -1658,11 +1652,10 @@ msgid "High speed or intercity trains"
 msgstr ""
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "重命名收藏的地点"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -1779,10 +1772,9 @@ msgid "Click to extend"
 msgstr ""
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "从 %2 飞往 %3 的 %1 次航班"
+msgstr ""
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -3343,15 +3335,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "Application"
-#~ msgstr "应用程序"
-
-#~ msgid "Transport Data"
-#~ msgstr "交通数据"
-
-#~ msgid "Version"
-#~ msgstr "版本"
-
-#~ msgid "Data providers: %1"
-#~ msgstr "数据提供者：%1"
