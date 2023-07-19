@@ -92,19 +92,10 @@ if (TARGET KHealthCertificate)
     target_link_libraries(itinerary PRIVATE KHealthCertificate)
 endif()
 
-configure_file(EventTicket.qml ${CMAKE_CURRENT_BINARY_DIR}/EventTicket.qml)
-configure_file(main.qml ${CMAKE_CURRENT_BINARY_DIR}/main.qml)
-configure_file(FormPlaceEditorDelegate.qml ${CMAKE_CURRENT_BINARY_DIR}/FormPlaceEditorDelegate.qml)
-configure_file(LocationPicker.qml ${CMAKE_CURRENT_BINARY_DIR}/LocationPicker.qml)
-configure_file(LiveStatusPage.qml ${CMAKE_CURRENT_BINARY_DIR}/LiveStatusPage.qml)
-configure_file(FavoriteLocationPage.qml ${CMAKE_CURRENT_BINARY_DIR}/FavoriteLocationPage.qml)
-
-configure_file(qml.qrc ${CMAKE_CURRENT_SOURCE_DIR}/qml.generated.qrc)
-
 if (Qt5QuickCompiler_FOUND)
-    qtquick_compiler_add_resources(qml_srcs qml.generated.qrc)
+    qtquick_compiler_add_resources(qml_srcs qml.qrc)
 else ()
-    set(qml_srcs qml.generated.qrc)
+    set(qml_srcs qml.qrc)
 endif()
 
 add_executable(itinerary-app ${itinerary_app_srcs})

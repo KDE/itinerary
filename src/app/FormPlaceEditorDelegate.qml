@@ -7,7 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
-import QtLocation @QTLOCATION_MODULE_VERSION@ as QtLocation
+import QtLocation 5.15 as QtLocation
 import QtPositioning 5.15
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm

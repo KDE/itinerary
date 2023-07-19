@@ -8,7 +8,7 @@ import QtQuick 2.13
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import Qt.labs.platform 1.1
-import QtLocation @QTLOCATION_MODULE_VERSION@ as QtLocation
+import QtLocation 5.11 as QtLocation
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport.onboard 1.0

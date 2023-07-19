@@ -6,7 +6,7 @@
     <qresource prefix="/">
         <file>qtquickcontrols2.conf</file>
 
-        <file alias="main.qml">@CMAKE_CURRENT_BINARY_DIR@/main.qml</file>
+        <file>main.qml</file>
         <file>AboutPage.qml</file>
         <file>ActionsCard.qml</file>
         <file>AlternativeJourneyPage.qml</file>
@@ -37,14 +37,14 @@
         <file>EventDelegate.qml</file>
         <file>EventEditor.qml</file>
         <file>EventPage.qml</file>
-        <file alias="EventTicket.qml">@CMAKE_CURRENT_BINARY_DIR@/EventTicket.qml</file>
-        <file alias="FavoriteLocationPage.qml">@CMAKE_CURRENT_BINARY_DIR@/FavoriteLocationPage.qml</file>
+        <file>EventTicket.qml</file>
+        <file>FavoriteLocationPage.qml</file>
         <file>FlightDelegate.qml</file>
         <file>FlightEditor.qml</file>
         <file>FlightPage.qml</file>
         <file>FormDateTimeEditDelegate.qml</file>
         <file>FormPlaceDelegate.qml</file>
-        <file alias="FormPlaceEditorDelegate.qml">@CMAKE_CURRENT_BINARY_DIR@/FormPlaceEditorDelegate.qml</file>
+        <file>FormPlaceEditorDelegate.qml</file>
         <file>FormPlatformDelegate.qml</file>
         <file>GenericPass.qml</file>
         <file>GenericPkPassPage.qml</file>
@@ -72,9 +72,9 @@
         <file>JourneySectionStopDelegate.qml</file>
         <file>JourneySectionStopDelegateLineSegment.qml</file>
         <file>JourneySummaryDelegate.qml</file>
-        <file alias="LiveStatusPage.qml">@CMAKE_CURRENT_BINARY_DIR@/LiveStatusPage.qml</file>
+        <file>LiveStatusPage.qml</file>
         <file>LocationInfoDelegate.qml</file>
-        <file alias="LocationPicker.qml">@CMAKE_CURRENT_BINARY_DIR@/LocationPicker.qml</file>
+        <file>LocationPicker.qml</file>
         <file>MatrixRoomSelectionSheet.qml</file>
         <file>OnlineImportPage.qml</file>
         <file>PassPage.qml</file>
