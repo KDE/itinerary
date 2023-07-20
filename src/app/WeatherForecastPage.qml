@@ -14,30 +14,55 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
+
     property var weatherInformation
+
     title: i18n("Weather Forecast")
 
-    WeatherForecastModel {
-        id: forecastModel
-        weatherForecast: root.weatherInformation.forecast
-        weatherForecastManager: WeatherForecastManager
+    header: QQC2.ToolBar {
+        width: root.width
+
+        QQC2.Label {
+            text: root.weatherInformation.locationName
+            padding: Kirigami.Units.largeSpacing
+            visible: text.length > 0
+        }
     }
 
-    header: QQC2.Label {
-        text: root.weatherInformation.locationName
-        padding: Kirigami.Units.largeSpacing
-        visible: text
+    footer: QQC2.ToolBar {
+        width: root.width
+
+        contentItem: Kirigami.Heading {
+            level: 2
+            text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
+            font: Kirigami.Theme.smallFont
+            wrapMode: Text.WordWrap
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
     }
 
-    Component {
-        id: weatherForecastDelegate
-        Kirigami.AbstractListItem {
-            readonly property var fc: model.weatherForecast
+    ListView {
+        id: forecastList
+
+        model: WeatherForecastModel {
+            weatherForecast: root.weatherInformation.forecast
+            weatherForecastManager: WeatherForecastManager
+        }
+
+        delegate: QQC2.ItemDelegate {
+            id: weatherForecastDelegate
+
+            required property var weatherForecast
+            required property string localizedTime
+
             highlighted: false
-            // HACK: the Material style has negativeBackgroundColor == negativeTextColor, which makes content unreadable
-            backgroundColor: fc.isSevere && Qt.platform.os !== 'android' ? Kirigami.Theme.negativeBackgroundColor : "transparent"
+            width: parent.width
 
-            RowLayout {
+            background: Rectangle {
+                color: weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
+            }
+
+            contentItem: RowLayout {
                 spacing: 0
 
                 Kirigami.Icon {
@@ -48,7 +73,7 @@ Kirigami.ScrollablePage {
                 }
 
                 QQC2.Label {
-                    text: model.localizedTime
+                    text: weatherForecastDelegate.localizedTime
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
@@ -56,18 +81,18 @@ Kirigami.ScrollablePage {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.small
                     Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     source: {
-                        if (weatherForecast.maximumTemperature > 35.0)
+                        if (weatherForecastDelegate.weatherForecast.maximumTemperature > 35.0)
                             return "temperature-warm";
-                        if (weatherForecast.minimumTemperature < -20.0)
+                        if (weatherForecastDelegate.weatherForecast.minimumTemperature < -20.0)
                             return "temperature-cold";
                         return "temperature-normal"
                     }
                 }
                 QQC2.Label {
-                    text: weatherForecast.minimumTemperature == weatherForecast.maximumTemperature ?
-                        Localizer.formatTemperature(weatherForecast.maximumTemperature) :
-                        i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecast.minimumTemperature),
-                                                            Localizer.formatTemperature(weatherForecast.maximumTemperature))
+                    text: weatherForecastDelegate.weatherForecast.minimumTemperature === weatherForecastDelegate.weatherForecast.maximumTemperature ?
+                        Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.maximumTemperature) :
+                        i18nc("temperature range", "%1 / %2",  Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.minimumTemperature),
+                                                            Localizer.formatTemperature(weatherForecastDelegate.weatherForecast.maximumTemperature))
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
@@ -75,12 +100,12 @@ Kirigami.ScrollablePage {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.small
                     Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     source: "raindrop"
-                    color: weatherForecast.precipitation > 25.0 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-                    visible: weatherForecast.precipitation > 0
+                    color: weatherForecastDelegate.weatherForecast.precipitation > 25.0 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    visible: weatherForecastDelegate.weatherForecast.precipitation > 0
                 }
                 QQC2.Label {
-                    text: i18nc("precipitation", "%1 mm", weatherForecast.precipitation)
-                    visible: weatherForecast.precipitation > 0
+                    text: i18nc("precipitation", "%1 mm", weatherForecastDelegate.weatherForecast.precipitation)
+                    visible: weatherForecastDelegate.weatherForecast.precipitation > 0
                     Layout.rightMargin: Kirigami.Units.largeSpacing
                 }
 
@@ -88,33 +113,16 @@ Kirigami.ScrollablePage {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.small
                     Layout.preferredWidth: Kirigami.Units.iconSizes.small
                     source: "flag"
-                    color: weatherForecast.windSpeed > 17.5 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
-                    visible: weatherForecast.windSpeed > 3.5
+                    color: weatherForecastDelegate.weatherForecast.windSpeed > 17.5 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
+                    visible: weatherForecastDelegate.weatherForecast.windSpeed > 3.5
                 }
                 QQC2.Label {
-                    text: i18nc("windSpeed", "%1 m/s", weatherForecast.windSpeed)
-                    visible: weatherForecast.windSpeed > 3.5
+                    text: i18nc("windSpeed", "%1 m/s", weatherForecastDelegate.weatherForecast.windSpeed)
+                    visible: weatherForecastDelegate.weatherForecast.windSpeed > 3.5
                 }
 
                 Item { Layout.fillWidth: true }
             }
-        }
-    }
-
-    ListView {
-        anchors.fill: parent
-        id: forecastList
-        model: forecastModel
-        delegate: weatherForecastDelegate
-        clip: true
-
-        footer: QQC2.Label {
-            width: forecastList.width
-            text: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
-            padding: Kirigami.Units.largeSpacing
-            font: Kirigami.Theme.smallFont
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(link)
         }
     }
 }
