@@ -289,7 +289,6 @@ Kirigami.ScrollablePage {
             contentItem: ColumnLayout {
                 spacing: 0
                 MobileForm.FormCardHeader {
-                    Kirigami.FormData.isSection: true
                     title: i18n("Matrix Integration")
                     subtitle: MatrixController.manager.infoString.length > 0 ? MatrixController.manager.infoString : MatrixController.manager.connected ? i18n("Logged in as %1", MatrixController.manager.userId) : ""
                 }
@@ -297,23 +296,25 @@ Kirigami.ScrollablePage {
                     text: i18n("Synchronize rooms")
                     icon.name: "view-refresh"
                     onClicked: MatrixController.manager.sync()
-                    enabled: MatrixController.manager.connected
+                    visible: MatrixController.manager.connected
                 }
                 MobileForm.FormTextFieldDelegate {
                     id: matrixId
                     label: i18n("Matrix ID")
-                    enabled: !MatrixController.manager.connected
+                    visible: !MatrixController.manager.connected
                     text: MatrixController.manager.userId
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: matrixPassword
                     label: i18n("Password")
                     echoMode: TextInput.Password
-                    enabled: !MatrixController.manager.connected
+                    visible: !MatrixController.manager.connected
                 }
+                MobileForm.FormDelegateSeparator { above: loginButton }
                 MobileForm.FormButtonDelegate {
+                    id: loginButton
                     text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
-                    icon.name: "go-next"
                     onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
                     enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
                 }
