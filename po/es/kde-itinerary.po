@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 00:49+0000\n"
+"POT-Creation-Date: 2023-07-21 02:54+0000\n"
 "PO-Revision-Date: 2023-07-17 12:56+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2528,7 +2528,7 @@ msgid "Public Transport Information Sources..."
 msgstr "Fuentes de información de transporte público..."
 
 #: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
-#: app/WeatherForecastPage.qml:18
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Previsión meteorológica"
@@ -2539,7 +2539,7 @@ msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Para mostrar previsiones meteorológicas se consultarán servicios en línea."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2680,22 +2680,22 @@ msgstr ""
 "Desafortunadamente, la información de a bordo no es compatible con su "
 "dispositivo en este momento."
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integración con Matrix"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Sesión iniciada como %1"
 
-#: app/SettingsPage.qml:297
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronizar salas"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID de Matrix"
@@ -2705,12 +2705,12 @@ msgstr "ID de Matrix"
 msgid "Password"
 msgstr "Contraseña"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
 msgstr "Cerrar sesión"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
 msgstr "Iniciar sesión"
@@ -3142,7 +3142,7 @@ msgstr[0] "Fecha: %2 (1 día)"
 msgstr[1] "Fecha: %2 (%1 días)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:69
+#: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3274,13 +3274,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Alta"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"

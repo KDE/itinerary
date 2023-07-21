@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 00:49+0000\n"
+"POT-Creation-Date: 2023-07-21 02:54+0000\n"
 "PO-Revision-Date: 2023-06-07 14:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2629,7 +2629,7 @@ msgid "Public Transport Information Sources..."
 msgstr "Fontes de informações de transportes públicos..."
 
 #: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
-#: app/WeatherForecastPage.qml:18
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Previsão meteorológica"
@@ -2639,7 +2639,7 @@ msgstr "Previsão meteorológica"
 msgid "Showing weather forecasts will query online services."
 msgstr "Mostrar a previsão meteorológica irá consultar serviços online."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2779,22 +2779,22 @@ msgid ""
 "time."
 msgstr ""
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
 
-#: app/SettingsPage.qml:297
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
 msgstr ""
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
 msgstr ""
@@ -2805,12 +2805,12 @@ msgstr ""
 msgid "Password"
 msgstr "Nada a importar."
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
 msgstr ""
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
 msgstr ""
@@ -3266,7 +3266,7 @@ msgstr[0] "Data: %2 (um dia)"
 msgstr[1] "Data: %2 (%1 dias)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:69
+#: app/WeatherForecastPage.qml:94
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
 msgctxt "temperature range"
@@ -3405,14 +3405,14 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "windSpeed"
