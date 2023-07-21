@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 00:49+0000\n"
+"POT-Creation-Date: 2023-07-21 00:51+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1817,47 +1817,53 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:99
+#: app/JourneySectionDelegate.qml:100
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "Asukohast %1 asukohta %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:101 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:104
+#: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Jaluta (%1)"
 
-#: app/JourneySectionDelegate.qml:105
+#: app/JourneySectionDelegate.qml:106
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Jaluta asukohta %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:107
+#: app/JourneySectionDelegate.qml:108
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transfeer (%1)"
 
-#: app/JourneySectionDelegate.qml:109
+#: app/JourneySectionDelegate.qml:110
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Oota (%1)"
 
-#: app/JourneySectionDelegate.qml:111
+#: app/JourneySectionDelegate.qml:112
 #, fuzzy, kde-format
 #| msgid "%1 to %2 (%3)"
 msgid "%1 %2 (%3)"
 msgstr "Asukohast %1 asukohta %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:113
+#: app/JourneySectionDelegate.qml:114
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgid "Drive %1 (%2)"
 msgstr "%1 (%2)"
+
+#: app/JourneySectionDelegate.qml:189 app/JourneySectionPage.qml:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Show More…"
+msgstr ""
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1874,12 +1880,6 @@ msgstr "Vahemaa: %1"
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
-
-#: app/JourneySectionPage.qml:107
-#, kde-format
-msgctxt "@action:button"
-msgid "Show More…"
-msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -2699,7 +2699,7 @@ msgid "Public Transport Information Sources..."
 msgstr "Ühistranspordi teabeallikad ..."
 
 #: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
-#: app/WeatherForecastPage.qml:18
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Ilmaennustus"
@@ -2709,7 +2709,7 @@ msgstr "Ilmaennustus"
 msgid "Showing weather forecasts will query online services."
 msgstr "Ilmaennustuse näitamiseks esitatakse päring võrguteenustele."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2842,22 +2842,22 @@ msgid ""
 "time."
 msgstr ""
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
 msgstr ""
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
 msgstr ""
 
-#: app/SettingsPage.qml:297
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
 msgstr ""
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
 msgstr ""
@@ -2869,12 +2869,12 @@ msgstr ""
 msgid "Password"
 msgstr "Imporditi üks reserveering."
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
 msgstr ""
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
 msgstr ""
@@ -3340,7 +3340,7 @@ msgstr[0] "Kuupäev: %2 (üks päev)"
 msgstr[1] "Kuupäev: %2 (%1 päeva)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:69
+#: app/WeatherForecastPage.qml:94
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
 msgctxt "temperature range"
@@ -3480,14 +3480,14 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "windSpeed"

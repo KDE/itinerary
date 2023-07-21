@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 00:49+0000\n"
+"POT-Creation-Date: 2023-07-21 00:51+0000\n"
 "PO-Revision-Date: 2023-07-17 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1691,45 +1691,51 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Ladje ali trajekti"
 
-#: app/JourneySectionDelegate.qml:99
+#: app/JourneySectionDelegate.qml:100
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 do %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:101 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:104
+#: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Hoja (%1)"
 
-#: app/JourneySectionDelegate.qml:105
+#: app/JourneySectionDelegate.qml:106
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Hoja %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:107
+#: app/JourneySectionDelegate.qml:108
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transfer (%1)"
 
-#: app/JourneySectionDelegate.qml:109
+#: app/JourneySectionDelegate.qml:110
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Čakanje (%1)"
 
-#: app/JourneySectionDelegate.qml:111
+#: app/JourneySectionDelegate.qml:112
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:113
+#: app/JourneySectionDelegate.qml:114
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Vožnja %1 (%2)"
+
+#: app/JourneySectionDelegate.qml:189 app/JourneySectionPage.qml:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Show More…"
+msgstr "Prikaži več…"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1745,12 +1751,6 @@ msgstr "Razdalja: %1"
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
-
-#: app/JourneySectionPage.qml:107
-#, kde-format
-msgctxt "@action:button"
-msgid "Show More…"
-msgstr "Prikaži več…"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -2527,7 +2527,7 @@ msgid "Public Transport Information Sources..."
 msgstr "Viri podatkov o javnem prevozu..."
 
 #: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
-#: app/WeatherForecastPage.qml:18
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Vremenska napoved"
@@ -2538,7 +2538,7 @@ msgid "Showing weather forecasts will query online services."
 msgstr ""
 "Prikazovanje vremenskih napovedi bo poizvedovalo pri spletnih storitvah."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2675,22 +2675,22 @@ msgid ""
 "time."
 msgstr "Na žalost Informacije niso podprte na vaši napravi ob tem času."
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integracija z Matrixom"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Prijavljen kot %1"
 
-#: app/SettingsPage.qml:297
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sinhroniziraj sobe"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
 msgstr "Identifikator za Matrix"
@@ -2700,12 +2700,12 @@ msgstr "Identifikator za Matrix"
 msgid "Password"
 msgstr "Geslo"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
 msgstr "Odjavi se"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
 msgstr "Prijavi se"
@@ -3139,7 +3139,7 @@ msgstr[2] "Datum: %2 (%1 dnevi)"
 msgstr[3] "Datum: %2 (%1 dni)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:69
+#: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3273,13 +3273,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Visoko"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"

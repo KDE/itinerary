@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 00:49+0000\n"
-"PO-Revision-Date: 2023-07-13 22:13+0200\n"
+"POT-Creation-Date: 2023-07-21 00:51+0000\n"
+"PO-Revision-Date: 2023-07-20 23:02+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1685,45 +1685,51 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Barcas o ferries"
 
-#: app/JourneySectionDelegate.qml:99
+#: app/JourneySectionDelegate.qml:100
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 a %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:100 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:101 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:104
+#: app/JourneySectionDelegate.qml:105
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Promenada (%1)"
 
-#: app/JourneySectionDelegate.qml:105
+#: app/JourneySectionDelegate.qml:106
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Promenada %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:107
+#: app/JourneySectionDelegate.qml:108
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transferentia (%1)"
 
-#: app/JourneySectionDelegate.qml:109
+#: app/JourneySectionDelegate.qml:110
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Pausa (%1)"
 
-#: app/JourneySectionDelegate.qml:111
+#: app/JourneySectionDelegate.qml:112
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:113
+#: app/JourneySectionDelegate.qml:114
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Drive %1 (%2)"
+
+#: app/JourneySectionDelegate.qml:189 app/JourneySectionPage.qml:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Show More…"
+msgstr "Monstra  plus…"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1739,12 +1745,6 @@ msgstr "Distantia:: %1"
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
-
-#: app/JourneySectionPage.qml:107
-#, kde-format
-msgctxt "@action:button"
-msgid "Show More…"
-msgstr "Monstra  plus…"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -1783,10 +1783,9 @@ msgid "Click to extend"
 msgstr "Pulsa pro extender"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Volo %1 ex %2 a %3"
+msgstr "Volo %1 a %2:"
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -2522,7 +2521,7 @@ msgid "Public Transport Information Sources..."
 msgstr "Fontes de information de Transporto Public..."
 
 #: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
-#: app/WeatherForecastPage.qml:18
+#: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Prevision Meteorologic"
@@ -2532,7 +2531,7 @@ msgstr "Prevision Meteorologic"
 msgid "Showing weather forecasts will query online services."
 msgstr "Mostrar previsiones meteorologic demandera servicios in linea."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:113
+#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2672,22 +2671,22 @@ msgstr ""
 "Information de a bordo infortunatemente non es supportate sur tu dispositivo "
 "nunc."
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integration de Matrix"
 
-#: app/SettingsPage.qml:294
+#: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accedite como %1"
 
-#: app/SettingsPage.qml:297
+#: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synchronisa salas"
 
-#: app/SettingsPage.qml:304
+#: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID de Matrix"
@@ -2697,12 +2696,12 @@ msgstr "ID de Matrix"
 msgid "Password"
 msgstr "Contrasigno"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
 msgstr "Claude session"
 
-#: app/SettingsPage.qml:315
+#: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
 msgstr "Accede"
@@ -3134,7 +3133,7 @@ msgstr[0] "Data: %2 (un die)"
 msgstr[1] "Data: %2 (%1 dies)"
 
 #: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
-#: app/WeatherForecastPage.qml:69
+#: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
@@ -3266,13 +3265,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Alte"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:82
+#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:95
+#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
