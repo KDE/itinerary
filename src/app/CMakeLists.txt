@@ -4,6 +4,10 @@
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-itinerary.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-itinerary.h)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/itinerary_version_detailed.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/itinerary_version_detailed.h)
 
+if (QT_MAJOR_VERSION EQUAL "6")
+    kf6_adapt_qml()
+endif()
+
 add_library(itinerary STATIC)
 target_sources(itinerary PRIVATE
     applicationcontroller.cpp

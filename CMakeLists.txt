@@ -26,6 +26,7 @@ include(KDECMakeSettings)
 include(GenerateExportHeader)
 include(ECMQmlModule)
 include(ECMDeprecationSettings)
+include(KF6QmlCompat)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
