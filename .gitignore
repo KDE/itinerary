@@ -20,3 +20,5 @@ heaptrack.*
 /cmake-build*
 .flatpak-builder
 /.vscode/
+*.pyc
+__pycache__
