@@ -19,3 +19,5 @@ heaptrack.*
 .idea
 /cmake-build*
 .flatpak-builder
+*.pyc
+__pycache__
