@@ -68,7 +68,7 @@ Kirigami.Page {
         Kirigami.Action {
             text: i18n("Rename Favorite Location")
             icon.name: "edit-rename"
-            onTriggered: renameSheet.sheetOpen = true
+            onTriggered: renameSheet.open()
         },
         Kirigami.Action {
             text: i18n("Remove Favorite Location")
@@ -112,7 +112,7 @@ Kirigami.Page {
                 onClicked: {
                     var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
                     FavoriteLocationModel.setData(idx, nameEdit.text, Qt.DisplayRole);
-                    renameSheet.sheetOpen = false;
+                    renameSheet.close();
                 }
             }
         }

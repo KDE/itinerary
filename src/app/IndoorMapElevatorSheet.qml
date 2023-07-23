@@ -27,7 +27,7 @@ Kirigami.OverlaySheet {
             label: model.display
             bold: model.isCurrentFloor
             onClicked: {
-                elevatorSheet.sheetOpen = false;
+                elevatorSheet.close();
                 map.view.floorLevel = model.floorLevel;
             }
         }

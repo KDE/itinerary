@@ -88,13 +88,13 @@ Kirigami.Page {
         Kirigami.Action {
             id: platformAction
             text: i18n("Find Platform")
-            onTriggered: platformSheet.sheetOpen = true
+            onTriggered: platformSheet.open()
             visible: !platformModel.isEmpty
         },
         Kirigami.Action {
             id: gateAction
             text: i18n("Find Gate")
-            onTriggered: gateSheet.sheetOpen = true
+            onTriggered: gateSheet.open()
             visible: !gateModel.isEmpty
         },
         Kirigami.Action { separator: true },
@@ -271,20 +271,20 @@ Kirigami.Page {
                 map.view.floorLevel = floorLevelChangeModel.destinationLevel;
                 return;
             } else if (floorLevelChangeModel.hasMultipleLevelChanges) {
-                elevatorSheet.sheetOpen = true;
+                elevatorSheet.open();
                 return;
             }
 
             infoModel.element = element;
             if (infoModel.name != "" || infoModel.debug) {
-                elementDetailsSheet.sheetOpen = true;
+                elementDetailsSheet.open();
             }
         }
         onElementLongPressed: {
             // this provides info model access for elements with other interactions
             infoModel.element = element;
             if (infoModel.name != "" || infoModel.debug) {
-                elementDetailsSheet.sheetOpen = true;
+                elementDetailsSheet.open();
             }
         }
     }
