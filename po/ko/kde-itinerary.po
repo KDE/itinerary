@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:51+0000\n"
-"PO-Revision-Date: 2023-04-21 23:58+0200\n"
+"PO-Revision-Date: 2023-07-23 00:43+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -67,15 +67,14 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE 여행 정보는 다음에서 제공하는 대중 교통 데이터를 사용합니다."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "더 많은 정보"
+msgstr "개발자 정보"
 
 #: app/AboutPage.qml:238
 #, kde-format
 msgid "Application version: %1"
-msgstr "프로그램 버전: %1"
+msgstr "앱 버전: %1"
 
 #: app/AboutPage.qml:254
 #, kde-format
@@ -83,10 +82,9 @@ msgid "Extractor capabilities:"
 msgstr "추출기 기능:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "추출기 기능:"
+msgstr "클립보드에 추출기 기능 복사됨"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -185,27 +183,25 @@ msgstr "%1(으)로|/|%1$[으 %1]로"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "장거리 열차"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "위치"
+msgstr "지역 열차"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "도시 철도"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "버스"
@@ -215,7 +211,7 @@ msgstr "버스"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "선박"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -258,11 +254,10 @@ msgid "Health certificate imported."
 msgstr "건강 증명서를 가져왔습니다."
 
 #: app/applicationcontroller.cpp:448
-#, fuzzy, kde-format
-#| msgid "Pass imported."
+#, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
-msgstr[0] "패스를 가져왔습니다."
+msgstr[0] "패스 %1개를 가져왔습니다."
 
 #: app/applicationcontroller.cpp:451
 #, kde-format
@@ -331,42 +326,36 @@ msgid "Arrival time: %1"
 msgstr "도착 시간: %1"
 
 #: app/BoatEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgid "Edit Boat Trip"
-msgstr "선박 여정"
+msgstr "선박 여정 편집"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "출발"
 
 #: app/BoatEditor.qml:54
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "출발 시간"
 
 #: app/BoatEditor.qml:61 app/BoatEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Terminal"
+#, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr "터미널"
+msgstr "터미널 이름"
 
 #: app/BoatEditor.qml:79 app/BoatPage.qml:112
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "도착"
 
 #: app/BoatEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Arrival Time"
+#, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "도착 시간"
@@ -497,8 +486,7 @@ msgid "Bus Ticket"
 msgstr "버스 승차권"
 
 #: app/BusPage.qml:85
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "출발"
@@ -515,15 +503,13 @@ msgid "Station"
 msgstr "정류장"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "승강장"
 
 #: app/BusPage.qml:156
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "도착"
@@ -556,7 +542,7 @@ msgstr "선택한 이벤트 가져오기"
 #: app/CalendarImportPage.qml:66
 #, kde-format
 msgid "No importable events found in this calendar."
-msgstr ""
+msgstr "이 캘린더에서 가져올 수 있는 이벤트가 없습니다."
 
 #: app/CalendarSelectionSheet.qml:13
 #, kde-format
@@ -675,26 +661,23 @@ msgid "To:"
 msgstr "목적지:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "%1에서의 출발 앞당겨짐"
+msgstr "이전 출발 불러오기"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "대체 연결편"
+msgstr "이후 연결 표시"
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
 #: app/TransferPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "데이터 공급자: %1"
+msgstr "데이터 공급자:"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -734,7 +717,7 @@ msgstr "문서 추가..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "네트워크 오류: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -1002,8 +985,7 @@ msgid "Airline"
 msgstr "항공사"
 
 #: app/FlightPage.qml:137
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "출발"
@@ -1019,28 +1001,27 @@ msgid "Gate"
 msgstr "탑승구"
 
 #: app/FlightPage.qml:196
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
 msgstr "도착"
 
 #: app/FormPlaceDelegate.qml:56
-#, fuzzy, kde-format
-#| msgid "Shared Bikes"
+#, kde-format
 msgid "Share Place"
-msgstr "공유 자전거"
+msgstr "장소 공유"
 
 #: app/FormPlaceDelegate.qml:57
-#, fuzzy, kde-format
-#| msgid "Do you really want to delete this ticket?"
+#, kde-format
 msgid "Do you really want to share %1 to the Matrix channel %2?"
-msgstr "이 티켓을 삭제하시겠습니까?"
+msgstr ""
+"%2 Matrix 채널에 %1을(를) 공유하시겠습니까?|/|%2 Matrix 채널에 %1$[을를 %1] "
+"공유하시겠습니까?"
 
 #: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "공유"
 
 #: app/FormPlaceDelegate.qml:123
 #, kde-format
@@ -1070,7 +1051,7 @@ msgstr "대중 교통 출발"
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
-msgstr ""
+msgstr "Matrix로 공유"
 
 #: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
@@ -1624,11 +1605,10 @@ msgid "Select"
 msgstr "선택"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "대체 연결편"
+msgstr "이전 연결 불러오기"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1674,33 +1654,31 @@ msgstr "여정 검색"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "고속 및 도시간 철도"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "즐겨찾는 위치 이름 바꾸기"
+msgstr "지역 및 광역 철도"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "도시 철도, 노면 전차"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "시내 및 시외 버스 서비스"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "선박 여정"
+msgstr "선박 및 페리"
 
 #: app/JourneySectionDelegate.qml:100
 #, kde-format
@@ -1746,7 +1724,7 @@ msgstr "%1 운전(%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "더 보기…"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1767,19 +1745,19 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "%1번"
 
 #: app/JourneySectionStopDelegate.qml:155
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
-msgstr ""
+msgstr "%1번"
 
 #: app/JourneySectionStopDelegate.qml:157
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "%1번"
 
 #: app/JourneySectionStopDelegate.qml:171
 #, kde-format
@@ -1796,13 +1774,12 @@ msgstr[0] "환승 %1회"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "클릭하여 확장"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "%2에서 %3(으)로 가는 %1 항공편|/|%2에서 %3$[으 %3]로 가는 %1 항공편"
+msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -1817,27 +1794,23 @@ msgstr "실시간 상태"
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Stop Location Sharing"
-msgstr ""
+msgstr "위치 공유 중지"
 
 #: app/LiveStatusPage.qml:26
 #, kde-format
 msgid "Share Location via Matrix"
-msgstr ""
+msgstr "Matrix로 위치 공유"
 
 #: app/LiveStatusPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Live Location"
-msgstr "즐겨찾는 위치"
+msgstr "실시간 위치 공유"
 
 #: app/LiveStatusPage.qml:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "Do you really want to replace your existing reservation with the newly "
-#| "selected journey?"
+#, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
-msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?"
+msgstr "%1 Matrix 채널에 현재 위치를 공유하시겠습니까?"
 
 #: app/LiveStatusPage.qml:163
 #, kde-format
@@ -2024,15 +1997,14 @@ msgid "PkPass or JSON-LD file to import."
 msgstr "가져올 PkPass 및 JSON-LD 파일입니다."
 
 #: app/main.qml:57
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import"
-msgstr "가져오기..."
+msgstr "가져오기"
 
 #: app/main.qml:60
 #, kde-format
 msgid "Open File..."
-msgstr ""
+msgstr "파일 열기..."
 
 #: app/main.qml:68
 #, kde-format
@@ -2045,20 +2017,19 @@ msgid "Scan Barcode..."
 msgstr "바코드 스캔..."
 
 #: app/main.qml:86
-#, fuzzy, kde-format
-#| msgid "Add from calendar..."
+#, kde-format
 msgid "Add from Calendar..."
 msgstr "캘린더에서 추가..."
 
 #: app/main.qml:101
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "도이체 반 온라인 승차권..."
 
 #: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "SNCF 온라인 승차권..."
 
 #: app/main.qml:122
 #, kde-format
@@ -2136,47 +2107,45 @@ msgid "Map download finished."
 msgstr "지도를 다운로드했습니다."
 
 #: app/MatrixRoomSelectionSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgid "Share Location"
-msgstr "즐겨찾는 위치"
+msgstr "위치 공유"
 
 #: app/MatrixRoomSelectionSheet.qml:32
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "초대 받음"
 
 #: app/MatrixRoomSelectionSheet.qml:33
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr "즐겨찾는 위치"
+msgstr "즐겨찾는 대화방"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "개인 메시지"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "대화방"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "낮은 우선 순위"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "스페이스"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2251,44 +2220,39 @@ msgid "New arrival platform is: %1"
 msgstr "새 도착 승강장: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "열차 승차권"
+msgstr "온라인 티켓 가져오기"
 
 #: app/OnlineImportPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Nothing imported."
+#, kde-format
 msgid "Ticket imported"
-msgstr "가져온 것이 없습니다."
+msgstr "티켓 가져옴"
 
 #: app/OnlineImportPage.qml:30
-#, fuzzy, kde-format
-#| msgid "No locations found"
+#, kde-format
 msgid "No ticket found"
-msgstr "위치를 찾을 수 없음"
+msgstr "티켓을 찾을 수 없음"
 
 #: app/OnlineImportPage.qml:45
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Online Ticket"
-msgstr "열차 승차권"
+msgstr "온라인 티켓"
 
 #: app/OnlineImportPage.qml:49
 #, kde-format
 msgid "Family name"
-msgstr ""
+msgstr "성"
 
 #: app/OnlineImportPage.qml:57
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
+#, kde-format
 msgid "Booking reference"
-msgstr "예약 번호:"
+msgstr "예약 번호"
 
 #: app/OnlineImportPage.qml:63
 #, kde-format
 msgid "Search..."
-msgstr ""
+msgstr "검색..."
 
 #: app/passmanager.cpp:246
 #, kde-format
@@ -2300,7 +2264,7 @@ msgstr "만료됨"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "미래"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2309,9 +2273,7 @@ msgid "Valid"
 msgstr "유효함"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
@@ -2327,9 +2289,7 @@ msgid "%1 - %2"
 msgstr "%1 - %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2700,38 +2660,37 @@ msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습�
 #: app/SettingsPage.qml:292
 #, kde-format
 msgid "Matrix Integration"
-msgstr ""
+msgstr "Matrix 통합"
 
 #: app/SettingsPage.qml:293
 #, kde-format
 msgid "Logged in as %1"
-msgstr ""
+msgstr "%1(으)로 로그인됨"
 
 #: app/SettingsPage.qml:296
 #, kde-format
 msgid "Synchronize rooms"
-msgstr ""
+msgstr "방 동기화"
 
 #: app/SettingsPage.qml:303
 #, kde-format
 msgid "Matrix ID"
-msgstr ""
+msgstr "Matrix ID"
 
 #: app/SettingsPage.qml:310
-#, fuzzy, kde-format
-#| msgid "Pass"
+#, kde-format
 msgid "Password"
-msgstr "패스"
+msgstr "암호"
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log out"
-msgstr ""
+msgstr "로그아웃"
 
 #: app/SettingsPage.qml:317
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "로그인"
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
@@ -2838,10 +2797,9 @@ msgid "No locations found"
 msgstr "위치를 찾을 수 없음"
 
 #: app/TicketEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Edit Ticket"
-msgstr "이벤트 입장권"
+msgstr "티켓 편집"
 
 #: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
 #, kde-format
@@ -2849,15 +2807,14 @@ msgid "Ticket"
 msgstr "티켓"
 
 #: app/TicketEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Ticket number:"
+#, kde-format
 msgid "Ticket name"
-msgstr "승차권 번호:"
+msgstr "티켓 이름"
 
 #: app/TicketEditor.qml:53
 #, kde-format
 msgid "Ticket name must not be empty."
-msgstr ""
+msgstr "티켓 이름이 비어 있으면 안 됩니다."
 
 #: app/TicketPage.qml:42
 #, kde-format
@@ -2961,34 +2918,28 @@ msgid "Arrival Time"
 msgstr "도착 시간"
 
 #: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1 on platform %2"
 msgstr "%1 출발: %2번 승강장"
 
 #: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure from %1"
-msgstr "%1 출발: %2"
+msgstr "%1 출발"
 
 #: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1 on platform %2"
 msgstr "%1 도착: %2번 승강장"
 
 #: app/TrainDelegate.qml:96
-#, fuzzy, kde-format
-#| msgctxt "flight arrival"
-#| msgid "Arrival - %1"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival at %1"
-msgstr "도착 - %1"
+msgstr "%1 도착"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3048,8 +2999,7 @@ msgid "Train Ticket"
 msgstr "열차 승차권"
 
 #: app/TrainPage.qml:104
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "출발"
@@ -3060,8 +3010,7 @@ msgid "Additional notes"
 msgstr "추가 메모"
 
 #: app/TrainPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "도착"
@@ -3093,8 +3042,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "도착하는 차량 구성"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "환승 선택"
 
@@ -3381,17 +3329,17 @@ msgstr "알겠습니다!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr ""
+msgstr "동기화 중…"
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format
 msgid "This server does not support logging in using a password"
-msgstr ""
+msgstr "서버에서 암호로 로그인을 지원하지 않음"
 
 #: matrix/matrixmanager.cpp:69
 #, kde-format
 msgid "Logging in"
-msgstr ""
+msgstr "로그인 중"
 
 #: metadataextractor/itineraryextractor.cpp:120
 #, kde-format
