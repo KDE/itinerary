@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 00:51+0000\n"
-"PO-Revision-Date: 2023-07-04 12:44+0200\n"
+"PO-Revision-Date: 2023-07-17 14:05+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -68,10 +68,9 @@ msgstr ""
 "KDE Itinerary utilizza dati di trasporto pubblici dalle fonti seguenti."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Altre informazioni"
+msgstr "Informazioni sviluppatori"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -84,10 +83,9 @@ msgid "Extractor capabilities:"
 msgstr "Capacità dell'estrattore:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Capacità dell'estrattore:"
+msgstr "Capacità dell'estrattore copiate negli appunti"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -510,8 +508,7 @@ msgid "Station"
 msgstr "Stazione"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "Binario"
@@ -725,7 +722,7 @@ msgstr "Aggiungi documento..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Errore di rete: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -1733,7 +1730,7 @@ msgstr "Guida %1 (%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Mostra altro…"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1787,10 +1784,9 @@ msgid "Click to extend"
 msgstr "Clic per estendere"
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Volo %1 da %2 a %3"
+msgstr "Volo %1 per %2"
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -2585,7 +2581,7 @@ msgstr "Assistente di trasferimento"
 #: app/SettingsPage.qml:158
 #, kde-format
 msgid "Automatically add transfers"
-msgstr "Aggiungi automaticamente trasferimenti"
+msgstr "Aggiungi automaticamente i trasferimenti"
 
 #: app/SettingsPage.qml:166
 #, kde-format
@@ -3345,7 +3341,7 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
-"Per ulteriori informazioni sul KDE Itinerary visita la <a href=\"https://"
+"Per ulteriori informazioni su KDE Itinerary, visita la <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">pagina del wiki</a>."
 
 #: app/WelcomePage.qml:56
