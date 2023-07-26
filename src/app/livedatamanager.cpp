@@ -313,7 +313,6 @@ void LiveDataManager::showNotification(const QString &resId, const LiveData &ld)
         n->sendEvent();
     } else {
         fillNotification(it.value(), ld);
-        it.value()->update();
     }
 }
 
