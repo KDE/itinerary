@@ -39,8 +39,6 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        width: root.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true

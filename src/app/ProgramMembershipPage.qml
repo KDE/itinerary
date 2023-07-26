@@ -26,9 +26,10 @@ Kirigami.ScrollablePage {
         }
     }
 
-    BarcodeScanModeController {
+    data: BarcodeScanModeButton {
         id: scanModeController
         page: root
+        visible: ticketToken.hasBarcode
     }
 
     Kirigami.PromptDialog {
@@ -51,18 +52,7 @@ Kirigami.ScrollablePage {
         ]
     }
 
-    actions.main: Kirigami.Action {
-        icon.name: "view-barcode-qr"
-        text: i18n("Barcode Scan Mode")
-        onTriggered: scanModeController.toggle()
-        visible: barcodeContainer.visible
-        checkable: true
-        checked: scanModeController.enabled
-    }
-
     ColumnLayout {
-        width: parent.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true

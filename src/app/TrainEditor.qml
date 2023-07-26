@@ -77,8 +77,6 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        width: parent.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
@@ -110,12 +108,16 @@ App.EditorPage {
                     text: i18nc("train station", "Station")
                     description: root.departureStation.name
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: departurePlatform
                     label: i18nc("train platform", "Platform")
                     text: reservationFor.departurePlatform
                 }
+                MobileForm.FormDelegateSeparator { above: boardLater }
                 MobileForm.FormButtonDelegate {
+                    id: boardLater
+
                     text: i18n("Board later")
                     icon.name: "arrow-right"
                     visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
@@ -137,12 +139,15 @@ App.EditorPage {
                     text: i18nc("train station", "Station")
                     description: root.arrivalStation.name
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: arrivalPlatform
                     label: i18nc("train platform", "Platform")
                     text: reservationFor.arrivalPlatform
                 }
+                MobileForm.FormDelegateSeparator { above: alignEarlier }
                 MobileForm.FormButtonDelegate {
+                    id: alignEarlier
                     text: i18n("Alight earlier")
                     icon.name: "arrow-left"
                     visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
@@ -166,11 +171,13 @@ App.EditorPage {
                     label: i18nc("carriage on a train", "Coach")
                     text: reservation.reservedTicket.ticketedSeat.seatSection
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: seatEdit
                     label: i18n("Seat")
                     text: reservation.reservedTicket.ticketedSeat.seatNumber
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: classEdit
                     label: i18nc("seating class on a train", "Class")

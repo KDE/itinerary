@@ -45,8 +45,6 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        width: root.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
@@ -77,11 +75,13 @@ App.EditorPage {
                     label: i18n("Airport")
                     text: reservation.reservationFor.departureAirport.name
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: departureTerminal
                     text: reservation.reservationFor.departureTerminal
                     label: i18nc("flight departure terminal", "Terminal")
                 }
+                MobileForm.FormDelegateSeparator {}
                 App.FormDateTimeEditDelegate {
                     id: departureTime
                     text: i18nc("flight departure time", "Time")
@@ -89,11 +89,13 @@ App.EditorPage {
                     propertyName: "departureTime"
                     initialValue: reservation.reservationFor.departureDay
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: departureGate
                     text: reservation.reservationFor.departureGate
                     label: i18nc("flight departure gate", "Gate")
                 }
+                MobileForm.FormDelegateSeparator {}
                 App.FormDateTimeEditDelegate {
                     id: boardingTime
                     text: i18n("Boarding time")
@@ -122,11 +124,13 @@ App.EditorPage {
                     label: i18n("Airport")
                     text: reservation.reservationFor.arrivalAirport.name
                 }
+                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: arrivalTerminal
                     text: reservation.reservationFor.arrivalTerminal
                     label: i18nc("flight arrival terminal", "Terminal")
                 }
+                MobileForm.FormDelegateSeparator {}
                 App.FormDateTimeEditDelegate {
                     id: arrivalTime
                     text: i18nc("flight arrival time", "Time")
@@ -151,7 +155,6 @@ App.EditorPage {
                 MobileForm.FormCardHeader {
                     title: i18n("Seat")
                 }
-                MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
                     id: seat
                     label: i18n("Seat")

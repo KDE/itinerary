@@ -62,7 +62,7 @@ find_package(Qt${QT_MAJOR_VERSION} CONFIG QUIET OPTIONAL_COMPONENTS QuickCompile
 find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
 find_package(KF${KF_MAJOR_VERSION} ${KF5_MIN_VERSION} OPTIONAL_COMPONENTS NetworkManagerQt)
 if (NOT KF_MAJOR_VERSION EQUAL "6") # TODO temporary workaround until kirigami-addons is switched to KF6
-find_package(KF5KirigamiAddons 0.9 REQUIRED)
+find_package(KF5KirigamiAddons 0.11.0 REQUIRED)
 endif()
 find_package(KPim${KF_MAJOR_VERSION}PkPass CONFIG REQUIRED)
 find_package(KPim${KF_MAJOR_VERSION}Itinerary 5.23.0 CONFIG REQUIRED)

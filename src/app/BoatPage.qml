@@ -13,26 +13,15 @@ import "." as App
 
 App.DetailsPage {
     id: root
+
     title: i18n("Boat Ticket")
     editor: boatEditorPage
 
-    actions.main: Kirigami.Action {
-        icon.name: "view-barcode-qr"
-        text: i18n("Barcode Scan Mode")
-        onTriggered: scanModeController.toggle()
-        visible: ticketToken.hasBarcode
-        checkable: true
-        checked: scanModeController.enabled
-    }
-
-    BarcodeScanModeController {
-        id: scanModeController
+    BarcodeScanModeButton {
         page: root
     }
 
     ColumnLayout {
-        width: parent.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true

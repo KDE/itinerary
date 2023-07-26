@@ -37,113 +37,111 @@ Kirigami.ScrollablePage {
     }
 
     // context drawer content
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                text: i18n("Go To Now")
-                icon.name: "view-calendar-day"
-                onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
-            },
-            Kirigami.Action {
-                text: i18n("Current Ticket")
-                icon.name: "view-barcode-qr"
-                enabled: TimelineModel.currentBatchId !== ""
-                onTriggered: showDetailsPageForReservation(TimelineModel.currentBatchId)
-            },
-            Kirigami.Action {
-                text: i18n("Add train trip...")
-                icon.name: "list-add-symbolic"
-                onTriggered: {
-                    // find date/time at the current screen center
-                    const idx = currentIndex();
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: i18n("Go To Now")
+            icon.name: "view-calendar-day"
+            onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+        },
+        Kirigami.Action {
+            text: i18n("Current Ticket")
+            icon.name: "view-barcode-qr"
+            enabled: TimelineModel.currentBatchId !== ""
+            onTriggered: showDetailsPageForReservation(TimelineModel.currentBatchId)
+        },
+        Kirigami.Action {
+            text: i18n("Add train trip...")
+            icon.name: "list-add-symbolic"
+            onTriggered: {
+                // find date/time at the current screen center
+                const idx = currentIndex();
 
-                    const HOUR = 60 * 60 * 1000;
-                    var roundInterval = HOUR;
-                    var dt;
-                    if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
-                        dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
-                        roundInterval = 5 * 60 * 1000;
-                    } else {
-                        dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
-                    }
+                const HOUR = 60 * 60 * 1000;
+                var roundInterval = HOUR;
+                var dt;
+                if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+                    dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
+                    roundInterval = 5 * 60 * 1000;
+                } else {
+                    dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+                }
 
-                    // clamp to future times and round to the next plausible hour
-                    const now = new Date();
-                    if (!dt || dt.getTime() < now.getTime()) {
-                        dt = now;
-                    }
-                    if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
-                        dt.setTime(dt.getTime() + HOUR * 8);
-                    } else {
-                        dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
-                    }
+                // clamp to future times and round to the next plausible hour
+                const now = new Date();
+                if (!dt || dt.getTime() < now.getTime()) {
+                    dt = now;
+                }
+                if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
+                    dt.setTime(dt.getTime() + HOUR * 8);
+                } else {
+                    dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
+                }
 
-                    // determine where we are at that time
-                    const place = TimelineModel.locationAtTime(dt);
-                    var country = Settings.homeCountryIsoCode;
-                    var departureLocation;
-                    if (place) {
-                        country = place.address.addressCountry;
-                        departureLocation = PublicTransport.locationFromPlace(place, undefined);
-                        departureLocation.name = place.name;
-                    }
+                // determine where we are at that time
+                const place = TimelineModel.locationAtTime(dt);
+                var country = Settings.homeCountryIsoCode;
+                var departureLocation;
+                if (place) {
+                    country = place.address.addressCountry;
+                    departureLocation = PublicTransport.locationFromPlace(place, undefined);
+                    departureLocation.name = place.name;
+                }
 
-                    applicationWindow().pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
-                        publicTransportManager: LiveDataManager.publicTransportManager,
-                        initialCountry: country,
-                        initialDateTime: dt,
-                        departureStop: departureLocation
-                    });
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Add ferry trip...")
-                icon.name: "qrc:///images/ferry.svg"
-                onTriggered: {
-                    const dt = dateTimeAtIndex(currentIndex());
-                    let res =  Factory.makeBoatReservation();
-                    let trip = res.reservationFor;
-                    trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                    res.reservationFor = trip;
-                    applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Add accommodation...")
-                icon.name: "go-home-symbolic"
-                onTriggered: {
-                    const dt = dateTimeAtIndex(currentIndex());
-                    let res =  Factory.makeLodgingReservation();
-                    res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
-                    res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
-                    applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Add event...")
-                icon.name: "meeting-attending"
-                onTriggered: {
-                    const dt = dateTimeAtIndex(currentIndex());
-                    let res = Factory.makeEventReservation();
-                    let ev = res.reservationFor;
-                    ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
-                    res.reservationFor = ev;
-                    applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Add restaurant...")
-                icon.source: "qrc:///images/foodestablishment.svg"
-                onTriggered: {
-                    const dt = dateTimeAtIndex(currentIndex());
-                    let res =  Factory.makeFoodEstablishmentReservation();
-                    res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
-                    res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
-                    applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
-                }
+                applicationWindow().pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
+                    publicTransportManager: LiveDataManager.publicTransportManager,
+                    initialCountry: country,
+                    initialDateTime: dt,
+                    departureStop: departureLocation
+                });
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            text: i18n("Add ferry trip...")
+            icon.name: "qrc:///images/ferry.svg"
+            onTriggered: {
+                const dt = dateTimeAtIndex(currentIndex());
+                let res =  Factory.makeBoatReservation();
+                let trip = res.reservationFor;
+                trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                res.reservationFor = trip;
+                applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Add accommodation...")
+            icon.name: "go-home-symbolic"
+            onTriggered: {
+                const dt = dateTimeAtIndex(currentIndex());
+                let res =  Factory.makeLodgingReservation();
+                res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
+                res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
+                applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Add event...")
+            icon.name: "meeting-attending"
+            onTriggered: {
+                const dt = dateTimeAtIndex(currentIndex());
+                let res = Factory.makeEventReservation();
+                let ev = res.reservationFor;
+                ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                res.reservationFor = ev;
+                applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Add restaurant...")
+            icon.source: "qrc:///images/foodestablishment.svg"
+            onTriggered: {
+                const dt = dateTimeAtIndex(currentIndex());
+                let res =  Factory.makeFoodEstablishmentReservation();
+                res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
+                res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
+                applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
+            }
+        }
+    ]
 
     // page content
     Kirigami.PromptDialog {

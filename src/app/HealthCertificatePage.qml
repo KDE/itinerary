@@ -21,6 +21,11 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
+    data: BarcodeScanModeButton {
+        page: root
+        visible: swipeView.currentIndex === 0
+    }
+
     readonly property bool hasValidCertificate: {
         if (certSelector.count === 0 || !certSelector.currentValue) {
             return false;
@@ -36,30 +41,20 @@ Kirigami.Page {
         }
     }
 
-    actions {
-        main: Kirigami.Action {
-            icon.name: "view-barcode-qr"
-            text: i18n("Barcode Scan Mode")
-            onTriggered: scanModeController.toggle()
-            visible: certSelector.currentValue !== undefined && swipeView.currentIndex === 0
-            checkable: true
-            checked: scanModeController.enabled
+    actions.contextualActions: [
+        Kirigami.Action {
+            id: importFromClipboardAction
+            icon.name: "edit-paste"
+            text: i18n("Import from Clipboard")
+            onTriggered: ApplicationController.importFromClipboard()
+        },
+        Kirigami.Action {
+            icon.name: "edit-delete"
+            text: i18n("Delete")
+            onTriggered: deleteWarningDialog.open()
+            enabled: certSelector.currentIndex >= 0 && certSelector.count > 0
         }
-        contextualActions: [
-            Kirigami.Action {
-                id: importFromClipboardAction
-                icon.name: "edit-paste"
-                text: i18n("Import from Clipboard")
-                onTriggered: ApplicationController.importFromClipboard()
-            },
-            Kirigami.Action {
-                icon.name: "edit-delete"
-                text: i18n("Delete")
-                onTriggered: deleteWarningDialog.open()
-                enabled: certSelector.currentIndex >= 0 && certSelector.count > 0
-            }
-        ]
-    }
+    ]
 
     Kirigami.PromptDialog {
         id: deleteWarningDialog
@@ -168,9 +163,6 @@ Kirigami.Page {
         id: swipeView
         visible: hasValidCertificate
         anchors.fill: parent
-        onCurrentIndexChanged: if (swipeView.currentIndex === 1) {
-            scanModeController.enabled = false;
-        }
 
         App.HealthCertificateBarcode {
             certificate: certSelector.currentValue
@@ -199,11 +191,6 @@ Kirigami.Page {
                         default:
                             return undefined;
                     }
-                }
-
-                BarcodeScanModeController {
-                    id: scanModeController
-                    page: root
                 }
             }
         }

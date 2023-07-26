@@ -21,13 +21,9 @@ Kirigami.ScrollablePage {
         }
     }
 
-    actions.main: Kirigami.Action {
-        icon.name: "view-barcode-qr"
-        text: i18n("Barcode Scan Mode")
-        onTriggered: scanModeController.toggle()
-        visible: root.pass.barcodes.length > 0
-        checkable: true
-        checked: scanModeController.enabled
+    data: BarcodeScanModeButton {
+        page: root
+        visible: ticketToken.hasBarcode
     }
 
     Component {
@@ -52,11 +48,6 @@ Kirigami.ScrollablePage {
             passId: root.passId
             pass: root.pass
         }
-    }
-
-    BarcodeScanModeController {
-        id: scanModeController
-        page: root
     }
 
     Item {

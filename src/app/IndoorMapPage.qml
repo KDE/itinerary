@@ -8,6 +8,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.components 1.0 as Components
 import org.kde.solidextras 1.0 as Solid
 import org.kde.kpublictransport 1.0 as PT
 import org.kde.kosmindoormap 1.0
@@ -52,24 +53,6 @@ Kirigami.Page {
     // TODO in theory we could make this conditional to having panned the map all the way to the right
     Kirigami.ColumnView.preventStealing: true
 
-    actions {
-        left: Kirigami.Action {
-            icon.name: "go-down-symbolic"
-            text: i18nc("@action:intoolbar Go down one floor", "Floor down")
-            displayHint: Kirigami.DisplayHint.IconOnly
-            enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
-            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
-            visible: map.floorLevels.hasFloorLevels
-        }
-        right: Kirigami.Action {
-            icon.name: "go-up-symbolic"
-            text: i18nc("@action:intoolbar Go up one floor", "Floor up")
-            displayHint: Kirigami.DisplayHint.IconOnly
-            enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
-            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
-            visible: map.floorLevels.hasFloorLevels
-        }
-    }
     contextualActions: [
         Kirigami.Action {
             id: zoomInAction
@@ -87,12 +70,14 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: platformAction
+            icon.name: "edit-find"
             text: i18n("Find Platform")
             onTriggered: platformSheet.open()
             visible: !platformModel.isEmpty
         },
         Kirigami.Action {
             id: gateAction
+            icon.name: "edit-find"
             text: i18n("Find Gate")
             onTriggered: gateSheet.open()
             visible: !gateModel.isEmpty
@@ -108,6 +93,7 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: rentalVehicleAction
+            icon.name: "car"
             text: i18n("Show Rental Vehicles")
             checkable: true
             enabled: !map.mapLoader.isLoading && Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
@@ -117,27 +103,32 @@ Kirigami.Page {
         Kirigami.Action { separator: true },
         Kirigami.Action {
             text: i18n("Open Map");
+            icon.name: "map-globe"
             onTriggered: NavigationController.showOnMap(map.mapData.center.y, map.mapData.center.x, 18);
         },
         Kirigami.Action {
+            icon.name: "kaccess"
             text: i18n("Open wheelmap.org");
             onTriggered: NavigationController.showOnWheelmap(map.mapData.center.y, map.mapData.center.x);
         },
 
         Kirigami.Action {
             id: lightStyleAction
+            icon.name: "lighttable"
             text: "Light Style"
             onTriggered: map.styleSheet = "breeze-light"
             visible: Settings.developmentMode
         },
         Kirigami.Action {
             id: darkStyleAction
+            icon.name: "lighttable"
             text: "Dark Style"
             onTriggered: map.styleSheet = "breeze-dark"
             visible: Settings.developmentMode
         },
         Kirigami.Action {
             id: diagnosticStyleAction
+            icon.name: "tools-report-bug"
             text: "Diagnostic Style"
             onTriggered: map.styleSheet = "diagnostic"
             visible: Settings.developmentMode
@@ -301,6 +292,31 @@ Kirigami.Page {
             map.view.beginTime = root.beginTime;
             map.view.endTime = root.endTime;
             queryLiveLocationData();
+        }
+    }
+
+    Components.DoubleFloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing // to not hide the copyright information
+        }
+
+        leftAction: Kirigami.Action {
+            icon.name: "go-down-symbolic"
+            text: i18nc("@action:intoolbar Go down one floor", "Floor down")
+            enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
+            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelBelow(map.view.floorLevel)
+            visible: map.floorLevels.hasFloorLevels
+        }
+
+        rightAction: Kirigami.Action {
+            icon.name: "go-up-symbolic"
+            text: i18nc("@action:intoolbar Go up one floor", "Floor up")
+            enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
+            onTriggered: map.view.floorLevel = map.floorLevels.floorLevelAbove(map.view.floorLevel)
+            visible: map.floorLevels.hasFloorLevels
         }
     }
 }

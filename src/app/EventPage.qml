@@ -16,23 +16,12 @@ App.DetailsPage {
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
     editor: eventEditorPage
 
-    actions.main: Kirigami.Action {
-        icon.name: "view-barcode-qr"
-        text: i18n("Barcode Scan Mode")
-        onTriggered: scanModeController.toggle()
-        visible: ticketToken.hasBarcode
-        checkable: true
-        checked: scanModeController.enabled
-    }
-
-    BarcodeScanModeController {
-        id: scanModeController
+    data: BarcodeScanModeButton {
         page: root
+        visible: ticketToken.hasBarcode
     }
 
     ColumnLayout {
-        width: parent.width
-
         MobileForm.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true

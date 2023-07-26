@@ -6,6 +6,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Templates 2.15 as T
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kitinerary 1.0
@@ -21,7 +22,7 @@ Kirigami.ScrollablePage {
 
     readonly property bool isValidInput: ticketNameEdit.text !== ''
 
-    actions.main: Kirigami.Action {
+    property T.Action saveAction: Kirigami.Action {
         text: i18n("Save")
         icon.name: "document-save"
         enabled: root.isValidInput
@@ -52,6 +53,18 @@ Kirigami.ScrollablePage {
                     status: Kirigami.MessageType.Error
                     statusMessage: text === "" ? i18n("Ticket name must not be empty.") : ""
                 }
+            }
+        }
+    }
+
+    footer: QQC2.ToolBar {
+        contentItem: RowLayout {
+            Item {
+                Layout.fillWidth: true
+            }
+
+            QQC2.Button {
+                action: root.saveAction
             }
         }
     }

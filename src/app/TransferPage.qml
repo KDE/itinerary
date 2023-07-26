@@ -39,114 +39,112 @@ Kirigami.ScrollablePage {
         color: Kirigami.Theme.backgroundColor
     }
 
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                text: i18n("Depart Now")
-                icon.name: "clock"
-                onTriggered: {
-                    var req = journeyModel.request;
-                    req.dateTime = new Date();
-                    req.dateTimeMode = JourneyRequest.Departure;
-                    journeyModel.request = req;
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Discard")
-                icon.name: "edit-delete"
-                onTriggered: {
-                    TransferManager.discardTransfer(root.transfer);
-                    applicationWindow().pageStack.pop();
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Earlier")
-                icon.name: "go-up-symbolic"
-                onTriggered: journeyModel.queryPrevious()
-                enabled: journeyModel.canQueryPrevious
-            },
-            Kirigami.Action {
-                text: i18n("Later")
-                icon.name: "go-down-symbolic"
-                onTriggered: journeyModel.queryNext()
-                enabled: journeyModel.canQueryNext
-            },
-            Kirigami.Action { separator: true },
-            Kirigami.Action {
-                id: bikeAction
-                text: i18n("Bike")
-                icon.source: "qrc:///images/bike.svg"
-                checkable: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: bikeRideAction
-                text: i18n("Bike & Ride")
-                icon.source: "qrc:///images/bike.svg"
-                checkable: true
-                visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: bikeSharingAction
-                text: i18n("Shared Bikes")
-                icon.source: "qrc:///images/bike.svg"
-                checkable: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: parkRideAction
-                text: i18n("Park & Ride")
-                icon.source: "qrc:///images/car.svg"
-                checkable: true
-                visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
-                onCheckedChanged: queryJourney()
-            },
-
-            Kirigami.Action { separator: true },
-
-            Kirigami.Action {
-                id: longDistanceModeAction
-                text: i18nc("journey query search constraint, title", "Long distance trains")
-                icon.source: PublicTransport.lineModeIcon(Line.LongDistanceTrain)
-                checkable: true
-                checked: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: localTrainModeAction
-                text: i18nc("journey query search constraint, title", "Local trains")
-                icon.source: PublicTransport.lineModeIcon(Line.LocalTrain)
-                checkable: true
-                checked: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: rapidTransitModeAction
-                text: i18nc("journey query search constraint, title", "Rapid transit")
-                icon.source: PublicTransport.lineModeIcon(Line.Tramway)
-                checkable: true
-                checked: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: busModeAction
-                text: i18nc("journey query search constraint, title", "Bus")
-                icon.source: PublicTransport.lineModeIcon(Line.Bus)
-                checkable: true
-                checked: true
-                onCheckedChanged: queryJourney()
-            },
-            Kirigami.Action {
-                id: ferryModeAction
-                text: i18nc("journey query search constraint, title", "Ferry")
-                icon.source: PublicTransport.lineModeIcon(Line.Ferry)
-                checkable: true
-                checked: true
-                onCheckedChanged: queryJourney()
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: i18n("Depart Now")
+            icon.name: "clock"
+            onTriggered: {
+                var req = journeyModel.request;
+                req.dateTime = new Date();
+                req.dateTimeMode = JourneyRequest.Departure;
+                journeyModel.request = req;
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            text: i18n("Discard")
+            icon.name: "edit-delete"
+            onTriggered: {
+                TransferManager.discardTransfer(root.transfer);
+                applicationWindow().pageStack.pop();
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Earlier")
+            icon.name: "go-up-symbolic"
+            onTriggered: journeyModel.queryPrevious()
+            enabled: journeyModel.canQueryPrevious
+        },
+        Kirigami.Action {
+            text: i18n("Later")
+            icon.name: "go-down-symbolic"
+            onTriggered: journeyModel.queryNext()
+            enabled: journeyModel.canQueryNext
+        },
+        Kirigami.Action { separator: true },
+        Kirigami.Action {
+            id: bikeAction
+            text: i18n("Bike")
+            icon.source: "qrc:///images/bike.svg"
+            checkable: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: bikeRideAction
+            text: i18n("Bike & Ride")
+            icon.source: "qrc:///images/bike.svg"
+            checkable: true
+            visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: bikeSharingAction
+            text: i18n("Shared Bikes")
+            icon.source: "qrc:///images/bike.svg"
+            checkable: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: parkRideAction
+            text: i18n("Park & Ride")
+            icon.source: "qrc:///images/car.svg"
+            checkable: true
+            visible: root.transfer.alignment == Transfer.Before && root.transfer.floatingLocationType == Transfer.FavoriteLocation
+            onCheckedChanged: queryJourney()
+        },
+
+        Kirigami.Action { separator: true },
+
+        Kirigami.Action {
+            id: longDistanceModeAction
+            text: i18nc("journey query search constraint, title", "Long distance trains")
+            icon.source: PublicTransport.lineModeIcon(Line.LongDistanceTrain)
+            checkable: true
+            checked: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: localTrainModeAction
+            text: i18nc("journey query search constraint, title", "Local trains")
+            icon.source: PublicTransport.lineModeIcon(Line.LocalTrain)
+            checkable: true
+            checked: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: rapidTransitModeAction
+            text: i18nc("journey query search constraint, title", "Rapid transit")
+            icon.source: PublicTransport.lineModeIcon(Line.Tramway)
+            checkable: true
+            checked: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: busModeAction
+            text: i18nc("journey query search constraint, title", "Bus")
+            icon.source: PublicTransport.lineModeIcon(Line.Bus)
+            checkable: true
+            checked: true
+            onCheckedChanged: queryJourney()
+        },
+        Kirigami.Action {
+            id: ferryModeAction
+            text: i18nc("journey query search constraint, title", "Ferry")
+            icon.source: PublicTransport.lineModeIcon(Line.Ferry)
+            checkable: true
+            checked: true
+            onCheckedChanged: queryJourney()
+        }
+    ]
 
     function allLineModes()
     {

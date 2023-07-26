@@ -14,20 +14,19 @@ import org.kde.kpublictransport.onboard 1.0
 import org.kde.itinerary 1.0
 
 Kirigami.Page {
+    id: root
+
     title: i18n("Live Status")
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
 
-    actions {
-        contextualActions: [
-            Kirigami.Action {
-                text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
-                icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
-                onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
-            }
-        ]
+    actions.contextualActions: Kirigami.Action {
+        text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
+        icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
+        onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
     }
 
     OnboardStatus {
