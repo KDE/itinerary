@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-21 02:54+0000\n"
-"PO-Revision-Date: 2023-06-27 18:04+0300\n"
+"PO-Revision-Date: 2023-07-25 16:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -67,10 +67,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "KDE Itinerary käyttää seuraavien lähteiden julkista liikennetietoa."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Lisätietoa"
+msgstr "Kehitystiedot"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -83,10 +82,9 @@ msgid "Extractor capabilities:"
 msgstr "Purkajan kyvyt:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Purkajan kyvyt:"
+msgstr "Purkajan kyvyt kopioitu leikepöydälle"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -185,27 +183,25 @@ msgstr "Kohteeseen %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "Kaukojunat"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Location"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr "Sijainti"
+msgstr "Paikallisjunat"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
-msgstr ""
+msgstr "Nopea yhteys"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
 #: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bussi"
@@ -215,7 +211,7 @@ msgstr "Bussi"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "Lautta"
 
 #: app/AlternativeJourneyPage.qml:131
 #, kde-format
@@ -509,8 +505,7 @@ msgid "Station"
 msgstr "Pysäkki"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "Laituri"
@@ -668,26 +663,23 @@ msgid "To:"
 msgstr "Kohde:"
 
 #: app/DepartureQueryPage.qml:226
-#, fuzzy, kde-format
-#| msgid "Earlier departure on %1"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
-msgstr "Aiempi lähtö: %1"
+msgstr "Lataa aiemmat lähdöt"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
 #: app/TransferPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr "Yhteysvaihtoehdot"
+msgstr "Lataa myöhemmät yhteydet"
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
 #: app/TransferPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Data providers: %1"
+#, kde-format
 msgid "Data providers:"
-msgstr "Tiedontarjoajat: %1"
+msgstr "Tiedontarjoajat:"
 
 #: app/DocumentsCard.qml:35
 #, kde-format
@@ -727,7 +719,7 @@ msgstr "Lisää asiakirja…"
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Verkkovirhe: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -1616,11 +1608,10 @@ msgid "Select"
 msgstr "Valitse"
 
 #: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
-#, fuzzy, kde-format
-#| msgid "Alternative Connections"
+#, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr "Yhteysvaihtoehdot"
+msgstr "Lataa aiemmat yhteydet"
 
 #: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
 #, kde-format
@@ -1666,33 +1657,31 @@ msgstr "Etsi matkaa"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Pika- ja kaupunkienväliset junat"
 
 #: app/JourneyRequestPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr "Muuta suosikkisijainnin nimeä"
+msgstr "Alueelliset tai paikallisjunat"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "Nopea yhteys, metro, raitiotie"
 
 #: app/JourneyRequestPage.qml:229
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Paikalliset tai alueelliset bussipalvelut"
 
 #: app/JourneyRequestPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Boat trips"
+#, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr "Laivamatkat"
+msgstr "Laivat tai lautat"
 
 #: app/JourneySectionDelegate.qml:99
 #, kde-format
@@ -1790,7 +1779,7 @@ msgstr[1] "%1 vaihtoa"
 #: app/JourneySummaryDelegate.qml:68
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Laajenna napsauttamalla"
 
 #: app/livedatamanager.cpp:651
 #, fuzzy, kde-format
@@ -2237,10 +2226,9 @@ msgid "New arrival platform is: %1"
 msgstr "Uusi saapumislaituri on: %1"
 
 #: app/OnlineImportPage.qml:16
-#, fuzzy, kde-format
-#| msgid "Train Ticket"
+#, kde-format
 msgid "Import Online Ticket"
-msgstr "Junalippu"
+msgstr "Tuo verkkolippu"
 
 #: app/OnlineImportPage.qml:26
 #, kde-format
@@ -2282,7 +2270,7 @@ msgstr "Vanhentunut"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Tulevaisuus"
 
 #: app/passmanager.cpp:251
 #, kde-format
@@ -2291,9 +2279,7 @@ msgid "Valid"
 msgstr "Kelvollinen"
 
 #: app/passmanager.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
@@ -2309,9 +2295,7 @@ msgid "%1 - %2"
 msgstr "%1 – %2"
 
 #: app/PassPage.qml:71
-#, fuzzy, kde-format
-#| msgctxt "name - number"
-#| msgid "%1 - %2"
+#, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
