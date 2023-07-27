@@ -47,6 +47,27 @@ App.DetailsPage {
         }
     }
 
+
+    Kirigami.PromptDialog {
+        id: dbCheckinDialog
+
+        title: i18n("Deutsche Bahn Check-In")
+        subtitle: i18n("Do you really want to check in for train %1 for coach %2 seat %3?", reservationFor.trainName + " " + reservationFor.trainNumber, root.reservation.reservedTicket.ticketedSeat.seatSection, root.reservation.reservedTicket.ticketedSeat.seatNumber)
+        standardButtons: QQC2.Dialog.Cancel
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Check-In")
+                icon.name: "checkmark"
+                onTriggered: {
+                    dbCheckinDialog.close();
+                    kci.checkIn(root.currentReservationId)
+                }
+            }
+        ]
+        closePolicy: QQC2.Popup.CloseOnEscape
+    }
+
     ColumnLayout {
         spacing: 0
 
@@ -322,6 +343,17 @@ App.DetailsPage {
                     icon.name: "notifications"
                     visible: Settings.developmentMode
                     onTriggered: LiveDataManager.showNotification(root.batchId)
+                },
+                Kirigami.Action {
+                    text: i18n("Deutsche Bahn Check-In")
+                    icon.name: "checkmark"
+                    visible: Settings.developmentMode && kci.checkInAvailable(root.reservation)
+                    enabled: kci.checkInEnabled(root.reservation)
+                    onTriggered: dbCheckinDialog.open()
+                    DeutscheBahnCheckIn {
+                        id: kci
+                        reservationManager: ReservationManager
+                    }
                 }
             ]
         }

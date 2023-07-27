@@ -13,6 +13,7 @@
 #include "countrysubdivisionmodel.h"
 #include "clipboard.h"
 #include "developmentmodecontroller.h"
+#include "deutschebahncheckin.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "factory.h"
@@ -214,6 +215,7 @@ void registerApplicationTypes()
     qmlRegisterType<MatrixBeaconStub>("org.kde.itinerary", 1, 0, "MatrixBeacon");
 #endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
+    qmlRegisterType<DeutscheBahnCheckIn>("org.kde.itinerary", 1, 0, "DeutscheBahnCheckIn");
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
@@ -479,6 +481,7 @@ int main(int argc, char **argv)
 #endif
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
+    DeutscheBahnCheckIn::setNetworkAccessManagerFactory(namFactory);
 
     registerKContactsTypes();
     registerKCalendarCoreTypes();
