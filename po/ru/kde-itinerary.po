@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-21 00:51+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1885,13 +1885,13 @@ msgstr[3] "Одна смена"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:651
+#: app/livedatamanager.cpp:650
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight %1 to %2:"
 msgstr "Рейс %1 из %2 в %3"
 
-#: app/livedatamanager.cpp:657
+#: app/livedatamanager.cpp:656
 #, kde-format
 msgid "Itinerary change"
 msgstr "Изменение маршрута"

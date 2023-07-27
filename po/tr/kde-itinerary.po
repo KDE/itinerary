@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-21 00:51+0000\n"
+"POT-Creation-Date: 2023-07-27 00:47+0000\n"
 "PO-Revision-Date: 2023-07-17 15:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1783,12 +1783,12 @@ msgstr[1] "%1 aktarma"
 msgid "Click to extend"
 msgstr "Genişletmek için tıkla"
 
-#: app/livedatamanager.cpp:651
+#: app/livedatamanager.cpp:650
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 uçuşu, %2:"
 
-#: app/livedatamanager.cpp:657
+#: app/livedatamanager.cpp:656
 #, kde-format
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"
