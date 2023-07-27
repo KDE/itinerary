@@ -59,6 +59,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Open File...")
                 icon.name: "document-open"
+                shortcut: StandardKey.Open
                 onTriggered: {
                     importDialog.close();
                     importFileDialog.open();
@@ -68,6 +69,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Paste")
                 icon.name: "edit-paste"
                 enabled: ApplicationController.hasClipboardContent
+                shortcut: StandardKey.Paste
                 onTriggered: {
                     importDialog.close();
                     ApplicationController.importFromClipboard();
@@ -167,6 +169,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Check for Updates")
                 icon.name: "view-refresh"
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
+                shortcut: StandardKey.Refresh
                 onTriggered: {
                     LiveDataManager.checkForUpdates();
                 }
@@ -215,6 +218,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Settings...")
                 icon.name: "settings-configure"
                 enabled: pageStack.layers.depth < 2
+                shortcut: StandardKey.Preferences
                 onTriggered: pageStack.layers.push(settingsComponent)
             },
             Kirigami.Action {
