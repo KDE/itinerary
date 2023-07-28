@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:48+0000\n"
 "PO-Revision-Date: 2023-07-17 12:00+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ecuadra@eloihr.net"
 
-#: app/AboutPage.qml:19 app/main.qml:233
+#: app/AboutPage.qml:19 app/main.qml:237
 #, kde-format
 msgid "About"
 msgstr "Acerca de"
@@ -692,7 +692,7 @@ msgstr "Proveedores de datos:"
 msgid "Add Document"
 msgstr "Añadir documento"
 
-#: app/DocumentsCard.qml:37 app/main.qml:124
+#: app/DocumentsCard.qml:37 app/main.qml:126
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Todos los archivos (*.*)"
@@ -1130,7 +1130,7 @@ msgstr "Borrar pase"
 msgid "Do you really want to delete this pass?"
 msgstr "¿Realmente desea borrar este pase?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1245,7 +1245,7 @@ msgstr "Prueba %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperación (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:196
+#: app/HealthCertificatePage.qml:17 app/main.qml:199
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificados sanitarios"
@@ -1797,7 +1797,7 @@ msgstr "Vuelo %1 a %2:"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:207
+#: app/LiveStatusPage.qml:17 app/main.qml:210
 #, kde-format
 msgid "Live Status"
 msgstr "Estado en directo"
@@ -2018,102 +2018,102 @@ msgstr "Importar"
 msgid "Open File..."
 msgstr "Abrir archivo..."
 
-#: app/main.qml:68
+#: app/main.qml:69
 #, kde-format
 msgid "Paste"
 msgstr "Pegar"
 
-#: app/main.qml:77
+#: app/main.qml:79
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Escanear código de barras..."
 
-#: app/main.qml:86
+#: app/main.qml:88
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Añadir desde calendario..."
 
-#: app/main.qml:101
+#: app/main.qml:103
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Billete en línea de Deutsche Bahn..."
 
-#: app/main.qml:109
+#: app/main.qml:111
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Billete en línea de SNCF..."
 
-#: app/main.qml:122
+#: app/main.qml:124
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importar reserva"
 
-#: app/main.qml:124
+#: app/main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Archivos PkPass (*.pkpass)"
 
-#: app/main.qml:124
+#: app/main.qml:126
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Archivos PDF (*.pdf)"
 
-#: app/main.qml:124 app/main.qml:133
+#: app/main.qml:126 app/main.qml:135
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Archivos de KDE Itinerary (*.itinerary)"
 
-#: app/main.qml:131
+#: app/main.qml:133
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportar datos del itinerario"
 
-#: app/main.qml:162 app/PassPage.qml:94
+#: app/main.qml:164 app/PassPage.qml:94
 #, kde-format
 msgid "Import..."
 msgstr "Importar..."
 
-#: app/main.qml:167
+#: app/main.qml:169
 #, kde-format
 msgid "Check for Updates"
 msgstr "Comprobar actualizaciones"
 
-#: app/main.qml:175
+#: app/main.qml:178
 #, kde-format
 msgid "Download Maps"
 msgstr "Descargar mapas"
 
-#: app/main.qml:183 app/StatisticsPage.qml:16
+#: app/main.qml:186 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: app/main.qml:190
+#: app/main.qml:193
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Pases y programas"
 
-#: app/main.qml:190
+#: app/main.qml:193
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Pases y programas"
 
-#: app/main.qml:215
+#: app/main.qml:218
 #, kde-format
 msgid "Settings..."
 msgstr "Preferencias..."
 
-#: app/main.qml:221
+#: app/main.qml:225
 #, kde-format
 msgid "Export..."
 msgstr "Exportar..."
 
-#: app/main.qml:226 app/WelcomePage.qml:17
+#: app/main.qml:230 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Ayuda"
 
-#: app/main.qml:296
+#: app/main.qml:300
 #, kde-format
 msgid "Map download finished."
 msgstr "Descarga de mapas finalizada."

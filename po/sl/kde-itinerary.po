@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-27 00:47+0000\n"
+"POT-Creation-Date: 2023-07-28 00:48+0000\n"
 "PO-Revision-Date: 2023-07-17 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "matjaz.jeran@amis.net"
 
-#: app/AboutPage.qml:19 app/main.qml:233
+#: app/AboutPage.qml:19 app/main.qml:237
 #, kde-format
 msgid "About"
 msgstr "O programu"
@@ -692,7 +692,7 @@ msgstr "Dobavitelji podatkov:"
 msgid "Add Document"
 msgstr "Dodaj dokument"
 
-#: app/DocumentsCard.qml:37 app/main.qml:124
+#: app/DocumentsCard.qml:37 app/main.qml:126
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Vse datoteke (*.*)"
@@ -1130,7 +1130,7 @@ msgstr "Zbriši vozovnico"
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1245,7 +1245,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Ozdravljenje (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:196
+#: app/HealthCertificatePage.qml:17 app/main.qml:199
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravstvena potrdila"
@@ -1800,7 +1800,7 @@ msgstr "Let iz %1 v %2:"
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:207
+#: app/LiveStatusPage.qml:17 app/main.qml:210
 #, kde-format
 msgid "Live Status"
 msgstr "Stanje v živo"
@@ -2020,102 +2020,102 @@ msgstr "Uvozi"
 msgid "Open File..."
 msgstr "Odpri datoteko..."
 
-#: app/main.qml:68
+#: app/main.qml:69
 #, kde-format
 msgid "Paste"
 msgstr "Prilepi"
 
-#: app/main.qml:77
+#: app/main.qml:79
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Branje črtne kode..."
 
-#: app/main.qml:86
+#: app/main.qml:88
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Dodaj iz koledarja..."
 
-#: app/main.qml:101
+#: app/main.qml:103
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Deutsche Bahn spletna vozovnica..."
 
-#: app/main.qml:109
+#: app/main.qml:111
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF spletna vozovnica..."
 
-#: app/main.qml:122
+#: app/main.qml:124
 #, kde-format
 msgid "Import Reservation"
 msgstr "Uvozi rezervacijo"
 
-#: app/main.qml:124
+#: app/main.qml:126
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "Datoteke PkPass (*.pkpass)"
 
-#: app/main.qml:124
+#: app/main.qml:126
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Datoteke PDF (*.pdf)"
 
-#: app/main.qml:124 app/main.qml:133
+#: app/main.qml:126 app/main.qml:135
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Datoteke itinerarja KDE (* .itinerary)"
 
-#: app/main.qml:131
+#: app/main.qml:133
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
 
-#: app/main.qml:162 app/PassPage.qml:94
+#: app/main.qml:164 app/PassPage.qml:94
 #, kde-format
 msgid "Import..."
 msgstr "Uvozi..."
 
-#: app/main.qml:167
+#: app/main.qml:169
 #, kde-format
 msgid "Check for Updates"
 msgstr "Preveri za posodobitvami"
 
-#: app/main.qml:175
+#: app/main.qml:178
 #, kde-format
 msgid "Download Maps"
 msgstr "Prenesi zemljevide"
 
-#: app/main.qml:183 app/StatisticsPage.qml:16
+#: app/main.qml:186 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistika"
 
-#: app/main.qml:190
+#: app/main.qml:193
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Vozovnice && programi"
 
-#: app/main.qml:190
+#: app/main.qml:193
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Vozovnice & programi"
 
-#: app/main.qml:215
+#: app/main.qml:218
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavitve..."
 
-#: app/main.qml:221
+#: app/main.qml:225
 #, kde-format
 msgid "Export..."
 msgstr "Izvozi..."
 
-#: app/main.qml:226 app/WelcomePage.qml:17
+#: app/main.qml:230 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Pomoč"
 
-#: app/main.qml:296
+#: app/main.qml:300
 #, kde-format
 msgid "Map download finished."
 msgstr "Prenos zemljevidov končan."
