@@ -114,7 +114,17 @@ void MatrixBeacon::stop()
     room->setState(ev);
 }
 
-void MatrixBeacon::updateLocation(float latitude, float longitude)
+static QString geoUri(float latitude, float longitude, float altitude)
+{
+    QString uri = QLatin1String("geo:") + QString::number(latitude)
+        + QLatin1Char(',') + QString::number(longitude);
+    if (!std::isnan(altitude)) {
+        uri += QLatin1Char(',') + QString::number(altitude);
+    }
+    return uri;
+}
+
+void MatrixBeacon::updateLocation(float latitude, float longitude, float heading, float speed, float altitude)
 {
     m_latitude = latitude;
     m_longitude = longitude;
@@ -128,13 +138,20 @@ void MatrixBeacon::updateLocation(float latitude, float longitude)
         return;
     }
 
+    QJsonObject location({
+        {QLatin1String("uri"), geoUri(m_latitude, m_longitude, altitude)}
+    });
+    if (!std::isnan(heading)) {
+        location.insert(QLatin1String("org.kde.itinerary.heading"), QString::number(heading));
+    }
+    if (!std::isnan(speed)) {
+        location.insert(QLatin1String("org.kde.itinerary.speed"), QString::number(speed));
+    }
+
     QJsonObject content{
         {QLatin1String("msgtype"), QLatin1String("org.matrix.msc3672.beacon")},
         {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
-        {QLatin1String("org.matrix.msc3488.location"), QJsonObject {
-            {QLatin1String("uri"), QLatin1String("geo:%1,%2").arg(QString::number(m_latitude), QString::number(m_longitude))},
-            // {QLatin1String("description"), m_description} TODO?
-        }},
+        {QLatin1String("org.matrix.msc3488.location"), location},
         {QLatin1String("m.relates_to"), QJsonObject{
             {QLatin1String("rel_type"), QLatin1String("m.reference")},
             {QLatin1String("event_id"), m_beaconInfoId},

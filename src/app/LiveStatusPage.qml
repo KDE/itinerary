@@ -42,7 +42,7 @@ Kirigami.Page {
 
         onPositionChanged: {
             map.autoPositionMap();
-            matrixBeacon.updateLocation(onboardStatus.latitude, onboardStatus.longitude);
+            matrixBeacon.updateLocation(onboardStatus.latitude, onboardStatus.longitude, onboardStatus.heading, onboardStatus.speed, onboardStatus.altitude);
         }
     }
 

@@ -36,7 +36,13 @@ public:
 public Q_SLOTS:
     void start(const QString &description);
     void stop();
-    void updateLocation(float latitude, float longitude);
+    /**
+     * @param latitude/longitude in degree
+     * @param heading in degree
+     * @param speed in km/s
+     * @param altitude in meter
+     */
+    void updateLocation(float latitude, float longitude, float heading = NAN, float speed = NAN, float altitude = NAN);
 
 Q_SIGNALS:
     void connectionChanged();
