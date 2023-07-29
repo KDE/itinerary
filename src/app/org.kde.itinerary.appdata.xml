@@ -402,6 +402,7 @@
       <li xml:lang="nl">Weergave van indeling treinwagons (alleen voor sommige vervoerders)</li>
       <li xml:lang="pl">Widok układu wagonu kolejowego (tylko dla wybranych przewoźników).</li>
       <li xml:lang="pt">Área de disposição dos lugares do comboio (apenas com alguns operadores).</li>
+      <li xml:lang="pt-BR">Visualização do layout do vagão (somente para alguns operadores).</li>
       <li xml:lang="ru">Просмотр мест в вагоне поезда (только для некоторых операторов).</li>
       <li xml:lang="sl">Pogled postavitve vlaka (samo za nekatere operaterje).</li>
       <li xml:lang="sv">Tågvagnslayout (bara för vissa operatörer).</li>
@@ -425,6 +426,7 @@
       <li xml:lang="nl">Kaarten per verdieping van station en luchthaven gebaseerd op gegevens uit OpenStreetMap.</li>
       <li xml:lang="pl">Plany pięter dworców kolejowych i lotnisk na podstawie danych z OpenStreetMap.</li>
       <li xml:lang="pt">Mapas das estações de comboio e aeroportos por pisos, baseados em dados do OpenStreetMap.</li>
+      <li xml:lang="pt-BR">Mapas de estações de trem e aeroportos por andar com base em dados do OpenStreetMap.</li>
       <li xml:lang="ru">Поэтажные карты железнодорожных станций и аэропортов на основе данных OpenStreetMap.</li>
       <li xml:lang="sl">Zemljevidi železniške postaje in letališča po nadstropjih na podlagi podatkov OpenStreetMap.</li>
       <li xml:lang="sv">Tågstations- och flygplatskartor för varje våning baserade på data från OpenStreetMap.</li>
@@ -447,6 +449,7 @@
       <li xml:lang="nl">Beschikbare huurfietsen in stalling en vrijstaand kan getoond worden op de kaart van het treinstation.</li>
       <li xml:lang="pl">Dostępne rowery do wypożyczenia w systemie ze stacjami lub bez nich, można wyświetlić na mapie dworca kolejowego.</li>
       <li xml:lang="pt">Poderá mostrar as bicicletas de aluguer com bloqueios ou livres no mapa das estações dos correios.</li>
+      <li xml:lang="pt-BR">As bicicletas de aluguel disponíveis em docas ou avulsas podem ser exibidas no mapa da estação de trem.</li>
       <li xml:lang="ru">На карте железнодорожной станции могут быть показаны доступные прокатныевелосипеды со стационарной или произвольной парковкой.</li>
       <li xml:lang="sl">Razpoložljiva kolesa za najem na stebričkih ali prosto dostopna kolesa na zemljevidu železniške postaje.</li>
       <li xml:lang="sv">Tillgängliga stationsbaserade eller fristående hyrcyklar kan visas på tågstationskartan.</li>
@@ -582,6 +585,7 @@
       <caption xml:lang="nl">Treinindelingsweergave met accentuering van het rijtuig met een zitplaats reservering</caption>
       <caption xml:lang="pl">Widok układu pociągu z rezerwacją miejsc</caption>
       <caption xml:lang="pt">Área de disposição dos comboios que realça o lugar com uma reserva</caption>
+      <caption xml:lang="pt-BR">Visualização do layout do trem destacando o vagão com reserva de assento</caption>
       <caption xml:lang="ru">Просмотр мест в вагонах поезда с подсветкой вагона с забронированным местом</caption>
       <caption xml:lang="sl">Pogled postavitve vlaka s poudarjenim vagonom in rezervacijo sedeža</caption>
       <caption xml:lang="sv">Tågplatsvisning som färglägger vagnen med platsbokning</caption>
@@ -608,6 +612,7 @@
       <caption xml:lang="nl">Perronkaart van treinstation, accentuering van aankomst- en vertrekperrons</caption>
       <caption xml:lang="pl">Plan peronu dworca kolejowego, podświetlający perony przybycia i odjazdu</caption>
       <caption xml:lang="pt">Mapa das plataformas das estações de comboio que realça as plataformas de partidas</caption>
+      <caption xml:lang="pt-BR">Mapa da plataforma da estação de trem, destacando as plataformas de chegada e partida</caption>
       <caption xml:lang="ru">Карта платформ железнодорожной станции с подсветкой платформ прибытия и отправления</caption>
       <caption xml:lang="sl">Zemljevid perona železniške postaje s poudarkom na peronih za prihod in odhod</caption>
       <caption xml:lang="sv">Tågstationskarta för plattformar, som markerar ankomst- och avgångsplattformar</caption>
@@ -634,6 +639,7 @@
       <caption xml:lang="nl">Kaart van treinstation met werkelijk beschikbare huurfietsen</caption>
       <caption xml:lang="pl">Plan dworca kolejowego, pokazujący w czasie rzeczywistym dostępność rowerów do wypożyczenia</caption>
       <caption xml:lang="pt">Mapa das estações de comboios que mostra a disponibilidade em tempo-real das bicicletas de aluguer</caption>
+      <caption xml:lang="pt-BR">Mapa da estação de trem mostrando a disponibilidade em tempo real de aluguel de bicicletas</caption>
       <caption xml:lang="ru">Карта железнодорожной станции с показом доступности прокатных велосипедов в режиме реального времени</caption>
       <caption xml:lang="sl">Zemljevid železniške postaje sproti prikazuje razpoložljivost koles za najem</caption>
       <caption xml:lang="sv">Tågstationskarta som visar tillgängliga hyrcyklar i realtid.</caption>
