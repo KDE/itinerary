@@ -65,10 +65,9 @@ msgid "KDE Itinerary uses public transport data from the following sources."
 msgstr "Itinerář KDE používá data veřejné dopravy z následujících zdrojů."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Více informací"
+msgstr ""
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -81,10 +80,9 @@ msgid "Extractor capabilities:"
 msgstr "Schopnosti extraktoru:"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Schopnosti extraktoru:"
+msgstr ""
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -507,11 +505,10 @@ msgid "Station"
 msgstr "Stanice"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr "Platforma"
+msgstr ""
 
 #: app/BusPage.qml:156
 #, kde-format
@@ -723,7 +720,7 @@ msgstr "Přidat dokument..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Chyba sítě: %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -1784,10 +1781,9 @@ msgid "Click to extend"
 msgstr ""
 
 #: app/livedatamanager.cpp:651
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Let %1 z %2 do %3"
+msgstr ""
 
 #: app/livedatamanager.cpp:657
 #, kde-format
@@ -3361,12 +3357,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Application"
-#~ msgstr "Aplikace"
-
-#~ msgid "Transport Data"
-#~ msgstr "Data pro dopravu"
-
-#~ msgid "Version"
-#~ msgstr "Verze"
