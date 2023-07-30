@@ -15,7 +15,7 @@ endif()
 
 ecm_add_test(gpxwritertest.cpp LINK_LIBRARIES Qt::Test GpxIo)
 
-ecm_add_test(pkpassmanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)
+ecm_add_test(pkpassmanagertest.cpp mocknetworkaccessmanager.cpp TEST_NAME pkpassmanagertest LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(reservationmanagertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(applicationcontrollertest.cpp LINK_LIBRARIES Qt::Test itinerary)
 ecm_add_test(tripgrouptest.cpp LINK_LIBRARIES Qt::Test itinerary)
