@@ -536,6 +536,7 @@ void LiveDataManager::pollForUpdates(bool force)
             const auto res = m_resMgr->reservation(resId);
             const auto passId = m_pkPassMgr->passId(res);
             if (!passId.isEmpty()) {
+                m_lastPassPollAttempt.insert(passId, now());
                 m_pkPassMgr->updatePass(passId);
             }
         }
@@ -598,7 +599,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
     const int lastPollDist = (!lastRelevantPoll.isValid() || lastRelevantPoll > now)
         ? MAX_POLL_INTERVAL // no poll yet == long time ago
         : lastRelevantPoll.secsTo(now);
-    return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs
+    return std::max((it->pollInterval - lastPollDist) * 1000, pollCooldown(resId)); // we need msecs
 }
 
 QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const QVariant &res) const
@@ -622,6 +623,26 @@ QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const Q
     }
 
     return dt;
+}
+
+int LiveDataManager::pollCooldown(const QString &resId) const
+{
+    QDateTime lastPollTime;
+
+    // check for last pkpass poll times
+    const auto resIds = m_resMgr->reservationsForBatch(resId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+        const auto passId = m_pkPassMgr->passId(res);
+        if (!passId.isEmpty()) {
+            lastPollTime = m_lastPassPollAttempt.value(passId);
+        }
+    }
+
+    if (!lastPollTime.isValid()) {
+        return 0;
+    }
+    return std::clamp<int>(30 - lastPollTime.secsTo(now()), 0, 30) * 1000;
 }
 
 void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)

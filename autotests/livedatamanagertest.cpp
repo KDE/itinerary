@@ -139,6 +139,7 @@ private Q_SLOTS:
     void testPkPassUpdate()
     {
         PkPassManager pkPassMgr;
+        QSignalSpy passUpdateSpy(&pkPassMgr, &PkPassManager::passUpdated);
         pkPassMgr.setNetworkAccessManagerFactory(namFactory);
         Test::clearAll(&pkPassMgr);
         ReservationManager resMgr;
@@ -148,7 +149,7 @@ private Q_SLOTS:
         LiveDataManager ldm;
         ldm.setPkPassManager(&pkPassMgr);
         ldm.setPollingEnabled(true);
-        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 0}, QTimeZone("Europe/Berlin")); // that's in the middle of the first train leg
+        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 0, 0}, QTimeZone("Europe/Berlin"));
         ldm.setReservationManager(&resMgr);
 
         auto ctrl = Test::makeAppController();
@@ -161,7 +162,6 @@ private Q_SLOTS:
         QCOMPARE(ldm.isRelevant(resId), true);
         QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
         QTest::qWait(0);
-        QCOMPARE(ldm.nextPollTime(), 0);
 
         QCOMPARE(pkPassMgr.passes().size(), 1);
         const auto pass = pkPassMgr.pass(pkPassMgr.passes()[0]);
@@ -170,7 +170,17 @@ private Q_SLOTS:
 
         QCOMPARE(s_nam.requests.size(), 1);
         QTest::qWait(0); // download failed
+        QCOMPARE(passUpdateSpy.size(), 0);
+        QVERIFY(ldm.nextPollTimeForReservation(resId) > 0);
+        QVERIFY(ldm.nextPollTimeForReservation(resId) <= 30000);
+        QVERIFY(ldm.pollCooldown(resId) > 0);
+        QVERIFY(ldm.pollCooldown(resId) <= 30000);
+        QVERIFY(ldm.nextPollTime() > 0);
+        QVERIFY(ldm.nextPollTime() <= 30000);
+
+        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 5, 0}, QTimeZone("Europe/Berlin"));
         QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QCOMPARE(ldm.pollCooldown(resId), 0);
         QCOMPARE(ldm.nextPollTime(), 0);
     }
 };
