@@ -43,6 +43,8 @@ public:
     QDateTime updateTime(const QString &passId) const;
 
     static QDateTime relevantDate(KPkPass::Pass *pass);
+    /** Check whether @p pass can be online updated. */
+    static bool canUpdate(KPkPass::Pass *pass);
 
     /** Raw pass file data, used for exporting. */
     QByteArray rawData(const QString &passId) const;

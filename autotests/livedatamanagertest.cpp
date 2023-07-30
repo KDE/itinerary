@@ -165,6 +165,11 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
         QTest::qWait(0);
         QCOMPARE(ldm.nextPollTime(), 0);
+
+        QCOMPARE(pkPassMgr.passes().size(), 1);
+        const auto pass = pkPassMgr.pass(pkPassMgr.passes()[0]);
+        QVERIFY(pass);
+        QVERIFY(PkPassManager::canUpdate(pass));
     }
 };
 

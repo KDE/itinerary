@@ -206,7 +206,7 @@ void PkPassManager::removePass(const QString& passId)
 void PkPassManager::updatePass(const QString& passId)
 {
     auto p = pass(passId);
-    if (!p || p->webServiceUrl().isEmpty() || p->authenticationToken().isEmpty())
+    if (!canUpdate(p)) {
         return;
     // TODO actually check relevant time from the reservation, what's in the pass can be way too optimistic in reality
     // meanwhile add a few hours buffer
@@ -247,6 +247,11 @@ QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
     if (dt.isValid())
         return dt;
     return pass->expirationDate();
+}
+
+bool PkPassManager::canUpdate(KPkPass::Pass *pass)
+{
+    return pass && pass->webServiceUrl().isValid() && !pass->authenticationToken().isEmpty();
 }
 
 QByteArray PkPassManager::rawData(const QString &passId) const

@@ -426,7 +426,7 @@ bool LiveDataManager::isRelevant(const QString &resId) const
         return false;
     }
     const auto pass = m_pkPassMgr->pass(passId);
-    return pass && pass->webServiceUrl().isValid();
+    return PkPassManager::canUpdate(pass);
 }
 
 void LiveDataManager::batchAdded(const QString &resId)
