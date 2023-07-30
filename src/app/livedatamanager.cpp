@@ -73,7 +73,7 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 {
     assert(m_pkPassMgr);
     m_resMgr = resMgr;
-    connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded);
+    connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded, Qt::QueuedConnection);
     connect(resMgr, &ReservationManager::batchChanged, this, &LiveDataManager::batchChanged);
     connect(resMgr, &ReservationManager::batchContentChanged, this, &LiveDataManager::batchChanged);
     connect(resMgr, &ReservationManager::batchRenamed, this, &LiveDataManager::batchRenamed);
@@ -595,7 +595,7 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
             lastRelevantPoll = lastDeparturePoll;
         }
     }
-    const int lastPollDist = !lastRelevantPoll.isValid()
+    const int lastPollDist = (!lastRelevantPoll.isValid() || lastRelevantPoll > now)
         ? MAX_POLL_INTERVAL // no poll yet == long time ago
         : lastRelevantPoll.secsTo(now);
     return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs

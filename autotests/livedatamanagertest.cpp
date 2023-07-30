@@ -111,6 +111,7 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(flight), std::numeric_limits<int>::max());
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 0); // no current data available, so we want to poll ASAP
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
+        QTest::qWait(0);
         QCOMPARE(ldm.nextPollTime(), 0);
         QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
@@ -137,6 +138,33 @@ private Q_SLOTS:
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg2);
         QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
+    }
+
+    void testPkPassUpdate()
+    {
+        PkPassManager pkPassMgr;
+        Test::clearAll(&pkPassMgr);
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+
+        LiveData::clearStorage();
+        LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
+        ldm.setPollingEnabled(true);
+        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 0}, QTimeZone("Europe/Berlin")); // that's in the middle of the first train leg
+        ldm.setReservationManager(&resMgr);
+
+        auto ctrl = Test::makeAppController();
+        ctrl->setPkPassManager(&pkPassMgr);
+        ctrl->setReservationManager(&resMgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+
+        QCOMPARE(resMgr.batches().size(), 1);
+        const auto resId = resMgr.batches()[0];
+        QCOMPARE(ldm.isRelevant(resId), true);
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QTest::qWait(0);
+        QCOMPARE(ldm.nextPollTime(), 0);
     }
 };
 
