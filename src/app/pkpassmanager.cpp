@@ -32,6 +32,11 @@ PkPassManager::PkPassManager(QObject* parent)
 
 PkPassManager::~PkPassManager() = default;
 
+void PkPassManager::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+{
+    m_namFactory = namFactory;
+}
+
 QVector<QString> PkPassManager::passes() const
 {
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
@@ -212,7 +217,7 @@ void PkPassManager::updatePass(const QString& passId)
     req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     qDebug() << req.url();
-    auto reply = nam()->get(req);
+    auto reply = m_namFactory()->get(req);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         qDebug() << reply->errorString();
@@ -253,17 +258,6 @@ QByteArray PkPassManager::rawData(const QString &passId) const
         return {};
     }
     return f.readAll();
-}
-
-QNetworkAccessManager* PkPassManager::nam()
-{
-    if (!m_nam) {
-        m_nam = new QNetworkAccessManager(this);
-        m_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
-        m_nam->setStrictTransportSecurityEnabled(true);
-        m_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
-    }
-    return m_nam;
 }
 
 #include "moc_pkpassmanager.cpp"

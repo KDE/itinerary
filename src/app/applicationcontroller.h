@@ -46,6 +46,8 @@ public:
     explicit ApplicationController(QObject *parent = nullptr);
     ~ApplicationController() override;
 
+    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+
     void requestOpenPage(const QString &page);
 
     void setReservationManager(ReservationManager *resMgr);
@@ -127,7 +129,7 @@ private:
     TripGroupManager *m_tripGroupMgr = nullptr;
     PassManager *m_passMgr = nullptr;
     mutable HealthCertificateManager *m_healthCertMgr = nullptr;
-    QNetworkAccessManager *m_nam = nullptr;
+    std::function<QNetworkAccessManager*()> m_namFactory;
 
     bool m_importLock = false;
 };

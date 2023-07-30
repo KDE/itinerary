@@ -10,6 +10,8 @@
 #include <QHash>
 #include <QObject>
 
+#include <functional>
+
 class QNetworkAccessManager;
 
 namespace KPkPass {
@@ -22,6 +24,8 @@ class PkPassManager : public QObject
 public:
     explicit PkPassManager(QObject *parent = nullptr);
     ~PkPassManager() override;
+
+    void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
 
     QVector<QString> passes() const;
 
@@ -53,10 +57,8 @@ private:
     void importPassFromTempFile(const QUrl &tmpFile);
     QString doImportPass(const QUrl &url, const QByteArray &data, ImportMode mode);
 
-    QNetworkAccessManager *nam();
-
     QHash<QString, KPkPass::Pass*> m_passes;
-    QNetworkAccessManager *m_nam = nullptr;
+    std::function<QNetworkAccessManager*()> m_namFactory;
 };
 
 #endif // PKPASSMANAGER_H
