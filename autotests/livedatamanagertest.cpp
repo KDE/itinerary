@@ -5,6 +5,7 @@
 */
 
 #include "testhelper.h"
+#include "mocknetworkaccessmanager.h"
 
 #include <livedata.h>
 #include <livedatamanager.h>
@@ -27,17 +28,12 @@
 
 using namespace KItinerary;
 
+static MockNetworkAccessManager s_nam;
+static QNetworkAccessManager* namFactory() { return &s_nam; }
+
 class LiveDataManagerTest : public QObject
 {
     Q_OBJECT
-private:
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -115,7 +111,7 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTime(), 0);
         QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
-        const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
+        const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg1);
         QCOMPARE(arrivalUpdateSpy.size(), 1);
         QCOMPARE(arrivalUpdateSpy.at(0).at(0).toString(), trainLeg1);
@@ -143,6 +139,7 @@ private Q_SLOTS:
     void testPkPassUpdate()
     {
         PkPassManager pkPassMgr;
+        pkPassMgr.setNetworkAccessManagerFactory(namFactory);
         Test::clearAll(&pkPassMgr);
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
@@ -170,6 +167,11 @@ private Q_SLOTS:
         const auto pass = pkPassMgr.pass(pkPassMgr.passes()[0]);
         QVERIFY(pass);
         QVERIFY(PkPassManager::canUpdate(pass));
+
+        QCOMPARE(s_nam.requests.size(), 1);
+        QTest::qWait(0); // download failed
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QCOMPARE(ldm.nextPollTime(), 0);
     }
 };
 

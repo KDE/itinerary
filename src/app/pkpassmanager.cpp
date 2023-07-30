@@ -208,10 +208,7 @@ void PkPassManager::updatePass(const QString& passId)
     auto p = pass(passId);
     if (!canUpdate(p)) {
         return;
-    // TODO actually check relevant time from the reservation, what's in the pass can be way too optimistic in reality
-    // meanwhile add a few hours buffer
-    if (relevantDate(p).addSecs(2 * 3600) < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
-        return;
+    }
 
     QNetworkRequest req(p->passUpdateUrl());
     req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
