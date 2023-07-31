@@ -123,7 +123,7 @@ private:
     KPublicTransport::Manager *m_ptMgr;
     std::vector<QString> m_reservations;
     mutable QHash <QString, LiveData> m_data;
-    QHash<QString, QDateTime> m_lastPassPollAttempt; // poll cooldown on error
+    QHash<QString, QDateTime> m_lastPollAttempt; // poll cooldown on error
     QHash<QString, QPointer<KNotification>> m_notifications;
     bool m_showNotificationsOnLockScreen = false;
 
