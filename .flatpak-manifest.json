@@ -178,6 +178,9 @@
                     "url": "https://invent.kde.org/libraries/kirigami-addons",
                     "branch": "master"
                 }
+            ],
+            "cleanup": [
+                "/lib/cmake"
             ]
         },
         {
@@ -355,6 +358,10 @@
                     "type": "dir",
                     "path": "."
                 }
+            ],
+            "config-opts": [
+                "-DCMAKE_DISABLE_FIND_PACKAGE_KF5KIO=ON",
+                "-DCMAKE_DISABLE_FIND_PACKAGE_KF5FileMetaData=ON"
             ],
             "cleanup": [
                 "/etc/xdg/*categories"
