@@ -27,7 +27,9 @@
                 "-DENABLE_CPP=OFF",
                 "-DENABLE_GLIB=OFF",
                 "-DENABLE_GOBJECT_INTROSPECTION=OFF",
-                "-DENABLE_UTILS=OFF"
+                "-DENABLE_UTILS=OFF",
+                "-DENABLE_QT5=OFF",
+                "-DENABLE_QT6=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -49,6 +51,7 @@
                     "cleanup": [
                         "/bin",
                         "/include",
+                        "/lib/*.a",
                         "/lib/openjpeg-*",
                         "/lib/pkgconfig"
                     ],
@@ -154,7 +157,8 @@
                         "/include",
                         "/lib/cmake",
                         "/mkspecs",
-                        "/etc/xdg/*categories"
+                        "/etc/xdg/*categories",
+                        "/share/qlogging-categories5"
                     ]
                 }
             ],
@@ -201,7 +205,8 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories"
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
             ]
         },
         {
@@ -222,7 +227,8 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories"
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
             ]
         },
         {
@@ -243,7 +249,8 @@
                 "/include",
                 "/lib/cmake",
                 "/mkspecs",
-                "/etc/xdg/*categories"
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
             ]
         },
         {
@@ -263,6 +270,7 @@
             ],
             "cleanup": [
                 "/include",
+                "/lib/*.a",
                 "/lib/cmake",
                 "/lib/pkgconfig",
                 "/share/ndk-modules"
@@ -364,7 +372,8 @@
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF5FileMetaData=ON"
             ],
             "cleanup": [
-                "/etc/xdg/*categories"
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
             ]
         }
     ]
