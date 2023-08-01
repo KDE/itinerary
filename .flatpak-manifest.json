@@ -29,7 +29,8 @@
                 "-DENABLE_GOBJECT_INTROSPECTION=OFF",
                 "-DENABLE_UTILS=OFF",
                 "-DENABLE_QT5=OFF",
-                "-DENABLE_QT6=OFF"
+                "-DENABLE_QT6=OFF",
+                "-DWITH_Cairo=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -46,7 +47,9 @@
                     "buildsystem": "cmake-ninja",
                     "builddir": true,
                     "config-opts": [
-                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                        "-DBUILD_STATIC_LIBS=OFF",
+                        "-DBUILD_CODEC=OFF"
                     ],
                     "cleanup": [
                         "/bin",
@@ -135,7 +138,8 @@
                         "/include",
                         "/lib/cmake",
                         "/mkspecs",
-                        "/etc/xdg/*categories"
+                        "/etc/xdg/*categories",
+                        "/share/qlogging-categories5"
                     ]
                 },
                 {
@@ -165,9 +169,10 @@
             "cleanup": [
                 "/include",
                 "/lib/cmake",
+                "/lib/libexec",
                 "/mkspecs",
                 "/etc/xdg/*categories",
-                "/lib/libexec"
+                "/share/qlogging-categories5"
             ]
         },
         {
@@ -254,6 +259,23 @@
             ]
         },
         {
+            "name": "khealthcertificate",
+            "config-opts": [
+                "-DENABLE_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/pim/khealthcertificate.git", "branch": "master"} ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
+            ]
+        },
+
+        {
             "name": "libQuotient",
             "buildsystem": "cmake-ninja",
             "sources": [
@@ -265,6 +287,7 @@
                 }
             ],
             "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
                 "-DQuotient_ENABLE_E2EE=ON",
                 "-DBUILD_TESTING=OFF"
             ],
@@ -368,6 +391,7 @@
                 }
             ],
             "config-opts": [
+                "-DBUILD_TESTING=OFF",
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF5KIO=ON",
                 "-DCMAKE_DISABLE_FIND_PACKAGE_KF5FileMetaData=ON"
             ],
