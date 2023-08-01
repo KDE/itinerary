@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-21 02:54+0000\n"
+"POT-Creation-Date: 2023-08-01 02:44+0000\n"
 "PO-Revision-Date: 2023-06-07 14:11-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -237,31 +237,31 @@ msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 msgid "Replace"
 msgstr "Substituir"
 
-#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:618
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:620
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Falha ao importar: %1"
 
-#: app/applicationcontroller.cpp:344
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Falha ao importar: arquivo muito grande."
 
-#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
-#: app/applicationcontroller.cpp:690
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
+#: app/applicationcontroller.cpp:692
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Uma reserva importada."
 msgstr[1] "%1 reservas importadas."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Certificado de saúde importado ."
 
-#: app/applicationcontroller.cpp:448
+#: app/applicationcontroller.cpp:450
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "One pass imported."
@@ -269,28 +269,28 @@ msgid_plural "%1 passes imported."
 msgstr[0] "Nada a importar."
 msgstr[1] "Nada a importar."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:453
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Pass imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:487
+#: app/applicationcontroller.cpp:489
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nada a importar."
 
-#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Falha na exportação: %1"
 
-#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Export completed."
 msgstr "Exportação concluída."
 
-#: app/applicationcontroller.cpp:643
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid "Import completed."
 msgstr "Importação concluída."
@@ -1186,7 +1186,7 @@ msgstr "Excluir"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1854,13 +1854,13 @@ msgstr[1] "%1 alterações"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:651
+#: app/livedatamanager.cpp:668
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight %1 to %2:"
 msgstr "Voo %1 de %2 para %3"
 
-#: app/livedatamanager.cpp:657
+#: app/livedatamanager.cpp:674
 #, kde-format
 msgid "Itinerary change"
 msgstr "Alteração no itinerário"
@@ -2066,22 +2066,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:314
+#: app/main.cpp:328
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente de viagens digital"
 
-#: app/main.cpp:315
+#: app/main.cpp:329
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 A comunidade KDE"
 
-#: app/main.cpp:322
+#: app/main.cpp:336
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:327
+#: app/main.cpp:341
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Arquivo PkPass ou JSON-LD a importar."

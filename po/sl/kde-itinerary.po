@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-21 02:54+0000\n"
+"POT-Creation-Date: 2023-08-01 02:44+0000\n"
 "PO-Revision-Date: 2023-07-17 06:43+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -232,19 +232,19 @@ msgstr ""
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:618
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:620
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:344
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
-#: app/applicationcontroller.cpp:690
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
+#: app/applicationcontroller.cpp:692
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -253,12 +253,12 @@ msgstr[1] "%1 uvoženi rezervaciji."
 msgstr[2] "%1 uvožene rezervacije."
 msgstr[3] "%1 uvoženih rezervacij."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Zdravstvena potrdila uvožena."
 
-#: app/applicationcontroller.cpp:448
+#: app/applicationcontroller.cpp:450
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -267,27 +267,27 @@ msgstr[1] "%1 vozovnici uvoženi."
 msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "Pass imported."
 msgstr "Vozovnica uvožena."
 
-#: app/applicationcontroller.cpp:487
+#: app/applicationcontroller.cpp:489
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ničesar uvoženega."
 
-#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:643
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -1130,7 +1130,7 @@ msgstr "Zbriši vozovnico"
 msgid "Do you really want to delete this pass?"
 msgstr "Ali res želite izbrisati to vozovnico?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1790,12 +1790,12 @@ msgstr[3] "%1 sprememb"
 msgid "Click to extend"
 msgstr "Klikni za razširitev"
 
-#: app/livedatamanager.cpp:651
+#: app/livedatamanager.cpp:668
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Let iz %1 v %2:"
 
-#: app/livedatamanager.cpp:657
+#: app/livedatamanager.cpp:674
 #, kde-format
 msgid "Itinerary change"
 msgstr "Sprememba itinerarja"
@@ -1990,22 +1990,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:314
+#: app/main.cpp:328
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitalni potovalni pomočnik"
 
-#: app/main.cpp:315
+#: app/main.cpp:329
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 Skupnost KDE"
 
-#: app/main.cpp:322
+#: app/main.cpp:336
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Odpri itinerar na dani strani"
 
-#: app/main.cpp:327
+#: app/main.cpp:341
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Datoteka PkPass ali JSON-LD za uvoz."

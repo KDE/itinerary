@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-21 02:54+0000\n"
+"POT-Creation-Date: 2023-08-01 02:44+0000\n"
 "PO-Revision-Date: 2023-07-17 15:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -233,58 +233,58 @@ msgstr ""
 msgid "Replace"
 msgstr "Değiştir"
 
-#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:618
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:620
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:344
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
-#: app/applicationcontroller.cpp:690
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
+#: app/applicationcontroller.cpp:692
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Bir rezervasyon içe aktarıldı."
 msgstr[1] "%1 rezervasyon içe aktarıldı."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Sağlık sertifikası içe aktarıldı."
 
-#: app/applicationcontroller.cpp:448
+#: app/applicationcontroller.cpp:450
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Bir kart içe aktarıldı."
 msgstr[1] "%1 kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:487
+#: app/applicationcontroller.cpp:489
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:643
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -1127,7 +1127,7 @@ msgstr "Kartı Sil"
 msgid "Do you really want to delete this pass?"
 msgstr "Bu kartı silmeyi gerçekten istiyor musunuz?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:157
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:157
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Yol Kılavuzu"
@@ -1783,12 +1783,12 @@ msgstr[1] "%1 aktarma"
 msgid "Click to extend"
 msgstr "Genişletmek için tıkla"
 
-#: app/livedatamanager.cpp:651
+#: app/livedatamanager.cpp:668
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 uçuşu, %2:"
 
-#: app/livedatamanager.cpp:657
+#: app/livedatamanager.cpp:674
 #, kde-format
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"
@@ -1984,22 +1984,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:314
+#: app/main.cpp:328
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Sayısal Yolculuk Asistanı"
 
-#: app/main.cpp:315
+#: app/main.cpp:329
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Telif hakkı © 2018-%1 KDE Topluluğu"
 
-#: app/main.cpp:322
+#: app/main.cpp:336
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Verilen sayfadaki yolcu belgesini aç"
 
-#: app/main.cpp:327
+#: app/main.cpp:341
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "İçe aktarılacak PkPass veya JSON-LD dosyası."
