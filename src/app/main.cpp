@@ -98,6 +98,8 @@
 #include <QDir>
 #include <QGuiApplication>
 #include <QIcon>
+#include <QNetworkAccessManager>
+#include <QStandardPaths>
 #include <QWindow>
 
 #if !HAVE_MATRIX
@@ -260,6 +262,18 @@ void registerApplicationSingletons()
 #undef REGISTER_SINGLETON_GADGET_INSTANCE
 #undef REGISTER_SINGLETON_GADGET_FACTORY
 
+static QNetworkAccessManager *namFactory()
+{
+    static QNetworkAccessManager *s_nam = nullptr;
+    if (!s_nam) {
+        s_nam = new QNetworkAccessManager(QCoreApplication::instance());
+        s_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
+        s_nam->setStrictTransportSecurityEnabled(true);
+        s_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
+    }
+    return s_nam;
+}
+
 void handleCommandLineArguments(ApplicationController *appController, const QStringList &args, bool isTemporary, const QString &page)
 {
     for (const auto &file : args) {
@@ -339,6 +353,7 @@ int main(int argc, char **argv)
     s_settings = &settings;
 
     PkPassManager pkPassMgr;
+    pkPassMgr.setNetworkAccessManagerFactory(namFactory);
     s_pkPassManager = &pkPassMgr;
 
     ReservationManager resMgr;
@@ -411,6 +426,7 @@ int main(int argc, char **argv)
     s_matrixController = &matrixController;
 
     ApplicationController appController;
+    appController.setNetworkAccessManagerFactory(namFactory);
     appController.setReservationManager(&resMgr);
     appController.setPkPassManager(&pkPassMgr);
     appController.setDocumentManager(&docMgr);

@@ -5,6 +5,7 @@
 */
 
 #include "testhelper.h"
+#include "mocknetworkaccessmanager.h"
 
 #include <livedata.h>
 #include <livedatamanager.h>
@@ -27,17 +28,12 @@
 
 using namespace KItinerary;
 
+static MockNetworkAccessManager s_nam;
+static QNetworkAccessManager* namFactory() { return &s_nam; }
+
 class LiveDataManagerTest : public QObject
 {
     Q_OBJECT
-private:
-    QByteArray readFile(const QString &fn)
-    {
-        QFile f(fn);
-        f.open(QFile::ReadOnly);
-        return f.readAll();
-    }
-
 private Q_SLOTS:
     void initTestCase()
     {
@@ -111,10 +107,11 @@ private Q_SLOTS:
         QCOMPARE(ldm.nextPollTimeForReservation(flight), std::numeric_limits<int>::max());
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg1), 0); // no current data available, so we want to poll ASAP
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 0);
+        QTest::qWait(0);
         QCOMPARE(ldm.nextPollTime(), 0);
         QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QString());
 
-        const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
+        const auto leg1Arr = KPublicTransport::Stopover::fromJson(QJsonDocument::fromJson(Test::readFile(s(SOURCE_DIR "/data/livedata/randa2017-leg1-arrival.json"))).object());
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg1);
         QCOMPARE(arrivalUpdateSpy.size(), 1);
         QCOMPARE(arrivalUpdateSpy.at(0).at(0).toString(), trainLeg1);
@@ -137,6 +134,54 @@ private Q_SLOTS:
         ldm.stopoverQueryFinished({ leg1Arr }, LiveData::Arrival, trainLeg2);
         QCOMPARE(ldm.departure(trainLeg2).stopPoint().isEmpty(), true);
         QCOMPARE(ldm.nextPollTimeForReservation(trainLeg2), 15 * 60 * 1000);
+    }
+
+    void testPkPassUpdate()
+    {
+        PkPassManager pkPassMgr;
+        QSignalSpy passUpdateSpy(&pkPassMgr, &PkPassManager::passUpdated);
+        pkPassMgr.setNetworkAccessManagerFactory(namFactory);
+        Test::clearAll(&pkPassMgr);
+        ReservationManager resMgr;
+        Test::clearAll(&resMgr);
+
+        LiveData::clearStorage();
+        LiveDataManager ldm;
+        ldm.setPkPassManager(&pkPassMgr);
+        ldm.setPollingEnabled(true);
+        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 0, 0}, QTimeZone("Europe/Berlin"));
+        ldm.setReservationManager(&resMgr);
+
+        auto ctrl = Test::makeAppController();
+        ctrl->setPkPassManager(&pkPassMgr);
+        ctrl->setReservationManager(&resMgr);
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+
+        QCOMPARE(resMgr.batches().size(), 1);
+        const auto resId = resMgr.batches()[0];
+        QCOMPARE(ldm.isRelevant(resId), true);
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QTest::qWait(0);
+
+        QCOMPARE(pkPassMgr.passes().size(), 1);
+        const auto pass = pkPassMgr.pass(pkPassMgr.passes()[0]);
+        QVERIFY(pass);
+        QVERIFY(PkPassManager::canUpdate(pass));
+
+        QCOMPARE(s_nam.requests.size(), 1);
+        QTest::qWait(0); // download failed
+        QCOMPARE(passUpdateSpy.size(), 0);
+        QVERIFY(ldm.nextPollTimeForReservation(resId) > 0);
+        QVERIFY(ldm.nextPollTimeForReservation(resId) <= 30000);
+        QVERIFY(ldm.pollCooldown(resId) > 0);
+        QVERIFY(ldm.pollCooldown(resId) <= 30000);
+        QVERIFY(ldm.nextPollTime() > 0);
+        QVERIFY(ldm.nextPollTime() <= 30000);
+
+        ldm.m_unitTestTime = QDateTime({2023, 7, 14}, {15, 5, 0}, QTimeZone("Europe/Berlin"));
+        QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
+        QCOMPARE(ldm.pollCooldown(resId), 0);
+        QCOMPARE(ldm.nextPollTime(), 0);
     }
 };
 

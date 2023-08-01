@@ -109,6 +109,9 @@ private:
     int nextPollTime() const;
     int nextPollTimeForReservation(const QString &resId) const;
 
+    /** Poll cooldown in msecs (ie. delay the next poll on errors). */
+    int pollCooldown(const QString &redId) const;
+
     /** Last time we queried any kind of departure information for this reservation batch. */
     QDateTime lastDeparturePollTime(const QString &batchId, const QVariant &res) const;
 
@@ -120,6 +123,7 @@ private:
     KPublicTransport::Manager *m_ptMgr;
     std::vector<QString> m_reservations;
     mutable QHash <QString, LiveData> m_data;
+    QHash<QString, QDateTime> m_lastPollAttempt; // poll cooldown on error
     QHash<QString, QPointer<KNotification>> m_notifications;
     bool m_showNotificationsOnLockScreen = false;
 

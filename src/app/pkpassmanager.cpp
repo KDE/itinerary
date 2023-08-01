@@ -32,6 +32,11 @@ PkPassManager::PkPassManager(QObject* parent)
 
 PkPassManager::~PkPassManager() = default;
 
+void PkPassManager::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+{
+    m_namFactory = namFactory;
+}
+
 QVector<QString> PkPassManager::passes() const
 {
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes");
@@ -201,18 +206,15 @@ void PkPassManager::removePass(const QString& passId)
 void PkPassManager::updatePass(const QString& passId)
 {
     auto p = pass(passId);
-    if (!p || p->webServiceUrl().isEmpty() || p->authenticationToken().isEmpty())
+    if (!canUpdate(p)) {
         return;
-    // TODO actually check relevant time from the reservation, what's in the pass can be way too optimistic in reality
-    // meanwhile add a few hours buffer
-    if (relevantDate(p).addSecs(2 * 3600) < QDateTime::currentDateTimeUtc()) // TODO check expiration date and voided property
-        return;
+    }
 
     QNetworkRequest req(p->passUpdateUrl());
     req.setRawHeader("Authorization", "ApplePass " + p->authenticationToken().toUtf8());
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     qDebug() << req.url();
-    auto reply = nam()->get(req);
+    auto reply = m_namFactory()->get(req);
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
         reply->deleteLater();
         qDebug() << reply->errorString();
@@ -244,6 +246,11 @@ QDateTime PkPassManager::relevantDate(KPkPass::Pass *pass)
     return pass->expirationDate();
 }
 
+bool PkPassManager::canUpdate(KPkPass::Pass *pass)
+{
+    return pass && pass->webServiceUrl().isValid() && !pass->authenticationToken().isEmpty();
+}
+
 QByteArray PkPassManager::rawData(const QString &passId) const
 {
     const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
@@ -253,17 +260,6 @@ QByteArray PkPassManager::rawData(const QString &passId) const
         return {};
     }
     return f.readAll();
-}
-
-QNetworkAccessManager* PkPassManager::nam()
-{
-    if (!m_nam) {
-        m_nam = new QNetworkAccessManager(this);
-        m_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
-        m_nam->setStrictTransportSecurityEnabled(true);
-        m_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
-    }
-    return m_nam;
 }
 
 #include "moc_pkpassmanager.cpp"

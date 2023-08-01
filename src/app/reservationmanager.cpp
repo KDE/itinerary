@@ -8,7 +8,6 @@
 
 #include "jsonio.h"
 #include "logging.h"
-#include "pkpassmanager.h"
 #include "reservationhelper.h"
 
 #include <kitinerary_version.h>

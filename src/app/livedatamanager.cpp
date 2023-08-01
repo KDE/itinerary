@@ -46,6 +46,8 @@
 
 using namespace KItinerary;
 
+static constexpr const int POLL_COOLDOWN_ON_ERROR = 30; // seconds
+
 LiveDataManager::LiveDataManager(QObject *parent)
     : QObject(parent)
     , m_ptMgr(new KPublicTransport::Manager(this))
@@ -73,7 +75,7 @@ void LiveDataManager::setReservationManager(ReservationManager *resMgr)
 {
     assert(m_pkPassMgr);
     m_resMgr = resMgr;
-    connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded);
+    connect(resMgr, &ReservationManager::batchAdded, this, &LiveDataManager::batchAdded, Qt::QueuedConnection);
     connect(resMgr, &ReservationManager::batchChanged, this, &LiveDataManager::batchChanged);
     connect(resMgr, &ReservationManager::batchContentChanged, this, &LiveDataManager::batchChanged);
     connect(resMgr, &ReservationManager::batchRenamed, this, &LiveDataManager::batchRenamed);
@@ -168,6 +170,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryJourney(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { journeyQueryFinished(reply, resId); });
+        m_lastPollAttempt.insert(resId, now());
         return;
     }
 
@@ -178,6 +181,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Departure, resId); });
+        m_lastPollAttempt.insert(resId, now());
     }
 
     if (!arrived) {
@@ -187,6 +191,7 @@ void LiveDataManager::checkReservation(const QVariant &res, const QString& resId
         PublicTransport::selectBackends(req, m_ptMgr, res);
         auto reply = m_ptMgr->queryStopover(req);
         connect(reply, &Reply::finished, this, [this, resId, reply]() { stopoverQueryFinished(reply, LiveData::Arrival, resId); });
+        m_lastPollAttempt.insert(resId, now());
     }
 }
 
@@ -425,7 +430,7 @@ bool LiveDataManager::isRelevant(const QString &resId) const
         return false;
     }
     const auto pass = m_pkPassMgr->pass(passId);
-    return pass && pass->webServiceUrl().isValid();
+    return PkPassManager::canUpdate(pass);
 }
 
 void LiveDataManager::batchAdded(const QString &resId)
@@ -495,6 +500,7 @@ void LiveDataManager::batchRemoved(const QString &resId)
     cancelNotification(resId);
     LiveData::remove(resId);
     m_data.remove(resId);
+    m_lastPollAttempt.remove(resId);
 }
 
 void LiveDataManager::poll()
@@ -516,6 +522,7 @@ void LiveDataManager::pollForUpdates(bool force)
         if (hasArrived(*it, res)) {
             cancelNotification(*it);
             it = m_reservations.erase(it);
+            m_lastPollAttempt.remove(batchId);
             continue;
         }
         ++it;
@@ -535,6 +542,7 @@ void LiveDataManager::pollForUpdates(bool force)
             const auto res = m_resMgr->reservation(resId);
             const auto passId = m_pkPassMgr->passId(res);
             if (!passId.isEmpty()) {
+                m_lastPollAttempt.insert(batchId, now());
                 m_pkPassMgr->updatePass(passId);
             }
         }
@@ -594,10 +602,10 @@ int LiveDataManager::nextPollTimeForReservation(const QString& resId) const
             lastRelevantPoll = lastDeparturePoll;
         }
     }
-    const int lastPollDist = !lastRelevantPoll.isValid()
+    const int lastPollDist = (!lastRelevantPoll.isValid() || lastRelevantPoll > now)
         ? MAX_POLL_INTERVAL // no poll yet == long time ago
         : lastRelevantPoll.secsTo(now);
-    return std::max((it->pollInterval - lastPollDist) * 1000, 0); // we need msecs
+    return std::max((it->pollInterval - lastPollDist) * 1000, pollCooldown(resId)); // we need msecs
 }
 
 QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const QVariant &res) const
@@ -621,6 +629,15 @@ QDateTime LiveDataManager::lastDeparturePollTime(const QString &batchId, const Q
     }
 
     return dt;
+}
+
+int LiveDataManager::pollCooldown(const QString &resId) const
+{
+    const auto lastPollTime = m_lastPollAttempt.value(resId);
+    if (!lastPollTime.isValid()) {
+        return 0;
+    }
+    return std::clamp<int>(POLL_COOLDOWN_ON_ERROR - lastPollTime.secsTo(now()), 0, POLL_COOLDOWN_ON_ERROR) * 1000;
 }
 
 void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &changes)

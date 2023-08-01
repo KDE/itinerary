@@ -5,6 +5,7 @@
 */
 
 #include "testhelper.h"
+#include "mocknetworkaccessmanager.h"
 
 #include <pkpassmanager.h>
 
@@ -20,6 +21,9 @@ void initLocale()
 }
 
 Q_CONSTRUCTOR_FUNCTION(initLocale)
+
+static MockNetworkAccessManager s_nam;
+static QNetworkAccessManager* namFactory() { return &s_nam; }
 
 class PkPassManagerTest : public QObject
 {
@@ -75,6 +79,30 @@ private Q_SLOTS:
         QCOMPARE(rmSpy.at(0).at(0).toString(), passId);
         QVERIFY(mgr.passes().isEmpty());
         QCOMPARE(mgr.pass(passId), nullptr);
+    }
+
+    void testCaptivePortalFailure()
+    {
+        PkPassManager mgr;
+        mgr.setNetworkAccessManagerFactory(namFactory);
+        Test::clearAll(&mgr);
+        QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
+        QSignalSpy updateSpy(&mgr, &PkPassManager::passUpdated);
+
+        mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+        QCOMPARE(mgr.passes().size(), 1);
+        QCOMPARE(addSpy.size(), 1);
+        addSpy.clear();
+        const auto passId = mgr.passes()[0];
+        QVERIFY(mgr.canUpdate(mgr.pass(passId)));
+
+        s_nam.replies.push({QNetworkReply::NoError, 200, QByteArray("hello from the captive portal!"), QString()});
+
+        mgr.updatePass(passId);
+        QTest::qWait(0);
+
+        QCOMPARE(addSpy.size(), 0);
+        QCOMPARE(updateSpy.size(), 0);
     }
 };
 
