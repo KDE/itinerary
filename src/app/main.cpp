@@ -338,7 +338,7 @@ int main(int argc, char **argv)
     QCommandLineOption selfTestOpt(QStringLiteral("self-test"), QStringLiteral("internal, for automated testing"));
     parser.addOption(selfTestOpt);
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument(QStringLiteral("file"), i18n("PkPass or JSON-LD file to import."));
+    parser.addPositionalArgument(QStringLiteral("file"), i18n("Files or URLs to import."));
     parser.process(app);
     aboutData.processCommandLine(&parser);
 #if HAVE_KCRASH
