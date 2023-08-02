@@ -19,15 +19,15 @@ Kirigami.ScrollablePage {
     required property string passId
     required property var ticket
 
+    readonly property bool isValidInput: ticketNameEdit.text !== ''
+
     actions.main: Kirigami.Action {
         text: i18n("Save")
         icon.name: "document-save"
         enabled: root.isValidInput
         onTriggered: {
             let newTicket = PassManager.pass(root.passId);
-            if (ticketNameEdit.text !== "") {
-                newTicket.name = ticketNameEdit.text;
-            }
+            newTicket.name = ticketNameEdit.text;
 
             PassManager.update(root.passId, newTicket);
             applicationWindow().pageStack.pop();

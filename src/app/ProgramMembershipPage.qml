@@ -18,9 +18,22 @@ Kirigami.ScrollablePage {
     property string passId
     property var programMembership
 
+    Connections {
+        target: PassManager
+        function onPassChanged(passId) {
+            if (passId == root.passId)
+                root.programMembership = PassManager.pass(passId);
+        }
+    }
+
     BarcodeScanModeController {
         id: scanModeController
         page: root
+    }
+
+    Component {
+        id: editor
+        App.ProgramMembershipEditor {}
     }
 
     Kirigami.PromptDialog {
@@ -134,6 +147,13 @@ Kirigami.ScrollablePage {
                     title: i18n("Actions")
                 }
 
+                MobileForm.FormButtonDelegate {
+                    action: Kirigami.Action {
+                        icon.name: "document-edit"
+                        text: i18n("Edit")
+                        onTriggered: applicationWindow().pageStack.push(editor, {passId: root.passId, programMembership: root.programMembership});
+                    }
+                }
                 MobileForm.FormButtonDelegate {
                     action: Kirigami.Action {
                         icon.name: "edit-delete"

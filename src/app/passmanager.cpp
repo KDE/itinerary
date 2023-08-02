@@ -337,9 +337,12 @@ void PassManager::update(const QString &passId, const QVariant &pass)
     }
     (*it).data = pass;
     write((*it).data, (*it).id);
-    const auto idx = index(std::distance(m_entries.begin(), it), 0);
-    Q_EMIT dataChanged(idx, idx);
     Q_EMIT passChanged((*it).id);
+
+    // the updated pass might have changed properties used for sorting here
+    beginResetModel();
+    std::sort(m_entries.begin(), m_entries.end(), PassComparator(m_baseTime));
+    endResetModel();
 }
 
 bool PassManager::remove(const QString &passId)
