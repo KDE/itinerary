@@ -105,6 +105,52 @@
             ]
         },
         {
+            "name": "kpkpass",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kpkpass",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
+            ]
+        },
+        {
+            "name": "kmime",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF",
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/pim/kmime",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/cmake",
+                "/mkspecs",
+                "/etc/xdg/*categories",
+                "/share/qlogging-categories5"
+            ]
+        },
+        {
             "name": "kitinerary",
             "config-opts": [
                 "-DENABLE_TESTING=OFF"
@@ -118,54 +164,6 @@
                     "branch": "master"
                 }
             ],
-            "modules": [
-                {
-                    "name": "kpkpass",
-                    "config-opts": [
-                        "-DBUILD_TESTING=OFF",
-                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-                    ],
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://invent.kde.org/pim/kpkpass",
-                            "branch": "master"
-                        }
-                    ],
-                    "cleanup": [
-                        "/include",
-                        "/lib/cmake",
-                        "/mkspecs",
-                        "/etc/xdg/*categories",
-                        "/share/qlogging-categories5"
-                    ]
-                },
-                {
-                    "name": "kmime",
-                    "config-opts": [
-                        "-DBUILD_TESTING=OFF",
-                        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
-                    ],
-                    "buildsystem": "cmake-ninja",
-                    "builddir": true,
-                    "sources": [
-                        {
-                            "type": "git",
-                            "url": "https://invent.kde.org/pim/kmime",
-                            "branch": "master"
-                        }
-                    ],
-                    "cleanup": [
-                        "/include",
-                        "/lib/cmake",
-                        "/mkspecs",
-                        "/etc/xdg/*categories",
-                        "/share/qlogging-categories5"
-                    ]
-                }
-            ],
             "cleanup": [
                 "/include",
                 "/lib/cmake",
@@ -173,23 +171,6 @@
                 "/mkspecs",
                 "/etc/xdg/*categories",
                 "/share/qlogging-categories5"
-            ]
-        },
-        {
-            "name": "kirigamiaddons",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF"
-            ],
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/libraries/kirigami-addons",
-                    "branch": "master"
-                }
-            ],
-            "cleanup": [
-                "/lib/cmake"
             ]
         },
         {
@@ -274,7 +255,24 @@
                 "/share/qlogging-categories5"
             ]
         },
-
+        {
+            "name": "kirigami-addons",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kirigami-addons",
+                    "branch": "master"
+                }
+            ],
+            "cleanup": [
+                "/lib/cmake"
+            ]
+        },
         {
             "name": "libQuotient",
             "buildsystem": "cmake-ninja",
