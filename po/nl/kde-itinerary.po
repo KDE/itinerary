@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:48+0000\n"
+"POT-Creation-Date: 2023-08-02 00:48+0000\n"
 "PO-Revision-Date: 2023-07-17 11:15+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -234,58 +234,58 @@ msgstr ""
 msgid "Replace"
 msgstr "Vervangen"
 
-#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:618
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:620
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importeren mislukt: %1"
 
-#: app/applicationcontroller.cpp:344
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Importeren is mislukt: bestand is te groot."
 
-#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
-#: app/applicationcontroller.cpp:690
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
+#: app/applicationcontroller.cpp:692
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Eén reservering geïmporteerd."
 msgstr[1] "%1 reserveringen geïmporteerd."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Gezondheidscertificaten geïmporteerd."
 
-#: app/applicationcontroller.cpp:448
+#: app/applicationcontroller.cpp:450
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Eén pas geïmporteerd."
 msgstr[1] "%1 passen geïmporteerd."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "Pass imported."
 msgstr "Pas geïmporteerd."
 
-#: app/applicationcontroller.cpp:487
+#: app/applicationcontroller.cpp:489
 #, kde-format
 msgid "Nothing imported."
 msgstr "Niets geïmporteerd."
 
-#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Exporteren is mislukt: %1"
 
-#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Export completed."
 msgstr "Exporteren voltooid."
 
-#: app/applicationcontroller.cpp:643
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid "Import completed."
 msgstr "Importeren voltooid."
@@ -1128,7 +1128,7 @@ msgstr "Pas verwijderen"
 msgid "Do you really want to delete this pass?"
 msgstr "Wilt u deze pas verwijderen?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:159
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1784,12 +1784,12 @@ msgstr[1] "%1 keer overstappen"
 msgid "Click to extend"
 msgstr "Klik om uit te breiden"
 
-#: app/livedatamanager.cpp:650
+#: app/livedatamanager.cpp:667
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vlucht %1 naar %2:"
 
-#: app/livedatamanager.cpp:656
+#: app/livedatamanager.cpp:673
 #, kde-format
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
@@ -1984,25 +1984,25 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:314
+#: app/main.cpp:328
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitale reisassistent"
 
-#: app/main.cpp:315
+#: app/main.cpp:329
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 De KDE gemeenschap"
 
-#: app/main.cpp:322
+#: app/main.cpp:336
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Itinerary (reisroute) openen op de gegeven pagina"
 
-#: app/main.cpp:327
+#: app/main.cpp:341
 #, kde-format
-msgid "PkPass or JSON-LD file to import."
-msgstr "Te importeren PkPass- of JSON-LD-bestand."
+msgid "Files or URLs to import."
+msgstr ""
 
 #: app/main.qml:57
 #, kde-format
@@ -3369,6 +3369,9 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgid "PkPass or JSON-LD file to import."
+#~ msgstr "Te importeren PkPass- of JSON-LD-bestand."
 
 #~ msgid "Application"
 #~ msgstr "Toepassing"

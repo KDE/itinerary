@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 00:48+0000\n"
+"POT-Creation-Date: 2023-08-02 00:48+0000\n"
 "PO-Revision-Date: 2023-06-17 12:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -236,58 +236,58 @@ msgstr ""
 msgid "Replace"
 msgstr "Replace"
 
-#: app/applicationcontroller.cpp:339 app/applicationcontroller.cpp:603
-#: app/applicationcontroller.cpp:618
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
+#: app/applicationcontroller.cpp:620
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import failed: %1"
 
-#: app/applicationcontroller.cpp:344
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Import failed: File too large."
 
-#: app/applicationcontroller.cpp:426 app/applicationcontroller.cpp:680
-#: app/applicationcontroller.cpp:690
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
+#: app/applicationcontroller.cpp:692
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "One reservation imported."
 msgstr[1] "%1 reservations imported."
 
-#: app/applicationcontroller.cpp:433
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Health certificate imported."
 
-#: app/applicationcontroller.cpp:448
+#: app/applicationcontroller.cpp:450
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "One pass imported."
 msgstr[1] "%1 passes imported."
 
-#: app/applicationcontroller.cpp:451
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "Pass imported."
 msgstr "Pass imported."
 
-#: app/applicationcontroller.cpp:487
+#: app/applicationcontroller.cpp:489
 #, kde-format
 msgid "Nothing imported."
 msgstr "Nothing imported."
 
-#: app/applicationcontroller.cpp:556 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Export failed: %1"
 
-#: app/applicationcontroller.cpp:570 app/applicationcontroller.cpp:595
+#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
 #, kde-format
 msgid "Export completed."
 msgstr "Export completed."
 
-#: app/applicationcontroller.cpp:643
+#: app/applicationcontroller.cpp:645
 #, kde-format
 msgid "Import completed."
 msgstr "Import completed."
@@ -1138,7 +1138,7 @@ msgstr "Delete Pass"
 msgid "Do you really want to delete this pass?"
 msgstr "Do you really want to delete this pass?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:307 app/main.qml:21 app/main.qml:159
+#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1797,13 +1797,13 @@ msgstr[1] "%1 changes"
 msgid "Click to extend"
 msgstr ""
 
-#: app/livedatamanager.cpp:650
+#: app/livedatamanager.cpp:667
 #, fuzzy, kde-format
 #| msgid "Flight %1 from %2 to %3"
 msgid "Flight %1 to %2:"
 msgstr "Flight %1 from %2 to %3"
 
-#: app/livedatamanager.cpp:656
+#: app/livedatamanager.cpp:673
 #, kde-format
 msgid "Itinerary change"
 msgstr "Itinerary change"
@@ -1999,25 +1999,25 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:314
+#: app/main.cpp:328
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digital Travel Assistant"
 
-#: app/main.cpp:315
+#: app/main.cpp:329
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 The KDE Community"
 
-#: app/main.cpp:322
+#: app/main.cpp:336
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Open Itinerary on the given page"
 
-#: app/main.cpp:327
+#: app/main.cpp:341
 #, kde-format
-msgid "PkPass or JSON-LD file to import."
-msgstr "PkPass or JSON-LD file to import."
+msgid "Files or URLs to import."
+msgstr ""
 
 #: app/main.qml:57
 #, kde-format
@@ -3385,6 +3385,9 @@ msgstr "Logging in"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 from %3 to %4 on %5"
+
+#~ msgid "PkPass or JSON-LD file to import."
+#~ msgstr "PkPass or JSON-LD file to import."
 
 #~ msgid "Application"
 #~ msgstr "Application"
