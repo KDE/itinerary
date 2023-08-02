@@ -153,7 +153,7 @@
         {
             "name": "kitinerary",
             "config-opts": [
-                "-DENABLE_TESTING=OFF"
+                "-DBUILD_TESTING=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -176,7 +176,7 @@
         {
             "name": "kpublictransport",
             "config-opts": [
-                "-DENABLE_TESTING=OFF"
+                "-DBUILD_TESTING=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -198,7 +198,7 @@
         {
             "name": "kopeninghours",
             "config-opts": [
-                "-DENABLE_TESTING=OFF"
+                "-DBUILD_TESTING=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -220,7 +220,7 @@
         {
             "name": "kosmindoormap",
             "config-opts": [
-                "-DENABLE_TESTING=OFF"
+                "-DBUILD_TESTING=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -242,7 +242,7 @@
         {
             "name": "khealthcertificate",
             "config-opts": [
-                "-DENABLE_TESTING=OFF"
+                "-DBUILD_TESTING=OFF"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
