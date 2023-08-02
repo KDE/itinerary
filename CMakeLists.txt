@@ -135,8 +135,10 @@ else()
 endif()
 
 add_subdirectory(src)
-add_subdirectory(autotests)
-add_subdirectory(tests)
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
+endif()
 
 ecm_qt_install_logging_categories(
     EXPORT ITINERARY
