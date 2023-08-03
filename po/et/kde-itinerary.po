@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -110,7 +110,8 @@ msgstr "Lisa eelnev transfeer"
 msgid "Add transfer after"
 msgstr "Lisa järgnev transfeer"
 
-#: app/ActionsCard.qml:55 app/TicketPage.qml:159
+#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:153
+#: app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Muuda"
@@ -124,7 +125,7 @@ msgstr "Lisa dokument ..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/ProgramMembershipPage.qml:49 app/ProgramMembershipPage.qml:160
 #: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
@@ -168,7 +169,7 @@ msgstr "Kustuta dokument"
 msgid "Do you really want to delete this event?"
 msgstr "Kas tõesti kustutada see sündmus?"
 
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:153
 #, fuzzy, kde-format
 #| msgid "Application"
@@ -397,7 +398,7 @@ msgstr "Bussipilet"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:61 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, fuzzy, kde-format
 #| msgid "In barcode scanning mode"
 msgid "Barcode Scan Mode"
@@ -789,7 +790,8 @@ msgstr ""
 msgid "Download failed: %1"
 msgstr "Laadi alla"
 
-#: app/EditorPage.qml:38 app/TicketEditor.qml:23
+#: app/EditorPage.qml:38 app/ProgramMembershipEditor.qml:26
+#: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
 msgstr "Salvesta"
@@ -1215,13 +1217,13 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(oli: %1)"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:42
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Pass"
 msgstr "Kustuta"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this pass?"
@@ -2498,14 +2500,15 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr ""
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:61
+#: app/TicketPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Nimi:"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
-#: app/TicketPage.qml:126
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:85
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Number"
@@ -2517,25 +2520,48 @@ msgstr "Järjekorranumber:"
 msgid "Show program pass"
 msgstr "Näita pardakaarti"
 
-#: app/ProgramMembershipPage.qml:17
+#: app/ProgramMembershipEditor.qml:17
 #, kde-format
-msgid "Program Membership"
+msgid "Edit Program Membership"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:91
+#: app/ProgramMembershipEditor.qml:56
+#, kde-format
+msgid "Program"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:64
+#, kde-format
+msgid "Program name must not be empty."
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:74
+#, fuzzy, kde-format
+#| msgid "Sequence Number:"
+msgid "Membership"
+msgstr "Järjekorranumber:"
+
+#: app/ProgramMembershipEditor.qml:79 app/ProgramMembershipPage.qml:104
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Member"
 msgstr "Järjekorranumber:"
 
-#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
+#: app/ProgramMembershipEditor.qml:92 app/ProgramMembershipPage.qml:121
+#: app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr ""
 
-#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
+#: app/ProgramMembershipEditor.qml:99 app/ProgramMembershipPage.qml:126
+#: app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
+msgstr ""
+
+#: app/ProgramMembershipPage.qml:17
+#, kde-format
+msgid "Program Membership"
 msgstr ""
 
 #: app/publictransport.cpp:225 app/publictransport.cpp:252

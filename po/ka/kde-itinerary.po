@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:48+0000\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
 "PO-Revision-Date: 2023-07-18 05:47+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -107,7 +107,8 @@ msgstr "დაამატეთ გადაჯდომა მანამდ�
 msgid "Add transfer after"
 msgstr "დაამატეთ გადაჯდომა შემდეგ"
 
-#: app/ActionsCard.qml:55 app/TicketPage.qml:159
+#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:153
+#: app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "ჩასწორება"
@@ -120,7 +121,7 @@ msgstr "კალენდარში ჩამატება..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/ProgramMembershipPage.qml:49 app/ProgramMembershipPage.qml:160
 #: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
@@ -162,7 +163,7 @@ msgstr "მოვლენის წაშლა"
 msgid "Do you really want to delete this event?"
 msgstr "მართლა გნებავთ ამ მოვლენის წაშლა?"
 
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
@@ -370,7 +371,7 @@ msgstr "გემის ბილეთი"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:61 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "შტრიხკოდის სკანირების რეჟიმი"
@@ -727,7 +728,8 @@ msgstr "ქსელის შეცდომა: %1"
 msgid "Download failed: %1"
 msgstr "გადმოწერის შეცდომა: %1"
 
-#: app/EditorPage.qml:38 app/TicketEditor.qml:23
+#: app/EditorPage.qml:38 app/ProgramMembershipEditor.qml:26
+#: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
@@ -1115,12 +1117,12 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(იყო: %1)"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:42
 #, kde-format
 msgid "Delete Pass"
 msgstr "ბილეთის წაშლა"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "მართლა გნებავთ, ეს ბილეთი წაშალოთ?"
@@ -2333,13 +2335,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "პროგრამა"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:61
+#: app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
-#: app/TicketPage.qml:126
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:85
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "რიცხვი"
@@ -2349,25 +2352,52 @@ msgstr "რიცხვი"
 msgid "Show program pass"
 msgstr "პროგრამის ბილეთის ჩვენება"
 
-#: app/ProgramMembershipPage.qml:17
-#, kde-format
-msgid "Program Membership"
+#: app/ProgramMembershipEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Program Membership"
+msgid "Edit Program Membership"
 msgstr "პროგრამის წევრობა"
 
-#: app/ProgramMembershipPage.qml:91
+#: app/ProgramMembershipEditor.qml:56
+#, fuzzy, kde-format
+#| msgctxt "bonus, discount or frequent traveler program"
+#| msgid "Program"
+msgid "Program"
+msgstr "პროგრამა"
+
+#: app/ProgramMembershipEditor.qml:64
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Program name must not be empty."
+msgstr "ბილეთის სახელი ცარიელი ვერ იქნება."
+
+#: app/ProgramMembershipEditor.qml:74
+#, fuzzy, kde-format
+#| msgid "Member"
+msgid "Membership"
+msgstr "წევრი"
+
+#: app/ProgramMembershipEditor.qml:79 app/ProgramMembershipPage.qml:104
 #, kde-format
 msgid "Member"
 msgstr "წევრი"
 
-#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
+#: app/ProgramMembershipEditor.qml:92 app/ProgramMembershipPage.qml:121
+#: app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Ძალაშია"
 
-#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
+#: app/ProgramMembershipEditor.qml:99 app/ProgramMembershipPage.qml:126
+#: app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "ვადა"
+
+#: app/ProgramMembershipPage.qml:17
+#, kde-format
+msgid "Program Membership"
+msgstr "პროგრამის წევრობა"
 
 #: app/publictransport.cpp:225 app/publictransport.cpp:252
 #, kde-format

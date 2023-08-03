@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 00:48+0000\n"
-"PO-Revision-Date: 2023-07-17 09:35+0300\n"
+"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"PO-Revision-Date: 2023-08-02 17:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -112,7 +112,8 @@ msgstr "Додати пересадку до"
 msgid "Add transfer after"
 msgstr "Додати пересадку після"
 
-#: app/ActionsCard.qml:55 app/TicketPage.qml:159
+#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:153
+#: app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
@@ -125,7 +126,7 @@ msgstr "Додати до календаря…"
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:36 app/ProgramMembershipPage.qml:140
+#: app/ProgramMembershipPage.qml:49 app/ProgramMembershipPage.qml:160
 #: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
@@ -167,7 +168,7 @@ msgstr "Вилучити подію"
 msgid "Do you really want to delete this event?"
 msgstr "Ви справді бажаєте вилучити цю подію?"
 
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:134
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
@@ -379,7 +380,7 @@ msgstr "Квиток на човен"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:48 app/TicketPage.qml:61 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:61 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Режим сканування штрихкоду"
@@ -736,7 +737,8 @@ msgstr "Помилка мережі: %1"
 msgid "Download failed: %1"
 msgstr "Невдала спроба отримання: %1"
 
-#: app/EditorPage.qml:38 app/TicketEditor.qml:23
+#: app/EditorPage.qml:38 app/ProgramMembershipEditor.qml:26
+#: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
 msgstr "Зберегти"
@@ -1124,12 +1126,12 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(було: %1)"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:29
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:42
 #, kde-format
 msgid "Delete Pass"
 msgstr "Вилучити безкоштовний квиток"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:30
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:43
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
@@ -2014,7 +2016,7 @@ msgstr "Відкрити Itinerary на вказаній сторінці"
 #: app/main.cpp:341
 #, kde-format
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "Файли або адреси для імпортування."
 
 #: app/main.qml:57
 #, kde-format
@@ -2346,13 +2348,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Програма"
 
-#: app/ProgramMembershipCard.qml:27 app/TicketPage.qml:108
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:61
+#: app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Назва"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipPage.qml:100
-#: app/TicketPage.qml:126
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:85
+#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Номер"
@@ -2362,25 +2365,52 @@ msgstr "Номер"
 msgid "Show program pass"
 msgstr "Показати пароль програми"
 
-#: app/ProgramMembershipPage.qml:17
-#, kde-format
-msgid "Program Membership"
+#: app/ProgramMembershipEditor.qml:17
+#, fuzzy, kde-format
+#| msgid "Program Membership"
+msgid "Edit Program Membership"
 msgstr "Учасник програми"
 
-#: app/ProgramMembershipPage.qml:91
+#: app/ProgramMembershipEditor.qml:56
+#, fuzzy, kde-format
+#| msgctxt "bonus, discount or frequent traveler program"
+#| msgid "Program"
+msgid "Program"
+msgstr "Програма"
+
+#: app/ProgramMembershipEditor.qml:64
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Program name must not be empty."
+msgstr "Назва квитка має бути непорожньою."
+
+#: app/ProgramMembershipEditor.qml:74
+#, fuzzy, kde-format
+#| msgid "Member"
+msgid "Membership"
+msgstr "Учасник"
+
+#: app/ProgramMembershipEditor.qml:79 app/ProgramMembershipPage.qml:104
 #, kde-format
 msgid "Member"
 msgstr "Учасник"
 
-#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:114
+#: app/ProgramMembershipEditor.qml:92 app/ProgramMembershipPage.qml:121
+#: app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Початок чинності"
 
-#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:120
+#: app/ProgramMembershipEditor.qml:99 app/ProgramMembershipPage.qml:126
+#: app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
 msgstr "Завершення чинності"
+
+#: app/ProgramMembershipPage.qml:17
+#, kde-format
+msgid "Program Membership"
+msgstr "Учасник програми"
 
 #: app/publictransport.cpp:225 app/publictransport.cpp:252
 #, kde-format
