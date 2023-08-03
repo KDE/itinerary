@@ -185,7 +185,6 @@ void CalendarImportModel::reload()
         extractorEngine.setContent(QVariant::fromValue(ev), u"internal/event");
         KItinerary::ExtractorPostprocessor postProc;
         postProc.process(KItinerary::JsonLdDocument::fromJson(extractorEngine.extract()));
-        postProc.setValidationEnabled(false);
         auto res = postProc.result();
         res.erase(std::remove_if(res.begin(), res.end(), [&validator](const auto &elem) { return !validator.isValidElement(elem); }), res.end());
         if (res.empty()) {

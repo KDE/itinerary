@@ -457,7 +457,6 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
     // check for things we can add reservations for manually
     if (!success && !extractorResult.isEmpty()) {
         ExtractorPostprocessor postProc;
-        postProc.setValidationEnabled(false);
         postProc.process(extractorResult);
         const auto postProcssedResult = postProc.result();
         ExtractorValidator validator;

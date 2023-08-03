@@ -116,7 +116,6 @@ QVariant ReservationManager::reservation(const QString& id) const
 
     // re-run post-processing to benefit from newer augmentations
     ExtractorPostprocessor postproc;
-    postproc.setValidationEnabled(false);
     postproc.process(resData);
     if (postproc.result().size() != 1) {
         qCWarning(Log) << "Post-processing discarded the reservation:" << resPath;
@@ -145,7 +144,6 @@ QString ReservationManager::batchesBasePath()
 QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
 {
     ExtractorPostprocessor postproc;
-    postproc.setValidationEnabled(false);
     postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
     postproc.process(resData);
 

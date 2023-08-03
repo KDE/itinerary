@@ -148,7 +148,6 @@ QString PassManager::import(const QVariant &pass, const QString &id)
 QStringList PassManager::import(const QVector<QVariant> &passes)
 {
     ExtractorPostprocessor postproc;
-    postproc.setValidationEnabled(false);
     postproc.process(passes);
     const auto processed = postproc.result();
 

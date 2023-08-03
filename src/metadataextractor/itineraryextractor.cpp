@@ -64,7 +64,6 @@ void KFileMetaData::ItineraryExtractor::extract(ExtractionResult *result)
     engine.setContextDate(contextDt);
 
     ExtractorPostprocessor postproc;
-    postproc.setValidationEnabled(true);
     postproc.setContextDate(contextDt);
 
     engine.setContent(QVariant::fromValue(pass.data()), result->inputMimetype());
