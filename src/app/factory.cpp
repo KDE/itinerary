@@ -6,8 +6,14 @@
 #include "factory.h"
 
 #include <KItinerary/Place>
+#include <KItinerary/ProgramMembership>
 
 QVariant Factory::makePlace()
 {
     return KItinerary::Place();
+}
+
+QVariant Factory::makeProgramMembership()
+{
+    return KItinerary::ProgramMembership();
 }

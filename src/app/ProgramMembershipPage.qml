@@ -31,11 +31,6 @@ Kirigami.ScrollablePage {
         page: root
     }
 
-    Component {
-        id: editor
-        App.ProgramMembershipEditor {}
-    }
-
     Kirigami.PromptDialog {
         id: deleteWarningDialog
 
@@ -151,7 +146,7 @@ Kirigami.ScrollablePage {
                     action: Kirigami.Action {
                         icon.name: "document-edit"
                         text: i18n("Edit")
-                        onTriggered: applicationWindow().pageStack.push(editor, {passId: root.passId, programMembership: root.programMembership});
+                        onTriggered: applicationWindow().pageStack.push(programMembershipEditor, {passId: root.passId, programMembership: root.programMembership});
                     }
                 }
                 MobileForm.FormButtonDelegate {

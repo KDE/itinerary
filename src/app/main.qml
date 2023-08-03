@@ -330,10 +330,14 @@ Kirigami.ApplicationWindow {
         App.ProgramMembershipPage {}
     }
     Component {
+        id: programMembershipEditor
+        App.ProgramMembershipEditor {}
+    }
+    Component {
         id: passComponent
         App.PassPage {}
     }
-        // replace loader with component once we depend on KHealthCertificate unconditionally
+    // replace loader with component once we depend on KHealthCertificate unconditionally
     Loader {
         id: healtCertificateComponent
     }

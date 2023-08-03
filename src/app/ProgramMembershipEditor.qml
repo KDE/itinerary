@@ -27,7 +27,7 @@ Kirigami.ScrollablePage {
         icon.name: "document-save"
         enabled: root.isValidInput
         onTriggered: {
-            let program = PassManager.pass(root.passId);
+            let program = root.passId !== "" ? PassManager.pass(root.passId) : root.programMembership;
 
             let member = program.member;
             member.name = memberNameEdit.text;
@@ -39,8 +39,10 @@ Kirigami.ScrollablePage {
             if (validUntilEdit.isModified)
                 program = Util.setDateTimePreserveTimezone(program, "validUntil", validUntilEdit.value);
 
-            console.log("XXX", program.validUntil, validUntilEdit.isModified)
-            PassManager.update(root.passId, program);
+            if (root.passId !== "")
+                PassManager.update(root.passId, program);
+            else
+                PassManager.import(program);
             applicationWindow().pageStack.pop();
         }
     }

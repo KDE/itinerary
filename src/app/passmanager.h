@@ -38,7 +38,7 @@ public:
     };
     Q_ENUM(PassType)
 
-    QString import(const QVariant &pass, const QString &id = {});
+    Q_INVOKABLE QString import(const QVariant &pass, const QString &id = {});
     QStringList import(const QVector<QVariant> &passes);
 
     /** Returns the pass id for the pass that is the closest match

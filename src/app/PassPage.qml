@@ -25,6 +25,14 @@ Kirigami.ScrollablePage {
         App.TicketPage {}
     }
 
+    actions.contextualActions: [
+        Kirigami.Action {
+            text: i18n("Add Program Membership...")
+            icon.name: "list-add-symbolic"
+            onTriggered: applicationWindow().pageStack.push(programMembershipEditor, { programMembership: Factory.makeProgramMembership(), passId: "" })
+        }
+    ]
+
     Models.DelegateChooser {
         id: chooser
         role: "type"
