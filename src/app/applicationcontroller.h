@@ -70,6 +70,7 @@ public:
 
     // data export
     Q_INVOKABLE void exportToFile(const QUrl &url);
+    Q_INVOKABLE void exportTripToFile(const QString &tripGroupId, const QUrl &url);
     Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QUrl &url);
 
     // document attaching

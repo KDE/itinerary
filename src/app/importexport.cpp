@@ -45,10 +45,15 @@ Exporter::Exporter(KItinerary::File *file)
 void Exporter::exportReservations(const ReservationManager *resMgr)
 {
     for (const auto &batchId : resMgr->batches()) {
-        const auto resIds = resMgr->reservationsForBatch(batchId);
-        for (const auto &resId : resIds) {
-            m_file->addReservation(resId, resMgr->reservation(resId));
-        }
+        exportReservationBatch(resMgr, batchId);
+    }
+}
+
+void Exporter::exportReservationBatch(const ReservationManager *resMgr, const QString &batchId)
+{
+    const auto resIds = resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        m_file->addReservation(resId, resMgr->reservation(resId));
     }
 }
 
@@ -56,36 +61,54 @@ void Exporter::exportPasses(const PkPassManager *pkPassMgr)
 {
     const auto passIds = pkPassMgr->passes();
     for (const auto &passId : passIds) {
-        m_file->addPass(passId, pkPassMgr->rawData(passId));
+        exportPkPass(pkPassMgr, passId);
     }
+}
+
+void Exporter::exportPkPass(const PkPassManager *pkPassMgr, const QString &passId)
+{
+    if (passId.isEmpty()) {
+        return;
+    }
+    m_file->addPass(passId, pkPassMgr->rawData(passId));
 }
 
 void Exporter::exportDocuments(const DocumentManager *docMgr)
 {
     const auto docIds = docMgr->documents();
     for (const auto &docId : docIds) {
-        const auto fileName = docMgr->documentFilePath(docId);
-        QFile file(fileName);
-        if (!file.open(QFile::ReadOnly)) {
-            qCWarning(Log) << "failed to open" << fileName << "for exporting" << file.errorString();
-            continue;
-        }
-        m_file->addDocument(docId, docMgr->documentInfo(docId), file.readAll());
+        exportDocument(docMgr, docId);
     }
+}
+
+void Exporter::exportDocument(const DocumentManager *docMgr, const QString &docId)
+{
+    const auto fileName = docMgr->documentFilePath(docId);
+    QFile file(fileName);
+    if (!file.open(QFile::ReadOnly)) {
+        qCWarning(Log) << "failed to open" << fileName << "for exporting" << file.errorString();
+        return;
+    }
+    m_file->addDocument(docId, docMgr->documentInfo(docId), file.readAll());
 }
 
 void Exporter::exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr)
 {
-    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
     for (const auto &batchId : resMgr->batches()) {
-        auto t = transferMgr->transfer(batchId, Transfer::Before);
-        if (t.state() != Transfer::UndefinedState) {
-            m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
-        }
-        t = transferMgr->transfer(batchId, Transfer::After);
-        if (t.state() != Transfer::UndefinedState) {
-            m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
-        }
+        exportTransfersForBatch(batchId, transferMgr);
+    }
+}
+
+void Exporter::exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr)
+{
+    const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
+    auto t = transferMgr->transfer(batchId, Transfer::Before);
+    if (t.state() != Transfer::UndefinedState) {
+        m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
+    }
+    t = transferMgr->transfer(batchId, Transfer::After);
+    if (t.state() != Transfer::UndefinedState) {
+        m_file->addCustomData(transferDomain, t.identifier(), QJsonDocument(Transfer::toJson(t)).toJson());
     }
 }
 
@@ -124,18 +147,26 @@ void Exporter::exportHealthCertificates(const HealthCertificateManager *healthCe
 void Exporter::exportLiveData()
 {
     for (const auto &id : LiveData::listAll()) {
-        const auto ld = LiveData::load(id);
-
-        QJsonObject obj;
-        obj.insert(QStringLiteral("departure"), KPublicTransport::Stopover::toJson(ld.departure));
-        obj.insert(QStringLiteral("departureTimestamp"), ld.departureTimestamp.toString(Qt::ISODate));
-        obj.insert(QStringLiteral("arrival"), KPublicTransport::Stopover::toJson(ld.arrival));
-        obj.insert(QStringLiteral("arrivalTimestamp"), ld.arrivalTimestamp.toString(Qt::ISODate));
-        obj.insert(QStringLiteral("journey"), KPublicTransport::JourneySection::toJson(ld.journey));
-        obj.insert(QStringLiteral("journeyTimestamp"), ld.journeyTimestamp.toString(Qt::ISODate));
-
-        m_file->addCustomData(QStringLiteral("org.kde.itinerary/live-data"), id, QJsonDocument(obj).toJson());
+        exportLiveDataForBatch(id);
     }
+}
+
+void Exporter::exportLiveDataForBatch(const QString &batchId)
+{
+    const auto ld = LiveData::load(batchId);
+    if (ld.isEmpty()) {
+        return;
+    }
+
+    QJsonObject obj;
+    obj.insert(QStringLiteral("departure"), KPublicTransport::Stopover::toJson(ld.departure));
+    obj.insert(QStringLiteral("departureTimestamp"), ld.departureTimestamp.toString(Qt::ISODate));
+    obj.insert(QStringLiteral("arrival"), KPublicTransport::Stopover::toJson(ld.arrival));
+    obj.insert(QStringLiteral("arrivalTimestamp"), ld.arrivalTimestamp.toString(Qt::ISODate));
+    obj.insert(QStringLiteral("journey"), KPublicTransport::JourneySection::toJson(ld.journey));
+    obj.insert(QStringLiteral("journeyTimestamp"), ld.journeyTimestamp.toString(Qt::ISODate));
+
+    m_file->addCustomData(QStringLiteral("org.kde.itinerary/live-data"), batchId, QJsonDocument(obj).toJson());
 }
 
 void Exporter::exportSettings()

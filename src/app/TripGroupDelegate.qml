@@ -151,10 +151,10 @@ Kirigami.AbstractCard {
                 QQC2.ToolButton {
                     icon.name: "export-symbolic"
                     onClicked: {
-                        tripGroupGpxExportDialog.tripGroupId = root.tripGroupId
-                        tripGroupGpxExportDialog.open()
+                        exportTripGroupDialog.tripGroupId = root.tripGroupId
+                        exportTripGroupDialog.open()
                     }
-                    text: i18n("Export trip to GPX")
+                    text: i18n("Export...")
                     QQC2.ToolTip.text: text
                     QQC2.ToolTip.visible: hovered
                     QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay

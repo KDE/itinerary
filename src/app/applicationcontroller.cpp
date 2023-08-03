@@ -571,6 +571,50 @@ void ApplicationController::exportToFile(const QUrl &url)
     Q_EMIT infoMessage(i18n("Export completed."));
 }
 
+void ApplicationController::exportTripToFile(const QString &tripGroupId, const QUrl &url)
+{
+    if (url.isEmpty()) {
+        return;
+    }
+
+    File f(FileHelper::toLocalFile(url));
+    if (!f.open(File::Write)) {
+        qCWarning(Log) << f.errorString() << url;
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return;
+    }
+
+    const auto tg = m_tripGroupMgr->tripGroup(tripGroupId);
+    const auto batchIds = tg.elements();
+
+    QSet<QString> docIdSet;
+
+    Exporter exporter(&f);
+    for (const auto &batchId : batchIds) {
+        exporter.exportReservationBatch(m_resMgr, batchId);
+        exporter.exportTransfersForBatch(batchId, m_transferMgr);
+        exporter.exportLiveDataForBatch(batchId);
+
+        const auto resIds = m_resMgr->reservationsForBatch(batchId);
+        for (const auto &resId : resIds) {
+            const auto res = m_resMgr->reservation(resId);
+
+            const auto pkPassId = m_pkPassMgr->passId(res);
+            exporter.exportPkPass(m_pkPassMgr, pkPassId);
+
+            const auto docIds = DocumentUtil::documentIds(res);
+            for (const auto &docId : docIds) {
+                const auto id = docId.toString();
+                if (!id.isEmpty() && m_docMgr->hasDocument(id) && !docIdSet.contains(id)) {
+                    exporter.exportDocument(m_docMgr, id);
+                    docIdSet.insert(id);
+                }
+            }
+        }
+    }
+    Q_EMIT infoMessage(i18n("Export completed."));
+}
+
 void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QUrl &url)
 {
     if (url.isEmpty()) {

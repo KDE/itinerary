@@ -20,6 +20,8 @@ namespace KItinerary {
 class File;
 }
 
+class QString;
+
 /** Data export handling. */
 class Exporter
 {
@@ -27,13 +29,18 @@ public:
     explicit Exporter(KItinerary::File *file);
 
     void exportReservations(const ReservationManager *resMgr);
+    void exportReservationBatch(const ReservationManager *resMgr, const QString &batchId);
     void exportPasses(const PkPassManager *pkPassMgr);
+    void exportPkPass(const PkPassManager *pkPassMgr, const QString &passId);
     void exportDocuments(const DocumentManager *docMgr);
+    void exportDocument(const DocumentManager *docMgr, const QString &docId);
     void exportTransfers(const ReservationManager *resMgr, const TransferManager *transferMgr);
+    void exportTransfersForBatch(const QString &batchId, const TransferManager *transferMgr);
     void exportFavoriteLocations(const FavoriteLocationModel *favLocModel);
     void exportPasses(const PassManager *passMgr);
     void exportHealthCertificates(const HealthCertificateManager *healthCertMgr);
     void exportLiveData();
+    void exportLiveDataForBatch(const QString &batchId);
     void exportSettings();
 
 private:

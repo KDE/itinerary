@@ -29,6 +29,8 @@ public:
     void setStopover(Type type, const KPublicTransport::Stopover &stop);
     void setTimestamp(Type type, const QDateTime &dt);
 
+    bool isEmpty() const;
+
     KPublicTransport::Stopover departure;
     QDateTime departureTimestamp;
     KPublicTransport::Stopover arrival;

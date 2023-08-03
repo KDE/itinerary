@@ -108,6 +108,40 @@ Kirigami.ScrollablePage {
         ]
     }
 
+    Kirigami.MenuDialog {
+        id: exportTripGroupDialog
+        property string tripGroupId
+        title: i18n("Export")
+        actions: [
+            Kirigami.Action {
+                text: i18n("As Itinerary file...")
+                icon.name: "export-symbolic"
+                onTriggered: {
+                    exportTripGroupDialog.close();
+                    tripGroupFileExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
+                    tripGroupFileExportDialog.open();
+                }
+            },
+            Kirigami.Action {
+                text: i18n("As GPX file...")
+                icon.name: "map-globe"
+                onTriggered: {
+                    exportTripGroupDialog.close();
+                    tripGroupGpxExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
+                    tripGroupGpxExportDialog.open();
+                }
+            }
+        ]
+    }
+    Platform.FileDialog {
+        id: tripGroupFileExportDialog
+        property string tripGroupId
+        fileMode: Platform.FileDialog.SaveFile
+        title: i18n("Export Trip")
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("Itinerary file (*.itinerary)")]
+        onAccepted: ApplicationController.exportTripToFile(tripGroupId, file)
+    }
     Platform.FileDialog {
         id: tripGroupGpxExportDialog
         property string tripGroupId

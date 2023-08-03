@@ -70,6 +70,11 @@ void LiveData::setTimestamp(LiveData::Type type, const QDateTime &dt)
     }
 }
 
+bool LiveData::isEmpty() const
+{
+    return departure.stopPoint().isEmpty() && arrival.stopPoint().isEmpty() && journey.from().isEmpty() && journey.to().isEmpty();
+}
+
 LiveData LiveData::load(const QString &resId)
 {
     LiveData ld;
