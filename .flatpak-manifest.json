@@ -24,12 +24,15 @@
             "config-opts": [
                 "-DENABLE_TESTING=OFF",
                 "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+                "-DENABLE_BOOST=OFF",
                 "-DENABLE_CPP=OFF",
                 "-DENABLE_GLIB=OFF",
                 "-DENABLE_GOBJECT_INTROSPECTION=OFF",
+                "-DENABLE_LIBCURL=OFF",
                 "-DENABLE_UTILS=OFF",
                 "-DENABLE_QT5=OFF",
                 "-DENABLE_QT6=OFF",
+                "-DENABLE_SPLASH=OFF",
                 "-DWITH_Cairo=OFF"
             ],
             "buildsystem": "cmake-ninja",
@@ -68,32 +71,6 @@
                                 "project-id": 2550,
                                 "stable-only": true,
                                 "url-template": "https://github.com/uclouvain/openjpeg/archive/v$version.tar.gz"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "boost",
-                    "buildsystem": "simple",
-                    "build-commands": [
-                        "./bootstrap.sh --prefix=/app --with-libraries=system",
-                        "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
-                    ],
-                    "cleanup": [
-                        "/include",
-                        "/lib/*.a",
-                        "/lib/cmake"
-                    ],
-                    "sources": [
-                        {
-                            "type": "archive",
-                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.bz2",
-                            "sha256": "a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6",
-                            "x-checker-data": {
-                                "type": "anitya",
-                                "project-id": 6845,
-                                "stable-only": true,
-                                "url-template": "https://boostorg.jfrog.io/artifactory/main/release/$version/source/boost_${major}_${minor}_$patch.tar.bz2"
                             }
                         }
                     ]
