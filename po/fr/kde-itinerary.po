@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-03 00:47+0000\n"
+"POT-Creation-Date: 2023-08-04 00:46+0000\n"
 "PO-Revision-Date: 2023-07-05 21:48+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -112,7 +112,7 @@ msgstr "Ajouter une correspondance avant"
 msgid "Add transfer after"
 msgstr "Ajouter une correspondance après"
 
-#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:153
+#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:148
 #: app/TicketPage.qml:159
 #, kde-format
 msgid "Edit"
@@ -126,7 +126,7 @@ msgstr "Ajouter à l'agenda..."
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:49 app/ProgramMembershipPage.qml:160
+#: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
 #: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
@@ -169,7 +169,7 @@ msgstr "Supprimer un évènement"
 msgid "Do you really want to delete this event?"
 msgstr "Voulez-vous vraiment supprimer cet évènement ?"
 
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:147
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:142
 #: app/TicketPage.qml:153
 #, kde-format
 msgid "Actions"
@@ -240,8 +240,8 @@ msgstr ""
 msgid "Replace"
 msgstr "Remplacer"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:605
-#: app/applicationcontroller.cpp:620
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:604
+#: app/applicationcontroller.cpp:619
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Échec de l'importation : %1"
@@ -251,8 +251,8 @@ msgstr "Échec de l'importation : %1"
 msgid "Import failed: File too large."
 msgstr "Échec de l'importation : fichier trop volumineux."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:682
-#: app/applicationcontroller.cpp:692
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:681
+#: app/applicationcontroller.cpp:691
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -276,22 +276,22 @@ msgstr[1] "%1 tickets importés."
 msgid "Pass imported."
 msgstr "Mot de passe importé."
 
-#: app/applicationcontroller.cpp:489
+#: app/applicationcontroller.cpp:488
 #, kde-format
 msgid "Nothing imported."
 msgstr "Rien n'a été importé."
 
-#: app/applicationcontroller.cpp:558 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Échec de l'exportation : %1"
 
-#: app/applicationcontroller.cpp:572 app/applicationcontroller.cpp:597
+#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:596
 #, kde-format
 msgid "Export completed."
 msgstr "Exportation terminée."
 
-#: app/applicationcontroller.cpp:645
+#: app/applicationcontroller.cpp:644
 #, kde-format
 msgid "Import completed."
 msgstr "Importation terminée."
@@ -381,7 +381,7 @@ msgstr "Ticket de bateau"
 
 #: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
 #: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:61 app/TicketPage.qml:61 app/TrainPage.qml:24
+#: app/ProgramMembershipPage.qml:56 app/TicketPage.qml:61 app/TrainPage.qml:24
 #, kde-format
 msgid "Barcode Scan Mode"
 msgstr "Mode « Numérisation de code-barres »"
@@ -1134,13 +1134,13 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(était : %1)"
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:42
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:37
 #, kde-format
 msgid "Delete Pass"
 msgstr "Supprimer un mot de passe"
 
 # unreviewed-context
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:43
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:38
 #, kde-format
 msgid "Do you really want to delete this pass?"
 msgstr "Voulez-vous vraiment supprimer ce mot de passe ?"
@@ -2091,7 +2091,7 @@ msgstr "Fichiers KDE Itinerary (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Exporter les données d'itinéraire"
 
-#: app/main.qml:164 app/PassPage.qml:94
+#: app/main.qml:164 app/PassPage.qml:102
 #, kde-format
 msgid "Import..."
 msgstr "Importer..."
@@ -2289,25 +2289,25 @@ msgstr "Référence de réservation"
 msgid "Search..."
 msgstr "Chercher…"
 
-#: app/passmanager.cpp:246
+#: app/passmanager.cpp:245
 #, kde-format
 msgctxt "no longer valid tickets"
 msgid "Expired"
 msgstr "Expiré"
 
-#: app/passmanager.cpp:249
+#: app/passmanager.cpp:248
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
 msgstr "Futur"
 
-#: app/passmanager.cpp:251
+#: app/passmanager.cpp:250
 #, kde-format
 msgctxt "not yet expired tickets"
 msgid "Valid"
 msgstr "Valable"
 
-#: app/passmanager.cpp:270
+#: app/passmanager.cpp:269
 #, kde-format
 msgid "%1 - %2"
 msgstr "%1 - %2"
@@ -2317,26 +2317,32 @@ msgstr "%1 - %2"
 msgid "Passes and Programs"
 msgstr "Mots de passe et programmes"
 
-#: app/PassPage.qml:42
+#: app/PassPage.qml:30
+#, fuzzy, kde-format
+#| msgid "Program Membership"
+msgid "Add Program Membership..."
+msgstr "Adhésion à un programme"
+
+#: app/PassPage.qml:50
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:71
+#: app/PassPage.qml:79
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:92
+#: app/PassPage.qml:100
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
 "Importer des cartes de programmes de primes ou de réductions ou des "
 "abonnements forfaitaires."
 
-#: app/PassPage.qml:95
+#: app/PassPage.qml:103
 #, kde-format
 msgid "document-open"
 msgstr "ouverture de documents"
@@ -2362,14 +2368,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programme"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:61
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
 #: app/TicketPage.qml:108
 #, kde-format
 msgid "Name"
 msgstr "Nom"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:85
-#: app/ProgramMembershipPage.qml:113 app/TicketPage.qml:126
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:126
 #, kde-format
 msgid "Number"
 msgstr "Numéro"
@@ -2385,37 +2391,37 @@ msgstr "Afficher la carte de programme"
 msgid "Edit Program Membership"
 msgstr "Adhésion à un programme"
 
-#: app/ProgramMembershipEditor.qml:56
+#: app/ProgramMembershipEditor.qml:58
 #, fuzzy, kde-format
 #| msgctxt "bonus, discount or frequent traveler program"
 #| msgid "Program"
 msgid "Program"
 msgstr "Programme"
 
-#: app/ProgramMembershipEditor.qml:64
+#: app/ProgramMembershipEditor.qml:66
 #, fuzzy, kde-format
 #| msgid "Ticket name must not be empty."
 msgid "Program name must not be empty."
 msgstr "Il est impossible que le nom du ticket soit vide."
 
-#: app/ProgramMembershipEditor.qml:74
+#: app/ProgramMembershipEditor.qml:76
 #, fuzzy, kde-format
 #| msgid "Member"
 msgid "Membership"
 msgstr "Membre"
 
-#: app/ProgramMembershipEditor.qml:79 app/ProgramMembershipPage.qml:104
+#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:99
 #, kde-format
 msgid "Member"
 msgstr "Membre"
 
-#: app/ProgramMembershipEditor.qml:92 app/ProgramMembershipPage.qml:121
+#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:116
 #: app/TicketPage.qml:114
 #, kde-format
 msgid "Valid from"
 msgstr "Valable à partir de"
 
-#: app/ProgramMembershipEditor.qml:99 app/ProgramMembershipPage.qml:126
+#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:121
 #: app/TicketPage.qml:120
 #, kde-format
 msgid "Valid until"
@@ -3435,7 +3441,7 @@ msgstr ""
 msgid "Logging in"
 msgstr "Connexion en cours"
 
-#: metadataextractor/itineraryextractor.cpp:120
+#: metadataextractor/itineraryextractor.cpp:119
 #, kde-format
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
