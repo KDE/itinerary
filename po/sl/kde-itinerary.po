@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:46+0000\n"
-"PO-Revision-Date: 2023-08-03 08:42+0200\n"
+"POT-Creation-Date: 2023-08-05 00:47+0000\n"
+"PO-Revision-Date: 2023-08-04 14:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -233,8 +233,8 @@ msgstr ""
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:604
-#: app/applicationcontroller.cpp:619
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:663
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
@@ -244,8 +244,8 @@ msgstr "Uvoz ni uspel: %1"
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:681
-#: app/applicationcontroller.cpp:691
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
+#: app/applicationcontroller.cpp:735
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -279,16 +279,18 @@ msgid "Nothing imported."
 msgstr "Ničesar uvoženega."
 
 #: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:627
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:640
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:644
+#: app/applicationcontroller.cpp:688
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -838,7 +840,7 @@ msgid "Export Favorite Locations"
 msgstr "Izvozi priljubljene lokacije"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:117
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Datoteke GPX (*.gpx)"
@@ -2107,7 +2109,7 @@ msgstr "Vozovnice & programi"
 msgid "Settings..."
 msgstr "Nastavitve..."
 
-#: app/main.qml:225
+#: app/main.qml:225 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Izvozi..."
@@ -2299,10 +2301,9 @@ msgid "Passes and Programs"
 msgstr "Vozovnice in programi"
 
 #: app/PassPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Add Program Membership..."
-msgstr "Članstvo v programu"
+msgstr "Dodaj članstvo v programu..."
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2920,12 +2921,35 @@ msgstr "Zbriši izlet"
 msgid "Do you really want to delete this trip?"
 msgstr "Ali res želite izbrisati to potovanje?"
 
-#: app/TimelinePage.qml:115
+#: app/TimelinePage.qml:114
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export"
+msgstr "Izvozi..."
+
+#: app/TimelinePage.qml:117
+#, fuzzy, kde-format
+#| msgid "My Itinerary"
+msgid "As Itinerary file..."
+msgstr "Moj itinerar"
+
+#: app/TimelinePage.qml:126
+#, kde-format
+msgid "As GPX file..."
+msgstr ""
+
+#: app/TimelinePage.qml:140 app/TimelinePage.qml:149
 #, kde-format
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:275
+#: app/TimelinePage.qml:142
+#, fuzzy, kde-format
+#| msgid "KDE Itinerary files (*.itinerary)"
+msgid "Itinerary file (*.itinerary)"
+msgstr "Datoteke itinerarja KDE (* .itinerary)"
+
+#: app/TimelinePage.qml:309
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3200,11 +3224,6 @@ msgstr[1] "Valuti: %2"
 msgstr[2] "Valute: %2"
 msgstr[3] "Valute: %2"
 
-#: app/TripGroupDelegate.qml:157
-#, kde-format
-msgid "Export trip to GPX"
-msgstr "Izvozi izlet v GPX"
-
 #: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
@@ -3404,6 +3423,9 @@ msgstr "Prijavljanje"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgid "Export trip to GPX"
+#~ msgstr "Izvozi izlet v GPX"
 
 #~ msgid "PkPass or JSON-LD file to import."
 #~ msgstr "Datoteka PkPass ali JSON-LD za uvoz."

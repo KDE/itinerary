@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:46+0000\n"
-"PO-Revision-Date: 2023-08-03 09:56+0300\n"
+"POT-Creation-Date: 2023-08-05 00:47+0000\n"
+"PO-Revision-Date: 2023-08-04 08:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -237,8 +237,8 @@ msgstr "Ви справді хочете замінити ваше наявне 
 msgid "Replace"
 msgstr "Замінити"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:604
-#: app/applicationcontroller.cpp:619
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:663
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Не вдалося імпортувати: %1"
@@ -248,8 +248,8 @@ msgstr "Не вдалося імпортувати: %1"
 msgid "Import failed: File too large."
 msgstr "Не вдалося імпортувати: надто великий файл."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:681
-#: app/applicationcontroller.cpp:691
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
+#: app/applicationcontroller.cpp:735
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -283,16 +283,18 @@ msgid "Nothing imported."
 msgstr "Нічого не імпортовано."
 
 #: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:627
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:640
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:644
+#: app/applicationcontroller.cpp:688
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -842,7 +844,7 @@ msgid "Export Favorite Locations"
 msgstr "Експортувати улюблені місця"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:117
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "файли GPX (*.gpx)"
@@ -2113,7 +2115,7 @@ msgstr "Безкоштовні квитки і програми"
 msgid "Settings..."
 msgstr "Параметри…"
 
-#: app/main.qml:225
+#: app/main.qml:225 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Експортувати…"
@@ -2305,10 +2307,9 @@ msgid "Passes and Programs"
 msgstr "Безкоштовні квитки і програми"
 
 #: app/PassPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Add Program Membership..."
-msgstr "Учасник програми"
+msgstr "Додати участь у програмі…"
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2935,12 +2936,35 @@ msgstr "Вилучити подорож"
 msgid "Do you really want to delete this trip?"
 msgstr "Ви справді бажаєте вилучити цю подорож?"
 
-#: app/TimelinePage.qml:115
+#: app/TimelinePage.qml:114
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export"
+msgstr "Експортувати…"
+
+#: app/TimelinePage.qml:117
+#, fuzzy, kde-format
+#| msgid "My Itinerary"
+msgid "As Itinerary file..."
+msgstr "Мій маршрут"
+
+#: app/TimelinePage.qml:126
+#, kde-format
+msgid "As GPX file..."
+msgstr ""
+
+#: app/TimelinePage.qml:140 app/TimelinePage.qml:149
 #, kde-format
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:275
+#: app/TimelinePage.qml:142
+#, fuzzy, kde-format
+#| msgid "KDE Itinerary files (*.itinerary)"
+msgid "Itinerary file (*.itinerary)"
+msgstr "файли путівних даних KDE (*.itinerary)"
+
+#: app/TimelinePage.qml:309
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
@@ -3215,11 +3239,6 @@ msgstr[1] "Валюти: %2"
 msgstr[2] "Валюти: %2"
 msgstr[3] "Валюта: %2"
 
-#: app/TripGroupDelegate.qml:157
-#, kde-format
-msgid "Export trip to GPX"
-msgstr "Експорт подорож до GPX"
-
 #: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
@@ -3421,6 +3440,9 @@ msgstr "Вхід до системи"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgid "Export trip to GPX"
+#~ msgstr "Експорт подорож до GPX"
 
 #~ msgid "PkPass or JSON-LD file to import."
 #~ msgstr "Файл PkPass або JSON-LD, який слід імпортувати."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-04 00:46+0000\n"
+"POT-Creation-Date: 2023-08-05 00:47+0000\n"
 "PO-Revision-Date: 2023-06-17 12:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -237,8 +237,8 @@ msgstr ""
 msgid "Replace"
 msgstr "Replace"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:604
-#: app/applicationcontroller.cpp:619
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
+#: app/applicationcontroller.cpp:663
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import failed: %1"
@@ -248,8 +248,8 @@ msgstr "Import failed: %1"
 msgid "Import failed: File too large."
 msgstr "Import failed: File too large."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:681
-#: app/applicationcontroller.cpp:691
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
+#: app/applicationcontroller.cpp:735
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -279,16 +279,18 @@ msgid "Nothing imported."
 msgstr "Nothing imported."
 
 #: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:627
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Export failed: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:596
+#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
+#: app/applicationcontroller.cpp:640
 #, kde-format
 msgid "Export completed."
 msgstr "Export completed."
 
-#: app/applicationcontroller.cpp:644
+#: app/applicationcontroller.cpp:688
 #, kde-format
 msgid "Import completed."
 msgstr "Import completed."
@@ -846,7 +848,7 @@ msgid "Export Favorite Locations"
 msgstr "Export Favourite Locations"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:117
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX Files (*.gpx)"
@@ -2116,7 +2118,7 @@ msgstr "Passes & Programs"
 msgid "Settings..."
 msgstr "Settings..."
 
-#: app/main.qml:225
+#: app/main.qml:225 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Export..."
@@ -2940,12 +2942,35 @@ msgstr "Delete Trip"
 msgid "Do you really want to delete this trip?"
 msgstr "Do you really want to delete this trip?"
 
-#: app/TimelinePage.qml:115
+#: app/TimelinePage.qml:114
+#, fuzzy, kde-format
+#| msgid "Export..."
+msgid "Export"
+msgstr "Export..."
+
+#: app/TimelinePage.qml:117
+#, fuzzy, kde-format
+#| msgid "My Itinerary"
+msgid "As Itinerary file..."
+msgstr "My Itinerary"
+
+#: app/TimelinePage.qml:126
+#, kde-format
+msgid "As GPX file..."
+msgstr ""
+
+#: app/TimelinePage.qml:140 app/TimelinePage.qml:149
 #, kde-format
 msgid "Export Trip"
 msgstr "Export Trip"
 
-#: app/TimelinePage.qml:275
+#: app/TimelinePage.qml:142
+#, fuzzy, kde-format
+#| msgid "KDE Itinerary files (*.itinerary)"
+msgid "Itinerary file (*.itinerary)"
+msgstr "KDE Itinerary files (*.itinerary)"
+
+#: app/TimelinePage.qml:309
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nothing on the itinerary for today."
@@ -3217,11 +3242,6 @@ msgid_plural "Currencies: %2"
 msgstr[0] "Currency: %2"
 msgstr[1] "Currencies: %2"
 
-#: app/TripGroupDelegate.qml:157
-#, kde-format
-msgid "Export trip to GPX"
-msgstr "Export trip to GPX"
-
 #: app/TripGroupDelegate.qml:165
 #, kde-format
 msgid "Delete trip"
@@ -3420,6 +3440,9 @@ msgstr "Logging in"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 from %3 to %4 on %5"
+
+#~ msgid "Export trip to GPX"
+#~ msgstr "Export trip to GPX"
 
 #~ msgid "PkPass or JSON-LD file to import."
 #~ msgstr "PkPass or JSON-LD file to import."
