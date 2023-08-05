@@ -52,71 +52,61 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Kirigami.MenuDialog {
-        id: importDialog
-        title: i18n("Import")
-        actions: [
-            Kirigami.Action {
-                text: i18n("Open File...")
-                icon.name: "document-open"
-                shortcut: StandardKey.Open
-                onTriggered: {
-                    importDialog.close();
-                    importFileDialog.open();
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Paste")
-                icon.name: "edit-paste"
-                enabled: ApplicationController.hasClipboardContent
-                shortcut: StandardKey.Paste
-                onTriggered: {
-                    importDialog.close();
-                    ApplicationController.importFromClipboard();
-                }
-            },
-            Kirigami.Action {
-                text: i18n("Scan Barcode...")
-                icon.name: "view-barcode-qr"
-                onTriggered: {
-                    importDialog.close();
-                    pageStack.layers.push(scanBarcodeComponent);
-                }
-            },
-            Kirigami.Action {
-                icon.name: "view-calendar-day"
-                text: i18n("Add from Calendar...")
-                onTriggered: {
-                    importDialog.close();
-                    PermissionManager.requestPermission(Permission.ReadCalendar, function() {
-                        if (!calendarSelector.model) {
-                            calendarSelector.model = calendarModel.createObject(root);
-                        }
-                        calendarSelector.open();
-                    })
-                }
-                visible: KCalendarCore.CalendarPluginLoader.hasPlugin
-            },
-            // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
-            // sources we support
-            Kirigami.Action {
-                text: i18n("Deutsche Bahn Online Ticket...")
-                icon.name: "download"
-                onTriggered: {
-                    importDialog.close();
-                    pageStack.layers.push(onlineImportPage, {source: "db"});
-                }
-            },
-            Kirigami.Action {
-                text: i18n("SNCF Online Ticket...")
-                icon.name: "download"
-                onTriggered: {
-                    importDialog.close();
-                    pageStack.layers.push(onlineImportPage, {source: "sncf"});
-                }
+    property list<Kirigami.Action> importActions: [
+        Kirigami.Action {
+            text: i18n("Open File...")
+            icon.name: "document-open"
+            shortcut: StandardKey.Open
+            onTriggered: {
+                importFileDialog.open();
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            text: i18n("Paste")
+            icon.name: "edit-paste"
+            enabled: ApplicationController.hasClipboardContent
+            shortcut: StandardKey.Paste
+            onTriggered: {
+                ApplicationController.importFromClipboard();
+            }
+        },
+        Kirigami.Action {
+            text: i18n("Scan Barcode...")
+            icon.name: "view-barcode-qr"
+            onTriggered: {
+                pageStack.layers.push(scanBarcodeComponent);
+            }
+        },
+        Kirigami.Action {
+            icon.name: "view-calendar-day"
+            text: i18n("Add from Calendar...")
+            onTriggered: {
+                PermissionManager.requestPermission(Permission.ReadCalendar, function() {
+                    if (!calendarSelector.model) {
+                        calendarSelector.model = calendarModel.createObject(root);
+                    }
+                    calendarSelector.open();
+                })
+            }
+            visible: KCalendarCore.CalendarPluginLoader.hasPlugin
+        },
+        // TODO this should not be hardcoded here, but dynamically filled based on what online ticket
+        // sources we support
+        Kirigami.Action {
+            text: i18n("Deutsche Bahn Online Ticket...")
+            icon.name: "download"
+            onTriggered: {
+                pageStack.layers.push(onlineImportPage, {source: "db"});
+            }
+        },
+        Kirigami.Action {
+            text: i18n("SNCF Online Ticket...")
+            icon.name: "download"
+            onTriggered: {
+                pageStack.layers.push(onlineImportPage, {source: "sncf"});
+            }
+        }
+    ]
 
     FileDialog {
         id: importFileDialog
@@ -163,7 +153,7 @@ Kirigami.ApplicationWindow {
             Kirigami.Action {
                 text: i18n("Import...")
                 icon.name: "document-import"
-                onTriggered: importDialog.open()
+                children: importActions
             },
             Kirigami.Action {
                 text: i18n("Check for Updates")
