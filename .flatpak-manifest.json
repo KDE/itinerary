@@ -149,6 +149,8 @@
                         "/include",
                         "/lib/*.a",
                         "/lib/*.la",
+                        "/lib/libprotoc*",
+                        "/lib/libprotobuf-lite*",
                         "/lib/pkgconfig"
                     ]
                 }
