@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-05 00:47+0000\n"
-"PO-Revision-Date: 2023-08-04 14:27+0200\n"
+"PO-Revision-Date: 2023-08-05 09:03+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2922,21 +2922,19 @@ msgid "Do you really want to delete this trip?"
 msgstr "Ali res želite izbrisati to potovanje?"
 
 #: app/TimelinePage.qml:114
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export"
-msgstr "Izvozi..."
+msgstr "Izvozi"
 
 #: app/TimelinePage.qml:117
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "As Itinerary file..."
-msgstr "Moj itinerar"
+msgstr "Kot datoteko itinerarja..."
 
 #: app/TimelinePage.qml:126
 #, kde-format
 msgid "As GPX file..."
-msgstr ""
+msgstr "Kot datoteko GPX..."
 
 #: app/TimelinePage.qml:140 app/TimelinePage.qml:149
 #, kde-format
@@ -2944,10 +2942,9 @@ msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
 #: app/TimelinePage.qml:142
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary files (*.itinerary)"
+#, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "Datoteke itinerarja KDE (* .itinerary)"
+msgstr "Datoteka itinerarja (* .itinerary)"
 
 #: app/TimelinePage.qml:309
 #, kde-format
