@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-01 02:44+0000\n"
-"PO-Revision-Date: 2023-07-23 00:43+0200\n"
+"PO-Revision-Date: 2023-08-06 19:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -2344,7 +2344,7 @@ msgstr "서비스 패스 표시"
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
-msgstr "프로그램 회원권"
+msgstr "프로그램 멤버십"
 
 #: app/ProgramMembershipPage.qml:91
 #, kde-format
