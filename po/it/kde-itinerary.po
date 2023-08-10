@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-05 00:47+0000\n"
-"PO-Revision-Date: 2023-07-17 14:05+0200\n"
+"PO-Revision-Date: 2023-08-06 03:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2006,7 +2006,7 @@ msgstr "Apri Itinerary alla pagina specificata"
 #: app/main.cpp:341
 #, kde-format
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "File o URL da importare."
 
 #: app/main.qml:57
 #, kde-format
@@ -2295,10 +2295,9 @@ msgid "Passes and Programs"
 msgstr "Pass e programmi"
 
 #: app/PassPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Add Program Membership..."
-msgstr "Adesione al programma"
+msgstr "Aggiungi adesione al programma..."
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2361,29 +2360,24 @@ msgid "Show program pass"
 msgstr "Mostra il pass del programma"
 
 #: app/ProgramMembershipEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Edit Program Membership"
-msgstr "Adesione al programma"
+msgstr "Modifica l'adesione al programma"
 
 #: app/ProgramMembershipEditor.qml:58
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgid "Program"
 msgstr "Programma"
 
 #: app/ProgramMembershipEditor.qml:66
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Program name must not be empty."
-msgstr "Il nome del biglietto non può essere vuoto."
+msgstr "Il nome del programma non può essere vuoto."
 
 #: app/ProgramMembershipEditor.qml:76
-#, fuzzy, kde-format
-#| msgid "Member"
+#, kde-format
 msgid "Membership"
-msgstr "Membro"
+msgstr "Stato di adesione"
 
 #: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:99
 #, kde-format
@@ -2928,21 +2922,19 @@ msgid "Do you really want to delete this trip?"
 msgstr "Vuoi davvero eliminare questo viaggio?"
 
 #: app/TimelinePage.qml:114
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export"
-msgstr "Esporta..."
+msgstr "Esporta"
 
 #: app/TimelinePage.qml:117
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "As Itinerary file..."
-msgstr "Il mio itinerario"
+msgstr "Come file Itinerary..."
 
 #: app/TimelinePage.qml:126
 #, kde-format
 msgid "As GPX file..."
-msgstr ""
+msgstr "Come file GPX..."
 
 #: app/TimelinePage.qml:140 app/TimelinePage.qml:149
 #, kde-format
@@ -2950,10 +2942,9 @@ msgid "Export Trip"
 msgstr "Esporta viaggio"
 
 #: app/TimelinePage.qml:142
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary files (*.itinerary)"
+#, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "File di KDE Itinerary (*.itinerary)"
+msgstr "File Itinerary (*.itinerary)"
 
 #: app/TimelinePage.qml:309
 #, kde-format
