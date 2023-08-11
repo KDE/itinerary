@@ -176,7 +176,8 @@ void GpxExport::writeJourneySection(const KPublicTransport::JourneySection &sect
         m_writer.writeTime(section.hasExpectedArrivalTime() ? section.expectedArrivalTime() : section.scheduledArrivalTime());
         m_writer.writeEndRoutePoint();
     } else {
-        for (const auto &pathSec : section.path().sections()) {
+        const auto pathSections = section.path().sections();
+        for (const auto &pathSec : pathSections) {
             // TODO name/time
             for (const auto &pt : pathSec.path()) {
                 m_writer.writeStartRoutePoint(pt.y(), pt.x());
