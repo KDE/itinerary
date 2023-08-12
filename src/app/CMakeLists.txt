@@ -114,6 +114,7 @@ target_sources(itinerary-app PRIVATE
     settings.cpp
     tickettokenmodel.cpp
     transferdelegatecontroller.cpp
+    unitconversion.cpp
     weatherforecastmodel.cpp
     ${qml_srcs}
     )

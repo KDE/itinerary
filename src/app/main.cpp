@@ -47,6 +47,7 @@
 #include "tripgroupinfoprovider.h"
 #include "tripgroupmanager.h"
 #include "tripgroupproxymodel.h"
+#include "unitconversion.h"
 #include "util.h"
 #include "weatherforecastmodel.h"
 
@@ -259,6 +260,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_GADGET_FACTORY(NotificationConfigController)
     REGISTER_SINGLETON_GADGET_FACTORY(PermissionManager)
     REGISTER_SINGLETON_GADGET_FACTORY(PublicTransport)
+    REGISTER_SINGLETON_GADGET_FACTORY(UnitConversion)
     REGISTER_SINGLETON_GADGET_FACTORY(Util)
 }
 

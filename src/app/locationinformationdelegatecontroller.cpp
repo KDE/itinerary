@@ -7,13 +7,11 @@
 #include "config-itinerary.h"
 #include "locationinformationdelegatecontroller.h"
 #include "localizer.h"
-#include "logging.h"
-
-#include <KUnitConversion/Value>
+#include "unitconversion.h"
 
 #include <KLocalizedString>
 
-#include <QScopedValueRollback>
+#include <cmath>
 
 LocationInformationDelegateController::LocationInformationDelegateController(QObject *parent)
     : QObject(parent)
@@ -78,21 +76,11 @@ QString LocationInformationDelegateController::currencyConversionLabel() const
 
 void LocationInformationDelegateController::recheckCurrencyConversion()
 {
-    // HACK work around KUnitConversion's internal currency update event loop causing us to re-enter here again
-    // which would then subsequently deadlock in KUnitConversion
-    static bool s_entrancyGuard = false;
-    if (s_entrancyGuard) {
-        qCWarning(Log) << "Imminent KUnitConversion deadlock detected, skipping currency conversion!";
-        return;
-    }
-    QScopedValueRollback rollback(s_entrancyGuard, false);
-    s_entrancyGuard = true;
-
     float rate = 0.0f;
     if (m_performCurrencyConverion && m_info.currencyDiffers() && !m_homeCurrency.isEmpty()) {
-        const auto value = KUnitConversion::Value(1.0, m_homeCurrency).convertTo(m_info.currencyCode());
-        if (value.isValid()) {
-            rate = value.number();
+        const auto value = UnitConversion::convertCurrency(1.0, m_homeCurrency, m_info.currencyCode());
+        if (!std::isnan(value)) {
+            rate = value;
         }
     }
 
