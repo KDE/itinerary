@@ -15,12 +15,7 @@ import "." as App
 
 Kirigami.AbstractCard {
     id: root
-    property alias locationInfo: _controller.locationInformation
-    property QtObject controller: LocationInformationDelegateController {
-        id: _controller
-        homeCurrencyCode: Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode
-        performCurrencyConversion: Settings.performCurrencyConversion
-    }
+    property var locationInfo
 
    header: TimelineDelegateHeaderBackground {
         id: headerBackground
@@ -97,7 +92,23 @@ Kirigami.AbstractCard {
 
         QQC2.Label {
             width: topLayout.width
-            text: visible ? i18n("Currency: %1", controller.hasCurrencyConversion ? controller.currencyConversionLabel : locationInfo.currencyCode) : ""
+            text: {
+                if (!visible)
+                    return "";
+                let rate = NaN;
+                let sourceValue = 1.0;
+                const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
+                if (Settings.performCurrencyConversion)
+                    rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, locationInfo.currencyCode);
+                while (rate < 1 && rate > 0) { // scale to a useful order of magnitude
+                    rate *= 10;
+                    sourceValue *= 10;
+                }
+                if (!isNaN(rate))
+                    return i18nc("currency conversion rate", "Currency: %1 = %2",
+                                 Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, locationInfo.currencyCode));
+                return i18n("Currency: %1", locationInfo.currencyCode);
+            }
             visible: locationInfo.currencyDiffers
             wrapMode: Text.WordWrap
             Accessible.ignored: !visible
@@ -106,4 +117,3 @@ Kirigami.AbstractCard {
 
     Accessible.name: headerLabel.text
 }
-

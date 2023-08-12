@@ -104,7 +104,6 @@ target_sources(itinerary-app PRIVATE
     countrysubdivisionmodel.cpp
     developmentmodecontroller.cpp
     factory.cpp
-    locationinformationdelegatecontroller.cpp
     mapdownloadmanager.cpp
     matrixcontroller.cpp
     notificationconfigcontroller.cpp
