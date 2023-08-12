@@ -21,12 +21,19 @@ MobileForm.FormTextDelegate {
     visible: PriceUtil.hasPrice(root.item)
 
     description: {
+        const price = PriceUtil.price(root.item);
         const currency = PriceUtil.currency(root.item);
         const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
+
         if (Settings.performCurrencyConversion && homeCurrency != currency) {
-            // TODO show price in both currencies
+            const convertedPrice = UnitConversion.convertCurrency(price, currency, homeCurrency);
+            if (!isNaN(convertedPrice) && convertedPrice != 0.0) {
+                return i18nc("prices in local and home currency", "%1 (%2)",
+                            Localizer.formatCurrency(price, currency),
+                            Localizer.formatCurrency(convertedPrice, homeCurrency));
+            }
         }
 
-        Localizer.formatCurrency(PriceUtil.price(root.item), PriceUtil.currency(root.item))
+        return Localizer.formatCurrency(price, currency);
     }
 }
