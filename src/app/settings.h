@@ -18,7 +18,6 @@ class Settings : public QObject
     Q_PROPERTY(bool queryLiveData READ queryLiveData WRITE setQueryLiveData NOTIFY queryLiveDataChanged)
     Q_PROPERTY(bool preloadMapData READ preloadMapData WRITE setPreloadMapData NOTIFY preloadMapDataChanged)
 
-    Q_PROPERTY(bool hasCurrencyConversion READ hasCurrencyConversion CONSTANT)
     Q_PROPERTY(bool performCurrencyConversion READ performCurrencyConversion WRITE setPerformCurrencyConversion NOTIFY performCurrencyConversionChanged)
 
     Q_PROPERTY(bool autoAddTransfers READ autoAddTransfers WRITE setAutoAddTransfers NOTIFY autoAddTransfersChanged)
@@ -47,7 +46,6 @@ public:
     bool preloadMapData() const;
     void setPreloadMapData(bool preload);
 
-    bool hasCurrencyConversion() const;
     bool performCurrencyConversion() const;
     void setPerformCurrencyConversion(bool enable);
 

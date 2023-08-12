@@ -135,7 +135,6 @@ Kirigami.ScrollablePage {
                     text: i18n("Currency Conversion")
                     checked: Settings.performCurrencyConversion
                     onToggled: Settings.performCurrencyConversion = checked
-                    visible: Settings.hasCurrencyConversion
                     description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
                 }
             }

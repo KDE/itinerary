@@ -120,6 +120,7 @@ target_sources(itinerary-app PRIVATE
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
+    KF${KF_MAJOR_VERSION}::UnitConversion
     Qt::QuickControls2
     KCalendarCoreExtras
 )
@@ -247,9 +248,6 @@ else ()
 endif()
 if (TARGET KF${KF_MAJOR_VERSION}::Crash)
     target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::Crash)
-endif()
-if (TARGET KF${KF_MAJOR_VERSION}::UnitConversion)
-    target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::UnitConversion)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

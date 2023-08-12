@@ -131,15 +131,6 @@ void Settings::setPreloadMapData(bool preload)
     Q_EMIT preloadMapDataChanged(preload);
 }
 
-bool Settings::hasCurrencyConversion() const
-{
-#if HAVE_KUNITCONVERSION
-    return true;
-#else
-    return false;
-#endif
-}
-
 bool Settings::performCurrencyConversion() const
 {
     return m_currencyConversion;

@@ -9,9 +9,7 @@
 #include "localizer.h"
 #include "logging.h"
 
-#if HAVE_KUNITCONVERSION
 #include <KUnitConversion/Value>
-#endif
 
 #include <KLocalizedString>
 
@@ -91,14 +89,12 @@ void LocationInformationDelegateController::recheckCurrencyConversion()
     s_entrancyGuard = true;
 
     float rate = 0.0f;
-#if HAVE_KUNITCONVERSION
     if (m_performCurrencyConverion && m_info.currencyDiffers() && !m_homeCurrency.isEmpty()) {
         const auto value = KUnitConversion::Value(1.0, m_homeCurrency).convertTo(m_info.currencyCode());
         if (value.isValid()) {
             rate = value.number();
         }
     }
-#endif
 
     if (rate != m_conversionRate) {
         m_conversionRate = rate;
