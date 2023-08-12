@@ -133,6 +133,10 @@ Kirigami.ScrollablePage {
                     description: ticket.ticketedSeat.seatingType
                     visible: ticket.ticketedSeat.seatingType !== ""
                 }
+
+                FormPriceDelegate {
+                    item: root.ticket
+                }
             }
         }
 

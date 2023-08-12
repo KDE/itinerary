@@ -62,6 +62,7 @@
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/JsonLdDocument>
+#include <KItinerary/PriceUtil>
 #include <KItinerary/Ticket>
 
 #include <KPkPass/Field>
@@ -148,6 +149,9 @@ void registerKItineraryTypes()
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
     qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
+    qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
+        return engine->toScriptValue(KItinerary::PriceUtil());
+    });
 }
 
 void registerApplicationTypes()

@@ -14,7 +14,7 @@ MobileForm.FormCard {
 
     required property var reservation
 
-    visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible
+    visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible || priceLabel.visible
 
     Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.fillWidth: true
@@ -48,6 +48,13 @@ MobileForm.FormCard {
             text: i18n("Ticket number:")
             description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketNumber : ''
             visible: description.length > 0 && description !== referenceLabel.description
+        }
+
+        MobileForm.FormDelegateSeparator { visible: ticketNumberLabel.visible }
+
+        FormPriceDelegate {
+            id: priceLabel
+            item: root.reservation
         }
     }
 }
