@@ -6,6 +6,7 @@
 
 #include "config-itinerary.h"
 #include "locationinformationdelegatecontroller.h"
+#include "localizer.h"
 #include "logging.h"
 
 #if HAVE_KUNITCONVERSION
@@ -74,7 +75,7 @@ bool LocationInformationDelegateController::hasCurrencyConversion() const
 
 QString LocationInformationDelegateController::currencyConversionLabel() const
 {
-    return i18nc("currency conversion rate", "1 %1 = %2 %3", m_homeCurrency, m_conversionRate, m_info.currencyCode());
+    return i18nc("currency conversion rate", "%1 = %2", Localizer::formatCurrency(1.0, m_homeCurrency), Localizer::formatCurrency(m_conversionRate, m_info.currencyCode()));
 }
 
 void LocationInformationDelegateController::recheckCurrencyConversion()

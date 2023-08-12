@@ -8,6 +8,7 @@
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
+#include <KItinerary/PriceUtil>
 
 #include <KContacts/Address>
 
@@ -28,6 +29,7 @@
 using namespace KAndroidExtras;
 #endif
 
+#include <cmath>
 #include <cstring>
 
 using namespace KItinerary;
@@ -251,4 +253,19 @@ QString Localizer::formatWeight(int gram)
 QString Localizer::formatTemperature(double temperature)
 {
     return i18nc("temperature", "%1°C", (int)qRound(temperature));
+}
+
+QString Localizer::formatCurrency(double value, const QString &isoCode)
+{
+    const auto decimalCount = PriceUtil::decimalCount(isoCode);
+
+    // special case for displaying conversion rates (which can be very small)
+    // and thus need a higher precision than regular values
+    double i = 0.0;
+    double f = std::modf(value * std::pow(10, decimalCount), &i);
+    if (i == 0.0 && f > 0.0) {
+        return QLocale().toCurrencyString(value, isoCode);
+    }
+
+    return QLocale().toCurrencyString(value, isoCode, PriceUtil::decimalCount(isoCode));
 }
