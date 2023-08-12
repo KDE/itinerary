@@ -229,26 +229,8 @@ App.DetailsPage {
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                // booking details
-                MobileForm.FormCardHeader {
-                    title: i18n("Booking")
-                }
-
-                Repeater {
-                    model: resIds.length * 2
-                    delegate: MobileForm.FormTextDelegate {
-                        Layout.fillWidth: true
-                        property var res: ReservationManager.reservation(resIds[Math.floor(index/2)]);
-                        visible: description
-                        text: index % 2 == 0 ? i18n("Under name") : i18n("Reference")
-                        description: index % 2 == 0 ? res.underName.name : res.reservationNumber
-                    }
-                }
-            }
+        App.BookingCard {
+            reservation: root.reservation
         }
 
         App.ProgramMembershipCard {
