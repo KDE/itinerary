@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-05 00:47+0000\n"
+"POT-Creation-Date: 2023-08-13 00:47+0000\n"
 "PO-Revision-Date: 2023-08-05 08:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -113,7 +113,7 @@ msgid "Add transfer after"
 msgstr "Додати пересадку після"
 
 #: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:148
-#: app/TicketPage.qml:159
+#: app/TicketPage.qml:163
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
@@ -127,7 +127,7 @@ msgstr "Додати до календаря…"
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -169,7 +169,7 @@ msgid "Do you really want to delete this event?"
 msgstr "Ви справді бажаєте вилучити цю подію?"
 
 #: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:142
-#: app/TicketPage.qml:153
+#: app/TicketPage.qml:157
 #, kde-format
 msgid "Actions"
 msgstr "Дії"
@@ -405,20 +405,17 @@ msgstr "Термінал"
 msgid "Arrival time"
 msgstr "Час прибуття"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/FlightPage.qml:238
-#: app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Бронювання"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/FlightPage.qml:247
-#: app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Ідентифікатор"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/FlightPage.qml:247
-#: app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "На ім'я"
@@ -1128,6 +1125,18 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(було: %1)"
 
+#: app/FormPriceDelegate.qml:20
+#, kde-format
+msgid "Price"
+msgstr ""
+
+#: app/FormPriceDelegate.qml:31
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "prices in local and home currency"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:37
 #, kde-format
 msgid "Delete Pass"
@@ -1138,7 +1147,7 @@ msgstr "Вилучити безкоштовний квиток"
 msgid "Do you really want to delete this pass?"
 msgstr "Ви справді бажаєте вилучити цей безкоштовний квиток?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:159
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1856,74 +1865,81 @@ msgstr "Розташування"
 msgid "Journey"
 msgstr "Подорож"
 
-#: app/localizer.cpp:180
+#: app/localizer.cpp:182
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:225
+#: app/localizer.cpp:227
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 м"
 
-#: app/localizer.cpp:228 app/localizer.cpp:230
+#: app/localizer.cpp:230 app/localizer.cpp:232
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 км"
 
-#: app/localizer.cpp:236
+#: app/localizer.cpp:238
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 км/год"
 
-#: app/localizer.cpp:242
+#: app/localizer.cpp:244
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 г"
 
-#: app/localizer.cpp:245 app/localizer.cpp:247
+#: app/localizer.cpp:247 app/localizer.cpp:249
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 кг"
 
-#: app/localizer.cpp:253
+#: app/localizer.cpp:255
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:46
+#: app/LocationInfoDelegate.qml:41
 #, kde-format
 msgid "Entering %1"
 msgstr "В'їзд до %1"
 
-#: app/LocationInfoDelegate.qml:67
+#: app/LocationInfoDelegate.qml:62
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Немає сумісних розеток: %1"
 
-#: app/LocationInfoDelegate.qml:75
+#: app/LocationInfoDelegate.qml:70
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Несумісні розетки: %1"
 
-#: app/LocationInfoDelegate.qml:82
+#: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Несумісні штекери: %1"
 
-#: app/LocationInfoDelegate.qml:90
+#: app/LocationInfoDelegate.qml:85
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Зміна часового поясу: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:100
+#: app/LocationInfoDelegate.qml:108
+#, fuzzy, kde-format
+#| msgid "Currency: %1"
+msgctxt "currency conversion rate"
+msgid "Currency: %1 = %2"
+msgstr "Валюта: %1"
+
+#: app/LocationInfoDelegate.qml:110
 #, kde-format
 msgid "Currency: %1"
 msgstr "Валюта: %1"
@@ -1994,28 +2010,22 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/locationinformationdelegatecontroller.cpp:77
-#, kde-format
-msgctxt "currency conversion rate"
-msgid "1 %1 = %2 %3"
-msgstr "1 %1 = %2 %3"
-
-#: app/main.cpp:328
+#: app/main.cpp:332
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:329
+#: app/main.cpp:333
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "© Спільнота KDE, 2018–%1"
 
-#: app/main.cpp:336
+#: app/main.cpp:340
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:341
+#: app/main.cpp:345
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Файли або адреси для імпортування."
@@ -2611,7 +2621,7 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "Курс валют"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -2620,22 +2630,22 @@ msgstr ""
 "Якщо буде позначено цей пункт, програма надсилатиме інтернет-запити щодо "
 "обмінних курсів валют у пунктах призначення."
 
-#: app/SettingsPage.qml:154
+#: app/SettingsPage.qml:153
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Помічник для пересадок"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Автоматично додавати пересадки"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Автоматично заповнювати пересадки"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -2644,68 +2654,68 @@ msgstr ""
 "Якщо позначено, програма автоматично надсилатиме запит до інтернет-служб "
 "транспортних компаній щодо даних пересадок."
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:184
 #, kde-format
 msgid "Notifications"
 msgstr "Сповіщення"
 
-#: app/SettingsPage.qml:189
+#: app/SettingsPage.qml:188
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Налаштувати сповіщення…"
 
-#: app/SettingsPage.qml:198
+#: app/SettingsPage.qml:197
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Показувати сповіщення при заблокованому екрані"
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Onboard Status"
 msgstr "Стан посадки"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Request permissions..."
 msgstr "Запит щодо прав доступу…"
 
-#: app/SettingsPage.qml:223
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Для доступу до стану Wi-Fi потрібні додаткові права доступу."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Немає доступу до Wi-Fi для отримання даних щодо посадки."
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Wi-Fi не увімкнено"
 
-#: app/SettingsPage.qml:239
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Службу визначення місця перебування не увімкнено"
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "У цій системі немає доступу до Wi-Fi"
 
-#: app/SettingsPage.qml:248
+#: app/SettingsPage.qml:247
 #, kde-format
 msgid "No further action required."
 msgstr "Потреби у подальшому втручанні немає."
 
-#: app/SettingsPage.qml:250
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Для отримання доступу до даних щодо посадки увімкніть у вашій системі Wi-Fi."
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:251
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -2713,7 +2723,7 @@ msgstr ""
 "Увімкніть службу визначення місця перебування на вашому пристрої, щоб "
 "отримати доступ до даних щодо посадки."
 
-#: app/SettingsPage.qml:254
+#: app/SettingsPage.qml:253
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2722,37 +2732,37 @@ msgstr ""
 "На жаль, на вашому пристрої у цій версії не передбачено підтримки даних щодо "
 "посадки."
 
-#: app/SettingsPage.qml:292
+#: app/SettingsPage.qml:291
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Інтеграція з Matrix"
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Вхід до системи від імені %1"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Синхронізувати кімнати"
 
-#: app/SettingsPage.qml:303
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Matrix ID"
 msgstr "Ід. Matrix"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Password"
 msgstr "Пароль"
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log out"
 msgstr "Вийти"
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log in"
 msgstr "Увійти"
@@ -3437,6 +3447,10 @@ msgstr "Вхід до системи"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgctxt "currency conversion rate"
+#~ msgid "1 %1 = %2 %3"
+#~ msgstr "1 %1 = %2 %3"
 
 #~ msgid "Export trip to GPX"
 #~ msgstr "Експорт подорож до GPX"

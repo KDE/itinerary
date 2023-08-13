@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-05 00:47+0000\n"
+"POT-Creation-Date: 2023-08-13 00:47+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -116,7 +116,7 @@ msgid "Add transfer after"
 msgstr "Adicionar uma transferência depois"
 
 #: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:148
-#: app/TicketPage.qml:159
+#: app/TicketPage.qml:163
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -130,7 +130,7 @@ msgstr "Adicionar ao calendário..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:166 app/TimelinePage.qml:101
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:101
 #, kde-format
 msgid "Delete"
 msgstr "Apagar"
@@ -172,7 +172,7 @@ msgid "Do you really want to delete this event?"
 msgstr "Deseja realmente remover este evento?"
 
 #: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:142
-#: app/TicketPage.qml:153
+#: app/TicketPage.qml:157
 #, kde-format
 msgid "Actions"
 msgstr "Acções"
@@ -406,20 +406,17 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Hora de chegada"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/FlightPage.qml:238
-#: app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/FlightPage.qml:247
-#: app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Referência"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/FlightPage.qml:247
-#: app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "Com o nome"
@@ -1129,6 +1126,18 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(era: %1)"
 
+#: app/FormPriceDelegate.qml:20
+#, kde-format
+msgid "Price"
+msgstr ""
+
+#: app/FormPriceDelegate.qml:31
+#, fuzzy, kde-format
+#| msgid "%1 (%2)"
+msgctxt "prices in local and home currency"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:37
 #, kde-format
 msgid "Delete Pass"
@@ -1139,7 +1148,7 @@ msgstr "Apagar o Passe"
 msgid "Do you really want to delete this pass?"
 msgstr "Deseja realmente remover este passe?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:321 app/main.qml:21 app/main.qml:159
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:159
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1853,74 +1862,81 @@ msgstr "Posição"
 msgid "Journey"
 msgstr "Viagem"
 
-#: app/localizer.cpp:180
+#: app/localizer.cpp:182
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd de MMMM"
 
-#: app/localizer.cpp:225
+#: app/localizer.cpp:227
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:228 app/localizer.cpp:230
+#: app/localizer.cpp:230 app/localizer.cpp:232
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:236
+#: app/localizer.cpp:238
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:242
+#: app/localizer.cpp:244
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:245 app/localizer.cpp:247
+#: app/localizer.cpp:247 app/localizer.cpp:249
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:253
+#: app/localizer.cpp:255
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:46
+#: app/LocationInfoDelegate.qml:41
 #, kde-format
 msgid "Entering %1"
 msgstr "A entrar em %1"
 
-#: app/LocationInfoDelegate.qml:67
+#: app/LocationInfoDelegate.qml:62
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Sem ligações à corrente compatíveis: %1"
 
-#: app/LocationInfoDelegate.qml:75
+#: app/LocationInfoDelegate.qml:70
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Algumas ligações à corrente incompatíveis: %1"
 
-#: app/LocationInfoDelegate.qml:82
+#: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Algumas ligações à corrente incompatíveis: %1"
 
-#: app/LocationInfoDelegate.qml:90
+#: app/LocationInfoDelegate.qml:85
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Mudança de fuso-horário: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:100
+#: app/LocationInfoDelegate.qml:108
+#, fuzzy, kde-format
+#| msgid "Currency: %1"
+msgctxt "currency conversion rate"
+msgid "Currency: %1 = %2"
+msgstr "Moeda: %1"
+
+#: app/LocationInfoDelegate.qml:110
 #, kde-format
 msgid "Currency: %1"
 msgstr "Moeda: %1"
@@ -1991,28 +2007,22 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo N"
 
-#: app/locationinformationdelegatecontroller.cpp:77
-#, kde-format
-msgctxt "currency conversion rate"
-msgid "1 %1 = %2 %3"
-msgstr "1 %1 = %2 %3"
-
-#: app/main.cpp:328
+#: app/main.cpp:332
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistente Digital de Viagens"
 
-#: app/main.cpp:329
+#: app/main.cpp:333
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 da Comunidade do KDE"
 
-#: app/main.cpp:336
+#: app/main.cpp:340
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Abrir o itinerário na página indicada"
 
-#: app/main.cpp:341
+#: app/main.cpp:345
 #, kde-format
 msgid "Files or URLs to import."
 msgstr ""
@@ -2611,7 +2621,7 @@ msgstr ""
 msgid "Currency Conversion"
 msgstr "Conversão de Moeda"
 
-#: app/SettingsPage.qml:139
+#: app/SettingsPage.qml:138
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -2620,22 +2630,22 @@ msgstr ""
 "Ao activar isto, irá efectuar pesquisas 'online' por taxas de câmbio para as "
 "moedas nos destinos das viagens."
 
-#: app/SettingsPage.qml:154
+#: app/SettingsPage.qml:153
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Assistente de Transferências"
 
-#: app/SettingsPage.qml:158
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Adicionar automaticamente as transferências"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Preencher automaticamente as transferências"
 
-#: app/SettingsPage.qml:167
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -2644,67 +2654,67 @@ msgstr ""
 "Quando estiver activado, isto irá consultar os serviços 'online' do "
 "fornecedor de transportes para obter informações sobre transferências."
 
-#: app/SettingsPage.qml:185
+#: app/SettingsPage.qml:184
 #, kde-format
 msgid "Notifications"
 msgstr "Notificações"
 
-#: app/SettingsPage.qml:189
+#: app/SettingsPage.qml:188
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configurar as Notificações..."
 
-#: app/SettingsPage.qml:198
+#: app/SettingsPage.qml:197
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Mostrar as notificações no ecrã de bloqueio"
 
-#: app/SettingsPage.qml:218
+#: app/SettingsPage.qml:217
 #, kde-format
 msgid "Onboard Status"
 msgstr "Estado do Embarque"
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:221
 #, kde-format
 msgid "Request permissions..."
 msgstr "Pedir permissão..."
 
-#: app/SettingsPage.qml:223
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "São necessárias permissões adicionais para aceder ao estado do Wi-Fi."
 
-#: app/SettingsPage.qml:235
+#: app/SettingsPage.qml:234
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Está disponível o acesso por Wi-Fi à informação de embarque."
 
-#: app/SettingsPage.qml:237
+#: app/SettingsPage.qml:236
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "O Wi-Fi não está activo"
 
-#: app/SettingsPage.qml:239
+#: app/SettingsPage.qml:238
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "O serviço de localização não está activo"
 
-#: app/SettingsPage.qml:241
+#: app/SettingsPage.qml:240
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "O acesso Wi-Fi não está disponível neste sistema"
 
-#: app/SettingsPage.qml:248
+#: app/SettingsPage.qml:247
 #, kde-format
 msgid "No further action required."
 msgstr "Não é necessário fazer mais nada."
 
-#: app/SettingsPage.qml:250
+#: app/SettingsPage.qml:249
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Active o Wi-Fi no seu sistema para aceder à informação de embarque."
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:251
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -2712,7 +2722,7 @@ msgstr ""
 "Active o serviço de localização no seu sistema para aceder à informação de "
 "embarque."
 
-#: app/SettingsPage.qml:254
+#: app/SettingsPage.qml:253
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2721,37 +2731,37 @@ msgstr ""
 "Infelizmente, a informação de embarque não é suportada no seu dispositivo "
 "nesta altura."
 
-#: app/SettingsPage.qml:292
+#: app/SettingsPage.qml:291
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integração no Matrix"
 
-#: app/SettingsPage.qml:293
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Autenticado como %1"
 
-#: app/SettingsPage.qml:296
+#: app/SettingsPage.qml:295
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronizar as salas"
 
-#: app/SettingsPage.qml:303
+#: app/SettingsPage.qml:302
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID do Matrix"
 
-#: app/SettingsPage.qml:310
+#: app/SettingsPage.qml:309
 #, kde-format
 msgid "Password"
 msgstr "Senha"
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log out"
 msgstr "Encerrar"
 
-#: app/SettingsPage.qml:317
+#: app/SettingsPage.qml:316
 #, kde-format
 msgid "Log in"
 msgstr "Ligar"
@@ -3434,6 +3444,10 @@ msgstr "A autenticar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
+
+#~ msgctxt "currency conversion rate"
+#~ msgid "1 %1 = %2 %3"
+#~ msgstr "1 %1 = %2 %3"
 
 #~ msgid "Export trip to GPX"
 #~ msgstr "Exportar a viagem para GPX"
