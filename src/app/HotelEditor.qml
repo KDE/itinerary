@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.i18n.localeData 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -33,6 +34,7 @@ App.EditorPage {
         if (checkoutEdit.isModified)
             newRes = Util.setDateTimePreserveTimezone(newRes, "checkoutTime", checkoutEdit.value);
 
+        bookingEdit.apply(newRes);
         return newRes;
     }
 
@@ -100,6 +102,12 @@ App.EditorPage {
         App.ContactEditorCard {
             id: contactEdit
             contact: reservation.reservationFor
+        }
+
+        App.BookingEditorCard {
+            id: bookingEdit
+            item: reservation
+            defaultCurrency: Country.fromAlpha2(address.currentCountry).currencyCode
         }
     }
 }

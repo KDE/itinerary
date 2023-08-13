@@ -26,6 +26,8 @@ ColumnLayout {
 
     /** Initially selected country if the given address doesn't specify one. */
     property string defaultCountry: Settings.homeCountryIsoCode
+    /** Currently selected country code. */
+    readonly property string currentCountry: addressCountry.currentValue
 
     function save(place) {
         var addr = place.address;
