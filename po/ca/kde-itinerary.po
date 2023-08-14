@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-08 17:12+0200\n"
+"PO-Revision-Date: 2023-08-13 11:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1123,11 +1123,10 @@ msgstr "(era: %1)"
 #: app/FormPriceDelegate.qml:20
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "Preu"
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1925,11 +1924,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "Canvi de la zona horària: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "Divisa: %1"
+msgstr "Divisa: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:110
 #, kde-format

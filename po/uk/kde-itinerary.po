@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-05 08:39+0300\n"
+"PO-Revision-Date: 2023-08-13 08:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1128,11 +1128,10 @@ msgstr "(було: %1)"
 #: app/FormPriceDelegate.qml:20
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "Ціна"
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1933,11 +1932,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "Зміна часового поясу: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "Валюта: %1"
+msgstr "Валюта: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:110
 #, kde-format
