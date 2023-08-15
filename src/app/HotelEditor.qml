@@ -18,7 +18,7 @@ App.EditorPage {
     id: root
     title: i18n("Edit Hotel Reservation")
 
-    isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue
+    isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue && hotelName.text !== ""
 
     function apply(reservation) {
         var hotel = address.save(reservation.reservationFor);
@@ -55,6 +55,8 @@ App.EditorPage {
                     id: hotelName
                     label: i18nc("hotel name", "Name")
                     text: reservation.reservationFor.name
+                    status: Kirigami.MessageType.Error
+                    statusMessage: text === "" ? i18n("Name must not be empty.") : ""
                 }
                 MobileForm.FormDelegateSeparator {}
                 App.FormPlaceEditorDelegate {
