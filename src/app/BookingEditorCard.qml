@@ -23,6 +23,8 @@ MobileForm.FormCard {
         item.reservationNumber = referenceEdit.text;
 
         let underName = item.underName;
+        if (!underName)
+            underName = Factory.makePerson();
         underName.name = underNameEdit.text;
         item.underName = underName;
         console.log(item.underName, item.underName.name);

@@ -5,8 +5,14 @@
 
 #include "factory.h"
 
+#include <KItinerary/Person>
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
+
+QVariant Factory::makePerson()
+{
+    return KItinerary::Person();
+}
 
 QVariant Factory::makePlace()
 {
