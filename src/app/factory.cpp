@@ -8,6 +8,14 @@
 #include <KItinerary/Person>
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
+#include <KItinerary/Reservation>
+
+QVariant Factory::makeLodgingReservation()
+{
+    KItinerary::LodgingReservation r;
+    r.setReservationFor(KItinerary::LodgingBusiness());
+    return r;
+}
 
 QVariant Factory::makePerson()
 {

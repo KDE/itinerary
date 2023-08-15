@@ -82,6 +82,12 @@ Kirigami.ScrollablePage {
                         departureStop: departureLocation
                     });
                 }
+            },
+            Kirigami.Action {
+                text: i18n("Add accommodation...")
+                icon.name: "go-home-symbolic"
+                // TODO default time and location based on timeline position
+                onTriggered: applicationWindow().pageStack.push(hotelEditorPage, {reservation: Factory.makeLodgingReservation()});
             }
         ]
     }
