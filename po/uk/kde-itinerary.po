@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-13 08:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -405,17 +405,20 @@ msgstr "Термінал"
 msgid "Arrival time"
 msgstr "Час прибуття"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Бронювання"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Ідентифікатор"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "На ім'я"
@@ -851,7 +854,7 @@ msgstr "файли GPX (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Імпортувати улюблені місця"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1064,52 +1067,52 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Оприлюднити на Matrix"
 
-#: app/FormPlaceEditorDelegate.qml:66
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "Вулиця"
 
-#: app/FormPlaceEditorDelegate.qml:78
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Некоректний формат поштового коду для цієї країни."
 
-#: app/FormPlaceEditorDelegate.qml:84
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "Місто"
 
-#: app/FormPlaceEditorDelegate.qml:102
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "Область"
 
-#: app/FormPlaceEditorDelegate.qml:128
+#: app/FormPlaceEditorDelegate.qml:130
 #, kde-format
 msgid "Country"
 msgstr "Країна"
 
-#: app/FormPlaceEditorDelegate.qml:179
+#: app/FormPlaceEditorDelegate.qml:181
 #, kde-format
 msgid "Coordinate"
 msgstr "Координати"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "Pick..."
 msgstr "Вибрати…"
 
-#: app/FormPlaceEditorDelegate.qml:190
+#: app/FormPlaceEditorDelegate.qml:192
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Адреса за координатами"
 
-#: app/FormPlaceEditorDelegate.qml:204
+#: app/FormPlaceEditorDelegate.qml:206
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Координати з адреси"
@@ -1125,7 +1128,7 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(було: %1)"
 
-#: app/FormPriceDelegate.qml:20
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
 #, kde-format
 msgid "Price"
 msgstr "Ціна"
@@ -1460,29 +1463,29 @@ msgstr "Час перевірки на вході: %1"
 msgid "Check-out time: %1"
 msgstr "Час перевірки на виході: %1"
 
-#: app/HotelEditor.qml:18
+#: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Редагування бронювання готелю"
 
-#: app/HotelEditor.qml:49
+#: app/HotelEditor.qml:51
 #, kde-format
 msgid "Hotel"
 msgstr "Готель"
 
-#: app/HotelEditor.qml:54
+#: app/HotelEditor.qml:56
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Назва"
 
-#: app/HotelEditor.qml:80
+#: app/HotelEditor.qml:82
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Повернути з боргу"
 
-#: app/HotelEditor.qml:87
+#: app/HotelEditor.qml:89
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -414,18 +414,21 @@ msgstr "Terminál:"
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Rezervácia"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/TrainEditor.qml:193
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referencia:"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/TrainEditor.qml:198
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
@@ -895,7 +898,7 @@ msgstr "Všetky súbory (*.*)"
 msgid "Import Favorite Locations"
 msgstr "Obľúbené miesta"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1124,57 +1127,57 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:66
+#: app/FormPlaceEditorDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Street:"
 msgid "Street"
 msgstr "Ulica:"
 
-#: app/FormPlaceEditorDelegate.qml:78
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:84
+#: app/FormPlaceEditorDelegate.qml:86
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Mesto:"
 
-#: app/FormPlaceEditorDelegate.qml:102
+#: app/FormPlaceEditorDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Region:"
 msgid "Region"
 msgstr "Región:"
 
-#: app/FormPlaceEditorDelegate.qml:128
+#: app/FormPlaceEditorDelegate.qml:130
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Krajina:"
 
-#: app/FormPlaceEditorDelegate.qml:179
+#: app/FormPlaceEditorDelegate.qml:181
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Čas nástupu:"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "Pick..."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:190
+#: app/FormPlaceEditorDelegate.qml:192
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:204
+#: app/FormPlaceEditorDelegate.qml:206
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
@@ -1192,7 +1195,7 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr ""
 
-#: app/FormPriceDelegate.qml:20
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
 #, kde-format
 msgid "Price"
 msgstr ""
@@ -1533,30 +1536,30 @@ msgstr ""
 msgid "Check-out time: %1"
 msgstr ""
 
-#: app/HotelEditor.qml:18
+#: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Upraviť rezerváciu hotelu"
 
-#: app/HotelEditor.qml:49
+#: app/HotelEditor.qml:51
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: app/HotelEditor.qml:54
+#: app/HotelEditor.qml:56
 #, fuzzy, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Názov:"
 
-#: app/HotelEditor.qml:80
+#: app/HotelEditor.qml:82
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Vstupná kontrola"
 
-#: app/HotelEditor.qml:87
+#: app/HotelEditor.qml:89
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "hotel checkout"

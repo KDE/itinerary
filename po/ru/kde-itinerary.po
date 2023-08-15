@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -421,18 +421,21 @@ msgstr "Терминал:"
 msgid "Arrival time"
 msgstr "Время прибытия:"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Бронирование"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/TrainEditor.qml:193
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Код бронирования:"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/TrainEditor.qml:198
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
@@ -901,7 +904,7 @@ msgstr "Файлы GPX (*.*)"
 msgid "Import Favorite Locations"
 msgstr "Импорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1132,57 +1135,57 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:66
+#: app/FormPlaceEditorDelegate.qml:68
 #, fuzzy, kde-format
 #| msgid "Street:"
 msgid "Street"
 msgstr "Улица:"
 
-#: app/FormPlaceEditorDelegate.qml:78
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:84
+#: app/FormPlaceEditorDelegate.qml:86
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Город:"
 
-#: app/FormPlaceEditorDelegate.qml:102
+#: app/FormPlaceEditorDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Region:"
 msgid "Region"
 msgstr "Регион:"
 
-#: app/FormPlaceEditorDelegate.qml:128
+#: app/FormPlaceEditorDelegate.qml:130
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Страна:"
 
-#: app/FormPlaceEditorDelegate.qml:179
+#: app/FormPlaceEditorDelegate.qml:181
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Время посадки:"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "Pick..."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:190
+#: app/FormPlaceEditorDelegate.qml:192
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:204
+#: app/FormPlaceEditorDelegate.qml:206
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
@@ -1200,7 +1203,7 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(было: %1)"
 
-#: app/FormPriceDelegate.qml:20
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
 #, kde-format
 msgid "Price"
 msgstr ""
@@ -1543,31 +1546,31 @@ msgstr "Время регистрации: %1"
 msgid "Check-out time: %1"
 msgstr "Время регистрации отъезда: %1"
 
-#: app/HotelEditor.qml:18
+#: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Изменить бронирование гостиницы"
 
-#: app/HotelEditor.qml:49
+#: app/HotelEditor.qml:51
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: app/HotelEditor.qml:54
+#: app/HotelEditor.qml:56
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Имя:"
 
-#: app/HotelEditor.qml:80
+#: app/HotelEditor.qml:82
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Регистрация"
 
-#: app/HotelEditor.qml:87
+#: app/HotelEditor.qml:89
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "hotel checkout"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-08 17:12+0200\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
+"PO-Revision-Date: 2023-08-13 11:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -399,17 +399,20 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Referència"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "A nom de"
@@ -846,7 +849,7 @@ msgstr "Fitxers GPX (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Importa les ubicacions preferides"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1059,52 +1062,52 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Compartix a través de Matrix"
 
-#: app/FormPlaceEditorDelegate.qml:66
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "Carrer"
 
-#: app/FormPlaceEditorDelegate.qml:78
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Format de codi postal no vàlid per a este país."
 
-#: app/FormPlaceEditorDelegate.qml:84
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "Ciutat"
 
-#: app/FormPlaceEditorDelegate.qml:102
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "Regió"
 
-#: app/FormPlaceEditorDelegate.qml:128
+#: app/FormPlaceEditorDelegate.qml:130
 #, kde-format
 msgid "Country"
 msgstr "País"
 
-#: app/FormPlaceEditorDelegate.qml:179
+#: app/FormPlaceEditorDelegate.qml:181
 #, kde-format
 msgid "Coordinate"
 msgstr "Coordenades"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "Pick..."
 msgstr "Selecció..."
 
-#: app/FormPlaceEditorDelegate.qml:190
+#: app/FormPlaceEditorDelegate.qml:192
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Coordenades de l'adreça"
 
-#: app/FormPlaceEditorDelegate.qml:204
+#: app/FormPlaceEditorDelegate.qml:206
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Adreça de les coordenades"
@@ -1120,14 +1123,13 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(era: %1)"
 
-#: app/FormPriceDelegate.qml:20
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "Preu"
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1454,29 +1456,29 @@ msgstr "Hora de la facturació: %1"
 msgid "Check-out time: %1"
 msgstr "Hora de l'eixida: %1"
 
-#: app/HotelEditor.qml:18
+#: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Edita una reserva d'hotel"
 
-#: app/HotelEditor.qml:49
+#: app/HotelEditor.qml:51
 #, kde-format
 msgid "Hotel"
 msgstr "Hotel"
 
-#: app/HotelEditor.qml:54
+#: app/HotelEditor.qml:56
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Nom"
 
-#: app/HotelEditor.qml:80
+#: app/HotelEditor.qml:82
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Entrada"
 
-#: app/HotelEditor.qml:87
+#: app/HotelEditor.qml:89
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
@@ -1925,11 +1927,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "Canvi de la zona horària: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "Divisa: %1"
+msgstr "Divisa: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:110
 #, kde-format
@@ -3436,7 +3437,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "currency conversion rate"
-#~ msgid "1 %1 = %2 %3"
-#~ msgstr "1 %1 = %2 %3"

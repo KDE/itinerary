@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-13 00:47+0000\n"
+"POT-Creation-Date: 2023-08-15 00:46+0000\n"
 "PO-Revision-Date: 2023-08-13 08:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
@@ -401,17 +401,20 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Čas prihoda"
 
-#: app/BookingCard.qml:25 app/BusEditor.qml:176 app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Rezervacija"
 
-#: app/BookingCard.qml:30 app/BusEditor.qml:180 app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Referenca"
 
-#: app/BookingCard.qml:39 app/BusEditor.qml:185 app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
 msgstr "Pod imenom"
@@ -847,7 +850,7 @@ msgstr "Datoteke GPX (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Uvozi priljubljene lokacije"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1060,52 +1063,52 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Deli prek Matrixa"
 
-#: app/FormPlaceEditorDelegate.qml:66
+#: app/FormPlaceEditorDelegate.qml:68
 #, kde-format
 msgid "Street"
 msgstr "Ulica"
 
-#: app/FormPlaceEditorDelegate.qml:78
+#: app/FormPlaceEditorDelegate.qml:80
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Neveljavna poštna številka za to državo."
 
-#: app/FormPlaceEditorDelegate.qml:84
+#: app/FormPlaceEditorDelegate.qml:86
 #, kde-format
 msgid "City"
 msgstr "Mesto"
 
-#: app/FormPlaceEditorDelegate.qml:102
+#: app/FormPlaceEditorDelegate.qml:104
 #, kde-format
 msgid "Region"
 msgstr "Regija"
 
-#: app/FormPlaceEditorDelegate.qml:128
+#: app/FormPlaceEditorDelegate.qml:130
 #, kde-format
 msgid "Country"
 msgstr "Država"
 
-#: app/FormPlaceEditorDelegate.qml:179
+#: app/FormPlaceEditorDelegate.qml:181
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordinate"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:182
 #, kde-format
 msgid "Pick..."
 msgstr "Poberi..."
 
-#: app/FormPlaceEditorDelegate.qml:190
+#: app/FormPlaceEditorDelegate.qml:192
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Naslov v koordinate"
 
-#: app/FormPlaceEditorDelegate.qml:204
+#: app/FormPlaceEditorDelegate.qml:206
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Koordinate v naslov"
@@ -1121,7 +1124,7 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(je bilo: %1)"
 
-#: app/FormPriceDelegate.qml:20
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
 #, kde-format
 msgid "Price"
 msgstr "Cena"
@@ -1456,29 +1459,29 @@ msgstr "Čas prijave v hotelu: %1"
 msgid "Check-out time: %1"
 msgstr "Čas odjave iz hotela: %1"
 
-#: app/HotelEditor.qml:18
+#: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
 msgstr "Uredi hotelsko rezervacijo"
 
-#: app/HotelEditor.qml:49
+#: app/HotelEditor.qml:51
 #, kde-format
 msgid "Hotel"
 msgstr "Hotel"
 
-#: app/HotelEditor.qml:54
+#: app/HotelEditor.qml:56
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Ime"
 
-#: app/HotelEditor.qml:80
+#: app/HotelEditor.qml:82
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Prijava ob prihodu"
 
-#: app/HotelEditor.qml:87
+#: app/HotelEditor.qml:89
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
