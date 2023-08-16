@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 00:46+0000\n"
+"POT-Creation-Date: 2023-08-16 00:46+0000\n"
 "PO-Revision-Date: 2023-08-06 03:43+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -122,7 +122,7 @@ msgstr "Aggiungi al calendario..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:101
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:107
 #, kde-format
 msgid "Delete"
 msgstr "Elimina"
@@ -398,19 +398,19 @@ msgstr "Terminale"
 msgid "Arrival time"
 msgstr "Ora di arrivo"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:39 app/BusEditor.qml:176
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41 app/BusEditor.qml:176
 #: app/TrainEditor.qml:189
 #, kde-format
 msgid "Booking"
 msgstr "Prenotazione"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:44 app/BusEditor.qml:180
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46 app/BusEditor.qml:180
 #: app/TrainEditor.qml:193
 #, kde-format
 msgid "Reference"
 msgstr "Riferimento"
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:50 app/BusEditor.qml:185
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52 app/BusEditor.qml:185
 #: app/TrainEditor.qml:198
 #, kde-format
 msgid "Under name"
@@ -837,7 +837,7 @@ msgid "Export Favorite Locations"
 msgstr "Esporta i luoghi preferiti"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:151
+#: app/TimelinePage.qml:157
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "File GPX (*.gpx)"
@@ -1471,13 +1471,19 @@ msgctxt "hotel name"
 msgid "Name"
 msgstr "Nome"
 
-#: app/HotelEditor.qml:82
+#: app/HotelEditor.qml:59
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Name must not be empty."
+msgstr "Il nome del biglietto non può essere vuoto."
+
+#: app/HotelEditor.qml:84
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Check-in"
 
-#: app/HotelEditor.qml:89
+#: app/HotelEditor.qml:91
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
@@ -2924,42 +2930,47 @@ msgstr "Biglietto attuale"
 msgid "Add train trip..."
 msgstr "Aggiungi viaggio in treno..."
 
-#: app/TimelinePage.qml:94
+#: app/TimelinePage.qml:87
+#, kde-format
+msgid "Add accommodation..."
+msgstr ""
+
+#: app/TimelinePage.qml:100
 #, kde-format
 msgid "Delete Trip"
 msgstr "Elimina viaggio"
 
-#: app/TimelinePage.qml:95
+#: app/TimelinePage.qml:101
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Vuoi davvero eliminare questo viaggio?"
 
-#: app/TimelinePage.qml:114
+#: app/TimelinePage.qml:120
 #, kde-format
 msgid "Export"
 msgstr "Esporta"
 
-#: app/TimelinePage.qml:117
+#: app/TimelinePage.qml:123
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Come file Itinerary..."
 
-#: app/TimelinePage.qml:126
+#: app/TimelinePage.qml:132
 #, kde-format
 msgid "As GPX file..."
 msgstr "Come file GPX..."
 
-#: app/TimelinePage.qml:140 app/TimelinePage.qml:149
+#: app/TimelinePage.qml:146 app/TimelinePage.qml:155
 #, kde-format
 msgid "Export Trip"
 msgstr "Esporta viaggio"
 
-#: app/TimelinePage.qml:142
+#: app/TimelinePage.qml:148
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "File Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:309
+#: app/TimelinePage.qml:315
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Niente sull'itinerario per oggi."
