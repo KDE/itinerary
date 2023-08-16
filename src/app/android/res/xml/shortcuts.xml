@@ -18,13 +18,6 @@
       android:targetClass="org.kde.itinerary.Activity"
       android:data="page:///stats" />
   </shortcut>
-  <shortcut android:shortcutId="healthCertificates" android:enabled="true" android:shortcutShortLabel="@string/shortcut_label_health_certs_short">
-    <intent
-      android:action="android.intent.action.VIEW"
-      android:targetPackage="org.kde.itinerary"
-      android:targetClass="org.kde.itinerary.Activity"
-      android:data="page:///healthCert" />
-  </shortcut>
   <shortcut android:shortcutId="live" android:enabled="true" android:shortcutShortLabel="@string/shortcut_label_live_short">
     <intent
       android:action="android.intent.action.VIEW"

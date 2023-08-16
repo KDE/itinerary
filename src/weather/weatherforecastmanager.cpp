@@ -126,7 +126,6 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     if (beginDt == endDt) {
         endDt = endDt.addSecs(3600);
     }
-    const auto range = beginDt.secsTo(endDt) / 3600;
 
     WeatherTile tile{latitude, longitude};
     if (!loadForecastData(tile)) {
@@ -137,12 +136,13 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
     const auto beginIt = std::lower_bound(forecasts.begin(), forecasts.end(), beginDt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
         return lhs.dateTime() < rhs;
     });
-    if (beginIt == forecasts.end()) {
-        return {};
-    }
     const auto endIt = std::lower_bound(forecasts.begin(), forecasts.end(), endDt, [](const WeatherForecast &lhs, const QDateTime &rhs) {
         return lhs.dateTime() < rhs;
     });
+    if (beginIt == forecasts.end() || beginIt == endIt) {
+        return {};
+    }
+    const auto range = beginDt.secsTo(std::min((*std::prev(endIt)).dateTime().addSecs(3600), endDt)) / 3600;
 
     WeatherForecast fc(*beginIt);
     fc.setRange(range);

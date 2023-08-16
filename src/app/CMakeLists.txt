@@ -145,6 +145,10 @@ if (ANDROID)
 
     kirigami_package_breeze_icons(ICONS
         application-pdf
+        arrow-down
+        arrow-left
+        arrow-right
+        arrow-up
         bookmarks
         call-start
         channel-insecure-symbolic

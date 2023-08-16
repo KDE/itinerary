@@ -125,11 +125,27 @@ bool WeatherForecastPrivate::useDayTimeIcon() const
         return true;
     }
 
-    const auto endDt = m_dt.addSecs(m_range * 3600);
-    const auto sunrise = QDateTime(m_dt.date(), KHolidays::SunRiseSet::utcSunrise(m_dt.date(), m_tile.latitude(), m_tile.longitude()), Qt::UTC);
-    const auto sunset = QDateTime(m_dt.date(), KHolidays::SunRiseSet::utcSunset(m_dt.date(), m_tile.latitude(), m_tile.longitude()), Qt::UTC);
+    const auto sunriseTime = KHolidays::SunRiseSet::utcSunrise(m_dt.date(), m_tile.latitude(), m_tile.longitude());
+    const auto sunsetTime = KHolidays::SunRiseSet::utcSunset(m_dt.date(), m_tile.latitude(), m_tile.longitude());
+
+    // polar day/night: there is no sunrise/sunset
+    if (!sunriseTime.isValid() || !sunsetTime.isValid()) {
+        return KHolidays::SunRiseSet::isPolarDay(m_dt.date(), m_tile.latitude());
+    }
+
+    auto sunrise = QDateTime(m_dt.date(), sunriseTime, Qt::UTC);
+    auto sunset = QDateTime(m_dt.date(), sunsetTime, Qt::UTC);
+
+    // sunset before sunrise means the sunset actually happens the next day
+    if (m_dt >= sunrise && sunset < sunrise) {
+        sunset = sunset.addDays(1);
+    } else if (m_dt < sunrise && sunset < sunrise) {
+        sunrise = sunrise.addDays(-1);
+    }
+
     // check overlap for two days, otherwise we might miss one on a day boundary
-    return (sunrise < endDt && sunset > m_dt) || (sunrise.addDays(1) < endDt && sunset.addDays(1) > m_dt);
+    const auto endDt = m_dt.addSecs(m_range * 3600);
+    return sunrise < endDt && sunset > m_dt;
 }
 
 QString WeatherForecast::symbolIconName() const
