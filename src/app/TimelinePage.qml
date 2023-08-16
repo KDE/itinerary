@@ -86,8 +86,27 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 text: i18n("Add accommodation...")
                 icon.name: "go-home-symbolic"
-                // TODO default time and location based on timeline position
-                onTriggered: applicationWindow().pageStack.push(hotelEditorPage, {reservation: Factory.makeLodgingReservation()});
+                onTriggered: {
+                    // TODO deduplicate with the above
+                    // find date/time at the current screen center
+                    let row = -1;
+                    for (var i = listView.contentY + listView.height * 0.8; row == -1 && i > listView.contentY; i -= 10) {
+                        row = listView.indexAt(0, i);
+                    }
+                    const idx = listView.model.index(row, 0);
+
+                    let dt;
+                    if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+                        dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
+                    } else {
+                        dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+                    }
+
+                    let res =  Factory.makeLodgingReservation();
+                    res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
+                    res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
+                    applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+                }
             }
         ]
     }

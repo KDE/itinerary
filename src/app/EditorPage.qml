@@ -21,13 +21,31 @@ Kirigami.ScrollablePage {
     /** Input validation for derived pages. */
     property bool isValidInput: true
 
-    /** Returns the country we are assumed to be in at the given time. */
+    /** Returns the country we are assumed to be in at the given time.
+     *  @deprecated use cityAtTime instead
+     */
     function countryAtTime(dt) {
         const place = TimelineModel.locationAtTime(dt);
         if (place && place.address.addressCountry) {
             return place.address.addressCountry;
         }
         return Settings.homeCountryIsoCode;
+    }
+
+    /** Returns the city/region/country we are assumed to be in at the given time. */
+    function cityAtTime(dt) {
+        let city = Factory.makePlace();
+        let addr = city.address;
+        const loc = TimelineModel.locationAtTime(dt);
+        if (loc && !loc.address.isEmpty) {
+            addr.addressLocality = loc.address.addressLocality;
+            addr.addressRegion = loc.address.addressRegion;
+            addr.addressCountry = loc.address.addressCountry;
+        } else {
+            addr.addressCountry = Settings.homeCountryIsoCode;
+        }
+        city.address = addr;
+        return city;
     }
 
     leftPadding: 0

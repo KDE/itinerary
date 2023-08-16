@@ -61,13 +61,15 @@ App.EditorPage {
                 MobileForm.FormDelegateSeparator {}
                 App.FormPlaceEditorDelegate {
                     id: address
-                    place: reservation.reservationFor
-                    defaultCountry: {
+                    place: {
+                        if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
+                            return reservation.reservationFor
+
                         const HOUR = 60 * 60 * 1000;
                         const DAY = 24 * HOUR;
                         let dt = reservation.checkinTime;
                         dt.setTime(dt.getTime() - (dt.getHours() * HOUR) + DAY);
-                        return countryAtTime(dt);
+                        return cityAtTime(dt);
                     }
                 }
             }

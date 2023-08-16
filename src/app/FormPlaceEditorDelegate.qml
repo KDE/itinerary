@@ -24,7 +24,9 @@ ColumnLayout {
     property double latitude: place.geo.latitude;
     property double longitude: place.geo.longitude;
 
-    /** Initially selected country if the given address doesn't specify one. */
+    /** Initially selected country if the given address doesn't specify one.
+     *  @deprecated set @p place instead, which it not limited to just country information
+     */
     property string defaultCountry: Settings.homeCountryIsoCode
     /** Currently selected country code. */
     readonly property string currentCountry: addressCountry.currentValue
