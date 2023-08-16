@@ -18,7 +18,7 @@ App.EditorPage {
     id: root
     title: i18n("Edit Hotel Reservation")
 
-    isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue && hotelName.text !== ""
+    isValidInput: checkinEdit.hasValue && checkoutEdit.hasValue && hotelName.text !== "" && checkinEdit.value < checkoutEdit.value
 
     function apply(reservation) {
         var hotel = address.save(reservation.reservationFor);
@@ -84,6 +84,8 @@ App.EditorPage {
                     text: i18nc("hotel checkin", "Check-in")
                     obj: reservation
                     propertyName: "checkinTime"
+                    status: Kirigami.MessageType.Error
+                    statusMessage: checkinEdit.hasValue ? '' : i18n("Check-in time has to be set.")
                 }
                 MobileForm.FormDelegateSeparator {}
                 App.FormDateTimeEditDelegate {
@@ -96,6 +98,14 @@ App.EditorPage {
                         d.setDate(d.getDate() + 1);
                         d.setHours(12);
                         return d;
+                    }
+                    status: Kirigami.MessageType.Error
+                    statusMessage: {
+                        if (!checkoutEdit.hasValue)
+                            return i18n("Check-out time has to be set.")
+                        if (checkinEdit.hasValue && checkoutEdit.value < checkinEdit.value)
+                            return i18n("Check-out time has to be after the check-in time.")
+                        return '';
                     }
                 }
             }
