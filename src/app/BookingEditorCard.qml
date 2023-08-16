@@ -50,7 +50,7 @@ MobileForm.FormCard {
         MobileForm.FormTextFieldDelegate {
             id: underNameEdit
             label: i18n("Under name")
-            text: item.underName.name
+            text: item.underName ? item.underName.name : ''
         }
         MobileForm.FormDelegateSeparator {}
         App.FormPriceEditDelegate {
