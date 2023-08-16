@@ -61,5 +61,19 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             onClicked: DevelopmentModeController.crash();
         }
+
+        QQC2.Label {
+            text: DevelopmentModeController.screenInfo();
+            Layout.fillWidth: true
+            wrapMode: Text.WordWrap
+            font.family: "monospace"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    Clipboard.saveText(DevelopmentModeController.screenInfo());
+                    applicationWindow().showPassiveNotification("Screen information copied");
+                }
+            }
+        }
     }
 }

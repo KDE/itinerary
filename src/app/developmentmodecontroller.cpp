@@ -7,11 +7,12 @@
 #include "developmentmodecontroller.h"
 
 #include <QByteArray>
-#include <QCoreApplication>
 #include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QGuiApplication>
+#include <QScreen>
 #include <QStandardPaths>
 
 #ifdef Q_OS_ANDROID
@@ -110,4 +111,21 @@ void DevelopmentModeController::clearOsmTileCache()
 void DevelopmentModeController::crash()
 {
     std::raise(SIGSEGV);
+}
+
+QString DevelopmentModeController::screenInfo()
+{
+    QString info;
+    const auto screens = QGuiApplication::screens();
+    for (auto screen : screens) {
+        info += screen->name() + QLatin1Char(' ') + screen->model() + QLatin1Char(' ') + screen->serialNumber() + QLatin1Char('\n');
+        info += QLatin1String("size: ") + QString::number(screen->size().width()) + QLatin1Char('x') + QString::number(screen->size().height()) + QLatin1Char('\n');
+        info += QLatin1String("virtual size: ") + QString::number(screen->virtualSize().width()) + QLatin1Char('x') + QString::number(screen->virtualSize().height()) + QLatin1Char('\n');
+        info += QLatin1String("physical size: ") + QString::number(screen->physicalSize().width()) + QLatin1Char('x') + QString::number(screen->physicalSize().height()) + QLatin1Char('\n');
+        info += QLatin1String("logical DPI: ") + QString::number(screen->logicalDotsPerInchX())  + QLatin1Char('x') + QString::number(screen->logicalDotsPerInchY()) + QLatin1Char('\n');
+        info += QLatin1String("physical DPI: ") + QString::number(screen->physicalDotsPerInchX())  + QLatin1Char('x') + QString::number(screen->physicalDotsPerInchY()) + QLatin1Char('\n');
+        info += QLatin1String("device pixel ratio: ") + QString::number(screen->devicePixelRatio()) + QLatin1Char('\n');
+        info += QLatin1Char('\n');
+    }
+    return info;
 }
