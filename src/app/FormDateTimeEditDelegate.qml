@@ -27,6 +27,10 @@ MobileForm.AbstractFormDelegate {
         return d;
     }
 
+    // input validation, as in FormTextFieldDelegate
+    property var status: Kirigami.MessageType.Information
+    property string statusMessage: ""
+
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
         QQC2.Label {
@@ -54,6 +58,14 @@ MobileForm.AbstractFormDelegate {
                 dateInput.item.selectedDate = root.initialValue
                 timeInput.value = root.initialValue
             }
+        }
+        Kirigami.InlineMessage {
+            id: formErrorHandler
+            visible: root.statusMessage.length > 0
+            Layout.topMargin: visible ? Kirigami.Units.smallSpacing : 0
+            Layout.fillWidth: true
+            text: root.statusMessage
+            type: root.status
         }
     }
 
