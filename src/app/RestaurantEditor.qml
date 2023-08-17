@@ -17,7 +17,7 @@ App.EditorPage {
     id: root
     title: i18n("Edit Restaurant")
 
-    isValidInput: startTimeEdit.hasValue
+    isValidInput: startTimeEdit.hasValue && restaurantName.text !== "" && (!endTimeEdit.hasValue || startTimeEdit.value < endTimeEdit.value)
 
     function apply(reservation) {
         var foodEstablishment = address.save(reservation.reservationFor)
@@ -53,12 +53,17 @@ App.EditorPage {
                     id: restaurantName
                     label: i18nc("restaurant name", "Name")
                     text: reservation.reservationFor.name
+                    status: Kirigami.MessageType.Error
+                    statusMessage: restaurantName.text === "" ? i18n("Name must not be empty.") : ""
                 }
                 MobileForm.FormDelegateSeparator {}
                 App.FormPlaceEditorDelegate {
                     id: address
-                    place: reservation.reservationFor
-                    defaultCountry: countryAtTime(reservation.startTime)
+                    place: {
+                        if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
+                            return reservation.reservationFor
+                        return cityAtTime(reservation.startTime);
+                    }
                 }
             }
         }
@@ -78,6 +83,8 @@ App.EditorPage {
                     text: i18n("Start Time")
                     obj: reservation
                     propertyName: "startTime"
+                    status: Kirigami.MessageType.Error
+                    statusMessage: startTimeEdit.hasValue ? '' : i18n("Start time has to be set.")
                 }
                 MobileForm.FormDelegateSeparator {}
                 App.FormDateTimeEditDelegate {
@@ -89,6 +96,12 @@ App.EditorPage {
                         let d = new Date(startTimeEdit.value);
                         d.setHours(d.getHours() + 2);
                         return d;
+                    }
+                    status: Kirigami.MessageType.Error
+                    statusMessage: {
+                        if (endTimeEdit.hasValue && endTimeEdit.value < startTimeEdit.value)
+                            return i18n("End time has to be after the start time.")
+                        return '';
                     }
                 }
             }
