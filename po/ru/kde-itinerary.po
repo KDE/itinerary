@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:46+0000\n"
+"POT-Creation-Date: 2023-08-17 00:47+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -129,7 +129,7 @@ msgstr "Добавить в календарь..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:107
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:126
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -779,7 +779,7 @@ msgstr ""
 msgid "Download failed: %1"
 msgstr "Ошибка загрузки: %1"
 
-#: app/EditorPage.qml:38 app/ProgramMembershipEditor.qml:26
+#: app/EditorPage.qml:56 app/ProgramMembershipEditor.qml:26
 #: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
@@ -894,7 +894,7 @@ msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:157
+#: app/TimelinePage.qml:176
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -904,7 +904,7 @@ msgstr "Файлы GPX (*.*)"
 msgid "Import Favorite Locations"
 msgstr "Импорт избранных расположений"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:59
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1135,57 +1135,57 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:68
+#: app/FormPlaceEditorDelegate.qml:70
 #, fuzzy, kde-format
 #| msgid "Street:"
 msgid "Street"
 msgstr "Улица:"
 
-#: app/FormPlaceEditorDelegate.qml:80
+#: app/FormPlaceEditorDelegate.qml:82
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:86
+#: app/FormPlaceEditorDelegate.qml:88
 #, fuzzy, kde-format
 #| msgid "City:"
 msgid "City"
 msgstr "Город:"
 
-#: app/FormPlaceEditorDelegate.qml:104
+#: app/FormPlaceEditorDelegate.qml:106
 #, fuzzy, kde-format
 #| msgid "Region:"
 msgid "Region"
 msgstr "Регион:"
 
-#: app/FormPlaceEditorDelegate.qml:130
+#: app/FormPlaceEditorDelegate.qml:132
 #, fuzzy, kde-format
 #| msgid "Country:"
 msgid "Country"
 msgstr "Страна:"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:183
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate"
 msgstr "Время посадки:"
 
-#: app/FormPlaceEditorDelegate.qml:182
+#: app/FormPlaceEditorDelegate.qml:184
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:182
+#: app/FormPlaceEditorDelegate.qml:184
 #, kde-format
 msgid "Pick..."
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:192
+#: app/FormPlaceEditorDelegate.qml:194
 #, kde-format
 msgid "Address to coordinate"
 msgstr ""
 
-#: app/FormPlaceEditorDelegate.qml:206
+#: app/FormPlaceEditorDelegate.qml:208
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Coordinate to address"
@@ -1568,19 +1568,36 @@ msgstr "Имя:"
 msgid "Name must not be empty."
 msgstr ""
 
-#: app/HotelEditor.qml:84
+#: app/HotelEditor.qml:86
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Регистрация"
 
-#: app/HotelEditor.qml:91
+#: app/HotelEditor.qml:90
+#, fuzzy, kde-format
+#| msgid "Check-in time:"
+msgid "Check-in time has to be set."
+msgstr "Время регистрации:"
+
+#: app/HotelEditor.qml:95
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "Регистрация отъезда %1"
+
+#: app/HotelEditor.qml:107
+#, fuzzy, kde-format
+#| msgid "Check-out time:"
+msgid "Check-out time has to be set."
+msgstr "Время регистрации отъезда:"
+
+#: app/HotelEditor.qml:109
+#, kde-format
+msgid "Check-out time has to be after the check-in time."
+msgstr ""
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -3087,45 +3104,45 @@ msgstr "Добавить поездку на поезде…"
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:100
+#: app/TimelinePage.qml:119
 #, kde-format
 msgid "Delete Trip"
 msgstr "Удалить поездку"
 
-#: app/TimelinePage.qml:101
+#: app/TimelinePage.qml:120
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Удалить эту поездку?"
 
-#: app/TimelinePage.qml:120
+#: app/TimelinePage.qml:139
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Экспорт…"
 
-#: app/TimelinePage.qml:123
+#: app/TimelinePage.qml:142
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Мой маршрут"
 
-#: app/TimelinePage.qml:132
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:146 app/TimelinePage.qml:155
+#: app/TimelinePage.qml:165 app/TimelinePage.qml:174
 #, kde-format
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TimelinePage.qml:148
+#: app/TimelinePage.qml:167
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 
-#: app/TimelinePage.qml:315
+#: app/TimelinePage.qml:334
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-16 00:46+0000\n"
+"POT-Creation-Date: 2023-08-17 00:47+0000\n"
 "PO-Revision-Date: 2023-07-25 16:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -121,7 +121,7 @@ msgstr "Lisää kalenteriin…"
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:107
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:126
 #, kde-format
 msgid "Delete"
 msgstr "Poista"
@@ -729,7 +729,7 @@ msgstr "Verkkovirhe: %1"
 msgid "Download failed: %1"
 msgstr "Lataus epäonnistui: %1"
 
-#: app/EditorPage.qml:38 app/ProgramMembershipEditor.qml:26
+#: app/EditorPage.qml:56 app/ProgramMembershipEditor.qml:26
 #: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
@@ -834,7 +834,7 @@ msgid "Export Favorite Locations"
 msgstr "Tuo suosikkisijainnit"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:157
+#: app/TimelinePage.qml:176
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-tiedostot (*.gpx)"
@@ -844,7 +844,7 @@ msgstr "GPX-tiedostot (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Tuo suosikkisijainnit"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:57
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:59
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -1057,52 +1057,52 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Jaa Matrixilla"
 
-#: app/FormPlaceEditorDelegate.qml:68
+#: app/FormPlaceEditorDelegate.qml:70
 #, kde-format
 msgid "Street"
 msgstr "Katu"
 
-#: app/FormPlaceEditorDelegate.qml:80
+#: app/FormPlaceEditorDelegate.qml:82
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Postinumeron muoto on virheellinen tälle maalle."
 
-#: app/FormPlaceEditorDelegate.qml:86
+#: app/FormPlaceEditorDelegate.qml:88
 #, kde-format
 msgid "City"
 msgstr "Kaupunki"
 
-#: app/FormPlaceEditorDelegate.qml:104
+#: app/FormPlaceEditorDelegate.qml:106
 #, kde-format
 msgid "Region"
 msgstr "Alue"
 
-#: app/FormPlaceEditorDelegate.qml:130
+#: app/FormPlaceEditorDelegate.qml:132
 #, kde-format
 msgid "Country"
 msgstr "Maa"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:183
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordinaatti"
 
-#: app/FormPlaceEditorDelegate.qml:182
+#: app/FormPlaceEditorDelegate.qml:184
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:182
+#: app/FormPlaceEditorDelegate.qml:184
 #, kde-format
 msgid "Pick..."
 msgstr "Valitse…"
 
-#: app/FormPlaceEditorDelegate.qml:192
+#: app/FormPlaceEditorDelegate.qml:194
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Osoitteesta koordinaattiin"
 
-#: app/FormPlaceEditorDelegate.qml:206
+#: app/FormPlaceEditorDelegate.qml:208
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Koordinaatista osoitteeseen"
@@ -1474,17 +1474,34 @@ msgstr "Nimi"
 msgid "Name must not be empty."
 msgstr "Lipun nimi ei voi olla tyhjä."
 
-#: app/HotelEditor.qml:84
+#: app/HotelEditor.qml:86
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Sisäänkirjautuminen"
 
-#: app/HotelEditor.qml:91
+#: app/HotelEditor.qml:90
+#, fuzzy, kde-format
+#| msgid "Check-in time"
+msgid "Check-in time has to be set."
+msgstr "Sisäänkirjautumisaika"
+
+#: app/HotelEditor.qml:95
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "Uloskirjautuminen"
+
+#: app/HotelEditor.qml:107
+#, fuzzy, kde-format
+#| msgid "Check-out time"
+msgid "Check-out time has to be set."
+msgstr "Uloskirjautumisaika"
+
+#: app/HotelEditor.qml:109
+#, kde-format
+msgid "Check-out time has to be after the check-in time."
+msgstr ""
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2937,45 +2954,45 @@ msgstr "Lisää junamatka…"
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:100
+#: app/TimelinePage.qml:119
 #, kde-format
 msgid "Delete Trip"
 msgstr "Poista matka"
 
-#: app/TimelinePage.qml:101
+#: app/TimelinePage.qml:120
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Haluatko varmasti poistaa tämän matkan?"
 
-#: app/TimelinePage.qml:120
+#: app/TimelinePage.qml:139
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Vie…"
 
-#: app/TimelinePage.qml:123
+#: app/TimelinePage.qml:142
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Matkasuunnitelmani"
 
-#: app/TimelinePage.qml:132
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:146 app/TimelinePage.qml:155
+#: app/TimelinePage.qml:165 app/TimelinePage.qml:174
 #, kde-format
 msgid "Export Trip"
 msgstr "Vie matka"
 
-#: app/TimelinePage.qml:148
+#: app/TimelinePage.qml:167
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "KDE Itinerary -tiedostot (*.itinerary)"
 
-#: app/TimelinePage.qml:315
+#: app/TimelinePage.qml:334
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Matkasuunnitelmassa ei tänään ole mitään."
