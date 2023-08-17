@@ -10,6 +10,13 @@
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
 
+QVariant Factory::makeFoodEstablishmentReservation()
+{
+    KItinerary::FoodEstablishmentReservation r;
+    r.setReservationFor(KItinerary::FoodEstablishment());
+    return r;
+}
+
 QVariant Factory::makeLodgingReservation()
 {
     KItinerary::LodgingReservation r;

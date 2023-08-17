@@ -19,6 +19,23 @@ Kirigami.ScrollablePage {
     title: i18n("My Itinerary")
     onBackRequested: event => { event.accepted = true; }
 
+    /** Model index somewhat at the center of the currently display timeline. */
+    function currentIndex() {
+        let row = -1;
+        for (let i = listView.contentY + listView.height * 0.8; row == -1 && i > listView.contentY; i -= 10) {
+            row = listView.indexAt(0, i);
+        }
+        return listView.model.index(row, 0);
+    }
+
+    /** Date/time the given model index refers to, depending on the type of the element this refers to. */
+    function dateTimeAtIndex(idx) {
+        if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+            return listView.model.data(idx, TimelineModel.EndDateTimeRole);
+        }
+        return listView.model.data(idx, TimelineModel.StartDateTimeRole);
+    }
+
     // context drawer content
     actions {
         contextualActions: [
@@ -38,11 +55,7 @@ Kirigami.ScrollablePage {
                 icon.name: "list-add-symbolic"
                 onTriggered: {
                     // find date/time at the current screen center
-                    var row = -1;
-                    for (var i = listView.contentY + listView.height * 0.8; row == -1 && i > listView.contentY; i -= 10) {
-                        row = listView.indexAt(0, i);
-                    }
-                    const idx = listView.model.index(row, 0);
+                    const idx = currentIndex();
 
                     const HOUR = 60 * 60 * 1000;
                     var roundInterval = HOUR;
@@ -87,25 +100,22 @@ Kirigami.ScrollablePage {
                 text: i18n("Add accommodation...")
                 icon.name: "go-home-symbolic"
                 onTriggered: {
-                    // TODO deduplicate with the above
-                    // find date/time at the current screen center
-                    let row = -1;
-                    for (var i = listView.contentY + listView.height * 0.8; row == -1 && i > listView.contentY; i -= 10) {
-                        row = listView.indexAt(0, i);
-                    }
-                    const idx = listView.model.index(row, 0);
-
-                    let dt;
-                    if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
-                        dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
-                    } else {
-                        dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
-                    }
-
+                    const dt = dateTimeAtIndex(currentIndex());
                     let res =  Factory.makeLodgingReservation();
                     res.checkinTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 15, 0);
                     res.checkoutTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + 1, 11, 0);
                     applicationWindow().pageStack.push(hotelEditorPage, {reservation: res});
+                }
+            },
+            Kirigami.Action {
+                text: i18n("Add restaurant...")
+                icon.source: "qrc:///images/foodestablishment.svg"
+                onTriggered: {
+                    const dt = dateTimeAtIndex(currentIndex());
+                    let res =  Factory.makeFoodEstablishmentReservation();
+                    res.startTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 20, 0);
+                    res.endTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 22, 0);
+                    applicationWindow().pageStack.push(restaurantEditorPage, {reservation: res});
                 }
             }
         ]
