@@ -154,6 +154,10 @@ App.DetailsPage {
             }
         }
 
+        App.BookingCard {
+            reservation: root.reservation
+        }
+
         App.ReservationDocumentsCard {
             controller: root.controller
         }
