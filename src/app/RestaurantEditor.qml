@@ -33,6 +33,7 @@ App.EditorPage {
         if (endTimeEdit.isModified)
             newRes = Util.setDateTimePreserveTimezone(newRes, "endTime", endTimeEdit.value);
 
+        bookingEdit.apply(newRes);
         return newRes;
     }
 
@@ -110,6 +111,11 @@ App.EditorPage {
         App.ContactEditorCard {
             id: contactEdit
             contact: reservation.reservationFor
+        }
+
+        App.BookingEditorCard {
+            id: bookingEdit
+            item: reservation
         }
     }
 }
