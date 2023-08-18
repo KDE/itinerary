@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:47+0000\n"
-"PO-Revision-Date: 2023-08-16 20:10+0200\n"
+"POT-Creation-Date: 2023-08-18 00:45+0000\n"
+"PO-Revision-Date: 2023-08-17 08:24+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -122,7 +122,7 @@ msgstr "Dodaj v koledar..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:126
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:136
 #, kde-format
 msgid "Delete"
 msgstr "Zbriši"
@@ -785,12 +785,12 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Vhod"
 
-#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:78
+#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:83
 #, kde-format
 msgid "Start Time"
 msgstr "Začetni čas"
 
-#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:85
+#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:92
 #, kde-format
 msgid "End Time"
 msgstr "Končni čas"
@@ -840,7 +840,7 @@ msgid "Export Favorite Locations"
 msgstr "Izvozi priljubljene lokacije"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:176
+#: app/TimelinePage.qml:186
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Datoteke GPX (*.gpx)"
@@ -1475,7 +1475,7 @@ msgctxt "hotel name"
 msgid "Name"
 msgstr "Ime"
 
-#: app/HotelEditor.qml:59
+#: app/HotelEditor.qml:59 app/RestaurantEditor.qml:57
 #, kde-format
 msgid "Name must not be empty."
 msgstr "Ime ne sme biti prazno."
@@ -1487,10 +1487,9 @@ msgid "Check-in"
 msgstr "Prijava ob prihodu"
 
 #: app/HotelEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Check-in time"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "Čas prijave"
+msgstr "Čas prijave mora biti nastavljen."
 
 #: app/HotelEditor.qml:95
 #, kde-format
@@ -1499,15 +1498,14 @@ msgid "Check-out"
 msgstr "Odjava ob odhodu"
 
 #: app/HotelEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "Čas odjave"
+msgstr "Čas odjave mora biti nastavljen."
 
 #: app/HotelEditor.qml:109
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "Čas odjave mora biti kasnejši od časa prijave."
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2516,10 +2514,22 @@ msgctxt "restaurant name"
 msgid "Name"
 msgstr "Ime"
 
-#: app/RestaurantEditor.qml:73
+#: app/RestaurantEditor.qml:78
 #, kde-format
 msgid "Reservation"
 msgstr "Rezervacija"
+
+#: app/RestaurantEditor.qml:87
+#, fuzzy, kde-format
+#| msgid "Check-out time has to be set."
+msgid "Start time has to be set."
+msgstr "Čas odjave mora biti nastavljen."
+
+#: app/RestaurantEditor.qml:103
+#, fuzzy, kde-format
+#| msgid "Check-out time has to be after the check-in time."
+msgid "End time has to be after the start time."
+msgstr "Čas odjave mora biti kasnejši od časa prijave."
 
 #: app/RestaurantPage.qml:16
 #, kde-format
@@ -2929,62 +2939,68 @@ msgstr "Potnik %1"
 msgid "My Itinerary"
 msgstr "Moj itinerar"
 
-#: app/TimelinePage.qml:26
+#: app/TimelinePage.qml:43
 #, kde-format
 msgid "Go To Now"
 msgstr "Pojdi na zdaj"
 
-#: app/TimelinePage.qml:31
+#: app/TimelinePage.qml:48
 #, kde-format
 msgid "Current Ticket"
 msgstr "Trenutna vstopnica"
 
-#: app/TimelinePage.qml:37
+#: app/TimelinePage.qml:54
 #, kde-format
 msgid "Add train trip..."
 msgstr "Dodaj izlet z železnico…"
 
-#: app/TimelinePage.qml:87
+#: app/TimelinePage.qml:100
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Dodaj nastanitev..."
 
-#: app/TimelinePage.qml:119
+#: app/TimelinePage.qml:111
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add restaurant..."
+msgstr "Dodaj izlet z železnico…"
+
+#: app/TimelinePage.qml:129
 #, kde-format
 msgid "Delete Trip"
 msgstr "Zbriši izlet"
 
-#: app/TimelinePage.qml:120
+#: app/TimelinePage.qml:130
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Ali res želite izbrisati to potovanje?"
 
-#: app/TimelinePage.qml:139
+#: app/TimelinePage.qml:149
 #, kde-format
 msgid "Export"
 msgstr "Izvozi"
 
-#: app/TimelinePage.qml:142
+#: app/TimelinePage.qml:152
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Kot datoteko itinerarja..."
 
-#: app/TimelinePage.qml:151
+#: app/TimelinePage.qml:161
 #, kde-format
 msgid "As GPX file..."
 msgstr "Kot datoteko GPX..."
 
-#: app/TimelinePage.qml:165 app/TimelinePage.qml:174
+#: app/TimelinePage.qml:175 app/TimelinePage.qml:184
 #, kde-format
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:167
+#: app/TimelinePage.qml:177
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
 
-#: app/TimelinePage.qml:334
+#: app/TimelinePage.qml:344
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."

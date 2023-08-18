@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:47+0000\n"
-"PO-Revision-Date: 2023-08-16 10:43+0200\n"
+"POT-Creation-Date: 2023-08-18 00:45+0000\n"
+"PO-Revision-Date: 2023-08-17 13:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -125,7 +125,7 @@ msgstr "Afegeix al calendari..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:126
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:136
 #, kde-format
 msgid "Delete"
 msgstr "Suprimeix"
@@ -784,12 +784,12 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada"
 
-#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:78
+#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:83
 #, kde-format
 msgid "Start Time"
 msgstr "Hora d'inici"
 
-#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:85
+#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:92
 #, kde-format
 msgid "End Time"
 msgstr "Hora final"
@@ -839,7 +839,7 @@ msgid "Export Favorite Locations"
 msgstr "Exporta les ubicacions preferides"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:176
+#: app/TimelinePage.qml:186
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fitxers GPX (*.gpx)"
@@ -1472,7 +1472,7 @@ msgctxt "hotel name"
 msgid "Name"
 msgstr "Nom"
 
-#: app/HotelEditor.qml:59
+#: app/HotelEditor.qml:59 app/RestaurantEditor.qml:57
 #, kde-format
 msgid "Name must not be empty."
 msgstr "El nom no pot estar buit."
@@ -1484,10 +1484,9 @@ msgid "Check-in"
 msgstr "Entrada"
 
 #: app/HotelEditor.qml:90
-#, fuzzy, kde-format
-#| msgid "Check-in time"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "Hora de la facturació"
+msgstr "Cal establir l'hora d'entrada"
 
 #: app/HotelEditor.qml:95
 #, kde-format
@@ -1496,15 +1495,14 @@ msgid "Check-out"
 msgstr "Sortida"
 
 #: app/HotelEditor.qml:107
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "Hora de la sortida"
+msgstr "Cal establir l'hora de sortida"
 
 #: app/HotelEditor.qml:109
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "L'hora de sortida cal que sigui posterior a l'hora d'entrada."
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2516,10 +2514,22 @@ msgctxt "restaurant name"
 msgid "Name"
 msgstr "Nom"
 
-#: app/RestaurantEditor.qml:73
+#: app/RestaurantEditor.qml:78
 #, kde-format
 msgid "Reservation"
 msgstr "Reserva"
+
+#: app/RestaurantEditor.qml:87
+#, fuzzy, kde-format
+#| msgid "Check-out time has to be set."
+msgid "Start time has to be set."
+msgstr "Cal establir l'hora de sortida"
+
+#: app/RestaurantEditor.qml:103
+#, fuzzy, kde-format
+#| msgid "Check-out time has to be after the check-in time."
+msgid "End time has to be after the start time."
+msgstr "L'hora de sortida cal que sigui posterior a l'hora d'entrada."
 
 #: app/RestaurantPage.qml:16
 #, kde-format
@@ -2936,62 +2946,68 @@ msgstr "Viatger/a %1"
 msgid "My Itinerary"
 msgstr "El meu itinerari"
 
-#: app/TimelinePage.qml:26
+#: app/TimelinePage.qml:43
 #, kde-format
 msgid "Go To Now"
 msgstr "Ves a ara"
 
-#: app/TimelinePage.qml:31
+#: app/TimelinePage.qml:48
 #, kde-format
 msgid "Current Ticket"
 msgstr "Bitllet actual"
 
-#: app/TimelinePage.qml:37
+#: app/TimelinePage.qml:54
 #, kde-format
 msgid "Add train trip..."
 msgstr "Afegeix un viatge de tren..."
 
-#: app/TimelinePage.qml:87
+#: app/TimelinePage.qml:100
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Afegeix un allotjament..."
 
-#: app/TimelinePage.qml:119
+#: app/TimelinePage.qml:111
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add restaurant..."
+msgstr "Afegeix un viatge de tren..."
+
+#: app/TimelinePage.qml:129
 #, kde-format
 msgid "Delete Trip"
 msgstr "Suprimeix el viatge"
 
-#: app/TimelinePage.qml:120
+#: app/TimelinePage.qml:130
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Segur que voleu suprimir aquest viatge?"
 
-#: app/TimelinePage.qml:139
+#: app/TimelinePage.qml:149
 #, kde-format
 msgid "Export"
 msgstr "Exporta"
 
-#: app/TimelinePage.qml:142
+#: app/TimelinePage.qml:152
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Com a fitxer de l'Itinerary..."
 
-#: app/TimelinePage.qml:151
+#: app/TimelinePage.qml:161
 #, kde-format
 msgid "As GPX file..."
 msgstr "Com a fitxer GPX..."
 
-#: app/TimelinePage.qml:165 app/TimelinePage.qml:174
+#: app/TimelinePage.qml:175 app/TimelinePage.qml:184
 #, kde-format
 msgid "Export Trip"
 msgstr "Exporta un viatge"
 
-#: app/TimelinePage.qml:167
+#: app/TimelinePage.qml:177
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Fitxers de l'Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:334
+#: app/TimelinePage.qml:344
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Res per a l'itinerari d'avui."
