@@ -717,7 +717,33 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.08.0" date="2023-08-24"/>
+    <release version="23.08.0" date="2023-08-24">
+      <description>
+        <ul>
+          <li>Preferred transport modes can now selected for all public transport searches.</li>
+          <li>Public transport line logos are now also available for some regional and long distance rail services.</li>
+          <li>Added support for railway coach layouts for more types of trains.</li>
+          <li>Added support for importing Deutsche Bahn and SNCF online tickets.</li>
+          <li>Added location sharing via Matrix.</li>
+          <li>Consider coach layout and seat reservation data to highlight the departure/arrival spot on a platform.</li>
+          <li>New look for the timeline entires and the editing pages.</li>
+          <li>New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
+          <li>New or improved travel document extractors for Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino and ZSSK.</li>
+          <li>Added support for importing ActivityPub events.</li>
+          <li>Added support for editing many more reservation and ticket details.</li>
+          <li>Documents can now be attached to all tickets and reservations, and are automatically attached in more cases.</li>
+          <li>New hotel, event and restaurant reservation can be created by adding a URL to their schema.org annotated website.</li>
+          <li>Added support for extracting travel data in Apple iCal events.</li>
+          <li>Improved notifications in case of Apple Wallet pass updates.</li>
+          <li>Improved display of ticket validtiy times in the passes and programs view.</li>
+          <li>Improved display of public transport cancellations and long disruption notes.</li>
+          <li>Fixed searching for international railway connections sometimes not finding any result.</li>
+          <li>Fixed weather icons sometimes wrongly using the night variants during the day.</li>
+          <li>Fixed too rapid realtime data update queries in case of network errors.</li>
+          <li>Fixed exported events not being editable by other calendaring apps on Android.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.04.3" date="2023-07-06">
       <description>
         <ul>
