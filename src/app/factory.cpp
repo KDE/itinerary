@@ -5,10 +5,18 @@
 
 #include "factory.h"
 
+#include <KItinerary/Event>
 #include <KItinerary/Person>
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
+
+QVariant Factory::makeEventReservation()
+{
+    KItinerary::EventReservation r;
+    r.setReservationFor(KItinerary::Event());
+    return r;
+}
 
 QVariant Factory::makeFoodEstablishmentReservation()
 {

@@ -108,6 +108,18 @@ Kirigami.ScrollablePage {
                 }
             },
             Kirigami.Action {
+                text: i18n("Add event...")
+                icon.name: "meeting-attending"
+                onTriggered: {
+                    const dt = dateTimeAtIndex(currentIndex());
+                    let res = Factory.makeEventReservation();
+                    let ev = res.reservationFor;
+                    ev.startDate = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                    res.reservationFor = ev;
+                    applicationWindow().pageStack.push(eventEditorPage, {reservation: res});
+                }
+            },
+            Kirigami.Action {
                 text: i18n("Add restaurant...")
                 icon.source: "qrc:///images/foodestablishment.svg"
                 onTriggered: {
@@ -231,6 +243,10 @@ Kirigami.ScrollablePage {
     Component {
         id: hotelEditorPage
         App.HotelEditor {}
+    }
+    Component {
+        id: eventEditorPage
+        App.EventEditor {}
     }
     Component {
         id: restaurantEditorPage

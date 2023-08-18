@@ -14,7 +14,7 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
-    editor: App.EventEditor {}
+    editor: eventEditorPage
 
     actions.main: Kirigami.Action {
         icon.name: "view-barcode-qr"

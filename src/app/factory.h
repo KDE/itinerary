@@ -15,6 +15,7 @@ class Factory
 {
     Q_GADGET
 public:
+    Q_INVOKABLE static QVariant makeEventReservation();
     Q_INVOKABLE static QVariant makeFoodEstablishmentReservation();
     Q_INVOKABLE static QVariant makeLodgingReservation();
     Q_INVOKABLE static QVariant makePerson();
