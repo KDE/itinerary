@@ -14,7 +14,7 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Boat Ticket")
-    editor: App.BoatEditor {}
+    editor: boatEditorPage
 
     actions.main: Kirigami.Action {
         icon.name: "view-barcode-qr"

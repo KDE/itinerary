@@ -5,11 +5,19 @@
 
 #include "factory.h"
 
+#include <KItinerary/BoatTrip>
 #include <KItinerary/Event>
 #include <KItinerary/Person>
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
+
+QVariant Factory::makeBoatReservation()
+{
+    KItinerary::BoatReservation r;
+    r.setReservationFor(KItinerary::BoatTrip());
+    return r;
+}
 
 QVariant Factory::makeEventReservation()
 {

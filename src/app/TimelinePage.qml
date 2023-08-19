@@ -97,6 +97,18 @@ Kirigami.ScrollablePage {
                 }
             },
             Kirigami.Action {
+                text: i18n("Add ferry trip...")
+                icon.name: "qrc:///images/ferry.svg"
+                onTriggered: {
+                    const dt = dateTimeAtIndex(currentIndex());
+                    let res =  Factory.makeBoatReservation();
+                    let trip = res.reservationFor;
+                    trip.departureTime = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours() == 0 ? 8 : dt.getHours() + 1, 0);
+                    res.reservationFor = trip;
+                    applicationWindow().pageStack.push(boatEditorPage, {reservation: res});
+                }
+            },
+            Kirigami.Action {
                 text: i18n("Add accommodation...")
                 icon.name: "go-home-symbolic"
                 onTriggered: {
@@ -240,6 +252,10 @@ Kirigami.ScrollablePage {
         App.WeatherForecastPage {}
     }
 
+    Component {
+        id: boatEditorPage
+        App.BoatEditor {}
+    }
     Component {
         id: hotelEditorPage
         App.HotelEditor {}
