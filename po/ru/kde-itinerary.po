@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-18 00:45+0000\n"
+"POT-Creation-Date: 2023-08-19 00:46+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -129,7 +129,7 @@ msgstr "Добавить в календарь..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:136
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:148
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -677,7 +677,7 @@ msgstr "Телефон:"
 msgid "Email"
 msgstr "Эл. почта:"
 
-#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:116
+#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:110
 #: app/EventPage.qml:112
 #, kde-format
 msgid "Website"
@@ -800,33 +800,32 @@ msgstr "Время начала: %1"
 msgid "End time: %1"
 msgstr "Время окончания: %1"
 
-#: app/EventEditor.qml:18
+#: app/EventEditor.qml:19
 #, fuzzy, kde-format
 #| msgid "Edit Event"
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Изменить событие"
 
-#: app/EventEditor.qml:66
-#, fuzzy, kde-format
-#| msgid "Venue:"
-msgid "Venue"
-msgstr "Место:"
-
-#: app/EventEditor.qml:70
-#, fuzzy, kde-format
-#| msgid "Name:"
-msgctxt "venue name"
-msgid "Name"
-msgstr "Имя:"
-
-#: app/EventEditor.qml:89 app/EventPage.qml:16
+#: app/EventEditor.qml:53 app/EventPage.qml:16
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Событие"
 
-#: app/EventEditor.qml:93 app/EventPage.qml:89
+#: app/EventEditor.qml:57
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "event name"
+msgid "Name"
+msgstr "Имя:"
+
+#: app/EventEditor.qml:60 app/HotelEditor.qml:59 app/RestaurantEditor.qml:58
+#, kde-format
+msgid "Name must not be empty."
+msgstr ""
+
+#: app/EventEditor.qml:65 app/EventPage.qml:89
 #, fuzzy, kde-format
 #| msgctxt "time of entrance"
 #| msgid "Entrance:"
@@ -834,17 +833,46 @@ msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Вход:"
 
-#: app/EventEditor.qml:104 app/EventPage.qml:97 app/RestaurantEditor.qml:83
+#: app/EventEditor.qml:76
+#, kde-format
+msgid "Entrance time has to be before the start time."
+msgstr ""
+
+#: app/EventEditor.qml:83 app/EventPage.qml:97 app/RestaurantEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
 msgstr "Время начала:"
 
-#: app/EventEditor.qml:110 app/EventPage.qml:105 app/RestaurantEditor.qml:92
+#: app/EventEditor.qml:87 app/RestaurantEditor.qml:88
+#, fuzzy, kde-format
+#| msgid "Check-out time:"
+msgid "Start time has to be set."
+msgstr "Время регистрации отъезда:"
+
+#: app/EventEditor.qml:92 app/EventPage.qml:105 app/RestaurantEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
 msgstr "Время окончания:"
+
+#: app/EventEditor.qml:103 app/RestaurantEditor.qml:104
+#, kde-format
+msgid "End time has to be after the start time."
+msgstr ""
+
+#: app/EventEditor.qml:124
+#, fuzzy, kde-format
+#| msgid "Venue:"
+msgid "Venue"
+msgstr "Место:"
+
+#: app/EventEditor.qml:128
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "venue name"
+msgid "Name"
+msgstr "Имя:"
 
 #: app/EventPage.qml:132
 #, fuzzy, kde-format
@@ -894,7 +922,7 @@ msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:186
+#: app/TimelinePage.qml:198
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -1562,11 +1590,6 @@ msgstr ""
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Имя:"
-
-#: app/HotelEditor.qml:59 app/RestaurantEditor.qml:57
-#, kde-format
-msgid "Name must not be empty."
-msgstr ""
 
 #: app/HotelEditor.qml:86
 #, fuzzy, kde-format
@@ -2647,34 +2670,23 @@ msgstr "Текущий билет"
 msgid "Edit Restaurant"
 msgstr "Изменить ресторан"
 
-#: app/RestaurantEditor.qml:49
+#: app/RestaurantEditor.qml:50
 #, fuzzy, kde-format
 #| msgid "Edit Restaurant"
 msgid "Restaurant"
 msgstr "Изменить ресторан"
 
-#: app/RestaurantEditor.qml:54
+#: app/RestaurantEditor.qml:55
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "restaurant name"
 msgid "Name"
 msgstr "Имя:"
 
-#: app/RestaurantEditor.qml:78
+#: app/RestaurantEditor.qml:79
 #, kde-format
 msgid "Reservation"
 msgstr "Бронирование"
-
-#: app/RestaurantEditor.qml:87
-#, fuzzy, kde-format
-#| msgid "Check-out time:"
-msgid "Start time has to be set."
-msgstr "Время регистрации отъезда:"
-
-#: app/RestaurantEditor.qml:103
-#, kde-format
-msgid "End time has to be after the start time."
-msgstr ""
 
 #: app/RestaurantPage.qml:16
 #, kde-format
@@ -3117,49 +3129,55 @@ msgstr ""
 
 #: app/TimelinePage.qml:111
 #, fuzzy, kde-format
+#| msgid "Add Document..."
+msgid "Add event..."
+msgstr "Добавить документ..."
+
+#: app/TimelinePage.qml:123
+#, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add restaurant..."
 msgstr "Добавить поездку на поезде…"
 
-#: app/TimelinePage.qml:129
+#: app/TimelinePage.qml:141
 #, kde-format
 msgid "Delete Trip"
 msgstr "Удалить поездку"
 
-#: app/TimelinePage.qml:130
+#: app/TimelinePage.qml:142
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Удалить эту поездку?"
 
-#: app/TimelinePage.qml:149
+#: app/TimelinePage.qml:161
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Экспорт…"
 
-#: app/TimelinePage.qml:152
+#: app/TimelinePage.qml:164
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Мой маршрут"
 
-#: app/TimelinePage.qml:161
+#: app/TimelinePage.qml:173
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:175 app/TimelinePage.qml:184
+#: app/TimelinePage.qml:187 app/TimelinePage.qml:196
 #, kde-format
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TimelinePage.qml:177
+#: app/TimelinePage.qml:189
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 
-#: app/TimelinePage.qml:344
+#: app/TimelinePage.qml:360
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."
