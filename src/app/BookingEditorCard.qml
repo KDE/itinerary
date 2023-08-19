@@ -56,7 +56,6 @@ MobileForm.FormCard {
         App.FormPriceEditDelegate {
             id: priceEdit
             item: reservation
-            defaultCurrency: Country.fromAlpha2(address.currentCountry).currencyCode
         }
     }
 }
