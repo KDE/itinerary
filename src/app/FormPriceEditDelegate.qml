@@ -27,6 +27,10 @@ MobileForm.AbstractFormDelegate {
         item.priceCurrency = currencyBox.currentText;
     }
 
+    // input validation, as in FormTextFieldDelegate
+    property alias status: formErrorHandler.type
+    property alias statusMessage: formErrorHandler.text
+
     text: i18n("Price")
     visible: PriceUtil.canHavePrice(root.item)
 
@@ -73,6 +77,21 @@ MobileForm.AbstractFormDelegate {
                 Component.onCompleted: {
                     currencyBox.currentIndex = Qt.binding(function() { return currencyBox.find(PriceUtil.hasPrice(root.item) ? PriceUtil.currency(root.item) : root.defaultCurrency, Qt.MatchExactly) });
                 }
+            }
+        }
+        Kirigami.InlineMessage {
+            id: formErrorHandler
+            visible: formErrorHandler.text.length > 0
+            Layout.topMargin: visible ? Kirigami.Units.smallSpacing : 0
+            Layout.fillWidth: true
+            type: Kirigami.MessageType.Warning
+            text: {
+                try {
+                    Number.fromLocaleString(Qt.locale(), priceEdit.text);
+                } catch(err) {
+                    return i18n("Not a valid number.");
+                }
+                return "";
             }
         }
     }
