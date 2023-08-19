@@ -40,6 +40,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.airplaneSeat = seat.text;
         newRes.reservationFor = flight;
+        bookingEdit.apply(newRes);
         return newRes;
     }
 
@@ -157,6 +158,11 @@ App.EditorPage {
                     text: reservation.airplaneSeat
                 }
             }
+        }
+
+        App.BookingEditorCard {
+            id: bookingEdit
+            item: root.reservation
         }
     }
 }
