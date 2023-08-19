@@ -1,5 +1,5 @@
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
 # Simon Depiets <sdepiets@gmail.com>, 2019, 2020.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021, 2022.
 # Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 # Thomas Vergnaud <thomas.vergnaud@mailo.eu>, 2023.
 msgid ""
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-01 02:44+0000\n"
-"PO-Revision-Date: 2023-07-05 21:48+0200\n"
+"PO-Revision-Date: 2023-08-17 17:28+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.07.90\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -71,10 +71,9 @@ msgstr ""
 "KDE Itinerary utilise les données de transport public des sources suivantes."
 
 #: app/AboutPage.qml:233
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgid "Developer information"
-msgstr "Plus d'informations"
+msgstr "Informations pour l'équipe de développement"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -87,10 +86,9 @@ msgid "Extractor capabilities:"
 msgstr "Capacités de l'extracteur :"
 
 #: app/AboutPage.qml:259
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities:"
+#, kde-format
 msgid "Extractor capabilities copied to clipboard"
-msgstr "Capacités de l'extracteur :"
+msgstr "Capacités de l'extracteur copiées vers le presse-papier"
 
 #: app/ActionsCard.qml:31
 #, kde-format
@@ -516,8 +514,7 @@ msgid "Station"
 msgstr "Gare"
 
 #: app/BusPage.qml:132 app/BusPage.qml:199
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "Quai"
@@ -734,7 +731,7 @@ msgstr "Ajouter un document..."
 #: app/downloadjob.cpp:102
 #, kde-format
 msgid "Network error: %1"
-msgstr ""
+msgstr "Erreur de réseau : %1"
 
 #: app/downloadjob.cpp:133
 #, kde-format
@@ -1767,7 +1764,7 @@ msgstr "CO₂ : %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Afficher plus…"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -1806,10 +1803,9 @@ msgid "Click to extend"
 msgstr "Cliquer pour développer"
 
 #: app/livedatamanager.cpp:668
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Vol %1 de %2 vers %3"
+msgstr "Vol %1 vers %2 :"
 
 #: app/livedatamanager.cpp:674
 #, kde-format
