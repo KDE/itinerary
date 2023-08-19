@@ -35,6 +35,7 @@ App.EditorPage {
 
         let newRes = reservation;
         newRes.reservationFor = trip;
+        bookingEdit.apply(newRes);
         return newRes;
     }
 
@@ -99,5 +100,10 @@ App.EditorPage {
             }
         }
 
+        App.BookingEditorCard {
+            id: bookingEdit
+            item: root.reservation
+            defaultCurrency: Country.fromAlpha2(departureAddress.currentCountry).currencyCode
+        }
     }
 }
