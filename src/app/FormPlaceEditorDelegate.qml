@@ -24,10 +24,6 @@ ColumnLayout {
     property double latitude: place.geo.latitude;
     property double longitude: place.geo.longitude;
 
-    /** Initially selected country if the given address doesn't specify one.
-     *  @deprecated set @p place instead, which it not limited to just country information
-     */
-    property string defaultCountry: Settings.homeCountryIsoCode
     /** Currently selected country code. */
     readonly property string currentCountry: addressCountry.currentValue
 
@@ -133,7 +129,7 @@ ColumnLayout {
         model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
             return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
         })
-        initialCountry: place.address.addressCountry ? place.address.addressCountry : root.defaultCountry
+        initialCountry: place.address.addressCountry
     }
 
     QtLocation.GeocodeModel {
