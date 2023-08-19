@@ -73,8 +73,11 @@ App.EditorPage {
                 MobileForm.FormDelegateSeparator {}
                 App.FormPlaceEditorDelegate {
                     id: departureAddress
-                    place: reservation.reservationFor.departureBoatTerminal
-                    defaultCountry: countryAtTime(reservation.reservationFor.departureTime)
+                    place: {
+                        if (root.batchId || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
+                            return reservation.reservationFor.departureBoatTerminal;
+                        return cityAtTime(root.reservation.reservationFor.departureTime);
+                    }
                 }
             }
         }
@@ -92,6 +95,11 @@ App.EditorPage {
                     text: i18nc("Boat arrival", "Arrival Time")
                     obj: reservation.reservationFor
                     propertyName: "arrivalTime"
+                    initialValue: {
+                        let d = new Date(departureTimeEdit.value);
+                        d.setHours(d.getHours() + 8);
+                        return d;
+                    }
                     status: Kirigami.MessageType.Error
                     statusMessage: {
                         if (arrivalTimeEdit.hasValue && arrivalTimeEdit.value < departureTimeEdit.value)
@@ -110,8 +118,16 @@ App.EditorPage {
                 MobileForm.FormDelegateSeparator {}
                 App.FormPlaceEditorDelegate {
                     id: arrivalAddress
-                    place: reservation.reservationFor.arrivalBoatTerminal
-                    defaultCountry: countryAtTime(reservation.reservationFor.arrivalTime)
+                    place: {
+                        if (root.batchId || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
+                            return reservation.reservationFor.arrivalBoatTerminal;
+                        let p = cityAtTime(root.reservation.reservationFor.departureTime);
+                        let addr = p.address;
+                        addr.addressLocality = undefined;
+                        addr.addressRegion = undefined;
+                        p.address = addr;
+                        return p;
+                    }
                 }
             }
         }
