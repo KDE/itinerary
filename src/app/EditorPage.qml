@@ -21,17 +21,6 @@ Kirigami.ScrollablePage {
     /** Input validation for derived pages. */
     property bool isValidInput: true
 
-    /** Returns the country we are assumed to be in at the given time.
-     *  @deprecated use cityAtTime instead
-     */
-    function countryAtTime(dt) {
-        const place = TimelineModel.locationAtTime(dt);
-        if (place && place.address.addressCountry) {
-            return place.address.addressCountry;
-        }
-        return Settings.homeCountryIsoCode;
-    }
-
     /** Returns the city/region/country we are assumed to be in at the given time. */
     function cityAtTime(dt) {
         let city = Factory.makePlace();
