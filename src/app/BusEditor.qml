@@ -40,6 +40,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.reservationFor = trip;
         newRes.reservedTicket = ticket;
+        bookingEdit.apply(newRes);
         return newRes;
     }
 
@@ -164,26 +165,9 @@ App.EditorPage {
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Booking")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextDelegate {
-                    text: i18n("Reference")
-                    description: reservation.reservationNumber
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextDelegate {
-                    text: i18n("Under name")
-                    description: reservation.underName.name
-                }
-            }
+        App.BookingEditorCard {
+            id: bookingEdit
+            item: root.reservation
         }
     }
 }
