@@ -17,6 +17,8 @@ App.EditorPage {
     id: root
     title: i18n("Edit Flight")
 
+    isValidInput: departureTime.hasValue && (!arrivalTime.hasValue || departureTime.value < arrivalTime.value)
+
     function apply(reservation) {
         var flight = reservation.reservationFor;
         if (boardingTime.isModified)
@@ -88,6 +90,8 @@ App.EditorPage {
                     obj: reservation.reservationFor
                     propertyName: "departureTime"
                     initialValue: reservation.reservationFor.departureDay
+                    status: Kirigami.MessageType.Error
+                    statusMessage: departureTime.hasValue ? '' : i18nc("flight departure", "Departure time has to be set.")
                 }
                 MobileForm.FormDelegateSeparator {}
                 MobileForm.FormTextFieldDelegate {
@@ -105,6 +109,12 @@ App.EditorPage {
                         let d = new Date(departureTime.value);
                         d.setTime(d.getTime() - 30 * 60 * 1000);
                         return d;
+                    }
+                    status: Kirigami.MessageType.Warning
+                    statusMessage: {
+                        if (boardingTime.hasValue && boardingTime.value > departureTime.value)
+                            return i18nc("flight departure", "Boarding time has to be before the departure time.")
+                        return '';
                     }
                 }
             }
@@ -140,6 +150,12 @@ App.EditorPage {
                         let d = new Date(departureTime.value);
                         d.setTime(d.getTime() + 120 * 60 * 1000);
                         return d;
+                    }
+                    status: Kirigami.MessageType.Error
+                    statusMessage: {
+                        if (arrivalTime.hasValue && arrivalTime.value < departureTime.value)
+                            return i18nc("flight arrival", "Arrival time has to be after the departure time.")
+                        return '';
                     }
                 }
             }
