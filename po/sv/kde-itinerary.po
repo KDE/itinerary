@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-19 00:46+0000\n"
-"PO-Revision-Date: 2023-08-18 07:07+0200\n"
+"POT-Creation-Date: 2023-08-20 00:47+0000\n"
+"PO-Revision-Date: 2023-08-19 08:43+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@bredband.net"
 
-#: app/AboutPage.qml:19 app/main.qml:237
+#: app/AboutPage.qml:19 app/main.qml:227
 #, kde-format
 msgid "About"
 msgstr "Om"
@@ -122,7 +122,7 @@ msgstr "Lägg till i kalender..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
 #: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:148
+#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:160
 #, kde-format
 msgid "Delete"
 msgstr "Ta bort"
@@ -332,40 +332,64 @@ msgstr "Till: %1"
 msgid "Arrival time: %1"
 msgstr "Ankomsttid: %1"
 
-#: app/BoatEditor.qml:17
+#: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
 msgstr "Redigera båtresa"
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:76
+#: app/BoatEditor.qml:55 app/BoatPage.qml:76
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Avgång"
 
-#: app/BoatEditor.qml:54
+#: app/BoatEditor.qml:59
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Avgångstid"
 
-#: app/BoatEditor.qml:61 app/BoatEditor.qml:90
+#: app/BoatEditor.qml:63
+#, fuzzy, kde-format
+#| msgid "Start time has to be set."
+msgid "Departure time has to be set."
+msgstr "Starttid måste anges."
+
+#: app/BoatEditor.qml:68 app/BoatEditor.qml:113
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "Terminalnamn"
 
-#: app/BoatEditor.qml:79 app/BoatPage.qml:112
+#: app/BoatEditor.qml:71
+#, fuzzy, kde-format
+#| msgid "Ticket name must not be empty."
+msgid "Departure terminal must not be empty."
+msgstr "Biljettnamnet får inte vara tomt."
+
+#: app/BoatEditor.qml:91 app/BoatPage.qml:112
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Ankomst"
 
-#: app/BoatEditor.qml:83
+#: app/BoatEditor.qml:95
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Ankomsttid"
+
+#: app/BoatEditor.qml:106
+#, fuzzy, kde-format
+#| msgid "End time has to be after the start time."
+msgid "Arrival time has to be after the departure time."
+msgstr "Sluttid måste vara efter starttiden."
+
+#: app/BoatEditor.qml:116
+#, fuzzy, kde-format
+#| msgid "Program name must not be empty."
+msgid "Arrival terminal must not be empty."
+msgstr "Programnamnet får inte vara tomt."
 
 #: app/BoatPage.qml:16
 #, kde-format
@@ -480,7 +504,7 @@ msgid "Alight earlier"
 msgstr "Stig av tidigare"
 
 #: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
-#: app/EventPage.qml:128 app/FlightEditor.qml:151 app/FlightEditor.qml:156
+#: app/EventPage.qml:128 app/FlightEditor.qml:152 app/FlightEditor.qml:157
 #: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
 #: app/TrainPage.qml:275
 #, kde-format
@@ -691,7 +715,7 @@ msgstr "Dataleverantörer:"
 msgid "Add Document"
 msgstr "Lägg till dokument"
 
-#: app/DocumentsCard.qml:37 app/main.qml:126
+#: app/DocumentsCard.qml:37 app/main.qml:116
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Alla filer (*.*)"
@@ -731,7 +755,7 @@ msgstr "Nätverksfel: %1"
 msgid "Download failed: %1"
 msgstr "Nerladdning misslyckades: %1"
 
-#: app/EditorPage.qml:56 app/ProgramMembershipEditor.qml:26
+#: app/EditorPage.qml:45 app/ProgramMembershipEditor.qml:26
 #: app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
@@ -765,8 +789,7 @@ msgid "Event"
 msgstr "Evenemang"
 
 #: app/EventEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
 msgstr "Namn"
@@ -783,10 +806,9 @@ msgid "Entrance"
 msgstr "Ingång"
 
 #: app/EventEditor.qml:76
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Entrance time has to be before the start time."
-msgstr "Sluttid måste vara efter starttiden."
+msgstr "Ingångstid måste vara före starttiden."
 
 #: app/EventEditor.qml:83 app/EventPage.qml:97 app/RestaurantEditor.qml:84
 #, kde-format
@@ -864,7 +886,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportera favoritplatser"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:198
+#: app/TimelinePage.qml:210
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX-filer (*.gpx)"
@@ -874,7 +896,7 @@ msgstr "GPX-filer (*.gpx)"
 msgid "Import Favorite Locations"
 msgstr "Importera favoritplatser"
 
-#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:59
+#: app/FavoriteLocationPage.qml:51 app/FormPlaceEditorDelegate.qml:55
 #: app/LocationPicker.qml:30
 #, kde-format
 msgid "Pick Location"
@@ -942,54 +964,54 @@ msgstr "Ankomst till %1: %2"
 msgid "Edit Flight"
 msgstr "Redigera flyg"
 
-#: app/FlightEditor.qml:72
+#: app/FlightEditor.qml:73
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Avgång - %1"
 
-#: app/FlightEditor.qml:76 app/FlightEditor.qml:121 app/FlightPage.qml:156
+#: app/FlightEditor.qml:77 app/FlightEditor.qml:122 app/FlightPage.qml:156
 #: app/FlightPage.qml:209
 #, kde-format
 msgid "Airport"
 msgstr "Flygplats"
 
-#: app/FlightEditor.qml:82
+#: app/FlightEditor.qml:83
 #, kde-format
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:86
+#: app/FlightEditor.qml:87
 #, kde-format
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Tid"
 
-#: app/FlightEditor.qml:94
+#: app/FlightEditor.qml:95
 #, kde-format
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Gate"
 
-#: app/FlightEditor.qml:98 app/FlightPage.qml:96
+#: app/FlightEditor.qml:99 app/FlightPage.qml:96
 #, kde-format
 msgid "Boarding time"
 msgstr "Ombordstigningstid"
 
-#: app/FlightEditor.qml:117
+#: app/FlightEditor.qml:118
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Ankomst - %1"
 
-#: app/FlightEditor.qml:127
+#: app/FlightEditor.qml:128
 #, kde-format
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightEditor.qml:131
+#: app/FlightEditor.qml:132
 #, kde-format
 msgctxt "flight arrival time"
 msgid "Time"
@@ -1087,52 +1109,52 @@ msgctxt "@action:button"
 msgid "Share via Matrix"
 msgstr "Dela på Matrix"
 
-#: app/FormPlaceEditorDelegate.qml:70
+#: app/FormPlaceEditorDelegate.qml:66
 #, kde-format
 msgid "Street"
 msgstr "Gata"
 
-#: app/FormPlaceEditorDelegate.qml:82
+#: app/FormPlaceEditorDelegate.qml:78
 #, kde-format
 msgid "Invalid postal code format for this country."
 msgstr "Ogiltigt postnummerformat för landet."
 
-#: app/FormPlaceEditorDelegate.qml:88
+#: app/FormPlaceEditorDelegate.qml:84
 #, kde-format
 msgid "City"
 msgstr "Stad"
 
-#: app/FormPlaceEditorDelegate.qml:106
+#: app/FormPlaceEditorDelegate.qml:102
 #, kde-format
 msgid "Region"
 msgstr "Område"
 
-#: app/FormPlaceEditorDelegate.qml:132
+#: app/FormPlaceEditorDelegate.qml:128
 #, kde-format
 msgid "Country"
 msgstr "Land"
 
-#: app/FormPlaceEditorDelegate.qml:183
+#: app/FormPlaceEditorDelegate.qml:179
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordinat"
 
-#: app/FormPlaceEditorDelegate.qml:184
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:184
+#: app/FormPlaceEditorDelegate.qml:180
 #, kde-format
 msgid "Pick..."
 msgstr "Välj..."
 
-#: app/FormPlaceEditorDelegate.qml:194
+#: app/FormPlaceEditorDelegate.qml:190
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Adress till koordinat"
 
-#: app/FormPlaceEditorDelegate.qml:208
+#: app/FormPlaceEditorDelegate.qml:204
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Koordinat till adress"
@@ -1148,7 +1170,7 @@ msgctxt "previous platform"
 msgid "(was: %1)"
 msgstr "(var: %1)"
 
-#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:30
+#: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:34
 #, kde-format
 msgid "Price"
 msgstr "Pris"
@@ -1158,6 +1180,11 @@ msgstr "Pris"
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
+
+#: app/FormPriceEditDelegate.qml:92
+#, kde-format
+msgid "Not a valid number."
+msgstr ""
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:37
 #, kde-format
@@ -1169,7 +1196,7 @@ msgstr "Ta bort passerkort"
 msgid "Do you really want to delete this pass?"
 msgstr "Vill du verkligen ta bort passet?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:159
+#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-resplan"
@@ -1284,7 +1311,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Friskintyg (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:199
+#: app/HealthCertificatePage.qml:17 app/main.qml:189
 #, kde-format
 msgid "Health Certificates"
 msgstr "Hälsointyg"
@@ -1849,7 +1876,7 @@ msgstr "Flyg %1 till %2:"
 msgid "Itinerary change"
 msgstr "Ändring av resplan"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:210
+#: app/LiveStatusPage.qml:17 app/main.qml:200
 #, kde-format
 msgid "Live Status"
 msgstr "Realtidsstatus"
@@ -2061,110 +2088,105 @@ msgstr "Filer eller webbadresser att importera."
 
 #: app/main.qml:57
 #, kde-format
-msgid "Import"
-msgstr "Importera"
-
-#: app/main.qml:60
-#, kde-format
 msgid "Open File..."
 msgstr "Öppna fil..."
 
-#: app/main.qml:69
+#: app/main.qml:65
 #, kde-format
 msgid "Paste"
 msgstr "Klistra in"
 
-#: app/main.qml:79
+#: app/main.qml:74
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Läs av streckkod..."
 
-#: app/main.qml:88
+#: app/main.qml:82
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Lägg till från kalender..."
 
-#: app/main.qml:103
+#: app/main.qml:96
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Deutsche Bahn nätbiljett..."
 
-#: app/main.qml:111
+#: app/main.qml:103
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "SNCF nätbiljett..."
 
-#: app/main.qml:124
+#: app/main.qml:114
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importera bokning"
 
-#: app/main.qml:126
+#: app/main.qml:116
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass-filer (*.pkpass)"
 
-#: app/main.qml:126
+#: app/main.qml:116
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF-filer (*.pdf)"
 
-#: app/main.qml:126 app/main.qml:135
+#: app/main.qml:116 app/main.qml:125
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE-resplanefiler (*.itinerary)"
 
-#: app/main.qml:133
+#: app/main.qml:123
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exportera resplan"
 
-#: app/main.qml:164 app/PassPage.qml:102
+#: app/main.qml:154 app/PassPage.qml:102
 #, kde-format
 msgid "Import..."
 msgstr "Importera..."
 
-#: app/main.qml:169
+#: app/main.qml:159
 #, kde-format
 msgid "Check for Updates"
 msgstr "Titta efter uppdateringar"
 
-#: app/main.qml:178
+#: app/main.qml:168
 #, kde-format
 msgid "Download Maps"
 msgstr "Ladda ner kartor"
 
-#: app/main.qml:186 app/StatisticsPage.qml:16
+#: app/main.qml:176 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistik"
 
-#: app/main.qml:193
+#: app/main.qml:183
 #, kde-format
 msgid "Passes && Programs"
 msgstr "Passerkort och program"
 
-#: app/main.qml:193
+#: app/main.qml:183
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Passerkort och program"
 
-#: app/main.qml:218
+#: app/main.qml:208
 #, kde-format
 msgid "Settings..."
 msgstr "Inställningar..."
 
-#: app/main.qml:225 app/TripGroupDelegate.qml:157
+#: app/main.qml:215 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exportera..."
 
-#: app/main.qml:230 app/WelcomePage.qml:17
+#: app/main.qml:220 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Hjälp"
 
-#: app/main.qml:300
+#: app/main.qml:290
 #, kde-format
 msgid "Map download finished."
 msgstr "Nerladdning av kartor klar."
@@ -2955,57 +2977,62 @@ msgid "Add train trip..."
 msgstr "Lägg till tågresa..."
 
 #: app/TimelinePage.qml:100
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgid "Add ferry trip..."
+msgstr "Lägg till tågresa..."
+
+#: app/TimelinePage.qml:112
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Lägg till boende..."
 
-#: app/TimelinePage.qml:111
-#, fuzzy, kde-format
-#| msgid "Add Document..."
-msgid "Add event..."
-msgstr "Lägg till dokument..."
-
 #: app/TimelinePage.qml:123
+#, kde-format
+msgid "Add event..."
+msgstr "Lägg till händelse..."
+
+#: app/TimelinePage.qml:135
 #, kde-format
 msgid "Add restaurant..."
 msgstr "Lägg till restaurant..."
 
-#: app/TimelinePage.qml:141
+#: app/TimelinePage.qml:153
 #, kde-format
 msgid "Delete Trip"
 msgstr "Ta bort resa"
 
-#: app/TimelinePage.qml:142
+#: app/TimelinePage.qml:154
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Vill du verkligen ta bort resan?"
 
-#: app/TimelinePage.qml:161
+#: app/TimelinePage.qml:173
 #, kde-format
 msgid "Export"
 msgstr "Exportera"
 
-#: app/TimelinePage.qml:164
+#: app/TimelinePage.qml:176
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Som resplanefil..."
 
-#: app/TimelinePage.qml:173
+#: app/TimelinePage.qml:185
 #, kde-format
 msgid "As GPX file..."
 msgstr "Som GPX-fil..."
 
-#: app/TimelinePage.qml:187 app/TimelinePage.qml:196
+#: app/TimelinePage.qml:199 app/TimelinePage.qml:208
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportera resa"
 
-#: app/TimelinePage.qml:189
+#: app/TimelinePage.qml:201
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Resplanefil (*.itinerary)"
 
-#: app/TimelinePage.qml:360
+#: app/TimelinePage.qml:376
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ingenting i resplanen idag."
@@ -3475,6 +3502,9 @@ msgstr "Loggar in"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 från %3 till %4 %5"
+
+#~ msgid "Import"
+#~ msgstr "Importera"
 
 #~ msgctxt "currency conversion rate"
 #~ msgid "1 %1 = %2 %3"
