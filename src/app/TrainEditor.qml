@@ -43,6 +43,7 @@ App.EditorPage {
         var newRes = reservation;
         newRes.reservationFor = trip;
         newRes.reservedTicket = ticket;
+        programMembershipEdit.apply(newRes);
         bookingEdit.apply(newRes);
         return newRes;
     }
@@ -185,6 +186,11 @@ App.EditorPage {
                     text: reservation.reservedTicket.ticketedSeat.seatingType
                 }
             }
+        }
+
+        ProgramMembershipEditorCard {
+            id: programMembershipEdit
+            item: root.reservation
         }
 
         App.BookingEditorCard {

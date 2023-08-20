@@ -20,7 +20,7 @@ public:
     explicit PassManager(QObject *parent = nullptr);
     ~PassManager();
 
-    enum {
+    enum Roles {
         PassRole = Qt::UserRole,
         PassIdRole,
         PassTypeRole,
@@ -30,6 +30,7 @@ public:
         SectionRole,
         ValidRangeLabelRole,
     };
+    Q_ENUM(Roles)
 
     enum PassType {
         ProgramMembership,
