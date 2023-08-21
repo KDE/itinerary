@@ -33,7 +33,7 @@ Kirigami.ScrollablePage {
 
     data: BarcodeScanModeButton {
         page: root
-        visible: ticketToken.hasBarcode
+        visible: barcodeContainer.visible
     }
 
     Kirigami.PromptDialog {
