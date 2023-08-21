@@ -203,6 +203,31 @@
             ]
         },
         {
+            "name": "zxing",
+            "config-opts": [
+                "-DBUILD_DEPENDENCIES=LOCAL",
+                "-DBUILD_SHARED_LIBS=ON",
+                "-DBUILD_UNIT_TESTS=OFF",
+                "-DBUILD_BLACKBOX_TESTS=OFF",
+                "-DBUILD_EXAMPLES=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+                "/include",
+                "*.pc",
+                "/lib/*/cmake",
+                "libZXing.so"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/zxing-cpp/zxing-cpp/archive/v2.1.0.tar.gz",
+                    "sha256": "6d54e403592ec7a143791c6526c1baafddf4c0897bb49b1af72b70a0f0c4a3fe"
+                }
+            ]
+        },
+        {
             "name": "kitinerary",
             "config-opts": [
                 "-DBUILD_TESTING=OFF",
