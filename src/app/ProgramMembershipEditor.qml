@@ -19,8 +19,7 @@ Kirigami.ScrollablePage {
     required property string passId
     required property var programMembership
 
-    // TODO valid until > valid from
-    readonly property bool isValidInput: programNameEdit.text !== ''
+    readonly property bool isValidInput: programNameEdit.text !== '' && (!validFromEdit.hasValue || !validUntilEdit.hasValue || validFromEdit.value < validUntilEdit.value)
 
     actions.main: Kirigami.Action {
         text: i18n("Save")
@@ -107,6 +106,12 @@ Kirigami.ScrollablePage {
                         let d = new Date(validFromEdit.value);
                         d.setFullYear(d.getFullYear() + 1);
                         return d;
+                    }
+                    status: Kirigami.MessageType.Error
+                    statusMessage: {
+                        if (validUntilEdit.hasValue && validFromEdit.hasValue && validUntilEdit.value <= validFromEdit.value)
+                            return i18n("Valid until time has to be after the valid from time.")
+                        return '';
                     }
                 }
             }
