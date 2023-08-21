@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-20 00:47+0000\n"
+"POT-Creation-Date: 2023-08-21 00:47+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -111,8 +111,8 @@ msgstr "Adicionar translado antes"
 msgid "Add transfer after"
 msgstr "Adicionar translado depois"
 
-#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:148
-#: app/TicketPage.qml:163
+#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:138
+#: app/TicketPage.qml:152
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -124,9 +124,9 @@ msgstr "Adicionar ao calendário..."
 
 #: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
-#: app/HealthCertificatePage.qml:57 app/HealthCertificatePage.qml:72
-#: app/ProgramMembershipPage.qml:44 app/ProgramMembershipPage.qml:155
-#: app/TicketPage.qml:49 app/TicketPage.qml:170 app/TimelinePage.qml:160
+#: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:158
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -167,8 +167,8 @@ msgstr "Excluir evento"
 msgid "Do you really want to delete this event?"
 msgstr "Deseja realmente excluir este evento?"
 
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:142
-#: app/TicketPage.qml:157
+#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:132
+#: app/TicketPage.qml:146
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -186,14 +186,14 @@ msgid "To %1"
 msgstr "Para %1"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:110
+#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trens de longa distância"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:118
+#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "journey query search constraint, title"
@@ -201,14 +201,14 @@ msgid "Local trains"
 msgstr "Localização"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:126
+#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Trânsito rápido"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:134
+#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:133
 #, fuzzy, kde-format
 #| msgid "Bus"
 msgctxt "journey query search constraint, title"
@@ -216,7 +216,7 @@ msgid "Bus"
 msgstr "Ônibus"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:142
+#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -299,6 +299,13 @@ msgstr "Exportação concluída."
 msgid "Import completed."
 msgstr "Importação concluída."
 
+#: app/BarcodeScanModeButton.qml:18
+#, fuzzy, kde-format
+#| msgid "Barcode Scan Mode"
+msgctxt "@action:button"
+msgid "Barcode Scan Mode"
+msgstr "Modo de escaneamento de código de barras"
+
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
 msgid "In barcode scanning mode"
@@ -321,7 +328,7 @@ msgid "No camera available."
 msgstr "Nenhuma câmera disponível."
 
 #: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:74 app/TransferDelegate.qml:47
+#: app/TrainPage.qml:64 app/TransferDelegate.qml:47
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 a %2"
@@ -347,112 +354,102 @@ msgstr "Hora de chegada: %1"
 msgid "Edit Boat Trip"
 msgstr "Viagens de barco"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:76
+#: app/BoatEditor.qml:53 app/BoatPage.qml:65
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/BoatEditor.qml:59
+#: app/BoatEditor.qml:57
 #, fuzzy, kde-format
 #| msgid "Departure Time:"
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Hora de partida:"
 
-#: app/BoatEditor.qml:63
+#: app/BoatEditor.qml:61
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Departure time has to be set."
 msgstr "Horário do registro de saída:"
 
-#: app/BoatEditor.qml:68 app/BoatEditor.qml:113
+#: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, fuzzy, kde-format
 #| msgid "Terminal"
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "Terminal"
 
-#: app/BoatEditor.qml:71
+#: app/BoatEditor.qml:69
 #, fuzzy, kde-format
 #| msgctxt "flight departure terminal"
 #| msgid "Departure terminal:"
 msgid "Departure terminal must not be empty."
 msgstr "Terminal de partida:"
 
-#: app/BoatEditor.qml:91 app/BoatPage.qml:112
+#: app/BoatEditor.qml:89 app/BoatPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BoatEditor.qml:95
+#: app/BoatEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "Arrival Time:"
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/BoatEditor.qml:106
+#: app/BoatEditor.qml:104
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/BoatEditor.qml:116
+#: app/BoatEditor.qml:114
 #, kde-format
 msgid "Arrival terminal must not be empty."
 msgstr ""
 
-#: app/BoatPage.qml:16
+#: app/BoatPage.qml:17
 #, kde-format
 msgid "Boat Ticket"
 msgstr "Passagem de barco"
 
-#: app/BoatPage.qml:21 app/BusPage.qml:33 app/EventPage.qml:21
-#: app/FlightPage.qml:30 app/HealthCertificatePage.qml:42 app/PkPassPage.qml:26
-#: app/ProgramMembershipPage.qml:56 app/TicketPage.qml:61 app/TrainPage.qml:24
-#, kde-format
-msgid "Barcode Scan Mode"
-msgstr "Modo de escaneamento de código de barras"
-
-#: app/BoatPage.qml:80 app/BusPage.qml:96 app/FlightPage.qml:142
-#: app/TrainPage.qml:108
+#: app/BoatPage.qml:69 app/BusPage.qml:85 app/FlightPage.qml:131
+#: app/TrainPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgid "Departure time"
 msgstr "Hora de partida:"
 
-#: app/BoatPage.qml:87 app/BoatPage.qml:123
+#: app/BoatPage.qml:76 app/BoatPage.qml:112
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/BoatPage.qml:116 app/BusPage.qml:167 app/FlightPage.qml:200
-#: app/TrainPage.qml:196
+#: app/BoatPage.qml:105 app/BusPage.qml:156 app/FlightPage.qml:189
+#: app/TrainPage.qml:186
 #, fuzzy, kde-format
 #| msgid "Arrival time:"
 msgid "Arrival time"
 msgstr "Hora de chegada:"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41 app/BusEditor.qml:176
-#: app/TrainEditor.qml:189
+#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46 app/BusEditor.qml:180
-#: app/TrainEditor.qml:193
+#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referência:"
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52 app/BusEditor.qml:185
-#: app/TrainEditor.qml:198
+#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
@@ -469,72 +466,72 @@ msgstr "Número da passagem:"
 msgid "Edit Bus Reservation"
 msgstr "Editar reserva de hotel"
 
-#: app/BusEditor.qml:48 app/TrainEditor.qml:51
+#: app/BusEditor.qml:49 app/TrainEditor.qml:53
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Board Later"
 msgstr "Horário do embarque:"
 
-#: app/BusEditor.qml:51
+#: app/BusEditor.qml:52
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change departure stop"
 msgstr "Alterar reserva"
 
-#: app/BusEditor.qml:61 app/TrainEditor.qml:64
+#: app/BusEditor.qml:62 app/TrainEditor.qml:66
 #, fuzzy, kde-format
 #| msgid "Earlier"
 msgid "Alight Earlier"
 msgstr "Mais cedo"
 
-#: app/BusEditor.qml:64
+#: app/BusEditor.qml:65
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change arrival stop"
 msgstr "Alterar reserva"
 
-#: app/BusEditor.qml:104
+#: app/BusEditor.qml:103
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/BusEditor.qml:107 app/BusEditor.qml:134
+#: app/BusEditor.qml:106 app/BusEditor.qml:133
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Parar"
 
-#: app/BusEditor.qml:112 app/BusEditor.qml:139
+#: app/BusEditor.qml:111 app/BusEditor.qml:138
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Plataforma:"
 
-#: app/BusEditor.qml:116 app/TrainEditor.qml:119
+#: app/BusEditor.qml:115 app/TrainEditor.qml:123
 #, fuzzy, kde-format
 #| msgid "Boarding time:"
 msgid "Board later"
 msgstr "Horário do embarque:"
 
-#: app/BusEditor.qml:131
+#: app/BusEditor.qml:130
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BusEditor.qml:143 app/TrainEditor.qml:146
+#: app/BusEditor.qml:142 app/TrainEditor.qml:153
 #, kde-format
 msgid "Alight earlier"
 msgstr "Descer mais cedo"
 
-#: app/BusEditor.qml:159 app/BusEditor.qml:163 app/BusPage.qml:222
-#: app/EventPage.qml:128 app/FlightEditor.qml:152 app/FlightEditor.qml:157
-#: app/FlightPage.qml:113 app/TrainEditor.qml:162 app/TrainEditor.qml:171
-#: app/TrainPage.qml:275
+#: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
+#: app/EventPage.qml:117 app/FlightEditor.qml:172 app/FlightEditor.qml:176
+#: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
+#: app/TrainPage.qml:265
 #, kde-format
 msgid "Seat"
 msgstr "Local"
@@ -544,47 +541,47 @@ msgstr "Local"
 msgid "Bus Ticket"
 msgstr "Passagem de ônibus"
 
-#: app/BusPage.qml:85
+#: app/BusPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/BusPage.qml:116 app/FlightPage.qml:147 app/TrainPage.qml:137
+#: app/BusPage.qml:105 app/FlightPage.qml:136 app/TrainPage.qml:127
 #, fuzzy, kde-format
 #| msgctxt "flight departure gate"
 #| msgid "Departure gate:"
 msgid "Departure date"
 msgstr "Portão de partida:"
 
-#: app/BusPage.qml:124 app/BusPage.qml:191
+#: app/BusPage.qml:113 app/BusPage.qml:180
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "bus station"
 msgid "Station"
 msgstr "Estação:"
 
-#: app/BusPage.qml:132 app/BusPage.qml:199
+#: app/BusPage.qml:121 app/BusPage.qml:188
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "Plataforma:"
 
-#: app/BusPage.qml:156
+#: app/BusPage.qml:145
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BusPage.qml:250 app/TrainPage.qml:322
+#: app/BusPage.qml:239 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:255 app/JourneySectionPage.qml:16 app/TrainPage.qml:339
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalhes da viagem"
@@ -690,8 +687,8 @@ msgstr "Telefone"
 msgid "Email"
 msgstr "E-mail"
 
-#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:110
-#: app/EventPage.qml:112
+#: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:108
+#: app/EventPage.qml:101
 #, kde-format
 msgid "Website"
 msgstr "Website"
@@ -702,13 +699,13 @@ msgid "Departures"
 msgstr "Partidas"
 
 #: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:29
-#: app/TransferPage.qml:63
+#: app/TransferPage.qml:62
 #, kde-format
 msgid "Earlier"
 msgstr "Mais cedo"
 
 #: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:35
-#: app/TransferPage.qml:69
+#: app/TransferPage.qml:68
 #, kde-format
 msgid "Later"
 msgstr "Mais tarde"
@@ -733,7 +730,7 @@ msgid "Load earlier departures"
 msgstr "Partida antecipada em %1"
 
 #: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
-#: app/TransferPage.qml:331
+#: app/TransferPage.qml:329
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
@@ -741,7 +738,7 @@ msgid "Load later connections"
 msgstr "Conexões alternativas"
 
 #: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
-#: app/TransferPage.qml:343
+#: app/TransferPage.qml:341
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
 msgid "Data providers:"
@@ -792,9 +789,10 @@ msgstr "Erro de rede: %1"
 msgid "Download failed: %1"
 msgstr "Falha ao baixar: %1"
 
-#: app/EditorPage.qml:45 app/ProgramMembershipEditor.qml:26
-#: app/TicketEditor.qml:25
-#, kde-format
+#: app/EditorPage.qml:24
+#, fuzzy, kde-format
+#| msgid "Save"
+msgctxt "@action:button"
 msgid "Save"
 msgstr "Salvar"
 
@@ -820,82 +818,82 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Editar evento"
 
-#: app/EventEditor.qml:53 app/EventPage.qml:16
+#: app/EventEditor.qml:51 app/EventPage.qml:16
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Evento"
 
-#: app/EventEditor.qml:57
+#: app/EventEditor.qml:55
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "event name"
 msgid "Name"
 msgstr "Nome:"
 
-#: app/EventEditor.qml:60 app/HotelEditor.qml:59 app/RestaurantEditor.qml:58
+#: app/EventEditor.qml:58 app/HotelEditor.qml:57 app/RestaurantEditor.qml:58
 #, kde-format
 msgid "Name must not be empty."
 msgstr ""
 
-#: app/EventEditor.qml:65 app/EventPage.qml:89
+#: app/EventEditor.qml:63 app/EventPage.qml:78
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Entrada"
 
-#: app/EventEditor.qml:76
+#: app/EventEditor.qml:74
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr ""
 
-#: app/EventEditor.qml:83 app/EventPage.qml:97 app/RestaurantEditor.qml:84
+#: app/EventEditor.qml:81 app/EventPage.qml:86 app/RestaurantEditor.qml:84
 #, kde-format
 msgid "Start Time"
 msgstr "Hora inicial"
 
-#: app/EventEditor.qml:87 app/RestaurantEditor.qml:88
+#: app/EventEditor.qml:85 app/RestaurantEditor.qml:88
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Start time has to be set."
 msgstr "Horário do registro de saída:"
 
-#: app/EventEditor.qml:92 app/EventPage.qml:105 app/RestaurantEditor.qml:93
+#: app/EventEditor.qml:90 app/EventPage.qml:94 app/RestaurantEditor.qml:93
 #, kde-format
 msgid "End Time"
 msgstr "Hora final"
 
-#: app/EventEditor.qml:103 app/RestaurantEditor.qml:104
+#: app/EventEditor.qml:101 app/RestaurantEditor.qml:104
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr ""
 
-#: app/EventEditor.qml:124
+#: app/EventEditor.qml:122
 #, fuzzy, kde-format
 #| msgid "Venue:"
 msgid "Venue"
 msgstr "Local:"
 
-#: app/EventEditor.qml:128
+#: app/EventEditor.qml:126
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "venue name"
 msgid "Name"
 msgstr "Nome:"
 
-#: app/EventPage.qml:132
+#: app/EventPage.qml:121
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Seção:"
 
-#: app/EventPage.qml:141
+#: app/EventPage.qml:130
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:150
+#: app/EventPage.qml:139
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -928,7 +926,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportar localizações favoritas"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:210
+#: app/TimelinePage.qml:208
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Arquivos GPX (*.gpx)"
@@ -1013,102 +1011,121 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Partida: %1"
 
-#: app/FlightEditor.qml:77 app/FlightEditor.qml:122 app/FlightPage.qml:156
-#: app/FlightPage.qml:209
+#: app/FlightEditor.qml:77 app/FlightEditor.qml:134 app/FlightPage.qml:145
+#: app/FlightPage.qml:198
 #, kde-format
 msgid "Airport"
 msgstr "Aeroporto"
 
-#: app/FlightEditor.qml:83
+#: app/FlightEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight departure terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/FlightEditor.qml:87
+#: app/FlightEditor.qml:89
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight departure time"
 msgid "Time"
 msgstr "Hora:"
 
-#: app/FlightEditor.qml:95
+#: app/FlightEditor.qml:94
+#, fuzzy, kde-format
+#| msgid "Check-out time:"
+msgctxt "flight departure"
+msgid "Departure time has to be set."
+msgstr "Horário do registro de saída:"
+
+#: app/FlightEditor.qml:100
 #, fuzzy, kde-format
 #| msgid "Gate:"
 msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Portão:"
 
-#: app/FlightEditor.qml:99 app/FlightPage.qml:96
+#: app/FlightEditor.qml:105 app/FlightPage.qml:85
 #, kde-format
 msgid "Boarding time"
 msgstr "Horário do embarque"
 
-#: app/FlightEditor.qml:118
+#: app/FlightEditor.qml:116
+#, kde-format
+msgctxt "flight departure"
+msgid "Boarding time has to be before the departure time."
+msgstr ""
+
+#: app/FlightEditor.qml:130
 #, fuzzy, kde-format
 #| msgid "Arrival: %1"
 msgctxt "flight arrival"
 msgid "Arrival - %1"
 msgstr "Chegada: %1"
 
-#: app/FlightEditor.qml:128
+#: app/FlightEditor.qml:141
 #, fuzzy, kde-format
 #| msgid "Terminal:"
 msgctxt "flight arrival terminal"
 msgid "Terminal"
 msgstr "Terminal:"
 
-#: app/FlightEditor.qml:132
+#: app/FlightEditor.qml:146
 #, fuzzy, kde-format
 #| msgid "Time:"
 msgctxt "flight arrival time"
 msgid "Time"
 msgstr "Hora:"
 
+#: app/FlightEditor.qml:157
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival time has to be after the departure time."
+msgstr ""
+
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
 msgid "Flight"
 msgstr "Voo"
 
-#: app/FlightPage.qml:74
+#: app/FlightPage.qml:63
 #, kde-format
 msgid "Sequence Number:"
 msgstr "Número da sequência:"
 
-#: app/FlightPage.qml:90
+#: app/FlightPage.qml:79
 #, kde-format
 msgid "Boarding"
 msgstr "Embarque"
 
-#: app/FlightPage.qml:105
+#: app/FlightPage.qml:94
 #, kde-format
 msgid "Boarding group"
 msgstr "Grupo de embarque"
 
-#: app/FlightPage.qml:122
+#: app/FlightPage.qml:111
 #, kde-format
 msgid "Airline"
 msgstr "Linha aérea"
 
-#: app/FlightPage.qml:137
+#: app/FlightPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/FlightPage.qml:164 app/FlightPage.qml:217
+#: app/FlightPage.qml:153 app/FlightPage.qml:206
 #, kde-format
 msgid "Terminal"
 msgstr "Terminal"
 
-#: app/FlightPage.qml:172
+#: app/FlightPage.qml:161
 #, kde-format
 msgid "Gate"
 msgstr "Portão"
 
-#: app/FlightPage.qml:196
+#: app/FlightPage.qml:185
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Flight arrival"
@@ -1127,7 +1144,7 @@ msgstr "Bicicletas compartilhadas"
 msgid "Do you really want to share %1 to the Matrix channel %2?"
 msgstr "Deseja realmente excluir este ingresso?"
 
-#: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:74
+#: app/FormPlaceDelegate.qml:63 app/LiveStatusPage.qml:73
 #, kde-format
 msgid "Share"
 msgstr ""
@@ -1247,13 +1264,13 @@ msgstr "%1 (%2)"
 msgid "Not a valid number."
 msgstr ""
 
-#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:37
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete Pass"
 msgstr "Excluir"
 
-#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:38
+#: app/GenericPkPassPage.qml:20 app/ProgramMembershipPage.qml:39
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this trip?"
 msgid "Do you really want to delete this pass?"
@@ -1381,22 +1398,22 @@ msgstr "Recuperação (%1)"
 msgid "Health Certificates"
 msgstr "Certificados de saúde"
 
-#: app/HealthCertificatePage.qml:52
+#: app/HealthCertificatePage.qml:48
 #, kde-format
 msgid "Import from Clipboard"
 msgstr "Importar da área de transferência"
 
-#: app/HealthCertificatePage.qml:67
+#: app/HealthCertificatePage.qml:62
 #, kde-format
 msgid "Delete Certificate"
 msgstr "Excluir certificado"
 
-#: app/HealthCertificatePage.qml:68
+#: app/HealthCertificatePage.qml:63
 #, kde-format
 msgid "Do you really want to delete this certificate?"
 msgstr "Deseja realmente excluir este certificado?"
 
-#: app/HealthCertificatePage.qml:138
+#: app/HealthCertificatePage.qml:133
 #, kde-format
 msgid ""
 "<p>You can import the following health certificates by scanning them with a "
@@ -1573,45 +1590,45 @@ msgstr "Horário do registro de saída: %1"
 msgid "Edit Hotel Reservation"
 msgstr "Editar reserva de hotel"
 
-#: app/HotelEditor.qml:51
+#: app/HotelEditor.qml:49
 #, kde-format
 msgid "Hotel"
 msgstr ""
 
-#: app/HotelEditor.qml:56
+#: app/HotelEditor.qml:54
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "hotel name"
 msgid "Name"
 msgstr "Nome:"
 
-#: app/HotelEditor.qml:86
+#: app/HotelEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgctxt "hotel checkin"
 msgid "Check-in"
 msgstr "Registro de entrada"
 
-#: app/HotelEditor.qml:90
+#: app/HotelEditor.qml:88
 #, fuzzy, kde-format
 #| msgid "Check-in time:"
 msgid "Check-in time has to be set."
 msgstr "Horário do registro de entrada:"
 
-#: app/HotelEditor.qml:95
+#: app/HotelEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgctxt "hotel checkout"
 msgid "Check-out"
 msgstr "Registro de saída %1"
 
-#: app/HotelEditor.qml:107
+#: app/HotelEditor.qml:105
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Check-out time has to be set."
 msgstr "Horário do registro de saída:"
 
-#: app/HotelEditor.qml:109
+#: app/HotelEditor.qml:107
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
 msgstr ""
@@ -1633,7 +1650,7 @@ msgstr "Horário do registro de entrada:"
 msgid "Check-out time"
 msgstr "Horário do registro de saída:"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:96
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
 msgstr "Encontrar portão"
@@ -1656,64 +1673,64 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapPage.qml:24
+#: app/IndoorMapPage.qml:25
 #, kde-format
 msgid "Floor %1"
 msgstr "Piso %1"
 
-#: app/IndoorMapPage.qml:58
+#: app/IndoorMapPage.qml:59
+#, kde-format
+msgid "Zoom In"
+msgstr "Ampliar"
+
+#: app/IndoorMapPage.qml:66
+#, kde-format
+msgid "Zoom Out"
+msgstr "Reduzir"
+
+#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#, kde-format
+msgid "Find Platform"
+msgstr "Encontrar plataforma"
+
+#: app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Show Elevator Status"
+msgstr "Mostrar status do elevador"
+
+#: app/IndoorMapPage.qml:97
+#, kde-format
+msgid "Show Rental Vehicles"
+msgstr "Mostrar veículos locados"
+
+#: app/IndoorMapPage.qml:105
+#, kde-format
+msgid "Open Map"
+msgstr "Abrir mapa"
+
+#: app/IndoorMapPage.qml:111
+#, kde-format
+msgid "Open wheelmap.org"
+msgstr "Abrir wheelmap.org"
+
+#: app/IndoorMapPage.qml:261
+#, kde-format
+msgid "Switched to floor %1"
+msgstr "Mudou para o andar %1"
+
+#: app/IndoorMapPage.qml:308
 #, fuzzy, kde-format
 #| msgid "Floor %1"
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Piso %1"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:316
 #, fuzzy, kde-format
 #| msgid "Floor %1"
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr "Piso %1"
-
-#: app/IndoorMapPage.qml:76
-#, kde-format
-msgid "Zoom In"
-msgstr "Ampliar"
-
-#: app/IndoorMapPage.qml:83
-#, kde-format
-msgid "Zoom Out"
-msgstr "Reduzir"
-
-#: app/IndoorMapPage.qml:90 app/IndoorMapPlatformSheet.qml:20
-#, kde-format
-msgid "Find Platform"
-msgstr "Encontrar plataforma"
-
-#: app/IndoorMapPage.qml:103
-#, kde-format
-msgid "Show Elevator Status"
-msgstr "Mostrar status do elevador"
-
-#: app/IndoorMapPage.qml:111
-#, kde-format
-msgid "Show Rental Vehicles"
-msgstr "Mostrar veículos locados"
-
-#: app/IndoorMapPage.qml:119
-#, kde-format
-msgid "Open Map"
-msgstr "Abrir mapa"
-
-#: app/IndoorMapPage.qml:123
-#, kde-format
-msgid "Open wheelmap.org"
-msgstr "Abrir wheelmap.org"
-
-#: app/IndoorMapPage.qml:270
-#, kde-format
-msgid "Switched to floor %1"
-msgstr "Mudou para o andar %1"
 
 #: app/IndoorMapPlatformSheet.qml:36
 #, kde-format
@@ -1758,12 +1775,12 @@ msgstr "Teleférico"
 msgid "Bus"
 msgstr "Ônibus"
 
-#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:253
+#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:251
 #, kde-format
 msgid "Select"
 msgstr "Selecionar"
 
-#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:322
+#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:320
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
@@ -1955,28 +1972,28 @@ msgstr "Voo %1 de %2 para %3"
 msgid "Itinerary change"
 msgstr "Alteração no itinerário"
 
-#: app/LiveStatusPage.qml:17 app/main.qml:200
+#: app/LiveStatusPage.qml:19 app/main.qml:200
 #, kde-format
 msgid "Live Status"
 msgstr ""
 
-#: app/LiveStatusPage.qml:26
+#: app/LiveStatusPage.qml:27
 #, kde-format
 msgid "Stop Location Sharing"
 msgstr ""
 
-#: app/LiveStatusPage.qml:26
+#: app/LiveStatusPage.qml:27
 #, kde-format
 msgid "Share Location via Matrix"
 msgstr ""
 
-#: app/LiveStatusPage.qml:67
+#: app/LiveStatusPage.qml:66
 #, fuzzy, kde-format
 #| msgid "Favorite Locations"
 msgid "Share Live Location"
 msgstr "Localizações favoritas"
 
-#: app/LiveStatusPage.qml:68
+#: app/LiveStatusPage.qml:67
 #, fuzzy, kde-format
 #| msgid ""
 #| "Do you really want to replace your existing reservation with the newly "
@@ -1985,23 +2002,23 @@ msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr "Deseja substitui sua reserva existente pela nova viagem selecionada?"
 
-#: app/LiveStatusPage.qml:163
+#: app/LiveStatusPage.qml:162
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:182 app/LiveStatusPage.qml:193
+#: app/LiveStatusPage.qml:181 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:205
+#: app/LiveStatusPage.qml:204
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Position"
 msgstr "Localização:"
 
-#: app/LiveStatusPage.qml:214
+#: app/LiveStatusPage.qml:213
 #, fuzzy, kde-format
 #| msgid "Select Journey"
 msgid "Journey"
@@ -2513,21 +2530,22 @@ msgstr "Ingresso do evento"
 msgid "Pass"
 msgstr ""
 
-#: app/ProgramMembershipCard.qml:23
+#: app/ProgramMembershipCard.qml:23 app/ProgramMembershipEditorCard.qml:38
 #, kde-format
 msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programa"
 
 #: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
-#: app/TicketPage.qml:108
+#: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Nome:"
 
 #: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
-#: app/ProgramMembershipPage.qml:108 app/TicketPage.qml:126
+#: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
+#: app/TicketPage.qml:115
 #, kde-format
 msgid "Number"
 msgstr "Número"
@@ -2542,6 +2560,11 @@ msgstr "Mostrar cartão de embarque"
 #, kde-format
 msgid "Edit Program Membership"
 msgstr ""
+
+#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#, kde-format
+msgid "Save"
+msgstr "Salvar"
 
 #: app/ProgramMembershipEditor.qml:58
 #, fuzzy, kde-format
@@ -2561,20 +2584,20 @@ msgstr ""
 msgid "Membership"
 msgstr "Membro"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "Membro"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:116
-#: app/TicketPage.qml:114
+#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/TicketPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Válido a partir de:"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:121
-#: app/TicketPage.qml:120
+#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/TicketPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
@@ -3038,24 +3061,24 @@ msgstr "Excluir entrada do histórico"
 msgid "No locations found"
 msgstr "Nenhum local encontrado"
 
-#: app/TicketEditor.qml:17
+#: app/TicketEditor.qml:18
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Edit Ticket"
 msgstr "Ingresso do evento"
 
-#: app/TicketEditor.qml:45 app/TicketPage.qml:17 app/TicketPage.qml:104
+#: app/TicketEditor.qml:46 app/TicketPage.qml:17 app/TicketPage.qml:93
 #, kde-format
 msgid "Ticket"
 msgstr "Ingresso"
 
-#: app/TicketEditor.qml:50
+#: app/TicketEditor.qml:51
 #, fuzzy, kde-format
 #| msgid "Ticket number:"
 msgid "Ticket name"
 msgstr "Número da passagem:"
 
-#: app/TicketEditor.qml:53
+#: app/TicketEditor.qml:54
 #, kde-format
 msgid "Ticket name must not be empty."
 msgstr ""
@@ -3070,7 +3093,7 @@ msgstr "Excluir ingresso"
 msgid "Do you really want to delete this ticket?"
 msgstr "Deseja realmente excluir este ingresso?"
 
-#: app/TicketPage.qml:132
+#: app/TicketPage.qml:121
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -3091,83 +3114,83 @@ msgstr "Viajante %1"
 msgid "My Itinerary"
 msgstr "Meu itinerário"
 
-#: app/TimelinePage.qml:43
+#: app/TimelinePage.qml:42
 #, kde-format
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:48
+#: app/TimelinePage.qml:47
 #, kde-format
 msgid "Current Ticket"
 msgstr "Ingresso atual"
 
-#: app/TimelinePage.qml:54
+#: app/TimelinePage.qml:53
 #, kde-format
 msgid "Add train trip..."
 msgstr "Adicionar viagem de trem..."
 
-#: app/TimelinePage.qml:100
+#: app/TimelinePage.qml:99
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add ferry trip..."
 msgstr "Adicionar viagem de trem..."
 
-#: app/TimelinePage.qml:112
+#: app/TimelinePage.qml:111
 #, kde-format
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:123
+#: app/TimelinePage.qml:122
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event..."
 msgstr "Adicionar documento..."
 
-#: app/TimelinePage.qml:135
+#: app/TimelinePage.qml:134
 #, fuzzy, kde-format
 #| msgid "Add train trip..."
 msgid "Add restaurant..."
 msgstr "Adicionar viagem de trem..."
 
-#: app/TimelinePage.qml:153
+#: app/TimelinePage.qml:151
 #, kde-format
 msgid "Delete Trip"
 msgstr "Excluir viagem"
 
-#: app/TimelinePage.qml:154
+#: app/TimelinePage.qml:152
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Deseja realmente excluir esta viagem?"
 
-#: app/TimelinePage.qml:173
+#: app/TimelinePage.qml:171
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportar..."
 
-#: app/TimelinePage.qml:176
+#: app/TimelinePage.qml:174
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Meu itinerário"
 
-#: app/TimelinePage.qml:185
+#: app/TimelinePage.qml:183
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:199 app/TimelinePage.qml:208
+#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportar viagem..."
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:199
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Arquivos do KDE Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:376
+#: app/TimelinePage.qml:374
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nada no itinerário para hoje."
@@ -3244,13 +3267,13 @@ msgstr "Chegada: %1"
 msgid "Edit Train Reservation"
 msgstr "Editar reserva de trem"
 
-#: app/TrainEditor.qml:54
+#: app/TrainEditor.qml:56
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change departure station"
 msgstr "Alterar reserva"
 
-#: app/TrainEditor.qml:67
+#: app/TrainEditor.qml:69
 #, fuzzy, kde-format
 #| msgid "Change Reservation"
 msgid "Change arrival station"
@@ -3263,88 +3286,88 @@ msgctxt "train departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/TrainEditor.qml:110 app/TrainEditor.qml:137 app/TrainPage.qml:145
-#: app/TrainPage.qml:230
+#: app/TrainEditor.qml:110 app/TrainEditor.qml:141 app/TrainPage.qml:135
+#: app/TrainPage.qml:220
 #, fuzzy, kde-format
 #| msgid "Station:"
 msgctxt "train station"
 msgid "Station"
 msgstr "Estação:"
 
-#: app/TrainEditor.qml:115 app/TrainEditor.qml:142
+#: app/TrainEditor.qml:116 app/TrainEditor.qml:147
 #, fuzzy, kde-format
 #| msgid "Platform:"
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Plataforma:"
 
-#: app/TrainEditor.qml:134
+#: app/TrainEditor.qml:138
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/TrainEditor.qml:166
+#: app/TrainEditor.qml:173
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Vagão:"
 
-#: app/TrainEditor.qml:176
+#: app/TrainEditor.qml:185
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgctxt "seating class on a train"
 msgid "Class"
 msgstr "Classe:"
 
-#: app/TrainPage.qml:17
+#: app/TrainPage.qml:18
 #, kde-format
 msgid "Train Ticket"
 msgstr "Passagem de trem"
 
-#: app/TrainPage.qml:104
+#: app/TrainPage.qml:94
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "Train departure"
 msgid "Departure"
 msgstr "Partida"
 
-#: app/TrainPage.qml:173 app/TrainPage.qml:257
+#: app/TrainPage.qml:163 app/TrainPage.qml:247
 #, kde-format
 msgid "Additional notes"
 msgstr ""
 
-#: app/TrainPage.qml:191
+#: app/TrainPage.qml:181
 #, fuzzy, kde-format
 #| msgid "Arrival"
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/TrainPage.qml:279
+#: app/TrainPage.qml:269
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Vagão:"
 
-#: app/TrainPage.qml:288
+#: app/TrainPage.qml:278
 #, kde-format
 msgid "Seat:"
 msgstr "Local:"
 
-#: app/TrainPage.qml:297
+#: app/TrainPage.qml:287
 #, kde-format
 msgid "Class:"
 msgstr "Classe:"
 
-#: app/TrainPage.qml:327
+#: app/TrainPage.qml:317
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Layout do veículo de partida"
 
-#: app/TrainPage.qml:333
+#: app/TrainPage.qml:323
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Layout do veículo de chegada"
@@ -3364,52 +3387,52 @@ msgstr "Excluir translado"
 msgid "Select Transfer"
 msgstr "Selecionar translado"
 
-#: app/TransferPage.qml:45
+#: app/TransferPage.qml:44
 #, kde-format
 msgid "Depart Now"
 msgstr "Partida agora"
 
-#: app/TransferPage.qml:55
+#: app/TransferPage.qml:54
 #, kde-format
 msgid "Discard"
 msgstr "Descartar"
 
-#: app/TransferPage.qml:77
+#: app/TransferPage.qml:76
 #, kde-format
 msgid "Bike"
 msgstr "Bicicleta"
 
-#: app/TransferPage.qml:84
+#: app/TransferPage.qml:83
 #, kde-format
 msgid "Bike & Ride"
 msgstr ""
 
-#: app/TransferPage.qml:92
+#: app/TransferPage.qml:91
 #, kde-format
 msgid "Shared Bikes"
 msgstr "Bicicletas compartilhadas"
 
-#: app/TransferPage.qml:99
+#: app/TransferPage.qml:98
 #, kde-format
 msgid "Park & Ride"
 msgstr ""
 
-#: app/TransferPage.qml:276
+#: app/TransferPage.qml:274
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 termina em %2"
 
-#: app/TransferPage.qml:278
+#: app/TransferPage.qml:276
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Chegada anterior %1 em %2"
 
-#: app/TransferPage.qml:288
+#: app/TransferPage.qml:286
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 inicia em %2"
 
-#: app/TransferPage.qml:290
+#: app/TransferPage.qml:288
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Partida seguinte de %1 para %2"
