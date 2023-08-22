@@ -76,6 +76,7 @@ public:
     /** Checkes whether @p mode is a train or bus mode respectively. */
     static bool isTrainMode(KPublicTransport::Line::Mode mode);
     static bool isBusMode(KPublicTransport::Line::Mode mode);
+    static bool isBoatMode(KPublicTransport::Line::Mode mode);
 
     /** Provide an icon source for usage in Kirigami.Icon that represents the line mode.
      *  This can be an official line logo, and official product logo or a generic mode icon,

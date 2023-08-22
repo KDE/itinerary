@@ -8,6 +8,7 @@
 #include "reservationhelper.h"
 #include "logging.h"
 
+#include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Reservation>
@@ -52,6 +53,18 @@ bool PublicTransport::isBusMode(KPublicTransport::Line::Mode mode)
         case Line::Bus:
         case Line::BusRapidTransit:
         case Line::Coach:
+            return true;
+        default:
+            return false;
+    }
+}
+
+bool PublicTransport::isBoatMode(KPublicTransport::Line::Mode mode)
+{
+    using namespace KPublicTransport;
+    switch (mode) {
+        case Line::Boat:
+        case Line::Ferry:
             return true;
         default:
             return false;
@@ -306,6 +319,21 @@ static KItinerary::BusReservation applyJourneySection(KItinerary::BusReservation
     return res;
 }
 
+static KItinerary::BoatReservation applyJourneySection(KItinerary::BoatReservation res, const KPublicTransport::JourneySection &section)
+{
+    using namespace KItinerary;
+
+    auto trip = res.reservationFor().value<BoatTrip>();
+    trip.setDepartureTime(section.scheduledDepartureTime());
+    trip.setArrivalTime(section.scheduledArrivalTime());
+    // TODO ferry line name
+    trip.setDepartureBoatTerminal(PublicTransport::updateToLocation(trip.departureBoatTerminal(), section.from()));
+    trip.setArrivalBoatTerminal(PublicTransport::updateToLocation(trip.arrivalBoatTerminal(), section.to()));
+
+    res.setReservationFor(trip);
+    return res;
+}
+
 static QVariant postProcessOne(const QVariant &res)
 {
     KItinerary::ExtractorPostprocessor postProc;
@@ -326,6 +354,9 @@ QVariant PublicTransport::reservationFromJourneySection(const KPublicTransport::
     if (isBusMode(section.route().line().mode())) {
         return postProcessOne(::applyJourneySection(BusReservation(), section));
     }
+    if (isBoatMode(section.route().line().mode())) {
+        return postProcessOne(::applyJourneySection(BoatReservation(), section));
+    }
 
     qCWarning(Log) << "Unsupported section type:" << section.route().line().mode();
     return {};
@@ -340,6 +371,9 @@ QVariant PublicTransport::applyJourneySection(const QVariant &res, const KPublic
     }
     if (JsonLd::isA<BusReservation>(res)) {
         return postProcessOne(::applyJourneySection(res.value<BusReservation>(), section));
+    }
+    if (JsonLd::isA<BoatReservation>(res)) {
+        return postProcessOne(::applyJourneySection(res.value<BoatReservation>(), section));
     }
 
     qCWarning(Log) << res.typeName() << "Unsupported section type!";
