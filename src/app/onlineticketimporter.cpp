@@ -12,7 +12,7 @@
 
 #include <cassert>
 
-QNetworkAccessManager* OnlineTicketImporter::m_nam = nullptr;
+std::function<QNetworkAccessManager*()> OnlineTicketImporter::s_namFactory;
 
 OnlineTicketImporter::OnlineTicketImporter(QObject *parent)
     : QObject(parent)
@@ -26,6 +26,11 @@ bool OnlineTicketImporter::searching() const
     return m_currentJob;
 }
 
+void OnlineTicketImporter::setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory)
+{
+    s_namFactory = namFactory;
+}
+
 QString OnlineTicketImporter::errorMessage() const
 {
     return m_errorMessage;
@@ -36,7 +41,7 @@ void OnlineTicketImporter::search(const QString &sourceId, const QVariantMap &ar
     qCDebug(Log) << sourceId << arguments;
     delete m_currentJob;
 
-    m_currentJob = new OnlineTicketRetrievalJob(sourceId, arguments, nam(), this);
+    m_currentJob = new OnlineTicketRetrievalJob(sourceId, arguments, s_namFactory(), this);
     connect(m_currentJob, &OnlineTicketRetrievalJob::finished, this, &OnlineTicketImporter::handleRetrievalFinished);
     Q_EMIT searchingChanged();
 }
@@ -57,16 +62,4 @@ void OnlineTicketImporter::handleRetrievalFinished()
         m_resMgr->importReservations(result);
         Q_EMIT searchSucceeded();
     }
-}
-
-QNetworkAccessManager* OnlineTicketImporter::nam()
-{
-    // TODO centralize that somewhere in the app, we don't really need our own QNAM here
-    if (!m_nam) {
-        m_nam = new QNetworkAccessManager(this);
-        m_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
-        m_nam->setStrictTransportSecurityEnabled(true);
-        m_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
-    }
-    return m_nam;
 }

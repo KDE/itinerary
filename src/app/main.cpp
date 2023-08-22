@@ -455,6 +455,8 @@ int main(int argc, char **argv)
     });
 #endif
 
+    OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
+
     registerKContactsTypes();
     registerKCalendarCoreTypes();
     registerKPkPassTypes();

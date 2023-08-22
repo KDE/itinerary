@@ -32,6 +32,8 @@ public:
 
     Q_INVOKABLE void search(const QString &sourceId, const QVariantMap &arguments);
 
+    static void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
+
 Q_SIGNALS:
     void searchingChanged();
     void searchSucceeded();
@@ -41,8 +43,7 @@ Q_SIGNALS:
 private:
     void handleRetrievalFinished();
 
-    QNetworkAccessManager* nam();
-    static QNetworkAccessManager *m_nam;
+    static std::function<QNetworkAccessManager*()> s_namFactory;
 
     ReservationManager *m_resMgr = nullptr;
     OnlineTicketRetrievalJob *m_currentJob = nullptr;
