@@ -17,8 +17,9 @@ App.DetailsPage {
     title: i18n("Boat Ticket")
     editor: boatEditorPage
 
-    BarcodeScanModeButton {
+    data: BarcodeScanModeButton {
         page: root
+        visible: ticketToken.hasBarcode
     }
 
     ColumnLayout {
