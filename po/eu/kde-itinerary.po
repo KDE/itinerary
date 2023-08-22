@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
 "PO-Revision-Date: 2023-08-20 20:17+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2554,14 +2554,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Izena"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, fuzzy, kde-format
@@ -2580,44 +2580,50 @@ msgstr "Erakutsi ibilgailuratze baimena"
 msgid "Edit Program Membership"
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "Gorde"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, fuzzy, kde-format
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Membership"
 msgstr "Sekuentziaren zenbakia:"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Member"
 msgstr "Kidea"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, fuzzy, kde-format
 msgid "Valid from"
 msgstr "Balioduna noiztik"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, fuzzy, kde-format
 msgid "Valid until"
 msgstr "Balioduna noiz arte"
+
+#: app/ProgramMembershipEditor.qml:113
+#, fuzzy, kde-format
+#| msgid "Arrival time has to be after the departure time."
+msgid "Valid until time has to be after the valid from time."
+msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

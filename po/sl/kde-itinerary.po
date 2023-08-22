@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 08:59+0200\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"PO-Revision-Date: 2023-08-21 06:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -296,8 +296,7 @@ msgid "Import completed."
 msgstr "Uvoz dokončan."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Način optičnega branja črtne kode"
@@ -753,8 +752,7 @@ msgid "Download failed: %1"
 msgstr "Prenos ni uspel: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Shrani"
@@ -987,8 +985,7 @@ msgid "Time"
 msgstr "Čas"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Čas odhoda mora biti nastavljen."
@@ -1005,11 +1002,10 @@ msgid "Boarding time"
 msgstr "Čas vkrcanja"
 
 #: app/FlightEditor.qml:116
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "Čas prihoda mora biti kasnejši od časa odhoda."
+msgstr "Čas vkrcavanja mora biti zgodnejši od časa odhoda."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1030,8 +1026,7 @@ msgid "Time"
 msgstr "Čas"
 
 #: app/FlightEditor.qml:157
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Čas prihoda mora biti kasnejši od časa odhoda."
@@ -2439,13 +2434,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Program"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, kde-format
@@ -2462,42 +2457,48 @@ msgstr "Pokaži vstopni kupon"
 msgid "Edit Program Membership"
 msgstr "Uredi članstvo v programu"
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "Shrani"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, kde-format
 msgid "Program"
 msgstr "Program"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr "Ime programa ne sme biti prazno."
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, kde-format
 msgid "Membership"
 msgstr "Članstvo"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "Član"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "Veljavno od"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "Veljavno do"
+
+#: app/ProgramMembershipEditor.qml:113
+#, fuzzy, kde-format
+#| msgid "End time has to be after the start time."
+msgid "Valid until time has to be after the valid from time."
+msgstr "Končni čas mora biti kasnejši od začetnega časa."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

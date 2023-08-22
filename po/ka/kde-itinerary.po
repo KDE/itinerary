@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
-"PO-Revision-Date: 2023-08-19 05:15+0200\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"PO-Revision-Date: 2023-08-21 06:01+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -291,8 +291,7 @@ msgid "Import completed."
 msgstr "შემოტანა დასრულდა."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "შტრიხკოდის სკანირების რეჟიმი"
@@ -356,10 +355,9 @@ msgid "Departure Time"
 msgstr "გასვლის დრო"
 
 #: app/BoatEditor.qml:61
-#, fuzzy, kde-format
-#| msgid "Start time has to be set."
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "დაწყების დროის დაყენება აუცილებელია."
+msgstr "გაფრენის დროის დაყენება აუცილებელია."
 
 #: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, kde-format
@@ -368,10 +366,9 @@ msgid "Terminal Name"
 msgstr "ტერმინალის სახელი"
 
 #: app/BoatEditor.qml:69
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Departure terminal must not be empty."
-msgstr "ბილეთის სახელი ცარიელი ვერ იქნება."
+msgstr "გაფრენის ტერმინალი ცარიელი ვერ იქნება."
 
 #: app/BoatEditor.qml:89 app/BoatPage.qml:101
 #, kde-format
@@ -386,16 +383,14 @@ msgid "Arrival Time"
 msgstr "ჩამოსვლის დრო"
 
 #: app/BoatEditor.qml:104
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Arrival time has to be after the departure time."
-msgstr "დასრულების დრო დაწყების დროის შემდეგ უნდა იყოს."
+msgstr "ჩამოსვლის დრო გაფრენის დროის შემდეგ უნდა იყოს."
 
 #: app/BoatEditor.qml:114
-#, fuzzy, kde-format
-#| msgid "Program name must not be empty."
+#, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "პროგრამის სახელი ცარიელი ვერ იქნება."
+msgstr "ჩამოფრენის ტერმინალი ცარიელი ვერ იქნება."
 
 #: app/BoatPage.qml:17
 #, kde-format
@@ -752,8 +747,7 @@ msgid "Download failed: %1"
 msgstr "გადმოწერის შეცდომა: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "შენახვა"
@@ -986,11 +980,10 @@ msgid "Time"
 msgstr "დრო"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Start time has to be set."
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "დაწყების დროის დაყენება აუცილებელია."
+msgstr "გაფრენის დროის დაყენება აუცილებელია."
 
 #: app/FlightEditor.qml:100
 #, kde-format
@@ -1004,11 +997,10 @@ msgid "Boarding time"
 msgstr "ჩასხდომის დრო"
 
 #: app/FlightEditor.qml:116
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "დასრულების დრო დაწყების დროის შემდეგ უნდა იყოს."
+msgstr "ჩაჯდომის დრო გაფრენის დრომდე უნდა იყოს."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1029,11 +1021,10 @@ msgid "Time"
 msgstr "დრო"
 
 #: app/FlightEditor.qml:157
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
-msgstr "დასრულების დრო დაწყების დროის შემდეგ უნდა იყოს."
+msgstr "ჩამოფრენის დრო გაფრენის დროის შემდეგ უნდა იყოს."
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
@@ -1202,7 +1193,7 @@ msgstr "%1 (%2)"
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
 msgid "Not a valid number."
-msgstr ""
+msgstr "არ წარმოადგენს სწორ რიცხვს."
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -2437,13 +2428,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "პროგრამა"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, kde-format
@@ -2460,42 +2451,48 @@ msgstr "პროგრამის ბილეთის ჩვენება"
 msgid "Edit Program Membership"
 msgstr "პროგრამის წევრობის ჩასწორება"
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "შენახვა"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, kde-format
 msgid "Program"
 msgstr "პროგრამა"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr "პროგრამის სახელი ცარიელი ვერ იქნება."
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, kde-format
 msgid "Membership"
 msgstr "წევრობა"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "წევრი"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "Ძალაშია"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "ვადა"
+
+#: app/ProgramMembershipEditor.qml:113
+#, fuzzy, kde-format
+#| msgid "End time has to be after the start time."
+msgid "Valid until time has to be after the valid from time."
+msgstr "დასრულების დრო დაწყების დროის შემდეგ უნდა იყოს."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3008,10 +3005,9 @@ msgid "Add train trip..."
 msgstr "მატარებლით მოგზაურობის დამატება..."
 
 #: app/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "მატარებლით მოგზაურობის დამატება..."
+msgstr "ბორნით მოგზაურობის დამატება..."
 
 #: app/TimelinePage.qml:111
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2536,14 +2536,14 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
 msgstr "Nome:"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, kde-format
@@ -2561,47 +2561,52 @@ msgstr "Mostrar cartão de embarque"
 msgid "Edit Program Membership"
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "Salvar"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, fuzzy, kde-format
 #| msgctxt "bonus, discount or frequent traveler program"
 #| msgid "Program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, fuzzy, kde-format
 #| msgid "Member"
 msgid "Membership"
 msgstr "Membro"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "Membro"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Válido a partir de:"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
 msgstr "Válido até:"
+
+#: app/ProgramMembershipEditor.qml:113
+#, kde-format
+msgid "Valid until time has to be after the valid from time."
+msgstr ""
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

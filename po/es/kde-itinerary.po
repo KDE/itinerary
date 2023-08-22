@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 15:40+0200\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"PO-Revision-Date: 2023-08-21 13:59+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -295,8 +295,7 @@ msgid "Import completed."
 msgstr "Importación completada."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Modo de escaneo de código de barras"
@@ -753,8 +752,7 @@ msgid "Download failed: %1"
 msgstr "Descarga fallida: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Guardar"
@@ -987,8 +985,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Debe indicar la hora de salida."
@@ -1005,11 +1002,10 @@ msgid "Boarding time"
 msgstr "Hora de embarque"
 
 #: app/FlightEditor.qml:116
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "La hora de llegada debe ser posterior a la hora de salida."
+msgstr "La hora de embarque debe ser anterior a la hora de salida."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1030,8 +1026,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/FlightEditor.qml:157
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "La hora de llegada debe ser posterior a la hora de salida."
@@ -2439,13 +2434,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "Nombre"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, kde-format
@@ -2462,42 +2457,48 @@ msgstr "Mostrar tarjeta del programa"
 msgid "Edit Program Membership"
 msgstr "Editar pertenencia a programa"
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "Guardar"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, kde-format
 msgid "Program"
 msgstr "Programa"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr "El nombre del programa no puede estar vacío."
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, kde-format
 msgid "Membership"
 msgstr "Pertenencia"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "Miembro"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "Válido desde"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "Válido hasta"
+
+#: app/ProgramMembershipEditor.qml:113
+#, fuzzy, kde-format
+#| msgid "End time has to be after the start time."
+msgid "Valid until time has to be after the valid from time."
+msgstr "La hora de finalización debe ser posterior a la hora de inicio."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format

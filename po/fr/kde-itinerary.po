@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-21 00:47+0000\n"
-"PO-Revision-Date: 2023-08-17 17:28+0200\n"
+"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"PO-Revision-Date: 2023-08-20 15:09+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -796,8 +796,7 @@ msgid "Event"
 msgstr "Événement"
 
 #: app/EventEditor.qml:55
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
 msgstr "Nom"
@@ -816,7 +815,7 @@ msgstr "Entrée"
 #: app/EventEditor.qml:74
 #, kde-format
 msgid "Entrance time has to be before the start time."
-msgstr ""
+msgstr "L'heure d'entrée doit être antérieure à l'heure de début."
 
 #: app/EventEditor.qml:81 app/EventPage.qml:86 app/RestaurantEditor.qml:84
 #, kde-format
@@ -824,10 +823,9 @@ msgid "Start Time"
 msgstr "Heure de départ"
 
 #: app/EventEditor.qml:85 app/RestaurantEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Start time has to be set."
-msgstr "Heure de libération de la chambre"
+msgstr "L'heure de début doit être définie."
 
 #: app/EventEditor.qml:90 app/EventPage.qml:94 app/RestaurantEditor.qml:93
 #, kde-format
@@ -837,7 +835,7 @@ msgstr "Heure d'arrivée"
 #: app/EventEditor.qml:101 app/RestaurantEditor.qml:104
 #, kde-format
 msgid "End time has to be after the start time."
-msgstr ""
+msgstr "L'heure de fin doit être postérieure à l'heure de début."
 
 #: app/EventEditor.qml:122
 #, kde-format
@@ -1567,10 +1565,9 @@ msgid "Check-in"
 msgstr "Enregistrement"
 
 #: app/HotelEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-in time"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "Heure d'enregistrement"
+msgstr "L'heure d'arrivée doit être définie."
 
 #: app/HotelEditor.qml:93
 #, kde-format
@@ -1579,15 +1576,14 @@ msgid "Check-out"
 msgstr "Libération"
 
 #: app/HotelEditor.qml:105
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "Heure de libération de la chambre"
+msgstr "L'heure de libération doit être définie."
 
 #: app/HotelEditor.qml:107
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "L'heure de départ doit être postérieure à l'heure d'arrivée."
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2461,13 +2457,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Programme"
 
-#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:63
+#: app/ProgramMembershipCard.qml:27 app/ProgramMembershipEditor.qml:62
 #: app/ProgramMembershipEditorCard.qml:57 app/TicketPage.qml:97
 #, kde-format
 msgid "Name"
 msgstr "Nom"
 
-#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:87
+#: app/ProgramMembershipCard.qml:36 app/ProgramMembershipEditor.qml:86
 #: app/ProgramMembershipEditorCard.qml:64 app/ProgramMembershipPage.qml:98
 #: app/TicketPage.qml:115
 #, kde-format
@@ -2484,42 +2480,48 @@ msgstr "Afficher la carte de programme"
 msgid "Edit Program Membership"
 msgstr "Modifier une adhésion à un programme"
 
-#: app/ProgramMembershipEditor.qml:26 app/TicketEditor.qml:26
+#: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
 msgid "Save"
 msgstr "Enregistrer"
 
-#: app/ProgramMembershipEditor.qml:58
+#: app/ProgramMembershipEditor.qml:57
 #, kde-format
 msgid "Program"
 msgstr "Programme"
 
-#: app/ProgramMembershipEditor.qml:66
+#: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
 msgstr "Il est impossible que le nom du programme soit vide."
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:75
 #, kde-format
 msgid "Membership"
 msgstr "Adhésion"
 
-#: app/ProgramMembershipEditor.qml:81 app/ProgramMembershipPage.qml:89
+#: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
 msgid "Member"
 msgstr "Membre"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:106
+#: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
 #, kde-format
 msgid "Valid from"
 msgstr "Valable à partir de"
 
-#: app/ProgramMembershipEditor.qml:101 app/ProgramMembershipPage.qml:111
+#: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
 #, kde-format
 msgid "Valid until"
 msgstr "Valable jusqu'à"
+
+#: app/ProgramMembershipEditor.qml:113
+#, fuzzy, kde-format
+#| msgid "End time has to be after the start time."
+msgid "Valid until time has to be after the valid from time."
+msgstr "L'heure de fin doit être postérieure à l'heure de début."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3055,16 +3057,14 @@ msgid "Add accommodation..."
 msgstr "Ajouter un hébergement..."
 
 #: app/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add event..."
-msgstr "Ajouter un document..."
+msgstr "Ajouter un évènement..."
 
 #: app/TimelinePage.qml:134
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add restaurant..."
-msgstr "Ajouter un trajet en train..."
+msgstr "Ajouter un restaurant..."
 
 #: app/TimelinePage.qml:151
 #, kde-format
