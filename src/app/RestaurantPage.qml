@@ -14,7 +14,6 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18n("Restaurant Reservation")
-    editor: restaurantEditorPage
 
     ColumnLayout {
         width: parent.width

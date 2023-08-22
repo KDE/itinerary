@@ -15,7 +15,6 @@ App.DetailsPage {
     id: root
 
     title: i18n("Boat Ticket")
-    editor: boatEditorPage
 
     data: BarcodeScanModeButton {
         page: root

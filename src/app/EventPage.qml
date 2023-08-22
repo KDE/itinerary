@@ -14,7 +14,6 @@ import "." as App
 App.DetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
-    editor: eventEditorPage
 
     data: BarcodeScanModeButton {
         page: root

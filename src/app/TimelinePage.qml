@@ -223,15 +223,15 @@ Kirigami.ScrollablePage {
     }
     Component {
         id: hotelDetailsPage
-        App.HotelPage {}
+        App.HotelPage { editor: hotelEditorPage }
     }
     Component {
         id: eventDetailsPage
-        App.EventPage {}
+        App.EventPage { editor: eventEditorPage }
     }
     Component {
         id: restaurantDetailsPage
-        App.RestaurantPage {}
+        App.RestaurantPage { editor: restaurantEditorPage }
     }
     Component {
         id: carRentalDetailsPage
@@ -239,7 +239,7 @@ Kirigami.ScrollablePage {
     }
     Component {
         id: boatDetailsPage
-        App.BoatPage {}
+        App.BoatPage { editor: boatEditorPage }
     }
     Component {
         id: touristAttractionDetailsPage
