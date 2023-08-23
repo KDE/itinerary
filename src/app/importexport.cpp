@@ -225,7 +225,8 @@ int Importer::importTransfers(const ReservationManager *resMgr, TransferManager 
 {
     int count = 0;
     const auto transferDomain = QStringLiteral("org.kde.itinerary/transfers");
-    for (const auto &batchId : resMgr->batches()) {
+    const auto resIds = m_file->reservations();
+    for (const auto &batchId : resIds) {
         auto t = Transfer::fromJson(QJsonDocument::fromJson(m_file->customData(transferDomain, Transfer::identifier(batchId, Transfer::Before))).object());
         transferMgr->importTransfer(t);
         count += t.state() != Transfer::UndefinedState ? 1 : 0;
