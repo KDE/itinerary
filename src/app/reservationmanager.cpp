@@ -179,7 +179,7 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
     return ids;
 }
 
-QString ReservationManager::addReservation(const QVariant &res)
+QString ReservationManager::addReservation(const QVariant &res, const QString &resIdHint)
 {
     // look for matching reservations, or matching batches
     // we need to do that within a +/-24h range, so we find unbound elements too
@@ -215,7 +215,7 @@ QString ReservationManager::addReservation(const QVariant &res)
             }
 
             // truly new, and added to an existing batch
-            const QString resId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+            const QString resId = makeReservationId(resIdHint);
             storeReservation(resId, res);
             Q_EMIT reservationAdded(resId);
 
@@ -228,7 +228,7 @@ QString ReservationManager::addReservation(const QVariant &res)
     }
 
     // truly new, and starting a new batch
-    const QString resId = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    const QString resId = makeReservationId(resIdHint);
     storeReservation(resId, res);
     Q_EMIT reservationAdded(resId);
 
@@ -547,4 +547,12 @@ QString ReservationManager::nextBatch(const QString& batchId) const
         return {};
     }
     return *(it + 1);
+}
+
+QString ReservationManager::makeReservationId(const QString &resIdHint) const
+{
+    if (!resIdHint.isEmpty() && reservation(resIdHint).isNull()) {
+        return resIdHint;
+    }
+    return QUuid::createUuid().toString(QUuid::WithoutBraces);
 }

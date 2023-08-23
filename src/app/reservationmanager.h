@@ -37,9 +37,12 @@ public:
     Q_INVOKABLE QVariant reservation(const QString &id) const;
 
     /** Adds @p res if it's new, or merges it with an existing reservation or reservation batch.
+     *  @param resIdHint If set, this is used as identifier for reservations that would need a new
+     *  one, assuming it is not already in use. Keep empty by default, only needs to be set when
+     *  importing existing data.
      *  @returns The id of the new or existed merged reservation.
      */
-    Q_INVOKABLE QString addReservation(const QVariant &res);
+    Q_INVOKABLE QString addReservation(const QVariant &res, const QString &resIdHint = {});
     Q_INVOKABLE void updateReservation(const QString &resId, const QVariant &res);
     Q_INVOKABLE void removeReservation(const QString &id);
 
@@ -93,6 +96,8 @@ private:
 
     void updateBatch(const QString &resId, const QVariant &newRes, const QVariant &oldRes);
     void removeFromBatch(const QString &resId, const QString &batchId);
+
+    QString makeReservationId(const QString &resIdHint) const;
 
     QVector<QString> applyPartialUpdate(const QVariant &res);
 

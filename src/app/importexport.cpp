@@ -198,7 +198,7 @@ int Importer::importReservations(ReservationManager *resMgr)
 {
     const auto resIds = m_file->reservations();
     for (const auto &resId : resIds) {
-        resMgr->addReservation(m_file->reservation(resId));
+        resMgr->addReservation(m_file->reservation(resId), resId);
     }
     return resIds.size();
 }
