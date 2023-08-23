@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-22 00:47+0000\n"
-"PO-Revision-Date: 2023-08-21 09:54+0300\n"
+"POT-Creation-Date: 2023-08-23 00:47+0000\n"
+"PO-Revision-Date: 2023-08-22 07:55+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -504,7 +504,7 @@ msgid "Alight earlier"
 msgstr "Приземлиться раніше"
 
 #: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
-#: app/EventPage.qml:117 app/FlightEditor.qml:172 app/FlightEditor.qml:176
+#: app/EventPage.qml:116 app/FlightEditor.qml:172 app/FlightEditor.qml:176
 #: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
 #: app/TrainPage.qml:265
 #, kde-format
@@ -611,7 +611,7 @@ msgid "Time"
 msgstr "Час"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:44
 #, kde-format
 msgid "Location"
 msgstr "Місце"
@@ -657,7 +657,7 @@ msgid "Email"
 msgstr "Ел. пошта"
 
 #: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:108
-#: app/EventPage.qml:101
+#: app/EventPage.qml:100
 #, kde-format
 msgid "Website"
 msgstr "Сайт"
@@ -799,7 +799,7 @@ msgstr "Назва"
 msgid "Name must not be empty."
 msgstr "Запис назви не може бути порожнім."
 
-#: app/EventEditor.qml:63 app/EventPage.qml:78
+#: app/EventEditor.qml:63 app/EventPage.qml:77
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
@@ -810,7 +810,7 @@ msgstr "Вхід"
 msgid "Entrance time has to be before the start time."
 msgstr "Час початку має передувати часу входу."
 
-#: app/EventEditor.qml:81 app/EventPage.qml:86 app/RestaurantEditor.qml:84
+#: app/EventEditor.qml:81 app/EventPage.qml:85 app/RestaurantEditor.qml:84
 #, kde-format
 msgid "Start Time"
 msgstr "Час початку"
@@ -820,7 +820,7 @@ msgstr "Час початку"
 msgid "Start time has to be set."
 msgstr "Слід вказати час початку."
 
-#: app/EventEditor.qml:90 app/EventPage.qml:94 app/RestaurantEditor.qml:93
+#: app/EventEditor.qml:90 app/EventPage.qml:93 app/RestaurantEditor.qml:93
 #, kde-format
 msgid "End Time"
 msgstr "Час завершення"
@@ -841,19 +841,19 @@ msgctxt "venue name"
 msgid "Name"
 msgstr "Назва"
 
-#: app/EventPage.qml:121
+#: app/EventPage.qml:120
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Секція:"
 
-#: app/EventPage.qml:130
+#: app/EventPage.qml:129
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Ряд:"
 
-#: app/EventPage.qml:139
+#: app/EventPage.qml:138
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1576,12 +1576,12 @@ msgstr "Час контролю на вході має передувати ча
 msgid "Hotel Reservation"
 msgstr "Бронювання готелю"
 
-#: app/HotelPage.qml:69
+#: app/HotelPage.qml:68
 #, kde-format
 msgid "Check-in time"
 msgstr "Час перевірки на вході"
 
-#: app/HotelPage.qml:76
+#: app/HotelPage.qml:75
 #, kde-format
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
@@ -2502,52 +2502,51 @@ msgid "Valid until"
 msgstr "Завершення чинності"
 
 #: app/ProgramMembershipEditor.qml:113
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr "Час початку має передувати часу завершення."
+msgstr "Час початку строку дії має передувати часу завершення строку дії."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
 msgstr "Учасник програми"
 
-#: app/publictransport.cpp:225 app/publictransport.cpp:252
+#: app/publictransport.cpp:238 app/publictransport.cpp:265
 #, kde-format
 msgid "Walk"
 msgstr "Перехід"
 
-#: app/publictransport.cpp:227
+#: app/publictransport.cpp:240
 #, kde-format
 msgid "Wait"
 msgstr "Очікування"
 
-#: app/publictransport.cpp:236
+#: app/publictransport.cpp:249
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Орендований велосипед"
 
-#: app/publictransport.cpp:238
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented moped"
 msgstr "Орендований мопед"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Орендований самокат"
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented car"
 msgstr "Орендоване авто"
 
-#: app/publictransport.cpp:248
+#: app/publictransport.cpp:261
 #, kde-format
 msgid "Bicycle"
 msgstr "Велосипед"
 
-#: app/publictransport.cpp:250 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
 #, kde-format
 msgid "Car"
 msgstr "Автомобіль"
@@ -2598,17 +2597,17 @@ msgstr "Бронювання"
 msgid "Restaurant Reservation"
 msgstr "Бронювання ресторану"
 
-#: app/RestaurantPage.qml:63
+#: app/RestaurantPage.qml:62
 #, kde-format
 msgid "Start time"
 msgstr "Час початку"
 
-#: app/RestaurantPage.qml:71
+#: app/RestaurantPage.qml:70
 #, kde-format
 msgid "End time"
 msgstr "Час завершення"
 
-#: app/RestaurantPage.qml:79
+#: app/RestaurantPage.qml:78
 #, kde-format
 msgid "Party size"
 msgstr "Кількість учасників"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"POT-Creation-Date: 2023-08-23 00:47+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -525,7 +525,7 @@ msgid "Alight earlier"
 msgstr ""
 
 #: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
-#: app/EventPage.qml:117 app/FlightEditor.qml:172 app/FlightEditor.qml:176
+#: app/EventPage.qml:116 app/FlightEditor.qml:172 app/FlightEditor.qml:176
 #: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
 #: app/TrainPage.qml:265
 #, kde-format
@@ -638,7 +638,7 @@ msgid "Time"
 msgstr "Čas:"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:44
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Location"
@@ -690,7 +690,7 @@ msgid "Email"
 msgstr "E-mail:"
 
 #: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:108
-#: app/EventPage.qml:101
+#: app/EventPage.qml:100
 #, kde-format
 msgid "Website"
 msgstr ""
@@ -837,7 +837,7 @@ msgstr "Názov:"
 msgid "Name must not be empty."
 msgstr ""
 
-#: app/EventEditor.qml:63 app/EventPage.qml:78
+#: app/EventEditor.qml:63 app/EventPage.qml:77
 #, fuzzy, kde-format
 #| msgid "Entrance:"
 msgctxt "time of entrance"
@@ -849,7 +849,7 @@ msgstr "Vchod"
 msgid "Entrance time has to be before the start time."
 msgstr ""
 
-#: app/EventEditor.qml:81 app/EventPage.qml:86 app/RestaurantEditor.qml:84
+#: app/EventEditor.qml:81 app/EventPage.qml:85 app/RestaurantEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Start Time:"
 msgid "Start Time"
@@ -861,7 +861,7 @@ msgstr "Čas začiatku:"
 msgid "Start time has to be set."
 msgstr "Výstupná kontrola %1"
 
-#: app/EventEditor.qml:90 app/EventPage.qml:94 app/RestaurantEditor.qml:93
+#: app/EventEditor.qml:90 app/EventPage.qml:93 app/RestaurantEditor.qml:93
 #, fuzzy, kde-format
 #| msgid "End Time:"
 msgid "End Time"
@@ -884,7 +884,7 @@ msgctxt "venue name"
 msgid "Name"
 msgstr "Názov:"
 
-#: app/EventPage.qml:121
+#: app/EventPage.qml:120
 #, fuzzy, kde-format
 #| msgctxt "train station"
 #| msgid "Station:"
@@ -892,13 +892,13 @@ msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Stanica:"
 
-#: app/EventPage.qml:130
+#: app/EventPage.qml:129
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr ""
 
-#: app/EventPage.qml:139
+#: app/EventPage.qml:138
 #, fuzzy, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1658,13 +1658,13 @@ msgstr ""
 msgid "Hotel Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/HotelPage.qml:69
+#: app/HotelPage.qml:68
 #, fuzzy, kde-format
 #| msgid "Check-in"
 msgid "Check-in time"
 msgstr "Vstupná kontrola"
 
-#: app/HotelPage.qml:76
+#: app/HotelPage.qml:75
 #, fuzzy, kde-format
 #| msgid "Check-out %1"
 msgid "Check-out time"
@@ -2632,43 +2632,43 @@ msgstr ""
 msgid "Program Membership"
 msgstr ""
 
-#: app/publictransport.cpp:225 app/publictransport.cpp:252
+#: app/publictransport.cpp:238 app/publictransport.cpp:265
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:227
+#: app/publictransport.cpp:240
 #, fuzzy, kde-format
 msgid "Wait"
 msgstr "Čakanie"
 
-#: app/publictransport.cpp:236
+#: app/publictransport.cpp:249
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:238
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:255
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Prenajaté auto"
 
-#: app/publictransport.cpp:248
+#: app/publictransport.cpp:261
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:250 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
 #, kde-format
 msgid "Car"
 msgstr "Auto"
@@ -2720,19 +2720,19 @@ msgstr "Rezervácia"
 msgid "Restaurant Reservation"
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/RestaurantPage.qml:63
+#: app/RestaurantPage.qml:62
 #, fuzzy, kde-format
 #| msgid "Start time:"
 msgid "Start time"
 msgstr "Čas spustenia:"
 
-#: app/RestaurantPage.qml:71
+#: app/RestaurantPage.qml:70
 #, fuzzy, kde-format
 #| msgid "End time:"
 msgid "End time"
 msgstr "Čas konca:"
 
-#: app/RestaurantPage.qml:79
+#: app/RestaurantPage.qml:78
 #, kde-format
 msgid "Party size"
 msgstr ""

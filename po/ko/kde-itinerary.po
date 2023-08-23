@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-22 00:47+0000\n"
+"POT-Creation-Date: 2023-08-23 00:47+0000\n"
 "PO-Revision-Date: 2023-08-07 00:24+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -496,7 +496,7 @@ msgid "Alight earlier"
 msgstr "일찍 탑승"
 
 #: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
-#: app/EventPage.qml:117 app/FlightEditor.qml:172 app/FlightEditor.qml:176
+#: app/EventPage.qml:116 app/FlightEditor.qml:172 app/FlightEditor.qml:176
 #: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
 #: app/TrainPage.qml:265
 #, kde-format
@@ -603,7 +603,7 @@ msgid "Time"
 msgstr "시간"
 
 #: app/CarRentalPage.qml:40 app/CarRentalPage.qml:72
-#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:45
+#: app/FormPlaceDelegate.qml:32 app/HotelPage.qml:44
 #, kde-format
 msgid "Location"
 msgstr "위치"
@@ -649,7 +649,7 @@ msgid "Email"
 msgstr "이메일"
 
 #: app/ContactCard.qml:44 app/ContactEditorCard.qml:50 app/EventEditor.qml:108
-#: app/EventPage.qml:101
+#: app/EventPage.qml:100
 #, kde-format
 msgid "Website"
 msgstr "웹사이트"
@@ -794,7 +794,7 @@ msgstr "이름"
 msgid "Name must not be empty."
 msgstr "티켓 이름이 비어 있으면 안 됩니다."
 
-#: app/EventEditor.qml:63 app/EventPage.qml:78
+#: app/EventEditor.qml:63 app/EventPage.qml:77
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
@@ -805,7 +805,7 @@ msgstr "입장"
 msgid "Entrance time has to be before the start time."
 msgstr ""
 
-#: app/EventEditor.qml:81 app/EventPage.qml:86 app/RestaurantEditor.qml:84
+#: app/EventEditor.qml:81 app/EventPage.qml:85 app/RestaurantEditor.qml:84
 #, kde-format
 msgid "Start Time"
 msgstr "시작 시간"
@@ -816,7 +816,7 @@ msgstr "시작 시간"
 msgid "Start time has to be set."
 msgstr "체크아웃 시간"
 
-#: app/EventEditor.qml:90 app/EventPage.qml:94 app/RestaurantEditor.qml:93
+#: app/EventEditor.qml:90 app/EventPage.qml:93 app/RestaurantEditor.qml:93
 #, kde-format
 msgid "End Time"
 msgstr "종료 시간"
@@ -837,19 +837,19 @@ msgctxt "venue name"
 msgid "Name"
 msgstr "이름"
 
-#: app/EventPage.qml:121
+#: app/EventPage.qml:120
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "구역:"
 
-#: app/EventPage.qml:130
+#: app/EventPage.qml:129
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "줄:"
 
-#: app/EventPage.qml:139
+#: app/EventPage.qml:138
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
@@ -1573,12 +1573,12 @@ msgstr ""
 msgid "Hotel Reservation"
 msgstr "호텔 예약"
 
-#: app/HotelPage.qml:69
+#: app/HotelPage.qml:68
 #, kde-format
 msgid "Check-in time"
 msgstr "체크인 시간"
 
-#: app/HotelPage.qml:76
+#: app/HotelPage.qml:75
 #, kde-format
 msgid "Check-out time"
 msgstr "체크아웃 시간"
@@ -2503,42 +2503,42 @@ msgstr ""
 msgid "Program Membership"
 msgstr "프로그램 멤버십"
 
-#: app/publictransport.cpp:225 app/publictransport.cpp:252
+#: app/publictransport.cpp:238 app/publictransport.cpp:265
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:227
+#: app/publictransport.cpp:240
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:236
+#: app/publictransport.cpp:249
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:238
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:248
+#: app/publictransport.cpp:261
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:250 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
 #, kde-format
 msgid "Car"
 msgstr "자동차"
@@ -2589,17 +2589,17 @@ msgstr "예약"
 msgid "Restaurant Reservation"
 msgstr "식당 예약"
 
-#: app/RestaurantPage.qml:63
+#: app/RestaurantPage.qml:62
 #, kde-format
 msgid "Start time"
 msgstr "시작 시간"
 
-#: app/RestaurantPage.qml:71
+#: app/RestaurantPage.qml:70
 #, kde-format
 msgid "End time"
 msgstr "종료 시간"
 
-#: app/RestaurantPage.qml:79
+#: app/RestaurantPage.qml:78
 #, kde-format
 msgid "Party size"
 msgstr "인원 수"
