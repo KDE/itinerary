@@ -22,6 +22,7 @@ target_sources(itinerary PRIVATE
     journeysectionmodel.cpp
     json.cpp
     jsonio.cpp
+    kdeconnect.cpp
     livedata.cpp
     livedatamanager.cpp
     localizer.cpp

@@ -4,9 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as QQC2
 import Qt.labs.qmlmodels 1.0 as Models
 import Qt.labs.platform 1.1 as Platform
 import org.kde.kirigami 2.19 as Kirigami
@@ -169,7 +169,7 @@ Kirigami.ScrollablePage {
         id: exportTripGroupDialog
         property string tripGroupId
         title: i18n("Export")
-        actions: [
+        property list<QQC2.Action> _actions: [
             Kirigami.Action {
                 text: i18n("As Itinerary file...")
                 icon.name: "export-symbolic"
@@ -189,6 +189,19 @@ Kirigami.ScrollablePage {
                 }
             }
         ]
+        actions: exportTripGroupDialog._actions
+        Instantiator {
+            model: KDEConnectDeviceModel {}
+            delegate: Kirigami.Action {
+                text: i18n("Send to %1", model.name)
+                icon.name: "kdeconnect-tray"
+                onTriggered: {
+                    exportTripGroupDialog.close();
+                    ApplicationController.exportTripToKDEConnect(exportTripGroupDialog.tripGroupId, model.deviceId);
+                }
+            }
+            onObjectAdded: exportTripGroupDialog._actions.push(object)
+        }
     }
     Platform.FileDialog {
         id: tripGroupFileExportDialog

@@ -13,6 +13,7 @@
 #include "gpxexport.h"
 #include "healthcertificatemanager.h"
 #include "importexport.h"
+#include "kdeconnect.h"
 #include "livedatamanager.h"
 #include "logging.h"
 #include "passmanager.h"
@@ -43,6 +44,7 @@
 #include <QClipboard>
 #include <QDebug>
 #include <QDesktopServices>
+#include <QDir>
 #include <QFile>
 #include <QGuiApplication>
 #include <QJsonArray>
@@ -55,6 +57,7 @@
 #include <QNetworkReply>
 #include <QScopedValueRollback>
 #include <QStandardPaths>
+#include <QTemporaryFile>
 #include <QUuid>
 #include <QUrl>
 #include <QUrlQuery>
@@ -576,12 +579,39 @@ void ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
     if (url.isEmpty()) {
         return;
     }
+    if (exportTripToFile(tripGroupId, FileHelper::toLocalFile(url))) {
+        Q_EMIT infoMessage(i18n("Export completed."));
+    }
+}
 
-    File f(FileHelper::toLocalFile(url));
-    if (!f.open(File::Write)) {
-        qCWarning(Log) << f.errorString() << url;
+void ApplicationController::exportTripToKDEConnect(const QString &tripGroupId, const QString &deviceId)
+{
+    if (tripGroupId.isEmpty() || deviceId.isEmpty()) {
+        return;
+    }
+
+    QTemporaryFile f(QDir::tempPath() + QStringLiteral("/XXXXXX.itinerary"));
+    if (!f.open()) {
+        qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
         Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
         return;
+    }
+
+    if (exportTripToFile(tripGroupId, f.fileName())) {
+        f.setAutoRemove(false); // TODO there is no proper done signaling, we need to find a way to clean up those files!
+        f.close();
+        KDEConnect::sendToDevice(f.fileName(), deviceId);
+    }
+    Q_EMIT infoMessage(i18n("Trip sent."));
+}
+
+bool ApplicationController::exportTripToFile(const QString &tripGroupId, const QString &fileName)
+{
+    File f(fileName);
+    if (!f.open(File::Write)) {
+        qCWarning(Log) << f.errorString() << fileName;
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return false;
     }
 
     const auto tg = m_tripGroupMgr->tripGroup(tripGroupId);
@@ -612,7 +642,7 @@ void ApplicationController::exportTripToFile(const QString &tripGroupId, const Q
             }
         }
     }
-    Q_EMIT infoMessage(i18n("Export completed."));
+    return true;
 }
 
 void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QUrl &url)

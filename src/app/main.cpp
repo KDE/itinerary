@@ -20,6 +20,7 @@
 #include "genericpkpass.h"
 #include "healthcertificatemanager.h"
 #include "journeysectionmodel.h"
+#include "kdeconnect.h"
 #include "livedatamanager.h"
 #include "localizer.h"
 #include "locationinformation.h"
@@ -178,6 +179,7 @@ void registerApplicationTypes()
     qmlRegisterType<CountrySubdivisionModel>("org.kde.itinerary", 1, 0, "CountrySubdivisionModel");
     qmlRegisterType<DocumentsModel>("org.kde.itinerary", 1, 0, "DocumentsModel");
     qmlRegisterType<JourneySectionModel>("org.kde.itinerary", 1, 0, "JourneySectionModel");
+    qmlRegisterType<KDEConnectDeviceModel>("org.kde.itinerary", 1, 0, "KDEConnectDeviceModel");
     qmlRegisterType<StatisticsModel>("org.kde.itinerary", 1, 0, "StatisticsModel");
     qmlRegisterType<StatisticsTimeRangeModel>("org.kde.itinerary", 1, 0, "StatisticsTimeRangeModel");
     qmlRegisterType<TicketTokenModel>("org.kde.itinerary", 1, 0, "TicketTokenModel");

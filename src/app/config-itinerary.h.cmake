@@ -10,5 +10,6 @@
 #cmakedefine01 HAVE_KCRASH
 #cmakedefine01 HAVE_KHEALTHCERTIFICATE
 #cmakedefine01 HAVE_MATRIX
+#cmakedefine01 HAVE_DBUS
 
 #endif

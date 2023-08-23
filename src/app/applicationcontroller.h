@@ -71,6 +71,7 @@ public:
     // data export
     Q_INVOKABLE void exportToFile(const QUrl &url);
     Q_INVOKABLE void exportTripToFile(const QString &tripGroupId, const QUrl &url);
+    Q_INVOKABLE void exportTripToKDEConnect(const QString &tripGroupId, const QString &deviceId);
     Q_INVOKABLE void exportTripToGpx(const QString &tripGroupId, const QUrl &url);
 
     // document attaching
@@ -118,6 +119,8 @@ private:
 
     QString addDocumentFromFile(const QUrl &url);
     QString addAttachableDocument(const QString &fileName, const QByteArray &data);
+
+    bool exportTripToFile(const QString &tripGroupId, const QString &fileName);
 
     static ApplicationController *s_instance;
 
