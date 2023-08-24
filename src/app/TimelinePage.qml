@@ -191,7 +191,9 @@ Kirigami.ScrollablePage {
         ]
         actions: exportTripGroupDialog._actions
         Instantiator {
-            model: KDEConnectDeviceModel {}
+            model: KDEConnectDeviceModel {
+                id: deviceModel
+            }
             delegate: Kirigami.Action {
                 text: i18n("Send to %1", model.name)
                 icon.name: "kdeconnect-tray"
@@ -201,6 +203,10 @@ Kirigami.ScrollablePage {
                 }
             }
             onObjectAdded: exportTripGroupDialog._actions.push(object)
+        }
+        onVisibleChanged: {
+            if (exportTripGroupDialog.visible)
+                deviceModel.refresh();
         }
     }
     Platform.FileDialog {

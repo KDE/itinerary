@@ -17,6 +17,8 @@ public:
     explicit KDEConnectDeviceModel(QObject *parent = nullptr);
     ~KDEConnectDeviceModel();
 
+    Q_INVOKABLE void refresh();
+
     enum {
         DeviceNameRole = Qt::DisplayRole,
         DeviceIdRole = Qt::UserRole,

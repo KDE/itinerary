@@ -20,7 +20,19 @@
 KDEConnectDeviceModel::KDEConnectDeviceModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+
+}
+
+KDEConnectDeviceModel::~KDEConnectDeviceModel() = default;
+
+void KDEConnectDeviceModel::refresh()
+{
+    if (!m_devices.empty()) // ### this is wrong, but the consumer code can't handle proper update yet...
+        return;
+
 #if HAVE_DBUS
+    beginResetModel();
+
     // TODO we might want to do all this asynchronously by watching change signals and cache the device list
     auto msg = QDBusMessage::createMethodCall(QStringLiteral("org.kde.kdeconnect"),
                                               QStringLiteral("/modules/kdeconnect"),
@@ -45,10 +57,9 @@ KDEConnectDeviceModel::KDEConnectDeviceModel(QObject *parent)
             m_devices.push_back({deviceId, deviceIface.property("name").toString()});
         }
     }
+    endResetModel();
 #endif
 }
-
-KDEConnectDeviceModel::~KDEConnectDeviceModel() = default;
 
 int KDEConnectDeviceModel::rowCount(const QModelIndex &parent) const
 {
