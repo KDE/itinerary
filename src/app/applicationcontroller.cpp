@@ -44,7 +44,6 @@
 #include <QClipboard>
 #include <QDebug>
 #include <QDesktopServices>
-#include <QDir>
 #include <QFile>
 #include <QGuiApplication>
 #include <QJsonArray>
@@ -57,6 +56,7 @@
 #include <QNetworkReply>
 #include <QScopedValueRollback>
 #include <QStandardPaths>
+#include <QTemporaryDir>
 #include <QTemporaryFile>
 #include <QUuid>
 #include <QUrl>
@@ -590,7 +590,11 @@ void ApplicationController::exportTripToKDEConnect(const QString &tripGroupId, c
         return;
     }
 
-    QTemporaryFile f(QDir::tempPath() + QStringLiteral("/XXXXXX.itinerary"));
+    if (!m_tempDir) {
+        m_tempDir = std::make_unique<QTemporaryDir>();
+    }
+
+    QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
     if (!f.open()) {
         qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
         Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
@@ -598,7 +602,8 @@ void ApplicationController::exportTripToKDEConnect(const QString &tripGroupId, c
     }
 
     if (exportTripToFile(tripGroupId, f.fileName())) {
-        f.setAutoRemove(false); // TODO there is no proper done signaling, we need to find a way to clean up those files!
+        // will be removed by the temporary dir it's in, as we don't know when the upload is done
+        f.setAutoRemove(false);
         f.close();
         KDEConnect::sendToDevice(f.fileName(), deviceId);
     }

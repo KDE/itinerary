@@ -9,6 +9,8 @@
 
 #include <QObject>
 
+#include <memory>
+
 class DocumentManager;
 class FavoriteLocationModel;
 class HealthCertificateManager;
@@ -31,6 +33,7 @@ class Intent;
 }
 
 class QNetworkAccessManager;
+class QTemporaryDir;
 
 class ApplicationController : public QObject
 {
@@ -135,6 +138,7 @@ private:
     mutable HealthCertificateManager *m_healthCertMgr = nullptr;
     std::function<QNetworkAccessManager*()> m_namFactory;
 
+    std::unique_ptr<QTemporaryDir> m_tempDir;
     bool m_importLock = false;
 };
 
