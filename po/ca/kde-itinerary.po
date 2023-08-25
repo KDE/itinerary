@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:47+0000\n"
+"POT-Creation-Date: 2023-08-25 00:47+0000\n"
 "PO-Revision-Date: 2023-08-22 17:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -235,60 +235,66 @@ msgstr "Voleu substituir la reserva existent amb el nou viatge seleccionat?"
 msgid "Replace"
 msgstr "Substitueix"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:698
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ha fallat la importació: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:349
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ha fallat la importació: Fitxer massa gran."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
-#: app/applicationcontroller.cpp:735
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "S'ha importat una reserva."
 msgstr[1] "S'han importat %1 reserves."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:438
 #, kde-format
 msgid "Health certificate imported."
 msgstr "S'ha importat el certificat de salut."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "S'ha importat un passi."
 msgstr[1] "S'han importat %1 passis."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:456
 #, kde-format
 msgid "Pass imported."
 msgstr "S'ha importat el passi."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "No s'ha importat res."
 
-#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
+#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ha fallat l'exportació: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
-#: app/applicationcontroller.cpp:688
+#: app/applicationcontroller.cpp:610
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip sent."
+msgstr "Viatges"
+
+#: app/applicationcontroller.cpp:723
 #, kde-format
 msgid "Import completed."
 msgstr "S'ha completat la importació."
@@ -881,7 +887,7 @@ msgid "Export Favorite Locations"
 msgstr "Exporta les ubicacions preferides"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:208
+#: app/TimelinePage.qml:227
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Fitxers GPX (*.gpx)"
@@ -1209,7 +1215,7 @@ msgstr "Suprimeix el passi"
 msgid "Do you really want to delete this pass?"
 msgstr "Segur que voleu suprimir aquest passi?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2084,22 +2090,22 @@ msgstr "Tipus M"
 msgid "Type N"
 msgstr "Tipus N"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:333
+#: app/main.cpp:335
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1, La comunitat KDE"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:345
+#: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Fitxers o URL a importar."
@@ -3060,17 +3066,23 @@ msgstr "Com a fitxer de l'Itinerary..."
 msgid "As GPX file..."
 msgstr "Com a fitxer GPX..."
 
-#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
+#: app/TimelinePage.qml:198
+#, fuzzy, kde-format
+#| msgid "End time: %1"
+msgid "Send to %1"
+msgstr "Hora de finalització: %1"
+
+#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
 msgid "Export Trip"
 msgstr "Exporta un viatge"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:218
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Fitxers de l'Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:374
+#: app/TimelinePage.qml:393
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Res per a l'itinerari d'avui."

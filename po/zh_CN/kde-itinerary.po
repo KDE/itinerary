@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:47+0000\n"
+"POT-Creation-Date: 2023-08-25 00:47+0000\n"
 "PO-Revision-Date: 2023-08-02 12:39\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -231,58 +231,64 @@ msgstr "您确定要用新选择的行程替换现有预订吗？"
 msgid "Replace"
 msgstr "替换"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:698
 #, kde-format
 msgid "Import failed: %1"
 msgstr "导入失败：%1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:349
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "导入失败：文件太大。"
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
-#: app/applicationcontroller.cpp:735
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "已导入 %1 个预约。"
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:438
 #, kde-format
 msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:456
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "您提供的信息中没有可被导入的内容。"
 
-#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
+#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
 #, kde-format
 msgid "Export failed: %1"
 msgstr "导出失败：%1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Export completed."
 msgstr "导出完成。"
 
-#: app/applicationcontroller.cpp:688
+#: app/applicationcontroller.cpp:610
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip sent."
+msgstr "行程数"
+
+#: app/applicationcontroller.cpp:723
 #, kde-format
 msgid "Import completed."
 msgstr "导入完成。"
@@ -878,7 +884,7 @@ msgid "Export Favorite Locations"
 msgstr "导出收藏的地点"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:208
+#: app/TimelinePage.qml:227
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 文件 (*.gpx)"
@@ -1208,7 +1214,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2074,22 +2080,22 @@ msgstr "M 型"
 msgid "Type N"
 msgstr "N 型"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "数字旅行助理应用"
 
-#: app/main.cpp:333
+#: app/main.cpp:335
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr ""
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:345
+#: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
 msgstr ""
@@ -3040,18 +3046,24 @@ msgstr "我的行程"
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
+#: app/TimelinePage.qml:198
+#, fuzzy, kde-format
+#| msgid "End time: %1"
+msgid "Send to %1"
+msgstr "结束时间：%1"
+
+#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
 msgid "Export Trip"
 msgstr "导出行程"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:218
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "KDE Itinerary 文件 (*.itinerary)"
 
-#: app/TimelinePage.qml:374
+#: app/TimelinePage.qml:393
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"

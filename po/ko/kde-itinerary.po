@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:47+0000\n"
+"POT-Creation-Date: 2023-08-25 00:47+0000\n"
 "PO-Revision-Date: 2023-08-07 00:24+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -231,58 +231,64 @@ msgstr "기존 예약을 새로 선택한 여정으로 대체하시겠습니까?
 msgid "Replace"
 msgstr "바꾸기"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:698
 #, kde-format
 msgid "Import failed: %1"
 msgstr "가져오기 실패: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:349
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "가져오기 실패: 파일이 너무 큽니다."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
-#: app/applicationcontroller.cpp:735
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "예약 %1건을 가져왔습니다."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:438
 #, kde-format
 msgid "Health certificate imported."
 msgstr "건강 증명서를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "패스 %1개를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:456
 #, kde-format
 msgid "Pass imported."
 msgstr "패스를 가져왔습니다."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "가져온 것이 없습니다."
 
-#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
+#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
 #, kde-format
 msgid "Export failed: %1"
 msgstr "내보내기 실패: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
-#: app/applicationcontroller.cpp:688
+#: app/applicationcontroller.cpp:610
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip sent."
+msgstr "여행"
+
+#: app/applicationcontroller.cpp:723
 #, kde-format
 msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
@@ -882,7 +888,7 @@ msgid "Export Favorite Locations"
 msgstr "즐겨찾는 위치 내보내기"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:208
+#: app/TimelinePage.qml:227
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 파일 (*.gpx)"
@@ -1214,7 +1220,7 @@ msgstr "패스 삭제"
 msgid "Do you really want to delete this pass?"
 msgstr "이 패스를 삭제하시겠습니까?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE 여행 정보"
@@ -2084,22 +2090,22 @@ msgstr "M형"
 msgid "Type N"
 msgstr "N형"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
-#: app/main.cpp:333
+#: app/main.cpp:335
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 The KDE Community"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "지정한 페이지의 여행 정보 열기"
 
-#: app/main.cpp:345
+#: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "가져올 파일이나 URL입니다."
@@ -3051,17 +3057,23 @@ msgstr "Itinerary 파일로..."
 msgid "As GPX file..."
 msgstr "GPX 파일로..."
 
-#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
+#: app/TimelinePage.qml:198
+#, fuzzy, kde-format
+#| msgid "End time: %1"
+msgid "Send to %1"
+msgstr "종료 시간: %1"
+
+#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
 msgid "Export Trip"
 msgstr "여행 내보내기"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:218
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
-#: app/TimelinePage.qml:374
+#: app/TimelinePage.qml:393
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."

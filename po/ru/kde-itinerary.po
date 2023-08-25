@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:47+0000\n"
+"POT-Creation-Date: 2023-08-25 00:47+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -242,19 +242,19 @@ msgstr "Заменить существующее бронирование на 
 msgid "Replace"
 msgstr "Заменить"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:698
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:349
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ошибка импорта: слишком большой файл."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
-#: app/applicationcontroller.cpp:735
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -263,12 +263,12 @@ msgstr[1] "Импортировано %1 бронирования."
 msgstr[2] "Импортировано %1 бронирований."
 msgstr[3] "Импортировано одно бронирование."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:438
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:453
 #, fuzzy, kde-format
 #| msgid "Pass imported."
 msgid "One pass imported."
@@ -278,29 +278,35 @@ msgstr[1] "Пропуск импортирован."
 msgstr[2] "Пропуск импортирован."
 msgstr[3] "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:456
 #, kde-format
 msgid "Pass imported."
 msgstr "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ничего не импортировано."
 
-#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
+#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:688
+#: app/applicationcontroller.cpp:610
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip sent."
+msgstr "Поездки"
+
+#: app/applicationcontroller.cpp:723
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -943,7 +949,7 @@ msgid "Export Favorite Locations"
 msgstr "Экспорт избранных расположений"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:208
+#: app/TimelinePage.qml:227
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Файлы GPX (*.*)"
@@ -1298,7 +1304,7 @@ msgstr "Удалить пропуск"
 msgid "Do you really want to delete this pass?"
 msgstr "Удалить этот пропуск?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "Маршруты KDE"
@@ -2208,22 +2214,22 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:333
+#: app/main.cpp:335
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "© Сообщество KDE, 2018-%1"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:345
+#: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
 msgstr ""
@@ -3222,18 +3228,24 @@ msgstr "Мой маршрут"
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
+#: app/TimelinePage.qml:198
+#, fuzzy, kde-format
+#| msgid "End time: %1"
+msgid "Send to %1"
+msgstr "Время окончания: %1"
+
+#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
 msgid "Export Trip"
 msgstr "Экспорт поездки"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:218
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 
-#: app/TimelinePage.qml:374
+#: app/TimelinePage.qml:393
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Нет данных маршрута на сегодня."

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-23 00:47+0000\n"
-"PO-Revision-Date: 2023-08-24 00:14+0200\n"
+"POT-Creation-Date: 2023-08-25 00:47+0000\n"
+"PO-Revision-Date: 2023-08-25 01:03+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -239,60 +239,66 @@ msgstr ""
 msgid "Replace"
 msgstr "Ordeztu"
 
-#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:648
-#: app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:698
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Inportatzea huts egin du: %1"
 
-#: app/applicationcontroller.cpp:346
+#: app/applicationcontroller.cpp:349
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Inportatzea huts egin du: Fitxategi luzeegia."
 
-#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:725
-#: app/applicationcontroller.cpp:735
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "Erreserba bat inportatu da."
 msgstr[1] "%1 erreserba inportatu dira."
 
-#: app/applicationcontroller.cpp:435
+#: app/applicationcontroller.cpp:438
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Osasun ziurtagiria inportatu da."
 
-#: app/applicationcontroller.cpp:450
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] "Txartel bat inportatu da."
 msgstr[1] "%1 txartel inportatu dira."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:456
 #, kde-format
 msgid "Pass imported."
 msgstr "Txartela inportatu da."
 
-#: app/applicationcontroller.cpp:488
+#: app/applicationcontroller.cpp:491
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ez da ezer inportatu."
 
-#: app/applicationcontroller.cpp:557 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:627
+#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
+#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Esportatzea huts egin du: %1"
 
-#: app/applicationcontroller.cpp:571 app/applicationcontroller.cpp:615
-#: app/applicationcontroller.cpp:640
+#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
+#: app/applicationcontroller.cpp:675
 #, kde-format
 msgid "Export completed."
 msgstr "Esportatzea osatu da."
 
-#: app/applicationcontroller.cpp:688
+#: app/applicationcontroller.cpp:610
+#, fuzzy, kde-format
+#| msgid "Trips"
+msgid "Trip sent."
+msgstr "Txangoak"
+
+#: app/applicationcontroller.cpp:723
 #, kde-format
 msgid "Import completed."
 msgstr "Inportatzea osatu da."
@@ -884,7 +890,7 @@ msgid "Export Favorite Locations"
 msgstr "Esportatu gogoko kokalekuak"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:208
+#: app/TimelinePage.qml:227
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX fitxategiak (*.gpx)"
@@ -1212,7 +1218,7 @@ msgstr "Ezabatu txartela"
 msgid "Do you really want to delete this pass?"
 msgstr "Benetan ezabatu nahi duzu txartel hori?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:325 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -2083,22 +2089,22 @@ msgstr "M mota"
 msgid "Type N"
 msgstr "N mota"
 
-#: app/main.cpp:332
+#: app/main.cpp:334
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Bidai-laguntzaile digitala"
 
-#: app/main.cpp:333
+#: app/main.cpp:335
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 KDE Komunitatea"
 
-#: app/main.cpp:340
+#: app/main.cpp:342
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Ireki ibilbidea adierazitako orrian"
 
-#: app/main.cpp:345
+#: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Inportatu beharreko fitxategiak edo URLak."
@@ -2409,10 +2415,9 @@ msgstr ""
 "txartelak."
 
 #: app/PassPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Add Document"
+#, kde-format
 msgid "document-open"
-msgstr "Gehitu dokumentua"
+msgstr "document-open"
 
 #: app/PkPassPage.qml:18
 #, kde-format
@@ -2449,10 +2454,9 @@ msgid "Number"
 msgstr "Zenbakia"
 
 #: app/ProgramMembershipCard.qml:45
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show program pass"
-msgstr "Erakutsi programaren txartela"
+msgstr "Erakutsi programaren sarrera"
 
 #: app/ProgramMembershipEditor.qml:17
 #, kde-format
@@ -2486,15 +2490,15 @@ msgstr "Bazkidea"
 
 #: app/ProgramMembershipEditor.qml:93 app/ProgramMembershipPage.qml:106
 #: app/TicketPage.qml:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Valid from"
-msgstr "Balioduna noiztik"
+msgstr "Balioaren hasiera"
 
 #: app/ProgramMembershipEditor.qml:100 app/ProgramMembershipPage.qml:111
 #: app/TicketPage.qml:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "Valid until"
-msgstr "Balioduna noiz arte"
+msgstr "Balioduna bukaera"
 
 #: app/ProgramMembershipEditor.qml:113
 #, kde-format
@@ -2685,11 +2689,13 @@ msgid "Preload Map Data"
 msgstr "Mapako datuak aurre-zamatu"
 
 #: app/SettingsPage.qml:128
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
-msgstr "txango"
+msgstr ""
+"Hau gaitzean, Wi-Fi sareetara konektatzean, hurrengo txangoetarako geltoki "
+"eta aireportu guztien mapak zama-jaitsiko ditu."
 
 #: app/SettingsPage.qml:135
 #, kde-format
@@ -2702,6 +2708,8 @@ msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
 "at travel destinations."
 msgstr ""
+"Hau gaitzean, bidaiaren helmugako dibisetarako truke tasen lerroko itaunak "
+"egingo ditu."
 
 #: app/SettingsPage.qml:153
 #, kde-format
@@ -2745,7 +2753,7 @@ msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
 #: app/SettingsPage.qml:217
 #, kde-format
 msgid "Onboard Status"
-msgstr ""
+msgstr "Ontziko egoera"
 
 #: app/SettingsPage.qml:221
 #, kde-format
@@ -2758,10 +2766,9 @@ msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Baimen osagarriak behar dira Wi-Fiaren egoera atzitzeko."
 
 #: app/SettingsPage.qml:234
-#, fuzzy, kde-format
-#| msgid "No vehicle layout information available."
+#, kde-format
 msgid "Wi-Fi access for onboard information is available."
-msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
+msgstr "Ontziko informaziorako, Wi-Fi sarbidea erabilgarri dago."
 
 #: app/SettingsPage.qml:236
 #, kde-format
@@ -2784,15 +2791,16 @@ msgid "No further action required."
 msgstr "Ez da beste ekintzarik behar."
 
 #: app/SettingsPage.qml:249
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr "Gaitu Wi-Fia zure sisteman"
+msgstr "Gaitu Wi-Fia zure sisteman, ontziko informazioa eskuratzeko."
 
 #: app/SettingsPage.qml:251
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
-msgstr "Gaitu kokapen zerbitzua zure gailuan"
+msgstr ""
+"Gaitu kokapen zerbitzua zure sisteman, ontziko informazioa eskuratzeko."
 
 #: app/SettingsPage.qml:253
 #, kde-format
@@ -2800,6 +2808,8 @@ msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr ""
+"Tamalez, momentu honetan, zure gailuan ez dago ontziko informaziorako "
+"euskarririk."
 
 #: app/SettingsPage.qml:291
 #, kde-format
@@ -3050,17 +3060,23 @@ msgstr "«Itinerary» fitxategia gisa..."
 msgid "As GPX file..."
 msgstr "GPX fitxategi gisa..."
 
-#: app/TimelinePage.qml:197 app/TimelinePage.qml:206
+#: app/TimelinePage.qml:198
+#, fuzzy, kde-format
+#| msgid "End time: %1"
+msgid "Send to %1"
+msgstr "Amaierako ordua: %1"
+
+#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
 msgid "Export Trip"
 msgstr "Esportatu txangoa"
 
-#: app/TimelinePage.qml:199
+#: app/TimelinePage.qml:218
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "«Itinerary» fitxategia (*.itinerary)"
 
-#: app/TimelinePage.qml:374
+#: app/TimelinePage.qml:393
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Ibilbidean gaurko ez dago ezer."
