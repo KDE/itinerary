@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 07:58+0200\n"
+"PO-Revision-Date: 2023-08-25 18:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -287,10 +287,9 @@ msgid "Export completed."
 msgstr "Export klar."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Resor"
+msgstr "Resa skickad."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -298,8 +297,7 @@ msgid "Import completed."
 msgstr "Import klar."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Streckkodsinläsning"
@@ -755,8 +753,7 @@ msgid "Download failed: %1"
 msgstr "Nerladdning misslyckades: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Spara"
@@ -989,8 +986,7 @@ msgid "Time"
 msgstr "Tid"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Avgångstid måste anges."
@@ -1007,11 +1003,10 @@ msgid "Boarding time"
 msgstr "Ombordstigningstid"
 
 #: app/FlightEditor.qml:116
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "Ankomsttid måste vara efter avgångstiden."
+msgstr "Ombordstigningstid måste vara före avgångstiden."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1032,8 +1027,7 @@ msgid "Time"
 msgstr "Tid"
 
 #: app/FlightEditor.qml:157
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Ankomsttid måste vara efter avgångstiden."
@@ -2497,10 +2491,9 @@ msgid "Valid until"
 msgstr "Giltigt till"
 
 #: app/ProgramMembershipEditor.qml:113
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr "Sluttid måste vara efter starttiden."
+msgstr "Tiden giltig till måste vara efter tiden giltig från."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3055,10 +3048,9 @@ msgid "As GPX file..."
 msgstr "Som GPX-fil..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Sluttid: %1"
+msgstr "Skicka till %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

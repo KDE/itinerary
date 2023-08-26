@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-07 00:24+0200\n"
+"PO-Revision-Date: 2023-08-25 23:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -283,10 +283,9 @@ msgid "Export completed."
 msgstr "내보내기가 완료되었습니다."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "여행"
+msgstr "여행을 전송했습니다."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -294,8 +293,7 @@ msgid "Import completed."
 msgstr "가져오기가 완료되었습니다."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "바코드 스캔 모드"
@@ -359,10 +357,9 @@ msgid "Departure Time"
 msgstr "출발 시간"
 
 #: app/BoatEditor.qml:61
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "체크아웃 시간"
+msgstr "출발 시간을 설정해야 합니다."
 
 #: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, kde-format
@@ -371,10 +368,9 @@ msgid "Terminal Name"
 msgstr "터미널 이름"
 
 #: app/BoatEditor.qml:69
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Departure terminal must not be empty."
-msgstr "티켓 이름이 비어 있으면 안 됩니다."
+msgstr "출발 터미널이 비어 있으면 안 됩니다."
 
 #: app/BoatEditor.qml:89 app/BoatPage.qml:101
 #, kde-format
@@ -391,13 +387,12 @@ msgstr "도착 시간"
 #: app/BoatEditor.qml:104
 #, kde-format
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "도착 시간은 출발 시간 이후여야 합니다."
 
 #: app/BoatEditor.qml:114
-#, fuzzy, kde-format
-#| msgid "Program name must not be empty."
+#, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "프로그램 이름이 비어 있으면 안 됩니다."
+msgstr "도착 터미널이 비어 있으면 안 됩니다."
 
 #: app/BoatPage.qml:17
 #, kde-format
@@ -754,8 +749,7 @@ msgid "Download failed: %1"
 msgstr "다운로드 실패: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "저장"
@@ -788,17 +782,15 @@ msgid "Event"
 msgstr "행사"
 
 #: app/EventEditor.qml:55
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
 msgstr "이름"
 
 #: app/EventEditor.qml:58 app/HotelEditor.qml:57 app/RestaurantEditor.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Name must not be empty."
-msgstr "티켓 이름이 비어 있으면 안 됩니다."
+msgstr "이름이 비어 있으면 안 됩니다."
 
 #: app/EventEditor.qml:63 app/EventPage.qml:77
 #, kde-format
@@ -809,7 +801,7 @@ msgstr "입장"
 #: app/EventEditor.qml:74
 #, kde-format
 msgid "Entrance time has to be before the start time."
-msgstr ""
+msgstr "입장 시간은 시작 시간 이전이어야 합니다."
 
 #: app/EventEditor.qml:81 app/EventPage.qml:85 app/RestaurantEditor.qml:84
 #, kde-format
@@ -817,10 +809,9 @@ msgid "Start Time"
 msgstr "시작 시간"
 
 #: app/EventEditor.qml:85 app/RestaurantEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Start time has to be set."
-msgstr "체크아웃 시간"
+msgstr "시작 시간을 설정해야 합니다."
 
 #: app/EventEditor.qml:90 app/EventPage.qml:93 app/RestaurantEditor.qml:93
 #, kde-format
@@ -830,7 +821,7 @@ msgstr "종료 시간"
 #: app/EventEditor.qml:101 app/RestaurantEditor.qml:104
 #, kde-format
 msgid "End time has to be after the start time."
-msgstr ""
+msgstr "종료 시간은 시작 시간 이후여야 합니다."
 
 #: app/EventEditor.qml:122
 #, kde-format
@@ -991,11 +982,10 @@ msgid "Time"
 msgstr "시간"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "체크아웃 시간"
+msgstr "출발 시간을 설정해야 합니다."
 
 #: app/FlightEditor.qml:100
 #, kde-format
@@ -1012,7 +1002,7 @@ msgstr "탑승 시간"
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr ""
+msgstr "탑승 시간은 출발 시간 이전이어야 합니다."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1036,7 +1026,7 @@ msgstr "시간"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "도착 시간은 출발 시간 이후여야 합니다."
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
@@ -1196,11 +1186,10 @@ msgstr "(이전: %1)"
 #: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:34
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "가격"
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1(%2)"
@@ -1208,7 +1197,7 @@ msgstr "%1(%2)"
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
 msgid "Not a valid number."
-msgstr ""
+msgstr "올바른 숫자가 아닙니다."
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -1552,10 +1541,9 @@ msgid "Check-in"
 msgstr "체크인"
 
 #: app/HotelEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-in time"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "체크인 시간"
+msgstr "체크인 시간을 설정해야 합니다."
 
 #: app/HotelEditor.qml:93
 #, kde-format
@@ -1564,15 +1552,14 @@ msgid "Check-out"
 msgstr "체크아웃"
 
 #: app/HotelEditor.qml:105
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "체크아웃 시간"
+msgstr "체크아웃 시간을 설정해야 합니다."
 
 #: app/HotelEditor.qml:107
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "체크아웃 시간은 체크인 시간 이후여야 합니다."
 
 #: app/HotelPage.qml:16
 #, kde-format
@@ -2013,11 +2000,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "시간대 변경: %1(%2)"
 
 #: app/LocationInfoDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "통화: %1"
+msgstr "통화: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:110
 #, kde-format
@@ -2502,7 +2488,7 @@ msgstr "유효 기간 끝"
 #: app/ProgramMembershipEditor.qml:113
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr ""
+msgstr "유효 기간 끝은 유효 기간 시작 이후여야 합니다."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3010,27 +2996,24 @@ msgid "Add train trip..."
 msgstr "철도 여정 추가..."
 
 #: app/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "철도 여정 추가..."
+msgstr "페리 여정 추가..."
 
 #: app/TimelinePage.qml:111
 #, kde-format
 msgid "Add accommodation..."
-msgstr ""
+msgstr "숙박 추가..."
 
 #: app/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add event..."
-msgstr "문서 추가..."
+msgstr "행사 추가..."
 
 #: app/TimelinePage.qml:134
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add restaurant..."
-msgstr "철도 여정 추가..."
+msgstr "음식점 추가..."
 
 #: app/TimelinePage.qml:151
 #, kde-format
@@ -3058,10 +3041,9 @@ msgid "As GPX file..."
 msgstr "GPX 파일로..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "종료 시간: %1"
+msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

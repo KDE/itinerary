@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-25 01:03+0200\n"
+"PO-Revision-Date: 2023-08-25 10:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -293,10 +293,9 @@ msgid "Export completed."
 msgstr "Esportatzea osatu da."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Txangoak"
+msgstr "Txangoa bidali da."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -3061,10 +3060,9 @@ msgid "As GPX file..."
 msgstr "GPX fitxategi gisa..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Amaierako ordua: %1"
+msgstr "Bidali %1(e)ra"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

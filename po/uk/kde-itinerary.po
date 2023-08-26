@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-22 07:55+0300\n"
+"PO-Revision-Date: 2023-08-25 09:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -295,10 +295,9 @@ msgid "Export completed."
 msgstr "Експортування завершено."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Поїздки"
+msgstr "Подорож надіслано."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -3075,10 +3074,9 @@ msgid "As GPX file..."
 msgstr "Як файл GPX…"
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Час завершення: %1"
+msgstr "Надіслати %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

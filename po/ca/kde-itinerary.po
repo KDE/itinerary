@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-22 17:31+0200\n"
+"PO-Revision-Date: 2023-08-25 13:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -289,10 +289,9 @@ msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Viatges"
+msgstr "S'ha enviat el viatge."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -3067,10 +3066,9 @@ msgid "As GPX file..."
 msgstr "Com a fitxer GPX..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Hora de finalització: %1"
+msgstr "Envia a %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
@@ -3554,6 +3552,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "Import"
-#~ msgstr "Importa"
