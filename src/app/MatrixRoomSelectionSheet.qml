@@ -6,6 +6,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kitemmodels 1.0
 import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigamiaddons.components 1.0 as AddonComponents
 import org.kde.itinerary 1.0
 import "." as App
 
@@ -51,7 +52,7 @@ Kirigami.OverlaySheet {
             GridLayout {
                 rows: 2
                 columns: 3
-                Kirigami.Avatar {
+                AddonComponents.Avatar {
                     Layout.preferredHeight: Kirigami.Units.iconSizes.large
                     Layout.preferredWidth: Kirigami.Units.iconSizes.large
                     Layout.rowSpan: 2
