@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-25 00:47+0000\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
 "PO-Revision-Date: 2023-08-25 13:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2214,42 +2214,42 @@ msgstr "Ajuda"
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
 
-#: app/MatrixRoomSelectionSheet.qml:18
+#: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
 msgid "Share Location"
 msgstr "Comparteix la ubicació"
 
-#: app/MatrixRoomSelectionSheet.qml:32
+#: app/MatrixRoomSelectionSheet.qml:33
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Convidat"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Sales preferides"
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Missatges directes"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Sales"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Prioritat baixa"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"

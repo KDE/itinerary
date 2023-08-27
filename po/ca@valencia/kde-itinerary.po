@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-20 11:12+0200\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-25 13:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -289,10 +289,9 @@ msgid "Export completed."
 msgstr "S'ha completat l'exportació."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Viatges"
+msgstr "S'ha enviat el viatge."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -300,8 +299,7 @@ msgid "Import completed."
 msgstr "S'ha completat la importació."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Mode lectura dels codis de barres"
@@ -758,8 +756,7 @@ msgid "Download failed: %1"
 msgstr "Ha fallat la baixada: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Guarda"
@@ -992,8 +989,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Departure time has to be set."
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
 msgstr "Cal establir l'hora d'eixida."
@@ -1010,11 +1006,10 @@ msgid "Boarding time"
 msgstr "Hora d'embarcament"
 
 #: app/FlightEditor.qml:116
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr "L'hora d'arribada cal que siga posterior a l'hora d'eixida."
+msgstr "L'hora d'embarcament cal que siga anterior a l'hora d'eixida."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1035,8 +1030,7 @@ msgid "Time"
 msgstr "Hora"
 
 #: app/FlightEditor.qml:157
-#, fuzzy, kde-format
-#| msgid "Arrival time has to be after the departure time."
+#, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "L'hora d'arribada cal que siga posterior a l'hora d'eixida."
@@ -1557,7 +1551,7 @@ msgstr "Entrada"
 #: app/HotelEditor.qml:88
 #, kde-format
 msgid "Check-in time has to be set."
-msgstr "Cal establir l'hora d'entrada"
+msgstr "Cal establir l'hora d'entrada."
 
 #: app/HotelEditor.qml:93
 #, kde-format
@@ -1568,7 +1562,7 @@ msgstr "Eixida"
 #: app/HotelEditor.qml:105
 #, kde-format
 msgid "Check-out time has to be set."
-msgstr "Cal establir l'hora d'eixida"
+msgstr "Cal establir l'hora d'eixida."
 
 #: app/HotelEditor.qml:107
 #, kde-format
@@ -2220,42 +2214,42 @@ msgstr "Ajuda"
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
 
-#: app/MatrixRoomSelectionSheet.qml:18
+#: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
 msgid "Share Location"
 msgstr "Compartix la ubicació"
 
-#: app/MatrixRoomSelectionSheet.qml:32
+#: app/MatrixRoomSelectionSheet.qml:33
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Convidat"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Sales preferides"
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Missatges directes"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Sales"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Prioritat baixa"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -2507,10 +2501,9 @@ msgid "Valid until"
 msgstr "Vàlid fins a"
 
 #: app/ProgramMembershipEditor.qml:113
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr "L'hora final cal que siga posterior a l'hora d'inici."
+msgstr "L'hora vàlida «fins» ha de ser posterior a l'hora vàlida «des de»."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3075,10 +3068,9 @@ msgid "As GPX file..."
 msgstr "Com a fitxer GPX..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Hora de finalització: %1"
+msgstr "Envia a %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-25 00:47+0000\n"
-"PO-Revision-Date: 2023-08-23 06:57+0200\n"
+"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"PO-Revision-Date: 2023-08-26 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -286,10 +286,9 @@ msgid "Export completed."
 msgstr "გატანა დასრულდა."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "მოგზაურობები"
+msgstr "მოგზაურობა გაგზავნილია."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -2208,42 +2207,42 @@ msgstr "დახმარება"
 msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
 
-#: app/MatrixRoomSelectionSheet.qml:18
+#: app/MatrixRoomSelectionSheet.qml:19
 #, kde-format
 msgid "Share Location"
 msgstr "მდებარეობის გაზიარება"
 
-#: app/MatrixRoomSelectionSheet.qml:32
+#: app/MatrixRoomSelectionSheet.qml:33
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "მოწვეულია"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "რჩეული ოთახები"
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "პირდაპირი შეტყობინებები"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "ოთახები"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "დაბალი პრიორიტეტი"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -3055,10 +3054,9 @@ msgid "As GPX file..."
 msgstr "GPX ფაილის სახით..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "დასრულების დრო: %1"
+msgstr "%1-სთან გაგზავნა"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
@@ -3494,7 +3492,7 @@ msgid ""
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
 "KDE itinerary-ის ყველა ფუნქცია, რომელსაც ინტერნეტთან წვდომა სჭირდება, "
-"ნაგულისხმებად გამორთულია. ამიტომ, დიდი შანსია, ამ პარამეტრების გადახედვა "
+"ნაგულისხმევად გამორთულია. ამიტომ, დიდი შანსია, ამ პარამეტრების გადახედვა "
 "დაგჭირდეთ. პროგრამის მოვლების დროს ასევე გირჩევთ, შეცვალოთ თქვენი "
 "მდებარეობის პარამეტრები, რათა შემდეგ სადგურამდე ან აეროპორტამდე უფრო ადვილად "
 "მიგაცილოთ."
