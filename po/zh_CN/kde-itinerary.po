@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-02 12:39\n"
+"PO-Revision-Date: 2023-08-27 03:40\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -283,10 +283,9 @@ msgid "Export completed."
 msgstr "导出完成。"
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "行程数"
+msgstr ""
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -294,11 +293,10 @@ msgid "Import completed."
 msgstr "导入完成。"
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
-msgstr "条形码扫描模式"
+msgstr ""
 
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
@@ -359,10 +357,9 @@ msgid "Departure Time"
 msgstr ""
 
 #: app/BoatEditor.qml:61
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "退房时间：%1"
+msgstr ""
 
 #: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, kde-format
@@ -785,11 +782,10 @@ msgid "Event"
 msgstr "活动"
 
 #: app/EventEditor.qml:55
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
-msgstr "名称："
+msgstr ""
 
 #: app/EventEditor.qml:58 app/HotelEditor.qml:57 app/RestaurantEditor.qml:58
 #, kde-format
@@ -813,10 +809,9 @@ msgid "Start Time"
 msgstr ""
 
 #: app/EventEditor.qml:85 app/RestaurantEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgid "Start time has to be set."
-msgstr "退房时间：%1"
+msgstr ""
 
 #: app/EventEditor.qml:90 app/EventPage.qml:93 app/RestaurantEditor.qml:93
 #, kde-format
@@ -987,11 +982,10 @@ msgid "Time"
 msgstr ""
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "退房时间：%1"
+msgstr ""
 
 #: app/FlightEditor.qml:100
 #, kde-format
@@ -1193,11 +1187,10 @@ msgid "Price"
 msgstr ""
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
@@ -1543,10 +1536,9 @@ msgid "Check-in"
 msgstr ""
 
 #: app/HotelEditor.qml:88
-#, fuzzy, kde-format
-#| msgid "Check-in time: %1"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "入住时间：%1"
+msgstr ""
 
 #: app/HotelEditor.qml:93
 #, kde-format
@@ -1555,10 +1547,9 @@ msgid "Check-out"
 msgstr ""
 
 #: app/HotelEditor.qml:105
-#, fuzzy, kde-format
-#| msgid "Check-out time: %1"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "退房时间：%1"
+msgstr ""
 
 #: app/HotelEditor.qml:107
 #, kde-format
@@ -2458,11 +2449,9 @@ msgid "Save"
 msgstr ""
 
 #: app/ProgramMembershipEditor.qml:57
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgid "Program"
-msgstr "折扣计划信息"
+msgstr ""
 
 #: app/ProgramMembershipEditor.qml:65
 #, kde-format
@@ -2997,10 +2986,9 @@ msgid "Add train trip..."
 msgstr ""
 
 #: app/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "添加证件..."
+msgstr ""
 
 #: app/TimelinePage.qml:111
 #, kde-format
@@ -3008,16 +2996,14 @@ msgid "Add accommodation..."
 msgstr ""
 
 #: app/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add event..."
-msgstr "添加证件..."
+msgstr ""
 
 #: app/TimelinePage.qml:134
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgid "Add restaurant..."
-msgstr "编辑餐厅信息"
+msgstr ""
 
 #: app/TimelinePage.qml:151
 #, kde-format
@@ -3030,16 +3016,14 @@ msgid "Do you really want to delete this trip?"
 msgstr "您确定要删除此行程吗？"
 
 #: app/TimelinePage.qml:171
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export"
-msgstr "导出..."
+msgstr ""
 
 #: app/TimelinePage.qml:174
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "As Itinerary file..."
-msgstr "我的行程"
+msgstr ""
 
 #: app/TimelinePage.qml:183
 #, kde-format
@@ -3047,10 +3031,9 @@ msgid "As GPX file..."
 msgstr ""
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "结束时间：%1"
+msgstr ""
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
@@ -3058,10 +3041,9 @@ msgid "Export Trip"
 msgstr "导出行程"
 
 #: app/TimelinePage.qml:218
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary files (*.itinerary)"
+#, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "KDE Itinerary 文件 (*.itinerary)"
+msgstr ""
 
 #: app/TimelinePage.qml:393
 #, kde-format
@@ -3527,6 +3509,3 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr ""
-
-#~ msgid "PkPass or JSON-LD file to import."
-#~ msgstr "要导入的 PkPass 文件或 JSON-LD 文件。"
