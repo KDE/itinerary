@@ -241,7 +241,7 @@ float JourneySectionModel::trailingProgress(int row) const
     const float totalLength = trailingLength + nextLength;
 
     const float progressLength = totalLength * (progressTime / totalTime);
-    qCDebug(Log) << row << stop.stopPoint().name()<< totalTime << progressTime << totalLength << progressLength << nextLength << (progressLength > nextLength ? 1.0f : (progressLength / trailingLength));
+    qCDebug(Log) << row << stop.stopPoint().name()<< totalTime << progressTime << totalLength << progressLength << nextLength << (progressLength > trailingLength ? 1.0f : (progressLength / trailingLength));
     return progressLength > trailingLength ? 1.0f : (progressLength / trailingLength);
 }
 

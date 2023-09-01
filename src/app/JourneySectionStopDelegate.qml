@@ -23,7 +23,7 @@ Item {
 
     // outbound progress overlay properties
     readonly property real leadingSegmentLength: lineSegment.leadingLineLength
-    readonly property real trailingSegmentLength: lineSegment.trailingLineLength + stopNotesLine.height
+    readonly property real trailingSegmentLength: lineSegment.trailingLineLength + (notesLabel.visible ? stopNotesLine.height : 0)
     // inbound progress overlay properties
     property real leadingProgress
     property real trailingProgress
