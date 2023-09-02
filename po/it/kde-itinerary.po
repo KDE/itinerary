@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-08-19 20:17+0200\n"
+"PO-Revision-Date: 2023-08-26 14:14+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -288,10 +288,9 @@ msgid "Export completed."
 msgstr "Esportazione completata."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Viaggi"
+msgstr "Viaggio inviato."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -299,8 +298,7 @@ msgid "Import completed."
 msgstr "Importazione completata."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Modalità di scansione dei codici a barre"
@@ -364,10 +362,9 @@ msgid "Departure Time"
 msgstr "Ora di partenza"
 
 #: app/BoatEditor.qml:61
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "Orario del check-out"
+msgstr "L'orario di partenza deve essere impostato."
 
 #: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, kde-format
@@ -376,10 +373,9 @@ msgid "Terminal Name"
 msgstr "Nome del terminale"
 
 #: app/BoatEditor.qml:69
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Departure terminal must not be empty."
-msgstr "Il nome del biglietto non può essere vuoto."
+msgstr "Il terminal di partenza non può essere vuoto."
 
 #: app/BoatEditor.qml:89 app/BoatPage.qml:101
 #, kde-format
@@ -396,13 +392,12 @@ msgstr "Ora di arrivo"
 #: app/BoatEditor.qml:104
 #, kde-format
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "L'orario di arrivo deve essere successivo all'orario di partenza."
 
 #: app/BoatEditor.qml:114
-#, fuzzy, kde-format
-#| msgid "Program name must not be empty."
+#, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "Il nome del programma non può essere vuoto."
+msgstr "Il terminal di arrivo non può essere vuoto."
 
 #: app/BoatPage.qml:17
 #, kde-format
@@ -759,8 +754,7 @@ msgid "Download failed: %1"
 msgstr "Scaricamento non riuscito: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Salva"
@@ -993,11 +987,10 @@ msgid "Time"
 msgstr "Orario"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "Orario del check-out"
+msgstr "L'orario di partenza deve essere impostato."
 
 #: app/FlightEditor.qml:100
 #, kde-format
@@ -1014,7 +1007,7 @@ msgstr "Orario d'imbarco"
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr ""
+msgstr "L'orario di imbarco deve precedere l'orario di partenza."
 
 #: app/FlightEditor.qml:130
 #, kde-format
@@ -1038,7 +1031,7 @@ msgstr "Orario"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "L'orario di arrivo deve essere successivo all'orario di partenza."
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:118
 #, kde-format
@@ -1207,7 +1200,7 @@ msgstr "%1 (%2)"
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
 msgid "Not a valid number."
-msgstr ""
+msgstr "Non è un numero valido."
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:38
 #, kde-format
@@ -2504,6 +2497,8 @@ msgstr "Valido fino a"
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr ""
+"L'orario di fine della validità deve essere successivo all'orario di inizio "
+"della validità."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3021,10 +3016,9 @@ msgid "Add train trip..."
 msgstr "Aggiungi viaggio in treno..."
 
 #: app/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "Aggiungi viaggio in treno..."
+msgstr "Aggiungi viaggio in traghetto..."
 
 #: app/TimelinePage.qml:111
 #, kde-format
@@ -3067,10 +3061,9 @@ msgid "As GPX file..."
 msgstr "Come file GPX..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Ora di fine: %1"
+msgstr "Invia a %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format

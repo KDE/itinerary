@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-27 00:47+0000\n"
-"PO-Revision-Date: 2023-07-03 11:56+0200\n"
+"PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -67,7 +67,7 @@ msgstr "Itinerář KDE používá data veřejné dopravy z následujících zdro
 #: app/AboutPage.qml:233
 #, kde-format
 msgid "Developer information"
-msgstr ""
+msgstr "Informace pro vývojáře"
 
 #: app/AboutPage.qml:238
 #, kde-format
@@ -285,10 +285,9 @@ msgid "Export completed."
 msgstr "Exportování bylo dokončeno."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Výlety"
+msgstr ""
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -296,11 +295,10 @@ msgid "Import completed."
 msgstr "Import byl dokončen."
 
 #: app/BarcodeScanModeButton.qml:18
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
-msgstr "Režim čtení čárových kódů"
+msgstr ""
 
 #: app/BarcodeScanModeController.qml:33
 #, kde-format
@@ -361,10 +359,9 @@ msgid "Departure Time"
 msgstr ""
 
 #: app/BoatEditor.qml:61
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/BoatEditor.qml:66 app/BoatEditor.qml:111
 #, kde-format
@@ -535,7 +532,7 @@ msgstr "Stanice"
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr ""
+msgstr "Platforma"
 
 #: app/BusPage.qml:145
 #, kde-format
@@ -755,8 +752,7 @@ msgid "Download failed: %1"
 msgstr "Stažení bylo neúspěšné: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Uložit"
@@ -788,13 +784,11 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Událost"
 
-# Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/EventEditor.qml:55
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
-msgstr "Název"
+msgstr ""
 
 #: app/EventEditor.qml:58 app/HotelEditor.qml:57 app/RestaurantEditor.qml:58
 #, kde-format
@@ -992,11 +986,10 @@ msgid "Time"
 msgstr "Čas"
 
 #: app/FlightEditor.qml:94
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/FlightEditor.qml:100
 #, kde-format
@@ -1195,14 +1188,13 @@ msgstr "(bylo: %1)"
 #: app/FormPriceDelegate.qml:20 app/FormPriceEditDelegate.qml:34
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "Cena"
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
@@ -1834,7 +1826,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Ukázat víc..."
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1891,7 +1883,7 @@ msgstr ""
 #: app/livedatamanager.cpp:667
 #, kde-format
 msgid "Flight %1 to %2:"
-msgstr ""
+msgstr "Let %1 do %2:"
 
 #: app/livedatamanager.cpp:673
 #, kde-format
@@ -2012,11 +2004,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "Změna časového pásma: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "Měna: %1"
+msgstr ""
 
 #: app/LocationInfoDelegate.qml:110
 #, kde-format
@@ -2107,7 +2098,7 @@ msgstr ""
 #: app/main.cpp:347
 #, kde-format
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "Soubory nebo URL pro import."
 
 #: app/main.qml:57
 #, kde-format
@@ -2391,10 +2382,9 @@ msgid "Passes and Programs"
 msgstr ""
 
 #: app/PassPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add Program Membership..."
-msgstr "Přidat cestu vlakem..."
+msgstr "Přidat členství v programu..."
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2461,7 +2451,7 @@ msgstr ""
 #: app/ProgramMembershipEditor.qml:17
 #, kde-format
 msgid "Edit Program Membership"
-msgstr ""
+msgstr "Upravit členství v programu"
 
 #: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
@@ -2469,22 +2459,19 @@ msgid "Save"
 msgstr "Uložit"
 
 #: app/ProgramMembershipEditor.qml:57
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgid "Program"
 msgstr "Program"
 
 #: app/ProgramMembershipEditor.qml:65
 #, kde-format
 msgid "Program name must not be empty."
-msgstr ""
+msgstr "Název programu nesmí zůstat nevyplněn."
 
 #: app/ProgramMembershipEditor.qml:75
-#, fuzzy, kde-format
-#| msgid "Member"
+#, kde-format
 msgid "Membership"
-msgstr "Člen"
+msgstr "Členství"
 
 #: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
@@ -2526,12 +2513,12 @@ msgstr "Čekejte"
 #: app/publictransport.cpp:249
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Zapůjčené kolo"
 
 #: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Zapůjčený moped"
 
 #: app/publictransport.cpp:253
 #, kde-format
@@ -2541,7 +2528,7 @@ msgstr ""
 #: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented car"
-msgstr ""
+msgstr "Zapůjčené auto"
 
 #: app/publictransport.cpp:261
 #, kde-format
@@ -2576,7 +2563,7 @@ msgstr "Dokumenty a letenky"
 #: app/RestaurantEditor.qml:18
 #, kde-format
 msgid "Edit Restaurant"
-msgstr ""
+msgstr "Upravit restauraci"
 
 #: app/RestaurantEditor.qml:50
 #, kde-format
@@ -3015,10 +3002,9 @@ msgid "Add train trip..."
 msgstr "Přidat cestu vlakem..."
 
 #: app/TimelinePage.qml:99
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "Přidat cestu vlakem..."
+msgstr ""
 
 #: app/TimelinePage.qml:111
 #, kde-format
@@ -3026,16 +3012,14 @@ msgid "Add accommodation..."
 msgstr ""
 
 #: app/TimelinePage.qml:122
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add event..."
-msgstr "Přidat dokument..."
+msgstr ""
 
 #: app/TimelinePage.qml:134
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add restaurant..."
-msgstr "Přidat cestu vlakem..."
+msgstr ""
 
 #: app/TimelinePage.qml:151
 #, kde-format
@@ -3048,27 +3032,24 @@ msgid "Do you really want to delete this trip?"
 msgstr "Opravdu si přejete smazat tento výlet?"
 
 #: app/TimelinePage.qml:171
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export"
-msgstr "Exportovat..."
+msgstr "Exportovat"
 
 #: app/TimelinePage.qml:174
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "As Itinerary file..."
-msgstr "Můj Itinerář"
+msgstr "Jako soubor Itinerary..."
 
 #: app/TimelinePage.qml:183
 #, kde-format
 msgid "As GPX file..."
-msgstr ""
+msgstr "Jako soubor GPX..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Čas ukončení: %1"
+msgstr "Poslat: %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
@@ -3076,10 +3057,9 @@ msgid "Export Trip"
 msgstr "Exportovat výlet"
 
 #: app/TimelinePage.qml:218
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary files (*.itinerary)"
+#, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "Soubory KDE Itinerary (*.itinerary)"
+msgstr "Soubor Itinerary (*.itinerary)"
 
 #: app/TimelinePage.qml:393
 #, kde-format
@@ -3551,13 +3531,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Import"
-#~ msgstr "Importovat"
-
-#~ msgctxt "currency conversion rate"
-#~ msgid "1 %1 = %2 %3"
-#~ msgstr "1 %1 = %2 %3"
-
-#~ msgid "Export trip to GPX"
-#~ msgstr "Exportovat výlet do GPX"
