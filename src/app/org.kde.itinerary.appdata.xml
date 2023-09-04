@@ -762,7 +762,7 @@
           <li>Added support for importing Deutsche Bahn and SNCF online tickets.</li>
           <li>Added location sharing via Matrix.</li>
           <li>Consider coach layout and seat reservation data to highlight the departure/arrival spot on a platform.</li>
-          <li>New look for the timeline entires and the editing pages.</li>
+          <li>New look for the timeline entries and the editing pages.</li>
           <li>New or improved onboard API support for Aegean Air, Deutsche Bahn and ÖBB.</li>
           <li>New or improved travel document extractors for Aegean Air, Aer Lingus, Air Asia, Air France, Atlatos, Bäder Suite, BlaBlaCar, bookingkit, CD, Cinemaxx, Cooltix, DSB, Eventbrite, FerriesInGreece, Grimaldi Lines, Iberia, KLM, Koleje Malopolskie, KTEL Thesprotias, Lufthansa, Ouigo Spain, PKP, UK railways, SAS, SBB, Slovak Lines, SNCB, spiritec, Spring Airlines, Sunny Cars, Thalys, Trenitalia, York Kino and ZSSK.</li>
           <li>Added support for importing ActivityPub events.</li>
@@ -771,7 +771,7 @@
           <li>New hotel, event and restaurant reservation can be created by adding a URL to their schema.org annotated website.</li>
           <li>Added support for extracting travel data in Apple iCal events.</li>
           <li>Improved notifications in case of Apple Wallet pass updates.</li>
-          <li>Improved display of ticket validtiy times in the passes and programs view.</li>
+          <li>Improved display of ticket validity times in the passes and programs view.</li>
           <li>Improved display of public transport cancellations and long disruption notes.</li>
           <li>Fixed searching for international railway connections sometimes not finding any result.</li>
           <li>Fixed weather icons sometimes wrongly using the night variants during the day.</li>

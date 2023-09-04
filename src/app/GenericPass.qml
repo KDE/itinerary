@@ -92,8 +92,14 @@ Rectangle {
                 }
             }
             Image {
+                id: thumbnailImage
                 Layout.rowSpan: 2
                 source: "image://org.kde.pkpass/" + passId + "/thumbnail"
+                sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
+                Layout.alignment: Qt.AlignCenter
+                Layout.preferredWidth: Math.min(90, thumbnailImage.implicitWidth); // 90x90 as per spec
+                Layout.preferredHeight: (Layout.preferredWidth / thumbnailImage.implicitWidth) * thumbnailImage.implicitHeight
+                fillMode: Image.PreserveAspectFit
             }
             Repeater {
                 model: pass.primaryFields

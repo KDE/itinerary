@@ -13,8 +13,13 @@
 
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
+    <!-- manual permission management, the Qt automatism would add too much here -->
     <uses-permission android:name="android.permission.READ_CALENDAR"/>
-    <!-- %%INSERT_PERMISSIONS -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- from Qt, do we really need that? -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> <!-- for onboard API -->
+    <uses-permission android:name="android.permission.CAMERA"/> <!-- barcode scanner -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> <!-- onboard API, navigation -->
     <!-- %%INSERT_FEATURES -->
 
     <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="@string/application_name_full" android:icon="@mipmap/ic_launcher">
