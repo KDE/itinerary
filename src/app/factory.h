@@ -16,6 +16,7 @@ class Factory
     Q_GADGET
 public:
     Q_INVOKABLE static QVariant makePlace();
+    Q_INVOKABLE static QVariant makeTicket();
 };
 
 #endif // FACTORY_H

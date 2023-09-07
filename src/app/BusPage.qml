@@ -223,7 +223,7 @@ App.DetailsPage {
                 }
                 MobileForm.FormTextDelegate {
                     id: seatLabel
-                    text: root.eservation.reservedTicket.ticketedSeat.seatNumber
+                    text: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ""
                     visible: text !== ""
                 }
             }

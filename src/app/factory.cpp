@@ -6,8 +6,14 @@
 #include "factory.h"
 
 #include <KItinerary/Place>
+#include <KItinerary/Ticket>
 
 QVariant Factory::makePlace()
 {
     return KItinerary::Place();
+}
+
+QVariant Factory::makeTicket()
+{
+    return KItinerary::Ticket();
 }
