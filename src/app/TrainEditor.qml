@@ -32,12 +32,11 @@ App.EditorPage {
         trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
         trip.arrivalPlatform = arrivalPlatform.text;
 
-        var seat = reservation.reservedTicket.ticketedSeat;
+        let ticket = reservation.reservedTicket ?? Factory.makeTicket();
+        let seat = ticket.ticketedSeat;
         seat.seatSection = coachEdit.text;
         seat.seatNumber = seatEdit.text;
         seat.seatingType = classEdit.text;
-
-        var ticket = reservation.reservedTicket;
         ticket.ticketedSeat = seat;
 
         var newRes = reservation;

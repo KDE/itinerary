@@ -11,6 +11,7 @@
 #include <KItinerary/Place>
 #include <KItinerary/ProgramMembership>
 #include <KItinerary/Reservation>
+#include <KItinerary/Ticket>
 
 QVariant Factory::makeBoatReservation()
 {
@@ -53,4 +54,9 @@ QVariant Factory::makePlace()
 QVariant Factory::makeProgramMembership()
 {
     return KItinerary::ProgramMembership();
+}
+
+QVariant Factory::makeTicket()
+{
+    return KItinerary::Ticket();
 }

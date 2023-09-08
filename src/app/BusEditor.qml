@@ -31,10 +31,9 @@ App.EditorPage {
         trip = Util.setDateTimePreserveTimezone(trip, "arrivalTime", root.arrivalTime);
         trip.arrivalPlatform = arrivalPlatform.text;
 
-        let seat = reservation.reservedTicket.ticketedSeat;
+        let ticket = reservation.reservedTicket ?? Factory.makeTicket();
+        let seat = ticket.ticketedSeat;
         seat.seatNumber = seatNumber.text;
-
-        let ticket = reservation.reservedTicket;
         ticket.ticketedSeat = seat;
 
         var newRes = reservation;
@@ -160,7 +159,7 @@ App.EditorPage {
                 MobileForm.FormTextFieldDelegate {
                     id: seatNumber
                     label: i18n("Seat")
-                    text: reservation.reservedTicket.ticketedSeat.seatNumber
+                    text: reservation.reservedTicket ? reservation.reservedTicket.ticketedSeat.seatNumber : ""
                 }
             }
         }

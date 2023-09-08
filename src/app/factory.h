@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE static QVariant makePerson();
     Q_INVOKABLE static QVariant makePlace();
     Q_INVOKABLE static QVariant makeProgramMembership();
+    Q_INVOKABLE static QVariant makeTicket();
 };
 
 #endif // FACTORY_H
