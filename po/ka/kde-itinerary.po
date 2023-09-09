@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"POT-Creation-Date: 2023-09-09 00:47+0000\n"
 "PO-Revision-Date: 2023-08-26 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -445,63 +445,63 @@ msgstr "ბილეთის ნომერი:"
 msgid "Edit Bus Reservation"
 msgstr "ავტობუსის დაჯავშნის ჩასწორება"
 
-#: app/BusEditor.qml:49 app/TrainEditor.qml:53
+#: app/BusEditor.qml:48 app/TrainEditor.qml:52
 #, kde-format
 msgid "Board Later"
 msgstr "მოგვიანებით ჩაჯდომა"
 
-#: app/BusEditor.qml:52
+#: app/BusEditor.qml:51
 #, kde-format
 msgid "Change departure stop"
 msgstr "გამგზავრების სადგურის შეცვლა"
 
-#: app/BusEditor.qml:62 app/TrainEditor.qml:66
+#: app/BusEditor.qml:61 app/TrainEditor.qml:65
 #, kde-format
 msgid "Alight Earlier"
 msgstr "მოგვიანებით ჩამოსვლა"
 
-#: app/BusEditor.qml:65
+#: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
 
-#: app/BusEditor.qml:103
+#: app/BusEditor.qml:102
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
-#: app/BusEditor.qml:106 app/BusEditor.qml:133
+#: app/BusEditor.qml:105 app/BusEditor.qml:132
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "გაჩერება"
 
-#: app/BusEditor.qml:111 app/BusEditor.qml:138
+#: app/BusEditor.qml:110 app/BusEditor.qml:137
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "პლატფორმა"
 
-#: app/BusEditor.qml:115 app/TrainEditor.qml:123
+#: app/BusEditor.qml:114 app/TrainEditor.qml:122
 #, kde-format
 msgid "Board later"
 msgstr "მოგვიანებით ჩაჯდომა"
 
-#: app/BusEditor.qml:130
+#: app/BusEditor.qml:129
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/BusEditor.qml:142 app/TrainEditor.qml:153
+#: app/BusEditor.qml:141 app/TrainEditor.qml:152
 #, kde-format
 msgid "Alight earlier"
 msgstr "უფრო ადრე ჩამოსვლა"
 
-#: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
+#: app/BusEditor.qml:157 app/BusEditor.qml:161 app/BusPage.qml:211
 #: app/EventPage.qml:116 app/FlightEditor.qml:172 app/FlightEditor.qml:176
-#: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
+#: app/FlightPage.qml:102 app/TrainEditor.qml:168 app/TrainEditor.qml:178
 #: app/TrainPage.qml:265
 #, kde-format
 msgid "Seat"
@@ -3138,48 +3138,48 @@ msgstr "ჩამოსვლის დრო %1"
 msgid "Edit Train Reservation"
 msgstr "მატარებლის ჯავშნის ჩასწორება"
 
-#: app/TrainEditor.qml:56
+#: app/TrainEditor.qml:55
 #, kde-format
 msgid "Change departure station"
 msgstr "გამგზავრების სადგურის შეცვლა"
 
-#: app/TrainEditor.qml:69
+#: app/TrainEditor.qml:68
 #, kde-format
 msgid "Change arrival station"
 msgstr "ჩამოსვლის სადგურის შეცვლა"
 
-#: app/TrainEditor.qml:107
+#: app/TrainEditor.qml:106
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
-#: app/TrainEditor.qml:110 app/TrainEditor.qml:141 app/TrainPage.qml:135
+#: app/TrainEditor.qml:109 app/TrainEditor.qml:140 app/TrainPage.qml:135
 #: app/TrainPage.qml:220
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "სადგური"
 
-#: app/TrainEditor.qml:116 app/TrainEditor.qml:147
+#: app/TrainEditor.qml:115 app/TrainEditor.qml:146
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "პლატფორმა"
 
-#: app/TrainEditor.qml:138
+#: app/TrainEditor.qml:137
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/TrainEditor.qml:173
+#: app/TrainEditor.qml:172
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "გამძღოლი"
 
-#: app/TrainEditor.qml:185
+#: app/TrainEditor.qml:184
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"

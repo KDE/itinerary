@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-27 00:47+0000\n"
+"POT-Creation-Date: 2023-09-09 00:47+0000\n"
 "PO-Revision-Date: 2023-08-25 14:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -447,63 +447,63 @@ msgstr "Bilet numarası:"
 msgid "Edit Bus Reservation"
 msgstr "Otobüs Rezervasyonunu Düzenle"
 
-#: app/BusEditor.qml:49 app/TrainEditor.qml:53
+#: app/BusEditor.qml:48 app/TrainEditor.qml:52
 #, kde-format
 msgid "Board Later"
 msgstr "Daha Sonra Bin"
 
-#: app/BusEditor.qml:52
+#: app/BusEditor.qml:51
 #, kde-format
 msgid "Change departure stop"
 msgstr "Kalkış durağını değiştir"
 
-#: app/BusEditor.qml:62 app/TrainEditor.qml:66
+#: app/BusEditor.qml:61 app/TrainEditor.qml:65
 #, kde-format
 msgid "Alight Earlier"
 msgstr "Daha Önce İn"
 
-#: app/BusEditor.qml:65
+#: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
 msgstr "Varış durağını değiştir"
 
-#: app/BusEditor.qml:103
+#: app/BusEditor.qml:102
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/BusEditor.qml:106 app/BusEditor.qml:133
+#: app/BusEditor.qml:105 app/BusEditor.qml:132
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Durdur"
 
-#: app/BusEditor.qml:111 app/BusEditor.qml:138
+#: app/BusEditor.qml:110 app/BusEditor.qml:137
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Platform"
 
-#: app/BusEditor.qml:115 app/TrainEditor.qml:123
+#: app/BusEditor.qml:114 app/TrainEditor.qml:122
 #, kde-format
 msgid "Board later"
 msgstr "Daha sonra bin"
 
-#: app/BusEditor.qml:130
+#: app/BusEditor.qml:129
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/BusEditor.qml:142 app/TrainEditor.qml:153
+#: app/BusEditor.qml:141 app/TrainEditor.qml:152
 #, kde-format
 msgid "Alight earlier"
 msgstr "Daha önce in"
 
-#: app/BusEditor.qml:158 app/BusEditor.qml:162 app/BusPage.qml:211
+#: app/BusEditor.qml:157 app/BusEditor.qml:161 app/BusPage.qml:211
 #: app/EventPage.qml:116 app/FlightEditor.qml:172 app/FlightEditor.qml:176
-#: app/FlightPage.qml:102 app/TrainEditor.qml:169 app/TrainEditor.qml:179
+#: app/FlightPage.qml:102 app/TrainEditor.qml:168 app/TrainEditor.qml:178
 #: app/TrainPage.qml:265
 #, kde-format
 msgid "Seat"
@@ -3138,48 +3138,48 @@ msgstr "%1 istasyonuna varış"
 msgid "Edit Train Reservation"
 msgstr "Tren Rezervasyonunu Düzenle"
 
-#: app/TrainEditor.qml:56
+#: app/TrainEditor.qml:55
 #, kde-format
 msgid "Change departure station"
 msgstr "Kalkış istasyonunu değiştir"
 
-#: app/TrainEditor.qml:69
+#: app/TrainEditor.qml:68
 #, kde-format
 msgid "Change arrival station"
 msgstr "Varış istasyonunu değiştir"
 
-#: app/TrainEditor.qml:107
+#: app/TrainEditor.qml:106
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/TrainEditor.qml:110 app/TrainEditor.qml:141 app/TrainPage.qml:135
+#: app/TrainEditor.qml:109 app/TrainEditor.qml:140 app/TrainPage.qml:135
 #: app/TrainPage.qml:220
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "İstasyon"
 
-#: app/TrainEditor.qml:116 app/TrainEditor.qml:147
+#: app/TrainEditor.qml:115 app/TrainEditor.qml:146
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Platform"
 
-#: app/TrainEditor.qml:138
+#: app/TrainEditor.qml:137
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/TrainEditor.qml:173
+#: app/TrainEditor.qml:172
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Otobüs"
 
-#: app/TrainEditor.qml:185
+#: app/TrainEditor.qml:184
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
