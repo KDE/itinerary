@@ -7,317 +7,276 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import QtPositioning 5.11
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.i18n.localeData 1.0
 import org.kde.kpublictransport.onboard 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
-    title: i18n("Settings")
-    leftPadding: 0
-    rightPadding: 0
 
-    Component {
+    title: i18n("Settings")
+
+    property Component ptBackendPage: Component {
         id: ptBackendPage
         PublicTransportBackendPage {
             publicTransportManager: LiveDataManager.publicTransportManager
         }
     }
 
-    Component {
+    property Component favoriteLocationPage: Component {
         id: favoriteLocationPage
         FavoriteLocationPage {}
     }
 
-    ColumnLayout {
-        width: parent.width
-
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                // Home location
-                MobileForm.FormCardHeader {
-                    title: i18n("Home")
-                }
-
-                App.CountryComboBoxDelegate {
-                    text: i18n("Home Country")
-                    model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
-                        return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
-                    })
-                    initialCountry: Settings.homeCountryIsoCode
-                    onActivated: Settings.homeCountryIsoCode = currentValue
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Favorite Locations")
-                    icon.name: "go-home-symbolic"
-                    onClicked: applicationWindow().pageStack.layers.push(favoriteLocationPage);
-                }
-            }
+    // Home location
+    FormCard.FormHeader {
+        title: i18n("Home")
+    }
+    FormCard.FormCard {
+        App.CountryComboBoxDelegate {
+            text: i18n("Home Country")
+            model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
+                return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);
+            })
+            initialCountry: Settings.homeCountryIsoCode
+            onActivated: Settings.homeCountryIsoCode = currentValue
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormDelegateSeparator {}
 
-                // Online services
-                MobileForm.FormCardHeader {
-                    title: i18n("Online Services")
-                }
+        FormCard.FormButtonDelegate {
+            text: i18n("Favorite Locations")
+            icon.name: "go-home-symbolic"
+            onClicked: applicationWindow().pageStack.layers.push(favoriteLocationPage);
+        }
+    }
 
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Query Traffic Data")
-                    checked: Settings.queryLiveData
-                    onToggled: Settings.queryLiveData = checked
-                    description: i18n("When enabled, this will query transport provider online services for changes such as delays or gate and platform changes.")
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Use insecure services")
-                    checked: LiveDataManager.publicTransportManager.allowInsecureBackends
-                    onToggled: LiveDataManager.publicTransportManager.allowInsecureBackends = checked
-                    description: i18n("Enabling this will also use online services that do not offer transport encryption. This is not recommended, but might be unavoidable when relying on live data from certain providers.")
-                    descriptionItem.color: Kirigami.Theme.negativeTextColor
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormButtonDelegate {
-                    Kirigami.FormData.isSection: true
-                    text: i18n("Public Transport Information Sources...")
-                    icon.name: "settings-configure"
-                    onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    id: weatherSwitch
-                    text: i18n("Weather Forecast")
-                    checked: Settings.weatherForecastEnabled
-                    onToggled: Settings.weatherForecastEnabled = checked
-                    description: i18n("Showing weather forecasts will query online services.")
-                }
-
-                // ATTENTION do not remove this note, see https://api.met.no/license_data.html
-                MobileForm.FormTextDelegate {
-                    description: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
-                    visible: weatherSwitch.checked
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    id: autoMapDownload
-                    text: i18n("Preload Map Data")
-                    checked: Settings.preloadMapData
-                    onToggled: Settings.preloadMapData = checked
-                    description: i18n("Enabling this will download maps for all stations and airports for upcoming trips when connected to Wifi network.")
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    id: currencyConversion
-                    text: i18n("Currency Conversion")
-                    checked: Settings.performCurrencyConversion
-                    onToggled: Settings.performCurrencyConversion = checked
-                    description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
-                }
-            }
+    // Online services
+    FormCard.FormHeader {
+        title: i18n("Online Services")
+    }
+    FormCard.FormCard {
+        FormCard.FormCheckDelegate {
+            text: i18n("Query Traffic Data")
+            checked: Settings.queryLiveData
+            onToggled: Settings.queryLiveData = checked
+            description: i18n("When enabled, this will query transport provider online services for changes such as delays or gate and platform changes.")
         }
 
+        FormCard.FormDelegateSeparator {}
 
-        // Transfer assistant
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    Kirigami.FormData.isSection: true
-                    title: i18n("Transfer Assistant")
-                }
-
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Automatically add transfers")
-                    checked: Settings.autoAddTransfers
-                    onToggled: Settings.autoAddTransfers = checked
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Automatically fill transfers")
-                    description: i18n("When enabled, this will query transport provider online services automatically for transfer information.")
-                    checked: Settings.autoFillTransfers
-                    onToggled: Settings.autoFillTransfers = checked
-                    enabled: Settings.autoAddTransfers && Settings.queryLiveData
-                }
-            }
+        FormCard.FormCheckDelegate {
+            text: i18n("Use insecure services")
+            checked: LiveDataManager.publicTransportManager.allowInsecureBackends
+            onToggled: LiveDataManager.publicTransportManager.allowInsecureBackends = checked
+            description: i18n("Enabling this will also use online services that do not offer transport encryption. This is not recommended, but might be unavoidable when relying on live data from certain providers.")
+            descriptionItem.color: Kirigami.Theme.negativeTextColor
         }
 
+        FormCard.FormDelegateSeparator {}
 
-        // Notifications
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    Kirigami.FormData.isSection: true
-                    title: i18n("Notifications")
-                }
-
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Configure Notifications...")
-                    icon.name: "notifications"
-                    onClicked: NotificationConfigController.configureNotifications()
-                    enabled: NotificationConfigController.canConfigureNotification
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormCheckDelegate {
-                    text: i18n("Show notifications on lock screen")
-                    checked: Settings.showNotificationOnLockScreen
-                    onToggled: Settings.showNotificationOnLockScreen = checked
-                    enabled: NotificationConfigController.canShowOnLockScreen
-                }
-            }
+        FormCard.FormButtonDelegate {
+            Kirigami.FormData.isSection: true
+            text: i18n("Public Transport Information Sources...")
+            icon.name: "settings-configure"
+            onClicked: applicationWindow().pageStack.layers.push(ptBackendPage)
         }
 
-        // Wifi access for onboard status information
-        OnboardStatus {
-            id: onboardStatus
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            id: weatherSwitch
+            text: i18n("Weather Forecast")
+            checked: Settings.weatherForecastEnabled
+            onToggled: Settings.weatherForecastEnabled = checked
+            description: i18n("Showing weather forecasts will query online services.")
         }
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                MobileForm.FormCardHeader {
-                    Kirigami.FormData.isSection: true
-                    title: i18n("Onboard Status")
-                }
+        // ATTENTION do not remove this note, see https://api.met.no/license_data.html
+        FormCard.FormTextDelegate {
+            description: i18n("Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological Institute</a> under <a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</a> license.")
+            visible: weatherSwitch.checked
+            onLinkActivated: Qt.openUrlExternally(link)
+        }
 
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Request permissions...")
-                    description: i18n("Additional permissions are required to access the Wi-Fi status.")
-                    icon.name: "documentinfo"
-                    icon.color: Kirigami.Theme.neutralTextColor
-                    visible: onboardStatus.status == OnboardStatus.MissingPermissions
-                    onClicked: onboardStatus.requestPermissions()
-                }
+        FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormTextDelegate {
-                    text: {
-                        switch (onboardStatus.status) {
-                            case OnboardStatus.NotConnected:
-                            case OnboardStatus.Onboard:
-                                return i18n("Wi-Fi access for onboard information is available.");
-                            case OnboardStatus.WifiNotEnabled:
-                                return i18n("Wi-Fi is not enabled");
-                            case OnboardStatus.LocationServiceNotEnabled:
-                                return i18n("Location service is not enabled");
-                            case OnboardStatus.NotAvailable:
-                                return i18n("Wi-Fi access is not available on this system");
-                        }
-                    }
-                    description: {
-                        switch (onboardStatus.status) {
-                            case OnboardStatus.NotConnected:
-                            case OnboardStatus.Onboard:
-                                return i18n("No further action required.");
-                            case OnboardStatus.WifiNotEnabled:
-                                return i18n("Enable Wi-Fi on your system to access onboard information.");
-                            case OnboardStatus.LocationServiceNotEnabled:
-                                return i18n("Enable the location service on your device to access onboard information.");
-                            case OnboardStatus.NotAvailable:
-                                return i18n("Onboard information are unfortunately not supported on your device at this time.");
-                        }
-                    }
-                    icon.name: {
-                        switch (onboardStatus.status) {
-                            case OnboardStatus.NotConnected:
-                            case OnboardStatus.Onboard:
-                                return "checkmark"
-                            case OnboardStatus.WifiNotEnabled:
-                            case OnboardStatus.LocationServiceNotEnabled:
-                                return "documentinfo"
-                            case OnboardStatus.NotAvailable:
-                                return "dialog-cancel"
-                        }
-                    }
-                    icon.color: {
-                        switch (onboardStatus.status) {
-                            case OnboardStatus.NotConnected:
-                            case OnboardStatus.Onboard:
-                                return Kirigami.Theme.positiveTextColor
-                            case OnboardStatus.WifiNotEnabled:
-                            case OnboardStatus.LocationServiceNotEnabled:
-                                return Kirigami.Theme.neutralTextColor
-                            case OnboardStatus.NotAvailable:
-                                return Kirigami.Theme.negativeTextColor
-                        }
-                    }
-                    enabled: onboardStatus.status != OnboardStatus.MissingPermissions
+        FormCard.FormCheckDelegate {
+            id: autoMapDownload
+            text: i18n("Preload Map Data")
+            checked: Settings.preloadMapData
+            onToggled: Settings.preloadMapData = checked
+            description: i18n("Enabling this will download maps for all stations and airports for upcoming trips when connected to Wifi network.")
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            id: currencyConversion
+            text: i18n("Currency Conversion")
+            checked: Settings.performCurrencyConversion
+            onToggled: Settings.performCurrencyConversion = checked
+            description: i18n("Enabling this will perform online queries for exchange rates to currencies at travel destinations.")
+        }
+    }
+
+    // Transfer assistant
+    FormCard.FormHeader {
+        Kirigami.FormData.isSection: true
+        title: i18n("Transfer Assistant")
+    }
+    FormCard.FormCard {
+        FormCard.FormCheckDelegate {
+            text: i18n("Automatically add transfers")
+            checked: Settings.autoAddTransfers
+            onToggled: Settings.autoAddTransfers = checked
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            text: i18n("Automatically fill transfers")
+            description: i18n("When enabled, this will query transport provider online services automatically for transfer information.")
+            checked: Settings.autoFillTransfers
+            onToggled: Settings.autoFillTransfers = checked
+            enabled: Settings.autoAddTransfers && Settings.queryLiveData
+        }
+    }
+
+
+    // Notifications
+    FormCard.FormHeader {
+        Kirigami.FormData.isSection: true
+        title: i18n("Notifications")
+    }
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18n("Configure Notifications...")
+            icon.name: "notifications"
+            onClicked: NotificationConfigController.configureNotifications()
+            enabled: NotificationConfigController.canConfigureNotification
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormCheckDelegate {
+            text: i18n("Show notifications on lock screen")
+            checked: Settings.showNotificationOnLockScreen
+            onToggled: Settings.showNotificationOnLockScreen = checked
+            enabled: NotificationConfigController.canShowOnLockScreen
+        }
+    }
+
+    // Wifi access for onboard status information
+    property OnboardStatus onboardStatus: OnboardStatus {
+        id: onboardStatus
+    }
+    FormCard.FormHeader {
+        Kirigami.FormData.isSection: true
+        title: i18n("Onboard Status")
+    }
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18n("Request permissions...")
+            description: i18n("Additional permissions are required to access the Wi-Fi status.")
+            icon.name: "documentinfo"
+            icon.color: Kirigami.Theme.neutralTextColor
+            visible: onboardStatus.status == OnboardStatus.MissingPermissions
+            onClicked: onboardStatus.requestPermissions()
+        }
+        FormCard.FormTextDelegate {
+            text: {
+                switch (onboardStatus.status) {
+                    case OnboardStatus.NotConnected:
+                    case OnboardStatus.Onboard:
+                        return i18n("Wi-Fi access for onboard information is available.");
+                    case OnboardStatus.WifiNotEnabled:
+                        return i18n("Wi-Fi is not enabled");
+                    case OnboardStatus.LocationServiceNotEnabled:
+                        return i18n("Location service is not enabled");
+                    case OnboardStatus.NotAvailable:
+                        return i18n("Wi-Fi access is not available on this system");
                 }
             }
-        }
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: MatrixController.isAvailable
-            contentItem: ColumnLayout {
-                spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18n("Matrix Integration")
-                    subtitle: MatrixController.manager.infoString.length > 0 ? MatrixController.manager.infoString : MatrixController.manager.connected ? i18n("Logged in as %1", MatrixController.manager.userId) : ""
-                }
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Synchronize rooms")
-                    icon.name: "view-refresh"
-                    onClicked: MatrixController.manager.sync()
-                    visible: MatrixController.manager.connected
-                }
-                MobileForm.FormTextFieldDelegate {
-                    id: matrixId
-                    label: i18n("Matrix ID")
-                    visible: !MatrixController.manager.connected
-                    text: MatrixController.manager.userId
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: matrixPassword
-                    label: i18n("Password")
-                    echoMode: TextInput.Password
-                    visible: !MatrixController.manager.connected
-                }
-                MobileForm.FormDelegateSeparator { above: loginButton }
-                MobileForm.FormButtonDelegate {
-                    id: loginButton
-                    text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
-                    onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
-                    enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
+            description: {
+                switch (onboardStatus.status) {
+                    case OnboardStatus.NotConnected:
+                    case OnboardStatus.Onboard:
+                        return i18n("No further action required.");
+                    case OnboardStatus.WifiNotEnabled:
+                        return i18n("Enable Wi-Fi on your system to access onboard information.");
+                    case OnboardStatus.LocationServiceNotEnabled:
+                        return i18n("Enable the location service on your device to access onboard information.");
+                    case OnboardStatus.NotAvailable:
+                        return i18n("Onboard information are unfortunately not supported on your device at this time.");
                 }
             }
+            icon.name: {
+                switch (onboardStatus.status) {
+                    case OnboardStatus.NotConnected:
+                    case OnboardStatus.Onboard:
+                        return "checkmark"
+                    case OnboardStatus.WifiNotEnabled:
+                    case OnboardStatus.LocationServiceNotEnabled:
+                        return "documentinfo"
+                    case OnboardStatus.NotAvailable:
+                        return "dialog-cancel"
+                }
+            }
+            icon.color: {
+                switch (onboardStatus.status) {
+                    case OnboardStatus.NotConnected:
+                    case OnboardStatus.Onboard:
+                        return Kirigami.Theme.positiveTextColor
+                    case OnboardStatus.WifiNotEnabled:
+                    case OnboardStatus.LocationServiceNotEnabled:
+                        return Kirigami.Theme.neutralTextColor
+                    case OnboardStatus.NotAvailable:
+                        return Kirigami.Theme.negativeTextColor
+                }
+            }
+            enabled: onboardStatus.status != OnboardStatus.MissingPermissions
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Matrix Integration")
+        visible: matrixCard.visible
+    }
+    FormCard.FormCard {
+        id: matrixCard
+        visible: MatrixController.isAvailable
+        FormCard.FormTextDelegate {
+            text: MatrixController.manager.infoString.length > 0 ? MatrixController.manager.infoString : MatrixController.manager.connected ? i18n("Logged in as %1", MatrixController.manager.userId) : ""
+            visible: text.length > 0
+        }
+        FormCard.FormButtonDelegate {
+            text: i18n("Synchronize rooms")
+            icon.name: "view-refresh"
+            onClicked: MatrixController.manager.sync()
+            visible: MatrixController.manager.connected
+        }
+        FormCard.FormTextFieldDelegate {
+            id: matrixId
+            label: i18n("Matrix ID")
+            visible: !MatrixController.manager.connected
+            text: MatrixController.manager.userId
+        }
+        FormCard.FormDelegateSeparator {}
+        FormCard.FormTextFieldDelegate {
+            id: matrixPassword
+            label: i18n("Password")
+            echoMode: TextInput.Password
+            visible: !MatrixController.manager.connected
+        }
+        FormCard.FormDelegateSeparator { above: loginButton }
+        FormCard.FormButtonDelegate {
+            id: loginButton
+            text: MatrixController.manager.connected ? i18n("Log out") : i18n("Log in")
+            onClicked: MatrixController.manager.connected ? MatrixController.manager.logout() : MatrixController.manager.login(matrixId.text, matrixPassword.text)
+            enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
         }
     }
 }
