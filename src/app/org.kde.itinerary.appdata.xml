@@ -727,7 +727,18 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.08.1" date="2023-09-14"/>
+    <release version="23.08.1" date="2023-09-14">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines and ZSSK</li>
+          <li>Fix editing bus and train elements without an associated ticket.</li>
+          <li>Fix unnecessarily broad permissions on Android.</li>
+          <li>Fix rendering of Apple Wallet generic pass thumbnail images.</li>
+          <li>Fix progress display on the initial journey stopover in the live status view.</li>
+          <li>Display luggage lockers, lost &amp; found offices and ariport baggage claim belts on the indoor map.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.08.0" date="2023-08-24">
       <description>
         <ul>
