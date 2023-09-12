@@ -13,3 +13,33 @@ include:
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-arm32.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-arm64.yml
   - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-x86-64.yml
+
+signapk:
+  stage: deploy
+  when: manual
+  image: invent-registry.kde.org/sysadmin/ci-images/android-qt515:latest
+  tags:
+    - Linux
+  variables:
+    GIT_STRATEGY: none
+  interruptible: true
+  needs:
+    - craft_android_arm64
+  before_script:
+    - git clone https://invent.kde.org/kloecker/ci-services.git sftpnotary
+    - cd sftpnotary
+    - python3 -m venv .venv
+    - . .venv/bin/activate
+    - pip3 install -r requirements.txt
+  script:
+    - echo '[SFTP]' >signapk.ini
+    - echo 'Server = tinami.kde.org' >>signapk.ini
+    - echo 'Username = signing' >>signapk.ini
+    - echo 'BasePath = workspace/signapk' >>signapk.ini
+    - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signapk.ini
+    - python3 signapk.py -vv --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
+  artifacts:
+    expire_in: 3 days
+    when: on_success
+    paths:
+     - ".kde-ci-packages/*.apk"
