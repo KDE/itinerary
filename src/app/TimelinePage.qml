@@ -182,7 +182,6 @@ Kirigami.ScrollablePage {
                 text: i18n("As Itinerary file...")
                 icon.name: "export-symbolic"
                 onTriggered: {
-                    exportTripGroupDialog.close();
                     tripGroupFileExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
                     tripGroupFileExportDialog.open();
                 }
@@ -191,7 +190,6 @@ Kirigami.ScrollablePage {
                 text: i18n("As GPX file...")
                 icon.name: "map-globe"
                 onTriggered: {
-                    exportTripGroupDialog.close();
                     tripGroupGpxExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
                     tripGroupGpxExportDialog.open();
                 }
@@ -205,10 +203,7 @@ Kirigami.ScrollablePage {
             delegate: Kirigami.Action {
                 text: i18n("Send to %1", model.name)
                 icon.name: "kdeconnect-tray"
-                onTriggered: {
-                    exportTripGroupDialog.close();
-                    ApplicationController.exportTripToKDEConnect(exportTripGroupDialog.tripGroupId, model.deviceId);
-                }
+                onTriggered: ApplicationController.exportTripToKDEConnect(exportTripGroupDialog.tripGroupId, model.deviceId)
             }
             onObjectAdded: exportTripGroupDialog._actions.push(object)
         }

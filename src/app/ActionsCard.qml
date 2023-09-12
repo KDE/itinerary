@@ -136,10 +136,7 @@ ColumnLayout {
             Kirigami.Action {
                 text: i18n("As Itinerary file...")
                 icon.name: "export-symbolic"
-                onTriggered: {
-                    exportBatchDialog.close();
-                    batchFileExportDialog.open();
-                }
+                onTriggered: batchFileExportDialog.open()
             }
         ]
         actions: exportBatchDialog._actions
@@ -150,10 +147,7 @@ ColumnLayout {
             delegate: Kirigami.Action {
                 text: i18n("Send to %1", model.name)
                 icon.name: "kdeconnect-tray"
-                onTriggered: {
-                    exportBatchDialog.close();
-                    ApplicationController.exportBatchToKDEConnect(root.batchId, model.deviceId);
-                }
+                onTriggered: ApplicationController.exportBatchToKDEConnect(root.batchId, model.deviceId)
             }
             onObjectAdded: exportBatchDialog._actions.push(object)
         }
