@@ -11,7 +11,7 @@ target_sources(KMatrix PRIVATE
 )
 
 generate_export_header(KMatrix BASE_NAME KMatrix)
-target_link_libraries(KMatrix PUBLIC Qt::Core Quotient PRIVATE KF${KF_MAJOR_VERSION}::I18n)
+target_link_libraries(KMatrix PUBLIC Qt::Core Quotient${QUOTIENT_SUFFIX} PRIVATE KF${KF_MAJOR_VERSION}::I18n)
 
 ecm_generate_headers(KMatrix_FORWARDING_HEADERS
         HEADER_NAMES
