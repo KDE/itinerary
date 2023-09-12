@@ -37,9 +37,9 @@ signapk:
     - echo 'Username = signing' >>signapk.ini
     - echo 'BasePath = workspace/signapk' >>signapk.ini
     - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signapk.ini
-    - python3 signapk.py -vv --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
+    - python3 signapk.py -v --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
   artifacts:
     expire_in: 3 days
-    when: on_success
+    when: always
     paths:
-     - ".kde-ci-packages/*.apk"
+     - ".kde-ci-packages/"
