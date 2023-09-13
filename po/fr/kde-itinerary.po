@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-13 00:47+0000\n"
 "PO-Revision-Date: 2023-08-22 09:46+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -868,7 +868,7 @@ msgid "Number:"
 msgstr "Numéro :"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
-#: app/SettingsPage.qml:45
+#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Page personnelle"
@@ -883,7 +883,7 @@ msgstr "Travail"
 msgid "Location %1"
 msgstr "Emplacement %1"
 
-#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:60
+#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:50
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Emplacements favoris"
@@ -2629,27 +2629,27 @@ msgstr "Heure d'arrivée"
 msgid "Party size"
 msgstr "Taille du groupe"
 
-#: app/SettingsPage.qml:18
+#: app/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Configuration"
 
-#: app/SettingsPage.qml:49
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Home Country"
 msgstr "Pays (de résidence)"
 
-#: app/SettingsPage.qml:75
+#: app/SettingsPage.qml:58
 #, kde-format
 msgid "Online Services"
 msgstr "Services en ligne"
 
-#: app/SettingsPage.qml:79
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Demander les données de trafic"
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -2659,12 +2659,12 @@ msgstr ""
 "ligne du fournisseur de transport pour connaître les modifications telles "
 "que les retards ou les changements de quai et de porte."
 
-#: app/SettingsPage.qml:88
+#: app/SettingsPage.qml:71
 #, kde-format
 msgid "Use insecure services"
 msgstr "Utiliser des services non sécurisés"
 
-#: app/SettingsPage.qml:91
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -2676,25 +2676,25 @@ msgstr ""
 "n'est pas recommandé, mais vous n'aurez pas forcément le choix si vous "
 "souhaitez bénéficier des données en temps réel de certains fournisseurs."
 
-#: app/SettingsPage.qml:99
+#: app/SettingsPage.qml:82
 #, kde-format
 msgid "Public Transport Information Sources..."
 msgstr "Sources d'informations sur les transports publics..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Prévisions météorologiques"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:94
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr ""
 "L'affichage des prévisions météorologiques enverra une requête vers un "
 "service en ligne."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
+#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2706,12 +2706,12 @@ msgstr ""
 "creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 BY International</"
 "a>."
 
-#: app/SettingsPage.qml:125
+#: app/SettingsPage.qml:108
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Précharger les données de cartographie"
 
-#: app/SettingsPage.qml:128
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -2721,12 +2721,12 @@ msgstr ""
 "gares et de tous les aéroports pour les voyages à venir, à condition d'être "
 "connecté à un réseau Wifi."
 
-#: app/SettingsPage.qml:135
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Conversion de devises"
 
-#: app/SettingsPage.qml:138
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -2735,22 +2735,22 @@ msgstr ""
 "L'activation de ceci effectuera des requêtes en ligne pour trouver les taux "
 "de changes des devises pour les destinations de voyage."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Assistant de correspondances"
 
-#: app/SettingsPage.qml:157
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Ajouter automatiquement les correspondances"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Remplir automatiquement les correspondances"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -2760,70 +2760,70 @@ msgstr ""
 "ligne du fournisseur de transport automatiquement pour les informations de "
 "correspondance."
 
-#: app/SettingsPage.qml:184
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "Notifications"
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:156
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configurer les notifications..."
 
-#: app/SettingsPage.qml:197
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Afficher les notifications sur l'écran de verrouillage"
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:178
 #, kde-format
 msgid "Onboard Status"
 msgstr "État à bord"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Request permissions..."
 msgstr "Demander des droits d'accès..."
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 "Des droits d'accès supplémentaires sont nécessaires pour accéder à l'état "
 "Wifi."
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:194
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "L'accès au Wifi aux informations d'état à bord est disponible."
 
-#: app/SettingsPage.qml:236
+#: app/SettingsPage.qml:196
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "Le Wifi n'est pas activé."
 
-#: app/SettingsPage.qml:238
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Le service de localisation n'est pas activé."
 
-#: app/SettingsPage.qml:240
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "L'accès au Wifi est indisponible sur ce système."
 
-#: app/SettingsPage.qml:247
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "No further action required."
 msgstr "Aucune action supplémentaire n'est requise."
 
-#: app/SettingsPage.qml:249
+#: app/SettingsPage.qml:209
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Activer le Wifi sur votre système pour accéder aux informations d'état à bord"
 
-#: app/SettingsPage.qml:251
+#: app/SettingsPage.qml:211
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -2831,7 +2831,7 @@ msgstr ""
 "Activer le service de localisation sur votre périphérique pour accéder aux "
 "informations d'état à bord"
 
-#: app/SettingsPage.qml:253
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2840,37 +2840,37 @@ msgstr ""
 "Les informations d'état à bord ne sont malheureusement pas prises en charge "
 "par votre périphérique pour le moment."
 
-#: app/SettingsPage.qml:291
+#: app/SettingsPage.qml:245
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Intégration avec Matrix"
 
-#: app/SettingsPage.qml:292
+#: app/SettingsPage.qml:252
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Connecté en tant que %1"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:256
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synchroniser les salons"
 
-#: app/SettingsPage.qml:302
+#: app/SettingsPage.qml:263
 #, kde-format
 msgid "Matrix ID"
 msgstr "Identifiant Matrix"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:270
 #, kde-format
 msgid "Password"
 msgstr "Mot de passe"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:277
 #, kde-format
 msgid "Log out"
 msgstr "Se déconnecter"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:277
 #, kde-format
 msgid "Log in"
 msgstr "Se connecter"

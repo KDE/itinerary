@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-09 00:47+0000\n"
+"POT-Creation-Date: 2023-09-13 00:47+0000\n"
 "PO-Revision-Date: 2023-08-25 18:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -857,7 +857,7 @@ msgid "Number:"
 msgstr "Nummer:"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
-#: app/SettingsPage.qml:45
+#: app/SettingsPage.qml:35
 #, kde-format
 msgid "Home"
 msgstr "Hem"
@@ -872,7 +872,7 @@ msgstr "Arbete"
 msgid "Location %1"
 msgstr "Plats %1"
 
-#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:60
+#: app/FavoriteLocationPage.qml:19 app/SettingsPage.qml:50
 #, kde-format
 msgid "Favorite Locations"
 msgstr "Favoritplatser"
@@ -2601,27 +2601,27 @@ msgstr "Sluttid"
 msgid "Party size"
 msgstr "Gruppstorlek"
 
-#: app/SettingsPage.qml:18
+#: app/SettingsPage.qml:19
 #, kde-format
 msgid "Settings"
 msgstr "Inställningar"
 
-#: app/SettingsPage.qml:49
+#: app/SettingsPage.qml:39
 #, kde-format
 msgid "Home Country"
 msgstr "Hemland"
 
-#: app/SettingsPage.qml:75
+#: app/SettingsPage.qml:58
 #, kde-format
 msgid "Online Services"
 msgstr "Nättjänster"
 
-#: app/SettingsPage.qml:79
+#: app/SettingsPage.qml:62
 #, kde-format
 msgid "Query Traffic Data"
 msgstr "Uppdatera trafikdata"
 
-#: app/SettingsPage.qml:82
+#: app/SettingsPage.qml:65
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services for changes "
@@ -2630,12 +2630,12 @@ msgstr ""
 "Om aktiverat, används transportföretagets nättjänster för att kontrollera "
 "ändringar såsom förseningar eller gate- och plattformsändringar."
 
-#: app/SettingsPage.qml:88
+#: app/SettingsPage.qml:71
 #, kde-format
 msgid "Use insecure services"
 msgstr "Använd tjänster utan säkerhet"
 
-#: app/SettingsPage.qml:91
+#: app/SettingsPage.qml:74
 #, kde-format
 msgid ""
 "Enabling this will also use online services that do not offer transport "
@@ -2646,23 +2646,23 @@ msgstr ""
 "överföring. Det rekommenderas inte, men kan vara oundvikligt när "
 "direktinformation från vissa företag används."
 
-#: app/SettingsPage.qml:99
+#: app/SettingsPage.qml:82
 #, kde-format
 msgid "Public Transport Information Sources..."
 msgstr "Informationskällor för kollektivtrafik..."
 
-#: app/SettingsPage.qml:108 app/WeatherForecastDelegate.qml:95
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:95
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
 msgstr "Väderprognos"
 
-#: app/SettingsPage.qml:111
+#: app/SettingsPage.qml:94
 #, kde-format
 msgid "Showing weather forecasts will query online services."
 msgstr "Att visa väderprognos använder nättjänster."
 
-#: app/SettingsPage.qml:116 app/WeatherForecastPage.qml:37
+#: app/SettingsPage.qml:99 app/WeatherForecastPage.qml:37
 #, kde-format
 msgid ""
 "Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
@@ -2673,12 +2673,12 @@ msgstr ""
 "Meteorologiska Institutet</a> med licensen <a href=\"https://creativecommons."
 "org/licenses/by/4.0\">Creative Commons 4.0 BY International</a>."
 
-#: app/SettingsPage.qml:125
+#: app/SettingsPage.qml:108
 #, kde-format
 msgid "Preload Map Data"
 msgstr "Ladda kartdata i förväg"
 
-#: app/SettingsPage.qml:128
+#: app/SettingsPage.qml:111
 #, kde-format
 msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
@@ -2687,12 +2687,12 @@ msgstr ""
 "Aktiveras detta laddas kartor ner för alla stationer och flygplatser under "
 "kommande resor när ansluten till WIFI-nätverk."
 
-#: app/SettingsPage.qml:135
+#: app/SettingsPage.qml:118
 #, kde-format
 msgid "Currency Conversion"
 msgstr "Valutakonvertering"
 
-#: app/SettingsPage.qml:138
+#: app/SettingsPage.qml:121
 #, kde-format
 msgid ""
 "Enabling this will perform online queries for exchange rates to currencies "
@@ -2700,22 +2700,22 @@ msgid ""
 msgstr ""
 "Om det aktiveras utförs sökning på nätet efter växlingskurser på resmålen."
 
-#: app/SettingsPage.qml:153
+#: app/SettingsPage.qml:128
 #, kde-format
 msgid "Transfer Assistant"
 msgstr "Bytesguide"
 
-#: app/SettingsPage.qml:157
+#: app/SettingsPage.qml:132
 #, kde-format
 msgid "Automatically add transfers"
 msgstr "Lägg automatiskt till byten"
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:140
 #, kde-format
 msgid "Automatically fill transfers"
 msgstr "Fyll automatiskt i byten"
 
-#: app/SettingsPage.qml:166
+#: app/SettingsPage.qml:141
 #, kde-format
 msgid ""
 "When enabled, this will query transport provider online services "
@@ -2724,111 +2724,111 @@ msgstr ""
 "Om aktiverat, används transportföretagets nättjänster automatiskt för att "
 "information om byten."
 
-#: app/SettingsPage.qml:184
+#: app/SettingsPage.qml:152
 #, kde-format
 msgid "Notifications"
 msgstr "Underrättelser"
 
-#: app/SettingsPage.qml:188
+#: app/SettingsPage.qml:156
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Anpassa underrättelser..."
 
-#: app/SettingsPage.qml:197
+#: app/SettingsPage.qml:165
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Visa underrättelser vid skärmlåsning"
 
-#: app/SettingsPage.qml:217
+#: app/SettingsPage.qml:178
 #, kde-format
 msgid "Onboard Status"
 msgstr "Ombordstatus"
 
-#: app/SettingsPage.qml:221
+#: app/SettingsPage.qml:182
 #, kde-format
 msgid "Request permissions..."
 msgstr "Begär rättigheter..."
 
-#: app/SettingsPage.qml:222
+#: app/SettingsPage.qml:183
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr "Ytterligare rättigheter krävs för att komma åt WIFI-status."
 
-#: app/SettingsPage.qml:234
+#: app/SettingsPage.qml:194
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "WIFI-åtkomst för ombordinformation är tillgänglig."
 
-#: app/SettingsPage.qml:236
+#: app/SettingsPage.qml:196
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "WIFI är inte aktiverat"
 
-#: app/SettingsPage.qml:238
+#: app/SettingsPage.qml:198
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "Platstjänst är inte aktiverad"
 
-#: app/SettingsPage.qml:240
+#: app/SettingsPage.qml:200
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "WIFI-åtkomst är inte tillgänglig på systemet"
 
-#: app/SettingsPage.qml:247
+#: app/SettingsPage.qml:207
 #, kde-format
 msgid "No further action required."
 msgstr "Ingen ytterligare åtgärd krävs."
 
-#: app/SettingsPage.qml:249
+#: app/SettingsPage.qml:209
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Aktivera WIFI på systemet för att komma åt ombordinformation."
 
-#: app/SettingsPage.qml:251
+#: app/SettingsPage.qml:211
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Aktivera platstjänsten på din enhet för att komma åt ombordinformation."
 
-#: app/SettingsPage.qml:253
+#: app/SettingsPage.qml:213
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "Ombordinformation stöds tyvärr inte för närvarande på din enhet."
 
-#: app/SettingsPage.qml:291
+#: app/SettingsPage.qml:245
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integrering med Matrix"
 
-#: app/SettingsPage.qml:292
+#: app/SettingsPage.qml:252
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Inloggad som %1"
 
-#: app/SettingsPage.qml:295
+#: app/SettingsPage.qml:256
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Synkronisera rum"
 
-#: app/SettingsPage.qml:302
+#: app/SettingsPage.qml:263
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix-id"
 
-#: app/SettingsPage.qml:309
+#: app/SettingsPage.qml:270
 #, kde-format
 msgid "Password"
 msgstr "Lösenord"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:277
 #, kde-format
 msgid "Log out"
 msgstr "Logga ut"
 
-#: app/SettingsPage.qml:316
+#: app/SettingsPage.qml:277
 #, kde-format
 msgid "Log in"
 msgstr "Logga in"
