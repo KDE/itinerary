@@ -54,7 +54,7 @@ signflatpak:
     GIT_STRATEGY: none
   interruptible: true
   needs:
-    - craft_android_arm64
+    - flatpak
   before_script:
     - git clone https://invent.kde.org/kloecker/ci-services.git sftpnotary
     - cd sftpnotary
