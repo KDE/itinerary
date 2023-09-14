@@ -43,3 +43,33 @@ signapk:
     when: always
     paths:
      - ".kde-ci-packages/"
+
+signflatpak:
+  stage: deploy
+  when: manual
+  image: invent-registry.kde.org/sysadmin/ci-images/android-qt515:latest
+  tags:
+    - Linux
+  variables:
+    GIT_STRATEGY: none
+  interruptible: true
+  needs:
+    - craft_android_arm64
+  before_script:
+    - git clone https://invent.kde.org/kloecker/ci-services.git sftpnotary
+    - cd sftpnotary
+    - python3 -m venv .venv
+    - . .venv/bin/activate
+    - pip3 install -r requirements.txt
+  script:
+    - echo '[SFTP]' >signflatpak.ini
+    - echo 'Server = tinami.kde.org' >>signflatpak.ini
+    - echo 'Username = signing' >>signflatpak.ini
+    - echo 'BasePath = workspace/signflatpak' >>signflatpak.ini
+    - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signflatpak.ini
+    - python3 signflatpak.py -v --config signflatpak.ini repo-unused $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
+  artifacts:
+    expire_in: 3 days
+    when: always
+    paths:
+     - "task*.log"
