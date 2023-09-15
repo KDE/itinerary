@@ -67,7 +67,7 @@ signflatpak:
     - echo 'Username = signing' >>signflatpak.ini
     - echo 'BasePath = workspace/signflatpak' >>signflatpak.ini
     - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signflatpak.ini
-    - python3 signflatpak.py -v --config signflatpak.ini repo-unused $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
+    - python3 signflatpak.py -v --config signflatpak.ini $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
   artifacts:
     expire_in: 3 days
     when: always
