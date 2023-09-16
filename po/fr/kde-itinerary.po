@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-13 00:47+0000\n"
-"PO-Revision-Date: 2023-08-22 09:46+0200\n"
+"PO-Revision-Date: 2023-09-14 18:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.90\n"
+"X-Generator: Lokalize 23.08.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -292,10 +292,9 @@ msgid "Export completed."
 msgstr "Exportation terminée."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Voyages"
+msgstr "Envoi du voyage effectué."
 
 #: app/applicationcontroller.cpp:723
 #, kde-format
@@ -2518,8 +2517,7 @@ msgid "Valid until"
 msgstr "Valable jusqu'à"
 
 #: app/ProgramMembershipEditor.qml:113
-#, fuzzy, kde-format
-#| msgid "End time has to be after the start time."
+#, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr "L'heure de fin doit être postérieure à l'heure de début."
 
@@ -3092,10 +3090,9 @@ msgid "As GPX file..."
 msgstr "Comme fichier « GPX »..."
 
 #: app/TimelinePage.qml:198
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Heure de fin : %1"
+msgstr "Envoyé vers %1"
 
 #: app/TimelinePage.qml:216 app/TimelinePage.qml:225
 #, kde-format
