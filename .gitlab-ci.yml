@@ -32,11 +32,7 @@ signapk:
     - . .venv/bin/activate
     - pip3 install -r requirements.txt
   script:
-    - echo '[SFTP]' >signapk.ini
-    - echo 'Server = tinami.kde.org' >>signapk.ini
-    - echo 'Username = signing' >>signapk.ini
-    - echo 'BasePath = workspace/signapk' >>signapk.ini
-    - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signapk.ini
+    - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signapk.ini
     - python3 signapk.py -v --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
   artifacts:
     expire_in: 3 days
@@ -62,11 +58,7 @@ signflatpak:
     - . .venv/bin/activate
     - pip3 install -r requirements.txt
   script:
-    - echo '[SFTP]' >signflatpak.ini
-    - echo 'Server = tinami.kde.org' >>signflatpak.ini
-    - echo 'Username = signing' >>signflatpak.ini
-    - echo 'BasePath = workspace/signflatpak' >>signflatpak.ini
-    - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>signflatpak.ini
+    - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signflatpak.ini
     - python3 signflatpak.py -v --config signflatpak.ini $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
   artifacts:
     expire_in: 3 days
