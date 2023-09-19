@@ -240,8 +240,8 @@ MobileForm.AbstractFormDelegate {
                 }
             }
             Kirigami.LinkButton {
-                Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 text: i18nc("@action:button", "Show More…")
                 visible: notesLabel.implicitHeight > notesLabel.height
                 onClicked: {
