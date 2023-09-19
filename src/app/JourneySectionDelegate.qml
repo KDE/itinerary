@@ -40,6 +40,7 @@ MobileForm.AbstractFormDelegate {
 
         // top row: departure time, departure location, departure platform
         Item {
+            visible: modelData.mode !== JourneySection.Walking
             width: departureLine.width
             Layout.fillHeight: true
             Rectangle{
@@ -56,13 +57,13 @@ MobileForm.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
-                visible: modelData.mode !== JourneySection.Walking
             }
         }
         RowLayout {
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.topMargin: Kirigami.Units.mediumSpacing
-            visible: root.modelData.mode != JourneySection.Waiting
+            visible: !(root.modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+
 
             QQC2.Label {
                 id: depTime
@@ -84,7 +85,8 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.topMargin: Kirigami.Units.mediumSpacing
-            visible: root.modelData.mode !== JourneySection.Waiting
+            visible: !(root.modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+
             QQC2.Label {
                 text: modelData.from.name
                 font.bold: true
@@ -121,6 +123,7 @@ MobileForm.AbstractFormDelegate {
             color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
             Layout.alignment: Qt.AlignHCenter
+            Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
 
             Kirigami.Icon {
                 id: modeIcon
@@ -133,6 +136,9 @@ MobileForm.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.topMargin: modelData.mode == JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
+            Layout.bottomMargin: modelData.mode == JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
+
             Layout.fillWidth: true
             QQC2.Label {
                 id: journeyTitleLabel
@@ -187,7 +193,7 @@ MobileForm.AbstractFormDelegate {
         }
         Item {
             visible: modelData.notes.length > 0
-            Layout.prefferredWidth: Kirigami.Units.largeSpacing
+            Layout.preferredWidth: Kirigami.Units.largeSpacing
             Layout.fillHeight: true
         }
         ColumnLayout {
@@ -238,8 +244,9 @@ MobileForm.AbstractFormDelegate {
         }
         // last row: arrival information
         Item {
-            Layout.prefferredWidth: departureLine.width
+            Layout.preferredWidth: departureLine.width
             Layout.fillHeight: true
+            visible: modelData.mode !== JourneySection.Walking
 
             Rectangle{
                 visible: index != modelLength || modelData.mode == JourneySection.Walking
@@ -260,7 +267,8 @@ MobileForm.AbstractFormDelegate {
         RowLayout {
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: modelData.mode != JourneySection.Waiting
+            visible: !(modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+
             QQC2.Label {
                 text: Localizer.formatTime(modelData, "scheduledArrivalTime")
             }
@@ -272,7 +280,8 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: modelData.mode != JourneySection.Waiting
+            visible: !(modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+
             QQC2.Label {
                 text: modelData.to.name
                 font.bold: true
