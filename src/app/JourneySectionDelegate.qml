@@ -260,6 +260,7 @@ MobileForm.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
             visible: modelData.mode != JourneySection.Waiting
             QQC2.Label {
