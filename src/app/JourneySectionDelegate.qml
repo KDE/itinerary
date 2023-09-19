@@ -57,6 +57,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
+                visible:  modelData.mode !== JourneySection.Transfer
             }
         }
         RowLayout {
@@ -116,7 +117,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 hasStop: false
-                visible: modelData.mode !== JourneySection.Walking
+                visible: !(modelData.mode == JourneySection.Transfer || modelData.mode == JourneySection.Walking)
             }
         }
         Rectangle {
@@ -195,7 +196,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 hasStop: false
-                visible: modelData.mode !== JourneySection.Walking
+                visible: !(modelData.mode == JourneySection.Transfer || modelData.mode == JourneySection.Walking)
             }
         }
         Item {
@@ -268,7 +269,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.bottomMargin: Kirigami.Units.mediumSpacing
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isArrival: true
-                visible: modelData.mode !== JourneySection.Walking
+                visible: modelData.mode !== JourneySection.Transfer
             }
         }
         RowLayout {
