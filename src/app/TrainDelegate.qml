@@ -47,12 +47,24 @@ App.TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
+            ColumnLayout {
+                Layout.margins: 0
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
 
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isDeparture: true
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: true
+                }
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: false
+                    hasStop: false
+                }
             }
+
             ColumnLayout{
                 spacing:0
                 Layout.fillHeight: true
@@ -83,6 +95,24 @@ App.TimelineDelegate {
                         }
                     }
                 }
+                Row {
+                    Layout.fillWidth: true
+
+                    width: topLayout.width
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: i18n("Departure: %1", Localizer.formatTime(reservationFor, "departureTime"))
+                        color: Kirigami.Theme.textColor
+                        wrapMode: Text.WordWrap
+                        visible: reservationFor.arrivalTime > 0
+                    }
+                    QQC2.Label {
+                        text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                        color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: arrival.hasExpectedArrivalTime
+                        Accessible.ignored: !visible
+                    }
+                }
                 QQC2.Label {
                     Layout.fillWidth: true
 
@@ -103,14 +133,24 @@ App.TimelineDelegate {
 
         // TODO reserved seat
 
-
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
+            ColumnLayout {
+                Layout.margins: 0
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
 
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isArrival: true
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: false
+                    hasStop: false
+                }
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isArrival: true
+                }
             }
             ColumnLayout{
                 spacing:0
@@ -149,7 +189,7 @@ App.TimelineDelegate {
                     width: topLayout.width
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
-                        text: i18n("Arrival: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
+                        text: i18n("Arrival: %1", Localizer.formatTime(reservationFor, "arrivalTime"))
                         color: Kirigami.Theme.textColor
                         wrapMode: Text.WordWrap
                         visible: reservationFor.arrivalTime > 0
@@ -158,6 +198,12 @@ App.TimelineDelegate {
                         text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
                         color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
                         visible: arrival.hasExpectedArrivalTime
+                        Accessible.ignored: !visible
+                    }
+                    QQC2.Label {
+                        text: i18n("(+ 1 day)")
+                        color: Kirigami.Theme.disabledTextColor
+                        visible: Localizer.formatDate(reservationFor, "arrivalTime") !== Localizer.formatDate(reservationFor, "departureTime")
                         Accessible.ignored: !visible
                     }
                 }

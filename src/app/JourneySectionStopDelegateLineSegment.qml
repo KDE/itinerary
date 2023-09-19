@@ -81,6 +81,6 @@ Item {
         height: width
         color: "white"
         opacity: isIntermediate ? 0.5:1
-//        visible: lineSegment.showStop && lineSegment.hasStop
+        visible:lineSegment.hasStop
     }
 }

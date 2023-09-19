@@ -40,55 +40,137 @@ App.TimelineDelegate {
         }
     }
 
+
     contentItem: Column {
         id: topLayout
-        spacing: Kirigami.Units.smallSpacing
 
-        QQC2.Label {
-            text: i18n("From: %1", reservationFor.departureBusStop.name)
-            color: Kirigami.Theme.textColor
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
-                                                     reservationFor.arrivalBusStop.address,
-                                                     Settings.homeCountryIsoCode)
-        }
-        Kirigami.Separator {
-            width: topLayout.width
-        }
-        QQC2.Label {
-            text: i18n("To: %1", reservationFor.arrivalBusStop.name)
-            color: Kirigami.Theme.textColor
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
-                                                     reservationFor.departureBusStop.address,
-                                                     Settings.homeCountryIsoCode)
-        }
-        Row {
-            width: topLayout.width
-            spacing: Kirigami.Units.smallSpacing
-            QQC2.Label {
-                text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
-                color: Kirigami.Theme.textColor
-                wrapMode: Text.WordWrap
-                visible: reservationFor.arrivalTime > 0
+        RowLayout {
+            width: parent.width
+            ColumnLayout {
+                Layout.margins: 0
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: true
+                }
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: false
+                    hasStop: false
+                }
             }
-            QQC2.Label {
-                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: arrival.hasExpectedArrivalTime
-                Accessible.ignored: !visible
+
+            ColumnLayout{
+                spacing:0
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    font.bold: true
+                    text: reservationFor.departureBusStop.name
+                }
+                Row {
+                    Layout.fillWidth: true
+                    width: topLayout.width
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: i18n("Departure: %1", Localizer.formatTime(reservationFor, "departureTime"))
+                        color: Kirigami.Theme.textColor
+                        wrapMode: Text.WordWrap
+                        visible: reservationFor.arrivalTime > 0
+                    }
+                    QQC2.Label {
+                        text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                        color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: arrival.hasExpectedArrivalTime
+                        Accessible.ignored: !visible
+                    }
+                }
+                QQC2.Label {
+                    visible: text !== ""
+                    width: topLayout.width
+                    text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
+                                                             reservationFor.arrivalBusStop.address,
+                                                             Settings.homeCountryIsoCode)
+                }
+                Kirigami.Separator {
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    Layout.fillWidth: true
+                }
             }
+
         }
+
+        RowLayout {
+            width: parent.width
+            ColumnLayout {
+                Layout.margins: 0
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: false
+                    hasStop: false
+                }
+                JourneySectionStopDelegateLineSegment {
+
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isArrival: true
+                }
+            }
+            ColumnLayout{
+                spacing:0
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    font.bold: true
+                    text: reservationFor.arrivalBusStop.name
+                }
+                Row {
+                    Layout.fillWidth: true
+
+                    width: topLayout.width
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: i18n("Arrival: %1", Localizer.formatTime(reservationFor, "arrivalTime"))
+                        color: Kirigami.Theme.textColor
+                        wrapMode: Text.WordWrap
+                        visible: reservationFor.arrivalTime > 0
+                    }
+                    QQC2.Label {
+                        text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                        color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: arrival.hasExpectedArrivalTime
+                        Accessible.ignored: !visible
+                    }
+                    QQC2.Label {
+                        text: i18n("(+ 1 day)")
+                        color: Kirigami.Theme.disabledTextColor
+                        visible: Localizer.formatDate(reservationFor, "arrivalTime") !== Localizer.formatDate(reservationFor, "departureTime")
+                        Accessible.ignored: !visible
+                    }
+                }
+                QQC2.Label {
+                    visible: text !== ""
+                    width: topLayout.width
+                    text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
+                                                             reservationFor.departureBusStop.address,
+                                                             Settings.homeCountryIsoCode)
+                }
+            }
+
+        }
+
+
     }
-
     onClicked: showDetailsPage(busDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }
