@@ -28,7 +28,7 @@ Item {
     property bool hasStop: true
     property bool showStop: lineSegment.hasStop
 
-    implicitWidth: lineSegment.lineWidth *2
+    implicitWidth: lineSegment.lineWidth * 2
 
     readonly property real leadingLineLength: line.height
     readonly property real trailingLineLength: line.height
@@ -43,17 +43,17 @@ Item {
         color: lineSegment.lineColor
 
         corners {
-            topRightRadius: isDeparture? width/2 : 0
-            topLeftRadius: isDeparture? width/2 : 0
+            topRightRadius: isDeparture ? Math.round(width / 2) : 0
+            topLeftRadius: isDeparture ? Math.round(width / 2) : 0
 
-            bottomRightRadius: isArrival? width/2 : 0
-            bottomLeftRadius: isArrival? width/2 : 0
+            bottomRightRadius: isArrival ? Math.round(width / 2) : 0
+            bottomLeftRadius: isArrival ? Math.round(width / 2) : 0
         }
         height:
             if (isArrival) {
-                parent.height /2 + lineSegment.lineWidth / 2
-            }else if (isDeparture){
-                parent.height /2 + lineSegment.lineWidth / 2
+                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
+            } else if (isDeparture) {
+                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
             } else {
                 parent.height
             }

@@ -15,11 +15,12 @@ import "." as App
 
 MobileForm.AbstractFormDelegate {
     id: root
-    topPadding:0
-    bottomPadding:0
     required property var modelData
     required property int index
     required property int modelLength
+
+    topPadding: 0
+    bottomPadding: 0
 
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
@@ -34,7 +35,6 @@ MobileForm.AbstractFormDelegate {
     }
 
     contentItem: GridLayout {
-        Layout.margins: 0
         rowSpacing: 0
         columns: 3
 
@@ -107,9 +107,8 @@ MobileForm.AbstractFormDelegate {
             Rectangle{
                 height: parent.height
                 anchors.centerIn: parent
-                Layout.margins: 0
                 color: Kirigami.Theme.disabledTextColor
-                width: Kirigami.Units.smallSpacing / 2
+                width: Math.round(Kirigami.Units.smallSpacing / 2)
             }
             JourneySectionStopDelegateLineSegment {
                 anchors.fill: parent
@@ -176,7 +175,6 @@ MobileForm.AbstractFormDelegate {
             Rectangle{
                 height: parent.height
                 anchors.centerIn: parent
-                Layout.margins: 0
                 color: Kirigami.Theme.disabledTextColor
                 width: Kirigami.Units.smallSpacing / 2
             }
@@ -187,9 +185,9 @@ MobileForm.AbstractFormDelegate {
                 visible: modelData.mode !== JourneySection.Walking
             }
         }
-        Item{
+        Item {
             visible: modelData.notes.length > 0
-            width: Kirigami.Units.largeSpacing
+            Layout.prefferredWidth: Kirigami.Units.largeSpacing
             Layout.fillHeight: true
         }
         ColumnLayout {
@@ -240,7 +238,7 @@ MobileForm.AbstractFormDelegate {
         }
         // last row: arrival information
         Item {
-            width: departureLine.width
+            Layout.prefferredWidth: departureLine.width
             Layout.fillHeight: true
 
             Rectangle{
@@ -249,7 +247,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.centerIn: parent
                 Layout.margins: 0
                 color: Kirigami.Theme.disabledTextColor
-                width: Kirigami.Units.smallSpacing / 2
+                width: Math.round(Kirigami.Units.smallSpacing / 2)
             }
             JourneySectionStopDelegateLineSegment {
                 anchors.fill: parent

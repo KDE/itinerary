@@ -47,7 +47,6 @@ App.TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout {
-                Layout.margins: 0
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
 
@@ -64,10 +63,11 @@ App.TimelineDelegate {
                 }
             }
 
-            ColumnLayout{
-                spacing:0
+            ColumnLayout {
+                spacing: 0
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 QQC2.Label {
                     Layout.fillWidth: true
                     font.bold: true
@@ -91,8 +91,8 @@ App.TimelineDelegate {
                     }
                 }
                 QQC2.Label {
-                    visible: text !== ""
-                    width: topLayout.width
+                    visible: text.length > 0
+                    Layout.fillWidth: true
                     text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
                                                              reservationFor.arrivalBusStop.address,
                                                              Settings.homeCountryIsoCode)
@@ -109,7 +109,6 @@ App.TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout {
-                Layout.margins: 0
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
 
@@ -125,10 +124,11 @@ App.TimelineDelegate {
                     isArrival: true
                 }
             }
-            ColumnLayout{
-                spacing:0
+            ColumnLayout {
+                spacing: 0
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 QQC2.Label {
                     Layout.fillWidth: true
                     font.bold: true
@@ -137,7 +137,6 @@ App.TimelineDelegate {
                 Row {
                     Layout.fillWidth: true
 
-                    width: topLayout.width
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: i18n("Arrival: %1", Localizer.formatTime(reservationFor, "arrivalTime"))
@@ -159,7 +158,7 @@ App.TimelineDelegate {
                     }
                 }
                 QQC2.Label {
-                    visible: text !== ""
+                    visible: text.length > 0
                     width: topLayout.width
                     text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
                                                              reservationFor.departureBusStop.address,

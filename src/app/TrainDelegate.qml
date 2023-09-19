@@ -48,14 +48,15 @@ App.TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout {
-                Layout.margins: 0
                 spacing: 0
+
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
                 }
+
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
@@ -90,7 +91,7 @@ App.TimelineDelegate {
                             if (platform) {
                                 return i18n("Pl. %1", platform);
                             } else {
-                                return i18n("");
+                                return "";
                             }
                         }
                     }
@@ -98,7 +99,7 @@ App.TimelineDelegate {
                 Row {
                     Layout.fillWidth: true
 
-                    width: topLayout.width
+                    Layout.prefferredWidht: topLayout.width
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: i18n("Departure: %1", Localizer.formatTime(reservationFor, "departureTime"))
@@ -116,7 +117,7 @@ App.TimelineDelegate {
                 QQC2.Label {
                     Layout.fillWidth: true
 
-                    visible: text !== ""
+                    visible: text.length > 0
                     text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
                                                              reservationFor.arrivalStation.address,
                                                              Settings.homeCountryIsoCode)
@@ -136,7 +137,6 @@ App.TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout {
-                Layout.margins: 0
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
 
@@ -186,7 +186,7 @@ App.TimelineDelegate {
                 Row {
                     Layout.fillWidth: true
 
-                    width: topLayout.width
+                    Layout.prefferredWidth: topLayout.width
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: i18n("Arrival: %1", Localizer.formatTime(reservationFor, "arrivalTime"))
@@ -201,7 +201,7 @@ App.TimelineDelegate {
                         Accessible.ignored: !visible
                     }
                     QQC2.Label {
-                        text: i18n("(+ 1 day)")
+                        text: i18nc("Arrival at the location is a day later", "(+ 1 day)")
                         color: Kirigami.Theme.disabledTextColor
                         visible: Localizer.formatDate(reservationFor, "arrivalTime") !== Localizer.formatDate(reservationFor, "departureTime")
                         Accessible.ignored: !visible
@@ -210,7 +210,7 @@ App.TimelineDelegate {
                 QQC2.Label {
                     Layout.fillWidth: true
 
-                    visible: text !== ""
+                    visible: text.length > 0
                     width: topLayout.width
                     text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
                                                              reservationFor.departureStation.address,
