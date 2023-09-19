@@ -17,73 +17,70 @@ import "." as App
  */
 Item {
     id: lineSegment
-
+    clip: true
     property bool isDeparture: false
     property bool isArrival: false
     property color lineColor: Kirigami.Theme.textColor
-    property int lineWidth: Kirigami.Units.smallSpacing
+    property int lineWidth: Kirigami.Units.smallSpacing *4
 
     property real leadingProgress: NaN
     property real trailingProgress: NaN
     property bool hasStop: true
     property bool showStop: lineSegment.hasStop
 
-    implicitWidth: lineSegment.lineWidth * 5
+    implicitWidth: lineSegment.lineWidth *2
 
-    readonly property real leadingLineLength: leadingLine.height
-    readonly property real trailingLineLength: trailingLine.height
+    readonly property real leadingLineLength: line.height
+    readonly property real trailingLineLength: line.height
 
     readonly property bool isIntermediate: !isDeparture && !isArrival
 
-    Rectangle {
-        id: leadingLine
-        x: 2 * lineSegment.lineWidth
+    Kirigami.ShadowedRectangle {
+        id: line
+        x: lineSegment.lineWidth / 2
+        y: isDeparture? parent.height-height:0
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
-        height: {
-            let l = parent.height / 2;
-            if (lineSegment.hasStop) {
-                l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
-            }
-            if (isNaN(lineSegment.leadingProgress)) {
-                return l;
-            }
-            l *= leadingProgress;
-            return Math.max(0.0, l);
+
+        corners {
+            topRightRadius: isDeparture? width/2 : 0
+            topLeftRadius: isDeparture? width/2 : 0
+
+            bottomRightRadius: isArrival? width/2 : 0
+            bottomLeftRadius: isArrival? width/2 : 0
         }
-        visible: !isDeparture
-    }
-    Rectangle {
-        id: trailingLine
-        x: 2 * lineSegment.lineWidth
-        y: stopDot.y + (lineSegment.hasStop ? stopDot.height - lineSegment.lineWidth / 2 : stopDot.height / 2)
-        width: lineSegment.lineWidth
-        color: lineSegment.lineColor
-        height: {
-            let l = parent.height / 2;
-            if (lineSegment.hasStop) {
-                l -= stopDot.height / 2 - lineSegment.lineWidth / 2;
+        height:
+            if (isArrival) {
+                parent.height /2 + lineSegment.lineWidth / 2
+            }else if (isDeparture){
+                parent.height /2 + lineSegment.lineWidth / 2
+            } else {
+                parent.height
             }
-            if (isNaN(lineSegment.trailingProgress)) {
-                return l;
-            }
-            l *= trailingProgress;
-            return Math.max(0.0, l);
-        }
-        visible: !isArrival
     }
+    Kirigami.ShadowedRectangle {
+        id: progress
+        x: line.x + (line.width - width) /2
+        y: line.y + (isDeparture ? (line.width - width) /2 + 0.3 * line.width: 0)
+        width: lineSegment.lineWidth * 0.6
+        color: "white"
+        opacity: 0.5
+        height: Math.max(
+                    0.0, ((isDeparture || isArrival )? line.height - (line.width - width) /2 - line.width * 0.3 : line.height) *
+                    (trailingProgress + leadingProgress) / ((isDeparture || isArrival)? 1:2)
+                    );
+    }
+
 
     Rectangle {
         id: stopDot
+        x: line.x + (line.width - width )/2
+        y: parent.height /2 - width/2
         radius: width / 2
-        width: lineSegment.lineWidth * (isIntermediate ? 4 : 5)
+        width: lineSegment.lineWidth * (isIntermediate ? 0.3 : 0.6)
         height: width
-        border {
-            width: lineSegment.lineWidth
-            color: lineSegment.lineColor
-        }
-        color: "transparent"
-        anchors.centerIn: parent
-        visible: lineSegment.showStop && lineSegment.hasStop
+        color: "white"
+        opacity: isIntermediate ? 0.5:1
+//        visible: lineSegment.showStop && lineSegment.hasStop
     }
 }

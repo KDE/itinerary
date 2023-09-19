@@ -44,85 +44,137 @@ App.TimelineDelegate {
 
     contentItem: Column {
         id: topLayout
-        spacing: Kirigami.Units.smallSpacing
 
-        QQC2.Label {
-            text: {
-                let platform = "";
-                if (departure.hasExpectedPlatform) {
-                    platform = departure.expectedPlatform;
-                } else if (reservationFor.departurePlatform) {
-                    platform = reservationFor.departurePlatform;
+        RowLayout {
+            width: parent.width
+            JourneySectionStopDelegateLineSegment {
+
+                Layout.fillHeight: true
+                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                isDeparture: true
+            }
+            ColumnLayout{
+                spacing:0
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                RowLayout {
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        font.bold: true
+                        text: reservationFor.departureStation.name
+                    }
+                    QQC2.Label {
+                        Layout.alignment: Qt.AlignRight
+                        text: {
+                            let platform = "";
+                            if (departure.hasExpectedPlatform) {
+                                platform = departure.expectedPlatform;
+                            } else if (reservationFor.departurePlatform) {
+                                platform = reservationFor.departurePlatform;
+                            }
+
+                            if (platform) {
+                                return i18n("Pl. %1", platform);
+                            } else {
+                                return i18n("");
+                            }
+                        }
+                    }
                 }
+                QQC2.Label {
+                    Layout.fillWidth: true
 
-                const station = reservationFor.departureStation.name;
-                if (platform) {
-                    return i18nc("Train departure", "Departure from %1 on platform %2", station, platform);
-                } else {
-                    return i18nc("Train departure", "Departure from %1", station);
+                    visible: text !== ""
+                    text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+                                                             reservationFor.arrivalStation.address,
+                                                             Settings.homeCountryIsoCode)
+                    width: topLayout.width
+                }
+                Kirigami.Separator {
+                    Layout.topMargin: Kirigami.Units.smallSpacing
+                    Layout.bottomMargin: Kirigami.Units.smallSpacing
+                    Layout.fillWidth: true
                 }
             }
-            color: Kirigami.Theme.textColor
-            wrapMode: Text.WordWrap
-            width: topLayout.width
-        }
-        QQC2.Label {
-            visible: text !== ""
-            text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
-                                                     reservationFor.arrivalStation.address,
-                                                     Settings.homeCountryIsoCode)
-            width: topLayout.width
+
         }
 
         // TODO reserved seat
 
-        Kirigami.Separator {
-            width: topLayout.width
-        }
-        QQC2.Label {
-            text: {
-                let platform = "";
-                if (arrival.hasExpectedPlatform) {
-                    platform = arrival.expectedPlatform;
-                } else if (reservationFor.arrivalPlatform) {
-                    platform = reservationFor.arrivalPlatform;
+
+        RowLayout {
+            width: parent.width
+            JourneySectionStopDelegateLineSegment {
+
+                Layout.fillHeight: true
+                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                isArrival: true
+            }
+            ColumnLayout{
+                spacing:0
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                RowLayout {
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        font.bold: true
+                        text: reservationFor.arrivalStation.name
+                    }
+                    QQC2.Label {
+                        Layout.alignment: Qt.AlignRight
+                            text: {
+                                let platform = "";
+                                if (arrival.hasExpectedPlatform) {
+                                    platform = arrival.expectedPlatform;
+                                } else if (reservationFor.arrivalPlatform) {
+                                    platform = reservationFor.arrivalPlatform;
+                                }
+
+                            if (platform) {
+                                return i18n("Pl. %1", platform);
+                            } else {
+                                return i18n("");
+                            }
+                        }
+                    }
                 }
 
-                const station = reservationFor.arrivalStation.name;
+                Row {
+                    Layout.fillWidth: true
 
-                if (platform) {
-                    return i18nc("Train arrival", "Arrival at %1 on platform %2", station, platform);
-                } else {
-                    return i18nc("Train arrival", "Arrival at %1", station);
+                    width: topLayout.width
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: i18n("Arrival: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
+                        color: Kirigami.Theme.textColor
+                        wrapMode: Text.WordWrap
+                        visible: reservationFor.arrivalTime > 0
+                    }
+                    QQC2.Label {
+                        text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                        color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                        visible: arrival.hasExpectedArrivalTime
+                        Accessible.ignored: !visible
+                    }
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+
+                    visible: text !== ""
+                    width: topLayout.width
+                    text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+                                                             reservationFor.departureStation.address,
+                                                             Settings.homeCountryIsoCode)
                 }
             }
-            color: Kirigami.Theme.textColor
-            wrapMode: Text.WordWrap
-            width: topLayout.width
+
         }
-        Row {
-            width: topLayout.width
-            spacing: Kirigami.Units.smallSpacing
-            QQC2.Label {
-                text: i18n("Arrival time: %1", Localizer.formatDateTime(reservationFor, "arrivalTime"))
-                color: Kirigami.Theme.textColor
-                wrapMode: Text.WordWrap
-                visible: reservationFor.arrivalTime > 0
-            }
-            QQC2.Label {
-                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                visible: arrival.hasExpectedArrivalTime
-                Accessible.ignored: !visible
-            }
-        }
-        QQC2.Label {
-            visible: text !== ""
-            width: topLayout.width
-            text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
-                                                     reservationFor.departureStation.address,
-                                                     Settings.homeCountryIsoCode)
-        }
+
+
     }
 
     onClicked: showDetailsPage(trainDetailsPage, root.batchId)
