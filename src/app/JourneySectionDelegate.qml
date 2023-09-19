@@ -123,7 +123,7 @@ MobileForm.AbstractFormDelegate {
             color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
             Layout.alignment: Qt.AlignHCenter
-            Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+            Layout.preferredWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
 
             Kirigami.Icon {
                 id: modeIcon
@@ -147,7 +147,14 @@ MobileForm.AbstractFormDelegate {
                     switch (modelData.mode) {
                     case JourneySection.PublicTransport:
                     {
-                        var l = modelData.route.line.modeString + " " + modelData.route.line.name;
+                        var l = ""
+
+                        if (modelData.route.line.modeString) {
+                            l += modelData.route.line.modeString + " "
+                        }
+
+                        l += modelData.route.line.name;
+
                         if (modelData.route.direction)
                             return i18n("%1 to %2 (%3)", l, modelData.route.direction, Localizer.formatDuration(modelData.duration));
                         return i18n("%1 (%2)", l, Localizer.formatDuration(modelData.duration));
