@@ -52,20 +52,7 @@ Item {
             hasStop: !isIntermediate || stop.disruptionEffect !== Disruption.NoService
             showStop: false
             leadingProgress: root.leadingProgress
-            trailingProgress: root.trailingProgress
-
-//            JourneySectionStopDelegateLineSegment {
-//                visible: false
-//                id: progressLineSegment
-//                anchors.fill: parent
-//                isArrival: root.isArrival
-//                isDeparture: root.isDeparture
-//                lineColor: Kirigami.Theme.activeTextColor
-//                hasStop: lineSegment.hasStop
-//                showStop: false
-//                leadingProgress: root.leadingProgress
-//                trailingProgress: Math.min(1.0, (root.trailingProgress * root.trailingSegmentLength) / lineSegment.trailingLineLength)
-//            }
+            trailingProgress: root.trailingProgres
         }
 
         QQC2.Label {
