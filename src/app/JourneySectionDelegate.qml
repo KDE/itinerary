@@ -15,8 +15,11 @@ import "." as App
 
 MobileForm.AbstractFormDelegate {
     id: root
-
+    topPadding:0
+    bottomPadding:0
     required property var modelData
+    required property int index
+    required property int modelLength
 
     onClicked: {
         if (modelData.mode == JourneySection.PublicTransport) {
@@ -31,12 +34,38 @@ MobileForm.AbstractFormDelegate {
     }
 
     contentItem: GridLayout {
-        columns: 2
+        Layout.margins: 0
+        rowSpacing: 0
+        columns: 3
 
         // top row: departure time, departure location, departure platform
+        Item {
+            width: departureLine.width
+            Layout.fillHeight: true
+            Rectangle{
+                visible: index != 0 || modelData.mode == JourneySection.Walking
+                height: parent.height
+                anchors.centerIn: parent
+                Layout.margins: 0
+                color: Kirigami.Theme.disabledTextColor
+                width: Kirigami.Units.smallSpacing / 2
+            }
+            JourneySectionStopDelegateLineSegment {
+                id: departureLine
+                anchors.topMargin: Kirigami.Units.mediumSpacing
+                anchors.fill: parent
+                lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                isDeparture: true
+                visible: modelData.mode !== JourneySection.Walking
+            }
+        }
         RowLayout {
+            Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+            Layout.topMargin: Kirigami.Units.mediumSpacing
             visible: root.modelData.mode != JourneySection.Waiting
+
             QQC2.Label {
+                id: depTime
                 text: Localizer.formatTime(root.modelData, "scheduledDepartureTime")
             }
             QQC2.Label {
@@ -54,9 +83,11 @@ MobileForm.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.topMargin: Kirigami.Units.mediumSpacing
             visible: root.modelData.mode !== JourneySection.Waiting
             QQC2.Label {
                 text: modelData.from.name
+                font.bold: true
                 Layout.fillWidth: true
                 elide: Text.ElideRight
             }
@@ -68,12 +99,28 @@ MobileForm.AbstractFormDelegate {
                 visible: root.modelData.scheduledDeparturePlatform.length > 0
             }
         }
-
         // middle row: mode symbol, transport mode, duration
+        Item {
+            width: departureLine.width
+            Layout.fillHeight: true
+
+            Rectangle{
+                height: parent.height
+                anchors.centerIn: parent
+                Layout.margins: 0
+                color: Kirigami.Theme.disabledTextColor
+                width: Kirigami.Units.smallSpacing / 2
+            }
+            JourneySectionStopDelegateLineSegment {
+                anchors.fill: parent
+                lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                hasStop: false
+                visible: modelData.mode !== JourneySection.Walking
+            }
+        }
         Rectangle {
             color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
-            implicitWidth: modeIcon.width
             Layout.alignment: Qt.AlignHCenter
 
             Kirigami.Icon {
@@ -121,9 +168,99 @@ MobileForm.AbstractFormDelegate {
                 loadInformation: modelData.loadInformation
             }
         }
+        // optional middle row: notes
+        Item {
+            visible: modelData.notes.length > 0
+            width: departureLine.width
+            Layout.fillHeight: true
+            Rectangle{
+                height: parent.height
+                anchors.centerIn: parent
+                Layout.margins: 0
+                color: Kirigami.Theme.disabledTextColor
+                width: Kirigami.Units.smallSpacing / 2
+            }
+            JourneySectionStopDelegateLineSegment {
+                anchors.fill: parent
+                lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                hasStop: false
+                visible: modelData.mode !== JourneySection.Walking
+            }
+        }
+        Item{
+            visible: modelData.notes.length > 0
+            width: Kirigami.Units.largeSpacing
+            Layout.fillHeight: true
+        }
+        ColumnLayout {
+            visible: modelData.notes.length > 0
+            Layout.fillWidth: true
+            QQC2.Label {
+                id: notesLabel
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: modelData.notes.join("<br/>")
+                color: Kirigami.Theme.disabledTextColor
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                verticalAlignment: Text.AlignTop
+                // Doesn't work with RichText.
+                elide: Text.ElideRight
+                maximumLineCount: 6
+                Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
+                visible: modelData.notes.length > 0
+                font.italic: true
+                clip: implicitHeight > height
+                onLinkActivated: Qt.openUrlExternally(link)
 
+                Kirigami.OverlaySheet {
+                    id: moreNotesSheet
+                    header: Kirigami.Heading {
+                        text: journeyTitleLabel.text
+                    }
+
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        text: modelData.notes.join("<br/>")
+                        textFormat: Text.RichText
+                        wrapMode: Text.Wrap
+                        onLinkActivated: Qt.openUrlExternally(link)
+                    }
+                }
+            }
+            Kirigami.LinkButton {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                text: i18nc("@action:button", "Show More…")
+                visible: notesLabel.implicitHeight > notesLabel.height
+                onClicked: {
+                    moreNotesSheet.open();
+                }
+            }
+        }
         // last row: arrival information
+        Item {
+            width: departureLine.width
+            Layout.fillHeight: true
+
+            Rectangle{
+                visible: index != modelLength || modelData.mode == JourneySection.Walking
+                height: parent.height
+                anchors.centerIn: parent
+                Layout.margins: 0
+                color: Kirigami.Theme.disabledTextColor
+                width: Kirigami.Units.smallSpacing / 2
+            }
+            JourneySectionStopDelegateLineSegment {
+                anchors.fill: parent
+                anchors.bottomMargin: Kirigami.Units.mediumSpacing
+                lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
+                isArrival: true
+                visible: modelData.mode !== JourneySection.Walking
+            }
+        }
         RowLayout {
+            Layout.bottomMargin: Kirigami.Units.mediumSpacing
             visible: modelData.mode != JourneySection.Waiting
             QQC2.Label {
                 text: Localizer.formatTime(modelData, "scheduledArrivalTime")
@@ -135,9 +272,11 @@ MobileForm.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.bottomMargin: Kirigami.Units.mediumSpacing
             visible: modelData.mode != JourneySection.Waiting
             QQC2.Label {
                 text: modelData.to.name
+                font.bold: true
                 Layout.fillWidth: true
                 elide: Text.ElideRight
             }
@@ -150,47 +289,6 @@ MobileForm.AbstractFormDelegate {
             }
         }
 
-        // optional bottom row: notes
-        QQC2.Label {
-            id: notesLabel
-            Layout.columnSpan: 2
-            Layout.fillWidth: true
-            text: modelData.notes.join("<br/>")
-            textFormat: Text.RichText
-            wrapMode: Text.Wrap
-            verticalAlignment: Text.AlignTop
-            // Doesn't work with RichText.
-            elide: Text.ElideRight
-            maximumLineCount: 6
-            Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
-            visible: modelData.notes.length > 0
-            font.italic: true
-            clip: implicitHeight > height
-            onLinkActivated: Qt.openUrlExternally(link)
 
-            Kirigami.OverlaySheet {
-                id: moreNotesSheet
-                header: Kirigami.Heading {
-                    text: journeyTitleLabel.text
-                }
-
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: modelData.notes.join("<br/>")
-                    textFormat: Text.RichText
-                    wrapMode: Text.Wrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
-            }
-        }
-
-        Kirigami.LinkButton {
-            Layout.columnSpan: 2
-            text: i18nc("@action:button", "Show More…")
-            visible: notesLabel.implicitHeight > notesLabel.height
-            onClicked: {
-                moreNotesSheet.open();
-            }
-        }
     }
 }
