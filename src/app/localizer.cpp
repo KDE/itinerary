@@ -9,7 +9,9 @@
 #include <kitinerary_version.h>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
 #include <KItinerary/PriceUtil>
+#endif
 
 #include <KContacts/Address>
 
