@@ -6,6 +6,7 @@
 
 #include "localizer.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
 #include <KItinerary/PriceUtil>
@@ -257,7 +258,11 @@ QString Localizer::formatTemperature(double temperature)
 
 QString Localizer::formatCurrency(double value, const QString &isoCode)
 {
+#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
     const auto decimalCount = PriceUtil::decimalCount(isoCode);
+#else
+    const auto decimalCount = 2;
+#endif
 
     // special case for displaying conversion rates (which can be very small)
     // and thus need a higher precision than regular values
@@ -267,5 +272,5 @@ QString Localizer::formatCurrency(double value, const QString &isoCode)
         return QLocale().toCurrencyString(value, isoCode);
     }
 
-    return QLocale().toCurrencyString(value, isoCode, PriceUtil::decimalCount(isoCode));
+    return QLocale().toCurrencyString(value, isoCode, decimalCount);
 }
