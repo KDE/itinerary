@@ -218,7 +218,7 @@ MobileForm.AbstractFormDelegate {
                 verticalAlignment: Text.AlignTop
                 // Doesn't work with RichText.
                 elide: Text.ElideRight
-                maximumLineCount: 6
+                maximumLineCount: 3
                 Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
                 visible: modelData.notes.length > 0
                 font.italic: true
