@@ -35,16 +35,34 @@ ColumnLayout {
             color: Kirigami.Theme.textColor
             font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
-
         QQC2.Label {
             text: (journey.departureDelay >= 0 ? "+" : "") + journey.departureDelay;
             color: journey.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
             visible: journey.hasExpectedDepartureTime && journey.disruption != Disruption.NoService
             font.strikeout: journey.disruptionEffect === Disruption.NoService
         }
+        QQC2.Label {
+            text: "-"
+            color: Kirigami.Theme.textColor
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
+        }
+        QQC2.Label {
+            text: Localizer.formatTime(journey, "scheduledArrivalTime")
+            color: Kirigami.Theme.textColor
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
+        }
+        QQC2.Label {
+            text: (journey.arrivalDelay >= 0 ? "+" : "") + journey.arrivalDelay;
+            color: journey.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor;
+            visible: journey.hasExpectedArrivalTime && journey.disruption != Disruption.NoService
+            font.strikeout: journey.disruptionEffect === Disruption.NoService
+        }
+
+
 
         QQC2.Label {
-            text: Localizer.formatDuration(journey.duration)
+            text: Localizer.formatDuration(journey.duration) + i18n(" h")
+            font.bold: true
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignRight
