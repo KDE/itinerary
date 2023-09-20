@@ -120,20 +120,26 @@ MobileForm.AbstractFormDelegate {
                 visible: !(modelData.mode == JourneySection.Transfer || modelData.mode == JourneySection.Walking)
             }
         }
-        Rectangle {
-            color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
-            implicitHeight: Kirigami.Units.iconSizes.smallMedium
-            Layout.alignment: Qt.AlignHCenter
+        Item{
             Layout.preferredWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+            implicitHeight: Kirigami.Units.iconSizes.smallMedium
 
-            Kirigami.Icon {
-                id: modeIcon
+            Rectangle {
+                color: (root.modelData.route.line.hasColor && !modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo) ? modelData.route.line.color : "transparent"
+                implicitHeight: parent.height
+                implicitWidth: modeIcon.width
                 anchors.centerIn: parent
-                source: PublicTransport.journeySectionIcon(modelData)
-                color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
-                width: !isMask ? implicitWidth : height
-                height: parent.height
-                isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
+                radius: Kirigami.Units.smallSpacing
+
+                Kirigami.Icon {
+                    id: modeIcon
+                    anchors.centerIn: parent
+                    source: PublicTransport.journeySectionIcon(modelData)
+                    color: modelData.route.line.hasTextColor ? modelData.route.line.textColor : Kirigami.Theme.textColor
+                    width: !isMask ? implicitWidth : height
+                    height: parent.height
+                    isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
+                }
             }
         }
         RowLayout {
