@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-13 00:47+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2023-08-25 05:02+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1215,7 +1215,7 @@ msgstr "Borrar pase"
 msgid "Do you really want to delete this pass?"
 msgstr "¿Realmente desea borrar este pase?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:327 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:348 app/main.qml:21 app/main.qml:149
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1944,43 +1944,43 @@ msgstr "Posición"
 msgid "Journey"
 msgstr "Viaje"
 
-#: app/localizer.cpp:182
+#: app/localizer.cpp:185
 #, kde-format
 msgctxt "day-only date format"
 msgid "dd MMMM"
 msgstr "dd MMMM"
 
-#: app/localizer.cpp:227
+#: app/localizer.cpp:230
 #, kde-format
 msgctxt "distance in meter"
 msgid "%1 m"
 msgstr "%1 m"
 
-#: app/localizer.cpp:230 app/localizer.cpp:232
+#: app/localizer.cpp:233 app/localizer.cpp:235
 #, kde-format
 msgctxt "distance in kilometer"
 msgid "%1 km"
 msgstr "%1 km"
 
-#: app/localizer.cpp:238
+#: app/localizer.cpp:241
 #, kde-format
 msgctxt "speed in kilometers per hour"
 msgid "%1 km/h"
 msgstr "%1 km/h"
 
-#: app/localizer.cpp:244
+#: app/localizer.cpp:247
 #, kde-format
 msgctxt "weight in gram"
 msgid "%1 g"
 msgstr "%1 g"
 
-#: app/localizer.cpp:247 app/localizer.cpp:249
+#: app/localizer.cpp:250 app/localizer.cpp:252
 #, kde-format
 msgctxt "weight in kilogram"
 msgid "%1 kg"
 msgstr "%1 kg"
 
-#: app/localizer.cpp:255
+#: app/localizer.cpp:258
 #, kde-format
 msgctxt "temperature"
 msgid "%1°C"
@@ -2088,22 +2088,22 @@ msgstr "Tipo M"
 msgid "Type N"
 msgstr "Tipo N"
 
-#: app/main.cpp:334
+#: app/main.cpp:355
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Asistente de viaje digital"
 
-#: app/main.cpp:335
+#: app/main.cpp:356
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1 La Comunidad KDE"
 
-#: app/main.cpp:342
+#: app/main.cpp:363
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Abrir Itinerary en la página indicada"
 
-#: app/main.cpp:347
+#: app/main.cpp:368
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Archivos o URL para importar."
