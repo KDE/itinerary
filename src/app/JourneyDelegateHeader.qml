@@ -61,7 +61,7 @@ ColumnLayout {
 
 
         QQC2.Label {
-            text: Localizer.formatDuration(journey.duration) + i18n(" h")
+            text: i18nc("time in hours", "% h", Localizer.formatDuration(journey.duration))
             font.bold: true
             color: Kirigami.Theme.textColor
             Layout.fillWidth: true

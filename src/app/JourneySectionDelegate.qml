@@ -86,7 +86,7 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.topMargin: Kirigami.Units.mediumSpacing
-            visible: !(root.modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+            visible: root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking
 
             QQC2.Label {
                 text: modelData.from.name
@@ -117,7 +117,7 @@ MobileForm.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 hasStop: false
-                visible: !(modelData.mode == JourneySection.Transfer || modelData.mode == JourneySection.Walking)
+                visible: modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
             }
         }
         Item{
@@ -143,8 +143,8 @@ MobileForm.AbstractFormDelegate {
             }
         }
         RowLayout {
-            Layout.topMargin: modelData.mode == JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
-            Layout.bottomMargin: modelData.mode == JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
+            Layout.topMargin: modelData.mode === JourneySection.Walking ? Kirigami.Units.largeSpacing * 3 : 0
+            Layout.bottomMargin: modelData.mode === JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
 
             Layout.fillWidth: true
             QQC2.Label {
@@ -263,7 +263,7 @@ MobileForm.AbstractFormDelegate {
             visible: modelData.mode !== JourneySection.Walking
 
             Rectangle{
-                visible: index != modelLength || modelData.mode == JourneySection.Walking
+                visible: index !== modelLength || modelData.mode === JourneySection.Walking
                 height: parent.height
                 anchors.centerIn: parent
                 Layout.margins: 0
@@ -294,7 +294,7 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: !(modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+            visible: modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking)
 
             QQC2.Label {
                 text: modelData.to.name

@@ -61,12 +61,12 @@ Item {
     Kirigami.ShadowedRectangle {
         id: progress
         x: line.x + (line.width - width) /2
-        y: line.y + (isDeparture ? (line.width - width) /2 + 0.3 * line.width: 0)
+        y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width: 0)
         width: lineSegment.lineWidth * 0.6
         color: "white"
         opacity: 0.5
         height: Math.max(
-                    0.0, ((isDeparture || isArrival )? line.height - (line.width - width) /2 - line.width * 0.3 : line.height) *
+                    0.0, ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
                     (trailingProgress + leadingProgress) / ((isDeparture || isArrival)? 1:2)
                     );
     }
@@ -74,8 +74,8 @@ Item {
 
     Rectangle {
         id: stopDot
-        x: line.x + (line.width - width )/2
-        y: parent.height /2 - width/2
+        x: line.x + (line.width - width) / 2
+        y: parent.height / 2 - width / 2
         radius: width / 2
         width: lineSegment.lineWidth * (isIntermediate ? 0.3 : 0.6)
         height: width
