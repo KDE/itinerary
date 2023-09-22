@@ -63,7 +63,7 @@ Item {
         x: line.x + (line.width - width) /2
         y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width: 0)
         width: lineSegment.lineWidth * 0.6
-        color: "white"
+        color: Kirigami.Theme.backgroundColor
         opacity: 0.5
         height: Math.max(
                     0.0, ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
@@ -79,7 +79,7 @@ Item {
         radius: width / 2
         width: lineSegment.lineWidth * (isIntermediate ? 0.3 : 0.6)
         height: width
-        color: "white"
+        color: Kirigami.Theme.backgroundColor
         opacity: isIntermediate ? 0.5:1
         visible:lineSegment.hasStop
     }
