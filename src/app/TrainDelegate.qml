@@ -30,7 +30,7 @@ App.TimelineDelegate {
             Accessible.ignored: true
         }
         QQC2.Label {
-            text: "→ " + departure.route.direction
+            text: departure.route.direction? "→ " + departure.route.direction : ""
             color: root.headerTextColor
             elide: Text.ElideRight
             Layout.fillWidth: true
