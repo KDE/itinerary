@@ -103,8 +103,10 @@ Kirigami.AbstractCard {
             spacing: 0
 
             Repeater {
+                id: journeyRepeater
                 delegate: App.JourneySectionDelegate{
                     Layout.fillWidth: true
+                    modelLength: journeyRepeater.count - 1
                 }
                 model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
             }
