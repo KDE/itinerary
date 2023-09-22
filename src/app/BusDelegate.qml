@@ -75,7 +75,6 @@ App.TimelineDelegate {
                 }
                 Row {
                     Layout.fillWidth: true
-                    width: topLayout.width
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: i18n("Departure: %1", Localizer.formatTime(reservationFor, "departureTime"))
