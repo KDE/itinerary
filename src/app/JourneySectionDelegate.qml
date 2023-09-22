@@ -294,7 +294,7 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking)
+            visible: modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking
 
             QQC2.Label {
                 text: modelData.to.name
