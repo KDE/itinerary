@@ -39,6 +39,7 @@ Item {
         height: parent.height
         columns: 6
         rows: 3
+        rowSpacing: 0
         JourneySectionStopDelegateLineSegment {
             id: lineSegment
             Layout.column: 0
@@ -182,31 +183,18 @@ Item {
             QQC2.ToolTip.visible: hovered
         }
 
-        // intermediate stop notes
-        Item {
+
+        JourneySectionStopDelegateLineSegment {
             Layout.column: 0
             Layout.row: 2
             Layout.fillHeight: true
-            implicitWidth: lineSegment.implicitWidth
             visible: notesLabel.visible
-
-            Rectangle {
-                id: stopNotesLine
-                y: -layout.rowSpacing
-                x: 2 * lineSegment.lineWidth
-                width: lineSegment.lineWidth
-                color: lineSegment.lineColor
-                height: parent.height - y
-
-                Rectangle {
-                    id: progressNotesLine
-                    width: parent.width
-                    color: Kirigami.Theme.activeTextColor
-                    height: Math.max(0, (root.trailingProgress * root.trailingSegmentLength) - lineSegment.trailingLineLength)
-                }
-            }
+            lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
+            hasStop: false
+            showStop: false
+            leadingProgress:  root.trailingProgress
+            trailingProgress: root.trailingProgress
         }
-
         QQC2.Label {
             id: notesLabel
             Layout.column: 3
@@ -221,6 +209,7 @@ Item {
             visible: stop.notes.length > 0 && !isDeparture
             font.italic: true
             onLinkActivated: Qt.openUrlExternally(link)
+            color: Kirigami.Theme.disabledTextColor
         }
     }
 }
