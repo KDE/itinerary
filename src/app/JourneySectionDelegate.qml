@@ -40,7 +40,7 @@ MobileForm.AbstractFormDelegate {
 
         // top row: departure time, departure location, departure platform
         Item {
-            visible: modelData.mode !== JourneySection.Walking
+            visible: modelData.mode !== JourneySection.Walking || index === 0
             width: departureLine.width
             Layout.fillHeight: true
             Rectangle{
@@ -51,19 +51,20 @@ MobileForm.AbstractFormDelegate {
                 color: Kirigami.Theme.disabledTextColor
                 width: Kirigami.Units.smallSpacing / 2
             }
+
             JourneySectionStopDelegateLineSegment {
                 id: departureLine
                 anchors.topMargin: Kirigami.Units.mediumSpacing
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
-                visible:  modelData.mode !== JourneySection.Transfer
+                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
             }
         }
         RowLayout {
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.topMargin: Kirigami.Units.mediumSpacing
-            visible: !(root.modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+            visible: ( root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
 
 
             QQC2.Label {
@@ -86,7 +87,7 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.topMargin: Kirigami.Units.mediumSpacing
-            visible: root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking
+            visible: ( root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
 
             QQC2.Label {
                 text: modelData.from.name
@@ -260,7 +261,7 @@ MobileForm.AbstractFormDelegate {
         Item {
             Layout.preferredWidth: departureLine.width
             Layout.fillHeight: true
-            visible: modelData.mode !== JourneySection.Walking
+            visible: modelData.mode !== JourneySection.Walking || index === modelLength
 
             Rectangle{
                 visible: index !== modelLength || modelData.mode === JourneySection.Walking
@@ -275,13 +276,13 @@ MobileForm.AbstractFormDelegate {
                 anchors.bottomMargin: Kirigami.Units.mediumSpacing
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isArrival: true
-                visible: modelData.mode !== JourneySection.Transfer
+                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
             }
         }
         RowLayout {
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: !(modelData.mode == JourneySection.Waiting || modelData.mode == JourneySection.Walking)
+            visible: ( modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking) || index === modelLength
 
             QQC2.Label {
                 text: Localizer.formatTime(modelData, "scheduledArrivalTime")
@@ -294,7 +295,7 @@ MobileForm.AbstractFormDelegate {
         }
         RowLayout {
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
-            visible: modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking
+            visible: ( modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === modelLength
 
             QQC2.Label {
                 text: modelData.to.name
