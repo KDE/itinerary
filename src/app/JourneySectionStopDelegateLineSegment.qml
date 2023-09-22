@@ -30,8 +30,8 @@ Item {
 
     implicitWidth: lineSegment.lineWidth * 2
 
-    readonly property real leadingLineLength: line.height
-    readonly property real trailingLineLength: line.height
+    readonly property real leadingLineLength: line.height / 2
+    readonly property real trailingLineLength: line.height / 2
 
     readonly property bool isIntermediate: !isDeparture && !isArrival
 
@@ -63,12 +63,14 @@ Item {
         x: line.x + (line.width - width) /2
         y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width: 0)
         width: lineSegment.lineWidth * 0.6
-        color: Kirigami.Theme.backgroundColor
-        opacity: 0.5
-        height: Math.max(
-                    0.0, ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
-                    (trailingProgress + leadingProgress) / ((isDeparture || isArrival)? 1:2)
-                    );
+        color: Kirigami.Theme.hoverColor
+        opacity: 0.9
+        height: ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
+                (
+                    isDeparture ? trailingProgress :
+                    isArrival ? leadingProgress :
+                    (leadingProgress + trailingProgress) * 0.5
+                )
     }
 
 

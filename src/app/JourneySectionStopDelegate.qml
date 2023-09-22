@@ -25,8 +25,8 @@ Item {
     readonly property real leadingSegmentLength: lineSegment.leadingLineLength
     readonly property real trailingSegmentLength: lineSegment.trailingLineLength + (notesLabel.visible ? stopNotesLine.height : 0)
     // inbound progress overlay properties
-    property real leadingProgress
-    property real trailingProgress
+    property alias leadingProgress: lineSegment.leadingProgress
+    property alias trailingProgress: lineSegment.trailingProgress
     property alias stopoverPassed: lineSegment.showStop
 
     x: Kirigami.Units.gridUnit
@@ -51,8 +51,6 @@ Item {
             lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor
             hasStop: !isIntermediate || stop.disruptionEffect !== Disruption.NoService
             showStop: false
-            leadingProgress: root.leadingProgress
-            trailingProgress: root.trailingProgres
         }
 
         QQC2.Label {
