@@ -15,6 +15,9 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
+
+    objectName: "JourneyRequestPage"
+
     property var publicTransportManager
 
     /**
@@ -65,8 +68,8 @@ Kirigami.ScrollablePage {
                     const resId = ReservationManager.addReservation(res);
                     LiveDataManager.setJourney(resId, section);
                 }
-                applicationWindow().pageStack.pop();
-                applicationWindow().pageStack.pop();
+                pageStack.clear()
+                pageStack.push(pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")))
             }
         }
     }

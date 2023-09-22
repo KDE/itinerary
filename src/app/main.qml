@@ -25,7 +25,9 @@ Kirigami.ApplicationWindow {
     height: Kirigami.Settings.isMobile ? 720 : 650
     minimumWidth: 300
     minimumHeight: 400
-
+    Kirigami.PagePool {
+        id: pagepool
+    }
     pageStack {
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 
@@ -135,6 +137,9 @@ Kirigami.ApplicationWindow {
         id: calendarImportPage
         App.CalendarImportPage {}
     }
+    footer: App.NavigationBar {
+        id: navigationbar
+    }
     App.CalendarSelectionSheet {
         id: calendarSelector
         // parent: root.Overlay.overlay
@@ -170,19 +175,6 @@ Kirigami.ApplicationWindow {
                 enabled: Solid.NetworkStatus.connectivity != Solid.NetworkStatus.No
                 icon.color: Solid.NetworkStatus.metered != Solid.NetworkStatus.No ? Kirigami.Theme.neutralTextColor : Kirigami.Theme.textColor
                 onTriggered: MapDownloadManager.download();
-            },
-            Kirigami.Action {
-                id: statsAction
-                text: i18n("Statistics")
-                icon.name: "view-statistics"
-                enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(statisticsComponent)
-            },
-            Kirigami.Action {
-                id: passAction
-                text: Kirigami.Settings.isMobile ? i18n("Passes && Programs") : i18n("Passes & Programs") // TODO Kirigami or style bug?
-                icon.name: "wallet-open"
-                onTriggered: pageStack.push(passComponent)
             },
             Kirigami.Action {
                 id: healthCertAction
@@ -242,7 +234,7 @@ Kirigami.ApplicationWindow {
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
     }
-    pageStack.initialPage: mainPageComponent
+    pageStack.initialPage: pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml"))
 
     DropArea {
         id: topDropArea

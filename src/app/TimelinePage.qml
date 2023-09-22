@@ -15,7 +15,6 @@ import "." as App
 
 Kirigami.ScrollablePage {
     id: root
-
     title: i18n("My Itinerary")
     onBackRequested: event => { event.accepted = true; }
 
@@ -36,6 +35,49 @@ Kirigami.ScrollablePage {
         return listView.model.data(idx, TimelineModel.StartDateTimeRole);
     }
 
+    function addTrainTrip() {
+        // find date/time at the current screen center
+        const idx = currentIndex();
+
+        const HOUR = 60 * 60 * 1000;
+        var roundInterval = HOUR;
+        var dt;
+        if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
+            dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
+            roundInterval = 5 * 60 * 1000;
+        } else {
+            dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
+        }
+
+        // clamp to future times and round to the next plausible hour
+        const now = new Date();
+        if (!dt || dt.getTime() < now.getTime()) {
+            dt = now;
+        }
+        if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
+            dt.setTime(dt.getTime() + HOUR * 8);
+        } else {
+            dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
+        }
+
+        // determine where we are at that time
+        const place = TimelineModel.locationAtTime(dt);
+        var country = Settings.homeCountryIsoCode;
+        var departureLocation;
+        if (place) {
+            country = place.address.addressCountry;
+            departureLocation = PublicTransport.locationFromPlace(place, undefined);
+            departureLocation.name = place.name;
+        }
+
+        pageStack.clear()
+        pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
+            publicTransportManager: LiveDataManager.publicTransportManager,
+            initialCountry: country,
+            initialDateTime: dt,
+            departureStop: departureLocation
+        });
+    }
     // context drawer content
     actions.contextualActions: [
         Kirigami.Action {
@@ -53,46 +95,7 @@ Kirigami.ScrollablePage {
             text: i18n("Add train trip...")
             icon.name: "list-add-symbolic"
             onTriggered: {
-                // find date/time at the current screen center
-                const idx = currentIndex();
-
-                const HOUR = 60 * 60 * 1000;
-                var roundInterval = HOUR;
-                var dt;
-                if (listView.model.data(idx, TimelineModel.IsTimeboxedRole) && !listView.model.data(idx, TimelineModel.IsCanceledRole)) {
-                    dt = listView.model.data(idx, TimelineModel.EndDateTimeRole);
-                    roundInterval = 5 * 60 * 1000;
-                } else {
-                    dt = listView.model.data(idx, TimelineModel.StartDateTimeRole);
-                }
-
-                // clamp to future times and round to the next plausible hour
-                const now = new Date();
-                if (!dt || dt.getTime() < now.getTime()) {
-                    dt = now;
-                }
-                if (dt.getTime() % HOUR == 0 && dt.getHours() == 0) {
-                    dt.setTime(dt.getTime() + HOUR * 8);
-                } else {
-                    dt.setTime(dt.getTime() + roundInterval - (dt.getTime() % roundInterval));
-                }
-
-                // determine where we are at that time
-                const place = TimelineModel.locationAtTime(dt);
-                var country = Settings.homeCountryIsoCode;
-                var departureLocation;
-                if (place) {
-                    country = place.address.addressCountry;
-                    departureLocation = PublicTransport.locationFromPlace(place, undefined);
-                    departureLocation.name = place.name;
-                }
-
-                applicationWindow().pageStack.push(Qt.resolvedUrl("JourneyRequestPage.qml"), {
-                    publicTransportManager: LiveDataManager.publicTransportManager,
-                    initialCountry: country,
-                    initialDateTime: dt,
-                    departureStop: departureLocation
-                });
+                addTrainTrip()
             }
         },
         Kirigami.Action {
