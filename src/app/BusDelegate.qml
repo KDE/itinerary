@@ -25,8 +25,13 @@ App.TimelineDelegate {
                 return i18n("%1 to %2", reservationFor.departureBusStop.name, reservationFor.arrivalBusStop.name);
             }
             color: root.headerTextColor
-            Layout.fillWidth: true
             Accessible.ignored: true
+        }
+        QQC2.Label {
+            text: "→ " + departure.route.direction
+            color: root.headerTextColor
+            elide: Text.ElideRight
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: Localizer.formatTime(reservationFor, "departureTime")
