@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-23 01:45+0000\n"
 "PO-Revision-Date: 2023-08-25 12:35+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: app/AboutPage.qml:19 app/main.qml:227
+#: app/AboutPage.qml:19 app/main.qml:219
 #, kde-format
 msgid "About"
 msgstr "A proposito"
@@ -121,7 +121,7 @@ msgstr "Adde a Calendario..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
-#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:158
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:161
 #, kde-format
 msgid "Delete"
 msgstr "Dele"
@@ -180,35 +180,35 @@ msgid "To %1"
 msgstr "A %1"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:109
+#: app/JourneyRequestPage.qml:201 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trainos de longe distantia"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:117
+#: app/JourneyRequestPage.qml:211 app/TransferPage.qml:117
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trainos local"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:125
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Transito Rapide"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:133
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:133
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:141
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -712,7 +712,7 @@ msgstr "Fornitores de datos:"
 msgid "Add Document"
 msgstr "Adde documento"
 
-#: app/DocumentsCard.qml:37 app/main.qml:116
+#: app/DocumentsCard.qml:37 app/main.qml:118
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Omne files (*.*)"
@@ -883,7 +883,7 @@ msgid "Export Favorite Locations"
 msgstr "Exporta Locationes favorite"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:227
+#: app/TimelinePage.qml:230
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX Files (*.gpx)"
@@ -1211,7 +1211,7 @@ msgstr "Dele Pass"
 msgid "Do you really want to delete this pass?"
 msgstr "Tu vermente vole deler iste pass?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:348 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:348 app/main.qml:21 app/main.qml:154
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1326,7 +1326,7 @@ msgstr "Essaya %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperation (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:189
+#: app/HealthCertificatePage.qml:17 app/main.qml:181
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificatos de Sanitate"
@@ -1715,71 +1715,71 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carga connexiones anterior"
 
-#: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
+#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:61
 #, kde-format
 msgid "Select Journey"
 msgstr "Selige Viage"
 
-#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:99
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:102
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Selige Station de Partita"
 
-#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:115
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Selige Station de Arrivata"
 
-#: app/JourneyRequestPage.qml:98
+#: app/JourneyRequestPage.qml:101
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Ex:"
 
-#: app/JourneyRequestPage.qml:111
+#: app/JourneyRequestPage.qml:114
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:123
+#: app/JourneyRequestPage.qml:126
 #, kde-format
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "Tempore de partita:"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:156
 #, kde-format
 msgid "Search Journey"
 msgstr "Cerca Viage"
 
-#: app/JourneyRequestPage.qml:199
+#: app/JourneyRequestPage.qml:202
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Trainos de alte velocitate o intercity"
 
-#: app/JourneyRequestPage.qml:209
+#: app/JourneyRequestPage.qml:212
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Trainos regionbal o local"
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Transito radide, metro, trams"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Servicios de bus local o regional"
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -1892,7 +1892,7 @@ msgstr "Volo %1 a %2:"
 msgid "Itinerary change"
 msgstr "Cambio de itinerario"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:200
+#: app/LiveStatusPage.qml:19 app/main.qml:192
 #, kde-format
 msgid "Live Status"
 msgstr "Stato de Vita"
@@ -2102,107 +2102,92 @@ msgstr "Aperi Itinerary sur le pagina date"
 msgid "Files or URLs to import."
 msgstr "Files o URLs a importar."
 
-#: app/main.qml:57
+#: app/main.qml:59
 #, kde-format
 msgid "Open File..."
 msgstr "Aperi file..."
 
-#: app/main.qml:65
+#: app/main.qml:67
 #, kde-format
 msgid "Paste"
 msgstr "Colla"
 
-#: app/main.qml:74
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr "Scande Codice a barras..."
 
-#: app/main.qml:82
+#: app/main.qml:84
 #, kde-format
 msgid "Add from Calendar..."
 msgstr "Adde ex calendario..."
 
-#: app/main.qml:96
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Billet in linea de Deutsche Bahn..."
 
-#: app/main.qml:103
+#: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Billet in linea de SNFC..."
 
-#: app/main.qml:114
+#: app/main.qml:116
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importa reservation"
 
-#: app/main.qml:116
+#: app/main.qml:118
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass files (*.pkpass)"
 
-#: app/main.qml:116
+#: app/main.qml:118
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "Files PDF(*.pdf)"
 
-#: app/main.qml:116 app/main.qml:125
+#: app/main.qml:118 app/main.qml:127
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "Files de KDE Itinerary  (*.itinerary)"
 
-#: app/main.qml:123
+#: app/main.qml:125
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Exporta datos de itinerario"
 
-#: app/main.qml:154 app/PassPage.qml:102
+#: app/main.qml:159 app/PassPage.qml:102
 #, kde-format
 msgid "Import..."
 msgstr "Importa..."
 
-#: app/main.qml:159
+#: app/main.qml:164
 #, kde-format
 msgid "Check for Updates"
 msgstr "Marcar per actualisationes"
 
-#: app/main.qml:168
+#: app/main.qml:173
 #, kde-format
 msgid "Download Maps"
 msgstr "Discarga Mappas"
 
-#: app/main.qml:176 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Statistica"
-
-#: app/main.qml:183
-#, kde-format
-msgid "Passes && Programs"
-msgstr "Passes && Programmas"
-
-#: app/main.qml:183
-#, kde-format
-msgid "Passes & Programs"
-msgstr "Passes & Programmas"
-
-#: app/main.qml:208
+#: app/main.qml:200
 #, kde-format
 msgid "Settings..."
 msgstr "Preferentias..."
 
-#: app/main.qml:215 app/TripGroupDelegate.qml:157
+#: app/main.qml:207 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exporta..."
 
-#: app/main.qml:220 app/WelcomePage.qml:17
+#: app/main.qml:212 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Adjuta"
 
-#: app/main.qml:290
+#: app/main.qml:282
 #, kde-format
 msgid "Map download finished."
 msgstr "Discargamento de mappa terminate."
@@ -2247,6 +2232,33 @@ msgstr "Basse prioritate"
 msgctxt "matrix room type"
 msgid "Spaces"
 msgstr "Spatios"
+
+#: app/NavigationBar.qml:18
+#, fuzzy, kde-format
+#| msgid "My Itinerary"
+msgid "Itinerary"
+msgstr "Mi Itinerario"
+
+#: app/NavigationBar.qml:24
+#, fuzzy, kde-format
+#| msgid "Delete Trip"
+msgid "Plan Trip"
+msgstr "Dele viage"
+
+#: app/NavigationBar.qml:33
+#, kde-format
+msgid "Passes & Programs"
+msgstr "Passes & Programmas"
+
+#: app/NavigationBar.qml:38 app/TimelinePage.qml:89
+#, kde-format
+msgid "Current Ticket"
+msgstr "Billet currente"
+
+#: app/NavigationBar.qml:45 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Statistica"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -2989,87 +3001,82 @@ msgstr "Participante %1"
 msgid "Traveler %1"
 msgstr "Viagiator %1"
 
-#: app/TimelinePage.qml:19
+#: app/TimelinePage.qml:18
 #, kde-format
 msgid "My Itinerary"
 msgstr "Mi Itinerario"
 
-#: app/TimelinePage.qml:42
+#: app/TimelinePage.qml:84
 #, kde-format
 msgid "Go To Now"
 msgstr "Vade a Nunc"
 
-#: app/TimelinePage.qml:47
-#, kde-format
-msgid "Current Ticket"
-msgstr "Billet currente"
-
-#: app/TimelinePage.qml:53
+#: app/TimelinePage.qml:95
 #, kde-format
 msgid "Add train trip..."
 msgstr "Adde viage de traino"
 
-#: app/TimelinePage.qml:99
+#: app/TimelinePage.qml:102
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "Adde viage de ferry..."
 
-#: app/TimelinePage.qml:111
+#: app/TimelinePage.qml:114
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Adde allogiamento..."
 
-#: app/TimelinePage.qml:122
+#: app/TimelinePage.qml:125
 #, kde-format
 msgid "Add event..."
 msgstr "Adde evento..."
 
-#: app/TimelinePage.qml:134
+#: app/TimelinePage.qml:137
 #, kde-format
 msgid "Add restaurant..."
 msgstr "Adde restaurante..."
 
-#: app/TimelinePage.qml:151
+#: app/TimelinePage.qml:154
 #, kde-format
 msgid "Delete Trip"
 msgstr "Dele viage"
 
-#: app/TimelinePage.qml:152
+#: app/TimelinePage.qml:155
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Tu vermente vole deler iste viage?"
 
-#: app/TimelinePage.qml:171
+#: app/TimelinePage.qml:174
 #, kde-format
 msgid "Export"
 msgstr "Exporta"
 
-#: app/TimelinePage.qml:174
+#: app/TimelinePage.qml:177
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Como file de Itinerary..."
 
-#: app/TimelinePage.qml:183
+#: app/TimelinePage.qml:186
 #, kde-format
 msgid "As GPX file..."
 msgstr "Como file GPX..."
 
-#: app/TimelinePage.qml:198
+#: app/TimelinePage.qml:201
 #, kde-format
 msgid "Send to %1"
 msgstr "Invia a %1"
 
-#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
+#: app/TimelinePage.qml:219 app/TimelinePage.qml:228
 #, kde-format
 msgid "Export Trip"
 msgstr "Exporta viage..."
 
-#: app/TimelinePage.qml:218
+#: app/TimelinePage.qml:221
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Files de  Itinerary  (*.itinerary)"
 
-#: app/TimelinePage.qml:393
+#: app/TimelinePage.qml:396
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nihil sur le itinerario per hodie."
@@ -3540,6 +3547,9 @@ msgstr "Accedente "
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgid "Passes && Programs"
+#~ msgstr "Passes && Programmas"
 
 #~ msgid "Import"
 #~ msgstr "Importa"

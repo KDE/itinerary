@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-23 01:45+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: app/AboutPage.qml:19 app/main.qml:227
+#: app/AboutPage.qml:19 app/main.qml:219
 #, kde-format
 msgid "About"
 msgstr "O aplikácii"
@@ -123,7 +123,7 @@ msgstr "Pridať dokument..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
-#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:158
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:161
 #, kde-format
 msgid "Delete"
 msgstr "Vymazať"
@@ -185,14 +185,14 @@ msgid "To %1"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:109
+#: app/JourneyRequestPage.qml:201 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:117
+#: app/JourneyRequestPage.qml:211 app/TransferPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgctxt "journey query search constraint, title"
@@ -200,14 +200,14 @@ msgid "Local trains"
 msgstr "Umiestnenie:"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:125
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr ""
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:133
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:133
 #, fuzzy, kde-format
 #| msgid "Bus"
 msgctxt "journey query search constraint, title"
@@ -215,7 +215,7 @@ msgid "Bus"
 msgstr "Autobus"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:141
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -756,7 +756,7 @@ msgstr "Poskytovatelia údajov: %1"
 msgid "Add Document"
 msgstr "Pridať dokument"
 
-#: app/DocumentsCard.qml:37 app/main.qml:116
+#: app/DocumentsCard.qml:37 app/main.qml:118
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Všetky súbory (*.*)"
@@ -938,7 +938,7 @@ msgid "Export Favorite Locations"
 msgstr "Obľúbené miesta"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:227
+#: app/TimelinePage.qml:230
 #, fuzzy, kde-format
 #| msgid "All Files (*.*)"
 msgid "GPX Files (*.gpx)"
@@ -1295,7 +1295,7 @@ msgstr "Vymazať"
 msgid "Do you really want to delete this pass?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:348 app/main.qml:21 app/main.qml:149
+#: app/gpxexport.cpp:33 app/main.cpp:348 app/main.qml:21 app/main.qml:154
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerár"
@@ -1417,7 +1417,7 @@ msgstr "Test"
 msgid "Recovery (%1)"
 msgstr "Obnova"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:189
+#: app/HealthCertificatePage.qml:17 app/main.qml:181
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravotné certifikáty"
@@ -1813,77 +1813,77 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:31 app/JourneyRequestPage.qml:58
+#: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:61
 #, fuzzy, kde-format
 #| msgid "Select"
 msgid "Select Journey"
 msgstr "Vybrať"
 
-#: app/JourneyRequestPage.qml:38 app/JourneyRequestPage.qml:99
+#: app/JourneyRequestPage.qml:41 app/JourneyRequestPage.qml:102
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Čas odchodu:"
 
-#: app/JourneyRequestPage.qml:48 app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:51 app/JourneyRequestPage.qml:115
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:98
+#: app/JourneyRequestPage.qml:101
 #, fuzzy, kde-format
 #| msgid "From: %1"
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Od: %1"
 
-#: app/JourneyRequestPage.qml:111
+#: app/JourneyRequestPage.qml:114
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Pre:"
 
-#: app/JourneyRequestPage.qml:123
+#: app/JourneyRequestPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Departure time:"
 msgctxt "departure time for a train"
 msgid "Departure time:"
 msgstr "Čas odchodu:"
 
-#: app/JourneyRequestPage.qml:153
+#: app/JourneyRequestPage.qml:156
 #, kde-format
 msgid "Search Journey"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:199
+#: app/JourneyRequestPage.qml:202
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:209
+#: app/JourneyRequestPage.qml:212
 #, fuzzy, kde-format
 #| msgid "Rename favorite location"
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Premenovať obľúbené miesto"
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2003,7 +2003,7 @@ msgstr "Let %1 z %2 do %3"
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:19 app/main.qml:200
+#: app/LiveStatusPage.qml:19 app/main.qml:192
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2221,110 +2221,95 @@ msgstr ""
 msgid "Files or URLs to import."
 msgstr ""
 
-#: app/main.qml:57
+#: app/main.qml:59
 #, kde-format
 msgid "Open File..."
 msgstr ""
 
-#: app/main.qml:65
+#: app/main.qml:67
 #, kde-format
 msgid "Paste"
 msgstr "Vložiť"
 
-#: app/main.qml:74
+#: app/main.qml:76
 #, kde-format
 msgid "Scan Barcode..."
 msgstr ""
 
-#: app/main.qml:82
+#: app/main.qml:84
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add from Calendar..."
 msgstr "Pridať dokument..."
 
-#: app/main.qml:96
+#: app/main.qml:98
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
 msgstr ""
 
-#: app/main.qml:103
+#: app/main.qml:105
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr ""
 
-#: app/main.qml:114
+#: app/main.qml:116
 #, kde-format
 msgid "Import Reservation"
 msgstr ""
 
-#: app/main.qml:116
+#: app/main.qml:118
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr ""
 
-#: app/main.qml:116
+#: app/main.qml:118
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF súbory (*.pdf)"
 
-#: app/main.qml:116 app/main.qml:125
+#: app/main.qml:118 app/main.qml:127
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr ""
 
-#: app/main.qml:123
+#: app/main.qml:125
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "Export Itinerary Data"
 msgstr "KDE Itinerár"
 
-#: app/main.qml:154 app/PassPage.qml:102
+#: app/main.qml:159 app/PassPage.qml:102
 #, kde-format
 msgid "Import..."
 msgstr "Importovať..."
 
-#: app/main.qml:159
+#: app/main.qml:164
 #, kde-format
 msgid "Check for Updates"
 msgstr "Skontrolovať aktualizácie"
 
-#: app/main.qml:168
+#: app/main.qml:173
 #, fuzzy, kde-format
 #| msgid "Download"
 msgid "Download Maps"
 msgstr "&Prevziať mapy..."
 
-#: app/main.qml:176 app/StatisticsPage.qml:16
-#, fuzzy, kde-format
-msgid "Statistics"
-msgstr "Štatistika"
-
-#: app/main.qml:183
-#, kde-format
-msgid "Passes && Programs"
-msgstr ""
-
-#: app/main.qml:183
-#, kde-format
-msgid "Passes & Programs"
-msgstr ""
-
-#: app/main.qml:208
+#: app/main.qml:200
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavenie..."
 
-#: app/main.qml:215 app/TripGroupDelegate.qml:157
+#: app/main.qml:207 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exportovať..."
 
-#: app/main.qml:220 app/WelcomePage.qml:17
+#: app/main.qml:212 app/WelcomePage.qml:17
 #, fuzzy, kde-format
 msgid "Help"
 msgstr "Pomocník"
 
-#: app/main.qml:290
+#: app/main.qml:282
 #, kde-format
 msgid "Map download finished."
 msgstr ""
@@ -2371,6 +2356,33 @@ msgstr ""
 msgctxt "matrix room type"
 msgid "Spaces"
 msgstr ""
+
+#: app/NavigationBar.qml:18
+#, fuzzy, kde-format
+#| msgid "KDE Itinerary"
+msgid "Itinerary"
+msgstr "KDE Itinerár"
+
+#: app/NavigationBar.qml:24
+#, fuzzy, kde-format
+#| msgid "Delete Document"
+msgid "Plan Trip"
+msgstr "Odstrániť dokument"
+
+#: app/NavigationBar.qml:33
+#, kde-format
+msgid "Passes & Programs"
+msgstr ""
+
+#: app/NavigationBar.qml:38 app/TimelinePage.qml:89
+#, kde-format
+msgid "Current Ticket"
+msgstr "Aktuálny ticket"
+
+#: app/NavigationBar.qml:45 app/StatisticsPage.qml:16
+#, fuzzy, kde-format
+msgid "Statistics"
+msgstr "Štatistika"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3119,95 +3131,90 @@ msgstr "Účastník"
 msgid "Traveler %1"
 msgstr ""
 
-#: app/TimelinePage.qml:19
+#: app/TimelinePage.qml:18
 #, kde-format
 msgid "My Itinerary"
 msgstr ""
 
-#: app/TimelinePage.qml:42
+#: app/TimelinePage.qml:84
 #, kde-format
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:47
-#, kde-format
-msgid "Current Ticket"
-msgstr "Aktuálny ticket"
-
-#: app/TimelinePage.qml:53
+#: app/TimelinePage.qml:95
 #, kde-format
 msgid "Add train trip..."
 msgstr ""
 
-#: app/TimelinePage.qml:99
+#: app/TimelinePage.qml:102
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add ferry trip..."
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:111
+#: app/TimelinePage.qml:114
 #, kde-format
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:122
+#: app/TimelinePage.qml:125
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event..."
 msgstr "Pridať dokument..."
 
-#: app/TimelinePage.qml:134
+#: app/TimelinePage.qml:137
 #, fuzzy, kde-format
 msgid "Add restaurant..."
 msgstr "Rezervácia reštaurácie: %1"
 
-#: app/TimelinePage.qml:151
+#: app/TimelinePage.qml:154
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Trip"
 msgstr "Odstrániť dokument"
 
-#: app/TimelinePage.qml:152
+#: app/TimelinePage.qml:155
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this trip?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TimelinePage.qml:171
+#: app/TimelinePage.qml:174
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:174
+#: app/TimelinePage.qml:177
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "As Itinerary file..."
 msgstr "KDE Itinerár"
 
-#: app/TimelinePage.qml:183
+#: app/TimelinePage.qml:186
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:198
+#: app/TimelinePage.qml:201
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
 msgstr "Čas konca: %1"
 
-#: app/TimelinePage.qml:216 app/TimelinePage.qml:225
+#: app/TimelinePage.qml:219 app/TimelinePage.qml:228
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:218
+#: app/TimelinePage.qml:221
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/TimelinePage.qml:393
+#: app/TimelinePage.qml:396
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
