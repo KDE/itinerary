@@ -11,26 +11,42 @@ import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 
-Kirigami.AbstractCard {
+FormCard.FormCard {
     id: root
+    width: parent.width
 
     required property var transfer
     property bool journeyDetailsExpanded: false
     property QtObject controller: TransferDelegateController {
         transfer: root.transfer
     }
-
-    header: TimelineDelegateHeaderBackground {
-        id: headerBackground
-        card: root
-        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-        defaultColor: transfer.isReachable ? Kirigami.Theme.backgroundColor : Kirigami.Theme.negativeBackgroundColor
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-
-        RowLayout {
+    FormCard.AbstractFormDelegate {
+        background: Rectangle {
+            id: headerBackground
+            color: Kirigami.Theme.backgroundColor
+            Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+            Rectangle {
+                id: progressBar
+                visible: controller.isCurrent
+                anchors.bottom: headerBackground.bottom
+                anchors.left: headerBackground.left
+                height: Kirigami.Units.smallSpacing
+                width: controller.progress * headerBackground.width
+                color: Kirigami.Theme.visitedLinkColor
+            }
+        }
+        onClicked: {
+            if (transfer.state == Transfer.Selected) {
+                journeyDetailsExpanded = !journeyDetailsExpanded;
+            } else {
+                applicationWindow().pageStack.push(detailsComponent);
+            }
+        }
+        contentItem: RowLayout {
             id: headerLayout
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
@@ -71,91 +87,54 @@ Kirigami.AbstractCard {
                 Accessible.ignored: !visible
             }
         }
-
-        Rectangle {
-            id: progressBar
-            visible: controller.isCurrent
-            anchors.bottom: headerBackground.bottom
-            anchors.left: headerBackground.left
-            height: Kirigami.Units.smallSpacing
-            width: controller.progress * headerBackground.width
-            color: Kirigami.Theme.visitedLinkColor
-        }
     }
 
-    leftPadding: 0
-    rightPadding: 0
-    topPadding: 0
-    bottomPadding: 0
+    Repeater {
+        id: journeyRepeater
+        delegate: App.JourneySectionDelegate{
+            Layout.fillWidth: true
+            modelLength: journeyRepeater.count - 1
 
-    contentItem: Item {
-        implicitHeight: topLayout.implicitHeight
-
-        ColumnLayout {
-            id: topLayout
-
-            anchors {
-                left: parent.left
-                right: parent.right
-                top: parent.top
-            }
-
-            spacing: 0
-
-            Repeater {
-                id: journeyRepeater
-                delegate: App.JourneySectionDelegate{
-                    Layout.fillWidth: true
-                    modelLength: journeyRepeater.count - 1
-                }
-                model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
-            }
-
-            App.JourneySummaryDelegate {
-                journey: transfer.journey
-                visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
-                Layout.fillWidth: true
-                onClicked: journeyDetailsExpanded = true
-            }
-
-            MobileForm.FormButtonDelegate {
-                icon.name: "checkmark"
-                text: i18n("Select transfer")
-                onClicked: if (transfer.state === Transfer.Selected) {
-                    applicationWindow().pageStack.push(detailsComponent)
-                } else {
-                    root.clicked()
-                }
-                visible: transfer.state === Transfer.Pending
-                    || transfer.state === Transfer.Searching
-                    || transfer.state === Transfer.Selected && journeyDetailsExpanded
-                Accessible.ignored: !visible
-            }
-
-            MobileForm.FormButtonDelegate {
-                icon.name: "edit-delete"
-                text: i18n("Delete transfer")
-                onClicked: TransferManager.discardTransfer(transfer)
-                visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
-                Accessible.ignored: !visible
-            }
         }
+        model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
     }
 
-    Component {
-        id: detailsComponent
-        App.TransferPage {
-            transfer: root.transfer
-        }
+    App.JourneySummaryDelegate {
+        journey: transfer.journey
+        visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
+        Layout.fillWidth: true
+        onClicked: journeyDetailsExpanded = true
     }
 
-    onClicked: {
-        if (transfer.state == Transfer.Selected) {
-            journeyDetailsExpanded = !journeyDetailsExpanded;
+    FormCard.FormButtonDelegate {
+        icon.name: "checkmark"
+        text: i18n("Select transfer")
+        onClicked: if (transfer.state === Transfer.Selected) {
+            applicationWindow().pageStack.push(detailsComponent)
         } else {
-            applicationWindow().pageStack.push(detailsComponent);
+            root.clicked()
         }
+        visible: transfer.state === Transfer.Pending
+            || transfer.state === Transfer.Searching
+            || transfer.state === Transfer.Selected && journeyDetailsExpanded
+        Accessible.ignored: !visible
     }
+
+    FormCard.FormButtonDelegate {
+        icon.name: "edit-delete"
+        text: i18n("Delete transfer")
+        onClicked: TransferManager.discardTransfer(transfer)
+        visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
+        Accessible.ignored: !visible
+    }
+//    Component {
+//        id: detailsComponent
+//        App.TransferPage {
+//            transfer: root.transfer
+//        }
+//    }
+
+
 
     Accessible.name: headerLabel.text
 }

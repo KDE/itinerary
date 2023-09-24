@@ -9,11 +9,13 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.i18n.localeData 1.0
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.AbstractCard {
+FormCard.FormCard {
     id: root
+    width: parent.width
 
     required property var tripGroup
     required property string tripGroupId
@@ -23,25 +25,19 @@ Kirigami.AbstractCard {
 
     signal removeTrip(tripGroupId: var)
 
-    showClickFeedback: true
-    topPadding: rangeType === TimelineElement.RangeEnd ? 0 : Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.smallSpacing
-
-    header: TimelineDelegateHeaderBackground {
-        id: headerBackground
-        card: root
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-        anchors.bottomMargin: root.rangeType === TimelineElement.RangeEnd ? -root.bottomPadding : 0
-        corners {
-            topLeftRadius: Kirigami.Units.smallSpacing
-            topRightRadius: Kirigami.Units.smallSpacing
-            bottomLeftRadius: root.rangeType === TimelineElement.RangeEnd ? Kirigami.Units.smallSpacing : 0
-            bottomRightRadius: root.rangeType === TimelineElement.RangeEnd ? Kirigami.Units.smallSpacing : 0
+    FormCard.AbstractFormDelegate {
+        onClicked: if (rangeType === TimelineElement.SelfContained) {
+            TripGroupProxyModel.expand(tripGroupId);
+        } else {
+            TripGroupProxyModel.collapse(tripGroupId);
         }
-
-        RowLayout {
+        background: Rectangle {
+            id: headerBackground
+            color: Kirigami.Theme.backgroundColor
+            Kirigami.Theme.colorSet: Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+        }
+        contentItem: RowLayout {
             id: headerLayout
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
@@ -69,8 +65,11 @@ Kirigami.AbstractCard {
             }
         }
     }
-
-    contentItem: Item {
+    FormCard.AbstractFormDelegate {
+        id: content
+        // hide content entirely in the header-only end elements
+        visible: root.rangeType !== TimelineElement.RangeEnd
+        contentItem: Item {
         implicitHeight: contentLayout.implicitHeight
 
         ColumnLayout {
@@ -171,18 +170,6 @@ Kirigami.AbstractCard {
             }
         }
     }
-
-    // hide content entirely in the header-only end elements
-    Binding {
-        target: contentItem.parent
-        property: "visible"
-        value: rangeType !== TimelineElement.RangeEnd
-    }
-
-    onClicked: if (rangeType === TimelineElement.SelfContained) {
-        TripGroupProxyModel.expand(tripGroupId);
-    } else {
-        TripGroupProxyModel.collapse(tripGroupId);
     }
 
     Accessible.name: headerLabel.text
