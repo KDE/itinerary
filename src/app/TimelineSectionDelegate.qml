@@ -17,10 +17,7 @@ QQC2.Pane {
         timelineModel: TimelineModel
     }
 
-    topPadding: Kirigami.Units.smallSpacing
-    bottomPadding: Kirigami.Units.smallSpacing
-
-    width: ListView.view.width - ListView.view.parent.QQC2.ScrollBar.vertical.width
+    width: ListView.view.width
 
     contentItem: RowLayout {
         Item{ Layout.fillWidth: true}
