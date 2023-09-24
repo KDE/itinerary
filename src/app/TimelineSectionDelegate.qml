@@ -20,7 +20,7 @@ QQC2.Pane {
     width: ListView.view.width
 
     contentItem: RowLayout {
-        Item{ Layout.fillWidth: true}
+        Item{ Layout.fillWidth: true }
         RowLayout{
             Layout.margins: Kirigami.Units.smallSpacing
             Layout.maximumWidth: Kirigami.Units.gridUnit * 29
@@ -53,7 +53,7 @@ QQC2.Pane {
                 }
             }
         }
-        Item{ Layout.fillWidth: true}
+        Item{ Layout.fillWidth: true }
     }
 
     Accessible.name: titleLabel.text
