@@ -2236,16 +2236,14 @@ msgid "Spaces"
 msgstr "Alanlar"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "Yolcu Belgem"
+msgstr "Yol Kılavuzu"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Plan Trip"
-msgstr "Yolculuğu Sil"
+msgstr "Yolculuk Planla"
 
 #: app/NavigationBar.qml:33
 #, kde-format
@@ -3544,19 +3542,3 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
-
-#~ msgid "Passes && Programs"
-#~ msgstr "Kartlar ve Programlar"
-
-#~ msgid "Import"
-#~ msgstr "İçe Aktar"
-
-#~ msgctxt "currency conversion rate"
-#~ msgid "1 %1 = %2 %3"
-#~ msgstr "1 %1 = %2 %3"
-
-#~ msgid "Export trip to GPX"
-#~ msgstr "Yolculuğu GPX'e dışa aktar"
-
-#~ msgid "PkPass or JSON-LD file to import."
-#~ msgstr "İçe aktarılacak PkPass veya JSON-LD dosyası."

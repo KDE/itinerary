@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 01:45+0000\n"
-"PO-Revision-Date: 2023-09-19 19:02+0200\n"
+"PO-Revision-Date: 2023-09-23 15:29+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2241,16 +2241,14 @@ msgid "Spaces"
 msgstr "Espais"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "El meu itinerari"
+msgstr "Itinerari"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Plan Trip"
-msgstr "Suprimeix el viatge"
+msgstr "Pla de viatge"
 
 #: app/NavigationBar.qml:33
 #, kde-format
