@@ -64,7 +64,7 @@ App.TimelineDelegate {
         }
     }
 
-//    onClicked: showDetailsPage(eventDetailsPage, root.batchId)
+    onClicked: showDetailsPage(eventDetailsPage, root.batchId)
 
     Accessible.name: headerLabel.text
 }

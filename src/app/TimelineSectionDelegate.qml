@@ -16,8 +16,6 @@ QQC2.Pane {
         timelineModel: TimelineModel
     }
 
-    leftPadding: 0
-    rightPadding: 0
     topPadding: Kirigami.Units.smallSpacing
     bottomPadding: Kirigami.Units.smallSpacing
 

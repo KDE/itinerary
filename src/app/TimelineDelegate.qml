@@ -30,9 +30,9 @@ FormCard.FormCard {
     property Item headerItem
     property alias headerIcon: _headerIcon
     property alias headerIconSource: _headerIcon.source
-
     property alias contentItem: content.contentItem
-//    property alias onClicked: test.onClicked
+    signal clicked
+
 
 //    showClickFeedback: true
 
@@ -100,16 +100,19 @@ FormCard.FormCard {
 
 
     }
+
     FormCard.AbstractFormDelegate {
         id: content
+        onClicked: root.clicked()
         Layout.fillWidth: true
+
     }
 
-//    onHeaderItemChanged: {
-//        if (headerItem) {
-//            headerItem.parent = headerLayout
-//        }
-//    }
+    onHeaderItemChanged: {
+        if (headerItem) {
+            headerItem.parent = headerLayout
+        }
+    }
 
 //    Accessible.onPressAction: root.clicked()
 }

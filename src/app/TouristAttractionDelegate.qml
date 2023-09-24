@@ -39,5 +39,5 @@ App.TimelineDelegate {
         }
     }
 
-//    onClicked: showDetailsPage(touristAttractionDetailsPage, root.batchId)
+    onClicked: showDetailsPage(touristAttractionDetailsPage, root.batchId)
 }

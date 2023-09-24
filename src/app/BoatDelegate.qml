@@ -60,6 +60,6 @@ App.TimelineDelegate {
         }
     }
 
-//    onClicked: showDetailsPage(boatDetailsPage, root.batchId)
+    onClicked: showDetailsPage(boatDetailsPage, root.batchId)
 }
 

@@ -228,6 +228,6 @@ App.TimelineDelegate {
 
     }
 
-//    onClicked: showDetailsPage(trainDetailsPage, root.batchId)
+    onClicked: showDetailsPage(trainDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

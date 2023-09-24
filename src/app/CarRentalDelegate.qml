@@ -63,5 +63,5 @@ App.TimelineDelegate {
         }
     }
 
-//    onClicked: showDetailsPage(carRentalDetailsPage, root.batchId)
+    onClicked: showDetailsPage(carRentalDetailsPage, root.batchId)
 }
