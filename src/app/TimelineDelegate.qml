@@ -8,11 +8,13 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.AbstractCard {
+FormCard.FormCard {
     id: root
+    width: parent.width
     /** Reservation batch identifier (@see ReservationManager). */
     property alias batchId: _controller.batchId
     /** All reservations that are part of this patch. */
@@ -29,7 +31,10 @@ Kirigami.AbstractCard {
     property alias headerIcon: _headerIcon
     property alias headerIconSource: _headerIcon.source
 
-    showClickFeedback: true
+    property alias contentItem: content.contentItem
+//    property alias onClicked: test.onClicked
+
+//    showClickFeedback: true
 
     property QtObject controller: TimelineDelegateController {
         id: _controller
@@ -49,23 +54,30 @@ Kirigami.AbstractCard {
     }
 
     property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
+    FormCard.AbstractFormDelegate {
+        background: Rectangle {
+            id: headerBackground
+            color: Kirigami.Theme.backgroundColor
+            Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+//            defaultColor: {
+//                if (controller.connectionWarning)
+//                    return Kirigami.Theme.negativeTextColor;
+//                return Kirigami.Theme.backgroundColor;
+//            }
 
-    header: TimelineDelegateHeaderBackground {
-        id: headerBackground
-        card: root
-        Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-        defaultColor: {
-            if (controller.connectionWarning)
-                return Kirigami.Theme.negativeTextColor;
-            return Kirigami.Theme.backgroundColor;
+            Rectangle {
+                id: progressBar
+                visible: controller.isCurrent
+                anchors.bottom: headerBackground.bottom
+                anchors.left: headerBackground.left
+                height: Kirigami.Units.smallSpacing
+                width: controller.progress * headerBackground.width
+                color: Kirigami.Theme.visitedLinkColor
+            }
         }
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-
-        RowLayout {
+        contentItem: RowLayout {
             id: headerLayout
-            anchors.fill: parent
-            anchors.margins: Kirigami.Units.largeSpacing
 
             Kirigami.Icon {
                 id: _headerIcon
@@ -80,22 +92,24 @@ Kirigami.AbstractCard {
             }
         }
 
-        Rectangle {
-            id: progressBar
-            visible: controller.isCurrent
-            anchors.bottom: headerBackground.bottom
-            anchors.left: headerBackground.left
-            height: Kirigami.Units.smallSpacing
-            width: controller.progress * headerBackground.width
-            color: Kirigami.Theme.visitedLinkColor
-        }
+//        id: headerBackground
+//        card: root
+
+//        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+
+
+
+    }
+    FormCard.AbstractFormDelegate {
+        id: content
+        Layout.fillWidth: true
     }
 
-    onHeaderItemChanged: {
-        if (headerItem) {
-            headerItem.parent = headerLayout
-        }
-    }
+//    onHeaderItemChanged: {
+//        if (headerItem) {
+//            headerItem.parent = headerLayout
+//        }
+//    }
 
-    Accessible.onPressAction: root.clicked()
+//    Accessible.onPressAction: root.clicked()
 }

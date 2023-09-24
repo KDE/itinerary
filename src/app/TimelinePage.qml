@@ -17,6 +17,10 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("My Itinerary")
     onBackRequested: event => { event.accepted = true; }
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
+    leftPadding: 0
+    rightPadding: 0
 
     /** Model index somewhat at the center of the currently display timeline. */
     function currentIndex() {
@@ -427,6 +431,8 @@ Kirigami.ScrollablePage {
         id: listView
         model: TripGroupProxyModel
         delegate: chooser
+        leftMargin: 0
+        rightMargin: 0
 
         section {
             property: "sectionHeader"

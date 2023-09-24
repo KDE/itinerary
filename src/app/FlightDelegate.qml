@@ -104,6 +104,6 @@ App.TimelineDelegate {
         }
     }
 
-    onClicked: showDetailsPage(flightDetailsPage, root.batchId)
+//    onClicked: showDetailsPage(flightDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }
