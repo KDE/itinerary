@@ -178,6 +178,7 @@ if (ANDROID)
         flashlight-off
         flashlight-on
         folder-documents-symbolic
+        format-list-unordered
         globe
         go-down-symbolic
         go-home-symbolic
