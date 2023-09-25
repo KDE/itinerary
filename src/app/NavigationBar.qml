@@ -12,6 +12,7 @@ import "." as App
 Kirigami.NavigationTabBar {
     id: root
 
+    visible: pageStack.layers.depth < 2
     actions: [
         Kirigami.PagePoolAction {
             iconName: "format-list-unordered"
