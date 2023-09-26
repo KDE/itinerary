@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-08 02:25+0000\n"
-"PO-Revision-Date: 2023-07-25 16:35+0300\n"
+"PO-Revision-Date: 2023-09-20 12:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1743,7 +1743,7 @@ msgstr "CO₂: %1"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Näytä lisää…"
 
 #: app/JourneySectionStopDelegate.qml:153
 #, kde-format
@@ -1782,10 +1782,9 @@ msgid "Click to extend"
 msgstr "Laajenna napsauttamalla"
 
 #: app/livedatamanager.cpp:668
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Lento %1 %2–%3"
+msgstr "Lento %1–%2:"
 
 #: app/livedatamanager.cpp:674
 #, kde-format
@@ -3056,8 +3055,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Tulovaunun kartta"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Valitse vaihto"
 
