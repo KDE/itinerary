@@ -19,8 +19,8 @@ Dependencies:
     'libraries/kpublictransport': "@same"
     'libraries/kosmindoormap': "@same"
     'libraries/kirigami-addons': '@latest'
-    'pim/kpkpass': '@latest'
-    'pim/kitinerary': '@latest'
+    'pim/kpkpass': '@stable'
+    'pim/kitinerary': '@stable'
     'pim/khealthcertificate': '@latest'
     'third-party/libquotient': '@latest'
 
