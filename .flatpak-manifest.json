@@ -134,7 +134,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kitinerary",
-                    "branch": "master"
+                    "branch": "release/23.08"
                 }
             ],
             "modules": [
@@ -150,7 +150,7 @@
                         {
                             "type": "git",
                             "url": "https://invent.kde.org/pim/kpkpass",
-                            "branch": "master"
+                            "branch": "release/23.08"
                         }
                     ],
                     "cleanup": [
@@ -172,7 +172,7 @@
                         {
                             "type": "git",
                             "url": "https://invent.kde.org/pim/kmime",
-                            "branch": "master"
+                            "branch": "release/23.08"
                         }
                     ],
                     "cleanup": [
