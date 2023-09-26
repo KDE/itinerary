@@ -2232,16 +2232,14 @@ msgid "Spaces"
 msgstr "Mezery"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "Můj Itinerář"
+msgstr ""
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Plan Trip"
-msgstr "Smazat výlet"
+msgstr ""
 
 #: app/NavigationBar.qml:33
 #, kde-format

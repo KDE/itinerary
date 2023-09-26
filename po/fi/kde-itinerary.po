@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 01:45+0000\n"
-"PO-Revision-Date: 2023-07-25 16:35+0300\n"
+"PO-Revision-Date: 2023-09-20 12:07+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1841,7 +1841,7 @@ msgstr "Ajomatka %1 (%2)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
-msgstr ""
+msgstr "Näytä lisää…"
 
 #: app/JourneySectionPage.qml:53
 #, kde-format
@@ -1895,10 +1895,9 @@ msgid "Click to extend"
 msgstr "Laajenna napsauttamalla"
 
 #: app/livedatamanager.cpp:667
-#, fuzzy, kde-format
-#| msgid "Flight %1 from %2 to %3"
+#, kde-format
 msgid "Flight %1 to %2:"
-msgstr "Lento %1 %2–%3"
+msgstr "Lento %1–%2:"
 
 #: app/livedatamanager.cpp:673
 #, kde-format
@@ -2114,7 +2113,7 @@ msgstr "Avaa Itinerary annetulle sivulle"
 #: app/main.cpp:368
 #, kde-format
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "Tuotavat tiedostot tai verkko-osoitteet."
 
 #: app/main.qml:59
 #, kde-format
@@ -2410,10 +2409,9 @@ msgid "Passes and Programs"
 msgstr "Liput ja ohjelmat"
 
 #: app/PassPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Add Program Membership..."
-msgstr "Ohjelman jäsenyys"
+msgstr "Lisää ohjelman jäsenyys…"
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2479,10 +2477,9 @@ msgid "Show program pass"
 msgstr "Näytä maihinnousukortti"
 
 #: app/ProgramMembershipEditor.qml:17
-#, fuzzy, kde-format
-#| msgid "Program Membership"
+#, kde-format
 msgid "Edit Program Membership"
-msgstr "Ohjelman jäsenyys"
+msgstr "Muokkaa ohjelman jäsenyyttä"
 
 #: app/ProgramMembershipEditor.qml:25 app/TicketEditor.qml:26
 #, kde-format
@@ -2490,23 +2487,19 @@ msgid "Save"
 msgstr "Tallenna"
 
 #: app/ProgramMembershipEditor.qml:57
-#, fuzzy, kde-format
-#| msgctxt "bonus, discount or frequent traveler program"
-#| msgid "Program"
+#, kde-format
 msgid "Program"
 msgstr "Ohjelma"
 
 #: app/ProgramMembershipEditor.qml:65
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Program name must not be empty."
-msgstr "Lipun nimi ei voi olla tyhjä."
+msgstr "Ohjelman nimi ei voi olla tyhjä."
 
 #: app/ProgramMembershipEditor.qml:75
-#, fuzzy, kde-format
-#| msgid "Member"
+#, kde-format
 msgid "Membership"
-msgstr "Jäsen"
+msgstr "Jäsenyys"
 
 #: app/ProgramMembershipEditor.qml:80 app/ProgramMembershipPage.qml:89
 #, kde-format
@@ -3070,21 +3063,19 @@ msgid "Do you really want to delete this trip?"
 msgstr "Haluatko varmasti poistaa tämän matkan?"
 
 #: app/TimelinePage.qml:174
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgid "Export"
-msgstr "Vie…"
+msgstr "Vie"
 
 #: app/TimelinePage.qml:177
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "As Itinerary file..."
-msgstr "Matkasuunnitelmani"
+msgstr "Itinerary-tiedostoksi…"
 
 #: app/TimelinePage.qml:186
 #, kde-format
 msgid "As GPX file..."
-msgstr ""
+msgstr "GPX-tiedostoksi…"
 
 #: app/TimelinePage.qml:201
 #, fuzzy, kde-format
@@ -3098,10 +3089,9 @@ msgid "Export Trip"
 msgstr "Vie matka"
 
 #: app/TimelinePage.qml:221
-#, fuzzy, kde-format
-#| msgid "KDE Itinerary files (*.itinerary)"
+#, kde-format
 msgid "Itinerary file (*.itinerary)"
-msgstr "KDE Itinerary -tiedostot (*.itinerary)"
+msgstr "Itinerary-tiedosto (*.itinerary)"
 
 #: app/TimelinePage.qml:396
 #, kde-format
@@ -3269,8 +3259,7 @@ msgid "Arrival Vehicle Layout"
 msgstr "Tulovaunun kartta"
 
 #: app/TransferDelegate.qml:121
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select transfer"
 msgstr "Valitse vaihto"
 
