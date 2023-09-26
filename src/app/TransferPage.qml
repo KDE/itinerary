@@ -224,8 +224,11 @@ Kirigami.ScrollablePage {
                 }
 
                 Repeater {
+                    id: journeyRepeater
                     delegate: App.JourneySectionDelegate{
                         Layout.fillWidth: true
+                        modelLength: journeyRepeater.count - 1
+
                     }
                     model: journeyView.currentIndex === top.index ? top.journey.sections : 0
                 }
