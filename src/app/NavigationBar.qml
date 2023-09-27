@@ -40,16 +40,6 @@ Kirigami.NavigationTabBar {
             icon.name: "view-barcode-qr"
             visible: TimelineModel.currentBatchId !== ""
             onTriggered: pagepool.loadPage("TimelinePage.qml").showDetailsPageForReservation(TimelineModel.currentBatchId)
-        },
-        Kirigami.PagePoolAction {
-            iconName: "view-statistics"
-            text: i18n("Statistics")
-            pagePool: pagepool
-            page: Qt.resolvedUrl("StatisticsPage.qml")
-            initialProperties: {
-                "reservationManager": ReservationManager,
-                "tripGroupManager": TripGroupManager
-            }
         }
     ]
 }

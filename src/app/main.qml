@@ -177,6 +177,13 @@ Kirigami.ApplicationWindow {
                 onTriggered: MapDownloadManager.download();
             },
             Kirigami.Action {
+                id: statsAction
+                text: i18n("Statistics")
+                icon.name: "view-statistics"
+                enabled: pageStack.layers.depth < 2
+                onTriggered: pageStack.layers.push(statisticsComponent)
+            },
+            Kirigami.Action {
                 id: healthCertAction
                 text: i18n("Health Certificates")
                 icon.name: "cross-shape"
