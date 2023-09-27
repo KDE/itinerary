@@ -257,7 +257,7 @@ App.DetailsPage {
 
         // seat reservation
         MobileForm.FormCard {
-            visible: coachLabel.visible || seatLabel.visible || classLabel.visible
+            visible: coachLabel.visible || seatLabel.visible || classLabel.visible || departureLayoutButton.enabled || arrivalLayoutButton.enabled
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             contentItem: ColumnLayout {
@@ -288,6 +288,23 @@ App.DetailsPage {
                     description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatingType : ''
                     visible: description
                 }
+                MobileForm.FormDelegateSeparator {
+                    visible: classLabel.visible
+                }
+                MobileForm.FormButtonDelegate {
+                    id: departureLayoutButton
+                    text: i18n("Departure Vehicle Layout")
+                    icon.name: "view-list-symbolic"
+                    enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
+                    onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
+                }
+                MobileForm.FormButtonDelegate {
+                    id: arrivalLayoutButton
+                    text: i18n("Arrival Vehicle Layout")
+                    icon.name: "view-list-symbolic"
+                    enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
+                    onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
+                }
             }
         }
 
@@ -312,18 +329,6 @@ App.DetailsPage {
                     text: i18n("Alternatives")
                     icon.name: "clock"
                     onTriggered: applicationWindow().pageStack.push(alternativePage)
-                },
-                QQC2.Action {
-                    text: i18n("Departure Vehicle Layout")
-                    icon.name: "view-list-symbolic"
-                    enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
-                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
-                },
-                QQC2.Action {
-                    text: i18n("Arrival Vehicle Layout")
-                    icon.name: "view-list-symbolic"
-                    enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
-                    onTriggered: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
                 },
                 Kirigami.Action {
                     text: i18n("Journey Details")
