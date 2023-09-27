@@ -25,21 +25,46 @@ static QString permissionName(Permission::Permission p)
             return ManifestPermission::READ_CALENDAR;
         case Permission::WriteCalendar:
             return ManifestPermission::WRITE_CALENDAR;
+        case Permission::PostNotification:  // only for SDK >= 33
+            return ManifestPermission::POST_NOTIFICATIONS;
     }
 }
 #endif
+
+bool PermissionManager::checkPermission(Permission::Permission permission)
+{
+#ifdef Q_OS_ANDROID
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    if (permission == Permission::PostNotification && QtAndroid::androidSdkVersion() < 33) {
+        return true;
+    }
+
+    return QtAndroid::checkPermission(permissionName(permission)) == QtAndroid::PermissionResult::Granted;
+#else
+    if (permission == Permission::PostNotification && QtAndroidPrivate::androidSdkVersion() < 33) {
+        return true;
+    }
+
+    return QtAndroidPrivate::checkPermission(permissionName(permission)).result() == QtAndroidPrivate::PermissionResult::Authorized;
+#endif
+#else // non-Android
+    Q_UNUSED(permission);
+    return true;
+#endif
+}
 
 void PermissionManager::requestPermission(Permission::Permission permission, QJSValue callback)
 {
     qDebug() << permission;
 
-#ifdef Q_OS_ANDROID
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (QtAndroid::checkPermission(permissionName(permission)) == QtAndroid::PermissionResult::Granted) {
+    // already got the permission
+    if (PermissionManager::checkPermission(permission)) {
         callback.call();
         return;
     }
 
+#ifdef Q_OS_ANDROID
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QtAndroid::requestPermissions({permissionName(permission)}, [permission, callback] (const QtAndroid::PermissionResultMap &result) {
         if (result[permissionName(permission)] == QtAndroid::PermissionResult::Granted) {
             auto cb = callback;
@@ -55,8 +80,5 @@ void PermissionManager::requestPermission(Permission::Permission permission, QJS
     }
     callback.call();
 #endif
-#else
-    // non-Android
-    callback.call();
 #endif
 }

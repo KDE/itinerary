@@ -15,15 +15,17 @@ namespace Permission
     enum Permission {
         ReadCalendar,
         WriteCalendar,
+        PostNotification,
     };
     Q_ENUM_NS(Permission)
 }
 
-/** Requesting platform permissions for access to controlled resources (calendar, location, etc). */
+/** Check and request platform permissions for access to controlled resources (calendar, location, etc). */
 class PermissionManager
 {
     Q_GADGET
 public:
+    Q_INVOKABLE static bool checkPermission(Permission::Permission permission);
     Q_INVOKABLE static void requestPermission(Permission::Permission permission, QJSValue callback);
 };
 

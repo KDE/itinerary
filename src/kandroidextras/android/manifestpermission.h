@@ -26,6 +26,7 @@ public:
     JNI_CONSTANT(java::lang::String, WRITE_CALENDAR)
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)
     JNI_CONSTANT(java::lang::String, WRITE_EXTERNAL_STORAGE)
+    JNI_CONSTANT(java::lang::String, POST_NOTIFICATIONS)
 };
 
 }
