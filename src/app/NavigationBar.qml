@@ -38,7 +38,7 @@ Kirigami.NavigationTabBar {
         Kirigami.Action {
             text: i18n("Current Ticket")
             icon.name: "view-barcode-qr"
-            enabled: TimelineModel.currentBatchId !== ""
+            visible: TimelineModel.currentBatchId !== ""
             onTriggered: pagepool.loadPage("TimelinePage.qml").showDetailsPageForReservation(TimelineModel.currentBatchId)
         },
         Kirigami.PagePoolAction {
