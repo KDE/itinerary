@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:45+0000\n"
+"POT-Creation-Date: 2023-09-27 01:41+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2398,30 +2398,30 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr ""
 
-#: app/NavigationBar.qml:18
+#: app/NavigationBar.qml:19
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "Itinerary"
 msgstr "Itinerario"
 
-#: app/NavigationBar.qml:24
+#: app/NavigationBar.qml:25
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Plan Trip"
 msgstr "Billete do evento"
 
-#: app/NavigationBar.qml:33
+#: app/NavigationBar.qml:34
 #, kde-format
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Current Ticket"
 msgstr "Billete do evento"
 
-#: app/NavigationBar.qml:45 app/StatisticsPage.qml:16
+#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr ""

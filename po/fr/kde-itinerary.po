@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:45+0000\n"
+"POT-Creation-Date: 2023-09-27 01:41+0000\n"
 "PO-Revision-Date: 2023-09-14 18:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2256,29 +2256,29 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr "Espaces"
 
-#: app/NavigationBar.qml:18
+#: app/NavigationBar.qml:19
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "Itinerary"
 msgstr "Mon itinéraire"
 
-#: app/NavigationBar.qml:24
+#: app/NavigationBar.qml:25
 #, fuzzy, kde-format
 #| msgid "Delete Trip"
 msgid "Plan Trip"
 msgstr "Supprimer un voyage"
 
-#: app/NavigationBar.qml:33
+#: app/NavigationBar.qml:34
 #, kde-format
 msgid "Passes & Programs"
 msgstr "Mots de passe & programmes"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
 #, kde-format
 msgid "Current Ticket"
 msgstr "Ticket courant"
 
-#: app/NavigationBar.qml:45 app/StatisticsPage.qml:16
+#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiques"

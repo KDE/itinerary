@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:45+0000\n"
+"POT-Creation-Date: 2023-09-27 01:41+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2357,29 +2357,29 @@ msgctxt "matrix room type"
 msgid "Spaces"
 msgstr ""
 
-#: app/NavigationBar.qml:18
+#: app/NavigationBar.qml:19
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "Itinerary"
 msgstr "KDE Itinerár"
 
-#: app/NavigationBar.qml:24
+#: app/NavigationBar.qml:25
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Plan Trip"
 msgstr "Odstrániť dokument"
 
-#: app/NavigationBar.qml:33
+#: app/NavigationBar.qml:34
 #, kde-format
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
 #, kde-format
 msgid "Current Ticket"
 msgstr "Aktuálny ticket"
 
-#: app/NavigationBar.qml:45 app/StatisticsPage.qml:16
+#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
 #, fuzzy, kde-format
 msgid "Statistics"
 msgstr "Štatistika"
