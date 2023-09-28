@@ -182,7 +182,7 @@ App.TimelineDelegate {
                             if (platform) {
                                 return i18n("Pl. %1", platform);
                             } else {
-                                return i18n("");
+                                return "";
                             }
                         }
                     }
