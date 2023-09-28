@@ -40,6 +40,37 @@ signapk:
     paths:
      - ".kde-ci-packages/"
 
+publishonfdroid:
+  stage: deploy
+  when: manual
+  image: invent-registry.kde.org/sysadmin/ci-images/android-qt515:latest
+  tags:
+    - Linux
+  variables:
+    GIT_STRATEGY: none
+  interruptible: true
+  needs:
+    - signapk
+  before_script:
+    - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
+    - cd sftpnotary
+    - python3 -m venv .venv
+    - . .venv/bin/activate
+    - pip3 install -r requirements.txt
+  script:
+    #- curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/publishonfdroid.ini
+    - echo '[SFTP]' >publishonfdroid.ini
+    - echo 'Server = tinami.kde.org' >>publishonfdroid.ini
+    - echo 'Username = signing' >>publishonfdroid.ini
+    - echo 'BasePath = workspace/fdroidpublishing' >>publishonfdroid.ini
+    - echo 'RsaKeyFile = env:KDECI_SECURE_SERVICES_KEY' >>publishonfdroid.ini
+    - python3 publishonfdroid.py -v --config publishonfdroid.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
+  artifacts:
+    expire_in: 3 days
+    when: always
+    paths:
+     - ".kde-ci-packages/task*.log"
+
 signflatpak:
   stage: deploy
   when: manual
