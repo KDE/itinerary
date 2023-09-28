@@ -40,6 +40,6 @@ App.TimelineDelegate {
         }
     }
 
-//    onClicked: showDetailsPage(restaurantDetailsPage, root.batchId)
+    onClicked: showDetailsPage(restaurantDetailsPage, root.batchId)
     Accessible.name: headerLabel.text
 }

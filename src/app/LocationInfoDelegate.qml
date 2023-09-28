@@ -10,22 +10,25 @@ import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.i18n.localeData 1.0
 import org.kde.kitinerary 1.0 as KItinerary
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 import "." as App
 
-Kirigami.AbstractCard {
+FormCard.FormCard {
     id: root
+    width: parent.width
+
     property var locationInfo
 
-   header: TimelineDelegateHeaderBackground {
-        id: headerBackground
-        card: root
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        Kirigami.Theme.inherit: false
-        defaultColor: Kirigami.Theme.neutralBackgroundColor
-        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
+    FormCard.AbstractFormDelegate {
+        background: Rectangle {
+            id: headerBackground
+            color: Kirigami.Theme.neutralBackgroundColor
+            Kirigami.Theme.colorSet: Kirigami.Theme.Header
+            Kirigami.Theme.inherit: false
+        }
 
-        RowLayout {
+        contentItem: RowLayout {
             id: headerLayout
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
@@ -45,75 +48,76 @@ Kirigami.AbstractCard {
         }
     }
 
-    contentItem: Column {
-        id: topLayout
-        spacing: Kirigami.Units.smallSpacing
+    FormCard.AbstractFormDelegate {
+        contentItem: Column {
+            id: topLayout
+            spacing: Kirigami.Units.smallSpacing
 
-        QQC2.Label {
-            width: topLayout.width
-            text: locationInfo.drivingSideLabel
-            visible: locationInfo.drivingSideDiffers
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
-        }
-
-        QQC2.Label {
-            width: topLayout.width
-            text: visible ? i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes) : ""
-            color: Kirigami.Theme.negativeTextColor
-            visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
-        }
-        QQC2.Label {
-            width: topLayout.width
-            text: visible ? i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes) : ""
-            visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
-        }
-        QQC2.Label {
-            width: topLayout.width
-            text: visible ? i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes) : ""
-            visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
-        }
-
-        QQC2.Label {
-            width: topLayout.width
-            text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName,
-                                 (locationInfo.timeZoneOffsetDelta >= 0 ? "+" : "")
-                                 + Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
-            visible: locationInfo.timeZoneDiffers
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
-        }
-
-        QQC2.Label {
-            width: topLayout.width
-            text: {
-                if (!visible)
-                    return "";
-                let rate = NaN;
-                let sourceValue = 1.0;
-                const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
-                if (Settings.performCurrencyConversion)
-                    rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, locationInfo.currencyCode);
-                while (rate < 1 && rate > 0) { // scale to a useful order of magnitude
-                    rate *= 10;
-                    sourceValue *= 10;
-                }
-                if (!isNaN(rate))
-                    return i18nc("currency conversion rate", "Currency: %1 = %2",
-                                 Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, locationInfo.currencyCode));
-                return i18n("Currency: %1", locationInfo.currencyCode);
+            QQC2.Label {
+                width: topLayout.width
+                text: locationInfo.drivingSideLabel
+                visible: locationInfo.drivingSideDiffers
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
             }
-            visible: locationInfo.currencyDiffers
-            wrapMode: Text.WordWrap
-            Accessible.ignored: !visible
+
+            QQC2.Label {
+                width: topLayout.width
+                text: visible ? i18n("No compatible power sockets: %1", locationInfo.powerSocketTypes) : ""
+                color: Kirigami.Theme.negativeTextColor
+                visible: locationInfo.powerPlugCompatibility == LocationInformation.Incompatible
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+            }
+            QQC2.Label {
+                width: topLayout.width
+                text: visible ? i18n("Some incompatible power sockets: %1", locationInfo.powerSocketTypes) : ""
+                visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerSocketTypes != ""
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+            }
+            QQC2.Label {
+                width: topLayout.width
+                text: visible ? i18n("Some incompatible power plugs: %1", locationInfo.powerPlugTypes) : ""
+                visible: locationInfo.powerPlugCompatibility == LocationInformation.PartiallyCompatible && locationInfo.powerPlugTypes != ""
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+            }
+
+            QQC2.Label {
+                width: topLayout.width
+                text: visible ? i18n("Timezone change: %1 (%2)", locationInfo.timeZoneName,
+                                     (locationInfo.timeZoneOffsetDelta >= 0 ? "+" : "")
+                                     + Localizer.formatDuration(locationInfo.timeZoneOffsetDelta)) : ""
+                visible: locationInfo.timeZoneDiffers
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+            }
+
+            QQC2.Label {
+                width: topLayout.width
+                text: {
+                    if (!visible)
+                        return "";
+                    let rate = NaN;
+                    let sourceValue = 1.0;
+                    const homeCurrency = Country.fromAlpha2(Settings.homeCountryIsoCode).currencyCode;
+                    if (Settings.performCurrencyConversion)
+                        rate = UnitConversion.convertCurrency(sourceValue, homeCurrency, locationInfo.currencyCode);
+                    while (rate < 1 && rate > 0) { // scale to a useful order of magnitude
+                        rate *= 10;
+                        sourceValue *= 10;
+                    }
+                    if (!isNaN(rate))
+                        return i18nc("currency conversion rate", "Currency: %1 = %2",
+                                     Localizer.formatCurrency(sourceValue, homeCurrency), Localizer.formatCurrency(rate, locationInfo.currencyCode));
+                    return i18n("Currency: %1", locationInfo.currencyCode);
+                }
+                visible: locationInfo.currencyDiffers
+                wrapMode: Text.WordWrap
+                Accessible.ignored: !visible
+            }
         }
     }
-
     Accessible.name: headerLabel.text
 }
