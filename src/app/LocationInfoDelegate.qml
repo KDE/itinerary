@@ -49,6 +49,7 @@ FormCard.FormCard {
     }
 
     FormCard.AbstractFormDelegate {
+        background: Item {}
         contentItem: Column {
             id: topLayout
             spacing: Kirigami.Units.smallSpacing
