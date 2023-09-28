@@ -2,11 +2,13 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Freek de Kruijf <f.de.kruijf@gmail.com>
+#: app/TrainDelegate.qml:185
+#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2023-09-24 20:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -330,17 +332,17 @@ msgstr "Geen camera beschikbaar."
 msgid "%1 to %2"
 msgstr "%1 tot %2"
 
-#: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
+#: app/BoatDelegate.qml:33
 #, kde-format
 msgid "From: %1"
 msgstr "Van: %1"
 
-#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
+#: app/BoatDelegate.qml:47
 #, kde-format
 msgid "To: %1"
 msgstr "Naar: %1"
 
-#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:107
+#: app/BoatDelegate.qml:58
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Aankomsttijd: %1"
@@ -442,6 +444,23 @@ msgstr "Onder de naam"
 #, kde-format
 msgid "Ticket number:"
 msgstr "Ticketnummer:"
+
+#: app/BusDelegate.qml:85 app/TrainDelegate.qml:110
+#: app/VehicleLayoutPage.qml:103
+#, kde-format
+msgid "Departure: %1"
+msgstr "Vertrek: %1"
+
+#: app/BusDelegate.qml:146 app/TrainDelegate.qml:197
+#: app/VehicleLayoutPage.qml:105
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Aankomst: %1"
+
+#: app/BusDelegate.qml:158
+#, kde-format
+msgid "(+ 1 day)"
+msgstr ""
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -678,7 +697,7 @@ msgstr "Eerder"
 msgid "Later"
 msgstr "Later"
 
-#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:45
+#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:77
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -696,15 +715,15 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Eerdere vertrektijden laden"
 
-#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
-#: app/TransferPage.qml:329
+#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:136
+#: app/TransferPage.qml:332
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Latere verbindingen laden"
 
-#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
-#: app/TransferPage.qml:341
+#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:148
+#: app/TransferPage.qml:344
 #, kde-format
 msgid "Data providers:"
 msgstr "Leveranciers van gegevens:"
@@ -1706,12 +1725,18 @@ msgstr "Tram"
 msgid "Bus"
 msgstr "Bus"
 
-#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:251
+#: app/JourneyDelegateHeader.qml:64
+#, kde-format
+msgctxt "time in hours"
+msgid "%1 h"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
 msgid "Select"
 msgstr "Selecteren"
 
-#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:320
+#: app/JourneyQueryPage.qml:127 app/TransferPage.qml:323
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
@@ -1787,47 +1812,47 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Boten of veerboten"
 
-#: app/JourneySectionDelegate.qml:100
+#: app/JourneySectionDelegate.qml:167
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 naar %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:101 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:168 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:105
+#: app/JourneySectionDelegate.qml:172
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Walk (%1)"
 
-#: app/JourneySectionDelegate.qml:106
+#: app/JourneySectionDelegate.qml:173
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Lopen %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:108
+#: app/JourneySectionDelegate.qml:175
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transfer (%1)"
 
-#: app/JourneySectionDelegate.qml:110
+#: app/JourneySectionDelegate.qml:177
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Wachten (%1)"
 
-#: app/JourneySectionDelegate.qml:112
+#: app/JourneySectionDelegate.qml:179
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:114
+#: app/JourneySectionDelegate.qml:181
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Autorijden %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:189 app/JourneySectionPage.qml:107
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -1848,25 +1873,25 @@ msgstr "Afstand: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:153
+#: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:155
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Afmeerlocatie %1"
 
-#: app/JourneySectionStopDelegate.qml:157
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:171
+#: app/JourneySectionStopDelegate.qml:161
 #, kde-format
 msgid "Show location"
 msgstr "Locatie tonen"
@@ -3119,29 +3144,18 @@ msgstr "Aankomst"
 msgid "Arrival Time"
 msgstr "Aankomsttijd"
 
-#: app/TrainDelegate.qml:60
-#, kde-format
-msgctxt "Train departure"
-msgid "Departure from %1 on platform %2"
-msgstr "Vertrek van %1 op perron %2"
+#: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
+#, fuzzy, kde-format
+#| msgctxt "Abreviation of train platform"
+#| msgid "Pl. %1"
+msgid "Pl. %1"
+msgstr "Pl. %1"
 
-#: app/TrainDelegate.qml:62
+#: app/TrainDelegate.qml:209
 #, kde-format
-msgctxt "Train departure"
-msgid "Departure from %1"
-msgstr "Vertrek vanaf %1"
-
-#: app/TrainDelegate.qml:94
-#, kde-format
-msgctxt "Train arrival"
-msgid "Arrival at %1 on platform %2"
-msgstr "Aankomst op %1 op perron %2"
-
-#: app/TrainDelegate.qml:96
-#, kde-format
-msgctxt "Train arrival"
-msgid "Arrival at %1"
-msgstr "Aankomst op %1"
+msgctxt "Arrival at the location is a day later"
+msgid "(+ 1 day)"
+msgstr ""
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3243,12 +3257,12 @@ msgstr "Indeling van het vertrekkende voertuig"
 msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"
 
-#: app/TransferDelegate.qml:121
+#: app/TransferDelegate.qml:123
 #, kde-format
 msgid "Select transfer"
 msgstr "Overstap selecteren"
 
-#: app/TransferDelegate.qml:135
+#: app/TransferDelegate.qml:137
 #, kde-format
 msgid "Delete transfer"
 msgstr "Overstap verwijderen"
@@ -3288,22 +3302,22 @@ msgstr "Gedeelde fietsen"
 msgid "Park & Ride"
 msgstr "Parkeren & rijden"
 
-#: app/TransferPage.qml:274
+#: app/TransferPage.qml:277
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 eindigt op %2"
 
-#: app/TransferPage.qml:276
+#: app/TransferPage.qml:279
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Voorgaande aankomst %1 om %2"
 
-#: app/TransferPage.qml:286
+#: app/TransferPage.qml:289
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 begint op %2"
 
-#: app/TransferPage.qml:288
+#: app/TransferPage.qml:291
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Volgend vertrek %1 om %2"
@@ -3378,16 +3392,6 @@ msgstr "%1 (%2/%3)"
 #, kde-format
 msgid "Vehicle Layout"
 msgstr "Indeling van het voertuig"
-
-#: app/VehicleLayoutPage.qml:103
-#, kde-format
-msgid "Departure: %1"
-msgstr "Vertrek: %1"
-
-#: app/VehicleLayoutPage.qml:105
-#, kde-format
-msgid "Arrival: %1"
-msgstr "Aankomst: %1"
 
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
@@ -3548,6 +3552,22 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgctxt "Train departure"
+#~ msgid "Departure from %1 on platform %2"
+#~ msgstr "Vertrek van %1 op perron %2"
+
+#~ msgctxt "Train departure"
+#~ msgid "Departure from %1"
+#~ msgstr "Vertrek vanaf %1"
+
+#~ msgctxt "Train arrival"
+#~ msgid "Arrival at %1 on platform %2"
+#~ msgstr "Aankomst op %1 op perron %2"
+
+#~ msgctxt "Train arrival"
+#~ msgid "Arrival at %1"
+#~ msgstr "Aankomst op %1"
 
 #~ msgid "Passes && Programs"
 #~ msgstr "Passen && programma's"

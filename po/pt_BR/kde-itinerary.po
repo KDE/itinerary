@@ -5,11 +5,13 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2019.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019, 2020, 2021, 2022, 2023.
 # Geraldo Simiao <geraldosimiao@fedoraproject.org>, 2023.
+#: app/TrainDelegate.qml:185
+#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-27 01:41+0000\n"
+"POT-Creation-Date: 2023-09-28 01:40+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -339,17 +341,17 @@ msgstr "Nenhuma câmera disponível."
 msgid "%1 to %2"
 msgstr "%1 a %2"
 
-#: app/BoatDelegate.qml:33 app/BusDelegate.qml:48
+#: app/BoatDelegate.qml:33
 #, kde-format
 msgid "From: %1"
 msgstr "De: %1"
 
-#: app/BoatDelegate.qml:47 app/BusDelegate.qml:63
+#: app/BoatDelegate.qml:47
 #, kde-format
 msgid "To: %1"
 msgstr "Para: %1"
 
-#: app/BoatDelegate.qml:58 app/BusDelegate.qml:78 app/TrainDelegate.qml:107
+#: app/BoatDelegate.qml:58
 #, kde-format
 msgid "Arrival time: %1"
 msgstr "Hora de chegada: %1"
@@ -465,6 +467,23 @@ msgstr "No nome de:"
 #, kde-format
 msgid "Ticket number:"
 msgstr "Número da passagem:"
+
+#: app/BusDelegate.qml:85 app/TrainDelegate.qml:110
+#: app/VehicleLayoutPage.qml:103
+#, kde-format
+msgid "Departure: %1"
+msgstr "Partida: %1"
+
+#: app/BusDelegate.qml:146 app/TrainDelegate.qml:197
+#: app/VehicleLayoutPage.qml:105
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Chegada: %1"
+
+#: app/BusDelegate.qml:158
+#, kde-format
+msgid "(+ 1 day)"
+msgstr ""
 
 #: app/BusEditor.qml:18
 #, fuzzy, kde-format
@@ -716,7 +735,7 @@ msgstr "Mais cedo"
 msgid "Later"
 msgstr "Mais tarde"
 
-#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:45
+#: app/DepartureQueryPage.qml:134 app/JourneySectionDelegate.qml:77
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -735,16 +754,16 @@ msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Partida antecipada em %1"
 
-#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:134
-#: app/TransferPage.qml:329
+#: app/DepartureQueryPage.qml:235 app/JourneyQueryPage.qml:136
+#: app/TransferPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Conexões alternativas"
 
-#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:146
-#: app/TransferPage.qml:341
+#: app/DepartureQueryPage.qml:247 app/JourneyQueryPage.qml:148
+#: app/TransferPage.qml:344
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
 msgid "Data providers:"
@@ -1781,12 +1800,18 @@ msgstr "Teleférico"
 msgid "Bus"
 msgstr "Ônibus"
 
-#: app/JourneyQueryPage.qml:104 app/TransferPage.qml:251
+#: app/JourneyDelegateHeader.qml:64
+#, kde-format
+msgctxt "time in hours"
+msgid "%1 h"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
 msgid "Select"
 msgstr "Selecionar"
 
-#: app/JourneyQueryPage.qml:125 app/TransferPage.qml:320
+#: app/JourneyQueryPage.qml:127 app/TransferPage.qml:323
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
 msgctxt "@action:button"
@@ -1867,48 +1892,48 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Viagens de barco"
 
-#: app/JourneySectionDelegate.qml:100
+#: app/JourneySectionDelegate.qml:167
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 a %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:101 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:168 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:105
+#: app/JourneySectionDelegate.qml:172
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Caminhada (%1"
 
-#: app/JourneySectionDelegate.qml:106
+#: app/JourneySectionDelegate.qml:173
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Caminhada %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:108
+#: app/JourneySectionDelegate.qml:175
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Translado (%1)"
 
-#: app/JourneySectionDelegate.qml:110
+#: app/JourneySectionDelegate.qml:177
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Espera (%1)"
 
-#: app/JourneySectionDelegate.qml:112
+#: app/JourneySectionDelegate.qml:179
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:114
+#: app/JourneySectionDelegate.qml:181
 #, fuzzy, kde-format
 #| msgid "Test %1 (%2)"
 msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:189 app/JourneySectionPage.qml:107
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -1930,25 +1955,25 @@ msgstr "Distância: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionStopDelegate.qml:153
+#: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:155
+#: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:157
+#: app/JourneySectionStopDelegate.qml:147
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:171
+#: app/JourneySectionStopDelegate.qml:161
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
@@ -3257,34 +3282,16 @@ msgstr "Chegada"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:60
-#, fuzzy, kde-format
-#| msgid "Departure from %1 on platform %2"
-msgctxt "Train departure"
-msgid "Departure from %1 on platform %2"
-msgstr "Partida de %1 na plataforma %2"
+#: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
+#, kde-format
+msgid "Pl. %1"
+msgstr ""
 
-#: app/TrainDelegate.qml:62
-#, fuzzy, kde-format
-#| msgctxt "flight departure, %1 is airport, %2 is time"
-#| msgid "Departure from %1: %2"
-msgctxt "Train departure"
-msgid "Departure from %1"
-msgstr "Partida de %1: %2"
-
-#: app/TrainDelegate.qml:94
-#, fuzzy, kde-format
-#| msgid "Arrival at %1 on platform %2"
-msgctxt "Train arrival"
-msgid "Arrival at %1 on platform %2"
-msgstr "Chegada as %1 na plataforma %2"
-
-#: app/TrainDelegate.qml:96
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
-msgctxt "Train arrival"
-msgid "Arrival at %1"
-msgstr "Chegada: %1"
+#: app/TrainDelegate.qml:209
+#, kde-format
+msgctxt "Arrival at the location is a day later"
+msgid "(+ 1 day)"
+msgstr ""
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3396,12 +3403,12 @@ msgstr "Layout do veículo de partida"
 msgid "Arrival Vehicle Layout"
 msgstr "Layout do veículo de chegada"
 
-#: app/TransferDelegate.qml:121
+#: app/TransferDelegate.qml:123
 #, kde-format
 msgid "Select transfer"
 msgstr "Selecionar translado"
 
-#: app/TransferDelegate.qml:135
+#: app/TransferDelegate.qml:137
 #, kde-format
 msgid "Delete transfer"
 msgstr "Excluir translado"
@@ -3441,22 +3448,22 @@ msgstr "Bicicletas compartilhadas"
 msgid "Park & Ride"
 msgstr ""
 
-#: app/TransferPage.qml:274
+#: app/TransferPage.qml:277
 #, kde-format
 msgid "%1 ends at %2"
 msgstr "%1 termina em %2"
 
-#: app/TransferPage.qml:276
+#: app/TransferPage.qml:279
 #, kde-format
 msgid "Preceding arrival %1 at %2"
 msgstr "Chegada anterior %1 em %2"
 
-#: app/TransferPage.qml:286
+#: app/TransferPage.qml:289
 #, kde-format
 msgid "%1 starts at %2"
 msgstr "%1 inicia em %2"
 
-#: app/TransferPage.qml:288
+#: app/TransferPage.qml:291
 #, kde-format
 msgid "Following departure %1 from %2"
 msgstr "Partida seguinte de %1 para %2"
@@ -3536,16 +3543,6 @@ msgstr "%1 (%2/%3)"
 #, kde-format
 msgid "Vehicle Layout"
 msgstr "Layout do veículo"
-
-#: app/VehicleLayoutPage.qml:103
-#, kde-format
-msgid "Departure: %1"
-msgstr "Partida: %1"
-
-#: app/VehicleLayoutPage.qml:105
-#, kde-format
-msgid "Arrival: %1"
-msgstr "Chegada: %1"
 
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
@@ -3703,6 +3700,31 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#, fuzzy
+#~| msgid "Departure from %1 on platform %2"
+#~ msgctxt "Train departure"
+#~ msgid "Departure from %1 on platform %2"
+#~ msgstr "Partida de %1 na plataforma %2"
+
+#, fuzzy
+#~| msgctxt "flight departure, %1 is airport, %2 is time"
+#~| msgid "Departure from %1: %2"
+#~ msgctxt "Train departure"
+#~ msgid "Departure from %1"
+#~ msgstr "Partida de %1: %2"
+
+#, fuzzy
+#~| msgid "Arrival at %1 on platform %2"
+#~ msgctxt "Train arrival"
+#~ msgid "Arrival at %1 on platform %2"
+#~ msgstr "Chegada as %1 na plataforma %2"
+
+#, fuzzy
+#~| msgid "Arrival: %1"
+#~ msgctxt "Train arrival"
+#~ msgid "Arrival at %1"
+#~ msgstr "Chegada: %1"
 
 #, fuzzy
 #~| msgid "Import..."
