@@ -82,6 +82,12 @@ Kirigami.Page {
             onTriggered: gateSheet.open()
             visible: !gateModel.isEmpty
         },
+        Kirigami.Action {
+            id: amenityAction
+            icon.name: "edit-find"
+            text: i18n("Find Amenity")
+            onTriggered: amenitySheet.open()
+        },
         Kirigami.Action { separator: true },
         Kirigami.Action {
             id: equipmentAction
@@ -222,6 +228,14 @@ Kirigami.Page {
         id: equipmentModel
         mapData: map.mapData
         realtimeModel: locationModel.sourceModel
+    }
+
+    IndoorMapAmenitySheet {
+        id: amenitySheet
+        model: AmenityModel {
+            mapData: map.mapData
+        }
+        map: root.map
     }
 
     function queryLiveLocationData()
