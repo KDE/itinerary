@@ -70,21 +70,21 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: platformAction
-            icon.name: "edit-find"
+            icon.name: "search"
             text: i18n("Find Platform")
             onTriggered: platformSheet.open()
             visible: !platformModel.isEmpty
         },
         Kirigami.Action {
             id: gateAction
-            icon.name: "edit-find"
+            icon.name: "search"
             text: i18n("Find Gate")
             onTriggered: gateSheet.open()
             visible: !gateModel.isEmpty
         },
         Kirigami.Action {
             id: amenityAction
-            icon.name: "edit-find"
+            icon.name: "search"
             text: i18n("Find Amenity")
             onTriggered: amenitySheet.open()
         },
