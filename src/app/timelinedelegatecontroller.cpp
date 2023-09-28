@@ -82,6 +82,7 @@ void TimelineDelegateController::setReservationManager(QObject *resMgr)
     Q_EMIT contentChanged();
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
+    Q_EMIT journeyChanged();
     Q_EMIT previousLocationChanged();
     Q_EMIT layoutChanged();
 
@@ -109,6 +110,7 @@ void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
     Q_EMIT setupChanged();
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
+    Q_EMIT journeyChanged();
     Q_EMIT layoutChanged();
 
     connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, &TimelineDelegateController::checkForUpdate);
@@ -116,11 +118,20 @@ void TimelineDelegateController::setLiveDataManager(QObject* liveDataMgr)
     connect(m_liveDataMgr, &LiveDataManager::arrivalUpdated, this, [this](const auto &batchId) {
         if (batchId == m_batchId) {
             Q_EMIT arrivalChanged();
+            Q_EMIT journeyChanged();
         }
     });
     connect(m_liveDataMgr, &LiveDataManager::departureUpdated, this, [this](const auto &batchId) {
         if (batchId == m_batchId) {
             Q_EMIT departureChanged();
+            Q_EMIT journeyChanged();
+        }
+    });
+    connect(m_liveDataMgr, &LiveDataManager::journeyUpdated, this, [this](const auto &batchId) {
+        if (batchId == m_batchId) {
+            Q_EMIT departureChanged();
+            Q_EMIT arrivalChanged();
+            Q_EMIT journeyChanged();
         }
     });
 
@@ -173,6 +184,7 @@ void TimelineDelegateController::setBatchId(const QString &batchId)
     Q_EMIT contentChanged();
     Q_EMIT departureChanged();
     Q_EMIT arrivalChanged();
+    Q_EMIT journeyChanged();
     Q_EMIT previousLocationChanged();
     checkForUpdate(batchId);
 }
@@ -344,6 +356,7 @@ void TimelineDelegateController::batchChanged(const QString& batchId)
     Q_EMIT contentChanged();
     Q_EMIT arrivalChanged();
     Q_EMIT departureChanged();
+    Q_EMIT journeyChanged();
     Q_EMIT previousLocationChanged();
 }
 
