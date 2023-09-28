@@ -33,9 +33,6 @@ FormCard.FormCard {
     property alias contentItem: content.contentItem
     signal clicked
 
-
-//    showClickFeedback: true
-
     property QtObject controller: TimelineDelegateController {
         id: _controller
         reservationManager: ReservationManager
@@ -60,11 +57,6 @@ FormCard.FormCard {
             color: Kirigami.Theme.backgroundColor
             Kirigami.Theme.colorSet: controller.isCurrent ? Kirigami.Theme.Selection : controller.isCanceled ? Kirigami.Theme.View : Kirigami.Theme.Header
             Kirigami.Theme.inherit: false
-//            defaultColor: {
-//                if (controller.connectionWarning)
-//                    return Kirigami.Theme.negativeTextColor;
-//                return Kirigami.Theme.backgroundColor;
-//            }
 
             Rectangle {
                 id: progressBar
@@ -91,14 +83,6 @@ FormCard.FormCard {
                 property real aspectRatio: isMask ? 1.0 : Util.svgAspectRatio(source)
             }
         }
-
-//        id: headerBackground
-//        card: root
-
-//        implicitHeight: headerLayout.implicitHeight + Kirigami.Units.largeSpacing * 2
-
-
-
     }
 
     FormCard.AbstractFormDelegate {

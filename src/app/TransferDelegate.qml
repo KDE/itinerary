@@ -127,14 +127,13 @@ FormCard.FormCard {
         visible: transfer.state == Transfer.Pending || transfer.state == Transfer.Searching
         Accessible.ignored: !visible
     }
-//    Component {
-//        id: detailsComponent
-//        App.TransferPage {
-//            transfer: root.transfer
-//        }
-//    }
-
-
-
+    Item{
+        Component {
+            id: detailsComponent
+            App.TransferPage {
+                transfer: root.transfer
+            }
+        }
+    }
     Accessible.name: headerLabel.text
 }
