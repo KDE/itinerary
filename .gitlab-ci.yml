@@ -27,8 +27,8 @@ signapk:
     - craft_android_arm64
   before_script:
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
-    - git checkout work/fdroid-publisher
     - cd sftpnotary
+    - git checkout work/fdroid-publisher
     - python3 -m venv .venv
     - . .venv/bin/activate
     - pip3 install -r requirements.txt
@@ -54,8 +54,8 @@ publishonfdroid:
     - signapk
   before_script:
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
-    - git checkout work/fdroid-publisher
     - cd sftpnotary
+    - git checkout work/fdroid-publisher
     - python3 -m venv .venv
     - . .venv/bin/activate
     - pip3 install -r requirements.txt
