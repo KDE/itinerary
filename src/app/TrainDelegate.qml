@@ -21,6 +21,7 @@ TimelineDelegate {
         JourneySectionModel {
             id: sectionModel
             journeySection: root.journeySection
+            showProgress: root.controller.isCurrent && expanded
         }
     }
 
@@ -61,17 +62,25 @@ TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout{
+                id: departureLineLayout
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
+                    trailingProgress: sectionModel.departureTrailingProgress // TODO handle the below being visibile as well
                 }
                 JourneySectionStopDelegateLineSegment {
                     visible: departureCountryLayout.visible
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
+                    // TODO trailingProgress
+                }
+                Binding {
+                    target: sectionModel
+                    property: "departureTrailingSegmentLength"
+                    value: departureLineLayout.height + expandLine.height
                 }
             }
 
@@ -142,10 +151,14 @@ TimelineDelegate {
         RowLayout {
             width: parent.width
             JourneySectionStopDelegateLineSegment {
+                id: expandLine
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: false
                 hasStop: false
+                // TODO correct ratios
+                leadingProgress: sectionModel.departureTrailingProgress
+                trailingProgress: sectionModel.departureTrailingProgress
             }
             QQC2.ToolButton {
                 visible: stopRepeater.count !== 0
@@ -215,10 +228,22 @@ TimelineDelegate {
                 }
                 width: parent.width
                 JourneySectionStopDelegateLineSegment {
-
+                    id: line
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: model.stopover.disruptionEffect !== Disruption.NoService
+                    leadingProgress: model.leadingProgress
+                    trailingProgress: model.trailingProgress
+                    Binding {
+                        target: model
+                        property: "leadingLength"
+                        value: line.leadingLineLength
+                    }
+                    Binding {
+                        target: model
+                        property: "trailingLength"
+                        value: line.trailingLineLength
+                    }
                 }
                 RowLayout {
                     Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
@@ -248,17 +273,25 @@ TimelineDelegate {
         RowLayout {
             width: parent.width
             ColumnLayout {
+                id: arrivalLineLayout
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
                     visible: arrivalCountryLayout.visible
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
+                    // TODO progress
                 }
                 JourneySectionStopDelegateLineSegment {
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isArrival: true
+                    leadingProgress: sectionModel.arrivalLeadingProgress
+                }
+                Binding {
+                    target: sectionModel
+                    property: "arrivalLeadingSegmentLength"
+                    value: arrivalLineLayout.height // TODO correct ration when the above is visible
                 }
             }
             ColumnLayout{
