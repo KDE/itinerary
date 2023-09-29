@@ -21,7 +21,6 @@ App.TimelineDelegate {
         JourneySectionModel {
             id: sectionModel
             journeySection: root.journeySection
-            onJourneySectionChanged: print(root.journeySection)
         }
     }
 
@@ -97,18 +96,21 @@ App.TimelineDelegate {
                     }
                 }
 
-                QQC2.Label {
-                    Layout.fillWidth: true
+                RowLayout{
+                    Item{
+                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                    }
+                    QQC2.Label {
+                        Layout.fillWidth: true
 
-                    visible: text.length > 0
-                    text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
-                                                             reservationFor.arrivalStation.address,
-                                                             Settings.homeCountryIsoCode)
-                    width: topLayout.width
+                        visible: text.length > 0
+                        text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+                                                                 reservationFor.arrivalStation.address,
+                                                                 Settings.homeCountryIsoCode)
+                        width: topLayout.width
+                    }
                 }
-
             }
-
         }
 
         RowLayout {
@@ -210,7 +212,6 @@ App.TimelineDelegate {
                     elide: Text.ElideRight
 
                 }
-
             }
         }
 
@@ -251,20 +252,22 @@ App.TimelineDelegate {
                     }
                 }
 
-                QQC2.Label {
-                    Layout.fillWidth: true
+                RowLayout {
+                    Item{
+                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                    }
+                    QQC2.Label {
+                        Layout.fillWidth: true
 
-                    visible: text.length > 0
-                    width: topLayout.width
-                    text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
-                                                             reservationFor.departureStation.address,
-                                                             Settings.homeCountryIsoCode)
+                        visible: text.length > 0
+                        width: topLayout.width
+                        text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+                                                                 reservationFor.departureStation.address,
+                                                                 Settings.homeCountryIsoCode)
+                    }
                 }
             }
-
         }
-
-
     }
 
     onClicked: showDetailsPage(busDetailsPage, root.batchId)
