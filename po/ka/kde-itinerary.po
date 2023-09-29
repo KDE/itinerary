@@ -3,13 +3,11 @@
 # This file is distributed under the same license as the itinerary package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
 "PO-Revision-Date: 2023-09-24 04:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -30,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
@@ -1344,7 +1342,7 @@ msgstr "%1-ის ტესტი (%2)"
 msgid "Recovery (%1)"
 msgstr "აღდგენა (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "ჯანმრთელობის სერტიფიკატები"
@@ -1599,6 +1597,11 @@ msgstr "ჩეკინის დრო"
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1642,38 +1645,38 @@ msgstr "დაპატარავება"
 msgid "Find Platform"
 msgstr "პლატფორმის მოძებნა"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "ლიფტის სტატუსის ჩვენება"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "საქირავებელი მანქანების ჩვენება"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "რუკის გახსნა"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Wheelmap.org-ის გახსნა"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "გადავერთე სართულზე %1"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "სართულით დაბლა"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1916,7 +1919,7 @@ msgstr "ფრენა %1-დან %2-მდე:"
 msgid "Itinerary change"
 msgstr "მარშრუტის ცვლილება"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "მიმდინარე სტატუსი"
@@ -2197,22 +2200,27 @@ msgstr "განახლებების &შემოწმება"
 msgid "Download Maps"
 msgstr "რუკების გადმოწერა"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "სტატისტიკა"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "მორგება..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "გატანა..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "დახმარება"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
@@ -2277,11 +2285,6 @@ msgstr "ბილეთები და პროგრამები"
 #, kde-format
 msgid "Current Ticket"
 msgstr "მიმდინარე ბილეთი"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "სტატისტიკა"
 
 #: app/notificationhelper.cpp:62
 #, kde-format

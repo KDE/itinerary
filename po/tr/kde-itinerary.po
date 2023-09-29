@@ -1,16 +1,14 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
-#: app/TrainDelegate.qml:185
-#, kde-format
+# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-08-25 14:04+0300\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"PO-Revision-Date: 2023-09-28 10:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -459,7 +457,7 @@ msgstr "Varış: %1"
 #: app/BusDelegate.qml:158
 #, kde-format
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+1 gün)"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1346,7 +1344,7 @@ msgstr "Sınama %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "İyileşme (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sağlık Sertifikaları"
@@ -1601,6 +1599,11 @@ msgstr "Giriş zamanı"
 msgid "Check-out time"
 msgstr "Çıkış zamanı"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1644,38 +1647,38 @@ msgstr "Uzaklaştır"
 msgid "Find Platform"
 msgstr "Platform Bul"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Asansör Durumunu Göster"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Kiralık Araçları Göster"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Haritayı Aç"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "wheelmap.org'u Aç"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "%1. kata geçildi"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Bir kat aşağı"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1728,7 +1731,7 @@ msgstr "Otobüs"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 sa"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1918,7 +1921,7 @@ msgstr "%1 uçuşu, %2:"
 msgid "Itinerary change"
 msgstr "Yolcu belgesi değişikliği"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Canlı Durum"
@@ -2199,22 +2202,27 @@ msgstr "Güncellemeleri Denetle"
 msgid "Download Maps"
 msgstr "Haritalar İndir"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Ayarlar..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Dışa Aktar..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Yardım"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Harita indirme bitti."
@@ -2279,11 +2287,6 @@ msgstr "Kartlar ve Programlar"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Geçerli Bilet"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "İstatistikler"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3140,9 +3143,7 @@ msgid "Arrival Time"
 msgstr "Varış Zamanı"
 
 #: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
@@ -3150,7 +3151,7 @@ msgstr "Pl. %1"
 #, kde-format
 msgctxt "Arrival at the location is a day later"
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+1 gün)"
 
 #: app/TrainEditor.qml:19
 #, kde-format

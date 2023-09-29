@@ -2,13 +2,11 @@
 # Alois Spitzbart <spitz234@hotmail.com>, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2021, 2022, 2023.
 # Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2022.
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
 "PO-Revision-Date: 2023-07-09 00:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -29,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "spitz234@hotmail.com, dev-kde@felsenfleischer.de"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Über"
@@ -1363,7 +1361,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Genesen (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Gesundheitsnachweise"
@@ -1619,6 +1617,11 @@ msgstr "Check-in-Zeit"
 msgid "Check-out time"
 msgstr "Check-out-Zeit"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1662,38 +1665,38 @@ msgstr "Verkleinern"
 msgid "Find Platform"
 msgstr "Bahnsteig suchen"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Aufzugszustand anzeigen"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Mietfahrzeuge anzeigen"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Karte öffnen"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "weelmap.org öffnen"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Zu Geschoss %1 gewechselt"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Geschoss hinunter"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1940,7 +1943,7 @@ msgstr "Flug %1 von %2 nach %3"
 msgid "Itinerary change"
 msgstr "Reiseplan geändert"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Live-Status"
@@ -2228,22 +2231,27 @@ msgstr "Auf Aktualisierungen prüfen"
 msgid "Download Maps"
 msgstr "Karten herunterladen"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Statistik"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Einstellungen ..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exportieren ..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Hilfe"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Das Herunterladen der Karte ist abgeschlossen."
@@ -2310,11 +2318,6 @@ msgstr "Pässe & Programme"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Aktueller Fahrschein"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Statistik"
 
 #: app/notificationhelper.cpp:62
 #, kde-format

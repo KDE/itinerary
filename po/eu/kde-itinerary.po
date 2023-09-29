@@ -6,14 +6,12 @@
 # Translators:
 # Ander Elortondo <ander.elor@gmail.com>, 2020.
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2023.
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 09:44+0200\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"PO-Revision-Date: 2023-09-28 19:11+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -33,7 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus,ander.elor@gmail.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Honi buruz"
@@ -464,7 +462,7 @@ msgstr "Iritsiera: %1"
 #: app/BusDelegate.qml:158
 #, kde-format
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ egun 1)"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1351,7 +1349,7 @@ msgstr "Proba %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Osatzea (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Osasun ziurtagiriak"
@@ -1606,6 +1604,11 @@ msgstr "Izen-emateko ordua"
 msgid "Check-out time"
 msgstr "Ordaindu eta irteteko ordua"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1649,38 +1652,38 @@ msgstr "Zooma urrundu"
 msgid "Find Platform"
 msgstr "Bilatu nasa"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Erakutsi igogailuaren egoera"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Erakutsi alokairuko ibilgailuak"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Ireki mapa"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Ireki wheelmap.org"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "%1. solairura aldatu da"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Solairua gora"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1733,7 +1736,7 @@ msgstr "Autobusa"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1923,7 +1926,7 @@ msgstr "%1 hegaldia %2(e)ra:"
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Zuzeneko egoera"
@@ -2203,22 +2206,27 @@ msgstr "Egiaztatu eguneratzeak"
 msgid "Download Maps"
 msgstr "Mapak zama-jaitsi"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Estatistikak"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Ezarpenak..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Esportatu..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Laguntza"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Mapa zama-jaistea amaitu da."
@@ -2283,11 +2291,6 @@ msgstr "Txartelak eta programak"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Uneko txartela"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Estatistikak"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3146,17 +3149,15 @@ msgid "Arrival Time"
 msgstr "Iritsiera-ordua"
 
 #: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
-msgstr "%1 Pl."
+msgstr "%1 Na."
 
 #: app/TrainDelegate.qml:209
 #, kde-format
 msgctxt "Arrival at the location is a day later"
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ egun 1)"
 
 #: app/TrainEditor.qml:19
 #, kde-format

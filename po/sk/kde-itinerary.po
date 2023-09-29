@@ -1,13 +1,11 @@
 # translation of kde-itinerary.po to Slovak
 # Roman Paholik <wizzadsk@gmail.com>, 2019, 2021.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2020.
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -28,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "O aplikácii"
@@ -1438,7 +1436,7 @@ msgstr "Test"
 msgid "Recovery (%1)"
 msgstr "Obnova"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Zdravotné certifikáty"
@@ -1697,6 +1695,11 @@ msgstr "Vstupná kontrola"
 msgid "Check-out time"
 msgstr "Výstupná kontrola %1"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1740,39 +1743,39 @@ msgstr "Oddialiť"
 msgid "Find Platform"
 msgstr "Nájsť nástupište"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr ""
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr ""
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, fuzzy, kde-format
 msgid "Open Map"
 msgstr "&Otvoriť mapu..."
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr ""
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr ""
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, fuzzy, kde-format
 #| msgid "Floor %1"
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Poschodie %1"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, fuzzy, kde-format
 #| msgid "Floor %1"
 msgctxt "@action:intoolbar Go up one floor"
@@ -2030,7 +2033,7 @@ msgstr "Let %1 z %2 do %3"
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2321,22 +2324,27 @@ msgstr "Skontrolovať aktualizácie"
 msgid "Download Maps"
 msgstr "&Prevziať mapy..."
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, fuzzy, kde-format
+msgid "Statistics"
+msgstr "Štatistika"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Nastavenie..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exportovať..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, fuzzy, kde-format
 msgid "Help"
 msgstr "Pomocník"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr ""
@@ -2405,11 +2413,6 @@ msgstr ""
 #, kde-format
 msgid "Current Ticket"
 msgstr "Aktuálny ticket"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, fuzzy, kde-format
-msgid "Statistics"
-msgstr "Štatistika"
 
 #: app/notificationhelper.cpp:62
 #, kde-format

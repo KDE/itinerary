@@ -4,14 +4,12 @@
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Yuri Chornoivan <yurchor@ukr.net>, 2019, 2020, 2021, 2022, 2023.
-#: app/TrainDelegate.qml:185
-#, fuzzy, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 18:45+0300\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"PO-Revision-Date: 2023-09-28 09:13+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -32,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Про програму"
@@ -466,7 +464,7 @@ msgstr "Прибуття: %1"
 #: app/BusDelegate.qml:158
 #, kde-format
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 день)"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1353,7 +1351,7 @@ msgstr "Тест %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Відновлення (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Сертифікати здоров'я"
@@ -1610,6 +1608,11 @@ msgstr "Час перевірки на вході"
 msgid "Check-out time"
 msgstr "Час перевірки на виході"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1653,38 +1656,38 @@ msgstr "Зменшити"
 msgid "Find Platform"
 msgstr "Знайти платформу"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Показувати стан ліфта"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Показувати оренду транспорту"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Відкрити карту"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Відкрити wheelmap.org"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Перемкнути на поверх %1"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Поверхом нижче"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1737,7 +1740,7 @@ msgstr "Автобус"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 г"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1929,7 +1932,7 @@ msgstr "Рейс %1 до %2:"
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Інтерактивний стан"
@@ -2211,22 +2214,27 @@ msgstr "Перевірити наявність оновлень"
 msgid "Download Maps"
 msgstr "Отримати карти"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Статистика"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Параметри…"
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Експортувати…"
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Отримання карти завершено."
@@ -2291,11 +2299,6 @@ msgstr "Безкоштовні квитки і програми"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Поточний квиток"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Статистика"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3160,9 +3163,7 @@ msgid "Arrival Time"
 msgstr "Час прибуття"
 
 #: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
@@ -3170,7 +3171,7 @@ msgstr "Пл. %1"
 #, kde-format
 msgctxt "Arrival at the location is a day later"
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 день)"
 
 #: app/TrainEditor.qml:19
 #, kde-format

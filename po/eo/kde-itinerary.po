@@ -3,14 +3,12 @@
 # This file is distributed under the same license as the itinerary package.
 # Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
 #
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-24 06:32+0100\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"PO-Revision-Date: 2023-09-28 07:45+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -30,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Pri"
@@ -459,7 +457,7 @@ msgstr "Alveno: %1"
 #: app/BusDelegate.qml:158
 #, kde-format
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 tago)"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1346,7 +1344,7 @@ msgstr "Testo %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Reakiro (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sanaj Atestiloj"
@@ -1600,6 +1598,11 @@ msgstr "Enregistriĝotempo"
 msgid "Check-out time"
 msgstr "Tempo de eliro"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1643,38 +1646,38 @@ msgstr "Malzomi"
 msgid "Find Platform"
 msgstr "Trovi Platformon"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Montri Staton de Lifto"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Montri Luo-Veturilojn"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Malfermi Mapon"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Malfermi wheelmap.org"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Ŝanĝis al etaĝo %1"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Planko malsupren"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1727,7 +1730,7 @@ msgstr "Buso"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1917,7 +1920,7 @@ msgstr "Flugo %1 al %2:"
 msgid "Itinerary change"
 msgstr "Itinera ŝanĝo"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Viva Statuso"
@@ -2197,22 +2200,27 @@ msgstr "Kontroli pri Ĝisdatigoj"
 msgid "Download Maps"
 msgstr "Elŝuti Mapojn"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Statistiko"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Agordoj..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Eksporti..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Helpo"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
@@ -2277,11 +2285,6 @@ msgstr "Enirpermesiloj & Programoj"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Nuna Bileto"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Statistiko"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3137,9 +3140,7 @@ msgid "Arrival Time"
 msgstr "Alvena Tempo"
 
 #: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
@@ -3147,7 +3148,7 @@ msgstr "Pl. %1"
 #, kde-format
 msgctxt "Arrival at the location is a day later"
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 tago)"
 
 #: app/TrainEditor.qml:19
 #, kde-format

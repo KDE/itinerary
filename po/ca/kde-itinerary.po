@@ -5,14 +5,12 @@
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020, 2021, 2022, 2023.
 # Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2021, 2022, 2023.
-#: app/TrainDelegate.qml:185
-#, kde-format
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
-"PO-Revision-Date: 2023-09-23 15:29+0200\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"PO-Revision-Date: 2023-09-28 12:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -32,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "Quant al"
@@ -460,7 +458,7 @@ msgstr "Arribada: %1"
 #: app/BusDelegate.qml:158
 #, kde-format
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 dia)"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1348,7 +1346,7 @@ msgstr "Prova %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Recuperació (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certificats de salut"
@@ -1603,6 +1601,11 @@ msgstr "Hora de la facturació"
 msgid "Check-out time"
 msgstr "Hora de la sortida"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1646,38 +1649,38 @@ msgstr "Allunya"
 msgid "Find Platform"
 msgstr "Cerca de la plataforma"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Mostra l'estat dels ascensors"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Mostra els lloguers de vehicles"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Obre un mapa"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Obre wheelmap.org"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Ha canviat a la planta %1"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Planta avall"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1730,7 +1733,7 @@ msgstr "Autobús"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1921,7 +1924,7 @@ msgstr "Vol %1 a %2:"
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Estat en directe"
@@ -2204,22 +2207,27 @@ msgstr "Comprova si hi ha actualitzacions"
 msgid "Download Maps"
 msgstr "Baixa els mapes"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Estadístiques"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Arranjament..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Exporta..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
@@ -2284,11 +2292,6 @@ msgstr "Passis i programes"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Bitllet actual"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Estadístiques"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
@@ -3152,9 +3155,7 @@ msgid "Arrival Time"
 msgstr "Hora d'arribada"
 
 #: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
@@ -3162,7 +3163,7 @@ msgstr "Pl. %1"
 #, kde-format
 msgctxt "Arrival at the location is a day later"
 msgid "(+ 1 day)"
-msgstr ""
+msgstr "(+ 1 dia)"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3561,22 +3562,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1 on platform %2"
-#~ msgstr "Sortida des de %1 a la plataforma %2"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1"
-#~ msgstr "Sortida des de %1"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1 on platform %2"
-#~ msgstr "Arribada a %1 a la plataforma %2"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1"
-#~ msgstr "Arribada a %1"
-
-#~ msgid "Passes && Programs"
-#~ msgstr "Passis i programes"

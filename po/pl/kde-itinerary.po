@@ -2,13 +2,12 @@
 # This file is distributed under the same license as the itinerary package.
 #
 # Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2019, 2020, 2021, 2022, 2023.
-#: app/TrainDelegate.qml:185
-#, fuzzy, kde-format
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-28 01:40+0000\n"
+"POT-Creation-Date: 2023-09-29 01:39+0000\n"
 "PO-Revision-Date: 2023-09-23 07:46+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -30,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lukasz.wojnilowicz@gmail.com"
 
-#: app/AboutPage.qml:19 app/main.qml:219
+#: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
 msgid "About"
 msgstr "O programie"
@@ -1349,7 +1348,7 @@ msgstr "Badanie %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Zdrowienie (%1)"
 
-#: app/HealthCertificatePage.qml:17 app/main.qml:181
+#: app/HealthCertificatePage.qml:17 app/main.qml:188
 #, kde-format
 msgid "Health Certificates"
 msgstr "Certyfikaty zdrowia"
@@ -1605,6 +1604,11 @@ msgstr "Czas zameldowania"
 msgid "Check-out time"
 msgstr "Czas wymeldowania"
 
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
 msgid "Find Gate"
@@ -1648,38 +1652,38 @@ msgstr "Pomniejsz"
 msgid "Find Platform"
 msgstr "Znajdź peron"
 
-#: app/IndoorMapPage.qml:88
+#: app/IndoorMapPage.qml:94
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Pokaż stan windy"
 
-#: app/IndoorMapPage.qml:97
+#: app/IndoorMapPage.qml:103
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Pokaż samochody na wynajem"
 
-#: app/IndoorMapPage.qml:105
+#: app/IndoorMapPage.qml:111
 #, kde-format
 msgid "Open Map"
 msgstr "Otwórz mapę"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:117
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Otwórz wheelmap.org"
 
-#: app/IndoorMapPage.qml:261
+#: app/IndoorMapPage.qml:275
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Przełącz na poziom %1"
 
-#: app/IndoorMapPage.qml:308
+#: app/IndoorMapPage.qml:322
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Piętro niżej"
 
-#: app/IndoorMapPage.qml:316
+#: app/IndoorMapPage.qml:330
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -1923,7 +1927,7 @@ msgstr "Lot %1 do %2:"
 msgid "Itinerary change"
 msgstr "Zmiana planu podróży"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:192
+#: app/LiveStatusPage.qml:19 app/main.qml:199
 #, kde-format
 msgid "Live Status"
 msgstr "Stan na żywo"
@@ -2203,22 +2207,27 @@ msgstr "Sprawdź uaktualnienia"
 msgid "Download Maps"
 msgstr "Pobierz mapy"
 
-#: app/main.qml:200
+#: app/main.qml:181 app/StatisticsPage.qml:16
+#, kde-format
+msgid "Statistics"
+msgstr "Statystyki"
+
+#: app/main.qml:207
 #, kde-format
 msgid "Settings..."
 msgstr "Ustawienia..."
 
-#: app/main.qml:207 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:157
 #, kde-format
 msgid "Export..."
 msgstr "Wyeksportuj..."
 
-#: app/main.qml:212 app/WelcomePage.qml:17
+#: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
 msgstr "Pomoc"
 
-#: app/main.qml:282
+#: app/main.qml:289
 #, kde-format
 msgid "Map download finished."
 msgstr "Ukończono pobieranie mapy."
@@ -2283,11 +2292,6 @@ msgstr "Wejściówki i programy"
 #, kde-format
 msgid "Current Ticket"
 msgstr "Bieżący bilet"
-
-#: app/NavigationBar.qml:46 app/StatisticsPage.qml:16
-#, kde-format
-msgid "Statistics"
-msgstr "Statystyki"
 
 #: app/notificationhelper.cpp:62
 #, kde-format
