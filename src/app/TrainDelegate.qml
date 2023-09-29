@@ -61,11 +61,19 @@ App.TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
-
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isDeparture: true
+            ColumnLayout{
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isDeparture: true
+                }
+                JourneySectionStopDelegateLineSegment {
+                    visible: departureCountryLayout.visible
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    hasStop: false
+                }
             }
 
             ColumnLayout{
@@ -115,13 +123,14 @@ App.TimelineDelegate {
                     }
                 }
                 RowLayout{
+                    id: departureCountryLayout
+                    visible: departureCountryLabel.text.length > 0
                     Item{
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
                     QQC2.Label {
+                        id: departureCountryLabel
                         Layout.fillWidth: true
-
-                        visible: text.length > 0
                         text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
                                                                  reservationFor.arrivalStation.address,
                                                                  Settings.homeCountryIsoCode)
@@ -238,11 +247,19 @@ App.TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
-
-                Layout.fillHeight: true
-                lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                isArrival: true
+            ColumnLayout {
+                spacing: 0
+                JourneySectionStopDelegateLineSegment {
+                    visible: arrivalCountryLayout.visible
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    hasStop: false
+                }
+                JourneySectionStopDelegateLineSegment {
+                    Layout.fillHeight: true
+                    lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
+                    isArrival: true
+                }
             }
             ColumnLayout{
                 Layout.topMargin:  Kirigami.Units.largeSpacing
@@ -290,13 +307,14 @@ App.TimelineDelegate {
                     }
                 }
                 RowLayout {
+                    id: arrivalCountryLayout
+                    visible: arrivalCountryLabel.text.length > 0
                     Item{
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     }
                     QQC2.Label {
+                        id: arrivalCountryLabel
                         Layout.fillWidth: true
-
-                        visible: text.length > 0
                         width: topLayout.width
                         text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
                                                                  reservationFor.departureStation.address,
