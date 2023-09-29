@@ -73,28 +73,28 @@ publishonfdroid:
     paths:
      - ".kde-ci-packages/task*.log"
 
-signflatpak:
-  stage: deploy
-  when: manual
-  image: invent-registry.kde.org/sysadmin/ci-images/android-qt515:latest
-  tags:
-    - Linux
-  variables:
-    GIT_STRATEGY: none
-  interruptible: true
-  needs:
-    - flatpak
-  before_script:
-    - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
-    - cd sftpnotary
-    - python3 -m venv .venv
-    - . .venv/bin/activate
-    - pip3 install -r requirements.txt
-  script:
-    - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signflatpak.ini
-    - python3 signflatpak.py -v --config signflatpak.ini $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
-  artifacts:
-    expire_in: 3 days
-    when: always
-    paths:
-     - "task*.log"
+# signflatpak:
+#   stage: deploy
+#   when: manual
+#   image: invent-registry.kde.org/sysadmin/ci-images/android-qt515:latest
+#   tags:
+#     - Linux
+#   variables:
+#     GIT_STRATEGY: none
+#   interruptible: true
+#   needs:
+#     - flatpak
+#   before_script:
+#     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
+#     - cd sftpnotary
+#     - python3 -m venv .venv
+#     - . .venv/bin/activate
+#     - pip3 install -r requirements.txt
+#   script:
+#     - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signflatpak.ini
+#     - python3 signflatpak.py -v --config signflatpak.ini $CI_PROJECT_DIR/${CI_PROJECT_NAME}.flatpak
+#   artifacts:
+#     expire_in: 3 days
+#     when: always
+#     paths:
+#      - "task*.log"
