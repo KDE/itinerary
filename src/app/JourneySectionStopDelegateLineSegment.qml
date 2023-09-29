@@ -63,7 +63,7 @@ Item {
         x: line.x + (line.width - width) /2
         y: line.y + (isDeparture ? (line.width - width) / 2 + 0.3 * line.width: 0)
         width: lineSegment.lineWidth * 0.6
-        color: Kirigami.Theme.hoverColor
+        color: Qt.platform.os !== "android" ? Kirigami.Theme.hoverColor : Kirigami.Theme.highlightColor
         opacity: 0.9
         height: ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
                 (
