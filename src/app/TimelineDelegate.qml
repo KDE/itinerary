@@ -98,5 +98,5 @@ FormCard.FormCard {
         }
     }
 
-//    Accessible.onPressAction: root.clicked()
+    Accessible.onPressAction: root.clicked()
 }
