@@ -21,6 +21,7 @@ namespace KPublicTransport {
 class JourneyReply;
 class JourneySection;
 class Manager;
+class OnboardStatus;
 class StopoverReply;
 }
 
@@ -136,6 +137,7 @@ private:
     bool m_showNotificationsOnLockScreen = false;
 
     QTimer m_pollTimer;
+    KPublicTransport::OnboardStatus *m_onboardStatus = nullptr;
 
     // date/time overrides for unit testing
     friend class LiveDataManagerTest;

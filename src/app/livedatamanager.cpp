@@ -25,6 +25,7 @@
 #include <KPublicTransport/JourneyRequest>
 #include <KPublicTransport/Location>
 #include <KPublicTransport/Manager>
+#include <KPublicTransport/OnboardStatus>
 #include <KPublicTransport/StopoverReply>
 #include <KPublicTransport/StopoverRequest>
 
@@ -51,6 +52,7 @@ static constexpr const int POLL_COOLDOWN_ON_ERROR = 30; // seconds
 LiveDataManager::LiveDataManager(QObject *parent)
     : QObject(parent)
     , m_ptMgr(new KPublicTransport::Manager(this))
+    , m_onboardStatus(new KPublicTransport::OnboardStatus(this))
 {
     QSettings settings;
     settings.beginGroup(QLatin1String("KPublicTransport"));
@@ -67,6 +69,29 @@ LiveDataManager::LiveDataManager(QObject *parent)
 
     m_pollTimer.setSingleShot(true);
     connect(&m_pollTimer, &QTimer::timeout, this, &LiveDataManager::poll);
+
+    connect(m_onboardStatus, &KPublicTransport::OnboardStatus::journeyChanged, [this]() {
+        if (!m_onboardStatus->hasJourney()) {
+            return;
+        }
+
+        for (const auto &resId : m_reservations) {
+            auto res = m_resMgr->reservation(resId);
+            if (!hasDeparted(resId, res) || hasArrived(resId, res)) {
+                continue;
+            }
+            const auto journey = m_onboardStatus->journey();
+            if (journey.sections().empty()) {
+                return;
+            }
+            auto subjny = PublicTransportMatcher::subJourneyForReservation(res, journey.sections()[0]);
+            if (subjny.mode() == KPublicTransport::JourneySection::Invalid) {
+                return;
+            }
+
+            updateJourneyData(subjny, resId, res);
+        }
+    });
 }
 
 LiveDataManager::~LiveDataManager() = default;
