@@ -27,6 +27,7 @@ signapk:
     - craft_android_arm64
   before_script:
     - git clone https://invent.kde.org/kloecker/ci-services.git sftpnotary
+    - git checkout work/fdroid-publisher
     - cd sftpnotary
     - python3 -m venv .venv
     - . .venv/bin/activate
@@ -53,6 +54,7 @@ publishonfdroid:
     - signapk
   before_script:
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git sftpnotary
+    - git checkout work/fdroid-publisher
     - cd sftpnotary
     - python3 -m venv .venv
     - . .venv/bin/activate
