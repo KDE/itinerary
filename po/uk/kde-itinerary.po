@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-29 01:39+0000\n"
-"PO-Revision-Date: 2023-09-28 09:13+0300\n"
+"POT-Creation-Date: 2023-09-30 01:42+0000\n"
+"PO-Revision-Date: 2023-09-29 08:52+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -127,7 +127,7 @@ msgstr "Додати до календаря…"
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
-#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:161
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
@@ -330,8 +330,8 @@ msgstr "Світло"
 msgid "No camera available."
 msgstr "Немає доступних камер."
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:64 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:34 app/TrainDelegate.qml:35
+#: app/TrainPage.qml:64 app/TransferDelegate.qml:63
 #, kde-format
 msgid "%1 to %2"
 msgstr "з %1 до %2"
@@ -449,22 +449,15 @@ msgstr "На ім'я"
 msgid "Ticket number:"
 msgstr "Номер квитка:"
 
-#: app/BusDelegate.qml:85 app/TrainDelegate.qml:110
-#: app/VehicleLayoutPage.qml:103
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
-msgid "Departure: %1"
-msgstr "Відправлення: %1"
+msgid "1 intermediate stop"
+msgstr ""
 
-#: app/BusDelegate.qml:146 app/TrainDelegate.qml:197
-#: app/VehicleLayoutPage.qml:105
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
-msgid "Arrival: %1"
-msgstr "Прибуття: %1"
-
-#: app/BusDelegate.qml:158
-#, kde-format
-msgid "(+ 1 day)"
-msgstr "(+ 1 день)"
+msgid "%1 intermediate stops"
+msgstr ""
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -783,7 +776,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Зберегти"
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "End: %1"
 msgstr "Кінець: %1"
@@ -908,7 +901,7 @@ msgid "Export Favorite Locations"
 msgstr "Експортувати улюблені місця"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:234
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "файли GPX (*.gpx)"
@@ -1611,7 +1604,7 @@ msgstr "Час перевірки на виході"
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "Пошук зручностей"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
@@ -2022,38 +2015,38 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:41
+#: app/LocationInfoDelegate.qml:44
 #, kde-format
 msgid "Entering %1"
 msgstr "В'їзд до %1"
 
-#: app/LocationInfoDelegate.qml:62
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Немає сумісних розеток: %1"
 
-#: app/LocationInfoDelegate.qml:70
+#: app/LocationInfoDelegate.qml:75
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Несумісні розетки: %1"
 
-#: app/LocationInfoDelegate.qml:77
+#: app/LocationInfoDelegate.qml:82
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Несумісні штекери: %1"
 
-#: app/LocationInfoDelegate.qml:85
+#: app/LocationInfoDelegate.qml:90
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Зміна часового поясу: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:108
+#: app/LocationInfoDelegate.qml:113
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Валюта: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:110
+#: app/LocationInfoDelegate.qml:115
 #, kde-format
 msgid "Currency: %1"
 msgstr "Валюта: %1"
@@ -2224,7 +2217,7 @@ msgstr "Статистика"
 msgid "Settings..."
 msgstr "Параметри…"
 
-#: app/main.qml:214 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:156
 #, kde-format
 msgid "Export..."
 msgstr "Експортувати…"
@@ -2295,7 +2288,7 @@ msgstr "Запланувати подорож"
 msgid "Passes & Programs"
 msgstr "Безкоштовні квитки і програми"
 
-#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:93
 #, kde-format
 msgid "Current Ticket"
 msgstr "Поточний квиток"
@@ -2706,7 +2699,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Джерела даних щодо громадського транспорту…"
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:95
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:91
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
@@ -3051,77 +3044,77 @@ msgstr "Мандрівник %1"
 msgid "My Itinerary"
 msgstr "Мій маршрут"
 
-#: app/TimelinePage.qml:84
+#: app/TimelinePage.qml:88
 #, kde-format
 msgid "Go To Now"
 msgstr "Перейти зараз"
 
-#: app/TimelinePage.qml:95
+#: app/TimelinePage.qml:99
 #, kde-format
 msgid "Add train trip..."
 msgstr "Додати подорож потягом…"
 
-#: app/TimelinePage.qml:102
+#: app/TimelinePage.qml:106
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "Додати подорож поромом…"
 
-#: app/TimelinePage.qml:114
+#: app/TimelinePage.qml:118
 #, kde-format
 msgid "Add accommodation..."
 msgstr "Додати розміщення…"
 
-#: app/TimelinePage.qml:125
+#: app/TimelinePage.qml:129
 #, kde-format
 msgid "Add event..."
 msgstr "Додати подію…"
 
-#: app/TimelinePage.qml:137
+#: app/TimelinePage.qml:141
 #, kde-format
 msgid "Add restaurant..."
 msgstr "Додати ресторан…"
 
-#: app/TimelinePage.qml:154
+#: app/TimelinePage.qml:158
 #, kde-format
 msgid "Delete Trip"
 msgstr "Вилучити подорож"
 
-#: app/TimelinePage.qml:155
+#: app/TimelinePage.qml:159
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "Ви справді бажаєте вилучити цю подорож?"
 
-#: app/TimelinePage.qml:174
+#: app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr "Експорт"
 
-#: app/TimelinePage.qml:177
+#: app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Як файл Itinerary…"
 
-#: app/TimelinePage.qml:186
+#: app/TimelinePage.qml:190
 #, kde-format
 msgid "As GPX file..."
 msgstr "Як файл GPX…"
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:205
 #, kde-format
 msgid "Send to %1"
 msgstr "Надіслати %1"
 
-#: app/TimelinePage.qml:219 app/TimelinePage.qml:228
+#: app/TimelinePage.qml:223 app/TimelinePage.qml:232
 #, kde-format
 msgid "Export Trip"
 msgstr "Експорт подорожі"
 
-#: app/TimelinePage.qml:221
+#: app/TimelinePage.qml:225
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "файл Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:396
+#: app/TimelinePage.qml:405
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "У маршрутах на сьогодні даних немає."
@@ -3162,16 +3155,10 @@ msgstr "Прибуття"
 msgid "Arrival Time"
 msgstr "Час прибуття"
 
-#: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
 #, kde-format
 msgid "Pl. %1"
 msgstr "Пл. %1"
-
-#: app/TrainDelegate.qml:209
-#, kde-format
-msgctxt "Arrival at the location is a day later"
-msgid "(+ 1 day)"
-msgstr "(+ 1 день)"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3273,12 +3260,12 @@ msgstr "Компонування засобу пересування відпр�
 msgid "Arrival Vehicle Layout"
 msgstr "Компонування засобу пересування прибуття"
 
-#: app/TransferDelegate.qml:123
+#: app/TransferDelegate.qml:111
 #, kde-format
 msgid "Select transfer"
 msgstr "Виберіть пересадку"
 
-#: app/TransferDelegate.qml:137
+#: app/TransferDelegate.qml:125
 #, kde-format
 msgid "Delete transfer"
 msgstr "Вилучити пересадку"
@@ -3338,12 +3325,12 @@ msgstr "%1 починається о %2"
 msgid "Following departure %1 from %2"
 msgstr "Після відправлення %1 з %2"
 
-#: app/TripGroupDelegate.qml:62
+#: app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "Trip: %1"
 msgstr "Подорож: %1"
 
-#: app/TripGroupDelegate.qml:88
+#: app/TripGroupDelegate.qml:87
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
@@ -3352,29 +3339,29 @@ msgstr[1] "Дата: %2 (%1 дні)"
 msgstr[2] "Дата: %2 (%1 днів)"
 msgstr[3] "Дата: %2 (%1 день)"
 
-#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:103 app/WeatherForecastDelegate.qml:50
 #: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:118
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: несумісні розетки (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:120
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: несумісні штекери (%2)"
 
-#: app/TripGroupDelegate.qml:124
+#: app/TripGroupDelegate.qml:123
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: немає сумісних штекерів (%2)"
 
-#: app/TripGroupDelegate.qml:134
+#: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
@@ -3383,7 +3370,7 @@ msgstr[1] "Валюти: %2"
 msgstr[2] "Валюти: %2"
 msgstr[3] "Валюта: %2"
 
-#: app/TripGroupDelegate.qml:165
+#: app/TripGroupDelegate.qml:164
 #, kde-format
 msgid "Delete trip"
 msgstr "Вилучити подорож"
@@ -3412,6 +3399,16 @@ msgstr "%1 (%2/%3)"
 #, kde-format
 msgid "Vehicle Layout"
 msgstr "Компонування засобу пересування"
+
+#: app/VehicleLayoutPage.qml:103
+#, kde-format
+msgid "Departure: %1"
+msgstr "Відправлення: %1"
+
+#: app/VehicleLayoutPage.qml:105
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Прибуття: %1"
 
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
@@ -3472,13 +3469,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr "Висока"
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
+#: app/WeatherForecastDelegate.qml:63 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "%1 мм"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
+#: app/WeatherForecastDelegate.qml:76 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"
@@ -3574,6 +3571,13 @@ msgstr "Вхід до системи"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 з %3 до %4 %5"
+
+#~ msgid "(+ 1 day)"
+#~ msgstr "(+ 1 день)"
+
+#~ msgctxt "Arrival at the location is a day later"
+#~ msgid "(+ 1 day)"
+#~ msgstr "(+ 1 день)"
 
 #~ msgctxt "Train departure"
 #~ msgid "Departure from %1 on platform %2"

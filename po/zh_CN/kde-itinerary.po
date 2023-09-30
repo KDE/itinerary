@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"POT-Creation-Date: 2023-09-30 01:42+0000\n"
 "PO-Revision-Date: 2023-09-16 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -121,7 +121,7 @@ msgstr ""
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
-#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:161
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
 msgstr "删除"
@@ -318,8 +318,8 @@ msgstr ""
 msgid "No camera available."
 msgstr ""
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:64 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:34 app/TrainDelegate.qml:35
+#: app/TrainPage.qml:64 app/TransferDelegate.qml:63
 #, kde-format
 msgid "%1 to %2"
 msgstr "%1 到 %2"
@@ -437,21 +437,14 @@ msgstr ""
 msgid "Ticket number:"
 msgstr ""
 
-#: app/BusDelegate.qml:85 app/TrainDelegate.qml:110
-#: app/VehicleLayoutPage.qml:103
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
-msgid "Departure: %1"
-msgstr "出发：%1"
+msgid "1 intermediate stop"
+msgstr ""
 
-#: app/BusDelegate.qml:146 app/TrainDelegate.qml:197
-#: app/VehicleLayoutPage.qml:105
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
-msgid "Arrival: %1"
-msgstr "到达：%1"
-
-#: app/BusDelegate.qml:158
-#, kde-format
-msgid "(+ 1 day)"
+msgid "%1 intermediate stops"
 msgstr ""
 
 #: app/BusEditor.qml:18
@@ -771,7 +764,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr ""
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "End: %1"
 msgstr "结束：%1"
@@ -896,7 +889,7 @@ msgid "Export Favorite Locations"
 msgstr "导出收藏的地点"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:234
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 文件 (*.gpx)"
@@ -1997,38 +1990,38 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:41
+#: app/LocationInfoDelegate.qml:44
 #, kde-format
 msgid "Entering %1"
 msgstr "入境 %1"
 
-#: app/LocationInfoDelegate.qml:62
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "没有兼容的电源插座：%1"
 
-#: app/LocationInfoDelegate.qml:70
+#: app/LocationInfoDelegate.qml:75
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "部分电源插座不兼容：%1"
 
-#: app/LocationInfoDelegate.qml:77
+#: app/LocationInfoDelegate.qml:82
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "部分电源插头不兼容： %1"
 
-#: app/LocationInfoDelegate.qml:85
+#: app/LocationInfoDelegate.qml:90
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "时区变化：%1 (%2)"
 
-#: app/LocationInfoDelegate.qml:108
+#: app/LocationInfoDelegate.qml:113
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:110
+#: app/LocationInfoDelegate.qml:115
 #, kde-format
 msgid "Currency: %1"
 msgstr ""
@@ -2199,7 +2192,7 @@ msgstr "统计数据"
 msgid "Settings..."
 msgstr "设置..."
 
-#: app/main.qml:214 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:156
 #, kde-format
 msgid "Export..."
 msgstr "导出..."
@@ -2271,7 +2264,7 @@ msgstr ""
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:93
 #, kde-format
 msgid "Current Ticket"
 msgstr ""
@@ -2679,7 +2672,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "公共交通信息源..."
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:95
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:91
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
@@ -3009,77 +3002,77 @@ msgstr "旅客 %1"
 msgid "My Itinerary"
 msgstr "我的行程"
 
-#: app/TimelinePage.qml:84
+#: app/TimelinePage.qml:88
 #, kde-format
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:95
+#: app/TimelinePage.qml:99
 #, kde-format
 msgid "Add train trip..."
 msgstr ""
 
-#: app/TimelinePage.qml:102
+#: app/TimelinePage.qml:106
 #, kde-format
 msgid "Add ferry trip..."
 msgstr ""
 
-#: app/TimelinePage.qml:114
+#: app/TimelinePage.qml:118
 #, kde-format
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:125
+#: app/TimelinePage.qml:129
 #, kde-format
 msgid "Add event..."
 msgstr ""
 
-#: app/TimelinePage.qml:137
+#: app/TimelinePage.qml:141
 #, kde-format
 msgid "Add restaurant..."
 msgstr ""
 
-#: app/TimelinePage.qml:154
+#: app/TimelinePage.qml:158
 #, kde-format
 msgid "Delete Trip"
 msgstr ""
 
-#: app/TimelinePage.qml:155
+#: app/TimelinePage.qml:159
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "您确定要删除此行程吗？"
 
-#: app/TimelinePage.qml:174
+#: app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr ""
 
-#: app/TimelinePage.qml:177
+#: app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr ""
 
-#: app/TimelinePage.qml:186
+#: app/TimelinePage.qml:190
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:205
 #, kde-format
 msgid "Send to %1"
 msgstr ""
 
-#: app/TimelinePage.qml:219 app/TimelinePage.qml:228
+#: app/TimelinePage.qml:223 app/TimelinePage.qml:232
 #, kde-format
 msgid "Export Trip"
 msgstr "导出行程"
 
-#: app/TimelinePage.qml:221
+#: app/TimelinePage.qml:225
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/TimelinePage.qml:396
+#: app/TimelinePage.qml:405
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今日无行程计划。"
@@ -3120,15 +3113,9 @@ msgstr "到达信息"
 msgid "Arrival Time"
 msgstr ""
 
-#: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
-
-#: app/TrainDelegate.qml:209
-#, kde-format
-msgctxt "Arrival at the location is a day later"
-msgid "(+ 1 day)"
 msgstr ""
 
 #: app/TrainEditor.qml:19
@@ -3231,12 +3218,12 @@ msgstr "离站列车编组"
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"
 
-#: app/TransferDelegate.qml:123
+#: app/TransferDelegate.qml:111
 #, kde-format
 msgid "Select transfer"
 msgstr ""
 
-#: app/TransferDelegate.qml:137
+#: app/TransferDelegate.qml:125
 #, kde-format
 msgid "Delete transfer"
 msgstr ""
@@ -3296,46 +3283,46 @@ msgstr ""
 msgid "Following departure %1 from %2"
 msgstr "下一班次于 %1 从 %2 出发"
 
-#: app/TripGroupDelegate.qml:62
+#: app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "Trip: %1"
 msgstr "行程：%1"
 
-#: app/TripGroupDelegate.qml:88
+#: app/TripGroupDelegate.qml:87
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "日期：%2 (%1 天)"
 
-#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:103 app/WeatherForecastDelegate.qml:50
 #: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr ""
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:118
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1：部分电源插座不兼容 (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:120
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1：部分电源插头不兼容 (%2)"
 
-#: app/TripGroupDelegate.qml:124
+#: app/TripGroupDelegate.qml:123
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1：没有兼容的电源插头 (%2)"
 
-#: app/TripGroupDelegate.qml:134
+#: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 
-#: app/TripGroupDelegate.qml:165
+#: app/TripGroupDelegate.qml:164
 #, kde-format
 msgid "Delete trip"
 msgstr ""
@@ -3364,6 +3351,16 @@ msgstr ""
 #, kde-format
 msgid "Vehicle Layout"
 msgstr "列车编组"
+
+#: app/VehicleLayoutPage.qml:103
+#, kde-format
+msgid "Departure: %1"
+msgstr "出发：%1"
+
+#: app/VehicleLayoutPage.qml:105
+#, kde-format
+msgid "Arrival: %1"
+msgstr "到达：%1"
 
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
@@ -3424,13 +3421,13 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
+#: app/WeatherForecastDelegate.qml:63 app/WeatherForecastPage.qml:107
 #, kde-format
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
+#: app/WeatherForecastDelegate.qml:76 app/WeatherForecastPage.qml:120
 #, kde-format
 msgctxt "windSpeed"
 msgid "%1 m/s"

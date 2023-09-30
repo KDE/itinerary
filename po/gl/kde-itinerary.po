@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-29 01:39+0000\n"
+"POT-Creation-Date: 2023-09-30 01:42+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -124,7 +124,7 @@ msgstr "Engadir un documento…"
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
-#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:161
+#: app/TicketPage.qml:49 app/TicketPage.qml:159 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
 msgstr "Eliminar"
@@ -341,8 +341,8 @@ msgstr "Voo"
 msgid "No camera available."
 msgstr ""
 
-#: app/BoatDelegate.qml:18 app/BusDelegate.qml:25 app/TrainDelegate.qml:26
-#: app/TrainPage.qml:64 app/TransferDelegate.qml:47
+#: app/BoatDelegate.qml:18 app/BusDelegate.qml:34 app/TrainDelegate.qml:35
+#: app/TrainPage.qml:64 app/TransferDelegate.qml:63
 #, kde-format
 msgid "%1 to %2"
 msgstr "De %1 a %2"
@@ -475,23 +475,14 @@ msgstr "A nome de:"
 msgid "Ticket number:"
 msgstr "Billete de bus"
 
-#: app/BusDelegate.qml:85 app/TrainDelegate.qml:110
-#: app/VehicleLayoutPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Departure: %1"
-msgid "Departure: %1"
-msgstr "Saída: %1"
-
-#: app/BusDelegate.qml:146 app/TrainDelegate.qml:197
-#: app/VehicleLayoutPage.qml:105
-#, fuzzy, kde-format
-#| msgid "Arrival: %1"
-msgid "Arrival: %1"
-msgstr "Chegada: %1"
-
-#: app/BusDelegate.qml:158
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
-msgid "(+ 1 day)"
+msgid "1 intermediate stop"
+msgstr ""
+
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#, kde-format
+msgid "%1 intermediate stops"
 msgstr ""
 
 #: app/BusEditor.qml:18
@@ -840,7 +831,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Gardar"
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "End: %1"
 msgstr "Fin: %1"
@@ -975,7 +966,7 @@ msgid "Export Favorite Locations"
 msgstr "Lugar:"
 
 #: app/FavoriteLocationPage.qml:37 app/FavoriteLocationPage.qml:45
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:234
 #, fuzzy, kde-format
 #| msgid "PDF files (*.pdf)"
 msgid "GPX Files (*.gpx)"
@@ -2168,40 +2159,40 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:41
+#: app/LocationInfoDelegate.qml:44
 #, kde-format
 msgid "Entering %1"
 msgstr "Entrando en %1"
 
-#: app/LocationInfoDelegate.qml:62
+#: app/LocationInfoDelegate.qml:67
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Non hai tomas de corrente compatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:70
+#: app/LocationInfoDelegate.qml:75
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Hai algunhas tomas de corrente incompatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:77
+#: app/LocationInfoDelegate.qml:82
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Algúns enchufes incompatíbeis: %1"
 
-#: app/LocationInfoDelegate.qml:85
+#: app/LocationInfoDelegate.qml:90
 #, fuzzy, kde-format
 #| msgid "One change"
 #| msgid_plural "%1 changes"
 msgid "Timezone change: %1 (%2)"
 msgstr "Un cambio"
 
-#: app/LocationInfoDelegate.qml:108
+#: app/LocationInfoDelegate.qml:113
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr ""
 
-#: app/LocationInfoDelegate.qml:110
+#: app/LocationInfoDelegate.qml:115
 #, kde-format
 msgid "Currency: %1"
 msgstr ""
@@ -2375,7 +2366,7 @@ msgstr ""
 msgid "Settings..."
 msgstr "Configuración…"
 
-#: app/main.qml:214 app/TripGroupDelegate.qml:157
+#: app/main.qml:214 app/TripGroupDelegate.qml:156
 #, kde-format
 msgid "Export..."
 msgstr "Exportar…"
@@ -2450,7 +2441,7 @@ msgstr "Billete do evento"
 msgid "Passes & Programs"
 msgstr ""
 
-#: app/NavigationBar.qml:39 app/TimelinePage.qml:89
+#: app/NavigationBar.qml:39 app/TimelinePage.qml:93
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Current Ticket"
@@ -2882,7 +2873,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Fontes de información de transporte público…"
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:95
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:91
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
@@ -3231,87 +3222,87 @@ msgstr "Viaxante %1"
 msgid "My Itinerary"
 msgstr "Itinerario"
 
-#: app/TimelinePage.qml:84
+#: app/TimelinePage.qml:88
 #, kde-format
 msgid "Go To Now"
 msgstr ""
 
-#: app/TimelinePage.qml:95
+#: app/TimelinePage.qml:99
 #, kde-format
 msgid "Add train trip..."
 msgstr ""
 
-#: app/TimelinePage.qml:102
+#: app/TimelinePage.qml:106
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add ferry trip..."
 msgstr "Engadir un documento…"
 
-#: app/TimelinePage.qml:114
+#: app/TimelinePage.qml:118
 #, kde-format
 msgid "Add accommodation..."
 msgstr ""
 
-#: app/TimelinePage.qml:125
+#: app/TimelinePage.qml:129
 #, fuzzy, kde-format
 #| msgid "Add Document..."
 msgid "Add event..."
 msgstr "Engadir un documento…"
 
-#: app/TimelinePage.qml:137
+#: app/TimelinePage.qml:141
 #, fuzzy, kde-format
 #| msgid "Edit Restaurant"
 msgid "Add restaurant..."
 msgstr "Editar o restaurante"
 
-#: app/TimelinePage.qml:154
+#: app/TimelinePage.qml:158
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete Trip"
 msgstr "Billete do evento"
 
-#: app/TimelinePage.qml:155
+#: app/TimelinePage.qml:159
 #, fuzzy, kde-format
 #| msgid "Do you really want to delete this event?"
 msgid "Do you really want to delete this trip?"
 msgstr "Seguro que quere eliminar este evento?"
 
-#: app/TimelinePage.qml:174
+#: app/TimelinePage.qml:178
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportar…"
 
-#: app/TimelinePage.qml:177
+#: app/TimelinePage.qml:181
 #, fuzzy, kde-format
 #| msgid "My Itinerary"
 msgid "As Itinerary file..."
 msgstr "Itinerario"
 
-#: app/TimelinePage.qml:186
+#: app/TimelinePage.qml:190
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:201
+#: app/TimelinePage.qml:205
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
 msgstr "Data de remate: %1"
 
-#: app/TimelinePage.qml:219 app/TimelinePage.qml:228
+#: app/TimelinePage.qml:223 app/TimelinePage.qml:232
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Exportar…"
 
-#: app/TimelinePage.qml:221
+#: app/TimelinePage.qml:225
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary files (*.itinerary)"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Ficheiros de KDE Itinerary (*.itinerary)"
 
-#: app/TimelinePage.qml:396
+#: app/TimelinePage.qml:405
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"
@@ -3354,15 +3345,9 @@ msgstr "Chegada"
 msgid "Arrival Time"
 msgstr "Hora de chegada:"
 
-#: app/TrainDelegate.qml:97 app/TrainDelegate.qml:183
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
 #, kde-format
 msgid "Pl. %1"
-msgstr ""
-
-#: app/TrainDelegate.qml:209
-#, kde-format
-msgctxt "Arrival at the location is a day later"
-msgid "(+ 1 day)"
 msgstr ""
 
 #: app/TrainEditor.qml:19
@@ -3478,13 +3463,13 @@ msgstr "Vehículo"
 msgid "Arrival Vehicle Layout"
 msgstr "Vehículo"
 
-#: app/TransferDelegate.qml:123
+#: app/TransferDelegate.qml:111
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Select transfer"
 msgstr "Billete do evento"
 
-#: app/TransferDelegate.qml:137
+#: app/TransferDelegate.qml:125
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete transfer"
@@ -3547,19 +3532,19 @@ msgstr ""
 msgid "Following departure %1 from %2"
 msgstr "Saída de %1: %2"
 
-#: app/TripGroupDelegate.qml:62
+#: app/TripGroupDelegate.qml:58
 #, kde-format
 msgid "Trip: %1"
 msgstr "Viaxe: %1"
 
-#: app/TripGroupDelegate.qml:88
+#: app/TripGroupDelegate.qml:87
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Data: %2 (un día)"
 msgstr[1] "Data: %2 (%1 días)"
 
-#: app/TripGroupDelegate.qml:104 app/WeatherForecastDelegate.qml:54
+#: app/TripGroupDelegate.qml:103 app/WeatherForecastDelegate.qml:50
 #: app/WeatherForecastPage.qml:94
 #, fuzzy, kde-format
 #| msgid "%1°C / %2°C"
@@ -3567,29 +3552,29 @@ msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1°C / %2°C"
 
-#: app/TripGroupDelegate.qml:119
+#: app/TripGroupDelegate.qml:118
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: hai algunhas tomas de corrente incompatíbeis (%2)"
 
-#: app/TripGroupDelegate.qml:121
+#: app/TripGroupDelegate.qml:120
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: hai algúns enchufes incompatíbeis (%2)"
 
-#: app/TripGroupDelegate.qml:124
+#: app/TripGroupDelegate.qml:123
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: non hai enchufes compatíbeis (%2)"
 
-#: app/TripGroupDelegate.qml:134
+#: app/TripGroupDelegate.qml:133
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] ""
 msgstr[1] ""
 
-#: app/TripGroupDelegate.qml:165
+#: app/TripGroupDelegate.qml:164
 #, fuzzy, kde-format
 #| msgid "Event Ticket"
 msgid "Delete trip"
@@ -3623,6 +3608,18 @@ msgstr "%1 (%2 %3)"
 #| msgid "Vehicle"
 msgid "Vehicle Layout"
 msgstr "Vehículo"
+
+#: app/VehicleLayoutPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Departure: %1"
+msgid "Departure: %1"
+msgstr "Saída: %1"
+
+#: app/VehicleLayoutPage.qml:105
+#, fuzzy, kde-format
+#| msgid "Arrival: %1"
+msgid "Arrival: %1"
+msgstr "Chegada: %1"
 
 #: app/VehicleLayoutPage.qml:123
 #, fuzzy, kde-format
@@ -3684,14 +3681,14 @@ msgctxt "vehicle load"
 msgid "High"
 msgstr ""
 
-#: app/WeatherForecastDelegate.qml:67 app/WeatherForecastPage.qml:107
+#: app/WeatherForecastDelegate.qml:63 app/WeatherForecastPage.qml:107
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "precipitation"
 msgid "%1 mm"
 msgstr "☂ %1 mm"
 
-#: app/WeatherForecastDelegate.qml:80 app/WeatherForecastPage.qml:120
+#: app/WeatherForecastDelegate.qml:76 app/WeatherForecastPage.qml:120
 #, fuzzy, kde-format
 #| msgid "☂ %1 mm"
 msgctxt "windSpeed"
