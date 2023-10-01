@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
 "PO-Revision-Date: 2023-09-16 10:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -548,12 +548,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -1857,25 +1857,25 @@ msgstr "距离：%1"
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr ""
@@ -3208,12 +3208,12 @@ msgstr "座号："
 msgid "Class:"
 msgstr "座位等级："
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "离站列车编组"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"

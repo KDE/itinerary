@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-29 07:32+0200\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
+"PO-Revision-Date: 2023-09-30 08:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -448,12 +448,12 @@ msgstr "Številka vozovnice:"
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
-msgstr ""
+msgstr "1 vmesni postanek"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
-msgstr ""
+msgstr "%1 vmesnih postankov"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -556,12 +556,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Prihod"
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti potovanja"
@@ -1873,25 +1873,25 @@ msgstr "Razdalja: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Pomol %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Prikaži lokacijo"
@@ -3235,12 +3235,12 @@ msgstr "Sedež:"
 msgid "Class:"
 msgstr "Razred:"
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Oblika vozila v odhodu"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"

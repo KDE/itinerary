@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
 "PO-Revision-Date: 2023-09-29 06:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -553,12 +553,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Alveno"
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativoj"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "Vojaĝaj Detaloj"
@@ -1867,25 +1867,25 @@ msgstr "Distanco: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Doko %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Montru lokon"
@@ -3227,12 +3227,12 @@ msgstr "Sidloko:"
 msgid "Class:"
 msgstr "Klaso:"
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Forira Veturila Aranĝo"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Alvena Veturila Aranĝo"

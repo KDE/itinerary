@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-24 19:20+0200\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
+"PO-Revision-Date: 2023-09-29 15:07+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -553,12 +553,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arrivo"
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "Dettagli di viaggio"
@@ -1595,7 +1595,7 @@ msgstr "Orario del check-out"
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "Trova attrazioni"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
@@ -1724,7 +1724,7 @@ msgstr "Autobus"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 h"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -1868,25 +1868,25 @@ msgstr "Distanza: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Area di aggancio %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Mostra la posizione"
@@ -3143,11 +3143,9 @@ msgid "Arrival Time"
 msgstr "Ora di arrivo"
 
 #: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "Bin. %1"
 
 #: app/TrainEditor.qml:19
 #, kde-format
@@ -3239,12 +3237,12 @@ msgstr "Posto:"
 msgid "Class:"
 msgstr "Classe:"
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Suddivisione veicolo di partenza"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Suddivisione veicolo di arrivo"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-29 10:02+0200\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
+"PO-Revision-Date: 2023-09-30 11:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -446,12 +446,12 @@ msgstr "Ticketnummer:"
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
-msgstr ""
+msgstr "1 tussenstop"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
-msgstr ""
+msgstr "%1 tussenstops"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -554,12 +554,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Aankomst"
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatieven"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "Details van reis"
@@ -1869,25 +1869,25 @@ msgstr "Afstand: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Afmeerlocatie %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Locatie tonen"
@@ -3235,12 +3235,12 @@ msgstr "Zitplaats:"
 msgid "Class:"
 msgstr "Klasse:"
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Indeling van het vertrekkende voertuig"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Indeling van het aankomende voertuig"

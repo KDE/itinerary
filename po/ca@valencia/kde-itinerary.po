@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-30 01:42+0000\n"
-"PO-Revision-Date: 2023-09-29 12:51+0200\n"
+"POT-Creation-Date: 2023-10-01 01:55+0000\n"
+"PO-Revision-Date: 2023-09-30 14:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -446,12 +446,12 @@ msgstr "Número de tiquet:"
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
-msgstr ""
+msgstr "1 parada intermèdia"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
-msgstr ""
+msgstr "%1 parades intermèdies"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -554,12 +554,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arribada"
 
-#: app/BusPage.qml:239 app/TrainPage.qml:312
+#: app/BusPage.qml:239 app/TrainPage.qml:329
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:329
+#: app/BusPage.qml:244 app/JourneySectionPage.qml:16 app/TrainPage.qml:334
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalls del viatge"
@@ -1870,26 +1870,26 @@ msgstr "Distància: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:143
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
 # skip-rule: kct-dock
-#: app/JourneySectionStopDelegate.qml:145
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Moll %1"
 
-#: app/JourneySectionStopDelegate.qml:147
+#: app/JourneySectionStopDelegate.qml:148
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:161
+#: app/JourneySectionStopDelegate.qml:162
 #, kde-format
 msgid "Show location"
 msgstr "Mostra la ubicació"
@@ -2442,8 +2442,8 @@ msgstr "%1 - %2"
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
-"Importa bonus o targetes de programes de descomptes o targetes de tarifa "
-"plana."
+"Importa bonificacions o targetes de programes de descomptes o targetes de "
+"tarifa plana."
 
 #: app/PassPage.qml:103
 #, kde-format
@@ -2729,7 +2729,7 @@ msgid ""
 "trips when connected to Wifi network."
 msgstr ""
 "En habilitar açò es baixaran els mapes de totes les estacions i aeroports "
-"dels propers viatges en connectar amb una xarxa wifi."
+"dels pròxims viatges en connectar amb una xarxa wifi."
 
 #: app/SettingsPage.qml:118
 #, kde-format
@@ -3244,12 +3244,12 @@ msgstr "Seient:"
 msgid "Class:"
 msgstr "Classe:"
 
-#: app/TrainPage.qml:317
+#: app/TrainPage.qml:296
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Disposició del vehicle d'eixida"
 
-#: app/TrainPage.qml:323
+#: app/TrainPage.qml:303
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Disposició del vehicle d'arribada"
@@ -3518,7 +3518,7 @@ msgstr ""
 "de trànsit en línia o les previsions meteorològiques. Per tant, segurament "
 "voldreu revisar estos paràmetres. Quan ho feu, podreu configurar la ubicació "
 "de la vostra llar per a activar l'assistent de transbords i que suggerisca "
-"automàticament els camins cap la propera estació d'eixida o a l'aeroport."
+"automàticament els camins a la pròxima estació d'eixida o a l'aeroport."
 
 #: app/WelcomePage.qml:43
 #, kde-format
@@ -3531,7 +3531,7 @@ msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
 msgstr ""
-"Per a més informació quan a KDE Itinerary, vegeu la <a href=\"https://"
+"Per a més informació quant a KDE Itinerary, vegeu la <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">pàgina del wiki</a>."
 
 #: app/WelcomePage.qml:56
@@ -3560,10 +3560,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgid "(+ 1 day)"
-#~ msgstr "(+ 1 dia)"
-
-#~ msgctxt "Arrival at the location is a day later"
-#~ msgid "(+ 1 day)"
-#~ msgstr "(+ 1 dia)"
