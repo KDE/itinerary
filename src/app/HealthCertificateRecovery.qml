@@ -75,6 +75,7 @@ ColumnLayout {
             text: certificate.certificateId
             Kirigami.FormData.label: i18n("Identifier:")
             wrapMode: Text.Wrap
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)

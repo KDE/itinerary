@@ -60,12 +60,16 @@ ColumnLayout {
             text: certificate.testType
             Kirigami.FormData.label: i18n("Type:")
             visible: certificate.testType
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: certificate.testUrl != "" ? '<a href="' + certificate.testUrl + '">' + certificate.testName + '</a>' : certificate.testName
             visible: certificate.testName.length > 0
             Kirigami.FormData.label: i18n("Test:")
             onLinkActivated: Qt.openUrlExternally(link)
+            wrapMode: Text.WordWrap
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: {
@@ -109,6 +113,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Identifier:")
             wrapMode: Text.Wrap
             visible: text !== ""
+            Layout.fillWidth: true
         }
         QQC2.Label {
             text: certificate.certificateIssueDate.toLocaleString(Qt.locale(), Locale.ShortFormat)

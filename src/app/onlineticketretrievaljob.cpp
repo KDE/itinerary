@@ -23,7 +23,7 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
     if (sourceId == QLatin1String("db")) {
         QNetworkRequest req(QUrl(QStringLiteral("https://fahrkarten.bahn.de/mobile/dbc/xs.go?")));
         req.setHeader(QNetworkRequest::ContentTypeHeader, QByteArray("application/x-www-form-urlencoded"));
-        QByteArray postData("<rqorderdetails version=\"1.0\"><rqheader v=\"19120000\" os=\"KCI\" app=\"KCI-Webservice\"/><rqorder on=\"" + arguments.value(QLatin1String("reference")).toString().toUtf8() + "\"/><authname tln=\"" + arguments.value(QLatin1String("name")).toString().toUtf8() + "\"/></rqorderdetails>");
+        QByteArray postData("<rqorderdetails version=\"1.0\"><rqheader v=\"19120000\" os=\"KCI\" app=\"KCI-Webservice\"/><rqorder on=\"" + arguments.value(QLatin1String("reference")).toString().toUpper().toUtf8() + "\"/><authname tln=\"" + arguments.value(QLatin1String("name")).toString().toUtf8() + "\"/></rqorderdetails>");
         reply = nam->post(req, postData);
     } else if (sourceId == QLatin1String("sncf")) {
         // based on https://www.sncf-connect.com/app/trips/search and stripped to the bare minimum that works
