@@ -78,12 +78,6 @@ FormCard.FormCard {
             }
 
             Item { Layout.fillWidth: true }
-            Component.onCompleted: {
-                // HACK: the Material style has negativeBackgroundColor == negativeTextColor, which makes content unreadable
-                if (Qt.platform.os !== 'android') {
-                    root.background.defaultColor = Qt.binding(function() { return weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor; });
-                }
-            }
         }
     }
 
