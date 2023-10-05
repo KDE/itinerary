@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-08 02:25+0000\n"
+"POT-Creation-Date: 2023-10-05 02:26+0000\n"
 "PO-Revision-Date: 2023-08-17 09:04+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -1328,38 +1328,38 @@ msgstr "Початок чинності:"
 msgid "Valid until:"
 msgstr "Завершення чинності:"
 
-#: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:99
+#: app/HealthCertificateRecovery.qml:66 app/HealthCertificateTest.qml:103
 #: app/HealthCertificateVaccination.qml:104
 #, kde-format
 msgid "Certificate"
 msgstr "Сертифікат"
 
-#: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:104
+#: app/HealthCertificateRecovery.qml:71 app/HealthCertificateTest.qml:108
 #: app/HealthCertificateVaccination.qml:109
 #, kde-format
 msgid "Issuer:"
 msgstr "Видавець:"
 
-#: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:109
-#: app/HealthCertificateVaccination.qml:114
+#: app/HealthCertificateRecovery.qml:76 app/HealthCertificateTest.qml:113
+#: app/HealthCertificateVaccination.qml:116
 #, kde-format
 msgid "Identifier:"
 msgstr "Ідентифікатор:"
 
-#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:116
-#: app/HealthCertificateVaccination.qml:121
+#: app/HealthCertificateRecovery.qml:83 app/HealthCertificateTest.qml:121
+#: app/HealthCertificateVaccination.qml:124
 #, kde-format
 msgid "Issued:"
 msgstr "Видано:"
 
-#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:120
-#: app/HealthCertificateVaccination.qml:125
+#: app/HealthCertificateRecovery.qml:87 app/HealthCertificateTest.qml:125
+#: app/HealthCertificateVaccination.qml:128
 #, kde-format
 msgid "Expires:"
 msgstr "Строк дії:"
 
-#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:135
-#: app/HealthCertificateVaccination.qml:140
+#: app/HealthCertificateRecovery.qml:102 app/HealthCertificateTest.qml:140
+#: app/HealthCertificateVaccination.qml:143
 #, kde-format
 msgid "Signature:"
 msgstr "Підпис:"
@@ -1379,22 +1379,22 @@ msgstr "Дата:"
 msgid "Type:"
 msgstr "Тип:"
 
-#: app/HealthCertificateTest.qml:67
+#: app/HealthCertificateTest.qml:69
 #, kde-format
 msgid "Test:"
 msgstr "Тест:"
 
-#: app/HealthCertificateTest.qml:82
+#: app/HealthCertificateTest.qml:86
 #, kde-format
 msgid "Result:"
 msgstr "Результат:"
 
-#: app/HealthCertificateTest.qml:87
+#: app/HealthCertificateTest.qml:91
 #, kde-format
 msgid "Test Center:"
 msgstr "Центр тестування:"
 
-#: app/HealthCertificateTest.qml:93 app/HealthCertificateVaccination.qml:98
+#: app/HealthCertificateTest.qml:97 app/HealthCertificateVaccination.qml:98
 #, kde-format
 msgid "Country:"
 msgstr "Країна:"
