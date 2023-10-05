@@ -123,12 +123,17 @@ Kirigami.ScrollablePage {
 
                 MobileForm.AbstractFormDelegate {
                     id: timeSelector
-                    text: i18nc("departure time for a train", "Departure time:")
-
                     contentItem: ColumnLayout {
-                        QQC2.Label {
-                            text: timeSelector.text
+                        RowLayout {
                             Layout.fillWidth: true
+                            QQC2.RadioButton {
+                                id: departureButton
+                                text: i18nc("train or bus departure", "Departure")
+                                checked: true
+                            }
+                            QQC2.RadioButton {
+                                text: i18nc("train or bus arrival", "Arrival")
+                            }
                         }
 
                         Flow {
@@ -181,6 +186,7 @@ Kirigami.ScrollablePage {
                                 lineModes.push(Line.Ferry, Line.Boat);
                         }
                         req.lineModes = lineModes;
+                        req.dateTimeMode = departureButton.checked ? JourneyRequest.Departure : JourneyRequest.Arrival;
 
                         console.log(req);
                         applicationWindow().pageStack.currentItem.journeyRequest = req;
