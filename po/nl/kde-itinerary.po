@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:40+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-09-30 11:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -2687,7 +2687,7 @@ msgstr ""
 msgid "Public Transport Information Sources..."
 msgstr "Bronnen met informatie over openbaar vervoer..."
 
-#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:91
+#: app/SettingsPage.qml:91 app/WeatherForecastDelegate.qml:85
 #: app/WeatherForecastPage.qml:20
 #, kde-format
 msgid "Weather Forecast"
