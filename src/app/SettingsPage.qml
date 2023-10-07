@@ -152,6 +152,7 @@ FormCard.FormCardPage {
         title: i18n("Notifications")
     }
     FormCard.FormCard {
+        id: notificationCard
         FormCard.FormButtonDelegate {
             text: i18n("Configure Notifications...")
             icon.name: "notifications"
@@ -166,6 +167,27 @@ FormCard.FormCardPage {
             checked: Settings.showNotificationOnLockScreen
             onToggled: Settings.showNotificationOnLockScreen = checked
             enabled: NotificationConfigController.canShowOnLockScreen
+        }
+
+        FormCard.FormDelegateSeparator {}
+
+        property bool hasNotificationPermission: PermissionManager.checkPermission(Permission.PostNotification)
+        FormCard.FormButtonDelegate {
+            text: i18n("Request permissions...")
+            description: i18n("Additional permissions are required to show notifications.")
+            icon.name: "documentinfo"
+            icon.color: Kirigami.Theme.neutralTextColor
+            visible: !notificationCard.hasNotificationPermission
+            onClicked: PermissionManager.requestPermission(Permission.PostNotification, function() {
+                notificationCard.hasNotificationPermission = PermissionManager.checkPermission(Permission.PostNotification);
+            })
+        }
+        FormCard.FormTextDelegate {
+            text: i18n("Notification permissions are available")
+            description: i18n("No further action required.");
+            icon.name: "checkmark"
+            icon.color: Kirigami.Theme.positiveTextColor
+            visible: notificationCard.hasNotificationPermission
         }
     }
 
