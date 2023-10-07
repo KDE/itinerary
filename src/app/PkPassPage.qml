@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
 
         Loader {
             id: loader
-            x: (parent.width - implicitWidth) / 2
+            width: parent.width
             sourceComponent: {
                 switch (root.pass.type) {
                     case KPkPass.Pass.BoardingPass: return boardingPass;

@@ -7,35 +7,31 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.pkpass 1.0 as KPkPass
 import org.kde.itinerary 1.0
 import "." as App
 
-Item {
+Kirigami.FlexColumn {
     id: root
+
     property var pass: null
     property string passId
-    property int __margin: 10
-
-    implicitWidth: Math.max(bodyLayout.implicitWidth, 332)
 
     /** Double tap on the barcode to request scan mode. */
     signal scanModeToggled()
 
-    ColumnLayout {
-        id: topLayout
-        spacing: 0
-        width: parent.implicitWidth
-        // HACK to break binding loop on implicitHeight
-        onImplicitHeightChanged: root.implicitHeight = implicitHeight
+    spacing: Kirigami.Units.largeSpacing
+    padding: 1
+    maximumWidth: Kirigami.Units.gridUnit * 20
 
-        GridLayout {
+    QQC2.Control {
+        Layout.fillWidth: true
+
+        contentItem: GridLayout {
             id: headerLayout
             rows: 2
             columns: pass.headerFields.length + 2
-            Layout.fillWidth: true
-            Layout.margins: __margin
 
             Image {
                 Layout.rowSpan: 2
@@ -61,6 +57,7 @@ Item {
                     color: pass.labelColor
                 }
             }
+
             Repeater {
                 model: pass.headerFields
                 delegate: QQC2.Label {
@@ -70,10 +67,19 @@ Item {
             }
         }
 
-        ColumnLayout {
+        background: Rectangle {
+            id: headerBackground
+            radius: Kirigami.Units.mediumSpacing
+            color: pass.backgroundColor
+        }
+    }
+
+    QQC2.Control {
+        Layout.fillWidth: true
+
+        contentItem: ColumnLayout {
             id: bodyLayout
-            Layout.margins: __margin
-            spacing: __margin
+            spacing: Kirigami.Units.largeSpacing
 
             // primary fields
             GridLayout {
@@ -133,12 +139,22 @@ Item {
             // auxiliary fields
             GridLayout {
                 id: auxFieldsLayout
+
                 rows: 2
-                columns: pass.auxiliaryFields.length
+                readonly property var model: {
+                    const fields = [];
+                    for (let i in pass.auxiliaryFields) {
+                        if (pass.auxiliaryFields[i].valueDisplayString.length > 0) {
+                            fields.push(pass.auxiliaryFields[i]);
+                        }
+                    }
+                    return fields;
+                }
+                columns: model.length
                 Layout.fillWidth: true
 
                 Repeater {
-                    model: pass.auxiliaryFields
+                    model: auxFieldsLayout.model
                     delegate: QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.labelColor
@@ -147,7 +163,7 @@ Item {
                     }
                 }
                 Repeater {
-                    model: pass.auxiliaryFields
+                    model: auxFieldsLayout.model
                     delegate: QQC2.Label {
                         Layout.fillWidth: true
                         color: pass.foregroundColor
@@ -160,13 +176,27 @@ Item {
             // secondary fields
             GridLayout {
                 id: secFieldsLayout
+
+                readonly property var model: {
+                    const fields = [];
+                    for (let i in pass.secondaryFields) {
+                        if (pass.secondaryFields[i].valueDisplayString.length > 0) {
+                            fields.push(pass.secondaryFields[i]);
+                        }
+                    }
+                    return fields;
+                }
+
                 rows: 2
-                columns: pass.secondaryFields.length
+                columns: model.length
                 Layout.fillWidth: true
 
                 Repeater {
-                    model: pass.secondaryFields
+                    model: secFieldsLayout.model
                     delegate: QQC2.Label {
+                        required property int index
+                        required property var modelData
+
                         Layout.fillWidth: true
                         color: pass.labelColor
                         text: modelData.label
@@ -174,10 +204,14 @@ Item {
                     }
                 }
                 Repeater {
-                    model: pass.secondaryFields
+                    model: secFieldsLayout.model
                     delegate: QQC2.Label {
+                        required property int index
+                        required property var modelData
+
                         Layout.fillWidth: true
                         color: pass.foregroundColor
+                        visible: text.length > 0
                         text: modelData.valueDisplayString
                         horizontalAlignment: modelData.textAlignment
                     }
@@ -190,69 +224,56 @@ Item {
                 sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                 Layout.alignment: Qt.AlignCenter
             }
-        }
 
-        // barcode
-        App.PkPassBarcode {
-            pass: root.pass
-            TapHandler {
-                onDoubleTapped: root.scanModeToggled()
+            // barcode
+            App.PkPassBarcode {
+                pass: root.pass
+                TapHandler {
+                    onDoubleTapped: root.scanModeToggled()
+                }
             }
-        }
 
-        ColumnLayout {
-            id: backLayout
-            Layout.margins: __margin
+            ColumnLayout {
+                id: backLayout
+                Layout.margins: Kirigami.Units.largeSpacing
 
-            Kirigami.Separator {
-                visible: pass.backFields.length > 0
-                Layout.fillWidth: true
-            }
-            Repeater {
-                model: pass.backFields
-                ColumnLayout {
-                    QQC2.Label {
+                Kirigami.Separator {
+                    visible: pass.backFields.length > 0
+                    Layout.fillWidth: true
+                }
+                Repeater {
+                    model: pass.backFields
+                    ColumnLayout {
                         Layout.fillWidth: true
-                        color: pass.labelColor
-                        text: modelData.label
-                        wrapMode: Text.WordWrap
-                        horizontalAlignment: modelData.textAlignment
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        color: pass.foregroundColor
-                        linkColor: color
-                        text: Util.textToHtml(modelData.valueDisplayString)
-                        textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
-                        wrapMode: Text.WordWrap
-                        horizontalAlignment: modelData.textAlignment
-                        onLinkActivated: Qt.openUrlExternally(link)
+                        visible: value.text.length > 0
+
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            color: pass.labelColor
+                            text: modelData.label
+                            wrapMode: Text.WordWrap
+                            horizontalAlignment: modelData.textAlignment
+                        }
+                        QQC2.Label {
+                            id: value
+                            Layout.fillWidth: true
+                            color: pass.foregroundColor
+                            linkColor: color
+                            text: Util.textToHtml(modelData.valueDisplayString)
+                            textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
+                            wrapMode: Text.WordWrap
+                            horizontalAlignment: modelData.textAlignment
+                            onLinkActivated: Qt.openUrlExternally(link)
+                        }
                     }
                 }
             }
         }
-    }
 
-    ColumnLayout {
-        id: backgroundLayout
-        anchors.fill: topLayout
-        spacing: 0
-        z: -1
-
-        Rectangle {
-            id: headerBackground
-            radius: __margin
-            color: pass.backgroundColor
-            Layout.fillWidth: true
-            implicitHeight: headerLayout.implicitHeight + 2 * __margin
-        }
-
-        Rectangle {
+        background: Rectangle {
             id: bodyBackground
-            radius: __margin
+            radius: Kirigami.Units.mediumSpacing
             color: pass.backgroundColor
-            Layout.fillWidth: true
-            Layout.fillHeight: true
         }
     }
 }
