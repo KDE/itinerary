@@ -21,6 +21,8 @@ static QString permissionName(Permission::Permission p)
 {
     using namespace KAndroidExtras;
     switch (p) {
+        case Permission::InvalidPermission:
+            Q_UNREACHABLE();
         case Permission::ReadCalendar:
             return ManifestPermission::READ_CALENDAR;
         case Permission::WriteCalendar:
@@ -33,6 +35,10 @@ static QString permissionName(Permission::Permission p)
 
 bool PermissionManager::checkPermission(Permission::Permission permission)
 {
+    if (permission == Permission::InvalidPermission) {
+        qWarning() << "check for invalid permission - check your QML code!";
+        return false;
+    }
 #ifdef Q_OS_ANDROID
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     if (permission == Permission::PostNotification && QtAndroid::androidSdkVersion() < 33) {
@@ -55,8 +61,12 @@ bool PermissionManager::checkPermission(Permission::Permission permission)
 
 void PermissionManager::requestPermission(Permission::Permission permission, QJSValue callback)
 {
-    qDebug() << permission;
+    if (permission == Permission::InvalidPermission) {
+        qWarning() << "request for invalid permission - check your QML code!";
+        return;
+    }
 
+    qDebug() << permission;
     // already got the permission
     if (PermissionManager::checkPermission(permission)) {
         callback.call();
