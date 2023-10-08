@@ -176,7 +176,12 @@ Item {
                     args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(stop.route.line.mode);
                     args.departurePlatformIfopt = stop.stopPoint.identifier("ifopt");
                 }
-                applicationWindow().pageStack.push(indoorMapPage, args);
+
+                // ensure the map page ends up on top
+                if (applicationWindow().pageStack.layers.depth < 2)
+                    applicationWindow().pageStack.push(indoorMapPage, args);
+                else
+                    applicationWindow().pageStack.layers.push(indoorMapPage, args);
             }
 
             QQC2.ToolTip.text: text
