@@ -8,6 +8,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.itinerary 1.0
 
 MobileForm.FormCard {
     id: root
@@ -30,6 +31,20 @@ MobileForm.FormCard {
             text: i18n("Reference")
             description: root.reservation.reservationNumber
             visible: root.reservation.reservationNumber
+
+            trailing: QQC2.ToolButton {
+                display: QQC2.AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Copy to Clipboard")
+                icon.name: "edit-copy"
+                onClicked: {
+                    Clipboard.saveText(root.reservation.reservationNumber);
+                    applicationWindow().showPassiveNotification(i18n("Booking reference copied to clipboard"));
+                }
+
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+            }
         }
 
         MobileForm.FormDelegateSeparator { visible: referenceLabel.visible }
@@ -48,6 +63,20 @@ MobileForm.FormCard {
             text: i18n("Ticket number:")
             description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketNumber : ''
             visible: description.length > 0 && description !== referenceLabel.description
+
+            trailing: QQC2.ToolButton {
+                display: QQC2.AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Copy to Clipboard")
+                icon.name: "edit-copy"
+                onClicked: {
+                    Clipboard.saveText(root.reservation.reservedTicket.ticketNumber);
+                    applicationWindow().showPassiveNotification(i18n("Ticket number copied to clipboard"));
+                }
+
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+            }
         }
 
         MobileForm.FormDelegateSeparator { visible: ticketNumberLabel.visible }
