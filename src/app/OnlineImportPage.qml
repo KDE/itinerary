@@ -19,6 +19,11 @@ Kirigami.ScrollablePage {
     // e.g. by loading corresponding QML into this page dynamically
     property string source
 
+    function search() {
+        searchButton.description = '';
+        importer.search(root.source, {name: nameInput.text, reference: bookingReferenceInput.text});
+    }
+
     OnlineTicketImporter {
         id: importer
         reservationManager: ReservationManager
@@ -57,6 +62,9 @@ Kirigami.ScrollablePage {
                     label: i18n("Booking reference")
                     placeholderText: "ABC123"
                     enabled: !importer.searching
+                    onAccepted: {
+                        root.search();
+                    }
                 }
                 MobileForm.FormButtonDelegate {
                     id: searchButton
@@ -64,8 +72,7 @@ Kirigami.ScrollablePage {
                     icon.name: importer.searching ? "view-refresh" : "search"
                     enabled: nameInput.text !== "" && bookingReferenceInput.text.length == 6 && !importer.searching
                     onClicked: {
-                        description = '';
-                        importer.search(root.source, {name: nameInput.text, reference: bookingReferenceInput.text});
+                        root.search();
                     }
                 }
             }
