@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
-"PO-Revision-Date: 2023-09-29 15:07+0200\n"
+"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"PO-Revision-Date: 2023-09-30 18:23+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -445,12 +445,12 @@ msgstr "Numero del biglietto:"
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
-msgstr ""
+msgstr "1 fermata intermedia"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
-msgstr ""
+msgstr "%1 fermate intermedie"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -2769,63 +2769,74 @@ msgstr ""
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configura notifiche..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Mostra nelle notifiche sulla schermata di blocco"
 
-#: app/SettingsPage.qml:178
-#, kde-format
-msgid "Onboard Status"
-msgstr "Stato di imbarco"
-
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions..."
 msgstr "Richiedi i permessi..."
 
-#: app/SettingsPage.qml:183
-#, kde-format
-msgid "Additional permissions are required to access the Wi-Fi status."
+#: app/SettingsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Additional permissions are required to access the Wi-Fi status."
+msgid "Additional permissions are required to show notifications."
 msgstr "Sono necessari permessi aggiuntivi per accedere allo stato del Wi-Fi."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:186
 #, kde-format
-msgid "Wi-Fi access for onboard information is available."
-msgstr "È disponibile l'accesso Wi-Fi per le informazioni di imbarco."
+msgid "Notification permissions are available"
+msgstr ""
 
-#: app/SettingsPage.qml:196
-#, kde-format
-msgid "Wi-Fi is not enabled"
-msgstr "Il Wi-Fi non è abilitato"
-
-#: app/SettingsPage.qml:198
-#, kde-format
-msgid "Location service is not enabled"
-msgstr "Il servizio di posizione non è abilitato"
-
-#: app/SettingsPage.qml:200
-#, kde-format
-msgid "Wi-Fi access is not available on this system"
-msgstr "L'accesso Wi-Fi non è disponibile su questo sistema"
-
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
 msgid "No further action required."
 msgstr "Non sono necessarie ulteriori azioni."
 
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:200
+#, kde-format
+msgid "Onboard Status"
+msgstr "Stato di imbarco"
+
+#: app/SettingsPage.qml:205
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr "Sono necessari permessi aggiuntivi per accedere allo stato del Wi-Fi."
+
+#: app/SettingsPage.qml:216
+#, kde-format
+msgid "Wi-Fi access for onboard information is available."
+msgstr "È disponibile l'accesso Wi-Fi per le informazioni di imbarco."
+
+#: app/SettingsPage.qml:218
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr "Il Wi-Fi non è abilitato"
+
+#: app/SettingsPage.qml:220
+#, kde-format
+msgid "Location service is not enabled"
+msgstr "Il servizio di posizione non è abilitato"
+
+#: app/SettingsPage.qml:222
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr "L'accesso Wi-Fi non è disponibile su questo sistema"
+
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Abilita il Wi-Fi sul tuo sistema per accedere alle informazioni di imbarco."
 
-#: app/SettingsPage.qml:211
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -2833,7 +2844,7 @@ msgstr ""
 "Abilita il servizio di localizzazione sul tuo dispositivo per accedere alle "
 "informazioni di bordo."
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2842,37 +2853,37 @@ msgstr ""
 "Le informazioni di imbarco purtroppo non sono attualmente supportate sul tuo "
 "dispositivo."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integrazione Matrix"
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Accesso eseguito come %1"
 
-#: app/SettingsPage.qml:256
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronizza le stanze"
 
-#: app/SettingsPage.qml:263
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID Matrix"
 
-#: app/SettingsPage.qml:270
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Password"
 msgstr "Password"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log out"
 msgstr "Esci"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
 msgstr "Accedi"

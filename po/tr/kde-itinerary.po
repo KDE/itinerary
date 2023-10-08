@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-08 01:39+0000\n"
 "PO-Revision-Date: 2023-09-30 11:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2767,105 +2767,116 @@ msgstr ""
 msgid "Notifications"
 msgstr "Bildirimler"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Bildirimleri Yapılandır..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Kilit ekranında bildirimleri göster"
 
-#: app/SettingsPage.qml:178
-#, kde-format
-msgid "Onboard Status"
-msgstr "Biniş Durumu"
-
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions..."
 msgstr "İzinler iste..."
 
-#: app/SettingsPage.qml:183
-#, kde-format
-msgid "Additional permissions are required to access the Wi-Fi status."
+#: app/SettingsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Additional permissions are required to access the Wi-Fi status."
+msgid "Additional permissions are required to show notifications."
 msgstr "Wi-Fi durumuna erişmek için ek izinler gerekiyor."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:186
 #, kde-format
-msgid "Wi-Fi access for onboard information is available."
-msgstr "Biniş bilgisi için Wi-Fi erişimi kullanılabilir."
+msgid "Notification permissions are available"
+msgstr ""
 
-#: app/SettingsPage.qml:196
-#, kde-format
-msgid "Wi-Fi is not enabled"
-msgstr "Wi-Fi etkin değil"
-
-#: app/SettingsPage.qml:198
-#, kde-format
-msgid "Location service is not enabled"
-msgstr "Konum hizmeti etkin değil"
-
-#: app/SettingsPage.qml:200
-#, kde-format
-msgid "Wi-Fi access is not available on this system"
-msgstr "Bu sistemde Wi-Fi erişimi etkin değil"
-
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
 msgid "No further action required."
 msgstr "Başka bir eylem gerekmiyor"
 
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:200
+#, kde-format
+msgid "Onboard Status"
+msgstr "Biniş Durumu"
+
+#: app/SettingsPage.qml:205
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr "Wi-Fi durumuna erişmek için ek izinler gerekiyor."
+
+#: app/SettingsPage.qml:216
+#, kde-format
+msgid "Wi-Fi access for onboard information is available."
+msgstr "Biniş bilgisi için Wi-Fi erişimi kullanılabilir."
+
+#: app/SettingsPage.qml:218
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr "Wi-Fi etkin değil"
+
+#: app/SettingsPage.qml:220
+#, kde-format
+msgid "Location service is not enabled"
+msgstr "Konum hizmeti etkin değil"
+
+#: app/SettingsPage.qml:222
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr "Bu sistemde Wi-Fi erişimi etkin değil"
+
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Biniş durumuna erişmek için sisteminizde Wi-Fi'yi etkinleştirin."
 
-#: app/SettingsPage.qml:211
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "Biniş durumuna erişmek için aygıtınızda konum hizmetini etkinleştirin."
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "Biniş durumu, şu anda aygıtınızda ne yazık ki şu anda desteklenmiyor."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix Tümleştirmesi"
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1 olarak oturum açıldı"
 
-#: app/SettingsPage.qml:256
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Odaları eşzamanla"
 
-#: app/SettingsPage.qml:263
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix kimliği"
 
-#: app/SettingsPage.qml:270
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Password"
 msgstr "Parola"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log out"
 msgstr "Oturumu Kapat"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
 msgstr "Oturum Aç"

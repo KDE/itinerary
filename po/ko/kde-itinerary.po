@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-08 01:39+0000\n"
 "PO-Revision-Date: 2023-08-25 23:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2756,105 +2756,116 @@ msgstr ""
 msgid "Notifications"
 msgstr "알림"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "알림 설정..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "잠금 화면에 알림 표시"
 
-#: app/SettingsPage.qml:178
-#, kde-format
-msgid "Onboard Status"
-msgstr "차내 정보"
-
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions..."
 msgstr "권한 요청..."
 
-#: app/SettingsPage.qml:183
-#, kde-format
-msgid "Additional permissions are required to access the Wi-Fi status."
+#: app/SettingsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Additional permissions are required to access the Wi-Fi status."
+msgid "Additional permissions are required to show notifications."
 msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:186
 #, kde-format
-msgid "Wi-Fi access for onboard information is available."
-msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
+msgid "Notification permissions are available"
+msgstr ""
 
-#: app/SettingsPage.qml:196
-#, kde-format
-msgid "Wi-Fi is not enabled"
-msgstr "Wi-Fi가 비활성화됨"
-
-#: app/SettingsPage.qml:198
-#, kde-format
-msgid "Location service is not enabled"
-msgstr "위치 서비스가 비활성화됨"
-
-#: app/SettingsPage.qml:200
-#, kde-format
-msgid "Wi-Fi access is not available on this system"
-msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
-
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
 msgid "No further action required."
 msgstr "더 이상 필요한 동작이 없습니다."
 
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:200
+#, kde-format
+msgid "Onboard Status"
+msgstr "차내 정보"
+
+#: app/SettingsPage.qml:205
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
+
+#: app/SettingsPage.qml:216
+#, kde-format
+msgid "Wi-Fi access for onboard information is available."
+msgstr "Wi-Fi를 통한 차내 정보에 접근할 수 있습니다."
+
+#: app/SettingsPage.qml:218
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr "Wi-Fi가 비활성화됨"
+
+#: app/SettingsPage.qml:220
+#, kde-format
+msgid "Location service is not enabled"
+msgstr "위치 서비스가 비활성화됨"
+
+#: app/SettingsPage.qml:222
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr "이 시스템에서 Wi-Fi에 접근할 수 없음"
+
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 Wi-Fi를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:211
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr "차내 정보를 확인하려면 시스템의 위치 서비스를 활성화해야 합니다."
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
 "time."
 msgstr "현재 사용 중인 장치에서 차내 정보를 지원하지 않습니다."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Matrix 통합"
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1(으)로 로그인됨"
 
-#: app/SettingsPage.qml:256
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "방 동기화"
 
-#: app/SettingsPage.qml:263
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:270
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log out"
 msgstr "로그아웃"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
 msgstr "로그인"

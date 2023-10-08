@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-08 01:39+0000\n"
 "PO-Revision-Date: 2023-09-30 13:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2770,69 +2770,80 @@ msgstr ""
 msgid "Notifications"
 msgstr "Jakinarazpenak"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Konfiguratu jakinarazpenak..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Erakutsi jakinarazpenak giltzatutako pantailan"
 
-#: app/SettingsPage.qml:178
-#, kde-format
-msgid "Onboard Status"
-msgstr "Ontziko egoera"
-
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions..."
 msgstr "Eskatu baimenak..."
 
-#: app/SettingsPage.qml:183
-#, kde-format
-msgid "Additional permissions are required to access the Wi-Fi status."
+#: app/SettingsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Additional permissions are required to access the Wi-Fi status."
+msgid "Additional permissions are required to show notifications."
 msgstr "Baimen osagarriak behar dira Wi-Fiaren egoera atzitzeko."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:186
 #, kde-format
-msgid "Wi-Fi access for onboard information is available."
-msgstr "Ontziko informaziorako, Wi-Fi sarbidea erabilgarri dago."
+msgid "Notification permissions are available"
+msgstr ""
 
-#: app/SettingsPage.qml:196
-#, kde-format
-msgid "Wi-Fi is not enabled"
-msgstr "Wi-Fia ez dago gaituta"
-
-#: app/SettingsPage.qml:198
-#, kde-format
-msgid "Location service is not enabled"
-msgstr "Kokapen zerbitzua ez dago gaituta"
-
-#: app/SettingsPage.qml:200
-#, kde-format
-msgid "Wi-Fi access is not available on this system"
-msgstr "Wi-Fi sarbidea ez dago erabilgarri sistema honetan"
-
-#: app/SettingsPage.qml:207
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
 msgid "No further action required."
 msgstr "Ez da beste ekintzarik behar."
 
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:200
+#, kde-format
+msgid "Onboard Status"
+msgstr "Ontziko egoera"
+
+#: app/SettingsPage.qml:205
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr "Baimen osagarriak behar dira Wi-Fiaren egoera atzitzeko."
+
+#: app/SettingsPage.qml:216
+#, kde-format
+msgid "Wi-Fi access for onboard information is available."
+msgstr "Ontziko informaziorako, Wi-Fi sarbidea erabilgarri dago."
+
+#: app/SettingsPage.qml:218
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr "Wi-Fia ez dago gaituta"
+
+#: app/SettingsPage.qml:220
+#, kde-format
+msgid "Location service is not enabled"
+msgstr "Kokapen zerbitzua ez dago gaituta"
+
+#: app/SettingsPage.qml:222
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr "Wi-Fi sarbidea ez dago erabilgarri sistema honetan"
+
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr "Gaitu Wi-Fia zure sisteman, ontziko informazioa eskuratzeko."
 
-#: app/SettingsPage.qml:211
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
 msgstr ""
 "Gaitu kokapen zerbitzua zure sisteman, ontziko informazioa eskuratzeko."
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2841,37 +2852,37 @@ msgstr ""
 "Tamalez, momentu honetan, zure gailuan ez dago ontziko informaziorako "
 "euskarririk."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "«Matrix»ekin bateratzea"
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Logged in as %1"
 msgstr "%1 gisa saio-hasita"
 
-#: app/SettingsPage.qml:256
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Gelak sinkronizatzea"
 
-#: app/SettingsPage.qml:263
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "Matrix ID"
 
-#: app/SettingsPage.qml:270
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Password"
 msgstr "Pasahitza"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log out"
 msgstr "Itxi saioa"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
 msgstr "Hasi saioa"

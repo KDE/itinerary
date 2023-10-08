@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-08 01:39+0000\n"
 "PO-Revision-Date: 2023-09-30 14:00+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2774,65 +2774,77 @@ msgstr ""
 msgid "Notifications"
 msgstr "Notificacions"
 
-#: app/SettingsPage.qml:156
+#: app/SettingsPage.qml:157
 #, kde-format
 msgid "Configure Notifications..."
 msgstr "Configura les notificacions..."
 
-#: app/SettingsPage.qml:165
+#: app/SettingsPage.qml:166
 #, kde-format
 msgid "Show notifications on lock screen"
 msgstr "Mostra les notificacions a la pantalla de bloqueig"
 
-#: app/SettingsPage.qml:178
-#, kde-format
-msgid "Onboard Status"
-msgstr "Estat d'incorporació"
-
-#: app/SettingsPage.qml:182
+#: app/SettingsPage.qml:176 app/SettingsPage.qml:204
 #, kde-format
 msgid "Request permissions..."
 msgstr "Sol·licita els permisos..."
 
-#: app/SettingsPage.qml:183
+#: app/SettingsPage.qml:177
+#, fuzzy, kde-format
+#| msgid "Additional permissions are required to access the Wi-Fi status."
+msgid "Additional permissions are required to show notifications."
+msgstr ""
+"Es requerixen permisos addicionals per a accedir a l'estat de la Wi-Fi."
+
+#: app/SettingsPage.qml:186
+#, kde-format
+msgid "Notification permissions are available"
+msgstr ""
+
+#: app/SettingsPage.qml:187 app/SettingsPage.qml:229
+#, kde-format
+msgid "No further action required."
+msgstr "No cal cap més acció."
+
+#: app/SettingsPage.qml:200
+#, kde-format
+msgid "Onboard Status"
+msgstr "Estat d'incorporació"
+
+#: app/SettingsPage.qml:205
 #, kde-format
 msgid "Additional permissions are required to access the Wi-Fi status."
 msgstr ""
 "Es requerixen permisos addicionals per a accedir a l'estat de la Wi-Fi."
 
-#: app/SettingsPage.qml:194
+#: app/SettingsPage.qml:216
 #, kde-format
 msgid "Wi-Fi access for onboard information is available."
 msgstr "Hi ha disponible l'accés Wi-Fi per a la informació d'incorporació."
 
-#: app/SettingsPage.qml:196
+#: app/SettingsPage.qml:218
 #, kde-format
 msgid "Wi-Fi is not enabled"
 msgstr "La Wi-Fi no està activada"
 
-#: app/SettingsPage.qml:198
+#: app/SettingsPage.qml:220
 #, kde-format
 msgid "Location service is not enabled"
 msgstr "El servei d'ubicació no està activat"
 
-#: app/SettingsPage.qml:200
+#: app/SettingsPage.qml:222
 #, kde-format
 msgid "Wi-Fi access is not available on this system"
 msgstr "En este sistema no hi ha disponible l'accés Wi-Fi"
 
-#: app/SettingsPage.qml:207
-#, kde-format
-msgid "No further action required."
-msgstr "No cal cap més acció."
-
-#: app/SettingsPage.qml:209
+#: app/SettingsPage.qml:231
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
 msgstr ""
 "Activeu la Wi-Fi del vostre sistema per a accedir a la informació "
 "d'incorporació."
 
-#: app/SettingsPage.qml:211
+#: app/SettingsPage.qml:233
 #, kde-format
 msgid ""
 "Enable the location service on your device to access onboard information."
@@ -2840,7 +2852,7 @@ msgstr ""
 "Activeu el servei d'ubicació del vostre dispositiu per a accedir a la "
 "informació d'incorporació."
 
-#: app/SettingsPage.qml:213
+#: app/SettingsPage.qml:235
 #, kde-format
 msgid ""
 "Onboard information are unfortunately not supported on your device at this "
@@ -2849,37 +2861,37 @@ msgstr ""
 "La informació d'incorporació no està implementada en el vostre dispositiu en "
 "este moment."
 
-#: app/SettingsPage.qml:245
+#: app/SettingsPage.qml:267
 #, kde-format
 msgid "Matrix Integration"
 msgstr "Integració de Matrix"
 
-#: app/SettingsPage.qml:252
+#: app/SettingsPage.qml:274
 #, kde-format
 msgid "Logged in as %1"
 msgstr "Connectat com a %1"
 
-#: app/SettingsPage.qml:256
+#: app/SettingsPage.qml:278
 #, kde-format
 msgid "Synchronize rooms"
 msgstr "Sincronitza les sales"
 
-#: app/SettingsPage.qml:263
+#: app/SettingsPage.qml:285
 #, kde-format
 msgid "Matrix ID"
 msgstr "ID de Matrix"
 
-#: app/SettingsPage.qml:270
+#: app/SettingsPage.qml:292
 #, kde-format
 msgid "Password"
 msgstr "Contrasenya"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log out"
 msgstr "Eixida"
 
-#: app/SettingsPage.qml:277
+#: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
 msgstr "Inici de sessió"
