@@ -17,6 +17,7 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
+#include <kitinerary_version.h>
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
@@ -39,6 +40,40 @@
 #include <QStandardPaths>
 
 using namespace KItinerary;
+
+// backward compatibility with 23.08
+#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 240, 42)
+bool SortUtil::hasStartTime(const QVariant &elem)
+{
+    if (JsonLd::canConvert<Reservation>(elem)) {
+        return hasStartTime(JsonLd::convert<Reservation>(elem).reservationFor());
+    }
+    if (JsonLd::isA<TrainTrip>(elem)) {
+        return elem.value<TrainTrip>().departureTime().isValid();
+    }
+    if (JsonLd::isA<Flight>(elem)) {
+        return elem.value<Flight>().departureTime().isValid();
+    }
+
+    return SortUtil::startDateTime(elem).isValid();
+}
+
+bool SortUtil::hasEndTime(const QVariant &elem)
+{
+    if (JsonLd::canConvert<Reservation>(elem)) {
+        return hasEndTime(JsonLd::convert<Reservation>(elem).reservationFor());
+    }
+    if (JsonLd::isA<TrainTrip>(elem)) {
+        return elem.value<TrainTrip>().arrivalTime().isValid();
+    }
+    if (JsonLd::isA<Flight>(elem)) {
+        return elem.value<Flight>().arrivalTime().isValid();
+    }
+
+    return SortUtil::endDateTime(elem).isValid();
+}
+#endif
+
 
 // bump this to trigger a full rescan for transfers
 enum { CurrentFullScanVersion = 1 };
@@ -277,9 +312,23 @@ static bool isLikelyNotSameLocation(const QVariant &loc1, const QVariant &loc2)
     return !LocationUtil::isSameLocation(loc1, loc2, LocationUtil::CityLevel);
 }
 
+/** Check whether @p loc1 and @p loc2 have a realistic distance for a transfer,
+ *  assuming we know their geo coodinates.
+ *  This helps filtering out non-sense transfers if we end up with entries in the wrong order.
+ */
+static bool isPlausibleDistance(const QVariant &loc1, const QVariant &loc2)
+{
+    const auto geo1 = LocationUtil::geo(loc1);
+    const auto geo2 = LocationUtil::geo(loc2);
+    if (!geo1.isValid() || !geo2.isValid()) {
+        return true;
+    }
+    return LocationUtil::distance(geo1, geo2) < 100'000;
+}
+
 TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    if (ReservationHelper::isCancelled(res)) {
+    if (ReservationHelper::isCancelled(res) || !SortUtil::hasStartTime(res)) {
         return ShouldRemove;
     }
 
@@ -345,7 +394,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
     } else {
         prevLoc = LocationUtil::location(prevRes);
     }
-    if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc)) {
+    if (!toLoc.isNull() && !prevLoc.isNull() && isLikelyNotSameLocation(toLoc, prevLoc) && isPlausibleDistance(toLoc, prevLoc)) {
         qDebug() << res << prevRes << LocationUtil::name(toLoc) << LocationUtil::name(prevLoc) << transfer.anchorTime();
         transfer.setFrom(PublicTransport::locationFromPlace(prevLoc, prevRes));
         transfer.setFromName(LocationUtil::name(prevLoc));
@@ -369,7 +418,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferBefore(const 
 
 TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const QString &resId, const QVariant &res, Transfer &transfer) const
 {
-    if (ReservationHelper::isCancelled(res)) {
+    if (ReservationHelper::isCancelled(res) || !SortUtil::hasEndTime(res)) {
         return ShouldRemove;
     }
 
@@ -434,7 +483,7 @@ TransferManager::CheckTransferResult TransferManager::checkTransferAfter(const Q
     } else {
         nextLoc = LocationUtil::location(nextRes);
     }
-    if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc)) {
+    if (!fromLoc.isNull() && !nextLoc.isNull() && isLikelyNotSameLocation(fromLoc, nextLoc) && isPlausibleDistance(fromLoc, nextLoc)) {
         qDebug() << res << nextRes << LocationUtil::name(fromLoc) << LocationUtil::name(nextLoc) << transfer.anchorTime();
         transfer.setTo(PublicTransport::locationFromPlace(nextLoc, nextRes));
         transfer.setToName(LocationUtil::name(nextLoc));
