@@ -1,14 +1,15 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
 #
-# Volkan Gezer <volkangezer@gmail.com>, 2021.
 # SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# Volkan Gezer <volkangezer@gmail.com>, 2021.
+# Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-08 01:39+0000\n"
-"PO-Revision-Date: 2023-09-30 11:39+0300\n"
+"PO-Revision-Date: 2023-10-08 12:43+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2783,15 +2784,14 @@ msgid "Request permissions..."
 msgstr "İzinler iste..."
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Wi-Fi durumuna erişmek için ek izinler gerekiyor."
+msgstr "Bildirimleri göstermek için ek izinler gerekiyor."
 
 #: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "Bildirim izinleri kullanılabilir"
 
 #: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format

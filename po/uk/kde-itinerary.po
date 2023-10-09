@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-08 01:39+0000\n"
-"PO-Revision-Date: 2023-09-30 08:56+0300\n"
+"PO-Revision-Date: 2023-10-08 08:47+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -2798,15 +2798,14 @@ msgid "Request permissions..."
 msgstr "Запит щодо прав доступу…"
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Для доступу до стану Wi-Fi потрібні додаткові права доступу."
+msgstr "Для показу сповіщень потрібні додаткові права доступу."
 
 #: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "Доступні права доступу до сповіщень"
 
 #: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format

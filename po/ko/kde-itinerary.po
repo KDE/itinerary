@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-08 01:39+0000\n"
-"PO-Revision-Date: 2023-08-25 23:44+0200\n"
+"PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -440,12 +440,12 @@ msgstr "승차권 번호:"
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
-msgstr ""
+msgstr "중간 정거장 1개"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
-msgstr ""
+msgstr "중간 정거장 %1개"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -1589,7 +1589,7 @@ msgstr "체크아웃 시간"
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "어메니티 찾기"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
 #, kde-format
@@ -1718,7 +1718,7 @@ msgstr "버스"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1시간"
 
 #: app/JourneyQueryPage.qml:106 app/TransferPage.qml:254
 #, kde-format
@@ -2254,16 +2254,14 @@ msgid "Spaces"
 msgstr "스페이스"
 
 #: app/NavigationBar.qml:19
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "내 여정"
+msgstr "여정"
 
 #: app/NavigationBar.qml:25
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Plan Trip"
-msgstr "여정 삭제"
+msgstr "여행 계획"
 
 #: app/NavigationBar.qml:34
 #, kde-format
@@ -2772,15 +2770,14 @@ msgid "Request permissions..."
 msgstr "권한 요청..."
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Wi-Fi 상태에 접근하려면 추가 권한이 필요합니다."
+msgstr "알림을 표시하려면 추가 권한이 필요합니다."
 
 #: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "알림 권한을 사용할 수 있음"
 
 #: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
@@ -3136,9 +3133,7 @@ msgid "Arrival Time"
 msgstr "도착 시간"
 
 #: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
 msgstr "%1번"
 
