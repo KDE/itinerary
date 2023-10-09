@@ -753,11 +753,19 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.08.2" date="2023-10-12"/>
+    <release version="23.08.2" date="2023-10-12">
+      <description>
+        <ul>
+          <li>Allow to enable notifications on Android 13.</li>
+          <li>New or improved travel document extractors for Aegean, Amadeus, bookingkit, GWR, Pretix, Renfe, ÖBB and UK railway tickets.</li>
+          <li>Render more amenity details on the train station map.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.08.1" date="2023-09-14">
       <description>
         <ul>
-          <li>New or improved travel document extractors for Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines and ZSSK</li>
+          <li>New or improved travel document extractors for Aer Lingus, Amtrak, British Airways, Deutsche Bahn, GVH, premiumkino, Slovak Lines and ZSSK.</li>
           <li>Fix editing bus and train elements without an associated ticket.</li>
           <li>Fix unnecessarily broad permissions on Android.</li>
           <li>Fix rendering of Apple Wallet generic pass thumbnail images.</li>
