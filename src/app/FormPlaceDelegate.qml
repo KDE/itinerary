@@ -100,7 +100,7 @@ MobileForm.AbstractFormDelegate {
             id: buttonLayout
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignRight
-            visible: root.place !== undefined && root.place.geo.isValid
+            visible: root.place != undefined && (root.place.geo.isValid || !root.place.address.isEmpty)
 
             actions: [
                 Kirigami.Action {
