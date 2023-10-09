@@ -106,20 +106,14 @@ App.TimelineDelegate {
                     }
                     QQC2.Label {
                         Layout.alignment: Qt.AlignRight
-                        text: {
-                            let platform = "";
-                            if (departure.hasExpectedPlatform) {
-                                platform = departure.expectedPlatform;
-                            } else if (reservationFor.departurePlatform) {
-                                platform = reservationFor.departurePlatform;
-                            }
-
-                            if (platform) {
-                                return i18n("Pl. %1", platform);
-                            } else {
-                                return "";
-                            }
-                        }
+                        font.strikeout: departure.hasExpectedPlatform
+                        text: reservationFor.departurePlatform ? i18nc("Train platform, keep short", "Pl. %1", reservationFor.departurePlatform) : ""
+                        visible: text !== ""
+                    }
+                    QQC2.Label {
+                        Layout.alignment: Qt.AlignRight
+                        text: departure.hasExpectedPlatform ? i18nc("Train platform, keep short", "Pl. %1", departure.expectedPlatform) : ""
+                        visible: text !== ""
                     }
                 }
                 RowLayout{
@@ -290,20 +284,14 @@ App.TimelineDelegate {
                     }
                     QQC2.Label {
                         Layout.alignment: Qt.AlignRight
-                        text: {
-                            let platform = "";
-                            if (arrival.hasExpectedPlatform) {
-                                platform = arrival.expectedPlatform;
-                            } else if (reservationFor.arrivalPlatform) {
-                                platform = reservationFor.arrivalPlatform;
-                            }
-
-                            if (platform) {
-                                return i18n("Pl. %1", platform);
-                            } else {
-                                return "";
-                            }
-                        }
+                        font.strikeout: arrival.hasExpectedPlatform
+                        text: reservationFor.arrivalPlatform ? i18nc("Train platform, keep short", "Pl. %1", reservationFor.arrivalPlatform) : ""
+                        visible: text !== ""
+                    }
+                    QQC2.Label {
+                        Layout.alignment: Qt.AlignRight
+                        text: arrival.hasExpectedPlatform ? i18nc("Train platform, keep short", "Pl. %1", arrival.expectedPlatform) : ""
+                        visible: text !== ""
                     }
                 }
                 RowLayout {
