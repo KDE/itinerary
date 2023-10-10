@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2460,36 +2460,36 @@ msgstr "A nova plataforma de chegada é: %1"
 msgid "Import Online Ticket"
 msgstr "Passagem de trem"
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Ticket imported"
 msgstr "Nada a importar."
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, fuzzy, kde-format
 #| msgid "No locations found"
 msgid "No ticket found"
 msgstr "Nenhum local encontrado"
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Passagem de trem"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, fuzzy, kde-format
 #| msgid "Booking reference:"
 msgid "Booking reference"
 msgstr "Referência da reserva:"
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr ""

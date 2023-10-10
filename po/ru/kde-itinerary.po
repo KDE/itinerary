@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -2494,36 +2494,36 @@ msgstr "Новая платформа прибытия: %1"
 msgid "Import Online Ticket"
 msgstr "Билет на поезд"
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, fuzzy, kde-format
 #| msgid "Nothing imported."
 msgid "Ticket imported"
 msgstr "Ничего не импортировано."
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, fuzzy, kde-format
 #| msgid "No locations found"
 msgid "No ticket found"
 msgstr "Расположения не найдены"
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Билет на поезд"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, fuzzy, kde-format
 #| msgid "Booking reference:"
 msgid "Booking reference"
 msgstr "Код бронирования:"
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr ""

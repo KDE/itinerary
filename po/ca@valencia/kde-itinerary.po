@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
-"PO-Revision-Date: 2023-09-30 14:00+0200\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
+"PO-Revision-Date: 2023-10-08 11:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2363,32 +2363,32 @@ msgstr "La plataforma d'arribada nova és: %1"
 msgid "Import Online Ticket"
 msgstr "Importa un bitllet en línia"
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, kde-format
 msgid "Ticket imported"
 msgstr "El bitllet s'ha importat"
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "No ticket found"
 msgstr "No s'ha trobat cap bitllet"
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, kde-format
 msgid "Online Ticket"
 msgstr "Bitllet en línia"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr "Cognoms"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Booking reference"
 msgstr "Referència de la reserva"
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr "Busca..."
@@ -2790,16 +2790,14 @@ msgid "Request permissions..."
 msgstr "Sol·licita els permisos..."
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr ""
-"Es requerixen permisos addicionals per a accedir a l'estat de la Wi-Fi."
+msgstr "Es requerixen permisos addicionals per a mostrar notificacions."
 
 #: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "Els permisos de notificació estan disponibles"
 
 #: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format

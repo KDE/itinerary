@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2371,32 +2371,32 @@ msgstr ""
 msgid "Import Online Ticket"
 msgstr ""
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, kde-format
 msgid "Ticket imported"
 msgstr ""
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "No ticket found"
 msgstr ""
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, fuzzy, kde-format
 msgid "Online Ticket"
 msgstr "الخدمات على ال&شابكة"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr ""
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Booking reference"
 msgstr ""
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr ""

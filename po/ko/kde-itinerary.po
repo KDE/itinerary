@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2350,32 +2350,32 @@ msgstr "새 도착 승강장: %1"
 msgid "Import Online Ticket"
 msgstr "온라인 티켓 가져오기"
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, kde-format
 msgid "Ticket imported"
 msgstr "티켓 가져옴"
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "No ticket found"
 msgstr "티켓을 찾을 수 없음"
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, kde-format
 msgid "Online Ticket"
 msgstr "온라인 티켓"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr "성"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Booking reference"
 msgstr "예약 번호"
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr "검색..."

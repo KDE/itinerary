@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-08 01:39+0000\n"
+"POT-Creation-Date: 2023-10-10 01:47+0000\n"
 "PO-Revision-Date: 2023-10-08 07:50+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2362,32 +2362,32 @@ msgstr "Iritsiera nasa berria: %1"
 msgid "Import Online Ticket"
 msgstr "Inportatu lerroko txartela"
 
-#: app/OnlineImportPage.qml:26
+#: app/OnlineImportPage.qml:31
 #, kde-format
 msgid "Ticket imported"
 msgstr "Txartela inportatu da"
 
-#: app/OnlineImportPage.qml:30
+#: app/OnlineImportPage.qml:35
 #, kde-format
 msgid "No ticket found"
 msgstr "Ez da txartelik aurkitu"
 
-#: app/OnlineImportPage.qml:45
+#: app/OnlineImportPage.qml:50
 #, kde-format
 msgid "Online Ticket"
 msgstr "Lerroko txartela"
 
-#: app/OnlineImportPage.qml:49
+#: app/OnlineImportPage.qml:54
 #, kde-format
 msgid "Family name"
 msgstr "Abizenak"
 
-#: app/OnlineImportPage.qml:57
+#: app/OnlineImportPage.qml:62
 #, kde-format
 msgid "Booking reference"
 msgstr "Erreserbaren erreferentzia"
 
-#: app/OnlineImportPage.qml:63
+#: app/OnlineImportPage.qml:71
 #, kde-format
 msgid "Search..."
 msgstr "Bilatu..."
