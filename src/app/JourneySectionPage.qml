@@ -16,9 +16,11 @@ Kirigami.ScrollablePage {
     title: i18n("Journey Details")
     property var journeySection
     property alias showProgress: sectionModel.showProgress
+    default property alias _children: root.children
 
     header: ColumnLayout {
         spacing: 0
+        visible: root.journeySection != undefined
 
         GridLayout {
             columns: 2
@@ -136,6 +138,7 @@ Kirigami.ScrollablePage {
                 property: "departureTrailingSegmentLength"
                 value: trailingSegmentLength
             }
+            visible: root.journeySection != undefined
         }
         delegate: JourneySectionStopDelegate {
             stop: model.stopover
@@ -163,6 +166,7 @@ Kirigami.ScrollablePage {
                 property: "arrivalLeadingSegmentLength"
                 value: leadingSegmentLength
             }
+            visible: root.journeySection != undefined
         }
     }
 }
