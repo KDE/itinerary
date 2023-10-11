@@ -12,6 +12,7 @@ import org.kde.kirigamiaddons.dateandtime 0.1 as Addon
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
 import "." as App
+import "./components" as Components
 
 Kirigami.ScrollablePage {
     id: root
@@ -124,18 +125,23 @@ Kirigami.ScrollablePage {
                 MobileForm.AbstractFormDelegate {
                     id: timeSelector
                     contentItem: ColumnLayout {
-                        RowLayout {
-                            Layout.fillWidth: true
-                            QQC2.RadioButton {
-                                id: departureButton
-                                text: i18nc("train or bus departure", "Departure")
-                                checked: true
-                            }
-                            QQC2.RadioButton {
-                                text: i18nc("train or bus arrival", "Arrival")
-                            }
-                        }
+                        Components.RadioSelector{
+                            id: departureArrivalSelector
 
+                            Layout.fillWidth: true
+                            Layout.alignment: Qt.AlignHCenter
+                            Layout.maximumWidth: Kirigami.Units.gridUnit * 20
+                            consistentWidth: true
+
+                            actions: [
+                                Kirigami.Action {
+                                    text: "departure"
+                                },
+                                Kirigami.Action {
+                                    text: "arrival"
+                                }
+                            ]
+                        }
                         Flow {
                             Layout.fillWidth: true
                             Addon.DateInput {
@@ -186,7 +192,12 @@ Kirigami.ScrollablePage {
                                 lineModes.push(Line.Ferry, Line.Boat);
                         }
                         req.lineModes = lineModes;
-                        req.dateTimeMode = departureButton.checked ? JourneyRequest.Departure : JourneyRequest.Arrival;
+
+                        if (departureArrivalSelector.selectedIndex === 0) {
+                            req.dateTimeMode = JourneyRequest.Departure
+                        } else if (departureArrivalSelector.selectedIndex === 1) {
+                            req.dateTimeMode = JourneyRequest.Arrival
+                        }
 
                         console.log(req);
                         applicationWindow().pageStack.currentItem.journeyRequest = req;
