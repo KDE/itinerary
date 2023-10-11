@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 01:47+0000\n"
-"PO-Revision-Date: 2023-09-16 10:08\n"
+"POT-Creation-Date: 2023-10-11 02:07+0000\n"
+"PO-Revision-Date: 2023-10-10 14:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/itinerary/kde-itinerary.pot\n"
-"X-Crowdin-File-ID: 19504\n"
+"X-Crowdin-File: /kf6-trunk/messages/itinerary/kde-itinerary.pot\n"
+"X-Crowdin-File-ID: 45515\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1836,23 +1836,23 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:107
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:53
+#: app/JourneySectionPage.qml:55
 #, kde-format
 msgid "Direction: %1"
 msgstr "方向：%1"
 
-#: app/JourneySectionPage.qml:61
+#: app/JourneySectionPage.qml:63
 #, kde-format
 msgid "Distance: %1"
 msgstr "距离：%1"
 
-#: app/JourneySectionPage.qml:68
+#: app/JourneySectionPage.qml:70
 #, kde-format
 msgid "CO₂: %1"
 msgstr ""
@@ -2249,10 +2249,9 @@ msgid "Spaces"
 msgstr ""
 
 #: app/NavigationBar.qml:19
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "我的行程"
+msgstr ""
 
 #: app/NavigationBar.qml:25
 #, kde-format

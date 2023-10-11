@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 01:47+0000\n"
+"POT-Creation-Date: 2023-10-11 02:07+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1843,23 +1843,23 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:107
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Ukázat víc..."
 
-#: app/JourneySectionPage.qml:53
+#: app/JourneySectionPage.qml:55
 #, kde-format
 msgid "Direction: %1"
 msgstr "Směr: %1"
 
-#: app/JourneySectionPage.qml:61
+#: app/JourneySectionPage.qml:63
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdálenost: %1"
 
-#: app/JourneySectionPage.qml:68
+#: app/JourneySectionPage.qml:70
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
@@ -2776,10 +2776,9 @@ msgid "Request permissions..."
 msgstr "Vyžádat povolení..."
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Pro přístup ke stavu Wi-Fi je potřeba další povolení."
+msgstr ""
 
 #: app/SettingsPage.qml:186
 #, kde-format
@@ -3549,19 +3548,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1 on platform %2"
-#~ msgstr "Odjezd z %1 na nástupišti %2"
-
-#~ msgctxt "Train departure"
-#~ msgid "Departure from %1"
-#~ msgstr "Odjezd z %1"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1 on platform %2"
-#~ msgstr "Příjezd v %1 na nástupiště %2"
-
-#~ msgctxt "Train arrival"
-#~ msgid "Arrival at %1"
-#~ msgstr "Příjezd v %1"

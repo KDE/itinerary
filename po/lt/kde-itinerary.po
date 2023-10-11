@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-10 01:47+0000\n"
+"POT-Creation-Date: 2023-10-11 02:07+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -1844,23 +1844,23 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:107
+#: app/JourneySectionDelegate.qml:253 app/JourneySectionPage.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:53
+#: app/JourneySectionPage.qml:55
 #, kde-format
 msgid "Direction: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:61
+#: app/JourneySectionPage.qml:63
 #, kde-format
 msgid "Distance: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:68
+#: app/JourneySectionPage.qml:70
 #, kde-format
 msgid "CO₂: %1"
 msgstr ""
