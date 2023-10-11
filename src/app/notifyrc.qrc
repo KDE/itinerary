@@ -6,4 +6,7 @@
     <qresource prefix="/knotifications5">
         <file>itinerary.notifyrc</file>
     </qresource>
+    <qresource prefix="/">
+        <file>components/RadioSelector.qml</file>
+    </qresource>
 </RCC>
