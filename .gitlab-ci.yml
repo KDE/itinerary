@@ -22,20 +22,23 @@ signapk:
     - Linux
   variables:
     GIT_STRATEGY: none
+    KDECI_CRAFT_SIGNAPK_CONFIG: $CI_PROJECT_DIR/ci-utilities/signing/signapk.ini
   interruptible: true
   needs:
     - craft_android_arm64
   before_script:
-    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git
+    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-utilities --branch=work/kloecker/signing-configs
+    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=work/kloecker/signapk-check-signing-allowed
     # - cd ci-notary-service
     # - git checkout work/fdroid-publisher
     # - python3 -m venv .venv
     # - . .venv/bin/activate
     # - pip3 install -r requirements.txt
   script:
-    - cd ci-notary-service
-    - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signapk.ini
-    - python3 signapk.py -v --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
+    - python3 ci-notary-service/signapk.py -v --config $KDECI_CRAFT_SIGNAPK_CONFIG $CI_PROJECT_DIR/.kde-ci-packages/*.apk
+    # - cd ci-notary-service
+    # - curl -O https://invent.kde.org/sysadmin/ci-utilities/-/raw/work/kloecker/signing-configs/signing/signapk.ini
+    # - python3 signapk.py -v --config signapk.ini $CI_PROJECT_DIR/.kde-ci-packages/*.apk
   artifacts:
     expire_in: 3 days
     when: always
