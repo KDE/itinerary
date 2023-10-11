@@ -8,198 +8,153 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.i18n.localeData 1.0
 import org.kde.itinerary 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 
-Kirigami.ScrollablePage {
+FormCard.FormCardPage {
     id: root
     title: i18n("Statistics")
 
     property alias reservationManager: model.reservationManager
     property alias tripGroupManager: model.tripGroupManager
 
-    StatisticsModel {
-        id: model
-    }
+    data: [
+        StatisticsModel {
+            id: model
+        },
+        StatisticsTimeRangeModel {
+            id: timeRangeModel
+            reservationManager: model.reservationManager
+        }
+    ]
 
-    StatisticsTimeRangeModel {
-        id: timeRangeModel
-        reservationManager: model.reservationManager
-    }
-
-    leftPadding: 0
-    rightPadding: 0
-
-    ColumnLayout {
-        width: parent.width
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormComboBoxDelegate {
-                    model: timeRangeModel
-                    text: i18n("Year")
-                    textRole: "display"
-                    onActivated: {
-                        const begin = timeRangeModel.data(timeRangeModel.index(currentIndex, 0), StatisticsTimeRangeModel.BeginRole);
-                        const end = timeRangeModel.data(timeRangeModel.index(currentIndex, 0), StatisticsTimeRangeModel.EndRole);
-                        model.setTimeRange(begin, end);
-                    }
-                    currentIndex: 0
-                }
+    FormCard.FormHeader {}
+    FormCard.FormCard {
+        FormCard.FormComboBoxDelegate {
+            model: timeRangeModel
+            text: i18n("Year")
+            textRole: "display"
+            onActivated: {
+                const begin = timeRangeModel.data(timeRangeModel.index(currentIndex, 0), StatisticsTimeRangeModel.BeginRole);
+                const end = timeRangeModel.data(timeRangeModel.index(currentIndex, 0), StatisticsTimeRangeModel.EndRole);
+                model.setTimeRange(begin, end);
             }
+            currentIndex: 0
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Total")
+    }
+    FormCard.FormCard {
+        StatisticsDelegate { statItem: model.totalCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.totalDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.totalNights }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.totalCO2 }
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormButtonDelegate {
+            id: countryDetailsLink
+            text: model.visitedCountries.label
+            description: model.visitedCountries.value.split(" ").map(countryCode => Country.fromAlpha2(countryCode).emojiFlag).join(" ")
+            onClicked: countryDetailsDelegate.visible = !countryDetailsDelegate.visible
+            descriptionItem.font.family: 'emoji'
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+        FormCard.FormDelegateSeparator { visible: countryDetailsDelegate.visible }
 
+        FormCard.AbstractFormDelegate {
+            id: countryDetailsDelegate
+            background: Item {}
+            visible: false
+            property var model: visible ? model.visitedCountries.value.split(" ") : []
             contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Total")
-                }
-
-                StatisticsDelegate { statItem: model.totalCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.totalDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.totalNights }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.totalCO2 }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormButtonDelegate {
-                    id: countryDetailsLink
-                    text: model.visitedCountries.label
-                    description: model.visitedCountries.value.split(" ").map(countryCode => Country.fromAlpha2(countryCode).emojiFlag).join(" ")
-                    onClicked: countryDetailsDelegate.visible = !countryDetailsDelegate.visible
-                    descriptionItem.font.family: 'emoji'
-                }
-
-                MobileForm.FormDelegateSeparator { visible: countryDetailsDelegate.visible }
-
-                MobileForm.AbstractFormDelegate {
-                    id: countryDetailsDelegate
-                    background: Item {}
-                    visible: false
-                    property var model: visible ? model.visitedCountries.value.split(" ") : []
-                    contentItem: ColumnLayout {
-                        Repeater {
-                            id: countryDetailsRepeater
-                            model: countryDetailsDelegate.model
-                            QQC2.Label {
-                                Layout.fillWidth: true
-                                wrapMode: Text.WordWrap
-                                readonly property var country: Country.fromAlpha2(modelData)
-                                textFormat: Text.RichText
-                                text: '<span style="font-family: emoji">' + country.emojiFlag + "</span> " + country.name
-                            }
-                        }
+                Repeater {
+                    id: countryDetailsRepeater
+                    model: countryDetailsDelegate.model
+                    QQC2.Label {
+                        Layout.fillWidth: true
+                        wrapMode: Text.WordWrap
+                        readonly property var country: Country.fromAlpha2(modelData)
+                        textFormat: Text.RichText
+                        text: '<span style="font-family: emoji">' + country.emojiFlag + "</span> " + country.name
                     }
                 }
             }
         }
+    }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: model.flightCount.hasData
+    FormCard.FormHeader {
+        title: i18n("Flight")
+        visible: model.flightCount.hasData
+    }
+    FormCard.FormCard {
+        visible: model.flightCount.hasData
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        StatisticsDelegate { statItem: model.flightCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.flightDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.flightCO2 }
+    }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Flight")
-                }
+    FormCard.FormHeader {
+        title: i18n("Train")
+        visible: model.trainCount.hasData
+    }
+    FormCard.FormCard {
+        visible: model.trainCount.hasData
 
-                StatisticsDelegate { statItem: model.flightCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.flightDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.flightCO2 }
-            }
-        }
+        StatisticsDelegate { statItem: model.trainCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.trainDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.trainCO2 }
+    }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: model.trainCount.hasData
+    FormCard.FormHeader {
+        title: i18n("Bus")
+        visible: model.busCount.hasData
+    }
+    FormCard.FormCard {
+        visible: model.busCount.hasData
 
-            contentItem: ColumnLayout {
-                spacing: 0
+        StatisticsDelegate { statItem: model.busCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.busDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.busCO2 }
+    }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Train")
-                }
-                StatisticsDelegate { statItem: model.trainCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.trainDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.trainCO2 }
-            }
-        }
+    FormCard.FormHeader {
+        title: i18n("Boat")
+        visible: model.boatCount.hasData
+    }
+    FormCard.FormCard {
+        visible: model.boatCount.hasData
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: model.busCount.hasData
+        StatisticsDelegate { statItem: model.boatCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.boatDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.boatCO2 }
+    }
 
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormHeader {
+        title: i18n("Car")
+        visible: model.carCount.hasData
+    }
+    FormCard.FormCard {
+        visible: model.carCount.hasData
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Bus")
-                }
-                StatisticsDelegate { statItem: model.busCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.busDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.busCO2 }
-            }
-        }
-
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: model.boatCount.hasData
-
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Boat")
-                }
-                StatisticsDelegate { statItem: model.boatCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.boatDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.boatCO2 }
-            }
-        }
-
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: model.carCount.hasData
-
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormCardHeader {
-                    title: i18n("Car")
-                }
-                StatisticsDelegate { statItem: model.carCount }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.carDistance }
-                MobileForm.FormDelegateSeparator {}
-                StatisticsDelegate { statItem: model.carCO2 }
-            }
-        }
+        StatisticsDelegate { statItem: model.carCount }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.carDistance }
+        FormCard.FormDelegateSeparator {}
+        StatisticsDelegate { statItem: model.carCO2 }
     }
 }
