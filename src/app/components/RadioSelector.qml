@@ -123,10 +123,12 @@ RowLayout {
             height: container.height
             radius: height/2
             border.width: 1
-            border.color: Kirigami.Theme.hoverColor
+            border.color: Kirigami.ColorUtils.linearInterpolation(
+                              Kirigami.Theme.hoverColor,
+                              "transparent", 0.4)
             color: Kirigami.ColorUtils.linearInterpolation(
                        Kirigami.Theme.hoverColor,
-                       "transparent", 0.7)
+                       "transparent", 0.85)
 
             Behavior on x {
                 PropertyAnimation {
