@@ -44,7 +44,6 @@ RowLayout {
                     Layout.fillWidth: true
                     Layout.preferredWidth: consistentWidth ? (root.width/repeater.count)-(switchLayout.spacing/repeater.count-1) : button.implicitWidth
 
-                    font.bold: checked
                     checkable: true
                     text: modelData.text
                     icon.name: modelData.icon.name
@@ -82,16 +81,50 @@ RowLayout {
                             source: button.icon.name
                             implicitHeight: label.height
                             implicitWidth: label.height
+                            Behavior on color {
+                                PropertyAnimation {
+                                    duration: Kirigami.Units.longDuration
+                                    easing.type: Easing.InOutCubic
+                                }
+                            }
                         }
-
-                        QQC2.Label {
-                            id: label
-
+                        Item{
                             Layout.topMargin: (container.height-label.height)/2
                             Layout.bottomMargin: (container.height-label.height)/2
 
-                            color: button.checked ? Kirigami.Theme.hoverColor : Kirigami.Theme.textColor
-                            text: button.text
+                            width: fakeLabel.width
+                            height: fakeLabel.height
+                            QQC2.Label {
+                                id: fakeLabel
+
+                                anchors.centerIn: parent
+                                font.bold: true
+                                color: Kirigami.Theme.hoverColor
+
+                                opacity: button.checked ? 1 : 0
+                                text: button.text
+                                Behavior on opacity {
+                                    PropertyAnimation {
+                                        duration: Kirigami.Units.longDuration
+                                        easing.type: Easing.InOutCubic
+                                    }
+                                }
+                            }
+                            QQC2.Label {
+                                id: label
+
+                                anchors.centerIn: parent
+                                color: Kirigami.Theme.textColor
+
+                                opacity: button.checked ? 0 : 1
+                                text: button.text
+                                Behavior on opacity {
+                                    PropertyAnimation {
+                                        duration: Kirigami.Units.longDuration
+                                        easing.type: Easing.InOutCubic
+                                    }
+                                }
+                            }
                         }
 
                         Item {
