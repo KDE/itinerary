@@ -66,7 +66,7 @@ RowLayout {
 
                     contentItem: RowLayout{
                         Item {
-                            Layout.leftMargin: Kirigami.Units.smallSpacing
+                            Layout.leftMargin:  icon.visible ? Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
                             Layout.fillWidth: true
                         }
 
@@ -129,7 +129,7 @@ RowLayout {
 
                         Item {
                             Layout.fillWidth: true
-                            Layout.rightMargin: Kirigami.Units.smallSpacing
+                            Layout.rightMargin: Kirigami.Units.largeSpacing
                         }
                     }
 

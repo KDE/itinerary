@@ -135,10 +135,10 @@ Kirigami.ScrollablePage {
 
                             actions: [
                                 Kirigami.Action {
-                                    text: "departure"
+                                    text: i18nc("train or bus departure", "Departure")
                                 },
                                 Kirigami.Action {
-                                    text: "arrival"
+                                    text: i18nc("train or bus arrival", "Arrival")
                                 }
                             ]
                         }
