@@ -44,6 +44,7 @@ RowLayout {
                     Layout.fillWidth: true
                     Layout.preferredWidth: consistentWidth ? (root.width/repeater.count)-(switchLayout.spacing/repeater.count-1) : button.implicitWidth
 
+                    font.bold: checked
                     checkable: true
                     text: modelData.text
                     icon.name: modelData.icon.name
@@ -88,6 +89,7 @@ RowLayout {
                             Layout.topMargin: (container.height-label.height)/2
                             Layout.bottomMargin: (container.height-label.height)/2
 
+                            color: button.checked ? Kirigami.Theme.hoverColor : Kirigami.Theme.textColor
                             text: button.text
                         }
 
@@ -128,7 +130,7 @@ RowLayout {
                               "transparent", 0.4)
             color: Kirigami.ColorUtils.linearInterpolation(
                        Kirigami.Theme.hoverColor,
-                       "transparent", 0.85)
+                       "transparent", 0.9)
 
             Behavior on x {
                 PropertyAnimation {
