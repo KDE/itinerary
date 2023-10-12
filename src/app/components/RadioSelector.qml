@@ -77,6 +77,7 @@ RowLayout {
                             Layout.topMargin: (container.height-label.height)/2
                             Layout.bottomMargin: (container.height-label.height)/2
 
+                            color: button.checked ? Kirigami.Theme.hoverColor : Kirigami.Theme.textColor
                             visible: button.icon.name
                             source: button.icon.name
                             implicitHeight: label.height
