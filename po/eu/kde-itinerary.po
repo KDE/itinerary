@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 02:07+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-10-08 07:50+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -186,35 +186,35 @@ msgid "To %1"
 msgstr "%1(e)ra"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:201 app/TransferPage.qml:109
+#: app/JourneyRequestPage.qml:207 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Distantzia luzeko trenak"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:211 app/TransferPage.qml:117
+#: app/JourneyRequestPage.qml:217 app/TransferPage.qml:117
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Tokiko trenak"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:125
+#: app/JourneyRequestPage.qml:227 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Zirkulazio azkarra"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:133
+#: app/JourneyRequestPage.qml:237 app/TransferPage.qml:133
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobusa"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:141
+#: app/JourneyRequestPage.qml:247 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1048,7 +1048,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Iritsiera-ordua irteera-orduaren ondoren izan behar da."
 
-#: app/FlightPage.qml:16 app/StatisticsPage.qml:118
+#: app/FlightPage.qml:16 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Hegaldia"
@@ -1720,7 +1720,7 @@ msgstr "Metroa"
 msgid "Tramway"
 msgstr "Tranbia"
 
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:157
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autobusa"
@@ -1771,42 +1771,50 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "Nora:"
 
-#: app/JourneyRequestPage.qml:126
-#, kde-format
-msgctxt "departure time for a train"
-msgid "Departure time:"
-msgstr "Irteera ordua:"
+#: app/JourneyRequestPage.qml:131
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "train or bus departure"
+msgid "Departure"
+msgstr "Irteera"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "train or bus arrival"
+msgid "Arrival"
+msgstr "Iritsiera"
+
+#: app/JourneyRequestPage.qml:161
 #, kde-format
 msgid "Search Journey"
 msgstr "Bilatu bidaia"
 
-#: app/JourneyRequestPage.qml:202
+#: app/JourneyRequestPage.qml:208
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Abiadura handiko edo hiriarteko trenak"
 
-#: app/JourneyRequestPage.qml:212
+#: app/JourneyRequestPage.qml:218
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Eskualdeko edo tokiko trenak"
 
-#: app/JourneyRequestPage.qml:222
+#: app/JourneyRequestPage.qml:228
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Zirkulazio azkarra, metroa, tranbia"
 
-#: app/JourneyRequestPage.qml:232
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Tokiko edo eskualdeko autobus zerbitzuak"
 
-#: app/JourneyRequestPage.qml:242
+#: app/JourneyRequestPage.qml:248
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2204,7 +2212,7 @@ msgstr "Mapak zama-jaitsi"
 msgid "Statistics"
 msgstr "Estatistikak"
 
-#: app/main.qml:207
+#: app/main.qml:207 app/WelcomePage.qml:42
 #, kde-format
 msgid "Settings..."
 msgstr "Ezarpenak..."
@@ -2575,7 +2583,7 @@ msgstr "Alokairuko autoa"
 msgid "Bicycle"
 msgstr "Bizikleta"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Autoa"
@@ -2940,22 +2948,22 @@ msgstr "Auto ibilaldiak"
 msgid "Boat trips"
 msgstr "Itsasontzi txangoak"
 
-#: app/StatisticsPage.qml:44
+#: app/StatisticsPage.qml:35
 #, kde-format
 msgid "Year"
 msgstr "Urtea"
 
-#: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:47 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Guztira"
 
-#: app/StatisticsPage.qml:138
+#: app/StatisticsPage.qml:106
 #, kde-format
 msgid "Train"
 msgstr "Trena"
 
-#: app/StatisticsPage.qml:176
+#: app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Itsasontzia"
@@ -3523,12 +3531,12 @@ msgstr ""
 "zure hurrengo irteerako geltoki edo aireportura iristeko erak automatikoki "
 "gomendatu ditzan."
 
-#: app/WelcomePage.qml:43
+#: app/WelcomePage.qml:49
 #, kde-format
 msgid "More information"
 msgstr "Informazio gehiago"
 
-#: app/WelcomePage.qml:49
+#: app/WelcomePage.qml:55
 #, kde-format
 msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
@@ -3537,7 +3545,7 @@ msgstr ""
 "«KDE Itinerary»ri buruz informazio gehiago izateko begiratu <a href="
 "\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">wiki orria</a>."
 
-#: app/WelcomePage.qml:56
+#: app/WelcomePage.qml:62
 #, kde-format
 msgid "Got it!"
 msgstr "Ulertuta!"
@@ -3563,6 +3571,10 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgctxt "departure time for a train"
+#~ msgid "Departure time:"
+#~ msgstr "Irteera ordua:"
 
 #~ msgid "(+ 1 day)"
 #~ msgstr "(+ egun 1)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 02:07+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-10-09 14:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -181,35 +181,35 @@ msgid "To %1"
 msgstr "%1-მდე"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:201 app/TransferPage.qml:109
+#: app/JourneyRequestPage.qml:207 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "საქალაქთაშორისო მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:211 app/TransferPage.qml:117
+#: app/JourneyRequestPage.qml:217 app/TransferPage.qml:117
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "ადგილობრივი მატარებლები"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:125
+#: app/JourneyRequestPage.qml:227 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "სწრაფი ტრანზიტი"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:133
+#: app/JourneyRequestPage.qml:237 app/TransferPage.qml:133
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "ავტობუსი"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:141
+#: app/JourneyRequestPage.qml:247 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1041,7 +1041,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "ჩამოფრენის დრო გაფრენის დროის შემდეგ უნდა იყოს."
 
-#: app/FlightPage.qml:16 app/StatisticsPage.qml:118
+#: app/FlightPage.qml:16 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "ფრენები"
@@ -1713,7 +1713,7 @@ msgstr "მეტრო"
 msgid "Tramway"
 msgstr "ტრამვაი"
 
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:157
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "მატარებელი"
@@ -1764,42 +1764,50 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "სადამდე:"
 
-#: app/JourneyRequestPage.qml:126
-#, kde-format
-msgctxt "departure time for a train"
-msgid "Departure time:"
-msgstr "გასვლის დრო:"
+#: app/JourneyRequestPage.qml:131
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "train or bus departure"
+msgid "Departure"
+msgstr "გამგზავრება"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "train or bus arrival"
+msgid "Arrival"
+msgstr "ჩამოსვლა"
+
+#: app/JourneyRequestPage.qml:161
 #, kde-format
 msgid "Search Journey"
 msgstr "მოგზაურობის ძებნა"
 
-#: app/JourneyRequestPage.qml:202
+#: app/JourneyRequestPage.qml:208
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "ჩქაროსნული ან საქალაქთაშორისო მატარებლები"
 
-#: app/JourneyRequestPage.qml:212
+#: app/JourneyRequestPage.qml:218
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "რეგიონალური ან ადგილობრივი მატარებლები"
 
-#: app/JourneyRequestPage.qml:222
+#: app/JourneyRequestPage.qml:228
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "სწრაფი ტრანზიტი, მეტრო, ტრამვაი"
 
-#: app/JourneyRequestPage.qml:232
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "ადგილობრივი ან რეგიონული ავტობუსის მომსახურება"
 
-#: app/JourneyRequestPage.qml:242
+#: app/JourneyRequestPage.qml:248
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2198,7 +2206,7 @@ msgstr "რუკების გადმოწერა"
 msgid "Statistics"
 msgstr "სტატისტიკა"
 
-#: app/main.qml:207
+#: app/main.qml:207 app/WelcomePage.qml:42
 #, kde-format
 msgid "Settings..."
 msgstr "მორგება..."
@@ -2569,7 +2577,7 @@ msgstr "ნაქირავები მანქანა"
 msgid "Bicycle"
 msgstr "ველოსიპედი"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "მანქანა"
@@ -2934,22 +2942,22 @@ msgstr "მანქანით მოგზაურობა"
 msgid "Boat trips"
 msgstr "ნავით მოგზაურობა"
 
-#: app/StatisticsPage.qml:44
+#: app/StatisticsPage.qml:35
 #, kde-format
 msgid "Year"
 msgstr "წელი"
 
-#: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:47 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "ჯამში"
 
-#: app/StatisticsPage.qml:138
+#: app/StatisticsPage.qml:106
 #, kde-format
 msgid "Train"
 msgstr "მატარებელი"
 
-#: app/StatisticsPage.qml:176
+#: app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "ნავი"
@@ -3514,12 +3522,12 @@ msgstr ""
 "მდებარეობის პარამეტრები, რათა შემდეგ სადგურამდე ან აეროპორტამდე უფრო ადვილად "
 "მიგაცილოთ."
 
-#: app/WelcomePage.qml:43
+#: app/WelcomePage.qml:49
 #, kde-format
 msgid "More information"
 msgstr "მეტი ინფორმაცია"
 
-#: app/WelcomePage.qml:49
+#: app/WelcomePage.qml:55
 #, kde-format
 msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
@@ -3528,7 +3536,7 @@ msgstr ""
 "KDE Itinerary -ის შესახებ მეტი ინფორმაციის მისაღებად იხილეთ ჩვენი <a href="
 "\"https://community.kde.org/KDE_PIM/KDE_Itinerary\">ვიკის გვერდი</a>."
 
-#: app/WelcomePage.qml:56
+#: app/WelcomePage.qml:62
 #, kde-format
 msgid "Got it!"
 msgstr "Გავიგე!"
@@ -3554,6 +3562,10 @@ msgstr "შესვლა"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgctxt "departure time for a train"
+#~ msgid "Departure time:"
+#~ msgstr "გასვლის დრო:"
 
 #~ msgid "(+ 1 day)"
 #~ msgstr "(+ 1 დღე)"

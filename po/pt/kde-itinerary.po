@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-11 02:07+0000\n"
+"POT-Creation-Date: 2023-10-12 01:42+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -189,35 +189,35 @@ msgid "To %1"
 msgstr "Para %1"
 
 #: app/AlternativeJourneyPage.qml:83 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:201 app/TransferPage.qml:109
+#: app/JourneyRequestPage.qml:207 app/TransferPage.qml:109
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Comboios de longa distância"
 
 #: app/AlternativeJourneyPage.qml:91 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:211 app/TransferPage.qml:117
+#: app/JourneyRequestPage.qml:217 app/TransferPage.qml:117
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Comboios locais"
 
 #: app/AlternativeJourneyPage.qml:99 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:125
+#: app/JourneyRequestPage.qml:227 app/TransferPage.qml:125
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Trânsito rápido"
 
 #: app/AlternativeJourneyPage.qml:107 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:133
+#: app/JourneyRequestPage.qml:237 app/TransferPage.qml:133
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autocarro"
 
 #: app/AlternativeJourneyPage.qml:115 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:141
+#: app/JourneyRequestPage.qml:247 app/TransferPage.qml:141
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1061,7 +1061,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightPage.qml:16 app/StatisticsPage.qml:118
+#: app/FlightPage.qml:16 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Voo"
@@ -1736,7 +1736,7 @@ msgstr "Metro"
 msgid "Tramway"
 msgstr "Eléctrico"
 
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:157
+#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autocarro"
@@ -1787,42 +1787,50 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "Para:"
 
-#: app/JourneyRequestPage.qml:126
-#, kde-format
-msgctxt "departure time for a train"
-msgid "Departure time:"
-msgstr "Hora de partida:"
+#: app/JourneyRequestPage.qml:131
+#, fuzzy, kde-format
+#| msgid "Departure"
+msgctxt "train or bus departure"
+msgid "Departure"
+msgstr "Partida"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:135
+#, fuzzy, kde-format
+#| msgid "Arrival"
+msgctxt "train or bus arrival"
+msgid "Arrival"
+msgstr "Chegada"
+
+#: app/JourneyRequestPage.qml:161
 #, kde-format
 msgid "Search Journey"
 msgstr "Procurar uma Jornada"
 
-#: app/JourneyRequestPage.qml:202
+#: app/JourneyRequestPage.qml:208
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Comboios de alta velocidade ou intercidades"
 
-#: app/JourneyRequestPage.qml:212
+#: app/JourneyRequestPage.qml:218
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Comboios locais ou regionais"
 
-#: app/JourneyRequestPage.qml:222
+#: app/JourneyRequestPage.qml:228
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Trânsito rápido, metro, eléctricos"
 
-#: app/JourneyRequestPage.qml:232
+#: app/JourneyRequestPage.qml:238
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Serviços de autocarros locais ou regionais"
 
-#: app/JourneyRequestPage.qml:242
+#: app/JourneyRequestPage.qml:248
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2223,7 +2231,7 @@ msgstr "Obter os Mapas"
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: app/main.qml:207
+#: app/main.qml:207 app/WelcomePage.qml:42
 #, kde-format
 msgid "Settings..."
 msgstr "Configuração..."
@@ -2601,7 +2609,7 @@ msgstr "Carro de aluguer"
 msgid "Bicycle"
 msgstr "Bicicleta"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:195
+#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Carro"
@@ -2970,22 +2978,22 @@ msgstr "Viagens de carro"
 msgid "Boat trips"
 msgstr "Viagens de barco"
 
-#: app/StatisticsPage.qml:44
+#: app/StatisticsPage.qml:35
 #, kde-format
 msgid "Year"
 msgstr "Ano"
 
-#: app/StatisticsPage.qml:64 app/statisticstimerangemodel.cpp:69
+#: app/StatisticsPage.qml:47 app/statisticstimerangemodel.cpp:69
 #, kde-format
 msgid "Total"
 msgstr "Total"
 
-#: app/StatisticsPage.qml:138
+#: app/StatisticsPage.qml:106
 #, kde-format
 msgid "Train"
 msgstr "Comboio"
 
-#: app/StatisticsPage.qml:176
+#: app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Barco"
@@ -3561,12 +3569,12 @@ msgstr ""
 "casa para activar o assistente de transferências para lhe sugerir "
 "automaticamente trajectos até à sua estação ou aeroporto de partida."
 
-#: app/WelcomePage.qml:43
+#: app/WelcomePage.qml:49
 #, kde-format
 msgid "More information"
 msgstr "Mais informações"
 
-#: app/WelcomePage.qml:49
+#: app/WelcomePage.qml:55
 #, kde-format
 msgid ""
 "For more information about KDE Itinerary check out the <a href=\"https://"
@@ -3575,7 +3583,7 @@ msgstr ""
 "Para mais informações sobre o KDE Itinerary, consulte a <a href=\"https://"
 "community.kde.org/KDE_PIM/KDE_Itinerary\">página da wiki</a>."
 
-#: app/WelcomePage.qml:56
+#: app/WelcomePage.qml:62
 #, kde-format
 msgid "Got it!"
 msgstr "Compreendi!"
@@ -3601,6 +3609,10 @@ msgstr "A autenticar"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 até %4 a %5"
+
+#~ msgctxt "departure time for a train"
+#~ msgid "Departure time:"
+#~ msgstr "Hora de partida:"
 
 #~ msgctxt "Train departure"
 #~ msgid "Departure from %1 on platform %2"
