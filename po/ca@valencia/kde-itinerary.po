@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:42+0000\n"
-"PO-Revision-Date: 2023-10-08 11:21+0200\n"
+"PO-Revision-Date: 2023-10-12 09:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1769,15 +1769,13 @@ msgid "To:"
 msgstr "A:"
 
 #: app/JourneyRequestPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Eixida"
 
 #: app/JourneyRequestPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Arribada"
@@ -2136,7 +2134,7 @@ msgstr "Obri l'itinerari a la pàgina indicada"
 #: app/main.cpp:368
 #, kde-format
 msgid "Files or URLs to import."
-msgstr "Fitxers o URL a importar."
+msgstr "Fitxers o URL que s'han d'importar."
 
 #: app/main.qml:59
 #, kde-format
@@ -3059,7 +3057,7 @@ msgstr "El meu itinerari"
 #: app/TimelinePage.qml:88
 #, kde-format
 msgid "Go To Now"
-msgstr "Ves a ara"
+msgstr "Ves fins a ara"
 
 #: app/TimelinePage.qml:99
 #, kde-format
@@ -3536,7 +3534,7 @@ msgstr ""
 "de trànsit en línia o les previsions meteorològiques. Per tant, segurament "
 "voldreu revisar estos paràmetres. Quan ho feu, podreu configurar la ubicació "
 "de la vostra llar per a activar l'assistent de transbords i que suggerisca "
-"automàticament els camins a la pròxima estació d'eixida o a l'aeroport."
+"automàticament els camins cap a la pròxima estació d'eixida o a l'aeroport."
 
 #: app/WelcomePage.qml:49
 #, kde-format
@@ -3578,7 +3576,3 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
-
-#~ msgctxt "departure time for a train"
-#~ msgid "Departure time:"
-#~ msgstr "Hora d'eixida:"

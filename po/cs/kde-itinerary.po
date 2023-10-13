@@ -1763,18 +1763,16 @@ msgid "To:"
 msgstr "Do:"
 
 #: app/JourneyRequestPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
-msgstr "Odjezd"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
-msgstr "Příjezd"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:161
 #, kde-format
@@ -3556,7 +3554,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgctxt "departure time for a train"
-#~ msgid "Departure time:"
-#~ msgstr "Čas odjezdu:"
