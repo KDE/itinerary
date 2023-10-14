@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:42+0000\n"
-"PO-Revision-Date: 2023-10-09 14:45+0200\n"
+"PO-Revision-Date: 2023-10-13 08:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1021,7 +1021,7 @@ msgstr "ჩაჯდომის დრო გაფრენის დრომ
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "ჩამოსვლა - %1"
+msgstr "ჩამოფრენა - %1"
 
 #: app/FlightEditor.qml:141
 #, kde-format
@@ -1765,15 +1765,13 @@ msgid "To:"
 msgstr "სადამდე:"
 
 #: app/JourneyRequestPage.qml:131
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "გამგზავრება"
 
 #: app/JourneyRequestPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
@@ -2789,7 +2787,7 @@ msgstr "წვდომების მოთხოვნა..."
 #: app/SettingsPage.qml:177
 #, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "გაფრთხილებების საჩვენებლად დამატებითი წვდომებია საჭირო.ს"
+msgstr "გაფრთხილებების საჩვენებლად დამატებითი წვდომებია საჭირო."
 
 #: app/SettingsPage.qml:186
 #, kde-format
