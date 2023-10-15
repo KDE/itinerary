@@ -34,6 +34,7 @@ Settings::Settings(QObject *parent)
 
     m_showNotificationOnLockScreen = s.value(QLatin1String("ShowNotificationOnLockScreen"), false).toBool();
 
+    m_osmContributorMode = s.value(QLatin1String("OsmContributorMode"), false).toBool();
     m_developmentMode = s.value(QLatin1String("DevelopmentMode"), false).toBool();
 }
 
@@ -209,6 +210,20 @@ void Settings::setShowNotificationOnLockScreen(bool enabled)
     s.setValue(QLatin1String("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
 
     Q_EMIT showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
+}
+
+void Settings::setOsmContributorMode(bool enabled)
+{
+    if (m_osmContributorMode == enabled) {
+        return;
+    }
+
+    m_osmContributorMode = enabled;
+    QSettings s;
+    s.beginGroup(QLatin1String("Settings"));
+    s.setValue(QLatin1String("OsmContributorMode"), m_osmContributorMode);
+
+    Q_EMIT osmContributorModeChanged(m_osmContributorMode);
 }
 
 bool Settings::developmentMode() const

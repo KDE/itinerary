@@ -25,6 +25,7 @@ class Settings : public QObject
 
     Q_PROPERTY(bool showNotificationOnLockScreen READ showNotificationOnLockScreen WRITE setShowNotificationOnLockScreen NOTIFY showNotificationOnLockScreenChanged)
 
+    Q_PROPERTY(bool osmContributorMode MEMBER m_osmContributorMode WRITE setOsmContributorMode NOTIFY osmContributorModeChanged)
     Q_PROPERTY(bool developmentMode READ developmentMode WRITE setDevelopmentMode NOTIFY developmentModeChanged)
 
 public:
@@ -57,6 +58,8 @@ public:
     bool showNotificationOnLockScreen() const;
     void setShowNotificationOnLockScreen(bool enabled);
 
+    void setOsmContributorMode(bool enabled);
+
     bool developmentMode() const;
     void setDevelopmentMode(bool enabled);
 
@@ -70,6 +73,7 @@ Q_SIGNALS:
     void autoFillTransfersChanged(bool autoFill);
     void showNotificationOnLockScreenChanged(bool enabled);
     void developmentModeChanged(bool enabled);
+    void osmContributorModeChanged(bool enabled);
 
 private:
     QString m_homeCountry;
@@ -80,6 +84,7 @@ private:
     bool m_autoAddTransfers = true;
     bool m_autoFillTransfers = false;
     bool m_showNotificationOnLockScreen = false;
+    bool m_osmContributorMode = false;
     bool m_developmentMode = false;
 };
 

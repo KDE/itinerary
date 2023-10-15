@@ -301,4 +301,16 @@ FormCard.FormCardPage {
             enabled: MatrixController.manager.connected || (matrixId.text.length > 0 && matrixPassword.text.length > 0)
         }
     }
+
+    FormCard.FormHeader {
+        title: i18n("Contributing")
+    }
+    FormCard.FormCard {
+        FormCard.FormCheckDelegate {
+            text: i18n("I contribute to OpenStreetMap")
+            description: i18n("Enables OSM editing options.")
+            checked: Settings.osmContributorMode
+            onToggled: Settings.osmContributorMode = checked
+        }
+    }
 }

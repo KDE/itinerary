@@ -14,6 +14,7 @@ import org.kde.kpublictransport 1.0 as PT
 import org.kde.kosmindoormap 1.0
 import org.kde.itinerary 1.0
 import org.kde.kosmindoormap.kpublictransport 1.0
+import org.kde.osm.editorcontroller 1.0
 
 Kirigami.Page {
     id: root
@@ -116,6 +117,29 @@ Kirigami.Page {
             icon.name: "kaccess"
             text: i18n("Open wheelmap.org");
             onTriggered: NavigationController.showOnWheelmap(map.mapData.center.y, map.mapData.center.x);
+        },
+
+        Kirigami.Action {
+            separator: true
+            visible: Settings.osmContributorMode || Settings.developmentMode
+        },
+        Kirigami.Action {
+            text: i18n("Edit with iD")
+            icon.name: "document-edit"
+            visible: Settings.osmContributorMode
+            onTriggered: Settings.osmContributorMode && EditorController.editBoundingBox(root.map.view.mapSceneToGeo(root.map.view.viewport), Editor.ID)
+        },
+        Kirigami.Action {
+            text: i18n("Edit with JOSM")
+            icon.name: "org.openstreetmap.josm"
+            visible: Settings.osmContributorMode && EditorController.hasEditor(Editor.JOSM)
+            onTriggered: EditorController.editBoundingBox(root.map.view.mapSceneToGeo(root.map.view.viewport), Editor.JOSM)
+        },
+        Kirigami.Action {
+            text: i18n("Edit with Vespucci")
+            icon.name: "document-edit"
+            visible: Settings.osmContributorMode && EditorController.hasEditor(Editor.Vespucci)
+            onTriggered: EditorController.editBoundingBox(root.map.view.mapSceneToGeo(root.map.view.viewport), Editor.Vespucci)
         },
 
         Kirigami.Action {

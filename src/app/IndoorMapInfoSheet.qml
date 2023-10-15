@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kosmindoormap 1.0
+import org.kde.osm.editorcontroller 1.0
 import org.kde.itinerary 1.0
 
 Kirigami.OverlaySheet {
@@ -119,6 +120,31 @@ Kirigami.OverlaySheet {
             }
         }
     }
+
+    property var footerLoader: Loader {
+        active: Settings.osmContributorMode
+        sourceComponent: RowLayout {
+            Item { Layout.fillWidth: true }
+            QQC2.Button {
+                icon.name: "document-edit"
+                text: i18n("Edit with iD")
+                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.ID)
+            }
+            QQC2.Button {
+                icon.name: "org.openstreetmap.josm"
+                text: i18n("Edit with JOSM")
+                visible: EditorController.hasEditor(Editor.JOSM)
+                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.JOSM)
+            }
+            QQC2.Button {
+                icon.name: "document-edit"
+                text: i18n("Edit with Vespucci")
+                visible: EditorController.hasEditor(Editor.Vespucci)
+                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.Vespucci)
+            }
+        }
+    }
+    footer: Settings.osmContributorMode ? elementDetailsSheet.footerLoader.item : null
 
     onSheetOpenChanged: {
         console.log(elementDetailsSheet.model);
