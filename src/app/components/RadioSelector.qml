@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: LGPL-2.0-or-later
 // SPDX-FileCopyrightText: 2023 Mathis Brüchert <mbb@kaidan.im>
 
 import QtQuick 2.15
