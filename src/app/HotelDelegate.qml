@@ -33,6 +33,7 @@ App.TimelineDelegate {
             visible: text !== ""
             width: topLayout.width
             text: Localizer.formatAddressWithContext(reservationFor.address, null, Settings.homeCountryIsoCode)
+            wrapMode: Text.WordWrap
         }
         QQC2.Label {
             text: i18n("Check-in time: %1", Localizer.formatTime(reservation, "checkinTime"))

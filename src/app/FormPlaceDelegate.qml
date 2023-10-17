@@ -93,6 +93,7 @@ MobileForm.AbstractFormDelegate {
             Layout.fillWidth: true
             text: root.place ? Localizer.formatAddress(root.place.address) : ""
             color: Kirigami.Theme.disabledTextColor
+            wrapMode: Text.WordWrap
             Accessible.ignored: !visible
         }
 
