@@ -32,7 +32,7 @@ Item {
         Image {
             id: backgroundImage
             source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/background" : ""
-            fillMode: Image.TileVertically
+            fillMode: backgroundImage.implicitHeight < parent.implicitHeight ? Image.TileVertically : Image.PreserveAspectCrop
             verticalAlignment: Image.AlignTop
             horizontalAlignment: Image.AlignHCenter
             x: -(width - bodyBackground.width) / 2
