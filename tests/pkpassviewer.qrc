@@ -5,6 +5,7 @@
 <RCC>
     <qresource prefix="/">
         <file>pkpassviewer.qml</file>
+        <file alias="BarcodeScanModeButton.qml">../src/app/BarcodeScanModeButton.qml</file>
         <file alias="BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>
         <file alias="BoardingPass.qml">../src/app/BoardingPass.qml</file>
         <file alias="EventTicket.qml">../src/app/EventTicket.qml</file>
