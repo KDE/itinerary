@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-16 01:40+0000\n"
+"POT-Creation-Date: 2023-10-18 01:42+0000\n"
 "PO-Revision-Date: 2023-09-30 18:23+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1105,31 +1105,31 @@ msgstr "Vuoi davvero condividere %1 sul canale Matrix %2?"
 msgid "Share"
 msgstr "Condividi"
 
-#: app/FormPlaceDelegate.qml:123
+#: app/FormPlaceDelegate.qml:124
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "Visualizza la mappa degli interni"
 
-#: app/FormPlaceDelegate.qml:130
+#: app/FormPlaceDelegate.qml:131
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "Visualizza sulla mappa"
 
-#: app/FormPlaceDelegate.qml:143
+#: app/FormPlaceDelegate.qml:144
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "Naviga"
 
-#: app/FormPlaceDelegate.qml:153
+#: app/FormPlaceDelegate.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "Partenze trasporto pubblico"
 
-#: app/FormPlaceDelegate.qml:162
+#: app/FormPlaceDelegate.qml:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1524,12 +1524,12 @@ msgstr "Dose:"
 msgid "Check-out %1"
 msgstr "Check-out %1"
 
-#: app/HotelDelegate.qml:38
+#: app/HotelDelegate.qml:39
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "Ora di check-in: %1"
 
-#: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
+#: app/HotelDelegate.qml:45 app/HotelDelegate.qml:46
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "Ora di check-out: %1"

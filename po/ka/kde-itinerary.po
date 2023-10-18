@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-16 01:40+0000\n"
+"POT-Creation-Date: 2023-10-18 01:42+0000\n"
 "PO-Revision-Date: 2023-10-13 08:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1103,31 +1103,31 @@ msgstr "მართლა გნებავთ %1-ის Matrix-ის არ�
 msgid "Share"
 msgstr "გაზიარება"
 
-#: app/FormPlaceDelegate.qml:123
+#: app/FormPlaceDelegate.qml:124
 #, kde-format
 msgctxt "@action:button"
 msgid "View Indoor Map"
 msgstr "შიდა რუკის ნახვა"
 
-#: app/FormPlaceDelegate.qml:130
+#: app/FormPlaceDelegate.qml:131
 #, kde-format
 msgctxt "@action:button"
 msgid "View on Map"
 msgstr "რუკაზე ნახვა"
 
-#: app/FormPlaceDelegate.qml:143
+#: app/FormPlaceDelegate.qml:144
 #, kde-format
 msgctxt "@action:button Start route guidance to location"
 msgid "Navigate"
 msgstr "ნავიგაცია"
 
-#: app/FormPlaceDelegate.qml:153
+#: app/FormPlaceDelegate.qml:154
 #, kde-format
 msgctxt "@action:button"
 msgid "Public Transport Departures"
 msgstr "საჯარო ტრანსპორტის გასვლის დროები"
 
-#: app/FormPlaceDelegate.qml:162
+#: app/FormPlaceDelegate.qml:163
 #, kde-format
 msgctxt "@action:button"
 msgid "Share via Matrix"
@@ -1522,12 +1522,12 @@ msgstr "დოზა:"
 msgid "Check-out %1"
 msgstr "ჩეკაუტი: %1"
 
-#: app/HotelDelegate.qml:38
+#: app/HotelDelegate.qml:39
 #, kde-format
 msgid "Check-in time: %1"
 msgstr "ჩეკინის დრო: %1"
 
-#: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
+#: app/HotelDelegate.qml:45 app/HotelDelegate.qml:46
 #, kde-format
 msgid "Check-out time: %1"
 msgstr "ჩეკაუტის დრო: %1"
