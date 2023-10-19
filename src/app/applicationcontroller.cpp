@@ -675,6 +675,77 @@ void ApplicationController::exportTripToGpx(const QString &tripGroupId, const QU
     Q_EMIT infoMessage(i18n("Export completed."));
 }
 
+void ApplicationController::exportBatchToFile(const QString &batchId, const QUrl &url)
+{
+    if (url.isEmpty()) {
+        return;
+    }
+    if (exportBatchToFile(batchId, FileHelper::toLocalFile(url))) {
+        Q_EMIT infoMessage(i18n("Export completed."));
+    }
+}
+
+void ApplicationController::exportBatchToKDEConnect(const QString &batchId, const QString &deviceId)
+{
+    if (batchId.isEmpty() || deviceId.isEmpty()) {
+        return;
+    }
+
+    if (!m_tempDir) {
+        m_tempDir = std::make_unique<QTemporaryDir>();
+    }
+
+    QTemporaryFile f(m_tempDir->path() + QStringLiteral("/XXXXXX.itinerary"));
+    if (!f.open()) {
+        qCWarning(Log) << "Failed to open temporary file:" << f.errorString();
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return;
+    }
+
+    if (exportBatchToFile(batchId, f.fileName())) {
+        // will be removed by the temporary dir it's in, as we don't know when the upload is done
+        f.setAutoRemove(false);
+        f.close();
+        KDEConnect::sendToDevice(f.fileName(), deviceId);
+    }
+    Q_EMIT infoMessage(i18n("Reservation sent."));
+}
+
+bool ApplicationController::exportBatchToFile(const QString &batchId, const QString &fileName)
+{
+    File f(fileName);
+    if (!f.open(File::Write)) {
+        qCWarning(Log) << f.errorString() << fileName;
+        Q_EMIT infoMessage(i18n("Export failed: %1", f.errorString()));
+        return false;
+    }
+
+    QSet<QString> docIdSet;
+
+    Exporter exporter(&f);
+    exporter.exportReservationBatch(m_resMgr, batchId);
+    exporter.exportTransfersForBatch(batchId, m_transferMgr);
+    exporter.exportLiveDataForBatch(batchId);
+
+    const auto resIds = m_resMgr->reservationsForBatch(batchId);
+    for (const auto &resId : resIds) {
+        const auto res = m_resMgr->reservation(resId);
+
+        const auto pkPassId = PkPassManager::passId(res);
+        exporter.exportPkPass(m_pkPassMgr, pkPassId);
+
+        const auto docIds = DocumentUtil::documentIds(res);
+        for (const auto &docId : docIds) {
+            const auto id = docId.toString();
+            if (!id.isEmpty() && m_docMgr->hasDocument(id) && !docIdSet.contains(id)) {
+                exporter.exportDocument(m_docMgr, id);
+                docIdSet.insert(id);
+            }
+        }
+    }
+    return true;
+}
+
 bool ApplicationController::importBundle(const QUrl &url)
 {
     KItinerary::File f(FileHelper::toLocalFile(url));
