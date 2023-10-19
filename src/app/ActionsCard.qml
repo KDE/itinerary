@@ -74,31 +74,6 @@ MobileForm.FormCard {
         }
     ]
 
-    // TODO this needs multi-traveler support!
-    Instantiator {
-        model: root.reservation.potentialAction
-        delegate: Component {
-            Kirigami.Action {
-                text: {
-                    if (modelData.className == "CancelAction") return i18nc("cancel as in revoking a booking", "Cancel Reservation");
-                    if (modelData.className == "CheckInAction") return i18n("Check-in");
-                    if (modelData.className == "DownloadAction") return i18n("Download");
-                    if (modelData.className == "UpdateAction") return i18n("Change Reservation");
-                    if (modelData.className == "ViewAction") return i18n("View Reservation");
-                }
-                icon.name: {
-                    if (modelData.className == "CancelAction") return "dialog-cancel";
-                    if (modelData.className == "CheckInAction") return "checkmark";
-                    if (modelData.className == "DownloadAction") return "edit-download";
-                    if (modelData.className == "UpdateAction") return "document-edit";
-                    if (modelData.className == "ViewAction") return "document-open";
-                }
-                onTriggered: Qt.openUrlExternally(modelData.target)
-            }
-        }
-        onObjectAdded: _defaultActions.push(object)
-    }
-
     Component {
         id: transferPage
         App.TransferPage {}
@@ -161,6 +136,28 @@ MobileForm.FormCard {
             }
 
             model: _defaultActions
+        }
+
+        // TODO this needs multi-traveler support!
+        Repeater {
+            model: root.reservation.potentialAction
+            delegate: MobileForm.FormButtonDelegate {
+                text: {
+                    if (modelData.className == "CancelAction") return i18nc("cancel as in revoking a booking", "Cancel Reservation");
+                    if (modelData.className == "CheckInAction") return i18n("Check-in");
+                    if (modelData.className == "DownloadAction") return i18n("Download");
+                    if (modelData.className == "UpdateAction") return i18n("Change Reservation");
+                    if (modelData.className == "ViewAction") return i18n("View Reservation");
+                }
+                icon.name: {
+                    if (modelData.className == "CancelAction") return "dialog-cancel";
+                    if (modelData.className == "CheckInAction") return "checkmark";
+                    if (modelData.className == "DownloadAction") return "edit-download";
+                    if (modelData.className == "UpdateAction") return "document-edit";
+                    if (modelData.className == "ViewAction") return "document-open";
+                }
+                onClicked: Qt.openUrlExternally(modelData.target)
+            }
         }
 
         Repeater {
