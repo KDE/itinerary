@@ -11,16 +11,16 @@ import org.kde.kirigami 2.17 as Kirigami
 import org.kde.itinerary 1.0
 import "." as App
 
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
-MobileForm.AboutPage {
+FormCard.AboutPage {
     id: root
 
     title: i18n("About")
 
     aboutData: About
 
-    ListModel {
+    data: ListModel {
         id: licenseModel
         ListElement {
             name: "KDE Itinerary, KDE PIM and KDE Frameworks 5"
@@ -131,135 +131,111 @@ MobileForm.AboutPage {
         }
     }
 
-    Component {
-        id: licenseDelegate
+    readonly property Component licenseDelegate: FormCard.AbstractFormDelegate {
+        visible: !model.platform || model.platform == Qt.platform.os
+        background: null
 
-        MobileForm.AbstractFormDelegate {
-            visible: !model.platform || model.platform == Qt.platform.os
-            background: null
-
-            contentItem: ColumnLayout {
-                id: layout
-                QQC2.Label {
-                    text: model.name
-                    font.weight: Font.Bold
-                    wrapMode: Text.WordWrap
-                    Layout.fillWidth: true
-                }
-                QQC2.Label {
-                    text: model.copyright != undefined ? i18n("Copyright: %1", model.copyright) : ""
-                    visible: model.copyright != undefined
-                    wrapMode: Text.WordWrap
-                    Layout.fillWidth: true
-                }
-                QQC2.Label {
-                    text: model.url != undefined ? i18n("Homepage: <a href=\"%1\">%1</a>", model.url) : ""
-                    visible: model.url != undefined
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    wrapMode: Text.WordWrap
-                    Layout.fillWidth: true
-                }
-                QQC2.Label {
-                    text: i18n("License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>", model.licenseId, model.licenseName)
-                    wrapMode: Text.WordWrap
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    Layout.fillWidth: true
-                }
+        contentItem: ColumnLayout {
+            id: layout
+            QQC2.Label {
+                text: model.name
+                font.weight: Font.Bold
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: model.copyright != undefined ? i18n("Copyright: %1", model.copyright) : ""
+                visible: model.copyright != undefined
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: model.url != undefined ? i18n("Homepage: <a href=\"%1\">%1</a>", model.url) : ""
+                visible: model.url != undefined
+                onLinkActivated: Qt.openUrlExternally(link)
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+            QQC2.Label {
+                text: i18n("License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>", model.licenseId, model.licenseName)
+                wrapMode: Text.WordWrap
+                onLinkActivated: Qt.openUrlExternally(link)
+                Layout.fillWidth: true
             }
         }
     }
 
-    Component {
-        id: transportDataDelegate
-
-        MobileForm.AbstractFormDelegate {
-            background: null
-            contentItem: ColumnLayout {
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    wrapMode: Text.WordWrap
-                    text: "<a href=\"" + modelData.url + "\">" + modelData.name + "</a>"
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: i18n("License: <a href=\"%2\">%1</a>", (modelData.license != "" ? modelData.license : modelData.licenseUrl), modelData.licenseUrl)
-                    onLinkActivated: Qt.openUrlExternally(link)
-                    visible: modelData.hasLicense
-                    wrapMode: Text.WordWrap
-                }
+    readonly property Component transportDataDelegate: FormCard.AbstractFormDelegate {
+        background: null
+        contentItem: ColumnLayout {
+            QQC2.Label {
+                Layout.fillWidth: true
+                wrapMode: Text.WordWrap
+                text: "<a href=\"" + modelData.url + "\">" + modelData.name + "</a>"
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: i18n("License: <a href=\"%2\">%1</a>", (modelData.license != "" ? modelData.license : modelData.licenseUrl), modelData.licenseUrl)
+                onLinkActivated: Qt.openUrlExternally(link)
+                visible: modelData.hasLicense
+                wrapMode: Text.WordWrap
             }
         }
     }
 
-    extraContent: [
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormHeader {
+        title: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
+    }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("KDE Itinerary is developed by the KDE community as free software and uses the components listed below.")
-                }
+    FormCard.FormCard {
+        Repeater {
+            model: licenseModel
+            delegate: licenseDelegate
+        }
+    }
 
-                Repeater {
-                    model: licenseModel
-                    delegate: licenseDelegate
-                }
-            }
-        },
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormHeader {
+        title: i18n("KDE Itinerary uses public transport data from the following sources.")
+    }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("KDE Itinerary uses public transport data from the following sources.")
-                }
+    FormCard.FormCard {
+        Repeater {
+            model: LiveDataManager.publicTransportManager.attributions
+            delegate: transportDataDelegate
+        }
+    }
 
-                Repeater {
-                    model: LiveDataManager.publicTransportManager.attributions
-                    delegate: transportDataDelegate
-                }
-            }
-        },
+    FormCard.FormHeader {
+        title: i18n("Developer information")
+    }
 
-        MobileForm.FormCard {
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            id: versionLabel
+            text: i18n("Application version: %1", ApplicationController.version)
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Developer information")
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: versionLabel
-                    text: i18n("Application version: %1", ApplicationController.version)
-
-                    // developement mode activation
-                    property int tapCount: 0
-                    onClicked: {
-                        versionLabel.tapCount++;
-                        if (versionLabel.tapCount == 7) {
-                            Settings.developmentMode = true;
-                            showPassiveNotification("Development mode enabled!");
-                        }
-                    }
-                }
-
-                MobileForm.FormDelegateSeparator { }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Extractor capabilities:")
-                    description: ApplicationController.extractorCapabilities
-                    font.family: "monospace"
-                    onClicked: {
-                        Clipboard.saveText(ApplicationController.extractorCapabilities);
-                        applicationWindow().showPassiveNotification(i18n("Extractor capabilities copied to clipboard"));
-                    }
+            // developement mode activation
+            property int tapCount: 0
+            onClicked: {
+                versionLabel.tapCount++;
+                if (versionLabel.tapCount == 7) {
+                    Settings.developmentMode = true;
+                    showPassiveNotification("Development mode enabled!");
                 }
             }
         }
-    ]
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextDelegate {
+            text: i18n("Extractor capabilities:")
+            description: ApplicationController.extractorCapabilities
+            font.family: "monospace"
+            onClicked: {
+                Clipboard.saveText(ApplicationController.extractorCapabilities);
+                applicationWindow().showPassiveNotification(i18n("Extractor capabilities copied to clipboard"));
+            }
+        }
+    }
 }

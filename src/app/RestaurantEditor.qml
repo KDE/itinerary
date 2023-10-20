@@ -8,14 +8,15 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
 App.EditorPage {
     id: root
-    title: i18n("Edit Restaurant")
+
+    title: i18nc("@title", "Edit Restaurant")
 
     isValidInput: startTimeEdit.hasValue && restaurantName.text !== "" && (!endTimeEdit.hasValue || startTimeEdit.value < endTimeEdit.value)
 
@@ -38,72 +39,67 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        width: parent.width
+        spacing: 0
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
+        App.CardPageTitle {
+            emojiIcon: "🍽️"
+            text: i18n("Restaurant")
+
             Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Restaurant")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: restaurantName
-                    label: i18nc("restaurant name", "Name")
-                    text: reservation.reservationFor.name
-                    status: Kirigami.MessageType.Error
-                    statusMessage: restaurantName.text === "" ? i18n("Name must not be empty.") : ""
-                }
-                MobileForm.FormDelegateSeparator {}
-                App.FormPlaceEditorDelegate {
-                    id: address
-                    place: {
-                        if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
-                            return reservation.reservationFor
-                        return cityAtTime(reservation.startTime);
-                    }
+        FormCard.FormCard {
+            FormCard.FormTextFieldDelegate {
+                id: restaurantName
+                label: i18nc("restaurant name", "Name")
+                text: reservation.reservationFor.name
+                status: Kirigami.MessageType.Error
+                statusMessage: restaurantName.text === "" ? i18n("Name must not be empty.") : ""
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            App.FormPlaceEditorDelegate {
+                id: address
+                place: {
+                    if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
+                        return reservation.reservationFor
+                    return cityAtTime(reservation.startTime);
                 }
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18nc("@title:group", "Reservation")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Reservation")
+        FormCard.FormCard {
+            App.FormDateTimeEditDelegate {
+                id: startTimeEdit
+                text: i18n("Start Time")
+                obj: reservation
+                propertyName: "startTime"
+                status: Kirigami.MessageType.Error
+                statusMessage: startTimeEdit.hasValue ? '' : i18n("Start time has to be set.")
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            App.FormDateTimeEditDelegate {
+                id: endTimeEdit
+                text: i18n("End Time")
+                obj: reservation
+                propertyName: "endTime"
+                initialValue: {
+                    let d = new Date(startTimeEdit.value);
+                    d.setHours(d.getHours() + 2);
+                    return d;
                 }
-                MobileForm.FormDelegateSeparator {}
-                App.FormDateTimeEditDelegate {
-                    id: startTimeEdit
-                    text: i18n("Start Time")
-                    obj: reservation
-                    propertyName: "startTime"
-                    status: Kirigami.MessageType.Error
-                    statusMessage: startTimeEdit.hasValue ? '' : i18n("Start time has to be set.")
-                }
-                MobileForm.FormDelegateSeparator {}
-                App.FormDateTimeEditDelegate {
-                    id: endTimeEdit
-                    text: i18n("End Time")
-                    obj: reservation
-                    propertyName: "endTime"
-                    initialValue: {
-                        let d = new Date(startTimeEdit.value);
-                        d.setHours(d.getHours() + 2);
-                        return d;
-                    }
-                    status: Kirigami.MessageType.Error
-                    statusMessage: {
-                        if (endTimeEdit.hasValue && endTimeEdit.value < startTimeEdit.value)
-                            return i18n("End time has to be after the start time.")
-                        return '';
-                    }
+                status: Kirigami.MessageType.Error
+                statusMessage: {
+                    if (endTimeEdit.hasValue && endTimeEdit.value < startTimeEdit.value)
+                        return i18n("End time has to be after the start time.")
+                    return '';
                 }
             }
         }

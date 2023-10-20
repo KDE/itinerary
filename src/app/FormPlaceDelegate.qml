@@ -6,12 +6,12 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 import "." as App
 
 /** Display a location and corresponding navigation actions. */
-MobileForm.AbstractFormDelegate {
+FormCard.AbstractFormDelegate {
     id: root
 
     property var controller: null
@@ -26,8 +26,7 @@ MobileForm.AbstractFormDelegate {
     /** Indicates that this represents the full range of the element (only valid for non-transit elements). */
     readonly property bool isFullRange: !isRangeBegin && !isRangeEnd
 
-    background: Item {}
-    Layout.fillWidth: true
+    background: null
     visible: place && !place.address.isEmpty
     text: i18n("Location")
 

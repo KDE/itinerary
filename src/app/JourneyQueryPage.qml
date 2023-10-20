@@ -12,7 +12,7 @@ import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kitemmodels 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 
 Kirigami.ScrollablePage {
@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
 
-    contextualActions: [
+    actions.contextualActions: [
         Kirigami.Action {
             text: i18n("Earlier")
             icon.name: "go-up-symbolic"
@@ -39,28 +39,12 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-    Kirigami.Theme.inherit: false
+    ListView {
+        id: journeyView
 
-    leftPadding: 0
-    rightPadding: 0
+        clip: true
 
-    JourneyQueryModel {
-        id: journeyModel
-    }
-
-    KSortFilterProxyModel {
-        id: sortedJourneyModel
-        sourceModel: journeyModel
-        sortRole: JourneyQueryModel.ScheduledDepartureTime
-        dynamicSortFilter: true
-        Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
-    }
-
-    Component {
-        id: journeyDelegate
-
-        MobileForm.FormCard {
+        delegate: FormCard.FormCard {
             id: top
 
             width: ListView.view.width
@@ -68,57 +52,56 @@ Kirigami.ScrollablePage {
             required property int index
             required property var journey
 
-            contentItem: ColumnLayout {
-                id: contentLayout
-                spacing: 0
+            JourneyDelegateHeader {
+                journey: top.journey
+            }
 
-                JourneyDelegateHeader {
-                    journey: top.journey
-                }
-
-                Repeater {
-                    id: journeyRepeater
-                    delegate: App.JourneySectionDelegate {
-                        Layout.fillWidth: true
-                        modelLength: journeyRepeater.count - 1
-                    }
-                    model: journeyView.currentIndex === top.index ? top.journey.sections : 0
-                }
-
-                App.JourneySummaryDelegate {
-                    id: summaryButton
-
-                    journey: top.journey
-                    visible: journeyView.currentIndex !== top.index
-                    onClicked: journeyView.currentIndex = top.index
-
+            Repeater {
+                id: journeyRepeater
+                delegate: App.JourneySectionDelegate {
                     Layout.fillWidth: true
+                    modelLength: journeyRepeater.count - 1
                 }
+                model: journeyView.currentIndex === top.index ? top.journey.sections : 0
+            }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: journeyView.currentIndex === top.index
-                    above: selectButton
-                }
+            App.JourneySummaryDelegate {
+                id: summaryButton
 
-                MobileForm.FormButtonDelegate {
-                    id: selectButton
+                journey: top.journey
+                visible: journeyView.currentIndex !== top.index
+                onClicked: journeyView.currentIndex = top.index
 
-                    text: i18n("Select")
-                    icon.name: "checkmark"
-                    visible: journeyView.currentIndex === top.index
-                    enabled: top.journey.disruptionEffect !== Disruption.NoService
-                    onClicked: root.journey = journey
-                }
+                Layout.fillWidth: true
+            }
+
+            FormCard.FormDelegateSeparator {
+                visible: journeyView.currentIndex === top.index
+                above: selectButton
+            }
+
+            FormCard.FormButtonDelegate {
+                id: selectButton
+
+                text: i18n("Select")
+                icon.name: "checkmark"
+                visible: journeyView.currentIndex === top.index
+                enabled: top.journey.disruptionEffect !== Disruption.NoService
+                onClicked: root.journey = journey
             }
         }
-    }
 
-    ListView {
-        id: journeyView
+        model: KSortFilterProxyModel {
+            id: sortedJourneyModel
 
-        clip: true
-        delegate: journeyDelegate
-        model: sortedJourneyModel
+            sourceModel: JourneyQueryModel {
+                id: journeyModel
+            }
+            sortRole: JourneyQueryModel.ScheduledDepartureTime
+            dynamicSortFilter: true
+            Component.onCompleted: Util.sortModel(sortedJourneyModel, 0, Qt.Ascending)
+        }
+
         spacing: Kirigami.Units.largeSpacing
 
         header: VerticalNavigationButton {
@@ -136,19 +119,13 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Load later connections")
             onClicked: journeyModel.queryNext()
 
-            MobileForm.FormCard {
+            FormCard.FormCard {
                 visible: journeyModel.attributions.length > 0
 
-                Layout.fillWidth: true
-
-                contentItem: ColumnLayout {
-                    spacing: 0
-
-                    MobileForm.FormTextDelegate {
-                        text: i18n("Data providers:")
-                        description: PublicTransport.attributionSummary(journeyModel.attributions)
-                        onLinkActivated: Qt.openUrlExternally(link)
-                    }
+                FormCard.FormTextDelegate {
+                    text: i18n("Data providers:")
+                    description: PublicTransport.attributionSummary(journeyModel.attributions)
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }

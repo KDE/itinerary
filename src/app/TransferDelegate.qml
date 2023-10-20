@@ -10,7 +10,6 @@ import QtQuick.Controls 2.1 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 

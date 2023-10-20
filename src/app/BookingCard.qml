@@ -7,26 +7,25 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 
-MobileForm.FormCard {
+/// Booking details
+ColumnLayout {
     id: root
 
     required property var reservation
 
     visible: referenceLabel.visible || underNameLabel.visible || ticketNumberLabel.visible || priceLabel.visible
 
-    Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.fillWidth: true
 
-    contentItem: ColumnLayout {
-        // booking details
-        MobileForm.FormCardHeader {
-            title: i18n("Booking")
-        }
+    FormCard.FormHeader {
+        title: i18n("Booking")
+    }
 
-        MobileForm.FormTextDelegate {
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
             id: referenceLabel
             text: i18n("Reference")
             description: root.reservation.reservationNumber
@@ -47,18 +46,18 @@ MobileForm.FormCard {
             }
         }
 
-        MobileForm.FormDelegateSeparator { visible: referenceLabel.visible }
+        FormCard.FormDelegateSeparator { visible: referenceLabel.visible }
 
-        MobileForm.FormTextDelegate {
+        FormCard.FormTextDelegate {
             id: underNameLabel
             text: i18n("Under name")
             description: root.reservation.underName ? root.reservation.underName.name : ''
             visible: description
         }
 
-        MobileForm.FormDelegateSeparator { visible: underNameLabel.visible }
+        FormCard.FormDelegateSeparator { visible: underNameLabel.visible }
 
-        MobileForm.FormTextDelegate {
+        FormCard.FormTextDelegate {
             id: ticketNumberLabel
             text: i18n("Ticket number:")
             description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketNumber : ''
@@ -79,7 +78,7 @@ MobileForm.FormCard {
             }
         }
 
-        MobileForm.FormDelegateSeparator { visible: ticketNumberLabel.visible }
+        FormCard.FormDelegateSeparator { visible: ticketNumberLabel.visible }
 
         FormPriceDelegate {
             id: priceLabel

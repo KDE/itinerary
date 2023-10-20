@@ -6,80 +6,63 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
 App.DetailsPage {
     id: root
+
     title: i18n("Restaurant Reservation")
 
     ColumnLayout {
-        width: parent.width
+        spacing: 0
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
+        App.CardPageTitle {
+            emojiIcon: "🍽️"
+            text: reservationFor.name
+
             Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.name
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                }
-            }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                App.FormPlaceDelegate {
-                    place: reservationFor
-                    controller: root.controller
-                }
+        FormCard.FormHeader {
+            title: i18nc("@title:group", "Details")
+        }
+
+        FormCard.FormCard {
+            App.FormPlaceDelegate {
+                place: reservationFor
+                controller: root.controller
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormTextDelegate {
+                text: i18n("Start time")
+                description: Localizer.formatDateTime(reservation, "startTime")
+                visible: description
+            }
+
+            FormCard.FormDelegateSeparator { visible: reservation.startTime > 0 }
+
+            FormCard.FormTextDelegate {
+                text: i18n("End time")
+                description: Localizer.formatDateTime(reservation, "endTime")
+                visible: description
+            }
+
+            FormCard.FormDelegateSeparator { visible: reservation.endTime > 0 }
+
+            FormCard.FormTextDelegate {
+                text: i18n("Party size")
+                description: reservation.partySize
+                visible: reservation.partySize > 0
             }
         }
 
         App.ContactCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
             contact: root.reservationFor
-        }
-
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Start time")
-                    description: Localizer.formatDateTime(reservation, "startTime")
-                    visible: description
-                }
-
-                MobileForm.FormDelegateSeparator { visible: reservation.startTime > 0 }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("End time")
-                    description: Localizer.formatDateTime(reservation, "endTime")
-                    visible: description
-                }
-
-                MobileForm.FormDelegateSeparator { visible: reservation.endTime > 0 }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Party size")
-                    description: reservation.partySize
-                    visible: reservation.partySize > 0
-                }
-            }
         }
 
         App.BookingCard {

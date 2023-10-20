@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -31,190 +31,168 @@ App.DetailsPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                }
+        spacing: 0
 
-                // ticket barcode
-                App.TicketTokenDelegate {
-                    id: ticketToken
-                    resIds: ReservationManager.reservationsForBatch(root.batchId)
-                    onCurrentReservationIdChanged: {
-                        if (!currentReservationId)
-                            return;
-                        root.currentReservationId = currentReservationId;
-                    }
-                    onScanModeToggled: scanModeController.toggle()
-                }
+        App.CardPageTitle {
+            emojiIcon: "✈️"
+            text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
+        }
 
-                // sequence number belongs to the selected barcode
-                MobileForm.FormTextDelegate {
-                    id: sequenceNumberDelegate
-                    text: i18n("Sequence Number:")
-                    description: ReservationManager.reservation(ticketToken.currentReservationId).passengerSequenceNumber
-                    visible: description
+        FormCard.FormCard {
+            // ticket barcode
+            App.TicketTokenDelegate {
+                id: ticketToken
+                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                onCurrentReservationIdChanged: {
+                    if (!currentReservationId)
+                        return;
+                    root.currentReservationId = currentReservationId;
                 }
+                onScanModeToggled: scanModeController.toggle()
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            // sequence number belongs to the selected barcode
+            FormCard.FormTextDelegate {
+                id: sequenceNumberDelegate
+                text: i18n("Sequence Number:")
+                description: ReservationManager.reservation(ticketToken.currentReservationId).passengerSequenceNumber
+                visible: description
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
+        // flight data
+        FormCard.FormHeader {
             visible: boardingTimeLabel.visible || boardingGroupLabel.visible || seatLabel.visible || airlineNameLabel.visible
-            contentItem: ColumnLayout {
-                spacing: 0
+            title: i18n("Boarding")
+        }
 
-                // flight data
-                MobileForm.FormCardHeader {
-                    title: i18n("Boarding")
-                }
+        FormCard.FormCard {
+            visible: boardingTimeLabel.visible || boardingGroupLabel.visible || seatLabel.visible || airlineNameLabel.visible
 
-                MobileForm.FormTextDelegate {
-                    id: boardingTimeLabel
-                    visible: reservationFor.boardingTime > 0
-                    text: i18n("Boarding time")
-                    description: Localizer.formatDateTime(reservationFor, "boardingTime")
-                }
+            FormCard.FormTextDelegate {
+                id: boardingTimeLabel
+                visible: reservationFor.boardingTime > 0
+                text: i18n("Boarding time")
+                description: Localizer.formatDateTime(reservationFor, "boardingTime")
+            }
 
-                MobileForm.FormDelegateSeparator { visible: boardingTimeLabel.visible }
+            FormCard.FormDelegateSeparator { visible: boardingTimeLabel.visible }
 
-                MobileForm.FormTextDelegate {
-                    id: boardingGroupLabel
-                    visible: reservation.boardingGroup.length > 0
-                    text: i18n("Boarding group")
-                    description: reservation.boardingGroup
-                }
+            FormCard.FormTextDelegate {
+                id: boardingGroupLabel
+                visible: reservation.boardingGroup.length > 0
+                text: i18n("Boarding group")
+                description: reservation.boardingGroup
+            }
 
-                MobileForm.FormDelegateSeparator { visible: boardingGroupLabel.visible }
+            FormCard.FormDelegateSeparator { visible: boardingGroupLabel.visible }
 
-                MobileForm.FormTextDelegate {
-                    id: seatLabel
-                    text: i18n("Seat")
-                    description: reservation.airplaneSeat
-                    visible: reservation.airplaneSeat.length > 0
-                }
+            FormCard.FormTextDelegate {
+                id: seatLabel
+                text: i18n("Seat")
+                description: reservation.airplaneSeat
+                visible: reservation.airplaneSeat.length > 0
+            }
 
-                MobileForm.FormDelegateSeparator { visible: seatLabel.visible }
+            FormCard.FormDelegateSeparator { visible: seatLabel.visible }
 
-                MobileForm.FormTextDelegate {
-                    id: airlineNameLabel
-                    text: i18n("Airline")
-                    description: reservationFor.airline.name
-                    visible: reservationFor.airline.name.length > 0
-                }
+            FormCard.FormTextDelegate {
+                id: airlineNameLabel
+                text: i18n("Airline")
+                description: reservationFor.airline.name
+                visible: reservationFor.airline.name.length > 0
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        // departure data
+        FormCard.FormHeader {
+            title: i18nc("Flight departure", "Departure")
+        }
 
-                // departure data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Flight departure", "Departure")
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                id: departureTimeDelegate
+                text: i18n("Departure time")
+                description: Localizer.formatDateTime(reservationFor, "departureTime")
+                visible: reservationFor.departureTime > 0
+            }
+            FormCard.FormTextDelegate {
+                text: i18n("Departure date")
+                visible: !departureTimeDelegate.visible && text.length > 0
+                description: Localizer.formatDate(reservationFor, "departureDay")
+            }
 
-                MobileForm.FormTextDelegate {
-                    id: departureTimeDelegate
-                    text: i18n("Departure time")
-                    description: Localizer.formatDateTime(reservationFor, "departureTime")
-                    visible: reservationFor.departureTime > 0
-                }
-                MobileForm.FormTextDelegate {
-                    text: i18n("Departure date")
-                    visible: !departureTimeDelegate.visible && text.length > 0
-                    description: Localizer.formatDate(reservationFor, "departureDay")
-                }
+            FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
+            FormCard.FormTextDelegate {
+                id: departureAirportDelegate
+                text: i18n("Airport")
+                description: airportDisplayString(reservationFor.departureAirport)
+                visible: text.length > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    id: departureAirportDelegate
-                    text: i18n("Airport")
-                    description: airportDisplayString(reservationFor.departureAirport)
-                    visible: text.length > 0
-                }
+            FormCard.FormDelegateSeparator { visible: departureAirportDelegate.text }
 
-                MobileForm.FormDelegateSeparator { visible: departureAirportDelegate.text }
+            FormCard.FormTextDelegate {
+                text: i18n("Terminal")
+                description: reservationFor.departureTerminal
+                visible: reservationFor.departureTerminal.length > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Terminal")
-                    description: reservationFor.departureTerminal
-                    visible: reservationFor.departureTerminal.length > 0
-                }
+            FormCard.FormDelegateSeparator { visible: reservationFor.departureTerminal.length > 0 }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.departureTerminal.length > 0 }
+            FormCard.FormTextDelegate {
+                text: i18n("Gate")
+                description: reservationFor.departureGate
+                visible: reservationFor.departureGate.length > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Gate")
-                    description: reservationFor.departureGate
-                    visible: reservationFor.departureGate.length > 0
-                }
+            FormCard.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
-
-                App.FormPlaceDelegate {
-                    place: reservationFor.departureAirport
-                    controller: root.controller
-                    isRangeBegin: true
-                }
+            App.FormPlaceDelegate {
+                place: reservationFor.departureAirport
+                controller: root.controller
+                isRangeBegin: true
             }
         }
 
         // arrival data
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18nc("Flight arrival", "Arrival")
+        }
 
-                // departure data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Flight arrival", "Arrival")
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                text: i18n("Arrival time")
+                description: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                visible: reservationFor.arrivalTime > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Arrival time")
-                    description: Localizer.formatDateTime(reservationFor, "arrivalTime")
-                    visible: reservationFor.arrivalTime > 0
-                }
+            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTime > 0 }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalTime > 0 }
+            FormCard.FormTextDelegate {
+                id: arrivalAirportDelegate
+                text: i18n("Airport")
+                description: airportDisplayString(reservationFor.arrivalAirport)
+                visible: text.length > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    id: arrivalAirportDelegate
-                    text: i18n("Airport")
-                    description: airportDisplayString(reservationFor.arrivalAirport)
-                    visible: text.length > 0
-                }
+            FormCard.FormDelegateSeparator { visible: arrivalAirportDelegate.visible }
 
-                MobileForm.FormDelegateSeparator { visible: arrivalAirportDelegate.visible }
+            FormCard.FormTextDelegate {
+                text: i18n("Terminal")
+                description: reservationFor.arrivalTerminal
+                visible: reservationFor.arrivalTerminal.length > 0
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Terminal")
-                    description: reservationFor.arrivalTerminal
-                    visible: reservationFor.arrivalTerminal.length > 0
-                }
+            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTerminal.length > 0 }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalTerminal.length > 0 }
-
-                App.FormPlaceDelegate {
-                    place: reservationFor.arrivalAirport
-                    controller: root.controller
-                    isRangeEnd: true
-                }
+            App.FormPlaceDelegate {
+                place: reservationFor.arrivalAirport
+                controller: root.controller
+                isRangeEnd: true
             }
         }
 

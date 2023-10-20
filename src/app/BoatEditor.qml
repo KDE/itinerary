@@ -7,7 +7,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.i18n.localeData 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
@@ -44,88 +44,87 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18nc("Boat departure", "Departure")
-                }
-                App.FormDateTimeEditDelegate {
-                    id: departureTimeEdit
-                    text: i18nc("Boat departure", "Departure Time")
-                    obj: reservation.reservationFor
-                    propertyName: "departureTime"
-                    status: Kirigami.MessageType.Error
-                    statusMessage: departureTimeEdit.hasValue ? '' : i18n("Departure time has to be set.")
-                }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: departureTerminalName
-                    label: i18nc("boat terminal", "Terminal Name")
-                    text: reservation.reservationFor.departureBoatTerminal.name
-                    status: Kirigami.MessageType.Error
-                    statusMessage: text === "" ? i18n("Departure terminal must not be empty.") : ""
-                }
-                MobileForm.FormDelegateSeparator {}
-                App.FormPlaceEditorDelegate {
-                    id: departureAddress
-                    place: {
-                        if (root.batchId || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
-                            return reservation.reservationFor.departureBoatTerminal;
-                        return cityAtTime(root.reservation.reservationFor.departureTime);
-                    }
+        spacing: 0
+
+        App.CardPageTitle {
+            emojiIcon: "🛳️"
+            text: i18n("Boat")
+        }
+
+        FormCard.FormHeader {
+            title: i18nc("Boat departure", "Departure")
+        }
+
+        FormCard.FormCard {
+            App.FormDateTimeEditDelegate {
+                id: departureTimeEdit
+                text: i18nc("Boat departure", "Departure Time")
+                obj: reservation.reservationFor
+                propertyName: "departureTime"
+                status: Kirigami.MessageType.Error
+                statusMessage: departureTimeEdit.hasValue ? '' : i18n("Departure time has to be set.")
+            }
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
+                id: departureTerminalName
+                label: i18nc("boat terminal", "Terminal Name")
+                text: reservation.reservationFor.departureBoatTerminal.name
+                status: Kirigami.MessageType.Error
+                statusMessage: text === "" ? i18n("Departure terminal must not be empty.") : ""
+            }
+            FormCard.FormDelegateSeparator {}
+            App.FormPlaceEditorDelegate {
+                id: departureAddress
+                place: {
+                    if (root.batchId || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
+                        return reservation.reservationFor.departureBoatTerminal;
+                    return cityAtTime(root.reservation.reservationFor.departureTime);
                 }
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                MobileForm.FormCardHeader {
-                    title: i18nc("Boat arrival", "Arrival")
+        FormCard.FormHeader {
+            title: i18nc("Boat arrival", "Arrival")
+        }
+
+        FormCard.FormCard {
+            App.FormDateTimeEditDelegate {
+                id: arrivalTimeEdit
+                text: i18nc("Boat arrival", "Arrival Time")
+                obj: reservation.reservationFor
+                propertyName: "arrivalTime"
+                initialValue: {
+                    let d = new Date(departureTimeEdit.value);
+                    d.setHours(d.getHours() + 8);
+                    return d;
                 }
-                App.FormDateTimeEditDelegate {
-                    id: arrivalTimeEdit
-                    text: i18nc("Boat arrival", "Arrival Time")
-                    obj: reservation.reservationFor
-                    propertyName: "arrivalTime"
-                    initialValue: {
-                        let d = new Date(departureTimeEdit.value);
-                        d.setHours(d.getHours() + 8);
-                        return d;
-                    }
-                    status: Kirigami.MessageType.Error
-                    statusMessage: {
-                        if (arrivalTimeEdit.hasValue && arrivalTimeEdit.value < departureTimeEdit.value)
-                            return i18n("Arrival time has to be after the departure time.")
-                        return '';
-                    }
+                status: Kirigami.MessageType.Error
+                statusMessage: {
+                    if (arrivalTimeEdit.hasValue && arrivalTimeEdit.value < departureTimeEdit.value)
+                        return i18n("Arrival time has to be after the departure time.")
+                    return '';
                 }
-                MobileForm.FormDelegateSeparator {}
-                MobileForm.FormTextFieldDelegate {
-                    id: arrivalTerminalName
-                    label: i18nc("boat terminal", "Terminal Name")
-                    text: reservation.reservationFor.arrivalBoatTerminal.name
-                    status: Kirigami.MessageType.Error
-                    statusMessage: text === "" ? i18n("Arrival terminal must not be empty.") : ""
-                }
-                MobileForm.FormDelegateSeparator {}
-                App.FormPlaceEditorDelegate {
-                    id: arrivalAddress
-                    place: {
-                        if (root.batchId || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
-                            return reservation.reservationFor.arrivalBoatTerminal;
-                        let p = cityAtTime(root.reservation.reservationFor.departureTime);
-                        let addr = p.address;
-                        addr.addressLocality = undefined;
-                        addr.addressRegion = undefined;
-                        p.address = addr;
-                        return p;
-                    }
+            }
+            FormCard.FormDelegateSeparator {}
+            FormCard.FormTextFieldDelegate {
+                id: arrivalTerminalName
+                label: i18nc("boat terminal", "Terminal Name")
+                text: reservation.reservationFor.arrivalBoatTerminal.name
+                status: Kirigami.MessageType.Error
+                statusMessage: text === "" ? i18n("Arrival terminal must not be empty.") : ""
+            }
+            FormCard.FormDelegateSeparator {}
+            App.FormPlaceEditorDelegate {
+                id: arrivalAddress
+                place: {
+                    if (root.batchId || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
+                        return reservation.reservationFor.arrivalBoatTerminal;
+                    let p = cityAtTime(root.reservation.reservationFor.departureTime);
+                    let addr = p.address;
+                    addr.addressLocality = undefined;
+                    addr.addressRegion = undefined;
+                    p.address = addr;
+                    return p;
                 }
             }
         }

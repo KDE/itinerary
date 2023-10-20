@@ -7,16 +7,16 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitemmodels 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-MobileForm.FormCard {
+ColumnLayout {
     id: root
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
+
+    spacing: 0
 
     property var batchId
     property var editor
@@ -122,15 +122,13 @@ MobileForm.FormCard {
         ]
     }
 
-    contentItem: ColumnLayout {
-        spacing: 0
+    FormCard.FormHeader {
+        title: i18n("Actions")
+    }
 
-        MobileForm.FormCardHeader {
-            title: i18n("Actions")
-        }
-
+    FormCard.FormCard {
         Repeater {
-            MobileForm.FormButtonDelegate {
+            FormCard.FormButtonDelegate {
                 action: modelData
                 visible: modelData.visible ?? true
             }
@@ -141,7 +139,7 @@ MobileForm.FormCard {
         // TODO this needs multi-traveler support!
         Repeater {
             model: root.reservation.potentialAction
-            delegate: MobileForm.FormButtonDelegate {
+            delegate: FormCard.FormButtonDelegate {
                 text: {
                     if (modelData.className == "CancelAction") return i18nc("cancel as in revoking a booking", "Cancel Reservation");
                     if (modelData.className == "CheckInAction") return i18n("Check-in");
@@ -161,7 +159,7 @@ MobileForm.FormCard {
         }
 
         Repeater {
-            MobileForm.FormButtonDelegate {
+            FormCard.FormButtonDelegate {
                 action: modelData
                 visible: modelData.visible ?? true
             }

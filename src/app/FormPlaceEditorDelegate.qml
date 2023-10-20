@@ -10,7 +10,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtLocation 5.15 as QtLocation
 import QtPositioning 5.15
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.i18n.localeData 1.0
 import org.kde.contacts 1.0
 import org.kde.kitinerary 1.0
@@ -49,6 +49,8 @@ ColumnLayout {
 
     readonly property var addressFormat: AddressFormatRepository.formatForCountry(addressCountry.currentValue, KContacts.AddressFormatScriptPreference.Local)
 
+    spacing: 0
+
     Component {
         id: locationPickerPage
         LocationPicker {
@@ -61,14 +63,14 @@ ColumnLayout {
         }
     }
 
-    MobileForm.FormTextFieldDelegate {
+    FormCard.FormTextFieldDelegate {
         id: streetAddress
         label: i18n("Street")
         text: place.address.streetAddress
     }
-    MobileForm.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {}
 
-    MobileForm.FormTextFieldDelegate {
+    FormCard.FormTextFieldDelegate {
         id: postalCode
         label: ("Postal Code")
         text: place.address.postalCode
@@ -77,14 +79,14 @@ ColumnLayout {
         status: validFormat ? Kirigami.MessageType.Positive : Kirigami.MessageType.Warning
         statusMessage: postalCode.text && !validFormat ? i18n("Invalid postal code format for this country.") : "";
     }
-    MobileForm.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {}
 
-    MobileForm.FormTextFieldDelegate {
+    FormCard.FormTextFieldDelegate {
         id: addressLocality
         label: i18n("City")
         text: place.address.addressLocality
     }
-    MobileForm.FormDelegateSeparator {}
+    FormCard.FormDelegateSeparator {}
 
     CountrySubdivisionModel {
         id: regionModel
@@ -97,7 +99,7 @@ ColumnLayout {
             }
         }
     }
-    MobileForm.FormComboBoxDelegate {
+    FormCard.FormComboBoxDelegate {
         id: addressRegion
         text: i18n("Region")
         editable: true
@@ -121,7 +123,7 @@ ColumnLayout {
         Component.onCompleted: tryFindRegion(place.address.addressRegion)
         onAccepted: tryFindRegion(editText)
     }
-    MobileForm.FormDelegateSeparator { visible: addressRegion.visible }
+    FormCard.FormDelegateSeparator { visible: addressRegion.visible }
 
     App.CountryComboBoxDelegate {
         id: addressCountry
@@ -175,7 +177,7 @@ ColumnLayout {
         onErrorStringChanged: showPassiveNotification(geocodeModel.errorString, "short")
     }
 
-    MobileForm.FormButtonDelegate {
+    FormCard.FormButtonDelegate {
         text: i18n("Coordinate")
         description: !Number.isNaN(root.latitude) && !Number.isNaN(root.longitude) ? i18n("%1°, %2°", root.latitude.toFixed(2), root.longitude.toFixed(2)) : i18n("Pick...");
         icon.name: "crosshairs"
@@ -183,10 +185,18 @@ ColumnLayout {
         // TODO we can autofill country/region using KCountry[Subdivision] here?
     }
 
-    MobileForm.AbstractFormDelegate {
+    FormCard.FormDelegateSeparator {
+        visible: addressToCoordinateAction.visible || coordinateToAddressAction.visible
+    }
+
+    FormCard.AbstractFormDelegate {
+        visible: addressToCoordinateAction.visible || coordinateToAddressAction.visible
+
         contentItem: Kirigami.ActionToolBar {
             actions: [
                 Kirigami.Action {
+                    id: addressToCoordinateAction
+
                     text: i18n("Address to coordinate")
                     icon.name: "go-down-symbolic"
                     enabled: geocodeModel.status !== QtLocation.GeocodeModel.Loading
@@ -201,6 +211,8 @@ ColumnLayout {
                     }
                 },
                 Kirigami.Action {
+                    id: coordinateToAddressAction
+
                     text: i18n("Coordinate to address")
                     icon.name: "go-up-symbolic"
                     enabled: reverseGeocodeModel.status !== QtLocation.GeocodeModel.Loading

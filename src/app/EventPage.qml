@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -21,124 +21,110 @@ App.DetailsPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.name
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                    wrapMode: Text.WordWrap
-                }
+        spacing: 0
 
-                // ticket barcode
-                App.TicketTokenDelegate {
-                    id: ticketToken
-                    Layout.fillWidth: true
-                    resIds: ReservationManager.reservationsForBatch(root.batchId)
-                    onCurrentReservationIdChanged: {
-                        if (!currentReservationId)
-                            return;
-                        root.currentReservationId = currentReservationId;
-                    }
-                    onScanModeToggled: scanModeController.toggle()
-                    visible: ticketToken.ticketTokenCount > 0
-                }
+        App.CardPageTitle {
+            emojiIcon: "🎤🎸🎶🏟"
+            text: reservationFor.name
+        }
 
-                MobileForm.FormTextDelegate {
-                    description: Util.textToHtml(reservationFor.description)
-                    visible: reservationFor.description
-                    onLinkActivated: Qt.openUrlExternally(link)
+        FormCard.FormCard {
+            // ticket barcode
+            App.TicketTokenDelegate {
+                id: ticketToken
+                Layout.fillWidth: true
+                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                onCurrentReservationIdChanged: {
+                    if (!currentReservationId)
+                        return;
+                    root.currentReservationId = currentReservationId;
                 }
+                onScanModeToggled: scanModeController.toggle()
+                visible: ticketToken.ticketTokenCount > 0
+            }
+
+            FormCard.FormTextDelegate {
+                description: Util.textToHtml(reservationFor.description)
+                visible: reservationFor.description
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
 
-        MobileForm.FormCard {
+        FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                App.FormPlaceDelegate {
-                    place: reservationFor.location
-                    controller: root.controller
-                    showLocationName: true
-                    visible: reservationFor.location != undefined
-                }
+            App.FormPlaceDelegate {
+                place: reservationFor.location
+                controller: root.controller
+                showLocationName: true
+                visible: reservationFor.location != undefined
+            }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.location != undefined }
+            FormCard.FormDelegateSeparator { visible: reservationFor.location != undefined }
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("time of entrance", "Entrance")
-                    description: Localizer.formatDateTime(reservationFor, "doorTime")
-                    visible: reservationFor.doorTime > 0
-                }
+            FormCard.FormTextDelegate {
+                text: i18nc("time of entrance", "Entrance")
+                description: Localizer.formatDateTime(reservationFor, "doorTime")
+                visible: reservationFor.doorTime > 0
+            }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.doorTime > 0 }
+            FormCard.FormDelegateSeparator { visible: reservationFor.doorTime > 0 }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Start Time")
-                    description: Localizer.formatDateTime(reservationFor, "startDate")
-                    visible: reservationFor.startDate > 0
-                }
+            FormCard.FormTextDelegate {
+                text: i18n("Start Time")
+                description: Localizer.formatDateTime(reservationFor, "startDate")
+                visible: reservationFor.startDate > 0
+            }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.startDate > 0 }
+            FormCard.FormDelegateSeparator { visible: reservationFor.startDate > 0 }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("End Time")
-                    description: Localizer.formatDateTime(reservationFor, "endDate")
-                    visible: reservationFor.endDate > 0
-                }
+            FormCard.FormTextDelegate {
+                text: i18n("End Time")
+                description: Localizer.formatDateTime(reservationFor, "endDate")
+                visible: reservationFor.endDate > 0
+            }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.url != "" }
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Website")
-                    description: reservationFor.url
-                    icon.name: "globe"
-                    onClicked: Qt.openUrlExternally(reservationFor.url)
-                    visible: reservationFor.url != ""
-                }
+            FormCard.FormDelegateSeparator { visible: reservationFor.url != "" }
+            FormCard.FormButtonDelegate {
+                text: i18n("Website")
+                description: reservationFor.url
+                icon.name: "globe"
+                onClicked: Qt.openUrlExternally(reservationFor.url)
+                visible: reservationFor.url != ""
             }
         }
 
         // seat reservation
-        MobileForm.FormCard {
+        FormCard.FormHeader {
             visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                MobileForm.FormCardHeader {
-                    title: i18n("Seat")
-                }
-                MobileForm.FormTextDelegate {
-                    id: seatSectionLabel
-                    text: i18nc("seat section, e.g. block in a stadium", "Section:")
-                    description: root.reservation.reservedTicket.ticketedSeat.seatSection
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: root.reservation.reservedTicket.ticketedSeat.seatSection
-                }
-                MobileForm.FormTextDelegate {
-                    id: seatRowLabel
-                    text: i18nc("seat row", "Row:")
-                    description: root.reservation.reservedTicket.ticketedSeat.seatRow
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: root.reservation.reservedTicket.ticketedSeat.seatRow
-                }
-                MobileForm.FormTextDelegate {
-                    id: seatNumberLabel
-                    text: i18nc("seat number", "Number:")
-                    description: root.reservation.reservedTicket.ticketedSeat.seatNumber
-                    visible: description
-                }
+            title: i18n("Seat")
+        }
+
+        FormCard.FormCard {
+            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible
+            FormCard.FormTextDelegate {
+                id: seatSectionLabel
+                text: i18nc("seat section, e.g. block in a stadium", "Section:")
+                description: root.reservation.reservedTicket.ticketedSeat.seatSection
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: root.reservation.reservedTicket.ticketedSeat.seatSection
+            }
+            FormCard.FormTextDelegate {
+                id: seatRowLabel
+                text: i18nc("seat row", "Row:")
+                description: root.reservation.reservedTicket.ticketedSeat.seatRow
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: root.reservation.reservedTicket.ticketedSeat.seatRow
+            }
+            FormCard.FormTextDelegate {
+                id: seatNumberLabel
+                text: i18nc("seat number", "Number:")
+                description: root.reservation.reservedTicket.ticketedSeat.seatNumber
+                visible: description
             }
         }
 

@@ -6,27 +6,28 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.itinerary 1.0
 import "." as App
 
-MobileForm.FormTextDelegate {
+FormCard.AbstractFormDelegate {
     id: root
-    text: i18n("Platform")
-    visible: platformLabel.text != ""
 
     property var stopover
     property string sections
     property string scheduledPlatform
 
+    text: i18n("Platform")
+
+    visible: platformLabel.text != ""
+
     contentItem: ColumnLayout {
-        Layout.fillWidth: true
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.Label {
             text: root.text
-            Layout.fillWidth: true
             elide: Text.ElideRight
+            Layout.fillWidth: true
             Accessible.ignored: true
         }
 
@@ -39,6 +40,7 @@ MobileForm.FormTextDelegate {
                     root.stopover.hasExpectedPlatform ? Kirigami.Theme.positiveTextColor :
                     Kirigami.Theme.disabledTextColor
             }
+
             QQC2.Label {
                 text: i18nc("previous platform", "(was: %1)", root.scheduledPlatform)
                 visible: root.stopover.platformChanged && root.scheduledPlatform !== ""

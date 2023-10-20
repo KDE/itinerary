@@ -11,7 +11,7 @@ import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kitemmodels 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 
 Kirigami.ScrollablePage {
@@ -206,7 +206,7 @@ Kirigami.ScrollablePage {
     Component {
         id: journeyDelegate
 
-        MobileForm.FormCard {
+        FormCard.FormCard {
             id: top
 
             required property int index
@@ -214,51 +214,45 @@ Kirigami.ScrollablePage {
 
             width: ListView.view.width
 
-            contentItem: ColumnLayout {
-                id: contentLayout
+            JourneyDelegateHeader {
+                journey: top.journey
+            }
 
-                spacing: 0
-
-                JourneyDelegateHeader {
-                    journey: top.journey
-                }
-
-                Repeater {
-                    id: journeyRepeater
-                    delegate: App.JourneySectionDelegate{
-                        Layout.fillWidth: true
-                        modelLength: journeyRepeater.count - 1
-
-                    }
-                    model: journeyView.currentIndex === top.index ? top.journey.sections : 0
-                }
-
-                App.JourneySummaryDelegate {
-                    id: summaryButton
-
-                    journey: top.journey
-                    visible: journeyView.currentIndex !== top.index
-                    onClicked: journeyView.currentIndex = top.index
-
+            Repeater {
+                id: journeyRepeater
+                delegate: App.JourneySectionDelegate{
                     Layout.fillWidth: true
+                    modelLength: journeyRepeater.count - 1
+
                 }
+                model: journeyView.currentIndex === top.index ? top.journey.sections : 0
+            }
 
-                MobileForm.FormDelegateSeparator {
-                    above: selectButton
-                    visible: journeyView.currentIndex === top.index
-                }
+            App.JourneySummaryDelegate {
+                id: summaryButton
 
-                MobileForm.FormButtonDelegate {
-                    id: selectButton
+                journey: top.journey
+                visible: journeyView.currentIndex !== top.index
+                onClicked: journeyView.currentIndex = top.index
 
-                    text: i18n("Select")
-                    icon.name: "checkmark"
-                    visible: journeyView.currentIndex === top.index
-                    enabled: top.journey.disruptionEffect !== Disruption.NoService
-                    onClicked: {
-                        TransferManager.setJourneyForTransfer(root.transfer, top.journey);
-                        applicationWindow().pageStack.pop();
-                    }
+                Layout.fillWidth: true
+            }
+
+            FormCard.FormDelegateSeparator {
+                above: selectButton
+                visible: journeyView.currentIndex === top.index
+            }
+
+            FormCard.FormButtonDelegate {
+                id: selectButton
+
+                text: i18n("Select")
+                icon.name: "checkmark"
+                visible: journeyView.currentIndex === top.index
+                enabled: top.journey.disruptionEffect !== Disruption.NoService
+                onClicked: {
+                    TransferManager.setJourneyForTransfer(root.transfer, top.journey);
+                    applicationWindow().pageStack.pop();
                 }
             }
         }
@@ -332,19 +326,13 @@ Kirigami.ScrollablePage {
             text: i18nc("@action:button", "Load later connections")
             onClicked: journeyModel.queryNext()
 
-            MobileForm.FormCard {
+            FormCard.FormCard {
                 visible: journeyModel.attributions.length > 0
 
-                Layout.fillWidth: true
-
-                contentItem: ColumnLayout {
-                    spacing: 0
-
-                    MobileForm.FormTextDelegate {
-                        text: i18n("Data providers:")
-                        description: PublicTransport.attributionSummary(journeyModel.attributions)
-                        onLinkActivated: Qt.openUrlExternally(link)
-                    }
+                FormCard.FormTextDelegate {
+                    text: i18n("Data providers:")
+                    description: PublicTransport.attributionSummary(journeyModel.attributions)
+                    onLinkActivated: Qt.openUrlExternally(link)
                 }
             }
         }

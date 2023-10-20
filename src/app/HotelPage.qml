@@ -6,75 +6,49 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
 App.DetailsPage {
     id: root
+
     title: i18n("Hotel Reservation")
 
     ColumnLayout {
-        width: parent.width
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.name
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                    wrapMode: Text.WordWrap
-                }
-            }
+        App.CardPageTitle {
+            emojiIcon: "🏨"
+            text: reservationFor.name
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18n("Location")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Location")
-                }
-
-                App.FormPlaceDelegate {
-                    place: reservationFor
-                    controller: root.controller
-                }
+        FormCard.FormCard {
+            App.FormPlaceDelegate {
+                place: reservationFor
+                controller: root.controller
             }
         }
 
         App.ContactCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
             contact: root.reservationFor
         }
 
-        MobileForm.FormCard {
+        FormCard.FormCard {
             visible: reservation.checkinTime > 0 || reservation.checkoutTime > 0
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+            FormCard.FormTextDelegate {
+                text: i18n("Check-in time")
+                description: Util.isStartOfDay(reservation, "checkinTime") ? Localizer.formatDate(reservation, "checkinTime") : Localizer.formatDateTime(reservation, "checkinTime")
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Check-in time")
-                    description: Util.isStartOfDay(reservation, "checkinTime") ? Localizer.formatDate(reservation, "checkinTime") : Localizer.formatDateTime(reservation, "checkinTime")
-                }
+            FormCard.FormDelegateSeparator { visible: reservation.checkinTime > 0 }
 
-                MobileForm.FormDelegateSeparator { visible: reservation.checkinTime > 0 }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Check-out time")
-                    description: Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDate(reservation, "checkoutTime") : Localizer.formatDateTime(reservation, "checkoutTime")
-                }
+            FormCard.FormTextDelegate {
+                text: i18n("Check-out time")
+                description: Util.isStartOfDay(reservation, "checkoutTime") ? Localizer.formatDate(reservation, "checkoutTime") : Localizer.formatDateTime(reservation, "checkoutTime")
             }
         }
 

@@ -11,19 +11,19 @@ import Qt.labs.platform 1.1
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import "." as App
 
-MobileForm.FormCard {
-    id: documentFormCard
+ColumnLayout {
+    id: root
+
     property alias documentIds: docsModel.documentIds
     property alias title: cardHeader.title
 
-    Layout.fillWidth: true
-    Layout.topMargin: Kirigami.Units.largeSpacing
-
     signal addDocument(string file)
     signal removeDocument(string docId)
+
+    spacing: 0
 
     DocumentsModel {
         id: docsModel
@@ -35,12 +35,12 @@ MobileForm.FormCard {
         title: i18n("Add Document")
         folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("All Files (*.*)")]
-        onAccepted: documentFormCard.addDocument(file)
+        onAccepted: root.addDocument(file)
     }
 
     Component {
         id: documentDelegate
-        MobileForm.AbstractFormDelegate {
+        FormCard.AbstractFormDelegate {
             Layout.fillWidth: true
             onClicked: ApplicationController.openDocument(model.filePath);
             Accessible.onPressAction: clicked()
@@ -87,35 +87,33 @@ MobileForm.FormCard {
                 text: i18n("Delete")
                 icon.name: "edit-delete"
                 onTriggered: {
-                    documentFormCard.removeDocument(deleteWarningDialog.docId);
+                    root.removeDocument(deleteWarningDialog.docId);
                     deleteWarningDialog.close()
                 }
             }
         ]
     }
 
-    contentItem: ColumnLayout {
-        spacing: 0
+    FormCard.FormHeader {
+        id: cardHeader
+        title: i18n("Documents")
+    }
 
-        MobileForm.FormCardHeader {
-            id: cardHeader
-            title: i18n("Documents")
-        }
-
+    FormCard.FormCard {
         Repeater {
             delegate: documentDelegate
             model: docsModel
         }
 
-        MobileForm.FormTextDelegate {
+        FormCard.FormTextDelegate {
             text: i18n("No documents attached to this reservation.")
             visible: docsModel.empty
             Accessible.ignored: !visible
         }
 
-        MobileForm.FormDelegateSeparator {}
+        FormCard.FormDelegateSeparator {}
 
-        MobileForm.FormButtonDelegate {
+        FormCard.FormButtonDelegate {
             text: i18n("Add Document...")
             onClicked: addDialog.open()
         }

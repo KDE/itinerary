@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kpublictransport 1.0 as KPublicTransport
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
@@ -48,263 +48,242 @@ App.DetailsPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: {
-                        if (reservationFor.trainName || reservationFor.trainNumber) {
-                            return reservationFor.trainName + " " + reservationFor.trainNumber
-                        }
-                        return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
-                    }
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                }
+        spacing: 0
 
-                // ticket barcode
-                App.TicketTokenDelegate {
-                    id: ticketToken
-                    Layout.fillWidth: true
-                    resIds: ReservationManager.reservationsForBatch(root.batchId)
-                    onCurrentReservationIdChanged: {
-                        if (!currentReservationId)
-                            return;
-                        root.currentReservationId = currentReservationId;
-                    }
-                    onScanModeToggled: scanModeController.toggle()
-                    visible: ticketToken.ticketTokenCount > 0
+        App.CardPageTitle {
+            emojiIcon: "🚅"
+            text: {
+                if (reservationFor.trainName || reservationFor.trainNumber) {
+                    return reservationFor.trainName + " " + reservationFor.trainNumber
                 }
+                return i18n("%1 to %2", reservationFor.departureStation.name, reservationFor.arrivalStation.name);
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
-
-                // departure data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Train departure", "Departure")
+        FormCard.FormCard {
+            // ticket barcode
+            App.TicketTokenDelegate {
+                id: ticketToken
+                Layout.fillWidth: true
+                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                onCurrentReservationIdChanged: {
+                    if (!currentReservationId)
+                        return;
+                    root.currentReservationId = currentReservationId;
                 }
-                MobileForm.FormTextDelegate {
-                    id: departureTimeDelegate
-                    text: i18n("Departure time")
-                    visible: departureTimeLabel.text.length > 0
-                    contentItem: ColumnLayout {
-                        spacing: Kirigami.Units.smallSpacing
-                        QQC2.Label {
-                            text: departureTimeDelegate.text
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                            Accessible.ignored: true
-                        }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            QQC2.Label {
-                                id: departureTimeLabel
-                                text: Localizer.formatDateTime(reservationFor, "departureTime")
-                                color: Kirigami.Theme.disabledTextColor
-                                font: Kirigami.Theme.smallFont
-                                elide: Text.ElideRight
-                            }
-                            QQC2.Label {
-                                text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
-                                color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                                visible: departure.hasExpectedDepartureTime
-                                Accessible.ignored: !visible
-                            }
-                        }
-                    }
-                }
-                MobileForm.FormTextDelegate {
-                    text: i18n("Departure date")
-                    visible: !departureTimeDelegate.visible && text.length > 0
-                    description: Localizer.formatDate(reservationFor, "departureDay")
-                }
-
-                MobileForm.FormDelegateSeparator {}
-
-                MobileForm.FormTextDelegate {
-                    text: i18nc("train station", "Station")
-                    description: reservationFor.departureStation.name
-                    visible: description
-                }
-
-                MobileForm.FormDelegateSeparator { visible: reservationFor.departureStation.name }
-
-                App.FormPlatformDelegate {
-                    id: departurePlatformDelegate
-                    stopover: departure
-                    sections: root.controller.departurePlatformSections
-                    scheduledPlatform: reservationFor.departurePlatform
-                }
-
-                MobileForm.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
-
-                App.FormPlaceDelegate {
-                    id: departureDelegate
-                    place: reservationFor.departureStation
-                    controller: root.controller
-                    isRangeBegin: true
-                }
-
-                MobileForm.FormDelegateSeparator {
-                    visible: departureDelegate.visible
-                }
-
-                MobileForm.FormTextDelegate {
-                    text: i18n("Additional notes")
-                    description: departure.notes.join("<br/>")
-                    descriptionItem.textFormat: Text.RichText
-                    descriptionItem.wrapMode: Text.Wrap
-                    visible: arrival.notes.length > 0
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
+                onScanModeToggled: scanModeController.toggle()
+                visible: ticketToken.ticketTokenCount > 0
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        // departure data
+        FormCard.FormHeader {
+            title: i18nc("Train departure", "Departure")
+        }
 
-                // arrival data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Train arrival", "Arrival")
-                }
-
-                MobileForm.FormTextDelegate {
-                    id: arrivalTimeDelegate
-                    text: i18n("Arrival time")
-                    visible: arrivalTimeLabel.text.length > 0
-                    contentItem: ColumnLayout {
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                id: departureTimeDelegate
+                text: i18n("Departure time")
+                visible: departureTimeLabel.text.length > 0
+                contentItem: ColumnLayout {
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: departureTimeDelegate.text
                         Layout.fillWidth: true
-                        spacing: Kirigami.Units.smallSpacing
+                        elide: Text.ElideRight
+                        Accessible.ignored: true
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
                         QQC2.Label {
-                            text: arrivalTimeDelegate.text
-                            Layout.fillWidth: true
+                            id: departureTimeLabel
+                            text: Localizer.formatDateTime(reservationFor, "departureTime")
+                            color: Kirigami.Theme.disabledTextColor
+                            font: Kirigami.Theme.smallFont
                             elide: Text.ElideRight
-                            Accessible.ignored: true
                         }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            QQC2.Label {
-                                id: arrivalTimeLabel
-                                text: Localizer.formatDateTime(reservationFor, "arrivalTime")
-                                color: Kirigami.Theme.disabledTextColor
-                                font: Kirigami.Theme.smallFont
-                                elide: Text.ElideRight
-                            }
-                            QQC2.Label {
-                                font: Kirigami.Theme.smallFont
-                                text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
-                                color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                                visible: arrival.hasExpectedArrivalTime
-                                Accessible.ignored: !visible
-                            }
+                        QQC2.Label {
+                            text: (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay
+                            color: (departure.departureDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: departure.hasExpectedDepartureTime
+                            Accessible.ignored: !visible
                         }
                     }
                 }
+            }
+            FormCard.FormTextDelegate {
+                text: i18n("Departure date")
+                visible: !departureTimeDelegate.visible && text.length > 0
+                description: Localizer.formatDate(reservationFor, "departureDay")
+            }
 
-                MobileForm.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
+            FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("train station", "Station")
-                    description: reservationFor.arrivalStation.name
+            FormCard.FormTextDelegate {
+                text: i18nc("train station", "Station")
+                description: reservationFor.departureStation.name
+                visible: description
+            }
+
+            FormCard.FormDelegateSeparator { visible: reservationFor.departureStation.name }
+
+            App.FormPlatformDelegate {
+                id: departurePlatformDelegate
+                stopover: departure
+                sections: root.controller.departurePlatformSections
+                scheduledPlatform: reservationFor.departurePlatform
+            }
+
+            FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
+
+            App.FormPlaceDelegate {
+                id: departureDelegate
+                place: reservationFor.departureStation
+                controller: root.controller
+                isRangeBegin: true
+            }
+
+            FormCard.FormDelegateSeparator {
+                visible: departureDelegate.visible
+            }
+
+            FormCard.FormTextDelegate {
+                text: i18n("Additional notes")
+                description: departure.notes.join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: arrival.notes.length > 0
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+        }
+
+        // arrival data
+        FormCard.FormHeader {
+            title: i18nc("Train arrival", "Arrival")
+        }
+
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                id: arrivalTimeDelegate
+                text: i18n("Arrival time")
+                visible: arrivalTimeLabel.text.length > 0
+                contentItem: ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: Kirigami.Units.smallSpacing
+                    QQC2.Label {
+                        text: arrivalTimeDelegate.text
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
+                        Accessible.ignored: true
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        QQC2.Label {
+                            id: arrivalTimeLabel
+                            text: Localizer.formatDateTime(reservationFor, "arrivalTime")
+                            color: Kirigami.Theme.disabledTextColor
+                            font: Kirigami.Theme.smallFont
+                            elide: Text.ElideRight
+                        }
+                        QQC2.Label {
+                            font: Kirigami.Theme.smallFont
+                            text: (arrival.arrivalDelay >= 0 ? "+" : "") + arrival.arrivalDelay
+                            color: (arrival.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                            visible: arrival.hasExpectedArrivalTime
+                            Accessible.ignored: !visible
+                        }
+                    }
                 }
+            }
 
-                MobileForm.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
+            FormCard.FormDelegateSeparator { visible: arrivalTimeLabel.text.length > 0 }
 
-                App.FormPlatformDelegate {
-                    id: arrivalPlatformDelegate
-                    stopover: arrival
-                    sections: root.controller.arrivalPlatformSections
-                    scheduledPlatform: reservationFor.arrivalPlatform
-                }
+            FormCard.FormTextDelegate {
+                text: i18nc("train station", "Station")
+                description: reservationFor.arrivalStation.name
+            }
 
-                MobileForm.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
+            FormCard.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
 
-                App.FormPlaceDelegate {
-                    id: arrivalDelegate
-                    place: reservationFor.arrivalStation
-                    controller: root.controller
-                    isRangeEnd: true
-                }
+            App.FormPlatformDelegate {
+                id: arrivalPlatformDelegate
+                stopover: arrival
+                sections: root.controller.arrivalPlatformSections
+                scheduledPlatform: reservationFor.arrivalPlatform
+            }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: arrivalDelegate
-                }
+            FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Additional notes")
-                    description: arrival.notes.join("<br/>")
-                    descriptionItem.textFormat: Text.RichText
-                    descriptionItem.wrapMode: Text.Wrap
-                    visible: arrival.notes.length > 0
-                    font.italic: true
-                    onLinkActivated: Qt.openUrlExternally(link)
-                }
+            App.FormPlaceDelegate {
+                id: arrivalDelegate
+                place: reservationFor.arrivalStation
+                controller: root.controller
+                isRangeEnd: true
+            }
+
+            FormCard.FormDelegateSeparator {
+                visible: arrivalDelegate
+            }
+
+            FormCard.FormTextDelegate {
+                text: i18n("Additional notes")
+                description: arrival.notes.join("<br/>")
+                descriptionItem.textFormat: Text.RichText
+                descriptionItem.wrapMode: Text.Wrap
+                visible: arrival.notes.length > 0
+                font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
 
         // seat reservation
-        MobileForm.FormCard {
+        FormCard.FormHeader {
             visible: coachLabel.visible || seatLabel.visible || classLabel.visible || departureLayoutButton.enabled || arrivalLayoutButton.enabled
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                MobileForm.FormCardHeader {
-                    title: i18n("Seat")
-                }
-                MobileForm.FormTextDelegate {
-                    id: coachLabel
-                    text: i18nc("coach of a train", "Coach:")
-                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : ''
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : false
-                }
-                MobileForm.FormTextDelegate {
-                    id: seatLabel
-                    text: i18n("Seat:")
-                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ''
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : false
-                }
-                MobileForm.FormTextDelegate {
-                    id: classLabel
-                    text: i18n("Class:")
-                    description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatingType : ''
-                    visible: description
-                }
-                MobileForm.FormDelegateSeparator {
-                    visible: classLabel.visible
-                }
-                MobileForm.FormButtonDelegate {
-                    id: departureLayoutButton
-                    text: i18n("Departure Vehicle Layout")
-                    icon.name: "view-list-symbolic"
-                    enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
-                    onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
-                }
-                MobileForm.FormButtonDelegate {
-                    id: arrivalLayoutButton
-                    text: i18n("Arrival Vehicle Layout")
-                    icon.name: "view-list-symbolic"
-                    enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
-                    onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
-                }
+            title: i18n("Seat")
+        }
+
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                id: coachLabel
+                text: i18nc("coach of a train", "Coach:")
+                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : ''
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatSection : false
+            }
+            FormCard.FormTextDelegate {
+                id: seatLabel
+                text: i18n("Seat:")
+                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : ''
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatNumber : false
+            }
+            FormCard.FormTextDelegate {
+                id: classLabel
+                text: i18n("Class:")
+                description: root.reservation.reservedTicket ? root.reservation.reservedTicket.ticketedSeat.seatingType : ''
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: classLabel.visible
+            }
+            FormCard.FormButtonDelegate {
+                id: departureLayoutButton
+                text: i18n("Departure Vehicle Layout")
+                icon.name: "view-list-symbolic"
+                enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
+                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
+            }
+            FormCard.FormButtonDelegate {
+                id: arrivalLayoutButton
+                text: i18n("Arrival Vehicle Layout")
+                icon.name: "view-list-symbolic"
+                enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
+                onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
             }
         }
 

@@ -6,7 +6,7 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.i18n.localeData 1.0
 import org.kde.kirigami 2.19 as Kirigami
 
@@ -14,7 +14,7 @@ import org.kde.kirigami 2.19 as Kirigami
  * Combo box for showing a list of countries.
  * The model is expected to be an array of ISO 3166-1 alpha 2 codes.
  */
-MobileForm.FormComboBoxDelegate {
+FormCard.FormComboBoxDelegate {
     id: controlRoot
 
     /** The currently selected country, as a KCountry object. */
@@ -23,7 +23,7 @@ MobileForm.FormComboBoxDelegate {
     /** Initially selected country. */
     property string initialCountry
 
-    displayMode: Kirigami.Settings.isMobile ? MobileForm.FormComboBoxDelegate.Page : MobileForm.FormComboBoxDelegate.ComboBox
+    displayMode: Kirigami.Settings.isMobile ? FormCard.FormComboBoxDelegate.Page : FormCard.FormComboBoxDelegate.ComboBox
 
     displayText: currentCountry ? (currentCountry.emojiFlag + ' ' + currentCountry.name) : ""
 

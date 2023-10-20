@@ -6,7 +6,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
@@ -22,107 +22,90 @@ App.DetailsPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
+        spacing: 0
+
+        App.CardPageTitle {
+            emojiIcon: "🛳️"
+            text: i18n("Boat")
+
+            // TODO vessel name not yet available in the data model
+            // text: reservationFor.boatName
+        }
+
+        FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
 
-                // TODO vessel name not yet available in the data model
-                /* Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    Layout.fillWidth: true
-                    text: reservationFor.boatName
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                }*/
-
-                // ticket barcode
-                App.TicketTokenDelegate {
-                    id: ticketToken
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    resIds: ReservationManager.reservationsForBatch(root.batchId)
-                    onCurrentReservationIdChanged: {
-                        if (!currentReservationId)
-                            return;
-                        root.currentReservationId = currentReservationId;
-                    }
-                    onScanModeToggled: scanModeController.toggle()
+            // ticket barcode
+            App.TicketTokenDelegate {
+                id: ticketToken
+                Layout.topMargin: Kirigami.Units.largeSpacing
+                resIds: ReservationManager.reservationsForBatch(root.batchId)
+                onCurrentReservationIdChanged: {
+                    if (!currentReservationId)
+                        return;
+                    root.currentReservationId = currentReservationId;
                 }
+                onScanModeToggled: scanModeController.toggle()
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        // departure data
+        FormCard.FormHeader {
+            title: i18nc("Boat departure", "Departure")
+        }
 
-                // departure data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Boat departure", "Departure")
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                text: i18n("Departure time")
+                description: Localizer.formatDateTime(reservationFor, "departureTime")
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Departure time")
-                    description: Localizer.formatDateTime(reservationFor, "departureTime")
-                }
+            FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
+            FormCard.FormTextDelegate {
+                text: i18nc("Boat terminal", "Terminal")
+                description: reservationFor.departureBoatTerminal.name
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("Boat terminal", "Terminal")
-                    description: reservationFor.departureBoatTerminal.name
-                }
+            FormCard.FormDelegateSeparator {
+                visible: departurePlace
+            }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: departurePlace
-                }
-
-                App.FormPlaceDelegate {
-                    id: departurePlace
-                    place: reservationFor.departureBoatTerminal
-                    controller: root.controller
-                    isRangeBegin: true
-                }
+            App.FormPlaceDelegate {
+                id: departurePlace
+                place: reservationFor.departureBoatTerminal
+                controller: root.controller
+                isRangeBegin: true
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        // arrival data
+        FormCard.FormHeader {
+            title: i18nc("Boat arrival", "Arrival")
+        }
 
-                // arrival data
-                MobileForm.FormCardHeader {
-                    title: i18nc("Boat arrival", "Arrival")
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                text: i18n("Arrival time")
+                description: Localizer.formatDateTime(reservationFor, "arrivalTime")
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18n("Arrival time")
-                    description: Localizer.formatDateTime(reservationFor, "arrivalTime")
-                }
+            FormCard.FormDelegateSeparator {}
 
-                MobileForm.FormDelegateSeparator {}
+            FormCard.FormTextDelegate {
+                text: i18nc("Boat terminal", "Terminal")
+                description: reservationFor.arrivalBoatTerminal.name
+            }
 
-                MobileForm.FormTextDelegate {
-                    text: i18nc("Boat terminal", "Terminal")
-                    description: reservationFor.arrivalBoatTerminal.name
-                }
+            FormCard.FormDelegateSeparator {
+                visible: arrivalPlace
+            }
 
-                MobileForm.FormDelegateSeparator {
-                    visible: arrivalPlace
-                }
-
-                App.FormPlaceDelegate {
-                    id: arrivalPlace
-                    place: reservationFor.arrivalBoatTerminal
-                    controller: root.controller
-                    isRangeEnd: true
-                }
+            App.FormPlaceDelegate {
+                id: arrivalPlace
+                place: reservationFor.arrivalBoatTerminal
+                controller: root.controller
+                isRangeEnd: true
             }
         }
 

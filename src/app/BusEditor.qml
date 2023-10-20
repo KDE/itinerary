@@ -7,7 +7,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.17 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.kpublictransport 1.0
 import org.kde.itinerary 1.0
@@ -74,93 +74,71 @@ App.EditorPage {
     }
 
     ColumnLayout {
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            visible: reservationFor.busNumber || reservationFor.busName
-            contentItem: ColumnLayout {
-                spacing: 0
-                Kirigami.Heading {
-                    Layout.fillWidth: true
-                    Layout.topMargin: Kirigami.Units.largeSpacing
-                    Layout.bottomMargin: Kirigami.Units.largeSpacing
-                    text: reservationFor.busName + " " + reservationFor.busNumber
-                    horizontalAlignment: Qt.AlignHCenter
-                    font.bold: true
-                    wrapMode: Text.WordWrap
-                }
+        spacing: 0
+
+        App.CardPageTitle {
+            emojiIcon: "🚌"
+            text: if (reservationFor.busNumber || reservationFor.busName) {
+                return reservationFor.busName + " " + reservationFor.busNumber;
+            } else {
+                return i18nc("@title", "Bus")
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18nc("bus departure", "Departure")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18nc("bus departure", "Departure")
-                }
-                MobileForm.FormTextDelegate {
-                    text: i18nc("bus stop", "Stop")
-                    description: root.departureBusStop.name
-                }
-                MobileForm.FormTextFieldDelegate {
-                    id: departurePlatform
-                    label: i18nc("bus stop platform", "Platform")
-                    text: reservationFor.departurePlatform
-                }
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Board later")
-                    icon.name: "arrow-right"
-                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
-                    onClicked: boardSheet.open();
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                text: i18nc("bus stop", "Stop")
+                description: root.departureBusStop.name
+            }
+            FormCard.FormTextFieldDelegate {
+                id: departurePlatform
+                label: i18nc("bus stop platform", "Platform")
+                text: reservationFor.departurePlatform
+            }
+            FormCard.FormButtonDelegate {
+                text: i18n("Board later")
+                icon.name: "arrow-right"
+                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for preceding layovers
+                onClicked: boardSheet.open();
             }
         }
 
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18nc("bus arrival", "Arrival")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18nc("bus arrival", "Arrival")
-                }
-                MobileForm.FormTextDelegate {
-                    text: i18nc("bus stop", "Stop")
-                    description: root.arrivalBusStop.name
-                }
-                MobileForm.FormTextFieldDelegate {
-                    id: arrivalPlatform
-                    label: i18nc("bus stop platform", "Platform")
-                    text: reservationFor.arrivalPlatform
-                }
-                MobileForm.FormButtonDelegate {
-                    text: i18n("Alight earlier")
-                    icon.name: "arrow-left"
-                    visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
-                    onClicked: alightSheet.open();
-                }
+        FormCard.FormCard {
+            FormCard.FormTextDelegate {
+                text: i18nc("bus stop", "Stop")
+                description: root.arrivalBusStop.name
+            }
+            FormCard.FormTextFieldDelegate {
+                id: arrivalPlatform
+                label: i18nc("bus stop platform", "Platform")
+                text: reservationFor.arrivalPlatform
+            }
+            FormCard.FormButtonDelegate {
+                text: i18n("Alight earlier")
+                icon.name: "arrow-left"
+                visible: root.controller.journey && root.controller.journey.intermediateStops.length > 0 // TODO also check for subsequent layovers
+                onClicked: alightSheet.open();
             }
         }
 
         // TODO the below is per reservation, not per batch, so add a selector for that!
-        MobileForm.FormCard {
-            Layout.topMargin: Kirigami.Units.largeSpacing
-            Layout.fillWidth: true
-            contentItem: ColumnLayout {
-                spacing: 0
+        FormCard.FormHeader {
+            title: i18n("Seat")
+        }
 
-                MobileForm.FormCardHeader {
-                    title: i18n("Seat")
-                }
-                MobileForm.FormTextFieldDelegate {
-                    id: seatNumber
-                    label: i18n("Seat")
-                    text: reservation.reservedTicket ? reservation.reservedTicket.ticketedSeat.seatNumber : ""
-                }
+        FormCard.FormCard {
+            FormCard.FormTextFieldDelegate {
+                id: seatNumber
+                label: i18n("Seat")
+                text: reservation.reservedTicket ? reservation.reservedTicket.ticketedSeat.seatNumber : ""
             }
         }
 

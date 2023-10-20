@@ -5,13 +5,13 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitemmodels 1.0
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-MobileForm.FormCard {
+ColumnLayout {
     id: root
 
     /** The object to edit. */
@@ -27,17 +27,15 @@ MobileForm.FormCard {
         }
     }
 
-    Layout.topMargin: Kirigami.Units.largeSpacing
-    Layout.fillWidth: true
     visible: programModel.count > 0
+    spacing: 0
 
-    contentItem: ColumnLayout {
-        spacing: 0
+    FormCard.FormHeader {
+        title: i18nc("bonus, discount or frequent traveler program", "Program")
+    }
 
-        MobileForm.FormCardHeader {
-            title: i18nc("bonus, discount or frequent traveler program", "Program")
-        }
-        MobileForm.FormComboBoxDelegate {
+    FormCard.FormCard {
+        FormCard.FormComboBoxDelegate {
             id: programComboBox
             model: KSortFilterProxyModel {
                 id: programModel
@@ -51,15 +49,15 @@ MobileForm.FormCard {
             textRole: "name"
             valueRole: "pass"
         }
-        MobileForm.FormDelegateSeparator { visible: programNameLabel.visible }
-        MobileForm.FormTextDelegate {
+        FormCard.FormDelegateSeparator { visible: programNameLabel.visible }
+        FormCard.FormTextDelegate {
             id: programNameLabel
             text: i18n("Name")
             description: programComboBox.currentValue.programName
             visible: description
         }
-        MobileForm.FormDelegateSeparator { visible: membershipNumberLabel.visible }
-        MobileForm.FormTextDelegate {
+        FormCard.FormDelegateSeparator { visible: membershipNumberLabel.visible }
+        FormCard.FormTextDelegate {
             id: membershipNumberLabel
             text: i18n("Number")
             description: programComboBox.currentValue.membershipNumber

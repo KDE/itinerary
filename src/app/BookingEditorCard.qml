@@ -5,16 +5,17 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.kirigamiaddons.labs.mobileform 0.1 as MobileForm
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 import org.kde.kitinerary 1.0
 import org.kde.itinerary 1.0
 import "." as App
 
-MobileForm.FormCard {
+ColumnLayout {
     id: root
 
     /** The object to edit. */
     property var item
+
     /** Default currency for the price edit field, if applicable. */
     property alias defaultCurrency: priceEdit.defaultCurrency
 
@@ -31,31 +32,32 @@ MobileForm.FormCard {
         priceEdit.apply(item)
     }
 
-    Layout.topMargin: Kirigami.Units.largeSpacing
-    Layout.fillWidth: true
+    spacing: 0
 
-    contentItem: ColumnLayout {
-        spacing: 0
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Booking")
+    }
 
-        MobileForm.FormCardHeader {
-            title: i18n("Booking")
-        }
-
-        MobileForm.FormTextFieldDelegate {
+    FormCard.FormCard {
+        FormCard.FormTextFieldDelegate {
             id: referenceEdit
             label: i18n("Reference")
-            text: item.reservationNumber
+            text: root.item.reservationNumber
         }
-        MobileForm.FormDelegateSeparator {}
-        MobileForm.FormTextFieldDelegate {
+
+        FormCard.FormDelegateSeparator {}
+
+        FormCard.FormTextFieldDelegate {
             id: underNameEdit
             label: i18n("Under name")
-            text: item.underName ? item.underName.name : ''
+            text: root.item.underName ? root.item.underName.name : ''
         }
-        MobileForm.FormDelegateSeparator {}
+
+        FormCard.FormDelegateSeparator { above: priceEdit }
+
         App.FormPriceEditDelegate {
             id: priceEdit
-            item: reservation
+            item: root.item
         }
     }
 }

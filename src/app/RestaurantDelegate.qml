@@ -20,6 +20,8 @@ App.TimelineDelegate {
             id: headerLabel
             text: reservationFor.name
             color: root.headerTextColor
+            elide: Text.ElideRight
+
             Layout.fillWidth: true
             Accessible.ignored: true
         }
