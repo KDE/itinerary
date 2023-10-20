@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2023-10-12 09:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -123,7 +123,7 @@ msgstr "Змінити"
 msgid "Add to calendar..."
 msgstr "Додати до календаря…"
 
-#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:115 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
@@ -132,47 +132,47 @@ msgstr "Додати до календаря…"
 msgid "Delete"
 msgstr "Вилучити"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:108
+#, kde-format
+msgid "Delete Event"
+msgstr "Вилучити подію"
+
+#: app/ActionsCard.qml:109
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Ви справді бажаєте вилучити цю подію?"
+
+#: app/ActionsCard.qml:129 app/ProgramMembershipPage.qml:132
+#: app/TicketPage.qml:146
+#, kde-format
+msgid "Actions"
+msgstr "Дії"
+
+#: app/ActionsCard.qml:146
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Скасувати бронювання"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:147
 #, kde-format
 msgid "Check-in"
 msgstr "Повернути з боргу"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:148
 #, kde-format
 msgid "Download"
 msgstr "Отримати"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:149
 #, kde-format
 msgid "Change Reservation"
 msgstr "Змінити бронювання"
 
-#: app/ActionsCard.qml:87
+#: app/ActionsCard.qml:150
 #, kde-format
 msgid "View Reservation"
 msgstr "Переглянути бронювання"
-
-#: app/ActionsCard.qml:133
-#, kde-format
-msgid "Delete Event"
-msgstr "Вилучити подію"
-
-#: app/ActionsCard.qml:134
-#, kde-format
-msgid "Do you really want to delete this event?"
-msgstr "Ви справді бажаєте вилучити цю подію?"
-
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:132
-#: app/TicketPage.qml:146
-#, kde-format
-msgid "Actions"
-msgstr "Дії"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -429,25 +429,44 @@ msgstr "Термінал"
 msgid "Arrival time"
 msgstr "Час прибуття"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41
+#: app/BookingCard.qml:26 app/BookingEditorCard.qml:41
 #, kde-format
 msgid "Booking"
 msgstr "Бронювання"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46
+#: app/BookingCard.qml:31 app/BookingEditorCard.qml:46
 #, kde-format
 msgid "Reference"
 msgstr "Ідентифікатор"
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52
+#: app/BookingCard.qml:37 app/BookingCard.qml:69
+#, fuzzy, kde-format
+#| msgid "Import from Clipboard"
+msgctxt "@info:tooltip"
+msgid "Copy to Clipboard"
+msgstr "Імпорт з буфера обміну"
+
+#: app/BookingCard.qml:41
+#, fuzzy, kde-format
+#| msgid "Booking reference"
+msgid "Booking reference copied to clipboard"
+msgstr "Код бронювання"
+
+#: app/BookingCard.qml:54 app/BookingEditorCard.qml:52
 #, kde-format
 msgid "Under name"
 msgstr "На ім'я"
 
-#: app/BookingCard.qml:48
+#: app/BookingCard.qml:63
 #, kde-format
 msgid "Ticket number:"
 msgstr "Номер квитка:"
+
+#: app/BookingCard.qml:73
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities copied to clipboard"
+msgid "Ticket number copied to clipboard"
+msgstr "Можливості видобування скопійовано до буфера обміну даними"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format

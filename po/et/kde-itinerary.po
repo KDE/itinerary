@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -122,7 +122,7 @@ msgstr "Muuda"
 msgid "Add to calendar..."
 msgstr "Lisa dokument ..."
 
-#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:115 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
@@ -131,50 +131,50 @@ msgstr "Lisa dokument ..."
 msgid "Delete"
 msgstr "Kustuta"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:108
+#, fuzzy, kde-format
+#| msgid "Delete Document"
+msgid "Delete Event"
+msgstr "Kustuta dokument"
+
+#: app/ActionsCard.qml:109
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Kas tõesti kustutada see sündmus?"
+
+#: app/ActionsCard.qml:129 app/ProgramMembershipPage.qml:132
+#: app/TicketPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Application"
+msgid "Actions"
+msgstr "Rakendus"
+
+#: app/ActionsCard.qml:146
 #, fuzzy, kde-format
 #| msgid "Cancel Reservation"
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Tühista reserveering"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:147
 #, kde-format
 msgid "Check-in"
 msgstr "Sisseregistreerimine"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:148
 #, kde-format
 msgid "Download"
 msgstr "Laadi alla"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:149
 #, kde-format
 msgid "Change Reservation"
 msgstr "Muuda reserveeringut"
 
-#: app/ActionsCard.qml:87
+#: app/ActionsCard.qml:150
 #, kde-format
 msgid "View Reservation"
 msgstr "Vaata reserveeringut"
-
-#: app/ActionsCard.qml:133
-#, fuzzy, kde-format
-#| msgid "Delete Document"
-msgid "Delete Event"
-msgstr "Kustuta dokument"
-
-#: app/ActionsCard.qml:134
-#, kde-format
-msgid "Do you really want to delete this event?"
-msgstr "Kas tõesti kustutada see sündmus?"
-
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:132
-#: app/TicketPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Application"
-msgid "Actions"
-msgstr "Rakendus"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -454,28 +454,46 @@ msgstr "Terminal:"
 msgid "Arrival time"
 msgstr "Saabumisaeg:"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41
+#: app/BookingCard.qml:26 app/BookingEditorCard.qml:41
 #, kde-format
 msgid "Booking"
 msgstr "Reserveerimine"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46
+#: app/BookingCard.qml:31 app/BookingEditorCard.qml:46
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Viide: "
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52
+#: app/BookingCard.qml:37 app/BookingCard.qml:69
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: app/BookingCard.qml:41
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Booking reference copied to clipboard"
+msgstr "Reserveeringu viide:"
+
+#: app/BookingCard.qml:54 app/BookingEditorCard.qml:52
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
 msgstr "Nimega:"
 
-#: app/BookingCard.qml:48
+#: app/BookingCard.qml:63
 #, fuzzy, kde-format
 #| msgid "Sequence Number:"
 msgid "Ticket number:"
 msgstr "Järjekorranumber:"
+
+#: app/BookingCard.qml:73
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities:"
+msgid "Ticket number copied to clipboard"
+msgstr "Ekstraktori võimed:"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format

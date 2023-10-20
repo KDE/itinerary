@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2023-10-12 09:35+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -121,7 +121,7 @@ msgstr "Edita"
 msgid "Add to calendar..."
 msgstr "Afig al calendari..."
 
-#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:115 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
@@ -130,47 +130,47 @@ msgstr "Afig al calendari..."
 msgid "Delete"
 msgstr "Suprimix"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:108
+#, kde-format
+msgid "Delete Event"
+msgstr "Suprimix l'esdeveniment"
+
+#: app/ActionsCard.qml:109
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Segur que voleu suprimir este esdeveniment?"
+
+#: app/ActionsCard.qml:129 app/ProgramMembershipPage.qml:132
+#: app/TicketPage.qml:146
+#, kde-format
+msgid "Actions"
+msgstr "Accions"
+
+#: app/ActionsCard.qml:146
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Cancel·la la reserva"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:147
 #, kde-format
 msgid "Check-in"
 msgstr "Facturació"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:148
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:149
 #, kde-format
 msgid "Change Reservation"
 msgstr "Canvia la reserva"
 
-#: app/ActionsCard.qml:87
+#: app/ActionsCard.qml:150
 #, kde-format
 msgid "View Reservation"
 msgstr "Veure la reserva"
-
-#: app/ActionsCard.qml:133
-#, kde-format
-msgid "Delete Event"
-msgstr "Suprimix l'esdeveniment"
-
-#: app/ActionsCard.qml:134
-#, kde-format
-msgid "Do you really want to delete this event?"
-msgstr "Segur que voleu suprimir este esdeveniment?"
-
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:132
-#: app/TicketPage.qml:146
-#, kde-format
-msgid "Actions"
-msgstr "Accions"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -423,25 +423,44 @@ msgstr "Terminal"
 msgid "Arrival time"
 msgstr "Hora d'arribada"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41
+#: app/BookingCard.qml:26 app/BookingEditorCard.qml:41
 #, kde-format
 msgid "Booking"
 msgstr "Reserva"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46
+#: app/BookingCard.qml:31 app/BookingEditorCard.qml:46
 #, kde-format
 msgid "Reference"
 msgstr "Referència"
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52
+#: app/BookingCard.qml:37 app/BookingCard.qml:69
+#, fuzzy, kde-format
+#| msgid "Import from Clipboard"
+msgctxt "@info:tooltip"
+msgid "Copy to Clipboard"
+msgstr "Importa des del porta-retalls"
+
+#: app/BookingCard.qml:41
+#, fuzzy, kde-format
+#| msgid "Booking reference"
+msgid "Booking reference copied to clipboard"
+msgstr "Referència de la reserva"
+
+#: app/BookingCard.qml:54 app/BookingEditorCard.qml:52
 #, kde-format
 msgid "Under name"
 msgstr "A nom de"
 
-#: app/BookingCard.qml:48
+#: app/BookingCard.qml:63
 #, kde-format
 msgid "Ticket number:"
 msgstr "Número de tiquet:"
+
+#: app/BookingCard.qml:73
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities copied to clipboard"
+msgid "Ticket number copied to clipboard"
+msgstr "Les capacitats de l'extractor s'han copiat a dins del porta-retalls"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format

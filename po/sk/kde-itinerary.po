@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:42+0000\n"
+"POT-Creation-Date: 2023-10-20 01:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -119,7 +119,7 @@ msgstr "Upraviť"
 msgid "Add to calendar..."
 msgstr "Pridať dokument..."
 
-#: app/ActionsCard.qml:72 app/ActionsCard.qml:140 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:72 app/ActionsCard.qml:115 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:145
@@ -128,50 +128,50 @@ msgstr "Pridať dokument..."
 msgid "Delete"
 msgstr "Vymazať"
 
-#: app/ActionsCard.qml:83
+#: app/ActionsCard.qml:108
+#, fuzzy, kde-format
+#| msgid "Delete Document"
+msgid "Delete Event"
+msgstr "Odstrániť dokument"
+
+#: app/ActionsCard.qml:109
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Naozaj chcete odstrániť túto udalosť?"
+
+#: app/ActionsCard.qml:129 app/ProgramMembershipPage.qml:132
+#: app/TicketPage.qml:146
+#, fuzzy, kde-format
+#| msgid "Application"
+msgid "Actions"
+msgstr "Aplikácia"
+
+#: app/ActionsCard.qml:146
 #, fuzzy, kde-format
 #| msgid "Cancel Reservation"
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Zrušiť rezerváciu"
 
-#: app/ActionsCard.qml:84
+#: app/ActionsCard.qml:147
 #, kde-format
 msgid "Check-in"
 msgstr "Vstupná kontrola"
 
-#: app/ActionsCard.qml:85
+#: app/ActionsCard.qml:148
 #, kde-format
 msgid "Download"
 msgstr "Stiahnuť"
 
-#: app/ActionsCard.qml:86
+#: app/ActionsCard.qml:149
 #, kde-format
 msgid "Change Reservation"
 msgstr "Zmena rezervácie"
 
-#: app/ActionsCard.qml:87
+#: app/ActionsCard.qml:150
 #, kde-format
 msgid "View Reservation"
 msgstr "Zobraziť rezerváciu"
-
-#: app/ActionsCard.qml:133
-#, fuzzy, kde-format
-#| msgid "Delete Document"
-msgid "Delete Event"
-msgstr "Odstrániť dokument"
-
-#: app/ActionsCard.qml:134
-#, kde-format
-msgid "Do you really want to delete this event?"
-msgstr "Naozaj chcete odstrániť túto udalosť?"
-
-#: app/ActionsCard.qml:154 app/ProgramMembershipPage.qml:132
-#: app/TicketPage.qml:146
-#, fuzzy, kde-format
-#| msgid "Application"
-msgid "Actions"
-msgstr "Aplikácia"
 
 #: app/AlternativeJourneyPage.qml:20
 #, kde-format
@@ -441,27 +441,45 @@ msgstr "Terminál:"
 msgid "Arrival time"
 msgstr "Čas príchodu: %1"
 
-#: app/BookingCard.qml:25 app/BookingEditorCard.qml:41
+#: app/BookingCard.qml:26 app/BookingEditorCard.qml:41
 #, kde-format
 msgid "Booking"
 msgstr "Rezervácia"
 
-#: app/BookingCard.qml:30 app/BookingEditorCard.qml:46
+#: app/BookingCard.qml:31 app/BookingEditorCard.qml:46
 #, fuzzy, kde-format
 #| msgid "Reference:"
 msgid "Reference"
 msgstr "Referencia:"
 
-#: app/BookingCard.qml:39 app/BookingEditorCard.qml:52
+#: app/BookingCard.qml:37 app/BookingCard.qml:69
+#, fuzzy, kde-format
+#| msgid "Import from Clipboard"
+msgctxt "@info:tooltip"
+msgid "Copy to Clipboard"
+msgstr "Importovať zo schránky"
+
+#: app/BookingCard.qml:41
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Booking reference copied to clipboard"
+msgstr "Referencia rezervácie:"
+
+#: app/BookingCard.qml:54 app/BookingEditorCard.qml:52
 #, fuzzy, kde-format
 #| msgid "Under name:"
 msgid "Under name"
 msgstr "Pod menom:"
 
-#: app/BookingCard.qml:48
+#: app/BookingCard.qml:63
 #, fuzzy, kde-format
 msgid "Ticket number:"
 msgstr "Poradové číslo:"
+
+#: app/BookingCard.qml:73
+#, kde-format
+msgid "Ticket number copied to clipboard"
+msgstr ""
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
