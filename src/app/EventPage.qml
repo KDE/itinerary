@@ -103,7 +103,7 @@ App.DetailsPage {
         }
 
         FormCard.FormCard {
-            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible
+            visible: seatSectionLabel.visible || seatRowLabel.visible || seatNumberLabel.visible || seatTypeLabel.visible
             FormCard.FormTextDelegate {
                 id: seatSectionLabel
                 text: i18nc("seat section, e.g. block in a stadium", "Section:")
@@ -126,6 +126,15 @@ App.DetailsPage {
                 id: seatNumberLabel
                 text: i18nc("seat number", "Number:")
                 description: root.reservation.reservedTicket.ticketedSeat.seatNumber
+                visible: description
+            }
+            FormCard.FormDelegateSeparator {
+                visible: root.reservation.reservedTicket.ticketedSeat.seatNumber
+            }
+            FormCard.FormTextDelegate {
+                id: seatTypeLabel
+                text: i18nc("seat type", "Type:")
+                description: root.reservation.reservedTicket.ticketedSeat.seatingType
                 visible: description
             }
         }
