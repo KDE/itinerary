@@ -48,7 +48,7 @@ App.EditorPage {
         }
 
         FormCard.FormHeader {
-            title: i18nc("@title:group", "Accomodation")
+            title: i18nc("@title:group", "Accommodation")
         }
 
         FormCard.FormCard {
