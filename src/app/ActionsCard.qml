@@ -5,6 +5,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as QQC2
+import Qt.labs.platform 1.1 as Platform
 import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
@@ -68,6 +69,11 @@ ColumnLayout {
             visible: KCalendarCore.CalendarPluginLoader.hasPlugin
         },
         Kirigami.Action {
+            icon.name: "export-symbolic"
+            text: i18n("Export...")
+            onTriggered: exportBatchDialog.open()
+        },
+        Kirigami.Action {
             icon.name: "edit-delete"
             text: i18n("Delete")
             onTriggered: deleteWarningDialog.open()
@@ -120,6 +126,48 @@ ColumnLayout {
                 }
             }
         ]
+    }
+
+    Kirigami.MenuDialog {
+        id: exportBatchDialog
+        title: i18n("Export")
+        property list<QQC2.Action> _actions: [
+            Kirigami.Action {
+                text: i18n("As Itinerary file...")
+                icon.name: "export-symbolic"
+                onTriggered: {
+                    exportBatchDialog.close();
+                    batchFileExportDialog.open();
+                }
+            }
+        ]
+        actions: exportBatchDialog._actions
+        Instantiator {
+            model: KDEConnectDeviceModel {
+                id: deviceModel
+            }
+            delegate: Kirigami.Action {
+                text: i18n("Send to %1", model.name)
+                icon.name: "kdeconnect-tray"
+                onTriggered: {
+                    exportBatchDialog.close();
+                    ApplicationController.exportBatchToKDEConnect(root.batchId, model.deviceId);
+                }
+            }
+            onObjectAdded: exportBatchDialog._actions.push(object)
+        }
+        onVisibleChanged: {
+            if (exportBatchDialog.visible)
+                deviceModel.refresh();
+        }
+    }
+    Platform.FileDialog {
+        id: batchFileExportDialog
+        fileMode: Platform.FileDialog.SaveFile
+        title: i18n("Export Reservation")
+        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        nameFilters: [i18n("Itinerary file (*.itinerary)")]
+        onAccepted: ApplicationController.exportBatchToFile(root.batchId, file)
     }
 
     FormCard.FormHeader {
