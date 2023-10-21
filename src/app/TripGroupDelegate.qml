@@ -25,12 +25,16 @@ FormCard.FormCard {
 
     signal removeTrip(tripGroupId: var)
 
-    FormCard.AbstractFormDelegate {
-        onClicked: if (rangeType === TimelineElement.SelfContained) {
-            TripGroupProxyModel.expand(tripGroupId);
+    function clicked() {
+        if (root.rangeType === TimelineElement.SelfContained) {
+            TripGroupProxyModel.expand(root.tripGroupId);
         } else {
-            TripGroupProxyModel.collapse(tripGroupId);
+            TripGroupProxyModel.collapse(root.tripGroupId);
         }
+    }
+
+    FormCard.AbstractFormDelegate {
+        onClicked: root.clicked()
         background: Rectangle {
             id: headerBackground
             color: Kirigami.Theme.backgroundColor
@@ -69,6 +73,7 @@ FormCard.FormCard {
         id: content
         // hide content entirely in the header-only end elements
         visible: root.rangeType !== TimelineElement.RangeEnd
+        onClicked: root.clicked()
 
         contentItem: Item {
             implicitHeight: contentLayout.implicitHeight
