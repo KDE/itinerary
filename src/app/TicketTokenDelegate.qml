@@ -22,6 +22,7 @@ ColumnLayout {
     readonly property var currentTicket: ticketModel.reservationAt(travelerBox.currentIndex) ? ticketModel.reservationAt(travelerBox.currentIndex).reservedTicket : undefined
     readonly property int ticketTokenCount: travelerBox.count
     Layout.fillWidth: true
+    Layout.topMargin: Kirigami.Units.largeSpacing
     Layout.bottomMargin: Kirigami.Units.largeSpacing
 
     /** There is a barcode displayed. */
