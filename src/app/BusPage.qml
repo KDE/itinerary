@@ -36,6 +36,7 @@ App.DetailsPage {
         }
 
         FormCard.FormCard {
+            visible: ticketToken.ticketTokenCount > 0
             // ticket barcode
             App.TicketTokenDelegate {
                 id: ticketToken

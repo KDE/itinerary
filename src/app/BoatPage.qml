@@ -34,6 +34,7 @@ App.DetailsPage {
 
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
+            visible: ticketToken.ticketTokenCount > 0
 
             // ticket barcode
             App.TicketTokenDelegate {

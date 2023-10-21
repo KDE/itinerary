@@ -39,6 +39,8 @@ App.DetailsPage {
         }
 
         FormCard.FormCard {
+            visible: ticketToken.ticketTokenCount > 0 || sequenceNumberDelegate.visible
+
             // ticket barcode
             App.TicketTokenDelegate {
                 id: ticketToken
@@ -57,7 +59,7 @@ App.DetailsPage {
             FormCard.FormTextDelegate {
                 id: sequenceNumberDelegate
                 text: i18n("Sequence Number:")
-                description: ReservationManager.reservation(ticketToken.currentReservationId).passengerSequenceNumber
+                description: root.reservation.passengerSequenceNumber
                 visible: description
             }
         }

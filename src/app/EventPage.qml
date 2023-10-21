@@ -29,6 +29,7 @@ App.DetailsPage {
         }
 
         FormCard.FormCard {
+            visible: ticketToken.ticketTokenCount > 0 || descriptionLabel.visible
             // ticket barcode
             App.TicketTokenDelegate {
                 id: ticketToken
@@ -44,6 +45,7 @@ App.DetailsPage {
             }
 
             FormCard.FormTextDelegate {
+                id: descriptionLabel
                 description: Util.textToHtml(reservationFor.description)
                 visible: reservationFor.description
                 onLinkActivated: Qt.openUrlExternally(link)
