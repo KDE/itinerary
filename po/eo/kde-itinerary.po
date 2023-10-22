@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 01:39+0000\n"
-"PO-Revision-Date: 2023-10-20 19:22+0100\n"
+"POT-Creation-Date: 2023-10-22 02:05+0000\n"
+"PO-Revision-Date: 2023-10-21 07:44+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -87,38 +87,43 @@ msgstr "Kapabloj de eltiraĵo:"
 msgid "Extractor capabilities copied to clipboard"
 msgstr "Eltiraj kapabloj kopiitaj al tondujo"
 
-#: app/ActionsCard.qml:31
+#: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Boarding Pass"
 msgstr "Montri Enirpermesilon"
 
-#: app/ActionsCard.qml:31
+#: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Ticket"
 msgstr "Montri Bileton"
 
-#: app/ActionsCard.qml:37
+#: app/ActionsCard.qml:38
 #, kde-format
 msgid "Add transfer before"
 msgstr "Aldoni translokiĝon antaŭ"
 
-#: app/ActionsCard.qml:46
+#: app/ActionsCard.qml:47
 #, kde-format
 msgid "Add transfer after"
 msgstr "Aldoni translokiĝon post"
 
-#: app/ActionsCard.qml:55 app/ProgramMembershipPage.qml:126
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:126
 #: app/TicketPage.qml:136
 #, kde-format
 msgid "Edit"
 msgstr "Redakti"
 
-#: app/ActionsCard.qml:61
+#: app/ActionsCard.qml:62
 #, kde-format
 msgid "Add to calendar..."
 msgstr "Aldoni al kalendaro..."
 
-#: app/ActionsCard.qml:72 app/ActionsCard.qml:115 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:73 app/main.qml:214 app/TripGroupDelegate.qml:162
+#, kde-format
+msgid "Export..."
+msgstr "Eksporti..."
+
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:131
@@ -127,44 +132,70 @@ msgstr "Aldoni al kalendaro..."
 msgid "Delete"
 msgstr "Forigi"
 
-#: app/ActionsCard.qml:108
+#: app/ActionsCard.qml:114
 #, kde-format
 msgid "Delete Event"
 msgstr "Forigi Eventon"
 
-#: app/ActionsCard.qml:109
+#: app/ActionsCard.qml:115
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun eventon?"
 
-#: app/ActionsCard.qml:126 app/ProgramMembershipPage.qml:120
+#: app/ActionsCard.qml:133 app/TimelinePage.qml:178
+#, kde-format
+msgid "Export"
+msgstr "Eksporto"
+
+#: app/ActionsCard.qml:136 app/TimelinePage.qml:181
+#, kde-format
+msgid "As Itinerary file..."
+msgstr "Kiel Itinera dosiero..."
+
+#: app/ActionsCard.qml:150 app/TimelinePage.qml:205
+#, kde-format
+msgid "Send to %1"
+msgstr "Sendi al %1"
+
+#: app/ActionsCard.qml:167
+#, fuzzy, kde-format
+#| msgid "Import Reservation"
+msgid "Export Reservation"
+msgstr "Importo Rezervado"
+
+#: app/ActionsCard.qml:169 app/TimelinePage.qml:225
+#, kde-format
+msgid "Itinerary file (*.itinerary)"
+msgstr "Itinera dosiero (*.itinerary)"
+
+#: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:120
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "Agoj"
 
-#: app/ActionsCard.qml:144
+#: app/ActionsCard.qml:192
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Nuligi Rezervon"
 
-#: app/ActionsCard.qml:145
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Check-in"
 msgstr "Enregistriĝo"
 
-#: app/ActionsCard.qml:146
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "Download"
 msgstr "Elŝuti"
 
-#: app/ActionsCard.qml:147
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Ŝanĝi Rezervon"
 
-#: app/ActionsCard.qml:148
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Vidi Rezervon"
@@ -234,8 +265,8 @@ msgstr ""
 msgid "Replace"
 msgstr "Anstataŭigi"
 
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:683
-#: app/applicationcontroller.cpp:698
+#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:754
+#: app/applicationcontroller.cpp:769
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Importo malsukcesis: %1"
@@ -245,8 +276,8 @@ msgstr "Importo malsukcesis: %1"
 msgid "Import failed: File too large."
 msgstr "Importo malsukcesis: dosiero tro granda."
 
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:760
-#: app/applicationcontroller.cpp:770
+#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:831
+#: app/applicationcontroller.cpp:841
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -277,12 +308,13 @@ msgstr "Nenio importita."
 
 #: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
 #: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
+#: app/applicationcontroller.cpp:701 app/applicationcontroller.cpp:719
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Eksporto malsukcesis: %1"
 
 #: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:675
+#: app/applicationcontroller.cpp:675 app/applicationcontroller.cpp:684
 #, kde-format
 msgid "Export completed."
 msgstr "Eksporto finiĝis."
@@ -292,7 +324,14 @@ msgstr "Eksporto finiĝis."
 msgid "Trip sent."
 msgstr "Vojaĝo sendita."
 
-#: app/applicationcontroller.cpp:723
+#: app/applicationcontroller.cpp:711
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Reservation"
+msgid "Reservation sent."
+msgstr "Rezervado"
+
+#: app/applicationcontroller.cpp:794
 #, kde-format
 msgid "Import completed."
 msgstr "Importo finiĝis."
@@ -354,7 +393,7 @@ msgstr "Redakti Boatvojaĝon"
 msgid "Boat"
 msgstr "Boato"
 
-#: app/BoatEditor.qml:55 app/BoatPage.qml:54
+#: app/BoatEditor.qml:55 app/BoatPage.qml:55
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
@@ -382,7 +421,7 @@ msgstr "Fina Nomo"
 msgid "Departure terminal must not be empty."
 msgstr "Forirterminalo ne devas esti malplena."
 
-#: app/BoatEditor.qml:87 app/BoatPage.qml:84
+#: app/BoatEditor.qml:87 app/BoatPage.qml:85
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
@@ -409,19 +448,19 @@ msgstr "Alventerminalo ne devas esti malplena."
 msgid "Boat Ticket"
 msgstr "Ŝipa Bileto"
 
-#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:117
+#: app/BoatPage.qml:60 app/BusPage.qml:69 app/FlightPage.qml:119
 #: app/TrainPage.qml:87
 #, kde-format
 msgid "Departure time"
 msgstr "Forirtempo"
 
-#: app/BoatPage.qml:66 app/BoatPage.qml:96
+#: app/BoatPage.qml:67 app/BoatPage.qml:97
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
 msgstr "Terminalo"
 
-#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:168
+#: app/BoatPage.qml:90 app/BusPage.qml:134 app/FlightPage.qml:170
 #: app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
@@ -464,8 +503,7 @@ msgid "Ticket number copied to clipboard"
 msgstr "Biletnumero kopiiĝis al tondujo"
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervado"
@@ -506,8 +544,7 @@ msgid "Change arrival stop"
 msgstr "Ŝanĝi alvenhalton"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Buso"
@@ -546,9 +583,9 @@ msgstr "Alveno"
 msgid "Alight earlier"
 msgstr "Surteriĝi pli frue"
 
-#: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
-#: app/EventPage.qml:100 app/FlightEditor.qml:164 app/FlightEditor.qml:171
-#: app/FlightPage.qml:94 app/TrainEditor.qml:146 app/TrainEditor.qml:158
+#: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:183
+#: app/EventPage.qml:102 app/FlightEditor.qml:164 app/FlightEditor.qml:171
+#: app/FlightPage.qml:96 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:243
 #, kde-format
 msgid "Seat"
@@ -559,41 +596,41 @@ msgstr "Seĝo"
 msgid "Bus Ticket"
 msgstr "Busa Bileto"
 
-#: app/BusPage.qml:55
+#: app/BusPage.qml:56
 #, kde-format
 msgctxt "Bus departure"
 msgid "Departure"
 msgstr "Foriro"
 
-#: app/BusPage.qml:88 app/FlightPage.qml:122 app/TrainPage.qml:116
+#: app/BusPage.qml:89 app/FlightPage.qml:124 app/TrainPage.qml:116
 #, kde-format
 msgid "Departure date"
 msgstr "Dato de foriro"
 
-#: app/BusPage.qml:96 app/BusPage.qml:157
+#: app/BusPage.qml:97 app/BusPage.qml:158
 #, kde-format
 msgctxt "bus station"
 msgid "Station"
 msgstr "Stacidomo"
 
-#: app/BusPage.qml:104 app/BusPage.qml:165
+#: app/BusPage.qml:105 app/BusPage.qml:166
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
 msgstr "Platformo"
 
-#: app/BusPage.qml:121
+#: app/BusPage.qml:122
 #, kde-format
 msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Alveno"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:308
+#: app/BusPage.qml:213 app/TrainPage.qml:308
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativoj"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:16 app/TrainPage.qml:313
+#: app/BusPage.qml:218 app/JourneySectionPage.qml:16 app/TrainPage.qml:313
 #, kde-format
 msgid "Journey Details"
 msgstr "Vojaĝaj Detaloj"
@@ -685,11 +722,10 @@ msgid "Brand"
 msgstr "Marko"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
-msgstr "Kontakti"
+msgstr "Kontakto"
 
 #: app/ContactCard.qml:28 app/ContactEditorCard.qml:34
 #, kde-format
@@ -702,7 +738,7 @@ msgid "Email"
 msgstr "Retpoŝto"
 
 #: app/ContactCard.qml:48 app/ContactEditorCard.qml:52 app/EventEditor.qml:108
-#: app/EventPage.qml:89
+#: app/EventPage.qml:91
 #, kde-format
 msgid "Website"
 msgstr "Retejo"
@@ -806,7 +842,7 @@ msgctxt "@action:button"
 msgid "Save"
 msgstr "Konservi"
 
-#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:58
+#: app/EventDelegate.qml:22 app/TripGroupDelegate.qml:62
 #, kde-format
 msgid "End: %1"
 msgstr "Fino: %1"
@@ -844,7 +880,7 @@ msgstr "Nomo"
 msgid "Name must not be empty."
 msgstr "Nomo ne devas esti malplena."
 
-#: app/EventEditor.qml:63 app/EventPage.qml:66
+#: app/EventEditor.qml:63 app/EventPage.qml:68
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
@@ -855,7 +891,7 @@ msgstr "Enirejo"
 msgid "Entrance time has to be before the start time."
 msgstr "Enirtempo devas esti antaŭ la komenca tempo."
 
-#: app/EventEditor.qml:81 app/EventPage.qml:74 app/RestaurantEditor.qml:79
+#: app/EventEditor.qml:81 app/EventPage.qml:76 app/RestaurantEditor.qml:79
 #, kde-format
 msgid "Start Time"
 msgstr "Komenca Tempo"
@@ -865,7 +901,7 @@ msgstr "Komenca Tempo"
 msgid "Start time has to be set."
 msgstr "Komenca tempo devas esti fiksita."
 
-#: app/EventEditor.qml:90 app/EventPage.qml:82 app/RestaurantEditor.qml:90
+#: app/EventEditor.qml:90 app/EventPage.qml:84 app/RestaurantEditor.qml:90
 #, kde-format
 msgid "End Time"
 msgstr "Fina Tempo"
@@ -886,23 +922,30 @@ msgctxt "venue name"
 msgid "Name"
 msgstr "Nomo"
 
-#: app/EventPage.qml:107
+#: app/EventPage.qml:109
 #, kde-format
 msgctxt "seat section, e.g. block in a stadium"
 msgid "Section:"
 msgstr "Sekcio:"
 
-#: app/EventPage.qml:116
+#: app/EventPage.qml:118
 #, kde-format
 msgctxt "seat row"
 msgid "Row:"
 msgstr "Vico:"
 
-#: app/EventPage.qml:125
+#: app/EventPage.qml:127
 #, kde-format
 msgctxt "seat number"
 msgid "Number:"
 msgstr "Nombro:"
+
+#: app/EventPage.qml:136
+#, fuzzy, kde-format
+#| msgid "Type:"
+msgctxt "seat type"
+msgid "Type:"
+msgstr "Tipo:"
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:35
@@ -1015,8 +1058,8 @@ msgctxt "flight departure"
 msgid "Departure - %1"
 msgstr "Foriro - %1"
 
-#: app/FlightEditor.qml:82 app/FlightEditor.qml:134 app/FlightPage.qml:131
-#: app/FlightPage.qml:177
+#: app/FlightEditor.qml:82 app/FlightEditor.qml:134 app/FlightPage.qml:133
+#: app/FlightPage.qml:179
 #, kde-format
 msgid "Airport"
 msgstr "Flughaveno"
@@ -1045,7 +1088,7 @@ msgctxt "flight departure gate"
 msgid "Gate"
 msgstr "Pordego"
 
-#: app/FlightEditor.qml:110 app/FlightPage.qml:77
+#: app/FlightEditor.qml:110 app/FlightPage.qml:79
 #, kde-format
 msgid "Boarding time"
 msgstr "Enŝipiĝotempo"
@@ -1085,43 +1128,43 @@ msgstr "Alventempo devas esti post la forirtempo."
 msgid "Flight"
 msgstr "Flugo"
 
-#: app/FlightPage.qml:59
+#: app/FlightPage.qml:61
 #, kde-format
 msgid "Sequence Number:"
 msgstr "Sekvenca Nombro:"
 
-#: app/FlightPage.qml:68
+#: app/FlightPage.qml:70
 #, kde-format
 msgid "Boarding"
 msgstr "Enŝipiĝo"
 
-#: app/FlightPage.qml:86
+#: app/FlightPage.qml:88
 #, kde-format
 msgid "Boarding group"
 msgstr "Enirgrupo"
 
-#: app/FlightPage.qml:103
+#: app/FlightPage.qml:105
 #, kde-format
 msgid "Airline"
 msgstr "Flugkompanio"
 
-#: app/FlightPage.qml:111
+#: app/FlightPage.qml:113
 #, kde-format
 msgctxt "Flight departure"
 msgid "Departure"
 msgstr "Foriro"
 
-#: app/FlightPage.qml:139 app/FlightPage.qml:185
+#: app/FlightPage.qml:141 app/FlightPage.qml:187
 #, kde-format
 msgid "Terminal"
 msgstr "Terminalo"
 
-#: app/FlightPage.qml:147
+#: app/FlightPage.qml:149
 #, kde-format
 msgid "Gate"
 msgstr "Pordego"
 
-#: app/FlightPage.qml:163
+#: app/FlightPage.qml:165
 #, kde-format
 msgctxt "Flight arrival"
 msgid "Arrival"
@@ -1234,8 +1277,7 @@ msgid "(was: %1)"
 msgstr "(estis: %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "Prezo"
@@ -1589,10 +1631,11 @@ msgstr "Hotelo"
 
 #: app/HotelEditor.qml:51
 #, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#| msgctxt "@title:group"
+#| msgid "Accomodation"
 msgctxt "@title:group"
-msgid "Accomodation"
-msgstr "Aldoni loĝejon..."
+msgid "Accommodation"
+msgstr "Loĝejo"
 
 #: app/HotelEditor.qml:57
 #, kde-format
@@ -2260,11 +2303,6 @@ msgstr "Statistiko"
 msgid "Settings..."
 msgstr "Agordoj..."
 
-#: app/main.qml:214 app/TripGroupDelegate.qml:156
-#, kde-format
-msgid "Export..."
-msgstr "Eksporti..."
-
 #: app/main.qml:219 app/WelcomePage.qml:17
 #, kde-format
 msgid "Help"
@@ -2650,8 +2688,7 @@ msgid "Documents and Tickets"
 msgstr "Dokumentoj kaj Biletoj"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Redakti Restoracion"
@@ -2668,8 +2705,7 @@ msgid "Name"
 msgstr "Nomo"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Rezervado"
@@ -2680,11 +2716,10 @@ msgid "Restaurant Reservation"
 msgstr "Rezervado pri restoracio"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Vojaĝaj Detaloj"
+msgstr "Detaloj"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
@@ -3134,35 +3169,15 @@ msgstr "Forigi Vojaĝon"
 msgid "Do you really want to delete this trip?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun vojaĝon?"
 
-#: app/TimelinePage.qml:178
-#, kde-format
-msgid "Export"
-msgstr "Eksporto"
-
-#: app/TimelinePage.qml:181
-#, kde-format
-msgid "As Itinerary file..."
-msgstr "Kiel Itinera dosiero..."
-
 #: app/TimelinePage.qml:190
 #, kde-format
 msgid "As GPX file..."
 msgstr "Kiel GPX-dosiero..."
 
-#: app/TimelinePage.qml:205
-#, kde-format
-msgid "Send to %1"
-msgstr "Sendi al %1"
-
 #: app/TimelinePage.qml:223 app/TimelinePage.qml:232
 #, kde-format
 msgid "Export Trip"
 msgstr "Eksporta Vojaĝo"
-
-#: app/TimelinePage.qml:225
-#, kde-format
-msgid "Itinerary file (*.itinerary)"
-msgstr "Itinera dosiero (*.itinerary)"
 
 #: app/TimelinePage.qml:405
 #, kde-format
@@ -3375,48 +3390,48 @@ msgstr "%1 komenciĝas je %2"
 msgid "Following departure %1 from %2"
 msgstr "Post foriro %1 el %2"
 
-#: app/TripGroupDelegate.qml:58
+#: app/TripGroupDelegate.qml:62
 #, kde-format
 msgid "Trip: %1"
 msgstr "Vojaĝo: %1"
 
-#: app/TripGroupDelegate.qml:87
+#: app/TripGroupDelegate.qml:93
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
 msgstr[0] "Dato: %2 (unu tago)"
 msgstr[1] "Dato: %2 (%1 tagoj)"
 
-#: app/TripGroupDelegate.qml:103 app/WeatherForecastDelegate.qml:50
+#: app/TripGroupDelegate.qml:109 app/WeatherForecastDelegate.qml:50
 #: app/WeatherForecastPage.qml:94
 #, kde-format
 msgctxt "temperature range"
 msgid "%1 / %2"
 msgstr "%1 / %2"
 
-#: app/TripGroupDelegate.qml:118
+#: app/TripGroupDelegate.qml:124
 #, kde-format
 msgid "%1: some incompatible power sockets (%2)"
 msgstr "%1: kelkaj nekongruaj elektraj ingoj (%2)"
 
-#: app/TripGroupDelegate.qml:120
+#: app/TripGroupDelegate.qml:126
 #, kde-format
 msgid "%1: some incompatible power plugs (%2)"
 msgstr "%1: kelkaj nekongruaj elektraj ŝtopiloj (%2)"
 
-#: app/TripGroupDelegate.qml:123
+#: app/TripGroupDelegate.qml:129
 #, kde-format
 msgid "%1: no compatible power plugs (%2)"
 msgstr "%1: neniuj kongruaj elektraj ŝtopiloj (%2)"
 
-#: app/TripGroupDelegate.qml:133
+#: app/TripGroupDelegate.qml:139
 #, kde-format
 msgid "Currency: %2"
 msgid_plural "Currencies: %2"
 msgstr[0] "Valuto: %2"
 msgstr[1] "Valutoj: %2"
 
-#: app/TripGroupDelegate.qml:164
+#: app/TripGroupDelegate.qml:170
 #, kde-format
 msgid "Delete trip"
 msgstr "Forigi vojaĝon"
