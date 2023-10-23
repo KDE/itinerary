@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
 "PO-Revision-Date: 2019-01-23 21:00-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1664,12 +1664,12 @@ msgstr ""
 msgid "Check-out time"
 msgstr ""
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr ""
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr ""
@@ -1692,58 +1692,73 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr ""
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
+#, kde-format
+msgid "Edit with iD"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr ""
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr ""
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr ""
 
-#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
 msgstr ""
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr ""
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr ""
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr ""
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr ""
 
-#: app/IndoorMapPage.qml:275
+#: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
 msgstr ""
 
-#: app/IndoorMapPage.qml:322
+#: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr ""
 
-#: app/IndoorMapPage.qml:330
+#: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2940,6 +2955,21 @@ msgstr ""
 #: app/SettingsPage.qml:299
 #, kde-format
 msgid "Log in"
+msgstr ""
+
+#: app/SettingsPage.qml:306
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:311
+#, kde-format
+msgid "Enables OSM editing options."
 msgstr ""
 
 #: app/statisticsmodel.cpp:91

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
 "PO-Revision-Date: 2023-10-21 07:13+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1684,12 +1684,12 @@ msgstr "ჩეკინის დრო"
 msgid "Check-out time"
 msgstr "გამოსვლის დრო"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "იპოვეთ კომფორტი"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "გეითი პოვნა"
@@ -1712,58 +1712,74 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (დაჯდომა)"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
+msgid "Edit with iD"
+msgstr "ნავით მოგზაურობის ჩასწორება"
+
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "სართული %1"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "გადიდება"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "დაპატარავება"
 
-#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
 msgstr "პლატფორმის მოძებნა"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "ლიფტის სტატუსის ჩვენება"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "საქირავებელი მანქანების ჩვენება"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "რუკის გახსნა"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Wheelmap.org-ის გახსნა"
 
-#: app/IndoorMapPage.qml:275
+#: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "გადავერთე სართულზე %1"
 
-#: app/IndoorMapPage.qml:322
+#: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "სართულით დაბლა"
 
-#: app/IndoorMapPage.qml:330
+#: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2982,6 +2998,21 @@ msgstr "გასვლა"
 #, kde-format
 msgid "Log in"
 msgstr "შესვლა"
+
+#: app/SettingsPage.qml:306
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:311
+#, kde-format
+msgid "Enables OSM editing options."
+msgstr ""
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

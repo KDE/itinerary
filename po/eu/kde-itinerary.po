@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
-"PO-Revision-Date: 2023-10-13 00:56+0200\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"PO-Revision-Date: 2023-10-22 14:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -163,10 +163,9 @@ msgid "Send to %1"
 msgstr "Bidali %1(e)ra"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Inportatu erreserba"
+msgstr "Esportatu erreserba"
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -330,10 +329,9 @@ msgid "Trip sent."
 msgstr "Txangoa bidali da."
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Erreserba"
+msgstr "Erreserba bidalita."
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -481,17 +479,15 @@ msgid "Reference"
 msgstr "Erreferentzia"
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "Inportatu arbeletik"
+msgstr "Kopiatu arbelera"
 
 #: app/BookingCard.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Booking reference copied to clipboard"
-msgstr "Erreserbaren erreferentzia"
+msgstr "Erreserbaren erreferentzia arbelera kopiatu da"
 
 #: app/BookingCard.qml:53 app/BookingEditorCard.qml:52
 #, kde-format
@@ -504,14 +500,12 @@ msgid "Ticket number:"
 msgstr "Txartel zenbakia:"
 
 #: app/BookingCard.qml:72
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Ticket number copied to clipboard"
-msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
+msgstr "Txartel zenbakia arbelera kopiatu da"
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Erreserba"
@@ -552,8 +546,7 @@ msgid "Change arrival stop"
 msgstr "Aldatu iritsiera geldialdia"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Autobusa"
@@ -731,8 +724,7 @@ msgid "Brand"
 msgstr "Marka"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "Kontaktua"
@@ -951,8 +943,7 @@ msgid "Number:"
 msgstr "Zenbakia:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "Mota:"
@@ -1287,8 +1278,7 @@ msgid "(was: %1)"
 msgstr "(zen: %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "Salneurria"
@@ -1642,11 +1632,10 @@ msgid "Hotel"
 msgstr "Hotela"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "Gehitu ostatua..."
+msgstr "Ostatua"
 
 #: app/HotelEditor.qml:57
 #, kde-format
@@ -1696,12 +1685,12 @@ msgstr "Izen-emateko ordua"
 msgid "Check-out time"
 msgstr "Ordaindu eta irteteko ordua"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "Bilatu zerbitzua"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "Bilatu atea"
@@ -1724,58 +1713,74 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (iritsiera)"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
+msgid "Edit with iD"
+msgstr "Editatu itsasontzi txangoa"
+
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "%1. solairua"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "Zooma gerturatu"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "Zooma urrundu"
 
-#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
 msgstr "Bilatu nasa"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Erakutsi igogailuaren egoera"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Erakutsi alokairuko ibilgailuak"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "Ireki mapa"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Ireki wheelmap.org"
 
-#: app/IndoorMapPage.qml:275
+#: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "%1. solairura aldatu da"
 
-#: app/IndoorMapPage.qml:322
+#: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Solairua gora"
 
-#: app/IndoorMapPage.qml:330
+#: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2701,8 +2706,7 @@ msgid "Documents and Tickets"
 msgstr "Dokumentuak eta txartelak"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Editatu jatetxea"
@@ -2719,8 +2723,7 @@ msgid "Name"
 msgstr "Izena"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Erreserba"
@@ -2731,11 +2734,10 @@ msgid "Restaurant Reservation"
 msgstr "Jatetxe erreserba"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Bidaiaren xehetasunak"
+msgstr "Xehetasunak"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
@@ -2996,6 +2998,21 @@ msgstr "Itxi saioa"
 #, kde-format
 msgid "Log in"
 msgstr "Hasi saioa"
+
+#: app/SettingsPage.qml:306
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:311
+#, kde-format
+msgid "Enables OSM editing options."
+msgstr ""
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
-"PO-Revision-Date: 2023-10-21 12:55+0200\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"PO-Revision-Date: 2023-10-21 20:20+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -508,8 +508,7 @@ msgid "Ticket number copied to clipboard"
 msgstr "Numéro de billet copié vers le presse-papier"
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Réservations"
@@ -550,8 +549,7 @@ msgid "Change arrival stop"
 msgstr "Modifier le point d'arrivée"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Bus"
@@ -729,8 +727,7 @@ msgid "Brand"
 msgstr "Marque"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "Contact"
@@ -1291,8 +1288,7 @@ msgid "(was: %1)"
 msgstr "(était : %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "Coût"
@@ -1705,12 +1701,12 @@ msgstr "Heure d'enregistrement"
 msgid "Check-out time"
 msgstr "Heure de libération de la chambre"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "Trouver un hébergement"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "Trouver une porte"
@@ -1733,58 +1729,74 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (Arrivée)"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
+msgid "Edit with iD"
+msgstr "Modifier un trajet en bateau"
+
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "Plancher %1"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "Zoom avant"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "Zoom arrière"
 
-#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
 msgstr "Trouver un quai"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Afficher l'état de l'ascenseur"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Afficher les véhicules de location"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "Ouvrir une carte"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Ouvrir wheelmap.org"
 
-#: app/IndoorMapPage.qml:275
+#: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Transféré vers l'étage %1"
 
-#: app/IndoorMapPage.qml:322
+#: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Étage inférieur"
 
-#: app/IndoorMapPage.qml:330
+#: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2715,8 +2727,7 @@ msgid "Documents and Tickets"
 msgstr "Documents et tickets"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Modifier le restaurant"
@@ -2733,8 +2744,7 @@ msgid "Name"
 msgstr "Nom"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Réservation"
@@ -2745,11 +2755,10 @@ msgid "Restaurant Reservation"
 msgstr "Réservation au restaurant"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Détails de l'itinéraire"
+msgstr "Détails"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
@@ -3023,6 +3032,21 @@ msgstr "Se déconnecter"
 #, kde-format
 msgid "Log in"
 msgstr "Se connecter"
+
+#: app/SettingsPage.qml:306
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:311
+#, kde-format
+msgid "Enables OSM editing options."
+msgstr ""
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-22 02:05+0000\n"
-"PO-Revision-Date: 2023-10-21 07:44+0100\n"
+"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"PO-Revision-Date: 2023-10-22 07:38+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -158,10 +158,9 @@ msgid "Send to %1"
 msgstr "Sendi al %1"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Importo Rezervado"
+msgstr "Eksporti Rezervadon"
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -322,14 +321,12 @@ msgstr "Eksporto finiĝis."
 #: app/applicationcontroller.cpp:610
 #, kde-format
 msgid "Trip sent."
-msgstr "Vojaĝo sendita."
+msgstr "Vojaĝo sendiĝis."
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Rezervado"
+msgstr "Rezervado sendiĝis."
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -941,8 +938,7 @@ msgid "Number:"
 msgstr "Nombro:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "Tipo:"
@@ -1630,9 +1626,7 @@ msgid "Hotel"
 msgstr "Hotelo"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Accomodation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "Loĝejo"
@@ -1685,12 +1679,12 @@ msgstr "Enregistriĝotempo"
 msgid "Check-out time"
 msgstr "Tempo de eliro"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:88
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
 msgstr "Trovi Agrablecon"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:81
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
 msgstr "Trovi Pordegon"
@@ -1713,58 +1707,74 @@ msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (alveno)"
 
-#: app/IndoorMapPage.qml:25
+#: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
+#, fuzzy, kde-format
+#| msgid "Edit Boat Trip"
+msgid "Edit with iD"
+msgstr "Redakti Boatvojaĝon"
+
+#: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
 #, kde-format
 msgid "Floor %1"
 msgstr "Etaĝo %1"
 
-#: app/IndoorMapPage.qml:59
+#: app/IndoorMapPage.qml:60
 #, kde-format
 msgid "Zoom In"
 msgstr "Zoom En"
 
-#: app/IndoorMapPage.qml:66
+#: app/IndoorMapPage.qml:67
 #, kde-format
 msgid "Zoom Out"
 msgstr "Malzomi"
 
-#: app/IndoorMapPage.qml:74 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
 msgstr "Trovi Platformon"
 
-#: app/IndoorMapPage.qml:94
+#: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
 msgstr "Montri Staton de Lifto"
 
-#: app/IndoorMapPage.qml:103
+#: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
 msgstr "Montri Luo-Veturilojn"
 
-#: app/IndoorMapPage.qml:111
+#: app/IndoorMapPage.qml:112
 #, kde-format
 msgid "Open Map"
 msgstr "Malfermi Mapon"
 
-#: app/IndoorMapPage.qml:117
+#: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
 msgstr "Malfermi wheelmap.org"
 
-#: app/IndoorMapPage.qml:275
+#: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
 msgstr "Ŝanĝis al etaĝo %1"
 
-#: app/IndoorMapPage.qml:322
+#: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
 msgstr "Planko malsupren"
 
-#: app/IndoorMapPage.qml:330
+#: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
@@ -2979,6 +2989,21 @@ msgstr "Elsaluti"
 #, kde-format
 msgid "Log in"
 msgstr "Ensaluti"
+
+#: app/SettingsPage.qml:306
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:311
+#, kde-format
+msgid "Enables OSM editing options."
+msgstr ""
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
