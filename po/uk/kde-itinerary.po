@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-05 02:26+0000\n"
-"PO-Revision-Date: 2023-08-17 09:04+0300\n"
+"PO-Revision-Date: 2023-10-22 15:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -135,7 +135,7 @@ msgstr "Вилучити"
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
-msgstr "Скасувати бронювання"
+msgstr "Скасувати резервування"
 
 #: app/ActionsCard.qml:84
 #, kde-format
@@ -150,12 +150,12 @@ msgstr "Отримати"
 #: app/ActionsCard.qml:86
 #, kde-format
 msgid "Change Reservation"
-msgstr "Змінити бронювання"
+msgstr "Змінити резервування"
 
 #: app/ActionsCard.qml:87
 #, kde-format
 msgid "View Reservation"
-msgstr "Переглянути бронювання"
+msgstr "Переглянути резервування"
 
 #: app/ActionsCard.qml:133
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "Замінити подорож"
 msgid ""
 "Do you really want to replace your existing reservation with the newly "
 "selected journey?"
-msgstr "Ви справді хочете замінити ваше наявне бронювання на нове?"
+msgstr "Ви справді хочете замінити ваше наявне резервування на нове?"
 
 #: app/AlternativeJourneyPage.qml:136
 #, kde-format
@@ -252,10 +252,10 @@ msgstr "Не вдалося імпортувати: надто великий ф
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
-msgstr[0] "Імпортовано %1 бронювання"
-msgstr[1] "Імпортовано %1 бронювання"
-msgstr[2] "Імпортовано %1 бронювань"
-msgstr[3] "Імпортовано одне бронювання"
+msgstr[0] "Імпортовано %1 резервування"
+msgstr[1] "Імпортовано %1 резервування"
+msgstr[2] "Імпортовано %1 резервувань"
+msgstr[3] "Імпортовано одне резервування"
 
 #: app/applicationcontroller.cpp:435
 #, kde-format
@@ -428,7 +428,7 @@ msgstr "Номер квитка:"
 #: app/BusEditor.qml:18
 #, kde-format
 msgid "Edit Bus Reservation"
-msgstr "Редагування бронювання місця в автобусі"
+msgstr "Редагування резервування місця в автобусі"
 
 #: app/BusEditor.qml:47 app/TrainEditor.qml:50
 #, kde-format
@@ -719,7 +719,7 @@ msgstr "Документи"
 #: app/DocumentsCard.qml:111
 #, kde-format
 msgid "No documents attached to this reservation."
-msgstr "До цього бронювання не долучено жодних документів."
+msgstr "До цього резервування не долучено жодних документів."
 
 #: app/DocumentsCard.qml:119
 #, kde-format
@@ -1451,7 +1451,7 @@ msgstr "Час перевірки на виході: %1"
 #: app/HotelEditor.qml:18
 #, kde-format
 msgid "Edit Hotel Reservation"
-msgstr "Редагування бронювання готелю"
+msgstr "Редагування резервування готелю"
 
 #: app/HotelEditor.qml:49
 #, kde-format
@@ -1479,7 +1479,7 @@ msgstr "Контроль на виході"
 #: app/HotelPage.qml:16
 #, kde-format
 msgid "Hotel Reservation"
-msgstr "Бронювання готелю"
+msgstr "Резервування готелю"
 
 #: app/HotelPage.qml:69
 #, kde-format
@@ -2054,7 +2054,7 @@ msgstr "Інтернет-квиток SNCF…"
 #: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
-msgstr "Імпортувати бронювання"
+msgstr "Імпортувати резервування"
 
 #: app/main.qml:124
 #, kde-format
@@ -2466,7 +2466,7 @@ msgstr "Бронювання"
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
-msgstr "Бронювання ресторану"
+msgstr "Резервування ресторану"
 
 #: app/RestaurantPage.qml:63
 #, kde-format
@@ -2977,7 +2977,7 @@ msgstr "Прибуття – %1"
 #: app/TrainEditor.qml:19
 #, kde-format
 msgid "Edit Train Reservation"
-msgstr "Змінити бронювання квитків на потяг"
+msgstr "Змінити резервування квитків на потяг"
 
 #: app/TrainEditor.qml:53
 #, kde-format
