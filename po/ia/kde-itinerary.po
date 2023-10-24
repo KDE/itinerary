@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-22 17:19+0200\n"
+"PO-Revision-Date: 2023-10-23 08:36+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -383,7 +383,7 @@ msgstr "Tempore de arrivata: %1"
 #: app/BoatEditor.qml:18
 #, kde-format
 msgid "Edit Boat Trip"
-msgstr "Mofiidca Viage de barca"
+msgstr "Modifica Viage de barca"
 
 #: app/BoatEditor.qml:51 app/BoatPage.qml:29 app/StatisticsPage.qml:134
 #, kde-format
@@ -1709,20 +1709,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (Arrivata)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Mofiidca Viage de barca"
+msgstr "Modifica con ID"
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Modifica con JOSM"
 
 #: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Modifica con Vespucci"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -2998,17 +2997,17 @@ msgstr "Accede"
 #: app/SettingsPage.qml:306
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Contribuer"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "Io contribue a OpenStreetMap"
 
 #: app/SettingsPage.qml:311
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "Habilita optiones de mofificar de OSM"
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

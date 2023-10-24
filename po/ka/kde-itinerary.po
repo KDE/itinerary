@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-21 07:13+0200\n"
+"PO-Revision-Date: 2023-10-23 06:25+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -158,10 +158,9 @@ msgid "Send to %1"
 msgstr "%1-სთან გაგზავნა"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "ჯავშნის შემოტანა"
+msgstr "ჯავშნის გატანა"
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -178,7 +177,7 @@ msgstr "ქმედებები"
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
-msgstr "რეზერვაციის გაუქმება"
+msgstr "ჯავშნის გაუქმება"
 
 #: app/ActionsCard.qml:193
 #, kde-format
@@ -279,8 +278,8 @@ msgstr "შემოტანის შეცდომა: ფაილი ძ�
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
-msgstr[0] "შემოტანილია 1 რეზერვაცია."
-msgstr[1] "შემოტანილია %1 რეზერვაცია."
+msgstr[0] "შემოტანილია 1 ჯავშანი."
+msgstr[1] "შემოტანილია %1 ჯავშანი."
 
 #: app/applicationcontroller.cpp:438
 #, kde-format
@@ -323,11 +322,9 @@ msgid "Trip sent."
 msgstr "მოგზაურობა გაგზავნილია."
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "რეზერვაცია"
+msgstr "ჯავშანი გაგზავნილია."
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -817,7 +814,7 @@ msgstr "დოკუმენტები"
 #: app/DocumentsCard.qml:109
 #, kde-format
 msgid "No documents attached to this reservation."
-msgstr "ამ რეზერვაციას დოკუმენტები მიმაგრებული არ აქვს."
+msgstr "ამ ჯავშანს დოკუმენტები მიმაგრებული არ აქვს."
 
 #: app/DocumentsCard.qml:117
 #, kde-format
@@ -939,8 +936,7 @@ msgid "Number:"
 msgstr "ნომერი:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "ტიპი:"
@@ -1629,9 +1625,7 @@ msgid "Hotel"
 msgstr "სასტუმრო"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Accomodation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
 msgstr "აკომოდაცია"
@@ -1713,20 +1707,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (დაჯდომა)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "ნავით მოგზაურობის ჩასწორება"
+msgstr "ჩასწორება ID-ით"
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "JOSM-ით ჩასწორება"
 
 #: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Vespucci-ით ჩასწორება"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -2726,7 +2719,7 @@ msgstr "სახელი"
 #, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
-msgstr "რეზერვაცია"
+msgstr "ჯავშანი"
 
 #: app/RestaurantPage.qml:17
 #, kde-format
@@ -3002,17 +2995,17 @@ msgstr "შესვლა"
 #: app/SettingsPage.qml:306
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "წვლილი შეიტანა"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "მე შემაქვს წვლილი OpenStreetMap-ზე"
 
 #: app/SettingsPage.qml:311
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "OSM-ის ჩასწორების პარამეტრების ჩართვა."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-22 15:44+0300\n"
+"PO-Revision-Date: 2023-10-23 16:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1718,20 +1718,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (прибуття)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Редагувати подорожі човном"
+msgstr "Редагувати за допомогою iD"
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Редагувати за допомогою JOSM"
 
 #: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Редагувати за допомогою Vespucci"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -3016,17 +3015,17 @@ msgstr "Увійти"
 #: app/SettingsPage.qml:306
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Участь"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "Я беру участь у проєкті OpenStreetMap"
 
 #: app/SettingsPage.qml:311
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "Вмикає можливості редагування OSM."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format

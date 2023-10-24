@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-09-30 18:23+0200\n"
+"PO-Revision-Date: 2023-10-23 14:16+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -158,10 +158,9 @@ msgid "Send to %1"
 msgstr "Invia a %1"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Importa prenotazione"
+msgstr "Esporta prenotazione"
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -325,10 +324,9 @@ msgid "Trip sent."
 msgstr "Viaggio inviato."
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Prenotazione"
+msgstr "Prenotazione inviata."
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -476,17 +474,15 @@ msgid "Reference"
 msgstr "Riferimento"
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "Importa dagli appunti"
+msgstr "Copia negli appunti"
 
 #: app/BookingCard.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Booking reference copied to clipboard"
-msgstr "Riferimento della prenotazione"
+msgstr "Riferimento della prenotazione copiato negli appunti"
 
 #: app/BookingCard.qml:53 app/BookingEditorCard.qml:52
 #, kde-format
@@ -499,14 +495,12 @@ msgid "Ticket number:"
 msgstr "Numero del biglietto:"
 
 #: app/BookingCard.qml:72
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Ticket number copied to clipboard"
-msgstr "Capacità dell'estrattore copiate negli appunti"
+msgstr "Numero del biglietto copiato negli appunti"
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Prenotazione"
@@ -547,8 +541,7 @@ msgid "Change arrival stop"
 msgstr "Cambia la fermata di arrivo"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Autobus"
@@ -726,8 +719,7 @@ msgid "Brand"
 msgstr "Marca"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "Contatto"
@@ -946,8 +938,7 @@ msgid "Number:"
 msgstr "Numero:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "Tipo:"
@@ -1282,8 +1273,7 @@ msgid "(was: %1)"
 msgstr "(era: %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "Prezzo"
@@ -1637,11 +1627,10 @@ msgid "Hotel"
 msgstr "Albergo, hotel"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "Aggiungi alloggio..."
+msgstr "Alloggio"
 
 #: app/HotelEditor.qml:57
 #, kde-format
@@ -1720,20 +1709,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (arrivo)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Modifica viaggio in nave"
+msgstr "Modifica con ID"
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Modifica con JOSM"
 
 #: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Modifica con Vespucci"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -1882,15 +1870,13 @@ msgid "To:"
 msgstr "A:"
 
 #: app/JourneyRequestPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Partenza"
 
 #: app/JourneyRequestPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Arrivo"
@@ -2715,8 +2701,7 @@ msgid "Documents and Tickets"
 msgstr "Documenti e biglietti"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Modifica ristorante"
@@ -2733,8 +2718,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Prenotazione"
@@ -2745,11 +2729,10 @@ msgid "Restaurant Reservation"
 msgstr "Prenotazione ristorante"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Dettagli di viaggio"
+msgstr "Dettagli"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
@@ -2914,15 +2897,14 @@ msgid "Request permissions..."
 msgstr "Richiedi i permessi..."
 
 #: app/SettingsPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Sono necessari permessi aggiuntivi per accedere allo stato del Wi-Fi."
+msgstr "Per mostrare le notifiche sono necessari permessi aggiuntivi."
 
 #: app/SettingsPage.qml:186
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "Sono disponibili i permessi di notifica"
 
 #: app/SettingsPage.qml:187 app/SettingsPage.qml:229
 #, kde-format
@@ -3020,17 +3002,17 @@ msgstr "Accedi"
 #: app/SettingsPage.qml:306
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Contribuire"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "Contribuisco a OpenStreetMap"
 
 #: app/SettingsPage.qml:311
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "Abilita le opzioni di modifica OSM."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
