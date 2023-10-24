@@ -38,11 +38,12 @@ Rectangle {
             rows: 2
             columns: pass.headerFields.length + 2
             Layout.fillWidth: true
+            Layout.maximumWidth: root.implicitWidth - 2 * topLayout.anchors.margins
 
             Image {
                 Layout.rowSpan: 2
-                Layout.maximumHeight: 60
-                Layout.maximumWidth: 150
+                Layout.maximumHeight: 50
+                Layout.maximumWidth: 160
                 Layout.preferredWidth: paintedWidth
                 fillMode: Image.PreserveAspectFit
                 source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/logo" : ""
@@ -61,6 +62,8 @@ Rectangle {
                 delegate: QQC2.Label {
                     text: modelData.label
                     color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                    elide: Text.ElideRight
+                    Layout.fillWidth: true
                 }
             }
             Repeater {
@@ -68,6 +71,8 @@ Rectangle {
                 delegate: QQC2.Label {
                     text: modelData.valueDisplayString
                     color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                    elide: Text.ElideRight
+                    Layout.fillWidth: true
                 }
             }
         }
