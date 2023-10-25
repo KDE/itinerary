@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020, 2021, 2022, 2023.
-# Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-23 01:40+0000\n"
-"PO-Revision-Date: 2023-10-20 09:22+0200\n"
+"PO-Revision-Date: 2023-10-23 10:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -161,10 +161,9 @@ msgid "Send to %1"
 msgstr "Envia a %1"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Importa la reserva"
+msgstr "Exporta la reserva"
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -326,10 +325,9 @@ msgid "Trip sent."
 msgstr "S'ha enviat el viatge."
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Reserva"
+msgstr "La reserva s'ha enviat."
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -503,8 +501,7 @@ msgid "Ticket number copied to clipboard"
 msgstr "El número de tiquet s'ha copiat a dins del porta-retalls"
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Reserva"
@@ -545,8 +542,7 @@ msgid "Change arrival stop"
 msgstr "Canvia la parada d'arribada"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Autobús"
@@ -725,8 +721,7 @@ msgid "Brand"
 msgstr "Marca"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "Contacte"
@@ -945,8 +940,7 @@ msgid "Number:"
 msgstr "Número:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "Tipus:"
@@ -1281,8 +1275,7 @@ msgid "(was: %1)"
 msgstr "(era: %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "Preu"
@@ -1636,11 +1629,10 @@ msgid "Hotel"
 msgstr "Hotel"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "Afig un allotjament..."
+msgstr "Allotjament"
 
 #: app/HotelEditor.qml:57
 #, kde-format
@@ -1719,20 +1711,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (arribada)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Edició de viatge amb vaixell"
+msgstr "Edita amb iD"
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Edita amb JOSM"
 
 #: app/IndoorMapInfoSheet.qml:141 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Edita amb Vespucci"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -2715,8 +2706,7 @@ msgid "Documents and Tickets"
 msgstr "Documents i bitllets"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Edita el restaurant"
@@ -2733,8 +2723,7 @@ msgid "Name"
 msgstr "Nom"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Reserva"
@@ -2745,11 +2734,10 @@ msgid "Restaurant Reservation"
 msgstr "Reserva de restaurant"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Detalls del viatge"
+msgstr "Detalls"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
@@ -3021,17 +3009,17 @@ msgstr "Inici de sessió"
 #: app/SettingsPage.qml:306
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Col·laboració"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "Jo contribuïsc a OpenStreetMap"
 
 #: app/SettingsPage.qml:311
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "Activa les opcions d'edició d'OSM."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
