@@ -155,10 +155,9 @@ msgid "Send to %1"
 msgstr "Poslat: %1"
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Importovat rezervaci"
+msgstr ""
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -322,10 +321,9 @@ msgid "Trip sent."
 msgstr ""
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Rezervace"
+msgstr ""
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -473,11 +471,10 @@ msgid "Reference"
 msgstr "Odkaz"
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "Importovat ze schránky"
+msgstr ""
 
 #: app/BookingCard.qml:40
 #, kde-format
@@ -500,11 +497,10 @@ msgid "Ticket number copied to clipboard"
 msgstr ""
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
-msgstr "Rezervace"
+msgstr ""
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
 #, kde-format
@@ -542,11 +538,10 @@ msgid "Change arrival stop"
 msgstr "Změnit příchozí zastávku"
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
-msgstr "Autobus"
+msgstr ""
 
 #: app/BusEditor.qml:89
 #, kde-format
@@ -722,11 +717,10 @@ msgid "Brand"
 msgstr "Značka"
 
 #: app/ContactCard.qml:23 app/ContactEditorCard.qml:28
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
-msgstr "Kontakt"
+msgstr ""
 
 #: app/ContactCard.qml:28 app/ContactEditorCard.qml:34
 #, kde-format
@@ -943,11 +937,10 @@ msgid "Number:"
 msgstr "Číslo:"
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
-msgstr "Typ:"
+msgstr ""
 
 #: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
 #: app/SettingsPage.qml:35
@@ -1279,11 +1272,10 @@ msgid "(was: %1)"
 msgstr "(bylo: %1)"
 
 #: app/FormPriceDelegate.qml:20
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
-msgstr "Cena"
+msgstr ""
 
 #: app/FormPriceDelegate.qml:31
 #, kde-format
@@ -1630,11 +1622,10 @@ msgid "Hotel"
 msgstr "Hotel"
 
 #: app/HotelEditor.qml:51
-#, fuzzy, kde-format
-#| msgid "Actions"
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "Činnosti"
+msgstr ""
 
 # Tohle vypadá na název vlastnosti. Jméno bycvh nechal pro lidi a zvířata.
 #: app/HotelEditor.qml:57
@@ -1714,10 +1705,9 @@ msgid "%1 (arrival)"
 msgstr "%1 (přílet)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Flight"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Upravit let"
+msgstr ""
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
@@ -2706,11 +2696,10 @@ msgid "Documents and Tickets"
 msgstr "Dokumenty a letenky"
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
-msgstr "Upravit restauraci"
+msgstr ""
 
 #: app/RestaurantEditor.qml:46
 #, kde-format
@@ -2725,11 +2714,10 @@ msgid "Name"
 msgstr "Název"
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
-msgstr "Rezervace"
+msgstr ""
 
 #: app/RestaurantPage.qml:17
 #, kde-format
@@ -2737,11 +2725,10 @@ msgid "Restaurant Reservation"
 msgstr "Rezervace restaurace: "
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Podrobnosti výletu"
+msgstr "Podrobnosti"
 
 #: app/RestaurantPage.qml:42
 #, kde-format
