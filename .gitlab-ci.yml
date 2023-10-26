@@ -24,7 +24,7 @@ signapk:
     KDECI_CRAFT_SIGNAPK_CONFIG: $CI_PROJECT_DIR/ci-utilities/signing/signapk.ini
   interruptible: true
   needs:
-    - craft_android_arm64
+    - craft_android_qt515_arm64
   before_script:
     - git clone --depth=1 https://invent.kde.org/sysadmin/ci-utilities.git --branch=work/kloecker/signing-configs
     - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=master
