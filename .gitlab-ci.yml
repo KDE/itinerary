@@ -27,7 +27,7 @@ signapk:
     - craft_android_qt515_arm64
   before_script:
     - git clone --depth=1 https://invent.kde.org/sysadmin/ci-utilities.git --branch=work/kloecker/signing-configs
-    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=master
+    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=work/kloecker/disable-check-in-signapk-for-test-run
     # - cd ci-notary-service
     # - git checkout work/fdroid-publisher
     # - python3 -m venv .venv
