@@ -10,9 +10,7 @@ include:
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android-qt6.yml
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/reuse-lint.yml
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/flatpak.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-arm32.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-arm64.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-x86-64.yml
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-apks.yml
 
 signapk:
   stage: deploy
@@ -27,8 +25,8 @@ signapk:
   needs:
     - craft_android_arm64
   before_script:
-    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-utilities --branch=work/kloecker/signing-configs
-    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=work/kloecker/signapk-check-signing-allowed
+    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-utilities.git --branch=work/kloecker/signing-configs
+    - git clone --depth=1 https://invent.kde.org/sysadmin/ci-notary-service.git --branch=master
     # - cd ci-notary-service
     # - git checkout work/fdroid-publisher
     # - python3 -m venv .venv
