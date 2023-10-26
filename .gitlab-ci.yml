@@ -10,7 +10,8 @@ include:
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android-qt6.yml
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/reuse-lint.yml
   # - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/flatpak.yml
-  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/craft-android-apks.yml
+  - project: sysadmin/ci-utilities
+    file: /gitlab-templates/craft-android-apks.yml
 
 signapk:
   stage: deploy
