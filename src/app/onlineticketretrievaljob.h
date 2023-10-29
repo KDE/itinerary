@@ -8,6 +8,7 @@
 
 #include <QObject>
 
+class QIODevice;
 class QNetworkAccessManager;
 class QNetworkReply;
 
@@ -24,8 +25,8 @@ public:
     ~OnlineTicketRetrievalJob();
 
     /** Retrieved ticket(s), e.g. as KItinerary::TrainReservation instances. */
-    QVector<QVariant> result() const;
-    QString errorMessage() const;
+    [[nodiscard]] QVector<QVariant> result() const;
+    [[nodiscard]] QString errorMessage() const;
 
 Q_SIGNALS:
     /** Emitted when the job finished, regardless of success.
@@ -34,10 +35,15 @@ Q_SIGNALS:
     void finished();
 
 private:
+    void dbRequestFindOrder(const QVariantMap &arguments);
+    static QString dbParseKwid(QIODevice *io);
+    void dbRequestOrderDetails(const QVariantMap &arguments);
+
     void handleReply(QNetworkReply *reply);
 
     QVector<QVariant> m_result;
     QString m_errorMsg;
+    QNetworkAccessManager *m_nam;
 };
 
 #endif // ONLINETICKETRETRIEVALJOB_H

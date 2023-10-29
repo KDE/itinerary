@@ -55,7 +55,7 @@ private Q_SLOTS:
 
         QCOMPARE(m_nam.requests.size(), 1);
         QCOMPARE(m_nam.requests[0].op, QNetworkAccessManager::PostOperation);
-        QCOMPARE(m_nam.requests[0].data, QByteArray("<rqorderdetails version=\"1.0\"><rqheader v=\"19120000\" os=\"KCI\" app=\"KCI-Webservice\"/><rqorder on=\"ABC123\"/><authname tln=\"KONQI\"/></rqorderdetails>"));
+        QCOMPARE(m_nam.requests[0].data, QByteArray("<rqorderdetails version=\"1.0\"><rqheader v=\"23040000\" os=\"KCI\" app=\"KCI-Webservice\"/><rqorder on=\"ABC123\"/><authname tln=\"KONQI\"/></rqorderdetails>"));
     }
 
     void testActivityPubDownload()
