@@ -16,13 +16,11 @@ FormCard.FormCardPage {
     id: root
     title: i18n("Import Online Ticket")
 
-    // TODO instead of a fixed dialog we will likely need per-source UI here
-    // e.g. by loading corresponding QML into this page dynamically
     property string source
 
     function search() {
         searchButton.description = '';
-        importer.search(root.source, {name: nameInput.text, reference: bookingReferenceInput.text});
+        importer.search(root.source, vendorInputForm.item.arguments);
     }
 
     data: OnlineTicketImporter {
@@ -42,24 +40,14 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
-        FormCard.FormTextFieldDelegate {
-            id: nameInput
-            label: i18n("Family name")
-            // TODO can we prefill this with the user name
-            text: Settings.read("OnlineImport/Name", "")
+        Loader {
+            id: vendorInputForm
+            Layout.fillWidth: true
+            source: root.source !== "" ? Qt.resolvedUrl("onlineimport/" + root.source + ".qml") : null
             enabled: !importer.searching
-            onEditingFinished: Settings.write("OnlineImport/Name", nameInput.text)
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextFieldDelegate {
-            id: bookingReferenceInput
-            label: i18n("Booking reference")
-            placeholderText: "ABC123"
-            enabled: !importer.searching
-            onAccepted: {
-                root.search();
+            Connections {
+                target: vendorInputForm.item
+                function onSearch() { root.search(); }
             }
         }
 
@@ -69,18 +57,8 @@ FormCard.FormCardPage {
             id: searchButton
             text: i18n("Search...")
             icon.name: importer.searching ? "view-refresh" : "search"
-            enabled: nameInput.text !== "" && bookingReferenceInput.text.length == 6 && !importer.searching
-            onClicked: {
-                root.search();
-            }
-        }
-    }
-
-    Component.onCompleted: {
-        if (nameInput.text === "") {
-            nameInput.forceActiveFocus();
-        } else {
-            bookingReferenceInput.forceActiveFocus();
+            enabled: !importer.searching && vendorInputForm.item.arguments !== undefined
+            onClicked: root.search()
         }
     }
 }

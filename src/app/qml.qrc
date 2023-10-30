@@ -122,6 +122,9 @@
         <file>WeatherForecastPage.qml</file>
         <file>WelcomePage.qml</file>
 
+        <file>onlineimport/db.qml</file>
+        <file>onlineimport/sncf.qml</file>
+
         <file>images/bike.svg</file>
         <file>images/bus.svg</file>
         <file>images/cablecar.svg</file>
