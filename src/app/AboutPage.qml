@@ -131,7 +131,7 @@ FormCard.AboutPage {
         }
     }
 
-    readonly property Component licenseDelegate: FormCard.AbstractFormDelegate {
+    property Component licenseDelegate: FormCard.AbstractFormDelegate {
         visible: !model.platform || model.platform == Qt.platform.os
         background: null
 
@@ -165,7 +165,7 @@ FormCard.AboutPage {
         }
     }
 
-    readonly property Component transportDataDelegate: FormCard.AbstractFormDelegate {
+    property Component transportDataDelegate: FormCard.AbstractFormDelegate {
         background: null
         contentItem: ColumnLayout {
             QQC2.Label {
