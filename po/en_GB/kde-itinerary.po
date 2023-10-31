@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"POT-Creation-Date: 2023-10-31 01:39+0000\n"
 "PO-Revision-Date: 2023-06-17 12:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2504,37 +2504,48 @@ msgstr "New departure platform is: %1"
 msgid "New arrival platform is: %1"
 msgstr "New arrival platform is: %1"
 
+#: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
+#, kde-format
+msgid "Family name"
+msgstr "Family name"
+
+#: app/onlineimport/db.qml:33
+#, kde-format
+msgid "Name is case-sensitive."
+msgstr ""
+
+#: app/onlineimport/db.qml:40
+#, fuzzy, kde-format
+#| msgid "Booking reference"
+msgid "Order number or booking reference"
+msgstr "Booking reference"
+
+#: app/onlineimport/sncf.qml:38
+#, kde-format
+msgid "Booking reference"
+msgstr "Booking reference"
+
 #: app/OnlineImportPage.qml:17
 #, kde-format
 msgid "Import Online Ticket"
 msgstr "Import Online Ticket"
 
-#: app/OnlineImportPage.qml:32
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "Ticket imported"
 msgstr "Ticket imported"
 
-#: app/OnlineImportPage.qml:36
+#: app/OnlineImportPage.qml:34
 #, kde-format
 msgid "No ticket found"
 msgstr "No ticket found"
 
-#: app/OnlineImportPage.qml:41
+#: app/OnlineImportPage.qml:39
 #, kde-format
 msgid "Online Ticket"
 msgstr "Online Ticket"
 
-#: app/OnlineImportPage.qml:47
-#, kde-format
-msgid "Family name"
-msgstr "Family name"
-
 #: app/OnlineImportPage.qml:58
-#, kde-format
-msgid "Booking reference"
-msgstr "Booking reference"
-
-#: app/OnlineImportPage.qml:70
 #, kde-format
 msgid "Search..."
 msgstr "Search..."

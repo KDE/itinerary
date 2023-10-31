@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"POT-Creation-Date: 2023-10-31 01:39+0000\n"
 "PO-Revision-Date: 2023-10-21 13:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2450,37 +2450,47 @@ msgstr "新的出发站台：%1"
 msgid "New arrival platform is: %1"
 msgstr "新的到达站台：%1"
 
+#: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
+#, kde-format
+msgid "Family name"
+msgstr ""
+
+#: app/onlineimport/db.qml:33
+#, kde-format
+msgid "Name is case-sensitive."
+msgstr ""
+
+#: app/onlineimport/db.qml:40
+#, kde-format
+msgid "Order number or booking reference"
+msgstr ""
+
+#: app/onlineimport/sncf.qml:38
+#, kde-format
+msgid "Booking reference"
+msgstr ""
+
 #: app/OnlineImportPage.qml:17
 #, kde-format
 msgid "Import Online Ticket"
 msgstr ""
 
-#: app/OnlineImportPage.qml:32
+#: app/OnlineImportPage.qml:30
 #, kde-format
 msgid "Ticket imported"
 msgstr ""
 
-#: app/OnlineImportPage.qml:36
+#: app/OnlineImportPage.qml:34
 #, kde-format
 msgid "No ticket found"
 msgstr ""
 
-#: app/OnlineImportPage.qml:41
+#: app/OnlineImportPage.qml:39
 #, kde-format
 msgid "Online Ticket"
 msgstr ""
 
-#: app/OnlineImportPage.qml:47
-#, kde-format
-msgid "Family name"
-msgstr ""
-
 #: app/OnlineImportPage.qml:58
-#, kde-format
-msgid "Booking reference"
-msgstr ""
-
-#: app/OnlineImportPage.qml:70
 #, kde-format
 msgid "Search..."
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-23 01:40+0000\n"
+"POT-Creation-Date: 2023-10-31 01:39+0000\n"
 "PO-Revision-Date: 2020-02-16 23:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2642,42 +2642,53 @@ msgstr "A nova plataforma de saída é: %1"
 msgid "New arrival platform is: %1"
 msgstr "A nova hora de chegada é: %1"
 
+#: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
+#, kde-format
+msgid "Family name"
+msgstr ""
+
+#: app/onlineimport/db.qml:33
+#, kde-format
+msgid "Name is case-sensitive."
+msgstr ""
+
+#: app/onlineimport/db.qml:40
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Order number or booking reference"
+msgstr "Referencia da reserva:"
+
+#: app/onlineimport/sncf.qml:38
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Booking reference"
+msgstr "Referencia da reserva:"
+
 #: app/OnlineImportPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Import Online Ticket"
 msgstr "Billete de tren"
 
-#: app/OnlineImportPage.qml:32
+#: app/OnlineImportPage.qml:30
 #, fuzzy, kde-format
 #| msgid "One reservation imported."
 #| msgid_plural "%1 reservations imported."
 msgid "Ticket imported"
 msgstr "Importouse unha reserva."
 
-#: app/OnlineImportPage.qml:36
+#: app/OnlineImportPage.qml:34
 #, kde-format
 msgid "No ticket found"
 msgstr ""
 
-#: app/OnlineImportPage.qml:41
+#: app/OnlineImportPage.qml:39
 #, fuzzy, kde-format
 #| msgid "Train Ticket"
 msgid "Online Ticket"
 msgstr "Billete de tren"
 
-#: app/OnlineImportPage.qml:47
-#, kde-format
-msgid "Family name"
-msgstr ""
-
 #: app/OnlineImportPage.qml:58
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
-msgid "Booking reference"
-msgstr "Referencia da reserva:"
-
-#: app/OnlineImportPage.qml:70
 #, kde-format
 msgid "Search..."
 msgstr ""
