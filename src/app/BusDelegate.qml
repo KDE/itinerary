@@ -79,6 +79,7 @@ App.TimelineDelegate {
                     RowLayout {
                         Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                         QQC2.Label {
+                            id: depTime
                             text: Localizer.formatTime(reservationFor, "departureTime")
                         }
                         QQC2.Label {
@@ -104,8 +105,8 @@ App.TimelineDelegate {
                         Layout.fillWidth: true
 
                         visible: text.length > 0
-                        text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
-                                                                 reservationFor.arrivalStation.address,
+                        text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
+                                                                 reservationFor.arrivalBusStop.address,
                                                                  Settings.homeCountryIsoCode)
                         width: topLayout.width
                     }
@@ -261,8 +262,8 @@ App.TimelineDelegate {
 
                         visible: text.length > 0
                         width: topLayout.width
-                        text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
-                                                                 reservationFor.departureStation.address,
+                        text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
+                                                                 reservationFor.departureBusStop.address,
                                                                  Settings.homeCountryIsoCode)
                     }
                 }
