@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:39+0000\n"
-"PO-Revision-Date: 2023-10-23 08:36+0200\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"PO-Revision-Date: 2023-10-31 10:00+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -505,12 +505,12 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Reservation (Booking)"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
 msgstr "1 station intermedie"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
 msgstr "%1 station intermedie"
@@ -2464,13 +2464,12 @@ msgstr "Nomine de Familia"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "Nomine es sensibile al differentia inter majusculas e minusculas."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "Referentia de reservation"
+msgstr "Numero de ordine o referentia de reservation"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format

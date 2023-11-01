@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:39+0000\n"
-"PO-Revision-Date: 2023-10-23 12:53+0300\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"PO-Revision-Date: 2023-10-31 12:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -506,12 +506,12 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervasyon"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
 msgstr "1 ara durak"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
 msgstr "%1 ara durak"
@@ -2466,13 +2466,12 @@ msgstr "Soyadı"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "Ad, BÜYÜK/küçük harf duyarlıdır."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "Rezervasyon başvurusu"
+msgstr "Sipariş numarası veya rezervasyon başvurusu"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format

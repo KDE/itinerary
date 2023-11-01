@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:39+0000\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -545,12 +545,12 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Бронирование"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
 msgstr ""
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
 msgstr ""

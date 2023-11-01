@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-31 01:39+0000\n"
-"PO-Revision-Date: 2023-10-23 06:09+0100\n"
+"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"PO-Revision-Date: 2023-10-31 22:58+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -505,12 +505,12 @@ msgctxt "@title:group"
 msgid "Booking"
 msgstr "Rezervado"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "1 intermediate stop"
 msgstr "1 survoja halto"
 
-#: app/BusDelegate.qml:136 app/TrainDelegate.qml:163
+#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
 #, kde-format
 msgid "%1 intermediate stops"
 msgstr "%1 survojaj haltoj"
@@ -2463,18 +2463,17 @@ msgstr "Familia nomo"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "Nomo estas usklecdistinga."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "Rezerva referenco"
+msgstr "Mendonumero aŭ menda referenco"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format
 msgid "Booking reference"
-msgstr "Rezerva referenco"
+msgstr "Menda referenco"
 
 #: app/OnlineImportPage.qml:17
 #, kde-format
