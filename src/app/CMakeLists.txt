@@ -11,6 +11,7 @@ target_sources(itinerary PRIVATE
     calendarimportmodel.cpp
     clipboard.cpp
     deutschebahncheckin.cpp
+    deutschebahnnextcheckin.cpp
     documentmanager.cpp
     documentsmodel.cpp
     downloadjob.cpp

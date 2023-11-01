@@ -14,6 +14,7 @@
 #include "clipboard.h"
 #include "developmentmodecontroller.h"
 #include "deutschebahncheckin.h"
+#include "deutschebahnnextcheckin.h"
 #include "documentmanager.h"
 #include "documentsmodel.h"
 #include "factory.h"
@@ -216,6 +217,7 @@ void registerApplicationTypes()
 #endif
     qmlRegisterType<OnlineTicketImporter>("org.kde.itinerary", 1, 0, "OnlineTicketImporter");
     qmlRegisterType<DeutscheBahnCheckIn>("org.kde.itinerary", 1, 0, "DeutscheBahnCheckIn");
+    qmlRegisterType<DeutscheBahnNextCheckIn>("org.kde.itinerary", 1, 0, "DeutscheBahnNextCheckIn");
 
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
@@ -482,6 +484,7 @@ int main(int argc, char **argv)
 
     OnlineTicketImporter::setNetworkAccessManagerFactory(namFactory);
     DeutscheBahnCheckIn::setNetworkAccessManagerFactory(namFactory);
+    DeutscheBahnNextCheckIn::setNetworkAccessManagerFactory(namFactory);
 
     registerKContactsTypes();
     registerKCalendarCoreTypes();

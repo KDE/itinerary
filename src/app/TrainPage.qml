@@ -350,7 +350,7 @@ App.DetailsPage {
                     visible: Settings.developmentMode && kci.checkInAvailable(root.reservation)
                     enabled: kci.checkInEnabled(root.reservation)
                     onTriggered: dbCheckinDialog.open()
-                    DeutscheBahnCheckIn {
+                    DeutscheBahnNextCheckIn {
                         id: kci
                         reservationManager: ReservationManager
                     }
