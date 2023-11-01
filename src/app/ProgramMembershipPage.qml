@@ -60,14 +60,16 @@ FormCard.FormCardPage {
         App.CardPageTitle {
             emojiIcon: "🎫"
             text: programMembership.programName
-            Layout.topMargin: kirigami.Units.smallSpacing
+            Layout.topMargin: Kirigami.Units.smallSpacing
         }
 
         FormCard.FormCard {
+            visible: programMembership.token.length > 0
             App.BarcodeContainer {
                 id: barcodeContainer
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.bottomMargin: Kirigami.Units.largeSpacing
 
                 barcodeType: programMembership.tokenType
