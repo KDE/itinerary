@@ -81,7 +81,9 @@ KPublicTransport::Location PublicTransport::locationFromPlace(const QVariant& pl
      || JsonLd::isA<BusReservation>(reservation) || JsonLd::isA<BoatReservation>(reservation)) {
         loc.setName(KItinerary::LocationUtil::name(place));
     }
-
+    if (JsonLd::isA<TrainReservation>(reservation) || JsonLd::isA<BusReservation>(reservation)) {
+        loc.setType(KPublicTransport::Location::Stop);
+    }
     const auto addr = KItinerary::LocationUtil::address(place);
     loc.setStreetAddress(addr.streetAddress());
     loc.setPostalCode(addr.postalCode());

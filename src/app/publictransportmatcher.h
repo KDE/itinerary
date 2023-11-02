@@ -32,6 +32,9 @@ bool isDepartureForReservation(const QVariant &res, const KPublicTransport::Stop
 bool isArrivalForReservation(const QVariant &res, const KPublicTransport::Stopover &arr);
 bool isJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey);
 
+/** Returns a sub-section of @p journey that matches @p res, or an empty journey otherwise. */
+KPublicTransport::JourneySection subJourneyForReservation(const QVariant &res, const KPublicTransport::JourneySection &journey);
+
 }
 
 #endif // PUBLICTRANSPORTMATCHER_H
