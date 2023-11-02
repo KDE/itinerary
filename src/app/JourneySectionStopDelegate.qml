@@ -72,8 +72,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             text: (stop.arrivalDelay >= 0 ? "+" : "") + stop.arrivalDelay
             color: stop.arrivalDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: stop.hasExpectedArrivalTime && !isSameTime
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            visible: stop.hasExpectedArrivalTime && !isSameTime && stop.disruptionEffect !== Disruption.NoService
         }
 
         QQC2.Label {
@@ -106,8 +105,7 @@ Item {
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignTop
             text: (stop.departureDelay >= 0 ? "+" : "") + stop.departureDelay
             color: stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-            visible: departureTime.visible && stop.hasExpectedDepartureTime
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            visible: departureTime.visible && stop.hasExpectedDepartureTime && stop.disruptionEffect !== Disruption.NoService
         }
 
         App.VehicleLoadIndicator {
@@ -148,7 +146,7 @@ Item {
                         return i18nc("Generic abreviation of platform", "Pl. %1", platform)
                 }
             }
-            font.strikeout: stop.disruptionEffect === Disruption.NoService
+            visible: stop.disruptionEffect !== Disruption.NoService
         }
 
         QQC2.ToolButton {
@@ -157,7 +155,7 @@ Item {
             Layout.rowSpan: arrivalTime.Layout.rowSpan
             Layout.alignment: isSingleTime ? Qt.AlignVCenter : Qt.AlignBottom
             Layout.bottomMargin: isSingleTime ? 0 : Math.round(-height / 4)
-            visible: stop.stopPoint.hasCoordinate
+            visible: stop.stopPoint.hasCoordinate && stop.disruptionEffect !== Disruption.NoService
             icon.name: "map-symbolic"
             text: i18n("Show location")
             display: QQC2.AbstractButton.IconOnly
