@@ -193,17 +193,18 @@ App.TimelineDelegate {
 
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
-                    hasStop: true
+                    hasStop: model.stopover.disruptionEffect !== Disruption.NoService
                 }
                 RowLayout {
                     Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
                     QQC2.Label{
                         text: Localizer.formatTime(model.stopover , "scheduledDepartureTime")
+                        font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                     }
                     QQC2.Label {
                         text: (model.stopover.arrivalDelay >= 0 ? "+" : "") + model.stopover.arrivalDelay
                         color: (model.stopover.arrivalDelay > 1) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
-                        visible: model.stopover.hasExpectedArrivalTime
+                        visible: model.stopover.hasExpectedArrivalTime && model.stopover.disruptionEffect !== Disruption.NoService
                         Accessible.ignored: !visible
                     }
                 }
@@ -211,7 +212,7 @@ App.TimelineDelegate {
                     text: model.stopover.stopPoint.name
                     Layout.fillWidth: true
                     elide: Text.ElideRight
-
+                    font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
                 }
             }
         }
