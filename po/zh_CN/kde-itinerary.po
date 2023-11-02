@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"POT-Creation-Date: 2023-11-02 01:39+0000\n"
 "PO-Revision-Date: 2023-10-21 13:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -106,7 +106,7 @@ msgstr "在此项前添加换乘"
 msgid "Add transfer after"
 msgstr "在此项后添加换乘"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:126
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:142
 #: app/TicketPage.qml:136
 #, kde-format
 msgid "Edit"
@@ -125,7 +125,7 @@ msgstr "导出..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
-#: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:131
+#: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:48 app/TicketPage.qml:149 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
@@ -167,7 +167,7 @@ msgstr "导入预约"
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:120
+#: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:136
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
@@ -471,6 +471,7 @@ msgid "Reference"
 msgstr ""
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
+#: app/ProgramMembershipPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -2578,7 +2579,7 @@ msgid "Name"
 msgstr ""
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:80
-#: app/ProgramMembershipEditorCard.qml:62 app/ProgramMembershipPage.qml:91
+#: app/ProgramMembershipEditorCard.qml:62 app/ProgramMembershipPage.qml:93
 #: app/TicketPage.qml:104
 #, kde-format
 msgid "Number"
@@ -2614,18 +2615,18 @@ msgstr ""
 msgid "Membership"
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:74 app/ProgramMembershipPage.qml:82
+#: app/ProgramMembershipEditor.qml:74 app/ProgramMembershipPage.qml:84
 #, kde-format
 msgid "Member"
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:87 app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipEditor.qml:87 app/ProgramMembershipPage.qml:115
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:104
+#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:120
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
@@ -2639,6 +2640,11 @@ msgstr ""
 #: app/ProgramMembershipPage.qml:18
 #, kde-format
 msgid "Program Membership"
+msgstr ""
+
+#: app/ProgramMembershipPage.qml:103
+#, kde-format
+msgid "Program membership number copied to clipboard"
 msgstr ""
 
 #: app/publictransport.cpp:238 app/publictransport.cpp:265

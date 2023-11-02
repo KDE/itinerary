@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:40+0000\n"
+"POT-Creation-Date: 2023-11-02 01:39+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -106,7 +106,7 @@ msgstr "이전 환승 추가"
 msgid "Add transfer after"
 msgstr "이후 환승 추가"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:126
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:142
 #: app/TicketPage.qml:136
 #, kde-format
 msgid "Edit"
@@ -125,7 +125,7 @@ msgstr "내보내기..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
-#: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:131
+#: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:147
 #: app/TicketPage.qml:48 app/TicketPage.qml:149 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
@@ -167,7 +167,7 @@ msgstr "예약 가져오기"
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
-#: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:120
+#: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:136
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
@@ -471,6 +471,7 @@ msgid "Reference"
 msgstr "참조"
 
 #: app/BookingCard.qml:36 app/BookingCard.qml:68
+#: app/ProgramMembershipPage.qml:99
 #, fuzzy, kde-format
 #| msgid "Import from Clipboard"
 msgctxt "@info:tooltip"
@@ -2592,7 +2593,7 @@ msgid "Name"
 msgstr "이름"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:80
-#: app/ProgramMembershipEditorCard.qml:62 app/ProgramMembershipPage.qml:91
+#: app/ProgramMembershipEditorCard.qml:62 app/ProgramMembershipPage.qml:93
 #: app/TicketPage.qml:104
 #, kde-format
 msgid "Number"
@@ -2628,18 +2629,18 @@ msgstr "프로그램 이름이 비어 있으면 안 됩니다."
 msgid "Membership"
 msgstr "멤버십"
 
-#: app/ProgramMembershipEditor.qml:74 app/ProgramMembershipPage.qml:82
+#: app/ProgramMembershipEditor.qml:74 app/ProgramMembershipPage.qml:84
 #, kde-format
 msgid "Member"
 msgstr "회원"
 
-#: app/ProgramMembershipEditor.qml:87 app/ProgramMembershipPage.qml:99
+#: app/ProgramMembershipEditor.qml:87 app/ProgramMembershipPage.qml:115
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr "유효 기간 시작"
 
-#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:104
+#: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:120
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
@@ -2654,6 +2655,12 @@ msgstr "유효 기간 끝은 유효 기간 시작 이후여야 합니다."
 #, kde-format
 msgid "Program Membership"
 msgstr "프로그램 멤버십"
+
+#: app/ProgramMembershipPage.qml:103
+#, fuzzy, kde-format
+#| msgid "Extractor capabilities copied to clipboard"
+msgid "Program membership number copied to clipboard"
+msgstr "클립보드에 추출기 기능 복사됨"
 
 #: app/publictransport.cpp:238 app/publictransport.cpp:265
 #, kde-format
