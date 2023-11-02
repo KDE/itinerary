@@ -50,10 +50,18 @@ public:
     KPublicTransport::Stopover departure(const QString &resId) const;
     KPublicTransport::JourneySection journey(const QString &resId) const;
 
-    /** Sets journey data for a given reservation.
+    /** Sets journey data for a given reservation, overwriting all existing data
+     *  and not triggering notifications.
      *  Used to retain live data from alternative journey selections for example.
+     *  @see applyJourney
      */
     Q_INVOKABLE void setJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
+
+    /** Applies new journey data for @p resId, retains still valid information not included
+     *  in @p journey and triggers notifications if necessary.
+     *  @see setJourney
+     */
+    void applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey);
 
     /** Import a single LiveData element.
      *  Used by Importer.

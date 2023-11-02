@@ -937,20 +937,9 @@ void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
 
 static void applyVehicleLayout(KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
 {
-    using namespace KPublicTransport;
-
-    if (!Stopover::isSame(stop, layout)) {
-        qDebug() << "stop mismatch";
-        return;
+    if (PublicTransport::isSameStopoverForLayout(stop, layout)) {
+        stop = KPublicTransport::Stopover::merge(stop, layout);
     }
-
-    const auto platform = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
-    if (platform != layout.scheduledPlatform()) { // TODO this might need a more sophisticated check if there's platform sections involved
-        qDebug() << "platform mismatch";
-        return;
-    }
-
-    stop = Stopover::merge(stop, layout);
 }
 
 void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopover& stopover, bool arrival)
@@ -960,12 +949,12 @@ void TimelineDelegateController::setVehicleLayout(const KPublicTransport::Stopov
         auto dep = jny.departure();
         applyVehicleLayout(dep, stopover);
         jny.setDeparture(dep);
-        m_liveDataMgr->setJourney(m_batchId, jny);
+        m_liveDataMgr->applyJourney(m_batchId, jny);
     } else {
         auto arr = jny.arrival();
         applyVehicleLayout(arr, stopover);
         jny.setArrival(arr);
-        m_liveDataMgr->setJourney(m_batchId, jny);
+        m_liveDataMgr->applyJourney(m_batchId, jny);
     }
 
     Q_EMIT layoutChanged();

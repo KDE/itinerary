@@ -144,6 +144,11 @@ void LiveDataManager::setJourney(const QString &resId, const KPublicTransport::J
     Q_EMIT arrivalUpdated(resId);
 }
 
+void LiveDataManager::applyJourney(const QString &resId, const KPublicTransport::JourneySection &journey)
+{
+    updateJourneyData(journey, resId, m_resMgr->reservation(resId));
+}
+
 void LiveDataManager::checkForUpdates()
 {
     pollForUpdates(true);
@@ -275,22 +280,43 @@ void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop,
     }
 }
 
+static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
+{
+    auto res = stop;
+    if (stop.vehicleLayout().isEmpty()) {
+        res.setVehicleLayout(layout.vehicleLayout());
+    }
+    if (stop.platformLayout().isEmpty()) {
+        res.setPlatformLayout(layout.platformLayout());
+    }
+    return res;
+}
+
 void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
 {
     auto &ld = data(resId);
     const auto oldDep = ld.stopover(LiveData::Departure);
     const auto oldArr = ld.stopover(LiveData::Arrival);
     ld.journey = journey;
+
+    // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
+    if (PublicTransport::isSameStopoverForLayout(ld.departure, journey.departure())) {
+        ld.journey.setDeparture(applyLayoutData(journey.departure(), ld.departure));
+    }
+    if (PublicTransport::isSameStopoverForLayout(ld.arrival, journey.arrival())) {
+        ld.journey.setArrival(applyLayoutData(journey.arrival(), ld.arrival));
+    }
+
     ld.journey.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
-    ld.departure = journey.departure();
+    ld.departure = ld.journey.departure();
     ld.departureTimestamp = now();
-    ld.arrival = journey.arrival();
+    ld.arrival = ld.journey.arrival();
     ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
     // update reservation with live data
-    const auto newRes = PublicTransport::mergeJourney(res, journey);
+    const auto newRes = PublicTransport::mergeJourney(res, ld.journey);
     if (!ReservationHelper::equals(res, newRes)) {
         m_resMgr->updateReservation(resId, newRes);
     }
@@ -301,8 +327,8 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     Q_EMIT arrivalUpdated(resId);
 
     // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldDep, journey.departure(), LiveData::Departure) ||
-        NotificationHelper::shouldNotify(oldArr, journey.arrival(), LiveData::Arrival)) {
+    if (NotificationHelper::shouldNotify(oldDep, ld.journey.departure(), LiveData::Departure) ||
+        NotificationHelper::shouldNotify(oldArr, ld.journey.arrival(), LiveData::Arrival)) {
         showNotification(resId, ld);
     }
 }

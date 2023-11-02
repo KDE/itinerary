@@ -122,6 +122,13 @@ public:
 
     /** yay for JavaScript! */
     Q_INVOKABLE static KPublicTransport::Location copyLocation(const KPublicTransport::Location &loc);
+
+    /** Checks whether two stopovers refer to the same stop in so far that we can assume the corresponding
+     *  vehicle and platform layout to be compatible. That's a stronger conditions than Stopover::isSame, as a platform
+     *  change invalidates vehicle layout data.
+     */
+    [[nodiscard]] static bool isSameStopoverForLayout(const KPublicTransport::Stopover &lhs, const KPublicTransport::Stopover &rhs);
+
 private:
     // for use by the template code
     static QString idenfitierFromLocation(const KPublicTransport::Location &loc);

@@ -632,4 +632,15 @@ KPublicTransport::Location PublicTransport::copyLocation(const KPublicTransport:
     return loc;
 }
 
+bool PublicTransport::isSameStopoverForLayout(const KPublicTransport::Stopover &lhs, const KPublicTransport::Stopover &rhs)
+{
+    if (!KPublicTransport::Stopover::isSame(lhs, rhs)) {
+        return false;
+    }
+
+    const auto lhsPlatform = lhs.hasExpectedPlatform() ? lhs.expectedPlatform() : lhs.scheduledPlatform();
+    const auto rhsPlatform = rhs.hasExpectedPlatform() ? rhs.expectedPlatform() : rhs.scheduledPlatform();
+    return lhsPlatform == rhsPlatform;
+}
+
 #include "moc_publictransport.cpp"
