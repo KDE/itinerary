@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-02 01:39+0000\n"
+"POT-Creation-Date: 2023-11-03 01:40+0000\n"
 "PO-Revision-Date: 2023-10-31 09:44+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1980,26 +1980,26 @@ msgstr "Distància: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:142
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
 # skip-rule: kct-dock
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Moll %1"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:160
 #, kde-format
 msgid "Show location"
 msgstr "Mostra la ubicació"
@@ -2017,12 +2017,12 @@ msgstr[1] "%1 canvis"
 msgid "Click to extend"
 msgstr "Cliqueu per a ampliar"
 
-#: app/livedatamanager.cpp:667
+#: app/livedatamanager.cpp:693
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Vol %1 a %2:"
 
-#: app/livedatamanager.cpp:673
+#: app/livedatamanager.cpp:699
 #, kde-format
 msgid "Itinerary change"
 msgstr "Canvi en l'itinerari"
@@ -2662,42 +2662,42 @@ msgstr "Programa d'afiliació"
 msgid "Program membership number copied to clipboard"
 msgstr "El número de tiquet s'ha copiat a dins del porta-retalls"
 
-#: app/publictransport.cpp:238 app/publictransport.cpp:265
+#: app/publictransport.cpp:240 app/publictransport.cpp:267
 #, kde-format
 msgid "Walk"
 msgstr "Caminar"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:242
 #, kde-format
 msgid "Wait"
 msgstr "Esperar"
 
-#: app/publictransport.cpp:249
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Bicicleta llogada"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented moped"
 msgstr "Ciclomotor llogat"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Patinet elèctric llogat"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:257
 #, kde-format
 msgid "Rented car"
 msgstr "Cotxe llogat"
 
-#: app/publictransport.cpp:261
+#: app/publictransport.cpp:263
 #, kde-format
 msgid "Bicycle"
 msgstr "Bicicleta"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:265 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Cotxe"
@@ -3278,7 +3278,7 @@ msgstr "Arribada"
 msgid "Arrival Time"
 msgstr "Hora d'arribada"
 
-#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:303
 #, kde-format
 msgid "Pl. %1"
 msgstr "Pl. %1"

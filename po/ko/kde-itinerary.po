@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-02 01:39+0000\n"
+"POT-Creation-Date: 2023-11-03 01:40+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1986,25 +1986,25 @@ msgstr "거리: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:142
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1번"
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:160
 #, kde-format
 msgid "Show location"
 msgstr "위치 표시"
@@ -2021,12 +2021,12 @@ msgstr[0] "환승 %1회"
 msgid "Click to extend"
 msgstr "클릭하여 확장"
 
-#: app/livedatamanager.cpp:667
+#: app/livedatamanager.cpp:693
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%2(으)로 가는 %1 항공편|/|%2$[으 %2]로 가는 %1 항공편"
 
-#: app/livedatamanager.cpp:673
+#: app/livedatamanager.cpp:699
 #, kde-format
 msgid "Itinerary change"
 msgstr "여정 변경"
@@ -2662,42 +2662,42 @@ msgstr "프로그램 멤버십"
 msgid "Program membership number copied to clipboard"
 msgstr "클립보드에 추출기 기능 복사됨"
 
-#: app/publictransport.cpp:238 app/publictransport.cpp:265
+#: app/publictransport.cpp:240 app/publictransport.cpp:267
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:242
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:249
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:257
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:261
+#: app/publictransport.cpp:263
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:265 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "자동차"
@@ -3269,7 +3269,7 @@ msgstr "도착"
 msgid "Arrival Time"
 msgstr "도착 시간"
 
-#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:303
 #, kde-format
 msgid "Pl. %1"
 msgstr "%1번"

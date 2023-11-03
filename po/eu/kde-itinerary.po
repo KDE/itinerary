@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-02 01:39+0000\n"
-"PO-Revision-Date: 2023-10-31 18:29+0100\n"
+"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"PO-Revision-Date: 2023-11-02 22:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1983,25 +1983,25 @@ msgstr "Distantzia: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:142
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "%1 Pl."
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "%1 kaia"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1 Pl."
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:160
 #, kde-format
 msgid "Show location"
 msgstr "Erakutsi kokalekua"
@@ -2019,12 +2019,12 @@ msgstr[1] "%1 aldaketa"
 msgid "Click to extend"
 msgstr "Egin klik zabaltzeko"
 
-#: app/livedatamanager.cpp:667
+#: app/livedatamanager.cpp:693
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 hegaldia %2(e)ra:"
 
-#: app/livedatamanager.cpp:673
+#: app/livedatamanager.cpp:699
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
@@ -2656,47 +2656,46 @@ msgid "Program Membership"
 msgstr "Programaren bazkidetza"
 
 #: app/ProgramMembershipPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Ticket number copied to clipboard"
+#, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Txartel zenbakia arbelera kopiatu da"
+msgstr "Programako bazkide zenbakia arbelera kopiatu da"
 
-#: app/publictransport.cpp:238 app/publictransport.cpp:265
+#: app/publictransport.cpp:240 app/publictransport.cpp:267
 #, kde-format
 msgid "Walk"
 msgstr "Oinez"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:242
 #, kde-format
 msgid "Wait"
 msgstr "Itxoin"
 
-#: app/publictransport.cpp:249
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Alokairuko bizikleta"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented moped"
 msgstr "Alokairuko ziklomotorra"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Alokairuko patinete elektrikoa"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:257
 #, kde-format
 msgid "Rented car"
 msgstr "Alokairuko autoa"
 
-#: app/publictransport.cpp:261
+#: app/publictransport.cpp:263
 #, kde-format
 msgid "Bicycle"
 msgstr "Bizikleta"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:265 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Autoa"
@@ -3270,7 +3269,7 @@ msgstr "Iritsiera"
 msgid "Arrival Time"
 msgstr "Iritsiera-ordua"
 
-#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:303
 #, kde-format
 msgid "Pl. %1"
 msgstr "%1 Na."

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-02 01:39+0000\n"
-"PO-Revision-Date: 2023-10-31 20:36+0200\n"
+"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"PO-Revision-Date: 2023-11-02 17:04+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1987,25 +1987,25 @@ msgstr "Відстань: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionStopDelegate.qml:144
+#: app/JourneySectionStopDelegate.qml:142
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:146
+#: app/JourneySectionStopDelegate.qml:144
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
 msgstr "Док %1"
 
-#: app/JourneySectionStopDelegate.qml:148
+#: app/JourneySectionStopDelegate.qml:146
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Пл. %1"
 
-#: app/JourneySectionStopDelegate.qml:162
+#: app/JourneySectionStopDelegate.qml:160
 #, kde-format
 msgid "Show location"
 msgstr "Показати місце"
@@ -2025,12 +2025,12 @@ msgstr[3] "%1 зміна"
 msgid "Click to extend"
 msgstr "Натисніть, щоб розширити"
 
-#: app/livedatamanager.cpp:667
+#: app/livedatamanager.cpp:693
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "Рейс %1 до %2:"
 
-#: app/livedatamanager.cpp:673
+#: app/livedatamanager.cpp:699
 #, kde-format
 msgid "Itinerary change"
 msgstr "Зміна маршруту"
@@ -2660,50 +2660,49 @@ msgstr "Час початку строку дії має передувати ч
 #: app/ProgramMembershipPage.qml:18
 #, kde-format
 msgid "Program Membership"
-msgstr "Учасник програми"
+msgstr "Участь у програмі"
 
 #: app/ProgramMembershipPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Ticket number copied to clipboard"
+#, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Номер квитка скопійовано до буфера"
+msgstr "Номер програми учасника скопійовано до буфера"
 
-#: app/publictransport.cpp:238 app/publictransport.cpp:265
+#: app/publictransport.cpp:240 app/publictransport.cpp:267
 #, kde-format
 msgid "Walk"
 msgstr "Перехід"
 
-#: app/publictransport.cpp:240
+#: app/publictransport.cpp:242
 #, kde-format
 msgid "Wait"
 msgstr "Очікування"
 
-#: app/publictransport.cpp:249
+#: app/publictransport.cpp:251
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Орендований велосипед"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:253
 #, kde-format
 msgid "Rented moped"
 msgstr "Орендований мопед"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:255
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Орендований самокат"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:257
 #, kde-format
 msgid "Rented car"
 msgstr "Орендоване авто"
 
-#: app/publictransport.cpp:261
+#: app/publictransport.cpp:263
 #, kde-format
 msgid "Bicycle"
 msgstr "Велосипед"
 
-#: app/publictransport.cpp:263 app/StatisticsPage.qml:148
+#: app/publictransport.cpp:265 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Автомобіль"
@@ -3284,7 +3283,7 @@ msgstr "Прибуття"
 msgid "Arrival Time"
 msgstr "Час прибуття"
 
-#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:302
+#: app/TrainDelegate.qml:118 app/TrainDelegate.qml:303
 #, kde-format
 msgid "Pl. %1"
 msgstr "Пл. %1"
