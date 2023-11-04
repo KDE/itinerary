@@ -134,7 +134,7 @@ App.TimelineDelegate {
                         color: Kirigami.Theme.disabledTextColor
                     }
                     QQC2.Label {
-                        text: stopRepeater.count ===1 ? i18n("1 intermediate stop"):i18n("%1 intermediate stops", stopRepeater.count)
+                        text: i18np("1 intermediate stop", "%1 intermediate stops", stopRepeater.count)
                         color: Kirigami.Theme.disabledTextColor
                         Layout.rightMargin: Kirigami.Units.largeSpacing
                     }
