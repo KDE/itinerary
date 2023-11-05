@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-11-02 17:04+0200\n"
+"PO-Revision-Date: 2023-11-05 08:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -514,13 +514,12 @@ msgid "Booking"
 msgstr "Бронювання"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
-msgstr[0] "1 проміжна зупинка"
-msgstr[1] "1 проміжна зупинка"
-msgstr[2] "1 проміжна зупинка"
+msgstr[0] "%1 проміжна зупинка"
+msgstr[1] "%1 проміжні зупинки"
+msgstr[2] "%1 проміжних зупинок"
 msgstr[3] "1 проміжна зупинка"
 
 #: app/BusEditor.qml:18
