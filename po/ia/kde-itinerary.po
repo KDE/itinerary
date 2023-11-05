@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"POT-Creation-Date: 2023-11-05 01:08+0000\n"
 "PO-Revision-Date: 2023-11-02 12:15+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -507,14 +507,12 @@ msgid "Booking"
 msgstr "Reservation (Booking)"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
 msgid "1 intermediate stop"
-msgstr "1 station intermedie"
-
-#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, kde-format
-msgid "%1 intermediate stops"
-msgstr "%1 station intermedie"
+msgid_plural "%1 intermediate stops"
+msgstr[0] "1 station intermedie"
+msgstr[1] "1 station intermedie"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -3676,6 +3674,9 @@ msgstr "Accedente "
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgid "%1 intermediate stops"
+#~ msgstr "%1 station intermedie"
 
 #~ msgctxt "departure time for a train"
 #~ msgid "Departure time:"

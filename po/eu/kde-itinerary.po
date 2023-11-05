@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"POT-Creation-Date: 2023-11-05 01:08+0000\n"
 "PO-Revision-Date: 2023-11-02 22:46+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -512,14 +512,12 @@ msgid "Booking"
 msgstr "Erreserba"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "1 intermediate stop"
 msgid "1 intermediate stop"
-msgstr "Tarteko geldialdi 1"
-
-#: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, kde-format
-msgid "%1 intermediate stops"
-msgstr "Tarteko %1 geldialdi"
+msgid_plural "%1 intermediate stops"
+msgstr[0] "Tarteko geldialdi 1"
+msgstr[1] "Tarteko geldialdi 1"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -3681,6 +3679,9 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgid "%1 intermediate stops"
+#~ msgstr "Tarteko %1 geldialdi"
 
 #~ msgctxt "departure time for a train"
 #~ msgid "Departure time:"
