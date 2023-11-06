@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-11-02 12:15+0100\n"
+"PO-Revision-Date: 2023-11-05 21:48+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -507,12 +507,11 @@ msgid "Booking"
 msgstr "Reservation (Booking)"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
 msgstr[0] "1 station intermedie"
-msgstr[1] "1 station intermedie"
+msgstr[1] "%1 stationes intermedie"
 
 #: app/BusEditor.qml:18
 #, kde-format

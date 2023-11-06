@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-11-02 10:33+0100\n"
+"PO-Revision-Date: 2023-11-05 16:52+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -508,12 +508,11 @@ msgid "Booking"
 msgstr "Boeking"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
 msgstr[0] "1 tussenstop"
-msgstr[1] "1 tussenstop"
+msgstr[1] "%1 tussenstoppen"
 
 #: app/BusEditor.qml:18
 #, kde-format
