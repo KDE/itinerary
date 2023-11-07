@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-09-20 12:07+0300\n"
+"PO-Revision-Date: 2023-09-27 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -152,10 +152,9 @@ msgid "As Itinerary file..."
 msgstr "Itinerary-tiedostoksi…"
 
 #: app/ActionsCard.qml:150 app/TimelinePage.qml:205
-#, fuzzy, kde-format
-#| msgid "End time: %1"
+#, kde-format
 msgid "Send to %1"
-msgstr "Päättymisaika: %1"
+msgstr "Lähetä vastaanottajalle %1"
 
 #: app/ActionsCard.qml:167
 #, fuzzy, kde-format
@@ -318,10 +317,9 @@ msgid "Export completed."
 msgstr "Vienti valmis."
 
 #: app/applicationcontroller.cpp:610
-#, fuzzy, kde-format
-#| msgid "Trips"
+#, kde-format
 msgid "Trip sent."
-msgstr "Matkat"
+msgstr "Matka lähetetty."
 
 #: app/applicationcontroller.cpp:711
 #, fuzzy, kde-format
@@ -335,8 +333,7 @@ msgid "Import completed."
 msgstr "Tuonti valmis."
 
 #: app/BarcodeScanModeButton.qml:17
-#, fuzzy, kde-format
-#| msgid "Barcode Scan Mode"
+#, kde-format
 msgctxt "@action:button"
 msgid "Barcode Scan Mode"
 msgstr "Viivakoodinlukutila"
@@ -405,10 +402,9 @@ msgid "Departure Time"
 msgstr "Lähtöaika"
 
 #: app/BoatEditor.qml:65
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Departure time has to be set."
-msgstr "Uloskirjautumisaika"
+msgstr "Lähtöaika on asetettava."
 
 #: app/BoatEditor.qml:70 app/BoatEditor.qml:111
 #, kde-format
@@ -417,10 +413,9 @@ msgid "Terminal Name"
 msgstr "Terminaalin nimi"
 
 #: app/BoatEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Departure terminal must not be empty."
-msgstr "Lipun nimi ei voi olla tyhjä."
+msgstr "Lähtöterminaali ei voi olla tyhjä."
 
 #: app/BoatEditor.qml:87 app/BoatPage.qml:85
 #, kde-format
@@ -437,13 +432,12 @@ msgstr "Saapumisaika"
 #: app/BoatEditor.qml:104
 #, kde-format
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "Saapumisajan on oltava lähtöajan jälkeen."
 
 #: app/BoatEditor.qml:114
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr "Lipun nimi ei voi olla tyhjä."
+msgstr "Saapumisterminaali ei voi olla tyhjä."
 
 #: app/BoatPage.qml:17
 #, kde-format
@@ -843,8 +837,7 @@ msgid "Download failed: %1"
 msgstr "Lataus epäonnistui: %1"
 
 #: app/EditorPage.qml:24
-#, fuzzy, kde-format
-#| msgid "Save"
+#, kde-format
 msgctxt "@action:button"
 msgid "Save"
 msgstr "Tallenna"
@@ -877,17 +870,15 @@ msgid "Event"
 msgstr "Tapahtuma"
 
 #: app/EventEditor.qml:55
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgctxt "event name"
 msgid "Name"
 msgstr "Nimi"
 
 #: app/EventEditor.qml:58 app/HotelEditor.qml:60 app/RestaurantEditor.qml:57
-#, fuzzy, kde-format
-#| msgid "Ticket name must not be empty."
+#, kde-format
 msgid "Name must not be empty."
-msgstr "Lipun nimi ei voi olla tyhjä."
+msgstr "Nimi ei voi olla tyhjä."
 
 #: app/EventEditor.qml:63 app/EventPage.qml:68
 #, kde-format
@@ -898,7 +889,7 @@ msgstr "Sisääntulo"
 #: app/EventEditor.qml:74
 #, kde-format
 msgid "Entrance time has to be before the start time."
-msgstr ""
+msgstr "Sisäänpääsyajan on oltava ennen aloitusaikaa."
 
 #: app/EventEditor.qml:81 app/EventPage.qml:76 app/RestaurantEditor.qml:79
 #, kde-format
@@ -906,10 +897,9 @@ msgid "Start Time"
 msgstr "Aloitusaika"
 
 #: app/EventEditor.qml:85 app/RestaurantEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Start time has to be set."
-msgstr "Uloskirjautumisaika"
+msgstr "Aloitusaika on asetettava."
 
 #: app/EventEditor.qml:90 app/EventPage.qml:84 app/RestaurantEditor.qml:90
 #, kde-format
@@ -919,7 +909,7 @@ msgstr "Päättymisaika"
 #: app/EventEditor.qml:101 app/RestaurantEditor.qml:101
 #, kde-format
 msgid "End time has to be after the start time."
-msgstr ""
+msgstr "Päättymisajan tulee olla aloitusajan jälkeen."
 
 #: app/EventEditor.qml:115
 #, kde-format
@@ -1087,11 +1077,10 @@ msgid "Time"
 msgstr "Aika"
 
 #: app/FlightEditor.qml:99
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgctxt "flight departure"
 msgid "Departure time has to be set."
-msgstr "Uloskirjautumisaika"
+msgstr "Lähtöaika on asetettava."
 
 #: app/FlightEditor.qml:105
 #, kde-format
@@ -1108,7 +1097,7 @@ msgstr "Koneeseennousuaika"
 #, kde-format
 msgctxt "flight departure"
 msgid "Boarding time has to be before the departure time."
-msgstr ""
+msgstr "Koneeseennousuajan on oltava ennen lähtöaikaa."
 
 #: app/FlightEditor.qml:128
 #, kde-format
@@ -1132,7 +1121,7 @@ msgstr "Aika"
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
-msgstr ""
+msgstr "Saapumisajan on oltava lähtöajan jälkeen."
 
 #: app/FlightPage.qml:16 app/StatisticsPage.qml:92
 #, kde-format
@@ -1294,8 +1283,7 @@ msgid "Price"
 msgstr ""
 
 #: app/FormPriceDelegate.qml:31
-#, fuzzy, kde-format
-#| msgid "%1 (%2)"
+#, kde-format
 msgctxt "prices in local and home currency"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -1303,12 +1291,12 @@ msgstr "%1 (%2)"
 #: app/FormPriceEditDelegate.qml:34
 #, kde-format
 msgid "Price"
-msgstr ""
+msgstr "Hinta"
 
 #: app/FormPriceEditDelegate.qml:92
 #, kde-format
 msgid "Not a valid number."
-msgstr ""
+msgstr "Ei kelvollinen luku."
 
 #: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:39
 #, kde-format
@@ -1662,10 +1650,9 @@ msgid "Check-in"
 msgstr "Sisäänkirjautuminen"
 
 #: app/HotelEditor.qml:89
-#, fuzzy, kde-format
-#| msgid "Check-in time"
+#, kde-format
 msgid "Check-in time has to be set."
-msgstr "Sisäänkirjautumisaika"
+msgstr "Sisäänkirjautumisaika on asetettava."
 
 #: app/HotelEditor.qml:94
 #, kde-format
@@ -1674,15 +1661,14 @@ msgid "Check-out"
 msgstr "Uloskirjautuminen"
 
 #: app/HotelEditor.qml:106
-#, fuzzy, kde-format
-#| msgid "Check-out time"
+#, kde-format
 msgid "Check-out time has to be set."
-msgstr "Uloskirjautumisaika"
+msgstr "Uloskirjautumisaika on asetettava."
 
 #: app/HotelEditor.qml:108
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "Uloskirjautumisajan on oltava sisäänkirjautumisajan jälkeen."
 
 #: app/HotelPage.qml:17
 #, kde-format
@@ -2160,11 +2146,10 @@ msgid "Timezone change: %1 (%2)"
 msgstr "Aikavyöhykkeen vaihto: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:113
-#, fuzzy, kde-format
-#| msgid "Currency: %1"
+#, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr "Valuutta: %1"
+msgstr "Valuutta: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:115
 #, kde-format
@@ -2389,16 +2374,14 @@ msgid "Spaces"
 msgstr "Välilyönnit"
 
 #: app/NavigationBar.qml:19
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgid "Itinerary"
-msgstr "Matkasuunnitelmani"
+msgstr "Matkasuunnitelma"
 
 #: app/NavigationBar.qml:25
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgid "Plan Trip"
-msgstr "Poista matka"
+msgstr "Suunnittele matka"
 
 #: app/NavigationBar.qml:34
 #, kde-format
@@ -2669,7 +2652,7 @@ msgstr "Vanhenee"
 #: app/ProgramMembershipEditor.qml:107
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr ""
+msgstr "Kelpoisuusajan lopun on oltava sen alun jälkeen."
 
 #: app/ProgramMembershipPage.qml:18
 #, kde-format
@@ -3216,27 +3199,24 @@ msgid "Add train trip..."
 msgstr "Lisää junamatka…"
 
 #: app/TimelinePage.qml:106
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add ferry trip..."
-msgstr "Lisää junamatka…"
+msgstr "Lisää lauttamatka…"
 
 #: app/TimelinePage.qml:118
 #, kde-format
 msgid "Add accommodation..."
-msgstr ""
+msgstr "Lisää majoitus…"
 
 #: app/TimelinePage.qml:129
-#, fuzzy, kde-format
-#| msgid "Add Document..."
+#, kde-format
 msgid "Add event..."
-msgstr "Lisää asiakirja…"
+msgstr "Lisää tapahtuma…"
 
 #: app/TimelinePage.qml:141
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgid "Add restaurant..."
-msgstr "Lisää junamatka…"
+msgstr "Lisää ravintola…"
 
 #: app/TimelinePage.qml:158
 #, kde-format

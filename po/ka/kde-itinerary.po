@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-11-03 05:21+0100\n"
+"PO-Revision-Date: 2023-11-06 05:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -505,12 +505,11 @@ msgid "Booking"
 msgstr "დაჯავშვნა"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
 msgstr[0] "1 შუალედური გაჩერება"
-msgstr[1] "1 შუალედური გაჩერება"
+msgstr[1] "%1 შუალედური გაჩერება"
 
 #: app/BusEditor.qml:18
 #, kde-format
