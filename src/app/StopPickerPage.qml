@@ -111,15 +111,16 @@ Kirigami.ScrollablePage {
         sourceModel: locationHistoryModel
         sortRole: Settings.read("StopPicker/historySortMode", "lastUsed")
         onSortRoleChanged: Settings.write("StopPicker/historySortMode", sortRole)
-        sortOrder: sortRole == "locationName" ? Qt.AscendingOrder: Qt.DescendingOrder
+        sortOrder: sortRole == "locationName" ? Qt.AscendingOrder : Qt.DescendingOrder
     }
 
     Component {
         id: historyDelegate
         Kirigami.SwipeListItem {
             readonly property var sourceModel: ListView.view.model
-            QQC2.Label {
+            contentItem: QQC2.Label {
                 text: model.location.name
+                elide: Text.ElideRight
             }
             actions: [
                 Kirigami.Action {
