@@ -754,7 +754,16 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.08.3" date="2023-11-09"/>
+    <release version="23.08.3" date="2023-11-09">
+      <description>
+        <ul>
+          <li>Fix handling of canceled intermediate stops on board of DB ICEs.</li>
+          <li>New or improved travel document extractors for booking.com, DB, European Sleeper, Iberia, PKP, Pretix, Qatar Airways.</li>
+          <li>Fix parsing certain invalid Apple Wallet message catalogs.</li>
+          <li>Remove unnecessary PDF fonts to reduce the APK size.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.08.2" date="2023-10-12">
       <description>
         <ul>

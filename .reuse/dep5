@@ -26,3 +26,7 @@ License: LGPL-2.0-or-later
 Files: src/app/android/res/values-*/strings.xml
 Copyright: KDE Translation Teams
 License: LGPL-2.0-or-later
+
+Files: snapcraft.yaml
+Copyright: Scarlett Moore <sgmoore@kde.org>
+License: LGPL-2.0-or-later

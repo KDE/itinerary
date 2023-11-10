@@ -1,0 +1,170 @@
+# trigger rebuild
+---
+name: itinerary
+confinement: strict
+grade: stable
+base: core22
+adopt-info: itinerary
+apps:
+    itinerary:
+        # extensions:
+        # - kde-neon
+        common-id: org.kde.itinerary
+        desktop: usr/share/applications/org.kde.itinerary.desktop
+        command: usr/bin/itinerary
+        plugs:
+        - home
+        - desktop
+        - desktop-legacy
+        - opengl
+        - wayland
+        - x11
+        - audio-playback
+        - unity7
+        - network
+        - network-bind
+        - cups
+        - network-manager-observe
+        command-chain:
+        - snap/command-chain/desktop-launch
+assumes:
+- snapd2.55.3
+compression: lzo
+plugs:
+    desktop:
+        mount-host-font-cache: false
+    icon-themes:
+        interface: content
+        target: $SNAP/data-dir/icons
+        default-provider: gtk-common-themes
+    sound-themes:
+        interface: content
+        target: $SNAP/data-dir/sounds
+        default-provider: gtk-common-themes
+    kf5-5-110-qt-5-15-11-core22:
+        content: kf5-5-110-qt-5-15-11-core22-all
+        interface: content
+        default-provider: kf5-5-110-qt-5-15-11-core22
+        target: $SNAP/kf5
+    foo-install-cups:
+        interface: content
+        content: foo
+        default-provider: cups
+        target: $SNAP_DATA/foo
+environment:
+    SNAP_DESKTOP_RUNTIME: $SNAP/kf5
+    QT_QUICK_CONTROLS_STYLE: org.kde.desktop
+    QML2_IMPORT_PATH: "$QML2_IMPORT_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml/org/kde/kirigami.2:$SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/qml"
+hooks:
+    configure:
+        plugs:
+        - desktop
+        command-chain:
+        - snap/command-chain/hooks-configure-desktop
+layout:
+    /usr/share/X11:
+        symlink: $SNAP/kf5/usr/share/X11
+slots:
+    session-dbus-interface:
+        interface: dbus
+        name: org.kde.itinerary
+        bus: session
+package-repositories:
+-   type: apt
+    components:
+    - main
+    suites:
+    - jammy
+    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
+    url: http://origin.archive.neon.kde.org/user
+    key-server: keyserver.ubuntu.com
+parts:
+    kde-neon:
+        source: /snap/snapcraft/current/share/snapcraft/extensions/desktop/kde-neon
+        source-type: local
+        plugin: make
+        make-parameters:
+        - PLATFORM_PLUG=kf5-5-110-qt-5-15-11-core22
+        build-snaps:
+        - kf5-5-110-qt-5-15-11-core22-sdk
+        build-environment:
+        - &id001
+            PATH: /snap/kf5-5-110-qt-5-15-11-core22-sdk/current/usr/bin${PATH:+:$PATH}
+        - &id002
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-110-qt-5-15-11-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+        - &id003
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-110-qt-5-15-11-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
+        - &id004
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-110-qt-5-15-11-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+    itinerary:
+        after:
+        - kde-neon
+        parse-info:
+        - usr/share/metainfo/org.kde.itinerary.appdata.xml
+        plugin: cmake
+        build-packages:
+        - libkf5doctools-dev
+        - kirigami-addons-dev
+        - kosmindoormap-dev
+        - libkf5calendarcore-dev
+        - libkf5contacts-dev
+        - libkf5holidays-dev
+        - libkf5networkmanagerqt-dev
+        - libkf5qqc2desktopstyle-dev
+        - libkhealthcertificate-dev
+        - libkpimitinerary-dev
+        - libkpimpkpass-dev
+        - libkpublictransport-dev
+        - libquotient-dev
+        - shared-mime-info
+        - zlib1g-dev
+        stage-packages:
+        - kirigami-addons-data
+        - qml-module-org-kde-kirigamiaddons
+        - libkosmindoormap1
+        - qml-module-org-kde-kosmindoormap
+        - libkf5calendarcore5
+        - libkf5contacts5
+        - libkf5holidays5
+        - libkf5networkmanagerqt6
+        - qml-module-org-kde-qqc2desktopstyle
+        - libkhealthcertificate1
+        - qml-module-org-kde-khealthcertificate
+        - libkpimitinerary5
+        - libkpimpkpass5
+        - libkpublictransport1
+        - qml-module-org-kde-kpublictransport
+        - libquotient0.6
+        - shared-mime-info
+        - zlib1g
+        - qml-module-org-kde-solid
+        - qml-module-org-kde-kirigami-addons-labs-mobileform
+        - qml-module-org-kde-prison
+        - qml-module-org-kde-kopeninghours
+        source: .
+        source-type: local
+        cmake-parameters:
+        - -DKDE_INSTALL_USE_QT_SYS_PATHS=FALSE
+        - "-DCMAKE_INSTALL_PREFIX=/usr"
+        - "-DCMAKE_BUILD_TYPE=Release"
+        - "-DENABLE_TESTING=OFF"
+        - "-DBUILD_TESTING=OFF"
+        - "-DKDE_SKIP_TEST_SETTINGS=ON"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-110-qt-5-15-11-core22-sdk/current"
+        - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
+        build-environment: &id005
+        - *id001
+        - *id002
+        - *id003
+        - *id004
+        prime:
+        - "-usr/lib/*/cmake/*"
+        - "-usr/include/*"
+        - "-usr/share/ECM/*"
+        - "-usr/share/doc/*"
+        - "-usr/share/man/*"
+        - "-usr/share/icons/breeze-dark*"
+        - "-usr/bin/X11"
+        - "-usr/lib/gcc/$CRAFT_ARCH_TRIPLET/6.0.0"
+        - "-usr/lib/aspell/*"
+        - "-etc/alsa/conf.d/99-pulse.conf"
