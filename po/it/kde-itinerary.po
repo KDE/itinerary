@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-10-23 14:16+0200\n"
+"PO-Revision-Date: 2023-11-08 10:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -507,12 +507,11 @@ msgid "Booking"
 msgstr "Prenotazione"
 
 #: app/BusDelegate.qml:137 app/TrainDelegate.qml:163
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
 msgstr[0] "1 fermata intermedia"
-msgstr[1] "1 fermata intermedia"
+msgstr[1] "%1 fermate intermedie"
 
 #: app/BusEditor.qml:18
 #, kde-format
@@ -2464,13 +2463,12 @@ msgstr "Cognome"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "Il nome distingue tra maiuscole e minuscole."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "Riferimento della prenotazione"
+msgstr "Ordina il numero di riferimento delle prenotazioni"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format
@@ -2651,10 +2649,9 @@ msgid "Program Membership"
 msgstr "Adesione al programma"
 
 #: app/ProgramMembershipPage.qml:103
-#, fuzzy, kde-format
-#| msgid "Ticket number copied to clipboard"
+#, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Numero del biglietto copiato negli appunti"
+msgstr "Numero di iscrizione al programma copiato negli appunti"
 
 #: app/publictransport.cpp:240 app/publictransport.cpp:267
 #, kde-format
