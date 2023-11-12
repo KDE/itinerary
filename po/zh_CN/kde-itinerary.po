@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:08+0000\n"
-"PO-Revision-Date: 2023-10-21 13:51\n"
+"PO-Revision-Date: 2023-11-11 07:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -157,10 +157,9 @@ msgid "Send to %1"
 msgstr ""
 
 #: app/ActionsCard.qml:167
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "导入预约"
+msgstr ""
 
 #: app/ActionsCard.qml:169 app/TimelinePage.qml:225
 #, kde-format
@@ -320,10 +319,9 @@ msgid "Trip sent."
 msgstr ""
 
 #: app/applicationcontroller.cpp:711
-#, fuzzy, kde-format
-#| msgid "View Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "查看预约"
+msgstr ""
 
 #: app/applicationcontroller.cpp:794
 #, kde-format
@@ -498,8 +496,7 @@ msgid "Ticket number copied to clipboard"
 msgstr ""
 
 #: app/BookingEditorCard.qml:38
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "预约详情"
@@ -536,8 +533,7 @@ msgid "Change arrival stop"
 msgstr ""
 
 #: app/BusEditor.qml:84
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "公共汽车"
@@ -934,8 +930,7 @@ msgid "Number:"
 msgstr "数字："
 
 #: app/EventPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "类型："
@@ -1700,10 +1695,9 @@ msgid "%1 (arrival)"
 msgstr "%1 号登机口 (到达)"
 
 #: app/IndoorMapInfoSheet.qml:130 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Flight"
+#, kde-format
 msgid "Edit with iD"
-msgstr "编辑航班信息"
+msgstr ""
 
 #: app/IndoorMapInfoSheet.qml:135 app/IndoorMapPage.qml:133
 #, kde-format
@@ -2704,8 +2698,7 @@ msgid "Documents and Tickets"
 msgstr ""
 
 #: app/RestaurantEditor.qml:19
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "编辑餐厅信息"
@@ -2722,11 +2715,10 @@ msgid "Name"
 msgstr ""
 
 #: app/RestaurantEditor.qml:73
-#, fuzzy, kde-format
-#| msgid "View Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
-msgstr "查看预约"
+msgstr ""
 
 #: app/RestaurantPage.qml:17
 #, kde-format
@@ -2734,11 +2726,10 @@ msgid "Restaurant Reservation"
 msgstr "餐厅订座"
 
 #: app/RestaurantPage.qml:30
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "旅程详情"
+msgstr ""
 
 #: app/RestaurantPage.qml:42
 #, kde-format
