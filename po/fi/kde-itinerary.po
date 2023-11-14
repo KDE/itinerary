@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-14 01:38+0000\n"
 "PO-Revision-Date: 2023-09-27 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3128,12 +3128,12 @@ msgstr "Viimeisimmin käytetyt"
 msgid "Most often used"
 msgstr "Useimmin käytetyt"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:128
 #, kde-format
 msgid "Remove history entry"
 msgstr "Poista historiatietue"
 
-#: app/StopPickerPage.qml:173
+#: app/StopPickerPage.qml:174
 #, kde-format
 msgid "No locations found"
 msgstr "Sijainteja ei löytynyt"

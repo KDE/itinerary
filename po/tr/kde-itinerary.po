@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-14 01:38+0000\n"
 "PO-Revision-Date: 2023-11-05 11:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3110,12 +3110,12 @@ msgstr "En son kullanılan"
 msgid "Most often used"
 msgstr "En Sık Kullanılan"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:128
 #, kde-format
 msgid "Remove history entry"
 msgstr "Geçmiş girdisini kaldır"
 
-#: app/StopPickerPage.qml:173
+#: app/StopPickerPage.qml:174
 #, kde-format
 msgid "No locations found"
 msgstr "Konum bulunamadı"

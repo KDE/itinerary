@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:08+0000\n"
+"POT-Creation-Date: 2023-11-14 01:38+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -3302,12 +3302,12 @@ msgstr "Последние использованные"
 msgid "Most often used"
 msgstr "Наиболее часто используемые"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:128
 #, kde-format
 msgid "Remove history entry"
 msgstr "Удалить запись журнала"
 
-#: app/StopPickerPage.qml:173
+#: app/StopPickerPage.qml:174
 #, kde-format
 msgid "No locations found"
 msgstr "Расположения не найдены"
