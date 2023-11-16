@@ -322,6 +322,7 @@ int main(int argc, char **argv)
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.itinerary")));
 
     auto aboutData = KAboutData::applicationData();
+    aboutData.setBugAddress("submit@bugs.kde.org");
     aboutData.setProductName("KDE Itinerary/general"); // Bugzilla product/component name
     aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
     aboutData.setHomepage(QStringLiteral("https://apps.kde.org/itinerary"));
