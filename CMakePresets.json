@@ -6,19 +6,24 @@
             "displayName": "base preset",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build-${presetName}",
-            "installDir": "$env{KF6}",
-            "hidden": true,
-            "cacheVariables": {
-                "BUILD_QCH": "ON"
-            }
+            "installDir": "$env{KF5}",
+            "hidden": true
         },
         {
+            "name": "base-qt6",
+            "displayName": "base preset",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build-${presetName}",
+            "installDir": "$env{KF6}",
+            "hidden": true
+        },	
+	{
             "name": "dev-mold",
             "displayName": "Build as debug + using mold linker",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
+		"CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
             },
             "inherits": [
                 "base"
@@ -36,6 +41,44 @@
             ]
         },
         {
+            "name": "dev-qt6",
+            "displayName": "Build against qt6",
+            "binaryDir": "${sourceDir}/build-qt6",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_WITH_QT6": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "inherits": [
+                "base-qt6"
+            ]
+        },
+        {
+            "name": "release-qt6",
+            "displayName": "Build as release mode.",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "BUILD_WITH_QT6": "ON",
+		"BUILD_TESTING": "OFF"
+            },
+            "inherits": [
+                "base-qt6"
+            ]
+        },
+        {
+            "name": "dev-mold-qt6",
+            "displayName": "Build as debug + using mold linker",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+		"BUILD_WITH_QT6": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold"
+            },
+            "inherits": [
+                "base-qt6"
+            ]
+        },
+        {
             "name": "asan",
             "displayName": "Build with Asan support.",
             "cacheVariables": {
@@ -46,6 +89,55 @@
                 "base"
             ]
         },
+        {   
+            "name": "asan-qt6",
+            "displayName": "Build with Asan support (qt6).",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "ECM_ENABLE_SANITIZERS" : "'address;undefined'",
+		"CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
+		"BUILD_WITH_QT6": "ON"
+            },  
+            "inherits": [
+                "base-qt6"
+            ]
+        }, 
+        {
+            "name": "dev-clang-qt6-asan",
+            "displayName": "dev-clang-qt6-asan",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+		"ECM_ENABLE_SANITIZERS" : "'address;undefined'",
+		"CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
+                "BUILD_WITH_QT6": "ON" 
+            },
+            "environment": {
+                "CXX": "clang++",
+                "CCACHE_DISABLE": "ON"
+            },
+            "inherits": [
+                "base-qt6"
+            ]
+        },
+        {       
+            "name": "dev-clang-qt6",
+            "displayName": "dev-clang-qt6",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
+                "BUILD_WITH_QT6": "ON"
+            },
+            "environment": {
+                "CXX": "clang++",
+                "CCACHE_DISABLE": "ON"
+            },  
+            "inherits": [
+                "base-qt6"
+            ]   
+        },  
+	
         {
             "name": "dev-clang",
             "displayName": "dev-clang",
@@ -77,7 +169,7 @@
             "displayName": "Build as release mode.",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "BUILD_TESTING": "OFF"
+		"BUILD_TESTING": "OFF"
             },
             "inherits": [
                 "base"
@@ -92,14 +184,14 @@
             "inherits": [
                 "base"
             ]
-        },
-        {
+	},
+	{
             "name": "coverage",
             "displayName": "coverage",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "USE_UNITY_CMAKE_SUPPORT": "OFF",
-                "BUILD_COVERAGE": "ON"
+                "BUILD_COVERAGE": "ON" 
             },
             "inherits": [
                 "base"
@@ -138,8 +230,28 @@
             "configurePreset": "dev"
         },
         {
+            "name": "dev-clang-qt6-asan",
+            "configurePreset": "dev-clang-qt6-asan"
+        },
+        {
+            "name": "dev-clang-qt6",
+            "configurePreset": "dev-clang-qt6"
+        },
+	{
             "name": "dev-mold",
             "configurePreset": "dev-mold"
+        },
+        {   
+            "name": "dev-mold-qt6",
+            "configurePreset": "dev-mold-qt6"
+        },
+        {
+            "name": "dev-qt6",
+            "configurePreset": "dev-qt6"
+        },
+        {       
+            "name": "release-qt6",
+            "configurePreset": "release-qt6"
         },
         {
             "name": "dev-clang",
@@ -161,10 +273,14 @@
             "name": "coverage",
             "configurePreset": "coverage"
         },
-        {
+	{
             "name": "asan",
             "configurePreset": "asan"
         },
+        {   
+            "name": "asan-qt6",
+            "configurePreset": "asan-qt6"
+        },	
         {
             "name": "clazy",
             "configurePreset": "clazy",
