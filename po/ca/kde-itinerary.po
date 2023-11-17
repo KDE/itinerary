@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 02:26+0000\n"
+"POT-Creation-Date: 2023-11-17 02:27+0000\n"
 "PO-Revision-Date: 2023-09-19 19:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1989,22 +1989,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:328
+#: app/main.cpp:329
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Assistent digital de viatges"
 
-#: app/main.cpp:329
+#: app/main.cpp:330
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Copyright © 2018-%1, La comunitat KDE"
 
-#: app/main.cpp:336
+#: app/main.cpp:337
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Obre l'itinerari a la pàgina indicada"
 
-#: app/main.cpp:341
+#: app/main.cpp:342
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Fitxer PkPass o JSON-LD a importar."

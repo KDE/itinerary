@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 02:26+0000\n"
+"POT-Creation-Date: 2023-11-17 02:27+0000\n"
 "PO-Revision-Date: 2023-10-31 15:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1997,22 +1997,22 @@ msgctxt "currency conversion rate"
 msgid "1 %1 = %2 %3"
 msgstr "1 %1 = %2 %3"
 
-#: app/main.cpp:328
+#: app/main.cpp:329
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровой помощник в путешествиях"
 
-#: app/main.cpp:329
+#: app/main.cpp:330
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "© Сообщество KDE, 2018-%1"
 
-#: app/main.cpp:336
+#: app/main.cpp:337
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Открыть программу на указанной странице"
 
-#: app/main.cpp:341
+#: app/main.cpp:342
 #, kde-format
 msgid "PkPass or JSON-LD file to import."
 msgstr "Файл PkPass или JSON-LD для импорта."
