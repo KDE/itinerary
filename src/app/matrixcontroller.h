@@ -7,12 +7,10 @@
 #define MATRIXCONTROLLER_H
 
 #include <QObject>
-
+#include <QAbstractItemModel>
 class MatrixManager;
 class MatrixRoomsModel;
 class MatrixRoomsSortProxyModel;
-
-class QAbstractItemModel;
 
 /** Itinerary-specific Matrix integration logic. */
 class MatrixController : public QObject

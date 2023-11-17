@@ -73,3 +73,5 @@ QHash<int, QByteArray> CalendarListModel::roleNames() const
     n.insert(AccessModeRole, "accessMode");
     return n;
 }
+
+#include "moc_calendarlistmodel.cpp"

@@ -61,3 +61,5 @@ void AndroidCalendarPlugin::loadCalendars() const
         m_calendars.push_back(KCalendarCore::Calendar::Ptr(cal));
     }
 }
+
+#include "moc_androidcalendarplugin.cpp"

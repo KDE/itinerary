@@ -86,3 +86,5 @@ void TransferDelegateController::scheduleTimer()
     m_updateTrigger.setInterval(std::chrono::minutes(1));
     m_updateTrigger.start();
 }
+
+#include "moc_transferdelegatecontroller.cpp"

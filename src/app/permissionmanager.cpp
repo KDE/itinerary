@@ -92,3 +92,5 @@ void PermissionManager::requestPermission(Permission::Permission permission, QJS
 #endif
 #endif
 }
+
+#include "moc_permissionmanager.cpp"

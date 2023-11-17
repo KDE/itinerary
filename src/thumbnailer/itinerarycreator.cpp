@@ -51,3 +51,5 @@ KIO::ThumbnailResult ItineraryCreator::create(const KIO::ThumbnailRequest &reque
 }
 
 #include "itinerarycreator.moc"
+
+#include "moc_itinerarycreator.cpp"

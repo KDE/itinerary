@@ -597,3 +597,5 @@ QString TripGroupManager::guessName(const TripGroup& g) const
     }
     return i18nc("%1 is destination, %2 and %3 are years", "%1 (%2/%3)", dest, beginDt.date().toString(QStringLiteral("yyyy")), endDt.date().toString(QStringLiteral("yyyy")));
 }
+
+#include "moc_tripgroupmanager.cpp"

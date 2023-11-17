@@ -91,3 +91,5 @@ QHash<int, QByteArray> StatisticsTimeRangeModel::roleNames() const
     r.insert(EndRole, "end");
     return r;
 }
+
+#include "moc_statisticstimerangemodel.cpp"

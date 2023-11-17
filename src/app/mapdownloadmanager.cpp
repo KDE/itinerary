@@ -164,3 +164,5 @@ void MapDownloadManager::networkStatusChanged()
         downloadNext();
     }
 }
+
+#include "moc_mapdownloadmanager.cpp"

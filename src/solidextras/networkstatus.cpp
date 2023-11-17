@@ -9,3 +9,5 @@
 using namespace SolidExtras;
 
 NetworkStatus::~NetworkStatus() = default;
+
+#include "moc_networkstatus.cpp"

@@ -310,3 +310,5 @@ QDateTime TimelineElement::endDateTime() const
 
     return {};
 }
+
+#include "moc_timelineelement.cpp"

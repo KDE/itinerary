@@ -60,3 +60,5 @@ QVariant Factory::makeTicket()
 {
     return KItinerary::Ticket();
 }
+
+#include "moc_factory.cpp"

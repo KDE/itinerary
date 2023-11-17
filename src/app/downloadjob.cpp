@@ -136,3 +136,5 @@ void DownloadJob::handleDownloadReply(QNetworkReply *reply)
     }
     Q_EMIT finished();
 }
+
+#include "moc_downloadjob.cpp"

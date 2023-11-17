@@ -142,3 +142,4 @@ int TicketTokenModel::initialIndex() const
     }
     return it - m_personNames.begin();
 }
+#include "moc_tickettokenmodel.cpp"

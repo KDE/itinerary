@@ -342,3 +342,5 @@ void FavoriteLocationModel::importFromGpx(const QString &filePath)
 
     saveLocations();
 }
+
+#include "moc_favoritelocationmodel.cpp"

@@ -74,3 +74,5 @@ QHash<int, QByteArray> WeatherForecastModel::roleNames() const
     names.insert(LocalizedTimeRole, "localizedTime");
     return names;
 }
+
+#include "moc_weatherforecastmodel.cpp"

@@ -59,3 +59,5 @@ KCalendarCore::CalendarPlugin* CalendarPluginLoader::plugin()
 {
     return s_pluginLoader->plugin.get();
 }
+
+#include "moc_calendarpluginloader.cpp"

@@ -39,3 +39,5 @@ void LockManager::toggleInhibitScreenLock(const QString &explanation)
     }
     m_inhibit = !m_inhibit;
 }
+
+#include "moc_lockmanager.cpp"

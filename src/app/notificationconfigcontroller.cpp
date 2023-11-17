@@ -48,3 +48,5 @@ void NotificationConfigController::configureNotifications()
 #endif
 }
 
+
+#include "moc_notificationconfigcontroller.cpp"

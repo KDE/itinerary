@@ -152,3 +152,5 @@ QString DocumentManager::basePath() const
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/documents/");
 }
+
+#include "moc_documentmanager.cpp"

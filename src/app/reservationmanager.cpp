@@ -556,3 +556,5 @@ QString ReservationManager::makeReservationId(const QString &resIdHint) const
     }
     return QUuid::createUuid().toString(QUuid::WithoutBraces);
 }
+
+#include "moc_reservationmanager.cpp"

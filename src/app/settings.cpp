@@ -243,3 +243,5 @@ void Settings::setDevelopmentMode(bool enabled)
     s.setValue(QLatin1String("DevelopmentMode"), m_developmentMode);
     Q_EMIT developmentModeChanged(m_developmentMode);
 }
+
+#include "moc_settings.cpp"

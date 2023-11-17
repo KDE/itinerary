@@ -209,3 +209,5 @@ void NavigationController::navigateTo(const QVariant& from, const QVariant& to)
     QDesktopServices::openUrl(url);
 #endif
 }
+
+#include "moc_navigationcontroller.cpp"

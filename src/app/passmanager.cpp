@@ -385,3 +385,5 @@ QString PassManager::basePath()
 {
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/programs/");
 }
+
+#include "moc_passmanager.cpp"

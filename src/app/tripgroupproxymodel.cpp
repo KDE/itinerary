@@ -122,3 +122,5 @@ bool TripGroupProxyModel::isCollapsed(const QString &groupId) const
     // by default collapse past trips
     return g.endDateTime() < now;
 }
+
+#include "moc_tripgroupproxymodel.cpp"

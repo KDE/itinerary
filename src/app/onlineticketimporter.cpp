@@ -63,3 +63,5 @@ void OnlineTicketImporter::handleRetrievalFinished()
         Q_EMIT searchSucceeded();
     }
 }
+
+#include "moc_onlineticketimporter.cpp"

@@ -129,3 +129,5 @@ QString DevelopmentModeController::screenInfo()
     }
     return info;
 }
+
+#include "moc_developmentmodecontroller.cpp"

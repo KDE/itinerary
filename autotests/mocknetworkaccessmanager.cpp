@@ -80,3 +80,5 @@ QNetworkReply* MockNetworkAccessManager::createRequest(QNetworkAccessManager::Op
 }
 
 #include "mocknetworkaccessmanager.moc"
+
+#include "moc_mocknetworkaccessmanager.cpp"

@@ -121,3 +121,5 @@ void OnlineTicketRetrievalJob::handleReply(QNetworkReply *reply)
     }
     Q_EMIT finished();
 }
+
+#include "moc_onlineticketretrievaljob.cpp"

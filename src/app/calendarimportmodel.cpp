@@ -207,3 +207,5 @@ QDate CalendarImportModel::today() const
     }
     return QDate::currentDate();
 }
+
+#include "moc_calendarimportmodel.cpp"

@@ -249,3 +249,5 @@ bool WeatherForecast::isSevere() const
 
     return false;
 }
+
+#include "moc_weatherforecast.cpp"

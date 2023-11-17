@@ -215,3 +215,5 @@ QHash<int, QByteArray> MatrixRoomsModel::roleNames() const
     roles[CategoryRole] = "category";
     return roles;
 }
+
+#include "moc_matrixroomsmodel.cpp"

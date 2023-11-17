@@ -107,3 +107,5 @@ void KDEConnect::sendToDevice(const QString &fileName, const QString &deviceId)
     QDBusConnection::sessionBus().asyncCall(msg);
 #endif
 }
+
+#include "moc_kdeconnect.cpp"

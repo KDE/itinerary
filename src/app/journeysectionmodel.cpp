@@ -268,3 +268,5 @@ QDateTime JourneySectionModel::currentDateTime() const
     }
     return QDateTime::currentDateTime();
 }
+
+#include "moc_journeysectionmodel.cpp"

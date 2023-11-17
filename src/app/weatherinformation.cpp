@@ -19,3 +19,5 @@ QString WeatherInformation::labelForPlace(const QVariant &place)
     }
     return LocationUtil::name(place);
 }
+
+#include "moc_weatherinformation.cpp"

@@ -79,3 +79,5 @@ int CountrySubdivisionModel::rowForNameOrCode(const QString &input) const
     }
     return -1;
 }
+
+#include "moc_countrysubdivisionmodel.cpp"

@@ -232,3 +232,5 @@ Transfer Transfer::fromJson(const QJsonObject &obj)
 
     return transfer;
 }
+
+#include "moc_transfer.cpp"

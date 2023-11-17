@@ -115,3 +115,5 @@ QDateTime TripGroup::endDateTime() const
     }
     return dt;
 }
+
+#include "moc_tripgroup.cpp"

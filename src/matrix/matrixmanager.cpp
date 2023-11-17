@@ -138,3 +138,5 @@ void MatrixManager::postLocation(const QString &roomId, float latitude, float lo
 
     postEvent(roomId, QLatin1String("m.room.message"), content);
 }
+
+#include "moc_matrixmanager.cpp"

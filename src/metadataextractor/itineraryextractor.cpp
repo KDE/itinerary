@@ -124,3 +124,5 @@ void KFileMetaData::ItineraryExtractor::extract(ExtractionResult *result)
                                              QLocale().toString(flight.departureDay(), QLocale::ShortFormat)));
     }
 }
+
+#include "moc_itineraryextractor.cpp"

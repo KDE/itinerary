@@ -45,3 +45,5 @@ void BrightnessBackend::toggleBrightness()
     }
     m_maximized = !m_maximized;
 }
+
+#include "moc_brightnessmanager.cpp"

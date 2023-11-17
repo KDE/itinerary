@@ -206,3 +206,5 @@ bool HealthCertificateManager::certLessThan(const CertData &lhs, const CertData 
     return lhs.name < rhs.name;
 #endif
 }
+
+#include "moc_healthcertificatemanager.cpp"

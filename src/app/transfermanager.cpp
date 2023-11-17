@@ -832,3 +832,5 @@ void TransferManager::clear()
     settings.beginGroup(QStringLiteral("TransferManager"));
     settings.remove(QStringLiteral("FullScan"));
 }
+
+#include "moc_transfermanager.cpp"

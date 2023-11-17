@@ -33,3 +33,5 @@ double UnitConversion::convertCurrency(double price, const QString &fromCurrency
     const auto value = KUnitConversion::Value(price, fromCurrency).convertTo(toCurrency);
     return value.isValid() ? value.number() : NAN;
 }
+
+#include "moc_unitconversion.cpp"

@@ -208,3 +208,5 @@ QString LocationInformation::currencyCode() const
 {
     return m_currency;
 }
+
+#include "moc_locationinformation.cpp"

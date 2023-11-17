@@ -31,3 +31,5 @@ bool MatrixRoomsSortProxyModel::lessThan(const QModelIndex &source_left, const Q
 
     return lhsCategory < rhsCategory;
 }
+
+#include "moc_matrixroomssortproxymodel.cpp"

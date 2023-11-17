@@ -937,3 +937,5 @@ bool TimelineModel::isDateEmpty(const QDate &date) const
     }
     return true;
 }
+
+#include "moc_timelinemodel.cpp"

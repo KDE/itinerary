@@ -169,3 +169,5 @@ void MatrixBeacon::setBeaconInfoId(const QString& id)
     m_beaconInfoId = id;
     Q_EMIT activeChanged();
 }
+
+#include "moc_matrixbeacon.cpp"
