@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:38+0000\n"
+"POT-Creation-Date: 2023-11-18 01:36+0000\n"
 "PO-Revision-Date: 2023-11-05 08:50+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2226,22 +2226,22 @@ msgstr "Тип M"
 msgid "Type N"
 msgstr "Тип N"
 
-#: app/main.cpp:355
+#: app/main.cpp:356
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Цифровий помічник у подорожах"
 
-#: app/main.cpp:356
+#: app/main.cpp:357
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "© Спільнота KDE, 2018–%1"
 
-#: app/main.cpp:363
+#: app/main.cpp:364
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr "Відкрити Itinerary на вказаній сторінці"
 
-#: app/main.cpp:368
+#: app/main.cpp:369
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Файли або адреси для імпортування."

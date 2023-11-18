@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-14 01:38+0000\n"
+"POT-Creation-Date: 2023-11-18 01:36+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2209,22 +2209,22 @@ msgstr "Typ M"
 msgid "Type N"
 msgstr "Typ N"
 
-#: app/main.cpp:355
+#: app/main.cpp:356
 #, kde-format
 msgid "Digital Travel Assistant"
 msgstr "Digitální asistent na cesty"
 
-#: app/main.cpp:356
+#: app/main.cpp:357
 #, kde-format
 msgid "Copyright © 2018-%1 The KDE Community"
 msgstr "Autorská práva © 2018-%1 Komunita KDE"
 
-#: app/main.cpp:363
+#: app/main.cpp:364
 #, kde-format
 msgid "Open Itinerary on the given page"
 msgstr ""
 
-#: app/main.cpp:368
+#: app/main.cpp:369
 #, kde-format
 msgid "Files or URLs to import."
 msgstr "Soubory nebo URL pro import."
