@@ -40,7 +40,7 @@ App.DetailsPage {
 
         FormCard.FormCard {
             FormCard.FormTextDelegate {
-                text: i18n("Depature Time")
+                text: i18n("Departure Time")
                 description: Localizer.formatDateTime(reservation, "departureTime")
             }
         }
