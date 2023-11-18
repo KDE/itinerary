@@ -69,6 +69,7 @@ FormCard.FormCardPage {
                 id: barcodeContainer
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.bottomMargin: Kirigami.Units.largeSpacing
 
                 barcodeType: root.ticket.ticketTokenType
