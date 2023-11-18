@@ -100,7 +100,7 @@ Kirigami.ScrollablePage {
             text: i18n("Import bonus or discount program cards or flat rate passes.")
             helpfulAction: Kirigami.Action {
                 text: i18n("Import...")
-                icon.name: i18n("document-open")
+                icon.name: "document-open"
                 onTriggered: importDialog.open()
             }
         }
