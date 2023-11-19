@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-18 01:36+0000\n"
+"POT-Creation-Date: 2023-11-19 01:52+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -112,7 +112,7 @@ msgid "Add transfer after"
 msgstr "Adicionar translado depois"
 
 #: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:142
-#: app/TicketPage.qml:136
+#: app/TicketPage.qml:137
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -131,7 +131,7 @@ msgstr "Exportar..."
 #: app/GenericPkPassPage.qml:25 app/GenericPkPassPage.qml:38
 #: app/HealthCertificatePage.qml:53 app/HealthCertificatePage.qml:67
 #: app/ProgramMembershipPage.qml:46 app/ProgramMembershipPage.qml:147
-#: app/TicketPage.qml:48 app/TicketPage.qml:149 app/TimelinePage.qml:165
+#: app/TicketPage.qml:48 app/TicketPage.qml:150 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -177,7 +177,7 @@ msgid "Itinerary file (*.itinerary)"
 msgstr "Arquivos do KDE Itinerary (*.itinerary)"
 
 #: app/ActionsCard.qml:174 app/ProgramMembershipPage.qml:136
-#: app/TicketPage.qml:130
+#: app/TicketPage.qml:131
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
@@ -2679,11 +2679,6 @@ msgstr "%1 - %2"
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
 
-#: app/PassPage.qml:103
-#, kde-format
-msgid "document-open"
-msgstr "abrir documento"
-
 #: app/PkPassPage.qml:18
 #, kde-format
 msgid "Boarding Pass"
@@ -2706,7 +2701,7 @@ msgid "Program"
 msgstr "Programa"
 
 #: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:60
-#: app/ProgramMembershipEditorCard.qml:55 app/TicketPage.qml:86
+#: app/ProgramMembershipEditorCard.qml:55 app/TicketPage.qml:87
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgid "Name"
@@ -2714,7 +2709,7 @@ msgstr "Nome:"
 
 #: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:80
 #: app/ProgramMembershipEditorCard.qml:62 app/ProgramMembershipPage.qml:93
-#: app/TicketPage.qml:104
+#: app/TicketPage.qml:105
 #, kde-format
 msgid "Number"
 msgstr "Número"
@@ -2759,14 +2754,14 @@ msgid "Member"
 msgstr "Membro"
 
 #: app/ProgramMembershipEditor.qml:87 app/ProgramMembershipPage.qml:115
-#: app/TicketPage.qml:92
+#: app/TicketPage.qml:93
 #, fuzzy, kde-format
 #| msgid "Valid from:"
 msgid "Valid from"
 msgstr "Válido a partir de:"
 
 #: app/ProgramMembershipEditor.qml:94 app/ProgramMembershipPage.qml:120
-#: app/TicketPage.qml:98
+#: app/TicketPage.qml:99
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
@@ -3278,7 +3273,7 @@ msgstr "Nenhum local encontrado"
 msgid "Edit Ticket"
 msgstr "Ingresso do evento"
 
-#: app/TicketEditor.qml:42 app/TicketPage.qml:18 app/TicketPage.qml:81
+#: app/TicketEditor.qml:42 app/TicketPage.qml:18 app/TicketPage.qml:82
 #, kde-format
 msgid "Ticket"
 msgstr "Ingresso"
@@ -3304,7 +3299,7 @@ msgstr "Excluir ingresso"
 msgid "Do you really want to delete this ticket?"
 msgstr "Deseja realmente excluir este ingresso?"
 
-#: app/TicketPage.qml:110
+#: app/TicketPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Class:"
 msgid "Class"
@@ -3407,7 +3402,7 @@ msgstr "Partida"
 #: app/TouristAttractionPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Departure Time:"
-msgid "Depature Time"
+msgid "Departure Time"
 msgstr "Hora de partida:"
 
 #: app/TouristAttractionPage.qml:50
@@ -3843,6 +3838,14 @@ msgstr ""
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 para %4 em %5"
+
+#~ msgid "document-open"
+#~ msgstr "abrir documento"
+
+#, fuzzy
+#~| msgid "Departure Time:"
+#~ msgid "Depature Time"
+#~ msgstr "Hora de partida:"
 
 #~ msgctxt "departure time for a train"
 #~ msgid "Departure time:"
