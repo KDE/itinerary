@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-07 06:43+0100\n"
+"PO-Revision-Date: 2023-11-19 07:08+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3238,11 +3238,9 @@ msgid "Departure"
 msgstr "Foriro"
 
 #: app/TouristAttractionPage.qml:43
-#, fuzzy, kde-format
-#| msgctxt "Boat departure"
-#| msgid "Departure Time"
+#, kde-format
 msgid "Departure Time"
-msgstr "Foriro Tempo"
+msgstr "Forira Horo"
 
 #: app/TouristAttractionPage.qml:50
 #, kde-format
@@ -3252,7 +3250,7 @@ msgstr "Alveno"
 #: app/TouristAttractionPage.qml:55
 #, kde-format
 msgid "Arrival Time"
-msgstr "Alvena Tempo"
+msgstr "Alvena Horo"
 
 #: app/TrainDelegate.qml:118 app/TrainDelegate.qml:303
 #, kde-format
@@ -3663,9 +3661,3 @@ msgstr "Ensalutante"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgid "document-open"
-#~ msgstr "dokumento-malfermita"
-
-#~ msgid "Depature Time"
-#~ msgstr "Foriro Tempo"
