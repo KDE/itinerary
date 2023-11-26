@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-07 22:59+0100\n"
+"PO-Revision-Date: 2023-11-25 09:04+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3247,9 +3247,7 @@ msgid "Departure"
 msgstr "Irteera"
 
 #: app/TouristAttractionPage.qml:43
-#, fuzzy, kde-format
-#| msgctxt "Boat departure"
-#| msgid "Departure Time"
+#, kde-format
 msgid "Departure Time"
 msgstr "Irteera-ordua"
 

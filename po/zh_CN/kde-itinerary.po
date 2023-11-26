@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-19 01:52+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "kde-china@kde.org, zhouwenqing655@gmail.com, i@guoyunhe.me, wordless@echo."
-"moe, tysontan@tysontan.com"
+"moe, tds00@qq.com"
 
 #: app/AboutPage.qml:19 app/main.qml:226
 #, kde-format
@@ -3217,10 +3217,9 @@ msgid "Departure"
 msgstr "出发时间"
 
 #: app/TouristAttractionPage.qml:43
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgid "Departure Time"
-msgstr "出发时间"
+msgstr ""
 
 #: app/TouristAttractionPage.qml:50
 #, kde-format
