@@ -754,6 +754,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="23.08.4" date="2023-12-07"/>
     <release version="23.08.3" date="2023-11-09">
       <description>
         <ul>
