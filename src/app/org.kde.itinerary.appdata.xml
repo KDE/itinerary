@@ -727,7 +727,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="23.08.4" date="2023-12-07"/>
+    <release version="23.08.4" date="2023-12-07">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for 12go, Eurostar, Flixbus, Motel One, SAS and Thalys.</li>
+          <li>Improved support for European FCB railway ticket barcodes.</li>
+          <li>Support for Eurostar onboard API.</li>
+        </ul>
+      </description>
+    </release>
     <release version="23.08.3" date="2023-11-09">
       <description>
         <ul>
