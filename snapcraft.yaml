@@ -28,7 +28,9 @@ apps:
         - network-bind
         - cups
         - network-manager
+        - network-control
         - password-manager-service
+        - akonadi-svc
         command-chain:
         - snap/command-chain/desktop-launch
 assumes:
@@ -45,11 +47,15 @@ plugs:
         interface: content
         target: $SNAP/data-dir/sounds
         default-provider: gtk-common-themes
-    kf5-5-111-qt-5-15-11-core22:
-        content: kf5-5-111-qt-5-15-11-core22-all
+    kf5-5-113-qt-5-15-11-core22:
+        content: kf5-5-113-qt-5-15-11-core22-all
         interface: content
-        default-provider: kf5-5-111-qt-5-15-11-core22
+        default-provider: kf5-5-113-qt-5-15-11-core22
         target: $SNAP/kf5
+    akonadi-svc:
+        bus: system
+        interface: dbus
+        name: org.freedesktop.Akonadi
     foo-install-cups:
         interface: content
         content: foo
@@ -88,18 +94,18 @@ parts:
         source-type: local
         plugin: make
         make-parameters:
-        - PLATFORM_PLUG=kf5-5-111-qt-5-15-11-core22
+        - PLATFORM_PLUG=kf5-5-113-qt-5-15-11-core22
         build-snaps:
-        - kf5-5-111-qt-5-15-11-core22-sdk
+        - kf5-5-113-qt-5-15-11-core22-sdk
         build-environment:
         - &id001
-            PATH: /snap/kf5-5-111-qt-5-15-11-core22-sdk/current/usr/bin${PATH:+:$PATH}
+            PATH: /snap/kf5-5-113-qt-5-15-11-core22-sdk/current/usr/bin${PATH:+:$PATH}
         - &id002
-            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-111-qt-5-15-11-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
+            XDG_DATA_DIRS: $CRAFT_STAGE/usr/share:/snap/kf5-5-113-qt-5-15-11-core22-sdk/current/usr/share:/usr/share${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}
         - &id003
-            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-111-qt-5-15-11-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
+            XDG_CONFIG_HOME: $CRAFT_STAGE/etc/xdg:/snap/kf5-5-113-qt-5-15-11-core22-sdk/current/etc/xdg:/etc/xdg${XDG_CONFIG_HOME:+:$XDG_CONFIG_HOME}
         - &id004
-            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-111-qt-5-15-11-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
+            CRAFT_CMAKE_ARGS: -DCMAKE_FIND_ROOT_PATH=/snap/kf5-5-113-qt-5-15-11-core22-sdk/current${CRAFT_CMAKE_ARGS:+:$CRAFT_CMAKE_ARGS}
     itinerary:
         after:
         - kde-neon
@@ -110,9 +116,6 @@ parts:
         - libkf5doctools-dev
         - kirigami-addons-dev
         - kosmindoormap-dev
-        - libkf5calendarcore-dev
-        - libkf5contacts-dev
-        - libkf5holidays-dev
         - libkf5networkmanagerqt-dev
         - libkf5qqc2desktopstyle-dev
         - libkhealthcertificate-dev
@@ -122,14 +125,13 @@ parts:
         - libquotient-dev
         - shared-mime-info
         - zlib1g-dev
+        build-snaps:
+        - akonadi=sdk/edge
         stage-packages:
         - kirigami-addons-data
         - qml-module-org-kde-kirigamiaddons
         - libkosmindoormap1
         - qml-module-org-kde-kosmindoormap
-        - libkf5calendarcore5
-        - libkf5contacts5
-        - libkf5holidays5
         - libkf5networkmanagerqt6
         - qml-module-org-kde-qqc2desktopstyle
         - libkhealthcertificate1
@@ -149,6 +151,7 @@ parts:
         - libkf5solid-bin
         stage-snaps:
         - khelpcenter
+        - akonadi/edge
         source: .
         source-type: local
         cmake-parameters:
@@ -158,7 +161,7 @@ parts:
         - "-DENABLE_TESTING=OFF"
         - "-DBUILD_TESTING=OFF"
         - "-DKDE_SKIP_TEST_SETTINGS=ON"
-        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-111-qt-5-15-11-core22-sdk/current"
+        - "-DCMAKE_FIND_ROOT_PATH=$CRAFT_STAGE\\;/snap/kf5-5-113-qt-5-15-11-core22-sdk/current\\;/snap/akonadi-sdk/current"
         - "-DKDE_INSTALL_PLUGINDIR=/usr/lib/$CRAFT_ARCH_TRIPLET/qt5/plugins/"
         build-environment: &id005
         - *id001
