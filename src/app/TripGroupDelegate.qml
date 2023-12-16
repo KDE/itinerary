@@ -15,7 +15,7 @@ import "." as App
 
 FormCard.FormCard {
     id: root
-    width: parent.width
+    width: ListView.view.width
 
     required property var tripGroup
     required property string tripGroupId

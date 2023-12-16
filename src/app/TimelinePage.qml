@@ -395,7 +395,7 @@ Kirigami.ScrollablePage {
         Models.DelegateChoice {
             roleValue: TimelineElement.TodayMarker
             RowLayout {
-                width: parent.width
+                width: ListView.view.width
                 Item{ Layout.fillWidth: true }
                 QQC2.Label {
                     Layout.maximumWidth: Kirigami.Units.gridUnit * 30

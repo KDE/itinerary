@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
             required property string localizedTime
 
             highlighted: false
-            width: parent.width
+            width: ListView.view.width
 
             background: Rectangle {
                 color: weatherForecast.isSevere ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor

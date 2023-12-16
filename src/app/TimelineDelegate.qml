@@ -14,7 +14,7 @@ import "." as App
 
 FormCard.FormCard {
     id: root
-    width: parent.width
+    width: ListView.view.width
     /** Reservation batch identifier (@see ReservationManager). */
     property alias batchId: _controller.batchId
     /** All reservations that are part of this patch. */
