@@ -156,8 +156,8 @@ void registerKCalendarCoreTypes()
 
 void registerKPkPassTypes()
 {
-    qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
-    qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
+    qmlRegisterUncreatableMetaObject(KPkPass::Barcode::staticMetaObject, "org.kde.pkpass", 1, 0, "Barcode", {});
+    qmlRegisterUncreatableMetaObject(KPkPass::Field::staticMetaObject, "org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
 }
@@ -165,7 +165,7 @@ void registerKPkPassTypes()
 void registerKItineraryTypes()
 {
     qRegisterMetaType<KItinerary::KnowledgeDb::DrivingSide>();
-    qmlRegisterUncreatableType<KItinerary::Ticket>("org.kde.kitinerary", 1, 0, "Ticket", {});
+    qmlRegisterUncreatableMetaObject(KItinerary::Ticket::staticMetaObject, "org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
 #if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
@@ -185,11 +185,11 @@ void registerApplicationTypes()
     qRegisterMetaType<Permission::Permission>();
     qRegisterMetaType<HealthCertificateManager*>();
 
-    qmlRegisterUncreatableType<LocationInformation>("org.kde.itinerary", 1, 0, "LocationInformation", {});
-    qmlRegisterUncreatableType<StatisticsItem>("org.kde.itinerary", 1, 0, "StatisticsItem", {});
-    qmlRegisterUncreatableType<TimelineElement>("org.kde.itinerary", 1, 0, "TimelineElement", {});
+    qmlRegisterUncreatableMetaObject(LocationInformation::staticMetaObject, "org.kde.itinerary", 1, 0, "LocationInformation", {});
+    qmlRegisterUncreatableMetaObject(StatisticsItem::staticMetaObject, "org.kde.itinerary", 1, 0, "StatisticsItem", {});
+    qmlRegisterUncreatableMetaObject(TimelineElement::staticMetaObject, "org.kde.itinerary", 1, 0, "TimelineElement", {});
     qmlRegisterUncreatableType<TimelineModel>("org.kde.itinerary", 1, 0, "TimelineModel", {});
-    qmlRegisterUncreatableType<Transfer>("org.kde.itinerary", 1, 0, "Transfer", {});
+    qmlRegisterUncreatableMetaObject(Transfer::staticMetaObject, "org.kde.itinerary", 1, 0, "Transfer", {});
 
     qmlRegisterUncreatableMetaObject(Permission::staticMetaObject, "org.kde.itinerary", 1, 0, "Permission", {});
 #if HAVE_MATRIX
