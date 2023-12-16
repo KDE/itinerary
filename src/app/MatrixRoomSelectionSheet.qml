@@ -20,7 +20,7 @@ Kirigami.OverlaySheet {
     ListView {
         model: KSortFilterProxyModel {
             // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
-            sourceModel: sheet.sheetOpen ? MatrixController.roomsModel : null
+            sourceModel: sheet.visible ? MatrixController.roomsModel : null
             filterCaseSensitivity: Qt.CaseInsensitive
             filterString: searchField.text
         }
@@ -102,8 +102,5 @@ Kirigami.OverlaySheet {
         focus: true
     }
 
-    onSheetOpenChanged: {
-        if (sheetOpen)
-            searchField.clear();
-    }
+    onOpened: searchField.clear()
 }

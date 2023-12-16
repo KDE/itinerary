@@ -146,10 +146,5 @@ Kirigami.OverlaySheet {
     }
     footer: Settings.osmContributorMode ? elementDetailsSheet.footerLoader.item : null
 
-    onSheetOpenChanged: {
-        console.log(elementDetailsSheet.model);
-        if (sheetOpen == false) {
-            elementDetailsSheet.model.clear()
-        }
-    }
+    onClosed: elementDetailsSheet.model.clear()
 }

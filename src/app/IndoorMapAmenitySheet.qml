@@ -21,7 +21,7 @@ Kirigami.OverlaySheet {
 
     ListView {
         model: AmenitySortFilterProxyModel {
-            sourceModel: amenitySheet.sheetOpen ? amenitySheet.model : null
+            sourceModel: amenitySheet.visible ? amenitySheet.model : null
             filterString: amenitySearchField.text
         }
         Layout.preferredWidth: Kirigami.Units.gridUnit * 25
@@ -49,8 +49,5 @@ Kirigami.OverlaySheet {
         focus: true
     }
 
-    onSheetOpenChanged: {
-        if (sheetOpen)
-            amenitySearchField.clear();
-    }
+    onOpened: amenitySearchField.clear()
 }
