@@ -35,23 +35,23 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
-            checked: historySortModel.sortRole == "locationName"
+            checked: historySortModel.sortRoleName == "locationName"
             text: i18n("Sort by name")
-            onTriggered: historySortModel.sortRole = "locationName"
+            onTriggered: historySortModel.sortRoleName = "locationName"
         },
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
-            checked: historySortModel.sortRole == "lastUsed"
+            checked: historySortModel.sortRoleName == "lastUsed"
             text: i18n("Most recently used")
-            onTriggered: historySortModel.sortRole = "lastUsed"
+            onTriggered: historySortModel.sortRoleName = "lastUsed"
         },
         Kirigami.Action {
             QQC2.ActionGroup.group: sortActionGroup
             checkable: true
-            checked: historySortModel.sortRole == "useCount"
+            checked: historySortModel.sortRoleName == "useCount"
             text: i18n("Most often used")
-            onTriggered: historySortModel.sortRole = "useCount"
+            onTriggered: historySortModel.sortRoleName = "useCount"
         }
     ]
     header: ColumnLayout {
@@ -109,9 +109,9 @@ Kirigami.ScrollablePage {
     KSortFilterProxyModel {
         id: historySortModel
         sourceModel: locationHistoryModel
-        sortRole: Settings.read("StopPicker/historySortMode", "lastUsed")
-        onSortRoleChanged: Settings.write("StopPicker/historySortMode", sortRole)
-        sortOrder: sortRole == "locationName" ? Qt.AscendingOrder : Qt.DescendingOrder
+        sortRoleName: Settings.read("StopPicker/historySortMode", "lastUsed")
+        onSortRoleChanged: Settings.write("StopPicker/historySortMode", sortRoleName)
+        sortOrder: sortRoleName == "locationName" ? Qt.AscendingOrder : Qt.DescendingOrder
     }
 
     Component {

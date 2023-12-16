@@ -92,7 +92,7 @@ ColumnLayout {
     }
     KSortFilterProxyModel {
         id: writableCalendars
-        filterRole: "accessMode"
+        filterRoleName: "accessMode"
         filterString: KCalendarCore.KCalendarCore.ReadWrite
     }
     App.CalendarSelectionSheet {
