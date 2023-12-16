@@ -97,6 +97,7 @@ Kirigami.ScrollablePage {
         delegate: chooser
         section.delegate: Kirigami.ListSectionHeader {
             text: section
+            width: ListView.view.width
         }
         section.property: "section"
 
