@@ -85,4 +85,6 @@ Kirigami.Page {
         text: i18n("No camera available.")
         visible: camera.errorCode != Camera.NoError
     }
+
+    Component.onCompleted: PermissionManager.requestPermission(Permission.Camera, function() { camera.start(); })
 }

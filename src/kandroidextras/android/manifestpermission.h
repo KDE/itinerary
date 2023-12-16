@@ -27,6 +27,7 @@ public:
     JNI_CONSTANT(java::lang::String, READ_EXTERNAL_STORAGE)
     JNI_CONSTANT(java::lang::String, WRITE_EXTERNAL_STORAGE)
     JNI_CONSTANT(java::lang::String, POST_NOTIFICATIONS)
+    JNI_CONSTANT(java::lang::String, CAMERA)
 };
 
 }

@@ -17,6 +17,7 @@ namespace Permission
         ReadCalendar,
         WriteCalendar,
         PostNotification,
+        Camera,
     };
     Q_ENUM_NS(Permission)
 }

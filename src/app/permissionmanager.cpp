@@ -29,6 +29,8 @@ static QString permissionName(Permission::Permission p)
             return ManifestPermission::WRITE_CALENDAR;
         case Permission::PostNotification:  // only for SDK >= 33
             return ManifestPermission::POST_NOTIFICATIONS;
+        case Permission::Camera:
+            return ManifestPermission::CAMERA;
     }
 }
 #endif
