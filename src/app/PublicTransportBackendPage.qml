@@ -96,8 +96,8 @@ Kirigami.ScrollablePage {
                         return c.emojiFlag + " " + c.name;
                 }
             }
+            width: ListView.view.width
         }
         section.criteria: ViewSection.FullString
-        section.labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
     }
 }
