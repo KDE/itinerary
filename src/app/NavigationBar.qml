@@ -15,13 +15,13 @@ Kirigami.NavigationTabBar {
     visible: pageStack.layers.depth < 2
     actions: [
         Kirigami.PagePoolAction {
-            iconName: "format-list-unordered"
+            icon.name: "format-list-unordered"
             text: i18n("Itinerary")
             pagePool: pagepool
             page: Qt.resolvedUrl("TimelinePage.qml")
         },
         Kirigami.Action {
-            iconName: "search"
+            icon.name: "search"
             text: i18n("Plan Trip")
             onTriggered: {
                 if (pageStack.currentItem.objectName !== "JourneyRequestPage") {
@@ -30,7 +30,7 @@ Kirigami.NavigationTabBar {
             }
         },
         Kirigami.PagePoolAction {
-            iconName: "wallet-open"
+            icon.name: "wallet-open"
             text: i18n("Passes & Programs")
             pagePool: pagepool
             page: Qt.resolvedUrl("PassPage.qml")
