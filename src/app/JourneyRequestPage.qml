@@ -136,18 +136,11 @@ FormCard.FormCardPage {
                         }
                     ]
                 }
-                Flow {
-                    Layout.fillWidth: true
-                    Addon.DateInput {
-                        id: dateInput
-                        selectedDate: root.initialDateTime
-                    }
-                    Addon.TimeInput {
-                        id: timeInput
-                        value: root.initialDateTime
-                    }
-                }
             }
+        }
+        FormCard.FormDateTimeDelegate {
+            id: dateTimeInput
+            value: root.initialDateTime
         }
 
         FormCard.FormDelegateSeparator {
@@ -166,9 +159,8 @@ FormCard.FormCardPage {
                 req.from = root.departureStop;
                 req.to = root.arrivalStop;
 
-                const dt = new Date(dateInput.selectedDate.getFullYear(), dateInput.selectedDate.getMonth(), dateInput.selectedDate.getDate(), timeInput.value.getHours(), timeInput.value.getMinutes());
-                console.log(dt, dateInput.selectedDate, timeInput.value);
-                req.dateTime = dt;
+                console.log(dateTimeInput.value);
+                req.dateTime = dateTimeInput.value;
                 req.maximumResults = 6;
                 req.downloadAssets = true;
 

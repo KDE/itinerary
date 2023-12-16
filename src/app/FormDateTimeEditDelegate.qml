@@ -7,76 +7,23 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
 import "." as App
 
-// TODO KF6 replace with FormCard.FormDateTimeDelegate
-FormCard.AbstractFormDelegate {
+FormCard.FormDateTimeDelegate {
     id: root
 
     property variant obj
     property string propertyName
-    property date value: Util.dateTimeStripTimezone(obj, propertyName)
+    value: Util.dateTimeStripTimezone(obj, propertyName)
     readonly property bool hasValue: !isNaN(value.getTime())
     property bool isModified: Util.dateTimeStripTimezone(obj, propertyName).getTime() != value.getTime()
-    property date initialValue: {
+    // TODO this is not used with KF6 yet!
+    initialValue: {
         let d = new Date();
         d.setTime(d.getTime() + 60 * 60 * 1000 - (d.getTime() % (60 * 60 * 1000)));
         return d;
-    }
-
-    // input validation, as in FormTextFieldDelegate
-    property var status: Kirigami.MessageType.Information
-    property string statusMessage: ""
-
-    contentItem: ColumnLayout {
-        spacing: Kirigami.Units.smallSpacing
-        QQC2.Label {
-            Layout.fillWidth: true
-            elide: Text.ElideRight
-            text: root.text
-            Accessible.ignored: true
-        }
-        Addon.DateInput {
-            id: dateInput
-            selectedDate: root.value
-            onSelectedDateChanged: root.updateValue()
-            visible: root.hasValue
-        }
-        Addon.TimeInput {
-            id: timeInput
-            value: root.value
-            onValueChanged: root.updateValue()
-            visible: root.hasValue
-        }
-        QQC2.ToolButton {
-            icon.name: "document-edit"
-            visible: !root.hasValue
-            onClicked: {
-                dateInput.item.selectedDate = root.initialValue
-                timeInput.value = root.initialValue
-            }
-        }
-        Kirigami.InlineMessage {
-            id: formErrorHandler
-            visible: root.statusMessage.length > 0
-            Layout.topMargin: visible ? Kirigami.Units.smallSpacing : 0
-            Layout.fillWidth: true
-            text: root.statusMessage
-            type: root.status
-        }
-    }
-
-    Connections {
-        target: dateInput
-        function onSelectedDateChanged() { root.updateValue(); }
-    }
-    function updateValue() {
-        const dt = new Date(dateInput.selectedDate.getFullYear(), dateInput.selectedDate.getMonth(), dateInput.selectedDate.getDate(), timeInput.value.getHours(), timeInput.value.getMinutes());
-        console.log(dt, dateInput.selectedDate, timeInput.value);
-        root.value = dt;
     }
 }
