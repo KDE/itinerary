@@ -7,7 +7,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import QtGraphicalEffects as Effects
+import QtQuick.Effects as Effects
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.itinerary
@@ -41,10 +41,13 @@ Item {
             height: parent.implicitHeight
             width: root.implicitWidth
         }
-        Effects.FastBlur {
+        Effects.MultiEffect {
             anchors.fill: backgroundImage
             source: backgroundImage
-            radius: 32
+            autoPaddingEnabled: false
+            blurEnabled: true
+            blur: 1.0
+            blurMax: 32
         }
 
         ColumnLayout {
