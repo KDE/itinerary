@@ -341,7 +341,7 @@ Kirigami.Page {
             bottomMargin: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing // to not hide the copyright information
         }
 
-        leftAction: Kirigami.Action {
+        leadingAction: Kirigami.Action {
             icon.name: "go-down-symbolic"
             text: i18nc("@action:intoolbar Go down one floor", "Floor down")
             enabled: map.floorLevels.hasFloorLevelBelow(map.view.floorLevel)
@@ -349,7 +349,7 @@ Kirigami.Page {
             visible: map.floorLevels.hasFloorLevels
         }
 
-        rightAction: Kirigami.Action {
+        trailingAction: Kirigami.Action {
             icon.name: "go-up-symbolic"
             text: i18nc("@action:intoolbar Go up one floor", "Floor up")
             enabled: map.floorLevels.hasFloorLevelAbove(map.view.floorLevel)
