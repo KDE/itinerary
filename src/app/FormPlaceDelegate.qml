@@ -39,6 +39,7 @@ FormCard.AbstractFormDelegate {
     }
 
     MatrixRoomSelectionSheet {
+        parent: applicationWindow().overlay
         id: matrixRoomSheet
             onRoomSelected: {
             console.log(room);

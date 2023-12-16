@@ -18,6 +18,7 @@ Kirigami.OverlaySheet {
 
     header: Kirigami.Heading { text: i18n("Share Location") }
     ListView {
+        clip: true
         model: KSortFilterProxyModel {
             // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
             sourceModel: sheet.visible ? MatrixController.roomsModel : null
@@ -38,6 +39,7 @@ Kirigami.OverlaySheet {
                         case MatrixRoomsModel.Space: return i18nc("matrix room type", "Spaces");
                     }
                 }
+                width: ListView.view.width
             }
         }
 
