@@ -34,15 +34,11 @@ Kirigami.Page {
         }
     }
 
-    QtLocation.Map {
+    MapView {
         id: map
         anchors.fill: parent
         center: root.coordinate
         zoomLevel: root.coordinate.isValid ? 15 : 8
-        plugin: applicationWindow().osmPlugin()
-        gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
-        gesture.preventStealing: true
-        onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
         QtLocation.MapQuickItem {
             coordinate: map.center

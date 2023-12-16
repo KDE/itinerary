@@ -104,7 +104,7 @@ Kirigami.Page {
             bottomPadding: 0
             Kirigami.ColumnView.preventStealing: true
 
-            QtLocation.Map {
+            MapView {
                 id: map
                 property bool autoFollow: true
 
@@ -117,11 +117,7 @@ Kirigami.Page {
                 }
 
                 anchors.fill: parent
-                plugin: applicationWindow().osmPlugin()
                 visible: !isNaN(onboardStatus.latitude) && !isNaN(onboardStatus.longitude)
-                gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
-                gesture.preventStealing: true
-                onCopyrightLinkActivated: Qt.openUrlExternally(link)
                 onZoomLevelChanged: autoFollow = false
                 onCenterChanged: autoFollow = false
 

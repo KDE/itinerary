@@ -131,13 +131,9 @@ Kirigami.Page {
         }
     }
 
-    QtLocation.Map {
+    MapView {
         id: map
         anchors { top: combo.bottom; left: parent.left; right: parent.right; bottom: parent.bottom; topMargin: Kirigami.Units.largeSpacing }
-        plugin: applicationWindow().osmPlugin()
-        gesture.acceptedGestures: QtLocation.MapGestureArea.PinchGesture | QtLocation.MapGestureArea.PanGesture
-        gesture.preventStealing: true
-        onCopyrightLinkActivated: Qt.openUrlExternally(link)
 
         QtLocation.MapQuickItem {
             coordinate: map.center
