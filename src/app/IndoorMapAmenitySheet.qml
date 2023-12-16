@@ -24,6 +24,7 @@ Kirigami.OverlaySheet {
             sourceModel: amenitySheet.visible ? amenitySheet.model : null
             filterString: amenitySearchField.text
         }
+        clip:true
         Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         delegate: IndoorMapAmenityDelegate {
@@ -41,6 +42,7 @@ Kirigami.OverlaySheet {
         section.property: "groupName"
         section.delegate: Kirigami.ListSectionHeader {
             label: section
+            width: ListView.view.width
         }
     }
 

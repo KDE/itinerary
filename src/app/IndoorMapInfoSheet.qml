@@ -35,11 +35,14 @@ Kirigami.OverlaySheet {
     ListView {
         id: contentView
         model: elementDetailsSheet.model
+        clip: true
         Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         Component {
             id: infoStringDelegate
             RowLayout {
+                x: Kirigami.Units.largeSpacing
+                width: parent.ListView.view.width - 2 * x
                 QQC2.Label {
                     visible: row && row.keyLabel != ""
                     text: row ? row.keyLabel + ":" : ""
@@ -58,6 +61,8 @@ Kirigami.OverlaySheet {
         Component {
             id: infoLinkDelegate
             RowLayout {
+                x: Kirigami.Units.largeSpacing
+                width: parent.ListView.view.width - 2 * x
                 QQC2.Label {
                     visible: row && row.keyLabel != ""
                     text: row ? row.keyLabel + ":" : ""
@@ -77,6 +82,8 @@ Kirigami.OverlaySheet {
         Component {
             id: infoAddressDelegate
             QQC2.Label {
+                x: Kirigami.Units.largeSpacing
+                width: parent.ListView.view.width - 2 * x
                 text: row ? Localizer.formatAddress(row.value) : ""
             }
         }
@@ -84,6 +91,8 @@ Kirigami.OverlaySheet {
         Component {
             id: infoOpeningHoursDelegate
             IndoorMapInfoSheetOpeningHoursDelegate {
+                x: Kirigami.Units.largeSpacing
+                width: parent.ListView.view.width - 2 * x
                 mapData: elementDetailsSheet.mapData
                 model: row
             }
@@ -103,8 +112,6 @@ Kirigami.OverlaySheet {
 
         delegate: Loader {
             property var row: model
-            x: Kirigami.Units.largeSpacing
-            width: ListView.view.width - 2 * x
             sourceComponent: {
                 switch (row.type) {
                     case OSMElementInformationModel.Link:

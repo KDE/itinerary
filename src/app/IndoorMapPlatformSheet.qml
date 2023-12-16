@@ -84,6 +84,7 @@ Kirigami.OverlaySheet {
                 case Platform.Bus: return i18n("Bus");
                 default: return section;
             }
+            width: ListView.view.width
         }
         section.criteria: ViewSection.FullString
 
