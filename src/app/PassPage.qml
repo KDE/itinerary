@@ -38,45 +38,53 @@ Kirigami.ScrollablePage {
         role: "type"
         Models.DelegateChoice {
             roleValue: PassManager.ProgramMembership
-            Kirigami.BasicListItem {
+            QQC2.ItemDelegate {
                 highlighted: false
-                icon: "meeting-attending"
-                text: model.pass.programName
-                subtitle: {
-                    if (!model.pass.member.name)
-                        return model.pass.membershipNumber;
-                    if (!model.pass.membershipNumber)
-                        return model.pass.member.name;
-                    return i18nc("name - number", "%1 - %2", model.pass.member.name, model.pass.membershipNumber)
+                width: ListView.view.width
+                contentItem: Kirigami.IconTitleSubtitle {
+                    icon.name: "meeting-attending"
+                    title: model.pass.programName
+                    subtitle: {
+                        if (!model.pass.member.name)
+                            return model.pass.membershipNumber;
+                        if (!model.pass.membershipNumber)
+                            return model.pass.member.name;
+                        return i18nc("name - number", "%1 - %2", model.pass.member.name, model.pass.membershipNumber)
+                    }
                 }
                 onClicked: applicationWindow().pageStack.push(programMembershipPage, { programMembership: model.pass, passId: model.passId })
             }
         }
         Models.DelegateChoice {
             roleValue: PassManager.PkPass
-            Kirigami.BasicListItem {
+            QQC2.ItemDelegate {
                 readonly property string pkPassId: PkPassManager.passId(model.pass)
                 readonly property var pkPass: PkPassManager.pass(pkPassId)
                 highlighted: false
-                text: pkPass.description
-                subtitle: pkPass.organizationName
-                icon: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
-                reserveSpaceForIcon: true
+                width: ListView.view.width
+                contentItem: Kirigami.IconTitleSubtitle {
+                    title: pkPass.description
+                    subtitle: pkPass.organizationName
+                    icon.name: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
+                }
                 onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
             }
         }
         Models.DelegateChoice {
             roleValue: PassManager.Ticket
-            Kirigami.BasicListItem {
+            QQC2.ItemDelegate {
                 highlighted: false
-                icon: "bookmarks"
-                text: model.pass.name
-                subtitle: {
-                    if (model.pass.underName.name === "")
-                        return model.validRangeLabel;
-                    if (model.validRangeLabel === "")
-                        return model.pass.underName.name;
-                    return i18nc("name - valid time range", "%1 - %2", model.pass.underName.name, model.validRangeLabel);
+                width: ListView.view.width
+                contentItem: Kirigami.IconTitleSubtitle {
+                    icon.name: "bookmarks"
+                    title: model.pass.name
+                    subtitle: {
+                        if (model.pass.underName.name === "")
+                            return model.validRangeLabel;
+                        if (model.validRangeLabel === "")
+                            return model.pass.underName.name;
+                        return i18nc("name - valid time range", "%1 - %2", model.pass.underName.name, model.validRangeLabel);
+                    }
                 }
                 onClicked: applicationWindow().pageStack.push(ticketComponent, { ticket: model.pass, passId: model.passId })
             }

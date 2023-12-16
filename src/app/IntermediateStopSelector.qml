@@ -26,13 +26,16 @@ Kirigami.OverlaySheet {
     ListView {
         id: stopSelector
         currentIndex: -1
-        delegate: Kirigami.BasicListItem {
+        delegate: QQC2.ItemDelegate {
             highlighted: ListView.isCurrentItem
-            text: {
-                if (modelData.scheduledDepartureTime.getTime()) {
-                    return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+            width: ListView.view.width
+            contentItem: Kirigami.TitleSubtitle {
+                title: {
+                    if (modelData.scheduledDepartureTime.getTime()) {
+                        return Localizer.formatTime(modelData, "scheduledDepartureTime") + " " + modelData.stopPoint.name
+                    }
+                    return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
                 }
-                return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
             }
             enabled: modelData.disruptionEffect != Disruption.NoService
         }

@@ -22,10 +22,13 @@ Kirigami.OverlaySheet {
         model: elevatorSheet.model
         Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
-        delegate: Kirigami.BasicListItem {
+        delegate: QQC2.ItemDelegate {
             highlighted: false
-            label: model.display
-            bold: model.isCurrentFloor
+            width: ListView.view.width
+            contentItem: Kirigami.TitleSubtitle {
+                title: model.display
+                font.bold: model.isCurrentFloor
+            }
             onClicked: {
                 elevatorSheet.close();
                 map.view.floorLevel = model.floorLevel;

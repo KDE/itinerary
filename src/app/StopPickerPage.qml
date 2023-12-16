@@ -141,8 +141,11 @@ Kirigami.ScrollablePage {
 
     Component {
         id: queryResultDelegate
-        Kirigami.BasicListItem {
-            text: model.location.name
+        QQC2.ItemDelegate {
+            width: ListView.view.width
+            contentItem: Kirigami.TitleSubtitle {
+                title: model.location.name
+            }
             onClicked: {
                 root.location = model.location
                 locationHistoryModel.addLocation(model.location);

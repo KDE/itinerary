@@ -19,12 +19,16 @@ Kirigami.OverlaySheet {
     ListView {
         id: calendarSelectorListView
         implicitWidth: Kirigami.Units.gridUnit * 20
-        delegate: Kirigami.BasicListItem {
+        delegate: QQC2.ItemDelegate {
             required property int index
             required property string name
             required property var calendar
 
             text: name
+            width: ListView.view.width
+            contentItem: Kirigami.TitleSubtitle {
+                title: parent.text
+            }
             onClicked: {
                 root.calendarSelected(calendar);
                 root.close();

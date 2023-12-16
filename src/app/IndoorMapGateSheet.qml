@@ -22,18 +22,21 @@ Kirigami.OverlaySheet {
         model: gateSheet.model
         Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
-        delegate: Kirigami.BasicListItem {
-            property var gate: model
-            text: {
-                if (gate.isDepartureGate && gate.isArrivalGate)
-                    return i18nc("flight departure/arrival gate", "%1 (arrival + departure)", gate.display);
-                if (gate.isDepartureGate)
-                    return i18nc("flight departure gate", "%1 (departure)", gate.display);
-                if (gate.isArrivalGate)
-                    return i18nc("flight arrival gate", "%1 (arrival)", gate.display);
-                return gate.display
-            }
+        delegate: QQC2.ItemDelegate {
             highlighted: false
+            width: ListView.view.width
+            contentItem: Kirigami.TitleSubtitle {
+                property var gate: model
+                title: {
+                    if (gate.isDepartureGate && gate.isArrivalGate)
+                        return i18nc("flight departure/arrival gate", "%1 (arrival + departure)", gate.display);
+                    if (gate.isDepartureGate)
+                        return i18nc("flight departure gate", "%1 (departure)", gate.display);
+                    if (gate.isArrivalGate)
+                        return i18nc("flight arrival gate", "%1 (arrival)", gate.display);
+                    return gate.display
+                }
+            }
             onClicked: {
                 map.view.floorLevel = model.level
                 map.view.centerOnGeoCoordinate(model.coordinate);
