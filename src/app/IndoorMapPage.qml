@@ -54,7 +54,7 @@ Kirigami.Page {
     // TODO in theory we could make this conditional to having panned the map all the way to the right
     Kirigami.ColumnView.preventStealing: true
 
-    contextualActions: [
+    actions: [
         Kirigami.Action {
             id: zoomInAction
             text: i18n("Zoom In")
@@ -357,4 +357,6 @@ Kirigami.Page {
             visible: map.floorLevels.hasFloorLevels
         }
     }
+
+    footer: null
 }

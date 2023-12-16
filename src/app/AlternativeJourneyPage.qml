@@ -52,7 +52,7 @@ App.JourneyQueryPage {
 
     Component.onCompleted: {
         for (const action of [fullJourneyAction, oneJourneyAction, actionSeparator, longDistanceModeAction, localTrainModeAction, rapidTransitModeAction, busModeAction, ferryModeAction]) {
-                actions.contextualActions.push(action);
+                actions.push(action);
         }
     }
 

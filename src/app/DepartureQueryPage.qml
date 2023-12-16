@@ -20,7 +20,7 @@ Kirigami.ScrollablePage {
     property var dateTime
 
     title: i18n("Departures")
-    contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Earlier")
             icon.name: "go-up-symbolic"

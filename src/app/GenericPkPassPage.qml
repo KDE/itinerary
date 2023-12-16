@@ -32,7 +32,7 @@ PkPassPage {
         ]
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             icon.name: "edit-delete"
             text: i18n("Delete")

@@ -31,7 +31,10 @@ Kirigami.ApplicationWindow {
     pageStack {
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 
-        globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
+        globalToolBar {
+            style: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.Auto
+            showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
+        }
     }
 
     // pop pages when not in use
@@ -240,6 +243,11 @@ Kirigami.ApplicationWindow {
     }
     contextDrawer: Kirigami.ContextDrawer {
         id: contextDrawer
+        actions: {
+            if (pageStack.layers.depth > 1)
+                return (pageStack.layers.currentItem as Kirigami.Page)?.actions ?? [];
+            else (pageStack.currentItem as Kirigami.Page)?.actions ?? [];
+        }
     }
     pageStack.initialPage: pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml"))
 

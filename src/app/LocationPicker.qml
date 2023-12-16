@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
 import org.kde.itinerary
 import "." as App
 
@@ -24,15 +25,6 @@ Kirigami.Page {
 
     // prevent swipe to the right changing pages, we want to pan the map instead
     Kirigami.ColumnView.preventStealing: true
-
-   actions.main: Kirigami.Action {
-        icon.name: "crosshairs"
-        text: i18n("Pick Location")
-        onTriggered: {
-            coordinate = map.center;
-            applicationWindow().pageStack.goBack();
-        }
-    }
 
     MapView {
         id: map
@@ -52,4 +44,23 @@ Kirigami.Page {
             }
         }
     }
+
+    FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: Kirigami.Action {
+            icon.name: "crosshairs"
+            text: i18n("Pick Location")
+            onTriggered: {
+                coordinate = map.center;
+                applicationWindow().pageStack.goBack();
+            }
+        }
+    }
+
+    footer: null
 }

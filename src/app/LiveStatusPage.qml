@@ -23,11 +23,13 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    actions.contextualActions: Kirigami.Action {
-        text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
-        icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
-        onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
-    }
+    actions: [
+        Kirigami.Action {
+            text: matrixBeacon.isActive ? i18n("Stop Location Sharing") : i18n("Share Location via Matrix")
+            icon.name: matrixBeacon.isActive ? "dialog-cancel" : "emblem-shared-symbolic"
+            onTriggered: matrixBeacon.isActive ? matrixBeacon.stop() : matrixRoomSheet.open()
+        }
+    ]
 
     OnboardStatus {
         id: onboardStatus

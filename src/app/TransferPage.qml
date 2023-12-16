@@ -39,7 +39,7 @@ Kirigami.ScrollablePage {
         color: Kirigami.Theme.backgroundColor
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Depart Now")
             icon.name: "clock"

@@ -25,7 +25,7 @@ Kirigami.ScrollablePage {
         App.TicketPage {}
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Add Program Membership...")
             icon.name: "list-add-symbolic"

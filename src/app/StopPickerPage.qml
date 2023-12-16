@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     property var location
 
     QQC2.ActionGroup { id: sortActionGroup }
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Clear history")
             icon.name: "edit-clear-history"

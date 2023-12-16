@@ -41,7 +41,7 @@ Kirigami.Page {
         }
     }
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             id: importFromClipboardAction
             icon.name: "edit-paste"

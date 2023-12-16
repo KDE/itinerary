@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
     property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Earlier")
             icon.name: "go-up-symbolic"

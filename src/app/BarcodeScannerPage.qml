@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtMultimedia
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
 import org.kde.prison.scanner as Prison
 import org.kde.itinerary
 import "." as App
@@ -21,13 +22,21 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    actions.main: Kirigami.Action {
-        icon.name: checked ? "flashlight-off" : "flashlight-on"
-        text: i18n("Light")
-        checkable: true
-        checked: camera.flash.mode == Camera.FlashVideoLight
-        visible: camera.flash.supportedModes.length > 1
-        onTriggered: camera.flash.mode = (camera.flash.mode == Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
+    FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: Kirigami.Action {
+            icon.name: checked ? "flashlight-off" : "flashlight-on"
+            text: i18n("Light")
+            checkable: true
+            checked: camera.flash.mode == Camera.FlashVideoLight
+            visible: camera.flash.supportedModes.length > 1
+            onTriggered: camera.flash.mode = (camera.flash.mode == Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
+        }
     }
 
     VideoOutput {

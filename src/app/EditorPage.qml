@@ -9,6 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
 import org.kde.kitinerary
 import org.kde.itinerary
 import "." as App
@@ -57,15 +58,13 @@ Kirigami.ScrollablePage {
     leftPadding: 0
     rightPadding: 0
 
-    footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            Item {
-                Layout.fillWidth: true
-            }
-
-            QQC2.Button {
-                action: saveAction
-            }
+    data: FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
         }
+        action: root.saveAction
     }
 }

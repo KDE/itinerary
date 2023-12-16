@@ -83,7 +83,7 @@ Kirigami.ScrollablePage {
         });
     }
     // context drawer content
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             text: i18n("Go To Now")
             icon.name: "view-calendar-day"
@@ -470,4 +470,6 @@ Kirigami.ScrollablePage {
     }
 
     Component.onCompleted: positionTimer.start()
+
+    footer: null
 }

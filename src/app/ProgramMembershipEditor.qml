@@ -7,6 +7,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
@@ -22,28 +23,36 @@ FormCard.FormCardPage {
 
     title: i18n("Edit Program Membership")
 
-    actions.main: Kirigami.Action {
-        text: i18n("Save")
-        icon.name: "document-save"
-        enabled: root.isValidInput
-        onTriggered: {
-            let program = root.passId !== "" ? PassManager.pass(root.passId) : root.programMembership;
+    data: FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: Kirigami.Action {
+            text: i18n("Save")
+            icon.name: "document-save"
+            enabled: root.isValidInput
+            onTriggered: {
+                let program = root.passId !== "" ? PassManager.pass(root.passId) : root.programMembership;
 
-            let member = program.member;
-            member.name = memberNameEdit.text;
-            program.member = member;
-            program.programName = programNameEdit.text;
-            program.membershipNumber = numberEdit.text;
-            if (validFromEdit.isModified)
-                program = Util.setDateTimePreserveTimezone(program, "validFrom", validFromEdit.value);
-            if (validUntilEdit.isModified)
-                program = Util.setDateTimePreserveTimezone(program, "validUntil", validUntilEdit.value);
+                let member = program.member;
+                member.name = memberNameEdit.text;
+                program.member = member;
+                program.programName = programNameEdit.text;
+                program.membershipNumber = numberEdit.text;
+                if (validFromEdit.isModified)
+                    program = Util.setDateTimePreserveTimezone(program, "validFrom", validFromEdit.value);
+                if (validUntilEdit.isModified)
+                    program = Util.setDateTimePreserveTimezone(program, "validUntil", validUntilEdit.value);
 
-            if (root.passId !== "")
-                PassManager.update(root.passId, program);
-            else
-                PassManager.import(program);
-            applicationWindow().pageStack.pop();
+                if (root.passId !== "")
+                    PassManager.update(root.passId, program);
+                else
+                    PassManager.import(program);
+                applicationWindow().pageStack.pop();
+            }
         }
     }
 
