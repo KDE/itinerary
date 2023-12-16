@@ -36,9 +36,10 @@ Kirigami.ScrollablePage {
         id: eventList
         model: importModel
 
-        delegate: Kirigami.AbstractListItem {
+        delegate: QQC2.ItemDelegate {
             highlighted: model.selected
-            GridLayout {
+            width: ListView.view.width
+            contentItem: GridLayout {
                 columns: 2
                 rows: 2
 

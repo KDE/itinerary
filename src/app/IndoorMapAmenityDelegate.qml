@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kopeninghours
 import org.kde.kosmindoormap
 
-Kirigami.AbstractListItem {
+QQC2.ItemDelegate {
     id: root
     required property string name
     required property string typeName
@@ -24,6 +24,7 @@ Kirigami.AbstractListItem {
     required property int index // for Kirigami
 
     highlighted: false
+    width: ListView.view.width
 
     property var oh: {
         let v = OpeningHoursParser.parse(root.openingHours);
@@ -36,7 +37,7 @@ Kirigami.AbstractListItem {
         return v;
     }
 
-    RowLayout {
+    contentItem: RowLayout {
         spacing: Kirigami.Units.largeSpacing
 
         Kirigami.Icon {

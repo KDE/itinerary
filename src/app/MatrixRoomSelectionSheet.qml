@@ -41,7 +41,7 @@ Kirigami.OverlaySheet {
             }
         }
 
-        delegate: Kirigami.AbstractListItem {
+        delegate: QQC2.ItemDelegate {
             required property string displayName
             required property var avatar
             required property var avatarImage
@@ -49,7 +49,8 @@ Kirigami.OverlaySheet {
             required property string id
             required property int index
 
-            GridLayout {
+            width: ListView.view.width
+            contentItem: GridLayout {
                 rows: 2
                 columns: 3
                 AddonComponents.Avatar {

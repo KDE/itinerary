@@ -22,13 +22,15 @@ Kirigami.OverlaySheet {
 
     ListView {
         model: platformSheet.model
+        clip: true
         Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         Component {
             id: platformDelegate
-            Kirigami.AbstractListItem {
+            QQC2.ItemDelegate {
                 property var platform: model
-                Row {
+                width: ListView.view.width
+                contentItem: Row {
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
                         text: {

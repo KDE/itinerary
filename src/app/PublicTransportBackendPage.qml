@@ -25,11 +25,12 @@ Kirigami.ScrollablePage {
 
     Component {
         id: backendDelegate
-        Kirigami.AbstractListItem {
+        QQC2.ItemDelegate {
             highlighted: false
             enabled: model.itemEnabled
+            width: ListView.view.width
 
-            Item {
+            contentItem: Item {
                 anchors.margins: Kirigami.Units.largeSpacing
                 implicitHeight: childrenRect.height
 

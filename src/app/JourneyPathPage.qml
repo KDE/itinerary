@@ -17,10 +17,11 @@ Kirigami.ScrollablePage {
 
     Component {
         id: pathDelegate
-        Kirigami.AbstractListItem {
+        QQC2.ItemDelegate {
             highlighted: false
+            width: ListView.view.width
             property var section: model.section
-            GridLayout {
+            contentItem: GridLayout {
                 rows: 2
                 columns: 4
 
