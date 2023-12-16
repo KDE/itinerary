@@ -354,7 +354,7 @@ int main(int argc, char **argv)
     aboutData.setLicense(KAboutLicense::LGPL_V2, KAboutLicense::OrLaterVersions);
     aboutData.setHomepage(QStringLiteral("https://apps.kde.org/itinerary"));
     aboutData.setShortDescription(i18n("Digital Travel Assistant"));
-    aboutData.setCopyrightStatement(i18n("Copyright © 2018-%1 The KDE Community", QStringLiteral("2022")));
+    aboutData.setCopyrightStatement(i18n("Copyright © The KDE Community"));
     aboutData.setDesktopFileName(QStringLiteral("org.kde.itinerary"));
     KAboutData::setApplicationData(aboutData);
 

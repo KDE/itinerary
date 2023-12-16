@@ -23,7 +23,7 @@ FormCard.AboutPage {
     data: ListModel {
         id: licenseModel
         ListElement {
-            name: "KDE Itinerary, KDE PIM and KDE Frameworks 5"
+            name: "KDE Itinerary, KDE PIM and KDE Frameworks 6"
             copyright: "© The KDE community"
             licenseId: "LGPL-2.0-or-later"
             licenseName: "GNU Library General Public License v2 or later"
