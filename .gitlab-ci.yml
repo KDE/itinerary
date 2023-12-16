@@ -4,13 +4,10 @@
 include:
   - project: sysadmin/ci-utilities
     file:
-      - /gitlab-templates/android.yml
-      - /gitlab-templates/linux.yml
-      - /gitlab-templates/freebsd.yml
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
       - /gitlab-templates/android-qt6.yml
       - /gitlab-templates/reuse-lint.yml
-      - /gitlab-templates/flatpak.yml
-      - /gitlab-templates/craft-android-apks.yml
-      # - /gitlab-templates/craft-android-qt6-apks.yml
+      # TODO waiting for a Qt6 flatpak runtime
+      #- /gitlab-templates/flatpak.yml
+      - /gitlab-templates/craft-android-qt6-apks.yml

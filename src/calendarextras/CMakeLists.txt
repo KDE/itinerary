@@ -25,7 +25,7 @@ if (ANDROID)
     target_link_libraries(KCalendarCoreExtras PRIVATE KAndroidExtras LibIcal)
 endif()
 
-target_link_libraries(KCalendarCoreExtras PUBLIC KF${KF_MAJOR_VERSION}::CalendarCore)
+target_link_libraries(KCalendarCoreExtras PUBLIC KF6::CalendarCore)
 
 if (ANDROID)
     install(TARGETS KCalendarCoreExtras ${KF_INSTALL_TARGETS_DEFAULT_ARGS})

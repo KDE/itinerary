@@ -11,7 +11,7 @@ target_link_libraries(itinerary-weather
     PUBLIC
         Qt::Core
     PRIVATE
-        KF${KF_MAJOR_VERSION}::Holidays
+        KF6::Holidays
         Qt::Network
         ZLIB::ZLIB
 )

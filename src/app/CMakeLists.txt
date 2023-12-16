@@ -68,23 +68,19 @@ target_link_libraries(itinerary PUBLIC
     KPublicTransport
     KPublicTransportOnboard
     KOSMIndoorMap
-    KPim${KF_MAJOR_VERSION}::Itinerary
-    KPim${KF_MAJOR_VERSION}::PkPass
-    KF${KF_MAJOR_VERSION}::CalendarCore
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::I18nLocaleData
-    KF${KF_MAJOR_VERSION}::Contacts
-    KF${KF_MAJOR_VERSION}::CoreAddons
-    KF${KF_MAJOR_VERSION}::Notifications
-    KF${KF_MAJOR_VERSION}::Holidays
+    KPim6::Itinerary
+    KPim6::PkPass
+    KPim6::Mime
+    KF6::CalendarCore
+    KF6::I18n
+    KF6::I18nLocaleData
+    KF6::Contacts
+    KF6::CoreAddons
+    KF6::Notifications
+    KF6::Holidays
     Qt::Network
     Qt::Quick
 )
-if (TARGET KF5::Mime)
-    target_link_libraries(itinerary PUBLIC KF5::Mime)
-else()
-    target_link_libraries(itinerary PUBLIC KPim${KF_MAJOR_VERSION}::Mime)
-endif()
 if (HAVE_MATRIX)
     target_link_libraries(itinerary PUBLIC KMatrix)
 endif()
@@ -121,24 +117,20 @@ target_sources(itinerary-app PRIVATE
 target_include_directories(itinerary-app PRIVATE ${CMAKE_BINARY_DIR})
 target_link_libraries(itinerary-app PRIVATE
     itinerary
-    KF${KF_MAJOR_VERSION}::UnitConversion
+    KF6::UnitConversion
     Qt::QuickControls2
     KCalendarCoreExtras
 )
 if (ANDROID)
-    target_include_directories(itinerary-app PRIVATE ${Qt5Core_PRIVATE_INCLUDE_DIRS})
-    target_link_libraries(itinerary PUBLIC KAndroidExtras)
-    if (QT_MAJOR_VERSION EQUAL "6")
-        target_link_libraries(itinerary PRIVATE Qt::CorePrivate)
-        target_link_libraries(itinerary-app PRIVATE Qt::CorePrivate)
-    endif()
+    target_link_libraries(itinerary PUBLIC KAndroidExtras PRIVATE Qt::CorePrivate)
     # explicitly add runtime dependencies and transitive link dependencies,
     # so androiddeployqt picks them up
     target_link_libraries(itinerary-app PRIVATE
-        KF${KF_MAJOR_VERSION}::Archive
-        KF${KF_MAJOR_VERSION}::Kirigami2
+        KF6::Archive
+        KF6::Kirigami2
         Qt::Svg
-        KF${KF_MAJOR_VERSION}::Prison
+        Qt::CorePrivate
+        KF6::Prison
         OpenSSL::SSL
     )
 
@@ -248,15 +240,15 @@ if (ANDROID)
 else ()
     target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
-        KF${KF_MAJOR_VERSION}::DBusAddons
-        KF${KF_MAJOR_VERSION}::WindowSystem
+        KF6::DBusAddons
+        KF6::WindowSystem
         Qt::Widgets
     )
     set_target_properties(itinerary-app PROPERTIES OUTPUT_NAME "itinerary")
     ecm_install_icons(ICONS sc-apps-org.kde.itinerary.svg DESTINATION ${KDE_INSTALL_ICONDIR})
 endif()
-if (TARGET KF${KF_MAJOR_VERSION}::Crash)
-    target_link_libraries(itinerary-app PRIVATE KF${KF_MAJOR_VERSION}::Crash)
+if (TARGET KF6::Crash)
+    target_link_libraries(itinerary-app PRIVATE KF6::Crash)
 endif()
 
 install(TARGETS itinerary-app ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
