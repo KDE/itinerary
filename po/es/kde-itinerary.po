@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-19 01:52+0000\n"
+"POT-Creation-Date: 2023-12-16 01:37+0000\n"
 "PO-Revision-Date: 2023-11-22 02:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1800,27 +1800,27 @@ msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (llegada)"
 
-#: app/IndoorMapPlatformSheet.qml:81
+#: app/IndoorMapPlatformSheet.qml:78
 #, kde-format
 msgid "Railway"
 msgstr "Tren"
 
-#: app/IndoorMapPlatformSheet.qml:82
+#: app/IndoorMapPlatformSheet.qml:79
 #, kde-format
 msgid "Light Rail"
 msgstr "Tren ligero"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:80
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:81
 #, kde-format
 msgid "Tramway"
 msgstr "Tranvía"
 
-#: app/IndoorMapPlatformSheet.qml:85 app/StatisticsPage.qml:120
+#: app/IndoorMapPlatformSheet.qml:82 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autobús"
