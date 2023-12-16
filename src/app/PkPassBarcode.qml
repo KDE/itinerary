@@ -4,11 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.pkpass 1.0 as KPkPass
-import org.kde.prison 1.0 as Prison
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.pkpass as KPkPass
+import org.kde.prison as Prison
 
 Rectangle {
     id: root

@@ -4,16 +4,16 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.13
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import Qt.labs.platform 1.1
-import QtLocation 5.11 as QtLocation
-import org.kde.kirigami 2.19 as Kirigami
-import org.kde.solidextras 1.0 as Solid
-import org.kde.kpublictransport.onboard 1.0
-import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
-import org.kde.itinerary 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import Qt.labs.platform
+import QtLocation as QtLocation
+import org.kde.kirigami as Kirigami
+import org.kde.solidextras as Solid
+import org.kde.kpublictransport.onboard
+import internal.org.kde.kcalendarcore as KCalendarCore
+import org.kde.itinerary
 import "." as App
 
 Kirigami.ApplicationWindow {

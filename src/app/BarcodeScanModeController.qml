@@ -4,8 +4,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.15
-import org.kde.solidextras 1.0 as Solid
+import QtQuick
+import org.kde.solidextras as Solid
 
 /** Shared logic and state for the barcode scan mode.
  *  That is, disable screen locking and switch to full brightness.

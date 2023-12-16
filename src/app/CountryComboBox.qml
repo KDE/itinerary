@@ -3,9 +3,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.i18n.localeData 1.0
+import QtQuick
+import QtQuick.Controls as QQC2
+import org.kde.i18n.localeData
 
 /** Combo box for showing a list of countries.
  *  The model is expected to be an array of ISO 3166-1 alpha 2 codes.

@@ -4,14 +4,14 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import Qt.labs.platform 1.1 as Platform
-import QtLocation 5.11 as QtLocation
-import QtPositioning 5.11
-import org.kde.kirigami 2.17 as Kirigami
-import org.kde.itinerary 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import Qt.labs.platform as Platform
+import QtLocation as QtLocation
+import QtPositioning
+import org.kde.kirigami as Kirigami
+import org.kde.itinerary
 import "." as App
 
 Kirigami.Page {

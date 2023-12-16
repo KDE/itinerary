@@ -3,9 +3,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtLocation 5.11 as QtLocation
+import QtQuick
+import QtQuick.Layouts
+import QtLocation as QtLocation
 
 /** QtLocation map view with standard intercation settings. */
 QtLocation.Map {

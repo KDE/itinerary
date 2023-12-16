@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.5
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.19 as Kirigami
-import internal.org.kde.kcalendarcore 1.0 as KCalendarCore
-import org.kde.kitinerary 1.0
-import org.kde.itinerary 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import internal.org.kde.kcalendarcore as KCalendarCore
+import org.kde.kitinerary
+import org.kde.itinerary
 import "." as App
 
 Kirigami.ScrollablePage {

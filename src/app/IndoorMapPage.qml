@@ -4,17 +4,17 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as QQC2
-import org.kde.kirigami 2.17 as Kirigami
-import org.kde.kirigamiaddons.components 1.0 as Components
-import org.kde.solidextras 1.0 as Solid
-import org.kde.kpublictransport 1.0 as PT
-import org.kde.kosmindoormap 1.0
-import org.kde.itinerary 1.0
-import org.kde.kosmindoormap.kpublictransport 1.0
-import org.kde.osm.editorcontroller 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
+import org.kde.solidextras as Solid
+import org.kde.kpublictransport as PT
+import org.kde.kosmindoormap
+import org.kde.itinerary
+import org.kde.kosmindoormap.kpublictransport
+import org.kde.osm.editorcontroller
 
 Kirigami.Page {
     id: root
