@@ -19,7 +19,6 @@ import "." as App
 Kirigami.ApplicationWindow {
     id: root
     title: i18n("KDE Itinerary")
-    reachableModeEnabled: false
 
     width: Kirigami.Settings.isMobile ? 480 : 800
     height: Kirigami.Settings.isMobile ? 720 : 650

@@ -12,7 +12,6 @@ import "." as App
 
 Kirigami.ApplicationWindow {
     title: "PkPass Viewer"
-    reachableModeEnabled: false
 
     width: 480
     height: 720

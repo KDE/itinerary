@@ -13,7 +13,6 @@ import "." as App
 
 Kirigami.ApplicationWindow {
     title: "Journey Query Test"
-    reachableModeEnabled: false
 
     width: 480
     height: 720
