@@ -33,24 +33,22 @@ Kirigami.Page {
             icon.name: checked ? "flashlight-off" : "flashlight-on"
             text: i18n("Light")
             checkable: true
-            checked: camera.flash.mode == Camera.FlashVideoLight
-            visible: camera.flash.supportedModes.length > 1
-            onTriggered: camera.flash.mode = (camera.flash.mode == Camera.FlashVideoLight ? Camera.FlashOff : Camera.FlashVideoLight)
+            checked: camera.torchMode == Camera.TorchOn
+            visible: camera.isTorchModeSupported
+            onTriggered: camera.torchMode = (camera.torchMode == Camera.TorchOn ? Camera.TorchOff : Camera.TorchOn)
         }
     }
 
     VideoOutput {
         id: viewFinder
         anchors.fill: parent
-        source: camera
-        filters: [scanner]
-        autoOrientation: true
         fillMode: VideoOutput.PreserveAspectCrop
     }
 
     Prison.VideoScanner {
         id: scanner
         formats: Prison.Format.QRCode | Prison.Format.Aztec | Prison.Format.DataMatrix | Prison.Format.PDF417
+        videoSink: viewFinder.videoSink
         onResultContentChanged: {
             if (result.hasText && ApplicationController.importText(result.text)) {
                 applicationWindow().pageStack.goBack();
@@ -61,12 +59,13 @@ Kirigami.Page {
         }
     }
 
-    Camera {
-        id: camera
-        focus {
-            focusMode: Camera.FocusContinuous
-            focusPointMode: Camera.FocusPointCenter
+    CaptureSession {
+        id: captureSession
+        camera: Camera {
+            id: camera
+            active: true
         }
+        videoOutput: viewFinder
     }
 
     Rectangle {
@@ -77,22 +76,22 @@ Kirigami.Page {
         color: Qt.rgba(Kirigami.Theme.focusColor.r, Kirigami.Theme.focusColor.g, Kirigami.Theme.focusColor.b, 0.2);
         radius: Kirigami.Units.smallSpacing
 
-        x: viewFinder.mapRectToItem(scanner.result.boundingRect).x
-        y: viewFinder.mapRectToItem(scanner.result.boundingRect).y
-        width: viewFinder.mapRectToItem(scanner.result.boundingRect).width
-        height: viewFinder.mapRectToItem(scanner.result.boundingRect).height
+        x: viewFinder.contentRect.x + scanner.result.boundingRect.x / viewFinder.sourceRect.width * viewFinder.contentRect.width
+        y: viewFinder.contentRect.y + scanner.result.boundingRect.y / viewFinder.sourceRect.height * viewFinder.contentRect.height
+        width: scanner.result.boundingRect.width / viewFinder.sourceRect.width * viewFinder.contentRect.width
+        height: scanner.result.boundingRect.height / viewFinder.sourceRect.height * viewFinder.contentRect.height
     }
 
     BarcodeScanModeController {
         page: root
         fullBrightness: false
-        enabled: camera.errorCode != Camera.NoError
+        enabled: camera.error != Camera.NoError
     }
 
     Kirigami.PlaceholderMessage {
         anchors.fill: parent
         text: i18n("No camera available.")
-        visible: camera.errorCode != Camera.NoError
+        visible: camera.error != Camera.NoError
     }
 
     Component.onCompleted: PermissionManager.requestPermission(Permission.Camera, function() { camera.start(); })
