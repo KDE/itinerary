@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.platform
+import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
 
@@ -18,9 +19,9 @@ Kirigami.ScrollablePage {
     FileDialog {
         id: mapcssDialog
         title: "Import MapCSS"
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: ["MapCSS style sheets (*.mapcss)"]
-        onAccepted: DevelopmentModeController.importMapCSS(file)
+        onAccepted: DevelopmentModeController.importMapCSS(selectedFile)
     }
 
     ColumnLayout {

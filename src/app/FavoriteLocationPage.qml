@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.platform as Platform
+import QtQuick.Dialogs
 import QtLocation as QtLocation
 import QtPositioning
 import org.kde.kirigami as Kirigami
@@ -30,21 +31,21 @@ Kirigami.Page {
 
     }
 
-    Platform.FileDialog {
+    FileDialog {
         id: favoriteGpxExportDialog
-        fileMode: Platform.FileDialog.SaveFile
+        fileMode: FileDialog.SaveFile
         title: i18n("Export Favorite Locations")
-        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
-        onAccepted: FavoriteLocationModel.exportToGpx(file)
+        onAccepted: FavoriteLocationModel.exportToGpx(selectedFile)
     }
-    Platform.FileDialog {
+    FileDialog {
         id: favoriteGpxImportDialog
-        fileMode: Platform.FileDialog.OpenFile
+        fileMode: FileDialog.OpenFile
         title: i18n("Import Favorite Locations")
-        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
-        onAccepted: FavoriteLocationModel.importFromGpx(file)
+        onAccepted: FavoriteLocationModel.importFromGpx(selectedFile)
     }
 
     actions: [

@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.platform
+import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
@@ -33,9 +34,9 @@ ColumnLayout {
     FileDialog {
         id: addDialog
         title: i18n("Add Document")
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("All Files (*.*)")]
-        onAccepted: root.addDocument(file)
+        onAccepted: root.addDocument(selectedFile)
     }
 
     Component {

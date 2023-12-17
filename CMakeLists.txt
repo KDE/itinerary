@@ -102,9 +102,6 @@ ecm_find_qmlmodule(org.kde.prison 1.0)
 ecm_find_qmlmodule(org.kde.prison.scanner 1.0)
 ecm_find_qmlmodule(org.kde.kosmindoormap 1.0)
 ecm_find_qmlmodule(org.kde.kopeninghours 1.0)
-if (NOT ANDROID)
-    ecm_find_qmlmodule(Qt.labs.platform 1.0)
-endif()
 
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)

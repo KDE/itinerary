@@ -4,10 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore as QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.platform
+import QtQuick.Dialogs
 import QtLocation as QtLocation
 import org.kde.kirigami as Kirigami
 import org.kde.solidextras as Solid
@@ -116,18 +117,18 @@ Kirigami.ApplicationWindow {
         id: importFileDialog
         fileMode: FileDialog.OpenFile
         title: i18n("Import Reservation")
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ApplicationController.importFromUrl(file)
+        onAccepted: ApplicationController.importFromUrl(selectedFile)
     }
 
     FileDialog {
         id: exportDialog
         fileMode: FileDialog.SaveFile
         title: i18n("Export Itinerary Data")
-        folder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("KDE Itinerary files (*.itinerary)")]
-        onAccepted: ApplicationController.exportToFile(file)
+        onAccepted: ApplicationController.exportToFile(selectedFile)
     }
 
     Component {

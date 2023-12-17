@@ -4,11 +4,12 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import Qt.labs.qmlmodels as Models
-import Qt.labs.platform as Platform
+import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
 import "." as App
@@ -216,23 +217,23 @@ Kirigami.ScrollablePage {
                 deviceModel.refresh();
         }
     }
-    Platform.FileDialog {
+    FileDialog {
         id: tripGroupFileExportDialog
         property string tripGroupId
-        fileMode: Platform.FileDialog.SaveFile
+        fileMode: FileDialog.SaveFile
         title: i18n("Export Trip")
-        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("Itinerary file (*.itinerary)")]
-        onAccepted: ApplicationController.exportTripToFile(tripGroupId, file)
+        onAccepted: ApplicationController.exportTripToFile(tripGroupId, selectedFile)
     }
-    Platform.FileDialog {
+    FileDialog {
         id: tripGroupGpxExportDialog
         property string tripGroupId
-        fileMode: Platform.FileDialog.SaveFile
+        fileMode: FileDialog.SaveFile
         title: i18n("Export Trip")
-        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
-        onAccepted: ApplicationController.exportTripToGpx(tripGroupId, file)
+        onAccepted: ApplicationController.exportTripToGpx(tripGroupId, selectedFile)
     }
 
     Component {

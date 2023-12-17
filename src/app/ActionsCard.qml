@@ -2,10 +2,11 @@
 // SPDX-FileCopyrightText: 2022 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
+import QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import Qt.labs.platform as Platform
+import QtQuick.Dialogs
 import internal.org.kde.kcalendarcore as KCalendarCore
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
@@ -161,13 +162,13 @@ ColumnLayout {
                 deviceModel.refresh();
         }
     }
-    Platform.FileDialog {
+    FileDialog {
         id: batchFileExportDialog
-        fileMode: Platform.FileDialog.SaveFile
+        fileMode: FileDialog.SaveFile
         title: i18n("Export Reservation")
-        folder: Platform.StandardPaths.writableLocation(Platform.StandardPaths.DocumentsLocation)
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("Itinerary file (*.itinerary)")]
-        onAccepted: ApplicationController.exportBatchToFile(root.batchId, file)
+        onAccepted: ApplicationController.exportBatchToFile(root.batchId, selectedFile)
     }
 
     FormCard.FormHeader {
