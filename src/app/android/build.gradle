@@ -12,7 +12,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath 'com.android.tools.build:gradle:7.4.1'
     }
 }
 
@@ -36,7 +36,7 @@ android {
      * The following variables:
      * - androidBuildToolsVersion,
      * - androidCompileSdkVersion
-     * - qt5AndroidDir - holds the path to qt android files
+     * - qtAndroidDir - holds the path to qt android files
      *                   needed to build any Qt application
      *                   on Android.
      *
@@ -45,17 +45,19 @@ android {
      * Changing them manually might break the compilation!
      *******************************************************/
 
-    compileSdkVersion androidCompileSdkVersion.toInteger()
-
+    compileSdkVersion androidCompileSdkVersion
     buildToolsVersion androidBuildToolsVersion
     ndkVersion androidNdkVersion
+
+    // Extract native libraries from the APK
+    packagingOptions.jniLibs.useLegacyPackaging true
 
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = [qt5AndroidDir + '/src', 'src', 'java']
-            aidl.srcDirs = [qt5AndroidDir + '/src', 'src', 'aidl']
-            res.srcDirs = [qt5AndroidDir + '/res', 'res']
+            java.srcDirs = [qtAndroidDir + '/src', 'src', 'java']
+            aidl.srcDirs = [qtAndroidDir + '/src', 'src', 'aidl']
+            res.srcDirs = [qtAndroidDir + '/res', 'res']
             resources.srcDirs = ['src']
             renderscript.srcDirs = ['src']
             assets.srcDirs = ['assets']
@@ -80,29 +82,5 @@ android {
         versionCode timestamp
         versionName projectVersionFull
         manifestPlaceholders = [versionName: projectVersionFull, versionCode: timestamp]
-    }
-
-    packagingOptions {
-        exclude 'lib/*/*_Controls.2_Fusion_*'
-        exclude 'lib/*/*_Controls.2_Imagine_*'
-        exclude 'lib/*/*RemoteObjects*'
-        exclude 'lib/*/*StateMachine*'
-        exclude 'lib/*/*_audio_*'
-        exclude 'lib/*/*_imageformats_qico_*'
-        exclude 'lib/*/*_imageformats_qicns_*'
-        exclude 'lib/*/*_imageformats_qtga_*'
-        exclude 'lib/*/*_imageformats_qtiff_*'
-        exclude 'lib/*/*_playlistformats_*'
-        exclude 'lib/*/*_qmltooling_*'
-        exclude 'lib/*/*_qtgeoservices_esri_*'
-        exclude 'lib/*/*_qtgeoservices_mapbox_*'
-        exclude 'lib/*/*_qtgeoservices_nokia_*'
-        exclude 'lib/*/*_texttospeech_*'
-    }
-
-    aaptOptions {
-        // different syntax than above
-        // see https://android.googlesource.com/platform/frameworks/base/+/refs/heads/pie-release/tools/aapt2/util/Files.h#90
-        ignoreAssetsPattern '!<dir>ECM:!<dir>aclocal:!<dir>doc:!<dir>fonts:!<dir>gtk-doc:!<dir>man:!<dir>mime:!<dir>ndk-modules:!<dir>pkgconfig:!<dir>qlogging-categories5:!<dir>qt5keychain:!<dir>sr@ijekavian:!<dir>sr@ijekavianlatin:!<dir>plugins:!<file>iso_15924.mo:!<file>iso_3166.mo:!<file>iso_3166_2.mo:<file>iso_3166-3.mo:!<file>iso_4217.mo:!<file>iso_639.mo:!<file>iso_639-2.mo:!<file>iso_639-3.mo:!<file>iso_639_3.mo:!<file>iso_639-5.mo:!<file>iso_639_5.mo:!<file>kcodecs5_qt.qm:!<file>kde5_xml_mimetypes.qm:!<file>karchive5_qt.qm:!<file>kcontacts5.mo:!<file>knotifications5_qt.qm:!<file>libkholidays5_qt.qm:!<file>libkmime5.mo:!<file>iso_15924.json:!<file>iso_3166-3.json:!<file>iso_4217.json:!<file>iso_639-2.json:!<file>iso_639-3.json:!<file>iso_639-5.json:!<file>schema-15924.json:!<file>schema-3166-1.json:!<file>schema-3166-2.json:!<file>schema-3166-3.json:!<file>schema-4217.json:!<file>schema-639-2.json:!<file>schema-639-3.json:!<file>schema-639-5.json'
     }
 }

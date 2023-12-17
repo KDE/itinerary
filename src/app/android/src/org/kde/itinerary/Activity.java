@@ -6,7 +6,7 @@
 
 package org.kde.itinerary;
 
-import org.qtproject.qt5.android.bindings.QtActivity;
+import org.qtproject.qt.android.bindings.QtActivity;
 
 import androidx.core.content.FileProvider;
 
