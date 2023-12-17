@@ -186,6 +186,7 @@ if (ANDROID)
         go-up-symbolic
         help-about-symbolic
         help-contents
+        license
         list-add
         mail-message-new
         media-playback-playing
@@ -201,6 +202,7 @@ if (ANDROID)
         temperature-normal
         temperature-warm
         view-barcode-qr
+        view-calendar
         view-calendar-day
         view-list-symbolic
         view-list-details
@@ -242,7 +244,7 @@ if (ANDROID)
     )
 
     ecm_add_android_apk(itinerary-app ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)
-    install(FILES sc-apps-org.kde.itinerary.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami.2/icons/ RENAME org.kde.itinerary.svg)
+    install(FILES sc-apps-org.kde.itinerary.svg  DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/kirigami/breeze-internal/icons/ RENAME org.kde.itinerary.svg)
 else ()
     target_link_libraries(itinerary PRIVATE Qt::Positioning Qt::DBus Qt::Widgets)
     target_link_libraries(itinerary-app PRIVATE
