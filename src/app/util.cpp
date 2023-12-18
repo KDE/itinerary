@@ -103,6 +103,9 @@ float Util::svgAspectRatio(const QString &svgFilePath)
     if (svgFilePath.startsWith(QLatin1String("qrc:"))) {
         localFilePath = QLatin1Char(':') + QUrl(svgFilePath).path();
     }
+    if (svgFilePath.startsWith(QLatin1String("file:"))) {
+        localFilePath = QUrl(svgFilePath).toLocalFile();
+    }
     QFile file(localFilePath);
     if (!file.open(QFile::ReadOnly)) {
         qCWarning(Log) << file.errorString() << localFilePath;
