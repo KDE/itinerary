@@ -17,7 +17,6 @@
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 
-#include <kitinerary_version.h>
 #include <KItinerary/BoatTrip>
 #include <KItinerary/BusTrip>
 #include <KItinerary/Event>
@@ -40,40 +39,6 @@
 #include <QStandardPaths>
 
 using namespace KItinerary;
-
-// backward compatibility with 23.08
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 240, 42)
-bool SortUtil::hasStartTime(const QVariant &elem)
-{
-    if (JsonLd::canConvert<Reservation>(elem)) {
-        return hasStartTime(JsonLd::convert<Reservation>(elem).reservationFor());
-    }
-    if (JsonLd::isA<TrainTrip>(elem)) {
-        return elem.value<TrainTrip>().departureTime().isValid();
-    }
-    if (JsonLd::isA<Flight>(elem)) {
-        return elem.value<Flight>().departureTime().isValid();
-    }
-
-    return SortUtil::startDateTime(elem).isValid();
-}
-
-bool SortUtil::hasEndTime(const QVariant &elem)
-{
-    if (JsonLd::canConvert<Reservation>(elem)) {
-        return hasEndTime(JsonLd::convert<Reservation>(elem).reservationFor());
-    }
-    if (JsonLd::isA<TrainTrip>(elem)) {
-        return elem.value<TrainTrip>().arrivalTime().isValid();
-    }
-    if (JsonLd::isA<Flight>(elem)) {
-        return elem.value<Flight>().arrivalTime().isValid();
-    }
-
-    return SortUtil::endDateTime(elem).isValid();
-}
-#endif
-
 
 // bump this to trigger a full rescan for transfers
 enum { CurrentFullScanVersion = 1 };

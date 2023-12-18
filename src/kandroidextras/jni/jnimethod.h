@@ -43,7 +43,7 @@ namespace Internal {
     struct caller {
         static_assert(!is_invalid_primitive_type<RetT>::value, "Using an incompatible primitive type!");
         template <typename ...Args>
-        static auto call(const QAndroidJniObject &handle, const char *name, const char *signature, Args&&... args)
+        static auto call(const QJniObject &handle, const char *name, const char *signature, Args&&... args)
         {
             if constexpr (std::is_same_v<RetT, void>) {
                 handle.callMethod<RetT>(name, signature, std::forward<Args>(args)...);
@@ -54,7 +54,7 @@ namespace Internal {
             }
         }
 
-        static auto call(const QAndroidJniObject &handle, const char *name, const char *signature)
+        static auto call(const QJniObject &handle, const char *name, const char *signature)
         {
             if constexpr (std::is_same_v<RetT, void>) {
                 return handle.callMethod<RetT>(name, signature);
@@ -74,21 +74,21 @@ namespace Internal {
         static auto call(const char *className, const char *name, const char *signature, Args&&... args)
         {
             if constexpr (std::is_same_v<RetT, void>) {
-                return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature, std::forward<Args>(args)...);
+                return QJniObject::callStaticMethod<RetT>(className, name, signature, std::forward<Args>(args)...);
             } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature, std::forward<Args>(args)...));
+                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature, std::forward<Args>(args)...));
             } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature, std::forward<Args>(args)...));
+                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature, std::forward<Args>(args)...));
             }
         }
         static auto call(const char *className, const char *name, const char *signature)
         {
             if constexpr (std::is_same_v<RetT, void>) {
-                return QAndroidJniObject::callStaticMethod<RetT>(className, name, signature);
+                return QJniObject::callStaticMethod<RetT>(className, name, signature);
             } else if constexpr (Jni::is_primitive_type<RetT>::value) {
-                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature));
+                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticMethod<typename primitive_value<RetT>::JniType>(className, name, signature));
             } else {
-                return Internal::return_wrapper<RetT>::toReturnValue(QAndroidJniObject::callStaticObjectMethod(className, name, signature));
+                return Internal::return_wrapper<RetT>::toReturnValue(QJniObject::callStaticObjectMethod(className, name, signature));
             }
         }
     };
@@ -100,18 +100,18 @@ namespace Internal {
  * This will add a method named @p Name to the current class. Argument types are checked at compile time,
  * with the following inputs being accepted:
  * - primitive types have to match exactly
- * - non-primitive types can be either passed as @c QAndroidJniObject instance or with a type that has an
+ * - non-primitive types can be either passed as @c QJniObject instance or with a type that has an
  *   conversion registered with @c JNI_DECLARE_CONVERTER.
  *
  * The return type of the method is determined as follows:
  * - primitive types are returned directly
- * - non-primitive types without a registered type conversion are returned as @c QAndroidJniObject.
+ * - non-primitive types without a registered type conversion are returned as @c QJniObject.
  * - non-primitive types with a registered type conversion are returned in a wrapper class that can
- *   be implicitly converted either to the destination type of the conversion, or a @c QAndroidJniObject.
+ *   be implicitly converted either to the destination type of the conversion, or a @c QJniObject.
  *   This allows to avoid type conversion when chaining calls for example, it however needs additional
  *   care when used in combination with automatic type deduction.
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
- *   container or a @p QAndroidJniObject representing the JNI array.
+ *   container or a @p QJniObject representing the JNI array.
  *
  * Thie macro can only be placed in classes having the @c JNI_OBJECT macro.
  *
@@ -131,18 +131,18 @@ inline auto Name( JNI_PARAMS(__VA_ARGS__) ) const { \
  * This will add a static method named @p Name to the current class. Argument types are checked at compile time,
  * with the following inputs being accepted:
  * - primitive types have to match exactly
- * - non-primitive types can be either passed as @c QAndroidJniObject instance or with a type that has an
+ * - non-primitive types can be either passed as @c QJniObject instance or with a type that has an
  *   conversion registered with @c JNI_DECLARE_CONVERTER.
  *
  * The return type of the method is determined as follows:
  * - primitive types are returned directly
- * - non-primitive types without a registered type conversion are returned as @c QAndroidJniObject.
+ * - non-primitive types without a registered type conversion are returned as @c QJniObject.
  * - non-primitive types with a registered type conversion are returned in a wrapper class that can
- *   be implicitly converted either to the destination type of the conversion, or a @c QAndroidJniObject.
+ *   be implicitly converted either to the destination type of the conversion, or a @c QJniObject.
  *   This allows to avoid type conversion when chaining calls for example, it however needs additional
  *   care when used in combination with automatic type deduction.
  * - array return types also result in a wrapper class that can be implicitly converted to a sequential
- *   container or a @p QAndroidJniObject representing the JNI array.
+ *   container or a @p QJniObject representing the JNI array.
  *
  * Thie macro can only be placed in classes having the @c JNI_UNMANAGED_OBJECT or @c JNI_OBJECT macro.
  *
@@ -162,7 +162,7 @@ static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
  * This will add a constructor named @p Name to the current class. Argument types are checked at compile time,
  * with the following inputs being accepted:
  * - primitive types have to match exactly
- * - non-primitive types can be either passed as @c QAndroidJniObject instance or with a type that has an
+ * - non-primitive types can be either passed as @c QJniObject instance or with a type that has an
  *   conversion registered with @c JNI_DECLARE_CONVERTER.
  *
  * Thie macro can only be placed in classes having @c JNI_OBJECT macro.
@@ -174,7 +174,7 @@ static inline auto Name( JNI_PARAMS(__VA_ARGS__) ) { \
 #define JNI_CONSTRUCTOR(Name, ...) \
 inline Name( JNI_PARAMS(__VA_ARGS__) ) { \
     using namespace KAndroidExtras; \
-    setJniHandle(QAndroidJniObject(Jni::typeName<_jni_ThisType>(), (const char*)Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__))); \
+    setJniHandle(QJniObject(Jni::typeName<_jni_ThisType>(), (const char*)Jni::signature<void(__VA_ARGS__)>() __VA_OPT__(,) JNI_ARGS(__VA_ARGS__))); \
 }
 
 }

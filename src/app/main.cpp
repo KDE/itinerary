@@ -63,11 +63,8 @@
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/JsonLdDocument>
-#include <KItinerary/Ticket>
-#include <kitinerary_version.h>
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
 #include <KItinerary/PriceUtil>
-#endif
+#include <KItinerary/Ticket>
 
 #include <KPkPass/Field>
 #include <KPkPass/Barcode>
@@ -116,20 +113,6 @@ class MatrixBeaconStub : public QObject
 };
 #endif
 
-#if KITINERARY_VERSION <QT_VERSION_CHECK(5, 24, 41)
-class DummyPriceUtil
-{
-    Q_GADGET
- public:
-    Q_INVOKABLE static bool hasPrice(const QVariant&) { return false; }
-    Q_INVOKABLE static bool canHavePrice(const QVariant&) { return false; }
-    Q_INVOKABLE static double price(const QVariant&) { return 0.0; }
-    Q_INVOKABLE static QString currency(const QVariant&) { return QString(); }
-    Q_INVOKABLE static void setPrice(QVariant&, double, const QString&) {}
-    Q_INVOKABLE static int decimalCount(QStringView) { return 2; }
-};
-#endif
-
 void registerKContactsTypes()
 {
     // ### this should move into a real QML plugin for KContacts
@@ -168,11 +151,7 @@ void registerKItineraryTypes()
     qmlRegisterUncreatableMetaObject(KItinerary::Ticket::staticMetaObject, "org.kde.kitinerary", 1, 0, "Ticket", {});
     qmlRegisterUncreatableMetaObject(KItinerary::KnowledgeDb::staticMetaObject, "org.kde.kitinerary", 1, 0, "KnowledgeDb", {});
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "PriceUtil", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
         return engine->toScriptValue(KItinerary::PriceUtil());
-#else
-        return engine->toScriptValue(DummyPriceUtil());
-#endif
     });
 }
 
@@ -329,10 +308,6 @@ int main(int argc, char **argv)
     QCoreApplication::setOrganizationName(QStringLiteral("KDE"));
     QCoreApplication::setOrganizationDomain(QStringLiteral("kde.org"));
     QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QGuiApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
     QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));

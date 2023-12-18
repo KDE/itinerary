@@ -11,13 +11,13 @@
 
 using namespace KAndroidExtras;
 
-QAndroidJniObject Uri::fromUrl(const QUrl &url)
+QJniObject Uri::fromUrl(const QUrl &url)
 {
-    return QAndroidJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(), "parse", Jni::signature<android::net::Uri(java::lang::String)>(),
-        QAndroidJniObject::fromString(url.toString(QUrl::FullyEncoded)).object<jstring>());
+    return QJniObject::callStaticObjectMethod(Jni::typeName<android::net::Uri>(), "parse", Jni::signature<android::net::Uri(java::lang::String)>(),
+        QJniObject::fromString(url.toString(QUrl::FullyEncoded)).object<jstring>());
 }
 
-QUrl Uri::toUrl(const QAndroidJniObject &uri)
+QUrl Uri::toUrl(const QJniObject &uri)
 {
     if (!uri.isValid()) {
         return QUrl();

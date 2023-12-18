@@ -7,12 +7,7 @@
 #include <KAndroidExtras/Context>
 #include <KAndroidExtras/ContentResolver>
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QAndroidJniObject>
-#else
 #include <QJniObject>
-using QAndroidJniObject = QJniObject;
-#endif
 #include <QtTest/qtest.h>
 
 using namespace KAndroidExtras;
@@ -42,8 +37,8 @@ private Q_SLOTS:
             "callMethod: moveToFirst ()Z ()\n"
             "callObjectMethod: getString (I)Ljava/lang/String; (I)"
         ));
-        QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 1);
-        QCOMPARE(QAndroidJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.size(), 1);
+        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
 #endif
     }
 };

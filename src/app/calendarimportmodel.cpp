@@ -13,8 +13,6 @@
 #include <KItinerary/Reservation>
 #include <KItinerary/Visit>
 
-#include <kcalendarcore_version.h>
-
 #include <QDebug>
 #include <QJsonArray>
 
@@ -47,15 +45,11 @@ void CalendarImportModel::setCalendar(KCalendarCore::Calendar *calendar)
         return;
     }
 
-#if KCALENDARCORE_VERSION >= QT_VERSION_CHECK(5, 96, 0)
     if (!m_calendar->isLoading()) {
         reload();
     } else {
         connect(m_calendar, &KCalendarCore::Calendar::isLoadingChanged, this, &CalendarImportModel::reload);
     }
-#else
-    reload();
-#endif
 }
 
 QVector<QVariant> CalendarImportModel::selectedReservations() const

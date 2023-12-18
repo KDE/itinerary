@@ -69,7 +69,7 @@ private Q_SLOTS:
         Q_UNUSED(s);
         obj.setName(QStringLiteral("bla"));
          // explicit cast needed when coming from untyped JNI handler
-        obj.setName(Jni::Object<java::lang::String>(QAndroidJniObject::fromString(QStringLiteral("bla"))));
+        obj.setName(Jni::Object<java::lang::String>(QJniObject::fromString(QStringLiteral("bla"))));
         int i = obj.getFlags();
         Q_UNUSED(i);
         obj.setFlags(42);
@@ -85,8 +85,8 @@ private Q_SLOTS:
         Intent intent;
         obj.startIntent(intent);
         // returning a non-wrapped type
-        QAndroidJniObject j = obj.getIntent();
-        // lvalue QAndroidJniObject argument needs explicit cast
+        QJniObject j = obj.getIntent();
+        // lvalue QJniObject argument needs explicit cast
         obj.setName(Jni::Object<java::lang::String>(j));
         // implicit conversion from a static property wrapper
         obj.setFlags(Intent::FLAG_GRANT_READ_URI_PERMISSION);
@@ -167,17 +167,17 @@ private Q_SLOTS:
     void testStaticCalls()
     {
 #ifndef Q_OS_ANDROID
-        QAndroidJniObject::m_staticProtocol.clear();
+        QJniObject::m_staticProtocol.clear();
 
         TestClass::noRetNoArg();
         TestClass::noRetArg(QStringLiteral("test"));
         TestClass::retNoArg();
-        QAndroidJniObject o = TestClass::retArg(true);
+        QJniObject o = TestClass::retArg(true);
 
-        QCOMPARE(QAndroidJniObject::m_staticProtocol.size(), 3);
-        QCOMPARE(QAndroidJniObject::m_staticProtocol[0], QLatin1String("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
-        QCOMPARE(QAndroidJniObject::m_staticProtocol[1], QLatin1String("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
-        QCOMPARE(QAndroidJniObject::m_staticProtocol[2], QLatin1String("callStaticMethod: android/content/Intent retNoArg ()J ()"));
+        QCOMPARE(QJniObject::m_staticProtocol.size(), 3);
+        QCOMPARE(QJniObject::m_staticProtocol[0], QLatin1String("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
+        QCOMPARE(QJniObject::m_staticProtocol[1], QLatin1String("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
+        QCOMPARE(QJniObject::m_staticProtocol[2], QLatin1String("callStaticMethod: android/content/Intent retNoArg ()J ()"));
         QCOMPARE(o.protocol().at(0), QLatin1String("callStaticObjectMethod: android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
 #endif
     }

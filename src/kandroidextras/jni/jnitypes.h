@@ -9,7 +9,7 @@
 
 #include "jnipp.h"
 
-/** C++/Android integration utilities built on top of @c QAndroidJniObject. */
+/** C++/Android integration utilities built on top of @c QJniObject. */
 namespace KAndroidExtras {
 
 ///@cond internal

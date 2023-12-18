@@ -10,7 +10,6 @@
 #include "logging.h"
 #include "reservationhelper.h"
 
-#include <kitinerary_version.h>
 #include <KItinerary/ExtractorPostprocessor>
 #include <KItinerary/Event>
 #include <KItinerary/Flight>
@@ -36,26 +35,9 @@
 
 using namespace KItinerary;
 
-static bool isSameTrip(const QVariant &lhs, const QVariant &rhs)
-{
-#if KITINERARY_VERSION < QT_VERSION_CHECK(5, 23, 41)
-    if (lhs.userType() != rhs.userType() || !JsonLd::canConvert<Reservation>(lhs) || !JsonLd::canConvert<Reservation>(rhs)) {
-        return false;
-    }
-
-    const auto lhsTrip = JsonLd::convert<Reservation>(lhs).reservationFor();
-    const auto rhsTrip = JsonLd::convert<Reservation>(rhs).reservationFor();
-    return MergeUtil::isSame(lhsTrip, rhsTrip);
-#else
-    return MergeUtil::isSameIncidence(lhs, rhs);
-#endif
-}
-
 ReservationManager::ReservationManager(QObject* parent)
     : QObject(parent)
 {
-    ReservationHelper::setup();
-
     m_validator.setAcceptedTypes<
         BoatReservation,
         BusReservation,
@@ -201,7 +183,7 @@ QString ReservationManager::addReservation(const QVariant &res, const QString &r
             updateReservation(*it, newRes);
             return *it;
         }
-        if (isSameTrip(res, otherRes)) {
+        if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
             const auto &batch = m_batchToResMap.value(*it);
             for (const auto &batchedId : batch) {
@@ -405,7 +387,7 @@ void ReservationManager::updateBatch(const QString &resId, const QVariant &newRe
         if (SortUtil::startDateTime(otherRes) != SortUtil::startDateTime(newRes)) {
             break; // no hit
         }
-        if (isSameTrip(newRes, otherRes)) {
+        if (MergeUtil::isSameIncidence(newRes, otherRes)) {
             newBatchId = *it;
             break;
         }
@@ -510,7 +492,7 @@ QVector<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
             updatedIds.push_back(*it);
             continue;
         }
-        if (isSameTrip(res, otherRes)) {
+        if (MergeUtil::isSameIncidence(res, otherRes)) {
             // this is a multi-traveler element, check if we have it as one of the batch elements already
             const auto &batch = m_batchToResMap.value(*it);
             for (const auto &batchedId : batch) {

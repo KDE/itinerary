@@ -9,11 +9,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <KAndroidExtras/ManifestPermission>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtAndroid>
-#else
 #include <private/qandroidextras_p.h>
-#endif
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -42,19 +38,11 @@ bool PermissionManager::checkPermission(Permission::Permission permission)
         return false;
     }
 #ifdef Q_OS_ANDROID
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (permission == Permission::PostNotification && QtAndroid::androidSdkVersion() < 33) {
-        return true;
-    }
-
-    return QtAndroid::checkPermission(permissionName(permission)) == QtAndroid::PermissionResult::Granted;
-#else
     if (permission == Permission::PostNotification && QtAndroidPrivate::androidSdkVersion() < 33) {
         return true;
     }
 
     return QtAndroidPrivate::checkPermission(permissionName(permission)).result() == QtAndroidPrivate::PermissionResult::Authorized;
-#endif
 #else // non-Android
     Q_UNUSED(permission);
     return true;
@@ -76,14 +64,6 @@ void PermissionManager::requestPermission(Permission::Permission permission, QJS
     }
 
 #ifdef Q_OS_ANDROID
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QtAndroid::requestPermissions({permissionName(permission)}, [permission, callback] (const QtAndroid::PermissionResultMap &result) {
-        if (result[permissionName(permission)] == QtAndroid::PermissionResult::Granted) {
-            auto cb = callback;
-            cb.call();
-        }
-    });
-#else
     // TODO make this properly async
     if (QtAndroidPrivate::checkPermission(permissionName(permission)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
         if (QtAndroidPrivate::requestPermission(permissionName(permission)).result() != QtAndroidPrivate::PermissionResult::Authorized) {
@@ -91,7 +71,6 @@ void PermissionManager::requestPermission(Permission::Permission permission, QJS
         }
     }
     callback.call();
-#endif
 #endif
 }
 

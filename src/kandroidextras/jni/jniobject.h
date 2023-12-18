@@ -20,7 +20,7 @@ namespace Jni {
 template <typename T> class Object;
 
 template <typename T>
-inline QAndroidJniObject handle(const T &wrapper)
+inline QJniObject handle(const T &wrapper)
 {
     return wrapper.jniHandle();
 }
@@ -31,7 +31,7 @@ inline QAndroidJniObject handle(const T &wrapper)
  *  things will horribly go wrong.
  */
 template <typename T>
-inline auto fromHandle(const QAndroidJniObject &handle)
+inline auto fromHandle(const QJniObject &handle)
 {
     if constexpr (Jni::is_object_wrapper<T>::value) {
         return T(handle, Internal::FromHandleTag());
@@ -43,7 +43,7 @@ inline auto fromHandle(const QAndroidJniObject &handle)
 template <typename T>
 inline auto fromHandle(jobject handle)
 {
-    return fromHandle<T>(QAndroidJniObject(handle));
+    return fromHandle<T>(QJniObject(handle));
 }
 
 /** Wrapper for JNI objects with a convertible C++ type.
@@ -55,7 +55,7 @@ class Object {
 private:
     template <typename DummyT> class _dummy_t {};
 public:
-    inline explicit Object(const QAndroidJniObject &v) : m_handle(v) {}
+    inline explicit Object(const QJniObject &v) : m_handle(v) {}
 
     // implicit conversion from a compatible C++ type
     inline Object(const std::conditional_t<std::is_same_v<typename Jni::converter<T>::type, void>,
@@ -73,7 +73,7 @@ public:
     // and thus can't be consumed by another implicit conversion step
     template <typename StrT = QString, typename = std::enable_if_t<std::is_same_v<T, java::lang::String>, StrT>>
     inline Object(const QString &s)
-        : m_handle(QAndroidJniObject::fromString(s))
+        : m_handle(QJniObject::fromString(s))
     {}
 
     // special case for null values
@@ -81,18 +81,18 @@ public:
         : m_handle((jobject)nullptr)
     {}
 
-    inline operator QAndroidJniObject() const {
+    inline operator QJniObject() const {
         return m_handle;
     }
     inline operator typename Jni::converter<T>::type() const {
         return Jni::converter<T>::convert(m_handle);
     }
 
-    inline QAndroidJniObject jniHandle() const {
+    inline QJniObject jniHandle() const {
         return m_handle;
     }
 
-    // forward basic QAndroidJniObject API
+    // forward basic QJniObject API
     inline bool isValid() const {
         return m_handle.isValid();
     }
@@ -101,14 +101,14 @@ public:
         return m_handle.toString();
     }
 private:
-    QAndroidJniObject m_handle;
+    QJniObject m_handle;
 };
 
 /** Annotates a class for holding JNI method or property wrappers.
  *
  *  Use this if the class only has static methods or constants. For methods
  *  and properties, you either need to use @c JNI_OBJECT instead, or make
- *  sure there is a @p jniHandle() method returning a @c QAndroidJniObject
+ *  sure there is a @p jniHandle() method returning a @c QJniObject
  *  representing the current instance.
  *
  *  @param Class the name of the class this is added to.
@@ -132,12 +132,12 @@ private: \
 #define JNI_OBJECT(Class, BaseType) \
     JNI_UNMANAGED_OBJECT(Class, BaseType) \
 private: \
-    QAndroidJniObject _m_jni_handle; \
-    inline QAndroidJniObject jniHandle() const { return _m_jni_handle; } \
-    inline void setJniHandle(const QAndroidJniObject &h) { _m_jni_handle = h; } \
-    friend QAndroidJniObject KAndroidExtras::Jni::handle<Class>(const Class&); \
-    friend auto KAndroidExtras::Jni::fromHandle<Class>(const QAndroidJniObject&); \
-    explicit inline Class(const QAndroidJniObject &handle, KAndroidExtras::Internal::FromHandleTag) : _m_jni_handle(handle) {}
+    QJniObject _m_jni_handle; \
+    inline QJniObject jniHandle() const { return _m_jni_handle; } \
+    inline void setJniHandle(const QJniObject &h) { _m_jni_handle = h; } \
+    friend QJniObject KAndroidExtras::Jni::handle<Class>(const Class&); \
+    friend auto KAndroidExtras::Jni::fromHandle<Class>(const QJniObject&); \
+    explicit inline Class(const QJniObject &handle, KAndroidExtras::Internal::FromHandleTag) : _m_jni_handle(handle) {}
 
 }
 }

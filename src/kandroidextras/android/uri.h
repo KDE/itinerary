@@ -20,10 +20,10 @@ namespace KAndroidExtras {
 namespace Uri
 {
     /** Create an android.net.Uri from a QUrl. */
-    KANDROIDEXTRAS_EXPORT QAndroidJniObject fromUrl(const QUrl &url);
+    KANDROIDEXTRAS_EXPORT QJniObject fromUrl(const QUrl &url);
 
     /** Convert a android.net.Uri to a QUrl. */
-    KANDROIDEXTRAS_EXPORT QUrl toUrl(const QAndroidJniObject &uri);
+    KANDROIDEXTRAS_EXPORT QUrl toUrl(const QJniObject &uri);
 }
 
 JNI_DECLARE_CONVERTER(android::net::Uri, QUrl, (Uri::toUrl(value)), (Uri::fromUrl(value)))

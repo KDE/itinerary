@@ -13,20 +13,13 @@
 
 #include <QCoreApplication>
 #include <QDebug>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtAndroid>
-#endif
 
 using namespace KCalendarCore;
 using namespace KAndroidExtras;
 
 AndroidCalendarPlugin::AndroidCalendarPlugin(QObject *parent, const QVariantList &args)
     : CalendarPlugin(parent, args)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    , m_jni(Jni::fromHandle<android::content::Context>(QtAndroid::androidContext()))
-#else
     , m_jni(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())))
-#endif
 {
 }
 

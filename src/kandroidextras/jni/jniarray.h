@@ -11,12 +11,7 @@
 #include "jnireturnvalue.h"
 #include "jnitypetraits.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QAndroidJniEnvironment>
-#else
 #include <QJniEnvironment>
-using QAndroidJniEnvironment = QJniEnvironment;
-#endif
 
 namespace KAndroidExtras {
 
@@ -31,10 +26,10 @@ template <typename T> struct array_trait {
 #define MAKE_ARRAY_TRAIT(base_type, type_name) \
 template <> struct array_trait<base_type> { \
     typedef base_type ## Array type; \
-    static inline type newArray(QAndroidJniEnvironment &env, jsize size) { return env->New ## type_name ## Array(size); } \
-    static inline base_type* getArrayElements(QAndroidJniEnvironment &env, type array, jboolean *isCopy) { return env->Get ## type_name ## ArrayElements(array, isCopy); } \
-    static inline void releaseArrayElements(QAndroidJniEnvironment &env, type array, base_type *data, jint mode) { return env->Release ## type_name ## ArrayElements(array, data, mode); } \
-    static inline void setArrayRegion(QAndroidJniEnvironment &env, type array, jsize start, jsize length, const base_type *data) { env->Set ## type_name ## ArrayRegion(array, start, length, data); } \
+    static inline type newArray(QJniEnvironment &env, jsize size) { return env->New ## type_name ## Array(size); } \
+    static inline base_type* getArrayElements(QJniEnvironment &env, type array, jboolean *isCopy) { return env->Get ## type_name ## ArrayElements(array, isCopy); } \
+    static inline void releaseArrayElements(QJniEnvironment &env, type array, base_type *data, jint mode) { return env->Release ## type_name ## ArrayElements(array, data, mode); } \
+    static inline void setArrayRegion(QJniEnvironment &env, type array, jsize start, jsize length, const base_type *data) { env->Set ## type_name ## ArrayRegion(array, start, length, data); } \
 };
 
 MAKE_ARRAY_TRAIT(jboolean, Boolean)
@@ -52,20 +47,20 @@ MAKE_ARRAY_TRAIT(jdouble, Double)
 template <typename Container, typename Value, bool is_primitive> struct FromArray {};
 
 template <typename Container>
-struct FromArray<Container, QAndroidJniObject, false>
+struct FromArray<Container, QJniObject, false>
 {
-    inline auto operator()(const QAndroidJniObject &array) const
+    inline auto operator()(const QJniObject &array) const
     {
         if (!array.isValid()) {
             return Container{};
         }
         const auto a = static_cast<jobjectArray>(array.object());
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         const auto size = env->GetArrayLength(a);
         Container r;
         r.reserve(size);
         for (auto i = 0; i < size; ++i) {
-            r.push_back(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(a, i)));
+            r.push_back(QJniObject::fromLocalRef(env->GetObjectArrayElement(a, i)));
         }
         return r;
     }
@@ -74,18 +69,18 @@ struct FromArray<Container, QAndroidJniObject, false>
 template <typename Container, typename Value>
 struct FromArray<Container, Value, false>
 {
-    inline auto operator()(const QAndroidJniObject &array) const
+    inline auto operator()(const QJniObject &array) const
     {
         if (!array.isValid()) {
             return Container{};
         }
         const auto a = static_cast<jobjectArray>(array.object());
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         const auto size = env->GetArrayLength(a);
         Container r;
         r.reserve(size);
         for (auto i = 0; i < size; ++i) {
-            r.push_back(Jni::reverse_converter<Value>::type::convert(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(a, i))));
+            r.push_back(Jni::reverse_converter<Value>::type::convert(QJniObject::fromLocalRef(env->GetObjectArrayElement(a, i))));
         }
         return r;
     }
@@ -96,14 +91,14 @@ template <typename Container, typename Value>
 struct FromArray<Container, Value, true>
 {
     typedef array_trait<Value> _t;
-    inline auto operator()(const QAndroidJniObject &array) const
+    inline auto operator()(const QJniObject &array) const
     {
         if (!array.isValid()) {
             return Container{};
         }
 
         const auto a = static_cast<typename _t::type>(array.object());
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         const auto size = env->GetArrayLength(a);
         Container r;
         r.reserve(size);
@@ -125,7 +120,7 @@ public:
     typedef jsize difference_type;
 
     ArrayImplBase() = default;
-    inline ArrayImplBase(const QAndroidJniObject &array) : m_array(array) {}
+    inline ArrayImplBase(const QJniObject &array) : m_array(array) {}
     ArrayImplBase(const ArrayImplBase &) = default;
     ArrayImplBase(ArrayImplBase &&) = default;
 
@@ -135,21 +130,21 @@ public:
             return 0;
         }
         const auto a = static_cast<typename _t::type>(m_array.object());
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         return env->GetArrayLength(a);
     }
 
-    inline operator QAndroidJniObject() const {
+    inline operator QJniObject() const {
         return m_array;
     }
-    inline QAndroidJniObject jniHandle() const { return m_array; }
+    inline QJniObject jniHandle() const { return m_array; }
 
 protected:
     typedef array_trait<T> _t;
 
     typename _t::type handle() const { return static_cast<typename _t::type>(m_array.object()); }
 
-    QAndroidJniObject m_array;
+    QJniObject m_array;
 };
 
 template <typename T, bool is_primitive>
@@ -161,7 +156,7 @@ class ArrayImpl<T, true> : public ArrayImplBase<T>
 {
     static_assert(!Internal::is_invalid_primitive_type<T>::value, "Using an incompatible primitive type!");
 public:
-    inline ArrayImpl(const QAndroidJniObject &array)
+    inline ArrayImpl(const QJniObject &array)
         : ArrayImplBase<T>(array)
     {
         // ### do this on demand?
@@ -171,8 +166,8 @@ public:
     /** Create a new array with @p size elements. */
     inline explicit ArrayImpl(jsize size)
     {
-        QAndroidJniEnvironment env;
-        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(ArrayImplBase<T>::_t::newArray(env, size));
+        QJniEnvironment env;
+        ArrayImplBase<T>::m_array = QJniObject::fromLocalRef(ArrayImplBase<T>::_t::newArray(env, size));
         getArrayElements();
     }
 
@@ -181,7 +176,7 @@ public:
     ArrayImpl(ArrayImpl&&) = default;
     ~ArrayImpl()
     {
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         ArrayImplBase<T>::_t::releaseArrayElements(env, this->handle(), m_data, JNI_ABORT);
     }
 
@@ -199,7 +194,7 @@ private:
         if (!ArrayImplBase<T>::m_array.isValid()) {
             return;
         }
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         m_data = ArrayImplBase<T>::_t::getArrayElements(env, this->handle(), nullptr);
     }
 
@@ -216,17 +211,17 @@ public:
     /** Create a new array with @p size elements initialized with @p value. */
     explicit inline ArrayImpl(jsize size, typename Internal::argument<T>::type value)
     {
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         auto clazz = env.findClass(Jni::typeName<T>());
-        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(env->NewObjectArray(size, clazz, Internal::argument<T>::toCallArgument(value)));
+        ArrayImplBase<T>::m_array = QJniObject::fromLocalRef(env->NewObjectArray(size, clazz, Internal::argument<T>::toCallArgument(value)));
     }
 
     /** Create a new array with @p size null elements. */
     explicit inline ArrayImpl(jsize size, std::nullptr_t = nullptr)
     {
-        QAndroidJniEnvironment env;
+        QJniEnvironment env;
         auto clazz = env.findClass(Jni::typeName<T>());
-        ArrayImplBase<T>::m_array = QAndroidJniObject::fromLocalRef(env->NewObjectArray(size, clazz, nullptr));
+        ArrayImplBase<T>::m_array = QJniObject::fromLocalRef(env->NewObjectArray(size, clazz, nullptr));
     }
 
     ArrayImpl() = default;
@@ -235,8 +230,8 @@ public:
 
     auto operator[](jsize index) const
     {
-        QAndroidJniEnvironment env;
-        return Internal::return_wrapper<T>::toReturnValue(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index)));
+        QJniEnvironment env;
+        return Internal::return_wrapper<T>::toReturnValue(QJniObject::fromLocalRef(env->GetObjectArrayElement(this->handle(), index)));
     }
 
     class ref
@@ -244,12 +239,12 @@ public:
     public:
         inline operator auto()
         {
-            QAndroidJniEnvironment env;
-            return Internal::return_wrapper<T>::toReturnValue(QAndroidJniObject::fromLocalRef(env->GetObjectArrayElement(c.handle(), index)));
+            QJniEnvironment env;
+            return Internal::return_wrapper<T>::toReturnValue(QJniObject::fromLocalRef(env->GetObjectArrayElement(c.handle(), index)));
         }
         inline ref& operator=(typename Internal::argument<T>::type v)
         {
-            QAndroidJniEnvironment env;
+            QJniEnvironment env;
             env->SetObjectArrayElement(c.handle(), index, Internal::argument<T>::toCallArgument(v));
             return *this;
         }
@@ -303,7 +298,7 @@ namespace Jni {
 
 /** Convert a JNI array to a C++ container.
     *  Container value types can be any of
-    *  - QAndroidJniObject
+    *  - QJniObject
     *  - a primitive JNI type
     *  - a type with a conversion defined with @c JNI_DECLARE_CONVERTER
     */

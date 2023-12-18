@@ -18,17 +18,6 @@
 
 using namespace KItinerary;
 
-void ReservationHelper::setup()
-{
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QMetaType::registerEqualsComparator<BusTrip>();
-    QMetaType::registerEqualsComparator<Flight>();
-    QMetaType::registerEqualsComparator<Person>();
-    QMetaType::registerEqualsComparator<Ticket>();
-    QMetaType::registerEqualsComparator<TrainTrip>();
-#endif
-}
-
 std::pair<QString, QString> ReservationHelper::lineNameAndNumber(const QVariant &res)
 {
     if (JsonLd::isA<TrainReservation>(res)) {

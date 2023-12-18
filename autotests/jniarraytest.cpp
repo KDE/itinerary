@@ -35,8 +35,8 @@ private Q_SLOTS:
 #ifndef Q_OS_ANDROID
         JNIEnv::m_arrayLength = 3;
 
-        QAndroidJniObject array;
-        const auto a1 = Jni::fromArray<std::vector<QAndroidJniObject>>(array);
+        QJniObject array;
+        const auto a1 = Jni::fromArray<std::vector<QJniObject>>(array);
         QCOMPARE(a1.size(), 3);
 
         JNIEnv::m_arrayLength = 2;
@@ -59,7 +59,7 @@ private Q_SLOTS:
 #ifndef Q_OS_ANDROID
         JNIEnv::m_arrayLength = 3;
 
-        QAndroidJniObject array;
+        QJniObject array;
         // primitive types
         const auto a1 = Jni::Array<jint>(array);
         QCOMPARE(a1.size(), 3);

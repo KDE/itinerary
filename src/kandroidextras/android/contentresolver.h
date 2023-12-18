@@ -10,12 +10,7 @@
 #include "kandroidextras_export.h"
 
 #include <qglobal.h>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class QAndroidJniObject;
-#else
 class QJniObject;
-using QAndroidJniObject = QJniObject;
-#endif
 class QString;
 class QUrl;
 
@@ -25,7 +20,7 @@ namespace KAndroidExtras {
 namespace ContentResolver
 {
     /** Get the JNI content resolver. */
-    KANDROIDEXTRAS_EXPORT QAndroidJniObject get();
+    KANDROIDEXTRAS_EXPORT QJniObject get();
 
     /** Returns the mime type of the given content: URL.
      * @see Android ContentResolver.getType

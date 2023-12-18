@@ -6,12 +6,9 @@
 
 #include "localizer.h"
 
-#include <kitinerary_version.h>
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/Place>
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
 #include <KItinerary/PriceUtil>
-#endif
 
 #include <KContacts/Address>
 
@@ -142,9 +139,9 @@ static QString tzAbbreviation(const QDateTime &dt)
 #ifdef Q_OS_ANDROID
     // the QTimeZone backend implementation on Android isn't as complete as the desktop ones, so we need to do this ourselves here
     // eventually, this should be upstreamed to Qt
-    auto abbr = QAndroidJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone", "abbreviation",
+    auto abbr = QJniObject::callStaticObjectMethod("org/kde/itinerary/QTimeZone", "abbreviation",
                     Jni::signature<java::lang::String(java::lang::String, jlong, java::util::Locale, bool)>(),
-                    QAndroidJniObject::fromString(QString::fromUtf8(tz.id())).object(), dt.toMSecsSinceEpoch(),
+                    QJniObject::fromString(QString::fromUtf8(tz.id())).object(), dt.toMSecsSinceEpoch(),
                     KAndroidExtras::Locale::current().object(), tz.isDaylightTime(dt)).toString();
 
     if (!abbr.isEmpty()) {
@@ -260,11 +257,7 @@ QString Localizer::formatTemperature(double temperature)
 
 QString Localizer::formatCurrency(double value, const QString &isoCode)
 {
-#if KITINERARY_VERSION >= QT_VERSION_CHECK(5, 24, 41)
     const auto decimalCount = PriceUtil::decimalCount(isoCode);
-#else
-    const auto decimalCount = 2;
-#endif
 
     // special case for displaying conversion rates (which can be very small)
     // and thus need a higher precision than regular values

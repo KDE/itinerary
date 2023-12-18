@@ -50,17 +50,17 @@ public:
     JNI_METHOD(android::content::Intent, setType, java::lang::String)
 
     /** Read extra intent data. */
-    QString getStringExtra(const QAndroidJniObject &name) const;
-    QStringList getStringArrayExtra(const QAndroidJniObject &name) const;
+    QString getStringExtra(const QJniObject &name) const;
+    QStringList getStringArrayExtra(const QJniObject &name) const;
     /** Add extra intent data of type @tparam T. */
     template <typename T>
-    inline void putExtra(const QAndroidJniObject &name, const QAndroidJniObject &value)
+    inline void putExtra(const QJniObject &name, const QJniObject &value)
     {
         jniHandle().callObjectMethod("putExtra", Jni::signature<android::content::Intent(java::lang::String, T)>(), name.object(), value.object());
     }
 
-    /** Implicit conversion to an QAndroidJniObject. */
-    operator QAndroidJniObject() const;
+    /** Implicit conversion to an QJniObject. */
+    operator QJniObject() const;
 
     /** Action constant for create document intents. */
     JNI_CONSTANT(java::lang::String, ACTION_CREATE_DOCUMENT)
@@ -90,7 +90,7 @@ public:
 
 private:
     template <typename T>
-    QAndroidJniObject getObjectExtra(const char* methodName, const QAndroidJniObject &name) const;
+    QJniObject getObjectExtra(const char* methodName, const QJniObject &name) const;
 };
 
 }

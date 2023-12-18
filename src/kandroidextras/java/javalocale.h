@@ -9,13 +9,7 @@
 
 #include "kandroidextras_export.h"
 
-#include <qglobal.h>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class QAndroidJniObject;
-#else
 class QJniObject;
-using QAndroidJniObject = QJniObject;
-#endif
 class QLocale;
 
 namespace KAndroidExtras {
@@ -27,10 +21,10 @@ namespace KAndroidExtras {
 namespace Locale
 {
     /** Create an java.util.Locale object from a QLocale. */
-    KANDROIDEXTRAS_EXPORT QAndroidJniObject fromLocale(const QLocale &locale);
+    KANDROIDEXTRAS_EXPORT QJniObject fromLocale(const QLocale &locale);
 
     /** Create an java.util.Locale object for the current QLocale. */
-    KANDROIDEXTRAS_EXPORT QAndroidJniObject current();
+    KANDROIDEXTRAS_EXPORT QJniObject current();
 }
 
 }

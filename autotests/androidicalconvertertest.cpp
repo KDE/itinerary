@@ -38,7 +38,7 @@ private Q_SLOTS:
     void testAlarm()
     {
         KCalendarCore::Event ev;
-        auto data = Jni::fromHandle<JniReminderData>(QAndroidJniObject{});
+        auto data = Jni::fromHandle<JniReminderData>(QJniObject{});
         data.minutes = 5;
         auto alarm = AndroidIcalConverter::readAlarm(data, &ev);
         QCOMPARE(alarm->startOffset().asSeconds(), -300);
@@ -49,7 +49,7 @@ private Q_SLOTS:
 
     void testAttendee()
     {
-        auto data = Jni::fromHandle<JniAttendeeData>(QAndroidJniObject{});
+        auto data = Jni::fromHandle<JniAttendeeData>(QJniObject{});
         data.name = QStringLiteral("Dr Konqi");
         data.email = QStringLiteral("null@kde.org");
         auto attendee = AndroidIcalConverter::readAttendee(data);

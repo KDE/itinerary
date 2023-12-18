@@ -23,7 +23,7 @@ namespace Internal {
         static inline constexpr bool is_primitive = Jni::is_primitive_type<RetT>::value;
         static inline constexpr bool is_convertible = !std::is_same_v<typename Jni::converter<RetT>::type, void>;
 
-        typedef std::conditional_t<is_primitive, RetT, QAndroidJniObject> JniReturnT;
+        typedef std::conditional_t<is_primitive, RetT, QJniObject> JniReturnT;
 
     public:
         static inline constexpr auto toReturnValue(JniReturnT value)
@@ -42,7 +42,7 @@ namespace Internal {
     template <typename RetT>
     class return_wrapper<RetT, std::void_t<typename RetT::_jni_ThisType>> {
     public:
-        static inline auto toReturnValue(const QAndroidJniObject &value)
+        static inline auto toReturnValue(const QJniObject &value)
         {
             return Jni::fromHandle<RetT>(value);
         }
@@ -50,7 +50,7 @@ namespace Internal {
     template <typename RetT>
     class return_wrapper<Jni::Array<RetT>> {
     public:
-        static inline auto toReturnValue(const QAndroidJniObject &value)
+        static inline auto toReturnValue(const QJniObject &value)
         {
             return Jni::Array<RetT>(value);
         }

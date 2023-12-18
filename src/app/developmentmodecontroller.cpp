@@ -22,11 +22,7 @@
 #include <kandroidextras/manifestpermission.h>
 using namespace KAndroidExtras;
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtAndroid>
-#else
 #include <private/qandroidextras_p.h>
-#endif
 #endif
 
 #include <csignal>
@@ -34,16 +30,6 @@ using namespace KAndroidExtras;
 void DevelopmentModeController::enablePublicTransportLogging()
 {
 #ifdef Q_OS_ANDROID
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (QtAndroid::checkPermission(ManifestPermission::WRITE_EXTERNAL_STORAGE) != QtAndroid::PermissionResult::Granted) {
-        QtAndroid::requestPermissions({ManifestPermission::WRITE_EXTERNAL_STORAGE}, [this] (const QtAndroid::PermissionResultMap &result){
-            if (result[ManifestPermission::WRITE_EXTERNAL_STORAGE] == QtAndroid::PermissionResult::Granted) {
-                enablePublicTransportLogging();
-            }
-        });
-        return;
-    }
-#else
     if (QtAndroidPrivate::checkPermission(ManifestPermission::WRITE_EXTERNAL_STORAGE).result() != QtAndroidPrivate::PermissionResult::Authorized) {
         if (QtAndroidPrivate::requestPermission(ManifestPermission::WRITE_EXTERNAL_STORAGE).result() == QtAndroidPrivate::PermissionResult::Authorized) {
             enablePublicTransportLogging();
@@ -51,13 +37,8 @@ void DevelopmentModeController::enablePublicTransportLogging()
             return;
         }
     }
-#endif
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const auto context = QtAndroid::androidContext();
-#else
     const QJniObject context = QNativeInterface::QAndroidApplication::context();
-#endif
     const auto f = context.callObjectMethod("getExternalFilesDir", Jni::signature<java::io::File(java::lang::String)>(), nullptr);
     const auto baseDir = f.callObjectMethod("getPath", Jni::signature<java::lang::String()>()).toString();
 #else

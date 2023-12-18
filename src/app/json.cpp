@@ -202,11 +202,7 @@ void Json::fromJson(const QMetaObject *mo, const QJsonObject &obj, void *elem)
             }
             auto valueData = mt.create();
             *reinterpret_cast<int*>(valueData) = numValue;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            QVariant value(prop.userType(), valueData);
-#else
             QVariant value(prop.metaType(), valueData);
-#endif
             prop.writeOnGadget(elem, value);
             continue;
         }

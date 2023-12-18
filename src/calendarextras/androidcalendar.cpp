@@ -10,34 +10,17 @@
 
 #include <QCoreApplication>
 #include <QDebug>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QtAndroid>
-#endif
 
 using namespace KAndroidExtras;
 
 AndroidCalendar::AndroidCalendar(const QTimeZone &tz, const QString &owner, jlong id)
     : KCalendarCore::Calendar(tz)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    , m_calendar(Jni::fromHandle<android::content::Context>(QtAndroid::androidContext()), id)
-#else
     , m_calendar(Jni::fromHandle<android::content::Context>(QJniObject(QNativeInterface::QAndroidApplication::context())), id)
-#endif
     , m_owner(owner)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    setDeletionTracking(false);
-#endif
 }
 
 AndroidCalendar::~AndroidCalendar() = default;
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void AndroidCalendar::close()
-{
-    m_incidences.clear();
-}
-#endif
 
 bool AndroidCalendar::deleteIncidenceInstances(const KCalendarCore::Incidence::Ptr &incidence)
 {
@@ -64,13 +47,6 @@ KCalendarCore::Event::List AndroidCalendar::rawEvents(KCalendarCore::EventSortFi
     registerEvents(result);
     return sortEvents(std::move(result), sortField, sortDirection);
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-KCalendarCore::Event::List AndroidCalendar::rawEventsForDate(const QDateTime &dt) const
-{
-    return rawEventsForDate(dt.date(), dt.timeZone());
-}
-#endif
 
 bool AndroidCalendar::addEvent(const KCalendarCore::Event::Ptr &event)
 {
@@ -154,24 +130,6 @@ KCalendarCore::Event::Ptr AndroidCalendar::event(const QString &uid, const QDate
     return event;
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-KCalendarCore::Event::Ptr AndroidCalendar::deletedEvent(const QString &uid, const QDateTime& recurrenceId) const
-{
-    // deletion tracking not supported
-    Q_UNUSED(uid);
-    Q_UNUSED(recurrenceId);
-    return {};
-}
-
-KCalendarCore::Event::List AndroidCalendar::deletedEvents(KCalendarCore::EventSortField sortField, KCalendarCore::SortDirection sortDirection) const
-{
-    // deletion tracking not supported
-    Q_UNUSED(sortField);
-    Q_UNUSED(sortDirection);
-    return {};
-}
-#endif
-
 KCalendarCore::Event::List AndroidCalendar::eventInstances(const KCalendarCore::Incidence::Ptr &event, KCalendarCore::EventSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {
     const auto jniEvents = m_calendar.eventInstances(event->uid());
@@ -231,24 +189,6 @@ KCalendarCore::Todo::Ptr AndroidCalendar::todo(const QString &uid, const QDateTi
     return {};
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-KCalendarCore::Todo::Ptr AndroidCalendar::deletedTodo(const QString &uid, const QDateTime& recurrenceId) const
-{
-    // deletion tracking not supported
-    Q_UNUSED(uid);
-    Q_UNUSED(recurrenceId);
-    return {};
-}
-
-KCalendarCore::Todo::List AndroidCalendar::deletedTodos(KCalendarCore::TodoSortField sortField, KCalendarCore::SortDirection sortDirection) const
-{
-    // deletion tracking not supported
-    Q_UNUSED(sortField);
-    Q_UNUSED(sortDirection);
-    return {};
-}
-#endif
-
 KCalendarCore::Todo::List AndroidCalendar::todoInstances(const KCalendarCore::Incidence::Ptr &todo, KCalendarCore::TodoSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {
     Q_UNUSED(todo);
@@ -296,22 +236,6 @@ KCalendarCore::Journal::Ptr AndroidCalendar::journal(const QString &uid, const Q
     Q_UNUSED(recurrenceId);
     return {};
 }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-KCalendarCore::Journal::Ptr AndroidCalendar::deletedJournal(const QString& uid, const QDateTime& recurrenceId) const
-{
-    Q_UNUSED(uid);
-    Q_UNUSED(recurrenceId);
-    return {};
-}
-
-KCalendarCore::Journal::List AndroidCalendar::deletedJournals(KCalendarCore::JournalSortField sortField, KCalendarCore::SortDirection sortDirection) const
-{
-    Q_UNUSED(sortField);
-    Q_UNUSED(sortDirection);
-    return {};
-}
-#endif
 
 KCalendarCore::Journal::List AndroidCalendar::journalInstances(const KCalendarCore::Incidence::Ptr &journal, KCalendarCore::JournalSortField sortField, KCalendarCore::SortDirection sortDirection) const
 {

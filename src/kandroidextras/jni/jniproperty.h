@@ -29,11 +29,11 @@ template <typename PropType, typename ClassType, typename NameHolder, bool Primi
 template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, false> {
     static_assert(!is_invalid_primitive_type<PropType>::value, "Using an incompatible primitive type!");
-    inline QAndroidJniObject get() const
+    inline QJniObject get() const
     {
-        return QAndroidJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<PropType>());
+        return QJniObject::getStaticObjectField(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>(), Jni::signature<PropType>());
     }
-    inline operator QAndroidJniObject() const
+    inline operator QJniObject() const
     {
         return get();
     }
@@ -52,7 +52,7 @@ template <typename PropType, typename ClassType, typename NameHolder>
 struct StaticProperty<PropType, ClassType, NameHolder, true> {
     inline operator auto() const
     {
-        return primitive_value<PropType>::fromJni(QAndroidJniObject::getStaticField<typename primitive_value<PropType>::JniType>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>()));
+        return primitive_value<PropType>::fromJni(QJniObject::getStaticField<typename primitive_value<PropType>::JniType>(Jni::typeName<ClassType>(), Jni::typeName<NameHolder>()));
     }
 };
 
@@ -60,7 +60,7 @@ struct StaticProperty<PropType, ClassType, NameHolder, true> {
 template <typename ClassType, typename OffsetHolder>
 class PropertyBase {
 protected:
-    inline QAndroidJniObject handle() const {
+    inline QJniObject handle() const {
         const auto owner = reinterpret_cast<const ClassType*>(reinterpret_cast<const char*>(this) - OffsetHolder::offset());
         return owner->jniHandle();
     }
@@ -74,11 +74,11 @@ private:
     struct _jni_NoType {};
     static_assert(!is_invalid_primitive_type<PropType>::value, "Using an incompatible primitive type!");
 public:
-    inline QAndroidJniObject get() const
+    inline QJniObject get() const
     {
         return this->handle().getObjectField(Jni::typeName<NameHolder>(), Jni::signature<PropType>());
     }
-    inline operator QAndroidJniObject() const
+    inline operator QJniObject() const
     {
         return get();
     }
@@ -102,7 +102,7 @@ public:
         this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), Internal::argument<PropType>::toCallArgument(value));
         return *this;
     }
-    inline Property& operator=(const QAndroidJniObject &value)
+    inline Property& operator=(const QJniObject &value)
     {
         this->handle().setField(Jni::typeName<NameHolder>(), Jni::signature<PropType>(), value.object());
         return *this;

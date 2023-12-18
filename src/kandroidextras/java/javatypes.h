@@ -16,7 +16,7 @@ JNI_TYPE(java, io, File)
 JNI_TYPE(java, lang, String)
 JNI_TYPE(java, util, Locale)
 
-JNI_DECLARE_CONVERTER(java::lang::String, QString, (value.toString()), (QAndroidJniObject::fromString(value)))
+JNI_DECLARE_CONVERTER(java::lang::String, QString, (value.toString()), (QJniObject::fromString(value)))
 
 }
 

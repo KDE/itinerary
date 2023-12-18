@@ -16,23 +16,23 @@ using namespace KAndroidExtras;
 
 Intent::~Intent() = default;
 
-Intent::operator QAndroidJniObject() const
+Intent::operator QJniObject() const
 {
     return jniHandle();
 }
 
 template <typename T>
-QAndroidJniObject Intent::getObjectExtra(const char *methodName, const QAndroidJniObject &name) const
+QJniObject Intent::getObjectExtra(const char *methodName, const QJniObject &name) const
 {
     return jniHandle().callObjectMethod(methodName, Jni::signature<T(java::lang::String)>(), name.object());
 }
 
-QString Intent::getStringExtra(const QAndroidJniObject &name) const
+QString Intent::getStringExtra(const QJniObject &name) const
 {
     return getObjectExtra<java::lang::String>("getStringExtra", name).toString();
 }
 
-QStringList Intent::getStringArrayExtra(const QAndroidJniObject &name) const
+QStringList Intent::getStringArrayExtra(const QJniObject &name) const
 {
     const auto extra = getObjectExtra<Jni::Array<java::lang::String>>("getStringArrayExtra", name);
     return Jni::fromArray<QStringList>(extra);
