@@ -33,6 +33,7 @@ Kirigami.OverlaySheet {
                 contentItem: Row {
                     spacing: Kirigami.Units.smallSpacing
                     QQC2.Label {
+                        id: label
                         text: {
                             if (platform.isDeparturePlatform && platform.isArrivalPlatform)
                                 return i18nc("train arrival/departure platform", "%1 (arrival/departure)", platform.display);
@@ -46,9 +47,10 @@ Kirigami.OverlaySheet {
 
                     Repeater {
                         model: platform.lines
-                        delegate: Kirigami.Icon {
+                        delegate: Image {
                             height: Kirigami.Units.iconSizes.small
-                            width: implicitWidth
+                            width: Math.round(Kirigami.Units.iconSizes.small * implicitWidth / implicitHeight)
+                            anchors.verticalCenter: label.verticalCenter
                             visible: source != ""
                             source: {
                                 switch (platform.mode) {
