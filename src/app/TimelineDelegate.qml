@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormCard {
     id: root
@@ -72,7 +71,7 @@ FormCard.FormCard {
         contentItem: RowLayout {
             id: headerLayout
 
-            App.TransportIcon {
+            TransportIcon {
                 id: _headerIcon
                 color: root.headerTextColor
                 isMask: true

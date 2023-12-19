@@ -9,13 +9,12 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
     title: i18n("Flight")
     property var resIds: ReservationManager.reservationsForBatch(root.batchId)
-    editor: App.FlightEditor {}
+    editor: FlightEditor {}
 
     function airportDisplayString(airport) {
         if (airport.name && airport.iataCode) {
@@ -33,7 +32,7 @@ App.DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "✈️"
             text: reservationFor.airline.iataCode + " " + reservationFor.flightNumber
         }
@@ -42,7 +41,7 @@ App.DetailsPage {
             visible: ticketToken.ticketTokenCount > 0 || sequenceNumberDelegate.visible
 
             // ticket barcode
-            App.TicketTokenDelegate {
+            TicketTokenDelegate {
                 id: ticketToken
                 resIds: ReservationManager.reservationsForBatch(root.batchId)
                 onCurrentReservationIdChanged: {
@@ -153,7 +152,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: reservationFor.departureGate.length > 0 }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservationFor.departureAirport
                 controller: root.controller
                 isRangeBegin: true
@@ -191,26 +190,26 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: reservationFor.arrivalTerminal.length > 0 }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservationFor.arrivalAirport
                 controller: root.controller
                 isRangeEnd: true
             }
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ProgramMembershipCard {
+        ProgramMembershipCard {
             programMembership: root.reservation.programMembershipUsed
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

@@ -13,7 +13,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 ColumnLayout {
     id: root
@@ -83,7 +82,7 @@ ColumnLayout {
 
     Component {
         id: transferPage
-        App.TransferPage {}
+        TransferPage {}
     }
 
     Component {
@@ -96,7 +95,7 @@ ColumnLayout {
         filterRoleName: "accessMode"
         filterString: KCalendarCore.KCalendarCore.ReadWrite
     }
-    App.CalendarSelectionSheet {
+    CalendarSelectionSheet {
         id: calendarSelector
         model: writableCalendars
         onCalendarSelected: controller.addToCalendar(calendar);
@@ -104,7 +103,7 @@ ColumnLayout {
 
     Component {
         id: pkpassComponent
-        App.PkPassPage {
+        PkPassPage {
             pass: PkPassManager.pass(root.passId)
         }
     }

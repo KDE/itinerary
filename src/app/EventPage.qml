@@ -9,9 +9,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
     title: i18nc("event as in concert/conference/show, not as in appointment", "Event")
 
@@ -23,7 +22,7 @@ App.DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🎤🎸🎶🏟"
             text: reservationFor.name
         }
@@ -31,7 +30,7 @@ App.DetailsPage {
         FormCard.FormCard {
             visible: ticketToken.ticketTokenCount > 0 || descriptionLabel.visible
             // ticket barcode
-            App.TicketTokenDelegate {
+            TicketTokenDelegate {
                 id: ticketToken
                 Layout.fillWidth: true
                 resIds: ReservationManager.reservationsForBatch(root.batchId)
@@ -55,7 +54,7 @@ App.DetailsPage {
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservationFor.location
                 controller: root.controller
                 showLocationName: true
@@ -139,15 +138,15 @@ App.DetailsPage {
             }
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

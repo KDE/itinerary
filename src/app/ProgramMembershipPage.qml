@@ -10,7 +10,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormCardPage {
     id: root
@@ -57,7 +56,7 @@ FormCard.FormCardPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🎫"
             text: programMembership.programName
             Layout.topMargin: Kirigami.Units.smallSpacing
@@ -65,7 +64,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCard {
             visible: programMembership.token.length > 0
-            App.BarcodeContainer {
+            BarcodeContainer {
                 id: barcodeContainer
                 Layout.alignment: Qt.AlignCenter
                 Layout.fillWidth: true
@@ -123,7 +122,7 @@ FormCard.FormCardPage {
             }
         }
 
-        App.DocumentsCard {
+        DocumentsCard {
             documentIds: PassManager.documentIds(programMembership)
             onAddDocument: (file) => {
                 ApplicationController.addDocumentToPass(root.passId, file);

@@ -9,16 +9,15 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
     title: i18n("Rental Car")
 
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🚗"
             text: i18n("Rental Car")
         }
@@ -43,7 +42,7 @@ App.DetailsPage {
                 description: reservation.pickupLocation.name
             }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservation.pickupLocation
                 controller: root.controller
                 isRangeBegin: true
@@ -70,7 +69,7 @@ App.DetailsPage {
                 description: reservation.dropoffLocation.name
             }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservation.dropoffLocation
                 controller: root.controller
                 isRangeEnd: true
@@ -113,15 +112,15 @@ App.DetailsPage {
             }
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

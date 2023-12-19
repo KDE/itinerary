@@ -9,7 +9,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormTextDelegate {
     id: root

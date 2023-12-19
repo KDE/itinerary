@@ -9,9 +9,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
 
     title: i18n("Boat Ticket")
@@ -24,7 +23,7 @@ App.DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🛳️"
             text: i18n("Boat")
 
@@ -37,7 +36,7 @@ App.DetailsPage {
             visible: ticketToken.ticketTokenCount > 0
 
             // ticket barcode
-            App.TicketTokenDelegate {
+            TicketTokenDelegate {
                 id: ticketToken
                 Layout.topMargin: Kirigami.Units.largeSpacing
                 resIds: ReservationManager.reservationsForBatch(root.batchId)
@@ -72,7 +71,7 @@ App.DetailsPage {
                 visible: departurePlace
             }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: departurePlace
                 place: reservationFor.departureBoatTerminal
                 controller: root.controller
@@ -102,7 +101,7 @@ App.DetailsPage {
                 visible: arrivalPlace
             }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: arrivalPlace
                 place: reservationFor.arrivalBoatTerminal
                 controller: root.controller
@@ -110,15 +109,15 @@ App.DetailsPage {
             }
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

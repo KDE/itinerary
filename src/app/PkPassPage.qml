@@ -7,7 +7,6 @@
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -28,7 +27,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: boardingPass
-        App.BoardingPass {
+        BoardingPass {
             passId: root.passId
             pass: root.pass
         }
@@ -36,7 +35,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: eventTicket
-        App.EventTicket {
+        EventTicket {
             passId: root.passId
             pass: root.pass
         }
@@ -44,7 +43,7 @@ Kirigami.ScrollablePage {
 
     Component {
         id: genericPass
-        App.GenericPass {
+        GenericPass {
             passId: root.passId
             pass: root.pass
         }

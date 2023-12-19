@@ -12,9 +12,8 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
 
     title: i18nc("event as in concert/conference/show, not as in appointment", "Edit Event")
@@ -58,7 +57,7 @@ App.EditorPage {
                 statusMessage: text === "" ? i18n("Name must not be empty.") : ""
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: entranceTimeEdit
                 text: i18nc("time of entrance", "Entrance")
                 obj: reservation.reservationFor
@@ -76,7 +75,7 @@ App.EditorPage {
                 }
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: startDateEdit
                 text: i18n("Start Time")
                 obj: reservation.reservationFor
@@ -85,7 +84,7 @@ App.EditorPage {
                 statusMessage: startDateEdit.hasValue ? '' : i18n("Start time has to be set.")
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: endDateEdit
                 text: i18n("End Time")
                 obj: reservation.reservationFor
@@ -122,7 +121,7 @@ App.EditorPage {
                 text: reservation.reservationFor.location ? reservation.reservationFor.location.name : ""
             }
             FormCard.FormDelegateSeparator {}
-            App.FormPlaceEditorDelegate {
+            FormPlaceEditorDelegate {
                 id: address
                 place: {
                     if (root.reservation.reservationFor.location)
@@ -134,7 +133,7 @@ App.EditorPage {
 
         // TODO seat
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: reservation
             defaultCurrency: Country.fromAlpha2(address.currentCountry).currencyCode

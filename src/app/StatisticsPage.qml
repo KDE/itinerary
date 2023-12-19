@@ -9,7 +9,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.i18n.localeData
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
 FormCard.FormCardPage {
     id: root

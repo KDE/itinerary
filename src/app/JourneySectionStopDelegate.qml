@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 Item {
     id: root
@@ -108,7 +107,7 @@ Item {
             visible: departureTime.visible && stop.hasExpectedDepartureTime && stop.disruptionEffect !== Disruption.NoService
         }
 
-        App.VehicleLoadIndicator {
+        VehicleLoadIndicator {
             Layout.column: 3
             Layout.row: 1
             Layout.rowSpan: 1

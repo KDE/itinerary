@@ -11,7 +11,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
 FormCard.FormCard {
     id: root
@@ -90,7 +89,7 @@ FormCard.FormCard {
 
     Repeater {
         id: journeyRepeater
-        delegate: App.JourneySectionDelegate{
+        delegate: JourneySectionDelegate{
             Layout.fillWidth: true
             modelLength: journeyRepeater.count - 1
 
@@ -98,7 +97,7 @@ FormCard.FormCard {
         model: (transfer.state == Transfer.Selected && journeyDetailsExpanded) ? transfer.journey.sections : 0
     }
 
-    App.JourneySummaryDelegate {
+    JourneySummaryDelegate {
         journey: transfer.journey
         visible: transfer.state == Transfer.Selected && !journeyDetailsExpanded
         Layout.fillWidth: true
@@ -129,7 +128,7 @@ FormCard.FormCard {
     Item{
         Component {
             id: detailsComponent
-            App.TransferPage {
+            TransferPage {
                 transfer: root.transfer
             }
         }

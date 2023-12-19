@@ -11,7 +11,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root

@@ -12,9 +12,8 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
     title: i18n("Edit Train Reservation")
 
@@ -47,7 +46,7 @@ App.EditorPage {
         return newRes;
     }
 
-    App.IntermediateStopSelector {
+    IntermediateStopSelector {
         id: boardSheet
         title: i18n("Board Later")
         model: root.controller.journey.intermediateStops
@@ -60,7 +59,7 @@ App.EditorPage {
             }
         }
     }
-    App.IntermediateStopSelector {
+    IntermediateStopSelector {
         id: alightSheet
         title: i18n("Alight Earlier")
         model: root.controller.journey.intermediateStops
@@ -80,7 +79,7 @@ App.EditorPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🚅"
             text: if (reservationFor.trainNumber || reservationFor.trainName) {
                 return reservationFor.trainName + " " + reservationFor.trainNumber;
@@ -171,7 +170,7 @@ App.EditorPage {
             item: root.reservation
         }
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: root.reservation
         }

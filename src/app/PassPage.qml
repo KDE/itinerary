@@ -10,7 +10,6 @@ import Qt.labs.qmlmodels as Models
 import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -18,11 +17,11 @@ Kirigami.ScrollablePage {
 
     Component {
         id: pkpassComponent
-        App.GenericPkPassPage {}
+        GenericPkPassPage {}
     }
     Component {
         id: ticketComponent
-        App.TicketPage {}
+        TicketPage {}
     }
 
     actions: [

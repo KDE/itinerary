@@ -10,7 +10,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 Kirigami.OverlaySheet {
     id: boardSheet

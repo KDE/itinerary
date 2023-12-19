@@ -10,13 +10,12 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
 
     title: i18n("Train Ticket")
-    editor: App.TrainEditor {
+    editor: TrainEditor {
         controller: root.controller
     }
 
@@ -27,7 +26,7 @@ App.DetailsPage {
 
     Component {
         id: alternativePage
-        App.AlternativeJourneyPage {
+        AlternativeJourneyPage {
             controller: root.controller
             publicTransportManager: LiveDataManager.publicTransportManager
         }
@@ -35,7 +34,7 @@ App.DetailsPage {
 
     Component {
         id: vehicleLayoutPage
-        App.VehicleLayoutPage {
+        VehicleLayoutPage {
             publicTransportManager: root.controller.liveDataManager.publicTransportManager
             selectedVehicleSection: root.reservation.reservedTicket.ticketedSeat.seatSection
             selectedClasses: root.reservation.reservedTicket.ticketedSeat.seatingType
@@ -50,7 +49,7 @@ App.DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🚅"
             text: {
                 if (reservationFor.trainName || reservationFor.trainNumber) {
@@ -63,7 +62,7 @@ App.DetailsPage {
         FormCard.FormCard {
             visible: ticketToken.ticketTokenCount > 0
             // ticket barcode
-            App.TicketTokenDelegate {
+            TicketTokenDelegate {
                 id: ticketToken
                 Layout.fillWidth: true
                 resIds: ReservationManager.reservationsForBatch(root.batchId)
@@ -128,7 +127,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: reservationFor.departureStation.name }
 
-            App.FormPlatformDelegate {
+            FormPlatformDelegate {
                 id: departurePlatformDelegate
                 stopover: departure
                 sections: root.controller.departurePlatformSections
@@ -137,7 +136,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: departurePlatformDelegate.visible }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: departureDelegate
                 place: reservationFor.departureStation
                 controller: root.controller
@@ -206,7 +205,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: reservationFor.arrivalStation.name }
 
-            App.FormPlatformDelegate {
+            FormPlatformDelegate {
                 id: arrivalPlatformDelegate
                 stopover: arrival
                 sections: root.controller.arrivalPlatformSections
@@ -215,7 +214,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: arrivalPlatformDelegate.visible }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: arrivalDelegate
                 place: reservationFor.arrivalStation
                 controller: root.controller
@@ -287,19 +286,19 @@ App.DetailsPage {
             }
         }
 
-        App.ProgramMembershipCard {
+        ProgramMembershipCard {
             programMembership: root.reservation.programMembershipUsed
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

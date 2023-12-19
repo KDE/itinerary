@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.khealthcertificate as KHC
 import org.kde.itinerary
-import "." as App
 
 Kirigami.Page {
     id: root
@@ -100,19 +99,19 @@ Kirigami.Page {
 
     Component {
         id: vaccinationDetails
-        App.HealthCertificateVaccination {
+        HealthCertificateVaccination {
             certificate: certSelector.currentValue
         }
     }
     Component {
         id: testDetails
-        App.HealthCertificateTest {
+        HealthCertificateTest {
             certificate: certSelector.currentValue
         }
     }
     Component {
         id: recoveryDetails
-        App.HealthCertificateRecovery {
+        HealthCertificateRecovery {
             certificate: certSelector.currentValue
         }
     }
@@ -164,7 +163,7 @@ Kirigami.Page {
         visible: hasValidCertificate
         anchors.fill: parent
 
-        App.HealthCertificateBarcode {
+        HealthCertificateBarcode {
             certificate: certSelector.currentValue
             TapHandler {
                 onDoubleTapped: scanModeController.toggle()

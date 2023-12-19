@@ -9,7 +9,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 /** Line segment drawn on the left in the journey section view.
  *  Can be used in a fully drawn form, or partially drawn as a progress

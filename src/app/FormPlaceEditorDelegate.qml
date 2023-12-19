@@ -15,7 +15,6 @@ import org.kde.i18n.localeData
 import org.kde.contacts
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 ColumnLayout {
     id: root
@@ -125,7 +124,7 @@ ColumnLayout {
     }
     FormCard.FormDelegateSeparator { visible: addressRegion.visible }
 
-    App.CountryComboBoxDelegate {
+    CountryComboBoxDelegate {
         id: addressCountry
         text: i18n("Country")
         model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {

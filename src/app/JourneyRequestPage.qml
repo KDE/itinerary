@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.dateandtime as Addon
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 import "./components" as Components
 
 FormCard.FormCardPage {

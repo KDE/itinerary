@@ -11,9 +11,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
     title: i18n("Edit Flight")
 
@@ -89,7 +88,7 @@ App.EditorPage {
                 label: i18nc("flight departure terminal", "Terminal")
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: departureTime
                 text: i18nc("flight departure time", "Time")
                 obj: reservation.reservationFor
@@ -105,7 +104,7 @@ App.EditorPage {
                 label: i18nc("flight departure gate", "Gate")
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: boardingTime
                 text: i18n("Boarding time")
                 obj: reservation.reservationFor
@@ -141,7 +140,7 @@ App.EditorPage {
                 label: i18nc("flight arrival terminal", "Terminal")
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: arrivalTime
                 text: i18nc("flight arrival time", "Time")
                 obj: reservation.reservationFor
@@ -173,7 +172,7 @@ App.EditorPage {
             }
         }
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: root.reservation
         }

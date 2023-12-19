@@ -9,7 +9,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.pkpass as KPkPass
 import org.kde.itinerary
-import "." as App
 
 Rectangle {
     id: root
@@ -172,7 +171,7 @@ Rectangle {
         }
 
         // barcode
-        App.PkPassBarcode {
+        PkPassBarcode {
             pass: root.pass
             TapHandler {
                 onDoubleTapped: scanModeToggled()

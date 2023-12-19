@@ -11,7 +11,6 @@ import org.kde.i18n.localeData
 import org.kde.prison as Prison
 import org.kde.khealthcertificate as KHC
 import org.kde.itinerary
-import "." as App
 
 ColumnLayout {
     id: root

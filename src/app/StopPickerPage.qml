@@ -11,7 +11,6 @@ import org.kde.kitemmodels
 import org.kde.i18n.localeData
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -56,7 +55,7 @@ Kirigami.ScrollablePage {
     ]
     header: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing
-        App.CountryComboBox {
+        CountryComboBox {
             id: countryCombo
             Layout.topMargin: Kirigami.Units.smallSpacing
             Layout.leftMargin: Kirigami.Units.smallSpacing

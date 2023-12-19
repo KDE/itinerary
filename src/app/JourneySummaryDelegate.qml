@@ -12,7 +12,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kpublictransport
 import org.kde.itinerary
-import "." as App
 
 FormCard.AbstractFormDelegate {
     id: root
@@ -44,7 +43,7 @@ FormCard.AbstractFormDelegate {
         RowLayout {
             Repeater {
                 model: root.journey.sections
-                delegate: App.TransportIcon {
+                delegate: TransportIcon {
                     source: PublicTransport.journeySectionIcon(modelData)
                     color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
@@ -58,7 +57,7 @@ FormCard.AbstractFormDelegate {
                 Accessible.ignored: !parent.visible
             }
 
-            App.VehicleLoadIndicator {
+            VehicleLoadIndicator {
                 loadInformation: sectionWithMaxLoad < 0 ? undefined : root.journey.sections[sectionWithMaxLoad].loadInformation
             }
         }

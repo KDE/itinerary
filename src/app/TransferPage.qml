@@ -12,7 +12,6 @@ import org.kde.kitemmodels
 import org.kde.kpublictransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -220,7 +219,7 @@ Kirigami.ScrollablePage {
 
             Repeater {
                 id: journeyRepeater
-                delegate: App.JourneySectionDelegate{
+                delegate: JourneySectionDelegate{
                     Layout.fillWidth: true
                     modelLength: journeyRepeater.count - 1
 
@@ -228,7 +227,7 @@ Kirigami.ScrollablePage {
                 model: journeyView.currentIndex === top.index ? top.journey.sections : 0
             }
 
-            App.JourneySummaryDelegate {
+            JourneySummaryDelegate {
                 id: summaryButton
 
                 journey: top.journey

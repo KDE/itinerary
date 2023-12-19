@@ -14,7 +14,6 @@ import QtPositioning
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components
 import org.kde.itinerary
-import "." as App
 
 Kirigami.Page {
     id: root

@@ -8,7 +8,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
 FormCard.FormTextDelegate {
     id: root

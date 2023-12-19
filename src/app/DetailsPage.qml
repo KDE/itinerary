@@ -11,7 +11,6 @@ import org.kde.kirigami as Kirigami
 import internal.org.kde.kcalendarcore as KCalendarCore
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root

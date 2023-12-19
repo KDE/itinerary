@@ -15,7 +15,6 @@ import org.kde.solidextras as Solid
 import org.kde.kpublictransport.onboard
 import internal.org.kde.kcalendarcore as KCalendarCore
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ApplicationWindow {
     id: root
@@ -138,12 +137,12 @@ Kirigami.ApplicationWindow {
     }
     Component {
         id: calendarImportPage
-        App.CalendarImportPage {}
+        CalendarImportPage {}
     }
-    footer: App.NavigationBar {
+    footer: NavigationBar {
         id: navigationbar
     }
-    App.CalendarSelectionSheet {
+    CalendarSelectionSheet {
         id: calendarSelector
         // parent: root.Overlay.overlay
         onCalendarSelected: pageStack.push(calendarImportPage, { calendar: calendar });
@@ -191,7 +190,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Health Certificates")
                 icon.name: "cross-shape"
                 onTriggered: {
-                    healtCertificateComponent.source = "HealthCertificatePage.qml"
+                    healtCertificateComponent.source = Qt.resolvedUrl("HealthCertificatePage.qml")
                     pageStack.layers.push(healtCertificateComponent.item)
                 }
                 enabled: pageStack.layers.depth < 2
@@ -229,7 +228,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("About")
                 icon.name: "help-about-symbolic"
                 enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.pushDialogLayer('qrc:/AboutPage.qml')
+                onTriggered: pageStack.pushDialogLayer(Qt.resolvedUrl("AboutPage.qml"))
             },
             Kirigami.Action {
                 id: devModeAction
@@ -305,34 +304,34 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: mainPageComponent
-        App.TimelinePage {}
+        TimelinePage {}
     }
     Component {
         id: scanBarcodeComponent
-        App.BarcodeScannerPage {}
+        BarcodeScannerPage {}
     }
     Component {
         id: settingsComponent
-        App.SettingsPage {}
+        SettingsPage {}
     }
     Component {
         id: statisticsComponent
-        App.StatisticsPage {
+        StatisticsPage {
             reservationManager: ReservationManager
             tripGroupManager: TripGroupManager
         }
     }
     Component {
         id: programMembershipPage
-        App.ProgramMembershipPage {}
+        ProgramMembershipPage {}
     }
     Component {
         id: programMembershipEditor
-        App.ProgramMembershipEditor {}
+        ProgramMembershipEditor {}
     }
     Component {
         id: passComponent
-        App.PassPage {}
+        PassPage {}
     }
     // replace loader with component once we depend on KHealthCertificate unconditionally
     Loader {
@@ -340,32 +339,32 @@ Kirigami.ApplicationWindow {
     }
     Component {
         id: welcomeComponent
-        App.WelcomePage {}
+        WelcomePage {}
     }
     Component {
         id: journeySectionPage
-        App.JourneySectionPage {}
+        JourneySectionPage {}
     }
     Component {
         id: journeyPathPage
-        App.JourneyPathPage {}
+        JourneyPathPage {}
     }
     Component {
         id: indoorMapPage
-        App.IndoorMapPage {}
+        IndoorMapPage {}
     }
     Component {
         id: liveStatusPage
-        App.LiveStatusPage {}
+        LiveStatusPage {}
     }
     Component {
         id: onlineImportPage
-        App.OnlineImportPage {}
+        OnlineImportPage {}
     }
 
     Component {
         id: devModePageComponent
-        App.DevelopmentModePage {}
+        DevelopmentModePage {}
     }
 
     // "singleton" OSM QtLocation plugin

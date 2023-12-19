@@ -48,7 +48,6 @@ set(QT_MIN_VERSION 6.5)
 
 # build-time dependencies
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Test Quick Positioning QuickControls2)
-find_package(Qt6 CONFIG QUIET OPTIONAL_COMPONENTS QuickCompiler)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n CoreAddons Contacts Notifications CalendarCore Holidays UnitConversion)
 find_package(KF6 ${KF_MIN_VERSION} OPTIONAL_COMPONENTS NetworkManagerQt)
 find_package(KF6KirigamiAddons 0.11.40 REQUIRED)

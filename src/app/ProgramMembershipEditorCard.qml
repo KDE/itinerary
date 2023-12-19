@@ -9,7 +9,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitemmodels
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 ColumnLayout {
     id: root

@@ -9,15 +9,14 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
 
     title: i18n("Hotel Reservation")
 
     ColumnLayout {
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🏨"
             text: reservationFor.name
         }
@@ -27,13 +26,13 @@ App.DetailsPage {
         }
 
         FormCard.FormCard {
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 place: reservationFor
                 controller: root.controller
             }
         }
 
-        App.ContactCard {
+        ContactCard {
             contact: root.reservationFor
         }
 
@@ -52,19 +51,19 @@ App.DetailsPage {
             }
         }
 
-        App.ProgramMembershipCard {
+        ProgramMembershipCard {
             programMembership: root.reservation.programMembershipUsed
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation

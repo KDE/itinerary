@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.kpublictransport.onboard
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormCardPage {
     id: root
@@ -35,7 +34,7 @@ FormCard.FormCardPage {
         title: i18n("Home")
     }
     FormCard.FormCard {
-        App.CountryComboBoxDelegate {
+        CountryComboBoxDelegate {
             text: i18n("Home Country")
             model: Country.allCountries.map(c => c.alpha2).sort((lhs, rhs) => {
                 return Country.fromAlpha2(lhs).name.localeCompare(Country.fromAlpha2(rhs).name);

@@ -11,7 +11,6 @@ import org.kde.kirigamiaddons.components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormCardPage {
     id: root
@@ -56,7 +55,7 @@ FormCard.FormCardPage {
         }
     }
 
-    App.CardPageTitle {
+    CardPageTitle {
         emojiIcon: "🎫"
         text: i18n("Program")
 
@@ -91,14 +90,14 @@ FormCard.FormCardPage {
         }
         FormCard.FormDelegateSeparator {}
         // TODO date-only edit delegates
-        App.FormDateTimeEditDelegate {
+        FormDateTimeEditDelegate {
             id: validFromEdit
             text: i18n("Valid from")
             obj: root.programMembership
             propertyName: "validFrom"
         }
         FormCard.FormDelegateSeparator {}
-        App.FormDateTimeEditDelegate {
+        FormDateTimeEditDelegate {
             id: validUntilEdit
             text: i18n("Valid until")
             obj: root.programMembership

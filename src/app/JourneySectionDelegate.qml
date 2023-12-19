@@ -11,7 +11,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
 FormCard.AbstractFormDelegate {
     id: root
@@ -184,7 +183,7 @@ FormCard.AbstractFormDelegate {
                 color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                 elide: Text.ElideMiddle
             }
-            App.VehicleLoadIndicator {
+            VehicleLoadIndicator {
                 loadInformation: modelData.loadInformation
             }
         }

@@ -10,9 +10,8 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.DocumentsCard {
+DocumentsCard {
     /// TimelineDelegateController
     property QtObject controller: null
 

@@ -8,7 +8,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Layouts
 import org.kde.itinerary
-import "." as App
 
 QQC2.Pane {
     property alias day: _controller.date

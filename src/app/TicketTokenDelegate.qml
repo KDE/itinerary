@@ -12,7 +12,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.prison as Prison
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
 ColumnLayout {
     id: root

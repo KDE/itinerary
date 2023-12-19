@@ -7,7 +7,6 @@
 import QtQuick
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
-import "." as App
 
 Kirigami.NavigationTabBar {
     id: root
@@ -25,7 +24,7 @@ Kirigami.NavigationTabBar {
             text: i18n("Plan Trip")
             onTriggered: {
                 if (pageStack.currentItem.objectName !== "JourneyRequestPage") {
-                    pagepool.loadPage("TimelinePage.qml").addTrainTrip()
+                    pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).addTrainTrip()
                 }
             }
         },
@@ -39,7 +38,7 @@ Kirigami.NavigationTabBar {
             text: i18n("Current Ticket")
             icon.name: "view-barcode-qr"
             visible: TimelineModel.currentBatchId !== ""
-            onTriggered: pagepool.loadPage("TimelinePage.qml").showDetailsPageForReservation(TimelineModel.currentBatchId)
+            onTriggered: pagepool.loadPage(Qt.resolvedUrl("TimelinePage.qml")).showDetailsPageForReservation(TimelineModel.currentBatchId)
         }
     ]
 }

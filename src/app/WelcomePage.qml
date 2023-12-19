@@ -10,7 +10,6 @@ import QtQuick.Controls as QQC2
 import QtPositioning
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root

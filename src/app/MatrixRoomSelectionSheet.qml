@@ -8,7 +8,6 @@ import org.kde.kitemmodels
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as AddonComponents
 import org.kde.itinerary
-import "." as App
 
 // TODO sort room list in activity order
 // TODO remember last selected room

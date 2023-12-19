@@ -12,7 +12,6 @@ import org.kde.i18n.localeData
 import org.kde.kitinerary as KItinerary
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.itinerary
-import "." as App
 
 FormCard.FormCard {
     id: root

@@ -11,14 +11,13 @@ import org.kde.kirigami as Kirigami
 import org.kde.kitinerary
 import org.kde.itinerary
 import org.kde.kirigamiaddons.formcard as FormCard
-import "." as App
 
-App.DetailsPage {
+DetailsPage {
     id: root
 
     title: i18n("Bus Ticket")
 
-    editor: App.BusEditor {
+    editor: BusEditor {
         controller: root.controller
     }
 
@@ -30,7 +29,7 @@ App.DetailsPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🚌"
             text: reservationFor.busName + " " + reservationFor.busNumber
         }
@@ -38,7 +37,7 @@ App.DetailsPage {
         FormCard.FormCard {
             visible: ticketToken.ticketTokenCount > 0
             // ticket barcode
-            App.TicketTokenDelegate {
+            TicketTokenDelegate {
                 id: ticketToken
                 resIds: ReservationManager.reservationsForBatch(root.batchId)
                 onCurrentReservationIdChanged: {
@@ -109,7 +108,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: departureDelegate.visible }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: departureDelegate
                 place: reservationFor.departureBusStop
                 controller: root.controller
@@ -170,7 +169,7 @@ App.DetailsPage {
 
             FormCard.FormDelegateSeparator { visible: arrivalDelegate.visible }
 
-            App.FormPlaceDelegate {
+            FormPlaceDelegate {
                 id: arrivalDelegate
                 place: reservationFor.arrivalBusStop
                 controller: root.controller
@@ -192,19 +191,19 @@ App.DetailsPage {
             }
         }
 
-        App.ProgramMembershipCard {
+        ProgramMembershipCard {
             programMembership: root.reservation.programMembershipUsed
         }
 
-        App.BookingCard {
+        BookingCard {
             reservation: root.reservation
         }
 
-        App.ReservationDocumentsCard {
+        ReservationDocumentsCard {
             controller: root.controller
         }
 
-        App.ActionsCard {
+        ActionsCard {
             batchId: root.batchId
             editor: root.editor
             reservation: root.reservation
@@ -226,7 +225,7 @@ App.DetailsPage {
 
             Component {
                 id: alternativePage
-                App.AlternativeJourneyPage {
+                AlternativeJourneyPage {
                     controller: root.controller
                     publicTransportManager: LiveDataManager.publicTransportManager
                 }

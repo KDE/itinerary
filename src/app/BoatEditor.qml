@@ -11,9 +11,8 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
     title: i18n("Edit Boat Trip")
 
@@ -46,7 +45,7 @@ App.EditorPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🛳️"
             text: i18n("Boat")
         }
@@ -56,7 +55,7 @@ App.EditorPage {
         }
 
         FormCard.FormCard {
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: departureTimeEdit
                 text: i18nc("Boat departure", "Departure Time")
                 obj: reservation.reservationFor
@@ -73,7 +72,7 @@ App.EditorPage {
                 statusMessage: text === "" ? i18n("Departure terminal must not be empty.") : ""
             }
             FormCard.FormDelegateSeparator {}
-            App.FormPlaceEditorDelegate {
+            FormPlaceEditorDelegate {
                 id: departureAddress
                 place: {
                     if (root.batchId || !root.reservation.reservationFor.departureBoatTerminal.address.isEmpty || root.reservation.reservationFor.departureBoatTerminal.geo.isValid)
@@ -88,7 +87,7 @@ App.EditorPage {
         }
 
         FormCard.FormCard {
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: arrivalTimeEdit
                 text: i18nc("Boat arrival", "Arrival Time")
                 obj: reservation.reservationFor
@@ -114,7 +113,7 @@ App.EditorPage {
                 statusMessage: text === "" ? i18n("Arrival terminal must not be empty.") : ""
             }
             FormCard.FormDelegateSeparator {}
-            App.FormPlaceEditorDelegate {
+            FormPlaceEditorDelegate {
                 id: arrivalAddress
                 place: {
                     if (root.batchId || !root.reservation.reservationFor.arrivalBoatTerminal.address.isEmpty || root.reservation.reservationFor.arrivalBoatTerminal.geo.isValid)
@@ -129,7 +128,7 @@ App.EditorPage {
             }
         }
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: root.reservation
             defaultCurrency: Country.fromAlpha2(departureAddress.currentCountry).currencyCode

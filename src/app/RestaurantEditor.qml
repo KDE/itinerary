@@ -11,9 +11,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
 
     title: i18nc("@title", "Edit Restaurant")
@@ -41,7 +40,7 @@ App.EditorPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🍽️"
             text: i18n("Restaurant")
 
@@ -59,7 +58,7 @@ App.EditorPage {
 
             FormCard.FormDelegateSeparator {}
 
-            App.FormPlaceEditorDelegate {
+            FormPlaceEditorDelegate {
                 id: address
                 place: {
                     if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
@@ -74,7 +73,7 @@ App.EditorPage {
         }
 
         FormCard.FormCard {
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: startTimeEdit
                 text: i18n("Start Time")
                 obj: reservation
@@ -85,7 +84,7 @@ App.EditorPage {
 
             FormCard.FormDelegateSeparator {}
 
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: endTimeEdit
                 text: i18n("End Time")
                 obj: reservation
@@ -104,12 +103,12 @@ App.EditorPage {
             }
         }
 
-        App.ContactEditorCard {
+        ContactEditorCard {
             id: contactEdit
             contact: reservation.reservationFor
         }
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: reservation
         }

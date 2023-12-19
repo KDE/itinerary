@@ -12,7 +12,6 @@ import Qt.labs.qmlmodels as Models
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.itinerary
-import "." as App
 
 Kirigami.ScrollablePage {
     id: root
@@ -233,60 +232,60 @@ Kirigami.ScrollablePage {
 
     Component {
         id: flightDetailsPage
-        App.FlightPage {}
+        FlightPage {}
     }
     Component {
         id: trainDetailsPage
-        App.TrainPage {}
+        TrainPage {}
     }
     Component {
         id: busDetailsPage
-        App.BusPage {}
+        BusPage {}
     }
     Component {
         id: hotelDetailsPage
-        App.HotelPage { editor: hotelEditorPage }
+        HotelPage { editor: hotelEditorPage }
     }
     Component {
         id: eventDetailsPage
-        App.EventPage { editor: eventEditorPage }
+        EventPage { editor: eventEditorPage }
     }
     Component {
         id: restaurantDetailsPage
-        App.RestaurantPage { editor: restaurantEditorPage }
+        RestaurantPage { editor: restaurantEditorPage }
     }
     Component {
         id: carRentalDetailsPage
-        App.CarRentalPage {}
+        CarRentalPage {}
     }
     Component {
         id: boatDetailsPage
-        App.BoatPage { editor: boatEditorPage }
+        BoatPage { editor: boatEditorPage }
     }
     Component {
         id: touristAttractionDetailsPage
-        App.TouristAttractionPage {}
+        TouristAttractionPage {}
     }
     Component {
         id: weatherForecastPage
-        App.WeatherForecastPage {}
+        WeatherForecastPage {}
     }
 
     Component {
         id: boatEditorPage
-        App.BoatEditor {}
+        BoatEditor {}
     }
     Component {
         id: hotelEditorPage
-        App.HotelEditor {}
+        HotelEditor {}
     }
     Component {
         id: eventEditorPage
-        App.EventEditor {}
+        EventEditor {}
     }
     Component {
         id: restaurantEditorPage
-        App.RestaurantEditor {}
+        RestaurantEditor {}
     }
 
     function detailsComponent(batchId) {
@@ -327,63 +326,63 @@ Kirigami.ScrollablePage {
         role: "type"
         Models.DelegateChoice {
             roleValue: TimelineElement.Flight
-            App.FlightDelegate {
+            FlightDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.Hotel
-            App.HotelDelegate {
+            HotelDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.TrainTrip
-            App.TrainDelegate {
+            TrainDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.BusTrip
-            App.BusDelegate {
+            BusDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.Restaurant
-            App.RestaurantDelegate {
+            RestaurantDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.TouristAttraction
-            App.TouristAttractionDelegate {
+            TouristAttractionDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.Event
-            App.EventDelegate {
+            EventDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.CarRental
-            App.CarRentalDelegate {
+            CarRentalDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.BoatTrip
-            App.BoatDelegate {
+            BoatDelegate {
                 batchId: model.batchId
                 rangeType: model.rangeType
             }
@@ -407,17 +406,17 @@ Kirigami.ScrollablePage {
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.LocationInfo
-            App.LocationInfoDelegate {
+            LocationInfoDelegate {
                 locationInfo: model.locationInformation
             }
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.WeatherForecast
-            App.WeatherForecastDelegate {}
+            WeatherForecastDelegate {}
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.TripGroup
-            App.TripGroupDelegate {
+            TripGroupDelegate {
                 onRemoveTrip: (tripGroupId) => {
                     deleteTripGroupWarningDialog.tripGroupId = tripGroupId;
                     deleteTripGroupWarningDialog.open();
@@ -426,7 +425,7 @@ Kirigami.ScrollablePage {
         }
         Models.DelegateChoice {
             roleValue: TimelineElement.Transfer
-            App.TransferDelegate {}
+            TransferDelegate {}
         }
     }
 

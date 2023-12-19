@@ -12,9 +12,8 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.i18n.localeData
 import org.kde.kitinerary
 import org.kde.itinerary
-import "." as App
 
-App.EditorPage {
+EditorPage {
     id: root
 
     title: i18n("Edit Hotel Reservation")
@@ -42,7 +41,7 @@ App.EditorPage {
     ColumnLayout {
         spacing: 0
 
-        App.CardPageTitle {
+        CardPageTitle {
             emojiIcon: "🏨"
             text: i18n("Hotel")
         }
@@ -62,7 +61,7 @@ App.EditorPage {
 
             FormCard.FormDelegateSeparator {}
 
-            App.FormPlaceEditorDelegate {
+            FormPlaceEditorDelegate {
                 id: address
                 place: {
                     if (root.batchId || !root.reservation.reservationFor.address.isEmpty || root.reservation.reservationFor.geo.isValid)
@@ -80,7 +79,7 @@ App.EditorPage {
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.largeSpacing
 
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: checkinEdit
                 text: i18nc("hotel checkin", "Check-in")
                 obj: reservation
@@ -89,7 +88,7 @@ App.EditorPage {
                 statusMessage: checkinEdit.hasValue ? '' : i18n("Check-in time has to be set.")
             }
             FormCard.FormDelegateSeparator {}
-            App.FormDateTimeEditDelegate {
+            FormDateTimeEditDelegate {
                 id: checkoutEdit
                 text: i18nc("hotel checkout", "Check-out")
                 obj: reservation
@@ -111,12 +110,12 @@ App.EditorPage {
             }
         }
 
-        App.ContactEditorCard {
+        ContactEditorCard {
             id: contactEdit
             contact: reservation.reservationFor
         }
 
-        App.BookingEditorCard {
+        BookingEditorCard {
             id: bookingEdit
             item: reservation
             defaultCurrency: Country.fromAlpha2(address.currentCountry).currencyCode
