@@ -4,8 +4,6 @@
 -->
 <RCC>
     <qresource prefix="/">
-        <file>qtquickcontrols2.conf</file>
-
         <file>main.qml</file>
         <file>AboutPage.qml</file>
         <file>ActionsCard.qml</file>
