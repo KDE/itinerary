@@ -139,7 +139,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             text: i18n("Add restaurant...")
-            icon.source: "qrc:///images/foodestablishment.svg"
+            icon.name: "qrc:///images/foodestablishment.svg"
             onTriggered: {
                 const dt = dateTimeAtIndex(currentIndex());
                 let res =  Factory.makeFoodEstablishmentReservation();
