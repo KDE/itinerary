@@ -30,14 +30,14 @@ Kirigami.ScrollablePage {
 
             Layout.margins: Kirigami.Units.gridUnit
 
-            Kirigami.Icon {
+            TransportIcon {
                 Layout.rowSpan: 4
                 Layout.alignment: Qt.AlignTop
                 Layout.rightMargin: Kirigami.Units.largeSpacing
                 id: icon
                 source: PublicTransport.lineIcon(journeySection.route.line)
-                width: height
-                height: Kirigami.Units.iconSizes.large
+                Layout.preferredWidth: height
+                Layout.preferredHeight: Kirigami.Units.iconSizes.large
                 isMask: !journeySection.route.line.hasLogo && !journeySection.route.line.hasModeLogo
             }
 

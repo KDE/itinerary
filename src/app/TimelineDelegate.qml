@@ -72,16 +72,11 @@ FormCard.FormCard {
         contentItem: RowLayout {
             id: headerLayout
 
-            Kirigami.Icon {
+            App.TransportIcon {
                 id: _headerIcon
-                Layout.preferredWidth: Layout.preferredHeight * aspectRatio
-                Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
                 color: root.headerTextColor
                 isMask: true
-
-                // work around the fact that Kirigami.Icon always gives us an implicit size of 32x32 no
-                // matter the size of the input icon
-                property real aspectRatio: isMask ? 1.0 : Util.svgAspectRatio(source)
+                size: Kirigami.Units.iconSizes.smallMedium
             }
         }
     }

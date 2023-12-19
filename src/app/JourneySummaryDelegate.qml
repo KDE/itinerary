@@ -44,12 +44,11 @@ FormCard.AbstractFormDelegate {
         RowLayout {
             Repeater {
                 model: root.journey.sections
-                delegate: Kirigami.Icon {
+                delegate: App.TransportIcon {
                     source: PublicTransport.journeySectionIcon(modelData)
                     color: PublicTransport.warnAboutSection(modelData) ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
                     isMask: modelData.mode != JourneySection.PublicTransport || (!modelData.route.line.hasLogo && !modelData.route.line.hasModeLogo)
-                    Layout.preferredWidth: Kirigami.Units.iconSizes.small * Util.svgAspectRatio(source)
-                    Layout.preferredHeight: Kirigami.Units.iconSizes.small
+                    size: Kirigami.Units.iconSizes.small
                     Accessible.name: PublicTransport.journeySectionLabel(modelData)
                 }
             }

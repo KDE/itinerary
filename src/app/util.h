@@ -39,11 +39,6 @@ public:
     /** Execute the non-exported sort() method on a QAbstractItemModel. */
     Q_INVOKABLE static void sortModel(QObject *model, int column, Qt::SortOrder sortOrder);
 
-    /** Determine the aspect ratio of an SVG file.
-     *  This is a dirty workaround for the problem that Kirigami.Icon has its implicit size hardcoded to 32x32...
-     */
-    Q_INVOKABLE static float svgAspectRatio(const QString &svgFilePath);
-
     /** QColor::isValid for QML. */
     Q_INVOKABLE static bool isValidColor(const QColor &color);
 

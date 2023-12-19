@@ -132,7 +132,7 @@ FormCard.AbstractFormDelegate {
                 anchors.centerIn: parent
                 radius: Kirigami.Units.smallSpacing
 
-                Kirigami.Icon {
+                TransportIcon {
                     id: modeIcon
                     anchors.centerIn: parent
                     source: PublicTransport.journeySectionIcon(modelData)
