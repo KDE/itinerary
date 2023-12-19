@@ -20,6 +20,7 @@ FormCard.FormTextDelegate {
     trailing: Kirigami.Icon {
         source: root.statItem.trend == StatisticsItem.TrendUp ? "go-up-symbolic" : root.statItem.trend == StatisticsItem.TrendDown ? "go-down-symbolic" : "go-next-symbolic"
         color: root.statItem.trend == StatisticsItem.TrendUp ? Kirigami.Theme.negativeTextColor : root.statItem.trend == StatisticsItem.TrendDown ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.textColor
+        isMask: true
         Layout.preferredWidth: Kirigami.Units.gridUnit
         Layout.preferredHeight: Kirigami.Units.gridUnit
         visible: root.statItem.trend != StatisticsItem.TrendUnknown
