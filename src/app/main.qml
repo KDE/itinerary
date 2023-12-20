@@ -204,7 +204,7 @@ Kirigami.ApplicationWindow {
                 id: liveAction
                 text: i18n("Live Status")
                 icon.name: "media-playback-playing"
-                onTriggered: pageStack.layers.push(liveStatusPage)
+                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "LiveStatusPage"))
                 enabled: pageStack.layers.depth < 2
                 visible: onboardStatus.status == OnboardStatus.Onboard
             },
@@ -348,10 +348,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: indoorMapPage
         IndoorMapPage {}
-    }
-    Component {
-        id: liveStatusPage
-        LiveStatusPage {}
     }
 
     // "singleton" OSM QtLocation plugin
