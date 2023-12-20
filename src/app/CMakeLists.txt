@@ -80,6 +80,8 @@ target_link_libraries(itinerary PUBLIC
     KF6::Holidays
     Qt::Network
     Qt::Quick
+PRIVATE
+    Qt::CorePrivate
 )
 if (HAVE_MATRIX)
     target_link_libraries(itinerary PUBLIC KMatrix)

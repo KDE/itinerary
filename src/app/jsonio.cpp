@@ -11,6 +11,8 @@
 #include <QJsonObject>
 #include <QJsonValue>
 
+#include <private/qjson_p.h>
+
 static bool isCbor(const QByteArray &data)
 {
     return !data.isEmpty() && data[0] != '{' && data[0] != '[';
@@ -19,7 +21,7 @@ static bool isCbor(const QByteArray &data)
 QJsonValue JsonIO::read(const QByteArray &data)
 {
     if (isCbor(data)) {
-        return QCborValue::fromCbor(data).toJsonValue();
+        return QJsonPrivate::Value::fromTrustedCbor(QCborValue::fromCbor(data));
     }
 
     const auto doc = QJsonDocument::fromJson(data);
