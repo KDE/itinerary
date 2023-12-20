@@ -21,23 +21,6 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    FloatingButton {
-        anchors {
-            right: parent.right
-            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
-            bottom: parent.bottom
-            bottomMargin: Kirigami.Units.largeSpacing
-        }
-        action: Kirigami.Action {
-            icon.name: checked ? "flashlight-off" : "flashlight-on"
-            text: i18n("Light")
-            checkable: true
-            checked: camera.torchMode == Camera.TorchOn
-            visible: camera.isTorchModeSupported
-            onTriggered: camera.torchMode = (camera.torchMode == Camera.TorchOn ? Camera.TorchOff : Camera.TorchOn)
-        }
-    }
-
     VideoOutput {
         id: viewFinder
         anchors.fill: parent
@@ -91,6 +74,23 @@ Kirigami.Page {
         anchors.fill: parent
         text: i18n("No camera available.")
         visible: camera.error != Camera.NoError
+    }
+
+    FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: Kirigami.Action {
+            icon.name: checked ? "flashlight-off" : "flashlight-on"
+            text: i18n("Light")
+            checkable: true
+            checked: camera.torchMode == Camera.TorchOn
+            visible: camera.isTorchModeSupported
+            onTriggered: camera.torchMode = (camera.torchMode == Camera.TorchOn ? Camera.TorchOff : Camera.TorchOn)
+        }
     }
 
     Component.onCompleted: PermissionManager.requestPermission(Permission.Camera, function() { camera.start(); })
