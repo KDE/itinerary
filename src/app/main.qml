@@ -235,7 +235,7 @@ Kirigami.ApplicationWindow {
                 text: "Development"
                 icon.name: "tools-report-bug"
                 enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(devModePageComponent)
+                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "DevelopmentModePage"));
                 visible: Settings.developmentMode
             }
         ]
@@ -352,11 +352,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: onlineImportPage
         OnlineImportPage {}
-    }
-
-    Component {
-        id: devModePageComponent
-        DevelopmentModePage {}
     }
 
     // "singleton" OSM QtLocation plugin
