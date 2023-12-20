@@ -100,14 +100,18 @@ Kirigami.ApplicationWindow {
             text: i18n("Deutsche Bahn Online Ticket...")
             icon.name: "download"
             onTriggered: {
-                pageStack.layers.push(onlineImportPage, {source: "db"});
+                pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
+                    source: "db",
+                });
             }
         },
         Kirigami.Action {
             text: i18n("SNCF Online Ticket...")
             icon.name: "download"
             onTriggered: {
-                pageStack.layers.push(onlineImportPage, {source: "sncf"});
+                pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "OnlineImportPage"), {
+                    source: "sncf"
+                });
             }
         }
     ]
@@ -348,10 +352,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: liveStatusPage
         LiveStatusPage {}
-    }
-    Component {
-        id: onlineImportPage
-        OnlineImportPage {}
     }
 
     // "singleton" OSM QtLocation plugin
