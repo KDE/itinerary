@@ -49,10 +49,13 @@ ColumnLayout {
             text: i18n("Show program pass")
             property string passId: PassManager.findMatchingPass(root.programMembership)
             visible: passId
-            onClicked: applicationWindow().pageStack.push(programMembershipPage, {
-                programMembership: PassManager.pass(passButton.passId),
-                passId: passButton.passId,
-            })
+            onClicked: {
+                const programMembershipPage = Qt.createComponent("org.kde.itinerary", "ProgramMembershipPage");
+                applicationWindow().pageStack.push(programMembershipPage, {
+                    programMembership: PassManager.pass(passButton.passId),
+                    passId: passButton.passId,
+                });
+            }
         }
     }
 }

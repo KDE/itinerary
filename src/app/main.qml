@@ -322,14 +322,6 @@ Kirigami.ApplicationWindow {
         }
     }
     Component {
-        id: programMembershipPage
-        ProgramMembershipPage {}
-    }
-    Component {
-        id: programMembershipEditor
-        ProgramMembershipEditor {}
-    }
-    Component {
         id: passComponent
         PassPage {}
     }

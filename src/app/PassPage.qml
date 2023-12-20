@@ -15,20 +15,17 @@ Kirigami.ScrollablePage {
     id: root
     title: i18n("Passes and Programs")
 
-    Component {
-        id: pkpassComponent
-        GenericPkPassPage {}
-    }
-    Component {
-        id: ticketComponent
-        TicketPage {}
-    }
-
     actions: [
         Kirigami.Action {
             text: i18n("Add Program Membership...")
             icon.name: "list-add-symbolic"
-            onTriggered: applicationWindow().pageStack.push(programMembershipEditor, { programMembership: Factory.makeProgramMembership(), passId: "" })
+            onTriggered: {
+                const editorComponent = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
+                applicationWindow().pageStack.push(editorComponent, {
+                    programMembership: Factory.makeProgramMembership(),
+                    passId: "",
+                });
+            }
         }
     ]
 
@@ -51,7 +48,13 @@ Kirigami.ScrollablePage {
                         return i18nc("name - number", "%1 - %2", model.pass.member.name, model.pass.membershipNumber)
                     }
                 }
-                onClicked: applicationWindow().pageStack.push(programMembershipPage, { programMembership: model.pass, passId: model.passId })
+                onClicked: {
+                    const programMembershipPage = Qt.createComponent("org.kde.itinerary", "ProgramMembershipPage");
+                    applicationWindow().pageStack.push(programMembershipPage, {
+                        programMembership: model.pass,
+                        passId: model.passId,
+                    });
+                }
             }
         }
         Models.DelegateChoice {
@@ -66,7 +69,14 @@ Kirigami.ScrollablePage {
                     subtitle: pkPass.organizationName
                     icon.name: pkPass.hasIcon ? "image://org.kde.pkpass/" + pkPassId + "/icon" : "bookmarks"
                 }
-                onClicked: applicationWindow().pageStack.push(pkpassComponent, { passId: pkPassId, pass: pkPass, genericPassId: model.passId });
+                onClicked: {
+                    const pkpassComponent = Qt.createComponent("org.kde.itinerary", "GenericPkPassPage");
+                    applicationWindow().pageStack.push(pkpassComponent, {
+                        passId: pkPassId,
+                        pass: pkPass,
+                        genericPassId: model.passId,
+                    });
+                }
             }
         }
         Models.DelegateChoice {
@@ -85,7 +95,13 @@ Kirigami.ScrollablePage {
                         return i18nc("name - valid time range", "%1 - %2", model.pass.underName.name, model.validRangeLabel);
                     }
                 }
-                onClicked: applicationWindow().pageStack.push(ticketComponent, { ticket: model.pass, passId: model.passId })
+                onClicked: {
+                    const ticketComponent = Qt.createComponent("org.kde.itinerary", "TicketPage");
+                    applicationWindow().pageStack.push(ticketComponent, {
+                        ticket: model.pass,
+                        passId: model.passId,
+                    });
+                }
             }
         }
     }

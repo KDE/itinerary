@@ -139,7 +139,13 @@ FormCard.FormCardPage {
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
                 text: i18n("Edit")
-                onClicked: applicationWindow().pageStack.push(programMembershipEditor, {passId: root.passId, programMembership: root.programMembership});
+                onClicked: {
+                    const programMembershipEditor = Qt.createComponent("org.kde.itinerary", "ProgramMembershipEditor");
+                    applicationWindow().pageStack.push(programMembershipEditor, {
+                        passId: root.passId,
+                        programMembership: root.programMembership,
+                    });
+                }
             }
             FormCard.FormButtonDelegate {
                 icon.name: "edit-delete"
