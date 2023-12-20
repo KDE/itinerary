@@ -214,7 +214,7 @@ Kirigami.ApplicationWindow {
                 icon.name: "settings-configure"
                 enabled: pageStack.layers.depth < 2
                 shortcut: StandardKey.Preferences
-                onTriggered: pageStack.layers.push(settingsComponent)
+                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "SettingsPage"))
             },
             Kirigami.Action {
                 text: i18n("Export...")
@@ -225,7 +225,7 @@ Kirigami.ApplicationWindow {
                 text: i18n("Help")
                 icon.name: "help-contents"
                 enabled: pageStack.layers.depth < 2
-                onTriggered: pageStack.layers.push(welcomeComponent)
+                onTriggered: pageStack.layers.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"))
             },
             Kirigami.Action {
                 id: aboutAction
@@ -302,7 +302,7 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         if (ReservationManager.isEmpty()) {
-            pageStack.push(welcomeComponent);
+            pageStack.push(Qt.createComponent("org.kde.itinerary", "WelcomePage"));
         }
     }
 
@@ -313,10 +313,6 @@ Kirigami.ApplicationWindow {
     Component {
         id: scanBarcodeComponent
         BarcodeScannerPage {}
-    }
-    Component {
-        id: settingsComponent
-        SettingsPage {}
     }
     Component {
         id: statisticsComponent
@@ -332,10 +328,6 @@ Kirigami.ApplicationWindow {
     // replace loader with component once we depend on KHealthCertificate unconditionally
     Loader {
         id: healtCertificateComponent
-    }
-    Component {
-        id: welcomeComponent
-        WelcomePage {}
     }
     Component {
         id: journeySectionPage
