@@ -3,7 +3,7 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/qt/qml/org/kde/itinerary/">
         <file>pkpassviewer.qml</file>
         <file alias="BarcodeScanModeButton.qml">../src/app/BarcodeScanModeButton.qml</file>
         <file alias="BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>

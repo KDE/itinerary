@@ -11,6 +11,7 @@
 
 class QColor;
 class QDateTime;
+class QImage;
 class QVariant;
 
 /** Misc utilities. */
@@ -44,6 +45,11 @@ public:
 
     /** Expose LocationUtil::isLocationCahnge to QML. */
     Q_INVOKABLE static bool isLocationChange(const QVariant &res);
+
+    /** Simple heuristic on whether @p is primarily dark (and thus needs a light text
+     *  color to be readable on top).
+     */
+    Q_INVOKABLE static bool isDarkImage(const QImage &img);
 };
 
 #endif // UTIL_H

@@ -19,6 +19,8 @@ Item {
     implicitHeight: bodyBackground.implicitHeight
     implicitWidth: 332 //Math.max(topLayout.implicitWidth, 332)
 
+    property color defaultTextColor: Kirigami.Theme.textColor
+
     /** Double tap on the barcode to request scan mode. */
     signal scanModeToggled()
 
@@ -84,14 +86,14 @@ Item {
                         Layout.rowSpan: 2
                         Layout.fillWidth: pass ? true : false
                         text: pass ? pass.logoText : ""
-                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                     }
 
                     Repeater {
                         model: pass.headerFields
                         delegate: QQC2.Label {
                             text: modelData.label
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
                             Layout.row: 0
                             Layout.column: index + 2
                         }
@@ -100,7 +102,7 @@ Item {
                         model: pass.headerFields
                         delegate: QQC2.Label {
                             text: modelData.valueDisplayString
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                             Layout.row: 1
                             Layout.column: index + 2
                         }
@@ -129,7 +131,7 @@ Item {
                         model: pass.primaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -138,7 +140,7 @@ Item {
                         model: pass.primaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -156,7 +158,7 @@ Item {
                         model: pass.secondaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -165,7 +167,7 @@ Item {
                         model: pass.secondaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -183,7 +185,7 @@ Item {
                         model: pass.auxiliaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
                             text: modelData.label
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -192,7 +194,7 @@ Item {
                         model: pass.auxiliaryFields
                         delegate: QQC2.Label {
                             Layout.fillWidth: true
-                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                            color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                             text: modelData.valueDisplayString
                             horizontalAlignment: modelData.textAlignment
                         }
@@ -225,14 +227,14 @@ Item {
                 ColumnLayout {
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : Kirigami.Theme.textColor
+                        color: Util.isValidColor(pass.labelColor) ?  pass.labelColor : root.defaultTextColor
                         text: modelData.label
                         wrapMode: Text.WordWrap
                         horizontalAlignment: modelData.textAlignment
                     }
                     QQC2.Label {
                         Layout.fillWidth: true
-                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : Kirigami.Theme.textColor
+                        color: Util.isValidColor(pass.foregroundColor) ?  pass.foregroundColor : root.defaultTextColor
                         linkColor: Util.isValidColor(pass.foregroundColor) ? color : Kirigami.Theme.linkColor
                         text: Util.textToHtml(modelData.valueDisplayString)
                         textFormat: Util.isRichText(modelData.valueDisplayString) ? Text.StyledText : Text.AutoText
@@ -254,5 +256,10 @@ Item {
             y: -radius * 1.5
         }
     }
-}
 
+    Component.onCompleted: {
+        if (backgroundImage.status !== Image.Ready)
+            return;
+        root.defaultTextColor = Util.isDarkImage(pass.background()) ? "#eff0f1" : "#232629";
+    }
+}

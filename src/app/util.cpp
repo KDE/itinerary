@@ -18,6 +18,7 @@
 #include <QColor>
 #include <QDateTime>
 #include <QFile>
+#include <QImage>
 #include <QTimeZone>
 #include <QUrl>
 
@@ -100,6 +101,25 @@ bool Util::isValidColor(const QColor &color)
 bool Util::isLocationChange(const QVariant &res)
 {
     return LocationUtil::isLocationChange(res);
+}
+
+bool Util::isDarkImage(const QImage &img)
+{
+    constexpr auto SAMPLE_COUNT = 32;
+
+    const auto xStride = std::max(1, img.width() / SAMPLE_COUNT);
+    const auto yStride = std::max(1, img.height() / SAMPLE_COUNT);
+    int darkCount = 0;
+
+    for (auto x = xStride; x < img.width(); x += xStride) {
+        for (auto y = yStride; y < img.height(); y += yStride) {
+            if (qGray(img.pixel(x, y)) < 128) {
+                ++darkCount;
+            }
+        }
+    }
+
+    return darkCount > (SAMPLE_COUNT * SAMPLE_COUNT / 2);
 }
 
 #include "moc_util.cpp"

@@ -40,8 +40,8 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-    qmlRegisterUncreatableType<KPkPass::Barcode>("org.kde.pkpass", 1, 0, "Barcode", {});
-    qmlRegisterUncreatableType<KPkPass::Field>("org.kde.pkpass", 1, 0, "Field", {});
+    qmlRegisterUncreatableMetaObject(KPkPass::Barcode::staticMetaObject, "org.kde.pkpass", 1, 0, "Barcode", {});
+    qmlRegisterUncreatableMetaObject(KPkPass::Field::staticMetaObject, "org.kde.pkpass", 1, 0, "Field", {});
     qmlRegisterUncreatableType<KPkPass::Pass>("org.kde.pkpass", 1, 0, "Pass", {});
     qmlRegisterUncreatableType<KPkPass::BoardingPass>("org.kde.pkpass", 1, 0, "BoardingPass", {});
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Util", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     engine.addImageProvider(QStringLiteral("org.kde.pkpass"), new PkPassImageProvider(&passMgr));
     engine.rootContext()->setContextProperty(QStringLiteral("_passId"), passId);
     engine.rootContext()->setContextProperty(QStringLiteral("_pass"), passMgr.pass(passId));
-    engine.load(QStringLiteral("qrc:/pkpassviewer.qml"));
+    engine.load(QStringLiteral("qrc:/qt/qml/org/kde/itinerary/pkpassviewer.qml"));
 
     return app.exec();
 }
