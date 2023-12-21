@@ -107,11 +107,7 @@ FormCard.FormCard {
     FormCard.FormButtonDelegate {
         icon.name: "checkmark"
         text: i18n("Select transfer")
-        onClicked: if (transfer.state === Transfer.Selected) {
-            applicationWindow().pageStack.push(detailsComponent)
-        } else {
-            root.clicked()
-        }
+        onClicked: applicationWindow().pageStack.push(detailsComponent)
         visible: transfer.state === Transfer.Pending
             || transfer.state === Transfer.Searching
             || transfer.state === Transfer.Selected && journeyDetailsExpanded
