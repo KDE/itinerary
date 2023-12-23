@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:39+0000\n"
-"PO-Revision-Date: 2023-11-19 14:59+0100\n"
+"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"PO-Revision-Date: 2023-12-22 10:40+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,19 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2023"
+msgstr "Freek de Kruijf - t/m 2024"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
 
-#: app/AboutPage.qml:18 app/main.qml:228
+#: app/AboutPage.qml:18 app/main.qml:232
 #, kde-format
 msgid "About"
 msgstr "Info over"
@@ -119,7 +119,7 @@ msgstr "Bewerken"
 msgid "Add to calendar..."
 msgstr "Aan agenda toevoegen..."
 
-#: app/ActionsCard.qml:73 app/main.qml:216 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:220 app/TripGroupDelegate.qml:161
 #, kde-format
 msgid "Export..."
 msgstr "Exporteren..."
@@ -127,7 +127,7 @@ msgstr "Exporteren..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:146
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:152
 #: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
@@ -792,7 +792,7 @@ msgstr "Leveranciers van gegevens:"
 msgid "Add Document"
 msgstr "Document toevoegen"
 
-#: app/DocumentsCard.qml:37 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:124
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Alle bestanden (*.*)"
@@ -1303,7 +1303,7 @@ msgstr "Pas verwijderen"
 msgid "Do you really want to delete this pass?"
 msgstr "Wilt u deze pas verwijderen?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:156
+#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:160
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE Itinerary"
@@ -1418,7 +1418,7 @@ msgstr "Test %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Herstel (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:190
+#: app/HealthCertificatePage.qml:16 app/main.qml:194
 #, kde-format
 msgid "Health Certificates"
 msgstr "Gezondheidscertificaten"
@@ -2022,7 +2022,7 @@ msgstr "Vlucht %1 naar %2:"
 msgid "Itinerary change"
 msgstr "Wijziging van reisroute"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:201
+#: app/LiveStatusPage.qml:19 app/main.qml:205
 #, kde-format
 msgid "Live Status"
 msgstr "Actuele status"
@@ -2218,10 +2218,9 @@ msgid "Digital Travel Assistant"
 msgstr "Digitale reisassistent"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Copyright © 2018-%1 De KDE gemeenschap"
+msgstr "Copyright © De KDE-gemeenschap"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2258,67 +2257,67 @@ msgstr "Uit agenda toevoegen..."
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Online-ticket van Deutsche Bahn..."
 
-#: app/main.qml:107
+#: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Online-ticket van SNCF..."
 
-#: app/main.qml:118
+#: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
 msgstr "Reservering importeren"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass-bestanden (*.pkpass)"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF-bestanden (*.pdf)"
 
-#: app/main.qml:120 app/main.qml:129
+#: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE Itinerary-bestanden (*.itinerary)"
 
-#: app/main.qml:127
+#: app/main.qml:131
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Itinerary-gegevens exporteren"
 
-#: app/main.qml:161 app/PassPage.qml:110
+#: app/main.qml:165 app/PassPage.qml:126
 #, kde-format
 msgid "Import..."
 msgstr "Importeren..."
 
-#: app/main.qml:166
+#: app/main.qml:170
 #, kde-format
 msgid "Check for Updates"
 msgstr "Op bijwerken controleren"
 
-#: app/main.qml:175
+#: app/main.qml:179
 #, kde-format
 msgid "Download Maps"
 msgstr "Kaarten downloaden"
 
-#: app/main.qml:183 app/StatisticsPage.qml:15
+#: app/main.qml:187 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Statistieken"
 
-#: app/main.qml:209 app/WelcomePage.qml:41
+#: app/main.qml:213 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Instellingen..."
 
-#: app/main.qml:221 app/WelcomePage.qml:16
+#: app/main.qml:225 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Help"
 
-#: app/main.qml:296
+#: app/main.qml:300
 #, kde-format
 msgid "Map download finished."
 msgstr "Download van kaart voltooid."
@@ -2529,24 +2528,24 @@ msgstr "%1 - %2"
 msgid "Passes and Programs"
 msgstr "Passen en programma's"
 
-#: app/PassPage.qml:29
+#: app/PassPage.qml:20
 #, kde-format
 msgid "Add Program Membership..."
 msgstr "Lidmaatschap van programma toevoegen..."
 
-#: app/PassPage.qml:51
+#: app/PassPage.qml:48
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:85
+#: app/PassPage.qml:95
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:108
+#: app/PassPage.qml:124
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Bonus of kortingsprogrammakaarten of vlak tariefpassen."

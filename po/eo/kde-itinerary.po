@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:39+0000\n"
-"PO-Revision-Date: 2023-11-19 07:08+0100\n"
+"POT-Creation-Date: 2023-12-23 01:45+0000\n"
+"PO-Revision-Date: 2023-12-22 05:51+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "okellogg@users.sourceforge.net"
 
-#: app/AboutPage.qml:18 app/main.qml:228
+#: app/AboutPage.qml:18 app/main.qml:232
 #, kde-format
 msgid "About"
 msgstr "Pri"
@@ -118,7 +118,7 @@ msgstr "Redakti"
 msgid "Add to calendar..."
 msgstr "Aldoni al kalendaro..."
 
-#: app/ActionsCard.qml:73 app/main.qml:216 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:220 app/TripGroupDelegate.qml:161
 #, kde-format
 msgid "Export..."
 msgstr "Eksporti..."
@@ -126,7 +126,7 @@ msgstr "Eksporti..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:146
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:152
 #: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
@@ -791,7 +791,7 @@ msgstr "Provizantoj de datumoj:"
 msgid "Add Document"
 msgstr "Aldoni Dokumenton"
 
-#: app/DocumentsCard.qml:37 app/main.qml:120
+#: app/DocumentsCard.qml:37 app/main.qml:124
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "Ĉiuj dosieroj (*.*)"
@@ -1302,7 +1302,7 @@ msgstr "Forigi Enirpermesilon"
 msgid "Do you really want to delete this pass?"
 msgstr "Ĉu vi vere volas forigi ĉi tiun enirpermesilon?"
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:156
+#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:160
 #, kde-format
 msgid "KDE Itinerary"
 msgstr "KDE-Itinero"
@@ -1417,7 +1417,7 @@ msgstr "Testo %1 (%2)"
 msgid "Recovery (%1)"
 msgstr "Reakiro (%1)"
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:190
+#: app/HealthCertificatePage.qml:16 app/main.qml:194
 #, kde-format
 msgid "Health Certificates"
 msgstr "Sanaj Atestiloj"
@@ -2020,7 +2020,7 @@ msgstr "Flugo %1 al %2:"
 msgid "Itinerary change"
 msgstr "Itinera ŝanĝo"
 
-#: app/LiveStatusPage.qml:19 app/main.qml:201
+#: app/LiveStatusPage.qml:19 app/main.qml:205
 #, kde-format
 msgid "Live Status"
 msgstr "Viva Statuso"
@@ -2216,10 +2216,9 @@ msgid "Digital Travel Assistant"
 msgstr "Cifereca Vojaĝa Asistanto"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Kopirajto © 2018-%1 La KDE-Komunumo"
+msgstr "Kopirajto © La KDE-Komunumo"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2256,67 +2255,67 @@ msgstr "Aldoni el Kalendaro..."
 msgid "Deutsche Bahn Online Ticket..."
 msgstr "Reta Bileto de Deutsche Bahn..."
 
-#: app/main.qml:107
+#: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
 msgstr "Reta Bileto de SNCF..."
 
-#: app/main.qml:118
+#: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
 msgstr "Importo Rezervado"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr "PkPass-dosieroj (*.pkpass)"
 
-#: app/main.qml:120
+#: app/main.qml:124
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF-dosieroj (*.pdf)"
 
-#: app/main.qml:120 app/main.qml:129
+#: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr "KDE-Itineraj dosieroj (*.itinerary)"
 
-#: app/main.qml:127
+#: app/main.qml:131
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr "Eksporti Itinerajn Datumojn"
 
-#: app/main.qml:161 app/PassPage.qml:110
+#: app/main.qml:165 app/PassPage.qml:126
 #, kde-format
 msgid "Import..."
 msgstr "Importi..."
 
-#: app/main.qml:166
+#: app/main.qml:170
 #, kde-format
 msgid "Check for Updates"
 msgstr "Kontroli pri Ĝisdatigoj"
 
-#: app/main.qml:175
+#: app/main.qml:179
 #, kde-format
 msgid "Download Maps"
 msgstr "Elŝuti Mapojn"
 
-#: app/main.qml:183 app/StatisticsPage.qml:15
+#: app/main.qml:187 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr "Statistiko"
 
-#: app/main.qml:209 app/WelcomePage.qml:41
+#: app/main.qml:213 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
 msgstr "Agordoj..."
 
-#: app/main.qml:221 app/WelcomePage.qml:16
+#: app/main.qml:225 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "Helpo"
 
-#: app/main.qml:296
+#: app/main.qml:300
 #, kde-format
 msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
@@ -2527,24 +2526,24 @@ msgstr "%1 - %2"
 msgid "Passes and Programs"
 msgstr "Enirpermesiloj kaj Programoj"
 
-#: app/PassPage.qml:29
+#: app/PassPage.qml:20
 #, kde-format
 msgid "Add Program Membership..."
 msgstr "Aldoni Programan Membrecon..."
 
-#: app/PassPage.qml:51
+#: app/PassPage.qml:48
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:85
+#: app/PassPage.qml:95
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:108
+#: app/PassPage.qml:124
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Importi gratifikojn aŭ rabatajn programkartojn aŭ plattaristojn."
