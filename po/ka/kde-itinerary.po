@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2023-11-19 06:32+0100\n"
+"PO-Revision-Date: 2023-12-23 05:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2216,10 +2216,9 @@ msgid "Digital Travel Assistant"
 msgstr "მოგზაურობის ციფრული დამხმარე"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "© 2018-%1 KDE -ის საზოგადოება, ყველა უფლება დაცულია"
+msgstr "© KDE-ის საზოგადოება, ყველა უფლება დაცულია"
 
 #: app/main.cpp:339
 #, kde-format

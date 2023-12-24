@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2023-12-16 10:46+0100\n"
+"PO-Revision-Date: 2023-12-23 11:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -2223,10 +2223,9 @@ msgid "Digital Travel Assistant"
 msgstr "Cyfrowy pomocnik podróży"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Copyright © 2018-%1 Społeczność KDE"
+msgstr "Copyright © Społeczność KDE"
 
 #: app/main.cpp:339
 #, kde-format
