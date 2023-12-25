@@ -22,7 +22,7 @@ Kirigami.ScrollablePage {
 
     data: BarcodeScanModeButton {
         page: root
-        visible: ticketToken.hasBarcode
+        visible: pass.barcodes.length > 0
     }
 
     Component {
