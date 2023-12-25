@@ -9,7 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kpublictransport as KPT
-import "." as App
+import org.kde.itinerary
 
 Kirigami.ApplicationWindow {
     title: "Journey Query Test"
@@ -26,16 +26,16 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: journeySectionPage
-        App.JourneySectionPage {}
+        JourneySectionPage {}
     }
     Component {
         id: journeyPathPage
-        App.JourneyPathPage {}
+        JourneyPathPage {}
     }
 
     Component {
         id: jnyQueryPage
-        App.JourneyQueryPage {
+        JourneyQueryPage {
             title: "Journey Query"
             journeyRequest: _request
             publicTransportManager: ptMgr

@@ -3,15 +3,15 @@
     SPDX-License-Identifier: CC0-1.0
 -->
 <RCC>
-    <qresource prefix="/qt/qml/org/kde/itinerary/">
-        <file>pkpassviewer.qml</file>
-        <file alias="BarcodeScanModeButton.qml">../src/app/BarcodeScanModeButton.qml</file>
-        <file alias="BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>
-        <file alias="BoardingPass.qml">../src/app/BoardingPass.qml</file>
-        <file alias="EventTicket.qml">../src/app/EventTicket.qml</file>
-        <file alias="GenericPass.qml">../src/app/GenericPass.qml</file>
-        <file alias="PkPassBarcode.qml">../src/app/PkPassBarcode.qml</file>
-        <file alias="PkPassPage.qml">../src/app/PkPassPage.qml</file>
+    <qresource prefix="/">
+        <file alias="qt/qml/org/kde/itinerary/pkpassviewer.qml">pkpassviewer.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/BarcodeScanModeButton.qml">../src/app/BarcodeScanModeButton.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/BarcodeScanModeController.qml">../src/app/BarcodeScanModeController.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/BoardingPass.qml">../src/app/BoardingPass.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/EventTicket.qml">../src/app/EventTicket.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/GenericPass.qml">../src/app/GenericPass.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/PkPassBarcode.qml">../src/app/PkPassBarcode.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/PkPassPage.qml">../src/app/PkPassPage.qml</file>
         <file alias="images/flight.svg">../src/app/images/flight.svg</file>
         <file alias="images/train.svg">../src/app/images/train.svg</file>
     </qresource>

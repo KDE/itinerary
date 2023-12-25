@@ -4,8 +4,9 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "publictransport.h"
 #include "localizer.h"
+#include "journeysectionmodel.h"
+#include "publictransport.h"
 #include "util.h"
 
 #include <KPublicTransport/JourneyRequest>
@@ -53,6 +54,7 @@ int main(int argc, char **argv)
     req.setTo(to);
     req.setIncludeIntermediateStops(true);
 
+    qmlRegisterType<JourneySectionModel>("org.kde.itinerary", 1, 0, "JourneySectionModel");
     qmlRegisterSingletonType("org.kde.itinerary", 1, 0, "Localizer", [](QQmlEngine*, QJSEngine *engine) -> QJSValue {
         return engine->toScriptValue(Localizer());
     });
@@ -66,7 +68,7 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.rootContext()->setContextProperty(QStringLiteral("_request"), req);
-    engine.load(QStringLiteral("qrc:/journeyquerytest.qml"));
+    engine.load(QStringLiteral("qrc:/qt/qml/org/kde/itinerary/journeyquerytest.qml"));
 
     return app.exec();
 }

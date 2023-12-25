@@ -8,7 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
-import "." as App
+import org.kde.itinerary
 
 Kirigami.ApplicationWindow {
     title: "PkPass Viewer"
@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: pkPassPage
-        App.PkPassPage {
+        PkPassPage {
             pass: _pass
             passId: _passId
         }
