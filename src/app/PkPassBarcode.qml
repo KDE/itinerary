@@ -12,7 +12,8 @@ import org.kde.prison as Prison
 
 Rectangle {
     id: root
-    property var pass
+    property int maximumWidth
+    property QtObject pass
 
     implicitHeight: barcodeLayout.implicitHeight
     implicitWidth: barcodeLayout.implicitWidth
@@ -22,11 +23,11 @@ Rectangle {
 
     ColumnLayout {
         id: barcodeLayout
-        anchors.fill: parent
+        anchors.centerIn: parent
         Prison.Barcode {
             Layout.alignment: Qt.AlignCenter
             Layout.margins: 4
-            Layout.preferredWidth: 0.8 * root.parent.width
+            Layout.preferredWidth: 0.8 * root.maximumWidth
             Layout.preferredHeight: implicitHeight * (Layout.preferredWidth / implicitWidth)
             barcodeType: {
                 switch(pass.barcodes[0].format) {
@@ -42,9 +43,12 @@ Rectangle {
 
         QQC2.Label {
             Layout.alignment: Qt.AlignCenter
+            Layout.fillWidth: true
+            Layout.maximumWidth: root.maximumWidth
             text: pass.barcodes[0].alternativeText
             color: "black"
             visible: text.length > 0
+            wrapMode: Text.Wrap
         }
     }
 }
