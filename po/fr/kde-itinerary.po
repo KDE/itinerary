@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:45+0000\n"
-"PO-Revision-Date: 2023-11-20 09:49+0100\n"
+"PO-Revision-Date: 2023-12-24 10:22+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: fr\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -2239,10 +2239,9 @@ msgid "Digital Travel Assistant"
 msgstr "Assistant numérique de voyages"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Copyright © 2018 - %1 La communauté KDE"
+msgstr "Copyright © La communauté de KDE"
 
 #: app/main.cpp:339
 #, kde-format
