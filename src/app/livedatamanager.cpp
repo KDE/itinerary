@@ -292,11 +292,57 @@ static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopov
     return res;
 }
 
+static void applyMissingStopoverData(KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &oldStop)
+{
+    if (stop.notes().empty()) {
+        stop.setNotes(oldStop.notes());
+    }
+    if (stop.loadInformation().empty()) {
+        stop.setLoadInformation(std::vector<KPublicTransport::LoadInfo>(oldStop.loadInformation()));
+    }
+}
+
+static void applyMissingJourneyData(KPublicTransport::JourneySection &journey, const KPublicTransport::JourneySection &oldJny)
+{
+    if (journey.intermediateStops().size() != oldJny.intermediateStops().size()) {
+        return;
+    }
+
+    auto stops = journey.takeIntermediateStops();
+    for (std::size_t i = 0; i < stops.size(); ++i) {
+        if (!KPublicTransport::Stopover::isSame(stops[i], oldJny.intermediateStops()[i])) {
+            journey.setIntermediateStops(std::move(stops));
+            return;
+        }
+        applyMissingStopoverData(stops[i], oldJny.intermediateStops()[i]);
+    }
+    journey.setIntermediateStops(std::move(stops));
+
+    if (!KPublicTransport::Stopover::isSame(journey.departure(), oldJny.departure())
+     || !KPublicTransport::Stopover::isSame(journey.arrival(), oldJny.arrival())) {
+        return;
+    }
+    auto s = journey.departure();
+    applyMissingStopoverData(s, oldJny.departure());
+    journey.setDeparture(s);
+    s = journey.arrival();
+    applyMissingStopoverData(s, oldJny.arrival());
+    journey.setArrival(s);
+
+    if (journey.path().isEmpty()) {
+        journey.setPath(oldJny.path());
+    }
+    if (journey.notes().empty()) {
+        journey.setNotes(oldJny.notes());
+    }
+}
+
 void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &journey, const QString &resId, const QVariant &res)
 {
     auto &ld = data(resId);
     const auto oldDep = ld.stopover(LiveData::Departure);
     const auto oldArr = ld.stopover(LiveData::Arrival);
+    const auto oldJny = ld.journey;
     ld.journey = journey;
 
     // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
@@ -306,6 +352,7 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     if (PublicTransport::isSameStopoverForLayout(ld.arrival, journey.arrival())) {
         ld.journey.setArrival(applyLayoutData(journey.arrival(), ld.arrival));
     }
+    applyMissingJourneyData(ld.journey, oldJny);
 
     ld.journey.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
