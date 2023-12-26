@@ -125,7 +125,7 @@ Kirigami.ScrollablePage {
             helpfulAction: Kirigami.Action {
                 text: i18n("Import...")
                 icon.name: "document-open"
-                onTriggered: importDialog.open()
+                onTriggered: importFileDialog.open()
             }
         }
     }
