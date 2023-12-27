@@ -137,6 +137,7 @@ Kirigami.Page {
                             width: height
                             height: Kirigami.Units.iconSizes.medium
                             color: Kirigami.Theme.highlightColor
+                            isMask: true
                             rotation: onboardStatus.hasHeading ? onboardStatus.heading : 0.0
                             transformOrigin: Item.Center
                             onTransformOriginChanged: icon.transformOrigin = Item.Center
