@@ -8,6 +8,5 @@ include:
       - /gitlab-templates/freebsd-qt6.yml
       - /gitlab-templates/android-qt6.yml
       - /gitlab-templates/reuse-lint.yml
-      # TODO waiting for a Qt6 flatpak runtime
-      #- /gitlab-templates/flatpak.yml
+      - /gitlab-templates/flatpak.yml
       - /gitlab-templates/craft-android-qt6-apks.yml

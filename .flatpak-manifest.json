@@ -2,7 +2,7 @@
     "id": "org.kde.itinerary",
     "branch": "master",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-23.08",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "itinerary",
     "tags": [
@@ -168,7 +168,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kpkpass",
-                    "branch": "release/23.08"
+                    "branch": "master"
                 }
             ],
             "cleanup": [
@@ -191,7 +191,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kmime",
-                    "branch": "release/23.08"
+                    "branch": "master"
                 }
             ],
             "cleanup": [
@@ -239,7 +239,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/pim/kitinerary",
-                    "branch": "release/23.08"
+                    "branch": "master"
                 }
             ],
             "cleanup": [
@@ -254,7 +254,8 @@
         {
             "name": "kpublictransport",
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -276,7 +277,8 @@
         {
             "name": "kopeninghours",
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -320,7 +322,8 @@
         {
             "name": "khealthcertificate",
             "config-opts": [
-                "-DBUILD_TESTING=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "buildsystem": "cmake-ninja",
             "builddir": true,
@@ -344,7 +347,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kirigami-addons",
-                    "branch": "kf5"
+                    "branch": "master"
                 }
             ],
             "cleanup": [
@@ -365,7 +368,8 @@
             "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release",
                 "-DQuotient_ENABLE_E2EE=ON",
-                "-DBUILD_TESTING=OFF"
+                "-DBUILD_TESTING=OFF",
+                "-DBUILD_WITH_QT6=ON"
             ],
             "cleanup": [
                 "/include",
@@ -403,8 +407,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://github.com/frankosterfeld/qtkeychain/archive/0.14.1.tar.gz",
-                            "sha256": "afb2d120722141aca85f8144c4ef017bd74977ed45b80e5d9e9614015dadd60c",
+                            "url": "https://github.com/frankosterfeld/qtkeychain/archive/0.14.2.tar.gz",
+                            "sha256": "cf2e972b783ba66334a79a30f6b3a1ea794a1dc574d6c3bebae5ffd2f0399571",
                             "x-checker-data": {
                                 "type": "anitya",
                                 "project-id": 4138,
@@ -416,7 +420,8 @@
                     "config-opts": [
                         "-DCMAKE_INSTALL_LIBDIR=/app/lib",
                         "-DLIB_INSTALL_DIR=/app/lib",
-                        "-DBUILD_TRANSLATIONS=NO"
+                        "-DBUILD_TRANSLATIONS=NO",
+                        "-DBUILD_WITH_QT6=ON"
                     ],
                     "cleanup": [
                         "/include",
