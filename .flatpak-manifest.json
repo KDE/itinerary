@@ -218,7 +218,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kpublictransport",
-                    "branch": "master"
+                    "branch": "release/23.08"
                 }
             ],
             "cleanup": [
@@ -239,7 +239,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kopeninghours",
-                    "branch": "master"
+                    "branch": "release/23.08"
                 }
             ],
             "cleanup": [
@@ -260,7 +260,7 @@
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/libraries/kosmindoormap",
-                    "branch": "master"
+                    "branch": "release/23.08"
                 }
             ],
             "cleanup": [
