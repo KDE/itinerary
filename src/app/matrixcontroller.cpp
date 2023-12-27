@@ -58,3 +58,5 @@ QAbstractItemModel* MatrixController::roomsModel()
     return nullptr;
 #endif
 }
+
+#include "moc_matrixcontroller.cpp"
