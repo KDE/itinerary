@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2023-11-20 09:23+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2048,22 +2048,22 @@ msgid ""
 msgstr ""
 "Vuoi davvero condividere la tua posizione attuale sul canale Matrix %1?"
 
-#: app/LiveStatusPage.qml:160
+#: app/LiveStatusPage.qml:161
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Segui automaticamente sulla mappa"
 
-#: app/LiveStatusPage.qml:179 app/LiveStatusPage.qml:190
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
 #, kde-format
 msgid "Waiting for data..."
 msgstr "In attesa di dati..."
 
-#: app/LiveStatusPage.qml:202
+#: app/LiveStatusPage.qml:203
 #, kde-format
 msgid "Position"
 msgstr "Posizione"
 
-#: app/LiveStatusPage.qml:211
+#: app/LiveStatusPage.qml:212
 #, kde-format
 msgid "Journey"
 msgstr "Viaggio"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-27 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2023-12-22 10:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2049,22 +2049,22 @@ msgid ""
 msgstr ""
 "Geçerli konumunuzu %1 Matrix kanalına paylaşmayı gerçekten istiyor musunuz?"
 
-#: app/LiveStatusPage.qml:160
+#: app/LiveStatusPage.qml:161
 #, kde-format
 msgid "Automatically follow on the map"
 msgstr "Haritada kendiliğinden izle"
 
-#: app/LiveStatusPage.qml:179 app/LiveStatusPage.qml:190
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Veri bekleniyor..."
 
-#: app/LiveStatusPage.qml:202
+#: app/LiveStatusPage.qml:203
 #, kde-format
 msgid "Position"
 msgstr "Konum"
 
-#: app/LiveStatusPage.qml:211
+#: app/LiveStatusPage.qml:212
 #, kde-format
 msgid "Journey"
 msgstr "Yolculuk"
