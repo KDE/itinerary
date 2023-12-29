@@ -80,6 +80,7 @@ target_link_libraries(itinerary PUBLIC
     KF6::Holidays
     Qt::Network
     Qt::Quick
+    Qt::Positioning
 PRIVATE
     Qt::CorePrivate
 )
