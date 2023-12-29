@@ -25,8 +25,6 @@ Kirigami.Page {
     property var journeySection
     property alias showProgress: sectionModel.showProgress
     default property alias _children: root.children
-    property list<double> latitude
-    property list<double> longitude
 
     padding: 0
     header: ColumnLayout {
@@ -132,7 +130,6 @@ Kirigami.Page {
     JourneySectionModel {
         id: sectionModel
         journeySection: root.journeySection
-        Component.onCompleted: print(sectionModel.stopover.stopPoint)
 
     }
     ColumnLayout{
@@ -216,8 +213,6 @@ Kirigami.Page {
                         }
                         anchorPoint.x: sourceItem.width/2
                         anchorPoint.y: sourceItem.height/2
-
-//                        Component.onCompleted: line.insertCoordinate(0, {latitude = journeySection.departure.stopPoint.latitude, longitude = journeySection.departure.stopPoint.longitude})
                         sourceItem: Rectangle {
                             width:15
                             height:15
@@ -238,9 +233,6 @@ Kirigami.Page {
                             }
                             anchorPoint.x: sourceItem.width/2
                             anchorPoint.y: sourceItem.height/2
-
-//                            Component.onCompleted: line.addCoordinate({latitude = model.stopover.stopPoint.latitude, longitude = model.stopover.stopPoint.longitude})
-
                             sourceItem: Rectangle {
                                 width: 6
                                 height: 6
@@ -259,11 +251,8 @@ Kirigami.Page {
                         anchorPoint.y: sourceItem.height/2
 
                         Component.onCompleted: {
-
-//                            line.addCoordinate({latitude = journeySection.arrival.stopPoint.latitude, longitude = journeySection.arrival.stopPoint.longitude})
                             map.center.latitude = line.path[(line.pathLength()/2).toFixed(0)].latitude
                             map.center.longitude = line.path[(line.pathLength()/2).toFixed(0)].longitude
-
                         }
                         sourceItem: Rectangle {
                             width:15
