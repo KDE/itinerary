@@ -281,11 +281,9 @@ Kirigami.Page {
                             Component.onCompleted: line.addCoordinate({latitude = model.stopover.stopPoint.latitude, longitude = model.stopover.stopPoint.longitude})
 
                             sourceItem: Rectangle {
-                                width:10
-                                height:10
+                                width: 6
+                                height: 6
                                 radius: height/2
-                                border.width: 2
-                                border.color: line.line.color
                                 opacity: 0.5
                             }
                         }
