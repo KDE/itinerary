@@ -121,7 +121,7 @@ Kirigami.ApplicationWindow {
         fileMode: FileDialog.OpenFile
         title: i18n("Import Reservation")
         currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("KDE Itinerary files (*.itinerary)")]
+        nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
         onAccepted: ApplicationController.importFromUrl(selectedFile)
     }
 
