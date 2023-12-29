@@ -7,17 +7,28 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
+import QtLocation as QtLocation
+import QtPositioning as QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport
 import org.kde.itinerary
 
-Kirigami.ScrollablePage {
+
+Kirigami.Page {
     id: root
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+
     title: i18n("Journey Details")
+
     property var journeySection
     property alias showProgress: sectionModel.showProgress
     default property alias _children: root.children
+    property list<double> latitude
+    property list<double> longitude
 
+    padding: 0
     header: ColumnLayout {
         spacing: 0
         visible: root.journeySection != undefined
@@ -118,55 +129,211 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
         }
     }
-
     JourneySectionModel {
         id: sectionModel
         journeySection: root.journeySection
+        Component.onCompleted: print(sectionModel.stopover.stopPoint)
+
+    }
+    ColumnLayout{
+        anchors.fill: parent
+        spacing: 0
+
+        QQC2.SwipeView {
+            id: view
+            clip: true
+            Layout.fillHeight: true
+            Layout.fillWidth: true
+            Item {
+                id: firstPage
+                QQC2.ScrollView{
+                    id: scrollview
+                    anchors.fill: parent
+
+                    ListView {
+                        clip: true
+                        model: sectionModel
+                        header: JourneySectionStopDelegate {
+                            stop: journeySection.departure
+                            isDeparture: true
+                            trailingProgress: sectionModel.departureTrailingProgress
+                            stopoverPassed: sectionModel.departed
+                            Binding {
+                                target: sectionModel
+                                property: "departureTrailingSegmentLength"
+                                value: trailingSegmentLength
+                            }
+                            visible: root.journeySection != undefined
+                        }
+                        delegate: JourneySectionStopDelegate {
+                            stop: model.stopover
+                            leadingProgress: model.leadingProgress
+                            trailingProgress: model.trailingProgress
+                            stopoverPassed: model.stopoverPassed
+                            Binding {
+                                target: model
+                                property: "leadingLength"
+                                value: leadingSegmentLength
+                            }
+                            Binding {
+                                target: model
+                                property: "trailingLength"
+                                value: trailingSegmentLength
+                            }
+                        }
+                        footer: JourneySectionStopDelegate {
+                            stop: journeySection.arrival
+                            isArrival: true
+                            leadingProgress: sectionModel.arrivalLeadingProgress
+                            stopoverPassed: sectionModel.arrived
+                            Binding {
+                                target: sectionModel
+                                property: "arrivalLeadingSegmentLength"
+                                value: leadingSegmentLength
+                            }
+                            visible: root.journeySection != undefined
+                        }
+                    }
+                }
+            }
+            Item {
+                id: secondPage
+                QtLocation.Plugin {
+                   id: mapPlugin
+                   name: "osm"
+                }
+                QtLocation.Map {
+
+                    id: map
+                    plugin: mapPlugin
+                    anchors.fill: parent
+
+                    PinchHandler {
+                            id: pinch
+                            target: null
+                            onActiveChanged: if (active) {
+                                map.startCentroid = map.toCoordinate(pinch.centroid.position, false)
+                            }
+                            onScaleChanged: (delta) => {
+                                map.zoomLevel += Math.log2(delta)
+                                map.alignCoordinateToPoint(map.startCentroid, pinch.centroid.position)
+                            }
+                            onRotationChanged: (delta) => {
+                                map.bearing -= delta
+                                map.alignCoordinateToPoint(map.startCentroid, pinch.centroid.position)
+                            }
+                            grabPermissions: PointerHandler.TakeOverForbidden
+                        }
+                    WheelHandler {
+                            id: wheel
+                            // workaround for QTBUG-87646 / QTBUG-112394 / QTBUG-112432:
+                            // Magic Mouse pretends to be a trackpad but doesn't work with PinchHandler
+                            // and we don't yet distinguish mice and trackpads on Wayland either
+                            acceptedDevices: Qt.platform.pluginName === "cocoa" || Qt.platform.pluginName === "wayland"
+                                             ? PointerDevice.Mouse | PointerDevice.TouchPad
+                                             : PointerDevice.Mouse
+                            rotationScale: 1/120
+                            property: "zoomLevel"
+                        }
+                    DragHandler {
+                            id: drag
+                            target: null
+                            onTranslationChanged: (delta) => map.pan(-delta.x, -delta.y)
+                        }
+
+                    QtLocation.MapPolyline {
+                        id: line
+                        line.width: 10
+                        line.color: journeySection.route.line.hasColor ? journeySection.route.line.color : Kirigami.Theme.textColor
+                        }
+
+                    QtLocation.MapQuickItem {
+                        coordinate {
+
+                           latitude: journeySection.departure.stopPoint.latitude
+                           longitude: journeySection.departure.stopPoint.longitude
+                        }
+                        anchorPoint.x: sourceItem.width/2
+                        anchorPoint.y: sourceItem.height/2
+
+                        Component.onCompleted: line.insertCoordinate(0, {latitude = journeySection.departure.stopPoint.latitude, longitude = journeySection.departure.stopPoint.longitude})
+                        sourceItem: Rectangle {
+                            width:15
+                            height:15
+                            radius: height/2
+                            border.width: 2
+                            border.color: line.line.color
+                            }
+                        }
+
+                    Repeater {
+                        model: sectionModel
+
+                        QtLocation.MapQuickItem {
+                            coordinate {
+
+                               latitude: model.stopover.stopPoint.latitude
+                               longitude: model.stopover.stopPoint.longitude
+                            }
+                            anchorPoint.x: sourceItem.width/2
+                            anchorPoint.y: sourceItem.height/2
+
+                            Component.onCompleted: line.addCoordinate({latitude = model.stopover.stopPoint.latitude, longitude = model.stopover.stopPoint.longitude})
+
+                            sourceItem: Rectangle {
+                                width:10
+                                height:10
+                                radius: height/2
+                                border.width: 2
+                                border.color: line.line.color
+                                opacity: 0.5
+                            }
+                        }
+                    }
+                    QtLocation.MapQuickItem {
+                        coordinate {
+
+                           latitude: journeySection.arrival.stopPoint.latitude
+                           longitude: journeySection.arrival.stopPoint.longitude
+                        }
+                        anchorPoint.x: sourceItem.width/2
+                        anchorPoint.y: sourceItem.height/2
+
+                        Component.onCompleted: {
+
+                            line.addCoordinate({latitude = journeySection.arrival.stopPoint.latitude, longitude = journeySection.arrival.stopPoint.longitude})
+                            map.center.latitude = line.path[(line.pathLength()/2).toFixed(0)].latitude
+                            map.center.longitude = line.path[(line.pathLength()/2).toFixed(0)].longitude
+
+                        }
+                        sourceItem: Rectangle {
+                            width:15
+                            height:15
+                            radius: height/2
+                            border.width: 2
+                            border.color: line.line.color
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    ListView {
-        clip: true
-        model: sectionModel
+    Components.FloatingButton {
+        icon.name: checked ? "format-list-unordered" : "map-gnomonic"
+        text: i18nc("@action:button", "Show Map")
+        onClicked: view.currentIndex === 0 ? view.currentIndex = 1 : view.currentIndex = 0
+        checkable: true
+        checked: view.currentIndex === 1
 
-        header: JourneySectionStopDelegate {
-            stop: journeySection.departure
-            isDeparture: true
-            trailingProgress: sectionModel.departureTrailingProgress
-            stopoverPassed: sectionModel.departed
-            Binding {
-                target: sectionModel
-                property: "departureTrailingSegmentLength"
-                value: trailingSegmentLength
-            }
-            visible: root.journeySection != undefined
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (scrollview.QQC2.ScrollBar && scrollview.QQC2.ScrollBar.vertical ? scrollview.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
         }
-        delegate: JourneySectionStopDelegate {
-            stop: model.stopover
-            leadingProgress: model.leadingProgress
-            trailingProgress: model.trailingProgress
-            stopoverPassed: model.stopoverPassed
-            Binding {
-                target: model
-                property: "leadingLength"
-                value: leadingSegmentLength
-            }
-            Binding {
-                target: model
-                property: "trailingLength"
-                value: trailingSegmentLength
-            }
-        }
-        footer: JourneySectionStopDelegate {
-            stop: journeySection.arrival
-            isArrival: true
-            leadingProgress: sectionModel.arrivalLeadingProgress
-            stopoverPassed: sectionModel.arrived
-            Binding {
-                target: sectionModel
-                property: "arrivalLeadingSegmentLength"
-                value: leadingSegmentLength
-            }
-            visible: root.journeySection != undefined
-        }
+
     }
+
+
 }
