@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2023-12-30 01:38+0000\n"
 "PO-Revision-Date: 2023-12-23 11:31+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2282,6 +2282,11 @@ msgstr "Pliki PkPass (*.pkpass)"
 msgid "PDF files (*.pdf)"
 msgstr "Pliki PDF (*.pdf)"
 
+#: app/main.qml:124
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr ""
+
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
@@ -2653,42 +2658,42 @@ msgstr "Członkostwo w programie"
 msgid "Program membership number copied to clipboard"
 msgstr "Skopiowano numer członkostwa w programie do schowka"
 
-#: app/publictransport.cpp:240 app/publictransport.cpp:267
+#: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
 msgstr "Pieszo"
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:243
 #, kde-format
 msgid "Wait"
 msgstr "Oczekiwanie"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:252
 #, kde-format
 msgid "Rented bicycle"
 msgstr "Rower z wypożyczalni"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:254
 #, kde-format
 msgid "Rented moped"
 msgstr "Skuter z wypożyczalni"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:256
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "Hulajnoga z wypożyczalni"
 
-#: app/publictransport.cpp:257
+#: app/publictransport.cpp:258
 #, kde-format
 msgid "Rented car"
 msgstr "Samochód z wypożyczalni"
 
-#: app/publictransport.cpp:263
+#: app/publictransport.cpp:264
 #, kde-format
 msgid "Bicycle"
 msgstr "Rower"
 
-#: app/publictransport.cpp:265 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
 #, kde-format
 msgid "Car"
 msgstr "Samochód"

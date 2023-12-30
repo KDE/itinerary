@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2023-12-30 01:38+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2284,6 +2284,11 @@ msgstr "PkPass 파일 (*.pkpass)"
 msgid "PDF files (*.pdf)"
 msgstr "PDF 파일 (*.pdf)"
 
+#: app/main.qml:124
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr ""
+
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
@@ -2655,42 +2660,42 @@ msgstr "프로그램 멤버십"
 msgid "Program membership number copied to clipboard"
 msgstr "클립보드에 추출기 기능 복사됨"
 
-#: app/publictransport.cpp:240 app/publictransport.cpp:267
+#: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
 msgstr "걷기"
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:243
 #, kde-format
 msgid "Wait"
 msgstr "대기"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:252
 #, kde-format
 msgid "Rented bicycle"
 msgstr "대여한 자전거"
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:254
 #, kde-format
 msgid "Rented moped"
 msgstr "대여한 모페드"
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:256
 #, kde-format
 msgid "Rented kick scooter"
 msgstr "대여한 킥 스쿠터"
 
-#: app/publictransport.cpp:257
+#: app/publictransport.cpp:258
 #, kde-format
 msgid "Rented car"
 msgstr "렌터카"
 
-#: app/publictransport.cpp:263
+#: app/publictransport.cpp:264
 #, kde-format
 msgid "Bicycle"
 msgstr "자전거"
 
-#: app/publictransport.cpp:265 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
 #, kde-format
 msgid "Car"
 msgstr "자동차"

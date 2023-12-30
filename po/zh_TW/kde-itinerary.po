@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
-"PO-Revision-Date: 2023-12-25 03:10+0900\n"
+"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"PO-Revision-Date: 2023-12-29 19:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.85\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -199,7 +199,7 @@ msgstr "檢視預約"
 #: app/AlternativeJourneyPage.qml:19
 #, kde-format
 msgid "Alternative Connections"
-msgstr ""
+msgstr "替代轉乘"
 
 #: app/AlternativeJourneyPage.qml:62 app/AlternativeJourneyPage.qml:72
 #, kde-format
@@ -212,14 +212,14 @@ msgstr "到 %1"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
-msgstr ""
+msgstr "長途列車"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
 #: app/JourneyRequestPage.qml:208 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
-msgstr ""
+msgstr "區域鐵路"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
 #: app/JourneyRequestPage.qml:218 app/TransferPage.qml:124
@@ -240,7 +240,7 @@ msgstr "公車"
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
-msgstr ""
+msgstr "渡輪"
 
 #: app/AlternativeJourneyPage.qml:130
 #, kde-format
@@ -376,12 +376,12 @@ msgstr "抵達時間：%1"
 #: app/BoatEditor.qml:17
 #, kde-format
 msgid "Edit Boat Trip"
-msgstr ""
+msgstr "編輯船班旅程"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:133
 #, kde-format
 msgid "Boat"
-msgstr ""
+msgstr "船班"
 
 #: app/BoatEditor.qml:54 app/BoatPage.qml:54
 #, kde-format
@@ -404,12 +404,12 @@ msgstr "必須設定出發時間。"
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
-msgstr ""
+msgstr "旅運中心名稱"
 
 #: app/BoatEditor.qml:72
 #, kde-format
 msgid "Departure terminal must not be empty."
-msgstr ""
+msgstr "出發港口旅運中心不能是空的。"
 
 #: app/BoatEditor.qml:86 app/BoatPage.qml:84
 #, kde-format
@@ -431,12 +431,12 @@ msgstr "抵達時間必須在出發時間之後。"
 #: app/BoatEditor.qml:113
 #, kde-format
 msgid "Arrival terminal must not be empty."
-msgstr ""
+msgstr "目的地港口旅運中心不能是空的。"
 
 #: app/BoatPage.qml:16
 #, kde-format
 msgid "Boat Ticket"
-msgstr ""
+msgstr "船票"
 
 #: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
 #: app/TrainPage.qml:86
@@ -448,7 +448,7 @@ msgstr "出發時間"
 #, kde-format
 msgctxt "Boat terminal"
 msgid "Terminal"
-msgstr ""
+msgstr "旅運中心"
 
 #: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
 #: app/TrainPage.qml:168
@@ -770,7 +770,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
-msgstr ""
+msgstr "載入更晚的轉乘"
 
 #: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:125
 #: app/TransferPage.qml:332
@@ -1317,7 +1317,7 @@ msgstr "從 %2 到 %3 的公車 %1"
 #: app/gpxexport.cpp:58
 #, kde-format
 msgid "Ferry from %1 to %2"
-msgstr ""
+msgstr "從 %1 到 %2 的渡輪"
 
 #: app/HealthCertificateBarcode.qml:34
 #, kde-format
@@ -1826,7 +1826,7 @@ msgstr "選取"
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier connections"
-msgstr ""
+msgstr "載入更早的轉乘"
 
 #: app/JourneyRequestPage.qml:34 app/JourneyRequestPage.qml:60
 #, kde-format
@@ -1884,7 +1884,7 @@ msgstr "高鐵或城際列車"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr ""
+msgstr "區域或當地鐵路"
 
 #: app/JourneyRequestPage.qml:219
 #, kde-format
@@ -1902,7 +1902,7 @@ msgstr ""
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr ""
+msgstr "船班或渡輪"
 
 #: app/JourneySectionDelegate.qml:166
 #, kde-format
@@ -2264,6 +2264,11 @@ msgstr "PkPass 檔案 (*.pkpass)"
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr "PDF 檔案 (*.pdf)"
+
+#: app/main.qml:124
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr ""
 
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
@@ -2634,42 +2639,42 @@ msgstr ""
 msgid "Program membership number copied to clipboard"
 msgstr ""
 
-#: app/publictransport.cpp:240 app/publictransport.cpp:267
+#: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
 msgstr "步行"
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:243
 #, kde-format
 msgid "Wait"
 msgstr "等待"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:252
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:254
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:256
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:257
+#: app/publictransport.cpp:258
 #, kde-format
 msgid "Rented car"
 msgstr ""
 
-#: app/publictransport.cpp:263
+#: app/publictransport.cpp:264
 #, kde-format
 msgid "Bicycle"
 msgstr "腳踏車"
 
-#: app/publictransport.cpp:265 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
 #, kde-format
 msgid "Car"
 msgstr ""
@@ -3040,7 +3045,7 @@ msgstr ""
 #: app/statisticsmodel.cpp:184
 #, kde-format
 msgid "Boat trips"
-msgstr ""
+msgstr "船班旅程"
 
 #: app/StatisticsPage.qml:34
 #, kde-format
@@ -3150,7 +3155,7 @@ msgstr "新增火車旅程..."
 #: app/TimelinePage.qml:106
 #, kde-format
 msgid "Add ferry trip..."
-msgstr ""
+msgstr "新增渡輪旅程..."
 
 #: app/TimelinePage.qml:118
 #, kde-format
@@ -3407,7 +3412,7 @@ msgstr "旅程：%1"
 #, kde-format
 msgid "Date: %2 (one day)"
 msgid_plural "Date: %2 (%1 days)"
-msgstr[0] ""
+msgstr[0] "日期：%2（%1 天）"
 
 #: app/TripGroupDelegate.qml:108 app/WeatherForecastDelegate.qml:48
 #: app/WeatherForecastPage.qml:93

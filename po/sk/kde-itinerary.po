@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2023-12-30 01:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -2409,6 +2409,11 @@ msgstr ""
 msgid "PDF files (*.pdf)"
 msgstr "PDF súbory (*.pdf)"
 
+#: app/main.qml:124
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr ""
+
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
@@ -2798,43 +2803,43 @@ msgstr ""
 msgid "Program membership number copied to clipboard"
 msgstr "Referencia rezervácie:"
 
-#: app/publictransport.cpp:240 app/publictransport.cpp:267
+#: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
 msgstr ""
 
-#: app/publictransport.cpp:242
+#: app/publictransport.cpp:243
 #, fuzzy, kde-format
 msgid "Wait"
 msgstr "Čakanie"
 
-#: app/publictransport.cpp:251
+#: app/publictransport.cpp:252
 #, kde-format
 msgid "Rented bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:253
+#: app/publictransport.cpp:254
 #, kde-format
 msgid "Rented moped"
 msgstr ""
 
-#: app/publictransport.cpp:255
+#: app/publictransport.cpp:256
 #, kde-format
 msgid "Rented kick scooter"
 msgstr ""
 
-#: app/publictransport.cpp:257
+#: app/publictransport.cpp:258
 #, fuzzy, kde-format
 #| msgid "Rental Car"
 msgid "Rented car"
 msgstr "Prenajaté auto"
 
-#: app/publictransport.cpp:263
+#: app/publictransport.cpp:264
 #, kde-format
 msgid "Bicycle"
 msgstr ""
 
-#: app/publictransport.cpp:265 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
 #, kde-format
 msgid "Car"
 msgstr "Auto"
