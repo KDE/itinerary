@@ -162,6 +162,7 @@ FormCard.FormCardPage {
                 req.dateTime = dateTimeInput.value;
                 req.maximumResults = 6;
                 req.downloadAssets = true;
+                req.includePaths = true;
 
                 let lineModes = [];
                 if (root.fullModeSwitchState() == undefined) {
