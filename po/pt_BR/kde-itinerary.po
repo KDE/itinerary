@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
+"POT-Creation-Date: 2023-12-31 01:54+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -221,14 +221,14 @@ msgid "To %1"
 msgstr "Para %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:199 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trens de longa distância"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:209 app/TransferPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Location"
 msgctxt "journey query search constraint, title"
@@ -236,14 +236,14 @@ msgid "Local trains"
 msgstr "Localização"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Trânsito rápido"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:132
 #, fuzzy, kde-format
 #| msgid "Bus"
 msgctxt "journey query search constraint, title"
@@ -251,7 +251,7 @@ msgid "Bus"
 msgstr "Ônibus"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1980,32 +1980,32 @@ msgstr "Chegada"
 msgid "Search Journey"
 msgstr "Pesquisar jornada"
 
-#: app/JourneyRequestPage.qml:199
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:209
+#: app/JourneyRequestPage.qml:210
 #, fuzzy, kde-format
 #| msgid "Rename favorite location"
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Renomear localização favorita"
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:220
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:230
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr ""
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:240
 #, fuzzy, kde-format
 #| msgid "Boat trips"
 msgctxt "journey query search constraint, description"

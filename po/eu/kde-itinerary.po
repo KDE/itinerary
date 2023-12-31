@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-30 01:38+0000\n"
-"PO-Revision-Date: 2023-12-28 20:00+0100\n"
+"POT-Creation-Date: 2023-12-31 01:54+0000\n"
+"PO-Revision-Date: 2023-12-30 18:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -216,35 +216,35 @@ msgid "To %1"
 msgstr "%1(e)ra"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:198 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:199 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Distantzia luzeko trenak"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:208 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:209 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Tokiko trenak"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:218 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Zirkulazio azkarra"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:228 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobusa"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:238 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1889,31 +1889,31 @@ msgstr "Iritsiera"
 msgid "Search Journey"
 msgstr "Bilatu bidaia"
 
-#: app/JourneyRequestPage.qml:199
+#: app/JourneyRequestPage.qml:200
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Abiadura handiko edo hiriarteko trenak"
 
-#: app/JourneyRequestPage.qml:209
+#: app/JourneyRequestPage.qml:210
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Eskualdeko edo tokiko trenak"
 
-#: app/JourneyRequestPage.qml:219
+#: app/JourneyRequestPage.qml:220
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Zirkulazio azkarra, metroa, tranbia"
 
-#: app/JourneyRequestPage.qml:229
+#: app/JourneyRequestPage.qml:230
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Tokiko edo eskualdeko autobus zerbitzuak"
 
-#: app/JourneyRequestPage.qml:239
+#: app/JourneyRequestPage.qml:240
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -2284,7 +2284,7 @@ msgstr "PDF fitxategiak (*.pdf)"
 #: app/main.qml:124
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "iCal gertaerak (*.ics)"
 
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
