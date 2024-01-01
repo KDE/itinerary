@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-31 01:54+0000\n"
-"PO-Revision-Date: 2023-11-20 09:23+0100\n"
+"PO-Revision-Date: 2023-12-30 14:29+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2218,10 +2218,9 @@ msgid "Digital Travel Assistant"
 msgstr "Assistente digitale per i viaggi"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Copyright © 2018-%1 La comunità KDE"
+msgstr "Copyright © La comunità KDE"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2281,7 +2280,7 @@ msgstr "File PDF (*.pdf)"
 #: app/main.qml:124
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "Eventi iCal (*.ics)"
 
 #: app/main.qml:124 app/main.qml:133
 #, kde-format

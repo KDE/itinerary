@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-31 01:54+0000\n"
-"PO-Revision-Date: 2023-12-22 19:09+0100\n"
+"PO-Revision-Date: 2023-12-31 20:26+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2281,7 +2281,7 @@ msgstr "Ficheiros PDF (*.pdf)"
 #: app/main.qml:124
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "Eventos de iCal (*.ics)"
 
 #: app/main.qml:124 app/main.qml:133
 #, kde-format
