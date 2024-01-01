@@ -77,7 +77,6 @@
 #include <kandroidextras/uri.h>
 #endif
 
-#include <memory>
 
 using namespace KItinerary;
 

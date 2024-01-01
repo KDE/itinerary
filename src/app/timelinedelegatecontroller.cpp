@@ -32,7 +32,6 @@
 
 #include <KPublicTransport/Platform>
 #include <KPublicTransport/PlatformLayout>
-#include <KPublicTransport/Stopover>
 #include <KPublicTransport/Vehicle>
 
 #include <QJSEngine>

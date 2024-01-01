@@ -3,7 +3,6 @@
 
 #include "matrixroomsmodel.h"
 
-#include <Quotient/events/roomevent.h>
 #include <Quotient/room.h>
 
 using namespace Quotient;
