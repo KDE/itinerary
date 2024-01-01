@@ -23,6 +23,10 @@ Kirigami.ScrollablePage {
     property alias journeyRequest: journeyModel.request
     property alias publicTransportManager: journeyModel.manager
 
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
+
     actions: [
         Kirigami.Action {
             text: i18n("Earlier")

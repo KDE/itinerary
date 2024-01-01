@@ -28,6 +28,9 @@ FormCard.FormCardPage {
     /** Pre-selected departure time. */
     property date initialDateTime: new Date()
 
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
     property var departureStop
     property var arrivalStop
 
