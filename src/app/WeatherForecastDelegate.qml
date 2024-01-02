@@ -21,6 +21,8 @@ FormCard.FormCard {
     FormCard.AbstractFormDelegate {
         id: content
         onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(weatherForecastPage, {weatherInformation: root.weatherInformation}); }
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
         contentItem: RowLayout {
             spacing: 0
 

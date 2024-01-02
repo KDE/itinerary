@@ -16,6 +16,7 @@ Item {
     property var stop
     property bool isDeparture: false
     property bool isArrival: false
+    property bool isCentered: false
 
     readonly property bool isSameTime: stop.scheduledDepartureTime.getTime() == stop.scheduledArrivalTime.getTime()
     readonly property bool isSingleTime: !(stop.scheduledDepartureTime > 0 && stop.scheduledArrivalTime > 0)  || isSameTime
@@ -28,9 +29,9 @@ Item {
     property real trailingProgress
     property alias stopoverPassed: lineSegment.showStop
 
-    x: Kirigami.Units.gridUnit
+    x: Kirigami.Units.largeSpacing
     implicitHeight: layout.implicitHeight + Kirigami.Units.gridUnit * 2
-    implicitWidth: ListView.view.width - x - Kirigami.Units.largeSpacing
+    implicitWidth: ListView.view.width - 2 * x
 
     GridLayout {
         id: layout
@@ -46,6 +47,7 @@ Item {
             Layout.fillHeight: true
             Layout.rowSpan: 2
 
+            isCentered: root.isCentered
             isArrival: root.isArrival
             isDeparture: root.isDeparture
             lineColor: stop.route.line.hasColor ? stop.route.line.color : Kirigami.Theme.textColor

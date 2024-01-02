@@ -59,26 +59,32 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
 
+            JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
             }
 
             ColumnLayout{
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
-
                 spacing:0
+
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
+                    spacing: 0
+                    visible: depTime.visible
+
                     Layout.fillHeight: true
-                    Layout.fillWidth: true
+
                     RowLayout {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        id: arrivalLayout
+                        Layout.minimumWidth: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
                         QQC2.Label {
                             id: depTime
+                            visible: text.length > 0
                             text: Localizer.formatTime(reservationFor, "departureTime")
                         }
                         QQC2.Label {
@@ -96,25 +102,21 @@ TimelineDelegate {
                     }
                 }
 
-                RowLayout{
-                    Item{
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
+                QQC2.Label {
+                    visible: text.length > 0
+                    text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
+                                                             reservationFor.arrivalBusStop.address,
+                                                             Settings.homeCountryIsoCode)
 
-                        visible: text.length > 0
-                        text: Localizer.formatAddressWithContext(reservationFor.departureBusStop.address,
-                                                                 reservationFor.arrivalBusStop.address,
-                                                                 Settings.homeCountryIsoCode)
-                        width: topLayout.width
-                    }
+                    Layout.fillWidth: true
+                    Layout.leftMargin: arrivalLayout.Layout.minimumWidth
                 }
             }
         }
 
         RowLayout {
             width: parent.width
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -157,17 +159,18 @@ TimelineDelegate {
             model: sectionModel
             delegate: RowLayout {
                 id: stopDelegate
+
                 property bool hidden: !expanded
 
                 clip: true
                 visible: false
-                onHiddenChanged:
-                    if (!hidden) {
-                        visible = true
-                        showAnimation.running=true
-                    } else {
-                        hideAnimation.running = true
-                    }
+                width: parent.width
+                onHiddenChanged: if (!hidden) {
+                    visible = true
+                    showAnimation.running = true
+                } else {
+                    hideAnimation.running = true
+                }
                 PropertyAnimation { id: showAnimation;
                                     target: stopDelegate;
                                     property: "height";
@@ -187,7 +190,7 @@ TimelineDelegate {
                                     easing.type: Easing.InOutCubic
 
                 }
-                width: parent.width
+                Layout.fillWidth: true
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
@@ -195,7 +198,7 @@ TimelineDelegate {
                     hasStop: model.stopover.disruptionEffect !== Disruption.NoService
                 }
                 RowLayout {
-                    Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                    Layout.minimumWidth: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
                     QQC2.Label{
                         text: Localizer.formatTime(model.stopover , "scheduledDepartureTime")
                         font.strikeout: model.stopover.disruptionEffect === Disruption.NoService
@@ -218,23 +221,26 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
-            JourneySectionStopDelegateLineSegment {
 
+            JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                 isArrival: true
             }
-            ColumnLayout{
-                Layout.topMargin:  Kirigami.Units.largeSpacing
 
-                spacing:0
+            ColumnLayout{
+                spacing: 0
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
                     Layout.fillHeight: true
-                    Layout.fillWidth: true
+                    spacing: 0
+
                     RowLayout {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        Layout.minimumWidth: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
                         QQC2.Label {
                             text: Localizer.formatTime(reservationFor, "arrivalTime")
                         }
@@ -253,19 +259,14 @@ TimelineDelegate {
                     }
                 }
 
-                RowLayout {
-                    Item{
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-                    QQC2.Label {
-                        Layout.fillWidth: true
+                QQC2.Label {
+                    visible: text.length > 0
+                    text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
+                                                             reservationFor.departureBusStop.address,
+                                                             Settings.homeCountryIsoCode)
 
-                        visible: text.length > 0
-                        width: topLayout.width
-                        text: Localizer.formatAddressWithContext(reservationFor.arrivalBusStop.address,
-                                                                 reservationFor.departureBusStop.address,
-                                                                 Settings.homeCountryIsoCode)
-                    }
+                    Layout.fillWidth: true
+                    Layout.leftMargin: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
                 }
             }
         }

@@ -157,9 +157,12 @@ Kirigami.Page {
                     ListView {
                         clip: true
                         model: sectionModel
+                        topMargin: Kirigami.Units.largeSpacing
+                        bottomMargin: Kirigami.Units.largeSpacing
                         header: JourneySectionStopDelegate {
                             stop: journeySection.departure
                             isDeparture: true
+                            isCentered: true
                             trailingProgress: sectionModel.departureTrailingProgress
                             stopoverPassed: sectionModel.departed
                             Binding {
@@ -174,6 +177,7 @@ Kirigami.Page {
                             leadingProgress: model.leadingProgress
                             trailingProgress: model.trailingProgress
                             stopoverPassed: model.stopoverPassed
+                            isCentered: true
                             Binding {
                                 target: model
                                 property: "leadingLength"
@@ -188,6 +192,7 @@ Kirigami.Page {
                         footer: JourneySectionStopDelegate {
                             stop: journeySection.arrival
                             isArrival: true
+                            isCentered: true
                             leadingProgress: sectionModel.arrivalLeadingProgress
                             stopoverPassed: sectionModel.arrived
                             Binding {

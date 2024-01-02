@@ -52,6 +52,10 @@ FormCard.FormCard {
     property color headerTextColor: controller.isCanceled ? headerBackground.Kirigami.Theme.disabledTextColor : headerBackground.Kirigami.Theme.textColor
     FormCard.AbstractFormDelegate {
         onClicked: root.clicked()
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
+        topPadding: Kirigami.Units.largeSpacing
+        bottomPadding: Kirigami.Units.largeSpacing
         background: Rectangle {
             id: headerBackground
             color: Kirigami.Theme.backgroundColor
@@ -84,7 +88,8 @@ FormCard.FormCard {
         id: content
         onClicked: root.clicked()
         Layout.fillWidth: true
-
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
     }
 
     onHeaderItemChanged: {

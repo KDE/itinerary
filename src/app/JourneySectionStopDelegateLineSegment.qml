@@ -19,6 +19,7 @@ Item {
     clip: true
     property bool isDeparture: false
     property bool isArrival: false
+    property bool isCentered: false
     property color lineColor: Kirigami.Theme.textColor
     property int lineWidth: Kirigami.Units.smallSpacing *4
 
@@ -37,7 +38,7 @@ Item {
     Kirigami.ShadowedRectangle {
         id: line
         x: lineSegment.lineWidth / 2
-        y: isDeparture? parent.height-height:0
+        y: isDeparture && isCentered ? parent.height - height : 0
         width: lineSegment.lineWidth
         color: lineSegment.lineColor
 
@@ -48,15 +49,15 @@ Item {
             bottomRightRadius: isArrival ? Math.round(width / 2) : 0
             bottomLeftRadius: isArrival ? Math.round(width / 2) : 0
         }
-        height:
-            if (isArrival) {
-                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
-            } else if (isDeparture) {
-                Math.round(parent.height / 2) + lineSegment.lineWidth / 2
-            } else {
-                parent.height
-            }
+        height: if (isCentered && isArrival) {
+            Math.round(parent.height / 2) + lineSegment.lineWidth / 2
+        } else if (isCentered && isDeparture) {
+            Math.round(parent.height / 2) + lineSegment.lineWidth / 2
+        } else {
+            parent.height
+        }
     }
+
     Kirigami.ShadowedRectangle {
         id: progress
         x: line.x + (line.width - width) /2
@@ -64,20 +65,27 @@ Item {
         width: lineSegment.lineWidth * 0.6
         color: Qt.platform.os !== "android" ? Kirigami.Theme.hoverColor : Kirigami.Theme.highlightColor
         opacity: 0.9
-        height: ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) *
-                (
-                    isDeparture ? trailingProgress :
-                    isArrival ? leadingProgress :
-                    (leadingProgress + trailingProgress) * 0.5
-                )
+        height: {
+            const lineHeight = isCentered ? ((isDeparture || isArrival) ? line.height - (line.width - width) / 2 - line.width * 0.3 : line.height) : line.height;
+            return lineHeight * (
+                isDeparture ? trailingProgress :
+                isArrival ? leadingProgress :
+                (leadingProgress + trailingProgress) * 0.5
+            )
+        }
     }
-
 
     Rectangle {
         id: stopDot
         x: line.x + (line.width - width) / 2
-        y: parent.height / 2 - width / 2
-        radius: width / 2
+        y: if (isCentered) {
+            return parent.height / 2 - width / 2;
+        } else if (isArrival) {
+            return parent.height - height - (lineSegment.lineWidth - width) / 2
+        } else {
+            return (lineSegment.lineWidth - width) / 2;
+        }
+        radius: width
         width: lineSegment.lineWidth * (isIntermediate ? 0.3 : 0.6)
         height: width
         color: Kirigami.Theme.backgroundColor

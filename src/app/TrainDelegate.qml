@@ -60,34 +60,40 @@ TimelineDelegate {
 
         RowLayout {
             width: parent.width
+
             ColumnLayout{
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
                     Layout.fillHeight: true
+                    Layout.alignment: Qt.AlignTop
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     isDeparture: true
                 }
                 JourneySectionStopDelegateLineSegment {
-                    visible: departureCountryLayout.visible
+                    visible: departureCountryLabel.visible
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
                 }
             }
 
-            ColumnLayout{
-                Layout.bottomMargin:  Kirigami.Units.largeSpacing
+            ColumnLayout {
+                spacing: 0
 
-                spacing:0
+                Layout.bottomMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     RowLayout {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        id: departureLayout
+                        Layout.minimumWidth: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
+                        visible: depTime.visible
                         QQC2.Label {
                             id: depTime
+                            visible: text.length > 0
                             text: Localizer.formatTime(reservationFor, "departureTime")
                         }
                         QQC2.Label {
@@ -121,26 +127,24 @@ TimelineDelegate {
                         }
                     }
                 }
-                RowLayout{
-                    id: departureCountryLayout
+
+                QQC2.Label {
+                    id: departureCountryLabel
+
                     visible: departureCountryLabel.text.length > 0
-                    Item{
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-                    QQC2.Label {
-                        id: departureCountryLabel
-                        Layout.fillWidth: true
-                        text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
-                                                                 reservationFor.arrivalStation.address,
-                                                                 Settings.homeCountryIsoCode)
-                        width: topLayout.width
-                    }
+                    text: Localizer.formatAddressWithContext(reservationFor.departureStation.address,
+                                                             reservationFor.arrivalStation.address,
+                                                             Settings.homeCountryIsoCode)
+
+                    Layout.leftMargin: departureLayout.Layout.minimumWidth
+                    Layout.fillWidth: true
                 }
             }
         }
 
         RowLayout {
             width: parent.width
+
             JourneySectionStopDelegateLineSegment {
                 Layout.fillHeight: true
                 lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
@@ -183,17 +187,18 @@ TimelineDelegate {
             model: sectionModel
             delegate: RowLayout {
                 id: stopDelegate
+
                 property bool hidden: !expanded
 
+                width: parent.width
                 clip: true
                 visible: false
-                onHiddenChanged:
-                    if (!hidden) {
-                        visible = true
-                        showAnimation.running=true
-                    } else {
-                        hideAnimation.running = true
-                    }
+                onHiddenChanged: if (!hidden) {
+                    visible = true
+                    showAnimation.running=true
+                } else {
+                    hideAnimation.running = true
+                }
                 PropertyAnimation { id: showAnimation;
                                     target: stopDelegate;
                                     property: "height";
@@ -213,7 +218,6 @@ TimelineDelegate {
                                     easing.type: Easing.InOutCubic
 
                 }
-                width: parent.width
                 JourneySectionStopDelegateLineSegment {
 
                     Layout.fillHeight: true
@@ -250,7 +254,7 @@ TimelineDelegate {
             ColumnLayout {
                 spacing: 0
                 JourneySectionStopDelegateLineSegment {
-                    visible: arrivalCountryLayout.visible
+                    visible: arrivalCountryLabel.visible
                     Layout.fillHeight: true
                     lineColor: departure.route.line.hasColor ? departure.route.line.color : Kirigami.Theme.textColor
                     hasStop: false
@@ -261,18 +265,22 @@ TimelineDelegate {
                     isArrival: true
                 }
             }
-            ColumnLayout{
-                Layout.topMargin:  Kirigami.Units.largeSpacing
-
+            ColumnLayout {
                 spacing:0
+
+                Layout.topMargin: Kirigami.Units.largeSpacing
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+
                 RowLayout {
                     Layout.fillHeight: true
-                    Layout.fillWidth: true
                     RowLayout {
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
+                        id: arrivalLayout
+                        visible: depTime.visible
+                        Layout.minimumWidth: depTime.visible ? depTime.width + Kirigami.Units.largeSpacing * 3.5 : 0
                         QQC2.Label {
+                            id: arrivalTime
+                            visible: text.length > 0
                             text: Localizer.formatTime(reservationFor, "arrivalTime")
                         }
                         QQC2.Label {
@@ -306,20 +314,18 @@ TimelineDelegate {
                         }
                     }
                 }
-                RowLayout {
-                    id: arrivalCountryLayout
+
+                QQC2.Label {
+                    id: arrivalCountryLabel
+
+                    Layout.fillWidth: true
+                    Layout.leftMargin: arrivalLayout.Layout.minimumWidth
+
                     visible: arrivalCountryLabel.text.length > 0
-                    Item{
-                        Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
-                    }
-                    QQC2.Label {
-                        id: arrivalCountryLabel
-                        Layout.fillWidth: true
-                        width: topLayout.width
-                        text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
-                                                                 reservationFor.departureStation.address,
-                                                                 Settings.homeCountryIsoCode)
-                    }
+                    width: topLayout.width
+                    text: Localizer.formatAddressWithContext(reservationFor.arrivalStation.address,
+                                                             reservationFor.departureStation.address,
+                                                             Settings.homeCountryIsoCode)
                 }
             }
         }
