@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 01:54+0000\n"
+"POT-Creation-Date: 2024-01-02 01:32+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -277,19 +277,19 @@ msgstr "Заменить существующее бронирование на 
 msgid "Replace"
 msgstr "Заменить"
 
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:754
-#: app/applicationcontroller.cpp:769
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
+#: app/applicationcontroller.cpp:768
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
 
-#: app/applicationcontroller.cpp:349
+#: app/applicationcontroller.cpp:348
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ошибка импорта: слишком большой файл."
 
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:831
-#: app/applicationcontroller.cpp:841
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
+#: app/applicationcontroller.cpp:840
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -298,12 +298,12 @@ msgstr[1] "Импортировано %1 бронирования."
 msgstr[2] "Импортировано %1 бронирований."
 msgstr[3] "Импортировано одно бронирование."
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:437
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:452
 #, fuzzy, kde-format
 #| msgid "Pass imported."
 msgid "One pass imported."
@@ -313,42 +313,42 @@ msgstr[1] "Пропуск импортирован."
 msgstr[2] "Пропуск импортирован."
 msgstr[3] "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Pass imported."
 msgstr "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:491
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ничего не импортировано."
 
-#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
-#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
-#: app/applicationcontroller.cpp:701 app/applicationcontroller.cpp:719
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:675 app/applicationcontroller.cpp:684
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:610
+#: app/applicationcontroller.cpp:609
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Поездки"
 
-#: app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:710
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Бронирование"
 
-#: app/applicationcontroller.cpp:794
+#: app/applicationcontroller.cpp:793
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -680,7 +680,7 @@ msgstr "Прибытие"
 msgid "Alternatives"
 msgstr "Варианты"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:16 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
 #, kde-format
 msgid "Journey Details"
 msgstr "Сведения о поездке"
@@ -2082,27 +2082,34 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проезд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:109
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:55
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Direction: %1"
 msgstr "Направление: %1"
 
-#: app/JourneySectionPage.qml:63
+#: app/JourneySectionPage.qml:72
 #, kde-format
 msgid "Distance: %1"
 msgstr "Расстояние: %1"
 
-#: app/JourneySectionPage.qml:70
+#: app/JourneySectionPage.qml:79
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1 г"
+
+#: app/JourneySectionPage.qml:272
+#, fuzzy, kde-format
+#| msgid "Show"
+msgctxt "@action:button"
+msgid "Show Map"
+msgstr "Показать"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -4113,9 +4120,6 @@ msgstr "%1%2 из %3 в %4 %5"
 #~ msgctxt "@action"
 #~ msgid "Show Names"
 #~ msgstr "Показать названия"
-
-#~ msgid "Show"
-#~ msgstr "Показать"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 01:54+0000\n"
+"POT-Creation-Date: 2024-01-02 01:32+0000\n"
 "PO-Revision-Date: 2023-12-30 13:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -261,69 +261,69 @@ msgstr "您确定要用新选择的行程替换现有预订吗？"
 msgid "Replace"
 msgstr "替换"
 
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:754
-#: app/applicationcontroller.cpp:769
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
+#: app/applicationcontroller.cpp:768
 #, kde-format
 msgid "Import failed: %1"
 msgstr "导入失败：%1"
 
-#: app/applicationcontroller.cpp:349
+#: app/applicationcontroller.cpp:348
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "导入失败：文件太大。"
 
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:831
-#: app/applicationcontroller.cpp:841
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
+#: app/applicationcontroller.cpp:840
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
 msgstr[0] "已导入 %1 个预约。"
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:437
 #, kde-format
 msgid "Health certificate imported."
 msgstr "已导入健康证书。"
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:452
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
 msgstr[0] ""
 
-#: app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:491
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "您提供的信息中没有可被导入的内容。"
 
-#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
-#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
-#: app/applicationcontroller.cpp:701 app/applicationcontroller.cpp:719
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
 #, kde-format
 msgid "Export failed: %1"
 msgstr "导出失败：%1"
 
-#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:675 app/applicationcontroller.cpp:684
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
 #, kde-format
 msgid "Export completed."
 msgstr "导出完成。"
 
-#: app/applicationcontroller.cpp:610
+#: app/applicationcontroller.cpp:609
 #, kde-format
 msgid "Trip sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:710
 #, kde-format
 msgid "Reservation sent."
 msgstr ""
 
-#: app/applicationcontroller.cpp:794
+#: app/applicationcontroller.cpp:793
 #, kde-format
 msgid "Import completed."
 msgstr "导入完成。"
@@ -619,7 +619,7 @@ msgstr ""
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:16 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -1942,25 +1942,31 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:109
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:55
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Direction: %1"
 msgstr "方向：%1"
 
-#: app/JourneySectionPage.qml:63
+#: app/JourneySectionPage.qml:72
 #, kde-format
 msgid "Distance: %1"
 msgstr "距离：%1"
 
-#: app/JourneySectionPage.qml:70
+#: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "CO₂: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:272
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Map"
 msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:141

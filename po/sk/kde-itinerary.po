@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 01:54+0000\n"
+"POT-Creation-Date: 2024-01-02 01:32+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -273,19 +273,19 @@ msgstr ""
 msgid "Replace"
 msgstr "Nahradiť"
 
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:754
-#: app/applicationcontroller.cpp:769
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
+#: app/applicationcontroller.cpp:768
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Import zlyhal: %1"
 
-#: app/applicationcontroller.cpp:349
+#: app/applicationcontroller.cpp:348
 #, kde-format
 msgid "Import failed: File too large."
 msgstr ""
 
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:831
-#: app/applicationcontroller.cpp:841
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
+#: app/applicationcontroller.cpp:840
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -293,12 +293,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:437
 #, kde-format
 msgid "Health certificate imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:452
 #, fuzzy, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -306,42 +306,42 @@ msgstr[0] "Poradové číslo:"
 msgstr[1] "Poradové číslo:"
 msgstr[2] "Poradové číslo:"
 
-#: app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Pass imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:491
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr ""
 
-#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
-#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
-#: app/applicationcontroller.cpp:701 app/applicationcontroller.cpp:719
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
 #, fuzzy, kde-format
 msgid "Export failed: %1"
 msgstr "Export zlyhal"
 
-#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:675 app/applicationcontroller.cpp:684
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
 #, kde-format
 msgid "Export completed."
 msgstr ""
 
-#: app/applicationcontroller.cpp:610
+#: app/applicationcontroller.cpp:609
 #, fuzzy, kde-format
 #| msgid "Trip: %1"
 msgid "Trip sent."
 msgstr "Výlet: %1"
 
-#: app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:710
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Rezervácia"
 
-#: app/applicationcontroller.cpp:794
+#: app/applicationcontroller.cpp:793
 #, kde-format
 msgid "Import completed."
 msgstr ""
@@ -669,7 +669,7 @@ msgstr "Príchod"
 msgid "Alternatives"
 msgstr "Alternatívy"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:16 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -2074,27 +2074,33 @@ msgstr "%1 do %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Mechanika"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:109
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:55
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Direction: %1"
 msgstr "Smer: %1"
 
-#: app/JourneySectionPage.qml:63
+#: app/JourneySectionPage.qml:72
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdialenosť: %1"
 
-#: app/JourneySectionPage.qml:70
+#: app/JourneySectionPage.qml:79
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
+
+#: app/JourneySectionPage.qml:272
+#, fuzzy, kde-format
+msgctxt "@action:button"
+msgid "Show Map"
+msgstr "Zobraziť názvy"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -4019,11 +4025,6 @@ msgstr "Autobus %1 z %2 do %3"
 
 #~ msgid "Elevator"
 #~ msgstr "Výťah"
-
-#, fuzzy
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "Zobraziť názvy"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"

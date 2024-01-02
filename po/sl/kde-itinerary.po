@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-31 01:54+0000\n"
+"POT-Creation-Date: 2024-01-02 01:32+0000\n"
 "PO-Revision-Date: 2023-12-30 08:38+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -263,19 +263,19 @@ msgstr ""
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: app/applicationcontroller.cpp:344 app/applicationcontroller.cpp:754
-#: app/applicationcontroller.cpp:769
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
+#: app/applicationcontroller.cpp:768
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Uvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:349
+#: app/applicationcontroller.cpp:348
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Uvoz ni uspel: Datoteka prevelika."
 
-#: app/applicationcontroller.cpp:431 app/applicationcontroller.cpp:831
-#: app/applicationcontroller.cpp:841
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
+#: app/applicationcontroller.cpp:840
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -284,12 +284,12 @@ msgstr[1] "%1 uvoženi rezervaciji."
 msgstr[2] "%1 uvožene rezervacije."
 msgstr[3] "%1 uvoženih rezervacij."
 
-#: app/applicationcontroller.cpp:438
+#: app/applicationcontroller.cpp:437
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Zdravstvena potrdila uvožena."
 
-#: app/applicationcontroller.cpp:453
+#: app/applicationcontroller.cpp:452
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -298,40 +298,40 @@ msgstr[1] "%1 vozovnici uvoženi."
 msgstr[2] "%1 vozovnice uvožene."
 msgstr[3] "%1 vozovnic uvoženih."
 
-#: app/applicationcontroller.cpp:456
+#: app/applicationcontroller.cpp:455
 #, kde-format
 msgid "Pass imported."
 msgstr "Vozovnica uvožena."
 
-#: app/applicationcontroller.cpp:491
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ničesar uvoženega."
 
-#: app/applicationcontroller.cpp:560 app/applicationcontroller.cpp:600
-#: app/applicationcontroller.cpp:618 app/applicationcontroller.cpp:662
-#: app/applicationcontroller.cpp:701 app/applicationcontroller.cpp:719
+#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
+#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
+#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Izvoz ni uspel: %1"
 
-#: app/applicationcontroller.cpp:574 app/applicationcontroller.cpp:583
-#: app/applicationcontroller.cpp:675 app/applicationcontroller.cpp:684
+#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
+#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
 #, kde-format
 msgid "Export completed."
 msgstr "Izvoz dokončan."
 
-#: app/applicationcontroller.cpp:610
+#: app/applicationcontroller.cpp:609
 #, kde-format
 msgid "Trip sent."
 msgstr "Izlet poslan."
 
-#: app/applicationcontroller.cpp:711
+#: app/applicationcontroller.cpp:710
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervacija poslana."
 
-#: app/applicationcontroller.cpp:794
+#: app/applicationcontroller.cpp:793
 #, kde-format
 msgid "Import completed."
 msgstr "Uvoz dokončan."
@@ -630,7 +630,7 @@ msgstr "Prihod"
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:16 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti potovanja"
@@ -1961,26 +1961,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Vožnja %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:109
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:118
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Prikaži več…"
 
-#: app/JourneySectionPage.qml:55
+#: app/JourneySectionPage.qml:64
 #, kde-format
 msgid "Direction: %1"
 msgstr "Smer: %1"
 
-#: app/JourneySectionPage.qml:63
+#: app/JourneySectionPage.qml:72
 #, kde-format
 msgid "Distance: %1"
 msgstr "Razdalja: %1"
 
-#: app/JourneySectionPage.qml:70
+#: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
+
+#: app/JourneySectionPage.qml:272
+#, fuzzy, kde-format
+#| msgid "Show"
+msgctxt "@action:button"
+msgid "Show Map"
+msgstr "Prikaži"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -3891,9 +3898,6 @@ msgstr "%1%2 od %3 do %4 na %5"
 #~ msgctxt "@action"
 #~ msgid "Show Names"
 #~ msgstr "Prikaži imena"
-
-#~ msgid "Show"
-#~ msgstr "Prikaži"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"
