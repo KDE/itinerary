@@ -76,13 +76,20 @@ Kirigami.Page {
                 Layout.row: 3
                 Layout.column: 1
                 Layout.columnSpan: 2
+                text: i18n("Average Speed: %1", Localizer.formatSpeed(journeySection.distance / journeySection.duration * 3.6))
+                visible: journeySection.distance > 0 && journeySection.duration > 0
+            }
+            QQC2.Label {
+                Layout.row: 4
+                Layout.column: 1
+                Layout.columnSpan: 2
                 text: i18n("CO₂: %1", Localizer.formatWeight(journeySection.co2Emission))
                 visible: journeySection.co2Emission > 0
             }
 
             QQC2.Label {
                 id: notesLabel
-                Layout.row: 4
+                Layout.row: 5
                 Layout.column: 1
                 Layout.columnSpan: 2
                 Layout.fillWidth: true
@@ -112,7 +119,7 @@ Kirigami.Page {
             }
 
             Kirigami.LinkButton {
-                Layout.row: 5
+                Layout.row: 6
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: i18nc("@action:button", "Show More…")
