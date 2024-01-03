@@ -122,6 +122,7 @@ ColumnLayout {
                 icon.name: "edit-delete"
                 onTriggered: {
                     ReservationManager.removeBatch(root.batchId);
+                    deleteWarningDialog.close();
                     applicationWindow().pageStack.pop();
                 }
             }
