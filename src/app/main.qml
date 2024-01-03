@@ -121,7 +121,11 @@ Kirigami.ApplicationWindow {
         fileMode: FileDialog.OpenFile
         title: i18n("Import Reservation")
         currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
-        nameFilters: [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
+        // Android has no file type selector, we get the superset of all filters there since Qt6 (apart from "all"),
+        // so don't set any filters on Android in order to be able to open everything we can read
+        nameFilters:  Qt.platform.os === "android" ?
+            [i18n("All Files (*.*)")] :
+            [i18n("All Files (*.*)"), i18n("PkPass files (*.pkpass)"), i18n("PDF files (*.pdf)"), i18n("iCal events (*.ics)"), i18n("KDE Itinerary files (*.itinerary)")]
         onAccepted: ApplicationController.importFromUrl(selectedFile)
     }
 
