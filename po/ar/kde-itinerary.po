@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-01-04 01:34+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
-#: app/AboutPage.qml:18 app/main.qml:232
+#: app/AboutPage.qml:18 app/main.qml:236
 #, kde-format
 msgid "About"
 msgstr "عن"
@@ -116,7 +116,7 @@ msgstr "حرّر"
 msgid "Add to calendar..."
 msgstr "أضف إلى التّقويم..."
 
-#: app/ActionsCard.qml:73 app/main.qml:220 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
 #, kde-format
 msgid "Export..."
 msgstr "صدّر..."
@@ -140,60 +140,60 @@ msgstr ""
 msgid "Do you really want to delete this event?"
 msgstr ""
 
-#: app/ActionsCard.qml:133 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "صدّر..."
 
-#: app/ActionsCard.qml:136 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr ""
 
-#: app/ActionsCard.qml:147 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
 #, kde-format
 msgid "Send to %1"
 msgstr ""
 
-#: app/ActionsCard.qml:161
+#: app/ActionsCard.qml:162
 #, kde-format
 msgid "Export Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:163 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/ActionsCard.qml:168 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "إجراءات"
 
-#: app/ActionsCard.qml:186
+#: app/ActionsCard.qml:187
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:188
 #, kde-format
 msgid "Check-in"
 msgstr "تسجيل الوصول"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:189
 #, kde-format
 msgid "Download"
 msgstr "نزّل"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:190
 #, kde-format
 msgid "Change Reservation"
 msgstr ""
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "View Reservation"
 msgstr ""
@@ -805,7 +805,7 @@ msgstr ""
 msgid "Add Document"
 msgstr ""
 
-#: app/DocumentsCard.qml:37 app/main.qml:124
+#: app/DocumentsCard.qml:37 app/main.qml:127 app/main.qml:128
 #, kde-format
 msgid "All Files (*.*)"
 msgstr "كل الملفات (*.*)"
@@ -1319,7 +1319,7 @@ msgstr ""
 msgid "Do you really want to delete this pass?"
 msgstr ""
 
-#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:160
+#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
 #, kde-format
 msgid "KDE Itinerary"
 msgstr ""
@@ -1434,7 +1434,7 @@ msgstr "ا&ختبر..."
 msgid "Recovery (%1)"
 msgstr ""
 
-#: app/HealthCertificatePage.qml:16 app/main.qml:194
+#: app/HealthCertificatePage.qml:16 app/main.qml:198
 #, kde-format
 msgid "Health Certificates"
 msgstr ""
@@ -1972,7 +1972,7 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr "قرص %1%2"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:118
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -1990,10 +1990,15 @@ msgstr "الم&سافة:"
 
 #: app/JourneySectionPage.qml:79
 #, kde-format
+msgid "Average Speed: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:86
+#, kde-format
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:272
+#: app/JourneySectionPage.qml:279
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2049,7 +2054,7 @@ msgstr "إلى"
 msgid "Itinerary change"
 msgstr ""
 
-#: app/LiveStatusPage.qml:19 app/main.qml:205
+#: app/LiveStatusPage.qml:19 app/main.qml:209
 #, kde-format
 msgid "Live Status"
 msgstr ""
@@ -2295,62 +2300,62 @@ msgstr ""
 msgid "Import Reservation"
 msgstr ""
 
-#: app/main.qml:124
+#: app/main.qml:128
 #, kde-format
 msgid "PkPass files (*.pkpass)"
 msgstr ""
 
-#: app/main.qml:124
+#: app/main.qml:128
 #, kde-format
 msgid "PDF files (*.pdf)"
 msgstr ""
 
-#: app/main.qml:124
+#: app/main.qml:128
 #, kde-format
 msgid "iCal events (*.ics)"
 msgstr ""
 
-#: app/main.qml:124 app/main.qml:133
+#: app/main.qml:128 app/main.qml:137
 #, kde-format
 msgid "KDE Itinerary files (*.itinerary)"
 msgstr ""
 
-#: app/main.qml:131
+#: app/main.qml:135
 #, kde-format
 msgid "Export Itinerary Data"
 msgstr ""
 
-#: app/main.qml:165 app/PassPage.qml:126
+#: app/main.qml:169 app/PassPage.qml:126
 #, kde-format
 msgid "Import..."
 msgstr "استورد..."
 
-#: app/main.qml:170
+#: app/main.qml:174
 #, kde-format
 msgid "Check for Updates"
 msgstr ""
 
-#: app/main.qml:179
+#: app/main.qml:183
 #, kde-format
 msgid "Download Maps"
 msgstr "نزل الخرائط"
 
-#: app/main.qml:187 app/StatisticsPage.qml:15
+#: app/main.qml:191 app/StatisticsPage.qml:15
 #, kde-format
 msgid "Statistics"
 msgstr ""
 
-#: app/main.qml:213 app/WelcomePage.qml:41
+#: app/main.qml:217 app/WelcomePage.qml:41
 #, fuzzy, kde-format
 msgid "Settings..."
 msgstr "إعدادات..."
 
-#: app/main.qml:225 app/WelcomePage.qml:16
+#: app/main.qml:229 app/WelcomePage.qml:16
 #, kde-format
 msgid "Help"
 msgstr "مساعدة"
 
-#: app/main.qml:300
+#: app/main.qml:304
 #, kde-format
 msgid "Map download finished."
 msgstr ""
