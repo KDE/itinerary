@@ -35,7 +35,7 @@ PluginLoader::PluginLoader()
     searchPaths += QCoreApplication::libraryPaths();
 
     for (const auto &searchPath : std::as_const(searchPaths)) {
-        const QString pluginPath = searchPath + QLatin1String("/kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/org.kde.kcalendarcore.calendars");
+        const QString pluginPath = searchPath + QLatin1String("/kf6/org.kde.kcalendarcore.calendars");
         for (QDirIterator it(pluginPath, QDir::Files); it.hasNext() && !plugin;) {
             it.next();
             QPluginLoader loader(it.fileInfo().absoluteFilePath());
