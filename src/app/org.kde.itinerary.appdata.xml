@@ -99,6 +99,7 @@
     <p xml:lang="uk">KDE Itinerary — цифровий помічник у подорожах, акцент у якому зроблено на забезпеченні вашої конфіденційності.</p>
     <p xml:lang="x-test">xxKDE Itinerary is a digital travel assistant with a priority on protecting your privacy.xx</p>
     <p xml:lang="zh-CN">KDE Itinerary 是一款注重保护用户隐私的数字旅行助理应用。</p>
+    <p xml:lang="zh-TW">《KDE 旅行計劃》是一個重視保護您的隱私權的數位旅行助理。</p>
     <p>Features:</p>
     <p xml:lang="ast">Funciones:</p>
     <p xml:lang="ca">Característiques:</p>
@@ -159,6 +160,7 @@
       <li xml:lang="uk">Перегляд розкладу уніфікованого маршруту подорожі із автоматичним групуванням за поїздками.</li>
       <li xml:lang="x-test">xxTimeline view of a unified travel itinerary with automatic trip grouping.xx</li>
       <li xml:lang="zh-CN">时间线视图，可自动分组并归类旅程。</li>
+      <li xml:lang="zh-TW">整合旅行計劃的時間軸，支援自動為旅程分組。</li>
       <li>Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.</li>
       <li xml:lang="ca">Permet reserves de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
       <li xml:lang="ca-valencia">Permet reserves de tren, autobús i avió, així com reserves d'hotels, restaurants, esdeveniments i lloguer de cotxes.</li>
@@ -186,6 +188,7 @@
       <li xml:lang="uk">Підтримка бронювання квитків на потяги, автобуси та літаки, а також бронювання номерів готелів, місць у ресторанах, участі у подіях та оренди автомобілів.</li>
       <li xml:lang="x-test">xxSupports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.xx</li>
       <li xml:lang="zh-CN">支持预订火车、公共汽车、航班、酒店、餐厅、活动和租车服务。</li>
+      <li xml:lang="zh-TW">支援鐵路、公路與航空訂票，以及飯店、餐廳、活動與租車預約。</li>
       <li>Boarding pass management.</li>
       <li xml:lang="ca">Gestió de les targetes d'embarcament.</li>
       <li xml:lang="ca-valencia">Gestioneu les targetes d'embarcament.</li>
@@ -215,6 +218,7 @@
       <li xml:lang="uk">Керування посадковими квитками.</li>
       <li xml:lang="x-test">xxBoarding pass management.xx</li>
       <li xml:lang="zh-CN">登机牌管理。</li>
+      <li xml:lang="zh-TW">登機證管理。</li>
       <li>Supports ticket management for multi-traveler and multi-ticket bookings.</li>
       <li xml:lang="ca">Permet la gestió de bitllets per a reserves multiviatger i multibitllet.</li>
       <li xml:lang="ca-valencia">Permet la gestió de bitllets per a reserves multiviatger i multibitllet.</li>
@@ -242,6 +246,7 @@
       <li xml:lang="uk">Підтримка керування роботою з квитками для замовлень із пересадками та одночасного замовлення декількох квитків.</li>
       <li xml:lang="x-test">xxSupports ticket management for multi-traveler and multi-ticket bookings.xx</li>
       <li xml:lang="zh-CN">支持管理多位旅客的多次订票。</li>
+      <li xml:lang="zh-TW">支援多人與多票券訂票的票券管理。</li>
       <li>Automatic booking data extraction from various input formats, performed locally on your device.</li>
       <li xml:lang="ca">Extracció automàtica de dades de les reserves des de diversos formats d'entrada, efectuades localment en el vostre dispositiu.</li>
       <li xml:lang="ca-valencia">Extracció automàtica de dades de les reserves des de diversos formats d'entrada, efectuades localment en el vostre dispositiu.</li>
@@ -269,6 +274,7 @@
       <li xml:lang="uk">Автоматичне видобування даних із різноманітних вхідних форматів, яке відбувається безпосередньо на вашому пристрої.</li>
       <li xml:lang="x-test">xxAutomatic booking data extraction from various input formats, performed locally on your device.xx</li>
       <li xml:lang="zh-CN">在设备端处理多种输入格式并自动提取预订数据。</li>
+      <li xml:lang="zh-TW">從多種輸入格式自動取出訂票資料，全部在您的裝置上進行而不會傳送到其他地方。</li>
       <li>Real-time delay and platform change information for trains.</li>
       <li xml:lang="ca">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
       <li xml:lang="ca-valencia">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
@@ -296,6 +302,7 @@
       <li xml:lang="uk">Інформування про затримки та зміни платформ для потягів.</li>
       <li xml:lang="x-test">xxReal-time delay and platform change information for trains.xx</li>
       <li xml:lang="zh-CN">提供火车延误和站台变更的实时信息。</li>
+      <li xml:lang="zh-TW">火車的即時誤點或月台變更資訊。</li>
       <li>Weather forecast for destination along your trip.</li>
       <li xml:lang="ca">Previsió meteorològica de la destinació durant el viatge.</li>
       <li xml:lang="ca-valencia">Previsió meteorològica del destí durant el viatge.</li>
@@ -323,6 +330,7 @@
       <li xml:lang="uk">Показ прогнозу погоди у кінцевій точці вашої подорожі.</li>
       <li xml:lang="x-test">xxWeather forecast for destination along your trip.xx</li>
       <li xml:lang="zh-CN">显示旅途中各个目的地的天气预报。</li>
+      <li xml:lang="zh-TW">旅程上各目的地的天氣預報。</li>
       <li>Full control over all online access.</li>
       <li xml:lang="ca">Control total sobre tots els accessos en línia.</li>
       <li xml:lang="ca-valencia">Control total sobre tots els accessos en línia.</li>
@@ -431,6 +439,7 @@
       <li xml:lang="uk">Перегляд місць у вагоні потягу (лише для деяких операторів).</li>
       <li xml:lang="x-test">xxTrain coach layout view (for some operators only).xx</li>
       <li xml:lang="zh-CN">列车编组视图 (仅限某些运营商)。</li>
+      <li xml:lang="zh-TW">檢視火車車廂內部配置（僅部分交通機構）。</li>
       <li>Train station and airport per-floor maps based on OpenStreetMap data.</li>
       <li xml:lang="ca">Mapes per planta de l'estació de tren i l'aeroport basats en les dades d'OpenStreetMap.</li>
       <li xml:lang="ca-valencia">Mapes per planta de l'estació de tren i l'aeroport basats en les dades d'OpenStreetMap.</li>
@@ -457,6 +466,7 @@
       <li xml:lang="uk">Мапи поверхів залізничних станцій та аеропортів засновано на даних OpenStreetMap.</li>
       <li xml:lang="x-test">xxTrain station and airport per-floor maps based on OpenStreetMap data.xx</li>
       <li xml:lang="zh-CN">基于 OpenStreetMap 数据的火车站地图和机场多层地图。</li>
+      <li xml:lang="zh-TW">基於 OpenStreetMap 資料的火車站與機場各樓層地圖。</li>
       <li>Available dock-based or free-floating rental bikes can be displayed on the train station map.</li>
       <li xml:lang="ca">Les bicicletes de lloguer disponibles ancorades o flotants es poden mostrar en el mapa de l'estació de tren.</li>
       <li xml:lang="ca-valencia">Les bicicletes de lloguer disponibles ancorades o flotants es poden mostrar en el mapa de l'estació de tren.</li>
@@ -509,6 +519,7 @@
       <li xml:lang="uk">Особиста статистика подорожей для стеження за впливом на навколишнє середовище.</li>
       <li xml:lang="x-test">xxPersonal travel statistics to monitor environmental impact.xx</li>
       <li xml:lang="zh-CN">个人旅行统计数据，可观察您对环境的影响。</li>
+      <li xml:lang="zh-TW">個人旅行統計資料，讓您追蹤自己的環境影響。</li>
     </ul>
     <p>KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.</p>
     <p xml:lang="ca">El KDE Itinerary funciona millor amb el connector d'extracció d'itineraris del KMail i el KDE Connect, o el Nextcloud Hub i el DavDroid.</p>
