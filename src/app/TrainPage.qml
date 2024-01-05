@@ -238,11 +238,13 @@ DetailsPage {
 
         // seat reservation
         FormCard.FormHeader {
-            visible: coachLabel.visible || seatLabel.visible || classLabel.visible || departureLayoutButton.enabled || arrivalLayoutButton.enabled
+            visible: seatCard.visible
             title: i18n("Seat")
         }
 
         FormCard.FormCard {
+            id: seatCard
+            visible: coachLabel.visible || seatLabel.visible || classLabel.visible || departureLayoutButton.visible || arrivalLayoutButton.visible
             FormCard.FormTextDelegate {
                 id: coachLabel
                 text: i18nc("coach of a train", "Coach:")
@@ -276,6 +278,7 @@ DetailsPage {
                 icon.name: "view-list-symbolic"
                 enabled: departure && (departure.route.line.mode == KPublicTransport.Line.LongDistanceTrain || departure.route.line.mode == KPublicTransport.Line.Train || departure.route.name !== "")
                 onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.departure, arrival: false})
+                visible: enabled
             }
             FormCard.FormButtonDelegate {
                 id: arrivalLayoutButton
@@ -283,6 +286,8 @@ DetailsPage {
                 icon.name: "view-list-symbolic"
                 enabled: arrival && (arrival.route.line.mode == KPublicTransport.Line.LongDistanceTrain || arrival.route.line.mode == KPublicTransport.Line.Train || arrival.route.name !== "")
                 onClicked: applicationWindow().pageStack.push(vehicleLayoutPage, {stopover: root.controller.arrival, arrival: true});
+                visible: enabled
+
             }
         }
 
