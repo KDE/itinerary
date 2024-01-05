@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-04 01:34+0000\n"
-"PO-Revision-Date: 2024-01-02 12:24+0100\n"
+"PO-Revision-Date: 2024-01-04 09:36+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1972,7 +1972,7 @@ msgstr "Distanco: %1"
 #: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Averaĝa Rapideco: %1"
 
 #: app/JourneySectionPage.qml:86
 #, kde-format

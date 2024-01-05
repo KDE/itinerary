@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-04 01:34+0000\n"
-"PO-Revision-Date: 2024-01-02 16:04+0300\n"
+"PO-Revision-Date: 2024-01-04 16:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1336,7 +1336,7 @@ msgstr "%1 kişisinin aşı sertifikası"
 #: app/HealthCertificateBarcode.qml:36
 #, kde-format
 msgid "Test certificate of %1"
-msgstr "%1 kişisinin sınama sertifikası"
+msgstr "%1 kişisinin test sertifikası"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
@@ -1381,17 +1381,17 @@ msgstr "Tam aşılı"
 #: app/HealthCertificateBarcode.qml:74
 #, kde-format
 msgid "Negative test"
-msgstr "Negatif sınama"
+msgstr "Negatif test"
 
 #: app/HealthCertificateBarcode.qml:75
 #, kde-format
 msgid "Positive test"
-msgstr "Pozitif sınama"
+msgstr "Pozitif test"
 
 #: app/HealthCertificateBarcode.qml:78
 #, kde-format
 msgid "Test expired"
-msgstr "Sınama süresi dolmuş"
+msgstr "Test süresi dolmuş"
 
 #: app/HealthCertificateBarcode.qml:80
 #, kde-format
@@ -1411,7 +1411,7 @@ msgstr "Aşılama (%1)"
 #: app/healthcertificatemanager.cpp:124
 #, kde-format
 msgid "Test %1 (%2)"
-msgstr "Sınama %1 (%2)"
+msgstr "Test %1 (%2)"
 
 #: app/healthcertificatemanager.cpp:128
 #, kde-format
@@ -1448,7 +1448,7 @@ msgid ""
 "p>"
 msgstr ""
 "<p>Bir barkod tarayıcı ile tarayarak aşağıdaki sağlık sertifikalarını içe "
-"aktarabilirsiniz:<ul><li>Aşılamalar, sınamalar veya iyileşmeler için Avrupa "
+"aktarabilirsiniz:<ul><li>Aşılamalar, testler veya iyileşmeler için Avrupa "
 "\"Sayısal Yeşil Sertifikalar\".</li><li>Hindistan aşılama sertifikaları.</"
 "li><li>ABD ve Kanada'nın bazı bölgelerinde kullanılan SMART Sağlık Kartları."
 "</li></p>"
@@ -1479,7 +1479,7 @@ msgstr "İyileşme"
 #: app/HealthCertificateRecovery.qml:48
 #, kde-format
 msgid "Positive test:"
-msgstr "Pozitif sınama:"
+msgstr "Pozitif test:"
 
 #: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
 #: app/HealthCertificateVaccination.qml:66
@@ -1525,7 +1525,7 @@ msgstr "Verilme:"
 #: app/HealthCertificateVaccination.qml:127
 #, kde-format
 msgid "Expires:"
-msgstr "Süre Dolumu:"
+msgstr "Süre dolumu:"
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
 #: app/HealthCertificateVaccination.qml:142
@@ -1536,7 +1536,7 @@ msgstr "İmza:"
 #: app/HealthCertificateTest.qml:44
 #, kde-format
 msgid "Test"
-msgstr "Sınama"
+msgstr "Test"
 
 #: app/HealthCertificateTest.qml:49 app/HealthCertificateVaccination.qml:59
 #, kde-format
@@ -1561,7 +1561,7 @@ msgstr "Sonuç:"
 #: app/HealthCertificateTest.qml:90
 #, kde-format
 msgid "Test Center:"
-msgstr "Sınama Merkezi:"
+msgstr "Sınama merkezi:"
 
 #: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
 #, kde-format
@@ -1974,7 +1974,7 @@ msgstr "Uzaklık: %1"
 #: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Ortalama hız: %1"
 
 #: app/JourneySectionPage.qml:86
 #, kde-format

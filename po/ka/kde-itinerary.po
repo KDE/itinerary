@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-04 01:34+0000\n"
-"PO-Revision-Date: 2024-01-02 05:22+0100\n"
+"PO-Revision-Date: 2024-01-04 04:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1971,7 +1971,7 @@ msgstr "მანძილი: %1"
 #: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "საშუალო სიჩქარე: %1"
 
 #: app/JourneySectionPage.qml:86
 #, kde-format

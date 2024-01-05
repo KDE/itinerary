@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-04 01:34+0000\n"
-"PO-Revision-Date: 2024-01-02 12:30+0100\n"
+"PO-Revision-Date: 2024-01-04 10:18+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1974,7 +1974,7 @@ msgstr "Afstand: %1"
 #: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Gemiddelde snelheid: %1"
 
 #: app/JourneySectionPage.qml:86
 #, kde-format
