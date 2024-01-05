@@ -78,6 +78,12 @@ Kirigami.ScrollablePage {
                 return [...new Set(countries)];
             }
             initialCountry: root.initialCountry
+            onCurrentValueChanged: {
+                var loc = locationQueryModel.request.location;
+                loc.country = countryCombo.currentValue;
+                locationQueryModel.request.location = loc;
+                locationQueryModel.request.type = Location.Stop
+            }
         }
         Kirigami.SearchField {
             id: queryTextField
