@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2024-01-04 07:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
-"%100<=4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
@@ -625,12 +625,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Prihod"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternative"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Podrobnosti potovanja"
@@ -3127,12 +3127,12 @@ msgstr "Zadnje uporabljeno"
 msgid "Most often used"
 msgstr "Največkrat uporabljeno"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr "Odstrani vnos v zgodovino"
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr "Ni najdenih lokacij"
@@ -3357,28 +3357,28 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Prihod"
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Vagon:"
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "Sedež:"
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr "Razred:"
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Oblika vozila v odhodu"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Oblika vozila v prihodu"

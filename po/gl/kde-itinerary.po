@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
-"PO-Revision-Date: 2024-01-03 07:58+0100\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"PO-Revision-Date: 2024-01-05 10:43+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -619,12 +619,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalles do traxecto"
@@ -1973,7 +1973,7 @@ msgstr "Distancia: %1"
 #: app/JourneySectionPage.qml:79
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Velocidade media: %1"
 
 #: app/JourneySectionPage.qml:86
 #, kde-format
@@ -3126,12 +3126,12 @@ msgstr "Uso máis recente"
 msgid "Most often used"
 msgstr "Uso máis habitual"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr "Retirar a entrada do historial"
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr "Non se atoparon localizacións."
@@ -3356,28 +3356,28 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Chegada"
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Coche:"
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "Asento:"
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr "Clase:"
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Disposición do vehículo de saída"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Disposición do vehículo de chegada"

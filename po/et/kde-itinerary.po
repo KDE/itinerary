@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2020-05-04 10:51+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -678,12 +678,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatiivid"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Teekonna üksikasjad"
@@ -3326,12 +3326,12 @@ msgstr ""
 msgid "Most often used"
 msgstr ""
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr ""
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr ""
@@ -3581,30 +3581,30 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Saabumine"
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, fuzzy, kde-format
 #| msgid "Coach:"
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Vagun:"
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "Koht:"
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr "Klass:"
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Departure Vehicle Layout"
 msgstr "Sõiduki struktuur"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Arrival Vehicle Layout"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2023-12-30 17:19+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -612,12 +612,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "替代選擇"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程詳細資料"
@@ -3097,12 +3097,12 @@ msgstr "最近使用"
 msgid "Most often used"
 msgstr "最常使用"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr "移除歷史紀錄條目"
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr "找不到位置"
@@ -3327,28 +3327,28 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "車廂："
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "座位："
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr ""
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "出發交通工具內部佈局"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "抵達交通工具內部佈局"

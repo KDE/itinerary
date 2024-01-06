@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2023-12-30 13:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -614,12 +614,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "改签"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程详情"
@@ -3096,12 +3096,12 @@ msgstr ""
 msgid "Most often used"
 msgstr ""
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr ""
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr ""
@@ -3326,28 +3326,28 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr ""
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "车厢："
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "座号："
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr "座位等级："
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "离站列车编组"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "到站列车编组"

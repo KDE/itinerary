@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-04 01:34+0000\n"
+"POT-Creation-Date: 2024-01-06 01:33+0000\n"
 "PO-Revision-Date: 2024-01-04 04:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -618,12 +618,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:307
+#: app/BusPage.qml:212 app/TrainPage.qml:312
 #, kde-format
 msgid "Alternatives"
 msgstr "ალტერნატივები"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:312
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "მგზავრობის დეტალები"
@@ -3120,12 +3120,12 @@ msgstr "ყველაზე ცოტა ხნის წინ გამო�
 msgid "Most often used"
 msgstr "ყველაზე ხშირად გამოყენებული"
 
-#: app/StopPickerPage.qml:127
+#: app/StopPickerPage.qml:133
 #, kde-format
 msgid "Remove history entry"
 msgstr "ისტორიის ჩანწერის წაშლა"
 
-#: app/StopPickerPage.qml:176
+#: app/StopPickerPage.qml:182
 #, kde-format
 msgid "No locations found"
 msgstr "მდებარეობები ვერ მოიძებნა"
@@ -3350,28 +3350,28 @@ msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "ჩამოსვლა"
 
-#: app/TrainPage.qml:248
+#: app/TrainPage.qml:250
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "გამძღოლი:"
 
-#: app/TrainPage.qml:257
+#: app/TrainPage.qml:259
 #, kde-format
 msgid "Seat:"
 msgstr "სავარძელი:"
 
-#: app/TrainPage.qml:266
+#: app/TrainPage.qml:268
 #, kde-format
 msgid "Class:"
 msgstr "კლასი:"
 
-#: app/TrainPage.qml:275
+#: app/TrainPage.qml:277
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "გასვლის მანქანის განლაგება"
 
-#: app/TrainPage.qml:282
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "ჩამოსვლის მანქანის განლაგება"
