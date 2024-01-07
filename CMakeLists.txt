@@ -71,7 +71,6 @@ else()
     find_package(SharedMimeInfo 1.0 REQUIRED)
 endif()
 
-add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 ecm_set_disabled_deprecation_versions(QT 5.15.2
      KF 5.102.0
     )
