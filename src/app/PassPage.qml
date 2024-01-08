@@ -36,6 +36,7 @@ Kirigami.ScrollablePage {
             roleValue: PassManager.ProgramMembership
             QQC2.ItemDelegate {
                 highlighted: false
+                text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
                     icon.name: "meeting-attending"
@@ -55,6 +56,7 @@ Kirigami.ScrollablePage {
                         passId: model.passId,
                     });
                 }
+                Accessible.onPressAction: clicked()
             }
         }
         Models.DelegateChoice {
@@ -63,6 +65,7 @@ Kirigami.ScrollablePage {
                 readonly property string pkPassId: PkPassManager.passId(model.pass)
                 readonly property var pkPass: PkPassManager.pass(pkPassId)
                 highlighted: false
+                text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
                     title: pkPass.description
@@ -77,12 +80,14 @@ Kirigami.ScrollablePage {
                         genericPassId: model.passId,
                     });
                 }
+                Accessible.onPressAction: click()
             }
         }
         Models.DelegateChoice {
             roleValue: PassManager.Ticket
             QQC2.ItemDelegate {
                 highlighted: false
+                text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
                     icon.name: "bookmarks"
@@ -102,6 +107,7 @@ Kirigami.ScrollablePage {
                         passId: model.passId,
                     });
                 }
+                Accessible.onPressAction: click()
             }
         }
     }
