@@ -303,6 +303,7 @@ if (ANDROID)
         mail-message-new
         media-playback-playing
         map-globe
+        map-gnomonic
         map-symbolic
         meeting-attending
         notifications
