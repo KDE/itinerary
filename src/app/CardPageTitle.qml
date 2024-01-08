@@ -30,6 +30,7 @@ ColumnLayout {
 
         Layout.fillWidth: true
         Layout.alignment: Qt.AlignHCenter
+        Accessible.ignored: true
     }
 
     Kirigami.Heading {
