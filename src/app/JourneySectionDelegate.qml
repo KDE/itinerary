@@ -230,29 +230,19 @@ FormCard.AbstractFormDelegate {
                 font.italic: true
                 clip: implicitHeight > height
                 onLinkActivated: Qt.openUrlExternally(link)
-
-                Kirigami.OverlaySheet {
-                    id: moreNotesSheet
-                    header: Kirigami.Heading {
-                        text: journeyTitleLabel.text
-                    }
-
-                    QQC2.Label {
-                        Layout.fillWidth: true
-                        text: modelData.notes.join("<br/>")
-                        textFormat: Text.RichText
-                        wrapMode: Text.Wrap
-                        onLinkActivated: Qt.openUrlExternally(link)
-                    }
-                }
             }
             Kirigami.LinkButton {
                 Layout.fillHeight: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
-                text: i18nc("@action:button", "Show More…")
-                visible: notesLabel.implicitHeight > notesLabel.height
+                text: notesLabel.maximumLineCount === 3
+                        ? i18nc("@action:button", "Show More…")
+                        : i18nc("@action:button", "Show Less")
                 onClicked: {
-                    moreNotesSheet.open();
+                    if (notesLabel.maximumLineCount === 3) {
+                        notesLabel.maximumLineCount = -1
+                    } else {
+                        notesLabel.maximumLineCount = 3
+                    }
                 }
             }
         }
