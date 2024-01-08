@@ -81,5 +81,5 @@ FormCard.FormCard {
 
 
     Accessible.name: i18n("Weather Forecast")
-    Accessible.onPressAction: root.clicked()
+    Accessible.onPressAction: content.clicked()
 }
