@@ -26,6 +26,8 @@ Kirigami.Page {
     property alias showProgress: sectionModel.showProgress
     default property alias _children: root.children
 
+    Kirigami.ColumnView.preventStealing: view.currentItem.objectName === "sectionMap"
+
     padding: 0
     header: ColumnLayout {
         spacing: 0
@@ -150,6 +152,9 @@ Kirigami.Page {
             Layout.fillWidth: true
             Item {
                 id: listPage
+
+                objectName: "sectionList"
+
                 QQC2.ScrollView{
                     id: scrollview
                     anchors.fill: parent
@@ -202,6 +207,9 @@ Kirigami.Page {
             }
             Item {
                 id: mapPage
+
+                objectName: "sectionMap"
+
                 MapView {
                     id: map
                     anchors.fill: parent
