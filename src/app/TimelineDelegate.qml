@@ -41,6 +41,8 @@ FormCard.FormCard {
     }
     property alias arrival: _controller.arrival
     property alias departure: _controller.departure
+    property alias contentLeftPadding: content.leftPadding
+    property alias contentRightPadding: content.rightPadding
 
     function showDetails(detailsComponent) {
         while (applicationWindow().pageStack.depth > 1) {

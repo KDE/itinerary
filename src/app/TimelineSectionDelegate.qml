@@ -9,20 +9,59 @@ import org.kde.kirigamiaddons.formcard as FormCard
 import QtQuick.Layouts
 import org.kde.itinerary
 
-QQC2.Pane {
+// Use similar layout of FormCard but without background
+Item {
+    id: root
+
     property alias day: _controller.date
     property QtObject controller: TimelineSectionDelegateController {
         id: _controller;
         timelineModel: TimelineModel
     }
 
-    width: ListView.view.width
+    readonly property bool cardWidthRestricted: root.width > root.maximumWidth
+    property real maximumWidth: Kirigami.Units.gridUnit * 30
+    property real padding: Kirigami.Units.largeSpacing
+    property real verticalPadding: padding
+    property real horizontalPadding: padding
+    property real topPadding: verticalPadding
+    property real bottomPadding: verticalPadding
+    property real leftPadding: horizontalPadding
+    property real rightPadding: horizontalPadding
 
-    contentItem: RowLayout {
-        Item{ Layout.fillWidth: true }
+    width: ListView.view.width
+    implicitHeight: topPadding + bottomPadding + internalColumn.implicitHeight + rectangle.borderWidth * 2
+
+    Rectangle {
+        id: rectangle
+        readonly property real borderWidth: 0
+
+        color: Kirigami.Theme.backgroundColor
+
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+
+            leftMargin: root.cardWidthRestricted ? Math.round((root.width - root.maximumWidth) / 2) : -1
+            rightMargin: root.cardWidthRestricted ? Math.round((root.width - root.maximumWidth) / 2) : -1
+        }
+
         RowLayout{
-            Layout.margins: Kirigami.Units.smallSpacing
-            Layout.maximumWidth: Kirigami.Units.gridUnit * 29
+            id: internalColumn
+
+            spacing: Kirigami.Units.smallSpacing
+
+            // add 1 to margins to account for the border (so content doesn't overlap it)
+            anchors {
+                fill: parent
+                leftMargin: root.leftPadding + rectangle.borderWidth
+                rightMargin: root.rightPadding + rectangle.borderWidth
+                topMargin: root.topPadding + rectangle.borderWidth
+                bottomMargin: root.bottomPadding + rectangle.borderWidth
+            }
+
             Kirigami.Icon {
                 source: "view-calendar-day"
                 color: controller.isHoliday ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.textColor
@@ -31,6 +70,7 @@ QQC2.Pane {
                 implicitWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.alignment: Qt.AlignTop
             }
+
             ColumnLayout {
                 Layout.fillWidth: true
                 spacing: 0
@@ -52,7 +92,6 @@ QQC2.Pane {
                 }
             }
         }
-        Item{ Layout.fillWidth: true }
     }
 
     Accessible.name: titleLabel.text

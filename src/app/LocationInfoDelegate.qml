@@ -20,6 +20,9 @@ FormCard.FormCard {
     property var locationInfo
 
     FormCard.AbstractFormDelegate {
+        horizontalPadding: Kirigami.Units.largeSpacing
+        verticalPadding: Kirigami.Units.largeSpacing
+
         background: Rectangle {
             id: headerBackground
             color: Kirigami.Theme.neutralBackgroundColor
@@ -29,8 +32,7 @@ FormCard.FormCard {
 
         contentItem: RowLayout {
             id: headerLayout
-            anchors.fill: parent
-            anchors.margins: Kirigami.Units.largeSpacing
+            spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Icon {
                 source: "documentinfo"
@@ -48,7 +50,10 @@ FormCard.FormCard {
     }
 
     FormCard.AbstractFormDelegate {
-        background: Item {}
+        background: null
+        horizontalPadding: Kirigami.Units.largeSpacing
+        verticalPadding: Kirigami.Units.largeSpacing
+
         contentItem: Column {
             id: topLayout
             spacing: Kirigami.Units.smallSpacing

@@ -20,17 +20,23 @@ FormCard.FormCard {
     visible: weatherForecast.valid
     FormCard.AbstractFormDelegate {
         id: content
-        onClicked: if (weatherForecast.range > 1) { applicationWindow().pageStack.push(weatherForecastPage, {weatherInformation: root.weatherInformation}); }
-        leftPadding: Kirigami.Units.largeSpacing
-        rightPadding: Kirigami.Units.largeSpacing
+        onClicked: if (weatherForecast.range > 1) {
+            applicationWindow().pageStack.push(weatherForecastPage, {
+                weatherInformation: root.weatherInformation,
+            });
+        }
+
+        // smaller than the other card spacing du to the icon being bigger
+        horizontalPadding: Kirigami.Units.smallSpacing
+        verticalPadding: Kirigami.Units.largeSpacing
+
         contentItem: RowLayout {
-            spacing: 0
+            spacing: Kirigami.Units.smallSpacing
 
             Kirigami.Icon {
                 source: weatherForecast.symbolIconName
                 Layout.preferredHeight: Kirigami.Units.iconSizes.medium
                 Layout.preferredWidth: Kirigami.Units.iconSizes.medium
-                Layout.rightMargin: Kirigami.Units.largeSpacing
             }
 
             Kirigami.Icon {

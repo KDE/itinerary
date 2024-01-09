@@ -13,9 +13,13 @@ import org.kde.itinerary
 
 TimelineDelegate {
     id: root
+
     property bool expanded: false
     property var journeySection: root.controller.journey
+
+    contentLeftPadding: 0
     headerIconSource: departure.route.line.mode == Line.Unknown ? "qrc:///images/bus.svg" : PublicTransport.lineModeIcon(departure.route.line.mode)
+
     Item {
         JourneySectionModel {
             id: sectionModel

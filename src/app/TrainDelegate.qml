@@ -13,10 +13,14 @@ TimelineDelegate {
     id: root
     property bool expanded: false
     property var journeySection: root.controller.journey
+
+    contentLeftPadding: 0
+
     headerIcon {
         source: departure.route.line.mode == Line.Unknown ? "qrc:///images/train.svg" : PublicTransport.lineIcon(departure.route.line)
         isMask: !departure.route.line.hasLogo && !departure.route.line.hasModeLogo
     }
+
     Item {
         JourneySectionModel {
             id: sectionModel
