@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-09 01:33+0000\n"
 "PO-Revision-Date: 2024-01-04 07:01+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2311,7 +2311,7 @@ msgstr "Datoteke itinerarja KDE (* .itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Izvoz podatkov itinerarja"
 
-#: app/main.qml:169 app/PassPage.qml:126
+#: app/main.qml:169 app/PassPage.qml:132
 #, kde-format
 msgid "Import..."
 msgstr "Uvozi..."
@@ -2557,19 +2557,19 @@ msgstr "Vozovnice in programi"
 msgid "Add Program Membership..."
 msgstr "Dodaj članstvo v programu..."
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:49
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:95
+#: app/PassPage.qml:100
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:124
+#: app/PassPage.qml:130
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Uvozi bonus ali kartice programov zvestobe ali pavšalne vozovnice."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-09 01:33+0000\n"
 "PO-Revision-Date: 2024-01-04 04:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2301,7 +2301,7 @@ msgstr "KDE Itinerary-ის ფაილები (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "მოგზაურობის ინფორმაციის გატანა"
 
-#: app/main.qml:169 app/PassPage.qml:126
+#: app/main.qml:169 app/PassPage.qml:132
 #, kde-format
 msgid "Import..."
 msgstr "შემოტანა..."
@@ -2547,19 +2547,19 @@ msgstr "ბილეთები და პროგრამები"
 msgid "Add Program Membership..."
 msgstr "პროგრამის წევრობის დამატება..."
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:49
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:95
+#: app/PassPage.qml:100
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:124
+#: app/PassPage.qml:130
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""

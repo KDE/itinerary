@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-09 01:33+0000\n"
 "PO-Revision-Date: 2024-01-04 10:11+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2307,7 +2307,7 @@ msgstr "KDE Itinerary fitxategiak (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Esportatu ibilbidearen datuak"
 
-#: app/main.qml:169 app/PassPage.qml:126
+#: app/main.qml:169 app/PassPage.qml:132
 #, kde-format
 msgid "Import..."
 msgstr "Inportatu..."
@@ -2553,19 +2553,19 @@ msgstr "Txartelak eta programak"
 msgid "Add Program Membership..."
 msgstr "Gehitu programa partaidetza..."
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:49
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:95
+#: app/PassPage.qml:100
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:124
+#: app/PassPage.qml:130
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""

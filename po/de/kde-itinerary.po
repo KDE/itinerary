@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-06 01:33+0000\n"
+"POT-Creation-Date: 2024-01-09 01:33+0000\n"
 "PO-Revision-Date: 2023-07-09 00:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2351,7 +2351,7 @@ msgstr "KDE-Itinerary-Dateien (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Reiseplan exportieren"
 
-#: app/main.qml:169 app/PassPage.qml:126
+#: app/main.qml:169 app/PassPage.qml:132
 #, kde-format
 msgid "Import..."
 msgstr "Importieren ..."
@@ -2603,13 +2603,13 @@ msgstr "Pässe und Programme"
 msgid "Add Program Membership..."
 msgstr "Programmmitgliedschaft"
 
-#: app/PassPage.qml:48
+#: app/PassPage.qml:49
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:95
+#: app/PassPage.qml:100
 #, fuzzy, kde-format
 #| msgctxt "name - number"
 #| msgid "%1 - %2"
@@ -2617,7 +2617,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:124
+#: app/PassPage.qml:130
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Bonus- und Rabattprogrammkarten oder Pauschalpässe importieren."
