@@ -81,6 +81,7 @@ FormCard.FormCardPage {
                         readonly property var country: Country.fromAlpha2(modelData)
                         textFormat: Text.RichText
                         text: '<span style="font-family: emoji">' + country.emojiFlag + "</span> " + country.name
+                        Accessible.name: country.name
                     }
                 }
             }

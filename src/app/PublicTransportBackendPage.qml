@@ -97,6 +97,17 @@ Kirigami.ScrollablePage {
                 }
             }
             width: ListView.view.width
+            Accessible.name: {
+                switch (section) {
+                    case "":
+                    case "UN":
+                        return i18n("Global")
+                    case "EU":
+                        return i18n("European Union");
+                    default:
+                        return Country.fromAlpha2(section).name;
+                }
+            }
         }
         section.criteria: ViewSection.FullString
     }
