@@ -650,6 +650,10 @@ QList<QGeoCoordinate>PublicTransport::pathToGeoCoordinates(const KPublicTranspor
     if (jny.path().isEmpty()) {
         result.push_back({jny.departure().stopPoint().latitude(), jny.departure().stopPoint().longitude()});
         for (const auto &s : jny.intermediateStops()) {
+            if (!s.stopPoint().hasCoordinate()) {
+                continue;
+            }
+
             result.push_back({s.stopPoint().latitude(), s.stopPoint().longitude()});
         }
         result.push_back({jny.arrival().stopPoint().latitude(), jny.arrival().stopPoint().longitude()});
