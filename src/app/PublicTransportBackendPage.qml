@@ -26,9 +26,11 @@ Kirigami.ScrollablePage {
     Component {
         id: backendDelegate
         QQC2.ItemDelegate {
+            id: delegate
             highlighted: false
             enabled: model.itemEnabled
             width: ListView.view.width
+            text: model.name
 
             contentItem: Item {
                 anchors.margins: Kirigami.Units.largeSpacing
@@ -43,6 +45,7 @@ Kirigami.ScrollablePage {
                     anchors.rightMargin: Kirigami.Units.largeSpacing
                     // try to retain trailing abbreviations when we have to elide
                     elide: text.endsWith(")") ? Text.ElideMiddle : Text.ElideRight
+                    Accessible.ignored: true
                 }
                 Kirigami.Icon {
                     id: securityIcon
@@ -75,6 +78,7 @@ Kirigami.ScrollablePage {
                 toggle.toggle(); // does not trigger the signal handler for toggled...
                 model.backendEnabled = toggle.checked;
             }
+            Accessible.onToggleAction: delegate.clicked()
         }
     }
 
