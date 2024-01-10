@@ -21,7 +21,7 @@ Dependencies:
     'libraries/kirigami-addons': '@latest-kf6'
     'pim/kpkpass': '@latest-kf6'
     'pim/kitinerary': '@latest-kf6'
-    'pim/khealthcertificate': '@latest'
+    'pim/khealthcertificate': '@latest-kf6'
     'third-party/libquotient': '@latest'
 
 - 'on': ['Linux', 'FreeBSD']
