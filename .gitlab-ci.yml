@@ -7,9 +7,6 @@ include:
       - /gitlab-templates/android.yml
       - /gitlab-templates/linux.yml
       - /gitlab-templates/freebsd.yml
-      - /gitlab-templates/linux-qt6.yml
-      - /gitlab-templates/freebsd-qt6.yml
-      - /gitlab-templates/android-qt6.yml
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/flatpak.yml
       - /gitlab-templates/craft-android-apks.yml
