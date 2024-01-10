@@ -122,10 +122,13 @@ Kirigami.ScrollablePage {
     Component {
         id: historyDelegate
         Kirigami.SwipeListItem {
+            id: delegate
             readonly property var sourceModel: ListView.view.model
+            text: model.location.name
             contentItem: QQC2.Label {
                 text: model.location.name
                 elide: Text.ElideRight
+                Accessible.ignored: true
             }
             actions: [
                 Kirigami.Action {
@@ -141,12 +144,15 @@ Kirigami.ScrollablePage {
                 locationHistoryModel.addLocation(model.location);
                 applicationWindow().pageStack.goBack();
             }
+            Accessible.onPressAction: delegate.clicked()
         }
     }
 
     Component {
         id: queryResultDelegate
         QQC2.ItemDelegate {
+            id: delegate
+            text: model.location.name
             width: ListView.view.width
             contentItem: Kirigami.TitleSubtitle {
                 title: model.location.name
@@ -157,6 +163,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.goBack();
                 queryTextField.clear();
             }
+            Accessible.onPressAction: delegate.clicked()
         }
     }
 

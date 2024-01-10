@@ -44,7 +44,10 @@ ColumnLayout {
             }
 
             Layout.fillWidth: true
+            Accessible.ignored: true
         }
+
+        Accessible.onPressAction: root.clicked()
     }
 }
 
