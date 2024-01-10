@@ -89,6 +89,7 @@ Kirigami.Page {
             checkable: true
             checked: camera.torchMode == Camera.TorchOn
             visible: camera.isTorchModeSupported
+            enabled: camera.error == Camera.NoError
             onTriggered: camera.torchMode = (camera.torchMode == Camera.TorchOn ? Camera.TorchOff : Camera.TorchOn)
         }
     }
