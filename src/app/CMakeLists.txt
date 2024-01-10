@@ -306,6 +306,7 @@ if (ANDROID)
         map-gnomonic
         map-symbolic
         meeting-attending
+        message-rfc822
         notifications
         question
         raindrop
