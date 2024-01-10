@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2024-01-04 09:36+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -385,7 +385,7 @@ msgstr "Alventempo: %1"
 msgid "Edit Boat Trip"
 msgstr "Redakti Boatvojaĝon"
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:133
+#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Boato"
@@ -1117,7 +1117,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "Alventempo devas esti post la forirtempo."
 
-#: app/FlightPage.qml:15 app/StatisticsPage.qml:91
+#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Flugo"
@@ -1815,7 +1815,7 @@ msgstr "Metroo"
 msgid "Tramway"
 msgstr "Tramo"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:119
+#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Buso"
@@ -2695,7 +2695,7 @@ msgstr "Luita aŭto"
 msgid "Bicycle"
 msgstr "Biciklo"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Aŭto"
@@ -2705,14 +2705,20 @@ msgstr "Aŭto"
 msgid "Public Transport Information Sources"
 msgstr "Publikaj Transportaj Informofontoj"
 
-#: app/PublicTransportBackendPage.qml:91
+#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
 #, kde-format
 msgid "Global"
 msgstr "Tutmonda"
 
-#: app/PublicTransportBackendPage.qml:93
+#: app/PublicTransportBackendPage.qml:97
 #, kde-format
 msgid "🇪🇺 European Union"
+msgstr "🇪🇺 Eŭropa Unio"
+
+#: app/PublicTransportBackendPage.qml:110
+#, fuzzy, kde-format
+#| msgid "🇪🇺 European Union"
+msgid "European Union"
 msgstr "🇪🇺 Eŭropa Unio"
 
 #: app/ReservationDocumentsCard.qml:19
@@ -3092,7 +3098,7 @@ msgstr "Jaro"
 msgid "Total"
 msgstr "Entute"
 
-#: app/StatisticsPage.qml:105 app/TrainEditor.qml:87
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
 #, kde-format
 msgid "Train"
 msgstr "Trajno"

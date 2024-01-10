@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -392,7 +392,7 @@ msgstr ""
 msgid "Edit Boat Trip"
 msgstr ""
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:133
+#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr ""
@@ -1134,7 +1134,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightPage.qml:15 app/StatisticsPage.qml:91
+#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr ""
@@ -1834,7 +1834,7 @@ msgstr "مترو انفاق"
 msgid "Tramway"
 msgstr ""
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:119
+#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "حافلة"
@@ -2720,7 +2720,7 @@ msgstr ""
 msgid "Bicycle"
 msgstr "درّاجة هوائيّة"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
 #, fuzzy, kde-format
 msgid "Car"
 msgstr "سيارة"
@@ -2730,14 +2730,19 @@ msgstr "سيارة"
 msgid "Public Transport Information Sources"
 msgstr ""
 
-#: app/PublicTransportBackendPage.qml:91
+#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
 #, kde-format
 msgid "Global"
 msgstr ""
 
-#: app/PublicTransportBackendPage.qml:93
+#: app/PublicTransportBackendPage.qml:97
 #, kde-format
 msgid "🇪🇺 European Union"
+msgstr ""
+
+#: app/PublicTransportBackendPage.qml:110
+#, kde-format
+msgid "European Union"
 msgstr ""
 
 #: app/ReservationDocumentsCard.qml:19
@@ -3102,7 +3107,7 @@ msgstr "السنة"
 msgid "Total"
 msgstr "المجموع"
 
-#: app/StatisticsPage.qml:105 app/TrainEditor.qml:87
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
 #, kde-format
 msgid "Train"
 msgstr "قطار"

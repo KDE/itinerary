@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2023-06-17 12:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -397,7 +397,7 @@ msgstr "Arrival time: %1"
 msgid "Edit Boat Trip"
 msgstr "Boat trips"
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:133
+#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Boat"
@@ -1150,7 +1150,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/FlightPage.qml:15 app/StatisticsPage.qml:91
+#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Flight"
@@ -1854,7 +1854,7 @@ msgstr "Subway"
 msgid "Tramway"
 msgstr "Tramway"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:119
+#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Bus"
@@ -2757,7 +2757,7 @@ msgstr "Rented car"
 msgid "Bicycle"
 msgstr "Bicycle"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Car"
@@ -2767,14 +2767,20 @@ msgstr "Car"
 msgid "Public Transport Information Sources"
 msgstr "Public Transport Information Sources"
 
-#: app/PublicTransportBackendPage.qml:91
+#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
 #, kde-format
 msgid "Global"
 msgstr "Global"
 
-#: app/PublicTransportBackendPage.qml:93
+#: app/PublicTransportBackendPage.qml:97
 #, kde-format
 msgid "🇪🇺 European Union"
+msgstr "🇪🇺 European Union"
+
+#: app/PublicTransportBackendPage.qml:110
+#, fuzzy, kde-format
+#| msgid "🇪🇺 European Union"
+msgid "European Union"
 msgstr "🇪🇺 European Union"
 
 #: app/ReservationDocumentsCard.qml:19
@@ -3159,7 +3165,7 @@ msgstr "Year"
 msgid "Total"
 msgstr "Total"
 
-#: app/StatisticsPage.qml:105 app/TrainEditor.qml:87
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
 #, kde-format
 msgid "Train"
 msgstr "Train"

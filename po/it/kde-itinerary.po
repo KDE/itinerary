@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-09 01:33+0000\n"
+"POT-Creation-Date: 2024-01-10 01:34+0000\n"
 "PO-Revision-Date: 2024-01-04 15:47+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -385,7 +385,7 @@ msgstr "Ora di arrivo: %1"
 msgid "Edit Boat Trip"
 msgstr "Modifica viaggio in nave"
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:133
+#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Nave"
@@ -1117,7 +1117,7 @@ msgctxt "flight arrival"
 msgid "Arrival time has to be after the departure time."
 msgstr "L'orario di arrivo deve essere successivo all'orario di partenza."
 
-#: app/FlightPage.qml:15 app/StatisticsPage.qml:91
+#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
 #, kde-format
 msgid "Flight"
 msgstr "Volo"
@@ -1816,7 +1816,7 @@ msgstr "Metropolitana"
 msgid "Tramway"
 msgstr "Tranvia"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:119
+#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autobus"
@@ -2699,7 +2699,7 @@ msgstr "Auto noleggiata"
 msgid "Bicycle"
 msgstr "Bicicletta"
 
-#: app/publictransport.cpp:266 app/StatisticsPage.qml:147
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
 #, kde-format
 msgid "Car"
 msgstr "Auto"
@@ -2709,14 +2709,20 @@ msgstr "Auto"
 msgid "Public Transport Information Sources"
 msgstr "Fonti di informazioni per il trasporto pubblico"
 
-#: app/PublicTransportBackendPage.qml:91
+#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
 #, kde-format
 msgid "Global"
 msgstr "Globale"
 
-#: app/PublicTransportBackendPage.qml:93
+#: app/PublicTransportBackendPage.qml:97
 #, kde-format
 msgid "🇪🇺 European Union"
+msgstr "🇪🇺 Unione Europea"
+
+#: app/PublicTransportBackendPage.qml:110
+#, fuzzy, kde-format
+#| msgid "🇪🇺 European Union"
+msgid "European Union"
 msgstr "🇪🇺 Unione Europea"
 
 #: app/ReservationDocumentsCard.qml:19
@@ -3102,7 +3108,7 @@ msgstr "Anno"
 msgid "Total"
 msgstr "Totale"
 
-#: app/StatisticsPage.qml:105 app/TrainEditor.qml:87
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
 #, kde-format
 msgid "Train"
 msgstr "Treno"
