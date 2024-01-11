@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2024-01-04 04:01+0100\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"PO-Revision-Date: 2024-01-10 05:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1952,33 +1952,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "მანქანით %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "მეტის ჩვენება…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "მიმართულება: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "მანძილი: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "საშუალო სიჩქარე: %1"
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2718,10 +2718,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 ევროკავშირი"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 ევროკავშირი"
+msgstr "ევროკავშირი"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3126,12 +3125,12 @@ msgstr "ყველაზე ცოტა ხნის წინ გამო�
 msgid "Most often used"
 msgstr "ყველაზე ხშირად გამოყენებული"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "ისტორიის ჩანწერის წაშლა"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "მდებარეობები ვერ მოიძებნა"

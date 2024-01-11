@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1962,33 +1962,33 @@ msgstr "%1 %2(%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 운전(%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "더 보기…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "방향: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "거리: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -3134,12 +3134,12 @@ msgstr "최근 사용"
 msgid "Most often used"
 msgstr "자주 사용함"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "과거 기록 항목 삭제"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "위치를 찾을 수 없음"

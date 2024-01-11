@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2024-01-04 09:19+0200\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"PO-Revision-Date: 2024-01-10 13:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1965,33 +1965,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проїзд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Показати більше…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "Напрям: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "Відстань: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Середня швидкість: %1"
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2733,10 +2733,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Європейський Союз"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Європейський Союз"
+msgstr "Європейський Союз"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3148,12 +3147,12 @@ msgstr "Нещодавно використані"
 msgid "Most often used"
 msgstr "Найчастіше використовувані"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "Вилучити запис журналу"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "Не знайдено жодного місця"

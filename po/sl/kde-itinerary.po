@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2024-01-04 07:01+0100\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"PO-Revision-Date: 2024-01-10 06:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #, kde-format
@@ -1961,33 +1961,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Vožnja %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Prikaži več…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "Smer: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "Razdalja: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Povprečna hitrost: %1"
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2726,10 +2726,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Evropska unija"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Evropska unija"
+msgstr "Evropska unija"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3133,12 +3132,12 @@ msgstr "Zadnje uporabljeno"
 msgid "Most often used"
 msgstr "Največkrat uporabljeno"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "Odstrani vnos v zgodovino"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "Ni najdenih lokacij"

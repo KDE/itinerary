@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -2082,34 +2082,34 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проезд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "Направление: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "Расстояние: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1 г"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -3321,12 +3321,12 @@ msgstr "Последние использованные"
 msgid "Most often used"
 msgstr "Наиболее часто используемые"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "Удалить запись журнала"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "Расположения не найдены"

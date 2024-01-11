@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2024-01-04 16:17+0300\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"PO-Revision-Date: 2024-01-10 15:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1955,33 +1955,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 Sür (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Daha Fazla Göster…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "Yön: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "Uzaklık: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Ortalama hız: %1"
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2721,10 +2721,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Avrupa Birliği"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Avrupa Birliği"
+msgstr "Avrupa Birliği"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3127,12 +3126,12 @@ msgstr "En son kullanılan"
 msgid "Most often used"
 msgstr "En Sık Kullanılan"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "Geçmiş girdisini kaldır"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "Konum bulunamadı"

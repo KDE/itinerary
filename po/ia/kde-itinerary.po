@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
-"PO-Revision-Date: 2024-01-05 17:17+0100\n"
+"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"PO-Revision-Date: 2024-01-10 10:31+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1954,33 +1954,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Drive %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:125
+#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Monstra  plus…"
 
-#: app/JourneySectionPage.qml:64
+#: app/JourneySectionPage.qml:66
 #, kde-format
 msgid "Direction: %1"
 msgstr "Direction: %1"
 
-#: app/JourneySectionPage.qml:72
+#: app/JourneySectionPage.qml:74
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distantia:: %1"
 
-#: app/JourneySectionPage.qml:79
+#: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Velocitate medie: %1"
 
-#: app/JourneySectionPage.qml:86
+#: app/JourneySectionPage.qml:88
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:279
+#: app/JourneySectionPage.qml:287
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2718,10 +2718,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Union Europee"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Union Europee"
+msgstr "Union Europee"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3128,12 +3127,12 @@ msgstr "Plus recentemente usate"
 msgid "Most often used"
 msgstr "Plus soventemente usate"
 
-#: app/StopPickerPage.qml:133
+#: app/StopPickerPage.qml:136
 #, kde-format
 msgid "Remove history entry"
 msgstr "Remove entrata de chronologia"
 
-#: app/StopPickerPage.qml:182
+#: app/StopPickerPage.qml:189
 #, kde-format
 msgid "No locations found"
 msgstr "Nulle location trovate"
