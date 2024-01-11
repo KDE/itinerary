@@ -284,6 +284,7 @@ if (ANDROID)
         edit-download
         edit-paste
         edit-rename
+        exchange-positions
         emblem-shared-symbolic
         export-symbolic
         flag

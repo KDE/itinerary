@@ -92,25 +92,56 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         Layout.topMargin: Kirigami.Units.largeSpacing
 
-        FormCard.FormButtonDelegate {
-            id: fromButton
+        RowLayout {
+            Layout.fillWidth: true
 
-            text: i18nc("departure train station", "From:")
-            description: departureStop ? departureStop.name : i18nc("departure train station", "Select Departure Stop")
-            onClicked: applicationWindow().pageStack.push(departurePicker)
-        }
+            spacing: 0
 
-        FormCard.FormDelegateSeparator {
-            below: fromButton
-            above: toButton
-        }
+            ColumnLayout {
+                Layout.fillWidth: true
 
-        FormCard.FormButtonDelegate {
-            id: toButton
+                spacing: 0
 
-            text: i18nc("arrival train station", "To:")
-            description: arrivalStop ? arrivalStop.name : i18nc("arrival train station", "Select Arrival Stop")
-            onClicked: applicationWindow().pageStack.push(arrivalPicker)
+                FormCard.FormButtonDelegate {
+                    id: fromButton
+
+                    text: i18nc("departure train station", "From:")
+                    description: departureStop ? departureStop.name : i18nc("departure train station", "Select Departure Stop")
+                    onClicked: applicationWindow().pageStack.push(departurePicker)
+                }
+
+                FormCard.FormDelegateSeparator {
+                    below: fromButton
+                    above: toButton
+                }
+
+                FormCard.FormButtonDelegate {
+                    id: toButton
+
+                    text: i18nc("arrival train station", "To:")
+                    description: arrivalStop ? arrivalStop.name : i18nc("arrival train station", "Select Arrival Stop")
+                    onClicked: applicationWindow().pageStack.push(arrivalPicker)
+                }
+            }
+
+            ColumnLayout {
+                Layout.fillHeight: true
+
+                spacing: 0
+
+                QQC2.ToolButton {
+                    Layout.alignment: Qt.AlignVCenter
+                    icon.name: "exchange-positions"
+                    text: i18nc("Swap departure and arrival station", "Swap")
+                    display: QQC2.AbstractButton.IconOnly
+
+                    onClicked: {
+                        let a = departureStop
+                        departureStop = arrivalStop
+                        arrivalStop = a
+                    }
+                }
+            }
         }
 
         FormCard.FormDelegateSeparator {
