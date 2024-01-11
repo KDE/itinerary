@@ -647,7 +647,9 @@ bool PublicTransport::isSameStopoverForLayout(const KPublicTransport::Stopover &
 QList<QGeoCoordinate>PublicTransport::pathToGeoCoordinates(const KPublicTransport::JourneySection &jny)
 {
     QList<QGeoCoordinate> result;
-    if (jny.path().isEmpty()) {
+
+    const auto path = jny.path();
+    if (path.isEmpty()) {
         result.push_back({jny.departure().stopPoint().latitude(), jny.departure().stopPoint().longitude()});
         for (const auto &s : jny.intermediateStops()) {
             if (!s.stopPoint().hasCoordinate()) {
@@ -660,7 +662,7 @@ QList<QGeoCoordinate>PublicTransport::pathToGeoCoordinates(const KPublicTranspor
         return result;
     }
 
-    for (const auto &section : jny.path().sections()) {
+    for (const auto &section : path.sections()) {
         const auto path = section.path();
         for (const auto &p : path) {
             result.push_back({p.y(), p.x()});
