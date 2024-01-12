@@ -310,6 +310,7 @@ if (ANDROID)
         notifications
         question
         raindrop
+        reverse
         search
         settings-configure
         temperature-cold

@@ -90,6 +90,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormCard {
+        id: requestCard
         Layout.topMargin: Kirigami.Units.largeSpacing
 
         FormCard.FormButtonDelegate {
@@ -99,6 +100,7 @@ FormCard.FormCardPage {
             description: departureStop ? departureStop.name : i18nc("departure train station", "Select Departure Stop")
             onClicked: applicationWindow().pageStack.push(departurePicker)
         }
+
 
         FormCard.FormDelegateSeparator {
             below: fromButton
@@ -112,7 +114,22 @@ FormCard.FormCardPage {
             description: arrivalStop ? arrivalStop.name : i18nc("arrival train station", "Select Arrival Stop")
             onClicked: applicationWindow().pageStack.push(arrivalPicker)
         }
+        Item{
+            width:parent.width
+            height: 0
+            QQC2.RoundButton{
+                icon.name: "reverse"
+                y: -fromButton.height - height/2
+                z: toButton.z + 10000
+                x: fromButton.width - width/2 - Kirigami.Units.gridUnit *3
+                onClicked:{
+                    var oldDepartureStop = departureStop
+                    departureStop = arrivalStop
+                    arrivalStop = oldDepartureStop
+                }
 
+            }
+        }
         FormCard.FormDelegateSeparator {
             below: toButton
             above: timeSelector
