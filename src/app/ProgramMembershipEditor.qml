@@ -17,6 +17,7 @@ FormCard.FormCardPage {
 
     required property string passId
     required property var programMembership
+    required property var pageStack
 
     readonly property bool isValidInput: programNameEdit.text !== '' && (!validFromEdit.hasValue || !validUntilEdit.hasValue || validFromEdit.value < validUntilEdit.value)
 
@@ -50,7 +51,7 @@ FormCard.FormCardPage {
                     PassManager.update(root.passId, program);
                 else
                     PassManager.import(program);
-                applicationWindow().pageStack.pop();
+                root.pageStack.pop();
             }
         }
     }
