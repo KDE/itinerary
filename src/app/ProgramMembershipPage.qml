@@ -144,6 +144,7 @@ FormCard.FormCardPage {
                     applicationWindow().pageStack.push(programMembershipEditor, {
                         passId: root.passId,
                         programMembership: root.programMembership,
+                        pageStack: pageStack,
                     });
                 }
             }

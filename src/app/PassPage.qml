@@ -24,6 +24,7 @@ Kirigami.ScrollablePage {
                 applicationWindow().pageStack.push(editorComponent, {
                     programMembership: Factory.makeProgramMembership(),
                     passId: "",
+                    pageStack: pageStack
                 });
             }
         }
