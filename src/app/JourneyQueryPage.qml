@@ -135,7 +135,7 @@ Kirigami.ScrollablePage {
 
         QQC2.BusyIndicator {
             anchors.centerIn: parent
-            running: journeyModel.loading
+            running: journeyModel.loading && journeyView.count === 0
         }
 
         QQC2.Label {
@@ -144,6 +144,36 @@ Kirigami.ScrollablePage {
             text: journeyModel.errorMessage
             color: Kirigami.Theme.negativeTextColor
             wrapMode: Text.Wrap
+        }
+    }
+
+    footer: ColumnLayout {
+        spacing: 0
+        height: indicator.running ? layout.implicitHeight : 0
+
+        Behavior on height {
+            NumberAnimation { duration: Kirigami.Units.shortDuration }
+        }
+
+        Kirigami.Separator {
+            Layout.fillWidth: true
+        }
+
+        RowLayout {
+            id: layout
+
+            QQC2.BusyIndicator {
+                id: indicator
+                running: journeyModel.loading && journeyView.count !== 0
+            }
+
+            QQC2.Label {
+                text: i18n("Still fetching results…")
+            }
+
+            Item {
+                Layout.fillWidth: true
+            }
         }
     }
 }
