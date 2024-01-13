@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-11 00:37+0000\n"
+"POT-Creation-Date: 2024-01-13 00:38+0000\n"
 "PO-Revision-Date: 2024-01-07 11:57+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -212,35 +212,35 @@ msgid "To %1"
 msgstr "Do %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:202 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Pociągi dalekobieżne"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:212 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Pociągi miejscowe"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:222 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Szybkie busy"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:232 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:249 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobus"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:242 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:259 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1848,72 +1848,72 @@ msgstr "Wczytaj wcześniejsze połączenia"
 msgid "Select Journey"
 msgstr "Wybierz podróż"
 
-#: app/JourneyRequestPage.qml:43 app/JourneyRequestPage.qml:99
+#: app/JourneyRequestPage.qml:43 app/JourneyRequestPage.qml:100
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
 msgstr "Wybierz przystanek odjazdu"
 
-#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:112
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:114
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
 msgstr "Wybierz przystanek przybycia"
 
-#: app/JourneyRequestPage.qml:98
+#: app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
 msgstr "Z:"
 
-#: app/JourneyRequestPage.qml:111
+#: app/JourneyRequestPage.qml:113
 #, kde-format
 msgctxt "arrival train station"
 msgid "To:"
 msgstr "Do:"
 
-#: app/JourneyRequestPage.qml:134
+#: app/JourneyRequestPage.qml:151
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Odjazd"
 
-#: app/JourneyRequestPage.qml:137
+#: app/JourneyRequestPage.qml:154
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Przyjazd"
 
-#: app/JourneyRequestPage.qml:156
+#: app/JourneyRequestPage.qml:173
 #, kde-format
 msgid "Search Journey"
 msgstr "Szukaj podróży"
 
-#: app/JourneyRequestPage.qml:203
+#: app/JourneyRequestPage.qml:220
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Szybkie lub międzymiastowe pociągi"
 
-#: app/JourneyRequestPage.qml:213
+#: app/JourneyRequestPage.qml:230
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Regionalne lub miejscowe pociągi"
 
-#: app/JourneyRequestPage.qml:223
+#: app/JourneyRequestPage.qml:240
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Szybkie busy, metro, tramwaje"
 
-#: app/JourneyRequestPage.qml:233
+#: app/JourneyRequestPage.qml:250
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Miejscowe lub regionalne usługi autobusowe"
 
-#: app/JourneyRequestPage.qml:243
+#: app/JourneyRequestPage.qml:260
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
