@@ -136,6 +136,7 @@ QVector<QString> ReservationManager::importReservations(const QVector<QVariant> 
         if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
             EventReservation ev;
             ev.setReservationFor(res);
+            ev.setPotentialAction(res.value<Event>().potentialAction());
             res = ev;
         }
         // TODO show UI asking for time ranges for LodgingBusiness, FoodEstablishment, etc
