@@ -136,6 +136,7 @@ JourneyQueryPage {
                     icon.name: "document-save"
                     onTriggered: {
                         controller.applyJourney(root.journey, root.journeyRequest.to.name == controller.journeyRequestFull.to.name);
+                        replaceWarningDialog.close()
                         applicationWindow().pageStack.pop();
                     }
                 }
