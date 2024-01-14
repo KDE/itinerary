@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:38+0000\n"
+"POT-Creation-Date: 2024-01-14 00:37+0000\n"
 "PO-Revision-Date: 2024-01-10 13:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -131,7 +131,7 @@ msgstr "Експортувати…"
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:152
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
 #: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:165
 #, kde-format
 msgid "Delete"
@@ -1849,6 +1849,11 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Завантажити раніші з'єднання"
 
+#: app/JourneyQueryPage.qml:171
+#, kde-format
+msgid "Still fetching results…"
+msgstr ""
+
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
 msgid "Select Journey"
@@ -2317,7 +2322,7 @@ msgstr "файли путівних даних KDE (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Експортувати путівні дані"
 
-#: app/main.qml:169 app/PassPage.qml:132
+#: app/main.qml:169 app/PassPage.qml:133
 #, kde-format
 msgid "Import..."
 msgstr "Імпортувати…"
@@ -2563,19 +2568,19 @@ msgstr "Безкоштовні квитки і програми"
 msgid "Add Program Membership..."
 msgstr "Додати участь у програмі…"
 
-#: app/PassPage.qml:49
+#: app/PassPage.qml:50
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/PassPage.qml:100
+#: app/PassPage.qml:101
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 – %2"
 
-#: app/PassPage.qml:130
+#: app/PassPage.qml:131
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2602,13 +2607,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Програма"
 
-#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:68
+#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:69
 #: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
 #, kde-format
 msgid "Name"
 msgstr "Назва"
 
-#: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:88
+#: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:89
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:92
 #: app/TicketPage.qml:104
 #, kde-format
@@ -2620,49 +2625,49 @@ msgstr "Номер"
 msgid "Show program pass"
 msgstr "Показати пароль програми"
 
-#: app/ProgramMembershipEditor.qml:23
+#: app/ProgramMembershipEditor.qml:24
 #, kde-format
 msgid "Edit Program Membership"
 msgstr "Редагувати участь у програмі"
 
-#: app/ProgramMembershipEditor.qml:33 app/TicketEditor.qml:25
+#: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:25
 #, kde-format
 msgid "Save"
 msgstr "Зберегти"
 
-#: app/ProgramMembershipEditor.qml:60
+#: app/ProgramMembershipEditor.qml:61
 #, kde-format
 msgid "Program"
 msgstr "Програма"
 
-#: app/ProgramMembershipEditor.qml:71
+#: app/ProgramMembershipEditor.qml:72
 #, kde-format
 msgid "Program name must not be empty."
 msgstr "Назва програми має бути непорожньою."
 
-#: app/ProgramMembershipEditor.qml:76
+#: app/ProgramMembershipEditor.qml:77
 #, kde-format
 msgid "Membership"
 msgstr "Участь"
 
-#: app/ProgramMembershipEditor.qml:82 app/ProgramMembershipPage.qml:83
+#: app/ProgramMembershipEditor.qml:83 app/ProgramMembershipPage.qml:83
 #, kde-format
 msgid "Member"
 msgstr "Учасник"
 
-#: app/ProgramMembershipEditor.qml:95 app/ProgramMembershipPage.qml:114
+#: app/ProgramMembershipEditor.qml:96 app/ProgramMembershipPage.qml:114
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr "Початок чинності"
 
-#: app/ProgramMembershipEditor.qml:102 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:103 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
 msgstr "Завершення чинності"
 
-#: app/ProgramMembershipEditor.qml:115
+#: app/ProgramMembershipEditor.qml:116
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr "Час початку строку дії має передувати часу завершення строку дії."
