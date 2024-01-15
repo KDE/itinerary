@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2024-01-10 13:27+0200\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
+"PO-Revision-Date: 2024-01-14 09:08+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -196,10 +196,15 @@ msgstr "Отримати"
 
 #: app/ActionsCard.qml:190
 #, kde-format
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:191
+#, kde-format
 msgid "Change Reservation"
 msgstr "Змінити резервування"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr "Переглянути резервування"
@@ -1852,7 +1857,7 @@ msgstr "Завантажити раніші з'єднання"
 #: app/JourneyQueryPage.qml:171
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Продовжуємо отримувати результати…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format

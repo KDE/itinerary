@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2024-01-10 15:59+0300\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
+"PO-Revision-Date: 2024-01-14 12:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.85\n"
+"X-Generator: Lokalize 24.01.90\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -192,10 +192,15 @@ msgstr "İndir"
 
 #: app/ActionsCard.qml:190
 #, kde-format
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:191
+#, kde-format
 msgid "Change Reservation"
 msgstr "Rezervasyonu Değiştir"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr "Rezervasyonu Görüntüle"
@@ -1842,7 +1847,7 @@ msgstr "Önceki bağlantıları yükle"
 #: app/JourneyQueryPage.qml:171
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Sonuçlar hâlâ getiriliyor..."
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format

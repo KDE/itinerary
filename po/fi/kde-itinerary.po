@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
 "PO-Revision-Date: 2023-09-27 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -191,10 +191,15 @@ msgstr "Lataa"
 
 #: app/ActionsCard.qml:190
 #, kde-format
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:191
+#, kde-format
 msgid "Change Reservation"
 msgstr "Muuta varausta"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr "Näytä varaus"

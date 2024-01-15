@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -204,10 +204,15 @@ msgstr "Obter"
 
 #: app/ActionsCard.qml:190
 #, kde-format
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:191
+#, kde-format
 msgid "Change Reservation"
 msgstr "Mudar a Reserva"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr "Ver a Reserva"

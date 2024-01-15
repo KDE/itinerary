@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
-"PO-Revision-Date: 2024-01-13 07:13+0100\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
+"PO-Revision-Date: 2024-01-14 10:00+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -191,10 +191,15 @@ msgstr "Prenesi sem"
 
 #: app/ActionsCard.qml:190
 #, kde-format
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:191
+#, kde-format
 msgid "Change Reservation"
 msgstr "Spremeni rezervacijo"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr "Poglej rezervacijo"
@@ -1848,7 +1853,7 @@ msgstr "Naloži zgodnejše povezave"
 #: app/JourneyQueryPage.qml:171
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Še vedno pridobivanje rezultatov..."
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format

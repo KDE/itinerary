@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 00:37+0000\n"
+"POT-Creation-Date: 2024-01-15 00:38+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -189,10 +189,15 @@ msgstr ""
 
 #: app/ActionsCard.qml:190
 #, kde-format
-msgid "Change Reservation"
+msgid "Join"
 msgstr ""
 
 #: app/ActionsCard.qml:191
+#, kde-format
+msgid "Change Reservation"
+msgstr ""
+
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "View Reservation"
 msgstr ""
