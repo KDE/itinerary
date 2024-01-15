@@ -10,11 +10,10 @@ A digital travel assistant that supports you while traveling without compromisin
 
 Stable flatpaks are available from [Flathub](https://flathub.org/apps/details/org.kde.itinerary).
 
-Nightly flatpaks are available from KDE's Flatpak repository:
+Nightly flatpaks are available from KDE's Flatpak nightly repository:
 
 ```
-flatpak remote-add --if-not-exists kdeapps --from https://distribute.kde.org/kdeapps.flatpakrepo
-flatpak install org.kde.itinerary
+flatpak install https://cdn.kde.org/flatpak/itinerary-nightly/org.kde.itinerary.flatpakref
 ```
 
 ### Android
