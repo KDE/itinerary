@@ -104,7 +104,7 @@
             "name": "zxing",
             "config-opts": [
                 "-DBUILD_DEPENDENCIES=LOCAL",
-                "-DBUILD_SHARED_LIBS=ON",
+                "-DBUILD_SHARED_LIBS=OFF",
                 "-DBUILD_UNIT_TESTS=OFF",
                 "-DBUILD_BLACKBOX_TESTS=OFF",
                 "-DBUILD_EXAMPLES=OFF"
