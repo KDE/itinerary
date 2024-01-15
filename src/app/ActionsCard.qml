@@ -188,6 +188,7 @@ ColumnLayout {
                     if (modelData.className == "CheckInAction") return i18n("Check-in");
                     if (modelData.className == "DownloadAction") return i18n("Download");
                     if (modelData.className == "JoinAction") return i18n("Join");
+                    if (modelData.className == "ReserveAction") return i18n("Reserve");
                     if (modelData.className == "UpdateAction") return i18n("Change Reservation");
                     if (modelData.className == "ViewAction") return i18n("View Reservation");
                 }
@@ -196,6 +197,7 @@ ColumnLayout {
                     if (modelData.className == "CheckInAction") return "checkmark";
                     if (modelData.className == "DownloadAction") return "edit-download";
                     if (modelData.className == "JoinAction") return "list-add";
+                    if (modelData.className == "ReserveAction") return "list-add";
                     if (modelData.className == "UpdateAction") return "document-edit";
                     if (modelData.className == "ViewAction") return "document-open";
                 }

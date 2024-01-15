@@ -471,6 +471,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
             if (JsonLd::isA<LodgingBusiness>(resFor)) {
                 LodgingReservation res;
                 res.setReservationFor(resFor);
+                res.setPotentialAction(resFor.value<LodgingBusiness>().potentialAction());
                 Q_EMIT editNewHotelReservation(res);
                 success = true;
                 break;
@@ -478,6 +479,7 @@ bool ApplicationController::importData(const QByteArray &data, const QString &fi
                 // LocalBusiness is frequently used for restaurants in website annotations
                 FoodEstablishmentReservation res;
                 res.setReservationFor(resFor);
+                res.setPotentialAction(JsonLd::convert<Organization>(resFor).potentialAction());
                 Q_EMIT editNewRestaurantReservation(res);
                 success = true;
                 break;
