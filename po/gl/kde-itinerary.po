@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-14 03:08+0000\n"
-"PO-Revision-Date: 2024-01-05 10:43+0100\n"
+"PO-Revision-Date: 2024-01-15 19:27+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2722,10 +2722,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unión Europea"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Unión Europea"
+msgstr "Unión Europea"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
