@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-15 00:38+0000\n"
-"PO-Revision-Date: 2024-01-14 09:08+0200\n"
+"POT-Creation-Date: 2024-01-16 00:37+0000\n"
+"PO-Revision-Date: 2024-01-15 09:14+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -197,14 +197,21 @@ msgstr "Отримати"
 #: app/ActionsCard.qml:190
 #, kde-format
 msgid "Join"
-msgstr ""
+msgstr "Долучитися"
 
 #: app/ActionsCard.qml:191
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Reservation"
+msgid "Reserve"
+msgstr "Резервування"
+
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Change Reservation"
 msgstr "Змінити резервування"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "View Reservation"
 msgstr "Переглянути резервування"
@@ -272,8 +279,8 @@ msgstr "Ви справді хочете замінити ваше наявне 
 msgid "Replace"
 msgstr "Замінити"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
-#: app/applicationcontroller.cpp:768
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:755
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Не вдалося імпортувати: %1"
@@ -283,8 +290,8 @@ msgstr "Не вдалося імпортувати: %1"
 msgid "Import failed: File too large."
 msgstr "Не вдалося імпортувати: надто великий файл."
 
-#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
-#: app/applicationcontroller.cpp:840
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:832
+#: app/applicationcontroller.cpp:842
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -312,35 +319,35 @@ msgstr[3] "Імпортовано безкоштовний квиток."
 msgid "Pass imported."
 msgstr "Безкоштовний квиток імпортовано."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, kde-format
 msgid "Nothing imported."
 msgstr "Нічого не імпортовано."
 
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
-#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
+#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:601
+#: app/applicationcontroller.cpp:619 app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:702 app/applicationcontroller.cpp:720
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Не вдалося експортувати: %1"
 
-#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
-#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:575 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:676 app/applicationcontroller.cpp:685
 #, kde-format
 msgid "Export completed."
 msgstr "Експортування завершено."
 
-#: app/applicationcontroller.cpp:609
+#: app/applicationcontroller.cpp:611
 #, kde-format
 msgid "Trip sent."
 msgstr "Подорож надіслано."
 
-#: app/applicationcontroller.cpp:710
+#: app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Reservation sent."
 msgstr "Резервування надіслано."
 
-#: app/applicationcontroller.cpp:793
+#: app/applicationcontroller.cpp:795
 #, kde-format
 msgid "Import completed."
 msgstr "Імпортування завершено."
@@ -3645,14 +3652,21 @@ msgid "How to import data?"
 msgstr "Як імпортувати дані?"
 
 #: app/WelcomePage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>There's a number of ways to import data into KDE Itinerary:"
+#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+#| "the Android calendar, for entries made via the KMail, Nextcloud or "
+#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
+#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
+#| "pass barcodes and pasting their content.</li></p>"
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-"the Android calendar, for entries made via the KMail, Nextcloud or "
-"Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-"Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
-"barcodes and pasting their content.</li></p>"
+"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
+"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
+"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
+"their content.</li></p>"
 msgstr ""
 "<p>Існує декілька способів імпортування даних до KDE Itinerary:"
 "<ul><li>Безпосереднє відкриття квитків у форматі PDF або талонів Apple "

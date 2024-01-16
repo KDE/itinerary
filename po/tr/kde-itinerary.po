@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-15 00:38+0000\n"
-"PO-Revision-Date: 2024-01-14 12:32+0300\n"
+"POT-Creation-Date: 2024-01-16 00:37+0000\n"
+"PO-Revision-Date: 2024-01-15 10:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -193,14 +193,21 @@ msgstr "İndir"
 #: app/ActionsCard.qml:190
 #, kde-format
 msgid "Join"
-msgstr ""
+msgstr "Katıl"
 
 #: app/ActionsCard.qml:191
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Reservation"
+msgid "Reserve"
+msgstr "Rezervasyon"
+
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Change Reservation"
 msgstr "Rezervasyonu Değiştir"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "View Reservation"
 msgstr "Rezervasyonu Görüntüle"
@@ -270,8 +277,8 @@ msgstr ""
 msgid "Replace"
 msgstr "Değiştir"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:753
-#: app/applicationcontroller.cpp:768
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:755
+#: app/applicationcontroller.cpp:770
 #, kde-format
 msgid "Import failed: %1"
 msgstr "İçe aktarma başarısız: %1"
@@ -281,8 +288,8 @@ msgstr "İçe aktarma başarısız: %1"
 msgid "Import failed: File too large."
 msgstr "İçe aktarma başarısız: Dosya pek büyük."
 
-#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:830
-#: app/applicationcontroller.cpp:840
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:832
+#: app/applicationcontroller.cpp:842
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -306,35 +313,35 @@ msgstr[1] "%1 kart içe aktarıldı."
 msgid "Pass imported."
 msgstr "Kart içe aktarıldı."
 
-#: app/applicationcontroller.cpp:490
+#: app/applicationcontroller.cpp:492
 #, kde-format
 msgid "Nothing imported."
 msgstr "Bir şey içe aktarılmadı."
 
-#: app/applicationcontroller.cpp:559 app/applicationcontroller.cpp:599
-#: app/applicationcontroller.cpp:617 app/applicationcontroller.cpp:661
-#: app/applicationcontroller.cpp:700 app/applicationcontroller.cpp:718
+#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:601
+#: app/applicationcontroller.cpp:619 app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:702 app/applicationcontroller.cpp:720
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Dışa aktarma başarısız: %1"
 
-#: app/applicationcontroller.cpp:573 app/applicationcontroller.cpp:582
-#: app/applicationcontroller.cpp:674 app/applicationcontroller.cpp:683
+#: app/applicationcontroller.cpp:575 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:676 app/applicationcontroller.cpp:685
 #, kde-format
 msgid "Export completed."
 msgstr "Dışa aktarma tamamlandı."
 
-#: app/applicationcontroller.cpp:609
+#: app/applicationcontroller.cpp:611
 #, kde-format
 msgid "Trip sent."
 msgstr "Yolculuk gönderildi."
 
-#: app/applicationcontroller.cpp:710
+#: app/applicationcontroller.cpp:712
 #, kde-format
 msgid "Reservation sent."
 msgstr "Rezervasyon gönderildi."
 
-#: app/applicationcontroller.cpp:793
+#: app/applicationcontroller.cpp:795
 #, kde-format
 msgid "Import completed."
 msgstr "İçe aktarma tamamlandı."
@@ -3620,14 +3627,21 @@ msgid "How to import data?"
 msgstr "Veriyi nice içe aktarmalı?"
 
 #: app/WelcomePage.qml:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>There's a number of ways to import data into KDE Itinerary:"
+#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+#| "the Android calendar, for entries made via the KMail, Nextcloud or "
+#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
+#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
+#| "pass barcodes and pasting their content.</li></p>"
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-"the Android calendar, for entries made via the KMail, Nextcloud or "
-"Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-"Connect from the KMail Itinerary plugin.</li><li>By scanning boarding pass "
-"barcodes and pasting their content.</li></p>"
+"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
+"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
+"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
+"their content.</li></p>"
 msgstr ""
 "<p>Veriyi, KDE Yol Kılavuzu'na içe aktarmanın birkaç yolu bulunmaktadır:"
 "<ul><li>PDF biletlerini veya Apple Cüzdan kartlarını doğrudan açmak.</"
