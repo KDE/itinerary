@@ -11,6 +11,8 @@ import org.kde.i18n.localeData
  *  The model is expected to be an array of ISO 3166-1 alpha 2 codes.
  */
 QQC2.ComboBox {
+    id: root
+
     /** The currently selected country, as a KCountry object. */
     readonly property var currentCountry: Country.fromAlpha2(currentValue)
 
@@ -24,11 +26,15 @@ QQC2.ComboBox {
     displayText: currentCountry ? (currentCountry.emojiFlag + ' ' + currentCountry.name) : ""
 
     delegate: QQC2.ItemDelegate {
+        id: delegate
         text: {
             const c = Country.fromAlpha2(modelData);
             return c.emojiFlag + ' ' + c.name;
         }
         width: parent ? parent.width : undefined
+
+        Accessible.name: Country.fromAlpha2(modelData).name
+        Accessible.onPressAction: delegate.clicked()
     }
 
     Component.onCompleted: {
@@ -36,4 +42,8 @@ QQC2.ComboBox {
             currentIndex = indexOfValue(initialCountry);
         }
     }
+
+    Accessible.name: currentCountry.name
+    Accessible.description: i18n("Select country")
+    Accessible.onPressAction: root.popup.open()
 }
