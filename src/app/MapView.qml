@@ -34,9 +34,13 @@ QtLocation.Map {
     WheelHandler {
         id: wheel
         rotationScale: 1/120
-        property: "zoomLevel"
         orientation: Qt.Vertical
         acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+        onWheel: (event) => {
+            map.startCentroid = map.toCoordinate(wheel.point.position, false)
+            map.zoomLevel += event.angleDelta.y * rotationScale
+            map.alignCoordinateToPoint(map.startCentroid, wheel.point.position)
+        }
     }
     DragHandler {
         id: drag
