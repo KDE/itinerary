@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-14 06:04+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 02:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -192,14 +192,12 @@ msgstr "ჩამოტვირთვა"
 #: app/ActionsCard.qml:190
 #, kde-format
 msgid "Join"
-msgstr ""
+msgstr "შეერთება"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "ჯავშანი"
+msgstr "დარეზერვება"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -747,6 +745,12 @@ msgstr "ელფოტა"
 #, kde-format
 msgid "Website"
 msgstr "ვებსაიტი"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "აირჩიეთ მოგზაურობა"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3626,14 +3630,7 @@ msgid "How to import data?"
 msgstr "როგორ შემოვიტანო მონაცემები?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3644,10 +3641,10 @@ msgid ""
 msgstr ""
 "<p>KDE Itinerary-ში მონაცემები სხვადასხვანაირად შეგიძლიათ, შემოიტანოთ:"
 "<ul><li>პირდაპირ გახსენით PDF ბილეთები ან Apple Wallet-ის ბილეთები.</"
-"li><li>Android-ის კალენდარიდან, ჩანაწერებისთვის, რომლებიც KMail-ის, "
-"Nextcloud-ის ან Thunderbird-ის Itinerary-ის დამატებით და DAVx⁵-ით "
-"დასინქრონებული.</li><li>ბილეთის ბარკოდების სკანირებით და მათი შემცველობის "
-"ჩასმით.</li></p>"
+"li><li>Android-ის კალენდრიდან, ჩანაწერებისთვის, რომლებიც KMail-ის, Nextcloud-"
+"ის ან Thunderbird-ის Itinerary-ის დამატებით და DAVx⁵-ით დასინქრონებული.</"
+"li><li>KDE Connect-ით, KMail-ის Itinerary დამატებიდან.</li><li>ბილეთის "
+"ბარკოდების სკანირებით და მათი შემცველობის ჩასმით.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

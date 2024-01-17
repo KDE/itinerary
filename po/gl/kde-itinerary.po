@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
 "PO-Revision-Date: 2024-01-15 19:27+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -748,6 +748,12 @@ msgstr "Enderezo de correo electrónico"
 #, kde-format
 msgid "Website"
 msgstr "Sitio web"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Seleccionar o traxecto"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format

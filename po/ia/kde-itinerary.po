@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 18:39+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 17:18+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -195,9 +195,7 @@ msgid "Join"
 msgstr "Uni te"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
 msgstr "Reservation"
 
@@ -749,6 +747,12 @@ msgstr "E-posta"
 #, kde-format
 msgid "Website"
 msgstr "Sito Web"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Selige Viage"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3628,14 +3632,7 @@ msgid "How to import data?"
 msgstr "Como importar datos?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3647,10 +3644,9 @@ msgstr ""
 "<p>Il ha un numero de modos a importar datos in KDE Itinerary: "
 "<ul><li>Aperir Directemente Billetes PDF o cartas de Apple Wallet.</"
 "li><li>Ex le calendario de Android, per entratas facite via le plugins de "
-"Itinerary  de KMail, Nextcloud o Thunderbird, e accordate usante DAVx⁵</"
-"li><li> Via KDE Connect ex le plugin de Itinerary de KMail.</li><li>Per "
-"scander codice a barras de Cartas de imbarcar e collar lor contento.</li></"
-"p> "
+"Itinerary  de KMail, Nextcloud , e accordate usante DAVx⁵</li><li> Via KDE "
+"Connect ex le plugin de Itinerary de KMail.</li><li>Per scander codice a "
+"barras de Cartas de imbarcar e collar lor contento.</li></p> "
 
 #: app/WelcomePage.qml:31
 #, kde-format

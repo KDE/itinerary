@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-14 12:36+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 21:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -192,14 +192,12 @@ msgstr "Elŝuti"
 #: app/ActionsCard.qml:190
 #, kde-format
 msgid "Join"
-msgstr ""
+msgstr "Kunigi"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Rezervado"
+msgstr "Rezervi"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -749,6 +747,12 @@ msgstr "Retpoŝto"
 #, kde-format
 msgid "Website"
 msgstr "Retejo"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Elekti Vojaĝon"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3623,14 +3627,7 @@ msgid "How to import data?"
 msgstr "Kiel importi datumojn?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3641,10 +3638,10 @@ msgid ""
 msgstr ""
 "<p>Estas kelkaj manieroj importi datumojn en KDE-Itineron:<ul><li>Rekte "
 "malfermante PDF-biletojn aŭ Apple Wallet-enirpermesilojn.</li><li>El la "
-"Android-kalendaro, por enskriboj faritaj per la KMail, Nextcloud aŭ "
-"Thunderbird Itinerary kromaĵojn, kaj sinkronigite uzante DAVx⁵.</li><li>Per "
-"KDE Connect de la KMail Itinerary kromaĵo.</li><li>Skanante strekkodojn de "
-"enirpermesilo kaj algluante ilian enhavon.</li></p>"
+"Android-kalendaro, por enskriboj faritaj per la KMail- aŭ Nextcloud-"
+"Itinerary kromaĵojn, kaj sinkronigite uzante DAVx⁵.</li><li>Per KDE Connect "
+"de la KMail Itinerary-kromaĵo.</li><li>Skanante strekkodojn de enirpermesilo "
+"kaj algluante ilian enhavon.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

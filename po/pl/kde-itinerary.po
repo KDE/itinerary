@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
 "PO-Revision-Date: 2024-01-07 11:57+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -753,6 +753,12 @@ msgstr "E-mail"
 #, kde-format
 msgid "Website"
 msgstr "Strona sieciowa"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Wybierz podróż"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format

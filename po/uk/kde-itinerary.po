@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 09:14+0200\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 16:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -200,11 +200,9 @@ msgid "Join"
 msgstr "Долучитися"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Резервування"
+msgstr "Резервувати"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -758,6 +756,12 @@ msgstr "Ел. пошта"
 #, kde-format
 msgid "Website"
 msgstr "Сайт"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Виберіть подорож"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3652,14 +3656,7 @@ msgid "How to import data?"
 msgstr "Як імпортувати дані?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3671,10 +3668,10 @@ msgstr ""
 "<p>Існує декілька способів імпортування даних до KDE Itinerary:"
 "<ul><li>Безпосереднє відкриття квитків у форматі PDF або талонів Apple "
 "Wallet.</li><li>Відкриття з календаря Android для записів, які було створено "
-"додатками KMail, Nextcloud або Thunderbird Itinerary і синхронізовано за "
-"допомогою DAVx⁵.</li><li>Відкриття за допомогою KDE Connect з додатка "
-"Itinerary KMail.</li><li>Відкриття за допомогою сканування штрихкоду "
-"посадкового талона із вставленням вмісту.</li></p>"
+"додатками KMail або Nextcloud Itinerary і синхронізовано за допомогою DAVx⁵."
+"</li><li>Відкриття за допомогою KDE Connect з додатка Itinerary KMail.</"
+"li><li>Відкриття за допомогою сканування штрихкоду посадкового талона із "
+"вставленням вмісту.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

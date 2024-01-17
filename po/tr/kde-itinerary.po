@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 10:23+0300\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 21:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -196,11 +196,9 @@ msgid "Join"
 msgstr "Katıl"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Rezervasyon"
+msgstr "Rezerve"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -750,6 +748,12 @@ msgstr "E-posta"
 #, kde-format
 msgid "Website"
 msgstr "Web Sayfası"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Yolculuk Seç"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3627,14 +3631,7 @@ msgid "How to import data?"
 msgstr "Veriyi nice içe aktarmalı?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3645,10 +3642,10 @@ msgid ""
 msgstr ""
 "<p>Veriyi, KDE Yol Kılavuzu'na içe aktarmanın birkaç yolu bulunmaktadır:"
 "<ul><li>PDF biletlerini veya Apple Cüzdan kartlarını doğrudan açmak.</"
-"li><li>Android takviminden; K Posta, Nextcloud veya Thunderbird yolculuk "
-"eklentilerinden ve DAVx⁵ kullanarak eşzamanlayarak.</li><li>K Posta Yolculuk "
-"eklentisinden KDE Connect kullanarak.</li><li>Biniş kartı barkodlarını "
-"tarayarak ve içeriklerini yapıştırarak.</li></p>"
+"li><li>Android takviminden; K Posta veya Nextcloud yolculuk eklentilerinden "
+"ve DAVx⁵ kullanarak eşzamanlayarak.</li><li>K Posta Yolculuk eklentisinden "
+"KDE Connect kullanarak.</li><li>Biniş kartı barkodlarını tarayarak ve "
+"içeriklerini yapıştırarak.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

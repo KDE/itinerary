@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 18:33+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-17 00:17+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -200,11 +200,9 @@ msgid "Join"
 msgstr "Elkartu"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Erreserba"
+msgstr "Erreserbatu"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -754,6 +752,12 @@ msgstr "E-posta"
 #, kde-format
 msgid "Website"
 msgstr "Webgunea"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Hautatu bidaia"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3632,14 +3636,7 @@ msgid "How to import data?"
 msgstr "Datuak nola inportatu?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3650,9 +3647,9 @@ msgid ""
 msgstr ""
 "<p>«KDE Itinerary»n datuak inportatzeko era ezberdinak daude: "
 "<ul><li>Zuzenean PDF txartelak edo «Apple Wallet» sarrerak irekiz.</"
-"li><li>«Android»eko egutegitik, «KMail», «Nextcloud» edo «Thunderbird»eko "
-"«Itinerary» pluginen bidez eginiko, eta DAVx⁵ bidez sinkronizatutako "
-"sarrerak.</li><li>«KDE Connect» bidez, «KMail»eko «Itinerary» pluginetik.</"
+"li><li>«Android»eko egutegitik, «KMail» edo «Nextcloud»eko «Itinerary» "
+"pluginen bidez eginiko, eta DAVx⁵ bidez sinkronizatutako sarrerak.</"
+"li><li>«KDE Connect» bidez, «KMail»eko «Itinerary» pluginetik.</"
 "li><li>Ontziratze-txartelen barra-kodeak eskaneatu eta haien edukia itsatsiz."
 "</li></p>"
 

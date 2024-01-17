@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-04 15:47+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-15 22:00+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -192,7 +192,7 @@ msgstr "Scarica"
 #: app/ActionsCard.qml:190
 #, kde-format
 msgid "Join"
-msgstr ""
+msgstr "Entra"
 
 #: app/ActionsCard.qml:191
 #, fuzzy, kde-format
@@ -749,6 +749,12 @@ msgstr "Posta elettronica"
 #, kde-format
 msgid "Website"
 msgstr "Sito web"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Seleziona viaggio"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1853,7 +1859,7 @@ msgstr "Carica i collegamenti alternativi"
 #: app/JourneyQueryPage.qml:171
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Recupero risultati ancora in corso..."
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -2737,10 +2743,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unione Europea"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Unione Europea"
+msgstr "Unione Europea"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format

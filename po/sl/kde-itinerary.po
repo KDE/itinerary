@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 06:54+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 09:42+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -195,11 +195,9 @@ msgid "Join"
 msgstr "Pridruži se"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Rezervacija"
+msgstr "Rezerviraj"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -754,6 +752,12 @@ msgstr "E-pošta"
 #, kde-format
 msgid "Website"
 msgstr "Spletišče"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Izberi potovanje"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1860,7 +1864,7 @@ msgstr "Naloži zgodnejše povezave"
 #: app/JourneyQueryPage.qml:171
 #, kde-format
 msgid "Still fetching results…"
-msgstr "Še vedno pridobivanje rezultatov..."
+msgstr "Še vedno pridobivanje rezultatov…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -3637,14 +3641,7 @@ msgid "How to import data?"
 msgstr "Kako uvoziti podatke?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3653,12 +3650,12 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>Obstaja več načinov za uvoz podatkov v načrt poti KDE:<ul><li>Neposredno "
-"odpiranje vstopnic PDF ali prepustnic za Apple Wallet.</li><li>Iz koledarja "
-"Android, za vnose, opravljene prek KMaila, Nextclouda oz. vtičnikov za plan "
-"poti v Thunderbirdu in sinhronizirani z uporabo Davx⁵.</li><li>Prek KDE "
-"Connect iz vtičnika KMail Itinerary.</li><li>S skeniranjem črtnih kod "
-"vstopnih kart in lepljenjem njihove vsebine.</li></p>"
+"<p>Obstaja več načinov za uvoz podatkov v načrt poti KDE Itinerary:"
+"<ul><li>Neposredno odpiranje vstopnic PDF ali prepustnic za Apple Wallet.</"
+"li><li>Iz koledarja Android, za vnose, opravljene prek KMaila, Nextclouda "
+"oz. vtičnikov za plan poti v Thunderbirdu in sinhronizirani z uporabo Davx⁵."
+"</li><li>Prek KDE Connect iz vtičnika KMail Itinerary.</li><li>S skeniranjem "
+"črtnih kod vstopnih kart in lepljenjem njihove vsebine.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

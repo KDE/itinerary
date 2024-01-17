@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 10:05+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 16:03+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -198,9 +198,7 @@ msgid "Join"
 msgstr "Unix"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
 msgstr "Reserva"
 
@@ -751,6 +749,12 @@ msgstr "Correu electrònic"
 #, kde-format
 msgid "Website"
 msgstr "Lloc web"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Selecciona el viatge"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3640,14 +3644,7 @@ msgid "How to import data?"
 msgstr "Com importar dades?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3659,10 +3656,10 @@ msgstr ""
 "<p>Hi ha diverses formes d'importar dades a KDE Itinerary:<ul><li>Obrir "
 "directament els tiquets PDF o targetes de la Cartera d'Apple.</li><li>Des "
 "del calendari d'Android, per a les entrades realitzades a través dels "
-"connectors Itinerary de KMail, Nextcloud o Thunderbird, i sincronitzades "
-"emprant DAVx⁵.</li><li>Mitjançant KDE Connect des del connector Itinerari de "
-"KMail.</li><li>Escanejant els codis de barres de les targetes d'embarcament "
-"i apegant el seu contingut.</li></p>"
+"connectors Itinerary de KMail o Nextcloud, i sincronitzades emprant DAVx⁵.</"
+"li><li>Mitjançant KDE Connect des del connector Itinerari de KMail.</"
+"li><li>Escanejant els codis de barres de les targetes d'embarcament i "
+"apegant el seu contingut.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format

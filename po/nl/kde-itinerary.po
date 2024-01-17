@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 10:12+0100\n"
+"POT-Creation-Date: 2024-01-17 00:37+0000\n"
+"PO-Revision-Date: 2024-01-16 11:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -196,11 +196,9 @@ msgid "Join"
 msgstr "Samenvoegen"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Reservering"
+msgstr "Reserveren"
 
 #: app/ActionsCard.qml:192
 #, kde-format
@@ -750,6 +748,12 @@ msgstr "E-mail"
 #, kde-format
 msgid "Website"
 msgstr "Website"
+
+#: app/CountryComboBox.qml:47
+#, fuzzy, kde-format
+#| msgid "Select Journey"
+msgid "Select country"
+msgstr "Reis selecteren"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -3631,14 +3635,7 @@ msgid "How to import data?"
 msgstr "Hoe gegevens importeren?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3650,9 +3647,9 @@ msgstr ""
 "<p>Er zijn een aantal manieren om gegevens in KDE Itinerary te importeren:"
 "<ul><li>Direct PDF-tickets of Apple Wallet passen openen.</li><li>Uit de "
 "Android agenda, voor items gemaakt via de plug-ins van KMail, Nextcloud of "
-"Thunderbird Itinerary en gesynchroniseerd met Davx⁵.</li><li>Via KDE Connect "
-"uit de plug-in KMail Itinerary.</li><li>Door scannen van barcodes op "
-"boarding-passen en hun inhoud te plakken.</li></p>"
+"Itinerary en gesynchroniseerd met Davx⁵.</li><li>Via KDE Connect uit de plug-"
+"in KMail Itinerary.</li><li>Door scannen van barcodes op boarding-passen en "
+"hun inhoud te plakken.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
