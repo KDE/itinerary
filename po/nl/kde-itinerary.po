@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:37+0000\n"
-"PO-Revision-Date: 2024-01-16 11:36+0100\n"
+"POT-Creation-Date: 2024-01-18 00:37+0000\n"
+"PO-Revision-Date: 2024-01-17 10:37+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -191,7 +191,9 @@ msgid "Download"
 msgstr "Downloaden"
 
 #: app/ActionsCard.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join"
+msgctxt "participate in an event"
 msgid "Join"
 msgstr "Samenvoegen"
 
@@ -750,10 +752,9 @@ msgid "Website"
 msgstr "Website"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Reis selecteren"
+msgstr "Land selecteren"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:37+0000\n"
-"PO-Revision-Date: 2024-01-16 21:56+0100\n"
+"POT-Creation-Date: 2024-01-18 00:37+0000\n"
+"PO-Revision-Date: 2024-01-17 20:52+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -190,7 +190,9 @@ msgid "Download"
 msgstr "Elŝuti"
 
 #: app/ActionsCard.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join"
+msgctxt "participate in an event"
 msgid "Join"
 msgstr "Kunigi"
 
@@ -749,10 +751,9 @@ msgid "Website"
 msgstr "Retejo"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Elekti Vojaĝon"
+msgstr "Elekti landon"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format

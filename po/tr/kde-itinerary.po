@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:37+0000\n"
-"PO-Revision-Date: 2024-01-16 21:10+0300\n"
+"POT-Creation-Date: 2024-01-18 00:37+0000\n"
+"PO-Revision-Date: 2024-01-17 13:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -191,7 +191,9 @@ msgid "Download"
 msgstr "İndir"
 
 #: app/ActionsCard.qml:190
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Join"
+msgctxt "participate in an event"
 msgid "Join"
 msgstr "Katıl"
 
@@ -750,10 +752,9 @@ msgid "Website"
 msgstr "Web Sayfası"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Yolculuk Seç"
+msgstr "Ülke Seç"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
