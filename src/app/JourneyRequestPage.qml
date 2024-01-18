@@ -128,6 +128,7 @@ FormCard.FormCardPage {
                     arrivalStop = oldDepartureStop
                 }
 
+                Accessible.name: i18n("Swap departure and arrival")
             }
         }
         FormCard.FormDelegateSeparator {
@@ -160,6 +161,7 @@ FormCard.FormCardPage {
         FormCard.FormDateTimeDelegate {
             id: dateTimeInput
             value: root.initialDateTime
+            Accessible.name: departureArrivalSelector.selectedIndex === 0 ? i18nc("train or bus departure", "Departure time") : i18nc("train or bus arrival", "Arrival time")
         }
 
         FormCard.FormDelegateSeparator {
