@@ -106,6 +106,7 @@ Item{
                                     easing.type: Easing.InOutCubic
                                 }
                             }
+                            Accessible.ignored: true
                         }
                         QQC2.Label {
                             id: label
@@ -121,6 +122,7 @@ Item{
                                     easing.type: Easing.InOutCubic
                                 }
                             }
+                            Accessible.ignored: true
                         }
                     }
 
