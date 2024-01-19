@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-18 00:37+0000\n"
-"PO-Revision-Date: 2024-01-17 10:37+0100\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"PO-Revision-Date: 2024-01-18 09:54+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -191,11 +191,10 @@ msgid "Download"
 msgstr "Downloaden"
 
 #: app/ActionsCard.qml:190
-#, fuzzy, kde-format
-#| msgid "Join"
+#, kde-format
 msgctxt "participate in an event"
 msgid "Join"
-msgstr "Samenvoegen"
+msgstr "Deelnemen"
 
 #: app/ActionsCard.qml:191
 #, kde-format
@@ -224,35 +223,35 @@ msgid "To %1"
 msgstr "Naar %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Lange afstandstreinen"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Lokale treinen"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Snel vervoer"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:249 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Bus"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:259 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1890,48 +1889,67 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "Naar:"
 
-#: app/JourneyRequestPage.qml:151
+#: app/JourneyRequestPage.qml:131
+#, kde-format
+msgid "Swap departure and arrival"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:152
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Vertrek"
 
-#: app/JourneyRequestPage.qml:154
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Aankomst"
 
-#: app/JourneyRequestPage.qml:173
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "train or bus departure"
+msgid "Departure time"
+msgstr "Vertrektijd"
+
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "train or bus arrival"
+msgid "Arrival time"
+msgstr "Aankomsttijd"
+
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgid "Search Journey"
 msgstr "Reis zoeken"
 
-#: app/JourneyRequestPage.qml:220
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Hoge snelheid of intercity treinen"
 
-#: app/JourneyRequestPage.qml:230
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Regionale of lokale treinen"
 
-#: app/JourneyRequestPage.qml:240
+#: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Snel vervoer, metro, trams"
 
-#: app/JourneyRequestPage.qml:250
+#: app/JourneyRequestPage.qml:252
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Lokale of regionale busdiensten"
 
-#: app/JourneyRequestPage.qml:260
+#: app/JourneyRequestPage.qml:262
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"

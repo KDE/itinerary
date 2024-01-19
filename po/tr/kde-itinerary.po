@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-18 00:37+0000\n"
-"PO-Revision-Date: 2024-01-17 13:15+0300\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"PO-Revision-Date: 2024-01-18 11:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -191,8 +191,7 @@ msgid "Download"
 msgstr "İndir"
 
 #: app/ActionsCard.qml:190
-#, fuzzy, kde-format
-#| msgid "Join"
+#, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Katıl"
@@ -224,35 +223,35 @@ msgid "To %1"
 msgstr "Şuraya: %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Uzun mesafe trenleri"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Yerel trenler"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Hızlı ulaşım"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:249 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Otobüs"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:259 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -1890,48 +1889,67 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "Nereye:"
 
-#: app/JourneyRequestPage.qml:151
+#: app/JourneyRequestPage.qml:131
+#, kde-format
+msgid "Swap departure and arrival"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:152
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Kalkış"
 
-#: app/JourneyRequestPage.qml:154
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Varış"
 
-#: app/JourneyRequestPage.qml:173
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "train or bus departure"
+msgid "Departure time"
+msgstr "Kalkış zamanı"
+
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "train or bus arrival"
+msgid "Arrival time"
+msgstr "Varış zamanı"
+
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgid "Search Journey"
 msgstr "Yolculuk Ara"
 
-#: app/JourneyRequestPage.qml:220
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Yüksek hızlı veya şehirlerarası trenler"
 
-#: app/JourneyRequestPage.qml:230
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Bölgesel veya yerel trenler"
 
-#: app/JourneyRequestPage.qml:240
+#: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Hızlı ulaşım, metro, tramvay"
 
-#: app/JourneyRequestPage.qml:250
+#: app/JourneyRequestPage.qml:252
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Yerel veya bölgesel otobüs hizmetleri"
 
-#: app/JourneyRequestPage.qml:260
+#: app/JourneyRequestPage.qml:262
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"

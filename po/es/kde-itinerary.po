@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-18 00:37+0000\n"
-"PO-Revision-Date: 2024-01-15 03:10+0100\n"
+"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"PO-Revision-Date: 2024-01-18 21:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -192,16 +192,13 @@ msgid "Download"
 msgstr "Descargar"
 
 #: app/ActionsCard.qml:190
-#, fuzzy, kde-format
-#| msgid "Join"
+#, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Unirse"
 
 #: app/ActionsCard.qml:191
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
 msgstr "Reserva"
 
@@ -227,35 +224,35 @@ msgid "To %1"
 msgstr "A %1"
 
 #: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
-#: app/JourneyRequestPage.qml:219 app/TransferPage.qml:108
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Long distance trains"
 msgstr "Trenes de larga distancia"
 
 #: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
-#: app/JourneyRequestPage.qml:229 app/TransferPage.qml:116
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Local trains"
 msgstr "Trenes locales"
 
 #: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
-#: app/JourneyRequestPage.qml:239 app/TransferPage.qml:124
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Rapid transit"
 msgstr "Metro"
 
 #: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
-#: app/JourneyRequestPage.qml:249 app/TransferPage.qml:132
+#: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Bus"
 msgstr "Autobús"
 
 #: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
-#: app/JourneyRequestPage.qml:259 app/TransferPage.qml:140
+#: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
 #, kde-format
 msgctxt "journey query search constraint, title"
 msgid "Ferry"
@@ -756,10 +753,9 @@ msgid "Website"
 msgstr "Sitio web"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Seleccionar viaje"
+msgstr "Seleccionar país"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1896,48 +1892,67 @@ msgctxt "arrival train station"
 msgid "To:"
 msgstr "A:"
 
-#: app/JourneyRequestPage.qml:151
+#: app/JourneyRequestPage.qml:131
+#, kde-format
+msgid "Swap departure and arrival"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:152
 #, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Salida"
 
-#: app/JourneyRequestPage.qml:154
+#: app/JourneyRequestPage.qml:155
 #, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Llegada"
 
-#: app/JourneyRequestPage.qml:173
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Departure time"
+msgctxt "train or bus departure"
+msgid "Departure time"
+msgstr "Hora de salida"
+
+#: app/JourneyRequestPage.qml:164
+#, fuzzy, kde-format
+#| msgid "Arrival time"
+msgctxt "train or bus arrival"
+msgid "Arrival time"
+msgstr "Hora de llegada"
+
+#: app/JourneyRequestPage.qml:175
 #, kde-format
 msgid "Search Journey"
 msgstr "Buscar viaje"
 
-#: app/JourneyRequestPage.qml:220
+#: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
 msgstr "Trenes de alta velocidad o interurbanos"
 
-#: app/JourneyRequestPage.qml:230
+#: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
 msgstr "Trenes regionales o locales"
 
-#: app/JourneyRequestPage.qml:240
+#: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
 msgstr "Metro, tranvía"
 
-#: app/JourneyRequestPage.qml:250
+#: app/JourneyRequestPage.qml:252
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
 msgstr "Servicios de autobús locales o regionales"
 
-#: app/JourneyRequestPage.qml:260
+#: app/JourneyRequestPage.qml:262
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
@@ -3645,14 +3660,7 @@ msgid "How to import data?"
 msgstr "¿Cómo importar datos?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3664,10 +3672,9 @@ msgstr ""
 "<p>Existen varias formas de importar datos en KDE Itinerary:<ul><li>Abriendo "
 "directamente billetes en PDF o pases de Apple Wallet.</li><li>Desde el "
 "calendario de Android, para entradas creadas con complementos de Itinerary "
-"para KMail, Nextcloud o Thunderbird, y sincronizadas usando DAVx⁵.</"
-"li><li>Usando KDE Connect desde el complemento de Itinerary de KMail.</"
-"li><li>Escaneando códigos de barras de pases de embarque y pegando su "
-"contenido.</li></p>"
+"para KMail o Nextcloud, y sincronizadas usando DAVx⁵.</li><li>Usando KDE "
+"Connect desde el complemento de Itinerary de KMail.</li><li>Escaneando "
+"códigos de barras de pases de embarque y pegando su contenido.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
