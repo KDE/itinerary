@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-18 04:20+0100\n"
+"PO-Revision-Date: 2024-01-19 06:22+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1889,7 +1889,7 @@ msgstr "სადამდე:"
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "გასვლისა და ჩამოსვლის მიმოცვლა"
 
 #: app/JourneyRequestPage.qml:152
 #, kde-format
@@ -1904,15 +1904,13 @@ msgid "Arrival"
 msgstr "ჩამოსვლა"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "გასვლის დრო"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "ჩამოსვლის დრო"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-18 09:05+0100\n"
+"PO-Revision-Date: 2024-01-19 10:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1891,7 +1891,7 @@ msgstr "A:"
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "Excambia partita e arrivata"
 
 #: app/JourneyRequestPage.qml:152
 #, kde-format
@@ -1906,15 +1906,13 @@ msgid "Arrival"
 msgstr "Arrivata"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Tempore de partita"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Tempore de arrivata"
