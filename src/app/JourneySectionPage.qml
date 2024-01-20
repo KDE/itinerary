@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning as QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport
 import org.kde.itinerary
@@ -141,6 +142,131 @@ Kirigami.Page {
         journeySection: root.journeySection
 
     }
+    SheetDrawer {
+        id: sheetDrawer
+        property var stop
+        property bool isDeparture: false
+        property bool isArrival: false
+        anchors.fill: parent
+        headerItem: Component {
+            RowLayout {
+                id: headerLayout
+                Layout.preferredWidth: Kirigami.Units.gridUnit * 25
+
+                Kirigami.Heading {
+                    text: sheetDrawer.stop.stopPoint.name
+                    Layout.fillWidth: true
+                    elide: Qt.ElideRight
+                }
+                QQC2.Label {
+                    id: departureTime
+                    Layout.rightMargin: delayLabel.visible ? 0:Kirigami.Units.largeSpacing
+                    text: Localizer.formatTime(sheetDrawer.stop, "scheduledDepartureTime")
+//                    visible: sheetDrawer.stop.scheduledDepartureTime > 0
+                    font.strikeout: sheetDrawer.stop.disruptionEffect === Disruption.NoService
+                }
+
+                QQC2.Label {
+                    id: delayLabel
+                    Layout.rightMargin: Kirigami.Units.largeSpacing
+                    text: (sheetDrawer.stop.departureDelay >= 0 ? "+" : "") + sheetDrawer.stop.departureDelay
+                    color: sheetDrawer.stop.departureDelay > 1 ? Kirigami.Theme.negativeTextColor : Kirigami.Theme.positiveTextColor
+                    visible: departureTime.visible && sheetDrawer.stop.hasExpectedDepartureTime && sheetDrawer.stop.disruptionEffect !== Disruption.NoService
+                }
+            }
+        }
+
+
+
+        contentItem: Component{
+
+            ColumnLayout {
+                id: contentLayout
+                width: parent.width
+                FormCard.FormTextDelegate {
+                    Layout.fillWidth: true
+                    id: platformDelegate
+                    text: i18n("Platform:")
+                    description: {
+                        const platform = sheetDrawer.stop.hasExpectedPlatform ? sheetDrawer.stop.expectedPlatform : sheetDrawer.stop.scheduledPlatform;
+
+                        if (platform.length === 0) {
+                            return '';
+                        }
+
+                        switch (sheetDrawer.stop.route.line.mode) {
+                            case Line.Train:
+                            case Line.Funicular:
+                            case Line.LocalTrain:
+                            case Line.LongDistanceTrain:
+                            case Line.Metro:
+                            case Line.RailShuttle:
+                            case Line.RapidTransit:
+                            case Line.Tramway:
+                                return platform
+                            case Line.Ferry:
+                                return platform
+                            default:
+                                return platform
+                        }
+                    }
+                    visible: description
+                }
+                FormCard.AbstractFormDelegate {
+                    Layout.fillWidth: true
+                    visible: sheetDrawer.stop.loadInformation != ""
+                        contentItem: ColumnLayout {
+                            spacing: Kirigami.Units.mediumSpacing
+
+                            QQC2.Label {
+                                text: i18n("Vehicle Load:")
+                                elide: Text.ElideRight
+                                Layout.fillWidth: true
+                                Accessible.ignored: true
+                            }
+                            VehicleLoadIndicator {
+                                loadInformation: sheetDrawer.stop.loadInformation
+                            }
+                        }
+
+                    background: Item{}
+                }
+                FormCard.FormDelegateSeparator {}
+                FormCard.FormButtonDelegate {
+                    Layout.fillWidth: true
+                    text: i18n("Show location")
+                    icon.name: "map-symbolic"
+                    onClicked: {
+                        sheetDrawer.close()
+                        const args = {
+                            coordinate: Qt.point(sheetDrawer.stop.stopPoint.longitude, sheetDrawer.stop.stopPoint.latitude),
+                            placeName: sheetDrawer.stop.stopPoint.name
+                        };
+                        if (!sheetDrawer.isDeparture) {
+                            args.arrivalPlatformName = sheetDrawer.stop.hasExpectedPlatform ? sheetDrawer.stop.expectedPlatform : sheetDrawer.stop.scheduledPlatform;
+                            args.arrivalPlatformMode = PublicTransport.lineModeToPlatformMode(sheetDrawer.stop.route.line.mode);
+                            args.arrivalPlatformIfopt = sheetDrawer.stop.stopPoint.identifier("ifopt");
+                        }
+                        if (!sheetDrawer.isArrival) {
+                            args.departurePlatformName = sheetDrawer.stop.hasExpectedPlatform ? sheetDrawer.stop.expectedPlatform : sheetDrawer.stop.scheduledPlatform;
+                            args.departurePlatformMode = PublicTransport.lineModeToPlatformMode(sheetDrawer.stop.route.line.mode);
+                            args.departurePlatformIfopt = sheetDrawer.stop.stopPoint.identifier("ifopt");
+                        }
+
+                        // ensure the map page ends up on top
+                        if (applicationWindow().pageStack.layers.depth < 2)
+                            applicationWindow().pageStack.push(indoorMapPage, args);
+                        else
+                            applicationWindow().pageStack.layers.push(indoorMapPage, args);
+                        }
+                }
+                Item {Layout.fillHeight: true}
+
+            }
+        }
+
+    }
+
     ColumnLayout{
         anchors.fill: parent
         spacing: 0
@@ -234,6 +360,16 @@ Kirigami.Page {
                             radius: height/2
                             border.width: 2
                             border.color: line.line.color
+                            MouseArea {
+                                anchors.fill: parent
+                                scale: 2
+                                onClicked: {
+                                    sheetDrawer.open()
+                                    sheetDrawer.isArrival = false
+                                    sheetDrawer.isDeparture = true
+                                    sheetDrawer.stop = journeySection.departure
+                                }
+                            }
                             }
                         }
 
@@ -253,6 +389,16 @@ Kirigami.Page {
                                 height: 6
                                 radius: height/2
                                 opacity: 0.5
+                                MouseArea {
+                                    anchors.fill: parent
+                                    scale: 3
+                                    onClicked: {
+                                        sheetDrawer.open()
+                                        sheetDrawer.isArrival = false
+                                        sheetDrawer.isDeparture = false
+                                        sheetDrawer.stop = model.stopover
+                                    }
+                                }
                             }
                         }
                     }
@@ -275,6 +421,16 @@ Kirigami.Page {
                             radius: height/2
                             border.width: 2
                             border.color: line.line.color
+                            MouseArea {
+                                anchors.fill: parent
+                                scale: 2
+                                onClicked: {
+                                    sheetDrawer.open()
+                                    sheetDrawer.isArrival = true
+                                    sheetDrawer.isDeparture = false
+                                    sheetDrawer.stop = journeySection.arrival
+                                }
+                            }
                         }
                     }
                 }

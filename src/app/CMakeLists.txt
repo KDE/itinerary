@@ -205,6 +205,7 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     RestaurantEditor.qml
     RestaurantPage.qml
     SettingsPage.qml
+    SheetDrawer.qml
     StatisticsDelegate.qml
     StatisticsPage.qml
     StopPickerPage.qml
