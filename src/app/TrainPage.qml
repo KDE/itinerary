@@ -7,6 +7,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigamiaddons.components as KirigamiComponents
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kitinerary
 import org.kde.itinerary
@@ -44,6 +45,13 @@ DetailsPage {
 
             onLayoutUpdated: root.controller.setVehicleLayout(vehicleLayout, arrival);
         }
+    }
+
+    header: KirigamiComponents.Banner {
+        id: banner
+
+        showCloseButton: true
+        visible: false
     }
 
     ColumnLayout {
@@ -335,6 +343,15 @@ DetailsPage {
             reservation: root.reservation
             additionalActions: [
                 QQC2.Action {
+                    enabled: TraewellingController.isLoggedIn
+                    text: i18nc("@action:button", "Add to Traewelling")
+                    icon.name: "cloud-upload"
+                    onTriggered: {
+                        banner.visible = false;
+                        TraewellingController.checkin(reservationFor.departureStation.name, reservationFor.arrivalStation.name, reservationFor.departureTime, reservationFor.arrivalTime, departure.route.direction);
+                    }
+                },
+                QQC2.Action {
                     text: i18n("Alternatives")
                     icon.name: "clock"
                     onTriggered: applicationWindow().pageStack.push(alternativePage)
@@ -354,6 +371,15 @@ DetailsPage {
                     onTriggered: LiveDataManager.showNotification(root.batchId)
                 }
             ]
+        }
+
+        Connections {
+            target: TraewellingController
+            function onUploadStatus(status): void {
+                banner.visible = true;
+                banner.text = status === TraewellingController.Success ? i18n("Added to Traewelling") : i18n("Failed to add to Traewelling");
+                banner.type = status === TraewellingController.Success ? Kirigami.MessageType.Positive : Kirigami.MessageType.Error;
+            }
         }
     }
 }
