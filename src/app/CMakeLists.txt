@@ -109,6 +109,7 @@ target_sources(itinerary-app PRIVATE
     transferdelegatecontroller.cpp
     unitconversion.cpp
     weatherforecastmodel.cpp
+    traewellingcontroller.cpp
     qml.qrc
 )
 qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES

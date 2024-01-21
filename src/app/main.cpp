@@ -42,6 +42,7 @@
 #include "timelinedelegatecontroller.h"
 #include "timelinemodel.h"
 #include "timelinesectiondelegatecontroller.h"
+#include "traewellingcontroller.h"
 #include "transferdelegatecontroller.h"
 #include "transfermanager.h"
 #include "tripgroupinfoprovider.h"
@@ -219,6 +220,7 @@ static TripGroupProxyModel *s_tripGroupProxyModel = nullptr;
 static MapDownloadManager *s_mapDownloadManager = nullptr;
 static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
+static TraewellingController *s_traewellingController = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -250,6 +252,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(MapDownloadManager, s_mapDownloadManager)
     REGISTER_SINGLETON_INSTANCE(PassManager, s_passManager)
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
+    REGISTER_SINGLETON_INSTANCE(TraewellingController, s_traewellingController);
 
     REGISTER_SINGLETON_GADGET_INSTANCE(TripGroupInfoProvider, s_tripGroupInfoProvider)
 
@@ -427,6 +430,9 @@ int main(int argc, char **argv)
 
     MatrixController matrixController;
     s_matrixController = &matrixController;
+
+    TraewellingController traewellingController;
+    s_traewellingController = &traewellingController;
 
     ApplicationController appController;
     appController.setNetworkAccessManagerFactory(namFactory);

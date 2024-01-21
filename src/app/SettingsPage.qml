@@ -302,6 +302,27 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
+        title: i18n("Traewelling Integration")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormTextDelegate {
+            visible: TraewellingController.isLoggedIn
+            text: i18n("Logged in as %1", TraewellingController.username)
+        }
+        FormCard.FormButtonDelegate {
+            text: i18n("Login")
+            onClicked: TraewellingController.login()
+            visible: !TraewellingController.isLoggedIn
+        }
+        FormCard.FormButtonDelegate {
+            text: i18n("Logout")
+            onClicked: TraewellingController.logout()
+            visible: TraewellingController.isLoggedIn
+        }
+    }
+
+    FormCard.FormHeader {
         title: i18n("Contributing")
     }
     FormCard.FormCard {
