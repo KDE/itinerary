@@ -114,6 +114,7 @@ target_sources(itinerary-app PRIVATE
     transferdelegatecontroller.cpp
     unitconversion.cpp
     weatherforecastmodel.cpp
+    traewellingcontroller.cpp
     qml.qrc
 )
 qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
@@ -369,6 +370,7 @@ if (ANDROID)
         weather-snow
         weather-snow-scattered
         weather-storm
+        cloud-upload
     )
 
     ecm_add_android_apk(itinerary-app ANDROID_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android)

@@ -44,6 +44,7 @@
 #include "timelinedelegatecontroller.h"
 #include "timelinemodel.h"
 #include "timelinesectiondelegatecontroller.h"
+#include "traewellingcontroller.h"
 #include "transferdelegatecontroller.h"
 #include "transfermanager.h"
 #include "tripgroupcontroller.h"
@@ -225,6 +226,7 @@ static PassManager *s_passManager = nullptr;
 static MatrixController *s_matrixController = nullptr;
 static ImportController *s_importController = nullptr;
 static TripGroupModel *s_tripGroupModel = nullptr;
+static TraewellingController *s_traewellingController = nullptr;
 
 #define REGISTER_SINGLETON_INSTANCE(Class, Instance) \
     qmlRegisterSingletonInstance<Class>("org.kde.itinerary", 1, 0, #Class, Instance);
@@ -253,6 +255,7 @@ void registerApplicationSingletons()
     REGISTER_SINGLETON_INSTANCE(MatrixController, s_matrixController);
     REGISTER_SINGLETON_INSTANCE(ImportController, s_importController);
     REGISTER_SINGLETON_INSTANCE(TripGroupModel, s_tripGroupModel);
+    REGISTER_SINGLETON_INSTANCE(TraewellingController, s_traewellingController);
 
     REGISTER_SINGLETON_GADGET_FACTORY(DevelopmentModeController)
     REGISTER_SINGLETON_GADGET_FACTORY(Factory)
@@ -445,6 +448,9 @@ int main(int argc, char **argv)
     importController.setReservationManager(&resMgr);
     QObject::connect(&intentHandler, &IntentHandler::handleIntent, &importController, &ImportController::importFromIntent);
     s_importController = &importController;
+
+    TraewellingController traewellingController(namFactory);
+    s_traewellingController = &traewellingController;
 
     ApplicationController appController;
     appController.setNetworkAccessManagerFactory(namFactory);
