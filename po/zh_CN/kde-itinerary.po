@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-13 05:59\n"
+"PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -744,10 +744,9 @@ msgid "Website"
 msgstr ""
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgid "Select country"
-msgstr "选择换乘方式"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1895,19 +1894,16 @@ msgid "Arrival"
 msgstr "到达信息"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "train or bus departure"
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
-msgstr "出发时间"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time: %1"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
-msgstr "到达时间：%1"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:175
 #, kde-format
@@ -3625,14 +3621,7 @@ msgid "How to import data?"
 msgstr "如何导入数据？"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3641,11 +3630,6 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>您可以通过各种方式将数据导入到 KDE Itinerary：<ul><li>直接打开 PDF 格式的"
-"电子票券或打开 Apple 钱包中保存的“凭证”。</li><li>从 Android 日历中，通过 "
-"DAVx⁵ 同步 KMail、Nextcloud 或 Thunderbird 内行程插件所生成的条目</li><li>使"
-"用 KMail 行程插件，并在其中通过 KDE Connect 发送行程。</li><li>扫描登机牌条形"
-"码或粘贴登机牌的内容。</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
