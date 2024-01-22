@@ -150,6 +150,7 @@ Kirigami.ScrollablePage {
     footer: ColumnLayout {
         spacing: 0
         height: indicator.running ? layout.implicitHeight : 0
+        visible: journeyModel.loading && journeyView.count !== 0
 
         Behavior on height {
             NumberAnimation { duration: Kirigami.Units.shortDuration }
