@@ -31,7 +31,7 @@ Kirigami.ApplicationWindow {
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
 
         globalToolBar {
-            style: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.Auto
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
             showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
         }
     }
