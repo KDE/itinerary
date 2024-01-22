@@ -386,6 +386,7 @@
       <li xml:lang="uk">Вибір альтернативних залізничних шляхів за умов наявності проїзного або неможливості з'єднання різних частин маршруту.</li>
       <li xml:lang="x-test">xxSelection of alternative train connections on unbound tickets or on missed connections.xx</li>
       <li xml:lang="zh-CN">使用非绑定票券或错过联运交通时改签联运火车。</li>
+      <li xml:lang="zh-TW">在使用未限制的票券或是沒趕上轉乘時可選取替代的火車轉乘。</li>
       <li>Local ground transportation navigation between elements of your itinerary.</li>
       <li xml:lang="ca">Navegació de transport local terrestre entre elements de l'itinerari.</li>
       <li xml:lang="ca-valencia">Navegació de transport local terrestre entre elements de l'itinerari.</li>
@@ -413,6 +414,7 @@
       <li xml:lang="uk">Навігація на місцевості під час пересадок між фрагментами вашого маршруту.</li>
       <li xml:lang="x-test">xxLocal ground transportation navigation between elements of your itinerary.xx</li>
       <li xml:lang="zh-CN">在各段行程间为您进行本地地面交通导航。</li>
+      <li xml:lang="zh-TW">在您的旅行計劃項目之間的本地地面運輸導覽。</li>
       <li>Train coach layout view (for some operators only).</li>
       <li xml:lang="ca">Vista de la disposició de vagons del tren (només per a alguns operadors).</li>
       <li xml:lang="ca-valencia">Vista de la disposició de vagons del tren (només per a alguns operadors).</li>
@@ -492,6 +494,7 @@
       <li xml:lang="uk">На мапі залізничної станції може бути показано доступні орендовані велосипеди зі стаціонарними або довільними місцями паркування.</li>
       <li xml:lang="x-test">xxAvailable dock-based or free-floating rental bikes can be displayed on the train station map.xx</li>
       <li xml:lang="zh-CN">火车站地图显示空余的有桩或无桩共享单车。</li>
+      <li xml:lang="zh-TW">在火車站地圖上可以顯示可用的腳踏車租借，支援停車柱式或是自由停靠的腳踏車租借。</li>
       <li>Personal travel statistics to monitor environmental impact.</li>
       <li xml:lang="ca">Estadístiques de viatges personals per a controlar l'impacte ambiental.</li>
       <li xml:lang="ca-valencia">Estadístiques de viatges personals per a controlar l'impacte ambiental.</li>
@@ -548,6 +551,7 @@
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
     <p xml:lang="x-test">xxKDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.xx</p>
     <p xml:lang="zh-CN">KDE Itinerary 是 KMail 行程提取插件和 KDE Connect 的最佳搭档，还能配合 Nextcloud Hub 和 DavDroid 使用。</p>
+    <p xml:lang="zh-TW">《KDE 旅行計劃》與 KMail 的旅行計劃取出外掛程式及 KDE 連線，或是 Nextcloud Hub 及 DavDroid 共同使用時更方便。</p>
   </description>
   <screenshots>
     <screenshot type="default">
@@ -639,6 +643,7 @@
       <caption xml:lang="uk">Панель місць у вагонах потягу із підсвічуванням заброньованих місць</caption>
       <caption xml:lang="x-test">xxTrain layout view highlighting the coach with a seat reservationxx</caption>
       <caption xml:lang="zh-CN">列车编组视图，高亮显示了车厢中预订的座位</caption>
+      <caption xml:lang="zh-TW">火車佈局檢視，突顯座位預約與車廂</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-vehicle-layout.png</image>
     </screenshot>
     <screenshot>
@@ -668,6 +673,7 @@
       <caption xml:lang="uk">Мапа платформ залізничної станції, підсвічування платформ прибуття та відправлення</caption>
       <caption xml:lang="x-test">xxTrain station platform map, highlighting arrival and departure platformsxx</caption>
       <caption xml:lang="zh-CN">火车站站台地图，高亮显示了入站和出站站台</caption>
+      <caption xml:lang="zh-TW">火車站月台地圖，突顯抵達和出發的月台</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-platform-map.png</image>
     </screenshot>
     <screenshot>
@@ -697,6 +703,7 @@
       <caption xml:lang="uk">Мапа залізничної станції із показом доступності оренди велосипедів у режимі реального часу</caption>
       <caption xml:lang="x-test">xxTrain station map showing real-time availability of rental bikesxx</caption>
       <caption xml:lang="zh-CN">显示出租自行车实时信息的火车站地图。</caption>
+      <caption xml:lang="zh-TW">火車站地圖，顯示租借腳踏車的即時可用狀態</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-map-with-rental-bike-data.png</image>
     </screenshot>
     <screenshot>
@@ -726,6 +733,7 @@
       <caption xml:lang="uk">Докладні відомості для позначеного пункту на мапі залізничної станції</caption>
       <caption xml:lang="x-test">xxDetailed information for the select entity on the train station mapxx</caption>
       <caption xml:lang="zh-CN">火车站地图，显示了所选条目的详细信息</caption>
+      <caption xml:lang="zh-TW">在火車站地圖中對於所選項目的詳細資訊</caption>
       <image width="480" height="720" type="source">https://cdn.kde.org/screenshots/itinerary/kde-itinerary-train-station-map-details.png</image>
     </screenshot>
     <screenshot>
