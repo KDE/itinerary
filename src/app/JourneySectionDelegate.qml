@@ -233,12 +233,17 @@ FormCard.AbstractFormDelegate {
 
                 Kirigami.OverlaySheet {
                     id: moreNotesSheet
+
+                    parent: applicationWindow().overlay
+
                     header: Kirigami.Heading {
                         text: journeyTitleLabel.text
                     }
 
                     QQC2.Label {
                         Layout.fillWidth: true
+                        Layout.preferredWidth: Kirigami.Units.gridUnit * 60
+                        Layout.maximumWidth: root.width
                         text: modelData.notes.join("<br/>")
                         textFormat: Text.RichText
                         wrapMode: Text.Wrap
@@ -250,7 +255,7 @@ FormCard.AbstractFormDelegate {
                 Layout.fillHeight: true
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
                 text: i18nc("@action:button", "Show More…")
-                visible: notesLabel.implicitHeight > notesLabel.height
+                visible: notesLabel.implicitHeight > notesLabel.Layout.maximumHeight
                 onClicked: {
                     moreNotesSheet.open();
                 }
