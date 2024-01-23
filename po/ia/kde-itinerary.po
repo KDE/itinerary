@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
+"POT-Creation-Date: 2024-01-23 00:37+0000\n"
 "PO-Revision-Date: 2024-01-19 10:02+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1854,7 +1854,7 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "Carga connexiones anterior"
 
-#: app/JourneyQueryPage.qml:171
+#: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
 msgstr "Ancora reportante resultatos..."

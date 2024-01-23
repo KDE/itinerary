@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-19 00:37+0000\n"
-"PO-Revision-Date: 2024-01-21 00:56+0900\n"
+"POT-Creation-Date: 2024-01-23 00:37+0000\n"
+"PO-Revision-Date: 2024-01-22 16:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1844,10 +1844,10 @@ msgctxt "@action:button"
 msgid "Load earlier connections"
 msgstr "載入更早的轉乘"
 
-#: app/JourneyQueryPage.qml:171
+#: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "還在抓取結果…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -1881,7 +1881,7 @@ msgstr "到："
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "交換出發及抵達"
 
 #: app/JourneyRequestPage.qml:152
 #, kde-format
@@ -1928,13 +1928,13 @@ msgstr "區域或當地鐵路"
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "捷運、地鐵、輕軌"
 
 #: app/JourneyRequestPage.qml:252
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "本地或區域公車服務"
 
 #: app/JourneyRequestPage.qml:262
 #, kde-format
@@ -2001,7 +2001,7 @@ msgstr "距離：%1"
 #: app/JourneySectionPage.qml:81
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "平均速度：%1"
 
 #: app/JourneySectionPage.qml:88
 #, kde-format
@@ -2057,7 +2057,7 @@ msgstr ""
 #: app/livedatamanager.cpp:771
 #, kde-format
 msgid "Itinerary change"
-msgstr ""
+msgstr "行程預訂變更"
 
 #: app/LiveStatusPage.qml:19 app/main.qml:209
 #, kde-format
@@ -2083,12 +2083,12 @@ msgstr "分享實時位置"
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
-msgstr ""
+msgstr "您確定要分享您的目前位置到 Matrix 頻道 %1 嗎？"
 
 #: app/LiveStatusPage.qml:161
 #, kde-format
 msgid "Automatically follow on the map"
-msgstr ""
+msgstr "自動在地圖上跟隨"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
 #, kde-format
@@ -2186,12 +2186,12 @@ msgstr "貨幣：%1"
 #: app/locationinformation.cpp:85
 #, kde-format
 msgid "People are driving on the right side."
-msgstr ""
+msgstr "人們開車靠右。"
 
 #: app/locationinformation.cpp:86
 #, kde-format
 msgid "People are driving on the left side."
-msgstr ""
+msgstr "人們開車靠左。"
 
 #: app/locationinformation.cpp:103
 msgid "Type A"
@@ -2654,12 +2654,12 @@ msgstr ""
 #: app/ProgramMembershipEditor.qml:77
 #, kde-format
 msgid "Membership"
-msgstr ""
+msgstr "會員"
 
 #: app/ProgramMembershipEditor.qml:83 app/ProgramMembershipPage.qml:83
 #, kde-format
 msgid "Member"
-msgstr ""
+msgstr "會員"
 
 #: app/ProgramMembershipEditor.qml:96 app/ProgramMembershipPage.qml:114
 #: app/TicketPage.qml:92
