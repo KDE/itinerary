@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2024 Tobias Fella <tobias.fella@kde.org>
-// SPDX-License-Identifier: GPL-2.0-or-later
+// SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "traewellingcontroller.h"
 
