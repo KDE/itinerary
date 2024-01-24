@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-23 00:37+0000\n"
+"POT-Creation-Date: 2024-01-24 00:37+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2004,7 +2004,7 @@ msgstr "%1 %2(%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 운전(%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
