@@ -97,6 +97,9 @@ ColumnLayout {
     }
     CalendarSelectionSheet {
         id: calendarSelector
+
+        parent: applicationWindow().overlay
+
         model: writableCalendars
         onCalendarSelected: controller.addToCalendar(calendar);
     }
