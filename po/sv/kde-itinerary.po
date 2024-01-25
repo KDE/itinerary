@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 03:08+0000\n"
+"POT-Creation-Date: 2024-01-25 02:22+0000\n"
 "PO-Revision-Date: 2023-08-25 18:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -123,7 +123,7 @@ msgstr "Lägg till i kalender..."
 msgid "Export..."
 msgstr "Exportera..."
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
@@ -132,70 +132,70 @@ msgstr "Exportera..."
 msgid "Delete"
 msgstr "Ta bort"
 
-#: app/ActionsCard.qml:114
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "Ta bort händelse"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Vill du verkligen ta bort evenemanget?"
 
-#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr "Exportera"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Som resplanefil..."
 
-#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
 #, kde-format
 msgid "Send to %1"
 msgstr "Skicka till %1"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:165
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgid "Export Reservation"
 msgstr "Importera bokning"
 
-#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Resplanefil (*.itinerary)"
 
-#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Avboka reservation"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Checka in"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Ladda ner"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Change Reservation"
 msgstr "Ändra bokning"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "View Reservation"
 msgstr "Visa bokning"

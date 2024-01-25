@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-14 03:08+0000\n"
+"POT-Creation-Date: 2024-01-25 02:22+0000\n"
 "PO-Revision-Date: 2023-10-08 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -122,7 +122,7 @@ msgstr "캘린더에 추가..."
 msgid "Export..."
 msgstr "내보내기..."
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
@@ -131,70 +131,70 @@ msgstr "내보내기..."
 msgid "Delete"
 msgstr "삭제"
 
-#: app/ActionsCard.qml:114
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "이벤트 삭제"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "이 이벤트를 삭제하시겠습니까?"
 
-#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr "내보내기"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Itinerary 파일로..."
 
-#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
 #, kde-format
 msgid "Send to %1"
 msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:165
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgid "Export Reservation"
 msgstr "예약 가져오기"
 
-#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
 
-#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "동작"
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "예약 취소"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "체크인"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:193
 #, kde-format
 msgid "Change Reservation"
 msgstr "예약 변경"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "View Reservation"
 msgstr "예약 보기"
