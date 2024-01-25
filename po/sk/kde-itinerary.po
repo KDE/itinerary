@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 00:37+0000\n"
+"POT-Creation-Date: 2024-01-25 00:37+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -124,7 +124,7 @@ msgstr "Pridať dokument..."
 msgid "Export..."
 msgstr "Exportovať..."
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
@@ -133,88 +133,88 @@ msgstr "Exportovať..."
 msgid "Delete"
 msgstr "Vymazať"
 
-#: app/ActionsCard.qml:114
+#: app/ActionsCard.qml:117
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete Event"
 msgstr "Odstrániť dokument"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportovať..."
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "As Itinerary file..."
 msgstr "KDE Itinerár"
 
-#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
 msgstr "Čas konca: %1"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:165
 #, fuzzy, kde-format
 #| msgid "Hotel Reservation"
 msgid "Export Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
 
-#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, fuzzy, kde-format
 #| msgid "Application"
 msgid "Actions"
 msgstr "Aplikácia"
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:190
 #, fuzzy, kde-format
 #| msgid "Cancel Reservation"
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Zrušiť rezerváciu"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Vstupná kontrola"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Stiahnuť"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:193
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr ""
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:194
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reserve"
 msgstr "Rezervácia"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Zmena rezervácie"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Zobraziť rezerváciu"

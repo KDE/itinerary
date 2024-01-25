@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 00:37+0000\n"
+"POT-Creation-Date: 2024-01-25 00:37+0000\n"
 "PO-Revision-Date: 2023-09-27 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,7 @@ msgstr "Lisää kalenteriin…"
 msgid "Export..."
 msgstr "Vie…"
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
@@ -131,82 +131,82 @@ msgstr "Vie…"
 msgid "Delete"
 msgstr "Poista"
 
-#: app/ActionsCard.qml:114
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "Poista tapahtuma"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Haluatko varmasti poistaa tämän tapahtuman?"
 
-#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr "Vie"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Itinerary-tiedostoksi…"
 
-#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
 #, kde-format
 msgid "Send to %1"
 msgstr "Lähetä vastaanottajalle %1"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:165
 #, fuzzy, kde-format
 #| msgid "Import Reservation"
 msgid "Export Reservation"
 msgstr "Tuo varaus"
 
-#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-tiedosto (*.itinerary)"
 
-#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "Toiminnot"
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Peru varaus"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Palautus"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Lataa"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:193
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr ""
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:194
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reserve"
 msgstr "Varaus"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Muuta varausta"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Näytä varaus"

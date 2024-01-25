@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-24 00:37+0000\n"
+"POT-Creation-Date: 2024-01-25 00:37+0000\n"
 "PO-Revision-Date: 2024-01-21 08:26+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -124,7 +124,7 @@ msgstr "Dodaj do kalendarza..."
 msgid "Export..."
 msgstr "Wyeksportuj..."
 
-#: app/ActionsCard.qml:78 app/ActionsCard.qml:121 app/DocumentsCard.qml:87
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
@@ -133,80 +133,80 @@ msgstr "Wyeksportuj..."
 msgid "Delete"
 msgstr "Usuń"
 
-#: app/ActionsCard.qml:114
+#: app/ActionsCard.qml:117
 #, kde-format
 msgid "Delete Event"
 msgstr "Usuń wydarzenie"
 
-#: app/ActionsCard.qml:115
+#: app/ActionsCard.qml:118
 #, kde-format
 msgid "Do you really want to delete this event?"
 msgstr "Czy na pewno chcesz usunąć to wydarzenie?"
 
-#: app/ActionsCard.qml:134 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
 #, kde-format
 msgid "Export"
 msgstr "Wyeksportuj"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Jako plik Itinerary..."
 
-#: app/ActionsCard.qml:148 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
 #, kde-format
 msgid "Send to %1"
 msgstr "Wyślij do %1"
 
-#: app/ActionsCard.qml:162
+#: app/ActionsCard.qml:165
 #, kde-format
 msgid "Export Reservation"
 msgstr "Wyeksportuj rezerwację"
 
-#: app/ActionsCard.qml:164 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Pliki Itinerary (*.itinerary)"
 
-#: app/ActionsCard.qml:169 app/ProgramMembershipPage.qml:135
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
 #: app/TicketPage.qml:130
 #, kde-format
 msgid "Actions"
 msgstr "Działania"
 
-#: app/ActionsCard.qml:187
+#: app/ActionsCard.qml:190
 #, kde-format
 msgctxt "cancel as in revoking a booking"
 msgid "Cancel Reservation"
 msgstr "Odwołaj rezerwację"
 
-#: app/ActionsCard.qml:188
+#: app/ActionsCard.qml:191
 #, kde-format
 msgid "Check-in"
 msgstr "Zamelduj się"
 
-#: app/ActionsCard.qml:189
+#: app/ActionsCard.qml:192
 #, kde-format
 msgid "Download"
 msgstr "Pobierz"
 
-#: app/ActionsCard.qml:190
+#: app/ActionsCard.qml:193
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
 msgstr "Dołącz"
 
-#: app/ActionsCard.qml:191
+#: app/ActionsCard.qml:194
 #, kde-format
 msgid "Reserve"
 msgstr "Zarezerwuj"
 
-#: app/ActionsCard.qml:192
+#: app/ActionsCard.qml:195
 #, kde-format
 msgid "Change Reservation"
 msgstr "Zmień rezerwację"
 
-#: app/ActionsCard.qml:193
+#: app/ActionsCard.qml:196
 #, kde-format
 msgid "View Reservation"
 msgstr "Zobacz rezerwację"
