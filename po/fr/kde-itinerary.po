@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 00:37+0000\n"
-"PO-Revision-Date: 2024-01-05 11:20+0100\n"
+"PO-Revision-Date: 2024-01-23 10:26+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -197,14 +197,12 @@ msgstr "Télécharger"
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
-msgstr ""
+msgstr "Rejoindre"
 
 #: app/ActionsCard.qml:194
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Réservation"
+msgstr "Réserver"
 
 #: app/ActionsCard.qml:195
 #, kde-format
@@ -758,10 +756,9 @@ msgid "Website"
 msgstr "Site Internet"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Sélectionner un voyage"
+msgstr "Sélectionner un pays"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1877,7 +1874,7 @@ msgstr "Charger les correspondances antérieures"
 #: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Toujours en recherche de résultats..."
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -1913,7 +1910,7 @@ msgstr "Vers :"
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "Échanger le départ et l'arrivée"
 
 #: app/JourneyRequestPage.qml:152
 #, kde-format
@@ -1928,15 +1925,13 @@ msgid "Arrival"
 msgstr "Arrivée"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Heure de départ"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Heure d'arrivée"
@@ -2784,8 +2779,7 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Union européenne"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
 msgstr "🇪🇺 Union européenne"
 
@@ -3693,14 +3687,7 @@ msgid "How to import data?"
 msgstr "Comment importer des données ?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3711,12 +3698,11 @@ msgid ""
 msgstr ""
 "<p>Il y a de nombreuses façons d'importer des données dans KDE Itinerary :"
 "<ul><li> Directement par ouverture de tickets « PDF » ou de laisser-passer "
-"de portefeuille Apple.</li><li>A partir de l'agenda de Android, pour les "
+"de portefeuille Apple.</li><li>A partir de l'agenda Android, pour les "
 "entrées produites grâce aux modules externes de Itinerary pour KMail, "
-"Nextcloud or Thunderbird et synchronisées avec DAVx⁵.</li><li>Grâce à KDE "
-"Connect à partir du module externe de Itinerary pour KMail.</li><li>En "
-"lisant les codes barre de cartes d'embarquement et en copiant leurs contenus."
-"</li></p>"
+"Nextcloud et synchronisées en utilisant DAVx⁵.</li><li>Grâce à KDE Connect à "
+"partir du module externe de Itinerary pour KMail.</li><li>En lisant les "
+"codes barre de cartes d'embarquement et en copiant leurs contenus.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
