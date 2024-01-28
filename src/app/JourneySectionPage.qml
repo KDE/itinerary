@@ -102,21 +102,22 @@ Kirigami.Page {
                 verticalAlignment: Text.AlignTop
                 // Doesn't work with RichText.
                 elide: Text.ElideRight
-                maximumLineCount: 10
+                maximumLineCount: 5
                 Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
                 clip: true
                 visible: journeySection.notes.length > 0
                 font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
 
-                Kirigami.OverlaySheet {
+                SheetDrawer {
                     id: moreNotesSheet
-                    QQC2.Label {
+                    contentItem: QQC2.Label {
                         Layout.fillWidth: true
                         text: journeySection.notes.join("<br/>")
                         textFormat: Text.RichText
                         wrapMode: Text.Wrap
                         onLinkActivated: Qt.openUrlExternally(link)
+                        padding: Kirigami.Units.largeSpacing
                     }
                 }
             }

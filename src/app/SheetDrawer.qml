@@ -42,7 +42,6 @@ Item {
 
     QQC2.Dialog {
         id: sheet
-
         parent: applicationWindow().overlay
         background: Components.DialogRoundedBackground {}
 

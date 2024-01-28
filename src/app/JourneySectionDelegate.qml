@@ -231,16 +231,20 @@ FormCard.AbstractFormDelegate {
                 clip: implicitHeight > height
                 onLinkActivated: Qt.openUrlExternally(link)
 
-                Kirigami.OverlaySheet {
+                SheetDrawer {
                     id: moreNotesSheet
 
                     parent: applicationWindow().overlay
 
-                    header: Kirigami.Heading {
+                    headerItem: Kirigami.Heading {
                         text: journeyTitleLabel.text
+                        elide: Qt.ElideRight
+                        Layout.fillWidth: true
+                        leftPadding: Kirigami.Units.smallSpacing
+                        rightPadding: Kirigami.Units.smallSpacing
                     }
 
-                    QQC2.Label {
+                    contentItem: QQC2.Label {
                         Layout.fillWidth: true
                         Layout.preferredWidth: Kirigami.Units.gridUnit * 60
                         Layout.maximumWidth: root.width
@@ -248,6 +252,8 @@ FormCard.AbstractFormDelegate {
                         textFormat: Text.RichText
                         wrapMode: Text.Wrap
                         onLinkActivated: Qt.openUrlExternally(link)
+                        padding: Kirigami.Units.largeSpacing
+
                     }
                 }
             }
