@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 02:22+0000\n"
-"PO-Revision-Date: 2024-01-07 11:57+0100\n"
+"PO-Revision-Date: 2024-01-27 11:05+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -2725,10 +2725,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Unia Europejska"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Unia Europejska"
+msgstr "Unia Europejska"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
