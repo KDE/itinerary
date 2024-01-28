@@ -9,6 +9,10 @@
 #include <QString>
 #include <QUrl>
 
+#ifdef Q_OS_ANDROID
+#include <kandroidextras/contentresolver.h>
+#endif
+
 #include <cstring>
 
 using namespace Qt::Literals::StringLiterals;
