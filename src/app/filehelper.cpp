@@ -31,7 +31,7 @@ QString FileHelper::fileName(const QUrl &url)
 {
 #if defined(Q_OS_ANDROID)
     if (url.scheme() == "content"_L1) {
-        return KAndroidExtras::ContentResolver::fileName(url)
+        return KAndroidExtras::ContentResolver::fileName(url);
     }
 #endif
     return url.fileName();
