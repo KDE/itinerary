@@ -26,6 +26,7 @@ include(KDECMakeSettings)
 include(GenerateExportHeader)
 include(ECMQmlModule)
 include(ECMDeprecationSettings)
+include(ECMFeatureSummary)
 include(ECMAddAndroidApk)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -125,4 +126,4 @@ ecm_qt_install_logging_categories(
     DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
 )
 ki18n_install(po)
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ecm_feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
