@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.components as Components
 
+
 Item {
     id: root
     property Component contentItem
@@ -23,7 +24,7 @@ Item {
 
         } else {
             sheet.open()
-            sheet.flickableContentData = [contentItem.createObject(sheet)]
+            sheet.contentItem = contentItem.createObject(sheet)
             sheet.header = headerItem.createObject(sheet)
 
         }
@@ -39,14 +40,22 @@ Item {
     }
 
 
-    Kirigami.OverlaySheet {
+    QQC2.Dialog {
         id: sheet
+
         parent: applicationWindow().overlay
-        width: Kirigami.Units.gridUnit * 29
-        height: Kirigami.Units.gridUnit * 15
+        background: Components.DialogRoundedBackground {}
+
+        x: Math.round((parent.width - width) / 2)
+        y: Math.round((parent.height - height) / 2)
+
+        width: Math.min(parent.width - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 30)
+        height: Math.min(parent.height - Kirigami.Units.gridUnit * 4, Kirigami.Units.gridUnit * 15)
 
         rightPadding: 0
         leftPadding: 0
+        bottomPadding: 0
+
 
     }
 }

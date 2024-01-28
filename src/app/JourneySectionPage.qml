@@ -151,11 +151,11 @@ Kirigami.Page {
         headerItem: Component {
             RowLayout {
                 id: headerLayout
-                Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
                 Kirigami.Heading {
                     text: sheetDrawer.stop.stopPoint.name
                     Layout.fillWidth: true
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
                     elide: Qt.ElideRight
                 }
                 QQC2.Label {
@@ -182,6 +182,7 @@ Kirigami.Page {
 
             ColumnLayout {
                 id: contentLayout
+                spacing:0
                 width: parent.width
                 FormCard.FormTextDelegate {
                     Layout.fillWidth: true
@@ -231,6 +232,7 @@ Kirigami.Page {
 
                     background: Item{}
                 }
+                Item{Layout.fillHeight: true}
                 FormCard.FormDelegateSeparator {}
                 FormCard.FormButtonDelegate {
                     Layout.fillWidth: true
@@ -260,8 +262,6 @@ Kirigami.Page {
                             applicationWindow().pageStack.layers.push(indoorMapPage, args);
                         }
                 }
-                Item {Layout.fillHeight: true}
-
             }
         }
 
