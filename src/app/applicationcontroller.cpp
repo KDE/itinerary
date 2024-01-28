@@ -343,7 +343,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
-    if (f.size() > 10000000 && !f.fileName().endsWith(QLatin1String(".itinerary"))) {
+    if (f.size() > 10000000 && !FileHelper::fileName(url).endsWith(QLatin1String(".itinerary"))) {
         qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
         Q_EMIT infoMessage(i18n("Import failed: File too large."));
         return;
