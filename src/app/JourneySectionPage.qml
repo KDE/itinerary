@@ -117,7 +117,7 @@ Kirigami.Page {
                         textFormat: Text.RichText
                         wrapMode: Text.Wrap
                         onLinkActivated: Qt.openUrlExternally(link)
-                        padding: Kirigami.Units.largeSpacing
+                        padding: Kirigami.Units.largeSpacing * 2
                     }
                 }
             }

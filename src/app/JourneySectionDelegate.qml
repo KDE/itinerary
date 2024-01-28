@@ -233,7 +233,6 @@ FormCard.AbstractFormDelegate {
 
                 SheetDrawer {
                     id: moreNotesSheet
-
                     parent: applicationWindow().overlay
 
                     headerItem: Kirigami.Heading {
@@ -252,7 +251,7 @@ FormCard.AbstractFormDelegate {
                         textFormat: Text.RichText
                         wrapMode: Text.Wrap
                         onLinkActivated: Qt.openUrlExternally(link)
-                        padding: Kirigami.Units.largeSpacing
+                        padding: Kirigami.Units.largeSpacing * 2
 
                     }
                 }

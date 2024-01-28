@@ -16,6 +16,14 @@ Item {
 
     property Component contentItem
     property Component headerItem
+    property Component footerItem
+
+    signal closed()
+    Component.onCompleted: {
+        sheet.closed.connect(root.closed)
+        drawer.closed.connect(root.closed)
+
+    }
 
     function open() {
         if (Kirigami.Settings.isMobile) {
@@ -26,6 +34,8 @@ Item {
             sheet.open()
             sheet.contentItem = contentItem.createObject(sheet)
             sheet.header.contentItem = headerItem.createObject(sheet)
+            sheet.footer.contentItem = footerItem.createObject(sheet)
+
         }
     }
 
@@ -44,10 +54,15 @@ Item {
         id: sheet
         parent: applicationWindow().overlay
         background: Components.DialogRoundedBackground {}
-
         header: QQC2.Control {
-            leftPadding: Kirigami.Units.smallSpacing
-            rightPadding: Kirigami.Units.smallSpacing
+            leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            topPadding: Kirigami.Units.largeSpacing
+            bottomPadding: 0
+        }
+        footer: QQC2.Control {
+            leftPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
+            rightPadding: Kirigami.Units.largeSpacing + Kirigami.Units.smallSpacing
             topPadding: Kirigami.Units.largeSpacing
             bottomPadding: 0
         }
@@ -61,5 +76,7 @@ Item {
         rightPadding: 0
         leftPadding: 0
         bottomPadding: 0
+
     }
+
 }
