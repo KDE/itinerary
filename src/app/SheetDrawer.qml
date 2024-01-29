@@ -34,8 +34,8 @@ Item {
             sheet.open()
             sheet.contentItem = contentItem.createObject(sheet)
             sheet.header.contentItem = headerItem.createObject(sheet)
-            sheet.footer.contentItem = footerItem.createObject(sheet)
-
+            if (root.footerItem)
+                sheet.footer.contentItem = footerItem.createObject(sheet)
         }
     }
 
