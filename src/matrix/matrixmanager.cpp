@@ -6,7 +6,7 @@
 #include <Quotient/accountregistry.h>
 #include <Quotient/room.h>
 #include <Quotient/qt_connection_util.h>
-#include <Quotient/settings.h>
+#include "Quotient/settings.h"
 
 #include <KLocalizedString>
 #include <QCoreApplication>

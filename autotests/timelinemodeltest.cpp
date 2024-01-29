@@ -7,19 +7,19 @@
 #include "modelverificationpoint.h"
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <favoritelocationmodel.h>
-#include <livedatamanager.h>
-#include <locationinformation.h>
-#include <pkpassmanager.h>
-#include <reservationmanager.h>
-#include <timelinemodel.h>
-#include <tripgroupmanager.h>
-#include <transfermanager.h>
-#include <weatherinformation.h>
+#include "applicationcontroller.h"
+#include "favoritelocationmodel.h"
+#include "livedatamanager.h"
+#include "locationinformation.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
+#include "timelinemodel.h"
+#include "tripgroupmanager.h"
+#include "transfermanager.h"
+#include "weatherinformation.h"
 
-#include <weatherforecast.h>
-#include <weatherforecastmanager.h>
+#include "weatherforecast.h"
+#include "weatherforecastmanager.h"
 
 #include <KItinerary/Flight>
 #include <KItinerary/Place>

@@ -68,13 +68,13 @@
 #ifdef Q_OS_ANDROID
 #include "android/itineraryactivity.h"
 
-#include <kandroidextras/activity.h>
-#include <kandroidextras/contentresolver.h>
-#include <kandroidextras/intent.h>
-#include <kandroidextras/jniarray.h>
-#include <kandroidextras/jnisignature.h>
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/uri.h>
+#include "kandroidextras/activity.h"
+#include "kandroidextras/contentresolver.h"
+#include "kandroidextras/intent.h"
+#include "kandroidextras/jniarray.h"
+#include "kandroidextras/jnisignature.h"
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/uri.h"
 #endif
 
 

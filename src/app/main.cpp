@@ -56,10 +56,10 @@
 #include "matrix/matrixbeacon.h"
 #endif
 
-#include <weatherforecastmanager.h>
+#include "weatherforecastmanager.h"
 
-#include <calendarlistmodel.h>
-#include <calendarpluginloader.h>
+#include "calendarlistmodel.h"
+#include "calendarpluginloader.h"
 
 #include <KItinerary/CountryDb>
 #include <KItinerary/JsonLdDocument>
@@ -89,8 +89,8 @@
 #include <QQmlContext>
 
 #ifdef Q_OS_ANDROID
-#include <kandroidextras/activity.h>
-#include <kandroidextras/intent.h>
+#include "kandroidextras/activity.h"
+#include "kandroidextras/intent.h"
 #else
 #include <QApplication>
 #endif

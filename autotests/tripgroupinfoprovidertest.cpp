@@ -6,14 +6,14 @@
 
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <locationinformation.h>
-#include <reservationmanager.h>
-#include <tripgroup.h>
-#include <tripgroupmanager.h>
-#include <tripgroupinfoprovider.h>
-#include <weatherforecast.h>
-#include <weatherforecastmanager.h>
+#include "applicationcontroller.h"
+#include "locationinformation.h"
+#include "reservationmanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
+#include "tripgroupinfoprovider.h"
+#include "weatherforecast.h"
+#include "weatherforecastmanager.h"
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>

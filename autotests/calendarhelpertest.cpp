@@ -3,8 +3,8 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <calendarhelper.h>
-#include <transfer.h>
+#include "calendarhelper.h"
+#include "transfer.h"
 
 #include <KPublicTransport/Journey>
 

@@ -6,12 +6,12 @@
 #ifndef ITINERARY_ACTIVITY_H
 #define ITINERARY_ACTIVITY_H
 
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/jnimethod.h>
-#include <kandroidextras/jniproperty.h>
-#include <kandroidextras/javatypes.h>
-#include <kandroidextras/androidtypes.h>
-#include <kandroidextras/uri.h>
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/jnimethod.h"
+#include "kandroidextras/jniproperty.h"
+#include "kandroidextras/javatypes.h"
+#include "kandroidextras/androidtypes.h"
+#include "kandroidextras/uri.h"
 
 #include <QCoreApplication>
 

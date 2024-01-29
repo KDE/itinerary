@@ -6,11 +6,11 @@
 
 #include "testhelper.h"
 
-#include <locationhelper.h>
-#include <timelinemodel.h>
-#include <timelinesectiondelegatecontroller.h>
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
+#include "locationhelper.h"
+#include "timelinemodel.h"
+#include "timelinesectiondelegatecontroller.h"
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
 
 #include <QUrl>
 #include <QtTest/qtest.h>

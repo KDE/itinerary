@@ -6,10 +6,10 @@
 #ifndef KCALENDARCORE_JNI_CALENDARDATA_H
 #define KCALENDARCORE_JNI_CALENDARDATA_H
 
-#include <kandroidextras/jniobject.h>
-#include <kandroidextras/jniproperty.h>
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/javatypes.h>
+#include "kandroidextras/jniobject.h"
+#include "kandroidextras/jniproperty.h"
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/javatypes.h"
 
 JNI_TYPE(org, kde, kcalendarcore, CalendarData)
 

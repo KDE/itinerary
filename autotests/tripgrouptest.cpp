@@ -6,10 +6,10 @@
 
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
-#include <tripgroup.h>
-#include <tripgroupmanager.h>
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
+#include "tripgroup.h"
+#include "tripgroupmanager.h"
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>

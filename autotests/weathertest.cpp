@@ -6,8 +6,8 @@
 
 #include "itinerary_version.h"
 
-#include <weatherforecast.h>
-#include <weatherforecastmanager.h>
+#include "weatherforecast.h"
+#include "weatherforecastmanager.h"
 
 #include <QCoreApplication>
 #include <QDebug>

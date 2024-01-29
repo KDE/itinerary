@@ -6,11 +6,11 @@
 
 #include "testhelper.h"
 
-#include <statisticsmodel.h>
-#include <statisticstimerangemodel.h>
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
-#include <tripgroupmanager.h>
+#include "statisticsmodel.h"
+#include "statisticstimerangemodel.h"
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
+#include "tripgroupmanager.h"
 
 #include <QAbstractItemModelTester>
 #include <QUrl>

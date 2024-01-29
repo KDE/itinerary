@@ -5,7 +5,7 @@
 
 #include "testhelper.h"
 
-#include <publictransportmatcher.h>
+#include "publictransportmatcher.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>

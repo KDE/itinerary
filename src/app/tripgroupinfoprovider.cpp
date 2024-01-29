@@ -10,8 +10,8 @@
 #include "reservationmanager.h"
 #include "tripgroup.h"
 
-#include <weatherforecast.h>
-#include <weatherforecastmanager.h>
+#include "weatherforecast.h"
+#include "weatherforecastmanager.h"
 
 #include <KItinerary/LocationUtil>
 #include <KItinerary/Place>

@@ -6,7 +6,7 @@
 #ifndef WEATHERINFORMATION_H
 #define WEATHERINFORMATION_H
 
-#include <weatherforecast.h>
+#include "weatherforecast.h"
 
 #include <QString>
 

@@ -8,9 +8,9 @@
 #include <QQmlEngine>
 #include <QQmlExtensionPlugin>
 
-#include <solidextras/brightnessmanager.h>
-#include <solidextras/lockmanager.h>
-#include <solidextras/networkstatus.h>
+#include "solidextras/brightnessmanager.h"
+#include "solidextras/lockmanager.h"
+#include "solidextras/networkstatus.h"
 
 class SolidExtrasQmlPlugin : public QQmlExtensionPlugin
 {

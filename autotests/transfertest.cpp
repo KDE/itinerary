@@ -6,13 +6,13 @@
 
 #include "testhelper.h"
 
-#include <transfer.h>
-#include <transfermanager.h>
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
-#include <tripgroupmanager.h>
-#include <favoritelocationmodel.h>
-#include <livedatamanager.h>
+#include "transfer.h"
+#include "transfermanager.h"
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
+#include "tripgroupmanager.h"
+#include "favoritelocationmodel.h"
+#include "livedatamanager.h"
 
 #include <QtTest/qtest.h>
 #include <QSignalSpy>

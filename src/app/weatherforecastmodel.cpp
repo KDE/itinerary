@@ -6,7 +6,7 @@
 
 #include "weatherforecastmodel.h"
 
-#include <weatherforecastmanager.h>
+#include "weatherforecastmanager.h"
 
 #include <QDateTime>
 #include <QDebug>

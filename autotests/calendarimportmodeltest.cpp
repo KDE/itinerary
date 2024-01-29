@@ -6,7 +6,7 @@
 
 #include "testhelper.h"
 
-#include <calendarimportmodel.h>
+#include "calendarimportmodel.h"
 
 #include <KItinerary/Event>
 #include <KItinerary/Reservation>

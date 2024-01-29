@@ -9,7 +9,7 @@
 
 #include "jnitypes.h"
 
-#include <jni.h>
+#include "jni.h"
 #include <cstdint>
 #include <utility>
 

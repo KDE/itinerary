@@ -16,13 +16,13 @@
 #include <QStandardPaths>
 
 #ifdef Q_OS_ANDROID
-#include <kandroidextras/contentresolver.h>
-#include <kandroidextras/javatypes.h>
-#include <kandroidextras/jnisignature.h>
-#include <kandroidextras/manifestpermission.h>
+#include "kandroidextras/contentresolver.h"
+#include "kandroidextras/javatypes.h"
+#include "kandroidextras/jnisignature.h"
+#include "kandroidextras/manifestpermission.h"
 using namespace KAndroidExtras;
 
-#include <private/qandroidextras_p.h>
+#include "private/qandroidextras_p.h"
 #endif
 
 #include <csignal>

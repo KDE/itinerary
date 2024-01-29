@@ -7,11 +7,11 @@
 #ifndef TESTHELPER_H
 #define TESTHELPER_H
 
-#include <applicationcontroller.h>
-#include <documentmanager.h>
-#include <passmanager.h>
-#include <pkpassmanager.h>
-#include <reservationmanager.h>
+#include "applicationcontroller.h"
+#include "documentmanager.h"
+#include "passmanager.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
 
 #include <QFile>
 

@@ -8,10 +8,10 @@
 
 
 #ifdef Q_OS_ANDROID
-#include <kandroidextras/activity.h>
-#include <kandroidextras/context.h>
-#include <kandroidextras/intent.h>
-#include <kandroidextras/settings.h>
+#include "kandroidextras/activity.h"
+#include "kandroidextras/context.h"
+#include "kandroidextras/intent.h"
+#include "kandroidextras/settings.h"
 #endif
 
 #include <QDebug>

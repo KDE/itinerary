@@ -5,10 +5,10 @@
 */
 
 #include <config-itinerary.h>
-#include <applicationcontroller.h>
-#include <healthcertificatemanager.h>
-#include <pkpassmanager.h>
-#include <reservationmanager.h>
+#include "applicationcontroller.h"
+#include "healthcertificatemanager.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
 
 #include <QAbstractItemModelTester>
 #include <QSignalSpy>

@@ -5,7 +5,7 @@
 */
 
 #include "testhelper.h"
-#include <documentmanager.h>
+#include "documentmanager.h"
 
 #include <KItinerary/CreativeWork>
 

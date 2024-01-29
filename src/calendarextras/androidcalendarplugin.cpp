@@ -8,7 +8,7 @@
 
 #include "android/calendardata.h"
 
-#include <kandroidextras/calendarcontract.h>
+#include "kandroidextras/calendarcontract.h"
 #include <KAndroidExtras/JniObject>
 
 #include <QCoreApplication>

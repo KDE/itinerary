@@ -6,9 +6,9 @@
 
 #include "testhelper.h"
 
-#include <documentsmodel.h>
-#include <documentmanager.h>
-#include <timelinedelegatecontroller.h>
+#include "documentsmodel.h"
+#include "documentmanager.h"
+#include "timelinedelegatecontroller.h"
 
 #include <QAbstractItemModelTester>
 #include <QtTest/qtest.h>

@@ -5,7 +5,7 @@
 
 #include "testhelper.h"
 
-#include <journeysectionmodel.h>
+#include "journeysectionmodel.h"
 
 #include <KPublicTransport/Stopover>
 

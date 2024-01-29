@@ -7,11 +7,11 @@
 #include "modelverificationpoint.h"
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
-#include <timelinemodel.h>
-#include <tripgroupmanager.h>
-#include <tripgroupproxymodel.h>
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
+#include "timelinemodel.h"
+#include "tripgroupmanager.h"
+#include "tripgroupproxymodel.h"
 
 #include <QAbstractItemModelTester>
 #include <QtTest/qtest.h>

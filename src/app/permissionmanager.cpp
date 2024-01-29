@@ -9,7 +9,7 @@
 
 #ifdef Q_OS_ANDROID
 #include <KAndroidExtras/ManifestPermission>
-#include <private/qandroidextras_p.h>
+#include "private/qandroidextras_p.h"
 #endif
 
 #ifdef Q_OS_ANDROID

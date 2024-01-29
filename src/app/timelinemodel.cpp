@@ -15,8 +15,8 @@
 #include "transfermanager.h"
 #include "weatherinformation.h"
 
-#include <weatherforecast.h>
-#include <weatherforecastmanager.h>
+#include "weatherforecast.h"
+#include "weatherforecastmanager.h"
 
 #include <KItinerary/BusTrip>
 #include <KItinerary/CountryDb>

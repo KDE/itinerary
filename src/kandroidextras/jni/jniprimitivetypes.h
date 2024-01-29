@@ -6,7 +6,7 @@
 #ifndef KANDROIDEXTRAS_JNIPRIMITIVETYPES_H
 #define KANDROIDEXTRAS_JNIPRIMITIVETYPES_H
 
-#include <jni.h>
+#include "jni.h"
 
 #include <type_traits>
 

@@ -6,9 +6,9 @@
 
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
-#include <pkpassmanager.h>
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
+#include "pkpassmanager.h"
 
 #include <KItinerary/Flight>
 #include <KItinerary/Reservation>

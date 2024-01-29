@@ -7,7 +7,7 @@
 #ifndef WEATHERFORECASTMODEL_H
 #define WEATHERFORECASTMODEL_H
 
-#include <weatherforecast.h>
+#include "weatherforecast.h"
 
 #include <QAbstractListModel>
 

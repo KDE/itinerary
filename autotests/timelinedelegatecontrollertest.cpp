@@ -6,11 +6,11 @@
 
 #include "testhelper.h"
 
-#include <timelinedelegatecontroller.h>
-#include <applicationcontroller.h>
-#include <livedatamanager.h>
-#include <reservationmanager.h>
-#include <transfermanager.h>
+#include "timelinedelegatecontroller.h"
+#include "applicationcontroller.h"
+#include "livedatamanager.h"
+#include "reservationmanager.h"
+#include "transfermanager.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>

@@ -17,8 +17,8 @@
 #include <QUrlQuery>
 
 #ifdef Q_OS_ANDROID
-#include <kandroidextras/activity.h>
-#include <kandroidextras/intent.h>
+#include "kandroidextras/activity.h"
+#include "kandroidextras/intent.h"
 #else
 #include <QGeoPositionInfo>
 #include <QGeoPositionInfoSource>

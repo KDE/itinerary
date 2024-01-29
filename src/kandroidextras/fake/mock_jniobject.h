@@ -9,8 +9,8 @@
 #include "kandroidextras_export.h"
 #include "jni.h"
 
-#include <kandroidextras/jnisignature.h>
-#include <kandroidextras/jnitypes.h>
+#include "kandroidextras/jnisignature.h"
+#include "kandroidextras/jnitypes.h"
 
 #include <QExplicitlySharedDataPointer>
 #include <QStringList>

@@ -7,7 +7,7 @@
 #include "testhelper.h"
 #include "mocknetworkaccessmanager.h"
 
-#include <pkpassmanager.h>
+#include "pkpassmanager.h"
 
 #include <QUrl>
 #include <QtTest/qtest.h>

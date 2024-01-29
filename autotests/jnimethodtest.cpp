@@ -3,10 +3,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <kandroidextras/jnimethod.h>
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/intent.h>
-#include <kandroidextras/javatypes.h>
+#include "kandroidextras/jnimethod.h"
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/intent.h"
+#include "kandroidextras/javatypes.h"
 
 #include <QtTest/qtest.h>
 

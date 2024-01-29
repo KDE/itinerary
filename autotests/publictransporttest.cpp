@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <publictransport.h>
+#include "publictransport.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>

@@ -12,7 +12,7 @@
 
 #include <QCoreApplication>
 #include <QJniEnvironment>
-#include <private/qandroidextras_p.h>
+#include "private/qandroidextras_p.h"
 
 using namespace KAndroidExtras;
 

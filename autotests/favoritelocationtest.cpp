@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <favoritelocationmodel.h>
+#include "favoritelocationmodel.h"
 
 #include <QAbstractItemModelTester>
 #include <QtTest/qtest.h>

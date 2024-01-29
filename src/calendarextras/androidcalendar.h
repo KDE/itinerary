@@ -11,7 +11,7 @@
 #include "android/calendar.h"
 #include "incidencekey_p.h"
 
-#include <jni.h>
+#include "jni.h"
 
 #include <unordered_map>
 

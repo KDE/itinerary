@@ -7,7 +7,7 @@
 #include "mapdownloadmanager.h"
 #include "reservationmanager.h"
 
-#include <solidextras/networkstatus.h>
+#include "solidextras/networkstatus.h"
 
 #include <KOSMIndoorMap/MapLoader>
 

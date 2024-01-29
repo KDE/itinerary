@@ -8,11 +8,11 @@
 
 #include "calendardata.h"
 
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/jnimethod.h>
-#include <kandroidextras/jniproperty.h>
-#include <kandroidextras/javatypes.h>
-#include <kandroidextras/androidtypes.h>
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/jnimethod.h"
+#include "kandroidextras/jniproperty.h"
+#include "kandroidextras/javatypes.h"
+#include "kandroidextras/androidtypes.h"
 
 JNI_TYPE(org, kde, kcalendarcore, CalendarPlugin)
 

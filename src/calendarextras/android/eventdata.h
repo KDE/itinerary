@@ -6,11 +6,11 @@
 #ifndef KCALENDARCORE_JNI_EVENTDATA_H
 #define KCALENDARCORE_JNI_EVENTDATA_H
 
-#include <kandroidextras/jnimethod.h>
-#include <kandroidextras/jniobject.h>
-#include <kandroidextras/jniproperty.h>
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/javatypes.h>
+#include "kandroidextras/jnimethod.h"
+#include "kandroidextras/jniobject.h"
+#include "kandroidextras/jniproperty.h"
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/javatypes.h"
 
 JNI_TYPE(org, kde, kcalendarcore, EventData)
 JNI_TYPE(org, kde, kcalendarcore, AttendeeData)

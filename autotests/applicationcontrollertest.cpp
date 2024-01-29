@@ -6,15 +6,15 @@
 
 #include "testhelper.h"
 
-#include <applicationcontroller.h>
-#include <pkpassmanager.h>
-#include <reservationmanager.h>
-#include <documentmanager.h>
-#include <favoritelocationmodel.h>
-#include <livedatamanager.h>
-#include <passmanager.h>
-#include <transfermanager.h>
-#include <tripgroupmanager.h>
+#include "applicationcontroller.h"
+#include "pkpassmanager.h"
+#include "reservationmanager.h"
+#include "documentmanager.h"
+#include "favoritelocationmodel.h"
+#include "livedatamanager.h"
+#include "passmanager.h"
+#include "transfermanager.h"
+#include "tripgroupmanager.h"
 
 #include <KItinerary/DocumentUtil>
 #include <KItinerary/ExtractorCapabilities>

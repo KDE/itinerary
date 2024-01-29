@@ -8,9 +8,9 @@
 #include "matrixcontroller.h"
 
 #if HAVE_MATRIX
-#include <matrix/matrixmanager.h>
-#include <matrix/matrixroomsmodel.h>
-#include <matrix/matrixroomssortproxymodel.h>
+#include "matrix/matrixmanager.h"
+#include "matrix/matrixroomsmodel.h"
+#include "matrix/matrixroomssortproxymodel.h"
 #endif
 
 MatrixController::MatrixController(QObject *parent)

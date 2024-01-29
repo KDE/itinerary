@@ -4,11 +4,11 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <kandroidextras/jniproperty.h>
-#include <kandroidextras/jnitypes.h>
-#include <kandroidextras/manifestpermission.h>
-#include <kandroidextras/intent.h>
-#include <kandroidextras/uri.h>
+#include "kandroidextras/jniproperty.h"
+#include "kandroidextras/jnitypes.h"
+#include "kandroidextras/manifestpermission.h"
+#include "kandroidextras/intent.h"
+#include "kandroidextras/uri.h"
 
 #include <QtTest/qtest.h>
 

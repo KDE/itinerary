@@ -7,7 +7,7 @@
 #ifndef GPXEXPORT_H
 #define GPXEXPORT_H
 
-#include <gpx/gpxwriter.h>
+#include "gpx/gpxwriter.h"
 
 namespace KPublicTransport {
 class JourneySection;

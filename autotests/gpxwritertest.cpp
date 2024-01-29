@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include <gpx/gpxwriter.h>
+#include "gpx/gpxwriter.h"
 
 #include <QBuffer>
 #include <QDateTime>

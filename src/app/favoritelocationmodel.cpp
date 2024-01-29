@@ -11,7 +11,7 @@
 #include "jsonio.h"
 #include "logging.h"
 
-#include <gpx/gpxreader.h>
+#include "gpx/gpxreader.h"
 
 #include <KItinerary/LocationUtil>
 

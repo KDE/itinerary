@@ -4,7 +4,7 @@
 */
 
 #include "testhelper.h"
-#include <passmanager.h>
+#include "passmanager.h"
 
 #include <KItinerary/JsonLdDocument>
 #include <KItinerary/ProgramMembership>

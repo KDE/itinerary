@@ -7,10 +7,10 @@
 #include "testhelper.h"
 #include "mocknetworkaccessmanager.h"
 
-#include <livedata.h>
-#include <livedatamanager.h>
-#include <applicationcontroller.h>
-#include <reservationmanager.h>
+#include "livedata.h"
+#include "livedatamanager.h"
+#include "applicationcontroller.h"
+#include "reservationmanager.h"
 
 #include <KItinerary/Reservation>
 #include <KItinerary/TrainTrip>

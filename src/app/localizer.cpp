@@ -22,9 +22,9 @@
 #include <QTimeZone>
 
 #ifdef Q_OS_ANDROID
-#include <kandroidextras/javatypes.h>
-#include <kandroidextras/jnisignature.h>
-#include <kandroidextras/javalocale.h>
+#include "kandroidextras/javatypes.h"
+#include "kandroidextras/jnisignature.h"
+#include "kandroidextras/javalocale.h"
 
 using namespace KAndroidExtras;
 #endif

@@ -6,7 +6,7 @@
 #include "testhelper.h"
 #include "mocknetworkaccessmanager.h"
 
-#include <downloadjob.h>
+#include "downloadjob.h"
 
 #include <QUrl>
 #include <QtTest/qtest.h>
