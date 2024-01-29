@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -662,7 +662,7 @@ msgstr "Chegada"
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalhes da Viagem"
@@ -2035,33 +2035,50 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Condução para %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Mostrar Mais…"
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Direcção: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distância: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgid "Platform:"
+msgstr "Plataforma"
+
+#: app/JourneySectionPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Vehicle Layout"
+msgid "Vehicle Load:"
+msgstr "Disposição do Veículo"
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr "Mostrar a localização"
+
+#: app/JourneySectionPage.qml:444
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"
@@ -2086,11 +2103,6 @@ msgstr "Cais %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
-
-#: app/JourneySectionStopDelegate.qml:159
-#, kde-format
-msgid "Show location"
-msgstr "Mostrar a localização"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format

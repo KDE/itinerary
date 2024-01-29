@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2024-01-19 12:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -637,7 +637,7 @@ msgstr "Varış"
 msgid "Alternatives"
 msgstr "Alternatifler"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Yolculuk Ayrıntıları"
@@ -1993,33 +1993,50 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "%1 Sür (%2)"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Daha Fazla Göster…"
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Yön: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Uzaklık: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Ortalama hız: %1"
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, fuzzy, kde-format
+#| msgid "Platform"
+msgid "Platform:"
+msgstr "Platform"
+
+#: app/JourneySectionPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Vehicle Layout"
+msgid "Vehicle Load:"
+msgstr "Araç Yerleşimi"
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr "Konumu göster"
+
+#: app/JourneySectionPage.qml:444
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2042,11 +2059,6 @@ msgstr "Rıht. %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "Pl. %1"
-
-#: app/JourneySectionStopDelegate.qml:159
-#, kde-format
-msgid "Show location"
-msgstr "Konumu göster"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format

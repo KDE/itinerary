@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2023-05-11 10:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -649,7 +649,7 @@ msgstr ""
 msgid "Alternatives"
 msgstr ""
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -2011,33 +2011,48 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr "قرص %1%2"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, fuzzy, kde-format
 msgid "Direction: %1"
 msgstr "الاتجاه"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, fuzzy, kde-format
 msgid "Distance: %1"
 msgstr "الم&سافة:"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, fuzzy, kde-format
+msgid "Platform:"
+msgstr "المنصّة"
+
+#: app/JourneySectionPage.qml:224
+#, kde-format
+msgid "Vehicle Load:"
+msgstr ""
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr ""
+
+#: app/JourneySectionPage.qml:444
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2059,11 +2074,6 @@ msgstr ""
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr ""
-
-#: app/JourneySectionStopDelegate.qml:159
-#, kde-format
-msgid "Show location"
 msgstr ""
 
 #: app/JourneySummaryDelegate.qml:55

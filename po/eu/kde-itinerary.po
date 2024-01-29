@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2024-01-19 19:22+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -641,7 +641,7 @@ msgstr "Iritsiera"
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -1997,33 +1997,49 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Gidatu %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Erakutsi gehiago..."
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Norabidea: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distantzia: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "Batezbesteko abiadura: %1"
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, kde-format
+msgid "Platform:"
+msgstr "Nasa:"
+
+#: app/JourneySectionPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Vehicle Layout"
+msgid "Vehicle Load:"
+msgstr "Ibilgailu antolamendua"
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr "Erakutsi kokalekua"
+
+#: app/JourneySectionPage.qml:444
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2046,11 +2062,6 @@ msgstr "%1 kaia"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "%1 Pl."
-
-#: app/JourneySectionStopDelegate.qml:159
-#, kde-format
-msgid "Show location"
-msgstr "Erakutsi kokalekua"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format
@@ -3848,9 +3859,6 @@ msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
 #~ msgctxt "train station"
 #~ msgid "Station:"
 #~ msgstr "Geltokia:"
-
-#~ msgid "Platform:"
-#~ msgstr "Nasa:"
 
 #~ msgid "Reference:"
 #~ msgstr "Erreferentzia:"

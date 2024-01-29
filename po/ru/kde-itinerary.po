@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2022-10-10 09:16+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -692,7 +692,7 @@ msgstr "Прибытие"
 msgid "Alternatives"
 msgstr "Варианты"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Сведения о поездке"
@@ -2124,34 +2124,51 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Проезд %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Направление: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Расстояние: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1 г"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, kde-format
+msgid "Platform:"
+msgstr "Платформа:"
+
+#: app/JourneySectionPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Vehicle Layout"
+msgid "Vehicle Load:"
+msgstr "Схема транспортного средства"
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, fuzzy, kde-format
+#| msgid "Location:"
+msgid "Show location"
+msgstr "Расположение:"
+
+#: app/JourneySectionPage.qml:444
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2175,12 +2192,6 @@ msgstr ""
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr ""
-
-#: app/JourneySectionStopDelegate.qml:159
-#, fuzzy, kde-format
-#| msgid "Location:"
-msgid "Show location"
-msgstr "Расположение:"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format
@@ -4080,9 +4091,6 @@ msgstr "%1%2 из %3 в %4 %5"
 #~ msgctxt "train station"
 #~ msgid "Station:"
 #~ msgstr "Станция:"
-
-#~ msgid "Platform:"
-#~ msgstr "Платформа:"
 
 #~ msgid "Reference:"
 #~ msgstr "Код бронирования:"

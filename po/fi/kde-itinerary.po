@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 00:37+0000\n"
+"POT-Creation-Date: 2024-01-29 00:38+0000\n"
 "PO-Revision-Date: 2023-09-27 18:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -641,7 +641,7 @@ msgstr "Saapuminen"
 msgid "Alternatives"
 msgstr "Vaihtoehdot"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
 #, kde-format
 msgid "Journey Details"
 msgstr "Matkatiedot"
@@ -2007,33 +2007,49 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Ajomatka %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "Näytä lisää…"
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Suunta: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Etäisyys: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:191
+#, kde-format
+msgid "Platform:"
+msgstr "Laituri:"
+
+#: app/JourneySectionPage.qml:224
+#, fuzzy, kde-format
+#| msgid "Vehicle Layout"
+msgid "Vehicle Load:"
+msgstr "Vaunukartta"
+
+#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr "Näytä sijainti"
+
+#: app/JourneySectionPage.qml:444
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2057,11 +2073,6 @@ msgstr "Lait. %1"
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
 msgstr "R. %1"
-
-#: app/JourneySectionStopDelegate.qml:159
-#, kde-format
-msgid "Show location"
-msgstr "Näytä sijainti"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format
@@ -3868,9 +3879,6 @@ msgstr "%1%2 portilta %3 portille %4 %5"
 #~ msgctxt "train station"
 #~ msgid "Station:"
 #~ msgstr "Asema:"
-
-#~ msgid "Platform:"
-#~ msgstr "Laituri:"
 
 #~ msgid "Reference:"
 #~ msgstr "Viite:"
