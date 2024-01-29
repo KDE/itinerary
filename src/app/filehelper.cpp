@@ -9,7 +9,13 @@
 #include <QString>
 #include <QUrl>
 
+#ifdef Q_OS_ANDROID
+#include <kandroidextras/contentresolver.h>
+#endif
+
 #include <cstring>
+
+using namespace Qt::Literals::StringLiterals;
 
 bool FileHelper::isLocalFile(const QUrl &url)
 {
@@ -19,6 +25,16 @@ bool FileHelper::isLocalFile(const QUrl &url)
 QString FileHelper::toLocalFile(const QUrl &url)
 {
     return url.isLocalFile() ? url.toLocalFile() : url.toString(QUrl::FullyEncoded);
+}
+
+QString FileHelper::fileName(const QUrl &url)
+{
+#if defined(Q_OS_ANDROID)
+    if (url.scheme() == "content"_L1) {
+        return KAndroidExtras::ContentResolver::fileName(url);
+    }
+#endif
+    return url.fileName();
 }
 
 bool FileHelper::hasZipHeader(const QByteArray &data)

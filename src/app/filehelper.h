@@ -25,6 +25,9 @@ bool isLocalFile(const QUrl &url);
  */
 QString toLocalFile(const QUrl &url);
 
+/** Returns the file name of @p url taking the special case of Android content: URLs into account. */
+QString fileName(const QUrl &url);
+
 /** Checks whether @p data starts with the magic header of a ZIP file. */
 bool hasZipHeader(const QByteArray &data);
 
