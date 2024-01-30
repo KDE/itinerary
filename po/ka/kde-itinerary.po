@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 06:22+0100\n"
+"PO-Revision-Date: 2024-01-29 07:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2022,10 +2022,9 @@ msgid "Platform:"
 msgstr "პლატფორმა:"
 
 #: app/JourneySectionPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "მანქანის განლაგება"
+msgstr "მანქანის დატვირთვა:"
 
 #: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
 #, kde-format

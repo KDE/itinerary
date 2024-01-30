@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 11:11+0100\n"
+"PO-Revision-Date: 2024-01-29 10:07+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2025,10 +2025,9 @@ msgid "Platform:"
 msgstr "Platform:"
 
 #: app/JourneySectionPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Indeling van het voertuig"
+msgstr "Lading van het voertuig:"
 
 #: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
 #, kde-format

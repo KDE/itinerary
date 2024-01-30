@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 12:44+0300\n"
+"PO-Revision-Date: 2024-01-29 16:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2020,16 +2020,14 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgid "Platform:"
-msgstr "Platform"
+msgstr "Platform:"
 
 #: app/JourneySectionPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Araç Yerleşimi"
+msgstr "Araç yükü:"
 
 #: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
 #, kde-format

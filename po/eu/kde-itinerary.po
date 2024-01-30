@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 19:22+0100\n"
+"PO-Revision-Date: 2024-01-29 21:35+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -2029,10 +2029,9 @@ msgid "Platform:"
 msgstr "Nasa:"
 
 #: app/JourneySectionPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Ibilgailu antolamendua"
+msgstr "Ibilgailuaren karga:"
 
 #: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
 #, kde-format

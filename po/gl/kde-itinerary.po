@@ -2019,7 +2019,8 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Platform:"
 msgid "Platform:"
 msgstr "Plataforma:"
 
