@@ -28,6 +28,7 @@ FormCard.FormComboBoxDelegate {
     displayText: currentCountry ? (currentCountry.emojiFlag + ' ' + currentCountry.name) : ""
 
     comboBoxDelegate: QQC2.ItemDelegate {
+        id: delegate
         implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
         highlighted: controlRoot.highlightedIndex === index
         property bool separatorVisible: false
@@ -37,9 +38,12 @@ FormCard.FormComboBoxDelegate {
             const c = Country.fromAlpha2(modelData);
             return c.emojiFlag + ' ' + c.name;
         }
+        Accessible.name: Country.fromAlpha2(modelData).name
+        Accessible.onPressAction: delegate.clicked()
     }
 
     dialogDelegate: QQC2.RadioDelegate {
+        id: delegate
         implicitWidth: ListView.view ? ListView.view.width : Kirigami.Units.gridUnit * 16
         text: {
             const c = Country.fromAlpha2(modelData);
@@ -54,6 +58,8 @@ FormCard.FormComboBoxDelegate {
             controlRoot.activated(index);
             controlRoot.closeDialog();
         }
+        Accessible.name: Country.fromAlpha2(modelData).name
+        Accessible.onPressAction: delegate.clicked()
     }
 
     Component.onCompleted: if (initialCountry) {
