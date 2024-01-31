@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-29 00:38+0000\n"
-"PO-Revision-Date: 2024-01-19 09:17+0200\n"
+"PO-Revision-Date: 2024-01-29 15:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -2035,10 +2035,9 @@ msgid "Platform:"
 msgstr "Платформа:"
 
 #: app/JourneySectionPage.qml:224
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Компонування засобу пересування"
+msgstr "Завантаженість засобу пересування:"
 
 #: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
 #, kde-format
