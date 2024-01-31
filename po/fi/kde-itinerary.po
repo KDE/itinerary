@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-25 02:22+0000\n"
-"PO-Revision-Date: 2023-09-27 18:02+0300\n"
+"PO-Revision-Date: 2023-11-29 17:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -157,10 +157,9 @@ msgid "Send to %1"
 msgstr "Lähetä vastaanottajalle %1"
 
 #: app/ActionsCard.qml:165
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "Tuo varaus"
+msgstr "Vie varaus"
 
 #: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
@@ -322,10 +321,9 @@ msgid "Trip sent."
 msgstr "Matka lähetetty."
 
 #: app/applicationcontroller.cpp:710
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "Varaus"
+msgstr "Varaus lähetetty."
 
 #: app/applicationcontroller.cpp:793
 #, kde-format
@@ -474,17 +472,15 @@ msgstr "Viite"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
 #: app/ProgramMembershipPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "Tuo leikepöydältä"
+msgstr "Kopioi leikepöydälle"
 
 #: app/BookingCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Booking reference copied to clipboard"
-msgstr "Varausviite"
+msgstr "Varausviite kopioitu leikepöydälle"
 
 #: app/BookingCard.qml:52 app/BookingEditorCard.qml:51
 #, kde-format
@@ -497,14 +493,12 @@ msgid "Ticket number:"
 msgstr "Lipun numero:"
 
 #: app/BookingCard.qml:71
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Ticket number copied to clipboard"
-msgstr "Purkajan kyvyt kopioitu leikepöydälle"
+msgstr "Lipun numero kopioitu leikepöydälle"
 
 #: app/BookingEditorCard.qml:37
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "Varaaminen"
@@ -513,8 +507,8 @@ msgstr "Varaaminen"
 #, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 välipysäkki"
+msgstr[1] "%1 välipysäkkiä"
 
 #: app/BusEditor.qml:17
 #, kde-format
@@ -542,8 +536,7 @@ msgid "Change arrival stop"
 msgstr "Vaihta saapumispysäkkiä"
 
 #: app/BusEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "Bussi"
@@ -721,8 +714,7 @@ msgid "Brand"
 msgstr "Merkki"
 
 #: app/ContactCard.qml:22 app/ContactEditorCard.qml:27
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "Yhteystieto"
@@ -941,8 +933,7 @@ msgid "Number:"
 msgstr "Numero:"
 
 #: app/EventPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "Tyyppi:"
@@ -1280,7 +1271,7 @@ msgstr "(oli: %1)"
 #, kde-format
 msgctxt "@label"
 msgid "Price"
-msgstr ""
+msgstr "Hinta"
 
 #: app/FormPriceDelegate.qml:30
 #, kde-format
@@ -1631,11 +1622,10 @@ msgid "Hotel"
 msgstr "Hotelli"
 
 #: app/HotelEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Actions"
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "Toiminnot"
+msgstr "Majoitus"
 
 #: app/HotelEditor.qml:56
 #, kde-format
@@ -1714,20 +1704,19 @@ msgid "%1 (arrival)"
 msgstr "%1 (saapuminen)"
 
 #: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "Muokkaa laivamatkaa"
+msgstr "Muokkaa iD:llä"
 
 #: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Muokkaa JOSMilla"
 
 #: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Muokkaa Vespuccilla"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -1833,7 +1822,7 @@ msgstr "Bussi"
 #, kde-format
 msgctxt "time in hours"
 msgid "%1 h"
-msgstr ""
+msgstr "%1 t"
 
 #: app/JourneyQueryPage.qml:89 app/TransferPage.qml:248
 #, kde-format
@@ -1876,15 +1865,13 @@ msgid "To:"
 msgstr "Mihin:"
 
 #: app/JourneyRequestPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "Lähtö"
 
 #: app/JourneyRequestPage.qml:137
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "Saapuminen"
@@ -2491,13 +2478,12 @@ msgstr "Sukunimi"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "Nimessä erotetaan pien- ja suuraakkoset."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "Varausviite"
+msgstr "Tilausnumero tai varausviite"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format
@@ -2614,10 +2600,9 @@ msgid "Number"
 msgstr "Numero"
 
 #: app/ProgramMembershipCard.qml:49
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show program pass"
-msgstr "Näytä maihinnousukortti"
+msgstr "Näytä ohjelmakortti"
 
 #: app/ProgramMembershipEditor.qml:24
 #, kde-format
@@ -2672,10 +2657,9 @@ msgid "Program Membership"
 msgstr "Ohjelman jäsenyys"
 
 #: app/ProgramMembershipPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "Purkajan kyvyt kopioitu leikepöydälle"
+msgstr "Ohjelman jäsenyysnumero kopioitu leikepöydälle"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2744,8 +2728,7 @@ msgid "Documents and Tickets"
 msgstr "Asiakirjat ja liput"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "Muokkaa ravintolaa"
@@ -2762,8 +2745,7 @@ msgid "Name"
 msgstr "Nimi"
 
 #: app/RestaurantEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "Varaus"
@@ -2774,11 +2756,10 @@ msgid "Restaurant Reservation"
 msgstr "Ravintolavaraus"
 
 #: app/RestaurantPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "Matkatiedot"
+msgstr "Tiedot"
 
 #: app/RestaurantPage.qml:41
 #, kde-format
@@ -2939,15 +2920,14 @@ msgid "Request permissions..."
 msgstr "Pyydä käyttölupaa…"
 
 #: app/SettingsPage.qml:176
-#, fuzzy, kde-format
-#| msgid "Additional permissions are required to access the Wi-Fi status."
+#, kde-format
 msgid "Additional permissions are required to show notifications."
-msgstr "Langattoman verkon tilan saamiseksi vaaditaan lisäkäyttöoikeuksia."
+msgstr "Ilmoituksen näyttämiseksi vaaditaan lisäkäyttöoikeuksia."
 
 #: app/SettingsPage.qml:185
 #, kde-format
 msgid "Notification permissions are available"
-msgstr ""
+msgstr "Ilmoituskäyttöoikeudet ovat käytettävissä"
 
 #: app/SettingsPage.qml:186 app/SettingsPage.qml:228
 #, kde-format
@@ -3045,17 +3025,17 @@ msgstr "Kirjaudu"
 #: app/SettingsPage.qml:305
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "Avustaminen"
 
 #: app/SettingsPage.qml:309
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "Avustan OpenStreetMapiä"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "Ottaa käyttöön OSM-muokkausvalinnat."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
@@ -3300,11 +3280,9 @@ msgid "Arrival Time"
 msgstr "Saapumisaika:"
 
 #: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
-#, fuzzy, kde-format
-#| msgctxt "Abreviation of train platform"
-#| msgid "Pl. %1"
+#, kde-format
 msgid "Pl. %1"
-msgstr "R. %1"
+msgstr "Lait. %1"
 
 #: app/TrainEditor.qml:18
 #, kde-format
