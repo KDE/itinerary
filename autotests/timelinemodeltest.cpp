@@ -109,7 +109,7 @@ private Q_SLOTS:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -117,7 +117,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 2);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
@@ -151,7 +151,7 @@ private Q_SLOTS:
 
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
         QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
@@ -166,7 +166,7 @@ private Q_SLOTS:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeEnd);
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v2.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v2.json")));
         QCOMPARE(insertSpy.size(), 5);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(rmSpy.size(), 2);
@@ -200,7 +200,7 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
         QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
 
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
@@ -403,8 +403,8 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setWeatherForecastManager(&weatherMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/weather-no-location-change.json")));
-        ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/weather-no-location-change.model"));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.json")));
+        ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/weather-no-location-change.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp0.verify(&model));
     }
@@ -430,7 +430,7 @@ private Q_SLOTS:
         QVERIFY(rmSpy.isValid());
 
         // full import at runtime
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
         QCOMPARE(insertSpy.count(), 2);
         QCOMPARE(updateSpy.count(), 2);
@@ -502,25 +502,25 @@ private Q_SLOTS:
         model.setReservationManager(&resMgr);
         model.setWeatherForecastManager(&weatherMgr);
 
-        ModelVerificationPoint vp0(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r0.model"));
+        ModelVerificationPoint vp0(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r0.model"));
         vp0.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp0.verify(&model));
 
         // changing the day should move the today marker
         model.setCurrentDateTime(QDateTime({2196, 10, 15}, {0, 15}));
-        ModelVerificationPoint vp1(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r1.model"));
+        ModelVerificationPoint vp1(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r1.model"));
         vp1.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp1.verify(&model));
 
         // load something to define the current location, so we get weather
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
-        ModelVerificationPoint vp2(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r2.model"));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
+        ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp2.verify(&model));
 
         // changing the day should move the today marker and weather one day forward
         model.setCurrentDateTime(QDateTime({2196, 10, 16}, {19, 30}));
-        ModelVerificationPoint vp3(QLatin1String(SOURCE_DIR "/data/timeline/daychange-r3.model"));
+        ModelVerificationPoint vp3(QLatin1StringView(SOURCE_DIR "/data/timeline/daychange-r3.model"));
         vp3.setRoleFilter({TimelineModel::BatchIdRole});
         QVERIFY(vp3.verify(&model));
     }
@@ -529,7 +529,7 @@ private Q_SLOTS:
     {
         QTest::addColumn<QString>("baseName");
 
-        QDirIterator it(QLatin1String(SOURCE_DIR "/data/timeline/"), {QLatin1String("*.json")});
+        QDirIterator it(QLatin1StringView(SOURCE_DIR "/data/timeline/"), {QLatin1StringView("*.json")});
         while (it.hasNext()) {
             it.next();
             const auto baseName = it.fileInfo().baseName();
@@ -544,7 +544,7 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
         TripGroupManager groupMgr;
         groupMgr.setReservationManager(&resMgr);
         WeatherForecastManager weatherMgr;
@@ -581,14 +581,14 @@ private Q_SLOTS:
         model.setTransferManager(&transferMgr);
 
         // check state is correct for data imported at the start
-        ModelVerificationPoint vp(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".model"));
+        ModelVerificationPoint vp(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".model"));
         vp.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
         vp.setJsonPropertyFilter({QStringLiteral("reservationId")});
         QVERIFY(vp.verify(&model));
 
         // retry with loading during runtime
         Test::clearAll(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/") + baseName + QLatin1String(".json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/") + baseName + QLatin1StringView(".json")));
         QVERIFY(vp.verify(&model));
     }
 
@@ -606,7 +606,7 @@ private Q_SLOTS:
 
         QSignalSpy currentResChangedSpy(&model, &TimelineModel::currentBatchChanged);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(model.rowCount(), 13);
         QVERIFY(!currentResChangedSpy.empty());
 

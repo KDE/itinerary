@@ -461,9 +461,9 @@ QString PublicTransport::attributionSummary(const QVariantList& attributions) co
             return other.template value<KPublicTransport::Attribution>().name() == attr.name();
         });
         if (multi > 1) {
-            l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String(" (") + attr.license() + QLatin1String(")</a>"));
+            l.push_back(QLatin1StringView("<a href=\"") + attr.url().toString() + QLatin1StringView("\">") + attr.name() + QLatin1StringView(" (") + attr.license() + QLatin1StringView(")</a>"));
         } else {
-            l.push_back(QLatin1String("<a href=\"") + attr.url().toString() + QLatin1String("\">") + attr.name() + QLatin1String("</a>"));
+            l.push_back(QLatin1StringView("<a href=\"") + attr.url().toString() + QLatin1StringView("\">") + attr.name() + QLatin1StringView("</a>"));
         }
     }
     return QLocale().createSeparatedList(l);
@@ -513,13 +513,13 @@ bool PublicTransport::warnAboutSection(const KPublicTransport::JourneySection &s
 
 QString PublicTransport::idenfitierFromLocation(const KPublicTransport::Location &loc)
 {
-    auto id = loc.identifier(QLatin1String("ibnr"));
+    auto id = loc.identifier(QLatin1StringView("ibnr"));
     if (!id.isEmpty()) {
-        return QLatin1String("ibnr:") + id;
+        return QLatin1StringView("ibnr:") + id;
     }
-    id = loc.identifier(QLatin1String("uic"));
+    id = loc.identifier(QLatin1StringView("uic"));
     if (!id.isEmpty()) {
-        return QLatin1String("uic:") + id;
+        return QLatin1StringView("uic:") + id;
     }
     return {};
 }

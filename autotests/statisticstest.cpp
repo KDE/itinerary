@@ -54,58 +54,58 @@ private Q_SLOTS:
         stats.setReservationManager(&resMgr);
         stats.setTripGroupManager(&tgMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json"))); // canceled flight, should not change stats
 
         stats.setTimeRange({}, {});
         QVERIFY(!changeSpy.isEmpty());
         auto item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("2"));
+        QCOMPARE(item.m_value, QLatin1StringView("2"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalNights();
-        QCOMPARE(item.m_value, QLatin1String("13"));
+        QCOMPARE(item.m_value, QLatin1StringView("13"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalDistance();
-        QCOMPARE(item.m_value, QLatin1String("6,182 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("6,182 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
-        QCOMPARE(item.m_value, QLatin1String("1,673 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,673 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
         item = stats.flightCount();
-        QCOMPARE(item.m_value, QLatin1String("6"));
+        QCOMPARE(item.m_value, QLatin1StringView("6"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.flightDistance();
-        QCOMPARE(item.m_value, QLatin1String("5,859 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("5,859 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.flightCO2();
-        QCOMPARE(item.m_value, QLatin1String("1,669 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,669 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
         item = stats.trainCount();
-        QCOMPARE(item.m_value, QLatin1String("4"));
+        QCOMPARE(item.m_value, QLatin1StringView("4"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainDistance();
-        QCOMPARE(item.m_value, QLatin1String("323 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("323 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
-        QCOMPARE(item.m_value, QLatin1String("4.4 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("4.4 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, true);
 
         item = stats.carCount();
-        QCOMPARE(item.m_value, QLatin1String("0"));
+        QCOMPARE(item.m_value, QLatin1StringView("0"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnknown);
         QCOMPARE(item.m_hasData, false);
 
@@ -113,49 +113,49 @@ private Q_SLOTS:
         stats.setTimeRange({2017, 9, 1}, {2018, 1, 1});
         QVERIFY(!changeSpy.isEmpty());
         item = stats.totalCount();
-        QCOMPARE(item.m_value, QLatin1String("1"));
+        QCOMPARE(item.m_value, QLatin1StringView("1"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUnchanged);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalNights();
-        QCOMPARE(item.m_value, QLatin1String("5"));
+        QCOMPARE(item.m_value, QLatin1StringView("5"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalDistance();
-        QCOMPARE(item.m_value, QLatin1String("1,642 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,642 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
         item = stats.totalCO2();
-        QCOMPARE(item.m_value, QLatin1String("380 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("380 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
 
         item = stats.flightCount();
-        QCOMPARE(item.m_value, QLatin1String("2"));
+        QCOMPARE(item.m_value, QLatin1StringView("2"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
         item = stats.flightDistance();
-        QCOMPARE(item.m_value, QLatin1String("1,319 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("1,319 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
         item = stats.flightCO2();
-        QCOMPARE(item.m_value, QLatin1String("376 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("376 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendDown);
         QCOMPARE(item.m_hasData, true);
 
         item = stats.trainCount();
-        QCOMPARE(item.m_value, QLatin1String("4"));
+        QCOMPARE(item.m_value, QLatin1StringView("4"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainDistance();
-        QCOMPARE(item.m_value, QLatin1String("323 km"));
+        QCOMPARE(item.m_value, QLatin1StringView("323 km"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         QCOMPARE(item.m_hasData, true);
         item = stats.trainCO2();
-        QCOMPARE(item.m_value, QLatin1String("4.4 kg"));
+        QCOMPARE(item.m_value, QLatin1StringView("4.4 kg"));
         QCOMPARE(item.m_trend, StatisticsItem::TrendUp);
         QCOMPARE(item.m_hasData, true);
 
-        QCOMPARE(stats.boatCount().m_value, QLatin1String("0"));
+        QCOMPARE(stats.boatCount().m_value, QLatin1StringView("0"));
         QCOMPARE(stats.boatCount().m_hasData, false);
         QCOMPARE(stats.boatDistance().m_hasData, false);
         QCOMPARE(stats.boatCO2().m_hasData, false);
@@ -168,9 +168,9 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
 
         StatisticsTimeRangeModel model;
         QAbstractItemModelTester tester(&model);
@@ -178,8 +178,8 @@ private Q_SLOTS:
 
         model.setReservationManager(&resMgr);
         QCOMPARE(model.rowCount(), 3);
-        QCOMPARE(model.data(model.index(1, 0), Qt::DisplayRole).toString(), QLatin1String("2018"));
-        QCOMPARE(model.data(model.index(2, 0), Qt::DisplayRole).toString(), QLatin1String("2017"));
+        QCOMPARE(model.data(model.index(1, 0), Qt::DisplayRole).toString(), QLatin1StringView("2018"));
+        QCOMPARE(model.data(model.index(2, 0), Qt::DisplayRole).toString(), QLatin1StringView("2017"));
 
         QCOMPARE(model.data(model.index(1, 0), StatisticsTimeRangeModel::BeginRole).toDate(), QDate(2018, 1, 1));
         QCOMPARE(model.data(model.index(1, 0), StatisticsTimeRangeModel::EndRole).toDate(), QDate(2018, 12, 31));

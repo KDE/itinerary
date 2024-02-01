@@ -188,7 +188,7 @@ void ApplicationController::setPassManager(PassManager *passMgr)
 
 bool ApplicationController::probablyUrl(const QString &text)
 {
-    return (text.startsWith(QLatin1String("https://")) || text.startsWith(QLatin1String("http://"))) && text.size() < 256;
+    return (text.startsWith(QLatin1StringView("https://")) || text.startsWith(QLatin1StringView("http://"))) && text.size() < 256;
 }
 
 #ifdef Q_OS_ANDROID
@@ -205,7 +205,7 @@ void ApplicationController::importFromIntent(const KAndroidExtras::Intent &inten
     // opening a URL, can be something to import or a shortcut path
     if (action == Intent::ACTION_VIEW) {
         const QUrl url = intent.getData();
-        if (url.scheme() == QLatin1String("page")) {
+        if (url.scheme() == QLatin1StringView("page")) {
             qCDebug(Log) << url;
             requestOpenPage(url.path().mid(1));
         } else {
@@ -283,7 +283,7 @@ void ApplicationController::importFromClipboard()
     }
 
     else if (md->hasText()) {
-        const auto content = md->data(QLatin1String("text/plain"));
+        const auto content = md->data(QLatin1StringView("text/plain"));
 
         const QString contentString = QString::fromUtf8(content);
         // URL copied as plain text
@@ -297,8 +297,8 @@ void ApplicationController::importFromClipboard()
         importData(content);
     }
 
-    else if (md->hasFormat(QLatin1String("application/octet-stream"))) {
-        importData(md->data(QLatin1String("application/octet-stream")));
+    else if (md->hasFormat(QLatin1StringView("application/octet-stream"))) {
+        importData(md->data(QLatin1StringView("application/octet-stream")));
     }
 }
 
@@ -314,7 +314,7 @@ void ApplicationController::importFromUrl(const QUrl &url)
         return;
     }
 
-    if (url.scheme().startsWith(QLatin1String("http"))) {
+    if (url.scheme().startsWith(QLatin1StringView("http"))) {
         auto job = new DownloadJob(url, m_namFactory(), this);
         connect(job, &DownloadJob::finished, this, [this, job]() {
             job->deleteLater();
@@ -343,7 +343,7 @@ void ApplicationController::importLocalFile(const QUrl &url)
         Q_EMIT infoMessage(i18n("Import failed: %1", f.errorString()));
         return;
     }
-    if (f.size() > 10000000 && !FileHelper::fileName(url).endsWith(QLatin1String(".itinerary"))) {
+    if (f.size() > 10000000 && !FileHelper::fileName(url).endsWith(QLatin1StringView(".itinerary"))) {
         qCWarning(Log) << "File too large, ignoring" << f.fileName() << f.size();
         Q_EMIT infoMessage(i18n("Import failed: File too large."));
         return;
@@ -352,14 +352,14 @@ void ApplicationController::importLocalFile(const QUrl &url)
     // deal with things we can import more efficiently from a file directly
     const auto head = f.peek(4);
     if (FileHelper::hasZipHeader(head)) {
-        if (url.fileName().endsWith(QLatin1String(".itinerary"), Qt::CaseInsensitive) && importBundle(url)) {
+        if (url.fileName().endsWith(QLatin1StringView(".itinerary"), Qt::CaseInsensitive) && importBundle(url)) {
             return;
         }
     }
 
     QString fileName;
 #ifdef Q_OS_ANDROID
-    if (url.scheme() == QLatin1String("content")) {
+    if (url.scheme() == QLatin1StringView("content")) {
         fileName = KAndroidExtras::ContentResolver::fileName(url);
     }
 #endif
@@ -375,7 +375,7 @@ QString ApplicationController::addAttachableDocument(const QString &fileName, co
     // check if there is a document we want to attach here
     QMimeDatabase db;
     const auto mt = db.mimeTypeForFileNameAndData(fileName, data);
-    if (mt.name() == QLatin1String("application/pdf") || mt.name() == QLatin1String("message/rfc822") || mt.name() == QLatin1String("application/mbox")) {
+    if (mt.name() == QLatin1StringView("application/pdf") || mt.name() == QLatin1StringView("message/rfc822") || mt.name() == QLatin1StringView("application/mbox")) {
         DigitalDocument docInfo;
         docInfo.setName(fileName);
         docInfo.setEncodingFormat(mt.name());
@@ -501,7 +501,7 @@ bool ApplicationController::importText(const QString& text)
 
 void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &node)
 {
-    if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
+    if (node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass")) {
         const auto pass = node.content<KPkPass::Pass*>();
         // ### could we pass along pass directly here to avoid the extra parsing roundtrip?
         m_pkPassMgr->importPassFromData(pass->rawData());
@@ -514,7 +514,7 @@ void ApplicationController::importNode(const KItinerary::ExtractorDocumentNode &
 
 bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocumentNode &node)
 {
-    if (node.mimeType() == QLatin1String("application/vnd.apple.pkpass")) {
+    if (node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass")) {
         const auto pass = node.content<KPkPass::Pass*>();
         if (!pass || pass->type() == KPkPass::Pass::Coupon || pass->type() == KPkPass::Pass::StoreCard) {
             // no support for displaying those yet
@@ -544,7 +544,7 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
 bool ApplicationController::hasClipboardContent() const
 {
     const auto md = QGuiApplication::clipboard()->mimeData();
-    return md->hasText() || md->hasUrls() || md->hasFormat(QLatin1String("application/octet-stream"));
+    return md->hasText() || md->hasUrls() || md->hasFormat(QLatin1StringView("application/octet-stream"));
 }
 
 
@@ -799,7 +799,7 @@ bool ApplicationController::importBundle(KItinerary::File *file)
 
 bool ApplicationController::importHealthCertificateRecursive(const ExtractorDocumentNode &node)
 {
-    if (node.childNodes().size() == 1 && (node.mimeType() == QLatin1String("internal/qimage") || node.mimeType() == QLatin1String("application/vnd.apple.pkpass"))) {
+    if (node.childNodes().size() == 1 && (node.mimeType() == QLatin1StringView("internal/qimage") || node.mimeType() == QLatin1StringView("application/vnd.apple.pkpass"))) {
         const auto &child = node.childNodes()[0];
         if (child.isA<QString>()) {
             return healthCertificateManager()->importCertificate(child.content<QString>().toUtf8());
@@ -945,7 +945,7 @@ QVariant ApplicationController::aboutData() const
 
 QString ApplicationController::userAgent() const
 {
-    return QLatin1String("org.kde.itinerary/") + QCoreApplication::applicationVersion() + QLatin1String(" (kde-pim@kde.org)");
+    return QLatin1StringView("org.kde.itinerary/") + QCoreApplication::applicationVersion() + QLatin1StringView(" (kde-pim@kde.org)");
 }
 
 bool ApplicationController::hasHealthCertificateSupport() const

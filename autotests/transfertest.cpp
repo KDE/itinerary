@@ -66,9 +66,9 @@ private Q_SLOTS:
         QSignalSpy changeSpy(&mgr, &TransferManager::transferChanged);
         QSignalSpy removeSpy(&mgr, &TransferManager::transferRemoved);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
-//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2017.json")));
-//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/akademy2018-program.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
+//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2017.json")));
+//         ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/akademy2018-program.json")));
 
         QCOMPARE(addSpy.size() - removeSpy.size(), 4); // to/from home, and one inbetween
 
@@ -83,7 +83,7 @@ private Q_SLOTS:
         QCOMPARE(transfer.from().latitude(), 52.51860f);
         QCOMPARE(transfer.from().longitude(), 13.37630f);
         QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
+        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Tegel"));
         QVERIFY(!mgr.canAddTransfer(batchId, Transfer::Before));
 
         transfer = mgr.transfer(batchId, Transfer::After);
@@ -102,7 +102,7 @@ private Q_SLOTS:
         QCOMPARE(transfer.from().latitude(), 52.51860f);
         QCOMPARE(transfer.from().longitude(), 13.37630f);
         QVERIFY(transfer.to().hasCoordinate());
-        QCOMPARE(transfer.to().name(), QLatin1String("Berlin Tegel"));
+        QCOMPARE(transfer.to().name(), QLatin1StringView("Berlin Tegel"));
 
         // operations
         addSpy.clear();

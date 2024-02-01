@@ -52,7 +52,7 @@ private Q_SLOTS:
         QCOMPARE(mgr.pass(passId), nullptr);
         QVERIFY(!mgr.updateTime(passId).isValid());
 
-        mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        mgr.importPass(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(addSpy.at(0).at(0).toString(), passId);
         QVERIFY(updateSpy.isEmpty());
@@ -63,7 +63,7 @@ private Q_SLOTS:
         QCOMPARE(passes.size(), 1);
         QCOMPARE(passes.at(0), passId);
 
-        mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
+        mgr.importPass(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(addSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(mgr.passes().size(), 1);
@@ -89,7 +89,7 @@ private Q_SLOTS:
         QSignalSpy addSpy(&mgr, &PkPassManager::passAdded);
         QSignalSpy updateSpy(&mgr, &PkPassManager::passUpdated);
 
-        mgr.importPass(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+        mgr.importPass(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
         QCOMPARE(mgr.passes().size(), 1);
         QCOMPARE(addSpy.size(), 1);
         addSpy.clear();

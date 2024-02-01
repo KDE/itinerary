@@ -46,7 +46,7 @@ private Q_SLOTS:
         KCalendarCore::ICalFormat format;
         qDebug().noquote() << format.toString(event);
 
-        QCOMPARE(event->nonKDECustomProperty("X-APPLE-TRAVEL-DURATION"), QLatin1String("PT1H30M"));
+        QCOMPARE(event->nonKDECustomProperty("X-APPLE-TRAVEL-DURATION"), QLatin1StringView("PT1H30M"));
         QCOMPARE(event->alarms().size(), 1);
         const auto alarm = event->alarms().at(0);
         QCOMPARE(alarm->startOffset().asSeconds(), -5700);

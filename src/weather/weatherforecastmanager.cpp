@@ -154,7 +154,7 @@ WeatherForecast WeatherForecastManager::forecast(float latitude, float longitude
 
 void WeatherForecastManager::fetchTile(WeatherTile tile)
 {
-    QFileInfo fi(cachePath(tile) + QLatin1String("forecast.xml"));
+    QFileInfo fi(cachePath(tile) + QLatin1StringView("forecast.xml"));
     if (fi.exists() && fi.lastModified().toUTC().addSecs(3600 * 2) >= QDateTime::currentDateTimeUtc()) { // cache is already new enough
         return;
     }
@@ -192,7 +192,7 @@ void WeatherForecastManager::fetchNext()
 
     // see §Identification on https://api.met.no/conditions_service.html
     req.setHeader(QNetworkRequest::UserAgentHeader, QString(QCoreApplication::applicationName() +
-        QLatin1Char(' ') + QCoreApplication::applicationVersion() + QLatin1String(" (kde-pim@kde.org)")));
+        QLatin1Char(' ') + QCoreApplication::applicationVersion() + QLatin1StringView(" (kde-pim@kde.org)")));
     // TODO see §Cache on https://api.met.no/conditions_service.html
     // see §Compression on https://api.met.no/conditions_service.html
     req.setRawHeader("Accept-Encoding", "gzip");
@@ -222,7 +222,7 @@ void WeatherForecastManager::tileDownloaded()
 QString WeatherForecastManager::cachePath(WeatherTile tile) const
 {
     const auto path = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)
-        + QLatin1String("/weather/")
+        + QLatin1StringView("/weather/")
         + QString::number(tile.lat) + QLatin1Char('/')
         + QString::number(tile.lon) + QLatin1Char('/'));
     QDir().mkpath(path);
@@ -234,7 +234,7 @@ void WeatherForecastManager::writeToCacheFile(QNetworkReply* reply) const
     const auto tile = reply->request().attribute(QNetworkRequest::User).value<WeatherTile>();
     qDebug() << tile.lat << tile.lon;
     qDebug() << reply->rawHeaderPairs();
-    QFile f(cachePath(tile) + QLatin1String("forecast.xml"));
+    QFile f(cachePath(tile) + QLatin1StringView("forecast.xml"));
     if (!f.open(QFile::WriteOnly)) {
         qWarning() << "Failed to open weather cache location:" << f.errorString();
         return;
@@ -290,7 +290,7 @@ bool WeatherForecastManager::loadForecastData(WeatherTile tile) const
         return true;
     }
 
-    QFile f(cachePath(tile) + QLatin1String("forecast.xml"));
+    QFile f(cachePath(tile) + QLatin1StringView("forecast.xml"));
     if (!f.exists() || !f.open(QFile::ReadOnly)) {
         return false;
     }
@@ -342,16 +342,16 @@ std::vector<WeatherForecast> WeatherForecastManager::parseForecast(QXmlStreamRea
 
     while (!reader.atEnd()) {
         if (reader.tokenType() == QXmlStreamReader::StartElement) {
-            if (reader.name() == QLatin1String("weatherdata") || reader.name() == QLatin1String("product")) {
+            if (reader.name() == QLatin1StringView("weatherdata") || reader.name() == QLatin1StringView("product")) {
                 reader.readNext(); // enter these elements
                 continue;
             }
-            if (reader.name() == QLatin1String("time") && reader.attributes().value(QLatin1String("datatype")) == QLatin1String("forecast")) {
+            if (reader.name() == QLatin1StringView("time") && reader.attributes().value(QLatin1StringView("datatype")) == QLatin1StringView("forecast")) {
                 // normalize time ranges to 1 hour
-                auto from = QDateTime::fromString(reader.attributes().value(QLatin1String("from")).toString(), Qt::ISODate);
+                auto from = QDateTime::fromString(reader.attributes().value(QLatin1StringView("from")).toString(), Qt::ISODate);
                 from = std::max(from, beginDt);
                 alignToHour(from);
-                auto to = QDateTime::fromString(reader.attributes().value(QLatin1String("to")).toString(), Qt::ISODate);
+                auto to = QDateTime::fromString(reader.attributes().value(QLatin1StringView("to")).toString(), Qt::ISODate);
                 alignToHour(to);
                 const auto range = from.secsTo(to) / 3600;
                 if (to == from) {
@@ -436,18 +436,18 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
     while (!reader.atEnd()) {
         switch (reader.tokenType()) {
             case QXmlStreamReader::StartElement:
-                if (reader.name() == QLatin1String("temperature")) {
-                    const auto t = reader.attributes().value(QLatin1String("value")).toFloat();
+                if (reader.name() == QLatin1StringView("temperature")) {
+                    const auto t = reader.attributes().value(QLatin1StringView("value")).toFloat();
                     fc.setMinimumTemperature(t);
                     fc.setMaximumTemperature(t);
-                } else if (reader.name() == QLatin1String("minTemperature")) {
-                    fc.setMinimumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
-                } else if (reader.name() == QLatin1String("maxTemperature")) {
-                    fc.setMaximumTemperature(reader.attributes().value(QLatin1String("value")).toFloat());
-                } else if (reader.name() == QLatin1String("windSpeed")) {
-                    fc.setWindSpeed(reader.attributes().value(QLatin1String("mps")).toFloat());
-                } else if (reader.name() == QLatin1String("symbol")) {
-                    auto symId = reader.attributes().value(QLatin1String("number")).toInt();
+                } else if (reader.name() == QLatin1StringView("minTemperature")) {
+                    fc.setMinimumTemperature(reader.attributes().value(QLatin1StringView("value")).toFloat());
+                } else if (reader.name() == QLatin1StringView("maxTemperature")) {
+                    fc.setMaximumTemperature(reader.attributes().value(QLatin1StringView("value")).toFloat());
+                } else if (reader.name() == QLatin1StringView("windSpeed")) {
+                    fc.setWindSpeed(reader.attributes().value(QLatin1StringView("mps")).toFloat());
+                } else if (reader.name() == QLatin1StringView("symbol")) {
+                    auto symId = reader.attributes().value(QLatin1StringView("number")).toInt();
                     if (symId > 100) {
                         symId -= 100; // map polar night symbols
                     }
@@ -457,12 +457,12 @@ WeatherForecast WeatherForecastManager::parseForecastElement(QXmlStreamReader &r
                     if (it != std::end(symbol_map) && (*it).id == symId) {
                         fc.setSymbolType((*it).type);
                     }
-                } else if (reader.name() == QLatin1String("precipitation")) {
-                    fc.setPrecipitation(reader.attributes().value(QLatin1String("value")).toFloat());
+                } else if (reader.name() == QLatin1StringView("precipitation")) {
+                    fc.setPrecipitation(reader.attributes().value(QLatin1StringView("value")).toFloat());
                 }
                 break;
             case QXmlStreamReader::EndElement:
-                if (reader.name() == QLatin1String("time")) {
+                if (reader.name() == QLatin1StringView("time")) {
                     return fc;
                 }
                 break;
@@ -508,7 +508,7 @@ void WeatherForecastManager::updateAll()
 
 void WeatherForecastManager::purgeCache()
 {
-    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/weather/"));
+    const auto basePath = QString(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/weather/"));
     const auto cutoffDate = QDateTime::currentDateTimeUtc().addDays(-9);
 
     QDirIterator it(basePath, QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Writable, QDirIterator::Subdirectories);

@@ -78,12 +78,12 @@ QString Util::textToHtml(const QString& text)
 
 QString Util::telephoneUrl(const QString &phoneNumber)
 {
-    return QLatin1String("tel:") + KContacts::PhoneNumber(phoneNumber).normalizedNumber();
+    return QLatin1StringView("tel:") + KContacts::PhoneNumber(phoneNumber).normalizedNumber();
 }
 
 QString Util::emailUrl(const QString &emailAddress)
 {
-    return QLatin1String("mailto:") + emailAddress;
+    return QLatin1StringView("mailto:") + emailAddress;
 }
 
 void Util::sortModel(QObject *model, int column, Qt::SortOrder sortOrder)

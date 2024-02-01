@@ -383,7 +383,7 @@ QVariantList PassManager::documentIds(const QVariant& pass)
 
 QString PassManager::basePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/programs/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/programs/");
 }
 
 #include "moc_passmanager.cpp"

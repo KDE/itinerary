@@ -49,7 +49,7 @@ bool DocumentManager::hasDocument(const QString& id) const
 
 QVariant DocumentManager::documentInfo(const QString &id) const
 {
-    const QString filePath = basePath() + id + QLatin1String("/meta.json");
+    const QString filePath = basePath() + id + QLatin1StringView("/meta.json");
     QFile f(filePath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to load document meta data" << filePath << f.errorString();
@@ -92,7 +92,7 @@ void DocumentManager::addDocument(const QString &id, const QVariant &info, const
     dataFile.write(data);
     dataFile.close();
 
-    QFile metaFile(path + QLatin1String("meta.json"));
+    QFile metaFile(path + QLatin1StringView("meta.json"));
     if (!metaFile.open(QFile::WriteOnly)) {
         qCWarning(Log) << "Failed to store document meta data" << path << metaFile.errorString();
         // TODO error message for the ui
@@ -127,7 +127,7 @@ void DocumentManager::addDocument(const QString& id, const QVariant& info, const
         return;
     }
 
-    QFile metaFile(path + QLatin1String("meta.json"));
+    QFile metaFile(path + QLatin1StringView("meta.json"));
     if (!metaFile.open(QFile::WriteOnly)) {
         qCWarning(Log) << "Failed to store document meta data" << path << metaFile.errorString();
         // TODO error message for the ui
@@ -150,7 +150,7 @@ void DocumentManager::removeDocument(const QString& id)
 
 QString DocumentManager::basePath() const
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/documents/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/documents/");
 }
 
 #include "moc_documentmanager.cpp"

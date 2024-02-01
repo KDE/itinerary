@@ -16,7 +16,7 @@ TripGroupProxyModel::TripGroupProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
     QSettings settings;
-    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    settings.beginGroup(QLatin1StringView("TripGroupProxyState"));
     for (const auto &key : settings.childKeys()) {
         m_collapsed[key] = settings.value(key).toBool();
     }
@@ -87,7 +87,7 @@ void TripGroupProxyModel::collapse(const QString &groupId)
     Q_EMIT dataChanged(startIdx, startIdx); // collapse/expand state changed
 
     QSettings settings;
-    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    settings.beginGroup(QLatin1StringView("TripGroupProxyState"));
     settings.setValue(groupId, true);
 }
 
@@ -102,7 +102,7 @@ void TripGroupProxyModel::expand(const QString &groupId)
     Q_EMIT dataChanged(startIdx, startIdx); // collapse/expand state changed
 
     QSettings settings;
-    settings.beginGroup(QLatin1String("TripGroupProxyState"));
+    settings.beginGroup(QLatin1StringView("TripGroupProxyState"));
     settings.setValue(groupId, false);
 }
 

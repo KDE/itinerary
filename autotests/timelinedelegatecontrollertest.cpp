@@ -156,7 +156,7 @@ private Q_SLOTS:
 
         QCOMPARE(changeSpy.size(), 1);
         QVERIFY(!controller.previousLocation().isNull());
-        QCOMPARE(controller.previousLocation().value<TrainStation>().name(), QLatin1String("My Station"));
+        QCOMPARE(controller.previousLocation().value<TrainStation>().name(), QLatin1StringView("My Station"));
     }
 
     void testJourneyRequest()
@@ -168,7 +168,7 @@ private Q_SLOTS:
         ldm.setPkPassManager(&pkPassMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -184,21 +184,21 @@ private Q_SLOTS:
         auto jnyReq = controller.journeyRequestFull();
         QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
-        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+        QCOMPARE(jnyReq.to().name(), QLatin1StringView("Randa"));
         jnyReq = controller.journeyRequestOne();
         QCOMPARE(jnyReq.isValid(), true);
         QCOMPARE(jnyReq.from().name(), QStringLiteral("Zürich Flughafen"));
-        QCOMPARE(jnyReq.to().name(), QLatin1String("Visp"));
+        QCOMPARE(jnyReq.to().name(), QLatin1StringView("Visp"));
 
         controller.setBatchId(mgr.batches().at(2)); // second train segment
         jnyReq = controller.journeyRequestFull();
         QCOMPARE(jnyReq.isValid(), true);
-        QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
-        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+        QCOMPARE(jnyReq.from().name(), QLatin1StringView("Visp"));
+        QCOMPARE(jnyReq.to().name(), QLatin1StringView("Randa"));
         jnyReq = controller.journeyRequestOne();
         QCOMPARE(jnyReq.isValid(), true);
-        QCOMPARE(jnyReq.from().name(), QLatin1String("Visp"));
-        QCOMPARE(jnyReq.to().name(), QLatin1String("Randa"));
+        QCOMPARE(jnyReq.from().name(), QLatin1StringView("Visp"));
+        QCOMPARE(jnyReq.to().name(), QLatin1StringView("Randa"));
     }
 
     void testApplyJourney()
@@ -212,7 +212,7 @@ private Q_SLOTS:
         ldm.setReservationManager(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -226,7 +226,7 @@ private Q_SLOTS:
         QSignalSpy rmSpy(&mgr, &ReservationManager::batchRemoved);
 
         // apply alternative with 3 segments to test segment insertion
-        const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
+        const auto jny3 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-3-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny3), true);
         QCOMPARE(mgr.batches().size(), batchCount + 1);
         QCOMPARE(addSpy.size(), 3);
@@ -239,7 +239,7 @@ private Q_SLOTS:
         addSpy.clear();
         updateSpy.clear();
         rmSpy.clear();
-        const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1String(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
+        const auto jny2 = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/randa-zrh-2-sections.json"))).object());
         controller.applyJourney(QVariant::fromValue(jny2), true);
         QCOMPARE(mgr.batches().size(), batchCount);
         QCOMPARE(addSpy.size(), 2);
@@ -254,7 +254,7 @@ private Q_SLOTS:
         Test::clearAll(&mgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/flight-cancelation.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -275,7 +275,7 @@ private Q_SLOTS:
         TransferManager trfMgr;
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
 
         TimelineDelegateController controller;
         controller.setReservationManager(&mgr);
@@ -287,7 +287,7 @@ private Q_SLOTS:
         engine.newQObject(&controller);
 
         // workaround for pre-KF5I18nLocaleData code for region lookups still in use on the CI
-        const auto isRegion = [](const QString &region, QLatin1String ref) {
+        const auto isRegion = [](const QString &region, QLatin1StringView ref) {
             if (region.size() == 2) {
                 return ref.startsWith(region);
             }
@@ -296,122 +296,122 @@ private Q_SLOTS:
 
         controller.setBatchId(mgr.batches().at(0)); // flight
         auto args = controller.departureMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("departureGateName")).toString(), QLatin1String("A10"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Berlin Tegel"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("DE-BE")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Berlin"));
+        QCOMPARE(args.value(QLatin1StringView("departureGateName")).toString(), QLatin1StringView("A10"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {6, 45}, QTimeZone("Europe/Berlin")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Berlin Tegel"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("DE-BE")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Berlin"));
 
         args = controller.arrivalMapArguments().toVariant().toMap();
         // arrivalGate property doesn't exist
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {8, 15}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departurePlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("departurePlatformName")).toString(), QLatin1String("3"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {11, 40}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {8, 15}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformName")).toString(), QLatin1StringView("3"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {11, 40}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QStringLiteral("Zürich"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-ZH")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         controller.setBatchId(mgr.batches().at(1)); // first train leg
         args = controller.departureMapArguments().toVariant().toMap();
         // arrivalGate property doesn't exist
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {8, 15}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departurePlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("departurePlatformName")).toString(), QLatin1String("3"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {11, 40}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich Flughafen"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {8, 15}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformName")).toString(), QLatin1StringView("3"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {11, 40}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QStringLiteral("Zürich Flughafen"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-ZH")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         args = controller.arrivalMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformName")).toString(), QLatin1String("7"));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 2}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departurePlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("departurePlatformName")).toString(), QLatin1String("3"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 8}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Visp"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformName")).toString(), QLatin1StringView("7"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 2}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformName")).toString(), QLatin1StringView("3"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 8}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Visp"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         controller.setBatchId(mgr.batches().at(2)); // final train leg
         args = controller.departureMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformName")).toString(), QLatin1String("7"));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 2}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departurePlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("departurePlatformName")).toString(), QLatin1String("3"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 8}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Visp"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformName")).toString(), QLatin1StringView("7"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 2}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("departurePlatformName")).toString(), QLatin1StringView("3"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 8}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Visp"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         args = controller.arrivalMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformName")).toString(), QString());
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Randa"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformName")).toString(), QString());
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Randa"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         controller.setBatchId(mgr.batches().at(3)); // event
         args = controller.mapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        auto coord = args.value(QLatin1String("coordinate")).value<QPointF>();
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Haus Randa"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        auto coord = args.value(QLatin1StringView("coordinate")).value<QPointF>();
         QVERIFY(!coord.isNull());
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
-        QVERIFY(!args.value(QLatin1String("endTime")).toDateTime().isValid());
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
+        QVERIFY(!args.value(QLatin1StringView("endTime")).toDateTime().isValid());
 
         controller.setBatchId(mgr.batches().at(4)); // accommodation
         args = controller.mapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        coord = args.value(QLatin1String("coordinate")).value<QPointF>();
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Haus Randa"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        coord = args.value(QLatin1StringView("coordinate")).value<QPointF>();
         QVERIFY(!coord.isNull());
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {14, 54}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {14, 53}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {14, 54}, QTimeZone("Europe/Zurich")));
 
         controller.setBatchId(mgr.batches().at(7)); // food
         args = controller.mapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Raclette"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-VS")));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 14}, {0, 0}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Raclette"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-VS")));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 14}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {0, 0}, QTimeZone("Europe/Zurich")));
 
         controller.setBatchId(mgr.batches().at(9)); // final return leg
         args = controller.arrivalMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformName")).toString(), QLatin1String("2"));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 15}, {18, 16}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departureGateName")).toString(), QLatin1String("52"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {20, 50}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich Flughafen"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
-        coord = args.value(QLatin1String("coordinate")).value<QPointF>();
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformName")).toString(), QLatin1StringView("2"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 15}, {18, 16}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departureGateName")).toString(), QLatin1StringView("52"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {20, 50}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QStringLiteral("Zürich Flughafen"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-ZH")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
+        coord = args.value(QLatin1StringView("coordinate")).value<QPointF>();
         QVERIFY(!coord.isNull());
 
         controller.setBatchId(mgr.batches().at(10)); // return flight
         args = controller.departureMapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformMode")).toInt(), 1);
-        QCOMPARE(args.value(QLatin1String("arrivalPlatformName")).toString(), QLatin1String("2"));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 15}, {18, 16}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("departureGateName")).toString(), QLatin1String("52"));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {20, 50}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QStringLiteral("Zürich"));
-        QVERIFY(isRegion(args.value(QLatin1String("region")).toString(), QLatin1String("CH-ZH")));
-        QCOMPARE(args.value(QLatin1String("timeZone")), QLatin1String("Europe/Zurich"));
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformMode")).toInt(), 1);
+        QCOMPARE(args.value(QLatin1StringView("arrivalPlatformName")).toString(), QLatin1StringView("2"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 15}, {18, 16}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("departureGateName")).toString(), QLatin1StringView("52"));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 15}, {20, 50}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QStringLiteral("Zürich"));
+        QVERIFY(isRegion(args.value(QLatin1StringView("region")).toString(), QLatin1StringView("CH-ZH")));
+        QCOMPARE(args.value(QLatin1StringView("timeZone")), QLatin1StringView("Europe/Zurich"));
 
         // single static element, see 44ed4fbe96d45a60b33e2bf784196489197d7dcc
         Test::clearAll(&mgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/haus-randa-v1.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
         QCOMPARE(mgr.batches().size(), 1);
         controller.setBatchId(mgr.batches().at(0));
         args = controller.mapArguments().toVariant().toMap();
-        QCOMPARE(args.value(QLatin1String("placeName")).toString(), QLatin1String("Haus Randa"));
-        QCOMPARE(args.value(QLatin1String("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {0, 0}, QTimeZone("Europe/Zurich")));
-        QCOMPARE(args.value(QLatin1String("endTime")).toDateTime(), QDateTime({2017, 9, 16}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("placeName")).toString(), QLatin1StringView("Haus Randa"));
+        QCOMPARE(args.value(QLatin1StringView("beginTime")).toDateTime(), QDateTime({2017, 9, 10}, {0, 0}, QTimeZone("Europe/Zurich")));
+        QCOMPARE(args.value(QLatin1StringView("endTime")).toDateTime(), QDateTime({2017, 9, 16}, {0, 0}, QTimeZone("Europe/Zurich")));
     }
 };
 

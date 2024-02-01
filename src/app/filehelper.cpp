@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 
 bool FileHelper::isLocalFile(const QUrl &url)
 {
-    return url.isLocalFile() || url.scheme() == QLatin1String("content");
+    return url.isLocalFile() || url.scheme() == QLatin1StringView("content");
 }
 
 QString FileHelper::toLocalFile(const QUrl &url)

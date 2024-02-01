@@ -87,7 +87,7 @@ private Q_SLOTS:
 
         // old line name parts need to be cleared
         QCOMPARE(newTrip.trainName(), QString());
-        QCOMPARE(newTrip.trainNumber(), QLatin1String("R 342"));
+        QCOMPARE(newTrip.trainNumber(), QLatin1StringView("R 342"));
 
         // old platform information need to be cleared
         QCOMPARE(newTrip.departurePlatform(), QString());
@@ -104,7 +104,7 @@ private Q_SLOTS:
         QVERIFY(!newArr.geo().isValid());
 
         // locations got country data assigned
-        QCOMPARE(newDep.address().addressCountry(), QLatin1String("CH"));
+        QCOMPARE(newDep.address().addressCountry(), QLatin1StringView("CH"));
 
         // ticket token is preserved, but seat reservation is cleared
         const auto newTicket = newRes.reservedTicket().value<Ticket>();
@@ -135,19 +135,19 @@ private Q_SLOTS:
         KPublicTransport::Manager mgr;
         KPublicTransport::JourneyRequest req;
 
-        mgr.setBackendEnabled(QLatin1String("at_oebb"), true);
+        mgr.setBackendEnabled(QLatin1StringView("at_oebb"), true);
         PublicTransport::selectBackends(req, &mgr, res);
-        QCOMPARE(req.backendIds(), QStringList({ QLatin1String("at_oebb") }));
-        mgr.setBackendEnabled(QLatin1String("at_oebb"), false);
+        QCOMPARE(req.backendIds(), QStringList({ QLatin1StringView("at_oebb") }));
+        mgr.setBackendEnabled(QLatin1StringView("at_oebb"), false);
         PublicTransport::selectBackends(req, &mgr, res);
         QCOMPARE(req.backendIds(), QStringList());
 
         provider.setIdentifier(QStringLiteral("uic:80"));
         trip.setProvider(provider);
         res.setReservationFor(trip);
-        mgr.setBackendEnabled(QLatin1String("de_db"), true);
+        mgr.setBackendEnabled(QLatin1StringView("de_db"), true);
         PublicTransport::selectBackends(req, &mgr, res);
-        QCOMPARE(req.backendIds(), QStringList({ QLatin1String("de_db") }));
+        QCOMPARE(req.backendIds(), QStringList({ QLatin1StringView("de_db") }));
     }
 };
 

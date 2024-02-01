@@ -59,11 +59,11 @@ QString DownloadJob::errorMessage() const
 bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam)
 {
     // TODO this needs to be gone generically and ideally based on some declarative data
-    if (url.host() == QLatin1String("dbnavigator.bahn.de") && url.path() == QLatin1String("/loadorder")) {
+    if (url.host() == QLatin1StringView("dbnavigator.bahn.de") && url.path() == QLatin1StringView("/loadorder")) {
         const auto query = QUrlQuery(url);
         QVariantMap args({
-            { QLatin1String("name"), query.queryItemValue(QLatin1String("name")).toUpper() },
-            { QLatin1String("reference"), query.queryItemValue(QLatin1String("on")) }
+            { QLatin1StringView("name"), query.queryItemValue(QLatin1StringView("name")).toUpper() },
+            { QLatin1StringView("reference"), query.queryItemValue(QLatin1StringView("on")) }
         });
 
         qCDebug(Log) << "Doing online ticket retrieval for" << url << args;
@@ -84,7 +84,7 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
 
 QNetworkReply* DownloadJob::makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam)
 {
-    url.setScheme(QLatin1String("https"));
+    url.setScheme(QLatin1StringView("https"));
     QNetworkRequest req(url);
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     req.setRawHeader("Accept", "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\"");
@@ -116,7 +116,7 @@ bool DownloadJob::handleActivityPubReply(QNetworkReply *reply)
 
 QNetworkReply* DownloadJob::makeDownloadRequest(QUrl url, QNetworkAccessManager *nam)
 {
-    url.setScheme(QLatin1String("https"));
+    url.setScheme(QLatin1StringView("https"));
     QNetworkRequest req(url);
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     qCDebug(Log) << "Downloading" << url;

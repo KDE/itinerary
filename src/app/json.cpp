@@ -126,15 +126,15 @@ static QVariant variantFromJson(const QJsonValue &v, int mt)
         {
             if (v.isObject()) {
                 const auto dtObj = v.toObject();
-                auto valueIt = dtObj.find(QLatin1String("value"));
+                auto valueIt = dtObj.find(QLatin1StringView("value"));
                 if (valueIt == dtObj.end()) {
-                    valueIt = dtObj.find(QLatin1String("@value")); // JSON-LD compat
+                    valueIt = dtObj.find(QLatin1StringView("@value")); // JSON-LD compat
                 }
                 if (valueIt == dtObj.end()) {
                     return {};
                 }
                 auto dt = QDateTime::fromString(valueIt.value().toString(), Qt::ISODate);
-                dt.setTimeZone(QTimeZone(dtObj.value(QLatin1String("timezone")).toString().toUtf8()));
+                dt.setTimeZone(QTimeZone(dtObj.value(QLatin1StringView("timezone")).toString().toUtf8()));
                 return dt;
             }
             return QDateTime::fromString(v.toString(), Qt::ISODate);

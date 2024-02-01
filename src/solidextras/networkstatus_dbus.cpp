@@ -42,7 +42,7 @@ using namespace SolidExtras;
 
 PortalNetworkMonitor::PortalNetworkMonitor(QObject *parent)
     : QObject(parent)
-    , m_iface(QLatin1String("org.freedesktop.portal.Desktop"), QLatin1String("/org/freedesktop/portal/desktop"), QDBusConnection::sessionBus())
+    , m_iface(QLatin1StringView("org.freedesktop.portal.Desktop"), QLatin1StringView("/org/freedesktop/portal/desktop"), QDBusConnection::sessionBus())
 {
     connect(&m_iface, &org::freedesktop::portal::NetworkMonitor::changed, this, &PortalNetworkMonitor::asyncUpdate);
     if (m_iface.isValid()) {

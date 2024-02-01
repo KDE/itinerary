@@ -207,7 +207,7 @@ QString Transfer::identifier() const
 
 QString Transfer::identifier(const QString &resId, Transfer::Alignment alignment)
 {
-    return resId + (alignment == Transfer::Before ? QLatin1String("-BEFORE") : QLatin1String("-AFTER"));
+    return resId + (alignment == Transfer::Before ? QLatin1StringView("-BEFORE") : QLatin1StringView("-AFTER"));
 }
 
 QJsonObject Transfer::toJson(const Transfer &transfer)
@@ -222,9 +222,9 @@ QJsonObject Transfer::toJson(const Transfer &transfer)
 Transfer Transfer::fromJson(const QJsonObject &obj)
 {
     auto transfer = Json::fromJson<Transfer>(obj);
-    transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1String("from")).toObject()));
-    transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1String("to")).toObject()));
-    transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1String("journey")).toObject()));
+    transfer.setFrom(KPublicTransport::Location::fromJson(obj.value(QLatin1StringView("from")).toObject()));
+    transfer.setTo(KPublicTransport::Location::fromJson(obj.value(QLatin1StringView("to")).toObject()));
+    transfer.setJourney(KPublicTransport::Journey::fromJson(obj.value(QLatin1StringView("journey")).toObject()));
 
     if (transfer.state() == Searching) { // searching state cannot survive persisting
         transfer.setState(Pending);

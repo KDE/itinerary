@@ -97,7 +97,7 @@ private Q_SLOTS:
         QVERIFY(!m_nam.requests[1].request.rawHeader("Accept").contains("activitystreams"));
 
         QCOMPARE(job.hasError(), true);
-        QVERIFY(job.errorMessage().contains(QLatin1String("File not found")));
+        QVERIFY(job.errorMessage().contains(QLatin1StringView("File not found")));
         QCOMPARE(job.data(), QByteArray());
     }
 

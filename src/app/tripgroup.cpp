@@ -59,8 +59,8 @@ bool TripGroup::load(const QString &path)
     }
 
     const auto obj = JsonIO::read(f.readAll()).toObject();
-    m_name = obj.value(QLatin1String("name")).toString();
-    const auto elems = obj.value(QLatin1String("elements")).toArray();
+    m_name = obj.value(QLatin1StringView("name")).toString();
+    const auto elems = obj.value(QLatin1StringView("elements")).toArray();
     m_elements.clear();
     m_elements.reserve(elems.size());
     for (const auto &v : elems) {
@@ -79,10 +79,10 @@ void TripGroup::store(const QString &path) const
     }
 
     QJsonObject obj;
-    obj.insert(QLatin1String("name"), m_name);
+    obj.insert(QLatin1StringView("name"), m_name);
     QJsonArray elems;
     std::copy(m_elements.begin(), m_elements.end(), std::back_inserter(elems));
-    obj.insert(QLatin1String("elements"), elems);
+    obj.insert(QLatin1StringView("elements"), elems);
     f.write(JsonIO::write(obj));
 }
 

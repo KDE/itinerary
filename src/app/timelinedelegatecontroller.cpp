@@ -639,9 +639,9 @@ static CoachData coachDataForReservation(const QVariant &res)
 
     CoachData data;
     data.coachName = seat.seatSection();
-    if (seat.seatingType() == QLatin1String("1")) {
+    if (seat.seatingType() == QLatin1StringView("1")) {
         data.coachClass = KPublicTransport::VehicleSection::FirstClass;
-    } else if (seat.seatingType() == QLatin1String("2")) {
+    } else if (seat.seatingType() == QLatin1StringView("2")) {
         data.coachClass = KPublicTransport::VehicleSection::SecondClass;
     }
     return data;
@@ -661,21 +661,21 @@ static QString platformSectionsForCoachData(const KPublicTransport::Stopover &st
     return {};
 }
 
-static void mapArgumentsForPt(QJSValue &args, QLatin1String prefix, const KPublicTransport::Stopover &stop, const CoachData &coach)
+static void mapArgumentsForPt(QJSValue &args, QLatin1StringView prefix, const KPublicTransport::Stopover &stop, const CoachData &coach)
 {
     const auto platformName = stop.hasExpectedPlatform() ? stop.expectedPlatform() : stop.scheduledPlatform();
     if (!platformName.isEmpty()) {
         const auto sections = platformSectionsForCoachData(stop, coach);
-        args.setProperty(prefix + QLatin1String("PlatformName"), sections.isEmpty() ? platformName : (platformName + QLatin1Char(' ') + sections));
+        args.setProperty(prefix + QLatin1StringView("PlatformName"), sections.isEmpty() ? platformName : (platformName + QLatin1Char(' ') + sections));
     }
 
     if (stop.route().line().mode() != KPublicTransport::Line::Unknown) {
-        args.setProperty(prefix + QLatin1String("PlatformMode"), PublicTransport::lineModeToPlatformMode(stop.route().line().mode()));
+        args.setProperty(prefix + QLatin1StringView("PlatformMode"), PublicTransport::lineModeToPlatformMode(stop.route().line().mode()));
     }
 
     const auto ifopt = stop.stopPoint().identifier(QStringLiteral("ifopt"));
     if (!ifopt.isEmpty()) {
-        args.setProperty(prefix + QLatin1String("PlatformIfopt"), ifopt);
+        args.setProperty(prefix + QLatin1StringView("PlatformIfopt"), ifopt);
     }
 }
 
@@ -727,7 +727,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     // arrival location
     mapArrivalArgumesForRes(args, res);
     const auto arr = arrival();
-    mapArgumentsForPt(args, QLatin1String("arrival"), arr, coachDataForReservation(res));
+    mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, coachDataForReservation(res));
 
     // arrival time
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
@@ -743,7 +743,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
-        mapArgumentsForPt(args, QLatin1String("departure"), dep, {});
+        mapArgumentsForPt(args, QLatin1StringView("departure"), dep, {});
         args.setProperty(QStringLiteral("endTime"), engine->toScriptValue(dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime()));
         return args;
     }
@@ -756,7 +756,7 @@ QJSValue TimelineDelegateController::arrivalMapArguments() const
     }
     mapDepartureArgumentsForRes(args, nextRes);
     const auto dep = m_liveDataMgr->departure(nextResId);
-    mapArgumentsForPt(args, QLatin1String("departure"), dep, coachDataForReservation(nextRes));
+    mapArgumentsForPt(args, QLatin1StringView("departure"), dep, coachDataForReservation(nextRes));
 
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
     if (!depTime.isValid()) {
@@ -785,7 +785,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     // departure location
     mapDepartureArgumentsForRes(args, res);
     const auto dep = departure();
-    mapArgumentsForPt(args, QLatin1String("departure"), dep, coachDataForReservation(res));
+    mapArgumentsForPt(args, QLatin1StringView("departure"), dep, coachDataForReservation(res));
 
     // departure time
     auto depTime = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
@@ -801,7 +801,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     const auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
-        mapArgumentsForPt(args, QLatin1String("arrival"), arr, {});
+        mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, {});
         args.setProperty(QStringLiteral("beginTime"), engine->toScriptValue(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime()));
         return args;
     }
@@ -814,7 +814,7 @@ QJSValue TimelineDelegateController::departureMapArguments() const
     }
     mapArrivalArgumesForRes(args, prevRes);
     const auto arr = m_liveDataMgr->arrival(prevResId);
-    mapArgumentsForPt(args, QLatin1String("arrival"), arr, coachDataForReservation(prevRes));
+    mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, coachDataForReservation(prevRes));
 
     auto arrTime = arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime();
     if (!arrTime.isValid()) {
@@ -859,7 +859,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     auto transfer = m_transferMgr->transfer(m_batchId, Transfer::Before);
     if (transfer.state() == Transfer::Selected) {
         const auto arr = PublicTransport::lastTransportSection(transfer.journey()).arrival();
-        mapArgumentsForPt(args, QLatin1String("arrival"), arr, {});
+        mapArgumentsForPt(args, QLatin1StringView("arrival"), arr, {});
         beginDt = std::max(arr.hasExpectedArrivalTime() ? arr.expectedArrivalTime() : arr.scheduledArrivalTime(), beginDt);
     }
 
@@ -874,7 +874,7 @@ QJSValue TimelineDelegateController::mapArguments() const
     transfer = m_transferMgr->transfer(m_batchId, Transfer::After);
     if (transfer.state() == Transfer::Selected) {
         const auto dep = PublicTransport::firstTransportSection(transfer.journey()).departure();
-        mapArgumentsForPt(args, QLatin1String("departure"), dep, {});
+        mapArgumentsForPt(args, QLatin1StringView("departure"), dep, {});
         const auto depDt = dep.hasExpectedDepartureTime() ? dep.expectedDepartureTime() : dep.scheduledDepartureTime();
         endDt = endDt.isValid() ? std::min(endDt, depDt) : depDt;
     }

@@ -202,7 +202,7 @@ void TransferManager::rescan(bool force)
 
     QSettings settings;
     settings.beginGroup(QStringLiteral("TransferManager"));
-    const auto previousFullScanVersion = settings.value(QLatin1String("FullScan"), 0).toInt();
+    const auto previousFullScanVersion = settings.value(QLatin1StringView("FullScan"), 0).toInt();
     if (!force && previousFullScanVersion >= CurrentFullScanVersion) {
         return;
     }
@@ -666,12 +666,12 @@ void TransferManager::removeTransfer(const Transfer &t)
 
 static QString transferBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/transfers/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/transfers/");
 }
 
 Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment alignment) const
 {
-    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1String(".json");
+    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1StringView(".json");
     QFile f(fileName);
     if (!f.open(QFile::ReadOnly)) {
         return {};
@@ -682,7 +682,7 @@ Transfer TransferManager::readFromFile(const QString& resId, Transfer::Alignment
 void TransferManager::writeToFile(const Transfer &transfer) const
 {
     QDir().mkpath(transferBasePath());
-    const QString fileName = transferBasePath() + transfer.identifier() + QLatin1String(".json");
+    const QString fileName = transferBasePath() + transfer.identifier() + QLatin1StringView(".json");
     QFile f(fileName);
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << "Failed to store transfer data" << f.fileName() << f.errorString();
@@ -693,7 +693,7 @@ void TransferManager::writeToFile(const Transfer &transfer) const
 
 void TransferManager::removeFile(const QString &resId, Transfer::Alignment alignment) const
 {
-    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1String(".json");
+    const QString fileName = transferBasePath() + Transfer::identifier(resId, alignment) + QLatin1StringView(".json");
     QFile::remove(fileName);
 }
 

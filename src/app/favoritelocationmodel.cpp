@@ -105,14 +105,14 @@ QJsonArray FavoriteLocation::toJson(const std::vector<FavoriteLocation> &locs)
 
 static QString favoriteLocationPath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/favorite-locations/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/favorite-locations/");
 }
 
 FavoriteLocationModel::FavoriteLocationModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     // load existing locations
-    QFile f(favoriteLocationPath() + QLatin1String("locations.json"));
+    QFile f(favoriteLocationPath() + QLatin1StringView("locations.json"));
     if (f.open(QFile::ReadOnly)) { // error is fine, file might not exist yet
         const auto val = JsonIO::read(f.readAll());
         beginResetModel();
@@ -265,7 +265,7 @@ void FavoriteLocationModel::saveLocations() const
 {
     const auto basePath = favoriteLocationPath();
     QDir().mkpath(basePath);
-    QFile f(basePath + QLatin1String("locations.json"));
+    QFile f(basePath + QLatin1StringView("locations.json"));
     if (!f.open(QFile::WriteOnly)) {
         qWarning() << "Failed to save favorite locations:" << f.errorString() << f.fileName();
         return;

@@ -44,7 +44,7 @@ private Q_SLOTS:
         Test::clearAll(&resMgr);
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -57,7 +57,7 @@ private Q_SLOTS:
 
         TripGroupManager::clear();
         Test::clearAll(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -70,7 +70,7 @@ private Q_SLOTS:
 
         TripGroupManager::clear();
         Test::clearAll(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/timeline/multi-traveler-merge-with-countryinfo.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -82,8 +82,8 @@ private Q_SLOTS:
         }
 
         TripGroupManager::clear();
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         {
             TripGroupManager mgr;
             QSignalSpy addSpy(&mgr, &TripGroupManager::tripGroupAdded);
@@ -97,7 +97,7 @@ private Q_SLOTS:
 
         Test::clearAll(&resMgr);
         TripGroupManager::clear();
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/tripgroup/time-based-layover-detection.json")));
         {
             TripGroupManager mgr;
             mgr.setReservationManager (&resMgr);
@@ -118,7 +118,7 @@ private Q_SLOTS:
 
         // after adding the third element this will find a loop between the two inner legs and remove the first leg as a leading appendix
         // the fourth leg however should be fixing that and result in a single 4 leg group
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/tripgroup/symmetric-two-leg-return-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/tripgroup/symmetric-two-leg-return-flight.json")));
         QCOMPARE(mgr.tripGroups().size(), 1);
         auto g = mgr.tripGroup(mgr.tripGroups().at(0));
         QCOMPARE(g.elements().size(), resMgr.batches().size());
@@ -137,7 +137,7 @@ private Q_SLOTS:
 
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size());

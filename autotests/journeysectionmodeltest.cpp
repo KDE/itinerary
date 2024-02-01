@@ -25,7 +25,7 @@ private Q_SLOTS:
         model.setCurrentDateTime(QDateTime({2021, 12, 21}, {10, 00}, QTimeZone("Europe/Berlin")));
         QAbstractItemModelTester modelTester(&model);
 
-        const auto json = QJsonDocument::fromJson(Test::readFile(QLatin1String(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object();
+        const auto json = QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object();
         const auto jny = KPublicTransport::Journey::fromJson(json);
         QVERIFY(!jny.sections().empty());
         model.setJourneySection(jny.sections()[0]);
@@ -50,13 +50,13 @@ private Q_SLOTS:
 
         model.setProperty("showProgress", true);
         auto idx = model.index(3, 0);
-        QCOMPARE(idx.data(JourneySectionModel::StopoverRole).value<KPublicTransport::Stopover>().stopPoint().name(), QLatin1String("Hannover Hbf"));
+        QCOMPARE(idx.data(JourneySectionModel::StopoverRole).value<KPublicTransport::Stopover>().stopPoint().name(), QLatin1StringView("Hannover Hbf"));
         QCOMPARE(idx.data(JourneySectionModel::StopoverPassedRole).toBool(), true);
         QCOMPARE(idx.data(JourneySectionModel::LeadingSegmentProgressRole).toFloat(), 1.0f);
         QCOMPARE(idx.data(JourneySectionModel::TrailingSegmentProgressRole).toFloat(), 0.826531f);
 
         idx = model.index(4, 0);
-        QCOMPARE(idx.data(JourneySectionModel::StopoverRole).value<KPublicTransport::Stopover>().stopPoint().name(), QLatin1String("Bielefeld Hbf"));
+        QCOMPARE(idx.data(JourneySectionModel::StopoverRole).value<KPublicTransport::Stopover>().stopPoint().name(), QLatin1StringView("Bielefeld Hbf"));
         QCOMPARE(idx.data(JourneySectionModel::StopoverPassedRole).toBool(), false);
         QCOMPARE(idx.data(JourneySectionModel::LeadingSegmentProgressRole).toFloat(), 0.0f);
         QCOMPARE(idx.data(JourneySectionModel::TrailingSegmentProgressRole).toFloat(), 0.0f);

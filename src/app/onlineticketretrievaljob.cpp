@@ -22,8 +22,8 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
 
     // TODO this should be done more modular eventually, similar to the extraction side
     // e.g. by using some form of request templates, or by service-specific scripts
-    if (sourceId == QLatin1String("db")) {
-        const auto ref = arguments.value(QLatin1String("reference")).toString();
+    if (sourceId == QLatin1StringView("db")) {
+        const auto ref = arguments.value(QLatin1StringView("reference")).toString();
         if (ref.size() == 6) {
             dbRequestOrderDetails(arguments);
         } else {
@@ -31,14 +31,14 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
         }
         return;
     }
-    if (sourceId == QLatin1String("sncf")) {
+    if (sourceId == QLatin1StringView("sncf")) {
         // based on https://www.sncf-connect.com/app/trips/search and stripped to the bare minimum that works
         QNetworkRequest req(QUrl(QStringLiteral("https://www.sncf-connect.com/bff/api/v1/trips/trips-by-criteria")));
         req.setHeader(QNetworkRequest::ContentTypeHeader, QByteArray("application/json"));
         req.setHeader(QNetworkRequest::UserAgentHeader, QByteArray("Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0"));
         req.setRawHeader("Accept", "application/json, text/plain, */*");
         req.setRawHeader("x-bff-key", "ah1MPO-izehIHD-QZZ9y88n-kku876");
-        QByteArray postData("{\"reference\":\"" + arguments.value(QLatin1String("reference")).toString().toUtf8() + "\",\"name\":\"" + arguments.value(QLatin1String("name")).toString().toUtf8() + "\"}");
+        QByteArray postData("{\"reference\":\"" + arguments.value(QLatin1StringView("reference")).toString().toUtf8() + "\",\"name\":\"" + arguments.value(QLatin1StringView("name")).toString().toUtf8() + "\"}");
         reply = nam->post(req, postData);
         reply->setParent(this);
         connect(reply, &QNetworkReply::finished, this, [reply, this]() { handleReply(reply); });
@@ -65,16 +65,16 @@ void OnlineTicketRetrievalJob::dbRequestFindOrder(const QVariantMap &arguments)
     QNetworkRequest req(QUrl(QStringLiteral("https://fahrkarten.bahn.de/mobile/dbc/xs.go?")));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QByteArray("application/x-www-form-urlencoded"));
     QByteArray postData(R"(<rqfindorder version="1.0"><rqheader v="23080000" os="KCI" app="NAVIGATOR"/><rqorder on=")"
-        + arguments.value(QLatin1String("reference")).toString().toUtf8()
+        + arguments.value(QLatin1StringView("reference")).toString().toUtf8()
         + R"("/><authname tln=")"
-        + arguments.value(QLatin1String("name")).toString().toUtf8()
+        + arguments.value(QLatin1StringView("name")).toString().toUtf8()
         + R"("/></rqfindorder>)");
     auto reply = m_nam->post(req, postData);
     reply->setParent(this);
     connect(reply, &QNetworkReply::finished, this, [reply, arguments, this]() {
         reply->deleteLater();
         auto args = arguments;
-        args.insert(QLatin1String("kwid"), dbParseKwid(reply));
+        args.insert(QLatin1StringView("kwid"), dbParseKwid(reply));
         dbRequestOrderDetails(args);
     });
 }
@@ -84,7 +84,7 @@ QString OnlineTicketRetrievalJob::dbParseKwid(QIODevice *io)
     QXmlStreamReader reader(io);
     while (!reader.atEnd()) {
         reader.readNextStartElement();
-        if (const auto kwid = reader.attributes().value(QLatin1String("kwid")); !kwid.isEmpty()) {
+        if (const auto kwid = reader.attributes().value(QLatin1StringView("kwid")); !kwid.isEmpty()) {
             return kwid.toString();
         }
     }
@@ -93,15 +93,15 @@ QString OnlineTicketRetrievalJob::dbParseKwid(QIODevice *io)
 
 void OnlineTicketRetrievalJob::dbRequestOrderDetails(const QVariantMap &arguments)
 {
-    const auto kwid = arguments.value(QLatin1String("kwid")).toString();
+    const auto kwid = arguments.value(QLatin1StringView("kwid")).toString();
 
     QNetworkRequest req(QUrl(QStringLiteral("https://fahrkarten.bahn.de/mobile/dbc/xs.go?")));
     req.setHeader(QNetworkRequest::ContentTypeHeader, QByteArray("application/x-www-form-urlencoded"));
     QByteArray postData(R"(<rqorderdetails version="1.0"><rqheader v="23040000" os="KCI" app="KCI-Webservice"/><rqorder on=")"
-        + arguments.value(QLatin1String("reference")).toString().toUpper().toUtf8()
+        + arguments.value(QLatin1StringView("reference")).toString().toUpper().toUtf8()
         + (kwid.isEmpty() ? QByteArray() : QByteArray(R"(" kwid=")" + kwid.toUtf8()))
         + R"("/><authname tln=")"
-        + arguments.value(QLatin1String("name")).toString().toUtf8()
+        + arguments.value(QLatin1StringView("name")).toString().toUtf8()
         + R"("/></rqorderdetails>)");
     auto reply = m_nam->post(req, postData);
     reply->setParent(this);

@@ -28,7 +28,7 @@ private Q_SLOTS:
         QCoreApplication::setApplicationVersion(QStringLiteral(ITINERARY_VERSION_STRING));
 
         QStandardPaths::setTestModeEnabled(true);
-        QDir d(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/weather"));
+        QDir d(QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/weather"));
         d.removeRecursively();
         QVERIFY(!d.exists());
     }
@@ -36,7 +36,7 @@ private Q_SLOTS:
     void testParseForecastData()
     {
         // NOTE: the data file is transformed 100 years into the future to avoid the parser cutting of outdated data
-        QFile f(QLatin1String(SOURCE_DIR "/data/524-135-forecast.xml"));
+        QFile f(QLatin1StringView(SOURCE_DIR "/data/524-135-forecast.xml"));
         QVERIFY(f.open(QFile::ReadOnly));
         WeatherForecastManager mgr;
         QXmlStreamReader reader(&f);

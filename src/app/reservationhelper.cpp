@@ -71,7 +71,7 @@ static QString providerIdentifier(const QVariant &res)
 QString ReservationHelper::uicCompanyCode(const QVariant &res)
 {
     auto id = providerIdentifier(res);
-    if (!id.startsWith(QLatin1String("uic:")) || id.size() > 8) {
+    if (!id.startsWith(QLatin1StringView("uic:")) || id.size() > 8) {
         return {};
     }
 
@@ -85,7 +85,7 @@ QString ReservationHelper::uicCompanyCode(const QVariant &res)
 QString ReservationHelper::vdvOrganizationId(const QVariant &res)
 {
     const auto id = providerIdentifier(res);
-    if (!id.startsWith(QLatin1String("vdv:"))) {
+    if (!id.startsWith(QLatin1StringView("vdv:"))) {
         return id.mid(4);
     }
     return {};

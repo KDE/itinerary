@@ -136,7 +136,7 @@ void TripGroupManager::removeTripGroup(const QString &groupId)
         }
     }
     m_tripGroups.erase(groupIt);
-    if (!QFile::remove(basePath() + groupId + QLatin1String(".json"))) {
+    if (!QFile::remove(basePath() + groupId + QLatin1StringView(".json"))) {
         qCWarning(Log) << "Failed to delete trip group file!" << groupId;
     }
     Q_EMIT tripGroupRemoved(groupId);
@@ -203,7 +203,7 @@ void TripGroupManager::batchRemoved(const QString &resId)
         } else { // group changed
             qDebug() << "removing element from trip group" << resId << elems;
             groupIt.value().setElements(elems);
-            groupIt.value().store(basePath() + mapIt.value() + QLatin1String(".json"));
+            groupIt.value().store(basePath() + mapIt.value() + QLatin1StringView(".json"));
             m_reservationToGroupMap.erase(mapIt);
             Q_EMIT tripGroupChanged(groupId);
         }
@@ -420,7 +420,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         g.setName(guessName(g));
         qDebug() << "creating trip group" << g.name();
         m_tripGroups.insert(tgId, g);
-        g.store(basePath() + tgId + QLatin1String(".json"));
+        g.store(basePath() + tgId + QLatin1StringView(".json"));
         Q_EMIT tripGroupAdded(tgId);
     } else {
         auto &g = groupIt.value();
@@ -433,7 +433,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
         }
         g.setName(guessName(g));
         qDebug() << "updating trip group" << g.name();
-        g.store(basePath() + groupIt.key() + QLatin1String(".json"));
+        g.store(basePath() + groupIt.key() + QLatin1StringView(".json"));
         Q_EMIT tripGroupChanged(groupIt.key());
     }
 
@@ -512,7 +512,7 @@ QString TripGroupManager::guessDestinationFromLodging(const TripGroup &g) const
         // TODO consider the country if that differs from where we started from
     }
 
-    return dests.join(QLatin1String(" - "));
+    return dests.join(QLatin1StringView(" - "));
 }
 
 bool TripGroupManager::isRoundTrip(const TripGroup& g) const

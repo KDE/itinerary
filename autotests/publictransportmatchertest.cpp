@@ -45,7 +45,7 @@ private Q_SLOTS:
 
     void testMatchSubJourney()
     {
-        const auto journey = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1String(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object());
+        const auto journey = KPublicTransport::Journey::fromJson(QJsonDocument::fromJson(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/publictransport/db-wifi-journey.json"))).object());
         QCOMPARE(journey.sections().size(), 1);
 
         KItinerary::TrainStation departure, arrival;
@@ -63,8 +63,8 @@ private Q_SLOTS:
 
         auto subJny = PublicTransportMatcher::subJourneyForReservation(res, journey.sections()[0]);
         QCOMPARE(subJny.mode(), KPublicTransport::JourneySection::PublicTransport);
-        QCOMPARE(subJny.departure().stopPoint().name(), QLatin1String("Berlin Hbf"));
-        QCOMPARE(subJny.arrival().stopPoint().name(), QLatin1String("Hamm (Westf) Hbf"));
+        QCOMPARE(subJny.departure().stopPoint().name(), QLatin1StringView("Berlin Hbf"));
+        QCOMPARE(subJny.arrival().stopPoint().name(), QLatin1StringView("Hamm (Westf) Hbf"));
 
         trip.setDepartureTime(QDateTime({2021, 12, 21}, {7, 46}, QTimeZone("Europe/Berlin")));
         res.setReservationFor(trip);

@@ -77,7 +77,7 @@ QVariant ReservationManager::reservation(const QString& id) const
         return it.value();
     }
 
-    const QString resPath = reservationsBasePath() + id + QLatin1String(".jsonld");
+    const QString resPath = reservationsBasePath() + id + QLatin1StringView(".jsonld");
     QFile f(resPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open JSON-LD reservation data file:" << resPath << f.errorString();
@@ -115,12 +115,12 @@ QVariant ReservationManager::reservation(const QString& id) const
 
 QString ReservationManager::reservationsBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/reservations/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/reservations/");
 }
 
 QString ReservationManager::batchesBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/batches/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/batches/");
 }
 
 QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
@@ -246,7 +246,7 @@ void ReservationManager::storeReservation(const QString &resId, const QVariant &
 {
     const QString basePath = reservationsBasePath();
     QDir::root().mkpath(basePath);
-    const QString path = basePath + resId + QLatin1String(".jsonld");
+    const QString path = basePath + resId + QLatin1StringView(".jsonld");
     QFile f(path);
     if (!f.open(QFile::WriteOnly)) {
         qCWarning(Log) << "Unable to open file:" << f.errorString();
@@ -262,7 +262,7 @@ void ReservationManager::removeReservation(const QString& id)
     removeFromBatch(id, batchId);
 
     const QString basePath = reservationsBasePath();
-    QFile::remove(basePath + QLatin1Char('/') + id + QLatin1String(".jsonld"));
+    QFile::remove(basePath + QLatin1Char('/') + id + QLatin1StringView(".jsonld"));
     Q_EMIT reservationRemoved(id);
     m_reservations.remove(id);
 }
@@ -317,7 +317,7 @@ void ReservationManager::loadBatches()
 
         const auto batchVal = JsonIO::read(batchFile.readAll());
         const auto top = batchVal.toObject();
-        const auto resArray = top.value(QLatin1String("elements")).toArray();
+        const auto resArray = top.value(QLatin1StringView("elements")).toArray();
         QStringList l;
         l.reserve(resArray.size());
         for (const auto &v : resArray) {
@@ -340,9 +340,9 @@ void ReservationManager::storeBatch(const QString &batchId) const
     std::copy(batch.begin(), batch.end(), std::back_inserter(elems));
 
     QJsonObject top;
-    top.insert(QLatin1String("elements"), elems);
+    top.insert(QLatin1StringView("elements"), elems);
 
-    const QString path = batchesBasePath() + batchId + QLatin1String(".json");
+    const QString path = batchesBasePath() + batchId + QLatin1StringView(".json");
     QFile f(path);
     if (!f.open(QFile::WriteOnly | QFile::Truncate)) {
         qCWarning(Log) << "Failed to open batch file!" << path << f.errorString();
@@ -354,7 +354,7 @@ void ReservationManager::storeBatch(const QString &batchId) const
 
 void ReservationManager::storeRemoveBatch(const QString &batchId) const
 {
-    const QString path = batchesBasePath() + batchId + QLatin1String(".json");
+    const QString path = batchesBasePath() + batchId + QLatin1StringView(".json");
     QFile::remove(path);
 }
 

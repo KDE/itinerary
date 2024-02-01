@@ -124,7 +124,7 @@ static QString plugTypesToString(KnowledgeDb::PowerPlugTypes type)
             l.push_back(KLocalizedString(elem.name).toString());
         }
     }
-    return l.join(QLatin1String(", "));
+    return l.join(QLatin1StringView(", "));
 }
 
 QString LocationInformation::powerPlugTypes() const

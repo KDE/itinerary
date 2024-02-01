@@ -17,25 +17,25 @@ Settings::Settings(QObject *parent)
     : QObject(parent)
 {
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    m_weatherEnabled = s.value(QLatin1String("WeatherForecastEnabled"), false).toBool();
+    s.beginGroup(QLatin1StringView("Settings"));
+    m_weatherEnabled = s.value(QLatin1StringView("WeatherForecastEnabled"), false).toBool();
 
     const auto currentCountry = KCountry::fromQLocale(QLocale().country()).alpha2();
-    m_homeCountry = s.value(QLatin1String("HomeCountry"), currentCountry).toString();
+    m_homeCountry = s.value(QLatin1StringView("HomeCountry"), currentCountry).toString();
 
-    m_queryLiveData = s.value(QLatin1String("QueryLiveData"), false).toBool();
+    m_queryLiveData = s.value(QLatin1StringView("QueryLiveData"), false).toBool();
 
-    m_preloadMapData = s.value(QLatin1String("PreloadMapData"), false).toBool();
+    m_preloadMapData = s.value(QLatin1StringView("PreloadMapData"), false).toBool();
 
-    m_currencyConversion = s.value(QLatin1String("PerformCurrencyConversion"), false).toBool();
+    m_currencyConversion = s.value(QLatin1StringView("PerformCurrencyConversion"), false).toBool();
 
-    m_autoAddTransfers = s.value(QLatin1String("AutoAddTransfers"), true).toBool();
-    m_autoFillTransfers = s.value(QLatin1String("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
+    m_autoAddTransfers = s.value(QLatin1StringView("AutoAddTransfers"), true).toBool();
+    m_autoFillTransfers = s.value(QLatin1StringView("AutoFillTransfers"), false).toBool() && m_queryLiveData && m_autoAddTransfers;
 
-    m_showNotificationOnLockScreen = s.value(QLatin1String("ShowNotificationOnLockScreen"), false).toBool();
+    m_showNotificationOnLockScreen = s.value(QLatin1StringView("ShowNotificationOnLockScreen"), false).toBool();
 
-    m_osmContributorMode = s.value(QLatin1String("OsmContributorMode"), false).toBool();
-    m_developmentMode = s.value(QLatin1String("DevelopmentMode"), false).toBool();
+    m_osmContributorMode = s.value(QLatin1StringView("OsmContributorMode"), false).toBool();
+    m_developmentMode = s.value(QLatin1StringView("DevelopmentMode"), false).toBool();
 }
 
 Settings::~Settings() = default;
@@ -65,8 +65,8 @@ void Settings::setWeatherForecastEnabled(bool enabled)
 
     m_weatherEnabled = enabled;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("WeatherForecastEnabled"), enabled);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("WeatherForecastEnabled"), enabled);
 
     Q_EMIT weatherForecastEnabledChanged(enabled);
 }
@@ -84,8 +84,8 @@ void Settings::setHomeCountryIsoCode(const QString& isoCode)
 
     m_homeCountry = isoCode;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("HomeCountry"), isoCode);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("HomeCountry"), isoCode);
 
     Q_EMIT homeCountryIsoCodeChanged(isoCode);
 }
@@ -107,8 +107,8 @@ void Settings::setQueryLiveData(bool queryLiveData)
 
     m_queryLiveData = queryLiveData;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("QueryLiveData"), queryLiveData);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("QueryLiveData"), queryLiveData);
 
     Q_EMIT queryLiveDataChanged(queryLiveData);
 }
@@ -126,8 +126,8 @@ void Settings::setPreloadMapData(bool preload)
 
     m_preloadMapData = preload;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("PreloadMapData"), preload);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("PreloadMapData"), preload);
 
     Q_EMIT preloadMapDataChanged(preload);
 }
@@ -145,8 +145,8 @@ void Settings::setPerformCurrencyConversion(bool enable)
 
     m_currencyConversion = enable;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("PerformCurrencyConversion"), enable);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("PerformCurrencyConversion"), enable);
 
     Q_EMIT performCurrencyConversionChanged(enable);
 }
@@ -168,8 +168,8 @@ void Settings::setAutoAddTransfers(bool autoAdd)
 
     m_autoAddTransfers = autoAdd;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("AutoAddTransfers"), autoAdd);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("AutoAddTransfers"), autoAdd);
 
     Q_EMIT autoAddTransfersChanged(autoAdd);
 }
@@ -187,8 +187,8 @@ void Settings::setAutoFillTransfers(bool autoFill)
 
     m_autoFillTransfers = autoFill;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("AutoFillTransfers"), autoFill);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("AutoFillTransfers"), autoFill);
 
     Q_EMIT autoFillTransfersChanged(autoFill);
 }
@@ -206,8 +206,8 @@ void Settings::setShowNotificationOnLockScreen(bool enabled)
 
     m_showNotificationOnLockScreen = enabled;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("ShowNotificationOnLockScreen"), m_showNotificationOnLockScreen);
 
     Q_EMIT showNotificationOnLockScreenChanged(m_showNotificationOnLockScreen);
 }
@@ -220,8 +220,8 @@ void Settings::setOsmContributorMode(bool enabled)
 
     m_osmContributorMode = enabled;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("OsmContributorMode"), m_osmContributorMode);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("OsmContributorMode"), m_osmContributorMode);
 
     Q_EMIT osmContributorModeChanged(m_osmContributorMode);
 }
@@ -239,8 +239,8 @@ void Settings::setDevelopmentMode(bool enabled)
 
     m_developmentMode = enabled;
     QSettings s;
-    s.beginGroup(QLatin1String("Settings"));
-    s.setValue(QLatin1String("DevelopmentMode"), m_developmentMode);
+    s.beginGroup(QLatin1StringView("Settings"));
+    s.setValue(QLatin1StringView("DevelopmentMode"), m_developmentMode);
     Q_EMIT developmentModeChanged(m_developmentMode);
 }
 

@@ -8,32 +8,32 @@
 
 bool Gpx::Reader::isRootElement() const
 {
-    return isStartElement() && name() == QLatin1String("gpx");
+    return isStartElement() && name() == QLatin1StringView("gpx");
 }
 
 bool Gpx::Reader::isWaypointStart() const
 {
-    return isStartElement() && name() == QLatin1String("wpt");
+    return isStartElement() && name() == QLatin1StringView("wpt");
 }
 
 bool Gpx::Reader::isWaypointEnd() const
 {
-    return isEndElement() && name() == QLatin1String("wpt");
+    return isEndElement() && name() == QLatin1StringView("wpt");
 }
 
 float Gpx::Reader::latitude() const
 {
-    return attributes().value(QLatin1String("lat")).toFloat();
+    return attributes().value(QLatin1StringView("lat")).toFloat();
 }
 
 float Gpx::Reader::longitude() const
 {
-    return attributes().value(QLatin1String("lon")).toFloat();
+    return attributes().value(QLatin1StringView("lon")).toFloat();
 }
 
 bool Gpx::Reader::isGpxName() const
 {
-    return isStartElement() && name() == QLatin1String("name");
+    return isStartElement() && name() == QLatin1StringView("name");
 }
 
 QString Gpx::Reader::gpxName()
@@ -43,7 +43,7 @@ QString Gpx::Reader::gpxName()
 
 bool Gpx::Reader::isGpxType() const
 {
-    return isStartElement() && name() == QLatin1String("type");
+    return isStartElement() && name() == QLatin1StringView("type");
 }
 
 QString Gpx::Reader::gpxType()

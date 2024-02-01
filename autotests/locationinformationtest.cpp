@@ -56,7 +56,7 @@ private Q_SLOTS:
         QCOMPARE(info.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(info.powerPlugCompatibility(), LocationInformation::Incompatible);
         QVERIFY(info.currencyDiffers());
-        QCOMPARE(info.currencyCode(), QLatin1String("EUR"));
+        QCOMPARE(info.currencyCode(), QLatin1StringView("EUR"));
     }
 };
 

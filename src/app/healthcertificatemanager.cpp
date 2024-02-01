@@ -42,7 +42,7 @@ bool HealthCertificateManager::isAvailable()
 
 static QString basePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/health-certificates/");
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/health-certificates/");
 }
 
 bool HealthCertificateManager::importCertificate(const QByteArray &rawData)

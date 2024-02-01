@@ -59,7 +59,7 @@ bool PkPassManager::hasPass(const QString &passId) const
         return true;
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/passes/") + passId + QLatin1StringView(".pkpass");
     return QFile::exists(passPath);
 }
 
@@ -70,7 +70,7 @@ KPkPass::Pass* PkPassManager::pass(const QString& passId)
         return it.value();
     }
 
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/passes/") + passId + QLatin1StringView(".pkpass");
     if (!QFile::exists(passPath)) {
         return nullptr;
     }
@@ -154,20 +154,20 @@ QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkP
 
     auto oldPass = pass(passId);
     if (oldPass) {
-        QFile::remove(dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+        QFile::remove(dir.absoluteFilePath(serNum + QLatin1StringView(".pkpass")));
         m_passes.remove(passId);
     }
 
     switch (mode) {
         case Move:
-            QFile::rename(fileName, dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            QFile::rename(fileName, dir.absoluteFilePath(serNum + QLatin1StringView(".pkpass")));
             break;
         case Copy:
-            QFile::copy(fileName, dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            QFile::copy(fileName, dir.absoluteFilePath(serNum + QLatin1StringView(".pkpass")));
             break;
         case Data:
         {
-            QFile f(dir.absoluteFilePath(serNum + QLatin1String(".pkpass")));
+            QFile f(dir.absoluteFilePath(serNum + QLatin1StringView(".pkpass")));
             if (!f.open(QFile::WriteOnly)) {
                 qCWarning(Log) << "Failed to open file" << f.fileName() << f.errorString();
                 break;
@@ -198,7 +198,7 @@ QString PkPassManager::doImportPass(const QUrl& url, const QByteArray &data, PkP
 void PkPassManager::removePass(const QString& passId)
 {
     const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QStringLiteral("/passes/");
-    QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1String(".pkpass"));
+    QFile::remove(basePath + QLatin1Char('/') + passId + QLatin1StringView(".pkpass"));
     Q_EMIT passRemoved(passId);
     delete m_passes.take(passId);
 }
@@ -233,7 +233,7 @@ void PkPassManager::updatePass(const QString& passId)
 
 QDateTime PkPassManager::updateTime(const QString &passId) const
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/passes/") + passId + QLatin1StringView(".pkpass");
     QFileInfo fi(passPath);
     return fi.lastModified();
 }
@@ -253,7 +253,7 @@ bool PkPassManager::canUpdate(KPkPass::Pass *pass)
 
 QByteArray PkPassManager::rawData(const QString &passId) const
 {
-    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1String("/passes/") + passId + QLatin1String(".pkpass");
+    const QString passPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/passes/") + passId + QLatin1StringView(".pkpass");
     QFile f(passPath);
     if (!f.open(QFile::ReadOnly)) {
         qCWarning(Log) << "Failed to open pass file for pass" << passId;

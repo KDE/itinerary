@@ -54,7 +54,7 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(mgr);
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
             QCOMPARE(mgr->rowCount(), 0);
-            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
 #if HAVE_KHEALTHCERTIFICATE
             ctrl.importData(rawData);
             QCOMPARE(mgr->rowCount(), 1);
@@ -77,9 +77,9 @@ private Q_SLOTS:
             QAbstractItemModelTester modelTester(mgr);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
-            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
+            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt"));
             // no duplicates
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
+            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/full-vaccination.txt")));
             QCOMPARE(mgr->rowCount(), 1);
 
             QCOMPARE(infoSpy.size(), 1);
@@ -113,8 +113,8 @@ private Q_SLOTS:
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 1);
-            const auto rawData = readFile(QLatin1String(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
+            const auto rawData = readFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc"));
+            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/partial-vaccination.divoc")));
             QCOMPARE(mgr->rowCount(), 2);
             QCOMPARE(insertSpy.size(), 1);
             QVERIFY(!mgr->data(mgr->index(0, 0), Qt::DisplayRole).toString().isEmpty());
@@ -136,7 +136,7 @@ private Q_SLOTS:
             QSignalSpy insertSpy(mgr, &QAbstractItemModel::rowsInserted);
 #if HAVE_KHEALTHCERTIFICATE
             QCOMPARE(mgr->rowCount(), 2);
-            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
+            ctrl.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/health-certificates/negative-pcr-test-fr.pdf")));
             QCOMPARE(mgr->rowCount(), 3);
             QCOMPARE(insertSpy.size(), 1);
 

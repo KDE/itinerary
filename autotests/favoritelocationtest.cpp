@@ -35,13 +35,13 @@ private Q_SLOTS:
         QVERIFY(!model.index(0, 0).data(Qt::DisplayRole).toString().isEmpty());
 
         QVERIFY(model.setData(model.index(0, 0), QStringLiteral("Test Name"), Qt::DisplayRole));
-        QCOMPARE(model.index(0, 0).data(Qt::DisplayRole).toString(), QLatin1String("Test Name"));
+        QCOMPARE(model.index(0, 0).data(Qt::DisplayRole).toString(), QLatin1StringView("Test Name"));
 
         // verify persistence
         {
             FavoriteLocationModel model2;
             QCOMPARE(model2.rowCount(), 1);
-            QCOMPARE(model2.index(0, 0).data(Qt::DisplayRole).toString(), QLatin1String("Test Name"));
+            QCOMPARE(model2.index(0, 0).data(Qt::DisplayRole).toString(), QLatin1StringView("Test Name"));
         }
 
         model.removeLocation(0);

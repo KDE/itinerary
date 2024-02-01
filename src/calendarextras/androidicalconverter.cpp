@@ -105,7 +105,7 @@ KCalendarCore::Event::Ptr AndroidIcalConverter::readEvent(const JniEventData& da
     // extended properties
     const KAndroidExtras::Jni::Array<JniExtendedPropertyData> extProperties = data.extendedProperties;
     for (const JniExtendedPropertyData &extProperty : extProperties) {
-        if (QString(extProperty.name) == QLatin1String("vnd.android.cursor.item/vnd.ical4android.unknown-property")) {
+        if (QString(extProperty.name) == QLatin1StringView("vnd.android.cursor.item/vnd.ical4android.unknown-property")) {
             // DAVx⁵ extended properties: the actual name/value pair is a JSON array in the property value
             const auto a = QJsonDocument::fromJson(QString(extProperty.value).toUtf8()).array();
             if (a.size() != 2) {

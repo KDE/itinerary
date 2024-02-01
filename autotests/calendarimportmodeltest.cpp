@@ -38,7 +38,7 @@ private Q_SLOTS:
 
         KCalendarCore::MemoryCalendar::Ptr calendar(new KCalendarCore::MemoryCalendar(QTimeZone::utc()));
         KCalendarCore::ICalFormat format;
-        QVERIFY(format.load(calendar, QLatin1String(SOURCE_DIR "/data/randa2017.ics")));
+        QVERIFY(format.load(calendar, QLatin1StringView(SOURCE_DIR "/data/randa2017.ics")));
 
         QCOMPARE(model.hasSelection(), false);
         model.m_todayOverride = { 2017, 6, 27 };
@@ -49,14 +49,14 @@ private Q_SLOTS:
         QCOMPARE(model.selectedReservations().size(), 3);
 
         auto idx = model.index(0, 0);
-        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1String("Hotel reservation: Haus Randa"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1String("meeting-attending"));
+        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Hotel reservation: Haus Randa"));
+        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("meeting-attending"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), false);
         QVERIFY(model.setData(idx, true, CalendarImportModel::SelectedRole));
 
         idx = model.index(1, 0);
-        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1String("Train 241 from Visp to Randa"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1String("qrc:///images/train.svg"));
+        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Train 241 from Visp to Randa"));
+        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
         auto res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
         QCOMPARE(res.size(), 1);
@@ -64,14 +64,14 @@ private Q_SLOTS:
         QVERIFY(model.setData(idx, false, CalendarImportModel::SelectedRole));
 
         idx = model.index(2, 0);
-        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1String("KDE Randa Meeting 2017"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1String("meeting-attending"));
+        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("KDE Randa Meeting 2017"));
+        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("meeting-attending"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), false);
         QVERIFY(model.setData(idx, true, CalendarImportModel::SelectedRole));
 
         idx = model.index(3, 0);
-        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1String("Restaurant reservation: Raclette"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1String("qrc:///images/foodestablishment.svg"));
+        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Restaurant reservation: Raclette"));
+        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/foodestablishment.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
         res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
         QCOMPARE(res.size(), 1);
@@ -79,8 +79,8 @@ private Q_SLOTS:
         QVERIFY(model.setData(idx, false, CalendarImportModel::SelectedRole));
 
         idx = model.index(4, 0);
-        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1String("Randa -> Visp"));
-        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1String("qrc:///images/train.svg"));
+        QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Randa -> Visp"));
+        QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
         res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
         QCOMPARE(res.size(), 1);
@@ -91,12 +91,12 @@ private Q_SLOTS:
         QCOMPARE(model.selectedReservations().size(), 2);
 
         auto ev = model.selectedReservations().at(0).value<KItinerary::Event>();
-        QCOMPARE(ev.name(), QLatin1String("Hotel reservation: Haus Randa"));
+        QCOMPARE(ev.name(), QLatin1StringView("Hotel reservation: Haus Randa"));
         QVERIFY(ev.startDate().isValid());
         QVERIFY(ev.endDate().isValid());
 
         ev = model.selectedReservations().at(1).value<KItinerary::Event>();
-        QCOMPARE(ev.name(), QLatin1String("KDE Randa Meeting 2017"));
+        QCOMPARE(ev.name(), QLatin1StringView("KDE Randa Meeting 2017"));
         QVERIFY(ev.startDate().isValid());
         QVERIFY(ev.endDate().isValid());
     }

@@ -110,11 +110,11 @@ void NavigationController::navigateTo(const QVariant& place)
     QUrl url;
     url.setScheme(QStringLiteral("google.navigation"));
     if (geo.isValid()) {
-        url.setPath(QLatin1String("q=") + QString::number(geo.latitude())+ QLatin1Char(',') + QString::number(geo.longitude()));
+        url.setPath(QLatin1StringView("q=") + QString::number(geo.latitude())+ QLatin1Char(',') + QString::number(geo.longitude()));
     } else if (!addr.isEmpty()) {
-        url.setPath(QLatin1String("q=") + addr.streetAddress() + QLatin1String(", ")
+        url.setPath(QLatin1StringView("q=") + addr.streetAddress() + QLatin1StringView(", ")
             + addr.postalCode() + QLatin1Char(' ')
-            + addr.addressLocality() + QLatin1String(", ")
+            + addr.addressLocality() + QLatin1StringView(", ")
             + addr.addressCountry());
     } else {
         return;
@@ -161,7 +161,7 @@ void NavigationController::navigateTo(const QGeoPositionInfo &from, const QVaria
         url.setHost(QStringLiteral("www.openstreetmap.org"));
         url.setPath(QStringLiteral("/directions"));
         QUrlQuery query;
-        query.addQueryItem(QLatin1String("route"),
+        query.addQueryItem(QLatin1StringView("route"),
             QString::number(from.coordinate().latitude()) + QLatin1Char(',') + QString::number(from.coordinate().longitude())
             + QLatin1Char(';') + QString::number(geo.latitude()) + QLatin1Char(',') + QString::number(geo.longitude()));
         url.setQuery(query);
@@ -202,7 +202,7 @@ void NavigationController::navigateTo(const QVariant& from, const QVariant& to)
     url.setHost(QStringLiteral("www.openstreetmap.org"));
     url.setPath(QStringLiteral("/directions"));
     QUrlQuery query;
-    query.addQueryItem(QLatin1String("route"),
+    query.addQueryItem(QLatin1StringView("route"),
         QString::number(fromGeo.latitude()) + QLatin1Char(',') + QString::number(fromGeo.longitude())
         + QLatin1Char(';') + QString::number(toGeo.latitude()) + QLatin1Char(',') + QString::number(toGeo.longitude()));
     url.setQuery(query);

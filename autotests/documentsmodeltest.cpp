@@ -40,7 +40,7 @@ private Q_SLOTS:
         ReservationManager resMgr;
         Test::clearAll(&resMgr);
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
         QCOMPARE(resMgr.batches().size(), 1);
         QCOMPARE(mgr.documents().size(), 1);
 
@@ -53,8 +53,8 @@ private Q_SLOTS:
         model.setDocumentIds(c.documentIds());
         QCOMPARE(model.rowCount(), 1);
         const auto idx = model.index(0, 0);
-        QCOMPARE(idx.data(Qt::DisplayRole), QLatin1String("iata-bcbp-demo.pdf"));
-        QCOMPARE(idx.data(Qt::DecorationRole), QLatin1String("application-pdf"));
+        QCOMPARE(idx.data(Qt::DisplayRole), QLatin1StringView("iata-bcbp-demo.pdf"));
+        QCOMPARE(idx.data(Qt::DecorationRole), QLatin1StringView("application-pdf"));
 
         model.setDocumentIds({});
         QCOMPARE(model.rowCount(), 0);

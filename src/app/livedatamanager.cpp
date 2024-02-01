@@ -55,16 +55,16 @@ LiveDataManager::LiveDataManager(QObject *parent)
     , m_onboardStatus(new KPublicTransport::OnboardStatus(this))
 {
     QSettings settings;
-    settings.beginGroup(QLatin1String("KPublicTransport"));
-    m_ptMgr->setAllowInsecureBackends(settings.value(QLatin1String("AllowInsecureBackends"), false).toBool());
-    m_ptMgr->setDisabledBackends(settings.value(QLatin1String("DisabledBackends"), QStringList()).toStringList());
-    m_ptMgr->setEnabledBackends(settings.value(QLatin1String("EnabledBackends"), QStringList()).toStringList());
+    settings.beginGroup(QLatin1StringView("KPublicTransport"));
+    m_ptMgr->setAllowInsecureBackends(settings.value(QLatin1StringView("AllowInsecureBackends"), false).toBool());
+    m_ptMgr->setDisabledBackends(settings.value(QLatin1StringView("DisabledBackends"), QStringList()).toStringList());
+    m_ptMgr->setEnabledBackends(settings.value(QLatin1StringView("EnabledBackends"), QStringList()).toStringList());
     connect(m_ptMgr, &KPublicTransport::Manager::configurationChanged, this, [this]() {
         QSettings settings;
-        settings.beginGroup(QLatin1String("KPublicTransport"));
-        settings.setValue(QLatin1String("AllowInsecureBackends"), m_ptMgr->allowInsecureBackends());
-        settings.setValue(QLatin1String("DisabledBackends"), m_ptMgr->disabledBackends());
-        settings.setValue(QLatin1String("EnabledBackends"), m_ptMgr->enabledBackends());
+        settings.beginGroup(QLatin1StringView("KPublicTransport"));
+        settings.setValue(QLatin1StringView("AllowInsecureBackends"), m_ptMgr->allowInsecureBackends());
+        settings.setValue(QLatin1StringView("DisabledBackends"), m_ptMgr->disabledBackends());
+        settings.setValue(QLatin1StringView("EnabledBackends"), m_ptMgr->enabledBackends());
     });
 
     m_pollTimer.setSingleShot(true);
@@ -423,7 +423,7 @@ void LiveDataManager::fillNotification(KNotification* n, const LiveData& ld) con
 {
     n->setTitle(NotificationHelper::title(ld));
     n->setText(NotificationHelper::message(ld));
-    n->setIconName(QLatin1String("clock"));
+    n->setIconName(QLatin1StringView("clock"));
     if (m_showNotificationsOnLockScreen) {
         n->setHint(QStringLiteral("x-kde-visibility"), QStringLiteral("public"));
     }
@@ -768,7 +768,7 @@ void LiveDataManager::pkPassUpdated(const QString &passId, const QStringList &ch
                           LocationUtil::name(LocationUtil::arrivalLocation(passRes))));
     }
 
-    KNotification::event(KNotification::Notification, i18n("Itinerary change"), text, QLatin1String("clock"));
+    KNotification::event(KNotification::Notification, i18n("Itinerary change"), text, QLatin1StringView("clock"));
 }
 
 KPublicTransport::Manager* LiveDataManager::publicTransportManager() const

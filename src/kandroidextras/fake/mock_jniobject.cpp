@@ -25,14 +25,14 @@ MockJniObjectBase::MockJniObjectBase()
 MockJniObjectBase::MockJniObjectBase(const char *className)
     : d(new MockJniObjectBasePrivate)
 {
-    addToProtocol(QLatin1String("ctor: ") + QLatin1String(className));
+    addToProtocol(QLatin1StringView("ctor: ") + QLatin1StringView(className));
 }
 
 MockJniObjectBase::MockJniObjectBase(jobject object)
     : d(new MockJniObjectBasePrivate)
 {
     Q_UNUSED(object);
-    addToProtocol(QLatin1String("ctor: o"));
+    addToProtocol(QLatin1StringView("ctor: o"));
 }
 
 MockJniObjectBase::MockJniObjectBase(const MockJniObjectBase&) = default;

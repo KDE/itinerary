@@ -61,11 +61,11 @@ private Q_SLOTS:
         appController.setDocumentManager(&docMgr);
         appController.setPassManager(&passMgr);
 
-        appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+        appController.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(pkPassSpy.size(), 0);
         QCOMPARE(infoSpy.size(), 1);
-        appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        appController.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
@@ -73,14 +73,14 @@ private Q_SLOTS:
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
-        appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        appController.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
         QCOMPARE(resSpy.size(), 4);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 4);
         QCOMPARE(docMgr.documents().size(), 1);
 
         // combined reservation/ticket data
-        appController.importData(Test::readFile(QLatin1String(SOURCE_DIR "/data/mixed-reservation-ticket.json")));
+        appController.importData(Test::readFile(QLatin1StringView(SOURCE_DIR "/data/mixed-reservation-ticket.json")));
         QCOMPARE(resSpy.size(), 5);
         QCOMPARE(passMgr.rowCount(), 1);
         QCOMPARE(infoSpy.size(), 6);
@@ -111,15 +111,15 @@ private Q_SLOTS:
         appController.setDocumentManager(&docMgr);
         appController.setPassManager(&passMgr);
 
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
         QCOMPARE(resSpy.size(), 1);
         QCOMPARE(pkPassSpy.size(), 0);
         QCOMPARE(infoSpy.size(), 1);
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
         QCOMPARE(resSpy.size(), 2);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 2);
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
         QCOMPARE(resSpy.size(), 3);
         QCOMPARE(pkPassSpy.size(), 1);
         QCOMPARE(infoSpy.size(), 3);
@@ -160,9 +160,9 @@ private Q_SLOTS:
         appController.setPassManager(&passMgr);
         appController.setLiveDataManager(&liveDataMgr);
 
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        appController.importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/bahncard.json")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
+        appController.importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/bahncard.json")));
         QCOMPARE(resMgr.batches().size(), 2);
         QCOMPARE(pkPassMgr.passes().size(), 1);
         QCOMPARE(passMgr.rowCount(), 1);
@@ -223,12 +223,12 @@ private Q_SLOTS:
 
         {
             QCOMPARE(docMgr.documents().size(), 0);
-            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/4U8465-v1.json")));
+            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/4U8465-v1.json")));
             QCOMPARE(resMgr.batches().size(), 1);
             const auto resId = resMgr.batches().at(0);
 
             QCOMPARE(KItinerary::DocumentUtil::documentIds(resMgr.reservation(resId)).size(), 0);
-            ctrl->addDocumentToReservation(resId, QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+            ctrl->addDocumentToReservation(resId, QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
             QCOMPARE(docMgr.documents().size(), 1);
             const auto docIds = KItinerary::DocumentUtil::documentIds(resMgr.reservation(resId));
             QCOMPARE(docIds.size(), 1);
@@ -241,14 +241,14 @@ private Q_SLOTS:
 
         {
             QCOMPARE(passMgr.rowCount(), 0);
-            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/9euroticket.json")));
+            ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/9euroticket.json")));
             QCOMPARE(docMgr.documents().size(), 0);
             QCOMPARE(passMgr.rowCount(), 1);
             const auto passId = passMgr.index(0, 0).data(PassManager::PassIdRole).toString();
             auto docIds = KItinerary::DocumentUtil::documentIds(passMgr.pass(passId));
             QCOMPARE(docIds.size(), 0);
 
-            ctrl->addDocumentToPass(passId, QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
+            ctrl->addDocumentToPass(passId, QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/iata-bcbp-demo.pdf")));
             QCOMPARE(docMgr.documents().size(), 1);
             docIds = KItinerary::DocumentUtil::documentIds(passMgr.pass(passId));
             QCOMPARE(docIds.size(), 1);

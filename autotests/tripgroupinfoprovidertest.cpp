@@ -41,7 +41,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
 
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(mgr.tripGroups().size(), 1);
 
         TripGroupInfoProvider provider;

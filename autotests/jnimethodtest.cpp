@@ -116,44 +116,44 @@ private Q_SLOTS:
         obj.setBool(true);
 
         QCOMPARE(obj.jniHandle().protocol().size(), 28);
-        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[1], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[2], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[3], QLatin1String("callMethod: getFlags ()I ()"));
-        QCOMPARE(obj.jniHandle().protocol()[4], QLatin1String("callMethod: setFlags (I)V (I)"));
-        QCOMPARE(obj.jniHandle().protocol()[5], QLatin1String("callMethod: start ()V ()"));
-        QCOMPARE(obj.jniHandle().protocol()[6], QLatin1String("callMethod: setCoordinates (FF)Z (FF)"));
+        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1StringView("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[1], QLatin1StringView("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[2], QLatin1StringView("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[3], QLatin1StringView("callMethod: getFlags ()I ()"));
+        QCOMPARE(obj.jniHandle().protocol()[4], QLatin1StringView("callMethod: setFlags (I)V (I)"));
+        QCOMPARE(obj.jniHandle().protocol()[5], QLatin1StringView("callMethod: start ()V ()"));
+        QCOMPARE(obj.jniHandle().protocol()[6], QLatin1StringView("callMethod: setCoordinates (FF)Z (FF)"));
 
-        QCOMPARE(obj.jniHandle().protocol()[7], QLatin1String("callMethod: setCoordinates (FF)Z (FF)"));
-        QCOMPARE(obj.jniHandle().protocol()[8], QLatin1String("getObjectField: name Ljava/lang/String;"));
-        QCOMPARE(obj.jniHandle().protocol()[9], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[10], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[11], QLatin1String("callObjectMethod: getIntent ()Landroid/content/Intent; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[12], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[13], QLatin1String("callMethod: setFlags (I)V (I)"));
-        QCOMPARE(obj.jniHandle().protocol()[14], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[15], QLatin1String("callObjectMethod: getName ()Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[16], QLatin1String("callMethod: setName (Ljava/lang/String;)V (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[17], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[18], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[19], QLatin1String("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
-        QCOMPARE(obj.jniHandle().protocol()[20], QLatin1String("callObjectMethod: getShortList ()[S ()"));
-        QCOMPARE(obj.jniHandle().protocol()[21], QLatin1String("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[7], QLatin1StringView("callMethod: setCoordinates (FF)Z (FF)"));
+        QCOMPARE(obj.jniHandle().protocol()[8], QLatin1StringView("getObjectField: name Ljava/lang/String;"));
+        QCOMPARE(obj.jniHandle().protocol()[9], QLatin1StringView("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[10], QLatin1StringView("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[11], QLatin1StringView("callObjectMethod: getIntent ()Landroid/content/Intent; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[12], QLatin1StringView("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[13], QLatin1StringView("callMethod: setFlags (I)V (I)"));
+        QCOMPARE(obj.jniHandle().protocol()[14], QLatin1StringView("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[15], QLatin1StringView("callObjectMethod: getName ()Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[16], QLatin1StringView("callMethod: setName (Ljava/lang/String;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[17], QLatin1StringView("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[18], QLatin1StringView("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[19], QLatin1StringView("callObjectMethod: getStringList ()[Ljava/lang/String; ()"));
+        QCOMPARE(obj.jniHandle().protocol()[20], QLatin1StringView("callObjectMethod: getShortList ()[S ()"));
+        QCOMPARE(obj.jniHandle().protocol()[21], QLatin1StringView("callMethod: startIntent (Landroid/content/Intent;)V (o)"));
 
-        QCOMPARE(obj.jniHandle().protocol()[22], QLatin1String("callMethod: overloaded ()V ()"));
-        QCOMPARE(obj.jniHandle().protocol()[23], QLatin1String("callMethod: overloaded (I)V (I)"));
-        QCOMPARE(obj.jniHandle().protocol()[24], QLatin1String("callMethod: overloaded (Ljava/lang/String;Z)V (oZ)"));
-        QCOMPARE(obj.jniHandle().protocol()[25], QLatin1String("callObjectMethod: overloaded (Landroid/content/Intent;)[S (o)"));
-        QCOMPARE(obj.jniHandle().protocol()[26], QLatin1String("callMethod: overloaded (JLjava/lang/String;[S)I (Joo)"));
-        QCOMPARE(obj.jniHandle().protocol()[27], QLatin1String("callMethod: setBool (Z)V (Z)"));
+        QCOMPARE(obj.jniHandle().protocol()[22], QLatin1StringView("callMethod: overloaded ()V ()"));
+        QCOMPARE(obj.jniHandle().protocol()[23], QLatin1StringView("callMethod: overloaded (I)V (I)"));
+        QCOMPARE(obj.jniHandle().protocol()[24], QLatin1StringView("callMethod: overloaded (Ljava/lang/String;Z)V (oZ)"));
+        QCOMPARE(obj.jniHandle().protocol()[25], QLatin1StringView("callObjectMethod: overloaded (Landroid/content/Intent;)[S (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[26], QLatin1StringView("callMethod: overloaded (JLjava/lang/String;[S)I (Joo)"));
+        QCOMPARE(obj.jniHandle().protocol()[27], QLatin1StringView("callMethod: setBool (Z)V (Z)"));
 
         // ctor call
         obj = TestClass(intent);
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
-        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Landroid/content/Intent;)V (o)"));
+        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1StringView("ctor: android/content/Intent (Landroid/content/Intent;)V (o)"));
         obj = TestClass(false);
         QCOMPARE(obj.jniHandle().protocol().size(), 1);
-        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1String("ctor: android/content/Intent (Z)V (Z)"));
+        QCOMPARE(obj.jniHandle().protocol()[0], QLatin1StringView("ctor: android/content/Intent (Z)V (Z)"));
 #if 0
         // stuff that must not compile
         obj.setName(42);
@@ -175,10 +175,10 @@ private Q_SLOTS:
         QJniObject o = TestClass::retArg(true);
 
         QCOMPARE(QJniObject::m_staticProtocol.size(), 3);
-        QCOMPARE(QJniObject::m_staticProtocol[0], QLatin1String("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
-        QCOMPARE(QJniObject::m_staticProtocol[1], QLatin1String("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
-        QCOMPARE(QJniObject::m_staticProtocol[2], QLatin1String("callStaticMethod: android/content/Intent retNoArg ()J ()"));
-        QCOMPARE(o.protocol().at(0), QLatin1String("callStaticObjectMethod: android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
+        QCOMPARE(QJniObject::m_staticProtocol[0], QLatin1StringView("callStaticMethod: android/content/Intent noRetNoArg ()V ()"));
+        QCOMPARE(QJniObject::m_staticProtocol[1], QLatin1StringView("callStaticMethod: android/content/Intent noRetArg (Ljava/lang/String;)V (o)"));
+        QCOMPARE(QJniObject::m_staticProtocol[2], QLatin1StringView("callStaticMethod: android/content/Intent retNoArg ()J ()"));
+        QCOMPARE(o.protocol().at(0), QLatin1StringView("callStaticObjectMethod: android/content/Intent retArg (Z)Landroid/content/Intent; (Z)"));
 #endif
     }
 };

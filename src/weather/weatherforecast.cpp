@@ -152,7 +152,7 @@ QString WeatherForecast::symbolIconName() const
 {
     for (const auto &icon : icon_map) {
         if ((icon.mask & symbolType()) == icon.mask) {
-            return QLatin1String(d->useDayTimeIcon() ? icon.dayIcon : icon.nightIcon);
+            return QLatin1StringView(d->useDayTimeIcon() ? icon.dayIcon : icon.nightIcon);
         }
     }
     return {};

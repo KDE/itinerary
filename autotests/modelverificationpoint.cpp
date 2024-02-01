@@ -101,7 +101,7 @@ bool ModelVerificationPoint::verify(QAbstractItemModel *model) const
 
     // compare
     if (array != refArray) {
-        QFile failFile(m_refFile + QLatin1String(".fail"));
+        QFile failFile(m_refFile + QLatin1StringView(".fail"));
         failFile.open(QFile::WriteOnly);
         failFile.write(QJsonDocument(array).toJson());
         failFile.close();

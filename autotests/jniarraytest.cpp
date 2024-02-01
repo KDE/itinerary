@@ -75,8 +75,8 @@ private Q_SLOTS:
         JNIEnv::m_arrayLength = 2;
         QCOMPARE(a2.size(), 2);
         QCOMPARE(std::distance(a2.begin(), a2.end()), 2);
-        QCOMPARE(a2[0].toString(), QLatin1String("ctor: 0"));
-        QCOMPARE(a2[1].toString(), QLatin1String("ctor: 1"));
+        QCOMPARE(a2[0].toString(), QLatin1StringView("ctor: 0"));
+        QCOMPARE(a2[1].toString(), QLatin1StringView("ctor: 1"));
         for (const auto &i : a2) {
             QVERIFY(i.isValid());
         }

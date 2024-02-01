@@ -21,15 +21,15 @@ private Q_SLOTS:
 #ifndef Q_OS_ANDROID
         const auto pn = Context::getPackageName();
         QCOMPARE(pn.protocol().size(), 2);
-        QCOMPARE(pn.protocol().at(0), QLatin1String("global androidContext()"));
-        QCOMPARE(pn.protocol().at(1), QLatin1String("callObjectMethod: getPackageName ()Ljava/lang/String; ()"));
+        QCOMPARE(pn.protocol().at(0), QLatin1StringView("global androidContext()"));
+        QCOMPARE(pn.protocol().at(1), QLatin1StringView("callObjectMethod: getPackageName ()Ljava/lang/String; ()"));
 #endif
     }
 
     void testContentResolver()
     {
 #ifndef Q_OS_ANDROID
-        QCOMPARE(ContentResolver::fileName(QUrl()), QLatin1String(
+        QCOMPARE(ContentResolver::fileName(QUrl()), QLatin1StringView(
             "global androidContext()\n"
             "callObjectMethod: getContentResolver ()Landroid/content/ContentResolver; ()\n"
             "callObjectMethod: query (Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor; (oIIII)\n"
@@ -38,7 +38,7 @@ private Q_SLOTS:
             "callObjectMethod: getString (I)Ljava/lang/String; (I)"
         ));
         QCOMPARE(QJniObject::m_staticProtocol.size(), 1);
-        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1StringView("getStaticObjectField: android/provider/OpenableColumns DISPLAY_NAME Ljava/lang/String;"));
 #endif
     }
 };

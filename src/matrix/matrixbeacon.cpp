@@ -69,20 +69,20 @@ void MatrixBeacon::start(const QString &description)
     }
 
     // TODO beacon id according to MSC3757
-    Quotient::StateEvent ev(QLatin1String("org.matrix.msc3672.beacon_info"), m_connection->userId(), QJsonObject{
-        {QLatin1String("description"), description},
-        {QLatin1String("live"), true},
-        {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTimeUtc().toMSecsSinceEpoch()},
-        {QLatin1String("timeout"), 300000},
-        {QLatin1String("org.matrix.msc3488.asset"), QJsonObject{
-            {QLatin1String("type"), QLatin1String("m.self")},
+    Quotient::StateEvent ev(QLatin1StringView("org.matrix.msc3672.beacon_info"), m_connection->userId(), QJsonObject{
+        {QLatin1StringView("description"), description},
+        {QLatin1StringView("live"), true},
+        {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTimeUtc().toMSecsSinceEpoch()},
+        {QLatin1StringView("timeout"), 300000},
+        {QLatin1StringView("org.matrix.msc3488.asset"), QJsonObject{
+            {QLatin1StringView("type"), QLatin1StringView("m.self")},
         }},
     });
     auto job = room->setState(ev);
     connect(job, &Quotient::SetRoomStateWithKeyJob::result, this, [job, this]() {
         qDebug() << job->errorString() << job->jsonData();
         if (job->error() == Quotient::BaseJob::NoError) {
-            setBeaconInfoId(job->jsonData().value(QLatin1String("event_id")).toString());
+            setBeaconInfoId(job->jsonData().value(QLatin1StringView("event_id")).toString());
             updateLocation(m_latitude, m_longitude);
         } else {
             qWarning() << job->errorString();
@@ -103,12 +103,12 @@ void MatrixBeacon::stop()
         return;
     }
 
-    Quotient::StateEvent ev(QLatin1String("org.matrix.msc3672.beacon_info"), m_connection->userId(), QJsonObject{
-        {QLatin1String("live"), false},
-        {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTimeUtc().toMSecsSinceEpoch()},
-        {QLatin1String("timeout"), 300000},
-        {QLatin1String("org.matrix.msc3488.asset"), QJsonObject{
-            {QLatin1String("type"), QLatin1String("m.self")},
+    Quotient::StateEvent ev(QLatin1StringView("org.matrix.msc3672.beacon_info"), m_connection->userId(), QJsonObject{
+        {QLatin1StringView("live"), false},
+        {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTimeUtc().toMSecsSinceEpoch()},
+        {QLatin1StringView("timeout"), 300000},
+        {QLatin1StringView("org.matrix.msc3488.asset"), QJsonObject{
+            {QLatin1StringView("type"), QLatin1StringView("m.self")},
         }},
     });
     room->setState(ev);
@@ -116,7 +116,7 @@ void MatrixBeacon::stop()
 
 static QString geoUri(float latitude, float longitude, float altitude)
 {
-    QString uri = QLatin1String("geo:") + QString::number(latitude)
+    QString uri = QLatin1StringView("geo:") + QString::number(latitude)
         + QLatin1Char(',') + QString::number(longitude);
     if (!std::isnan(altitude)) {
         uri += QLatin1Char(',') + QString::number(altitude);
@@ -139,25 +139,25 @@ void MatrixBeacon::updateLocation(float latitude, float longitude, float heading
     }
 
     QJsonObject location({
-        {QLatin1String("uri"), geoUri(m_latitude, m_longitude, altitude)}
+        {QLatin1StringView("uri"), geoUri(m_latitude, m_longitude, altitude)}
     });
     if (!std::isnan(heading)) {
-        location.insert(QLatin1String("org.kde.itinerary.heading"), QString::number(heading));
+        location.insert(QLatin1StringView("org.kde.itinerary.heading"), QString::number(heading));
     }
     if (!std::isnan(speed)) {
-        location.insert(QLatin1String("org.kde.itinerary.speed"), QString::number(speed));
+        location.insert(QLatin1StringView("org.kde.itinerary.speed"), QString::number(speed));
     }
 
     QJsonObject content{
-        {QLatin1String("msgtype"), QLatin1String("org.matrix.msc3672.beacon")},
-        {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
-        {QLatin1String("org.matrix.msc3488.location"), location},
-        {QLatin1String("m.relates_to"), QJsonObject{
-            {QLatin1String("rel_type"), QLatin1String("m.reference")},
-            {QLatin1String("event_id"), m_beaconInfoId},
+        {QLatin1StringView("msgtype"), QLatin1StringView("org.matrix.msc3672.beacon")},
+        {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
+        {QLatin1StringView("org.matrix.msc3488.location"), location},
+        {QLatin1StringView("m.relates_to"), QJsonObject{
+            {QLatin1StringView("rel_type"), QLatin1StringView("m.reference")},
+            {QLatin1StringView("event_id"), m_beaconInfoId},
         }},
     };
-    room->postJson(QLatin1String("org.matrix.msc3672.beacon"), content);
+    room->postJson(QLatin1StringView("org.matrix.msc3672.beacon"), content);
 }
 
 void MatrixBeacon::setBeaconInfoId(const QString& id)

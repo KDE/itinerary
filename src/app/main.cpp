@@ -275,7 +275,7 @@ static QNetworkAccessManager *namFactory()
         s_nam = new QNetworkAccessManager(QCoreApplication::instance());
         s_nam->setRedirectPolicy(QNetworkRequest::NoLessSafeRedirectPolicy);
         s_nam->setStrictTransportSecurityEnabled(true);
-        s_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/hsts/"));
+        s_nam->enableStrictTransportSecurityStore(true, QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/hsts/"));
     }
     return s_nam;
 }

@@ -275,12 +275,12 @@ int Importer::importLiveData(LiveDataManager *liveDataMgr)
         const auto obj = QJsonDocument::fromJson(m_file->customData(QStringLiteral("org.kde.itinerary/live-data"), id)).object();
 
         LiveData ld;
-        ld.departure = KPublicTransport::Stopover::fromJson(obj.value(QLatin1String("departure")).toObject());
-        ld.departureTimestamp = QDateTime::fromString(obj.value(QLatin1String("departureTimestamp")).toString(), Qt::ISODate);
-        ld.arrival = KPublicTransport::Stopover::fromJson(obj.value(QLatin1String("arrival")).toObject());
-        ld.arrivalTimestamp = QDateTime::fromString(obj.value(QLatin1String("arrivalTimestamp")).toString(), Qt::ISODate);
-        ld.journey = KPublicTransport::JourneySection::fromJson(obj.value(QLatin1String("journey")).toObject());
-        ld.journeyTimestamp = QDateTime::fromString(obj.value(QLatin1String("journeyTimestamp")).toString(), Qt::ISODate);
+        ld.departure = KPublicTransport::Stopover::fromJson(obj.value(QLatin1StringView("departure")).toObject());
+        ld.departureTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("departureTimestamp")).toString(), Qt::ISODate);
+        ld.arrival = KPublicTransport::Stopover::fromJson(obj.value(QLatin1StringView("arrival")).toObject());
+        ld.arrivalTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("arrivalTimestamp")).toString(), Qt::ISODate);
+        ld.journey = KPublicTransport::JourneySection::fromJson(obj.value(QLatin1StringView("journey")).toObject());
+        ld.journeyTimestamp = QDateTime::fromString(obj.value(QLatin1StringView("journeyTimestamp")).toString(), Qt::ISODate);
 
         ld.store(id);
         liveDataMgr->importData(id, std::move(ld));

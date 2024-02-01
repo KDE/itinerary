@@ -54,14 +54,14 @@ private Q_SLOTS:
         bool b = TestClass::BOOL_PROPERTY;
 
         QCOMPARE(QJniObject::m_staticProtocol.size(), 4);
-        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1String("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
-        QCOMPARE(QJniObject::m_staticProtocol.at(1), QLatin1String("getStaticField<>: android/content/Intent FLAG_GRANT_READ_URI_PERMISSION I"));
-        QCOMPARE(QJniObject::m_staticProtocol.at(2), QLatin1String("getStaticObjectField: android/content/Intent OBJECT_TYPE_PROPERTY Landroid/net/Uri;"));
-        QCOMPARE(QJniObject::m_staticProtocol.at(3), QLatin1String("getStaticField<>: android/content/Intent BOOL_PROPERTY Z"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(0), QLatin1StringView("getStaticObjectField: android/content/Intent ACTION_CREATE_DOCUMENT Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(1), QLatin1StringView("getStaticField<>: android/content/Intent FLAG_GRANT_READ_URI_PERMISSION I"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(2), QLatin1StringView("getStaticObjectField: android/content/Intent OBJECT_TYPE_PROPERTY Landroid/net/Uri;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(3), QLatin1StringView("getStaticField<>: android/content/Intent BOOL_PROPERTY Z"));
 
         const QString p4 = ManifestPermission::READ_CALENDAR;
         Q_UNUSED(p4)
-        QCOMPARE(QJniObject::m_staticProtocol.at(4), QLatin1String("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
+        QCOMPARE(QJniObject::m_staticProtocol.at(4), QLatin1StringView("getStaticObjectField: android/Manifest$permission READ_CALENDAR Ljava/lang/String;"));
 
 
         TestClass obj;
@@ -78,16 +78,16 @@ private Q_SLOTS:
         obj.myBoolProperty = b;
 
         QCOMPARE(obj.jniHandle().protocol().size(), 10);
-        QCOMPARE(obj.jniHandle().protocol().at(0), QLatin1String("getObjectField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.jniHandle().protocol().at(1), QLatin1String("setField: myStringField Ljava/lang/String;"));
-        QCOMPARE(obj.jniHandle().protocol().at(2), QLatin1String("getField: myIntField I"));
-        QCOMPARE(obj.jniHandle().protocol().at(3), QLatin1String("setField: myIntField I"));
-        QCOMPARE(obj.jniHandle().protocol().at(4), QLatin1String("getObjectField: myUriField Landroid/net/Uri;"));
-        QCOMPARE(obj.jniHandle().protocol().at(5), QLatin1String("setField: myUriField Landroid/net/Uri;"));
-        QCOMPARE(obj.jniHandle().protocol().at(6), QLatin1String("getObjectField: myIntentField Landroid/content/Intent;"));
-        QCOMPARE(obj.jniHandle().protocol().at(7), QLatin1String("setField: myIntentField Landroid/content/Intent;"));
-        QCOMPARE(obj.jniHandle().protocol().at(8), QLatin1String("getField: myBoolProperty Z"));
-        QCOMPARE(obj.jniHandle().protocol().at(9), QLatin1String("setField: myBoolProperty Z"));
+        QCOMPARE(obj.jniHandle().protocol().at(0), QLatin1StringView("getObjectField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.jniHandle().protocol().at(1), QLatin1StringView("setField: myStringField Ljava/lang/String;"));
+        QCOMPARE(obj.jniHandle().protocol().at(2), QLatin1StringView("getField: myIntField I"));
+        QCOMPARE(obj.jniHandle().protocol().at(3), QLatin1StringView("setField: myIntField I"));
+        QCOMPARE(obj.jniHandle().protocol().at(4), QLatin1StringView("getObjectField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.jniHandle().protocol().at(5), QLatin1StringView("setField: myUriField Landroid/net/Uri;"));
+        QCOMPARE(obj.jniHandle().protocol().at(6), QLatin1StringView("getObjectField: myIntentField Landroid/content/Intent;"));
+        QCOMPARE(obj.jniHandle().protocol().at(7), QLatin1StringView("setField: myIntentField Landroid/content/Intent;"));
+        QCOMPARE(obj.jniHandle().protocol().at(8), QLatin1StringView("getField: myBoolProperty Z"));
+        QCOMPARE(obj.jniHandle().protocol().at(9), QLatin1StringView("setField: myBoolProperty Z"));
 #endif
     }
 };

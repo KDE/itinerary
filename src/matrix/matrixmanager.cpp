@@ -121,22 +121,22 @@ void MatrixManager::postEvent(const QString &roomId, const QString &type, const 
 void MatrixManager::postLocation(const QString &roomId, float latitude, float longitude, const QString &description)
 {
     QJsonObject content{
-            {QLatin1String("body"), description},
-            {QLatin1String("msgtype"), QLatin1String("m.location")},
-            {QLatin1String("org.matrix.msc3488.asset"), QJsonObject {
-                    {QLatin1String("type"), QLatin1String("m.pin")}, // TODO location type (hotel, restaurant, train station, ...) here?
+            {QLatin1StringView("body"), description},
+            {QLatin1StringView("msgtype"), QLatin1StringView("m.location")},
+            {QLatin1StringView("org.matrix.msc3488.asset"), QJsonObject {
+                    {QLatin1StringView("type"), QLatin1StringView("m.pin")}, // TODO location type (hotel, restaurant, train station, ...) here?
                     //{"name", description} // TODO location description ("Volker's Hotel") here?
             }},
-            {QLatin1String("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
-            {QLatin1String("geo_uri"), QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
-            {QLatin1String("org.matrix.msc1767.text"), description},
-            {QLatin1String("org.matrix.msc3488.location"), QJsonObject {
-                {QLatin1String("uri"), QLatin1String("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
-                {QLatin1String("description"), description}
+            {QLatin1StringView("org.matrix.msc3488.ts"), QDateTime::currentDateTime().toMSecsSinceEpoch()},
+            {QLatin1StringView("geo_uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+            {QLatin1StringView("org.matrix.msc1767.text"), description},
+            {QLatin1StringView("org.matrix.msc3488.location"), QJsonObject {
+                {QLatin1StringView("uri"), QLatin1StringView("geo:%1,%2").arg(QString::number(latitude), QString::number(longitude))},
+                {QLatin1StringView("description"), description}
             }}
     };
 
-    postEvent(roomId, QLatin1String("m.room.message"), content);
+    postEvent(roomId, QLatin1StringView("m.room.message"), content);
 }
 
 #include "moc_matrixmanager.cpp"

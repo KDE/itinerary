@@ -31,14 +31,14 @@ static QString basePath(LiveData::Type type)
         default:
             assert(false);
     }
-    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1String("/publictransport/") + typeStr + QLatin1Char('/');
+    return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QLatin1StringView("/publictransport/") + typeStr + QLatin1Char('/');
 }
 
 static QJsonObject loadOne(const QString &resId, LiveData::Type type, QDateTime &timestamp)
 {
     const auto path = basePath(type);
 
-    QFile f(path + resId + QLatin1String(".json"));
+    QFile f(path + resId + QLatin1StringView(".json"));
     if (!f.open(QFile::ReadOnly)) {
         timestamp = {};
         return {};
@@ -92,7 +92,7 @@ static void storeOne(const QString &resId, LiveData::Type type, const QJsonObjec
     const auto path = basePath(type);
     QDir().mkpath(path);
 
-    const QString fileName = path + resId + QLatin1String(".json");
+    const QString fileName = path + resId + QLatin1StringView(".json");
 
     if (obj.isEmpty()) {
         QFile::remove(fileName);

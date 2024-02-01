@@ -86,7 +86,7 @@ private Q_SLOTS:
 
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/../tests/randa2017.json")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
         QCOMPARE(resMgr.batches().size(), 11);
 
         const auto flight = resMgr.batches()[0];
@@ -121,7 +121,7 @@ private Q_SLOTS:
         // reservation was updated with additional location data
         QCOMPARE(resChangeSpy.size(), 1);
         QCOMPARE(resChangeSpy.at(0).at(0).toString(), trainLeg1);
-        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QLatin1String("Visp"));
+        QCOMPARE(resMgr.reservation(trainLeg1).value<TrainReservation>().reservationFor().value<TrainTrip>().arrivalStation().address().addressLocality(), QLatin1StringView("Visp"));
 
         // verify this was persisted
         {
@@ -155,7 +155,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setPkPassManager(&pkPassMgr);
         ctrl->setReservationManager(&resMgr);
-        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1String(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
+        ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/updateable-boardingpass.pkpass")));
 
         QCOMPARE(resMgr.batches().size(), 1);
         const auto resId = resMgr.batches()[0];

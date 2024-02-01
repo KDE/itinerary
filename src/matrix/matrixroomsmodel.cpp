@@ -183,7 +183,7 @@ QVariant MatrixRoomsModel::data(const QModelIndex &index, int role) const
             }
             if (const RoomCreateEvent *creationEvent = room->creation(); creationEvent) {
                 const auto contentJson = creationEvent->contentJson();
-                if (contentJson.value(Quotient::TypeKey) == QLatin1String("m.space")) {
+                if (contentJson.value(Quotient::TypeKey) == QLatin1StringView("m.space")) {
                     return Space;
                 }
             }

@@ -54,7 +54,7 @@ private Q_SLOTS:
         QVERIFY(JsonLd::isA<ProgramMembership>(pass));
         QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::ProgramMembership);
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
-        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("BahnCard 25 (2. Kl.) (BC25)"));
+        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1StringView("BahnCard 25 (2. Kl.) (BC25)"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2122, 3, 24}, {23, 59, 59}));
         QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId).isNull());
@@ -67,7 +67,7 @@ private Q_SLOTS:
         QVERIFY(JsonLd::isA<Ticket>(ticket));
         QCOMPARE(idx.data(PassManager::PassTypeRole).toInt(), PassManager::Ticket);
         QVERIFY(!idx.data(PassManager::PassDataRole).toByteArray().isEmpty());
-        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1String("9-Euro-Ticket"));
+        QCOMPARE(idx.data(PassManager::NameRole).toString(), QLatin1StringView("9-Euro-Ticket"));
         QCOMPARE(idx.data(PassManager::ValidUntilRole).toDateTime(), QDateTime({2022, 5, 31}, {23, 59, 59}));
         QVERIFY(!idx.data(PassManager::SectionRole).toString().isEmpty());
         QVERIFY(!mgr.pass(passId2).isNull());
@@ -144,15 +144,15 @@ private Q_SLOTS:
         QVERIFY(!passId.isEmpty());
 
         auto pass = mgr.pass(passId).value<Ticket>();
-        QCOMPARE(pass.name(), QLatin1String("9-Euro-Ticket"));
-        pass.setName(QLatin1String("9-Euro-Ticket (May 2022)"));
+        QCOMPARE(pass.name(), QLatin1StringView("9-Euro-Ticket"));
+        pass.setName(QLatin1StringView("9-Euro-Ticket (May 2022)"));
         mgr.update(passId, pass);
 
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(updateSpy[0][0].toString(), passId);
 
         pass = mgr.pass(passId).value<Ticket>();
-        QCOMPARE(pass.name(), QLatin1String("9-Euro-Ticket (May 2022)"));
+        QCOMPARE(pass.name(), QLatin1StringView("9-Euro-Ticket (May 2022)"));
     }
 };
 
