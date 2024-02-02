@@ -24,6 +24,7 @@ Kirigami.Page {
 
     property var journeySection
     property alias showProgress: sectionModel.showProgress
+    property alias enableMapView: mapButton.visible
     default property alias _children: root.children
 
     Kirigami.ColumnView.preventStealing: view.currentItem.objectName === "sectionMap"
@@ -148,6 +149,7 @@ Kirigami.Page {
         QQC2.SwipeView {
             id: view
             clip: true
+            interactive: root.enableMapView
             Layout.fillHeight: true
             Layout.fillWidth: true
             Item {
@@ -283,6 +285,7 @@ Kirigami.Page {
     }
 
     Components.FloatingButton {
+        id: mapButton
         icon.name: checked ? "format-list-unordered" : "map-gnomonic"
         text: i18nc("@action:button", "Show Map")
         onClicked: view.currentIndex === 0 ? view.currentIndex = 1 : view.currentIndex = 0
