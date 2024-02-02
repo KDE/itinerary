@@ -152,7 +152,8 @@ DetailsPage {
                 description: departure.notes.join("<br/>")
                 descriptionItem.textFormat: Text.RichText
                 descriptionItem.wrapMode: Text.Wrap
-                visible: arrival.notes.length > 0
+                visible: departure.notes.length > 0
+                font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
             }
         }
