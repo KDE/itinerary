@@ -280,31 +280,6 @@ void LiveDataManager::journeyQueryFinished(KPublicTransport::JourneyReply *reply
     data(resId).setTimestamp(LiveData::Departure, now());
 }
 
-void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
-{
-    auto &ld = data(resId);
-    const auto oldStop = ld.stopover(type);
-    auto newStop = stop;
-    newStop.applyMetaData(true); // download logo assets if needed
-    ld.setStopover(type, newStop);
-    ld.setTimestamp(type, now());
-    ld.store(resId);
-
-    // update reservation with live data
-    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, newStop) : PublicTransport::mergeDeparture(res, newStop);
-    if (!ReservationHelper::equals(res, newRes)) {
-        m_resMgr->updateReservation(resId, newRes);
-    }
-
-    // emit update signals
-    Q_EMIT type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
-
-    // check if we need to notify
-    if (NotificationHelper::shouldNotify(oldStop, newStop, type)) {
-        showNotification(resId, ld);
-    }
-}
-
 static KPublicTransport::Stopover applyLayoutData(const KPublicTransport::Stopover &stop, const KPublicTransport::Stopover &layout)
 {
     auto res = stop;
@@ -324,6 +299,45 @@ static void applyMissingStopoverData(KPublicTransport::Stopover &stop, const KPu
     }
     if (stop.loadInformation().empty()) {
         stop.setLoadInformation(std::vector<KPublicTransport::LoadInfo>(oldStop.loadInformation()));
+    }
+}
+
+void LiveDataManager::updateStopoverData(const KPublicTransport::Stopover &stop, LiveData::Type type, const QString &resId, const QVariant &res)
+{
+    auto &ld = data(resId);
+    const auto oldStop = ld.stopover(type);
+    auto newStop = stop;
+    newStop.applyMetaData(true); // download logo assets if needed
+
+    // retain already existing vehicle/platform layout data if we are still departing/arriving in the same place
+    if (PublicTransport::isSameStopoverForLayout(newStop, oldStop)) {
+        newStop = applyLayoutData(newStop, oldStop);
+    }
+    applyMissingStopoverData(newStop, oldStop);
+
+    ld.setStopover(type, newStop);
+    ld.setTimestamp(type, now());
+    if (type == LiveData::Departure) {
+        ld.journey.setDeparture(newStop);
+    } else {
+        ld.journey.setArrival(newStop);
+    }
+    ld.journeyTimestamp = now();
+    ld.store(resId);
+
+    // update reservation with live data
+    const auto newRes = type == LiveData::Arrival ? PublicTransport::mergeArrival(res, newStop) : PublicTransport::mergeDeparture(res, newStop);
+    if (!ReservationHelper::equals(res, newRes)) {
+        m_resMgr->updateReservation(resId, newRes);
+    }
+
+    // emit update signals
+    Q_EMIT type == LiveData::Arrival ? arrivalUpdated(resId) : departureUpdated(resId);
+    Q_EMIT journeyUpdated(resId);
+
+    // check if we need to notify
+    if (NotificationHelper::shouldNotify(oldStop, newStop, type)) {
+        showNotification(resId, ld);
     }
 }
 
@@ -382,8 +396,10 @@ void LiveDataManager::updateJourneyData(const KPublicTransport::JourneySection &
     ld.journey.applyMetaData(true); // download logo assets if needed
     ld.journeyTimestamp = now();
     ld.departure = ld.journey.departure();
+    ld.departure.addNotes(oldDep.notes());
     ld.departureTimestamp = now();
     ld.arrival = ld.journey.arrival();
+    ld.arrival.setNotes(oldArr.notes());
     ld.arrivalTimestamp = now();
     ld.store(resId, LiveData::AllTypes);
 
