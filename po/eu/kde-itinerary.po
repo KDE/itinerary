@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-29 00:38+0000\n"
+"POT-Creation-Date: 2024-02-03 00:38+0000\n"
 "PO-Revision-Date: 2024-01-29 21:35+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -474,7 +474,7 @@ msgid "Terminal"
 msgstr "Terminala"
 
 #: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:168
+#: app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "Iritsiera-ordua"
@@ -597,7 +597,7 @@ msgstr "Lehenago jaitsi"
 #: app/BusEditor.qml:133 app/BusEditor.qml:139 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
 #: app/FlightPage.qml:95 app/TrainEditor.qml:145 app/TrainEditor.qml:157
-#: app/TrainPage.qml:242
+#: app/TrainPage.qml:243
 #, kde-format
 msgid "Seat"
 msgstr "Eserleku"
@@ -636,12 +636,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Iritsiera"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:312
+#: app/BusPage.qml:212 app/TrainPage.qml:313
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:318
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -2075,12 +2075,12 @@ msgstr[1] "%1 aldaketa"
 msgid "Click to extend"
 msgstr "Egin klik zabaltzeko"
 
-#: app/livedatamanager.cpp:765
+#: app/livedatamanager.cpp:781
 #, kde-format
 msgid "Flight %1 to %2:"
 msgstr "%1 hegaldia %2(e)ra:"
 
-#: app/livedatamanager.cpp:771
+#: app/livedatamanager.cpp:787
 #, kde-format
 msgid "Itinerary change"
 msgstr "Ibilbide aldaketa"
@@ -3357,7 +3357,7 @@ msgid "Departure"
 msgstr "Irteera"
 
 #: app/TrainEditor.qml:97 app/TrainEditor.qml:123 app/TrainPage.qml:123
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:203
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3398,39 +3398,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "Irteera"
 
-#: app/TrainPage.qml:151 app/TrainPage.qml:229
+#: app/TrainPage.qml:151 app/TrainPage.qml:230
 #, kde-format
 msgid "Additional notes"
 msgstr "Ohar osagarriak"
 
-#: app/TrainPage.qml:162
+#: app/TrainPage.qml:163
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Iritsiera"
 
-#: app/TrainPage.qml:250
+#: app/TrainPage.qml:251
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Bagoia:"
 
-#: app/TrainPage.qml:259
+#: app/TrainPage.qml:260
 #, kde-format
 msgid "Seat:"
 msgstr "Eserlekua:"
 
-#: app/TrainPage.qml:268
+#: app/TrainPage.qml:269
 #, kde-format
 msgid "Class:"
 msgstr "Klasea:"
 
-#: app/TrainPage.qml:277
+#: app/TrainPage.qml:278
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Irteerako ibilgailuaren antolamendua"
 
-#: app/TrainPage.qml:285
+#: app/TrainPage.qml:286
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Iritsiera ibilgailuaren antolamendua"
