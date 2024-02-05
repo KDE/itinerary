@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-03 00:38+0000\n"
+"POT-Creation-Date: 2024-02-05 00:38+0000\n"
 "PO-Revision-Date: 2019-03-18 03:34+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -1991,48 +1991,48 @@ msgstr ""
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:129
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:130
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:67
+#: app/JourneySectionPage.qml:68
 #, kde-format
 msgid "Direction: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:75
+#: app/JourneySectionPage.qml:76
 #, kde-format
 msgid "Distance: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:82
+#: app/JourneySectionPage.qml:83
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:89
+#: app/JourneySectionPage.qml:90
 #, kde-format
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:191
+#: app/JourneySectionPage.qml:192
 #, kde-format
 msgid "Platform:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:224
+#: app/JourneySectionPage.qml:225
 #, kde-format
 msgid "Vehicle Load:"
 msgstr ""
 
-#: app/JourneySectionPage.qml:240 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
 #, kde-format
 msgid "Show location"
 msgstr ""
 
-#: app/JourneySectionPage.qml:444
+#: app/JourneySectionPage.qml:447
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2112,17 +2112,17 @@ msgstr ""
 msgid "Automatically follow on the map"
 msgstr ""
 
-#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr ""
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:204
 #, kde-format
 msgid "Position"
 msgstr ""
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:213
 #, kde-format
 msgid "Journey"
 msgstr ""
