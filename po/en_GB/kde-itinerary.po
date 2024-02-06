@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 02:22+0000\n"
+"POT-Creation-Date: 2024-02-06 03:07+0000\n"
 "PO-Revision-Date: 2023-06-17 12:24+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -476,7 +476,7 @@ msgid "Terminal"
 msgstr "Terminal"
 
 #: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:168
+#: app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "Arrival time"
@@ -604,7 +604,7 @@ msgstr "Alight earlier"
 #: app/BusEditor.qml:133 app/BusEditor.qml:139 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
 #: app/FlightPage.qml:95 app/TrainEditor.qml:145 app/TrainEditor.qml:157
-#: app/TrainPage.qml:242
+#: app/TrainPage.qml:243
 #, kde-format
 msgid "Seat"
 msgstr "Seat"
@@ -644,12 +644,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Arrival"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:312
+#: app/BusPage.qml:212 app/TrainPage.qml:313
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatives"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:318
 #, kde-format
 msgid "Journey Details"
 msgstr "Journey Details"
@@ -1997,33 +1997,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Drive %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:128
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "Direction: %1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distance: %1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:290
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2109,17 +2109,17 @@ msgstr ""
 msgid "Automatically follow on the map"
 msgstr "Automatically follow on the map"
 
-#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr "Waiting for data..."
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:204
 #, kde-format
 msgid "Position"
 msgstr "Position"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:213
 #, kde-format
 msgid "Journey"
 msgstr "Journey"
@@ -3376,7 +3376,7 @@ msgid "Departure"
 msgstr "Departure"
 
 #: app/TrainEditor.qml:97 app/TrainEditor.qml:123 app/TrainPage.qml:123
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:203
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3417,39 +3417,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "Departure"
 
-#: app/TrainPage.qml:151 app/TrainPage.qml:229
+#: app/TrainPage.qml:151 app/TrainPage.qml:230
 #, kde-format
 msgid "Additional notes"
 msgstr "Additional notes"
 
-#: app/TrainPage.qml:162
+#: app/TrainPage.qml:163
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "Arrival"
 
-#: app/TrainPage.qml:250
+#: app/TrainPage.qml:251
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "Coach:"
 
-#: app/TrainPage.qml:259
+#: app/TrainPage.qml:260
 #, kde-format
 msgid "Seat:"
 msgstr "Seat:"
 
-#: app/TrainPage.qml:268
+#: app/TrainPage.qml:269
 #, kde-format
 msgid "Class:"
 msgstr "Class:"
 
-#: app/TrainPage.qml:277
+#: app/TrainPage.qml:278
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "Departure Vehicle Layout"
 
-#: app/TrainPage.qml:285
+#: app/TrainPage.qml:286
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Arrival Vehicle Layout"

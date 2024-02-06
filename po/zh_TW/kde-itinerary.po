@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-25 02:22+0000\n"
+"POT-Creation-Date: 2024-02-06 03:07+0000\n"
 "PO-Revision-Date: 2024-01-22 16:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -451,7 +451,7 @@ msgid "Terminal"
 msgstr "旅運中心"
 
 #: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
-#: app/TrainPage.qml:168
+#: app/TrainPage.qml:169
 #, kde-format
 msgid "Arrival time"
 msgstr "抵達時間"
@@ -573,7 +573,7 @@ msgstr "更早下車"
 #: app/BusEditor.qml:133 app/BusEditor.qml:139 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
 #: app/FlightPage.qml:95 app/TrainEditor.qml:145 app/TrainEditor.qml:157
-#: app/TrainPage.qml:242
+#: app/TrainPage.qml:243
 #, kde-format
 msgid "Seat"
 msgstr "座位"
@@ -612,12 +612,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:312
+#: app/BusPage.qml:212 app/TrainPage.qml:313
 #, kde-format
 msgid "Alternatives"
 msgstr "替代選擇"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:317
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:23 app/TrainPage.qml:318
 #, kde-format
 msgid "Journey Details"
 msgstr "旅程詳細資料"
@@ -1944,33 +1944,33 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr ""
 
-#: app/JourneySectionDelegate.qml:252 app/JourneySectionPage.qml:127
+#: app/JourneySectionDelegate.qml:257 app/JourneySectionPage.qml:128
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr "顯示更多…"
 
-#: app/JourneySectionPage.qml:66
+#: app/JourneySectionPage.qml:67
 #, kde-format
 msgid "Direction: %1"
 msgstr "方向：%1"
 
-#: app/JourneySectionPage.qml:74
+#: app/JourneySectionPage.qml:75
 #, kde-format
 msgid "Distance: %1"
 msgstr "距離：%1"
 
-#: app/JourneySectionPage.qml:81
+#: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
 msgstr "平均速度：%1"
 
-#: app/JourneySectionPage.qml:88
+#: app/JourneySectionPage.qml:89
 #, kde-format
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
 
-#: app/JourneySectionPage.qml:287
+#: app/JourneySectionPage.qml:290
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"
@@ -2054,17 +2054,17 @@ msgstr "您確定要分享您的目前位置到 Matrix 頻道 %1 嗎？"
 msgid "Automatically follow on the map"
 msgstr "自動在地圖上跟隨"
 
-#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:191
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
 msgstr "等待資料中..."
 
-#: app/LiveStatusPage.qml:203
+#: app/LiveStatusPage.qml:204
 #, kde-format
 msgid "Position"
 msgstr "位置"
 
-#: app/LiveStatusPage.qml:212
+#: app/LiveStatusPage.qml:213
 #, kde-format
 msgid "Journey"
 msgstr "旅程"
@@ -3281,7 +3281,7 @@ msgid "Departure"
 msgstr "出發"
 
 #: app/TrainEditor.qml:97 app/TrainEditor.qml:123 app/TrainPage.qml:123
-#: app/TrainPage.qml:202
+#: app/TrainPage.qml:203
 #, kde-format
 msgctxt "train station"
 msgid "Station"
@@ -3322,39 +3322,39 @@ msgctxt "Train departure"
 msgid "Departure"
 msgstr "出發"
 
-#: app/TrainPage.qml:151 app/TrainPage.qml:229
+#: app/TrainPage.qml:151 app/TrainPage.qml:230
 #, kde-format
 msgid "Additional notes"
 msgstr "額外備註"
 
-#: app/TrainPage.qml:162
+#: app/TrainPage.qml:163
 #, kde-format
 msgctxt "Train arrival"
 msgid "Arrival"
 msgstr "抵達"
 
-#: app/TrainPage.qml:250
+#: app/TrainPage.qml:251
 #, kde-format
 msgctxt "coach of a train"
 msgid "Coach:"
 msgstr "車廂："
 
-#: app/TrainPage.qml:259
+#: app/TrainPage.qml:260
 #, kde-format
 msgid "Seat:"
 msgstr "座位："
 
-#: app/TrainPage.qml:268
+#: app/TrainPage.qml:269
 #, kde-format
 msgid "Class:"
 msgstr ""
 
-#: app/TrainPage.qml:277
+#: app/TrainPage.qml:278
 #, kde-format
 msgid "Departure Vehicle Layout"
 msgstr "出發交通工具內部佈局"
 
-#: app/TrainPage.qml:285
+#: app/TrainPage.qml:286
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "抵達交通工具內部佈局"
