@@ -10,4 +10,3 @@ include:
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/flatpak.yml
       - /gitlab-templates/craft-android-apks.yml
-      - /gitlab-templates/craft-android-qt5-googleplay-apks.yml
