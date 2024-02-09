@@ -1978,12 +1978,10 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:290
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "Ukázat víc..."
+msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -2228,10 +2226,9 @@ msgid "Digital Travel Assistant"
 msgstr "Digitální asistent na cesty"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Autorská práva © 2018-%1 Komunita KDE"
+msgstr ""
 
 #: app/main.cpp:339
 #, kde-format
@@ -2719,10 +2716,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Evropská unie"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Evropská unie"
+msgstr "Evropská unie"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3260,10 +3256,9 @@ msgid "Departure"
 msgstr "Odjezd"
 
 #: app/TouristAttractionPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgid "Departure Time"
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/TouristAttractionPage.qml:49
 #, kde-format
