@@ -749,10 +749,9 @@ msgid "Website"
 msgstr "Webová stránka"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Vyberte výlet"
+msgstr ""
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1904,18 +1903,16 @@ msgid "Arrival"
 msgstr ""
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
-msgstr "Čas příletu"
+msgstr ""
 
 #: app/JourneyRequestPage.qml:175
 #, kde-format
@@ -2019,16 +2016,14 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgid "Platform:"
-msgstr "Platforma"
+msgstr "Nástupiště:"
 
 #: app/JourneySectionPage.qml:225
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Rozvržení vozidla"
+msgstr ""
 
 #: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
 #, kde-format
@@ -2036,12 +2031,10 @@ msgid "Show location"
 msgstr "Zobrazit umístění"
 
 #: app/JourneySectionPage.qml:447
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show More…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "Ukázat víc..."
+msgstr ""
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -2281,10 +2274,9 @@ msgid "Digital Travel Assistant"
 msgstr "Digitální asistent na cesty"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Autorská práva © 2018-%1 Komunita KDE"
+msgstr ""
 
 #: app/main.cpp:339
 #, kde-format
@@ -2772,10 +2764,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Evropská unie"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Evropská unie"
+msgstr "Evropská unie"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3313,10 +3304,9 @@ msgid "Departure"
 msgstr "Odjezd"
 
 #: app/TouristAttractionPage.qml:42
-#, fuzzy, kde-format
-#| msgid "Depature Time"
+#, kde-format
 msgid "Departure Time"
-msgstr "Čas odletu"
+msgstr ""
 
 #: app/TouristAttractionPage.qml:49
 #, kde-format
@@ -3662,14 +3652,7 @@ msgid "How to import data?"
 msgstr "Jak importovat data?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3678,12 +3661,6 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>Existuje spousta způsobů jak importovat data do Itineráře KDE:"
-"<ul><li>Použitím přímo PDF jízdenek nebo Apple Wallet.</li><li>Z kalendáře "
-"Android, pro položky vytvořené pomocí modulů pro itineráře KMailu, "
-"NextCloudu nebo Thunderbird, a synchronizované pomocí DAVx⁵.</li><li>Přes "
-"KDE Connect z modulu Itineráře KMailu.</li><li>Skenováním a vložením "
-"čárového kódu palubní letenky.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
