@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 00:38+0000\n"
-"PO-Revision-Date: 2024-01-29 16:38+0300\n"
+"PO-Revision-Date: 2024-02-09 17:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1018,7 +1018,7 @@ msgstr "GPX Olarak Dışa Aktar"
 #: app/FavoriteLocationPage.qml:80
 #, kde-format
 msgid "Import from GPX"
-msgstr "GPX'ten İçe Aktar"
+msgstr "GPX’ten İçe Aktar"
 
 #: app/FavoriteLocationPage.qml:90
 #, kde-format
@@ -1466,7 +1466,7 @@ msgstr ""
 "<p>Bir barkod tarayıcı ile tarayarak aşağıdaki sağlık sertifikalarını içe "
 "aktarabilirsiniz:<ul><li>Aşılamalar, testler veya iyileşmeler için Avrupa "
 "\"Sayısal Yeşil Sertifikalar\".</li><li>Hindistan aşılama sertifikaları.</"
-"li><li>ABD ve Kanada'nın bazı bölgelerinde kullanılan SMART Sağlık Kartları."
+"li><li>ABD ve Kanada’nın bazı bölgelerinde kullanılan SMART Sağlık Kartları."
 "</li></p>"
 
 #: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
@@ -1776,7 +1776,7 @@ msgstr "Haritayı Aç"
 #: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
-msgstr "wheelmap.org'u Aç"
+msgstr "wheelmap.org’u Aç"
 
 #: app/IndoorMapPage.qml:299
 #, kde-format
@@ -2290,7 +2290,7 @@ msgstr "Verilen sayfadaki yolcu belgesini aç"
 #: app/main.cpp:344
 #, kde-format
 msgid "Files or URLs to import."
-msgstr "İçe aktarılacak dosyalar veya URL'ler."
+msgstr "İçe aktarılacak dosyalar veya URL’ler."
 
 #: app/main.qml:61
 #, kde-format
@@ -3020,7 +3020,7 @@ msgstr "Bu sistemde Wi-Fi erişimi etkin değil"
 #: app/SettingsPage.qml:230
 #, kde-format
 msgid "Enable Wi-Fi on your system to access onboard information."
-msgstr "Biniş durumuna erişmek için sisteminizde Wi-Fi'yi etkinleştirin."
+msgstr "Biniş durumuna erişmek için sisteminizde Wi-Fi’yi etkinleştirin."
 
 #: app/SettingsPage.qml:232
 #, kde-format
@@ -3078,7 +3078,7 @@ msgstr "Katkıda Bulunma"
 #: app/SettingsPage.qml:309
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr "OpenStreetMap'e katkıda bulunuyorum"
+msgstr "OpenStreetMap’e katkıda bulunuyorum"
 
 #: app/SettingsPage.qml:310
 #, kde-format
@@ -3667,7 +3667,7 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>Veriyi, KDE Yol Kılavuzu'na içe aktarmanın birkaç yolu bulunmaktadır:"
+"<p>Veriyi, KDE Yol Kılavuzu’na içe aktarmanın birkaç yolu bulunmaktadır:"
 "<ul><li>PDF biletlerini veya Apple Cüzdan kartlarını doğrudan açmak.</"
 "li><li>Android takviminden; K Posta veya Nextcloud yolculuk eklentilerinden "
 "ve DAVx⁵ kullanarak eşzamanlayarak.</li><li>K Posta Yolculuk eklentisinden "
@@ -3688,7 +3688,7 @@ msgid ""
 "might want to configure your home location to enable the transfer assistant "
 "to automatically suggests ways to your next departure station or airport."
 msgstr ""
-"KDE Yol Kılavuzu'nda, çevrimiçi erişim gerektiren tüm hizmetler öntanımlı "
+"KDE Yol Kılavuzu’nda, çevrimiçi erişim gerektiren tüm hizmetler öntanımlı "
 "olarak devre dışıdır; örneğin, canlı trafik verisi veya hava durumu "
 "tahminleri. Bu ayarları gözden geçirmek isteyebilirsiniz. Bunu yaparken, ev "
 "konumunuzu da ayarlayarak bir sonraki kalkış istasyonu veya havaalanı "

@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Shinjo Park <kde@peremen.name>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-05 00:38+0000\n"
-"PO-Revision-Date: 2023-10-08 22:49+0200\n"
+"PO-Revision-Date: 2024-02-09 23:13+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -157,10 +157,9 @@ msgid "Send to %1"
 msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 
 #: app/ActionsCard.qml:165
-#, fuzzy, kde-format
-#| msgid "Import Reservation"
+#, kde-format
 msgid "Export Reservation"
-msgstr "예약 가져오기"
+msgstr "예약 내보내기"
 
 #: app/ActionsCard.qml:167 app/TimelinePage.qml:220
 #, kde-format
@@ -193,11 +192,10 @@ msgstr "다운로드"
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
-msgstr ""
+msgstr "참가"
 
 #: app/ActionsCard.qml:194
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
 msgstr "예약"
 
@@ -332,10 +330,9 @@ msgid "Trip sent."
 msgstr "여행을 전송했습니다."
 
 #: app/applicationcontroller.cpp:712
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reservation sent."
-msgstr "예약"
+msgstr "예약을 전송했습니다."
 
 #: app/applicationcontroller.cpp:795
 #, kde-format
@@ -484,17 +481,15 @@ msgstr "참조"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
 #: app/ProgramMembershipPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Import from Clipboard"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
-msgstr "클립보드에서 가져오기"
+msgstr "클립보드에 복사"
 
 #: app/BookingCard.qml:39
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Booking reference copied to clipboard"
-msgstr "예약 번호"
+msgstr "예약 번호가 클립보드에 복사됨"
 
 #: app/BookingCard.qml:52 app/BookingEditorCard.qml:51
 #, kde-format
@@ -507,24 +502,21 @@ msgid "Ticket number:"
 msgstr "승차권 번호:"
 
 #: app/BookingCard.qml:71
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Ticket number copied to clipboard"
-msgstr "클립보드에 추출기 기능 복사됨"
+msgstr "승차권 번호가 클립보드에 복사됨"
 
 #: app/BookingEditorCard.qml:37
-#, fuzzy, kde-format
-#| msgid "Booking"
+#, kde-format
 msgctxt "@title:group"
 msgid "Booking"
 msgstr "예약"
 
 #: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
-#, fuzzy, kde-format
-#| msgid "1 intermediate stop"
+#, kde-format
 msgid "1 intermediate stop"
 msgid_plural "%1 intermediate stops"
-msgstr[0] "중간 정거장 1개"
+msgstr[0] "중간 정거장 %1개"
 
 #: app/BusEditor.qml:17
 #, kde-format
@@ -552,8 +544,7 @@ msgid "Change arrival stop"
 msgstr "도착 정류장 변경"
 
 #: app/BusEditor.qml:83
-#, fuzzy, kde-format
-#| msgid "Bus"
+#, kde-format
 msgctxt "@title"
 msgid "Bus"
 msgstr "버스"
@@ -731,8 +722,7 @@ msgid "Brand"
 msgstr "브랜드"
 
 #: app/ContactCard.qml:22 app/ContactEditorCard.qml:27
-#, fuzzy, kde-format
-#| msgid "Contact"
+#, kde-format
 msgctxt "@title:group"
 msgid "Contact"
 msgstr "연락처"
@@ -754,10 +744,9 @@ msgid "Website"
 msgstr "웹사이트"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "여정 선택"
+msgstr "국가 선택"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -957,8 +946,7 @@ msgid "Number:"
 msgstr "번호:"
 
 #: app/EventPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgctxt "seat type"
 msgid "Type:"
 msgstr "종류:"
@@ -1295,8 +1283,7 @@ msgid "(was: %1)"
 msgstr "(이전: %1)"
 
 #: app/FormPriceDelegate.qml:19
-#, fuzzy, kde-format
-#| msgid "Price"
+#, kde-format
 msgctxt "@label"
 msgid "Price"
 msgstr "가격"
@@ -1647,11 +1634,10 @@ msgid "Hotel"
 msgstr "호텔"
 
 #: app/HotelEditor.qml:50
-#, fuzzy, kde-format
-#| msgid "Add accommodation..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr "숙박 추가..."
+msgstr "숙박"
 
 #: app/HotelEditor.qml:56
 #, kde-format
@@ -1730,20 +1716,19 @@ msgid "%1 (arrival)"
 msgstr "%1(도착)"
 
 #: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Edit Boat Trip"
+#, kde-format
 msgid "Edit with iD"
-msgstr "선박 여정 편집"
+msgstr "iD로 편집"
 
 #: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "JOSM으로 편집"
 
 #: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Vespucci로 편집"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -1865,7 +1850,7 @@ msgstr "이전 연결 불러오기"
 #: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "결과를 계속 가져오고 있습니다…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -1899,32 +1884,28 @@ msgstr "도착역:"
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "출발과 도착 맞바꾸기"
 
 #: app/JourneyRequestPage.qml:152
-#, fuzzy, kde-format
-#| msgid "Departure"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure"
 msgstr "출발"
 
 #: app/JourneyRequestPage.qml:155
-#, fuzzy, kde-format
-#| msgid "Arrival"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival"
 msgstr "도착"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "출발 시간"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "도착 시간"
@@ -2023,7 +2004,7 @@ msgstr "거리: %1"
 #: app/JourneySectionPage.qml:83
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "평균 속도: %1"
 
 #: app/JourneySectionPage.qml:90
 #, kde-format
@@ -2036,10 +2017,9 @@ msgid "Platform:"
 msgstr "승강장:"
 
 #: app/JourneySectionPage.qml:225
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "차량 구성"
+msgstr "차량 승차량:"
 
 #: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
 #, kde-format
@@ -2047,11 +2027,10 @@ msgid "Show location"
 msgstr "위치 표시"
 
 #: app/JourneySectionPage.qml:447
-#, fuzzy, kde-format
-#| msgid "Show"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "표시"
+msgstr "지도 표시"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -2289,10 +2268,9 @@ msgid "Digital Travel Assistant"
 msgstr "디지털 여행 도우미"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Copyright © 2018-%1 The KDE Community"
+msgstr "Copyright © The KDE Community"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2352,7 +2330,7 @@ msgstr "PDF 파일 (*.pdf)"
 #: app/main.qml:128
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "iCal 이벤트 (*.ics)"
 
 #: app/main.qml:128 app/main.qml:137
 #, kde-format
@@ -2540,13 +2518,12 @@ msgstr "성"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "이름은 대소문자를 구분합니다."
 
 #: app/onlineimport/db.qml:40
-#, fuzzy, kde-format
-#| msgid "Booking reference"
+#, kde-format
 msgid "Order number or booking reference"
-msgstr "예약 번호"
+msgstr "주문 번호 또는 예약 번호"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format
@@ -2720,10 +2697,9 @@ msgid "Program Membership"
 msgstr "프로그램 멤버십"
 
 #: app/ProgramMembershipPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Extractor capabilities copied to clipboard"
+#, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr "클립보드에 추출기 기능 복사됨"
+msgstr "클립보드에 프로그램 회원 번호 복사됨"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2781,10 +2757,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 유럽 연합"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 유럽 연합"
+msgstr "유럽 연합"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -2792,8 +2767,7 @@ msgid "Documents and Tickets"
 msgstr "문서와 티켓"
 
 #: app/RestaurantEditor.qml:18
-#, fuzzy, kde-format
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "@title"
 msgid "Edit Restaurant"
 msgstr "음식점 편집"
@@ -2810,8 +2784,7 @@ msgid "Name"
 msgstr "이름"
 
 #: app/RestaurantEditor.qml:72
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgctxt "@title:group"
 msgid "Reservation"
 msgstr "예약"
@@ -2822,11 +2795,10 @@ msgid "Restaurant Reservation"
 msgstr "식당 예약"
 
 #: app/RestaurantPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Journey Details"
+#, kde-format
 msgctxt "@title:group"
 msgid "Details"
-msgstr "여정 정보"
+msgstr "자세히"
 
 #: app/RestaurantPage.qml:41
 #, kde-format
@@ -3086,17 +3058,17 @@ msgstr "로그인"
 #: app/SettingsPage.qml:305
 #, kde-format
 msgid "Contributing"
-msgstr ""
+msgstr "기여"
 
 #: app/SettingsPage.qml:309
 #, kde-format
 msgid "I contribute to OpenStreetMap"
-msgstr ""
+msgstr "저는 OpenStreetMap에 기여합니다"
 
 #: app/SettingsPage.qml:310
 #, kde-format
 msgid "Enables OSM editing options."
-msgstr ""
+msgstr "OSM 편집 옵션을 활성화합니다."
 
 #: app/statisticsmodel.cpp:91
 #, kde-format
@@ -3324,9 +3296,7 @@ msgid "Departure"
 msgstr "출발"
 
 #: app/TouristAttractionPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "Boat departure"
-#| msgid "Departure Time"
+#, kde-format
 msgid "Departure Time"
 msgstr "출발 시간"
 
@@ -3671,14 +3641,7 @@ msgid "How to import data?"
 msgstr "어떻게 데이터를 가져오시겠습니까?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3688,10 +3651,10 @@ msgid ""
 "their content.</li></p>"
 msgstr ""
 "<p>KDE 여행 정보로 데이터를 가져오는 여러 가지 방법이 있습니다: <ul><li>PDF "
-"티켓이나 Apple Wallet 패스 열기.</li><li>KMail, Nextcloud, Thunderbird 여행 "
-"정보 플러그인으로 데이터를 생성하여 DAVx⁵로 동기화한 Android 캘린더.</"
-"li><li>KMail 여행 정보 플러그인을 사용하여 KDE Connect로 전송.</li><li>탑승"
-"권 바코드를 스캔하거나 내용 복사해서 붙여넣기.</li></p>"
+"티켓이나 Apple Wallet 패스 열기.</li><li>KMail, Nextcloud 여행 정보 플러그인"
+"으로 데이터를 생성하여 DAVx⁵로 동기화한 Android 캘린더.</li><li>KMail 여행 정"
+"보 플러그인을 사용하여 KDE Connect로 전송.</li><li>탑승권 바코드를 스캔하거"
+"나 내용 복사해서 붙여넣기.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
