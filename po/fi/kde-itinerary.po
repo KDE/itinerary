@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-06 03:07+0000\n"
-"PO-Revision-Date: 2023-11-29 17:19+0200\n"
+"PO-Revision-Date: 2024-02-08 10:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1675,10 +1675,11 @@ msgstr "Sisäänkirjautumisaika"
 msgid "Check-out time"
 msgstr "Uloskirjautumisaika"
 
+# Ilmeisesti ”amenity” tässä mikä tahansa julkinen palvelu (pankki, posti, mahdollisuus käydä suihkussa, uimala…)
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "Etsi palvelu"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
@@ -1971,7 +1972,7 @@ msgstr "Etäisyys: %1"
 #: app/JourneySectionPage.qml:82
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Keskinopeus: %1"
 
 #: app/JourneySectionPage.qml:89
 #, kde-format
@@ -1979,11 +1980,10 @@ msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:290
-#, fuzzy, kde-format
-#| msgid "Show"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "Näytä"
+msgstr "Näytä kartta"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -2227,10 +2227,9 @@ msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Tekijänoikeudet © 2018–%1 KDE-yhteisö"
+msgstr "Tekijänoikeudet © KDE-yhteisö"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2290,7 +2289,7 @@ msgstr "PDF-tiedostot (*.pdf)"
 #: app/main.qml:128
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "iCal-tapahtumat (*.ics)"
 
 #: app/main.qml:128 app/main.qml:137
 #, kde-format
@@ -2717,10 +2716,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Euroopan unioni"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Euroopan unioni"
+msgstr "Euroopan unioni"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3263,9 +3261,7 @@ msgid "Departure"
 msgstr "Lähtö"
 
 #: app/TouristAttractionPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "Boat departure"
-#| msgid "Departure Time"
+#, kde-format
 msgid "Departure Time"
 msgstr "Lähtöaika"
 
