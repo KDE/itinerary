@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 00:38+0000\n"
+"POT-Creation-Date: 2024-02-14 00:38+0000\n"
 "PO-Revision-Date: 2024-01-22 16:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2418,22 +2418,30 @@ msgid "Spaces"
 msgstr "聊天空間"
 
 #: app/NavigationBar.qml:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Itinerary"
+msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "旅行計劃"
 
 #: app/NavigationBar.qml:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plan Trip"
+msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "規劃旅程"
 
 #: app/NavigationBar.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Passes & Programs"
+msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "票卡與會員"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:93
-#, kde-format
+#: app/NavigationBar.qml:38
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "目前票券"
 
@@ -3214,6 +3222,11 @@ msgstr "我的旅行計劃"
 #, kde-format
 msgid "Go To Now"
 msgstr "跳到現在"
+
+#: app/TimelinePage.qml:93
+#, kde-format
+msgid "Current Ticket"
+msgstr "目前票券"
 
 #: app/TimelinePage.qml:99
 #, kde-format

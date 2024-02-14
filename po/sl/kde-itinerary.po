@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 00:38+0000\n"
+"POT-Creation-Date: 2024-02-14 00:38+0000\n"
 "PO-Revision-Date: 2024-01-29 07:40+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2436,22 +2436,30 @@ msgid "Spaces"
 msgstr "Prostori"
 
 #: app/NavigationBar.qml:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Itinerary"
+msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Itinerar"
 
 #: app/NavigationBar.qml:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plan Trip"
+msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Planiraj izlet"
 
 #: app/NavigationBar.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Passes & Programs"
+msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Vozovnice & programi"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:93
-#, kde-format
+#: app/NavigationBar.qml:38
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Trenutna vstopnica"
 
@@ -3244,6 +3252,11 @@ msgstr "Moj itinerar"
 #, kde-format
 msgid "Go To Now"
 msgstr "Pojdi na zdaj"
+
+#: app/TimelinePage.qml:93
+#, kde-format
+msgid "Current Ticket"
+msgstr "Trenutna vstopnica"
 
 #: app/TimelinePage.qml:99
 #, kde-format

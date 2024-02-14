@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 00:38+0000\n"
+"POT-Creation-Date: 2024-02-14 00:38+0000\n"
 "PO-Revision-Date: 2024-02-04 09:40+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2433,22 +2433,30 @@ msgid "Spaces"
 msgstr "Odstępy"
 
 #: app/NavigationBar.qml:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Itinerary"
+msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Plan podróży"
 
 #: app/NavigationBar.qml:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plan Trip"
+msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Plan podróży"
 
 #: app/NavigationBar.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Passes & Programs"
+msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Wejściówki i programy"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:93
-#, kde-format
+#: app/NavigationBar.qml:38
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Bieżący bilet"
 
@@ -3246,6 +3254,11 @@ msgstr "Mój plan podróży"
 #, kde-format
 msgid "Go To Now"
 msgstr "Przejdź do teraz"
+
+#: app/TimelinePage.qml:93
+#, kde-format
+msgid "Current Ticket"
+msgstr "Bieżący bilet"
 
 #: app/TimelinePage.qml:99
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 00:38+0000\n"
+"POT-Creation-Date: 2024-02-14 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 17:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2429,22 +2429,30 @@ msgid "Spaces"
 msgstr "Alanlar"
 
 #: app/NavigationBar.qml:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Itinerary"
+msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Yol Kılavuzu"
 
 #: app/NavigationBar.qml:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plan Trip"
+msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Yolculuk Planla"
 
 #: app/NavigationBar.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Passes & Programs"
+msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Kartlar ve Programlar"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:93
-#, kde-format
+#: app/NavigationBar.qml:38
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Geçerli Bilet"
 
@@ -3238,6 +3246,11 @@ msgstr "Yolcu Belgem"
 #, kde-format
 msgid "Go To Now"
 msgstr "Şimdiye Git"
+
+#: app/TimelinePage.qml:93
+#, kde-format
+msgid "Current Ticket"
+msgstr "Geçerli Bilet"
 
 #: app/TimelinePage.qml:99
 #, kde-format

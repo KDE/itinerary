@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the itinerary package.
-# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-05 00:38+0000\n"
-"PO-Revision-Date: 2023-11-29 17:19+0200\n"
+"POT-Creation-Date: 2024-02-14 00:38+0000\n"
+"PO-Revision-Date: 2024-02-08 10:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -192,13 +192,12 @@ msgstr "Lataa"
 #, kde-format
 msgctxt "participate in an event"
 msgid "Join"
-msgstr ""
+msgstr "Liity"
 
 #: app/ActionsCard.qml:194
-#, fuzzy, kde-format
-#| msgid "Reservation"
+#, kde-format
 msgid "Reserve"
-msgstr "Varaus"
+msgstr "Varaa"
 
 #: app/ActionsCard.qml:195
 #, kde-format
@@ -748,10 +747,9 @@ msgid "Website"
 msgstr "Verkkosivusto"
 
 #: app/CountryComboBox.qml:47
-#, fuzzy, kde-format
-#| msgid "Select Journey"
+#, kde-format
 msgid "Select country"
-msgstr "Valitse matka"
+msgstr "Valitse maa"
 
 #: app/DepartureQueryPage.qml:21
 #, kde-format
@@ -1693,10 +1691,11 @@ msgstr "Sisäänkirjautumisaika"
 msgid "Check-out time"
 msgstr "Uloskirjautumisaika"
 
+# Ilmeisesti ”amenity” tässä mikä tahansa julkinen palvelu (pankki, posti, mahdollisuus käydä suihkussa, uimala…)
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "Etsi palvelu"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
@@ -1856,7 +1855,7 @@ msgstr "Lataa aiemmat yhteydet"
 #: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
-msgstr ""
+msgstr "Noudetaan vielä tuloksia…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -1890,7 +1889,7 @@ msgstr "Mihin:"
 #: app/JourneyRequestPage.qml:131
 #, kde-format
 msgid "Swap departure and arrival"
-msgstr ""
+msgstr "Vaihda lähtö ja saapuminen keskenään"
 
 #: app/JourneyRequestPage.qml:152
 #, kde-format
@@ -1905,15 +1904,13 @@ msgid "Arrival"
 msgstr "Saapuminen"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Departure time"
+#, kde-format
 msgctxt "train or bus departure"
 msgid "Departure time"
 msgstr "Lähtöaika"
 
 #: app/JourneyRequestPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Arrival time"
+#, kde-format
 msgctxt "train or bus arrival"
 msgid "Arrival time"
 msgstr "Saapumisaika:"
@@ -2013,7 +2010,7 @@ msgstr "Etäisyys: %1"
 #: app/JourneySectionPage.qml:83
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Keskinopeus: %1"
 
 #: app/JourneySectionPage.qml:90
 #, kde-format
@@ -2026,10 +2023,9 @@ msgid "Platform:"
 msgstr "Laituri:"
 
 #: app/JourneySectionPage.qml:225
-#, fuzzy, kde-format
-#| msgid "Vehicle Layout"
+#, kde-format
 msgid "Vehicle Load:"
-msgstr "Vaunukartta"
+msgstr "Ajoneuvon kuorma:"
 
 #: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
 #, kde-format
@@ -2037,11 +2033,10 @@ msgid "Show location"
 msgstr "Näytä sijainti"
 
 #: app/JourneySectionPage.qml:447
-#, fuzzy, kde-format
-#| msgid "Show"
+#, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr "Näytä"
+msgstr "Näytä kartta"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
@@ -2280,10 +2275,9 @@ msgid "Digital Travel Assistant"
 msgstr "Digitaalinen matka-avustaja"
 
 #: app/main.cpp:332
-#, fuzzy, kde-format
-#| msgid "Copyright © 2018-%1 The KDE Community"
+#, kde-format
 msgid "Copyright © The KDE Community"
-msgstr "Tekijänoikeudet © 2018–%1 KDE-yhteisö"
+msgstr "Tekijänoikeudet © KDE-yhteisö"
 
 #: app/main.cpp:339
 #, kde-format
@@ -2343,7 +2337,7 @@ msgstr "PDF-tiedostot (*.pdf)"
 #: app/main.qml:128
 #, kde-format
 msgid "iCal events (*.ics)"
-msgstr ""
+msgstr "iCal-tapahtumat (*.ics)"
 
 #: app/main.qml:128 app/main.qml:137
 #, kde-format
@@ -2432,22 +2426,30 @@ msgid "Spaces"
 msgstr "Välilyönnit"
 
 #: app/NavigationBar.qml:18
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Itinerary"
+msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Matkasuunnitelma"
 
 #: app/NavigationBar.qml:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plan Trip"
+msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Suunnittele matka"
 
 #: app/NavigationBar.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Passes & Programs"
+msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Liput ja ohjelmat"
 
-#: app/NavigationBar.qml:38 app/TimelinePage.qml:93
-#, kde-format
+#: app/NavigationBar.qml:38
+#, fuzzy, kde-format
+#| msgid "Current Ticket"
+msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Nykyinen matkalippu"
 
@@ -2770,10 +2772,9 @@ msgid "🇪🇺 European Union"
 msgstr "🇪🇺 Euroopan unioni"
 
 #: app/PublicTransportBackendPage.qml:110
-#, fuzzy, kde-format
-#| msgid "🇪🇺 European Union"
+#, kde-format
 msgid "European Union"
-msgstr "🇪🇺 Euroopan unioni"
+msgstr "Euroopan unioni"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3244,6 +3245,11 @@ msgstr "Matkasuunnitelmani"
 msgid "Go To Now"
 msgstr "Siirry nyt"
 
+#: app/TimelinePage.qml:93
+#, kde-format
+msgid "Current Ticket"
+msgstr "Nykyinen matkalippu"
+
 #: app/TimelinePage.qml:99
 #, kde-format
 msgid "Add train trip..."
@@ -3316,9 +3322,7 @@ msgid "Departure"
 msgstr "Lähtö"
 
 #: app/TouristAttractionPage.qml:42
-#, fuzzy, kde-format
-#| msgctxt "Boat departure"
-#| msgid "Departure Time"
+#, kde-format
 msgid "Departure Time"
 msgstr "Lähtöaika"
 
@@ -3665,14 +3669,7 @@ msgid "How to import data?"
 msgstr "Kuinka tiedot tuodaan?"
 
 #: app/WelcomePage.qml:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>There's a number of ways to import data into KDE Itinerary:"
-#| "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
-#| "the Android calendar, for entries made via the KMail, Nextcloud or "
-#| "Thunderbird Itinerary plugins, and synced using DAVx⁵.</li><li>Via KDE "
-#| "Connect from the KMail Itinerary plugin.</li><li>By scanning boarding "
-#| "pass barcodes and pasting their content.</li></p>"
+#, kde-format
 msgid ""
 "<p>There's a number of ways to import data into KDE Itinerary:"
 "<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
@@ -3681,12 +3678,11 @@ msgid ""
 "Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
 "their content.</li></p>"
 msgstr ""
-"<p>Tietoa voi tuoda KDE Itineraryyn monella tapaa:<ul><li>PDF- tai Apple "
-"Wallet -lipusta suoraan</li><li>Androidin kalenterista KMailin, Nextcloudin "
-"tai Thunderbirdin Itinerary-liitännäisillä tehdyt ja DaVx⁵:llä synkronoidut "
-"tietueet</li><li>KDE Connectista KMailin Itinerary-liitännäisellä</"
-"li><li>lukemalla maihinnousukortin viivakoodin ja liitämällä sen sisällön.</"
-"li></p>"
+"<p>Tietoa voi tuoda KDE Itineraryyn monella tapaa:<ul><li>suoraan PDF- tai "
+"Apple Wallet -lipusta</li><li>Androidin kalenterista KMailin tai Nextcloudin "
+"Itinerary-liitännäisillä tehdyt ja DaVx⁵:llä synkronoidut tietueet</"
+"li><li>KDE Connectista KMailin Itinerary-liitännäisellä</li><li>lukemalla "
+"maihinnousukortin viivakoodi ja liittämällä sen sisältö.</li></p>"
 
 #: app/WelcomePage.qml:31
 #, kde-format
