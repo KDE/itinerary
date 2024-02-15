@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-29 10:07+0100\n"
+"PO-Revision-Date: 2024-02-14 10:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2428,29 +2428,25 @@ msgid "Spaces"
 msgstr "Ruimten"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "Itinerary"
+#, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Reisroute"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Plan Trip"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Reis plannen"
 
 #: app/NavigationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "Passes & Programs"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Passen & programma's"
 
 #: app/NavigationBar.qml:38
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Huidige ticket"

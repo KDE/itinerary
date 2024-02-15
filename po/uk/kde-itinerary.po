@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-29 15:56+0200\n"
+"PO-Revision-Date: 2024-02-14 09:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -2442,29 +2442,25 @@ msgid "Spaces"
 msgstr "Простори"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "Itinerary"
+#, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "Маршрут"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Plan Trip"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "Запланувати подорож"
 
 #: app/NavigationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "Passes & Programs"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "Безкоштовні квитки і програми"
 
 #: app/NavigationBar.qml:38
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Поточний квиток"

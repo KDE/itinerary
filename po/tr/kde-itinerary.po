@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 00:38+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-02-14 11:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -333,7 +333,7 @@ msgstr "Dışa aktarma tamamlandı."
 #: app/applicationcontroller.cpp:611
 #, kde-format
 msgid "Trip sent."
-msgstr "Yolculuk gönderildi."
+msgstr "Gezi gönderildi."
 
 #: app/applicationcontroller.cpp:712
 #, kde-format
@@ -395,7 +395,7 @@ msgstr "Varış zamanı: %1"
 #: app/BoatEditor.qml:17
 #, kde-format
 msgid "Edit Boat Trip"
-msgstr "Bot Yolculuğunu Düzenle"
+msgstr "Bot Gezisini Düzenle"
 
 #: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
@@ -2429,29 +2429,25 @@ msgid "Spaces"
 msgstr "Alanlar"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "Itinerary"
+#, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
-msgstr "Yol Kılavuzu"
+msgstr "Yolculuk Belgesi"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Plan Trip"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
-msgstr "Yolculuk Planla"
+msgstr "Gezi Planla"
 
 #: app/NavigationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "Passes & Programs"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
-msgstr "Kartlar ve Programlar"
+msgstr "Geçişler ve Programlar"
 
 #: app/NavigationBar.qml:38
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "Geçerli Bilet"
@@ -2495,7 +2491,7 @@ msgstr "%1 için platform değişikliği"
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
-msgstr "Yolculuk iptal edildi."
+msgstr "Gezi iptal edildi."
 
 #: app/notificationhelper.cpp:99
 #, kde-format
@@ -2919,7 +2915,7 @@ msgid ""
 "Enabling this will download maps for all stations and airports for upcoming "
 "trips when connected to Wifi network."
 msgstr ""
-"Bunu etkinleştirmek, gelecekte tasarlanmış tüm yolculuklardaki istasyon ve "
+"Bunu etkinleştirmek, gelecekte tasarlanmış tüm gezilerdeki istasyon ve "
 "havaalanı haritalarını bir Wi-Fi ağına bağlanıldığında önceden indirir."
 
 #: app/SettingsPage.qml:117
@@ -3096,7 +3092,7 @@ msgstr "OSM düzenleme seçeneklerini etkinleştirin."
 #: app/statisticsmodel.cpp:91
 #, kde-format
 msgid "Trips"
-msgstr "Yolculuklar"
+msgstr "Geziler"
 
 #: app/statisticsmodel.cpp:96 app/statisticsmodel.cpp:129
 #: app/statisticsmodel.cpp:144 app/statisticsmodel.cpp:159
@@ -3145,7 +3141,7 @@ msgstr "Araba binişleri"
 #: app/statisticsmodel.cpp:184
 #, kde-format
 msgid "Boat trips"
-msgstr "Bot yolculukları"
+msgstr "Bot gezileri"
 
 #: app/StatisticsPage.qml:34
 #, kde-format
@@ -3255,12 +3251,12 @@ msgstr "Geçerli Bilet"
 #: app/TimelinePage.qml:99
 #, kde-format
 msgid "Add train trip..."
-msgstr "Tren Yolculuğu Ekle..."
+msgstr "Tren Gezisi Ekle..."
 
 #: app/TimelinePage.qml:106
 #, kde-format
 msgid "Add ferry trip..."
-msgstr "Feribot Yolculuğu Ekle..."
+msgstr "Feribot Gezisi Ekle..."
 
 #: app/TimelinePage.qml:118
 #, kde-format
@@ -3280,12 +3276,12 @@ msgstr "Restoran Ekle..."
 #: app/TimelinePage.qml:158
 #, kde-format
 msgid "Delete Trip"
-msgstr "Yolculuğu Sil"
+msgstr "Geziyi Sil"
 
 #: app/TimelinePage.qml:159
 #, kde-format
 msgid "Do you really want to delete this trip?"
-msgstr "Bu yolculuğu silmeyi gerçekten istiyor musunuz?"
+msgstr "Bu geziyi silmeyi gerçekten istiyor musunuz?"
 
 #: app/TimelinePage.qml:189
 #, kde-format
@@ -3295,7 +3291,7 @@ msgstr "GPX Dosyası Olarak..."
 #: app/TimelinePage.qml:218 app/TimelinePage.qml:227
 #, kde-format
 msgid "Export Trip"
-msgstr "Yolculuğu Dışa Aktar"
+msgstr "Geziyi Dışa Aktar"
 
 #: app/TimelinePage.qml:400
 #, kde-format
@@ -3511,7 +3507,7 @@ msgstr "%2 konumundan %1 kalkışını izler"
 #: app/TripGroupDelegate.qml:61
 #, kde-format
 msgid "Trip: %1"
-msgstr "Yolculuk: %1"
+msgstr "Gezi: %1"
 
 #: app/TripGroupDelegate.qml:92
 #, kde-format
@@ -3552,7 +3548,7 @@ msgstr[1] "Para birimleri: %2"
 #: app/TripGroupDelegate.qml:169
 #, kde-format
 msgid "Delete trip"
-msgstr "Yolculuğu sil"
+msgstr "Geziyi sil"
 
 #: app/tripgroupmanager.cpp:594
 #, kde-format
