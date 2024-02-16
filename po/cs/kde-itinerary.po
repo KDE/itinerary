@@ -2425,18 +2425,16 @@ msgid "Spaces"
 msgstr "Mezery"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "My Itinerary"
+#, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
-msgstr "Můj Itinerář"
+msgstr ""
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Delete Trip"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
-msgstr "Smazat výlet"
+msgstr ""
 
 #: app/NavigationBar.qml:33
 #, kde-format
@@ -2445,11 +2443,10 @@ msgid "Passes & Programs"
 msgstr ""
 
 #: app/NavigationBar.qml:38
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
-msgstr "Současný lístek"
+msgstr ""
 
 #: app/notificationhelper.cpp:62
 #, kde-format
