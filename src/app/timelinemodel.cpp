@@ -781,9 +781,29 @@ void TimelineModel::transferRemoved(const QString &resId, Transfer::Alignment al
     Q_EMIT todayRowChanged();
 }
 
-static bool isSelectableElement(const TimelineElement &elem)
+[[nodiscard]] static bool isSelectableElement(const TimelineElement &elem)
 {
     return elem.isReservation() && elem.rangeType == TimelineElement::SelfContained;
+}
+
+// same as SortUtil::endDateTime but with a lower bound estimate
+// when the end time isn't available
+[[nodiscard]] static QDateTime estimatedEndTime(const QVariant &res)
+{
+    if (SortUtil::hasEndTime(res)) {
+        return SortUtil::endDateTime(res);
+    }
+    if (JsonLd::isA<FlightReservation>(res)) {
+        const auto flight = res.value<FlightReservation>().reservationFor().value<Flight>();
+        const auto dist = LocationUtil::distance(flight.departureAirport().geo(), flight.arrivalAirport().geo());
+        if (std::isnan(dist) || !flight.departureTime().isValid()) {
+            return {};
+        }
+        auto dt = flight.departureTime();
+        return dt.addSecs((qint64)(dist * 250.0 / 3.6)); // see flightutil.cpp in kitinerary
+    }
+
+    return {};
 }
 
 QString TimelineModel::currentBatchId() const
@@ -809,9 +829,9 @@ QString TimelineModel::currentBatchId() const
         for (; it != m_elements.begin() && (it == m_elements.end() || !isSelectableElement(*it)); --it) {}
     }
 
-    const auto resId = (*it).batchId();
+    auto resId = (*it).batchId();
     const auto res = m_resMgr->reservation(resId);
-    auto endTime = SortUtil::endDateTime(res);
+    auto endTime = estimatedEndTime(res);
     if (endTime.secsTo(now()) > Constants::CurrentBatchTrailingMargin.count()) {
         endTime = {};
     }
