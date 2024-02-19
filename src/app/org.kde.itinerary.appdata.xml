@@ -780,7 +780,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.02.0" date="2024-02-28"/>
+    <release version="24.02.0" date="2024-02-28">
+      <url>https://kde.org/announcements/megarelease/6/#itinerary</url>
+      <description>
+        <p>We improved the usability of Itinerary on phones by making common actions available on a bottom navigation bar which makes it easy to switch to your passes and your current trip.</p>
+        <p>The main timeline was redesigned and now entries can be expanded inline to show the intermediate stops and ongoing delays and disruptions. Speaking of events, it is now possible to manually add and edit entries and to share entire trips or single reservations to your phone via KDE Connect.</p>
+        <p>The indoor map in Itinerary now lists all amenities in the building or area you are currently looking at. This helps with things like finding a place to grab a coffee in a big train station, or searching for a place to get food in the vicinity of your hotel. This feature is powered by OpenStreetMap, works without the need to connect to the internet and no search terms ever leave your device.</p>
+        <p>When viewing a trip details, in addition to being able to consult the list of stops, it can look at a map of the trip.</p>
+      </description>
+    </release>
     <release version="23.08.5" date="2024-02-15"/>
     <release version="23.08.4" date="2023-12-07">
       <description>
