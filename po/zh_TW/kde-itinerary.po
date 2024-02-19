@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 00:38+0000\n"
-"PO-Revision-Date: 2024-01-22 16:11+0900\n"
+"PO-Revision-Date: 2024-02-19 05:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -2009,10 +2009,9 @@ msgid "CO₂: %1"
 msgstr "CO₂：%1"
 
 #: app/JourneySectionPage.qml:192
-#, fuzzy, kde-format
-#| msgid "Platform"
+#, kde-format
 msgid "Platform:"
-msgstr "月台"
+msgstr "月台："
 
 #: app/JourneySectionPage.qml:225
 #, fuzzy, kde-format
@@ -2418,29 +2417,25 @@ msgid "Spaces"
 msgstr "聊天空間"
 
 #: app/NavigationBar.qml:18
-#, fuzzy, kde-format
-#| msgid "Itinerary"
+#, kde-format
 msgctxt "@title:tab This isn't the app name, but the English noun"
 msgid "Itinerary"
 msgstr "旅行計劃"
 
 #: app/NavigationBar.qml:24
-#, fuzzy, kde-format
-#| msgid "Plan Trip"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
 msgstr "規劃旅程"
 
 #: app/NavigationBar.qml:33
-#, fuzzy, kde-format
-#| msgid "Passes & Programs"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
 msgstr "票卡與會員"
 
 #: app/NavigationBar.qml:38
-#, fuzzy, kde-format
-#| msgid "Current Ticket"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Current Ticket"
 msgstr "目前票券"
