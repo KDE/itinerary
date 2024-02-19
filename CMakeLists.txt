@@ -77,14 +77,15 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2
 
 
 include(ECMFindQmlModule)
-ecm_find_qmlmodule(QtLocation 5.11)
-ecm_find_qmlmodule(QtMultimedia 5.15)
-ecm_find_qmlmodule(QtPositioning 5.11)
-ecm_find_qmlmodule(org.kde.kitemmodels 1.0)
-ecm_find_qmlmodule(org.kde.prison 1.0)
-ecm_find_qmlmodule(org.kde.prison.scanner 1.0)
-ecm_find_qmlmodule(org.kde.kosmindoormap 1.0)
-ecm_find_qmlmodule(org.kde.kopeninghours 1.0)
+# TODO all of these should be required, but that doesn't work with Flatpak/Android yet...
+ecm_find_qmlmodule(QtLocation 6.0)
+ecm_find_qmlmodule(QtMultimedia 6.0)
+ecm_find_qmlmodule(QtPositioning 6.0)
+ecm_find_qmlmodule(org.kde.kitemmodels 5.245)
+ecm_find_qmlmodule(org.kde.prison 5.245)
+ecm_find_qmlmodule(org.kde.prison.scanner 5.245)
+ecm_find_qmlmodule(org.kde.kosmindoormap 24.02 REQUIRED)
+ecm_find_qmlmodule(org.kde.kopeninghours 24.02 REQUIRED)
 
 # runtime dependencies are build-time dependencies on Android
 if (ANDROID)
