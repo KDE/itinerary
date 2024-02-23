@@ -144,6 +144,22 @@ ColumnLayout {
         }
 
         onLocationsChanged: {
+            let locs = [];
+            for (let i = 0; i < count; ++i)
+                locs.push(geocodeModel.get(i));
+
+            // filter wrong matches that we might get here
+            // apparently the Nominatim result order is lost along the way, so we can't rely
+            // the first entry being the best one
+            if (postalCode.text !== "") {
+                locs = locs.filter(l => l.address.postalCode == postalCode.text);
+            }
+            if (locs.length > 0) {
+                root.latitude = locs[0].coordinate.latitude;
+                root.longitude = locs[0].coordinate.longitude;
+                return;
+            }
+
             if (count >= 1) {
                 root.latitude = geocodeModel.get(0).coordinate.latitude;
                 root.longitude = geocodeModel.get(0).coordinate.longitude;
