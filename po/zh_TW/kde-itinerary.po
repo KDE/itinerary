@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 00:38+0000\n"
+"POT-Creation-Date: 2024-02-24 00:37+0000\n"
 "PO-Revision-Date: 2024-02-19 05:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1242,27 +1242,27 @@ msgstr "地區"
 msgid "Country"
 msgstr "國家"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:196
 #, kde-format
 msgid "Coordinate"
 msgstr "座標"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick..."
 msgstr "選取..."
 
-#: app/FormPlaceEditorDelegate.qml:199
+#: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
 msgid "Address to coordinate"
 msgstr "地址到座標"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:231
 #, kde-format
 msgid "Coordinate to address"
 msgstr "座標到地址"
