@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import Qt.labs.qmlmodels as Models
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.itinerary
 
 Kirigami.ScrollablePage {
@@ -82,19 +83,8 @@ Kirigami.ScrollablePage {
             departureStop: departureLocation
         });
     }
-    // context drawer content
-    actions: [
-        Kirigami.Action {
-            text: i18n("Go To Now")
-            icon.name: "view-calendar-day"
-            onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
-        },
-        Kirigami.Action {
-            text: i18n("Current Ticket")
-            icon.name: "view-barcode-qr"
-            enabled: TimelineModel.currentBatchId !== ""
-            onTriggered: showDetailsPageForReservation(TimelineModel.currentBatchId)
-        },
+
+    property list<Kirigami.Action> addActions: [
         Kirigami.Action {
             text: i18n("Add train trip...")
             icon.name: "list-add-symbolic"
@@ -149,6 +139,57 @@ Kirigami.ScrollablePage {
             }
         }
     ]
+    Components.DoubleFloatingButton {
+        id: button
+        parent: root.overlay
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Settings.isMobile ? Kirigami.Units.largeSpacing : Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+
+        leadingAction: Kirigami.Action {
+            text: i18nc("@action:button", "Go To Now")
+            icon.name: "view-calendar-day"
+            onTriggered: listView.positionViewAtIndex(TripGroupProxyModel.todayRow, ListView.Beginning);
+        }
+
+        trailingAction: Kirigami.Action{
+            text: i18nc("@action:button", "Add trip")
+            icon.name: "list-add-symbolic"
+            onTriggered: addMenu.open()
+        }
+    }
+
+    SheetDrawer {
+        id: addMenu
+        headerItem: Kirigami.Heading {
+            leftPadding: Kirigami.Units.smallSpacing
+            text: i18nc("@title:group", "Add New Trip")
+        }
+        contentItem: QQC2.Control{
+            rightPadding: 0
+            leftPadding: 0
+            topPadding: Kirigami.Units.smallSpacing * 0.5
+            bottomPadding: Kirigami.Units.smallSpacing * 0.5
+            contentItem: ColumnLayout {
+                Repeater {
+                    model: root.addActions
+                    delegate: QQC2.ItemDelegate {
+                        required property Kirigami.Action modelData
+                        Layout.fillWidth: true
+                        text: modelData.text
+                        icon.name: modelData.icon.name
+                        onClicked: {
+                            addMenu.close()
+                            modelData.triggered()
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     // page content
     Kirigami.PromptDialog {
@@ -441,6 +482,10 @@ Kirigami.ScrollablePage {
             delegate: TimelineSectionDelegate { day: section }
             criteria: ViewSection.FullString
             labelPositioning: ViewSection.CurrentLabelAtStart | ViewSection.InlineLabels
+        }
+
+        footer: Item {
+            height: root.width < Kirigami.Units.gridUnit * 30 + button.width * 2 ? button.height : 0
         }
     }
 
