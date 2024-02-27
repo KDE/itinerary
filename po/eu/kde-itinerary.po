@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-06 03:07+0000\n"
+"POT-Creation-Date: 2024-02-27 02:30+0000\n"
 "PO-Revision-Date: 2024-01-10 05:28+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1239,27 +1239,27 @@ msgstr "Eskualdea"
 msgid "Country"
 msgstr "Herrialdea"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:196
 #, kde-format
 msgid "Coordinate"
 msgstr "Koordenatua"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick..."
 msgstr "Aukeratu..."
 
-#: app/FormPlaceEditorDelegate.qml:199
+#: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Helbidetik koordenatura"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:231
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Koordenatutik helbidera"

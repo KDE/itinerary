@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-06 03:07+0000\n"
+"POT-Creation-Date: 2024-02-27 02:30+0000\n"
 "PO-Revision-Date: 2024-02-10 13:31+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1259,27 +1259,27 @@ msgstr "Регион"
 msgid "Country"
 msgstr "Страна"
 
-#: app/FormPlaceEditorDelegate.qml:180
+#: app/FormPlaceEditorDelegate.qml:196
 #, kde-format
 msgid "Coordinate"
 msgstr "Координата"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "%1°, %2°"
 msgstr "%1°, %2°"
 
-#: app/FormPlaceEditorDelegate.qml:181
+#: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick..."
 msgstr "Выбрать…"
 
-#: app/FormPlaceEditorDelegate.qml:199
+#: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
 msgid "Address to coordinate"
 msgstr "Определить адрес по координате"
 
-#: app/FormPlaceEditorDelegate.qml:215
+#: app/FormPlaceEditorDelegate.qml:231
 #, kde-format
 msgid "Coordinate to address"
 msgstr "Определить координату по адресу"
