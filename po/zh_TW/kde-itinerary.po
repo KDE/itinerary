@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-24 00:37+0000\n"
+"POT-Creation-Date: 2024-02-27 00:37+0000\n"
 "PO-Revision-Date: 2024-02-19 05:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -124,7 +124,7 @@ msgstr "匯出..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
-#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:165
+#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
@@ -139,17 +139,17 @@ msgstr "刪除活動"
 msgid "Do you really want to delete this event?"
 msgstr "您確定要刪除這個活動嗎？"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
 #, kde-format
 msgid "Export"
 msgstr "匯出"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "作為旅行計劃檔案..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
 #, kde-format
 msgid "Send to %1"
 msgstr "傳送到 %1"
@@ -159,7 +159,7 @@ msgstr "傳送到 %1"
 msgid "Export Reservation"
 msgstr "匯出預約"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "旅行計劃檔案 (*.itinerary)"
@@ -976,7 +976,7 @@ msgid "Export Favorite Locations"
 msgstr "匯出最愛位置"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:229
+#: app/TimelinePage.qml:270
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 檔案 (*.gpx)"
@@ -3208,67 +3208,78 @@ msgstr "參加者 %1"
 msgid "Traveler %1"
 msgstr ""
 
-#: app/TimelinePage.qml:18
+#: app/TimelinePage.qml:19
 #, kde-format
 msgid "My Itinerary"
 msgstr "我的旅行計劃"
 
-#: app/TimelinePage.qml:88
-#, kde-format
-msgid "Go To Now"
-msgstr "跳到現在"
-
-#: app/TimelinePage.qml:93
-#, kde-format
-msgid "Current Ticket"
-msgstr "目前票券"
-
-#: app/TimelinePage.qml:99
+#: app/TimelinePage.qml:89
 #, kde-format
 msgid "Add train trip..."
 msgstr "新增火車旅程..."
 
-#: app/TimelinePage.qml:106
+#: app/TimelinePage.qml:96
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "新增渡輪旅程..."
 
-#: app/TimelinePage.qml:118
+#: app/TimelinePage.qml:108
 #, kde-format
 msgid "Add accommodation..."
 msgstr "新增住宿..."
 
-#: app/TimelinePage.qml:129
+#: app/TimelinePage.qml:119
 #, kde-format
 msgid "Add event..."
 msgstr "新增活動..."
 
-#: app/TimelinePage.qml:141
+#: app/TimelinePage.qml:131
 #, kde-format
 msgid "Add restaurant..."
 msgstr "新增餐廳..."
 
-#: app/TimelinePage.qml:158
+#: app/TimelinePage.qml:153
+#, fuzzy, kde-format
+#| msgid "Go To Now"
+msgctxt "@action:button"
+msgid "Go To Now"
+msgstr "跳到現在"
+
+#: app/TimelinePage.qml:159
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgctxt "@action:button"
+msgid "Add trip"
+msgstr "新增火車旅程..."
+
+#: app/TimelinePage.qml:169
+#, fuzzy, kde-format
+#| msgid "Add ferry trip..."
+msgctxt "@title:group"
+msgid "Add New Trip"
+msgstr "新增渡輪旅程..."
+
+#: app/TimelinePage.qml:199
 #, kde-format
 msgid "Delete Trip"
 msgstr "刪除旅程"
 
-#: app/TimelinePage.qml:159
+#: app/TimelinePage.qml:200
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "您確定要刪除這個旅程嗎？"
 
-#: app/TimelinePage.qml:189
+#: app/TimelinePage.qml:230
 #, kde-format
 msgid "As GPX file..."
 msgstr "作為 GPX 檔案..."
 
-#: app/TimelinePage.qml:218 app/TimelinePage.qml:227
+#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
 #, kde-format
 msgid "Export Trip"
 msgstr "匯出旅程"
 
-#: app/TimelinePage.qml:400
+#: app/TimelinePage.qml:441
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "今天沒有任何行程預定。"
@@ -3707,3 +3718,6 @@ msgstr "登入"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgid "Current Ticket"
+#~ msgstr "目前票券"

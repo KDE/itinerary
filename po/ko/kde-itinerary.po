@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-24 00:37+0000\n"
+"POT-Creation-Date: 2024-02-27 00:37+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -126,7 +126,7 @@ msgstr "내보내기..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
-#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:165
+#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
 msgstr "삭제"
@@ -141,17 +141,17 @@ msgstr "이벤트 삭제"
 msgid "Do you really want to delete this event?"
 msgstr "이 이벤트를 삭제하시겠습니까?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:178
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
 #, kde-format
 msgid "Export"
 msgstr "내보내기"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:181
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Itinerary 파일로..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:203
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
 #, kde-format
 msgid "Send to %1"
 msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
@@ -161,7 +161,7 @@ msgstr "%1(으)로 보내기|/|%1$[으 %1]로 보내기"
 msgid "Export Reservation"
 msgstr "예약 내보내기"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:220
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary 파일 (*.itinerary)"
@@ -978,7 +978,7 @@ msgid "Export Favorite Locations"
 msgstr "즐겨찾는 위치 내보내기"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:229
+#: app/TimelinePage.qml:270
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX 파일 (*.gpx)"
@@ -3218,67 +3218,78 @@ msgstr "참석자 %1"
 msgid "Traveler %1"
 msgstr "여행자 %1"
 
-#: app/TimelinePage.qml:18
+#: app/TimelinePage.qml:19
 #, kde-format
 msgid "My Itinerary"
 msgstr "내 여정"
 
-#: app/TimelinePage.qml:88
-#, kde-format
-msgid "Go To Now"
-msgstr "현재로 이동"
-
-#: app/TimelinePage.qml:93
-#, kde-format
-msgid "Current Ticket"
-msgstr "현재 승차권"
-
-#: app/TimelinePage.qml:99
+#: app/TimelinePage.qml:89
 #, kde-format
 msgid "Add train trip..."
 msgstr "철도 여정 추가..."
 
-#: app/TimelinePage.qml:106
+#: app/TimelinePage.qml:96
 #, kde-format
 msgid "Add ferry trip..."
 msgstr "페리 여정 추가..."
 
-#: app/TimelinePage.qml:118
+#: app/TimelinePage.qml:108
 #, kde-format
 msgid "Add accommodation..."
 msgstr "숙박 추가..."
 
-#: app/TimelinePage.qml:129
+#: app/TimelinePage.qml:119
 #, kde-format
 msgid "Add event..."
 msgstr "행사 추가..."
 
-#: app/TimelinePage.qml:141
+#: app/TimelinePage.qml:131
 #, kde-format
 msgid "Add restaurant..."
 msgstr "음식점 추가..."
 
-#: app/TimelinePage.qml:158
+#: app/TimelinePage.qml:153
+#, fuzzy, kde-format
+#| msgid "Go To Now"
+msgctxt "@action:button"
+msgid "Go To Now"
+msgstr "현재로 이동"
+
+#: app/TimelinePage.qml:159
+#, fuzzy, kde-format
+#| msgid "Add train trip..."
+msgctxt "@action:button"
+msgid "Add trip"
+msgstr "철도 여정 추가..."
+
+#: app/TimelinePage.qml:169
+#, fuzzy, kde-format
+#| msgid "Add ferry trip..."
+msgctxt "@title:group"
+msgid "Add New Trip"
+msgstr "페리 여정 추가..."
+
+#: app/TimelinePage.qml:199
 #, kde-format
 msgid "Delete Trip"
 msgstr "여정 삭제"
 
-#: app/TimelinePage.qml:159
+#: app/TimelinePage.qml:200
 #, kde-format
 msgid "Do you really want to delete this trip?"
 msgstr "이 여행을 삭제하시겠습니까?"
 
-#: app/TimelinePage.qml:189
+#: app/TimelinePage.qml:230
 #, kde-format
 msgid "As GPX file..."
 msgstr "GPX 파일로..."
 
-#: app/TimelinePage.qml:218 app/TimelinePage.qml:227
+#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
 #, kde-format
 msgid "Export Trip"
 msgstr "여행 내보내기"
 
-#: app/TimelinePage.qml:400
+#: app/TimelinePage.qml:441
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "오늘의 여정이 없습니다."
@@ -3724,6 +3735,9 @@ msgstr "로그인 중"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgid "Current Ticket"
+#~ msgstr "현재 승차권"
 
 #~ msgid "document-open"
 #~ msgstr "document-open"
