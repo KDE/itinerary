@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-14 11:08+0300\n"
+"PO-Revision-Date: 2024-02-27 12:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -117,12 +117,12 @@ msgstr "Düzenle"
 #: app/ActionsCard.qml:62
 #, kde-format
 msgid "Add to calendar..."
-msgstr "Takvime ekle..."
+msgstr "Takvime ekle…"
 
 #: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
 #, kde-format
 msgid "Export..."
-msgstr "Dışa Aktar..."
+msgstr "Dışa Aktar…"
 
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
@@ -151,7 +151,7 @@ msgstr "Dışa Aktar"
 #: app/ActionsCard.qml:140 app/TimelinePage.qml:222
 #, kde-format
 msgid "As Itinerary file..."
-msgstr "Yol Kılavuzu Dosyası Olarak..."
+msgstr "Yol Kılavuzu Dosyası Olarak…"
 
 #: app/ActionsCard.qml:151 app/TimelinePage.qml:244
 #, kde-format
@@ -836,7 +836,7 @@ msgstr "Bu rezervasyonu ekli belge yok."
 #: app/DocumentsCard.qml:117
 #, kde-format
 msgid "Add Document..."
-msgstr "Belge Ekle..."
+msgstr "Belge Ekle…"
 
 #: app/downloadjob.cpp:102
 #, kde-format
@@ -1067,7 +1067,7 @@ msgstr "Uçuşu Düzenle"
 #, kde-format
 msgctxt "flight departure"
 msgid "Departure - %1"
-msgstr "Kalkış - %1"
+msgstr "Kalkış — %1"
 
 #: app/FlightEditor.qml:81 app/FlightEditor.qml:133 app/FlightPage.qml:132
 #: app/FlightPage.qml:178
@@ -1114,7 +1114,7 @@ msgstr "Biniş zamanı, kalkış zamanından önce olmalıdır."
 #, kde-format
 msgctxt "flight arrival"
 msgid "Arrival - %1"
-msgstr "Varış - %1"
+msgstr "Varış — %1"
 
 #: app/FlightEditor.qml:140
 #, kde-format
@@ -1264,7 +1264,7 @@ msgstr "%1°, %2°"
 #: app/FormPlaceEditorDelegate.qml:197
 #, kde-format
 msgid "Pick..."
-msgstr "Seç..."
+msgstr "Seç…"
 
 #: app/FormPlaceEditorDelegate.qml:215
 #, kde-format
@@ -1465,7 +1465,7 @@ msgid ""
 msgstr ""
 "<p>Bir barkod tarayıcı ile tarayarak aşağıdaki sağlık sertifikalarını içe "
 "aktarabilirsiniz:<ul><li>Aşılamalar, testler veya iyileşmeler için Avrupa "
-"\"Sayısal Yeşil Sertifikalar\".</li><li>Hindistan aşılama sertifikaları.</"
+"“Sayısal Yeşil Sertifikalar”.</li><li>Hindistan aşılama sertifikaları.</"
 "li><li>ABD ve Kanada’nın bazı bölgelerinde kullanılan SMART Sağlık Kartları."
 "</li></p>"
 
@@ -1858,7 +1858,7 @@ msgstr "Önceki bağlantıları yükle"
 #: app/JourneyQueryPage.qml:172
 #, kde-format
 msgid "Still fetching results…"
-msgstr "Sonuçlar hâlâ getiriliyor..."
+msgstr "Sonuçlar hâlâ getiriliyor…"
 
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
@@ -2116,7 +2116,7 @@ msgstr "Haritada kendiliğinden izle"
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
 msgid "Waiting for data..."
-msgstr "Veri bekleniyor..."
+msgstr "Veri bekleniyor…"
 
 #: app/LiveStatusPage.qml:204
 #, kde-format
@@ -2295,7 +2295,7 @@ msgstr "İçe aktarılacak dosyalar veya URL’ler."
 #: app/main.qml:61
 #, kde-format
 msgid "Open File..."
-msgstr "Dosya Aç..."
+msgstr "Dosya Aç…"
 
 #: app/main.qml:69
 #, kde-format
@@ -2305,22 +2305,22 @@ msgstr "Yapıştır"
 #: app/main.qml:78
 #, kde-format
 msgid "Scan Barcode..."
-msgstr "Barkod Tara..."
+msgstr "Barkod Tara…"
 
 #: app/main.qml:86
 #, kde-format
 msgid "Add from Calendar..."
-msgstr "Takvimden Ekle..."
+msgstr "Takvimden Ekle…"
 
 #: app/main.qml:100
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr "Deutsche Bahn Çevrimiçi Bilet..."
+msgstr "Deutsche Bahn Çevrimiçi Bilet…"
 
 #: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr "SNCF Çevrimiçi Bilet..."
+msgstr "SNCF Çevrimiçi Bilet…"
 
 #: app/main.qml:122
 #, kde-format
@@ -2355,7 +2355,7 @@ msgstr "Yolcu Belgesi Verisini Dışa Aktar"
 #: app/main.qml:169 app/PassPage.qml:133
 #, kde-format
 msgid "Import..."
-msgstr "İçe Aktar..."
+msgstr "İçe Aktar…"
 
 #: app/main.qml:174
 #, kde-format
@@ -2375,7 +2375,7 @@ msgstr "İstatistikler"
 #: app/main.qml:217 app/WelcomePage.qml:41
 #, kde-format
 msgid "Settings..."
-msgstr "Ayarlar..."
+msgstr "Ayarlar…"
 
 #: app/main.qml:229 app/WelcomePage.qml:16
 #, kde-format
@@ -2567,7 +2567,7 @@ msgstr "Çevrimiçi Bilet"
 #: app/OnlineImportPage.qml:57
 #, kde-format
 msgid "Search..."
-msgstr "Ara..."
+msgstr "Ara…"
 
 #: app/passmanager.cpp:245
 #, kde-format
@@ -2590,7 +2590,7 @@ msgstr "Geçerli"
 #: app/passmanager.cpp:269
 #, kde-format
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: app/PassPage.qml:16
 #, kde-format
@@ -2600,19 +2600,19 @@ msgstr "Kartlar ve Programlar"
 #: app/PassPage.qml:20
 #, kde-format
 msgid "Add Program Membership..."
-msgstr "Program Üyeliği Ekle..."
+msgstr "Program Üyeliği Ekle…"
 
 #: app/PassPage.qml:50
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: app/PassPage.qml:101
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 — %2"
 
 #: app/PassPage.qml:131
 #, kde-format
@@ -2879,7 +2879,7 @@ msgstr ""
 #: app/SettingsPage.qml:81
 #, kde-format
 msgid "Public Transport Information Sources..."
-msgstr "Toplu Taşıma Bilgi Kaynakları..."
+msgstr "Toplu Taşıma Bilgi Kaynakları…"
 
 #: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
 #: app/WeatherForecastPage.qml:19
@@ -2902,7 +2902,7 @@ msgid ""
 msgstr ""
 "<a href=\"https://creativecommons.org/licenses/by/4.0\">Creative Commons 4.0 "
 "BY International</a> lisansı ile <a href=\"https://www.met.no/\">Norveç "
-"Meteoroloji Enstitüsü</a>'nden alınan veri kullanılmaktadır."
+"Meteoroloji Enstitüsü</a>’nden alınan veri kullanılmaktadır."
 
 #: app/SettingsPage.qml:107
 #, kde-format
@@ -2964,7 +2964,7 @@ msgstr "Bildirimler"
 #: app/SettingsPage.qml:156
 #, kde-format
 msgid "Configure Notifications..."
-msgstr "Bildirimleri Yapılandır..."
+msgstr "Bildirimleri Yapılandır…"
 
 #: app/SettingsPage.qml:165
 #, kde-format
@@ -2974,7 +2974,7 @@ msgstr "Kilit ekranında bildirimleri göster"
 #: app/SettingsPage.qml:175 app/SettingsPage.qml:203
 #, kde-format
 msgid "Request permissions..."
-msgstr "İzinler iste..."
+msgstr "İzinler iste…"
 
 #: app/SettingsPage.qml:176
 #, kde-format
@@ -3241,48 +3241,45 @@ msgstr "Yolcu Belgem"
 #: app/TimelinePage.qml:89
 #, kde-format
 msgid "Add train trip..."
-msgstr "Tren Gezisi Ekle..."
+msgstr "Tren Gezisi Ekle…"
 
 #: app/TimelinePage.qml:96
 #, kde-format
 msgid "Add ferry trip..."
-msgstr "Feribot Gezisi Ekle..."
+msgstr "Feribot Gezisi Ekle…"
 
 #: app/TimelinePage.qml:108
 #, kde-format
 msgid "Add accommodation..."
-msgstr "Konaklama ekle..."
+msgstr "Konaklama ekle…"
 
 #: app/TimelinePage.qml:119
 #, kde-format
 msgid "Add event..."
-msgstr "Etkinlik Ekle..."
+msgstr "Etkinlik Ekle…"
 
 #: app/TimelinePage.qml:131
 #, kde-format
 msgid "Add restaurant..."
-msgstr "Restoran Ekle..."
+msgstr "Restoran Ekle…"
 
 #: app/TimelinePage.qml:153
-#, fuzzy, kde-format
-#| msgid "Go To Now"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Şimdiye Git"
 
 #: app/TimelinePage.qml:159
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "Tren Gezisi Ekle..."
+msgstr "Gezi Ekle…"
 
 #: app/TimelinePage.qml:169
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr "Feribot Gezisi Ekle..."
+msgstr "Yeni Gezi Ekle…"
 
 #: app/TimelinePage.qml:199
 #, kde-format
@@ -3297,7 +3294,7 @@ msgstr "Bu geziyi silmeyi gerçekten istiyor musunuz?"
 #: app/TimelinePage.qml:230
 #, kde-format
 msgid "As GPX file..."
-msgstr "GPX Dosyası Olarak..."
+msgstr "GPX Dosyası Olarak…"
 
 #: app/TimelinePage.qml:259 app/TimelinePage.qml:268
 #, kde-format
@@ -3737,7 +3734,7 @@ msgstr "Anladım!"
 #: matrix/matrixmanager.cpp:110
 #, kde-format
 msgid "Syncing…"
-msgstr "Eşzamanlanıyor..."
+msgstr "Eşzamanlanıyor…"
 
 #: matrix/matrixmanager.cpp:43
 #, kde-format

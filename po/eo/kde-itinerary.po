@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-15 06:58+0100\n"
+"PO-Revision-Date: 2024-02-27 21:53+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3260,25 +3260,22 @@ msgid "Add restaurant..."
 msgstr "Aldoni restoracion..."
 
 #: app/TimelinePage.qml:153
-#, fuzzy, kde-format
-#| msgid "Go To Now"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Iri Al Nun"
 
 #: app/TimelinePage.qml:159
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "Aldoni trajnvojaĝon..."
+msgstr "Aldoni vojaĝon"
 
 #: app/TimelinePage.qml:169
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr "Aldoni pramvojaĝon..."
+msgstr "Aldoni Novan Vojaĝon"
 
 #: app/TimelinePage.qml:199
 #, kde-format

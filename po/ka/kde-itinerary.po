@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-14 05:13+0100\n"
+"PO-Revision-Date: 2024-02-27 04:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3263,25 +3263,22 @@ msgid "Add restaurant..."
 msgstr "რესტორნის დამატება..."
 
 #: app/TimelinePage.qml:153
-#, fuzzy, kde-format
-#| msgid "Go To Now"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "ახლავე გადასვლა"
 
 #: app/TimelinePage.qml:159
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "მატარებლით მოგზაურობის დამატება..."
+msgstr "მოგზაურობის დამატება"
 
 #: app/TimelinePage.qml:169
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr "ბორნით მოგზაურობის დამატება..."
+msgstr "ახალი მოგზაურობის დამატება"
 
 #: app/TimelinePage.qml:199
 #, kde-format
