@@ -3263,11 +3263,10 @@ msgid "Go To Now"
 msgstr ""
 
 #: app/TimelinePage.qml:159
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "Přidat cestu vlakem..."
+msgstr ""
 
 #: app/TimelinePage.qml:169
 #, kde-format
@@ -3740,6 +3739,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgid "Current Ticket"
-#~ msgstr "Současný lístek"
