@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-27 12:47+0300\n"
+"PO-Revision-Date: 2024-02-29 17:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -3251,7 +3251,7 @@ msgstr "Feribot Gezisi Ekle…"
 #: app/TimelinePage.qml:108
 #, kde-format
 msgid "Add accommodation..."
-msgstr "Konaklama ekle…"
+msgstr "Konaklama Ekle…"
 
 #: app/TimelinePage.qml:119
 #, kde-format
@@ -3667,7 +3667,7 @@ msgstr "%1 m/sn"
 #: app/WelcomePage.qml:16
 #, kde-format
 msgid "Welcome!"
-msgstr "Hoş geldiniz!"
+msgstr "Hoş Geldiniz!"
 
 #: app/WelcomePage.qml:20
 #, kde-format
