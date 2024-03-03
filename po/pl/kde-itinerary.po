@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-27 00:37+0000\n"
-"PO-Revision-Date: 2024-02-24 17:08+0100\n"
+"PO-Revision-Date: 2024-03-02 12:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -3272,25 +3272,22 @@ msgid "Add restaurant..."
 msgstr "Dodaj restaurację..."
 
 #: app/TimelinePage.qml:153
-#, fuzzy, kde-format
-#| msgid "Go To Now"
+#, kde-format
 msgctxt "@action:button"
 msgid "Go To Now"
 msgstr "Przejdź do teraz"
 
 #: app/TimelinePage.qml:159
-#, fuzzy, kde-format
-#| msgid "Add train trip..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add trip"
-msgstr "Dodaj podróż koleją..."
+msgstr "Dodaj podróż"
 
 #: app/TimelinePage.qml:169
-#, fuzzy, kde-format
-#| msgid "Add ferry trip..."
+#, kde-format
 msgctxt "@title:group"
 msgid "Add New Trip"
-msgstr "Dodaj podróż promem..."
+msgstr "Dodaj nową podróż"
 
 #: app/TimelinePage.qml:199
 #, kde-format
