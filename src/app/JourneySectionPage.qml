@@ -319,17 +319,25 @@ Kirigami.Page {
                                 value: trailingSegmentLength
                             }
                         }
-                        footer: JourneySectionStopDelegate {
-                            stop: journeySection.arrival
-                            isArrival: true
-                            leadingProgress: sectionModel.arrivalLeadingProgress
-                            stopoverPassed: sectionModel.arrived
-                            Binding {
-                                target: sectionModel
-                                property: "arrivalLeadingSegmentLength"
-                                value: leadingSegmentLength
+                        footer: ColumnLayout {
+                            width: ListView.view.width
+                            JourneySectionStopDelegate {
+                                Layout.fillWidth: true
+                                stop: journeySection.arrival
+                                isArrival: true
+                                leadingProgress: sectionModel.arrivalLeadingProgress
+                                stopoverPassed: sectionModel.arrived
+                                Binding {
+                                    target: sectionModel
+                                    property: "arrivalLeadingSegmentLength"
+                                    value: leadingSegmentLength
+                                }
+                                visible: root.journeySection != undefined
                             }
-                            visible: root.journeySection != undefined
+                            // spacer for floating buttons not overlapping the list view
+                            Item {
+                                height: mapButton.height
+                            }
                         }
                     }
                 }
