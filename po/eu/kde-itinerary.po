@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 00:37+0000\n"
+"POT-Creation-Date: 2024-03-06 00:38+0000\n"
 "PO-Revision-Date: 2024-02-28 00:10+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2038,7 +2038,7 @@ msgstr "Ibilgailuaren karga:"
 msgid "Show location"
 msgstr "Erakutsi kokalekua"
 
-#: app/JourneySectionPage.qml:447
+#: app/JourneySectionPage.qml:455
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
