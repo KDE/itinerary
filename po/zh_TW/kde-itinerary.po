@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 02:30+0000\n"
+"POT-Creation-Date: 2024-03-07 02:19+0000\n"
 "PO-Revision-Date: 2024-01-22 16:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1970,7 +1970,7 @@ msgstr "平均速度：%1"
 msgid "CO₂: %1"
 msgstr "CO₂：%1"
 
-#: app/JourneySectionPage.qml:290
+#: app/JourneySectionPage.qml:298
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"

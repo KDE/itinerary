@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 02:30+0000\n"
+"POT-Creation-Date: 2024-03-07 02:19+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2080,7 +2080,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionPage.qml:290
+#: app/JourneySectionPage.qml:298
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"

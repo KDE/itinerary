@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-27 02:30+0000\n"
+"POT-Creation-Date: 2024-03-07 02:19+0000\n"
 "PO-Revision-Date: 2024-01-06 03:32\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1968,7 +1968,7 @@ msgstr ""
 msgid "CO₂: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:290
+#: app/JourneySectionPage.qml:298
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
