@@ -782,6 +782,7 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
+    <release version="24.02.1" date="2024-03-21"/>
     <release version="24.02.0" date="2024-02-28">
       <url>https://kde.org/announcements/megarelease/6/#itinerary</url>
       <description>
