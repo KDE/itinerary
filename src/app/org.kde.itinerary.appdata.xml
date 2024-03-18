@@ -782,7 +782,17 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.02.1" date="2024-03-21"/>
+    <release version="24.02.1" date="2024-03-21">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Deutsche Bahn, Eckerö Line, European Sleeper, Eventim, Flibco, Leo Express, National Express, ÖBB, osmcal.org, Salzbergwerk, SNCF and ti.to.</li>
+          <li>Filter implausible geo coder results on address editing.</li>
+          <li>Fix overlap between floating map button and arrival details on the journey details page.</li>
+          <li>Improve Deutsche Bahn realtime information when facing cancelled or replacement trains.</li>
+          <li>Improve train coach type detection in the coach layout view.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.02.0" date="2024-02-28">
       <url>https://kde.org/announcements/megarelease/6/#itinerary</url>
       <description>
