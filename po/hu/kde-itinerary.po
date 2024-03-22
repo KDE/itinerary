@@ -1,0 +1,3717 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the itinerary package.
+#
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+msgid ""
+msgstr ""
+"Project-Id-Version: itinerary\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-06 00:38+0000\n"
+"PO-Revision-Date: 2024-03-21 22:23+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ulysses@fsf.hu"
+
+#: app/AboutPage.qml:18 app/main.qml:236
+#, kde-format
+msgid "About"
+msgstr "Névjegy"
+
+#: app/AboutPage.qml:146
+#, kde-format
+msgid "Copyright: %1"
+msgstr "Copyright: %1"
+
+#: app/AboutPage.qml:152
+#, kde-format
+msgid "Homepage: <a href=\"%1\">%1</a>"
+msgstr "Honlap: <a href=\"%1\">%1</a>"
+
+#: app/AboutPage.qml:159
+#, kde-format
+msgid "License: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+msgstr "Licenc: <a href=\"https://spdx.org/licenses/%1.html\">%2</a>"
+
+#: app/AboutPage.qml:178
+#, kde-format
+msgid "License: <a href=\"%2\">%1</a>"
+msgstr "Licenc: <a href=\"%2\">%1</a>"
+
+#: app/AboutPage.qml:187
+#, kde-format
+msgid ""
+"KDE Itinerary is developed by the KDE community as free software and uses "
+"the components listed below."
+msgstr ""
+"A KDE Itinerary a KDE közösség által fejlesztett szabad szoftver, és az "
+"alábbi komponenseket használja."
+
+#: app/AboutPage.qml:198
+#, kde-format
+msgid "KDE Itinerary uses public transport data from the following sources."
+msgstr ""
+"A KDE Itinerary a következő forrásokból származó tömegközlekedési adatokat "
+"használja."
+
+#: app/AboutPage.qml:209
+#, kde-format
+msgid "Developer information"
+msgstr "Fejlesztői információk"
+
+#: app/AboutPage.qml:215
+#, kde-format
+msgid "Application version: %1"
+msgstr "Alkalmazásverzió: %1"
+
+#: app/AboutPage.qml:231
+#, kde-format
+msgid "Extractor capabilities:"
+msgstr "Kinyerőképességek:"
+
+#: app/AboutPage.qml:236
+#, kde-format
+msgid "Extractor capabilities copied to clipboard"
+msgstr "Kinyerőképességek a vágólapra másolva"
+
+#: app/ActionsCard.qml:32
+#, kde-format
+msgid "Show Boarding Pass"
+msgstr "Beszállókártya megjelenítése"
+
+#: app/ActionsCard.qml:32
+#, kde-format
+msgid "Show Ticket"
+msgstr "Jegy megjelenítése"
+
+#: app/ActionsCard.qml:38
+#, kde-format
+msgid "Add transfer before"
+msgstr "Átszállás hozzáadása elé"
+
+#: app/ActionsCard.qml:47
+#, kde-format
+msgid "Add transfer after"
+msgstr "Átszállás hozzáadása után"
+
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/TicketPage.qml:136
+#, kde-format
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: app/ActionsCard.qml:62
+#, kde-format
+msgid "Add to calendar..."
+msgstr "Hozzáadás a naptárhoz…"
+
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
+#, kde-format
+msgid "Export..."
+msgstr "Exportálás…"
+
+#: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
+#: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
+#: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:206
+#, kde-format
+msgid "Delete"
+msgstr "Törlés"
+
+#: app/ActionsCard.qml:117
+#, kde-format
+msgid "Delete Event"
+msgstr "Esemény törlése"
+
+#: app/ActionsCard.qml:118
+#, kde-format
+msgid "Do you really want to delete this event?"
+msgstr "Biztosan törölni szeretné ezt az eseményt?"
+
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
+#, kde-format
+msgid "Export"
+msgstr "Exportálás"
+
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
+#, kde-format
+msgid "As Itinerary file..."
+msgstr "Itinerary fájlként…"
+
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
+#, kde-format
+msgid "Send to %1"
+msgstr "Küldés ide: %1"
+
+#: app/ActionsCard.qml:165
+#, kde-format
+msgid "Export Reservation"
+msgstr "Foglalás exportálása"
+
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
+#, kde-format
+msgid "Itinerary file (*.itinerary)"
+msgstr "Itinerary fájl (*.itinerary)"
+
+#: app/ActionsCard.qml:172 app/ProgramMembershipPage.qml:135
+#: app/TicketPage.qml:130
+#, kde-format
+msgid "Actions"
+msgstr "Műveletek"
+
+#: app/ActionsCard.qml:190
+#, kde-format
+msgctxt "cancel as in revoking a booking"
+msgid "Cancel Reservation"
+msgstr "Foglalás törlése"
+
+#: app/ActionsCard.qml:191
+#, kde-format
+msgid "Check-in"
+msgstr "Bejelentkezés"
+
+#: app/ActionsCard.qml:192
+#, kde-format
+msgid "Download"
+msgstr "Letöltés"
+
+#: app/ActionsCard.qml:193
+#, kde-format
+msgctxt "participate in an event"
+msgid "Join"
+msgstr ""
+
+#: app/ActionsCard.qml:194
+#, kde-format
+msgid "Reserve"
+msgstr ""
+
+#: app/ActionsCard.qml:195
+#, kde-format
+msgid "Change Reservation"
+msgstr "Foglalás módosítása"
+
+#: app/ActionsCard.qml:196
+#, kde-format
+msgid "View Reservation"
+msgstr "Foglalás megtekintése"
+
+#: app/AlternativeJourneyPage.qml:19
+#, kde-format
+msgid "Alternative Connections"
+msgstr "Alternatív kapcsolatok"
+
+#: app/AlternativeJourneyPage.qml:62 app/AlternativeJourneyPage.qml:72
+#, kde-format
+msgctxt "to travel destination"
+msgid "To %1"
+msgstr "Ide: %1"
+
+#: app/AlternativeJourneyPage.qml:88 app/DepartureQueryPage.qml:40
+#: app/JourneyRequestPage.qml:221 app/TransferPage.qml:108
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Long distance trains"
+msgstr "Távolsági vonatok"
+
+#: app/AlternativeJourneyPage.qml:96 app/DepartureQueryPage.qml:47
+#: app/JourneyRequestPage.qml:231 app/TransferPage.qml:116
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Local trains"
+msgstr "Helyi vonatok"
+
+#: app/AlternativeJourneyPage.qml:104 app/DepartureQueryPage.qml:54
+#: app/JourneyRequestPage.qml:241 app/TransferPage.qml:124
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Rapid transit"
+msgstr "Gyorsvasút"
+
+#: app/AlternativeJourneyPage.qml:112 app/DepartureQueryPage.qml:61
+#: app/JourneyRequestPage.qml:251 app/TransferPage.qml:132
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Bus"
+msgstr "Busz"
+
+#: app/AlternativeJourneyPage.qml:120 app/DepartureQueryPage.qml:68
+#: app/JourneyRequestPage.qml:261 app/TransferPage.qml:140
+#, kde-format
+msgctxt "journey query search constraint, title"
+msgid "Ferry"
+msgstr "Komp"
+
+#: app/AlternativeJourneyPage.qml:130
+#, kde-format
+msgid "Replace Journey"
+msgstr "Utazás cseréje"
+
+#: app/AlternativeJourneyPage.qml:131
+#, kde-format
+msgid ""
+"Do you really want to replace your existing reservation with the newly "
+"selected journey?"
+msgstr ""
+"Biztosan ki szeretné cserélni meglévő foglalását az újonnan kiválasztott "
+"utazásra?"
+
+#: app/AlternativeJourneyPage.qml:135
+#, kde-format
+msgid "Replace"
+msgstr "Csere"
+
+#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:755
+#: app/applicationcontroller.cpp:770
+#, kde-format
+msgid "Import failed: %1"
+msgstr "Sikertelen importálás: %1"
+
+#: app/applicationcontroller.cpp:348
+#, kde-format
+msgid "Import failed: File too large."
+msgstr "Sikertelen importálás: a fájl túl nagy."
+
+#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:832
+#: app/applicationcontroller.cpp:842
+#, kde-format
+msgid "One reservation imported."
+msgid_plural "%1 reservations imported."
+msgstr[0] "1 foglalás importálva."
+msgstr[1] "%1 foglalás importálva."
+
+#: app/applicationcontroller.cpp:437
+#, kde-format
+msgid "Health certificate imported."
+msgstr "Egészségügyi igazolás importálva."
+
+#: app/applicationcontroller.cpp:452
+#, kde-format
+msgid "One pass imported."
+msgid_plural "%1 passes imported."
+msgstr[0] "1 jegy importálva."
+msgstr[1] "%1 jegy importálva."
+
+#: app/applicationcontroller.cpp:455
+#, kde-format
+msgid "Pass imported."
+msgstr "Jegy importálva."
+
+#: app/applicationcontroller.cpp:492
+#, kde-format
+msgid "Nothing imported."
+msgstr "Semmi sem lett importálva."
+
+#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:601
+#: app/applicationcontroller.cpp:619 app/applicationcontroller.cpp:663
+#: app/applicationcontroller.cpp:702 app/applicationcontroller.cpp:720
+#, kde-format
+msgid "Export failed: %1"
+msgstr "Exportálás sikertelen: %1"
+
+#: app/applicationcontroller.cpp:575 app/applicationcontroller.cpp:584
+#: app/applicationcontroller.cpp:676 app/applicationcontroller.cpp:685
+#, kde-format
+msgid "Export completed."
+msgstr "Az exportálás befejeződött."
+
+#: app/applicationcontroller.cpp:611
+#, kde-format
+msgid "Trip sent."
+msgstr "Kirándulás elküldve."
+
+#: app/applicationcontroller.cpp:712
+#, kde-format
+msgid "Reservation sent."
+msgstr "Foglalás elküldve."
+
+#: app/applicationcontroller.cpp:795
+#, kde-format
+msgid "Import completed."
+msgstr "Az importálás befejeződött."
+
+#: app/BarcodeScanModeButton.qml:17
+#, kde-format
+msgctxt "@action:button"
+msgid "Barcode Scan Mode"
+msgstr "Vonalkódolvasó mód"
+
+#: app/BarcodeScanModeController.qml:33
+#, kde-format
+msgid "In barcode scanning mode"
+msgstr "Vonalkódolvasó módban"
+
+#: app/BarcodeScannerPage.qml:17
+#, kde-format
+msgid "Scan Barcode"
+msgstr "Vonalkód beolvasása"
+
+#: app/BarcodeScannerPage.qml:75
+#, kde-format
+msgid "No camera available."
+msgstr "Nem érhető el kamera."
+
+#: app/BarcodeScannerPage.qml:88
+#, kde-format
+msgid "Light"
+msgstr "Lámpa"
+
+#: app/BoatDelegate.qml:17 app/BusDelegate.qml:33 app/TrainDelegate.qml:34
+#: app/TrainPage.qml:58 app/TransferDelegate.qml:61
+#, kde-format
+msgid "%1 to %2"
+msgstr "%1 - %2"
+
+#: app/BoatDelegate.qml:32
+#, kde-format
+msgid "From: %1"
+msgstr "Innen: %1"
+
+#: app/BoatDelegate.qml:46
+#, kde-format
+msgid "To: %1"
+msgstr "Ide: %1"
+
+#: app/BoatDelegate.qml:57
+#, kde-format
+msgid "Arrival time: %1"
+msgstr "Érkezési idő: %1"
+
+#: app/BoatEditor.qml:17
+#, kde-format
+msgid "Edit Boat Trip"
+msgstr "Hajókirándulás szerkesztése"
+
+#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
+#, kde-format
+msgid "Boat"
+msgstr "Hajó"
+
+#: app/BoatEditor.qml:54 app/BoatPage.qml:54
+#, kde-format
+msgctxt "Boat departure"
+msgid "Departure"
+msgstr "Indulás"
+
+#: app/BoatEditor.qml:60
+#, kde-format
+msgctxt "Boat departure"
+msgid "Departure Time"
+msgstr "Indulási idő"
+
+#: app/BoatEditor.qml:64
+#, kde-format
+msgid "Departure time has to be set."
+msgstr "Az indulási időt be kell állítani."
+
+#: app/BoatEditor.qml:69 app/BoatEditor.qml:110
+#, kde-format
+msgctxt "boat terminal"
+msgid "Terminal Name"
+msgstr "Kikötő neve"
+
+#: app/BoatEditor.qml:72
+#, kde-format
+msgid "Departure terminal must not be empty."
+msgstr "Az indulási kikötő nem lehet üres."
+
+#: app/BoatEditor.qml:86 app/BoatPage.qml:84
+#, kde-format
+msgctxt "Boat arrival"
+msgid "Arrival"
+msgstr "Érkezés"
+
+#: app/BoatEditor.qml:92
+#, kde-format
+msgctxt "Boat arrival"
+msgid "Arrival Time"
+msgstr "Érkezési idő"
+
+#: app/BoatEditor.qml:103
+#, kde-format
+msgid "Arrival time has to be after the departure time."
+msgstr "Az érkezési időnek az indulási idő után kell lennie."
+
+#: app/BoatEditor.qml:113
+#, kde-format
+msgid "Arrival terminal must not be empty."
+msgstr "Az érkezési kikötő nem lehet üres."
+
+#: app/BoatPage.qml:16
+#, kde-format
+msgid "Boat Ticket"
+msgstr "Hajójegy"
+
+#: app/BoatPage.qml:59 app/BusPage.qml:68 app/FlightPage.qml:118
+#: app/TrainPage.qml:86
+#, kde-format
+msgid "Departure time"
+msgstr "Indulási idő"
+
+#: app/BoatPage.qml:66 app/BoatPage.qml:96
+#, kde-format
+msgctxt "Boat terminal"
+msgid "Terminal"
+msgstr "Kikötő"
+
+#: app/BoatPage.qml:89 app/BusPage.qml:133 app/FlightPage.qml:169
+#: app/TrainPage.qml:169
+#, kde-format
+msgid "Arrival time"
+msgstr "Érkezési idő"
+
+#: app/BookingCard.qml:23
+#, kde-format
+msgid "Booking"
+msgstr "Foglalás"
+
+#: app/BookingCard.qml:29 app/BookingEditorCard.qml:43
+#, kde-format
+msgid "Reference"
+msgstr "Hivatkozás"
+
+#: app/BookingCard.qml:35 app/BookingCard.qml:67
+#: app/ProgramMembershipPage.qml:98
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Copy to Clipboard"
+msgstr "Másolás a vágólapra"
+
+#: app/BookingCard.qml:39
+#, kde-format
+msgid "Booking reference copied to clipboard"
+msgstr ""
+
+#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51
+#, kde-format
+msgid "Under name"
+msgstr ""
+
+#: app/BookingCard.qml:61
+#, kde-format
+msgid "Ticket number:"
+msgstr ""
+
+#: app/BookingCard.qml:71
+#, kde-format
+msgid "Ticket number copied to clipboard"
+msgstr ""
+
+#: app/BookingEditorCard.qml:37
+#, kde-format
+msgctxt "@title:group"
+msgid "Booking"
+msgstr ""
+
+#: app/BusDelegate.qml:136 app/TrainDelegate.qml:162
+#, kde-format
+msgid "1 intermediate stop"
+msgid_plural "%1 intermediate stops"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/BusEditor.qml:17
+#, kde-format
+msgid "Edit Bus Reservation"
+msgstr ""
+
+#: app/BusEditor.qml:47 app/TrainEditor.qml:51
+#, kde-format
+msgid "Board Later"
+msgstr ""
+
+#: app/BusEditor.qml:50
+#, kde-format
+msgid "Change departure stop"
+msgstr ""
+
+#: app/BusEditor.qml:60 app/TrainEditor.qml:64
+#, kde-format
+msgid "Alight Earlier"
+msgstr ""
+
+#: app/BusEditor.qml:63
+#, kde-format
+msgid "Change arrival stop"
+msgstr ""
+
+#: app/BusEditor.qml:83
+#, kde-format
+msgctxt "@title"
+msgid "Bus"
+msgstr ""
+
+#: app/BusEditor.qml:88
+#, kde-format
+msgctxt "bus departure"
+msgid "Departure"
+msgstr ""
+
+#: app/BusEditor.qml:93 app/BusEditor.qml:115
+#, kde-format
+msgctxt "bus stop"
+msgid "Stop"
+msgstr ""
+
+#: app/BusEditor.qml:98 app/BusEditor.qml:120
+#, kde-format
+msgctxt "bus stop platform"
+msgid "Platform"
+msgstr ""
+
+#: app/BusEditor.qml:102 app/TrainEditor.qml:110
+#, kde-format
+msgid "Board later"
+msgstr ""
+
+#: app/BusEditor.qml:110
+#, kde-format
+msgctxt "bus arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/BusEditor.qml:124 app/TrainEditor.qml:135
+#, kde-format
+msgid "Alight earlier"
+msgstr ""
+
+#: app/BusEditor.qml:133 app/BusEditor.qml:139 app/BusPage.qml:182
+#: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
+#: app/FlightPage.qml:95 app/TrainEditor.qml:145 app/TrainEditor.qml:157
+#: app/TrainPage.qml:243
+#, kde-format
+msgid "Seat"
+msgstr ""
+
+#: app/BusPage.qml:18
+#, kde-format
+msgid "Bus Ticket"
+msgstr ""
+
+#: app/BusPage.qml:55
+#, kde-format
+msgctxt "Bus departure"
+msgid "Departure"
+msgstr ""
+
+#: app/BusPage.qml:88 app/FlightPage.qml:123 app/TrainPage.qml:115
+#, kde-format
+msgid "Departure date"
+msgstr ""
+
+#: app/BusPage.qml:96 app/BusPage.qml:157
+#, kde-format
+msgctxt "bus station"
+msgid "Station"
+msgstr ""
+
+#: app/BusPage.qml:104 app/BusPage.qml:165
+#, kde-format
+msgctxt "bus station platform"
+msgid "Platform"
+msgstr ""
+
+#: app/BusPage.qml:121
+#, kde-format
+msgctxt "Bus arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/BusPage.qml:212 app/TrainPage.qml:313
+#, kde-format
+msgid "Alternatives"
+msgstr ""
+
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:318
+#, kde-format
+msgid "Journey Details"
+msgstr ""
+
+#: app/calendarhelper.cpp:28
+#, kde-format
+msgid "Transfer to %1"
+msgstr ""
+
+#: app/CalendarImportPage.qml:19
+#, kde-format
+msgid "Calendar Import"
+msgstr ""
+
+#: app/CalendarImportPage.qml:57
+#, kde-format
+msgid "No importable events found in this calendar."
+msgstr ""
+
+#: app/CalendarImportPage.qml:71
+#, kde-format
+msgid "Import selected events"
+msgstr ""
+
+#: app/CalendarSelectionSheet.qml:13
+#, kde-format
+msgid "Select Calendar"
+msgstr ""
+
+#: app/CarRentalDelegate.qml:20
+#, kde-format
+msgid "Rental Car Drop-off"
+msgstr ""
+
+#: app/CarRentalDelegate.qml:21
+#, kde-format
+msgid "Rental Car Pick-up"
+msgstr ""
+
+#: app/CarRentalDelegate.qml:49
+#, kde-format
+msgid "Drop-off: %1"
+msgstr ""
+
+#: app/CarRentalPage.qml:15 app/CarRentalPage.qml:22
+#, kde-format
+msgid "Rental Car"
+msgstr ""
+
+#: app/CarRentalPage.qml:26
+#, kde-format
+msgid "Pick-up"
+msgstr ""
+
+#: app/CarRentalPage.qml:32 app/CarRentalPage.qml:59
+#, kde-format
+msgid "Time"
+msgstr ""
+
+#: app/CarRentalPage.qml:41 app/CarRentalPage.qml:68
+#: app/FormPlaceDelegate.qml:30 app/HotelPage.qml:25
+#, kde-format
+msgid "Location"
+msgstr ""
+
+#: app/CarRentalPage.qml:53
+#, kde-format
+msgid "Drop-off"
+msgstr ""
+
+#: app/CarRentalPage.qml:80
+#, kde-format
+msgid "Vehicle"
+msgstr ""
+
+#: app/CarRentalPage.qml:85
+#, kde-format
+msgid "Type"
+msgstr ""
+
+#: app/CarRentalPage.qml:95
+#, kde-format
+msgid "Model"
+msgstr ""
+
+#: app/CarRentalPage.qml:105
+#, kde-format
+msgid "Brand"
+msgstr ""
+
+#: app/ContactCard.qml:22 app/ContactEditorCard.qml:27
+#, kde-format
+msgctxt "@title:group"
+msgid "Contact"
+msgstr ""
+
+#: app/ContactCard.qml:27 app/ContactEditorCard.qml:33
+#, kde-format
+msgid "Telephone"
+msgstr ""
+
+#: app/ContactCard.qml:37 app/ContactEditorCard.qml:42
+#, kde-format
+msgid "Email"
+msgstr ""
+
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:107
+#: app/EventPage.qml:90
+#, kde-format
+msgid "Website"
+msgstr ""
+
+#: app/CountryComboBox.qml:47
+#, kde-format
+msgid "Select country"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:21
+#, kde-format
+msgid "Departures"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:24 app/JourneyQueryPage.qml:32
+#: app/TransferPage.qml:61
+#, kde-format
+msgid "Earlier"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:30 app/JourneyQueryPage.qml:38
+#: app/TransferPage.qml:67
+#, kde-format
+msgid "Later"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Canceled"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:183
+#, kde-format
+msgctxt "destination"
+msgid "To:"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:222
+#, kde-format
+msgctxt "@action:button"
+msgid "Load earlier departures"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/TransferPage.qml:325
+#, kde-format
+msgctxt "@action:button"
+msgid "Load later connections"
+msgstr ""
+
+#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/TransferPage.qml:332
+#, kde-format
+msgid "Data providers:"
+msgstr ""
+
+#: app/DocumentsCard.qml:35
+#, kde-format
+msgid "Add Document"
+msgstr ""
+
+#: app/DocumentsCard.qml:37 app/main.qml:127 app/main.qml:128
+#, kde-format
+msgid "All Files (*.*)"
+msgstr ""
+
+#: app/DocumentsCard.qml:65 app/DocumentsCard.qml:80
+#, kde-format
+msgid "Delete Document"
+msgstr ""
+
+#: app/DocumentsCard.qml:81
+#, kde-format
+msgid "Do you really want to delete this document?"
+msgstr ""
+
+#: app/DocumentsCard.qml:99
+#, kde-format
+msgid "Documents"
+msgstr ""
+
+#: app/DocumentsCard.qml:109
+#, kde-format
+msgid "No documents attached to this reservation."
+msgstr ""
+
+#: app/DocumentsCard.qml:117
+#, kde-format
+msgid "Add Document..."
+msgstr ""
+
+#: app/downloadjob.cpp:102
+#, kde-format
+msgid "Network error: %1"
+msgstr ""
+
+#: app/downloadjob.cpp:133
+#, kde-format
+msgid "Download failed: %1"
+msgstr ""
+
+#: app/EditorPage.qml:24
+#, kde-format
+msgctxt "@action:button"
+msgid "Save"
+msgstr ""
+
+#: app/EventDelegate.qml:21 app/TripGroupDelegate.qml:61
+#, kde-format
+msgid "End: %1"
+msgstr ""
+
+#: app/EventDelegate.qml:57
+#, kde-format
+msgid "Start time: %1"
+msgstr ""
+
+#: app/EventDelegate.qml:61
+#, kde-format
+msgid "End time: %1"
+msgstr ""
+
+#: app/EventEditor.qml:19
+#, kde-format
+msgctxt "event as in concert/conference/show, not as in appointment"
+msgid "Edit Event"
+msgstr ""
+
+#: app/EventEditor.qml:48 app/EventPage.qml:15
+#, kde-format
+msgctxt "event as in concert/conference/show, not as in appointment"
+msgid "Event"
+msgstr ""
+
+#: app/EventEditor.qml:54
+#, kde-format
+msgctxt "event name"
+msgid "Name"
+msgstr ""
+
+#: app/EventEditor.qml:57 app/HotelEditor.qml:59 app/RestaurantEditor.qml:56
+#, kde-format
+msgid "Name must not be empty."
+msgstr ""
+
+#: app/EventEditor.qml:62 app/EventPage.qml:67
+#, kde-format
+msgctxt "time of entrance"
+msgid "Entrance"
+msgstr ""
+
+#: app/EventEditor.qml:73
+#, kde-format
+msgid "Entrance time has to be before the start time."
+msgstr ""
+
+#: app/EventEditor.qml:80 app/EventPage.qml:75 app/RestaurantEditor.qml:78
+#, kde-format
+msgid "Start Time"
+msgstr ""
+
+#: app/EventEditor.qml:84 app/RestaurantEditor.qml:82
+#, kde-format
+msgid "Start time has to be set."
+msgstr ""
+
+#: app/EventEditor.qml:89 app/EventPage.qml:83 app/RestaurantEditor.qml:89
+#, kde-format
+msgid "End Time"
+msgstr ""
+
+#: app/EventEditor.qml:100 app/RestaurantEditor.qml:100
+#, kde-format
+msgid "End time has to be after the start time."
+msgstr ""
+
+#: app/EventEditor.qml:114
+#, kde-format
+msgid "Venue"
+msgstr ""
+
+#: app/EventEditor.qml:120
+#, kde-format
+msgctxt "venue name"
+msgid "Name"
+msgstr ""
+
+#: app/EventPage.qml:108
+#, kde-format
+msgctxt "seat section, e.g. block in a stadium"
+msgid "Section:"
+msgstr ""
+
+#: app/EventPage.qml:117
+#, kde-format
+msgctxt "seat row"
+msgid "Row:"
+msgstr ""
+
+#: app/EventPage.qml:126
+#, kde-format
+msgctxt "seat number"
+msgid "Number:"
+msgstr ""
+
+#: app/EventPage.qml:135
+#, kde-format
+msgctxt "seat type"
+msgid "Type:"
+msgstr ""
+
+#: app/favoritelocationmodel.cpp:130 app/favoritelocationmodel.cpp:150
+#: app/SettingsPage.qml:34
+#, kde-format
+msgid "Home"
+msgstr ""
+
+#: app/favoritelocationmodel.cpp:153
+#, kde-format
+msgid "Work"
+msgstr ""
+
+#: app/favoritelocationmodel.cpp:156
+#, kde-format
+msgid "Location %1"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:20 app/SettingsPage.qml:49
+#, kde-format
+msgid "Favorite Locations"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:36
+#, kde-format
+msgid "Export Favorite Locations"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
+#: app/TimelinePage.qml:270
+#, kde-format
+msgid "GPX Files (*.gpx)"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:44
+#, kde-format
+msgid "Import Favorite Locations"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:52
+#, kde-format
+msgid "Add Favorite Location"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:60
+#, kde-format
+msgid "Rename Favorite Location"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:65
+#, kde-format
+msgid "Remove Favorite Location"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:75
+#, kde-format
+msgid "Export to GPX"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:80
+#, kde-format
+msgid "Import from GPX"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:90
+#, kde-format
+msgid "Rename favorite location"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:101
+#, kde-format
+msgid "Rename"
+msgstr ""
+
+#: app/FavoriteLocationPage.qml:151 app/FormPlaceEditorDelegate.qml:56
+#: app/LocationPicker.qml:56
+#, kde-format
+msgid "Pick Location"
+msgstr ""
+
+#: app/FlightDelegate.qml:42
+#, kde-format
+msgid "%1 %2 → %3"
+msgstr ""
+
+#: app/FlightDelegate.qml:64
+#, kde-format
+msgctxt "flight departure, %1 is airport, %2 is time"
+msgid "Departure from %1: %2"
+msgstr ""
+
+#: app/FlightDelegate.qml:79
+#, kde-format
+msgid "Terminal: %1  Gate: %2  Seat: %3"
+msgstr ""
+
+#: app/FlightDelegate.qml:90
+#, kde-format
+msgctxt "flight arrival, %1 is airport, %2 is time"
+msgid "Arrival at %1: %2"
+msgstr ""
+
+#: app/FlightEditor.qml:17
+#, kde-format
+msgid "Edit Flight"
+msgstr ""
+
+#: app/FlightEditor.qml:75
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure - %1"
+msgstr ""
+
+#: app/FlightEditor.qml:81 app/FlightEditor.qml:133 app/FlightPage.qml:132
+#: app/FlightPage.qml:178
+#, kde-format
+msgid "Airport"
+msgstr ""
+
+#: app/FlightEditor.qml:88
+#, kde-format
+msgctxt "flight departure terminal"
+msgid "Terminal"
+msgstr ""
+
+#: app/FlightEditor.qml:93
+#, kde-format
+msgctxt "flight departure time"
+msgid "Time"
+msgstr ""
+
+#: app/FlightEditor.qml:98
+#, kde-format
+msgctxt "flight departure"
+msgid "Departure time has to be set."
+msgstr ""
+
+#: app/FlightEditor.qml:104
+#, kde-format
+msgctxt "flight departure gate"
+msgid "Gate"
+msgstr ""
+
+#: app/FlightEditor.qml:109 app/FlightPage.qml:78
+#, kde-format
+msgid "Boarding time"
+msgstr ""
+
+#: app/FlightEditor.qml:120
+#, kde-format
+msgctxt "flight departure"
+msgid "Boarding time has to be before the departure time."
+msgstr ""
+
+#: app/FlightEditor.qml:127
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival - %1"
+msgstr ""
+
+#: app/FlightEditor.qml:140
+#, kde-format
+msgctxt "flight arrival terminal"
+msgid "Terminal"
+msgstr ""
+
+#: app/FlightEditor.qml:145
+#, kde-format
+msgctxt "flight arrival time"
+msgid "Time"
+msgstr ""
+
+#: app/FlightEditor.qml:156
+#, kde-format
+msgctxt "flight arrival"
+msgid "Arrival time has to be after the departure time."
+msgstr ""
+
+#: app/FlightPage.qml:15 app/StatisticsPage.qml:92
+#, kde-format
+msgid "Flight"
+msgstr ""
+
+#: app/FlightPage.qml:60
+#, kde-format
+msgid "Sequence Number:"
+msgstr ""
+
+#: app/FlightPage.qml:69
+#, kde-format
+msgid "Boarding"
+msgstr ""
+
+#: app/FlightPage.qml:87
+#, kde-format
+msgid "Boarding group"
+msgstr ""
+
+#: app/FlightPage.qml:104
+#, kde-format
+msgid "Airline"
+msgstr ""
+
+#: app/FlightPage.qml:112
+#, kde-format
+msgctxt "Flight departure"
+msgid "Departure"
+msgstr ""
+
+#: app/FlightPage.qml:140 app/FlightPage.qml:186
+#, kde-format
+msgid "Terminal"
+msgstr ""
+
+#: app/FlightPage.qml:148
+#, kde-format
+msgid "Gate"
+msgstr ""
+
+#: app/FlightPage.qml:164
+#, kde-format
+msgctxt "Flight arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:55
+#, kde-format
+msgid "Share Place"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:56
+#, kde-format
+msgid "Do you really want to share %1 to the Matrix channel %2?"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:62 app/LiveStatusPage.qml:75
+#, kde-format
+msgid "Share"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:123
+#, kde-format
+msgctxt "@action:button"
+msgid "View Indoor Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:130
+#, kde-format
+msgctxt "@action:button"
+msgid "View on Map"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:143
+#, kde-format
+msgctxt "@action:button Start route guidance to location"
+msgid "Navigate"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:153
+#, kde-format
+msgctxt "@action:button"
+msgid "Public Transport Departures"
+msgstr ""
+
+#: app/FormPlaceDelegate.qml:162
+#, kde-format
+msgctxt "@action:button"
+msgid "Share via Matrix"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:67
+#, kde-format
+msgid "Street"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:79
+#, kde-format
+msgid "Invalid postal code format for this country."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:85
+#, kde-format
+msgid "City"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:103
+#, kde-format
+msgid "Region"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:129
+#, kde-format
+msgid "Country"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:196
+#, kde-format
+msgid "Coordinate"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:197
+#, kde-format
+msgid "%1°, %2°"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:197
+#, kde-format
+msgid "Pick..."
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:215
+#, kde-format
+msgid "Address to coordinate"
+msgstr ""
+
+#: app/FormPlaceEditorDelegate.qml:231
+#, kde-format
+msgid "Coordinate to address"
+msgstr ""
+
+#: app/FormPlatformDelegate.qml:19
+#, kde-format
+msgid "Platform"
+msgstr ""
+
+#: app/FormPlatformDelegate.qml:44
+#, kde-format
+msgctxt "previous platform"
+msgid "(was: %1)"
+msgstr ""
+
+#: app/FormPriceDelegate.qml:19
+#, kde-format
+msgctxt "@label"
+msgid "Price"
+msgstr ""
+
+#: app/FormPriceDelegate.qml:30
+#, kde-format
+msgctxt "prices in local and home currency"
+msgid "%1 (%2)"
+msgstr ""
+
+#: app/FormPriceEditDelegate.qml:33
+#, kde-format
+msgid "Price"
+msgstr ""
+
+#: app/FormPriceEditDelegate.qml:91
+#, kde-format
+msgid "Not a valid number."
+msgstr ""
+
+#: app/GenericPkPassPage.qml:18 app/ProgramMembershipPage.qml:38
+#, kde-format
+msgid "Delete Pass"
+msgstr ""
+
+#: app/GenericPkPassPage.qml:19 app/ProgramMembershipPage.qml:39
+#, kde-format
+msgid "Do you really want to delete this pass?"
+msgstr ""
+
+#: app/gpxexport.cpp:33 app/main.cpp:323 app/main.qml:21 app/main.qml:164
+#, kde-format
+msgid "KDE Itinerary"
+msgstr ""
+
+#: app/gpxexport.cpp:47
+#, kde-format
+msgid "Flight %1 from %2 to %3"
+msgstr ""
+
+#: app/gpxexport.cpp:51
+#, kde-format
+msgid "Train %1 from %2 to %3"
+msgstr ""
+
+#: app/gpxexport.cpp:55
+#, kde-format
+msgid "Bus %1 from %2 to %3"
+msgstr ""
+
+#: app/gpxexport.cpp:58
+#, kde-format
+msgid "Ferry from %1 to %2"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:34
+#, kde-format
+msgid "Vaccination certificate of %1"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:36
+#, kde-format
+msgid "Test certificate of %1"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:38
+#, kde-format
+msgid "Recovery certificate of %1"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:53
+#, kde-format
+msgid "Certificate expired"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:56
+#, kde-format
+msgid "Certificate invalid"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:59
+#, kde-format
+msgid "Unknown issuer certificate"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:65
+#, kde-format
+msgid "Recently vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:66
+#, kde-format
+msgid "Partially vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:67
+#, kde-format
+msgid "Vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:68
+#, kde-format
+msgid "Fully vaccinated"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:74
+#, kde-format
+msgid "Negative test"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:75
+#, kde-format
+msgid "Positive test"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:78
+#, kde-format
+msgid "Test expired"
+msgstr ""
+
+#: app/HealthCertificateBarcode.qml:80
+#, kde-format
+msgid "Recovery certificate valid"
+msgstr ""
+
+#: app/healthcertificatemanager.cpp:118
+#, kde-format
+msgid "Vaccination %1/%2 (%3)"
+msgstr ""
+
+#: app/healthcertificatemanager.cpp:120
+#, kde-format
+msgid "Vaccination (%1)"
+msgstr ""
+
+#: app/healthcertificatemanager.cpp:124
+#, kde-format
+msgid "Test %1 (%2)"
+msgstr ""
+
+#: app/healthcertificatemanager.cpp:128
+#, kde-format
+msgid "Recovery (%1)"
+msgstr ""
+
+#: app/HealthCertificatePage.qml:16 app/main.qml:198
+#, kde-format
+msgid "Health Certificates"
+msgstr ""
+
+#: app/HealthCertificatePage.qml:47
+#, kde-format
+msgid "Import from Clipboard"
+msgstr ""
+
+#: app/HealthCertificatePage.qml:61
+#, kde-format
+msgid "Delete Certificate"
+msgstr ""
+
+#: app/HealthCertificatePage.qml:62
+#, kde-format
+msgid "Do you really want to delete this certificate?"
+msgstr ""
+
+#: app/HealthCertificatePage.qml:132
+#, kde-format
+msgid ""
+"<p>You can import the following health certificates by scanning them with a "
+"barcode scanner app:<ul><li>European \"Digital Green Certificates\" for "
+"vaccinations, tests or recovery.</li><li>Indian vaccination certificates.</"
+"li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
+"p>"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
+#: app/HealthCertificateVaccination.qml:32
+#, kde-format
+msgid "Person"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:33 app/HealthCertificateTest.qml:34
+#: app/HealthCertificateVaccination.qml:37
+#, kde-format
+msgid "Name:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:38 app/HealthCertificateTest.qml:39
+#: app/HealthCertificateVaccination.qml:42
+#, kde-format
+msgid "Date of birth:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:43
+#, kde-format
+msgid "Recovery"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:48
+#, kde-format
+msgid "Positive test:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
+#: app/HealthCertificateVaccination.qml:66
+#, kde-format
+msgid "Disease:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:56
+#, kde-format
+msgid "Valid from:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:60
+#, kde-format
+msgid "Valid until:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
+#: app/HealthCertificateVaccination.qml:103
+#, kde-format
+msgid "Certificate"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:70 app/HealthCertificateTest.qml:107
+#: app/HealthCertificateVaccination.qml:108
+#, kde-format
+msgid "Issuer:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
+#: app/HealthCertificateVaccination.qml:115
+#, kde-format
+msgid "Identifier:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
+#: app/HealthCertificateVaccination.qml:123
+#, kde-format
+msgid "Issued:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
+#: app/HealthCertificateVaccination.qml:127
+#, kde-format
+msgid "Expires:"
+msgstr ""
+
+#: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
+#: app/HealthCertificateVaccination.qml:142
+#, kde-format
+msgid "Signature:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:44
+#, kde-format
+msgid "Test"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:49 app/HealthCertificateVaccination.qml:59
+#, kde-format
+msgid "Date:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:60 app/HealthCertificateVaccination.qml:71
+#, kde-format
+msgid "Type:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:68
+#, kde-format
+msgid "Test:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:85
+#, kde-format
+msgid "Result:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:90
+#, kde-format
+msgid "Test Center:"
+msgstr ""
+
+#: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
+#, kde-format
+msgid "Country:"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:47
+#, kde-format
+msgid "Vaccination"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:55
+#, kde-format
+msgid "%2 (%1 day ago)"
+msgid_plural "%2 (%1 days ago)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/HealthCertificateVaccination.qml:76
+#, kde-format
+msgid "Vaccine:"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:84
+#, kde-format
+msgid "Manufacturer:"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:88
+#, kde-format
+msgid "%1/%2"
+msgstr ""
+
+#: app/HealthCertificateVaccination.qml:89
+#, kde-format
+msgid "Dose:"
+msgstr ""
+
+#: app/HotelDelegate.qml:20
+#, kde-format
+msgid "Check-out %1"
+msgstr ""
+
+#: app/HotelDelegate.qml:38
+#, kde-format
+msgid "Check-in time: %1"
+msgstr ""
+
+#: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
+#, kde-format
+msgid "Check-out time: %1"
+msgstr ""
+
+#: app/HotelEditor.qml:19
+#, kde-format
+msgid "Edit Hotel Reservation"
+msgstr ""
+
+#: app/HotelEditor.qml:46
+#, kde-format
+msgid "Hotel"
+msgstr ""
+
+#: app/HotelEditor.qml:50
+#, kde-format
+msgctxt "@title:group"
+msgid "Accommodation"
+msgstr ""
+
+#: app/HotelEditor.qml:56
+#, kde-format
+msgctxt "hotel name"
+msgid "Name"
+msgstr ""
+
+#: app/HotelEditor.qml:84
+#, kde-format
+msgctxt "hotel checkin"
+msgid "Check-in"
+msgstr ""
+
+#: app/HotelEditor.qml:88
+#, kde-format
+msgid "Check-in time has to be set."
+msgstr ""
+
+#: app/HotelEditor.qml:93
+#, kde-format
+msgctxt "hotel checkout"
+msgid "Check-out"
+msgstr ""
+
+#: app/HotelEditor.qml:105
+#, kde-format
+msgid "Check-out time has to be set."
+msgstr ""
+
+#: app/HotelEditor.qml:107
+#, kde-format
+msgid "Check-out time has to be after the check-in time."
+msgstr ""
+
+#: app/HotelPage.qml:16
+#, kde-format
+msgid "Hotel Reservation"
+msgstr ""
+
+#: app/HotelPage.qml:42
+#, kde-format
+msgid "Check-in time"
+msgstr ""
+
+#: app/HotelPage.qml:49
+#, kde-format
+msgid "Check-out time"
+msgstr ""
+
+#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
+
+#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
+#, kde-format
+msgid "Find Gate"
+msgstr ""
+
+#: app/IndoorMapGateSheet.qml:32
+#, kde-format
+msgctxt "flight departure/arrival gate"
+msgid "%1 (arrival + departure)"
+msgstr ""
+
+#: app/IndoorMapGateSheet.qml:34
+#, kde-format
+msgctxt "flight departure gate"
+msgid "%1 (departure)"
+msgstr ""
+
+#: app/IndoorMapGateSheet.qml:36
+#, kde-format
+msgctxt "flight arrival gate"
+msgid "%1 (arrival)"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
+#, kde-format
+msgid "Edit with iD"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
+#, kde-format
+msgid "Edit with JOSM"
+msgstr ""
+
+#: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
+#, kde-format
+msgid "Edit with Vespucci"
+msgstr ""
+
+#: app/IndoorMapPage.qml:26
+#, kde-format
+msgid "Floor %1"
+msgstr ""
+
+#: app/IndoorMapPage.qml:60
+#, kde-format
+msgid "Zoom In"
+msgstr ""
+
+#: app/IndoorMapPage.qml:67
+#, kde-format
+msgid "Zoom Out"
+msgstr ""
+
+#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
+#, kde-format
+msgid "Find Platform"
+msgstr ""
+
+#: app/IndoorMapPage.qml:95
+#, kde-format
+msgid "Show Elevator Status"
+msgstr ""
+
+#: app/IndoorMapPage.qml:104
+#, kde-format
+msgid "Show Rental Vehicles"
+msgstr ""
+
+#: app/IndoorMapPage.qml:112
+#, kde-format
+msgid "Open Map"
+msgstr ""
+
+#: app/IndoorMapPage.qml:118
+#, kde-format
+msgid "Open wheelmap.org"
+msgstr ""
+
+#: app/IndoorMapPage.qml:299
+#, kde-format
+msgid "Switched to floor %1"
+msgstr ""
+
+#: app/IndoorMapPage.qml:346
+#, kde-format
+msgctxt "@action:intoolbar Go down one floor"
+msgid "Floor down"
+msgstr ""
+
+#: app/IndoorMapPage.qml:354
+#, kde-format
+msgctxt "@action:intoolbar Go up one floor"
+msgid "Floor up"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:39
+#, kde-format
+msgctxt "train arrival/departure platform"
+msgid "%1 (arrival/departure)"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:41
+#, kde-format
+msgctxt "train departure platform"
+msgid "%1 (departure)"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:43
+#, kde-format
+msgctxt "train arrival platform"
+msgid "%1 (arrival)"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:82
+#, kde-format
+msgid "Railway"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:83
+#, kde-format
+msgid "Light Rail"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:84
+#, kde-format
+msgid "Subway"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:85
+#, kde-format
+msgid "Tramway"
+msgstr ""
+
+#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
+#, kde-format
+msgid "Bus"
+msgstr ""
+
+#: app/JourneyDelegateHeader.qml:63
+#, kde-format
+msgctxt "time in hours"
+msgid "%1 h"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:89 app/TransferPage.qml:248
+#, kde-format
+msgid "Select"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:113 app/TransferPage.qml:316
+#, kde-format
+msgctxt "@action:button"
+msgid "Load earlier connections"
+msgstr ""
+
+#: app/JourneyQueryPage.qml:172
+#, kde-format
+msgid "Still fetching results…"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
+#, kde-format
+msgid "Select Journey"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:43 app/JourneyRequestPage.qml:100
+#, kde-format
+msgctxt "departure train station"
+msgid "Select Departure Stop"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:114
+#, kde-format
+msgctxt "arrival train station"
+msgid "Select Arrival Stop"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:99
+#, kde-format
+msgctxt "departure train station"
+msgid "From:"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:113
+#, kde-format
+msgctxt "arrival train station"
+msgid "To:"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:131
+#, kde-format
+msgid "Swap departure and arrival"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:152
+#, kde-format
+msgctxt "train or bus departure"
+msgid "Departure"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:155
+#, kde-format
+msgctxt "train or bus arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:164
+#, kde-format
+msgctxt "train or bus departure"
+msgid "Departure time"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:164
+#, kde-format
+msgctxt "train or bus arrival"
+msgid "Arrival time"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:175
+#, kde-format
+msgid "Search Journey"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:222
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "High speed or intercity trains"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:232
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Regional or local trains"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:242
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Rapid transit, metro, trams"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:252
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Local or regional bus services"
+msgstr ""
+
+#: app/JourneyRequestPage.qml:262
+#, kde-format
+msgctxt "journey query search constraint, description"
+msgid "Boats or ferries"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:166
+#, kde-format
+msgid "%1 to %2 (%3)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:167 app/tickettokenmodel.cpp:116
+#, kde-format
+msgid "%1 (%2)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:171
+#, kde-format
+msgid "Walk (%1)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:172
+#, kde-format
+msgid "Walk %1 (%2)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:174
+#, kde-format
+msgid "Transfer (%1)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:176
+#, kde-format
+msgid "Wait (%1)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:178
+#, kde-format
+msgid "%1 %2 (%3)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:180
+#, kde-format
+msgid "Drive %1 (%2)"
+msgstr ""
+
+#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:130
+#, kde-format
+msgctxt "@action:button"
+msgid "Show More…"
+msgstr ""
+
+#: app/JourneySectionPage.qml:68
+#, kde-format
+msgid "Direction: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:76
+#, kde-format
+msgid "Distance: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:83
+#, kde-format
+msgid "Average Speed: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:90
+#, kde-format
+msgid "CO₂: %1"
+msgstr ""
+
+#: app/JourneySectionPage.qml:192
+#, kde-format
+msgid "Platform:"
+msgstr ""
+
+#: app/JourneySectionPage.qml:225
+#, kde-format
+msgid "Vehicle Load:"
+msgstr ""
+
+#: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
+#, kde-format
+msgid "Show location"
+msgstr ""
+
+#: app/JourneySectionPage.qml:455
+#, kde-format
+msgctxt "@action:button"
+msgid "Show Map"
+msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:141
+#, kde-format
+msgctxt "Abreviation of train platform"
+msgid "Pl. %1"
+msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:143
+#, kde-format
+msgctxt "Ferry dock, if possible use an abreviation"
+msgid "Dock %1"
+msgstr ""
+
+#: app/JourneySectionStopDelegate.qml:145
+#, kde-format
+msgctxt "Generic abreviation of platform"
+msgid "Pl. %1"
+msgstr ""
+
+#: app/JourneySummaryDelegate.qml:55
+#, kde-format
+msgctxt "number of switches to another transport"
+msgid "One change"
+msgid_plural "%1 changes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/JourneySummaryDelegate.qml:66
+#, kde-format
+msgid "Click to extend"
+msgstr ""
+
+#: app/livedatamanager.cpp:781
+#, kde-format
+msgid "Flight %1 to %2:"
+msgstr ""
+
+#: app/livedatamanager.cpp:787
+#, kde-format
+msgid "Itinerary change"
+msgstr ""
+
+#: app/LiveStatusPage.qml:19 app/main.qml:209
+#, kde-format
+msgid "Live Status"
+msgstr ""
+
+#: app/LiveStatusPage.qml:28
+#, kde-format
+msgid "Stop Location Sharing"
+msgstr ""
+
+#: app/LiveStatusPage.qml:28
+#, kde-format
+msgid "Share Location via Matrix"
+msgstr ""
+
+#: app/LiveStatusPage.qml:68
+#, kde-format
+msgid "Share Live Location"
+msgstr ""
+
+#: app/LiveStatusPage.qml:69
+#, kde-format
+msgid ""
+"Do you really want to share your current location to the Matrix channel %1?"
+msgstr ""
+
+#: app/LiveStatusPage.qml:161
+#, kde-format
+msgid "Automatically follow on the map"
+msgstr ""
+
+#: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
+#, kde-format
+msgid "Waiting for data..."
+msgstr ""
+
+#: app/LiveStatusPage.qml:204
+#, kde-format
+msgid "Position"
+msgstr ""
+
+#: app/LiveStatusPage.qml:213
+#, kde-format
+msgid "Journey"
+msgstr ""
+
+#: app/localizer.cpp:182
+#, kde-format
+msgctxt "day-only date format"
+msgid "dd MMMM"
+msgstr ""
+
+#: app/localizer.cpp:227
+#, kde-format
+msgctxt "distance in meter"
+msgid "%1 m"
+msgstr ""
+
+#: app/localizer.cpp:230 app/localizer.cpp:232
+#, kde-format
+msgctxt "distance in kilometer"
+msgid "%1 km"
+msgstr ""
+
+#: app/localizer.cpp:238
+#, kde-format
+msgctxt "speed in kilometers per hour"
+msgid "%1 km/h"
+msgstr ""
+
+#: app/localizer.cpp:244
+#, kde-format
+msgctxt "weight in gram"
+msgid "%1 g"
+msgstr ""
+
+#: app/localizer.cpp:247 app/localizer.cpp:249
+#, kde-format
+msgctxt "weight in kilogram"
+msgid "%1 kg"
+msgstr ""
+
+#: app/localizer.cpp:255
+#, kde-format
+msgctxt "temperature"
+msgid "%1°C"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:43
+#, kde-format
+msgid "Entering %1"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:66
+#, kde-format
+msgid "No compatible power sockets: %1"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:74
+#, kde-format
+msgid "Some incompatible power sockets: %1"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:81
+#, kde-format
+msgid "Some incompatible power plugs: %1"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:89
+#, kde-format
+msgid "Timezone change: %1 (%2)"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:112
+#, kde-format
+msgctxt "currency conversion rate"
+msgid "Currency: %1 = %2"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:114
+#, kde-format
+msgid "Currency: %1"
+msgstr ""
+
+#: app/locationinformation.cpp:85
+#, kde-format
+msgid "People are driving on the right side."
+msgstr ""
+
+#: app/locationinformation.cpp:86
+#, kde-format
+msgid "People are driving on the left side."
+msgstr ""
+
+#: app/locationinformation.cpp:103
+msgid "Type A"
+msgstr ""
+
+#: app/locationinformation.cpp:104
+msgid "Type B"
+msgstr ""
+
+#: app/locationinformation.cpp:105
+msgid "Europlug"
+msgstr ""
+
+#: app/locationinformation.cpp:106
+msgid "Type D"
+msgstr ""
+
+#: app/locationinformation.cpp:107
+msgid "Type E"
+msgstr ""
+
+#: app/locationinformation.cpp:108
+msgid "Schuko"
+msgstr ""
+
+#: app/locationinformation.cpp:109
+msgid "Type G"
+msgstr ""
+
+#: app/locationinformation.cpp:110
+msgid "Type H"
+msgstr ""
+
+#: app/locationinformation.cpp:111
+msgid "Type I"
+msgstr ""
+
+#: app/locationinformation.cpp:112
+msgid "Type J"
+msgstr ""
+
+#: app/locationinformation.cpp:113
+msgid "Type K"
+msgstr ""
+
+#: app/locationinformation.cpp:114
+msgid "Type L"
+msgstr ""
+
+#: app/locationinformation.cpp:115
+msgid "Type M"
+msgstr ""
+
+#: app/locationinformation.cpp:116
+msgid "Type N"
+msgstr ""
+
+#: app/main.cpp:331
+#, kde-format
+msgid "Digital Travel Assistant"
+msgstr ""
+
+#: app/main.cpp:332
+#, kde-format
+msgid "Copyright © The KDE Community"
+msgstr ""
+
+#: app/main.cpp:339
+#, kde-format
+msgid "Open Itinerary on the given page"
+msgstr ""
+
+#: app/main.cpp:344
+#, kde-format
+msgid "Files or URLs to import."
+msgstr ""
+
+#: app/main.qml:61
+#, kde-format
+msgid "Open File..."
+msgstr ""
+
+#: app/main.qml:69
+#, kde-format
+msgid "Paste"
+msgstr ""
+
+#: app/main.qml:78
+#, kde-format
+msgid "Scan Barcode..."
+msgstr ""
+
+#: app/main.qml:86
+#, kde-format
+msgid "Add from Calendar..."
+msgstr ""
+
+#: app/main.qml:100
+#, kde-format
+msgid "Deutsche Bahn Online Ticket..."
+msgstr ""
+
+#: app/main.qml:109
+#, kde-format
+msgid "SNCF Online Ticket..."
+msgstr ""
+
+#: app/main.qml:122
+#, kde-format
+msgid "Import Reservation"
+msgstr ""
+
+#: app/main.qml:128
+#, kde-format
+msgid "PkPass files (*.pkpass)"
+msgstr ""
+
+#: app/main.qml:128
+#, kde-format
+msgid "PDF files (*.pdf)"
+msgstr ""
+
+#: app/main.qml:128
+#, kde-format
+msgid "iCal events (*.ics)"
+msgstr ""
+
+#: app/main.qml:128 app/main.qml:137
+#, kde-format
+msgid "KDE Itinerary files (*.itinerary)"
+msgstr ""
+
+#: app/main.qml:135
+#, kde-format
+msgid "Export Itinerary Data"
+msgstr ""
+
+#: app/main.qml:169 app/PassPage.qml:133
+#, kde-format
+msgid "Import..."
+msgstr ""
+
+#: app/main.qml:174
+#, kde-format
+msgid "Check for Updates"
+msgstr ""
+
+#: app/main.qml:183
+#, kde-format
+msgid "Download Maps"
+msgstr ""
+
+#: app/main.qml:191 app/StatisticsPage.qml:15
+#, kde-format
+msgid "Statistics"
+msgstr ""
+
+#: app/main.qml:217 app/WelcomePage.qml:41
+#, kde-format
+msgid "Settings..."
+msgstr ""
+
+#: app/main.qml:229 app/WelcomePage.qml:16
+#, kde-format
+msgid "Help"
+msgstr ""
+
+#: app/main.qml:304
+#, kde-format
+msgid "Map download finished."
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:18
+#, kde-format
+msgid "Share Location"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:33
+#, kde-format
+msgctxt "matrix room type"
+msgid "Invited"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:34
+#, kde-format
+msgctxt "matrix room type"
+msgid "Favorite Rooms"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:35
+#, kde-format
+msgctxt "matrix room type"
+msgid "Direct Messages"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:36
+#, kde-format
+msgctxt "matrix room type"
+msgid "Rooms"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:37
+#, kde-format
+msgctxt "matrix room type"
+msgid "Low Priority"
+msgstr ""
+
+#: app/MatrixRoomSelectionSheet.qml:38
+#, kde-format
+msgctxt "matrix room type"
+msgid "Spaces"
+msgstr ""
+
+#: app/NavigationBar.qml:18
+#, kde-format
+msgctxt "@title:tab This isn't the app name, but the English noun"
+msgid "Itinerary"
+msgstr ""
+
+#: app/NavigationBar.qml:24
+#, kde-format
+msgctxt "@title:tab"
+msgid "Plan Trip"
+msgstr ""
+
+#: app/NavigationBar.qml:33
+#, kde-format
+msgctxt "@title:tab"
+msgid "Passes & Programs"
+msgstr ""
+
+#: app/NavigationBar.qml:38
+#, kde-format
+msgctxt "@title:tab"
+msgid "Current Ticket"
+msgstr ""
+
+#: app/notificationhelper.cpp:62
+#, kde-format
+msgid "Disruption on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:70
+#, kde-format
+msgid "Changes on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:74
+#, kde-format
+msgid "Delays on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:77
+#, kde-format
+msgid "Delayed departure on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:80
+#, kde-format
+msgid "Earlier departure on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:83
+#, kde-format
+msgid "Delayed arrival on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:87
+#, kde-format
+msgid "Platform change on %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:97
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Trip has been canceled."
+msgstr ""
+
+#: app/notificationhelper.cpp:99
+#, kde-format
+msgctxt "a train/bus journey canceled by its operator"
+msgid "Arrival has been canceled."
+msgstr ""
+
+#: app/notificationhelper.cpp:103
+#, kde-format
+msgid "New departure time is: %1 (+%2)"
+msgstr ""
+
+#: app/notificationhelper.cpp:105
+#, kde-format
+msgid "New departure time is: %1 (%2)"
+msgstr ""
+
+#: app/notificationhelper.cpp:109
+#, kde-format
+msgid "New arrival time is: %1 (+%2)"
+msgstr ""
+
+#: app/notificationhelper.cpp:113
+#, kde-format
+msgid "New departure platform is: %1"
+msgstr ""
+
+#: app/notificationhelper.cpp:116
+#, kde-format
+msgid "New arrival platform is: %1"
+msgstr ""
+
+#: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
+#, kde-format
+msgid "Family name"
+msgstr ""
+
+#: app/onlineimport/db.qml:33
+#, kde-format
+msgid "Name is case-sensitive."
+msgstr ""
+
+#: app/onlineimport/db.qml:40
+#, kde-format
+msgid "Order number or booking reference"
+msgstr ""
+
+#: app/onlineimport/sncf.qml:38
+#, kde-format
+msgid "Booking reference"
+msgstr ""
+
+#: app/OnlineImportPage.qml:16
+#, kde-format
+msgid "Import Online Ticket"
+msgstr ""
+
+#: app/OnlineImportPage.qml:29
+#, kde-format
+msgid "Ticket imported"
+msgstr ""
+
+#: app/OnlineImportPage.qml:33
+#, kde-format
+msgid "No ticket found"
+msgstr ""
+
+#: app/OnlineImportPage.qml:38
+#, kde-format
+msgid "Online Ticket"
+msgstr ""
+
+#: app/OnlineImportPage.qml:57
+#, kde-format
+msgid "Search..."
+msgstr ""
+
+#: app/passmanager.cpp:245
+#, kde-format
+msgctxt "no longer valid tickets"
+msgid "Expired"
+msgstr ""
+
+#: app/passmanager.cpp:248
+#, kde-format
+msgctxt "not yet valid tickets"
+msgid "Future"
+msgstr ""
+
+#: app/passmanager.cpp:250
+#, kde-format
+msgctxt "not yet expired tickets"
+msgid "Valid"
+msgstr ""
+
+#: app/passmanager.cpp:269
+#, kde-format
+msgid "%1 - %2"
+msgstr ""
+
+#: app/PassPage.qml:16
+#, kde-format
+msgid "Passes and Programs"
+msgstr ""
+
+#: app/PassPage.qml:20
+#, kde-format
+msgid "Add Program Membership..."
+msgstr ""
+
+#: app/PassPage.qml:50
+#, kde-format
+msgctxt "name - number"
+msgid "%1 - %2"
+msgstr ""
+
+#: app/PassPage.qml:101
+#, kde-format
+msgctxt "name - valid time range"
+msgid "%1 - %2"
+msgstr ""
+
+#: app/PassPage.qml:131
+#, kde-format
+msgid "Import bonus or discount program cards or flat rate passes."
+msgstr ""
+
+#: app/PkPassPage.qml:17
+#, kde-format
+msgid "Boarding Pass"
+msgstr ""
+
+#: app/PkPassPage.qml:18
+#, kde-format
+msgid "Event Ticket"
+msgstr ""
+
+#: app/PkPassPage.qml:19
+#, kde-format
+msgid "Pass"
+msgstr ""
+
+#: app/ProgramMembershipCard.qml:22 app/ProgramMembershipEditorCard.qml:33
+#, kde-format
+msgctxt "bonus, discount or frequent traveler program"
+msgid "Program"
+msgstr ""
+
+#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:69
+#: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
+#, kde-format
+msgid "Name"
+msgstr ""
+
+#: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:89
+#: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:92
+#: app/TicketPage.qml:104
+#, kde-format
+msgid "Number"
+msgstr ""
+
+#: app/ProgramMembershipCard.qml:49
+#, kde-format
+msgid "Show program pass"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:24
+#, kde-format
+msgid "Edit Program Membership"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:25
+#, kde-format
+msgid "Save"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:61
+#, kde-format
+msgid "Program"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:72
+#, kde-format
+msgid "Program name must not be empty."
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:77
+#, kde-format
+msgid "Membership"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:83 app/ProgramMembershipPage.qml:83
+#, kde-format
+msgid "Member"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:96 app/ProgramMembershipPage.qml:114
+#: app/TicketPage.qml:92
+#, kde-format
+msgid "Valid from"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:103 app/ProgramMembershipPage.qml:119
+#: app/TicketPage.qml:98
+#, kde-format
+msgid "Valid until"
+msgstr ""
+
+#: app/ProgramMembershipEditor.qml:116
+#, kde-format
+msgid "Valid until time has to be after the valid from time."
+msgstr ""
+
+#: app/ProgramMembershipPage.qml:17
+#, kde-format
+msgid "Program Membership"
+msgstr ""
+
+#: app/ProgramMembershipPage.qml:102
+#, kde-format
+msgid "Program membership number copied to clipboard"
+msgstr ""
+
+#: app/publictransport.cpp:241 app/publictransport.cpp:268
+#, kde-format
+msgid "Walk"
+msgstr ""
+
+#: app/publictransport.cpp:243
+#, kde-format
+msgid "Wait"
+msgstr ""
+
+#: app/publictransport.cpp:252
+#, kde-format
+msgid "Rented bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:254
+#, kde-format
+msgid "Rented moped"
+msgstr ""
+
+#: app/publictransport.cpp:256
+#, kde-format
+msgid "Rented kick scooter"
+msgstr ""
+
+#: app/publictransport.cpp:258
+#, kde-format
+msgid "Rented car"
+msgstr ""
+
+#: app/publictransport.cpp:264
+#, kde-format
+msgid "Bicycle"
+msgstr ""
+
+#: app/publictransport.cpp:266 app/StatisticsPage.qml:148
+#, kde-format
+msgid "Car"
+msgstr ""
+
+#: app/PublicTransportBackendPage.qml:17
+#, kde-format
+msgid "Public Transport Information Sources"
+msgstr ""
+
+#: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
+#, kde-format
+msgid "Global"
+msgstr ""
+
+#: app/PublicTransportBackendPage.qml:97
+#, kde-format
+msgid "🇪🇺 European Union"
+msgstr ""
+
+#: app/PublicTransportBackendPage.qml:110
+#, kde-format
+msgid "European Union"
+msgstr ""
+
+#: app/ReservationDocumentsCard.qml:19
+#, kde-format
+msgid "Documents and Tickets"
+msgstr ""
+
+#: app/RestaurantEditor.qml:18
+#, kde-format
+msgctxt "@title"
+msgid "Edit Restaurant"
+msgstr ""
+
+#: app/RestaurantEditor.qml:45
+#, kde-format
+msgid "Restaurant"
+msgstr ""
+
+#: app/RestaurantEditor.qml:53
+#, kde-format
+msgctxt "restaurant name"
+msgid "Name"
+msgstr ""
+
+#: app/RestaurantEditor.qml:72
+#, kde-format
+msgctxt "@title:group"
+msgid "Reservation"
+msgstr ""
+
+#: app/RestaurantPage.qml:16
+#, kde-format
+msgid "Restaurant Reservation"
+msgstr ""
+
+#: app/RestaurantPage.qml:29
+#, kde-format
+msgctxt "@title:group"
+msgid "Details"
+msgstr ""
+
+#: app/RestaurantPage.qml:41
+#, kde-format
+msgid "Start time"
+msgstr ""
+
+#: app/RestaurantPage.qml:49
+#, kde-format
+msgid "End time"
+msgstr ""
+
+#: app/RestaurantPage.qml:57
+#, kde-format
+msgid "Party size"
+msgstr ""
+
+#: app/SettingsPage.qml:18
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: app/SettingsPage.qml:38
+#, kde-format
+msgid "Home Country"
+msgstr ""
+
+#: app/SettingsPage.qml:57
+#, kde-format
+msgid "Online Services"
+msgstr ""
+
+#: app/SettingsPage.qml:61
+#, kde-format
+msgid "Query Traffic Data"
+msgstr ""
+
+#: app/SettingsPage.qml:64
+#, kde-format
+msgid ""
+"When enabled, this will query transport provider online services for changes "
+"such as delays or gate and platform changes."
+msgstr ""
+
+#: app/SettingsPage.qml:70
+#, kde-format
+msgid "Use insecure services"
+msgstr ""
+
+#: app/SettingsPage.qml:73
+#, kde-format
+msgid ""
+"Enabling this will also use online services that do not offer transport "
+"encryption. This is not recommended, but might be unavoidable when relying "
+"on live data from certain providers."
+msgstr ""
+
+#: app/SettingsPage.qml:81
+#, kde-format
+msgid "Public Transport Information Sources..."
+msgstr ""
+
+#: app/SettingsPage.qml:90 app/WeatherForecastDelegate.qml:83
+#: app/WeatherForecastPage.qml:19
+#, kde-format
+msgid "Weather Forecast"
+msgstr ""
+
+#: app/SettingsPage.qml:93
+#, kde-format
+msgid "Showing weather forecasts will query online services."
+msgstr ""
+
+#: app/SettingsPage.qml:98 app/WeatherForecastPage.qml:36
+#, kde-format
+msgid ""
+"Using data from <a href=\"https://www.met.no/\">The Norwegian Meteorological "
+"Institute</a> under <a href=\"https://creativecommons.org/licenses/"
+"by/4.0\">Creative Commons 4.0 BY International</a> license."
+msgstr ""
+
+#: app/SettingsPage.qml:107
+#, kde-format
+msgid "Preload Map Data"
+msgstr ""
+
+#: app/SettingsPage.qml:110
+#, kde-format
+msgid ""
+"Enabling this will download maps for all stations and airports for upcoming "
+"trips when connected to Wifi network."
+msgstr ""
+
+#: app/SettingsPage.qml:117
+#, kde-format
+msgid "Currency Conversion"
+msgstr ""
+
+#: app/SettingsPage.qml:120
+#, kde-format
+msgid ""
+"Enabling this will perform online queries for exchange rates to currencies "
+"at travel destinations."
+msgstr ""
+
+#: app/SettingsPage.qml:127
+#, kde-format
+msgid "Transfer Assistant"
+msgstr ""
+
+#: app/SettingsPage.qml:131
+#, kde-format
+msgid "Automatically add transfers"
+msgstr ""
+
+#: app/SettingsPage.qml:139
+#, kde-format
+msgid "Automatically fill transfers"
+msgstr ""
+
+#: app/SettingsPage.qml:140
+#, kde-format
+msgid ""
+"When enabled, this will query transport provider online services "
+"automatically for transfer information."
+msgstr ""
+
+#: app/SettingsPage.qml:151
+#, kde-format
+msgid "Notifications"
+msgstr ""
+
+#: app/SettingsPage.qml:156
+#, kde-format
+msgid "Configure Notifications..."
+msgstr ""
+
+#: app/SettingsPage.qml:165
+#, kde-format
+msgid "Show notifications on lock screen"
+msgstr ""
+
+#: app/SettingsPage.qml:175 app/SettingsPage.qml:203
+#, kde-format
+msgid "Request permissions..."
+msgstr ""
+
+#: app/SettingsPage.qml:176
+#, kde-format
+msgid "Additional permissions are required to show notifications."
+msgstr ""
+
+#: app/SettingsPage.qml:185
+#, kde-format
+msgid "Notification permissions are available"
+msgstr ""
+
+#: app/SettingsPage.qml:186 app/SettingsPage.qml:228
+#, kde-format
+msgid "No further action required."
+msgstr ""
+
+#: app/SettingsPage.qml:199
+#, kde-format
+msgid "Onboard Status"
+msgstr ""
+
+#: app/SettingsPage.qml:204
+#, kde-format
+msgid "Additional permissions are required to access the Wi-Fi status."
+msgstr ""
+
+#: app/SettingsPage.qml:215
+#, kde-format
+msgid "Wi-Fi access for onboard information is available."
+msgstr ""
+
+#: app/SettingsPage.qml:217
+#, kde-format
+msgid "Wi-Fi is not enabled"
+msgstr ""
+
+#: app/SettingsPage.qml:219
+#, kde-format
+msgid "Location service is not enabled"
+msgstr ""
+
+#: app/SettingsPage.qml:221
+#, kde-format
+msgid "Wi-Fi access is not available on this system"
+msgstr ""
+
+#: app/SettingsPage.qml:230
+#, kde-format
+msgid "Enable Wi-Fi on your system to access onboard information."
+msgstr ""
+
+#: app/SettingsPage.qml:232
+#, kde-format
+msgid ""
+"Enable the location service on your device to access onboard information."
+msgstr ""
+
+#: app/SettingsPage.qml:234
+#, kde-format
+msgid ""
+"Onboard information are unfortunately not supported on your device at this "
+"time."
+msgstr ""
+
+#: app/SettingsPage.qml:266
+#, kde-format
+msgid "Matrix Integration"
+msgstr ""
+
+#: app/SettingsPage.qml:273
+#, kde-format
+msgid "Logged in as %1"
+msgstr ""
+
+#: app/SettingsPage.qml:277
+#, kde-format
+msgid "Synchronize rooms"
+msgstr ""
+
+#: app/SettingsPage.qml:284
+#, kde-format
+msgid "Matrix ID"
+msgstr ""
+
+#: app/SettingsPage.qml:291
+#, kde-format
+msgid "Password"
+msgstr ""
+
+#: app/SettingsPage.qml:298
+#, kde-format
+msgid "Log out"
+msgstr ""
+
+#: app/SettingsPage.qml:298
+#, kde-format
+msgid "Log in"
+msgstr ""
+
+#: app/SettingsPage.qml:305
+#, kde-format
+msgid "Contributing"
+msgstr ""
+
+#: app/SettingsPage.qml:309
+#, kde-format
+msgid "I contribute to OpenStreetMap"
+msgstr ""
+
+#: app/SettingsPage.qml:310
+#, kde-format
+msgid "Enables OSM editing options."
+msgstr ""
+
+#: app/statisticsmodel.cpp:91
+#, kde-format
+msgid "Trips"
+msgstr ""
+
+#: app/statisticsmodel.cpp:96 app/statisticsmodel.cpp:129
+#: app/statisticsmodel.cpp:144 app/statisticsmodel.cpp:159
+#: app/statisticsmodel.cpp:174 app/statisticsmodel.cpp:189
+#, kde-format
+msgid "Distance"
+msgstr ""
+
+#: app/statisticsmodel.cpp:101
+#, kde-format
+msgid "Hotel nights"
+msgstr ""
+
+#: app/statisticsmodel.cpp:106 app/statisticsmodel.cpp:134
+#: app/statisticsmodel.cpp:149 app/statisticsmodel.cpp:164
+#: app/statisticsmodel.cpp:179 app/statisticsmodel.cpp:194
+#, kde-format
+msgid "CO₂"
+msgstr ""
+
+#: app/statisticsmodel.cpp:119
+#, kde-format
+msgid "Visited countries"
+msgstr ""
+
+#: app/statisticsmodel.cpp:124
+#, kde-format
+msgid "Flights"
+msgstr ""
+
+#: app/statisticsmodel.cpp:139
+#, kde-format
+msgid "Train rides"
+msgstr ""
+
+#: app/statisticsmodel.cpp:154
+#, kde-format
+msgid "Bus rides"
+msgstr ""
+
+#: app/statisticsmodel.cpp:169
+#, kde-format
+msgid "Car rides"
+msgstr ""
+
+#: app/statisticsmodel.cpp:184
+#, kde-format
+msgid "Boat trips"
+msgstr ""
+
+#: app/StatisticsPage.qml:34
+#, kde-format
+msgid "Year"
+msgstr ""
+
+#: app/StatisticsPage.qml:46 app/statisticstimerangemodel.cpp:69
+#, kde-format
+msgid "Total"
+msgstr ""
+
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
+#, kde-format
+msgid "Train"
+msgstr ""
+
+#: app/StopPickerPage.qml:28
+#, kde-format
+msgid "Clear history"
+msgstr ""
+
+#: app/StopPickerPage.qml:38
+#, kde-format
+msgid "Sort by name"
+msgstr ""
+
+#: app/StopPickerPage.qml:45
+#, kde-format
+msgid "Most recently used"
+msgstr ""
+
+#: app/StopPickerPage.qml:52
+#, kde-format
+msgid "Most often used"
+msgstr ""
+
+#: app/StopPickerPage.qml:136
+#, kde-format
+msgid "Remove history entry"
+msgstr ""
+
+#: app/StopPickerPage.qml:189
+#, kde-format
+msgid "No locations found"
+msgstr ""
+
+#: app/TicketEditor.qml:17
+#, kde-format
+msgid "Edit Ticket"
+msgstr ""
+
+#: app/TicketEditor.qml:41 app/TicketPage.qml:17 app/TicketPage.qml:81
+#, kde-format
+msgid "Ticket"
+msgstr ""
+
+#: app/TicketEditor.qml:47
+#, kde-format
+msgid "Ticket name"
+msgstr ""
+
+#: app/TicketEditor.qml:50
+#, kde-format
+msgid "Ticket name must not be empty."
+msgstr ""
+
+#: app/TicketPage.qml:39
+#, kde-format
+msgid "Delete Ticket"
+msgstr ""
+
+#: app/TicketPage.qml:40
+#, kde-format
+msgid "Do you really want to delete this ticket?"
+msgstr ""
+
+#: app/TicketPage.qml:110
+#, kde-format
+msgid "Class"
+msgstr ""
+
+#: app/tickettokenmodel.cpp:74
+#, kde-format
+msgid "Attendee %1"
+msgstr ""
+
+#: app/tickettokenmodel.cpp:76
+#, kde-format
+msgid "Traveler %1"
+msgstr ""
+
+#: app/TimelinePage.qml:19
+#, kde-format
+msgid "My Itinerary"
+msgstr ""
+
+#: app/TimelinePage.qml:89
+#, kde-format
+msgid "Add train trip..."
+msgstr ""
+
+#: app/TimelinePage.qml:96
+#, kde-format
+msgid "Add ferry trip..."
+msgstr ""
+
+#: app/TimelinePage.qml:108
+#, kde-format
+msgid "Add accommodation..."
+msgstr ""
+
+#: app/TimelinePage.qml:119
+#, kde-format
+msgid "Add event..."
+msgstr ""
+
+#: app/TimelinePage.qml:131
+#, kde-format
+msgid "Add restaurant..."
+msgstr ""
+
+#: app/TimelinePage.qml:153
+#, kde-format
+msgctxt "@action:button"
+msgid "Go To Now"
+msgstr ""
+
+#: app/TimelinePage.qml:159
+#, kde-format
+msgctxt "@action:button"
+msgid "Add trip"
+msgstr ""
+
+#: app/TimelinePage.qml:169
+#, kde-format
+msgctxt "@title:group"
+msgid "Add New Trip"
+msgstr ""
+
+#: app/TimelinePage.qml:199
+#, kde-format
+msgid "Delete Trip"
+msgstr ""
+
+#: app/TimelinePage.qml:200
+#, kde-format
+msgid "Do you really want to delete this trip?"
+msgstr ""
+
+#: app/TimelinePage.qml:230
+#, kde-format
+msgid "As GPX file..."
+msgstr ""
+
+#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
+#, kde-format
+msgid "Export Trip"
+msgstr ""
+
+#: app/TimelinePage.qml:441
+#, kde-format
+msgid "Nothing on the itinerary for today."
+msgstr ""
+
+#: app/timelinesectiondelegatecontroller.cpp:65
+#, kde-format
+msgid "Today"
+msgstr ""
+
+#: app/timelinesectiondelegatecontroller.cpp:67
+#, kde-format
+msgctxt "weekday, date"
+msgid "%1, %2"
+msgstr ""
+
+#: app/TouristAttractionPage.qml:18
+#, kde-format
+msgid "Tourist Attraction"
+msgstr ""
+
+#: app/TouristAttractionPage.qml:37
+#, kde-format
+msgid "Departure"
+msgstr ""
+
+#: app/TouristAttractionPage.qml:42
+#, kde-format
+msgid "Departure Time"
+msgstr ""
+
+#: app/TouristAttractionPage.qml:49
+#, kde-format
+msgid "Arrival"
+msgstr ""
+
+#: app/TouristAttractionPage.qml:54
+#, kde-format
+msgid "Arrival Time"
+msgstr ""
+
+#: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
+#, kde-format
+msgid "Pl. %1"
+msgstr ""
+
+#: app/TrainEditor.qml:18
+#, kde-format
+msgid "Edit Train Reservation"
+msgstr ""
+
+#: app/TrainEditor.qml:54
+#, kde-format
+msgid "Change departure station"
+msgstr ""
+
+#: app/TrainEditor.qml:67
+#, kde-format
+msgid "Change arrival station"
+msgstr ""
+
+#: app/TrainEditor.qml:92
+#, kde-format
+msgctxt "train departure"
+msgid "Departure"
+msgstr ""
+
+#: app/TrainEditor.qml:97 app/TrainEditor.qml:123 app/TrainPage.qml:123
+#: app/TrainPage.qml:203
+#, kde-format
+msgctxt "train station"
+msgid "Station"
+msgstr ""
+
+#: app/TrainEditor.qml:103 app/TrainEditor.qml:129
+#, kde-format
+msgctxt "train platform"
+msgid "Platform"
+msgstr ""
+
+#: app/TrainEditor.qml:118
+#, kde-format
+msgctxt "train arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/TrainEditor.qml:151
+#, kde-format
+msgctxt "carriage on a train"
+msgid "Coach"
+msgstr ""
+
+#: app/TrainEditor.qml:163
+#, kde-format
+msgctxt "seating class on a train"
+msgid "Class"
+msgstr ""
+
+#: app/TrainPage.qml:17
+#, kde-format
+msgid "Train Ticket"
+msgstr ""
+
+#: app/TrainPage.qml:80
+#, kde-format
+msgctxt "Train departure"
+msgid "Departure"
+msgstr ""
+
+#: app/TrainPage.qml:151 app/TrainPage.qml:230
+#, kde-format
+msgid "Additional notes"
+msgstr ""
+
+#: app/TrainPage.qml:163
+#, kde-format
+msgctxt "Train arrival"
+msgid "Arrival"
+msgstr ""
+
+#: app/TrainPage.qml:251
+#, kde-format
+msgctxt "coach of a train"
+msgid "Coach:"
+msgstr ""
+
+#: app/TrainPage.qml:260
+#, kde-format
+msgid "Seat:"
+msgstr ""
+
+#: app/TrainPage.qml:269
+#, kde-format
+msgid "Class:"
+msgstr ""
+
+#: app/TrainPage.qml:278
+#, kde-format
+msgid "Departure Vehicle Layout"
+msgstr ""
+
+#: app/TrainPage.qml:286
+#, kde-format
+msgid "Arrival Vehicle Layout"
+msgstr ""
+
+#: app/TransferDelegate.qml:109
+#, kde-format
+msgid "Select transfer"
+msgstr ""
+
+#: app/TransferDelegate.qml:119
+#, kde-format
+msgid "Delete transfer"
+msgstr ""
+
+#: app/TransferPage.qml:20
+#, kde-format
+msgid "Select Transfer"
+msgstr ""
+
+#: app/TransferPage.qml:43
+#, kde-format
+msgid "Depart Now"
+msgstr ""
+
+#: app/TransferPage.qml:53
+#, kde-format
+msgid "Discard"
+msgstr ""
+
+#: app/TransferPage.qml:75
+#, kde-format
+msgid "Bike"
+msgstr ""
+
+#: app/TransferPage.qml:82
+#, kde-format
+msgid "Bike & Ride"
+msgstr ""
+
+#: app/TransferPage.qml:90
+#, kde-format
+msgid "Shared Bikes"
+msgstr ""
+
+#: app/TransferPage.qml:97
+#, kde-format
+msgid "Park & Ride"
+msgstr ""
+
+#: app/TransferPage.qml:270
+#, kde-format
+msgid "%1 ends at %2"
+msgstr ""
+
+#: app/TransferPage.qml:272
+#, kde-format
+msgid "Preceding arrival %1 at %2"
+msgstr ""
+
+#: app/TransferPage.qml:282
+#, kde-format
+msgid "%1 starts at %2"
+msgstr ""
+
+#: app/TransferPage.qml:284
+#, kde-format
+msgid "Following departure %1 from %2"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:61
+#, kde-format
+msgid "Trip: %1"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:92
+#, kde-format
+msgid "Date: %2 (one day)"
+msgid_plural "Date: %2 (%1 days)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/TripGroupDelegate.qml:108 app/WeatherForecastDelegate.qml:48
+#: app/WeatherForecastPage.qml:93
+#, kde-format
+msgctxt "temperature range"
+msgid "%1 / %2"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:123
+#, kde-format
+msgid "%1: some incompatible power sockets (%2)"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:125
+#, kde-format
+msgid "%1: some incompatible power plugs (%2)"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:128
+#, kde-format
+msgid "%1: no compatible power plugs (%2)"
+msgstr ""
+
+#: app/TripGroupDelegate.qml:138
+#, kde-format
+msgid "Currency: %2"
+msgid_plural "Currencies: %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: app/TripGroupDelegate.qml:169
+#, kde-format
+msgid "Delete trip"
+msgstr ""
+
+#: app/tripgroupmanager.cpp:594
+#, kde-format
+msgctxt "%1 is destination, %2 is the standalone month name, %3 is the year"
+msgid "%1 (%2 %3)"
+msgstr ""
+
+#: app/tripgroupmanager.cpp:596
+#, kde-format
+msgctxt ""
+"%1 is destination, %2 and %3 are the standalone month names and %4 is the "
+"year"
+msgid "%1 (%2/%3 %4)"
+msgstr ""
+
+#: app/tripgroupmanager.cpp:598
+#, kde-format
+msgctxt "%1 is destination, %2 and %3 are years"
+msgid "%1 (%2/%3)"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:17
+#, kde-format
+msgid "Vehicle Layout"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:103
+#, kde-format
+msgid "Departure: %1"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:105
+#, kde-format
+msgid "Arrival: %1"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:123
+#, kde-format
+msgid "Platform: %1"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:129
+#, kde-format
+msgid "Coach: %1 Seat: %2"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:255
+#, kde-format
+msgid "First class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:257
+#, kde-format
+msgid "Second class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:259
+#, kde-format
+msgid "First/second class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:260
+#, kde-format
+msgid "Unknown class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:304
+#, kde-format
+msgid "No vehicle layout information available."
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:29
+#, kde-format
+msgctxt "vehicle load"
+msgid "FULL"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:52
+#, kde-format
+msgctxt "vehicle load"
+msgid "Low"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:53
+#, kde-format
+msgctxt "vehicle load"
+msgid "Medium"
+msgstr ""
+
+#: app/VehicleLoadIndicator.qml:54
+#, kde-format
+msgctxt "vehicle load"
+msgid "High"
+msgstr ""
+
+#: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
+#, kde-format
+msgctxt "precipitation"
+msgid "%1 mm"
+msgstr ""
+
+#: app/WeatherForecastDelegate.qml:74 app/WeatherForecastPage.qml:119
+#, kde-format
+msgctxt "windSpeed"
+msgid "%1 m/s"
+msgstr ""
+
+#: app/WelcomePage.qml:16
+#, kde-format
+msgid "Welcome!"
+msgstr ""
+
+#: app/WelcomePage.qml:20
+#, kde-format
+msgid "How to import data?"
+msgstr ""
+
+#: app/WelcomePage.qml:26
+#, kde-format
+msgid ""
+"<p>There's a number of ways to import data into KDE Itinerary:"
+"<ul><li>Directly opening PDF tickets or Apple Wallet passes.</li><li>From "
+"the Android calendar, for entries made via the KMail or Nextcloud Itinerary "
+"plugins, and synced using DAVx⁵.</li><li>Via KDE Connect from the KMail "
+"Itinerary plugin.</li><li>By scanning boarding pass barcodes and pasting "
+"their content.</li></p>"
+msgstr ""
+
+#: app/WelcomePage.qml:31
+#, kde-format
+msgid "Check the settings!"
+msgstr ""
+
+#: app/WelcomePage.qml:37
+#, kde-format
+msgid ""
+"KDE Itinerary has all features disabled by default that require online "
+"access, such as retrieving live traffic data or weather forecasts. You "
+"therefore might want to review these settings. While you are at it, you "
+"might want to configure your home location to enable the transfer assistant "
+"to automatically suggests ways to your next departure station or airport."
+msgstr ""
+
+#: app/WelcomePage.qml:48
+#, kde-format
+msgid "More information"
+msgstr ""
+
+#: app/WelcomePage.qml:54
+#, kde-format
+msgid ""
+"For more information about KDE Itinerary check out the <a href=\"https://"
+"community.kde.org/KDE_PIM/KDE_Itinerary\">wiki page</a>."
+msgstr ""
+
+#: app/WelcomePage.qml:61
+#, kde-format
+msgid "Got it!"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:24 matrix/matrixmanager.cpp:58
+#: matrix/matrixmanager.cpp:110
+#, kde-format
+msgid "Syncing…"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:43
+#, kde-format
+msgid "This server does not support logging in using a password"
+msgstr ""
+
+#: matrix/matrixmanager.cpp:69
+#, kde-format
+msgid "Logging in"
+msgstr ""
+
+#: metadataextractor/itineraryextractor.cpp:119
+#, kde-format
+msgctxt "Airline Flightnumber from Airport to Airport on Date"
+msgid "%1%2 from %3 to %4 on %5"
+msgstr ""
