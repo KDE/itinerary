@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-07 02:19+0000\n"
-"PO-Revision-Date: 2024-01-16 19:37+0100\n"
+"PO-Revision-Date: 2024-03-24 09:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -561,7 +561,7 @@ msgstr "Parada"
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
-msgstr "Plataforma"
+msgstr "Andana"
 
 #: app/BusEditor.qml:102 app/TrainEditor.qml:110
 #, kde-format
@@ -613,7 +613,7 @@ msgstr "Estació"
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr "Plataforma"
+msgstr "Andana"
 
 #: app/BusPage.qml:121
 #, kde-format
@@ -1264,7 +1264,7 @@ msgstr "Adreça de les coordenades"
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
 msgid "Platform"
-msgstr "Plataforma"
+msgstr "Andana"
 
 #: app/FormPlatformDelegate.qml:44
 #, kde-format
@@ -1741,7 +1741,7 @@ msgstr "Allunya"
 #: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
-msgstr "Busca de la plataforma"
+msgstr "Busca de l'andana"
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
@@ -1992,7 +1992,7 @@ msgstr "Mostra el mapa"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "An. %1"
 
 # skip-rule: kct-dock
 #: app/JourneySectionStopDelegate.qml:143
@@ -2005,7 +2005,7 @@ msgstr "Moll %1"
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "An. %1"
 
 #: app/JourneySectionStopDelegate.qml:159
 #, kde-format
@@ -2437,7 +2437,7 @@ msgstr "Arribada amb retard a %1"
 #: app/notificationhelper.cpp:87
 #, kde-format
 msgid "Platform change on %1"
-msgstr "Canvi de plataforma a %1"
+msgstr "Canvi d'andana a %1"
 
 #: app/notificationhelper.cpp:97
 #, kde-format
@@ -2469,12 +2469,12 @@ msgstr "L'hora d'arribada nova és: %1 (+%2)"
 #: app/notificationhelper.cpp:113
 #, kde-format
 msgid "New departure platform is: %1"
-msgstr "La plataforma d'eixida nova és: %1"
+msgstr "L'andana d'eixida nova és: %1"
 
 #: app/notificationhelper.cpp:116
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr "La plataforma d'arribada nova és: %1"
+msgstr "L'andana d'arribada nova és: %1"
 
 #: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
 #, kde-format
@@ -2810,7 +2810,7 @@ msgid ""
 "such as delays or gate and platform changes."
 msgstr ""
 "Quan estiga habilitat, es consultaran els serveis en línia del proveïdor de "
-"transports per a canvis com retards o canvis de porta i plataforma."
+"transports per a canvis com retards o canvis de porta i andana."
 
 #: app/SettingsPage.qml:70
 #, kde-format
@@ -3293,7 +3293,7 @@ msgstr "Hora d'arribada"
 #: app/TrainDelegate.qml:117 app/TrainDelegate.qml:302
 #, kde-format
 msgid "Pl. %1"
-msgstr "Pl. %1"
+msgstr "An. %1"
 
 #: app/TrainEditor.qml:18
 #, kde-format
@@ -3327,7 +3327,7 @@ msgstr "Estació"
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
-msgstr "Plataforma"
+msgstr "Andana"
 
 #: app/TrainEditor.qml:118
 #, kde-format
@@ -3544,7 +3544,7 @@ msgstr "Arribada: %1"
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Platform: %1"
-msgstr "Plataforma: %1"
+msgstr "Andana: %1"
 
 #: app/VehicleLayoutPage.qml:129
 #, kde-format
