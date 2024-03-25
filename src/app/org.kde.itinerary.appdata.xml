@@ -286,8 +286,8 @@
       <li xml:lang="zh-CN">在设备端处理多种输入格式并自动提取预订数据。</li>
       <li xml:lang="zh-TW">從多種輸入格式自動取出訂票資料，全部在您的裝置上進行而不會傳送到其他地方。</li>
       <li>Real-time delay and platform change information for trains.</li>
-      <li xml:lang="ca">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
-      <li xml:lang="ca-valencia">Informació d'endarreriments i canvis de plataforma en temps real per als trens.</li>
+      <li xml:lang="ca">Informació d'endarreriments i canvis d'andana en temps real per als trens.</li>
+      <li xml:lang="ca-valencia">Informació d'endarreriments i canvis d'andana en temps real per als trens.</li>
       <li xml:lang="de">Echtzeitanzeige von Verspätungen und Gleisänderungen von Zügen.</li>
       <li xml:lang="en-GB">Real-time delay and platform change information for trains.</li>
       <li xml:lang="eo">Realtempa prokrasto kaj platformoŝanĝaj informoj por trajnoj.</li>
@@ -672,8 +672,8 @@
     </screenshot>
     <screenshot>
       <caption>Train station platform map, highlighting arrival and departure platforms</caption>
-      <caption xml:lang="ca">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i sortida</caption>
-      <caption xml:lang="ca-valencia">Mapa de la plataforma de l'estació de tren, destacant les plataformes d'arribada i eixida</caption>
+      <caption xml:lang="ca">Mapa d'andanes de l'estació de tren, destacant les andanes d'arribada i sortida</caption>
+      <caption xml:lang="ca-valencia">Mapa d'andanes de l'estació de tren, destacant les andanes d'arribada i eixida</caption>
       <caption xml:lang="de">Bahnhofsgleiskarte mit Hervorhebung des Ankunft- und Abfahrtgleises</caption>
       <caption xml:lang="en-GB">Train station platform map, highlighting arrival and departure platforms</caption>
       <caption xml:lang="eo">Performmapo de fervoja stacidomo, elstarigante alvenajn kaj forirajn kajojn</caption>
