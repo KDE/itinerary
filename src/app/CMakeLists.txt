@@ -200,6 +200,7 @@ qt_add_qml_module(itinerary-app URI org.kde.itinerary NO_PLUGIN QML_FILES
     ProgramMembershipEditor.qml
     ProgramMembershipPage.qml
     PublicTransportBackendPage.qml
+    PublicTransportFeatureIcon.qml
     ReservationDocumentsCard.qml
     RestaurantDelegate.qml
     RestaurantEditor.qml
@@ -309,6 +310,7 @@ if (ANDROID)
         meeting-attending
         message-rfc822
         notifications
+        player-volume-muted
         question
         raindrop
         reverse

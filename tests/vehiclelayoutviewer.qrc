@@ -6,11 +6,18 @@
     <qresource prefix="/">
         <file>vehiclelayoutviewer.qml</file>
         <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureIcon.qml">../src/app/PublicTransportFeatureIcon.qml</file>
 
+        <file alias="images/bike.svg">../src/app/images/bike.svg</file>
         <file alias="images/couchettecar.svg">../src/app/images/couchettecar.svg</file>
+        <file alias="images/family.svg">../src/app/images/family.svg</file>
+        <file alias="images/foodestablishment.svg">../src/app/images/foodestablishment.svg</file>
         <file alias="images/longdistancetrain.svg">../src/app/images/longdistancetrain.svg</file>
         <file alias="images/seat.svg">../src/app/images/seat.svg</file>
         <file alias="images/sleepingcar.svg">../src/app/images/sleepingcar.svg</file>
+        <file alias="images/toddler.svg">../src/app/images/toddler.svg</file>
         <file alias="images/train.svg">../src/app/images/train.svg</file>
+        <file alias="images/wheelchair.svg">../src/app/images/wheelchair.svg</file>
+        <file alias="images/wheelchair_accessible.svg">../src/app/images/wheelchair_accessible.svg</file>
     </qresource>
 </RCC>

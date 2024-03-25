@@ -233,18 +233,9 @@ Kirigami.ScrollablePage {
                     RowLayout {
                         spacing: Kirigami.Units.smallSpacing
                         Repeater {
-                            model: section.featureList
-                            QQC2.Label {
-                                text: {
-                                    switch (modelData) {
-                                        case KPublicTransport.VehicleSection.AirConditioning: return "❄️";
-                                        case KPublicTransport.VehicleSection.Restaurant: return "🍴";
-                                        case KPublicTransport.VehicleSection.ToddlerArea: return "👶";
-                                        case KPublicTransport.VehicleSection.WheelchairAccessible: return "♿";
-                                        case KPublicTransport.VehicleSection.SilentArea: return "🔇";
-                                        case KPublicTransport.VehicleSection.BikeStorage: return "🚲";
-                                    }
-                                }
+                            model: section.sectionFeatures
+                            delegate: PublicTransportFeatureIcon {
+                                feature: modelData
                             }
                         }
                     }
