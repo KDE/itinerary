@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-06 00:38+0000\n"
-"PO-Revision-Date: 2024-02-28 00:10+0100\n"
+"PO-Revision-Date: 2024-03-25 12:51+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1628,12 +1628,12 @@ msgstr "Ordaindu eta irtetea %1"
 #: app/HotelDelegate.qml:38
 #, kde-format
 msgid "Check-in time: %1"
-msgstr "Izen-emateko ordua: %1"
+msgstr "Izen-emate ordua: %1"
 
 #: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
 #, kde-format
 msgid "Check-out time: %1"
-msgstr "Ordaindu eta irteteko ordua: %1"
+msgstr "Ordaindu eta irtete ordua: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
@@ -2048,7 +2048,7 @@ msgstr "Erakutsi mapa"
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr "%1 Pl."
+msgstr "%1 Na."
 
 #: app/JourneySectionStopDelegate.qml:143
 #, kde-format
@@ -2060,7 +2060,7 @@ msgstr "%1 kaia"
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr "%1 Pl."
+msgstr "%1 Na."
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format
