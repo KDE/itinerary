@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-06 00:38+0000\n"
-"PO-Revision-Date: 2024-03-22 12:36+0100\n"
+"PO-Revision-Date: 2024-03-26 16:14+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -572,7 +572,7 @@ msgstr "Megálló"
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/BusEditor.qml:102 app/TrainEditor.qml:110
 #, kde-format
@@ -624,7 +624,7 @@ msgstr "Állomás"
 #, kde-format
 msgctxt "bus station platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/BusPage.qml:121
 #, kde-format
@@ -1279,7 +1279,7 @@ msgstr "Koordinátából cím"
 #: app/FormPlatformDelegate.qml:19
 #, kde-format
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/FormPlatformDelegate.qml:44
 #, kde-format
@@ -1327,132 +1327,132 @@ msgstr "KDE Itinerary"
 #: app/gpxexport.cpp:47
 #, kde-format
 msgid "Flight %1 from %2 to %3"
-msgstr ""
+msgstr "%1 járat, %2 → %3"
 
 #: app/gpxexport.cpp:51
 #, kde-format
 msgid "Train %1 from %2 to %3"
-msgstr ""
+msgstr "%1. vonat, %2 → %3"
 
 #: app/gpxexport.cpp:55
 #, kde-format
 msgid "Bus %1 from %2 to %3"
-msgstr ""
+msgstr "%1. busz, %2 → %3"
 
 #: app/gpxexport.cpp:58
 #, kde-format
 msgid "Ferry from %1 to %2"
-msgstr ""
+msgstr "%1 → %2 komp"
 
 #: app/HealthCertificateBarcode.qml:34
 #, kde-format
 msgid "Vaccination certificate of %1"
-msgstr ""
+msgstr "%1 oltási igazolása"
 
 #: app/HealthCertificateBarcode.qml:36
 #, kde-format
 msgid "Test certificate of %1"
-msgstr ""
+msgstr "%1 tesztigazolása"
 
 #: app/HealthCertificateBarcode.qml:38
 #, kde-format
 msgid "Recovery certificate of %1"
-msgstr ""
+msgstr "%1 felépülési igazolása"
 
 #: app/HealthCertificateBarcode.qml:53
 #, kde-format
 msgid "Certificate expired"
-msgstr ""
+msgstr "Lejárt igazolás"
 
 #: app/HealthCertificateBarcode.qml:56
 #, kde-format
 msgid "Certificate invalid"
-msgstr ""
+msgstr "Érvénytelen igazolás"
 
 #: app/HealthCertificateBarcode.qml:59
 #, kde-format
 msgid "Unknown issuer certificate"
-msgstr ""
+msgstr "Ismeretlen kibocsátó tanúsítványa"
 
 #: app/HealthCertificateBarcode.qml:65
 #, kde-format
 msgid "Recently vaccinated"
-msgstr ""
+msgstr "Nemrég beoltva"
 
 #: app/HealthCertificateBarcode.qml:66
 #, kde-format
 msgid "Partially vaccinated"
-msgstr ""
+msgstr "Részben beoltva"
 
 #: app/HealthCertificateBarcode.qml:67
 #, kde-format
 msgid "Vaccinated"
-msgstr ""
+msgstr "Beoltva"
 
 #: app/HealthCertificateBarcode.qml:68
 #, kde-format
 msgid "Fully vaccinated"
-msgstr ""
+msgstr "Teljesen beoltva"
 
 #: app/HealthCertificateBarcode.qml:74
 #, kde-format
 msgid "Negative test"
-msgstr ""
+msgstr "Negatív teszt"
 
 #: app/HealthCertificateBarcode.qml:75
 #, kde-format
 msgid "Positive test"
-msgstr ""
+msgstr "Pozitív teszt"
 
 #: app/HealthCertificateBarcode.qml:78
 #, kde-format
 msgid "Test expired"
-msgstr ""
+msgstr "Lejárt teszt"
 
 #: app/HealthCertificateBarcode.qml:80
 #, kde-format
 msgid "Recovery certificate valid"
-msgstr ""
+msgstr "Érvényes felépülési igazolás"
 
 #: app/healthcertificatemanager.cpp:118
 #, kde-format
 msgid "Vaccination %1/%2 (%3)"
-msgstr ""
+msgstr "%1/%2. oltás (%3)"
 
 #: app/healthcertificatemanager.cpp:120
 #, kde-format
 msgid "Vaccination (%1)"
-msgstr ""
+msgstr "Oltás (%1)"
 
 #: app/healthcertificatemanager.cpp:124
 #, kde-format
 msgid "Test %1 (%2)"
-msgstr ""
+msgstr "%1. teszt ( %2)"
 
 #: app/healthcertificatemanager.cpp:128
 #, kde-format
 msgid "Recovery (%1)"
-msgstr ""
+msgstr "Felépülés (%1)"
 
 #: app/HealthCertificatePage.qml:16 app/main.qml:198
 #, kde-format
 msgid "Health Certificates"
-msgstr ""
+msgstr "Egészségügyi igazolások"
 
 #: app/HealthCertificatePage.qml:47
 #, kde-format
 msgid "Import from Clipboard"
-msgstr ""
+msgstr "Importálás a vágólapról"
 
 #: app/HealthCertificatePage.qml:61
 #, kde-format
 msgid "Delete Certificate"
-msgstr ""
+msgstr "Igazolás törlése"
 
 #: app/HealthCertificatePage.qml:62
 #, kde-format
 msgid "Do you really want to delete this certificate?"
-msgstr ""
+msgstr "Biztosan törölni szeretné ezt az igazolást?"
 
 #: app/HealthCertificatePage.qml:132
 #, kde-format
@@ -1463,6 +1463,11 @@ msgid ""
 "li><li>SMART Health Cards (SHC) as used in parts of Canada and the US.</li></"
 "p>"
 msgstr ""
+"<p>A következő egészségügyi igazolásokat importálhatja egy vonalkódolvasó "
+"alkalmazással:<ul><li>Európai „Digitális Zöld Igazolások” oltásokhoz, "
+"tesztekhez és felépüléshez.</li><li>Indiai oltási igazolások.</li><li>Kanada "
+"és az Egyesült Államok egyes részein használt SMART Egészségügyi Kártyák "
+"(SHC).</li></p>"
 
 #: app/HealthCertificateRecovery.qml:28 app/HealthCertificateTest.qml:29
 #: app/HealthCertificateVaccination.qml:32
@@ -1485,58 +1490,58 @@ msgstr "Születési idő:"
 #: app/HealthCertificateRecovery.qml:43
 #, kde-format
 msgid "Recovery"
-msgstr ""
+msgstr "Felépülés"
 
 #: app/HealthCertificateRecovery.qml:48
 #, kde-format
 msgid "Positive test:"
-msgstr ""
+msgstr "Pozitív teszt:"
 
 #: app/HealthCertificateRecovery.qml:52 app/HealthCertificateTest.qml:55
 #: app/HealthCertificateVaccination.qml:66
 #, kde-format
 msgid "Disease:"
-msgstr ""
+msgstr "Betegség:"
 
 #: app/HealthCertificateRecovery.qml:56
 #, kde-format
 msgid "Valid from:"
-msgstr ""
+msgstr "Érvényesség kezdete:"
 
 #: app/HealthCertificateRecovery.qml:60
 #, kde-format
 msgid "Valid until:"
-msgstr ""
+msgstr "Érvényesség vége:"
 
 #: app/HealthCertificateRecovery.qml:65 app/HealthCertificateTest.qml:102
 #: app/HealthCertificateVaccination.qml:103
 #, kde-format
 msgid "Certificate"
-msgstr ""
+msgstr "Igazolás"
 
 #: app/HealthCertificateRecovery.qml:70 app/HealthCertificateTest.qml:107
 #: app/HealthCertificateVaccination.qml:108
 #, kde-format
 msgid "Issuer:"
-msgstr ""
+msgstr "Kibocsátó:"
 
 #: app/HealthCertificateRecovery.qml:75 app/HealthCertificateTest.qml:112
 #: app/HealthCertificateVaccination.qml:115
 #, kde-format
 msgid "Identifier:"
-msgstr ""
+msgstr "Azonosító:"
 
 #: app/HealthCertificateRecovery.qml:82 app/HealthCertificateTest.qml:120
 #: app/HealthCertificateVaccination.qml:123
 #, kde-format
 msgid "Issued:"
-msgstr ""
+msgstr "Kiállítva:"
 
 #: app/HealthCertificateRecovery.qml:86 app/HealthCertificateTest.qml:124
 #: app/HealthCertificateVaccination.qml:127
 #, kde-format
 msgid "Expires:"
-msgstr ""
+msgstr "Lejár:"
 
 #: app/HealthCertificateRecovery.qml:101 app/HealthCertificateTest.qml:139
 #: app/HealthCertificateVaccination.qml:142
@@ -1572,128 +1577,128 @@ msgstr "Eredmény:"
 #: app/HealthCertificateTest.qml:90
 #, kde-format
 msgid "Test Center:"
-msgstr ""
+msgstr "Tesztközpont:"
 
 #: app/HealthCertificateTest.qml:96 app/HealthCertificateVaccination.qml:97
 #, kde-format
 msgid "Country:"
-msgstr ""
+msgstr "Ország:"
 
 #: app/HealthCertificateVaccination.qml:47
 #, kde-format
 msgid "Vaccination"
-msgstr ""
+msgstr "Oltás"
 
 #: app/HealthCertificateVaccination.qml:55
 #, kde-format
 msgid "%2 (%1 day ago)"
 msgid_plural "%2 (%1 days ago)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 (%1 nappal ezelőtt)"
+msgstr[1] "%2 (%1 nappal ezelőtt)"
 
 #: app/HealthCertificateVaccination.qml:76
 #, kde-format
 msgid "Vaccine:"
-msgstr ""
+msgstr "Vakcina:"
 
 #: app/HealthCertificateVaccination.qml:84
 #, kde-format
 msgid "Manufacturer:"
-msgstr ""
+msgstr "Gyártó:"
 
 #: app/HealthCertificateVaccination.qml:88
 #, kde-format
 msgid "%1/%2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: app/HealthCertificateVaccination.qml:89
 #, kde-format
 msgid "Dose:"
-msgstr ""
+msgstr "Dózis:"
 
 #: app/HotelDelegate.qml:20
 #, kde-format
 msgid "Check-out %1"
-msgstr ""
+msgstr "Kijelentkezés: %1"
 
 #: app/HotelDelegate.qml:38
 #, kde-format
 msgid "Check-in time: %1"
-msgstr ""
+msgstr "Bejelentkezés ideje: %1"
 
 #: app/HotelDelegate.qml:44 app/HotelDelegate.qml:45
 #, kde-format
 msgid "Check-out time: %1"
-msgstr ""
+msgstr "Kijelentkezés ideje: %1"
 
 #: app/HotelEditor.qml:19
 #, kde-format
 msgid "Edit Hotel Reservation"
-msgstr ""
+msgstr "Hotelfoglalás szerkesztése"
 
 #: app/HotelEditor.qml:46
 #, kde-format
 msgid "Hotel"
-msgstr ""
+msgstr "Hotel"
 
 #: app/HotelEditor.qml:50
 #, kde-format
 msgctxt "@title:group"
 msgid "Accommodation"
-msgstr ""
+msgstr "Szállás"
 
 #: app/HotelEditor.qml:56
 #, kde-format
 msgctxt "hotel name"
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 #: app/HotelEditor.qml:84
 #, kde-format
 msgctxt "hotel checkin"
 msgid "Check-in"
-msgstr ""
+msgstr "Bejelentkezés"
 
 #: app/HotelEditor.qml:88
 #, kde-format
 msgid "Check-in time has to be set."
-msgstr ""
+msgstr "A bejelentkezés idejét be kell állítani."
 
 #: app/HotelEditor.qml:93
 #, kde-format
 msgctxt "hotel checkout"
 msgid "Check-out"
-msgstr ""
+msgstr "Kijelentkezés"
 
 #: app/HotelEditor.qml:105
 #, kde-format
 msgid "Check-out time has to be set."
-msgstr ""
+msgstr "A kijelentkezés idejét be kell állítani."
 
 #: app/HotelEditor.qml:107
 #, kde-format
 msgid "Check-out time has to be after the check-in time."
-msgstr ""
+msgstr "A kijelentkezési időnek a bejelentkezési idő után kell lennie."
 
 #: app/HotelPage.qml:16
 #, kde-format
 msgid "Hotel Reservation"
-msgstr ""
+msgstr "Hotelfoglalás"
 
 #: app/HotelPage.qml:42
 #, kde-format
 msgid "Check-in time"
-msgstr ""
+msgstr "Bejelentkezés ideje"
 
 #: app/HotelPage.qml:49
 #, kde-format
 msgid "Check-out time"
-msgstr ""
+msgstr "Kijelentkezés ideje"
 
 #: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
 #, kde-format
 msgid "Find Amenity"
-msgstr ""
+msgstr "Szolgáltatás keresése"
 
 #: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
 #, kde-format
@@ -1721,17 +1726,17 @@ msgstr "%1 (érkező)"
 #: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
-msgstr ""
+msgstr "Szerkesztés iD-val"
 
 #: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
-msgstr ""
+msgstr "Szerkesztés JOSM-mel"
 
 #: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
-msgstr ""
+msgstr "Szerkesztés Vespuccival"
 
 #: app/IndoorMapPage.qml:26
 #, kde-format
@@ -1751,17 +1756,17 @@ msgstr "Kicsinyítés"
 #: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
 #, kde-format
 msgid "Find Platform"
-msgstr ""
+msgstr "Peron keresése"
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
 msgid "Show Elevator Status"
-msgstr ""
+msgstr "Lift állapotának megjelenítése"
 
 #: app/IndoorMapPage.qml:104
 #, kde-format
 msgid "Show Rental Vehicles"
-msgstr ""
+msgstr "Kölcsönözhető járművek megjelenítése"
 
 #: app/IndoorMapPage.qml:112
 #, kde-format
@@ -1771,24 +1776,24 @@ msgstr "Térkép megnyitása"
 #: app/IndoorMapPage.qml:118
 #, kde-format
 msgid "Open wheelmap.org"
-msgstr ""
+msgstr "Wheelmap.org megnyitása"
 
 #: app/IndoorMapPage.qml:299
 #, kde-format
 msgid "Switched to floor %1"
-msgstr ""
+msgstr "Váltás a(z) %1. szintre"
 
 #: app/IndoorMapPage.qml:346
 #, kde-format
 msgctxt "@action:intoolbar Go down one floor"
 msgid "Floor down"
-msgstr ""
+msgstr "Egy szinttel le"
 
 #: app/IndoorMapPage.qml:354
 #, kde-format
 msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
-msgstr ""
+msgstr "Egy szinttel fel"
 
 #: app/IndoorMapPlatformSheet.qml:39
 #, kde-format
@@ -1811,12 +1816,12 @@ msgstr "%1 (érkező)"
 #: app/IndoorMapPlatformSheet.qml:82
 #, kde-format
 msgid "Railway"
-msgstr ""
+msgstr "Vasútvonal"
 
 #: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Light Rail"
-msgstr ""
+msgstr "Kisvasút"
 
 #: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
@@ -1826,7 +1831,7 @@ msgstr "Földalatti"
 #: app/IndoorMapPlatformSheet.qml:85
 #, kde-format
 msgid "Tramway"
-msgstr ""
+msgstr "Villamos"
 
 #: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
 #, kde-format
@@ -1858,25 +1863,25 @@ msgstr ""
 #: app/JourneyRequestPage.qml:37 app/JourneyRequestPage.qml:63
 #, kde-format
 msgid "Select Journey"
-msgstr ""
+msgstr "Utazás kiválasztása"
 
 #: app/JourneyRequestPage.qml:43 app/JourneyRequestPage.qml:100
 #, kde-format
 msgctxt "departure train station"
 msgid "Select Departure Stop"
-msgstr ""
+msgstr "Indulási megálló kiválasztása"
 
 #: app/JourneyRequestPage.qml:53 app/JourneyRequestPage.qml:114
 #, kde-format
 msgctxt "arrival train station"
 msgid "Select Arrival Stop"
-msgstr ""
+msgstr "Érkezési megálló kiválasztása"
 
 #: app/JourneyRequestPage.qml:99
 #, kde-format
 msgctxt "departure train station"
 msgid "From:"
-msgstr ""
+msgstr "Indulás:"
 
 #: app/JourneyRequestPage.qml:113
 #, kde-format
@@ -1916,42 +1921,42 @@ msgstr ""
 #: app/JourneyRequestPage.qml:175
 #, kde-format
 msgid "Search Journey"
-msgstr ""
+msgstr "Utazás keresése"
 
 #: app/JourneyRequestPage.qml:222
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "High speed or intercity trains"
-msgstr ""
+msgstr "Nagysebességű vagy intercity vonatok"
 
 #: app/JourneyRequestPage.qml:232
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Regional or local trains"
-msgstr ""
+msgstr "Regionális vagy helyi vonatok"
 
 #: app/JourneyRequestPage.qml:242
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Rapid transit, metro, trams"
-msgstr ""
+msgstr "Gyorsvasút, metró, villamosok"
 
 #: app/JourneyRequestPage.qml:252
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Local or regional bus services"
-msgstr ""
+msgstr "Helyi vagy regionális buszszolgáltatások"
 
 #: app/JourneyRequestPage.qml:262
 #, kde-format
 msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
-msgstr ""
+msgstr "Hajók vagy kompok"
 
 #: app/JourneySectionDelegate.qml:166
 #, kde-format
 msgid "%1 to %2 (%3)"
-msgstr ""
+msgstr "%1 ide: %2 (%3)"
 
 #: app/JourneySectionDelegate.qml:167 app/tickettokenmodel.cpp:116
 #, kde-format
@@ -1961,12 +1966,12 @@ msgstr "%1 (%2)"
 #: app/JourneySectionDelegate.qml:171
 #, kde-format
 msgid "Walk (%1)"
-msgstr ""
+msgstr "Séta (%1)"
 
 #: app/JourneySectionDelegate.qml:172
 #, kde-format
 msgid "Walk %1 (%2)"
-msgstr ""
+msgstr "%1 séta (%2)"
 
 #: app/JourneySectionDelegate.qml:174
 #, kde-format
@@ -1981,12 +1986,12 @@ msgstr "Várakozás (%1)"
 #: app/JourneySectionDelegate.qml:178
 #, kde-format
 msgid "%1 %2 (%3)"
-msgstr ""
+msgstr "%1 %2 (%3)"
 
 #: app/JourneySectionDelegate.qml:180
 #, kde-format
 msgid "Drive %1 (%2)"
-msgstr ""
+msgstr "%1 vezetés (%2)"
 
 #: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:130
 #, kde-format
@@ -2007,12 +2012,12 @@ msgstr "Távolság: %1"
 #: app/JourneySectionPage.qml:83
 #, kde-format
 msgid "Average Speed: %1"
-msgstr ""
+msgstr "Átlagos sebesség: %1"
 
 #: app/JourneySectionPage.qml:90
 #, kde-format
 msgid "CO₂: %1"
-msgstr ""
+msgstr "CO₂: %1"
 
 #: app/JourneySectionPage.qml:192
 #, kde-format
@@ -2033,53 +2038,53 @@ msgstr "Hely megjelenítése"
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
-msgstr ""
+msgstr "Térkép megjelenítése"
 
 #: app/JourneySectionStopDelegate.qml:141
 #, kde-format
 msgctxt "Abreviation of train platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "%1. vágány"
 
 #: app/JourneySectionStopDelegate.qml:143
 #, kde-format
 msgctxt "Ferry dock, if possible use an abreviation"
 msgid "Dock %1"
-msgstr ""
+msgstr "%1. dokk"
 
 #: app/JourneySectionStopDelegate.qml:145
 #, kde-format
 msgctxt "Generic abreviation of platform"
 msgid "Pl. %1"
-msgstr ""
+msgstr "%1. peron"
 
 #: app/JourneySummaryDelegate.qml:55
 #, kde-format
 msgctxt "number of switches to another transport"
 msgid "One change"
 msgid_plural "%1 changes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Egy átszállás"
+msgstr[1] "%1 átszállás"
 
 #: app/JourneySummaryDelegate.qml:66
 #, kde-format
 msgid "Click to extend"
-msgstr ""
+msgstr "Kattintson a kibontáshoz"
 
 #: app/livedatamanager.cpp:781
 #, kde-format
 msgid "Flight %1 to %2:"
-msgstr ""
+msgstr "%1. járat ide: %2:"
 
 #: app/livedatamanager.cpp:787
 #, kde-format
 msgid "Itinerary change"
-msgstr ""
+msgstr "Itinermódosítás"
 
 #: app/LiveStatusPage.qml:19 app/main.qml:209
 #, kde-format
 msgid "Live Status"
-msgstr ""
+msgstr "Helymegosztás"
 
 #: app/LiveStatusPage.qml:28
 #, kde-format
@@ -2094,18 +2099,19 @@ msgstr "Hely megosztása Matrixon"
 #: app/LiveStatusPage.qml:68
 #, kde-format
 msgid "Share Live Location"
-msgstr ""
+msgstr "Élő helymegosztás"
 
 #: app/LiveStatusPage.qml:69
 #, kde-format
 msgid ""
 "Do you really want to share your current location to the Matrix channel %1?"
 msgstr ""
+"Biztosan szeretné megostani a jelenlegi helyét a(z) %1 Matrix csatornán?"
 
 #: app/LiveStatusPage.qml:161
 #, kde-format
 msgid "Automatically follow on the map"
-msgstr ""
+msgstr "Automatikusan kövessen a térképen"
 
 #: app/LiveStatusPage.qml:180 app/LiveStatusPage.qml:192
 #, kde-format
@@ -2167,124 +2173,124 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:43
 #, kde-format
 msgid "Entering %1"
-msgstr ""
+msgstr "Belépés ide: %1"
 
 #: app/LocationInfoDelegate.qml:66
 #, kde-format
 msgid "No compatible power sockets: %1"
-msgstr ""
+msgstr "Nincsenek kompatibilis konnektorok: %1"
 
 #: app/LocationInfoDelegate.qml:74
 #, kde-format
 msgid "Some incompatible power sockets: %1"
-msgstr ""
+msgstr "Néhány nem kompatibilis konnektor: %1"
 
 #: app/LocationInfoDelegate.qml:81
 #, kde-format
 msgid "Some incompatible power plugs: %1"
-msgstr ""
+msgstr "Néhány nem kompatibilis hálózati csatlakozó: %1"
 
 #: app/LocationInfoDelegate.qml:89
 #, kde-format
 msgid "Timezone change: %1 (%2)"
-msgstr ""
+msgstr "Időzónaváltozás: %1 (%2)"
 
 #: app/LocationInfoDelegate.qml:112
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
-msgstr ""
+msgstr "Pénznem: %1 = %2"
 
 #: app/LocationInfoDelegate.qml:114
 #, kde-format
 msgid "Currency: %1"
-msgstr ""
+msgstr "Pénznem: %1"
 
 #: app/locationinformation.cpp:85
 #, kde-format
 msgid "People are driving on the right side."
-msgstr ""
+msgstr "Jobb oldali közlekedési rend van érvényben."
 
 #: app/locationinformation.cpp:86
 #, kde-format
 msgid "People are driving on the left side."
-msgstr ""
+msgstr "Bal oldali közlekedési rend van érvényben."
 
 #: app/locationinformation.cpp:103
 msgid "Type A"
-msgstr ""
+msgstr "A -típusú"
 
 #: app/locationinformation.cpp:104
 msgid "Type B"
-msgstr ""
+msgstr "B-típusú"
 
 #: app/locationinformation.cpp:105
 msgid "Europlug"
-msgstr ""
+msgstr "Europlug"
 
 #: app/locationinformation.cpp:106
 msgid "Type D"
-msgstr ""
+msgstr "D-típusú"
 
 #: app/locationinformation.cpp:107
 msgid "Type E"
-msgstr ""
+msgstr "E-típusú"
 
 #: app/locationinformation.cpp:108
 msgid "Schuko"
-msgstr ""
+msgstr "Schuko"
 
 #: app/locationinformation.cpp:109
 msgid "Type G"
-msgstr ""
+msgstr "G-típusú"
 
 #: app/locationinformation.cpp:110
 msgid "Type H"
-msgstr ""
+msgstr "H-típusú"
 
 #: app/locationinformation.cpp:111
 msgid "Type I"
-msgstr ""
+msgstr "I-típusú"
 
 #: app/locationinformation.cpp:112
 msgid "Type J"
-msgstr ""
+msgstr "J-típusú"
 
 #: app/locationinformation.cpp:113
 msgid "Type K"
-msgstr ""
+msgstr "K-típusú"
 
 #: app/locationinformation.cpp:114
 msgid "Type L"
-msgstr ""
+msgstr "L-típusú"
 
 #: app/locationinformation.cpp:115
 msgid "Type M"
-msgstr ""
+msgstr "M-típusú"
 
 #: app/locationinformation.cpp:116
 msgid "Type N"
-msgstr ""
+msgstr "N-típusú"
 
 #: app/main.cpp:331
 #, kde-format
 msgid "Digital Travel Assistant"
-msgstr ""
+msgstr "Digitális utazási segéd"
 
 #: app/main.cpp:332
 #, kde-format
 msgid "Copyright © The KDE Community"
-msgstr ""
+msgstr "Copyright © A KDE közösség"
 
 #: app/main.cpp:339
 #, kde-format
 msgid "Open Itinerary on the given page"
-msgstr ""
+msgstr "Itinerary megnyitása a megadott oldalon"
 
 #: app/main.cpp:344
 #, kde-format
 msgid "Files or URLs to import."
-msgstr ""
+msgstr "Importálandó fájlok vagy URL-ek."
 
 #: app/main.qml:61
 #, kde-format
@@ -2309,22 +2315,22 @@ msgstr "Hozzáadás naptárból…"
 #: app/main.qml:100
 #, kde-format
 msgid "Deutsche Bahn Online Ticket..."
-msgstr ""
+msgstr "Deutsche Bahn online jegy…"
 
 #: app/main.qml:109
 #, kde-format
 msgid "SNCF Online Ticket..."
-msgstr ""
+msgstr "SNCF online jegy…"
 
 #: app/main.qml:122
 #, kde-format
 msgid "Import Reservation"
-msgstr ""
+msgstr "Foglalás importálása"
 
 #: app/main.qml:128
 #, kde-format
 msgid "PkPass files (*.pkpass)"
-msgstr ""
+msgstr "PkPass fájlok (*.pkpass)"
 
 #: app/main.qml:128
 #, kde-format
@@ -2344,7 +2350,7 @@ msgstr "KDE Itinerary fájlok (*.itinerary)"
 #: app/main.qml:135
 #, kde-format
 msgid "Export Itinerary Data"
-msgstr ""
+msgstr "Itinerary adatok exportálása"
 
 #: app/main.qml:169 app/PassPage.qml:133
 #, kde-format
@@ -2379,48 +2385,48 @@ msgstr "Súgó"
 #: app/main.qml:304
 #, kde-format
 msgid "Map download finished."
-msgstr ""
+msgstr "Térképletöltés befejezve."
 
 #: app/MatrixRoomSelectionSheet.qml:18
 #, kde-format
 msgid "Share Location"
-msgstr ""
+msgstr "Hely megosztása"
 
 #: app/MatrixRoomSelectionSheet.qml:33
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
-msgstr ""
+msgstr "Meghívva"
 
 #: app/MatrixRoomSelectionSheet.qml:34
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
-msgstr ""
+msgstr "Kedvenc szobák"
 
 #: app/MatrixRoomSelectionSheet.qml:35
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
-msgstr ""
+msgstr "Közvetlen üzenetek"
 
 #: app/MatrixRoomSelectionSheet.qml:36
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
-msgstr ""
+msgstr "Szobák"
 
 #: app/MatrixRoomSelectionSheet.qml:37
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
-msgstr ""
+msgstr "Alacsony prioritás"
 
 #: app/MatrixRoomSelectionSheet.qml:38
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
-msgstr ""
+msgstr "Terek"
 
 #: app/NavigationBar.qml:18
 #, kde-format
@@ -2432,13 +2438,13 @@ msgstr "Itinerary"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Plan Trip"
-msgstr ""
+msgstr "Kirándulás tervezése"
 
 #: app/NavigationBar.qml:33
 #, kde-format
 msgctxt "@title:tab"
 msgid "Passes & Programs"
-msgstr ""
+msgstr "Kártyák és programok"
 
 #: app/NavigationBar.qml:38
 #, kde-format
@@ -2449,74 +2455,74 @@ msgstr "Jelenlegi jegy"
 #: app/notificationhelper.cpp:62
 #, kde-format
 msgid "Disruption on %1"
-msgstr ""
+msgstr "Forgalmi zavarok: %1"
 
 #: app/notificationhelper.cpp:70
 #, kde-format
 msgid "Changes on %1"
-msgstr ""
+msgstr "Átszállások: %1"
 
 #: app/notificationhelper.cpp:74
 #, kde-format
 msgid "Delays on %1"
-msgstr ""
+msgstr "Késések: %1"
 
 #: app/notificationhelper.cpp:77
 #, kde-format
 msgid "Delayed departure on %1"
-msgstr ""
+msgstr "Késedelmes indulás: %1"
 
 #: app/notificationhelper.cpp:80
 #, kde-format
 msgid "Earlier departure on %1"
-msgstr ""
+msgstr "Korábbi indulás: %1"
 
 #: app/notificationhelper.cpp:83
 #, kde-format
 msgid "Delayed arrival on %1"
-msgstr ""
+msgstr "Késedelmes érkezés: %1"
 
 #: app/notificationhelper.cpp:87
 #, kde-format
 msgid "Platform change on %1"
-msgstr ""
+msgstr "Peronváltozás: %1"
 
 #: app/notificationhelper.cpp:97
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Trip has been canceled."
-msgstr ""
+msgstr "A kirándulást törölték."
 
 #: app/notificationhelper.cpp:99
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Arrival has been canceled."
-msgstr ""
+msgstr "Az érkezést törölték."
 
 #: app/notificationhelper.cpp:103
 #, kde-format
 msgid "New departure time is: %1 (+%2)"
-msgstr ""
+msgstr "Új indulási idő: %1 (+%2)"
 
 #: app/notificationhelper.cpp:105
 #, kde-format
 msgid "New departure time is: %1 (%2)"
-msgstr ""
+msgstr "Az új indulási idő: %1 (%2)"
 
 #: app/notificationhelper.cpp:109
 #, kde-format
 msgid "New arrival time is: %1 (+%2)"
-msgstr ""
+msgstr "Új érkezési idő: %1 (+%2)"
 
 #: app/notificationhelper.cpp:113
 #, kde-format
 msgid "New departure platform is: %1"
-msgstr ""
+msgstr "Új indulási peron: %1"
 
 #: app/notificationhelper.cpp:116
 #, kde-format
 msgid "New arrival platform is: %1"
-msgstr ""
+msgstr "Új érkezési peron: %1"
 
 #: app/onlineimport/db.qml:28 app/onlineimport/sncf.qml:28
 #, kde-format
@@ -2526,37 +2532,37 @@ msgstr "Vezetéknév"
 #: app/onlineimport/db.qml:33
 #, kde-format
 msgid "Name is case-sensitive."
-msgstr ""
+msgstr "A név kis- és nagybetűérzékeny."
 
 #: app/onlineimport/db.qml:40
 #, kde-format
 msgid "Order number or booking reference"
-msgstr ""
+msgstr "Rendelésszám vagy foglalási hivatkozás"
 
 #: app/onlineimport/sncf.qml:38
 #, kde-format
 msgid "Booking reference"
-msgstr ""
+msgstr "Foglalási hivatkozás"
 
 #: app/OnlineImportPage.qml:16
 #, kde-format
 msgid "Import Online Ticket"
-msgstr ""
+msgstr "Online jegy importálása"
 
 #: app/OnlineImportPage.qml:29
 #, kde-format
 msgid "Ticket imported"
-msgstr ""
+msgstr "Jegy importálva"
 
 #: app/OnlineImportPage.qml:33
 #, kde-format
 msgid "No ticket found"
-msgstr ""
+msgstr "Nem található jegy"
 
 #: app/OnlineImportPage.qml:38
 #, kde-format
 msgid "Online Ticket"
-msgstr ""
+msgstr "Online jegy"
 
 #: app/OnlineImportPage.qml:57
 #, kde-format
@@ -2573,7 +2579,7 @@ msgstr "Lejárt"
 #, kde-format
 msgctxt "not yet valid tickets"
 msgid "Future"
-msgstr ""
+msgstr "Jövőbeli"
 
 #: app/passmanager.cpp:250
 #, kde-format
@@ -2589,12 +2595,12 @@ msgstr "%1 - %2"
 #: app/PassPage.qml:16
 #, kde-format
 msgid "Passes and Programs"
-msgstr ""
+msgstr "Kártyák és programok"
 
 #: app/PassPage.qml:20
 #, kde-format
 msgid "Add Program Membership..."
-msgstr ""
+msgstr "Programtagság hozzáadása…"
 
 #: app/PassPage.qml:50
 #, kde-format
@@ -2611,7 +2617,7 @@ msgstr "%1 - %2"
 #: app/PassPage.qml:131
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
-msgstr ""
+msgstr "Bónusz- vagy kedvezménykártyák vagy átalánydíjas bérletek importálása."
 
 #: app/PkPassPage.qml:17
 #, kde-format
@@ -2621,12 +2627,12 @@ msgstr "Beszállókártya"
 #: app/PkPassPage.qml:18
 #, kde-format
 msgid "Event Ticket"
-msgstr ""
+msgstr "Eseményjegy"
 
 #: app/PkPassPage.qml:19
 #, kde-format
 msgid "Pass"
-msgstr ""
+msgstr "Kártya"
 
 #: app/ProgramMembershipCard.qml:22 app/ProgramMembershipEditorCard.qml:33
 #, kde-format
@@ -2650,12 +2656,12 @@ msgstr "Szám"
 #: app/ProgramMembershipCard.qml:49
 #, kde-format
 msgid "Show program pass"
-msgstr ""
+msgstr "Programkártya megjelenítése"
 
 #: app/ProgramMembershipEditor.qml:24
 #, kde-format
 msgid "Edit Program Membership"
-msgstr ""
+msgstr "Programtagság szerkesztése"
 
 #: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:25
 #, kde-format
@@ -2686,58 +2692,58 @@ msgstr "Tag"
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
-msgstr ""
+msgstr "Érvényesség kezdete"
 
 #: app/ProgramMembershipEditor.qml:103 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
-msgstr ""
+msgstr "Érvényesség vége"
 
 #: app/ProgramMembershipEditor.qml:116
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
-msgstr ""
+msgstr "Az érvényesség végének az érvényesség kezdete után kell lennie."
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
 msgid "Program Membership"
-msgstr ""
+msgstr "Programtagság"
 
 #: app/ProgramMembershipPage.qml:102
 #, kde-format
 msgid "Program membership number copied to clipboard"
-msgstr ""
+msgstr "Programtagsági szám a vágólapra másolva"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
-msgstr ""
+msgstr "Séta"
 
 #: app/publictransport.cpp:243
 #, kde-format
 msgid "Wait"
-msgstr ""
+msgstr "Várakozás"
 
 #: app/publictransport.cpp:252
 #, kde-format
 msgid "Rented bicycle"
-msgstr ""
+msgstr "Bérelt kerékpár"
 
 #: app/publictransport.cpp:254
 #, kde-format
 msgid "Rented moped"
-msgstr ""
+msgstr "Bérelt moped"
 
 #: app/publictransport.cpp:256
 #, kde-format
 msgid "Rented kick scooter"
-msgstr ""
+msgstr "Bérelt robogó"
 
 #: app/publictransport.cpp:258
 #, kde-format
 msgid "Rented car"
-msgstr ""
+msgstr "Bérelt autó"
 
 #: app/publictransport.cpp:264
 #, kde-format
@@ -2752,12 +2758,12 @@ msgstr "Autó"
 #: app/PublicTransportBackendPage.qml:17
 #, kde-format
 msgid "Public Transport Information Sources"
-msgstr ""
+msgstr "Tömegközlekedési információforrások"
 
 #: app/PublicTransportBackendPage.qml:95 app/PublicTransportBackendPage.qml:108
 #, kde-format
 msgid "Global"
-msgstr ""
+msgstr "Globális"
 
 #: app/PublicTransportBackendPage.qml:97
 #, kde-format
@@ -2800,7 +2806,7 @@ msgstr "Foglalás"
 #: app/RestaurantPage.qml:16
 #, kde-format
 msgid "Restaurant Reservation"
-msgstr ""
+msgstr "Éttermi foglalás"
 
 #: app/RestaurantPage.qml:29
 #, kde-format
@@ -2811,17 +2817,17 @@ msgstr "Részletek"
 #: app/RestaurantPage.qml:41
 #, kde-format
 msgid "Start time"
-msgstr ""
+msgstr "Kezdési idő"
 
 #: app/RestaurantPage.qml:49
 #, kde-format
 msgid "End time"
-msgstr ""
+msgstr "Befejezési idő"
 
 #: app/RestaurantPage.qml:57
 #, kde-format
 msgid "Party size"
-msgstr ""
+msgstr "Parti mérete"
 
 #: app/SettingsPage.qml:18
 #, kde-format
@@ -2831,17 +2837,17 @@ msgstr "Beállítások"
 #: app/SettingsPage.qml:38
 #, kde-format
 msgid "Home Country"
-msgstr ""
+msgstr "Haza"
 
 #: app/SettingsPage.qml:57
 #, kde-format
 msgid "Online Services"
-msgstr ""
+msgstr "Online szolgáltatások"
 
 #: app/SettingsPage.qml:61
 #, kde-format
 msgid "Query Traffic Data"
-msgstr ""
+msgstr "Forgalmi adatok lekérdezése"
 
 #: app/SettingsPage.qml:64
 #, kde-format
@@ -3356,7 +3362,7 @@ msgstr "Állomás"
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
-msgstr "Platform"
+msgstr "Peron"
 
 #: app/TrainEditor.qml:118
 #, kde-format
@@ -3573,7 +3579,7 @@ msgstr ""
 #: app/VehicleLayoutPage.qml:123
 #, kde-format
 msgid "Platform: %1"
-msgstr ""
+msgstr "Peron: %1"
 
 #: app/VehicleLayoutPage.qml:129
 #, kde-format
