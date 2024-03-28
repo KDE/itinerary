@@ -40,6 +40,20 @@ ColumnLayout {
             text: i18n("Number")
             description: root.programMembership.membershipNumber
             visible: description
+
+            trailing: QQC2.ToolButton {
+                display: QQC2.AbstractButton.IconOnly
+                text: i18nc("@info:tooltip", "Copy to Clipboard")
+                icon.name: "edit-copy"
+                onClicked: {
+                    Clipboard.saveText(programMembership.membershipNumber);
+                    applicationWindow().showPassiveNotification(i18n("Program membership number copied to clipboard"));
+                }
+
+                QQC2.ToolTip.text: text
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+                QQC2.ToolTip.visible: hovered
+            }
         }
         FormCard.FormDelegateSeparator {
             visible: membershipNumberLabel.visible
