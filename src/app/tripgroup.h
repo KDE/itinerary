@@ -22,6 +22,7 @@ class TripGroup
     Q_PROPERTY(QString name READ name)
     Q_PROPERTY(QDateTime beginDateTime READ beginDateTime)
     Q_PROPERTY(QDateTime endDateTime READ endDateTime)
+    Q_PROPERTY(QString slugName READ slugName)
 public:
     TripGroup();
     TripGroup(TripGroupManager *mgr);
@@ -35,6 +36,9 @@ public:
 
     [[nodiscard]] QDateTime beginDateTime() const;
     [[nodiscard]] QDateTime endDateTime() const;
+
+    /** URL slug variant of the name, for use in file names. */
+    [[nodiscard]] QString slugName() const;
 
     bool load(const QString &path);
     void store(const QString &path) const;

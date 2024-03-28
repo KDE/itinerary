@@ -15,6 +15,8 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
+
 void initLocale()
 {
     qputenv("LC_ALL", "en_US.utf-8");
@@ -197,7 +199,8 @@ private Q_SLOTS:
         QCOMPARE(addSpy.size(), 1);
         auto g = mgr.tripGroup(addSpy.at(0).at(0).toString());
         QCOMPARE(g.elements().size(), resMgr.batches().size() - 1);
-        QCOMPARE(g.name(), QStringLiteral("Oslo Airport (June 2000)"));
+        QCOMPARE(g.name(), "Oslo Airport (June 2000)"_L1);
+        QCOMPARE(g.slugName(), "oslo-airport-june-2000"_L1);
     }
 
     void testDeletion()

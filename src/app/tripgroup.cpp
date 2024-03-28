@@ -88,6 +88,25 @@ void TripGroup::store(const QString &path) const
     f.write(JsonIO::write(obj));
 }
 
+QString TripGroup::slugName() const
+{
+    QString s;
+    s.reserve(m_name.size());
+    for (const auto c : m_name) {
+        if (c.isLetter() || c.isDigit()) {
+            s.push_back(c.toCaseFolded());
+        } else if (!s.isEmpty() && s.back() != '-'_L1) {
+            s.push_back('-'_L1);
+        }
+    }
+
+    if (s.endsWith('-'_L1)) {
+        s.chop(1);
+    }
+
+    return s;
+}
+
 QDateTime TripGroup::beginDateTime() const
 {
     if (m_elements.empty()) {

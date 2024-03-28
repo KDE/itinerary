@@ -156,6 +156,7 @@ FormCard.FormCard {
                         icon.name: "export-symbolic"
                         onClicked: {
                             exportTripGroupDialog.tripGroupId = root.tripGroupId
+                            exportTripGroupDialog.suggestedFileName = root.tripGroup.slugName
                             exportTripGroupDialog.open()
                         }
                         text: i18n("Export...")

@@ -23,7 +23,8 @@
                 "@value": "2000-01-01T16:20:00+01:00",
                 "timezone": "Europe/Rome"
             },
-            "name": "Peretola (January 2000)"
+            "name": "Peretola (January 2000)",
+            "slugName": "peretola-january-2000"
         },
         "type": 2
     },
@@ -44,7 +45,8 @@
                 "@value": "2017-03-05T15:15:00-08:00",
                 "timezone": "America/Los_Angeles"
             },
-            "name": "San Francisco Airport (March 2017)"
+            "name": "San Francisco Airport (March 2017)",
+            "slugName": "san-francisco-airport-march-2017"
         },
         "type": 2
     },
@@ -383,7 +385,8 @@
                 "@value": "2017-03-05T15:15:00-08:00",
                 "timezone": "America/Los_Angeles"
             },
-            "name": "San Francisco Airport (March 2017)"
+            "name": "San Francisco Airport (March 2017)",
+            "slugName": "san-francisco-airport-march-2017"
         },
         "type": 2
     },
@@ -404,7 +407,8 @@
                 "@value": "2017-09-15T22:15:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "name": "Randa (September 2017)"
+            "name": "Randa (September 2017)",
+            "slugName": "randa-september-2017"
         },
         "type": 2
     },
@@ -1104,7 +1108,8 @@
                 "@value": "2017-09-15T22:15:00+02:00",
                 "timezone": "Europe/Berlin"
             },
-            "name": "Randa (September 2017)"
+            "name": "Randa (September 2017)",
+            "slugName": "randa-september-2017"
         },
         "type": 2
     }

@@ -23,7 +23,8 @@
                 "@value": "2000-01-01T16:20:00+01:00",
                 "timezone": "Europe/Rome"
             },
-            "name": "Peretola (January 2000)"
+            "name": "Peretola (January 2000)",
+            "slugName": "peretola-january-2000"
         },
         "type": 2
     },
@@ -351,7 +352,8 @@
                 "@value": "2000-01-01T16:20:00+01:00",
                 "timezone": "Europe/Rome"
             },
-            "name": "Peretola (January 2000)"
+            "name": "Peretola (January 2000)",
+            "slugName": "peretola-january-2000"
         },
         "type": 2
     }

@@ -216,6 +216,7 @@ Kirigami.ScrollablePage {
     Kirigami.MenuDialog {
         id: exportTripGroupDialog
         property string tripGroupId
+        property string suggestedFileName
         title: i18n("Export")
         property list<QQC2.Action> _actions: [
             Kirigami.Action {
@@ -223,6 +224,7 @@ Kirigami.ScrollablePage {
                 icon.name: "export-symbolic"
                 onTriggered: {
                     tripGroupFileExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
+                    tripGroupFileExportDialog.currentFile = exportTripGroupDialog.suggestedFileName + ".itinerary"
                     tripGroupFileExportDialog.open();
                 }
             },
@@ -231,6 +233,7 @@ Kirigami.ScrollablePage {
                 icon.name: "map-globe"
                 onTriggered: {
                     tripGroupGpxExportDialog.tripGroupId = exportTripGroupDialog.tripGroupId;
+                    tripGroupGpxExportDialog.currentFile = exportTripGroupDialog.suggestedFileName + ".gpx"
                     tripGroupGpxExportDialog.open();
                 }
             }
