@@ -32,35 +32,35 @@ public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings() override;
 
-    Q_INVOKABLE QVariant read(const QString &key, const QVariant &defaultValue) const;
-    Q_INVOKABLE void write(const QString &key, const QVariant &value);
+    Q_INVOKABLE [[nodiscard]] static QVariant read(const QString &key, const QVariant &defaultValue);
+    Q_INVOKABLE static void write(const QString &key, const QVariant &value);
 
-    bool weatherForecastEnabled() const;
+    [[nodiscard]] bool weatherForecastEnabled() const;
     void setWeatherForecastEnabled(bool enabled);
 
-    QString homeCountryIsoCode() const;
+    [[nodiscard]] QString homeCountryIsoCode() const;
     void setHomeCountryIsoCode(const QString &isoCode);
 
-    bool queryLiveData() const;
+    [[nodiscard]] bool queryLiveData() const;
     void setQueryLiveData(bool queryLiveData);
 
-    bool preloadMapData() const;
+    [[nodiscard]] bool preloadMapData() const;
     void setPreloadMapData(bool preload);
 
-    bool performCurrencyConversion() const;
+    [[nodiscard]] bool performCurrencyConversion() const;
     void setPerformCurrencyConversion(bool enable);
 
-    bool autoAddTransfers() const;
+    [[nodiscard]] bool autoAddTransfers() const;
     void setAutoAddTransfers(bool autoAdd);
-    bool autoFillTransfers() const;
+    [[nodiscard]] bool autoFillTransfers() const;
     void setAutoFillTransfers(bool autoFill);
 
-    bool showNotificationOnLockScreen() const;
+    [[nodiscard]] bool showNotificationOnLockScreen() const;
     void setShowNotificationOnLockScreen(bool enabled);
 
     void setOsmContributorMode(bool enabled);
 
-    bool developmentMode() const;
+    [[nodiscard]] bool developmentMode() const;
     void setDevelopmentMode(bool enabled);
 
 Q_SIGNALS:
