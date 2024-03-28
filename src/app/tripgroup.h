@@ -27,14 +27,14 @@ public:
     TripGroup(TripGroupManager *mgr);
     ~TripGroup();
 
-    QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
 
-    QVector<QString> elements() const;
+    [[nodiscard]] QVector<QString> elements() const;
     void setElements(const QVector<QString> &elems);
 
-    QDateTime beginDateTime() const;
-    QDateTime endDateTime() const;
+    [[nodiscard]] QDateTime beginDateTime() const;
+    [[nodiscard]] QDateTime endDateTime() const;
 
     bool load(const QString &path);
     void store(const QString &path) const;

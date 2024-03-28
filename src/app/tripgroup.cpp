@@ -21,6 +21,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
+using namespace Qt::Literals::StringLiterals;
+
 TripGroup::TripGroup() = default;
 
 TripGroup::TripGroup(TripGroupManager *mgr)
@@ -59,8 +61,8 @@ bool TripGroup::load(const QString &path)
     }
 
     const auto obj = JsonIO::read(f.readAll()).toObject();
-    m_name = obj.value(QLatin1StringView("name")).toString();
-    const auto elems = obj.value(QLatin1StringView("elements")).toArray();
+    m_name = obj.value("name"_L1).toString();
+    const auto elems = obj.value("elements"_L1).toArray();
     m_elements.clear();
     m_elements.reserve(elems.size());
     for (const auto &v : elems) {
@@ -79,10 +81,10 @@ void TripGroup::store(const QString &path) const
     }
 
     QJsonObject obj;
-    obj.insert(QLatin1StringView("name"), m_name);
+    obj.insert("name"_L1, m_name);
     QJsonArray elems;
     std::copy(m_elements.begin(), m_elements.end(), std::back_inserter(elems));
-    obj.insert(QLatin1StringView("elements"), elems);
+    obj.insert("elements"_L1, elems);
     f.write(JsonIO::write(obj));
 }
 
@@ -92,7 +94,7 @@ QDateTime TripGroup::beginDateTime() const
         return {};
     }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.at(0));
-    const auto dt = KItinerary::SortUtil::startDateTime(res);
+    auto dt = KItinerary::SortUtil::startDateTime(res);
 
     const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.at(0), Transfer::Before) : Transfer();
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledDepartureTime().isValid()) {
@@ -107,7 +109,7 @@ QDateTime TripGroup::endDateTime() const
         return {};
     }
     const auto res = m_mgr->m_resMgr->reservation(m_elements.constLast());
-    const auto dt = KItinerary::SortUtil::endDateTime(res);
+    auto dt = KItinerary::SortUtil::endDateTime(res);
 
     const auto transfer = m_mgr->m_transferMgr ? m_mgr->m_transferMgr->transfer(m_elements.constLast(), Transfer::After) : Transfer();
     if (transfer.state() == Transfer::Selected && transfer.journey().scheduledArrivalTime().isValid()) {
