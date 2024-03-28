@@ -54,6 +54,20 @@ void Settings::write(const QString& key, const QVariant& value)
     s.setValue(key, value);
 }
 
+QUrl Settings::readFileDialogFolder(const QString &key, const QUrl &defaultUrl)
+{
+    QSettings s;
+    s.beginGroup("FileDialog"_L1);
+    return QUrl(s.value(key, defaultUrl.toString(QUrl::FullyEncoded)).toString());
+}
+
+void Settings::writeFileDialogFolder(const QString &key, const QUrl &url)
+{
+    QSettings s;
+    s.beginGroup("FileDialog"_L1);
+    s.setValue(key, url.resolved(QUrl("."_L1)).toString(QUrl::FullyEncoded)); // drop the file name
+}
+
 bool Settings::weatherForecastEnabled() const
 {
     return m_weatherEnabled;

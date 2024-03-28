@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-import QtCore
+import QtCore as QtCore
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -260,18 +260,35 @@ Kirigami.ScrollablePage {
         property string tripGroupId
         fileMode: FileDialog.SaveFile
         title: i18n("Export Trip")
-        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
         nameFilters: [i18n("Itinerary file (*.itinerary)")]
-        onAccepted: ApplicationController.exportTripToFile(tripGroupId, selectedFile)
+        onAccepted: {
+            ApplicationController.exportTripToFile(tripGroupFileExportDialog.tripGroupId, tripGroupFileExportDialog.selectedFile);
+            Settings.writeFileDialogFolder("tripGroupExport", tripGroupFileExportDialog.selectedFile)
+        }
+        onVisibleChanged: {
+            if (tripGroupFileExportDialog.visible) {
+                tripGroupFileExportDialog.currentFolder = Settings.readFileDialogFolder("tripGroupExport",
+                    QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation));
+            }
+        }
     }
     FileDialog {
         id: tripGroupGpxExportDialog
         property string tripGroupId
         fileMode: FileDialog.SaveFile
         title: i18n("Export Trip")
-        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+        currentFolder: QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation)
         nameFilters: [i18n("GPX Files (*.gpx)")]
-        onAccepted: ApplicationController.exportTripToGpx(tripGroupId, selectedFile)
+        onAccepted: {
+            ApplicationController.exportTripToGpx(tripGroupGpxExportDialog.tripGroupId, tripGroupGpxExportDialog.selectedFile);
+            Settings.writeFileDialogFolder("tripGroupGpxExport", tripGroupGpxExportDialog.selectedFile)
+        }
+        onVisibleChanged: {
+            if (tripGroupGpxExportDialog.visible) {
+                tripGroupGpxExportDialog.currentFolder = Settings.readFileDialogFolder("tripGroupGpxExport",
+                    QtCore.StandardPaths.writableLocation(QtCore.StandardPaths.DocumentsLocation));
+            }
+        }
     }
 
     Component {

@@ -8,6 +8,7 @@
 #define SETTINGS_H
 
 #include <QObject>
+#include <QUrl>
 
 /** Application settings accessible by QML. */
 class Settings : public QObject
@@ -34,6 +35,10 @@ public:
 
     Q_INVOKABLE [[nodiscard]] static QVariant read(const QString &key, const QVariant &defaultValue);
     Q_INVOKABLE static void write(const QString &key, const QVariant &value);
+
+    /** Load/save file dialog directory. */
+    Q_INVOKABLE [[nodiscard]] static QUrl readFileDialogFolder(const QString &key, const QUrl &defaultUrl);
+    Q_INVOKABLE static void writeFileDialogFolder(const QString &key, const QUrl &url);
 
     [[nodiscard]] bool weatherForecastEnabled() const;
     void setWeatherForecastEnabled(bool enabled);
