@@ -19,6 +19,38 @@ Kirigami.Icon {
     Layout.preferredHeight: Kirigami.Units.iconSizes.small
     Layout.preferredWidth: Kirigami.Units.iconSizes.small
 
+    readonly property string featureTypeLabel: {
+        switch (root.feature.type) {
+            case KPublicTransport.Feature.AirConditioning:
+                return i18nc("train coach feature", "Air conditioning");
+            case KPublicTransport.Feature.Restaurant:
+                return i18nc("train coach feature", "Bistro or restaurant");
+            case KPublicTransport.Feature.ToddlerArea:
+                return i18nc("train coach feature", "Toddler area");
+            case KPublicTransport.Feature.FamilyArea:
+                return i18nc("train coach feature", "Family area");
+            case KPublicTransport.Feature.WheelchairAccessible:
+                return i18nc("train coach feature", "Wheelchar accessible");
+            case KPublicTransport.Feature.SilentArea:
+                return i18nc("train coach feature", "Quiet area");
+            case KPublicTransport.Feature.BikeStorage:
+                return i18nc("train coach feature", "Bike storage");
+            case KPublicTransport.Feature.Toilet:
+                return i18nc("train coach feature", "Toilet");
+            case KPublicTransport.Feature.WheelchairAccessibleToilet:
+                return i18nc("train coach feature", "Wheelchar accessible toilet");
+            case KPublicTransport.Feature.InformationPoint:
+                return i18nc("train coach feature", "Information point");
+            case KPublicTransport.Feature.WiFi:
+                return i18nc("train coach feature", "Wi-Fi");
+                break;
+            case KPublicTransport.Feature.Other:
+            default:
+                break;
+        }
+        return "";
+    }
+
     source: {
         switch (root.feature.type) {
             case KPublicTransport.Feature.AirConditioning:
@@ -85,46 +117,8 @@ Kirigami.Icon {
     QQC2.ToolTip.visible: hoverHandler.hovered && QQC2.ToolTip.text !== ""
     QQC2.ToolTip.text: {
         let s = root.feature.name;
-        if (s === "") {
-            switch (root.feature.type) {
-                case KPublicTransport.Feature.AirConditioning:
-                    s = i18nc("train coach feature", "Air conditioning");
-                    break;
-                case KPublicTransport.Feature.Restaurant:
-                    s = i18nc("train coach feature", "Bistro or restaurant");
-                    break;
-                case KPublicTransport.Feature.ToddlerArea:
-                    s = i18nc("train coach feature", "Toddler area");
-                    break;
-                case KPublicTransport.Feature.FamilyArea:
-                    s = i18nc("train coach feature", "Family area");
-                    break;
-                case KPublicTransport.Feature.WheelchairAccessible:
-                    s = i18nc("train coach feature", "Wheelchar accessible");
-                    break;
-                case KPublicTransport.Feature.SilentArea:
-                    s = i18nc("train coach feature", "Quiet area");
-                    break;
-                case KPublicTransport.Feature.BikeStorage:
-                    s = i18nc("train coach feature", "Bike storage");
-                    break;
-                case KPublicTransport.Feature.Toilet:
-                    s = i18nc("train coach feature", "Toilet");
-                    break;
-                case KPublicTransport.Feature.WheelchairAccessibleToilet:
-                    s = i18nc("train coach feature", "Wheelchar accessible toilet");
-                    break;
-                case KPublicTransport.Feature.InformationPoint:
-                    s = i18nc("train coach feature", "Information point");
-                    break;
-                case KPublicTransport.Feature.WiFi:
-                    s = i18nc("train coach feature", "Wi-Fi");
-                    break;
-                case KPublicTransport.Feature.Other:
-                default:
-                    break;
-            }
-        }
+        if (s === "")
+            s = root.featureTypeLabel;
 
         if (root.feature.availability === KPublicTransport.Feature.Unavailable) {
             s = i18n("%1 (not available)", s)
