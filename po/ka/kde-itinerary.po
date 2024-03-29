@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 00:38+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2024-02-27 04:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -118,7 +118,7 @@ msgstr "ჩასწორება"
 msgid "Add to calendar..."
 msgstr "კალენდარში ჩამატება..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "გატანა..."
@@ -142,17 +142,17 @@ msgstr "მოვლენის წაშლა"
 msgid "Do you really want to delete this event?"
 msgstr "მართლა გნებავთ ამ მოვლენის წაშლა?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
 #, kde-format
 msgid "Export"
 msgstr "გატანა"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "როგორც Itinerary-ის ფაილი..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
 #, kde-format
 msgid "Send to %1"
 msgstr "%1-სთან გაგზავნა"
@@ -162,7 +162,7 @@ msgstr "%1-სთან გაგზავნა"
 msgid "Export Reservation"
 msgstr "ჯავშნის გატანა"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Itinerary-ის ფაილი (*.itinerary)"
@@ -483,7 +483,7 @@ msgid "Reference"
 msgstr "მითითება"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -982,7 +982,7 @@ msgid "Export Favorite Locations"
 msgstr "ადგილის სანიშნების გატანა"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:270
+#: app/TimelinePage.qml:281
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "GPX ფაილები (*.gpx)"
@@ -2652,7 +2652,12 @@ msgstr "სახელი"
 msgid "Number"
 msgstr "რიცხვი"
 
-#: app/ProgramMembershipCard.qml:49
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#, kde-format
+msgid "Program membership number copied to clipboard"
+msgstr "პროგრამის წევრობის ნომერი დაკოპირდა ბუფერში"
+
+#: app/ProgramMembershipCard.qml:63
 #, kde-format
 msgid "Show program pass"
 msgstr "პროგრამის ბილეთის ჩვენება"
@@ -2708,11 +2713,6 @@ msgstr "ვადის ამოწურვის თარიღი ვად
 #, kde-format
 msgid "Program Membership"
 msgstr "პროგრამის წევრობა"
-
-#: app/ProgramMembershipPage.qml:102
-#, kde-format
-msgid "Program membership number copied to clipboard"
-msgstr "პროგრამის წევრობის ნომერი დაკოპირდა ბუფერში"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -3290,17 +3290,17 @@ msgstr "მოგზაურობის წაშლა"
 msgid "Do you really want to delete this trip?"
 msgstr "მართლა გნებავთ ამ მოგზაურობის წაშლა?"
 
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:232
 #, kde-format
 msgid "As GPX file..."
 msgstr "GPX ფაილის სახით..."
 
-#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
+#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, kde-format
 msgid "Export Trip"
 msgstr "მოგზაურობის გატანა"
 
-#: app/TimelinePage.qml:441
+#: app/TimelinePage.qml:461
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "მოგზაურობისთვის დღეს არაფერი გაქვთ გასაკეთებელი."
@@ -3552,7 +3552,7 @@ msgid_plural "Currencies: %2"
 msgstr[0] "ვალუტა: %2"
 msgstr[1] "ვალუტა: %2"
 
-#: app/TripGroupDelegate.qml:169
+#: app/TripGroupDelegate.qml:170
 #, kde-format
 msgid "Delete trip"
 msgstr "მოგზაურობის წაშლა"

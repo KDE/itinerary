@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 00:38+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -119,7 +119,7 @@ msgstr "Upraviť"
 msgid "Add to calendar..."
 msgstr "Pridať dokument..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Exportovať..."
@@ -144,19 +144,19 @@ msgstr "Odstrániť dokument"
 msgid "Do you really want to delete this event?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export"
 msgstr "Exportovať..."
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, fuzzy, kde-format
 #| msgid "KDE Itinerary"
 msgid "As Itinerary file..."
 msgstr "KDE Itinerár"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
 #, fuzzy, kde-format
 #| msgid "End time: %1"
 msgid "Send to %1"
@@ -168,7 +168,7 @@ msgstr "Čas konca: %1"
 msgid "Export Reservation"
 msgstr "Rezervácia hotela"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr ""
@@ -511,7 +511,7 @@ msgid "Reference"
 msgstr "Referencia:"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Import from Clipboard"
 msgctxt "@info:tooltip"
@@ -1051,7 +1051,7 @@ msgid "Export Favorite Locations"
 msgstr "Obľúbené miesta"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:270
+#: app/TimelinePage.qml:281
 #, fuzzy, kde-format
 #| msgid "All Files (*.*)"
 msgid "GPX Files (*.gpx)"
@@ -2803,7 +2803,13 @@ msgstr "Názov:"
 msgid "Number"
 msgstr "Číslo:"
 
-#: app/ProgramMembershipCard.qml:49
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#, fuzzy, kde-format
+#| msgid "Booking reference:"
+msgid "Program membership number copied to clipboard"
+msgstr "Referencia rezervácie:"
+
+#: app/ProgramMembershipCard.qml:63
 #, fuzzy, kde-format
 #| msgid "Show Boarding Pass"
 msgid "Show program pass"
@@ -2864,12 +2870,6 @@ msgstr ""
 #, kde-format
 msgid "Program Membership"
 msgstr ""
-
-#: app/ProgramMembershipPage.qml:102
-#, fuzzy, kde-format
-#| msgid "Booking reference:"
-msgid "Program membership number copied to clipboard"
-msgstr "Referencia rezervácie:"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -3450,18 +3450,18 @@ msgstr "Odstrániť dokument"
 msgid "Do you really want to delete this trip?"
 msgstr "Naozaj chcete odstrániť túto udalosť?"
 
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:232
 #, kde-format
 msgid "As GPX file..."
 msgstr ""
 
-#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
+#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Export Trip"
 msgstr "Exportovať..."
 
-#: app/TimelinePage.qml:441
+#: app/TimelinePage.qml:461
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr ""
@@ -3733,7 +3733,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: app/TripGroupDelegate.qml:169
+#: app/TripGroupDelegate.qml:170
 #, fuzzy, kde-format
 #| msgid "Delete Document"
 msgid "Delete trip"

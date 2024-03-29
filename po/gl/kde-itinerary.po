@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 00:38+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2024-02-28 15:51+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -117,7 +117,7 @@ msgstr "Editar"
 msgid "Add to calendar..."
 msgstr "Engadir ao calendario…"
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Exportar…"
@@ -141,17 +141,17 @@ msgstr "Eliminar o evento"
 msgid "Do you really want to delete this event?"
 msgstr "Seguro que quere eliminar este evento?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
 #, kde-format
 msgid "Export"
 msgstr "Exportar"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Como ficheiro de itinerario…"
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
 #, kde-format
 msgid "Send to %1"
 msgstr "Enviar a %1"
@@ -161,7 +161,7 @@ msgstr "Enviar a %1"
 msgid "Export Reservation"
 msgstr "Exportar a reserva"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Ficheiro de itinerario (*.itinerary)"
@@ -484,7 +484,7 @@ msgid "Reference"
 msgstr "Referencia"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -983,7 +983,7 @@ msgid "Export Favorite Locations"
 msgstr "Exportar as localizacións favoritas"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:270
+#: app/TimelinePage.qml:281
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Ficheiros GPX (*.gpx)"
@@ -2657,7 +2657,12 @@ msgstr "Nome"
 msgid "Number"
 msgstr "Número"
 
-#: app/ProgramMembershipCard.qml:49
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#, kde-format
+msgid "Program membership number copied to clipboard"
+msgstr "O número de afiliación ao programa copiouse no portapapeis"
+
+#: app/ProgramMembershipCard.qml:63
 #, kde-format
 msgid "Show program pass"
 msgstr "Amosar o pase do programa"
@@ -2714,11 +2719,6 @@ msgstr ""
 #, kde-format
 msgid "Program Membership"
 msgstr "Afiliación ao programa"
-
-#: app/ProgramMembershipPage.qml:102
-#, kde-format
-msgid "Program membership number copied to clipboard"
-msgstr "O número de afiliación ao programa copiouse no portapapeis"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -3298,17 +3298,17 @@ msgstr "Eliminar a viaxe"
 msgid "Do you really want to delete this trip?"
 msgstr "Seguro que quere eliminar a viaxe?"
 
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:232
 #, kde-format
 msgid "As GPX file..."
 msgstr "Como ficheiro GPX…"
 
-#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
+#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, kde-format
 msgid "Export Trip"
 msgstr "Exportar a viaxe"
 
-#: app/TimelinePage.qml:441
+#: app/TimelinePage.qml:461
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Hoxe non consta nada no itinerario"
@@ -3560,7 +3560,7 @@ msgid_plural "Currencies: %2"
 msgstr[0] "Divisa: %"
 msgstr[1] "Divisas: %2"
 
-#: app/TripGroupDelegate.qml:169
+#: app/TripGroupDelegate.qml:170
 #, kde-format
 msgid "Delete trip"
 msgstr "Eliminar a viaxe"

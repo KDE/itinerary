@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-06 00:38+0000\n"
+"POT-Creation-Date: 2024-03-29 00:37+0000\n"
 "PO-Revision-Date: 2024-02-27 07:50+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -118,7 +118,7 @@ msgstr "Uredi"
 msgid "Add to calendar..."
 msgstr "Dodaj v koledar..."
 
-#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:161
+#: app/ActionsCard.qml:73 app/main.qml:224 app/TripGroupDelegate.qml:162
 #, kde-format
 msgid "Export..."
 msgstr "Izvozi..."
@@ -142,17 +142,17 @@ msgstr "Zbriši dogodek"
 msgid "Do you really want to delete this event?"
 msgstr "Ali res želite izbrisati ta dogodek?"
 
-#: app/ActionsCard.qml:137 app/TimelinePage.qml:219
+#: app/ActionsCard.qml:137 app/TimelinePage.qml:220
 #, kde-format
 msgid "Export"
 msgstr "Izvozi"
 
-#: app/ActionsCard.qml:140 app/TimelinePage.qml:222
+#: app/ActionsCard.qml:140 app/TimelinePage.qml:223
 #, kde-format
 msgid "As Itinerary file..."
 msgstr "Kot datoteko itinerarja..."
 
-#: app/ActionsCard.qml:151 app/TimelinePage.qml:244
+#: app/ActionsCard.qml:151 app/TimelinePage.qml:247
 #, kde-format
 msgid "Send to %1"
 msgstr "Pošlji na %1"
@@ -162,7 +162,7 @@ msgstr "Pošlji na %1"
 msgid "Export Reservation"
 msgstr "Izvozi rezervacijo"
 
-#: app/ActionsCard.qml:167 app/TimelinePage.qml:261
+#: app/ActionsCard.qml:167 app/TimelinePage.qml:263
 #, kde-format
 msgid "Itinerary file (*.itinerary)"
 msgstr "Datoteka itinerarja (* .itinerary)"
@@ -488,7 +488,7 @@ msgid "Reference"
 msgstr "Referenca"
 
 #: app/BookingCard.qml:35 app/BookingCard.qml:67
-#: app/ProgramMembershipPage.qml:98
+#: app/ProgramMembershipCard.qml:46 app/ProgramMembershipPage.qml:98
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Copy to Clipboard"
@@ -989,7 +989,7 @@ msgid "Export Favorite Locations"
 msgstr "Izvozi priljubljene lokacije"
 
 #: app/FavoriteLocationPage.qml:38 app/FavoriteLocationPage.qml:46
-#: app/TimelinePage.qml:270
+#: app/TimelinePage.qml:281
 #, kde-format
 msgid "GPX Files (*.gpx)"
 msgstr "Datoteke GPX (*.gpx)"
@@ -2660,7 +2660,12 @@ msgstr "Ime"
 msgid "Number"
 msgstr "Številka"
 
-#: app/ProgramMembershipCard.qml:49
+#: app/ProgramMembershipCard.qml:50 app/ProgramMembershipPage.qml:102
+#, kde-format
+msgid "Program membership number copied to clipboard"
+msgstr "Članska številka programa kopirana na odložišče"
+
+#: app/ProgramMembershipCard.qml:63
 #, kde-format
 msgid "Show program pass"
 msgstr "Pokaži vstopni kupon"
@@ -2716,11 +2721,6 @@ msgstr "Čas do mora biti kasnejši od časa od."
 #, kde-format
 msgid "Program Membership"
 msgstr "Članstvo v programu"
-
-#: app/ProgramMembershipPage.qml:102
-#, kde-format
-msgid "Program membership number copied to clipboard"
-msgstr "Članska številka programa kopirana na odložišče"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -3297,17 +3297,17 @@ msgstr "Zbriši izlet"
 msgid "Do you really want to delete this trip?"
 msgstr "Ali res želite izbrisati to potovanje?"
 
-#: app/TimelinePage.qml:230
+#: app/TimelinePage.qml:232
 #, kde-format
 msgid "As GPX file..."
 msgstr "Kot datoteko GPX..."
 
-#: app/TimelinePage.qml:259 app/TimelinePage.qml:268
+#: app/TimelinePage.qml:262 app/TimelinePage.qml:279
 #, kde-format
 msgid "Export Trip"
 msgstr "Izvozi načrt poti"
 
-#: app/TimelinePage.qml:441
+#: app/TimelinePage.qml:461
 #, kde-format
 msgid "Nothing on the itinerary for today."
 msgstr "Nič na itinerarju za danes."
@@ -3563,7 +3563,7 @@ msgstr[1] "Valuti: %2"
 msgstr[2] "Valute: %2"
 msgstr[3] "Valut: %2"
 
-#: app/TripGroupDelegate.qml:169
+#: app/TripGroupDelegate.qml:170
 #, kde-format
 msgid "Delete trip"
 msgstr "Izbriši izlet"
