@@ -176,6 +176,16 @@ void LocationInformation::setTimeZone(const QTimeZone &tz, const QDateTime &tran
     }
     m_timeZone = tz;
     m_transitionTime = transitionTime;
+
+    // check if this is a DST transition
+    // the date logic is a special here as date/time math around DST changes behaves ... interestingly
+    if (m_timeZoneOffsetDelta == 0 && m_timeZone.isValid() && m_timeZone.hasDaylightTime() && m_timeZone.hasTransitions()) {
+        const auto nextTrans = m_timeZone.nextTransition(transitionTime.addSecs(-1));
+        if (std::abs(nextTrans.atUtc.secsTo(transitionTime)) <= 3600) {
+            m_timeZoneOffsetDelta = m_timeZone.offsetFromUtc(transitionTime.addSecs(3601))
+                - m_timeZone.offsetFromUtc(transitionTime.addSecs(-3601));
+        }
+    }
 }
 
 bool LocationInformation::hasRelevantTimeZoneChange(const LocationInformation &other) const
@@ -207,6 +217,16 @@ bool LocationInformation::currencyDiffers() const
 QString LocationInformation::currencyCode() const
 {
     return m_currency;
+}
+
+bool LocationInformation::dstDiffers() const
+{
+    return timeZoneDiffers() && m_isoCode.isEmpty();
+}
+
+bool LocationInformation::isDst() const
+{
+    return m_timeZone.isDaylightTime(m_transitionTime.addSecs(3601));
 }
 
 #include "moc_locationinformation.cpp"

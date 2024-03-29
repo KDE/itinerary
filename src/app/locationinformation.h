@@ -41,6 +41,11 @@ class LocationInformation
     Q_PROPERTY(bool currencyDiffers READ currencyDiffers)
     Q_PROPERTY(QString currencyCode READ currencyCode)
 
+    /** Daylight Saving Time change. */
+    Q_PROPERTY(bool dstDiffers READ dstDiffers)
+    /** Is the DST change a change to DST (@c true), or to standard time (@c false). */
+    Q_PROPERTY(bool isDst READ isDst)
+
 public:
     LocationInformation();
     ~LocationInformation();
@@ -76,6 +81,8 @@ public:
     [[nodiscard]] bool currencyDiffers() const;
     [[nodiscard]] QString currencyCode() const;
 
+    [[nodiscard]] bool dstDiffers() const;
+    [[nodiscard]] bool isDst() const;
 
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);

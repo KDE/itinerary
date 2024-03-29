@@ -58,6 +58,22 @@ private Q_SLOTS:
         QVERIFY(info.currencyDiffers());
         QCOMPARE(info.currencyCode(), QLatin1StringView("EUR"));
     }
+
+    void testDstChange()
+    {
+        LocationInformation l;
+        l.setTimeZone(QTimeZone("Europe/Berlin"), QDateTime{{2024, 3, 29}, {2, 0}, QTimeZone("Europe/Berlin")});
+        l.setTimeZone(QTimeZone("Europe/Berlin"), QDateTime{{2024, 3, 31}, {3, 0}, QTimeZone("Europe/Berlin")});
+        QCOMPARE(l.timeZoneDiffers(), true);
+        QCOMPARE(l.dstDiffers(), true);
+        QCOMPARE(l.isDst(), true);
+        QCOMPARE(l.timeZoneOffsetDelta(), 3600);
+        l.setTimeZone(QTimeZone("Europe/Berlin"), QDateTime{{2024, 10, 27}, {2, 0}, QTimeZone("Europe/Berlin")});
+        QCOMPARE(l.timeZoneDiffers(), true);
+        QCOMPARE(l.dstDiffers(), true);
+        QCOMPARE(l.isDst(), false);
+        QCOMPARE(l.timeZoneOffsetDelta(), -3600);
+    }
 };
 
 QTEST_GUILESS_MAIN(LocationInformationTest)

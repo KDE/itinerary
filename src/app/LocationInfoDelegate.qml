@@ -32,15 +32,18 @@ FormCard.FormCard {
             anchors.fill: parent
             anchors.margins: Kirigami.Units.largeSpacing
 
+            // TODO appropriate header when we change timezone in the same country
             Kirigami.Icon {
-                source: "documentinfo"
+                source: root.locationInfo.dstDiffers ? "clock" : "documentinfo"
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Layout.preferredWidth
                 isMask: true
             }
             QQC2.Label {
                 id: headerLabel
-                text: i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
+                text: root.locationInfo.dstDiffers ?
+                    (root.locationInfo.isDst ? i18n("Daylight Saving Time") : i18nc("opposite to daylight saving time", "Standard Time"))
+                    : i18n("Entering %1", Country.fromAlpha2(locationInfo.isoCode).name)
                 Layout.fillWidth: true
                 Accessible.ignored: true
             }
