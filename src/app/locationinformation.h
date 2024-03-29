@@ -52,29 +52,30 @@ public:
     };
     Q_ENUM(PowerPlugCompatibility)
 
-    bool operator==(const LocationInformation &other) const;
+    [[nodiscard]] bool operator==(const LocationInformation &other) const;
 
-    QString isoCode() const;
+    [[nodiscard]] QString isoCode() const;
     void setIsoCode(const QString &isoCode);
 
-    KItinerary::KnowledgeDb::DrivingSide drivingSide() const;
-    bool drivingSideDiffers() const;
-    QString drivingSideLabel() const;
+    [[nodiscard]] KItinerary::KnowledgeDb::DrivingSide drivingSide() const;
+    [[nodiscard]] bool drivingSideDiffers() const;
+    [[nodiscard]] QString drivingSideLabel() const;
 
-    PowerPlugCompatibility powerPlugCompatibility() const;
-    QString powerPlugTypes() const;
-    QString powerSocketTypes() const;
+    [[nodiscard]] PowerPlugCompatibility powerPlugCompatibility() const;
+    [[nodiscard]] QString powerPlugTypes() const;
+    [[nodiscard]] QString powerSocketTypes() const;
 
-    QTimeZone timeZone() const;
-    QDateTime transitionTime() const;
+    [[nodiscard]] QTimeZone timeZone() const;
+    [[nodiscard]] QDateTime transitionTime() const;
     void setTimeZone(const QTimeZone &tz, const QDateTime &transitionTime);
-    bool hasRelevantTimeZoneChange(const LocationInformation &other) const;
-    bool timeZoneDiffers() const;
-    QString timeZoneName() const;
-    int timeZoneOffsetDelta() const;
+    [[nodiscard]] bool hasRelevantTimeZoneChange(const LocationInformation &other) const;
+    [[nodiscard]] bool timeZoneDiffers() const;
+    [[nodiscard]] QString timeZoneName() const;
+    [[nodiscard]] int timeZoneOffsetDelta() const;
 
-    bool currencyDiffers() const;
-    QString currencyCode() const;
+    [[nodiscard]] bool currencyDiffers() const;
+    [[nodiscard]] QString currencyCode() const;
+
 
 private:
     void setDrivingSide(KItinerary::KnowledgeDb::DrivingSide drivingSide);
