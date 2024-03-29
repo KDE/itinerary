@@ -10,6 +10,7 @@
 #include "locationinformation.h"
 #include "pkpassmanager.h"
 #include "reservationmanager.h"
+#include "timelineelement.h"
 #include "tripgroup.h"
 #include "tripgroupmanager.h"
 #include "transfermanager.h"
@@ -513,6 +514,44 @@ void TimelineModel::updateInformationElements()
 
         ++it;
         previousCountry = newCountry;
+    }
+
+    // add DST transition information in a -1/+3 months window, if there are any
+    if (!m_elements.empty()) {
+        qDebug() << "looking for DST transitions";
+        constexpr const auto DST_DAYS_BEFORE = 30;
+        constexpr const auto DST_DAYS_AFTER = 90;
+        for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+            if ((*it).isInformational() || (*it).isCanceled()) {
+                continue;
+            }
+            const auto tz = timeZone((*it).endDateTime());
+            auto startDt = std::max((*it).dt, now().addDays(-DST_DAYS_BEFORE));
+            auto endDt = now().addDays(DST_DAYS_AFTER);
+            for (auto nextIt = it; std::next(nextIt) != m_elements.end();) {
+                ++nextIt;
+                if ((*nextIt).isInformational() || (*nextIt).isCanceled()) {
+                    continue;
+                }
+                endDt = std::min(endDt, (*nextIt).dt);
+                break;
+            }
+            if (startDt > now().addDays(DST_DAYS_AFTER) || endDt < now().addDays(-DST_DAYS_BEFORE) || !tz.isValid() || !tz.hasTransitions() || !tz.hasDaylightTime()) {
+                continue;
+            }
+            while (startDt < endDt) {
+                const auto nextTransition = tz.nextTransition(startDt);
+                if (!nextTransition.atUtc.isValid() || nextTransition.atUtc >= endDt) {
+                    break;
+                }
+                startDt = nextTransition.atUtc;
+                LocationInformation locInfo;
+                locInfo.setTimeZone(tz, startDt);
+                it = insertOrUpdate(it, TimelineElement(this, TimelineElement::LocationInfo, startDt, QVariant::fromValue(locInfo)));
+            }
+        }
+
+        qDebug() << "  done";
     }
 
     updateWeatherElements();

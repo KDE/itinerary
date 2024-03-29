@@ -22,6 +22,25 @@
         "type": 2
     },
     {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyDiffers": false,
+            "drivingSide": "Unknown",
+            "drivingSideDiffers": false,
+            "dstDiffers": true,
+            "isDst": false,
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central European Standard Time",
+            "timeZoneOffsetDelta": -3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "2017-10-29",
+        "type": 4
+    },
+    {
         "isToday": true,
         "isTodayEmpty": true,
         "rangeType": 0,

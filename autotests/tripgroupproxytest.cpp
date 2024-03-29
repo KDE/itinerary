@@ -138,7 +138,7 @@ private Q_SLOTS:
         model.setCurrentDateTime(QDateTime({2018, 9, 9}, {12, 34}));
         ModelVerificationPoint vp2(QLatin1StringView(SOURCE_DIR "/data/tripgroupproxy/current-r2.model"));
         vp2.setRoleFilter({TimelineModel::BatchIdRole, TimelineModel::TripGroupIdRole});
-        QCOMPARE(proxy.rowCount(), 2);
+        QCOMPARE(proxy.rowCount(), 3);
         QVERIFY(vp2.verify(&proxy));
     }
 

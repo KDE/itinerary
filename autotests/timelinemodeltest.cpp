@@ -97,6 +97,7 @@ private Q_SLOTS:
         ctrl->setReservationManager(&resMgr);
 
         TimelineModel model;
+        model.setCurrentDateTime({{2024, 3, 31}, {17, 18}});
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
 
@@ -110,23 +111,31 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v1.pkpass")));
-        QCOMPARE(insertSpy.size(), 1);
+        QCOMPARE(insertSpy.size(), 2);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
-        QVERIFY(updateSpy.isEmpty());
-        QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(updateSpy.size(), 1);
+        QCOMPARE(model.rowCount(), 3);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
+        QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo); // DST change
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
+        insertSpy.clear();
+        updateSpy.clear();
+        rmSpy.clear();
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/boardingpass-v2.pkpass")));
         QCOMPARE(insertSpy.size(), 1);
         QCOMPARE(updateSpy.size(), 1);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 0);
-        QCOMPARE(model.rowCount(), 2);
+        QCOMPARE(model.rowCount(), 3);
 
+        insertSpy.clear();
+        updateSpy.clear();
+        rmSpy.clear();
         Test::clearAll(&resMgr);
-        QCOMPARE(insertSpy.size(), 1);
-        QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(rmSpy.size(), 1);
+        QCOMPARE(insertSpy.size(), 0);
+        QCOMPARE(updateSpy.size(), 0);
+        QCOMPARE(rmSpy.size(), 2);
         QCOMPARE(model.rowCount(), 1);
     }
 
@@ -138,6 +147,7 @@ private Q_SLOTS:
         ctrl->setReservationManager(&resMgr);
 
         TimelineModel model;
+        model.setCurrentDateTime({{2024, 3, 29}, {11, 38}});
         QAbstractItemModelTester tester(&model);
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
@@ -152,13 +162,13 @@ private Q_SLOTS:
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v1.json")));
-        QCOMPARE(insertSpy.size(), 3);
+        QCOMPARE(insertSpy.size(), 4);
         QCOMPARE(insertSpy.at(0).at(1).toInt(), 0);
         QCOMPARE(insertSpy.at(0).at(2).toInt(), 0);
         QCOMPARE(insertSpy.at(1).at(1).toInt(), 1);
         QCOMPARE(insertSpy.at(1).at(2).toInt(), 1);
         QVERIFY(updateSpy.isEmpty());
-        QCOMPARE(model.rowCount(), 4);
+        QCOMPARE(model.rowCount(), 5);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Hotel);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeBegin);
@@ -166,21 +176,27 @@ private Q_SLOTS:
         QCOMPARE(model.index(2, 0).data(TimelineModel::ElementRangeRole), TimelineElement::RangeEnd);
 
         // move end date of a hotel booking: dataChanged on RangeBegin, move (or del/ins) on RangeEnd
+        insertSpy.clear();
+        updateSpy.clear();
+        rmSpy.clear();
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/haus-randa-v2.json")));
-        QCOMPARE(insertSpy.size(), 5);
+        QCOMPARE(insertSpy.size(), 3);
         QCOMPARE(updateSpy.size(), 1);
-        QCOMPARE(rmSpy.size(), 2);
+        QCOMPARE(rmSpy.size(), 3);
         QCOMPARE(updateSpy.at(0).at(0).toModelIndex().row(), 1);
-        QCOMPARE(insertSpy.at(2).at(1).toInt(), 0);
-        QCOMPARE(insertSpy.at(2).at(2).toInt(), 0);
+        QCOMPARE(insertSpy.at(1).at(1).toInt(), 0);
+        QCOMPARE(insertSpy.at(1).at(2).toInt(), 0);
         QCOMPARE(rmSpy.at(0).at(1), 2);
-        QCOMPARE(model.rowCount(), 4);
+        QCOMPARE(model.rowCount(), 5);
 
         // delete a split element
+        insertSpy.clear();
+        updateSpy.clear();
+        rmSpy.clear();
         const auto resId = model.data(model.index(1, 0), TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
         resMgr.removeReservation(resId);
-        QCOMPARE(rmSpy.size(), 5);
+        QCOMPARE(rmSpy.size(), 4);
         QCOMPARE(model.rowCount(), 1);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
     }
@@ -193,6 +209,7 @@ private Q_SLOTS:
         ctrl->setReservationManager(&resMgr);
 
         TimelineModel model;
+        model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
         QAbstractItemModelTester tester(&model);
         model.setHomeCountryIsoCode(QStringLiteral("DE"));
         model.setReservationManager(&resMgr);
@@ -201,7 +218,7 @@ private Q_SLOTS:
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/flight-txl-lhr-sfo.json")));
-        QCOMPARE(model.rowCount(), 5); //  2x country info, 2x flights, today marker
+        QCOMPARE(model.rowCount(), 6); //  2x country info, 2x flights, today marker, 1x DST info
 
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
@@ -216,15 +233,19 @@ private Q_SLOTS:
         QCOMPARE(countryInfo.drivingSide(), KItinerary::KnowledgeDb::DrivingSide::Right);
         QCOMPARE(countryInfo.drivingSideDiffers(), false);
         QCOMPARE(countryInfo.powerPlugCompatibility(), LocationInformation::Incompatible);
-        QCOMPARE(model.index(4, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        countryInfo = model.index(4, 0).data(TimelineModel::LocationInformationRole).value<LocationInformation>();
+        QCOMPARE(countryInfo.isDst(), true);
+        QCOMPARE(countryInfo.dstDiffers(), true);
+        QCOMPARE(model.index(5, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the GB flight should also remove the GB country info
         auto resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
         resMgr.removeReservation(resId);
-        QCOMPARE(model.rowCount(), 3);
+        QCOMPARE(model.rowCount(), 4);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
 
         // remove the US flight should also remove the US country info
         resId = model.index(0, 0).data(TimelineModel::BatchIdRole).toString();
@@ -418,6 +439,7 @@ private Q_SLOTS:
         auto ctrl = Test::makeAppController();
         ctrl->setReservationManager(&resMgr);
         TimelineModel model;
+        model.setCurrentDateTime({{2024, 3, 29}, {10, 21}}); // after the DST transition in the US!
         QAbstractItemModelTester tester(&model);
         model.setReservationManager(&resMgr);
         QCOMPARE(model.rowCount(), 1); // 1x TodayMarker
@@ -431,28 +453,32 @@ private Q_SLOTS:
 
         // full import at runtime
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/data/google-multi-passenger-flight.json")));
-        QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
-        QCOMPARE(insertSpy.count(), 2);
+        QCOMPARE(model.rowCount(), 4); // 2x Flight, 1x DST info, 1x TodayMarker
         QCOMPARE(updateSpy.count(), 2);
+        QCOMPARE(updateSpy.count(), 2);
+        QCOMPARE(rmSpy.count(), 3);
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // already existing data
         model.setReservationManager(nullptr);
         model.setReservationManager(&resMgr);
-        QCOMPARE(model.rowCount(), 3); // 2x Flight, 1x TodayMarger
+        QCOMPARE(model.rowCount(), 4); // 2x Flight, 1x DST info, 1x TodayMarger
         QCOMPARE(model.index(0, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
         QCOMPARE(model.index(1, 0).data(TimelineModel::ElementTypeRole), TimelineElement::Flight);
-        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
+        QCOMPARE(model.index(2, 0).data(TimelineModel::ElementTypeRole), TimelineElement::LocationInfo);
+        QCOMPARE(model.index(3, 0).data(TimelineModel::ElementTypeRole), TimelineElement::TodayMarker);
         QCOMPARE(resMgr.reservationsForBatch(model.index(0, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
         QCOMPARE(resMgr.reservationsForBatch(model.index(1, 0).data(TimelineModel::BatchIdRole).toString()).size(), 2);
 
         // update splits element
         updateSpy.clear();
         insertSpy.clear();
+        rmSpy.clear();
         auto resId = model.index(1, 0).data(TimelineModel::BatchIdRole).toString();
         QVERIFY(!resId.isEmpty());
         auto res = resMgr.reservation(resId).value<FlightReservation>();
@@ -460,10 +486,10 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 4);
+        QCOMPARE(model.rowCount(), 5);
         QCOMPARE(updateSpy.count(), 1);
-        QCOMPARE(insertSpy.count(), 1);
-        QCOMPARE(rmSpy.count(), 0);
+        QCOMPARE(insertSpy.count(), 2);
+        QCOMPARE(rmSpy.count(), 1);
 
         // update merges two elements
         updateSpy.clear();
@@ -472,17 +498,17 @@ private Q_SLOTS:
         flight.setDepartureTime(flight.departureTime().addDays(-1));
         res.setReservationFor(flight);
         resMgr.updateReservation(resId, res);
-        QCOMPARE(model.rowCount(), 3);
+        QCOMPARE(model.rowCount(), 4);
         QCOMPARE(updateSpy.count(), 1);
-        QCOMPARE(rmSpy.count(), 1);
-        QCOMPARE(insertSpy.count(), 0);
+        QCOMPARE(rmSpy.count(), 3);
+        QCOMPARE(insertSpy.count(), 2);
 
         // removal of merged items
         updateSpy.clear();
         rmSpy.clear();
         Test::clearAll(&resMgr);
         QCOMPARE(model.rowCount(), 1);
-        QCOMPARE(rmSpy.count(), 2);
+        QCOMPARE(rmSpy.count(), 6);
         QCOMPARE(updateSpy.count(), 2);
     }
 
@@ -607,7 +633,7 @@ private Q_SLOTS:
         QSignalSpy currentResChangedSpy(&model, &TimelineModel::currentBatchChanged);
 
         ctrl->importFromUrl(QUrl::fromLocalFile(QLatin1StringView(SOURCE_DIR "/../tests/randa2017.json")));
-        QCOMPARE(model.rowCount(), 13);
+        QCOMPARE(model.rowCount(), 14);
         QVERIFY(!currentResChangedSpy.empty());
 
         model.setCurrentDateTime(QDateTime({2017, 8, 1}, {23, 0}, QTimeZone("Europe/Zurich")));

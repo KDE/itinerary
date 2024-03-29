@@ -99,6 +99,8 @@
             "currencyDiffers": true,
             "drivingSide": "Right",
             "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
             "isoCode": "CH",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerPlugTypes": "Schuko",
@@ -728,5 +730,24 @@
             "slugName": "randa-september-2017"
         },
         "type": 2
+    },
+    {
+        "isToday": false,
+        "locationInformation": {
+            "@context": "http://schema.org",
+            "@type": "LocationInformation",
+            "currencyDiffers": false,
+            "drivingSide": "Unknown",
+            "drivingSideDiffers": false,
+            "dstDiffers": true,
+            "isDst": false,
+            "powerPlugCompatibility": "FullyCompatible",
+            "timeZoneDiffers": true,
+            "timeZoneName": "Central European Standard Time",
+            "timeZoneOffsetDelta": -3600
+        },
+        "rangeType": 0,
+        "sectionHeader": "2017-10-29",
+        "type": 4
     }
 ]

@@ -324,6 +324,8 @@
             "currencyDiffers": false,
             "drivingSide": "Right",
             "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": false,
             "isoCode": "IT",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerSocketTypes": "Type L",

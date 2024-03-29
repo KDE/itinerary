@@ -150,6 +150,8 @@
             "currencyDiffers": true,
             "drivingSide": "Right",
             "drivingSideDiffers": false,
+            "dstDiffers": false,
+            "isDst": true,
             "isoCode": "CH",
             "powerPlugCompatibility": "PartiallyCompatible",
             "powerPlugTypes": "Schuko",
