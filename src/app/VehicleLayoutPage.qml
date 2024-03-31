@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kpublictransport as KPublicTransport
 import org.kde.kpublictransport.ui
 import org.kde.itinerary
@@ -57,6 +58,86 @@ Kirigami.ScrollablePage {
 
             if (vehicleModel.rowCount() > 0)
                 root.layoutUpdated();
+        }
+    }
+
+    function classesLabel(cls) {
+        if (cls == KPublicTransport.VehicleSection.FirstClass)
+            return i18n("First class");
+        if (cls == KPublicTransport.VehicleSection.SecondClass)
+            return i18n("Second class");
+        if (cls == (KPublicTransport.VehicleSection.FirstClass | KPublicTransport.VehicleSection.SecondClass))
+            return i18n("First/second class");
+        return i18n("Unknown class");
+    }
+
+    SheetDrawer {
+        id: coachDrawer
+        property var coach
+        headerItem: Component {
+            // TODO show platform section as well?
+            ColumnLayout {
+                Layout.leftMargin: Kirigami.Units.largeSpacing
+                Kirigami.Heading {
+                    text: i18nc("train coach", "Coach %1", coachDrawer.coach.name)
+                    Layout.fillWidth: true
+                    elide: Qt.ElideRight
+                }
+                QQC2.Label {
+                    id: subtitle
+                    Layout.fillWidth: true
+                    text: {
+                        switch (coachDrawer.coach.type) {
+                            case KPublicTransport.VehicleSection.SleepingCar:
+                                return i18nc("train coach type", "Sleeping car");
+                            case KPublicTransport.VehicleSection.CouchetteCar:
+                                return i18nc("train coach type", "Couchette car");
+                            case KPublicTransport.VehicleSection.RestaurantCar:
+                                return i18nc("train coach type", "Restaurant car");
+                            case KPublicTransport.VehicleSection.CarTransportCar:
+                                return i18nc("train coach type", "Car transport car");
+                            default:
+                                break
+                        }
+                        return classesLabel(coachDrawer.coach.classes);
+                    }
+                    visible: subtitle.text !== ""
+                }
+            }
+        }
+
+        contentItem: Component {
+            ColumnLayout {
+                Repeater {
+                    model: coachDrawer.coach.sectionFeatures
+                    delegate: RowLayout {
+                        PublicTransportFeatureIcon {
+                            id: featureIcon
+                            feature: modelData
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                        }
+                        KirigamiDelegates.TitleSubtitle {
+                            Layout.fillWidth: true
+                            enabled: modelData.availability !== KPublicTransport.Feature.Unavailable
+                            title: {
+                                if (modelData.name !== "")
+                                    return modelData.name;
+                                return featureIcon.featureTypeLabel;
+                            }
+                            subtitle: {
+                                if (modelData.description !== "")
+                                    return modelData.description;
+                                if (modelData.availability === KPublicTransport.Feature.Unavailable)
+                                    return i18n("Not available")
+                                if (modelData.disruption === KPublicTransport.Disruption.NoService)
+                                    return i18n("Currently not available")
+                                return "";
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -224,6 +305,14 @@ Kirigami.ScrollablePage {
                     }
                 }
 
+                TapHandler {
+                    enabled: model.vehicleSection.sectionFeatures.length > 0
+                    onTapped: {
+                        coachDrawer.coach = model.vehicleSection;
+                        coachDrawer.open();
+                    }
+                }
+
                 ColumnLayout {
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.right
@@ -241,14 +330,14 @@ Kirigami.ScrollablePage {
                     }
                     QQC2.Label {
                         visible: section.classes != KPublicTransport.VehicleSection.UnknownClass
-                        text: {
-                            if (section.classes == KPublicTransport.VehicleSection.FirstClass)
-                                return i18n("First class");
-                            if (section.classes == KPublicTransport.VehicleSection.SecondClass)
-                                return i18n("Second class");
-                            if (section.classes == (KPublicTransport.VehicleSection.FirstClass | KPublicTransport.VehicleSection.SecondClass))
-                                return i18n("First/second class");
-                            return i18n("Unknown class");
+                        text: classesLabel(section.classes)
+                    }
+
+                    TapHandler {
+                        enabled: model.vehicleSection.sectionFeatures.length > 0
+                        onTapped: {
+                            coachDrawer.coach = model.vehicleSection;
+                            coachDrawer.open();
                         }
                     }
                 }
