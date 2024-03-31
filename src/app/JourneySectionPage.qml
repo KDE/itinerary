@@ -10,6 +10,7 @@ import QtQuick.Controls as QQC2
 import QtLocation as QtLocation
 import QtPositioning as QtPositioning
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.delegates as KirigamiDelegates
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kpublictransport
@@ -91,9 +92,26 @@ Kirigami.Page {
                 visible: journeySection.co2Emission > 0
             }
 
+            RowLayout {
+                Layout.row: 5
+                Layout.column: 1
+                Layout.columnSpan: 2
+                spacing: Kirigami.Units.smallSpacing
+                Repeater {
+                    model: journeySection.features
+                    delegate: PublicTransportFeatureIcon {
+                        feature: modelData
+                    }
+                }
+
+                TapHandler {
+                    onTapped: moreNotesSheet.open()
+                }
+            }
+
             QQC2.Label {
                 id: notesLabel
-                Layout.row: 5
+                Layout.row: 6
                 Layout.column: 1
                 Layout.columnSpan: 2
                 Layout.fillWidth: true
@@ -109,28 +127,59 @@ Kirigami.Page {
                 visible: journeySection.notes.length > 0
                 font.italic: true
                 onLinkActivated: Qt.openUrlExternally(link)
-
-                SheetDrawer {
-                    id: moreNotesSheet
-                    contentItem: QQC2.Label {
-                        Layout.fillWidth: true
-                        text: journeySection.notes.join("<br/>")
-                        textFormat: Text.RichText
-                        wrapMode: Text.Wrap
-                        onLinkActivated: Qt.openUrlExternally(link)
-                        padding: Kirigami.Units.largeSpacing * 2
-                    }
-                }
             }
 
             Kirigami.LinkButton {
-                Layout.row: 6
+                Layout.row: 7
                 Layout.column: 1
                 Layout.columnSpan: 2
                 text: i18nc("@action:button", "Show More…")
                 visible: notesLabel.implicitHeight > notesLabel.height
                 onClicked: {
                     moreNotesSheet.open();
+                }
+            }
+        }
+
+        SheetDrawer {
+            id: moreNotesSheet
+            contentItem: ColumnLayout {
+                Repeater {
+                    model: journeySection.features
+                    delegate: RowLayout {
+                        PublicTransportFeatureIcon {
+                            id: featureIcon
+                            feature: modelData
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
+                        }
+                        KirigamiDelegates.TitleSubtitle {
+                            Layout.fillWidth: true
+                            enabled: modelData.availability !== KPublicTransport.Feature.Unavailable
+                            title: {
+                                if (modelData.name !== "")
+                                    return modelData.name;
+                                return featureIcon.featureTypeLabel;
+                            }
+                            subtitle: {
+                                if (modelData.description !== "")
+                                    return modelData.description;
+                                if (modelData.availability === KPublicTransport.Feature.Unavailable)
+                                    return i18n("Not available")
+                                if (modelData.disruption === KPublicTransport.Disruption.NoService)
+                                    return i18n("Currently not available")
+                                return "";
+                            }
+                        }
+                    }
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: journeySection.notes.join("<br/>")
+                    textFormat: Text.RichText
+                    wrapMode: Text.Wrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    padding: Kirigami.Units.largeSpacing * 2
                 }
             }
         }
