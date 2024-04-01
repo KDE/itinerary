@@ -7,6 +7,7 @@
         <file>vehiclelayoutviewer.qml</file>
         <file alias="VehicleLayoutPage.qml">../src/app/VehicleLayoutPage.qml</file>
         <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureIcon.qml">../src/app/PublicTransportFeatureIcon.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureList.qml">../src/app/PublicTransportFeatureList.qml</file>
         <file alias="qt/qml/org/kde/itinerary/SheetDrawer.qml">../src/app/SheetDrawer.qml</file>
 
         <file alias="images/bike.svg">../src/app/images/bike.svg</file>

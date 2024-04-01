@@ -108,34 +108,8 @@ Kirigami.ScrollablePage {
 
         contentItem: Component {
             ColumnLayout {
-                Repeater {
+                PublicTransportFeatureList {
                     model: coachDrawer.coach.sectionFeatures
-                    delegate: RowLayout {
-                        PublicTransportFeatureIcon {
-                            id: featureIcon
-                            feature: modelData
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
-                        }
-                        KirigamiDelegates.TitleSubtitle {
-                            Layout.fillWidth: true
-                            enabled: modelData.availability !== KPublicTransport.Feature.Unavailable
-                            title: {
-                                if (modelData.name !== "")
-                                    return modelData.name;
-                                return featureIcon.featureTypeLabel;
-                            }
-                            subtitle: {
-                                if (modelData.description !== "")
-                                    return modelData.description;
-                                if (modelData.availability === KPublicTransport.Feature.Unavailable)
-                                    return i18n("Not available")
-                                if (modelData.disruption === KPublicTransport.Disruption.NoService)
-                                    return i18n("Currently not available")
-                                return "";
-                            }
-                        }
-                    }
                 }
             }
         }
