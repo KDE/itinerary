@@ -27,12 +27,6 @@ Nightly builds are available from KDE's [nightly F-Droid Repository](https://cdn
 
 ![Link to KDE's nightly F-Droid repository](doc/kde-fdroid-release-repository-link.png)
 
-Alternatively, you can download APKs directly from [Binary Factory](https://binary-factory.kde.org):
-- Nightly builds for [arm64](https://binary-factory.kde.org/view/Android/job/Itinerary_Nightly_android-arm64/), [arm](https://binary-factory.kde.org/view/Android/job/Itinerary_Nightly_android-arm/), [x86_64](https://binary-factory.kde.org/view/Android/job/Itinerary_Nightly_android-x86_64/) and [x86](https://binary-factory.kde.org/view/Android/job/Itinerary_Nightly_android-x86/)
-- Release builds for [arm64](https://binary-factory.kde.org/view/Android/job/Itinerary_Release_android-arm64/), [arm](https://binary-factory.kde.org/view/Android/job/Itinerary_Release_android-arm/), [x86_64](https://binary-factory.kde.org/view/Android/job/Itinerary_Release_android-x86_64/) and [x86](https://binary-factory.kde.org/view/Android/job/Itinerary_Release_android-x86/)
-
-The version in the Play Store can currently not be updated due to Play Store policies.
-
 ## Contributing
 
 General introduction: https://community.kde.org/Get_Involved
