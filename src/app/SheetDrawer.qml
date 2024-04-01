@@ -29,11 +29,13 @@ Item {
         if (Kirigami.Settings.isMobile) {
             drawer.open()
             drawer.drawerContentItem = contentItem.createObject(drawer)
-            drawer.headerContentItem = headerItem.createObject(drawer)
+            if (root.headerItem)
+                drawer.headerContentItem = headerItem.createObject(drawer)
         } else {
             sheet.open()
             sheet.contentItem = contentItem.createObject(sheet)
-            sheet.header.contentItem = headerItem.createObject(sheet)
+            if (root.headerItem)
+                sheet.header.contentItem = headerItem.createObject(sheet)
             if (root.footerItem)
                 sheet.footer.contentItem = footerItem.createObject(sheet)
         }
