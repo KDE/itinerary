@@ -188,6 +188,8 @@ Item {
                 source: passId !== "" ? "image://org.kde.pkpass/" + passId + "/footer" : ""
                 sourceSize.height: 1 // ??? seems necessary to trigger high dpi scaling...
                 Layout.alignment: Qt.AlignCenter
+                Layout.maximumWidth: 312
+                fillMode: Image.PreserveAspectFit
             }
         }
 
