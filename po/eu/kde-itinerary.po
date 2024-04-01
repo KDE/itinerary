@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
+"POT-Creation-Date: 2024-04-01 00:38+0000\n"
 "PO-Revision-Date: 2024-03-25 12:51+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2173,38 +2173,50 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:43
+#: app/LocationInfoDelegate.qml:45
+#, kde-format
+msgid "Daylight Saving Time"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:45
+#, fuzzy, kde-format
+#| msgid "Start Time"
+msgctxt "opposite to daylight saving time"
+msgid "Standard Time"
+msgstr "Hasierako ordua"
+
+#: app/LocationInfoDelegate.qml:46
 #, kde-format
 msgid "Entering %1"
 msgstr "%1(e)ra sartzen"
 
-#: app/LocationInfoDelegate.qml:66
+#: app/LocationInfoDelegate.qml:69
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Indar-hargune ez bateragarriak: %1"
 
-#: app/LocationInfoDelegate.qml:74
+#: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Indar-hargune ez bateragarri batzuk: %1"
 
-#: app/LocationInfoDelegate.qml:81
+#: app/LocationInfoDelegate.qml:84
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Indar-hargune bateraezin batzuk: %1"
 
-#: app/LocationInfoDelegate.qml:89
+#: app/LocationInfoDelegate.qml:92
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Ordu-eremu aldaketa: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:112
+#: app/LocationInfoDelegate.qml:115
 #, kde-format
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Dibisa: %1 = %2"
 
-#: app/LocationInfoDelegate.qml:114
+#: app/LocationInfoDelegate.qml:117
 #, kde-format
 msgid "Currency: %1"
 msgstr "Dibisa: %1"

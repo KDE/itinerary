@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-29 00:37+0000\n"
+"POT-Creation-Date: 2024-04-01 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2210,39 +2210,51 @@ msgctxt "temperature"
 msgid "%1°C"
 msgstr "%1°C"
 
-#: app/LocationInfoDelegate.qml:43
+#: app/LocationInfoDelegate.qml:45
+#, kde-format
+msgid "Daylight Saving Time"
+msgstr ""
+
+#: app/LocationInfoDelegate.qml:45
+#, fuzzy, kde-format
+#| msgid "Start Time"
+msgctxt "opposite to daylight saving time"
+msgid "Standard Time"
+msgstr "Время начала"
+
+#: app/LocationInfoDelegate.qml:46
 #, kde-format
 msgid "Entering %1"
 msgstr "Въезд в %1"
 
-#: app/LocationInfoDelegate.qml:66
+#: app/LocationInfoDelegate.qml:69
 #, kde-format
 msgid "No compatible power sockets: %1"
 msgstr "Нет совместимых розеток: %1"
 
-#: app/LocationInfoDelegate.qml:74
+#: app/LocationInfoDelegate.qml:77
 #, kde-format
 msgid "Some incompatible power sockets: %1"
 msgstr "Несовместимые розетки: %1"
 
-#: app/LocationInfoDelegate.qml:81
+#: app/LocationInfoDelegate.qml:84
 #, kde-format
 msgid "Some incompatible power plugs: %1"
 msgstr "Несовместимые вилки: %1"
 
-#: app/LocationInfoDelegate.qml:89
+#: app/LocationInfoDelegate.qml:92
 #, kde-format
 msgid "Timezone change: %1 (%2)"
 msgstr "Смена часового пояса: %1 (%2)"
 
-#: app/LocationInfoDelegate.qml:112
+#: app/LocationInfoDelegate.qml:115
 #, fuzzy, kde-format
 #| msgid "Currency: %1"
 msgctxt "currency conversion rate"
 msgid "Currency: %1 = %2"
 msgstr "Валюта: %1"
 
-#: app/LocationInfoDelegate.qml:114
+#: app/LocationInfoDelegate.qml:117
 #, kde-format
 msgid "Currency: %1"
 msgstr "Валюта: %1"
