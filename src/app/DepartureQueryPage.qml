@@ -114,6 +114,7 @@ Kirigami.ScrollablePage {
             id: top
             required property var departure
             width: ListView.view.width
+            enabled: top.departure.disruptionEffect !== Disruption.NoService
 
             FormCard.AbstractFormDelegate {
                 contentItem: GridLayout {
@@ -127,17 +128,17 @@ Kirigami.ScrollablePage {
                         }
                         QQC2.Label {
                             text: {
-                                if (departure.disruption == Disruption.NoService)
+                                if (top.departure.disruptionEffect == Disruption.NoService)
                                     return i18nc("a train/bus journey canceled by its operator", "Canceled");
                                 return (departure.departureDelay >= 0 ? "+" : "") + departure.departureDelay;
                             }
                             color: {
-                                if (departure.departureDelay > 1 || departure.disruption == Disruption.NoService)
+                                if (top.departure.departureDelay > 1 || top.departure.disruptionEffect == Disruption.NoService)
                                     return Kirigami.Theme.negativeTextColor;
                                 return Kirigami.Theme.positiveTextColor;
                             }
                             // Keeping it visible so the layout is more uniform
-                            opacity: (departure.hasExpectedDepartureTime || departure.disruption == Disruption.NoService) ? 1 : 0
+                            opacity: (top.departure.hasExpectedDepartureTime || top.departure.disruptionEffect == Disruption.NoService) ? 1 : 0
                         }
                     }
                     RowLayout {
