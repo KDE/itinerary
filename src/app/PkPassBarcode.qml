@@ -42,13 +42,13 @@ Rectangle {
         }
 
         QQC2.Label {
-            Layout.alignment: Qt.AlignCenter
             Layout.fillWidth: true
             Layout.maximumWidth: root.maximumWidth
             text: pass.barcodes[0].alternativeText
             color: "black"
             visible: text.length > 0
             wrapMode: Text.Wrap
+            horizontalAlignment: Qt.AlignHCenter
         }
     }
 }
