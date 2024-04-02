@@ -189,7 +189,7 @@ FormCard.AbstractFormDelegate {
         }
         // optional middle row: notes
         Item {
-            visible: modelData.notes.length > 0
+            visible: modelData.notes.length > 0 || modelData.features.length > 0
             width: departureLine.width
             Layout.fillHeight: true
             Rectangle{
@@ -206,13 +206,22 @@ FormCard.AbstractFormDelegate {
             }
         }
         Item {
-            visible: modelData.notes.length > 0
+            visible: modelData.notes.length > 0 || modelData.features.length > 0
             Layout.preferredWidth: Kirigami.Units.largeSpacing
             Layout.fillHeight: true
         }
         ColumnLayout {
-            visible: modelData.notes.length > 0
+            visible: modelData.notes.length > 0 || modelData.features.length > 0
             Layout.fillWidth: true
+            RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+                Repeater {
+                    model: modelData.features
+                    delegate: PublicTransportFeatureIcon {
+                        feature: modelData
+                    }
+                }
+            }
             QQC2.Label {
                 id: notesLabel
                 Layout.fillWidth: true
@@ -243,16 +252,21 @@ FormCard.AbstractFormDelegate {
                         rightPadding: Kirigami.Units.smallSpacing
                     }
 
-                    contentItem: QQC2.Label {
-                        Layout.fillWidth: true
+                    contentItem: ColumnLayout {
                         Layout.preferredWidth: Kirigami.Units.gridUnit * 60
                         Layout.maximumWidth: root.width
-                        text: modelData.notes.join("<br/>")
-                        textFormat: Text.RichText
-                        wrapMode: Text.Wrap
-                        onLinkActivated: Qt.openUrlExternally(link)
-                        padding: Kirigami.Units.largeSpacing * 2
+                        PublicTransportFeatureList {
+                            model: modelData.features
+                        }
+                        QQC2.Label {
+                            Layout.fillWidth: true
+                            text: modelData.notes.join("<br/>")
+                            textFormat: Text.RichText
+                            wrapMode: Text.Wrap
+                            onLinkActivated: Qt.openUrlExternally(link)
+                            padding: Kirigami.Units.largeSpacing * 2
 
+                        }
                     }
                 }
             }
