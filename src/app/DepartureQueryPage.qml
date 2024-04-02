@@ -179,20 +179,26 @@ Kirigami.ScrollablePage {
                     }
 
                     // last row: arrival information
-                    RowLayout {
-                        QQC2.Label {
-                            text: i18nc("destination", "To:")
-                        }
+                    QQC2.Label {
+                        text: i18nc("destination", "To:")
                     }
-                    RowLayout {
-                        QQC2.Label {
-                            text: departure.route.direction
-                            Layout.fillWidth: true
-                            elide: Text.ElideRight
-                        }
+                    QQC2.Label {
+                        text: top.departure.route.direction
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
                     }
 
-                    // optional bottom row: notes if present
+                    // optional bottom rows: features and notes, if present
+                    RowLayout {
+                        Layout.columnSpan: 2
+                        spacing: Kirigami.Units.smallSpacing
+                        Repeater {
+                            model: top.departure.features
+                            delegate: PublicTransportFeatureIcon {
+                                feature: modelData
+                            }
+                        }
+                    }
                     QQC2.Label {
                         Layout.columnSpan: 2
                         Layout.fillWidth: true
@@ -204,10 +210,34 @@ Kirigami.ScrollablePage {
                         onLinkActivated: Qt.openUrlExternally(link)
                     }
                 }
+
+                onClicked: {
+                    if (top.departure.features.length === 0)
+                        return;
+                    detailsSheet.departure = top.departure;
+                    detailsSheet.open();
+                }
             }
         }
     }
 
+    SheetDrawer {
+        id: detailsSheet
+        property var departure
+        contentItem: ColumnLayout {
+            PublicTransportFeatureList {
+                model: detailsSheet.departure.features
+            }
+            QQC2.Label {
+                Layout.fillWidth: true
+                text: detailsSheet.departure.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                onLinkActivated: Qt.openUrlExternally(link)
+                padding: Kirigami.Units.largeSpacing * 2
+            }
+        }
+    }
 
     ListView {
         id: journeyView
