@@ -27,11 +27,11 @@ public:
 
     void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
 
-    QVector<QString> passes() const;
+    [[nodiscard]] static QVector<QString> passes();
 
-    Q_INVOKABLE KPkPass::Pass* pass(const QString &passId);
-    Q_INVOKABLE bool hasPass(const QString &passId) const;
-    Q_INVOKABLE static QString passId(const QVariant &reservation);
+    Q_INVOKABLE [[nodiscard]] KPkPass::Pass* pass(const QString &passId);
+    Q_INVOKABLE [[nodiscard]] bool hasPass(const QString &passId) const;
+    Q_INVOKABLE [[nodiscard]] static QString passId(const QVariant &reservation);
 
     /** Import pass from a local @p url, returns the pass id if successful. */
     QString importPass(const QUrl &url);
@@ -40,14 +40,14 @@ public:
 
     void updatePass(const QString &passId);
     /** Time the pass was last updated (ie. file system mtime). */
-    QDateTime updateTime(const QString &passId) const;
+    [[nodiscard]] static QDateTime updateTime(const QString &passId);
 
-    static QDateTime relevantDate(KPkPass::Pass *pass);
+    [[nodiscard]] static QDateTime relevantDate(KPkPass::Pass *pass);
     /** Check whether @p pass can be online updated. */
-    static bool canUpdate(KPkPass::Pass *pass);
+    [[nodiscard]] static bool canUpdate(KPkPass::Pass *pass);
 
     /** Raw pass file data, used for exporting. */
-    QByteArray rawData(const QString &passId) const;
+    [[nodiscard]] static QByteArray rawData(const QString &passId);
 
 Q_SIGNALS:
     void passAdded(const QString &passId);
