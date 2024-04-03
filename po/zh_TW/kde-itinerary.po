@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-01 00:38+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2024-02-29 02:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -763,32 +763,32 @@ msgstr "更早"
 msgid "Later"
 msgstr "更晚"
 
-#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "已取消"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "到："
 
-#: app/DepartureQueryPage.qml:222
+#: app/DepartureQueryPage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "載入更早的出發"
 
-#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "載入更晚的轉乘"
 
-#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"

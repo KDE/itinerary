@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-01 00:38+0000\n"
-"PO-Revision-Date: 2024-02-27 22:51+0100\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-03 00:13+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -774,32 +774,32 @@ msgstr "Más temprano"
 msgid "Later"
 msgstr "Más tarde"
 
-#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Cancelado"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "A:"
 
-#: app/DepartureQueryPage.qml:222
+#: app/DepartureQueryPage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Cargar salidas anteriores"
 
-#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Cargar conexiones posteriores"
 
-#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -2176,14 +2176,13 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "Horario de verano"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "Hora de inicio"
+msgstr "Horario de invierno"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format

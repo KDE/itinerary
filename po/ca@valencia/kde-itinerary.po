@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-01 00:38+0000\n"
-"PO-Revision-Date: 2024-03-24 09:37+0100\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"PO-Revision-Date: 2024-04-01 09:26+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -773,32 +773,32 @@ msgstr "Més prompte"
 msgid "Later"
 msgstr "Més tard"
 
-#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Cancel·lat"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "A:"
 
-#: app/DepartureQueryPage.qml:222
+#: app/DepartureQueryPage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carrega les eixides anteriors"
 
-#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carrega les connexions posteriors"
 
-#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
@@ -2176,14 +2176,13 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "Horari d'estiu"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "Hora d'inici"
+msgstr "Horari d'hivern"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format

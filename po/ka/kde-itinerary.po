@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-01 00:38+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2024-04-01 05:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -769,32 +769,32 @@ msgstr "უფრო ადრე"
 msgid "Later"
 msgstr "გვიან"
 
-#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "გაუქმებულია"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "ვის:"
 
-#: app/DepartureQueryPage.qml:222
+#: app/DepartureQueryPage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "ნაადრევი გასვლების ჩატვირთვა"
 
-#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "შემდეგი გზების ჩატვირთვა"
 
-#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"

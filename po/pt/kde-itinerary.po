@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-01 00:38+0000\n"
+"POT-Creation-Date: 2024-04-03 00:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -799,32 +799,32 @@ msgstr "Anterior"
 msgid "Later"
 msgstr "Posterior"
 
-#: app/DepartureQueryPage.qml:131 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Cancelada"
 
-#: app/DepartureQueryPage.qml:183
+#: app/DepartureQueryPage.qml:184
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "Para:"
 
-#: app/DepartureQueryPage.qml:222
+#: app/DepartureQueryPage.qml:223
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Carregar as partidas antecipadas"
 
-#: app/DepartureQueryPage.qml:231 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Carregar as ligações posteriores"
 
-#: app/DepartureQueryPage.qml:240 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, kde-format
 msgid "Data providers:"
