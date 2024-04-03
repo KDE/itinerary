@@ -183,6 +183,68 @@ Kirigami.ScrollablePage {
                 Layout.columnSpan: 2
                 text: i18n("Coach: %1 Seat: %2", (selectedVehicleSection ? selectedVehicleSection : "-"), (seat ? seat : "-"))
             }
+
+            RowLayout {
+                Layout.row: 4
+                Layout.column: 1
+                Layout.columnSpan: 2
+                spacing: Kirigami.Units.smallSpacing
+                Repeater {
+                    model: root.stopover.features
+                    delegate: PublicTransportFeatureIcon {
+                        feature: modelData
+                    }
+                }
+
+                TapHandler {
+                    onTapped: vehicleSheet.open()
+                }
+            }
+
+            QQC2.Label {
+                id: notesLabel
+                Layout.row: 5
+                Layout.column: 1
+                Layout.columnSpan: 2
+                Layout.fillWidth: true
+                text: root.stopover.notes.join("<br/>")
+                textFormat: Text.RichText
+                wrapMode: Text.Wrap
+                verticalAlignment: Text.AlignTop
+                // Doesn't work with RichText.
+                elide: Text.ElideRight
+                maximumLineCount: 5
+                Layout.maximumHeight: Kirigami.Units.gridUnit * maximumLineCount
+                clip: true
+                visible: root.stopover.notes.length > 0
+                font.italic: true
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+            Kirigami.LinkButton {
+                Layout.row: 6
+                Layout.column: 1
+                Layout.columnSpan: 2
+                text: i18nc("@action:button", "Show More…")
+                visible: notesLabel.implicitHeight > notesLabel.height
+                onClicked: vehicleSheet.open();
+            }
+        }
+
+        SheetDrawer {
+            id: vehicleSheet
+            contentItem: ColumnLayout {
+                PublicTransportFeatureList {
+                    model: root.stopover.features
+                }
+                QQC2.Label {
+                    Layout.fillWidth: true
+                    text: root.stopover.notes.join("<br/>")
+                    textFormat: Text.RichText
+                    wrapMode: Text.Wrap
+                    onLinkActivated: Qt.openUrlExternally(link)
+                    padding: Kirigami.Units.largeSpacing * 2
+                }
+            }
         }
     }
 
