@@ -132,6 +132,24 @@ FormCard.FormCardPage {
 
         FormCard.FormCard {
             FormCard.FormButtonDelegate {
+                id: passButton
+                readonly property string passId: PkPassManager.passId(root.ticket)
+                icon.name: passButton.passId !== "" ? "image://org.kde.pkpass/" + passButton.passId + "/icon" : ""
+                text: i18n("Show Ticket")
+                visible: PkPassManager.hasPass(passButton.passId)
+                onClicked: applicationWindow().pageStack.push(pkpassComponent, {"passId": passButton.passId });
+
+                Component {
+                    id: pkpassComponent
+                    PkPassPage {
+                        pass: PkPassManager.pass(passButton.passId)
+                    }
+                }
+            }
+            FormCard.FormDelegateSeparator {
+                visible: passButton.visible
+            }
+            FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
                 text: i18n("Edit")
                 onClicked: applicationWindow().pageStack.push(editor, {passId: root.passId, ticket: root.ticket});
