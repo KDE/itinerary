@@ -8,7 +8,9 @@
 #include "genericpkpass.h"
 #include "logging.h"
 
+#include <KItinerary/DocumentUtil>
 #include <KItinerary/Reservation>
+
 #include <KPkPass/Pass>
 
 #include <QDateTime>
@@ -86,7 +88,11 @@ QString PkPassManager::passId(const QVariant &reservation)
 {
     QString passTypeId, serialNum;
 
-    if (JsonLd::canConvert<Reservation>(reservation)) {
+    const auto pkPassUrl = DocumentUtil::pkPassId(reservation);
+    if (pkPassUrl.isValid()) {
+        passTypeId = pkPassUrl.host();
+        serialNum = pkPassUrl.path().mid(1);
+    } else if (JsonLd::canConvert<Reservation>(reservation)) {
         const auto res = JsonLd::convert<Reservation>(reservation);
         passTypeId = res.pkpassPassTypeIdentifier();
         serialNum = res.pkpassSerialNumber();
