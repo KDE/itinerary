@@ -98,7 +98,7 @@ Kirigami.Page {
                 Layout.columnSpan: 2
                 spacing: Kirigami.Units.smallSpacing
                 Repeater {
-                    model: journeySection.features
+                    model: root.journeySection.departureVehicleLayout.combinedFeatures
                     delegate: PublicTransportFeatureIcon {
                         feature: modelData
                     }
@@ -145,7 +145,7 @@ Kirigami.Page {
             id: moreNotesSheet
             contentItem: ColumnLayout {
                 PublicTransportFeatureList {
-                    model: journeySection.features
+                    model: root.journeySection.departureVehicleLayout.combinedFeatures
                 }
                 QQC2.Label {
                     Layout.fillWidth: true
