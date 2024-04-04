@@ -36,11 +36,13 @@ Kirigami.ScrollablePage {
         Models.DelegateChoice {
             roleValue: PassManager.ProgramMembership
             QQC2.ItemDelegate {
+                id: delegate
+                readonly property string pkPassId: PkPassManager.passId(model.pass)
                 highlighted: false
                 text: contentItem.title
                 width: ListView.view.width
                 contentItem: Kirigami.IconTitleSubtitle {
-                    icon.name: "meeting-attending"
+                    icon.name: delegate.pkPassId !== "" ? "image://org.kde.pkpass/" + delegate.pkPassId + "/icon" : "meeting-attending"
                     title: model.pass.programName
                     subtitle: {
                         if (!model.pass.member.name)
