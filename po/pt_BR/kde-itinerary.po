@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-04-04 00:38+0000\n"
 "PO-Revision-Date: 2023-07-29 15:30-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr "Recursos do extrator:"
 msgid "Show Boarding Pass"
 msgstr "Mostrar cartão de embarque"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:32 app/TicketPage.qml:138
 #, kde-format
 msgid "Show Ticket"
 msgstr "Ingresso de show"
@@ -112,7 +112,7 @@ msgid "Add transfer after"
 msgstr "Adicionar translado depois"
 
 #: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
-#: app/TicketPage.qml:136
+#: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Editar"
@@ -131,7 +131,7 @@ msgstr "Exportar..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
-#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -687,7 +687,7 @@ msgstr "Chegada"
 msgid "Alternatives"
 msgstr "Alternativas"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
 #, kde-format
 msgid "Journey Details"
 msgstr "Detalhes da viagem"
@@ -830,20 +830,20 @@ msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Cancelado"
 
-#: app/DepartureQueryPage.qml:184
+#: app/DepartureQueryPage.qml:183
 #, kde-format
 msgctxt "destination"
 msgid "To:"
 msgstr "Para:"
 
-#: app/DepartureQueryPage.qml:223
+#: app/DepartureQueryPage.qml:253
 #, fuzzy, kde-format
 #| msgid "Earlier departure on %1"
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr "Partida antecipada em %1"
 
-#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:262 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, fuzzy, kde-format
 #| msgid "Alternative Connections"
@@ -851,7 +851,7 @@ msgctxt "@action:button"
 msgid "Load later connections"
 msgstr "Conexões alternativas"
 
-#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:271 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -2095,51 +2095,52 @@ msgstr "%1 %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Teste %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:130
+#: app/JourneySectionDelegate.qml:276 app/JourneySectionPage.qml:136
+#: app/VehicleLayoutPage.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:68
+#: app/JourneySectionPage.qml:69
 #, kde-format
 msgid "Direction: %1"
 msgstr "Direção: %1"
 
-#: app/JourneySectionPage.qml:76
+#: app/JourneySectionPage.qml:77
 #, kde-format
 msgid "Distance: %1"
 msgstr "Distância: %1"
 
-#: app/JourneySectionPage.qml:83
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:90
+#: app/JourneySectionPage.qml:91
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionPage.qml:192
+#: app/JourneySectionPage.qml:215
 #, kde-format
 msgid "Platform:"
 msgstr "Plataforma:"
 
-#: app/JourneySectionPage.qml:225
+#: app/JourneySectionPage.qml:248
 #, fuzzy, kde-format
 #| msgid "Vehicle Layout"
 msgid "Vehicle Load:"
 msgstr "Layout do veículo"
 
-#: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:264 app/JourneySectionStopDelegate.qml:159
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
 msgstr "Localização:"
 
-#: app/JourneySectionPage.qml:455
+#: app/JourneySectionPage.qml:478
 #, fuzzy, kde-format
 #| msgid "Show"
 msgctxt "@action:button"
@@ -2484,7 +2485,7 @@ msgstr "Arquivos do KDE Itinerary (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Exportar dados do itinerário"
 
-#: app/main.qml:169 app/PassPage.qml:133
+#: app/main.qml:169 app/PassPage.qml:135
 #, kde-format
 msgid "Import..."
 msgstr "Importar..."
@@ -2754,7 +2755,7 @@ msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:101
+#: app/PassPage.qml:103
 #, fuzzy, kde-format
 #| msgctxt "name - number"
 #| msgid "%1 - %2"
@@ -2762,7 +2763,7 @@ msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:131
+#: app/PassPage.qml:133
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2934,6 +2935,90 @@ msgstr "🇪🇺 União Europeia"
 #| msgid "🇪🇺 European Union"
 msgid "European Union"
 msgstr "🇪🇺 União Europeia"
+
+#: app/PublicTransportFeatureIcon.qml:25
+#, kde-format
+msgctxt "train coach feature"
+msgid "Air conditioning"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:27
+#, fuzzy, kde-format
+#| msgid "Edit Restaurant"
+msgctxt "train coach feature"
+msgid "Bistro or restaurant"
+msgstr "Editar restaurante"
+
+#: app/PublicTransportFeatureIcon.qml:29
+#, kde-format
+msgctxt "train coach feature"
+msgid "Toddler area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:31
+#, kde-format
+msgctxt "train coach feature"
+msgid "Family area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:33
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:35
+#, kde-format
+msgctxt "train coach feature"
+msgid "Quiet area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:37
+#, kde-format
+msgctxt "train coach feature"
+msgid "Bike storage"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:39
+#, kde-format
+msgctxt "train coach feature"
+msgid "Toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:41
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:43
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train coach feature"
+msgid "Information point"
+msgstr "Mais informações"
+
+#: app/PublicTransportFeatureIcon.qml:45
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wi-Fi"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:124
+#, kde-format
+msgid "%1 (not available)"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:34
+#, fuzzy, kde-format
+#| msgid "No camera available."
+msgid "Not available"
+msgstr "Nenhuma câmera disponível."
+
+#: app/PublicTransportFeatureList.qml:36
+#, kde-format
+msgid "Currently not available"
+msgstr ""
 
 #: app/ReservationDocumentsCard.qml:19
 #, fuzzy, kde-format
@@ -3776,52 +3861,86 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/VehicleLayoutPage.qml:17
+#: app/VehicleLayoutPage.qml:18
 #, kde-format
 msgid "Vehicle Layout"
 msgstr "Layout do veículo"
 
-#: app/VehicleLayoutPage.qml:103
-#, kde-format
-msgid "Departure: %1"
-msgstr "Partida: %1"
-
-#: app/VehicleLayoutPage.qml:105
-#, kde-format
-msgid "Arrival: %1"
-msgstr "Chegada: %1"
-
-#: app/VehicleLayoutPage.qml:123
-#, kde-format
-msgid "Platform: %1"
-msgstr "Plataforma: %1"
-
-#: app/VehicleLayoutPage.qml:129
-#, kde-format
-msgid "Coach: %1 Seat: %2"
-msgstr "Vagão: %1 Assento: %2"
-
-#: app/VehicleLayoutPage.qml:255
+#: app/VehicleLayoutPage.qml:66
 #, kde-format
 msgid "First class"
 msgstr "Primeira classe"
 
-#: app/VehicleLayoutPage.qml:257
+#: app/VehicleLayoutPage.qml:68
 #, kde-format
 msgid "Second class"
 msgstr "Segunda classe"
 
-#: app/VehicleLayoutPage.qml:259
+#: app/VehicleLayoutPage.qml:70
 #, kde-format
 msgid "First/second class"
 msgstr "Primeira/segunda classe"
 
-#: app/VehicleLayoutPage.qml:260
+#: app/VehicleLayoutPage.qml:71
 #, kde-format
 msgid "Unknown class"
 msgstr "Classe desconhecida"
 
-#: app/VehicleLayoutPage.qml:304
+#: app/VehicleLayoutPage.qml:82
+#, fuzzy, kde-format
+#| msgid "Coach:"
+msgctxt "train coach"
+msgid "Coach %1"
+msgstr "Vagão:"
+
+#: app/VehicleLayoutPage.qml:92
+#, kde-format
+msgctxt "train coach type"
+msgid "Sleeping car"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:94
+#, fuzzy, kde-format
+#| msgid "Rental Car"
+msgctxt "train coach type"
+msgid "Couchette car"
+msgstr "Carro alugado"
+
+#: app/VehicleLayoutPage.qml:96
+#, fuzzy, kde-format
+#| msgid "Edit Restaurant"
+msgctxt "train coach type"
+msgid "Restaurant car"
+msgstr "Editar restaurante"
+
+#: app/VehicleLayoutPage.qml:98
+#, fuzzy, kde-format
+#| msgid "Transport Data"
+msgctxt "train coach type"
+msgid "Car transport car"
+msgstr "Dados de transporte"
+
+#: app/VehicleLayoutPage.qml:158
+#, kde-format
+msgid "Departure: %1"
+msgstr "Partida: %1"
+
+#: app/VehicleLayoutPage.qml:160
+#, kde-format
+msgid "Arrival: %1"
+msgstr "Chegada: %1"
+
+#: app/VehicleLayoutPage.qml:178
+#, kde-format
+msgid "Platform: %1"
+msgstr "Plataforma: %1"
+
+#: app/VehicleLayoutPage.qml:184
+#, kde-format
+msgid "Coach: %1 Seat: %2"
+msgstr "Vagão: %1 Assento: %2"
+
+#: app/VehicleLayoutPage.qml:420
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Nenhuma informação de layout de veículo disponível."
@@ -4007,9 +4126,6 @@ msgstr "%1%2 de %3 para %4 em %5"
 
 #~ msgid "Application"
 #~ msgstr "Aplicativo"
-
-#~ msgid "Transport Data"
-#~ msgstr "Dados de transporte"
 
 #~ msgid "Version"
 #~ msgstr "Versão"

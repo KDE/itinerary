@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-03 00:38+0000\n"
+"POT-Creation-Date: 2024-04-04 00:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Show Boarding Pass"
 msgstr "Zobraziť palubný lístok"
 
-#: app/ActionsCard.qml:32
+#: app/ActionsCard.qml:32 app/TicketPage.qml:138
 #, fuzzy, kde-format
 #| msgid "Bus Ticket"
 msgid "Show Ticket"
@@ -108,7 +108,7 @@ msgid "Add transfer after"
 msgstr ""
 
 #: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
-#: app/TicketPage.qml:136
+#: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
 msgstr "Upraviť"
@@ -128,7 +128,7 @@ msgstr "Exportovať..."
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
-#: app/TicketPage.qml:47 app/TicketPage.qml:149 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
 msgstr "Vymazať"
@@ -681,7 +681,7 @@ msgstr "Príchod"
 msgid "Alternatives"
 msgstr "Alternatívy"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:24 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -830,27 +830,27 @@ msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
 msgstr "Zrušené"
 
-#: app/DepartureQueryPage.qml:184
+#: app/DepartureQueryPage.qml:183
 #, fuzzy, kde-format
 #| msgid "To:"
 msgctxt "destination"
 msgid "To:"
 msgstr "Pre:"
 
-#: app/DepartureQueryPage.qml:223
+#: app/DepartureQueryPage.qml:253
 #, kde-format
 msgctxt "@action:button"
 msgid "Load earlier departures"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:232 app/JourneyQueryPage.qml:122
+#: app/DepartureQueryPage.qml:262 app/JourneyQueryPage.qml:122
 #: app/TransferPage.qml:325
 #, kde-format
 msgctxt "@action:button"
 msgid "Load later connections"
 msgstr ""
 
-#: app/DepartureQueryPage.qml:241 app/JourneyQueryPage.qml:129
+#: app/DepartureQueryPage.qml:271 app/JourneyQueryPage.qml:129
 #: app/TransferPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Data providers: %1"
@@ -2115,51 +2115,52 @@ msgstr "%1 do %2 (%3)"
 msgid "Drive %1 (%2)"
 msgstr "Mechanika"
 
-#: app/JourneySectionDelegate.qml:262 app/JourneySectionPage.qml:130
+#: app/JourneySectionDelegate.qml:276 app/JourneySectionPage.qml:136
+#: app/VehicleLayoutPage.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
 msgstr ""
 
-#: app/JourneySectionPage.qml:68
+#: app/JourneySectionPage.qml:69
 #, kde-format
 msgid "Direction: %1"
 msgstr "Smer: %1"
 
-#: app/JourneySectionPage.qml:76
+#: app/JourneySectionPage.qml:77
 #, kde-format
 msgid "Distance: %1"
 msgstr "Vzdialenosť: %1"
 
-#: app/JourneySectionPage.qml:83
+#: app/JourneySectionPage.qml:84
 #, kde-format
 msgid "Average Speed: %1"
 msgstr ""
 
-#: app/JourneySectionPage.qml:90
+#: app/JourneySectionPage.qml:91
 #, fuzzy, kde-format
 #| msgid "CO₂: %1g"
 msgid "CO₂: %1"
 msgstr "CO₂: %1g"
 
-#: app/JourneySectionPage.qml:192
+#: app/JourneySectionPage.qml:215
 #, kde-format
 msgid "Platform:"
 msgstr "Platforma:"
 
-#: app/JourneySectionPage.qml:225
+#: app/JourneySectionPage.qml:248
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Vehicle Load:"
 msgstr "Vozidlo"
 
-#: app/JourneySectionPage.qml:241 app/JourneySectionStopDelegate.qml:159
+#: app/JourneySectionPage.qml:264 app/JourneySectionStopDelegate.qml:159
 #, fuzzy, kde-format
 #| msgid "Location:"
 msgid "Show location"
 msgstr "Umiestnenie:"
 
-#: app/JourneySectionPage.qml:455
+#: app/JourneySectionPage.qml:478
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2500,7 +2501,7 @@ msgstr ""
 msgid "Export Itinerary Data"
 msgstr "KDE Itinerár"
 
-#: app/main.qml:169 app/PassPage.qml:133
+#: app/main.qml:169 app/PassPage.qml:135
 #, kde-format
 msgid "Import..."
 msgstr "Importovať..."
@@ -2770,13 +2771,13 @@ msgctxt "name - number"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/PassPage.qml:101
+#: app/PassPage.qml:103
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr ""
 
-#: app/PassPage.qml:131
+#: app/PassPage.qml:133
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2942,6 +2943,88 @@ msgstr ""
 #: app/PublicTransportBackendPage.qml:110
 #, kde-format
 msgid "European Union"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:25
+#, kde-format
+msgctxt "train coach feature"
+msgid "Air conditioning"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:27
+#, fuzzy, kde-format
+msgctxt "train coach feature"
+msgid "Bistro or restaurant"
+msgstr "Rezervácia reštaurácie: %1"
+
+#: app/PublicTransportFeatureIcon.qml:29
+#, kde-format
+msgctxt "train coach feature"
+msgid "Toddler area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:31
+#, kde-format
+msgctxt "train coach feature"
+msgid "Family area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:33
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:35
+#, kde-format
+msgctxt "train coach feature"
+msgid "Quiet area"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:37
+#, kde-format
+msgctxt "train coach feature"
+msgid "Bike storage"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:39
+#, kde-format
+msgctxt "train coach feature"
+msgid "Toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:41
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:43
+#, fuzzy, kde-format
+#| msgid "More information"
+msgctxt "train coach feature"
+msgid "Information point"
+msgstr "Viac informácií"
+
+#: app/PublicTransportFeatureIcon.qml:45
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wi-Fi"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:124
+#, kde-format
+msgid "%1 (not available)"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:34
+#, kde-format
+msgid "Not available"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:36
+#, kde-format
+msgid "Currently not available"
 msgstr ""
 
 #: app/ReservationDocumentsCard.qml:19
@@ -3774,55 +3857,88 @@ msgctxt "%1 is destination, %2 and %3 are years"
 msgid "%1 (%2/%3)"
 msgstr "%1 (%2/%3)"
 
-#: app/VehicleLayoutPage.qml:17
+#: app/VehicleLayoutPage.qml:18
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Vehicle Layout"
 msgstr "Vozidlo"
 
-#: app/VehicleLayoutPage.qml:103
+#: app/VehicleLayoutPage.qml:66
+#, kde-format
+msgid "First class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:68
+#, kde-format
+msgid "Second class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:70
+#, kde-format
+msgid "First/second class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:71
+#, kde-format
+msgid "Unknown class"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:82
+#, fuzzy, kde-format
+#| msgid "Coach:"
+msgctxt "train coach"
+msgid "Coach %1"
+msgstr "Tréner:"
+
+#: app/VehicleLayoutPage.qml:92
+#, kde-format
+msgctxt "train coach type"
+msgid "Sleeping car"
+msgstr ""
+
+#: app/VehicleLayoutPage.qml:94
+#, fuzzy, kde-format
+#| msgid "Rental Car"
+msgctxt "train coach type"
+msgid "Couchette car"
+msgstr "Prenajaté auto"
+
+#: app/VehicleLayoutPage.qml:96
+#, fuzzy, kde-format
+msgctxt "train coach type"
+msgid "Restaurant car"
+msgstr "Rezervácia reštaurácie: %1"
+
+#: app/VehicleLayoutPage.qml:98
+#, fuzzy, kde-format
+#| msgid "Transport Data"
+msgctxt "train coach type"
+msgid "Car transport car"
+msgstr "Údaje o doprave"
+
+#: app/VehicleLayoutPage.qml:158
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgid "Departure: %1"
 msgstr "Odchod"
 
-#: app/VehicleLayoutPage.qml:105
+#: app/VehicleLayoutPage.qml:160
 #, fuzzy, kde-format
 #| msgid "Arrival time: %1"
 msgid "Arrival: %1"
 msgstr "Príchod"
 
-#: app/VehicleLayoutPage.qml:123
+#: app/VehicleLayoutPage.qml:178
 #, kde-format
 msgid "Platform: %1"
 msgstr "Nástupište: %1"
 
-#: app/VehicleLayoutPage.qml:129
+#: app/VehicleLayoutPage.qml:184
 #, kde-format
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:255
-#, kde-format
-msgid "First class"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:257
-#, kde-format
-msgid "Second class"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:259
-#, kde-format
-msgid "First/second class"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:260
-#, kde-format
-msgid "Unknown class"
-msgstr ""
-
-#: app/VehicleLayoutPage.qml:304
+#: app/VehicleLayoutPage.qml:420
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""
@@ -4005,9 +4121,6 @@ msgstr "Autobus %1 z %2 do %3"
 
 #~ msgid "Application"
 #~ msgstr "Aplikácia"
-
-#~ msgid "Transport Data"
-#~ msgstr "Údaje o doprave"
 
 #~ msgid "Version"
 #~ msgstr "Verzia"
