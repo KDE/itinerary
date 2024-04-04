@@ -33,6 +33,8 @@ Kirigami.Icon {
                 return i18nc("train coach feature", "Wheelchar accessible");
             case KPublicTransport.Feature.SilentArea:
                 return i18nc("train coach feature", "Quiet area");
+            case KPublicTransport.Feature.BusinessArea:
+                return i18nc("train coach feature", "Business area");
             case KPublicTransport.Feature.BikeStorage:
                 return i18nc("train coach feature", "Bike storage");
             case KPublicTransport.Feature.Toilet:
@@ -43,6 +45,8 @@ Kirigami.Icon {
                 return i18nc("train coach feature", "Information point");
             case KPublicTransport.Feature.WiFi:
                 return i18nc("train coach feature", "Wi-Fi");
+            case KPublicTransport.Feature.PowerSockets:
+                return i18nc("train coach feature", "Power sockets");
                 break;
             case KPublicTransport.Feature.Other:
             default:
@@ -65,6 +69,8 @@ Kirigami.Icon {
                 return "qrc:///images/wheelchair_accessible.svg";
             case KPublicTransport.Feature.SilentArea:
                 return "player-volume-muted";
+            case KPublicTransport.Feature.BusinessArea:
+                return "phone-symbolic";
             case KPublicTransport.Feature.BikeStorage:
                 return "qrc:///images/bike.svg";
             case KPublicTransport.Feature.Toilet:
@@ -75,6 +81,8 @@ Kirigami.Icon {
                 return "qrc:///org.kde.kosmindoormap/assets/icons/information.svg";
             case KPublicTransport.Feature.WiFi:
                 return "network-wireless-symbolic";
+            case KPublicTransport.Feature.PowerSockets:
+                return "qrc:///images/powersocket.svg";
             case KPublicTransport.Feature.Other:
             default:
                 return "documentinfo";

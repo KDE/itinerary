@@ -30,9 +30,11 @@ Repeater {
             subtitle: {
                 if (modelData.description !== "")
                     return modelData.description;
+                if (modelData.availability === KPublicTransport.Feature.Unknown)
+                    return i18n("Availability unknown")
                 if (modelData.availability === KPublicTransport.Feature.Unavailable)
                     return i18n("Not available")
-                if (modelData.disruption === KPublicTransport.Disruption.NoService)
+                if (modelData.disruptionEffect === KPublicTransport.Disruption.NoService)
                     return i18n("Currently not available")
                 return "";
             }

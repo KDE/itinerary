@@ -311,6 +311,7 @@ if (ANDROID)
         meeting-attending
         message-rfc822
         notifications
+        phone-symbolic
         player-volume-muted
         question
         raindrop
