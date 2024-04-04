@@ -309,7 +309,8 @@ Kirigami.ScrollablePage {
                 y: section.platformPositionBegin * vehicleView.fullLength
                 height: section.platformPositionEnd * vehicleView.fullLength - y
                 width: vehicleView.sectionWidth
-                textColor: Kirigami.Theme.textColor
+                textColor: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                        Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                 firstClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.positiveTextColor, isSelected ? 1 : 0.25)
                 secondClassBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.focusColor, isSelected ? 1 : 0.25)
                 inaccessibleBackground: colorMix(Kirigami.Theme.backgroundColor, Kirigami.Theme.disabledTextColor, isSelected ? 1 : 0.25)
@@ -321,6 +322,8 @@ Kirigami.ScrollablePage {
                         Layout.alignment: Qt.AlignCenter
                         text: section.name
                         visible: text !== ""
+                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                            Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
                     Kirigami.Icon {
                         Layout.alignment: Qt.AlignCenter
@@ -335,14 +338,15 @@ Kirigami.ScrollablePage {
                                 case KPublicTransport.VehicleSection.CarTransportCar: return "qrc:///images/car.svg"
                             }
                         }
-                        color: Kirigami.Theme.textColor
+                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                            Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                         isMask: true
                         visible: source ? true : false
                     }
                 }
 
                 TapHandler {
-                    enabled: model.vehicleSection.sectionFeatures.length > 0
+                    enabled: model.vehicleSection.sectionFeatures.length > 0 && model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                     onTapped: {
                         coachDrawer.coach = model.vehicleSection;
                         coachDrawer.open();
@@ -357,6 +361,7 @@ Kirigami.ScrollablePage {
 
                     RowLayout {
                         spacing: Kirigami.Units.smallSpacing
+                        visible: model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                         Repeater {
                             model: section.sectionFeatures
                             delegate: PublicTransportFeatureIcon {
@@ -367,10 +372,12 @@ Kirigami.ScrollablePage {
                     QQC2.Label {
                         visible: section.classes != KPublicTransport.VehicleSection.UnknownClass
                         text: classesLabel(section.classes)
+                        color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
+                                Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
 
                     TapHandler {
-                        enabled: model.vehicleSection.sectionFeatures.length > 0
+                        enabled: model.vehicleSection.sectionFeatures.length > 0 && model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService
                         onTapped: {
                             coachDrawer.coach = model.vehicleSection;
                             coachDrawer.open();
