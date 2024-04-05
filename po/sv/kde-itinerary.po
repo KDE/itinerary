@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
 "PO-Revision-Date: 2023-08-25 18:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -107,7 +107,7 @@ msgstr "Lägg till transfer före"
 msgid "Add transfer after"
 msgstr "Lägg till transfer efter"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -126,7 +126,7 @@ msgstr "Exportera..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2382,7 +2382,7 @@ msgstr "KDE-resplanefiler (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Exportera resplan"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Importera..."
@@ -2637,19 +2637,19 @@ msgstr "Passerkort och program"
 msgid "Add Program Membership..."
 msgstr "Lägg till programmedlemskap..."
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "Importera bonus, rabattprogramkort, eller passerkort med fastpris"
@@ -2750,6 +2750,13 @@ msgstr "Tiden giltig till måste vara efter tiden giltig från."
 #, kde-format
 msgid "Program Membership"
 msgstr "Programmedlemskap"
+
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Show Names"
+msgid "Show Pass"
+msgstr "Visa namn"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2853,46 +2860,63 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
-msgid "Bike storage"
+msgid "Business area"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
+msgid "Bike storage"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:43
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:45
 #, fuzzy, kde-format
 #| msgid "More information"
 msgctxt "train coach feature"
 msgid "Information point"
 msgstr "Mer information"
 
-#: app/PublicTransportFeatureIcon.qml:45
+#: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:34
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:36
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgid "Not available"
 msgstr "Ingen kamera tillgänglig."
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
 msgstr ""
@@ -3788,7 +3812,7 @@ msgstr "Plattform: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Buss: %1 Plats: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ingen information om fordonsklasser tillgänglig."
@@ -4125,10 +4149,6 @@ msgstr "%1%2 från %3 till %4 %5"
 #~ msgctxt "@action"
 #~ msgid "Hide Names"
 #~ msgstr "Dölj namn"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "Visa namn"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"

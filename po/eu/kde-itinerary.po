@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-03-25 12:51+0100\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"PO-Revision-Date: 2024-04-04 13:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -112,7 +112,7 @@ msgstr "Gehitu ibilgailu-aldaketa aurretik"
 msgid "Add transfer after"
 msgstr "Gehitu ibilgailu-aldaketa ondoren"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -131,7 +131,7 @@ msgstr "Esportatu..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2177,14 +2177,13 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "Udako ordutegia"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "Hasierako ordua"
+msgstr "Ordu estandarra"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2368,7 +2367,7 @@ msgstr "KDE Itinerary fitxategiak (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Esportatu ibilbidearen datuak"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Inportatu..."
@@ -2618,19 +2617,19 @@ msgstr "Txartelak eta programak"
 msgid "Add Program Membership..."
 msgstr "Gehitu programa partaidetza..."
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2733,6 +2732,13 @@ msgstr "Noiz arteko balioa noiztik balioaren ondoren izan behar da."
 msgid "Program Membership"
 msgstr "Programaren bazkidetza"
 
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Show Map"
+msgid "Show Pass"
+msgstr "Erakutsi mapa"
+
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
@@ -2797,87 +2803,101 @@ msgstr "Europar Batasuna"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "Aire girotua"
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "Editatu jatetxea"
+msgstr "Bistro edo jatetxea"
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "Haur txikien gunea"
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Family area"
-msgstr "Abizenak"
+msgstr "Familia eremua"
 
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible"
-msgstr ""
+msgstr "Gurpil-aulkirako irisgarria"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "Eremu lasaia"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Quiet area"
 msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr ""
+msgid "Business area"
+msgstr "Eremu lasaia"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
-msgstr ""
+msgid "Bike storage"
+msgstr "Bizikleten biltegia"
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
-msgstr ""
+msgid "Toilet"
+msgstr "Komuna"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Informazio gehiago"
+msgid "Wheelchar accessible toilet"
+msgstr "Gurpil-aulkirako komun irisgarria"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format
 msgctxt "train coach feature"
+msgid "Information point"
+msgstr "Informazio-puntua"
+
+#: app/PublicTransportFeatureIcon.qml:47
+#, kde-format
+msgctxt "train coach feature"
 msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1 (ez dago eskuragarri)"
 
 #: app/PublicTransportFeatureList.qml:34
-#, fuzzy, kde-format
-#| msgid "No camera available."
-msgid "Not available"
-msgstr "Ez dago kamerarik erabilgarri."
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
+msgid "Not available"
+msgstr "Ez dago eskuragarri"
+
+#: app/PublicTransportFeatureList.qml:38
+#, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "Une honetan ez dago eskuragarri"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3708,39 +3728,34 @@ msgid "Unknown class"
 msgstr "Klase ezezaguna"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "Bagoia"
+msgstr "%1 bagoia"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "Lotarako bagoia"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "Alokairuko autoa"
+msgstr "Litera-bagoia"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "Jatetxea"
+msgstr "Jatetxe-bagoia"
 
 #: app/VehicleLayoutPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Transport Data"
+#, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr "Garraio datuak"
+msgstr "Auto garraiorako bagoia"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3762,7 +3777,7 @@ msgstr "Nasa: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Bagoia: %1 Eserlekua: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."

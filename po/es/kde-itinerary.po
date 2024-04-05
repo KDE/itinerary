@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-04-03 00:13+0200\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 00:17+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -109,7 +109,7 @@ msgstr "Añadir trasbordo antes"
 msgid "Add transfer after"
 msgstr "Añadir trasbordo después"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -128,7 +128,7 @@ msgstr "Exportar..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2367,7 +2367,7 @@ msgstr "Archivos de KDE Itinerary (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Exportar datos del itinerario"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Importar..."
@@ -2617,19 +2617,19 @@ msgstr "Pases y programas"
 msgid "Add Program Membership..."
 msgstr "Añadir pertenencia a programa..."
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2733,6 +2733,13 @@ msgstr ""
 msgid "Program Membership"
 msgstr "Pertenencia a programa"
 
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Show Names"
+msgid "Show Pass"
+msgstr "Mostrar nombres"
+
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
@@ -2797,87 +2804,101 @@ msgstr "Unión Europea"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "Aire acondicionado"
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "Editar restaurante"
+msgstr "Bistró o restaurante"
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "Área para bebés"
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Family area"
-msgstr "Apellidos"
+msgstr "Área familiar"
 
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible"
-msgstr ""
+msgstr "Accesible para sillas de ruedas"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "Área silenciosa"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Quiet area"
 msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr ""
+msgid "Business area"
+msgstr "Área silenciosa"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
-msgstr ""
+msgid "Bike storage"
+msgstr "Almacenamiento de bicicletas"
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
-msgstr ""
+msgid "Toilet"
+msgstr "Lavabo"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
-msgid "Information point"
-msgstr "Más información"
+msgid "Wheelchar accessible toilet"
+msgstr "Lavabo accesible para sillas de ruedas"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format
 msgctxt "train coach feature"
+msgid "Information point"
+msgstr "Punto de información"
+
+#: app/PublicTransportFeatureIcon.qml:47
+#, kde-format
+msgctxt "train coach feature"
 msgid "Wi-Fi"
+msgstr "Wifi"
+
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1 (no disponible)"
 
 #: app/PublicTransportFeatureList.qml:34
-#, fuzzy, kde-format
-#| msgid "No camera available."
-msgid "Not available"
-msgstr "No hay ninguna cámara disponible."
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
+msgid "Not available"
+msgstr "No disponible"
+
+#: app/PublicTransportFeatureList.qml:38
+#, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "No disponible en la actualidad"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3712,39 +3733,34 @@ msgid "Unknown class"
 msgstr "Clase desconocida"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "Coche"
+msgstr "Coche %1"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "Coche cama"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "Automóvil alquilado"
+msgstr "Coche litera"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "Restaurante"
+msgstr "Coche restaurante"
 
 #: app/VehicleLayoutPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Transport Data"
+#, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr "Datos de transporte"
+msgstr "Coche de transporte de autos"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3766,7 +3782,7 @@ msgstr "Andén: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Coche: %1 Asiento: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No se dispone de información sobre el automóvil."
@@ -4099,10 +4115,6 @@ msgstr "%1%2 de %3 a %4 el %5"
 #~ msgctxt "@action"
 #~ msgid "Hide Names"
 #~ msgstr "Ocultar nombres"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "Mostrar nombres"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"

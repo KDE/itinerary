@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
-"PO-Revision-Date: 2024-04-01 05:34+0200\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"PO-Revision-Date: 2024-04-04 08:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -107,7 +107,7 @@ msgstr "დაამატეთ გადაჯდომა მანამდ�
 msgid "Add transfer after"
 msgstr "დაამატეთ გადაჯდომა შემდეგ"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -126,7 +126,7 @@ msgstr "გატანა..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2361,7 +2361,7 @@ msgstr "KDE Itinerary-ის ფაილები (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "მოგზაურობის ინფორმაციის გატანა"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "შემოტანა..."
@@ -2611,19 +2611,19 @@ msgstr "ბილეთები და პროგრამები"
 msgid "Add Program Membership..."
 msgstr "პროგრამის წევრობის დამატება..."
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2726,6 +2726,13 @@ msgstr "ვადის ამოწურვის თარიღი ვად
 msgid "Program Membership"
 msgstr "პროგრამის წევრობა"
 
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Show Names"
+msgid "Show Pass"
+msgstr "სახელების ჩვენება"
+
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
@@ -2790,87 +2797,101 @@ msgstr "ევროკავშირი"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "ჰაერის განიავება"
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "რესტორანის ჩასწორება"
+msgstr "ბისტრო ან რესტორანი"
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "ჩვილის ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Family area"
-msgstr "საოჯახო სახელი"
+msgstr "ოჯახის ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible"
-msgstr ""
+msgstr "წვდომადია გორგოლაჭებიანი სავარძლით"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "მშვიდი ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Quiet area"
 msgctxt "train coach feature"
-msgid "Bike storage"
-msgstr ""
+msgid "Business area"
+msgstr "მშვიდი ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
-msgstr ""
+msgid "Bike storage"
+msgstr "ველოსიპედის საცავი"
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
-msgstr ""
+msgid "Toilet"
+msgstr "ტუალეტი"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
-msgid "Information point"
-msgstr "მეტი ინფორმაცია"
+msgid "Wheelchar accessible toilet"
+msgstr "გორგოლაჭებიანი სავარძლით წვდომადი ტუალეტი"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format
 msgctxt "train coach feature"
+msgid "Information point"
+msgstr "ინფორმაციის წერტილი"
+
+#: app/PublicTransportFeatureIcon.qml:47
+#, kde-format
+msgctxt "train coach feature"
 msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1 (ხელმისაწვდომი არაა)"
 
 #: app/PublicTransportFeatureList.qml:34
-#, fuzzy, kde-format
-#| msgid "No camera available."
-msgid "Not available"
-msgstr "კამერა მიუწვდომელია."
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
+msgid "Not available"
+msgstr "ხელმიუწვდომელია"
+
+#: app/PublicTransportFeatureList.qml:38
+#, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "ამჟამად ხელმისაწვდომი არაა"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3701,39 +3722,34 @@ msgid "Unknown class"
 msgstr "უცნობი კლასი"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "გამძღოლი"
+msgstr "გამძღოლი %1"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "საძილე მანქანა"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "ნაქირავები მანქანა"
+msgstr "საძილე ვაგონიანი მანქანა"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "რესტორანი"
+msgstr "რესტორანი მანქანა"
 
 #: app/VehicleLayoutPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Transport Data"
+#, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr "ტრანსპორტის მონაცემები"
+msgstr "მანქანის ტრანსპორტის მანქანა"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3755,7 +3771,7 @@ msgstr "პლატფორმა: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "გამძღოლი: %1 სავარძელი: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
@@ -4086,7 +4102,3 @@ msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
 #~ msgctxt "@action"
 #~ msgid "Hide Names"
 #~ msgstr "სახელების დამალვა"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "სახელების ჩვენება"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -106,7 +106,7 @@ msgstr "이전 환승 추가"
 msgid "Add transfer after"
 msgstr "이후 환승 추가"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -125,7 +125,7 @@ msgstr "내보내기..."
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2355,7 +2355,7 @@ msgstr "KDE 여행 정보 파일 (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "여행 정보 내보내기"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "가져오기..."
@@ -2605,19 +2605,19 @@ msgstr "패스와 프로그램"
 msgid "Add Program Membership..."
 msgstr "프로그램 멤버십 추가..."
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr "보너스나 할인 프로그램 카드나 정액 패스를 가져옵니다."
@@ -2717,6 +2717,13 @@ msgstr "유효 기간 끝은 유효 기간 시작 이후여야 합니다."
 #, kde-format
 msgid "Program Membership"
 msgstr "프로그램 멤버십"
+
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Show Names"
+msgid "Show Pass"
+msgstr "이름 표시"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2820,46 +2827,63 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
-msgid "Bike storage"
+msgid "Business area"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
+msgid "Bike storage"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:43
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:45
 #, fuzzy, kde-format
 #| msgid "More information"
 msgctxt "train coach feature"
 msgid "Information point"
 msgstr "더 많은 정보"
 
-#: app/PublicTransportFeatureIcon.qml:45
+#: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:34
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:36
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgid "Not available"
 msgstr "사용 가능한 카메라가 없습니다."
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
 msgstr ""
@@ -3743,7 +3767,7 @@ msgstr "승강장: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "차량: %1 좌석: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "차량 구성 정보를 알 수 없습니다."
@@ -4070,10 +4094,6 @@ msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 �
 #~ msgctxt "@action"
 #~ msgid "Hide Names"
 #~ msgstr "이름 숨기기"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "이름 표시"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"

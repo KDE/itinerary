@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-04 00:38+0000\n"
+"POT-Creation-Date: 2024-04-05 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -112,7 +112,7 @@ msgstr "Добавить пересадку до"
 msgid "Add transfer after"
 msgstr "Добавить пересадку после"
 
-#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:141
+#: app/ActionsCard.qml:56 app/ProgramMembershipPage.qml:156
 #: app/TicketPage.qml:154
 #, kde-format
 msgid "Edit"
@@ -131,7 +131,7 @@ msgstr "Экспорт…"
 #: app/ActionsCard.qml:78 app/ActionsCard.qml:124 app/DocumentsCard.qml:87
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
-#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:153
+#: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
 #: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
@@ -2410,7 +2410,7 @@ msgstr "Файлы программы «Маршруты KDE» (*.itinerary)"
 msgid "Export Itinerary Data"
 msgstr "Экспорт данных маршрута"
 
-#: app/main.qml:169 app/PassPage.qml:135
+#: app/main.qml:169 app/PassPage.qml:137
 #, kde-format
 msgid "Import..."
 msgstr "Импорт…"
@@ -2666,19 +2666,19 @@ msgstr "Пропуска и программы"
 msgid "Add Program Membership..."
 msgstr "Участие в программе"
 
-#: app/PassPage.qml:50
+#: app/PassPage.qml:52
 #, kde-format
 msgctxt "name - number"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: app/PassPage.qml:103
+#: app/PassPage.qml:105
 #, kde-format
 msgctxt "name - valid time range"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: app/PassPage.qml:133
+#: app/PassPage.qml:135
 #, kde-format
 msgid "Import bonus or discount program cards or flat rate passes."
 msgstr ""
@@ -2786,6 +2786,13 @@ msgstr ""
 msgid "Program Membership"
 msgstr "Участие в программе"
 
+#: app/ProgramMembershipPage.qml:143
+#, fuzzy, kde-format
+#| msgctxt "@action"
+#| msgid "Show Names"
+msgid "Show Pass"
+msgstr "Показать названия"
+
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
 msgid "Walk"
@@ -2889,46 +2896,63 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
-msgid "Bike storage"
+msgid "Business area"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
-msgid "Toilet"
+msgid "Bike storage"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:43
+#, kde-format
+msgctxt "train coach feature"
+msgid "Wheelchar accessible toilet"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:45
 #, fuzzy, kde-format
 #| msgid "More information"
 msgctxt "train coach feature"
 msgid "Information point"
 msgstr "Дополнительная информация"
 
-#: app/PublicTransportFeatureIcon.qml:45
+#: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
 msgstr ""
 
-#: app/PublicTransportFeatureIcon.qml:124
+#: app/PublicTransportFeatureIcon.qml:49
+#, kde-format
+msgctxt "train coach feature"
+msgid "Power sockets"
+msgstr ""
+
+#: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:34
+#, kde-format
+msgid "Availability unknown"
+msgstr ""
+
+#: app/PublicTransportFeatureList.qml:36
 #, fuzzy, kde-format
 #| msgid "No camera available."
 msgid "Not available"
 msgstr "Нет доступных камер."
 
-#: app/PublicTransportFeatureList.qml:36
+#: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
 msgstr ""
@@ -3834,7 +3858,7 @@ msgstr "Платформа: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Вагон: %1 Место: %2"
 
-#: app/VehicleLayoutPage.qml:420
+#: app/VehicleLayoutPage.qml:427
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Сведения о схеме транспортного средства недоступны."
@@ -4183,10 +4207,6 @@ msgstr "%1%2 из %3 в %4 %5"
 #~ msgctxt "@action"
 #~ msgid "Hide Names"
 #~ msgstr "Скрыть названия"
-
-#~ msgctxt "@action"
-#~ msgid "Show Names"
-#~ msgstr "Показать названия"
 
 #~ msgctxt "@title:window"
 #~ msgid "Edit date/time"
