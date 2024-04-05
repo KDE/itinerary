@@ -375,6 +375,10 @@ Kirigami.ScrollablePage {
                         color: model.vehicleSection.disruptionEffect === KPublicTransport.Disruption.NoService ?
                                 Kirigami.Theme.disabledTextColor :  Kirigami.Theme.textColor
                     }
+                    VehicleLoadIndicator {
+                        load: model.vehicleSection.load
+                        visible: model.vehicleSection.load !== KPublicTransport.Load.Unknown
+                    }
 
                     TapHandler {
                         enabled: model.vehicleSection.sectionFeatures.length > 0 && model.vehicleSection.disruptionEffect !== KPublicTransport.Disruption.NoService

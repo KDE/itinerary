@@ -9,6 +9,7 @@
         <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureIcon.qml">../src/app/PublicTransportFeatureIcon.qml</file>
         <file alias="qt/qml/org/kde/itinerary/PublicTransportFeatureList.qml">../src/app/PublicTransportFeatureList.qml</file>
         <file alias="qt/qml/org/kde/itinerary/SheetDrawer.qml">../src/app/SheetDrawer.qml</file>
+        <file alias="qt/qml/org/kde/itinerary/VehicleLoadIndicator.qml">../src/app/VehicleLoadIndicator.qml</file>
 
         <file alias="images/bike.svg">../src/app/images/bike.svg</file>
         <file alias="images/car.svg">../src/app/images/car.svg</file>
