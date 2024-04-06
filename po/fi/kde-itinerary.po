@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3780,34 +3780,34 @@ msgstr "Laituri: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vaunu %1, paikka %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Kulkuvälineen paikkatietoa ei ole saatavilla."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "TÄYNNÄ"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Vähäinen"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Keskitasoinen"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Suuri"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3907,6 +3907,18 @@ msgstr "Kirjaudutaan"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 portilta %3 portille %4 %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Vähäinen"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Keskitasoinen"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Suuri"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Nykyinen matkalippu"

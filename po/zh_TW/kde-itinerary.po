@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-02-29 02:57+0900\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 23:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -2162,7 +2162,7 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "日光節約時間"
 
 #: app/LocationInfoDelegate.qml:45
 #, fuzzy, kde-format
@@ -2787,7 +2787,7 @@ msgstr "歐盟"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "空調"
 
 #: app/PublicTransportFeatureIcon.qml:27
 #, fuzzy, kde-format
@@ -2801,7 +2801,7 @@ msgstr "編輯餐廳"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "幼兒區域"
 
 #: app/PublicTransportFeatureIcon.qml:31
 #, fuzzy, kde-format
@@ -2814,19 +2814,19 @@ msgstr "家族名（姓氏）"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible"
-msgstr ""
+msgstr "輪椅無障礙"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "寧靜區域"
 
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr ""
+msgstr "商業區域"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2838,13 +2838,13 @@ msgstr ""
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toilet"
-msgstr ""
+msgstr "廁所"
 
 #: app/PublicTransportFeatureIcon.qml:43
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible toilet"
-msgstr ""
+msgstr "輪椅無障礙廁所"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, fuzzy, kde-format
@@ -2857,23 +2857,23 @@ msgstr "更多資訊"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: app/PublicTransportFeatureIcon.qml:49
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "電源插座"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1（無法使用）"
 
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "可用性未知"
 
 #: app/PublicTransportFeatureList.qml:36
 #, fuzzy, kde-format
@@ -2884,7 +2884,7 @@ msgstr "沒有可用的相機。"
 #: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "目前無法使用"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3753,34 +3753,34 @@ msgstr "月台：%1"
 msgid "Coach: %1 Seat: %2"
 msgstr "車廂：%1 座位：%2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "沒有可用的交通工具佈局資訊。"
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "全滿"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "低"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "中"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "高"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3872,6 +3872,18 @@ msgstr "登入"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 從 %3 到 %4 於 %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "低"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "中"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "高"
 
 #~ msgid "Current Ticket"
 #~ msgstr "目前票券"

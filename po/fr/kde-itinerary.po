@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-02 09:22+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-04 10:17+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1742,7 +1742,7 @@ msgstr "%1 (Arrivée)"
 #: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
-msgstr "Modifier avec un identifiant"
+msgstr "Modifier avec « iD »"
 
 #: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
 #, kde-format
@@ -3819,34 +3819,34 @@ msgstr "Quai : %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Voiture : %1 Siège : %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Aucune information de disposition du véhicule disponible."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "COMPLET"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Faible"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Moyen"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Haut"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3951,6 +3951,18 @@ msgstr "Connexion en cours"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1 %2 à partir de %3 vers %4 sur %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Faible"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Moyen"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Haut"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Ticket courant"

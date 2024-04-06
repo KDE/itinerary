@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 07:20+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 09:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2735,11 +2735,9 @@ msgid "Program Membership"
 msgstr "Članstvo v programu"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Show Names"
+#, kde-format
 msgid "Show Pass"
-msgstr "Prikaži imena"
+msgstr "Prikaži prepustnico"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2838,12 +2836,10 @@ msgid "Quiet area"
 msgstr "Področje tišine"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "Področje tišine"
+msgstr "Poslovni prostor"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2879,7 +2875,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Električne vtičnice"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2889,7 +2885,7 @@ msgstr "%1 (ni na voljo)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Razpoložljivost neznana"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3782,34 +3778,34 @@ msgstr "Peron: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagon: %1 Sedež: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Podatki o postavitvi vlaka niso na voljo."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "POLNO"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Nizko"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Srednje"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Visoko"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3911,6 +3907,18 @@ msgstr "Prijavljanje"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 od %3 do %4 na %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Nizko"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Srednje"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Visoko"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Trenutna vstopnica"

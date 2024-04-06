@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -3960,33 +3960,33 @@ msgstr "Nástupište: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, fuzzy, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "Plné"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
+msgid "Low occupancy"
 msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
+msgid "Medium occupancy"
 msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
+msgid "High occupancy"
 msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106

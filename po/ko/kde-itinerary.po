@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3767,34 +3767,34 @@ msgstr "승강장: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "차량: %1 좌석: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "차량 구성 정보를 알 수 없습니다."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "만차"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "낮음"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "중간"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "높음"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3893,6 +3893,18 @@ msgstr "로그인 중"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5에 %3에서 %4(으)로 가는 %1%2|/|%5에 %3에서 %4$[으 %4]로 가는 %1%2"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "낮음"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "중간"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "높음"
 
 #~ msgid "Current Ticket"
 #~ msgstr "현재 승차권"

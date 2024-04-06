@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-02-27 09:48+0100\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 17:57+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2172,14 +2172,13 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "Hora Estive"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "Tempore de initio"
+msgstr "Hora Standard"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2728,11 +2727,9 @@ msgid "Program Membership"
 msgstr "Adhesion de Programma"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Show Names"
+#, kde-format
 msgid "Show Pass"
-msgstr "Monstra nomines"
+msgstr "Monstra Pass"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2798,104 +2795,99 @@ msgstr "Union Europee"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "Aire Conditionate"
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "Modifica restaurante"
+msgstr "Bistro o  restaurante"
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "Area de infante"
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Family area"
-msgstr "Nomine de Familia"
+msgstr "Area de Familia"
 
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible"
-msgstr ""
+msgstr "Accessibile a chaise rolante"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "Area de silentio"
 
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr ""
+msgstr "Area de Affaires"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
 msgid "Bike storage"
-msgstr ""
+msgstr "Immagazinage de bicycletta"
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toilet"
-msgstr ""
+msgstr "Toilette"
 
 #: app/PublicTransportFeatureIcon.qml:43
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchar accessible toilet"
-msgstr ""
+msgstr "Toiletta accessibile per chaise rolante"
 
 #: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Information point"
-msgstr "Altere information"
+msgstr "Puncto de  information"
 
 #: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: app/PublicTransportFeatureIcon.qml:49
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Prisas electric"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1 (Non disponibile)"
 
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Disponibilitate incognite"
 
 #: app/PublicTransportFeatureList.qml:36
-#, fuzzy, kde-format
-#| msgid "No camera available."
+#, kde-format
 msgid "Not available"
-msgstr "Nulle Camera disponibile."
+msgstr "Non disponibile"
 
 #: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "Cuirrentemente non disponibile"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3728,39 +3720,34 @@ msgid "Unknown class"
 msgstr "Classe incognite"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "Autocar"
+msgstr "Autocar: %1"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "Wagon Lecto"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "Auto de location"
+msgstr "Wagon couchette"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "Restaurante"
+msgstr "Wagon Restaurante"
 
 #: app/VehicleLayoutPage.qml:98
-#, fuzzy, kde-format
-#| msgid "Transport Data"
+#, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr "Datos de transporto"
+msgstr "Wagon de transporto auto"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3782,34 +3769,34 @@ msgstr "Platteforma: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Autocar: %1 Placia: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Nulle information de disposition de vehiculo disponibile."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "PLEN"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Basse"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Medie"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Alte"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3911,6 +3898,18 @@ msgstr "Accedente "
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 ex %3 a %4 le %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Basse"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Medie"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Alte"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Billet currente"

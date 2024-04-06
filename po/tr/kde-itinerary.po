@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 16:11+0300\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 12:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2730,11 +2730,9 @@ msgid "Program Membership"
 msgstr "Program Üyeliği"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show Pass"
-msgstr "Haritayı Göster"
+msgstr "Geçişi Göster"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2833,12 +2831,10 @@ msgid "Quiet area"
 msgstr "Sessiz alan"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "Sessiz alan"
+msgstr "İş alanı"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2874,7 +2870,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Güç yuvaları"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2884,7 +2880,7 @@ msgstr "%1 (kullanılamıyor)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Kullanılabilirlik bilinmiyor"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3772,34 +3768,34 @@ msgstr "Platform: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Otobüs: %1 Koltuk: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Araç yerleşim bilgisi yok."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "DOLU"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Düşük"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Orta"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Yüksek"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3900,6 +3896,18 @@ msgstr "Oturum açılıyor"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%5 tarihinde %3 havaalanından %4 havaalanına %1%2"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Düşük"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Orta"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Yüksek"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Geçerli Bilet"

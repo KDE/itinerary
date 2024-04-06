@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 08:34+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 05:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2727,11 +2727,9 @@ msgid "Program Membership"
 msgstr "პროგრამის წევრობა"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Show Names"
+#, kde-format
 msgid "Show Pass"
-msgstr "სახელების ჩვენება"
+msgstr "ბილეთის ჩვენება"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2830,12 +2828,10 @@ msgid "Quiet area"
 msgstr "მშვიდი ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "მშვიდი ალაგი"
+msgstr "საქმიანი ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2871,7 +2867,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "კვების ბუდეები"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2881,7 +2877,7 @@ msgstr "%1 (ხელმისაწვდომი არაა)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "ხელმისაწვდომობა უცნობია"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3771,34 +3767,34 @@ msgstr "პლატფორმა: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "გამძღოლი: %1 სავარძელი: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "მანქანის განლაგების ინფორმაცია ხელმიუწვდომელია."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "სრული"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "დაბალი"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "საშუალო"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "მაღალი"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3899,6 +3895,18 @@ msgstr "შესვლა"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 -ი %3-დან %4-მდე %5-ზე"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "დაბალი"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "საშუალო"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "მაღალი"
 
 #~ msgid "Current Ticket"
 #~ msgstr "მიმდინარე ბილეთი"

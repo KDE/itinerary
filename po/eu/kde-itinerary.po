@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 13:41+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 08:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -95,7 +95,7 @@ msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
 #: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Boarding Pass"
-msgstr "Erakutsi ontziratze-txartela"
+msgstr "Erakutsi ontziratze-sarrera"
 
 #: app/ActionsCard.qml:32 app/TicketPage.qml:138
 #, kde-format
@@ -2610,7 +2610,7 @@ msgstr "%1 - %2"
 #: app/PassPage.qml:16
 #, kde-format
 msgid "Passes and Programs"
-msgstr "Txartelak eta programak"
+msgstr "Sarrerak eta programak"
 
 #: app/PassPage.qml:20
 #, kde-format
@@ -2649,7 +2649,7 @@ msgstr "Ekitaldiaren txartela"
 #: app/PkPassPage.qml:19
 #, kde-format
 msgid "Pass"
-msgstr "Txartela"
+msgstr "Sarrera"
 
 #: app/ProgramMembershipCard.qml:22 app/ProgramMembershipEditorCard.qml:33
 #, kde-format
@@ -2733,11 +2733,9 @@ msgid "Program Membership"
 msgstr "Programaren bazkidetza"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show Pass"
-msgstr "Erakutsi mapa"
+msgstr "Erakutsi sarrera"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2836,12 +2834,10 @@ msgid "Quiet area"
 msgstr "Eremu lasaia"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "Eremu lasaia"
+msgstr "Negozio eremua"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2877,7 +2873,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Elektrizitate harguneak"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2887,7 +2883,7 @@ msgstr "%1 (ez dago eskuragarri)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Eskuragarritasun ezezaguna"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3777,34 +3773,34 @@ msgstr "Nasa: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Bagoia: %1 Eserlekua: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "BETEA"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Txikia"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Ertaina"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Altua"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3908,6 +3904,18 @@ msgstr "Saioa hasten"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 %3(e)tik %4(e)ra %5(e)an"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Txikia"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Ertaina"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Altua"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Uneko txartela"

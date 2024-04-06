@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 13:35+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 10:30+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2727,11 +2727,9 @@ msgid "Program Membership"
 msgstr "Lidmaatschap van programma"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Show Names"
+#, kde-format
 msgid "Show Pass"
-msgstr "Namen tonen"
+msgstr "Pas tonen"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2830,12 +2828,10 @@ msgid "Quiet area"
 msgstr "Rustig gebied"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "Rustig gebied"
+msgstr "Zakengebied"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2871,7 +2867,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Stopcontacten"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2881,7 +2877,7 @@ msgstr "%1 (niet beschikbaar)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Beschikbaarheid onbekend"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3776,34 +3772,34 @@ msgstr "Platform: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Bus: %1 zitplaats: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Geen informatie over de indeling van het voertuig beschikbaar."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "VOL"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Laag"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Middel"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Hoog"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3905,6 +3901,18 @@ msgstr "Bezig met aanmelden"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 van %3 naar %4 op %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Laag"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Middel"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Hoog"
 
 #~ msgid "Current Ticket"
 #~ msgstr "Huidige ticket"

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 00:38+0000\n"
-"PO-Revision-Date: 2024-04-04 13:38+0200\n"
+"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"PO-Revision-Date: 2024-04-05 11:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -2734,11 +2734,9 @@ msgid "Program Membership"
 msgstr "Programa d'afiliació"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show Pass"
-msgstr "Mostra el mapa"
+msgstr "Mostra el passi"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2837,12 +2835,10 @@ msgid "Quiet area"
 msgstr "Àrea de silenci"
 
 #: app/PublicTransportFeatureIcon.qml:37
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Quiet area"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr "Àrea de silenci"
+msgstr "Àrea de negocis"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2878,7 +2874,7 @@ msgstr "Wi-Fi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Preses de corrent"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2888,7 +2884,7 @@ msgstr "%1 (no disponible)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Disponibilitat desconeguda"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format
@@ -3784,34 +3780,34 @@ msgstr "Andana: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Vagó: %1 Seient: %2"
 
-#: app/VehicleLayoutPage.qml:427
+#: app/VehicleLayoutPage.qml:431
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "No hi ha informació disponible de la disposició del vehicle."
 
-#: app/VehicleLoadIndicator.qml:29
+#: app/VehicleLoadIndicator.qml:32
 #, kde-format
 msgctxt "vehicle load"
 msgid "FULL"
 msgstr "Completa"
 
-#: app/VehicleLoadIndicator.qml:52
+#: app/VehicleLoadIndicator.qml:55
 #, kde-format
 msgctxt "vehicle load"
-msgid "Low"
-msgstr "Baixa"
+msgid "Low occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:53
+#: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
-msgid "Medium"
-msgstr "Mitjana"
+msgid "Medium occupancy"
+msgstr ""
 
-#: app/VehicleLoadIndicator.qml:54
+#: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
-msgid "High"
-msgstr "Alta"
+msgid "High occupancy"
+msgstr ""
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3915,3 +3911,15 @@ msgstr "S'està iniciant la sessió"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 des de %3 a %4 el %5"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Low"
+#~ msgstr "Baixa"
+
+#~ msgctxt "vehicle load"
+#~ msgid "Medium"
+#~ msgstr "Mitjana"
+
+#~ msgctxt "vehicle load"
+#~ msgid "High"
+#~ msgstr "Alta"
