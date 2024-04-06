@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-05 02:42+0000\n"
-"PO-Revision-Date: 2024-03-25 12:51+0100\n"
+"PO-Revision-Date: 2024-04-05 08:41+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -95,7 +95,7 @@ msgstr "Erauzlearen gaitasunak arbelera kopiatu dira"
 #: app/ActionsCard.qml:32
 #, kde-format
 msgid "Show Boarding Pass"
-msgstr "Erakutsi ontziratze-txartela"
+msgstr "Erakutsi ontziratze-sarrera"
 
 #: app/ActionsCard.qml:32
 #, kde-format
@@ -2546,7 +2546,7 @@ msgstr "%1 - %2"
 #: app/PassPage.qml:16
 #, kde-format
 msgid "Passes and Programs"
-msgstr "Txartelak eta programak"
+msgstr "Sarrerak eta programak"
 
 #: app/PassPage.qml:20
 #, kde-format
@@ -2585,7 +2585,7 @@ msgstr "Ekitaldiaren txartela"
 #: app/PkPassPage.qml:19
 #, kde-format
 msgid "Pass"
-msgstr "Txartela"
+msgstr "Sarrera"
 
 #: app/ProgramMembershipCard.qml:22 app/ProgramMembershipEditorCard.qml:33
 #, kde-format
