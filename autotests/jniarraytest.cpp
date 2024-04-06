@@ -49,7 +49,7 @@ private Q_SLOTS:
         QCOMPARE(a3.size(), 4);
 
         JNIEnv::m_arrayLength = 1;
-        const auto a4 = Jni::fromArray<QVector<QUrl>>(array);
+        const auto a4 = Jni::fromArray<QList<QUrl>>(array);
         QCOMPARE(a4.size(), 1);
 #endif
     }

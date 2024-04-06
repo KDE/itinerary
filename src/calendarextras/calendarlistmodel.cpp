@@ -15,7 +15,7 @@ namespace KCalendarCoreExtras {
 class CalendarListModelPrivate
 {
 public:
-    QVector<Calendar::Ptr> calendars;
+  QList<Calendar::Ptr> calendars;
 };
 }
 

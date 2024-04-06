@@ -50,10 +50,7 @@ OnlineTicketRetrievalJob::OnlineTicketRetrievalJob(const QString &sourceId, cons
 
 OnlineTicketRetrievalJob::~OnlineTicketRetrievalJob() = default;
 
-QVector<QVariant> OnlineTicketRetrievalJob::result() const
-{
-    return m_result;
-}
+QList<QVariant> OnlineTicketRetrievalJob::result() const { return m_result; }
 
 QString OnlineTicketRetrievalJob::errorMessage() const
 {

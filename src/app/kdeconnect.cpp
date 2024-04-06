@@ -14,8 +14,8 @@
 #endif
 
 #include <QDebug>
+#include <QList>
 #include <QUrl>
-#include <QVector>
 
 KDEConnectDeviceModel::KDEConnectDeviceModel(QObject *parent)
     : QAbstractListModel(parent)

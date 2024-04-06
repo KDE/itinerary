@@ -25,7 +25,7 @@ public:
     ~OnlineTicketRetrievalJob();
 
     /** Retrieved ticket(s), e.g. as KItinerary::TrainReservation instances. */
-    [[nodiscard]] QVector<QVariant> result() const;
+    [[nodiscard]] QList<QVariant> result() const;
     [[nodiscard]] QString errorMessage() const;
 
 Q_SIGNALS:
@@ -41,7 +41,7 @@ private:
 
     void handleReply(QNetworkReply *reply);
 
-    QVector<QVariant> m_result;
+    QList<QVariant> m_result;
     QString m_errorMsg;
     QNetworkAccessManager *m_nam;
 };

@@ -32,7 +32,7 @@ public:
     KCalendarCore::Calendar *calendar() const;
     void setCalendar(KCalendarCore::Calendar *calendar);
 
-    Q_INVOKABLE QVector<QVariant> selectedReservations() const;
+    Q_INVOKABLE QList<QVariant> selectedReservations() const;
 
     int rowCount(const QModelIndex &parent = {}) const override;
     QVariant data(const QModelIndex &index, int role) const override;
@@ -53,7 +53,7 @@ private:
 
     struct Event {
         KCalendarCore::Event::Ptr event;
-        QVector<QVariant> data;
+        QList<QVariant> data;
         bool selected;
     };
     std::vector<Event> m_events;

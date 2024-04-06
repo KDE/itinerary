@@ -192,14 +192,13 @@ QVariant MatrixRoomsModel::data(const QModelIndex &index, int role) const
     return {};
 }
 
-void MatrixRoomsModel::refresh(Room *room, const QVector<int> &roles)
-{
-    const auto it = std::find(m_rooms.begin(), m_rooms.end(), room);
-    if (it == m_rooms.end()) {
-        return;
-    }
-    const auto idx = index(it - m_rooms.begin());
-    Q_EMIT dataChanged(idx, idx, roles);
+void MatrixRoomsModel::refresh(Room *room, const QList<int> &roles) {
+  const auto it = std::find(m_rooms.begin(), m_rooms.end(), room);
+  if (it == m_rooms.end()) {
+    return;
+  }
+  const auto idx = index(it - m_rooms.begin());
+  Q_EMIT dataChanged(idx, idx, roles);
 }
 
 QHash<int, QByteArray> MatrixRoomsModel::roleNames() const

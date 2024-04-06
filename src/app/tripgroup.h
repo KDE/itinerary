@@ -7,9 +7,9 @@
 #ifndef TRIPGROUP_H
 #define TRIPGROUP_H
 
+#include <QList>
 #include <QMetaType>
 #include <QString>
-#include <QVector>
 
 class TripGroupManager;
 
@@ -31,8 +31,8 @@ public:
     [[nodiscard]] QString name() const;
     void setName(const QString &name);
 
-    [[nodiscard]] QVector<QString> elements() const;
-    void setElements(const QVector<QString> &elems);
+    [[nodiscard]] QList<QString> elements() const;
+    void setElements(const QList<QString> &elems);
 
     [[nodiscard]] QDateTime beginDateTime() const;
     [[nodiscard]] QDateTime endDateTime() const;
@@ -46,7 +46,7 @@ public:
 private:
     TripGroupManager *m_mgr = nullptr;
     QString m_name;
-    QVector<QString> m_elements;
+    QList<QString> m_elements;
 };
 
 Q_DECLARE_METATYPE(TripGroup)

@@ -58,7 +58,8 @@ private Q_SLOTS:
         QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Train 241 from Visp to Randa"));
         QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
-        auto res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
+        auto res = idx.data(CalendarImportModel::ReservationsRole)
+                       .value<QList<QVariant>>();
         QCOMPARE(res.size(), 1);
         QVERIFY(JsonLd::isA<TrainReservation>(res.at(0)));
         QVERIFY(model.setData(idx, false, CalendarImportModel::SelectedRole));
@@ -73,7 +74,8 @@ private Q_SLOTS:
         QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Restaurant reservation: Raclette"));
         QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/foodestablishment.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
-        res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
+        res = idx.data(CalendarImportModel::ReservationsRole)
+                  .value<QList<QVariant>>();
         QCOMPARE(res.size(), 1);
         QVERIFY(JsonLd::isA<FoodEstablishmentReservation>(res.at(0)));
         QVERIFY(model.setData(idx, false, CalendarImportModel::SelectedRole));
@@ -82,7 +84,8 @@ private Q_SLOTS:
         QCOMPARE(idx.data(CalendarImportModel::TitleRole).toString(), QLatin1StringView("Randa -> Visp"));
         QCOMPARE(idx.data(CalendarImportModel::IconNameRole).toString(), QLatin1StringView("qrc:///images/train.svg"));
         QCOMPARE(idx.data(CalendarImportModel::SelectedRole).toBool(), true);
-        res = idx.data(CalendarImportModel::ReservationsRole).value<QVector<QVariant>>();
+        res = idx.data(CalendarImportModel::ReservationsRole)
+                  .value<QList<QVariant>>();
         QCOMPARE(res.size(), 1);
         QVERIFY(JsonLd::isA<TrainReservation>(res.at(0)));
         QVERIFY(model.setData(idx, false, CalendarImportModel::SelectedRole));

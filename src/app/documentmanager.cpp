@@ -29,17 +29,17 @@ DocumentManager::DocumentManager(QObject* parent)
 
 DocumentManager::~DocumentManager() = default;
 
-QVector<QString> DocumentManager::documents() const
-{
-    QVector<QString> docs;
+QList<QString> DocumentManager::documents() const {
+  QList<QString> docs;
 
-    QDirIterator it(basePath(), QDir::Dirs | QDir::NoDotAndDotDot, QDirIterator::NoIteratorFlags);
-    while (it.hasNext()) {
-        it.next();
-        docs.push_back(it.fileName());
-    }
+  QDirIterator it(basePath(), QDir::Dirs | QDir::NoDotAndDotDot,
+                  QDirIterator::NoIteratorFlags);
+  while (it.hasNext()) {
+    it.next();
+    docs.push_back(it.fileName());
+  }
 
-    return docs;
+  return docs;
 }
 
 bool DocumentManager::hasDocument(const QString& id) const

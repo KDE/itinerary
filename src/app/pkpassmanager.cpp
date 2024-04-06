@@ -18,12 +18,12 @@
 #include <QDir>
 #include <QDirIterator>
 #include <QFile>
+#include <QList>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QStandardPaths>
 #include <QTemporaryFile>
 #include <QUrl>
-#include <QVector>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KItinerary;
@@ -40,20 +40,22 @@ void PkPassManager::setNetworkAccessManagerFactory(const std::function<QNetworkA
     m_namFactory = namFactory;
 }
 
-QVector<QString> PkPassManager::passes()
-{
-    const QString basePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/passes"_L1;
-    QDir::root().mkpath(basePath);
+QList<QString> PkPassManager::passes() {
+  const QString basePath =
+      QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
+      "/passes"_L1;
+  QDir::root().mkpath(basePath);
 
-    QVector<QString> passIds;
-    for (QDirIterator topIt(basePath, QDir::NoDotAndDotDot | QDir::Dirs); topIt.hasNext();) {
-        for (QDirIterator subIt(topIt.next(), QDir::Files); subIt.hasNext();) {
-            QFileInfo fi(subIt.next());
-            passIds.push_back(fi.dir().dirName() + '/'_L1 + fi.baseName());
-        }
+  QList<QString> passIds;
+  for (QDirIterator topIt(basePath, QDir::NoDotAndDotDot | QDir::Dirs);
+       topIt.hasNext();) {
+    for (QDirIterator subIt(topIt.next(), QDir::Files); subIt.hasNext();) {
+      QFileInfo fi(subIt.next());
+      passIds.push_back(fi.dir().dirName() + '/'_L1 + fi.baseName());
     }
+  }
 
-    return passIds;
+  return passIds;
 }
 
 bool PkPassManager::hasPass(const QString &passId) const

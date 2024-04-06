@@ -62,8 +62,8 @@ QJsonValue ModelVerificationPoint::variantToJson(const QVariant &v) const
             obj.remove(filter);
         }
         return obj;
-    } else if (v.userType() == qMetaTypeId<QVector<QVariant>>()) {
-        return KItinerary::JsonLdDocument::toJson(v.value<QVector<QVariant>>());
+    } else if (v.userType() == qMetaTypeId<QList<QVariant>>()) {
+      return KItinerary::JsonLdDocument::toJson(v.value<QList<QVariant>>());
     }
 
     return {};

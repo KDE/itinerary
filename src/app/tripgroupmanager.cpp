@@ -67,12 +67,12 @@ void TripGroupManager::setTransferManager(TransferManager *transferMgr)
     m_transferMgr = transferMgr;
 }
 
-QVector<QString> TripGroupManager::tripGroups() const
-{
-    QVector<QString> groups;
-    groups.reserve(m_tripGroups.size());
-    std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(), std::back_inserter(groups));
-    return groups;
+QList<QString> TripGroupManager::tripGroups() const {
+  QList<QString> groups;
+  groups.reserve(m_tripGroups.size());
+  std::copy(m_tripGroups.keyBegin(), m_tripGroups.keyEnd(),
+            std::back_inserter(groups));
+  return groups;
 }
 
 TripGroup TripGroupManager::tripGroup(const QString &id) const
@@ -393,7 +393,7 @@ void TripGroupManager::scanOne(std::vector<QString>::const_iterator beginIt)
 
     // create a trip for [beginIt, it)
     ++it; // so this marks the end
-    QVector<QString> elems;
+    QList<QString> elems;
     elems.reserve(std::distance(beginIt, it));
     std::copy(beginIt, it, std::back_inserter(elems));
 

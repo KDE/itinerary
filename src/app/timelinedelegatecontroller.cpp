@@ -909,7 +909,7 @@ void TimelineDelegateController::addToCalendar(KCalendarCore::Calendar *cal)
     if (resIds.isEmpty() || !cal) {
         return;
     }
-    QVector<QVariant> reservations;
+    QList<QVariant> reservations;
     reservations.reserve(resIds.size());
     for (const auto &resId : resIds) {
         reservations.push_back(m_resMgr->reservation(resId));

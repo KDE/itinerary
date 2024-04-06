@@ -61,9 +61,9 @@ private Q_SLOTS:
     void doAddRoom(Quotient::Room *room);
     void updateRoom(Quotient::Room *room, Quotient::Room *prev);
     void deleteRoom(Quotient::Room *room);
-    void refresh(Quotient::Room *room, const QVector<int> &roles = {});
+    void refresh(Quotient::Room *room, const QList<int> &roles = {});
 
-private:
+  private:
     Quotient::Connection *m_connection = nullptr;
 
     QList<Quotient::Room *> m_rooms;

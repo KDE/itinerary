@@ -27,7 +27,7 @@ public:
 
     void setNetworkAccessManagerFactory(const std::function<QNetworkAccessManager*()> &namFactory);
 
-    [[nodiscard]] static QVector<QString> passes();
+    [[nodiscard]] static QList<QString> passes();
 
     Q_INVOKABLE [[nodiscard]] KPkPass::Pass* pass(const QString &passId);
     Q_INVOKABLE [[nodiscard]] bool hasPass(const QString &passId) const;

@@ -50,7 +50,7 @@ public:
      *  @returns A list of reservation ids for the extracted elements. Those can be reservation
      *  ids that previously existed, in case the extracted elements could be merged.
      */
-    QVector<QString> importReservations(const QVector<QVariant> &resData);
+    QList<QString> importReservations(const QList<QVariant> &resData);
     Q_INVOKABLE void importReservation(const QVariant &resData);
 
     const std::vector<QString>& batches() const;
@@ -99,7 +99,7 @@ private:
 
     QString makeReservationId(const QString &resIdHint) const;
 
-    QVector<QString> applyPartialUpdate(const QVariant &res);
+    QList<QString> applyPartialUpdate(const QVariant &res);
 
     mutable QHash<QString, QVariant> m_reservations;
 

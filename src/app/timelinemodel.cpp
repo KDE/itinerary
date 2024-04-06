@@ -232,7 +232,7 @@ QVariant TimelineModel::data(const QModelIndex& index, int role) const
                 return {};
             }
             const auto resIds = m_resMgr->reservationsForBatch(elem.batchId());
-            QVector<QVariant> v;
+            QList<QVariant> v;
             v.reserve(resIds.size());
             for (const auto &resId : resIds) {
                 v.push_back(m_resMgr->reservation(resId));

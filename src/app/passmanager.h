@@ -40,7 +40,7 @@ public:
     Q_ENUM(PassType)
 
     Q_INVOKABLE QString import(const QVariant &pass, const QString &id = {});
-    QStringList import(const QVector<QVariant> &passes);
+    QStringList import(const QList<QVariant> &passes);
 
     /** Returns the pass id for the pass that is the closest match
      *  to the given ProgramMembership object.

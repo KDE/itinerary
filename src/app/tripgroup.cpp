@@ -42,15 +42,9 @@ void TripGroup::setName(const QString &name)
     m_name = name;
 }
 
-QVector<QString> TripGroup::elements() const
-{
-    return m_elements;
-}
+QList<QString> TripGroup::elements() const { return m_elements; }
 
-void TripGroup::setElements(const QVector<QString> &elems)
-{
-    m_elements = elems;
-}
+void TripGroup::setElements(const QList<QString> &elems) { m_elements = elems; }
 
 bool TripGroup::load(const QString &path)
 {

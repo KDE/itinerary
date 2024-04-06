@@ -19,7 +19,7 @@
 CalendarImportModel::CalendarImportModel(QObject *parent)
     : QAbstractListModel(parent)
 {
-    qRegisterMetaType<QVector<QVariant>>();
+  qRegisterMetaType<QList<QVariant>>();
 }
 
 CalendarImportModel::~CalendarImportModel() = default;
@@ -52,16 +52,15 @@ void CalendarImportModel::setCalendar(KCalendarCore::Calendar *calendar)
     }
 }
 
-QVector<QVariant> CalendarImportModel::selectedReservations() const
-{
-    QVector<QVariant> res;
-    for (const auto &ev : m_events) {
-        if (!ev.selected) {
-            continue;
-        }
-        std::copy(ev.data.begin(), ev.data.end(), std::back_inserter(res));
+QList<QVariant> CalendarImportModel::selectedReservations() const {
+  QList<QVariant> res;
+  for (const auto &ev : m_events) {
+    if (!ev.selected) {
+      continue;
     }
-    return res;
+    std::copy(ev.data.begin(), ev.data.end(), std::back_inserter(res));
+  }
+  return res;
 }
 
 int CalendarImportModel::rowCount(const QModelIndex &parent) const

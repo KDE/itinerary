@@ -27,11 +27,11 @@
 #include <QFile>
 #include <QJsonArray>
 #include <QJsonObject>
+#include <QList>
 #include <QScopeGuard>
 #include <QStandardPaths>
 #include <QUrl>
 #include <QUuid>
-#include <QVector>
 
 using namespace KItinerary;
 
@@ -123,43 +123,46 @@ QString ReservationManager::batchesBasePath()
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + QLatin1StringView("/batches/");
 }
 
-QVector<QString> ReservationManager::importReservations(const QVector<QVariant> &resData)
-{
-    ExtractorPostprocessor postproc;
-    postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
-    postproc.process(resData);
+QList<QString>
+ReservationManager::importReservations(const QList<QVariant> &resData) {
+  ExtractorPostprocessor postproc;
+  postproc.setContextDate(QDateTime(QDate::currentDate(), QTime(0, 0)));
+  postproc.process(resData);
 
-    auto data = postproc.result();
-    QVector<QString> ids;
-    ids.reserve(data.size());
-    for (auto &res : data) {
-        if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
-            EventReservation ev;
-            ev.setReservationFor(res);
-            ev.setPotentialAction(res.value<Event>().potentialAction());
-            res = ev;
-        }
-        // TODO show UI asking for time ranges for LodgingBusiness, FoodEstablishment, etc
+  auto data = postproc.result();
+  QList<QString> ids;
+  ids.reserve(data.size());
+  for (auto &res : data) {
+    if (JsonLd::isA<Event>(res)) { // promote Event to EventReservation
+      EventReservation ev;
+      ev.setReservationFor(res);
+      ev.setPotentialAction(res.value<Event>().potentialAction());
+      res = ev;
+    }
+    // TODO show UI asking for time ranges for LodgingBusiness,
+    // FoodEstablishment, etc
 
-        // filter out non-Reservation objects we can't handle yet
-        if (!m_validator.isValidElement(res)) {
+    // filter out non-Reservation objects we can't handle yet
+    if (!m_validator.isValidElement(res)) {
 
-            // check if this is a minimal cancellation element
-            const auto cleanup = qScopeGuard([this]{ m_validator.setAcceptOnlyCompleteElements(true); });
-            m_validator.setAcceptOnlyCompleteElements(false);
-            if (m_validator.isValidElement(res)) {
-                ids += applyPartialUpdate(res);
-                continue;
-            }
+      // check if this is a minimal cancellation element
+      const auto cleanup = qScopeGuard(
+          [this] { m_validator.setAcceptOnlyCompleteElements(true); });
+      m_validator.setAcceptOnlyCompleteElements(false);
+      if (m_validator.isValidElement(res)) {
+        ids += applyPartialUpdate(res);
+        continue;
+      }
 
-            qCWarning(Log) << "Discarding imported element due to validation failure" << res;
-            continue;
-        }
-
-        ids.push_back(addReservation(res));
+      qCWarning(Log) << "Discarding imported element due to validation failure"
+                     << res;
+      continue;
     }
 
-    return ids;
+    ids.push_back(addReservation(res));
+  }
+
+  return ids;
 }
 
 QString ReservationManager::addReservation(const QVariant &res, const QString &resIdHint)
@@ -462,54 +465,57 @@ void ReservationManager::removeFromBatch(const QString &resId, const QString &ba
     }
 }
 
-QVector<QString> ReservationManager::applyPartialUpdate(const QVariant &res)
-{
-    // validate input
-    if (!JsonLd::canConvert<Reservation>(res)) {
-        return {};
-    }
-    const auto baseRes = JsonLd::convert<Reservation>(res);
-    if (!baseRes.modifiedTime().isValid()) {
-        return {};
-    }
+QList<QString> ReservationManager::applyPartialUpdate(const QVariant &res) {
+  // validate input
+  if (!JsonLd::canConvert<Reservation>(res)) {
+    return {};
+  }
+  const auto baseRes = JsonLd::convert<Reservation>(res);
+  if (!baseRes.modifiedTime().isValid()) {
+    return {};
+  }
 
-    // look for matching reservations in a 6 month window following the modification time
-    const auto rangeBegin = baseRes.modifiedTime();
-    const auto rangeEnd = rangeBegin.addDays(6 * 30);
+  // look for matching reservations in a 6 month window following the
+  // modification time
+  const auto rangeBegin = baseRes.modifiedTime();
+  const auto rangeEnd = rangeBegin.addDays(6 * 30);
 
-    QVector<QString> updatedIds;
-    const auto beginIt = std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin, [this](const auto &lhs, const auto &rhs) {
-        return SortUtil::startDateTime(reservation(lhs)) < rhs;
-    });
-    for (auto it = beginIt; it != m_batches.end(); ++it) {
-        const auto otherRes = reservation(*it);
-        if (SortUtil::startDateTime(otherRes) > rangeEnd) {
-            break; // no hit
-        }
-        if (MergeUtil::isSame(res, otherRes)) {
-            // this is actually an update of otherRes!
-            const auto newRes = MergeUtil::merge(otherRes, res);
-            updateReservation(*it, newRes);
-            updatedIds.push_back(*it);
-            continue;
-        }
-        if (MergeUtil::isSameIncidence(res, otherRes)) {
-            // this is a multi-traveler element, check if we have it as one of the batch elements already
-            const auto &batch = m_batchToResMap.value(*it);
-            for (const auto &batchedId : batch) {
-                const auto batchedRes = reservation(batchedId);
-                if (MergeUtil::isSame(res, batchedRes)) {
-                    // this is actually an update of a batched reservation
-                    const auto newRes = MergeUtil::merge(otherRes, res);
-                    updateReservation(batchedId, newRes);
-                    updatedIds.push_back(batchedId);
-                    break;
-                }
-            }
-        }
+  QList<QString> updatedIds;
+  const auto beginIt =
+      std::lower_bound(m_batches.begin(), m_batches.end(), rangeBegin,
+                       [this](const auto &lhs, const auto &rhs) {
+                         return SortUtil::startDateTime(reservation(lhs)) < rhs;
+                       });
+  for (auto it = beginIt; it != m_batches.end(); ++it) {
+    const auto otherRes = reservation(*it);
+    if (SortUtil::startDateTime(otherRes) > rangeEnd) {
+      break; // no hit
     }
+    if (MergeUtil::isSame(res, otherRes)) {
+      // this is actually an update of otherRes!
+      const auto newRes = MergeUtil::merge(otherRes, res);
+      updateReservation(*it, newRes);
+      updatedIds.push_back(*it);
+      continue;
+    }
+    if (MergeUtil::isSameIncidence(res, otherRes)) {
+      // this is a multi-traveler element, check if we have it as one of the
+      // batch elements already
+      const auto &batch = m_batchToResMap.value(*it);
+      for (const auto &batchedId : batch) {
+        const auto batchedRes = reservation(batchedId);
+        if (MergeUtil::isSame(res, batchedRes)) {
+          // this is actually an update of a batched reservation
+          const auto newRes = MergeUtil::merge(otherRes, res);
+          updateReservation(batchedId, newRes);
+          updatedIds.push_back(batchedId);
+          break;
+        }
+      }
+    }
+  }
 
-    return updatedIds;
+  return updatedIds;
 }
 
 QString ReservationManager::previousBatch(const QString &batchId) const
