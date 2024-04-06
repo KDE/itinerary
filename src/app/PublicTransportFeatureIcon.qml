@@ -30,7 +30,7 @@ Kirigami.Icon {
             case KPublicTransport.Feature.FamilyArea:
                 return i18nc("train coach feature", "Family area");
             case KPublicTransport.Feature.WheelchairAccessible:
-                return i18nc("train coach feature", "Wheelchar accessible");
+                return i18nc("train coach feature", "Wheelchair accessible");
             case KPublicTransport.Feature.SilentArea:
                 return i18nc("train coach feature", "Quiet area");
             case KPublicTransport.Feature.BusinessArea:
@@ -40,7 +40,7 @@ Kirigami.Icon {
             case KPublicTransport.Feature.Toilet:
                 return i18nc("train coach feature", "Toilet");
             case KPublicTransport.Feature.WheelchairAccessibleToilet:
-                return i18nc("train coach feature", "Wheelchar accessible toilet");
+                return i18nc("train coach feature", "Wheelchair accessible toilet");
             case KPublicTransport.Feature.InformationPoint:
                 return i18nc("train coach feature", "Information point");
             case KPublicTransport.Feature.WiFi:
