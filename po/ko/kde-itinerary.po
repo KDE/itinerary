@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2815,7 +2815,7 @@ msgstr "성"
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2845,7 +2845,7 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:43
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:45

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 05:16+0200\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"PO-Revision-Date: 2024-04-06 05:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2816,9 +2816,11 @@ msgid "Family area"
 msgstr "ოჯახის ალაგი"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr "წვდომადია გორგოლაჭებიანი სავარძლით"
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2846,9 +2848,11 @@ msgid "Toilet"
 msgstr "ტუალეტი"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible toilet"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr "გორგოლაჭებიანი სავარძლით წვდომადი ტუალეტი"
 
 #: app/PublicTransportFeatureIcon.qml:45
@@ -3782,19 +3786,19 @@ msgstr "სრული"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low occupancy"
-msgstr ""
+msgstr "დაბალი დაკავებულობა"
 
 #: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium occupancy"
-msgstr ""
+msgstr "საშუალო დაკავებულობა"
 
 #: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
 msgid "High occupancy"
-msgstr ""
+msgstr "მაღალი დაკავებულობა"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format

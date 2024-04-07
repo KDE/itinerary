@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2888,7 +2888,7 @@ msgstr "Apelido"
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2918,7 +2918,7 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:43
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:45

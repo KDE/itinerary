@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
-"PO-Revision-Date: 2024-02-27 21:53+0100\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"PO-Revision-Date: 2024-04-06 22:35+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2171,14 +2171,13 @@ msgstr "%1°C"
 #: app/LocationInfoDelegate.qml:45
 #, kde-format
 msgid "Daylight Saving Time"
-msgstr ""
+msgstr "Somera Tempo"
 
 #: app/LocationInfoDelegate.qml:45
-#, fuzzy, kde-format
-#| msgid "Start Time"
+#, kde-format
 msgctxt "opposite to daylight saving time"
 msgid "Standard Time"
-msgstr "Komenca Tempo"
+msgstr "Norma Tempo"
 
 #: app/LocationInfoDelegate.qml:46
 #, kde-format
@@ -2726,11 +2725,9 @@ msgid "Program Membership"
 msgstr "Programo-Membreco"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Show Map"
+#, kde-format
 msgid "Show Pass"
-msgstr "Montri Mapon"
+msgstr "Montri Legitimilon"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2796,104 +2793,103 @@ msgstr "Eŭropa Unio"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Air conditioning"
-msgstr ""
+msgstr "Klimatizilo"
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "Redakti Restoracion"
+msgstr "Bistro aŭ restoracio"
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toddler area"
-msgstr ""
+msgstr "Infaneta areo"
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
-msgctxt "train coach feature"
-msgid "Family area"
-msgstr "Familia nomo"
-
-#: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
-msgstr ""
+msgid "Family area"
+msgstr "Familia areo"
+
+#: app/PublicTransportFeatureIcon.qml:33
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible"
+msgctxt "train coach feature"
+msgid "Wheelchair accessible"
+msgstr "Rulseĝe alirebla"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
 msgctxt "train coach feature"
 msgid "Quiet area"
-msgstr ""
+msgstr "Areo de trankvilo"
 
 #: app/PublicTransportFeatureIcon.qml:37
 #, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr ""
+msgstr "Areo de komerco"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
 msgctxt "train coach feature"
 msgid "Bike storage"
-msgstr ""
+msgstr "Bicikla konservejo"
 
 #: app/PublicTransportFeatureIcon.qml:41
 #, kde-format
 msgctxt "train coach feature"
 msgid "Toilet"
-msgstr ""
+msgstr "Necesejo"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible toilet"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
-msgstr ""
+msgid "Wheelchair accessible toilet"
+msgstr "Rulseĝe alirebla necesejo"
 
 #: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Information point"
-msgstr "Pliaj informoj"
+msgstr "Informejo"
 
 #: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
 msgctxt "train coach feature"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Vifio"
 
 #: app/PublicTransportFeatureIcon.qml:49
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Elektraj ingoj"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
 msgid "%1 (not available)"
-msgstr ""
+msgstr "%1 (ne disponebla)"
 
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Disponeblo nekonata"
 
 #: app/PublicTransportFeatureList.qml:36
-#, fuzzy, kde-format
-#| msgid "No camera available."
+#, kde-format
 msgid "Not available"
-msgstr "Neniu fotilo disponebla."
+msgstr "Ne disponebla"
 
 #: app/PublicTransportFeatureList.qml:38
 #, kde-format
 msgid "Currently not available"
-msgstr ""
+msgstr "Aktuale ne disponebla"
 
 #: app/ReservationDocumentsCard.qml:19
 #, kde-format
@@ -3723,38 +3719,34 @@ msgid "Unknown class"
 msgstr "Nekonata klaso"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "carriage on a train"
-#| msgid "Coach"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "Trejnisto"
+msgstr "Kaleŝo %1"
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
 msgctxt "train coach type"
 msgid "Sleeping car"
-msgstr ""
+msgstr "Dormvagono"
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "Luita aŭto"
+msgstr "Kuŝeja vagono"
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "Restoracio"
+msgstr "Restoracia vagono"
 
 #: app/VehicleLayoutPage.qml:98
 #, kde-format
 msgctxt "train coach type"
 msgid "Car transport car"
-msgstr ""
+msgstr "Aŭtotransporta vagono"
 
 #: app/VehicleLayoutPage.qml:158
 #, kde-format
@@ -3791,19 +3783,19 @@ msgstr "PLENA"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low occupancy"
-msgstr ""
+msgstr "Malalta okupado"
 
 #: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium occupancy"
-msgstr ""
+msgstr "Meza okupado"
 
 #: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
 msgid "High occupancy"
-msgstr ""
+msgstr "Alta okupado"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
@@ -3904,18 +3896,3 @@ msgstr "Ensalutante"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 de %3 al %4 je %5"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Low"
-#~ msgstr "Malalta"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium"
-#~ msgstr "Meza"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High"
-#~ msgstr "Alta"
-
-#~ msgid "Current Ticket"
-#~ msgstr "Nuna Bileto"

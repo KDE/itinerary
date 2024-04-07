@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 20:30+0300\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"PO-Revision-Date: 2024-04-06 15:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -2831,9 +2831,11 @@ msgid "Family area"
 msgstr "Місце для родини"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr "Доступність для крісла на колесах"
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2861,9 +2863,11 @@ msgid "Toilet"
 msgstr "Туалет"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible toilet"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr "Доступність туалету для крісла з колесами"
 
 #: app/PublicTransportFeatureIcon.qml:45
@@ -3808,19 +3812,19 @@ msgstr "ПОВНИЙ"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low occupancy"
-msgstr ""
+msgstr "Низька заповненість"
 
 #: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium occupancy"
-msgstr ""
+msgstr "Середня заповненість"
 
 #: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
 msgid "High occupancy"
-msgstr ""
+msgstr "Висока заповненість"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format

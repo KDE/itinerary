@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 12:06+0300\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"PO-Revision-Date: 2024-04-06 14:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2819,9 +2819,11 @@ msgid "Family area"
 msgstr "Aile alanı"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr "Tekerlekli sandalyeye uygun"
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2849,9 +2851,11 @@ msgid "Toilet"
 msgstr "Tuvalet"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible toilet"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr "Tekerlekli sandalyeyle girilebilir tuvalet"
 
 #: app/PublicTransportFeatureIcon.qml:45
@@ -3783,19 +3787,19 @@ msgstr "DOLU"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low occupancy"
-msgstr ""
+msgstr "Düşük doluluk"
 
 #: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium occupancy"
-msgstr ""
+msgstr "Orta doluluk"
 
 #: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
 msgid "High occupancy"
-msgstr ""
+msgstr "Yüksek doluluk"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
 "PO-Revision-Date: 2024-04-05 08:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2822,9 +2822,11 @@ msgid "Family area"
 msgstr "Familia eremua"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr "Gurpil-aulkirako irisgarria"
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2852,9 +2854,11 @@ msgid "Toilet"
 msgstr "Komuna"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "train coach feature"
+#| msgid "Wheelchar accessible toilet"
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr "Gurpil-aulkirako komun irisgarria"
 
 #: app/PublicTransportFeatureIcon.qml:45
