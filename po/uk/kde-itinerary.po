@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-07 00:38+0000\n"
-"PO-Revision-Date: 2024-04-06 15:00+0300\n"
+"PO-Revision-Date: 2024-04-07 08:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -2831,12 +2831,10 @@ msgid "Family area"
 msgstr "Місце для родини"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible"
-msgstr "Доступність для крісла на колесах"
+msgstr "Доступне для візків"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
@@ -2863,12 +2861,10 @@ msgid "Toilet"
 msgstr "Туалет"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible toilet"
-msgstr "Доступність туалету для крісла з колесами"
+msgstr "Доступність туалету для візків"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format

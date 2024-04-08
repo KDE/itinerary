@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-07 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 11:09+0200\n"
+"PO-Revision-Date: 2024-04-06 10:42+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -2750,11 +2750,9 @@ msgid "Program Membership"
 msgstr "Adhésion à un programme"
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Show Names"
+#, kde-format
 msgid "Show Pass"
-msgstr "Afficher les noms"
+msgstr "Afficher le mot de passe"
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2858,7 +2856,7 @@ msgstr "Zone de repos"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Business area"
-msgstr ""
+msgstr "Zone de bureau"
 
 #: app/PublicTransportFeatureIcon.qml:39
 #, kde-format
@@ -2896,7 +2894,7 @@ msgstr "Wifi"
 #, kde-format
 msgctxt "train coach feature"
 msgid "Power sockets"
-msgstr ""
+msgstr "Prise de courant"
 
 #: app/PublicTransportFeatureIcon.qml:132
 #, kde-format
@@ -2906,7 +2904,7 @@ msgstr "%1 (Non disponible)"
 #: app/PublicTransportFeatureList.qml:34
 #, kde-format
 msgid "Availability unknown"
-msgstr ""
+msgstr "Disponibilité inconnue"
 
 #: app/PublicTransportFeatureList.qml:36
 #, kde-format

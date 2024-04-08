@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-07 00:38+0000\n"
-"PO-Revision-Date: 2024-04-06 08:53+0200\n"
+"PO-Revision-Date: 2024-04-07 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2824,9 +2824,7 @@ msgid "Family area"
 msgstr "Prostor za družine"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible"
 msgstr "Dostopno z invalidskim vozičkom"
@@ -2856,12 +2854,10 @@ msgid "Toilet"
 msgstr "Toalete"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible toilet"
-msgstr "Toalete dostopne invalidom na vozičku"
+msgstr "Toalete dostopne z invalidskim vozičkom"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format

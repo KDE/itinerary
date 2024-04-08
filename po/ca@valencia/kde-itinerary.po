@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-07 00:38+0000\n"
-"PO-Revision-Date: 2024-04-06 11:07+0200\n"
+"PO-Revision-Date: 2024-04-07 11:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2823,9 +2823,7 @@ msgid "Family area"
 msgstr "Àrea familiar"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible"
 msgstr "Accessible amb cadira de rodes"
@@ -2855,9 +2853,7 @@ msgid "Toilet"
 msgstr "Lavabo"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible toilet"
 msgstr "Lavabo accessible amb cadira de rodes"

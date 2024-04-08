@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-06 00:38+0000\n"
-"PO-Revision-Date: 2024-03-30 19:37\n"
+"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"PO-Revision-Date: 2024-04-07 19:29\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2713,10 +2713,9 @@ msgid "Program Membership"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show Pass"
-msgstr "出示登机牌"
+msgstr ""
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2785,12 +2784,10 @@ msgid "Air conditioning"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "编辑餐厅信息"
+msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
@@ -2807,7 +2804,7 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible"
+msgid "Wheelchair accessible"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:35
@@ -2837,15 +2834,14 @@ msgstr ""
 #: app/PublicTransportFeatureIcon.qml:43
 #, kde-format
 msgctxt "train coach feature"
-msgid "Wheelchar accessible toilet"
+msgid "Wheelchair accessible toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Information point"
-msgstr "更多信息"
+msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
@@ -3696,12 +3692,10 @@ msgid "Unknown class"
 msgstr "未知座位等级"
 
 #: app/VehicleLayoutPage.qml:82
-#, fuzzy, kde-format
-#| msgctxt "coach of a train"
-#| msgid "Coach:"
+#, kde-format
 msgctxt "train coach"
 msgid "Coach %1"
-msgstr "车厢："
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:92
 #, kde-format
@@ -3716,12 +3710,10 @@ msgid "Couchette car"
 msgstr ""
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Edit Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "编辑餐厅信息"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:98
 #, kde-format
