@@ -161,7 +161,7 @@ private Q_SLOTS:
         const auto resId = resMgr.batches()[0];
         QCOMPARE(ldm.isRelevant(resId), true);
         QCOMPARE(ldm.nextPollTimeForReservation(resId), 0);
-        QTest::qWait(0);
+        QTest::qWait(1);
 
         QCOMPARE(pkPassMgr.passes().size(), 1);
         const auto pass = pkPassMgr.pass(pkPassMgr.passes()[0]);
