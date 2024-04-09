@@ -808,7 +808,15 @@
   </provides>
   <launchable type="desktop-id">org.kde.itinerary.desktop</launchable>
   <releases>
-    <release version="24.02.2" date="2024-04-11"/>
+    <release version="24.02.2" date="2024-04-11">
+      <description>
+        <ul>
+          <li>New or improved travel document extractors for Amsbus.cz, Eurostar, Finnair, Moongate, UK national railway and VR.</li>
+          <li>Fix displaying public transport departure disruptions.</li>
+          <li>Fix Apple Wallet pass rendering issues.</li>
+        </ul>
+      </description>
+    </release>
     <release version="24.02.1" date="2024-03-21">
       <description>
         <ul>
