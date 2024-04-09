@@ -165,6 +165,7 @@ Kirigami.Page {
                         clip: true
                         model: sectionModel
                         header: JourneySectionStopDelegate {
+                            x: 0
                             stop: journeySection.departure
                             isDeparture: true
                             trailingProgress: sectionModel.departureTrailingProgress
