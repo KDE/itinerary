@@ -42,6 +42,8 @@ FormCard.AbstractFormDelegate {
             visible: modelData.mode !== JourneySection.Walking || index === 0
             width: departureLine.width
             Layout.fillHeight: true
+            Layout.row: 0
+            Layout.column: 0
             Rectangle{
                 visible: index != 0 || modelData.mode == JourneySection.Walking
                 height: parent.height
@@ -57,12 +59,14 @@ FormCard.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isDeparture: true
-                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
+                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Walking
             }
         }
         RowLayout {
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.topMargin: Kirigami.Units.mediumSpacing
+            Layout.row: 0
+            Layout.column: 1
             visible: ( root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
 
 
@@ -86,6 +90,8 @@ FormCard.AbstractFormDelegate {
         }
         RowLayout {
             Layout.topMargin: Kirigami.Units.mediumSpacing
+            Layout.row: 0
+            Layout.column: 2
             visible: ( root.modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === 0
 
             QQC2.Label {
@@ -105,6 +111,8 @@ FormCard.AbstractFormDelegate {
         // middle row: mode symbol, transport mode, duration
         Item {
             width: departureLine.width
+            Layout.row: 1
+            Layout.column: 0
             Layout.fillHeight: true
 
             Rectangle{
@@ -117,10 +125,12 @@ FormCard.AbstractFormDelegate {
                 anchors.fill: parent
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 hasStop: false
-                visible: modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
+                visible: modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Waiting
             }
         }
         Item{
+            Layout.row: 1
+            Layout.column: 1
             Layout.preferredWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             implicitHeight: Kirigami.Units.iconSizes.smallMedium
 
@@ -143,6 +153,8 @@ FormCard.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.row: 1
+            Layout.column: 2
             Layout.topMargin: modelData.mode === JourneySection.Walking ? Kirigami.Units.largeSpacing * 3 : 0
             Layout.bottomMargin: modelData.mode === JourneySection.Walking? Kirigami.Units.largeSpacing * 3 : 0
 
@@ -191,6 +203,8 @@ FormCard.AbstractFormDelegate {
         Item {
             visible: modelData.notes.length > 0 || modelData.features.length > 0
             width: departureLine.width
+            Layout.row: 2
+            Layout.column: 0
             Layout.fillHeight: true
             Rectangle{
                 height: parent.height
@@ -207,11 +221,16 @@ FormCard.AbstractFormDelegate {
         }
         Item {
             visible: modelData.notes.length > 0 || modelData.features.length > 0
+            Layout.row: 2
+            Layout.column: 1
             Layout.preferredWidth: Kirigami.Units.largeSpacing
             Layout.fillHeight: true
+
         }
         ColumnLayout {
             visible: modelData.notes.length > 0 || modelData.features.length > 0
+            Layout.row: 2
+            Layout.column: 2
             Layout.fillWidth: true
             RowLayout {
                 spacing: Kirigami.Units.smallSpacing
@@ -282,6 +301,8 @@ FormCard.AbstractFormDelegate {
         }
         // last row: arrival information
         Item {
+            Layout.row: 3
+            Layout.column: 0
             Layout.preferredWidth: departureLine.width
             Layout.fillHeight: true
             visible: modelData.mode !== JourneySection.Walking || index === modelLength
@@ -299,10 +320,12 @@ FormCard.AbstractFormDelegate {
                 anchors.bottomMargin: Kirigami.Units.mediumSpacing
                 lineColor: modelData.route.line.hasColor ? modelData.route.line.color : Kirigami.Theme.textColor
                 isArrival: true
-                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking
+                visible:  modelData.mode !== JourneySection.Transfer && modelData.mode !== JourneySection.Walking && modelData.mode !== JourneySection.Waiting
             }
         }
         RowLayout {
+            Layout.row: 3
+            Layout.column: 1
             Layout.minimumWidth: depTime.width + Kirigami.Units.largeSpacing * 3.5
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
             visible: ( modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking) || index === modelLength
@@ -317,6 +340,8 @@ FormCard.AbstractFormDelegate {
             }
         }
         RowLayout {
+            Layout.row: 3
+            Layout.column: 2
             Layout.bottomMargin: Kirigami.Units.mediumSpacing
             visible: ( modelData.mode !== JourneySection.Waiting && modelData.mode !== JourneySection.Walking ) || index === modelLength
 
@@ -334,7 +359,5 @@ FormCard.AbstractFormDelegate {
                 visible: modelData.scheduledArrivalPlatform !== ""
             }
         }
-
-
     }
 }
