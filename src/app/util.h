@@ -50,6 +50,9 @@ public:
      *  color to be readable on top).
      */
     Q_INVOKABLE static bool isDarkImage(const QImage &img);
+
+    /** Base64 encoding. */
+    Q_INVOKABLE [[nodiscard]] static QString toBase64(const QByteArray &data);
 };
 
 #endif // UTIL_H

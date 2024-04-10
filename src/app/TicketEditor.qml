@@ -30,6 +30,7 @@ Kirigami.ScrollablePage {
         onTriggered: {
             let newTicket = PassManager.pass(root.passId);
             newTicket.name = ticketNameEdit.text;
+            ticketTokenEdit.apply(newTicket);
 
             let underName = newTicket.underName ?? Factory.makePerson();
             underName.name = underNameEdit.text;
@@ -72,6 +73,10 @@ Kirigami.ScrollablePage {
             }
         }
 
+        TicketTokenEditorCard {
+            id: ticketTokenEdit
+            item: root.ticket
+            allowTicketSelection: false
         }
     }
 }

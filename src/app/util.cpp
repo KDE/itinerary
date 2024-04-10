@@ -122,4 +122,9 @@ bool Util::isDarkImage(const QImage &img)
     return darkCount > (SAMPLE_COUNT * SAMPLE_COUNT / 2);
 }
 
+QString Util::toBase64(const QByteArray &data)
+{
+    return QString::fromLatin1(data.toBase64());
+}
+
 #include "moc_util.cpp"

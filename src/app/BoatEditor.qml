@@ -36,8 +36,12 @@ EditorPage {
         arrivalAddress.save(arr);
         trip.arrivalBoatTerminal = arr;
 
+        let ticket = reservation.reservedTicket ?? Factory.makeTicket();
+        ticketTokenEdit.apply(ticket);
+
         let newRes = reservation;
         newRes.reservationFor = trip;
+        newRes.reservedTicket = ticket;
         bookingEdit.apply(newRes);
         return newRes;
     }
@@ -132,6 +136,11 @@ EditorPage {
             id: bookingEdit
             item: root.reservation
             defaultCurrency: Country.fromAlpha2(departureAddress.currentCountry).currencyCode
+        }
+
+        TicketTokenEditorCard {
+            id: ticketTokenEdit
+            item: root.reservation.reservedTicket
         }
     }
 }

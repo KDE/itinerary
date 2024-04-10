@@ -36,6 +36,7 @@ FormCard.FormCardPage {
             enabled: root.isValidInput
             onTriggered: {
                 let program = root.passId !== "" ? PassManager.pass(root.passId) : root.programMembership;
+                ticketTokenEdit.apply(program);
 
                 let member = program.member;
                 member.name = memberNameEdit.text;
@@ -117,5 +118,12 @@ FormCard.FormCardPage {
                 return '';
             }
         }
+    }
+
+    TicketTokenEditorCard {
+        id: ticketTokenEdit
+        item: root.programMembership
+        allowTicketSelection: false
+        title: i18n("Barcode")
     }
 }

@@ -35,8 +35,12 @@ EditorPage {
         if (endDateEdit.isModified)
             event = Util.setDateTimePreserveTimezone(event, "endDate", endDateEdit.value);
 
+        let ticket = reservation.reservedTicket ?? Factory.makeTicket();
+        ticketTokenEdit.apply(ticket);
+
         let newRes = reservation;
         newRes.reservationFor = event;
+        newRes.reservedTicket = ticket;
         bookingEdit.apply(newRes);
         return newRes;
     }
@@ -137,6 +141,11 @@ EditorPage {
             id: bookingEdit
             item: reservation
             defaultCurrency: Country.fromAlpha2(address.currentCountry).currencyCode
+        }
+
+        TicketTokenEditorCard {
+            id: ticketTokenEdit
+            item: root.reservation.reservedTicket
         }
     }
 }

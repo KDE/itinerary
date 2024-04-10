@@ -31,6 +31,7 @@ EditorPage {
         trip.arrivalPlatform = arrivalPlatform.text;
 
         let ticket = reservation.reservedTicket ?? Factory.makeTicket();
+        ticketTokenEdit.apply(ticket);
         let seat = ticket.ticketedSeat;
         seat.seatNumber = seatNumber.text;
         ticket.ticketedSeat = seat;
@@ -144,6 +145,11 @@ EditorPage {
         BookingEditorCard {
             id: bookingEdit
             item: root.reservation
+        }
+
+        TicketTokenEditorCard {
+            id: ticketTokenEdit
+            item: root.reservation.reservedTicket
         }
     }
 }
