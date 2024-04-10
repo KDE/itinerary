@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"POT-Creation-Date: 2024-04-10 00:38+0000\n"
 "PO-Revision-Date: 2023-08-09 12:54+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -2031,7 +2031,7 @@ msgstr ""
 msgid "Show location"
 msgstr "Zobrazit umístění"
 
-#: app/JourneySectionPage.qml:478
+#: app/JourneySectionPage.qml:479
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
@@ -2725,10 +2725,9 @@ msgid "Program Membership"
 msgstr ""
 
 #: app/ProgramMembershipPage.qml:143
-#, fuzzy, kde-format
-#| msgid "Show Boarding Pass"
+#, kde-format
 msgid "Show Pass"
-msgstr "Zobrazit palubní letenku"
+msgstr ""
 
 #: app/publictransport.cpp:241 app/publictransport.cpp:268
 #, kde-format
@@ -2797,11 +2796,10 @@ msgid "Air conditioning"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:27
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Bistro or restaurant"
-msgstr "restaurace"
+msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:29
 #, kde-format
@@ -2810,11 +2808,10 @@ msgid "Toddler area"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:31
-#, fuzzy, kde-format
-#| msgid "Family name"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Family area"
-msgstr "Příjmení"
+msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:33
 #, kde-format
@@ -2853,11 +2850,10 @@ msgid "Wheelchair accessible toilet"
 msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:45
-#, fuzzy, kde-format
-#| msgid "More information"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Information point"
-msgstr "Více informací"
+msgstr ""
 
 #: app/PublicTransportFeatureIcon.qml:47
 #, kde-format
@@ -2882,10 +2878,9 @@ msgid "Availability unknown"
 msgstr ""
 
 #: app/PublicTransportFeatureList.qml:36
-#, fuzzy, kde-format
-#| msgid "No camera available."
+#, kde-format
 msgid "Not available"
-msgstr "Fotoaparát nedostupný."
+msgstr "Není k dispozici"
 
 #: app/PublicTransportFeatureList.qml:38
 #, kde-format
@@ -3730,18 +3725,16 @@ msgid "Sleeping car"
 msgstr ""
 
 #: app/VehicleLayoutPage.qml:94
-#, fuzzy, kde-format
-#| msgid "Rented car"
+#, kde-format
 msgctxt "train coach type"
 msgid "Couchette car"
-msgstr "Zapůjčené auto"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:96
-#, fuzzy, kde-format
-#| msgid "Restaurant"
+#, kde-format
 msgctxt "train coach type"
 msgid "Restaurant car"
-msgstr "restaurace"
+msgstr ""
 
 #: app/VehicleLayoutPage.qml:98
 #, kde-format
@@ -3891,15 +3884,3 @@ msgstr "Přihlašování"
 msgctxt "Airline Flightnumber from Airport to Airport on Date"
 msgid "%1%2 from %3 to %4 on %5"
 msgstr "%1%2 z %3 do %4 na %5"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Low"
-#~ msgstr "Nízká"
-
-#~ msgctxt "vehicle load"
-#~ msgid "Medium"
-#~ msgstr "Střední"
-
-#~ msgctxt "vehicle load"
-#~ msgid "High"
-#~ msgstr "Vysoká"

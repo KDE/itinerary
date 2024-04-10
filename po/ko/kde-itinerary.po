@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"POT-Creation-Date: 2024-04-10 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2027,7 +2027,7 @@ msgstr "차량 승차량:"
 msgid "Show location"
 msgstr "위치 표시"
 
-#: app/JourneySectionPage.qml:478
+#: app/JourneySectionPage.qml:479
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"

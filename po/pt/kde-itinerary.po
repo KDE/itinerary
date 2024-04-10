@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-07 00:38+0000\n"
+"POT-Creation-Date: 2024-04-10 00:38+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -2079,7 +2079,7 @@ msgstr "Disposição do Veículo"
 msgid "Show location"
 msgstr "Mostrar a localização"
 
-#: app/JourneySectionPage.qml:478
+#: app/JourneySectionPage.qml:479
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Show More…"
