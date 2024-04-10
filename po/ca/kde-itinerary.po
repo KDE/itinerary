@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-05 02:42+0000\n"
+"POT-Creation-Date: 2024-04-10 02:46+0000\n"
 "PO-Revision-Date: 2024-04-04 13:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1982,7 +1982,7 @@ msgstr "Velocitat mitjana: %1"
 msgid "CO₂: %1"
 msgstr "CO₂: %1"
 
-#: app/JourneySectionPage.qml:298
+#: app/JourneySectionPage.qml:299
 #, kde-format
 msgctxt "@action:button"
 msgid "Show Map"
