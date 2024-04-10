@@ -316,7 +316,16 @@ Kirigami.ApplicationWindow {
     }
     Component {
         id: scanBarcodeComponent
-        BarcodeScannerPage {}
+        BarcodeScannerPage {
+            onBarcodeDetected: (result) => {
+                if (result.hasText && ApplicationController.importText(result.text)) {
+                    applicationWindow().pageStack.goBack();
+                }
+                if (result.hasBinaryData && ApplicationController.importData(result.binaryData)) {
+                    applicationWindow().pageStack.goBack();
+                }
+            }
+        }
     }
     Component {
         id: statisticsComponent

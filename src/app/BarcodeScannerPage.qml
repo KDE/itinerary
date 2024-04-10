@@ -16,10 +16,14 @@ Kirigami.Page {
     id: root
     title: i18n("Scan Barcode")
 
+    property alias supportedFormats: scanner.formats
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+
+    signal barcodeDetected(var result)
 
     VideoOutput {
         id: viewFinder
@@ -31,14 +35,7 @@ Kirigami.Page {
         id: scanner
         formats: Prison.Format.QRCode | Prison.Format.Aztec | Prison.Format.DataMatrix | Prison.Format.PDF417
         videoSink: viewFinder.videoSink
-        onResultContentChanged: {
-            if (result.hasText && ApplicationController.importText(result.text)) {
-                applicationWindow().pageStack.goBack();
-            }
-            if (result.hasBinaryData && ApplicationController.importData(result.binaryData)) {
-                applicationWindow().pageStack.goBack();
-            }
-        }
+        onResultContentChanged: root.barcodeDetected(result)
     }
 
     CaptureSession {
