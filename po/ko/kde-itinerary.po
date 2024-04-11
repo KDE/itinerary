@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:38+0000\n"
+"POT-Creation-Date: 2024-04-11 00:38+0000\n"
 "PO-Revision-Date: 2024-02-17 12:41+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -765,7 +765,7 @@ msgstr "더 일찍"
 msgid "Later"
 msgstr "더 나중"
 
-#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:80
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -1945,47 +1945,47 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "선박 및 페리"
 
-#: app/JourneySectionDelegate.qml:166
+#: app/JourneySectionDelegate.qml:178
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1에서 %2(으)로(%3)|/|%1에서 %2$[으 %2]로(%3)"
 
-#: app/JourneySectionDelegate.qml:167 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:179 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1(%2)"
 
-#: app/JourneySectionDelegate.qml:171
+#: app/JourneySectionDelegate.qml:183
 #, kde-format
 msgid "Walk (%1)"
 msgstr "걷기(%1)"
 
-#: app/JourneySectionDelegate.qml:172
+#: app/JourneySectionDelegate.qml:184
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "%1 걷기(%2)"
 
-#: app/JourneySectionDelegate.qml:174
+#: app/JourneySectionDelegate.qml:186
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "환승(%1)"
 
-#: app/JourneySectionDelegate.qml:176
+#: app/JourneySectionDelegate.qml:188
 #, kde-format
 msgid "Wait (%1)"
 msgstr "대기(%1)"
 
-#: app/JourneySectionDelegate.qml:178
+#: app/JourneySectionDelegate.qml:190
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2(%3)"
 
-#: app/JourneySectionDelegate.qml:180
+#: app/JourneySectionDelegate.qml:192
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "%1 운전(%2)"
 
-#: app/JourneySectionDelegate.qml:276 app/JourneySectionPage.qml:136
+#: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:227
 #, kde-format
 msgctxt "@action:button"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:38+0000\n"
+"POT-Creation-Date: 2024-04-11 00:38+0000\n"
 "PO-Revision-Date: 2024-04-07 11:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -773,7 +773,7 @@ msgstr "Més d'hora"
 msgid "Later"
 msgstr "Més tard"
 
-#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:76
+#: app/DepartureQueryPage.qml:132 app/JourneySectionDelegate.qml:80
 #, kde-format
 msgctxt "a train/bus journey canceled by its operator"
 msgid "Canceled"
@@ -1954,47 +1954,47 @@ msgctxt "journey query search constraint, description"
 msgid "Boats or ferries"
 msgstr "Vaixells o ferris"
 
-#: app/JourneySectionDelegate.qml:166
+#: app/JourneySectionDelegate.qml:178
 #, kde-format
 msgid "%1 to %2 (%3)"
 msgstr "%1 a %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:167 app/tickettokenmodel.cpp:116
+#: app/JourneySectionDelegate.qml:179 app/tickettokenmodel.cpp:116
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: app/JourneySectionDelegate.qml:171
+#: app/JourneySectionDelegate.qml:183
 #, kde-format
 msgid "Walk (%1)"
 msgstr "Caminar (%1)"
 
-#: app/JourneySectionDelegate.qml:172
+#: app/JourneySectionDelegate.qml:184
 #, kde-format
 msgid "Walk %1 (%2)"
 msgstr "Caminar %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:174
+#: app/JourneySectionDelegate.qml:186
 #, kde-format
 msgid "Transfer (%1)"
 msgstr "Transbordament (%1)"
 
-#: app/JourneySectionDelegate.qml:176
+#: app/JourneySectionDelegate.qml:188
 #, kde-format
 msgid "Wait (%1)"
 msgstr "Espera (%1)"
 
-#: app/JourneySectionDelegate.qml:178
+#: app/JourneySectionDelegate.qml:190
 #, kde-format
 msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
-#: app/JourneySectionDelegate.qml:180
+#: app/JourneySectionDelegate.qml:192
 #, kde-format
 msgid "Drive %1 (%2)"
 msgstr "Condueix %1 (%2)"
 
-#: app/JourneySectionDelegate.qml:276 app/JourneySectionPage.qml:136
+#: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
 #: app/VehicleLayoutPage.qml:227
 #, kde-format
 msgctxt "@action:button"
