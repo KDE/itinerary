@@ -181,7 +181,8 @@ Kirigami.ScrollablePage {
                 Layout.row: 3
                 Layout.column: 1
                 Layout.columnSpan: 2
-                text: i18n("Coach: %1 Seat: %2", (selectedVehicleSection ? selectedVehicleSection : "-"), (seat ? seat : "-"))
+                text: i18n("Coach: %1 Seat: %2", (root.selectedVehicleSection ? root.selectedVehicleSection : "-"), (root.seat ? root.seat : "-"))
+                visible: root.selectedVehicleSection !== "" || root.seat !== ""
             }
 
             RowLayout {
