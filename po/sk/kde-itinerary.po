@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:38+0000\n"
+"POT-Creation-Date: 2024-04-12 00:38+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -676,12 +676,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Príchod"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:313
+#: app/BusPage.qml:212 app/TrainPage.qml:310
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatívy"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr ""
@@ -2116,7 +2116,7 @@ msgid "Drive %1 (%2)"
 msgstr "Mechanika"
 
 #: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:227
+#: app/VehicleLayoutPage.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3732,7 +3732,7 @@ msgstr "Trieda:"
 msgid "Departure Vehicle Layout"
 msgstr "Vozidlo"
 
-#: app/TrainPage.qml:286
+#: app/TrainPage.qml:285
 #, fuzzy, kde-format
 #| msgid "Vehicle"
 msgid "Arrival Vehicle Layout"
@@ -3960,7 +3960,7 @@ msgstr "Nástupište: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr ""
 
-#: app/VehicleLayoutPage.qml:431
+#: app/VehicleLayoutPage.qml:432
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:38+0000\n"
+"POT-Creation-Date: 2024-04-12 00:38+0000\n"
 "PO-Revision-Date: 2024-04-07 17:09+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -631,12 +631,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Alveno"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:313
+#: app/BusPage.qml:212 app/TrainPage.qml:310
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternativoj"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr "Vojaĝaj Detaloj"
@@ -1992,7 +1992,7 @@ msgid "Drive %1 (%2)"
 msgstr "Veturi %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:227
+#: app/VehicleLayoutPage.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3553,7 +3553,7 @@ msgstr "Klaso:"
 msgid "Departure Vehicle Layout"
 msgstr "Forira Veturila Aranĝo"
 
-#: app/TrainPage.qml:286
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Alvena Veturila Aranĝo"
@@ -3764,7 +3764,7 @@ msgstr "Platformo: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Trejnisto: %1 Sidloko: %2"
 
-#: app/VehicleLayoutPage.qml:431
+#: app/VehicleLayoutPage.qml:432
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Neniuj informoj pri veturila aranĝo haveblaj."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:38+0000\n"
+"POT-Creation-Date: 2024-04-12 00:38+0000\n"
 "PO-Revision-Date: 2024-04-05 08:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -636,12 +636,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Iritsiera"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:313
+#: app/BusPage.qml:212 app/TrainPage.qml:310
 #, kde-format
 msgid "Alternatives"
 msgstr "Aukerak"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr "Bidaiaren xehetasunak"
@@ -1998,7 +1998,7 @@ msgid "Drive %1 (%2)"
 msgstr "Gidatu %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:227
+#: app/VehicleLayoutPage.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3566,7 +3566,7 @@ msgstr "Klasea:"
 msgid "Departure Vehicle Layout"
 msgstr "Irteerako ibilgailuaren antolamendua"
 
-#: app/TrainPage.qml:286
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Iritsiera ibilgailuaren antolamendua"
@@ -3777,7 +3777,7 @@ msgstr "Nasa: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Bagoia: %1 Eserlekua: %2"
 
-#: app/VehicleLayoutPage.qml:431
+#: app/VehicleLayoutPage.qml:432
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Ibilgailuaren antolamendu informazioa ez dago eskuragarri."

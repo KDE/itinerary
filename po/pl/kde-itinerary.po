@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-11 00:38+0000\n"
+"POT-Creation-Date: 2024-04-12 00:38+0000\n"
 "PO-Revision-Date: 2024-04-01 07:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -633,12 +633,12 @@ msgctxt "Bus arrival"
 msgid "Arrival"
 msgstr "Przyjazd"
 
-#: app/BusPage.qml:212 app/TrainPage.qml:313
+#: app/BusPage.qml:212 app/TrainPage.qml:310
 #, kde-format
 msgid "Alternatives"
 msgstr "Alternatywy"
 
-#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:318
+#: app/BusPage.qml:217 app/JourneySectionPage.qml:25 app/TrainPage.qml:315
 #, kde-format
 msgid "Journey Details"
 msgstr "Szczegóły podróży"
@@ -1998,7 +1998,7 @@ msgid "Drive %1 (%2)"
 msgstr "Jedź %1 (%2)"
 
 #: app/JourneySectionDelegate.qml:295 app/JourneySectionPage.qml:136
-#: app/VehicleLayoutPage.qml:227
+#: app/VehicleLayoutPage.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "Show More…"
@@ -3572,7 +3572,7 @@ msgstr "Klasa:"
 msgid "Departure Vehicle Layout"
 msgstr "Układ pojazdu odjeżdżającego"
 
-#: app/TrainPage.qml:286
+#: app/TrainPage.qml:285
 #, kde-format
 msgid "Arrival Vehicle Layout"
 msgstr "Układ pojazdu przyjeżdżającego"
@@ -3790,7 +3790,7 @@ msgstr "Peron: %1"
 msgid "Coach: %1 Seat: %2"
 msgstr "Autobus: %1 Siedzenie: %2"
 
-#: app/VehicleLayoutPage.qml:431
+#: app/VehicleLayoutPage.qml:432
 #, kde-format
 msgid "No vehicle layout information available."
 msgstr "Brak danych nt układu pojazdu."
