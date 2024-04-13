@@ -38,7 +38,6 @@ class QTemporaryDir;
 class ApplicationController : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool hasClipboardContent READ hasClipboardContent NOTIFY clipboardContentChanged)
     Q_PROPERTY(QString version READ applicationVersion CONSTANT)
     Q_PROPERTY(QString extractorCapabilities READ extractorCapabilities CONSTANT)
     Q_PROPERTY(QVariant aboutData READ aboutData CONSTANT)
@@ -97,8 +96,6 @@ public:
     HealthCertificateManager *healthCertificateManager() const;
 
 Q_SIGNALS:
-    void clipboardContentChanged();
-
     /** Human readable information message to be shown as passive notification. */
     void infoMessage(const QString &msg);
 
@@ -109,8 +106,6 @@ Q_SIGNALS:
     void editNewRestaurantReservation(const QVariant &res);
 
 private:
-    bool hasClipboardContent() const;
-
     static bool probablyUrl(const QString &text);
     void importLocalFile(const QUrl &url);
     bool importBundle(const QUrl &url);

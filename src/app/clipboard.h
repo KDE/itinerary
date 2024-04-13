@@ -13,12 +13,31 @@ class QClipboard;
 class Clipboard : public QObject
 {
     Q_OBJECT
+    /** Clipboard currently holds a text content. */
+    Q_PROPERTY(bool hasText READ hasText NOTIFY contentChanged)
+    /** Clipboard currently holds URLs. */
+    Q_PROPERTY(bool hasUrls READ hasUrls NOTIFY contentChanged)
+    /** Clipboard currently holds binary data. */
+    Q_PROPERTY(bool hasBinaryData READ hasBinaryData NOTIFY contentChanged)
+
+    /** Textual clipboard content. */
+    Q_PROPERTY(QString text READ text NOTIFY contentChanged)
+    /** Binary data clipboard content. */
+    Q_PROPERTY(QByteArray binaryData READ binaryData NOTIFY contentChanged)
 
 public:
     explicit Clipboard(QObject *parent = nullptr);
 
-    Q_INVOKABLE void saveText(const QString &message);
+    [[nodiscard]] static bool hasText();
+    [[nodiscard]] static bool hasUrls();
+    [[nodiscard]] static bool hasBinaryData();
 
-private:
-    QClipboard *m_clipboard;
+    [[nodiscard]] static QString text();
+    [[nodiscard]] static QByteArray binaryData();
+
+    Q_INVOKABLE static void saveText(const QString &message);
+
+Q_SIGNALS:
+    /** Clipboard content changed. */
+    void contentChanged();
 };

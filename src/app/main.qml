@@ -68,7 +68,7 @@ Kirigami.ApplicationWindow {
         Kirigami.Action {
             text: i18n("Paste")
             icon.name: "edit-paste"
-            enabled: ApplicationController.hasClipboardContent
+            enabled: Clipboard.hasText || Clipboard.hasUrls || Clipboard.hasBinaryData
             shortcut: StandardKey.Paste
             onTriggered: {
                 ApplicationController.importFromClipboard();

@@ -121,8 +121,6 @@ ApplicationController::ApplicationController(QObject* parent)
     : QObject(parent)
 {
     s_instance = this;
-
-    connect(QGuiApplication::clipboard(), &QClipboard::dataChanged, this, &ApplicationController::clipboardContentChanged);
 }
 
 ApplicationController::~ApplicationController()
@@ -540,13 +538,6 @@ bool ApplicationController::importGenericPkPass(const KItinerary::ExtractorDocum
     }
     return res;
 }
-
-bool ApplicationController::hasClipboardContent() const
-{
-    const auto md = QGuiApplication::clipboard()->mimeData();
-    return md->hasText() || md->hasUrls() || md->hasFormat(QLatin1StringView("application/octet-stream"));
-}
-
 
 void ApplicationController::exportToFile(const QUrl &url)
 {
