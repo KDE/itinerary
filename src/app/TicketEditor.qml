@@ -8,6 +8,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.kitinerary
 import org.kde.itinerary
@@ -18,6 +19,7 @@ Kirigami.ScrollablePage {
 
     required property string passId
     required property var ticket
+    required property var pageStack
 
     readonly property bool isValidInput: ticketNameEdit.text !== ''
 
@@ -29,9 +31,23 @@ Kirigami.ScrollablePage {
             let newTicket = PassManager.pass(root.passId);
             newTicket.name = ticketNameEdit.text;
 
+            let underName = newTicket.underName ?? Factory.makePerson();
+            underName.name = underNameEdit.text;
+            newTicket.underName = underName;
+
             PassManager.update(root.passId, newTicket);
-            applicationWindow().pageStack.pop();
+            root.pageStack.pop();
         }
+    }
+
+    data: FloatingButton {
+        anchors {
+            right: parent.right
+            rightMargin: Kirigami.Units.largeSpacing + (root.contentItem.QQC2.ScrollBar && root.contentItem.QQC2.ScrollBar.vertical ? root.contentItem.QQC2.ScrollBar.vertical.width : 0)
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.largeSpacing
+        }
+        action: root.saveAction
     }
 
     ColumnLayout {
@@ -49,18 +65,13 @@ Kirigami.ScrollablePage {
                 status: Kirigami.MessageType.Error
                 statusMessage: text === "" ? i18n("Ticket name must not be empty.") : ""
             }
+            FormCard.FormTextFieldDelegate {
+                id: underNameEdit
+                label: i18n("Under name")
+                text: ticket.underName.name
+            }
         }
-    }
 
-    footer: QQC2.ToolBar {
-        contentItem: RowLayout {
-            Item {
-                Layout.fillWidth: true
-            }
-
-            QQC2.Button {
-                action: root.saveAction
-            }
         }
     }
 }

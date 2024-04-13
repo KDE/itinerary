@@ -152,7 +152,11 @@ FormCard.FormCardPage {
             FormCard.FormButtonDelegate {
                 icon.name: "document-edit"
                 text: i18n("Edit")
-                onClicked: applicationWindow().pageStack.push(editor, {passId: root.passId, ticket: root.ticket});
+                onClicked: applicationWindow().pageStack.push(editor, {
+                    passId: root.passId,
+                    ticket: root.ticket,
+                    pageStack: pageStack
+                });
 
                 Component {
                     id: editor
