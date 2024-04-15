@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-12 00:38+0000\n"
+"POT-Creation-Date: 2024-04-15 00:38+0000\n"
 "PO-Revision-Date: 2024-02-09 23:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -132,7 +132,7 @@ msgstr "Экспорт…"
 #: app/GenericPkPassPage.qml:24 app/GenericPkPassPage.qml:37
 #: app/HealthCertificatePage.qml:52 app/HealthCertificatePage.qml:66
 #: app/ProgramMembershipPage.qml:45 app/ProgramMembershipPage.qml:168
-#: app/TicketPage.qml:47 app/TicketPage.qml:167 app/TimelinePage.qml:206
+#: app/TicketPage.qml:47 app/TicketPage.qml:171 app/TimelinePage.qml:206
 #, kde-format
 msgid "Delete"
 msgstr "Удалить"
@@ -280,19 +280,19 @@ msgstr "Заменить существующее бронирование на 
 msgid "Replace"
 msgstr "Заменить"
 
-#: app/applicationcontroller.cpp:343 app/applicationcontroller.cpp:755
-#: app/applicationcontroller.cpp:770
+#: app/applicationcontroller.cpp:341 app/applicationcontroller.cpp:746
+#: app/applicationcontroller.cpp:761
 #, kde-format
 msgid "Import failed: %1"
 msgstr "Ошибка импорта: %1"
 
-#: app/applicationcontroller.cpp:348
+#: app/applicationcontroller.cpp:346
 #, kde-format
 msgid "Import failed: File too large."
 msgstr "Ошибка импорта: слишком большой файл."
 
-#: app/applicationcontroller.cpp:430 app/applicationcontroller.cpp:832
-#: app/applicationcontroller.cpp:842
+#: app/applicationcontroller.cpp:428 app/applicationcontroller.cpp:823
+#: app/applicationcontroller.cpp:833
 #, kde-format
 msgid "One reservation imported."
 msgid_plural "%1 reservations imported."
@@ -301,12 +301,12 @@ msgstr[1] "Импортировано %1 бронирования."
 msgstr[2] "Импортировано %1 бронирований."
 msgstr[3] "Импортировано одно бронирование."
 
-#: app/applicationcontroller.cpp:437
+#: app/applicationcontroller.cpp:435
 #, kde-format
 msgid "Health certificate imported."
 msgstr "Импортирована справка о здоровье."
 
-#: app/applicationcontroller.cpp:452
+#: app/applicationcontroller.cpp:450
 #, kde-format
 msgid "One pass imported."
 msgid_plural "%1 passes imported."
@@ -315,42 +315,42 @@ msgstr[1] "%1 пропуска импортировано."
 msgstr[2] "%1 пропусков импортировано."
 msgstr[3] "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:455
+#: app/applicationcontroller.cpp:453
 #, kde-format
 msgid "Pass imported."
 msgstr "Пропуск импортирован."
 
-#: app/applicationcontroller.cpp:492
+#: app/applicationcontroller.cpp:490
 #, kde-format
 msgid "Nothing imported."
 msgstr "Ничего не импортировано."
 
-#: app/applicationcontroller.cpp:561 app/applicationcontroller.cpp:601
-#: app/applicationcontroller.cpp:619 app/applicationcontroller.cpp:663
-#: app/applicationcontroller.cpp:702 app/applicationcontroller.cpp:720
+#: app/applicationcontroller.cpp:552 app/applicationcontroller.cpp:592
+#: app/applicationcontroller.cpp:610 app/applicationcontroller.cpp:654
+#: app/applicationcontroller.cpp:693 app/applicationcontroller.cpp:711
 #, kde-format
 msgid "Export failed: %1"
 msgstr "Ошибка экспорта: %1"
 
-#: app/applicationcontroller.cpp:575 app/applicationcontroller.cpp:584
-#: app/applicationcontroller.cpp:676 app/applicationcontroller.cpp:685
+#: app/applicationcontroller.cpp:566 app/applicationcontroller.cpp:575
+#: app/applicationcontroller.cpp:667 app/applicationcontroller.cpp:676
 #, kde-format
 msgid "Export completed."
 msgstr "Экспорт завершён."
 
-#: app/applicationcontroller.cpp:611
+#: app/applicationcontroller.cpp:602
 #, fuzzy, kde-format
 #| msgid "Trips"
 msgid "Trip sent."
 msgstr "Поездки"
 
-#: app/applicationcontroller.cpp:712
+#: app/applicationcontroller.cpp:703
 #, fuzzy, kde-format
 #| msgid "Reservation"
 msgid "Reservation sent."
 msgstr "Бронирование"
 
-#: app/applicationcontroller.cpp:795
+#: app/applicationcontroller.cpp:786
 #, kde-format
 msgid "Import completed."
 msgstr "Импорт завершён."
@@ -371,12 +371,12 @@ msgstr "В режиме сканирования штрихкода"
 msgid "Scan Barcode"
 msgstr "Сканировать штрихкод"
 
-#: app/BarcodeScannerPage.qml:75
+#: app/BarcodeScannerPage.qml:72
 #, kde-format
 msgid "No camera available."
 msgstr "Нет доступных камер."
 
-#: app/BarcodeScannerPage.qml:88
+#: app/BarcodeScannerPage.qml:85
 #, kde-format
 msgid "Light"
 msgstr "Свет"
@@ -407,60 +407,60 @@ msgstr "Время прибытия: %1"
 msgid "Edit Boat Trip"
 msgstr "Изменить путешествие на лодке"
 
-#: app/BoatEditor.qml:50 app/BoatPage.qml:28 app/StatisticsPage.qml:134
+#: app/BoatEditor.qml:54 app/BoatPage.qml:28 app/StatisticsPage.qml:134
 #, kde-format
 msgid "Boat"
 msgstr "Лодка"
 
-#: app/BoatEditor.qml:54 app/BoatPage.qml:54
+#: app/BoatEditor.qml:58 app/BoatPage.qml:54
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure"
 msgstr "Отправление"
 
-#: app/BoatEditor.qml:60
+#: app/BoatEditor.qml:64
 #, kde-format
 msgctxt "Boat departure"
 msgid "Departure Time"
 msgstr "Время отправления"
 
-#: app/BoatEditor.qml:64
+#: app/BoatEditor.qml:68
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Departure time has to be set."
 msgstr "Время регистрации отъезда:"
 
-#: app/BoatEditor.qml:69 app/BoatEditor.qml:110
+#: app/BoatEditor.qml:73 app/BoatEditor.qml:114
 #, kde-format
 msgctxt "boat terminal"
 msgid "Terminal Name"
 msgstr "Название терминала"
 
-#: app/BoatEditor.qml:72
+#: app/BoatEditor.qml:76
 #, fuzzy, kde-format
 #| msgctxt "flight departure terminal"
 #| msgid "Departure terminal:"
 msgid "Departure terminal must not be empty."
 msgstr "Терминал отправления:"
 
-#: app/BoatEditor.qml:86 app/BoatPage.qml:84
+#: app/BoatEditor.qml:90 app/BoatPage.qml:84
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival"
 msgstr "Прибытие"
 
-#: app/BoatEditor.qml:92
+#: app/BoatEditor.qml:96
 #, kde-format
 msgctxt "Boat arrival"
 msgid "Arrival Time"
 msgstr "Время прибытия"
 
-#: app/BoatEditor.qml:103
+#: app/BoatEditor.qml:107
 #, kde-format
 msgid "Arrival time has to be after the departure time."
 msgstr ""
 
-#: app/BoatEditor.qml:113
+#: app/BoatEditor.qml:117
 #, kde-format
 msgid "Arrival terminal must not be empty."
 msgstr ""
@@ -512,7 +512,7 @@ msgstr "Импорт из буфера обмена"
 msgid "Booking reference copied to clipboard"
 msgstr "Код бронирования:"
 
-#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51
+#: app/BookingCard.qml:52 app/BookingEditorCard.qml:51 app/TicketEditor.qml:71
 #, kde-format
 msgid "Under name"
 msgstr "Имя для резервирования"
@@ -549,70 +549,70 @@ msgstr[3] ""
 msgid "Edit Bus Reservation"
 msgstr "Изменить бронирование автобуса"
 
-#: app/BusEditor.qml:47 app/TrainEditor.qml:51
+#: app/BusEditor.qml:48 app/TrainEditor.qml:52
 #, kde-format
 msgid "Board Later"
 msgstr "Посадка позже"
 
-#: app/BusEditor.qml:50
+#: app/BusEditor.qml:51
 #, kde-format
 msgid "Change departure stop"
 msgstr "Изменить станцию отправления"
 
-#: app/BusEditor.qml:60 app/TrainEditor.qml:64
+#: app/BusEditor.qml:61 app/TrainEditor.qml:65
 #, kde-format
 msgid "Alight Earlier"
 msgstr "Высадка раньше"
 
-#: app/BusEditor.qml:63
+#: app/BusEditor.qml:64
 #, kde-format
 msgid "Change arrival stop"
 msgstr "Изменить станцию прибытия"
 
-#: app/BusEditor.qml:83
+#: app/BusEditor.qml:84
 #, fuzzy, kde-format
 #| msgid "Bus"
 msgctxt "@title"
 msgid "Bus"
 msgstr "Автобус"
 
-#: app/BusEditor.qml:88
+#: app/BusEditor.qml:89
 #, kde-format
 msgctxt "bus departure"
 msgid "Departure"
 msgstr "Отправление"
 
-#: app/BusEditor.qml:93 app/BusEditor.qml:115
+#: app/BusEditor.qml:94 app/BusEditor.qml:116
 #, kde-format
 msgctxt "bus stop"
 msgid "Stop"
 msgstr "Остановка"
 
-#: app/BusEditor.qml:98 app/BusEditor.qml:120
+#: app/BusEditor.qml:99 app/BusEditor.qml:121
 #, kde-format
 msgctxt "bus stop platform"
 msgid "Platform"
 msgstr "Платформа"
 
-#: app/BusEditor.qml:102 app/TrainEditor.qml:110
+#: app/BusEditor.qml:103 app/TrainEditor.qml:111
 #, kde-format
 msgid "Board later"
 msgstr "Посадка позже"
 
-#: app/BusEditor.qml:110
+#: app/BusEditor.qml:111
 #, kde-format
 msgctxt "bus arrival"
 msgid "Arrival"
 msgstr "Прибытие"
 
-#: app/BusEditor.qml:124 app/TrainEditor.qml:135
+#: app/BusEditor.qml:125 app/TrainEditor.qml:136
 #, kde-format
 msgid "Alight earlier"
 msgstr "Высадка раньше"
 
-#: app/BusEditor.qml:133 app/BusEditor.qml:139 app/BusPage.qml:182
+#: app/BusEditor.qml:134 app/BusEditor.qml:140 app/BusPage.qml:182
 #: app/EventPage.qml:101 app/FlightEditor.qml:163 app/FlightEditor.qml:170
-#: app/FlightPage.qml:95 app/TrainEditor.qml:145 app/TrainEditor.qml:157
+#: app/FlightPage.qml:95 app/TrainEditor.qml:146 app/TrainEditor.qml:158
 #: app/TrainPage.qml:243
 #, kde-format
 msgid "Seat"
@@ -764,7 +764,7 @@ msgstr "Телефон"
 msgid "Email"
 msgstr "Эл. почта"
 
-#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:107
+#: app/ContactCard.qml:47 app/ContactEditorCard.qml:51 app/EventEditor.qml:111
 #: app/EventPage.qml:90
 #, kde-format
 msgid "Website"
@@ -897,62 +897,62 @@ msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Edit Event"
 msgstr "Изменить событие"
 
-#: app/EventEditor.qml:48 app/EventPage.qml:15
+#: app/EventEditor.qml:52 app/EventPage.qml:15
 #, kde-format
 msgctxt "event as in concert/conference/show, not as in appointment"
 msgid "Event"
 msgstr "Событие"
 
-#: app/EventEditor.qml:54
+#: app/EventEditor.qml:58
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "event name"
 msgid "Name"
 msgstr "Имя:"
 
-#: app/EventEditor.qml:57 app/HotelEditor.qml:59 app/RestaurantEditor.qml:56
+#: app/EventEditor.qml:61 app/HotelEditor.qml:59 app/RestaurantEditor.qml:56
 #, kde-format
 msgid "Name must not be empty."
 msgstr ""
 
-#: app/EventEditor.qml:62 app/EventPage.qml:67
+#: app/EventEditor.qml:66 app/EventPage.qml:67
 #, kde-format
 msgctxt "time of entrance"
 msgid "Entrance"
 msgstr "Вход"
 
-#: app/EventEditor.qml:73
+#: app/EventEditor.qml:77
 #, kde-format
 msgid "Entrance time has to be before the start time."
 msgstr ""
 
-#: app/EventEditor.qml:80 app/EventPage.qml:75 app/RestaurantEditor.qml:78
+#: app/EventEditor.qml:84 app/EventPage.qml:75 app/RestaurantEditor.qml:78
 #, kde-format
 msgid "Start Time"
 msgstr "Время начала"
 
-#: app/EventEditor.qml:84 app/RestaurantEditor.qml:82
+#: app/EventEditor.qml:88 app/RestaurantEditor.qml:82
 #, fuzzy, kde-format
 #| msgid "Check-out time:"
 msgid "Start time has to be set."
 msgstr "Время регистрации отъезда:"
 
-#: app/EventEditor.qml:89 app/EventPage.qml:83 app/RestaurantEditor.qml:89
+#: app/EventEditor.qml:93 app/EventPage.qml:83 app/RestaurantEditor.qml:89
 #, kde-format
 msgid "End Time"
 msgstr "Время окончания"
 
-#: app/EventEditor.qml:100 app/RestaurantEditor.qml:100
+#: app/EventEditor.qml:104 app/RestaurantEditor.qml:100
 #, kde-format
 msgid "End time has to be after the start time."
 msgstr ""
 
-#: app/EventEditor.qml:114
+#: app/EventEditor.qml:118
 #, kde-format
 msgid "Venue"
 msgstr "Место"
 
-#: app/EventEditor.qml:120
+#: app/EventEditor.qml:124
 #, kde-format
 msgctxt "venue name"
 msgid "Name"
@@ -2355,7 +2355,7 @@ msgstr ""
 msgid "Open File..."
 msgstr "Открыть файл..."
 
-#: app/main.qml:69
+#: app/main.qml:69 app/TicketTokenEditorCard.qml:129
 #, kde-format
 msgid "Paste"
 msgstr "Вставить"
@@ -2706,13 +2706,13 @@ msgctxt "bonus, discount or frequent traveler program"
 msgid "Program"
 msgstr "Программа"
 
-#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:69
+#: app/ProgramMembershipCard.qml:31 app/ProgramMembershipEditor.qml:70
 #: app/ProgramMembershipEditorCard.qml:54 app/TicketPage.qml:86
 #, kde-format
 msgid "Name"
 msgstr "Имя"
 
-#: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:89
+#: app/ProgramMembershipCard.qml:40 app/ProgramMembershipEditor.qml:90
 #: app/ProgramMembershipEditorCard.qml:61 app/ProgramMembershipPage.qml:92
 #: app/TicketPage.qml:104
 #, kde-format
@@ -2736,50 +2736,56 @@ msgstr "Показать пароль программы"
 msgid "Edit Program Membership"
 msgstr "Участие в программе"
 
-#: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:25
+#: app/ProgramMembershipEditor.qml:34 app/TicketEditor.qml:27
 #, kde-format
 msgid "Save"
 msgstr "Сохранить"
 
-#: app/ProgramMembershipEditor.qml:61
+#: app/ProgramMembershipEditor.qml:62
 #, fuzzy, kde-format
 #| msgctxt "bonus, discount or frequent traveler program"
 #| msgid "Program"
 msgid "Program"
 msgstr "Программа"
 
-#: app/ProgramMembershipEditor.qml:72
+#: app/ProgramMembershipEditor.qml:73
 #, kde-format
 msgid "Program name must not be empty."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:77
+#: app/ProgramMembershipEditor.qml:78
 #, fuzzy, kde-format
 #| msgid "Member"
 msgid "Membership"
 msgstr "Участник"
 
-#: app/ProgramMembershipEditor.qml:83 app/ProgramMembershipPage.qml:83
+#: app/ProgramMembershipEditor.qml:84 app/ProgramMembershipPage.qml:83
 #, kde-format
 msgid "Member"
 msgstr "Участник"
 
-#: app/ProgramMembershipEditor.qml:96 app/ProgramMembershipPage.qml:114
+#: app/ProgramMembershipEditor.qml:97 app/ProgramMembershipPage.qml:114
 #: app/TicketPage.qml:92
 #, kde-format
 msgid "Valid from"
 msgstr "Действует с"
 
-#: app/ProgramMembershipEditor.qml:103 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:104 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
 msgstr "Действует до"
 
-#: app/ProgramMembershipEditor.qml:116
+#: app/ProgramMembershipEditor.qml:117
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr ""
+
+#: app/ProgramMembershipEditor.qml:127
+#, fuzzy, kde-format
+#| msgid "Scan Barcode"
+msgid "Barcode"
+msgstr "Сканировать штрихкод"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3342,7 +3348,7 @@ msgstr "Год"
 msgid "Total"
 msgstr "Всего"
 
-#: app/StatisticsPage.qml:106 app/TrainEditor.qml:87
+#: app/StatisticsPage.qml:106 app/TrainEditor.qml:88
 #, kde-format
 msgid "Train"
 msgstr "Железная дорога"
@@ -3377,22 +3383,22 @@ msgstr "Удалить запись журнала"
 msgid "No locations found"
 msgstr "Расположения не найдены"
 
-#: app/TicketEditor.qml:17
+#: app/TicketEditor.qml:18
 #, kde-format
 msgid "Edit Ticket"
 msgstr "Изменить билет"
 
-#: app/TicketEditor.qml:41 app/TicketPage.qml:17 app/TicketPage.qml:81
+#: app/TicketEditor.qml:58 app/TicketPage.qml:17 app/TicketPage.qml:81
 #, kde-format
 msgid "Ticket"
 msgstr "Билет"
 
-#: app/TicketEditor.qml:47
+#: app/TicketEditor.qml:64
 #, kde-format
 msgid "Ticket name"
 msgstr "Название билета"
 
-#: app/TicketEditor.qml:50
+#: app/TicketEditor.qml:67
 #, kde-format
 msgid "Ticket name must not be empty."
 msgstr "Название билета не должно быть пустым."
@@ -3411,6 +3417,25 @@ msgstr "Удалить этот билет?"
 #, kde-format
 msgid "Class"
 msgstr "Класс"
+
+#: app/TicketTokenEditorCard.qml:58
+#, fuzzy, kde-format
+#| msgid "Ticket name"
+msgctxt "@title:group"
+msgid "Ticket Barcode"
+msgstr "Название билета"
+
+#: app/TicketTokenEditorCard.qml:68
+#, fuzzy, kde-format
+#| msgid "Delete Ticket"
+msgid "Select ticket"
+msgstr "Удалить билет"
+
+#: app/TicketTokenEditorCard.qml:91
+#, fuzzy, kde-format
+#| msgid "Scan Barcode"
+msgid "Scan barcode…"
+msgstr "Сканировать штрихкод"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -3548,48 +3573,48 @@ msgstr ""
 msgid "Edit Train Reservation"
 msgstr "Изменить бронирование поезда"
 
-#: app/TrainEditor.qml:54
+#: app/TrainEditor.qml:55
 #, kde-format
 msgid "Change departure station"
 msgstr "Изменить станцию отправления"
 
-#: app/TrainEditor.qml:67
+#: app/TrainEditor.qml:68
 #, kde-format
 msgid "Change arrival station"
 msgstr "Изменить станцию прибытия"
 
-#: app/TrainEditor.qml:92
+#: app/TrainEditor.qml:93
 #, kde-format
 msgctxt "train departure"
 msgid "Departure"
 msgstr "Отправление"
 
-#: app/TrainEditor.qml:97 app/TrainEditor.qml:123 app/TrainPage.qml:123
+#: app/TrainEditor.qml:98 app/TrainEditor.qml:124 app/TrainPage.qml:123
 #: app/TrainPage.qml:203
 #, kde-format
 msgctxt "train station"
 msgid "Station"
 msgstr "Станция"
 
-#: app/TrainEditor.qml:103 app/TrainEditor.qml:129
+#: app/TrainEditor.qml:104 app/TrainEditor.qml:130
 #, kde-format
 msgctxt "train platform"
 msgid "Platform"
 msgstr "Платформа"
 
-#: app/TrainEditor.qml:118
+#: app/TrainEditor.qml:119
 #, kde-format
 msgctxt "train arrival"
 msgid "Arrival"
 msgstr "Прибытие"
 
-#: app/TrainEditor.qml:151
+#: app/TrainEditor.qml:152
 #, kde-format
 msgctxt "carriage on a train"
 msgid "Coach"
 msgstr "Вагон"
 
-#: app/TrainEditor.qml:163
+#: app/TrainEditor.qml:164
 #, kde-format
 msgctxt "seating class on a train"
 msgid "Class"
