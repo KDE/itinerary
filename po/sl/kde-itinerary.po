@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 07:09+0200\n"
+"PO-Revision-Date: 2024-04-15 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2730,10 +2730,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Čas do mora biti kasnejši od časa od."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Preberi črtno kodo"
+msgstr "Črtna koda"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3351,23 +3350,20 @@ msgid "Class"
 msgstr "Razred"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Ime vstopnice"
+msgstr "Črtna koda vstopnice"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Zbriši vstopnico"
+msgstr "Izberi vstopnico"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Preberi črtno kodo"
+msgstr "Skeniraj črtno kodo…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

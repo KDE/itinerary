@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 08:39+0300\n"
+"PO-Revision-Date: 2024-04-15 08:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -365,7 +365,7 @@ msgstr "У режимі сканування штрихкоду"
 #: app/BarcodeScannerPage.qml:17
 #, kde-format
 msgid "Scan Barcode"
-msgstr "Сканувати штрих-код"
+msgstr "Сканувати штрихкод"
 
 #: app/BarcodeScannerPage.qml:72
 #, kde-format
@@ -2737,10 +2737,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Час початку строку дії має передувати часу завершення строку дії."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Сканувати штрих-код"
+msgstr "Штрихкод"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3366,23 +3365,20 @@ msgid "Class"
 msgstr "Клас"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Назва квитка"
+msgstr "Штрихкод квитка"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Вилучення квитка"
+msgstr "Виберіть квиток"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Сканувати штрих-код"
+msgstr "Сканувати штрихкод…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

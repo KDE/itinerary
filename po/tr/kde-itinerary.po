@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 12:35+0300\n"
+"PO-Revision-Date: 2024-04-15 19:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2725,10 +2725,9 @@ msgstr ""
 "Geçerlilik bitişi zamanı, geçerlilik başlangıç zamanından sonra olmalıdır."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Barkod Tara"
+msgstr "Barkod"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3345,23 +3344,20 @@ msgid "Class"
 msgstr "Sınıf"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Bilet adı"
+msgstr "Bilet Barkodu"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Bileti Sil"
+msgstr "Bilet seç"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Barkod Tara"
+msgstr "Barkod tara…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

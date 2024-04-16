@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 03:16+0200\n"
+"PO-Revision-Date: 2024-04-15 05:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2722,10 +2722,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "ვადის ამოწურვის თარიღი ვადის საწყის თარიღამდე უნდა იყოს."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "შტრიხკოდის სკანირება"
+msgstr "შტრიხკოდი"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3344,23 +3343,20 @@ msgid "Class"
 msgstr "კლასი"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "ბილეთის სახელი"
+msgstr "ბილეთის შტრიხკოდი"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "ბილეთის წაშლა"
+msgstr "აირჩიეთ ბილეთი"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "შტრიხკოდის სკანირება"
+msgstr "შტრიხკოდის სკანირება…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

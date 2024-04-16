@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 11:14+0200\n"
+"PO-Revision-Date: 2024-04-15 10:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2729,10 +2729,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "L'hora vàlida «fins» ha de ser posterior a l'hora vàlida «des de»."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Escaneja un codi de barres"
+msgstr "Codi de barres"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3358,23 +3357,20 @@ msgid "Class"
 msgstr "Classe"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nom del bitllet"
+msgstr "Codi de barres de bitllets"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Suprimix un bitllet"
+msgstr "Selecció de bitllet"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Escaneja un codi de barres"
+msgstr "Escaneja un codi de barres…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format

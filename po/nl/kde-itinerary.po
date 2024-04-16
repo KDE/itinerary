@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-07 13:30+0200\n"
+"PO-Revision-Date: 2024-04-15 10:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2722,10 +2722,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Geldig totdat de tijd na de geldige vanaf-tijd is."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Barcode scannen"
+msgstr "Barcode"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3349,23 +3348,20 @@ msgid "Class"
 msgstr "Klasse"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Ticketnaam"
+msgstr "Barcode van ticket"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Ticket verwijderen"
+msgstr "Ticket selecteren"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Barcode scannen"
+msgstr "Barcode scannen…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
