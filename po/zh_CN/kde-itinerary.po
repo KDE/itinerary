@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-10 19:49\n"
+"PO-Revision-Date: 2024-04-16 13:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3325,10 +3325,9 @@ msgid "Ticket Barcode"
 msgstr ""
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Event Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "活动门票"
+msgstr ""
 
 #: app/TicketTokenEditorCard.qml:91
 #, kde-format
