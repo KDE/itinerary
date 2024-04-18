@@ -288,6 +288,7 @@ if (ANDROID)
         edit-download
         edit-paste
         edit-rename
+        emblem-important
         emblem-shared-symbolic
         export-symbolic
         flag
