@@ -318,7 +318,6 @@ if (ANDROID)
         view-barcode-qr
         view-calendar
         view-calendar-day
-        view-list-symbolic
         view-list-details
         view-refresh
         view-statistics
