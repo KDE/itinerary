@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-05 08:48+0200\n"
+"PO-Revision-Date: 2024-04-19 23:02+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2728,10 +2728,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Noiz arteko balioa noiztik balioaren ondoren izan behar da."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Eskaneatu barra-kodea"
+msgstr "Barra-kodea"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -2828,9 +2827,7 @@ msgid "Family area"
 msgstr "Familia eremua"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible"
 msgstr "Gurpil-aulkirako irisgarria"
@@ -2860,9 +2857,7 @@ msgid "Toilet"
 msgstr "Komuna"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible toilet"
 msgstr "Gurpil-aulkirako komun irisgarria"
@@ -3354,23 +3349,20 @@ msgid "Class"
 msgstr "Klasea"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Txartelaren izena"
+msgstr "Txartelaren barra-kodea"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Ezabatu txartela"
+msgstr "Hautatu txartela"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Eskaneatu barra-kodea"
+msgstr "Eskaneatu barra-kodea..."
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
@@ -3817,19 +3809,19 @@ msgstr "BETEA"
 #, kde-format
 msgctxt "vehicle load"
 msgid "Low occupancy"
-msgstr ""
+msgstr "Okupazio txikia"
 
 #: app/VehicleLoadIndicator.qml:56
 #, kde-format
 msgctxt "vehicle load"
 msgid "Medium occupancy"
-msgstr ""
+msgstr "Okupazio ertaina"
 
 #: app/VehicleLoadIndicator.qml:57
 #, kde-format
 msgctxt "vehicle load"
 msgid "High occupancy"
-msgstr ""
+msgstr "Okupazio handia"
 
 #: app/WeatherForecastDelegate.qml:61 app/WeatherForecastPage.qml:106
 #, kde-format
