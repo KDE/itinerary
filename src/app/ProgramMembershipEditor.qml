@@ -97,6 +97,13 @@ FormCard.FormCardPage {
             text: i18n("Valid from")
             obj: root.programMembership
             propertyName: "validFrom"
+            initialValue: {
+                let d = new Data();
+                d.setHours(0);
+                d.setMinutes(0);
+                d.setSeconds(0);
+                return d;
+            }
         }
         FormCard.FormDelegateSeparator {}
         FormDateTimeEditDelegate {
