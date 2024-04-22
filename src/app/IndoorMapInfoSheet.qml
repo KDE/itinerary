@@ -12,27 +12,18 @@ import org.kde.kosmindoormap
 import org.kde.osm.editorcontroller
 import org.kde.itinerary
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: elementDetailsSheet
+
     property var model
     property var mapData
 
-    header: Column {
-        Kirigami.Heading {
-            text: elementDetailsSheet.model.name
-            width: parent.width
-            wrapMode: Text.WordWrap
-        }
-        Kirigami.Heading {
-            text: elementDetailsSheet.model.category
-            level: 4
-            visible: text != ""
-            width: parent.width
-            wrapMode: Text.WordWrap
-        }
-    }
+    title: elementDetailsSheet.model.name + (elementDetailsSheet.model.category.length  > 0 ? (" - " + elementDetailsSheet.model.category) : "")
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         id: contentView
         model: elementDetailsSheet.model
         clip: true
@@ -128,30 +119,26 @@ Kirigami.OverlaySheet {
         }
     }
 
-    property var footerLoader: Loader {
-        active: Settings.osmContributorMode
-        sourceComponent: RowLayout {
-            Item { Layout.fillWidth: true }
-            QQC2.Button {
-                icon.name: "document-edit"
-                text: i18n("Edit with iD")
-                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.ID)
-            }
-            QQC2.Button {
-                icon.name: "org.openstreetmap.josm"
-                text: i18n("Edit with JOSM")
-                visible: EditorController.hasEditor(Editor.JOSM)
-                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.JOSM)
-            }
-            QQC2.Button {
-                icon.name: "document-edit"
-                text: i18n("Edit with Vespucci")
-                visible: EditorController.hasEditor(Editor.Vespucci)
-                onClicked: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.Vespucci)
-            }
+    customFooterActions: [
+        Kirigami.Action {
+            visible: Settings.osmContributorMode
+            icon.name: "document-edit"
+            text: i18n("Edit with iD")
+            onTriggered: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.ID)
+        },
+        Kirigami.Action {
+            visible: Settings.osmContributorMode && EditorController.hasEditor(Editor.JOSM)
+            icon.name: "org.openstreetmap.josm"
+            text: i18n("Edit with JOSM")
+            onTriggered: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.JOSM)
+        },
+        Kirigami.Action {
+            visible: Settings.osmContributorMode && EditorController.hasEditor(Editor.Vespucci)
+            icon.name: "document-edit"
+            text: i18n("Edit with Vespucci")
+            onTriggered: EditorController.editElement(elementDetailsSheet.model.element.element, Editor.Vespucci)
         }
-    }
-    footer: Settings.osmContributorMode ? elementDetailsSheet.footerLoader.item : null
+    ]
 
     onClosed: elementDetailsSheet.model.clear()
 }

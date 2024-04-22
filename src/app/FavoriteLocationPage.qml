@@ -83,30 +83,30 @@ Kirigami.Page {
         }
     ]
 
-    Kirigami.OverlaySheet {
+    Kirigami.Dialog {
         id: renameSheet
 
-        QQC2.Label {
-            text: i18n("Rename favorite location")
+        width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+
+        title: i18nc("@title", "Rename favorite location")
+
+        contentItem: QQC2.TextField {
+            id: nameEdit
+            Layout.fillWidth: true
+            text: combo.currentText
         }
 
-        footer: ColumnLayout {
-            QQC2.TextField {
-                id: nameEdit
-                Layout.fillWidth: true
-                text: combo.currentText
-            }
-            QQC2.Button {
-                Layout.alignment: Qt.AlignHCenter
+        customFooterActions: [
+            Kirigami.Action {
                 text: i18n("Rename")
                 icon.name: "edit-rename"
-                onClicked: {
+                onTriggered: {
                     var idx = FavoriteLocationModel.index(combo.currentIndex, 0);
                     FavoriteLocationModel.setData(idx, nameEdit.text, Qt.DisplayRole);
                     renameSheet.close();
                 }
             }
-        }
+        ]
     }
 
 

@@ -10,17 +10,18 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kosmindoormap
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: gateSheet
+
     property var model
 
-    header: Kirigami.Heading {
-        text: i18n("Find Gate")
-    }
+    title: i18nc("@title", "Find Gate")
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         model: gateSheet.model
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
         delegate: QQC2.ItemDelegate {
             highlighted: false

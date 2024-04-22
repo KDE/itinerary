@@ -9,23 +9,41 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kosmindoormap
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: amenitySheet
 
     property QtObject model
     property QtObject map
 
-    header: Kirigami.Heading {
-        text: i18n("Find Amenity")
-    }
+    title: i18nc("@title", "Find Amenity")
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         model: AmenitySortFilterProxyModel {
+            id: proxyModel
             sourceModel: amenitySheet.visible ? amenitySheet.model : null
             filterString: amenitySearchField.text
         }
+
+        header: QQC2.Control {
+            width: parent.width
+            contentItem: Kirigami.SearchField {
+                id: searchField
+                onTextChanged: proxyModel.filterString = text
+
+                Connections {
+                    target: sheet
+                    function onVisibleChanged() {
+                        searchField.text = "";
+                    }
+                }
+                focus: true
+            }
+        }
+
         clip:true
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         delegate: IndoorMapAmenityDelegate {
             id: item
@@ -45,11 +63,4 @@ Kirigami.OverlaySheet {
             width: ListView.view.width
         }
     }
-
-    footer: Kirigami.SearchField {
-        id: amenitySearchField
-        focus: true
-    }
-
-    onOpened: amenitySearchField.clear()
 }

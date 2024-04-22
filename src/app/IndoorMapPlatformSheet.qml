@@ -12,18 +12,19 @@ import org.kde.kpublictransport as PublicTransport
 import org.kde.kosmindoormap
 import org.kde.itinerary
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: platformSheet
+
     property var model
 
-    header: Kirigami.Heading {
-        text: i18n("Find Platform")
-    }
+    title: i18nc("@title", "Find Platform")
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         model: platformSheet.model
         clip: true
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 25
 
         Component {
             id: platformDelegate

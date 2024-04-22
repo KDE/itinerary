@@ -10,17 +10,18 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kosmindoormap
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: elevatorSheet
+
     property var model
 
-    header: Kirigami.Heading {
-        text: model.title
-    }
+    title: model.title
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         model: elevatorSheet.model
-        Layout.preferredWidth: Kirigami.Units.gridUnit * 10
 
         delegate: QQC2.ItemDelegate {
             highlighted: false

@@ -11,18 +11,40 @@ import org.kde.itinerary
 
 // TODO sort room list in activity order
 // TODO remember last selected room
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: sheet
+
     signal roomSelected(var room)
 
-    header: Kirigami.Heading { text: i18n("Share Location") }
-    ListView {
+    title: i18nc("@title", "Share Location")
+
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         clip: true
+
+        header: QQC2.Control {
+            width: parent.width
+            contentItem: Kirigami.SearchField {
+                id: searchField
+                onTextChanged: proxyModel.filterString = text
+
+                Connections {
+                    target: sheet
+                    function onVisibleChanged() {
+                        searchField.text = "";
+                    }
+                }
+                focus: true
+            }
+        }
+
         model: KSortFilterProxyModel {
+            id: proxyModel
             // don't set the model right away, that seems to result in all delegates being instantiated before the sheet is even shown
             sourceModel: sheet.visible ? MatrixController.roomsModel : null
             filterCaseSensitivity: Qt.CaseInsensitive
-            filterString: searchField.text
         }
 
         section {
@@ -97,11 +119,4 @@ Kirigami.OverlaySheet {
             }
         }
     }
-
-    footer: Kirigami.SearchField {
-        id: searchField
-        focus: true
-    }
-
-    onOpened: searchField.clear()
 }

@@ -8,17 +8,21 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: root
-    title: i18n("Select Calendar")
+
+    title: i18nc("@title", "Select Calendar")
 
     property alias model: calendarSelectorListView.model
 
     signal calendarSelected(var calendar)
 
-    ListView {
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
+
+    contentItem: ListView {
         id: calendarSelectorListView
-        implicitWidth: Kirigami.Units.gridUnit * 20
+
         delegate: QQC2.ItemDelegate {
             required property int index
             required property string name

@@ -11,18 +11,17 @@ import org.kde.kitinerary
 import org.kde.kpublictransport
 import org.kde.itinerary
 
-Kirigami.OverlaySheet {
+Kirigami.Dialog {
     id: boardSheet
-    property alias title: headerLabel.text
-    property alias action: footerBottom.action
+
+    property Kirigami.Action action
     property alias model: stopSelector.model
     property alias currentIndex: stopSelector.currentIndex
 
-    header: Kirigami.Heading {
-        id: headerLabel
-    }
+    width: Math.min(applicationWindow().width, Kirigami.Units.gridUnit * 24)
+    height: Math.min(applicationWindow().height, Kirigami.Units.gridUnit * 32)
 
-    ListView {
+    contentItem: ListView {
         id: stopSelector
         currentIndex: -1
         delegate: QQC2.ItemDelegate {
@@ -36,12 +35,10 @@ Kirigami.OverlaySheet {
                     return Localizer.formatTime(modelData, "scheduledArrivalTime") + " " + modelData.stopPoint.name
                 }
             }
+            onClicked: ListView.view.currentIndex = index
             enabled: modelData.disruptionEffect != Disruption.NoService
         }
     }
 
-    footer: QQC2.Button {
-        id: footerBottom
-        enabled: stopSelector.currentIndex >= 0
-    }
+    customFooterActions: [boardSheet.action]
 }
