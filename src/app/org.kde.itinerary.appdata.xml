@@ -354,6 +354,7 @@
       <li xml:lang="eu">Lerroko sarbide guzien kontrol osoa.</li>
       <li xml:lang="fi">Täysi hallinta kaikkeen verkkokäyttöön.</li>
       <li xml:lang="fr">Contrôle complet sur tous les accès en ligne.</li>
+      <li xml:lang="he">שליטה מלאה בכל הגישה לאינטרנט.</li>
       <li xml:lang="hu">Teljes ellenőrzés minden online hozzáférés felett.</li>
       <li xml:lang="ia">Plen control sur omne accesso in linea.</li>
       <li xml:lang="id">Kontrol penuh atas semua akses online.</li>
@@ -568,7 +569,7 @@
     <p xml:lang="ru">Программа «Маршруты KDE» лучше всего работает с модулем извлечения маршрутов KMail и KDE Connect или Nextcloud Hub и DavDroid.</p>
     <p xml:lang="sl">KDE Itinerary deluje najbolje skupaj z dodatki z vtičnikom za ekstrakcijo podatkov v KMail in KDE Connect ali Nextcloud Hub in DavDroid.</p>
     <p xml:lang="sv">KDE-resplan fungerar bäst tillsammans med Kmails insticksprogram för extrahering av resplan och KDE-anslut, eller Nextcloud-navet och DavDroid.</p>
-    <p xml:lang="tr">KDE Yol Kılavuzu, en iyi olarak K Posta'nın yolculuk belgesi çıkarma eklentisi ve KDE Bağlan, Nextcloud Hub veya DavDroid ile birlikte çalışır.</p>
+    <p xml:lang="tr">KDE Yol Kılavuzu, en iyi olarak K Posta’nın yolculuk belgesi çıkarma eklentisi ve KDE Bağlan, Nextcloud Hub veya DavDroid ile birlikte çalışır.</p>
     <p xml:lang="uk">KDE Itinerary найкраще працює із додатком видобування даних KMail та KDE Connect або Nextcloud Hub і DavDroid.</p>
     <p xml:lang="x-test">xxKDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.xx</p>
     <p xml:lang="zh-CN">KDE Itinerary 是 KMail 行程提取插件和 KDE Connect 的最佳搭档，还能配合 Nextcloud Hub 和 DavDroid 使用。</p>
@@ -587,6 +588,7 @@
       <caption xml:lang="eu">Denbora-lerro ikuspegia</caption>
       <caption xml:lang="fi">Aikajananäkymä</caption>
       <caption xml:lang="fr">Vue chronologique.</caption>
+      <caption xml:lang="he">תצוגת ציר זמן</caption>
       <caption xml:lang="hu">Idővonal nézet</caption>
       <caption xml:lang="ia">Vista de Chronologia.</caption>
       <caption xml:lang="id">Tampilan linimasa</caption>
@@ -619,6 +621,7 @@
       <caption xml:lang="eu">Ontziratze-txartel ikuspegia.</caption>
       <caption xml:lang="fi">Maihinnousukorttinäkymä</caption>
       <caption xml:lang="fr">Affichage de la carte d'embarquement.</caption>
+      <caption xml:lang="he">תצוגת כרטיס עלייה לאמצעי התחבורה</caption>
       <caption xml:lang="hu">Beszállókártya nézet</caption>
       <caption xml:lang="ia">Vista de carta de imbarcar</caption>
       <caption xml:lang="id">Tampilan boarding pass</caption>
@@ -775,6 +778,7 @@
       <caption xml:lang="eu">Bidai-estatistiken ikuspegia</caption>
       <caption xml:lang="fi">Matkan tilastonäkymä</caption>
       <caption xml:lang="fr">Affichage des statistiques de voyages.</caption>
+      <caption xml:lang="he">תצוגת סטטיסטיקת נסיעה</caption>
       <caption xml:lang="hu">Utazási statisztika nézet</caption>
       <caption xml:lang="ia">Vista de statistica de viage</caption>
       <caption xml:lang="id">Tampilan statistik perjalanan</caption>
