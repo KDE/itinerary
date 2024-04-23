@@ -58,7 +58,6 @@ class PassTest(ItineraryTestCase):
         self.assertTrue(saveButton.is_enabled())
         self.driver.find_element(by=AppiumBy.NAME, value="Member").send_keys("Konqi Dragon")
         self.driver.find_element(by=AppiumBy.NAME, value="Number").send_keys("1234567890")
-        # TODO date input fields not accessible yet
 
         validFrom = self.driver.find_elements(by=AppiumBy.NAME, value="Valid from")[0]
         validFrom.find_elements(by=AppiumBy.NAME, value="Not set")[1].click()
@@ -68,6 +67,18 @@ class PassTest(ItineraryTestCase):
         minutes = self.driver.find_element(by=AppiumBy.NAME, value="Minutes")
         self.assertEqual(float(minutes.get_attribute('value')), 0)
         self.driver.set_value(minutes, int(30))
+        self.driver.find_element(by=AppiumBy.NAME, value="Select").click()
+
+        validFrom.find_element(by=AppiumBy.NAME, value="Today").click()
+        days = self.driver.find_element(by=AppiumBy.NAME, value="Day")
+        self.assertTrue(float(days.get_attribute('value')) >= 1 and float(days.get_attribute('value')) <= 31)
+        self.driver.set_value(days, int(7))
+        months = self.driver.find_element(by=AppiumBy.NAME, value="Month")
+        self.assertTrue(float(months.get_attribute('value')) >= 1 and float(months.get_attribute('value')) <= 12)
+        self.driver.set_value(months, int(9))
+        years = self.driver.find_element(by=AppiumBy.NAME, value="Year")
+        self.assertTrue(float(years.get_attribute('value')) >= 2024)
+        self.driver.set_value(years, int(2023))
         self.driver.find_element(by=AppiumBy.NAME, value="Select").click()
 
         self.assertTrue(saveButton.is_enabled())
