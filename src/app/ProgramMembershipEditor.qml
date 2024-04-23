@@ -98,7 +98,7 @@ FormCard.FormCardPage {
             obj: root.programMembership
             propertyName: "validFrom"
             initialValue: {
-                let d = new Data();
+                let d = new Date();
                 d.setHours(0);
                 d.setMinutes(0);
                 d.setSeconds(0);
