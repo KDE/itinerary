@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-15 00:38+0000\n"
-"PO-Revision-Date: 2024-04-06 19:58+0200\n"
+"PO-Revision-Date: 2024-04-17 14:14+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2724,10 +2724,9 @@ msgstr ""
 "della validità."
 
 #: app/ProgramMembershipEditor.qml:127
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Scansione codice a barre"
+msgstr "Codice a barre"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -2824,12 +2823,10 @@ msgid "Family area"
 msgstr "Area per famiglie"
 
 #: app/PublicTransportFeatureIcon.qml:33
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible"
-msgstr "Accessibile alle sedie a rotelle"
+msgstr "Accessibile in sedia a rotelle"
 
 #: app/PublicTransportFeatureIcon.qml:35
 #, kde-format
@@ -2856,12 +2853,10 @@ msgid "Toilet"
 msgstr "Bagno"
 
 #: app/PublicTransportFeatureIcon.qml:43
-#, fuzzy, kde-format
-#| msgctxt "train coach feature"
-#| msgid "Wheelchar accessible toilet"
+#, kde-format
 msgctxt "train coach feature"
 msgid "Wheelchair accessible toilet"
-msgstr "Bagno accessibile alle sedie a rotelle"
+msgstr "Bagno accessibile in sedia a rotelle"
 
 #: app/PublicTransportFeatureIcon.qml:45
 #, kde-format
@@ -3355,23 +3350,20 @@ msgid "Class"
 msgstr "Classe"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nome del biglietto"
+msgstr "Codice a barre del biglietto"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Elimina biglietto"
+msgstr "Seleziona il biglietto"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Scansione codice a barre"
+msgstr "Scansione del codice a barre..."
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
