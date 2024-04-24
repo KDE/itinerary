@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-15 00:38+0000\n"
+"POT-Creation-Date: 2024-04-24 00:39+0000\n"
 "PO-Revision-Date: 2021-11-17 09:43+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -706,10 +706,12 @@ msgstr ""
 msgid "Import selected events"
 msgstr ""
 
-#: app/CalendarSelectionSheet.qml:13
-#, kde-format
+#: app/CalendarSelectionSheet.qml:14
+#, fuzzy, kde-format
+#| msgid "Delete Document"
+msgctxt "@title"
 msgid "Select Calendar"
-msgstr ""
+msgstr "Odstrániť dokument"
 
 #: app/CarRentalDelegate.qml:20
 #, kde-format
@@ -1088,8 +1090,10 @@ msgstr ""
 msgid "Import from GPX"
 msgstr ""
 
-#: app/FavoriteLocationPage.qml:90
-#, kde-format
+#: app/FavoriteLocationPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Rename favorite location"
+msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Premenovať obľúbené miesto"
 
@@ -1802,46 +1806,49 @@ msgstr "Vstupná kontrola"
 msgid "Check-out time"
 msgstr "Výstupná kontrola %1"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
+#: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
+msgctxt "@title"
 msgid "Find Amenity"
 msgstr ""
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
-#, kde-format
+#: app/IndoorMapGateSheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Find Platform"
+msgctxt "@title"
 msgid "Find Gate"
-msgstr ""
+msgstr "Nájsť nástupište"
 
-#: app/IndoorMapGateSheet.qml:32
+#: app/IndoorMapGateSheet.qml:33
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
 msgstr ""
 
-#: app/IndoorMapGateSheet.qml:34
+#: app/IndoorMapGateSheet.qml:35
 #, kde-format
 msgctxt "flight departure gate"
 msgid "%1 (departure)"
 msgstr "%1 (odchod)"
 
-#: app/IndoorMapGateSheet.qml:36
+#: app/IndoorMapGateSheet.qml:37
 #, kde-format
 msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (príchod)"
 
-#: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Export..."
 msgid "Edit with iD"
 msgstr "Exportovať..."
 
-#: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr ""
 
-#: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr ""
@@ -1861,10 +1868,20 @@ msgstr "Priblížiť"
 msgid "Zoom Out"
 msgstr "Oddialiť"
 
-#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
 msgstr "Nájsť nástupište"
+
+#: app/IndoorMapPage.qml:82
+#, kde-format
+msgid "Find Gate"
+msgstr ""
+
+#: app/IndoorMapPage.qml:89
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
@@ -1905,46 +1922,53 @@ msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr "Poschodie %1"
 
-#: app/IndoorMapPlatformSheet.qml:39
+#: app/IndoorMapPlatformSheet.qml:20
+#, fuzzy, kde-format
+#| msgid "Find Platform"
+msgctxt "@title"
+msgid "Find Platform"
+msgstr "Nájsť nástupište"
+
+#: app/IndoorMapPlatformSheet.qml:40
 #, fuzzy, kde-format
 #| msgid "Departure"
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "Odchod"
 
-#: app/IndoorMapPlatformSheet.qml:41
+#: app/IndoorMapPlatformSheet.qml:42
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 (odchod)"
 
-#: app/IndoorMapPlatformSheet.qml:43
+#: app/IndoorMapPlatformSheet.qml:44
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (príchod)"
 
-#: app/IndoorMapPlatformSheet.qml:82
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Railway"
 msgstr "Železnica"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Light Rail"
 msgstr "Ľahká železnica"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:85
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:86
 #, kde-format
 msgid "Tramway"
 msgstr "Električka"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autobus"
@@ -2537,44 +2561,45 @@ msgstr "Pomocník"
 msgid "Map download finished."
 msgstr ""
 
-#: app/MatrixRoomSelectionSheet.qml:18
+#: app/MatrixRoomSelectionSheet.qml:19
 #, fuzzy, kde-format
 #| msgid "Favorite Locations"
+msgctxt "@title"
 msgid "Share Location"
 msgstr "Obľúbené miesta"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr ""
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:56
 #, fuzzy, kde-format
 #| msgid "Favorite Locations"
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Obľúbené miesta"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:57
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr ""
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:58
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr ""
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:59
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr ""
 
-#: app/MatrixRoomSelectionSheet.qml:38
+#: app/MatrixRoomSelectionSheet.qml:60
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -2867,19 +2892,19 @@ msgstr "Číslo:"
 msgid "Valid from"
 msgstr "Platné od:"
 
-#: app/ProgramMembershipEditor.qml:104 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, fuzzy, kde-format
 #| msgid "Valid until:"
 msgid "Valid until"
 msgstr "Platný do:"
 
-#: app/ProgramMembershipEditor.qml:117
+#: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:127
+#: app/ProgramMembershipEditor.qml:134
 #, kde-format
 msgid "Barcode"
 msgstr ""

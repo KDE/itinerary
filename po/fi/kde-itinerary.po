@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-15 00:38+0000\n"
+"POT-Creation-Date: 2024-04-24 00:39+0000\n"
 "PO-Revision-Date: 2024-02-27 13:39+0200\n"
 "Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -659,8 +659,10 @@ msgstr "Kalenterista ei löytynyt tuotavissa olevia tapahtumia."
 msgid "Import selected events"
 msgstr "Tuo valitut tapahtumat"
 
-#: app/CalendarSelectionSheet.qml:13
-#, kde-format
+#: app/CalendarSelectionSheet.qml:14
+#, fuzzy, kde-format
+#| msgid "Select Calendar"
+msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Valitse kalenteri"
 
@@ -1017,8 +1019,10 @@ msgstr "Vie GPX-muotoon"
 msgid "Import from GPX"
 msgstr "Tuo GPX-muodosta"
 
-#: app/FavoriteLocationPage.qml:90
-#, kde-format
+#: app/FavoriteLocationPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Rename favorite location"
+msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Muuta suosikkisijainnin nimeä"
 
@@ -1693,45 +1697,49 @@ msgid "Check-out time"
 msgstr "Uloskirjautumisaika"
 
 # Ilmeisesti ”amenity” tässä mikä tahansa julkinen palvelu (pankki, posti, mahdollisuus käydä suihkussa, uimala…)
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
-#, kde-format
+#: app/IndoorMapAmenitySheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Find Amenity"
+msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Etsi palvelu"
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
-#, kde-format
+#: app/IndoorMapGateSheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Find Gate"
+msgctxt "@title"
 msgid "Find Gate"
 msgstr "Etsi portti"
 
-#: app/IndoorMapGateSheet.qml:32
+#: app/IndoorMapGateSheet.qml:33
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
 msgstr "%1 (saapuminen + lähtö)"
 
-#: app/IndoorMapGateSheet.qml:34
+#: app/IndoorMapGateSheet.qml:35
 #, kde-format
 msgctxt "flight departure gate"
 msgid "%1 (departure)"
 msgstr "%1 (lähtö)"
 
-#: app/IndoorMapGateSheet.qml:36
+#: app/IndoorMapGateSheet.qml:37
 #, kde-format
 msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (saapuminen)"
 
-#: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
 #, kde-format
 msgid "Edit with iD"
 msgstr "Muokkaa iD:llä"
 
-#: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr "Muokkaa JOSMilla"
 
-#: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr "Muokkaa Vespuccilla"
@@ -1751,10 +1759,21 @@ msgstr "Lähennä"
 msgid "Zoom Out"
 msgstr "Loitonna"
 
-#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
 msgstr "Etsi laituri"
+
+#: app/IndoorMapPage.qml:82
+#, kde-format
+msgid "Find Gate"
+msgstr "Etsi portti"
+
+# Ilmeisesti ”amenity” tässä mikä tahansa julkinen palvelu (pankki, posti, mahdollisuus käydä suihkussa, uimala…)
+#: app/IndoorMapPage.qml:89
+#, kde-format
+msgid "Find Amenity"
+msgstr "Etsi palvelu"
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
@@ -1793,45 +1812,52 @@ msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr "Kerros ylöspäin"
 
-#: app/IndoorMapPlatformSheet.qml:39
+#: app/IndoorMapPlatformSheet.qml:20
+#, fuzzy, kde-format
+#| msgid "Find Platform"
+msgctxt "@title"
+msgid "Find Platform"
+msgstr "Etsi laituri"
+
+#: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "%1 (saapuminen/lähtö)"
 
-#: app/IndoorMapPlatformSheet.qml:41
+#: app/IndoorMapPlatformSheet.qml:42
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 (lähtö)"
 
-#: app/IndoorMapPlatformSheet.qml:43
+#: app/IndoorMapPlatformSheet.qml:44
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (saapuminen)"
 
-#: app/IndoorMapPlatformSheet.qml:82
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Railway"
 msgstr "Rautatie"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Light Rail"
 msgstr "Raitiotie"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:85
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:86
 #, kde-format
 msgid "Tramway"
 msgstr "Raitiotie"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Bussi"
@@ -2398,42 +2424,44 @@ msgstr "Ohje"
 msgid "Map download finished."
 msgstr "Kartan lataus valmistui."
 
-#: app/MatrixRoomSelectionSheet.qml:18
-#, kde-format
+#: app/MatrixRoomSelectionSheet.qml:19
+#, fuzzy, kde-format
+#| msgid "Share Location"
+msgctxt "@title"
 msgid "Share Location"
 msgstr "Jaa sijainti"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Kutsuttu"
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:56
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Suosikkihuoneet"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:57
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Suoraviestit"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:58
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Huoneet"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:59
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Vähäinen etusija"
 
-#: app/MatrixRoomSelectionSheet.qml:38
+#: app/MatrixRoomSelectionSheet.qml:60
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -2710,18 +2738,18 @@ msgstr "Jäsen"
 msgid "Valid from"
 msgstr "Voimassa alkaen"
 
-#: app/ProgramMembershipEditor.qml:104 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
 msgstr "Vanhenee"
 
-#: app/ProgramMembershipEditor.qml:117
+#: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr "Kelpoisuusajan lopun on oltava sen alun jälkeen."
 
-#: app/ProgramMembershipEditor.qml:127
+#: app/ProgramMembershipEditor.qml:134
 #, fuzzy, kde-format
 #| msgid "Scan Barcode"
 msgid "Barcode"

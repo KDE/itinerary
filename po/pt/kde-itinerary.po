@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kitinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-15 00:38+0000\n"
+"POT-Creation-Date: 2024-04-24 00:39+0000\n"
 "PO-Revision-Date: 2023-07-14 22:15+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -687,8 +687,10 @@ msgstr "Não foram encontrados eventos para importar neste calendário."
 msgid "Import selected events"
 msgstr "Importar os eventos seleccionados"
 
-#: app/CalendarSelectionSheet.qml:13
-#, kde-format
+#: app/CalendarSelectionSheet.qml:14
+#, fuzzy, kde-format
+#| msgid "Select Calendar"
+msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Seleccionar o Calendário"
 
@@ -1052,8 +1054,10 @@ msgstr "Exportar para GPX"
 msgid "Import from GPX"
 msgstr "Importar de GPX"
 
-#: app/FavoriteLocationPage.qml:90
-#, kde-format
+#: app/FavoriteLocationPage.qml:91
+#, fuzzy, kde-format
+#| msgid "Rename favorite location"
+msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Mudar o nome da localização favorita"
 
@@ -1732,46 +1736,49 @@ msgstr "Hora de entrada"
 msgid "Check-out time"
 msgstr "Hora de saída"
 
-#: app/IndoorMapAmenitySheet.qml:19 app/IndoorMapPage.qml:89
+#: app/IndoorMapAmenitySheet.qml:18
 #, kde-format
+msgctxt "@title"
 msgid "Find Amenity"
 msgstr ""
 
-#: app/IndoorMapGateSheet.qml:18 app/IndoorMapPage.qml:82
-#, kde-format
+#: app/IndoorMapGateSheet.qml:18
+#, fuzzy, kde-format
+#| msgid "Find Gate"
+msgctxt "@title"
 msgid "Find Gate"
 msgstr "Descobrir a Porta"
 
-#: app/IndoorMapGateSheet.qml:32
+#: app/IndoorMapGateSheet.qml:33
 #, kde-format
 msgctxt "flight departure/arrival gate"
 msgid "%1 (arrival + departure)"
 msgstr "%1 (chegada + partida)"
 
-#: app/IndoorMapGateSheet.qml:34
+#: app/IndoorMapGateSheet.qml:35
 #, kde-format
 msgctxt "flight departure gate"
 msgid "%1 (departure)"
 msgstr "%1 (partida)"
 
-#: app/IndoorMapGateSheet.qml:36
+#: app/IndoorMapGateSheet.qml:37
 #, kde-format
 msgctxt "flight arrival gate"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapInfoSheet.qml:137 app/IndoorMapPage.qml:127
+#: app/IndoorMapInfoSheet.qml:126 app/IndoorMapPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Edit Boat Trip"
 msgid "Edit with iD"
 msgstr "Editar a Viagem de Barco"
 
-#: app/IndoorMapInfoSheet.qml:142 app/IndoorMapPage.qml:133
+#: app/IndoorMapInfoSheet.qml:132 app/IndoorMapPage.qml:133
 #, kde-format
 msgid "Edit with JOSM"
 msgstr ""
 
-#: app/IndoorMapInfoSheet.qml:148 app/IndoorMapPage.qml:139
+#: app/IndoorMapInfoSheet.qml:138 app/IndoorMapPage.qml:139
 #, kde-format
 msgid "Edit with Vespucci"
 msgstr ""
@@ -1791,10 +1798,20 @@ msgstr "Ampliar"
 msgid "Zoom Out"
 msgstr "Reduzir"
 
-#: app/IndoorMapPage.qml:75 app/IndoorMapPlatformSheet.qml:20
+#: app/IndoorMapPage.qml:75
 #, kde-format
 msgid "Find Platform"
 msgstr "Descobrir a Plataforma"
+
+#: app/IndoorMapPage.qml:82
+#, kde-format
+msgid "Find Gate"
+msgstr "Descobrir a Porta"
+
+#: app/IndoorMapPage.qml:89
+#, kde-format
+msgid "Find Amenity"
+msgstr ""
 
 #: app/IndoorMapPage.qml:95
 #, kde-format
@@ -1833,45 +1850,52 @@ msgctxt "@action:intoolbar Go up one floor"
 msgid "Floor up"
 msgstr "Subir um andar"
 
-#: app/IndoorMapPlatformSheet.qml:39
+#: app/IndoorMapPlatformSheet.qml:20
+#, fuzzy, kde-format
+#| msgid "Find Platform"
+msgctxt "@title"
+msgid "Find Platform"
+msgstr "Descobrir a Plataforma"
+
+#: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
 msgctxt "train arrival/departure platform"
 msgid "%1 (arrival/departure)"
 msgstr "%1 (chegada/partida)"
 
-#: app/IndoorMapPlatformSheet.qml:41
+#: app/IndoorMapPlatformSheet.qml:42
 #, kde-format
 msgctxt "train departure platform"
 msgid "%1 (departure)"
 msgstr "%1 (partida)"
 
-#: app/IndoorMapPlatformSheet.qml:43
+#: app/IndoorMapPlatformSheet.qml:44
 #, kde-format
 msgctxt "train arrival platform"
 msgid "%1 (arrival)"
 msgstr "%1 (chegada)"
 
-#: app/IndoorMapPlatformSheet.qml:82
+#: app/IndoorMapPlatformSheet.qml:83
 #, kde-format
 msgid "Railway"
 msgstr "Comboio"
 
-#: app/IndoorMapPlatformSheet.qml:83
+#: app/IndoorMapPlatformSheet.qml:84
 #, kde-format
 msgid "Light Rail"
 msgstr "Comboio Ligeiro"
 
-#: app/IndoorMapPlatformSheet.qml:84
+#: app/IndoorMapPlatformSheet.qml:85
 #, kde-format
 msgid "Subway"
 msgstr "Metro"
 
-#: app/IndoorMapPlatformSheet.qml:85
+#: app/IndoorMapPlatformSheet.qml:86
 #, kde-format
 msgid "Tramway"
 msgstr "Eléctrico"
 
-#: app/IndoorMapPlatformSheet.qml:86 app/StatisticsPage.qml:120
+#: app/IndoorMapPlatformSheet.qml:87 app/StatisticsPage.qml:120
 #, kde-format
 msgid "Bus"
 msgstr "Autocarro"
@@ -2449,42 +2473,44 @@ msgstr "Ajuda"
 msgid "Map download finished."
 msgstr "Terminou a transferência do mapa."
 
-#: app/MatrixRoomSelectionSheet.qml:18
-#, kde-format
+#: app/MatrixRoomSelectionSheet.qml:19
+#, fuzzy, kde-format
+#| msgid "Share Location"
+msgctxt "@title"
 msgid "Share Location"
 msgstr "Partilhar a Localização"
 
-#: app/MatrixRoomSelectionSheet.qml:33
+#: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format
 msgctxt "matrix room type"
 msgid "Invited"
 msgstr "Convidado"
 
-#: app/MatrixRoomSelectionSheet.qml:34
+#: app/MatrixRoomSelectionSheet.qml:56
 #, kde-format
 msgctxt "matrix room type"
 msgid "Favorite Rooms"
 msgstr "Salas Favoritas"
 
-#: app/MatrixRoomSelectionSheet.qml:35
+#: app/MatrixRoomSelectionSheet.qml:57
 #, kde-format
 msgctxt "matrix room type"
 msgid "Direct Messages"
 msgstr "Mensagens Directas"
 
-#: app/MatrixRoomSelectionSheet.qml:36
+#: app/MatrixRoomSelectionSheet.qml:58
 #, kde-format
 msgctxt "matrix room type"
 msgid "Rooms"
 msgstr "Salas"
 
-#: app/MatrixRoomSelectionSheet.qml:37
+#: app/MatrixRoomSelectionSheet.qml:59
 #, kde-format
 msgctxt "matrix room type"
 msgid "Low Priority"
 msgstr "Prioridade Baixa"
 
-#: app/MatrixRoomSelectionSheet.qml:38
+#: app/MatrixRoomSelectionSheet.qml:60
 #, kde-format
 msgctxt "matrix room type"
 msgid "Spaces"
@@ -2775,18 +2801,18 @@ msgstr "Membro"
 msgid "Valid from"
 msgstr "Válido de"
 
-#: app/ProgramMembershipEditor.qml:104 app/ProgramMembershipPage.qml:119
+#: app/ProgramMembershipEditor.qml:111 app/ProgramMembershipPage.qml:119
 #: app/TicketPage.qml:98
 #, kde-format
 msgid "Valid until"
 msgstr "Válido até"
 
-#: app/ProgramMembershipEditor.qml:117
+#: app/ProgramMembershipEditor.qml:124
 #, kde-format
 msgid "Valid until time has to be after the valid from time."
 msgstr ""
 
-#: app/ProgramMembershipEditor.qml:127
+#: app/ProgramMembershipEditor.qml:134
 #, fuzzy, kde-format
 #| msgid "Scan Barcode"
 msgid "Barcode"
