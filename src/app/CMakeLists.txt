@@ -31,6 +31,7 @@ target_sources(itinerary PRIVATE
     navigationcontroller.cpp
     notificationhelper.cpp
     onlineticketretrievaljob.cpp
+    osmimportjob.cpp
     passmanager.cpp
     pkpassmanager.cpp
     pkpassimageprovider.cpp

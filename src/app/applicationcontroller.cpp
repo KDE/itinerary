@@ -934,7 +934,7 @@ QVariant ApplicationController::aboutData() const
     return QVariant::fromValue(KAboutData::applicationData());
 }
 
-QString ApplicationController::userAgent() const
+QString ApplicationController::userAgent()
 {
     return QLatin1StringView("org.kde.itinerary/") + QCoreApplication::applicationVersion() + QLatin1StringView(" (kde-pim@kde.org)");
 }

@@ -89,7 +89,7 @@ public:
     QString applicationVersion() const;
     QString extractorCapabilities() const;
     QVariant aboutData() const;
-    QString userAgent() const;
+    static QString userAgent();
 
     // health certificate manager
     bool hasHealthCertificateSupport() const;

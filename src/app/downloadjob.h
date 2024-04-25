@@ -25,18 +25,19 @@ public:
     explicit DownloadJob(const QUrl &url, QNetworkAccessManager *nam, QObject *parent = nullptr);
     ~DownloadJob();
 
-    bool hasError() const;
-    QString errorMessage() const;
-    QByteArray data() const;
+    [[nodiscard]] bool hasError() const;
+    [[nodiscard]] QString errorMessage() const;
+    [[nodiscard]] QByteArray data() const;
 
 Q_SIGNALS:
     void finished();
 
 private:
-    bool handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam);
-    QNetworkReply* makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam);
-    bool handleActivityPubReply(QNetworkReply *reply);
-    QNetworkReply* makeDownloadRequest(QUrl url, QNetworkAccessManager *nam);
+    [[nodiscard]] bool handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam);
+    [[nodiscard]] bool handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam);
+    [[nodiscard]] QNetworkReply* makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam);
+    [[nodiscard]] bool handleActivityPubReply(QNetworkReply *reply);
+    [[nodiscard]] QNetworkReply* makeDownloadRequest(QUrl url, QNetworkAccessManager *nam);
     void handleDownloadReply(QNetworkReply *reply);
 
     QByteArray m_data;

@@ -6,6 +6,7 @@
 #include "downloadjob.h"
 #include "logging.h"
 #include "onlineticketretrievaljob.h"
+#include "osmimportjob.h"
 
 #include <KItinerary/JsonLdDocument>
 
@@ -13,14 +14,21 @@
 
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
+
 DownloadJob::DownloadJob(const QUrl &url, QNetworkAccessManager *nam, QObject *parent)
     : QObject(parent)
 {
+    if (handleOsmUrl(url, nam)) {
+        return;
+    }
+
     // see if this is a URL patterns for an online ticket
     if (handleOnlineTicketRetrievalUrl(url, nam)) {
         return;
@@ -56,18 +64,54 @@ QString DownloadJob::errorMessage() const
     return m_errorMessage;
 }
 
+bool DownloadJob::handleOsmUrl(const QUrl &url, QNetworkAccessManager *nam)
+{
+    if (url.host() != "www.openstreetmap.org"_L1) {
+        return false;
+    }
+
+    static const QRegularExpression pathRx(uR"(^/(node|way|relation)/(\d+)/?$)"_s);
+    const auto pathMatch = pathRx.match(url.path());
+    if (!pathMatch.hasMatch()) {
+        return false;
+    }
+
+    OSM::Type type = OSM::Type::Null;
+    if (pathMatch.capturedView(1) == "node"_L1) {
+        type = OSM::Type::Node;
+    } else if (pathMatch.capturedView(1) == "way"_L1) {
+        type = OSM::Type::Way;
+    } else if (pathMatch.capturedView(1) == "relation"_L1) {
+        type = OSM::Type::Relation;
+    } else {
+        return false;
+    }
+
+    auto job = new OsmImportJob(type, pathMatch.capturedView(2).toLongLong(), nam, this);
+    connect(job, &OsmImportJob::finished, this, [this, job]() {
+        job->deleteLater();
+        if (job->result().isNull()) {
+            m_errorMessage = job->errorMessage();
+        } else {
+            m_data = QJsonDocument(KItinerary::JsonLdDocument::toJson(job->result())).toJson(QJsonDocument::Compact);
+        }
+        Q_EMIT finished();
+    });
+    return true;
+}
+
 bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccessManager *nam)
 {
     // TODO this needs to be gone generically and ideally based on some declarative data
-    if (url.host() == QLatin1StringView("dbnavigator.bahn.de") && url.path() == QLatin1StringView("/loadorder")) {
+    if (url.host() == "dbnavigator.bahn.de"_L1 && url.path() == "/loadorder"_L1) {
         const auto query = QUrlQuery(url);
         QVariantMap args({
-            { QLatin1StringView("name"), query.queryItemValue(QLatin1StringView("name")).toUpper() },
-            { QLatin1StringView("reference"), query.queryItemValue(QLatin1StringView("on")) }
+            { "name"_L1, query.queryItemValue("name"_L1).toUpper() },
+            { "reference"_L1, query.queryItemValue("on"_L1) }
         });
 
         qCDebug(Log) << "Doing online ticket retrieval for" << url << args;
-        auto job = new OnlineTicketRetrievalJob(QStringLiteral("db"), args, nam, this);
+        auto job = new OnlineTicketRetrievalJob(u"db"_s, args, nam, this);
         connect(job, &OnlineTicketRetrievalJob::finished, this, [this, job]() {
             job->deleteLater();
             if (job->result().isEmpty()) {
@@ -84,7 +128,7 @@ bool DownloadJob::handleOnlineTicketRetrievalUrl(const QUrl &url, QNetworkAccess
 
 QNetworkReply* DownloadJob::makeActivityPubRequest(QUrl url, QNetworkAccessManager *nam)
 {
-    url.setScheme(QLatin1StringView("https"));
+    url.setScheme("https"_L1);
     QNetworkRequest req(url);
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     req.setRawHeader("Accept", "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\"");
@@ -116,7 +160,7 @@ bool DownloadJob::handleActivityPubReply(QNetworkReply *reply)
 
 QNetworkReply* DownloadJob::makeDownloadRequest(QUrl url, QNetworkAccessManager *nam)
 {
-    url.setScheme(QLatin1StringView("https"));
+    url.setScheme("https"_L1);
     QNetworkRequest req(url);
     req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
     qCDebug(Log) << "Downloading" << url;
