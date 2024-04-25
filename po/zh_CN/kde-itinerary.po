@@ -656,11 +656,10 @@ msgid "Import selected events"
 msgstr ""
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Transfer"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
-msgstr "选择换乘方式"
+msgstr ""
 
 #: app/CarRentalDelegate.qml:20
 #, kde-format
@@ -1016,8 +1015,7 @@ msgid "Import from GPX"
 msgstr "从 GPX 文件导入"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "重命名收藏的地点"
@@ -1693,8 +1691,7 @@ msgid "Find Amenity"
 msgstr ""
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
 msgstr "查找登机口"
@@ -1800,8 +1797,7 @@ msgid "Floor up"
 msgstr ""
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "查找站台"
@@ -2409,11 +2405,10 @@ msgid "Map download finished."
 msgstr "地图下载完毕。"
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Favorite Locations"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
-msgstr "收藏的地点"
+msgstr ""
 
 #: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format

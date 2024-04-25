@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 05:03+0200\n"
+"PO-Revision-Date: 2024-04-24 06:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -660,8 +660,7 @@ msgid "Import selected events"
 msgstr "მონიშნული მოვლენების შემოტანა"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "აირჩიეთ კალენდარი"
@@ -1020,8 +1019,7 @@ msgid "Import from GPX"
 msgstr "GPX-დან შემოტანა"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "ადგილის სანიშნის სახელის გადარქმევა"
@@ -1697,18 +1695,16 @@ msgid "Check-out time"
 msgstr "გამოსვლის დრო"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "იპოვეთ კომფორტი"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr "გეითი პოვნა"
+msgstr "გეითის პოვნა"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -1766,7 +1762,7 @@ msgstr "პლატფორმის მოძებნა"
 #: app/IndoorMapPage.qml:82
 #, kde-format
 msgid "Find Gate"
-msgstr "გეითი პოვნა"
+msgstr "გეითის პოვნა"
 
 #: app/IndoorMapPage.qml:89
 #, kde-format
@@ -1811,8 +1807,7 @@ msgid "Floor up"
 msgstr "სართულით მაღლა"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "პლატფორმის მოძებნა"
@@ -2422,8 +2417,7 @@ msgid "Map download finished."
 msgstr "რუკის გადმოწერა დასრულდა."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "მდებარეობის გაზიარება"

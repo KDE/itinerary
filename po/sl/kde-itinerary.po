@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 06:56+0200\n"
+"PO-Revision-Date: 2024-04-24 07:23+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -667,8 +667,7 @@ msgid "Import selected events"
 msgstr "Uvoz izbranih dogodkov"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Izberi koledar"
@@ -1027,8 +1026,7 @@ msgid "Import from GPX"
 msgstr "Uvozi v GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Preimenuj priljubljeno lokacijo"
@@ -1706,15 +1704,13 @@ msgid "Check-out time"
 msgstr "Čas odjave"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Poišči ugodnost"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
 msgstr "Najdi izhod"
@@ -1820,8 +1816,7 @@ msgid "Floor up"
 msgstr "Nadstropje višje"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "Najdi peron"
@@ -2432,8 +2427,7 @@ msgid "Map download finished."
 msgstr "Prenos zemljevidov končan."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "Deli lokacijo"

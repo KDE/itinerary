@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 19:54+0300\n"
+"PO-Revision-Date: 2024-04-24 14:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -663,8 +663,7 @@ msgid "Import selected events"
 msgstr "Seçili etkinlikleri içe aktar"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Takvim Seç"
@@ -1023,11 +1022,10 @@ msgid "Import from GPX"
 msgstr "GPX’ten İçe Aktar"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr "Sık kullanılan konumu yeniden adlandır"
+msgstr "Sık Kullanılan Konumu Yeniden Adlandır"
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
@@ -1700,18 +1698,16 @@ msgid "Check-out time"
 msgstr "Çıkış zamanı"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Hizmet Bul"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr "Kapıyı Bul"
+msgstr "Kapı Bul"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -1814,8 +1810,7 @@ msgid "Floor up"
 msgstr "Bir kat yukarı"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "Platform Bul"
@@ -2425,8 +2420,7 @@ msgid "Map download finished."
 msgstr "Harita indirme bitti."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "Konumu Paylaş"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 10:10+0200\n"
+"PO-Revision-Date: 2024-04-24 11:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -664,8 +664,7 @@ msgid "Import selected events"
 msgstr "Importa els esdeveniments seleccionats"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Selecció d'un calendari"
@@ -1024,11 +1023,10 @@ msgid "Import from GPX"
 msgstr "Importa des de GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr "Reanomena la ubicació preferida"
+msgstr "Reanomena una ubicació preferida"
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
@@ -1701,15 +1699,13 @@ msgid "Check-out time"
 msgstr "Hora de la sortida"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Cerca de serveis"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
 msgstr "Cerca de la porta"
@@ -1815,8 +1811,7 @@ msgid "Floor up"
 msgstr "Planta amunt"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "Cerca de l'andana"
@@ -2429,8 +2424,7 @@ msgid "Map download finished."
 msgstr "Ha acabat la baixada dels mapes."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "Comparteix la ubicació"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kde-itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-15 08:23+0300\n"
+"PO-Revision-Date: 2024-04-24 10:52+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -671,8 +671,7 @@ msgid "Import selected events"
 msgstr "Імпортувати вибрані події"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Виберіть календар"
@@ -1031,11 +1030,10 @@ msgid "Import from GPX"
 msgstr "Імпорт до GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
-msgstr "Перейменувати улюблене місце"
+msgstr "Перейменування улюбленого місця"
 
 #: app/FavoriteLocationPage.qml:101
 #, kde-format
@@ -1710,18 +1708,16 @@ msgid "Check-out time"
 msgstr "Час перевірки на виході"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
 msgstr "Пошук зручностей"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
-msgstr "Знайти вихід"
+msgstr "Пошук виходу"
 
 #: app/IndoorMapGateSheet.qml:33
 #, kde-format
@@ -1824,11 +1820,10 @@ msgid "Floor up"
 msgstr "Поверхом вище"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
-msgstr "Знайти платформу"
+msgstr "Пошук платформи"
 
 #: app/IndoorMapPlatformSheet.qml:40
 #, kde-format
@@ -2438,11 +2433,10 @@ msgid "Map download finished."
 msgstr "Отримання карти завершено."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
-msgstr "Оприлюднити місце"
+msgstr "Оприлюднення місця"
 
 #: app/MatrixRoomSelectionSheet.qml:55
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: itinerary\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-24 00:39+0000\n"
-"PO-Revision-Date: 2024-04-07 17:09+0100\n"
+"PO-Revision-Date: 2024-04-24 19:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -662,8 +662,7 @@ msgid "Import selected events"
 msgstr "Importi elektitajn eventojn"
 
 #: app/CalendarSelectionSheet.qml:14
-#, fuzzy, kde-format
-#| msgid "Select Calendar"
+#, kde-format
 msgctxt "@title"
 msgid "Select Calendar"
 msgstr "Elekti Kalendaron"
@@ -1022,8 +1021,7 @@ msgid "Import from GPX"
 msgstr "Importi el GPX"
 
 #: app/FavoriteLocationPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Rename favorite location"
+#, kde-format
 msgctxt "@title"
 msgid "Rename favorite location"
 msgstr "Alinomi plej ŝatatan lokon"
@@ -1698,15 +1696,13 @@ msgid "Check-out time"
 msgstr "Tempo de eliro"
 
 #: app/IndoorMapAmenitySheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Amenity"
+#, kde-format
 msgctxt "@title"
 msgid "Find Amenity"
-msgstr "Trovi Agrablecon"
+msgstr "Trovi Agrablaĵon"
 
 #: app/IndoorMapGateSheet.qml:18
-#, fuzzy, kde-format
-#| msgid "Find Gate"
+#, kde-format
 msgctxt "@title"
 msgid "Find Gate"
 msgstr "Trovi Pordegon"
@@ -1812,8 +1808,7 @@ msgid "Floor up"
 msgstr "Planko supren"
 
 #: app/IndoorMapPlatformSheet.qml:20
-#, fuzzy, kde-format
-#| msgid "Find Platform"
+#, kde-format
 msgctxt "@title"
 msgid "Find Platform"
 msgstr "Trovi Platformon"
@@ -2422,8 +2417,7 @@ msgid "Map download finished."
 msgstr "Elŝuto de mapo finiĝis."
 
 #: app/MatrixRoomSelectionSheet.qml:19
-#, fuzzy, kde-format
-#| msgid "Share Location"
+#, kde-format
 msgctxt "@title"
 msgid "Share Location"
 msgstr "Kunhavigi Lokon"
@@ -2747,10 +2741,9 @@ msgid "Valid until time has to be after the valid from time."
 msgstr "Valida ĝis tempo devas esti post la valida de tempo."
 
 #: app/ProgramMembershipEditor.qml:134
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Barcode"
-msgstr "Skani Strekkodon"
+msgstr "Strekkodo"
 
 #: app/ProgramMembershipPage.qml:17
 #, kde-format
@@ -3368,23 +3361,20 @@ msgid "Class"
 msgstr "Klaso"
 
 #: app/TicketTokenEditorCard.qml:58
-#, fuzzy, kde-format
-#| msgid "Ticket name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Ticket Barcode"
-msgstr "Nomo de bileto"
+msgstr "Bileta Strekkodo"
 
 #: app/TicketTokenEditorCard.qml:68
-#, fuzzy, kde-format
-#| msgid "Delete Ticket"
+#, kde-format
 msgid "Select ticket"
-msgstr "Forigi Bileton"
+msgstr "Elekti bileton"
 
 #: app/TicketTokenEditorCard.qml:91
-#, fuzzy, kde-format
-#| msgid "Scan Barcode"
+#, kde-format
 msgid "Scan barcode…"
-msgstr "Skani Strekkodon"
+msgstr "Skani strekkodon…"
 
 #: app/tickettokenmodel.cpp:74
 #, kde-format
