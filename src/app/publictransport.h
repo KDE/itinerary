@@ -87,9 +87,6 @@ public:
      */
     Q_INVOKABLE QString lineIcon(const QVariant &line) const;
 
-    /** Provides an icon for a rental vehicle type. */
-    Q_INVOKABLE QString rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const;
-
     /** Provide an icon source for usage in Kirigami.Icon that represents @p journeySection. */
     Q_INVOKABLE QString journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const;
 

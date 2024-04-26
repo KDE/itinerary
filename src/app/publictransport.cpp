@@ -133,40 +133,6 @@ QString PublicTransport::lineIcon(const QVariant &line) const
     return Line::modeIconName(l.mode());
 }
 
-QString PublicTransport::rentalVehicleIcon(const KPublicTransport::RentalVehicle &vehicle) const
-{
-    using namespace KPublicTransport;
-    switch (vehicle.type()) {
-        case RentalVehicle::Unknown:
-            return {};
-        case RentalVehicle::Bicycle:
-        case RentalVehicle::Pedelec: // TODO
-            return QStringLiteral("qrc:///images/bike.svg");
-        case RentalVehicle::ElectricMoped:
-        case RentalVehicle::ElectricKickScooter:
-            return QStringLiteral("question"); // TODO
-        case RentalVehicle::Car:
-            return QStringLiteral("qrc:///images/car.svg");
-    }
-    return QStringLiteral("question");
-}
-
-static QString individualTransportIcon(const KPublicTransport::IndividualTransport &it)
-{
-    using namespace KPublicTransport;
-
-    switch (it.mode()) {
-        case IndividualTransport::Bike:
-             return QStringLiteral("qrc:///images/bike.svg");
-        case IndividualTransport::Car:
-            return QStringLiteral("qrc:///images/car.svg");
-        case IndividualTransport::Walk:
-            return QStringLiteral("qrc:///images/walk.svg");
-    }
-
-    return QStringLiteral("question");
-}
-
 QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySection &journeySection) const
 {
     using namespace KPublicTransport;
@@ -182,9 +148,9 @@ QString PublicTransport::journeySectionIcon(const KPublicTransport::JourneySecti
         case JourneySection::Transfer:
             return QStringLiteral("qrc:///images/transfer.svg");
         case JourneySection::RentedVehicle:
-            return rentalVehicleIcon(journeySection.rentalVehicle());
+            return journeySection.rentalVehicle().vehicleTypeIconName();
         case JourneySection::IndividualTransport:
-            return individualTransportIcon(journeySection.individualTransport());
+            return journeySection.individualTransport().modeIconName();
     }
 
     return QStringLiteral("question");
