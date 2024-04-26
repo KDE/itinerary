@@ -115,12 +115,12 @@ DetailsPage {
         FormCard.FormCard {
             FormCard.FormTextDelegate {
                 id: departureTimeDelegate
-                text: i18n("Departure time")
+                text: i18nc("flight departure", "Departure time")
                 description: Localizer.formatDateTime(reservationFor, "departureTime")
                 visible: reservationFor.departureTime > 0
             }
             FormCard.FormTextDelegate {
-                text: i18n("Departure date")
+                text: i18nc("flight departure", "Departure date")
                 visible: !departureTimeDelegate.visible && text.length > 0
                 description: Localizer.formatDate(reservationFor, "departureDay")
             }
@@ -166,7 +166,7 @@ DetailsPage {
 
         FormCard.FormCard {
             FormCard.FormTextDelegate {
-                text: i18n("Arrival time")
+                text: i18nc("flight arrival", "Arrival time")
                 description: Localizer.formatDateTime(reservationFor, "arrivalTime")
                 visible: reservationFor.arrivalTime > 0
             }
